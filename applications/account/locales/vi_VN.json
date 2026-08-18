@@ -2542,19 +2542,19 @@
     },
     "BF2025: Deal details": {
       "2 TB data storage": [
-        "Dung lượng lưu trữ 2 TB"
+        "Dung lượng lưu trữ dữ liệu 2 TB"
       ],
       "3 TB data storage": [
-        "3 TB dung lượng lưu trữ"
+        "Dung lượng lưu trữ dữ liệu 3 TB"
       ],
       "Access 15,000+ servers in 120+ countries": [
         "Truy cập hơn 15.000 máy chủ tại hơn 120 quốc gia"
       ],
       "Access advanced AI models": [
-        "Truy cập các mô hình AI nâng cao"
+        "Truy cập các mô hình AI tiên tiến"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Tất cả tính năng cao cấp của ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } và ${ CALENDAR_SHORT_APP_NAME }"
+        "Tất cả các tính năng cao cấp của ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } và ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Block ads, trackers, and malware": [
         "Chặn quảng cáo, trình theo dõi và phần mềm độc hại"
@@ -2563,27 +2563,27 @@
         "Trình xác thực 2FA tích hợp"
       ],
       "Connect 10 devices at once": [
-        "Kết nối 10 thiết bị cùng lúc"
+        "Kết nối đồng thời 10 thiết bị"
       ],
       "Full chat history with easy search and favorites": [
-        "Toàn bộ lịch sử trò chuyện với tính năng tìm kiếm dễ dàng và mục yêu thích"
+        "Lịch sử trò chuyện đầy đủ với tính năng tìm kiếm và mục yêu thích dễ dàng"
       ],
       "Individual accounts for 6 users": [
-        "Các tài khoản cá nhân dành cho 6 người dùng"
+        "Tài khoản riêng cho 6 người dùng"
       ],
       "Individual accounts for you and a partner": [
-        "Các tài khoản cá nhân dành cho người dùng và đối tác"
+        "Tài khoản riêng cho bản thân và đối tác"
       ],
       "Stronger protection against cyber threats": [
-        "Khả năng bảo vệ mạnh mẽ hơn trước các mối đe dọa mạng"
+        "Bảo vệ mạnh mẽ hơn trước các mối đe dọa mạng"
       ],
       "Unlimited daily chats": [
-        "Không giới hạn hội thoại hàng ngày"
+        "Trò chuyện hàng ngày không giới hạn"
       ]
     },
     "BF2025: Tooltip": {
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield được thiết kế đặc biệt giúp bảo vệ các thiết bị và tăng tốc độ duyệt web bằng cách chặn quảng cáo, trình theo dõi và phần mềm độc hại."
+        "NetShield được thiết kế đặc biệt giúp bảo vệ thiết bị và tăng tốc độ duyệt web bằng cách chặn quảng cáo, trình theo dõi và phần mềm độc hại."
       ]
     },
     "Billing cycle": {
@@ -5008,9 +5008,6 @@
       "Most issues can be solved in a few minutes with our step-by-step guides.": [
         "Hầu hết sự cố có thể được giải quyết trong vài phút bằng các hướng dẫn từng bước."
       ],
-      "No ads. No trackers.": [
-        "Không quảng cáo. Không trình theo dõi."
-      ],
       "No one in your organization can connect to shared servers.": [
         "Không ai trong tổ chức có thể kết nối với các máy chủ này."
       ],
@@ -5477,17 +5474,6 @@
       ],
       "Windows 10/11 (x64)": [
         "Windows 10/11 (x64)"
-      ]
-    },
-    "Download link": {
-      ".deb for Debian / Ubuntu": [
-        ".deb cho Debian/Ubuntu"
-      ],
-      ".rpm for Fedora / Red Hat": [
-        ".rpm cho Fedora/Red Hat"
-      ],
-      "You can also download the app through the ${ linkSnapStore }.": [
-        "Cũng có thể tải xuống ứng dụng thông qua ${ linkSnapStore }."
       ]
     },
     "drive_signup_2023: Title": {
@@ -6337,9 +6323,6 @@
       "Enable auto-renew": [
         "Kích hoạt tự động gia hạn"
       ],
-      "Enter your extra password": [
-        "Nhập mật khẩu bổ sung"
-      ],
       "Explore plans": [
         "Khám phá các gói"
       ],
@@ -6516,9 +6499,6 @@
       ],
       "Unable to recover data": [
         "Không thể khôi phục dữ liệu"
-      ],
-      "Unlock ${ PASS_APP_NAME }": [
-        "Mở khóa ${ PASS_APP_NAME }"
       ],
       "Upgrade": [
         "Nâng cấp"
@@ -7087,9 +7067,6 @@
       ],
       "Role assignment could not be completed for ${ errors.length } member": [
         "Không thể hoàn tất phân bổ vai trò cho ${ errors.length } thành viên"
-      ],
-      "Role assignment could not be completed for ${ failedGroupCount } group": [
-        "Không thể hoàn tất phân bổ vai trò cho ${ failedGroupCount } nhóm"
       ],
       "Server not found": [
         "Không tìm thấy máy chủ"
@@ -8483,14 +8460,6 @@
         "Nhiều sự cố có thể được giải quyết nhanh chóng bằng các hướng dẫn trợ giúp. Nếu cần hỗ trợ thêm, đội ngũ luôn sẵn sàng trợ giúp."
       ]
     },
-    "Get started checklist instructions": {
-      "${ appName } on App Store": [
-        "${ appName } trên App Store"
-      ],
-      "${ appName } on Play Store": [
-        "${ appName } trên Play Store"
-      ]
-    },
     "Gmail forwarding": {
       "Automatically forward": [
         "Tự động chuyển tiếp"
@@ -9547,9 +9516,6 @@
       "**Your recovery email alone doesn't allow you to recover your encrypted data** after you reset your password.": [
         "**Email khôi phục đơn lẻ không cho phép khôi phục dữ liệu đã mã hóa** sau khi đặt lại mật khẩu."
       ],
-      "**Your recovery methods will be invalidated:** you can generate new recovery data later.": [
-        "**Các phương thức khôi phục sẽ bị vô hiệu hóa:** có thể tạo dữ liệu khôi phục mới sau."
-      ],
       "**Your recovery phone alone doesn’t allow you to recover your encrypted data** after you reset your password.": [
         "**Số điện thoại khôi phục đơn lẻ không cho phép khôi phục dữ liệu đã mã hóa** sau khi đặt lại mật khẩu."
       ],
@@ -10513,9 +10479,6 @@
       "Failed to fetch logs.": [
         "Không tìm nạp được nhật ký."
       ],
-      "Fast and focused. Email and calendar, right on your desktop.": [
-        "Nhanh chóng và tập trung. Email và lịch, ngay trên màn hình nền."
-      ],
       "Featured in": [
         "Được giới thiệu trên"
       ],
@@ -11239,9 +11202,6 @@
       "On": [
         "Bật"
       ],
-      "On Ubuntu?": [
-        "Trên Ubuntu?"
-      ],
       "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
         "Sau khi được cấp quyền truy cập vào tài khoản, họ có thể truy cập cài đặt **Khôi phục** và **thay đổi mật khẩu ${ ACCOUNT_APP_NAME }** hộ"
       ],
@@ -11958,9 +11918,6 @@
       ],
       "The name will be visible to your users while they are signed in.": [
         "Sẽ hiển thị tên cho người dùng thấy khi họ đăng nhập."
-      ],
-      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
-        "Quá trình đã bị gián đoạn đối với ${ pausedCount } nhóm. Nhấp vào Tiếp tục để tiếp tục phân bổ vai trò."
       ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
         "Tín dụng giới thiệu có thể được trao tối đa 2 tháng sau khi bản dùng thử kết thúc, chỉ khi bạn bè đăng ký một gói."
@@ -13841,9 +13798,6 @@
       "Backup password": [
         "Mật khẩu sao lưu"
       ],
-      "Beta": [
-        "Beta"
-      ],
       "Billed at ${ priceYearly } every 12 months.": [
         "Được tính phí ${ priceYearly } mỗi 12 tháng."
       ],
@@ -14065,9 +14019,6 @@
       ],
       "Days of the week": [
         "Các ngày trong tuần"
-      ],
-      "Deals, offers, marketing emails": [
-        "Ưu đãi, khuyến mãi, email tiếp thị"
       ],
       "Default email address": [
         "Địa chỉ email mặc định"
@@ -14833,9 +14784,6 @@
       ],
       "Select an identity provider to start": [
         "Chọn một nhà cung cấp danh tính để bắt đầu"
-      ],
-      "Select Linux package format": [
-        "Chọn định dạng gói Linux"
       ],
       "Select Linux platform": [
         "Chọn nền tảng Linux"
@@ -15603,9 +15551,6 @@
       ],
       "Sign in": [
         "Đăng nhập"
-      ],
-      "Snap store": [
-        "Snap store"
       ],
       "switch account": [
         "chuyển đổi tài khoản"
@@ -20421,9 +20366,6 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Chủ sở hữu"
-      ],
       "Security Admin": [
         "Quản trị viên bảo mật"
       ],
@@ -21007,9 +20949,6 @@
       ]
     },
     "Service provider": {
-      "Add to ${ CALENDAR_APP_NAME }": [
-        "Thêm vào ${ CALENDAR_APP_NAME }"
-      ],
       "Allows you to add a Zoom video conference to any of your calendar events": [
         "Cho phép thêm hội nghị truyền hình Zoom vào bất kỳ sự kiện lịch nào"
       ]
@@ -24317,9 +24256,6 @@
       "Dashboard": [
         "Bảng điều khiển"
       ],
-      "Data collection": [
-        "Thu thập dữ liệu"
-      ],
       "Data recovery": [
         "Khôi phục dữ liệu"
       ],
@@ -24752,9 +24688,6 @@
       "Group membership": [
         "Tư cách thành viên nhóm"
       ],
-      "Group role assignment paused": [
-        "Đã tạm dừng phân bổ vai trò nhóm"
-      ],
       "Groups": [
         "Các nhóm"
       ],
@@ -24913,9 +24846,6 @@
       ],
       "Mobile": [
         "Di động"
-      ],
-      "Monitoring": [
-        "Giám sát"
       ],
       "Monthly": [
         "Hàng tháng"
@@ -25090,9 +25020,6 @@
       ],
       "Priority support:": [
         "Ưu tiên hỗ trợ:"
-      ],
-      "Privacy": [
-        "Quyền riêng tư"
       ],
       "Privacy and data collection": [
         "Quyền riêng tư và thu thập dữ liệu"
@@ -25366,9 +25293,6 @@
       ],
       "Single sign-on": [
         "Đăng nhập một lần"
-      ],
-      "Single-sign on (SSO)": [
-        "Đăng nhập một lần (SSO)"
       ],
       "SMS verification": [
         "Xác minh qua SMS"

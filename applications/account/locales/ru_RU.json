@@ -2503,7 +2503,7 @@
         "1 аккаунт пользователя"
       ],
       "200 GB storage: 40x your current plan": [
-        "200 ГБ для хранения: в 40 раз больше вашего текущего тарифа"
+        "Хранилище 200 ГБ: в 40 раз больше вашего текущего тарифа"
       ],
       "6 user accounts": [
         "6 аккаунтов пользователя"
@@ -2527,7 +2527,7 @@
         "Оповещения о надёжности пароля"
       ],
       "Recover previous file versions": [
-        "Восстанавливайте предыдущие версии файлов"
+        "Восстановление предыдущих версий файлов"
       ],
       "Unlimited folders, labels and filters": [
         "Неограниченное количество папок, ярлыков и фильтров"
@@ -2581,43 +2581,43 @@
     },
     "BF2025: Deal details": {
       "2 TB data storage": [
-        "2 ТБ для хранения данных"
+        "Хранилище данных на 2 ТБ"
       ],
       "3 TB data storage": [
-        "3 ТБ для хранения данных"
+        "Хранилище данных на 3 ТБ"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "Получите доступ к 15 000+ серверам в 120+ странах"
+        "Доступ к 15 000+ серверов в 120+ странах"
       ],
       "Access advanced AI models": [
-        "Получите доступ к продвинутым моделям ИИ"
+        "Доступ к продвинутым моделям ИИ"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Все платные функции ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } и ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Block ads, trackers, and malware": [
-        "Блокируйте рекламу, трекеры и вредоносные программы"
+        "Блокировка рекламы, трекеров и вредоносных программ"
       ],
       "Built-in 2FA authenticator": [
-        "Встроенная функция двухфакторной аутентификации"
+        "Встроенный аутентификатор 2FA"
       ],
       "Connect 10 devices at once": [
-        "Подключите 10 устройств одновременно"
+        "Подключение 10 устройств одновременно"
       ],
       "Full chat history with easy search and favorites": [
-        "Полная история чатов с возможностью быстрого поиска и добавления в избранное"
+        "Полная история чата с удобным поиском и разделом «Избранное»"
       ],
       "Individual accounts for 6 users": [
         "Индивидуальные аккаунты для 6 пользователей"
       ],
       "Individual accounts for you and a partner": [
-        "Индивидуальные аккаунты для вас и партнера"
+        "Индивидуальные аккаунты для вас и вашего партнера"
       ],
       "Stronger protection against cyber threats": [
-        "Усиленная защита от киберугроз"
+        "Более надежная защита от киберугроз"
       ],
       "Unlimited daily chats": [
-        "Неограниченное количество ежедневных чатов"
+        "Безлимитные чаты ежедневно"
       ]
     },
     "BF2025: Tooltip": {
@@ -5098,9 +5098,6 @@
       "Most issues can be solved in a few minutes with our step-by-step guides.": [
         "Большинство проблем можно решить за несколько минут с помощью наших пошаговых руководств."
       ],
-      "No ads. No trackers.": [
-        "Без рекламы. Без трекеров."
-      ],
       "No one in your organization can connect to shared servers.": [
         "Никто из вашей организации не может подключиться к общим серверам."
       ],
@@ -5582,17 +5579,6 @@
       ],
       "Windows 10/11 (x64)": [
         "Windows 10/11 (x64)"
-      ]
-    },
-    "Download link": {
-      ".deb for Debian / Ubuntu": [
-        ".deb для Debian / Ubuntu"
-      ],
-      ".rpm for Fedora / Red Hat": [
-        ".rpm для Fedora / Red Hat"
-      ],
-      "You can also download the app through the ${ linkSnapStore }.": [
-        "Вы также можете скачать приложение через ${ linkSnapStore }."
       ]
     },
     "drive_signup_2023: Title": {
@@ -6454,9 +6440,6 @@
       "Enable auto-renew": [
         "Включить автообновление"
       ],
-      "Enter your extra password": [
-        "Введите дополнительный пароль"
-      ],
       "Explore plans": [
         "Ознакомиться с тарифами"
       ],
@@ -6639,9 +6622,6 @@
       ],
       "Unable to recover data": [
         "Не удалось восстановить данные"
-      ],
-      "Unlock ${ PASS_APP_NAME }": [
-        "Разблокировать ${ PASS_APP_NAME }"
       ],
       "Upgrade": [
         "Улучшить"
@@ -7234,12 +7214,6 @@
         "Не удалось завершить назначение должности для ${ errors.length } участников",
         "Не удалось завершить назначение должности для ${ errors.length } участников",
         "Не удалось завершить назначение должности для ${ errors.length } участников"
-      ],
-      "Role assignment could not be completed for ${ failedGroupCount } group": [
-        "Не удалось завершить назначение должности для ${ failedGroupCount } группы",
-        "Не удалось завершить назначение должности для ${ failedGroupCount } групп",
-        "Не удалось завершить назначение должности для ${ failedGroupCount } групп",
-        "Не удалось завершить назначение должности для ${ failedGroupCount } групп"
       ],
       "Server not found": [
         "Сервер не найден"
@@ -8684,14 +8658,6 @@
         "Многие проблемы можно быстро решить с помощью наших справочных руководств. Если вам нужна дополнительная поддержка, наша команда всегда готова помочь."
       ]
     },
-    "Get started checklist instructions": {
-      "${ appName } on App Store": [
-        "${ appName } в App Store"
-      ],
-      "${ appName } on Play Store": [
-        "${ appName } в Play Маркет"
-      ]
-    },
     "Gmail forwarding": {
       "Automatically forward": [
         "Автоматическая пересылка"
@@ -9859,9 +9825,6 @@
       "**Your recovery email alone doesn't allow you to recover your encrypted data** after you reset your password.": [
         "**Один лишь ваш резервный адрес электронной почты не позволяет восстановить зашифрованные данные** после сброса пароля."
       ],
-      "**Your recovery methods will be invalidated:** you can generate new recovery data later.": [
-        "**Ваши методы восстановления станут недействительными:** вы сможете создать новые данные восстановления позже."
-      ],
       "**Your recovery phone alone doesn’t allow you to recover your encrypted data** after you reset your password.": [
         "**Один лишь ваш резервный номер телефона не позволяет восстановить зашифрованные данные** после сброса пароля."
       ],
@@ -10456,6 +10419,12 @@
       "Create a new code on your TV and try again.": [
         "Создайте новый код на своем ТВ и попробуйте еще раз."
       ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Создать безопасное облако для ${ memberCount } участника",
+        "Создать безопасное облако для ${ memberCount } участников",
+        "Создайте безопасное облако для ${ memberCount } участников",
+        "Создайте безопасное облако для ${ memberCount } участников"
+      ],
       "Create an account": [
         "Создать аккаунт"
       ],
@@ -10866,9 +10835,6 @@
       ],
       "Failed to fetch logs.": [
         "Не удалось загрузить журналы."
-      ],
-      "Fast and focused. Email and calendar, right on your desktop.": [
-        "Быстро и удобно. Электронная почта и календарь прямо на вашем компьютере."
       ],
       "Fastest VPN speeds of up to 10Gbps": [
         "Самые быстрые VPN-подключения — до 10 Гбит/с"
@@ -11610,9 +11576,6 @@
       ],
       "On": [
         "Вкл."
-      ],
-      "On Ubuntu?": [
-        "Используете Ubuntu?"
       ],
       "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
         "Как только доступ к вашему аккаунту будет предоставлен, они смогут перейти в ваши настройки **Восстановления** и **изменить пароль вашего приложения ${ ACCOUNT_APP_NAME }** за вас."
@@ -12366,12 +12329,6 @@
       ],
       "The name will be visible to your users while they are signed in.": [
         "Имя будет видно вашим пользователям, когда они войдут в систему."
-      ],
-      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
-        "Процесс был прерван для ${ pausedCount } группы. Нажмите «Продолжить», чтобы возобновить назначение должностей.",
-        "Процесс был прерван для ${ pausedCount } групп. Нажмите «Продолжить», чтобы возобновить назначение должностей.",
-        "Процесс был прерван для ${ pausedCount } групп. Нажмите «Продолжить», чтобы возобновить назначение должностей.",
-        "Процесс был прерван для ${ pausedCount } групп. Нажмите «Продолжить», чтобы возобновить назначение должностей."
       ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
         "Бонус за приглашение может быть начислен в течение 2 месяцев после окончания пробной версии вашего друга и только в том случае, если ваш друг подписался на тариф."
@@ -14306,9 +14263,6 @@
       "Backup password": [
         "Пароль резервной копии"
       ],
-      "Beta": [
-        "Бета"
-      ],
       "Billed at ${ priceYearly } every 12 months.": [
         "Плата составляет ${ priceYearly } каждые 12 месяцев."
       ],
@@ -14533,9 +14487,6 @@
       ],
       "Days of the week": [
         "Дни недели"
-      ],
-      "Deals, offers, marketing emails": [
-        "Акции, предложения, маркетинговые электронные письма"
       ],
       "Default email address": [
         "Адрес электронной почты по умолчанию"
@@ -15301,9 +15252,6 @@
       ],
       "Select an identity provider to start": [
         "Выберите провайдера личных данных, чтобы начать"
-      ],
-      "Select Linux package format": [
-        "Выберите формат пакета Linux"
       ],
       "Select Linux platform": [
         "Выберите платформу Linux"
@@ -16077,9 +16025,6 @@
       ],
       "Sign in": [
         "Войти"
-      ],
-      "Snap store": [
-        "Snap store"
       ],
       "switch account": [
         "переключить аккаунт"
@@ -18113,6 +18058,12 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } страна",
+        "${ n } страны",
+        "${ n } стран",
+        "${ n } стран"
+      ],
       "Access advanced VPN features": [
         "Получите доступ к расширенным функциям VPN"
       ],
@@ -21102,9 +21053,6 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Владелец"
-      ],
       "Security Admin": [
         "Администратор безопасности"
       ],
@@ -21709,9 +21657,6 @@
       ]
     },
     "Service provider": {
-      "Add to ${ CALENDAR_APP_NAME }": [
-        "Добавить в ${ CALENDAR_APP_NAME }"
-      ],
       "Allows you to add a Zoom video conference to any of your calendar events": [
         "Позволяет добавлять видеоконференции Zoom к любым событиям календаря."
       ]
@@ -25259,9 +25204,6 @@
       "Dashboard": [
         "Панель управления"
       ],
-      "Data collection": [
-        "Сбор данных"
-      ],
       "Data recovery": [
         "Восстановление данных"
       ],
@@ -25700,9 +25642,6 @@
       "Group membership": [
         "Групповая подписка"
       ],
-      "Group role assignment paused": [
-        "Назначение должности группы приостановлено"
-      ],
       "Groups": [
         "Группы"
       ],
@@ -25864,9 +25803,6 @@
       ],
       "Mobile": [
         "Для мобильных устройств"
-      ],
-      "Monitoring": [
-        "Мониторинг"
       ],
       "Monthly": [
         "Ежемесячно"
@@ -26041,9 +25977,6 @@
       ],
       "Priority support:": [
         "Приоритетная поддержка:"
-      ],
-      "Privacy": [
-        "Конфиденциальность"
       ],
       "Privacy and data collection": [
         "Конфиденциальность и сбор данных"
@@ -26317,9 +26250,6 @@
       ],
       "Single sign-on": [
         "SSO"
-      ],
-      "Single-sign on (SSO)": [
-        "Единый вход (SSO)"
       ],
       "SMS verification": [
         "Подтверждение по SMS"

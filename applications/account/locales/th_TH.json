@@ -2542,13 +2542,13 @@
     },
     "BF2025: Deal details": {
       "2 TB data storage": [
-        "พื้นที่จัดเก็บข้อมูล 2 TB"
+        "พื้นที่จัดเก็บข้อมูลขนาด 2 TB"
       ],
       "3 TB data storage": [
-        "พื้นที่จัดเก็บข้อมูล 3 TB"
+        "พื้นที่จัดเก็บข้อมูลขนาด 3 TB"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "เข้าถึงเซิร์ฟเวอร์กว่า 15,000 แห่งในกว่า 120 ประเทศ"
+        "เข้าถึงเซิร์ฟเวอร์ 15,000+ เครื่องใน 120+ ประเทศ"
       ],
       "Access advanced AI models": [
         "เข้าถึงโมเดล AI ขั้นสูง"
@@ -2560,30 +2560,30 @@
         "บล็อกโฆษณา ตัวติดตาม และมัลแวร์"
       ],
       "Built-in 2FA authenticator": [
-        "ตัวยืนยันตัวตน 2FA ในตัว"
+        "เครื่องมือยืนยันตัวตน 2FA ในตัว"
       ],
       "Connect 10 devices at once": [
-        "เชื่อมต่ออุปกรณ์ได้ 10 เครื่องพร้อมกัน"
+        "เชื่อมต่อได้ 10 อุปกรณ์พร้อมกัน"
       ],
       "Full chat history with easy search and favorites": [
-        "ประวัติการแชททั้งหมดพร้อมการค้นหาและรายการโปรดที่ใช้งานง่าย"
+        "ประวัติการแชทฉบับเต็มพร้อมระบบค้นหาและรายการโปรดที่ใช้งานง่าย"
       ],
       "Individual accounts for 6 users": [
-        "บัญชีส่วนตัวสำหรับผู้ใช้ 6 ราย"
+        "บัญชีส่วนบุคคลสำหรับผู้ใช้ 6 คน"
       ],
       "Individual accounts for you and a partner": [
-        "บัญชีส่วนตัวสำหรับคุณและคู่หู"
+        "บัญชีส่วนบุคคลสำหรับผู้ใช้และพาร์ทเนอร์"
       ],
       "Stronger protection against cyber threats": [
         "การป้องกันภัยคุกคามทางไซเบอร์ที่แข็งแกร่งยิ่งขึ้น"
       ],
       "Unlimited daily chats": [
-        "แชตได้ไม่จำกัดต่อวัน"
+        "แชทรายวันได้ไม่จำกัด"
       ]
     },
     "BF2025: Tooltip": {
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield ที่ออกแบบมาเป็นพิเศษช่วยปกป้องอุปกรณ์และเพิ่มความเร็วในการท่องเว็บโดยการบล็อกโฆษณา ตัวติดตาม และมัลแวร์"
+        "NetShield ที่ได้รับการออกแบบมาเป็นพิเศษจะช่วยปกป้องอุปกรณ์และเพิ่มความเร็วในการท่องเว็บด้วยการบล็อกโฆษณา ตัวติดตาม และมัลแวร์"
       ]
     },
     "Billing cycle": {
@@ -5008,9 +5008,6 @@
       "Most issues can be solved in a few minutes with our step-by-step guides.": [
         "ปัญหาส่วนใหญ่สามารถแก้ไขได้ภายในไม่กี่นาทีด้วยคู่มือทีละขั้นตอน"
       ],
-      "No ads. No trackers.": [
-        "ไม่มีโฆษณา ไม่มีตัวติดตาม"
-      ],
       "No one in your organization can connect to shared servers.": [
         "ไม่มีใครในองค์กรที่สามารถเชื่อมต่อกับเซิร์ฟเวอร์ที่แชร์ได้"
       ],
@@ -5477,17 +5474,6 @@
       ],
       "Windows 10/11 (x64)": [
         "Windows 10/11 (x64)"
-      ]
-    },
-    "Download link": {
-      ".deb for Debian / Ubuntu": [
-        ".deb สำหรับ Debian / Ubuntu"
-      ],
-      ".rpm for Fedora / Red Hat": [
-        ".rpm สำหรับ Fedora / Red Hat"
-      ],
-      "You can also download the app through the ${ linkSnapStore }.": [
-        "สามารถดาวน์โหลดแอปผ่าน ${ linkSnapStore } ได้เช่นกัน"
       ]
     },
     "drive_signup_2023: Title": {
@@ -6337,9 +6323,6 @@
       "Enable auto-renew": [
         "เปิดใช้งานการต่ออายุอัตโนมัติ"
       ],
-      "Enter your extra password": [
-        "ป้อนรหัสผ่านเพิ่มเติม"
-      ],
       "Explore plans": [
         "สำรวจแผนการใช้งาน"
       ],
@@ -6516,9 +6499,6 @@
       ],
       "Unable to recover data": [
         "ไม่สามารถกู้ข้อมูลคืนได้"
-      ],
-      "Unlock ${ PASS_APP_NAME }": [
-        "ปลดล็อก ${ PASS_APP_NAME }"
       ],
       "Upgrade": [
         "อัปเกรด"
@@ -7087,9 +7067,6 @@
       ],
       "Role assignment could not be completed for ${ errors.length } member": [
         "ไม่สามารถมอบหมายบทบาทให้เสร็จสิ้นสำหรับสมาชิก ${ errors.length } ราย"
-      ],
-      "Role assignment could not be completed for ${ failedGroupCount } group": [
-        "ไม่สามารถมอบหมายบทบาทให้เสร็จสิ้นสำหรับกลุ่ม ${ failedGroupCount } กลุ่ม"
       ],
       "Server not found": [
         "ไม่พบเซิร์ฟเวอร์"
@@ -8483,14 +8460,6 @@
         "ปัญหาหลายอย่างสามารถแก้ไขได้อย่างรวดเร็วด้วยคู่มือช่วยเหลือ หากต้องการการสนับสนุนเพิ่มเติม ทีมงานพร้อมให้ความช่วยเหลือเสมอ"
       ]
     },
-    "Get started checklist instructions": {
-      "${ appName } on App Store": [
-        "${ appName } บน App Store"
-      ],
-      "${ appName } on Play Store": [
-        "${ appName } บน Play Store"
-      ]
-    },
     "Gmail forwarding": {
       "Automatically forward": [
         "ส่งต่อโดยอัตโนมัติ"
@@ -9547,9 +9516,6 @@
       "**Your recovery email alone doesn't allow you to recover your encrypted data** after you reset your password.": [
         "**อีเมลการกู้คืนเพียงอย่างเดียวไม่สามารถกู้คืนข้อมูลที่เข้ารหัสลับได้** หลังจากรีเซ็ตรหัสผ่านแล้ว"
       ],
-      "**Your recovery methods will be invalidated:** you can generate new recovery data later.": [
-        "**วิธีการกู้คืนของคุณจะเป็นโมฆะ:** คุณสามารถสร้างข้อมูลการกู้คืนใหม่ได้ในภายหลัง"
-      ],
       "**Your recovery phone alone doesn’t allow you to recover your encrypted data** after you reset your password.": [
         "**โทรศัพท์การกู้คืนเพียงอย่างเดียวไม่สามารถกู้คืนข้อมูลที่เข้ารหัสลับได้** หลังจากรีเซ็ตรหัสผ่านแล้ว"
       ],
@@ -10513,9 +10479,6 @@
       "Failed to fetch logs.": [
         "ไม่สามารถดึงข้อมูลการบันทึกได้"
       ],
-      "Fast and focused. Email and calendar, right on your desktop.": [
-        "รวดเร็วและตรงจุด อีเมลและปฏิทินบนเดสก์ท็อปของคุณ"
-      ],
       "Featured in": [
         "นำเสนอใน"
       ],
@@ -11239,9 +11202,6 @@
       "On": [
         "เปิดใช้งานอยู่"
       ],
-      "On Ubuntu?": [
-        "ใช้ Ubuntu หรือไม่?"
-      ],
       "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
         "เมื่อได้รับการอนุมัติให้เข้าถึงบัญชีแล้ว พวกเขาจะสามารถเข้าถึงการตั้งค่า**การกู้คืน**และ**เปลี่ยนรหัสผ่าน ${ ACCOUNT_APP_NAME }** แทนคุณได้"
       ],
@@ -11958,9 +11918,6 @@
       ],
       "The name will be visible to your users while they are signed in.": [
         "ชื่อจะปรากฏให้ผู้ใช้เห็นขณะเข้าสู่ระบบ"
-      ],
-      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
-        "กระบวนการถูกขัดจังหวะสำหรับ ${ pausedCount } กลุ่ม คลิกดำเนินการต่อเพื่อเริ่มการมอบหมายบทบาทใหม่"
       ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
         "เครดิตการแนะนำจะได้รับสูงสุดไม่เกิน 2 เดือนหลังจากการทดลองใช้ของเพื่อนสิ้นสุดลง และเฉพาะกรณีที่เพื่อนสมัครรับข้อมูลแผนบริการเท่านั้น"
@@ -13841,9 +13798,6 @@
       "Backup password": [
         "รหัสผ่านสำรอง"
       ],
-      "Beta": [
-        "เบต้า"
-      ],
       "Billed at ${ priceYearly } every 12 months.": [
         "เรียกเก็บเงิน ${ priceYearly } ทุก ๆ 12 เดือน"
       ],
@@ -14065,9 +14019,6 @@
       ],
       "Days of the week": [
         "วันของสัปดาห์"
-      ],
-      "Deals, offers, marketing emails": [
-        "ดีล ข้อเสนอ และอีเมลการตลาด"
       ],
       "Default email address": [
         "ที่อยู่อีเมลค่าเริ่มต้น"
@@ -14833,9 +14784,6 @@
       ],
       "Select an identity provider to start": [
         "เลือกผู้ให้บริการข้อมูลระบุตัวตนเพื่อเริ่มต้น"
-      ],
-      "Select Linux package format": [
-        "เลือกรูปแบบแพ็กเกจ Linux"
       ],
       "Select Linux platform": [
         "เลือกแพลตฟอร์ม Linux"
@@ -15603,9 +15551,6 @@
       ],
       "Sign in": [
         "เข้าสู่ระบบ"
-      ],
-      "Snap store": [
-        "Snap store"
       ],
       "switch account": [
         "สลับบัญชี"
@@ -20421,9 +20366,6 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "เจ้าของ"
-      ],
       "Security Admin": [
         "ผู้ดูแลระบบความปลอดภัย"
       ],
@@ -21007,9 +20949,6 @@
       ]
     },
     "Service provider": {
-      "Add to ${ CALENDAR_APP_NAME }": [
-        "เพิ่มไปยัง ${ CALENDAR_APP_NAME }"
-      ],
       "Allows you to add a Zoom video conference to any of your calendar events": [
         "อนุญาตให้เพิ่มการประชุมทางวิดีโอ Zoom ลงในกิจกรรมในปฏิทิน"
       ]
@@ -24317,9 +24256,6 @@
       "Dashboard": [
         "หน้าหลักของระบบ"
       ],
-      "Data collection": [
-        "การเก็บรวบรวมข้อมูล"
-      ],
       "Data recovery": [
         "กู้คืนข้อมูล"
       ],
@@ -24752,9 +24688,6 @@
       "Group membership": [
         "การเป็นสมาชิกกลุ่ม"
       ],
-      "Group role assignment paused": [
-        "หยุดการมอบหมายบทบาทกลุ่มชั่วคราว"
-      ],
       "Groups": [
         "กลุ่ม"
       ],
@@ -24913,9 +24846,6 @@
       ],
       "Mobile": [
         "มือถือ"
-      ],
-      "Monitoring": [
-        "การตรวจสอบ"
       ],
       "Monthly": [
         "รายเดือน"
@@ -25090,9 +25020,6 @@
       ],
       "Priority support:": [
         "การสนับสนุนพิเศษ:"
-      ],
-      "Privacy": [
-        "ความเป็นส่วนตัว"
       ],
       "Privacy and data collection": [
         "ความเป็นส่วนตัวและการเก็บรวบรวมข้อมูล"
@@ -25366,9 +25293,6 @@
       ],
       "Single sign-on": [
         "การลงชื่อเข้าใช้แบบครั้งเดียว"
-      ],
-      "Single-sign on (SSO)": [
-        "การลงชื่อเข้าใช้แบบครั้งเดียว (SSO)"
       ],
       "SMS verification": [
         "การยืนยันผ่าน SMS"

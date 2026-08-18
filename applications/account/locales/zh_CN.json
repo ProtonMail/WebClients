@@ -2512,7 +2512,7 @@
         "1 个账户"
       ],
       "200 GB storage: 40x your current plan": [
-        "200 GB 存储空间：当前套餐的 40 倍"
+        "200 GB 存储空间：您当前套餐的 40 倍"
       ],
       "6 user accounts": [
         "6 个账户"
@@ -2605,7 +2605,7 @@
         "包含 ${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME } 的所有高级功能"
       ],
       "Block ads, trackers, and malware": [
-        "屏蔽广告、跟踪器和恶意软件"
+        "拦截广告、跟踪器和恶意软件"
       ],
       "Built-in 2FA authenticator": [
         "内置 2FA 验证器"
@@ -2626,7 +2626,7 @@
         "针对网络威胁提供更强有力的保护"
       ],
       "Unlimited daily chats": [
-        "无限聊天次数"
+        "每日无限制聊天"
       ]
     },
     "BF2025: Tooltip": {
@@ -5059,9 +5059,6 @@
       "Most issues can be solved in a few minutes with our step-by-step guides.": [
         "大多数问题可通过我们的分步指南在几分钟内解决！"
       ],
-      "No ads. No trackers.": [
-        "无广告、无追踪。"
-      ],
       "No one in your organization can connect to shared servers.": [
         "组织内任何人都不能连接共享服务器。"
       ],
@@ -5530,17 +5527,6 @@
         "Windows 10/11 (x64)"
       ]
     },
-    "Download link": {
-      ".deb for Debian / Ubuntu": [
-        ".deb (Debian/Ubuntu)"
-      ],
-      ".rpm for Fedora / Red Hat": [
-        ".rpm (Fedora/Red Hat)"
-      ],
-      "You can also download the app through the ${ linkSnapStore }.": [
-        "您也可以通过 ${ linkSnapStore } 下载此应用。"
-      ]
-    },
     "drive_signup_2023: Title": {
       "Create a free ${ DRIVE_APP_NAME } account to securely access the file": [
         "创建一个免费的 ${ DRIVE_APP_NAME } 账户来安全地访问文件"
@@ -5600,13 +5586,13 @@
         "2 TB 共享存储空间"
       ],
       "2 user accounts": [
-        "2 个账户"
+        "2 个用户账户"
       ],
       "All premium features from your current plan": [
-        "您当前套餐的所有高级功能"
+        "您当前套餐的所有付费版服务器功能"
       ],
       "Only": [
-        "仅限"
+        "仅"
       ]
     },
     "Duo offer: Link": {
@@ -6388,9 +6374,6 @@
       "Enable auto-renew": [
         "启用自动续订"
       ],
-      "Enter your extra password": [
-        "请输入您的额外密码"
-      ],
       "Explore plans": [
         "查看套餐"
       ],
@@ -6567,9 +6550,6 @@
       ],
       "Unable to recover data": [
         "无法恢复数据"
-      ],
-      "Unlock ${ PASS_APP_NAME }": [
-        "解锁 ${ PASS_APP_NAME }"
       ],
       "Upgrade": [
         "升级"
@@ -7327,9 +7307,6 @@
       ],
       "Role assignment could not be completed for ${ errors.length } member": [
         "无法为 ${ errors.length } 位成员完成角色分配"
-      ],
-      "Role assignment could not be completed for ${ failedGroupCount } group": [
-        "无法为 ${ failedGroupCount } 个群组完成角色分配"
       ],
       "Server not found": [
         "未找到服务器"
@@ -8833,14 +8810,6 @@
         "许多问题可以通过我们的帮助指南快速解决。如果您需要更多支持，我们的团队随时为您服务。"
       ]
     },
-    "Get started checklist instructions": {
-      "${ appName } on App Store": [
-        "App Store 上的 ${ appName } 应用"
-      ],
-      "${ appName } on Play Store": [
-        "${ appName } 在 Play 商店"
-      ]
-    },
     "Gmail forwarding": {
       "Automatically forward": [
         "自动转发"
@@ -9918,9 +9887,6 @@
       "**Your recovery email alone doesn't allow you to recover your encrypted data** after you reset your password.": [
         "**重置密码后，仅凭密保邮箱将无法恢复加密数据！**"
       ],
-      "**Your recovery methods will be invalidated:** you can generate new recovery data later.": [
-        "**您的恢复方法将失效：**您可以稍后生成新的恢复数据"
-      ],
       "**Your recovery phone alone doesn’t allow you to recover your encrypted data** after you reset your password.": [
         "**重置密码后，仅凭密保手机将无法恢复加密数据！**"
       ],
@@ -10947,9 +10913,6 @@
       "Failed to fetch logs.": [
         "获取日志失败。"
       ],
-      "Fast and focused. Email and calendar, right on your desktop.": [
-        "邮件和日程尽在您的桌面呈现，为您带来快捷而专注的体验。"
-      ],
       "Fastest VPN speeds of up to 10Gbps": [
         "最快达 10 Gbps 的 VPN 速度"
       ],
@@ -11709,9 +11672,6 @@
       "On": [
         "启用"
       ],
-      "On Ubuntu?": [
-        "使用的是 Ubuntu 系统？"
-      ],
       "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
         "当您的账户访问权限被授予后，他们可以访问您的**恢复**设置并为您**更改 ${ ACCOUNT_APP_NAME } 密码**！"
       ],
@@ -12452,9 +12412,6 @@
       ],
       "The name will be visible to your users while they are signed in.": [
         "您的用户在登录时将可以看到该名称。"
-      ],
-      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
-        "该流程在 ${ pausedCount } 个群组中被中断，点击“继续”以恢复分配角色。"
       ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
         "推荐奖励可在您朋友的试用期结束后的 2 个月内发放，前提是您的朋友已订阅套餐。"
@@ -14425,9 +14382,6 @@
       "Backup password": [
         "备用密码"
       ],
-      "Beta": [
-        "测试版"
-      ],
       "Billable licenses": [
         "计费许可数"
       ],
@@ -14664,9 +14618,6 @@
       ],
       "Days of the week": [
         "星期几"
-      ],
-      "Deals, offers, marketing emails": [
-        "优惠、促销、营销邮件"
       ],
       "Default email address": [
         "默认邮箱地址"
@@ -15448,9 +15399,6 @@
       "Select an identity provider to start": [
         "请选择身份提供商以开始"
       ],
-      "Select Linux package format": [
-        "选择 Linux 软件包格式"
-      ],
       "Select Linux platform": [
         "选择 Linux 平台"
       ],
@@ -16220,9 +16168,6 @@
       ],
       "Sign in": [
         "登录"
-      ],
-      "Snap store": [
-        "Snap Store"
       ],
       "switch account": [
         "切换账户"
@@ -18465,7 +18410,7 @@
         "${ pricingTitle } 优惠今天到期！"
       ],
       "Don't show this again": [
-        "不再显示"
+        "不再显示此内容"
       ],
       "Don’t show this again": [
         "不再显示此内容"
@@ -21087,9 +21032,6 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "所有者"
-      ],
       "Security Admin": [
         "安全管理员"
       ],
@@ -21673,9 +21615,6 @@
       ]
     },
     "Service provider": {
-      "Add to ${ CALENDAR_APP_NAME }": [
-        "添加到 ${ CALENDAR_APP_NAME }"
-      ],
       "Allows you to add a Zoom video conference to any of your calendar events": [
         "允许您将 Zoom 视频会议添加到任何日历事件中"
       ]
@@ -25042,9 +24981,6 @@
       "Dashboard": [
         "控制面板"
       ],
-      "Data collection": [
-        "数据收集"
-      ],
       "Data recovery": [
         "数据恢复"
       ],
@@ -25489,9 +25425,6 @@
       "Group membership": [
         "群组会员资格"
       ],
-      "Group role assignment paused": [
-        "群组角色分配已暂停"
-      ],
       "Groups": [
         "群组"
       ],
@@ -25662,9 +25595,6 @@
       ],
       "Mobile": [
         "移动版"
-      ],
-      "Monitoring": [
-        "监测"
       ],
       "Monthly": [
         "每月"
@@ -25839,9 +25769,6 @@
       ],
       "Priority support:": [
         "优先客户支持："
-      ],
-      "Privacy": [
-        "隐私设置"
       ],
       "Privacy and data collection": [
         "隐私与数据收集"
@@ -26127,9 +26054,6 @@
       ],
       "Single sign-on": [
         "单点登录"
-      ],
-      "Single-sign on (SSO)": [
-        "单点登录 (SSO)"
       ],
       "SMS verification": [
         "短信验证"
