@@ -4,11 +4,10 @@ import type { WmlParagraph } from 'docx-preview-cjs'
 import type { ElementFormatType } from 'lexical'
 import { DocxElementParser } from './DocxElementParser'
 import type { DocxToLexicalInfo } from '../DocxToLexicalInfo'
-import { ParseDocxElements } from '../ParseDocxElement'
 
 export class ParagraphParser extends DocxElementParser {
   async parse(): Promise<DocxToLexicalInfo[]> {
-    const parsedChildren = await ParseDocxElements(this.children, this.doc)
+    const parsedChildren = await this.parseChildren()
     if (parsedChildren.length === 0) {
       return []
     }

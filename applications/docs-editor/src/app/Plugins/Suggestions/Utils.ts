@@ -2,7 +2,7 @@ import type { ElementNode, LexicalNode, RangeSelection, TextNode } from 'lexical
 import { $addUpdateTag, $isDecoratorNode, $isElementNode, $isRootOrShadowRoot, $isTextNode } from 'lexical'
 import { SuggestionTypesThatAffectWholeParent, SuggestionTypesThatCanBeEmpty, type SuggestionProperties } from './Types'
 import type { SuggestionType } from '@proton/docs-shared/lib/SuggestionType'
-import { $isImageNode } from '../Image/ImageNode'
+import { $isImageNode } from '../Image/isImageNode'
 import type { ProtonNode } from './ProtonNode'
 import { $isSuggestionNode, $createSuggestionNode } from './ProtonNode'
 import { $findMatchingParent, $insertFirst } from '@lexical/utils'
@@ -11,7 +11,7 @@ import type { TableCellNode, TableRowNode } from '@lexical/table'
 import { $isTableNode } from '@lexical/table'
 import { $isHorizontalRuleNode } from '@lexical/react/LexicalHorizontalRuleNode'
 import { $isCodeNode } from '@lexical/code'
-import { ResolveSuggestionsUpdateTag } from './removeSuggestionNodeAndResolveIfNeeded'
+import { ResolveSuggestionsUpdateTag } from './SuggestionConstants'
 import { $isNonInlineLeafElement } from '../../Utils/isNonInlineLeafElement'
 import type { ListItemNode } from '@lexical/list'
 import { $isListItemNode } from '@lexical/list'
@@ -184,25 +184,6 @@ export function $wrapSelectionInSuggestionNode(
   }
 
   return createdMarkNodes
-}
-
-/**
- * Unwraps a given suggestion node i.e. removes the wrapper
- * suggestion node while keeping the children intent
- */
-export function $unwrapSuggestionNode(node: ProtonNode): void {
-  const children = node.getChildren()
-  let target = null
-  for (let i = 0; i < children.length; i++) {
-    const child = children[i]
-    if (target === null) {
-      node.insertBefore(child)
-    } else {
-      target.insertAfter(child)
-    }
-    target = child
-  }
-  node.remove()
 }
 
 /**
