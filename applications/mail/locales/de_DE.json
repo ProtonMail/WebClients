@@ -9839,6 +9839,26 @@
       ],
       "Writes realistic log lines back-to-back, then reads them all back. Shows how write and read/export cost scale with the number of stored entries.": [
         "Schreibt realistische Protokollzeilen direkt hintereinander und liest sie anschließend alle wieder ein. Zeigt, wie Schreib- und Lese-/Exportkosten mit der Anzahl gespeicherter Einträge skalieren."
+      ],
+      "${ count } email": [
+        "${ count } E-Mail",
+        "${ count } E-Mails"
+      ],
+      "${ count } email · ${ names }": [
+        "${ count } E-Mail · ${ names }",
+        "${ count } E-Mails · ${ names }"
+      ],
+      "Apply labels": [
+        "Kategorie übernehmen"
+      ],
+      "Expand logs": [
+        "Protokolle erweitern"
+      ],
+      "Mark as read": [
+        "Als gelesen markieren"
+      ],
+      "Mark as unread": [
+        "Als ungelesen markieren"
       ]
     },
     "info": {
@@ -17231,6 +17251,9 @@
       ],
       "Unstar emails": [
         "E-Mail-Markierung aufheben"
+      ],
+      "Apply labels": [
+        "Kategorie übernehmen"
       ]
     },
     "Title header for keys table": {

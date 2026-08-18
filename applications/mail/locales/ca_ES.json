@@ -9857,6 +9857,26 @@
       ],
       "Writes realistic log lines back-to-back, then reads them all back. Shows how write and read/export cost scale with the number of stored entries.": [
         "Escriu línies de registre realistes una darrere l'altra i després les torna a llegir totes. Mostra com el cost d'escriptura i de lectura/exportació varia segons el nombre d'entrades emmagatzemades."
+      ],
+      "${ count } email": [
+        "${ count } correu",
+        "${ count } correus"
+      ],
+      "${ count } email · ${ names }": [
+        "${ count } correu · ${ names }",
+        "${ count } correus · ${ names }"
+      ],
+      "Apply labels": [
+        "Aplicar-hi les etiquetes"
+      ],
+      "Expand logs": [
+        "Desplega els registres"
+      ],
+      "Mark as read": [
+        "Marca com a llegit"
+      ],
+      "Mark as unread": [
+        "Marca com no llegit"
       ]
     },
     "info": {
@@ -17258,6 +17278,9 @@
       ],
       "Unstar emails": [
         "Deixa de destacar correus electrònics"
+      ],
+      "Apply labels": [
+        "Aplicar etiquetes"
       ]
     },
     "Title header for keys table": {
