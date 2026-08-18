@@ -34,7 +34,7 @@ if (typeof browser !== 'undefined') {
 
         const passChunks = ['chunk.pass-core.main.js'];
         const cryptoChunks = ['chunk.crypto-worker-api.js', ...CRYPTO_CHUNK_FILES];
-        const extraChunks = ['chunk.zip.js', 'chunk.csv.reader.js'];
+        const extraChunks = ['chunk.zip.js', 'chunk.csv.reader.js', 'chunk.zip.reader.js'];
 
         const chunks = localeChunks.concat(passChunks).concat(cryptoChunks).concat(extraChunks);
         globalScope.oninstall = () => {
