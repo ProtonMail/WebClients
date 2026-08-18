@@ -8,6 +8,14 @@ const getRedirectUrl = (value?: string) => {
     return getProduceForkParameters(searchParams).redirectUrl;
 };
 
+const getForkChallenge = (value?: string) => {
+    const searchParams = new URLSearchParams();
+    if (value !== undefined) {
+        searchParams.set('forkChallenge', value);
+    }
+    return getProduceForkParameters(searchParams).forkChallenge;
+};
+
 describe('getProduceForkParameters', () => {
     describe('redirectUrl', () => {
         [
@@ -30,6 +38,34 @@ describe('getProduceForkParameters', () => {
             it(name, () => {
                 expect(getRedirectUrl(value)).toBe(null);
             });
+        });
+    });
+
+    describe('forkChallenge', () => {
+        it('should parse the value', () => {
+            expect(getForkChallenge('a-challenge-value')).toBe('a-challenge-value');
+        });
+
+        it('should keep the value as-is without any validation', () => {
+            expect(getForkChallenge(' <not a challenge> ')).toBe(' <not a challenge> ');
+        });
+
+        it('should be decoded from its url-encoded form', () => {
+            const searchParams = new URLSearchParams('?forkChallenge=a%2Bchallenge%3D%3D');
+            expect(getProduceForkParameters(searchParams).forkChallenge).toBe('a+challenge==');
+        });
+
+        it('should take the first value when repeated', () => {
+            const searchParams = new URLSearchParams('?forkChallenge=first&forkChallenge=second');
+            expect(getProduceForkParameters(searchParams).forkChallenge).toBe('first');
+        });
+
+        it('should be undefined when absent', () => {
+            expect(getForkChallenge()).toBe(undefined);
+        });
+
+        it('should be undefined when empty', () => {
+            expect(getForkChallenge('')).toBe(undefined);
         });
     });
 });

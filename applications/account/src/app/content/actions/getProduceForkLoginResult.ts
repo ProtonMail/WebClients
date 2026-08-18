@@ -104,6 +104,7 @@ export const getProduceForkLoginResult = async ({
                     pushForkSession({
                         ChildClientID: childClientID,
                         Independent: forkParameters.independent ? 1 : 0,
+                        ForkChallenge: forkParameters.forkChallenge,
                     })
                 );
                 const result = await produceExtensionFork({

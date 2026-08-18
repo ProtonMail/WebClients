@@ -49,6 +49,7 @@ export enum ForkSearchParameters {
     PartnerId = 'partnerId',
     UnauthenticatedReturnUrl = 'uru',
     Token = 'token',
+    ForkChallenge = 'forkChallenge',
 }
 
 export enum ExtraSessionForkSearchParameters {
