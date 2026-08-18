@@ -1508,8 +1508,7 @@
         "ნდობა"
       ],
       "Trust key": [
-        "ნდობის გასაღები",
-        "ნდობის გასაღებები"
+        "გასაღების სანდოობა"
       ],
       "Trust public key": [
         "ამ საჯარო გასაღების ნდობა"
@@ -2125,16 +2124,16 @@
         "3 ტბ მეხსიერება"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "წვდომა 15,000+-ზე მეტ სერვერთან 120+-ზე მეტ ქვეყანაში"
+        "წვდომა 15,000+ სერვერთან 120+ ქვეყანაში"
       ],
       "Access advanced AI models": [
         "წვდომა განვითარებულ ხი მოდელებთან"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } და ${ CALENDAR_SHORT_APP_NAME }-ის ყველა პრემიუმ ფუნქცია"
+        "${ MAIL_SHORT_APP_NAME }-ის, ${ PASS_SHORT_APP_NAME }-ის, ${ DRIVE_SHORT_APP_NAME }-ის, ${ VPN_SHORT_APP_NAME }-ისა და ${ CALENDAR_SHORT_APP_NAME }-ის ყველა პრემიუმ ფუნქცია"
       ],
       "Block ads, trackers, and malware": [
-        "რეკლამების, ტრეკერებისა და მავნე პროგრამების დაბლოკვა"
+        "დაბლოკეთ რეკლამები, ტრეკერები და მავნე პროგრამები"
       ],
       "Built-in 2FA authenticator": [
         "ჩაშენებული 2FA ავთენტიკატორი"
@@ -2143,16 +2142,16 @@
         "დააკავშირეთ 10 მოწყობილობა ერთდროულად"
       ],
       "Full chat history with easy search and favorites": [
-        "ჩატის სრული ისტორია მარტივი ძიებითა და ფავორიტებით"
+        "ჩატის სრული ისტორია მარტივი ძიებითა და რჩეულებით"
       ],
       "Individual accounts for 6 users": [
         "ინდივიდუალური ანგარიშები 6 მომხმარებლისთვის"
       ],
       "Individual accounts for you and a partner": [
-        "ინდივიდუალური ანგარიშები თქვენთვის და პარტნიორისთვის"
+        "ინდივიდუალური ანგარიშები თქვენთვის და თქვენი პარტნიორისთვის"
       ],
       "Stronger protection against cyber threats": [
-        "უფრო ძლიერი დაცვა კიბერ საფრთხეებისგან"
+        "უფრო ძლიერი დაცვა კიბერსაფრთხეებისგან"
       ],
       "Unlimited daily chats": [
         "შეუზღუდავი ყოველდღიური ჩატები"
@@ -4201,9 +4200,6 @@
       ],
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "ახალი ელფოსტები ${ senderEmailAddress }-დან თქვენამდე აღარ მოვა და სამუდამოდ წაიშლება."
-      ],
-      "No ads. No trackers.": [
-        "რეკლამების გარეშე. ტრეკერების გარეშე."
       ],
       "No folders": [
         "საქაღალდეების გარეშე"
@@ -7700,7 +7696,8 @@
         "ინიციალიზაცია…"
       ],
       "Insert image": [
-        "გამოსახულების ჩასმა"
+        "გამოსახულების ჩასმა",
+        "გამოსახულებების ჩასმა"
       ],
       "Insert link": [
         "ბმულის ჩასმა"
@@ -7791,9 +7788,6 @@
       ],
       "Low Priority": [
         "დაბალი პრიორიტეტი"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "გახადეთ ${ MAIL_APP_NAME } თქვენი ნაგულისხმევი ელფოსტის აპლიკაცია."
       ],
       "Manage your folders": [
         "თქვენი საქაღალდეების მართვა"
@@ -9698,9 +9692,6 @@
       "Date:": [
         "თარიღი:"
       ],
-      "Deals, offers, marketing emails": [
-        "შეთანხმებები, შეთავაზებები და მარკეტინგის ელფოსტები"
-      ],
       "Delete": [
         "წაშლა"
       ],
@@ -9733,6 +9724,9 @@
       ],
       "Drive": [
         "დისკი"
+      ],
+      "Duration": [
+        "ხანგრძლივობა"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "მაგ Amazon, eBay, Etsy"
@@ -12495,12 +12489,6 @@
       ],
       "No parent folder": [
         "მშობელი საქაღალდის გარეშე"
-      ],
-      "Remind me later": [
-        "მოგვიანებით შემახსენე"
-      ],
-      "Yes, don't show again": [
-        "დიახ, აღარ მაჩვენო"
       ]
     },
     "Option group": {
@@ -13449,9 +13437,6 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "მფლობელი"
-      ],
       "Security Admin": [
         "უსაფრთხოების ადმინისტრატორი"
       ],
@@ -15779,9 +15764,6 @@
       ],
       "Invalid verification code": [
         "შემოწმების არასწორი კოდი"
-      ],
-      "Keep this banner hidden?": [
-        "დავტოვოთ ეს ბანერი დამალული?"
       ],
       "Label as": [
         "დანიშვნა, როგორც"

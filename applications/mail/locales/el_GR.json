@@ -784,6 +784,9 @@
       "Join with ${ MEET_APP_NAME }": [
         "Συμμετάσχετε με ${ MEET_APP_NAME }"
       ],
+      "Keep going": [
+        "Συνεχίστε"
+      ],
       "Keep inbox as before": [
         "Διατηρήστε τα εισερχόμενά σας όπως πριν"
       ],
@@ -1237,6 +1240,9 @@
       "Run on ${ BRAND_NAME } servers": [
         "Εκτέλεση σε διακομιστές ${ BRAND_NAME }"
       ],
+      "Run realistic session": [
+        "Εκτελέστε ρεαλιστική συνεδρία"
+      ],
       "Save": [
         "Αποθήκευση"
       ],
@@ -1459,6 +1465,9 @@
       "Stop generating result": [
         "Διακοπή δημιουργίας αποτελέσματος"
       ],
+      "Stop here": [
+        "Σταμάτησε εδώ"
+      ],
       "Stop marking as read": [
         "Διακοπή σηματοδότησης ως αναγνωσμένο"
       ],
@@ -1526,8 +1535,7 @@
         "Αξιόπιστο"
       ],
       "Trust key": [
-        "Κλειδί Εμπιστοσύνης",
-        "Κλειδιά Εμπιστοσύνης"
+        "Εμπιστοσύνη στο κλειδί"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -1693,6 +1701,9 @@
       ],
       "Why not?": [
         "Γιατί όχι;"
+      ],
+      "Write ${ count } logs": [
+        "Εγγραφή ${ count } αρχείων καταγραφής"
       ],
       "Write for me": [
         "Γράψε για μένα"
@@ -4246,8 +4257,8 @@
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "Νέα μηνύματα από ${ senderEmailAddress } δεν θα αποσταλούν και θα διαγραφούν οριστικά."
       ],
-      "No ads. No trackers.": [
-        "Χωρίς διαφημίσεις. Χωρίς ιχνηλάτες."
+      "No ads. No trackers": [
+        "Χωρίς διαφημίσεις. Χωρίς ιχνηλάτες"
       ],
       "No folders": [
         "Κανένας φάκελος"
@@ -4863,6 +4874,9 @@
       ],
       "Could not find an available name": [
         "Δεν ήταν δυνατή η εύρεση ενός διαθέσιμου ονόματος"
+      ],
+      "Could not grant access to the organization key": [
+        "Δεν ήταν δυνατή η παραχώρηση πρόσβασης στο κλειδί οργανισμού"
       ],
       "Could not load sharing details": [
         "Δεν ήταν δυνατή η φόρτωση των λεπτομερειών κοινής χρήσης"
@@ -7013,6 +7027,14 @@
         "${ contactsLength } επαφή",
         "${ contactsLength } επαφές"
       ],
+      "${ count } email": [
+        "${ count } email",
+        "${ count } emails"
+      ],
+      "${ count } email · ${ names }": [
+        "${ count } email · ${ names }",
+        "${ count } emails · ${ names }"
+      ],
       "${ count } email → ${ dest }": [
         "${ count } email → ${ dest }",
         "${ count } emails → ${ dest }"
@@ -7404,6 +7426,9 @@
       ],
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Τυχόν υποφάκελοι θα διαγραφούν επίσης. Ωστόσο, τα μηνύματα ηλεκτρονικού ταχυδρομείου που είναι αποθηκευμένα σε αυτόν τον φάκελο ${ nameDeleted } δεν θα διαγραφούν και μπορούν να βρεθούν στο φάκελο Όλα τα Mηνύματα."
+      ],
+      "Apply labels": [
+        "Εφαρμογή ετικετών"
       ],
       "Apply to future messages": [
         "Εφαρμογή στα μελλοντικά μηνύματα"
@@ -7869,6 +7894,9 @@
       "Everything in ${ planOrAppName }, plus:": [
         "Τα πάντα από ${ planOrAppName }, συν:"
       ],
+      "Expand logs": [
+        "Ανάπτυξη αρχείων καταγραφής"
+      ],
       "Expand selection": [
         "Ανάπτυξη επιλογής"
       ],
@@ -7986,6 +8014,9 @@
       "How hide-my-email aliases works": [
         "Πώς λειτουργούν τα hide-my-email ψευδώνυμα"
       ],
+      "I have not finished this one yet.": [
+        "Δεν το έχω τελειώσει ακόμα αυτό."
+      ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Στέλνω αυτό το μήνυμα σε έναν χρήστη εκτός ${ MAIL_APP_NAME }."
       ],
@@ -8081,7 +8112,8 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας"
+        "Εισαγωγή εικόνας",
+        "Εισαγωγή εικόνων"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -8184,6 +8216,12 @@
       ],
       "Mark all as read": [
         "Σήμανση όλων ως αναγνωσμένα"
+      ],
+      "Mark as read": [
+        "Επισήμανση ως αναγνωσμένο"
+      ],
+      "Mark as unread": [
+        "Επισήμανση ως μη αναγνωσμένο"
       ],
       "Mastercard SecureCode logo": [
         "λογότυπο Mastercard SecureCode"
@@ -8343,6 +8381,9 @@
       ],
       "Not connected": [
         "Μη συνδεδεμένο"
+      ],
+      "Not supported by this browser": [
+        "Δεν υποστηρίζεται από αυτό το πρόγραμμα περιήγησης"
       ],
       "Number of dedicated servers in the organization": [
         "Αριθμός αποκλειστικών διακομιστών στον οργανισμό"
@@ -8763,6 +8804,9 @@
       "Sorry, this message does not exist or has already expired.": [
         "Λυπούμαστε, αυτό το μήνυμα δεν υπάρχει ή έχει ήδη λήξει."
       ],
+      "Star emails": [
+        "Προσθήκη αστεριού στα ηλεκτρονικά μηνύματα"
+      ],
       "Start sharing it with contacts and use it for online services.": [
         "Ξεκινήστε να το μοιράζεστε με επαφές και χρησιμοποιήστε το για ηλεκτρονικές υπηρεσίες."
       ],
@@ -8945,6 +8989,9 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Αυτή είναι τώρα η ${ defaultEmailAddress } για την αποστολή νέων μηνυμάτων."
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Αυτό απαιτεί πολλά βήματα. Να συνεχίσω;"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Αυτός ο σύνδεσμος οδηγεί σε μια ιστοσελίδα που ενδέχεται να επιχειρήσει να υποκλέψει πληροφορίες σας, όπως κωδικούς πρόσβασης και στοιχεία πιστωτικών καρτών."
@@ -9163,6 +9210,9 @@
       "Unsaved changes": [
         "Μη αποθηκευμένες αλλαγές"
       ],
+      "Unstar emails": [
+        "Αφαίρεση αστεριού από τα ηλεκτρονικά μηνύματα"
+      ],
       "Unsubscribe": [
         "Απεγγραφή"
       ],
@@ -9357,6 +9407,12 @@
       ],
       "Would you like to receive a new verification code?": [
         "Θα θέλατε να λάβετε νέο κωδικό επαλήθευσης;"
+      ],
+      "Writes ${ REALISTIC_ENTRIES } realistic log lines trickling in over a minute, like an actual session, instead of all at once. Takes about a minute to run. Keep this tab focused: frame measurements pause in the background.": [
+        "Γράφει ${ REALISTIC_ENTRIES } ρεαλιστικές γραμμές καταγραφής που κυμαίνονται σταδιακά σε διάστημα ενός λεπτού, σαν μια πραγματική συνεδρία, αντί για όλες μονομιάς. Χρειάζεται περίπου ένα λεπτό για να εκτελεστεί. Διατηρήστε αυτήν την καρτέλα εστιασμένη: οι μετρήσεις καρέ παύουν στο παρασκήνιο."
+      ],
+      "Writes realistic log lines back-to-back, then reads them all back. Shows how write and read/export cost scale with the number of stored entries.": [
+        "Γράφει ρεαλιστικές γραμμές καταγραφής διαδοχικά και στη συνέχεια τις διαβάζει όλες αντίστροφα. Δείχνει πώς το κόστος εγγραφής και ανάγνωσης/εξαγωγής κλιμακώνεται με τον αριθμό των αποθηκευμένων καταχωρήσεων."
       ],
       "Writing assistant": [
         "Βοηθός γραφής"
@@ -10008,6 +10064,9 @@
       "Account holder": [
         "Δικαιούχος λογαριασμού"
       ],
+      "Account holder name": [
+        "Όνομα κατόχου λογαριασμού"
+      ],
       "Actions": [
         "Ενέργειες"
       ],
@@ -10112,6 +10171,9 @@
       ],
       "BTC amount": [
         "Ποσό BTC"
+      ],
+      "Burst write": [
+        "Ριπή εγγραφής"
       ],
       "Calendar": [
         "Ημερολόγιο"
@@ -10224,8 +10286,8 @@
       "Date:": [
         "Ημερομηνία:"
       ],
-      "Deals, offers, marketing emails": [
-        "Συμφωνίες, προσφορές, διαφημιστικά email"
+      "Deals, offers, and marketing emails": [
+        "Συμφωνίες, προσφορές, και διαφημιστικά email"
       ],
       "Delete": [
         "Διαγραφή"
@@ -10262,6 +10324,12 @@
       ],
       "Drive": [
         "Drive"
+      ],
+      "Dropped frames": [
+        "Απορριφθέντα καρέ"
+      ],
+      "Duration": [
+        "Διάρκεια"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "π.χ., Amazon, eBay, Etsy"
@@ -10305,8 +10373,14 @@
       "Enable filter": [
         "Ενεργοποίηση του φίλτρου"
       ],
+      "Encrypt": [
+        "Κρυπτογράφηση"
+      ],
       "Encrypt emails": [
         "Κρυπτογραφημένα E-mails"
+      ],
+      "Entries": [
+        "Συμμετοχές"
       ],
       "Exact host matching": [
         "Ακριβής αντιστοίχιση κεντρικού υπολογιστή"
@@ -10316,6 +10390,9 @@
       ],
       "Expires": [
         "Λήγει"
+      ],
+      "Export size": [
+        "Μέγεθος εξαγωγής"
       ],
       "Extended address": [
         "Εκτεταμένη διεύθυνση"
@@ -10413,6 +10490,9 @@
       "Include application logs in bug report": [
         "Περιλάβετε τα αρχεία καταγραφής εφαρμογής στην αναφορά σφάλματος"
       ],
+      "IndexedDB store": [
+        "IndexedDB αποθηκευτικός χώρος"
+      ],
       "Information": [
         "Πληροφορίες"
       ],
@@ -10457,6 +10537,12 @@
       ],
       "Location": [
         "Τοποθεσία"
+      ],
+      "Log performance": [
+        "Απόδοση αρχείου καταγραφής"
+      ],
+      "Long tasks (≥ 50 ms)": [
+        "Μεγάλες εργασίες (≥ 50 ms)"
       ],
       "Mail debugging information": [
         "Πληροφορίες εντοπισμού σφαλμάτων αλληλογραφίας"
@@ -10647,6 +10733,12 @@
       "Read": [
         "Διαβασμένο"
       ],
+      "Read / export": [
+        "Ανάγνωση / εξαγωγή"
+      ],
+      "Realistic session": [
+        "Ρεαλιστική συνεδρία"
+      ],
       "Recipient": [
         "Παραλήπτης"
       ],
@@ -10748,6 +10840,9 @@
       ],
       "Subscription options": [
         "Επιλογές συνδρομής"
+      ],
+      "Sum of write() calls": [
+        "Άθροισμα κλήσεων write()"
       ],
       "Sync with system": [
         "Συγχρονισμός με το σύστημα"
@@ -10856,6 +10951,15 @@
       ],
       "Without attachment": [
         "Χωρίς συνημμένα"
+      ],
+      "Write": [
+        "Εγγραφή"
+      ],
+      "Write (whole session)": [
+        "Γράψτε (ολόκληρη συνεδρία)"
+      ],
+      "Write-chain drain after last line": [
+        "Αποστράγγιση αλυσίδας εγγραφής μετά την τελευταία γραμμή"
       ],
       "Writing assistant": [
         "Βοηθός γραφής"
@@ -11727,6 +11831,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } βοηθός γραφής"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Βοηθός γραφής ${ LUMO_SHORT_APP_NAME } με εκτεταμένη πρόσβαση"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Βοηθός γραφής ${ LUMO_SHORT_APP_NAME } με περιορισμένη πρόσβαση"
       ],
       "${ n } calendar": [
         "${ n } ημερολόγιο",
@@ -13359,6 +13469,9 @@
       "Invalid security code": [
         "Μη έγκυρος κωδικός ασφαλείας"
       ],
+      "Please enter the account holder name": [
+        "Παρακαλώ εισάγετε το όνομα του κατόχου του λογαριασμού"
+      ],
       "Something went wrong. Please try again later.": [
         "Κάτι πήγε στραβά. Παρακαλούμε δοκιμάστε αργότερα."
       ],
@@ -14042,8 +14155,8 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Ιδιοκτήτης"
+      "Organization Admin": [
+        "Διαχειριστής Οργανισμού"
       ],
       "Security Admin": [
         "Διαχειριστής Ασφαλείας"
@@ -15986,6 +16099,9 @@
       "Apply gift code": [
         "Εφαρμογή κωδικού δώρου"
       ],
+      "Apply labels": [
+        "Εφαρμογή ετικετών"
+      ],
       "Archive all messages?": [
         "Αρχειοθέτηση όλων των μηνυμάτων;"
       ],
@@ -16815,6 +16931,9 @@
       "Snooze:": [
         "Αναβολή:"
       ],
+      "Star emails": [
+        "Προσθήκη αστεριού στα ηλεκτρονικά μηνύματα"
+      ],
       "Start a new import": [
         "Ξεκινήστε μια νέα εισαγωγή"
       ],
@@ -16823,6 +16942,9 @@
       ],
       "Stay for 50% off your next month": [
         "Μείνετε με έκπτωση 50% τον επόμενο μήνα"
+      ],
+      "Still working on it": [
+        "Ακόμα δουλεύω πάνω σε αυτό"
       ],
       "Storage capacity warning": [
         "Προειδοποίηση χωρητικότητας αποθήκευσης"
@@ -16869,6 +16991,9 @@
       ],
       "Two-factor authentication": [
         "Έλεγχος ταυτότητας δύο παραγόντων"
+      ],
+      "Unstar emails": [
+        "Αφαίρεση αστεριού από τα ηλεκτρονικά μηνύματα"
       ],
       "Unsubscribe": [
         "Απεγγραφή"

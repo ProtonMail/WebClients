@@ -2064,7 +2064,7 @@
         "1 个账户"
       ],
       "200 GB storage: 40x your current plan": [
-        "200 GB 存储空间：当前套餐的 40 倍"
+        "200 GB 存储空间：您当前套餐的 40 倍"
       ],
       "6 user accounts": [
         "6 个账户"
@@ -2157,7 +2157,7 @@
         "包含 ${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME } 的所有高级功能"
       ],
       "Block ads, trackers, and malware": [
-        "屏蔽广告、跟踪器和恶意软件"
+        "拦截广告、跟踪器和恶意软件"
       ],
       "Built-in 2FA authenticator": [
         "内置 2FA 验证器"
@@ -2178,7 +2178,7 @@
         "针对网络威胁提供更强有力的保护"
       ],
       "Unlimited daily chats": [
-        "无限聊天次数"
+        "每日无限制聊天"
       ]
     },
     "BF2025: Tooltip": {
@@ -4214,9 +4214,6 @@
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "来自 ${ senderEmailAddress } 的新邮件将被直接删除，不再送达。"
       ],
-      "No ads. No trackers.": [
-        "无广告、无追踪"
-      ],
       "No folders": [
         "无文件夹"
       ],
@@ -4496,13 +4493,13 @@
         "2 TB 共享存储空间"
       ],
       "2 user accounts": [
-        "2 个账户"
+        "2 个用户账户"
       ],
       "All premium features from your current plan": [
-        "您当前套餐的所有高级功能"
+        "您当前套餐的所有付费版服务器功能"
       ],
       "Only": [
-        "仅限"
+        "仅"
       ]
     },
     "Duo offer: Link": {
@@ -8034,9 +8031,6 @@
       "Low Priority": [
         "较低优先顺序"
       ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "将 ${ MAIL_APP_NAME } 设为默认邮箱应用"
-      ],
       "Manage your folders": [
         "管理文件夹"
       ],
@@ -10043,9 +10037,6 @@
       "Date:": [
         "日期："
       ],
-      "Deals, offers, marketing emails": [
-        "优惠、促销、营销邮件"
-      ],
       "Delete": [
         "删除"
       ],
@@ -10081,6 +10072,9 @@
       ],
       "Drive": [
         "云盘"
+      ],
+      "Duration": [
+        "持续时间"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "例如：Amazon, eBay, Etsy"
@@ -12471,7 +12465,7 @@
         "${ pricingTitle } 优惠今天到期！"
       ],
       "Don't show this again": [
-        "不再显示"
+        "不再显示此内容"
       ],
       "Don’t show this again": [
         "不再显示此内容"
@@ -12825,12 +12819,6 @@
       ],
       "No parent folder": [
         "无上层文件夹"
-      ],
-      "Remind me later": [
-        "稍后提醒"
-      ],
-      "Yes, don't show again": [
-        "是的，不再显示"
       ]
     },
     "Option group": {
@@ -13801,9 +13789,6 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "所有者"
-      ],
       "Security Admin": [
         "安全管理员"
       ],
@@ -16069,9 +16054,6 @@
       ],
       "Invalid verification code": [
         "验证码无效"
-      ],
-      "Keep this banner hidden?": [
-        "隐藏横幅？"
       ],
       "Label as": [
         "标为"

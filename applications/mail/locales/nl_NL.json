@@ -1532,8 +1532,7 @@
         "Vertrouwen"
       ],
       "Trust key": [
-        "Sleutel vertrouwen",
-        "Sleutels vertrouwen"
+        "Vertrouwde sleutel"
       ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
@@ -4251,9 +4250,6 @@
       ],
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "Nieuwe e-mails van ${ senderEmailAddress } worden niet meer afgeleverd en zullen permanent verwijderd worden."
-      ],
-      "No ads. No trackers.": [
-        "Geen advertenties. Geen trackers."
       ],
       "No folders": [
         "Geen mappen"
@@ -7875,6 +7871,9 @@
       "Everything in ${ planOrAppName }, plus:": [
         "Alles in ${ planOrAppName }, plus:"
       ],
+      "Expand logs": [
+        "Vouw logboeken uit"
+      ],
       "Expand selection": [
         "Selectie uitbreiden"
       ],
@@ -8090,7 +8089,8 @@
         "Initialiseren..."
       ],
       "Insert image": [
-        "Afbeelding invoegen"
+        "Afbeelding toevoegen",
+        "Afbeeldingen toevoegen"
       ],
       "Insert link": [
         "Koppeling invoegen"
@@ -8181,9 +8181,6 @@
       ],
       "Low Priority": [
         "Lage Prioriteit"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Maak ${ MAIL_APP_NAME } uw standaard e-mailapplicatie."
       ],
       "Manage your folders": [
         "Mappen beheren"
@@ -8772,6 +8769,9 @@
       "Sorry, this message does not exist or has already expired.": [
         "Sorry, dit bericht bestaat niet of is al verlopen."
       ],
+      "Star emails": [
+        "E-mail favoriet maken"
+      ],
       "Start sharing it with contacts and use it for online services.": [
         "Begin het te delen met contacten en gebruik het voor online diensten."
       ],
@@ -9174,6 +9174,9 @@
       ],
       "Unsaved changes": [
         "Niet-opgeslagen wijzigingen"
+      ],
+      "Unstar emails": [
+        "E-mails uit favorieten verwijderen"
       ],
       "Unsubscribe": [
         "Afmelden"
@@ -10236,9 +10239,6 @@
       "Date:": [
         "Datum:"
       ],
-      "Deals, offers, marketing emails": [
-        "Aanbiedingen, acties, marketing-e-mails"
-      ],
       "Delete": [
         "Verwijderen"
       ],
@@ -10274,6 +10274,9 @@
       ],
       "Drive": [
         "Drive"
+      ],
+      "Duration": [
+        "Duur"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "bv. Amazon, eBay, Etsy"
@@ -10469,6 +10472,9 @@
       ],
       "Location": [
         "Locatie"
+      ],
+      "Long tasks (≥ 50 ms)": [
+        "Lange taken (≥ 50 ms)"
       ],
       "Mail debugging information": [
         "Foutopsporingsinformatie voor Mail"
@@ -13069,12 +13075,6 @@
       ],
       "No parent folder": [
         "Geen bovenliggende map"
-      ],
-      "Remind me later": [
-        "Herinner mij later"
-      ],
-      "Yes, don't show again": [
-        "Ja, niet meer weergeven"
       ]
     },
     "Option group": {
@@ -14060,9 +14060,6 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Eigenaar"
-      ],
       "Security Admin": [
         "Beveiligingsbeheerder"
       ],
@@ -16412,9 +16409,6 @@
       "Invalid verification code": [
         "De ingevoerde code is ongeldig"
       ],
-      "Keep this banner hidden?": [
-        "Deze banner verbergen?"
-      ],
       "Label as": [
         "Labellen als"
       ],
@@ -16833,6 +16827,9 @@
       "Snooze:": [
         "Snooze:"
       ],
+      "Star emails": [
+        "E-mail favoriet maken"
+      ],
       "Start a new import": [
         "Start een nieuwe import"
       ],
@@ -16890,6 +16887,9 @@
       ],
       "Two-factor authentication": [
         "Tweestapsverificatie"
+      ],
+      "Unstar emails": [
+        "E-mails uit favorieten verwijderen"
       ],
       "Unsubscribe": [
         "Afmelden"
