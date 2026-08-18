@@ -1,9 +1,10 @@
-import type { selectMnemonicData } from '@proton/account/recovery/mnemonic';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import DisableMnemonicModal from '@proton/components/containers/mnemonic/DisableMnemonicModal';
 import GenerateMnemonicModal from '@proton/components/containers/mnemonic/GenerateMnemonicModal';
 import { useRecoverySettingsTelemetry } from '@proton/components/containers/recovery/recoverySettingsTelemetry';
 import useSearchParamsEffect from '@proton/components/hooks/useSearchParamsEffect';
+
+import type { selectMnemonicData } from './mnemonic';
 
 export const useUpdateMnemonicRecovery = (mnemonicData: ReturnType<typeof selectMnemonicData>) => {
     const { sendRecoverySettingEnabled } = useRecoverySettingsTelemetry();

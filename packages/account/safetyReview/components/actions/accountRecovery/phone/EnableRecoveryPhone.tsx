@@ -1,18 +1,18 @@
 import { c } from 'ttag';
 
-import { toggleRecoveryPhoneReset } from '@proton/account/recovery/accountRecoveryActions';
-import { SafetyReviewCta } from '@proton/account/safetyReview/components/SafetyReviewCta';
-import type { SafetyReviewAllProps } from '@proton/account/safetyReview/components/interface';
-import type { ExtractRecoveryActionItem } from '@proton/account/safetyReview/recoveryState/recoveryState';
 import FormattedPhoneValue from '@proton/components/components/v2/phone/LazyFormattedPhoneValue';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import noop from '@proton/utils/noop';
 
+import { toggleRecoveryPhoneReset } from '../../../../../recovery/accountRecoveryActions';
+import type { ExtractRecoveryActionItem } from '../../../../recoveryState/recoveryState';
+import { SafetyReviewCta } from '../../../SafetyReviewCta';
 import darkRecoveryPhoneIllustration from '../../../assets/recovery-phone-dark.svg';
 import recoveryPhoneIllustration from '../../../assets/recovery-phone.svg';
 import { SafetyReviewCardHeader } from '../../../cards/SafetyReviewCardHeader';
+import type { SafetyReviewAllProps } from '../../../interface';
 
 type Props = SafetyReviewAllProps & {
     recoveryItem: ExtractRecoveryActionItem<'enableRecoveryPhone'>;

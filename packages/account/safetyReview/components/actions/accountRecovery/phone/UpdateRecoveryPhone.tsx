@@ -2,13 +2,6 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { updateRecoveryPhoneValue } from '@proton/account/recovery/accountRecoveryActions';
-import { SafetyReviewCta } from '@proton/account/safetyReview/components/SafetyReviewCta';
-import darkRecoveryPhoneIllustration from '@proton/account/safetyReview/components/assets/recovery-phone-dark.svg';
-import recoveryPhoneIllustration from '@proton/account/safetyReview/components/assets/recovery-phone.svg';
-import { SafetyReviewCardHeader } from '@proton/account/safetyReview/components/cards/SafetyReviewCardHeader';
-import type { SafetyReviewAllProps } from '@proton/account/safetyReview/components/interface';
-import type { ExtractRecoveryActionItem } from '@proton/account/safetyReview/recoveryState/recoveryState.ts';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import PhoneInput from '@proton/components/components/v2/phone/LazyPhoneInput';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
@@ -18,6 +11,14 @@ import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import noop from '@proton/utils/noop';
+
+import { updateRecoveryPhoneValue } from '../../../../../recovery/accountRecoveryActions';
+import type { ExtractRecoveryActionItem } from '../../../../recoveryState/recoveryState';
+import { SafetyReviewCta } from '../../../SafetyReviewCta';
+import darkRecoveryPhoneIllustration from '../../../assets/recovery-phone-dark.svg';
+import recoveryPhoneIllustration from '../../../assets/recovery-phone.svg';
+import { SafetyReviewCardHeader } from '../../../cards/SafetyReviewCardHeader';
+import type { SafetyReviewAllProps } from '../../../interface';
 
 type Props = SafetyReviewAllProps & {
     recoveryItem: ExtractRecoveryActionItem<'verifyRecoveryPhone'>;

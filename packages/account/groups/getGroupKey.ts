@@ -1,14 +1,14 @@
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 
-import type { AddressesState } from '@proton/account/addresses';
-import type { KtState } from '@proton/account/kt';
-import type { UserKeysState } from '@proton/account/userKeys';
-import { userKeysThunk } from '@proton/account/userKeys';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import type { Address, DecryptedAddressKey } from '@proton/shared/lib/interfaces';
 import { getDecryptedGroupAddressKey } from '@proton/shared/lib/keys/groupKeys';
 
+import type { AddressesState } from '../addresses';
+import type { KtState } from '../kt';
 import { type OrganizationKeyState, organizationKeyThunk } from '../organizationKey';
+import type { UserKeysState } from '../userKeys';
+import { userKeysThunk } from '../userKeys';
 
 type RequiredState = AddressesState & UserKeysState & OrganizationKeyState & KtState;
 export const getGroupKey = ({

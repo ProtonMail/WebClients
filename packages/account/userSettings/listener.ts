@@ -1,10 +1,10 @@
 import { createNextState } from '@reduxjs/toolkit';
 
-import { welcomeCompleted } from '@proton/account/welcomeFlags/actions';
 import type { SharedStartListening } from '@proton/redux-shared-store-types';
 import { updateFlags, updateWelcomeFlags } from '@proton/shared/lib/api/settings';
 import noop from '@proton/utils/noop';
 
+import { welcomeCompleted } from '../welcomeFlags/actions';
 import { type UserSettingsState, selectUserSettings, userSettingsActions } from './index';
 
 export const userSettingsListener = <T extends UserSettingsState>(startListening: SharedStartListening<T>) => {

@@ -1,8 +1,5 @@
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 
-import { getKTActivation } from '@proton/account/kt/actions';
-import { userThunk } from '@proton/account/user';
-import { userKeysThunk } from '@proton/account/userKeys';
 import { createKTVerifier } from '@proton/key-transparency/helpers';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities/interface';
@@ -13,7 +10,10 @@ import { type ImportKeyData, type ReactivateKeysResult, importKeysProcess } from
 import { type AddressKeysState, addressKeysThunk } from '../addressKeys/index';
 import { addressThunk, addressesThunk } from '../addresses';
 import type { KtState } from '../kt';
+import { getKTActivation } from '../kt/actions';
 import type { OrganizationKeyState } from '../organizationKey';
+import { userThunk } from '../user';
+import { userKeysThunk } from '../userKeys';
 
 export const importKeysThunk = ({
     importKeyData,

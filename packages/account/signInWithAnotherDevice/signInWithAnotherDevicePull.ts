@@ -1,9 +1,3 @@
-import {
-    type QRCodePayload,
-    deserializeQrCodePayload,
-    getQrCodePayload,
-    serializeQrCodePayload,
-} from '@proton/account/signInWithAnotherDevice/qrCodePayload';
 import { createPreAuthKTVerifier } from '@proton/key-transparency/shared';
 import { getForks, pullForkSession, revoke } from '@proton/shared/lib/api/auth';
 import { getApiError, getIsOfflineError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -24,6 +18,13 @@ import type { Api, KeyTransparencyActivation } from '@proton/shared/lib/interfac
 import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys/getDecryptedUserKeys';
 import { deviceRecovery } from '@proton/shared/lib/recoveryFile/deviceRecoveryHelper';
 import noop from '@proton/utils/noop';
+
+import {
+    type QRCodePayload,
+    deserializeQrCodePayload,
+    getQrCodePayload,
+    serializeQrCodePayload,
+} from './qrCodePayload';
 
 const forkExpirationTime = 9 * MINUTE; // The time it takes until a new fork and QR code is regenerated
 const totalExpirationTime = forkExpirationTime * 3; // The time it takes until the process errors out completely (to avoid spamming the API)

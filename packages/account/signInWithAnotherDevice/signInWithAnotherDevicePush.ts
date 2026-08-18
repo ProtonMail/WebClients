@@ -1,10 +1,12 @@
-import type { QRCodePayload } from '@proton/account/signInWithAnotherDevice/qrCodePayload';
 import { importKey } from '@protontech/crypto/subtle/aesGcm.ts';
+
 import { pushForkSession } from '@proton/shared/lib/api/auth';
 import type { ProduceForkParameters } from '@proton/shared/lib/authentication/fork';
 import { getForkEncryptedBlob } from '@proton/shared/lib/authentication/fork/blob';
 import type { PushForkResponse } from '@proton/shared/lib/authentication/interface';
 import type { Api } from '@proton/shared/lib/interfaces';
+
+import type { QRCodePayload } from './qrCodePayload';
 
 const getKey = async (encodedBytes: string) => {
     try {

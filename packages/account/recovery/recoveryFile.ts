@@ -1,10 +1,6 @@
 import { type UnknownAction, createSelector } from '@reduxjs/toolkit';
 import type { ThunkAction } from 'redux-thunk';
 
-import { selectAddresses } from '@proton/account/addresses';
-import { type UserState, selectUser, userThunk } from '@proton/account/user';
-import { type UserKeysState, selectUserKeys, userKeysThunk } from '@proton/account/userKeys';
-import { type UserSettingsState, selectUserSettings, userSettingsThunk } from '@proton/account/userSettings';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { setNewRecoverySecret } from '@proton/shared/lib/api/settingsRecovery';
@@ -19,7 +15,14 @@ import {
 } from '@proton/shared/lib/recoveryFile/recoveryFile';
 import { getHasRecoveryMessage } from '@proton/shared/lib/recoveryFile/storage';
 
-export const downloadRecoveryFileThunk = (persistPasswordScope: boolean = false): ThunkAction<
+import { selectAddresses } from '../addresses';
+import { type UserState, selectUser, userThunk } from '../user';
+import { type UserKeysState, selectUserKeys, userKeysThunk } from '../userKeys';
+import { type UserSettingsState, selectUserSettings, userSettingsThunk } from '../userSettings';
+
+export const downloadRecoveryFileThunk = (
+    persistPasswordScope: boolean = false
+): ThunkAction<
     Promise<string | undefined>,
     UserState & UserKeysState & UserSettingsState,
     ProtonThunkArguments,

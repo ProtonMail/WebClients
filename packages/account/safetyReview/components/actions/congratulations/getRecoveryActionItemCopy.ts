@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { RecoveryActionItem } from '@proton/account/safetyReview/recoveryState/recoveryState';
+import type { RecoveryActionItem } from '../../../recoveryState/recoveryState';
 
 export const getPositiveRecoveryActionItemCopy = (item: RecoveryActionItem) => {
     switch (item.id) {

@@ -1,17 +1,16 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import { selectEnrichedOutgoingDelegatedAccess } from '@proton/account/delegatedAccess/shared/outgoing/selector';
-import { selectPasswordReminder } from '@proton/account/passwordReminder';
-import { selectAccountRecovery } from '@proton/account/recovery/accountRecovery';
-import { selectMnemonicData } from '@proton/account/recovery/mnemonic';
-import { selectRecoveryFileData } from '@proton/account/recovery/recoveryFile';
-import { selectSessionRecoveryData } from '@proton/account/recovery/sessionRecoverySelectors';
-import { getSafetyReviewRecoveryState } from '@proton/account/safetyReview/telemetry/getSafetyReviewRecoveryState';
-import { type SafetyReviewCohort, getCohort } from '@proton/account/safetyReview/telemetry/utils/getCohort';
-import { selectUser } from '@proton/account/user';
-import { selectUserSettings } from '@proton/account/userSettings';
-
+import { selectEnrichedOutgoingDelegatedAccess } from '../../delegatedAccess/shared/outgoing/selector';
+import { selectPasswordReminder } from '../../passwordReminder';
+import { selectAccountRecovery } from '../../recovery/accountRecovery';
+import { selectMnemonicData } from '../../recovery/mnemonic';
+import { selectRecoveryFileData } from '../../recovery/recoveryFile';
+import { selectSessionRecoveryData } from '../../recovery/sessionRecoverySelectors';
+import { selectUser } from '../../user';
+import { selectUserSettings } from '../../userSettings';
 import { type RecoveryScore, calculateRecoveryScore } from '../recoveryScore/calculateRecoveryScore';
+import { getSafetyReviewRecoveryState } from '../telemetry/getSafetyReviewRecoveryState';
+import { type SafetyReviewCohort, getCohort } from '../telemetry/utils/getCohort';
 
 export type GenericRecoveryItem<T extends string> = {
     id: T;
