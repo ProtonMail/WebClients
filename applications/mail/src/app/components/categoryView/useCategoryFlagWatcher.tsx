@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { useHistory, useLocation } from 'react-router';
 
+import { logger } from '@proton/logger';
 import { conversationCountsThunk } from '@proton/mail/store/counts/conversationCountsSlice';
 import { messageCountsThunk } from '@proton/mail/store/counts/messageCountsSlice';
 import { selectDisabledCategoriesIDs } from '@proton/mail/store/labels/selector';
@@ -71,6 +72,8 @@ export const useCategoryFlagWatcher = () => {
 
             history.replace(setCategoryInCurrentUrl(location, MAILBOX_LABEL_IDS.CATEGORY_DEFAULT));
 
+            logger.info('Redirected to default category: category view access enabled but no category in URL');
+
             // Temporary tracking
             captureInitiativeMessage(
                 SentryMailInitiatives.MAILBOX_REDIRECT,
@@ -91,6 +94,8 @@ export const useCategoryFlagWatcher = () => {
         if (!isCategoryViewEnabled && categoryID) {
             dispatch(reset({ params: { labelID: MAILBOX_LABEL_IDS.INBOX } }));
             history.replace(removeCategoryFromCurrentUrl(location));
+
+            logger.info('Redirected to inbox: category view access disabled but category present in URL');
 
             // Temporary tracking
             captureInitiativeMessage(

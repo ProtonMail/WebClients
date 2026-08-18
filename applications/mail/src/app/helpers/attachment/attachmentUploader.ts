@@ -1,6 +1,7 @@
 import type { PrivateKeyReference, PublicKeyReference } from '@protontech/crypto';
 import { c } from 'ttag';
 
+import { logger } from '@proton/logger';
 import type { MessageState, MessageStateWithData, PublicPrivateKey } from '@proton/mail/store/messages/messagesTypes';
 import { uploadAttachment } from '@proton/shared/lib/api/attachments';
 import removeExifMetadata from '@proton/shared/lib/helpers/exif';
@@ -82,6 +83,8 @@ const uploadFile = (
     uid: string,
     cid = ''
 ): Upload<UploadResult> => {
+    const uploadStartTime = Date.now();
+
     const titleImage = c('Title').t`Image`;
 
     const filename = file.name || `${titleImage} ${getAttachments(message.data).length + 1}`;
@@ -117,6 +120,10 @@ const uploadFile = (
 
             // TODO: We might need to check for other error codes here.
 
+            logger.info(
+                `Attachment uploaded successfully (${shortHumanSize(file.size)}, ${Date.now() - uploadStartTime}ms)`
+            );
+
             return { attachment: result.Attachment, packets, addressID: message.data.AddressID };
         } catch (error: any) {
             const errorMessage = error?.message;
@@ -125,6 +132,11 @@ const uploadFile = (
                 errorMessage === STORAGE_QUOTA_EXCEEDED_INTERNAL_ERROR;
             // Encryption errors are already reported in encryptFile; they bubble up here with the localized "Failed to encrypt attachment" message and should not be re-traced.
             const isEncryptionError = errorMessage === getAttachementEncryptionFailedErrorMessage();
+
+            logger.error(
+                `Failed to upload attachment (${shortHumanSize(file.size)}, ${Date.now() - uploadStartTime}ms)`,
+                error
+            );
 
             if (!isKnownBusinessError && !isEncryptionError) {
                 traceError(error, {

@@ -8,6 +8,8 @@ import { usePageHotkeys } from 'proton-mail/hooks/mailbox/usePageHotkeys';
 import useComposerEvent from 'proton-mail/hooks/useComposerEvent';
 import { useMailPTTMetric } from 'proton-mail/metrics/useMailPTTMetric';
 
+import { useMailNavigationLogger } from './useMailNavigationLogger';
+
 interface Props {
     openShortcutsModal: (value: boolean) => void;
 }
@@ -25,6 +27,9 @@ export const useAppShellSideEffects = ({ openShortcutsModal }: Props) => {
     useMessagesEvents();
 
     useMailPTTMetric();
+
+    // Logs user navigation
+    useMailNavigationLogger();
 
     /**
      * Incoming defaults
