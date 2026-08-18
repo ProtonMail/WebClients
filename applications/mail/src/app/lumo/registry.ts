@@ -4,6 +4,7 @@ import { createLoadGuideDefinition } from '@proton/llm/lib/lumoAgent/engine/load
 
 import { MAIL_RULES } from './rules';
 import { applyLabelsModule } from './skills/organise/applyLabels';
+import { createFolderModule, createLabelModule } from './skills/organise/createEntity';
 import { moveEmailsModule } from './skills/organise/moveEmails';
 import { setLocationReadModule } from './skills/organise/setLocationRead';
 import { setReadModule } from './skills/organise/setRead';
@@ -42,6 +43,8 @@ const MODULES: MailToolModule[] = [
     setReadModule,
     applyLabelsModule,
     setLocationReadModule,
+    createFolderModule,
+    createLabelModule,
 ];
 
 /**
