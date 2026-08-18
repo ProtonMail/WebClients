@@ -21,6 +21,7 @@ export interface LumoAgentDrawerValue {
     cancel: () => void;
     stop: () => void;
     clear: () => void;
+    getDebugTranscript: () => string;
     cardRenderers?: CardRenderers;
     serverToolMeta?: Partial<Record<ServerToolName, ServerToolMeta>>;
 }

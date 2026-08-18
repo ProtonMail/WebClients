@@ -75,6 +75,9 @@ const useLumoAgent = (config: LumoAgentConfig) => {
     const controllerRef = useRef<AbortController | null>(null);
     const confirmResolveRef = useRef<((decision: ConfirmDecision) => void) | null>(null);
     const historyRef = useRef<Turn[]>([]);
+    // What the debug transcript copies. Separate from `historyRef`, which banks prose alone so a
+    // replayed chain never re-reads stale tool results — the tool exchanges only survive here.
+    const transcriptRef = useRef<Turn[]>([]);
     const pendingResumeRef = useRef<{ turns: Turn[]; userText: string; reply: string } | null>(null);
     const replyIdRef = useRef<number | null>(null);
     const replyTextRef = useRef('');
@@ -228,6 +231,30 @@ const useLumoAgent = (config: LumoAgentConfig) => {
         });
     }, [config, sessionKey, nextId, pushItem, finalizeReply]);
 
+    /**
+     * Bank a finished chain's own turns — each round's narration, then its tool calls (id, name,
+     * decrypted arguments) and results — in the order the model produced them. The transport breaks its
+     * loop before banking the closing prose, so what this chain produced minus the narration already in
+     * `chainWork` supplies it: nothing when the last round called a tool rather than speaking. A resumed
+     * chain carries the prose the user already read, and the chain that wrote it banked it, so that
+     * prefix is dropped first. The live bubble is the fallback for a chain whose prose a chip or an
+     * error split mid-round, where the subtraction no longer lines up.
+     */
+    const recordChainWork = useCallback((chainWork: Turn[], carriedReply: string) => {
+        const produced = chainReplyRef.current.slice(carriedReply.length);
+        const narrated = chainWork
+            .filter((turn) => turn.role === ASSISTANT)
+            .map((turn) => turn.content)
+            .join('\n\n');
+        const closing = produced.startsWith(narrated)
+            ? produced.slice(narrated.length).trimStart()
+            : replyTextRef.current;
+        transcriptRef.current.push(...chainWork);
+        if (closing) {
+            transcriptRef.current.push({ role: ASSISTANT, content: closing });
+        }
+    }, []);
+
     const runChain = useCallback(
         async (turns: Turn[], userText: string, carriedReply = '') => {
             setIsBusy(true);
@@ -287,6 +314,10 @@ const useLumoAgent = (config: LumoAgentConfig) => {
                     signal: controller.signal,
                     chunkCallback,
                 });
+                // An abandoned chain's work must not land on the turn that replaced it.
+                if (controllerRef.current === controller) {
+                    recordChainWork(chainTurns.slice(turns.length), carriedReply);
+                }
                 if (stoppedOnBudget) {
                     finalizeReply();
                     if (!chainReplyRef.current) {
@@ -305,6 +336,8 @@ const useLumoAgent = (config: LumoAgentConfig) => {
                 if (error?.name !== 'AbortError') {
                     pushError();
                 }
+                // Known gap: a failed chain's turns stay inside the transport, so the tool exchanges of
+                // the run most worth reporting never reach the transcript.
                 // The stash outlives a failed resume, so the offer to carry on comes back rather than
                 // taking the whole exchange down with it.
                 setIsAtToolLimit(pendingResumeRef.current !== null);
@@ -323,11 +356,24 @@ const useLumoAgent = (config: LumoAgentConfig) => {
             appendReplyDelta,
             clearPendingResume,
             commitHistory,
+            recordChainWork,
             finalizeReply,
             nextId,
             pushItem,
             pushError,
         ]
+    );
+
+    const buildSystemTurn = useCallback(
+        (): Turn => ({
+            role: SYSTEM,
+            content: buildSystemPrompt({
+                definitions: config.definitions,
+                loadedGuides: executor.getLoadedGuides(),
+                productRules: config.productRules,
+            }),
+        }),
+        [config, executor]
     );
 
     const send = useCallback(
@@ -347,19 +393,11 @@ const useLumoAgent = (config: LumoAgentConfig) => {
             discardPendingResume();
             finalizeReply();
             pushItem({ id: nextId(), kind: 'user', text });
+            transcriptRef.current.push({ role: USER, content: text });
 
-            const systemTurn: Turn = {
-                role: SYSTEM,
-                content: buildSystemPrompt({
-                    definitions: config.definitions,
-                    loadedGuides: executor.getLoadedGuides(),
-                    productRules: config.productRules,
-                }),
-            };
-
-            await runChain([systemTurn, ...historyRef.current, { role: USER, content: text }], text);
+            await runChain([buildSystemTurn(), ...historyRef.current, { role: USER, content: text }], text);
         },
-        [config, executor, isBusy, discardPendingResume, finalizeReply, nextId, pushItem, runChain, stop]
+        [buildSystemTurn, isBusy, discardPendingResume, finalizeReply, nextId, pushItem, runChain, stop]
     );
 
     const resume = useCallback(async () => {
@@ -375,11 +413,25 @@ const useLumoAgent = (config: LumoAgentConfig) => {
         await runChain(pending.turns, pending.userText, pending.reply);
     }, [isBusy, finalizeReply, runChain]);
 
+    /**
+     * The model-facing exchange as one copyable string, for a bug report: the system prompt, then each
+     * question, the tool calls and results it drove, and the answer. The diagnostic events the POC
+     * interleaved need an event log this hook does not keep, and stay out of scope.
+     */
+    const getDebugTranscript = useCallback(
+        () =>
+            [buildSystemTurn(), ...transcriptRef.current]
+                .map((turn) => `===== ${turn.role.toUpperCase()} =====\n${turn.content ?? ''}`)
+                .join('\n\n'),
+        [buildSystemTurn]
+    );
+
     const clear = useCallback(() => {
         controllerRef.current?.abort();
         controllerRef.current = null;
         confirmResolveRef.current = null;
         historyRef.current = [];
+        transcriptRef.current = [];
         replyIdRef.current = null;
         replyTextRef.current = '';
         chainReplyRef.current = '';
@@ -401,6 +453,7 @@ const useLumoAgent = (config: LumoAgentConfig) => {
         cancel,
         stop,
         clear,
+        getDebugTranscript,
     };
 };
 
