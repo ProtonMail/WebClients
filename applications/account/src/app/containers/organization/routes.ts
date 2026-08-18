@@ -9,7 +9,6 @@ import {
     getHasExternalMemberCapableB2BPlan,
     getHasMemberCapablePlan,
     getHasVpnB2BPlan,
-    getPlanName,
     hasAnyB2bBundle,
     hasMeet,
     hasMeetBusiness,
@@ -97,7 +96,7 @@ export const getOrganizationAppRoutes = ({
     const isPartOfFamily = getOrganizationDenomination(organization) === 'familyGroup';
     const isPassFamilyPlan = isOrganizationPassFamily(organization);
 
-    const isPassEssentials = getPlanName(subscription) === PLANS.PASS_PRO;
+    const isPassEssentials = organization?.PlanName === PLANS.PASS_PRO;
 
     const hasGroups = (groups?.length ?? 0) > 0;
     const canShowGroupsSection =
