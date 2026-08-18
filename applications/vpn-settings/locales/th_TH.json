@@ -1850,13 +1850,13 @@
     },
     "BF2025: Deal details": {
       "2 TB data storage": [
-        "พื้นที่จัดเก็บข้อมูล 2 TB"
+        "พื้นที่จัดเก็บข้อมูลขนาด 2 TB"
       ],
       "3 TB data storage": [
-        "พื้นที่จัดเก็บข้อมูล 3 TB"
+        "พื้นที่จัดเก็บข้อมูลขนาด 3 TB"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "เข้าถึงเซิร์ฟเวอร์กว่า 15,000 แห่งในกว่า 120 ประเทศ"
+        "เข้าถึงเซิร์ฟเวอร์ 15,000+ เครื่องใน 120+ ประเทศ"
       ],
       "Access advanced AI models": [
         "เข้าถึงโมเดล AI ขั้นสูง"
@@ -1868,30 +1868,30 @@
         "บล็อกโฆษณา ตัวติดตาม และมัลแวร์"
       ],
       "Built-in 2FA authenticator": [
-        "ตัวยืนยันตัวตน 2FA ในตัว"
+        "เครื่องมือยืนยันตัวตน 2FA ในตัว"
       ],
       "Connect 10 devices at once": [
-        "เชื่อมต่ออุปกรณ์ได้ 10 เครื่องพร้อมกัน"
+        "เชื่อมต่อได้ 10 อุปกรณ์พร้อมกัน"
       ],
       "Full chat history with easy search and favorites": [
-        "ประวัติการแชททั้งหมดพร้อมการค้นหาและรายการโปรดที่ใช้งานง่าย"
+        "ประวัติการแชทฉบับเต็มพร้อมระบบค้นหาและรายการโปรดที่ใช้งานง่าย"
       ],
       "Individual accounts for 6 users": [
-        "บัญชีส่วนตัวสำหรับผู้ใช้ 6 ราย"
+        "บัญชีส่วนบุคคลสำหรับผู้ใช้ 6 คน"
       ],
       "Individual accounts for you and a partner": [
-        "บัญชีส่วนตัวสำหรับคุณและคู่หู"
+        "บัญชีส่วนบุคคลสำหรับผู้ใช้และพาร์ทเนอร์"
       ],
       "Stronger protection against cyber threats": [
         "การป้องกันภัยคุกคามทางไซเบอร์ที่แข็งแกร่งยิ่งขึ้น"
       ],
       "Unlimited daily chats": [
-        "แชตได้ไม่จำกัดต่อวัน"
+        "แชทรายวันได้ไม่จำกัด"
       ]
     },
     "BF2025: Tooltip": {
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield ที่ออกแบบมาเป็นพิเศษช่วยปกป้องอุปกรณ์และเพิ่มความเร็วในการท่องเว็บโดยการบล็อกโฆษณา ตัวติดตาม และมัลแวร์"
+        "NetShield ที่ได้รับการออกแบบมาเป็นพิเศษจะช่วยปกป้องอุปกรณ์และเพิ่มความเร็วในการท่องเว็บด้วยการบล็อกโฆษณา ตัวติดตาม และมัลแวร์"
       ]
     },
     "Billing cycle": {
@@ -3584,9 +3584,6 @@
       "Most issues can be solved in a few minutes with our step-by-step guides.": [
         "ปัญหาส่วนใหญ่สามารถแก้ไขได้ภายในไม่กี่นาทีด้วยคู่มือทีละขั้นตอน"
       ],
-      "No ads. No trackers.": [
-        "ไม่มีโฆษณา ไม่มีตัวติดตาม"
-      ],
       "No one in your organization can connect to shared servers.": [
         "ไม่มีใครในองค์กรที่สามารถเชื่อมต่อกับเซิร์ฟเวอร์ที่แชร์ได้"
       ],
@@ -4949,9 +4946,6 @@
       ],
       "Role assignment could not be completed for ${ errors.length } member": [
         "ไม่สามารถมอบหมายบทบาทให้เสร็จสิ้นสำหรับสมาชิก ${ errors.length } ราย"
-      ],
-      "Role assignment could not be completed for ${ failedGroupCount } group": [
-        "ไม่สามารถมอบหมายบทบาทให้เสร็จสิ้นสำหรับกลุ่ม ${ failedGroupCount } กลุ่ม"
       ],
       "Server not found": [
         "ไม่พบเซิร์ฟเวอร์"
@@ -8559,9 +8553,6 @@
       ],
       "The name will be visible to your users while they are signed in.": [
         "ชื่อจะปรากฏให้ผู้ใช้เห็นขณะเข้าสู่ระบบ"
-      ],
-      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
-        "กระบวนการถูกขัดจังหวะสำหรับ ${ pausedCount } กลุ่ม คลิกดำเนินการต่อเพื่อเริ่มการมอบหมายบทบาทใหม่"
       ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
         "เครดิตการแนะนำจะได้รับสูงสุดไม่เกิน 2 เดือนหลังจากการทดลองใช้ของเพื่อนสิ้นสุดลง และเฉพาะกรณีที่เพื่อนสมัครรับข้อมูลแผนบริการเท่านั้น"
@@ -14308,9 +14299,6 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "เจ้าของ"
-      ],
       "Security Admin": [
         "ผู้ดูแลระบบความปลอดภัย"
       ],
@@ -17246,9 +17234,6 @@
       "Group membership": [
         "การเป็นสมาชิกกลุ่ม"
       ],
-      "Group role assignment paused": [
-        "หยุดการมอบหมายบทบาทกลุ่มชั่วคราว"
-      ],
       "Groups": [
         "กลุ่ม"
       ],
@@ -17306,9 +17291,6 @@
       "Information exposed in breach": [
         "ข้อมูลที่ถูกเปิดเผยในการละเมิดข้อมูล"
       ],
-      "Integrations": [
-        "การรวมระบบ"
-      ],
       "Invalid verification code": [
         "รหัสยืนยันไม่ถูกต้อง"
       ],
@@ -17341,9 +17323,6 @@
       ],
       "Minicalendar": [
         "ปฏิทินขนาดเล็ก"
-      ],
-      "Monitoring": [
-        "การตรวจสอบ"
       ],
       "Multi-user support": [
         "รับรองผู้ใช้หลายคน"
@@ -17671,9 +17650,6 @@
       ],
       "Single sign-on": [
         "การลงชื่อเข้าใช้แบบครั้งเดียว"
-      ],
-      "Single-sign on (SSO)": [
-        "การลงชื่อเข้าใช้แบบครั้งเดียว (SSO)"
       ],
       "SMS verification": [
         "การยืนยันผ่าน SMS"

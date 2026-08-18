@@ -1873,16 +1873,16 @@
         "3 ტბ მეხსიერება"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "წვდომა 15,000+-ზე მეტ სერვერთან 120+-ზე მეტ ქვეყანაში"
+        "წვდომა 15,000+ სერვერთან 120+ ქვეყანაში"
       ],
       "Access advanced AI models": [
         "წვდომა განვითარებულ ხი მოდელებთან"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } და ${ CALENDAR_SHORT_APP_NAME }-ის ყველა პრემიუმ ფუნქცია"
+        "${ MAIL_SHORT_APP_NAME }-ის, ${ PASS_SHORT_APP_NAME }-ის, ${ DRIVE_SHORT_APP_NAME }-ის, ${ VPN_SHORT_APP_NAME }-ისა და ${ CALENDAR_SHORT_APP_NAME }-ის ყველა პრემიუმ ფუნქცია"
       ],
       "Block ads, trackers, and malware": [
-        "რეკლამების, ტრეკერებისა და მავნე პროგრამების დაბლოკვა"
+        "დაბლოკეთ რეკლამები, ტრეკერები და მავნე პროგრამები"
       ],
       "Built-in 2FA authenticator": [
         "ჩაშენებული 2FA ავთენტიკატორი"
@@ -1891,16 +1891,16 @@
         "დააკავშირეთ 10 მოწყობილობა ერთდროულად"
       ],
       "Full chat history with easy search and favorites": [
-        "ჩატის სრული ისტორია მარტივი ძიებითა და ფავორიტებით"
+        "ჩატის სრული ისტორია მარტივი ძიებითა და რჩეულებით"
       ],
       "Individual accounts for 6 users": [
         "ინდივიდუალური ანგარიშები 6 მომხმარებლისთვის"
       ],
       "Individual accounts for you and a partner": [
-        "ინდივიდუალური ანგარიშები თქვენთვის და პარტნიორისთვის"
+        "ინდივიდუალური ანგარიშები თქვენთვის და თქვენი პარტნიორისთვის"
       ],
       "Stronger protection against cyber threats": [
-        "უფრო ძლიერი დაცვა კიბერ საფრთხეებისგან"
+        "უფრო ძლიერი დაცვა კიბერსაფრთხეებისგან"
       ],
       "Unlimited daily chats": [
         "შეუზღუდავი ყოველდღიური ჩატები"
@@ -3613,9 +3613,6 @@
       "Most issues can be solved in a few minutes with our step-by-step guides.": [
         "უმეტესი პრობლემა შეიძლება გადაიჭრას რამდენიმე წუთში ჩვენი ნაბიჯ-ნაბიჯ სახელმძღვანელოებით."
       ],
-      "No ads. No trackers.": [
-        "რეკლამების გარეშე. ტრეკერების გარეშე."
-      ],
       "No one in your organization can connect to shared servers.": [
         "თქვენს ორგანიზაციაში გაზიარებულ სერვერებთან დაკავშირება არავის შეუძლია."
       ],
@@ -4996,10 +4993,6 @@
       "Role assignment could not be completed for ${ errors.length } member": [
         "როლის მინიჭება ვერ დასრულდა ${ errors.length } წევრისთვის",
         "როლის მინიჭება ვერ დასრულდა ${ errors.length } წევრისთვის"
-      ],
-      "Role assignment could not be completed for ${ failedGroupCount } group": [
-        "როლის მინიჭება ვერ დასრულდა ${ failedGroupCount } ჯგუფისთვის",
-        "როლის მინიჭება ვერ დასრულდა ${ failedGroupCount } ჯგუფისთვის"
       ],
       "Server not found": [
         "სერვერი ვერ მოიძებნა"
@@ -8689,10 +8682,6 @@
       ],
       "The name will be visible to your users while they are signed in.": [
         "სახელი, რომელიც გამოჩნდება, როცა თქვენი მომხმარებლები სისტემაში შედიან."
-      ],
-      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
-        "პროცესი შეწყდა ${ pausedCount } ჯგუფისთვის. დააწკაპუნეთ გაგრძელებას როლების მინიჭების გასაგრძელებლად.",
-        "პროცესი შეწყდა ${ pausedCount } ჯგუფისთვის. დააწკაპუნეთ გაგრძელებას როლების მინიჭების გასაგრძელებლად."
       ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
         "რეფერალური კრედიტი შეიძლება მოგენიჭოთ თქვენი მეგობრის საცდელი პერიოდის დასრულებიდან 2 თვემდე ვადაში, მხოლოდ იმ შემთხვევაში, თუ თქვენი მეგობარი გამოიწერს პაკეტს."
@@ -14524,9 +14513,6 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "მფლობელი"
-      ],
       "Security Admin": [
         "უსაფრთხოების ადმინისტრატორი"
       ],
@@ -17542,9 +17528,6 @@
       "Group membership": [
         "ჯგუფის წევრობა"
       ],
-      "Group role assignment paused": [
-        "ჯგუფის როლის მინიჭება შეჩერებულია"
-      ],
       "Groups": [
         "ჯგუფები"
       ],
@@ -17603,9 +17586,6 @@
       "Information exposed in breach": [
         "გაჟონილი ინფორმაცია"
       ],
-      "Integrations": [
-        "ინტეგრაციები"
-      ],
       "Invalid verification code": [
         "შემოწმების არასწორი კოდი"
       ],
@@ -17638,9 +17618,6 @@
       ],
       "Minicalendar": [
         "მინიკალენდარი"
-      ],
-      "Monitoring": [
-        "მონიტორინგი"
       ],
       "Multi-user support": [
         "მრავალმომხმარებლიანობის მხარდაჭერა"
@@ -17968,9 +17945,6 @@
       ],
       "Single sign-on": [
         "SSO"
-      ],
-      "Single-sign on (SSO)": [
-        "ერთჯერადი შესვლა (SSO)"
       ],
       "SMS verification": [
         "SMS შეტყობინებით შემოწმება"

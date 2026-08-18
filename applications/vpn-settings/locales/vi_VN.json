@@ -1850,19 +1850,19 @@
     },
     "BF2025: Deal details": {
       "2 TB data storage": [
-        "Dung lượng lưu trữ 2 TB"
+        "Dung lượng lưu trữ dữ liệu 2 TB"
       ],
       "3 TB data storage": [
-        "3 TB dung lượng lưu trữ"
+        "Dung lượng lưu trữ dữ liệu 3 TB"
       ],
       "Access 15,000+ servers in 120+ countries": [
         "Truy cập hơn 15.000 máy chủ tại hơn 120 quốc gia"
       ],
       "Access advanced AI models": [
-        "Truy cập các mô hình AI nâng cao"
+        "Truy cập các mô hình AI tiên tiến"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Tất cả tính năng cao cấp của ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } và ${ CALENDAR_SHORT_APP_NAME }"
+        "Tất cả các tính năng cao cấp của ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } và ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Block ads, trackers, and malware": [
         "Chặn quảng cáo, trình theo dõi và phần mềm độc hại"
@@ -1871,27 +1871,27 @@
         "Trình xác thực 2FA tích hợp"
       ],
       "Connect 10 devices at once": [
-        "Kết nối 10 thiết bị cùng lúc"
+        "Kết nối đồng thời 10 thiết bị"
       ],
       "Full chat history with easy search and favorites": [
-        "Toàn bộ lịch sử trò chuyện với tính năng tìm kiếm dễ dàng và mục yêu thích"
+        "Lịch sử trò chuyện đầy đủ với tính năng tìm kiếm và mục yêu thích dễ dàng"
       ],
       "Individual accounts for 6 users": [
-        "Các tài khoản cá nhân dành cho 6 người dùng"
+        "Tài khoản riêng cho 6 người dùng"
       ],
       "Individual accounts for you and a partner": [
-        "Các tài khoản cá nhân dành cho người dùng và đối tác"
+        "Tài khoản riêng cho bản thân và đối tác"
       ],
       "Stronger protection against cyber threats": [
-        "Khả năng bảo vệ mạnh mẽ hơn trước các mối đe dọa mạng"
+        "Bảo vệ mạnh mẽ hơn trước các mối đe dọa mạng"
       ],
       "Unlimited daily chats": [
-        "Không giới hạn hội thoại hàng ngày"
+        "Trò chuyện hàng ngày không giới hạn"
       ]
     },
     "BF2025: Tooltip": {
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield được thiết kế đặc biệt giúp bảo vệ các thiết bị và tăng tốc độ duyệt web bằng cách chặn quảng cáo, trình theo dõi và phần mềm độc hại."
+        "NetShield được thiết kế đặc biệt giúp bảo vệ thiết bị và tăng tốc độ duyệt web bằng cách chặn quảng cáo, trình theo dõi và phần mềm độc hại."
       ]
     },
     "Billing cycle": {
@@ -3584,9 +3584,6 @@
       "Most issues can be solved in a few minutes with our step-by-step guides.": [
         "Hầu hết sự cố có thể được giải quyết trong vài phút bằng các hướng dẫn từng bước."
       ],
-      "No ads. No trackers.": [
-        "Không quảng cáo. Không trình theo dõi."
-      ],
       "No one in your organization can connect to shared servers.": [
         "Không ai trong tổ chức có thể kết nối với các máy chủ này."
       ],
@@ -4949,9 +4946,6 @@
       ],
       "Role assignment could not be completed for ${ errors.length } member": [
         "Không thể hoàn tất phân bổ vai trò cho ${ errors.length } thành viên"
-      ],
-      "Role assignment could not be completed for ${ failedGroupCount } group": [
-        "Không thể hoàn tất phân bổ vai trò cho ${ failedGroupCount } nhóm"
       ],
       "Server not found": [
         "Không tìm thấy máy chủ"
@@ -8559,9 +8553,6 @@
       ],
       "The name will be visible to your users while they are signed in.": [
         "Sẽ hiển thị tên cho người dùng thấy khi họ đăng nhập."
-      ],
-      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
-        "Quá trình đã bị gián đoạn đối với ${ pausedCount } nhóm. Nhấp vào Tiếp tục để tiếp tục phân bổ vai trò."
       ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
         "Tín dụng giới thiệu có thể được trao tối đa 2 tháng sau khi bản dùng thử kết thúc, chỉ khi bạn bè đăng ký một gói."
@@ -14308,9 +14299,6 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Chủ sở hữu"
-      ],
       "Security Admin": [
         "Quản trị viên bảo mật"
       ],
@@ -17246,9 +17234,6 @@
       "Group membership": [
         "Tư cách thành viên nhóm"
       ],
-      "Group role assignment paused": [
-        "Đã tạm dừng phân bổ vai trò nhóm"
-      ],
       "Groups": [
         "Các nhóm"
       ],
@@ -17306,9 +17291,6 @@
       "Information exposed in breach": [
         "Thông tin bị lộ trong vi phạm"
       ],
-      "Integrations": [
-        "Tích hợp"
-      ],
       "Invalid verification code": [
         "Mã xác minh không hợp lệ"
       ],
@@ -17341,9 +17323,6 @@
       ],
       "Minicalendar": [
         "Lịch nhỏ"
-      ],
-      "Monitoring": [
-        "Giám sát"
       ],
       "Multi-user support": [
         "Hỗ trợ đa-người-dùng"
@@ -17671,9 +17650,6 @@
       ],
       "Single sign-on": [
         "Đăng nhập một lần"
-      ],
-      "Single-sign on (SSO)": [
-        "Đăng nhập một lần (SSO)"
       ],
       "SMS verification": [
         "Xác minh qua SMS"

@@ -1885,13 +1885,13 @@
         "3 Tt tallennustilaa"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "Käytössä yli 15 000 palvelinta yli 120 maassa"
+        "Käytä yli 15 000 palvelinta yli 120 maassa"
       ],
       "Access advanced AI models": [
         "Käytä kehittyneitä tekoälymalleja"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Kaikki palveluiden ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ja ${ CALENDAR_SHORT_APP_NAME } premium-ominaisuudet"
+        "Kaikki sovellusten ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ja ${ CALENDAR_SHORT_APP_NAME } premium-ominaisuudet"
       ],
       "Block ads, trackers, and malware": [
         "Estä mainoksia, seurantoja ja haittaohjelmia"
@@ -1903,13 +1903,13 @@
         "Yhdistä 10 laitetta samanaikaisesti"
       ],
       "Full chat history with easy search and favorites": [
-        "Koko keskusteluhistoria helpolla etsi-toiminnolla ja suosikeilla"
+        "Täysi chat-historia helpolla haulla ja suosikeilla"
       ],
       "Individual accounts for 6 users": [
-        "Henkilökohtaiset tilit 6 käyttäjälle"
+        "Yksilölliset tilit 6 käyttäjälle"
       ],
       "Individual accounts for you and a partner": [
-        "Henkilökohtaiset tilit sinulle ja kumppanille"
+        "Yksilölliset tilit teille ja kumppanillenne"
       ],
       "Stronger protection against cyber threats": [
         "Vahvempi suoja kyberuhkia vastaan"
@@ -1920,7 +1920,7 @@
     },
     "BF2025: Tooltip": {
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Erityisesti suunniteltu NetShield suojaa laitteitasi ja nopeuttaa selaamistasi estämällä mainoksia, seurantoja ja haittaohjelmia."
+        "Erityisesti suunniteltu NetShield suojaa laitteitanne ja nopeuttaa selaustanne estämällä mainokset, seurannan ja haittaohjelmat."
       ]
     },
     "Billing cycle": {
@@ -3622,9 +3622,6 @@
       "Most issues can be solved in a few minutes with our step-by-step guides.": [
         "Useimmat ongelmat voidaan ratkaista muutamassa minuutissa vaiheittaisten oppaidemme avulla."
       ],
-      "No ads. No trackers.": [
-        "Ei mainoksia. Ei seurantaa."
-      ],
       "No one in your organization can connect to shared servers.": [
         "Kukaan organisaatiossasi ei voi yhdistää jaettuihin palvelimiin."
       ],
@@ -5023,10 +5020,6 @@
       "Role assignment could not be completed for ${ errors.length } member": [
         "Roolin määrittämistä ei voitu suorittaa loppuun ${ errors.length } jäsenen osalta",
         "Roolin määrittämistä ei voitu suorittaa loppuun ${ errors.length } jäsenen osalta"
-      ],
-      "Role assignment could not be completed for ${ failedGroupCount } group": [
-        "Roolien määrittämistä ei voitu suorittaa loppuun ${ failedGroupCount } ryhmän osalta",
-        "Roolien määrittämistä ei voitu suorittaa loppuun ${ failedGroupCount } ryhmän osalta"
       ],
       "Server not found": [
         "Palvelinta ei löytynyt"
@@ -8765,10 +8758,6 @@
       ],
       "The name will be visible to your users while they are signed in.": [
         "Nimi näkyy käyttäjillesi, kun he ovat kirjautuneena."
-      ],
-      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
-        "Prosessi keskeytyi ${ pausedCount } ryhmän kohdalla. Napsauta Jatka jatkaaksesi roolien määrittämistä.",
-        "Prosessi keskeytyi ${ pausedCount } ryhmän kohdalla. Napsauta Jatka jatkaaksesi roolien määrittämistä."
       ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
         "Suosittelupalkkio voidaan myöntää enintään 2 kuukauden kuluessa ystäväsi kokeilujakson päättymisestä, mutta vain, jos ystäväsi on tilannut palvelun."
@@ -14637,9 +14626,6 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Omistaja"
-      ],
       "Security Admin": [
         "Turvallisuusvastaava"
       ],
@@ -17655,9 +17641,6 @@
       "Group membership": [
         "Ryhmän jäsenyys"
       ],
-      "Group role assignment paused": [
-        "Ryhmän roolien määrittäminen keskeytetty"
-      ],
       "Groups": [
         "Ryhmät"
       ],
@@ -17719,9 +17702,6 @@
       "Install it manually": [
         "Asenna se manuaalisesti"
       ],
-      "Integrations": [
-        "Integraatiot"
-      ],
       "Invalid verification code": [
         "Virheellinen vahvistuskoodi"
       ],
@@ -17757,9 +17737,6 @@
       ],
       "Minicalendar": [
         "Pienoiskalenteri"
-      ],
-      "Monitoring": [
-        "Valvonta"
       ],
       "Multi-user support": [
         "Usean käyttäjän tuki"
@@ -18090,9 +18067,6 @@
       ],
       "Single sign-on": [
         "Kertakirjautuminen"
-      ],
-      "Single-sign on (SSO)": [
-        "Kertakirjautuminen (SSO)"
       ],
       "SMS verification": [
         "SMS-vahvistus"

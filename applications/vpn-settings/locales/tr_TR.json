@@ -174,6 +174,9 @@
       "Password reminder": [
         "Parola anımsatıcı"
       ],
+      "Password reminders": [
+        "Parola anımsatıcıları"
+      ],
       "Password reset request": [
         "Parola sıfırlama isteği"
       ],
@@ -257,6 +260,9 @@
       ],
       "Verify domain": [
         "Etki alanını doğrula"
+      ],
+      "Verify password": [
+        "Parolayı doğrula"
       ],
       "Video conferencing": [
         "Görüntülü görüşme"
@@ -3890,8 +3896,8 @@
       "Most issues can be solved in a few minutes with our step-by-step guides.": [
         "Adım adım rehberlerimiz ile çoğu sorun birkaç dakika içinde çözülebilir."
       ],
-      "No ads. No trackers.": [
-        "Reklam yok. İzleyici yok."
+      "No ads. No trackers": [
+        "Reklam yok. Etkinlik izleyici yok"
       ],
       "No one in your organization can connect to shared servers.": [
         "Kuruluşunuzdaki hiç kimse paylaşılan sunuculara bağlanamaz."
@@ -4993,6 +4999,9 @@
       "Could not generate the device profile. Please try again.": [
         "Aygıt profili oluşturulamadı. Lütfen yeniden deneyin."
       ],
+      "Could not grant access to the organization key": [
+        "Kuruluş anahtarına erişme izni verilemedi"
+      ],
       "Could not load sharing details": [
         "Paylaşım ayrıntıları yüklenemedi"
       ],
@@ -5461,9 +5470,13 @@
         "${ errors.length } üyenin rol ataması tamamlanamadı",
         "${ errors.length } üyenin rol ataması tamamlanamadı"
       ],
-      "Role assignment could not be completed for ${ failedGroupCount } group": [
-        "${ failedGroupCount } grubun rol ataması tamamlanamadı",
-        "${ failedGroupCount } grubun rol ataması tamamlanamadı"
+      "Role assignment could not be completed for ${ failedCount } group": [
+        "${ failedCount } grubun rol ataması tamamlanamadı",
+        "${ failedCount } grubun rol ataması tamamlanamadı"
+      ],
+      "Role assignment could not be completed for ${ failedCount } user": [
+        "${ failedCount } kullanıcının rol ataması tamamlanamadı",
+        "${ failedCount } kullanıcının rol ataması tamamlanamadı"
       ],
       "Server not found": [
         "Sunucu bulunamadı"
@@ -7923,6 +7936,12 @@
       "Connection data will be available in around 1 hour.": [
         "Bağlantı verileri yaklaşık 1 saat içinde hazır olacak."
       ],
+      "Connects you to your destination country through servers physically located elsewhere.": [
+        "Sizi fiziksel olarak başka yerlerde bulunan sunucular üzerinden hedef ülkenize bağlar."
+      ],
+      "Connects you to your destination country through servers physically located elsewhere: ${ joinedSmartRoutingCountries }.": [
+        "Sizi fiziksel olarak başka yerlerde bulunan sunucular üzerinden hedef ülkenize bağlar: ${ joinedSmartRoutingCountries }."
+      ],
       "Contact our Customer Support team to disable two-factor authentication for your account, or recover your account another way.": [
         "Hesabınız için iki adımlı doğrulamayı kapatmak ya da hesabınızı başka bir yolla kurtarmak için müşteri destek ekibimizle görüşün."
       ],
@@ -8777,6 +8796,9 @@
       "Member": [
         "Üye"
       ],
+      "Members are periodically prompted to verify their ${ BRAND_NAME } password to ensure they don't forget it. Enforcing check-ins prevents members from turning them off.": [
+        "Üyeler parolalarını unutmamaları için düzenli olarak ${ BRAND_NAME } parolalarını doğrulamaya yönlendirilir. Denetimin zorunlu kılınması üyelerin bu özelliği kapatmasını önler."
+      ],
       "Merged": [
         "Birleştirilmiş"
       ],
@@ -9295,6 +9317,9 @@
       "Smart Routed through: ${ joinedCountries }.": [
         "Akıllı yönlendirme ile: ${ joinedCountries }."
       ],
+      "Smart Routing": [
+        "Smart Routing"
+      ],
       "Some ${ BRAND_NAME } apps may not support security keys yet. If you turn off authenticator app 2FA, you may not be able to sign in to those apps.": [
         "Bazı ${ BRAND_NAME } uygulamaları henüz güvenlik anahtarlarını desteklemiyor olabilir. Kimlik doğrulama uygulamasında iki adımlı doğrulamayı kapatırsanız bu uygulamalarda oturum açamayabilirsiniz."
       ],
@@ -9440,9 +9465,9 @@
       "The name will be visible to your users while they are signed in.": [
         "Oturum açtıklarında kullanıcılarınıza görüntülenecek ad."
       ],
-      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
-        "${ pausedCount } grup için işlem duraklatıldı. Rol atamayı sürdürmek için İlerle üzerine tıklayın.",
-        "${ pausedCount } grup için işlem duraklatıldı. Rol atamayı sürdürmek için İlerle üzerine tıklayın."
+      "The process was interrupted for ${ pausedCount } ${ roleAssignmentSource }. Click Continue to resume assigning roles.": [
+        "İşlem, ${ pausedCount } ${ roleAssignmentSource } için duraklatıldı. Rol atamayı sürdüremek için İlerle üzerine tıklayın.",
+        "İşlem, ${ pausedCount } ${ roleAssignmentSource } için duraklatıldı. Rol atamayı sürdüremek için İlerle üzerine tıklayın."
       ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
         "Öneri kredisini, yalnızca arkadaşınız deneme süresi bittikten sonraki 2 ay içinde bir tarifeye abone olursa kazanabilirsiniz."
@@ -9801,6 +9826,9 @@
       "User activated": [
         "Kullanıcı ektinleştirildi"
       ],
+      "User roles assigned": [
+        "Atanmış kullanıcı rolleri"
+      ],
       "Username": [
         "Kullanıcı adı"
       ],
@@ -9950,6 +9978,9 @@
       ],
       "We’ll send a reset code to ${ boldValue }.": [
         "${ boldValue } adresine sıfırlama kodu göndereceğiz."
+      ],
+      "When enabled, members cannot opt out of password check-ins in their own settings.": [
+        "Açıldığında, üyeler kendi ayarlarından parola denetimi özelliğini kapatamaz."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Kimlik hizmeti sağlayıcınızda ${ appName } için SAML özelliğini etkinleştirirken geri çağırma (ACS) adresini ve yayıncı kimliğini kullanmanız istenebilir. Aşağıdaki verileri kopyalayıp kimlik hizmeti sağlayıcı alanlarına yapıştırmanız yeterlidir."
@@ -10552,6 +10583,9 @@
       ],
       "Account holder": [
         "Hesap sahibi"
+      ],
+      "Account holder name": [
+        "Hesap sahibinin adı"
       ],
       "Account storage": [
         "Hesap depolama alanı"
@@ -11282,6 +11316,9 @@
       ],
       "Require 2FA for everyone": [
         "İki adımlı doğrulama herkes için zorunlu olsun"
+      ],
+      "Require password check-ins": [
+        "Parola denetimi zorunlu olsun"
       ],
       "Reveal password": [
         "Parolayı görüntüle"
@@ -12174,6 +12211,9 @@
       ],
       "Resend invite link": [
         "Davet bağlantısını yeniden gönder"
+      ],
+      "Resume role assignment": [
+        "Rol atamasını sürdür"
       ],
       "Revoke sessions": [
         "Oturumları kapat"
@@ -13547,6 +13587,12 @@
       "OpenVPN credentials regenerated": [
         "OpenVPN kimlik doğrulama bilgileri yeniden oluşturuldu"
       ],
+      "Password check-ins are not required anymore": [
+        "Parola denetimi arık zorunlu değil"
+      ],
+      "Password check-ins are now required for all members": [
+        "Parola denetimi özelliği artık tüm üyeler için zorunlu"
+      ],
       "Reminder has been sent": [
         "Anımsatıcı gönderildi"
       ],
@@ -14172,6 +14218,11 @@
         "Bu işlemi gerçekleştirmek için kuruluş anahtarına erişebilmeniz gerekir."
       ]
     },
+    "Payment Method": {
+      "Bank Account": [
+        "Banka hesabı"
+      ]
+    },
     "Payment method option": {
       "Apple Pay": [
         "Apple Pay"
@@ -14376,6 +14427,9 @@
       ],
       "Invalid security code": [
         "Güvenlik kodu geçersiz"
+      ],
+      "Please enter the account holder name": [
+        "Lütfen hesap sahibinin adını yazın"
       ],
       "Something went wrong. Please try again later.": [
         "Bir sorun çıktı. Lütfen bir süre sonra yeniden deneyin."
@@ -15436,8 +15490,8 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Sahibi"
+      "Organization Admin": [
+        "Kuruluş yöneticisi"
       ],
       "Security Admin": [
         "Güvenlik yöneticisi"
@@ -16435,6 +16489,9 @@
       "Backup password": [
         "Yedek parola"
       ],
+      "Because your organization moved you to single sign-on (SSO), **your old password is saved as your backup password**. You can use it to authorize SSO on a new device.": [
+        "Kuruluşunuz sizi tek oturum açma (SSO) özelliğine geçirdiği için **eski parolanız yedek parola olarak kaydedildi**. Bu parolayı yeni bir aygıt üzerinde tek oturum açma izni vermek için kullanabilirsiniz."
+      ],
       "Cancel": [
         "İptal"
       ],
@@ -16481,6 +16538,9 @@
       ],
       "Do you want to remove all other devices than the current one?": [
         "Geçerli aygıt dışındaki diğer tüm aygıtları kaldırmak istiyor musunuz?"
+      ],
+      "Enter it to sign in. It is the same as your old password.": [
+        "Oturum açmak için bunu yazın. Eski parolanız ile aynıdır."
       ],
       "Enter the confirmation code we sent on your other device.": [
         "Diğer aygıtınıza gönderdiğimiz doğrulama kodunu yazın."
@@ -17825,6 +17885,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe yazma yardımcısı"
       ],
+      "${ capitalizedSource } role assignment paused": [
+        "${ capitalizedSource } rol ataması duraklatıldı"
+      ],
       "${ feature } is now active": [
         "${ feature } etkinleştirildi"
       ],
@@ -18527,9 +18590,6 @@
       "Group membership": [
         "Grup üyeliği"
       ],
-      "Group role assignment paused": [
-        "Grup rol ataması duraklatıldı"
-      ],
       "Groups": [
         "Gruplar"
       ],
@@ -18594,9 +18654,6 @@
       "Install it manually": [
         "El ile kur"
       ],
-      "Integrations": [
-        "Bütünleştirmeler"
-      ],
       "Invalid verification code": [
         "Doğrulama kodu geçersiz"
       ],
@@ -18632,9 +18689,6 @@
       ],
       "Minicalendar": [
         "Mini takvim"
-      ],
-      "Monitoring": [
-        "İzleme"
       ],
       "Multi-user support": [
         "Çok kullanıcı desteği"
@@ -18719,6 +18773,9 @@
       ],
       "Password": [
         "Parola"
+      ],
+      "Password check-ins": [
+        "Parola denetimleri"
       ],
       "Password reset options": [
         "Parola sıfırlama seçenekleri"
@@ -18975,7 +19032,7 @@
       "Single sign-on": [
         "Tek oturum açma"
       ],
-      "Single-sign on (SSO)": [
+      "Single sign-on (SSO)": [
         "Tek oturum açma (SSO)"
       ],
       "SMS verification": [
@@ -19498,6 +19555,9 @@
       ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Hesap yönetimi işlemleri yapılırken tüm kuruluş üyelerine bu e-posta adresi görüntülenir."
+      ],
+      "This setting is managed by your organization": [
+        "Bu ayar kuruluşunuz tarafından yönetiliyor"
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Şifrelenmiş parolalar, şifreleri çözülmediği sürece açığa çıksalar bile güvende kalırlar."
