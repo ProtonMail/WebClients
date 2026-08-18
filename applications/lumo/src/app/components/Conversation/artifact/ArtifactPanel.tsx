@@ -1,14 +1,18 @@
 import { useEffect, useRef, useState } from 'react';
+import TextareaAutosize from 'react-textarea-autosize';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { IcArrowDownToSquare } from '@proton/icons/icons/IcArrowDownToSquare';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcChevronLeft } from '@proton/icons/icons/IcChevronLeft';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { IcCross } from '@proton/icons/icons/IcCross';
+import { IcPencil } from '@proton/icons/icons/IcPencil';
 import { IcSquares } from '@proton/icons/icons/IcSquares';
 
+import { useConversationActions } from '../../../providers/ConversationActionsProvider';
 import DropdownMenu from '../../DropdownMenu';
 import { useArtifactContext } from './ArtifactContext';
 import { ArtifactInlineEdit } from './ArtifactInlineEdit';
@@ -82,6 +86,14 @@ interface PanelHeaderProps {
     onSelectArtifact?: (id: string) => void;
     webpageViewMode?: WebpageViewMode;
     onWebpageViewModeChange?: (mode: WebpageViewMode) => void;
+    // Manual (direct, non-AI) editing of the artifact's content — document artifacts only,
+    // and only while viewing the latest version (see `canManuallyEdit` in ArtifactPanel).
+    canManuallyEdit?: boolean;
+    manualEditActive?: boolean;
+    manualEditDirty?: boolean;
+    onStartManualEdit?: () => void;
+    onSaveManualEdit?: () => void;
+    onCancelManualEdit?: () => void;
 }
 
 const getVersionLabel = (versionNumber: number, totalVersions: number) => {
@@ -107,6 +119,12 @@ const PanelHeader = ({
     onSelectArtifact,
     webpageViewMode,
     onWebpageViewModeChange,
+    canManuallyEdit,
+    manualEditActive,
+    manualEditDirty,
+    onStartManualEdit,
+    onSaveManualEdit,
+    onCancelManualEdit,
 }: PanelHeaderProps) => (
     <div className="artifact-panel-header flex flex-row items-center gap-2 px-3 py-2 border-bottom border-weak shrink-0 w-full">
         {type ? (
@@ -140,35 +158,39 @@ const PanelHeader = ({
                 />
             )}
         </span>
-        {!isStreaming && versionCount !== undefined && versionCount > 1 && versionIndex !== undefined && (
-            <div className="flex flex-row items-center gap-1 shrink-0">
-                <Button
-                    icon
-                    shape="ghost"
-                    size="small"
-                    onClick={onPrevVersion}
-                    disabled={versionIndex === 0}
-                    className="artifact-btn"
-                    title={c('collider_2025:Action').t`Previous version`}
-                >
-                    <IcChevronLeft size={4} className="color-hint" />
-                </Button>
-                <span className="text-xs color-hint shrink-0 text-nowrap">
-                    {getVersionLabel(versionIndex + 1, versionCount)}
-                </span>
-                <Button
-                    icon
-                    shape="ghost"
-                    size="small"
-                    onClick={onNextVersion}
-                    disabled={versionIndex === versionCount - 1}
-                    className="artifact-btn"
-                    title={c('collider_2025:Action').t`Next version`}
-                >
-                    <IcChevronRight size={4} className="color-hint" />
-                </Button>
-            </div>
-        )}
+        {!isStreaming &&
+            !manualEditActive &&
+            versionCount !== undefined &&
+            versionCount > 1 &&
+            versionIndex !== undefined && (
+                <div className="flex flex-row items-center gap-1 shrink-0">
+                    <Button
+                        icon
+                        shape="ghost"
+                        size="small"
+                        onClick={onPrevVersion}
+                        disabled={versionIndex === 0}
+                        className="artifact-btn"
+                        title={c('collider_2025:Action').t`Previous version`}
+                    >
+                        <IcChevronLeft size={4} className="color-hint" />
+                    </Button>
+                    <span className="text-xs color-hint shrink-0 text-nowrap">
+                        {getVersionLabel(versionIndex + 1, versionCount)}
+                    </span>
+                    <Button
+                        icon
+                        shape="ghost"
+                        size="small"
+                        onClick={onNextVersion}
+                        disabled={versionIndex === versionCount - 1}
+                        className="artifact-btn"
+                        title={c('collider_2025:Action').t`Next version`}
+                    >
+                        <IcChevronRight size={4} className="color-hint" />
+                    </Button>
+                </div>
+            )}
         <div className="flex flex-row items-center gap-1 shrink-0">
             {/* {!isStreaming && type === 'code' && (
                 <Button
@@ -182,7 +204,7 @@ const PanelHeader = ({
                     {c('collider_2025:Action').t`1:1`}
                 </Button>
             )} */}
-            {!isStreaming && switcherEntries && switcherEntries.length > 1 && onSelectArtifact && (
+            {!isStreaming && !manualEditActive && switcherEntries && switcherEntries.length > 1 && onSelectArtifact && (
                 <DropdownMenu
                     onToggle={() => {}}
                     visibleOnHover={false}
@@ -206,7 +228,7 @@ const PanelHeader = ({
                     }))}
                 />
             )}
-            {!isStreaming && type === 'webpage' && webpageViewMode && onWebpageViewModeChange && (
+            {!isStreaming && !manualEditActive && type === 'webpage' && webpageViewMode && onWebpageViewModeChange && (
                 <div className="artifact-view-toggle flex flex-row items-center rounded-full bg-weak p-0.5 shrink-0">
                     <Button
                         shape={webpageViewMode === 'code' ? 'solid' : 'ghost'}
@@ -230,7 +252,7 @@ const PanelHeader = ({
                     </Button>
                 </div>
             )}
-            {!isStreaming && (
+            {!isStreaming && !manualEditActive && (
                 <>
                     <Button
                         icon
@@ -255,6 +277,35 @@ const PanelHeader = ({
                         title={c('collider_2025:Action').t`Download`}
                     >
                         <IcArrowDownToSquare size={4} className="color-hint" />
+                    </Button>
+                    {canManuallyEdit && onStartManualEdit && (
+                        <Button
+                            icon
+                            shape="ghost"
+                            size="small"
+                            onClick={onStartManualEdit}
+                            className="artifact-btn"
+                            title={c('collider_2025:Action').t`Edit`}
+                        >
+                            <IcPencil size={4} className="color-hint" />
+                        </Button>
+                    )}
+                </>
+            )}
+            {!isStreaming && manualEditActive && (
+                <>
+                    <Button size="small" shape="ghost" color="weak" onClick={onCancelManualEdit}>
+                        {c('collider_2025:Action').t`Cancel`}
+                    </Button>
+                    <Button
+                        size="small"
+                        shape="solid"
+                        color="norm"
+                        disabled={!manualEditDirty}
+                        onClick={onSaveManualEdit}
+                    >
+                        <IcCheckmark size={4} className="mr-1" />
+                        {c('collider_2025:Action').t`Save`}
                     </Button>
                 </>
             )}
@@ -313,13 +364,23 @@ const ArtifactPanel = ({ isGenerating = false }: ArtifactPanelProps) => {
     const [showLineNumbers, setShowLineNumbers] = useState(false);
     const [copySuccess, setCopySuccess] = useState(false);
     const [webpageViewMode, setWebpageViewMode] = useState<WebpageViewMode>('preview');
+    const [manualEditActive, setManualEditActive] = useState(false);
+    const [draftContent, setDraftContent] = useState('');
     const contentRef = useRef<HTMLDivElement>(null);
+    const { handleSaveManualArtifactEdit } = useConversationActions();
 
     // Reset to the live preview whenever the user switches to a different artifact (or version) —
     // a user manually inspecting the source of one webpage shouldn't land back on the source of
     // the next one they open.
     useEffect(() => {
         setWebpageViewMode('preview');
+    }, [selectedArtifact?.id, selectedVersionIndex]);
+
+    // Discard any in-progress manual edit when switching artifacts/versions, so a stale draft
+    // never leaks onto a different artifact.
+    useEffect(() => {
+        setManualEditActive(false);
+        setDraftContent(selectedArtifact?.content ?? '');
     }, [selectedArtifact?.id, selectedVersionIndex]);
 
     if (!selectedArtifact) {
@@ -329,6 +390,38 @@ const ArtifactPanel = ({ isGenerating = false }: ArtifactPanelProps) => {
     const artifact = selectedArtifact;
     const versionCount = selectedId ? registry[selectedId]?.versions.length : undefined;
     const switcherEntries = buildSwitcherEntries(registry, hasUnseenRevision);
+    // Only latest-version document artifacts can be manually edited — editing an older version
+    // would raise branch-fork semantics (overwrite vs. fork the conversation) that aren't solved yet.
+    const canManuallyEdit =
+        artifact.type === 'document' &&
+        !isGenerating &&
+        !isSelectedVersionProvisional &&
+        versionCount !== undefined &&
+        selectedVersionIndex === versionCount - 1;
+    const manualEditDirty = draftContent !== artifact.content && draftContent.trim().length > 0;
+
+    const handleStartManualEdit = () => {
+        setDraftContent(artifact.content);
+        setManualEditActive(true);
+    };
+
+    const handleCancelManualEdit = () => {
+        setDraftContent(artifact.content);
+        setManualEditActive(false);
+    };
+
+    const handleSaveManualEdit = () => {
+        if (!manualEditDirty) {
+            return;
+        }
+        handleSaveManualArtifactEdit({
+            artifactId: artifact.id,
+            artifactType: artifact.type,
+            artifactTitle: artifact.title,
+            newContent: draftContent,
+        });
+        setManualEditActive(false);
+    };
 
     const handleCopy = () => {
         void navigator.clipboard.writeText(artifact.content).then(() => {
@@ -378,23 +471,42 @@ const ArtifactPanel = ({ isGenerating = false }: ArtifactPanelProps) => {
                 onSelectArtifact={openArtifact}
                 webpageViewMode={webpageViewMode}
                 onWebpageViewModeChange={setWebpageViewMode}
+                canManuallyEdit={canManuallyEdit}
+                manualEditActive={manualEditActive}
+                manualEditDirty={manualEditDirty}
+                onStartManualEdit={handleStartManualEdit}
+                onSaveManualEdit={handleSaveManualEdit}
+                onCancelManualEdit={handleCancelManualEdit}
             />
             <div
                 ref={contentRef}
                 className="artifact-content-area relative flex flex-column flex-1 overflow-hidden w-full"
             >
-                <ArtifactContent
-                    artifact={artifact}
-                    showLineNumbers={showLineNumbers}
-                    webpageViewMode={webpageViewMode}
-                />
-                <ArtifactInlineEdit
-                    containerRef={contentRef}
-                    artifactId={artifact.id}
-                    title={artifact.title}
-                    artifactType={artifact.type}
-                    isGenerating={isGenerating || isSelectedVersionProvisional}
-                />
+                {manualEditActive ? (
+                    <TextareaAutosize
+                        value={draftContent}
+                        onChange={(e) => {
+                            setDraftContent(e.target.value);
+                        }}
+                        className="artifact-manual-edit-textarea flex-1 text-sm color-norm bg-norm border-none outline-none--at-all resize-none p-4"
+                        autoFocus
+                    />
+                ) : (
+                    <>
+                        <ArtifactContent
+                            artifact={artifact}
+                            showLineNumbers={showLineNumbers}
+                            webpageViewMode={webpageViewMode}
+                        />
+                        <ArtifactInlineEdit
+                            containerRef={contentRef}
+                            artifactId={artifact.id}
+                            title={artifact.title}
+                            artifactType={artifact.type}
+                            isGenerating={isGenerating || isSelectedVersionProvisional}
+                        />
+                    </>
+                )}
             </div>
         </div>
     );
