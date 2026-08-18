@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { logger } from '@proton/logger';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { MessageState, MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import { deleteMessages } from '@proton/shared/lib/api/messages';
@@ -12,7 +13,6 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { MAIL_LOG_COMPONENT, mailLogger } from 'proton-mail/mailLogger';
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
 import { SAVE_DRAFT_ERROR_CODES } from '../../constants';
@@ -40,20 +40,12 @@ export const useCreateDraft = () => {
                 await call();
             }
 
-            mailLogger.info(MAIL_LOG_COMPONENT.DRAFT_SAVE, 'useCreateDraft success', {
-                localID: message.localID,
-                messageID: newMessage.ID,
-            });
+            logger.info('Draft created successfully');
         } catch (error: any) {
             if (!error.data) {
                 createNotification({ text: c('Error').t`Error while saving draft. Please try again.`, type: 'error' });
             }
-            mailLogger.error(MAIL_LOG_COMPONENT.DRAFT_SAVE, 'useCreateDraft failed', {
-                localID: message.localID,
-                hasData: !!error.data,
-                code: error.data?.Code,
-                error,
-            });
+            logger.error('Failed to create draft', error);
             throw error;
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-90DE62
@@ -83,17 +75,17 @@ const useUpdateDraft = () => {
             if (!shouldPreventEventLoopCallOnCompose) {
                 await call();
             }
+
+            logger.info('Draft saved successfully');
         } catch (error: any) {
-            const logargs = { localID: message.localID, messageID: message.data?.ID };
             if (!error.data) {
                 const isNetwork = isNetworkError(error);
                 const isDecryption = isDecryptionError(error);
 
-                mailLogger.error(MAIL_LOG_COMPONENT.DRAFT_SAVE, 'useUpdateDraft fail, no response', {
-                    ...logargs,
-                    network: isNetwork,
-                    decryption: isDecryption,
-                });
+                logger.error(
+                    `Failed to save draft${isNetwork ? ' (network error)' : isDecryption ? ' (decryption error)' : ''}`,
+                    error
+                );
 
                 const errorMessage = c('Error').t`Error while saving draft. Please try again.`;
                 createNotification({ text: errorMessage, type: 'error' });
@@ -104,19 +96,16 @@ const useUpdateDraft = () => {
             }
 
             if (error.data.Code === SAVE_DRAFT_ERROR_CODES.MESSAGE_ALREADY_SENT) {
-                mailLogger.warn(MAIL_LOG_COMPONENT.DRAFT_SAVE, 'useUpdateDraft fail, draft already sent', logargs);
+                logger.warn('Failed to save draft (already sent)');
                 onMessageAlreadySent?.();
                 throw error;
             }
 
             if (error.data.Code === SAVE_DRAFT_ERROR_CODES.DRAFT_DOES_NOT_EXIST) {
-                mailLogger.warn(MAIL_LOG_COMPONENT.DRAFT_SAVE, 'useUpdateDraft fail, draft does not exist', logargs);
+                logger.warn('Failed to save draft (draft no longer exists)');
                 dispatch(deleteDraft(message.localID));
             } else {
-                mailLogger.warn(MAIL_LOG_COMPONENT.DRAFT_SAVE, 'useUpdateDraft fail, other error', {
-                    ...logargs,
-                    code: error.data.Code,
-                });
+                logger.warn('Failed to save draft', error);
             }
 
             createNotification({
@@ -178,11 +167,7 @@ export const useDeleteDraft = () => {
                 const error = new Error(Response.Error);
                 (error as any).code = Response.Code;
 
-                mailLogger.warn(MAIL_LOG_COMPONENT.DRAFT_SAVE, 'useDeleteDraft, deletion rejected', {
-                    messageID,
-                    code: Response.Code,
-                    serverError: Response.Error,
-                });
+                logger.warn('Failed to delete draft, deletion rejected', error);
                 throw error;
             }
 
