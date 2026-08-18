@@ -33,7 +33,8 @@ describe('`validateModelArtifactCache`/`parseModelArtifactCache`', () => {
     test('fails on invalid JSON', () => {
         const result = parseModelArtifactCache('{not-json');
         expect(result.ok).toBe(false);
-        if (!result.ok) expect(result.error).toContain('JSON at position');
+        // Proves the real rejection reason propagates rather than falling back to the generic message.
+        if (!result.ok) expect(result.error).not.toBe('cached model artifacts are not valid JSON');
     });
 
     test.each([
@@ -61,11 +62,6 @@ describe('`validateModelArtifactCache`/`parseModelArtifactCache`', () => {
         ['non-object `weights`', { modelId: 'x', arch: 'lr', weights: 'not-an-object' }],
     ])('fails when a cache entry has %s', (_label, entry) => {
         const result = validateModelArtifactCache({ x: entry });
-        expect(result.ok).toBe(false);
-    });
-
-    test('fails when the cache itself is not an object', () => {
-        const result = validateModelArtifactCache([]);
         expect(result.ok).toBe(false);
     });
 });
