@@ -190,6 +190,9 @@
       "Cancel": [
         "Avbryt"
       ],
+      "Change password": [
+        "Ändra lösenord"
+      ],
       "Chat with us": [
         "Chatta med oss"
       ],
@@ -3345,8 +3348,8 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Ägare"
+      "Organization Admin": [
+        "Organisationsadministratör"
       ],
       "Security Admin": [
         "Säkerhetsadministratör"
@@ -3490,6 +3493,12 @@
       ]
     },
     "Title": {
+      "Account restricted": [
+        "Kontot begränsat"
+      ],
+      "Account temporarily locked": [
+        "Konto tillfälligt låst"
+      ],
       "Activity events": [
         "Aktivitetshändelser"
       ],

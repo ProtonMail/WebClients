@@ -909,8 +909,14 @@
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Ein E-Mail-Alias funktioniert genau wie eine E-Mail-Adresse. Es verhindert zusätzlich Spam-Nachrichten und versteckt deine richtige E-Mail-Adresse sowie deine Identität."
       ],
+      "Change these passwords immediately": [
+        "Ändern diese Passwörter umgehend"
+      ],
       "Change your passwords": [
         "Ändere deine Passwörter"
+      ],
+      "Check if your passwords have been exposed": [
+        "Prüfe, ob deine Passwörter offengelegt wurden"
       ],
       "Create unique passwords": [
         "Erstelle einzigartige Passwörter"
@@ -965,6 +971,9 @@
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Dieses Konto ist angreifbar, besuche den Dienst und ändere dein Passwort."
+      ],
+      "This login password appears in a data breach. Please visit the service and change the password.": [
+        "Dieses Anmeldepasswort ist von einem Datenleck betroffen. Bitte rufe den Dienst auf und ändere das Passwort."
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Dieser Dienst unterstützt 2FA. Aktiviere sie für zusätzliche Kontosicherheit."
@@ -2256,6 +2265,9 @@
       ],
       "None": [
         "Keine Sperre"
+      ],
+      "None of your saved passwords have appeared in a known data breach.": [
+        "Keines deiner gespeicherten Passwörter ist im Zusammenhang mit einem bekannten Datenleck aufgetaucht."
       ],
       "None selected": [
         "Nichts ausgewählt"
@@ -4849,6 +4861,12 @@
       "Clear clipboard": [
         "Zwischenablage leeren"
       ],
+      "Compromised password": [
+        "Kompromittiertes Passwort"
+      ],
+      "Compromised passwords": [
+        "Kompromittierte Passwörter"
+      ],
       "Confirm extra password": [
         "Zusätzliches Passwort bestätigen"
       ],
@@ -5065,6 +5083,9 @@
       "No access tokens yet": [
         "Noch kein Zugangstoken"
       ],
+      "No compromised passwords": [
+        "Keine kompromittierte Passwörter"
+      ],
       "No excluded items": [
         "Keine ausgeschlossenen Einträge"
       ],
@@ -5252,6 +5273,9 @@
       ],
       "Update available": [
         "Update verfügbar"
+      ],
+      "Upgrade to check for compromised passwords": [
+        "Führe ein Upgrade durch, um nach kompromittierten Passwörtern zu suchen"
       ],
       "URL matching": [
         "URL-Übereinstimmung"

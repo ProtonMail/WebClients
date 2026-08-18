@@ -3525,6 +3525,9 @@
       "Could not find an available name": [
         "Kullanılabilecek bir ad bulunamadı"
       ],
+      "Could not grant access to the organization key": [
+        "Kuruluş anahtarına erişme izni verilemedi"
+      ],
       "Could not load sharing details": [
         "Paylaşım ayrıntıları yüklenemedi"
       ],
@@ -7518,6 +7521,9 @@
       "Account holder": [
         "Hesap sahibi"
       ],
+      "Account holder name": [
+        "Hesap sahibinin adı"
+      ],
       "Active": [
         "Etkin"
       ],
@@ -10788,6 +10794,9 @@
       "Invalid security code": [
         "Güvenlik kodu geçersiz"
       ],
+      "Please enter the account holder name": [
+        "Lütfen hesap sahibinin adını yazın"
+      ],
       "Something went wrong. Please try again later.": [
         "Bir sorun çıktı. Lütfen bir süre sonra yeniden deneyin."
       ],
@@ -11350,8 +11359,8 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Sahibi"
+      "Organization Admin": [
+        "Kuruluş yöneticisi"
       ],
       "Security Admin": [
         "Güvenlik yöneticisi"

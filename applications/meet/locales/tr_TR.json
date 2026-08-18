@@ -190,6 +190,9 @@
       "Cancel": [
         "İptal"
       ],
+      "Change password": [
+        "Parolayı değiştir"
+      ],
       "Chat with us": [
         "Bizimle canlı görüşün"
       ],
@@ -3372,8 +3375,8 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Sahibi"
+      "Organization Admin": [
+        "Kuruluş yöneticisi"
       ],
       "Security Admin": [
         "Güvenlik yöneticisi"
@@ -3517,6 +3520,12 @@
       ]
     },
     "Title": {
+      "Account restricted": [
+        "Hesap kısıtlandı"
+      ],
+      "Account temporarily locked": [
+        "Hesap geçici olarak kilitlendi"
+      ],
       "Activity events": [
         "Etkinlik olayları"
       ],

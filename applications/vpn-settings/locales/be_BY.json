@@ -3695,7 +3695,7 @@
       "Most issues can be solved in a few minutes with our step-by-step guides.": [
         "Большасць праблем могуць быць вырашаны за некалькіх хвілін з дапамогай нашых пакрокавых дапаможнікаў."
       ],
-      "No ads. No trackers.": [
+      "No ads. No trackers": [
         "Без рэкламы і праграм сачэння"
       ],
       "No one in your organization can connect to shared servers.": [
@@ -4815,6 +4815,9 @@
       "Could not generate the device profile. Please try again.": [
         "Немагчыма згенерыраваць профіль прылады. Паспрабуйце яшчэ раз."
       ],
+      "Could not grant access to the organization key": [
+        "Немагчыма даць доступ да ключа арганізацыі"
+      ],
       "Could not load sharing details": [
         "Немагчыма загрузіць абагуленыя падрабязнасці"
       ],
@@ -5294,12 +5297,6 @@
         "Не ўдалося выканаць прызначэнне ролі для ${ errors.length } удзельнікаў",
         "Не ўдалося выканаць прызначэнне ролі для ${ errors.length } удзельнікаў",
         "Не ўдалося выканаць прызначэнне ролі для ${ errors.length } удзельнікаў"
-      ],
-      "Role assignment could not be completed for ${ failedGroupCount } group": [
-        "Не ўдалося выканаць прызначэнне ролі для ${ failedGroupCount } групы",
-        "Не ўдалося выканаць прызначэнне ролі для ${ failedGroupCount } груп",
-        "Не ўдалося выканаць прызначэнне ролі для ${ failedGroupCount } груп",
-        "Не ўдалося выканаць прызначэнне ролі для ${ failedGroupCount } груп"
       ],
       "Server not found": [
         "Сервер не знойдзены"
@@ -9351,12 +9348,6 @@
       "The name will be visible to your users while they are signed in.": [
         "Гэта імя ўбачаць вашы карыстальнікі, калі яны ўвойдуць у сістэму."
       ],
-      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
-        "Працэс быў перарваны для ${ pausedCount } групы. Націсніце \"Працягнуць\", каб узнавіць прызначэнне роляў.",
-        "Працэс быў перарваны для ${ pausedCount } груп. Націсніце \"Працягнуць\", каб узнавіць прызначэнне роляў.",
-        "Працэс быў перарваны для ${ pausedCount } груп. Націсніце \"Працягнуць\", каб узнавіць прызначэнне роляў.",
-        "Працэс быў перарваны для ${ pausedCount } груп. Націсніце \"Працягнуць\", каб узнавіць прызначэнне роляў."
-      ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
         "Узнагарода па рэферальнай праграме ў выглядзе крэдытаў можа быць атрымана на працягу 2 месяцаў пасля завяршэння пробнага перыяду вашага сябра, і толькі калі ваш сябар падпісаўся на тарыфны план."
       ],
@@ -10486,6 +10477,9 @@
       ],
       "Account holder": [
         "Трымальнік уліковага запісу"
+      ],
+      "Account holder name": [
+        "Уладальнік уліковага запісу"
       ],
       "Account storage": [
         "Сховішча ўліковага запісу"
@@ -14391,6 +14385,9 @@
       "Invalid security code": [
         "Памылковы код бяспекі"
       ],
+      "Please enter the account holder name": [
+        "Увядзіце імя ўладальніка ўліковага запісу"
+      ],
       "Something went wrong. Please try again later.": [
         "Нешта пайшло не так. Паспрабуйце яшчэ раз пазней."
       ],
@@ -15466,9 +15463,6 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Уладальнік"
-      ],
       "Security Admin": [
         "Адміністратар бяспекі"
       ],
@@ -18668,9 +18662,6 @@
       "Group membership": [
         "Прыналежнасць да групы"
       ],
-      "Group role assignment paused": [
-        "Прызначэнне групавой ролі прыпынена"
-      ],
       "Groups": [
         "Групы"
       ],
@@ -18737,9 +18728,6 @@
       "Install it manually": [
         "Усталяваць яго ўручную"
       ],
-      "Integrations": [
-        "Інтэграцыі"
-      ],
       "Invalid verification code": [
         "Памылковы код спраўджання"
       ],
@@ -18775,9 +18763,6 @@
       ],
       "Minicalendar": [
         "Мінікаляндар"
-      ],
-      "Monitoring": [
-        "Маніторынг"
       ],
       "Multi-user support": [
         "Падтрымка шматкарыстальніцкага рэжыму"
@@ -19114,9 +19099,6 @@
       ],
       "Single sign-on": [
         "Адзіны ўваход"
-      ],
-      "Single-sign on (SSO)": [
-        "Адзіны ўваход (SSO)"
       ],
       "SMS verification": [
         "Спраўджанне SMS"

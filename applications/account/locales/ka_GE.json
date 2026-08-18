@@ -2565,16 +2565,16 @@
         "3 ტბ მეხსიერება"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "წვდომა 15,000+-ზე მეტ სერვერთან 120+-ზე მეტ ქვეყანაში"
+        "წვდომა 15,000+ სერვერთან 120+ ქვეყანაში"
       ],
       "Access advanced AI models": [
         "წვდომა განვითარებულ ხი მოდელებთან"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } და ${ CALENDAR_SHORT_APP_NAME }-ის ყველა პრემიუმ ფუნქცია"
+        "${ MAIL_SHORT_APP_NAME }-ის, ${ PASS_SHORT_APP_NAME }-ის, ${ DRIVE_SHORT_APP_NAME }-ის, ${ VPN_SHORT_APP_NAME }-ისა და ${ CALENDAR_SHORT_APP_NAME }-ის ყველა პრემიუმ ფუნქცია"
       ],
       "Block ads, trackers, and malware": [
-        "რეკლამების, ტრეკერებისა და მავნე პროგრამების დაბლოკვა"
+        "დაბლოკეთ რეკლამები, ტრეკერები და მავნე პროგრამები"
       ],
       "Built-in 2FA authenticator": [
         "ჩაშენებული 2FA ავთენტიკატორი"
@@ -2583,16 +2583,16 @@
         "დააკავშირეთ 10 მოწყობილობა ერთდროულად"
       ],
       "Full chat history with easy search and favorites": [
-        "ჩატის სრული ისტორია მარტივი ძიებითა და ფავორიტებით"
+        "ჩატის სრული ისტორია მარტივი ძიებითა და რჩეულებით"
       ],
       "Individual accounts for 6 users": [
         "ინდივიდუალური ანგარიშები 6 მომხმარებლისთვის"
       ],
       "Individual accounts for you and a partner": [
-        "ინდივიდუალური ანგარიშები თქვენთვის და პარტნიორისთვის"
+        "ინდივიდუალური ანგარიშები თქვენთვის და თქვენი პარტნიორისთვის"
       ],
       "Stronger protection against cyber threats": [
-        "უფრო ძლიერი დაცვა კიბერ საფრთხეებისგან"
+        "უფრო ძლიერი დაცვა კიბერსაფრთხეებისგან"
       ],
       "Unlimited daily chats": [
         "შეუზღუდავი ყოველდღიური ჩატები"
@@ -5044,9 +5044,6 @@
       "Most issues can be solved in a few minutes with our step-by-step guides.": [
         "უმეტესი პრობლემა შეიძლება გადაიჭრას რამდენიმე წუთში ჩვენი ნაბიჯ-ნაბიჯ სახელმძღვანელოებით."
       ],
-      "No ads. No trackers.": [
-        "რეკლამების გარეშე. ტრეკერების გარეშე."
-      ],
       "No one in your organization can connect to shared servers.": [
         "თქვენს ორგანიზაციაში გაზიარებულ სერვერებთან დაკავშირება არავის შეუძლია."
       ],
@@ -5518,17 +5515,6 @@
       ],
       "Windows 10/11 (x64)": [
         "Windows 10/11 (x64)"
-      ]
-    },
-    "Download link": {
-      ".deb for Debian / Ubuntu": [
-        ".deb Debian/Ubuntu-სთვის"
-      ],
-      ".rpm for Fedora / Red Hat": [
-        ".rpm Fedora / Red Hat-სთვის"
-      ],
-      "You can also download the app through the ${ linkSnapStore }.": [
-        "აპის გადმოწერა ასევე შეგიძლიათ ${ linkSnapStore }-დან."
       ]
     },
     "drive_signup_2023: Title": {
@@ -6382,9 +6368,6 @@
       "Enable auto-renew": [
         "ავტოგანახლების ჩართვა"
       ],
-      "Enter your extra password": [
-        "შეიყვანეთ თქვენი დამატებითი პაროლი"
-      ],
       "Explore plans": [
         "გაეცანით პაკეტებს"
       ],
@@ -6563,9 +6546,6 @@
       ],
       "Unable to recover data": [
         "მონაცემების აღდგენა შეუძლებელია"
-      ],
-      "Unlock ${ PASS_APP_NAME }": [
-        "განბლოკეთ ${ PASS_APP_NAME }"
       ],
       "Upgrade": [
         "ტარიფის აწევა"
@@ -7142,10 +7122,6 @@
       "Role assignment could not be completed for ${ errors.length } member": [
         "როლის მინიჭება ვერ დასრულდა ${ errors.length } წევრისთვის",
         "როლის მინიჭება ვერ დასრულდა ${ errors.length } წევრისთვის"
-      ],
-      "Role assignment could not be completed for ${ failedGroupCount } group": [
-        "როლის მინიჭება ვერ დასრულდა ${ failedGroupCount } ჯგუფისთვის",
-        "როლის მინიჭება ვერ დასრულდა ${ failedGroupCount } ჯგუფისთვის"
       ],
       "Server not found": [
         "სერვერი ვერ მოიძებნა"
@@ -8556,14 +8532,6 @@
         "ბევრი პრობლემა შეიძლება სწრაფად გადაიჭრას ჩვენი დახმარების სახელმძღვანელოებით. თუ მეტი მხარდაჭერა გჭირდებათ, ჩვენი გუნდი მზად არის დაგეხმაროთ."
       ]
     },
-    "Get started checklist instructions": {
-      "${ appName } on App Store": [
-        "${ appName }-ი App Store-ში"
-      ],
-      "${ appName } on Play Store": [
-        "${ appName }-ი Play Store-ში"
-      ]
-    },
     "Gmail forwarding": {
       "Automatically forward": [
         "ავტომატური გადაგზავნა"
@@ -9657,9 +9625,6 @@
       "**Your recovery email alone doesn't allow you to recover your encrypted data** after you reset your password.": [
         "**მხოლოდ თქვენი აღდგენის ელფოსტა არ გაძლევთ დაშიფრული მონაცემების აღდგენის საშუალებას** პაროლის გადატვირთვის შემდეგ."
       ],
-      "**Your recovery methods will be invalidated:** you can generate new recovery data later.": [
-        "**თქვენი აღდგენის მეთოდები გაუქმდება:** ახალი აღდგენის მონაცემების გენერაციას მოგვიანებით შეძლებთ."
-      ],
       "**Your recovery phone alone doesn’t allow you to recover your encrypted data** after you reset your password.": [
         "**მხოლოდ თქვენი აღდგენის ტელეფონი არ გაძლევთ დაშიფრული მონაცემების აღდგენის საშუალებას** პაროლის გადატვირთვის შემდეგ."
       ],
@@ -10641,9 +10606,6 @@
       "Failed to fetch logs.": [
         "ჟურნალის მოთხოვნის შეცდომა."
       ],
-      "Fast and focused. Email and calendar, right on your desktop.": [
-        "სწრაფი და ფოკუსის მქონე. ელფოსტა და კალენდარი პირდაპირ თქვენს სამუშაო მაგიდაზე."
-      ],
       "Featured in": [
         "მოიცავს"
       ],
@@ -11369,9 +11331,6 @@
       ],
       "On": [
         "ჩართ"
-      ],
-      "On Ubuntu?": [
-        "Ubuntu-ზე ბრძანდებით?"
       ],
       "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
         "მას შემდეგ, რაც თქვენს ანგარიშზე წვდომა მიეცემათ, მათ შეეძლებათ წვდომა თქვენს **აღდგენის** პარამეტრებზე და **შეცვალონ თქვენი ${ ACCOUNT_APP_NAME } პაროლი** თქვენთვის."
@@ -12099,10 +12058,6 @@
       ],
       "The name will be visible to your users while they are signed in.": [
         "სახელი, რომელიც გამოჩნდება, როცა თქვენი მომხმარებლები სისტემაში შედიან."
-      ],
-      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
-        "პროცესი შეწყდა ${ pausedCount } ჯგუფისთვის. დააწკაპუნეთ გაგრძელებას როლების მინიჭების გასაგრძელებლად.",
-        "პროცესი შეწყდა ${ pausedCount } ჯგუფისთვის. დააწკაპუნეთ გაგრძელებას როლების მინიჭების გასაგრძელებლად."
       ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
         "რეფერალური კრედიტი შეიძლება მოგენიჭოთ თქვენი მეგობრის საცდელი პერიოდის დასრულებიდან 2 თვემდე ვადაში, მხოლოდ იმ შემთხვევაში, თუ თქვენი მეგობარი გამოიწერს პაკეტს."
@@ -14005,9 +13960,6 @@
       "Backup password": [
         "მარქაფი პაროლი"
       ],
-      "Beta": [
-        "ბეტა"
-      ],
       "Billed at ${ priceYearly } every 12 months.": [
         "გადაიხდით ${ priceYearly } ყოველ 12 თვეში."
       ],
@@ -14230,9 +14182,6 @@
       ],
       "Days of the week": [
         "დღე კვირაში"
-      ],
-      "Deals, offers, marketing emails": [
-        "შეთანხმებები, შეთავაზებები და მარკეტინგის ელფოსტები"
       ],
       "Default email address": [
         "ნაგულისხმევი ელფოსტის მისამართი"
@@ -14998,9 +14947,6 @@
       ],
       "Select an identity provider to start": [
         "დასაწყებად აირჩიეთ იდენტობის პროვაიდერი"
-      ],
-      "Select Linux package format": [
-        "აირჩიეთ Linux-ის პაკეტის ფორმატი"
       ],
       "Select Linux platform": [
         "აირჩიეთ Linux-ის პლატფორმა"
@@ -15770,9 +15716,6 @@
       ],
       "Sign in": [
         "შესვლა"
-      ],
-      "Snap store": [
-        "Snap store"
       ],
       "switch account": [
         "ანგარიშის გადართვა"
@@ -20660,9 +20603,6 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "მფლობელი"
-      ],
       "Security Admin": [
         "უსაფრთხოების ადმინისტრატორი"
       ],
@@ -21253,9 +21193,6 @@
       ]
     },
     "Service provider": {
-      "Add to ${ CALENDAR_APP_NAME }": [
-        "ჩამატება ${ CALENDAR_APP_NAME }-ში"
-      ],
       "Allows you to add a Zoom video conference to any of your calendar events": [
         "საშუალებას გაძლევთ, დაამატოთ Zoom-ის ვიდეოკონფერენცია თქვენი კალენდრის მოვლენებში"
       ]
@@ -24655,9 +24592,6 @@
       "Dashboard": [
         "სამუშაო მაგიდა"
       ],
-      "Data collection": [
-        "მონაცემთა შეგროვება"
-      ],
       "Data recovery": [
         "მონაცემების აღდგენა"
       ],
@@ -25092,9 +25026,6 @@
       "Group membership": [
         "ჯგუფის წევრობა"
       ],
-      "Group role assignment paused": [
-        "ჯგუფის როლის მინიჭება შეჩერებულია"
-      ],
       "Groups": [
         "ჯგუფები"
       ],
@@ -25254,9 +25185,6 @@
       ],
       "Mobile": [
         "მობილური"
-      ],
-      "Monitoring": [
-        "მონიტორინგი"
       ],
       "Monthly": [
         "თვეში ერთხელ"
@@ -25431,9 +25359,6 @@
       ],
       "Priority support:": [
         "პრიორიტეტული მხარდაჭერა:"
-      ],
-      "Privacy": [
-        "კონფიდენციალობა"
       ],
       "Privacy and data collection": [
         "კონფიდენციალურობა და მონაცემების შეგროვება"
@@ -25707,9 +25632,6 @@
       ],
       "Single sign-on": [
         "SSO"
-      ],
-      "Single-sign on (SSO)": [
-        "ერთჯერადი შესვლა (SSO)"
       ],
       "SMS verification": [
         "SMS შეტყობინებით შემოწმება"

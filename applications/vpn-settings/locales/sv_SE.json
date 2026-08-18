@@ -138,6 +138,9 @@
       "Password reminder": [
         "Lösenordspåminnelse"
       ],
+      "Password reminders": [
+        "Lösenordspåminnelser"
+      ],
       "Permanently delete data": [
         "Ta bort data permanent"
       ],
@@ -149,6 +152,9 @@
       ],
       "Protection from cyber attacks": [
         "Skydd mot cyberattacker"
+      ],
+      "Receive misaddressed emails": [
+        "Ta emot feladresserad e-post"
       ],
       "Recovery email address": [
         "E-postadress för återställning"
@@ -206,6 +212,9 @@
       ],
       "Verify domain": [
         "Verifiera domän"
+      ],
+      "Verify password": [
+        "Verifiera lösenord"
       ],
       "Video conferencing": [
         "Videokonferenser"
@@ -2363,6 +2372,9 @@
       "Discover and set up features": [
         "Upptäck och ställ in funktioner"
       ],
+      "Get 50% offer": [
+        "Få 50 % erbjudande"
+      ],
       "Maybe later": [
         "Kanske senare"
       ],
@@ -3829,8 +3841,8 @@
       "Most issues can be solved in a few minutes with our step-by-step guides.": [
         "De flesta problem kan lösas på några minuter med våra steg-för-steg-guider."
       ],
-      "No ads. No trackers.": [
-        "Inga annonser. Inga spårare."
+      "No ads. No trackers": [
+        "Inga annonser. Inga spårare"
       ],
       "No one in your organization can connect to shared servers.": [
         "Ingen i din organisation kan ansluta till delade servrar."
@@ -4914,6 +4926,9 @@
       "Could not generate the device profile. Please try again.": [
         "Kunde inte generera enhetsprofilen. Försök igen."
       ],
+      "Could not grant access to the organization key": [
+        "Kunde inte bevilja åtkomst till organisationsnyckeln"
+      ],
       "Could not load sharing details": [
         "Kunde inte ladda delningsdetaljer"
       ],
@@ -5145,6 +5160,9 @@
       "No emails found to import - the account does not have an inbox": [
         "Inga e-postmeddelanden hittades att importera - kontot har ingen inkorg"
       ],
+      "No file data was received. Please try again.": [
+        "Ingen fildata togs emot. Försök igen."
+      ],
       "No image selected": [
         "Ingen bild vald"
       ],
@@ -5177,6 +5195,9 @@
       ],
       "Organization key must be activated to create non-private users": [
         "Organisationsnyckeln måste aktiveras för att skapa icke-privata användare"
+      ],
+      "Part of the file appears to be corrupted": [
+        "Del av filen verkar vara skadad"
       ],
       "Password is required": [
         "Lösenord är obligatoriskt"
@@ -5309,10 +5330,6 @@
         "Rolltilldelning kunde inte slutföras för ${ errors.length } medlem",
         "Rolltilldelning kunde inte slutföras för ${ errors.length } medlemmar"
       ],
-      "Role assignment could not be completed for ${ failedGroupCount } group": [
-        "Rolltilldelning kunde inte slutföras för ${ failedGroupCount } grupp",
-        "Rolltilldelning kunde inte slutföras för ${ failedGroupCount } grupper"
-      ],
       "Server not found": [
         "Server hittades inte"
       ],
@@ -5412,6 +5429,9 @@
       "The policy name must be between 3 and 40 characters.": [
         "Policynamnet måste vara mellan 3 och 40 tecken."
       ],
+      "The uploaded file does not match the original. Please try again.": [
+        "Den uppladdade filen matchar inte originalet. Försök igen."
+      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Det finns för många mappar i ditt externa konto. Anpassa importen för att ta bort vissa mappar."
       ],
@@ -5429,6 +5449,9 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Detta fält kräver minst ${ minimumLength } tecken."
+      ],
+      "This file has no version available to download": [
+        "Denna fil har ingen version tillgänglig att ladda ner"
       ],
       "This file version could not be uploaded": [
         "Denna filversion kunde inte laddas upp"
@@ -5456,6 +5479,12 @@
       ],
       "Too many requests. Please try again later": [
         "För många förfrågningar. Försök igen senare"
+      ],
+      "Too many server errors, please try again later": [
+        "För många serverfel, försök igen senare"
+      ],
+      "Too many server requests, please try again later": [
+        "För många serverförfrågningar, försök igen senare"
       ],
       "Try again later": [
         "Försök igen senare"
@@ -5498,6 +5527,9 @@
       ],
       "Verification keys are not available": [
         "Verifieringsnycklar är inte tillgängliga"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Verifieringsnycklar för ${ signatureType } är inte tillgängliga"
       ],
       "We couldn’t send a verification code using this method.": [
         "Vi kunde inte skicka en verifieringskod med den här metoden."
@@ -7591,6 +7623,9 @@
       "Awaiting transaction": [
         "Väntar på transaktion"
       ],
+      "Backup password disabled": [
+        "Reservlösenord inaktiverat"
+      ],
       "Balance from your previous subscription": [
         "Saldo från din tidigare prenumeration"
       ],
@@ -9183,10 +9218,6 @@
       "The name will be visible to your users while they are signed in.": [
         "Namnet kommer att vara synligt för dina användare när de är inloggade."
       ],
-      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
-        "Processen avbröts för ${ pausedCount } grupp. Klicka på Fortsätt för att återuppta rolltilldelningen.",
-        "Processen avbröts för ${ pausedCount } grupper. Klicka på Fortsätt för att återuppta rolltilldelningen."
-      ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
         "Värvningskredit kan tilldelas upp till 2 månader efter att din väns provperiod har löpt ut, endast om din vän prenumererade på ett paket."
       ],
@@ -9255,6 +9286,9 @@
       ],
       "This service is not available to users signing in with single sign-on.": [
         "Denna tjänst är inte tillgänglig för användare som loggar in med enkel inloggning."
+      ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "Denna användare kan inte migreras eftersom deras e-postadress inte är tillgänglig på ${ BRAND_NAME }."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Denna användare ansvarar för närvarande för betalningar för din organisation. Genom att degradera denna medlem, kommer du bli ansvarig för betalningar för din organisation."
@@ -9367,8 +9401,14 @@
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "För att hänga med i den senaste utvecklingen av ${ BRAND_NAME }-produkter kan du prenumerera på våra olika e-postmeddelanden och ${ blogLink } då och då."
       ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "För att migrera denna användare, lägg till och verifiera e-postdomänen under ${ domainNamesLink }"
+      ],
       "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
         "För att migrera denna användare, aktivera deras konto i din ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "För att migrera denna användare, aktivera deras konto under ${ usersAddressesLink }."
       ],
       "To migrate this user, enable their address under ${ usersAddressesLink }.": [
         "För att migrera denna användare, aktivera deras adress under ${ usersAddressesLink }."
@@ -9510,6 +9550,9 @@
       ],
       "User activated": [
         "Användare aktiverad"
+      ],
+      "User roles assigned": [
+        "Användarroller tilldelade"
       ],
       "Username": [
         "Användarnamn"
@@ -10256,6 +10299,9 @@
       "Account holder": [
         "Kontoinnehavare"
       ],
+      "Account holder name": [
+        "Kontoinnehavarens namn"
+      ],
       "Account storage": [
         "Kontolagring"
       ],
@@ -10297,6 +10343,9 @@
       ],
       "Allow recovery using a trusted device": [
         "Tillåt återställning med en betrodd enhet"
+      ],
+      "Allow users to set a backup password": [
+        "Tillåt användare att ställa in ett reservlösenord"
       ],
       "Allowed Domain": [
         "Tillåten domän"
@@ -11861,6 +11910,9 @@
       "Resend invite link": [
         "Skicka inbjudningslänk igen"
       ],
+      "Resume role assignment": [
+        "Återuppta rolltilldelning"
+      ],
       "Revoke sessions": [
         "Återkalla sessioner"
       ],
@@ -12108,6 +12160,9 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } skrivassistent"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME } skrivassistent med utökad åtkomst"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
         "${ LUMO_SHORT_APP_NAME } skrivassistent med begränsad åtkomst"
@@ -13843,6 +13898,11 @@
         "Du behöver åtkomst till organisationsnyckeln för att utföra denna åtgärd."
       ]
     },
+    "Payment Method": {
+      "Bank Account": [
+        "Bankkonto"
+      ]
+    },
     "Payment method option": {
       "Apple Pay": [
         "Apple Pay"
@@ -14047,6 +14107,9 @@
       ],
       "Invalid security code": [
         "Ogiltig säkerhetskod"
+      ],
+      "Please enter the account holder name": [
+        "Ange kontoinnehavarens namn"
       ],
       "Something went wrong. Please try again later.": [
         "Något gick fel. Försök igen senare."
@@ -15096,8 +15159,8 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Ägare"
+      "Organization Admin": [
+        "Organisationsadministratör"
       ],
       "Security Admin": [
         "Säkerhetsadministratör"
@@ -18169,9 +18232,6 @@
       "Group membership": [
         "Gruppmedlemskap"
       ],
-      "Group role assignment paused": [
-        "Rolltilldelning för grupp pausad"
-      ],
       "Groups": [
         "Grupper"
       ],
@@ -18233,9 +18293,6 @@
       "Install it manually": [
         "Installera det manuellt"
       ],
-      "Integrations": [
-        "Integrationer"
-      ],
       "Invalid verification code": [
         "Ogiltig verifieringskod"
       ],
@@ -18271,9 +18328,6 @@
       ],
       "Minicalendar": [
         "Minikalender"
-      ],
-      "Monitoring": [
-        "Övervakning"
       ],
       "Multi-user support": [
         "Stöd för flera användare"
@@ -18610,9 +18664,6 @@
       ],
       "Single sign-on": [
         "Enkel inloggning"
-      ],
-      "Single-sign on (SSO)": [
-        "Enkel inloggning (SSO)"
       ],
       "SMS verification": [
         "SMS-verifiering"
@@ -19131,6 +19182,9 @@
       ],
       "User's approximate location (based on their IP address)": [
         "Användares ungefärliga plats (baserat på deras IP-adress)"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Användare som har åtkomst till sitt ${ BRAND_NAME }-konto"
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Användare kommer att se din logga istället för ${ BRAND_NAME }-ikonen när de är inloggade på våra webbappar."

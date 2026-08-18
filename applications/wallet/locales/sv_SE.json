@@ -997,6 +997,9 @@
       "Discover and set up features": [
         "Upptäck och ställ in funktioner"
       ],
+      "Get 50% offer": [
+        "Få 50 % erbjudande"
+      ],
       "Remind me later": [
         "Påminn mig senare"
       ],
@@ -2322,6 +2325,9 @@
       "Contact could not be saved": [
         "Kontakten kunde inte sparas"
       ],
+      "Could not grant access to the organization key": [
+        "Kunde inte bevilja åtkomst till organisationsnyckeln"
+      ],
       "Domain not available, try again later": [
         "Domän inte tillgänglig, försök igen senare"
       ],
@@ -3305,6 +3311,9 @@
       "Account holder": [
         "Kontoinnehavare"
       ],
+      "Account holder name": [
+        "Kontoinnehavarens namn"
+      ],
       "Additional comments": [
         "Ytterligare kommentarer"
       ],
@@ -3810,6 +3819,9 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } skrivassistent"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME } skrivassistent med utökad åtkomst"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
         "${ LUMO_SHORT_APP_NAME } skrivassistent med begränsad åtkomst"
@@ -4934,6 +4946,9 @@
       "Invalid security code": [
         "Ogiltig säkerhetskod"
       ],
+      "Please enter the account holder name": [
+        "Ange kontoinnehavarens namn"
+      ],
       "Something went wrong. Please try again later.": [
         "Något gick fel. Försök igen senare."
       ],
@@ -5208,8 +5223,8 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Ägare"
+      "Organization Admin": [
+        "Organisationsadministratör"
       ],
       "Security Admin": [
         "Säkerhetsadministratör"

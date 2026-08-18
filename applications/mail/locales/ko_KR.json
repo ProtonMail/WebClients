@@ -780,6 +780,9 @@
       "Join with ${ MEET_APP_NAME }": [
         "${ MEET_APP_NAME }로 참여하기"
       ],
+      "Keep going": [
+        "계속하기"
+      ],
       "Keep inbox as before": [
         "기존처럼 받은 편지함 유지"
       ],
@@ -1233,6 +1236,9 @@
       "Run on ${ BRAND_NAME } servers": [
         "${ BRAND_NAME } 서버에서 실행"
       ],
+      "Run realistic session": [
+        "실제 환경 세션 실행"
+      ],
       "Save": [
         "저장"
       ],
@@ -1454,6 +1460,9 @@
       ],
       "Stop generating result": [
         "생성 중단"
+      ],
+      "Stop here": [
+        "여기서 중단"
       ],
       "Stop marking as read": [
         "읽음으로 표시 해제"
@@ -1688,6 +1697,9 @@
       ],
       "Why not?": [
         "왜 안되나요?"
+      ],
+      "Write ${ count } logs": [
+        "${ count }개 로그 쓰기"
       ],
       "Write for me": [
         "나를 위해 작성하기"
@@ -4214,8 +4226,8 @@
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "${ senderEmailAddress }(으)로 부터 새 메일이 전송될 수 없으며 영구 삭제됩니다."
       ],
-      "No ads. No trackers.": [
-        "광고 없음. 트래커 없음."
+      "No ads. No trackers": [
+        "광고 없음. 트래커 없음"
       ],
       "No folders": [
         "폴더 없음"
@@ -4814,11 +4826,17 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "내용 검색을 활성화 할 수 없습니다. 어플리케이션을 재시작하거나 데이터를 제거하십시오."
       ],
+      "Copy operation aborted": [
+        "복사 작업 중단됨"
+      ],
       "Copying item to a non-folder is not allowed": [
         "폴더가 없는 곳에 항목을 복사하는 것이 허용되지 않습니다"
       ],
       "Could not find an available name": [
         "사용 가능한 이름을 찾을 수 없음"
+      ],
+      "Could not grant access to the organization key": [
+        "조직 키의 접근 권한을 부여할 수 없습니다"
       ],
       "Could not load sharing details": [
         "공유 상세 정보를 불러올 수 없음"
@@ -4910,6 +4928,9 @@
       "Error while uploading attachments. Message is not sent.": [
         "첨부 파일을 업로드하던 중 오류가 발생했습니다. 메시지는 전송되지 않습니다."
       ],
+      "Expiration date cannot be in the past": [
+        "만료일은 과거일 수 없습니다"
+      ],
       "Failed loading group members": [
         "그룹 구성원을 로드하는 데 실패했습니다"
       ],
@@ -4931,6 +4952,9 @@
       "Failed to decrypt node key: ${ message }": [
         "노드 키 복호화 실패: ${ message }"
       ],
+      "Failed to decrypt revision metadata": [
+        "수정 메타데이터를 복호화할 수 없음"
+      ],
       "Failed to encrypt attachment. Please try again.": [
         "첨부 파일을 암호화하지 못했습니다. 다시 시도해주세요."
       ],
@@ -4951,6 +4975,9 @@
       ],
       "File download failed due to empty response": [
         "응답이 비어있어 파일을 다운로드할 수 없습니다."
+      ],
+      "File has no revision": [
+        "파일에 수정 사항 없음"
       ],
       "Filter with this name already exists": [
         "이 이름의 필터가 이미 있습니다"
@@ -5062,6 +5089,9 @@
       ],
       "Missing signature for ${ signatureType }": [
         "${ signatureType }에 대한 서명 유실"
+      ],
+      "Move operation aborted": [
+        "이동 작업 중단됨"
       ],
       "Moving item to a non-folder is not allowed": [
         "폴더가 없는 곳에 항목을 이동하는 것이 허용되지 않습니다"
@@ -5279,6 +5309,9 @@
       "Renaming root item is not allowed": [
         "상위 항목에 대한 이름 변경은 허용되지 않습니다."
       ],
+      "Request aborted": [
+        "요청 중지됨"
+      ],
       "Request timed out": [
         "요청 시간이 초과되었습니다."
       ],
@@ -5450,6 +5483,9 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "이 필드에는 ${ minimumLength }자 이상이 필요합니다."
       ],
+      "This file has missing crypto material": [
+        "이 파일에 필요한 암호화 키가 누락되었습니다"
+      ],
       "This file has no version available to download": [
         "이 파일에 다운로드할 수 있는 사용 가능한 버전이 없습니다."
       ],
@@ -5536,6 +5572,9 @@
       ],
       "You can create public links for your own files only": [
         "내가 소유한 파일만 공개 링크를 생성할 수 있습니다."
+      ],
+      "You can only leave items that are shared with you": [
+        "나와 공유된 항목에는 나갈 수만 있습니다."
       ],
       "You can only upload a new version to a file": [
         "새로운 버전의 파일만 업로드할 수 있습니다."
@@ -6957,6 +6996,9 @@
       "${ groupCounts } group found": [
         "${ groupCounts } 그룹 찾음"
       ],
+      "${ IDEAL_BRAND_NAME } mark": [
+        "${ IDEAL_BRAND_NAME } 마크"
+      ],
       "${ issues.length } issue during import:": [
         "불러오기 중 ${ issues.length } 문제 발생:"
       ],
@@ -7319,6 +7361,9 @@
       ],
       "Attention required": [
         "주의 필요"
+      ],
+      "Author is not provided on public link": [
+        "작성자가 공개 링크에서 제공되지 않았습니다"
       ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "30일 이상 전에 휴지통 및 스팸으로 이동한 이메일을 자동으로 삭제합니다."
@@ -7818,6 +7863,9 @@
       "How hide-my-email aliases works": [
         "Hide-my-email 별칭 동작 원리"
       ],
+      "I have not finished this one yet.": [
+        "아직 마무리하지 않았어요."
+      ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "${ MAIL_APP_NAME }을 사용하고 있지 않는 유저에게 이 메시지를 보내고 있습니다."
       ],
@@ -8004,9 +8052,6 @@
       "Low Priority": [
         "중요도 낮음"
       ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "${ MAIL_APP_NAME }을 기본 이메일 애플리케이션으로 설정하세요."
-      ],
       "Manage your folders": [
         "폴더 관리"
       ],
@@ -8174,6 +8219,9 @@
       ],
       "Not connected": [
         "연결되지 않음"
+      ],
+      "Not supported by this browser": [
+        "이 브라우저에서 사용할 수 없음"
       ],
       "Number of dedicated servers in the organization": [
         "조직의 전용 서버 수"
@@ -8382,6 +8430,9 @@
       "Read ${ count } message in this thread": [
         "이 스레드에서 ${ count }개 메시지 읽기"
       ],
+      "Read open email “${ subject }”": [
+        "열린 이메일 \"${ subject }\" 읽기"
+      ],
       "Read your ${ count } filter": [
         "${ count }개 필터 읽기"
       ],
@@ -8462,6 +8513,21 @@
       ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "검색이 너무 오래 걸리나요? 이 검색 세션에서 ${ dropdownButton } 또는 ${ toggleOffButton }."
+      ],
+      "Searched ${ targetName }": [
+        "${ targetName } 검색 결과"
+      ],
+      "Searched for mail from ${ sender }": [
+        "${ sender }님이 보낸 메일 검색 결과"
+      ],
+      "Searched for mail to ${ recipient }": [
+        "${ recipient }에 보낸 메일 검색"
+      ],
+      "Searched for “${ keyword }”": [
+        "\"${ keyword }\" 검색 결과"
+      ],
+      "Searched your mail": [
+        "내 메일 검색 결과"
       ],
       "Secure your files with encrypted cloud storage for free, today.": [
         "암호화 클라우드 스토리지에 파일을 안전하게 보호하세요, 무료로 오늘 바로 시작하세요."
@@ -8567,6 +8633,9 @@
       ],
       "Sorry, this message does not exist or has already expired.": [
         "죄송합니다. 이 메시지가 존재하지 않거나 이미 만료되었습니다."
+      ],
+      "Star emails": [
+        "이메일 별표 표시"
       ],
       "Start sharing it with contacts and use it for online services.": [
         "연락처에 있는 사람들과 공유하고 온라인 서비스에서 사용하세요."
@@ -8703,6 +8772,9 @@
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "그들이 당신의 진짜 이메일 주소를 모른다면 스팸 메일을 보낼 수 없습니다. Hide-my-email 별칭으로 편지함을 보호하세요."
       ],
+      "Thinking about this": [
+        "이것에 대해 생각해 보기"
+      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "이 주소는 사용할 수 없습니다. 이 주소로 보내려면 소유자가 먼저 주소를 사용 가능으로 설정해야 합니다."
       ],
@@ -8744,6 +8816,9 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "이제 ${ defaultEmailAddress }가 메시지를 보내는 주소입니다."
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "정말 많은 단계를 거쳐야될 수 있어요. 정말 계속하시겠어요?"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "이 링크는 암호 및 신용 카드 등 세부 정보와 같은 정보를 도용하려는 웹사이트로 연결되요."
@@ -8961,6 +9036,9 @@
       "Unsaved changes": [
         "저장되지 않은 변경 사항"
       ],
+      "Unstar emails": [
+        "이메일 별표 표시 해제"
+      ],
       "Unsubscribe": [
         "구독 취소"
       ],
@@ -9099,6 +9177,9 @@
       "We use 3-D Secure to protect your payments": [
         "결제 정보를 보호하기 위해 3D 보안을 이용합니다"
       ],
+      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "이 거래를 완료하기 위해 새 브라우저 탭의 ${ IDEAL_BRAND_NAME }에 리디렉션됩니다. 팝업 차단기를 사용하는 경우 계속하려면 비활성화하세요."
+      ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "이 거래를 완료하기 위해 새 브라우저 탭의 PayPal로 보내집니다. 팝업 차단기를 사용하는 경우 계속하려면 비활성화하세요."
       ],
@@ -9152,6 +9233,12 @@
       ],
       "Would you like to receive a new verification code?": [
         "새 인증 코드를 받으실래요?"
+      ],
+      "Writes ${ REALISTIC_ENTRIES } realistic log lines trickling in over a minute, like an actual session, instead of all at once. Takes about a minute to run. Keep this tab focused: frame measurements pause in the background.": [
+        "한 번에 출력되는 대신 실제 세션처럼 1분에 걸쳐 ${ REALISTIC_ENTRIES }개의 현실적인 로그 라인을 순차적으로 작성합니다. 실행하는 데 약 1분이 소요됩니다. 탭을 활성 상태로 유지하세요. 백그라운드에서는 프레임 측정이 일시 중지됩니다."
+      ],
+      "Writes realistic log lines back-to-back, then reads them all back. Shows how write and read/export cost scale with the number of stored entries.": [
+        "실제 환경과 같이 로그 라인을 연속으로 작성한 뒤, 모두 다시 읽어줍니다. 저장된 항목 수에 따라 쓰기 및 읽기/수출 비용이 어떻게 스케일링되는지를 보여줍니다."
       ],
       "Writing assistant": [
         "글쓰기 도우미"
@@ -9773,6 +9860,9 @@
       "Account holder": [
         "예금주"
       ],
+      "Account holder name": [
+        "예금주 이름"
+      ],
       "Actions": [
         "작업"
       ],
@@ -9827,6 +9917,9 @@
       "ANY": [
         "모두"
       ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "주의가 필요한 항목과 비활성화된 카테고리의 이메일이 표시됩니다."
+      ],
       "App password": [
         "앱 비밀번호"
       ],
@@ -9874,6 +9967,9 @@
       ],
       "BTC amount": [
         "BTC 금액"
+      ],
+      "Burst write": [
+        "연속 쓰기"
       ],
       "Calendar": [
         "캘린더"
@@ -9986,8 +10082,8 @@
       "Date:": [
         "날짜:"
       ],
-      "Deals, offers, marketing emails": [
-        "거래, 혜택, 마케팅 이메일"
+      "Deals, offers, and marketing emails": [
+        "할인, 행사 및 마케팅 이메일"
       ],
       "Delete": [
         "삭제"
@@ -10024,6 +10120,12 @@
       ],
       "Drive": [
         "드라이브"
+      ],
+      "Dropped frames": [
+        "손실된 프레임"
+      ],
+      "Duration": [
+        "기간"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "예: Amazon, eBay, Etsy"
@@ -10067,8 +10169,14 @@
       "Enable filter": [
         "필터 활성화"
       ],
+      "Encrypt": [
+        "암호화"
+      ],
       "Encrypt emails": [
         "이메일 암호화"
+      ],
+      "Entries": [
+        "항목"
       ],
       "Exact host matching": [
         "정확한 호스트 일치"
@@ -10078,6 +10186,9 @@
       ],
       "Expires": [
         "만료"
+      ],
+      "Export size": [
+        "내보내기 크기"
       ],
       "Extended address": [
         "상세 주소"
@@ -10175,6 +10286,9 @@
       "Include application logs in bug report": [
         "버그 신고에 애플리케이션 로그 포함"
       ],
+      "IndexedDB store": [
+        "IndexedDB 저장"
+      ],
       "Information": [
         "정보"
       ],
@@ -10219,6 +10333,12 @@
       ],
       "Location": [
         "위치"
+      ],
+      "Log performance": [
+        "로그 퍼포먼스"
+      ],
+      "Long tasks (≥ 50 ms)": [
+        "긴 작업 (≥ 50 ms)"
       ],
       "Mail debugging information": [
         "메일 디버깅 정보"
@@ -10301,6 +10421,12 @@
       "No label found": [
         "라벨 발견되지 않음"
       ],
+      "No unread conversations": [
+        "읽지 않은 대화 없음"
+      ],
+      "No unread messages": [
+        "읽지 않은 메시지 없음"
+      ],
       "Non-promotional content and news": [
         "홍보성 없는 콘텐츠 및 뉴스"
       ],
@@ -10382,6 +10508,9 @@
       "Primary": [
         "우선 순위"
       ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "기본 - 주의가 필요한 항목과 비활성화된 카테고리의 이메일이 표시됩니다."
+      ],
       "Promotions": [
         "프로모션"
       ],
@@ -10399,6 +10528,12 @@
       ],
       "Read": [
         "읽음"
+      ],
+      "Read / export": [
+        "읽기 / 내보내기"
+      ],
+      "Realistic session": [
+        "실제 환경 세션"
       ],
       "Recipient": [
         "입금처"
@@ -10501,6 +10636,9 @@
       ],
       "Subscription options": [
         "구독 옵션"
+      ],
+      "Sum of write() calls": [
+        "작성() 호출 합"
       ],
       "Sync with system": [
         "시스템과 동기화"
@@ -10609,6 +10747,15 @@
       ],
       "Without attachment": [
         "첨부 파일 없음"
+      ],
+      "Write": [
+        "쓰기"
+      ],
+      "Write (whole session)": [
+        "쓰기 (전체 세션)"
+      ],
+      "Write-chain drain after last line": [
+        "마지막 줄 이후의 작성 체인 드레인"
       ],
       "Writing assistant": [
         "글쓰기 도우미"
@@ -11464,6 +11611,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } 글쓰기 도우미"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "확장된 접근을 포함하는 ${ LUMO_SHORT_APP_NAME } 글쓰기 도우미"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "제한된 접근을 포함하는 ${ LUMO_SHORT_APP_NAME } 글쓰기 도우미"
       ],
       "${ n } calendar": [
         "캘린더 ${ n }개"
@@ -12759,12 +12912,6 @@
       ],
       "No parent folder": [
         "상위 폴더 없음"
-      ],
-      "Remind me later": [
-        "나중에 다시 알림"
-      ],
-      "Yes, don't show again": [
-        "네, 다시 보지 않을게요."
       ]
     },
     "Option group": {
@@ -12956,6 +13103,9 @@
       "More plans are available in other currencies": [
         "더 많은 플랜을 다른 통화로 사용할 수 있습니다."
       ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "${ IDEAL_BRAND_NAME }(으)로 결제하기"
+      ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "무료 체험 종료 후 구독이 활성화되려면 결제 수단이 필요합니다."
       ],
@@ -13031,6 +13181,9 @@
       "You will soon be redirected to verify your payment.": [
         "결제를 인증하기 위해 곧 리디렉션됩니다."
       ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
+        "${ IDEAL_BRAND_NAME }가 유로화 결제만 지원하므로 사용자의 통화가 유로화(€)로 변경되었습니다."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "SEPA 은행 송금이 유로화 결제만 지원하여 사용자의 통화가 유로화(€)로 변경되었습니다."
       ],
@@ -13042,6 +13195,9 @@
       ]
     },
     "Payments.Error": {
+      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
+        "${ IDEAL_BRAND_NAME }을(를) 구성할 수 없습니다, 다시 시도해 주세요."
+      ],
       "Invalid card number": [
         "유효하지 않은 카드 번호"
       ],
@@ -13050,6 +13206,9 @@
       ],
       "Invalid security code": [
         "유효하지 않은 보안 코드"
+      ],
+      "Please enter the account holder name": [
+        "예금주 이름을 입력해 주세요"
       ],
       "Something went wrong. Please try again later.": [
         "문제가 발생했습니다. 나중에 다시 시도하세요."
@@ -13064,6 +13223,11 @@
     "Payments.error": {
       "Something went wrong. Google Pay verification failed.": [
         "문제가 발생했습니다. Google Pay 인증에 실패했습니다."
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "이 지불을 확인함으로써, ${ BRAND_NAME }과 당사 지불 서비스 제공자인 Stripe가 사용자의 은행 계좌에서 인출하도록 동의하는 것으로 간주합니다. 은행과의 합의 조건에 따라 인출일로부터 8주 이내에 환불을 받을 수 있습니다."
       ]
     },
     "Payments.info": {
@@ -13444,6 +13608,12 @@
       ]
     },
     "Property": {
+      "attributes": [
+        "속성"
+      ],
+      "content key": [
+        "콘텐츠 키"
+      ],
       "hash key": [
         "해시 키"
       ],
@@ -13715,8 +13885,8 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "소유자"
+      "Organization Admin": [
+        "조직 관리자"
       ],
       "Security Admin": [
         "보안 관리자"
@@ -15984,9 +16154,6 @@
       "Invalid verification code": [
         "잘못된 검증 코드"
       ],
-      "Keep this banner hidden?": [
-        "이 배너를 숨기시겠어요?"
-      ],
       "Label as": [
         "라벨 추가"
       ],
@@ -16404,6 +16571,9 @@
       "Snooze:": [
         "방해금지:"
       ],
+      "Star emails": [
+        "이메일 별표 표시"
+      ],
       "Start a new import": [
         "신규 불러오기 시작"
       ],
@@ -16412,6 +16582,9 @@
       ],
       "Stay for 50% off your next month": [
         "첫 달은 50% 할인으로 누리기"
+      ],
+      "Still working on it": [
+        "아직 작업 중"
       ],
       "Storage capacity warning": [
         "저장 용량 경고"
@@ -16457,6 +16630,9 @@
       ],
       "Two-factor authentication": [
         "2단계 인증"
+      ],
+      "Unstar emails": [
+        "이메일 별표 표시 해제"
       ],
       "Unsubscribe": [
         "구독 취소"

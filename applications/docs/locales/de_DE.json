@@ -3070,6 +3070,9 @@
       "Could not find an available name": [
         "Es konnte kein verfügbarer Name gefunden werden"
       ],
+      "Could not grant access to the organization key": [
+        "Der Zugriff auf den Organisationsschlüssel konnte nicht gewährt werden"
+      ],
       "Could not load sharing details": [
         "Freigabeinformationen konnten nicht geladen werden"
       ],
@@ -3189,6 +3192,9 @@
       "Failed to fetch sharing info": [
         "Fehler beim Abrufen der Freigabeinformationen"
       ],
+      "Failed to fetch sharing information": [
+        "Fehler beim Abrufen der Freigabeinformationen"
+      ],
       "Failed to get inviter keys": [
         "Schlüssel des Einladers konnten nicht abgerufen werden"
       ],
@@ -3206,9 +3212,6 @@
       ],
       "Failed to remove older revisions": [
         "Fehler beim Entfernen älterer Versionen"
-      ],
-      "Failed to rename document": [
-        "Das Umbenennen des Dokuments ist fehlgeschlagen"
       ],
       "Failed to rename document. Please try again later.": [
         "Fehler beim Umbenennen des Dokuments. Bitte versuche es später erneut."
@@ -7259,6 +7262,12 @@
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } Schreibassistent"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent mit erweitertem Zugriff"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent mit eingeschränktem Zugriff"
+      ],
       "${ n } calendar": [
         "${ n } Kalender",
         "${ n } Kalender"
@@ -8250,6 +8259,9 @@
       "All items will soon be permanently deleted from trash": [
         "Alle Elemente werden demnächst dauerhaft aus dem Papierkorb gelöscht"
       ],
+      "Because this document was in a shared folder, only the folder owner can restore it": [
+        "Da sich dieses Dokument in einem freigegebenen Ordner befand, kann es nur der Ordnerbesitzer wiederherstellen."
+      ],
       "Cannot load link": [
         "Link kann nicht geladen werden"
       ],
@@ -9185,8 +9197,8 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Besitzer"
+      "Organization Admin": [
+        "Organisationsadministrator"
       ],
       "Security Admin": [
         "Sicherheitsadministrator"

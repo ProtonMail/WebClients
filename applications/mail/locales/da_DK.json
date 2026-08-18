@@ -785,7 +785,7 @@
         "Deltag med ${ MEET_APP_NAME }"
       ],
       "Keep going": [
-        "Fortsæt …"
+        "Fortsæt"
       ],
       "Keep inbox as before": [
         "Behold indbakken som før"
@@ -1240,6 +1240,9 @@
       "Run on ${ BRAND_NAME } servers": [
         "Kør på ${ BRAND_NAME }-servere"
       ],
+      "Run realistic session": [
+        "Kør realistisk session"
+      ],
       "Save": [
         "Gem"
       ],
@@ -1532,8 +1535,7 @@
         "Hav tillid til"
       ],
       "Trust key": [
-        "Betroet nøgle",
-        "Betroede nøgler"
+        "Stol på nøgle"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -1699,6 +1701,9 @@
       ],
       "Why not?": [
         "Hvorfor ikke?"
+      ],
+      "Write ${ count } logs": [
+        "Skriv ${ count } logs"
       ],
       "Write for me": [
         "Skriv for mig"
@@ -4252,8 +4257,8 @@
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "Nye e-mails fra ${ senderEmailAddress } vil ikke blive leveret og vil blive permanent slettet."
       ],
-      "No ads. No trackers.": [
-        "Ingen reklamer. Ingen trackere."
+      "No ads. No trackers": [
+        "Ingen reklamer. Ingen trackere"
       ],
       "No folders": [
         "Ingen mapper"
@@ -7081,6 +7086,9 @@
         "${ groupCounts } gruppe fundet",
         "${ groupCounts } grupper fundet"
       ],
+      "${ IDEAL_BRAND_NAME } mark": [
+        "${ IDEAL_BRAND_NAME } mærkat"
+      ],
       "${ issues.length } issue during import:": [
         "${ issues.length } problem under import:",
         "${ issues.length } problemer under import:"
@@ -7990,7 +7998,7 @@
         "Sådan virker hide-my-email-aliasser"
       ],
       "I have not finished this one yet.": [
-        "Denne er endnu ikke afsluttet"
+        "Denne er endnu ikke afsluttet."
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Jeg sender denne besked til en, som ikke bruger ${ MAIL_APP_NAME }."
@@ -8087,7 +8095,8 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede"
+        "Indsæt billede",
+        "Indsæt billeder"
       ],
       "Insert link": [
         "Indsæt link"
@@ -8178,9 +8187,6 @@
       ],
       "Low Priority": [
         "Lav prioritet"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Gør ${ MAIL_APP_NAME } til din standard e-mail-applikation."
       ],
       "Manage your folders": [
         "Administrer dine mapper"
@@ -8349,6 +8355,9 @@
       ],
       "Not connected": [
         "Ikke forbundet"
+      ],
+      "Not supported by this browser": [
+        "Ikke understøttet i denne browser"
       ],
       "Number of dedicated servers in the organization": [
         "Antal dedikerede servere i organisationen"
@@ -8648,6 +8657,21 @@
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "Tager søgningen for lang tid? ${ dropdownButton } eller ${ toggleOffButton } fra denne søgesession."
       ],
+      "Searched ${ targetName }": [
+        "Søgte efter ${ targetName }"
+      ],
+      "Searched for mail from ${ sender }": [
+        "Søgte efter mails fra ${ sender }"
+      ],
+      "Searched for mail to ${ recipient }": [
+        "Søgte efter mails til ${ recipient }"
+      ],
+      "Searched for “${ keyword }”": [
+        "Søgte på \"${ keyword }\""
+      ],
+      "Searched your mail": [
+        "Søgte dine mails"
+      ],
       "Secure your files with encrypted cloud storage for free, today.": [
         "Beskyt dine filer med krypteret cloud-lagring helt gratis i dag."
       ],
@@ -8753,6 +8777,9 @@
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Beklager, denne besked findes ikke eller er allerede udløbet."
+      ],
+      "Star emails": [
+        "Stjernemarker e-mails"
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Begynd at dele det med dine kontakter, og brug det til onlinetjenester."
@@ -9157,6 +9184,9 @@
       "Unsaved changes": [
         "Ikke-gemte ændringer"
       ],
+      "Unstar emails": [
+        "Fjern stjernemarkering fra e-mails"
+      ],
       "Unsubscribe": [
         "Afmeld abonnement"
       ],
@@ -9295,6 +9325,9 @@
       "We use 3-D Secure to protect your payments": [
         "Vi bruger 3-D Secure til at sikre dine betalinger"
       ],
+      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Du omdirigeres til ${ IDEAL_BRAND_NAME } i en ny browserfane for at gennemføre transaktionen. Benytter du evt. pop-up blockere, så deaktiver disse for at fortsætte."
+      ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Du omdirigeres til PayPal i en ny browserfane for at gennemføre denne transaktion. Benytter du evt. pop-up blockere, så deaktivér venligst disse for at fortsætte."
       ],
@@ -9348,6 +9381,12 @@
       ],
       "Would you like to receive a new verification code?": [
         "Ønsker du at modtage en ny verifikationskode?"
+      ],
+      "Writes ${ REALISTIC_ENTRIES } realistic log lines trickling in over a minute, like an actual session, instead of all at once. Takes about a minute to run. Keep this tab focused: frame measurements pause in the background.": [
+        "Skriver ${ REALISTIC_ENTRIES } realistiske loglinjer, der kommer ind over ét minut, ligesom en rigtig session, i stedet for alt på én gang. Det tager omkring et minut at køre. Sørg for at denne fane er fokuseret: frame-målinger pauses i baggrunden."
+      ],
+      "Writes realistic log lines back-to-back, then reads them all back. Shows how write and read/export cost scale with the number of stored entries.": [
+        "Skriver realistiske loglinjer efter hinanden, og læser dem derefter tilbage. Viser hvordan write- og read/export skalerer med antallet af opbevarede elementer."
       ],
       "Writing assistant": [
         "Skriveassistent"
@@ -10104,6 +10143,9 @@
       "BTC amount": [
         "BTC-beløb"
       ],
+      "Burst write": [
+        "Burst write"
+      ],
       "Calendar": [
         "Kalender"
       ],
@@ -10215,8 +10257,8 @@
       "Date:": [
         "Dato:"
       ],
-      "Deals, offers, marketing emails": [
-        "Tilbud, rabatter, marketing-e-mails"
+      "Deals, offers, and marketing emails": [
+        "Tilbud, rabatter, og marketing-e-mails"
       ],
       "Delete": [
         "Slet"
@@ -10253,6 +10295,12 @@
       ],
       "Drive": [
         "Drev"
+      ],
+      "Dropped frames": [
+        "Dropped frames"
+      ],
+      "Duration": [
+        "Varighed"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "fx på Amazon, eBay osv."
@@ -10296,8 +10344,14 @@
       "Enable filter": [
         "Aktivér filter"
       ],
+      "Encrypt": [
+        "Kryptér"
+      ],
       "Encrypt emails": [
         "Kryptér e-mails"
+      ],
+      "Entries": [
+        "Entries"
       ],
       "Exact host matching": [
         "Nøjagtigt værtsmatch"
@@ -10307,6 +10361,9 @@
       ],
       "Expires": [
         "Udløber"
+      ],
+      "Export size": [
+        "Eksportstørrelse"
       ],
       "Extended address": [
         "Udvidet adresse"
@@ -10404,6 +10461,9 @@
       "Include application logs in bug report": [
         "Inkluder applikationslogfiler i fejlrapporten"
       ],
+      "IndexedDB store": [
+        "IndexedDB store"
+      ],
       "Information": [
         "Information"
       ],
@@ -10448,6 +10508,12 @@
       ],
       "Location": [
         "Placering"
+      ],
+      "Log performance": [
+        "Log performance"
+      ],
+      "Long tasks (≥ 50 ms)": [
+        "Lange opgaver (≥ 50 ms)"
       ],
       "Mail debugging information": [
         "Mail-fejlfindingsoplysninger"
@@ -10638,6 +10704,12 @@
       "Read": [
         "Læst"
       ],
+      "Read / export": [
+        "Read / export"
+      ],
+      "Realistic session": [
+        "Realistisk session"
+      ],
       "Recipient": [
         "Adressat"
       ],
@@ -10739,6 +10811,9 @@
       ],
       "Subscription options": [
         "Abonnementsmuligheder"
+      ],
+      "Sum of write() calls": [
+        "Sum af kald til write()"
       ],
       "Sync with system": [
         "Synkronisér med system"
@@ -10847,6 +10922,15 @@
       ],
       "Without attachment": [
         "Uden vedhæftning"
+      ],
+      "Write": [
+        "Write"
+      ],
+      "Write (whole session)": [
+        "Skriv (hele sessionen)"
+      ],
+      "Write-chain drain after last line": [
+        "Write-chain drænes efter sidste linje"
       ],
       "Writing assistant": [
         "Skriveassistent"
@@ -13048,12 +13132,6 @@
       ],
       "No parent folder": [
         "Ingen overordnet mappe"
-      ],
-      "Remind me later": [
-        "Mind mig om det senere"
-      ],
-      "Yes, don't show again": [
-        "Ja, vis det ikke igen"
       ]
     },
     "Option group": {
@@ -13245,6 +13323,9 @@
       ],
       "More plans are available in other currencies": [
         "Flere abonnementer er tilgængelige i andre valutaer"
+      ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "Betal med ${ IDEAL_BRAND_NAME }"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Betalingsmetode er påkrævet, for at abonnementet kan aktiveres, efter at prøveversionen udløber."
@@ -14036,8 +14117,8 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Ejer"
+      "Organization Admin": [
+        "Organisationsadmin"
       ],
       "Security Admin": [
         "Sikkerhedsadmin"
@@ -16388,9 +16469,6 @@
       "Invalid verification code": [
         "Ugyldig bekræftelseskode"
       ],
-      "Keep this banner hidden?": [
-        "Skjul fortsat dette banner?"
-      ],
       "Label as": [
         "Mærk som"
       ],
@@ -16809,6 +16887,9 @@
       "Snooze:": [
         "Udsæt:"
       ],
+      "Star emails": [
+        "Stjernemarker e-mails"
+      ],
       "Start a new import": [
         "Start en ny import"
       ],
@@ -16866,6 +16947,9 @@
       ],
       "Two-factor authentication": [
         "To-faktor-godkendelse"
+      ],
+      "Unstar emails": [
+        "Fjern stjernemarkering fra e-mails"
       ],
       "Unsubscribe": [
         "Afmeld abonnement"

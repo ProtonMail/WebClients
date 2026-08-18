@@ -1237,6 +1237,9 @@
       "Run on ${ BRAND_NAME } servers": [
         "Auf ${ BRAND_NAME }-Servern ausführen"
       ],
+      "Run realistic session": [
+        "Realistische Sitzung durchführen"
+      ],
       "Save": [
         "Speichern"
       ],
@@ -1526,8 +1529,7 @@
         "Vertrauen"
       ],
       "Trust key": [
-        "Schlüssel vertrauen",
-        "Schlüsseln vertrauen"
+        "Schlüssel vertrauen"
       ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
@@ -1693,6 +1695,9 @@
       ],
       "Why not?": [
         "Warum nicht?"
+      ],
+      "Write ${ count } logs": [
+        "${ count } Protokolle schreiben"
       ],
       "Write for me": [
         "Schreibe für mich"
@@ -4246,8 +4251,8 @@
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "Neue E-Mails von „${ senderEmailAddress }“ werden nicht zugestellt und dauerhaft gelöscht."
       ],
-      "No ads. No trackers.": [
-        "Keine Werbung. Keine Tracker."
+      "No ads. No trackers": [
+        "Keine Werbung. Keine Tracker"
       ],
       "No folders": [
         "Keine Ordner"
@@ -4863,6 +4868,9 @@
       ],
       "Could not find an available name": [
         "Es konnte kein verfügbarer Name gefunden werden"
+      ],
+      "Could not grant access to the organization key": [
+        "Der Zugriff auf den Organisationsschlüssel konnte nicht gewährt werden"
       ],
       "Could not load sharing details": [
         "Freigabeinformationen konnten nicht geladen werden"
@@ -7013,6 +7021,14 @@
         "${ contactsLength } Kontakt",
         "${ contactsLength } Kontakte"
       ],
+      "${ count } email": [
+        "${ count } E-Mail",
+        "${ count } E-Mails"
+      ],
+      "${ count } email · ${ names }": [
+        "${ count } E-Mail · ${ names }",
+        "${ count } E-Mails · ${ names }"
+      ],
       "${ count } email → ${ dest }": [
         "${ count } E-Mail → ${ dest }",
         "${ count } E-Mails → ${ dest }"
@@ -7074,6 +7090,9 @@
       "${ groupCounts } group found": [
         "${ groupCounts } Gruppe gefunden",
         "${ groupCounts } Gruppen gefunden"
+      ],
+      "${ IDEAL_BRAND_NAME } mark": [
+        "${ IDEAL_BRAND_NAME } markieren"
       ],
       "${ issues.length } issue during import:": [
         "${ issues.length } Problem beim Import:",
@@ -7401,6 +7420,9 @@
       ],
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Alle Unterordner werden ebenfalls gelöscht. E-Mails, die im Ordner ${ nameDeleted } gespeichert sind, werden jedoch nicht gelöscht und können im Ordner Alle Nachrichten gefunden werden."
+      ],
+      "Apply labels": [
+        "Kategorie übernehmen"
       ],
       "Apply to future messages": [
         "Auf zukünftige Nachrichten anwenden"
@@ -7866,6 +7888,9 @@
       "Everything in ${ planOrAppName }, plus:": [
         "Alles in ${ planOrAppName }, zusätzlich:"
       ],
+      "Expand logs": [
+        "Protokolle erweitern"
+      ],
       "Expand selection": [
         "Auswahl erweitern"
       ],
@@ -7983,6 +8008,9 @@
       "How hide-my-email aliases works": [
         "Wie Hide-my-email-Aliasse funktionieren"
       ],
+      "I have not finished this one yet.": [
+        "Das habe ich noch nicht fertiggestellt."
+      ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Ich sende diese Nachricht an einen Nicht-${ MAIL_APP_NAME }-Benutzer."
       ],
@@ -8078,7 +8106,8 @@
         "Wird initialisiert…"
       ],
       "Insert image": [
-        "Bild einfügen"
+        "Bild einfügen",
+        "Bilder einfügen"
       ],
       "Insert link": [
         "Link einfügen"
@@ -8181,6 +8210,12 @@
       ],
       "Mark all as read": [
         "Alle als gelesen markieren"
+      ],
+      "Mark as read": [
+        "Als gelesen markieren"
+      ],
+      "Mark as unread": [
+        "Als ungelesen markieren"
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode Logo"
@@ -8340,6 +8375,9 @@
       ],
       "Not connected": [
         "Nicht verbunden"
+      ],
+      "Not supported by this browser": [
+        "Von diesem Browser nicht unterstützt"
       ],
       "Number of dedicated servers in the organization": [
         "Anzahl der dedizierten Server in der Organisation"
@@ -8639,6 +8677,21 @@
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "Die Suche dauert zu lange? ${ dropdownButton } oder ${ toggleOffButton } diesem Suchlauf aus."
       ],
+      "Searched ${ targetName }": [
+        "Nach ${ targetName } gesucht"
+      ],
+      "Searched for mail from ${ sender }": [
+        "Nach E-Mail von ${ sender } gesucht"
+      ],
+      "Searched for mail to ${ recipient }": [
+        "Nach E-Mails an ${ recipient } gesucht"
+      ],
+      "Searched for “${ keyword }”": [
+        "Nach \"${ keyword }\" gesucht"
+      ],
+      "Searched your mail": [
+        "Deine E-Mail durchsucht"
+      ],
       "Secure your files with encrypted cloud storage for free, today.": [
         "Sichere noch heute deine Dateien kostenlos mit verschlüsseltem Cloud-Speicher."
       ],
@@ -8744,6 +8797,9 @@
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Entschuldigung, diese Nachricht existiert nicht oder ist bereits abgelaufen."
+      ],
+      "Star emails": [
+        "E-Mails markieren"
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Gib es an deine Kontakte weiter und nutze es für Online-Dienste."
@@ -9145,6 +9201,9 @@
       "Unsaved changes": [
         "Ungespeicherte Änderungen"
       ],
+      "Unstar emails": [
+        "E-Mail-Markierung aufheben"
+      ],
       "Unsubscribe": [
         "Abbestellen"
       ],
@@ -9283,6 +9342,9 @@
       "We use 3-D Secure to protect your payments": [
         "Wir verwenden 3-D Secure zum Schutz deiner Zahlungen"
       ],
+      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Wir werden dich in einem neuen Browser-Tab zu ${ IDEAL_BRAND_NAME } umleiten, um diese Zahlung abzuschließen. Falls du Pop-up-Blocker verwendest, deaktiviere diese bitte, um fortzufahren."
+      ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Wir werden dich in einem neuen Browser-Tab zu PayPal umleiten, um diese Zahlung abzuschließen. Falls du Pop-up-Blocker verwendest, deaktiviere diese bitte, um fortzufahren."
       ],
@@ -9336,6 +9398,12 @@
       ],
       "Would you like to receive a new verification code?": [
         "Möchtest du einen neuen Verifizierungscode erhalten?"
+      ],
+      "Writes ${ REALISTIC_ENTRIES } realistic log lines trickling in over a minute, like an actual session, instead of all at once. Takes about a minute to run. Keep this tab focused: frame measurements pause in the background.": [
+        "Schreibt ${ REALISTIC_ENTRIES } realistische Protokollzeilen, die sich über eine Minute verteilen — wie bei einer echten Sitzung, nicht alle auf einmal. Benötigt etwa eine Minute. Bitte diesen Tab aktiv halten: Frame-Messungen pausieren im Hintergrund."
+      ],
+      "Writes realistic log lines back-to-back, then reads them all back. Shows how write and read/export cost scale with the number of stored entries.": [
+        "Schreibt realistische Protokollzeilen direkt hintereinander und liest sie anschließend alle wieder ein. Zeigt, wie Schreib- und Lese-/Exportkosten mit der Anzahl gespeicherter Einträge skalieren."
       ],
       "Writing assistant": [
         "Schreibassistent"
@@ -9987,6 +10055,9 @@
       "Account holder": [
         "Kontoinhaber"
       ],
+      "Account holder name": [
+        "Name des Kontoinhabers"
+      ],
       "Actions": [
         "Aktionen"
       ],
@@ -10091,6 +10162,9 @@
       ],
       "BTC amount": [
         "Betrag in Bitcoin"
+      ],
+      "Burst write": [
+        "Burst-Schreiben"
       ],
       "Calendar": [
         "Kalender"
@@ -10203,8 +10277,8 @@
       "Date:": [
         "Datum:"
       ],
-      "Deals, offers, marketing emails": [
-        "Angebote, Aktionen, Marketing-E-Mails"
+      "Deals, offers, and marketing emails": [
+        "Angebote, Aktionen und Marketing-E-Mails"
       ],
       "Delete": [
         "Löschen"
@@ -10241,6 +10315,12 @@
       ],
       "Drive": [
         "Drive"
+      ],
+      "Dropped frames": [
+        "Ausgelassene Frames"
+      ],
+      "Duration": [
+        "Dauer"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "z. B. Amazon, eBay, Etsy"
@@ -10284,8 +10364,14 @@
       "Enable filter": [
         "Filter aktivieren"
       ],
+      "Encrypt": [
+        "Verschlüsseln"
+      ],
       "Encrypt emails": [
         "E-Mails verschlüsseln"
+      ],
+      "Entries": [
+        "Einträge"
       ],
       "Exact host matching": [
         "Genaue Host-Übereinstimmung"
@@ -10295,6 +10381,9 @@
       ],
       "Expires": [
         "Gültig bis"
+      ],
+      "Export size": [
+        "Exportgröße"
       ],
       "Extended address": [
         "Adresszusatz"
@@ -10392,6 +10481,9 @@
       "Include application logs in bug report": [
         "Anwendungsprotokolle im Fehlerbericht einschließen"
       ],
+      "IndexedDB store": [
+        "IndexedDB-Speicher"
+      ],
       "Information": [
         "Information"
       ],
@@ -10436,6 +10528,12 @@
       ],
       "Location": [
         "Ort"
+      ],
+      "Log performance": [
+        "Protokollleistung"
+      ],
+      "Long tasks (≥ 50 ms)": [
+        "Längere Aufgaben (≥ 50 MS)"
       ],
       "Mail debugging information": [
         "Informationen zur Fehlersuche in Mail"
@@ -10517,6 +10615,12 @@
       ],
       "No label found": [
         "Keine Kategorie gefunden"
+      ],
+      "No unread conversations": [
+        "Keine ungelesenen Unterhaltungen"
+      ],
+      "No unread messages": [
+        "Keine ungelesenen Nachrichten"
       ],
       "Non-promotional content and news": [
         "Werbefreie Inhalte und Neuigkeiten"
@@ -10620,6 +10724,12 @@
       "Read": [
         "Gelesen"
       ],
+      "Read / export": [
+        "Lesen / exportieren"
+      ],
+      "Realistic session": [
+        "Realistische Sitzung"
+      ],
       "Recipient": [
         "Empfänger"
       ],
@@ -10721,6 +10831,9 @@
       ],
       "Subscription options": [
         "Abonnement-Optionen"
+      ],
+      "Sum of write() calls": [
+        "Anzahl der write()-Aufrufe"
       ],
       "Sync with system": [
         "Mit dem System synchronisieren"
@@ -10829,6 +10942,15 @@
       ],
       "Without attachment": [
         "Ohne Anhang"
+      ],
+      "Write": [
+        "Schreiben"
+      ],
+      "Write (whole session)": [
+        "Schreiben (ganze Sitzung)"
+      ],
+      "Write-chain drain after last line": [
+        "Schreibkette nach der letzten Zeile leeren"
       ],
       "Writing assistant": [
         "Schreibassistent"
@@ -11700,6 +11822,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } Schreibassistent"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent mit erweitertem Zugriff"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent mit eingeschränktem Zugriff"
       ],
       "${ n } calendar": [
         "${ n } Kalender",
@@ -13222,6 +13350,9 @@
       "More plans are available in other currencies": [
         "Weitere Pläne sind in anderen Währungen verfügbar"
       ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "Mit ${ IDEAL_BRAND_NAME } bezahlen"
+      ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Für die Aktivierung des Abonnements nach dem Ende der Testversion ist eine Zahlungsmethode erforderlich."
       ],
@@ -13303,6 +13434,9 @@
       "You will soon be redirected to verify your payment.": [
         "Du wirst in Kürze weitergeleitet, um deine Zahlung zu bestätigen."
       ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
+        "Deine Währung wurde zu Euro (€) geändert, da ${ IDEAL_BRAND_NAME } nur Euro unterstützen."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Deine Währung wurde zu Euro (€) geändert, da SEPA-Banküberweisungen Zahlungen nur in Euro unterstützen."
       ],
@@ -13314,6 +13448,9 @@
       ]
     },
     "Payments.Error": {
+      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
+        "Die Initialisierung von ${ IDEAL_BRAND_NAME } ist fehlgeschlagen. Bitte versuche es später erneut."
+      ],
       "Invalid card number": [
         "Ungültige Kartennummer"
       ],
@@ -13322,6 +13459,9 @@
       ],
       "Invalid security code": [
         "Ungültiger Sicherheitscode"
+      ],
+      "Please enter the account holder name": [
+        "Bitte den Namen des Kontoinhabers eingeben"
       ],
       "Something went wrong. Please try again later.": [
         "Etwas ist schiefgelaufen. Bitte versuche es später erneut."
@@ -13336,6 +13476,11 @@
     "Payments.error": {
       "Something went wrong. Google Pay verification failed.": [
         "Etwas ist schiefgelaufen. Die Google Pay-Verifizierung ist fehlgeschlagen."
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Mit der Bestätigung dieser Zahlung ermächtigst du ${ BRAND_NAME } und Stripe, unseren Zahlungsdienstleister, deine Bank anzuweisen, den entsprechenden Betrag von deinem Konto abzubuchen. Eine Rückerstattung kannst du innerhalb von 8 Wochen ab dem Datum der Abbuchung gemäß den Bedingungen deines Vertrags mit deiner Bank beantragen."
       ]
     },
     "Payments.info": {
@@ -14001,8 +14146,8 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Besitzer"
+      "Organization Admin": [
+        "Organisationsadministrator"
       ],
       "Security Admin": [
         "Sicherheitsadministrator"
@@ -15945,6 +16090,9 @@
       "Apply gift code": [
         "Geschenkcode anwenden"
       ],
+      "Apply labels": [
+        "Kategorie übernehmen"
+      ],
       "Archive all messages?": [
         "Alle Nachrichten archivieren?"
       ],
@@ -16774,6 +16922,9 @@
       "Snooze:": [
         "Aufgeschoben:"
       ],
+      "Star emails": [
+        "E-Mails markieren"
+      ],
       "Start a new import": [
         "Neuer Importvorgang"
       ],
@@ -16828,6 +16979,9 @@
       ],
       "Two-factor authentication": [
         "Zwei‐Faktor‐Authentifizierung"
+      ],
+      "Unstar emails": [
+        "E-Mail-Markierung aufheben"
       ],
       "Unsubscribe": [
         "Abbestellen"

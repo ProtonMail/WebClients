@@ -60,8 +60,14 @@
       "Automatic renewal": [
         "Αυτόματη ανανέωση"
       ],
+      "Automatically delete data": [
+        "Αυτόματη διαγραφή δεδομένων"
+      ],
       "Block sender for the organization": [
         "Αποκλεισμός αποστολέα για τον οργανισμό"
+      ],
+      "Blog articles": [
+        "Άρθρα Blog"
       ],
       "Bulk user import": [
         "Μαζική εισαγωγή χρηστών"
@@ -74,6 +80,9 @@
       ],
       "Compare plans": [
         "Συγκριση πακετων"
+      ],
+      "Connected addresses": [
+        "Συνδεδεμένες διευθύνσεις"
       ],
       "Connection events": [
         "Συμβάντα σύνδεσης"
@@ -90,8 +99,14 @@
       "Dark mode": [
         "Σκοτεινή λειτουργία"
       ],
+      "Data breach alerts": [
+        "Ειδοποιήσεις παραβίασης δεδομένων"
+      ],
       "Desktop and mobile apps": [
         "Εφαρμογές για υπολογιστές και κινητά"
+      ],
+      "Downgrade plan": [
+        "Υποβάθμιση πλάνου"
       ],
       "Downgrade to Free": [
         "Υποβάθμιση σε Free"
@@ -102,11 +117,29 @@
       "Download recovery file": [
         "Κατέβασμα αρχείου ανάκτησης"
       ],
+      "Enable or disable apps for members": [
+        "Ενεργοποίηση ή απενεργοποίηση εφαρμογών για μέλη"
+      ],
+      "Encryption backup file": [
+        "Αρχείο αντιγράφου ασφαλείας κρυπτογράφησης"
+      ],
       "Encryption backup in this browser": [
         "Δημιουργία αντιγράφων ασφαλείας κρυπτογράφησης σε αυτό το πρόγραμμα περιήγησης"
       ],
+      "External mailbox": [
+        "Εξωτερικό γραμματοκιβώτιο"
+      ],
+      "Gateway logs": [
+        "Αρχεία καταγραφής πύλης"
+      ],
+      "Group invitations": [
+        "Ομαδικές προσκλήσεις"
+      ],
       "Group members": [
         "Μέλη ομάδας"
+      ],
+      "Group plan invitation": [
+        "Πρόσκληση σε ομαδικό πρόγραμμα"
       ],
       "High-security mode": [
         "Λειτουργία υψηλής ασφάλειας"
@@ -138,11 +171,29 @@
       "One-time code": [
         "Κωδικός μίας χρήσης"
       ],
+      "Password reminder": [
+        "Υπενθύμιση κωδικού πρόσβασης"
+      ],
+      "Password reminders": [
+        "Υπενθυμίσεις κωδικού πρόσβασης"
+      ],
       "Password reset request": [
         "Αίτηση Επαναφοράς Κωδικού Πρόσβασης"
       ],
+      "Permanently delete data": [
+        "Οριστική διαγραφή δεδομένων"
+      ],
+      "Privacy guides": [
+        "Οδηγοί απορρήτου"
+      ],
       "Privacy services": [
         "Υπηρεσίες απορρήτου"
+      ],
+      "Protection from cyber attacks": [
+        "Προστασία από κυβερνοεπιθέσεις"
+      ],
+      "Receive misaddressed emails": [
+        "Λήψη email με λανθασμένη διεύθυνση"
       ],
       "Recovery email address": [
         "Διεύθυνση ηλεκτρονικού ταχυδρομείου ανάκτησης"
@@ -153,14 +204,38 @@
       "Recovery score": [
         "Βαθμολογία ανάκτησης"
       ],
+      "Redeem discount code": [
+        "Εξαργυρώστε τον κωδικό έκπτωσης"
+      ],
+      "Referral credits": [
+        "Πιστώσεις παραπομπής"
+      ],
       "Referral link": [
         "Σύνδεσμος παραπομπής"
+      ],
+      "Referral rewards": [
+        "Ανταμοιβές παραπομπών"
+      ],
+      "Restrict app access": [
+        "Περιορισμός πρόσβασης σε εφαρμογές"
       ],
       "Scan QR code": [
         "Σάρωση κωδικού QR"
       ],
+      "Server access policy": [
+        "Πολιτική πρόσβασης διακομιστή"
+      ],
+      "Shared server access": [
+        "Πρόσβαση σε κοινόχρηστο διακομιστή"
+      ],
+      "Sign out other devices": [
+        "Αποσύνδεση άλλων συσκευών"
+      ],
       "Sign-in history": [
         "Ιστορικό σύνδεσης"
+      ],
+      "Stop subscription renewal": [
+        "Διακοπή ανανέωσης συνδρομής"
       ],
       "Storage space": [
         "Χώρος αποθήκευσης"
@@ -186,8 +261,14 @@
       "Verify domain": [
         "Επαλήθευση τομέα"
       ],
+      "Verify password": [
+        "Επαλήθευση κωδικού πρόσβασης"
+      ],
       "Video conferencing": [
         "Τηλεδιάσκεψη"
+      ],
+      "VPN session details": [
+        "Λεπτομέρειες συνεδρίας VPN"
       ],
       "Writing assistant": [
         "Βοηθός γραφής"
@@ -3815,8 +3896,8 @@
       "Most issues can be solved in a few minutes with our step-by-step guides.": [
         "Τα περισσότερα προβλήματα μπορούν να λυθούν σε λίγα λεπτά με τους αναλυτικούς οδηγούς μας."
       ],
-      "No ads. No trackers.": [
-        "Χωρίς διαφημίσεις. Χωρίς ιχνηλάτες."
+      "No ads. No trackers": [
+        "Χωρίς διαφημίσεις. Χωρίς ιχνηλάτες"
       ],
       "No one in your organization can connect to shared servers.": [
         "Κανείς στον οργανισμό σας δεν μπορεί να συνδεθεί σε κοινόχρηστους διακομιστές."
@@ -4918,6 +4999,9 @@
       "Could not generate the device profile. Please try again.": [
         "Δεν ήταν δυνατή η δημιουργία του προφίλ συσκευής. Παρακαλούμε δοκιμάστε ξανά."
       ],
+      "Could not grant access to the organization key": [
+        "Δεν ήταν δυνατή η παραχώρηση πρόσβασης στο κλειδί οργανισμού"
+      ],
       "Could not load sharing details": [
         "Δεν ήταν δυνατή η φόρτωση των λεπτομερειών κοινής χρήσης"
       ],
@@ -5386,9 +5470,13 @@
         "Η ανάθεση ρόλου δεν μπόρεσε να ολοκληρωθεί για ${ errors.length } μέλος",
         "Η ανάθεση ρόλου δεν μπόρεσε να ολοκληρωθεί για ${ errors.length } μέλη"
       ],
-      "Role assignment could not be completed for ${ failedGroupCount } group": [
-        "Η ανάθεση ρόλου δεν μπόρεσε να ολοκληρωθεί για ${ failedGroupCount } ομάδα",
-        "Η ανάθεση ρόλου δεν μπόρεσε να ολοκληρωθεί για ${ failedGroupCount } ομάδες"
+      "Role assignment could not be completed for ${ failedCount } group": [
+        "Η ανάθεση ρόλου δεν μπόρεσε να ολοκληρωθεί για ${ failedCount } ομάδα",
+        "Η ανάθεση ρόλου δεν μπόρεσε να ολοκληρωθεί για ${ failedCount } ομάδες"
+      ],
+      "Role assignment could not be completed for ${ failedCount } user": [
+        "Η ανάθεση ρόλου δεν μπόρεσε να ολοκληρωθεί για ${ failedCount } χρήστη",
+        "Η ανάθεση ρόλου δεν μπόρεσε να ολοκληρωθεί για ${ failedCount } χρήστες"
       ],
       "Server not found": [
         "Δε βρέθηκε ο διακομιστής"
@@ -7848,6 +7936,12 @@
       "Connection data will be available in around 1 hour.": [
         "Τα δεδομένα σύνδεσης θα είναι διαθέσιμα σε περίπου 1 ώρα."
       ],
+      "Connects you to your destination country through servers physically located elsewhere.": [
+        "Σας συνδέει με τη χώρα προορισμού σας μέσω διακομιστών που βρίσκονται φυσικά αλλού."
+      ],
+      "Connects you to your destination country through servers physically located elsewhere: ${ joinedSmartRoutingCountries }.": [
+        "Σας συνδέει με τη χώρα προορισμού σας μέσω διακομιστών που βρίσκονται φυσικά αλλού: ${ joinedSmartRoutingCountries }."
+      ],
       "Contact our Customer Support team to disable two-factor authentication for your account, or recover your account another way.": [
         "Επικοινωνήστε με την ομάδα Υποστήριξης Πελατών μας για να απενεργοποιήσετε την ταυτοποίηση δύο παραγόντων για τον λογαριασμό σας ή να ανακτήσετε τον λογαριασμό σας με άλλο τρόπο."
       ],
@@ -8702,6 +8796,9 @@
       "Member": [
         "Μέλος"
       ],
+      "Members are periodically prompted to verify their ${ BRAND_NAME } password to ensure they don't forget it. Enforcing check-ins prevents members from turning them off.": [
+        "Τα μέλη καλούνται περιοδικά να επαληθεύουν τον κωδικό πρόσβασής τους για το ${ BRAND_NAME } για να βεβαιωθούν ότι δεν τον ξεχνούν. Η επιβολή ελέγχων εμποδίζει τα μέλη να τον απενεργοποιήσουν."
+      ],
       "Merged": [
         "Συγχωνευμένο"
       ],
@@ -9220,6 +9317,9 @@
       "Smart Routed through: ${ joinedCountries }.": [
         "Δρομολογήθηκε έξυπνα μέσω: ${ joinedCountries }."
       ],
+      "Smart Routing": [
+        "Smart Routing"
+      ],
       "Some ${ BRAND_NAME } apps may not support security keys yet. If you turn off authenticator app 2FA, you may not be able to sign in to those apps.": [
         "Ορισμένες εφαρμογές ${ BRAND_NAME } ενδέχεται να μην υποστηρίζουν ακόμη κλειδιά ασφαλείας. Εάν απενεργοποιήσετε την εφαρμογή ταυτοποίησης 2FA, ενδέχεται να μην μπορείτε να συνδεθείτε σε αυτές τις εφαρμογές."
       ],
@@ -9365,9 +9465,9 @@
       "The name will be visible to your users while they are signed in.": [
         "Το όνομα θα είναι ορατό στους χρήστες σας ενώ είναι συνδεδεμένοι."
       ],
-      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
-        "Η διαδικασία διακόπηκε για ${ pausedCount } ομάδα. Κάντε κλικ στην επιλογή Συνέχεια για να συνεχίσετε την ανάθεση ρόλων.",
-        "Η διαδικασία διακόπηκε για ${ pausedCount } ομάδες. Κάντε κλικ στην επιλογή Συνέχεια για να συνεχίσετε την ανάθεση ρόλων."
+      "The process was interrupted for ${ pausedCount } ${ roleAssignmentSource }. Click Continue to resume assigning roles.": [
+        "Η διαδικασία διακόπηκε για ${ pausedCount } ${ roleAssignmentSource }. Κάντε κλικ στην επιλογή Συνέχεια για να συνεχίσετε την ανάθεση ρόλων.",
+        "Η διαδικασία διακόπηκε για ${ pausedCount } ${ roleAssignmentSource }. Κάντε κλικ στην επιλογή Συνέχεια για να συνεχίσετε την ανάθεση ρόλων."
       ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
         "Η πίστωσή παραπομπής μπορεί να δοθεί μέχρι 2 μήνες μετά το τέλος της δοκιμαστικής περιόδου του φίλου σας, μόνο αν ο φίλος σας εγγράφηκε σε ένα πλάνο."
@@ -9726,6 +9826,9 @@
       "User activated": [
         "Ο χρήστης ενεργοποιήθηκε"
       ],
+      "User roles assigned": [
+        "Ρόλοι χρηστών που έχουν ανατεθεί"
+      ],
       "Username": [
         "Όνομα Χρήστη"
       ],
@@ -9875,6 +9978,9 @@
       ],
       "We’ll send a reset code to ${ boldValue }.": [
         "Θα στείλουμε έναν κωδικό επαναφοράς στο ${ boldValue }."
+      ],
+      "When enabled, members cannot opt out of password check-ins in their own settings.": [
+        "Όταν είναι ενεργοποιημένη, τα μέλη δεν μπορούν να εξαιρεθούν από τα ελέγχους κωδικού πρόσβασης στις δικές τους ρυθμίσεις."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Όταν ενεργοποιείτε το SAML για ${ appName } στην υπηρεσία παροχής ταυτότητας, ενδέχεται να σας ζητηθεί να χρησιμοποιήσετε τη διεύθυνση URL επιστροφής κλήσης (ACS) και το αναγνωριστικό εκδότη. Απλώς αντιγράψτε-επικολλήστε τα παρακάτω δεδομένα στα πεδία της υπηρεσίας παροχής ταυτότητάς σας."
@@ -10477,6 +10583,9 @@
       ],
       "Account holder": [
         "Δικαιούχος λογαριασμού"
+      ],
+      "Account holder name": [
+        "Όνομα κατόχου λογαριασμού"
       ],
       "Account storage": [
         "Χωρητικότητα λογαριασμού"
@@ -11207,6 +11316,9 @@
       ],
       "Require 2FA for everyone": [
         "Απαιτείται έλεγχος ταυτότητας δύο παραγόντων (2FA) για όλους"
+      ],
+      "Require password check-ins": [
+        "Απαιτείται έλεγχος κωδικού πρόσβασης"
       ],
       "Reveal password": [
         "Εμφάνιση κωδικού"
@@ -12100,6 +12212,9 @@
       "Resend invite link": [
         "Επανάληψη αποστολής συνδέσμου πρόσκλησης"
       ],
+      "Resume role assignment": [
+        "Συνέχιση ανάθεσης ρόλου"
+      ],
       "Revoke sessions": [
         "Ανάκληση Συνεδριών Σύνδεσης"
       ],
@@ -12359,6 +12474,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } βοηθός γραφής"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Βοηθός γραφής ${ LUMO_SHORT_APP_NAME } με εκτεταμένη πρόσβαση"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Βοηθός γραφής ${ LUMO_SHORT_APP_NAME } με περιορισμένη πρόσβαση"
       ],
       "${ n } calendar": [
         "${ n } ημερολόγιο",
@@ -13466,6 +13587,12 @@
       "OpenVPN credentials regenerated": [
         "Τα διαπιστευτήρια του OpenVPN επαναδημιουργήθηκαν"
       ],
+      "Password check-ins are not required anymore": [
+        "Δεν απαιτούνται πλέον έλεγχοι κωδικού πρόσβασης"
+      ],
+      "Password check-ins are now required for all members": [
+        "Απαιτούνται πλέον όλα τα μέλη για ελέγχους με κωδικό πρόσβασης"
+      ],
       "Reminder has been sent": [
         "Η υπενθύμιση έχει σταλεί"
       ],
@@ -14091,6 +14218,11 @@
         "Χρειάζεστε πρόσβαση στο κλειδί οργανισμού για να εκτελέσετε αυτήν τη λειτουργία."
       ]
     },
+    "Payment Method": {
+      "Bank Account": [
+        "Τραπεζικός Λογαριασμός"
+      ]
+    },
     "Payment method option": {
       "Apple Pay": [
         "Apple Pay"
@@ -14295,6 +14427,9 @@
       ],
       "Invalid security code": [
         "Μη έγκυρος κωδικός ασφαλείας"
+      ],
+      "Please enter the account holder name": [
+        "Παρακαλώ εισάγετε το όνομα του κατόχου του λογαριασμού"
       ],
       "Something went wrong. Please try again later.": [
         "Κάτι πήγε στραβά. Παρακαλούμε δοκιμάστε αργότερα."
@@ -15355,8 +15490,8 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Ιδιοκτήτης"
+      "Organization Admin": [
+        "Διαχειριστής Οργανισμού"
       ],
       "Security Admin": [
         "Διαχειριστής Ασφαλείας"
@@ -16354,6 +16489,9 @@
       "Backup password": [
         "Εφεδρικός κωδικός πρόσβασης"
       ],
+      "Because your organization moved you to single sign-on (SSO), **your old password is saved as your backup password**. You can use it to authorize SSO on a new device.": [
+        "Επειδή ο οργανισμός σας σάς μετέφερε σε ενιαία σύνδεση (SSO), **ο παλιός σας κωδικός πρόσβασης αποθηκεύεται ως εφεδρικός κωδικός πρόσβασης**. Μπορείτε να τον χρησιμοποιήσετε για να εξουσιοδοτήσετε το SSO σε μια νέα συσκευή."
+      ],
       "Cancel": [
         "Ακύρωση"
       ],
@@ -16400,6 +16538,9 @@
       ],
       "Do you want to remove all other devices than the current one?": [
         "Θέλετε να καταργήσετε όλες τις άλλες συσκευές εκτός από την τρέχουσα;"
+      ],
+      "Enter it to sign in. It is the same as your old password.": [
+        "Εισαγάγετε τον κωδικό πρόσβασης για να συνδεθείτε. Είναι ο ίδιος με τον παλιό σας κωδικό πρόσβασης."
       ],
       "Enter the confirmation code we sent on your other device.": [
         "Εισαγάγετε τον κωδικό επιβεβαίωσης που στείλαμε στην άλλη συσκευή σας."
@@ -17744,6 +17885,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe βοηθός γραφής"
       ],
+      "${ capitalizedSource } role assignment paused": [
+        "Η ανάθεση ρόλου ${ capitalizedSource } τέθηκε σε παύση"
+      ],
       "${ feature } is now active": [
         "Το ${ feature } είναι πλέον ενεργό"
       ],
@@ -18446,9 +18590,6 @@
       "Group membership": [
         "Συμμετοχή σε ομάδες"
       ],
-      "Group role assignment paused": [
-        "Η ανάθεση ρόλου ομάδας τέθηκε σε παύση"
-      ],
       "Groups": [
         "Ομάδες"
       ],
@@ -18513,9 +18654,6 @@
       "Install it manually": [
         "Εγκαταστήστε το χειροκίνητα"
       ],
-      "Integrations": [
-        "Ενσωματώσεις"
-      ],
       "Invalid verification code": [
         "Μη έγκυρος κωδικός επαλήθευσης"
       ],
@@ -18551,9 +18689,6 @@
       ],
       "Minicalendar": [
         "Μίνι ημερολόγιο"
-      ],
-      "Monitoring": [
-        "Παρακολούθηση"
       ],
       "Multi-user support": [
         "Υποστήριξη Πολλαπλών Χρηστών"
@@ -18638,6 +18773,9 @@
       ],
       "Password": [
         "Κωδικός"
+      ],
+      "Password check-ins": [
+        "Έλεγχοι κωδικού πρόσβασης"
       ],
       "Password reset options": [
         "Επιλογές επαναφοράς κωδικού πρόσβασης"
@@ -18894,8 +19032,8 @@
       "Single sign-on": [
         "Καθολική σύνδεση"
       ],
-      "Single-sign on (SSO)": [
-        "Ενιαία είσοδος (SSO)"
+      "Single sign-on (SSO)": [
+        "Ενιαία σύνδεση (SSO)"
       ],
       "SMS verification": [
         "Επαλήθευση SMS"
@@ -19417,6 +19555,9 @@
       ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Αυτή η διεύθυνση ηλεκτρονικού ταχυδρομείου θα εμφανίζεται σε όλα τα μέλη του οργανισμού κατά την εκτέλεση λειτουργιών διαχείρισης λογαριασμού."
+      ],
+      "This setting is managed by your organization": [
+        "Αυτή η ρύθμιση διαχειρίζεται από τον οργανισμό σας"
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Εκτός αν αποκρυπτογραφηθούν, οι κρυπτογραφημένοι κωδικοί παραμένουν ασφαλείς ακόμα και αν εκτεθούν."

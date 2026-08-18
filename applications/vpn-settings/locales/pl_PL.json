@@ -1814,7 +1814,7 @@
         "1 konto użytkownika"
       ],
       "200 GB storage: 40x your current plan": [
-        "200 GB przestrzeni dyskowej: 40 × Twój obecny plan"
+        "200 GB przestrzeni dyskowej: 40-krotność Twojego obecnego planu"
       ],
       "6 user accounts": [
         "6 kont użytkowników"
@@ -1838,7 +1838,7 @@
         "Alerty dotyczące jakości haseł"
       ],
       "Recover previous file versions": [
-        "Odzyskaj poprzednie wersje pliku"
+        "Odzyskaj poprzednie wersje plików"
       ],
       "Unlimited folders, labels and filters": [
         "Nieograniczona liczba folderów, etykiet i filtrów"
@@ -1901,22 +1901,22 @@
         "Dostęp do ponad 15 000 serwerów w ponad 120 krajach"
       ],
       "Access advanced AI models": [
-        "Uzyskaj dostęp do zaawansowanych modeli AI"
+        "Dostęp do zaawansowanych modeli AI"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Wszystkie funkcje premium usług ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
+        "Wszystkie funkcje premium aplikacji ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Block ads, trackers, and malware": [
         "Blokuj reklamy, elementy śledzące i złośliwe oprogramowanie"
       ],
       "Built-in 2FA authenticator": [
-        "Wbudowana aplikacja uwierzytelniająca"
+        "Wbudowana aplikacja do uwierzytelniania dwustopniowego"
       ],
       "Connect 10 devices at once": [
         "Połącz 10 urządzeń jednocześnie"
       ],
       "Full chat history with easy search and favorites": [
-        "Pełna historia czatu z łatwym wyszukiwaniem i ulubionymi"
+        "Pełna historia czatów z łatwym szukaniem i ulubionymi"
       ],
       "Individual accounts for 6 users": [
         "Indywidualne konta dla 6 użytkowników"
@@ -1928,12 +1928,12 @@
         "Silniejsza ochrona przed cyberzagrożeniami"
       ],
       "Unlimited daily chats": [
-        "Nieograniczone codzienne czaty"
+        "Nielimitowana liczba czatów dziennie"
       ]
     },
     "BF2025: Tooltip": {
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Specjalnie zaprojektowana funkcja NetShield chroni Twoje urządzenia oraz przyśpiesza przeglądanie Internetu poprzez blokowanie reklam, elementów śledzących i złośliwego oprogramowania."
+        "Specjalnie zaprojektowana funkcja NetShield chroni Twoje urządzenia i przyspiesza przeglądanie stron, blokując reklamy, elementy śledzące oraz złośliwe oprogramowanie."
       ]
     },
     "Billing cycle": {
@@ -3656,9 +3656,6 @@
       "Most issues can be solved in a few minutes with our step-by-step guides.": [
         "Większość problemów można rozwiązać w kilka minut dzięki naszym instrukcjom krok po kroku."
       ],
-      "No ads. No trackers.": [
-        "Bez reklam. Bez elementów śledzących."
-      ],
       "No one in your organization can connect to shared servers.": [
         "Nikt z Twojej organizacji nie może łączyć się z udostępnionymi serwerami."
       ],
@@ -5075,12 +5072,6 @@
         "Nie można ukończyć przypisywania stanowiska dla ${ errors.length } członków",
         "Nie można ukończyć przypisywania stanowiska dla ${ errors.length } członków",
         "Nie można ukończyć przypisywania stanowiska dla ${ errors.length } członków"
-      ],
-      "Role assignment could not be completed for ${ failedGroupCount } group": [
-        "Nie można ukończyć przypisywania stanowiska dla ${ failedGroupCount } grupy",
-        "Nie można ukończyć przypisywania stanowiska dla ${ failedGroupCount } grup",
-        "Nie można ukończyć przypisywania stanowiska dla ${ failedGroupCount } grup",
-        "Nie można ukończyć przypisywania stanowiska dla ${ failedGroupCount } grup"
       ],
       "Server not found": [
         "Nie znaleziono serwera"
@@ -8943,12 +8934,6 @@
       ],
       "The name will be visible to your users while they are signed in.": [
         "Nazwa będzie widoczna dla użytkowników po zalogowaniu."
-      ],
-      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
-        "Proces został przerwany dla ${ pausedCount } grupy. Kliknij Kontynuuj, aby wznowić przypisywanie stanowisk.",
-        "Proces został przerwany dla ${ pausedCount } grup. Kliknij Kontynuuj, aby wznowić przypisywanie stanowisk.",
-        "Proces został przerwany dla ${ pausedCount } grup. Kliknij Kontynuuj, aby wznowić przypisywanie stanowisk.",
-        "Proces został przerwany dla ${ pausedCount } grup. Kliknij Kontynuuj, aby wznowić przypisywanie stanowisk."
       ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
         "Środki za polecenie mogą zostać przyznane do 2 miesięcy po zakończeniu wersji próbnej przez znajomego, tylko jeśli Twój znajomy subskrybuje plan."
@@ -14941,9 +14926,6 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Właściciel"
-      ],
       "Security Admin": [
         "Administrator bezpieczeństwa"
       ],
@@ -18083,9 +18065,6 @@
       "Group membership": [
         "Członkostwo w grupie"
       ],
-      "Group role assignment paused": [
-        "Przypisywanie stanowisk w grupie zostało wstrzymane"
-      ],
       "Groups": [
         "Grupy"
       ],
@@ -18146,9 +18125,6 @@
       "Information exposed in breach": [
         "Ujawnione informacje w wycieku"
       ],
-      "Integrations": [
-        "Integracje"
-      ],
       "Invalid verification code": [
         "Kod weryfikacyjny jest nieprawidłowy"
       ],
@@ -18181,9 +18157,6 @@
       ],
       "Minicalendar": [
         "Minikalendarz"
-      ],
-      "Monitoring": [
-        "Monitoring"
       ],
       "Multi-user support": [
         "Obsługa wielu użytkowników"
@@ -18511,9 +18484,6 @@
       ],
       "Single sign-on": [
         "Logowanie SSO"
-      ],
-      "Single-sign on (SSO)": [
-        "Jednokrotne logowanie (SSO)"
       ],
       "SMS verification": [
         "Weryfikacja SMS"

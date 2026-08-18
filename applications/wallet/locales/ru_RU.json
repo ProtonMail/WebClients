@@ -2893,6 +2893,12 @@
       "Country code": [
         "Код страны"
       ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Создать безопасное облако для ${ memberCount } участника",
+        "Создать безопасное облако для ${ memberCount } участников",
+        "Создайте безопасное облако для ${ memberCount } участников",
+        "Создайте безопасное облако для ${ memberCount } участников"
+      ],
       "Credit for the unused portion of your previous plan subscription": [
         "Остаток на счете для неиспользованной части подписки на предыдущий тариф"
       ],
@@ -4674,6 +4680,12 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } страна",
+        "${ n } страны",
+        "${ n } стран",
+        "${ n } стран"
+      ],
       "Access advanced VPN features": [
         "Получите доступ к расширенным функциям VPN"
       ],
@@ -5308,9 +5320,6 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Владелец"
-      ],
       "Security Admin": [
         "Администратор безопасности"
       ],

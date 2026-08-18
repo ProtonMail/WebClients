@@ -3702,9 +3702,6 @@
       "Most issues can be solved in a few minutes with our step-by-step guides.": [
         "يمكن حل معظم المشكلات في بضع دقائق باستخدام الأدلة خطوة بخطوة."
       ],
-      "No ads. No trackers.": [
-        "لا توجد إعلانات. لا توجد أجهزة تتبع."
-      ],
       "No one in your organization can connect to shared servers.": [
         "لا يمكن لأي شخص في مؤسستك الاتصال بالخوادم المشتركة"
       ],
@@ -5175,14 +5172,6 @@
         "تعذر إكمال تعيين الأدوار لـ ${ errors.length } أعضاء",
         "تعذر إكمال تعيين الأدوار لـ ${ errors.length } عضوًا",
         "تعذر إكمال تعيين الأدوار لـ ${ errors.length } عضو"
-      ],
-      "Role assignment could not be completed for ${ failedGroupCount } groups": [
-        "تعذر إكمال تعيين الأدوار لـ ${ failedGroupCount } مجموعة",
-        "تعذر إكمال تعيين الأدوار لمجموعة واحدة ${ failedGroupCount }",
-        "تعذر إكمال تعيين الأدوار لمجموعتين ${ failedGroupCount }",
-        "تعذر إكمال تعيين الأدوار لـ ${ failedGroupCount } مجموعات",
-        "تعذر إكمال تعيين الأدوار لـ ${ failedGroupCount } مجموعة",
-        "تعذر إكمال تعيين الأدوار لـ ${ failedGroupCount } مجموعة"
       ],
       "Server not found": [
         "لم يتم العثور على الخادم"
@@ -9223,14 +9212,6 @@
       ],
       "The name will be visible to your users while they are signed in.": [
         "سيكون الاسم مرئيًا للمستخدمين أثناء تسجيل دخولهم."
-      ],
-      "The process was interrupted for ${ pausedCount } groups. Click Continue to resume assigning roles.": [
-        "تمت مقاطعة العملية لـ ${ pausedCount } مجموعة. يرجى النقر فوق متابعة لاستئناف تعيين الأدوار.",
-        "تمت مقاطعة العملية لمجموعة واحدة ${ pausedCount }. يرجى النقر فوق متابعة لاستئناف تعيين الأدوار.",
-        "تمت مقاطعة العملية لمجموعتين ${ pausedCount }. يرجى النقر فوق متابعة لاستئناف تعيين الأدوار.",
-        "تمت مقاطعة العملية لـ ${ pausedCount } مجموعات. يرجى النقر فوق متابعة لاستئناف تعيين الأدوار.",
-        "تمت مقاطعة العملية لـ ${ pausedCount } مجموعة. يرجى النقر فوق متابعة لاستئناف تعيين الأدوار.",
-        "تمت مقاطعة العملية لـ ${ pausedCount } مجموعة. يرجى النقر فوق متابعة لاستئناف تعيين الأدوار."
       ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
         "يمكن منح رصيد الإحالة خلال مدة تصل إلى شهرين (2) بعد انتهاء تجربة الصديق، فقط في حال اشتراكه في خطة."
@@ -15402,9 +15383,6 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "مالك"
-      ],
       "Security Admin": [
         "مسؤول الأمان"
       ],
@@ -18701,9 +18679,6 @@
       "Group membership": [
         "عضوية المجموعة"
       ],
-      "Group role assignment paused": [
-        "تم إيقاف تعيين أدوار المجموعة مؤقتًا"
-      ],
       "Groups": [
         "المجموعات"
       ],
@@ -18766,9 +18741,6 @@
       "Information exposed in breach": [
         "المعلومات المكشوفة في الاختراق"
       ],
-      "Integrations": [
-        "التكاملات"
-      ],
       "Invalid verification code": [
         "رمز التحقق خاطئ"
       ],
@@ -18801,9 +18773,6 @@
       ],
       "Minicalendar": [
         "التقويم المصغر"
-      ],
-      "Monitoring": [
-        "مراقبة"
       ],
       "Multi-user support": [
         "دعم متعدد المستخدمين"
@@ -19134,9 +19103,6 @@
       ],
       "Single sign-on": [
         "تسجيل الدخول الفردي (SSO)"
-      ],
-      "Single-sign on (SSO)": [
-        "تسجيل دخول موحد (SSO)"
       ],
       "SMS verification": [
         "التحقق عبر الرسائل النصية القصيرة (SMS)"

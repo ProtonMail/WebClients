@@ -2494,7 +2494,7 @@
         "1 korisnički račun"
       ],
       "200 GB storage: 40x your current plan": [
-        "200 GB pohrane: 40 puta više od vašeg trenutnog plana"
+        "200 GB pohrana: 40x vaš trenutni plan"
       ],
       "6 user accounts": [
         "6 korisničkih računa"
@@ -2573,16 +2573,16 @@
         "Pohrana podataka od 2 TB"
       ],
       "3 TB data storage": [
-        "Pohrana podataka od 3 TB"
+        "3 TB pohrane podataka"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "Pristupite preko 15.000+ poslužitelja u više od 120+ zemalja"
+        "Pristupite više od 15.000 poslužitelja u više od 120 zemalja"
       ],
       "Access advanced AI models": [
         "Pristupite naprednim modelima umjetne inteligencije"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Sve premium značajke aplikacija ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
+        "Sve značajke premium poslužitelja za apl. ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Block ads, trackers, and malware": [
         "Blokirajte oglase, pratitelje i zlonamjerne programe"
@@ -2591,10 +2591,10 @@
         "Ugrađeni 2FA autentifikator"
       ],
       "Connect 10 devices at once": [
-        "Povežite 10 uređaja odjednom"
+        "Povežite 10 uređaja istovremeno"
       ],
       "Full chat history with easy search and favorites": [
-        "Potpuna povijest chata uz jednostavno pretraživanje i favorite"
+        "Potpuna povijest razgovora s jednostavnom pretragom i favoritima"
       ],
       "Individual accounts for 6 users": [
         "Pojedinačni korisnički računi za 6 korisnika"
@@ -2606,12 +2606,12 @@
         "Snažnija zaštita od kibernetičkih prijetnji"
       ],
       "Unlimited daily chats": [
-        "Neograničeni dnevni chatovi"
+        "Neograničeni dnevni razgovori"
       ]
     },
     "BF2025: Tooltip": {
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Posebno dizajniran NetShield štiti vaše uređaje i ubrzava vaše pregledavanje blokiranjem oglasa, pratitelja i zlonamjernih programa."
+        "Posebno dizajniran NetShield štiti vaše uređaje i ubrzava pregledavanje blokiranjem oglasa, pratitelja i zlonamjernih programa."
       ]
     },
     "Billing cycle": {
@@ -5068,9 +5068,6 @@
       "Most issues can be solved in a few minutes with our step-by-step guides.": [
         "Većina se problema može riješiti u nekoliko minuta pomoću naših vodiča korak-po-korak."
       ],
-      "No ads. No trackers.": [
-        "Bez oglasa. Bez pratitelja."
-      ],
       "No one in your organization can connect to shared servers.": [
         "Nitko se u vašoj organizaciji ne može povezati s dijeljenim poslužiteljima."
       ],
@@ -5547,17 +5544,6 @@
       ],
       "Windows 10/11 (x64)": [
         "Windows 10/11 (x64)"
-      ]
-    },
-    "Download link": {
-      ".deb for Debian / Ubuntu": [
-        ".deb za Debian / Ubuntu"
-      ],
-      ".rpm for Fedora / Red Hat": [
-        ".rpm za Fedora / Red Hat"
-      ],
-      "You can also download the app through the ${ linkSnapStore }.": [
-        "Možete također preuzeti aplikaciju putem platforme ${ linkSnapStore }."
       ]
     },
     "drive_signup_2023: Title": {
@@ -6415,9 +6401,6 @@
       "Enable auto-renew": [
         "Omogući automatsku obnovu"
       ],
-      "Enter your extra password": [
-        "Unesite svoju dodatnu lozinku"
-      ],
       "Explore plans": [
         "Istražite planove"
       ],
@@ -6598,9 +6581,6 @@
       ],
       "Unable to recover data": [
         "Nije moguće oporaviti podatke"
-      ],
-      "Unlock ${ PASS_APP_NAME }": [
-        "Otključaj ${ PASS_APP_NAME }"
       ],
       "Upgrade": [
         "Nadogradnja"
@@ -7185,11 +7165,6 @@
         "Dodjeljivanje uloga nije se moglo dovršiti za ${ errors.length } člana",
         "Dodjeljivanje uloga nije se moglo dovršiti za ${ errors.length } člana",
         "Dodjeljivanje uloga nije se moglo dovršiti za ${ errors.length } članova"
-      ],
-      "Role assignment could not be completed for ${ failedGroupCount } group": [
-        "Dodjeljivanje uloga nije se moglo dovršiti za ${ failedGroupCount } grupu",
-        "Dodjeljivanje uloga nije se moglo dovršiti za ${ failedGroupCount } grupe",
-        "Dodjeljivanje uloga nije se moglo dovršiti za ${ failedGroupCount } grupa"
       ],
       "Server not found": [
         "Poslužitelj nije pronađen"
@@ -8617,14 +8592,6 @@
         "Mnogi se problemi mogu brzo riješiti uz naše vodiče za pomoć. Ako trebate dodatnu podršku, naš tim je tu da pomogne."
       ]
     },
-    "Get started checklist instructions": {
-      "${ appName } on App Store": [
-        "${ appName } na App Storeu"
-      ],
-      "${ appName } on Play Store": [
-        "${ appName } na Play Store"
-      ]
-    },
     "Gmail forwarding": {
       "Automatically forward": [
         "Automatsko prosljeđivanje"
@@ -9755,9 +9722,6 @@
       "**Your recovery email alone doesn't allow you to recover your encrypted data** after you reset your password.": [
         "**Samo vaša adresa e-pošte za oporavak ne omogućuje vam oporavak šifriranih podataka** nakon što ponovno pokrenete lozinku."
       ],
-      "**Your recovery methods will be invalidated:** you can generate new recovery data later.": [
-        "**Vaši načini oporavka bit će poništeni:** kasnije možete stvoriti nove podatke za oporavak."
-      ],
       "**Your recovery phone alone doesn’t allow you to recover your encrypted data** after you reset your password.": [
         "**Samo vaš telefon za oporavak ne omogućuje vam oporavak šifriranih podataka** nakon što ponovno pokrenete lozinku."
       ],
@@ -10751,9 +10715,6 @@
       "Failed to fetch logs.": [
         "Dohvaćanje zapisa nije uspjelo."
       ],
-      "Fast and focused. Email and calendar, right on your desktop.": [
-        "Brzo i usmjereno. E-pošta i kalendar, izravno na Vašoj radnoj površini."
-      ],
       "Featured in": [
         "Objavljeno u"
       ],
@@ -11482,9 +11443,6 @@
       ],
       "On": [
         "Uključeno"
-      ],
-      "On Ubuntu?": [
-        "Na Ubuntu?"
       ],
       "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
         "Nakon što se odobri pristup vašem korisničkom računu, oni mogu pristupiti vašim postavkama **Oporavka** i **promijeniti vašu lozinku za ${ ACCOUNT_APP_NAME }** umjesto vas."
@@ -12222,11 +12180,6 @@
       ],
       "The name will be visible to your users while they are signed in.": [
         "Naziv će biti vidljiv vašim korisnicima dok su prijavljeni."
-      ],
-      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
-        "Postupak je prekinut za ${ pausedCount } grupu. Kliknite Nastavi za nastavak dodjeljivanja uloga.",
-        "Postupak je prekinut za ${ pausedCount } grupe. Kliknite Nastavi za nastavak dodjeljivanja uloga.",
-        "Postupak je prekinut za ${ pausedCount } grupa. Kliknite Nastavi za nastavak dodjeljivanja uloga."
       ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
         "Preporučeni kredit može se dodijeliti do 2 mjeseca nakon što završi probna verzija vašeg prijatelja, samo ako se vaš prijatelj pretplatio na plan."
@@ -14145,9 +14098,6 @@
       "Backup password": [
         "Rezervna lozinka"
       ],
-      "Beta": [
-        "Beta"
-      ],
       "Billed at ${ priceYearly } every 12 months.": [
         "Naplaćuje se ${ priceYearly } svakih 12 mjeseci."
       ],
@@ -14371,9 +14321,6 @@
       ],
       "Days of the week": [
         "Dani u tjednu"
-      ],
-      "Deals, offers, marketing emails": [
-        "Ponude, promocije, marketinška e-pošta"
       ],
       "Default email address": [
         "Zadana adresa e-pošte"
@@ -15139,9 +15086,6 @@
       ],
       "Select an identity provider to start": [
         "Za početak odaberite davatelja identiteta"
-      ],
-      "Select Linux package format": [
-        "Odaberite format Linux paketa"
       ],
       "Select Linux platform": [
         "Odaberi Linux platformu"
@@ -15913,9 +15857,6 @@
       ],
       "Sign in": [
         "Prijavite se"
-      ],
-      "Snap store": [
-        "Snap store"
       ],
       "switch account": [
         "promijeni korisnički račun"
@@ -20875,9 +20816,6 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Vlasnik"
-      ],
       "Security Admin": [
         "Administrator sigurnosti"
       ],
@@ -21475,9 +21413,6 @@
       ]
     },
     "Service provider": {
-      "Add to ${ CALENDAR_APP_NAME }": [
-        "Dodaj u ${ CALENDAR_APP_NAME }"
-      ],
       "Allows you to add a Zoom video conference to any of your calendar events": [
         "Omogućuje dodavanje Zoom video konferencije bilo kojem događaju u Vašem kalendaru."
       ]
@@ -24945,9 +24880,6 @@
       "Dashboard": [
         "Upravljačka ploča"
       ],
-      "Data collection": [
-        "Prikupljanje podataka"
-      ],
       "Data recovery": [
         "Povrat podataka"
       ],
@@ -25384,9 +25316,6 @@
       "Group membership": [
         "Grupno članstvo"
       ],
-      "Group role assignment paused": [
-        "Dodjeljivanje uloga grupe je pauzirano"
-      ],
       "Groups": [
         "Grupe"
       ],
@@ -25547,9 +25476,6 @@
       ],
       "Mobile": [
         "Mobitel"
-      ],
-      "Monitoring": [
-        "Nadzor"
       ],
       "Monthly": [
         "Mjesečno"
@@ -25724,9 +25650,6 @@
       ],
       "Priority support:": [
         "Prioritetna podrška:"
-      ],
-      "Privacy": [
-        "Privatnost"
       ],
       "Privacy and data collection": [
         "Privatnost i prikupljanje podataka"
@@ -26000,9 +25923,6 @@
       ],
       "Single sign-on": [
         "Jedinstvena prijava"
-      ],
-      "Single-sign on (SSO)": [
-        "Jedinstvena prijava (SSO)"
       ],
       "SMS verification": [
         "SMS potvrda"

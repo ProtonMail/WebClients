@@ -792,6 +792,9 @@
       "Join with ${ MEET_APP_NAME }": [
         "Pripojte sa k ${ MEET_APP_NAME }"
       ],
+      "Keep going": [
+        "Pokračujte"
+      ],
       "Keep inbox as before": [
         "Ponechať doručenú poštu ako predtým"
       ],
@@ -1245,6 +1248,9 @@
       "Run on ${ BRAND_NAME } servers": [
         "Spustiť na ${ BRAND_NAME } serveroch"
       ],
+      "Run realistic session": [
+        "Spustiť realistickú reláciu"
+      ],
       "Save": [
         "Uložiť"
       ],
@@ -1467,6 +1473,9 @@
       "Stop generating result": [
         "Zastaviť generovanie výsledku"
       ],
+      "Stop here": [
+        "Tu zastav"
+      ],
       "Stop marking as read": [
         "Prestať označovať ako prečítané"
       ],
@@ -1534,10 +1543,7 @@
         "Dôverovať"
       ],
       "Trust key": [
-        "Dôveryhodný kľúč",
-        "Dôveryhodné kľúče",
-        "Dôveryhodné kľúče",
-        "Dôveryhodné kľúče"
+        "Dôveryhodný kľúč"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -1703,6 +1709,9 @@
       ],
       "Why not?": [
         "Prečo nie?"
+      ],
+      "Write ${ count } logs": [
+        "Zapísať ${ count } záznamov"
       ],
       "Write for me": [
         "Napísať za mňa"
@@ -4310,8 +4319,8 @@
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "Nové emaily od ${ senderEmailAddress } nebudú doručené a budú trvalo zmazané."
       ],
-      "No ads. No trackers.": [
-        "Žiadne reklamy. Žiadne sledovacie nástroje."
+      "No ads. No trackers": [
+        "Žiadne reklamy. Žiadne sledovacie nástroje"
       ],
       "No folders": [
         "Žiadne priečinky"
@@ -4945,6 +4954,9 @@
       ],
       "Could not find an available name": [
         "Nepodarilo sa nájsť voľné meno"
+      ],
+      "Could not grant access to the organization key": [
+        "Nepodarilo sa udeliť prístup ku kľúču organizácie"
       ],
       "Could not load sharing details": [
         "Nepodarilo sa načítať podrobnosti o zdieľaní"
@@ -8262,6 +8274,9 @@
       "How hide-my-email aliases works": [
         "Ako fungujú aliasy Hide-my-email"
       ],
+      "I have not finished this one yet.": [
+        "Ešte som to nedokončil."
+      ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Túto správu posielam príjemcovi, ktorý nie je používateľom služby ${ MAIL_APP_NAME }."
       ],
@@ -8359,7 +8374,10 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok"
+        "Vložiť obrázok",
+        "Vložiť obrázky",
+        "Vložiť obrázky",
+        "Vložiť obrázky"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -8450,9 +8468,6 @@
       ],
       "Low Priority": [
         "Nízka priorita"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Nastavte ${ MAIL_APP_NAME } ako vašu predvolenú emailovú aplikáciu."
       ],
       "Manage your folders": [
         "Spravovať priečinky"
@@ -8621,6 +8636,9 @@
       ],
       "Not connected": [
         "Nepripojené"
+      ],
+      "Not supported by this browser": [
+        "Tento prehliadač túto funkciu nepodporuje"
       ],
       "Number of dedicated servers in the organization": [
         "Počet dedikovaných serverov v organizácii"
@@ -9057,6 +9075,9 @@
       "Sorry, this message does not exist or has already expired.": [
         "Je nám ľúto, táto správa neexistuje, alebo jej už vypršala platnosť."
       ],
+      "Star emails": [
+        "Označiť emaily hviezdičkou"
+      ],
       "Start sharing it with contacts and use it for online services.": [
         "Začnite ju zdieľať s kontaktmi a používajte ju na online služby."
       ],
@@ -9245,6 +9266,9 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Toto je teraz vaša ${ defaultEmailAddress } pre odosielanie nových správ."
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Je to dosť zdĺhavé. Mám v tom pokračovať?"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Tento odkaz vedie na webovú stránku, ktorá sa môže pokúsiť ukradnúť vaše informácie, ako sú heslá a údaje z platobnej karty."
@@ -9465,6 +9489,9 @@
       "Unsaved changes": [
         "Neuložené zmeny"
       ],
+      "Unstar emails": [
+        "Odobrať hviezdičku z emailov"
+      ],
       "Unsubscribe": [
         "Odhlásiť odber"
       ],
@@ -9659,6 +9686,12 @@
       ],
       "Would you like to receive a new verification code?": [
         "Chcete získať nový overovací kód?"
+      ],
+      "Writes ${ REALISTIC_ENTRIES } realistic log lines trickling in over a minute, like an actual session, instead of all at once. Takes about a minute to run. Keep this tab focused: frame measurements pause in the background.": [
+        "Zapíše ${ REALISTIC_ENTRIES } realistických riadkov záznamu, ktoré sa zobrazujú postupne v priebehu jednej minúty, ako pri skutočnej relácii, namiesto toho, aby sa zobrazili všetky naraz. Spustenie trvá približne jednu minútu. Nechajte túto kartu aktívnu: merania snímok sa v pozadí pozastavia."
+      ],
+      "Writes realistic log lines back-to-back, then reads them all back. Shows how write and read/export cost scale with the number of stored entries.": [
+        "Postupne zapisuje reálne riadky záznamu a následne ich všetky prečíta späť. Ukazuje, ako sa náklady na zápis a čítanie/export menia v závislosti od počtu uložených záznamov."
       ],
       "Writing assistant": [
         "Asistent písania"
@@ -10370,6 +10403,9 @@
       "Account holder": [
         "Vlastník účtu"
       ],
+      "Account holder name": [
+        "Meno majiteľa účtu"
+      ],
       "Actions": [
         "Akcie"
       ],
@@ -10474,6 +10510,9 @@
       ],
       "BTC amount": [
         "Suma BTC"
+      ],
+      "Burst write": [
+        "Hromadný zápis"
       ],
       "Calendar": [
         "Kalendár"
@@ -10586,8 +10625,8 @@
       "Date:": [
         "Dátum:"
       ],
-      "Deals, offers, marketing emails": [
-        "Ponuky, akcie, marketingové emaily"
+      "Deals, offers, and marketing emails": [
+        "Ponuky, akcie a marketingové emaily"
       ],
       "Delete": [
         "Odstrániť"
@@ -10624,6 +10663,12 @@
       ],
       "Drive": [
         "Jednotka"
+      ],
+      "Dropped frames": [
+        "Vynechané snímky"
+      ],
+      "Duration": [
+        "Trvanie"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "napr. Amazon, eBay, Etsy"
@@ -10667,8 +10712,14 @@
       "Enable filter": [
         "Povoliť filter"
       ],
+      "Encrypt": [
+        "Šifrovať"
+      ],
       "Encrypt emails": [
         "Šifrovať emaily"
+      ],
+      "Entries": [
+        "Záznamy"
       ],
       "Exact host matching": [
         "Presná zhoda hostiteľa"
@@ -10678,6 +10729,9 @@
       ],
       "Expires": [
         "Exspiruje"
+      ],
+      "Export size": [
+        "Veľkosť exportu"
       ],
       "Extended address": [
         "Rozšírená adresa"
@@ -10775,6 +10829,9 @@
       "Include application logs in bug report": [
         "Vrátane záznamov aplikácie v chybovom hlásení"
       ],
+      "IndexedDB store": [
+        "Úložisko IndexedDB"
+      ],
       "Information": [
         "Informácia"
       ],
@@ -10819,6 +10876,12 @@
       ],
       "Location": [
         "Poloha"
+      ],
+      "Log performance": [
+        "Výkonnosť zaznamenávania"
+      ],
+      "Long tasks (≥ 50 ms)": [
+        "Dlhé úlohy (≥ 50 ms)"
       ],
       "Mail debugging information": [
         "Ladiace informácie pošty"
@@ -11009,6 +11072,12 @@
       "Read": [
         "Prečítané"
       ],
+      "Read / export": [
+        "Čítať / exportovať"
+      ],
+      "Realistic session": [
+        "Realistická relácia"
+      ],
       "Recipient": [
         "Príjemca"
       ],
@@ -11110,6 +11179,9 @@
       ],
       "Subscription options": [
         "Možnosti predplatného"
+      ],
+      "Sum of write() calls": [
+        "Súčet volaní funkcie write()"
       ],
       "Sync with system": [
         "Podľa systému"
@@ -11218,6 +11290,15 @@
       ],
       "Without attachment": [
         "Bez prílohy"
+      ],
+      "Write": [
+        "Zapísať"
+      ],
+      "Write (whole session)": [
+        "Zapísať (celú reláciu)"
+      ],
+      "Write-chain drain after last line": [
+        "Vypustenie reťazca zápisu po poslednom riadku"
       ],
       "Writing assistant": [
         "Asistent písania"
@@ -12121,6 +12202,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Asistent písania ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME } – asistent písania s rozšíreným prístupom"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME } – asistent písania s obmedzeným prístupom"
       ],
       "${ n } calendar": [
         "${ n } kalendár",
@@ -13503,12 +13590,6 @@
       ],
       "No parent folder": [
         "Žiadny nadradený priečinok"
-      ],
-      "Remind me later": [
-        "Pripomenúť neskôr"
-      ],
-      "Yes, don't show again": [
-        "Áno, viac nezobrazovať"
       ]
     },
     "Option group": {
@@ -13824,6 +13905,9 @@
       ],
       "Invalid security code": [
         "Neplatný bezpečnostný kód"
+      ],
+      "Please enter the account holder name": [
+        "Zadajte meno majiteľa účtu, prosím"
       ],
       "Something went wrong. Please try again later.": [
         "Niečo sa pokazilo. Skúste to znova neskôr."
@@ -14524,8 +14608,8 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Vlastník"
+      "Organization Admin": [
+        "Správca organizácie"
       ],
       "Security Admin": [
         "Bezpečnostný správca"
@@ -17042,9 +17126,6 @@
       "Invalid verification code": [
         "Nesprávny overovací kód"
       ],
-      "Keep this banner hidden?": [
-        "Ponechať túto reklamu skrytú?"
-      ],
       "Label as": [
         "Označiť ako"
       ],
@@ -17465,6 +17546,9 @@
       "Snooze:": [
         "Odložiť:"
       ],
+      "Star emails": [
+        "Označiť emaily hviezdičkou"
+      ],
       "Start a new import": [
         "Zahájiť nový import"
       ],
@@ -17473,6 +17557,9 @@
       ],
       "Stay for 50% off your next month": [
         "Zostaňte a získajte 50 % zľavu na nasledujúci mesiac"
+      ],
+      "Still working on it": [
+        "Stále na tom pracujem"
       ],
       "Storage capacity warning": [
         "Upozornenie na kapacitu úložiska"
@@ -17521,6 +17608,9 @@
       ],
       "Two-factor authentication": [
         "Dvojstupňové overenie"
+      ],
+      "Unstar emails": [
+        "Odobrať hviezdičku z emailov"
       ],
       "Unsubscribe": [
         "Odhlásiť sa z odberu"

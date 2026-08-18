@@ -784,6 +784,9 @@
       "Join with ${ MEET_APP_NAME }": [
         "Rejoindre avec ${ MEET_APP_NAME }"
       ],
+      "Keep going": [
+        "Continuer"
+      ],
       "Keep inbox as before": [
         "Conserver la boite de réception telle quelle"
       ],
@@ -1459,6 +1462,9 @@
       "Stop generating result": [
         "Arrêter la génération du résultat"
       ],
+      "Stop here": [
+        "S'arrêter ici"
+      ],
       "Stop marking as read": [
         "Arrêter de marquer comme lu"
       ],
@@ -1526,8 +1532,7 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Faire confiance à cette clé",
-        "Faire confiance à ces clés"
+        "Clé de confiance"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -4246,8 +4251,8 @@
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "Les nouveaux messages de ${ senderEmailAddress } ne seront pas envoyés et seront définitivement supprimés."
       ],
-      "No ads. No trackers.": [
-        "Pas de publicité. Pas de traqueurs."
+      "No ads. No trackers": [
+        "Pas de publicité. Pas de traqueurs"
       ],
       "No folders": [
         "Aucun dossier"
@@ -4839,6 +4844,9 @@
       ],
       "Copying item to a non-folder is not allowed": [
         "Vous ne pouvez pas copier d'élément dans un élément qui n'est pas un dossier."
+      ],
+      "Could not grant access to the organization key": [
+        "Impossible d'accorder l'accès à la clé de l'organisation"
       ],
       "Could not load sharing details": [
         "Les informations du partage n'ont pas pu être chargées."
@@ -7872,6 +7880,9 @@
       "How hide-my-email aliases works": [
         "Fonctionnement des alias « hide-my-email »"
       ],
+      "I have not finished this one yet.": [
+        "Je n'ai pas encore fini celui-là."
+      ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "J'envoie ce message à une personne qui n'utilise pas ${ MAIL_APP_NAME }."
       ],
@@ -7967,7 +7978,8 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image"
+        "Insérer une image",
+        "Insérer des images"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -8617,6 +8629,9 @@
       "Sorry, this message does not exist or has already expired.": [
         "Désolé, ce message n'existe pas ou a déjà expiré."
       ],
+      "Star emails": [
+        "Mettre les e-mails en favoris"
+      ],
       "Start sharing it with contacts and use it for online services.": [
         "Commencez à la partager avec vos contacts et utilisez-la pour les services en ligne."
       ],
@@ -8796,6 +8811,9 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Ceci est désormais votre ${ defaultEmailAddress } pour envoyer de nouveaux messages."
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Cela demande beaucoup d'étapes. Faut-il continuer ?"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Ce lien mène à un site web qui pourrait essayer de voler vos informations, comme des mots de passe et des informations de carte de paiement."
@@ -8998,6 +9016,9 @@
       ],
       "Unsaved changes": [
         "Les modifications ne sont pas enregistrées."
+      ],
+      "Unstar emails": [
+        "Retirer les e-mails des favoris"
       ],
       "Unsubscribe": [
         "Se désabonner"
@@ -9844,6 +9865,9 @@
       "Account holder": [
         "Titulaire du compte"
       ],
+      "Account holder name": [
+        "Nom du titulaire du compte"
+      ],
       "Actions": [
         "Actions"
       ],
@@ -10060,8 +10084,8 @@
       "Date:": [
         "Date :"
       ],
-      "Deals, offers, marketing emails": [
-        "Offres, promotions, messages marketing"
+      "Deals, offers, and marketing emails": [
+        "Offres, promotions et messages marketing"
       ],
       "Delete": [
         "Supprimer"
@@ -10098,6 +10122,9 @@
       ],
       "Drive": [
         "Drive"
+      ],
+      "Duration": [
+        "Durée"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "par exemple Amazon, eBay ou Etsy"
@@ -10140,6 +10167,9 @@
       ],
       "Enable filter": [
         "Activer le filtre"
+      ],
+      "Encrypt": [
+        "Chiffrer"
       ],
       "Encrypt emails": [
         "Chiffrer les messages"
@@ -11563,6 +11593,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Assistant d'écriture ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME } avec un accès étendu"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME } avec un accès limité"
       ],
       "${ n } calendar": [
         "${ n } calendrier",
@@ -13195,6 +13231,9 @@
       "Invalid security code": [
         "Le code de sécurité n'est pas valide."
       ],
+      "Please enter the account holder name": [
+        "Veuillez saisir le nom du titulaire du compte"
+      ],
       "Something went wrong. Please try again later.": [
         "Une erreur s'est produite. Veuillez réessayer plus tard."
       ],
@@ -13878,8 +13917,8 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Propriétaire"
+      "Organization Admin": [
+        "Administrateur de l'organisation"
       ],
       "Security Admin": [
         "Administrateur de sécurité"
@@ -16639,6 +16678,9 @@
       "Snooze:": [
         "Mise en attente :"
       ],
+      "Star emails": [
+        "Mettre les e-mails en favoris"
+      ],
       "Start a new import": [
         "Démarrer une nouvelle importation"
       ],
@@ -16647,6 +16689,9 @@
       ],
       "Stay for 50% off your next month": [
         "Restez et bénéficiez de 50 % de réduction sur votre prochain mois"
+      ],
+      "Still working on it": [
+        "Je suis encore en train d'y travailler"
       ],
       "Storage capacity warning": [
         "Avertissement de capacité de stockage"
@@ -16693,6 +16738,9 @@
       ],
       "Two-factor authentication": [
         "Authentification à deux facteurs"
+      ],
+      "Unstar emails": [
+        "Retirer les e-mails des favoris"
       ],
       "Unsubscribe": [
         "Se désabonner"

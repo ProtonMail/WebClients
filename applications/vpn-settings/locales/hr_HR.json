@@ -1802,7 +1802,7 @@
         "1 korisnički račun"
       ],
       "200 GB storage: 40x your current plan": [
-        "200 GB pohrane: 40 puta više od vašeg trenutnog plana"
+        "200 GB pohrana: 40x vaš trenutni plan"
       ],
       "6 user accounts": [
         "6 korisničkih računa"
@@ -1881,16 +1881,16 @@
         "Pohrana podataka od 2 TB"
       ],
       "3 TB data storage": [
-        "Pohrana podataka od 3 TB"
+        "3 TB pohrane podataka"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "Pristupite preko 15.000+ poslužitelja u više od 120+ zemalja"
+        "Pristupite više od 15.000 poslužitelja u više od 120 zemalja"
       ],
       "Access advanced AI models": [
         "Pristupite naprednim modelima umjetne inteligencije"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Sve premium značajke aplikacija ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
+        "Sve značajke premium poslužitelja za apl. ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Block ads, trackers, and malware": [
         "Blokirajte oglase, pratitelje i zlonamjerne programe"
@@ -1899,10 +1899,10 @@
         "Ugrađeni 2FA autentifikator"
       ],
       "Connect 10 devices at once": [
-        "Povežite 10 uređaja odjednom"
+        "Povežite 10 uređaja istovremeno"
       ],
       "Full chat history with easy search and favorites": [
-        "Potpuna povijest chata uz jednostavno pretraživanje i favorite"
+        "Potpuna povijest razgovora s jednostavnom pretragom i favoritima"
       ],
       "Individual accounts for 6 users": [
         "Pojedinačni korisnički računi za 6 korisnika"
@@ -1914,12 +1914,12 @@
         "Snažnija zaštita od kibernetičkih prijetnji"
       ],
       "Unlimited daily chats": [
-        "Neograničeni dnevni chatovi"
+        "Neograničeni dnevni razgovori"
       ]
     },
     "BF2025: Tooltip": {
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Posebno dizajniran NetShield štiti vaše uređaje i ubrzava vaše pregledavanje blokiranjem oglasa, pratitelja i zlonamjernih programa."
+        "Posebno dizajniran NetShield štiti vaše uređaje i ubrzava pregledavanje blokiranjem oglasa, pratitelja i zlonamjernih programa."
       ]
     },
     "Billing cycle": {
@@ -3630,9 +3630,6 @@
       "Most issues can be solved in a few minutes with our step-by-step guides.": [
         "Većina se problema može riješiti u nekoliko minuta pomoću naših vodiča korak-po-korak."
       ],
-      "No ads. No trackers.": [
-        "Bez oglasa. Bez pratitelja."
-      ],
       "No one in your organization can connect to shared servers.": [
         "Nitko se u vašoj organizaciji ne može povezati s dijeljenim poslužiteljima."
       ],
@@ -5031,11 +5028,6 @@
         "Dodjeljivanje uloga nije se moglo dovršiti za ${ errors.length } člana",
         "Dodjeljivanje uloga nije se moglo dovršiti za ${ errors.length } člana",
         "Dodjeljivanje uloga nije se moglo dovršiti za ${ errors.length } članova"
-      ],
-      "Role assignment could not be completed for ${ failedGroupCount } group": [
-        "Dodjeljivanje uloga nije se moglo dovršiti za ${ failedGroupCount } grupu",
-        "Dodjeljivanje uloga nije se moglo dovršiti za ${ failedGroupCount } grupe",
-        "Dodjeljivanje uloga nije se moglo dovršiti za ${ failedGroupCount } grupa"
       ],
       "Server not found": [
         "Poslužitelj nije pronađen"
@@ -8801,11 +8793,6 @@
       ],
       "The name will be visible to your users while they are signed in.": [
         "Naziv će biti vidljiv vašim korisnicima dok su prijavljeni."
-      ],
-      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
-        "Postupak je prekinut za ${ pausedCount } grupu. Kliknite Nastavi za nastavak dodjeljivanja uloga.",
-        "Postupak je prekinut za ${ pausedCount } grupe. Kliknite Nastavi za nastavak dodjeljivanja uloga.",
-        "Postupak je prekinut za ${ pausedCount } grupa. Kliknite Nastavi za nastavak dodjeljivanja uloga."
       ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
         "Preporučeni kredit može se dodijeliti do 2 mjeseca nakon što završi probna verzija vašeg prijatelja, samo ako se vaš prijatelj pretplatio na plan."
@@ -14716,9 +14703,6 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Vlasnik"
-      ],
       "Security Admin": [
         "Administrator sigurnosti"
       ],
@@ -17790,9 +17774,6 @@
       "Group membership": [
         "Grupno članstvo"
       ],
-      "Group role assignment paused": [
-        "Dodjeljivanje uloga grupe je pauzirano"
-      ],
       "Groups": [
         "Grupe"
       ],
@@ -17852,9 +17833,6 @@
       "Information exposed in breach": [
         "Podaci izloženi u povredi"
       ],
-      "Integrations": [
-        "Integracije"
-      ],
       "Invalid verification code": [
         "Nevažeći kôd za provjeru"
       ],
@@ -17887,9 +17865,6 @@
       ],
       "Minicalendar": [
         "Minikalendar"
-      ],
-      "Monitoring": [
-        "Nadzor"
       ],
       "Multi-user support": [
         "Višekorisnička podrška"
@@ -18217,9 +18192,6 @@
       ],
       "Single sign-on": [
         "Jedinstvena prijava"
-      ],
-      "Single-sign on (SSO)": [
-        "Jedinstvena prijava (SSO)"
       ],
       "SMS verification": [
         "SMS potvrda"

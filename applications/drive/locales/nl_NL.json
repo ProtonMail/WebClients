@@ -48,6 +48,10 @@
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } toevoegen"
       ],
+      "Add ${ photoCount } photo to a new album": [
+        "Voeg ${ photoCount } foto toe aan een nieuw album",
+        "Voeg ${ photoCount } foto's toe aan een nieuw album"
+      ],
       "Add account": [
         "Account toevoegen"
       ],
@@ -4581,6 +4585,12 @@
         "Gebruikersnaam"
       ]
     },
+    "Heading": {
+      "Share ${ photoCount } photo via": [
+        "Deel ${ photoCount } foto via",
+        "Deel ${ photoCount } foto's via"
+      ]
+    },
     "Hint": {
       "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
         "${ itemsCount } suggestie gevonden, gebruik het toetsenbord om te navigeren.",
@@ -8936,6 +8946,10 @@
       "\"${ newName }\" renamed successfully": [
         "\"${ newName }\" succesvol hernoemd"
       ],
+      "${ addedUids.length } photo have been added to \"${ albumName }\"": [
+        "${ addedUids.length } foto is toegevoegd aan \"${ albumName }\"",
+        "${ addedUids.length } foto's zijn toegevoegd aan \"${ albumName }\""
+      ],
       "${ count } item failed to be decrypted": [
         "${ count } item kon niet worden ontsleuteld",
         "${ count } items konden niet worden ontsleuteld"
@@ -10170,9 +10184,6 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Eigenaar"
-      ],
       "Security Admin": [
         "Beveiligingsbeheerder"
       ],
@@ -11584,6 +11595,10 @@
       ],
       "Are you sure you want to close the preview?": [
         "Weet u zeker dat u het voorbeeld wil sluiten?"
+      ],
+      "Are you sure you want to remove this item from your list?": [
+        "Weet u zeker dat u dit item uit uw lijst wilt verwijderen?",
+        "Weet u zeker dat u deze items uit uw lijst wilt verwijderen?"
       ],
       "Are you sure?": [
         "Weet u het zeker?"
