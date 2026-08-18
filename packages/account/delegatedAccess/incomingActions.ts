@@ -1,5 +1,4 @@
-import { type UnknownAction, miniSerializeError } from '@reduxjs/toolkit';
-import type { ThunkAction } from 'redux-thunk';
+import { type ThunkAction, type UnknownAction, miniSerializeError } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { previousSelector } from '@proton/redux-utilities/creator';

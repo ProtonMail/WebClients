@@ -1,5 +1,4 @@
-import type { UnknownAction } from '@reduxjs/toolkit';
-import type { ThunkAction } from 'redux-thunk';
+import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 
 import type { ContactEmailsState } from '@proton/mail/store/contactEmails';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
