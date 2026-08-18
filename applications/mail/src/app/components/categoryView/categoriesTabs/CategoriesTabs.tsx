@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
+import { logger } from '@proton/logger';
 import { useCategoriesTelemetry } from '@proton/mail/features/categoriesView/useCategoriesTelemetry';
 import { selectCategoryUnreadCount } from '@proton/mail/store/categoriesView/categoriesViewSelector';
 import { updateLastSeenEventId } from '@proton/mail/store/labels/actions';
@@ -103,7 +104,7 @@ export const CategoriesTabsList = () => {
                                     onDragOver={handleDragOver(category.id)}
                                     onDrop={handleDrop(category.id)}
                                 >
-                                    <ErrorBoundary component={<CategoryTabError />}>
+                                    <ErrorBoundary component={<CategoryTabError />} logger={logger}>
                                         <Tab
                                             category={category}
                                             tabState={tabState}
@@ -122,7 +123,7 @@ export const CategoriesTabsList = () => {
                             onDragOver={handleDragOver(category.id)}
                             onDrop={handleDrop(category.id)}
                         >
-                            <ErrorBoundary component={<CategoryTabError />}>
+                            <ErrorBoundary component={<CategoryTabError />} logger={logger}>
                                 <Tab category={category} tabState={tabState} userIsDragging={isDraggingElements} />
                             </ErrorBoundary>
                         </div>
@@ -136,7 +137,7 @@ export const CategoriesTabsList = () => {
 // Used to wrap the categories components with an error boundary and have a safe fallback component
 export const CategoriesTabs = () => {
     return (
-        <ErrorBoundary component={<CategoriesTabsError />}>
+        <ErrorBoundary component={<CategoriesTabsError />} logger={logger}>
             <CategoriesTabsList />
         </ErrorBoundary>
     );
