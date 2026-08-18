@@ -1,5 +1,5 @@
 import { getMessageBlocks } from '../../../messageHelpers';
-import type { Message, MessageId } from '../../../types';
+import { type Message, type MessageId, isManualArtifactEditMessage } from '../../../types';
 import { Role } from '../../../types-api';
 import {
     CREATE_ARTIFACT_TOOL_NAME,
@@ -88,7 +88,8 @@ function getParsedArtifacts(message: Message): ParsedArtifact[] {
 
 /**
  * Walks a conversation's linear message chain and builds a registry of artifacts by id,
- * accumulating one version per finalized assistant message that reuses that id.
+ * accumulating one version per finalized assistant message that reuses that id, plus one
+ * version per manual-edit message (the user directly editing the artifact, no LLM involved).
  */
 export function buildArtifactRegistry(linearChain: Message[]): ArtifactRegistry {
     const registry: ArtifactRegistry = {};
@@ -96,7 +97,8 @@ export function buildArtifactRegistry(linearChain: Message[]): ArtifactRegistry 
     for (const message of linearChain) {
         // Note: no `!message.content` shortcut here — a message can carry an artifact via a
         // create_artifact tool-call block with no surrounding prose at all (empty `content`).
-        if (message.role !== Role.Assistant || message.status === undefined) {
+        const isFinalizedAssistant = message.role === Role.Assistant && message.status !== undefined;
+        if (!isFinalizedAssistant && !isManualArtifactEditMessage(message)) {
             continue;
         }
 
