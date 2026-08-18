@@ -1532,7 +1532,8 @@
         "Güven"
       ],
       "Trust key": [
-        "Anahtara güven"
+        "Anahtara güven",
+        "Anahtarlara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -4432,7 +4433,7 @@
         "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Limited tarifesine geçin."
       ],
       "No ads. No trackers": [
-        "Reklam yok. İzleyici yok"
+        "Reklam yok. Etkinlik izleyici yok"
       ]
     },
     "description": {
@@ -5680,6 +5681,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Aramanız çok fazla sonuç döndürdü. Lütfen aramanızı sınırlandırıp yeniden deneyin."
+      ],
+      "Could not grant access to the organization key": [
+        "Kuruluş anahtarına erişme izni verilemedi"
       ]
     },
     "error": {
@@ -8098,8 +8102,7 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle",
-        "Görseller ekle"
+        "Görsel ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -8192,7 +8195,7 @@
         "Düşük Öncelik"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "${ MAIL_APP_NAME }’yi varsayılan e-posta uygulamanız olarak ayarlayın."
+        "${ MAIL_APP_NAME } varsayılan e-posta uygulamanız olsun."
       ],
       "Manage your folders": [
         "Klasörlerinizi yönetin"
@@ -9702,10 +9705,30 @@
         "Bu tarayıcı tarafından desteklenmiyor"
       ],
       "Writes ${ REALISTIC_ENTRIES } realistic log lines trickling in over a minute, like an actual session, instead of all at once. Takes about a minute to run. Keep this tab focused: frame measurements pause in the background.": [
-        "${ REALISTIC_ENTRIES } gerçekçi günlük satırını tek seferde değil, gerçek bir oturumda olduğu gibi bir dakika boyunca kademeli olarak yazdırır. Çalışması yaklaşık bir dakika sürer. Bu sekmeyi açık tutun: aksi takdirde kare ölçümleri arka planda duraklatılır."
+        "${ REALISTIC_ENTRIES } gerçekçi günlük satırını tek seferde değil, gerçek bir oturumda olduğu gibi bir dakika boyunca kademeli olarak yazdırır. Çalışması yaklaşık bir dakika sürer. Bu sekmeyi açık tutun: Yoksa kare ölçümleri arka planda duraklatılır."
       ],
       "Writes realistic log lines back-to-back, then reads them all back. Shows how write and read/export cost scale with the number of stored entries.": [
-        "Arka arkaya gerçekçi günlük satırları yazar ardından hepsini tekrar okur. Yazma ve okuma/dışa aktarma maliyetlerinin depolanan girdi sayısıyla nasıl orantılı olarak arttığını gösterir."
+        "Arka arkaya gerçekçi günlük satırları yazar ardından tümünü yeniden okur. Yazma ve okuma/dışa aktarma maliyetlerinin depolanan kayıt sayısıyla orantılı olarak nasıl arttığını gösterir."
+      ],
+      "${ count } email": [
+        "${ count } e-posta",
+        "${ count } e-posta"
+      ],
+      "${ count } email · ${ names }": [
+        "${ count } e-posta · ${ names }",
+        "${ count } e-posta · ${ names }"
+      ],
+      "Apply labels": [
+        "Etiketleri uygula"
+      ],
+      "Expand logs": [
+        "Günlük kayıtlarını genişlet"
+      ],
+      "Mark as read": [
+        "Okunmuş olarak işaretle"
+      ],
+      "Mark as unread": [
+        "Okunmamış olarak işaretle"
       ]
     },
     "info": {
@@ -10936,10 +10959,10 @@
         "Süre"
       ],
       "Encrypt": [
-        "Şifrele"
+        "Şifreleme"
       ],
       "Entries": [
-        "Girdiler"
+        "Kayıtlar"
       ],
       "Export size": [
         "Dışa aktarma boyutu"
@@ -10948,16 +10971,16 @@
         "IndexedDB'den veri çekme"
       ],
       "IndexedDB store": [
-        "IndexedDB deposu"
+        "IndexedDB depolama"
       ],
       "Log performance": [
-        "Günlük performansı"
+        "Günlük başarımı"
       ],
       "Long tasks (≥ 50 ms)": [
         "Uzun süren görevler (≥ 50 ms)"
       ],
       "Read / export": [
-        "Oku / dışa aktar"
+        "Okuma / dışa aktarma"
       ],
       "Realistic session": [
         "Gerçekçi oturum"
@@ -10966,13 +10989,16 @@
         "write() çağrılarının toplamı"
       ],
       "Write": [
-        "Yaz"
+        "Yazma"
       ],
       "Write (whole session)": [
-        "Yaz (tüm oturum)"
+        "Yazma (tüm oturum)"
       ],
       "Write-chain drain after last line": [
-        "Son satırdan sonra yazma zinciri boşaltımı"
+        "Son satırdan sonra yazma zincirini boşaltma"
+      ],
+      "Account holder name": [
+        "Hesap sahibinin adı"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13149,10 +13175,10 @@
         "Üst klasör yok"
       ],
       "Remind me later": [
-        "Daha sonra hatırlat"
+        "Daha sonra anımsat"
       ],
       "Yes, don't show again": [
-        "Evet bir daha gösterme"
+        "Evet bir daha görüntülenmesin"
       ]
     },
     "Option group": {
@@ -13463,6 +13489,9 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Kartınız reddedildi. Lütfen ödemeyi onaylamak için başka bir kart deneyin ya da bankanızla görüşün."
+      ],
+      "Please enter the account holder name": [
+        "Lütfen hesap sahibinin adını yazın"
       ]
     },
     "Payments.error": {
@@ -14148,7 +14177,7 @@
         "Kullanıcı yöneticisi"
       ],
       "Organization Admin": [
-        "Kuruluş Yöneticisi"
+        "Kuruluş yöneticisi"
       ]
     },
     "Role description": {
@@ -16494,7 +16523,7 @@
         "Doğrulama kodu geçersiz"
       ],
       "Keep this banner hidden?": [
-        "Bu duyuruyu gizli tutmak ister misiniz?"
+        "Bu duyuruyu gizlemek ister misiniz?"
       ],
       "Label as": [
         "Etiketle"
@@ -17107,6 +17136,9 @@
       ],
       "Your shorter address is now ready": [
         "Daha kısa adresiniz hazır"
+      ],
+      "Apply labels": [
+        "Etiketleri uygula"
       ]
     },
     "Title header for keys table": {
