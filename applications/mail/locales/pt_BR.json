@@ -784,6 +784,9 @@
       "Join with ${ MEET_APP_NAME }": [
         "Participar com ${ MEET_APP_NAME }"
       ],
+      "Keep going": [
+        "Continue"
+      ],
       "Keep inbox as before": [
         "Manter a caixa de entrada como antes"
       ],
@@ -1459,6 +1462,9 @@
       "Stop generating result": [
         "Parar a geração de resultados"
       ],
+      "Stop here": [
+        "Parar aqui"
+      ],
       "Stop marking as read": [
         "Parar de marcar como lido"
       ],
@@ -1526,8 +1532,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Chave de confiança",
-        "Chaves de confiança"
+        "Chave de confiança"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -4246,8 +4251,8 @@
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "Novos e-mails de ${ senderEmailAddress } não serão entregues e serão excluídos permanentemente."
       ],
-      "No ads. No trackers.": [
-        "Sem anúncios. Sem rastreadores."
+      "No ads. No trackers": [
+        "Sem anúncios. Sem rastreadores"
       ],
       "No folders": [
         "Nenhuma pasta"
@@ -7782,6 +7787,9 @@
       "Everything in ${ planOrAppName }, plus:": [
         "Tido no ${ planOrAppName }, plus:"
       ],
+      "Expand logs": [
+        "Expandir registros"
+      ],
       "Expand selection": [
         "Expandir seleção"
       ],
@@ -7994,7 +8002,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem"
+        "Inserir imagem",
+        "Inserir imagens"
       ],
       "Insert link": [
         "Inserir link"
@@ -8085,9 +8094,6 @@
       ],
       "Low Priority": [
         "Baixa prioridade"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Tornar ${ MAIL_APP_NAME } como seu aplicativo de e-mail padrão."
       ],
       "Manage your folders": [
         "Gerenciar suas pastas"
@@ -8197,8 +8203,14 @@
       "No contacts added yet": [
         "Nenhum contato foi adicionado ainda"
       ],
+      "No conversation to read": [
+        "Nenhum diálogo para ler"
+      ],
       "No email address": [
         "Nenhum endereço de e-mail"
+      ],
+      "No email open": [
+        "Nenhum e-mail aberto"
       ],
       "No folder found": [
         "Nenhuma pasta encontrada"
@@ -8546,6 +8558,9 @@
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "A pesquisa está demorando demais? ${ dropdownButton } ou ${ toggleOffButton } nesta pesquisa."
       ],
+      "Searched for mail to ${ recipient }": [
+        "Pesquisei por e-mails para ${ recipient }"
+      ],
       "Secure your files with encrypted cloud storage for free, today.": [
         "Proteja seus arquivos com armazenamento em nuvem criptografado gratuitamente, hoje mesmo."
       ],
@@ -8651,6 +8666,9 @@
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Desculpe, esta mensagem não existe ou já expirou."
+      ],
+      "Star emails": [
+        "E-mails favoritos"
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Comece a compartilhá-lo com contatos e a usá-lo em serviços online."
@@ -8953,6 +8971,9 @@
       "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
         "Para migrar este usuário, adicione e verifique o domínio de e-mail em ${ domainNamesLink }"
       ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "Para migrar este usuário, ative a conta no seu ${ provider.adminConsoleName }."
+      ],
       "To migrate this user, enable their account under ${ usersAddressesLink }.": [
         "Para migrar este usuário, ative a conta dele em ${ usersAddressesLink }."
       ],
@@ -9036,6 +9057,9 @@
       ],
       "Unsaved changes": [
         "Alterações não salvas"
+      ],
+      "Unstar emails": [
+        "Remover favorito de e-mails"
       ],
       "Unsubscribe": [
         "Cancelar inscrição"
@@ -9174,6 +9198,9 @@
       ],
       "We use 3-D Secure to protect your payments": [
         "Usamos 3-D Secure para proteger seus pagamentos"
+      ],
+      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Vamos redirecioná-lo para o ${ IDEAL_BRAND_NAME } em uma nova guia do navegador para concluir esta transação. Desative qualquer bloqueador de pop-ups que estiver usando."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Vamos redirecioná-lo para o PayPal em uma nova guia do navegador para concluir esta transação. Desative qualquer bloqueador de pop-ups que estiver usando."
@@ -9876,6 +9903,9 @@
       "Account holder": [
         "Titular da conta"
       ],
+      "Account holder name": [
+        "Nome do titular da conta"
+      ],
       "Actions": [
         "Ações"
       ],
@@ -10092,9 +10122,6 @@
       "Date:": [
         "Data:"
       ],
-      "Deals, offers, marketing emails": [
-        "Ofertas, promoções e e-mails de marketing"
-      ],
       "Delete": [
         "Excluir"
       ],
@@ -10130,6 +10157,9 @@
       ],
       "Drive": [
         "Drive"
+      ],
+      "Duration": [
+        "Duração"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "p. ex., Amazon, eBay, Mercado Livre"
@@ -10173,6 +10203,9 @@
       "Enable filter": [
         "Ativar o filtro"
       ],
+      "Encrypt": [
+        "Criptografar"
+      ],
       "Encrypt emails": [
         "Criptografar e-mails"
       ],
@@ -10184,6 +10217,9 @@
       ],
       "Expires": [
         "Data de validade"
+      ],
+      "Export size": [
+        "Tamanho da exportação"
       ],
       "Extended address": [
         "Endereço completo"
@@ -10326,6 +10362,9 @@
       "Location": [
         "Localização"
       ],
+      "Log performance": [
+        "Registro de desempenho"
+      ],
       "Mail debugging information": [
         "Informações de depuração de e-mail"
       ],
@@ -10406,6 +10445,9 @@
       ],
       "No label found": [
         "Nenhum marcador encontrado"
+      ],
+      "No unread messages": [
+        "Nenhuma mensagem não lida"
       ],
       "Non-promotional content and news": [
         "Conteúdo não promocional e notícias"
@@ -10508,6 +10550,9 @@
       ],
       "Read": [
         "Lidos"
+      ],
+      "Read / export": [
+        "Leitura / Exportação"
       ],
       "Recipient": [
         "Destinatário"
@@ -10718,6 +10763,9 @@
       ],
       "Without attachment": [
         "Sem anexo"
+      ],
+      "Write": [
+        "Escrita"
       ],
       "Writing assistant": [
         "Assistente de escrita"
@@ -11589,6 +11637,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Assistente de escrita do ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Assistente de escrita da ${ LUMO_SHORT_APP_NAME } com acesso ampliado"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Assistente de escrita da ${ LUMO_SHORT_APP_NAME } com acesso limitado"
       ],
       "${ n } calendar": [
         "${ n } calendário",
@@ -12914,9 +12968,6 @@
       "No parent folder": [
         "Nenhuma pasta acima"
       ],
-      "Remind me later": [
-        "Lembrar-me depois"
-      ],
       "Yes, don't show again": [
         "Sim, não mostrar novamente"
       ]
@@ -13899,8 +13950,8 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Proprietário"
+      "Organization Admin": [
+        "Administrador da organização"
       ],
       "Security Admin": [
         "Administrador de segurança"
@@ -16669,6 +16720,9 @@
       "Snooze:": [
         "Adiar:"
       ],
+      "Star emails": [
+        "Favoritar e-mails"
+      ],
       "Start a new import": [
         "Iniciar uma nova importação"
       ],
@@ -16677,6 +16731,9 @@
       ],
       "Stay for 50% off your next month": [
         "Fique por mais um mês com 50% de desconto"
+      ],
+      "Still working on it": [
+        "Ainda estou trabalhando nisso"
       ],
       "Storage capacity warning": [
         "Aviso de capacidade de armazenamento"
@@ -16723,6 +16780,9 @@
       ],
       "Two-factor authentication": [
         "Autenticação de dois fatores"
+      ],
+      "Unstar emails": [
+        "Remover favorito de e-mails"
       ],
       "Unsubscribe": [
         "Cancelar inscrição"

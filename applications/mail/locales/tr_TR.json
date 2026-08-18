@@ -1240,6 +1240,9 @@
       "Run on ${ BRAND_NAME } servers": [
         "${ BRAND_NAME } sunucularında çalışsın"
       ],
+      "Run realistic session": [
+        "Gerçekçi oturum çalıştır"
+      ],
       "Save": [
         "Kaydet"
       ],
@@ -1532,8 +1535,7 @@
         "Güven"
       ],
       "Trust key": [
-        "Anahtara güven",
-        "Anahtarlara güven"
+        "Anahtara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -1699,6 +1701,9 @@
       ],
       "Why not?": [
         "Neden olmasın?"
+      ],
+      "Write ${ count } logs": [
+        "${ count } günlük kaydını yaz"
       ],
       "Write for me": [
         "Benim yerime yaz"
@@ -4252,8 +4257,8 @@
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "${ senderEmailAddress } adresinden gelen yeni e-postalar teslim edilmeyip kalıcı olarak silinecek."
       ],
-      "No ads. No trackers.": [
-        "Reklam yok. İzleyici yok."
+      "No ads. No trackers": [
+        "Reklam yok. Etkinlik izleyici yok"
       ],
       "No folders": [
         "Henüz bir klasör yok"
@@ -4869,6 +4874,9 @@
       ],
       "Could not find an available name": [
         "Kullanılabilecek bir ad bulunamadı"
+      ],
+      "Could not grant access to the organization key": [
+        "Kuruluş anahtarına erişme izni verilemedi"
       ],
       "Could not load sharing details": [
         "Paylaşım ayrıntıları yüklenemedi"
@@ -7019,6 +7027,14 @@
         "${ contactsLength } kişi",
         "${ contactsLength } kişi"
       ],
+      "${ count } email": [
+        "${ count } e-posta",
+        "${ count } e-posta"
+      ],
+      "${ count } email · ${ names }": [
+        "${ count } e-posta · ${ names }",
+        "${ count } e-posta · ${ names }"
+      ],
       "${ count } email → ${ dest }": [
         "${ count } e-posta → ${ dest }",
         "${ count } e-posta → ${ dest }"
@@ -7410,6 +7426,9 @@
       ],
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Alt klasörler de silinecek. Ancak ${ nameDeleted } klasöründeki e-postalar silinmeyecek ve Tüm e-postalar klasöründe bulunabilecek."
+      ],
+      "Apply labels": [
+        "Etiketleri uygula"
       ],
       "Apply to future messages": [
         "Gelecekteki iletilere uygulansın"
@@ -7875,6 +7894,9 @@
       "Everything in ${ planOrAppName }, plus:": [
         "${ planOrAppName } tarifesindeki her şeye ek olarak:"
       ],
+      "Expand logs": [
+        "Günlük kayıtlarını genişlet"
+      ],
       "Expand selection": [
         "Seçimi genişlet"
       ],
@@ -8090,7 +8112,8 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle"
+        "Görsel ekle",
+        "Görseller ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -8193,6 +8216,12 @@
       ],
       "Mark all as read": [
         "Tümünü okunmuş olarak işaretle"
+      ],
+      "Mark as read": [
+        "Okunmuş olarak işaretle"
+      ],
+      "Mark as unread": [
+        "Okunmamış olarak işaretle"
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logosu"
@@ -8352,6 +8381,9 @@
       ],
       "Not connected": [
         "Bağlı değil"
+      ],
+      "Not supported by this browser": [
+        "Bu tarayıcı tarafından desteklenmiyor"
       ],
       "Number of dedicated servers in the organization": [
         "Kuruluşunuza ayrılmış sunucu sayısı"
@@ -9376,6 +9408,12 @@
       "Would you like to receive a new verification code?": [
         "Yeni bir doğrulama kodu almak ister misiniz?"
       ],
+      "Writes ${ REALISTIC_ENTRIES } realistic log lines trickling in over a minute, like an actual session, instead of all at once. Takes about a minute to run. Keep this tab focused: frame measurements pause in the background.": [
+        "${ REALISTIC_ENTRIES } gerçekçi günlük satırını tek seferde değil, gerçek bir oturumda olduğu gibi bir dakika boyunca kademeli olarak yazdırır. Çalışması yaklaşık bir dakika sürer. Bu sekmeyi açık tutun: Yoksa kare ölçümleri arka planda duraklatılır."
+      ],
+      "Writes realistic log lines back-to-back, then reads them all back. Shows how write and read/export cost scale with the number of stored entries.": [
+        "Arka arkaya gerçekçi günlük satırları yazar ardından tümünü yeniden okur. Yazma ve okuma/dışa aktarma maliyetlerinin depolanan kayıt sayısıyla orantılı olarak nasıl arttığını gösterir."
+      ],
       "Writing assistant": [
         "Yazma yardımcısı"
       ],
@@ -10026,6 +10064,9 @@
       "Account holder": [
         "Hesap sahibi"
       ],
+      "Account holder name": [
+        "Hesap sahibinin adı"
+      ],
       "Actions": [
         "İşlemler"
       ],
@@ -10130,6 +10171,9 @@
       ],
       "BTC amount": [
         "BTC tutarı"
+      ],
+      "Burst write": [
+        "Seri yazma"
       ],
       "Calendar": [
         "Takvim"
@@ -10242,8 +10286,8 @@
       "Date:": [
         "Tarih:"
       ],
-      "Deals, offers, marketing emails": [
-        "Fırsatlar, teklifler, pazarlama e-postaları"
+      "Deals, offers, and marketing emails": [
+        "İndirimler, teklifler ve pazarlama e-postaları"
       ],
       "Delete": [
         "Sil"
@@ -10280,6 +10324,12 @@
       ],
       "Drive": [
         "Drive"
+      ],
+      "Dropped frames": [
+        "Atlanan kareler"
+      ],
+      "Duration": [
+        "Süre"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "örneğin, Amazon, eBay, Etsy"
@@ -10323,8 +10373,14 @@
       "Enable filter": [
         "Süzgeci aç"
       ],
+      "Encrypt": [
+        "Şifreleme"
+      ],
       "Encrypt emails": [
         "E-postaları şifrele"
+      ],
+      "Entries": [
+        "Kayıtlar"
       ],
       "Exact host matching": [
         "Tam sunucu eşleşmesi"
@@ -10334,6 +10390,9 @@
       ],
       "Expires": [
         "Geçerlilik süresi sonu"
+      ],
+      "Export size": [
+        "Dışa aktarma boyutu"
       ],
       "Extended address": [
         "Açık adres"
@@ -10431,6 +10490,9 @@
       "Include application logs in bug report": [
         "Uygulama günlükleri sorun bildirimine eklensin"
       ],
+      "IndexedDB store": [
+        "IndexedDB depolama"
+      ],
       "Information": [
         "Bilgiler"
       ],
@@ -10475,6 +10537,12 @@
       ],
       "Location": [
         "Konum"
+      ],
+      "Log performance": [
+        "Günlük başarımı"
+      ],
+      "Long tasks (≥ 50 ms)": [
+        "Uzun süren görevler (≥ 50 ms)"
       ],
       "Mail debugging information": [
         "Hata ayıklama bilgilerini e-posta ile gönder"
@@ -10665,6 +10733,12 @@
       "Read": [
         "Okunmuş"
       ],
+      "Read / export": [
+        "Okuma / dışa aktarma"
+      ],
+      "Realistic session": [
+        "Gerçekçi oturum"
+      ],
       "Recipient": [
         "Alıcı"
       ],
@@ -10766,6 +10840,9 @@
       ],
       "Subscription options": [
         "Abonelik seçenekleri"
+      ],
+      "Sum of write() calls": [
+        "write() çağrılarının toplamı"
       ],
       "Sync with system": [
         "Sistem ayarına uyulsun"
@@ -10874,6 +10951,15 @@
       ],
       "Without attachment": [
         "Ek dosyası olmayan"
+      ],
+      "Write": [
+        "Yazma"
+      ],
+      "Write (whole session)": [
+        "Yazma (tüm oturum)"
+      ],
+      "Write-chain drain after last line": [
+        "Son satırdan sonra yazma zincirini boşaltma"
       ],
       "Writing assistant": [
         "Yazma yardımcısı"
@@ -13080,7 +13166,7 @@
         "Daha sonra anımsat"
       ],
       "Yes, don't show again": [
-        "Evet, bir daha görüntülenmesin"
+        "Evet bir daha görüntülenmesin"
       ]
     },
     "Option group": {
@@ -13382,6 +13468,9 @@
       ],
       "Invalid security code": [
         "Güvenlik kodu geçersiz"
+      ],
+      "Please enter the account holder name": [
+        "Lütfen hesap sahibinin adını yazın"
       ],
       "Something went wrong. Please try again later.": [
         "Bir sorun çıktı. Lütfen bir süre sonra yeniden deneyin."
@@ -14066,8 +14155,8 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Sahibi"
+      "Organization Admin": [
+        "Kuruluş yöneticisi"
       ],
       "Security Admin": [
         "Güvenlik yöneticisi"
@@ -16010,6 +16099,9 @@
       "Apply gift code": [
         "Hediye kodunu uygula"
       ],
+      "Apply labels": [
+        "Etiketleri uygula"
+      ],
       "Archive all messages?": [
         "Tüm iletiler arşivlensin mi?"
       ],
@@ -16419,7 +16511,7 @@
         "Doğrulama kodu geçersiz"
       ],
       "Keep this banner hidden?": [
-        "Bu başlığı gizli tutmak ister misiniz?"
+        "Bu duyuruyu gizlemek ister misiniz?"
       ],
       "Label as": [
         "Etiketle"

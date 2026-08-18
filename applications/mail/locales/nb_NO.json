@@ -1526,8 +1526,7 @@
         "Klarér"
       ],
       "Trust key": [
-        "Klarér nøkkel",
-        "Klarér nøkler"
+        "Klarer nøkkel"
       ],
       "Trust public key": [
         "Klarér offentlig nøkkel"
@@ -4246,9 +4245,6 @@
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "Nye e-postmeldinger fra ${ senderEmailAddress } vil ikke leveres og slettes permanent."
       ],
-      "No ads. No trackers.": [
-        "Ingen annonser. Ingen sporere."
-      ],
       "No folders": [
         "Ingen mapper"
       ],
@@ -5130,6 +5126,10 @@
       ],
       "Name is required": [
         "Navn kreves"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "Navnet må maksimalt bestå av ${ MAX_NODE_NAME_LENGTH } tegn",
+        "Navnet må maksimalt bestå av ${ MAX_NODE_NAME_LENGTH } tegn"
       ],
       "Name must not be empty": [
         "Navn kan ikke være tomt"
@@ -8074,7 +8074,8 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde"
+        "Sett inn bilde",
+        "Sett inn bilder"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -8165,9 +8166,6 @@
       ],
       "Low Priority": [
         "Lav prioritet"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Gjør ${ MAIL_APP_NAME } til standard e-postapplikasjon."
       ],
       "Manage your folders": [
         "Administrer mappene dine"
@@ -8536,12 +8534,32 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Ta kontakt med oss for å få hjelp med hva som helst ${ BRAND_NAME }."
       ],
+      "Read ${ count } email": [
+        "Merk ${ count } e-post som lest",
+        "Merk ${ count } e-poster som lest"
+      ],
       "Read ${ count } email on screen": [
         "Les ${ count } e-post på skjermen",
         "Les ${ count } e-poster på skjermen"
       ],
+      "Read ${ count } message in this thread": [
+        "Merk ${ count } melding som lest i denne tråden",
+        "Merk ${ count } meldinger som lest i denne tråden"
+      ],
       "Read open email “${ subject }”": [
         "Les åpen e-post \"${ subject }\""
+      ],
+      "Read your ${ count } filter": [
+        "Merk ${ count } filter som lest",
+        "Merk ${ count } filtre som lest"
+      ],
+      "Read your ${ count } folder": [
+        "Merk ${ count } mappe som lest",
+        "Merk ${ count } mapper som lest"
+      ],
+      "Read your ${ count } label": [
+        "Merk ${ count } etikett som lest",
+        "Merk ${ count } etiketter som lest"
       ],
       "Recipient: ": [
         "Mottaker: "
@@ -8720,6 +8738,9 @@
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Beklager, denne meldingen finnes ikke eller har løpt ut."
+      ],
+      "Star emails": [
+        "Stjernemerk e-poster"
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Begynn å dele det med kontakter og bruk det til nettjenester."
@@ -10179,9 +10200,6 @@
       "Date:": [
         "Dato:"
       ],
-      "Deals, offers, marketing emails": [
-        "Kampanjer, tilbud, markedsførings-e-poster"
-      ],
       "Delete": [
         "Slett"
       ],
@@ -10217,6 +10235,9 @@
       ],
       "Drive": [
         "Drive"
+      ],
+      "Duration": [
+        "Varighet"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "f.eks. Amazon, eBay, Etsy"
@@ -10412,6 +10433,9 @@
       ],
       "Location": [
         "Plassering"
+      ],
+      "Long tasks (≥ 50 ms)": [
+        "Lange oppgaver (≥ 50 ms)"
       ],
       "Mail debugging information": [
         "Feilsøkingsinformasjon for e-post"
@@ -13000,12 +13024,6 @@
       ],
       "No parent folder": [
         "Ingen overordnet mappe"
-      ],
-      "Remind me later": [
-        "Påminn meg senere"
-      ],
-      "Yes, don't show again": [
-        "Ja, ikke vis igjen"
       ]
     },
     "Option group": {
@@ -13977,9 +13995,6 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Eier"
-      ],
       "Security Admin": [
         "Sikkerhetsadministrator"
       ],
@@ -16328,9 +16343,6 @@
       ],
       "Invalid verification code": [
         "Ugyldig verifiseringskode"
-      ],
-      "Keep this banner hidden?": [
-        "Holde dette banneret skjult?"
       ],
       "Label as": [
         "Merk som"

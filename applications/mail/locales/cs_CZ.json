@@ -1516,10 +1516,7 @@
         "Důvěřovat"
       ],
       "Trust key": [
-        "Důvěřovat klíči",
-        "Důvěřovat klíčům",
-        "Důvěřovat klíčům",
-        "Důvěřovat klíčům"
+        "Důvěřovat klíči"
       ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
@@ -4258,9 +4255,6 @@
       ],
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "Nové e-maily od ${ senderEmailAddress } nebudou doručeny a budou trvale smazány."
-      ],
-      "No ads. No trackers.": [
-        "Žádné reklamy. Žádné sledovací prvky."
       ],
       "No folders": [
         "Žádné složky"
@@ -7961,7 +7955,10 @@
         "Inicializace..."
       ],
       "Insert image": [
-        "Vložit obrázek"
+        "Vložit obrázek",
+        "Vložit obrázky",
+        "Vložit obrázky",
+        "Vložit obrázky"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -8052,9 +8049,6 @@
       ],
       "Low Priority": [
         "Nízká priorita"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Nastavte aplikaci ${ MAIL_APP_NAME } jako výchozí e-mailovou aplikaci."
       ],
       "Manage your folders": [
         "Spravovat složky"
@@ -10023,9 +10017,6 @@
       "Date:": [
         "Datum:"
       ],
-      "Deals, offers, marketing emails": [
-        "Nabídky, akce, marketingové e-maily"
-      ],
       "Delete": [
         "Odstranit"
       ],
@@ -10058,6 +10049,9 @@
       ],
       "Drive": [
         "Drive"
+      ],
+      "Duration": [
+        "Doba trvání"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "například Amazon, eBay, Etsy"
@@ -12910,12 +12904,6 @@
       ],
       "No parent folder": [
         "Žádná nadřazená složka"
-      ],
-      "Remind me later": [
-        "Připomenout později"
-      ],
-      "Yes, don't show again": [
-        "Ano, znovu nezobrazovat"
       ]
     },
     "Option group": {
@@ -13894,9 +13882,6 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Vlastník"
-      ],
       "Security Admin": [
         "Správce zabezpečení"
       ],
@@ -16390,9 +16375,6 @@
       ],
       "Invalid verification code": [
         "Neplatný ověřovací kód"
-      ],
-      "Keep this banner hidden?": [
-        "Ponechat tento banner skrytý?"
       ],
       "Label as": [
         "Přidat štítek"
