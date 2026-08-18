@@ -3,7 +3,8 @@ import { c } from 'ttag';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { isCategoryLabel, isCustomFolder, isSystemFolder } from '@proton/mail/helpers/location';
+import { logger } from '@proton/logger';
+import { getHumanLabelID, isCategoryLabel, isCustomFolder, isSystemFolder } from '@proton/mail/helpers/location';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
@@ -427,6 +428,11 @@ export const useApplyLocation = () => {
     const applyLocation = async (
         params: ApplyLocationMoveProps | ApplyLocationLabelProps | ApplyLocationStarProps
     ): Promise<PromiseSettledResult<string | undefined>[]> => {
+        if (!params.elements) {
+            throw new Error('Elements are required');
+        }
+
+        const humanLabelID = getHumanLabelID(params.destinationLabelID);
         switch (params.type) {
             case APPLY_LOCATION_TYPES.MOVE:
                 handleOnBackMoveAction({
@@ -435,6 +441,7 @@ export const useApplyLocation = () => {
                     destinationLabelID: params.destinationLabelID,
                 });
 
+                logger.info(`Moving ${params.elements.length} element(s) to ${humanLabelID}`);
                 return moveToFolder({
                     ...params,
                     removeLabel: false,
@@ -446,6 +453,7 @@ export const useApplyLocation = () => {
                     elements: params.elements,
                 });
 
+                logger.info(`Applying ${humanLabelID} label on ${params.elements.length} element(s)`);
                 return moveToFolder({
                     ...params,
                 });
@@ -457,6 +465,7 @@ export const useApplyLocation = () => {
                     removeLabel: params.removeLabel || false,
                 });
 
+                logger.info(`Starring ${params.elements.length} element(s)`);
                 return moveToFolder({
                     ...params,
                 });
