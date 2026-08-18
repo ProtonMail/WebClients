@@ -38,10 +38,10 @@ export interface OpenFolderResult {
 }
 
 /**
- * Validate open_folder params: EXACTLY ONE of `location`/`target` must be set, and `location` (when
- * used) must be a known standard location. Pure, so the handler can enforce the rule before touching
- * the store — a violation throws a self-correcting Error the engine feeds back to the model. Returns
- * which target was chosen.
+ * Validate an open_folder-style location target: EXACTLY ONE of `location`/`target` must be set, and
+ * `location` (when used) must be a known standard location. Pure, so the handler can enforce the rule
+ * before touching the store — a violation throws a self-correcting Error the engine feeds back to the
+ * model. Returns which target was chosen. Shared with set_location_read, so the errors name no tool.
  */
 export const resolveOpenFolderTarget = (
     params: Pick<OpenFolderParams, 'location' | 'target'>
@@ -50,7 +50,7 @@ export const resolveOpenFolderTarget = (
     // (location == null) === (target == null) is true when BOTH are null or BOTH are set.
     if ((location == null) === (target == null)) {
         throw new ToolInputError(
-            'open_folder needs EXACTLY ONE of `location` (a standard location) or `target` (a custom folder/label reference): set one and leave the other null.'
+            'Pass EXACTLY ONE of `location` (a standard location) or `target` (a custom folder/label reference): set one and leave the other null.'
         );
     }
     if (location != null) {
