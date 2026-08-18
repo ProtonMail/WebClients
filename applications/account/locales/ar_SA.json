@@ -5190,9 +5190,6 @@
       "Most issues can be solved in a few minutes with our step-by-step guides.": [
         "يمكن حل معظم المشكلات في بضع دقائق باستخدام الأدلة خطوة بخطوة."
       ],
-      "No ads. No trackers.": [
-        "لا توجد إعلانات. لا توجد أجهزة تتبع."
-      ],
       "No one in your organization can connect to shared servers.": [
         "لا يمكن لأي شخص في مؤسستك الاتصال بالخوادم المشتركة"
       ],
@@ -5644,17 +5641,6 @@
       ],
       "Windows 10/11 (x64)": [
         "Windows 10/11 (x64)"
-      ]
-    },
-    "Download link": {
-      ".deb for Debian / Ubuntu": [
-        "deb. لـ Debian / Ubuntu"
-      ],
-      ".rpm for Fedora / Red Hat": [
-        ".rpm لأنظمة Fedora / Red Hat"
-      ],
-      "You can also download the app through the ${ linkSnapStore }.": [
-        "يمكن أيضًا تنزيل التطبيق من خلال ${ linkSnapStore }."
       ]
     },
     "drive_signup_2023: Title": {
@@ -6524,9 +6510,6 @@
       "Enable auto-renew": [
         "تفعيل التجديد التلقائي"
       ],
-      "Enter your extra password": [
-        "إدخال كلمة المرور الإضافية"
-      ],
       "Explore plans": [
         "استكشاف الخطط"
       ],
@@ -6713,9 +6696,6 @@
       ],
       "Unable to recover data": [
         "غير قادر على استعادة البيانات"
-      ],
-      "Unlock ${ PASS_APP_NAME }": [
-        "فتح ${ PASS_APP_NAME }"
       ],
       "Upgrade": [
         "ترقية"
@@ -7345,14 +7325,6 @@
         "تعذر إكمال تعيين الأدوار لـ ${ errors.length } أعضاء",
         "تعذر إكمال تعيين الأدوار لـ ${ errors.length } عضوًا",
         "تعذر إكمال تعيين الأدوار لـ ${ errors.length } عضو"
-      ],
-      "Role assignment could not be completed for ${ failedGroupCount } groups": [
-        "تعذر إكمال تعيين الأدوار لـ ${ failedGroupCount } مجموعة",
-        "تعذر إكمال تعيين الأدوار لمجموعة واحدة ${ failedGroupCount }",
-        "تعذر إكمال تعيين الأدوار لمجموعتين ${ failedGroupCount }",
-        "تعذر إكمال تعيين الأدوار لـ ${ failedGroupCount } مجموعات",
-        "تعذر إكمال تعيين الأدوار لـ ${ failedGroupCount } مجموعة",
-        "تعذر إكمال تعيين الأدوار لـ ${ failedGroupCount } مجموعة"
       ],
       "Server not found": [
         "لم يتم العثور على الخادم"
@@ -8854,14 +8826,6 @@
         "يمكن حل العديد من المشكلات بسرعة باستخدام أدلة المساعدة. وفي حال الحاجة إلى مزيد من الدعم، فإن الفريق متواجد للمساعدة."
       ]
     },
-    "Get started checklist instructions": {
-      "${ appName } on App Store": [
-        "${ appName } على App Store"
-      ],
-      "${ appName } on Play Store": [
-        "${ appName } على متجر Play"
-      ]
-    },
     "Gmail forwarding": {
       "Automatically forward": [
         "إعادة التوجيه تلقائيًا"
@@ -10121,9 +10085,6 @@
       "**Your recovery email alone doesn't allow you to recover your encrypted data** after you reset your password.": [
         "**لا يتيح بريد الاسترداد الإلكتروني وحده استرداد البيانات المشفرة** بعد إعادة تعيين كلمة المرور."
       ],
-      "**Your recovery methods will be invalidated:** you can generate new recovery data later.": [
-        "**سيتم إبطال طرق الاسترداد:** يمكن إنشاء بيانات استرداد جديدة لاحقًا."
-      ],
       "**Your recovery phone alone doesn’t allow you to recover your encrypted data** after you reset your password.": [
         "**لا يتيح هاتف الاسترداد وحده استرداد البيانات المشفرة** بعد إعادة تعيين كلمة المرور."
       ],
@@ -11180,9 +11141,6 @@
       "Failed to fetch logs.": [
         "فشل في جلب السجلات"
       ],
-      "Fast and focused. Email and calendar, right on your desktop.": [
-        "سريع ومركّز. البريد الإلكتروني والتقويم، مباشرة على سطح المكتب."
-      ],
       "Featured in": [
         "ظهر في"
       ],
@@ -11935,9 +11893,6 @@
       ],
       "On": [
         "مفعل"
-      ],
-      "On Ubuntu?": [
-        "على نظام Ubuntu؟"
       ],
       "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
         "بمجرد منح حق الوصول إلى الحساب، يمكنهم الوصول إلى إعدادات **الاسترداد** و**تغيير كلمة مرور ${ ACCOUNT_APP_NAME }**."
@@ -12708,14 +12663,6 @@
       ],
       "The name will be visible to your users while they are signed in.": [
         "سيكون الاسم مرئيًا للمستخدمين أثناء تسجيل دخولهم."
-      ],
-      "The process was interrupted for ${ pausedCount } groups. Click Continue to resume assigning roles.": [
-        "تمت مقاطعة العملية لـ ${ pausedCount } مجموعة. يرجى النقر فوق متابعة لاستئناف تعيين الأدوار.",
-        "تمت مقاطعة العملية لمجموعة واحدة ${ pausedCount }. يرجى النقر فوق متابعة لاستئناف تعيين الأدوار.",
-        "تمت مقاطعة العملية لمجموعتين ${ pausedCount }. يرجى النقر فوق متابعة لاستئناف تعيين الأدوار.",
-        "تمت مقاطعة العملية لـ ${ pausedCount } مجموعات. يرجى النقر فوق متابعة لاستئناف تعيين الأدوار.",
-        "تمت مقاطعة العملية لـ ${ pausedCount } مجموعة. يرجى النقر فوق متابعة لاستئناف تعيين الأدوار.",
-        "تمت مقاطعة العملية لـ ${ pausedCount } مجموعة. يرجى النقر فوق متابعة لاستئناف تعيين الأدوار."
       ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
         "يمكن منح رصيد الإحالة خلال مدة تصل إلى شهرين (2) بعد انتهاء تجربة الصديق، فقط في حال اشتراكه في خطة."
@@ -14730,9 +14677,6 @@
       "Backup password": [
         "كلمة مرور احتياطية"
       ],
-      "Beta": [
-        "تجريبي"
-      ],
       "Billed at ${ priceYearly } every 12 months.": [
         "تُدفع فاتورة بمبلغ ${ priceYearly } كل 12 شهرًا."
       ],
@@ -14959,9 +14903,6 @@
       ],
       "Days of the week": [
         "أيام الأسبوع"
-      ],
-      "Deals, offers, marketing emails": [
-        "الصفقات والعروض ورسائل البريد الإلكتروني التسويقية"
       ],
       "Default email address": [
         "عنوان البريد الإلكتروني الافتراضي"
@@ -15736,9 +15677,6 @@
       ],
       "Select an identity provider to start": [
         "حدد مزود هوية للبدء"
-      ],
-      "Select Linux package format": [
-        "تحديد صيغة حزمة Linux"
       ],
       "Select Linux platform": [
         "تحديد منصة Linux"
@@ -16522,9 +16460,6 @@
       ],
       "Sign in": [
         "تسجيل الدخول"
-      ],
-      "Snap store": [
-        "Snap store"
       ],
       "switch account": [
         "تبديل الحساب"
@@ -21700,9 +21635,6 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "مالك"
-      ],
       "Security Admin": [
         "مسؤول الأمان"
       ],
@@ -22330,9 +22262,6 @@
       ]
     },
     "Service provider": {
-      "Add to ${ CALENDAR_APP_NAME }": [
-        "إضافة إلى ${ CALENDAR_APP_NAME }"
-      ],
       "Allows you to add a Zoom video conference to any of your calendar events": [
         "يسمح لك بإضافة مؤتمر فيديو عبر Zoom إلى أي من أحداث التقويم الخاصة بك"
       ]
@@ -26070,9 +25999,6 @@
       "Dashboard": [
         "لوحة المعلومات"
       ],
-      "Data collection": [
-        "جمع البيانات"
-      ],
       "Data recovery": [
         "استرداد البيانات"
       ],
@@ -26524,9 +26450,6 @@
       "Group membership": [
         "عضوية المجموعة"
       ],
-      "Group role assignment paused": [
-        "تم إيقاف تعيين أدوار المجموعة مؤقتًا"
-      ],
       "Groups": [
         "المجموعات"
       ],
@@ -26699,9 +26622,6 @@
       ],
       "Mobile": [
         "الجوال"
-      ],
-      "Monitoring": [
-        "مراقبة"
       ],
       "Monthly": [
         "شهريًا"
@@ -26882,9 +26802,6 @@
       ],
       "Priority support:": [
         "أولوية في الدعم:"
-      ],
-      "Privacy": [
-        "الخصوصية"
       ],
       "Privacy and data collection": [
         "جمع البيانات والخصوصية"
@@ -27164,9 +27081,6 @@
       ],
       "Single sign-on": [
         "تسجيل الدخول الفردي (SSO)"
-      ],
-      "Single-sign on (SSO)": [
-        "تسجيل دخول موحد (SSO)"
       ],
       "SMS verification": [
         "التحقق عبر الرسائل النصية القصيرة (SMS)"

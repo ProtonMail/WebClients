@@ -65,7 +65,7 @@
         "Sessions actives"
       ],
       "Add address": [
-        "Afegeix una adreça"
+        "Afegir una adreça"
       ],
       "Advanced account protection": [
         "Protecció avançada del compte"
@@ -92,10 +92,10 @@
         "Renovació automàtica"
       ],
       "Automatically delete data": [
-        "Elimineu automàticament les dades"
+        "Elimina automàticament les dades"
       ],
       "Back up emails": [
-        "Feu una còpia de seguretat dels correus electrònics"
+        "Còpies de seguretat de correus electrònics"
       ],
       "Block sender": [
         "Bloqueja el remitent"
@@ -104,19 +104,19 @@
         "Bloquegeu el remitent per a l'organització"
       ],
       "Blog articles": [
-        "Articles del bloc"
+        "Articles del blog"
       ],
       "Bulk user import": [
         "Importació massiva d'usuaris"
       ],
       "Cancel plan": [
-        "Cancel·la el pla"
+        "Cancel·lar el pla"
       ],
       "Catch-all": [
         "Capturar-ho tot"
       ],
       "Close account": [
-        "Tanqueu el compte"
+        "Tancar el compte"
       ],
       "Compare plans": [
         "Compara els plans"
@@ -140,13 +140,13 @@
         "Mode fosc"
       ],
       "Data breach alerts": [
-        "Alertes d'infraccions de dades"
+        "Alertes de filtració de dades"
       ],
       "Desktop and mobile apps": [
         "Aplicacions per a escriptori i mòbil"
       ],
       "Downgrade plan": [
-        "Baixar la categoria del pla"
+        "Baixar a un pla inferior"
       ],
       "Downgrade to Free": [
         "Canvieu al pla gratuït"
@@ -161,13 +161,13 @@
         "Àlies de correu electrònic"
       ],
       "Enable or disable apps for members": [
-        "Habiliteu o desactiveu aplicacions per als membres"
+        "Habiliteu o desactiveu aplicacions per a membres"
       ],
       "Encryption backup file": [
-        "Fitxer de còpia de seguretat de xifratge"
+        "Fitxer de la còpia de seguretat xifrada"
       ],
       "Encryption backup in this browser": [
-        "Còpia de seguretat de xifratge en aquest navegador"
+        "Còpia de seguretat xifrada en aquest navegadorxifratge"
       ],
       "Export messages": [
         "Exporteu els missatges"
@@ -188,7 +188,7 @@
         "Invitació al pla de grup"
       ],
       "Hide my email": [
-        "Amaga el correu electrònic"
+        "Amaga la meva adreça de correu electrònic"
       ],
       "High-security mode": [
         "Mode d'alta seguretat"
@@ -218,22 +218,22 @@
         "Aplicacions per a iOS i Android"
       ],
       "Join organization": [
-        "Uneix-te a l'organització"
+        "Uniu-vos a l'organització"
       ],
       "Leaked password": [
         "Contrasenya filtrada"
       ],
       "Leave group": [
-        "Abandona el grup"
+        "Sortir del grup"
       ],
       "Leave organization": [
-        "Abandona l'organització"
+        "Abandonar l'organització"
       ],
       "Light mode": [
         "Mode clar"
       ],
       "Linux desktop app": [
-        "Aplicació d'escriptori per a Linux"
+        "Aplicació d'escriptori per Linux"
       ],
       "Mnemonic": [
         "Mnemotècnic"
@@ -250,11 +250,14 @@
       "Password reminder": [
         "Recordatori de la contrasenya"
       ],
+      "Password reminders": [
+        "Recordatoris de contrasenya"
+      ],
       "Password reset request": [
         "Sol·licitud de restabliment de la contrasenya"
       ],
       "Permanently delete data": [
-        "Elimina les dades permanentment"
+        "Eliminar les dades de manera permanent"
       ],
       "Play Store": [
         "Play Store"
@@ -269,7 +272,7 @@
         "Protecció contra ciberatacs"
       ],
       "Receive misaddressed emails": [
-        "Rebeu correus electrònics enviats per error"
+        "Rebeu els correus electrònics enviats per error"
       ],
       "Recovery email address": [
         "Adreça de correu electrònic de recuperació"
@@ -287,13 +290,13 @@
         "Redireccioneu els correus electrònics entrants"
       ],
       "Referral credits": [
-        "Crèdits de recomanació"
+        "Crèdits per recomanacions"
       ],
       "Referral link": [
         "Enllaç de recomanació"
       ],
       "Referral rewards": [
-        "Recompenses per recomanació"
+        "Recompenses per recomanacions"
       ],
       "Restrict app access": [
         "Restringiu l'accés a l'aplicació"
@@ -308,13 +311,13 @@
         "Accés compartit al servidor"
       ],
       "Sign out other devices": [
-        "Tancar sessió en altres dispositius"
+        "Tanqueu la sessió en altres dispositius"
       ],
       "Sign-in history": [
         "Historial d'inicis de sessió"
       ],
       "Stop subscription renewal": [
-        "Atureu la renovació de la subscripció"
+        "Aturar la renovació de la subscripció"
       ],
       "Storage space": [
         "Espai d'emmagatzematge"
@@ -338,10 +341,13 @@
         "Milloreu el pla"
       ],
       "Vacation responder": [
-        "Resposta de vacances"
+        "Resposta automàtica"
       ],
       "Verify domain": [
-        "Verifica domini"
+        "Verifiqueu el domini"
+      ],
+      "Verify password": [
+        "Verifica la contrasenya"
       ],
       "Video conferencing": [
         "Videoconferència"
@@ -5455,8 +5461,8 @@
       "Most issues can be solved in a few minutes with our step-by-step guides.": [
         "La majoria de problemes es poden resoldre en pocs minuts amb les nostres guies pas a pas."
       ],
-      "No ads. No trackers.": [
-        "Sense anuncis. Sense rastrejadors."
+      "No ads. No trackers": [
+        "Sense anuncis. Sense rastrejadors"
       ],
       "No one in your organization can connect to shared servers.": [
         "Ningú de la vostra organització no es pot connectar a servidors compartits."
@@ -7083,6 +7089,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } és el vostre nom d'usuari. Per a crear ${ emailAddress }, aneu a Preferències > Identitat i adreces > Domini curt (pm.me)"
       ],
+      "A delegated access recovery or emergency-access process has been initiated: generating a new key is not allowed to avoid disrupting it": [
+        "S'ha iniciat un procés de recuperació d'accés delegat o d'accés d'emergència: no es permet generar una clau nova per evitar interrompre'l."
+      ],
       "A group with this name already exists": [
         "Ja existeix un grup amb aquest nom"
       ],
@@ -7205,6 +7214,9 @@
       ],
       "Could not generate the device profile. Please try again.": [
         "No s'ha pogut generar el perfil de dispositiu. Torneu-ho a provar."
+      ],
+      "Could not grant access to the organization key": [
+        "No s'ha pogut concedir accés a la clau de l'organització"
       ],
       "Could not load sharing details": [
         "No s'han pogut carregar els detalls de l'acció de compartir."
@@ -7756,9 +7768,13 @@
         "No s'ha pogut completar l'assignació de rols per a ${ errors.length } membre",
         "No s'ha pogut completar l'assignació de rols per a ${ errors.length } membres"
       ],
-      "Role assignment could not be completed for ${ failedGroupCount } group": [
-        "No s'ha pogut completar l'assignació de rols per a ${ failedGroupCount } grup",
-        "No s'ha pogut completar l'assignació de rols per a ${ failedGroupCount } grups"
+      "Role assignment could not be completed for ${ failedCount } group": [
+        "No s'ha pogut completar l'assignació de rols per a ${ failedCount } grup",
+        "No s'ha pogut completar l'assignació de rols per a ${ failedCount } grups"
+      ],
+      "Role assignment could not be completed for ${ failedCount } user": [
+        "No s'ha pogut completar l'assignació de rols per a ${ failedCount } usuari",
+        "No s'ha pogut completar l'assignació de rols per a ${ failedCount } usuaris"
       ],
       "Server not found": [
         "No s'ha trobat el servidor"
@@ -10457,11 +10473,11 @@
       "**Your recovery email alone doesn't allow you to recover your encrypted data** after you reset your password.": [
         "**El vostre correu electrònic de recuperació per si sol no us permet recuperar les dades xifrades** després de restablir la contrasenya."
       ],
-      "**Your recovery methods will be invalidated:** you can generate new recovery data later.": [
-        "**Els vostres mètodes de recuperació quedaran invalidats:** podreu generar noves dades de recuperació més endavant."
-      ],
       "**Your recovery phone alone doesn’t allow you to recover your encrypted data** after you reset your password.": [
         "**El vostre telèfon de recuperació per si sol no us permet recuperar les dades xifrades** després de restablir la contrasenya."
+      ],
+      "**Your recovery phrase and recovery file will be invalidated:** you can generate new recovery data later on.": [
+        "**La frase de recuperació i el fitxer de recuperació quedaran invalidats**: podreu generar noves dades de recuperació més endavant."
       ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } més",
@@ -11027,6 +11043,12 @@
       ],
       "Connection data will be available in around 1 hour.": [
         "Les dades de connexió estaran disponibles en aproximadament 1 hora."
+      ],
+      "Connects you to your destination country through servers physically located elsewhere.": [
+        "Us connecta amb el país de destí mitjançant servidors ubicats físicament en un altre lloc."
+      ],
+      "Connects you to your destination country through servers physically located elsewhere: ${ joinedSmartRoutingCountries }.": [
+        "Us connecta amb el país de destí mitjançant servidors ubicats físicament en un altre lloc: ${ joinedSmartRoutingCountries }."
       ],
       "Contact our Customer Support team to disable two-factor authentication for your account, or recover your account another way.": [
         "Contacteu amb el nostre equip d'atenció al client per desactivar l'autenticació de doble factor del vostre compte, o per recuperar el compte d'una altra manera."
@@ -12180,6 +12202,9 @@
       "Member": [
         "Membre"
       ],
+      "Members are periodically prompted to verify their ${ BRAND_NAME } password to ensure they don't forget it. Enforcing check-ins prevents members from turning them off.": [
+        "Els membres reben periòdicament una notificació per verificar la seva contrasenya de ${ BRAND_NAME } i assegurar-se que no l'oblidin. Obligar els membres a fer la comprovació els impedeix desactivar-la."
+      ],
       "Members are signed out and can't sign back in": [
         "Es tanca la sessió dels membres i no hi podran tornar a entrar"
       ],
@@ -12887,6 +12912,9 @@
       "Smart Routed through: ${ joinedCountries }.": [
         "Encaminat intel·ligentment a través de: ${ joinedCountries }."
       ],
+      "Smart Routing": [
+        "Smart Routing"
+      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses.": [
         "L'enviament SMTP permet que serveis o dispositius de tercers enviïn correus a través de ${ MAIL_APP_NAME } per a les vostres adreces de domini personalitzat."
       ],
@@ -13111,9 +13139,9 @@
       "The name will be visible to your users while they are signed in.": [
         "El nom serà visible per als vostres usuaris quan estiguin connectats."
       ],
-      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
-        "El procés s'ha interromput per a ${ pausedCount } grup. Feu clic a Continuar per reprendre l'assignació de rols.",
-        "El procés s'ha interromput per a ${ pausedCount } grups. Feu clic a Continuar per reprendre l'assignació de rols."
+      "The process was interrupted for ${ pausedCount } ${ roleAssignmentSource }. Click Continue to resume assigning roles.": [
+        "S'ha interromput el procés per a ${ pausedCount } ${ roleAssignmentSource }. Feu clic a Continuar per reprendre l'assignació de rols.",
+        "S'ha interromput el procés per a ${ pausedCount } ${ roleAssignmentSource }. Feu clic a Continuar per reprendre l'assignació de rols."
       ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
         "El crèdit per recomanació es pot concedir fins dos mesos després que hagi finalitzat la prova del vostre amic, i només si aquest s'ha subscrit a un pla."
@@ -13562,6 +13590,9 @@
       "User activated": [
         "S'ha activat l'usuari."
       ],
+      "User roles assigned": [
+        "S'han assignat els rols d'usuari"
+      ],
       "Username": [
         "Nom d'usuari"
       ],
@@ -13763,6 +13794,9 @@
       "When disabled, this prevents remote images from loading without your knowledge.": [
         "Si s'inhabilita, s'evita que imatges remotes es carreguin sense el vostre coneixement.\t"
       ],
+      "When enabled, members cannot opt out of password check-ins in their own settings.": [
+        "Quan està habilitat, els membres no poden desactivar els inicis de sessió amb contrasenya a la seva configuració."
+      ],
       "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
         "Quan l'opció estigui activada, comprovarem si ${ MAIL_APP_NAME } és la vostra aplicació de correu per defecte i us ho notificaríem si no ho fos."
       ],
@@ -13792,6 +13826,9 @@
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Quan la vostra subscripció es renovi, utilitzarem els crèdits disponibles abans de fer un càrrec al mètode de pagament anterior."
+      ],
+      "Whoever controls this address would get full access to your account and your data. Only continue if you recognize it and started this yourself.": [
+        "Qui controli aquesta adreça obtindrà accés complet al vostre compte i a les vostres dades. Continueu només si la reconeixeu i l'heu iniciat vós mateix."
       ],
       "Whole organization": [
         "Tota l'organització"
@@ -14096,6 +14133,9 @@
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Se us facturarà cada ${ renewCycle } mes a ${ renewAmountStr }. Podeu cancel·lar-ho en qualsevol moment.",
         "Llavors se us facturarà cada ${ renewCycle } mesos a ${ renewAmountStr }. Podeu cancel·lar-ho en qualsevol moment."
+      ],
+      "You're about to sign in to your ${ BRAND_NAME } Account at this address:": [
+        "Esteu a punt d'iniciar la sessió al vostre compte de ${ BRAND_NAME } a aquesta adreça:"
       ],
       "You're almost done, you need to configure your domain to receive your emails directly on ${ BRAND_NAME }. Once confirmed, your team will stop receiving new emails on ${ mailAppName } and the migration will be completed.": [
         "Gairebé heu acabat, heu de configurar el vostre domini per rebre els correus electrònics directament a ${ BRAND_NAME }. Un cop confirmat, el vostre equip deixarà de rebre correus electrònics nous a ${ mailAppName } i la migració s'haurà completat."
@@ -14937,6 +14977,9 @@
       "Account holder": [
         "Titular del compte"
       ],
+      "Account holder name": [
+        "Nom del titular del compte"
+      ],
       "Account holder: ${ sepaDetails.AccountName }": [
         "Titular del compte: ${ sepaDetails.AccountName }"
       ],
@@ -15394,8 +15437,8 @@
       "Days of the week": [
         "Dies de la setmana"
       ],
-      "Deals, offers, marketing emails": [
-        "Ofertes, promocions, correus electrònics de màrqueting"
+      "Deals, offers, and marketing emails": [
+        "Promocions, ofertes i correus electrònics de màrqueting"
       ],
       "Default email address": [
         "Adreça de correu electrònic predeterminada"
@@ -16164,6 +16207,9 @@
       ],
       "Require 2FA for everyone": [
         "Requereix l'A2F per a tothom"
+      ],
+      "Require password check-ins": [
+        "Requereix inicis de sessió amb contrasenya"
       ],
       "Reserved address": [
         "Adreça reservada"
@@ -17523,6 +17569,9 @@
       ],
       "Resend invite link": [
         "Reenvia l'enllaç d'invitació"
+      ],
+      "Resume role assignment": [
+        "Reprendre l'assignació de rols"
       ],
       "Revoke sessions": [
         "Revoca les sessions"
@@ -19179,6 +19228,12 @@
       "OpenVPN credentials regenerated": [
         "S'han regenerat les credencials d'OpenVPN"
       ],
+      "Password check-ins are not required anymore": [
+        "Els registres d'entrada amb contrasenya ja no són necessaris."
+      ],
+      "Password check-ins are now required for all members": [
+        "Ara els membres ja han de fer el registre d'entrada amb contrasenya."
+      ],
       "Reminder has been sent": [
         "S'ha enviat un recordatori"
       ],
@@ -20446,6 +20501,11 @@
         "Necessiteu accés a la clau de l'organització per a realitzar aquesta operació."
       ]
     },
+    "Payment Method": {
+      "Bank Account": [
+        "Compte bancari"
+      ]
+    },
     "Payment method option": {
       "Apple Pay": [
         "Apple Pay"
@@ -20659,6 +20719,9 @@
       ],
       "Invalid security code": [
         "El codi de seguretat no és vàlid"
+      ],
+      "Please enter the account holder name": [
+        "Introduïu el nom del titular del compte"
       ],
       "Something went wrong. Please try again later.": [
         "Alguna cosa ha anat malament. Torneu-ho a provar més tard."
@@ -21955,8 +22018,8 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Propietari"
+      "Organization Admin": [
+        "Administrador/a de l'organització"
       ],
       "Security Admin": [
         "Administrador/a de seguretat"
@@ -22582,7 +22645,7 @@
     },
     "Service provider": {
       "Add to ${ CALENDAR_APP_NAME }": [
-        "Afegir a ${ CALENDAR_APP_NAME }"
+        "Afegir-ho a ${ CALENDAR_APP_NAME }"
       ],
       "Allows you to add a Zoom video conference to any of your calendar events": [
         "Us permet afegir una videoconferència de Zoom a qualsevol esdeveniment del vostre calendari."
@@ -23864,6 +23927,9 @@
       "Backup password": [
         "Contrasenya de recuperació"
       ],
+      "Because your organization moved you to single sign-on (SSO), **your old password is saved as your backup password**. You can use it to authorize SSO on a new device.": [
+        "Com la vostra organització us ha passat a inici de sessió únic (SSO), **la vostra contrasenya antiga s'ha desat com a contrasenya de seguretat**. La podeu utilitzar per autoritzar l'SSO en un dispositiu nou."
+      ],
       "Cancel": [
         "Cancel·la"
       ],
@@ -23910,6 +23976,9 @@
       ],
       "Do you want to remove all other devices than the current one?": [
         "Voleu esborrar tots els altres dispositius que no siguin l'actual?"
+      ],
+      "Enter it to sign in. It is the same as your old password.": [
+        "Introduïu-la per iniciar sessió. És la mateixa que la vostra contrasenya antiga."
       ],
       "Enter the confirmation code we sent on your other device.": [
         "Introduïu el codi de confirmació enviat a l'altre dispositiu."
@@ -25556,6 +25625,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Assistent d'escriptura ${ BRAND_NAME } Scribe"
       ],
+      "${ capitalizedSource } role assignment paused": [
+        "S'ha pausat l'assignació de rols de ${ capitalizedSource }"
+      ],
       "${ feature } is now active": [
         "La característica ${ feature } està ara activa."
       ],
@@ -25966,6 +26038,9 @@
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Confirmeu la pèrdua de les bonificacions de ${ BRAND_NAME }"
+      ],
+      "Confirm where to sign in": [
+        "Confirmeu on iniciar sessió"
       ],
       "Connect ${ name }": [
         "Connecta ${ name }"
@@ -26573,9 +26648,6 @@
       "Group membership": [
         "Membres del grup"
       ],
-      "Group role assignment paused": [
-        "S'ha pausat l'assignació de rols de grup"
-      ],
       "Groups": [
         "Grups"
       ],
@@ -26769,9 +26841,6 @@
       "Mobile": [
         "Mòbil"
       ],
-      "Monitoring": [
-        "Monitoratge"
-      ],
       "Monthly": [
         "Mensual"
       ],
@@ -26894,6 +26963,9 @@
       ],
       "Password": [
         "Contrasenya"
+      ],
+      "Password check-ins": [
+        "Comprovacions de contrasenya"
       ],
       "Password generator rules": [
         "Regles del generador de contrasenyes"
@@ -27249,7 +27321,7 @@
       "Single sign-on": [
         "Inici de sessió únic"
       ],
-      "Single-sign on (SSO)": [
+      "Single sign-on (SSO)": [
         "Inici de sessió únic (SSO)"
       ],
       "SMS verification": [
@@ -28011,6 +28083,9 @@
       ],
       "This key is used for email forwarding": [
         "Aquesta clau s'utilitza per al reenviament de correu"
+      ],
+      "This setting is managed by your organization": [
+        "Aquesta preferència la gestiona la vostra organització"
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "A menys que es desxifrin, les contrasenyes xifrades romanen segures encara que estiguin exposades."
