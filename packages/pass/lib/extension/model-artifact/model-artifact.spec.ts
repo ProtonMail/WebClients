@@ -39,13 +39,16 @@ const validRandomForestWeights = () =>
         ])
     );
 
-const makeArtifactZip = async (files: Record<string, unknown>) => {
+const makeArtifactZip = async (files: Record<string, unknown>, rawFiles: Record<string, string> = {}) => {
     const zip = await import('@zip.js/zip.js');
     zip.configure({ useWebWorkers: false, useCompressionStream: false });
     const blobWriter = new zip.BlobWriter('application/zip');
     const writer = new zip.ZipWriter(blobWriter);
     for (const [filename, content] of Object.entries(files)) {
         await writer.add(filename, new zip.TextReader(JSON.stringify(content)));
+    }
+    for (const [filename, content] of Object.entries(rawFiles)) {
+        await writer.add(filename, new zip.TextReader(content));
     }
     await writer.close();
     return blobWriter.getData();
@@ -197,25 +200,20 @@ describe('`fetchModelArtifact`', () => {
 
     test('fails when a class file is not valid JSON', async () => {
         const weights = validPerceptronWeights();
-        const files: Record<string, unknown> = Object.fromEntries(
-            detectionClasses.map((klass) => [`${klass}-model.json`, weights[klass]])
+        const files = Object.fromEntries(
+            detectionClasses
+                .filter((klass) => klass !== 'email')
+                .map((klass) => [`${klass}-model.json`, weights[klass]])
         );
-
-        const zip = await import('@zip.js/zip.js');
-        zip.configure({ useWebWorkers: false, useCompressionStream: false });
-        const blobWriter = new zip.BlobWriter('application/zip');
-        const writer = new zip.ZipWriter(blobWriter);
-        for (const [filename, content] of Object.entries(files)) {
-            const data = filename === 'email-model.json' ? '{not-json' : JSON.stringify(content);
-            await writer.add(filename, new zip.TextReader(data));
-        }
-        await writer.close();
-        const blob = await blobWriter.getData();
+        const blob = await makeArtifactZip(files, { 'email-model.json': '{not-json' });
         fetchMock.mockResolvedValue({ ok: true, blob: () => Promise.resolve(blob) } as Response);
 
         const result = await fetchModelArtifact('2026.8.2475-lr');
         expect(result.ok).toBe(false);
-        if (!result.ok) expect(result.error).toContain('email-model.json');
+        if (!result.ok) {
+            expect(result.error).toContain('email-model.json');
+            expect(result.error).toContain('JSON at position');
+        }
     });
 
     test('fails on structurally invalid weights without throwing', async () => {
