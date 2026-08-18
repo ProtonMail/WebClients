@@ -1,5 +1,4 @@
-import { type PayloadAction, type UnknownAction, createSlice } from '@reduxjs/toolkit';
-import type { ThunkAction } from 'redux-thunk';
+import { type PayloadAction, type ThunkAction, type UnknownAction, createSlice } from '@reduxjs/toolkit';
 
 import { getPaymentMethods, queryPaymentMethod } from '@proton/payments/core/api/api';
 import type { SavedPaymentMethod } from '@proton/payments/core/interface';

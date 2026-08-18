@@ -1,4 +1,4 @@
-import { renderHook } from '@testing-library/react-hooks';
+import { renderHook } from '@testing-library/react';
 
 import { TelemetryMeasurementGroups, TelemetrySafetyReviewScoreDiffEvents } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport, telemetryReportsBatchQueue } from '@proton/shared/lib/helpers/metrics';

@@ -1,5 +1,4 @@
-import { type PayloadAction, type UnknownAction, createSlice } from '@reduxjs/toolkit';
-import type { ThunkAction } from 'redux-thunk';
+import { type PayloadAction, type ThunkAction, type UnknownAction, createSlice } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments, SharedStartListening } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';

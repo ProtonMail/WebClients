@@ -9639,6 +9639,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/account@workspace:packages/account"
   dependencies:
+    "@babel/core": "npm:^7.29.7"
+    "@babel/preset-env": "npm:^7.29.7"
+    "@babel/preset-react": "npm:^7.29.7"
+    "@babel/preset-typescript": "npm:^7.29.7"
     "@jest/globals": "npm:^30.4.1"
     "@proton/atoms": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
@@ -9659,7 +9663,6 @@ __metadata:
     "@reduxjs/toolkit": "npm:^2.12.0"
     "@testing-library/jest-dom": "npm:^6.9.1"
     "@testing-library/react": "npm:^15.0.7"
-    "@testing-library/react-hooks": "npm:^8.0.1"
     "@types/deep-freeze": "npm:^0.1.5"
     "@types/react": "npm:^18.3.31"
     core-js: "npm:^3.49.0"
@@ -9674,7 +9677,6 @@ __metadata:
     prettier: "npm:^3.9.6"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
-    react-redux: "npm:^9.3.0"
     react-router-dom: "npm:^5.3.4"
     ts-jest: "npm:^29.4.12"
     ttag: "npm:^1.8.12"
