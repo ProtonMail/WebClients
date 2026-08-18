@@ -9,7 +9,7 @@ import type {
 } from 'lexical'
 import { $isRangeSelection, $isRootOrShadowRoot, ElementNode } from 'lexical'
 import type { SuggestionProperties } from './Types'
-import { ProtonNodeTypes } from './Types'
+import { ProtonNodeTypes, SuggestionTypesThatAffectWholeParent } from './Types'
 import type { SuggestionType } from '@proton/docs-shared/lib/SuggestionType'
 import { addClassNamesToElement } from '@lexical/utils'
 
@@ -194,4 +194,8 @@ export function $createSuggestionNode(
 
 export function $isSuggestionNode(node: LexicalNode | null | undefined): node is ProtonNode {
   return node instanceof ProtonNode && node.getProtonNodeType() === ProtonNodeTypes.Suggestion
+}
+
+export function $isSuggestionThatAffectsWholeParent(node: LexicalNode): node is ProtonNode {
+  return $isSuggestionNode(node) && SuggestionTypesThatAffectWholeParent.includes(node.getSuggestionTypeOrThrow())
 }

@@ -1,14 +1,22 @@
 import type { OpenXmlElement, WordDocument, IDomStyle } from 'docx-preview-cjs'
 import type { DocxToLexicalInfo } from '../DocxToLexicalInfo'
 
+export type ParseDocxChildren = (elements: OpenXmlElement[], doc: WordDocument) => Promise<DocxToLexicalInfo[]>
+
 /** Parses a Docx element into a Lexical information node */
 export abstract class DocxElementParser<T extends OpenXmlElement = OpenXmlElement> {
   constructor(
     protected readonly element: T,
     protected readonly doc: WordDocument,
+    /** Injected rather than imported so the recursion doesn't create a module cycle. */
+    private readonly parseDocxChildren: ParseDocxChildren,
   ) {}
 
   abstract parse(): Promise<DocxToLexicalInfo[]>
+
+  protected parseChildren(elements?: OpenXmlElement[]): Promise<DocxToLexicalInfo[]> {
+    return this.parseDocxChildren(elements ?? this.children, this.doc)
+  }
 
   get children(): OpenXmlElement[] {
     return this.element.children ?? []
