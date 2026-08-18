@@ -10,11 +10,14 @@ import ModalsChildren from '@proton/components/containers/modals/Children';
 import SubscriptionModalProvider from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { DrawerThemeInjector } from '@proton/components/containers/themes/ThemeInjector';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
+import useApiStatus from '@proton/components/hooks/useApiStatus';
 import useConfig from '@proton/components/hooks/useConfig';
 import { useInboxDesktopEventLoopRefresh } from '@proton/components/hooks/useInboxDesktopEventLoopRefresh';
 import { useInboxDesktopMetrics } from '@proton/components/hooks/useInboxDesktopMetrics';
+import useOnline from '@proton/components/hooks/useOnline';
 import { usePreventWasmLoading } from '@proton/components/hooks/usePreventWasmLoading.ts';
 import AssistantProvider from '@proton/llm/lib/providers/AssistantProvider';
+import { logger } from '@proton/logger';
 import { useInboxDesktopHeartbeat } from '@proton/shared/lib/desktop/heartbeat';
 
 import { CheckAllRefProvider } from 'proton-mail/containers/CheckAllRefProvider';
@@ -31,6 +34,18 @@ import { extraThunkArguments } from './store/thunk';
 const MainContainer: FunctionComponent = () => {
     const { APP_NAME } = useConfig();
     const mailContentRef = useRef<HTMLDivElement>(null);
+
+    const apiStatus = useApiStatus();
+    const onlineStatus = useOnline();
+
+    useEffect(() => {
+        const msg = onlineStatus ? 'Connected to network' : 'Disconnected from network';
+        logger.debug(msg);
+    }, [onlineStatus]);
+
+    useEffect(() => {
+        logger.debug(`API Status`, apiStatus);
+    }, [apiStatus]);
 
     useInboxDesktopHeartbeat();
     useInboxDesktopMetrics();
