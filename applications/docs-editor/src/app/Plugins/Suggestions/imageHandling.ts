@@ -4,7 +4,8 @@ import { $createRangeSelection, $getNodeByKey, $getSelection, $setSelection } fr
 import { $createSuggestionNode, $isSuggestionNode } from './ProtonNode'
 import type { SetImageSizePayload } from '../Image/ImagePlugin'
 import { $findMatchingParent, $wrapNodeInElement } from '@lexical/utils'
-import { $createImageNode, $isImageNode } from '../Image/ImageNode'
+import { $createImageNode } from '../Image/ImageNode'
+import { $isImageNode } from '../Image/isImageNode'
 import { $getImageNodeInSelection, getDragImageData, $canDropImage, getDragSelection } from '../Image/ImageUtils'
 import type { Logger } from '@proton/utils/logs'
 

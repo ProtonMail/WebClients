@@ -1,9 +1,8 @@
 import { $createListItemNode, $isListItemNode, $isListNode, ListNode, type ListType } from '@lexical/list'
 import type { LexicalNode } from 'lexical'
-import { $createTextNode, $isElementNode, type EditorConfig, type NodeKey } from 'lexical'
+import { $applyNodeReplacement, $createTextNode, $isElementNode, type EditorConfig, type NodeKey } from 'lexical'
 import type { CustomListMarker, CustomListStyleType, SerializedCustomListNode } from './CustomListTypes'
 import { addClassNamesToElement, removeClassNamesFromElement } from '@lexical/utils'
-import { $createCustomListNode } from './$createCustomListNode'
 import { listStyleTypeToDOMType } from './listStyleTypeToDOMType'
 
 export class CustomListNode extends ListNode {
@@ -52,11 +51,13 @@ export class CustomListNode extends ListNode {
   }
 
   static importJSON(serializedNode: SerializedCustomListNode): ListNode {
-    return $createCustomListNode(
-      serializedNode.listType,
-      serializedNode.start,
-      serializedNode.listStyleType,
-      serializedNode.listMarker,
+    return $applyNodeReplacement(
+      new CustomListNode(
+        serializedNode.listType,
+        serializedNode.start,
+        serializedNode.listStyleType,
+        serializedNode.listMarker,
+      ),
     ).updateFromJSON(serializedNode)
   }
 

@@ -1,13 +1,12 @@
 import type { ElementFormatType } from 'lexical'
-import { $isParagraphNode, type ElementNode } from 'lexical'
-import type { Table } from 'docx'
-import { AlignmentType, Paragraph } from 'docx'
+import { $isElementNode, $isParagraphNode, type ElementNode } from 'lexical'
+import { AlignmentType, Paragraph, Table, TableCell, TableRow } from 'docx'
 import { $isHeadingNode } from '@lexical/rich-text'
 import { $isListNode } from '@lexical/list'
-import { $isTableNode } from '@lexical/table'
+import type { TableCellNode, TableNode, TableRowNode } from '@lexical/table'
+import { $isTableCellNode, $isTableNode, $isTableRowNode } from '@lexical/table'
 import { getDocxChildrenFromElementNode } from './getDocxChildrenFromElementNode'
 import { getDocxChildrenFromListNode } from './getDocxChildrenFromListNode'
-import { getChildrenFromTableNode } from './getChildrenFromTableNode'
 import type { DocxExportContext } from './Context'
 
 export type TopLevelChildren = Paragraph | Paragraph[] | Table
@@ -58,4 +57,61 @@ export async function getTopLevelChildrenFromElementNode(
   return new Paragraph({
     children,
   })
+}
+
+async function getChildrenFromTableNode(node: TableNode, context: DocxExportContext): Promise<Table> {
+  const rows: TableRow[] = []
+
+  const nodeChildren = context.state.read(() => node.getChildren())
+  for (const child of nodeChildren) {
+    if (!$isTableRowNode(child)) {
+      continue
+    }
+    const cells = await getCellsFromTableRow(child, context)
+    rows.push(
+      new TableRow({
+        children: cells,
+      }),
+    )
+  }
+
+  return new Table({
+    rows,
+    width: {
+      size: `100%`,
+      type: 'pct',
+    },
+  })
+}
+
+async function getCellsFromTableRow(node: TableRowNode, context: DocxExportContext): Promise<TableCell[]> {
+  const cells: TableCell[] = []
+
+  const nodeChildren = context.state.read(() => node.getChildren())
+  for (const child of nodeChildren) {
+    if (!$isTableCellNode(child)) {
+      continue
+    }
+    const children = await getChildrenFromCellNode(child, context)
+    cells.push(
+      new TableCell({
+        children: children.flat(),
+      }),
+    )
+  }
+
+  return cells
+}
+
+async function getChildrenFromCellNode(node: TableCellNode, context: DocxExportContext): Promise<TopLevelChildren[]> {
+  const children: TopLevelChildren[] = []
+
+  const nodeChildren = context.state.read(() => node.getChildren())
+  for (const child of nodeChildren) {
+    if ($isElementNode(child)) {
+      children.push(await getTopLevelChildrenFromElementNode(child, context))
+    }
+  }
+
+  return children
 }

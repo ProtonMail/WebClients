@@ -7,7 +7,7 @@ import { createContext, useContext, useEffect, useMemo, useState } from 'react'
 import { $getCommentThreadMarkIDs } from './Comments/CommentThreadMarkNode'
 import { $getSuggestionID } from './Suggestions/Utils'
 import type { ProtonNode } from './Suggestions/ProtonNode'
-import { $isSuggestionThatAffectsWholeParent } from './Suggestions/Types'
+import { $isSuggestionThatAffectsWholeParent } from './Suggestions/ProtonNode'
 
 export type MarkNodeMap = Map<string, Set<NodeKey>>
 
