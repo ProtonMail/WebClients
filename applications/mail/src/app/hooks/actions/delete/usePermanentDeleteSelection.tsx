@@ -9,6 +9,7 @@ import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { FeatureCode, useFeature } from '@proton/features';
+import { logger } from '@proton/logger';
 import { deleteConversations } from '@proton/shared/lib/api/conversations';
 import { deleteMessages } from '@proton/shared/lib/api/messages';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -244,11 +245,15 @@ export const usePermanentDeleteSelection = (labelID: string) => {
 
             const notificationText = getNotificationText(draft, conversationMode, selectedItemsCount, totalMessages);
             createNotification({ text: notificationText });
+
+            logger.info(`Permanently deleted ${selectedItemsCount} element(s)`);
         } catch (error: any) {
             createNotification({
                 text: c('Error').t`Something went wrong. Please try again.`,
                 type: 'error',
             });
+
+            logger.error(`Failed to permanently delete ${selectedItemsCount} element(s)`, error);
         } finally {
             dispatch(backendActionFinished());
         }

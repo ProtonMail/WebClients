@@ -1,6 +1,7 @@
 import type { ErrorInfo, PropsWithChildren, PropsWithRef, ReactNode } from 'react';
 import { Component } from 'react';
 
+import type { Logger } from '@proton/logger';
 import type { SentryInitiative } from '@proton/shared/lib/helpers/sentry';
 import { traceError, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 
@@ -14,6 +15,7 @@ interface Props {
     renderFunction?: (error: Error | undefined) => ReactNode;
     onError?: (error: Error, info: ErrorInfo) => void;
     initiative?: SentryInitiative;
+    logger?: Logger;
 }
 
 interface State {
@@ -39,7 +41,6 @@ class ErrorBoundary extends Component<PropsWithRef<PropsWithChildren<Props>>, St
     componentDidUpdate(prevProps: Props) {
         const { props, state } = this;
         if (state.hasError && prevProps.resetKey !== props.resetKey) {
-            // eslint-disable-next-line react/no-did-update-set-state
             this.setState(initialState);
         }
     }
@@ -52,6 +53,8 @@ class ErrorBoundary extends Component<PropsWithRef<PropsWithChildren<Props>>, St
         } else {
             traceError(error);
         }
+        props?.logger?.error(error.message, error);
+        // eslint-disable-next-line no-console
         console.error(error);
     }
 

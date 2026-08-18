@@ -2,10 +2,9 @@ import { useRef, useState } from 'react';
 
 import type { Cancellable } from '@proton/components/hooks/useHandler';
 import { useHandler } from '@proton/components/hooks/useHandler';
+import { logger } from '@proton/logger';
 import type { MessageState, MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import { SentryMailInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
-
-import { MAIL_LOG_COMPONENT, mailLogger } from 'proton-mail/mailLogger';
 
 import { isDecryptionError, isNetworkError } from '../../helpers/errors';
 import { useDeleteDraft, useSaveDraft } from '../message/useSaveDraft';
@@ -45,22 +44,17 @@ export const useAutoSave = ({ onMessageAlreadySent }: AutoSaveArgs) => {
 
             // Log the transition back to a helthy state
             if (hasNetworkError) {
-                mailLogger.info(MAIL_LOG_COMPONENT.DRAFT_SAVE, 'useAutoSave recovered', {
-                    localID: message.localID,
-                    messageID: message.data?.ID,
-                });
+                logger.info('Draft auto-save recovered');
             }
             setHasNetworkError(false);
         } catch (error: any) {
             const isNetwork = isNetworkError(error);
             const isDecryption = isDecryptionError(error);
 
-            mailLogger.error(MAIL_LOG_COMPONENT.DRAFT_SAVE, 'useAutoSave failed', {
-                localID: message.localID,
-                network: isNetwork,
-                decryption: isDecryption,
-                error,
-            });
+            logger.error(
+                `Draft auto-save failed${isNetwork ? ' (network error)' : isDecryption ? ' (decryption error)' : ''}`,
+                error
+            );
 
             if (isNetwork || isDecryption) {
                 setHasNetworkError(true);
