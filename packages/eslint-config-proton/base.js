@@ -10,6 +10,7 @@ import testingLibrary from 'eslint-plugin-testing-library';
 import { defineConfig, globalIgnores } from 'eslint/config';
 import { configs, parser, plugin } from 'typescript-eslint';
 
+import { createExtraneousDependenciesRule } from './extraneousDependencies.js';
 import { allExtensions, allGlobs, typeScriptExtensions, typescriptGlobs } from './globs.js';
 import { createRestrictedImportRule } from './restrictedImports.js';
 
@@ -256,37 +257,9 @@ export default defineConfig(
             'lodash/import-scope': [2, 'method'],
 
             '@protontech/enforce-uint8array-arraybuffer/enforce-uint8array-arraybuffer': 'error',
-            'import/no-extraneous-dependencies': [
-                'error',
-                {
-                    devDependencies: [
-                        // Types
-                        '**/global.d.ts',
-                        // Build
-                        '**/babel.config.{js,ts}',
-                        '**/build.mjs',
-                        '**/postcss.config.{js,ts}',
-                        '**/webpack.config.{js,ts}',
-                        // Jest
-                        '**/__mocks__/**',
-                        '**/__tests__/**',
-                        '**/jest.config.{js,ts}',
-                        '**/jest.setup.{js,ts}',
-                        '**/jest.transform.{js,ts}',
-                        // Vite
-                        '**/vite.config.{js,ts}',
-                        '**/vitest.config.{js,ts}',
-                        '**/vitest.setup.{js,ts}',
-                        '**/*.test.{js,ts,tsx,jsx}',
-                        '**/*.spec.{js,ts,tsx,jsx}',
-                        // Others
-                        '**/cypress.config.{js,ts}',
-                        '**/eslint.config.{js,mjs}',
-                    ],
-                    optionalDependencies: false,
-                    peerDependencies: false,
-                },
-            ],
+            // Workspace packages that would form a dependency cycle are declared as peer
+            // dependencies, since turbo only builds its graph from (dev)dependencies.
+            'import/no-extraneous-dependencies': createExtraneousDependenciesRule(),
         },
     },
     {
