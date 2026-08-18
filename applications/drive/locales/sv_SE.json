@@ -422,6 +422,9 @@
       "Download logs": [
         "Ladda ner loggar"
       ],
+      "Download results": [
+        "Ladda ner resultat"
+      ],
       "Edit": [
         "Redigera"
       ],
@@ -592,6 +595,9 @@
       ],
       "Join album": [
         "Gå med i album"
+      ],
+      "Keep going": [
+        "Fortsätt"
       ],
       "Keep my subscription": [
         "Behåll min prenumeration"
@@ -1066,6 +1072,9 @@
       ],
       "Stop": [
         "Stoppa"
+      ],
+      "Stop here": [
+        "Stoppa här"
       ],
       "Stop sharing": [
         "Sluta dela"
@@ -1747,6 +1756,9 @@
       ],
       "Discover and set up features": [
         "Upptäck och ställ in funktioner"
+      ],
+      "Get 50% offer": [
+        "Få 50 % erbjudande"
       ],
       "Maybe later": [
         "Kanske senare"
@@ -3482,6 +3494,9 @@
       "Could not find an available name": [
         "Kunde inte hitta ett tillgängligt namn"
       ],
+      "Could not grant access to the organization key": [
+        "Kunde inte bevilja åtkomst till organisationsnyckeln"
+      ],
       "Could not load sharing details": [
         "Kunde inte ladda delningsdetaljer"
       ],
@@ -3743,6 +3758,9 @@
       "No emails found to import - the account does not have an inbox": [
         "Inga e-postmeddelanden hittades att importera - kontot har ingen inkorg"
       ],
+      "No file data was received. Please try again.": [
+        "Ingen fildata togs emot. Försök igen."
+      ],
       "No file to upload": [
         "Ingen fil att ladda upp"
       ],
@@ -3780,6 +3798,9 @@
       ],
       "Organization key must be activated to create non-private users": [
         "Organisationsnyckeln måste aktiveras för att skapa icke-privata användare"
+      ],
+      "Part of the file appears to be corrupted": [
+        "Del av filen verkar vara skadad"
       ],
       "Password is required": [
         "Lösenord är obligatoriskt"
@@ -3990,6 +4011,9 @@
       "The minimum donation amount is ${ price }": [
         "Minsta donationsbelopp är ${ price }"
       ],
+      "The uploaded file does not match the original. Please try again.": [
+        "Den uppladdade filen matchar inte originalet. Försök igen."
+      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Det finns för många mappar i ditt externa konto. Anpassa importen för att ta bort vissa mappar."
       ],
@@ -4008,6 +4032,9 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Detta fält kräver minst ${ minimumLength } tecken."
       ],
+      "This file has no version available to download": [
+        "Denna fil har ingen version tillgänglig att ladda ner"
+      ],
       "This file version could not be uploaded": [
         "Denna filversion kunde inte laddas upp"
       ],
@@ -4025,6 +4052,12 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Detta meddelande kan innehålla några URL-länkar som inte kan öppnas korrekt av din nuvarande webbläsare."
+      ],
+      "Too many server errors, please try again later": [
+        "För många serverfel, försök igen senare"
+      ],
+      "Too many server requests, please try again later": [
+        "För många serverförfrågningar, försök igen senare"
       ],
       "Try using only letters, numerals, and _.-": [
         "Prova använda endast bokstäver, siffror och _.-"
@@ -4070,6 +4103,9 @@
       ],
       "Verification keys are not available": [
         "Verifieringsnycklar är inte tillgängliga"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Verifieringsnycklar för ${ signatureType } är inte tillgängliga"
       ],
       "We cannot retrieve this item": [
         "Vi kan inte hämta detta objekt"
@@ -6313,6 +6349,9 @@
       "Public sharing of documents is not yet supported.": [
         "Offentlig delning av dokument stöds ännu inte."
       ],
+      "Re-indexing in progress": [
+        "Omindexering pågår"
+      ],
       "Ready to add some photos?": [
         "Redo att lägga till några foton?"
       ],
@@ -6378,6 +6417,9 @@
       ],
       "Search Enabled": [
         "Sökning aktiverad"
+      ],
+      "Search enabled. You may now close this dialogue and search for files and folders.": [
+        "Sökning aktiverad. Du kan nu stänga denna dialogruta och söka efter filer och mappar."
       ],
       "Search encountered an internal error. Rebuild the index to recover.": [
         "Sök stötte på ett internt fel. Återskapa indexet för att återställa."
@@ -6613,6 +6655,9 @@
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Denna unika kod kan användas av webbplatser och ISP:er (internetleverantörer) för att koppla din plats och surfhistorik till din enhet"
       ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "Denna användare kan inte migreras eftersom deras e-postadress inte är tillgänglig på ${ BRAND_NAME }."
+      ],
       "This will cancel any remaining downloads.": [
         "Detta kommer avbryta alla återstående nedladdningar."
       ],
@@ -6664,8 +6709,14 @@
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "För att importera händelser, skapa först en kalender i ${ CALENDAR_APP_NAME }. Det är här händelserna kommer att visas efter importen."
       ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "För att migrera denna användare, lägg till och verifiera e-postdomänen under ${ domainNamesLink }"
+      ],
       "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
         "För att migrera denna användare, aktivera deras konto i din ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "För att migrera denna användare, aktivera deras konto under ${ usersAddressesLink }."
       ],
       "To migrate this user, enable their address under ${ usersAddressesLink }.": [
         "För att migrera denna användare, aktivera deras adress under ${ usersAddressesLink }."
@@ -7215,6 +7266,9 @@
       ],
       "Account holder": [
         "Kontoinnehavare"
+      ],
+      "Account holder name": [
+        "Kontoinnehavarens namn"
       ],
       "Active": [
         "Aktiv"
@@ -8655,6 +8709,9 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } skrivassistent"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME } skrivassistent med utökad åtkomst"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
         "${ LUMO_SHORT_APP_NAME } skrivassistent med begränsad åtkomst"
@@ -10484,6 +10541,9 @@
       "Invalid security code": [
         "Ogiltig säkerhetskod"
       ],
+      "Please enter the account holder name": [
+        "Ange kontoinnehavarens namn"
+      ],
       "Something went wrong. Please try again later.": [
         "Något gick fel. Försök igen senare."
       ],
@@ -11035,8 +11095,8 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Ägare"
+      "Organization Admin": [
+        "Organisationsadministratör"
       ],
       "Security Admin": [
         "Säkerhetsadministratör"
@@ -12973,6 +13033,9 @@
       "No breaches detected": [
         "Inga intrång upptäckta"
       ],
+      "No bursts": [
+        "Inga serier"
+      ],
       "No favorites": [
         "Inga favoriter"
       ],
@@ -13555,6 +13618,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Ladda upp en offentlig nyckel för att aktivera sändning av end-to-end-krypterad e-post till denna e-post"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Användare som har åtkomst till sitt ${ BRAND_NAME }-konto"
       ],
       "Version 6 OpenPGP key": [
         "OpenPGP-nyckel version 6"

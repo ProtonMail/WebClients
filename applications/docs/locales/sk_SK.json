@@ -477,6 +477,9 @@
       "Import from Outlook": [
         "Importovať z Outlooku"
       ],
+      "Keep going": [
+        "Pokračujte"
+      ],
       "Keep my subscription": [
         "Ponechať moje predplatné"
       ],
@@ -821,6 +824,9 @@
       ],
       "Stop": [
         "Zastaviť"
+      ],
+      "Stop here": [
+        "Tu zastav"
       ],
       "Stop sharing": [
         "Zastaviť zdieľanie"
@@ -3116,6 +3122,9 @@
       "Could not find an available name": [
         "Nepodarilo sa nájsť voľné meno"
       ],
+      "Could not grant access to the organization key": [
+        "Nepodarilo sa udeliť prístup ku kľúču organizácie"
+      ],
       "Could not load sharing details": [
         "Nepodarilo sa načítať podrobnosti o zdieľaní"
       ],
@@ -3239,6 +3248,9 @@
       "Failed to fetch sharing info": [
         "Načítanie informácií o zdieľaní zlyhalo"
       ],
+      "Failed to fetch sharing information": [
+        "Načítanie informácií o zdieľaní zlyhalo"
+      ],
       "Failed to get inviter keys": [
         "Nepodarilo sa získať kľúče pozývajúceho"
       ],
@@ -3256,9 +3268,6 @@
       ],
       "Failed to remove older revisions": [
         "Nepodarilo sa odstrániť staršie revízie"
-      ],
-      "Failed to rename document": [
-        "Premenovanie dokumentu zlyhalo"
       ],
       "Failed to rename document. Please try again later.": [
         "Pomenovanie dokumentu sa nepodarilo. Skúste to neskôr, prosím."
@@ -5820,6 +5829,9 @@
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Toto je názov alebo prezývka vašej organizácie, ktorú uvidia vaši používatelia. Môžete ho kedykoľvek zmeniť."
       ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Je to dosť zdĺhavé. Mám v tom pokračovať?"
+      ],
       "This item already exists in your library": [
         "Táto položka už vo vašej knižnici existuje"
       ],
@@ -5861,6 +5873,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Aby ste zamedzili spamu a obťažovaniu, potvrďte, že ste človek."
+      ],
+      "To help troubleshoot the issue, debug information will be uploaded to your Drive and shared securely with the ${ BRAND_NAME } support team. It may include file contents. You can stop sharing at any time, and the shared data is deleted after the review is complete.": [
+        "Na účely riešenia tohto problému budú informácie potrebné na odstraňovanie chýb nahrané na váš Drive a bezpečne zdieľané s tímom podpory spoločnosti ${ BRAND_NAME }. Môžu obsahovať aj obsah súborov. Zdieľanie môžete kedykoľvek zrušiť a zdieľané údaje budú po dokončení kontroly vymazané."
       ],
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "Aby sme vám pomohli nezabudnúť heslo, budeme vás pravidelne žiadať o jeho zadanie. Časom vás o to budeme žiadať čoraz menej."
@@ -6509,6 +6524,9 @@
       ],
       "Include application logs in bug report": [
         "Vrátane záznamov aplikácie v chybovom hlásení"
+      ],
+      "Include debug information": [
+        "Zahrnúť ladiace informácie"
       ],
       "Include document name in notification": [
         "Zahrnúť názov dokumentu do notifikácie"
@@ -7389,6 +7407,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Asistent písania ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME } – asistent písania s rozšíreným prístupom"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME } – asistent písania s obmedzeným prístupom"
       ],
       "${ n } calendar": [
         "${ n } kalendár",
@@ -8527,6 +8551,9 @@
       "Failed to restore document": [
         "Obnovenie dokumentu zlyhalo"
       ],
+      "Failed to submit report": [
+        "Odosielanie hlásenia zlyhalo"
+      ],
       "Failed to trash document": [
         "Odstránenie dokumentu do koša zlyhalo"
       ],
@@ -8571,6 +8598,9 @@
       ],
       "Recent documents updated": [
         "Nedávne dokumenty boli aktualizované"
+      ],
+      "Report submitted successfully": [
+        "Hlásenie bolo úspešne odoslané"
       ],
       "Root folder failed to be loaded": [
         "Nepodarilo sa načítať koreňový priečinok"
@@ -9435,8 +9465,8 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Vlastník"
+      "Organization Admin": [
+        "Správca organizácie"
       ],
       "Security Admin": [
         "Bezpečnostný správca"
@@ -11053,6 +11083,9 @@
       "Report a problem": [
         "Nahlásiť problém"
       ],
+      "Report issue": [
+        "Nahlásiť problém"
+      ],
       "Request new code": [
         "Vyžiadať nový kód"
       ],
@@ -11136,6 +11169,9 @@
       ],
       "Stay for 50% off your next month": [
         "Zostaňte a získajte 50 % zľavu na nasledujúci mesiac"
+      ],
+      "Still working on it": [
+        "Stále na tom pracujem"
       ],
       "Stop sharing": [
         "Ukončiť zdieľanie"

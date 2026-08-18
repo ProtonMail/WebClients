@@ -5140,7 +5140,7 @@
       "Most issues can be solved in a few minutes with our step-by-step guides.": [
         "Большасць праблем могуць быць вырашаны за некалькіх хвілін з дапамогай нашых пакрокавых дапаможнікаў."
       ],
-      "No ads. No trackers.": [
+      "No ads. No trackers": [
         "Без рэкламы і праграм сачэння"
       ],
       "No one in your organization can connect to shared servers.": [
@@ -5624,17 +5624,6 @@
       ],
       "Windows 10/11 (x64)": [
         "Windows 10/11 (x64)"
-      ]
-    },
-    "Download link": {
-      ".deb for Debian / Ubuntu": [
-        ".deb для Debian/Ubuntu"
-      ],
-      ".rpm for Fedora / Red Hat": [
-        ".rpm для Fedora/Red Hat"
-      ],
-      "You can also download the app through the ${ linkSnapStore }.": [
-        "Вы таксама можаце спампаваць праграму праз ${ linkSnapStore }."
       ]
     },
     "drive_signup_2023: Title": {
@@ -6496,9 +6485,6 @@
       "Enable auto-renew": [
         "Уключыць аўтаматычнае падаўжэнне"
       ],
-      "Enter your extra password": [
-        "Увядзіце свой дадатковы пароль"
-      ],
       "Explore plans": [
         "Пазнаёміцца з тарыфнымі планамі"
       ],
@@ -6681,9 +6667,6 @@
       ],
       "Unable to recover data": [
         "Немагчыма аднавіць даныя"
-      ],
-      "Unlock ${ PASS_APP_NAME }": [
-        "Разблакіраваць ${ PASS_APP_NAME }"
       ],
       "Upgrade": [
         "Палепшыць"
@@ -6904,6 +6887,9 @@
       ],
       "Could not generate the device profile. Please try again.": [
         "Немагчыма згенерыраваць профіль прылады. Паспрабуйце яшчэ раз."
+      ],
+      "Could not grant access to the organization key": [
+        "Немагчыма даць доступ да ключа арганізацыі"
       ],
       "Could not load sharing details": [
         "Немагчыма загрузіць абагуленыя падрабязнасці"
@@ -7462,12 +7448,6 @@
         "Не ўдалося выканаць прызначэнне ролі для ${ errors.length } удзельнікаў",
         "Не ўдалося выканаць прызначэнне ролі для ${ errors.length } удзельнікаў",
         "Не ўдалося выканаць прызначэнне ролі для ${ errors.length } удзельнікаў"
-      ],
-      "Role assignment could not be completed for ${ failedGroupCount } group": [
-        "Не ўдалося выканаць прызначэнне ролі для ${ failedGroupCount } групы",
-        "Не ўдалося выканаць прызначэнне ролі для ${ failedGroupCount } груп",
-        "Не ўдалося выканаць прызначэнне ролі для ${ failedGroupCount } груп",
-        "Не ўдалося выканаць прызначэнне ролі для ${ failedGroupCount } груп"
       ],
       "Server not found": [
         "Сервер не знойдзены"
@@ -9007,14 +8987,6 @@
         "Большасць праблем могуць быць хутка вырашаны з дапамогай нашых дапаможнікаў. Наша каманда заўсёды гатова дапамагчы, калі вы не можаце вырашыць праблему самастойна."
       ]
     },
-    "Get started checklist instructions": {
-      "${ appName } on App Store": [
-        "${ appName } у App Store"
-      ],
-      "${ appName } on Play Store": [
-        "${ appName } у Play Store"
-      ]
-    },
     "Gmail forwarding": {
       "Automatically forward": [
         "Аўтаматычна перасылаць"
@@ -10197,9 +10169,6 @@
       "**Your recovery email alone doesn't allow you to recover your encrypted data** after you reset your password.": [
         "**Адна толькі электронная пошта для аднаўлення не дазволіць аднавіць зашыфраваныя даныя** пасля скідання пароля."
       ],
-      "**Your recovery methods will be invalidated:** you can generate new recovery data later.": [
-        "**Вашы метады аднаўлення будуць ануляваны:** вы зможаце згенерыраваць новыя даныя для аднаўлення пазней."
-      ],
       "**Your recovery phone alone doesn’t allow you to recover your encrypted data** after you reset your password.": [
         "**Адзін толькі нумар тэлефона для аднаўлення не дазволіць аднавіць зашыфраваныя даныя** пасля скідання пароля."
       ],
@@ -11259,9 +11228,6 @@
       "Failed to fetch logs.": [
         "Не ўдалося атрымаць журналы."
       ],
-      "Fast and focused. Email and calendar, right on your desktop.": [
-        "Хуткасць і канцэнтрацыя. Пошта і каляндар на вашым працоўным стале."
-      ],
       "Fastest VPN speeds of up to 10Gbps": [
         "Найвышэйшая хуткасць VPN, якая дасягае 10 Гбіт/с"
       ],
@@ -12023,9 +11989,6 @@
       ],
       "On": [
         "Уключана"
-      ],
-      "On Ubuntu?": [
-        "Карыстаецеся Ubuntu?"
       ],
       "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
         "Яны змогуць атрымаць доступ да вашых налад **Аднаўлення** і **змяніць пароль у ${ ACCOUNT_APP_NAME }** для вас пасля таго, як будзе атрыманы доступ да вашага ўліковага запісу."
@@ -12794,12 +12757,6 @@
       ],
       "The name will be visible to your users while they are signed in.": [
         "Гэта імя ўбачаць вашы карыстальнікі, калі яны ўвойдуць у сістэму."
-      ],
-      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
-        "Працэс быў перарваны для ${ pausedCount } групы. Націсніце \"Працягнуць\", каб узнавіць прызначэнне роляў.",
-        "Працэс быў перарваны для ${ pausedCount } груп. Націсніце \"Працягнуць\", каб узнавіць прызначэнне роляў.",
-        "Працэс быў перарваны для ${ pausedCount } груп. Націсніце \"Працягнуць\", каб узнавіць прызначэнне роляў.",
-        "Працэс быў перарваны для ${ pausedCount } груп. Націсніце \"Працягнуць\", каб узнавіць прызначэнне роляў."
       ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
         "Узнагарода па рэферальнай праграме ў выглядзе крэдытаў можа быць атрымана на працягу 2 месяцаў пасля завяршэння пробнага перыяду вашага сябра, і толькі калі ваш сябар падпісаўся на тарыфны план."
@@ -14590,6 +14547,9 @@
       "Account holder": [
         "Трымальнік уліковага запісу"
       ],
+      "Account holder name": [
+        "Уладальнік уліковага запісу"
+      ],
       "Account holder: ${ sepaDetails.AccountName }": [
         "Уладальнік уліковага запісу: ${ sepaDetails.AccountName }"
       ],
@@ -14793,9 +14753,6 @@
       ],
       "Backup password": [
         "Рэзервовы пароль"
-      ],
-      "Beta": [
-        "Бэта"
       ],
       "Billed at ${ priceYearly } every 12 months.": [
         "Аплачваецца ${ priceYearly } кожныя 12 месяцаў."
@@ -15028,8 +14985,8 @@
       "Days of the week": [
         "Дні тыдня"
       ],
-      "Deals, offers, marketing emails": [
-        "Акцыі, прапановы, маркетынгавыя лісты"
+      "Deals, offers, and marketing emails": [
+        "Акцыі, прапановы і маркетынгавыя лісты"
       ],
       "Default email address": [
         "Прадвызначаны адрас электроннай пошты"
@@ -15805,9 +15762,6 @@
       "Select an identity provider to start": [
         "Выберыце пастаўшчыка пасведчанняў, каб пачаць"
       ],
-      "Select Linux package format": [
-        "Выберыце фармат пакета Linux"
-      ],
       "Select Linux platform": [
         "Выберыце платформу Linux"
       ],
@@ -16580,9 +16534,6 @@
       ],
       "Sign in": [
         "Увайсці"
-      ],
-      "Snap store": [
-        "Snap Store"
       ],
       "switch account": [
         "змяніць уліковы запіс"
@@ -20358,6 +20309,9 @@
       "Invalid security code": [
         "Памылковы код бяспекі"
       ],
+      "Please enter the account holder name": [
+        "Увядзіце імя ўладальніка ўліковага запісу"
+      ],
       "Something went wrong. Please try again later.": [
         "Нешта пайшло не так. Паспрабуйце яшчэ раз пазней."
       ],
@@ -21666,9 +21620,6 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Уладальнік"
-      ],
       "Security Admin": [
         "Адміністратар бяспекі"
       ],
@@ -22273,9 +22224,6 @@
       ]
     },
     "Service provider": {
-      "Add to ${ CALENDAR_APP_NAME }": [
-        "Дадаць у ${ CALENDAR_APP_NAME }"
-      ],
       "Allows you to add a Zoom video conference to any of your calendar events": [
         "Дазваляе дадаваць відэаканферэнцыю Zoom у любыя падзеі вашага календара"
       ]
@@ -25874,9 +25822,6 @@
       "Dashboard": [
         "Панэль кіравання"
       ],
-      "Data collection": [
-        "Збор даных"
-      ],
       "Data recovery": [
         "Аднаўленне даных"
       ],
@@ -26324,9 +26269,6 @@
       "Group membership": [
         "Прыналежнасць да групы"
       ],
-      "Group role assignment paused": [
-        "Прызначэнне групавой ролі прыпынена"
-      ],
       "Groups": [
         "Групы"
       ],
@@ -26497,9 +26439,6 @@
       ],
       "Mobile": [
         "Для смартфона"
-      ],
-      "Monitoring": [
-        "Маніторынг"
       ],
       "Monthly": [
         "Штомесячная"
@@ -26674,9 +26613,6 @@
       ],
       "Priority support:": [
         "Прыярытэтная падтрымка:"
-      ],
-      "Privacy": [
-        "Прыватнасць"
       ],
       "Privacy and data collection": [
         "Бяспека і збор даных"
@@ -26959,9 +26895,6 @@
       ],
       "Single sign-on": [
         "Адзіны ўваход"
-      ],
-      "Single-sign on (SSO)": [
-        "Адзіны ўваход (SSO)"
       ],
       "SMS verification": [
         "Спраўджанне SMS"

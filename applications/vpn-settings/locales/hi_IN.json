@@ -1790,7 +1790,7 @@
         "1 उपयोगकर्ता खाता"
       ],
       "200 GB storage: 40x your current plan": [
-        "200 GB स्टोरेज: आपके वर्तमान प्लैन का 40 गुना"
+        "200 जीबी स्टोरेज: आपके वर्तमान प्लैन का 40 गुना"
       ],
       "6 user accounts": [
         "6 उपयोगकर्ता खाते"
@@ -1814,7 +1814,7 @@
         "पासवर्ड हेल्थ अलर्ट"
       ],
       "Recover previous file versions": [
-        "पिछले फ़ाइल वर्शन रिकवर करें"
+        "पिछली फ़ाइल के वर्शन रिकवर करें"
       ],
       "Unlimited folders, labels and filters": [
         "असीमित फोल्डर, लेबल और फिल्टर"
@@ -1864,16 +1864,16 @@
     },
     "BF2025: Deal details": {
       "2 TB data storage": [
-        "2 TB डेटा स्टोरेज"
+        "2 टीबी डेटा स्टोरेज"
       ],
       "3 TB data storage": [
-        "3 TB डेटा स्टोरेज"
+        "3 टीबी डेटा स्टोरेज"
       ],
       "Access 15,000+ servers in 120+ countries": [
         "120+ देशों में 15,000+ सर्वर एक्सेस करें"
       ],
       "Access advanced AI models": [
-        "उन्नत एआई मॉडल एक्सेस करें"
+        "उन्नत AI मॉडलों को एक्सेस करें"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, और ${ CALENDAR_SHORT_APP_NAME } की सभी प्रीमियम खासियतें"
@@ -1882,30 +1882,30 @@
         "विज्ञापनों, ट्रैकर्स और मालवेयर को ब्लॉक करें"
       ],
       "Built-in 2FA authenticator": [
-        "इन-बिल्ट 2-एफए प्रमाणक"
+        "इन-बिल्ट 2-एफए ऑथेंटिकेटर"
       ],
       "Connect 10 devices at once": [
         "एक साथ 10 डिवाइस कनेक्ट करें"
       ],
       "Full chat history with easy search and favorites": [
-        "आसान खोज और पसंदीदा के साथ संपूर्ण चैट इतिहास"
+        "आसान खोज और पसंदीदा के साथ पूरा चैट इतिहास"
       ],
       "Individual accounts for 6 users": [
         "6 उपयोगकर्ताओं के लिए व्यक्तिगत खाते"
       ],
       "Individual accounts for you and a partner": [
-        "आपके और एक साथी के लिए व्यक्तिगत खाते"
+        "आपके और आपके साथी के लिए व्यक्तिगत खाते"
       ],
       "Stronger protection against cyber threats": [
-        "साइबर खतरों के खिलाफ मजबूत सुरक्षा"
+        "साइबर खतरों के खिलाफ अधिक मज़बूत सुरक्षा"
       ],
       "Unlimited daily chats": [
-        "असीमित दैनिक चैट"
+        "प्रतिदिन असीमित चैट"
       ]
     },
     "BF2025: Tooltip": {
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "विशेष रूप से डिज़ाइन किया गया NetShield आपके डिवाइस की सुरक्षा करता है और विज्ञापनों, ट्रैकर्स तथा मालवेयर को ब्लॉक करके आपके ब्राउज़िंग को तेज़ बनाता है।"
+        "विशेष रूप से डिज़ाइन किया गया NetShield आपके डिवाइस की सुरक्षा करता है और विज्ञापनों, ट्रैकर्स व मालवेयर को ब्लॉक करके आपके ब्राउज़िंग को तेज़ करता है।"
       ]
     },
     "Billing cycle": {
@@ -3607,9 +3607,6 @@
       "Most issues can be solved in a few minutes with our step-by-step guides.": [
         "हमारी चरण-दर-चरण गाइडों की मदद से अधिकांश समस्याओं को कुछ ही मिनटों में हल किया जा सकता है।"
       ],
-      "No ads. No trackers.": [
-        "कोई विज्ञापन नहीं। कोई ट्रैकर नहीं।"
-      ],
       "No one in your organization can connect to shared servers.": [
         "आपके संगठन में कोई भी साझा सर्वर से कनेक्ट नहीं कर सकता।"
       ],
@@ -4990,10 +4987,6 @@
       "Role assignment could not be completed for ${ errors.length } member": [
         "${ errors.length } सदस्य के लिए भूमिका असाइनमेंट पूरा नहीं किया जा सका",
         "${ errors.length } सदस्यों के लिए भूमिका असाइनमेंट पूरा नहीं किया जा सका"
-      ],
-      "Role assignment could not be completed for ${ failedGroupCount } group": [
-        "${ failedGroupCount } ग्रुप के लिए भूमिका असाइनमेंट पूरा नहीं किया जा सका",
-        "${ failedGroupCount } ग्रुपों के लिए भूमिका असाइनमेंट पूरा नहीं किया जा सका"
       ],
       "Server not found": [
         "सर्वर नहीं मिला"
@@ -8680,10 +8673,6 @@
       ],
       "The name will be visible to your users while they are signed in.": [
         "नाम आपके साइनइन किए यूज़र को दिखाई देगा।"
-      ],
-      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
-        "प्रक्रिया ${ pausedCount } ग्रुप के लिए बाधित हो गई थी। भूमिकाएं असाइन करना फिर से शुरू करने के लिए 'जारी रखें' पर क्लिक करें।",
-        "प्रक्रिया ${ pausedCount } ग्रुपों के लिए बाधित हो गई थी। भूमिकाएं असाइन करना फिर से शुरू करने के लिए 'जारी रखें' पर क्लिक करें।"
       ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
         "रेफ़रल क्रेडिट आपके मित्र का ट्रायल समाप्त होने के 2 महीने बाद तक दिया जा सकता है, केवल तभी जब आपके मित्र ने किसी प्लैन को सब्सक्राइब किया हो।"
@@ -14512,9 +14501,6 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "मालिक"
-      ],
       "Security Admin": [
         "सुरक्षा एडमिन"
       ],
@@ -17518,9 +17504,6 @@
       "Group membership": [
         "ग्रुप सदस्यता"
       ],
-      "Group role assignment paused": [
-        "ग्रुप भूमिका असाइनमेंट रुका हुआ है"
-      ],
       "Groups": [
         "ग्रुप"
       ],
@@ -17579,9 +17562,6 @@
       "Information exposed in breach": [
         "लीक में उजागर हुई जानकारी"
       ],
-      "Integrations": [
-        "एकीकरण"
-      ],
       "Invalid verification code": [
         "अवैध सत्यापन कोड"
       ],
@@ -17614,9 +17594,6 @@
       ],
       "Minicalendar": [
         "छोटा-कैलेंडर"
-      ],
-      "Monitoring": [
-        "निगरानी"
       ],
       "Multi-user support": [
         "बहु-उपयोगकर्ता समर्थन"
@@ -17944,9 +17921,6 @@
       ],
       "Single sign-on": [
         "एकल साइन-ऑन"
-      ],
-      "Single-sign on (SSO)": [
-        "सिंगल साइन-ऑन (SSO)"
       ],
       "SMS verification": [
         "एसएमएस सत्यापन"

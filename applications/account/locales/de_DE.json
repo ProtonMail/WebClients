@@ -54,6 +54,62 @@
         "Deine Informationen wurden bei mindestens einem Datenleck gefunden. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details anzuzeigen und Maßnahmen zu ergreifen. ${ link }"
       ]
     },
+    "account_search_index": {
+      "Account events": [
+        "Kontoereignisse"
+      ],
+      "Audit log": [
+        "Prüfprotokoll"
+      ],
+      "Automatically delete data": [
+        "Daten automatisch löschen"
+      ],
+      "Block sender for the organization": [
+        "Absender für die Organisation blockieren"
+      ],
+      "Bulk user import": [
+        "Massenimport von Benutzern"
+      ],
+      "Connection events": [
+        "Verbindungsereignisse"
+      ],
+      "Create organization": [
+        "Erstellen Sie eine Organisation"
+      ],
+      "Enable or disable apps for members": [
+        "Apps für Mitglieder aktivieren oder deaktivieren"
+      ],
+      "Gateway logs": [
+        "Gateway-Protokolle"
+      ],
+      "Group members": [
+        "Gruppenmitglieder"
+      ],
+      "Password reminders": [
+        "Passworterinnerungen"
+      ],
+      "Protection from cyber attacks": [
+        "Schutz vor Cyberangriffen"
+      ],
+      "Restrict app access": [
+        "App-Zugriff beschränken"
+      ],
+      "Server access policy": [
+        "Richtlinie für den Serverzugriff"
+      ],
+      "Shared server access": [
+        "Gemeinsamer Serverzugriff"
+      ],
+      "Verify domain": [
+        "Domain verifizieren"
+      ],
+      "Verify password": [
+        "Passwort bestätigen"
+      ],
+      "VPN session details": [
+        "Details zur VPN-Sitzung"
+      ]
+    },
     "Accounts": {
       "Accounts": [
         "Konten"
@@ -62,6 +118,9 @@
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-Shop"
+      ],
+      "+${ remaining } more": [
+        "+${ remaining } weitere"
       ],
       "Accept": [
         "Annehmen"
@@ -501,6 +560,9 @@
       "Decrease": [
         "Verkleinern"
       ],
+      "Decrease licenses": [
+        "Lizenzen reduzieren"
+      ],
       "Decrypt": [
         "Entschlüsseln"
       ],
@@ -648,6 +710,9 @@
       "Download CSV sample": [
         "CSV-Beispiel herunterladen"
       ],
+      "Download daily breakdown (CSV)": [
+        "Tagesaufschlüsselung herunterladen (CSV)"
+      ],
       "Download for macOS": [
         "Für macOS herunterladen"
       ],
@@ -662,6 +727,9 @@
       ],
       "Download logs": [
         "Protokolle herunterladen"
+      ],
+      "Download monthly summary (CSV)": [
+        "Monatliche Zusammenfassung herunterladen (CSV)"
       ],
       "Download our CSV template": [
         "Lade unsere CSV-Vorlage herunter"
@@ -1014,6 +1082,9 @@
       "Increase": [
         "Vergrößern"
       ],
+      "Increase licenses": [
+        "Lizenzen erhöhen"
+      ],
       "Insert": [
         "Einfügen"
       ],
@@ -1205,6 +1276,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME }-Einstellungen öffnen"
+      ],
+      "Open ${ company.name } manually": [
+        "${ company.name } manuell öffnen"
       ],
       "Open ${ PASS_APP_NAME } in your browser": [
         "${ PASS_APP_NAME } in deinem Browser öffnen"
@@ -3704,6 +3778,9 @@
       ]
     },
     "Column header": {
+      "Billable licenses": [
+        "Abrechenbare Lizenzen"
+      ],
       "Billing period": [
         "Abrechnungszeitraum"
       ],
@@ -3713,11 +3790,17 @@
       "Managed companies": [
         "Verwaltete Unternehmen"
       ],
+      "Managers": [
+        "Manager"
+      ],
       "Status": [
         "Status"
       ],
       "Total cost": [
         "Gesamtkosten"
+      ],
+      "Used / allocated licenses": [
+        "Benutzte / zugewiesene Lizenzen"
       ]
     },
     "Condition for custom filter": {
@@ -5126,8 +5209,8 @@
       "Most issues can be solved in a few minutes with our step-by-step guides.": [
         "Die meisten Probleme lassen sich mit unseren Schritt-für-Schritt-Anleitungen in wenigen Minuten lösen."
       ],
-      "No ads. No trackers.": [
-        "Keine Werbung. Keine Tracker."
+      "No ads. No trackers": [
+        "Keine Werbung. Keine Tracker"
       ],
       "No one in your organization can connect to shared servers.": [
         "Niemand in deiner Organisation kann sich mit gemeinsamen Servern verbinden."
@@ -5613,7 +5696,7 @@
         ".rpm für Fedora / Red Hat"
       ],
       "You can also download the app through the ${ linkSnapStore }.": [
-        "Die App kann auch über den ${ linkSnapStore } heruntergeladen werden."
+        "Die App kann auch über ${ linkSnapStore } heruntergeladen werden."
       ]
     },
     "drive_signup_2023: Title": {
@@ -6754,6 +6837,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } ist dein Benutzername. Um ${ emailAddress } zu erstellen, gehe bitte zu Einstellungen > Identität und E-Mail-Adressen > Kurzdomain (pm.me)"
       ],
+      "A delegated access recovery or emergency-access process has been initiated: generating a new key is not allowed to avoid disrupting it": [
+        "Ein Verfahren zur delegierten Wiederherstellung des Zugriffs oder zum Notfallzugriff wurde eingeleitet: Die Generierung eines neuen Schlüssels ist nicht zulässig, um eine Störung dieses Verfahrens zu vermeiden."
+      ],
       "A group with this name already exists": [
         "Eine Gruppe mit diesem Namen existiert bereits"
       ],
@@ -6876,6 +6962,9 @@
       ],
       "Could not generate the device profile. Please try again.": [
         "Das Geräteprofil konnte nicht erzeugt werden. Bitte versuche es erneut."
+      ],
+      "Could not grant access to the organization key": [
+        "Der Zugriff auf den Organisationsschlüssel konnte nicht gewährt werden"
       ],
       "Could not load sharing details": [
         "Freigabeinformationen konnten nicht geladen werden"
@@ -7368,6 +7457,9 @@
       "Please set up your organization before adding a company.": [
         "Bitte richte deine Organisation ein, bevor du ein Unternehmen hinzufügst."
       ],
+      "Please set up your organization identity before adding a company.": [
+        "Bitte richte die Identität deine Organisation ein, bevor du ein Unternehmen hinzufügst."
+      ],
       "Please try again in a few moments.": [
         "Bitte versuche es in wenigen Augenblicken erneut."
       ],
@@ -7424,9 +7516,13 @@
         "Rollenzuweisung konnte für ${ errors.length } Mitglied nicht abgeschlossen werden",
         "Rollenzuweisung konnte für ${ errors.length } Mitglieder nicht abgeschlossen werden"
       ],
-      "Role assignment could not be completed for ${ failedGroupCount } group": [
-        "Rollenzuweisung konnte für ${ failedGroupCount } Gruppe nicht abgeschlossen werden",
-        "Rollenzuweisung konnte für ${ failedGroupCount } Gruppen nicht abgeschlossen werden"
+      "Role assignment could not be completed for ${ failedCount } group": [
+        "Rollenzuweisung konnte für ${ failedCount } Gruppe nicht abgeschlossen werden",
+        "Rollenzuweisung konnte für ${ failedCount } Gruppen nicht abgeschlossen werden"
+      ],
+      "Role assignment could not be completed for ${ failedCount } user": [
+        "Rollenzuweisung konnte für ${ failedCount } Benutzer nicht abgeschlossen werden",
+        "Rollenzuweisung konnte für ${ failedCount } Benutzer nicht abgeschlossen werden"
       ],
       "Server not found": [
         "Server nicht gefunden"
@@ -9856,6 +9952,9 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } deiner Nicht-SSO-Mitglieder verwenden die Zwei-Faktor-Authentifizierung, um sich bei deiner Organisation anzumelden.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } deiner Nicht-SSO-Mitglieder verwenden die Zwei-Faktor-Authentifizierung, um sich bei deiner Organisation anzumelden."
       ],
+      "${ IDEAL_BRAND_NAME } mark": [
+        "${ IDEAL_BRAND_NAME } markieren"
+      ],
       "${ invitedMemberCount } user needs to accept their invite to start receiving group emails.": [
         "${ invitedMemberCount } Benutzer muss die Einladung annehmen, um Gruppen-E-Mails zu erhalten.",
         "${ invitedMemberCount } Benutzer müssen die Einladung annehmen, um Gruppen-E-Mails zu erhalten."
@@ -10122,11 +10221,11 @@
       "**Your recovery email alone doesn't allow you to recover your encrypted data** after you reset your password.": [
         "**Deine Wiederherstellungs-E-Mail-Adresse allein reicht nicht aus, um deine verschlüsselten Daten wiederherzustellen**, nachdem du dein Passwort zurückgesetzt hast."
       ],
-      "**Your recovery methods will be invalidated:** you can generate new recovery data later.": [
-        "**Deine Wiederherstellungsmethoden werden ungültig gemacht:** Du kannst später neue Wiederherstellungsdaten generieren."
-      ],
       "**Your recovery phone alone doesn’t allow you to recover your encrypted data** after you reset your password.": [
         "**Deine Wiederherstellungs-Telefonnummer allein reicht nicht aus, um deine verschlüsselten Daten wiederherzustellen**, nachdem du dein Passwort zurückgesetzt hast."
+      ],
+      "**Your recovery phrase and recovery file will be invalidated:** you can generate new recovery data later on.": [
+        "**Deine Wiederherstellungsphrase und deine Wiederherstellungsdatei werden ungültig:** Du kannst später neue Wiederherstellungsdaten generieren."
       ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } Weiteres",
@@ -10323,6 +10422,9 @@
       "Allocated": [
         "Zugewiesen"
       ],
+      "Allocated licenses won't be billed while disabled": [
+        "Zugewiesene Lizenzen, die deaktiviert sind, werden nicht in Rechnung gestellt"
+      ],
       "Allow logging of location and connection details": [
         "Protokollierung von Standort- und Verbindungsdetails zulassen"
       ],
@@ -10334,6 +10436,9 @@
       ],
       "Allowing the password reset from the settings lets you to change your password if you’ve lost it, but are still signed in to ${ BRAND_NAME }.": [
         "Wenn du die Passwortzurücksetzung in den Einstellungen aktivierst, kannst du dein Passwort ändern, falls du es vergessen hast, aber noch bei ${ BRAND_NAME } angemeldet bist."
+      ],
+      "Allows IPv6 traffic to pass through the VPN tunnel. This improves compatibility with IPv6 websites and services.": [
+        "Ermöglicht die Weiterleitung von IPv6-Datenverkehr durch den VPN-Tunnel. Dies verbessert die Kompatibilität mit IPv6-Websites und -Diensten."
       ],
       "Already allocated": [
         "Bereits zugewiesen"
@@ -10519,6 +10624,12 @@
       "Background color": [
         "Hintergrundfarbe"
       ],
+      "Backup password disabled": [
+        "Backup-Passwort deaktiviert"
+      ],
+      "Backup password enabled": [
+        "Backup-Passwort aktiviert"
+      ],
       "Balance from your previous subscription": [
         "Guthaben von deinem vorherigen Abonnement"
       ],
@@ -10683,6 +10794,12 @@
       ],
       "Connection data will be available in around 1 hour.": [
         "Die Verbindungsdaten werden in etwa 1 Stunde verfügbar sein."
+      ],
+      "Connects you to your destination country through servers physically located elsewhere.": [
+        "Verbindet dich mit deinem Zielland über Server, die sich physisch an anderen Standorten befinden."
+      ],
+      "Connects you to your destination country through servers physically located elsewhere: ${ joinedSmartRoutingCountries }.": [
+        "Verbindet dich mit deinem Zielland über Server, die sich physisch an anderen Standorten befinden: ${ joinedSmartRoutingCountries }."
       ],
       "Contact our Customer Support team to disable two-factor authentication for your account, or recover your account another way.": [
         "Wende dich an unser Kundensupport-Team, um die Zwei-Faktor-Authentifizierung für dein Konto zu deaktivieren, oder stelle dein Konto auf andere Weise wieder her."
@@ -11188,6 +11305,9 @@
       "Example: ${ spfExample }": [
         "Beispiel: ${ spfExample }"
       ],
+      "Exclude them when you deploy the device profile. Support coming soon.": [
+        "Schließe diese bei der Bereitstellung des Geräteprofils aus. Unterstützung folgt in Kürze."
+      ],
       "Existing end-to-end encrypted email forwardings will need to be manually re-enabled under **${ autoReplySettingsTitle }** in settings.": [
         "Bestehende Ende-zu-Ende-verschlüsselte E-Mail-Weiterleitungen müssen unter **${ autoReplySettingsTitle }** in den Einstellungen manuell wieder aktiviert werden."
       ],
@@ -11207,7 +11327,7 @@
         "Protokolle konnten nicht abgerufen werden."
       ],
       "Fast and focused. Email and calendar, right on your desktop.": [
-        "Schnell und fokussiert. E-Mail und Kalender direkt auf deinem Bildschirm."
+        "Schnell und fokussiert. E-Mail und Kalender direkt auf deinem Desktop."
       ],
       "Fastest VPN speeds of up to 10Gbps": [
         "Die schnellsten VPN-Geschwindigkeiten von bis zu 10 Gbit/s"
@@ -11803,6 +11923,12 @@
       "Manage groups in your identity provider": [
         "Gruppen bei deinem Identitätsanbieter verwalten"
       ],
+      "Manage how users can access your ${ BRAND_NAME } organization with single sign-on.": [
+        "Lege fest, wie Benutzer über Single Sign-On auf deine ${ BRAND_NAME }-Organisation zugreifen können."
+      ],
+      "Manage the companies you're responsible for.": [
+        "Unternehmen verwalten, für die du verantwortlich bist."
+      ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Verwalte, auf welche ${ BRAND_NAME }-Anwendungen die Mitglieder deiner Organisation zugreifen können. Wenn deaktiviert, haben nur Administratoren Zugriff."
       ],
@@ -11826,6 +11952,9 @@
       ],
       "Member": [
         "Mitglied"
+      ],
+      "Members are periodically prompted to verify their ${ BRAND_NAME } password to ensure they don't forget it. Enforcing check-ins prevents members from turning them off.": [
+        "Mitglieder werden regelmäßig aufgefordert, ihr ${ BRAND_NAME }-Passwort zu bestätigen, um sicherzustellen, dass sie es nicht vergessen. Check-ins zu erzwingen verhindert, dass Mitglieder diese ausschalten können."
       ],
       "Members are signed out and can't sign back in": [
         "Mitglieder werden abgemeldet und können sich nicht mehr anmelden"
@@ -12461,6 +12590,9 @@
       "Setting up ${ feature }…": [
         "${ feature } wird eingerichtet…"
       ],
+      "Setting up your access…": [
+        "Dein Zugriff wird eingerichtet…"
+      ],
       "Setting up your new address…": [
         "Einrichtung deiner neuen E-Mail-Adresse…"
       ],
@@ -12531,6 +12663,9 @@
       "Smart Routed through: ${ joinedCountries }.": [
         "Smart Routing über: ${ joinedCountries }."
       ],
+      "Smart Routing": [
+        "Smart Routing"
+      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses.": [
         "Die SMTP-Übermittlung ermöglicht es Drittanbieterdiensten oder -geräten, E-Mails über ${ MAIL_APP_NAME } für deine eigenen Domain-Adressen zu senden."
       ],
@@ -12557,6 +12692,9 @@
       ],
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "SPF klärt, wer berechtigt ist, E-Mails über deine Domain zu senden. Stelle sicher, dass du den folgenden TXT-Eintrag in deiner DNS-Konsole hinzufügst (befindet sich auf der Plattform, wo du die individuelle Domain erworben hast)."
+      ],
+      "SSO users can't sign in on devices with always-on enforced.": [
+        "SSO-Benutzer können sich auf Geräten, auf denen „Always-On“ erzwungen ist, nicht anmelden."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Gib es an deine Kontakte weiter und nutze es für Online-Dienste."
@@ -12751,10 +12889,6 @@
       ],
       "The name will be visible to your users while they are signed in.": [
         "Der Name wird für deine Benutzer sichtbar sein, solange sie angemeldet sind."
-      ],
-      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
-        "Die Verarbeitung wurde für ${ pausedCount } Gruppe unterbrochen. Klicke auf „Weiter“, um die Zuweisung von Rollen fortzusetzen.",
-        "Die Verarbeitung wurde für ${ pausedCount } Gruppen unterbrochen. Klicke auf „Weiter“, um die Zuweisung von Rollen fortzusetzen."
       ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
         "Die Gutschrift für die Empfehlung wird bis zu zwei Monate nach Ende der Testphase der von dir empfohlenen Person gutgeschrieben, sofern diese ein Abonnement abgeschlossen hat."
@@ -13203,6 +13337,9 @@
       "User activated": [
         "Benutzer aktiviert"
       ],
+      "User roles assigned": [
+        "Benutzerrollen zugewiesen"
+      ],
       "Username": [
         "Benutzername"
       ],
@@ -13211,6 +13348,9 @@
       ],
       "Users": [
         "Benutzer"
+      ],
+      "Users create a backup password the first time they sign in with single sign-on. When they later sign in on a new device, they can enter this password to complete the sign-in themselves, without needing an already signed-in device or an administrator to assist.": [
+        "Benutzer legen bei ihrer ersten Anmeldung über Single Sign-On ein Backup-Passwort fest. Wenn sie sich später auf einem neuen Gerät anmelden, können sie dieses Passwort eingeben, um die Anmeldung selbst abzuschließen, ohne dass ein bereits angemeldetes Gerät oder die Unterstützung eines Administrators erforderlich ist."
       ],
       "Using a different MDM? Any MDM that supports deploying a configuration profile will work. Refer to your MDM's documentation on how to upload and assign it to your device fleet.": [
         "Ein anderes MDM verwenden? Jedes MDM, das die Bereitstellung eines Konfigurationsprofils unterstützt, ist geeignet. Informationen zum Hochladen und Zuweisen des Profils zu deinem Gerätepark findest du in der Dokumentation deines MDM."
@@ -13293,6 +13433,9 @@
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Wir empfehlen dir, wenn möglich, die offiziellen ${ VPN_APP_NAME } Anwendungen zu verwenden."
       ],
+      "We bill you monthly by averaging the peak allocated licenses from each day over the month.": [
+        "Wir stellen dir monatlich eine Rechnung, wobei wir den durchschnittlichen Höchstwert der zugewiesenen Lizenzen pro Tag über den gesamten Monat hinweg berechnen."
+      ],
       "We can use your recovery email to send you a verification code to reset your password, and to contact you if we notice suspicious activity.": [
         "Wir können deine Wiederherstellungs-E-Mail-Adresse verwenden, um dir einen Bestätigungscode zum Zurücksetzen deines Passworts zu senden und dich zu kontaktieren, wenn wir verdächtige Aktivitäten feststellen."
       ],
@@ -13340,6 +13483,9 @@
       ],
       "We use 3-D Secure to protect your payments": [
         "Wir verwenden 3-D Secure zum Schutz deiner Zahlungen"
+      ],
+      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Wir werden dich in einem neuen Browser-Tab zu ${ IDEAL_BRAND_NAME } umleiten, um diese Zahlung abzuschließen. Falls du Pop-up-Blocker verwendest, deaktiviere diese bitte, um fortzufahren."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Wir werden dich in einem neuen Browser-Tab zu PayPal umleiten, um diese Zahlung abzuschließen. Falls du Pop-up-Blocker verwendest, deaktiviere diese bitte, um fortzufahren."
@@ -13395,6 +13541,9 @@
       "When disabled, this prevents remote images from loading without your knowledge.": [
         "Wenn dies deaktiviert ist, wird verhindert, dass entferne Bilder ohne dein Wissen geladen werden."
       ],
+      "When enabled, members cannot opt out of password check-ins in their own settings.": [
+        "Wenn aktiviert, können Mitglieder die Passwort-Check-ins nicht in ihren eigenen Einstellungen abmelden."
+      ],
       "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
         "Wenn diese Option aktiviert ist, wird geprüft, ob ${ MAIL_APP_NAME } deine Standard-E-Mail-Anwendung ist, und du wirst benachrichtigt, wenn dies nicht der Fall ist."
       ],
@@ -13424,6 +13573,9 @@
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Wenn dein Abonnement verlängert wird, werden wir das verfügbare Guthaben anrechnen, bevor wir die oben genannte Zahlungsmethode belasten."
+      ],
+      "Whoever controls this address would get full access to your account and your data. Only continue if you recognize it and started this yourself.": [
+        "Wer auch immer diese Adresse kontrolliert, erhält uneingeschränkten Zugriff auf dein Konto und deine Daten. Fahre nur fort, wenn du es erkennst und den Vorgang selbst eingeleitet hast."
       ],
       "Whole organization": [
         "Gesamte Organisation"
@@ -13729,6 +13881,9 @@
         "Du erhältst dann aller ${ renewCycle } Monat eine Rechnung über ${ renewAmountStr }. Eine Kündigung ist jederzeit möglich.",
         "Du erhältst dann aller ${ renewCycle } Monate eine Rechnung über ${ renewAmountStr }. Eine Kündigung ist jederzeit möglich."
       ],
+      "You're about to sign in to your ${ BRAND_NAME } Account at this address:": [
+        "Du bist dabei, dich unter dieser Adresse bei deinem ${ BRAND_NAME }-Konto anzumelden:"
+      ],
       "You're almost done, you need to configure your domain to receive your emails directly on ${ BRAND_NAME }. Once confirmed, your team will stop receiving new emails on ${ mailAppName } and the migration will be completed.": [
         "Du bist fast fertig. Du musst deine Domain so konfigurieren, dass du deine E-Mails direkt in ${ BRAND_NAME } erhältst. Sobald dies bestätigt ist, wird dein Team keine neuen E-Mails mehr in${ mailAppName } erhalten und die Übernahme ist abgeschlossen."
       ],
@@ -13777,6 +13932,9 @@
       ],
       "Your Always-on VPN device profile is ready to deploy.": [
         "Dein Always-on-VPN-Geräteprofil kann bereitgestellt werden."
+      ],
+      "Your browser blocked the new tab.": [
+        "Dein Browser hat den neuen Tab blockiert."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Deine Daten sind bereit für den Import von ${ importedEmailAddressStrong } in dein ${ BRAND_NAME }-Konto."
@@ -14566,6 +14724,9 @@
       "Account holder": [
         "Kontoinhaber"
       ],
+      "Account holder name": [
+        "Name des Kontoinhabers"
+      ],
       "Account holder: ${ sepaDetails.AccountName }": [
         "Konteninhaber: ${ sepaDetails.AccountName }"
       ],
@@ -14620,6 +14781,9 @@
       "All-day event notifications": [
         "Benachrichtigungen zu ganztägigen Terminen"
       ],
+      "Allocated licenses": [
+        "Zugewiesene Lizenzen"
+      ],
       "Allow": [
         "Zugelassen"
       ],
@@ -14664,6 +14828,9 @@
       ],
       "Allow sharing outside the organization": [
         "Teilen außerhalb der Organisation erlauben"
+      ],
+      "Allow users to set a backup password": [
+        "Benutzern die Möglichkeit geben, ein Backup-Passwort festzulegen"
       ],
       "Allowed Domain": [
         "Erlaubte Domain"
@@ -15017,8 +15184,8 @@
       "Days of the week": [
         "Tage der Woche"
       ],
-      "Deals, offers, marketing emails": [
-        "Angebote, Aktionen, Marketing-E-Mails"
+      "Deals, offers, and marketing emails": [
+        "Angebote, Aktionen und Marketing-E-Mails"
       ],
       "Default email address": [
         "Standard E-Mail-Adresse"
@@ -15410,6 +15577,9 @@
       "Level for NetShield blocker filtering": [
         "Stufe für NetShield-Blocker-Filterung"
       ],
+      "Licenses usage": [
+        "Lizenznutzung"
+      ],
       "Link label (optional)": [
         "Link-Beschreibung (optional)"
       ],
@@ -15496,6 +15666,9 @@
       ],
       "Monthly": [
         "Monatlich"
+      ],
+      "Monthly average": [
+        "Monatlicher Durchschnitt"
       ],
       "More payment methods": [
         "Weitere Zahlungsmethoden"
@@ -15662,6 +15835,9 @@
       "Payment method": [
         "Zahlungsmethode"
       ],
+      "Peak allocated licenses": [
+        "Höchstzahl der zugewiesenen Lizenzen"
+      ],
       "Pending": [
         "Ausstehend"
       ],
@@ -15778,6 +15954,9 @@
       ],
       "Require 2FA for everyone": [
         "2FA für jeden erfordern"
+      ],
+      "Require password check-ins": [
+        "Passwort-Check-ins verlangen"
       ],
       "Reserved address": [
         "Reservierte E-Mail-Adresse"
@@ -17138,6 +17317,9 @@
       "Resend invite link": [
         "Einladungslink erneut senden"
       ],
+      "Resume role assignment": [
+        "Rollenzuweisung fortsetzen"
+      ],
       "Revoke sessions": [
         "Sitzungen widerrufen"
       ],
@@ -17638,6 +17820,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } Schreibassistent"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent mit erweitertem Zugriff"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME } Schreibassistent mit eingeschränktem Zugriff"
       ],
       "${ n } calendar": [
         "${ n } Kalender",
@@ -18786,6 +18974,12 @@
       ],
       "OpenVPN credentials regenerated": [
         "OpenVPN-Anmeldedaten neu generiert"
+      ],
+      "Password check-ins are not required anymore": [
+        "Passwort-Check-ins sind nicht mehr erforderlich"
+      ],
+      "Password check-ins are now required for all members": [
+        "Für alle Mitglieder sind nun Passwort-Check-ins erforderlich"
       ],
       "Reminder has been sent": [
         "Eine Erinnerung wurde versandt"
@@ -20054,6 +20248,11 @@
         "Du benötigst Zugriff auf den Organisationsschlüssel, um diese Operation durchzuführen."
       ]
     },
+    "Payment Method": {
+      "Bank Account": [
+        "Bankkonto"
+      ]
+    },
     "Payment method option": {
       "Apple Pay": [
         "Apple Pay"
@@ -20145,6 +20344,9 @@
       ],
       "Offer unavailable": [
         "Angebot nicht verfügbar"
+      ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "Mit ${ IDEAL_BRAND_NAME } bezahlen"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Für die Aktivierung des Abonnements nach dem Ende der Testversion ist eine Zahlungsmethode erforderlich."
@@ -20239,6 +20441,9 @@
       "You will soon be redirected to verify your payment.": [
         "Du wirst in Kürze weitergeleitet, um deine Zahlung zu bestätigen."
       ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
+        "Deine Währung wurde zu Euro (€) geändert, da ${ IDEAL_BRAND_NAME } nur Euro unterstützen."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Deine Währung wurde zu Euro (€) geändert, da SEPA-Banküberweisungen Zahlungen nur in Euro unterstützen."
       ],
@@ -20250,6 +20455,9 @@
       ]
     },
     "Payments.Error": {
+      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
+        "Die Initialisierung von ${ IDEAL_BRAND_NAME } ist fehlgeschlagen. Bitte versuche es später erneut."
+      ],
       "Invalid card number": [
         "Ungültige Kartennummer"
       ],
@@ -20258,6 +20466,9 @@
       ],
       "Invalid security code": [
         "Ungültiger Sicherheitscode"
+      ],
+      "Please enter the account holder name": [
+        "Bitte den Namen des Kontoinhabers eingeben"
       ],
       "Something went wrong. Please try again later.": [
         "Etwas ist schiefgelaufen. Bitte versuche es später erneut."
@@ -20272,6 +20483,11 @@
     "Payments.error": {
       "Something went wrong. Google Pay verification failed.": [
         "Etwas ist schiefgelaufen. Die Google Pay-Verifizierung ist fehlgeschlagen."
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Mit der Bestätigung dieser Zahlung ermächtigst du ${ BRAND_NAME } und Stripe, unseren Zahlungsdienstleister, deine Bank anzuweisen, den entsprechenden Betrag von deinem Konto abzubuchen. Eine Rückerstattung kannst du innerhalb von 8 Wochen ab dem Datum der Abbuchung gemäß den Bedingungen deines Vertrags mit deiner Bank beantragen."
       ]
     },
     "Payments.info": {
@@ -21549,8 +21765,8 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Besitzer"
+      "Organization Admin": [
+        "Organisationsadministrator"
       ],
       "Security Admin": [
         "Sicherheitsadministrator"
@@ -21940,6 +22156,9 @@
       "${ usersText } and ${ groupsText } synced.": [
         "${ usersText } und ${ groupsText } synchronisiert."
       ],
+      "**Groups you already set up** in your identity provider are imported automatically.": [
+        "Bei deinem Identitätsanbieter **bereits eingerichtete Gruppen** werden automatisch importiert."
+      ],
       "**You'll be able to review** group changes before they take effect to confirm they're intentional": [
         "Änderungen an Gruppen **kannst du überprüfen**, bevor sie in Kraft treten, um sicherzustellen, dass sie beabsichtigt sind"
       ],
@@ -21978,6 +22197,9 @@
       ],
       "What to expect now that group sync is enabled": [
         "Was du nun erwarten kannst, nachdem die Gruppensynchronisierung aktiviert wurde"
+      ],
+      "You can now sync groups alongside users. Changes push **automatically** when you update your groups on your identity provider.": [
+        "Du kannst nun neben Benutzern auch Gruppen synchronisieren. Änderungen werden **automatisch** übernommen, sobald du deine Gruppen bei deinem Identitätsanbieter aktualisierst."
       ]
     },
     "scim: Action": {
@@ -23449,6 +23671,9 @@
       "Backup password": [
         "Backup-Passwort"
       ],
+      "Because your organization moved you to single sign-on (SSO), **your old password is saved as your backup password**. You can use it to authorize SSO on a new device.": [
+        "Da deine Organisation auf Single Sign-On (SSO) umgestellt hat, **wird dein altes Passwort als Backup-Passwort gespeichert**. Du kannst es verwenden, um SSO auf einem neuen Gerät zu autorisieren."
+      ],
       "Cancel": [
         "Abbrechen"
       ],
@@ -23466,6 +23691,9 @@
       ],
       "Contact your administrator if the problem persists.": [
         "Kontaktiere deinen Administrator, wenn das Problem weiterhin besteht."
+      ],
+      "Continue to join as **${ username }**": [
+        "Weiterfahren um als **${ username }** beizutreten"
       ],
       "Current device": [
         "Aktuelles Gerät"
@@ -23493,6 +23721,9 @@
       "Do you want to remove all other devices than the current one?": [
         "Möchtest du alle anderen Geräte (außer das aktuelle) entfernen?"
       ],
+      "Enter it to sign in. It is the same as your old password.": [
+        "Gib es ein, um dich anzumelden. Es entspricht deinem bisherigen Passwort."
+      ],
       "Enter the confirmation code we sent on your other device.": [
         "Gib den Bestätigungscode ein, den wir auf dein anderes Gerät gesendet haben."
       ],
@@ -23501,6 +23732,9 @@
       ],
       "Enter your backup password": [
         "Gib dein Backup-Passwort ein"
+      ],
+      "For your security, you have been signed out of all your other active devices.": [
+        "Zu deiner Sicherheit wurdest du von allen deiner anderen aktiven Geräten abgemeldet."
       ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
         "Zu deiner Sicherheit wurdest du von all deinen anderen aktiven Geräten abgemeldet. Bevor du auf dein Konto zugreifen kannst, musst du ein neues Backup-Passwort eingeben."
@@ -23612,6 +23846,9 @@
       ],
       "This will sign you out of your other devices and you will have to create a new backup password.": [
         "Dadurch wirst du von deinen anderen Geräten abgemeldet, und du musst ein neues Backup-Passwort festlegen."
+      ],
+      "This will sign you out of your other devices.": [
+        "Dadurch wirst du von deinen anderen Geräten abgemeldet."
       ],
       "To make sure it's really you trying to sign in to **${ email }**, review the confirmation code and approve the request from another device.": [
         "Um sicherzugehen, dass es wirklich du bist, der versucht, sich bei **${ email }** anzumelden, überprüfe den Bestätigungscode und bestätige die Anfrage von einem anderen Gerät aus."
@@ -25132,6 +25369,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe-Schreibassistent"
       ],
+      "${ capitalizedSource } role assignment paused": [
+        "${ capitalizedSource } Rollenzuweisung unterbrochen"
+      ],
       "${ feature } is now active": [
         "${ feature } ist jetzt aktiv"
       ],
@@ -25329,6 +25569,9 @@
       ],
       "Address and key verification": [
         "Adress- und Schlüsselverifizierung"
+      ],
+      "Advanced configuration": [
+        "Erweiterte Konfiguration"
       ],
       "Advanced recovery options": [
         "Erweiterte Wiederherstellungsoptionen"
@@ -25539,6 +25782,9 @@
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Den Verlust der ${ BRAND_NAME }-Boni bestätigen"
+      ],
+      "Confirm where to sign in": [
+        "Bestätige, wo du dich anmelden möchtest"
       ],
       "Connect ${ name }": [
         "Verbinde ${ name }"
@@ -26146,9 +26392,6 @@
       "Group membership": [
         "Gruppenmitgliedschaft"
       ],
-      "Group role assignment paused": [
-        "Zuweisung von Gruppenrollen pausiert"
-      ],
       "Groups": [
         "Gruppen"
       ],
@@ -26342,9 +26585,6 @@
       "Mobile": [
         "Mobilgerät"
       ],
-      "Monitoring": [
-        "Überwachung"
-      ],
       "Monthly": [
         "Monatlich"
       ],
@@ -26467,6 +26707,9 @@
       ],
       "Password": [
         "Passwort"
+      ],
+      "Password check-ins": [
+        "Passwort-Check-ins"
       ],
       "Password generator rules": [
         "Passwortgenerator-Regeln"
@@ -26822,8 +27065,8 @@
       "Single sign-on": [
         "Single Sign-on"
       ],
-      "Single-sign on (SSO)": [
-        "Single-Sign-on (SSO)"
+      "Single sign-on (SSO)": [
+        "Single Sign-On (SSO)"
       ],
       "SMS verification": [
         "SMS-Verifizierung"
@@ -27584,6 +27827,9 @@
       ],
       "This key is used for email forwarding": [
         "Dieser Schlüssel wird für die E-Mail-Weiterleitung verwendet."
+      ],
+      "This setting is managed by your organization": [
+        "Diese Einstellung wird von deiner Organisation verwaltet"
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Solange sie nicht entschlüsselt werden, bleiben verschlüsselte Passwörter sicher, auch wenn sie offengelegt wurden."

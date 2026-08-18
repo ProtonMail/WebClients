@@ -784,6 +784,9 @@
       "Join with ${ MEET_APP_NAME }": [
         "Unirse con ${ MEET_APP_NAME }"
       ],
+      "Keep going": [
+        "Continuar"
+      ],
       "Keep inbox as before": [
         "Mantener la bandeja de entrada como antes"
       ],
@@ -1237,6 +1240,9 @@
       "Run on ${ BRAND_NAME } servers": [
         "Ejecutar en los servidores de ${ BRAND_NAME }"
       ],
+      "Run realistic session": [
+        "Ejecutar sesión realista"
+      ],
       "Save": [
         "Guardar"
       ],
@@ -1459,6 +1465,9 @@
       "Stop generating result": [
         "Detener la generación de resultados"
       ],
+      "Stop here": [
+        "Detenerse aquí"
+      ],
       "Stop marking as read": [
         "Dejar de marcar como leído"
       ],
@@ -1526,8 +1535,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Confiar clave",
-        "Confiar claves"
+        "Confiar clave"
       ],
       "Trust public key": [
         "Confiar clave pública"
@@ -1693,6 +1701,9 @@
       ],
       "Why not?": [
         "¿Por qué no?"
+      ],
+      "Write ${ count } logs": [
+        "Escribir ${ count } registros"
       ],
       "Write for me": [
         "Escribir para mí"
@@ -4246,8 +4257,8 @@
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "Los correos nuevos de ${ senderEmailAddress } no serán entregados y serán eliminados de forma permanente."
       ],
-      "No ads. No trackers.": [
-        "Sin anuncios. Sin rastreadores."
+      "No ads. No trackers": [
+        "Sin anuncios. Sin rastreadores"
       ],
       "No folders": [
         "Sin carpetas"
@@ -4863,6 +4874,9 @@
       ],
       "Could not find an available name": [
         "No se pudo encontrar un nombre disponible"
+      ],
+      "Could not grant access to the organization key": [
+        "No se pudo otorgar acceso a la clave de la organización"
       ],
       "Could not load sharing details": [
         "No se pudieron cargar los detalles compartidos"
@@ -7986,6 +8000,9 @@
       "How hide-my-email aliases works": [
         "Funcionamiento de los alias de Hide-my-email"
       ],
+      "I have not finished this one yet.": [
+        "Aún no he finalizado esto."
+      ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Estoy enviando este mensaje a un usuario que no usa ${ MAIL_APP_NAME }."
       ],
@@ -8081,7 +8098,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen"
+        "Insertar imagen",
+        "Insertar imágenes"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -8172,9 +8190,6 @@
       ],
       "Low Priority": [
         "Prioridad baja"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Establezca ${ MAIL_APP_NAME } como su aplicación de correo electrónico por defecto."
       ],
       "Manage your folders": [
         "Administre las carpetas"
@@ -8343,6 +8358,9 @@
       ],
       "Not connected": [
         "No conectado"
+      ],
+      "Not supported by this browser": [
+        "No soportado por este navegador"
       ],
       "Number of dedicated servers in the organization": [
         "Número de servidores dedicados en la organización"
@@ -8630,6 +8648,21 @@
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "¿La búsqueda tarda demasiado? ${ dropdownButton } o ${ toggleOffButton } de esta sesión de búsqueda."
       ],
+      "Searched ${ targetName }": [
+        "Se buscó ${ targetName }"
+      ],
+      "Searched for mail from ${ sender }": [
+        "Se buscó el correo enviado por ${ sender }"
+      ],
+      "Searched for mail to ${ recipient }": [
+        "Se buscó el correo enviado a ${ recipient }"
+      ],
+      "Searched for “${ keyword }”": [
+        "Se buscó «${ keyword }»"
+      ],
+      "Searched your mail": [
+        "Se buscó su correo"
+      ],
       "Secure your files with encrypted cloud storage for free, today.": [
         "Asegure los archivos con almacenamiento cifrado en la nube de forma gratuita, hoy."
       ],
@@ -8735,6 +8768,9 @@
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Lo sentimos, este mensaje no existe o ya expiró."
+      ],
+      "Star emails": [
+        "Destacar correos"
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Comience a compartirla con sus contactos y úsela para servicios en línea."
@@ -8918,6 +8954,9 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Esta es ahora su ${ defaultEmailAddress } para enviar mensajes nuevos."
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Esto implica muchos pasos. ¿Debería continuar?"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Este enlace conduce a un sitio web que podría estar intentando robar informaciiones, como contraseñas y datos de tarjetas de crédito."
@@ -9136,6 +9175,9 @@
       "Unsaved changes": [
         "Cambios sin guardar"
       ],
+      "Unstar emails": [
+        "No destacar correos"
+      ],
       "Unsubscribe": [
         "Cancele la suscripción"
       ],
@@ -9330,6 +9372,12 @@
       ],
       "Would you like to receive a new verification code?": [
         "¿Desearía recibir un código de verificación nuevo?"
+      ],
+      "Writes ${ REALISTIC_ENTRIES } realistic log lines trickling in over a minute, like an actual session, instead of all at once. Takes about a minute to run. Keep this tab focused: frame measurements pause in the background.": [
+        "Escribe ${ REALISTIC_ENTRIES } líneas de registro realistas que aparecen gradualmente durante un minuto, como en una sesión real, en lugar de todas a la vez. Tarda aproximadamente un minuto en ejecutarse. Mantenga esta pestaña activa: las mediciones de fotogramas se pausan en segundo plano."
+      ],
+      "Writes realistic log lines back-to-back, then reads them all back. Shows how write and read/export cost scale with the number of stored entries.": [
+        "Escribe líneas de registro realistas consecutivamente y luego las lee todas. Muestra cómo los costos de escritura y lectura/exportación varían según la cantidad de entradas almacenadas."
       ],
       "Writing assistant": [
         "Asistente de escritura"
@@ -9981,6 +10029,9 @@
       "Account holder": [
         "Titular de la cuenta"
       ],
+      "Account holder name": [
+        "Nombre del titular de la cuenta"
+      ],
       "Actions": [
         "Acciones"
       ],
@@ -10085,6 +10136,9 @@
       ],
       "BTC amount": [
         "Importe en BTC"
+      ],
+      "Burst write": [
+        "Escritura en ráfaga"
       ],
       "Calendar": [
         "Calendario"
@@ -10197,7 +10251,7 @@
       "Date:": [
         "Fecha:"
       ],
-      "Deals, offers, marketing emails": [
+      "Deals, offers, and marketing emails": [
         "Correos de promociones, ofertas y mercadeo"
       ],
       "Delete": [
@@ -10235,6 +10289,12 @@
       ],
       "Drive": [
         "Drive"
+      ],
+      "Dropped frames": [
+        "Fotogramas perdidos"
+      ],
+      "Duration": [
+        "Duración"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "p. ej., Amazon, eBay, Mercado Libre"
@@ -10278,8 +10338,14 @@
       "Enable filter": [
         "Activar el filtro"
       ],
+      "Encrypt": [
+        "Cifrar"
+      ],
       "Encrypt emails": [
         "Cifrar correos electrónicos"
+      ],
+      "Entries": [
+        "Entradas"
       ],
       "Exact host matching": [
         "Coincidencia de host exacta"
@@ -10289,6 +10355,9 @@
       ],
       "Expires": [
         "Expira"
+      ],
+      "Export size": [
+        "Tamaño de la exportación"
       ],
       "Extended address": [
         "Dirección ampliada"
@@ -10386,6 +10455,9 @@
       "Include application logs in bug report": [
         "Incluir registros de la aplicación en el informe de errores"
       ],
+      "IndexedDB store": [
+        "Almacenamiento IndexedDB"
+      ],
       "Information": [
         "Información"
       ],
@@ -10430,6 +10502,12 @@
       ],
       "Location": [
         "Ubicación"
+      ],
+      "Log performance": [
+        "Registro de rendimiento"
+      ],
+      "Long tasks (≥ 50 ms)": [
+        "Tareas largas (≥ 50 ms)"
       ],
       "Mail debugging information": [
         "Información de depuración de correo"
@@ -10511,6 +10589,12 @@
       ],
       "No label found": [
         "Ninguna etiqueta encontrada"
+      ],
+      "No unread conversations": [
+        "No hay conversaciones sin leer"
+      ],
+      "No unread messages": [
+        "No hay mensajes sin leer"
       ],
       "Non-promotional content and news": [
         "Noticias y contenido no promocional"
@@ -10614,6 +10698,12 @@
       "Read": [
         "Leídos"
       ],
+      "Read / export": [
+        "Lectura / exportación"
+      ],
+      "Realistic session": [
+        "Sesión realista"
+      ],
       "Recipient": [
         "Destinatario"
       ],
@@ -10715,6 +10805,9 @@
       ],
       "Subscription options": [
         "Opciones de suscripción"
+      ],
+      "Sum of write() calls": [
+        "Suma de llamadas a write()"
       ],
       "Sync with system": [
         "Sincronizar con el sistema"
@@ -10823,6 +10916,15 @@
       ],
       "Without attachment": [
         "Sin archivo adjunto"
+      ],
+      "Write": [
+        "Escritura"
+      ],
+      "Write (whole session)": [
+        "Escribir (toda la sesión)"
+      ],
+      "Write-chain drain after last line": [
+        "Vaciar la cadena de escritura después de la última línea"
       ],
       "Writing assistant": [
         "Asistente de escritura"
@@ -11694,6 +11796,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Asistente de escritura ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME } con acceso ampliado"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME } con acceso limitado"
       ],
       "${ n } calendar": [
         "${ n } calendario",
@@ -13018,12 +13126,6 @@
       ],
       "No parent folder": [
         "No hay carpeta principal"
-      ],
-      "Remind me later": [
-        "Recordarme más tarde"
-      ],
-      "Yes, don't show again": [
-        "Sí, no volver a mostrar"
       ]
     },
     "Option group": {
@@ -13325,6 +13427,9 @@
       ],
       "Invalid security code": [
         "El código de seguridad no es válido."
+      ],
+      "Please enter the account holder name": [
+        "Ingrese el nombre del titular de la cuenta"
       ],
       "Something went wrong. Please try again later.": [
         "Hubo un problema. Intente de nuevo más tarde."
@@ -14009,8 +14114,8 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Propietario"
+      "Organization Admin": [
+        "Administrador de la organización"
       ],
       "Security Admin": [
         "Administrador de seguridad"
@@ -16361,9 +16466,6 @@
       "Invalid verification code": [
         "Código de verificación inválido"
       ],
-      "Keep this banner hidden?": [
-        "¿Mantener este banner oculto?"
-      ],
       "Label as": [
         "Etiquetar como"
       ],
@@ -16782,6 +16884,9 @@
       "Snooze:": [
         "Pausar:"
       ],
+      "Star emails": [
+        "Destacar correos"
+      ],
       "Start a new import": [
         "Iniciar una importación nueva"
       ],
@@ -16790,6 +16895,9 @@
       ],
       "Stay for 50% off your next month": [
         "Quédese y obtenga un 50% de descuento en su próximo mes"
+      ],
+      "Still working on it": [
+        "Todavía trabajando en ello"
       ],
       "Storage capacity warning": [
         "Advertencia de capacidad de almacenamiento"
@@ -16836,6 +16944,9 @@
       ],
       "Two-factor authentication": [
         "Autenticación de dos factores"
+      ],
+      "Unstar emails": [
+        "No destacar correos"
       ],
       "Unsubscribe": [
         "Cancele la suscripción"

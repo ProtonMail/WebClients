@@ -471,6 +471,9 @@
       "Import from Outlook": [
         "Importar do Outlook"
       ],
+      "Keep going": [
+        "Continue"
+      ],
       "Keep my subscription": [
         "Manter minha assinatura"
       ],
@@ -818,6 +821,9 @@
       ],
       "Stop": [
         "Parar"
+      ],
+      "Stop here": [
+        "Parar aqui"
       ],
       "Stop sharing": [
         "Parar compartilhamento"
@@ -3173,9 +3179,6 @@
       ],
       "Failed to remove older revisions": [
         "Falha ao remover revisões antigas"
-      ],
-      "Failed to rename document": [
-        "Falha ao renomear o documento"
       ],
       "Failed to rename document. Please try again later.": [
         "A renomeação do documento falhou, tente novamente mais tarde"
@@ -5635,6 +5638,9 @@
       "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
         "Para migrar este usuário, adicione e verifique o domínio de e-mail em ${ domainNamesLink }"
       ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "Para migrar este usuário, ative a conta no seu ${ provider.adminConsoleName }."
+      ],
       "To migrate this user, enable their account under ${ usersAddressesLink }.": [
         "Para migrar este usuário, ative a conta dele em ${ usersAddressesLink }."
       ],
@@ -7160,6 +7166,12 @@
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Assistente de escrita do ${ LUMO_SHORT_APP_NAME }"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Assistente de escrita da ${ LUMO_SHORT_APP_NAME } com acesso ampliado"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Assistente de escrita da ${ LUMO_SHORT_APP_NAME } com acesso limitado"
+      ],
       "${ n } calendar": [
         "${ n } calendário",
         "${ n } calendários"
@@ -8214,6 +8226,9 @@
       "Failed to restore document": [
         "Falha ao restaurar o documento"
       ],
+      "Failed to submit report": [
+        "Falha ao enviar relatório"
+      ],
       "Failed to trash document": [
         "Falha ao enviar o documento para a lixeira"
       ],
@@ -9086,8 +9101,8 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Proprietário"
+      "Organization Admin": [
+        "Administrador da organização"
       ],
       "Security Admin": [
         "Administrador de segurança"
@@ -10618,6 +10633,9 @@
       "Report a problem": [
         "Relatar um problema"
       ],
+      "Report issue": [
+        "Reportar problema"
+      ],
       "Request new code": [
         "Solicitar um novo código"
       ],
@@ -10701,6 +10719,9 @@
       ],
       "Stay for 50% off your next month": [
         "Fique por mais um mês com 50% de desconto"
+      ],
+      "Still working on it": [
+        "Ainda estou trabalhando nisso"
       ],
       "Stop sharing": [
         "Parar compartilhamento"

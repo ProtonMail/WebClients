@@ -3525,6 +3525,9 @@
       "Could not find an available name": [
         "No s'ha pogut trobar cap nom disponible"
       ],
+      "Could not grant access to the organization key": [
+        "No s'ha pogut concedir accés a la clau de l'organització"
+      ],
       "Could not load sharing details": [
         "No s'han pogut carregar els detalls de l'acció de compartir."
       ],
@@ -6829,6 +6832,9 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Aquesta és ara la vostra ${ defaultEmailAddress } per enviar missatges nous."
       ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Això està prenent molts passos. Hauria de continuar?"
+      ],
       "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
         "Aquest element no està desat a la vostra biblioteca de fotos. Si l'elimineu d'aquest àlbum, hi perdreu l'accés de manera permanent.",
         "Alguns dels elements seleccionats no estan desats a la vostra biblioteca de fotos. Si els elimineu d'aquest àlbum, hi perdreu l'accés de manera permanent."
@@ -7514,6 +7520,9 @@
       ],
       "Account holder": [
         "Titular del compte"
+      ],
+      "Account holder name": [
+        "Nom del titular del compte"
       ],
       "Active": [
         "Actiu"
@@ -10845,6 +10854,9 @@
       "Invalid security code": [
         "El codi de seguretat no és vàlid"
       ],
+      "Please enter the account holder name": [
+        "Introduïu el nom del titular del compte"
+      ],
       "Something went wrong. Please try again later.": [
         "Alguna cosa ha anat malament. Torneu-ho a provar més tard."
       ],
@@ -11407,8 +11419,8 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Propietari"
+      "Organization Admin": [
+        "Administrador/a de l'organització"
       ],
       "Security Admin": [
         "Administrador/a de seguretat"
@@ -13635,7 +13647,7 @@
         "Quedeu-vos i gaudiu d'un 50% de descompte el mes vinent."
       ],
       "Still working on it": [
-        "S'hi està treballant encara"
+        "Encara hi estem treballant"
       ],
       "Stop sharing": [
         "Deixa de compartir"

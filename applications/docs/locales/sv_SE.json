@@ -471,6 +471,9 @@
       "Import from Outlook": [
         "Importera från Outlook"
       ],
+      "Keep going": [
+        "Fortsätt"
+      ],
       "Keep my subscription": [
         "Behåll min prenumeration"
       ],
@@ -815,6 +818,9 @@
       ],
       "Stop": [
         "Stoppa"
+      ],
+      "Stop here": [
+        "Stoppa här"
       ],
       "Stop sharing": [
         "Sluta dela"
@@ -1386,6 +1392,9 @@
       ],
       "Continue your subscription": [
         "Fortsätt din prenumeration"
+      ],
+      "Get 50% offer": [
+        "Få 50 % erbjudande"
       ],
       "Maybe later": [
         "Kanske senare"
@@ -3045,6 +3054,9 @@
       "Could not find an available name": [
         "Kunde inte hitta ett tillgängligt namn"
       ],
+      "Could not grant access to the organization key": [
+        "Kunde inte bevilja åtkomst till organisationsnyckeln"
+      ],
       "Could not load sharing details": [
         "Kunde inte ladda delningsdetaljer"
       ],
@@ -3145,9 +3157,6 @@
       ],
       "Failed to remove older revisions": [
         "Misslyckades att ta bort äldre revisioner"
-      ],
-      "Failed to rename document": [
-        "Misslyckades att byta namn på dokument"
       ],
       "Failed to rename document. Please try again later.": [
         "Misslyckades att byta namn på dokument. Försök igen senare."
@@ -3273,6 +3282,9 @@
       "No emails found to import - the account does not have an inbox": [
         "Inga e-postmeddelanden hittades att importera - kontot har ingen inkorg"
       ],
+      "No file data was received. Please try again.": [
+        "Ingen fildata togs emot. Försök igen."
+      ],
       "No valid address found": [
         "Ingen giltig adress hittades"
       ],
@@ -3307,6 +3319,9 @@
       ],
       "Organization key must be activated to create non-private users": [
         "Organisationsnyckeln måste aktiveras för att skapa icke-privata användare"
+      ],
+      "Part of the file appears to be corrupted": [
+        "Del av filen verkar vara skadad"
       ],
       "Password is required": [
         "Lösenord är obligatoriskt"
@@ -3490,6 +3505,9 @@
       "The original file is not uploaded yet, please try again later": [
         "Originalfilen har inte laddats upp ännu, försök igen senare"
       ],
+      "The uploaded file does not match the original. Please try again.": [
+        "Den uppladdade filen matchar inte originalet. Försök igen."
+      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Det finns för många mappar i ditt externa konto. Anpassa importen för att ta bort vissa mappar."
       ],
@@ -3511,6 +3529,9 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Detta fält kräver minst ${ minimumLength } tecken."
       ],
+      "This file has no version available to download": [
+        "Denna fil har ingen version tillgänglig att ladda ner"
+      ],
       "This file version could not be uploaded": [
         "Denna filversion kunde inte laddas upp"
       ],
@@ -3528,6 +3549,12 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Detta meddelande kan innehålla några URL-länkar som inte kan öppnas korrekt av din nuvarande webbläsare."
+      ],
+      "Too many server errors, please try again later": [
+        "För många serverfel, försök igen senare"
+      ],
+      "Too many server requests, please try again later": [
+        "För många serverförfrågningar, försök igen senare"
       ],
       "Try using only letters, numerals, and _.-": [
         "Prova använda endast bokstäver, siffror och _.-"
@@ -3567,6 +3594,9 @@
       ],
       "Verification keys are not available": [
         "Verifieringsnycklar är inte tillgängliga"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Verifieringsnycklar för ${ signatureType } är inte tillgängliga"
       ],
       "We are having trouble saving recent edits. Please refresh the page.": [
         "Vi har problem med att spara de senaste redigeringarna. Uppdatera sidan."
@@ -5552,6 +5582,9 @@
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Denna unika kod kan användas av webbplatser och ISP:er (internetleverantörer) för att koppla din plats och surfhistorik till din enhet"
       ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "Denna användare kan inte migreras eftersom deras e-postadress inte är tillgänglig på ${ BRAND_NAME }."
+      ],
       "This will permanently delete the file you uploaded.": [
         "Detta kommer ta bort filen du laddade upp permanent."
       ],
@@ -5573,8 +5606,14 @@
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "För att importera händelser, skapa först en kalender i ${ CALENDAR_APP_NAME }. Det är här händelserna kommer att visas efter importen."
       ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "För att migrera denna användare, lägg till och verifiera e-postdomänen under ${ domainNamesLink }"
+      ],
       "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
         "För att migrera denna användare, aktivera deras konto i din ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "För att migrera denna användare, aktivera deras konto under ${ usersAddressesLink }."
       ],
       "To migrate this user, enable their address under ${ usersAddressesLink }.": [
         "För att migrera denna användare, aktivera deras adress under ${ usersAddressesLink }."
@@ -7100,6 +7139,9 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } skrivassistent"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME } skrivassistent med utökad åtkomst"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
         "${ LUMO_SHORT_APP_NAME } skrivassistent med begränsad åtkomst"
@@ -9033,8 +9075,8 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Ägare"
+      "Organization Admin": [
+        "Organisationsadministratör"
       ],
       "Security Admin": [
         "Säkerhetsadministratör"
@@ -10852,6 +10894,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Ladda upp en offentlig nyckel för att aktivera sändning av end-to-end-krypterad e-post till denna e-post"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Användare som har åtkomst till sitt ${ BRAND_NAME }-konto"
       ],
       "Version 6 OpenPGP key": [
         "OpenPGP-nyckel version 6"

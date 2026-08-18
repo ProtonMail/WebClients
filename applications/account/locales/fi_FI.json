@@ -2586,13 +2586,13 @@
         "3 Tt tallennustilaa"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "Käytössä yli 15 000 palvelinta yli 120 maassa"
+        "Käytä yli 15 000 palvelinta yli 120 maassa"
       ],
       "Access advanced AI models": [
         "Käytä kehittyneitä tekoälymalleja"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Kaikki palveluiden ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ja ${ CALENDAR_SHORT_APP_NAME } premium-ominaisuudet"
+        "Kaikki sovellusten ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ja ${ CALENDAR_SHORT_APP_NAME } premium-ominaisuudet"
       ],
       "Block ads, trackers, and malware": [
         "Estä mainoksia, seurantoja ja haittaohjelmia"
@@ -2604,13 +2604,13 @@
         "Yhdistä 10 laitetta samanaikaisesti"
       ],
       "Full chat history with easy search and favorites": [
-        "Koko keskusteluhistoria helpolla etsi-toiminnolla ja suosikeilla"
+        "Täysi chat-historia helpolla haulla ja suosikeilla"
       ],
       "Individual accounts for 6 users": [
-        "Henkilökohtaiset tilit 6 käyttäjälle"
+        "Yksilölliset tilit 6 käyttäjälle"
       ],
       "Individual accounts for you and a partner": [
-        "Henkilökohtaiset tilit sinulle ja kumppanille"
+        "Yksilölliset tilit teille ja kumppanillenne"
       ],
       "Stronger protection against cyber threats": [
         "Vahvempi suoja kyberuhkia vastaan"
@@ -2621,7 +2621,7 @@
     },
     "BF2025: Tooltip": {
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Erityisesti suunniteltu NetShield suojaa laitteitasi ja nopeuttaa selaamistasi estämällä mainoksia, seurantoja ja haittaohjelmia."
+        "Erityisesti suunniteltu NetShield suojaa laitteitanne ja nopeuttaa selaustanne estämällä mainokset, seurannan ja haittaohjelmat."
       ]
     },
     "Billing cycle": {
@@ -5062,9 +5062,6 @@
       "Most issues can be solved in a few minutes with our step-by-step guides.": [
         "Useimmat ongelmat voidaan ratkaista muutamassa minuutissa vaiheittaisten oppaidemme avulla."
       ],
-      "No ads. No trackers.": [
-        "Ei mainoksia. Ei seurantaa."
-      ],
       "No one in your organization can connect to shared servers.": [
         "Kukaan organisaatiossasi ei voi yhdistää jaettuihin palvelimiin."
       ],
@@ -5536,17 +5533,6 @@
       ],
       "Windows 10/11 (x64)": [
         "Windows 10/11 (x64)"
-      ]
-    },
-    "Download link": {
-      ".deb for Debian / Ubuntu": [
-        ".deb Debianille/Ubuntulle"
-      ],
-      ".rpm for Fedora / Red Hat": [
-        ".rpm for Fedora / Red Hat"
-      ],
-      "You can also download the app through the ${ linkSnapStore }.": [
-        "Voit myös ladata sovelluksen ${ linkSnapStore } kautta."
       ]
     },
     "drive_signup_2023: Title": {
@@ -6400,9 +6386,6 @@
       "Enable auto-renew": [
         "Ota automaattiuudistus käyttöön"
       ],
-      "Enter your extra password": [
-        "Syöttäkää lisäsalasananne"
-      ],
       "Explore plans": [
         "Tutustu tilauksiin"
       ],
@@ -6581,9 +6564,6 @@
       ],
       "Unable to recover data": [
         "Tietoja ei voida palauttaa"
-      ],
-      "Unlock ${ PASS_APP_NAME }": [
-        "Avaa ${ PASS_APP_NAME }"
       ],
       "Upgrade": [
         "Päivitä"
@@ -7181,10 +7161,6 @@
       "Role assignment could not be completed for ${ errors.length } member": [
         "Roolin määrittämistä ei voitu suorittaa loppuun ${ errors.length } jäsenen osalta",
         "Roolin määrittämistä ei voitu suorittaa loppuun ${ errors.length } jäsenen osalta"
-      ],
-      "Role assignment could not be completed for ${ failedGroupCount } group": [
-        "Roolien määrittämistä ei voitu suorittaa loppuun ${ failedGroupCount } ryhmän osalta",
-        "Roolien määrittämistä ei voitu suorittaa loppuun ${ failedGroupCount } ryhmän osalta"
       ],
       "Server not found": [
         "Palvelinta ei löytynyt"
@@ -8626,14 +8602,6 @@
         "Monet ongelmat voidaan ratkaista nopeasti tukioppaidemme avulla. Jos tarvitsette lisää tukea, tiimimme on täällä auttamassa."
       ]
     },
-    "Get started checklist instructions": {
-      "${ appName } on App Store": [
-        "${ appName } App Storessa"
-      ],
-      "${ appName } on Play Store": [
-        "${ appName } Play Kaupassa"
-      ]
-    },
     "Gmail forwarding": {
       "Automatically forward": [
         "Automaattiohjaa"
@@ -9730,9 +9698,6 @@
       "**Your recovery email alone doesn't allow you to recover your encrypted data** after you reset your password.": [
         "**Palautussähköpostinne yksinään ei mahdollista salattujen tietojenne palauttamista** sen jälkeen, kun olette nollanneet salasananne."
       ],
-      "**Your recovery methods will be invalidated:** you can generate new recovery data later.": [
-        "**Palautusmenetelmäsi mitätöidään:** voit luoda uudet palautustiedot myöhemmin."
-      ],
       "**Your recovery phone alone doesn’t allow you to recover your encrypted data** after you reset your password.": [
         "**Palautuspuhelinne yksinään ei mahdollista salattujen tietojenne palauttamista** sen jälkeen, kun olette nollanneet salasananne."
       ],
@@ -10723,9 +10688,6 @@
       "Failed to fetch logs.": [
         "Lokien nouto epäonnistui."
       ],
-      "Fast and focused. Email and calendar, right on your desktop.": [
-        "Nopea ja kohdistettu. Sähköposti ja kalenteri suoraan työpöydälläsi."
-      ],
       "Featured in": [
         "Esittelyssä"
       ],
@@ -11464,9 +11426,6 @@
       "On": [
         "Päällä"
       ],
-      "On Ubuntu?": [
-        "Käytätkö Ubuntua?"
-      ],
       "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
         "Kun tilillesi on myönnetty käyttöoikeus, he voivat avata **Palautus**-asetuksesi ja **vaihtaa ${ ACCOUNT_APP_NAME } -salasanasi** puolestasi."
       ],
@@ -12199,10 +12158,6 @@
       ],
       "The name will be visible to your users while they are signed in.": [
         "Nimi näkyy käyttäjillesi, kun he ovat kirjautuneena."
-      ],
-      "The process was interrupted for ${ pausedCount } group. Click Continue to resume assigning roles.": [
-        "Prosessi keskeytyi ${ pausedCount } ryhmän kohdalla. Napsauta Jatka jatkaaksesi roolien määrittämistä.",
-        "Prosessi keskeytyi ${ pausedCount } ryhmän kohdalla. Napsauta Jatka jatkaaksesi roolien määrittämistä."
       ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
         "Suosittelupalkkio voidaan myöntää enintään 2 kuukauden kuluessa ystäväsi kokeilujakson päättymisestä, mutta vain, jos ystäväsi on tilannut palvelun."
@@ -14129,9 +14084,6 @@
       "Backup password": [
         "Varasalasana"
       ],
-      "Beta": [
-        "Beta"
-      ],
       "Billed at ${ priceYearly } every 12 months.": [
         "Laskutetaan 12 kuukauden välein hintaan ${ priceYearly }."
       ],
@@ -14360,9 +14312,6 @@
       ],
       "Days of the week": [
         "Viikonpäivät"
-      ],
-      "Deals, offers, marketing emails": [
-        "Tarjoukset, edut ja markkinointiviestit"
       ],
       "Default email address": [
         "Oletussähköpostiosoite"
@@ -15135,9 +15084,6 @@
       "Select an identity provider to start": [
         "Aloita valitsemalla identiteetintarjoaja"
       ],
-      "Select Linux package format": [
-        "Valitse Linux-paketin muoto"
-      ],
       "Select Linux platform": [
         "Valitse Linux-alusta"
       ],
@@ -15909,9 +15855,6 @@
       ],
       "Sign in": [
         "Kirjaudu sisään"
-      ],
-      "Snap store": [
-        "Snap store"
       ],
       "switch account": [
         "vaihda tiliä"
@@ -20821,9 +20764,6 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Omistaja"
-      ],
       "Security Admin": [
         "Turvallisuusvastaava"
       ],
@@ -21414,9 +21354,6 @@
       ]
     },
     "Service provider": {
-      "Add to ${ CALENDAR_APP_NAME }": [
-        "Lisää ${ CALENDAR_APP_NAME }iin"
-      ],
       "Allows you to add a Zoom video conference to any of your calendar events": [
         "Voit lisätä Zoom-videoneuvottelun mihin tahansa kalenteritapahtumaasi"
       ]
@@ -24824,9 +24761,6 @@
       "Dashboard": [
         "Hallintapaneeli"
       ],
-      "Data collection": [
-        "Tietojen keräys"
-      ],
       "Data recovery": [
         "Tietojen palautus"
       ],
@@ -25264,9 +25198,6 @@
       "Group membership": [
         "Ryhmän jäsenyys"
       ],
-      "Group role assignment paused": [
-        "Ryhmän roolien määrittäminen keskeytetty"
-      ],
       "Groups": [
         "Ryhmät"
       ],
@@ -25435,9 +25366,6 @@
       ],
       "Mobile": [
         "Mobiili"
-      ],
-      "Monitoring": [
-        "Valvonta"
       ],
       "Monthly": [
         "Kuukausittain"
@@ -25612,9 +25540,6 @@
       ],
       "Priority support:": [
         "Ensisijainen tuki:"
-      ],
-      "Privacy": [
-        "Yksityisyys"
       ],
       "Privacy and data collection": [
         "Yksityisyys ja tiedonkeruu"
@@ -25891,9 +25816,6 @@
       ],
       "Single sign-on": [
         "Kertakirjautuminen"
-      ],
-      "Single-sign on (SSO)": [
-        "Kertakirjautuminen (SSO)"
       ],
       "SMS verification": [
         "SMS-vahvistus"

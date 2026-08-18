@@ -2963,6 +2963,9 @@
       "Copying item to a non-folder is not allowed": [
         "Kopiranje predmetov v mapo, ki to ni, ni dovoljeno"
       ],
+      "Could not grant access to the organization key": [
+        "Dostop do ključa organizacije ni bil odobren"
+      ],
       "Could not load the image preview: ${ message }": [
         "Predogleda slike ni mogoče naložiti: ${ message }"
       ],
@@ -3068,6 +3071,9 @@
       "Failed to expand folder": [
         "Ni uspelo razširiti mape"
       ],
+      "Failed to fetch sharing information": [
+        "Podatkov o skupni rabi ni bilo mogoče pridobiti"
+      ],
       "Failed to load 'My files' folder": [
         "Ni bilo mogoče naložiti mape \"Moje datoteke\""
       ],
@@ -3082,9 +3088,6 @@
       ],
       "Failed to remove older revisions": [
         "Ni uspelo odstraniti starejših različic"
-      ],
-      "Failed to rename document": [
-        "Dokumenta ni bilo mogoče preimenovati."
       ],
       "Failed to rename document. Please try again later.": [
         "Dokument ni bil preimenovan. Poskusite znova kasneje."
