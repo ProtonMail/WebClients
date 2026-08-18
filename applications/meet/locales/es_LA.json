@@ -190,6 +190,9 @@
       "Cancel": [
         "Cancelar"
       ],
+      "Change password": [
+        "Cambiar contraseña"
+      ],
       "Chat with us": [
         "Chatee con nosotros"
       ],
@@ -3372,8 +3375,8 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Propietario"
+      "Organization Admin": [
+        "Administrador de la organización"
       ],
       "Security Admin": [
         "Administrador de seguridad"
@@ -3517,6 +3520,12 @@
       ]
     },
     "Title": {
+      "Account restricted": [
+        "Cuenta restringida"
+      ],
+      "Account temporarily locked": [
+        "Cuenta temporalmente bloqueada"
+      ],
       "Activity events": [
         "Eventos de actividad"
       ],
