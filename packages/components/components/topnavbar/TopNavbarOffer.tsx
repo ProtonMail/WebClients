@@ -7,6 +7,7 @@ import { useWelcomeFlags } from '@proton/account';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import useOfferFlags from '@proton/components/containers/offers/hooks/useOfferFlags';
+import usePreloadOfferImage from '@proton/components/containers/offers/hooks/usePreloadOfferImage';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useConfig from '@proton/components/hooks/useConfig';
 import { CYCLE } from '@proton/payments/core/constants';
@@ -53,6 +54,10 @@ const TopNavbarOffer = ({ app, offerConfig, ignoreVisited, ignoreOnboarding, sho
     } = useOfferModal(offerConfig, shouldPrefetch);
 
     const { viewportWidth } = useActiveBreakpoint();
+
+    // This component only renders for an offer that is already eligible, so mounting is the signal
+    // that the artwork will very likely be needed. Preload it now rather than when the modal mounts.
+    usePreloadOfferImage(hasEstimationError ? undefined : offerConfig.images?.modalImage);
 
     // Listen custom event to open offer modal
     useEffect(() => {
