@@ -61,6 +61,8 @@ export const PassReports = ({ upgradeRequired }: { upgradeRequired: boolean }) =
     const handleError = useErrorHandler();
     const [loading, withLoading] = useLoading(!upgradeRequired);
     const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
+    const [exportingMonitor, withExportingMonitor] = useLoading();
+    const [exportingUsage, withExportingUsage] = useLoading();
     const sectionLoading = useRef<'monitor' | 'usage'>();
     const didLoad = useRef(false);
     const [reports, setReports] = useState<Reports>(new Map());
@@ -79,8 +81,23 @@ export const PassReports = ({ upgradeRequired }: { upgradeRequired: boolean }) =
     const onUsageNext = () => setUsagePage((page) => page + 1);
     const onUsagePrevious = () => setUsagePage((page) => page - 1);
 
-    const handleMonitorDownloadClick = () => {
-        const csv = monitorReports.reduce(
+    /** Fetches every member report across all pages, not just the current one */
+    const fetchAllReports = async (): Promise<MemberMonitorReport[]> => {
+        // Fetch the first page to learn the total, then fetch any remaining pages.
+        const first = await organization.reports.get({ page: 0, pageSize: REPORTS_PAGE_SIZE });
+        const pageCount = Math.ceil(first.TotalMemberCount / REPORTS_PAGE_SIZE);
+
+        const all = [...first.MemberReports];
+        for (let page = 1; page < pageCount; page++) {
+            const result = await organization.reports.get({ page, pageSize: REPORTS_PAGE_SIZE });
+            all.push(...result.MemberReports);
+        }
+
+        return all;
+    };
+
+    const handleMonitorDownloadClick = async () => {
+        const csv = intoMonitorReports(await fetchAllReports()).reduce(
             (acc, item) =>
                 acc +
                 `"${item.primaryEmail}","${item.ReusedPasswords ?? ''}","${item.Inactive2FA ?? ''}","${item.WeakPasswords ?? ''}","${item.ExcludedItems ?? ''}","${item.emailBreachCount}","${formatDate(item.ReportTime)}"\n`,
@@ -91,8 +108,8 @@ export const PassReports = ({ upgradeRequired }: { upgradeRequired: boolean }) =
         downloadFile(blob, `${PASS_SHORT_APP_NAME}_monitor_reports_${Date.now()}`);
     };
 
-    const handleUsageDownloadClick = () => {
-        const csv = usageReports.reduce(
+    const handleUsageDownloadClick = async () => {
+        const csv = intoUsageReports(await fetchAllReports()).reduce(
             (acc, item) =>
                 acc +
                 `"${item.primaryEmail}","${item.OwnedItemCount}","${item.AccessibleItemCount}","${item.OwnedVaultCount}","${item.AccessibleVaultCount}","${formatDate(item.lastActivityTime)}"\n`,
@@ -105,7 +122,7 @@ export const PassReports = ({ upgradeRequired }: { upgradeRequired: boolean }) =
 
     const fetchReports = (page?: number) =>
         // BE pagination starts at 0 while our page state starts at 1
-        organization.reports.get({ page: page ? page - 1 : undefined }).then((result) => {
+        organization.reports.get({ page: page ? page - 1 : undefined, pageSize: REPORTS_PAGE_SIZE }).then((result) => {
             setReports((reports) => reports.set(page ?? 1, result.MemberReports));
             setTotalMemberCount(result.TotalMemberCount);
         });
@@ -190,7 +207,8 @@ export const PassReports = ({ upgradeRequired }: { upgradeRequired: boolean }) =
                         />
                         <Button
                             shape="outline"
-                            onClick={handleMonitorDownloadClick}
+                            loading={exportingMonitor}
+                            onClick={() => withExportingMonitor(handleMonitorDownloadClick()).catch(handleError)}
                             disabled={upgradeRequired}
                             title={c('Action').t`Export as CSV`}
                         >
@@ -221,7 +239,8 @@ export const PassReports = ({ upgradeRequired }: { upgradeRequired: boolean }) =
                         />
                         <Button
                             shape="outline"
-                            onClick={handleUsageDownloadClick}
+                            loading={exportingUsage}
+                            onClick={() => withExportingUsage(handleUsageDownloadClick()).catch(handleError)}
                             disabled={upgradeRequired}
                             title={c('Action').t`Export as CSV`}
                         >
