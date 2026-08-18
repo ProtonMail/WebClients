@@ -49,6 +49,7 @@ import { UNAUTHENTICATED_ROUTES } from '../../../content/helper';
 import type { CompanyFormData, MspCompany } from '../types';
 import CompanyModal from './CompanyModal';
 import DisableCompanyModal from './DisableCompanyModal';
+import ManageManagersModal from './ManageManagersModal';
 
 import './MspCompaniesSection.scss';
 
@@ -78,29 +79,23 @@ const toManagedCompany = (org: UserOrganization): MspCompany => ({
     managers: [],
 });
 
-const ManagersCell = ({ managers }: { managers: MspDelegatedManager[] }) => {
-    const [expanded, setExpanded] = useState(false);
+const ManagersCell = ({ managers, onManage }: { managers: MspDelegatedManager[]; onManage: () => void }) => {
     const names = managers.map((manager) => manager.Name);
 
-    if (names.length <= MANAGERS_COLLAPSE_THRESHOLD) {
-        return <span>{names.join(', ')}</span>;
+    if (names.length === 0) {
+        return <InlineLinkButton onClick={onManage}>{c('Action').t`Assign manager(s)`}</InlineLinkButton>;
     }
 
-    if (expanded) {
-        return (
-            <span>
-                {names.join(', ')}{' '}
-                <InlineLinkButton onClick={() => setExpanded(false)}>{c('Action').t`Show less`}</InlineLinkButton>
-            </span>
-        );
+    if (names.length <= MANAGERS_COLLAPSE_THRESHOLD) {
+        return <InlineLinkButton onClick={onManage}>{names.join(', ')}</InlineLinkButton>;
     }
 
     const remaining = names.length - MANAGERS_VISIBLE_COUNT;
     return (
-        <span>
+        <InlineLinkButton onClick={onManage}>
             {names.slice(0, MANAGERS_VISIBLE_COUNT).join(', ')}{' '}
-            <InlineLinkButton onClick={() => setExpanded(true)}>{c('Action').t`+${remaining} more`}</InlineLinkButton>
-        </span>
+            <span className="color-weak">{`+${remaining}`}</span>
+        </InlineLinkButton>
     );
 };
 
@@ -134,6 +129,7 @@ const MspCompaniesSection = ({ path }: { path: string }) => {
     const [search, setSearch] = useState('');
     const [modal, setModal] = useState<ModalState>(null);
     const [confirmDisable, setConfirmDisable] = useState<MspCompany | null>(null);
+    const [manageManagersCompany, setManageManagersCompany] = useState<MspCompany | null>(null);
     const [managingIds, setManagingIds] = useState<Set<string>>(new Set());
 
     const filtered = companies
@@ -343,9 +339,10 @@ const MspCompaniesSection = ({ path }: { path: string }) => {
                                         </TableCell>
                                         {isAdmin && (
                                             <TableCell label={c('Column header').t`Managers`}>
-                                                <span className={clsx(isDisabled && 'color-weak')}>
-                                                    <ManagersCell managers={company.managers} />
-                                                </span>
+                                                <ManagersCell
+                                                    managers={company.managers}
+                                                    onManage={() => setManageManagersCompany(company)}
+                                                />
                                             </TableCell>
                                         )}
                                         <TableCell className="md:hidden">
@@ -406,6 +403,10 @@ const MspCompaniesSection = ({ path }: { path: string }) => {
 
             {confirmDisable && (
                 <DisableCompanyModal onConfirm={handleConfirmDisable} onClose={() => setConfirmDisable(null)} />
+            )}
+
+            {manageManagersCompany && (
+                <ManageManagersModal company={manageManagersCompany} onClose={() => setManageManagersCompany(null)} />
             )}
         </SettingsSectionExtraWide>
     );
