@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
-import type { SafetyReviewAllProps } from '@proton/account/safetyReview/components/interface';
-import type { RecoveryActionItem } from '@proton/account/safetyReview/recoveryState/recoveryState';
 import { Button } from '@proton/atoms/Button/Button';
 
+import type { RecoveryActionItem } from '../recoveryState/recoveryState';
 import { SafetyReviewCtaPortal } from './SafetyReviewCtaPortal';
+import type { SafetyReviewAllProps } from './interface';
 
 import './SafetyReviewCta.scss';
 

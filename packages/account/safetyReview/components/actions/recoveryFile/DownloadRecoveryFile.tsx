@@ -1,18 +1,18 @@
 import { c } from 'ttag';
 
-import { downloadRecoveryFileThunk } from '@proton/account/recovery/recoveryFile';
-import { SafetyReviewCta } from '@proton/account/safetyReview/components/SafetyReviewCta';
-import type { SafetyReviewAllProps } from '@proton/account/safetyReview/components/interface';
-import type { ExtractRecoveryActionItem } from '@proton/account/safetyReview/recoveryState/recoveryState';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { exportRecoveryFile } from '@proton/shared/lib/recoveryFile/recoveryFile';
 import noop from '@proton/utils/noop';
 
+import { downloadRecoveryFileThunk } from '../../../../recovery/recoveryFile';
+import type { ExtractRecoveryActionItem } from '../../../recoveryState/recoveryState';
+import { SafetyReviewCta } from '../../SafetyReviewCta';
 import darkIllustration from '../../assets/recovery-file-dark.svg';
 import illustration from '../../assets/recovery-file.svg';
 import { SafetyReviewCardHeader } from '../../cards/SafetyReviewCardHeader';
+import type { SafetyReviewAllProps } from '../../interface';
 
 type Props = SafetyReviewAllProps & {
     recoveryItem: ExtractRecoveryActionItem<'recoveryFile'>;

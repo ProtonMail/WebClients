@@ -9639,30 +9639,63 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/account@workspace:packages/account"
   dependencies:
+    "@jest/globals": "npm:^30.4.1"
+    "@proton/atoms": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
+    "@proton/features": "workspace:^"
+    "@proton/hooks": "workspace:^"
+    "@proton/icons": "workspace:^"
+    "@proton/key-transparency": "workspace:^"
     "@proton/metrics": "workspace:^"
     "@proton/react-redux-store": "workspace:^"
     "@proton/recovery-kit": "workspace:^"
     "@proton/redux-shared-store-types": "workspace:^"
     "@proton/redux-utilities": "workspace:^"
     "@proton/shared": "workspace:^"
+    "@proton/styles": "workspace:^"
+    "@proton/unleash": "workspace:^"
     "@proton/utils": "workspace:^"
     "@protontech/crypto": "npm:*"
     "@reduxjs/toolkit": "npm:^2.12.0"
     "@testing-library/jest-dom": "npm:^6.9.1"
     "@testing-library/react": "npm:^15.0.7"
+    "@testing-library/react-hooks": "npm:^8.0.1"
     "@types/deep-freeze": "npm:^0.1.5"
+    "@types/react": "npm:^18.3.31"
     core-js: "npm:^3.49.0"
     date-fns: "npm:^2.30.0"
     deep-freeze: "npm:^0.0.1"
     eslint: "npm:^9.39.5"
+    history: "npm:^4.10.1"
+    idb: "npm:^8.0.3"
     jest: "npm:^30.4.2"
     jest-environment-jsdom: "npm:^30.4.1"
+    lodash: "npm:^4.18.1"
+    prettier: "npm:^3.9.6"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     react-redux: "npm:^9.3.0"
+    react-router-dom: "npm:^5.3.4"
     ts-jest: "npm:^29.4.12"
+    ttag: "npm:^1.8.12"
     typescript: "npm:^6.0.3"
+  peerDependencies:
+    "@proton/activation": "*"
+    "@proton/components": "*"
+    "@proton/mail": "*"
+    "@proton/payments": "*"
+    "@proton/redux-shared-store": "*"
+  peerDependenciesMeta:
+    "@proton/activation":
+      optional: true
+    "@proton/components":
+      optional: true
+    "@proton/mail":
+      optional: true
+    "@proton/payments":
+      optional: true
+    "@proton/redux-shared-store":
+      optional: true
   languageName: unknown
   linkType: soft
 

@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
-import type { selectMnemonicData } from '@proton/account/recovery/mnemonic';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import DisableMnemonicModal from '@proton/components/containers/mnemonic/DisableMnemonicModal';
 import { useRecoverySettingsTelemetry } from '@proton/components/containers/recovery/recoverySettingsTelemetry';
 
+import type { selectMnemonicData } from '../mnemonic';
 import RecoveryKitModal from './RecoveryKitModal';
 
 export const useUpdateRecoveryKit = (mnemonicData: ReturnType<typeof selectMnemonicData>) => {

@@ -1,5 +1,5 @@
-import type { SafetyReviewContainerState } from '@proton/account/safetyReview/components/interface';
-import type { RecoveryStateResult } from '@proton/account/safetyReview/recoveryState/recoveryState';
+import type { RecoveryStateResult } from '../recoveryState/recoveryState';
+import type { SafetyReviewContainerState } from './interface';
 
 export const getActionableActionItem = (
     value: RecoveryStateResult['recoveryActionItems'][number],

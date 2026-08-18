@@ -1,24 +1,24 @@
 import type { ReactNode } from 'react';
 
-import { EnableRecoveryEmail } from '@proton/account/safetyReview/components/actions/accountRecovery/email/EnableRecoveryEmail';
-import { SetRecoveryEmail } from '@proton/account/safetyReview/components/actions/accountRecovery/email/SetRecoveryEmail';
-import { VerifyRecoveryEmail } from '@proton/account/safetyReview/components/actions/accountRecovery/email/VerifyRecoveryEmail';
-import { EnableRecoveryPhone } from '@proton/account/safetyReview/components/actions/accountRecovery/phone/EnableRecoveryPhone';
-import { SetRecoveryPhone } from '@proton/account/safetyReview/components/actions/accountRecovery/phone/SetRecoveryPhone';
-import { VerifyRecoveryPhone } from '@proton/account/safetyReview/components/actions/accountRecovery/phone/VerifyRecoveryPhone';
-import { Congratulations } from '@proton/account/safetyReview/components/actions/congratulations/Congratulations';
-import { AddEmergencyContacts } from '@proton/account/safetyReview/components/actions/delegatedAccess/AddEmergencyContacts';
-import { AddRecoveryContacts } from '@proton/account/safetyReview/components/actions/delegatedAccess/AddRecoveryContacts';
-import { UpsellEmergencyContacts } from '@proton/account/safetyReview/components/actions/delegatedAccess/UpsellEmergencyContacts';
-import { EnableDeviceRecovery } from '@proton/account/safetyReview/components/actions/deviceRecovery/EnableDeviceRecovery';
-import { PasswordVerification } from '@proton/account/safetyReview/components/actions/password/PasswordVerification';
-import { DownloadRecoveryFile } from '@proton/account/safetyReview/components/actions/recoveryFile/DownloadRecoveryFile';
-import { DownloadRecoveryPhrase } from '@proton/account/safetyReview/components/actions/recoveryPhrase/DownloadRecoveryPhrase';
-import { EnableQrCodeSignIn } from '@proton/account/safetyReview/components/actions/settings/EnableQrCodeSignIn';
-import { EnableSignedInReset } from '@proton/account/safetyReview/components/actions/settings/EnableSignedInReset';
-import type { SafetyReviewCardsItemProps } from '@proton/account/safetyReview/components/cards/interface';
-import type { SafetyReviewContainerProps } from '@proton/account/safetyReview/components/interface';
-import type { RecoveryActionItem } from '@proton/account/safetyReview/recoveryState/recoveryState';
+import type { RecoveryActionItem } from '../../recoveryState/recoveryState';
+import type { SafetyReviewCardsItemProps } from '../cards/interface';
+import type { SafetyReviewContainerProps } from '../interface';
+import { EnableRecoveryEmail } from './accountRecovery/email/EnableRecoveryEmail';
+import { SetRecoveryEmail } from './accountRecovery/email/SetRecoveryEmail';
+import { VerifyRecoveryEmail } from './accountRecovery/email/VerifyRecoveryEmail';
+import { EnableRecoveryPhone } from './accountRecovery/phone/EnableRecoveryPhone';
+import { SetRecoveryPhone } from './accountRecovery/phone/SetRecoveryPhone';
+import { VerifyRecoveryPhone } from './accountRecovery/phone/VerifyRecoveryPhone';
+import { Congratulations } from './congratulations/Congratulations';
+import { AddEmergencyContacts } from './delegatedAccess/AddEmergencyContacts';
+import { AddRecoveryContacts } from './delegatedAccess/AddRecoveryContacts';
+import { UpsellEmergencyContacts } from './delegatedAccess/UpsellEmergencyContacts';
+import { EnableDeviceRecovery } from './deviceRecovery/EnableDeviceRecovery';
+import { PasswordVerification } from './password/PasswordVerification';
+import { DownloadRecoveryFile } from './recoveryFile/DownloadRecoveryFile';
+import { DownloadRecoveryPhrase } from './recoveryPhrase/DownloadRecoveryPhrase';
+import { EnableQrCodeSignIn } from './settings/EnableQrCodeSignIn';
+import { EnableSignedInReset } from './settings/EnableSignedInReset';
 
 export const renderActionItem = (
     recoveryItem: RecoveryActionItem | null,

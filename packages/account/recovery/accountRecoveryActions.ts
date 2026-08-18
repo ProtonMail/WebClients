@@ -1,14 +1,15 @@
 import type { UnknownAction } from '@reduxjs/toolkit';
 import type { ThunkAction } from 'redux-thunk';
 
-import type { DelegatedAccessState } from '@proton/account/delegatedAccess';
-import { selectAccountRecovery } from '@proton/account/recovery/accountRecovery';
-import type { UserState } from '@proton/account/user';
-import { type UserSettingsState, userSettingsActions } from '@proton/account/userSettings';
 import type { ContactEmailsState } from '@proton/mail/store/contactEmails';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { updateEmail, updatePhone, updateResetEmail, updateResetPhone } from '@proton/shared/lib/api/settings';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
+
+import type { DelegatedAccessState } from '../delegatedAccess';
+import type { UserState } from '../user';
+import { type UserSettingsState, userSettingsActions } from '../userSettings';
+import { selectAccountRecovery } from './accountRecovery';
 
 type RequiredState = UserSettingsState & UserState & ContactEmailsState & DelegatedAccessState;
 

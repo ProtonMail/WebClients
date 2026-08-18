@@ -1,10 +1,11 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { addDays, getUnixTime } from 'date-fns';
 
-import { type FeaturesTourState, featureTourActions } from '@proton/account';
 import { FeatureCode } from '@proton/features/interface';
 import { type FeaturesReducerState, updateFeature } from '@proton/features/reducer';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+
+import { type FeaturesTourState, featureTourActions } from './index';
 
 export const remindMeLaterAboutFeatureTourAction = createAsyncThunk<
     void,

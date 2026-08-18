@@ -2,13 +2,13 @@ import { type ReactNode, useCallback, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useGetUserSettings } from '@proton/account/userSettings/hooks';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
+import { useGetUserSettings } from '../../userSettings/hooks';
 import type { VerificationMethod } from './verification';
 import { getInitiationCall, initiateVerification, sendNewCode, verifyCode } from './verification';
 

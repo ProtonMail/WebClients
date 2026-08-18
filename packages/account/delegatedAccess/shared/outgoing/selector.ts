@@ -1,12 +1,5 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import { selectAddresses } from '@proton/account/addresses';
-import { getIsOutgoingDelegatedAccessAvailable } from '@proton/account/delegatedAccess/available';
-import { maxOutgoingEmergencyContacts, maxOutgoingRecoveryContacts } from '@proton/account/delegatedAccess/constants';
-import { selectProtonDomains } from '@proton/account/protonDomains';
-import { getLastModifiedDate } from '@proton/account/recovery/lastModifiedTime';
-import { selectUser } from '@proton/account/user';
-import { selectUserSettings } from '@proton/account/userSettings';
 import { selectContactEmails } from '@proton/mail/store/contactEmails';
 import { selectContactEmailsMap } from '@proton/mail/store/contactEmails/selector';
 import { getContactEmailKey } from '@proton/shared/lib/contacts/getContactEmailsMap';
@@ -15,6 +8,13 @@ import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { getLikelyHasKeysToReactivate } from '@proton/shared/lib/keys/getInactiveKeys';
 import { hasPaidPass } from '@proton/shared/lib/user/helpers';
 
+import { selectAddresses } from '../../../addresses';
+import { selectProtonDomains } from '../../../protonDomains';
+import { getLastModifiedDate } from '../../../recovery/lastModifiedTime';
+import { selectUser } from '../../../user';
+import { selectUserSettings } from '../../../userSettings';
+import { getIsOutgoingDelegatedAccessAvailable } from '../../available';
+import { maxOutgoingEmergencyContacts, maxOutgoingRecoveryContacts } from '../../constants';
 import { selectOutgoingDelegatedAccess } from '../../index';
 import { getEnrichedOutgoingDelegatedAccess } from './helper';
 import type { EnrichedOutgoingDelegatedAccess } from './interface';

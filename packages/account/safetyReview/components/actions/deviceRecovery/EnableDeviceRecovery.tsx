@@ -1,17 +1,17 @@
 import { c } from 'ttag';
 
-import { updateDeviceRecoverySettingsThunk } from '@proton/account/recovery/deviceRecovery';
-import { SafetyReviewCta } from '@proton/account/safetyReview/components/SafetyReviewCta';
-import type { SafetyReviewAllProps } from '@proton/account/safetyReview/components/interface';
-import type { ExtractRecoveryActionItem } from '@proton/account/safetyReview/recoveryState/recoveryState';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import noop from '@proton/utils/noop';
 
+import { updateDeviceRecoverySettingsThunk } from '../../../../recovery/deviceRecovery';
+import type { ExtractRecoveryActionItem } from '../../../recoveryState/recoveryState';
+import { SafetyReviewCta } from '../../SafetyReviewCta';
 import darkIllustration from '../../assets/device-based-recovery-dark.svg';
 import illustration from '../../assets/device-based-recovery.svg';
 import { SafetyReviewCardHeader } from '../../cards/SafetyReviewCardHeader';
+import type { SafetyReviewAllProps } from '../../interface';
 
 type Props = SafetyReviewAllProps & {
     recoveryItem: ExtractRecoveryActionItem<'deviceRecovery'>;
