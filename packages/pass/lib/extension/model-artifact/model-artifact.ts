@@ -6,7 +6,9 @@ const MODEL_ARCH_VALUES = ['lr', 'rf'] as const;
 export type ModelArch = (typeof MODEL_ARCH_VALUES)[number];
 export const isModelArch = (name: string): name is ModelArch => (MODEL_ARCH_VALUES as readonly string[]).includes(name);
 
-const MODEL_ID_RE = new RegExp(`^\\d{4}\\.\\d{1,2}\\.\\d+-(?<arch>${MODEL_ARCH_VALUES.map(escapeRegex).join('|')})$`);
+const MODEL_ID_RE = new RegExp(
+    `^(?<year>\\d{4})\\.(?<month>\\d{1,2})\\.(?<pipelineId>\\d+)-(?<arch>${MODEL_ARCH_VALUES.map(escapeRegex).join('|')})$`
+);
 
 export const getModelArch = (modelId: string): MaybeNull<ModelArch> => {
     const arch = modelId.match(MODEL_ID_RE)?.groups?.arch;
