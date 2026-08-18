@@ -3,8 +3,9 @@ import React, { memo } from 'react';
 import type { HandleEditMessage, HandleRegenerateMessage } from '../../../..//hooks/useLumoActions';
 import type { SiblingInfo } from '../../../..//hooks/usePreferredSiblings';
 import type { Message } from '../../../../types';
-import { type Attachment, Role, isCompactionMessage } from '../../../../types';
+import { type Attachment, Role, isCompactionMessage, isManualArtifactEditMessage } from '../../../../types';
 import ChatContainerItem from '../../../ChatContainerItem';
+import { ArtifactEditMarker } from './ArtifactEditMarker/ArtifactEditMarker';
 import AssistantMessage from './AssistantMessage/AssistantMessage';
 import { CompactionMarker } from './CompactionMarker/CompactionMarker';
 import UserMessage from './UserMessage/UserMessage';
@@ -95,6 +96,20 @@ const MessageComponentPure = ({
                 data-message-id={message.id}
             >
                 <CompactionMarker message={message} />
+            </ChatContainerItem>
+        );
+    }
+
+    // A manual artifact edit is a synthetic, non-generating message (no LLM turn) — rendered
+    // as a small clickable divider rather than a chat bubble, same treatment as compaction.
+    if (isManualArtifactEditMessage(message)) {
+        return (
+            <ChatContainerItem
+                className="artifact-edit-msg mb-6"
+                data-message-role="artifact-manual-edit"
+                data-message-id={message.id}
+            >
+                <ArtifactEditMarker message={message} />
             </ChatContainerItem>
         );
     }
