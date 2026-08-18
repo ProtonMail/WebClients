@@ -9885,6 +9885,28 @@
       ],
       "Writes realistic log lines back-to-back, then reads them all back. Shows how write and read/export cost scale with the number of stored entries.": [
         "Scrie linii de jurnal realiste una după alta, apoi le citește pe toate înapoi. Arată cum costul de scriere și citire/exportare crește în funcție de numărul de intrări stocate."
+      ],
+      "${ count } email": [
+        "Mesaje: ${ count }",
+        "Mesaje: ${ count }",
+        "Mesaje: ${ count }"
+      ],
+      "${ count } email · ${ names }": [
+        "Mesaje: ${ count } · ${ names }",
+        "Mesaje: ${ count } · ${ names }",
+        "Mesaje: ${ count } · ${ names }"
+      ],
+      "Apply labels": [
+        "Aplicare etichete"
+      ],
+      "Expand logs": [
+        "Extindere jurnale"
+      ],
+      "Mark as read": [
+        "Marcare: citit"
+      ],
+      "Mark as unread": [
+        "Marcare: necitit"
       ]
     },
     "info": {
@@ -17446,6 +17468,9 @@
       ],
       "Unstar emails": [
         "Anulare stea de la mesaje"
+      ],
+      "Apply labels": [
+        "Aplicare etichete"
       ]
     },
     "Title header for keys table": {

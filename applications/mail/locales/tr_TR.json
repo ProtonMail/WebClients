@@ -9715,6 +9715,26 @@
       ],
       "Writes realistic log lines back-to-back, then reads them all back. Shows how write and read/export cost scale with the number of stored entries.": [
         "Arka arkaya gerçekçi günlük satırları yazar ardından tümünü yeniden okur. Yazma ve okuma/dışa aktarma maliyetlerinin depolanan kayıt sayısıyla orantılı olarak nasıl arttığını gösterir."
+      ],
+      "${ count } email": [
+        "${ count } e-posta",
+        "${ count } e-posta"
+      ],
+      "${ count } email · ${ names }": [
+        "${ count } e-posta · ${ names }",
+        "${ count } e-posta · ${ names }"
+      ],
+      "Apply labels": [
+        "Etiketleri uygula"
+      ],
+      "Expand logs": [
+        "Günlük kayıtlarını genişlet"
+      ],
+      "Mark as read": [
+        "Okunmuş olarak işaretle"
+      ],
+      "Mark as unread": [
+        "Okunmamış olarak işaretle"
       ]
     },
     "info": {
@@ -17121,6 +17141,9 @@
       ],
       "Unstar emails": [
         "E-postalardan yıldızı kaldır"
+      ],
+      "Apply labels": [
+        "Etiketleri uygula"
       ]
     },
     "Title header for keys table": {
