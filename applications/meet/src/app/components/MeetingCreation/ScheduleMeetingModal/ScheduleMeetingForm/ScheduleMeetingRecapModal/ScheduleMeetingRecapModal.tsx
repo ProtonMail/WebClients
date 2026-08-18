@@ -20,11 +20,11 @@ import { openNewTab } from '@proton/shared/lib/helpers/browser';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { ConditionalTooltip } from '../../atoms/ConditionalTooltip/ConditionalTooltip';
-import { formatDate, formatTimeHHMM } from '../../utils/timeFormat';
-import { DeleteMeetingModal } from '../DashboardMeetingList/DeleteMeetingModal';
-import type { MeetingVariant } from '../ScheduleMeetingForm/ScheduleMeetingForm';
-import { TranslucentModal } from '../TranslucentModal/TranslucentModal';
+import { ConditionalTooltip } from '../../../../../atoms/ConditionalTooltip/ConditionalTooltip';
+import type { MeetingVariant } from '../../../../../types';
+import { formatDate, formatTimeHHMM } from '../../../../../utils/timeFormat';
+import { DeleteMeetingModal } from '../../../../DashboardMeetingList/DeleteMeetingModal';
+import { TranslucentModal } from '../../../../TranslucentModal/TranslucentModal';
 import { ScheduleMeetingRecapAnimatedIcon } from './ScheduleMeetingRecapAnimatedIcon';
 import { calendarDateFormats } from './utils';
 

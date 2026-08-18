@@ -1,8 +1,8 @@
 import type { Meeting } from '@proton/shared/lib/interfaces/Meet';
 
-import { getRoomVariantFromId } from '../RoomForm/getRoomVariantFromId';
-import { ScheduleMeetingForm } from '../ScheduleMeetingForm/ScheduleMeetingForm';
-import { TranslucentModal } from '../TranslucentModal/TranslucentModal';
+import { TranslucentModal } from '../../TranslucentModal/TranslucentModal';
+import { getMeetingVariantFromId } from '../shared/getMeetingVariantFromId';
+import { ScheduleMeetingForm } from './ScheduleMeetingForm/ScheduleMeetingForm';
 
 interface ScheduleMeetingModalProps {
     open: boolean;
@@ -15,7 +15,7 @@ export const ScheduleMeetingModal = ({ open, onClose, meeting, onMeetingCreated 
     return (
         <TranslucentModal open={open} onClose={onClose}>
             <ScheduleMeetingForm
-                variant={getRoomVariantFromId(meeting?.ID)}
+                variant={getMeetingVariantFromId(meeting?.ID)}
                 meeting={meeting}
                 open={open}
                 onClose={onClose}

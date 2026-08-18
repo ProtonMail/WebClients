@@ -37,13 +37,14 @@ import { getTimeZoneOptions, getTimezone } from '@proton/shared/lib/date/timezon
 import { type Meeting, MeetingType, WaitingRoomState } from '@proton/shared/lib/interfaces/Meet';
 import clsx from '@proton/utils/clsx';
 
-import { ExpandOptionsButton } from '../../atoms/ExpandOptionsButton/ExpandOptionsButton';
-import { useNotifyError } from '../../hooks/useNotifyError';
-import { getNextOccurrence } from '../../utils/getNextOccurrence';
-import { formatTimeHHMM } from '../../utils/timeFormat';
-import { ScheduleMeetingRecapModal } from '../ScheduleMeetingRecapModal/ScheduleMeetingRecapModal';
-import { TimeInputBlock } from '../TimeInputBlock';
-import { ScheduleMeetingOptions } from './ScheduleMeetingOptions';
+import { ExpandOptionsButton } from '../../../../atoms/ExpandOptionsButton/ExpandOptionsButton';
+import { useNotifyError } from '../../../../hooks/useNotifyError';
+import type { MeetingVariant } from '../../../../types';
+import { getNextOccurrence } from '../../../../utils/getNextOccurrence';
+import { formatTimeHHMM } from '../../../../utils/timeFormat';
+import { TimeInputBlock } from '../../../TimeInputBlock';
+import { MeetingOptions } from '../../shared/MeetingOptions';
+import { ScheduleMeetingRecapModal } from './ScheduleMeetingRecapModal/ScheduleMeetingRecapModal';
 import { ScheduleMeetingSvgIcon } from './ScheduleMeetingSvgIcon';
 import type { OnDateTimeChange } from './types';
 import { combineDateAndTime, getInitialValues, validate } from './utils';
@@ -78,8 +79,6 @@ const timeZoneSelectOptions = getTimeZoneOptions().map((option) => ({
     value: option.value,
     formattedText: option.formattedText,
 }));
-
-export type MeetingVariant = 'purple' | 'orange' | 'blue' | 'green' | 'red';
 
 interface ScheduleMeetingFormProps {
     open: boolean;
@@ -567,7 +566,8 @@ export const ScheduleMeetingForm = ({
                         </SelectTwo>
                     </div>
                     {isWaitingRoomCreationEnabled && values.waitingRoom !== undefined && (
-                        <ScheduleMeetingOptions
+                        <MeetingOptions
+                            namespace="schedule-meeting-form"
                             waitingRoom={values.waitingRoom}
                             onWaitingRoomChange={(value) => {
                                 setValues({ ...values, waitingRoom: value });
