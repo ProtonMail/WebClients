@@ -91,6 +91,9 @@ export interface ApiReportSummary {
     NumContacts?: number;
     NumGroups?: number;
     NumEvents?: number;
+    DestinationFiles?: number;
+    SourceFiles?: number;
+    SourceBytes?: number;
 }
 
 export enum ApiImportProvider {
