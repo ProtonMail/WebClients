@@ -123,7 +123,7 @@ const ProjectDetailViewInner = () => {
     }, [driveBrowserModal]);
 
     const handleSendInProject = useCallback<HandleSendMessage>(
-        async (content, webSearchEnabled, imageOptions) => {
+        async (content, webSearchEnabled, imageOptions, artifactModeActive) => {
             try {
                 if (!content.trim() && provisionalAttachments.length === 0) {
                     console.log('Empty content, skipping send');
@@ -179,6 +179,7 @@ const ProjectDetailViewInner = () => {
                             enableImageTools: ffImageTools,
                             enableSmoothing: ffSmoothRendering,
                             imageAspectRatio: imageOptions?.aspectRatio,
+                            canvasModeActive: artifactModeActive ?? false,
                         },
                         settingsContext: {
                             personalization,
