@@ -411,7 +411,7 @@
         "Baixar para Windows"
       ],
       "Download info": [
-        "Baixar informações"
+        "Fazer download de informações"
       ],
       "Download logs": [
         "Registros de downloads"
@@ -843,7 +843,7 @@
         "Remover código de vale-presente"
       ],
       "Remove me": [
-        "Remover-me"
+        "Remover"
       ],
       "Remove without saving": [
         "Remover sem salvar"
@@ -3896,7 +3896,7 @@
         "A solicitação expirou"
       ],
       "Search failed": [
-        "Erro de pesquisa"
+        "A pesquisa falhou"
       ],
       "Signature not verified": [
         "Assinatura não verificada"
@@ -5717,7 +5717,7 @@
         "Não foi possível carregar o link"
       ],
       "Cannot load links": [
-        "Não foi possível carregar os links"
+        "Os links não foram carregados"
       ],
       "Cannot load shared link": [
         "Não foi possível carregar o link compartilhado"
@@ -7719,6 +7719,9 @@
       ],
       "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
         "Para migrar este usuário, ative a conta no seu ${ provider.adminConsoleName }."
+      ],
+      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Vamos redirecioná-lo para o ${ IDEAL_BRAND_NAME } em uma nova guia do navegador para concluir esta transação. Desative qualquer bloqueador de pop-ups que estiver usando."
       ]
     },
     "info": {
@@ -8328,7 +8331,7 @@
         "Defina uma senha para limitar o acesso por link"
       ],
       "Set recovery method": [
-        "Definir método de recuperação"
+        "Definir um método de recuperação"
       ],
       "Share a file, folder, or album": [
         "Compartilhe um arquivo, pasta ou álbum"
@@ -8626,6 +8629,9 @@
       ],
       "Allow editors to change permissions and share.": [
         "Permitir que editores alterem permissões e compartilhem."
+      ],
+      "Account holder name": [
+        "Nome do titular da conta"
       ]
     },
     "Label for contact group color": {
@@ -10780,7 +10786,7 @@
         "Criar um documento"
       ],
       "Get started": [
-        "Começar"
+        "Começar a usar"
       ],
       "Install and continue": [
         "Instalar e continuar"
@@ -10896,7 +10902,7 @@
         "Continue aproveitando: envie mais arquivos usando o armazenamento incluído no seu plano."
       ],
       "Manage access": [
-        "Gerencie o acesso"
+        "Gerenciar acesso"
       ],
       "Organize files right from your desktop": [
         "Organize arquivos diretamente da sua área de trabalho"
@@ -10923,7 +10929,7 @@
         "O proprietário precisa confirmar o acesso de compartilhamento. Você receberá um e-mail quando isso for feito."
       ],
       "Upload your first file": [
-        "Faça upload de seu primeiro arquivo"
+        "Carregue seu primeiro arquivo"
       ],
       "Work faster, smarter": [
         "Trabalhe com mais rapidez e inteligência"
