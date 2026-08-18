@@ -2,12 +2,6 @@ import { useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { submitPasswordReminder } from '@proton/account/passwordReminder';
-import PasswordReminderInput from '@proton/account/passwordReminder/PasswordReminderInput';
-import { SafetyReviewCta } from '@proton/account/safetyReview/components/SafetyReviewCta';
-import { SafetyReviewCardHeader } from '@proton/account/safetyReview/components/cards/SafetyReviewCardHeader';
-import type { SafetyReviewAllProps } from '@proton/account/safetyReview/components/interface';
-import type { ExtractRecoveryActionItem } from '@proton/account/safetyReview/recoveryState/recoveryState';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import Form from '@proton/components/components/form/Form';
@@ -33,7 +27,13 @@ import type { TwoFactorAuthTypes } from '@proton/shared/lib/authentication/twoFa
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import noop from '@proton/utils/noop';
 
+import { submitPasswordReminder } from '../../../../passwordReminder';
+import PasswordReminderInput from '../../../../passwordReminder/PasswordReminderInput';
+import type { ExtractRecoveryActionItem } from '../../../recoveryState/recoveryState';
+import { SafetyReviewCta } from '../../SafetyReviewCta';
 import illustration from '../../assets/password-verification.svg';
+import { SafetyReviewCardHeader } from '../../cards/SafetyReviewCardHeader';
+import type { SafetyReviewAllProps } from '../../interface';
 
 type Props = SafetyReviewAllProps & {
     recoveryItem: ExtractRecoveryActionItem<'passwordVerification'>;

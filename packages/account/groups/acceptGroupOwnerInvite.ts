@@ -1,8 +1,7 @@
-import type { ThunkAction, ThunkDispatch, UnknownAction } from '@reduxjs/toolkit';
-
-import { getAddressKeysByUsageThunk } from '@proton/account/addressKeys/getAddressKeysByUsage';
 import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
 import type { SessionKey } from '@protontech/crypto';
+import type { ThunkAction, ThunkDispatch, UnknownAction } from '@reduxjs/toolkit';
+
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { acceptGroupOwnerInvite as acceptGroupOwnerInviteApi } from '@proton/shared/lib/api/groups';
@@ -11,6 +10,7 @@ import { getAndVerifyApiKeys } from '@proton/shared/lib/api/helpers/getAndVerify
 import type { Api, GroupOwnerInvite } from '@proton/shared/lib/interfaces';
 import { encryptGroupOwnerTokenPackets } from '@proton/shared/lib/keys/groupKeys';
 
+import { getAddressKeysByUsageThunk } from '../addressKeys/getAddressKeysByUsage';
 import type { AddressesState } from '../addresses';
 import type { GroupsState } from '../groups';
 import { groupThunk } from '../groups';

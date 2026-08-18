@@ -2,7 +2,6 @@ import type { ReactNode } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { useIsSentinelUser } from '@proton/account/recovery/sentinelHooks';
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
 import { DashboardCard, DashboardCardContent } from '@proton/atoms/DashboardCard/DashboardCard';
@@ -20,6 +19,7 @@ import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { DelegatedAccessStateEnum } from '@proton/shared/lib/interfaces/DelegatedAccess';
 import isTruthy from '@proton/utils/isTruthy';
 
+import { useIsSentinelUser } from '../../../recovery/sentinelHooks';
 import { getFormattedAccessibleAtDate } from '../../emergencyContact/date';
 import { ContactCell } from '../../shared/ContactCell';
 import {

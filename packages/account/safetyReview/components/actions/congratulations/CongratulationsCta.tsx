@@ -1,11 +1,12 @@
 import { c } from 'ttag';
 
-import { SafetyReviewCtaPortal } from '@proton/account/safetyReview/components/SafetyReviewCtaPortal';
-import { getBackCopy } from '@proton/account/safetyReview/components/getSafetyReviewBackLink';
-import type { SafetyReviewAllProps } from '@proton/account/safetyReview/components/interface';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import AppLink from '@proton/components/components/link/AppLink';
+
+import { SafetyReviewCtaPortal } from '../../SafetyReviewCtaPortal';
+import { getBackCopy } from '../../getSafetyReviewBackLink';
+import type { SafetyReviewAllProps } from '../../interface';
 
 interface Props extends SafetyReviewAllProps {}
 export const PositiveCongratulationsCta = ({

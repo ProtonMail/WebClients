@@ -2,11 +2,6 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { updateRecoveryEmailValue } from '@proton/account/recovery/accountRecoveryActions';
-import { SafetyReviewCta } from '@proton/account/safetyReview/components/SafetyReviewCta';
-import { SafetyReviewCardHeader } from '@proton/account/safetyReview/components/cards/SafetyReviewCardHeader';
-import type { SafetyReviewAllProps } from '@proton/account/safetyReview/components/interface';
-import type { ExtractRecoveryActionItem } from '@proton/account/safetyReview/recoveryState/recoveryState.ts';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
@@ -15,8 +10,13 @@ import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import noop from '@proton/utils/noop';
 
+import { updateRecoveryEmailValue } from '../../../../../recovery/accountRecoveryActions';
+import type { ExtractRecoveryActionItem } from '../../../../recoveryState/recoveryState';
+import { SafetyReviewCta } from '../../../SafetyReviewCta';
 import darkRecoveryEmailIllustration from '../../../assets/recovery-email-dark.svg';
 import recoveryEmailIllustration from '../../../assets/recovery-email.svg';
+import { SafetyReviewCardHeader } from '../../../cards/SafetyReviewCardHeader';
+import type { SafetyReviewAllProps } from '../../../interface';
 
 type Props = SafetyReviewAllProps & {
     recoveryItem: ExtractRecoveryActionItem<'verifyRecoveryEmail'>;

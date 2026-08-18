@@ -1,13 +1,14 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import { selectAddresses } from '@proton/account/addresses';
-import { selectIsDataRecoveryAvailable } from '@proton/account/recovery/dataRecovery';
-import { selectMnemonicData } from '@proton/account/recovery/mnemonic';
-import { selectRecoveryFileData } from '@proton/account/recovery/recoveryFile';
-import { selectLegacySentinel } from '@proton/account/recovery/sentinelSelectors';
-import { selectUser } from '@proton/account/user';
-import { selectUserSettings } from '@proton/account/userSettings';
 import { getLikelyHasKeysToReactivate } from '@proton/shared/lib/keys/getInactiveKeys';
+
+import { selectAddresses } from '../addresses';
+import { selectUser } from '../user';
+import { selectUserSettings } from '../userSettings';
+import { selectIsDataRecoveryAvailable } from './dataRecovery';
+import { selectMnemonicData } from './mnemonic';
+import { selectRecoveryFileData } from './recoveryFile';
+import { selectLegacySentinel } from './sentinelSelectors';
 
 export type RecoveryStatus = 'complete' | 'intermediate' | 'incomplete';
 

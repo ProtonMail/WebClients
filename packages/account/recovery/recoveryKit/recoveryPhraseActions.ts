@@ -1,15 +1,15 @@
 import type { UnknownAction } from '@reduxjs/toolkit';
 import type { ThunkAction } from 'redux-thunk';
 
-import type { AddressesState } from '@proton/account/addresses';
-import { selectMnemonicData } from '@proton/account/recovery/mnemonic';
-import { type UserState, userThunk } from '@proton/account/user';
-import { type UserKeysState, userKeysThunk } from '@proton/account/userKeys';
-import type { UserSettingsState } from '@proton/account/userSettings';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { reactivateMnemonicPhrase, updateMnemonicPhrase } from '@proton/shared/lib/api/settingsMnemonic';
 
+import type { AddressesState } from '../../addresses';
+import { type UserState, userThunk } from '../../user';
+import { type UserKeysState, userKeysThunk } from '../../userKeys';
+import type { UserSettingsState } from '../../userSettings';
+import { selectMnemonicData } from '../mnemonic';
 import { type DeferredMnemonicData, generateDeferredMnemonicData } from './generateDeferredMnemonicData';
 
 type RequiredState = UserState & UserSettingsState & UserKeysState & AddressesState;

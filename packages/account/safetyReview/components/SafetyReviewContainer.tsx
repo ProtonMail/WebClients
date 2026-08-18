@@ -2,7 +2,6 @@ import { useEffect, useLayoutEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { selectRecoveryState } from '@proton/account/safetyReview/recoveryState/recoveryState';
 import { LittleShield } from '@proton/components/containers/recovery/RecoveryScoreBanner/LittleShield';
 import { RecoveryScoreBar } from '@proton/components/containers/recovery/RecoveryScoreBanner/RecoveryScoreBar';
 import {
@@ -16,6 +15,7 @@ import { lockSensitiveSettings } from '@proton/shared/lib/api/user';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
+import { selectRecoveryState } from '../recoveryState/recoveryState';
 import { useSafetyReviewCtrTelemetry } from '../telemetry/useSafetyReviewCtrTelemetry';
 import { useSafetyReviewScoreDiffTelemetry } from '../telemetry/useSafetyReviewScoreDiffTelemetry';
 import { useSafetyReviewPageLoadTelemetry } from '../telemetry/useSafetyReviewTelemetry';
