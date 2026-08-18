@@ -607,6 +607,9 @@
       "Join album": [
         "Alăturare la album"
       ],
+      "Keep going": [
+        "Continuă"
+      ],
       "Keep my subscription": [
         "Îmi păstrez abonamentul"
       ],
@@ -1083,6 +1086,9 @@
       ],
       "Stop": [
         "Stop\n"
+      ],
+      "Stop here": [
+        "Oprește aici"
       ],
       "Stop sharing": [
         "Oprire partajare"
@@ -1594,7 +1600,7 @@
     },
     "BF2025: Deal details": {
       "2 TB data storage": [
-        "2 TiB spațiu de stocare"
+        "2 TiB spațiu total"
       ],
       "3 TB data storage": [
         "3 TiB spațiu de stocare"
@@ -3547,6 +3553,9 @@
       "Could not find an available name": [
         "Nu s-a găsit un nume disponibil."
       ],
+      "Could not grant access to the organization key": [
+        "Nu s-a putut acorda acces la cheia organizației."
+      ],
       "Could not load sharing details": [
         "Nu s-au putut încărca detaliile de partajare."
       ],
@@ -5358,6 +5367,9 @@
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "Fișierele ${ DOCS_APP_NAME } și ${ SHEETS_APP_NAME } nu pot fi descărcate direct și nu vor fi incluse în această descărcare. Puteți descărca celelalte fișiere făcând clic pe „Continuare descărcare”."
       ],
+      "${ DRIVE_APP_NAME } could not decrypt the local search index. Rebuild the index to restore search.": [
+        "${ DRIVE_APP_NAME } nu a putut decripta indexul de căutare locală. Reconstruiți indexul pentru a restabili căutarea."
+      ],
       "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
         "${ DRIVE_APP_NAME } a detectat că indexul de căutare locală este corupt și nu mai poate fi utilizat. Reconstruiți indexul pentru a restabili căutarea."
       ],
@@ -6097,6 +6109,9 @@
       "How does encrypted search work?": [
         "Cum funcționează căutarea criptată?"
       ],
+      "I have not finished this one yet.": [
+        "Pe acesta încă nu l-am terminat încă."
+      ],
       "I hereby confirm, in good faith, that the information and statements contained in the report are correct and complete.": [
         "Prin prezenta confirm, cu bună-credință, că informațiile și declarațiile conținute în raport sunt corecte și complete."
       ],
@@ -6687,6 +6702,9 @@
       "Search cannot be enabled in this browser": [
         "Căutarea nu poate fi activată în acest navigator."
       ],
+      "Search data can't be read": [
+        "Datele de căutare nu pot fi citite"
+      ],
       "Search data is corrupted": [
         "Datele de căutare sunt corupte."
       ],
@@ -6912,6 +6930,9 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Aceasta este acum ${ defaultEmailAddress } pentru trimiterea de mesaje noi."
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Asta necesită mulți pași. Ar trebui să continui?"
       ],
       "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
         "Acest articol nu este salvat în librăria de fotografii. Dacă îl eliminați din acest album, veți pierde definitiv accesul la el.",
@@ -7613,6 +7634,9 @@
       ],
       "Account holder": [
         "Titular cont"
+      ],
+      "Account holder name": [
+        "Nume titular cont"
       ],
       "Active": [
         "Activ"
@@ -9038,6 +9062,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Asistent de scriere ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Asistentul de scriere ${ LUMO_SHORT_APP_NAME } cu acces extins"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Asistentul de scriere ${ LUMO_SHORT_APP_NAME } cu acces limitat"
       ],
       "${ n } calendar": [
         "${ n } calendar",
@@ -10952,6 +10982,9 @@
       "Invalid security code": [
         "Cod de securitate nevalid"
       ],
+      "Please enter the account holder name": [
+        "Introduceți numele titularului contului"
+      ],
       "Something went wrong. Please try again later.": [
         "A apărut o problemă. Reîncercați mai târziu."
       ],
@@ -11521,8 +11554,8 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Proprietar"
+      "Organization Admin": [
+        "Administrator organizație"
       ],
       "Security Admin": [
         "Administrator securitate"
@@ -13794,6 +13827,9 @@
       ],
       "Stay for 50% off your next month": [
         "Rămâneți cu o reducere de 50% luna următoare"
+      ],
+      "Still working on it": [
+        "Încă lucrez la asta"
       ],
       "Stop sharing": [
         "Oprire partajare"
