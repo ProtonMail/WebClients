@@ -83,6 +83,36 @@ export const hasESDB = async (userID: string) => {
 };
 
 /**
+ * `detectStorageCapabilities()` races a real `indexedDB.databases()` enumeration against a fixed
+ * timeout; that enumeration gets slower as this DB accumulates data and connections cycle through
+ * it over a long indexing run, so it increasingly loses the race under sustained load and wrongly
+ * reports storage as inaccessible. Browser capability doesn't flip-flop within a session, so a
+ * successful check is cached for the session instead of re-probing on every single openESDB()
+ * call (which happens many times per indexing batch). A failed check is not cached, so we keep
+ * retrying in case it was itself a fluke.
+ */
+let cachedStorageCapabilities: Promise<{ isAccessible: boolean; hasIndexedDB: boolean }> | undefined;
+
+const getStorageCapabilities = async () => {
+    if (!cachedStorageCapabilities) {
+        cachedStorageCapabilities = detectStorageCapabilities().catch((error) => {
+            // A rejection would otherwise stay cached forever, unlike a resolved !isAccessible
+            // result below - clear it so the next call retries instead of being stuck for good.
+            cachedStorageCapabilities = undefined;
+            throw error;
+        });
+    }
+
+    const capabilities = await cachedStorageCapabilities;
+    if (!capabilities.isAccessible) {
+        // Not cached as a failure: clear it so the next call retries instead of being stuck.
+        cachedStorageCapabilities = undefined;
+    }
+
+    return capabilities;
+};
+
+/**
  * Open an existing IDB for the given user. If the DB hadn't already existed,
  * undefined is returned instead.
  */
@@ -90,7 +120,7 @@ export const openESDB = async (userID: string) => {
     let esDB: IDBPDatabase<EncryptedSearchDB> | undefined;
     try {
         /** Perhaps in Lockdown mode, the browser does not support IndexedDB, so we need to check for that */
-        const { isAccessible, hasIndexedDB } = await detectStorageCapabilities();
+        const { isAccessible, hasIndexedDB } = await getStorageCapabilities();
         if (!isAccessible || !hasIndexedDB) {
             esSentryReport('openESDB: indexedDB not accessible', { isAccessible, hasIndexedDB });
             return;
