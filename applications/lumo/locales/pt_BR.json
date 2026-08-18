@@ -3274,6 +3274,9 @@
       "Favorite": [
         "Favorito"
       ],
+      "Generate my report": [
+        "Gerar meu relatório"
+      ],
       "Go to all projects": [
         "Ir para todos os projetos"
       ],
@@ -3709,11 +3712,17 @@
       "Built-in ${ BRAND_NAME } agent": [
         "Agente integrado da ${ BRAND_NAME }"
       ],
+      "Choose or drop your .zip or conversations.json file. We analyze your ${ PAPER_TRAIL_LIMITS.maxPrompts } most recent prompts.": [
+        "Selecione ou solte seu arquivo .zip, ou conversations.json. Analisamos seus ${ PAPER_TRAIL_LIMITS.maxPrompts } prompts mais recentes."
+      ],
       "Click Settings → Data controls": [
         "Clique em Configurações → Controles de dados"
       ],
       "Click Settings → Privacy": [
         "Clique em Configurações → Privacidade"
+      ],
+      "Click your profile icon in the bottom-left corner of the page": [
+        "Clique no ícone do seu perfil no canto inferior esquerdo da página"
       ],
       "Conversation encrypted": [
         "Conversa criptografada"
@@ -3742,11 +3751,17 @@
       "Discover what Big Tech AI could piece together about you from your chat history — and get a privacy score you can share.": [
         "Descubra o que a IA das Big Techs poderia deduzir sobre você a partir do seu histórico de conversas — e obtenha uma pontuação de privacidade que você pode compartilhar."
       ],
+      "Drag and drop or click to browse": [
+        "Arraste e solte ou clique para navegar"
+      ],
       "Drive files are not available for guest users": [
         "Arquivos do Drive não estão disponíveis para usuários convidados"
       ],
       "Example prompts shown when a conversation begins.": [
         "Prompts de exemplo exibidos quando uma conversa começa."
+      ],
+      "Export your data from ChatGPT or Claude, upload it privately, and we’ll show you what big tech AI has learned about you.": [
+        "Exporte seus dados do ChatGPT ou do Claude, envie-os de forma privada e vamos mostrar o que a IA das grandes empresas de tecnologia aprendeu sobre você."
       ],
       "File \"${ file.name }\" is already in this project": [
         "O arquivo \"${ file.name }\" já está neste projeto"
@@ -3772,6 +3787,9 @@
       "Image": [
         "Imagem"
       ],
+      "In the pop-up window, click Confirm export": [
+        "Na janela pop-up, clique em Confirmar exportação"
+      ],
       "Inferences drawn only from your prompts — grouped by life area.": [
         "Inferências extraídas apenas dos seus prompts — agrupadas por área da vida."
       ],
@@ -3793,6 +3811,9 @@
       "Lockdown Mode is enabled on your device": [
         "Modo de isolamento está ativado no seu dispositivo"
       ],
+      "Look for Export data, then click Export": [
+        "Procure por Exportar dados e, em seguida, clique em Exportar"
+      ],
       "No favorites yet. Star a chat to find it here quickly.": [
         "Ainda não há favoritos. Marque um bate-papo com uma estrela para encontrá-lo rapidamente aqui."
       ],
@@ -3807,6 +3828,9 @@
       ],
       "PASTED": [
         "COLADO"
+      ],
+      "Please upload your AI export before continuing.": [
+        "Envie seu arquivo de exportação de IA antes de continuar."
       ],
       "Processing file...": [
         "Processando arquivo..."
@@ -3825,6 +3849,9 @@
       ],
       "See what Big Tech AI knows about you. Made with ${ LUMO_SHORT_APP_NAME }.": [
         "Veja o que a IA da Big Tech sabe sobre você. Feito com o ${ LUMO_SHORT_APP_NAME }."
+      ],
+      "Sign in to your ChatGPT account on chatgpt.com": [
+        "Inicie sessão na sua conta do ChatGPT em chatgpt.com"
       ],
       "Sign in to your Claude account at claude.ai": [
         "Faça login na sua conta Claude em claude.ai"
@@ -3889,8 +3916,14 @@
       "Your information is zero-access encrypted": [
         "Sua informação é criptografada com acesso zero"
       ],
+      "Your report is being generated privately.": [
+        "Seu relatório está sendo gerado de forma privada."
+      ],
       "Your report is stored unencrypted in this browser only. It never leaves your device and is not sent to ${ LUMO_SHORT_APP_NAME }'s servers.": [
         "Seu relatório é armazenado sem criptografia apenas neste navegador. Ele nunca sai do seu dispositivo e não é enviado para os servidores do ${ LUMO_SHORT_APP_NAME }."
+      ],
+      "You’ll receive your data export as a download link to your email. This may take some time depending on the size of your export, and is not available for Business or Enterprise accounts.": [
+        "Você receberá a exportação dos seus dados por meio de um link para download enviado ao seu e-mail. Isso pode demorar algum tempo, dependendo do tamanho da exportação, e não está disponível para contas Business ou Enterprise."
       ]
     },
     "collider_2025:Inspiration suggestion prompt": {
@@ -4390,6 +4423,9 @@
       "Generating image...": [
         "Gerando imagem..."
       ],
+      "Hide details": [
+        "Ocultar detalhes"
+      ],
       "Last updated: ": [
         "Última atualização: "
       ],
@@ -4476,6 +4512,9 @@
       ],
       "Using a tool": [
         "Usando a ferramenta"
+      ],
+      "View details": [
+        "Ver detalhes"
       ],
       "Worked on an image": [
         "Trabalhou em uma imagem"
@@ -4741,6 +4780,9 @@
       "Review privacy settings": [
         "Revise as configurações de privacidade"
       ],
+      "See what Big Tech AI already knows about you": [
+        "Veja o que a IA das grandes empresas de tecnologia já sabe sobre você"
+      ],
       "See your AI paper trail": [
         "Veja seu rastro de IA"
       ],
@@ -4776,6 +4818,9 @@
       ],
       "Two models, two modes": [
         "Dois modelos, dois modos"
+      ],
+      "Upload your data export": [
+        "Envie sua exportação de dados"
       ],
       "Use AI on your terms": [
         "Use a IA do jeito que você quiser"
@@ -7003,6 +7048,9 @@
       "We use 3-D Secure to protect your payments": [
         "Usamos 3-D Secure para proteger seus pagamentos"
       ],
+      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Vamos redirecioná-lo para o ${ IDEAL_BRAND_NAME } em uma nova guia do navegador para concluir esta transação. Desative qualquer bloqueador de pop-ups que estiver usando."
+      ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Vamos redirecioná-lo para o PayPal em uma nova guia do navegador para concluir esta transação. Desative qualquer bloqueador de pop-ups que estiver usando."
       ],
@@ -7135,6 +7183,9 @@
       ],
       "Account holder": [
         "Titular da conta"
+      ],
+      "Account holder name": [
+        "Nome do titular da conta"
       ],
       "Additional comments": [
         "Comentários adicionais"
@@ -7895,6 +7946,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Assistente de escrita do ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Assistente de escrita da ${ LUMO_SHORT_APP_NAME } com acesso ampliado"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Assistente de escrita da ${ LUMO_SHORT_APP_NAME } com acesso limitado"
       ],
       "${ n } calendar": [
         "${ n } calendário",
@@ -9382,8 +9439,8 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Proprietário"
+      "Organization Admin": [
+        "Administrador da organização"
       ],
       "Security Admin": [
         "Administrador de segurança"
