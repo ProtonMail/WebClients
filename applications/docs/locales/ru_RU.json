@@ -1169,7 +1169,7 @@
         "1 аккаунт пользователя"
       ],
       "200 GB storage: 40x your current plan": [
-        "200 ГБ для хранения: в 40 раз больше вашего текущего тарифа"
+        "Хранилище 200 ГБ: в 40 раз больше вашего текущего тарифа"
       ],
       "6 user accounts": [
         "6 аккаунтов пользователя"
@@ -1193,7 +1193,7 @@
         "Оповещения о надёжности пароля"
       ],
       "Recover previous file versions": [
-        "Восстанавливайте предыдущие версии файлов"
+        "Восстановление предыдущих версий файлов"
       ],
       "Unlimited folders, labels and filters": [
         "Неограниченное количество папок, ярлыков и фильтров"
@@ -1247,43 +1247,43 @@
     },
     "BF2025: Deal details": {
       "2 TB data storage": [
-        "2 ТБ для хранения данных"
+        "Хранилище данных на 2 ТБ"
       ],
       "3 TB data storage": [
-        "3 ТБ для хранения данных"
+        "Хранилище данных на 3 ТБ"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "Получите доступ к 15 000+ серверам в 120+ странах"
+        "Доступ к 15 000+ серверов в 120+ странах"
       ],
       "Access advanced AI models": [
-        "Получите доступ к продвинутым моделям ИИ"
+        "Доступ к продвинутым моделям ИИ"
       ],
       "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Все платные функции ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } и ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Block ads, trackers, and malware": [
-        "Блокируйте рекламу, трекеры и вредоносные программы"
+        "Блокировка рекламы, трекеров и вредоносных программ"
       ],
       "Built-in 2FA authenticator": [
-        "Встроенная функция двухфакторной аутентификации"
+        "Встроенный аутентификатор 2FA"
       ],
       "Connect 10 devices at once": [
-        "Подключите 10 устройств одновременно"
+        "Подключение 10 устройств одновременно"
       ],
       "Full chat history with easy search and favorites": [
-        "Полная история чатов с возможностью быстрого поиска и добавления в избранное"
+        "Полная история чата с удобным поиском и разделом «Избранное»"
       ],
       "Individual accounts for 6 users": [
         "Индивидуальные аккаунты для 6 пользователей"
       ],
       "Individual accounts for you and a partner": [
-        "Индивидуальные аккаунты для вас и партнера"
+        "Индивидуальные аккаунты для вас и вашего партнера"
       ],
       "Stronger protection against cyber threats": [
-        "Усиленная защита от киберугроз"
+        "Более надежная защита от киберугроз"
       ],
       "Unlimited daily chats": [
-        "Неограниченное количество ежедневных чатов"
+        "Безлимитные чаты ежедневно"
       ]
     },
     "BF2025: Tooltip": {
@@ -3128,9 +3128,6 @@
       "Failed to remove older revisions": [
         "Не удалось удалить старые версии"
       ],
-      "Failed to rename document": [
-        "Не удалось переименовать документ"
-      ],
       "Failed to rename document. Please try again later.": [
         "Не удалось переименовать документ. Повторите попытку позже."
       ],
@@ -4758,6 +4755,12 @@
       ],
       "Create a new contact group": [
         "Создать новую группу контактов"
+      ],
+      "Create a secure cloud for ${ memberCount } member": [
+        "Создать безопасное облако для ${ memberCount } участника",
+        "Создать безопасное облако для ${ memberCount } участников",
+        "Создайте безопасное облако для ${ memberCount } участников",
+        "Создайте безопасное облако для ${ memberCount } участников"
       ],
       "Create an end-to-end encrypted document.": [
         "Создайте документ, зашифрованный сквозным методом."
@@ -7819,6 +7822,12 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ n } country": [
+        "${ n } страна",
+        "${ n } страны",
+        "${ n } стран",
+        "${ n } стран"
+      ],
       "Access advanced VPN features": [
         "Получите доступ к расширенным функциям VPN"
       ],
@@ -8940,9 +8949,6 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Владелец"
-      ],
       "Security Admin": [
         "Администратор безопасности"
       ],

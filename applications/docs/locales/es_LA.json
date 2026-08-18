@@ -471,6 +471,9 @@
       "Import from Outlook": [
         "Importar desde Outlook"
       ],
+      "Keep going": [
+        "Continuar"
+      ],
       "Keep my subscription": [
         "Mantener mi suscripción"
       ],
@@ -818,6 +821,9 @@
       ],
       "Stop": [
         "Detener"
+      ],
+      "Stop here": [
+        "Detenerse aquí"
       ],
       "Stop sharing": [
         "Dejar de compartir"
@@ -3073,6 +3079,9 @@
       "Could not find an available name": [
         "No se pudo encontrar un nombre disponible"
       ],
+      "Could not grant access to the organization key": [
+        "No se pudo otorgar acceso a la clave de la organización"
+      ],
       "Could not load sharing details": [
         "No se pudieron cargar los detalles compartidos"
       ],
@@ -3192,6 +3201,9 @@
       "Failed to fetch sharing info": [
         "Error al obtener información para compartir"
       ],
+      "Failed to fetch sharing information": [
+        "Error al obtener la información para compartir"
+      ],
       "Failed to get inviter keys": [
         "Error al obtener las claves de quien invita"
       ],
@@ -3209,9 +3221,6 @@
       ],
       "Failed to remove older revisions": [
         "Ocurrió un error al borrar revisiones anteriores"
-      ],
-      "Failed to rename document": [
-        "Error al cambiar el nombre del documento"
       ],
       "Failed to rename document. Please try again later.": [
         "Error al renombrar el documento. Inténtelo de nuevo más tarde."
@@ -5671,6 +5680,9 @@
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Este es un nombre o un apodo para su organización que verán sus usuarios. Puede cambiarlo en cualquier momento."
       ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Esto implica muchos pasos. ¿Debería continuar?"
+      ],
       "This item already exists in your library": [
         "Este elemento ya existe en su librería"
       ],
@@ -5712,6 +5724,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para luchar contra el spam y el abuso, verifique que es humano."
+      ],
+      "To help troubleshoot the issue, debug information will be uploaded to your Drive and shared securely with the ${ BRAND_NAME } support team. It may include file contents. You can stop sharing at any time, and the shared data is deleted after the review is complete.": [
+        "Para ayudar a solucionar el problema, la información de depuración se subirá a su Drive y se compartirá de forma segura con el equipo de soporte de ${ BRAND_NAME }. Puede incluir el contenido de los archivos. Puede dejar de compartirla en cualquier momento y los datos compartidos se eliminarán una vez finalizada la revisión."
       ],
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "Para ayudarle a recordar su contraseña, le solicitaremos que la ingrese periódicamente. Se reducirá la frecuencia conforme pasa el tiempo."
@@ -6348,6 +6363,9 @@
       ],
       "Include application logs in bug report": [
         "Incluir registros de la aplicación en el informe de errores"
+      ],
+      "Include debug information": [
+        "Incluir información de depuración"
       ],
       "Include document name in notification": [
         "Incluir nombre del documento en notificaciones"
@@ -7261,6 +7279,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Asistente de escritura ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME } con acceso ampliado"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME } con acceso limitado"
       ],
       "${ n } calendar": [
         "${ n } calendario",
@@ -8253,6 +8277,9 @@
       "All items will soon be permanently deleted from trash": [
         "Todos los elementos serán eliminados permanentemente de la papelera"
       ],
+      "Because this document was in a shared folder, only the folder owner can restore it": [
+        "Como este documento estaba en una carpeta compartida, solo el propietario de la carpeta puede restaurarlo"
+      ],
       "Cannot load link": [
         "Error al cargar el enlace"
       ],
@@ -8316,6 +8343,9 @@
       "Failed to restore document": [
         "Error al restaurar el documento"
       ],
+      "Failed to submit report": [
+        "Error al enviar el reporte"
+      ],
       "Failed to trash document": [
         "Error al enviar el documento a la papelera"
       ],
@@ -8352,6 +8382,9 @@
       ],
       "Recent documents updated": [
         "Documentos recientes actualizados"
+      ],
+      "Report submitted successfully": [
+        "Reporte enviado con éxito"
       ],
       "Root folder failed to be loaded": [
         "Error al cargar la carpeta raíz"
@@ -9188,8 +9221,8 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Propietario"
+      "Organization Admin": [
+        "Administrador de la organización"
       ],
       "Security Admin": [
         "Administrador de seguridad"
@@ -10720,6 +10753,9 @@
       "Report a problem": [
         "Reportar un problema"
       ],
+      "Report issue": [
+        "Reportar un problema"
+      ],
       "Request new code": [
         "Solicitar un código nuevo"
       ],
@@ -10803,6 +10839,9 @@
       ],
       "Stay for 50% off your next month": [
         "Quédese y obtenga un 50% de descuento en su próximo mes"
+      ],
+      "Still working on it": [
+        "Todavía trabajando en ello"
       ],
       "Stop sharing": [
         "Dejar de compartir"

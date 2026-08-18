@@ -471,6 +471,9 @@
       "Import from Outlook": [
         "Εισαγωγή από Outlook"
       ],
+      "Keep going": [
+        "Συνεχίστε"
+      ],
       "Keep my subscription": [
         "Διατηρήστε την συνδρομή μου"
       ],
@@ -815,6 +818,9 @@
       ],
       "Stop": [
         "Σταμάτα"
+      ],
+      "Stop here": [
+        "Σταμάτησε εδώ"
       ],
       "Stop sharing": [
         "Διακοπή κοινής χρήσης"
@@ -3070,6 +3076,9 @@
       "Could not find an available name": [
         "Δεν ήταν δυνατή η εύρεση ενός διαθέσιμου ονόματος"
       ],
+      "Could not grant access to the organization key": [
+        "Δεν ήταν δυνατή η παραχώρηση πρόσβασης στο κλειδί οργανισμού"
+      ],
       "Could not load sharing details": [
         "Δεν ήταν δυνατή η φόρτωση των λεπτομερειών κοινής χρήσης"
       ],
@@ -3189,6 +3198,9 @@
       "Failed to fetch sharing info": [
         "Αποτυχία ανάκτησης πληροφοριών κοινοποίησης"
       ],
+      "Failed to fetch sharing information": [
+        "Αποτυχία ανάκτησης πληροφοριών κοινής χρήσης"
+      ],
       "Failed to get inviter keys": [
         "Αποτυχία λήψης κλειδιών προσκλητού"
       ],
@@ -3206,9 +3218,6 @@
       ],
       "Failed to remove older revisions": [
         "Αποτυχία κατάργησης παλαιότερων αναθεωρήσεων"
-      ],
-      "Failed to rename document": [
-        "Αποτυχία μετονομασίας εγγράφου"
       ],
       "Failed to rename document. Please try again later.": [
         "Αποτυχία μετονομασίας εγγράφου. Παρακαλούμε προσπαθήστε ξανά αργότερα."
@@ -5668,6 +5677,9 @@
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Αυτό είναι ένα όνομα ή παρατσούκλι για τον οργανισμό σας, το οποίο θα βλέπουν οι χρήστες σας. Μπορείτε να το αλλάξετε ανά πάσα στιγμή."
       ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Αυτό απαιτεί πολλά βήματα. Να συνεχίσω;"
+      ],
       "This item already exists in your library": [
         "Αυτό το στοιχείο υπάρχει ήδη στη βιβλιοθήκη σας"
       ],
@@ -5709,6 +5721,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Για την καταπολέμηση ενοχλήσεων και καταχρήσεων, παρακαλούμε επαληθεύστε ότι είστε άνθρωπος."
+      ],
+      "To help troubleshoot the issue, debug information will be uploaded to your Drive and shared securely with the ${ BRAND_NAME } support team. It may include file contents. You can stop sharing at any time, and the shared data is deleted after the review is complete.": [
+        "Για την αντιμετώπιση του προβλήματος, οι πληροφορίες εντοπισμού σφαλμάτων θα μεταφορτωθούν στο Drive σας και θα κοινοποιηθούν με ασφάλεια στην ομάδα υποστήριξης του ${ BRAND_NAME }. Ενδέχεται να περιλαμβάνουν το περιεχόμενο του αρχείου. Μπορείτε να διακόψετε την κοινοποίηση ανά πάσα στιγμή και τα κοινοποιημένα δεδομένα διαγράφονται μετά την ολοκλήρωση της αξιολόγησης."
       ],
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "Για να σας βοηθήσουμε να θυμάστε τον κωδικό πρόσβασής σας, θα σας ζητάμε να τον εισάγετε περιοδικά. Με την πάροδο του χρόνου, θα σας ζητάμε λιγότερο."
@@ -6345,6 +6360,9 @@
       ],
       "Include application logs in bug report": [
         "Περιλάβετε τα αρχεία καταγραφής εφαρμογής στην αναφορά σφάλματος"
+      ],
+      "Include debug information": [
+        "Συμπερίληψη πληροφοριών εντοπισμού σφαλμάτων"
       ],
       "Include document name in notification": [
         "Συμπερίληψη ονόματος εγγράφου στην ειδοποίηση"
@@ -7201,6 +7219,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } βοηθός γραφής"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Βοηθός γραφής ${ LUMO_SHORT_APP_NAME } με εκτεταμένη πρόσβαση"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Βοηθός γραφής ${ LUMO_SHORT_APP_NAME } με περιορισμένη πρόσβαση"
       ],
       "${ n } calendar": [
         "${ n } ημερολόγιο",
@@ -8259,6 +8283,9 @@
       "Failed to restore document": [
         "Αποτυχία επαναφοράς εγγράφου"
       ],
+      "Failed to submit report": [
+        "Η υποβολή αναφοράς απέτυχε"
+      ],
       "Failed to trash document": [
         "Αποτυχία διαγραφής εγγράφου"
       ],
@@ -9134,8 +9161,8 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Ιδιοκτήτης"
+      "Organization Admin": [
+        "Διαχειριστής Οργανισμού"
       ],
       "Security Admin": [
         "Διαχειριστής Ασφαλείας"
@@ -10752,6 +10779,9 @@
       ],
       "Stay for 50% off your next month": [
         "Μείνετε με έκπτωση 50% τον επόμενο μήνα"
+      ],
+      "Still working on it": [
+        "Ακόμα δουλεύω πάνω σε αυτό"
       ],
       "Stop sharing": [
         "Διακοπή κοινής χρήσης"
