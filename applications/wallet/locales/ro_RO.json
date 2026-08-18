@@ -2345,6 +2345,9 @@
       "Contact could not be saved": [
         "Contactul nu a putut fi salvat"
       ],
+      "Could not grant access to the organization key": [
+        "Nu s-a putut acorda acces la cheia organizației."
+      ],
       "Domain not available, try again later": [
         "Domeniul nu este disponibil. Reîncercați mai târziu."
       ],
@@ -3355,6 +3358,9 @@
       "Account holder": [
         "Titular cont"
       ],
+      "Account holder name": [
+        "Nume titular cont"
+      ],
       "Additional comments": [
         "Comentarii adiționale"
       ],
@@ -3871,6 +3877,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Asistent de scriere ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Asistentul de scriere ${ LUMO_SHORT_APP_NAME } cu acces extins"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Asistentul de scriere ${ LUMO_SHORT_APP_NAME } cu acces limitat"
       ],
       "${ n } calendar": [
         "${ n } calendar",
@@ -5028,6 +5040,9 @@
       "Invalid security code": [
         "Cod de securitate nevalid"
       ],
+      "Please enter the account holder name": [
+        "Introduceți numele titularului contului"
+      ],
       "Something went wrong. Please try again later.": [
         "A apărut o problemă. Reîncercați mai târziu."
       ],
@@ -5308,8 +5323,8 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Proprietar"
+      "Organization Admin": [
+        "Administrator organizație"
       ],
       "Security Admin": [
         "Administrator securitate"

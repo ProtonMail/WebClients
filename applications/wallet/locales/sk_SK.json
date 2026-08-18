@@ -2362,6 +2362,9 @@
       "Contact could not be saved": [
         "Kontakt sa nepodarilo uložiť"
       ],
+      "Could not grant access to the organization key": [
+        "Nepodarilo sa udeliť prístup ku kľúču organizácie"
+      ],
       "Domain not available, try again later": [
         "Doména nie je dostupná, skúste to znova neskôr"
       ],
@@ -3387,6 +3390,9 @@
       "Account holder": [
         "Vlastník účtu"
       ],
+      "Account holder name": [
+        "Meno majiteľa účtu"
+      ],
       "Additional comments": [
         "Doplňujúce poznámky"
       ],
@@ -3911,6 +3917,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Asistent písania ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME } – asistent písania s rozšíreným prístupom"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME } – asistent písania s obmedzeným prístupom"
       ],
       "${ n } calendar": [
         "${ n } kalendár",
@@ -5104,6 +5116,9 @@
       "Invalid security code": [
         "Neplatný bezpečnostný kód"
       ],
+      "Please enter the account holder name": [
+        "Zadajte meno majiteľa účtu, prosím"
+      ],
       "Something went wrong. Please try again later.": [
         "Niečo sa pokazilo. Skúste to znova neskôr."
       ],
@@ -5385,8 +5400,8 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Vlastník"
+      "Organization Admin": [
+        "Správca organizácie"
       ],
       "Security Admin": [
         "Bezpečnostný správca"

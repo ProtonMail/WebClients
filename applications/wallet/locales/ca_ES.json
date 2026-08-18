@@ -2328,6 +2328,9 @@
       "Contact could not be saved": [
         "El contacte no pot ser desat"
       ],
+      "Could not grant access to the organization key": [
+        "No s'ha pogut concedir accés a la clau de l'organització"
+      ],
       "Domain not available, try again later": [
         "El domini no està disponible, torneu-ho a provar més tard"
       ],
@@ -3322,6 +3325,9 @@
       ],
       "Account holder": [
         "Titular del compte"
+      ],
+      "Account holder name": [
+        "Nom del titular del compte"
       ],
       "Additional comments": [
         "Comentaris addicionals"
@@ -4958,6 +4964,9 @@
       "Invalid security code": [
         "El codi de seguretat no és vàlid"
       ],
+      "Please enter the account holder name": [
+        "Introduïu el nom del titular del compte"
+      ],
       "Something went wrong. Please try again later.": [
         "Alguna cosa ha anat malament. Torneu-ho a provar més tard."
       ],
@@ -5237,8 +5246,8 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Propietari"
+      "Organization Admin": [
+        "Administrador/a de l'organització"
       ],
       "Security Admin": [
         "Administrador/a de seguretat"
