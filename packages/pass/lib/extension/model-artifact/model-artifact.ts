@@ -1,5 +1,5 @@
 import { MODEL_ARTIFACTS_BASE_URL } from '@proton/pass/constants';
-import type { MaybeNull } from '@proton/pass/types';
+import type { Result } from '@proton/pass/types';
 import { escapeRegex } from '@proton/shared/lib/helpers/regex';
 
 const MODEL_ARCH_VALUES = ['lr', 'rf'] as const;
@@ -10,9 +10,10 @@ const MODEL_ID_RE = new RegExp(
     `^(?<year>\\d{4})\\.(?<month>\\d{1,2})\\.(?<pipelineId>\\d+)-(?<arch>${MODEL_ARCH_VALUES.map(escapeRegex).join('|')})$`
 );
 
-export const getModelArch = (modelId: string): MaybeNull<ModelArch> => {
+export const getModelArch = (modelId: string): Result<{ arch: ModelArch }> => {
     const arch = modelId.match(MODEL_ID_RE)?.groups?.arch;
-    return arch && isModelArch(arch) ? arch : null;
+    if (!arch || !isModelArch(arch)) return { ok: false, error: `unrecognized model ID "${modelId}"` };
+    return { ok: true, arch };
 };
 
 export const getModelArtifactURL = (modelId: string): string =>
