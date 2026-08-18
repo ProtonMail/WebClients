@@ -1,9 +1,8 @@
 import { c } from 'ttag';
 
-import { useProductSelectionSubmit } from '@proton/activation/src/components/Modals/ProductSelectionModal/useProductSelectionSubmit';
-import type { EASY_SWITCH_SOURCES, ImportType } from '@proton/activation/src/interface';
-import { ImportProvider } from '@proton/activation/src/interface';
-
+import type { EASY_SWITCH_SOURCES, ImportType } from '../../interface';
+import { ImportProvider } from '../../interface';
+import { useProductSelectionSubmit } from '../Modals/ProductSelectionModal/useProductSelectionSubmit';
 import GoogleButton from './GoogleButton';
 import OutlookButton from './OutlookButton';
 

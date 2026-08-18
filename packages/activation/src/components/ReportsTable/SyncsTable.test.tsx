@@ -3,11 +3,11 @@ import { HttpResponse, http } from 'msw';
 import { setupServer } from 'msw/node';
 
 import { getModelState } from '@proton/account/test';
-import { headers } from '@proton/activation/msw.header';
-import { easySwitchRender } from '@proton/activation/src/tests/render';
 import { ADDRESS_FLAGS, ADDRESS_RECEIVE, ADDRESS_STATUS } from '@proton/shared/lib/constants';
 import type { Address } from '@proton/shared/lib/interfaces';
 
+import { headers } from '../../../msw.header';
+import { easySwitchRender } from '../../tests/render';
 import { SyncsTable } from './SyncsTable';
 
 const server = setupServer();

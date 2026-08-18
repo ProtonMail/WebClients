@@ -1,10 +1,11 @@
 import { c } from 'ttag';
 
-import { getProviderNumber } from '@proton/activation/src/hooks/useOAuthPopup.helpers';
-import type { ImportProvider, OAUTH_PROVIDER } from '@proton/activation/src/interface';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { hasInboxDesktopFeature, invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import { generateProtonWebUID } from '@proton/shared/lib/helpers/uid';
+
+import { getProviderNumber } from '../hooks/useOAuthPopup.helpers';
+import type { ImportProvider, OAUTH_PROVIDER } from '../interface';
 
 const WINDOW_WIDTH = 500;
 const WINDOW_HEIGHT = 600;

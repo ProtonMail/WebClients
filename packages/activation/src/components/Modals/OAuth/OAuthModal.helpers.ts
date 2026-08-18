@@ -1,11 +1,12 @@
+import isTruthy from '@proton/utils/isTruthy';
+
 import {
     O_OAUTH_SCOPE_CALENDAR,
     O_OAUTH_SCOPE_CONTACTS,
     O_OAUTH_SCOPE_DEFAULT,
     O_OAUTH_SCOPE_MAIL,
-} from '@proton/activation/src/constants';
-import { ImportProvider, ImportType } from '@proton/activation/src/interface';
-import isTruthy from '@proton/utils/isTruthy';
+} from '../../../constants';
+import { ImportProvider, ImportType } from '../../../interface';
 
 const getOutlookScopes = (products?: ImportType[]) => {
     const scopes = [...O_OAUTH_SCOPE_DEFAULT];

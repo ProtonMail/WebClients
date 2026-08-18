@@ -2,14 +2,14 @@ import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import { BYOEAddressRow } from '@proton/activation/src/components/ReportsTable/Sync/BYOEAddressRow';
-import { useBYOEAddresses } from '@proton/activation/src/hooks/useBYOEAddresses';
-import { useNonBYOESyncs } from '@proton/activation/src/hooks/useNonBYOESyncs';
-import { loadDashboard } from '@proton/activation/src/logic/actions';
-import { useEasySwitchDispatch } from '@proton/activation/src/logic/store';
 import { Table, TableBody } from '@proton/components';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
+import { useBYOEAddresses } from '../../hooks/useBYOEAddresses';
+import { useNonBYOESyncs } from '../../hooks/useNonBYOESyncs';
+import { loadDashboard } from '../../logic/actions';
+import { useEasySwitchDispatch } from '../../logic/store';
+import { BYOEAddressRow } from './Sync/BYOEAddressRow';
 import SyncRow from './Sync/SyncRow';
 
 export const SyncsTable = () => {

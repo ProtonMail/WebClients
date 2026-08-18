@@ -1,7 +1,6 @@
 import { fireEvent, screen } from '@testing-library/dom';
 
-import { easySwitchRender } from '@proton/activation/src/tests/render';
-
+import { easySwitchRender } from '../../../../../tests/render';
 import StepImporting from './StepImporting';
 
 describe('Step importing basic rendering testing', () => {

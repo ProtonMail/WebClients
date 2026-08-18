@@ -1,14 +1,14 @@
-import type { ApiMailImporterFolder } from '@proton/activation/src/api/api.interface';
-import MailImportFoldersParser from '@proton/activation/src/helpers/MailImportFoldersParser/MailImportFoldersParser';
+import type { Label } from '@proton/shared/lib/interfaces';
+import type { Folder } from '@proton/shared/lib/interfaces/Folder';
+
+import type { ApiMailImporterFolder } from '../../../../api/api.interface';
+import MailImportFoldersParser from '../../../../helpers/MailImportFoldersParser/MailImportFoldersParser';
 import {
     folderWithChildren,
     getRenamedFolders,
     getRenamedLabel,
     labelsWithChildren,
-} from '@proton/activation/src/tests/data/folders';
-import type { Label } from '@proton/shared/lib/interfaces';
-import type { Folder } from '@proton/shared/lib/interfaces/Folder';
-
+} from '../../../../tests/data/folders';
 import { formatItems, renameChildFolders } from './useManageFolders.helpers';
 
 describe('renameChildFolders', () => {

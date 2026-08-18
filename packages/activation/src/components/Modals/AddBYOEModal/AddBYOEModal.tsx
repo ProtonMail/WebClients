@@ -2,13 +2,14 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import SignInWithGoogle from '@proton/activation/src/components/Modals/GmailSyncModal/SignInWithGoogle';
 import { Checkbox, type ModalProps, ModalTwo, ModalTwoHeader } from '@proton/components';
 import { MAIL_APP_NAME, PRODUCT_NAMES } from '@proton/shared/lib/constants';
 import byoeConnectGmail from '@proton/styles/assets/img/illustrations/byoe-connect-gmail.svg';
 import byoeForwarding from '@proton/styles/assets/img/illustrations/byoe-forwarding.svg';
 import byoeProfiling from '@proton/styles/assets/img/illustrations/byoe-profiling.svg';
 import stopHandSign from '@proton/styles/assets/img/illustrations/stop-hand-sign.svg';
+
+import SignInWithGoogle from '../GmailSyncModal/SignInWithGoogle';
 
 import './AddBYOEModal.scss';
 

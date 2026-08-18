@@ -1,12 +1,12 @@
 import { getUnixTime, subMonths, subYears } from 'date-fns';
 
-import type { ApiStartImportParams } from '@proton/activation/src/api/api.interface';
-import { GMAIL_CATEGORIES, MAX_FOLDERS_DEPTH } from '@proton/activation/src/constants';
-import { PROTON_DEFAULT_SEPARATOR } from '@proton/activation/src/helpers/MailImportFoldersParser/MailImportFoldersParser';
-import type { MailImportGmailCategories, MailImportMapping } from '@proton/activation/src/interface';
-import { CustomFieldsBitmap, ImportType, TIME_PERIOD } from '@proton/activation/src/interface';
 import type { RequireSome } from '@proton/shared/lib/interfaces';
 
+import type { ApiStartImportParams } from '../../../../../api/api.interface';
+import { GMAIL_CATEGORIES, MAX_FOLDERS_DEPTH } from '../../../../../constants';
+import { PROTON_DEFAULT_SEPARATOR } from '../../../../../helpers/MailImportFoldersParser/MailImportFoldersParser';
+import type { MailImportGmailCategories, MailImportMapping } from '../../../../../interface';
+import { CustomFieldsBitmap, ImportType, TIME_PERIOD } from '../../../../../interface';
 import type { StepPrepareData } from './useStepPrepareImap';
 
 const generateCustomFieldBitmap = ({

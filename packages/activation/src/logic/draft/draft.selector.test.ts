@@ -1,5 +1,4 @@
-import { ImportProvider, ImportType } from '@proton/activation/src/interface';
-
+import { ImportProvider, ImportType } from '../../interface';
 import type { EasySwitchState } from '../store';
 import { selectDraftModal } from './draft.selector';
 

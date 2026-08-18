@@ -1,12 +1,5 @@
 import { c } from 'ttag';
 
-import { ApiSyncState } from '@proton/activation/src/api/api.interface';
-import useOAuthPopup from '@proton/activation/src/hooks/useOAuthPopup';
-import type { ImportToken, OAuthProps } from '@proton/activation/src/interface';
-import { EASY_SWITCH_FEATURES, EASY_SWITCH_SOURCES, OAUTH_PROVIDER } from '@proton/activation/src/interface';
-import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
-import { SyncTokenStrategy, deleteSyncItem, resumeSyncItem } from '@proton/activation/src/logic/sync/sync.actions';
-import { selectSyncById } from '@proton/activation/src/logic/sync/sync.selectors';
 import { Button } from '@proton/atoms/Button/Button';
 import { Prompt, useApi, useModalState } from '@proton/components';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
@@ -18,6 +11,13 @@ import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 
 import { getTokensByFeature } from '../../../api';
+import { ApiSyncState } from '../../../api/api.interface';
+import useOAuthPopup from '../../../hooks/useOAuthPopup';
+import type { ImportToken, OAuthProps } from '../../../interface';
+import { EASY_SWITCH_FEATURES, EASY_SWITCH_SOURCES, OAUTH_PROVIDER } from '../../../interface';
+import { useEasySwitchDispatch, useEasySwitchSelector } from '../../../logic/store';
+import { SyncTokenStrategy, deleteSyncItem, resumeSyncItem } from '../../../logic/sync/sync.actions';
+import { selectSyncById } from '../../../logic/sync/sync.selectors';
 
 interface Props {
     syncId: string;

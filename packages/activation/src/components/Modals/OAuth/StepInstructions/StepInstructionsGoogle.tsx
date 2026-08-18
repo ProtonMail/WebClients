@@ -1,13 +1,14 @@
 import { c } from 'ttag';
 
-import { displayConfirmLeaveModal } from '@proton/activation/src/logic/draft/imapDraft/imapDraft.actions';
-import { changeOAuthStep, resetOauthDraft } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.actions';
-import { useEasySwitchDispatch } from '@proton/activation/src/logic/store';
 import { Button } from '@proton/atoms/Button/Button';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, VideoInstructions } from '@proton/components';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import oauthInstructionsMp4 from '@proton/styles/assets/videos/easySwitch/oauth-instructions.mp4';
 import oauthInstructionsWebm from '@proton/styles/assets/videos/easySwitch/oauth-instructions.webm';
+
+import { displayConfirmLeaveModal } from '../../../../logic/draft/imapDraft/imapDraft.actions';
+import { changeOAuthStep, resetOauthDraft } from '../../../../logic/draft/oauthDraft/oauthDraft.actions';
+import { useEasySwitchDispatch } from '../../../../logic/store';
 
 interface Props {
     triggerOAuth: () => void;
@@ -54,12 +55,8 @@ const StepInstructionsGoogle = ({ triggerOAuth }: Props) => {
                 <Button shape="outline" onClick={handleBack} data-testid="StepInstruction:back">
                     {c('Action').t`Back`}
                 </Button>
-                <Button
-                    color="norm"
-                    onClick={triggerOAuth}
-                    data-testid="StepInstruction:submit"
-                >
-                    {c('Action') .t`Continue`}
+                <Button color="norm" onClick={triggerOAuth} data-testid="StepInstruction:submit">
+                    {c('Action').t`Continue`}
                 </Button>
             </ModalTwoFooter>
         </ModalTwo>

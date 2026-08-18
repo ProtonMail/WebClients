@@ -1,20 +1,21 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
-import { startEasySwitchSignupImportTask } from '@proton/activation/src/api';
-import useBYOEFeatureStatus from '@proton/activation/src/hooks/useBYOEFeatureStatus';
-import useSetupGmailBYOEAddress from '@proton/activation/src/hooks/useSetupGmailBYOEAddress';
-import type { ImportToken } from '@proton/activation/src/interface';
-import { BYOE_ADDRESS_ERROR, EASY_SWITCH_SOURCES, OAUTH_PROVIDER } from '@proton/activation/src/interface';
 import { findUserAddress, getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
 
-jest.mock('@proton/activation/src/logic/StoreProvider', () => ({
+import { startEasySwitchSignupImportTask } from '../api';
+import type { ImportToken } from '../interface';
+import { BYOE_ADDRESS_ERROR, EASY_SWITCH_SOURCES, OAUTH_PROVIDER } from '../interface';
+import useBYOEFeatureStatus from './useBYOEFeatureStatus';
+import useSetupGmailBYOEAddress from './useSetupGmailBYOEAddress';
+
+jest.mock('../logic/StoreProvider', () => ({
     __esModule: true,
     default: ({ children }: any) => children,
 }));
 
 const mockEasySwitchDispatch = jest.fn();
-jest.mock('@proton/activation/src/logic/store', () => ({
+jest.mock('../logic/store', () => ({
     useEasySwitchDispatch: () => mockEasySwitchDispatch,
     useEasySwitchSelector: jest.fn(() => []),
 }));
@@ -51,7 +52,7 @@ jest.mock('@proton/unleash/useFlag', () => ({
     useFlag: jest.fn(() => false),
 }));
 
-jest.mock('@proton/activation/src/hooks/useBYOEFeatureStatus');
+jest.mock('./useBYOEFeatureStatus');
 const mockUseBYOEFeatureStatus = useBYOEFeatureStatus as jest.MockedFunction<typeof useBYOEFeatureStatus>;
 
 jest.mock('@proton/account/addresses/actions', () => ({
@@ -59,7 +60,7 @@ jest.mock('@proton/account/addresses/actions', () => ({
     convertBYOEAddress: jest.fn(),
 }));
 
-jest.mock('@proton/activation/src/api', () => ({
+jest.mock('../api', () => ({
     startEasySwitchSignupImportTask: jest.fn(),
 }));
 

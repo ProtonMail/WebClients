@@ -4,14 +4,14 @@ import { setupServer } from 'msw/node';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { headers } from '@proton/activation/msw.header';
-import useBYOEAddressesCounts from '@proton/activation/src/hooks/useBYOEAddressesCounts';
-import useBYOEFeatureStatus from '@proton/activation/src/hooks/useBYOEFeatureStatus';
-import { EASY_SWITCH_SOURCES, ImportProvider, ImportType } from '@proton/activation/src/interface';
-import { easySwitchRender } from '@proton/activation/src/tests/render';
 import { useWriteableCalendars } from '@proton/calendar/calendars/hooks';
 import { ADDRESS_FLAGS, APPS, BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
+import { headers } from '../../../../msw.header';
+import useBYOEAddressesCounts from '../../../hooks/useBYOEAddressesCounts';
+import useBYOEFeatureStatus from '../../../hooks/useBYOEFeatureStatus';
+import { EASY_SWITCH_SOURCES, ImportProvider, ImportType } from '../../../interface';
+import { easySwitchRender } from '../../../tests/render';
 import ProviderCard from './ProviderCard';
 
 const defaultUseUser = [
@@ -73,7 +73,7 @@ jest.mock('@proton/mail/store/importerConfig/hooks', () => ({
     ],
 }));
 
-jest.mock('@proton/activation/src/hooks/useBYOEAddressesCounts');
+jest.mock('../../../hooks/useBYOEAddressesCounts');
 const mockUseBYOEAddressesCounts = useBYOEAddressesCounts as jest.MockedFunction<typeof useBYOEAddressesCounts>;
 
 jest.mock('@proton/account/user/hooks');
@@ -113,7 +113,7 @@ const server = setupServer(
 jest.mock('@proton/account/addresses/hooks');
 const mockUseAddresses = useAddresses as jest.MockedFunction<any>;
 
-jest.mock('@proton/activation/src/hooks/useBYOEFeatureStatus');
+jest.mock('../../../hooks/useBYOEFeatureStatus');
 const mockUseBYOEFeatureStatus = useBYOEFeatureStatus as jest.MockedFunction<typeof useBYOEFeatureStatus>;
 
 beforeEach(() => {

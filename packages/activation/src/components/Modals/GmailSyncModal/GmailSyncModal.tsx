@@ -1,22 +1,22 @@
 import { c } from 'ttag';
 
-import AddBYOEModal from '@proton/activation/src/components/Modals/AddBYOEModal/AddBYOEModal';
-import { getBYOEFailNotification, getSyncSuccessNotification } from '@proton/activation/src/constants';
-import useOAuthPopup from '@proton/activation/src/hooks/useOAuthPopup';
-import type { EASY_SWITCH_SOURCES, ImportToken, OAuthProps } from '@proton/activation/src/interface';
-import { EASY_SWITCH_FEATURES, OAUTH_PROVIDER } from '@proton/activation/src/interface';
-import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
+import { Button } from '@proton/atoms/Button/Button';
+import { type ModalProps, ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components';
+
+import { getBYOEFailNotification, getSyncSuccessNotification } from '../../../constants';
+import useOAuthPopup from '../../../hooks/useOAuthPopup';
+import type { EASY_SWITCH_SOURCES, ImportToken, OAuthProps } from '../../../interface';
+import { EASY_SWITCH_FEATURES, OAUTH_PROVIDER } from '../../../interface';
+import { useEasySwitchDispatch, useEasySwitchSelector } from '../../../logic/store';
 import {
     SyncTokenStrategy,
     changeCreateLoadingState,
     createSyncItem,
     createTokenItem,
-} from '@proton/activation/src/logic/sync/sync.actions';
-import type { Sync } from '@proton/activation/src/logic/sync/sync.interface';
-import { selectCreateSyncState } from '@proton/activation/src/logic/sync/sync.selectors';
-import { Button } from '@proton/atoms/Button/Button';
-import { type ModalProps, ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components';
-
+} from '../../../logic/sync/sync.actions';
+import type { Sync } from '../../../logic/sync/sync.interface';
+import { selectCreateSyncState } from '../../../logic/sync/sync.selectors';
+import AddBYOEModal from '../AddBYOEModal/AddBYOEModal';
 import GmailSyncModalAnimation from './GmailSyncModalAnimation';
 import SignInWithGoogle from './SignInWithGoogle';
 

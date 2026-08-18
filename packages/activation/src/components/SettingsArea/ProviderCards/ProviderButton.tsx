@@ -1,11 +1,12 @@
 import { c } from 'ttag';
 
-import { EasySwitchProviderName } from '@proton/activation/src/components/ProviderName/EasySwitchProviderName';
-import { providerMap } from '@proton/activation/src/constants';
-import type { ImportProvider } from '@proton/activation/src/interface';
 import type { ButtonProps } from '@proton/atoms/Button/Button';
 import { Button } from '@proton/atoms/Button/Button';
 import clsx from '@proton/utils/clsx';
+
+import { providerMap } from '../../../constants';
+import type { ImportProvider } from '../../../interface';
+import { EasySwitchProviderName } from '../../ProviderName/EasySwitchProviderName';
 
 interface Props extends ButtonProps {
     provider: ImportProvider.OUTLOOK | ImportProvider.YAHOO | ImportProvider.GOOGLE;

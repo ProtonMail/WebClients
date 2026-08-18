@@ -1,14 +1,15 @@
 import type { ReactNode } from 'react';
 
-import type { ApiImportProvider } from '@proton/activation/src/api/api.interface';
-import { getImportProviderFromApiProvider } from '@proton/activation/src/helpers/getImportProviderFromApiProvider';
-import { ImportProvider, ImportType } from '@proton/activation/src/interface';
 import Logo from '@proton/components/components/logo/Logo';
 import { APPS } from '@proton/shared/lib/constants';
 import contactsLogo from '@proton/styles/assets/img/import/importTypes/contacts.svg';
 import googleLogo from '@proton/styles/assets/img/import/providers/google.svg';
 import outlookLogo from '@proton/styles/assets/img/import/providers/outlook.svg';
 import yahooLogo from '@proton/styles/assets/img/import/providers/yahoo_short.svg';
+
+import type { ApiImportProvider } from '../../api/api.interface';
+import { getImportProviderFromApiProvider } from '../../helpers/getImportProviderFromApiProvider';
+import { ImportProvider, ImportType } from '../../interface';
 
 interface Props {
     provider: ApiImportProvider;

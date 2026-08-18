@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
-import { ImportType } from '@proton/activation/src/interface';
 import { Button } from '@proton/atoms/Button/Button';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 
+import { ImportType } from '../../../../interface';
 import StepProductsRowItem from '../StepProducts/StepProductsRowItem';
 import StepPrepareCalendarSummary from './StepPrepareOAuthCalendarSummary';
 import StepPrepareContactsSummary from './StepPrepareOAuthContactsSummary';
