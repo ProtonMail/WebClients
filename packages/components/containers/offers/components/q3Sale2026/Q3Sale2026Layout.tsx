@@ -61,7 +61,7 @@ export function Q3Sale2026Layout({ offer, currency, onSelectDeal, onCloseModal, 
                 <div className="q3SaleHeaderOverlay" />
                 <div className="q3SaleHeaderContent">
                     <div>
-                        <h1 className="q3SaleTitle">{offerTitle}</h1>
+                        <h1 className="q3SaleTitle font-arizona">{offerTitle}</h1>
                     </div>
                     <div className="flex flex-column">
                         {protonLogoWithDeal}
