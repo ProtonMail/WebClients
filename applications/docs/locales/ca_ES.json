@@ -3079,6 +3079,9 @@
       "Could not find an available name": [
         "No s'ha pogut trobar cap nom disponible"
       ],
+      "Could not grant access to the organization key": [
+        "No s'ha pogut concedir accés a la clau de l'organització"
+      ],
       "Could not load sharing details": [
         "No s'han pogut carregar els detalls de l'acció de compartir."
       ],
@@ -3198,6 +3201,9 @@
       "Failed to fetch sharing info": [
         "No s'ha pogut obtenir la informació de compartició"
       ],
+      "Failed to fetch sharing information": [
+        "No s'ha pogut obtenir la informació de compartir"
+      ],
       "Failed to get inviter keys": [
         "No s'han pogut obtenir les claus de qui convida"
       ],
@@ -3215,9 +3221,6 @@
       ],
       "Failed to remove older revisions": [
         "No s'han pogut esborrar les revisions antigues"
-      ],
-      "Failed to rename document": [
-        "No s'ha pogut canviar el nom del document"
       ],
       "Failed to rename document. Please try again later.": [
         "No s'ha pogut canviar el nom del document. Torneu-ho a provar més tard."
@@ -5677,6 +5680,9 @@
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Aquest és un nom o un sobrenom per a la vostra organització que els usuaris veuran. Podeu canviar-lo en qualsevol moment."
       ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Això està prenent molts passos. Hauria de continuar?"
+      ],
       "This item already exists in your library": [
         "Aquest element ja existeix a la biblioteca"
       ],
@@ -5720,7 +5726,7 @@
         "Per lluitar contra el correu brossa i l'abús, verifiqueu que sou humà."
       ],
       "To help troubleshoot the issue, debug information will be uploaded to your Drive and shared securely with the ${ BRAND_NAME } support team. It may include file contents. You can stop sharing at any time, and the shared data is deleted after the review is complete.": [
-        "Per ajudar a resoldre el problema, es carregarà informació de depuració al vostre Drive i es compartirà de manera segura amb l'equip de suport de ${ BRAND_NAME }. Pot incloure el contingut de fitxers. Podeu deixar de compartir-la en qualsevol moment, i les dades compartides s'eliminaran quan s'hagi completat la revisió."
+        "Per ajudar a resoldre el problema, es carregarà informació de depuració al vostre Drive i es compartirà de manera segura amb l'equip de suport de ${ BRAND_NAME }. Això pot incloure el contingut de fitxers. Podreu deixar de compartir-la en qualsevol moment, i les dades compartides s'eliminaran quan s'hagi completat la revisió."
       ],
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "Per ajudar-vos a recordar la contrasenya, us demanarem que la introduïu periòdicament. Amb el temps, us la demanarem menys sovint."
@@ -6359,7 +6365,7 @@
         "Inclou els registres de l'aplicació a l'informe d'errors"
       ],
       "Include debug information": [
-        "Incloeu informació de depuració"
+        "Incloeu-hi la informació de depuració"
       ],
       "Include document name in notification": [
         "Incloure el nom del document a la notificació"
@@ -9215,8 +9221,8 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Propietari"
+      "Organization Admin": [
+        "Administrador/a de l'organització"
       ],
       "Security Admin": [
         "Administrador/a de seguretat"
@@ -10835,7 +10841,7 @@
         "Quedeu-vos i gaudiu d'un 50% de descompte el mes vinent."
       ],
       "Still working on it": [
-        "S'hi està treballant encara"
+        "Encara hi estem treballant"
       ],
       "Stop sharing": [
         "Deixa de compartir"
