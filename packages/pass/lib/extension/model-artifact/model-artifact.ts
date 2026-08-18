@@ -15,6 +15,5 @@ export const getModelArch = (modelId: string): MaybeNull<ModelArch> => {
     return arch && isModelArch(arch) ? arch : null;
 };
 
-/** Does not validate `modelId` — callers must gate on `getModelArch` returning non-null first. */
 export const getModelArtifactURL = (modelId: string): string =>
     `${MODEL_ARTIFACTS_BASE_URL}/${modelId}/model-artifact.zip`;
