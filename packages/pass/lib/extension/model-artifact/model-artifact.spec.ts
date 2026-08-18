@@ -15,7 +15,9 @@ describe('`getModelArch`', () => {
         ['2026.8.2475-lr', 'lr'],
         ['2026.10.1-rf', 'rf'],
     ])('resolves the arch for "%s"', (modelId, arch) => {
-        expect(getModelArch(modelId)).toBe(arch);
+        const result = getModelArch(modelId);
+        expect(result.ok).toBe(true);
+        if (result.ok) expect(result.arch).toBe(arch);
     });
 
     test.each([
@@ -27,8 +29,10 @@ describe('`getModelArch`', () => {
         '2026.8.-lr',
         '2026.8.2475.1-lr',
         '2026.8.2475-LR',
-    ])('returns null for "%s"', (modelId) => {
-        expect(getModelArch(modelId)).toBeNull();
+    ])('fails for "%s"', (modelId) => {
+        const result = getModelArch(modelId);
+        expect(result.ok).toBe(false);
+        if (!result.ok) expect(result.error).toContain(modelId);
     });
 });
 
