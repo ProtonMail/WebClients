@@ -1,11 +1,11 @@
 import type { ESCiphertext } from '@protontech/crypto/subtle/ad-hoc/encryptedSearch.ts';
-import type { IDBPDatabase } from 'idb';
+import type { IDBPDatabase, StoreNames } from 'idb';
 import { deleteDB, openDB } from 'idb';
 
 import { detectStorageCapabilities } from '@proton/shared/lib/helpers/browser';
 import { SentryCommonInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 
-import { INDEXEDDB_VERSION, STORING_OUTCOME } from '../constants';
+import { ES_DELETE_DB_BLOCKED_TIMEOUT, INDEXEDDB_VERSION, STORING_OUTCOME } from '../constants';
 import { esSentryReport } from '../esHelpers/esReporting';
 import { ciphertextSize, isTimepointSmaller } from '../esHelpers/esUtils';
 import type { EncryptedItemWithInfo, EncryptedMetadataItem, EncryptedSearchDB } from '../models';
@@ -18,15 +18,53 @@ import { getOldestID, getOldestInfo } from './metadataOldest';
 const getDBName = (userID: string) => `ES:${userID}:DB`;
 
 /**
- * Delete the given user's IDB
+ * Delete the given user's IDB. deleteDatabase() never settles while another connection to the
+ * same DB is still open (another tab, or any other in-flight openESDB() call in this same tab),
+ * so this gives up waiting after ES_DELETE_DB_BLOCKED_TIMEOUT instead of hanging forever; the
+ * underlying deletion still completes on its own once every other connection closes.
  */
-export const deleteESDB = async (userID: string) =>
-    deleteDB(getDBName(userID)).catch((e) => traceInitiativeError(SentryCommonInitiatives.ENCRYPTED_SEARCH, e));
+export const deleteESDB = async (userID: string) => {
+    const dbName = getDBName(userID);
+    let wasBlocked = false;
+
+    const deletion = deleteDB(dbName, {
+        blocked: () => {
+            wasBlocked = true;
+            esSentryReport('deleteESDB: blocked by another open connection', { dbName });
+        },
+    }).catch((e) => traceInitiativeError(SentryCommonInitiatives.ENCRYPTED_SEARCH, e));
+
+    const timeout = new Promise<void>((resolve) => setTimeout(resolve, ES_DELETE_DB_BLOCKED_TIMEOUT));
+
+    await Promise.race([deletion, timeout]);
+
+    if (wasBlocked) {
+        esSentryReport('deleteESDB: gave up waiting for blocked delete to complete', { dbName });
+    }
+};
 
 async function cleanupESDB(esDB: IDBPDatabase<EncryptedSearchDB>, userID: string) {
     esDB.close();
     await deleteESDB(userID);
 }
+
+const ALL_OBJECT_STORES: StoreNames<EncryptedSearchDB>[] = [
+    'config',
+    'events',
+    'indexingProgress',
+    'metadata',
+    'content',
+];
+
+/**
+ * A DB can report the current INDEXEDDB_VERSION while missing one or more of its object stores
+ * (e.g. the browser evicts/corrupts the backing storage without resetting the version metadata).
+ * Since `upgrade()` only runs when the browser considers the DB's version older than the one we
+ * request, this state can't be repaired in place: IndexedDB never calls `onupgradeneeded` when
+ * the reported version already matches. The only way out is to detect it here and start over.
+ */
+const getMissingObjectStores = (esDB: IDBPDatabase<EncryptedSearchDB>) =>
+    ALL_OBJECT_STORES.filter((store) => !esDB.objectStoreNames.contains(store));
 
 /**
  * Checks if the given user's IDB exists
@@ -62,6 +100,17 @@ export const openESDB = async (userID: string) => {
         esDB = await openDB<EncryptedSearchDB>(dbName, INDEXEDDB_VERSION, {
             upgrade,
         });
+
+        const missingObjectStores = getMissingObjectStores(esDB);
+        if (missingObjectStores.length) {
+            // Close the connection, consumers already treat a missing config/index key as "not available".
+            // Deleting the database here could cause a zombie database issue where in-memory or in-flight
+            // operations would still be using the old, corrupted DB.
+            esSentryReport('openESDB: corrupted schema detected', { missingObjectStores });
+            esDB.close();
+            return;
+        }
+
         return esDB;
     } catch (error: any) {
         if (esDB) {

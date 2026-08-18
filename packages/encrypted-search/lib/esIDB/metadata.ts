@@ -15,6 +15,10 @@ export const readMetadataItem = async <ESItemMetadata>(userID: string, itemID: s
     if (!esDB) {
         return;
     }
+    if (!esDB.objectStoreNames.contains('metadata')) {
+        esDB.close();
+        return;
+    }
 
     const encryptedMetadataItem = await esDB.get('metadata', itemID);
     esDB.close();
@@ -39,6 +43,10 @@ export const readMetadataBatch = async (
 ): Promise<(EncryptedItemWithInfo | undefined)[] | undefined> => {
     const esDB = await openESDB(userID);
     if (!esDB) {
+        return;
+    }
+    if (!esDB.objectStoreNames.contains('metadata')) {
+        esDB.close();
         return;
     }
 
@@ -68,6 +76,10 @@ export const readSortedIDs = async (userID: string, reverse: boolean, checkpoint
     if (!esDB) {
         return;
     }
+    if (!esDB.objectStoreNames.contains('metadata')) {
+        esDB.close();
+        return;
+    }
 
     let range: IDBKeyRange | undefined;
     if (!!checkpoint) {
@@ -92,6 +104,10 @@ export const readNumMetadata = async (userID: string) => {
     if (!esDB) {
         return;
     }
+    if (!esDB.objectStoreNames.contains('metadata')) {
+        esDB.close();
+        return;
+    }
     const count = await esDB.count('metadata');
     esDB.close();
     return count;
@@ -103,6 +119,10 @@ export const readNumMetadata = async (userID: string) => {
 export const wrappedGetOldestInfo = async (userID: string): Promise<ESItemInfo | undefined> => {
     const esDB = await openESDB(userID);
     if (!esDB) {
+        return;
+    }
+    if (!esDB.objectStoreNames.contains('metadata')) {
+        esDB.close();
         return;
     }
     const oldestInfo = await getOldestInfo(esDB);
@@ -120,6 +140,10 @@ export const executeMetadataOperations = async (
 ) => {
     const esDB = await openESDB(userID);
     if (!esDB) {
+        return;
+    }
+    if (!esDB.objectStoreNames.contains('metadata')) {
+        esDB.close();
         return;
     }
 
