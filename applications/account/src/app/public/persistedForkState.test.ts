@@ -16,6 +16,7 @@ const getForkData = (redirectUrl: URL | null): ProtonForkData => ({
             promptType: 'default',
             promptBypass: 'sso',
             payloadType: 'default',
+            forkChallenge: undefined,
             payloadVersion: 1,
             unauthenticatedReturnUrl: '',
             returnUrl: undefined,
