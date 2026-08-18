@@ -14,6 +14,7 @@ import {
     syncIntent,
     syncSuccess,
 } from '@proton/pass/store/actions';
+import { resolveModelRegistry } from '@proton/pass/store/actions/creators/model-registry';
 import { getOrganizationPauseList, getOrganizationSettings } from '@proton/pass/store/actions/creators/organization';
 import { resolvePrivateDomains } from '@proton/pass/store/actions/creators/private-domains';
 import { resolveWebsiteRules } from '@proton/pass/store/actions/creators/rules';
@@ -63,6 +64,7 @@ function* syncWorker(options: RootSagaOptions) {
         if (EXTENSION_BUILD) {
             yield put(withRevalidate(resolveWebsiteRules.intent()));
             yield put(withRevalidate(resolvePrivateDomains.intent()));
+            yield put(withRevalidate(resolveModelRegistry.intent()));
             yield put(withRevalidate(getOrganizationPauseList.intent()));
         }
 
