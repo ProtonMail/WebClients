@@ -66,6 +66,7 @@ export enum EntitlementName {
     MaxMeetingParticipants = 'max-meeting-participants',
     /** Max members */
     MaxMembers = 'max-members',
+    /** Max Members Subsidiaries */
     MaxMembersSubsidiaries = 'max-members-subsidiaries',
     /** Max number of Revisions that can be kept regardless of age */
     MaxRevisionCount = 'max-revision-count',
@@ -77,6 +78,7 @@ export enum EntitlementName {
     MaxSpace = 'max-space',
     /** Max sub-wallets */
     MaxSubWallets = 'max-sub-wallets',
+    /** Max Subsidiaries */
     MaxSubsidiaries = 'max-subsidiaries',
     /** Max Vault Item Shares */
     MaxVaultItemShares = 'max-vault-item-shares',
