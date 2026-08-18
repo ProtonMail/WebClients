@@ -1,6 +1,5 @@
 import { type History, createBrowserHistory } from 'history';
 
-import type { EventLoop } from '@proton/account/eventLoop';
 import { wrapUnloadError } from '@proton/components/containers/app/errorRefresh';
 import { handleEarlyAccessDesynchronization } from '@proton/components/helpers/earlyAccessDesynchronization';
 import { updateVersionCookie, versionCookieAtLoad } from '@proton/components/helpers/versionCookie';
@@ -77,6 +76,7 @@ import { EVENTS } from '@proton/unleash/proxy';
 import { setStandaloneUnleashClient } from '@proton/unleash/standaloneClient';
 import noop from '@proton/utils/noop';
 
+import type { EventLoop } from '../eventLoop';
 import { getCryptoWorkerOptions } from './cryptoWorkerOptions';
 import { getLastUsedLocalID, setLastUsedLocalID } from './lastUsedLocalID';
 

@@ -1,6 +1,6 @@
-import { bootstrapEvent } from '@proton/account/bootstrap/action';
 import type { SharedStartListening } from '@proton/redux-shared-store-types';
 
+import { bootstrapEvent } from '../bootstrap/action';
 import { registerSessionListener } from './registerSessionListener';
 import type { AccountSessionsState } from './slice';
 import { writeAccountSessions } from './storage';

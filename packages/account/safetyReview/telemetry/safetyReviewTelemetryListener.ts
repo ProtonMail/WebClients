@@ -1,4 +1,3 @@
-import { userThunk } from '@proton/account/user';
 import type { ContactEmailsState } from '@proton/mail/store/contactEmails';
 import type { SharedStartListening } from '@proton/redux-shared-store/listenerInterface';
 
@@ -7,6 +6,7 @@ import { selectEnrichedOutgoingDelegatedAccess } from '../../delegatedAccess/sha
 import { selectAccountRecovery } from '../../recovery/accountRecovery';
 import { selectMnemonicData } from '../../recovery/mnemonic';
 import { selectRecoveryFileData } from '../../recovery/recoveryFile';
+import { userThunk } from '../../user';
 import type { UserSettingsState } from '../../userSettings';
 import { getSafetyReviewRecoveryState } from './getSafetyReviewRecoveryState';
 import { safetyReviewListenerStarted, safetyReviewListenerStopped } from './listenerActions';

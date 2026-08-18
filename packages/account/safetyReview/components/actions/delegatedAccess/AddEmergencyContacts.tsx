@@ -1,12 +1,5 @@
 import { c } from 'ttag';
 
-import ValidationError from '@proton/account/delegatedAccess/ValidationError';
-import { addDelegatedAccessesThunk } from '@proton/account/delegatedAccess/outgoingActions';
-import { AddContactInputs } from '@proton/account/delegatedAccess/shared/outgoing/AddContactInputs';
-import { useAddContactInputs } from '@proton/account/delegatedAccess/shared/outgoing/useAddContactInputs';
-import { SafetyReviewCta } from '@proton/account/safetyReview/components/SafetyReviewCta';
-import type { SafetyReviewAllProps } from '@proton/account/safetyReview/components/interface';
-import type { ExtractRecoveryActionItem } from '@proton/account/safetyReview/recoveryState/recoveryState';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
@@ -16,9 +9,16 @@ import { BRAND_NAME, SECOND } from '@proton/shared/lib/constants';
 import { DelegatedAccessTypeEnum } from '@proton/shared/lib/interfaces/DelegatedAccess';
 import noop from '@proton/utils/noop';
 
+import ValidationError from '../../../../delegatedAccess/ValidationError';
+import { addDelegatedAccessesThunk } from '../../../../delegatedAccess/outgoingActions';
+import { AddContactInputs } from '../../../../delegatedAccess/shared/outgoing/AddContactInputs';
+import { useAddContactInputs } from '../../../../delegatedAccess/shared/outgoing/useAddContactInputs';
+import type { ExtractRecoveryActionItem } from '../../../recoveryState/recoveryState';
+import { SafetyReviewCta } from '../../SafetyReviewCta';
 import darkIllustration from '../../assets/recovery-emergency-contacts-dark.svg';
 import illustration from '../../assets/recovery-emergency-contacts.svg';
 import { SafetyReviewCardHeader } from '../../cards/SafetyReviewCardHeader';
+import type { SafetyReviewAllProps } from '../../interface';
 
 type Props = SafetyReviewAllProps & {
     recoveryItem: ExtractRecoveryActionItem<'addEmergencyContacts'>;

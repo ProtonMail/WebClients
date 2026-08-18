@@ -2,15 +2,15 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { SafetyReviewCta } from '@proton/account/safetyReview/components/SafetyReviewCta';
-import type { SafetyReviewAllProps } from '@proton/account/safetyReview/components/interface';
-import type { ExtractRecoveryActionItem } from '@proton/account/safetyReview/recoveryState/recoveryState';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 
+import type { ExtractRecoveryActionItem } from '../../../../recoveryState/recoveryState';
+import { SafetyReviewCta } from '../../../SafetyReviewCta';
 import darkRecoveryPhoneIllustration from '../../../assets/recovery-phone-dark.svg';
 import recoveryPhoneIllustration from '../../../assets/recovery-phone.svg';
 import { SafetyReviewCardHeader } from '../../../cards/SafetyReviewCardHeader';
+import type { SafetyReviewAllProps } from '../../../interface';
 import { UpdateRecoveryPhone } from './UpdateRecoveryPhone';
 
 type Props = SafetyReviewAllProps & {

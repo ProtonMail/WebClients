@@ -1,10 +1,6 @@
 import type { UnknownAction } from '@reduxjs/toolkit';
 import type { ThunkAction } from 'redux-thunk';
 
-import { type AddressesState, addressesThunk } from '@proton/account/addresses';
-import { type UserState, userThunk } from '@proton/account/user';
-import { type UserKeysState, selectUserKeys, userKeysThunk } from '@proton/account/userKeys';
-import { type UserSettingsState, userSettingsThunk } from '@proton/account/userSettings';
 import type { ProtonThunkArguments, SharedStartListening } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -12,6 +8,11 @@ import { updateDeviceRecovery } from '@proton/shared/lib/api/settingsRecovery';
 import type { Api } from '@proton/shared/lib/interfaces';
 import { syncDeviceRecovery } from '@proton/shared/lib/recoveryFile/deviceRecovery';
 import noop from '@proton/utils/noop';
+
+import { type AddressesState, addressesThunk } from '../addresses';
+import { type UserState, userThunk } from '../user';
+import { type UserKeysState, selectUserKeys, userKeysThunk } from '../userKeys';
+import { type UserSettingsState, userSettingsThunk } from '../userSettings';
 
 type RequiredState = UserState & UserKeysState & UserSettingsState & AddressesState;
 

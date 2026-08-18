@@ -2,13 +2,6 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { RecoveryKitAction } from '@proton/account/recovery/recoveryKit/RecoveryKitAction';
-import type { RecoveryKitContentProps } from '@proton/account/recovery/recoveryKit/RecoveryKitContent';
-import type { DeferredMnemonicData } from '@proton/account/recovery/recoveryKit/generateDeferredMnemonicData';
-import { generateRecoveryKitData, setRecoveryPhrase } from '@proton/account/recovery/recoveryKit/recoveryPhraseActions';
-import { SafetyReviewCta } from '@proton/account/safetyReview/components/SafetyReviewCta';
-import type { SafetyReviewAllProps } from '@proton/account/safetyReview/components/interface';
-import type { ExtractRecoveryActionItem } from '@proton/account/safetyReview/recoveryState/recoveryState';
 import Loader from '@proton/components/components/loader/Loader';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
@@ -18,9 +11,16 @@ import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
+import { RecoveryKitAction } from '../../../../recovery/recoveryKit/RecoveryKitAction';
+import type { RecoveryKitContentProps } from '../../../../recovery/recoveryKit/RecoveryKitContent';
+import type { DeferredMnemonicData } from '../../../../recovery/recoveryKit/generateDeferredMnemonicData';
+import { generateRecoveryKitData, setRecoveryPhrase } from '../../../../recovery/recoveryKit/recoveryPhraseActions';
+import type { ExtractRecoveryActionItem } from '../../../recoveryState/recoveryState';
+import { SafetyReviewCta } from '../../SafetyReviewCta';
 import darkIllustration from '../../assets/recovery-phrase-dark.svg';
 import illustration from '../../assets/recovery-phrase.svg';
 import { SafetyReviewCardHeader } from '../../cards/SafetyReviewCardHeader';
+import type { SafetyReviewAllProps } from '../../interface';
 
 type Props = SafetyReviewAllProps & {
     recoveryItem: ExtractRecoveryActionItem<'recoveryPhrase'>;

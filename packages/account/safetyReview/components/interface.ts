@@ -1,6 +1,5 @@
-import type { SafetyReviewCardsItemProps } from '@proton/account/safetyReview/components/cards/interface';
-
 import type { RecoveryActionItem, RecoveryActionItemsIds, RecoveryStateResult } from '../recoveryState/recoveryState';
+import type { SafetyReviewCardsItemProps } from './cards/interface';
 import type { SafetyReviewBackLink } from './getSafetyReviewBackLink';
 
 export type PartialSafetyReviewContainerState = {

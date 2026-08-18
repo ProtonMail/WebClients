@@ -2,7 +2,6 @@ import { CryptoProxy } from '@protontech/crypto';
 import { computeKeyPassword } from '@protontech/crypto/srp';
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 
-import { type UserState, userThunk } from '@proton/account/user';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { getMnemonicAuthInfo, reauthMnemonic } from '@proton/shared/lib/api/auth';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -11,6 +10,8 @@ import { getMnemonicUserKeys } from '@proton/shared/lib/api/settingsMnemonic';
 import type { InfoResponse } from '@proton/shared/lib/authentication/interface';
 import { mnemonicToBase64RandomBytes } from '@proton/shared/lib/mnemonic';
 import { srpAuth } from '@proton/shared/lib/srp';
+
+import { type UserState, userThunk } from '../user';
 
 const validateMnemonic = async (randomBytes: string, { PrivateKey, Salt }: MnemonicKeyResponse) => {
     try {

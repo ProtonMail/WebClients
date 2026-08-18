@@ -1,9 +1,10 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import { selectRecoveryState } from '@proton/account/safetyReview/recoveryState/recoveryState';
-import { selectUser } from '@proton/account/user';
-import { selectUserSettings } from '@proton/account/userSettings';
 import { getIsSSOVPNOnlyAccount } from '@proton/shared/lib/keys';
+
+import { selectUser } from '../../user';
+import { selectUserSettings } from '../../userSettings';
+import { selectRecoveryState } from '../recoveryState/recoveryState';
 
 export const safetyReviewSelector = createSelector(
     [selectUser, selectUserSettings, selectRecoveryState],

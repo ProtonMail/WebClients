@@ -1,11 +1,11 @@
 import type { Action, ThunkDispatch } from '@reduxjs/toolkit';
 
-import type { KtState } from '@proton/account/kt';
-import type { MemberState } from '@proton/account/member';
-import type { OrganizationKeyState } from '@proton/account/organizationKey';
 import { baseUseDispatch } from '@proton/react-redux-store';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 
+import type { KtState } from '../kt';
+import type { MemberState } from '../member';
+import type { OrganizationKeyState } from '../organizationKey';
 import type { MspSubsidiariesState } from './index';
 
 // Custom dispatch because msp isn't in shared reducers. One day it might be though.
