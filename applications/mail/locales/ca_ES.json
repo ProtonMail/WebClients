@@ -1240,6 +1240,9 @@
       "Run on ${ BRAND_NAME } servers": [
         "Executa als servidors de ${ BRAND_NAME }"
       ],
+      "Run realistic session": [
+        "Inicia una sessió realista"
+      ],
       "Save": [
         "Desa"
       ],
@@ -1532,8 +1535,7 @@
         "De confiança"
       ],
       "Trust key": [
-        "Clau de confiança",
-        "Claus de confiança"
+        "Marca com a clau de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -1699,6 +1701,9 @@
       ],
       "Why not?": [
         "Per què no?"
+      ],
+      "Write ${ count } logs": [
+        "Escriu ${ count } registres"
       ],
       "Write for me": [
         "Escriu per a mi"
@@ -4252,8 +4257,8 @@
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "Els correus nous de ${ senderEmailAddress } no s'entregaran i seran eliminats permanentment."
       ],
-      "No ads. No trackers.": [
-        "Sense anuncis. Sense rastrejadors."
+      "No ads. No trackers": [
+        "Sense anuncis. Sense rastrejadors"
       ],
       "No folders": [
         "No hi ha cap carpeta"
@@ -4869,6 +4874,9 @@
       ],
       "Could not find an available name": [
         "No s'ha pogut trobar cap nom disponible"
+      ],
+      "Could not grant access to the organization key": [
+        "No s'ha pogut concedir accés a la clau de l'organització"
       ],
       "Could not load sharing details": [
         "No s'han pogut carregar els detalls de l'acció de compartir."
@@ -7019,6 +7027,14 @@
         "${ contactsLength } contacte",
         "${ contactsLength } contactes"
       ],
+      "${ count } email": [
+        "${ count } correu",
+        "${ count } correus"
+      ],
+      "${ count } email · ${ names }": [
+        "${ count } correu · ${ names }",
+        "${ count } correus · ${ names }"
+      ],
       "${ count } email → ${ dest }": [
         "${ count } correu electrònic → ${ dest }",
         "${ count } correus electrònics → ${ dest }"
@@ -7410,6 +7426,9 @@
       ],
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Qualsevol subcarpeta també s'eliminarà. No obstant això, els correus emmagatzemats a la carpeta ${ nameDeleted } no s'eliminaran i es poden trobar a la carpeta Tot el correu."
+      ],
+      "Apply labels": [
+        "Aplicar-hi les etiquetes"
       ],
       "Apply to future messages": [
         "S'aplicarà als missatges futurs"
@@ -7875,6 +7894,9 @@
       "Everything in ${ planOrAppName }, plus:": [
         "Tot el que inclou ${ planOrAppName }, i a més:"
       ],
+      "Expand logs": [
+        "Desplega els registres"
+      ],
       "Expand selection": [
         "Amplia la selecció"
       ],
@@ -8090,7 +8112,8 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge"
+        "Insereix una imatge",
+        "Insereix imatges"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -8193,6 +8216,12 @@
       ],
       "Mark all as read": [
         "Marca-ho tot com a llegit"
+      ],
+      "Mark as read": [
+        "Marca com a llegit"
+      ],
+      "Mark as unread": [
+        "Marca com no llegit"
       ],
       "Mastercard SecureCode logo": [
         "Logo de Mastercard SecureCode"
@@ -8352,6 +8381,9 @@
       ],
       "Not connected": [
         "Sense connexió"
+      ],
+      "Not supported by this browser": [
+        "Aquest navegador no ho admet"
       ],
       "Number of dedicated servers in the organization": [
         "Nombre de servidors dedicats a l'organització"
@@ -8773,7 +8805,7 @@
         "Aquest missatge no existeix o ja ha caducat."
       ],
       "Star emails": [
-        "Destaca els correus electrònics"
+        "Destaca correus electrònics"
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Comenceu a compartir-la amb els contactes i utilitzeu-la per als serveis en línia."
@@ -8957,6 +8989,9 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Aquesta és ara la vostra ${ defaultEmailAddress } per enviar missatges nous."
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Això està prenent molts passos. Hauria de continuar?"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Aquest enllaç porta a un lloc web que us podria estar intentant robar la informació, com ara contrasenyes i detalls de targetes de crèdit."
@@ -9176,7 +9211,7 @@
         "Canvis no desats"
       ],
       "Unstar emails": [
-        "Treu de destacats els correus electrònics"
+        "Deixa de destacar correus electrònics"
       ],
       "Unsubscribe": [
         "Anul·leu la subscripció"
@@ -9372,6 +9407,12 @@
       ],
       "Would you like to receive a new verification code?": [
         "Voleu rebre un codi de verificació nou?"
+      ],
+      "Writes ${ REALISTIC_ENTRIES } realistic log lines trickling in over a minute, like an actual session, instead of all at once. Takes about a minute to run. Keep this tab focused: frame measurements pause in the background.": [
+        "Escriu ${ REALISTIC_ENTRIES } línies de registre realistes que van entrant a poc a poc al llarg d'un minut, com en una sessió real, en lloc de fer-ho tot de cop. Triga al voltant d'un minut a executar-se. Mantingueu aquesta pestanya en primer pla: les mesures de fotogrames s'aturen en segon pla."
+      ],
+      "Writes realistic log lines back-to-back, then reads them all back. Shows how write and read/export cost scale with the number of stored entries.": [
+        "Escriu línies de registre realistes una darrere l'altra i després les torna a llegir totes. Mostra com el cost d'escriptura i de lectura/exportació varia segons el nombre d'entrades emmagatzemades."
       ],
       "Writing assistant": [
         "Assistent d'escriptura"
@@ -10023,6 +10064,9 @@
       "Account holder": [
         "Titular del compte"
       ],
+      "Account holder name": [
+        "Nom del titular del compte"
+      ],
       "Actions": [
         "Accions"
       ],
@@ -10127,6 +10171,9 @@
       ],
       "BTC amount": [
         "Import de BTC"
+      ],
+      "Burst write": [
+        "Ràfegues d'escriptura"
       ],
       "Calendar": [
         "Calendari"
@@ -10239,8 +10286,8 @@
       "Date:": [
         "Data:"
       ],
-      "Deals, offers, marketing emails": [
-        "Ofertes, promocions, correus electrònics de màrqueting"
+      "Deals, offers, and marketing emails": [
+        "Promocions, ofertes i correus electrònics de màrqueting"
       ],
       "Delete": [
         "Elimina"
@@ -10277,6 +10324,12 @@
       ],
       "Drive": [
         "Unitat"
+      ],
+      "Dropped frames": [
+        "Fotogrames perduts"
+      ],
+      "Duration": [
+        "Durada"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "per exemple, Amazon, eBay, Etsy"
@@ -10320,8 +10373,14 @@
       "Enable filter": [
         "Habilita el filtre"
       ],
+      "Encrypt": [
+        "Xifratge"
+      ],
       "Encrypt emails": [
         "Xifrar correus electrònics"
+      ],
+      "Entries": [
+        "Entrades"
       ],
       "Exact host matching": [
         "Coincidència exacta d'amfitrió"
@@ -10331,6 +10390,9 @@
       ],
       "Expires": [
         "Expira"
+      ],
+      "Export size": [
+        "Mida d'exportació"
       ],
       "Extended address": [
         "Adreça completa"
@@ -10428,6 +10490,9 @@
       "Include application logs in bug report": [
         "Inclou els registres de l'aplicació a l'informe d'errors"
       ],
+      "IndexedDB store": [
+        "Emmagatzematge de l'IndexedDB"
+      ],
       "Information": [
         "Informació"
       ],
@@ -10472,6 +10537,12 @@
       ],
       "Location": [
         "Ubicació"
+      ],
+      "Log performance": [
+        "Registres de rendiment"
+      ],
+      "Long tasks (≥ 50 ms)": [
+        "Tasques llargues (≥ 50 ms)"
       ],
       "Mail debugging information": [
         "Informació de depuració del correu"
@@ -10662,6 +10733,12 @@
       "Read": [
         "Llegits"
       ],
+      "Read / export": [
+        "Llegeix / Exporta"
+      ],
+      "Realistic session": [
+        "Sessió realista"
+      ],
       "Recipient": [
         "Destinatari"
       ],
@@ -10763,6 +10840,9 @@
       ],
       "Subscription options": [
         "Opcions de subscripció"
+      ],
+      "Sum of write() calls": [
+        "Total de crides a write()"
       ],
       "Sync with system": [
         "Sincronitza amb el sistema"
@@ -10871,6 +10951,15 @@
       ],
       "Without attachment": [
         "Sense adjunt"
+      ],
+      "Write": [
+        "Escriu"
+      ],
+      "Write (whole session)": [
+        "Escriu (tota la sessió)"
+      ],
+      "Write-chain drain after last line": [
+        "Buidatge de la cadena d'escriptura després de l'última línia"
       ],
       "Writing assistant": [
         "Assistent d'escriptura"
@@ -13077,7 +13166,7 @@
         "Recordeu-m'ho més tard"
       ],
       "Yes, don't show again": [
-        "Sí, no m'ho torneu a mostrar"
+        "Sí, no ho torneu a mostrar"
       ]
     },
     "Option group": {
@@ -13379,6 +13468,9 @@
       ],
       "Invalid security code": [
         "El codi de seguretat no és vàlid"
+      ],
+      "Please enter the account holder name": [
+        "Introduïu el nom del titular del compte"
       ],
       "Something went wrong. Please try again later.": [
         "Alguna cosa ha anat malament. Torneu-ho a provar més tard."
@@ -14063,8 +14155,8 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Propietari"
+      "Organization Admin": [
+        "Administrador/a de l'organització"
       ],
       "Security Admin": [
         "Administrador/a de seguretat"
@@ -16007,6 +16099,9 @@
       "Apply gift code": [
         "Aplicar el codi regal"
       ],
+      "Apply labels": [
+        "Aplicar etiquetes"
+      ],
       "Archive all messages?": [
         "Voleu arxivar tots els missatges?"
       ],
@@ -16837,7 +16932,7 @@
         "Ajorna:"
       ],
       "Star emails": [
-        "Destaca els correus electrònics"
+        "Destaca correus electrònics"
       ],
       "Start a new import": [
         "Inicia una nova importació"
@@ -16849,7 +16944,7 @@
         "Quedeu-vos i gaudiu d'un 50% de descompte el mes vinent."
       ],
       "Still working on it": [
-        "S'hi està treballant encara"
+        "Encara hi estem treballant"
       ],
       "Storage capacity warning": [
         "Advertència de capacitat d'emmagatzematge"
@@ -16898,7 +16993,7 @@
         "Autenticació de doble factor"
       ],
       "Unstar emails": [
-        "Treu de destacats els correus electrònics"
+        "Deixa de destacar correus electrònics"
       ],
       "Unsubscribe": [
         "Anul·leu-ne la subscripció"

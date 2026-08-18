@@ -784,6 +784,9 @@
       "Join with ${ MEET_APP_NAME }": [
         "Gå med i ${ MEET_APP_NAME }"
       ],
+      "Keep going": [
+        "Fortsätt"
+      ],
       "Keep inbox as before": [
         "Behåll inkorg som förut"
       ],
@@ -1234,6 +1237,9 @@
       "Run on ${ BRAND_NAME } servers": [
         "Kör på ${ BRAND_NAME }-servrar"
       ],
+      "Run realistic session": [
+        "Kör realistisk session"
+      ],
       "Save": [
         "Spara"
       ],
@@ -1456,6 +1462,9 @@
       "Stop generating result": [
         "Sluta generera resultat"
       ],
+      "Stop here": [
+        "Stoppa här"
+      ],
       "Stop marking as read": [
         "Sluta markera som läst"
       ],
@@ -1523,8 +1532,7 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel",
-        "Lita på nycklar"
+        "Lita på nyckel"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -2346,6 +2354,9 @@
       ],
       "Discover and set up features": [
         "Upptäck och ställ in funktioner"
+      ],
+      "Get 50% offer": [
+        "Få 50 % erbjudande"
       ],
       "Got it": [
         "Jag förstår"
@@ -4233,8 +4244,8 @@
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "Nya e-postmeddelanden från ${ senderEmailAddress } kommer inte att levereras och kommer att tas bort permanent."
       ],
-      "No ads. No trackers.": [
-        "Inga annonser. Inga spårare."
+      "No ads. No trackers": [
+        "Inga annonser. Inga spårare"
       ],
       "No folders": [
         "Inga mappar"
@@ -4836,6 +4847,9 @@
       "Could not find an available name": [
         "Kunde inte hitta ett tillgängligt namn"
       ],
+      "Could not grant access to the organization key": [
+        "Kunde inte bevilja åtkomst till organisationsnyckeln"
+      ],
       "Could not load sharing details": [
         "Kunde inte ladda delningsdetaljer"
       ],
@@ -5079,6 +5093,9 @@
       "No external key retrieved for user is valid for sending": [
         "Ingen extern nyckel hämtad för användaren är giltig för sändning"
       ],
+      "No file data was received. Please try again.": [
+        "Ingen fildata togs emot. Försök igen."
+      ],
       "No valid address found": [
         "Ingen giltig adress hittades"
       ],
@@ -5113,6 +5130,9 @@
       ],
       "Organization key must be activated to create non-private users": [
         "Organisationsnyckeln måste aktiveras för att skapa icke-privata användare"
+      ],
+      "Part of the file appears to be corrupted": [
+        "Del av filen verkar vara skadad"
       ],
       "Password is required": [
         "Lösenord är obligatoriskt"
@@ -5378,6 +5398,9 @@
       "The system is busy at the moment. Please try again in a few minutes.": [
         "Systemet är upptaget just nu. Försök igen om några minuter."
       ],
+      "The uploaded file does not match the original. Please try again.": [
+        "Den uppladdade filen matchar inte originalet. Försök igen."
+      ],
       "The writing assistant cannot proceed with your request. Please try a different prompt.": [
         "Skrivassistenten kan inte fortsätta med din förfrågan. Prova en annan prompt."
       ],
@@ -5408,6 +5431,9 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Detta fält kräver minst ${ minimumLength } tecken."
       ],
+      "This file has no version available to download": [
+        "Denna fil har ingen version tillgänglig att ladda ner"
+      ],
       "This file version could not be uploaded": [
         "Denna filversion kunde inte laddas upp"
       ],
@@ -5431,6 +5457,12 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Detta meddelande kan innehålla några URL-länkar som inte kan öppnas korrekt av din nuvarande webbläsare."
+      ],
+      "Too many server errors, please try again later": [
+        "För många serverfel, försök igen senare"
+      ],
+      "Too many server requests, please try again later": [
+        "För många serverförfrågningar, försök igen senare"
       ],
       "Trusted keys are not valid for sending": [
         "Betrodda nycklar är inte giltiga för att skicka"
@@ -5467,6 +5499,9 @@
       ],
       "Verification keys are not available": [
         "Verifieringsnycklar är inte tillgängliga"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Verifieringsnycklar för ${ signatureType } är inte tillgängliga"
       ],
       "We couldn’t send a verification code using this method.": [
         "Vi kunde inte skicka en verifieringskod med den här metoden."
@@ -7264,6 +7299,9 @@
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Alla undermappar kommer också att tas bort. E-post lagrad i mappen ${ nameDeleted } kommer dock inte att tas bort och kan hittas i mappen ”All e-post”."
       ],
+      "Apply labels": [
+        "Tillämpa etiketter"
+      ],
       "Apply to future messages": [
         "Tillämpa till framtida meddelanden"
       ],
@@ -7728,6 +7766,9 @@
       "Everything in ${ planOrAppName }, plus:": [
         "Allt i ${ planOrAppName }, plus:"
       ],
+      "Expand logs": [
+        "Expandera loggar"
+      ],
       "Expand selection": [
         "Expandera val"
       ],
@@ -7933,7 +7974,8 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild"
+        "Infoga bild",
+        "Infoga bilder"
       ],
       "Insert link": [
         "Infoga länk"
@@ -8025,9 +8067,6 @@
       "Low Priority": [
         "Låg prioritet"
       ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Gör ${ MAIL_APP_NAME } till din standardapplikation för e-post."
-      ],
       "Manage your folders": [
         "Hantera dina mappar"
       ],
@@ -8036,6 +8075,12 @@
       ],
       "Mark all as read": [
         "Markera alla som lästa"
+      ],
+      "Mark as read": [
+        "Markera som läst"
+      ],
+      "Mark as unread": [
+        "Markera som oläst"
       ],
       "Mastercard SecureCode logo": [
         "Logga för Mastercard SecureCode"
@@ -8192,6 +8237,9 @@
       ],
       "Not connected": [
         "Inte ansluten"
+      ],
+      "Not supported by this browser": [
+        "Stöds inte av denna webbläsare"
       ],
       "Number of dedicated servers in the organization": [
         "Antal dedikerade servrar i organisationen"
@@ -8850,6 +8898,9 @@
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Denna unika kod kan användas av webbplatser och ISP:er (internetleverantörer) för att koppla din plats och surfhistorik till din enhet"
       ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "Denna användare kan inte migreras eftersom deras e-postadress inte är tillgänglig på ${ BRAND_NAME }."
+      ],
       "This was shown to you because your email subject line contains password reset keywords.": [
         "Detta visades för dig eftersom ämnesraden i ditt e-postmeddelande innehåller nyckelord för återställning av lösenord."
       ],
@@ -8877,8 +8928,14 @@
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "För att importera händelser, skapa först en kalender i ${ CALENDAR_APP_NAME }. Det är här händelserna kommer att visas efter importen."
       ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "För att migrera denna användare, lägg till och verifiera e-postdomänen under ${ domainNamesLink }"
+      ],
       "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
         "För att migrera denna användare, aktivera deras konto i din ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "För att migrera denna användare, aktivera deras konto under ${ usersAddressesLink }."
       ],
       "To migrate this user, enable their address under ${ usersAddressesLink }.": [
         "För att migrera denna användare, aktivera deras adress under ${ usersAddressesLink }."
@@ -9797,6 +9854,9 @@
       "Account holder": [
         "Kontoinnehavare"
       ],
+      "Account holder name": [
+        "Kontoinnehavarens namn"
+      ],
       "Actions": [
         "Åtgärder"
       ],
@@ -10010,9 +10070,6 @@
       "Date:": [
         "Datum:"
       ],
-      "Deals, offers, marketing emails": [
-        "Erbjudanden, kampanjer, e-postmarknadsföring"
-      ],
       "Delete": [
         "Ta bort"
       ],
@@ -10048,6 +10105,9 @@
       ],
       "Drive": [
         "Drive"
+      ],
+      "Duration": [
+        "Varaktighet"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "t.ex. Amazon, eBay, Etsy"
@@ -10090,6 +10150,9 @@
       ],
       "Enable filter": [
         "Aktivera filter"
+      ],
+      "Encrypt": [
+        "Kryptera"
       ],
       "Encrypt emails": [
         "Kryptera e-post"
@@ -10243,6 +10306,9 @@
       ],
       "Location": [
         "Plats"
+      ],
+      "Long tasks (≥ 50 ms)": [
+        "Långa uppgifter (≥ 50 ms)"
       ],
       "Mail debugging information": [
         "Felsökningsinformation för Mail"
@@ -10432,6 +10498,12 @@
       ],
       "Read": [
         "Läs"
+      ],
+      "Read / export": [
+        "Läs/exportera"
+      ],
+      "Realistic session": [
+        "Realistisk session"
       ],
       "Recipient": [
         "Mottagare"
@@ -10642,6 +10714,9 @@
       ],
       "Without attachment": [
         "Utan bilaga"
+      ],
+      "Write": [
+        "Skriv"
       ],
       "Writing assistant": [
         "Skrivassistent"
@@ -11510,6 +11585,9 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } skrivassistent"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME } skrivassistent med utökad åtkomst"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
         "${ LUMO_SHORT_APP_NAME } skrivassistent med begränsad åtkomst"
@@ -13145,6 +13223,9 @@
       "Invalid security code": [
         "Ogiltig säkerhetskod"
       ],
+      "Please enter the account holder name": [
+        "Ange kontoinnehavarens namn"
+      ],
       "Something went wrong. Please try again later.": [
         "Något gick fel. Försök igen senare."
       ],
@@ -13817,8 +13898,8 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Ägare"
+      "Organization Admin": [
+        "Organisationsadministratör"
       ],
       "Security Admin": [
         "Säkerhetsadministratör"
@@ -15758,6 +15839,9 @@
       "Apply gift code": [
         "Tillämpa presentkod"
       ],
+      "Apply labels": [
+        "Tillämpa etiketter"
+      ],
       "Archive all messages?": [
         "Arkivera alla meddelanden?"
       ],
@@ -16888,6 +16972,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Ladda upp en offentlig nyckel för att aktivera sändning av end-to-end-krypterad e-post till denna e-post"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Användare som har åtkomst till sitt ${ BRAND_NAME }-konto"
       ],
       "Version 6 OpenPGP key": [
         "OpenPGP-nyckel version 6"

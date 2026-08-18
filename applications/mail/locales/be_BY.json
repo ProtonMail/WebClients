@@ -1248,6 +1248,9 @@
       "Run on ${ BRAND_NAME } servers": [
         "Выконваць на серверах ${ BRAND_NAME }"
       ],
+      "Run realistic session": [
+        "Запусціць рэалістычны сеанс"
+      ],
       "Save": [
         "Захаваць"
       ],
@@ -1540,10 +1543,7 @@
         "Давяраць"
       ],
       "Trust key": [
-        "Давяраць ключу",
-        "Давяраць ключам",
-        "Давяраць ключам",
-        "Давяраць ключам"
+        "Давяраць ключу"
       ],
       "Trust public key": [
         "Давяраць адкрытаму ключу"
@@ -1709,6 +1709,9 @@
       ],
       "Why not?": [
         "Чаму не?"
+      ],
+      "Write ${ count } logs": [
+        "Запісаць ${ count } журналы"
       ],
       "Write for me": [
         "Напісаць для мяне"
@@ -4316,7 +4319,7 @@
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "Новыя лісты ад ${ senderEmailAddress } не будуць дастаўляцца, а замест гэтага будуць незваротна выдаляцца."
       ],
-      "No ads. No trackers.": [
+      "No ads. No trackers": [
         "Без рэкламы і праграм сачэння"
       ],
       "No folders": [
@@ -4951,6 +4954,9 @@
       ],
       "Could not find an available name": [
         "Немагчыма знайсці даступную назву"
+      ],
+      "Could not grant access to the organization key": [
+        "Немагчыма даць доступ да ключа арганізацыі"
       ],
       "Could not load sharing details": [
         "Немагчыма загрузіць абагуленыя падрабязнасці"
@@ -8368,7 +8374,10 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс"
+        "Уставіць відарыс",
+        "Уставіць відарысы",
+        "Уставіць відарысы",
+        "Уставіць відарысы"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -8459,9 +8468,6 @@
       ],
       "Low Priority": [
         "Нізкі прыярытэт"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Зрабіць ${ MAIL_APP_NAME } вашай прадвызначанай праграмай электроннай пошты."
       ],
       "Manage your folders": [
         "Кіруйце сваімі папкамі"
@@ -8630,6 +8636,9 @@
       ],
       "Not connected": [
         "Не падключана"
+      ],
+      "Not supported by this browser": [
+        "Не падтрымліваецца гэтым браўзерам"
       ],
       "Number of dedicated servers in the organization": [
         "Колькасць вылучаных сервераў у арганізацыі"
@@ -10388,6 +10397,9 @@
       "Account holder": [
         "Трымальнік уліковага запісу"
       ],
+      "Account holder name": [
+        "Уладальнік уліковага запісу"
+      ],
       "Actions": [
         "Дзеянні"
       ],
@@ -10492,6 +10504,9 @@
       ],
       "BTC amount": [
         "Сума BTC"
+      ],
+      "Burst write": [
+        "Серыйны запіс"
       ],
       "Calendar": [
         "Каляндар"
@@ -10604,8 +10619,8 @@
       "Date:": [
         "Дата:"
       ],
-      "Deals, offers, marketing emails": [
-        "Акцыі, прапановы, маркетынгавыя лісты"
+      "Deals, offers, and marketing emails": [
+        "Акцыі, прапановы і маркетынгавыя лісты"
       ],
       "Delete": [
         "Выдаліць"
@@ -10642,6 +10657,12 @@
       ],
       "Drive": [
         "Дыск"
+      ],
+      "Dropped frames": [
+        "Адсутныя кадры"
+      ],
+      "Duration": [
+        "Працягласць"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "напрыклад, Amazon, eBay, Etsy"
@@ -10685,8 +10706,14 @@
       "Enable filter": [
         "Уключыць фільтр"
       ],
+      "Encrypt": [
+        "Зашыфраваныя"
+      ],
       "Encrypt emails": [
         "Шыфраваць лісты"
+      ],
+      "Entries": [
+        "Запісы"
       ],
       "Exact host matching": [
         "Дакладнае супадзенне з вузлом"
@@ -10696,6 +10723,9 @@
       ],
       "Expires": [
         "Дзейнічае да"
+      ],
+      "Export size": [
+        "Памер экспарту"
       ],
       "Extended address": [
         "Пашыраны адрас"
@@ -10793,6 +10823,9 @@
       "Include application logs in bug report": [
         "Уключыць журналы праграмы ў справаздачу аб памылцы"
       ],
+      "IndexedDB store": [
+        "Захоўваецца IndexedDB"
+      ],
       "Information": [
         "Інфармацыя"
       ],
@@ -10837,6 +10870,12 @@
       ],
       "Location": [
         "Месцазнаходжанне"
+      ],
+      "Log performance": [
+        "Журнал прадукцыйнасці"
+      ],
+      "Long tasks (≥ 50 ms)": [
+        "Доўгія заданні (≥ 50 мс)"
       ],
       "Mail debugging information": [
         "Інфармацыя аб адладцы пошты"
@@ -11027,6 +11066,12 @@
       "Read": [
         "Прачытаныя"
       ],
+      "Read / export": [
+        "Чытанне / экспарт"
+      ],
+      "Realistic session": [
+        "Рэалістычны сеанс"
+      ],
       "Recipient": [
         "Атрымальнік"
       ],
@@ -11128,6 +11173,9 @@
       ],
       "Subscription options": [
         "Параметры падпіскі"
+      ],
+      "Sum of write() calls": [
+        "Усяго выклікаў write()"
       ],
       "Sync with system": [
         "Сінхранізаваць з сістэмай"
@@ -11236,6 +11284,12 @@
       ],
       "Without attachment": [
         "Без далучэння"
+      ],
+      "Write": [
+        "Запіс"
+      ],
+      "Write (whole session)": [
+        "Запіс (усяго сеанса)"
       ],
       "Writing assistant": [
         "Памочнік у напісанні"
@@ -13527,12 +13581,6 @@
       ],
       "No parent folder": [
         "Адсутнічае бацькоўская папка"
-      ],
-      "Remind me later": [
-        "Нагадаць мне пазней"
-      ],
-      "Yes, don't show again": [
-        "Так, больш не паказваць"
       ]
     },
     "Option group": {
@@ -13848,6 +13896,9 @@
       ],
       "Invalid security code": [
         "Памылковы код бяспекі"
+      ],
+      "Please enter the account holder name": [
+        "Увядзіце імя ўладальніка ўліковага запісу"
       ],
       "Something went wrong. Please try again later.": [
         "Нешта пайшло не так. Паспрабуйце яшчэ раз пазней."
@@ -14548,9 +14599,6 @@
       ]
     },
     "Role": {
-      "Owner": [
-        "Уладальнік"
-      ],
       "Security Admin": [
         "Адміністратар бяспекі"
       ],
@@ -17065,9 +17113,6 @@
       ],
       "Invalid verification code": [
         "Памылковы код спраўджання"
-      ],
-      "Keep this banner hidden?": [
-        "Пакінуць гэты банер схаваным?"
       ],
       "Label as": [
         "Пазначыць як"

@@ -1504,10 +1504,7 @@
         "Zaupaj"
       ],
       "Trust key": [
-        "Ključ zaupanja",
-        "Ključa zaupanja",
-        "Ključi zaupanja",
-        "Ključev zaupanja"
+        "Zaupaj ključu"
       ],
       "Trust public key": [
         "Zaupaj javnemu ključu"
@@ -4173,8 +4170,8 @@
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "Nova sporočila pošiljatelja ${ senderEmailAddress } ne bodo dostavljena in bodo dokončno izbrisana."
       ],
-      "No ads. No trackers.": [
-        "Brez oglasov. Brez sledilnikov."
+      "No ads. No trackers": [
+        "Brez oglasov. Brez sledilnikov"
       ],
       "No folders": [
         "Ni map"
@@ -4714,6 +4711,9 @@
       ],
       "Copying item to a non-folder is not allowed": [
         "Kopiranje predmetov v mapo, ki to ni, ni dovoljeno"
+      ],
+      "Could not grant access to the organization key": [
+        "Dostop do ključa organizacije ni bil odobren"
       ],
       "Could not load the image preview: ${ message }": [
         "Predogleda slike ni mogoče naložiti: ${ message }"
@@ -7921,7 +7921,10 @@
         "Zagon …"
       ],
       "Insert image": [
-        "Vstavi sliko"
+        "Vstavi sliko",
+        "Vstavi sliki",
+        "Vstavi slike",
+        "Vstavi slik"
       ],
       "Insert link": [
         "Vstavi povezavo"
@@ -8012,9 +8015,6 @@
       ],
       "Low Priority": [
         "Nizka pomembnost"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Nastavite ${ MAIL_APP_NAME } kot privzeto aplikacijo za e-pošto."
       ],
       "Manage your folders": [
         "Upravljanje map"
@@ -9785,6 +9785,9 @@
       "Account holder": [
         "Imetnik računa"
       ],
+      "Account holder name": [
+        "Ime imetnika računa"
+      ],
       "Actions": [
         "Dejanja"
       ],
@@ -9985,9 +9988,6 @@
       ],
       "Date:": [
         "Datum:"
-      ],
-      "Deals, offers, marketing emails": [
-        "Promocije, ponudbe, marketinška e-pošta"
       ],
       "Delete": [
         "Izbriši"
@@ -12768,12 +12768,6 @@
       ],
       "No parent folder": [
         "Ni nadrejene mape"
-      ],
-      "Remind me later": [
-        "Opomni me kasneje"
-      ],
-      "Yes, don't show again": [
-        "Da, ne prikaži več"
       ]
     },
     "Option group": {
@@ -13035,6 +13029,9 @@
       ],
       "Invalid security code": [
         "Neveljavna varnostna koda"
+      ],
+      "Please enter the account holder name": [
+        "Vnesite ime imetnika računa"
       ],
       "Something went wrong. Please try again later.": [
         "Nekaj ​​je šlo narobe. Poskusite kasneje."
@@ -16042,9 +16039,6 @@
       ],
       "Invalid verification code": [
         "Neveljavna koda za preverjanje"
-      ],
-      "Keep this banner hidden?": [
-        "Ali naj ostane ta pasica skrita?"
       ],
       "Label as": [
         "Označi kot"
