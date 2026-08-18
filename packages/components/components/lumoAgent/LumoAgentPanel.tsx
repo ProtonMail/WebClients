@@ -99,7 +99,7 @@ const LumoAgentPanel = ({
                 return (
                     <ServerToolChip
                         key={item.id}
-                        label={meta?.label ?? item.tool}
+                        label={meta?.label() ?? item.tool}
                         icon={meta?.icon ?? IcGlobe}
                         sources={item.sources}
                         className="lumo-agent-tool-row"

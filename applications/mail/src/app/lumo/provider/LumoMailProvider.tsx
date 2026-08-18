@@ -130,7 +130,9 @@ const LumoMailProvider = ({ children }: Props) => {
     const conversation = useLumoAgent(config);
 
     return (
-        <LumoAgentDrawerContext.Provider value={{ ...conversation, cardRenderers: config.cardRenderers }}>
+        <LumoAgentDrawerContext.Provider
+            value={{ ...conversation, cardRenderers: config.cardRenderers, serverToolMeta: config.serverToolMeta }}
+        >
             <EncryptedSearchStatusMirror into={esStatus} />
             {children}
         </LumoAgentDrawerContext.Provider>
