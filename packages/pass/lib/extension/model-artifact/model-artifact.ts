@@ -83,8 +83,9 @@ export const fetchModelArtifact = async (modelId: string): Promise<Result<{ arti
 
             try {
                 weights[klass] = JSON.parse(await entry.text());
-            } catch {
-                return { ok: false, error: `"${klass}-model.json" is not valid JSON` };
+            } catch (err) {
+                const reason = err instanceof Error ? err.message : 'not valid JSON';
+                return { ok: false, error: `"${klass}-model.json" is not valid JSON: ${reason}` };
             }
         }
     } finally {
