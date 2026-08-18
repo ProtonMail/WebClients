@@ -53,6 +53,8 @@ export const PRIVATE_DOMAINS_URL = 'https://proton.me/download/pass/auto-detecti
 export const WEBSITE_RULES_URL = 'https://proton.me/download/pass/auto-detection/rules.json';
 export const WEBSITE_RULES_EXPERIMENTAL_URL = 'https://proton.me/download/pass/auto-detection/rules.experimental.json';
 
+export const MODEL_REGISTRY_URL = 'https://proton.me/download/pass/model-registry/model-registry.json';
+
 export const ITEM_COUNT_RATING_PROMPT = 10;
 
 export enum AccountPath {
