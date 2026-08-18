@@ -102,4 +102,16 @@ describe('`mergeModelArtifactCache`', () => {
 
         expect(Object.keys(cache)).toEqual(['model-a', 'model-c']);
     });
+
+    test('converges an already-over-limit cache to 2 entries in one merge', () => {
+        const overLimitCache = {
+            'model-a': artifact('model-a'),
+            'model-b': artifact('model-b'),
+            'model-c': artifact('model-c'),
+        };
+
+        const cache = mergeModelArtifactCache(overLimitCache, artifact('model-d'));
+
+        expect(Object.keys(cache)).toEqual(['model-c', 'model-d']);
+    });
 });

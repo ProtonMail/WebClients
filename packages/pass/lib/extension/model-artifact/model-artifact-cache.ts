@@ -45,9 +45,8 @@ export const mergeModelArtifactCache = (cache: ModelArtifactCache, artifact: Mod
     next[artifact.modelId] = artifact;
 
     const modelIds = Object.keys(next);
-    while (modelIds.length > MAX_CACHED_MODEL_ARTIFACTS) {
-        delete next[modelIds.shift()!];
-    }
+    const excess = modelIds.length - MAX_CACHED_MODEL_ARTIFACTS;
+    if (excess > 0) modelIds.slice(0, excess).forEach((id) => delete next[id]);
 
     return next;
 };
