@@ -19,10 +19,10 @@ import type { Meeting } from '@proton/shared/lib/interfaces/Meet';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { CTAModal } from '../../components/AnonymousModal/CTAModal';
-import { CreateRoomModal } from '../../components/CreateRoomModal/CreateRoomModal';
 import { InvalidMeetingLinkModal } from '../../components/InvalidMeetingLinkModal/InvalidMeetingLinkModal';
 import { JoinWithLinkModal } from '../../components/JoinWithLinkModal/JoinWithLinkModal';
-import { ScheduleMeetingModal } from '../../components/ScheduleMeetingModal/ScheduleMeetingModal';
+import { CreateRoomModal } from '../../components/MeetingCreation/CreateRoomModal/CreateRoomModal';
+import { ScheduleMeetingModal } from '../../components/MeetingCreation/ScheduleMeetingModal/ScheduleMeetingModal';
 import { useDependencySetup } from '../../hooks/useDependencySetup';
 import { DashboardContainerBody } from './DashboardContainerBody';
 
