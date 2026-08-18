@@ -1,8 +1,9 @@
 import { render, screen } from '@testing-library/react';
 
-import AddBYOEModal from '@proton/activation/src/components/Modals/AddBYOEModal/AddBYOEModal';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
+
+import AddBYOEModal from './AddBYOEModal';
 
 describe('AddBYOEModal', () => {
     it('should show the import checkbox ticked by default', () => {

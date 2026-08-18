@@ -2,8 +2,6 @@ import { type FC, useState } from 'react';
 
 import { c } from 'ttag';
 
-import type { ApiImporterOrganizationUser } from '@proton/activation/src/api/api.interface';
-import { ApiImporterOrganizationState, type ApiImporterProduct } from '@proton/activation/src/api/api.interface';
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
 import { Card } from '@proton/atoms/Card/Card';
@@ -13,6 +11,8 @@ import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCirc
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { MX_STATE } from '@proton/shared/lib/interfaces';
 
+import type { ApiImporterOrganizationUser } from '../../../api/api.interface';
+import { ApiImporterOrganizationState, type ApiImporterProduct } from '../../../api/api.interface';
 import type { MigrationModel } from '../../types';
 import { useProviderUsers } from '../../useProviderUsers';
 import { isTerminal } from '../MigrationAssistant/ImportStatus';

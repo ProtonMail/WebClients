@@ -1,22 +1,22 @@
 import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
 
-import { createImport, getImport, getMailImportData, resumeImport, startImportTask } from '@proton/activation/src/api';
+import type { ApiResponse } from '@proton/shared/lib/interfaces';
+
+import { createImport, getImport, getMailImportData, resumeImport, startImportTask } from '../../../api';
 import type {
     ApiCreateImporterResponse,
     ApiImportResponse,
     ApiImporterImportResponse,
     ApiStartImportParams,
     ApiStartImportResponse,
-} from '@proton/activation/src/api/api.interface';
-import type { MailImportFields } from '@proton/activation/src/components/Modals/CustomizeMailImportModal/CustomizeMailImportModal.interface';
-import { IMAPS } from '@proton/activation/src/constants';
-import type { MailImportFolder } from '@proton/activation/src/helpers/MailImportFoldersParser/MailImportFoldersParser';
-import MailImportFoldersParser from '@proton/activation/src/helpers/MailImportFoldersParser/MailImportFoldersParser';
-import { AuthenticationMethod, ImportType, OAUTH_PROVIDER } from '@proton/activation/src/interface';
-import type { ImportProvider } from '@proton/activation/src/interface';
-import type { ApiResponse } from '@proton/shared/lib/interfaces';
-
+} from '../../../api/api.interface';
+import type { MailImportFields } from '../../../components/Modals/CustomizeMailImportModal/CustomizeMailImportModal.interface';
+import { IMAPS } from '../../../constants';
+import type { MailImportFolder } from '../../../helpers/MailImportFoldersParser/MailImportFoldersParser';
+import MailImportFoldersParser from '../../../helpers/MailImportFoldersParser/MailImportFoldersParser';
 import { getEasySwitchFeaturesFromProducts } from '../../../hooks/useOAuthPopup.helpers';
+import { AuthenticationMethod, ImportType, OAUTH_PROVIDER } from '../../../interface';
+import type { ImportProvider } from '../../../interface';
 import type { EasySwitchThunkExtra } from '../../store';
 import type { MailImportState } from './imapDraft.interface';
 

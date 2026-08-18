@@ -2,10 +2,6 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import { createToken } from '@proton/activation/src/api';
-import useOAuthPopup from '@proton/activation/src/hooks/useOAuthPopup';
-import { EASY_SWITCH_FEATURES, EASY_SWITCH_SOURCES } from '@proton/activation/src/interface';
-import { type OAuthToken, deleteOAuthTokenThunk, oauthTokenActions } from '@proton/activation/src/logic/oauthToken';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Href } from '@proton/atoms/Href/Href';
@@ -18,6 +14,10 @@ import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
+import { createToken } from '../../../api';
+import useOAuthPopup from '../../../hooks/useOAuthPopup';
+import { EASY_SWITCH_FEATURES, EASY_SWITCH_SOURCES } from '../../../interface';
+import { type OAuthToken, deleteOAuthTokenThunk, oauthTokenActions } from '../../../logic/oauthToken';
 import { useProviderTokens } from '../../useProviderTokens';
 import { CircledLogoWithProton } from '../CircledLogoWithProton';
 import type { StepComponentProps } from './MigrationSetup';

@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
-import { ApiImporterState, ApiReportRollbackState } from '@proton/activation/src/api/api.interface';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
+
+import { ApiImporterState, ApiReportRollbackState } from '../../../api/api.interface';
 
 interface Props {
     status: ApiImporterState;

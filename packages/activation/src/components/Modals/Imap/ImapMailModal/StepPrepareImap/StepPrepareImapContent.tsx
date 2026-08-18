@@ -1,8 +1,5 @@
 import { c } from 'ttag';
 
-import { getTimeUnitLabels } from '@proton/activation/src/constants';
-import { EasyTrans } from '@proton/activation/src/helpers/easyTrans';
-import type { TIME_PERIOD } from '@proton/activation/src/interface';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { LabelStack } from '@proton/components';
 import { IcClock } from '@proton/icons/icons/IcClock';
@@ -12,6 +9,10 @@ import { IcInbox } from '@proton/icons/icons/IcInbox';
 import { IcTag } from '@proton/icons/icons/IcTag';
 import { IcTags } from '@proton/icons/icons/IcTags';
 import type { Label } from '@proton/shared/lib/interfaces';
+
+import { getTimeUnitLabels } from '../../../../../constants';
+import { EasyTrans } from '../../../../../helpers/easyTrans';
+import type { TIME_PERIOD } from '../../../../../interface';
 
 interface Props {
     selectedPeriod: TIME_PERIOD;

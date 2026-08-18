@@ -1,14 +1,14 @@
 import { fireEvent, screen, waitFor } from '@testing-library/dom';
 
 import { getModelState } from '@proton/account/test';
-import { EASY_SWITCH_SOURCES, ImportProvider, ImportType } from '@proton/activation/src/interface';
-import { useDriveSdk } from '@proton/activation/src/logic/driveContext';
-import { easySwitchRender } from '@proton/activation/src/tests/render';
 import { useWriteableCalendars } from '@proton/calendar/calendars/hooks';
 import { ADDRESS_FLAGS } from '@proton/shared/lib/constants';
 import type { Address } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import { EASY_SWITCH_SOURCES, ImportProvider, ImportType } from '../../../interface';
+import { useDriveSdk } from '../../../logic/driveContext';
+import { easySwitchRender } from '../../../tests/render';
 import { ProductSelectionModal } from './ProductSelectionModal';
 
 const mockHandleSubmit = jest.fn();
@@ -18,13 +18,13 @@ jest.mock('@proton/unleash/useFlag', () => ({
     useFlag: jest.fn(),
 }));
 
-jest.mock('@proton/activation/src/logic/driveContext', () => ({
-    ...jest.requireActual('@proton/activation/src/logic/driveContext'),
+jest.mock('../../../logic/driveContext', () => ({
+    ...jest.requireActual('../../../logic/driveContext'),
     useDriveSdk: jest.fn(),
 }));
 
 // Avoid the submit hook's OAuth/config dependencies - not needed to render the product list.
-jest.mock('@proton/activation/src/components/Modals/ProductSelectionModal/useProductSelectionSubmit', () => ({
+jest.mock('./useProductSelectionSubmit', () => ({
     __esModule: true,
     useProductSelectionSubmit: () => ({ handleSubmit: mockHandleSubmit, loadingConfig: false }),
 }));
@@ -36,7 +36,7 @@ jest.mock('@proton/calendar/calendars/hooks', () => ({
 
 // Stub the claim-address modal - it pulls auth/telemetry/silent-api deps we don't need here;
 // we only assert that the product modal opens it.
-jest.mock('@proton/activation/src/components/Modals/BYOEClaimProtonAddressModal/BYOEClaimProtonAddressModal', () => ({
+jest.mock('../BYOEClaimProtonAddressModal/BYOEClaimProtonAddressModal', () => ({
     __esModule: true,
     default: () => <div data-testid="byoeClaimProtonAddressModal" />,
 }));

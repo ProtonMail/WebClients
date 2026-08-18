@@ -2,12 +2,6 @@ import { type FC, useEffect, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import type {
-    ApiImporterOrganizationProductReport,
-    ApiImporterOrganizationReport,
-    ApiImporterOrganizationUser,
-    ApiImporterProduct,
-} from '@proton/activation/src/api/api.interface';
 import { Button } from '@proton/atoms/Button/Button';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
@@ -17,6 +11,12 @@ import type { ModalStateProps } from '@proton/components/components/modalTwo/use
 import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 
+import type {
+    ApiImporterOrganizationProductReport,
+    ApiImporterOrganizationReport,
+    ApiImporterOrganizationUser,
+    ApiImporterProduct,
+} from '../../../api/api.interface';
 import type { CreateMigrationBatchError } from '../../thunk';
 
 export type UserWithExtendedErrors = ApiImporterOrganizationUser & { transferErrors: CreateMigrationBatchError[] };

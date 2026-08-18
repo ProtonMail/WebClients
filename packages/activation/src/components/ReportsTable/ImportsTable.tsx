@@ -2,14 +2,14 @@ import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import { loadDashboard } from '@proton/activation/src/logic/actions';
-import { selectActiveImporterIdsByDate } from '@proton/activation/src/logic/importers/importers.selectors';
-import { selectReportSummaryIdsByDate } from '@proton/activation/src/logic/reports/reports.selectors';
-import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
-import { useImporterOrganizations } from '@proton/activation/src/oles/useImporterOrganizations';
 import { Table, TableBody } from '@proton/components';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
+import { loadDashboard } from '../../logic/actions';
+import { selectActiveImporterIdsByDate } from '../../logic/importers/importers.selectors';
+import { selectReportSummaryIdsByDate } from '../../logic/reports/reports.selectors';
+import { useEasySwitchDispatch, useEasySwitchSelector } from '../../logic/store';
+import { useImporterOrganizations } from '../../oles/useImporterOrganizations';
 import ImporterRow from './Importers/ImporterRow';
 import OrganizationImportRow from './Organization/OrganizationImportRow';
 import ReportRow from './Reports/ReportRow';

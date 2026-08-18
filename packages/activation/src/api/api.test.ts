@@ -1,5 +1,4 @@
-import { ImportType } from '@proton/activation/src/interface';
-
+import { ImportType } from '../interface';
 import { deleteImportReport, getDriveImportData } from './api';
 
 describe('activation api route builders', () => {

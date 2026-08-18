@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
-import { ApiSyncState } from '@proton/activation/src/api/api.interface';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
+
+import { ApiSyncState } from '../../../api/api.interface';
 
 interface Props {
     state: ApiSyncState;

@@ -1,7 +1,8 @@
 import { useAddresses } from '@proton/account/addresses/hooks';
-import { useEasySwitchSelector } from '@proton/activation/src/logic/store';
-import { getAllSync } from '@proton/activation/src/logic/sync/sync.selectors';
 import { getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
+
+import { useEasySwitchSelector } from '../logic/store';
+import { getAllSync } from '../logic/sync/sync.selectors';
 
 export const useNonBYOESyncs = () => {
     const [addresses = []] = useAddresses();

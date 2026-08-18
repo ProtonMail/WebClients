@@ -1,8 +1,7 @@
 import { screen } from '@testing-library/dom';
 
-import { ApiImporterError, ApiImporterState } from '@proton/activation/src/api/api.interface';
-import { easySwitchRender } from '@proton/activation/src/tests/render';
-
+import { ApiImporterError, ApiImporterState } from '../../../api/api.interface';
+import { easySwitchRender } from '../../../tests/render';
 import ImporterRowStatus from './ImporterRowStatus';
 
 describe('ReportRowStatus', () => {

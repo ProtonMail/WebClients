@@ -1,9 +1,9 @@
 import type { Action, Draft } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
 
-import { ImportProvider, ImportType } from '@proton/activation/src/interface';
 import type { RequireSome } from '@proton/shared/lib/interfaces';
 
+import { ImportProvider, ImportType } from '../../../interface';
 import * as actions from './imapDraft.actions';
 import type { ImapDraftState } from './imapDraft.interface';
 

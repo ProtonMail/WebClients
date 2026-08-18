@@ -1,3 +1,6 @@
+import type { EVENT_ACTIONS } from '@proton/shared/lib/constants';
+import type { ApiResponse } from '@proton/shared/lib/interfaces';
+
 import type {
     AuthenticationMethod,
     CalendarImporterPayload,
@@ -6,9 +9,7 @@ import type {
     MailImportDestinationFolder,
     MailImportGmailCategories,
     MailImporterPayload,
-} from '@proton/activation/src/interface';
-import type { EVENT_ACTIONS } from '@proton/shared/lib/constants';
-import type { ApiResponse } from '@proton/shared/lib/interfaces';
+} from '../interface';
 
 /**
  * API EVENTS

@@ -2,14 +2,15 @@ import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { IA_PATHNAME_REGEX } from '@proton/activation/src/constants';
-import { resetOauthDraft } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.actions';
-import { selectOauthImportStateImporterData } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.selector';
-import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { Button } from '@proton/atoms/Button/Button';
 import { ModalTwo, ModalTwoContent, SettingsLink, useModalState, useSettingsLink } from '@proton/components';
 import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
 import importStartedSvg from '@proton/styles/assets/img/onboarding/import-assistant.svg';
+
+import { IA_PATHNAME_REGEX } from '../../../../constants';
+import { resetOauthDraft } from '../../../../logic/draft/oauthDraft/oauthDraft.actions';
+import { selectOauthImportStateImporterData } from '../../../../logic/draft/oauthDraft/oauthDraft.selector';
+import { useEasySwitchDispatch, useEasySwitchSelector } from '../../../../logic/store';
 
 interface Props {
     isCurrentLocationImportPage: boolean;

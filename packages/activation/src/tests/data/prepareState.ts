@@ -4,9 +4,8 @@ import {
     MailImportDestinationFolder,
     MailImportGmailCategories,
     TIME_PERIOD,
-} from '@proton/activation/src/interface';
-import type { OauthDraftState } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.interface';
-
+} from '../../interface';
+import type { OauthDraftState } from '../../logic/draft/oauthDraft/oauthDraft.interface';
 import { generateMockAddress } from './addresses';
 
 export const prepareState: OauthDraftState = {

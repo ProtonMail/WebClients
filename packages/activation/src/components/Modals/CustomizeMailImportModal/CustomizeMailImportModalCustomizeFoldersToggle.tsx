@@ -1,4 +1,3 @@
-import { EasyTrans } from '@proton/activation/src/helpers/easyTrans';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Label, Row } from '@proton/components';
@@ -6,6 +5,8 @@ import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled';
 import { IcChevronUpFilled } from '@proton/icons/icons/IcChevronUpFilled';
 import { IcFolders } from '@proton/icons/icons/IcFolders';
 import { IcTags } from '@proton/icons/icons/IcTags';
+
+import { EasyTrans } from '../../../helpers/easyTrans';
 
 interface Props {
     isLabelMapping: boolean;

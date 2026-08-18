@@ -2,12 +2,12 @@ import { memo } from 'react';
 
 import { c } from 'ttag';
 
-import type { ReportSummaryID } from '@proton/activation/src/logic/reports/reports.interface';
-import { selectReportById, selectReportSummaryById } from '@proton/activation/src/logic/reports/reports.selectors';
-import { useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { TableCell, TableRow } from '@proton/components';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
+import type { ReportSummaryID } from '../../../logic/reports/reports.interface';
+import { selectReportById, selectReportSummaryById } from '../../../logic/reports/reports.selectors';
+import { useEasySwitchSelector } from '../../../logic/store';
 import ReportsTableCell from '../ReportsTableCell';
 import ReportRowActions from './ReportRowActions';
 import ReportRowStatus from './ReportRowStatus';

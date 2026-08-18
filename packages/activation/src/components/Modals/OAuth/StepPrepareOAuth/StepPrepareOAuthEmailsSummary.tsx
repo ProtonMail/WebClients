@@ -1,11 +1,11 @@
 import { c } from 'ttag';
 
-import { ImportProvider } from '@proton/activation/src/interface';
-import { selectOauthDraftProvider } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.selector';
-import { useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { Button } from '@proton/atoms/Button/Button';
 import { useModalState } from '@proton/components';
 
+import { ImportProvider } from '../../../../interface';
+import { selectOauthDraftProvider } from '../../../../logic/draft/oauthDraft/oauthDraft.selector';
+import { useEasySwitchSelector } from '../../../../logic/store';
 import CustomizeMailImportModal from '../../CustomizeMailImportModal/CustomizeMailImportModal';
 import StepPrepareEmailsSummaryText from './StepPrepareOAuthEmailsSummaryText';
 import useStepPrepareEmailSummary from './hooks/useStepPrepareOAuthEmailSummary';

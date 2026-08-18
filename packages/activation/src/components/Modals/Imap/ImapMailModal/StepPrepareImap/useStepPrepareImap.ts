@@ -3,23 +3,23 @@ import { useMemo, useState } from 'react';
 import cloneDeep from 'lodash/cloneDeep';
 import isDeepEqual from 'lodash/isEqual';
 
-import { GMAIL_CATEGORIES, IMAPS } from '@proton/activation/src/constants';
-import type { MailImportFolder } from '@proton/activation/src/helpers/MailImportFoldersParser/MailImportFoldersParser';
-import { getDefaultTimePeriod } from '@proton/activation/src/helpers/getDefaultTimePeriod';
-import { getMailMappingErrors } from '@proton/activation/src/helpers/getMailMappingErrors';
-import useAvailableAddresses from '@proton/activation/src/hooks/useAvailableAddresses';
-import type { TIME_PERIOD } from '@proton/activation/src/interface';
-import { MailImportDestinationFolder, OAUTH_PROVIDER } from '@proton/activation/src/interface';
+import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
+import type { Address, Label, UserModel } from '@proton/shared/lib/interfaces';
+
+import { GMAIL_CATEGORIES, IMAPS } from '../../../../../constants';
+import type { MailImportFolder } from '../../../../../helpers/MailImportFoldersParser/MailImportFoldersParser';
+import { getDefaultTimePeriod } from '../../../../../helpers/getDefaultTimePeriod';
+import { getMailMappingErrors } from '../../../../../helpers/getMailMappingErrors';
+import useAvailableAddresses from '../../../../../hooks/useAvailableAddresses';
+import type { TIME_PERIOD } from '../../../../../interface';
+import { MailImportDestinationFolder, OAUTH_PROVIDER } from '../../../../../interface';
 import {
     displayConfirmLeaveModal,
     saveImapMailFields,
     startImapMailImport,
-} from '@proton/activation/src/logic/draft/imapDraft/imapDraft.actions';
-import { selectImapDraftMailImport } from '@proton/activation/src/logic/draft/imapDraft/imapDraft.selector';
-import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
-import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
-import type { Address, Label, UserModel } from '@proton/shared/lib/interfaces';
-
+} from '../../../../../logic/draft/imapDraft/imapDraft.actions';
+import { selectImapDraftMailImport } from '../../../../../logic/draft/imapDraft/imapDraft.selector';
+import { useEasySwitchDispatch, useEasySwitchSelector } from '../../../../../logic/store';
 import type { MailImportFields } from '../../../CustomizeMailImportModal/CustomizeMailImportModal.interface';
 import { formatPrepareStepPayload } from './StepPrepareImap.helpers';
 import getDefaultLabel from './useStepPrepareImap.helpers';

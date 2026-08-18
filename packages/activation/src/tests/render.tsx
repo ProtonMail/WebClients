@@ -6,7 +6,6 @@ import { renderHook } from '@testing-library/react-hooks';
 import { createMemoryHistory } from 'history';
 
 import { getModelState } from '@proton/account/test';
-import EasySwitchStoreProvider from '@proton/activation/src/logic/StoreProvider';
 import {
     ApiProvider,
     CacheProvider,
@@ -22,6 +21,7 @@ import { APPS } from '@proton/shared/lib/constants';
 import type { MailSettings, ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
 import { getFeatureFlagsState } from '@proton/testing/lib/features';
 
+import EasySwitchStoreProvider from '../logic/StoreProvider';
 import fakeCache from './fakeCache';
 import { setupStore } from './protonStore';
 
@@ -46,7 +46,7 @@ jest.mock('@proton/components/hooks/useEventManager.ts', () => {
     return result;
 });
 
-jest.mock('@proton/activation/src/hooks/useBYOEFeatureStatus', () => {
+jest.mock('../hooks/useBYOEFeatureStatus', () => {
     return jest.fn(() => [false, false] as const);
 });
 

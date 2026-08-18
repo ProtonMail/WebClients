@@ -3,14 +3,6 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
-import BYOEClaimProtonAddressModal from '@proton/activation/src/components/Modals/BYOEClaimProtonAddressModal/BYOEClaimProtonAddressModal';
-import { ProductCheckbox } from '@proton/activation/src/components/Modals/ProductSelectionModal/ProductCheckbox';
-import { ProductItem } from '@proton/activation/src/components/Modals/ProductSelectionModal/ProductItem';
-import { useProductSelectionSubmit } from '@proton/activation/src/components/Modals/ProductSelectionModal/useProductSelectionSubmit';
-import { EasySwitchProviderName } from '@proton/activation/src/components/ProviderName/EasySwitchProviderName';
-import { BYOE_CLAIM_PROTON_ADDRESS_SOURCE } from '@proton/activation/src/constants';
-import { type EASY_SWITCH_SOURCES, ImportProvider, ImportType } from '@proton/activation/src/interface';
-import { useDriveSdk } from '@proton/activation/src/logic/driveContext';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircledNumber } from '@proton/atoms/CircledNumber/CircledNumber';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
@@ -26,6 +18,15 @@ import { APPS, BRAND_NAME, CALENDAR_APP_NAME } from '@proton/shared/lib/constant
 import { getIsBYOEOnlyAccount } from '@proton/shared/lib/helpers/address';
 import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
+
+import { BYOE_CLAIM_PROTON_ADDRESS_SOURCE } from '../../../constants';
+import { type EASY_SWITCH_SOURCES, ImportProvider, ImportType } from '../../../interface';
+import { useDriveSdk } from '../../../logic/driveContext';
+import { EasySwitchProviderName } from '../../ProviderName/EasySwitchProviderName';
+import BYOEClaimProtonAddressModal from '../BYOEClaimProtonAddressModal/BYOEClaimProtonAddressModal';
+import { ProductCheckbox } from './ProductCheckbox';
+import { ProductItem } from './ProductItem';
+import { useProductSelectionSubmit } from './useProductSelectionSubmit';
 
 const importProviders = [ImportProvider.DEFAULT, ImportProvider.GOOGLE, ImportProvider.OUTLOOK, ImportProvider.YAHOO];
 const importProducts = [ImportType.MAIL, ImportType.CONTACTS, ImportType.CALENDAR];

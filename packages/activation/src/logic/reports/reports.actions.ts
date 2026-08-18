@@ -1,10 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import { deleteImportReport, getImportReportsList, rollbackImport } from '@proton/activation/src/api';
-import type { ApiImportReportListResponse } from '@proton/activation/src/api/api.interface';
-import { getEasySwitchFeaturesFromProducts } from '@proton/activation/src/hooks/useOAuthPopup.helpers';
-
+import { deleteImportReport, getImportReportsList, rollbackImport } from '../../api';
+import type { ApiImportReportListResponse } from '../../api/api.interface';
+import { getEasySwitchFeaturesFromProducts } from '../../hooks/useOAuthPopup.helpers';
 import type { EasySwitchThunkExtra } from '../store';
 import type { ReportSummaryID } from './reports.interface';
 

@@ -1,13 +1,12 @@
 import { screen } from '@testing-library/dom';
 
-import type { ApiMailImporterFolder } from '@proton/activation/src/api/api.interface';
-import MailImportFoldersParser from '@proton/activation/src/helpers/MailImportFoldersParser/MailImportFoldersParser';
-import { ImportType, MailImportDestinationFolder, TIME_PERIOD } from '@proton/activation/src/interface';
-import { selectOauthImportStateImporterData } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.selector';
-import { generateMockAddress } from '@proton/activation/src/tests/data/addresses';
-import { prepareState } from '@proton/activation/src/tests/data/prepareState';
-import { easySwitchRender } from '@proton/activation/src/tests/render';
-
+import type { ApiMailImporterFolder } from '../../../../api/api.interface';
+import MailImportFoldersParser from '../../../../helpers/MailImportFoldersParser/MailImportFoldersParser';
+import { ImportType, MailImportDestinationFolder, TIME_PERIOD } from '../../../../interface';
+import { selectOauthImportStateImporterData } from '../../../../logic/draft/oauthDraft/oauthDraft.selector';
+import { generateMockAddress } from '../../../../tests/data/addresses';
+import { prepareState } from '../../../../tests/data/prepareState';
+import { easySwitchRender } from '../../../../tests/render';
 import type { MailImportFields } from '../../CustomizeMailImportModal/CustomizeMailImportModal.interface';
 import StepPrepare from './StepPrepareOAuth';
 import useStepPrepare from './hooks/useStepPrepareOAuth';
@@ -23,8 +22,8 @@ jest.mock('./hooks/useStepPrepareOAuthEmailSummary', () => ({
     default: jest.fn(),
 }));
 
-jest.mock('@proton/activation/src/logic/draft/oauthDraft/oauthDraft.selector', () => ({
-    ...jest.requireActual('@proton/activation/src/logic/draft/oauthDraft/oauthDraft.selector'),
+jest.mock('../../../../logic/draft/oauthDraft/oauthDraft.selector', () => ({
+    ...jest.requireActual('../../../../logic/draft/oauthDraft/oauthDraft.selector'),
     selectOauthImportStateImporterData: jest.fn(),
 }));
 
