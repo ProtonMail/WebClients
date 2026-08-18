@@ -40,8 +40,16 @@ import type {
     GetUserKeys,
     InternalESCallbacks,
 } from '../models';
+import { getESLogger } from './esLogger';
 import { esErrorReport, esSentryReport } from './esReporting';
 import { isObjectEmpty, serializeAndEncryptItem, sizeOfESItem } from './esUtils';
+
+/**
+ * The original bug report for concurrent-deletion/indexing-stalls during long indexing runs
+ * only reproduced with the tab backgrounded for many minutes, so this is logged alongside
+ * indexing progress to correlate failures with tab visibility/throttling.
+ */
+const getVisibilityState = () => (typeof document !== 'undefined' ? document.visibilityState : 'unknown');
 
 /**
  * Execute the initial steps of a new metadata indexing, i.e. generating an index key and the DB itself
@@ -385,6 +393,10 @@ export const buildContentDB = async <ESItemContent>({
     let recoveryPoint: ESItemInfo | undefined;
     let IDs = sortedIDs.slice(0, ES_MAX_PARALLEL_ITEMS);
 
+    getESLogger().info(
+        `[EncryptedSearch] Fetching content for ${sortedIDs.length} item(s), tab is ${getVisibilityState()}`
+    );
+
     while (IDs.length) {
         if (abortIndexingRef.current.signal.aborted) {
             return STORING_OUTCOME.FAILURE;
@@ -467,9 +479,15 @@ export const buildContentDB = async <ESItemContent>({
             await contentIndexingProgress.addTimestamp(userID);
         }
 
+        getESLogger().info(
+            `[EncryptedSearch] Indexed content for ${counter}/${sortedIDs.length} item(s) so far, tab is ${getVisibilityState()}`
+        );
+
         const index = !!recoveryPoint ? sortedIDs.indexOf(recoveryPoint.ID) + 1 : 0;
         IDs = sortedIDs.slice(index, index + ES_MAX_PARALLEL_ITEMS);
     }
+
+    getESLogger().info(`[EncryptedSearch] Finished fetching content, outcome: ${indexingOutcome}`);
 
     return indexingOutcome;
 };

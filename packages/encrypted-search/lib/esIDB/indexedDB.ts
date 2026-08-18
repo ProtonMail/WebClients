@@ -6,7 +6,8 @@ import { detectStorageCapabilities } from '@proton/shared/lib/helpers/browser';
 import { SentryCommonInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 
 import { ES_DELETE_DB_BLOCKED_TIMEOUT, INDEXEDDB_VERSION, STORING_OUTCOME } from '../constants';
-import { esSentryReport } from '../esHelpers/esReporting';
+import { getESLogger } from '../esHelpers/esLogger';
+import { esErrorReport, esSentryReport } from '../esHelpers/esReporting';
 import { ciphertextSize, isTimepointSmaller } from '../esHelpers/esUtils';
 import type { EncryptedItemWithInfo, EncryptedMetadataItem, EncryptedSearchDB } from '../models';
 import { upgrade } from './indexedDBUpgrade';
@@ -112,6 +113,9 @@ const getStorageCapabilities = async () => {
     return capabilities;
 };
 
+/** Tracks which users' `openDB()` failures have already been reported to Sentry this session. */
+const reportedOpenDBFailures = new Set<string>();
+
 /**
  * Open an existing IDB for the given user. If the DB hadn't already existed,
  * undefined is returned instead.
@@ -143,6 +147,19 @@ export const openESDB = async (userID: string) => {
 
         return esDB;
     } catch (error: any) {
+        // Unlike the two checks above, openDB() itself throwing (blocked version-change,
+        // native corruption, quota exceeded during upgrade, etc.) was previously swallowed
+        // here with no report at all, making it invisible in both Sentry and the local logs.
+        // These failure modes tend to be sticky, and openESDB() runs many times per indexing
+        // batch, so reporting every occurrence to Sentry could flood it with hundreds of
+        // identical events in a single bad session. The local log stays complete regardless;
+        // Sentry gets at most one report per user for this session.
+        if (reportedOpenDBFailures.has(userID)) {
+            getESLogger().error('[EncryptedSearch] openESDB: openDB failed', error);
+        } else {
+            reportedOpenDBFailures.add(userID);
+            esErrorReport('openESDB: openDB failed', { error });
+        }
         if (esDB) {
             await cleanupESDB(esDB, userID);
         }
