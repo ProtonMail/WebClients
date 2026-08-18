@@ -146,6 +146,7 @@ export const getCountries = () => [
     { value: 'MU', label: c('Country name').t`Mauritius` },
     { value: 'YT', label: c('Country name').t`Mayotte` },
     { value: 'MX', label: c('Country name').t`Mexico` },
+    { value: 'FM', label: c('Country name').t`Micronesia` },
     { value: 'MD', label: c('Country name').t`Moldova` },
     { value: 'MC', label: c('Country name').t`Monaco` },
     { value: 'MN', label: c('Country name').t`Mongolia` },
@@ -327,13 +328,10 @@ export function getStateList(countryCode: CountryWithStates) {
             { stateName: 'Armed Forces Europe', stateCode: 'AE' },
             { stateName: 'Armed Forces Pacific', stateCode: 'AP' },
             { stateName: 'American Samoa', stateCode: 'AS' },
-            { stateName: 'Micronesia', stateCode: 'FM' },
             { stateName: 'Guam', stateCode: 'GU' },
             { stateName: 'Puerto Rico', stateCode: 'PR' },
             { stateName: 'Virgin Islands, U.S.', stateCode: 'VI' },
-            { stateName: 'Marshall Islands', stateCode: 'MH' },
             { stateName: 'Northern Mariana Islands', stateCode: 'MP' },
-            { stateName: 'Palau', stateCode: 'PW' },
         ];
     }
 
