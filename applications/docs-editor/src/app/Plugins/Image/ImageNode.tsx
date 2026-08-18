@@ -7,7 +7,6 @@ import type {
   DOMExportOutput,
   EditorConfig,
   LexicalEditor,
-  LexicalNode,
   LexicalUpdateJSON,
   NodeKey,
   SerializedEditor,
@@ -48,7 +47,7 @@ function $convertImageElement(domNode: Node): null | DOMConversionOutput {
       finalHeight = finalWidth / aspectRatio
     }
   }
-  // eslint-disable-next-line @typescript-eslint/no-use-before-define
+
   const node = $createImageNode({ src, altText, width: finalWidth, height: finalHeight })
   return { node }
 }
@@ -255,8 +254,4 @@ export function $createImageNode({
   return $applyNodeReplacement(
     new ImageNode(src, altText, maxWidth ? maxWidth : null, width, height, showCaption, caption, captionsEnabled, key),
   )
-}
-
-export function $isImageNode(node: LexicalNode | null | undefined): node is ImageNode {
-  return node instanceof ImageNode
 }

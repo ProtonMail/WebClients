@@ -1,8 +1,9 @@
 import { $addUpdateTag } from 'lexical'
 import type { ProtonNode } from './ProtonNode'
-import { $unwrapSuggestionNode } from './Utils'
+import { ResolveSuggestionsUpdateTag } from './SuggestionConstants'
+import { $unwrapSuggestionNode } from './unwrapSuggestionNode'
 
-export const ResolveSuggestionsUpdateTag = 'resolve-suggestions-if-needed'
+export { ResolveSuggestionsUpdateTag } from './SuggestionConstants'
 
 export function $removeSuggestionNodeAndResolveIfNeeded(node: ProtonNode) {
   node.remove()

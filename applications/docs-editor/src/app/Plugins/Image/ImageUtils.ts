@@ -1,6 +1,6 @@
 import { $getEditor, $getSelection, $isNodeSelection } from 'lexical'
 import type { ImageNode, SerializedImageNode } from './ImageNode'
-import { $isImageNode } from './ImageNode'
+import { $isImageNode } from './isImageNode'
 import { CAN_USE_DOM } from '@lexical/utils'
 
 export function $getImageNodeInSelection(): ImageNode | null {

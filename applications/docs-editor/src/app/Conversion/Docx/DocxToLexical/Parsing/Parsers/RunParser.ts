@@ -2,7 +2,6 @@ import type { WmlText, WmlRun } from 'docx-preview-cjs'
 import type { TextFormatType } from 'lexical'
 import { DocxElementParser } from './DocxElementParser'
 import type { DocxToLexicalInfo } from '../DocxToLexicalInfo'
-import { ParseDocxElements } from '../ParseDocxElement'
 
 export class RunParser extends DocxElementParser {
   async parse(): Promise<DocxToLexicalInfo[]> {
@@ -12,7 +11,7 @@ export class RunParser extends DocxElementParser {
       if (child.type === 'text') {
         results.push(this.parseAsText(child as WmlText))
       } else {
-        const parsed = await ParseDocxElements([child], this.doc)
+        const parsed = await this.parseChildren([child])
         results.push(...parsed)
       }
     }
