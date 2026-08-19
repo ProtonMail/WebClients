@@ -3,11 +3,6 @@ import { memo } from 'react';
 import { format } from 'date-fns';
 import { c } from 'ttag';
 
-import type { ApiImporterOrganization } from '@proton/activation/src/api/api.interface';
-import { ApiImporterOrganizationState } from '@proton/activation/src/api/api.interface';
-import { ReportsTableIcon } from '@proton/activation/src/components/ReportsTable/ReportsTableIcon';
-import { getImportProviderFromApiProvider } from '@proton/activation/src/helpers/getImportProviderFromApiProvider';
-import { ImportType } from '@proton/activation/src/interface';
 import { Button } from '@proton/atoms/Button/Button';
 import { TableCell, TableRow } from '@proton/components';
 import useSettingsLink from '@proton/components/components/link/useSettingsLink';
@@ -16,6 +11,12 @@ import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFi
 import { IcClock } from '@proton/icons/icons/IcClock';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import capitalize from '@proton/utils/capitalize';
+
+import type { ApiImporterOrganization } from '../../../api/api.interface';
+import { ApiImporterOrganizationState } from '../../../api/api.interface';
+import { getImportProviderFromApiProvider } from '../../../helpers/getImportProviderFromApiProvider';
+import { ImportType } from '../../../interface';
+import { ReportsTableIcon } from '../ReportsTableIcon';
 
 interface Props {
     importerOrganization: ApiImporterOrganization;

@@ -1,10 +1,11 @@
 import { c } from 'ttag';
 
-import { EasyTrans } from '@proton/activation/src/helpers/easyTrans';
 import { Button } from '@proton/atoms/Button/Button';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
+
+import { EasyTrans } from '../../../../../helpers/easyTrans';
 
 interface Props {
     isLabelMapping: boolean;

@@ -1,12 +1,12 @@
 import { c, msgid } from 'ttag';
 
-import { updateCalendarData } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.actions';
-import { useEasySwitchDispatch } from '@proton/activation/src/logic/store';
 import { Button } from '@proton/atoms/Button/Button';
 import { useModalState } from '@proton/components';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import isTruthy from '@proton/utils/isTruthy';
 
+import { updateCalendarData } from '../../../../logic/draft/oauthDraft/oauthDraft.actions';
+import { useEasySwitchDispatch } from '../../../../logic/store';
 import CustomizeCalendarImportModal from './CustomizeCalendarImportModal/CustomizeCalendarImportModal';
 import useCustomizeCalendarImportModal from './CustomizeCalendarImportModal/useCustomizeCalendarImportModal';
 

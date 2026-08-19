@@ -1,20 +1,17 @@
-import type { MailImportFolder } from '@proton/activation/src/helpers/MailImportFoldersParser/MailImportFoldersParser';
-import {
-    ImportType,
-    MailImportDestinationFolder,
-    MailImportGmailCategories,
-    TIME_PERIOD,
-} from '@proton/activation/src/interface';
-import type {
-    ImporterCalendar,
-    ImporterData,
-} from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.interface';
-import { generateMockAddress } from '@proton/activation/src/tests/data/addresses';
 import type { Label } from '@proton/shared/lib/interfaces';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { generateOwnedPersonalCalendars } from '@proton/testing/lib/builders';
 
+import type { MailImportFolder } from '../../../../../helpers/MailImportFoldersParser/MailImportFoldersParser';
+import {
+    ImportType,
+    MailImportDestinationFolder,
+    MailImportGmailCategories,
+    TIME_PERIOD,
+} from '../../../../../interface';
+import type { ImporterCalendar, ImporterData } from '../../../../../logic/draft/oauthDraft/oauthDraft.interface';
+import { generateMockAddress } from '../../../../../tests/data/addresses';
 import { getMailCustomLabel, importerHasErrors } from './useStepPrepareOAuth.helpers';
 
 const dummyCalendar: ImporterCalendar = {

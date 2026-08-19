@@ -1,10 +1,11 @@
 import { c } from 'ttag';
 
-import type { ApiImportProvider } from '@proton/activation/src/api/api.interface';
-import { getImportProviderFromApiProvider } from '@proton/activation/src/helpers/getImportProviderFromApiProvider';
-import { ImportType } from '@proton/activation/src/interface';
 import type { IconName } from '@proton/icons/types';
 import capitalize from '@proton/utils/capitalize';
+
+import type { ApiImportProvider } from '../../api/api.interface';
+import { getImportProviderFromApiProvider } from '../../helpers/getImportProviderFromApiProvider';
+import { ImportType } from '../../interface';
 
 export const getImportProductName = (apiProvider: ApiImportProvider, type: ImportType, isForwardingOnly?: boolean) => {
     const provider = getImportProviderFromApiProvider(apiProvider);

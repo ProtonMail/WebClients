@@ -2,22 +2,23 @@ import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import useAvailableAddresses from '@proton/activation/src/hooks/useAvailableAddresses';
-import useOAuthPopup from '@proton/activation/src/hooks/useOAuthPopup';
-import { getEasySwitchFeaturesFromProducts } from '@proton/activation/src/hooks/useOAuthPopup.helpers';
-import type { OAuthProps } from '@proton/activation/src/interface';
-import { EASY_SWITCH_SOURCES, ImportProvider } from '@proton/activation/src/interface';
-import { createImporterThunk } from '@proton/activation/src/logic/draft/oauthDraft/createImporter.action';
-import { changeOAuthStep } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.actions';
+import { useCalendars } from '@proton/calendar/calendars/hooks';
+import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
+
+import useAvailableAddresses from '../../../hooks/useAvailableAddresses';
+import useOAuthPopup from '../../../hooks/useOAuthPopup';
+import { getEasySwitchFeaturesFromProducts } from '../../../hooks/useOAuthPopup.helpers';
+import type { OAuthProps } from '../../../interface';
+import { EASY_SWITCH_SOURCES, ImportProvider } from '../../../interface';
+import { createImporterThunk } from '../../../logic/draft/oauthDraft/createImporter.action';
+import { changeOAuthStep } from '../../../logic/draft/oauthDraft/oauthDraft.actions';
 import {
     selectOauthDraftProvider,
     selectOauthDraftSource,
     selectOauthImportStateProducts,
     selectOauthImportStateScopes,
-} from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.selector';
-import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
-import { useCalendars } from '@proton/calendar/calendars/hooks';
-import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
+} from '../../../logic/draft/oauthDraft/oauthDraft.selector';
+import { useEasySwitchDispatch, useEasySwitchSelector } from '../../../logic/store';
 
 const useOAuthModal = () => {
     const [user] = useUser();

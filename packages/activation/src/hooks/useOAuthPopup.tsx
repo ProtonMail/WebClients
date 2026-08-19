@@ -1,21 +1,16 @@
-import { openOAuthPopup } from '@proton/activation/src/helpers/oAuthPopup';
-import {
-    type EASY_SWITCH_FEATURES,
-    ImportProvider,
-    OAUTH_PROVIDER,
-    type OAuthProps,
-} from '@proton/activation/src/interface';
 import { useApiEnvironmentConfig } from '@proton/mail/store/importerConfig/hooks';
 import { GSUITE_OAUTH_PATH } from '@proton/shared/lib/api/activation';
 import { createUrl } from '@proton/shared/lib/fetch/helpers';
+import { useFlag } from '@proton/unleash/useFlag';
 
+import { openOAuthPopup } from '../helpers/oAuthPopup';
+import { type EASY_SWITCH_FEATURES, ImportProvider, OAUTH_PROVIDER, type OAuthProps } from '../interface';
 import {
     generateGoogleOAuthParams,
     generateGoogleOAuthUrl,
     getOAuthAuthorizationUrl,
     getOAuthRedirectURL,
 } from './useOAuthPopup.helpers';
-import { useFlag } from '@proton/unleash/useFlag';
 
 interface Props {
     errorMessage: string;

@@ -4,11 +4,11 @@ import { useEffect, useRef, useState } from 'react';
 import debounce from 'lodash/debounce';
 import { c } from 'ttag';
 
-import { MailImportPayloadError } from '@proton/activation/src/interface';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { Checkbox, Icon, LabelStack } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
+import { MailImportPayloadError } from '../../../../../interface';
 import type { FolderMapItem } from '../../CustomizeMailImportModal.interface';
 import { FOLDER_ICONS } from '../../CustomizeMailImportModal.interface';
 import ManageFoldersRowFolderErrors from './ManageFoldersRowFolderErrors';

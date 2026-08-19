@@ -1,6 +1,5 @@
-import type { ImportProvider } from '@proton/activation/src/interface';
-
 import { providerMap } from '../../constants';
+import type { ImportProvider } from '../../interface';
 
 interface Props {
     provider: ImportProvider;

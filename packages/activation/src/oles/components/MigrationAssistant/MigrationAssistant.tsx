@@ -5,7 +5,6 @@ import { c, msgid } from 'ttag';
 import { useMembers } from '@proton/account/members/hooks';
 import { useMemberAddresses } from '@proton/account/members/useMemberAddresses';
 import { useOrganization } from '@proton/account/organization/hooks';
-import type { ApiImporterOrganizationUser, ApiImporterProduct } from '@proton/activation/src/api/api.interface';
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
 import { Card } from '@proton/atoms/Card/Card';
@@ -22,6 +21,7 @@ import { getIsDomainActive } from '@proton/shared/lib/organization/helper';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
+import type { ApiImporterOrganizationUser, ApiImporterProduct } from '../../../api/api.interface';
 import { useErrorHandler } from '../../errors';
 import { isProviderUserSelectable, isRelevantAddress, shouldCreateUserPredicate } from '../../helpers';
 import { createMigrationBatch, setupJoiningLink } from '../../thunk';

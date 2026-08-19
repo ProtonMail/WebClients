@@ -1,8 +1,8 @@
-import { selectDraftModal } from '@proton/activation/src/logic/draft/draft.selector';
-import { readImapInstructions, resetImapDraft } from '@proton/activation/src/logic/draft/imapDraft/imapDraft.actions';
-import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import ContactImportModal from '@proton/components/containers/contacts/import/ContactImportModal';
 
+import { selectDraftModal } from '../../logic/draft/draft.selector';
+import { readImapInstructions, resetImapDraft } from '../../logic/draft/imapDraft/imapDraft.actions';
+import { useEasySwitchDispatch, useEasySwitchSelector } from '../../logic/store';
 import CalendarModal from './Imap/CalendarModal/CalendarModal';
 import ImapMailModal from './Imap/ImapMailModal/ImapMailModal';
 import InstructionsModal from './Imap/InstructionsModal/InstructionsModal';

@@ -2,14 +2,6 @@ import type { ProtonDriveClient } from '@protontech/drive-sdk';
 import isDeepEqual from 'lodash/isEqual';
 import { c } from 'ttag';
 
-import { startImportTask } from '@proton/activation/src/api';
-import type { CalendarImportMapping, DriveImportFolder, LaunchImportPayload } from '@proton/activation/src/interface';
-import { ImportType, IsCustomCalendarMapping } from '@proton/activation/src/interface';
-import { changeOAuthStep, resetOauthDraft } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.actions';
-import type {
-    ImporterCalendar,
-    ImporterData,
-} from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.interface';
 import { createCalendar, updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import { setupCalendarKey } from '@proton/shared/lib/calendar/crypto/keys/setupCalendarKeys';
 import { getRandomAccentColor } from '@proton/shared/lib/colors';
@@ -21,6 +13,11 @@ import type { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddr
 import { getPrimaryKey } from '@proton/shared/lib/keys';
 import isTruthy from '@proton/utils/isTruthy';
 
+import { startImportTask } from '../../../../api';
+import type { CalendarImportMapping, DriveImportFolder, LaunchImportPayload } from '../../../../interface';
+import { ImportType, IsCustomCalendarMapping } from '../../../../interface';
+import { changeOAuthStep, resetOauthDraft } from '../../../../logic/draft/oauthDraft/oauthDraft.actions';
+import type { ImporterCalendar, ImporterData } from '../../../../logic/draft/oauthDraft/oauthDraft.interface';
 import { formatPrepareStepPayload } from '../../Imap/ImapMailModal/StepPrepareImap/StepPrepareImap.helpers';
 
 interface StartImporterProps {

@@ -1,8 +1,8 @@
-import { ApiImportProvider } from '@proton/activation/src/api/api.interface';
-import { useEasySwitchSelector } from '@proton/activation/src/logic/store';
-import { selectSyncById } from '@proton/activation/src/logic/sync/sync.selectors';
 import { TableCell, TableRow } from '@proton/components';
 
+import { ApiImportProvider } from '../../../api/api.interface';
+import { useEasySwitchSelector } from '../../../logic/store';
+import { selectSyncById } from '../../../logic/sync/sync.selectors';
 import ReportsTableCell from '../ReportsTableCell';
 import SyncRowActions from './SyncRowActions';
 import SyncRowStatus from './SyncRowStatus';

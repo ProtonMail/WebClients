@@ -1,12 +1,12 @@
 import { format } from 'date-fns';
 
-import type { ApiImportProvider } from '@proton/activation/src/api/api.interface';
-import { ReportsTableIcon } from '@proton/activation/src/components/ReportsTable/ReportsTableIcon';
-import type { ImportType } from '@proton/activation/src/interface';
 import { TableCell } from '@proton/components';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
+import type { ApiImportProvider } from '../../api/api.interface';
+import type { ImportType } from '../../interface';
 import { getImportProductName } from './ReportsTableCell.helpers';
+import { ReportsTableIcon } from './ReportsTableIcon';
 
 interface Props {
     provider: ApiImportProvider;

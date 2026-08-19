@@ -1,24 +1,20 @@
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { getScopeFromProvider } from '@proton/activation/src/components/Modals/OAuth/OAuthModal.helpers';
-import useAvailableAddresses from '@proton/activation/src/hooks/useAvailableAddresses';
-import useOAuthPopup from '@proton/activation/src/hooks/useOAuthPopup';
-import {
-    type EASY_SWITCH_SOURCES,
-    ImportProvider,
-    type ImportType,
-    type OAuthProps,
-} from '@proton/activation/src/interface';
-import { selectImapProduct, startImapDraft } from '@proton/activation/src/logic/draft/imapDraft/imapDraft.actions';
-import { createImporterThunk } from '@proton/activation/src/logic/draft/oauthDraft/createImporter.action';
+
+import useAvailableAddresses from '../../../hooks/useAvailableAddresses';
+import useOAuthPopup from '../../../hooks/useOAuthPopup';
+import { type EASY_SWITCH_SOURCES, ImportProvider, type ImportType, type OAuthProps } from '../../../interface';
+import { selectImapProduct, startImapDraft } from '../../../logic/draft/imapDraft/imapDraft.actions';
+import { createImporterThunk } from '../../../logic/draft/oauthDraft/createImporter.action';
 import {
     changeOAuthStep,
     initOauthMailImport,
     startOauthDraft,
     submitProductProvider,
-} from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.actions';
-import { useEasySwitchDispatch } from '@proton/activation/src/logic/store';
+} from '../../../logic/draft/oauthDraft/oauthDraft.actions';
+import { useEasySwitchDispatch } from '../../../logic/store';
+import { getScopeFromProvider } from '../OAuth/OAuthModal.helpers';
 
 export const useProductSelectionSubmit = () => {
     const [user] = useUser();

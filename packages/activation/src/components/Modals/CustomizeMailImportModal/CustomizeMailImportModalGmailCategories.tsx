@@ -1,9 +1,10 @@
 import { c } from 'ttag';
 
-import { MailImportDestinationFolder } from '@proton/activation/src/interface';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Field, Label, Option, Row, SelectTwo } from '@proton/components';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
+
+import { MailImportDestinationFolder } from '../../../interface';
 
 interface Props {
     hasCategories: boolean;

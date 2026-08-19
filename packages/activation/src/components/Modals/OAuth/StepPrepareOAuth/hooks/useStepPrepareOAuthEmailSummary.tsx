@@ -1,15 +1,16 @@
 import { c, msgid } from 'ttag';
 
-import type { MailImportFields } from '@proton/activation/src/components/Modals/CustomizeMailImportModal/CustomizeMailImportModal.interface';
-import { getMailMappingErrors } from '@proton/activation/src/helpers/getMailMappingErrors';
-import { ImportProvider } from '@proton/activation/src/interface';
-import { updateEmailsData } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.actions';
+import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
+
+import { getMailMappingErrors } from '../../../../../helpers/getMailMappingErrors';
+import { ImportProvider } from '../../../../../interface';
+import { updateEmailsData } from '../../../../../logic/draft/oauthDraft/oauthDraft.actions';
 import {
     selectOauthDraftProvider,
     selectOauthImportStateImporterData,
-} from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.selector';
-import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
-import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
+} from '../../../../../logic/draft/oauthDraft/oauthDraft.selector';
+import { useEasySwitchDispatch, useEasySwitchSelector } from '../../../../../logic/store';
+import type { MailImportFields } from '../../../CustomizeMailImportModal/CustomizeMailImportModal.interface';
 
 interface Props {
     handleCloseCustomizeModal: () => void;

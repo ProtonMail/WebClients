@@ -1,7 +1,6 @@
-import type { ApiImporter } from '@proton/activation/src/api/api.interface';
-import { ApiImportProvider, ApiImporterState } from '@proton/activation/src/api/api.interface';
-import { ImportType } from '@proton/activation/src/interface';
-
+import type { ApiImporter } from '../../api/api.interface';
+import { ApiImportProvider, ApiImporterState } from '../../api/api.interface';
+import { ImportType } from '../../interface';
 import { normalizeImporter, normalizeImporters } from './importers.helpers';
 
 const buildImporter = (overrides: Partial<ApiImporter> = {}): ApiImporter => ({

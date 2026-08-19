@@ -2,9 +2,8 @@ import { fireEvent, screen, waitFor } from '@testing-library/dom';
 import { HttpResponse, http } from 'msw';
 import { setupServer } from 'msw/node';
 
-import { headers } from '@proton/activation/msw.header';
-import { easySwitchRender } from '@proton/activation/src/tests/render';
-
+import { headers } from '../../../msw.header';
+import { easySwitchRender } from '../../tests/render';
 import ImportsTable from './ImportsTable';
 
 const server = setupServer();

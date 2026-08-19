@@ -3,11 +3,6 @@ import { Route, Switch, useRouteMatch } from 'react-router-dom';
 
 import type { ProtonDriveClient } from '@protontech/drive-sdk';
 
-import { SyncsTable } from '@proton/activation/src/components/ReportsTable/SyncsTable';
-import useBYOEFeatureStatus from '@proton/activation/src/hooks/useBYOEFeatureStatus.tsx';
-import { EASY_SWITCH_SOURCES } from '@proton/activation/src/interface';
-import EasySwitchStoreInitializer from '@proton/activation/src/logic/EasySwitchStoreInitializer';
-import OLESSettingsArea from '@proton/activation/src/oles/components/SettingsArea';
 import type { SettingsAreaConfig } from '@proton/components';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import PrivateMainSettingsArea from '@proton/components/containers/layout/PrivateMainSettingsArea';
@@ -15,10 +10,15 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
+import useBYOEFeatureStatus from '../../hooks/useBYOEFeatureStatus.tsx';
+import { EASY_SWITCH_SOURCES } from '../../interface';
+import EasySwitchStoreInitializer from '../../logic/EasySwitchStoreInitializer';
 import EasySwitchStoreProvider from '../../logic/StoreProvider';
+import OLESSettingsArea from '../../oles/components/SettingsArea';
 import { ImporterOrganizationsProvider } from '../../oles/useImporterOrganizations';
 import useOLESFeatureStatus from '../../oles/useOLESFeatureStatus';
 import ImportsTable from '../ReportsTable/ImportsTable';
+import { SyncsTable } from '../ReportsTable/SyncsTable';
 import ProviderCard from './ProviderCards/ProviderCard';
 
 import './EasySwitchTables.scss';

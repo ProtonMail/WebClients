@@ -1,9 +1,9 @@
 import { type ReactNode, createContext, useCallback, useContext, useEffect, useState } from 'react';
 
-import { getOrganizationUsers } from '@proton/activation/src/api/api';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import noop from '@proton/utils/noop';
 
+import { getOrganizationUsers } from '../api/api';
 import type { ApiImporterOrganizationUser } from '../api/api.interface';
 
 const Context = createContext<{

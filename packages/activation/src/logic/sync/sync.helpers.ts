@@ -1,5 +1,4 @@
-import type { ApiSync } from '@proton/activation/src/api/api.interface';
-
+import type { ApiSync } from '../../api/api.interface';
 import type { Sync } from './sync.interface';
 
 export const formatApiSync = (sync: ApiSync): Sync => {

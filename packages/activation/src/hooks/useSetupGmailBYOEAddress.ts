@@ -3,18 +3,6 @@ import { c } from 'ttag';
 import { updateBYOEAddressConnection } from '@proton/account/addressKeys/actions';
 import { convertBYOEAddress, createBYOEAddress } from '@proton/account/addresses/actions';
 import { useAddresses } from '@proton/account/addresses/hooks';
-import { startEasySwitchSignupImportTask } from '@proton/activation/src/api';
-import { BYOE_QUOTA_THRESHOLD_RATIO } from '@proton/activation/src/constants';
-import {
-    BYOE_ADDRESS_ERROR,
-    type EASY_SWITCH_SOURCES,
-    type ImportToken,
-    OAUTH_PROVIDER,
-} from '@proton/activation/src/interface';
-import { loadImporters } from '@proton/activation/src/logic/importers/importers.actions';
-import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
-import { loadSyncList } from '@proton/activation/src/logic/sync/sync.actions';
-import { getAllSync } from '@proton/activation/src/logic/sync/sync.selectors';
 import useApi from '@proton/components/hooks/useApi';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
@@ -24,6 +12,13 @@ import { findUserAddress, getIsBYOEAddress } from '@proton/shared/lib/helpers/ad
 import { getEmailParts } from '@proton/shared/lib/helpers/email';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import { startEasySwitchSignupImportTask } from '../api';
+import { BYOE_QUOTA_THRESHOLD_RATIO } from '../constants';
+import { BYOE_ADDRESS_ERROR, type EASY_SWITCH_SOURCES, type ImportToken, OAUTH_PROVIDER } from '../interface';
+import { loadImporters } from '../logic/importers/importers.actions';
+import { useEasySwitchDispatch, useEasySwitchSelector } from '../logic/store';
+import { loadSyncList } from '../logic/sync/sync.actions';
+import { getAllSync } from '../logic/sync/sync.selectors';
 import useBYOEFeatureStatus from './useBYOEFeatureStatus';
 
 interface Props {

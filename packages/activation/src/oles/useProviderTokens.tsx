@@ -1,11 +1,11 @@
 import { type ReactNode, createContext, useCallback, useContext, useEffect, useState } from 'react';
 
-import type { EASY_SWITCH_FEATURES, ImportToken, OAUTH_PROVIDER } from '@proton/activation/src/interface';
-import { useOAuthToken } from '@proton/activation/src/logic/oauthToken/hooks';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import noop from '@proton/utils/noop';
 
 import { getTokensByFeature } from '../api';
+import type { EASY_SWITCH_FEATURES, ImportToken, OAUTH_PROVIDER } from '../interface';
+import { useOAuthToken } from '../logic/oauthToken/hooks';
 
 type StateData = ImportToken[] | undefined;
 

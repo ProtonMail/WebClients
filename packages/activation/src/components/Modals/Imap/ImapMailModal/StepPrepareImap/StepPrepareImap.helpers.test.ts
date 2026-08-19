@@ -1,15 +1,14 @@
 import { differenceInMonths, fromUnixTime } from 'date-fns';
 
-import type { ApiMailImporterFolder } from '@proton/activation/src/api/api.interface';
-import MailImportFoldersParser from '@proton/activation/src/helpers/MailImportFoldersParser/MailImportFoldersParser';
-import type { MailImportMapping } from '@proton/activation/src/interface';
-import { MailImportDestinationFolder, TIME_PERIOD } from '@proton/activation/src/interface';
-import { generateMockAddress } from '@proton/activation/src/tests/data/addresses';
-import { standardFolderResponse } from '@proton/activation/src/tests/data/gmail.formattedResponse';
-import { gmailImapResponse } from '@proton/activation/src/tests/data/gmail.imap.formattedResponse';
-import gmailImapModalLabels from '@proton/activation/src/tests/data/gmail.imap.providerFolders';
-import labels from '@proton/activation/src/tests/data/gmail.providerFolders';
-
+import type { ApiMailImporterFolder } from '../../../../../api/api.interface';
+import MailImportFoldersParser from '../../../../../helpers/MailImportFoldersParser/MailImportFoldersParser';
+import type { MailImportMapping } from '../../../../../interface';
+import { MailImportDestinationFolder, TIME_PERIOD } from '../../../../../interface';
+import { generateMockAddress } from '../../../../../tests/data/addresses';
+import { standardFolderResponse } from '../../../../../tests/data/gmail.formattedResponse';
+import { gmailImapResponse } from '../../../../../tests/data/gmail.imap.formattedResponse';
+import gmailImapModalLabels from '../../../../../tests/data/gmail.imap.providerFolders';
+import labels from '../../../../../tests/data/gmail.providerFolders';
 import { formatPrepareStepPayload } from './StepPrepareImap.helpers';
 import type { StepPrepareData } from './useStepPrepareImap';
 

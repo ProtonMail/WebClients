@@ -1,34 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import {
-    createImport,
-    createToken,
-    getCalendarImportData,
-    getContactsImportData,
-    getDriveImportData,
-    getMailImportData,
-} from '@proton/activation/src/api';
-import type { ApiMailImporterFolder } from '@proton/activation/src/api/api.interface';
-import type { MailImportFields } from '@proton/activation/src/components/Modals/CustomizeMailImportModal/CustomizeMailImportModal.interface';
-import getDefaultLabel from '@proton/activation/src/components/Modals/Imap/ImapMailModal/StepPrepareImap/useStepPrepareImap.helpers';
-import MailImportFoldersParser from '@proton/activation/src/helpers/MailImportFoldersParser/MailImportFoldersParser';
-import { getDefaultImportCategoriesDestination } from '@proton/activation/src/helpers/getDefaultImportCategories';
-import { getDefaultTimePeriod } from '@proton/activation/src/helpers/getDefaultTimePeriod';
-import type {
-    CreateImportPayload,
-    EASY_SWITCH_SOURCES,
-    ImportToken,
-    ImportedCalendar,
-    OAuthProps,
-} from '@proton/activation/src/interface';
-import {
-    AuthenticationMethod,
-    EASY_SWITCH_FEATURES,
-    IMPORT_ERROR,
-    ImportProvider,
-    ImportType,
-} from '@proton/activation/src/interface';
 import { getApiError, getIsTimeoutError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
@@ -37,7 +9,35 @@ import { getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
 import type { Address, UserModel } from '@proton/shared/lib/interfaces';
 import truncate from '@proton/utils/truncate';
 
+import {
+    createImport,
+    createToken,
+    getCalendarImportData,
+    getContactsImportData,
+    getDriveImportData,
+    getMailImportData,
+} from '../../../api';
+import type { ApiMailImporterFolder } from '../../../api/api.interface';
+import type { MailImportFields } from '../../../components/Modals/CustomizeMailImportModal/CustomizeMailImportModal.interface';
+import getDefaultLabel from '../../../components/Modals/Imap/ImapMailModal/StepPrepareImap/useStepPrepareImap.helpers';
+import MailImportFoldersParser from '../../../helpers/MailImportFoldersParser/MailImportFoldersParser';
+import { getDefaultImportCategoriesDestination } from '../../../helpers/getDefaultImportCategories';
+import { getDefaultTimePeriod } from '../../../helpers/getDefaultTimePeriod';
 import { getEasySwitchFeaturesFromProducts } from '../../../hooks/useOAuthPopup.helpers';
+import type {
+    CreateImportPayload,
+    EASY_SWITCH_SOURCES,
+    ImportToken,
+    ImportedCalendar,
+    OAuthProps,
+} from '../../../interface';
+import {
+    AuthenticationMethod,
+    EASY_SWITCH_FEATURES,
+    IMPORT_ERROR,
+    ImportProvider,
+    ImportType,
+} from '../../../interface';
 import type { EasySwitchThunkExtra } from '../../store';
 import { OAUTH_ACTION_PREFIX } from './oauthDraft.actions';
 import type { ImporterCalendar, ImporterData } from './oauthDraft.interface';

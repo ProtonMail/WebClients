@@ -1,11 +1,12 @@
 import { c, msgid } from 'ttag';
 
-import { selectActiveImportersErrors } from '@proton/activation/src/logic/importers/importers.selectors';
-import { useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { Href } from '@proton/atoms/Href/Href';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+
+import { selectActiveImportersErrors } from '../../logic/importers/importers.selectors';
+import { useEasySwitchSelector } from '../../logic/store';
 
 const ReportsTableInfos = () => {
     const { importErrors, delayedImportAccounts } = useEasySwitchSelector(selectActiveImportersErrors);

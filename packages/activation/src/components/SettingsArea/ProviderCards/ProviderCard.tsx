@@ -4,12 +4,6 @@ import { useLocation } from 'react-router-dom';
 import type { Location } from 'history';
 import { c } from 'ttag';
 
-import { ProductSelectionModal } from '@proton/activation/src/components/Modals/ProductSelectionModal/ProductSelectionModal';
-import ConnectGmailButton from '@proton/activation/src/components/SettingsArea/ConnectGmailButton';
-import { EASY_SWITCH_SEARCH_SOURCES, EASY_SWITCH_SOURCES, ImportProvider } from '@proton/activation/src/interface';
-import { getOrganizationMigrationFeatures } from '@proton/activation/src/oles/migrationFeatures';
-import { isProviderSupported } from '@proton/activation/src/oles/providers';
-import useOLESFeatureStatus from '@proton/activation/src/oles/useOLESFeatureStatus';
 import { Button } from '@proton/atoms/Button/Button';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
 import useSettingsLink from '@proton/components/components/link/useSettingsLink';
@@ -19,6 +13,12 @@ import { useNotifications } from '@proton/components/index';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
+import { EASY_SWITCH_SEARCH_SOURCES, EASY_SWITCH_SOURCES, ImportProvider } from '../../../interface';
+import { getOrganizationMigrationFeatures } from '../../../oles/migrationFeatures';
+import { isProviderSupported } from '../../../oles/providers';
+import useOLESFeatureStatus from '../../../oles/useOLESFeatureStatus';
+import { ProductSelectionModal } from '../../Modals/ProductSelectionModal/ProductSelectionModal';
+import ConnectGmailButton from '../ConnectGmailButton';
 import ProviderButton from './ProviderButton';
 
 const getEasySwitchSource = (location: Location, inputSource: EASY_SWITCH_SOURCES) => {

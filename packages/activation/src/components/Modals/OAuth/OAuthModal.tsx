@@ -1,15 +1,11 @@
-import { ImportProvider } from '@proton/activation/src/interface';
-import {
-    displayConfirmLeaveModal,
-    resetOauthDraft,
-} from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.actions';
+import { ImportProvider } from '../../../interface';
+import { displayConfirmLeaveModal, resetOauthDraft } from '../../../logic/draft/oauthDraft/oauthDraft.actions';
 import {
     selectOauthDraftProvider,
     selectOauthDraftStepConfirmModalDisplay,
     selectOauthImportStateStep,
-} from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.selector';
-import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
-
+} from '../../../logic/draft/oauthDraft/oauthDraft.selector';
+import { useEasySwitchDispatch, useEasySwitchSelector } from '../../../logic/store';
 import ConfirmLeaveModal from '../ConfirmLeaveModal/ConfirmLeaveModal';
 import StepInstructionsGoogle from './StepInstructions/StepInstructionsGoogle';
 import StepLoadingImporter from './StepLoading/StepLoadingImporter';

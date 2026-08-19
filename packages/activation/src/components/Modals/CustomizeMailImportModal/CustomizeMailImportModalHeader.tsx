@@ -1,4 +1,4 @@
-import { EasyTrans } from '@proton/activation/src/helpers/easyTrans';
+import { EasyTrans } from '../../../helpers/easyTrans';
 
 interface Props {
     isLabelMapping: boolean;

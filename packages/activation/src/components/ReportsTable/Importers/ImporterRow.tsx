@@ -2,15 +2,12 @@ import { memo } from 'react';
 
 import { c } from 'ttag';
 
-import type { ActiveImportID } from '@proton/activation/src/logic/importers/importers.interface';
-import {
-    selectActiveImporterById,
-    selectImporterById,
-} from '@proton/activation/src/logic/importers/importers.selectors';
-import { useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { TableCell, TableRow } from '@proton/components';
 import { shortHumanSize } from '@proton/shared/lib/helpers/humanSize';
 
+import type { ActiveImportID } from '../../../logic/importers/importers.interface';
+import { selectActiveImporterById, selectImporterById } from '../../../logic/importers/importers.selectors';
+import { useEasySwitchSelector } from '../../../logic/store';
 import ReportsTableCell from '../ReportsTableCell';
 import ImporterRowActions from './ImporterRowActions';
 import ImporterRowStatus from './ImporterRowStatus';

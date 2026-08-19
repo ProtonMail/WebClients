@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
-import { selectOauthImportStateImporterData } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.selector';
-import { useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { DOCS_APP_NAME, SHEETS_APP_NAME } from '@proton/shared/lib/constants';
+
+import { selectOauthImportStateImporterData } from '../../../../logic/draft/oauthDraft/oauthDraft.selector';
+import { useEasySwitchSelector } from '../../../../logic/store';
 
 interface Props {
     isSelected: boolean;
