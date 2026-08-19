@@ -316,7 +316,7 @@
         "使用 Outlook 繼續"
       ],
       "Continue without categories": [
-        "繼續於無類別下使用"
+        "繼續於無分類下使用"
       ],
       "Contract composer": [
         "縮小撰寫工具"
@@ -958,7 +958,7 @@
         "移至「封存」"
       ],
       "Move to category...": [
-        "移動至類別..."
+        "移動至分類..."
       ],
       "Move to folder": [
         "移至資料夾"
@@ -1733,6 +1733,9 @@
       ],
       "Skip": [
         "略過"
+      ],
+      "Set up categories": [
+        "設定分類"
       ]
     },
     "Actions message": {
@@ -4080,16 +4083,16 @@
         "雙重驗證可以增加一層安全保障，防止盜用。"
       ],
       "A blue dot appears when a category has unread messages since your last visit.": [
-        "自您上次訪問以來，當某個類別有未讀訊息時，即會顯示藍點。"
+        "自您上次訪問以來，當某個分類有未讀訊息時，即會顯示藍點。"
       ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "添加資料夾和檔案至 ${ DRIVE_APP_NAME } 和邀請成員瀏覽或編輯。"
       ],
       "Add or remove categories, manage notifications, and adjust your setup anytime in settings.": [
-        "隨時可在設定中新增或移除類別、管理通知，並調整您的設定。"
+        "隨時可在設定中新增或移除分類、管理通知，並調整您的設定。"
       ],
       "Add or remove categories, manage notifications, or turn them off entirely - anytime in Settings.": [
-        "隨時可在「設定」中新增或移除類別、管理通知，或將其完全關閉。"
+        "隨時可在「設定」中新增或移除分類、管理通知，或將其完全關閉。"
       ],
       "Also included": [
         "並包含"
@@ -4351,6 +4354,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "您已經創建10個別名。${ BRAND_NAME }無限版可獲得無限別名和500GB的儲存容量。"
+      ],
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "在電子郵件上按右鍵並選擇「移至」，或將其拖放至另一個分類。未來類似的電子郵件將自動歸入該處。"
       ]
     },
     "description": {
@@ -5584,7 +5590,7 @@
         "在 ${ PASS_APP_NAME } 中啟用額外密碼時，無法使用別名。"
       ],
       "An error occurred with the categories": [
-        "類別分頁出現錯誤"
+        "分類分頁出現錯誤"
       ],
       "App currently unavailable": [
         "App 目前無法使用"
@@ -6793,7 +6799,7 @@
         "${ MAIL_APP_NAME } 亦可防護您的企業商號。"
       ],
       "${ MAIL_APP_NAME } now automatically sorts your emails into categories like Primary, Social, Promotions, and more, helping you find and manage messages more easily.": [
-        "${ MAIL_APP_NAME } 現在會自動將您的電子郵件分類為「主要」、「社群」、「促銷」等類別，協助您更輕鬆地尋找與管理訊息。"
+        "${ MAIL_APP_NAME } 現在會自動將您的電子郵件歸入「主要」、「社群」、「促銷」等分類，協助您更輕鬆地尋找與管理訊息。"
       ],
       "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
         "${ MEET_APP_NAME } 是端對端加密視訊會議的解決方案。添加至您的方案以主持安全會議。"
@@ -7192,7 +7198,7 @@
         "忘記密碼？我們可說明您清除所有聯絡人中以此金鑰加密的資料，從而關閉此提示。"
       ],
       "Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
-        "類別有如垃圾郵件篩選器。 ${ MAIL_APP_NAME } 永不已讀您的電子郵件或共享您的資料。"
+        "分類有如垃圾郵件篩選器。 ${ MAIL_APP_NAME } 永不已讀您的電子郵件或共享您的資料。"
       ],
       "Center": [
         "置中"
@@ -8878,7 +8884,7 @@
         "當您旅遊或使用公共無線網路，連接至${ VPN_APP_NAME }以避免其他人追蹤您連線活動或竊取資料。它是免費的。"
       ],
       "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
-        "透過新的電子郵件分類，只有重要郵件會進入您的主要收件匣。其它訊息將被整理到不同的類別中。"
+        "透過新的電子郵件分類，只有重要郵件會進入您的主要收件匣。其它訊息將被整理到不同的分類中。"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "您想要接收新的驗證碼，還是更換驗證方式？"
@@ -8965,7 +8971,7 @@
         "您的收件匣中有 ${ totalLabel }。"
       ],
       "You have **${ count } conversation** in your ${ categoryLabel } category": [
-        "您有 **${ count } 則對話 ** 於您的 ${ categoryLabel } 類別"
+        "您有 **${ count } 則對話 ** 於您的 ${ categoryLabel } 分類"
       ],
       "You have **${ count } conversation** stored in this folder": [
         "您有 **${ count } 則往來對話** 儲存於此資料夾"
@@ -8974,7 +8980,7 @@
         "您有 **${ count } 則往來對話** 已標上此標籤"
       ],
       "You have **${ count } message** in your ${ categoryLabel } category": [
-        "您有 **${ count } 訊息** 於 ${ categoryLabel } 類別"
+        "您有 **${ count } 訊息** 於 ${ categoryLabel } 分類"
       ],
       "You have **${ count } message** stored in this folder": [
         "您有 **${ count } 則訊息** 儲存於此資料夾"
@@ -8989,10 +8995,10 @@
         "您有一個試用期 ${ planTitle } 訂購授權。您暫時無需付費。你的訂購授權將會在試用期結束時自動繳付。"
       ],
       "You have no conversations in this category": [
-        "此類別中沒有任何對話"
+        "此分類中沒有任何對話"
       ],
       "You have no messages in this category": [
-        "此類別中沒有任何訊息"
+        "此分類中沒有任何訊息"
       ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "您的電郵未有加上主旨。無論如何，您仍要傳送郵件嗎？"
@@ -9010,10 +9016,10 @@
         "您必須先停用或移除任何額外的 ${ MAIL_APP_NAME } 使用者、電郵位址及自訂網域，方可降級。"
       ],
       "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
-        "您已選取 **${ checked } 對話** 於 ${ categoryLabel } 類別"
+        "您已選取 **${ checked } 對話** 於 ${ categoryLabel } 分類"
       ],
       "You selected **${ checked } message** in your ${ categoryLabel } category": [
-        "您已選取 **${ checked } 訊息** 於 ${ categoryLabel } 類別"
+        "您已選取 **${ checked } 訊息** 於 ${ categoryLabel } 分類"
       ],
       "You selected **${ count } conversation** from this folder": [
         "您從此資料夾選取了 **${ count } 則往來對話**"
@@ -10378,6 +10384,15 @@
       ],
       "Duration": [
         "持續時間"
+      ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "所有需要您關注的內容，以及來自已停用分類的電子郵件"
+      ],
+      "Folder name": [
+        "資料夾名稱"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "主要 - 所有需要您關注的內容，以及來自已停用分類的電子郵件"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15005,6 +15020,9 @@
       ],
       "You have successfully unsubscribed": [
         "您已成功取消訂購"
+      ],
+      "Moved to ${ label }. Similar messages will be categorized there in the future.": [
+        "已移動至 ${ label }。未來類似的訊息將會被歸入該處。"
       ]
     },
     "Success notification": {
@@ -16290,6 +16308,9 @@
       ],
       "Select users to migrate": [
         "選取使用者以遷移"
+      ],
+      "Refine your Categories": [
+        "調整您的分類"
       ]
     },
     "Title header for keys table": {

@@ -1739,6 +1739,12 @@
       ],
       "Write ${ count } logs": [
         "Escriu ${ count } registres"
+      ],
+      "Copy debug transcript": [
+        "Copia la transcripció de depuració"
+      ],
+      "Preview logs": [
+        "Vista prèvia dels registres"
       ]
     },
     "action": {
@@ -4006,6 +4012,9 @@
       ],
       "Åland Islands": [
         "Illes Aland"
+      ],
+      "Micronesia": [
+        "Micronèsia"
       ]
     },
     "customer_support.feature.all": {
@@ -9738,6 +9747,27 @@
       ],
       "Mark as unread": [
         "Marca com no llegit"
+      ],
+      "Checked Proton support": [
+        "S'ha comprovat el suport de Proton"
+      ],
+      "Create folder": [
+        "Crea una carpeta"
+      ],
+      "Create label": [
+        "Crea una etiqueta"
+      ],
+      "Debug transcript copied": [
+        "S'ha copiat la transcripció de depuració"
+      ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "Els registres ens ajuden a entendre què va passar abans que es produís el problema. Inclouen accions de l'aplicació i missatges d'error, però no el contingut dels missatges."
+      ],
+      "Mark all as unread": [
+        "Marcar-ho tot com a no llegit"
+      ],
+      "Searched the web": [
+        "S'ha cercat a la web"
       ]
     },
     "info": {
@@ -11008,6 +11038,12 @@
       ],
       "Account holder name": [
         "Nom del titular del compte"
+      ],
+      "Folder name": [
+        "Nom de carpeta"
+      ],
+      "Label name": [
+        "Nom de l'etiqueta"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -17147,6 +17183,18 @@
       ],
       "Apply labels": [
         "Aplicar etiquetes"
+      ],
+      "Create folder": [
+        "Crea una carpeta"
+      ],
+      "Create label": [
+        "Crea una etiqueta"
+      ],
+      "Mark all as read": [
+        "Marcar-ho tot com a llegit"
+      ],
+      "Mark all as unread": [
+        "Marcar-ho tot com a no llegit"
       ]
     },
     "Title header for keys table": {

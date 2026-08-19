@@ -1739,6 +1739,9 @@
       ],
       "Skip": [
         "Pomiń"
+      ],
+      "Set up categories": [
+        "Skonfiguruj kategorie"
       ]
     },
     "Actions message": {
@@ -4444,6 +4447,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Utworzono 10 aliasów. Uzyskaj nieograniczoną liczbę aliasów i 500 GB przestrzeni dyskowej w planie ${ BRAND_NAME } Unlimited."
+      ],
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Kliknij wiadomość prawym przyciskiem myszy i wybierz „Przenieś do” lub przeciągnij ją do innej kategorii. Podobne wiadomości będą w przyszłości automatycznie tam trafiać."
       ]
     },
     "description": {
@@ -9489,6 +9495,30 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Od uporządkowanej skrzynki odbiorczej dzieli Cię kilka kliknięć"
+      ],
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "W kategorii ${ categoryLabel } masz **${ count } rozmowę**",
+        "W kategorii ${ categoryLabel } masz **${ count } rozmowy**",
+        "W kategorii ${ categoryLabel } masz **${ count } rozmów**",
+        "W kategorii ${ categoryLabel } masz **${ count } rozmowy**"
+      ],
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "W kategorii ${ categoryLabel } masz **${ count } wiadomość**",
+        "W kategorii ${ categoryLabel } masz **${ count } wiadomości**",
+        "W kategorii ${ categoryLabel } masz **${ count } wiadomości**",
+        "W kategorii ${ categoryLabel } masz **${ count } wiadomości**"
+      ],
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "W kategorii ${ categoryLabel } wybrałeś **${ checked } rozmowę**",
+        "W kategorii ${ categoryLabel } wybrałeś **${ checked } rozmowy**",
+        "W kategorii ${ categoryLabel } wybrałeś **${ checked } rozmów**",
+        "W kategorii ${ categoryLabel } wybrałeś **${ checked } rozmowy**"
+      ],
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "W kategorii ${ categoryLabel } wybrałeś **${ checked } wiadomość**",
+        "W kategorii ${ categoryLabel } wybrałeś **${ checked } wiadomości**",
+        "W kategorii ${ categoryLabel } wybrałeś **${ checked } wiadomości**",
+        "W kategorii ${ categoryLabel } wybrałeś **${ checked } wiadomości**"
       ]
     },
     "info": {
@@ -10688,6 +10718,15 @@
       ],
       "Duration": [
         "Czas trwania"
+      ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Wszystko, co wymaga Twojej uwagi, oraz wiadomości z wyłączonych kategorii"
+      ],
+      "Folder name": [
+        "Nazwa folderu"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Główne – wszystko, co wymaga Twojej uwagi, oraz wiadomości z wyłączonych kategorii"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15672,6 +15711,9 @@
       ],
       "You have successfully unsubscribed": [
         "Subskrypcja została anulowana"
+      ],
+      "Moved to ${ label }. Similar messages will be categorized there in the future.": [
+        "Przeniesiono do ${ label }. Podobne wiadomości będą w przyszłości trafiać do tej kategorii."
       ]
     },
     "Success notification": {
@@ -17011,6 +17053,9 @@
       ],
       "Domain names": [
         "Nazwy domen"
+      ],
+      "Refine your Categories": [
+        "Dopracuj swoje kategorie"
       ]
     },
     "Title header for keys table": {

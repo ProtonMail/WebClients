@@ -9861,6 +9861,30 @@
       ],
       "You": [
         "Ви"
+      ],
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "У категорії ${ categoryLabel } у вас **${ count } розмова**",
+        "У категорії ${ categoryLabel } у вас **${ count } розмови**",
+        "У категорії ${ categoryLabel } у вас **${ count } розмов**",
+        "У категорії ${ categoryLabel } у вас **${ count } розмови**"
+      ],
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "У категорії ${ categoryLabel } у вас **${ count } повідомлення**",
+        "У категорії ${ categoryLabel } у вас **${ count } повідомлення**",
+        "У категорії ${ categoryLabel } у вас **${ count } повідомлень**",
+        "У категорії ${ categoryLabel } у вас **${ count } повідомлення**"
+      ],
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "У категорії ${ categoryLabel } ви вибрали **${ checked } розмову**",
+        "У категорії ${ categoryLabel } ви вибрали **${ checked } розмови**",
+        "У категорії ${ categoryLabel } ви вибрали **${ checked } розмов**",
+        "У категорії ${ categoryLabel } ви вибрали **${ checked } розмови**"
+      ],
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "У категорії ${ categoryLabel } ви вибрали **${ checked } повідомлення**",
+        "У категорії ${ categoryLabel } ви вибрали **${ checked } повідомлення**",
+        "У категорії ${ categoryLabel } ви вибрали **${ checked } повідомлень**",
+        "У категорії ${ categoryLabel } ви вибрали **${ checked } повідомлення**"
       ]
     },
     "info": {
@@ -11081,6 +11105,9 @@
       ],
       "Duration": [
         "Тривалість"
+      ],
+      "Folder name": [
+        "Назва теки"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -16077,6 +16104,9 @@
       ],
       "You have successfully unsubscribed": [
         "Ви успішно скасували передплату"
+      ],
+      "Moved to ${ label }. Similar messages will be categorized there in the future.": [
+        "Переміщено до ${ label }. Надалі подібні повідомлення потраплятимуть туди ж."
       ]
     },
     "Success notification": {

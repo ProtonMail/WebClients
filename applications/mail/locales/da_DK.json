@@ -9706,6 +9706,26 @@
       ],
       "Writes realistic log lines back-to-back, then reads them all back. Shows how write and read/export cost scale with the number of stored entries.": [
         "Skriver realistiske loglinjer efter hinanden, og læser dem derefter tilbage. Viser hvordan write- og read/export skalerer med antallet af opbevarede elementer."
+      ],
+      "${ count } email": [
+        "${ count } e-mail",
+        "${ count } e-mails"
+      ],
+      "${ count } email · ${ names }": [
+        "${ count } e-mail → ${ names }",
+        "${ count } e-mails → ${ names }"
+      ],
+      "Apply labels": [
+        "Anvend etiketter"
+      ],
+      "Mark all as unread": [
+        "Markér alle som ikke-læst(e)"
+      ],
+      "Mark as read": [
+        "Markér som læst(e)"
+      ],
+      "Mark as unread": [
+        "Markér som ikke-læst(e)"
       ]
     },
     "info": {
@@ -10967,6 +10987,12 @@
       ],
       "Write-chain drain after last line": [
         "Write-chain drænes efter sidste linje"
+      ],
+      "Account holder name": [
+        "Kontohavers navn"
+      ],
+      "Folder name": [
+        "Mappenavn"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13457,6 +13483,9 @@
       ],
       "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
         "Kunne ikke initialisere ${ IDEAL_BRAND_NAME }. Prøv igen senere."
+      ],
+      "Please enter the account holder name": [
+        "Anfør kontohavers navn"
       ]
     },
     "Payments.error": {
@@ -16461,7 +16490,7 @@
         "Ugyldig bekræftelseskode"
       ],
       "Keep this banner hidden?": [
-        "Skjul fortsat dette banner?"
+        "Hold dette banner skjult?"
       ],
       "Label as": [
         "Mærk som"
@@ -17080,6 +17109,15 @@
       ],
       "Unstar emails": [
         "Fjern stjernemarkering fra e-mails"
+      ],
+      "Apply labels": [
+        "Anvend etiketter"
+      ],
+      "Mark all as read": [
+        "Markér alle som læst(e)"
+      ],
+      "Mark all as unread": [
+        "Markér alle som ikke-læst(e)"
       ]
     },
     "Title header for keys table": {

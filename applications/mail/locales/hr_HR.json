@@ -1733,6 +1733,9 @@
       ],
       "Skip": [
         "Preskoči"
+      ],
+      "Set up categories": [
+        "Postavi kategorije"
       ]
     },
     "Actions message": {
@@ -4405,6 +4408,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Već ste izradili 10 pseudonima. Nabavite neograničene pseudonime i 500 GB pohrane uz ${ BRAND_NAME } Unlimited."
+      ],
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Kliknite desnom tipkom miša na e-poruku i odaberite „Premjesti u“ ili je povucite i ispustite u drugu kategoriju. Slične e-poruke bit će u budućnosti automatski sortirane tamo."
       ]
     },
     "description": {
@@ -9312,6 +9318,26 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Samo Vas nekoliko klikova dijeli od pristigle pošte bez nereda"
+      ],
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "U kategoriji ${ categoryLabel } imate **${ count } razgovor**",
+        "U kategoriji ${ categoryLabel } imate **${ count } razgovora**",
+        "U kategoriji ${ categoryLabel } imate **${ count } razgovora**"
+      ],
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "U kategoriji ${ categoryLabel } imate **${ count } poruku**",
+        "U kategoriji ${ categoryLabel } imate **${ count } poruke**",
+        "U kategoriji ${ categoryLabel } imate **${ count } poruka**"
+      ],
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "U kategoriji ${ categoryLabel } odabrali ste **${ checked } razgovor**",
+        "U kategoriji ${ categoryLabel } odabrali ste **${ checked } razgovora**",
+        "U kategoriji ${ categoryLabel } odabrali ste **${ checked } razgovora**"
+      ],
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "U kategoriji ${ categoryLabel } odabrali ste **${ checked } poruku**",
+        "U kategoriji ${ categoryLabel } odabrali ste **${ checked } poruke**",
+        "U kategoriji ${ categoryLabel } odabrali ste **${ checked } poruka**"
       ]
     },
     "info": {
@@ -10503,6 +10529,15 @@
       ],
       "Duration": [
         "Trajanje"
+      ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Sve što zahtijeva vašu pozornost, plus e-poruke iz onemogućenih kategorija"
+      ],
+      "Folder name": [
+        "Naziv mape"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Primarno – sve što zahtijeva vašu pozornost, plus e-poruke iz onemogućenih kategorija"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15364,6 +15399,9 @@
       ],
       "You have successfully unsubscribed": [
         "Uspješno ste poništili pretplatu"
+      ],
+      "Moved to ${ label }. Similar messages will be categorized there in the future.": [
+        "Premješteno u ${ label }. Slične poruke bit će u budućnosti kategorizirane tamo."
       ]
     },
     "Success notification": {
@@ -16677,6 +16715,9 @@
       ],
       "Domain names": [
         "Nazivi domena"
+      ],
+      "Refine your Categories": [
+        "Precizirajte svoje kategorije"
       ]
     },
     "Title header for keys table": {

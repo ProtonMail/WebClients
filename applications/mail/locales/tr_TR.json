@@ -1739,6 +1739,12 @@
       ],
       "Write ${ count } logs": [
         "${ count } günlük kaydını yaz"
+      ],
+      "Copy debug transcript": [
+        "Hata ayıklama çıktısını kopyala"
+      ],
+      "Preview logs": [
+        "Günlükleri önizle"
       ]
     },
     "action": {
@@ -4006,6 +4012,9 @@
       ],
       "Åland Islands": [
         "Aland Adaları"
+      ],
+      "Micronesia": [
+        "Mikronezya"
       ]
     },
     "customer_support.feature.all": {
@@ -9735,6 +9744,27 @@
       ],
       "Mark as unread": [
         "Okunmamış olarak işaretle"
+      ],
+      "Checked Proton support": [
+        "Proton desteği kontrol edildi"
+      ],
+      "Create folder": [
+        "Klasör oluştur"
+      ],
+      "Create label": [
+        "Etiket oluştur"
+      ],
+      "Debug transcript copied": [
+        "Hata ayıklama çıktısı kopyalandı"
+      ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "Günlükler sorunun ortaya çıkmasından önce neler olduğunu anlamamıza yardımcı olur. Bu günlükler uygulama eylemlerini ve hata mesajlarını içerir. Ancak iletilerin içeriği yer almaz."
+      ],
+      "Mark all as unread": [
+        "Tümünü okunmadı olarak işaretle"
+      ],
+      "Searched the web": [
+        "İnternette arama yapıldı"
       ]
     },
     "info": {
@@ -11005,6 +11035,12 @@
       ],
       "Account holder name": [
         "Hesap sahibinin adı"
+      ],
+      "Folder name": [
+        "Klasör adı"
+      ],
+      "Label name": [
+        "Etiket adı"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -17144,6 +17180,18 @@
       ],
       "Apply labels": [
         "Etiketleri uygula"
+      ],
+      "Create folder": [
+        "Klasör oluştur"
+      ],
+      "Create label": [
+        "Etiket oluştur"
+      ],
+      "Mark all as read": [
+        "Tümünü okundu olarak işaretle"
+      ],
+      "Mark all as unread": [
+        "Tümünü okunmadı olarak işaretle"
       ]
     },
     "Title header for keys table": {
