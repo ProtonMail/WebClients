@@ -1,6 +1,7 @@
 import type { DriveEvent, MaybeMissingNode, NodeEntity, NodeType } from '@protontech/drive-sdk';
 
 import { ValidationError } from '@proton/drive';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import type { DecryptedKey } from '@proton/shared/lib/interfaces';
 
 import { Logger } from '../shared/Logger';
@@ -111,36 +112,30 @@ export class DriveSdkBridge {
                 uids.push(uid);
             }
         } catch (error) {
-            // The SDK validates the parent still exists before listing children and throws instead
-            // of returning a missing marker. A folder that vanished between being queued and being
-            // walked (concurrent delete/move) is treated as childless so the walk continues. Confirm
-            // via a direct getNode call rather than assuming from the ValidationError alone: a
-            // ValidationError can also mean pagination failed partway through a folder that still
-            // exists, which must still surface as an error rather than silently truncate its children.
-            if (error instanceof ValidationError && (await this.isNodeGone(parentNodeUid))) {
+            // Is the folder the problem, or just this request? Only the first is worth skipping: if
+            // the folder is gone there's nothing to list, now or later. A 429 or a 5xx tells us
+            // nothing about the folder, so those still need retrying.
+            // TODO: the SDK should really throw something explicit like MissingNodeError here.
+            const isUnlistable =
+                error instanceof ValidationError &&
+                // The SDK's own getNode(parent) came back empty (it throws a ValidationError with no error code :/).
+                (error.code === undefined ||
+                    // The children endpoint says it's gone.
+                    error.code === API_CUSTOM_ERROR_CODES.NOT_FOUND ||
+                    // Still there, we just can't read it anymore.
+                    error.code === API_CUSTOM_ERROR_CODES.NOT_ALLOWED);
+            if (isUnlistable) {
+                // Treat it as empty and carry on: throwing kills the whole populator task,
+                // and the folder is still in the checkpoint, so every retry hits the same error
+                // and indexing never finishes.
                 Logger.warn(
-                    `MainThreadBridge: iterateFolderChildrenNodeUids — folder ${parentNodeUid} not found (deleted or no permissions), treating as childless`
+                    `MainThreadBridge: iterateFolderChildrenNodeUids — folder ${parentNodeUid} is not accessible, treating as childless`
                 );
                 return [];
             }
             throw error;
         }
         return uids;
-    }
-
-    /**
-     * Confirms a node is genuinely gone (vs. some other validation-shaped failure while it still
-     * exists) by re-fetching it directly. Any other error while confirming (e.g. network) is treated
-     * as inconclusive so the original error is surfaced instead of guessing.
-     * TODO: Ideally the SDK should throw a more expressive/explicit "MissingNodeError" instead.
-     */
-    private async isNodeGone(nodeUid: string): Promise<boolean> {
-        try {
-            await this.driveClient.getNode(nodeUid);
-            return false;
-        } catch (error) {
-            return error instanceof ValidationError;
-        }
     }
 
     async iterateNodes(uids: string[]) {
