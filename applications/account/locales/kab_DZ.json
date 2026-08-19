@@ -1049,6 +1049,18 @@
       ],
       "Zoom out": [
         "Semẓi"
+      ],
+      "Disable categories": [
+        "Sens taggayin"
+      ],
+      "Disable category": [
+        "Sens taggayt"
+      ],
+      "Enable category": [
+        "Rmed taggayt"
+      ],
+      "Keep categories": [
+        "Eǧǧ taggayin"
       ]
     },
     "action": {
@@ -2641,6 +2653,9 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Tzemreḍ ad d-tketreḍ tidyanin s umasal (afaylu ICS).\nAfaylu ilaq ad yesɛu teɣzi tafellayt n ${ MAX_IMPORT_FILE_SIZE_STRING } rnu ad yili deg-s alamma ${ MAX_IMPORT_EVENTS_STRING } n tedyanin.\nMa yella afaylu-inek·inem meqqar aṭas, ttxil-k·m bḍu-t d ifuyla meẓẓiyen."
+      ],
+      "Select which categories you want to add and if you want to receive push notifications for each category.": [
+        "Fren anwa taggayin i tebɣiḍ ad ternuḍ akked ma tebɣiḍ ad tremseḍ ilɣa i yal taggayt."
       ]
     },
     "description": {
@@ -5554,6 +5569,15 @@
       ],
       "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
         "Abun-inek·inem i tansa n yimayl ${ BRAND_NAME } yettwaḥerzen: ${ reservedEmail }"
+      ],
+      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
+        "Akk iznan ad d-ttwaskanen deg Tinicin, yerna accaren d tibzimin n teggayin ur ttbanen ara. "
+      ],
+      "Receive notifications for ${ categoryLabel }": [
+        "Remmes ilɣa i ${ categoryLabel }"
+      ],
+      "With email categories, important messages land in a primary inbox. Everything else is organized into categories.": [
+        "S taggayin n yimaylen, iznan yesɛan azal ad awḍen ɣer tinicin tagejdant. Ayen nniḍen akk yettwasuddes deg taggayin."
       ]
     },
     "info": {
@@ -6707,6 +6731,21 @@
       ],
       "ZIP code": [
         "Tangalt Zip"
+      ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Akk ayen yesran lḥir-ik, rnu ɣer-s imaylen seg taggayin yensan"
+      ],
+      "Categories": [
+        "Taggayin"
+      ],
+      "Enable categories": [
+        "Rmed taggayin"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Tagejdant – akk ayen yesran lḥir-ik, rnu ɣer-s imaylen seg taggayin yensan"
+      ],
+      "Use email categories": [
+        "Seqdec taggayin n yimaylen"
       ]
     },
     "label": {
@@ -10502,6 +10541,18 @@
       ],
       "Your subscriptions": [
         "Imultaɣen-ik"
+      ],
+      "Add categories": [
+        "Rnu taggayin"
+      ],
+      "Categories": [
+        "Taggayin"
+      ],
+      "Disable categories?": [
+        "Sens taggayin?"
+      ],
+      "Email categories": [
+        "Taggayin n yimaylen"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -10632,6 +10683,9 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Amiḍan-ik·im azɣaray yezmer ad yessaweḍ talast n tehri-ines n 24 yisragen. ${ BRAND_NAME } ad yeεreḍ ad ikemmel aktar s zzerb."
+      ],
+      "Emails in your inbox are shown organized into categories": [
+        "Imaylen deg tinicin-ik ttwaskanen d asuddes deg taggayin"
       ]
     },
     "Tooltip; share calendar modal ": {
