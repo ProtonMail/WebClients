@@ -70,6 +70,9 @@ export interface Props {
     open: ModalProps['open'];
     app?: APP_NAMES;
     reportDescriptionContext?: string[];
+    initialDescription?: string;
+    /** Matched case-insensitively against an option's untranslated `value`; falls back to the app default. */
+    initialCategory?: string;
 }
 
 const getMailOptions = ({ isAuthenticatorAvailable }: { isAuthenticatorAvailable: boolean }): OptionItem[] => {
@@ -186,6 +189,12 @@ const getVPNOptions = (): OptionItem[] => {
     ];
 };
 
+const findCategoryOption = (options: OptionItem[], category: string) =>
+    options.find(
+        (option): option is OptionOptionItem =>
+            option.type === 'option' && option.value.toLowerCase() === category.toLowerCase()
+    );
+
 const BugModal = ({
     username: Username = '',
     email,
@@ -195,6 +204,8 @@ const BugModal = ({
     onExit,
     app: maybeApp,
     reportDescriptionContext,
+    initialDescription,
+    initialCategory,
 }: Props) => {
     const api = useApi();
     const location = useLocation();
@@ -236,10 +247,12 @@ const BugModal = ({
         const defaultCategory = options.find(
             (option): option is OptionOptionItem => option.type === 'option' && option.app === app
         );
+        const seededCategory =
+            initialCategory && showCategory ? findCategoryOption(options, initialCategory) : undefined;
         return {
             ...getReportInfo(),
-            Category: defaultCategory,
-            Description: '',
+            Category: seededCategory || defaultCategory,
+            Description: initialDescription || '',
             Email: email || '',
             Username: Username || '',
         };
