@@ -1,4 +1,4 @@
-import { GenerateUUID } from '@proton/docs-shared'
+import { GenerateUUID } from '../GenerateUuid'
 import metrics from '@proton/metrics'
 
 import Persistence from './Persistence'
