@@ -135,3 +135,9 @@ export const serializeAndEncryptItem = (indexKey: IndexKey, itemToStore: object,
     const serializedItem = new TextEncoder().encode(JSON.stringify(itemToStore));
     return encryptItem(indexKey, serializedItem, version);
 };
+
+/**
+ * Read the tab's visibility state for inclusion in log messages, falling back
+ * to 'unknown' when `document` isn't available (e.g. in a worker)
+ */
+export const getVisibilityState = () => (typeof document !== 'undefined' ? document.visibilityState : 'unknown');
