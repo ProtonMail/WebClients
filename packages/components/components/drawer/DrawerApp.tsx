@@ -20,6 +20,7 @@ import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import useDrawer from '../../hooks/drawer/useDrawer';
+import DrawerBugModal from './DrawerBugModal';
 import DrawerContactModals from './DrawerContactModals';
 import DrawerSecurityCenterView from './views/DrawerSecurityCenterView';
 import useSecurityCenter from './views/SecurityCenter/useSecurityCenter';
@@ -89,6 +90,7 @@ const DrawerApp = ({ customAppSettings, onCompose, onMailTo, contactCustomAction
     return (
         <>
             <DrawerContactModals />
+            <DrawerBugModal />
             {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
             <aside
                 className={clsx([
