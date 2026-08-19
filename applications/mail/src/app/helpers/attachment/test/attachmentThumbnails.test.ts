@@ -5,8 +5,8 @@ import {
     canShowAttachmentThumbnails,
     filterAttachmentToPreview,
     getOtherAttachmentsTitle,
-} from 'proton-mail/helpers/attachment/attachmentThumbnails';
-import type { Conversation } from 'proton-mail/models/conversation';
+} from '../attachmentThumbnails';
+import type { Conversation } from '../../../models/conversation';
 
 const getConversation = (isSpam = false) => {
     return {

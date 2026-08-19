@@ -25,12 +25,12 @@ import { hasReachedFolderLimit } from '@proton/shared/lib/helpers/folder';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
-import type { FolderItem } from 'proton-mail/hooks/useMailTreeView/interface';
-import { useMailFolderTreeView } from 'proton-mail/hooks/useMailTreeView/useMailFolderTreeView';
-import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
-import { MAX_FOLDER_NAME_LENGTH } from 'proton-mail/store/newsletterSubscriptions/constants';
-import { filterSubscriptionList } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsActions';
-import { getFilteredSubscriptionIndex } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSelector';
+import type { FolderItem } from '../../../../../hooks/useMailTreeView/interface';
+import { useMailFolderTreeView } from '../../../../../hooks/useMailTreeView/useMailFolderTreeView';
+import { useMailDispatch, useMailSelector } from '../../../../../store/hooks';
+import { MAX_FOLDER_NAME_LENGTH } from '../../../../../store/newsletterSubscriptions/constants';
+import { filterSubscriptionList } from '../../../../../store/newsletterSubscriptions/newsletterSubscriptionsActions';
+import { getFilteredSubscriptionIndex } from '../../../../../store/newsletterSubscriptions/newsletterSubscriptionsSelector';
 
 import { NewsletterSubscriptionAction } from '../../interface';
 import { useNewsletterSubscriptionTelemetry } from '../../useNewsletterSubscriptionTelemetry';

@@ -1,8 +1,8 @@
 import { act } from '@testing-library/react-hooks';
 
-import { minimalCache } from 'proton-mail/helpers/test/cache';
-import { renderHook } from 'proton-mail/helpers/test/render';
-import { elementsSliceActions } from 'proton-mail/store/elements/elementsSlice';
+import { minimalCache } from '../../helpers/test/cache';
+import { renderHook } from '../../helpers/test/render';
+import { elementsSliceActions } from '../../store/elements/elementsSlice';
 
 import useSnooze from './useSnooze';
 

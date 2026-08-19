@@ -2,9 +2,9 @@ import { useLocation } from 'react-router-dom';
 
 import { useSubscribeEventManager } from '@proton/components/hooks/useHandler';
 
-import { isConversationMode } from 'proton-mail/helpers/mailSettings';
-import { selectConversationMode, selectLabelID } from 'proton-mail/store/elements/elementsSelectors';
-import { useMailSelector } from 'proton-mail/store/hooks';
+import { isConversationMode } from '../../helpers/mailSettings';
+import { selectConversationMode, selectLabelID } from '../../store/elements/elementsSelectors';
+import { useMailSelector } from '../../store/hooks';
 
 import type { Event } from '../../models/event';
 import type { RouterNavigation } from '../interface';

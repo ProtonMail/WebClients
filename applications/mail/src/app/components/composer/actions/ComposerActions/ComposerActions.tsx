@@ -29,11 +29,11 @@ import lumoIcon from '@proton/styles/assets/img/lumo/lumo-cat-icon.svg';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
-import { useComposerAssistantProvider } from 'proton-mail/components/assistant/provider/ComposerAssistantProvider';
-import ComposerAssistantSpotlight from 'proton-mail/components/assistant/spotlights/ComposerAssistantSpotlight';
-import AttachmentsButton from 'proton-mail/components/message/extrasFooter/attachment/AttachmentsButton';
-import { useMailDispatch } from 'proton-mail/store/hooks';
-import { updateExpires } from 'proton-mail/store/messages/draft/messagesDraftActions';
+import { useComposerAssistantProvider } from '../../../assistant/provider/ComposerAssistantProvider';
+import ComposerAssistantSpotlight from '../../../assistant/spotlights/ComposerAssistantSpotlight';
+import AttachmentsButton from '../../../message/extrasFooter/attachment/AttachmentsButton';
+import { useMailDispatch } from '../../../../store/hooks';
+import { updateExpires } from '../../../../store/messages/draft/messagesDraftActions';
 
 import { getAttachmentCounts } from '../../../../helpers/message/messages';
 import type { MessageChange, MessageChangeFlag } from '../../Composer';

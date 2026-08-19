@@ -3,14 +3,14 @@ import type { Draft } from '@reduxjs/toolkit';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { eventUpdatesFulfilled, eventUpdatesPending } from 'proton-mail/store/elements/elementsReducers';
-import type { ElementsState } from 'proton-mail/store/elements/elementsTypes';
+import { eventUpdatesFulfilled, eventUpdatesPending } from '../elementsReducers';
+import type { ElementsState } from '../elementsTypes';
 import {
     CONVERSATION_ID,
     generateElementContextIdentifier,
     setupConversation,
     setupMessage,
-} from 'proton-mail/store/elements/tests/elementsReducer.test.helpers';
+} from './elementsReducer.test.helpers';
 
 const messageOne = 'msg-1';
 const messageTwo = 'msg-2';

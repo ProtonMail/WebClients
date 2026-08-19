@@ -2,7 +2,7 @@ import type { ActionRequest } from '@proton/llm/lib/lumoAgent/contracts/types';
 import { createReferenceRegistry } from '@proton/llm/lib/lumoAgent/engine/referenceRegistry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
-import { APPLY_LOCATION_TYPES } from 'proton-mail/hooks/actions/applyLocation/interface';
+import { APPLY_LOCATION_TYPES } from '../../../hooks/actions/applyLocation/interface';
 
 import type { MailToolDeps } from '../../toolModule';
 import { hasEmailSelection, renderEmailSelectionBody } from './emailSelection';

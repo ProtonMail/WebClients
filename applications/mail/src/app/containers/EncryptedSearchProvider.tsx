@@ -24,9 +24,9 @@ import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import ESDeletedConversationsCache from 'proton-mail/helpers/encryptedSearch/ESDeletedConversationsCache';
-import { selectCategoryIDs } from 'proton-mail/store/elements/elementsSelectors';
-import { useMailSelector } from 'proton-mail/store/hooks';
+import ESDeletedConversationsCache from '../helpers/encryptedSearch/ESDeletedConversationsCache';
+import { selectCategoryIDs } from '../store/elements/elementsSelectors';
+import { useMailSelector } from '../store/hooks';
 
 import { defaultESContextMail, defaultESMailStatus } from '../constants';
 import { useContentSearch } from '../contentSearch/integration/useContentSearch';

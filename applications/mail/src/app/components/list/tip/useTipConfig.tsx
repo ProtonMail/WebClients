@@ -27,12 +27,12 @@ import {
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { AUTO_DELETE_SPAM_AND_TRASH_DAYS } from '@proton/shared/lib/mail/mailSettings';
 
-import { useOnCompose } from 'proton-mail/containers/ComposeProvider';
-import { ComposeTypes } from 'proton-mail/hooks/composer/useCompose';
-import { TipActionType } from 'proton-mail/models/tip';
-import { elements } from 'proton-mail/store/elements/elementsSelectors';
-import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
-import { snoozeActions } from 'proton-mail/store/snooze/snoozeSlice';
+import { useOnCompose } from '../../../containers/ComposeProvider';
+import { ComposeTypes } from '../../../hooks/composer/useCompose';
+import { TipActionType } from '../../../models/tip';
+import { elements } from '../../../store/elements/elementsSelectors';
+import { useMailDispatch, useMailSelector } from '../../../store/hooks';
+import { snoozeActions } from '../../../store/snooze/snoozeSlice';
 
 import useProtonTipsTelemetry from './useProtonTipsTelemetry';
 

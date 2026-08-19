@@ -21,7 +21,7 @@ import { getRecipients, getRecipientsAddresses, isPlainText } from '@proton/shar
 import getSendPreferences from '@proton/shared/lib/mail/send/getSendPreferences';
 import unique from '@proton/utils/unique';
 
-import { getAddressFromEmail } from 'proton-mail/helpers/addresses';
+import { getAddressFromEmail } from '../../helpers/addresses';
 
 import SendWithChangedPreferencesModal, {
     PREFERENCE_CHANGE_TYPE,

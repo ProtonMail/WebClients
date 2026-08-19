@@ -5,7 +5,7 @@ import FolderIcon from '@proton/components/containers/labels/FolderIcon';
 import { IcCheckmarkStrong } from '@proton/icons/icons/IcCheckmarkStrong';
 import clsx from '@proton/utils/clsx';
 
-import type { FolderItem } from 'proton-mail/hooks/useMailTreeView/interface';
+import type { FolderItem } from '../../hooks/useMailTreeView/interface';
 
 import { MoveToPlaceholders } from './MoveToComponents';
 

@@ -8,8 +8,8 @@ import { IcArrowDown } from '@proton/icons/icons/IcArrowDown';
 import { IcArrowUp } from '@proton/icons/icons/IcArrowUp';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 
-import { selectElementID } from 'proton-mail/store/elements/elementsSelectors';
-import { useMailSelector } from 'proton-mail/store/hooks';
+import { selectElementID } from '../../../store/elements/elementsSelectors';
+import { useMailSelector } from '../../../store/hooks';
 
 import { isConversationMode } from '../../../helpers/mailSettings';
 

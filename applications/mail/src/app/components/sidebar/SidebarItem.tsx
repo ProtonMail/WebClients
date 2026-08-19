@@ -21,12 +21,12 @@ import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
-import { useCheckAllRef } from 'proton-mail/containers/CheckAllRefProvider';
-import { categoryIDFromUrl, setCategoryInUrl } from 'proton-mail/helpers/mailboxUrl';
-import type { MoveParams } from 'proton-mail/hooks/actions/applyLocation/interface';
-import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
-import { selectLabelID } from 'proton-mail/store/elements/elementsSelectors';
-import { useMailSelector } from 'proton-mail/store/hooks';
+import { useCheckAllRef } from '../../containers/CheckAllRefProvider';
+import { categoryIDFromUrl, setCategoryInUrl } from '../../helpers/mailboxUrl';
+import type { MoveParams } from '../../hooks/actions/applyLocation/interface';
+import { useSelectAll } from '../../hooks/useSelectAll';
+import { selectLabelID } from '../../store/elements/elementsSelectors';
+import { useMailSelector } from '../../store/hooks';
 
 import { shouldDisplayTotal } from '../../helpers/labels';
 import type { ApplyLabelsParams } from '../../hooks/actions/label/interface';

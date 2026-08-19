@@ -6,7 +6,7 @@ import { LABEL_TYPE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Label } from '@proton/shared/lib/interfaces';
 import { DEFAULT_MAIL_SETTINGS } from '@proton/shared/lib/mail/mailSettings';
 
-import { useMailSelector } from 'proton-mail/store/hooks';
+import { useMailSelector } from '../../../store/hooks';
 
 import MoveButtons from './MoveButtons';
 
@@ -20,7 +20,7 @@ jest.mock('@proton/mail/store/labels/hooks');
 jest.mocked(useFolders).mockReturnValue([[], false]);
 jest.mocked(useLabels).mockReturnValue([[], false]);
 
-jest.mock('proton-mail/store/hooks');
+jest.mock('../../../store/hooks');
 const mockUseMailSelector = jest.mocked(useMailSelector);
 
 const getProps = (labelID: string) => {

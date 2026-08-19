@@ -17,7 +17,7 @@ import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { getRecipientsAddresses } from '@proton/shared/lib/mail/messages';
 import unique from '@proton/utils/unique';
 
-import { useMailDispatch } from 'proton-mail/store/hooks';
+import { useMailDispatch } from '../../store/hooks';
 
 import LoadingNotificationContent from '../../components/notifications/LoadingNotificationContent';
 import type { SendingMessageNotificationManager } from '../../components/notifications/SendingMessageNotification';

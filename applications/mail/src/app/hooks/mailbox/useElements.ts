@@ -22,8 +22,8 @@ import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
-import { useCategoriesView } from 'proton-mail/components/categoryView/useCategoriesView';
-import { isConversationMode } from 'proton-mail/helpers/mailSettings';
+import { useCategoriesView } from '../../components/categoryView/useCategoriesView';
+import { isConversationMode } from '../../helpers/mailSettings';
 import {
     categoryIDFromUrl,
     extractSearchParameters,
@@ -31,8 +31,8 @@ import {
     filterToString,
     sortFromUrl,
     sortToString,
-} from 'proton-mail/helpers/mailboxUrl';
-import { useMailDispatch, useMailSelector, useMailStore } from 'proton-mail/store/hooks';
+} from '../../helpers/mailboxUrl';
+import { useMailDispatch, useMailSelector, useMailStore } from '../../store/hooks';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { isSearch } from '../../helpers/elements';

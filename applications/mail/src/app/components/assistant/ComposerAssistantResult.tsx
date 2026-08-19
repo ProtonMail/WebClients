@@ -1,6 +1,6 @@
 import { useAssistant } from '@proton/llm/lib';
 
-import { parseModelResult } from 'proton-mail/helpers/assistant/result';
+import { parseModelResult } from '../../helpers/assistant/result';
 
 import './ComposerAssistantResult.scss';
 

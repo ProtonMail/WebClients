@@ -11,8 +11,8 @@ import type { Folder, Label } from '@proton/shared/lib/interfaces';
 import { HUMAN_TO_LABEL_IDS } from '@proton/shared/lib/mail/constants';
 import { ALMOST_ALL_MAIL, SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
 
-import { getParamsFromPathname } from 'proton-mail/helpers/mailboxUrl';
-import type { Element } from 'proton-mail/models/element';
+import { getParamsFromPathname } from '../../../helpers/mailboxUrl';
+import type { Element } from '../../../models/element';
 
 import { fakeStore, indexedESStatus, settledView } from '../../helpers/navigation.test.helpers';
 import type { MailToolDeps } from '../../toolModule';

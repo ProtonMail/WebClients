@@ -11,7 +11,7 @@ import type {
 import type { DecryptedKey } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
-import type { ESBaseMessage, ESMessageContent } from 'proton-mail/models/encryptedSearch';
+import type { ESBaseMessage, ESMessageContent } from '../../models/encryptedSearch';
 
 import type { ImportIssue } from './Import';
 import { ImportIssueSeverity } from './Import';

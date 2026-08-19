@@ -14,20 +14,20 @@ import { CUSTOM_VIEWS, CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/const
 import { isAdminOrLoginAsAdmin } from '@proton/shared/lib/user/helpers';
 import clsx from '@proton/utils/clsx';
 
-import { CategoriesOnboardingProvider } from 'proton-mail/components/categoryView/categoriesOnboarding/CategoriesOnboardingContext';
-import { CategoriesOnboardingSpotlight } from 'proton-mail/components/categoryView/categoriesOnboarding/CategoriesOnboardingSpotlights';
-import { OnboardingStep } from 'proton-mail/components/categoryView/categoriesOnboarding/onboardingInterface';
-import MailHeader from 'proton-mail/components/header/MailHeader';
-import { NewsletterSubscriptionView } from 'proton-mail/components/view/NewsletterSubscription/NewsletterSubscriptionView';
-import { ROUTE_LABEL } from 'proton-mail/constants';
-import { MailboxContainerContextProvider } from 'proton-mail/containers/mailbox/MailboxContainerProvider';
-import { getInboxRedirectUrl } from 'proton-mail/helpers/mailboxUrl';
-import useMailDrawer from 'proton-mail/hooks/drawer/useMailDrawer';
-import { useElements } from 'proton-mail/hooks/mailbox/useElements';
-import { useScrollListToTopOnViewChange } from 'proton-mail/router/hooks/useScrollListToTopOnViewChange';
-import { selectElementID, selectIsSearching, selectLabelID } from 'proton-mail/store/elements/elementsSelectors';
-import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
-import { layoutActions } from 'proton-mail/store/layout/layoutSlice';
+import { CategoriesOnboardingProvider } from '../components/categoryView/categoriesOnboarding/CategoriesOnboardingContext';
+import { CategoriesOnboardingSpotlight } from '../components/categoryView/categoriesOnboarding/CategoriesOnboardingSpotlights';
+import { OnboardingStep } from '../components/categoryView/categoriesOnboarding/onboardingInterface';
+import MailHeader from '../components/header/MailHeader';
+import { NewsletterSubscriptionView } from '../components/view/NewsletterSubscription/NewsletterSubscriptionView';
+import { ROUTE_LABEL } from '../constants';
+import { MailboxContainerContextProvider } from '../containers/mailbox/MailboxContainerProvider';
+import { getInboxRedirectUrl } from '../helpers/mailboxUrl';
+import useMailDrawer from '../hooks/drawer/useMailDrawer';
+import { useElements } from '../hooks/mailbox/useElements';
+import { useScrollListToTopOnViewChange } from './hooks/useScrollListToTopOnViewChange';
+import { selectElementID, selectIsSearching, selectLabelID } from '../store/elements/elementsSelectors';
+import { useMailDispatch, useMailSelector } from '../store/hooks';
+import { layoutActions } from '../store/layout/layoutSlice';
 
 import { RouterLabelContainer } from './RouterLabelContainer';
 import { useMailboxLayoutProvider } from './components/MailboxLayoutContext';

@@ -3,7 +3,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import type { Label, LabelCount, MailSettings, SafeLabelCount } from '@proton/shared/lib/interfaces';
 
-import { isConversationMode } from 'proton-mail/helpers/mailSettings';
+import { isConversationMode } from '../../helpers/mailSettings';
 
 const getPrimaryCategoryCounts = (categoryIDs: string[], resultCounterMap: Record<string, SafeLabelCount>) => {
     return categoryIDs.reduce(

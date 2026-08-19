@@ -5,13 +5,13 @@ import ContactImage from '@proton/components/containers/contacts/ContactImage';
 import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 import clsx from '@proton/utils/clsx';
 
-import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
-import { SubscriptionTabs } from 'proton-mail/store/newsletterSubscriptions/interface';
+import { useMailDispatch, useMailSelector } from '../../../../store/hooks';
+import { SubscriptionTabs } from '../../../../store/newsletterSubscriptions/interface';
 import {
     isSubscriptionActiveSelector,
     selectedTab,
-} from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSelector';
-import { newsletterSubscriptionsActions } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSlice';
+} from '../../../../store/newsletterSubscriptions/newsletterSubscriptionsSelector';
+import { newsletterSubscriptionsActions } from '../../../../store/newsletterSubscriptions/newsletterSubscriptionsSlice';
 
 import type { ModalFilterType, PropsWithNewsletterSubscription } from '../interface';
 import ModalNewsletterSubscriptionFilter from './ModalNewsletterSubscriptionFilter';

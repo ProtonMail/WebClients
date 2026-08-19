@@ -11,7 +11,7 @@ import type {
     NormalizedSearchParams,
 } from '@proton/encrypted-search/models';
 
-import type { ESBaseMessage, ESMessageContent } from 'proton-mail/models/encryptedSearch';
+import type { ESBaseMessage, ESMessageContent } from '../../models/encryptedSearch';
 
 import type { IndexService } from '../indexation/IndexService';
 import type { Search } from '../search/Search';

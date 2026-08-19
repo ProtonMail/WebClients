@@ -8,8 +8,8 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Label } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
-import type { Element } from 'proton-mail/models/element';
-import * as mailboxActions from 'proton-mail/store/mailbox/mailboxActions';
+import type { Element } from '../../../models/element';
+import * as mailboxActions from '../../../store/mailbox/mailboxActions';
 
 import { addApiMock } from '../../../helpers/test/api';
 import { minimalCache } from '../../../helpers/test/cache';

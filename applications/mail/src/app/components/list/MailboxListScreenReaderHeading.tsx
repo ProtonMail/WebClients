@@ -1,6 +1,6 @@
 import { c, msgid } from 'ttag';
 
-import { useMailboxCounter } from 'proton-mail/hooks/mailboxCounter/useMailboxCounter';
+import { useMailboxCounter } from '../../hooks/mailboxCounter/useMailboxCounter';
 
 interface MailboxListScreenReaderHeadingProps {
     conversationMode: boolean;

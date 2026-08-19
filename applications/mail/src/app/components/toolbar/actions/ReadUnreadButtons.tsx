@@ -9,8 +9,8 @@ import { IcEnvelopeOpen } from '@proton/icons/icons/IcEnvelopeOpen';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
-import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
-import { useMailSelector } from 'proton-mail/store/hooks';
+import { useSelectAll } from '../../../hooks/useSelectAll';
+import { useMailSelector } from '../../../store/hooks';
 
 import {
     elementsAreUnread as elementsAreUnreadSelector,

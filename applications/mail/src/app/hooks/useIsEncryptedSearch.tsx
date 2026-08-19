@@ -1,7 +1,7 @@
-import { useEncryptedSearchContext } from 'proton-mail/containers/EncryptedSearchProvider';
-import { isSearch } from 'proton-mail/helpers/elements';
-import { selectSearch } from 'proton-mail/store/elements/elementsSelectors';
-import { useMailSelector } from 'proton-mail/store/hooks';
+import { useEncryptedSearchContext } from '../containers/EncryptedSearchProvider';
+import { isSearch } from '../helpers/elements';
+import { selectSearch } from '../store/elements/elementsSelectors';
+import { useMailSelector } from '../store/hooks';
 
 const useIsEncryptedSearch = () => {
     const search = useMailSelector(selectSearch);

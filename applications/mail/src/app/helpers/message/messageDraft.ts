@@ -20,8 +20,8 @@ import {
 import generateUID from '@proton/utils/generateUID';
 import unique from '@proton/utils/unique';
 
-import { createHTMLDraftContent } from 'proton-mail/helpers/message/draftContent/html';
-import { createPlaintextDraftContent } from 'proton-mail/helpers/message/draftContent/plaintext';
+import { createHTMLDraftContent } from './draftContent/html';
+import { createPlaintextDraftContent } from './draftContent/plaintext';
 
 import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
 import { getFromAddress } from '../addresses';

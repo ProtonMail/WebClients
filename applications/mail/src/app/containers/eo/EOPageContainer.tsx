@@ -4,7 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import UnAuthenticated from '@proton/components/containers/authentication/UnAuthenticated';
 import createSecureSessionStorage from '@proton/shared/lib/authentication/createSecureSessionStorage';
 
-import { useMailDispatch } from 'proton-mail/store/hooks';
+import { useMailDispatch } from '../../store/hooks';
 
 import ViewEOMessage from '../../components/eo/message/ViewEOMessage';
 import EOReply from '../../components/eo/reply/EOReply';

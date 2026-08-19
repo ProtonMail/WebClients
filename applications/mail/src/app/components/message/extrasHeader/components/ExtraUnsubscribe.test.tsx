@@ -6,7 +6,7 @@ import type { MessageStateWithData } from '@proton/mail/store/messages/messagesT
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
 import { CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
 
-import { newElementsState } from 'proton-mail/store/elements/elementsSlice';
+import { newElementsState } from '../../../../store/elements/elementsSlice';
 
 import { mergeMessages } from '../../../../helpers/message/messages';
 import { getCompleteAddress, minimalCache } from '../../../../helpers/test/cache';

@@ -1,7 +1,7 @@
 import { useInterval } from '@proton/components/hooks/useHandler';
 import { serverTime } from '@protontech/crypto';
 
-import { isExpired } from 'proton-mail/helpers/expiration';
+import { isExpired } from '../helpers/expiration';
 
 import { EXPIRATION_CHECK_FREQUENCY } from '../constants';
 import type { Element } from '../models/element';

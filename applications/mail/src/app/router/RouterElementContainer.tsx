@@ -5,11 +5,11 @@ import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { logger } from '@proton/logger';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 
-import ConversationView from 'proton-mail/components/conversation/ConversationView';
-import MessageOnlyView from 'proton-mail/components/message/MessageOnlyView';
-import { selectComposersCount } from 'proton-mail/store/composers/composerSelectors';
-import { selectElementID, selectLabelID, selectMessageID } from 'proton-mail/store/elements/elementsSelectors';
-import { useMailSelector } from 'proton-mail/store/hooks';
+import ConversationView from '../components/conversation/ConversationView';
+import MessageOnlyView from '../components/message/MessageOnlyView';
+import { selectComposersCount } from '../store/composers/composerSelectors';
+import { selectElementID, selectLabelID, selectMessageID } from '../store/elements/elementsSelectors';
+import { useMailSelector } from '../store/hooks';
 
 import { useMailboxLayoutProvider } from './components/MailboxLayoutContext';
 import { useMailSettingsViewModeEvent } from './hooks/useMailSettingsViewModeEvent';

@@ -13,7 +13,7 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 import generateUID from '@proton/utils/generateUID';
 
-import { useMailDispatch } from 'proton-mail/store/hooks';
+import { useMailDispatch } from '../../../store/hooks';
 
 import { SCHEDULED_MAX_DATE_DAYS } from '../../../constants';
 import { getMinScheduleTime } from '../../../helpers/schedule';

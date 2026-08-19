@@ -8,9 +8,9 @@ import { getLabelFromCategoryId } from '@proton/mail/features/categoriesView/cat
 import { useCategoriesTelemetry } from '@proton/mail/features/categoriesView/useCategoriesTelemetry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
-import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
-import { selectCategoryIDs, selectLabelID } from 'proton-mail/store/elements/elementsSelectors';
-import { useMailSelector } from 'proton-mail/store/hooks';
+import { useSelectAll } from '../../../hooks/useSelectAll';
+import { selectCategoryIDs, selectLabelID } from '../../../store/elements/elementsSelectors';
+import { useMailSelector } from '../../../store/hooks';
 
 import { useCategoriesView } from '../useCategoriesView';
 

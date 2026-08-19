@@ -6,10 +6,8 @@ import { selectMailSettings } from '@proton/mail/store/mailSettings';
 import { type CategoryLabelID, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { LabelCount, MailSettings } from '@proton/shared/lib/interfaces';
 
-import { isConversationMode } from 'proton-mail/helpers/mailSettings';
-import type { MailState } from 'proton-mail/store/store';
-
-import type { AppStartListening } from '../store';
+import { isConversationMode } from '../../helpers/mailSettings';
+import type { AppStartListening, MailState } from '../store';
 
 const getCategoryUnread = (
     categoryID: string,

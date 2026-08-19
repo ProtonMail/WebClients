@@ -7,7 +7,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { enUSLocale } from '@proton/shared/lib/i18n/dateFnLocales';
 import { SETTINGS_TIME_FORMAT } from '@proton/shared/lib/interfaces';
 
-import type { Element } from 'proton-mail/models/element';
+import type { Element } from '../../../../models/element';
 
 import SnoozeCustomTime from './SnoozeCustomTime';
 

@@ -16,7 +16,7 @@ import fullyEncrypted from '@proton/styles/assets/img/illustrations/checklist-fu
 import trackingProtection from '@proton/styles/assets/img/illustrations/checklist-tracking-protection.svg';
 import range from '@proton/utils/range';
 
-import { useGetStartedChecklist } from 'proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider';
+import { useGetStartedChecklist } from '../../../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 
 interface ProtectInboxStepProps {
     img: string;

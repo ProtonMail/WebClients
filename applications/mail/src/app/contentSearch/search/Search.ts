@@ -4,7 +4,7 @@ import isDeepEqual from 'lodash/isEqual';
 import type { ESItem, NormalizedSearchParams } from '@proton/encrypted-search/models';
 import createListeners from '@proton/shared/lib/helpers/listeners.ts';
 
-import type { ESBaseMessage, ESMessageContent } from 'proton-mail/models/encryptedSearch.ts';
+import type { ESBaseMessage, ESMessageContent } from '../../models/encryptedSearch.ts';
 
 import type { EncryptedSearchReader } from '../import/EncryptedSearchReader';
 import type SearchWorker from './SearchWorker';

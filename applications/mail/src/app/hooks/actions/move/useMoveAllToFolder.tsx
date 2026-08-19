@@ -12,28 +12,28 @@ import { TelemetryMailSelectAllEvents } from '@proton/shared/lib/api/telemetry';
 import { SentryMailInitiatives, captureInitiativeMessage } from '@proton/shared/lib/helpers/sentry';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { folderLocation } from 'proton-mail/components/list/list-telemetry/listTelemetryHelper';
+import { folderLocation } from '../../../components/list/list-telemetry/listTelemetryHelper';
 import useListTelemetry, {
     ACTION_TYPE,
     SELECTED_RANGE,
     type SOURCE_ACTION,
     getActionFromLabel,
-} from 'proton-mail/components/list/list-telemetry/useListTelemetry';
-import MoveAllModal from 'proton-mail/components/list/select-all/modals/MoveAllModal';
-import SelectAllMoveModal from 'proton-mail/components/list/select-all/modals/SelectAllMoveModal';
-import { isElementMessage } from 'proton-mail/helpers/elements';
-import { isConversationMode } from 'proton-mail/helpers/mailSettings';
-import { getMessagesAuthorizedToMove } from 'proton-mail/helpers/message/messages';
+} from '../../../components/list/list-telemetry/useListTelemetry';
+import MoveAllModal from '../../../components/list/select-all/modals/MoveAllModal';
+import SelectAllMoveModal from '../../../components/list/select-all/modals/SelectAllMoveModal';
+import { isElementMessage } from '../../../helpers/elements';
+import { isConversationMode } from '../../../helpers/mailSettings';
+import { getMessagesAuthorizedToMove } from '../../../helpers/message/messages';
 import {
     getCleanedFolderID,
     getNotificationTextUnauthorized,
     sendSelectAllTelemetryReport,
-} from 'proton-mail/helpers/moveToFolder';
-import { getSelectAllNotificationText } from 'proton-mail/helpers/selectAll';
-import type { Element } from 'proton-mail/models/element';
-import { backendActionStarted, moveAll } from 'proton-mail/store/elements/elementsActions';
-import { useMailDispatch } from 'proton-mail/store/hooks';
-import { layoutActions } from 'proton-mail/store/layout/layoutSlice';
+} from '../../../helpers/moveToFolder';
+import { getSelectAllNotificationText } from '../../../helpers/selectAll';
+import type { Element } from '../../../models/element';
+import { backendActionStarted, moveAll } from '../../../store/elements/elementsActions';
+import { useMailDispatch } from '../../../store/hooks';
+import { layoutActions } from '../../../store/layout/layoutSlice';
 
 export enum MoveAllType {
     moveAll,

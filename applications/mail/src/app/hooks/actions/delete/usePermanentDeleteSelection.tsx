@@ -16,14 +16,14 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { isExpiringByRetentionRule } from '@proton/shared/lib/mail/messages';
 import noop from '@proton/utils/noop';
 
-import type { SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
+import type { SOURCE_ACTION } from '../../../components/list/list-telemetry/useListTelemetry';
 import useListTelemetry, {
     ACTION_TYPE,
     numberSelectionElements,
-} from 'proton-mail/components/list/list-telemetry/useListTelemetry';
-import { runParallelChunkedActions } from 'proton-mail/helpers/chunk';
-import useIsEncryptedSearch from 'proton-mail/hooks/useIsEncryptedSearch';
-import { useMailDispatch } from 'proton-mail/store/hooks';
+} from '../../../components/list/list-telemetry/useListTelemetry';
+import { runParallelChunkedActions } from '../../../helpers/chunk';
+import useIsEncryptedSearch from '../../useIsEncryptedSearch';
+import { useMailDispatch } from '../../../store/hooks';
 
 import { isElementConversation } from '../../../helpers/elements';
 import type { LabelChanges } from '../../../helpers/labels';

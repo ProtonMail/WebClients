@@ -7,7 +7,7 @@ import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import {
     ERROR_ELEMENT_NOT_CONVERSATION,
     MoveEngineRuleResult,
-} from 'proton-mail/helpers/location/MoveEngine/moveEngineInterface';
+} from './moveEngineInterface';
 import {
     conversationAllDraftRules,
     conversationAllMailRules,
@@ -26,8 +26,8 @@ import {
     conversationSpamRules,
     conversationStarredRules,
     conversationTrashRules,
-} from 'proton-mail/helpers/location/MoveEngine/moveEngineRulesConversations';
-import type { Conversation } from 'proton-mail/models/conversation';
+} from './moveEngineRulesConversations';
+import type { Conversation } from '../../../models/conversation';
 
 const customLabels = [
     { ID: 'customLabelID', Name: 'Custom label' },

@@ -9,7 +9,7 @@ import type { MessageState, MessageStateWithData } from '@proton/mail/store/mess
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { useMailDispatch } from 'proton-mail/store/hooks';
+import { useMailDispatch } from '../../store/hooks';
 
 import useScheduleSendFeature from '../../components/composer/actions/scheduleSend/useScheduleSendFeature';
 import { SCHEDULED_MESSAGES_LIMIT } from '../../constants';

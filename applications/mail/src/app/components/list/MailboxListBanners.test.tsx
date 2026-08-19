@@ -7,9 +7,9 @@ import { mockUseApi } from '@proton/testing/lib/mockUseApi';
 import { mockUseHistory } from '@proton/testing/lib/mockUseHistory';
 import { mockUseUser } from '@proton/testing/lib/mockUseUser';
 
-import { mockUseEncryptedSearchContext } from 'proton-mail/helpers/test/mockUseEncryptedSearchContext';
-import { mailTestRender } from 'proton-mail/helpers/test/render';
-import { useMailSelector } from 'proton-mail/store/hooks';
+import { mockUseEncryptedSearchContext } from '../../helpers/test/mockUseEncryptedSearchContext';
+import { mailTestRender } from '../../helpers/test/render';
+import { useMailSelector } from '../../store/hooks';
 
 import MailboxListBanners from './MailboxListBanners';
 import { mockUseAutoDeleteBanner, mockUseShowUpsellBanner } from './MailboxListBanners.test.utils';
@@ -27,7 +27,7 @@ const baseProps = {
     canDisplayTaskRunningBanner: false,
 };
 
-jest.mock('proton-mail/store/hooks', () => ({
+jest.mock('../../store/hooks', () => ({
     useMailSelector: jest.fn().mockReturnValue(jest.fn()),
 }));
 const useMailSelectorMock = useMailSelector as jest.Mock;

@@ -1,5 +1,5 @@
-import { getFilteredUndoTokens, runParallelChunkedActions } from 'proton-mail/helpers/chunk';
-import { clearAll } from 'proton-mail/helpers/test/helper';
+import { getFilteredUndoTokens, runParallelChunkedActions } from './chunk';
+import { clearAll } from './test/helper';
 
 const api = jest.fn((any) => any);
 const items: number[] = [...Array(50).keys()];

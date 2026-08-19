@@ -41,8 +41,6 @@ export default defineConfig([
                 },
             ],
             '@typescript-eslint/no-restricted-imports': ['error', { paths: iconRestrictedImports }],
-            // TODO: Migrate same-package imports to relative paths and remove this rule
-            'custom-rules/no-package-self-import': 'off',
         },
     },
     {

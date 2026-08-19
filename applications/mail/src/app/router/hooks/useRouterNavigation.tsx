@@ -1,7 +1,7 @@
 import { useCallback, useMemo } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
-import { pageFromUrl, setPageInUrl, setParamsInLocation } from 'proton-mail/helpers/mailboxUrl';
+import { pageFromUrl, setPageInUrl, setParamsInLocation } from '../../helpers/mailboxUrl';
 
 interface Props {
     labelID: string;

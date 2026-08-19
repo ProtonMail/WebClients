@@ -1,8 +1,8 @@
 import { ToolInputError, UnknownReferenceError } from '@proton/llm/lib/lumoAgent/contracts/errors';
 import type { ReferenceKind, ReferenceRegistry } from '@proton/llm/lib/lumoAgent/contracts/types';
 
-import type { Element } from 'proton-mail/models/element';
-import { taskRunning } from 'proton-mail/store/elements/elementsSelectors';
+import type { Element } from '../../models/element';
+import { taskRunning } from '../../store/elements/elementsSelectors';
 
 import type { ToolStore } from '../toolModule';
 
