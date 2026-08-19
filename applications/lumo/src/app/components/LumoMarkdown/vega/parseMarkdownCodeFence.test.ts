@@ -1,9 +1,9 @@
+import { shouldRenderAsVegaChart } from './detectVegaSpec';
 import {
     blockContainsCompleteCodeFence,
     parseMarkdownCodeFence,
     splitMarkdownWithCompleteCodeFences,
 } from './parseMarkdownCodeFence';
-import { shouldRenderAsVegaChart } from './detectVegaSpec';
 
 describe('parseMarkdownCodeFence', () => {
     it('parses a complete fenced block', () => {
@@ -44,5 +44,34 @@ describe('parseMarkdownCodeFence', () => {
 
         const segments = splitMarkdownWithCompleteCodeFences(content);
         expect(segments.filter((segment) => segment.type === 'code')).toHaveLength(2);
+    });
+
+    it('preserves an inner triple-backtick fence inside a four-backtick fence', () => {
+        const content = ['````markdown', '# Example', '', '```js', 'const value = 1;', '```', '````'].join('\n');
+
+        expect(parseMarkdownCodeFence(content)).toEqual({
+            language: 'markdown',
+            code: ['# Example', '', '```js', 'const value = 1;', '```'].join('\n'),
+        });
+    });
+
+    it('does not treat an inner fence as complete while its outer fence is streaming', () => {
+        const content = ['````markdown', '```js', 'const value = 1;', '```'].join('\n');
+
+        expect(blockContainsCompleteCodeFence(content)).toBe(false);
+        expect(splitMarkdownWithCompleteCodeFences(content)).toEqual([{ type: 'markdown', content }]);
+    });
+
+    it('rejects backticks in a backtick fence info string', () => {
+        const content = ['```markdown`invalid', 'content', '```'].join('\n');
+
+        expect(parseMarkdownCodeFence(content)).toBeNull();
+        expect(blockContainsCompleteCodeFence(content)).toBe(false);
+    });
+
+    it('continues to parse a standalone fence surrounded by blank lines', () => {
+        const content = '\n\n```json\n{}\n```\n\n';
+
+        expect(parseMarkdownCodeFence(content)).toEqual({ language: 'json', code: '{}' });
     });
 });
