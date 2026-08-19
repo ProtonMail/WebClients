@@ -27,6 +27,12 @@ export interface IndexPopulatorState {
     // Monotonic counter handing out one epoch per subtree re-index run for this populator.
     // Optional for backward-compat with rows written before the feature (treated as 0).
     subtreeReindexEpoch?: number;
+    // Sticky "initial indexing has already failed at least once", so the isInitialAttempt metric
+    // survives a worker restart (the in-memory retry counter driving backoff does not). Set on the
+    // first failure, cleared once a run succeeds.
+    // Must NOT be reset by markAsNotDone, which re-fires on every retry while the persisted version
+    // is stale - see the regression test in MyFilesIndexPopulator.test.ts.
+    initialIndexingFailed?: boolean;
 }
 
 /** The index operation a repair entry must replay when its node is reprocessed:
