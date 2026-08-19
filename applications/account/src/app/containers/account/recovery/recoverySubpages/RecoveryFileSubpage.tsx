@@ -6,9 +6,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { DashboardCard, DashboardCardContent, DashboardCardDivider } from '@proton/atoms/DashboardCard/DashboardCard';
 import { DashboardGrid } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import { Href } from '@proton/atoms/Href/Href';
-import SettingsDescription, {
-    SettingsDescriptionItem,
-} from '@proton/components/containers/account/SettingsDescription';
+import SettingsDescription from '@proton/components/containers/account/SettingsDescription';
 import ExportRecoveryFileButton from '@proton/components/containers/recovery/ExportRecoveryFileButton';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
@@ -43,21 +41,6 @@ const RecoveryFileSubpage = ({ emailSubpagePath }: { emailSubpagePath: string })
             {updateRecoveryFile.el}
             <DashboardGrid>
                 <SettingsDescription
-                    left={
-                        <>
-                            <SettingsDescriptionItem>
-                                {c('Info')
-                                    .t`Your recovery file will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.`}
-                            </SettingsDescriptionItem>
-                            <SettingsDescriptionItem>
-                                {c('Info')
-                                    .t`You don’t need to open or read the file—just download it and store it somewhere safe.`}{' '}
-                                <Href key="learn" href={getKnowledgeBaseUrl('/recover-encrypted-messages-files')}>
-                                    {c('Link').t`Learn more`}
-                                </Href>
-                            </SettingsDescriptionItem>
-                        </>
-                    }
                     right={
                         <img
                             src={isDarkTheme ? darkIllustration : illustration}
@@ -67,7 +50,19 @@ const RecoveryFileSubpage = ({ emailSubpagePath }: { emailSubpagePath: string })
                             height={80}
                         />
                     }
-                />
+                >
+                    <SettingsDescription.Item>
+                        {c('Info')
+                            .t`Your recovery file will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.`}
+                    </SettingsDescription.Item>
+                    <SettingsDescription.Item>
+                        {c('Info')
+                            .t`You don’t need to open or read the file—just download it and store it somewhere safe.`}{' '}
+                        <Href key="learn" href={getKnowledgeBaseUrl('/recover-encrypted-messages-files')}>
+                            {c('Link').t`Learn more`}
+                        </Href>
+                    </SettingsDescription.Item>
+                </SettingsDescription>
                 <DashboardCard>
                     <PasswordResetOptionRequiredWarning emailSubpagePath={emailSubpagePath} />
                     <DashboardCardContent>

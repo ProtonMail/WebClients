@@ -10,26 +10,28 @@ import {
 } from '@proton/account/recovery/sessionRecoverySelectors';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import { Button } from '@proton/atoms/Button/Button';
+import { DashboardCard, DashboardCardContent, DashboardCardDivider } from '@proton/atoms/DashboardCard/DashboardCard';
+import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
+import { Href } from '@proton/atoms/Href/Href';
 import Info from '@proton/components/components/link/Info';
 import Loader from '@proton/components/components/loader/Loader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import Toggle from '@proton/components/components/toggle/Toggle';
 import ChangeBackupPasswordModal from '@proton/components/containers/account/ChangeBackupPasswordModal';
 import PasswordRemindersSettings from '@proton/components/containers/account/passwordReminders/PasswordRemindersSettings';
 import useSearchParamsEffect from '@proton/components/hooks/useSearchParamsEffect';
-import { IcPencil } from '@proton/icons/icons/IcPencil';
+import { IcLocks } from '@proton/icons/icons/IcLocks';
+import { IcPassword } from '@proton/icons/icons/IcPassword';
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces';
 import { getIsGlobalSSOAccount } from '@proton/shared/lib/keys';
 
 import ChangePasswordModal, { MODES } from './ChangePasswordModal';
 import ReauthUsingRecoveryModal from './ReauthUsingRecoveryModal';
-import SettingsLayout from './SettingsLayout';
-import SettingsLayoutLeft from './SettingsLayoutLeft';
-import SettingsLayoutRight from './SettingsLayoutRight';
-import SettingsSection from './SettingsSection';
+import { SettingsIconRow } from './SettingsIconRow';
+import { SettingsToggleRow } from './SettingsToggleRow';
+import { SettingsValueRow } from './SettingsValueRow';
 import VerifyPasswordButton from './VerifyPasswordButton';
 import InitiateSessionRecoveryModal from './sessionRecovery/InitiateSessionRecoveryModal';
 import PasswordResetAvailableAccountModal from './sessionRecovery/PasswordResetAvailableAccountModal';
@@ -205,6 +207,14 @@ const PasswordsSection = () => {
                 />
             )}
             {(() => {
+                const sectionHeader = (
+                    <DashboardGridSectionHeader
+                        title={c('Title').t`Password`}
+                        subtitle={c('Info')
+                            .t`Choose a strong ${BRAND_NAME} password and don’t reuse it for other accounts.`}
+                    />
+                );
+
                 if (getIsGlobalSSOAccount(user)) {
                     // When the organization disabled the backup password there is nothing to
                     // change: the key passphrase is random and the login flow never asks for it.
@@ -212,98 +222,130 @@ const PasswordsSection = () => {
                         return null;
                     }
                     return (
-                        <SettingsSection>
-                            <SettingsLayout>
-                                <SettingsLayoutLeft>
-                                    <label htmlFor="passwordChange" className="text-semibold">
-                                        {c('sso').t`Backup password`}
-                                    </label>
-                                </SettingsLayoutLeft>
-                                <SettingsLayoutRight>
-                                    <Button id="passwordChange" onClick={() => setChangeBackupPasswordModalOpen(true)}>
-                                        {c('sso').t`Change backup password`}
-                                    </Button>
-                                </SettingsLayoutRight>
-                            </SettingsLayout>
-                        </SettingsSection>
+                        <DashboardGrid>
+                            {sectionHeader}
+                            <DashboardCard>
+                                <DashboardCardContent>
+                                    <SettingsIconRow icon={IcPassword}>
+                                        <SettingsValueRow
+                                            label={
+                                                <SettingsValueRow.Label>
+                                                    {c('sso').t`Backup password`}
+                                                </SettingsValueRow.Label>
+                                            }
+                                            action={
+                                                <SettingsValueRow.EditButton
+                                                    id="passwordChange"
+                                                    title={c('sso').t`Change backup password`}
+                                                    aria-label={c('sso').t`Change backup password`}
+                                                    onClick={() => setChangeBackupPasswordModalOpen(true)}
+                                                />
+                                            }
+                                        />
+                                    </SettingsIconRow>
+                                </DashboardCardContent>
+                            </DashboardCard>
+                        </DashboardGrid>
                     );
                 }
 
                 return (
-                    <SettingsSection>
-                        <SettingsLayout>
-                            <SettingsLayoutLeft>
-                                <label htmlFor="passwordChange" className="text-semibold">
-                                    {passwordLabel}
-                                </label>
-                            </SettingsLayoutLeft>
-                            <SettingsLayoutRight className="flex flex-row flex-wrap gap-2 items-center">
-                                <Button
-                                    id="passwordChange"
-                                    className="inline-flex gap-2 items-center"
-                                    onClick={() => handleChangePassword(changePasswordMode)}
-                                    data-testid="change-password-button"
-                                >
-                                    <IcPencil className="shrink-0" />
-                                    {passwordButtonLabel}
-                                </Button>
-                                <VerifyPasswordButton />
-                            </SettingsLayoutRight>
-                        </SettingsLayout>
-                        {hasTwoPasswordOption && (
-                            <>
-                                <SettingsLayout>
-                                    <SettingsLayoutLeft>
-                                        <label htmlFor="passwordModeToggle" className="text-semibold">
-                                            <span className="mr-2">{c('Label').t`Two-password mode`}</span>
-                                            <Info
-                                                url={getKnowledgeBaseUrl('/single-password')}
-                                                title={c('Info')
-                                                    .t`Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)`}
+                    <DashboardGrid>
+                        {sectionHeader}
+                        <DashboardCard>
+                            <DashboardCardContent>
+                                <SettingsIconRow icon={IcPassword}>
+                                    <SettingsValueRow
+                                        label={
+                                            <>
+                                                <SettingsValueRow.Label>{passwordLabel}</SettingsValueRow.Label>
+                                                <VerifyPasswordButton />
+                                            </>
+                                        }
+                                        action={
+                                            <SettingsValueRow.EditButton
+                                                id="passwordChange"
+                                                data-testid="change-password-button"
+                                                title={passwordButtonLabel}
+                                                aria-label={passwordButtonLabel}
+                                                onClick={() => handleChangePassword(changePasswordMode)}
                                             />
-                                        </label>
-                                    </SettingsLayoutLeft>
-                                    <SettingsLayoutRight isToggleContainer>
-                                        <Toggle
-                                            loading={loadingUserSettings}
-                                            checked={!isOnePasswordMode}
-                                            id="passwordModeToggle"
-                                            data-testid="change-password-toggle"
-                                            onChange={() =>
-                                                handleChangePassword(
-                                                    isOnePasswordMode
-                                                        ? MODES.SWITCH_TWO_PASSWORD
-                                                        : MODES.SWITCH_ONE_PASSWORD
-                                                )
-                                            }
-                                        />
-                                    </SettingsLayoutRight>
-                                </SettingsLayout>
-                                {!isOnePasswordMode && (
-                                    <SettingsLayout>
-                                        <SettingsLayoutLeft>
-                                            <label htmlFor="changeSecondPassword" className="text-semibold">
-                                                <span className="mr-2">{c('Label').t`Second password`}</span>
-                                                <Info url={getKnowledgeBaseUrl('/single-password')} />
-                                            </label>
-                                        </SettingsLayoutLeft>
-                                        <SettingsLayoutRight>
-                                            <Button
-                                                id="changeSecondPassword"
-                                                data-testid="change-second-password-button"
-                                                onClick={() =>
-                                                    handleChangePassword(MODES.CHANGE_TWO_PASSWORD_MAILBOX_MODE)
+                                        }
+                                    />
+                                </SettingsIconRow>
+                                {hasTwoPasswordOption && (
+                                    <>
+                                        <DashboardCardDivider />
+                                        <SettingsIconRow icon={IcLocks}>
+                                            <SettingsToggleRow
+                                                id="passwordModeToggle"
+                                                label={
+                                                    <>
+                                                        <SettingsToggleRow.Label>
+                                                            {c('Label').t`Two-password mode`}
+                                                        </SettingsToggleRow.Label>
+                                                        <SettingsToggleRow.Description>
+                                                            {c('Info')
+                                                                .t`Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)`}{' '}
+                                                            <Href
+                                                                key="two-password-learn"
+                                                                href={getKnowledgeBaseUrl('/switch-two-password-mode')}
+                                                            >
+                                                                {c('Link').t`Learn more`}
+                                                            </Href>
+                                                        </SettingsToggleRow.Description>
+                                                    </>
                                                 }
-                                            >
-                                                {c('Action').t`Change second password`}
-                                            </Button>
-                                        </SettingsLayoutRight>
-                                    </SettingsLayout>
+                                                toggle={
+                                                    <SettingsToggleRow.Toggle
+                                                        loading={loadingUserSettings}
+                                                        checked={!isOnePasswordMode}
+                                                        data-testid="change-password-toggle"
+                                                        onChange={() =>
+                                                            handleChangePassword(
+                                                                isOnePasswordMode
+                                                                    ? MODES.SWITCH_TWO_PASSWORD
+                                                                    : MODES.SWITCH_ONE_PASSWORD
+                                                            )
+                                                        }
+                                                    />
+                                                }
+                                            />
+                                        </SettingsIconRow>
+                                        {!isOnePasswordMode && (
+                                            <>
+                                                <DashboardCardDivider />
+                                                <SettingsIconRow icon={IcPassword}>
+                                                    <SettingsValueRow
+                                                        label={
+                                                            <SettingsValueRow.Label>
+                                                                {c('Label').t`Second password`}
+                                                                <Info url={getKnowledgeBaseUrl('/single-password')} />
+                                                            </SettingsValueRow.Label>
+                                                        }
+                                                        action={
+                                                            <SettingsValueRow.EditButton
+                                                                id="changeSecondPassword"
+                                                                data-testid="change-second-password-button"
+                                                                title={c('Action').t`Change second password`}
+                                                                aria-label={c('Action').t`Change second password`}
+                                                                onClick={() =>
+                                                                    handleChangePassword(
+                                                                        MODES.CHANGE_TWO_PASSWORD_MAILBOX_MODE
+                                                                    )
+                                                                }
+                                                            />
+                                                        }
+                                                    />
+                                                </SettingsIconRow>
+                                            </>
+                                        )}
+                                    </>
                                 )}
-                            </>
-                        )}
+                            </DashboardCardContent>
+                        </DashboardCard>
                         <PasswordRemindersSettings />
-                    </SettingsSection>
+                    </DashboardGrid>
                 );
             })()}
         </>

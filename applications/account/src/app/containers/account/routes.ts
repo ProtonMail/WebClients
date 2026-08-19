@@ -752,10 +752,16 @@ export const getAccountAppRoutes = ({
                 available: !isSSOUser,
                 subsections: [
                     {
-                        text: '',
+                        text: c('Title').t`User profile`,
+                        invisibleTitle: true,
                         id: 'account',
+                        keywords: [c('Label').t`Username`, c('Label').t`Display name`],
+                    },
+                    {
+                        text: c('Title').t`Password`,
+                        invisibleTitle: true,
+                        id: 'password',
                         keywords: [
-                            c('Label').t`Username`,
                             c('Title').t`Change password`,
                             c('Label').t`Two-password mode`,
                             c('Label').t`Password check-ins`,
@@ -763,6 +769,7 @@ export const getAccountAppRoutes = ({
                     },
                     {
                         text: c('Title').t`Two-factor authentication`,
+                        invisibleTitle: true,
                         id: 'two-fa',
                         available: !user.Flags.sso,
                         keywords: [c('Label').t`Authenticator app`, c('fido2: Info').t`Security key`],
@@ -775,6 +782,7 @@ export const getAccountAppRoutes = ({
                             !accountRecoveryRouterFlags.isAccountRecoveryAvailable &&
                             flags.canDisplayNonPrivateEmailPhone,
                         keywords: [c('Label').t`Notification email address`, c('label').t`Notification phone number`],
+                        variant: SettingsLayoutVariant.Card,
                     },
                     {
                         text: c('Title').t`Account recovery`,
@@ -782,9 +790,11 @@ export const getAccountAppRoutes = ({
                         // This is a special section for non-private users that only contains the QR code sign in
                         available: !user.isPrivate && !accountRecoveryRouterFlags.isAccountRecoveryAvailable,
                         keywords: [c('edm').t`Sign in with QR code`, c('account_search_index').t`Scan QR code`],
+                        variant: SettingsLayoutVariant.Card,
                     },
                     {
                         text: c('Title').t`Emergency access`,
+                        invisibleTitle: true,
                         id: 'emergency-access',
                         // This is a special section for non-private users that only contains incoming delegated access
                         available: accountRecoveryRouterFlags.isNonPrivateDelegatedAccessAvailable,
@@ -796,6 +806,7 @@ export const getAccountAppRoutes = ({
                     },
                     {
                         text: c('emergency_access').t`Data recovery contacts`,
+                        invisibleTitle: true,
                         id: recoveryIds.recoveryContacts,
                         available: accountRecoveryRouterFlags.isNonPrivateDelegatedAccessAvailable,
                         keywords: [
@@ -815,6 +826,7 @@ export const getAccountAppRoutes = ({
                             c('familyOffer_2023:Family plan').t`Leave Family plan`,
                             c('account_search_index').t`Leave organization`,
                         ],
+                        variant: SettingsLayoutVariant.Card,
                     },
                     //Family members or Proton account that are part of Visionary don't have access to the dashboard, display the payment methods for them here
                     {
@@ -826,6 +838,7 @@ export const getAccountAppRoutes = ({
                             c('Action').t`Add PayPal`,
                             c('account_search_index').t`Automatic renewal`,
                         ],
+                        variant: SettingsLayoutVariant.Card,
                     },
                     //Family members or Proton account that are part of Visionary don't have access to the dashboard, display the credits for them here
                     {
@@ -833,6 +846,7 @@ export const getAccountAppRoutes = ({
                         id: 'credits',
                         available: paymentsSectionAvailable,
                         keywords: [c('Action').t`Add credits`, c('Credits').t`Available credits`],
+                        variant: SettingsLayoutVariant.Card,
                     },
                     //Family members or Proton account that are part of Visionary don't have access to the dashboard, display the invoices for them here
                     {
@@ -844,9 +858,11 @@ export const getAccountAppRoutes = ({
                             c('Select invoice document').t`Credit note`,
                             c('Select invoice document').t`Transactions`,
                         ],
+                        variant: SettingsLayoutVariant.Card,
                     },
                     {
                         text: c('Title').t`Delete account`,
+                        invisibleTitle: true,
                         id: 'delete',
                         available: user.isSelf && (user.Type === UserType.PROTON || user.Type === UserType.EXTERNAL),
                         keywords: [
@@ -878,6 +894,7 @@ export const getAccountAppRoutes = ({
                 subsections: [
                     {
                         text: c('Title').t`Theme`,
+                        invisibleTitle: true,
                         id: 'theme',
                         available: showThemeSelection,
                         keywords: [
@@ -888,6 +905,7 @@ export const getAccountAppRoutes = ({
                     },
                     {
                         text: c('Title').t`Accessibility`,
+                        invisibleTitle: true,
                         id: 'accessibility',
                         keywords: [
                             c('Label').t`Font size`,
@@ -911,6 +929,7 @@ export const getAccountAppRoutes = ({
                             c('account_search_index').t`Advanced account protection`,
                             c('account_search_index').t`High-security mode`,
                         ],
+                        variant: SettingsLayoutVariant.Card,
                     },
                     {
                         text: DARK_WEB_MONITORING_NAME,
@@ -921,12 +940,14 @@ export const getAccountAppRoutes = ({
                             c('account_search_index').t`Data breach alerts`,
                             c('account_search_index').t`Leaked password`,
                         ],
+                        variant: SettingsLayoutVariant.Card,
                     },
                     {
                         text: c('sso').t`Devices management`,
                         id: 'devices',
                         available: getIsGlobalSSOAccount(user),
                         keywords: [c('Action').t`Remove all other devices`, c('sso').t`Current device`],
+                        variant: SettingsLayoutVariant.Card,
                     },
                     {
                         text: c('Title').t`Session management`,
@@ -937,6 +958,7 @@ export const getAccountAppRoutes = ({
                             c('account_search_index').t`Active sessions`,
                             c('account_search_index').t`Sign out other devices`,
                         ],
+                        variant: SettingsLayoutVariant.Card,
                     },
                     {
                         text: c('Title').t`Account monitor`,
@@ -947,6 +969,7 @@ export const getAccountAppRoutes = ({
                             c('account_search_index').t`Authentication logs`,
                             c('account_search_index').t`Sign-in history`,
                         ],
+                        variant: SettingsLayoutVariant.Card,
                     },
                     {
                         text: c('Title').t`Third-party apps and services`,
@@ -957,6 +980,7 @@ export const getAccountAppRoutes = ({
                             c('Title').t`Connection status`,
                             c('account_search_index').t`Video conferencing`,
                         ],
+                        variant: SettingsLayoutVariant.Card,
                     },
                     {
                         text: c('Title').t`Privacy and data collection`,
@@ -966,6 +990,7 @@ export const getAccountAppRoutes = ({
                             c('Label').t`Send crash reports`,
                             c('account_search_index').t`Telemetry`,
                         ],
+                        variant: SettingsLayoutVariant.Card,
                     },
                 ],
             },
@@ -988,6 +1013,7 @@ export const getAccountAppRoutes = ({
                     },
                     {
                         text: c('Title').t`Your referrals`,
+                        invisibleTitle: true,
                         id: 'referral-reward-section',
                         keywords: [
                             c('account_search_index').t`Referral rewards`,

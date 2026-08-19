@@ -2,14 +2,13 @@ import { c } from 'ttag';
 
 import { toggleQrCodeSignIn } from '@proton/account/recovery/userSettingsActions';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import Info from '@proton/components/components/link/Info';
+import { Href } from '@proton/atoms/Href/Href';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import Toggle from '@proton/components/components/toggle/Toggle';
-import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
-import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
-import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
+import { SettingsIconRow } from '@proton/components/containers/account/SettingsIconRow';
+import { SettingsToggleRow } from '@proton/components/containers/account/SettingsToggleRow';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks/index';
+import { IcQrCode } from '@proton/icons/icons/IcQrCode';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import noop from '@proton/utils/noop';
@@ -42,42 +41,40 @@ const SignInWithAnotherDeviceSettings = () => {
     return (
         <>
             {renderModalState && <SignInWithAnotherDeviceModal {...modalProps} />}
-            <SettingsLayout>
-                <SettingsLayoutLeft>
-                    {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/click-events-have-key-events -- Cmd/Ctrl+click shortcut to open modal; label remains for toggle association */}
-                    <label
-                        className="text-semibold"
-                        htmlFor="edmToggle"
-                        onClick={(e) => {
-                            if (allowScanningQrCode && (e.metaKey || e.ctrlKey)) {
-                                e.preventDefault();
-                                e.stopPropagation();
-                                setModalState(true);
-                            }
-                        }}
-                    >
-                        <span className="mr-2">{c('edm').t`Sign in with QR code`}</span>
-                    </label>
-                </SettingsLayoutLeft>
-                <SettingsLayoutRight isToggleContainer>
-                    <div className="flex items-center gap-2">
-                        <Toggle
+            <SettingsIconRow icon={IcQrCode}>
+                <SettingsToggleRow
+                    id="edmToggle"
+                    label={
+                        <>
+                            {/* Cmd/Ctrl+click shortcut to open the modal; the label otherwise stays
+                             * associated with the toggle */}
+                            <SettingsToggleRow.Label
+                                onClick={(e) => {
+                                    if (allowScanningQrCode && (e.metaKey || e.ctrlKey)) {
+                                        e.preventDefault();
+                                        e.stopPropagation();
+                                        setModalState(true);
+                                    }
+                                }}
+                            >
+                                {c('edm').t`Sign in with QR code`}
+                            </SettingsToggleRow.Label>
+                            <SettingsToggleRow.Description>
+                                {c('edm').t`Scan QR code on your mobile device to sign in.`}{' '}
+                                <Href key="learn" href={getKnowledgeBaseUrl('/qr-code-sign-in')}>{c('Link')
+                                    .t`Learn more`}</Href>
+                            </SettingsToggleRow.Description>
+                        </>
+                    }
+                    toggle={
+                        <SettingsToggleRow.Toggle
                             loading={loadingEDM}
                             checked={allowScanningQrCode}
-                            id="edmToggle"
                             onChange={({ target: { checked } }) => withLoadingEDM(handleEDMToggle(checked).catch(noop))}
                         />
-                        <label htmlFor="edmToggle" className="flex-1">
-                            {c('edm').t`Allow QR code sign‒in`}
-                            <Info
-                                url={getKnowledgeBaseUrl('/qr-code-sign-in')}
-                                title={c('edm').t`Scan QR code on your mobile device to sign in`}
-                                className="ml-1"
-                            />
-                        </label>
-                    </div>
-                </SettingsLayoutRight>
-            </SettingsLayout>
+                    }
+                />
+            </SettingsIconRow>
         </>
     );
 };

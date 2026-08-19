@@ -9,8 +9,9 @@ import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Card } from '@proton/atoms/Card/Card';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import { DashboardCard, DashboardCardContent, DashboardCardDivider } from '@proton/atoms/DashboardCard/DashboardCard';
+import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import { Href } from '@proton/atoms/Href/Href';
-import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Badge } from '@proton/components/components/badge/Badge';
 import AppLink from '@proton/components/components/link/AppLink';
@@ -21,9 +22,12 @@ import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
+import { IcCardIdentity } from '@proton/icons/icons/IcCardIdentity';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
+import { IcEnvelope } from '@proton/icons/icons/IcEnvelope';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
+import { IcUserCircle } from '@proton/icons/icons/IcUserCircle';
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { postVerifySend } from '@proton/shared/lib/api/verify';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
@@ -45,17 +49,14 @@ import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string'
 import type { Address } from '@proton/shared/lib/interfaces';
 import { AddressConfirmationState, SessionRecoveryState, UserType } from '@proton/shared/lib/interfaces';
 import { getCanSetupProtonAddress, getIsExternalAccount } from '@proton/shared/lib/keys';
-import clsx from '@proton/utils/clsx';
 
 import { getVerificationSentText } from '../../containers/recovery/email/VerifyRecoveryEmailModal';
 import getBoldFormattedText from '../../helpers/getBoldFormattedText';
 import useSearchParamsEffect from '../../hooks/useSearchParamsEffect';
 import EditDisplayNameModal from './EditDisplayNameModal';
 import EditExternalAddressModal from './EditExternalAddressModal';
-import SettingsLayout from './SettingsLayout';
-import SettingsLayoutLeft from './SettingsLayoutLeft';
-import SettingsLayoutRight from './SettingsLayoutRight';
-import SettingsSection from './SettingsSection';
+import { SettingsIconRow } from './SettingsIconRow';
+import { SettingsValueRow } from './SettingsValueRow';
 import mailCalendar from './mail-calendar.svg';
 import PasswordResetAvailableCard from './sessionRecovery/statusCards/PasswordResetAvailableCard';
 import SessionRecoveryInProgressCard from './sessionRecovery/statusCards/SessionRecoveryInProgressCard';
@@ -139,15 +140,19 @@ const UsernameSection = ({ app }: Props) => {
             {renderEditAddressModal && tmpAddress && (
                 <EditExternalAddressModal {...editAddressModalProps} address={tmpAddress} />
             )}
-            <SettingsSection>
+            <DashboardGrid>
+                <DashboardGridSectionHeader
+                    title={c('Title').t`User profile`}
+                    subtitle={c('Info').t`Your profile and changes to it will be visible to other ${BRAND_NAME} users.`}
+                />
                 {isSessionRecoveryAvailable && sessionRecoveryState === SessionRecoveryState.GRACE_PERIOD && (
-                    <SessionRecoveryInProgressCard className="mb-6" />
+                    <SessionRecoveryInProgressCard />
                 )}
                 {isSessionRecoveryAvailable && sessionRecoveryState === SessionRecoveryState.INSECURE && (
-                    <PasswordResetAvailableCard className="mb-6" />
+                    <PasswordResetAvailableCard />
                 )}
                 {canSetupProtonAddress && (
-                    <div className="mb-6">
+                    <div>
                         <AppLink
                             toApp={APPS.PROTONACCOUNT}
                             to={`${SETUP_ADDRESS_PATH}?to=${APPS.PROTONMAIL}&from=${app}&from-type=settings&from-path=${fromPath}`}
@@ -156,7 +161,7 @@ const UsernameSection = ({ app }: Props) => {
                         >
                             <PromotionBanner
                                 mode="banner"
-                                rounded
+                                rounded="xl"
                                 contentCentered={false}
                                 icon={<img width="40" src={mailCalendar} alt="" className="shrink-0" />}
                                 description={getBoldFormattedText(
@@ -174,7 +179,7 @@ const UsernameSection = ({ app }: Props) => {
                 )}
 
                 {canVerifyExternalAddress && (
-                    <Card className="mb-8" rounded bordered={true} background={false}>
+                    <Card rounded bordered={true} background={false}>
                         <div className="h3 text-bold mb-6">{c('Info').t`Secure your ${BRAND_NAME} Account`}</div>
                         <div className="flex gap-4 flex-nowrap items-start">
                             <img className="shrink-0" width="40" height="40" src={unverified} alt="" />
@@ -202,132 +207,139 @@ const UsernameSection = ({ app }: Props) => {
                     </Card>
                 )}
 
-                <SettingsLayout>
-                    <SettingsLayoutLeft>
-                        <div className="text-semibold">{c('Label').t`Username`}</div>
-                    </SettingsLayoutLeft>
-                    <SettingsLayoutRight className="pt-2">
-                        {isExternalUserAndPrimaryAddressExternal ? (
-                            <div>
-                                {isPrimaryAddressExternalAndVerified ? (
-                                    <div className="flex">
-                                        {primaryAddress.Email}
-                                        <Tooltip title={c('Tooltip').t`Verified email address`} openDelay={0}>
-                                            <IcCheckmarkCircleFilled
-                                                size={4}
-                                                className="ml-2 color-success self-center"
-                                            />
-                                        </Tooltip>
-                                    </div>
-                                ) : (
+                <DashboardCard>
+                    <DashboardCardContent>
+                        <SettingsIconRow icon={IcUserCircle}>
+                            <SettingsValueRow
+                                label={
                                     <>
-                                        {canEditExternalAddress ? (
-                                            <div className="flex">
-                                                <span className="mr-2">{primaryAddress.Email}</span>
-                                                <InlineLinkButton
-                                                    className="mr-1"
-                                                    onClick={() => {
-                                                        setTmpAddress(primaryAddress);
-                                                        setEditAddressModalOpen(true);
-                                                    }}
-                                                    aria-label={c('Action').t`Edit email address`}
-                                                >
-                                                    {c('Action').t`Edit`}
-                                                </InlineLinkButton>
+                                        <SettingsValueRow.Label>
+                                            {c('Label').t`Username`}
+                                            {canEditExternalAddress && (
                                                 <Info
-                                                    className="self-center"
                                                     title={c('Info')
                                                         .t`You can edit this once to ensure the correct email address for verification.`}
                                                 />
-                                            </div>
-                                        ) : (
-                                            <div>{primaryAddress.Email}</div>
-                                        )}
-                                        <div className="flex">
-                                            <IcExclamationCircleFilled
-                                                size={4}
-                                                className="mr-1 color-danger self-center"
-                                            />
-                                            <span className="color-weak mr-1">
-                                                {c('Info').t`Unverified email address.`}
-                                            </span>
-                                        </div>
+                                            )}
+                                        </SettingsValueRow.Label>
+                                        {isExternalUserAndPrimaryAddressExternal &&
+                                            !isPrimaryAddressExternalAndVerified && (
+                                                <SettingsValueRow.Description>
+                                                    <span className="flex items-center flex-nowrap gap-1 color-danger">
+                                                        <IcExclamationCircleFilled size={4} className="shrink-0" />
+                                                        {c('Info').t`Unverified email address.`}
+                                                    </span>
+                                                </SettingsValueRow.Description>
+                                            )}
                                     </>
-                                )}
-                            </div>
-                        ) : (
-                            user.Name
+                                }
+                                value={
+                                    isExternalUserAndPrimaryAddressExternal ? (
+                                        <span className="flex items-center flex-nowrap gap-1">
+                                            <span className="text-ellipsis user-select">{primaryAddress.Email}</span>
+                                            {isPrimaryAddressExternalAndVerified && (
+                                                <Tooltip title={c('Tooltip').t`Verified email address`} openDelay={0}>
+                                                    <IcCheckmarkCircleFilled
+                                                        size={4}
+                                                        className="shrink-0 color-success"
+                                                    />
+                                                </Tooltip>
+                                            )}
+                                        </span>
+                                    ) : (
+                                        user.Name
+                                    )
+                                }
+                                action={
+                                    canEditExternalAddress && (
+                                        <SettingsValueRow.EditButton
+                                            title={c('Action').t`Edit email address`}
+                                            aria-label={c('Action').t`Edit email address`}
+                                            onClick={() => {
+                                                setTmpAddress(primaryAddress);
+                                                setEditAddressModalOpen(true);
+                                            }}
+                                        />
+                                    )
+                                }
+                            />
+                        </SettingsIconRow>
+                        {(primaryAddress || loadingAddresses) && (
+                            <>
+                                <DashboardCardDivider />
+                                <SettingsIconRow icon={IcCardIdentity}>
+                                    <SettingsValueRow
+                                        label={
+                                            <SettingsValueRow.Label>
+                                                {c('Label').t`Display name`}
+                                            </SettingsValueRow.Label>
+                                        }
+                                        value={
+                                            !primaryAddress || loadingAddresses ? (
+                                                <CircleLoader />
+                                            ) : (
+                                                <span className="text-ellipsis user-select">
+                                                    {primaryAddress.DisplayName}
+                                                </span>
+                                            )
+                                        }
+                                        action={
+                                            primaryAddress &&
+                                            !loadingAddresses && (
+                                                <SettingsValueRow.EditButton
+                                                    title={c('Action').t`Edit display name`}
+                                                    aria-label={c('Action').t`Edit display name`}
+                                                    onClick={() => {
+                                                        setTmpAddress(primaryAddress);
+                                                        setModalOpen(true);
+                                                    }}
+                                                />
+                                            )
+                                        }
+                                    />
+                                </SettingsIconRow>
+                            </>
                         )}
-                    </SettingsLayoutRight>
-                </SettingsLayout>
-                {(primaryAddress || loadingAddresses) && (
-                    <SettingsLayout>
-                        <SettingsLayoutLeft>
-                            <div className="text-semibold">{c('Label').t`Display name`}</div>
-                        </SettingsLayoutLeft>
-                        <SettingsLayoutRight className="pt-2">
-                            {!primaryAddress || loadingAddresses ? (
-                                <div className="flex flex-nowrap">
-                                    <CircleLoader />
-                                </div>
-                            ) : (
-                                <div className="flex flex-nowrap">
-                                    <div
-                                        className={clsx(
-                                            'text-ellipsis user-select',
-                                            primaryAddress.DisplayName && 'mr-2'
-                                        )}
-                                    >
-                                        {primaryAddress.DisplayName}
-                                    </div>
-                                    <InlineLinkButton
-                                        onClick={() => {
-                                            setTmpAddress(primaryAddress);
-                                            setModalOpen(true);
-                                        }}
-                                        aria-label={c('Action').t`Edit display name`}
-                                    >
-                                        {c('Action').t`Edit`}
-                                    </InlineLinkButton>
-                                </div>
-                            )}
-                        </SettingsLayoutRight>
-                    </SettingsLayout>
-                )}
-                {APP_NAME === APPS.PROTONVPN_SETTINGS && user.Type === UserType.PROTON && (
-                    <SettingsLayout>
-                        <SettingsLayoutLeft>
-                            <div className="text-semibold">{c('Label').t`${MAIL_APP_NAME} address`}</div>
-                        </SettingsLayoutLeft>
-                        <SettingsLayoutRight className="pt-2">
-                            {(() => {
-                                if (loadingAddresses) {
-                                    return (
-                                        <div className="flex flex-nowrap">
-                                            <CircleLoader />
-                                        </div>
-                                    );
-                                }
+                        {APP_NAME === APPS.PROTONVPN_SETTINGS && user.Type === UserType.PROTON && (
+                            <>
+                                <DashboardCardDivider />
+                                <SettingsIconRow icon={IcEnvelope}>
+                                    <SettingsValueRow
+                                        label={
+                                            <SettingsValueRow.Label>
+                                                {c('Label').t`${MAIL_APP_NAME} address`}
+                                            </SettingsValueRow.Label>
+                                        }
+                                        value={(() => {
+                                            if (loadingAddresses) {
+                                                return <CircleLoader />;
+                                            }
 
-                                if (primaryAddress?.Email) {
-                                    return (
-                                        <div className="text-pre-wrap break user-select">{primaryAddress.Email}</div>
-                                    );
-                                }
+                                            if (primaryAddress?.Email) {
+                                                return (
+                                                    <span className="text-ellipsis user-select">
+                                                        {primaryAddress.Email}
+                                                    </span>
+                                                );
+                                            }
 
-                                return (
-                                    <Href
-                                        href={`${getAppHref(SSO_PATHS.SWITCH, APPS.PROTONACCOUNT)}?product=mail`}
-                                        title={c('Info').t`Sign in to ${MAIL_APP_NAME} to activate your address`}
-                                    >
-                                        {c('Link').t`Not activated`}
-                                    </Href>
-                                );
-                            })()}
-                        </SettingsLayoutRight>
-                    </SettingsLayout>
-                )}
-            </SettingsSection>
+                                            return (
+                                                <Href
+                                                    href={`${getAppHref(SSO_PATHS.SWITCH, APPS.PROTONACCOUNT)}?product=mail`}
+                                                    title={c('Info')
+                                                        .t`Sign in to ${MAIL_APP_NAME} to activate your address`}
+                                                >
+                                                    {c('Link').t`Not activated`}
+                                                </Href>
+                                            );
+                                        })()}
+                                    />
+                                </SettingsIconRow>
+                            </>
+                        )}
+                    </DashboardCardContent>
+                </DashboardCard>
+            </DashboardGrid>
         </>
     );
 };

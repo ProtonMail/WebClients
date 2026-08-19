@@ -1,7 +1,64 @@
+@use 'sass:map';
 @use '~@proton/styles/scss/lib/config' as *;
 @use '~@proton/styles/scss/lib/include-media' as im;
+
 im.$breakpoints: $breakpoints-product;
 im.$media-expressions: $media-expressions;
+
+$sections: (header, content, footer);
+$positions: (left, center, right);
+
+// Row templates per column count. Rows are deliberately not declared through
+// `grid-template-rows`: an empty row still creates a track, and grid does not collapse the
+// gutter around a zero-height track. So a row is dropped from the areas instead when the grid
+// holds no section for it, which is what keeps an unused header or footer from costing a row gap.
+$row-templates: (
+	1: (
+		header: 'header-left',
+		content: 'content-left',
+		footer: 'footer-left',
+	),
+	2: (
+		header: 'header-left header-right',
+		content: 'content-left content-right',
+		footer: 'footer-left footer-right',
+	),
+	3: (
+		header: 'header-left header-center header-right',
+		content: 'content-left content-center content-right',
+		footer: 'footer-left footer-center footer-right',
+	),
+	4: (
+		header: 'header-left header-center header-center header-right',
+		content: 'content-left content-center content-center content-right',
+		footer: 'footer-left footer-center footer-center footer-right',
+	),
+);
+
+// Both class families that can claim the header row: the areas emitted by `DashboardGridSection`
+// (`-Section-header-left`, `-Section-header-span-all`, …) and a bare `DashboardGridSectionHeader`
+// (`-SectionHeader`), which is placed by `header-span-all` below.
+$header-children: "> [class*='-Section-header'], > [class*='-SectionHeader']";
+
+@mixin grid-template-areas($rows) {
+	$header: map.get($rows, header);
+	$content: map.get($rows, content);
+	$footer: map.get($rows, footer);
+
+	grid-template-areas: $header $content $footer;
+
+	&:not(:has(#{$header-children})) {
+		grid-template-areas: $content $footer;
+	}
+
+	&:not(:has(> [class*='-Section-footer'])) {
+		grid-template-areas: $header $content;
+	}
+
+	&:not(:has(#{$header-children}), :has(> [class*='-Section-footer'])) {
+		grid-template-areas: $content;
+	}
+}
 
 .DashboardGrid {
 	display: flex;
@@ -12,46 +69,46 @@ im.$media-expressions: $media-expressions;
 		display: grid;
 		gap: var(--space-4) var(--space-6);
 		grid-template-columns: auto;
-	}
 
-	&-columns-1 {
-		grid-template: auto / 1fr;
-		grid-template-areas:
-			'header-left'
-			'content-left'
-			'footer-left';
-	}
+		@each $count, $rows in $row-templates {
+			&-columns-#{$count} {
+				grid-template-columns: repeat(#{$count}, 1fr);
 
-	&-columns-2 {
-		grid-template: auto auto / 1fr 1fr;
-		grid-template-areas:
-			'header-left header-right'
-			'content-left content-right'
-			'footer-left footer-right';
-	}
+				@include grid-template-areas($rows);
 
-	&-columns-3 {
-		@include im.media('>large') {
-			grid-template: auto auto / 1fr 1fr 1fr;
-			grid-template-areas:
-				'header-left header-center header-right'
-				'content-left content-center content-right'
-				'footer-left footer-center footer-right';
+				// A `DashboardGridSectionHeader` used directly as a grid child carries no area of
+				// its own, and named areas don't hold cells back from auto-placement. Give it the
+				// spanning placement a wrapping `DashboardGridSection spanAll="header"` would, so
+				// it can't auto-flow into a card cell and push the cards out of position.
+				> [class*='-SectionHeader'] {
+					grid-area: header-left / header-left / header-left / header-right;
+				}
+			}
 		}
 	}
 
+	// Four columns fold to 2×2 before they stack: 4×1 above large, 2×2 down to small, 1×4 below.
 	&-columns-4 {
-		@include im.media('>large') {
-			grid-template: auto auto / 1fr 1fr 1fr 1fr;
-			grid-template-areas:
-				'header-left header-center header-center header-right'
-				'content-left content-center content-center content-right'
-				'footer-left footer-center footer-center footer-right';
+		@include im.media('>small', '<=large') {
+			display: grid;
+			gap: var(--space-4) var(--space-6);
+			grid-template-columns: repeat(2, 1fr);
+
+			// The named areas only exist above large, so place the sections by line instead:
+			// headers and footers span both columns, the cards auto-flow two per row.
+			> [class*='-Section-'] {
+				grid-area: auto;
+			}
+
+			> [class*='-Section-header'],
+			> [class*='-Section-footer'],
+			> [class*='-SectionHeader'] {
+				grid-area: auto / 1 / auto / -1;
+			}
 		}
 	}
 
 	// Span-all classes
-	$sections: (header, content, footer);
 	@each $section in $sections {
 		&-Section-#{$section}-span-all {
 			grid-area: #{$section}-left / #{$section}-left / #{$section}-left / #{$section}-right;
@@ -59,7 +116,6 @@ im.$media-expressions: $media-expressions;
 	}
 
 	// Individual section positions
-	$positions: (left, center, right);
 	@each $section in $sections {
 		@each $position in $positions {
 			&-Section-#{$section}-#{$position} {

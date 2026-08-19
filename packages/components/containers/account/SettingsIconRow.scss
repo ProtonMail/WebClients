@@ -1,0 +1,6 @@
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+
+.settings-icon-row {
+	grid-template-columns: rem(24) 1fr;
+}
