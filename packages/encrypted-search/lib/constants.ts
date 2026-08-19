@@ -62,6 +62,12 @@ export const ES_MAX_ITEMS_PER_BATCH = 1_000;
 export const INDEXEDDB_VERSION = 4;
 
 /**
+ * IndexedDB's deleteDatabase() request never settles while another connection to the same DB
+ * is still open (another tab, or any other in-flight openESDB() call in this same tab).
+ */
+export const ES_DELETE_DB_BLOCKED_TIMEOUT = 5_000;
+
+/**
  * Maximum number of times an API call to fetch an item
  * content will be retried before being stored locally
  * for a later attempt

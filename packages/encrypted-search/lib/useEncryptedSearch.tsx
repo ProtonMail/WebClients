@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef } from 'react';
 
+import type { IndexKey } from '@protontech/crypto/subtle/ad-hoc/encryptedSearch.ts';
 import type { IDBPDatabase } from 'idb';
 import isDeepEqual from 'lodash/isEqual';
 import { c } from 'ttag';
@@ -7,7 +8,6 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import type { IndexKey } from '@protontech/crypto/subtle/ad-hoc/encryptedSearch.ts';
 import { SECOND } from '@proton/shared/lib/constants';
 import { storeESUserChoiceInboxDesktop } from '@proton/shared/lib/desktop/encryptedSearch';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
@@ -35,7 +35,9 @@ import {
     estimateIndexingDuration,
     findItemIndex,
     gatherIndexingMetrics,
+    getESLogger,
     getIndexKey,
+    getVisibilityState,
     highlightJSX,
     hybridSearch,
     initializeEncryptedSearch,
@@ -207,6 +209,10 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
      */
     const dbCorruptError = async (errorMessage: string) => {
         const userHasESDB = await hasESDB(userID);
+        const visibilityState = getVisibilityState();
+        getESLogger().error(
+            `[EncryptedSearch] Deleting local index and resetting after error: ${errorMessage} (hasESDB: ${userHasESDB}, tab was ${visibilityState})`
+        );
         traceInitiativeError(
             SentryCommonInitiatives.ENCRYPTED_SEARCH,
             new Error(`${errorMessage} / userHasESDB: ${userHasESDB}`)
@@ -832,6 +838,10 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
         // In case the user is resuming the indexing process, we want to use the index time stored in the cache
         const isResumingIndexing = previousProgress && previousProgress.timestamps.length > 0;
 
+        getESLogger().info(
+            `[EncryptedSearch] ${isResumingIndexing ? 'Resuming' : 'Starting'} content search indexing for ${expectedTotalIndexed} item(s)${isBackgroundIndexing ? ' in background' : ''}`
+        );
+
         void recordProgress(
             [esIndexingProgressState.esProgress, expectedTotalIndexed],
             'content',
@@ -898,7 +908,7 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
                     return;
                 }
                 esSentryReport('buildContentDB', { error });
-                return dbCorruptError('buildContentDB - No index key');
+                return dbCorruptError(`buildContentDB - ${error?.name ?? 'unknown error'}: ${error?.message ?? error}`);
             }
 
             // Kill switch in case user logs out or pauses
@@ -910,8 +920,13 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
 
             // In case the procedure failed, wait some time before re-starting
             if (!success) {
+                getESLogger().warn('[EncryptedSearch] Content indexing batch failed, retrying in 2s');
                 await wait(2 * SECOND);
             }
+        }
+
+        if (indexingOutcome === STORING_OUTCOME.QUOTA) {
+            getESLogger().warn('[EncryptedSearch] Content indexing stopped early: storage quota reached');
         }
 
         // Since we default to having the limited flag to true in IDB,
@@ -952,6 +967,8 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
         await catchUpPromise;
 
         await contentIndexingProgress.addTimestamp(userID, TIMESTAMP_TYPE.STOP);
+
+        getESLogger().info('[EncryptedSearch] Content search indexing completed successfully');
 
         if (notify && contentIndexingSuccessMessage) {
             createNotification({
