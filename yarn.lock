@@ -9832,6 +9832,7 @@ __metadata:
     "@proton/utils": "workspace:^"
     "@testing-library/jest-dom": "npm:^6.9.1"
     "@testing-library/react": "npm:^15.0.7"
+    "@testing-library/user-event": "npm:^14.6.3"
     "@types/jest": "npm:^30.0.0"
     "@types/mustache": "npm:^4.2.6"
     "@types/node": "npm:^24.13.3"
@@ -9851,6 +9852,11 @@ __metadata:
     ttag: "npm:^1.8.12"
     typescript: "npm:^6.0.3"
     webpack: "npm:^5.109.2"
+  peerDependencies:
+    "@proton/components": "workspace:^"
+  peerDependenciesMeta:
+    "@proton/components":
+      optional: true
   languageName: unknown
   linkType: soft
 
