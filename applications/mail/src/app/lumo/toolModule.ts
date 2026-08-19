@@ -10,6 +10,8 @@ import type {
     updateLabel as updateLabelAction,
 } from '@proton/mail/store/labels/actions';
 import type { Folder, Label, MailSettings } from '@proton/shared/lib/interfaces';
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
+import type { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 
 import type { SOURCE_ACTION } from '../components/list/list-telemetry/useListTelemetry';
 import type {
@@ -50,6 +52,8 @@ export interface MailToolDeps {
     getFilters: () => Filter[];
     getActiveCategoryTabs: () => CategoryTab[];
     getMailSettings: () => MailSettings;
+    getContactEmails: () => ContactEmail[];
+    saveVCardContact: (contactID: string | undefined, vCardContact: VCardContact) => Promise<void>;
     applyLocation: ApplyLocation;
     applyMultipleLocations: (params: ApplyMultipleLocationsParams) => Promise<void>;
     /**
