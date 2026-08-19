@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import { useLocation } from 'react-router';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
@@ -21,12 +22,13 @@ export const useOffer = (): Operation => {
     const { APP_NAME } = protonConfig;
     const [preferredCurrency, loadingCurrency] = useAutomaticCurrency();
     const { isActive, loading: flagsLoading } = useOfferFlags(configuration);
+    const { pathname } = useLocation();
 
     const config = useMemo(() => {
         const offerSubscription = paidSubscription ? new OfferSubscription(paidSubscription) : undefined;
 
-        return withResolvedRefs(configuration, APP_NAME, window.location.pathname, offerSubscription);
-    }, [APP_NAME, paidSubscription]);
+        return withResolvedRefs(configuration, APP_NAME, pathname, offerSubscription);
+    }, [APP_NAME, paidSubscription, pathname]);
 
     const isEligible = getIsEligible({
         user,

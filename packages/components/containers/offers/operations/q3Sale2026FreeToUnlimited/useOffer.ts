@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import { useLocation } from 'react-router';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
@@ -23,6 +24,7 @@ export const useOffer = (): Operation => {
     const { APP_NAME } = protonConfig;
     const [preferredCurrency, loadingCurrency] = useAutomaticCurrency();
     const { isActive, loading: flagsLoading } = useOfferFlags(configuration);
+    const { pathname } = useLocation();
     // Turning this flag on replays the popup once for users who saw it but didn't opt out
     const replayAutoPopUp = useFlag(CommonFeatureFlag.Q3Sale2026FreeToUnlimitedSecondPopup);
 
@@ -30,10 +32,10 @@ export const useOffer = (): Operation => {
         const offerSubscription = paidSubscription ? new OfferSubscription(paidSubscription) : undefined;
 
         return {
-            ...withResolvedRefs(configuration, APP_NAME, window.location.pathname, offerSubscription),
+            ...withResolvedRefs(configuration, APP_NAME, pathname, offerSubscription),
             replayAutoPopUp,
         };
-    }, [APP_NAME, paidSubscription, replayAutoPopUp]);
+    }, [APP_NAME, paidSubscription, replayAutoPopUp, pathname]);
 
     const isEligible = getIsEligible({
         user,
