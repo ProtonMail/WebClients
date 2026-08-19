@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Dropdown, DropdownSizeUnit } from '@proton/components';
+import { useLoading } from '@proton/hooks';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 
 import type { IndexingProgress } from '../../../modules/search';
@@ -40,14 +41,17 @@ export function SearchDropdown({
     const showProgress = isIndexing && !isSearchable;
     const isSearchReady = isSearchable;
 
+    const [isRebuilding, withRebuilding] = useLoading();
+
     const renderContent = () => {
         /** TODO: Add tracking for these states */
         if (permanentError) {
             return (
                 <PermanentErrorContent
                     kind={permanentError}
+                    isRebuilding={isRebuilding}
                     onRebuild={() => {
-                        void tryCatchWithNotification(rebuild)();
+                        void withRebuilding(tryCatchWithNotification(rebuild));
                     }}
                     onClose={onClose}
                 />
@@ -150,10 +154,12 @@ function PermanentErrorContent({
     kind,
     onRebuild,
     onClose,
+    isRebuilding,
 }: {
     kind: PermanentErrorKind;
     onRebuild: () => void;
     onClose: () => void;
+    isRebuilding: boolean;
 }) {
     const { title, message } = getPermanentErrorCopy(kind);
     return (
@@ -166,7 +172,8 @@ function PermanentErrorContent({
             </div>
             <div className="flex justify-end mt-4 gap-2">
                 <Button shape="ghost" color="weak" onClick={onClose}>{c('Action').t`Dismiss`}</Button>
-                <Button shape="solid" color="norm" onClick={onRebuild}>{c('Action').t`Rebuild index`}</Button>
+                <Button shape="solid" color="norm" onClick={onRebuild} loading={isRebuilding}>{c('Action')
+                    .t`Rebuild index`}</Button>
             </div>
         </div>
     );
