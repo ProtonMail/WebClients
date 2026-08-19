@@ -4,7 +4,7 @@ import type {
     ChargebeeVerifySavedCardEventPayload,
     MessageBusResponse,
     PaymentIntent,
-} from '@proton/chargebee/lib';
+} from '@proton/chargebee/lib/types';
 import { isProduction } from '@proton/shared/lib/helpers/sentry';
 import type { Api } from '@proton/shared/lib/interfaces';
 
