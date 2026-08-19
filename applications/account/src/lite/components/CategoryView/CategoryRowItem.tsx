@@ -36,30 +36,32 @@ export const CategoryRowItem = ({ category, onUpdate }: CategoryRowItemProps) =>
                     <>
                         <Button
                             icon
-                            size="tiny"
+                            size="small"
                             shape="ghost"
                             disabled={isPrimaryCategory}
-                            className={clsx(isPrimaryCategory ? 'visibility-hidden' : '', 'mr-3')}
+                            className="mr-3"
                             onClick={() => onUpdate({ ...category, display: !category.display })}
                         >
                             {category.display ? (
-                                <IcMinusCircleFilled color="#EE5B5E" alt={c('Action').t`Disable category`} />
+                                <IcMinusCircleFilled size={5} color="#EE5B5E" alt={c('Action').t`Disable category`} />
                             ) : (
-                                <IcPlusCircleFilled color="#39BA64" alt={c('Action').t`Enable category`} />
+                                <IcPlusCircleFilled size={5} color="#39BA64" alt={c('Action').t`Enable category`} />
                             )}
                         </Button>
                         <span className="shrink-0">{categoryLabel}</span>
                     </>
                 </div>
-                {category.display && !isPrimaryCategory && (
+                {category.display && (
                     <SelectTwo<boolean>
                         value={!!category.notify}
                         onChange={() => onUpdate({ ...category, notify: !category.notify })}
                         fullWidth={false}
+                        disabled={isPrimaryCategory}
                         adaptiveForTouchScreens={false}
                     >
                         <Option title={c('Option').t`Push notifications`} value={true} />
-                        <Option title={c('Option').t`None`} value={false} />
+                        {/* translator: Mute the notifications for the category, keep it short */}
+                        <Option title={c('Option').t`Mute notifications`} value={false} />
                     </SelectTwo>
                 )}
             </div>
