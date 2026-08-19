@@ -39,7 +39,7 @@ export const CategoryRowItem = ({ category, onUpdate }: CategoryRowItemProps) =>
                             size="small"
                             shape="ghost"
                             disabled={isPrimaryCategory}
-                            className={clsx(isPrimaryCategory ? 'visibility-hidden' : '', 'mr-3')}
+                            className="mr-3"
                             onClick={() => onUpdate({ ...category, display: !category.display })}
                         >
                             {category.display ? (
@@ -51,15 +51,17 @@ export const CategoryRowItem = ({ category, onUpdate }: CategoryRowItemProps) =>
                         <span className="shrink-0">{categoryLabel}</span>
                     </>
                 </div>
-                {category.display && !isPrimaryCategory && (
+                {category.display && (
                     <SelectTwo<boolean>
                         value={!!category.notify}
                         onChange={() => onUpdate({ ...category, notify: !category.notify })}
                         fullWidth={false}
+                        disabled={isPrimaryCategory}
                         adaptiveForTouchScreens={false}
                     >
                         <Option title={c('Option').t`Push notifications`} value={true} />
-                        <Option title={c('Option').t`None`} value={false} />
+                        {/* translator: Mute the notifications for the category, keep it short */}
+                        <Option title={c('Option').t`Mute notifications`} value={false} />
                     </SelectTwo>
                 )}
             </div>
