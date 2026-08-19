@@ -1,8 +1,52 @@
 export type MarkdownCodeFenceSegment =
-    | { type: 'markdown'; content: string }
-    | { type: 'code'; language: string; code: string };
+    { type: 'markdown'; content: string } | { type: 'code'; language: string; code: string };
 
-const COMPLETE_CODE_FENCE_PATTERN = /```([\w-]+)?[ \t]*\n([\s\S]*?)\n```/g;
+export type MarkdownCodeFence = {
+    start: number;
+    end: number;
+    language: string;
+    code: string;
+};
+
+const OPENING_FENCE_PATTERN = /^ {0,3}(`{3,}|~{3,})([^\r\n]*)(?:\r?\n|$)/gm;
+
+/**
+ * Find the next complete CommonMark fenced code block.
+ *
+ * An unclosed fence consumes the rest of the document, so its contents must not
+ * be searched for another opening fence.
+ */
+export function findCompleteMarkdownCodeFence(content: string, fromIndex = 0): MarkdownCodeFence | null {
+    OPENING_FENCE_PATTERN.lastIndex = fromIndex;
+
+    for (let opening = OPENING_FENCE_PATTERN.exec(content); opening; opening = OPENING_FENCE_PATTERN.exec(content)) {
+        const marker = opening[1]!;
+        const infoString = opening[2]!.trim();
+
+        // CommonMark forbids backticks in the info string of a backtick fence.
+        if (marker[0] === '`' && infoString.includes('`')) {
+            continue;
+        }
+
+        const markerCharacter = marker[0]!;
+        const closingFencePattern = new RegExp(`^ {0,3}${markerCharacter}{${marker.length},}[ \\t]*(?=\\r?$)`, 'gm');
+        closingFencePattern.lastIndex = OPENING_FENCE_PATTERN.lastIndex;
+        const closing = closingFencePattern.exec(content);
+
+        if (!closing) {
+            return null;
+        }
+
+        return {
+            start: opening.index,
+            end: closing.index + closing[0].length,
+            language: (infoString.split(/\s+/)[0] ?? '').toLowerCase(),
+            code: content.slice(OPENING_FENCE_PATTERN.lastIndex, closing.index).replace(/\r?\n$/, ''),
+        };
+    }
+
+    return null;
+}
 
 /**
  * Parse a block that consists entirely of one markdown code fence (as produced by
@@ -10,14 +54,14 @@ const COMPLETE_CODE_FENCE_PATTERN = /```([\w-]+)?[ \t]*\n([\s\S]*?)\n```/g;
  */
 export function parseMarkdownCodeFence(blockContent: string): { language: string; code: string } | null {
     const trimmed = blockContent.trim();
-    const match = trimmed.match(/^```([\w-]+)?[ \t]*\n([\s\S]*)\n```$/);
-    if (!match) {
+    const fence = findCompleteMarkdownCodeFence(trimmed);
+    if (!fence || fence.start !== 0 || fence.end !== trimmed.length) {
         return null;
     }
 
     return {
-        language: (match[1] ?? '').toLowerCase(),
-        code: match[2]!.replace(/\n$/, ''),
+        language: fence.language,
+        code: fence.code,
     };
 }
 
@@ -29,25 +73,26 @@ export function splitMarkdownWithCompleteCodeFences(content: string): MarkdownCo
     const segments: MarkdownCodeFenceSegment[] = [];
     let lastIndex = 0;
 
-    COMPLETE_CODE_FENCE_PATTERN.lastIndex = 0;
+    while (lastIndex < content.length) {
+        const fence = findCompleteMarkdownCodeFence(content, lastIndex);
+        if (!fence) {
+            break;
+        }
 
-    for (const match of content.matchAll(COMPLETE_CODE_FENCE_PATTERN)) {
-        const fenceStart = match.index ?? 0;
-
-        if (fenceStart > lastIndex) {
+        if (fence.start > lastIndex) {
             segments.push({
                 type: 'markdown',
-                content: content.slice(lastIndex, fenceStart),
+                content: content.slice(lastIndex, fence.start),
             });
         }
 
         segments.push({
             type: 'code',
-            language: (match[1] ?? '').toLowerCase(),
-            code: match[2]!.replace(/\n$/, ''),
+            language: fence.language,
+            code: fence.code,
         });
 
-        lastIndex = fenceStart + match[0].length;
+        lastIndex = fence.end;
     }
 
     if (lastIndex < content.length) {
@@ -61,6 +106,5 @@ export function splitMarkdownWithCompleteCodeFences(content: string): MarkdownCo
 }
 
 export function blockContainsCompleteCodeFence(content: string): boolean {
-    COMPLETE_CODE_FENCE_PATTERN.lastIndex = 0;
-    return COMPLETE_CODE_FENCE_PATTERN.test(content);
+    return findCompleteMarkdownCodeFence(content) !== null;
 }
