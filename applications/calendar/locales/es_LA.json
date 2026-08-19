@@ -1040,6 +1040,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "La prueba gratuita de la aplicación de escritorio finaliza en ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Keep going": [
+        "Continuar"
+      ],
+      "Stop here": [
+        "Detenerse aquí"
       ]
     },
     "action": {
@@ -4446,6 +4452,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Su conexión de Zoom ha expirado. Vuelva a conectarse para continuar."
+      ],
+      "Could not grant access to the organization key": [
+        "No se pudo otorgar acceso a la clave de la organización"
       ]
     },
     "error": {
@@ -7079,6 +7088,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Ha alcanzado el límite de franjas de reserva (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Esto implica muchos pasos. ¿Debería continuar?"
       ]
     },
     "info": {
@@ -7870,6 +7882,9 @@
       ],
       "Zoom meeting": [
         "Reunión de Zoom"
+      ],
+      "Account holder name": [
+        "Nombre del titular de la cuenta"
       ]
     },
     "label": {
@@ -9023,6 +9038,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escaneamos la dark web para verificar si sus direcciones o alias de ${ BRAND_NAME } han sido filtrados y alertarle de inmediato si encontramos algo."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME } con acceso ampliado"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME } con acceso limitado"
       ]
     },
     "new_plans: feature highlight": {
@@ -10223,6 +10244,9 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "La tarjeta fue rechazada. Pruebe otra tarjeta o póngase en contacto con el banco para autorizar el cargo."
+      ],
+      "Please enter the account holder name": [
+        "Ingrese el nombre del titular de la cuenta"
       ]
     },
     "Payments.error": {
@@ -10813,6 +10837,9 @@
       ],
       "User Admin": [
         "Administrador de usuarios"
+      ],
+      "Organization Admin": [
+        "Administrador de la organización"
       ]
     },
     "Role description": {
@@ -13133,6 +13160,9 @@
       ],
       "Your shorter address is now ready": [
         "Su dirección en formato más corto ya está lista."
+      ],
+      "Still working on it": [
+        "Todavía trabajando en ello"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

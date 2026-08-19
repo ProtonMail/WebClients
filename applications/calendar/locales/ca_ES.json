@@ -1046,6 +1046,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "La prova gratuïta de l'aplicació d'escriptori finalitza el ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Copy debug transcript": [
+        "Copia la transcripció de depuració"
+      ],
+      "Preview logs": [
+        "Vista prèvia dels registres"
       ]
     },
     "action": {
@@ -2970,6 +2976,9 @@
       ],
       "Åland Islands": [
         "Illes Aland"
+      ],
+      "Micronesia": [
+        "Micronèsia"
       ]
     },
     "Country select label": {
@@ -7091,6 +7100,12 @@
       ],
       "This is taking a lot of steps. Should it carry on?": [
         "Això està prenent molts passos. Hauria de continuar?"
+      ],
+      "Debug transcript copied": [
+        "S'ha copiat la transcripció de depuració"
+      ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "Els registres ens ajuden a entendre què va passar abans que es produís el problema. Inclouen accions de l'aplicació i missatges d'error, però no el contingut dels missatges."
       ]
     },
     "info": {

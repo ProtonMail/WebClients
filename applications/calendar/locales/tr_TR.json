@@ -1046,6 +1046,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Bilgisayar uygulamasını ücretsiz deneme süreniz ${ formattedEndDate } tarihinde sona erecek. ${ upgradeButton }"
+      ],
+      "Copy debug transcript": [
+        "Hata ayıklama çıktısını kopyala"
+      ],
+      "Preview logs": [
+        "Günlükleri önizle"
       ]
     },
     "action": {
@@ -2970,6 +2976,9 @@
       ],
       "Åland Islands": [
         "Aland Adaları"
+      ],
+      "Micronesia": [
+        "Mikronezya"
       ]
     },
     "Country select label": {
@@ -4452,6 +4461,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Zoom bağlantınızın geçerlilik süresi dolmuş. İlerlemek için lütfen yeniden bağlantı kurun."
+      ],
+      "Could not grant access to the organization key": [
+        "Kuruluş anahtarına erişme izni verilemedi"
       ]
     },
     "error": {
@@ -7088,6 +7100,12 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Rezervasyon aralığı sayısı sınırına ulaştınız (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Debug transcript copied": [
+        "Hata ayıklama çıktısı kopyalandı"
+      ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "Günlükler sorunun ortaya çıkmasından önce neler olduğunu anlamamıza yardımcı olur. Bu günlükler uygulama eylemlerini ve hata mesajlarını içerir. Ancak iletilerin içeriği yer almaz."
       ]
     },
     "info": {
@@ -7879,6 +7897,9 @@
       ],
       "Zoom meeting": [
         "Zoom görüşmesi"
+      ],
+      "Account holder name": [
+        "Hesap sahibinin adı"
       ]
     },
     "label": {
@@ -10238,6 +10259,9 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Kartınız reddedildi. Lütfen ödemeyi onaylamak için başka bir kart deneyin ya da bankanızla görüşün."
+      ],
+      "Please enter the account holder name": [
+        "Lütfen hesap sahibinin adını yazın"
       ]
     },
     "Payments.error": {
@@ -10830,7 +10854,7 @@
         "Kullanıcı yöneticisi"
       ],
       "Organization Admin": [
-        "Kuruluş Yöneticisi"
+        "Kuruluş yöneticisi"
       ]
     },
     "Role description": {
