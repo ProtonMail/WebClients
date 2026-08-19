@@ -1724,6 +1724,9 @@
       ],
       "Skip": [
         "Preskoči"
+      ],
+      "Set up categories": [
+        "Nastavi kategorije"
       ]
     },
     "Actions message": {
@@ -9446,6 +9449,30 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Do urejenega poštnega predala vas loči le nekaj klikov."
+      ],
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "V kategoriji ${ categoryLabel } imate **${ count } pogovor**",
+        "V kategoriji ${ categoryLabel } imate **${ count } pogovora**",
+        "V kategoriji ${ categoryLabel } imate **${ count } pogovore**",
+        "V kategoriji ${ categoryLabel } imate **${ count } pogovorov**"
+      ],
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "V kategoriji ${ categoryLabel } imate **${ count } sporočilo**",
+        "V kategoriji ${ categoryLabel } imate **${ count } sporočili**",
+        "V kategoriji ${ categoryLabel } imate **${ count } sporočila**",
+        "V kategoriji ${ categoryLabel } imate **${ count } sporočil**"
+      ],
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "V kategoriji ${ categoryLabel } ste izbrali **${ checked } pogovor**",
+        "V kategoriji ${ categoryLabel } ste izbrali **${ checked } pogovora**",
+        "V kategoriji ${ categoryLabel } ste izbrali **${ checked } pogovore**",
+        "V kategoriji ${ categoryLabel } ste izbrali **${ checked } pogovorov**"
+      ],
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "V kategoriji ${ categoryLabel } ste izbrali **${ checked } sporočilo**",
+        "V kategoriji ${ categoryLabel } ste izbrali **${ checked } sporočili**",
+        "V kategoriji ${ categoryLabel } ste izbrali **${ checked } sporočila**",
+        "V kategoriji ${ categoryLabel } ste izbrali **${ checked } sporočil**"
       ]
     },
     "info": {
@@ -10606,6 +10633,15 @@
       ],
       "Account holder name": [
         "Ime imetnika računa"
+      ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Vse, kar zahteva vašo pozornost, in e-pošta iz onemogočenih kategorij"
+      ],
+      "Folder name": [
+        "Ime mape"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Primarno – vse, kar zahteva vašo pozornost, in e-pošta iz onemogočenih kategorij"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -16651,6 +16687,9 @@
       ],
       "Your shorter address is now ready": [
         "Vaš krajši naslov je zdaj pripravljen"
+      ],
+      "Refine your Categories": [
+        "Izboljšajte svoje kategorije"
       ]
     },
     "Title header for keys table": {

@@ -1739,6 +1739,9 @@
       ],
       "Skip": [
         "Ohita"
+      ],
+      "Set up categories": [
+        "Määritä luokat"
       ]
     },
     "Actions message": {
@@ -4103,7 +4106,7 @@
         "2FA lisää ylimääräisen turvakerroksen, joka estää luvattoman pääsyn tilillesi."
       ],
       "A blue dot appears when a category has unread messages since your last visit.": [
-        "Sininen piste tulee näkyviin, kun kategoriassa on lukemattomia viestejä edellisen vierailunne jälkeen."
+        "Sininen piste tulee näkyviin, kun luokassa on lukemattomia viestejä edellisen vierailunne jälkeen."
       ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Lisää kansioita ja tiedostoja ${ DRIVE_APP_NAME }en ja kutsu tiimin jäseniä tarkastelemaan tai muokkaamaan."
@@ -4381,6 +4384,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Olet jo luonut 10 aliasta. Saat rajattomasti aliaksia ja 500 Gt tallennustilaa ${ BRAND_NAME } Unlimitedilla."
+      ],
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Napsauta sähköpostia hiiren oikealla painikkeella ja valitse ”Siirrä kohteeseen” tai vedä ja pudota se toiseen luokkaan. Vastaavat sähköpostit siirretään jatkossa sinne automaattisesti."
       ]
     },
     "description": {
@@ -7216,7 +7222,7 @@
         "Etkö muista salasanaasi? Voimme auttaa kaikkien tällä avaimella salattujen yhteystietojen salattujen tietojen tyhjennyksessä, jolloin myös hälytys kuittaantuu."
       ],
       "Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
-        "Kategoriat toimivat roskapostisuodattimien tapaan. ${ MAIL_APP_NAME } ei koskaan lue sähköpostejasi tai jaa tietojasi."
+        "Luokat toimivat roskapostisuodattimien tapaan. ${ MAIL_APP_NAME } ei koskaan lue sähköpostejasi tai jaa tietojasi."
       ],
       "Center": [
         "Keskitä"
@@ -8920,7 +8926,7 @@
         "Kun matkustat tai käytät julkista Wi-Fiä, voit käyttää ilmaista ${ VPN_APP_NAME } -palvelua, jotta kukaan ei voi seurata verkkotoimintaasi tai varastaa tietojasi."
       ],
       "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
-        "Uusilla sähköpostikategorioilla vain tärkeät viestit päätyvät pääasialliseen postilaatikkoosi. Kaikki muu lajitellaan kategorioihin."
+        "Uusilla sähköpostiluokilla vain tärkeät viestit päätyvät pääasialliseen postilaatikkoosi. Kaikki muu lajitellaan luokkiin."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Haluatko uuden vahvistuskoodin vai käyttää vaihtoehtoista tunnistautumistapaa?"
@@ -9221,6 +9227,22 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Olet vain muutaman klikkauksen päässä siististä postilaatikosta"
+      ],
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "Sinulla on **${ count } keskustelu** luokassa ${ categoryLabel }",
+        "Sinulla on **${ count } keskustelua** luokassa ${ categoryLabel }"
+      ],
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "Sinulla on **${ count } viesti** luokassa ${ categoryLabel }",
+        "Sinulla on **${ count } viestiä** luokassa ${ categoryLabel }"
+      ],
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "Valitsit **${ checked } keskustelun** luokassa ${ categoryLabel }",
+        "Valitsit **${ checked } keskustelua** luokassa ${ categoryLabel }"
+      ],
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "Valitsit **${ checked } viestin** luokassa ${ categoryLabel }",
+        "Valitsit **${ checked } viestiä** luokassa ${ categoryLabel }"
       ]
     },
     "info": {
@@ -10419,6 +10441,15 @@
       ],
       "Duration": [
         "Kesto"
+      ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Kaikki, mikä vaatii huomiotasi, sekä sähköpostit poistetuista luokista"
+      ],
+      "Folder name": [
+        "Kansion nimi"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Ensisijainen – kaikki, mikä vaatii huomiotasi, sekä sähköpostit poistetuista luokista"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15171,6 +15202,9 @@
       ],
       "You have successfully unsubscribed": [
         "Tilauksesi on lopetettu"
+      ],
+      "Moved to ${ label }. Similar messages will be categorized there in the future.": [
+        "Siirretty kohteeseen ${ label }. Vastaavat viestit luokitellaan jatkossa sinne."
       ]
     },
     "Success notification": {
@@ -16470,6 +16504,9 @@
       ],
       "Your shorter address is now ready": [
         "Lyhyempi osoittesi on nyt valmis"
+      ],
+      "Refine your Categories": [
+        "Tarkenna luokkiasi"
       ]
     },
     "Title header for keys table": {

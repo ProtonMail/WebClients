@@ -1230,6 +1230,15 @@
       ],
       "Trust key": [
         "Tasarut yettwamanen"
+      ],
+      "Continue without categories": [
+        "Kemmel war taggayin"
+      ],
+      "Move to category...": [
+        "Senkez ɣer taggayt..."
+      ],
+      "Try categories": [
+        "Ɛreḍ taggayin"
       ]
     },
     "action": {
@@ -3004,6 +3013,18 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Tzemreḍ ad tcerḍeḍ ɣef yinermisen ur tebɣiḍ ara ad tesmezdiḍ neɣ ad tḥerzeḍ. Tukksa ur tetteddu ara alamma tessdeḍ ɣef tqeffalt n usmezdi"
+      ],
+      "A blue dot appears when a category has unread messages since your last visit.": [
+        "Taqat tazerqaqt tettban-d mi ara tili taggayt tesɛa iznan ur ttwaɣran ara seg tirza-k taneggarut."
+      ],
+      "Add or remove categories, manage notifications, and adjust your setup anytime in settings.": [
+        "Rnu neɣ kkes taggayin, sefrek ilɣa yerna ẓreg tuqqna-k melmi i tebɣiḍ deg iɣewwaren."
+      ],
+      "Add or remove categories, manage notifications, or turn them off entirely - anytime in Settings.": [
+        "Rnu neɣ kkes taggayin, sefrek ilɣa neɣ sens-iten akk — melmi i tebɣiḍ deg Iɣewwaren."
+      ],
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Sit s tqeffalt tayeffust ɣef yimayl syen fren «Senkez ɣer», neɣ zuɣer-it ɣer teggayt nniḍen. Imaylen icuban ad ttwasmizzwren dinna s wudem awurman deg yimal."
       ]
     },
     "description": {
@@ -3633,6 +3654,9 @@
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Ur tesεiḍ ara εad anermis. Bdu s tmerna n unermis amaynut"
+      ],
+      "An error occurred with the categories": [
+        "Tella-d tuccḍa akked taggayin"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -5578,6 +5602,40 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Uṭṭun-ik n tiliɣṛi ad yettwaseqdec kan tikkelt deg usenqed-agi."
+      ],
+      "${ MAIL_APP_NAME } now automatically sorts your emails into categories like Primary, Social, Promotions, and more, helping you find and manage messages more easily.": [
+        "${ MAIL_APP_NAME } tura yessismel imaylen-ik s wudem awurman ɣer taggayin am Tagejdant, Timetti, Isemlen d wiyaḍ, akken ad tafeḍ yerna ad tesferkeḍ iznan akken ifessas."
+      ],
+      "Automatically sort incoming emails into categories": [
+        "Sismel s wudem awurman imaylen i d-ikeččmen ɣer taggayin"
+      ],
+      "Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
+        "Taggayin xeddment am imsizedgen n uspam. ${ MAIL_APP_NAME } werǧin iɣeṛṛ imaylen-ik neɣ ibeṭṭu isefka-k."
+      ],
+      "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
+        "S taggayin timaynutin n yimaylen, ala iznan yesɛan azal ad awḍen ɣer tinicin-ik tagejdant. Ayen nniḍen akk yettwasuddes deg taggayin."
+      ],
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "Tesɛiḍ **${ count } udiwenni** deg teggayt ${ categoryLabel }",
+        "Tesɛiḍ **${ count } idiwenniyen** deg teggayt ${ categoryLabel }"
+      ],
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "Tesɛiḍ **${ count } izen** deg teggayt ${ categoryLabel }",
+        "Tesɛiḍ **${ count } iznan** deg teggayt ${ categoryLabel }"
+      ],
+      "You have no conversations in this category": [
+        "Ur tesɛiḍ ara idiwenniyen deg taggayt-a"
+      ],
+      "You have no messages in this category": [
+        "Ur tesɛiḍ ara iznan deg taggayt-a"
+      ],
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "Tferneḍ **${ checked } udiwenni** deg teggayt ${ categoryLabel }",
+        "Tferneḍ **${ checked } idiwenniyen** deg teggayt ${ categoryLabel }"
+      ],
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "Tferneḍ **${ checked } izen** deg teggayt ${ categoryLabel }",
+        "Tferneḍ **${ checked } iznan** deg teggayt ${ categoryLabel }"
       ]
     },
     "info": {
@@ -6386,6 +6444,18 @@
       ],
       "ZIP code": [
         "Tangalt Zip"
+      ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Akk ayen yesran lḥir-ik, rnu ɣer-s imaylen seg taggayin yensan"
+      ],
+      "Email categories": [
+        "Taggayin n yimaylen"
+      ],
+      "Folder name": [
+        "Isem n ukaram"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Tagejdant – akk ayen yesran lḥir-ik, rnu ɣer-s imaylen seg taggayin yensan"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -8573,6 +8643,9 @@
       ],
       "You have successfully unsubscribed": [
         "Teffɣeḍ seg ujerred akken iwata"
+      ],
+      "Moved to ${ label }. Similar messages will be categorized there in the future.": [
+        "Yettwasenkez ɣer ${ label }. Iznan icuban ad ttwassismelen dinna deg yimal."
       ]
     },
     "Success notification": {
@@ -9362,6 +9435,9 @@
       ],
       "Your plan": [
         "Aɣawas-ik·im"
+      ],
+      "Refine your Categories": [
+        "Seɣti tiggayin-ik"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -9820,6 +9896,11 @@
       ],
       "Yearly, ${ untilString }": [
         "S useggas, ${ untilString }"
+      ]
+    },
+    "Actions": {
+      "Set up categories": [
+        "Sbadu taggayin"
       ]
     }
   }
