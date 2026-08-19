@@ -59,8 +59,6 @@ const getSyncedText = (pendingUsersCount: number, pendingGroupsCount: number) =>
 const ScimSetupBanner = ({ pendingUsersCount, pendingGroupsCount, onReviewChanges }: Props) => {
     const isUserGroupsScimGroupsEnabled = useFlag('UserGroupsScimGroups');
 
-    const showLearnMoreLink = false; // TO BE REMOVED: for now we just do not show link
-
     if (!isUserGroupsScimGroupsEnabled || (!pendingUsersCount && !pendingGroupsCount)) {
         return null;
     }
@@ -76,12 +74,9 @@ const ScimSetupBanner = ({ pendingUsersCount, pendingGroupsCount, onReviewChange
             <div className="flex-1">
                 <p className="m-0 text-bold">{c('scim').t`Approve changes from your identity provider`}</p>
                 <p className="m-0">{getSyncedText(pendingUsersCount, pendingGroupsCount)}</p>
-                {/* TODO: link should be updated once we have knowledge page for scim */}
-                {showLearnMoreLink && (
-                    <Href href={getKnowledgeBaseUrl('/groups')} className="color-primary">
-                        PLEASE UPDATE ME
-                    </Href>
-                )}
+                <Href href={getKnowledgeBaseUrl('/scim-groups')} className="color-primary">
+                    {c('Link').t`Learn more`}
+                </Href>
             </div>
             <div>
                 <Button shape="outline" onClick={onReviewChanges}>
