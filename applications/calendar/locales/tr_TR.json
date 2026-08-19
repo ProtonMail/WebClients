@@ -1040,6 +1040,18 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Bilgisayar uygulamasını ücretsiz deneme süreniz ${ formattedEndDate } tarihinde sona erecek. ${ upgradeButton }"
+      ],
+      "Copy debug transcript": [
+        "Hata ayıklama çıktısını kopyala"
+      ],
+      "Keep going": [
+        "İlerle"
+      ],
+      "Preview logs": [
+        "Günlükleri önizle"
+      ],
+      "Stop here": [
+        "Burada dur"
       ]
     },
     "action": {
@@ -2964,6 +2976,9 @@
       ],
       "Åland Islands": [
         "Aland Adaları"
+      ],
+      "Micronesia": [
+        "Mikronezya"
       ]
     },
     "Country select label": {
@@ -4446,6 +4461,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Zoom bağlantınızın geçerlilik süresi dolmuş. İlerlemek için lütfen yeniden bağlantı kurun."
+      ],
+      "Could not grant access to the organization key": [
+        "Kuruluş anahtarına erişme izni verilemedi"
       ]
     },
     "error": {
@@ -7085,6 +7103,15 @@
       ],
       "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Bu işlemi tamamlamanız için yeni bir tarayıcı sekmesi açarak sizi ${ IDEAL_BRAND_NAME } sitesine yönlendireceğiz. İşlemi tamamlamak için, varsa açılır pencere engelleyicilerinizi kapatın."
+      ],
+      "Debug transcript copied": [
+        "Hata ayıklama çıktısı kopyalandı"
+      ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "Günlükler sorunun ortaya çıkmasından önce neler olduğunu anlamamıza yardımcı olur. Bu günlükler uygulama eylemlerini ve hata mesajlarını içerir. Ancak iletilerin içeriği yer almaz."
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Bu işlem için birçok adım atılıyor. İlerlensin mi?"
       ]
     },
     "info": {
@@ -7876,6 +7903,9 @@
       ],
       "Zoom meeting": [
         "Zoom görüşmesi"
+      ],
+      "Account holder name": [
+        "Hesap sahibinin adı"
       ]
     },
     "label": {
@@ -9029,6 +9059,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "${ BRAND_NAME } adreslerinizin veya takma adlarınızın sızıp sızmadığını denetlemek için karanlık ağı tararız ve herhangi bir şey bulursak sizi hemen uyarırız."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Genişletilmiş erişim ile ${ LUMO_SHORT_APP_NAME } yazma yardımcısı"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Sınırlı erişim ile ${ LUMO_SHORT_APP_NAME } yazma yardımcısı"
       ]
     },
     "new_plans: feature highlight": {
@@ -10229,6 +10265,9 @@
       ],
       "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
         "${ IDEAL_BRAND_NAME } hazırlanamadı. Lütfen bir süre sonra yeniden deneyin."
+      ],
+      "Please enter the account holder name": [
+        "Lütfen hesap sahibinin adını yazın"
       ]
     },
     "Payments.error": {
@@ -10814,6 +10853,9 @@
       ],
       "User Admin": [
         "Kullanıcı yöneticisi"
+      ],
+      "Organization Admin": [
+        "Kuruluş yöneticisi"
       ]
     },
     "Role description": {
@@ -13134,6 +13176,9 @@
       ],
       "Domain names": [
         "Etki alanları"
+      ],
+      "Still working on it": [
+        "Üzerinde çalışılıyor"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

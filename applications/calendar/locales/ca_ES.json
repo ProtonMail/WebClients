@@ -1040,6 +1040,18 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "La prova gratuïta de l'aplicació d'escriptori finalitza el ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Copy debug transcript": [
+        "Copia la transcripció de depuració"
+      ],
+      "Keep going": [
+        "Continua"
+      ],
+      "Preview logs": [
+        "Vista prèvia dels registres"
+      ],
+      "Stop here": [
+        "Parar aquí"
       ]
     },
     "action": {
@@ -2964,6 +2976,9 @@
       ],
       "Åland Islands": [
         "Illes Aland"
+      ],
+      "Micronesia": [
+        "Micronèsia"
       ]
     },
     "Country select label": {
@@ -4446,6 +4461,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "La vostra connexió de Zoom ha caducat. Torneu a connectar-vos per continuar."
+      ],
+      "Could not grant access to the organization key": [
+        "No s'ha pogut concedir accés a la clau de l'organització"
       ]
     },
     "error": {
@@ -7088,6 +7106,15 @@
       ],
       "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Us redirigirem a ${ IDEAL_BRAND_NAME } en una pestanya nova del navegador per completar aquesta transacció. Si utilitzeu algun bloquejador de finestres emergents, desactiveu-lo per continuar."
+      ],
+      "Debug transcript copied": [
+        "S'ha copiat la transcripció de depuració"
+      ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "Els registres ens ajuden a entendre què va passar abans que es produís el problema. Inclouen accions de l'aplicació i missatges d'error, però no el contingut dels missatges."
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Això està prenent molts passos. Hauria de continuar?"
       ]
     },
     "info": {
@@ -7879,6 +7906,9 @@
       ],
       "Zoom meeting": [
         "Reunió per Zoom"
+      ],
+      "Account holder name": [
+        "Nom del titular del compte"
       ]
     },
     "label": {
@@ -9032,6 +9062,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escanegem el web fosc per a comprovar si les vostres adreces o àlies de ${ BRAND_NAME } s'han filtrat i us avisem immediatament si trobem alguna cosa."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Assistent de redacció de ${ LUMO_SHORT_APP_NAME } amb accés ampliat"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Assistent de redacció de ${ LUMO_SHORT_APP_NAME } amb accés limitat"
       ]
     },
     "new_plans: feature highlight": {
@@ -10232,6 +10268,9 @@
       ],
       "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
         "No s'ha pogut inicialitzar ${ IDEAL_BRAND_NAME }. Torneu-ho a provar més tard."
+      ],
+      "Please enter the account holder name": [
+        "Introduïu el nom del titular del compte"
       ]
     },
     "Payments.error": {
@@ -10817,6 +10856,9 @@
       ],
       "User Admin": [
         "Administrador/a d'usuaris"
+      ],
+      "Organization Admin": [
+        "Administrador/a de l'organització"
       ]
     },
     "Role description": {
@@ -13137,6 +13179,9 @@
       ],
       "Domain names": [
         "Noms de domini"
+      ],
+      "Still working on it": [
+        "Encara hi estem treballant"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

@@ -1040,6 +1040,18 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Η δωρεάν δοκιμή της εφαρμογής για υπολογιστές λήγει στις ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Copy debug transcript": [
+        "Αντιγραφή μεταγραφής εντοπισμού σφαλμάτων"
+      ],
+      "Keep going": [
+        "Συνεχίστε"
+      ],
+      "Preview logs": [
+        "Προεπισκόπηση αρχείων καταγραφής"
+      ],
+      "Stop here": [
+        "Σταμάτησε εδώ"
       ]
     },
     "action": {
@@ -2964,6 +2976,9 @@
       ],
       "Åland Islands": [
         "Νήσοι Άλαντ"
+      ],
+      "Micronesia": [
+        "Μικρονησία"
       ]
     },
     "Country select label": {
@@ -4446,6 +4461,9 @@
       ],
       "You do not have access to this shared item": [
         "Δεν έχετε πρόσβαση σε αυτό το κοινόχρηστο στοιχείο"
+      ],
+      "Could not grant access to the organization key": [
+        "Δεν ήταν δυνατή η παραχώρηση πρόσβασης στο κλειδί οργανισμού"
       ]
     },
     "error": {
@@ -7088,6 +7106,15 @@
       ],
       "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Θα σας ανακατευθύνουμε στο ${ IDEAL_BRAND_NAME }, σε μια νέα καρτέλα προγράμματος περιήγησης, για να ολοκληρώσετε αυτήν τη συναλλαγή. Εάν έχετε ενεργοποιημένο τον αποκλεισμό αναδυόμενων παραθύρων, παρακαλώ απενεργοποιήστε τον για να συνεχίσετε."
+      ],
+      "Debug transcript copied": [
+        "Η μεταγραφή εντοπισμού σφαλμάτων αντιγράφηκε"
+      ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "Τα αρχεία καταγραφής μας βοηθούν να κατανοήσουμε τι συνέβη πριν από την εμφάνιση του προβλήματος. Περιλαμβάνουν ενέργειες εφαρμογής και μηνύματα σφάλματος, αλλά όχι περιεχόμενο μηνύματος."
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Αυτό απαιτεί πολλά βήματα. Να συνεχίσω;"
       ]
     },
     "info": {
@@ -7879,6 +7906,9 @@
       ],
       "Zoom meeting": [
         "Τηλεδιάσκεψη Zoom"
+      ],
+      "Account holder name": [
+        "Όνομα κατόχου λογαριασμού"
       ]
     },
     "label": {
@@ -9032,6 +9062,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Σαρώνουμε τον σκοτεινό ιστό για να ελέγξουμε εάν οι διευθύνσεις ή τα ψευδώνυμά σας ${ BRAND_NAME } έχουν διαρρεύσει και σας ειδοποιούμε αμέσως αν βρούμε κάτι."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Βοηθός γραφής ${ LUMO_SHORT_APP_NAME } με εκτεταμένη πρόσβαση"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Βοηθός γραφής ${ LUMO_SHORT_APP_NAME } με περιορισμένη πρόσβαση"
       ]
     },
     "new_plans: feature highlight": {
@@ -10232,6 +10268,9 @@
       ],
       "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
         "Αποτυχία αρχικοποίησης του ${ IDEAL_BRAND_NAME }. Παρακαλούμε δοκιμάστε ξανά αργότερα."
+      ],
+      "Please enter the account holder name": [
+        "Παρακαλώ εισάγετε το όνομα του κατόχου του λογαριασμού"
       ]
     },
     "Payments.error": {
@@ -10817,6 +10856,9 @@
       ],
       "User Admin": [
         "Διαχειριστής Χρηστών"
+      ],
+      "Organization Admin": [
+        "Διαχειριστής Οργανισμού"
       ]
     },
     "Role description": {
@@ -13137,6 +13179,9 @@
       ],
       "Domain names": [
         "Ονόματα τομέων"
+      ],
+      "Still working on it": [
+        "Ακόμα δουλεύω πάνω σε αυτό"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

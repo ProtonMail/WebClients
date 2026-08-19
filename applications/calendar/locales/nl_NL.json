@@ -1040,6 +1040,12 @@
       ],
       "Migrate": [
         "Migreer"
+      ],
+      "Keep going": [
+        "Blijf doorgaan"
+      ],
+      "Stop here": [
+        "Hier stoppen"
       ]
     },
     "action": {
@@ -4377,6 +4383,75 @@
       ],
       "You do not have access to this shared item": [
         "U heeft geen toegang tot dit gedeelde item"
+      ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Bij het melden van inbreuk op auteursrechten of gestolen gegevens is een bericht vereist"
+      ],
+      "Bookmark password is not available": [
+        "Wachtwoord voor bladwijzer is niet beschikbaar"
+      ],
+      "Cannot download a folder": [
+        "Kan een map niet downloaden"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Kan het item niet verplaatsen zonder een geldige naam. Hernoem het item eerst"
+      ],
+      "Could not find an available name": [
+        "Kon geen beschikbare naam vinden"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "Kan het afbeeldingsvoorbeeld niet laden: ${ message }"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Kon een deel van dit bestand niet lezen: ${ message }"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Het aanmaken van documenten in niet-mappen is niet toegestaan"
+      ],
+      "Expiration date cannot be in the past": [
+        "De vervaldatum mag niet in het verleden liggen"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Kan bladwijzernaam niet decoderen: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Kan sleutel knooppunt niet decoderen: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Kan de metagegevens van de revisie niet ontsleutelen"
+      ],
+      "Failed to verify invitation": [
+        "Kan de uitnodiging niet verifiëren"
+      ],
+      "Missing signature for ${ signatureType }": [
+        "Ontbrekende handtekening voor ${ signatureType }"
+      ],
+      "Move operation aborted": [
+        "Verplaatsingsbewerking afgebroken"
+      ],
+      "Only admins can convert external invitations": [
+        "Alleen beheerders kunnen externe uitnodigingen converteren"
+      ],
+      "Organization does not have enough seats available": [
+        "De organisatie heeft niet voldoende zitplaatsen beschikbaar"
+      ],
+      "Organization does not have enough storage available": [
+        "Organisatie heeft niet voldoende opslagruimte beschikbaar"
+      ],
+      "Request aborted": [
+        "Verzoek afgebroken"
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Verificatie handtekening mislukt: ${ errorMessage }"
+      ],
+      "Too many server errors, please try again later": [
+        "Te veel serverfouten. Probeer het later opnieuw"
+      ],
+      "You can only leave items that are shared with you": [
+        "U kunt alleen items achterlaten die met u gedeeld zijn"
+      ],
+      "You can only upload a new version to a file": [
+        "U kunt alleen een nieuwe versie naar een bestand uploaden"
       ]
     },
     "error": {
@@ -5328,6 +5403,12 @@
       ],
       "Migrated": [
         "Gemigreerd"
+      ],
+      "Has errors": [
+        "Bevat fouten"
+      ],
+      "Pending": [
+        "In behandeling"
       ]
     },
     "Import warning": {
@@ -6975,6 +7056,15 @@
       ],
       "You": [
         "U"
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Dit vergt veel stappen. Moet het doorgaan?"
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "Om deze gebruiker te migreren, schakelt u zijn/haar account in uw ${ provider.adminConsoleName } in."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Om deze gebruiker te migreren, schakelt u het adres in onder ${ usersAddressesLink }."
       ]
     },
     "info": {
@@ -8919,6 +9009,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "We scannen het dark web om te controleren of uw ${ BRAND_NAME } adressen of aliassen zijn gelekt en waarschuwen u onmiddellijk wanneer we iets vinden."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME } schrijfassistent met uitgebreide toegang"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME } schrijfassistent met beperkte toegang"
       ]
     },
     "new_plans: feature highlight": {
@@ -12112,6 +12208,9 @@
       ],
       "User": [
         "Gebruiker"
+      ],
+      "Migration status": [
+        "Migratiestatus"
       ]
     },
     "TableHeader": {
@@ -12998,6 +13097,12 @@
       ],
       "Select users to migrate": [
         "Selecteer gebruikers om te migreren"
+      ],
+      "Still working on it": [
+        "Er wordt nog steeds aan gewerkt"
+      ],
+      "What are you migrating?": [
+        "Wat migreert u?"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13124,6 +13229,12 @@
       ],
       "Version 6 OpenPGP key": [
         "Versie 6 OpenPGP-sleutel"
+      ],
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "Status gegevensmigratie van ${ providerName } naar ${ BRAND_NAME }"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Gebruikers die toegang hebben gehad tot hun ${ BRAND_NAME }-account"
       ]
     },
     "tooltip": {
@@ -13659,6 +13770,12 @@
       ],
       "membership": [
         "lidmaatschap"
+      ],
+      "content key": [
+        "inhoud sleutel"
+      ],
+      "name": [
+        "naam"
       ]
     }
   }

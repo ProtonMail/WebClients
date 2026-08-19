@@ -964,6 +964,15 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Brezplačno preskušanje namizne aplikacije poteče dne ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Add a date": [
+        "Dodaj datum"
+      ],
+      "Keep going": [
+        "Nadaljuj …"
+      ],
+      "Stop here": [
+        "Tukaj se ustavi"
       ]
     },
     "action": {
@@ -4200,6 +4209,12 @@
       ],
       "You do not have access to this shared item": [
         "Nimate dostopa do tega predmeta v skupni rabi"
+      ],
+      "Could not grant access to the organization key": [
+        "Dostop do ključa organizacije ni bil odobren"
+      ],
+      "Location is required": [
+        "Lokacija je obvezna"
       ]
     },
     "error": {
@@ -6703,6 +6718,12 @@
       ],
       "You": [
         "Vi"
+      ],
+      "Location": [
+        "Lokacija"
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Za ta postopek je potrebnih več korakov. Nadaljujemo?"
       ]
     },
     "info": {
@@ -7449,6 +7470,12 @@
       ],
       "ZIP code": [
         "Poštna številka"
+      ],
+      "Account holder name": [
+        "Ime imetnika računa"
+      ],
+      "Zoom meeting": [
+        "Sestanek prek Zooma"
       ]
     },
     "label": {
@@ -8629,6 +8656,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Pregledujemo temni splet in preverjamo, ali so bili razkriti naslovi ali vzdevki ${ BRAND_NAME }. V primeru uhajanja podatkov vas bomo o tem obvestili."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME } pomočnik pri pisanju z razširjenim dostopom"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME } pomočnik pri pisanju z omejenim dostopom"
       ]
     },
     "new_plans: feature highlight": {
@@ -8775,6 +8808,9 @@
       ],
       "Switch plans?": [
         "Zamenjaj paket?"
+      ],
+      "Review subscription": [
+        "Pregled naročnine"
       ]
     },
     "new_plans: tooltip": {
@@ -9839,6 +9875,9 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Vaša kartica je bila zavrnjena. Prosimo, poskusite z drugo kartico ali se obrnite na banko, da odobri plačilo."
+      ],
+      "Please enter the account holder name": [
+        "Vnesite ime imetnika računa"
       ]
     },
     "Payments.error": {
@@ -12583,6 +12622,12 @@
       ],
       "What are you migrating?": [
         "Kaj selite?"
+      ],
+      "Host": [
+        "Gostitelj"
+      ],
+      "Still working on it": [
+        "Še vedno delam na tem"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

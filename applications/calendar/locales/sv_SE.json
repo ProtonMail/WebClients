@@ -1040,6 +1040,12 @@
       ],
       "Migrate": [
         "Migrera"
+      ],
+      "Keep going": [
+        "Fortsätt"
+      ],
+      "Stop here": [
+        "Stoppa här"
       ]
     },
     "action": {
@@ -1616,6 +1622,9 @@
       ],
       "Take a tour": [
         "Ta en rundtur"
+      ],
+      "Get 50% offer": [
+        "Få 50 % erbjudande"
       ]
     },
     "Calendar access select label": {
@@ -3170,7 +3179,7 @@
         "Se till att du fortfarande kan komma åt ditt konto och dina data även om du förlorar ditt ${ BRAND_NAME }-lösenord."
       ],
       "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "För en smidig introduktion av ditt team till ${ BRAND_NAME }, importera dina data från Google, Outlook och andra."
+        "För en sömlös introduktion av ditt team till ${ BRAND_NAME }, importera din data från Google, Outlook och andra."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Bli aviserad om ditt lösenord eller annan data har läckt från en tjänst från tredje part."
@@ -4312,6 +4321,82 @@
       ],
       "You can create public links for your own files only": [
         "Du kan endast skapa offentliga länkar för dina egna filer"
+      ],
+      "Cannot verify the author of this file": [
+        "Kan inte verifiera författaren för denna fil"
+      ],
+      "Copy operation aborted": [
+        "Kopieringsåtgärd avbröts"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Kopiering av objekt till utanför en mapp är inte tillåtet"
+      ],
+      "Could not grant access to the organization key": [
+        "Kunde inte bevilja åtkomst till organisationsnyckeln"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Upprättande av mappar utanför mappar är inte tillåtet"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Upprättande av mappar utanför mappar är inte tillåtet"
+      ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Misslyckades avkryptera innehållsnyckel: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Kunde inte avkryptera lösenord för bokmärke: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "Misslyckades avkryptera innehållsnyckel: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Kunde inte dekryptera objekt: ${ message }"
+      ],
+      "Image preview not found": [
+        "Förhandsvisning av bild hittades inte"
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "Äldre publik länk kan inte uppdateras. Vänligen återskapa en ny publik länk."
+      ],
+      "Missing inviter email": [
+        "Saknar e-post för inbjudan"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "Flytt av objekt till utanför en mapp är inte tillåtet"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "Namn måste vara ${ MAX_NODE_NAME_LENGTH } tecken långt som mest",
+        "Namn måste vara ${ MAX_NODE_NAME_LENGTH } tecken långt som mest"
+      ],
+      "No file data was received. Please try again.": [
+        "Ingen fildata togs emot. Försök igen."
+      ],
+      "Part of the file appears to be corrupted": [
+        "Del av filen verkar vara skadad"
+      ],
+      "Renaming root item is not allowed": [
+        "Byta namn på root objekt är inte tillåtet"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "Viss fildata kunde inte laddas upp. Vänligen pröva igen."
+      ],
+      "The uploaded file does not match the original. Please try again.": [
+        "Den uppladdade filen matchar inte originalet. Försök igen."
+      ],
+      "This file has no version available to download": [
+        "Denna fil har ingen version tillgänglig att ladda ner"
+      ],
+      "Too many server errors, please try again later": [
+        "För många serverfel, försök igen senare"
+      ],
+      "Too many server requests, please try again later": [
+        "För många serverförfrågningar, försök igen senare"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Verifieringsnycklar för ${ signatureType } är inte tillgängliga"
+      ],
+      "You can update a public link for your own files only": [
+        "Du kan endast uppdatera en offentlig länk för dina egna filer"
       ]
     },
     "error": {
@@ -6892,6 +6977,21 @@
       ],
       "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
         "För att migrera denna användare, aktivera deras konto i din ${ provider.adminConsoleName }."
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "Om du avbryter nu, kommer du att förlora åtkomst till ${ BRAND_NAME } ${ planTitle } den ${ expiryDate }, inklusive dessa funktioner:"
+      ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "Denna användare kan inte migreras eftersom deras e-postadress inte är tillgänglig på ${ BRAND_NAME }."
+      ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "För att migrera denna användare, lägg till och verifiera e-postdomänen under ${ domainNamesLink }"
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "För att migrera denna användare, aktivera deras konto under ${ usersAddressesLink }."
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "För att migrera denna användare, upphäv deras arkivering från ditt ${ provider.adminConsoleName }."
       ]
     },
     "info": {
@@ -7683,6 +7783,9 @@
       ],
       "Zoom meeting": [
         "Zoom-möte"
+      ],
+      "Account holder name": [
+        "Kontoinnehavarens namn"
       ]
     },
     "label": {
@@ -7989,6 +8092,9 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME }-användarplats",
         "${ seats } ${ MEET_APP_NAME }-användarplatser"
+      ],
+      "${ price } per seat": [
+        "${ price } per plats"
       ]
     },
     "meet_2025: Feature": {
@@ -8833,6 +8939,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi skannar den mörka webben för att kontrollera om dina ${ BRAND_NAME }-adresser eller alias har läckt och varnar dig omedelbart om vi hittar något."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME } skrivassistent med utökad åtkomst"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME } skrivassistent med begränsad åtkomst"
       ]
     },
     "new_plans: feature highlight": {
@@ -10013,6 +10125,9 @@
       ],
       "Pay with ${ IDEAL_BRAND_NAME }": [
         "Betala med ${ IDEAL_BRAND_NAME }"
+      ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
+        "Din valuta har ändrats till euro (€) på grund av att  ${ IDEAL_BRAND_NAME } endast stödjer betalningar i euro."
       ]
     },
     "Payments.Error": {
@@ -10033,6 +10148,9 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Ditt kort nekades Prova ett annat kort eller kontakta din bank för att auktorisera debiteringen."
+      ],
+      "Please enter the account holder name": [
+        "Ange kontoinnehavarens namn"
       ]
     },
     "Payments.error": {
@@ -10399,6 +10517,9 @@
       ],
       "name": [
         "namn"
+      ],
+      "hash key": [
+        "hash-nyckel"
       ]
     },
     "Property type": {
@@ -10612,6 +10733,9 @@
       ],
       "User Admin": [
         "Användaradministratör"
+      ],
+      "Organization Admin": [
+        "Organisationsadministratör"
       ]
     },
     "Role description": {
@@ -13058,6 +13182,9 @@
       ],
       "Version 6 OpenPGP key": [
         "OpenPGP-nyckel version 6"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Användare som har åtkomst till sitt ${ BRAND_NAME }-konto"
       ]
     },
     "tooltip": {

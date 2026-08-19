@@ -1040,6 +1040,12 @@
       ],
       "Migrate": [
         "Migrar"
+      ],
+      "Keep going": [
+        "Continue"
+      ],
+      "Stop here": [
+        "Parar aqui"
       ]
     },
     "action": {
@@ -4359,6 +4365,12 @@
       ],
       "You do not have access to this item": [
         "Você não tem acesso a esse item"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Não é permitido criar documentos dentro de itens que não sejam pastas"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Falha ao descriptografar o nome de marcador: ${ message }"
       ]
     },
     "error": {
@@ -6951,6 +6963,12 @@
       ],
       "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
         "Para migrar este usuário, remova a suspensão no seu ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "Para migrar este usuário, ative a conta no seu ${ provider.adminConsoleName }."
+      ],
+      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Vamos redirecioná-lo para o ${ IDEAL_BRAND_NAME } em uma nova guia do navegador para concluir esta transação. Desative qualquer bloqueador de pop-ups que estiver usando."
       ]
     },
     "info": {
@@ -7742,6 +7760,9 @@
       ],
       "Zoom meeting": [
         "Reunião no Zoom"
+      ],
+      "Account holder name": [
+        "Nome do titular da conta"
       ]
     },
     "label": {
@@ -8895,6 +8916,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Rastreamos a dark web para verificar se seus endereços ou aliases ${ BRAND_NAME } sofreram vazamento e alertarmos você imediatamente se encontrarmos alguma coisa."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Assistente de escrita da ${ LUMO_SHORT_APP_NAME } com acesso ampliado"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Assistente de escrita da ${ LUMO_SHORT_APP_NAME } com acesso limitado"
       ]
     },
     "new_plans: feature highlight": {
@@ -10072,6 +10099,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Sua assinatura atualmente tem um desconto existente. Mudar para esta nova promoção significa que o desconto atual não será mais aplicado."
+      ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "Pagar com ${ IDEAL_BRAND_NAME }"
       ]
     },
     "Payments.Error": {
@@ -10657,6 +10687,9 @@
       ],
       "User Admin": [
         "Administração de usuário"
+      ],
+      "Organization Admin": [
+        "Administrador da organização"
       ]
     },
     "Role description": {
@@ -12974,6 +13007,12 @@
       ],
       "Domain names": [
         "Nome do domínio"
+      ],
+      "Select users to migrate": [
+        "Selecione os usuários a serem migrados"
+      ],
+      "Still working on it": [
+        "Ainda estou trabalhando nisso"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

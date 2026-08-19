@@ -1040,6 +1040,15 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Votre essai gratuit de l'application de bureau se termine le ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Copy debug transcript": [
+        "Copier la transcription de débogage"
+      ],
+      "Keep going": [
+        "Continuer"
+      ],
+      "Stop here": [
+        "S'arrêter ici"
       ]
     },
     "action": {
@@ -4338,6 +4347,15 @@
       ],
       "You do not have access to this item": [
         "Vous n'avez pas accès à cet élément."
+      ],
+      "Could not grant access to the organization key": [
+        "Impossible d'accorder l'accès à la clé de l'organisation"
+      ],
+      "Device not found": [
+        "L'appareil est introuvable."
+      ],
+      "Moving root item is not allowed": [
+        "Le déplacement de l'élément racine n'est pas autorisé."
       ]
     },
     "error": {
@@ -6944,6 +6962,18 @@
       ],
       "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Nous vous redirigerons vers ${ IDEAL_BRAND_NAME } dans un nouvel onglet du navigateur pour compléter cette transaction. Si vous utilisez des bloqueurs de pop-up, veuillez les désactiver pour continuer."
+      ],
+      "Debug transcript copied": [
+        "Transcription de débogage copiée"
+      ],
+      "Find out what can be migrated.": [
+        "Découvrez ce qui peut être migré."
+      ],
+      "No users to display": [
+        "Il n'y a aucun utilisateur à afficher."
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Cela demande beaucoup d'étapes. Faut-il continuer ?"
       ]
     },
     "info": {
@@ -7735,6 +7765,9 @@
       ],
       "Zoom meeting": [
         "Réunion Zoom"
+      ],
+      "Account holder name": [
+        "Nom du titulaire du compte"
       ]
     },
     "label": {
@@ -8888,6 +8921,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Nous analysons le dark web et vérifions si vos adresses ou vos alias ${ BRAND_NAME } ont été divulgués et nous vous informons immédiatement des résultats."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME } avec un accès étendu"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Assistant d'écriture ${ LUMO_SHORT_APP_NAME } avec un accès limité"
       ]
     },
     "new_plans: feature highlight": {
@@ -10088,6 +10127,9 @@
       ],
       "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
         "L'initialisation de ${ IDEAL_BRAND_NAME } n'a pas abouti. Veuillez réessayer plus tard."
+      ],
+      "Please enter the account holder name": [
+        "Veuillez saisir le nom du titulaire du compte"
       ]
     },
     "Payments.error": {
@@ -10673,6 +10715,9 @@
       ],
       "User Admin": [
         "Administrateur des utilisateurs"
+      ],
+      "Organization Admin": [
+        "Administrateur de l'organisation"
       ]
     },
     "Role description": {
@@ -12978,6 +13023,9 @@
       ],
       "Domain names": [
         "Noms de domaine"
+      ],
+      "Still working on it": [
+        "Je suis encore en train d'y travailler"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
