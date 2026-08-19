@@ -4,11 +4,14 @@ import { useHistory } from 'react-router-dom';
 
 import LumoAgentDrawerContext from '@proton/components/components/drawer/views/lumoAgent/lumoAgentDrawerContext';
 import useLumoAgent from '@proton/components/components/lumoAgent/useLumoAgent';
+import { useSaveVCardContact } from '@proton/components/containers/contacts/hooks/useSaveVCardContact';
 import { FILTER_VERSION } from '@proton/components/containers/filters/constants';
 import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import { defaultESStatus } from '@proton/encrypted-search/constants';
 import type { ESStatusBooleans } from '@proton/encrypted-search/models';
 import { useCategoriesData } from '@proton/mail/features/categoriesView/useCategoriesData';
+import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import { addFilter as addFilterAction, updateFilter as updateFilterAction } from '@proton/mail/store/filters/actions';
 import { useFilters } from '@proton/mail/store/filters/hooks';
 import { createLabel as createLabelAction, updateLabel as updateLabelAction } from '@proton/mail/store/labels/actions';
@@ -64,6 +67,8 @@ const LumoMailProvider = ({ children }: Props) => {
     const { markAs } = useMarkAs();
     const { snooze } = useSnooze();
     const initializeMessage = useInitializeMessage();
+    const saveVCardContact = useSaveVCardContact();
+    const { call: refreshEvents } = useEventManager();
     const [folders = []] = useFolders();
     const [labels = []] = useLabels();
     const [filters = []] = useFilters();
@@ -71,6 +76,7 @@ const LumoMailProvider = ({ children }: Props) => {
     // a mark-all scoped to a category is valid from wherever they are.
     const { activeCategoriesTabs } = useCategoriesData();
     const [mailSettings] = useMailSettings();
+    const [contactEmails = []] = useContactEmails();
     const esStatus = useRef<ESStatusBooleans>(defaultESStatus);
 
     // Latest values, refreshed every render, so the once-built handlers always read the current
@@ -85,11 +91,14 @@ const LumoMailProvider = ({ children }: Props) => {
         markAs,
         snooze,
         initializeMessage,
+        saveVCardContact,
+        refreshEvents,
         folders,
         labels,
         filters,
         activeCategoriesTabs,
         mailSettings,
+        contactEmails,
     };
     const latest = useRef(current);
     latest.current = current;
@@ -109,6 +118,12 @@ const LumoMailProvider = ({ children }: Props) => {
             getFilters: () => latest.current.filters,
             getActiveCategoryTabs: () => latest.current.activeCategoriesTabs,
             getMailSettings: () => latest.current.mailSettings,
+            getContactEmails: () => latest.current.contactEmails,
+            // The save writes straight to the API, so the store only reflects it after an event refresh.
+            saveVCardContact: async (contactID, vCardContact) => {
+                await latest.current.saveVCardContact(contactID, vCardContact);
+                await latest.current.refreshEvents();
+            },
             applyLocation: (params) => latest.current.applyLocation(params),
             // async so applyMultipleLocations' synchronous validation throws surface as a rejection.
             applyMultipleLocations: async (params) => discardResult(latest.current.applyMultipleLocations(params)),
