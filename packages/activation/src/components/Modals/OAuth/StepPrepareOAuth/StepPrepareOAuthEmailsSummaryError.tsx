@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
-import { MailImportPayloadError } from '@proton/activation/src/interface';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
+
+import { MailImportPayloadError } from '../../../../interface';
 
 interface Props {
     errors: MailImportPayloadError[];

@@ -1,9 +1,10 @@
 import { c } from 'ttag';
 
-import { ApiImporterError, ApiImporterState } from '@proton/activation/src/api/api.interface';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+
+import { ApiImporterError, ApiImporterState } from '../../../api/api.interface';
 
 interface Props {
     state: ApiImporterState | undefined;

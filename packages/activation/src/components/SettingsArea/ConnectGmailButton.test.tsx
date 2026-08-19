@@ -2,7 +2,6 @@ import { fireEvent, render, screen } from '@testing-library/react';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { EASY_SWITCH_SOURCES } from '@proton/activation/src/interface';
 import ModalsProvider from '@proton/components/containers/modals/Provider';
 import { PRODUCT_BIT } from '@proton/shared/lib/constants';
 import type { Address } from '@proton/shared/lib/interfaces';
@@ -10,6 +9,7 @@ import type { Address } from '@proton/shared/lib/interfaces';
 import { MAX_SYNC_FREE_USER, MAX_SYNC_PAID_USER } from '../../constants';
 import useBYOEAddressesCounts from '../../hooks/useBYOEAddressesCounts';
 import useSetupGmailBYOEAddress from '../../hooks/useSetupGmailBYOEAddress';
+import { EASY_SWITCH_SOURCES } from '../../interface';
 import type { Sync } from '../../logic/sync/sync.interface';
 import ConnectGmailButton from './ConnectGmailButton';
 
@@ -29,7 +29,7 @@ const mockUseSetupGmailBYOEAddress = useSetupGmailBYOEAddress as jest.MockedFunc
 jest.mock('../../hooks/useBYOEAddressesCounts');
 const mockUseBYOEAddressesCount = useBYOEAddressesCounts as jest.MockedFunction<any>;
 
-jest.mock('@proton/activation/src/logic/store', () => ({
+jest.mock('../../logic/store', () => ({
     useEasySwitchDispatch: () => jest.fn(),
 }));
 

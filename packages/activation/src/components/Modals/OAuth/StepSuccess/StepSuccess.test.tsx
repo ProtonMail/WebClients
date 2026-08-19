@@ -2,8 +2,7 @@ import { useLocation } from 'react-router-dom';
 
 import { fireEvent, screen } from '@testing-library/dom';
 
-import { easySwitchRender } from '@proton/activation/src/tests/render';
-
+import { easySwitchRender } from '../../../../tests/render';
 import StepSuccess from './StepSuccess';
 
 jest.mock('react-router-dom', () => ({ ...jest.requireActual('react-router-dom'), useLocation: jest.fn() }));

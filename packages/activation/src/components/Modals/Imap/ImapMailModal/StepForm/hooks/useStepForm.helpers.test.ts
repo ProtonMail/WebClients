@@ -1,5 +1,4 @@
-import { IMPORT_ERROR, ImportProvider } from '@proton/activation/src/interface';
-
+import { IMPORT_ERROR, ImportProvider } from '../../../../../../interface';
 import { getDefaultImap, getDefaultPort, validateStepForm } from './useStepForm.helpers';
 import type { StepFormBlur, StepFormState } from './useStepForm.interface';
 

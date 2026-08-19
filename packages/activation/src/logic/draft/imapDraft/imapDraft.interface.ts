@@ -1,7 +1,7 @@
-import type { MailImportFields } from '@proton/activation/src/components/Modals/CustomizeMailImportModal/CustomizeMailImportModal.interface';
-import type { StepFormState } from '@proton/activation/src/components/Modals/Imap/ImapMailModal/StepForm/hooks/useStepForm.interface';
-import type { MailImportFolder } from '@proton/activation/src/helpers/MailImportFoldersParser/MailImportFoldersParser';
-import type { AuthenticationMethod, ImportProvider, ImportType } from '@proton/activation/src/interface';
+import type { MailImportFields } from '../../../components/Modals/CustomizeMailImportModal/CustomizeMailImportModal.interface';
+import type { StepFormState } from '../../../components/Modals/Imap/ImapMailModal/StepForm/hooks/useStepForm.interface';
+import type { MailImportFolder } from '../../../helpers/MailImportFoldersParser/MailImportFoldersParser';
+import type { AuthenticationMethod, ImportProvider, ImportType } from '../../../interface';
 
 export type MailImportState = {
     step: 'form' | 'reconnect-form' | 'prepare-import' | 'importing';

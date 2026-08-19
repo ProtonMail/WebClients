@@ -1,8 +1,9 @@
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { getCanSeeBYOE } from '@proton/activation/src/helpers/byoeAccess.ts';
 import { getIsBYOEAccount } from '@proton/shared/lib/keys';
 import { useFlag } from '@proton/unleash/useFlag';
+
+import { getCanSeeBYOE } from '../helpers/byoeAccess.ts';
 
 const useBYOEFeatureStatus = (
     authorizeBYOEOnlyAccounts = true // In Settings, for example, we want to show BYOE options to BYOE only accounts. However, in the checklist, only normal accounts can see the option

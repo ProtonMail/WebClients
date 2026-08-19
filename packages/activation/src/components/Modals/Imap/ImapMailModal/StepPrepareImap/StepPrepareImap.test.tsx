@@ -1,10 +1,9 @@
 import { fireEvent, screen } from '@testing-library/dom';
 
-import useAvailableAddresses from '@proton/activation/src/hooks/useAvailableAddresses';
-import type { MailImportState } from '@proton/activation/src/logic/draft/imapDraft/imapDraft.interface';
-import { generateMockAddressArray } from '@proton/activation/src/tests/data/addresses';
-import { easySwitchRender } from '@proton/activation/src/tests/render';
-
+import useAvailableAddresses from '../../../../../hooks/useAvailableAddresses';
+import type { MailImportState } from '../../../../../logic/draft/imapDraft/imapDraft.interface';
+import { generateMockAddressArray } from '../../../../../tests/data/addresses';
+import { easySwitchRender } from '../../../../../tests/render';
 import StepPrepare from './StepPrepareImap';
 
 const data: MailImportState = {
@@ -23,7 +22,7 @@ jest.mock('react-redux', () => ({
 
 const addresses = generateMockAddressArray(3, true);
 
-jest.mock('@proton/activation/src/hooks/useAvailableAddresses');
+jest.mock('../../../../../hooks/useAvailableAddresses');
 const mockUseAvailableAddresses = useAvailableAddresses as jest.MockedFunction<any>;
 
 describe('Step prepare basic rendering testing', () => {

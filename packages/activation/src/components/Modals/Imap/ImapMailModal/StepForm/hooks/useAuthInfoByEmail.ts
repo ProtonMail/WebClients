@@ -1,10 +1,11 @@
 import { useEffect } from 'react';
 
-import { getAuthenticationMethod } from '@proton/activation/src/api';
-import type { ApiImporterAuthInfoResponse } from '@proton/activation/src/api/api.interface';
 import { useApi, useDebounceInput } from '@proton/components';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import noop from '@proton/utils/noop';
+
+import { getAuthenticationMethod } from '../../../../../../api';
+import type { ApiImporterAuthInfoResponse } from '../../../../../../api/api.interface';
 
 /**
  * Fetches auth method for a given email address

@@ -1,23 +1,23 @@
 import { useState } from 'react';
 
 import { useUser } from '@proton/account/user/hooks';
-import { ImportProvider, ImportType } from '@proton/activation/src/interface';
-import {
-    changeOAuthStep,
-    displayConfirmLeaveModal,
-    submitProducts,
-} from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.actions';
-import {
-    selectOauthDraftProvider,
-    selectOauthImportStateImporterData,
-    selectOauthImportStateProducts,
-} from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.selector';
-import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { getVisualCalendars } from '@proton/shared/lib/calendar/calendar';
 import isTruthy from '@proton/utils/isTruthy';
 
+import { ImportProvider, ImportType } from '../../../../../interface';
+import {
+    changeOAuthStep,
+    displayConfirmLeaveModal,
+    submitProducts,
+} from '../../../../../logic/draft/oauthDraft/oauthDraft.actions';
+import {
+    selectOauthDraftProvider,
+    selectOauthImportStateImporterData,
+    selectOauthImportStateProducts,
+} from '../../../../../logic/draft/oauthDraft/oauthDraft.selector';
+import { useEasySwitchDispatch, useEasySwitchSelector } from '../../../../../logic/store';
 import { getMailCustomLabel, importerHasErrors } from './useStepPrepareOAuth.helpers';
 
 const useStepPrepare = () => {

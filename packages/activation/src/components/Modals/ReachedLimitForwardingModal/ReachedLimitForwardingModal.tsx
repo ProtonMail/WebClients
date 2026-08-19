@@ -1,10 +1,10 @@
 import { c, msgid } from 'ttag';
 
-import { MAX_SYNC_PAID_USER } from '@proton/activation/src/constants';
 import { Button } from '@proton/atoms/Button/Button';
 import { Prompt } from '@proton/components';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 
+import { MAX_SYNC_PAID_USER } from '../../../constants';
 import useBYOEFeatureStatus from '../../../hooks/useBYOEFeatureStatus';
 
 const getModalText = (hasAccessToBYOE: boolean) => {

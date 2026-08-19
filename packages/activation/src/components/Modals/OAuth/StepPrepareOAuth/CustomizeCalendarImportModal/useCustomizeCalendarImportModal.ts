@@ -1,9 +1,6 @@
 import { useState } from 'react';
 
 import { useUser } from '@proton/account/user/hooks';
-import type { ImporterCalendar } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.interface';
-import { selectOauthImportStateImporterData } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.selector';
-import { useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
 import {
     getProbablyActiveCalendars,
@@ -13,6 +10,10 @@ import {
 import { willUserReachCalendarsLimit } from '@proton/shared/lib/calendar/calendarLimits';
 import { MAX_CALENDARS_FREE, MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+
+import type { ImporterCalendar } from '../../../../../logic/draft/oauthDraft/oauthDraft.interface';
+import { selectOauthImportStateImporterData } from '../../../../../logic/draft/oauthDraft/oauthDraft.selector';
+import { useEasySwitchSelector } from '../../../../../logic/store';
 
 export interface DerivedCalendarType {
     selectedCalendars: ImporterCalendar[];

@@ -2,8 +2,6 @@ import { type FC, useEffect, useMemo, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import type { ApiImporterOrganizationUser } from '@proton/activation/src/api/api.interface';
-import { ProductStatusState } from '@proton/activation/src/api/api.interface';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Checkbox from '@proton/components/components/input/Checkbox';
@@ -24,6 +22,8 @@ import { normalize } from '@proton/shared/lib/helpers/string';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
+import type { ApiImporterOrganizationUser } from '../../../api/api.interface';
+import { ProductStatusState } from '../../../api/api.interface';
 import { areEquivalentEmails } from '../../helpers';
 import type { OlesProvider } from '../../providers';
 import type { CreateMigrationBatchError } from '../../thunk';

@@ -1,18 +1,18 @@
 import { useEffect, useState } from 'react';
 
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
-import useAvailableAddresses from '@proton/activation/src/hooks/useAvailableAddresses';
-import { ImportProvider } from '@proton/activation/src/interface';
+import { useCalendars } from '@proton/calendar/calendars/hooks';
+import { useApi, useErrorHandler, useEventManager } from '@proton/components';
+
+import useAvailableAddresses from '../../../../hooks/useAvailableAddresses';
+import { ImportProvider } from '../../../../interface';
 import {
     selectOauthDraftProvider,
     selectOauthImportStateImporterData,
     selectOauthImportStateProducts,
-} from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.selector';
-import { useDriveSdk } from '@proton/activation/src/logic/driveContext';
-import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
-import { useCalendars } from '@proton/calendar/calendars/hooks';
-import { useApi, useErrorHandler, useEventManager } from '@proton/components';
-
+} from '../../../../logic/draft/oauthDraft/oauthDraft.selector';
+import { useDriveSdk } from '../../../../logic/driveContext';
+import { useEasySwitchDispatch, useEasySwitchSelector } from '../../../../logic/store';
 import { createImporterTask } from './useStepLoadingImporting.helpers';
 
 const useStepLoadingImporting = () => {

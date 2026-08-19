@@ -1,29 +1,16 @@
 import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import {
-    createImport,
-    createSync,
-    createToken,
-    deleteSync,
-    getSyncList,
-    resumeSync,
-    updateImport,
-} from '@proton/activation/src/api';
-import type { APIImportSyncListResponse } from '@proton/activation/src/api/api.interface';
-import type {
-    CreateImportPayload,
-    EASY_SWITCH_SOURCES,
-    ImportToken,
-    OAUTH_PROVIDER,
-} from '@proton/activation/src/interface';
-import { AuthenticationMethod, EASY_SWITCH_FEATURES, ImportType } from '@proton/activation/src/interface';
-import { formatApiSync } from '@proton/activation/src/logic/sync/sync.helpers';
 import type { CreateNotificationOptions } from '@proton/components';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
+import { createImport, createSync, createToken, deleteSync, getSyncList, resumeSync, updateImport } from '../../api';
+import type { APIImportSyncListResponse } from '../../api/api.interface';
 import { getEasySwitchFeaturesFromProducts } from '../../hooks/useOAuthPopup.helpers';
+import type { CreateImportPayload, EASY_SWITCH_SOURCES, ImportToken, OAUTH_PROVIDER } from '../../interface';
+import { AuthenticationMethod, EASY_SWITCH_FEATURES, ImportType } from '../../interface';
 import type { EasySwitchThunkExtra } from '../store';
+import { formatApiSync } from './sync.helpers';
 import type { LoadingState, Sync } from './sync.interface';
 
 type SubmitError = { Code: number; Error: string };

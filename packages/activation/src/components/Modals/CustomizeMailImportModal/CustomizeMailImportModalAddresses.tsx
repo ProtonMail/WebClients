@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
-import useAvailableAddresses from '@proton/activation/src/hooks/useAvailableAddresses';
 import { Field, Label, Option, Row, SelectTwo } from '@proton/components';
 import type { Address } from '@proton/shared/lib/interfaces';
+
+import useAvailableAddresses from '../../../hooks/useAvailableAddresses';
 
 interface Props {
     selectedAddressID: string;

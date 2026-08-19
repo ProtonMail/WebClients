@@ -1,7 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
-import useBYOEAddressData from '@proton/activation/src/hooks/useBYOEAddressData';
 import { ADDRESS_FLAGS, ADDRESS_TYPE } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Address, User } from '@proton/shared/lib/interfaces';
@@ -9,6 +8,8 @@ import { ClaimableAddressType } from '@proton/shared/lib/keys';
 import { addApiMock } from '@proton/testing/lib/api';
 import { hookWrapper } from '@proton/testing/lib/context/hocs/helpers';
 import { withApi } from '@proton/testing/lib/context/hocs/with-api';
+
+import useBYOEAddressData from './useBYOEAddressData';
 
 const wrapper = hookWrapper(withApi());
 

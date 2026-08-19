@@ -1,13 +1,5 @@
 import { c } from 'ttag';
 
-import { EASY_SWITCH_EMAIL_PLACEHOLDER } from '@proton/activation/src/constants';
-import { IMPORT_ERROR, ImportProvider } from '@proton/activation/src/interface';
-import {
-    selectImapDraftMailImportApiErrorCode,
-    selectImapDraftMailImportStep,
-    selectImapDraftProvider,
-} from '@proton/activation/src/logic/draft/imapDraft/imapDraft.selector';
-import { useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { Button } from '@proton/atoms/Button/Button';
 import { Input } from '@proton/atoms/Input/Input';
 import {
@@ -22,6 +14,14 @@ import {
     Row,
 } from '@proton/components';
 
+import { EASY_SWITCH_EMAIL_PLACEHOLDER } from '../../../../../constants';
+import { IMPORT_ERROR, ImportProvider } from '../../../../../interface';
+import {
+    selectImapDraftMailImportApiErrorCode,
+    selectImapDraftMailImportStep,
+    selectImapDraftProvider,
+} from '../../../../../logic/draft/imapDraft/imapDraft.selector';
+import { useEasySwitchSelector } from '../../../../../logic/store';
 import ProviderWrapper from '../ProviderWrapper';
 import StepFormError from './StepFormError';
 import useStepForm from './hooks/useStepForm';

@@ -2,13 +2,13 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import type { ApiImporterOrganizationUser } from '@proton/activation/src/api/api.interface';
-import { ProductStatusState } from '@proton/activation/src/api/api.interface';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import Icon from '@proton/components/components/icon/Icon';
 import type { IconName } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
 
+import type { ApiImporterOrganizationUser } from '../../../api/api.interface';
+import { ProductStatusState } from '../../../api/api.interface';
 import type { CreateMigrationBatchError } from '../../thunk';
 import { transferErrorUserFilter } from './ImportJournalModal';
 

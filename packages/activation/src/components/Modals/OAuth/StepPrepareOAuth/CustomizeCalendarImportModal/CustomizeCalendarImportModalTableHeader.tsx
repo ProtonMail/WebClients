@@ -1,10 +1,11 @@
 import { c, msgid } from 'ttag';
 
-import useAvailableAddresses from '@proton/activation/src/hooks/useAvailableAddresses';
-import { selectOauthImportStateImporterData } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.selector';
-import { useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import clsx from '@proton/utils/clsx';
+
+import useAvailableAddresses from '../../../../../hooks/useAvailableAddresses';
+import { selectOauthImportStateImporterData } from '../../../../../logic/draft/oauthDraft/oauthDraft.selector';
+import { useEasySwitchSelector } from '../../../../../logic/store';
 
 interface Props {
     calendarLimitReached: boolean;

@@ -1,12 +1,12 @@
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { MailImportPayloadError } from '@proton/activation/src/interface';
 import { Button } from '@proton/atoms/Button/Button';
 import { Form, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, useModalState } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 import { getAppSpace, getSpace } from '@proton/shared/lib/user/storage';
 
+import { MailImportPayloadError } from '../../../../../interface';
 import CustomizeMailImportModal from '../../../CustomizeMailImportModal/CustomizeMailImportModal';
 import ProviderWrapper from '../ProviderWrapper';
 import StepPrepareContent from './StepPrepareImapContent';

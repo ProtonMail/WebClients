@@ -1,12 +1,11 @@
 import { fireEvent, screen, waitFor } from '@testing-library/dom';
 
-import useAvailableAddresses from '@proton/activation/src/hooks/useAvailableAddresses';
-import { generateMockAddressArray } from '@proton/activation/src/tests/data/addresses';
-import { easySwitchRender } from '@proton/activation/src/tests/render';
-
+import useAvailableAddresses from '../../../hooks/useAvailableAddresses';
+import { generateMockAddressArray } from '../../../tests/data/addresses';
+import { easySwitchRender } from '../../../tests/render';
 import CustomizeMailImportModalAddresses from './CustomizeMailImportModalAddresses';
 
-jest.mock('@proton/activation/src/hooks/useAvailableAddresses');
+jest.mock('../../../hooks/useAvailableAddresses');
 const mockUseAvailableAddresses = useAvailableAddresses as jest.MockedFunction<any>;
 
 const addresses = generateMockAddressArray(3, true);

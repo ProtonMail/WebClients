@@ -4,13 +4,12 @@ import {
     displayConfirmLeaveModal,
     initImapMailImport,
     resetImapDraft,
-} from '@proton/activation/src/logic/draft/imapDraft/imapDraft.actions';
+} from '../../../../logic/draft/imapDraft/imapDraft.actions';
 import {
     selectImapDraftMailConfirmModalDisplay,
     selectImapDraftMailImportStep,
-} from '@proton/activation/src/logic/draft/imapDraft/imapDraft.selector';
-import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
-
+} from '../../../../logic/draft/imapDraft/imapDraft.selector';
+import { useEasySwitchDispatch, useEasySwitchSelector } from '../../../../logic/store';
 import ConfirmLeaveModal from '../../ConfirmLeaveModal/ConfirmLeaveModal';
 import StepForm from './StepForm/StepForm';
 import StepImporting from './StepImporting/StepImporting';
