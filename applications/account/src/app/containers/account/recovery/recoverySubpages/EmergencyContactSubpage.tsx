@@ -10,9 +10,7 @@ import { OutgoingDelegatedAccessActions } from '@proton/account/delegatedAccess/
 import { OutgoingDelegatedAccessProvider } from '@proton/account/delegatedAccess/shared/OutgoingDelegatedAccessProvider';
 import { DashboardGrid } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import { Href } from '@proton/atoms/Href/Href';
-import SettingsDescription, {
-    SettingsDescriptionItem,
-} from '@proton/components/containers/account/SettingsDescription';
+import SettingsDescription from '@proton/components/containers/account/SettingsDescription';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { type APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -26,14 +24,6 @@ export const EmergencyContactSubpage = ({ app }: { app: APP_NAMES }) => {
     return (
         <DashboardGrid>
             <SettingsDescription
-                left={
-                    <SettingsDescriptionItem>
-                        {c('Info')
-                            .t`Add 1 to 5 people who you trust and can contact easily. They will be able to reset your password for you by signing in to your account. They must already have a ${BRAND_NAME} Account.`}{' '}
-                        <Href key="learn" href={getKnowledgeBaseUrl('/emergency-access')}>{c('Link')
-                            .t`Learn more`}</Href>
-                    </SettingsDescriptionItem>
-                }
                 right={
                     <img
                         src={isDarkTheme ? darkIllustration : illustration}
@@ -43,7 +33,13 @@ export const EmergencyContactSubpage = ({ app }: { app: APP_NAMES }) => {
                         height={80}
                     />
                 }
-            />
+            >
+                <SettingsDescription.Item>
+                    {c('Info')
+                        .t`Add 1 to 5 people who you trust and can contact easily. They will be able to reset your password for you by signing in to your account. They must already have a ${BRAND_NAME} Account.`}{' '}
+                    <Href key="learn" href={getKnowledgeBaseUrl('/emergency-access')}>{c('Link').t`Learn more`}</Href>
+                </SettingsDescription.Item>
+            </SettingsDescription>
 
             <OutgoingDelegatedAccessProvider>
                 <OutgoingEmergencyContactUpsell app={app} />

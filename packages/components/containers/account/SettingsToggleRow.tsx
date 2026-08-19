@@ -3,16 +3,18 @@ import type { ReactNode } from 'react';
 
 import Toggle from '@proton/components/components/toggle/Toggle';
 import type { ToggleProps } from '@proton/components/components/toggle/Toggle';
+import clsx from '@proton/utils/clsx';
 
 const SettingsToggleRowContext = createContext<{ id: string }>({ id: '' });
 
 const SettingsToggleRowLabel = ({
     children,
+    className,
     ...rest
 }: { children: ReactNode } & React.LabelHTMLAttributes<HTMLLabelElement>) => {
     const { id } = useContext(SettingsToggleRowContext);
     return (
-        <label htmlFor={id} className="flex items-center gap-2 text-semibold mb-1" {...rest}>
+        <label htmlFor={id} className={clsx('flex items-center gap-2 text-semibold', className)} {...rest}>
             {children}
         </label>
     );
@@ -36,8 +38,8 @@ interface SettingsToggleRowProps {
 const SettingsToggleRow = ({ id, label, toggle }: SettingsToggleRowProps) => {
     return (
         <SettingsToggleRowContext.Provider value={{ id }}>
-            <div className="flex items-center justify-space-between flex-nowrap gap-1">
-                <div className="flex-1">{label}</div>
+            <div className="flex items-center justify-space-between flex-nowrap gap-4">
+                <div className="flex-1 flex flex-column gap-1">{label}</div>
                 {toggle}
             </div>
         </SettingsToggleRowContext.Provider>
