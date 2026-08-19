@@ -12,12 +12,14 @@
         "test:watch": "jest --watch"
     },
     "dependencies": {
+        "@proton/utils": "workspace:^",
         "@types/node": "^24.13.3",
         "css-tree": "^2.3.1",
         "prettier": "^3.9.6",
         "tinycolor2": "^1.6.0"
     },
     "devDependencies": {
+        "@jest/globals": "^30.4.1",
         "@proton/eslint-config-proton": "workspace:^",
         "@proton/types": "workspace:^",
         "@types/css-tree": "^2.3.11",
