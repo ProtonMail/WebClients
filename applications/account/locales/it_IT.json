@@ -7388,6 +7388,17 @@
       ],
       "Zero keys reactivated": [
         "Chiavi zero riattivate"
+      ],
+      "Could not grant access to the organization key": [
+        "Impossibile concedere l'accesso alla chiave dell'organizzazione"
+      ],
+      "Role assignment could not be completed for ${ failedCount } group": [
+        "Impossibile completare l'assegnazione del ruolo per ${ failedCount } gruppo",
+        "Impossibile completare l'assegnazione del ruolo per ${ failedCount } gruppi"
+      ],
+      "Role assignment could not be completed for ${ failedCount } user": [
+        "L'assegnazione dei ruoli non ha potuto essere completata per ${ failedCount } utente.",
+        "L'assegnazione dei ruoli non ha potuto essere completata per ${ failedCount } utenti."
       ]
     },
     "error": {
@@ -13233,6 +13244,13 @@
       ],
       "Zoom meeting": [
         "Meeting Zoom"
+      ],
+      "The process was interrupted for ${ pausedCount } ${ roleAssignmentSource }. Click Continue to resume assigning roles.": [
+        "Il processo è stato interrotto per ${ pausedCount } ${ roleAssignmentSource }. Fai clic su Continua per riprendere l'assegnazione dei ruoli.",
+        "Il processo è stato interrotto per ${ pausedCount } ${ roleAssignmentSource }s. Fai clic su Continua per riprendere l'assegnazione dei ruoli."
+      ],
+      "User roles assigned": [
+        "Ruoli utente assegnati"
       ]
     },
     "info": {
@@ -15496,6 +15514,15 @@
       ],
       "ZIP code": [
         "Codice postale"
+      ],
+      "Account holder name": [
+        "Nome intestatario del conto"
+      ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Tutto ciò che richiede la tua attenzione, più le email dalle categorie disattivate"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Principale - Tutto ciò che richiede la tua attenzione, più le email dalle categorie disattivate"
       ]
     },
     "label": {
@@ -16416,6 +16443,9 @@
       ],
       "Sign in": [
         "Accedi"
+      ],
+      "Resume role assignment": [
+        "Riprendi l'assegnazione dei ruoli"
       ]
     },
     "Message": {
@@ -19511,6 +19541,9 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "La tua carta è stata rifiutata. Prova con una carta diversa o contatta la tua banca per autorizzare l'addebito."
+      ],
+      "Please enter the account holder name": [
+        "Inserisci il nome del titolare del conto"
       ]
     },
     "Payments.error": {
@@ -26211,6 +26244,18 @@
       ],
       "Your subscriptions": [
         "I tuoi abbonamenti"
+      ],
+      "${ capitalizedSource } role assignment paused": [
+        "Assegnazione del ruolo ${ capitalizedSource } in pausa"
+      ],
+      "Data collection": [
+        "Raccolta dati"
+      ],
+      "Privacy": [
+        "Privacy"
+      ],
+      "Single sign-on (SSO)": [
+        "Single sign-on (SSO)"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -27762,6 +27807,11 @@
       ],
       "Yearly, ${ untilString }": [
         "Ogni anno, ${ untilString }"
+      ]
+    },
+    "Payment Method": {
+      "Bank Account": [
+        "Conto bancario"
       ]
     }
   }

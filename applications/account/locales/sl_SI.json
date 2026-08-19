@@ -1824,6 +1824,12 @@
       ],
       "Zoom out": [
         "Pomanjšaj"
+      ],
+      "Disable category": [
+        "Onemogoči kategorijo"
+      ],
+      "Enable category": [
+        "Omogoči kategorijo"
       ]
     },
     "action": {
@@ -4431,6 +4437,9 @@
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "Vaš brezplačni račun ${ MAIL_APP_NAME } ima omejeno shrambo, zato bomo uvozili le vaša najnovejša e-poštna sporočila iz Gmaila."
+      ],
+      "Select which categories you want to add and if you want to receive push notifications for each category.": [
+        "Izberite, katere kategorije želite dodati in ali želite prejemati potisna obvestila za vsako kategorijo."
       ]
     },
     "description": {
@@ -10766,6 +10775,12 @@
       ],
       "Zoom meeting": [
         "sestanek prek Zooma"
+      ],
+      "Receive notifications for ${ categoryLabel }": [
+        "Prejemaj obvestila za ${ categoryLabel }"
+      ],
+      "With email categories, important messages land in a primary inbox. Everything else is organized into categories.": [
+        "S kategorijami e-pošte pomembna sporočila prispejo v primarno mapo »Prejeto«. Vse ostalo je razvrščeno po kategorijah."
       ]
     },
     "info": {
@@ -12446,6 +12461,21 @@
       ],
       "ZIP code": [
         "Poštna številka"
+      ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Vse, kar zahteva vašo pozornost, in e-pošta iz onemogočenih kategorij"
+      ],
+      "Categories": [
+        "Kategorije"
+      ],
+      "Enable categories": [
+        "Omogoči kategorije"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Primarno – vse, kar zahteva vašo pozornost, in e-pošta iz onemogočenih kategorij"
+      ],
+      "Use email categories": [
+        "Uporabi kategorije e-pošte"
       ]
     },
     "label": {
@@ -20601,6 +20631,15 @@
       ],
       "Your subscriptions": [
         "Vaše naročnine"
+      ],
+      "Add categories": [
+        "Dodaj kategorije"
+      ],
+      "Categories": [
+        "Kategorije"
+      ],
+      "Email categories": [
+        "Kategorije e-pošte"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -20841,6 +20880,9 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Vaš zunanji račun je morda dosegel svojo 24-urno mejo uporabe pasovne širine. ${ BRAND_NAME } bo poskusil nadaljevati z uvozom takoj, ko bo mogoče."
+      ],
+      "Emails in your inbox are shown organized into categories": [
+        "E-poštna sporočila v vaši mapi »Prejeto« so prikazana razvrščena po kategorijah"
       ]
     },
     "tooltip": {

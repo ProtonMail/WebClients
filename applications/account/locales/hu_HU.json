@@ -1429,6 +1429,18 @@
       ],
       "Zoom out": [
         "Távolítás"
+      ],
+      "Disable categories": [
+        "Kategóriák letiltása"
+      ],
+      "Disable category": [
+        "Kategória letiltása"
+      ],
+      "Enable category": [
+        "Kategória engedélyezése"
+      ],
+      "Keep categories": [
+        "Kategóriák megtartása"
       ]
     },
     "action": {
@@ -3845,6 +3857,9 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "A csomagja ${ MAX_SYNC_PAID_USER } Gmail címet támogat",
         "A csomagja összesen ${ MAX_SYNC_PAID_USER } Gmail címet támogat"
+      ],
+      "Select which categories you want to add and if you want to receive push notifications for each category.": [
+        "Válassza ki, mely kategóriákat szeretné hozzáadni, és hogy szeretne-e push értesítéseket kapni az egyes kategóriákról."
       ]
     },
     "description": {
@@ -9399,6 +9414,15 @@
       ],
       "Zoom meeting": [
         "Zoom találkozót"
+      ],
+      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
+        "Minden üzenet a Beérkezett üzenetek mappában jelenik meg, és a kategóriafülek és címkék többé nem lesznek láthatók. "
+      ],
+      "Receive notifications for ${ categoryLabel }": [
+        "Értesítések fogadása a következőhöz: ${ categoryLabel }"
+      ],
+      "With email categories, important messages land in a primary inbox. Everything else is organized into categories.": [
+        "Az e-mail-kategóriákkal a fontos üzenetek az elsődleges beérkezett üzenetek mappájába kerülnek. Minden más kategóriákba rendeződik."
       ]
     },
     "info": {
@@ -10887,6 +10911,21 @@
       ],
       "ZIP code": [
         "Irányítószám"
+      ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Minden, ami az Ön figyelmét igényli, valamint a letiltott kategóriákból származó e-mailek"
+      ],
+      "Categories": [
+        "Kategóriák"
+      ],
+      "Enable categories": [
+        "Kategóriák engedélyezése"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Elsődleges – minden, ami az Ön figyelmét igényli, valamint a letiltott kategóriákból származó e-mailek"
+      ],
+      "Use email categories": [
+        "E-mail-kategóriák használata"
       ]
     },
     "label": {
@@ -18475,6 +18514,18 @@
       ],
       "Your subscriptions": [
         "Előfizetések"
+      ],
+      "Add categories": [
+        "Kategóriák hozzáadása"
+      ],
+      "Categories": [
+        "Kategóriák"
+      ],
+      "Disable categories?": [
+        "Letiltja a kategóriákat?"
+      ],
+      "Email categories": [
+        "E-mail-kategóriák"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -18719,6 +18770,9 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "A külső fiókja nagy eséllyel elérte a 24-órás sávszélesség korlátját. A ${ BRAND_NAME } meg fogja próbálni folytatni az importálást amilyen hamar csak lehetséges."
+      ],
+      "Emails in your inbox are shown organized into categories": [
+        "A beérkezett üzenetei kategóriákba rendezve jelennek meg"
       ]
     },
     "tooltip": {
