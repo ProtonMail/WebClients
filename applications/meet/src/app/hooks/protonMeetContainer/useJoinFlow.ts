@@ -6,7 +6,6 @@ import type { Room } from 'livekit-client';
 import { c } from 'ttag';
 
 import useAuthentication from '@proton/components/hooks/useAuthentication';
-import type { SRPHandshakeInfo } from '@proton/meet/api/meetSrpRequests';
 import { useCreateInstantMeeting } from '@proton/meet/hooks/useCreateInstantMeeting';
 import type { ReportMeetError } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
@@ -28,15 +27,15 @@ import { isWebRtcSupported } from '@proton/shared/lib/helpers/isWebRtcSupported'
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { MEETING_LOCKED_ERROR_CODE } from '../../constants';
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
 import { getIceCandidateInfo } from '../../utils/checkIfUsingTurnRelay';
+import { MeetingErrorKind, classifyMeetingError } from '../../utils/classifyMeetingError';
 import { useMeetingAuthentication } from '../srp/useMeetingAuthentication';
 import { logJoinStats } from '../telemetry/meetingTelemetry';
 import { getUrlWithoutProtocol } from '../telemetry/utils';
-import { isConnectionTimeoutError } from '../useLiveKitConnection';
 import { useNotifyError } from '../useNotifyError';
 import { useStableCallback } from '../useStableCallback';
+import { useInvalidMeetingLink } from './useInvalidMeetingLink';
 import type { ConnectWithMlsResult, UseMeetingConnectionResult } from './useMeetingConnection';
 import { useSessionKey } from './useSessionKey';
 import { useWaitingRoom } from './waitingRoom/useWaitingRoom';
@@ -58,9 +57,6 @@ interface UseJoinFlowParams {
     setIsMeetingLockedModalOpen: Dispatch<SetStateAction<boolean>>;
     setIsConnectionFailedModalOpen: Dispatch<SetStateAction<boolean>>;
     isUsingTurnRelay: boolean;
-    handleHandshakeInfoFetch: (
-        token: string
-    ) => Promise<{ handshakeInfo: SRPHandshakeInfo; readyToDecrypt: boolean } | undefined>;
     reportMeetError: ReportMeetError;
     withMeetingLinkNameTag: (options?: unknown) => unknown;
     displayName: string;
@@ -160,7 +156,6 @@ export const useJoinFlow = ({
     setIsMeetingLockedModalOpen,
     setIsConnectionFailedModalOpen,
     isUsingTurnRelay,
-    handleHandshakeInfoFetch,
     reportMeetError,
     withMeetingLinkNameTag,
     displayName,
@@ -173,6 +168,7 @@ export const useJoinFlow = ({
     const history = useHistory();
     const meetCoreClient = useMeetCoreClient();
     const notifyJoinError = useNotifyError();
+    const { handleInvalidMeetingLink } = useInvalidMeetingLink();
     const createInstantMeeting = useCreateInstantMeeting();
     const authentication = useAuthentication();
     const isGuest = useMeetSelector(selectIsGuest);
@@ -286,7 +282,11 @@ export const useJoinFlow = ({
                 });
             }
 
-            reportMeetError('Failed to join meeting', withMeetingLinkNameTag(error));
+            const errorKind = classifyMeetingError(error);
+
+            if (errorKind !== MeetingErrorKind.MeetingGone) {
+                reportMeetError('Failed to join meeting', withMeetingLinkNameTag(error));
+            }
 
             dispatch(setJoiningInProgress(false));
             joinBlockedRef.current = false;
@@ -302,16 +302,20 @@ export const useJoinFlow = ({
                 }
             }
 
-            if (code === MEETING_LOCKED_ERROR_CODE) {
-                await handleMeetingIsLockedError();
-                return;
-            }
-            if (isConnectionTimeoutError(error)) {
-                setIsConnectionFailedModalOpen(true);
-                return;
-            }
-            if (!error?.userNotified) {
-                notifyJoinError(c('Error').t`Failed to join meeting. Please try again.`);
+            switch (errorKind) {
+                case MeetingErrorKind.MeetingGone:
+                    handleInvalidMeetingLink();
+                    return;
+                case MeetingErrorKind.MeetingLocked:
+                    await handleMeetingIsLockedError();
+                    return;
+                case MeetingErrorKind.ConnectionFailed:
+                    setIsConnectionFailedModalOpen(true);
+                    return;
+                case MeetingErrorKind.AlreadyNotified:
+                    return;
+                default:
+                    notifyJoinError(c('Error').t`Failed to join meeting. Please try again.`);
             }
         }
     };
@@ -343,19 +347,13 @@ export const useJoinFlow = ({
             });
             meetingLinkNameRef.current = id; // id is the meeting link name
 
-            const handshakeResult = await handleHandshakeInfoFetch(id);
-
-            if (!handshakeResult) {
-                dispatch(setJoiningInProgress(false));
-                joinBlockedRef.current = false;
-                return;
-            }
+            const handshakeInfo = await initHandshake(id);
 
             const { meetingInfo } = await dispatch(
                 meetingInfoThunk({
                     meetingLinkName: id,
                     meetingPassword: passwordBase,
-                    handshakeInfo: handshakeResult.handshakeInfo,
+                    handshakeInfo,
                 })
             );
 
@@ -374,10 +372,22 @@ export const useJoinFlow = ({
 
             history.push(getMeetingLink(id, passwordBase));
         } catch (error: any) {
-            reportMeetError('Failed to create instant meeting', withMeetingLinkNameTag(error));
+            const errorKind = classifyMeetingError(error);
+
+            if (errorKind !== MeetingErrorKind.MeetingGone) {
+                reportMeetError('Failed to create instant meeting', withMeetingLinkNameTag(error));
+            }
+
             dispatch(setJoiningInProgress(false));
-            if (!error?.userNotified) {
-                notifyJoinError(c('Error').t`Failed to start meeting. Please try again.`);
+
+            switch (errorKind) {
+                case MeetingErrorKind.MeetingGone:
+                    handleInvalidMeetingLink();
+                    break;
+                case MeetingErrorKind.AlreadyNotified:
+                    break;
+                default:
+                    notifyJoinError(c('Error').t`Failed to start meeting. Please try again.`);
             }
         }
 
@@ -486,12 +496,6 @@ export const useJoinFlow = ({
         try {
             const handshakeInfo = await initHandshake(meetingToken);
 
-            if (!handshakeInfo) {
-                dispatch(setJoiningInProgress(false));
-                joinBlockedRef.current = false;
-                return;
-            }
-
             let meetingInfo;
 
             try {
@@ -507,9 +511,17 @@ export const useJoinFlow = ({
             } catch (error: any) {
                 dispatch(setJoiningInProgress(false));
                 joinBlockedRef.current = false;
-                if (!error?.userNotified) {
-                    notifyJoinError(c('Error').t`Failed to join meeting. Please try again.`);
+
+                switch (classifyMeetingError(error)) {
+                    case MeetingErrorKind.MeetingGone:
+                        handleInvalidMeetingLink();
+                        break;
+                    case MeetingErrorKind.AlreadyNotified:
+                        break;
+                    default:
+                        notifyJoinError(c('Error').t`Failed to join meeting. Please try again.`);
                 }
+
                 return;
             }
 
@@ -531,10 +543,23 @@ export const useJoinFlow = ({
             // ExpirationTime only exists once the meeting started
             await dispatch(refreshMeetingInfoThunk({ meetingLinkName: meetingToken, meetingPassword: urlPassword }));
         } catch (error: any) {
-            reportMeetError('Failed to join meeting', withMeetingLinkNameTag(error));
+            const errorKind = classifyMeetingError(error);
+
+            if (errorKind !== MeetingErrorKind.MeetingGone) {
+                reportMeetError('Failed to join meeting', withMeetingLinkNameTag(error));
+            }
+
             dispatch(setJoiningInProgress(false));
-            if (!error?.userNotified && !isConnectionTimeoutError(error)) {
-                notifyJoinError(c('Error').t`Failed to join meeting. Please try again.`);
+
+            switch (errorKind) {
+                case MeetingErrorKind.MeetingGone:
+                    handleInvalidMeetingLink();
+                    break;
+                case MeetingErrorKind.ConnectionFailed:
+                case MeetingErrorKind.AlreadyNotified:
+                    break;
+                default:
+                    notifyJoinError(c('Error').t`Failed to join meeting. Please try again.`);
             }
         }
 
