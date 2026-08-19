@@ -1,13 +1,12 @@
 import type { CSSProperties, HTMLProps, ReactElement, ReactNode, Ref } from 'react';
-import { Children, cloneElement, forwardRef, useCallback, useState } from 'react';
+import { Children, cloneElement, forwardRef, useCallback, useId, useState } from 'react';
 
 import Popper from '@proton/components/components/popper/Popper';
 import type { PopperPlacement } from '@proton/components/components/popper/interface';
 import usePopper from '@proton/components/components/popper/usePopper';
-import { useCombinedRefs, useInstance, useIsMounted } from '@proton/hooks';
+import { useCombinedRefs, useIsMounted } from '@proton/hooks';
 // TODO: refactor @proton/utils to have a centralized import path
 import clsx from '@proton/utils/clsx';
-import generateUID from '@proton/utils/generateUID';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useTooltipHandlers } from './useTooltipHandlers';
@@ -106,7 +105,7 @@ const TooltipBase = (
     }: Props,
     ref: Ref<HTMLElement>
 ) => {
-    const uid = useInstance(() => generateUID('tooltip'));
+    const uid = useId();
     const isMounted = useIsMounted();
 
     const [state, setState] = useState<State>(defaultState);
