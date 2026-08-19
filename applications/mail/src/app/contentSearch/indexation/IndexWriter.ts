@@ -3,7 +3,7 @@ import type { IDBPDatabase } from 'idb';
 import type { CleanupEvent, Write } from '@proton/proton-foundation-search';
 import { CleanupEventKind, Document, type WriteEvent } from '@proton/proton-foundation-search';
 
-import type { ESBaseMessage } from 'proton-mail/models/encryptedSearch.ts';
+import type { ESBaseMessage } from '../../models/encryptedSearch.ts';
 
 import { BlobCache } from '../cache/BlobCache';
 import type { OpenBlobTransaction } from '../crypto/EncryptedBlobTransaction';

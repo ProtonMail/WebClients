@@ -8,9 +8,9 @@ import type { Address, MailSettings, Recipient, UserSettings } from '@proton/sha
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { FORWARDED_MESSAGE, isPlainText } from '@proton/shared/lib/mail/messages';
 
-import { CLASSNAME_BLOCKQUOTE } from 'proton-mail/helpers/message/messageDraftConstants';
-import { formatRecipientsString } from 'proton-mail/helpers/message/messageDraftFormat';
-import { insertSignature } from 'proton-mail/helpers/message/messageSignature';
+import { CLASSNAME_BLOCKQUOTE } from '../messageDraftConstants';
+import { formatRecipientsString } from '../messageDraftFormat';
+import { insertSignature } from '../messageSignature';
 
 import { formatFullDate } from '../../date';
 import { getDate } from '../../elementTypeGuards';

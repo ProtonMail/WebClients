@@ -2,7 +2,7 @@ import { useSubscribeEventManager } from '@proton/components/hooks/useHandler';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { useMailDispatch } from 'proton-mail/store/hooks';
+import { useMailDispatch } from '../../store/hooks';
 
 import { parseLabelIDsInEvent } from '../../helpers/elements';
 import type { Conversation } from '../../models/conversation';

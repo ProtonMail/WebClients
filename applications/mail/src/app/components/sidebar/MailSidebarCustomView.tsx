@@ -8,7 +8,7 @@ import useLocalState from '@proton/components/hooks/useLocalState';
 import { CUSTOM_VIEWS, CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
 import noop from '@proton/utils/noop';
 
-import { useNewsletterSubscriptions } from 'proton-mail/store/newsletterSubscriptions/hook';
+import { useNewsletterSubscriptions } from '../../store/newsletterSubscriptions/hook';
 
 import { useCategoriesView } from '../categoryView/useCategoriesView';
 import { NewsletterSubscription } from '../view/NewsletterSubscription/Spotlight/NewsletterSubscriptionSpotlight';

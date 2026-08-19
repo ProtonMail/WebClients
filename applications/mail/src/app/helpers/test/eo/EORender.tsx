@@ -18,9 +18,9 @@ import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { registerFeatureFlagsApiMock } from '@proton/testing/lib/features';
 
-import type { EOOriginalMessageOptions } from 'proton-mail/helpers/test/eo/helpers';
-import { EOInitStore, validID } from 'proton-mail/helpers/test/eo/helpers';
-import { init } from 'proton-mail/store/eo/eoActions';
+import type { EOOriginalMessageOptions } from './helpers';
+import { EOInitStore, validID } from './helpers';
+import { init } from '../../../store/eo/eoActions';
 
 import { EO_REDIRECT_PATH } from '../../../constants';
 import { setupStore } from '../../../store/eo/eoStore';

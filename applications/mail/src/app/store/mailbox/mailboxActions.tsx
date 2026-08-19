@@ -22,12 +22,12 @@ import type { MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import type { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
 
-import UndoActionNotification from 'proton-mail/components/notifications/UndoActionNotification';
-import { SUCCESS_NOTIFICATION_EXPIRATION } from 'proton-mail/constants';
-import { getFilteredUndoTokens, runParallelChunkedActions } from 'proton-mail/helpers/chunk';
-import { hasLabel } from 'proton-mail/helpers/elements';
-import type { Conversation } from 'proton-mail/models/conversation';
-import type { Element } from 'proton-mail/models/element';
+import UndoActionNotification from '../../components/notifications/UndoActionNotification';
+import { SUCCESS_NOTIFICATION_EXPIRATION } from '../../constants';
+import { getFilteredUndoTokens, runParallelChunkedActions } from '../../helpers/chunk';
+import { hasLabel } from '../../helpers/elements';
+import type { Conversation } from '../../models/conversation';
+import type { Element } from '../../models/element';
 
 import type { MailThunkExtra } from '../store';
 import type { MailThunkArguments } from '../thunk';

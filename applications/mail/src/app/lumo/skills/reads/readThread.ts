@@ -5,9 +5,9 @@ import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
-import { isElementMessage } from 'proton-mail/helpers/elements';
-import type { Element } from 'proton-mail/models/element';
-import { selectParams } from 'proton-mail/store/elements/elementsSelectors';
+import { isElementMessage } from '../../../helpers/elements';
+import type { Element } from '../../../models/element';
+import { selectParams } from '../../../store/elements/elementsSelectors';
 
 import type { MessageBody } from '../../helpers/messages';
 import {

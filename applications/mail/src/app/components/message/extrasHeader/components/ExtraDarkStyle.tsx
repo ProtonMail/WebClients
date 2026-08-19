@@ -10,7 +10,7 @@ import type { MessageStateWithData } from '@proton/mail/store/messages/messagesT
 import { METRICS_LOG } from '@proton/shared/lib/constants';
 import { sendMetricsReport } from '@proton/shared/lib/helpers/metrics';
 
-import { useMailDispatch } from 'proton-mail/store/hooks';
+import { useMailDispatch } from '../../../../store/hooks';
 
 import { removeDarkStyle } from '../../../../store/messages/read/messagesReadActions';
 

@@ -2,7 +2,7 @@ import type { ActionRequest } from '@proton/llm/lib/lumoAgent/contracts/types';
 import { createReferenceRegistry } from '@proton/llm/lib/lumoAgent/engine/referenceRegistry';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
-import { SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
+import { SOURCE_ACTION } from '../../../components/list/list-telemetry/useListTelemetry';
 
 import type { MailToolDeps } from '../../toolModule';
 import { hasEmailSelection, renderEmailSelectionBody } from './emailSelection';

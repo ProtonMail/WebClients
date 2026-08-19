@@ -12,9 +12,9 @@ import { getIsB2BAudienceFromPlan } from '@proton/payments/core/plan/helpers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 
-import { useGetStartedChecklist } from 'proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider';
-import { useMailboxCounter } from 'proton-mail/hooks/mailboxCounter/useMailboxCounter';
-import { useMailSelector } from 'proton-mail/store/hooks';
+import { useGetStartedChecklist } from '../../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
+import { useMailboxCounter } from '../../../hooks/mailboxCounter/useMailboxCounter';
+import { useMailSelector } from '../../../store/hooks';
 
 import { useCategoriesView } from '../useCategoriesView';
 import { hasSeenAllOnboarding, hasSeenFreeUserSpotlight } from './categoriesOnboarding.helpers';

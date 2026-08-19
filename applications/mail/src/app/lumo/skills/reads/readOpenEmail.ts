@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import type { ToolDefinition, ToolHandler } from '@proton/llm/lib/lumoAgent/contracts/types';
 
-import { selectParams } from 'proton-mail/store/elements/elementsSelectors';
+import { selectParams } from '../../../store/elements/elementsSelectors';
 
 import type { DecryptedMessage } from '../../helpers/messages';
 import { readDecryptedMessage, toDecryptedMessage, truncateBody } from '../../helpers/messages';

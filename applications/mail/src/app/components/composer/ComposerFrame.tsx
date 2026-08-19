@@ -11,9 +11,9 @@ import { OpenedAssistantStatus } from '@proton/llm/lib/types';
 import { logger } from '@proton/logger';
 import clsx from '@proton/utils/clsx';
 
-import { selectComposer } from 'proton-mail/store/composers/composerSelectors';
-import { composerActions } from 'proton-mail/store/composers/composersSlice';
-import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
+import { selectComposer } from '../../store/composers/composerSelectors';
+import { composerActions } from '../../store/composers/composersSlice';
+import { useMailDispatch, useMailSelector } from '../../store/hooks';
 
 import { ADVANCED_SEARCH_OVERLAY_CLOSE_EVENT, DRAG_ADDRESS_KEY } from '../../constants';
 import { computeComposerStyle, getComposerDimension, shouldBeMaximized } from '../../helpers/composerPositioning';

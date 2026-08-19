@@ -1,15 +1,15 @@
 import { fireEvent, screen } from '@testing-library/react';
 
-import { mailTestRender } from 'proton-mail/helpers/test/render';
-import { SubscriptionTabs } from 'proton-mail/store/newsletterSubscriptions/interface';
-import * as mailboxSelectors from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSelector';
-import { newsletterSubscriptionsActions } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSlice';
+import { mailTestRender } from '../../../../helpers/test/render';
+import { SubscriptionTabs } from '../../../../store/newsletterSubscriptions/interface';
+import * as mailboxSelectors from '../../../../store/newsletterSubscriptions/newsletterSubscriptionsSelector';
+import { newsletterSubscriptionsActions } from '../../../../store/newsletterSubscriptions/newsletterSubscriptionsSlice';
 
 import { activeSubscription, unsubscribedSubscription } from '../testData';
 import { NewsletterSubscriptionCard } from './NewsletterSubscriptionCard';
 
-jest.mock('proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSelector', () => ({
-    ...jest.requireActual('proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSelector'),
+jest.mock('../../../../store/newsletterSubscriptions/newsletterSubscriptionsSelector', () => ({
+    ...jest.requireActual('../../../../store/newsletterSubscriptions/newsletterSubscriptionsSelector'),
     selectedTab: jest.fn(),
 }));
 const mockedSelectedTab = mailboxSelectors.selectedTab as jest.Mock;

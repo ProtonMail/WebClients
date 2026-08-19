@@ -4,9 +4,9 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 
-import type { Conversation, ConversationLabel } from 'proton-mail/models/conversation';
-import { labelConversationsPending } from 'proton-mail/store/elements/elementsReducers';
-import type { ElementsState } from 'proton-mail/store/elements/elementsTypes';
+import type { Conversation, ConversationLabel } from '../../../models/conversation';
+import { labelConversationsPending } from '../elementsReducers';
+import type { ElementsState } from '../elementsTypes';
 import {
     CONVERSATION_ID,
     CUSTOM_FOLDER_ID1,
@@ -18,7 +18,7 @@ import {
     expectMessagesLabelsSameArray,
     setupConversation,
     setupMessageFromConversation,
-} from 'proton-mail/store/elements/tests/elementsReducer.test.helpers';
+} from './elementsReducer.test.helpers';
 
 describe('labelConversationsPending', () => {
     let testState: Draft<ElementsState>;

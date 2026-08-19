@@ -4,12 +4,12 @@ import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { AUTO_SAVE_CONTACTS } from '@proton/shared/lib/mail/mailSettings';
 import generateUID from '@proton/utils/generateUID';
 
-import { useOnCompose } from 'proton-mail/containers/ComposeProvider';
-import { findSender } from 'proton-mail/helpers/message/messageRecipients';
-import { useSendMessage } from 'proton-mail/hooks/composer/useSendMessage';
-import { useSendVerifications } from 'proton-mail/hooks/composer/useSendVerifications';
-import { useGetMessage } from 'proton-mail/hooks/message/useMessage';
-import { useSaveDraft } from 'proton-mail/hooks/message/useSaveDraft';
+import { useOnCompose } from '../../../../../containers/ComposeProvider';
+import { findSender } from '../../../../../helpers/message/messageRecipients';
+import { useSendMessage } from '../../../../../hooks/composer/useSendMessage';
+import { useSendVerifications } from '../../../../../hooks/composer/useSendVerifications';
+import { useGetMessage } from '../../../../../hooks/message/useMessage';
+import { useSaveDraft } from '../../../../../hooks/message/useSaveDraft';
 
 import type { PropsWithNewsletterSubscription } from '../../interface';
 

@@ -9,9 +9,9 @@ import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
-import { selectActiveCategoryID, selectCategoryIDs } from 'proton-mail/store/elements/elementsSelectors';
-import { useMailSelector } from 'proton-mail/store/hooks';
-import { selectDraggingElements, selectSelectAll } from 'proton-mail/store/layout/layoutSliceSelectors';
+import { selectActiveCategoryID, selectCategoryIDs } from '../../../store/elements/elementsSelectors';
+import { useMailSelector } from '../../../store/hooks';
+import { selectDraggingElements, selectSelectAll } from '../../../store/layout/layoutSliceSelectors';
 
 import { useCategoriesOnboarding } from '../categoriesOnboarding/CategoriesOnboardingContext';
 import { CategoriesOnboardingSpotlight } from '../categoriesOnboarding/CategoriesOnboardingSpotlights';

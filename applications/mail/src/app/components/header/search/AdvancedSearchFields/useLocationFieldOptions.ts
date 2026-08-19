@@ -13,8 +13,8 @@ import type { FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder'
 import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 import { SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
 
-import { categoryColorClassName } from 'proton-mail/components/categoryView/categoriesTabs/tabsInterface';
-import { useCategoriesView } from 'proton-mail/components/categoryView/useCategoriesView';
+import { categoryColorClassName } from '../../../categoryView/categoriesTabs/tabsInterface';
+import { useCategoriesView } from '../../../categoryView/useCategoriesView';
 
 import { getStandardFolders } from '../../../../helpers/labels';
 import useScheduleSendFeature from '../../../composer/actions/scheduleSend/useScheduleSendFeature';

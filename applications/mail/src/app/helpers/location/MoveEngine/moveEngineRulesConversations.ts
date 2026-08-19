@@ -1,7 +1,7 @@
 import { getContextNumMessages } from '@proton/mail/helpers/conversation';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
-import { isElementConversation } from 'proton-mail/helpers/elements';
+import { isElementConversation } from '../../elements';
 
 import { ERROR_ELEMENT_NOT_CONVERSATION, type MoveEngineRule, MoveEngineRuleResult } from './moveEngineInterface';
 

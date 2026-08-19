@@ -3,10 +3,10 @@ import { type Ref, forwardRef } from 'react';
 import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import MailShortcutsModal from '@proton/components/containers/mail/MailShortcutsModal';
 
-import AssistantIframe from 'proton-mail/components/assistant/AssistantIframe';
-import PrivateLayout from 'proton-mail/components/layout/PrivateLayout';
-import { LabelActionsContextProvider } from 'proton-mail/components/sidebar/EditLabelContext';
-import MailStartupModals from 'proton-mail/containers/MailStartupModals';
+import AssistantIframe from '../components/assistant/AssistantIframe';
+import PrivateLayout from '../components/layout/PrivateLayout';
+import { LabelActionsContextProvider } from '../components/sidebar/EditLabelContext';
+import MailStartupModals from '../containers/MailStartupModals';
 
 import { RouterMailboxContainer } from './RouterMailboxContainer';
 import { MailboxLayoutProvider } from './components/MailboxLayoutContext';

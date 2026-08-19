@@ -1,7 +1,7 @@
 import { Button } from '@proton/atoms/Button/Button';
 import { IcArrowDown } from '@proton/icons/icons/IcArrowDown';
 
-import { getNUnreadMessagesText } from 'proton-mail/helpers/text';
+import { getNUnreadMessagesText } from '../../helpers/text';
 
 interface Props {
     messagesIDs?: string[];

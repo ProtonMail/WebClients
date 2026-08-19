@@ -2,13 +2,13 @@ import { renderHook } from '@testing-library/react-hooks';
 
 import useOpenDrawerOnLoad from '@proton/components/hooks/drawer/useOpenDrawerOnLoad';
 
-import { useContactsListener } from 'proton-mail/hooks/contact/useContactsListener';
-import { useConversationsEvent } from 'proton-mail/hooks/events/useConversationsEvents';
-import { useMessagesEvents } from 'proton-mail/hooks/events/useMessagesEvents';
-import useIncomingDefaultsEvents from 'proton-mail/hooks/incomingDefaults/useIncomingDefaultsEvents';
-import { usePageHotkeys } from 'proton-mail/hooks/mailbox/usePageHotkeys';
-import useComposerEvent from 'proton-mail/hooks/useComposerEvent';
-import { useMailPTTMetric } from 'proton-mail/metrics/useMailPTTMetric';
+import { useContactsListener } from '../../hooks/contact/useContactsListener';
+import { useConversationsEvent } from '../../hooks/events/useConversationsEvents';
+import { useMessagesEvents } from '../../hooks/events/useMessagesEvents';
+import useIncomingDefaultsEvents from '../../hooks/incomingDefaults/useIncomingDefaultsEvents';
+import { usePageHotkeys } from '../../hooks/mailbox/usePageHotkeys';
+import useComposerEvent from '../../hooks/useComposerEvent';
+import { useMailPTTMetric } from '../../metrics/useMailPTTMetric';
 
 import { useAppShellSideEffects } from './useAppShellSideEffects';
 
@@ -16,27 +16,27 @@ jest.mock('@proton/components/hooks/drawer/useOpenDrawerOnLoad', () => ({
     __esModule: true,
     default: jest.fn(),
 }));
-jest.mock('proton-mail/hooks/contact/useContactsListener', () => ({
+jest.mock('../../hooks/contact/useContactsListener', () => ({
     useContactsListener: jest.fn(),
 }));
-jest.mock('proton-mail/hooks/events/useConversationsEvents', () => ({
+jest.mock('../../hooks/events/useConversationsEvents', () => ({
     useConversationsEvent: jest.fn(),
 }));
-jest.mock('proton-mail/hooks/events/useMessagesEvents', () => ({
+jest.mock('../../hooks/events/useMessagesEvents', () => ({
     useMessagesEvents: jest.fn(),
 }));
-jest.mock('proton-mail/hooks/incomingDefaults/useIncomingDefaultsEvents', () => ({
+jest.mock('../../hooks/incomingDefaults/useIncomingDefaultsEvents', () => ({
     __esModule: true,
     default: jest.fn(),
 }));
-jest.mock('proton-mail/hooks/mailbox/usePageHotkeys', () => ({
+jest.mock('../../hooks/mailbox/usePageHotkeys', () => ({
     usePageHotkeys: jest.fn(),
 }));
-jest.mock('proton-mail/hooks/useComposerEvent', () => ({
+jest.mock('../../hooks/useComposerEvent', () => ({
     __esModule: true,
     default: jest.fn(),
 }));
-jest.mock('proton-mail/metrics/useMailPTTMetric', () => ({
+jest.mock('../../metrics/useMailPTTMetric', () => ({
     useMailPTTMetric: jest.fn(),
 }));
 

@@ -19,7 +19,7 @@ import {
     conversationSpamRules,
     conversationStarredRules,
     conversationTrashRules,
-} from 'proton-mail/helpers/location/MoveEngine/moveEngineRulesConversations';
+} from './moveEngineRulesConversations';
 import {
     messageAllDraftRules,
     messageAllMailRules,
@@ -39,7 +39,7 @@ import {
     messageSpamRules,
     messageStarredRules,
     messageTrashRules,
-} from 'proton-mail/helpers/location/MoveEngine/moveEngineRulesMessages';
+} from './moveEngineRulesMessages';
 
 import { MoveEngine } from './MoveEngine';
 import { CUSTOM_FOLDER_KEY, CUSTOM_LABEL_KEY } from './moveEngineInterface';

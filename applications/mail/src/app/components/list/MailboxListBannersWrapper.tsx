@@ -1,5 +1,5 @@
-import SelectAllBanner from 'proton-mail/components/list/select-all/SelectAllBanner';
-import { getCanDisplaySelectAllBanner } from 'proton-mail/helpers/selectAll';
+import SelectAllBanner from './select-all/SelectAllBanner';
+import { getCanDisplaySelectAllBanner } from '../../helpers/selectAll';
 
 import {
     selectFilter,

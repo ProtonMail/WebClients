@@ -58,7 +58,7 @@ import { COMPOSER_MODE, VIEW_LAYOUT } from '@proton/shared/lib/mail/mailSettings
 import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { useCanReplayOnboarding } from 'proton-mail/hooks/useCanReplayOnboarding';
+import { useCanReplayOnboarding } from '../../hooks/useCanReplayOnboarding';
 
 import { CategoriesQuickSettings } from '../categoryView/CategoriesQuickSettings';
 import { MailDebugButton } from '../debug/MailDebugButton';

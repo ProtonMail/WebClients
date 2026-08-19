@@ -15,10 +15,10 @@ import { IcChevronLeft } from '@proton/icons/icons/IcChevronLeft';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { TelemetryMailPagingControlsEvents } from '@proton/shared/lib/api/telemetry';
 
-import { isPageConsecutive } from 'proton-mail/helpers/paging';
-import { PaginationSources, useTelemetryPagingControls } from 'proton-mail/hooks/useTelemetryPagingControls';
-import { contextPages, selectPageSize } from 'proton-mail/store/elements/elementsSelectors';
-import { useMailSelector } from 'proton-mail/store/hooks';
+import { isPageConsecutive } from '../../../helpers/paging';
+import { PaginationSources, useTelemetryPagingControls } from '../../../hooks/useTelemetryPagingControls';
+import { contextPages, selectPageSize } from '../../../store/elements/elementsSelectors';
+import { useMailSelector } from '../../../store/hooks';
 
 import { useEncryptedSearchContext } from '../../../containers/EncryptedSearchProvider';
 import { isSearch as testIsSearch } from '../../../helpers/elements';

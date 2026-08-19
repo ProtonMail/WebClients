@@ -14,10 +14,10 @@ import {
     categoryIDFromUrl,
     removeCategoryFromCurrentUrl,
     setCategoryInCurrentUrl,
-} from 'proton-mail/helpers/mailboxUrl';
-import { getParametersFromPath } from 'proton-mail/hooks/mailbox/useElements';
-import { reset } from 'proton-mail/store/elements/elementsActions';
-import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
+} from '../../helpers/mailboxUrl';
+import { getParametersFromPath } from '../../hooks/mailbox/useElements';
+import { reset } from '../../store/elements/elementsActions';
+import { useMailDispatch, useMailSelector } from '../../store/hooks';
 
 import { useCategoriesView } from './useCategoriesView';
 

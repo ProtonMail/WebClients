@@ -4,7 +4,7 @@ import { queryConversations } from '@proton/shared/lib/api/conversations';
 import { DEFAULT_MAIL_PAGE_SIZE } from '@proton/shared/lib/constants';
 import type { Sort } from '@proton/shared/lib/mail/search';
 
-import * as mailboxActions from 'proton-mail/store/mailbox/mailboxActions';
+import * as mailboxActions from '../../../store/mailbox/mailboxActions';
 
 import { addApiMock, api, clearAll } from '../../../helpers/test/helper';
 import type { Element } from '../../../models/element';
@@ -12,7 +12,7 @@ import { getElements, props, sendEvent, setup } from './Mailbox.test.helpers';
 
 jest.setTimeout(20000);
 
-jest.mock('proton-mail/metrics/useMailELDTMetric', () => ({
+jest.mock('../../../metrics/useMailELDTMetric', () => ({
     useMailELDTMetric: () => {
         return { stopELDTMetric: jest.fn() };
     },

@@ -2,9 +2,9 @@ import { screen } from '@testing-library/react';
 
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
-import { mailTestRender } from 'proton-mail/helpers/test/helper';
-import { newElementsState } from 'proton-mail/store/elements/elementsSlice';
-import { layoutInitialState } from 'proton-mail/store/layout/layoutSlice';
+import { mailTestRender } from '../../../helpers/test/helper';
+import { newElementsState } from '../../../store/elements/elementsSlice';
+import { layoutInitialState } from '../../../store/layout/layoutSlice';
 
 import { mockActiveCategoriesData } from '../testUtils/helpers';
 import { CategoryContextMenu } from './CategoryContextMenu';

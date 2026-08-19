@@ -13,19 +13,19 @@ import type { IconName } from '@proton/icons/types';
 import { CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
 import clsx from '@proton/utils/clsx';
 
-import { useCategoriesView } from 'proton-mail/components/categoryView/useCategoriesView';
-import { getUnreadCount } from 'proton-mail/components/sidebar/locationAsideHelpers';
-import { getUnreadNewslettersText } from 'proton-mail/helpers/text';
-import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
-import { SortSubscriptionsValue, SubscriptionTabs } from 'proton-mail/store/newsletterSubscriptions/interface';
-import { sortSubscriptionList } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsActions';
+import { useCategoriesView } from '../../../categoryView/useCategoriesView';
+import { getUnreadCount } from '../../../sidebar/locationAsideHelpers';
+import { getUnreadNewslettersText } from '../../../../helpers/text';
+import { useMailDispatch, useMailSelector } from '../../../../store/hooks';
+import { SortSubscriptionsValue, SubscriptionTabs } from '../../../../store/newsletterSubscriptions/interface';
+import { sortSubscriptionList } from '../../../../store/newsletterSubscriptions/newsletterSubscriptionsActions';
 import {
     selectSubscriptionsCount,
     selectTabSortingState,
     selectedTab,
     selectedTabSubscriptionsCount,
-} from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSelector';
-import { newsletterSubscriptionsActions } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSlice';
+} from '../../../../store/newsletterSubscriptions/newsletterSubscriptionsSelector';
+import { newsletterSubscriptionsActions } from '../../../../store/newsletterSubscriptions/newsletterSubscriptionsSlice';
 
 import { useNewsletterSubscriptionTelemetry } from '../useNewsletterSubscriptionTelemetry';
 

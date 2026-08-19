@@ -1,4 +1,4 @@
-import type { Element } from 'proton-mail/models/element';
+import type { Element } from '../../../models/element';
 
 export interface ApplyLabelsParams {
     elements: Element[];

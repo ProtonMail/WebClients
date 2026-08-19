@@ -4,8 +4,8 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { isReceived, isScheduled, isSnoozed } from '@proton/shared/lib/mail/messages';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import ExtraPassNudge from 'proton-mail/components/message/extrasHeader/components/ExtraPassNudge';
-import { hasLabel } from 'proton-mail/helpers/elements';
+import ExtraPassNudge from './components/ExtraPassNudge';
+import { hasLabel } from '../../../helpers/elements';
 
 import { getMessageHasData } from '../../../helpers/message/messages';
 import useScheduleSendFeature from '../../composer/actions/scheduleSend/useScheduleSendFeature';

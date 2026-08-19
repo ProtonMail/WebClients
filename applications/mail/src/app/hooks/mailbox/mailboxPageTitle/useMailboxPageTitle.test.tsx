@@ -9,8 +9,8 @@ import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { DEFAULT_MAIL_SETTINGS, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
-import { useMailboxCounter } from 'proton-mail/hooks/mailboxCounter/useMailboxCounter';
-import { useMailSelector } from 'proton-mail/store/hooks';
+import { useMailboxCounter } from '../../mailboxCounter/useMailboxCounter';
+import { useMailSelector } from '../../../store/hooks';
 
 import { useMailboxPageTitle } from './useMailboxPageTitle';
 
@@ -22,8 +22,8 @@ const LABEL_NAME = 'Inbox';
 jest.mock('@proton/mail/store/labels/hooks');
 jest.mock('@proton/account/user/hooks');
 jest.mock('@proton/mail/store/mailSettings/hooks');
-jest.mock('proton-mail/store/hooks');
-jest.mock('proton-mail/hooks/mailboxCounter/useMailboxCounter');
+jest.mock('../../../store/hooks');
+jest.mock('../../mailboxCounter/useMailboxCounter');
 
 jest.mocked(useLabels).mockReturnValue([undefined, false]);
 jest.mocked(useFolders).mockReturnValue([undefined, false]);

@@ -1,6 +1,6 @@
 import { type Document, Value } from '@proton/proton-foundation-search';
 
-import type { ESBaseMessage } from 'proton-mail/models/encryptedSearch.ts';
+import type { ESBaseMessage } from '../../models/encryptedSearch.ts';
 
 export class MailDelegate {
     stageMetadata(metadata: ESBaseMessage, doc: Document) {

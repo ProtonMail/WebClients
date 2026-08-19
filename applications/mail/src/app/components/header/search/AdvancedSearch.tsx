@@ -28,7 +28,7 @@ import { changeSearchParams } from '@proton/shared/lib/helpers/url';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import clsx from '@proton/utils/clsx';
 
-import AddressInput from 'proton-mail/components/composer/addresses/AddressInput';
+import AddressInput from '../../composer/addresses/AddressInput';
 
 import { useEncryptedSearchContext } from '../../../containers/EncryptedSearchProvider';
 import {

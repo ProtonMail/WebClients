@@ -11,7 +11,7 @@ import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import { getRecipients } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
-import { useMailSelector } from 'proton-mail/store/hooks';
+import { useMailSelector } from '../../../store/hooks';
 
 import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
 import type { RecipientType } from '../../../models/address';

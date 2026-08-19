@@ -4,7 +4,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { DEFAULT_MAIL_SETTINGS, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
-import * as mailboxActions from 'proton-mail/store/mailbox/mailboxActions';
+import * as mailboxActions from '../../../store/mailbox/mailboxActions';
 
 import { addApiMock, clearAll, waitForSpyCall } from '../../../helpers/test/helper';
 import type { Element } from '../../../models/element';
@@ -13,7 +13,7 @@ import { folders, labels, sendEvent, setup } from './Mailbox.test.helpers';
 const [label1, label2, label3, label4] = labels;
 const [folder1, folder2] = folders;
 
-jest.mock('proton-mail/metrics/useMailELDTMetric', () => ({
+jest.mock('../../../metrics/useMailELDTMetric', () => ({
     useMailELDTMetric: () => {
         return { stopELDTMetric: jest.fn() };
     },

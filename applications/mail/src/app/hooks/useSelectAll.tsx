@@ -3,16 +3,16 @@ import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
-import { isConversationMode } from 'proton-mail/helpers/mailSettings';
+import { isConversationMode } from '../helpers/mailSettings';
 import {
     getSelectAllBannerText,
     getSelectAllBannerTextWithLocation,
     getSelectAllButtonText,
-} from 'proton-mail/helpers/selectAll';
-import { selectCategoryIDs } from 'proton-mail/store/elements/elementsSelectors';
-import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
-import { layoutActions } from 'proton-mail/store/layout/layoutSlice';
-import { selectSelectAll } from 'proton-mail/store/layout/layoutSliceSelectors';
+} from '../helpers/selectAll';
+import { selectCategoryIDs } from '../store/elements/elementsSelectors';
+import { useMailDispatch, useMailSelector } from '../store/hooks';
+import { layoutActions } from '../store/layout/layoutSlice';
+import { selectSelectAll } from '../store/layout/layoutSliceSelectors';
 
 import { useMailboxCounter } from './mailboxCounter/useMailboxCounter';
 

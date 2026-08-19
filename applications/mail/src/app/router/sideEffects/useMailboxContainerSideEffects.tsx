@@ -1,16 +1,16 @@
 import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
 
-import useAutoOpenContactsDrawer from 'proton-mail/hooks/drawer/useAutoOpenContactsDrawer';
-import { useMailboxPageTitle } from 'proton-mail/hooks/mailbox/mailboxPageTitle/useMailboxPageTitle';
-import useNewEmailNotification from 'proton-mail/hooks/mailbox/notifications/useNewEmailNotification';
-import { type EncryptedSearchParams, useApplyEncryptedSearch } from 'proton-mail/hooks/mailbox/useApplyEncryptedSearch';
-import { useMailboxFavicon } from 'proton-mail/hooks/mailbox/useMailboxFavicon';
-import usePreLoadElements from 'proton-mail/hooks/mailbox/usePreLoadElements';
-import useInboxBadgeCount from 'proton-mail/hooks/useInboxBadgeCount';
-import useInboxDesktopElementId from 'proton-mail/hooks/useInboxDesktopElementId';
-import useMailtoHash from 'proton-mail/hooks/useMailtoHash';
-import type { Element } from 'proton-mail/models/element';
+import useAutoOpenContactsDrawer from '../../hooks/drawer/useAutoOpenContactsDrawer';
+import { useMailboxPageTitle } from '../../hooks/mailbox/mailboxPageTitle/useMailboxPageTitle';
+import useNewEmailNotification from '../../hooks/mailbox/notifications/useNewEmailNotification';
+import { type EncryptedSearchParams, useApplyEncryptedSearch } from '../../hooks/mailbox/useApplyEncryptedSearch';
+import { useMailboxFavicon } from '../../hooks/mailbox/useMailboxFavicon';
+import usePreLoadElements from '../../hooks/mailbox/usePreLoadElements';
+import useInboxBadgeCount from '../../hooks/useInboxBadgeCount';
+import useInboxDesktopElementId from '../../hooks/useInboxDesktopElementId';
+import useMailtoHash from '../../hooks/useMailtoHash';
+import type { Element } from '../../models/element';
 
 import useShowBYOESpotlightModal from '../../hooks/useShowBYOESpotlightModal';
 

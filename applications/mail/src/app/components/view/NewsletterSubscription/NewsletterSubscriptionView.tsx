@@ -12,19 +12,19 @@ import { domIsBusy } from '@proton/shared/lib/busy';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { CUSTOM_VIEWS, CUSTOM_VIEWS_LABELS, type MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
-import { useCategoriesView } from 'proton-mail/components/categoryView/useCategoriesView';
-import { ResizableWrapper } from 'proton-mail/components/list/ResizableWrapper';
-import { ResizeHandlePosition } from 'proton-mail/components/list/ResizeHandle';
-import type { SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
-import MessageOnlyView from 'proton-mail/components/message/MessageOnlyView';
-import { getInboxRedirectUrl } from 'proton-mail/helpers/mailboxUrl';
-import type { ElementsStructure } from 'proton-mail/hooks/mailbox/useElements';
-import { DEFAULT_MIN_WIDTH_OF_MAILBOX_LIST } from 'proton-mail/hooks/useResizableUtils';
-import { useMailboxLayoutProvider } from 'proton-mail/router/components/MailboxLayoutContext';
-import type { MailboxActions, RouterNavigation } from 'proton-mail/router/interface';
-import { setParams } from 'proton-mail/store/elements/elementsActions';
-import { selectNewsletterSubscriptionID } from 'proton-mail/store/elements/elementsSelectors';
-import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
+import { useCategoriesView } from '../../categoryView/useCategoriesView';
+import { ResizableWrapper } from '../../list/ResizableWrapper';
+import { ResizeHandlePosition } from '../../list/ResizeHandle';
+import type { SOURCE_ACTION } from '../../list/list-telemetry/useListTelemetry';
+import MessageOnlyView from '../../message/MessageOnlyView';
+import { getInboxRedirectUrl } from '../../../helpers/mailboxUrl';
+import type { ElementsStructure } from '../../../hooks/mailbox/useElements';
+import { DEFAULT_MIN_WIDTH_OF_MAILBOX_LIST } from '../../../hooks/useResizableUtils';
+import { useMailboxLayoutProvider } from '../../../router/components/MailboxLayoutContext';
+import type { MailboxActions, RouterNavigation } from '../../../router/interface';
+import { setParams } from '../../../store/elements/elementsActions';
+import { selectNewsletterSubscriptionID } from '../../../store/elements/elementsSelectors';
+import { useMailDispatch, useMailSelector } from '../../../store/hooks';
 import {
     allSubscriptionCount,
     selectTabLoadingState,
@@ -32,8 +32,8 @@ import {
     selectedSubscriptionIdSelector,
     selectedSubscriptionSelector,
     selectedTabSubscriptionsCount,
-} from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSelector';
-import { newsletterSubscriptionsActions } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSlice';
+} from '../../../store/newsletterSubscriptions/newsletterSubscriptionsSelector';
+import { newsletterSubscriptionsActions } from '../../../store/newsletterSubscriptions/newsletterSubscriptionsSlice';
 
 import MailboxList from '../../list/MailboxList';
 import ModalOnboarding from './SubscriptionsList/ModalOnboarding';

@@ -6,7 +6,7 @@ import SimpleSidebarListItemHeader from '@proton/components/components/sidebar/S
 import { IcCross } from '@proton/icons/icons/IcCross';
 import clsx from '@proton/utils/clsx';
 
-import { useGetStartedChecklist } from 'proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider';
+import { useGetStartedChecklist } from '../../../../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 
 interface Props {
     canCloseChecklist: boolean;

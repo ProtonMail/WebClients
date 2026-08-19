@@ -1,7 +1,7 @@
 import range from '@proton/utils/range';
 
-import { useMailSelector } from 'proton-mail/store/hooks';
-import { selectSubscriptionsCount } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSelector';
+import { useMailSelector } from '../../../../../store/hooks';
+import { selectSubscriptionsCount } from '../../../../../store/newsletterSubscriptions/newsletterSubscriptionsSelector';
 
 import { NewsletterSubscriptionListWrapper } from '../NewsletterSubscriptionListWrapper';
 import { NewsletterSubscriptionCardSkeleton } from './NewsletterSubscriptionCardSkeleton';

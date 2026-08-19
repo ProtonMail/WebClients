@@ -10,7 +10,7 @@ import { encodeFilters } from '@proton/pass/components/Navigation/routing';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 
-import { TipActionType } from 'proton-mail/models/tip';
+import { TipActionType } from '../../../models/tip';
 
 import useProtonTipsTelemetry from './useProtonTipsTelemetry';
 

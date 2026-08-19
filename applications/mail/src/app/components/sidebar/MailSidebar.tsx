@@ -30,8 +30,8 @@ import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
-import { selectHasFocusedComposer } from 'proton-mail/store/composers/composerSelectors';
-import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
+import { selectHasFocusedComposer } from '../../store/composers/composerSelectors';
+import { useMailDispatch, useMailSelector } from '../../store/hooks';
 
 import { useOnCompose } from '../../containers/ComposeProvider';
 import { useGetStartedChecklist } from '../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';

@@ -8,7 +8,7 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import storageUnlocked from '@proton/styles/assets/img/illustrations/checklist-storage-reward.svg';
 
-import { useGetStartedChecklist } from 'proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider';
+import { useGetStartedChecklist } from '../../../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 
 const StorageRewardModal = (props: ModalProps) => {
     const { isUserPaid } = useGetStartedChecklist();

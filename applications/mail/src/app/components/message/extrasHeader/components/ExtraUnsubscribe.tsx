@@ -36,8 +36,8 @@ import { getOriginalTo, hasProtonSender, hasSimpleLoginSender, isUnsubscribed } 
 import generateUID from '@proton/utils/generateUID';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { selectLabelID } from 'proton-mail/store/elements/elementsSelectors';
-import { useMailSelector } from 'proton-mail/store/hooks';
+import { selectLabelID } from '../../../../store/elements/elementsSelectors';
+import { useMailSelector } from '../../../../store/hooks';
 
 import { useOnCompose } from '../../../../containers/ComposeProvider';
 import { findSender } from '../../../../helpers/message/messageRecipients';

@@ -7,7 +7,7 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { SEARCH_TYPE, useSearchTelemetry } from '@proton/encrypted-search/useSearchTelemetry';
 import type { Filter, SearchParameters, Sort } from '@proton/shared/lib/mail/search';
 
-import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
+import { useMailDispatch, useMailSelector } from '../../store/hooks';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { isSearch } from '../../helpers/elements';

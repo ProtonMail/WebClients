@@ -8,7 +8,7 @@ import { getMatchingSigningKey } from '@protontech/crypto';
 import type { MessageErrors, MessageStateWithDataFull } from '@proton/mail/store/messages/messagesTypes';
 import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 
-import { useMailDispatch } from 'proton-mail/store/hooks';
+import { useMailDispatch } from '../../store/hooks';
 
 import { isNetworkError } from '../../helpers/errors';
 import { verifyMessage } from '../../helpers/message/messageDecrypt';

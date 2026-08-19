@@ -7,7 +7,7 @@ import ContactSelectorModal from '@proton/components/containers/contacts/selecto
 import useToggle from '@proton/components/hooks/useToggle';
 import noop from '@proton/utils/noop';
 
-import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
+import { useMailDispatch, useMailSelector } from '../../../store/hooks';
 
 import type { MessageSendInfo } from '../../../hooks/useSendInfo';
 import type { RecipientType } from '../../../models/address';

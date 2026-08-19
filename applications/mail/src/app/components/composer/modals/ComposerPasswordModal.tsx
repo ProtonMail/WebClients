@@ -9,7 +9,7 @@ import { setBit } from '@proton/shared/lib/helpers/bitset';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 
-import { useMailDispatch } from 'proton-mail/store/hooks';
+import { useMailDispatch } from '../../../store/hooks';
 
 import { DEFAULT_EO_EXPIRATION_DAYS } from '../../../constants';
 import { useExternalExpiration } from '../../../hooks/composer/useExternalExpiration';

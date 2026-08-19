@@ -6,10 +6,10 @@ import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import { mockUseFolders } from '@proton/testing/lib/mockUseFolders';
 import { mockUseLabels } from '@proton/testing/lib/mockUseLabels';
 
-import { useMoveEngine } from 'proton-mail/helpers/location/MoveEngine/useMoveEngine';
-import type { Conversation } from 'proton-mail/models/conversation';
-import type { Element } from 'proton-mail/models/element';
-import type { ESMessage } from 'proton-mail/models/encryptedSearch';
+import { useMoveEngine } from './useMoveEngine';
+import type { Conversation } from '../../../models/conversation';
+import type { Element } from '../../../models/element';
+import type { ESMessage } from '../../../models/encryptedSearch';
 
 import { MoveEngineRuleResult } from './moveEngineInterface';
 

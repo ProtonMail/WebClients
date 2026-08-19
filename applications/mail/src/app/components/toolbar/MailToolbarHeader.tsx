@@ -7,20 +7,20 @@ import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
-import { getLabelName } from 'proton-mail/helpers/labels';
-import { isColumnMode } from 'proton-mail/helpers/mailSettings';
-import type { ElementsStructure } from 'proton-mail/hooks/mailbox/useElements';
-import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
-import { useMailboxLayoutProvider } from 'proton-mail/router/components/MailboxLayoutContext';
-import type { MailboxActions } from 'proton-mail/router/interface';
+import { getLabelName } from '../../helpers/labels';
+import { isColumnMode } from '../../helpers/mailSettings';
+import type { ElementsStructure } from '../../hooks/mailbox/useElements';
+import { useSelectAll } from '../../hooks/useSelectAll';
+import { useMailboxLayoutProvider } from '../../router/components/MailboxLayoutContext';
+import type { MailboxActions } from '../../router/interface';
 import {
     selectConversationMode,
     selectElementID,
     selectIsSearching,
     selectLabelID,
     selectMessageID,
-} from 'proton-mail/store/elements/elementsSelectors';
-import { useMailSelector } from 'proton-mail/store/hooks';
+} from '../../store/elements/elementsSelectors';
+import { useMailSelector } from '../../store/hooks';
 
 import MailSearch from '../header/search/MailSearch';
 import SnoozeToolbarDropdown from '../list/snooze/containers/SnoozeToolbarDropdown';

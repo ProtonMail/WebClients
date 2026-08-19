@@ -1,7 +1,7 @@
 import { useLayoutEffect, useRef } from 'react';
 
-import { isSearch } from 'proton-mail/helpers/elements';
-import type { ElementsStructure } from 'proton-mail/hooks/mailbox/useElements';
+import { isSearch } from '../../helpers/elements';
+import type { ElementsStructure } from '../../hooks/mailbox/useElements';
 
 import type { useGetElementParams } from './useGetElementParams';
 

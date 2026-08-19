@@ -1,6 +1,6 @@
 import { parseDOMStringToBodyElement } from '@proton/mail/helpers/parseDOMStringToBodyElement';
 
-import { dataUrlToFile, replaceDataUrl } from 'proton-mail/helpers/message/messageDataUrl';
+import { dataUrlToFile, replaceDataUrl } from './messageDataUrl';
 
 describe('messageDataUrl', () => {
     describe('dataUrlToFile', () => {

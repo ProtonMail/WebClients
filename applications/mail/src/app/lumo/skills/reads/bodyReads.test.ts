@@ -6,7 +6,7 @@ import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
-import { getParamsFromPathname } from 'proton-mail/helpers/mailboxUrl';
+import { getParamsFromPathname } from '../../../helpers/mailboxUrl';
 
 import type { MailToolDeps } from '../../toolModule';
 import { createReadEmailHandler, readEmailDefinition } from './readEmail';
