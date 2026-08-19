@@ -4,6 +4,7 @@ import 'fake-indexeddb/auto';
 import type { NodeEntity, NodeType } from '@proton/drive';
 import { ValidationError } from '@proton/drive';
 import { createMockNodeEntity } from '@proton/drive/modules/testing';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
 import { SearchDB } from '../../../../shared/SearchDB';
 import { FakeMainThreadBridge } from '../../../../testing/FakeMainThreadBridge';
@@ -156,9 +157,10 @@ describe('ResumableFolderBFSVisitor', () => {
             bridge.setChildren('root', [folder('gone'), folder('sibling')]);
             bridge.setChildren('gone', [file('gone-child')]);
             bridge.setChildren('sibling', [file('sibling-child')]);
-            bridge.failNextIterateForFolder('gone', new ValidationError('Node not found'));
-            // The fix confirms via a follow-up getNode before treating the folder as gone.
-            bridge.setGetNodeError('gone', new ValidationError('Node not found'));
+            bridge.failNextIterateForFolder(
+                'gone',
+                new ValidationError('File or folder not found', API_CUSTOM_ERROR_CODES.NOT_FOUND)
+            );
 
             const visitor = new ResumableFolderBFSVisitor(VISITOR_ID);
             const events = await collect(visitor.visit({ folderUid: 'root', parentPath: '' }, 1, makeCtx()));
@@ -167,14 +169,17 @@ describe('ResumableFolderBFSVisitor', () => {
             expect(events.filter((e) => e.type === 'folder-boundary')).toHaveLength(3);
         });
 
-        it('still propagates a ValidationError when the follow-up getNode confirms the folder still exists', async () => {
+        it('still propagates a ValidationError whose code means the folder is listable', async () => {
             bridge.setChildren('root', [folder('still-here')]);
             bridge.setNode('still-here', folder('still-here'));
-            bridge.failNextIterateForFolder('still-here', new ValidationError('Pagination failed'));
+            bridge.failNextIterateForFolder(
+                'still-here',
+                new ValidationError('Invalid value', API_CUSTOM_ERROR_CODES.INVALID_VALUE)
+            );
 
             const visitor = new ResumableFolderBFSVisitor(VISITOR_ID);
             await expect(collect(visitor.visit({ folderUid: 'root', parentPath: '' }, 1, makeCtx()))).rejects.toThrow(
-                'Pagination failed'
+                'Invalid value'
             );
         });
 
