@@ -331,6 +331,11 @@ export class IndexerTaskQueue {
             // Classify here, in the worker, while the error prototype is still intact.
             const decision = classifyError(e);
 
+            // Persisted, so a retry after a worker restart isn't mislabelled as the first attempt.
+            // `taskAttempts` can't answer this: it's in-memory and dies with the worker.
+            const hadFailedBefore =
+                task instanceof IndexPopulatorTask ? await task.populator.hasInitialIndexingFailed(this.db) : false;
+
             this.searchMetrics.markIndexerError({
                 decision,
                 error: e,
@@ -338,7 +343,13 @@ export class IndexerTaskQueue {
                 taskKind: task.getKind(),
                 isInitialIndexing: task instanceof IndexPopulatorTask,
                 isIncrementalUpdate: task instanceof IncrementalUpdateTask,
+                isInitialAttempt: !hadFailedBefore,
             });
+
+            // Only written on the false -> true transition, so at most one write per index flow.
+            if (task instanceof IndexPopulatorTask && !hadFailedBefore) {
+                await task.populator.markInitialIndexingFailed(this.db);
+            }
 
             if (decision.kind === 'permanent') {
                 this.taskAttempts.delete(uid);

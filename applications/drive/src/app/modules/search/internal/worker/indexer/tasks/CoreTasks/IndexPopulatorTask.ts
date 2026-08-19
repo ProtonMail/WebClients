@@ -48,10 +48,24 @@ export class IndexPopulatorTask extends BaseTask {
 
         const stopTimer = startSearchTimer();
 
+        // Persisted bit, so a success that follows retries from an earlier worker session is still
+        // reported as a retried success. Read before populate() so it reflects state prior to this run.
+        const hadFailedBefore = await populator.hasInitialIndexingFailed(ctx.db);
+
         // Run initial population; the populator marks itself done on success. How it indexes
         // (resumable folder walk, chunked drain, etc.) is the populator's concern.
         await populator.populate(ctx);
 
-        ctx.searchMetrics.markInitialIndexingSucceeded({ durationInSeconds: stopTimer() });
+        ctx.searchMetrics.markInitialIndexingSucceeded({
+            durationInSeconds: stopTimer(),
+            isInitialAttempt: !hadFailedBefore,
+        });
+
+        // Campaign completed, so the next one starts clean. Cleared only here, on success - never
+        // on campaign start (markAsNotDone), which re-fires per retry while the persisted version
+        // is stale and would reset the bit before every single failure.
+        if (hadFailedBefore) {
+            await populator.clearInitialIndexingFailed(ctx.db);
+        }
     }
 }

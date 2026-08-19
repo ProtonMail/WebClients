@@ -629,6 +629,103 @@ describe('IndexerTaskQueue', () => {
         expect(populatorState?.done).toBe(true);
     });
 
+    describe('isInitialAttempt', () => {
+        class AlwaysFailingPopulator extends NodeTreeIndexPopulator {
+            constructor() {
+                super(SCOPE_ID, IndexKind.MAIN, 'myfiles', 1);
+            }
+            protected async getRootNodeUid(): Promise<string> {
+                throw new Error('transient flake');
+            }
+        }
+
+        // Same uid as the real MyFilesIndexPopulator ('myfiles' + SCOPE_ID, version 1), so a queue
+        // built here and the default createQueue() share one populator-state row.
+        const makeFailingQueue = () => {
+            const populator = new AlwaysFailingPopulator();
+            class TestableQueue extends IndexerTaskQueue {
+                protected override async createTasks() {
+                    return { bootstrapTasks: [new IndexPopulatorTask(populator)], postBootstrapTasks: [] };
+                }
+            }
+            const queue = new TestableQueue(
+                'test-user' as UserId,
+                indexRegistry,
+                bridge.asBridge(),
+                db,
+                treeSubRegistry,
+                createBridgedSearchMetrics(bridge.asBridge())
+            );
+            return { queue, populator };
+        };
+
+        const readFlag = async () => (await db.getPopulatorState(`myfiles:${SCOPE_ID}`))?.initialIndexingFailed;
+
+        it('is false on a retry in a NEW worker session, because the flag is persisted', async () => {
+            const counter = jest.spyOn(metrics.drive_search_initial_indexing_total, 'increment');
+
+            // Session 1: fail once, then tear the worker down (e.g. the last tab closes). The
+            // in-memory taskAttempts map is lost with it.
+            const first = makeFailingQueue();
+            first.queue.start().catch(() => {});
+            await waitForCondition(() => counter.mock.calls.length >= 1);
+            first.queue.stop();
+            expect(counter).toHaveBeenNthCalledWith(1, { outcome: 'failure', isInitialAttempt: 'true' });
+            expect(await readFlag()).toBe(true);
+
+            // Session 2: a brand new queue against the same SearchDB. This is the case the
+            // in-memory counter could not answer.
+            const second = makeFailingQueue();
+            second.queue.start().catch(() => {});
+            await waitForCondition(() => counter.mock.calls.length >= 2);
+            second.queue.stop();
+            expect(counter).toHaveBeenNthCalledWith(2, { outcome: 'failure', isInitialAttempt: 'false' });
+
+            counter.mockRestore();
+        });
+
+        it('writes the flag at most once per campaign, however many times it retries', async () => {
+            const counter = jest.spyOn(metrics.drive_search_initial_indexing_total, 'increment');
+            const { queue, populator } = makeFailingQueue();
+            const markSpy = jest.spyOn(populator, 'markInitialIndexingFailed');
+            queue.start().catch(() => {});
+
+            // Wait for a genuine retry, so "written once" is not trivially true. Two failures is
+            // enough to prove the guard (an unguarded write would already be at 2) and only costs
+            // one backoff step (~1s), keeping this well inside the default 5s test timeout.
+            await waitForCondition(() => counter.mock.calls.length >= 2, 120);
+            queue.stop();
+
+            expect(counter.mock.calls.length).toBeGreaterThanOrEqual(2);
+            expect(markSpy).toHaveBeenCalledTimes(1);
+
+            markSpy.mockRestore();
+            counter.mockRestore();
+        });
+
+        it('clears the flag on a successful run so the next campaign starts clean', async () => {
+            // Seed the flag through the real API, on the row the default queue's populator uses.
+            await new AlwaysFailingPopulator().markInitialIndexingFailed(db);
+            expect(await readFlag()).toBe(true);
+            const counter = jest.spyOn(metrics.drive_search_initial_indexing_total, 'increment');
+
+            // A healthy populator (default createTasks) completes on its first try.
+            const queue = createQueue();
+            const state = new IndexerStateStream(queue);
+            queue.start().catch(() => {});
+            await state.waitForSearchable();
+            await waitForCondition(() => counter.mock.calls.length >= 1);
+            queue.stop();
+
+            // Success is reported as a retried success, since a prior session had failed.
+            expect(counter).toHaveBeenCalledWith({ outcome: 'success', isInitialAttempt: 'false' });
+            // ...and the flag is cleared, so a future campaign is not tainted by it.
+            expect(await readFlag()).toBe(false);
+
+            counter.mockRestore();
+        });
+    });
+
     it('abort error is swallowed without retry or permanent state', async () => {
         let callCount = 0;
 
