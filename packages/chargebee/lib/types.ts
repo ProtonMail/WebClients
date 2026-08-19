@@ -1,3 +1,5 @@
+import type { ChargebeeCssVariables } from './css-variables';
+
 export interface CountryEntry {
     label: string;
     value: string;
@@ -21,34 +23,16 @@ export interface ChargebeeInstanceConfiguration {
 
 export type CardFormRenderMode = 'one-line' | 'two-line';
 
-export type CssVariables = {
-    '--signal-danger': string;
-    '--border-radius-md': string;
-    '--border-norm': string;
-    '--focus-outline': string;
-    '--focus-ring': string;
-    '--field-norm': string;
-    '--field-background-color': string;
-    '--field-focus-background-color': string;
-    '--field-focus-text-color': string;
-    '--field-placeholder-color': string;
-    '--field-text-color': string;
-    '--selection-text-color': string;
-    '--selection-background-color': string;
-    '--interaction-norm': string;
-    '--interaction-norm-contrast': string;
-    '--interaction-norm-major-1': string;
-    '--interaction-norm-major-2': string;
-};
-
-export type Translations = {
-    cardNumberPlaceholder: string;
-    cardExpiryPlaceholder: string;
-    cardCvcPlaceholder: string;
-    invalidCardNumberMessage: string;
-    invalidCardExpiryMessage: string;
-    invalidCardCvcMessage: string;
-};
+export const translationKeys = [
+    'cardNumberPlaceholder',
+    'cardExpiryPlaceholder',
+    'cardCvcPlaceholder',
+    'invalidCardNumberMessage',
+    'invalidCardExpiryMessage',
+    'invalidCardCvcMessage',
+] as const;
+export const translationKeysSet = new Set(translationKeys);
+export type Translations = Record<(typeof translationKeys)[number], string>;
 
 type SharedConfig = {
     themeType: 'light' | 'dark';
@@ -57,30 +41,9 @@ type SharedConfig = {
 export type CbCardConfig = {
     paymentMethodType: 'card';
     renderMode: CardFormRenderMode;
-    cssVariables: CssVariables;
+    cssVariables: ChargebeeCssVariables;
     translations: Translations;
 } & SharedConfig;
-
-export type ChargebeeCssVariable = keyof CssVariables;
-export const chargebeeCssVariables: ChargebeeCssVariable[] = [
-    '--signal-danger',
-    '--border-radius-md',
-    '--border-norm',
-    '--focus-outline',
-    '--focus-ring',
-    '--field-norm',
-    '--field-background-color',
-    '--field-focus-background-color',
-    '--field-focus-text-color',
-    '--field-placeholder-color',
-    '--field-text-color',
-    '--selection-text-color',
-    '--selection-background-color',
-    '--interaction-norm',
-    '--interaction-norm-contrast',
-    '--interaction-norm-major-1',
-    '--interaction-norm-major-2',
-];
 
 export type CbPaypalConfig = {
     paymentMethodType: 'paypal';
@@ -327,7 +290,7 @@ export const chargebeeValidationErrorName = 'param_wrong_value';
 export const paymentAttemptRefusedChargebeeErrorName = 'PAYMENT_ATTEMPT_REFUSED';
 
 export type UpdateFieldsPayload = {
-    cssVariables: CssVariables;
+    cssVariables: ChargebeeCssVariables;
 };
 
 export type DirectDebitCustomerNameType = 'company' | 'individual';

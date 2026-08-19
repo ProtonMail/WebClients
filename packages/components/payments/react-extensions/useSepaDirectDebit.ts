@@ -3,7 +3,11 @@ import { useEffect, useRef, useState } from 'react';
 import { electronicFormatIBAN, isValidIBAN } from 'ibantools';
 import { c } from 'ttag';
 
-import type { DirectDebitBankAccount, DirectDebitCustomer, DirectDebitCustomerNameType } from '@proton/chargebee/lib';
+import type {
+    DirectDebitBankAccount,
+    DirectDebitCustomer,
+    DirectDebitCustomerNameType,
+} from '@proton/chargebee/lib/types';
 import { useLoading } from '@proton/hooks';
 import { type CreatePaymentIntentDirectDebitData, fetchPaymentIntentV5 } from '@proton/payments/core/api/api';
 import {

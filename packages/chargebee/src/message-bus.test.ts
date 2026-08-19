@@ -9,7 +9,7 @@ import type {
     PaymentIntent,
     PaypalAuthorizedPayload,
     ThreeDsChallengePayload,
-} from '../lib';
+} from '../lib/types';
 import { chargebeeWrapperVersion } from './checkpoints';
 import type {
     ChargebeeSubmitEvent,
@@ -58,6 +58,57 @@ it('should create message bus', () => {
     expect(messageBus).toBeInstanceOf(MessageBus);
 });
 
+it('should ignore messages from a foreign origin', () => {
+    const event: SetConfigurationEvent = {
+        type: 'set-configuration',
+        correlationId: 'id-1',
+        paymentMethodType: 'card',
+        publishableKey: 'pk',
+        site: 'site',
+        domain: 'domain',
+        cssVariables: {
+            '--signal-danger': '#000000',
+            '--border-radius-md': '#000000',
+            '--border-norm': '#000000',
+            '--focus-outline': '#000000',
+            '--focus-ring': '#000000',
+            '--field-norm': '#000000',
+            '--field-background-color': '#000000',
+            '--field-focus-background-color': '#000000',
+            '--field-focus-text-color': '#000000',
+            '--field-placeholder-color': '#000000',
+            '--field-text-color': '#000000',
+            '--selection-text-color': '#000000',
+            '--selection-background-color': '#000000',
+            '--interaction-norm': '#000000',
+            '--interaction-norm-contrast': '#000000',
+            '--interaction-norm-major-1': '#000000',
+            '--interaction-norm-major-2': '#000000',
+        },
+        translations: {
+            cardNumberPlaceholder: '0000 0000 0000 0000',
+            cardExpiryPlaceholder: 'MM/YY',
+            cardCvcPlaceholder: '000',
+            invalidCardNumberMessage: 'Invalid card number',
+            invalidCardExpiryMessage: 'Invalid card expiry',
+            invalidCardCvcMessage: 'Invalid card cvc',
+        },
+        renderMode: 'one-line',
+        themeType: 'light',
+    };
+
+    fireEvent(
+        window,
+        new MessageEvent('message', {
+            data: event,
+            source: window.parent,
+            origin: 'https://evil.example.com',
+        })
+    );
+
+    expect(messageBus?.onSetConfiguration).not.toHaveBeenCalled();
+});
+
 it('should listen to set configuration event', () => {
     const event: SetConfigurationEvent = {
         type: 'set-configuration',
@@ -101,6 +152,8 @@ it('should listen to set configuration event', () => {
         window,
         new MessageEvent('message', {
             data: event,
+            source: window.parent,
+            origin: expectedParentOrigin,
         })
     );
     expect(messageBus?.onSetConfiguration).toHaveBeenCalled();
@@ -141,6 +194,8 @@ it('should listen to submit event', () => {
         window,
         new MessageEvent('message', {
             data: event,
+            source: window.parent,
+            origin: expectedParentOrigin,
         })
     );
 
@@ -184,6 +239,8 @@ it('should listen to set paypal payment intent event', () => {
         window,
         new MessageEvent('message', {
             data: event,
+            source: window.parent,
+            origin: expectedParentOrigin,
         })
     );
 
@@ -227,6 +284,8 @@ it('should listen to get height event', () => {
         window,
         new MessageEvent('message', {
             data: event,
+            source: window.parent,
+            origin: expectedParentOrigin,
         })
     );
 
@@ -269,6 +328,8 @@ it('should listen to get bin event', () => {
         window,
         new MessageEvent('message', {
             data: event,
+            source: window.parent,
+            origin: expectedParentOrigin,
         })
     );
 
@@ -308,6 +369,8 @@ it('should listen to validate form event', () => {
         window,
         new MessageEvent('message', {
             data: event,
+            source: window.parent,
+            origin: expectedParentOrigin,
         })
     );
 
@@ -349,6 +412,8 @@ it('should listen to verify saved card event', () => {
         window,
         new MessageEvent('message', {
             data: event,
+            source: window.parent,
+            origin: expectedParentOrigin,
         })
     );
 
@@ -569,6 +634,8 @@ it('should listen to direct debit submit event', () => {
         window,
         new MessageEvent('message', {
             data: event,
+            source: window.parent,
+            origin: expectedParentOrigin,
         })
     );
 

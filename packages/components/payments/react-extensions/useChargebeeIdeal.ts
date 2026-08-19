@@ -1,6 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 
-import { type PaymentIntent, chargebeeValidationErrorName, isMessageBusResponseFailure } from '@proton/chargebee/lib';
+import {
+    type PaymentIntent,
+    chargebeeValidationErrorName,
+    isMessageBusResponseFailure,
+} from '@proton/chargebee/lib/types';
 import { useLoading } from '@proton/hooks';
 import { getTokenStatusV5 } from '@proton/payments/core/api/api';
 import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from '@proton/payments/core/constants';

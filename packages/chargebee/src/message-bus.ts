@@ -38,7 +38,7 @@ import type {
     ThreeDsRequiredForSavedCardMessage,
     UnhandledErrorMessage,
     UpdateFieldsPayload,
-} from '../lib';
+} from '../lib/types';
 import {
     applePayAuthorizedMessageType,
     applePayCancelledMessageType,
@@ -58,7 +58,7 @@ import {
     paypalFailedMessageType,
     threeDsChallengeMessageType,
     unhandledError,
-} from '../lib';
+} from '../lib/types';
 import { addCheckpoint, chargebeeWrapperVersion, getCheckpoints } from './checkpoints';
 import { getParentOrigin } from './get-parent-origin';
 
@@ -306,6 +306,12 @@ export interface ParentMessagesProps {
 
 // the event handler function must be async to make sure that we catch all errors, sync and async
 const getEventListener = (messageBus: MessageBus) => async (e: MessageEvent) => {
+    const parentOrigin = getParentOrigin(window.location.origin);
+    if (e.source !== window.parent || e.origin !== parentOrigin) {
+        addCheckpoint('skipped_untrusted_inbound_message', { origin: e.origin });
+        return;
+    }
+
     const parseEvent = (data: any) => {
         if (typeof data !== 'string') {
             return data;
