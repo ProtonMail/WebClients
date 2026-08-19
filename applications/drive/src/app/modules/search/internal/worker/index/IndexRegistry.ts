@@ -61,6 +61,7 @@ async function initWasm(): Promise<InitOutput> {
  */
 export class IndexRegistry {
     private readonly instances = new Map<IndexKind, IndexInstance>();
+    private readonly building = new Map<IndexKind, Promise<IndexInstance>>();
 
     constructor(private readonly cryptoKey: CryptoKey) {}
 
@@ -72,6 +73,25 @@ export class IndexRegistry {
         if (existing) {
             return existing;
         }
+
+        // A caller arriving while another build is in flight awaits the same promise instead of
+        // starting its own - otherwise concurrent first-time get()s for the same kind would each
+        // build a full engine, leaking every build but the last one that overwrites the map entry.
+        const inFlight = this.building.get(kind);
+        if (inFlight) {
+            return inFlight;
+        }
+
+        const promise = this.build(kind, db);
+        this.building.set(kind, promise);
+        try {
+            return await promise;
+        } finally {
+            this.building.delete(kind);
+        }
+    }
+
+    private async build(kind: IndexKind, db: SearchDB): Promise<IndexInstance> {
         await initWasm();
 
         const engine = engineCall('engine build', () => {
