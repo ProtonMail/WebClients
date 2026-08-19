@@ -2,13 +2,13 @@ import { type MutableRefObject, type RefObject, useEffect, useRef, useState } fr
 
 import { c } from 'ttag';
 
-import type { IdealAuthorizedPayload, SetIdealPaymentIntentPayload } from '@proton/chargebee/lib';
+import { type ChargebeeCssVariables, chargebeeCssVariablesSet } from '@proton/chargebee/lib/css-variables';
+import type { IdealAuthorizedPayload, SetIdealPaymentIntentPayload } from '@proton/chargebee/lib/types';
 import {
     type ApplePayAuthorizedPayload,
     type CardFormRenderMode,
     type CbCardConfig,
     type CbIframeConfig,
-    type ChargebeeCssVariable,
     type ChargebeeSavedCardAuthorizationSuccess,
     type ChargebeeSubmitDirectDebitEventPayload,
     type ChargebeeSubmitEventPayload,
@@ -22,7 +22,6 @@ import {
     type SetPaypalPaymentIntentPayload,
     type ThreeDsChallengePayload,
     type UpdateFieldsPayload,
-    chargebeeCssVariables,
     idealAuthorizedMessageType,
     isApplePayAuthorizedMessage,
     isApplePayCancelledMessage,
@@ -45,7 +44,7 @@ import {
     isThreeDsSuccessMessage,
     isUnhandledErrorMessage,
     paypalAuthorizedMessageType,
-} from '@proton/chargebee/lib';
+} from '@proton/chargebee/lib/types';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
@@ -154,6 +153,10 @@ function iframeAction<T>(
 
     const result = new Promise<T>((resolve, reject) => {
         function handleResponse(e: MessageEvent<any>) {
+            if (e.source !== iframeRef.current?.contentWindow) {
+                return;
+            }
+
             if (!eventListenerActive) {
                 return;
             }
@@ -337,16 +340,15 @@ function useChargebeeHandles(
         return () => chargebeeConfigurationAbortControllerRef.current?.abort();
     }, []);
 
-    const getCssVariables = (): Record<ChargebeeCssVariable, string> => {
+    const getCssVariables = (): ChargebeeCssVariables => {
         const style = getComputedStyle(iframeRef.current ?? document.documentElement);
 
-        return chargebeeCssVariables.reduce(
-            (acc, prop) => {
-                acc[prop] = style.getPropertyValue(prop);
-                return acc;
-            },
-            {} as Record<ChargebeeCssVariable, string>
-        );
+        const cssVariables = {} as ChargebeeCssVariables;
+        for (const prop of chargebeeCssVariablesSet) {
+            cssVariables[prop] = style.getPropertyValue(prop);
+        }
+
+        return cssVariables;
     };
 
     const getChargebeeCardTranslations = (): CbCardConfig['translations'] => {

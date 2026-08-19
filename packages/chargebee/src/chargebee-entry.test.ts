@@ -1,13 +1,32 @@
 import { fireEvent } from '@testing-library/dom';
 
-import type { BinData } from '../lib';
-import type { AuthorizedPaymentIntent, DirectDebitCustomer, PaymentIntent } from '../lib/types';
+import type {
+    AuthorizedPaymentIntent,
+    BinData,
+    DirectDebitCustomer,
+    PaymentIntent,
+} from '../lib/types';
 import { resetChargebee } from './chargebee';
 import { FALLBACK_EMAIL, formatCustomer, initialize } from './chargebee-entry';
 import type { DirectDebitSubmitEvent, GetHeightEvent, SetConfigurationEvent } from './message-bus';
 import { getMessageBus } from './message-bus';
 
 jest.mock('./ui-utils');
+
+Object.defineProperty(window, 'location', {
+    value: new URL('https://account-api.proton.me'),
+    writable: true,
+    configurable: true,
+});
+
+// jsdom does not dispatch `message` events for `window.parent.postMessage`, so route
+// the parent-targeted messages back to the iframe window to observe responses. The
+// dispatch is queued on the microtask queue so the response listener can register first.
+window.parent.postMessage = ((data: any, targetOrigin?: string) => {
+    queueMicrotask(() => {
+        window.dispatchEvent(new MessageEvent('message', { data, origin: targetOrigin, source: window.parent }));
+    });
+}) as typeof window.parent.postMessage;
 
 const createFieldMock = jest.fn().mockReturnValue({
     at: jest.fn().mockReturnValue({
@@ -127,6 +146,8 @@ function sendEventToChargebee(event: any) {
         window,
         new MessageEvent('message', {
             data: event,
+            source: window.parent,
+            origin: 'https://account.proton.me',
         })
     );
 }

@@ -1,4 +1,4 @@
-import type { ChargebeeInstanceConfiguration } from '../lib';
+import type { ChargebeeInstanceConfiguration } from '../lib/types';
 import { addCheckpoint } from './checkpoints';
 
 let chargebee: any | null = null;
