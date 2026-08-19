@@ -2,12 +2,16 @@ import type {
     AuthorizedPaymentIntent,
     CbCardConfig,
     CbIframeConfig,
-    CssVariables,
     DirectDebitCustomer,
     FormValidationErrors,
     MessageBusResponse,
     PaymentIntent,
-} from '../lib';
+} from '../lib/types';
+import {
+    type ChargebeeCssVariable,
+    type ChargebeeCssVariables,
+    sanitizeChargebeeCssVariables,
+} from '../lib/css-variables';
 import { getCanMakePaymentsWithActiveCard } from '../lib/getCanMakePaymentsWithActiveCard';
 import { createChargebee, getChargebeeInstance, pollUntilLoaded } from './chargebee';
 import { addCheckpoint } from './checkpoints';
@@ -55,15 +59,16 @@ function setTemplate(template: string) {
     getChargebeeFormWrapper().innerHTML = template;
 }
 
-function getCssVariable(name: string): string {
+function getCssVariable(name: ChargebeeCssVariable): string {
     const root = document.documentElement;
     const value = getComputedStyle(root).getPropertyValue(name);
     return value;
 }
 
-function setCssVariables(cssVariablesOverride?: CssVariables) {
+function setCssVariables(cssVariablesOverride?: ChargebeeCssVariables) {
     const cssVariablesFromConfiguration = (getConfiguration() as CbCardConfig).cssVariables;
-    const cssVariables = cssVariablesOverride ?? cssVariablesFromConfiguration;
+    const cssVariablesInput = cssVariablesOverride ?? cssVariablesFromConfiguration;
+    const cssVariables = sanitizeChargebeeCssVariables(cssVariablesInput);
 
     const root = document.documentElement;
     for (const [key, value] of Object.entries(cssVariables)) {
@@ -76,10 +81,11 @@ function hideError(element: HTMLDivElement) {
 }
 
 function renderError(element: HTMLDivElement, error: string) {
-    element.innerHTML = `
-        ${warningIcon}
-        <span>${error}</span>    
-    `;
+    element.innerHTML = warningIcon;
+
+    const errorSpan = document.createElement('span');
+    errorSpan.textContent = error;
+    element.appendChild(errorSpan);
 }
 
 function setCardFormRenderMode() {
@@ -129,16 +135,8 @@ async function renderCreditCardForm() {
     await cbInstance.load('components');
     addCheckpoint('card_loaded_components');
 
-    const fontFamily = `'Inter',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    Oxygen-Sans,
-    Ubuntu,
-    Cantarell,
-    'Helvetica Neue',
-    sans-serif`;
+    const fontFamily =
+        "'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif";
 
     const cardComponent = cbInstance.createComponent('card', {
         icon: false,
