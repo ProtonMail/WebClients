@@ -195,8 +195,11 @@ import type { HttpsProtonMeWebDriveSearchEnvironmentIncompatibilityTotalV1Schema
 import type { HttpsProtonMeWebDriveSearchIncrementalUpdateTotalV1SchemaJson } from './types/web_drive_search_incremental_update_total_v1.schema';
 import type { HttpsProtonMeWebDriveSearchIndexBuildTimeHistogramV2SchemaJson } from './types/web_drive_search_index_build_time_histogram_v2.schema';
 import type { HttpsProtonMeWebDriveSearchIndexSizeHistogramV2SchemaJson } from './types/web_drive_search_index_size_histogram_v2.schema';
-import type { HttpsProtonMeWebDriveSearchInitialIndexingTotalV1SchemaJson } from './types/web_drive_search_initial_indexing_total_v1.schema';
+import type { HttpsProtonMeWebDriveSearchInitialIndexingTotalV2SchemaJson } from './types/web_drive_search_initial_indexing_total_v2.schema';
+import type { HttpsProtonMeWebDriveSearchNodeQuarantinedTotalV1SchemaJson } from './types/web_drive_search_node_quarantined_total_v1.schema';
+import type { HttpsProtonMeWebDriveSearchNodeRepairedTotalV1SchemaJson } from './types/web_drive_search_node_repaired_total_v1.schema';
 import type { HttpsProtonMeWebDriveSearchOptInTotalV1SchemaJson } from './types/web_drive_search_opt_in_total_v1.schema';
+import type { HttpsProtonMeWebDriveSearchOtherErrorTotalV1SchemaJson } from './types/web_drive_search_other_error_total_v1.schema';
 import type { HttpsProtonMeWebDriveSearchPermanentErrorsTotalV1SchemaJson } from './types/web_drive_search_permanent_errors_total_v1.schema';
 import type { HttpsProtonMeWebDriveSearchQueryTimeHistogramV1SchemaJson } from './types/web_drive_search_query_time_histogram_v1.schema';
 import type { HttpsProtonMeWebDriveSearchQueryTotalV1SchemaJson } from './types/web_drive_search_query_total_v1.schema';
@@ -582,9 +585,15 @@ class Metrics extends MetricsBase {
 
     public drive_search_index_size_histogram: Histogram<HttpsProtonMeWebDriveSearchIndexSizeHistogramV2SchemaJson>;
 
-    public drive_search_initial_indexing_total: Counter<HttpsProtonMeWebDriveSearchInitialIndexingTotalV1SchemaJson>;
+    public drive_search_initial_indexing_total: Counter<HttpsProtonMeWebDriveSearchInitialIndexingTotalV2SchemaJson>;
+
+    public drive_search_node_quarantined_total: Counter<HttpsProtonMeWebDriveSearchNodeQuarantinedTotalV1SchemaJson>;
+
+    public drive_search_node_repaired_total: Counter<HttpsProtonMeWebDriveSearchNodeRepairedTotalV1SchemaJson>;
 
     public drive_search_opt_in_total: Counter<HttpsProtonMeWebDriveSearchOptInTotalV1SchemaJson>;
+
+    public drive_search_other_error_total: Counter<HttpsProtonMeWebDriveSearchOtherErrorTotalV1SchemaJson>;
 
     public drive_search_permanent_errors_total: Counter<HttpsProtonMeWebDriveSearchPermanentErrorsTotalV1SchemaJson>;
 
@@ -1614,13 +1623,29 @@ class Metrics extends MetricsBase {
             );
 
         this.drive_search_initial_indexing_total =
-            new Counter<HttpsProtonMeWebDriveSearchInitialIndexingTotalV1SchemaJson>(
-                { name: 'web_drive_search_initial_indexing_total', version: 1 },
+            new Counter<HttpsProtonMeWebDriveSearchInitialIndexingTotalV2SchemaJson>(
+                { name: 'web_drive_search_initial_indexing_total', version: 2 },
                 this.requestService
             );
 
+        this.drive_search_node_quarantined_total =
+            new Counter<HttpsProtonMeWebDriveSearchNodeQuarantinedTotalV1SchemaJson>(
+                { name: 'web_drive_search_node_quarantined_total', version: 1 },
+                this.requestService
+            );
+
+        this.drive_search_node_repaired_total = new Counter<HttpsProtonMeWebDriveSearchNodeRepairedTotalV1SchemaJson>(
+            { name: 'web_drive_search_node_repaired_total', version: 1 },
+            this.requestService
+        );
+
         this.drive_search_opt_in_total = new Counter<HttpsProtonMeWebDriveSearchOptInTotalV1SchemaJson>(
             { name: 'web_drive_search_opt_in_total', version: 1 },
+            this.requestService
+        );
+
+        this.drive_search_other_error_total = new Counter<HttpsProtonMeWebDriveSearchOtherErrorTotalV1SchemaJson>(
+            { name: 'web_drive_search_other_error_total', version: 1 },
             this.requestService
         );
 
