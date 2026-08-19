@@ -18,7 +18,7 @@ const ReferralPage = ({ routeConfig }: Props) => {
             <PrivateMainSettingsArea
                 config={routeConfig}
                 variant={SettingsLayoutVariant.Mobile}
-                mainAreaClass="lite-app-account-settings"
+                mainAreaClass="lite-app-account-settings bg-lowered"
             >
                 <InviteSection />
                 <RewardSection />

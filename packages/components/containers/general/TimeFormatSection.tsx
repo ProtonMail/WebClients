@@ -3,10 +3,11 @@ import { c } from 'ttag';
 import { userSettingsActions } from '@proton/account/userSettings';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import Option from '@proton/components/components/option/Option';
-import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
+import { SettingsSelectRow } from '@proton/components/containers/account/SettingsSelectRow';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
+import { IcClock } from '@proton/icons/icons/IcClock';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateTimeFormat } from '@proton/shared/lib/api/settings';
 import { dateLocaleCode } from '@proton/shared/lib/i18n';
@@ -15,9 +16,7 @@ import { loadDateLocale } from '@proton/shared/lib/i18n/loadLocale';
 import { SETTINGS_TIME_FORMAT, type UserSettings } from '@proton/shared/lib/interfaces';
 import { getDefaultTimeFormat } from '@proton/shared/lib/settings/helper';
 
-import SettingsLayout from '../account/SettingsLayout';
-import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
-import SettingsLayoutRight from '../account/SettingsLayoutRight';
+import { SettingsIconRow } from '../account/SettingsIconRow';
 import { getAutomaticText } from './helper';
 
 const TimeSection = () => {
@@ -44,32 +43,34 @@ const TimeSection = () => {
     const defaultFormat = getDefaultTimeFormat() === SETTINGS_TIME_FORMAT.H12 ? h12.title : h24.title;
 
     return (
-        <SettingsLayout>
-            <SettingsLayoutLeft>
-                <label className="text-semibold" htmlFor="time-format-select" id="label-time-format">
-                    {c('Label').t`Time format`}
-                </label>
-            </SettingsLayoutLeft>
-            <SettingsLayoutRight>
-                <SelectTwo
-                    id="time-format-select"
-                    value={userSettings.TimeFormat}
-                    loading={loading}
-                    onChange={({ value }) => withLoading(handleTimeFormat(value))}
-                    aria-describedby="label-time-format"
-                >
-                    {[
-                        {
-                            title: getAutomaticText(defaultFormat),
-                            value: SETTINGS_TIME_FORMAT.LOCALE_DEFAULT,
-                        },
-                        ...timeFormats,
-                    ].map((option) => (
-                        <Option key={option.value} {...option} />
-                    ))}
-                </SelectTwo>
-            </SettingsLayoutRight>
-        </SettingsLayout>
+        <SettingsIconRow icon={IcClock}>
+            <SettingsSelectRow
+                id="time-format-select"
+                label={
+                    <SettingsSelectRow.Label id="label-time-format">
+                        {c('Label').t`Time format`}
+                    </SettingsSelectRow.Label>
+                }
+                select={
+                    <SettingsSelectRow.Select
+                        value={userSettings.TimeFormat}
+                        loading={loading}
+                        onChange={({ value }) => withLoading(handleTimeFormat(value))}
+                        aria-describedby="label-time-format"
+                    >
+                        {[
+                            {
+                                title: getAutomaticText(defaultFormat),
+                                value: SETTINGS_TIME_FORMAT.LOCALE_DEFAULT,
+                            },
+                            ...timeFormats,
+                        ].map((option) => (
+                            <Option key={option.value} {...option} />
+                        ))}
+                    </SettingsSelectRow.Select>
+                }
+            />
+        </SettingsIconRow>
     );
 };
 

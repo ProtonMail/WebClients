@@ -200,7 +200,7 @@ export const OutgoingRecoveryContactSettings = ({
     return (
         <>
             {canAddRecoveryContact && (
-                <div className="mb-2">
+                <div>
                     <Button
                         // Non-sentinel users need to have a recovery method
                         disabled={userHasNoAccountRecoveryMethodSet && !isSentinelUser}
@@ -216,9 +216,9 @@ export const OutgoingRecoveryContactSettings = ({
                 </div>
             )}
 
-            <DashboardCard>
-                {passwordResetOptionRequiredWarning}
-                {controller.outgoingDelegatedAccess.recoveryContacts.items.length > 0 && (
+            {controller.outgoingDelegatedAccess.recoveryContacts.items.length > 0 && (
+                <DashboardCard>
+                    {passwordResetOptionRequiredWarning}
                     <DashboardCardContent>
                         <h3 className="text-semibold text-rg mb-3">{c('emergency_access')
                             .t`Your recovery contacts`}</h3>
@@ -233,8 +233,8 @@ export const OutgoingRecoveryContactSettings = ({
                         )}
                         <OutgoingTable controller={controller} />
                     </DashboardCardContent>
-                )}
-            </DashboardCard>
+                </DashboardCard>
+            )}
             <LastChanged
                 className="block mt-2"
                 date={controller.outgoingDelegatedAccess.recoveryContacts.lastModifiedTime}

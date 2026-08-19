@@ -6,13 +6,13 @@ import { selectAvailableRecoveryMethods } from '@proton/account/recovery/session
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Banner, BannerVariants } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
+import { DashboardCard, DashboardCardContent, DashboardCardDivider } from '@proton/atoms/DashboardCard/DashboardCard';
+import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import { Href } from '@proton/atoms/Href/Href';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { Pill } from '@proton/atoms/Pill/Pill';
 import { ButtonGroup } from '@proton/components/components/button/ButtonGroup';
-import Info from '@proton/components/components/link/Info';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import Toggle from '@proton/components/components/toggle/Toggle';
 import { setSecurityKeyRequirePinFlag } from '@proton/components/containers/account/fido/setSecurityKeyRequirePinFlag';
 import useConfig from '@proton/components/hooks/useConfig';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
@@ -20,7 +20,9 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { IcPen } from '@proton/icons/icons/IcPen';
+import { IcPinCode } from '@proton/icons/icons/IcPinCode';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
+import { IcSecurityKey } from '@proton/icons/icons/IcSecurityKey';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { useDispatch, useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { getHasFIDO2Support } from '@proton/shared/lib/authentication/twoFactor';
@@ -34,11 +36,8 @@ import { getId } from '@proton/shared/lib/webauthn/id';
 import { Fido2CredentialFlags } from '@proton/shared/lib/webauthn/interface';
 
 import LostTwoFAModal from './LostTwoFAModal';
-import SettingsLayout from './SettingsLayout';
-import SettingsLayoutLeft from './SettingsLayoutLeft';
-import SettingsLayoutRight from './SettingsLayoutRight';
-import SettingsParagraph from './SettingsParagraph';
-import SettingsSection from './SettingsSection';
+import { SettingsIconRow } from './SettingsIconRow';
+import { SettingsToggleRow } from './SettingsToggleRow';
 import AuthenticatorPromotionBanner from './authenticatorPromotion/AuthenticatorPromotionBanner';
 import AddSecurityKeyModal from './fido/AddSecurityKeyModal';
 import EditSecurityKeyModal from './fido/EditSecurityKeyModal';
@@ -117,44 +116,109 @@ const TwoFactorSection = () => {
         getHasWebAuthnSupport() && getHasFIDO2Support({ appName: APP_NAME, hostname: location.hostname });
 
     return (
-        <SettingsSection>
+        <DashboardGrid>
             {renderEnableTOTPModal && <EnableTOTPModal {...enableTOTPModal} />}
             {renderDisableTOTPModal && <DisableTOTPModal {...disableTOTPModal} />}
             {renderLostTwoFAModal && (
                 <LostTwoFAModal availableRecoveryMethods={availableRecoveryMethods} {...lostTwoFAPModal} />
             )}
-            <SettingsParagraph large>
-                {c('Info')
-                    .jt`Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.`}
-                <br />
-                <Href href={getKnowledgeBaseUrl('/two-factor-authentication-2fa')}>{c('Info').t`Learn more`}</Href>
-            </SettingsParagraph>
-            {(hasTOTPEnabled || hasFIDO2Enabled) && hasRecoveryMethod && (
-                <SettingsParagraph>
-                    <InlineLinkButton onClick={() => setLostTwoFAModal(true)}>
-                        {c('Action').t`Lost access to your 2FA device?`}
-                    </InlineLinkButton>
-                </SettingsParagraph>
-            )}
-            <SettingsLayout>
-                <SettingsLayoutLeft>
-                    <label htmlFor="twoFactorToggle" className="text-semibold">
-                        <span className="mr-2">{c('Label').t`Authenticator app`}</span>
-                        <Info
-                            url={twoFactorAuthLink}
-                            title={c('Info')
-                                .t`Verify your identity with a time-based one-time password from an authenticator app`}
+            <DashboardGridSectionHeader
+                title={c('Title').t`Two-factor authentication`}
+                subtitle={
+                    <>
+                        {c('Info')
+                            .jt`Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.`}{' '}
+                        <Href href={twoFactorAuthLink}>{c('Info').t`Learn more`}</Href>
+                        {(hasTOTPEnabled || hasFIDO2Enabled) && hasRecoveryMethod && (
+                            <>
+                                <br />
+                                <InlineLinkButton onClick={() => setLostTwoFAModal(true)}>
+                                    {c('Action').t`Lost access to your 2FA device?`}
+                                </InlineLinkButton>
+                            </>
+                        )}
+                    </>
+                }
+            />
+            <DashboardCard>
+                <DashboardCardContent>
+                    <SettingsIconRow icon={IcPinCode}>
+                        <SettingsToggleRow
+                            id="twoFactorToggle"
+                            label={
+                                <>
+                                    <SettingsToggleRow.Label>{c('Label').t`Authenticator app`}</SettingsToggleRow.Label>
+                                    <SettingsToggleRow.Description>
+                                        {c('Info')
+                                            .t`Verify your identity with a time-based one-time password from an authenticator app`}
+                                    </SettingsToggleRow.Description>
+                                </>
+                            }
+                            toggle={<SettingsToggleRow.Toggle checked={hasTOTPEnabled} onChange={handleChangeTOTP} />}
                         />
-                    </label>
-                </SettingsLayoutLeft>
-                <SettingsLayoutRight isToggleContainer>
-                    <Toggle checked={hasTOTPEnabled} id="twoFactorToggle" onChange={handleChangeTOTP} />
-                </SettingsLayoutRight>
-            </SettingsLayout>
+                    </SettingsIconRow>
+                    {hasSecurityKeySupport && (
+                        <>
+                            <DashboardCardDivider />
+                            <SettingsIconRow icon={IcSecurityKey}>
+                                <SettingsToggleRow
+                                    id="twoFactorKeyToggle"
+                                    label={
+                                        <>
+                                            <SettingsToggleRow.Label>{c('fido2: Info')
+                                                .t`Security key`}</SettingsToggleRow.Label>
+                                            <SettingsToggleRow.Description>
+                                                {c('fido2: Info')
+                                                    .t`Verify your identity with a physical U2F or FIDO2 security key`}
+                                            </SettingsToggleRow.Description>
+                                        </>
+                                    }
+                                    toggle={
+                                        <SettingsToggleRow.Toggle
+                                            checked={hasFIDO2Enabled}
+                                            onChange={handleChangeKey}
+                                        />
+                                    }
+                                />
+                            </SettingsIconRow>
+                            {registeredKeys.length > 0 && (
+                                <>
+                                    <DashboardCardDivider />
+                                    <SettingsIconRow icon={IcPinCode}>
+                                        <SettingsToggleRow
+                                            id="requireSecurityKey"
+                                            label={
+                                                <>
+                                                    <SettingsToggleRow.Label>{c('fido2: Info')
+                                                        .t`Require PIN for security key`}</SettingsToggleRow.Label>
+                                                    <SettingsToggleRow.Description>
+                                                        {c('fido2: Info')
+                                                            .t`Enter your PIN each time you use your security key with ${BRAND_NAME}, when the key supports it. This only applies to keys that have a PIN set up.`}
+                                                    </SettingsToggleRow.Description>
+                                                </>
+                                            }
+                                            toggle={
+                                                <SettingsToggleRow.Toggle
+                                                    loading={loading}
+                                                    checked={
+                                                        userSettings.Flags.Fido2CredentialsPinOptIn ===
+                                                        FIDO2_CREDENTIALS_PIN_VALUE.ENABLED
+                                                    }
+                                                    onChange={({ target: { checked } }) =>
+                                                        withLoading(handleSecurityKeyRequirePinToggle(checked))
+                                                    }
+                                                />
+                                            }
+                                        />
+                                    </SettingsIconRow>
+                                </>
+                            )}
+                        </>
+                    )}
+                </DashboardCardContent>
+            </DashboardCard>
             {hasFIDO2Enabled && !hasTOTPEnabled && (
-                <div className="mb-4">
-                    <Banner variant={BannerVariants.WARNING_OUTLINE}>{getSecurityKeySigningWarning()}</Banner>
-                </div>
+                <Banner variant={BannerVariants.WARNING_OUTLINE}>{getSecurityKeySigningWarning()}</Banner>
             )}
             {hasSecurityKeySupport && (
                 <>
@@ -181,140 +245,103 @@ const TwoFactorSection = () => {
                             }}
                         />
                     )}
-                    <SettingsLayout>
-                        <SettingsLayoutLeft>
-                            <label htmlFor="twoFactorKeyToggle" className="text-semibold">
-                                <span className="mr-2">{c('fido2: Info').t`Security key`}</span>
-                                <Info
-                                    url={twoFactorAuthLink}
-                                    title={c('fido2: Info')
-                                        .t`Verify your identity with a physical U2F or FIDO2 security key`}
-                                />
-                            </label>
-                        </SettingsLayoutLeft>
-                        <SettingsLayoutRight isToggleContainer>
-                            <Toggle checked={hasFIDO2Enabled} id="twoFactorKeyToggle" onChange={handleChangeKey} />
-                        </SettingsLayoutRight>
-                    </SettingsLayout>
                     {registeredKeys.length > 0 && (
-                        <SettingsLayout>
-                            <SettingsLayoutLeft>
-                                <label htmlFor="requireSecurityKey" className="text-semibold">
-                                    <span className="mr-2">{c('fido2: Info').t`Require PIN for security key`}</span>
-                                    <Info
-                                        url={twoFactorAuthLink}
-                                        title={c('fido2: Info')
-                                            .t`Enter your PIN each time you use your security key with ${BRAND_NAME}, when the key supports it. This only applies to keys that have a PIN set up.`}
-                                    />
-                                </label>
-                            </SettingsLayoutLeft>
-                            <SettingsLayoutRight isToggleContainer>
-                                <Toggle
-                                    loading={loading}
-                                    checked={
-                                        userSettings.Flags.Fido2CredentialsPinOptIn ===
-                                        FIDO2_CREDENTIALS_PIN_VALUE.ENABLED
-                                    }
-                                    id="requireSecurityKey"
-                                    onChange={({ target: { checked } }) =>
-                                        withLoading(handleSecurityKeyRequirePinToggle(checked))
-                                    }
-                                />
-                            </SettingsLayoutRight>
-                        </SettingsLayout>
-                    )}
-                    {registeredKeys.length > 0 && (
-                        <div className="mb-4">
-                            <div>
-                                {registeredKeys.length < maxSecurityKeyLength ? (
-                                    <Button
-                                        onClick={() => {
-                                            setAddSecurityKeyModal(true);
-                                        }}
-                                        className="flex flex-nowrap items-center"
-                                    >
-                                        <IcPlus className="mr-2" />
-                                        {c('fido2: Action').t`New security key`}
-                                    </Button>
-                                ) : (
-                                    <div className="flex gap-2 items-center flex-nowrap rounded bg-weak border p-2">
-                                        <IcInfoCircle size={4} className="shrink-0" />
-                                        <p className="m-0">
-                                            {c('fido2: Info').ngettext(
-                                                msgid`You've reached the maximum of ${maxSecurityKeyLength} security key.`,
-                                                `You've reached the maximum of ${maxSecurityKeyLength} security keys.`,
-                                                maxSecurityKeyLength
-                                            )}
-                                        </p>
-                                    </div>
-                                )}
-                            </div>
-                            <div className="mt-4 w-full">
-                                <div className="pb-2 border-bottom">
-                                    <span className="text-bold">{c('fido2: Title').t`Security keys`} </span>
-                                    <span className="color-weak">
-                                        ({registeredKeys.length}/{maxSecurityKeyLength})
-                                    </span>
-                                </div>
-                                {registeredKeys.map((registeredKey) => {
-                                    const id = getId(registeredKey);
-                                    const isCompromised = hasBit(registeredKey.Flags, Fido2CredentialFlags.Compromised);
-                                    return (
-                                        <div
-                                            key={id}
-                                            className="flex items-center py-2 gap-2 border-bottom"
-                                            data-testid="fido2:security-key"
+                        <DashboardCard>
+                            <DashboardCardContent>
+                                <div>
+                                    {registeredKeys.length < maxSecurityKeyLength ? (
+                                        <Button
+                                            onClick={() => {
+                                                setAddSecurityKeyModal(true);
+                                            }}
+                                            className="flex flex-nowrap items-center"
                                         >
-                                            <div className="flex-1 text-break items-center">
-                                                <span>{registeredKey.Name}</span>
-                                                {isCompromised && (
-                                                    <Pill
-                                                        color="#5C3700"
-                                                        backgroundColor="#F5D4A2"
-                                                        rounded="rounded-sm"
-                                                        className="ml-2 text-semibold text-center"
-                                                    >{c('Info').t`Compromised`}</Pill>
+                                            <IcPlus className="mr-2" />
+                                            {c('fido2: Action').t`New security key`}
+                                        </Button>
+                                    ) : (
+                                        <div className="flex gap-2 items-center flex-nowrap rounded bg-weak border p-2">
+                                            <IcInfoCircle size={4} className="shrink-0" />
+                                            <p className="m-0">
+                                                {c('fido2: Info').ngettext(
+                                                    msgid`You've reached the maximum of ${maxSecurityKeyLength} security key.`,
+                                                    `You've reached the maximum of ${maxSecurityKeyLength} security keys.`,
+                                                    maxSecurityKeyLength
                                                 )}
-                                            </div>
-                                            <ButtonGroup size="small">
-                                                <Button
-                                                    icon
-                                                    data-testid="fido2:edit-key"
-                                                    onClick={() => {
-                                                        setTmpEdit({
-                                                            id,
-                                                            name: registeredKey.Name,
-                                                        });
-                                                        setEditSecurityKeyModal(true);
-                                                    }}
-                                                >
-                                                    <IcPen />
-                                                </Button>
-                                                <Button
-                                                    icon
-                                                    data-testid="fido2:delete-key"
-                                                    onClick={() => {
-                                                        setTmpRemove({
-                                                            keys: [{ id, name: registeredKey.Name }],
-                                                            type: 'single',
-                                                        });
-                                                        setRemoveSecurityKeyModal(true);
-                                                    }}
-                                                >
-                                                    <IcTrash />
-                                                </Button>
-                                            </ButtonGroup>
+                                            </p>
                                         </div>
-                                    );
-                                })}
-                            </div>
-                        </div>
+                                    )}
+                                </div>
+                                <div className="mt-4 w-full">
+                                    <div className="pb-2 border-bottom">
+                                        <span className="text-bold">{c('fido2: Title').t`Security keys`} </span>
+                                        <span className="color-weak">
+                                            ({registeredKeys.length}/{maxSecurityKeyLength})
+                                        </span>
+                                    </div>
+                                    {registeredKeys.map((registeredKey) => {
+                                        const id = getId(registeredKey);
+                                        const isCompromised = hasBit(
+                                            registeredKey.Flags,
+                                            Fido2CredentialFlags.Compromised
+                                        );
+                                        return (
+                                            <div
+                                                key={id}
+                                                className="flex items-center py-2 gap-2 border-bottom"
+                                                data-testid="fido2:security-key"
+                                            >
+                                                <div className="flex-1 text-break items-center">
+                                                    <span>{registeredKey.Name}</span>
+                                                    {isCompromised && (
+                                                        <Pill
+                                                            color="#5C3700"
+                                                            backgroundColor="#F5D4A2"
+                                                            rounded="rounded-sm"
+                                                            className="ml-2 text-semibold text-center"
+                                                        >{c('Info').t`Compromised`}</Pill>
+                                                    )}
+                                                </div>
+                                                <ButtonGroup size="small">
+                                                    <Button
+                                                        icon
+                                                        data-testid="fido2:edit-key"
+                                                        onClick={() => {
+                                                            setTmpEdit({
+                                                                id,
+                                                                name: registeredKey.Name,
+                                                            });
+                                                            setEditSecurityKeyModal(true);
+                                                        }}
+                                                    >
+                                                        <IcPen />
+                                                    </Button>
+                                                    <Button
+                                                        icon
+                                                        data-testid="fido2:delete-key"
+                                                        onClick={() => {
+                                                            setTmpRemove({
+                                                                keys: [{ id, name: registeredKey.Name }],
+                                                                type: 'single',
+                                                            });
+                                                            setRemoveSecurityKeyModal(true);
+                                                        }}
+                                                    >
+                                                        <IcTrash />
+                                                    </Button>
+                                                </ButtonGroup>
+                                            </div>
+                                        );
+                                    })}
+                                </div>
+                            </DashboardCardContent>
+                        </DashboardCard>
                     )}
                 </>
             )}
 
-            <AuthenticatorPromotionBanner className="mt-8" flowId="2fa-settings" />
-        </SettingsSection>
+            <AuthenticatorPromotionBanner flowId="2fa-settings" />
+        </DashboardGrid>
     );
 };
 

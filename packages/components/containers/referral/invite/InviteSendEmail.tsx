@@ -149,7 +149,7 @@ const InviteSendEmail = ({ className }: { className?: string }) => {
 
     return (
         <div className={clsx('', className)}>
-            <h2 className="h3 text-bold" id="id_desc_invite_email">{c('Label').t`Invite via email`}</h2>
+            <h2 className="text-lg text-semibold mb-2" id="id_desc_invite_email">{c('Label').t`Invite via email`}</h2>
             <div className="rounded-lg border interactive interactive--no-background bg-none p-1">
                 <div className="flex gap-2 flex-nowrap items-center flex-column md:flex-row">
                     <div className="md:flex-1 w-full md:w-auto">
