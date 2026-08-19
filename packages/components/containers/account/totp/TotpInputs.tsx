@@ -56,7 +56,7 @@ export const TotpRecoveryCodeInputField = ({
         <>
             <div className="mb-4">
                 {c('Info')
-                    .jt`If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${learnMoreLink}`}
+                    .jt`If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${learnMoreLink}`}
             </div>
             <InputFieldTwo
                 label={c('Info').t`Enter code`}
