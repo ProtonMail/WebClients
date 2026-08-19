@@ -9863,7 +9863,7 @@
         "Kaikki jäsenet on lisätty."
       ],
       "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
-        "Kaikki viestit tullaan näyttämään saapuneissa, eikä kategorioiden välikehtiä tai tägejä enää näytetä. "
+        "Kaikki viestit tullaan näyttämään saapuneissa, eikä luokkien välikehtiä tai tägejä enää näytetä. "
       ],
       "All users": [
         "Kaikki käyttäjät"
@@ -11692,7 +11692,7 @@
         "Ota meihin yhteyttä saadaksesi apua mihin tahansa ${ BRAND_NAME }."
       ],
       "Receive notifications for ${ categoryLabel }": [
-        "Vastaanota ilmoituksia kategoriasta ${ categoryLabel }"
+        "Vastaanota ilmoituksia luokasta ${ categoryLabel }"
       ],
       "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
         "Vastaanota varauskuponki sähköpostitse. Sinä tai lapsi voitte käyttää sitä osoitteen aktivoimiseksi seuraavien 15 vuoden aikana. ${ learnMoreLink }"
@@ -14154,7 +14154,7 @@
         "Catch-all-sähköpostiosoite"
       ],
       "Categories": [
-        "Kategoriat"
+        "Luokat"
       ],
       "Category": [
         "Aihe"
@@ -15471,6 +15471,12 @@
       ],
       "ZIP code": [
         "Postinumero"
+      ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Kaikki, mikä vaatii huomiotasi, sekä sähköpostit poistetuista luokista"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Ensisijainen – kaikki, mikä vaatii huomiotasi, sekä sähköpostit poistetuista luokista"
       ]
     },
     "label": {
