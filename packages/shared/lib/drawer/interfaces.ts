@@ -62,6 +62,7 @@ export enum DRAWER_EVENTS {
     REQUEST_OPEN_EVENTS = 'outside-request-open-events',
     REFRESH_WIDGET = 'outside-refresh-widget',
     OPEN_CONTACT_MODAL = 'open-contact-modal',
+    OPEN_BUG_MODAL = 'open-bug-modal',
 }
 
 // Global inside iframe events
@@ -214,6 +215,16 @@ type OPEN_CONTACT_MODAL =
           };
       };
 
+export interface BugModalPrefill {
+    description?: string;
+    category?: string;
+}
+
+type OPEN_BUG_MODAL = {
+    type: DRAWER_EVENTS.OPEN_BUG_MODAL;
+    payload?: BugModalPrefill;
+};
+
 export type DRAWER_ACTION =
     | CLOSE
     | SHOW
@@ -232,7 +243,8 @@ export type DRAWER_ACTION =
     | UNSET_WIDGET_EVENT
     | REQUEST_OPEN_EVENTS
     | REFRESH_WIDGET
-    | OPEN_CONTACT_MODAL;
+    | OPEN_CONTACT_MODAL
+    | OPEN_BUG_MODAL;
 
 /**
  * QUICK SETTINGS
