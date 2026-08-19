@@ -4,13 +4,17 @@ import { useHistory } from 'react-router-dom';
 
 import LumoAgentDrawerContext from '@proton/components/components/drawer/views/lumoAgent/lumoAgentDrawerContext';
 import useLumoAgent from '@proton/components/components/lumoAgent/useLumoAgent';
+import { FILTER_VERSION } from '@proton/components/containers/filters/constants';
+import useApi from '@proton/components/hooks/useApi';
 import { defaultESStatus } from '@proton/encrypted-search/constants';
 import type { ESStatusBooleans } from '@proton/encrypted-search/models';
 import { useCategoriesData } from '@proton/mail/features/categoriesView/useCategoriesData';
+import { addFilter as addFilterAction, updateFilter as updateFilterAction } from '@proton/mail/store/filters/actions';
 import { useFilters } from '@proton/mail/store/filters/hooks';
 import { createLabel as createLabelAction, updateLabel as updateLabelAction } from '@proton/mail/store/labels/actions';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
+import { checkSieveFilter } from '@proton/shared/lib/api/filters';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { useApplyLocation } from '../../hooks/actions/applyLocation/useApplyLocation';
@@ -21,6 +25,8 @@ import { load as loadConversationAction } from '../../store/conversations/conver
 import { backendActionStarted, markAll as markAllAction } from '../../store/elements/elementsActions';
 import { useMailDispatch, useMailStore } from '../../store/hooks';
 
+import type { SieveIssue } from '../helpers/sieve';
+import { assertSieveValid } from '../helpers/sieve';
 import { buildLumoMailConfig } from '../registry';
 import type { MailToolDeps } from '../toolModule';
 
@@ -52,6 +58,7 @@ const discardResult = async (mutation: Promise<unknown>): Promise<void> => {
 const LumoMailProvider = ({ children }: Props) => {
     const store = useMailStore();
     const dispatch = useMailDispatch();
+    const api = useApi();
     const history = useHistory();
     const { applyLocation, applyMultipleLocations } = useApplyLocation();
     const { markAs } = useMarkAs();
@@ -71,6 +78,7 @@ const LumoMailProvider = ({ children }: Props) => {
     const current = {
         store,
         dispatch,
+        api,
         history,
         applyLocation,
         applyMultipleLocations,
@@ -118,6 +126,14 @@ const LumoMailProvider = ({ children }: Props) => {
             snooze: (params, sourceAction) => latest.current.snooze(params, sourceAction),
             createLabel: (params) => latest.current.dispatch(createLabelAction(params)),
             updateLabel: (params) => discardResult(latest.current.dispatch(updateLabelAction(params))),
+            addFilter: (filter) => latest.current.dispatch(addFilterAction({ filter })),
+            updateFilter: (id, filter) => discardResult(latest.current.dispatch(updateFilterAction({ id, filter }))),
+            validateSieve: async (sieve) => {
+                const { Issues = [] } = await latest.current.api<{ Issues?: SieveIssue[] }>(
+                    checkSieveFilter({ Version: FILTER_VERSION, Sieve: sieve })
+                );
+                assertSieveValid(Issues);
+            },
             getESStatus: () => esStatus.current,
             // Unwrapped so a failed fetch rejects: dispatching a thunk resolves with a rejected action.
             loadConversation: (conversationID) =>
