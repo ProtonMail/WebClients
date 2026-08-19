@@ -1,4 +1,4 @@
-import type { JSXElementConstructor, ReactNode } from 'react';
+import type { ComponentType, JSXElementConstructor, ReactNode } from 'react';
 
 import type { ButtonLikeShape, ButtonLikeSize } from '@proton/atoms/Button/ButtonLike';
 import type { FeatureCode } from '@proton/features';
@@ -7,7 +7,10 @@ import type { COUPON_CODES, CYCLE } from '@proton/payments/core/constants';
 import type { Currency, PlanIDs } from '@proton/payments/core/interface';
 import type { Optional } from '@proton/shared/lib/interfaces';
 
-export type OfferId = 'go-unlimited-2022' | 'mail-trial-2023' | 'pass-family-plan-2024-yearly';
+import type { OfferProduct } from './helpers/getOfferProduct';
+import type { Q3Sale2026OfferId } from './operations/q3Sale2026offers';
+
+export type OfferId = 'go-unlimited-2022' | 'mail-trial-2023' | 'pass-family-plan-2024-yearly' | Q3Sale2026OfferId;
 
 export type OfferGlobalFeatureCodeValue = Record<OfferId, boolean>;
 
@@ -15,6 +18,7 @@ export enum OfferUserFeatureCodeValue {
     Default = 0,
     Visited = 1,
     Hide = 2,
+    ReplayConsumed = 4,
 }
 
 export interface OfferProps {
@@ -40,6 +44,7 @@ export interface OfferImages {
     sideImage2x?: string;
     bannerImage?: string;
     bannerImage2x?: string;
+    modalImage?: string;
 }
 
 export interface OfferDealSaveSentenceType {
@@ -50,6 +55,7 @@ export interface OfferConfig {
     ID: OfferId;
     featureCode: FeatureCode;
     autoPopUp?: 'each-time' | 'one-time';
+    replayAutoPopUp?: boolean;
     title?: () => string;
     subTitle?: () => string;
     canBeDisabled?: boolean;
@@ -63,6 +69,7 @@ export interface OfferConfig {
         iconGradient?: boolean;
         iconSize?: IconSize;
         icon?: IconName;
+        iconContent?: ComponentType;
         getCTAContent?: () => string;
         variant?: string;
     };
@@ -87,9 +94,15 @@ export interface Feature {
 export interface Deal {
     couponCode?: COUPON_CODES;
     ref: string;
+    /**
+     * Derives the tracking ref from the plan the user is currently on and the app they are in, both of
+     * which are only known at runtime. Format is
+     * `offer_<campaign>_<currentPlan>_<offerPlan>_<app>_web`. Falls back to `ref` when absent.
+     */
+    getRef?: (product: OfferProduct, currentPlan: string) => string;
     cycle: CYCLE;
     isLifeTime?: boolean;
-    features?: () => Feature[];
+    features?: (product: OfferProduct) => Feature[];
     getCTAContent?: () => string;
     buttonSize?: ButtonLikeSize;
     planIDs: PlanIDs; // planIDs used to subscribe
