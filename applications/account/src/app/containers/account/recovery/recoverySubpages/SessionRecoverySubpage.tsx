@@ -14,9 +14,7 @@ import Loader from '@proton/components/components/loader/Loader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import ChangePasswordModal, { MODES } from '@proton/components/containers/account/ChangePasswordModal';
 import ReauthUsingRecoveryModal from '@proton/components/containers/account/ReauthUsingRecoveryModal';
-import SettingsDescription, {
-    SettingsDescriptionItem,
-} from '@proton/components/containers/account/SettingsDescription';
+import SettingsDescription from '@proton/components/containers/account/SettingsDescription';
 import { SettingsToggleRow } from '@proton/components/containers/account/SettingsToggleRow';
 import InitiateSessionRecoveryModal from '@proton/components/containers/account/sessionRecovery/InitiateSessionRecoveryModal';
 import ConfirmDisableSessionRecoveryModal from '@proton/components/containers/recovery/ConfirmDisableSessionRecoveryModal';
@@ -127,19 +125,6 @@ export const SessionRecoverySubpage = () => {
             )}
             <DashboardGrid>
                 <SettingsDescription
-                    left={
-                        <>
-                            <SettingsDescriptionItem>
-                                {c('Info')
-                                    .t`Allowing the password reset from the settings lets you to change your password if you’ve lost it, but are still signed in to ${BRAND_NAME}.`}
-                            </SettingsDescriptionItem>
-                            <SettingsDescriptionItem>
-                                {c('Info').t`It’s often the easiest way to recover your account if you’re signed in.`}{' '}
-                                <Href key="learn" href={getKnowledgeBaseUrl('/signed-in-reset')}>{c('Link')
-                                    .t`Learn more`}</Href>
-                            </SettingsDescriptionItem>
-                        </>
-                    }
                     right={
                         <img
                             src={isDarkTheme ? darkIllustration : illustration}
@@ -149,7 +134,17 @@ export const SessionRecoverySubpage = () => {
                             height={80}
                         />
                     }
-                />
+                >
+                    <SettingsDescription.Item>
+                        {c('Info')
+                            .t`Allowing the password reset from the settings lets you to change your password if you’ve lost it, but are still signed in to ${BRAND_NAME}.`}
+                    </SettingsDescription.Item>
+                    <SettingsDescription.Item>
+                        {c('Info').t`It’s often the easiest way to recover your account if you’re signed in.`}{' '}
+                        <Href key="learn" href={getKnowledgeBaseUrl('/signed-in-reset')}>{c('Link')
+                            .t`Learn more`}</Href>
+                    </SettingsDescription.Item>
+                </SettingsDescription>
                 <DashboardCard>
                     <DashboardCardContent>
                         <SettingsToggleRow

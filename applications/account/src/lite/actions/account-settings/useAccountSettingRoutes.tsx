@@ -206,6 +206,7 @@ export const useAccountSettingRoutes = () => {
                 },
                 {
                     text: c('Title').t`Delete account`,
+                    invisibleTitle: true,
                     id: 'delete',
                     available: user.isSelf && (user.Type === UserType.PROTON || user.Type === UserType.EXTERNAL),
                 },

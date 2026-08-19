@@ -8,9 +8,7 @@ import { DashboardGrid } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import { Href } from '@proton/atoms/Href/Href';
 import Loader from '@proton/components/components/loader/Loader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import SettingsDescription, {
-    SettingsDescriptionItem,
-} from '@proton/components/containers/account/SettingsDescription';
+import SettingsDescription from '@proton/components/containers/account/SettingsDescription';
 import { SettingsToggleRow } from '@proton/components/containers/account/SettingsToggleRow';
 import { LastChanged } from '@proton/components/containers/recovery/LastChanged';
 import SignInWithAnotherDeviceModal from '@proton/components/containers/recovery/SignInWithAnotherDeviceModal';
@@ -60,20 +58,6 @@ const SignInWithAnotherDeviceSubpage = () => {
             {renderModalState && <SignInWithAnotherDeviceModal {...modalProps} />}
             <DashboardGrid>
                 <SettingsDescription
-                    left={
-                        <>
-                            <SettingsDescriptionItem>
-                                {c('Info')
-                                    .t`Allowing QR code sign-in will let you sign in by scanning a QR code if you forget your password. All you need is to be signed in to a ${BRAND_NAME} service on another device.`}{' '}
-                            </SettingsDescriptionItem>
-                            <SettingsDescriptionItem>
-                                {c('Info')
-                                    .t`This will let you quickly and safely access your ${BRAND_NAME} Account so you can change you password.`}{' '}
-                                <Href key="learn" href={getKnowledgeBaseUrl('/qr-code-sign-in')}>{c('Link')
-                                    .t`Learn more`}</Href>
-                            </SettingsDescriptionItem>
-                        </>
-                    }
                     right={
                         <img
                             src={isDarkTheme ? darkIllustration : illustration}
@@ -83,7 +67,18 @@ const SignInWithAnotherDeviceSubpage = () => {
                             height={80}
                         />
                     }
-                />
+                >
+                    <SettingsDescription.Item>
+                        {c('Info')
+                            .t`Allowing QR code sign-in will let you sign in by scanning a QR code if you forget your password. All you need is to be signed in to a ${BRAND_NAME} service on another device.`}{' '}
+                    </SettingsDescription.Item>
+                    <SettingsDescription.Item>
+                        {c('Info')
+                            .t`This will let you quickly and safely access your ${BRAND_NAME} Account so you can change you password.`}{' '}
+                        <Href key="learn" href={getKnowledgeBaseUrl('/qr-code-sign-in')}>{c('Link')
+                            .t`Learn more`}</Href>
+                    </SettingsDescription.Item>
+                </SettingsDescription>
                 <DashboardCard>
                     <DashboardCardContent>
                         <SettingsToggleRow
