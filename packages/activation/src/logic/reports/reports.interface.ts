@@ -1,5 +1,5 @@
-import type { ApiReport, ApiReportState, ApiReportSummary } from '@proton/activation/src/api/api.interface';
-import type { ImportType } from '@proton/activation/src/interface';
+import type { ApiReport, ApiReportState, ApiReportSummary } from '../../api/api.interface';
+import type { ImportType } from '../../interface';
 
 export type Report = {
     ID: ApiReport['ID'];

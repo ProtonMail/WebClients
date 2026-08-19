@@ -1,9 +1,10 @@
 import { renderToStaticMarkup } from 'react-dom/server';
 
-import { openOAuthPopup } from '@proton/activation/src/helpers/oAuthPopup';
-import { OAUTH_PROVIDER } from '@proton/activation/src/interface';
 import { GOOGLE_OAUTH_PATH } from '@proton/shared/lib/api/activation';
 import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
+
+import { OAUTH_PROVIDER } from '../interface';
+import { openOAuthPopup } from './oAuthPopup';
 
 jest.mock('@proton/shared/lib/desktop/ipcHelpers', () => ({
     invokeInboxDesktopIPC: jest.fn(),
@@ -12,7 +13,7 @@ jest.mock('@proton/shared/lib/desktop/ipcHelpers', () => ({
 jest.mock('@proton/shared/lib/helpers/uid', () => ({
     generateProtonWebUID: jest.fn(() => 'mock-uid'),
 }));
-jest.mock('@proton/activation/src/hooks/useOAuthPopup.helpers', () => ({
+jest.mock('../hooks/useOAuthPopup.helpers', () => ({
     getProviderNumber: jest.fn(() => 42),
 }));
 

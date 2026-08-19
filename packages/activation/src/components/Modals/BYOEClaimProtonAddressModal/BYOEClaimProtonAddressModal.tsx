@@ -3,7 +3,6 @@ import { type FormEvent, useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { setupExternalUserForProton } from '@proton/account/addresses/actions';
-import useBYOEAddressData from '@proton/activation/src/hooks/useBYOEAddressData';
 import { Button } from '@proton/atoms/Button/Button';
 import {
     Form,
@@ -40,6 +39,7 @@ import type { CalendarUserSettings, VisualCalendar } from '@proton/shared/lib/in
 import claimProtonAddressImg from '@proton/styles/assets/img/illustrations/claim-proton-address.svg';
 
 import type { BYOE_CLAIM_PROTON_ADDRESS_SOURCE } from '../../../constants';
+import useBYOEAddressData from '../../../hooks/useBYOEAddressData';
 
 interface Props extends ModalProps {
     toApp: APP_NAMES;

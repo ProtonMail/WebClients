@@ -2,22 +2,6 @@ import { c } from 'ttag';
 
 import { updateBYOEAddressConnection } from '@proton/account/addressKeys/actions';
 import { useUser } from '@proton/account/user/hooks';
-import useOAuthPopup from '@proton/activation/src/hooks/useOAuthPopup';
-import {
-    EASY_SWITCH_FEATURES,
-    EASY_SWITCH_SOURCES,
-    type ImportToken,
-    OAUTH_PROVIDER,
-    type OAuthProps,
-} from '@proton/activation/src/interface';
-import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
-import {
-    SyncTokenStrategy,
-    createSyncItem,
-    deleteSyncItem,
-    resumeSyncItem,
-} from '@proton/activation/src/logic/sync/sync.actions';
-import { selectSyncByEmail } from '@proton/activation/src/logic/sync/sync.selectors';
 import { useApi, useErrorHandler, useNotifications } from '@proton/components';
 import type { WithLoading } from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
@@ -27,7 +11,18 @@ import { hasPaidMail } from '@proton/shared/lib/user/helpers';
 
 import { getTokensByFeature } from '../api';
 import { MAX_SYNC_FREE_USER, MAX_SYNC_PAID_USER } from '../constants';
+import {
+    EASY_SWITCH_FEATURES,
+    EASY_SWITCH_SOURCES,
+    type ImportToken,
+    OAUTH_PROVIDER,
+    type OAuthProps,
+} from '../interface';
+import { useEasySwitchDispatch, useEasySwitchSelector } from '../logic/store';
+import { SyncTokenStrategy, createSyncItem, deleteSyncItem, resumeSyncItem } from '../logic/sync/sync.actions';
+import { selectSyncByEmail } from '../logic/sync/sync.selectors';
 import useBYOEAddressesCounts from './useBYOEAddressesCounts';
+import useOAuthPopup from './useOAuthPopup';
 
 const useReconnectSync = (address: Address) => {
     const api = useApi();

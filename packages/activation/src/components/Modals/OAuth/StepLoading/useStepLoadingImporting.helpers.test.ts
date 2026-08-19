@@ -1,14 +1,14 @@
 import type { ProtonDriveClient } from '@protontech/drive-sdk';
 
-import type { LaunchImportPayload } from '@proton/activation/src/interface';
-import { ImportType } from '@proton/activation/src/interface';
-import { changeOAuthStep, resetOauthDraft } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.actions';
-import type { ImporterData } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.interface';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { Address, Api } from '@proton/shared/lib/interfaces';
 import type { Calendar } from '@proton/shared/lib/interfaces/calendar';
 import type { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
 
+import type { LaunchImportPayload } from '../../../../interface';
+import { ImportType } from '../../../../interface';
+import { changeOAuthStep, resetOauthDraft } from '../../../../logic/draft/oauthDraft/oauthDraft.actions';
+import type { ImporterData } from '../../../../logic/draft/oauthDraft/oauthDraft.interface';
 import { createImporterTask } from './useStepLoadingImporting.helpers';
 
 // We only need splitNodeUid - node UIDs are `${volumeId}~${nodeId}`.

@@ -1,9 +1,10 @@
 import type { ReactNode } from 'react';
 
-import { ProductItem } from '@proton/activation/src/components/Modals/ProductSelectionModal/ProductItem';
-import type { ImportType } from '@proton/activation/src/interface';
 import { Checkbox, Label } from '@proton/components';
 import clsx from '@proton/utils/clsx';
+
+import type { ImportType } from '../../../interface';
+import { ProductItem } from './ProductItem';
 
 interface Props {
     product: ImportType;

@@ -1,28 +1,22 @@
 import { c } from 'ttag';
 
-import { createToken, getTokensByFeature, resumeImport, updateImport } from '@proton/activation/src/api';
-import { ApiImporterError, ApiImporterState } from '@proton/activation/src/api/api.interface';
-import { getImportProviderFromApiProvider } from '@proton/activation/src/helpers/getImportProviderFromApiProvider';
-import useOAuthPopup from '@proton/activation/src/hooks/useOAuthPopup';
-import {
-    getEasySwitchFeaturesFromProducts,
-    getProviderNumber,
-} from '@proton/activation/src/hooks/useOAuthPopup.helpers';
-import type { ImportToken, OAuthProps } from '@proton/activation/src/interface';
-import { AuthenticationMethod, EASY_SWITCH_SOURCES } from '@proton/activation/src/interface';
-import { reconnectImapImport } from '@proton/activation/src/logic/draft/imapDraft/imapDraft.actions';
-import { cancelImporter } from '@proton/activation/src/logic/importers/importers.actions';
-import type { ActiveImportID } from '@proton/activation/src/logic/importers/importers.interface';
-import {
-    selectActiveImporterById,
-    selectImporterById,
-} from '@proton/activation/src/logic/importers/importers.selectors';
-import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { Button } from '@proton/atoms/Button/Button';
 import { Prompt, useApi, useEventManager, useModalState, useNotifications } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
+import { createToken, getTokensByFeature, resumeImport, updateImport } from '../../../api';
+import { ApiImporterError, ApiImporterState } from '../../../api/api.interface';
+import { getImportProviderFromApiProvider } from '../../../helpers/getImportProviderFromApiProvider';
+import useOAuthPopup from '../../../hooks/useOAuthPopup';
+import { getEasySwitchFeaturesFromProducts, getProviderNumber } from '../../../hooks/useOAuthPopup.helpers';
+import type { ImportToken, OAuthProps } from '../../../interface';
+import { AuthenticationMethod, EASY_SWITCH_SOURCES } from '../../../interface';
+import { reconnectImapImport } from '../../../logic/draft/imapDraft/imapDraft.actions';
+import { cancelImporter } from '../../../logic/importers/importers.actions';
+import type { ActiveImportID } from '../../../logic/importers/importers.interface';
+import { selectActiveImporterById, selectImporterById } from '../../../logic/importers/importers.selectors';
+import { useEasySwitchDispatch, useEasySwitchSelector } from '../../../logic/store';
 import { getScopeFromProvider } from '../../Modals/OAuth/OAuthModal.helpers';
 
 interface Props {

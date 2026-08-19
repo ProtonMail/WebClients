@@ -1,23 +1,24 @@
 import { fireEvent, screen, waitFor } from '@testing-library/react';
 
-import { GmailSyncModal } from '@proton/activation/index';
-import { EASY_SWITCH_SOURCES } from '@proton/activation/src/interface';
-import { easySwitchRender } from '@proton/activation/src/tests/render';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
-jest.mock('@proton/activation/src/logic/StoreProvider', () => ({
+import { GmailSyncModal } from '../../../../index';
+import { EASY_SWITCH_SOURCES } from '../../../interface';
+import { easySwitchRender } from '../../../tests/render';
+
+jest.mock('../../../logic/StoreProvider', () => ({
     __esModule: true,
     default: ({ children }: any) => children,
 }));
 
 const mockDispatch = jest.fn();
 
-jest.mock('@proton/activation/src/logic/store', () => ({
+jest.mock('../../../logic/store', () => ({
     useEasySwitchDispatch: () => mockDispatch,
     useEasySwitchSelector: jest.fn(() => undefined),
 }));
 
-jest.mock('@proton/activation/src/hooks/useOAuthPopup', () => ({
+jest.mock('../../../hooks/useOAuthPopup', () => ({
     __esModule: true,
     default: () => ({
         triggerOAuthPopup: jest.fn().mockImplementation(async ({ callback }: { callback: Function }) => {
@@ -27,8 +28,8 @@ jest.mock('@proton/activation/src/hooks/useOAuthPopup', () => ({
     }),
 }));
 
-jest.mock('@proton/activation/src/logic/sync/sync.actions', () => ({
-    ...jest.requireActual('@proton/activation/src/logic/sync/sync.actions'),
+jest.mock('../../../logic/sync/sync.actions', () => ({
+    ...jest.requireActual('../../../logic/sync/sync.actions'),
     changeCreateLoadingState: jest.fn(),
     createSyncItem: jest.fn(() => ({ type: 'sync/create/fulfilled' })),
     createTokenItem: jest.fn(() => ({ type: 'token/create/fulfilled' })),

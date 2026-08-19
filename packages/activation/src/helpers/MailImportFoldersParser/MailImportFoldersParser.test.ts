@@ -1,6 +1,5 @@
-import type { ApiMailImporterFolder } from '@proton/activation/src/api/api.interface';
-import { MailImportDestinationFolder } from '@proton/activation/src/interface';
-
+import type { ApiMailImporterFolder } from '../../api/api.interface';
+import { MailImportDestinationFolder } from '../../interface';
 import type { MailImportFolder } from './MailImportFoldersParser';
 import MailImportFoldersParser from './MailImportFoldersParser';
 

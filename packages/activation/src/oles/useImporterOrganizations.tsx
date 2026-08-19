@@ -1,11 +1,11 @@
 import { type ReactNode, createContext, useCallback, useContext, useEffect, useState } from 'react';
 
-import { getJoiningLink, getOrganizationImporter } from '@proton/activation/src/api';
-import type { ApiImporterOrganization, ApiJoiningLinkData } from '@proton/activation/src/api/api.interface';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import noop from '@proton/utils/noop';
 
+import { getJoiningLink, getOrganizationImporter } from '../api';
+import type { ApiImporterOrganization, ApiJoiningLinkData } from '../api/api.interface';
 import { parseJoiningLinkData } from './thunk';
 import type { JoiningLink } from './types';
 

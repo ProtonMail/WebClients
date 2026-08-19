@@ -1,8 +1,7 @@
 import { fireEvent, screen } from '@testing-library/dom';
 
-import { MailImportPayloadError } from '@proton/activation/src/interface';
-import { easySwitchRender } from '@proton/activation/src/tests/render';
-
+import { MailImportPayloadError } from '../../../../../interface';
+import { easySwitchRender } from '../../../../../tests/render';
 import ManageFolderRowInput from './ManageFoldersRowInput';
 
 describe('ManageFoldersRowInput', () => {

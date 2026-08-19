@@ -2,13 +2,13 @@ import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { IA_PATHNAME_REGEX } from '@proton/activation/src/constants';
-import { resetImapDraft } from '@proton/activation/src/logic/draft/imapDraft/imapDraft.actions';
-import { selectImapDraftMailImport } from '@proton/activation/src/logic/draft/imapDraft/imapDraft.selector';
-import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { Button } from '@proton/atoms/Button/Button';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, useSettingsLink } from '@proton/components';
 
+import { IA_PATHNAME_REGEX } from '../../../../../constants';
+import { resetImapDraft } from '../../../../../logic/draft/imapDraft/imapDraft.actions';
+import { selectImapDraftMailImport } from '../../../../../logic/draft/imapDraft/imapDraft.selector';
+import { useEasySwitchDispatch, useEasySwitchSelector } from '../../../../../logic/store';
 import StepImportingContent from './StepImportingContent';
 
 const StepImporting = () => {

@@ -4,13 +4,6 @@ import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { MAX_SYNC_FREE_USER, MAX_SYNC_PAID_USER } from '@proton/activation/src/constants';
-import useBYOEFeatureStatus from '@proton/activation/src/hooks/useBYOEFeatureStatus';
-import useSetupGmailBYOEAddress from '@proton/activation/src/hooks/useSetupGmailBYOEAddress';
-import type { EASY_SWITCH_SOURCES } from '@proton/activation/src/interface';
-import { setBYOEFlowResult } from '@proton/activation/src/logic/byoeFlow/byoeFlow.slice';
-import { useEasySwitchDispatch } from '@proton/activation/src/logic/store';
-import { changeCreateLoadingState } from '@proton/activation/src/logic/sync/sync.actions';
 import { Button } from '@proton/atoms/Button/Button';
 import { useModalState } from '@proton/components';
 import useNotifications from '@proton/components/hooks/useNotifications';
@@ -18,7 +11,14 @@ import { hasPaidMail } from '@proton/shared/lib/user/helpers';
 import googleLogo from '@proton/styles/assets/img/import/providers/google.svg';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import { MAX_SYNC_FREE_USER, MAX_SYNC_PAID_USER } from '../../constants';
 import useBYOEAddressesCounts from '../../hooks/useBYOEAddressesCounts';
+import useBYOEFeatureStatus from '../../hooks/useBYOEFeatureStatus';
+import useSetupGmailBYOEAddress from '../../hooks/useSetupGmailBYOEAddress';
+import type { EASY_SWITCH_SOURCES } from '../../interface';
+import { setBYOEFlowResult } from '../../logic/byoeFlow/byoeFlow.slice';
+import { useEasySwitchDispatch } from '../../logic/store';
+import { changeCreateLoadingState } from '../../logic/sync/sync.actions';
 import AddressLinkedToAnotherAccountModal from '../Modals/AddressLinkedToAnotherAccountModal/AddressLinkedToAnotherAccountModal';
 import BYOEConversionModal from '../Modals/BYOEConversionModal/BYOEConversionModal';
 import GmailSyncModal from '../Modals/GmailSyncModal/GmailSyncModal';

@@ -2,23 +2,23 @@ import { useEffect, useState } from 'react';
 
 import throttle from 'lodash/throttle';
 
-import { updateImport } from '@proton/activation/src/api';
-import { AuthenticationMethod, IMPORT_ERROR, ImportType } from '@proton/activation/src/interface';
-import { selectImapDraftProduct } from '@proton/activation/src/logic/draft/draft.selector';
+import { useApi } from '@proton/components';
+
+import { updateImport } from '../../../../../../api';
+import { AuthenticationMethod, IMPORT_ERROR, ImportType } from '../../../../../../interface';
+import { selectImapDraftProduct } from '../../../../../../logic/draft/draft.selector';
 import {
     displayConfirmLeaveModal,
     resetImapDraft,
     resumeImapImport,
     submitImapMailCredentials,
-} from '@proton/activation/src/logic/draft/imapDraft/imapDraft.actions';
+} from '../../../../../../logic/draft/imapDraft/imapDraft.actions';
 import {
     selectImapDraftMailImport,
     selectImapDraftMailImportApiError,
     selectImapDraftProvider,
-} from '@proton/activation/src/logic/draft/imapDraft/imapDraft.selector';
-import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
-import { useApi } from '@proton/components';
-
+} from '../../../../../../logic/draft/imapDraft/imapDraft.selector';
+import { useEasySwitchDispatch, useEasySwitchSelector } from '../../../../../../logic/store';
 import useAuthInfoByEmail from './useAuthInfoByEmail';
 import { getDefaultImap, getDefaultPort, validateStepForm } from './useStepForm.helpers';
 import type { StepFormBlur, StepFormErrors, StepFormState } from './useStepForm.interface';

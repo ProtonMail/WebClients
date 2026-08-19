@@ -1,8 +1,7 @@
 import { fireEvent, screen } from '@testing-library/dom';
 
-import { EASY_SWITCH_SOURCES, ImportProvider, ImportType } from '@proton/activation/src/interface';
-import { easySwitchRender } from '@proton/activation/src/tests/render';
-
+import { EASY_SWITCH_SOURCES, ImportProvider, ImportType } from '../../interface';
+import { easySwitchRender } from '../../tests/render';
 import EasySwitchOauthImportButton from './EasySwitchOAuthImportButton';
 
 describe('Test correct rendering of loading importer', () => {

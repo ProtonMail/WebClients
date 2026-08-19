@@ -2,11 +2,12 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { ImportType } from '@proton/activation/src/interface';
 import { IcBrandProtonDrive } from '@proton/icons/icons/IcBrandProtonDrive';
 import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
 import { IcEnvelope } from '@proton/icons/icons/IcEnvelope';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
+
+import { ImportType } from '../../../interface';
 
 const productMap = {
     [ImportType.MAIL]: {

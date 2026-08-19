@@ -1,7 +1,7 @@
-import { BYOEMoreStorageModal } from '@proton/activation/src/components/Modals/BYOEMoreStorageModal/BYOEMoreStorageModal';
-import { BYOESetupSuccessModal } from '@proton/activation/src/components/Modals/BYOESetupSuccessModal/BYOESetupSuccessModal';
-import { advanceToBYOESuccess, clearBYOEFlow } from '@proton/activation/src/logic/byoeFlow/byoeFlow.slice';
-import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
+import { advanceToBYOESuccess, clearBYOEFlow } from '../../logic/byoeFlow/byoeFlow.slice';
+import { useEasySwitchDispatch, useEasySwitchSelector } from '../../logic/store';
+import { BYOEMoreStorageModal } from './BYOEMoreStorageModal/BYOEMoreStorageModal';
+import { BYOESetupSuccessModal } from './BYOESetupSuccessModal/BYOESetupSuccessModal';
 
 const BYOEFlowModals = () => {
     const dispatch = useEasySwitchDispatch();
