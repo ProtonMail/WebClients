@@ -1,6 +1,7 @@
 import type { DriveEvent } from '@protontech/drive-sdk';
 
 import type { IndexPopulatorState, RepairNodeEntry, SearchDB } from '../../../shared/SearchDB';
+import { sendErrorReportForSearch } from '../../../shared/errors';
 import type { IndexPopulatorStatus, IndexingProgress, TreeEventScopeId } from '../../../shared/types';
 import type { IndexKind } from '../../index/IndexRegistry';
 import type { TaskContext } from '../tasks/BaseTask';
@@ -124,6 +125,44 @@ export abstract class IndexPopulator {
     async markAsDone(db: SearchDB): Promise<void> {
         const state = await this.ensureState(db);
         await db.putPopulatorState({ ...state, done: true, version: this.version, progress: this.progress });
+    }
+
+    /**
+     * Whether initial indexing has already failed at least once (see
+     * IndexPopulatorState.initialIndexingFailed). Falls back to false if the read fails: this only
+     * labels a metric, so it must never block the real error from being classified and reported.
+     */
+    async hasInitialIndexingFailed(db: SearchDB): Promise<boolean> {
+        try {
+            const state = await this.ensureState(db);
+            return state.initialIndexingFailed === true;
+        } catch (error) {
+            sendErrorReportForSearch('Unable to read initialIndexingFailed for index populator', error);
+            return false;
+        }
+    }
+
+    /** Set the sticky failure bit. Swallows write failures: it must never block retry scheduling. */
+    async markInitialIndexingFailed(db: SearchDB): Promise<void> {
+        try {
+            const state = await this.ensureState(db);
+            await db.putPopulatorState({ ...state, initialIndexingFailed: true });
+        } catch (error) {
+            sendErrorReportForSearch('Unable to persist initialIndexingFailed for index populator', error);
+        }
+    }
+
+    /**
+     * Clear the sticky failure bit once a run has succeeded, so the next campaign starts clean.
+     * Swallows write failures: throwing would make the queue treat a completed index as a failed task.
+     */
+    async clearInitialIndexingFailed(db: SearchDB): Promise<void> {
+        try {
+            const state = await this.ensureState(db);
+            await db.putPopulatorState({ ...state, initialIndexingFailed: false });
+        } catch (error) {
+            sendErrorReportForSearch('Unable to clear initialIndexingFailed for index populator', error);
+        }
     }
 
     /**

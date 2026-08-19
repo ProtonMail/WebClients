@@ -48,7 +48,7 @@ export class RepairFailedNodesTask extends BaseTask {
             try {
                 await populator.repairNode(entry, ctx);
                 await ctx.db.clearRepairNode(entry.indexKind, entry.nodeUid);
-                ctx.searchMetrics.markNodeRepaired();
+                ctx.searchMetrics.markNodeRepaired({ operation: entry.operation });
             } catch (e) {
                 if (!isRepairableError(e)) {
                     // A systemic failure is not the node's fault - let the queue handle it.
