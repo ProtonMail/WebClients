@@ -37,6 +37,7 @@ import {
     gatherIndexingMetrics,
     getESLogger,
     getIndexKey,
+    getVisibilityState,
     highlightJSX,
     hybridSearch,
     initializeEncryptedSearch,
@@ -208,7 +209,7 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
      */
     const dbCorruptError = async (errorMessage: string) => {
         const userHasESDB = await hasESDB(userID);
-        const visibilityState = typeof document !== 'undefined' ? document.visibilityState : 'unknown';
+        const visibilityState = getVisibilityState();
         getESLogger().error(
             `[EncryptedSearch] Deleting local index and resetting after error: ${errorMessage} (hasESDB: ${userHasESDB}, tab was ${visibilityState})`
         );

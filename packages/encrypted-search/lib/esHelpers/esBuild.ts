@@ -42,14 +42,7 @@ import type {
 } from '../models';
 import { getESLogger } from './esLogger';
 import { esErrorReport, esSentryReport } from './esReporting';
-import { isObjectEmpty, serializeAndEncryptItem, sizeOfESItem } from './esUtils';
-
-/**
- * The original bug report for concurrent-deletion/indexing-stalls during long indexing runs
- * only reproduced with the tab backgrounded for many minutes, so this is logged alongside
- * indexing progress to correlate failures with tab visibility/throttling.
- */
-const getVisibilityState = () => (typeof document !== 'undefined' ? document.visibilityState : 'unknown');
+import { getVisibilityState, isObjectEmpty, serializeAndEncryptItem, sizeOfESItem } from './esUtils';
 
 /**
  * Execute the initial steps of a new metadata indexing, i.e. generating an index key and the DB itself
