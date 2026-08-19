@@ -13,6 +13,7 @@ import {
 } from '@proton/components';
 import ViewModeToggle from '@proton/components/containers/layouts/ViewModeToggle';
 import useLoading from '@proton/hooks/useLoading';
+import { useFolders } from '@proton/mail/store/labels/hooks';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import {
@@ -24,14 +25,16 @@ import {
     updateViewMode,
 } from '@proton/shared/lib/api/mailSettings';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
-import { STICKY_LABELS, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 import type {
     AUTO_DELETE_SPAM_AND_TRASH_DAYS,
     NEXT_MESSAGE_ON_MOVE,
     SWIPE_ACTION,
 } from '@proton/shared/lib/mail/mailSettings';
+import { STICKY_LABELS, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
 import { useAccountDispatch } from '../../app/store/hooks';
+import { CategoriesSettings } from '../components/CategoryView/CategoriesSettings';
+import { CategoriesToggle } from '../components/CategoryView/CategoriesToggle';
 import MobileSection from '../components/MobileSection';
 import MobileSectionLabel from '../components/MobileSectionLabel';
 import MobileSectionRow from '../components/MobileSectionRow';
@@ -56,7 +59,8 @@ const EmailSettings = ({
 
     const [user, loadingUser] = useUser();
     const [mailSettings, loadingMailSettings] = useMailSettings();
-    const loading = loadingMailSettings || loadingUser || '_isDefault' in mailSettings;
+    const [, foldersLoading] = useFolders();
+    const loading = loadingMailSettings || loadingUser || foldersLoading || '_isDefault' in mailSettings;
 
     const { createNotification } = useNotifications();
 
@@ -101,7 +105,12 @@ const EmailSettings = ({
 
     return layout(
         <div className="mobile-settings">
-            <MobileSection>
+            <MobileSection title={c('Label').t`Email categories`}>
+                <CategoriesToggle />
+                <CategoriesSettings />
+            </MobileSection>
+
+            <MobileSection title={c('Label').t`Mailbox settings`}>
                 <MobileSectionRow>
                     <MobileSectionLabel
                         htmlFor="telemetry"
