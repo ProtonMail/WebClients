@@ -142,7 +142,8 @@ export const getMemberPermissions = ({
         !!organizationKey?.privateKey &&
         addresses &&
         addresses.length > 0 &&
-        hasUpdatePermission &&
+        // Replace with permission check: https://protonag.atlassian.net/browse/B2B-456
+        isOwner &&
         // For an SSO member this action sets their backup password. When the organization disabled
         // it there is no step in the login flow to enter it, so the password would be unusable.
         !(isMemberSSO && backupPasswordDisabled);
