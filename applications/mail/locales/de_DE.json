@@ -1733,6 +1733,12 @@
       ],
       "Write ${ count } logs": [
         "${ count } Protokolle schreiben"
+      ],
+      "Copy debug transcript": [
+        "Fehlerbehebungsprotokoll kopieren"
+      ],
+      "Preview logs": [
+        "Protokollvorschau"
       ]
     },
     "action": {
@@ -4000,6 +4006,9 @@
       ],
       "Åland Islands": [
         "Åland‐Inseln"
+      ],
+      "Micronesia": [
+        "Mikronesien"
       ]
     },
     "customer_support.feature.all": {
@@ -9720,6 +9729,27 @@
       ],
       "Writes realistic log lines back-to-back, then reads them all back. Shows how write and read/export cost scale with the number of stored entries.": [
         "Schreibt realistische Protokollzeilen direkt hintereinander und liest sie anschließend alle wieder ein. Zeigt, wie Schreib- und Lese-/Exportkosten mit der Anzahl gespeicherter Einträge skalieren."
+      ],
+      "Checked Proton support": [
+        "Proton Support geprüft"
+      ],
+      "Create folder": [
+        "Ordner erstellen"
+      ],
+      "Create label": [
+        "Kategorie erstellen"
+      ],
+      "Debug transcript copied": [
+        "Fehlerbehebungsprotokoll kopiert"
+      ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "Protokolle helfen uns dabei, zu verstehen, was vor dem Auftreten des Problems geschehen ist. Sie enthalten App-Aktionen und Fehlermeldungen, jedoch keine Nachrichteninhalte."
+      ],
+      "Mark all as unread": [
+        "Alle als ungelesen markieren"
+      ],
+      "Searched the web": [
+        "Im Web gesucht"
       ]
     },
     "info": {
@@ -10984,6 +11014,12 @@
       ],
       "Write-chain drain after last line": [
         "Schreibkette nach der letzten Zeile leeren"
+      ],
+      "Folder name": [
+        "Ordnername"
+      ],
+      "Label name": [
+        "Name der Kategorie"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -17116,6 +17152,18 @@
       ],
       "Unstar emails": [
         "E-Mail-Markierung aufheben"
+      ],
+      "Create folder": [
+        "Ordner erstellen"
+      ],
+      "Create label": [
+        "Kategorie erstellen"
+      ],
+      "Mark all as read": [
+        "Alle als gelesen markieren"
+      ],
+      "Mark all as unread": [
+        "Alle als ungelesen markieren"
       ]
     },
     "Title header for keys table": {

@@ -4113,7 +4113,7 @@
         "在 ${ DRIVE_APP_NAME } 中添加文件夹和文件，并邀请团队成员查看或编辑。"
       ],
       "Add or remove categories, manage notifications, and adjust your setup anytime in settings.": [
-        "随时在设置中添加或移除类别、管理通知以及调整您的配置。"
+        "随时在设置中添加或移除分类、管理通知以及调整您的配置。"
       ],
       "Add or remove categories, manage notifications, or turn them off entirely - anytime in Settings.": [
         "随时在设置中添加或移除分类、管理通知，或完全关闭通知。"
@@ -7006,7 +7006,7 @@
         "您的商务邮件也可以交由 ${ MAIL_APP_NAME } 保护。"
       ],
       "${ MAIL_APP_NAME } now automatically sorts your emails into categories like Primary, Social, Promotions, and more, helping you find and manage messages more easily.": [
-        "${ MAIL_APP_NAME } 现在会自动将您的邮件分类为主要、社交、促销等类别，帮助您更轻松地查找和管理邮件。"
+        "${ MAIL_APP_NAME } 现在会自动将您的邮件归入主要、社交、促销等分类，帮助您更轻松地查找和管理邮件。"
       ],
       "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
         "${ MEET_APP_NAME } 是一款端到端加密的视频会议解决方案。将其添加到您的套餐中即可主持安全会议。"
@@ -9199,7 +9199,7 @@
         "当您旅行或使用公共 WiFi 时，请连接 ${ VPN_APP_NAME } 以防止任何人跟踪您的在线活动或窃取您的数据。该服务免费。"
       ],
       "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
-        "借助新的邮件分类功能，只有重要邮件会进入主收件箱，其余邮件将按类别自动归类。"
+        "借助新的邮件分类功能，只有重要邮件会进入主收件箱，其余邮件将自动归入相应分类。"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "您想重新获取验证码还是更换验证方式？"
@@ -9882,7 +9882,7 @@
         "任何"
       ],
       "Anything that needs your attention, plus emails from disabled categories": [
-        "所有需要您关注的内容，以及来自已禁用类别的邮件"
+        "所有需要您关注的内容，以及来自已禁用分类的邮件"
       ],
       "App password": [
         "应用密码"
@@ -10446,7 +10446,7 @@
         "基本的"
       ],
       "Primary - Anything that needs your attention, plus emails from disabled categories": [
-        "主要 - 所有需要您关注的内容，以及来自已禁用类别的邮件"
+        "主要 - 所有需要您关注的内容，以及来自已禁用分类的邮件"
       ],
       "Promotions": [
         "优惠促销"
@@ -10705,6 +10705,9 @@
       ],
       "Duration": [
         "持续时间"
+      ],
+      "Folder name": [
+        "文件夹名称"
       ]
     },
     "Label (begin date/advanced search)": {
