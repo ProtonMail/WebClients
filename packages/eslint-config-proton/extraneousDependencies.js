@@ -20,6 +20,8 @@ export const extraneousDependenciesDevDependencies = [
     '**/vite.config.{js,ts}',
     '**/vitest.config.{js,ts}',
     '**/vitest.setup.{js,ts}',
+    // Tests, including directories holding helpers consumed only by test files
+    '**/tests/**',
     '**/*.test.{js,ts,tsx,jsx}',
     '**/*.spec.{js,ts,tsx,jsx}',
     // Others
