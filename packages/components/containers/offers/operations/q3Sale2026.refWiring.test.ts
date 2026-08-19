@@ -3,6 +3,7 @@ import type { Subscription } from '@proton/payments/core/subscription/interface'
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 
+import { getOfferProduct } from '../helpers/getOfferProduct';
 import OfferSubscription from '../helpers/offerSubscription';
 import { withResolvedRefs } from '../helpers/withResolvedRefs';
 import type { OfferConfig } from '../interface';
@@ -64,25 +65,42 @@ describe('q3Sale2026 ref wiring', () => {
     it.each(configurations)('$name returns feature bullets after resolution', ({ configuration }) => {
         const resolved = withResolvedRefs(configuration, APPS.PROTONDRIVE, '/', buildOfferSubscription(PLANS.DRIVE));
 
-        expect(resolved.deals[0].features?.()?.length).toBeGreaterThan(0);
+        expect(resolved.deals[0].features?.('drive')?.length).toBeGreaterThan(0);
     });
 
-    it('gives Drive its own Unlimited copy but keeps Duo and Family copy shared', () => {
+    it('leads the app list with the app the user is in, across every offer', () => {
         const subscription = buildOfferSubscription(PLANS.DRIVE);
 
-        const featuresFor = (configuration: OfferConfig, appName: APP_NAMES) => {
-            return withResolvedRefs(configuration, appName, '/', subscription).deals[0].features?.();
+        const appListFor = (configuration: OfferConfig, appName: APP_NAMES) => {
+            const resolved = withResolvedRefs(configuration, appName, '/', subscription);
+
+            return resolved.deals[0].features?.(getOfferProduct(appName, '/'))?.[0].name;
         };
 
-        const mailUnlimited = featuresFor(plusToUnlimited, APPS.PROTONMAIL);
-        const driveUnlimited = featuresFor(plusToUnlimited, APPS.PROTONDRIVE);
-        expect(driveUnlimited).not.toEqual(mailUnlimited);
+        expect(appListFor(plusToUnlimited, APPS.PROTONMAIL)).toBe('Premium Mail, Pass, Drive, VPN, and Calendar');
+        expect(appListFor(plusToUnlimited, APPS.PROTONDRIVE)).toBe('Premium Drive, Mail, Pass, VPN, and Calendar');
+        expect(appListFor(plusToUnlimited, APPS.PROTONCALENDAR)).toBe('Premium Calendar, Mail, Pass, Drive, and VPN');
 
-        // Duo and Family bullets describe the plan, so they are identical across apps for now.
-        expect(featuresFor(duoToFamily, APPS.PROTONDRIVE)).toEqual(featuresFor(duoToFamily, APPS.PROTONMAIL));
-        expect(featuresFor(familyMonthlyToYearly, APPS.PROTONDRIVE)).toEqual(
-            featuresFor(familyMonthlyToYearly, APPS.PROTONMAIL)
-        );
+        // Duo shares the five-app list, so it reorders the same way.
+        expect(appListFor(unlimitedToDuo, APPS.PROTONDRIVE)).toBe('Premium Drive, Mail, Pass, VPN, and Calendar');
+        expect(appListFor(unlimitedToDuo, APPS.PROTONCALENDAR)).toBe('Premium Calendar, Mail, Pass, Drive, and VPN');
+    });
+
+    it('does not lead Family copy with Calendar, which the plan copy omits', () => {
+        const subscription = buildOfferSubscription(PLANS.DRIVE);
+
+        const appListFor = (configuration: OfferConfig, appName: APP_NAMES) => {
+            const resolved = withResolvedRefs(configuration, appName, '/', subscription);
+
+            return resolved.deals[0].features?.(getOfferProduct(appName, '/'))?.[0].name;
+        };
+
+        expect(appListFor(duoToFamily, APPS.PROTONDRIVE)).toBe('Premium Drive, Mail, Pass, VPN');
+        expect(appListFor(duoToFamily, APPS.PROTONMAIL)).toBe('Premium Mail, Pass, Drive, VPN');
+
+        // Calendar is not in the Family list, so it falls back rather than dropping VPN to make room.
+        expect(appListFor(duoToFamily, APPS.PROTONCALENDAR)).toBe('Premium Mail, Pass, Drive, VPN');
+        expect(appListFor(familyMonthlyToYearly, APPS.PROTONCALENDAR)).toBe('Premium Mail, Pass, Drive, VPN');
     });
 
     it('varies the current plan segment for the same offer', () => {
