@@ -1721,6 +1721,9 @@
       ],
       "Skip": [
         "Lewati"
+      ],
+      "Set up categories": [
+        "Siapkan kategori"
       ]
     },
     "Actions message": {
@@ -4333,6 +4336,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Anda telah membuat 10 alias. Dapatkan alias tanpa batasan jumlah dan ruang penyimpanan 500 GB dengan ${ BRAND_NAME } Unlimited."
+      ],
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Klik kanan email lalu pilih \"Pindahkan ke\", atau seret dan lepas ke kategori lain. Email serupa akan otomatis diurutkan ke sana ke depannya."
       ]
     },
     "description": {
@@ -9000,6 +9006,18 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Anda hanya berjarak beberapa klik dari kotak masuk yang rapi"
+      ],
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "Anda memiliki **${ count } percakapan** di kategori ${ categoryLabel }"
+      ],
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "Anda memiliki **${ count } pesan** di kategori ${ categoryLabel }"
+      ],
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "Anda memilih **${ checked } percakapan** di kategori ${ categoryLabel }"
+      ],
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "Anda memilih **${ checked } pesan** di kategori ${ categoryLabel }"
       ]
     },
     "info": {
@@ -10175,6 +10193,15 @@
       ],
       "Duration": [
         "Durasi"
+      ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Semua yang memerlukan perhatian Anda, ditambah email dari kategori yang dinonaktifkan"
+      ],
+      "Folder name": [
+        "Nama folder"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Utama - Semua yang memerlukan perhatian Anda, ditambah email dari kategori yang dinonaktifkan"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14790,6 +14817,9 @@
       ],
       "You have successfully unsubscribed": [
         "Anda berhasil berhenti berlangganan"
+      ],
+      "Moved to ${ label }. Similar messages will be categorized there in the future.": [
+        "Dipindahkan ke ${ label }. Pesan serupa akan dikategorikan di sana ke depannya."
       ]
     },
     "Success notification": {
@@ -16057,6 +16087,9 @@
       ],
       "Domain names": [
         "Nama domain"
+      ],
+      "Refine your Categories": [
+        "Sempurnakan kategori Anda"
       ]
     },
     "Title header for keys table": {

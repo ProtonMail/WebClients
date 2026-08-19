@@ -1727,6 +1727,9 @@
       ],
       "Skip": [
         "გამოტოვება"
+      ],
+      "Set up categories": [
+        "კატეგორიების დაყენება"
       ]
     },
     "Actions message": {
@@ -4372,6 +4375,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "თქვენ უკვე შექმენით 10 ფსევდონიმი. მიიღეთ განუსაზღვრელი ფსევდონიმები და 500 გბ საცავი ${ BRAND_NAME } Unlimited-თან ერთად."
+      ],
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "დააწკაპუნეთ წერილზე მარჯვენა ღილაკით და აირჩიეთ „გადატანა“, ან გადაათრიეთ სხვა კატეგორიაში. მომავალში მსგავსი წერილები ავტომატურად იმავე კატეგორიაში მოხვდება."
       ]
     },
     "description": {
@@ -9159,6 +9165,22 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "გაჭედვისგან თავისუფალი საფოსტო ყუთისგან რამდენიმე წკაპი გაშორებთ"
+      ],
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "თქვენს ${ categoryLabel } კატეგორიაში გაქვთ **${ count } საუბარი**",
+        "თქვენს ${ categoryLabel } კატეგორიაში გაქვთ **${ count } საუბარი**"
+      ],
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "თქვენს ${ categoryLabel } კატეგორიაში გაქვთ **${ count } შეტყობინება**",
+        "თქვენს ${ categoryLabel } კატეგორიაში გაქვთ **${ count } შეტყობინება**"
+      ],
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "თქვენს ${ categoryLabel } კატეგორიაში აირჩიეთ **${ checked } საუბარი**",
+        "თქვენს ${ categoryLabel } კატეგორიაში აირჩიეთ **${ checked } საუბარი**"
+      ],
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "თქვენს ${ categoryLabel } კატეგორიაში აირჩიეთ **${ checked } შეტყობინება**",
+        "თქვენს ${ categoryLabel } კატეგორიაში აირჩიეთ **${ checked } შეტყობინება**"
       ]
     },
     "info": {
@@ -10342,6 +10364,15 @@
       ],
       "Duration": [
         "ხანგრძლივობა"
+      ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "ყველაფერი, რაც ყურადღებას საჭიროებს, და წერილები გათიშული კატეგორიებიდან"
+      ],
+      "Folder name": [
+        "საქაღალდის სახელი"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "ძირითადი - ყველაფერი, რაც ყურადღებას საჭიროებს, და წერილები გათიშული კატეგორიებიდან"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15080,6 +15111,9 @@
       ],
       "You have successfully unsubscribed": [
         "გამოწერა წარმატებით გაუქმდა"
+      ],
+      "Moved to ${ label }. Similar messages will be categorized there in the future.": [
+        "გადატანილია ${ label }-ში. მომავალში მსგავსი შეტყობინებები იმავე კატეგორიაში მოხვდება."
       ]
     },
     "Success notification": {
@@ -16370,6 +16404,9 @@
       ],
       "Domain names": [
         "დომენის სახელი"
+      ],
+      "Refine your Categories": [
+        "დააზუსტეთ თქვენი კატეგორიები"
       ]
     },
     "Title header for keys table": {

@@ -1733,6 +1733,9 @@
       ],
       "Stop here": [
         "S'arrêter ici"
+      ],
+      "Copy debug transcript": [
+        "Copier la transcription de débogage"
       ]
     },
     "action": {
@@ -8063,7 +8066,7 @@
         "Priorité basse"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Définir ${ MAIL_APP_NAME } comme application de messagerie par défaut."
+        "Faire de ${ MAIL_APP_NAME } votre application de messagerie par défaut."
       ],
       "Manage your folders": [
         "Gérer vos dossiers"
@@ -9536,6 +9539,44 @@
       ],
       "Unstar emails": [
         "Retirer les e-mails des favoris"
+      ],
+      "${ count } email": [
+        "${ count } message",
+        "${ count } messages"
+      ],
+      "${ count } email · ${ names }": [
+        "${ count } message · ${ names }",
+        "${ count } messages · ${ names }"
+      ],
+      "Apply labels": [
+        "Appliquer les labels"
+      ],
+      "Checked Proton support": [
+        "J'ai consulté le support de Proton"
+      ],
+      "Create folder": [
+        "Créer un dossier"
+      ],
+      "Create label": [
+        "Créer un label"
+      ],
+      "Debug transcript copied": [
+        "Transcription de débogage copiée"
+      ],
+      "Expand logs": [
+        "Développer les journaux"
+      ],
+      "Mark all as unread": [
+        "Marquer tout comme non lu"
+      ],
+      "Mark as read": [
+        "Marquer comme lu"
+      ],
+      "Mark as unread": [
+        "Marquer comme non lu"
+      ],
+      "Searched the web": [
+        "Recherche effectuée sur le Web"
       ]
     },
     "info": {
@@ -9941,7 +9982,7 @@
         "Appliquer aux futurs messages"
       ],
       "Archive": [
-        "Archives"
+        "Archive"
       ],
       "Attach screenshot(s)": [
         "Joindre une ou plusieurs captures d’écran"
@@ -10761,6 +10802,12 @@
       ],
       "Encrypt": [
         "Chiffrer"
+      ],
+      "Folder name": [
+        "Nom du dossier"
+      ],
+      "Label name": [
+        "Nom du label"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -16882,6 +16929,21 @@
       ],
       "Unstar emails": [
         "Retirer les e-mails des favoris"
+      ],
+      "Apply labels": [
+        "Appliquer les labels"
+      ],
+      "Create folder": [
+        "Créer un dossier"
+      ],
+      "Create label": [
+        "Créer un label"
+      ],
+      "Mark all as read": [
+        "Marquer tout comme lu"
+      ],
+      "Mark all as unread": [
+        "Marquer tout comme non lu"
       ]
     },
     "Title header for keys table": {

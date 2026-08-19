@@ -1727,6 +1727,9 @@
       ],
       "Skip": [
         "छोड़ें"
+      ],
+      "Set up categories": [
+        "श्रेणियाँ सेट करें"
       ]
     },
     "Actions message": {
@@ -4366,6 +4369,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "आप पहले ही 10 नकली-नाम बना चुके हैं। ${ BRAND_NAME } Unlimited के साथ असीमित नकली-नाम और 500 जीबी स्टोरेज प्राप्त करें।"
+      ],
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "किसी ईमेल पर राइट-क्लिक करें और \"इसमें ले जाएं\" चुनें, या उसे खींचकर दूसरी श्रेणी में छोड़ें। भविष्य में इसी तरह के ईमेल स्वचालित रूप से वहीं व्यवस्थित किए जाएंगे।"
       ]
     },
     "description": {
@@ -9153,6 +9159,22 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "आप एक व्यवस्थित और साफ इंबॉक्स से बस कुछ ही क्लिक दूर हैं"
+      ],
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "आपकी ${ categoryLabel } श्रेणी में **${ count } बातचीत** है",
+        "आपकी ${ categoryLabel } श्रेणी में **${ count } बातचीत** हैं"
+      ],
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "आपकी ${ categoryLabel } श्रेणी में **${ count } संदेश** है",
+        "आपकी ${ categoryLabel } श्रेणी में **${ count } संदेश** हैं"
+      ],
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "आपने अपनी ${ categoryLabel } श्रेणी में **${ checked } बातचीत** चुनी है",
+        "आपने अपनी ${ categoryLabel } श्रेणी में **${ checked } बातचीत** चुनी हैं"
+      ],
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "आपने अपनी ${ categoryLabel } श्रेणी में **${ checked } संदेश** चुना है",
+        "आपने अपनी ${ categoryLabel } श्रेणी में **${ checked } संदेश** चुने हैं"
       ]
     },
     "info": {
@@ -10336,6 +10358,15 @@
       ],
       "Duration": [
         "अवधि"
+      ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "वह सब कुछ जिस पर आपका ध्यान चाहिए, साथ ही अक्षम श्रेणियों के ईमेल"
+      ],
+      "Folder name": [
+        "फोल्डर नाम"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "मुख्य - वह सब कुछ जिस पर आपका ध्यान चाहिए, साथ ही अक्षम श्रेणियों के ईमेल"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15074,6 +15105,9 @@
       ],
       "You have successfully unsubscribed": [
         "आपने अपनी सदस्यता सफलतापूर्वक समाप्त किया"
+      ],
+      "Moved to ${ label }. Similar messages will be categorized there in the future.": [
+        "${ label } में ले जाया गया। भविष्य में इसी तरह के संदेश वहीं वर्गीकृत किए जाएंगे।"
       ]
     },
     "Success notification": {
@@ -16364,6 +16398,9 @@
       ],
       "Domain names": [
         "डोमेन नाम"
+      ],
+      "Refine your Categories": [
+        "अपनी श्रेणियों को परिष्कृत करें"
       ]
     },
     "Title header for keys table": {

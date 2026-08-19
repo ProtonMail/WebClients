@@ -1658,6 +1658,9 @@
       ],
       "Zoom out": [
         "Távolítás"
+      ],
+      "Move to category...": [
+        "Áthelyezés kategóriába..."
       ]
     },
     "action": {
@@ -4104,6 +4107,18 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Már létrehozott 10 e-mail álnevet. Szerezzen korlátlan e-mail álnevet és 500 GB tárhelyet a ${ BRAND_NAME } Unlimited szolgáltatással."
+      ],
+      "A blue dot appears when a category has unread messages since your last visit.": [
+        "Kék pont jelenik meg, ha egy kategóriában az utolsó látogatása óta olvasatlan üzenetek vannak."
+      ],
+      "Add or remove categories, manage notifications, and adjust your setup anytime in settings.": [
+        "A beállításokban bármikor hozzáadhat vagy eltávolíthat kategóriákat, kezelheti az értesítéseket és módosíthatja a beállításait."
+      ],
+      "Add or remove categories, manage notifications, or turn them off entirely - anytime in Settings.": [
+        "Adjon hozzá vagy távolítson el kategóriákat, kezelje az értesítéseket, vagy kapcsolja ki őket teljesen – bármikor a Beállításokban."
+      ],
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Kattintson a jobb gombbal egy e-mailre, és válassza az „Áthelyezés ide” lehetőséget, vagy húzza át egy másik kategóriába. A hasonló e-mailek a jövőben automatikusan oda kerülnek."
       ]
     },
     "description": {
@@ -8603,6 +8618,34 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Már csak néhány kattintás választja el a rendetlenség-mentes postaládától"
+      ],
+      "${ MAIL_APP_NAME } now automatically sorts your emails into categories like Primary, Social, Promotions, and more, helping you find and manage messages more easily.": [
+        "A ${ MAIL_APP_NAME } mostantól automatikusan kategóriákba rendezi az e-mailjeit, például Elsődleges, Közösségi, Promóciók és továbbiak, hogy könnyebben megtalálja és kezelje az üzeneteket."
+      ],
+      "Automatically sort incoming emails into categories": [
+        "Beérkező e-mailek automatikus kategóriákba rendezése"
+      ],
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "**${ count } beszélgetése** van a(z) ${ categoryLabel } kategóriában",
+        "**${ count } beszélgetése** van a(z) ${ categoryLabel } kategóriában"
+      ],
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "**${ count } üzenete** van a(z) ${ categoryLabel } kategóriában",
+        "**${ count } üzenete** van a(z) ${ categoryLabel } kategóriában"
+      ],
+      "You have no conversations in this category": [
+        "Nincsenek beszélgetései ebben a kategóriában"
+      ],
+      "You have no messages in this category": [
+        "Nincsenek üzenetei ebben a kategóriában"
+      ],
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "**${ checked } beszélgetést** választott ki a(z) ${ categoryLabel } kategóriában",
+        "**${ checked } beszélgetést** választott ki a(z) ${ categoryLabel } kategóriában"
+      ],
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "**${ checked } üzenetet** választott ki a(z) ${ categoryLabel } kategóriában",
+        "**${ checked } üzenetet** választott ki a(z) ${ categoryLabel } kategóriában"
       ]
     },
     "info": {
@@ -9635,6 +9678,18 @@
       ],
       "ZIP code": [
         "Irányítószám"
+      ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Minden, ami az Ön figyelmét igényli, valamint a letiltott kategóriákból származó e-mailek"
+      ],
+      "Email categories": [
+        "E-mail-kategóriák"
+      ],
+      "Folder name": [
+        "Mappa neve"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Elsődleges – minden, ami az Ön figyelmét igényli, valamint a letiltott kategóriákból származó e-mailek"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13982,6 +14037,9 @@
       ],
       "You have successfully unsubscribed": [
         "Sikeresen leiratkozott"
+      ],
+      "Moved to ${ label }. Similar messages will be categorized there in the future.": [
+        "Áthelyezve: ${ label }. A hasonló üzenetek a jövőben oda lesznek sorolva."
       ]
     },
     "Success notification": {
@@ -15203,6 +15261,9 @@
       ],
       "Domain names": [
         "Domain nevek"
+      ],
+      "Refine your Categories": [
+        "Finomítsa kategóriáit"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15784,6 +15845,11 @@
       ],
       "Passcode:": [
         "Belépési kód:"
+      ]
+    },
+    "Actions": {
+      "Set up categories": [
+        "Kategóriák beállítása"
       ]
     }
   }
