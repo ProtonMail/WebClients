@@ -102,8 +102,7 @@ export interface Deal {
     getRef?: (product: OfferProduct, currentPlan: string) => string;
     cycle: CYCLE;
     isLifeTime?: boolean;
-    /** Receives the current product for offers that vary their copy by app. */
-    features?: (product?: OfferProduct) => Feature[];
+    features?: (product: OfferProduct) => Feature[];
     getCTAContent?: () => string;
     buttonSize?: ButtonLikeSize;
     planIDs: PlanIDs; // planIDs used to subscribe

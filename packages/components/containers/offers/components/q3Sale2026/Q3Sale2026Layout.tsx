@@ -1,14 +1,17 @@
 import type { ReactNode } from 'react';
+import { useLocation } from 'react-router';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import ProtonLogo from '@proton/components/components/logo/ProtonLogo';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
+import useConfig from '@proton/components/hooks/useConfig';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { CYCLE } from '@proton/payments/core/constants';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
+import { getOfferProduct } from '../../helpers/getOfferProduct';
 import type { OfferLayoutProps } from '../../interface';
 import OfferDisableButton from '../shared/OfferDisableButton';
 
@@ -19,6 +22,9 @@ interface Props extends OfferLayoutProps {
 }
 
 export function Q3Sale2026Layout({ offer, currency, onSelectDeal, onCloseModal, subText }: Props) {
+    const { APP_NAME } = useConfig();
+    const { pathname } = useLocation();
+
     if (!offer) {
         return null;
     }
@@ -26,7 +32,7 @@ export function Q3Sale2026Layout({ offer, currency, onSelectDeal, onCloseModal, 
     if (!deal.features) {
         return null;
     }
-    const features = deal.features();
+    const features = deal.features(getOfferProduct(APP_NAME, pathname));
 
     const rawPromoPricePerMonth = deal.prices.withCoupon / CYCLE.YEARLY;
     const promoPricePerMonth = getSimplePriceString(currency, rawPromoPricePerMonth);

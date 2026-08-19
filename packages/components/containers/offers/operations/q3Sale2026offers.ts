@@ -23,7 +23,7 @@ interface Q3Offer {
     dealName: string;
     couponCode: COUPON_CODES;
     getRef?: (product: OfferProduct, currentPlan: string) => string;
-    features?: (product?: OfferProduct) => { name: string }[];
+    features?: (product: OfferProduct) => { name: string }[];
     title: () => string;
     modalImage: string;
 }
@@ -43,25 +43,37 @@ const getMaxSavingsTitle = () => {
     return c('q3campaign2026: Title').t`One plan, max savings`;
 };
 
-const getUnlimitedFeatures = (product: OfferProduct = 'mail') => {
+const getPremiumApps = (product: OfferProduct) => {
     if (product === 'drive') {
-        return [
-            {
-                name: c('q3campaign2026: Info')
-                    .t`Premium ${DRIVE_SHORT_APP_NAME}, ${MAIL_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, and ${CALENDAR_SHORT_APP_NAME}`,
-            },
-            { name: c('q3campaign2026: Info').t`500 GB of secure storage` },
-            { name: c('q3campaign2026: Info').t`Advanced protection against cyber threats` },
-        ];
+        return c('q3campaign2026: Info')
+            .t`Premium ${DRIVE_SHORT_APP_NAME}, ${MAIL_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, ${VPN_SHORT_APP_NAME}, and ${CALENDAR_SHORT_APP_NAME}`;
     }
 
+    if (product === 'calendar') {
+        return c('q3campaign2026: Info')
+            .t`Premium ${CALENDAR_SHORT_APP_NAME}, ${MAIL_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, ${DRIVE_SHORT_APP_NAME}, and ${VPN_SHORT_APP_NAME}`;
+    }
+
+    return c('q3campaign2026: Info')
+        .t`Premium ${MAIL_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, ${DRIVE_SHORT_APP_NAME}, ${VPN_SHORT_APP_NAME}, and ${CALENDAR_SHORT_APP_NAME}`;
+};
+
+// Family copy lists four apps and Calendar is not one of them, so a Calendar user keeps the default order.
+const getFamilyPremiumApps = (product: OfferProduct) => {
+    if (product === 'drive') {
+        return c('q3campaign2026: Info')
+            .t`Premium ${DRIVE_SHORT_APP_NAME}, ${MAIL_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, ${VPN_SHORT_APP_NAME}`;
+    }
+
+    return c('q3campaign2026: Info')
+        .t`Premium ${MAIL_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, ${DRIVE_SHORT_APP_NAME}, ${VPN_SHORT_APP_NAME}`;
+};
+
+const getUnlimitedFeatures = (product: OfferProduct) => {
     return [
-        {
-            name: c('q3campaign2026: Info')
-                .t`Premium ${MAIL_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, ${DRIVE_SHORT_APP_NAME}, ${VPN_SHORT_APP_NAME}, and ${CALENDAR_SHORT_APP_NAME}`,
-        },
+        { name: getPremiumApps(product) },
         { name: c('q3campaign2026: Info').t`500 GB of secure storage` },
-        { name: c('q3campaign2026: Info').t`Stronger protection against cyber threats` },
+        { name: c('q3campaign2026: Info').t`Advanced protection against cyber threats` },
     ];
 };
 
@@ -89,21 +101,14 @@ const plusToUnlimited: Q3Offer = {
     modalImage: kv50,
 };
 
-// Duo copy is currently the same in every app: the bullets describe the plan, not the product. The
-// product is still taken so a per-app variant is a local change if the campaign ever needs one.
-const getDuoFeatures = (_product: OfferProduct = 'mail') => {
+const getDuoFeatures = (product: OfferProduct) => {
     return [
-        {
-            name: c('q3campaign2026: Info')
-                .t`Premium ${MAIL_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, ${DRIVE_SHORT_APP_NAME}, ${VPN_SHORT_APP_NAME}, and ${CALENDAR_SHORT_APP_NAME}`,
-        },
+        { name: getPremiumApps(product) },
         { name: c('q3campaign2026: Info').t`2 individual accounts` },
         { name: c('q3campaign2026: Info').t`2 TB of secure storage` },
     ];
 };
 
-// Unlimited is an account-level plan, so the audience is the same in every campaign app rather than
-// being product-specific. The ref still records which app the user converted from.
 const unlimitedToDuo: Q3Offer = {
     ID: `${Q3_SALE_2026_PREFIX}-unlimited-to-duo`,
     featureCode: FeatureCode.OfferQ3Sale2026UnlimitedToDuo,
@@ -116,13 +121,9 @@ const unlimitedToDuo: Q3Offer = {
     modalImage: kv40,
 };
 
-// As with Duo, Family copy does not vary by app yet, but takes the product so it can.
-const getFamilyFeatures = (_product: OfferProduct = 'mail') => {
+const getFamilyFeatures = (product: OfferProduct) => {
     return [
-        {
-            name: c('q3campaign2026: Info')
-                .t`Premium ${MAIL_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, ${DRIVE_SHORT_APP_NAME}, ${VPN_SHORT_APP_NAME}`,
-        },
+        { name: getFamilyPremiumApps(product) },
         { name: c('q3campaign2026: Info').t`6 individual accounts` },
         { name: c('q3campaign2026: Info').t`3 TB of secure storage` },
     ];
