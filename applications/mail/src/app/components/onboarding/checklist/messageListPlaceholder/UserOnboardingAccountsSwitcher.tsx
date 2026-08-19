@@ -14,9 +14,9 @@ import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 import { sortAddresses } from '@proton/shared/lib/mail/addresses';
 import checklistAccountsSwitcherImg from '@proton/styles/assets/img/illustrations/checklist-accounts-switcher.svg';
 
-import { ONLINE_SERVICES } from 'proton-mail/components/onboarding/checklist/constants';
-import { useMailOnboardingTelemetry } from 'proton-mail/components/onboarding/useMailOnboardingTelemetry';
-import { useGetStartedChecklist } from 'proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider';
+import { ONLINE_SERVICES } from '../constants';
+import { useMailOnboardingTelemetry } from '../../useMailOnboardingTelemetry';
+import { useGetStartedChecklist } from '../../../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 
 import UpdateMailAddressModal from './UpdateMailAddressModal';
 

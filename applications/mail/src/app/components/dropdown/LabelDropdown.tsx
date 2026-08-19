@@ -28,9 +28,9 @@ import type { Label } from '@proton/shared/lib/interfaces/Label';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
-import { APPLY_LOCATION_TYPES } from 'proton-mail/hooks/actions/applyLocation/interface';
-import { useApplyLocation } from 'proton-mail/hooks/actions/applyLocation/useApplyLocation';
-import { useApplyLabelsToAll } from 'proton-mail/hooks/actions/label/useApplyLabelsToAll';
+import { APPLY_LOCATION_TYPES } from '../../hooks/actions/applyLocation/interface';
+import { useApplyLocation } from '../../hooks/actions/applyLocation/useApplyLocation';
+import { useApplyLabelsToAll } from '../../hooks/actions/label/useApplyLabelsToAll';
 
 import { getLabelIDs } from '../../helpers/elements';
 import { useCreateFilters } from '../../hooks/actions/useCreateFilters';

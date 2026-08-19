@@ -7,8 +7,8 @@ import type { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
-import { selectElementID } from 'proton-mail/store/elements/elementsSelectors';
-import { useMailSelector } from 'proton-mail/store/hooks';
+import { selectElementID } from '../../store/elements/elementsSelectors';
+import { useMailSelector } from '../../store/hooks';
 
 import { isInDeletedFolder } from '../../helpers/elements';
 import { isLabelIDNewsletterSubscription } from '../../helpers/labels';

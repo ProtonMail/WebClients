@@ -3,7 +3,7 @@ import type { Draft } from 'immer';
 
 import type { MessageRemoteImage, MessageState } from '@proton/mail/store/messages/messagesTypes';
 
-import type { EOStoreState } from 'proton-mail/store/eo/eoStore';
+import type { EOStoreState } from './eoStore';
 
 import { markEmbeddedImagesAsLoaded } from '../../helpers/message/messageEmbeddeds';
 import { getEmbeddedImages, getRemoteImages, updateImages } from '../../helpers/message/messageImages';

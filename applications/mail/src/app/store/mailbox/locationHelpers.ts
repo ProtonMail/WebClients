@@ -18,8 +18,8 @@ import type { Folder, Label } from '@proton/shared/lib/interfaces';
 import type { MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 import { isDraft, isReceived, isSent } from '@proton/shared/lib/mail/messages';
 
-import { hasLabel } from 'proton-mail/helpers/elements';
-import type { Conversation } from 'proton-mail/models/conversation';
+import { hasLabel } from '../../helpers/elements';
+import type { Conversation } from '../../models/conversation';
 
 export const applyLabelToMessage = (
     message: MessageMetadata,

@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 
-import { useMailSelector } from 'proton-mail/store/hooks';
+import { useMailSelector } from '../../store/hooks';
 
 import { formatDistanceToNow, formatFullDate, formatSimpleDate } from '../../helpers/date';
 import { getDate } from '../../helpers/elements';

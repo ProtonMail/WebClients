@@ -28,8 +28,8 @@ import {
     selectLabelID,
     selectParams,
     selectSort,
-} from 'proton-mail/store/elements/elementsSelectors';
-import { useMailSelector } from 'proton-mail/store/hooks';
+} from '../../store/elements/elementsSelectors';
+import { useMailSelector } from '../../store/hooks';
 
 import { DebugContentSearchView } from './DebugContentSearchView';
 import { DebugModalLogs } from './DebugModalLogs';

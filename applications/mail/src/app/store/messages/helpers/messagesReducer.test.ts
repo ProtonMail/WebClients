@@ -5,7 +5,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Folder, Label } from '@proton/shared/lib/interfaces';
 import type { Message, MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 
-import type { Conversation } from 'proton-mail/models/conversation';
+import type { Conversation } from '../../../models/conversation';
 
 import {
     labelConversationsPending,

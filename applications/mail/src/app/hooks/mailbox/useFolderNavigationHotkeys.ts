@@ -9,7 +9,7 @@ import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 import { SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
 import { isBusy } from '@proton/shared/lib/shortcuts/helpers';
 
-import { useCategoriesShortcuts } from 'proton-mail/components/categoryView/useCategoriesShortcuts';
+import { useCategoriesShortcuts } from '../../components/categoryView/useCategoriesShortcuts';
 
 export const useFolderNavigationHotkeys = (): HotkeyTuple[] => {
     const history = useHistory<any>();

@@ -1,6 +1,6 @@
 import type { Folder, Label } from '@proton/shared/lib/interfaces';
 
-import type { Element } from 'proton-mail/models/element';
+import type { Element } from '../../../models/element';
 
 export type MoveEngineError = {
     id: string;

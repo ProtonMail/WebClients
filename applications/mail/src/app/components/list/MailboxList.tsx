@@ -4,9 +4,9 @@ import { useLocation } from 'react-router-dom';
 
 import { useLabels } from '@proton/mail/store/labels/hooks';
 
-import type { ElementsStructure } from 'proton-mail/hooks/mailbox/useElements';
-import type { MailboxActions } from 'proton-mail/router/interface';
-import { selectElementID, selectLabelID } from 'proton-mail/store/elements/elementsSelectors';
+import type { ElementsStructure } from '../../hooks/mailbox/useElements';
+import type { MailboxActions } from '../../router/interface';
+import { selectElementID, selectLabelID } from '../../store/elements/elementsSelectors';
 
 import { pageFromUrl } from '../../helpers/mailboxUrl';
 import { useMailboxLayoutProvider } from '../../router/components/MailboxLayoutContext';

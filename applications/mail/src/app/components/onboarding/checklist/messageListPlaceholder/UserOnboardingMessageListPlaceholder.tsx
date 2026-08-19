@@ -4,9 +4,9 @@ import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { ChecklistKey } from '@proton/shared/lib/interfaces';
 
-import { UserOnboardingImporters } from 'proton-mail/components/onboarding/checklist/messageListPlaceholder/UserOnboardingImporters';
-import { useGetStartedChecklist } from 'proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider';
-import { isColumnMode } from 'proton-mail/helpers/mailSettings';
+import { UserOnboardingImporters } from './UserOnboardingImporters';
+import { useGetStartedChecklist } from '../../../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
+import { isColumnMode } from '../../../../helpers/mailSettings';
 
 import UserOnboardingAccountsSwitcher from './UserOnboardingAccountsSwitcher';
 

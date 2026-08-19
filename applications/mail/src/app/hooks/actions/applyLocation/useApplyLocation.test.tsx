@@ -10,19 +10,19 @@ import { mockUseFolders } from '@proton/testing/lib/mockUseFolders';
 import { mockUseLabels } from '@proton/testing/lib/mockUseLabels';
 import { mockUseMailSettings } from '@proton/testing/lib/mockUseMailSettings';
 
-import { SUCCESS_NOTIFICATION_EXPIRATION } from 'proton-mail/constants';
-import { GlobalModalContext } from 'proton-mail/containers/globalModals/globalModalContext';
-import { ModalType } from 'proton-mail/containers/globalModals/inteface';
-import { labelConversations, labelMessages, unlabelMessages } from 'proton-mail/store/mailbox/mailboxActions';
+import { SUCCESS_NOTIFICATION_EXPIRATION } from '../../../constants';
+import { GlobalModalContext } from '../../../containers/globalModals/globalModalContext';
+import { ModalType } from '../../../containers/globalModals/inteface';
+import { labelConversations, labelMessages, unlabelMessages } from '../../../store/mailbox/mailboxActions';
 
 import { APPLY_LOCATION_TYPES } from './interface';
 import { useApplyLocation } from './useApplyLocation';
 
-jest.mock('proton-mail/containers/globalModals/GlobalSnoozeModal');
-jest.mock('proton-mail/containers/globalModals/GlobalScheduleModal');
-jest.mock('proton-mail/containers/globalModals/GlobalUnsubscribeModal');
+jest.mock('../../../containers/globalModals/GlobalSnoozeModal');
+jest.mock('../../../containers/globalModals/GlobalScheduleModal');
+jest.mock('../../../containers/globalModals/GlobalUnsubscribeModal');
 
-jest.mock('proton-mail/store/mailbox/mailboxActions');
+jest.mock('../../../store/mailbox/mailboxActions');
 //@ts-ignore
 const mockedLabelMessages = labelMessages as jest.Mock;
 //@ts-ignore
@@ -38,19 +38,19 @@ jest.mock('@proton/shared/lib/helpers/sentry', () => ({
 
 const mockUseGetConversation = jest.fn();
 const mockUseGetConversationsByIDs = jest.fn();
-jest.mock('proton-mail/hooks/conversation/useConversation', () => ({
+jest.mock('../../conversation/useConversation', () => ({
     useGetConversation: () => mockUseGetConversation,
     useGetConversationsByIDs: () => mockUseGetConversationsByIDs,
 }));
 
 const mockUseGetElementByID = jest.fn();
-jest.mock('proton-mail/hooks/mailbox/useElements', () => ({
+jest.mock('../../mailbox/useElements', () => ({
     useGetElementByID: () => mockUseGetElementByID,
 }));
 
 const mockMessageValidateMove = jest.fn();
 const mockConversationValidateMove = jest.fn();
-jest.mock('proton-mail/helpers/location/MoveEngine/useMoveEngine', () => ({
+jest.mock('../../../helpers/location/MoveEngine/useMoveEngine', () => ({
     useMoveEngine: () => ({
         messageMoveEngine: {
             validateMove: mockMessageValidateMove,
@@ -62,15 +62,15 @@ jest.mock('proton-mail/helpers/location/MoveEngine/useMoveEngine', () => ({
 }));
 
 const mockDispatch = jest.fn();
-jest.mock('proton-mail/store/hooks', () => ({
+jest.mock('../../../store/hooks', () => ({
     useMailDispatch: jest.fn(() => mockDispatch),
     useMailSelector: jest.fn().mockReturnValue(undefined),
 }));
 
-jest.mock('proton-mail/hooks/actions/moveBackAction/useMoveBackAction', () => ({
+jest.mock('../moveBackAction/useMoveBackAction', () => ({
     useMoveBackAction: jest.fn().mockReturnValue(jest.fn()),
 }));
-jest.mock('proton-mail/hooks/actions/useCreateFilters', () => ({
+jest.mock('../useCreateFilters', () => ({
     useCreateFilters: jest.fn(() => ({
         getSendersToFilter: jest.fn(),
         getFilterActions: jest.fn(() => ({

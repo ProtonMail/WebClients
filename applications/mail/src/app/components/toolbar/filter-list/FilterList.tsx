@@ -21,9 +21,9 @@ import {
     resetSort,
     setFilterInUrl,
     setSortInUrl,
-} from 'proton-mail/helpers/mailboxUrl';
-import { selectFilter, selectLabelID, selectSort } from 'proton-mail/store/elements/elementsSelectors';
-import { useMailSelector } from 'proton-mail/store/hooks';
+} from '../../../helpers/mailboxUrl';
+import { selectFilter, selectLabelID, selectSort } from '../../../store/elements/elementsSelectors';
+import { useMailSelector } from '../../../store/hooks';
 
 import { getActiveState } from './filterListHelpers';
 import { useListSettingsTelemetry } from './useListSettingsTelemetry';

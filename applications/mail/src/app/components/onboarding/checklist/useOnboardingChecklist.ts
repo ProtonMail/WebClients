@@ -4,8 +4,8 @@ import { useUser } from '@proton/account/user/hooks';
 import useLocalState from '@proton/components/hooks/useLocalState';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 
-import { useGetStartedChecklist } from 'proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider';
-import { deleteCheckedItemsForUser } from 'proton-mail/helpers/checklist/checkedItemsStorage';
+import { useGetStartedChecklist } from '../../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
+import { deleteCheckedItemsForUser } from '../../../helpers/checklist/checkedItemsStorage';
 
 import { useOnboardingChecklistModalsContext } from './OnboardingChecklistModalsProvider';
 

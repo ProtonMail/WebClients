@@ -3,13 +3,13 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
-import { hasLabel, isElementMessage } from 'proton-mail/helpers/elements';
-import { convertCustomViewLabelsToAlmostAllMail } from 'proton-mail/helpers/labels';
-import { setParamsInLocation } from 'proton-mail/helpers/mailboxUrl';
-import { getPlainText } from 'proton-mail/helpers/message/messageContent';
-import { findMessageToExpand } from 'proton-mail/helpers/message/messageExpandable';
-import type { Element } from 'proton-mail/models/element';
-import { selectParams } from 'proton-mail/store/elements/elementsSelectors';
+import { hasLabel, isElementMessage } from '../../helpers/elements';
+import { convertCustomViewLabelsToAlmostAllMail } from '../../helpers/labels';
+import { setParamsInLocation } from '../../helpers/mailboxUrl';
+import { getPlainText } from '../../helpers/message/messageContent';
+import { findMessageToExpand } from '../../helpers/message/messageExpandable';
+import type { Element } from '../../models/element';
+import { selectParams } from '../../store/elements/elementsSelectors';
 
 import type { MailToolDeps, ToolStore } from '../toolModule';
 import { formatSender, formatUnixDate } from './formatting';

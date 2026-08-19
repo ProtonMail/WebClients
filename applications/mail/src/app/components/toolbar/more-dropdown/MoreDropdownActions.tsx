@@ -14,8 +14,8 @@ import useListTelemetry, {
     ACTION_TYPE,
     SELECTED_RANGE,
     SOURCE_ACTION,
-} from 'proton-mail/components/list/list-telemetry/useListTelemetry';
-import { type MoveAllToFolderArgs, MoveAllType } from 'proton-mail/hooks/actions/move/useMoveAllToFolder';
+} from '../../list/list-telemetry/useListTelemetry';
+import { type MoveAllToFolderArgs, MoveAllType } from '../../../hooks/actions/move/useMoveAllToFolder';
 
 interface ActionProps {
     onMove: (labelID: string) => void;

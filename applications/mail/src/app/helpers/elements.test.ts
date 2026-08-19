@@ -3,7 +3,7 @@ import type { Label } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import type { SearchParameters } from '@proton/shared/lib/mail/search';
 
-import type { Element } from 'proton-mail/models/element';
+import type { Element } from '../models/element';
 
 import type { Conversation, ConversationLabel } from '../models/conversation';
 import {

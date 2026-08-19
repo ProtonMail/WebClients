@@ -1,12 +1,12 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 
-import { useMailSelector } from 'proton-mail/store/hooks';
-import { SubscriptionTabs } from 'proton-mail/store/newsletterSubscriptions/interface';
+import { useMailSelector } from '../../../../store/hooks';
+import { SubscriptionTabs } from '../../../../store/newsletterSubscriptions/interface';
 
 import { unsubscribedSubscription } from '../testData';
 import { SubscriptionCardButtons } from './NewsletterSubscriptionCardComponents';
 
-jest.mock('proton-mail/store/hooks');
+jest.mock('../../../../store/hooks');
 jest.mocked(useMailSelector).mockReturnValue(SubscriptionTabs.Unsubscribe);
 
 const handleFilterClick = jest.fn();

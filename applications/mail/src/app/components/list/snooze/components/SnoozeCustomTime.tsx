@@ -12,8 +12,8 @@ import DateInputTwo from '@proton/components/components/v2/input/DateInputTwo';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 import generateUID from '@proton/utils/generateUID';
 
-import { getSnoozeTimeFromSnoozeLabel } from 'proton-mail/helpers/snooze';
-import type { Element } from 'proton-mail/models/element';
+import { getSnoozeTimeFromSnoozeLabel } from '../../../../helpers/snooze';
+import type { Element } from '../../../../models/element';
 
 import { getMinScheduleTime } from '../../../../helpers/schedule';
 import useFutureTimeDate from '../../../../hooks/message/useFutureTimeDate';

@@ -7,8 +7,8 @@ import useDrawerWidth from '@proton/components/hooks/drawer/useDrawerWidth';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useBeforeUnload from '@proton/components/hooks/useBeforeUnload';
 
-import { ComposerAssistantProvider } from 'proton-mail/components/assistant/provider/ComposerAssistantProvider';
-import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
+import { ComposerAssistantProvider } from '../components/assistant/provider/ComposerAssistantProvider';
+import { useMailDispatch, useMailSelector } from '../store/hooks';
 
 import ComposerFrame from '../components/composer/ComposerFrame';
 import { MAX_ACTIVE_COMPOSER_LARGE_SCREEN, MAX_ACTIVE_COMPOSER_SMALL_SCREEN } from '../helpers/composerPositioning';

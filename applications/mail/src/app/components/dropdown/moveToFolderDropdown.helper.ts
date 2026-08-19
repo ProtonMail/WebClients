@@ -6,7 +6,7 @@ import type { CategoryTab } from '@proton/mail/features/categoriesView/categorie
 import { getLabelFromCategoryId } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
-import type { FolderItem } from 'proton-mail/hooks/useMailTreeView/interface';
+import type { FolderItem } from '../../hooks/useMailTreeView/interface';
 
 import { categoryColorClassName } from '../categoryView/categoriesTabs/tabsInterface';
 

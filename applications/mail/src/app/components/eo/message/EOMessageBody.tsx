@@ -10,9 +10,9 @@ import iframeSVG from '@proton/styles/assets/img/icons/email-sprite-icons.source
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import MessageBodyPlaceholder from 'proton-mail/components/message/MessageBodyPlaceholder';
-import MessageBodyPrint from 'proton-mail/components/message/MessageBodyPrint';
-import useMessageImagesLoadError from 'proton-mail/components/message/hooks/useMessageImagesLoadError';
+import MessageBodyPlaceholder from '../../message/MessageBodyPlaceholder';
+import MessageBodyPrint from '../../message/MessageBodyPrint';
+import useMessageImagesLoadError from '../../message/hooks/useMessageImagesLoadError';
 
 import { MailboxContainerContextProvider } from '../../../containers/mailbox/MailboxContainerProvider';
 import { locateBlockquote } from '../../../helpers/message/messageBlockquote';

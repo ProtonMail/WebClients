@@ -5,9 +5,9 @@ import { c } from 'ttag';
 import ToolbarButton from '@proton/components/components/toolbar/ToolbarButton';
 import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 
-import { setParamsInLocation } from 'proton-mail/helpers/mailboxUrl';
-import { selectLabelID } from 'proton-mail/store/elements/elementsSelectors';
-import { useMailSelector } from 'proton-mail/store/hooks';
+import { setParamsInLocation } from '../../../helpers/mailboxUrl';
+import { selectLabelID } from '../../../store/elements/elementsSelectors';
+import { useMailSelector } from '../../../store/hooks';
 
 export const MoveBackButton = () => {
     const labelID = useMailSelector(selectLabelID);

@@ -33,7 +33,7 @@ import monitoringIcon from '@proton/styles/assets/img/onboarding/mail_onboarding
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { useMailOnboardingTelemetry } from 'proton-mail/components/onboarding/useMailOnboardingTelemetry';
+import { useMailOnboardingTelemetry } from '../../useMailOnboardingTelemetry';
 
 import type { OnboardingStepEligibleCallback } from '../interface';
 import OnboardingContent from '../layout/OnboardingContent';

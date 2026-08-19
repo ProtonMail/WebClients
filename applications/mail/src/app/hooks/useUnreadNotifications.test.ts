@@ -2,7 +2,7 @@ import { renderHook } from '@testing-library/react';
 
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import useUnreadNotifications from 'proton-mail/hooks/useUnreadNotifications';
+import useUnreadNotifications from './useUnreadNotifications';
 
 jest.mock('@proton/shared/lib/mail/messages', () => ({
     isReceived: jest.fn(() => true),

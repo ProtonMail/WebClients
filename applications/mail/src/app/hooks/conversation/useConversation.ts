@@ -6,8 +6,8 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { selectLabelID } from 'proton-mail/store/elements/elementsSelectors';
-import { useMailDispatch, useMailSelector, useMailStore } from 'proton-mail/store/hooks';
+import { selectLabelID } from '../../store/elements/elementsSelectors';
+import { useMailDispatch, useMailSelector, useMailStore } from '../../store/hooks';
 
 import { LOAD_RETRY_COUNT, LOAD_RETRY_DELAY } from '../../constants';
 import { hasError, hasErrorType } from '../../helpers/errors';

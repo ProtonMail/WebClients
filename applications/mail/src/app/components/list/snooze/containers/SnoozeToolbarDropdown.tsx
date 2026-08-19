@@ -6,7 +6,7 @@ import useApi from '@proton/components/hooks/useApi';
 import { IcClock } from '@proton/icons/icons/IcClock';
 import { TelemetryMailEvents } from '@proton/shared/lib/api/telemetry';
 
-import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
+import { useSelectAll } from '../../../../hooks/useSelectAll';
 
 import useSnooze from '../../../../hooks/actions/useSnooze';
 import type { DropdownRenderProps } from '../../../toolbar/ToolbarDropdown';

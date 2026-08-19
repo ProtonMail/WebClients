@@ -16,7 +16,7 @@ import { ASSISTANT_PROMPT_SIZE_LIMIT } from '@proton/llm/lib';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import type { ComposerAssistantSelection } from 'proton-mail/hooks/assistant/useComposerAssistantSelectedText';
+import type { ComposerAssistantSelection } from '../../../hooks/assistant/useComposerAssistantSelectedText';
 
 interface Props {
     isAssistantExpanded?: boolean;

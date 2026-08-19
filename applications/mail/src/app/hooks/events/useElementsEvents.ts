@@ -1,8 +1,8 @@
 import { useSubscribeEventManager } from '@proton/components/hooks/useHandler';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 
-import type { ElementsState } from 'proton-mail/store/elements/elementsTypes';
-import { useMailDispatch, useMailSelector, useMailStore } from 'proton-mail/store/hooks';
+import type { ElementsState } from '../../store/elements/elementsTypes';
+import { useMailDispatch, useMailSelector, useMailStore } from '../../store/hooks';
 
 import type { Element } from '../../models/element';
 import type { ConversationEvent, Event, MessageEvent } from '../../models/event';

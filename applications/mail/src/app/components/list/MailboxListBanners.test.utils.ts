@@ -1,4 +1,4 @@
-import * as useShowUpsellBannerModule from 'proton-mail/hooks/useShowUpsellBanner';
+import * as useShowUpsellBannerModule from '../../hooks/useShowUpsellBanner';
 
 import * as useAutoDeleteBannerModule from './banners/auto-delete/useAutodeleteBanner';
 

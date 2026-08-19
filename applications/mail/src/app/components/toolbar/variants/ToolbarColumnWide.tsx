@@ -7,7 +7,7 @@ import useElementBreakpoints from '@proton/components/hooks/useElementBreakpoint
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import clsx from '@proton/utils/clsx';
 
-import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
+import { useSelectAll } from '../../../hooks/useSelectAll';
 
 import { getLabelNameForToolbar, isLabelIDNewsletterSubscription } from '../../../helpers/labels';
 import { getToolbarResponsiveSizes } from '../../../helpers/toolbar/getToolbarResponsiveSizes';

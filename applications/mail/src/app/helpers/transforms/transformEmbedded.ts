@@ -16,8 +16,8 @@ import {
     matchSameCidOrLoc,
     readContentIDandLocation,
     setEmbeddedAttr,
-} from 'proton-mail/helpers/message/messageEmbeddeds';
-import { getEmbeddedImages, insertImageAnchor } from 'proton-mail/helpers/message/messageImages';
+} from '../message/messageEmbeddeds';
+import { getEmbeddedImages, insertImageAnchor } from '../message/messageImages';
 
 export const transformEmbedded = async (
     message: MessageState,

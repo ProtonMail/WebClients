@@ -12,7 +12,7 @@ import { isMobile } from '@proton/shared/lib/helpers/browser';
 import type { ThemeTypes } from '@proton/shared/lib/themes/constants';
 import clsx from '@proton/utils/clsx';
 
-import { useMailOnboardingTelemetry } from 'proton-mail/components/onboarding/useMailOnboardingTelemetry';
+import { useMailOnboardingTelemetry } from '../../useMailOnboardingTelemetry';
 
 import type { OnboardingStepEligibleCallback } from '../interface';
 import OnboardingContent from '../layout/OnboardingContent';

@@ -8,7 +8,7 @@ import useLocalState from '@proton/components/hooks/useLocalState';
 import { PROTON_LOCAL_DOMAIN } from '@proton/shared/lib/localDev';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { MailDebugModal } from 'proton-mail/components/debug/MailDebugModal';
+import { MailDebugModal } from './MailDebugModal';
 
 export const MailDebugButton = () => {
     const isDebugModeEnabled = useFlag('MailStoreDebugMode');

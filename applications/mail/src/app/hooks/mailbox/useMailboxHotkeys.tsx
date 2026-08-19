@@ -14,11 +14,11 @@ import { VIEW_LAYOUT } from '@proton/shared/lib/mail/mailSettings';
 import type { Filter } from '@proton/shared/lib/mail/search';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
-import { MoveAllType, useMoveAllToFolder } from 'proton-mail/hooks/actions/move/useMoveAllToFolder';
-import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
-import { selectElementID } from 'proton-mail/store/elements/elementsSelectors';
-import { useMailSelector } from 'proton-mail/store/hooks';
+import { SOURCE_ACTION } from '../../components/list/list-telemetry/useListTelemetry';
+import { MoveAllType, useMoveAllToFolder } from '../actions/move/useMoveAllToFolder';
+import { useSelectAll } from '../useSelectAll';
+import { selectElementID } from '../../store/elements/elementsSelectors';
+import { useMailSelector } from '../../store/hooks';
 
 import { isStarred } from '../../helpers/elements';
 import { isConversationMode } from '../../helpers/mailSettings';

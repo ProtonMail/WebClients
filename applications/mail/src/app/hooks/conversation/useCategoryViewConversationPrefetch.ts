@@ -1,7 +1,7 @@
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { useCategoriesView } from 'proton-mail/components/categoryView/useCategoriesView';
-import { useMailDispatch } from 'proton-mail/store/hooks';
+import { useCategoriesView } from '../../components/categoryView/useCategoriesView';
+import { useMailDispatch } from '../../store/hooks';
 
 import { load } from '../../store/conversations/conversationsActions';
 import { useGetConversation } from './useConversation';

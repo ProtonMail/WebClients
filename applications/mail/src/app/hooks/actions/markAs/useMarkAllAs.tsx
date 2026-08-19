@@ -9,13 +9,13 @@ import useListTelemetry, {
     ACTION_TYPE,
     SELECTED_RANGE,
     type SOURCE_ACTION,
-} from 'proton-mail/components/list/list-telemetry/useListTelemetry';
-import SelectAllMarkModal from 'proton-mail/components/list/select-all/modals/SelectAllMarkModal';
-import { getCleanedFolderID, sendSelectAllTelemetryReport } from 'proton-mail/helpers/moveToFolder';
-import { getSelectAllNotificationText } from 'proton-mail/helpers/selectAll';
-import { backendActionStarted, markAll } from 'proton-mail/store/elements/elementsActions';
-import { useMailDispatch } from 'proton-mail/store/hooks';
-import { layoutActions } from 'proton-mail/store/layout/layoutSlice';
+} from '../../../components/list/list-telemetry/useListTelemetry';
+import SelectAllMarkModal from '../../../components/list/select-all/modals/SelectAllMarkModal';
+import { getCleanedFolderID, sendSelectAllTelemetryReport } from '../../../helpers/moveToFolder';
+import { getSelectAllNotificationText } from '../../../helpers/selectAll';
+import { backendActionStarted, markAll } from '../../../store/elements/elementsActions';
+import { useMailDispatch } from '../../../store/hooks';
+import { layoutActions } from '../../../store/layout/layoutSlice';
 
 interface MarkAllParams {
     isMessage: boolean;

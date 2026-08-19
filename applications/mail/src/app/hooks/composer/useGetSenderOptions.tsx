@@ -10,7 +10,7 @@ import { APPS } from '@proton/shared/lib/constants';
 import type { Address } from '@proton/shared/lib/interfaces';
 import { splitExternalAddresses } from '@proton/shared/lib/mail/addresses';
 
-import { getFromAddresses } from 'proton-mail/helpers/addresses';
+import { getFromAddresses } from '../../helpers/addresses';
 
 const useGetSenderOptions = (message: MessageState) => {
     const [addresses = []] = useAddresses();

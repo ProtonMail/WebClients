@@ -12,9 +12,9 @@ import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
-import type { MoveParams } from 'proton-mail/hooks/actions/applyLocation/interface';
-import type { ApplyLabelsParams } from 'proton-mail/hooks/actions/label/interface';
-import { useMailboxCounter } from 'proton-mail/hooks/mailboxCounter/useMailboxCounter';
+import type { MoveParams } from '../../hooks/actions/applyLocation/interface';
+import type { ApplyLabelsParams } from '../../hooks/actions/label/interface';
+import { useMailboxCounter } from '../../hooks/mailboxCounter/useMailboxCounter';
 
 import type { SystemFolder } from '../../hooks/useMoveSystemFolders';
 import useMoveSystemFolders, { SYSTEM_FOLDER_SECTION } from '../../hooks/useMoveSystemFolders';

@@ -1,6 +1,6 @@
 import type { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
-import type { Element } from 'proton-mail/models/element';
+import type { Element } from '../../../models/element';
 
 export enum MOVE_BACK_ACTION_TYPES {
     MOVE = 'MOVE',

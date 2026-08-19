@@ -8,10 +8,10 @@ import { useCategoriesTelemetry } from '@proton/mail/features/categoriesView/use
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
-import { APPLY_LOCATION_TYPES } from 'proton-mail/hooks/actions/applyLocation/interface';
-import { useApplyLocation } from 'proton-mail/hooks/actions/applyLocation/useApplyLocation';
-import { selectCategoryIDs } from 'proton-mail/store/elements/elementsSelectors';
-import { useMailSelector } from 'proton-mail/store/hooks';
+import { APPLY_LOCATION_TYPES } from '../../hooks/actions/applyLocation/interface';
+import { useApplyLocation } from '../../hooks/actions/applyLocation/useApplyLocation';
+import { selectCategoryIDs } from '../../store/elements/elementsSelectors';
+import { useMailSelector } from '../../store/hooks';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { isElementConversation } from '../../helpers/elements';

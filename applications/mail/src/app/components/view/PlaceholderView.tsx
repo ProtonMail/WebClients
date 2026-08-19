@@ -1,5 +1,5 @@
-import { selectSearch } from 'proton-mail/store/elements/elementsSelectors';
-import { useMailSelector } from 'proton-mail/store/hooks';
+import { selectSearch } from '../../store/elements/elementsSelectors';
+import { useMailSelector } from '../../store/hooks';
 
 import SelectionPane from './SelectionPane';
 import WelcomePane from './WelcomePane';

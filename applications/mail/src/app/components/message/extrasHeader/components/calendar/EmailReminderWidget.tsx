@@ -44,7 +44,7 @@ import type { CalendarEvent, VcalVeventComponent, VisualCalendar } from '@proton
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { getParsedHeadersFirstValue } from '@proton/shared/lib/mail/messages';
 
-import { useContactsMap } from 'proton-mail/hooks/contact/useContacts';
+import { useContactsMap } from '../../../../../hooks/contact/useContacts';
 
 import { getEventLocalStartEndDates } from '../../../../../helpers/calendar/emailReminder';
 import { getParticipantsList } from '../../../../../helpers/calendar/invite';

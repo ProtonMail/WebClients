@@ -4,7 +4,7 @@ import { SECOND } from '@proton/shared/lib/constants';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { isReceived } from '@proton/shared/lib/mail/messages';
 
-import { isUnreadMessage } from 'proton-mail/helpers/elements';
+import { isUnreadMessage } from '../helpers/elements';
 
 /**
  * Hook used to determine if we need to display the "X new unread messages" in the conversation view,

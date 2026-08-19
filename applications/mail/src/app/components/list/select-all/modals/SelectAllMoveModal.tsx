@@ -5,7 +5,7 @@ import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 
-import { useMailboxCounter } from 'proton-mail/hooks/mailboxCounter/useMailboxCounter';
+import { useMailboxCounter } from '../../../../hooks/mailboxCounter/useMailboxCounter';
 
 import { getLabelName } from '../../../../helpers/labels';
 

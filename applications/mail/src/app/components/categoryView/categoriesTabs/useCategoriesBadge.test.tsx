@@ -10,7 +10,7 @@ import type { Label } from '@proton/shared/lib/interfaces';
 import { DEFAULT_MAIL_SETTINGS } from '@proton/shared/lib/mail/mailSettings';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { useMailSelector } from 'proton-mail/store/hooks';
+import { useMailSelector } from '../../../store/hooks';
 
 import { TabState } from './tabsInterface';
 import { useCategoriesBadge } from './useCategoriesBadge';
@@ -18,7 +18,7 @@ import { useCategoriesBadge } from './useCategoriesBadge';
 jest.mock('@proton/mail/store/mailSettings/hooks');
 jest.mock('@proton/mail/store/labels/hooks');
 jest.mock('@proton/unleash/useFlag');
-jest.mock('proton-mail/store/hooks');
+jest.mock('../../../store/hooks');
 
 const category: CategoryTab = {
     id: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,

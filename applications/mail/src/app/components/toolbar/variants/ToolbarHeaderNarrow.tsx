@@ -8,7 +8,7 @@ import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
-import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
+import { useSelectAll } from '../../../hooks/useSelectAll';
 
 import { isInDeletedFolder } from '../../../helpers/elements';
 import { getLabelNameForToolbar } from '../../../helpers/labels';

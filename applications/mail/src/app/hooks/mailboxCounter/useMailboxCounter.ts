@@ -11,9 +11,9 @@ import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { SafeLabelCount } from '@proton/shared/lib/interfaces';
 
-import { useCategoriesView } from 'proton-mail/components/categoryView/useCategoriesView';
-import { selectCategoryIDs, selectLabelID } from 'proton-mail/store/elements/elementsSelectors';
-import { useMailSelector } from 'proton-mail/store/hooks';
+import { useCategoriesView } from '../../components/categoryView/useCategoriesView';
+import { selectCategoryIDs, selectLabelID } from '../../store/elements/elementsSelectors';
+import { useMailSelector } from '../../store/hooks';
 
 import type { LocationCountMap, MailboxCounterReturn } from './interface';
 import { getCounterMap } from './useMailboxCounter.helpers';

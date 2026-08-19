@@ -3,13 +3,13 @@ import { act, fireEvent, screen } from '@testing-library/react';
 import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 
-import { mailTestRender } from 'proton-mail/helpers/test/helper';
-import { optimisticUpdateFlag } from 'proton-mail/store/messages/optimistic/messagesOptimisticActions';
+import { mailTestRender } from '../../../../helpers/test/helper';
+import { optimisticUpdateFlag } from '../../../../store/messages/optimistic/messagesOptimisticActions';
 
 import ExtraSpamScore from './ExtraSpamScore';
 
 const mockDispatch = jest.fn();
-jest.mock('proton-mail/store/hooks', () => ({
+jest.mock('../../../../store/hooks', () => ({
     useMailDispatch: () => mockDispatch,
     useMailSelector: jest.fn().mockReturnValue(jest.fn()),
     useMailStore: jest.fn().mockReturnValue({ getState: jest.fn() }),

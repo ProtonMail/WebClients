@@ -3,9 +3,9 @@ import { c } from 'ttag';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { getInboxEmptyPlaceholder } from '@proton/mail/helpers/getPlaceholderSrc';
 
-import { useMailSelector } from 'proton-mail/store/hooks';
-import { SubscriptionTabs } from 'proton-mail/store/newsletterSubscriptions/interface';
-import { selectedTab } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSelector';
+import { useMailSelector } from '../../../../store/hooks';
+import { SubscriptionTabs } from '../../../../store/newsletterSubscriptions/interface';
+import { selectedTab } from '../../../../store/newsletterSubscriptions/newsletterSubscriptionsSelector';
 
 import { EmptyViewWrapper } from '../../EmptyView/EmptyViewWrapper';
 

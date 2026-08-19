@@ -18,7 +18,7 @@ import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { isPaid } from '@proton/shared/lib/user/helpers';
 import generateUID from '@proton/utils/generateUID';
 
-import { useMailDispatch } from 'proton-mail/store/hooks';
+import { useMailDispatch } from '../store/hooks';
 
 import SendingFromDefaultAddressModal from '../components/composer/modals/SendingFromDefaultAddressModal';
 import { cloneDraft, createNewDraft } from '../helpers/message/messageDraft';

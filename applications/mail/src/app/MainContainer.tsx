@@ -20,7 +20,7 @@ import AssistantProvider from '@proton/llm/lib/providers/AssistantProvider';
 import { logger } from '@proton/logger';
 import { useInboxDesktopHeartbeat } from '@proton/shared/lib/desktop/heartbeat';
 
-import { CheckAllRefProvider } from 'proton-mail/containers/CheckAllRefProvider';
+import { CheckAllRefProvider } from './containers/CheckAllRefProvider';
 
 import { ROUTE_MAIN } from './constants';
 import ComposerContainer from './containers/ComposerContainer';

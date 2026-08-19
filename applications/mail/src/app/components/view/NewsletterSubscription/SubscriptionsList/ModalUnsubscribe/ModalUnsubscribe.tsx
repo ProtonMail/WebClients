@@ -14,13 +14,13 @@ import { openNewTab } from '@proton/shared/lib/helpers/browser';
 import { CONFIRM_LINK } from '@proton/shared/lib/mail/mailSettings';
 import truncate from '@proton/utils/truncate';
 
-import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
+import { useMailDispatch, useMailSelector } from '../../../../../store/hooks';
 import {
     filterSubscriptionList,
     unsubscribeSubscription,
     updateSubscription,
-} from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsActions';
-import { getFilteredSubscriptionIndex } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSelector';
+} from '../../../../../store/newsletterSubscriptions/newsletterSubscriptionsActions';
+import { getFilteredSubscriptionIndex } from '../../../../../store/newsletterSubscriptions/newsletterSubscriptionsSelector';
 
 import { getUnsubscribeData, getUnsubscribeMethod } from '../../helper';
 import {

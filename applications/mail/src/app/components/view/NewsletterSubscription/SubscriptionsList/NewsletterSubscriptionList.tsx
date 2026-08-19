@@ -3,13 +3,13 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import useLoading from '@proton/hooks/useLoading';
 
-import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
-import { fetchNextNewsletterSubscriptionsPage } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsActions';
+import { useMailDispatch, useMailSelector } from '../../../../store/hooks';
+import { fetchNextNewsletterSubscriptionsPage } from '../../../../store/newsletterSubscriptions/newsletterSubscriptionsActions';
 import {
     selectTabSubscriptionPaginationQueryString,
     selectTabSubscriptionsList,
     unsubscribingSubscriptionIdSelector,
-} from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSelector';
+} from '../../../../store/newsletterSubscriptions/newsletterSubscriptionsSelector';
 
 import { useNewsletterSubscriptionTelemetry } from '../useNewsletterSubscriptionTelemetry';
 import { NewsletterSubscriptionCard } from './NewsletterSubscriptionCard';

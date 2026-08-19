@@ -1,7 +1,7 @@
-import Toolbar from 'proton-mail/components/toolbar/Toolbar';
-import type { ElementsStructure } from 'proton-mail/hooks/mailbox/useElements';
-import { selectParams } from 'proton-mail/store/elements/elementsSelectors';
-import { useMailSelector } from 'proton-mail/store/hooks';
+import Toolbar from '../../components/toolbar/Toolbar';
+import type { ElementsStructure } from '../../hooks/mailbox/useElements';
+import { selectParams } from '../../store/elements/elementsSelectors';
+import { useMailSelector } from '../../store/hooks';
 
 import type { MailboxActions, RouterNavigation } from '../interface';
 import { useMailboxLayoutProvider } from './MailboxLayoutContext';

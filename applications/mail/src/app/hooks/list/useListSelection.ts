@@ -4,8 +4,8 @@ import { c, msgid } from 'ttag';
 
 import useItemsDraggable from '@proton/components/containers/items/useItemsDraggable';
 
-import { getCanDisplaySelectAllBanner } from 'proton-mail/helpers/selectAll';
-import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
+import { getCanDisplaySelectAllBanner } from '../../helpers/selectAll';
+import { useSelectAll } from '../useSelectAll';
 
 import { isElementMessage } from '../../helpers/elements';
 import type { Element } from '../../models/element';

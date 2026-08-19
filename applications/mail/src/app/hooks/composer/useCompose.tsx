@@ -25,9 +25,9 @@ import { addUpsellPath, getUpgradePath, getUpsellRef } from '@proton/shared/lib/
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { isOutbox, isScheduledSend } from '@proton/shared/lib/mail/messages';
 
-import { addComposerAction } from 'proton-mail/store/composers/composerActions';
-import { composerActions } from 'proton-mail/store/composers/composersSlice';
-import { useMailDispatch, useMailStore } from 'proton-mail/store/hooks';
+import { addComposerAction } from '../../store/composers/composerActions';
+import { composerActions } from '../../store/composers/composersSlice';
+import { useMailDispatch, useMailStore } from '../../store/hooks';
 
 import SendingOriginalMessageModal from '../../components/composer/modals/SendingOriginalMessageModal';
 import { isDirtyAddress } from '../../helpers/addresses';

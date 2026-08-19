@@ -11,7 +11,7 @@ import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import capitalize from '@proton/utils/capitalize';
 
-import { useMailboxCounter } from 'proton-mail/hooks/mailboxCounter/useMailboxCounter';
+import { useMailboxCounter } from '../../hooks/mailboxCounter/useMailboxCounter';
 
 import { isConversationMode } from '../../helpers/mailSettings';
 

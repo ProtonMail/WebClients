@@ -1,7 +1,7 @@
 import { useVariant } from '@proton/unleash/useVariant';
 
-import { selectShouldShowMoveToPrimaryBadge } from 'proton-mail/store/categories/categoriesSelector';
-import { useMailSelector } from 'proton-mail/store/hooks';
+import { selectShouldShowMoveToPrimaryBadge } from '../../../store/categories/categoriesSelector';
+import { useMailSelector } from '../../../store/hooks';
 
 export const useMoveToPrimaryBadge = () => {
     const flagVariant = useVariant('CategoryViewVariant');

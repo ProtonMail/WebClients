@@ -9,8 +9,8 @@ import { IcFolderArrowIn } from '@proton/icons/icons/IcFolderArrowIn';
 import { IcTag } from '@proton/icons/icons/IcTag';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 
-import { isConversationMode } from 'proton-mail/helpers/mailSettings';
-import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
+import { isConversationMode } from '../../../helpers/mailSettings';
+import { useSelectAll } from '../../../hooks/useSelectAll';
 
 import LabelDropdown, { labelDropdownContentProps } from '../../dropdown/LabelDropdown';
 import MoveDropdown, { moveDropdownContentProps } from '../../dropdown/MoveDropdown';
