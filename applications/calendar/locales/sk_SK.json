@@ -1048,6 +1048,12 @@
       ],
       "Migrate": [
         "Migrovať"
+      ],
+      "Keep going": [
+        "Pokračujte"
+      ],
+      "Stop here": [
+        "Tu zastav"
       ]
     },
     "action": {
@@ -4538,6 +4544,9 @@
       ],
       "You do not have access to this shared item": [
         "K tejto zdieľanej položke nemáte prístup"
+      ],
+      "Could not grant access to the organization key": [
+        "Nepodarilo sa udeliť prístup ku kľúču organizácie"
       ]
     },
     "error": {
@@ -7252,6 +7261,9 @@
       ],
       "You": [
         "Vy"
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Je to dosť zdĺhavé. Mám v tom pokračovať?"
       ]
     },
     "info": {
@@ -8055,6 +8067,9 @@
       ],
       "Zoom meeting": [
         "Zoom schôdzka"
+      ],
+      "Account holder name": [
+        "Meno majiteľa účtu"
       ]
     },
     "label": {
@@ -9286,6 +9301,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Skenujeme dark web a kontrolujeme, či nedošlo k úniku vašich adries alebo aliasov ${ BRAND_NAME }, a ak niečo nájdeme, okamžite vás upozorníme."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME } – asistent písania s rozšíreným prístupom"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME } – asistent písania s obmedzeným prístupom"
       ]
     },
     "new_plans: feature highlight": {
@@ -10562,6 +10583,9 @@
       ],
       "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
         "Inicializácia ${ IDEAL_BRAND_NAME } zlyhala. Skúste to neskôr znova, prosím."
+      ],
+      "Please enter the account holder name": [
+        "Zadajte meno majiteľa účtu, prosím"
       ]
     },
     "Payments.error": {
@@ -11141,6 +11165,9 @@
       ],
       "User Admin": [
         "Správca používateľov"
+      ],
+      "Organization Admin": [
+        "Správca organizácie"
       ]
     },
     "Role description": {
@@ -13559,6 +13586,9 @@
       ],
       "What are you migrating?": [
         "Čo migrujete?"
+      ],
+      "Still working on it": [
+        "Stále na tom pracujem"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

@@ -1044,6 +1044,12 @@
       ],
       "Migrate": [
         "Migrare"
+      ],
+      "Keep going": [
+        "Continuă"
+      ],
+      "Stop here": [
+        "Oprește aici"
       ]
     },
     "action": {
@@ -2992,6 +2998,9 @@
       ],
       "Åland Islands": [
         "Insulele Åland"
+      ],
+      "Micronesia": [
+        "Micronezia"
       ]
     },
     "Country select label": {
@@ -4492,6 +4501,9 @@
       ],
       "You do not have access to this shared item": [
         "Nu aveți acces la acest articol."
+      ],
+      "Could not grant access to the organization key": [
+        "Nu s-a putut acorda acces la cheia organizației."
       ]
     },
     "error": {
@@ -7157,6 +7169,12 @@
       ],
       "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Pentru finalizarea tranzacției prin ${ IDEAL_BRAND_NAME } se va deschide o filă nouă. Dacă folosiți programe de blocat ferestre flotante dezactivați-le înainte de a continua."
+      ],
+      "Debug transcript copied": [
+        "Transcrierea depanării a fost copiată."
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Asta necesită mulți pași. Ar trebui să continui?"
       ]
     },
     "info": {
@@ -7954,6 +7972,9 @@
       ],
       "Zoom meeting": [
         "Conferință pe Zoom"
+      ],
+      "Account holder name": [
+        "Nume titular cont"
       ]
     },
     "label": {
@@ -9146,6 +9167,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Scanăm internetul ascuns pentru a verifica dacă adresele sau aliasurile ${ BRAND_NAME } v-au fost divulgate și vă avertizăm imediat dacă găsim ceva."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Asistentul de scriere ${ LUMO_SHORT_APP_NAME } cu acces extins"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Asistentul de scriere ${ LUMO_SHORT_APP_NAME } cu acces limitat"
       ]
     },
     "new_plans: feature highlight": {
@@ -10384,6 +10411,9 @@
       ],
       "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
         "Eșuare inițializare ${ IDEAL_BRAND_NAME }. Reîncercați."
+      ],
+      "Please enter the account holder name": [
+        "Introduceți numele titularului contului"
       ]
     },
     "Payments.error": {
@@ -10976,6 +11006,9 @@
       ],
       "User Admin": [
         "Administrare utilizatori"
+      ],
+      "Organization Admin": [
+        "Administrator organizație"
       ]
     },
     "Role description": {
@@ -13345,6 +13378,9 @@
       ],
       "Domain names": [
         "Nume de domenii"
+      ],
+      "Still working on it": [
+        "Încă lucrez la asta"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

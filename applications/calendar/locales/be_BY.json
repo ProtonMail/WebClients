@@ -1048,6 +1048,12 @@
       ],
       "Stop": [
         "Спыніць"
+      ],
+      "Keep going": [
+        "Працягваць"
+      ],
+      "Stop here": [
+        "Спыніцца тут"
       ]
     },
     "action": {
@@ -4523,6 +4529,24 @@
       ],
       "You do not have access to this shared item": [
         "У вас няма доступу да гэтага абагуленага элемента"
+      ],
+      "Cannot download a folder": [
+        "Немагчыма спампаваць папку"
+      ],
+      "Could not grant access to the organization key": [
+        "Немагчыма даць доступ да ключа арганізацыі"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "Немагчыма загрузіць папярэдні прагляд відарыса: ${ message }"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Стварэнне дакументаў па-за іх межамі забаронена"
+      ],
+      "Name must not be empty": [
+        "Назва не можа быць пустой"
+      ],
+      "Too many server errors, please try again later": [
+        "Занадта шмат памылак сервера. Паўтарыце спробу пазней"
       ]
     },
     "error": {
@@ -5511,6 +5535,9 @@
       ],
       "Has errors": [
         "З памылкамі"
+      ],
+      "Pending": [
+        "У чаканні"
       ]
     },
     "Import warning": {
@@ -7231,6 +7258,12 @@
       ],
       "You": [
         "Вы"
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "На гэта спатрэбіцца шмат крокаў. Працягваць?"
+      ],
+      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Для завяршэння трансакцыі мы адкрыем новую ўкладку браўзера і перанакіруем вас на сайт ${ IDEAL_BRAND_NAME }. Калі вы выкарыстоўваеце пашырэнні блакіроўкі ўсплывальных вокнаў, адключыце іх, каб працягнуць."
       ]
     },
     "info": {
@@ -8034,6 +8067,9 @@
       ],
       "Zoom meeting": [
         "Сустрэча па Zoom"
+      ],
+      "Account holder name": [
+        "Уладальнік уліковага запісу"
       ]
     },
     "label": {
@@ -9265,6 +9301,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Наша сістэма сканіруе цёмную сетку для праверкі на прадмет уцечкі адрасоў і псеўданімаў ${ BRAND_NAME }. Вы неадкладна будзеце апавешчаны ў выпадку, калі нешта будзе выяўлена."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME } з пашыраным доступам"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME } з абмежаваным доступам"
       ]
     },
     "new_plans: feature highlight": {
@@ -10515,6 +10557,9 @@
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
         "Ваша валюта была зменена на еўра (€), таму што ${ IDEAL_BRAND_NAME } падтрымлівае толькі плацяжы ў еўра."
+      ],
+      "Pay with ${ IDEAL_BRAND_NAME }": [
+        "Заплаціць з дапамогай ${ IDEAL_BRAND_NAME }"
       ]
     },
     "Payments.Error": {
@@ -10538,6 +10583,9 @@
       ],
       "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
         "Не ўдалося ініцыялізаваць ${ IDEAL_BRAND_NAME }. Паўтарыце спробу пазней."
+      ],
+      "Please enter the account holder name": [
+        "Увядзіце імя ўладальніка ўліковага запісу"
       ]
     },
     "Payments.error": {
@@ -13535,6 +13583,9 @@
       ],
       "What are you migrating?": [
         "Што вы плануеце перанесці?"
+      ],
+      "Still working on it": [
+        "Усё яшчэ працуем над гэтым"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -14268,6 +14319,9 @@
       ],
       "Pending": [
         "У чаканні"
+      ],
+      "Migrated": [
+        "Перанесена"
       ]
     },
     "Payments.iDEAL": {
@@ -14290,6 +14344,9 @@
       ],
       "name": [
         "назва"
+      ],
+      "content key": [
+        "ключ змесціва"
       ]
     }
   }

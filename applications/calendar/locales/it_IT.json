@@ -3168,7 +3168,7 @@
         "Assicurati di poter accedere comunque al tuo account e ai tuoi dati anche se perdi la password di ${ BRAND_NAME }."
       ],
       "For a seamless onboarding of your team to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
-        "Per un onboarding senza problemi del tuo team su ${ BRAND_NAME }, importa i tuoi dati da Google, Outlook e altri."
+        "Per un onboarding senza problemi del tuo team a ${ BRAND_NAME }, importa i tuoi dati da Google, Outlook e altri."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Ricevi una notifica se la tua password o altri dati vengono resi pubblici da un servizio di terze parti."
@@ -4187,6 +4187,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "La tua connessione a Zoom è scaduta. Riconnettiti per continuare."
+      ],
+      "Could not grant access to the organization key": [
+        "Impossibile concedere l'accesso alla chiave dell'organizzazione"
       ]
     },
     "error": {
@@ -7528,6 +7531,9 @@
       ],
       "Zoom meeting": [
         "Riunione Zoom"
+      ],
+      "Account holder name": [
+        "Nome intestatario del conto"
       ]
     },
     "label": {
@@ -9863,6 +9869,9 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "La tua carta è stata rifiutata. Prova con una carta diversa o contatta la tua banca per autorizzare l'addebito."
+      ],
+      "Please enter the account holder name": [
+        "Inserisci il nome del titolare del conto"
       ]
     },
     "Payments.error": {

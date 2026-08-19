@@ -1040,6 +1040,12 @@
       ],
       "Migrate": [
         "Migrar"
+      ],
+      "Keep going": [
+        "Continuar"
+      ],
+      "Stop here": [
+        "Detenerse aquí"
       ]
     },
     "action": {
@@ -4446,6 +4452,9 @@
       ],
       "You do not have access to this shared item": [
         "No tiene acceso a este elemento compartido"
+      ],
+      "Could not grant access to the organization key": [
+        "No se pudo otorgar acceso a la clave de la organización"
       ]
     },
     "error": {
@@ -7056,6 +7065,9 @@
       ],
       "You": [
         "Usted"
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Esto implica muchos pasos. ¿Debería continuar?"
       ]
     },
     "info": {
@@ -7847,6 +7859,9 @@
       ],
       "Zoom meeting": [
         "Reunión de Zoom"
+      ],
+      "Account holder name": [
+        "Nombre del titular de la cuenta"
       ]
     },
     "label": {
@@ -9000,6 +9015,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escaneamos la dark web para verificar si sus direcciones o alias de ${ BRAND_NAME } han sido filtrados y alertarle de inmediato si encontramos algo."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME } con acceso ampliado"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME } con acceso limitado"
       ]
     },
     "new_plans: feature highlight": {
@@ -10200,6 +10221,9 @@
       ],
       "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
         "Error al inicializar ${ IDEAL_BRAND_NAME }. Intente de nuevo más tarde."
+      ],
+      "Please enter the account holder name": [
+        "Ingrese el nombre del titular de la cuenta"
       ]
     },
     "Payments.error": {
@@ -10765,6 +10789,9 @@
       ],
       "User Admin": [
         "Administrador de usuarios"
+      ],
+      "Organization Admin": [
+        "Administrador de la organización"
       ]
     },
     "Role description": {
@@ -13085,6 +13112,9 @@
       ],
       "What are you migrating?": [
         "¿Qué está migrando?"
+      ],
+      "Still working on it": [
+        "Todavía trabajando en ello"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
