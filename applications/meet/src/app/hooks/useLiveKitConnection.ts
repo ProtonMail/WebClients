@@ -12,15 +12,11 @@ import {
 import { isFirefox } from '@proton/shared/lib/helpers/browser';
 
 import { checkIfUsingTurnRelay } from '../utils/checkIfUsingTurnRelay';
+import { isConnectionTimeoutError } from '../utils/connectionErrors';
 
 const isConnectionError = (error: any): boolean => {
     const msg = error?.message || '';
     return msg.includes('could not establish signal connection');
-};
-
-export const isConnectionTimeoutError = (error: any): boolean => {
-    const msg = error?.message || '';
-    return msg.includes('Connection timeout after');
 };
 
 // Thrown post-signaling when the PeerConnection fails to reach `connected` (ICE FAILED).
