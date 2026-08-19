@@ -191,13 +191,19 @@ const ViewGroup = () => {
                 </div>
                 <div className="flex flex-column text-left pl-6 py-3 gap-4">
                     {isScimGroupPendingKeys && !isKeylessSsoOrganizationPlan && (
-                        <GroupInfoBanner icon={<IcCogWheel size={4.5} className="shrink-0" />}>
+                        <GroupInfoBanner
+                            icon={<IcCogWheel size={4.5} className="shrink-0" />}
+                            knowledgeBaseUrlPath="/scim-groups"
+                        >
                             {c('Info').t`New group created via your identity provider and pending review.`}
                         </GroupInfoBanner>
                     )}
 
                     {pendingAdminApprovalCount > 0 && !isKeylessSsoOrganizationPlan && (
-                        <GroupInfoBanner icon={<IcCogWheel size={4.5} className="shrink-0" />}>
+                        <GroupInfoBanner
+                            icon={<IcCogWheel size={4.5} className="shrink-0" />}
+                            knowledgeBaseUrlPath="/scim-groups"
+                        >
                             {c('Info').ngettext(
                                 msgid`${pendingAdminApprovalCount} new member added via your identity provider and pending review.`,
                                 `${pendingAdminApprovalCount} new members added via your identity provider and pending review.`,
@@ -207,7 +213,10 @@ const ViewGroup = () => {
                     )}
 
                     {invitedMemberCount > 0 && (
-                        <GroupInfoBanner icon={<IcEnvelopeDot size={4.5} className="shrink-0" />}>
+                        <GroupInfoBanner
+                            icon={<IcEnvelopeDot size={4.5} className="shrink-0" />}
+                            knowledgeBaseUrlPath="/groups#how-to-accept-group-invites-as-a-proton-user"
+                        >
                             {c('Info').ngettext(
                                 msgid`${invitedMemberCount} user needs to accept their invite to start receiving group emails.`,
                                 `${invitedMemberCount} users need to accept their invite to start receiving group emails.`,
