@@ -170,7 +170,9 @@ export abstract class NodeTreeIndexPopulator extends IndexPopulator {
                             // Update local book-keeping.
                             quarantinedUids.delete(event.nodeUid);
 
-                            ctx.searchMetrics.markNodeRepaired();
+                            ctx.searchMetrics.markNodeRepaired({
+                                operation: event.type === 'node_deleted' ? 'remove' : 'index',
+                            });
                         }
                     } catch (e) {
                         // A non-repairable failure is not the node's fault (abort, network, quota, etc):

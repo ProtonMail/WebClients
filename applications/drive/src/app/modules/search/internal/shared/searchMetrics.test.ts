@@ -15,6 +15,9 @@ jest.mock('@proton/metrics', () => ({
     __esModule: true,
     default: {
         drive_search_initial_indexing_total: { increment: jest.fn() },
+        drive_search_node_quarantined_total: { increment: jest.fn() },
+        drive_search_node_repaired_total: { increment: jest.fn() },
+        drive_search_other_error_total: { increment: jest.fn() },
         drive_search_permanent_errors_total: { increment: jest.fn() },
         drive_search_transient_errors_total: { increment: jest.fn() },
     },

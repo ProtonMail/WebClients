@@ -121,6 +121,19 @@ describe('MyFilesIndexPopulator', () => {
             expect(await db.getBFSVisitorState(initialVisitorId)).toBeUndefined();
         });
 
+        // Regression guard. markAsNotDone re-fires on EVERY retry while the persisted `version` is
+        // stale (it never writes `version`), so if it ever reset initialIndexingFailed the bit would
+        // be cleared before each failure and every one would report as the first attempt. It is safe
+        // today only because markAsNotDone spreads `...state` and leaves the field alone.
+        it('markAsNotDone preserves the sticky initialIndexingFailed flag', async () => {
+            await db.putPopulatorState({ ...baseState, initialIndexingFailed: true });
+
+            const populator = new MyFilesIndexPopulator(SCOPE_ID);
+            await populator.markAsNotDone(db);
+
+            expect((await db.getPopulatorState(populatorUid))?.initialIndexingFailed).toBe(true);
+        });
+
         it('markAsNotDone deletes the BFS visitor state and bumps the generation', async () => {
             await db.putPopulatorState({ ...baseState, generation: 4 });
             await putVisitorState({ generation: 4, queue: [] });

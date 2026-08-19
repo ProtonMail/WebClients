@@ -2,6 +2,7 @@ import metrics from '@proton/metrics';
 import type { HttpsProtonMeWebDriveSearchPermanentErrorsTotalV1SchemaJson } from '@proton/metrics/types/web_drive_search_permanent_errors_total_v1.schema';
 
 import { Logger } from './Logger';
+import type { RepairOperation } from './SearchDB';
 import {
     type ErrorDecision,
     type PermanentErrorKind,
@@ -98,6 +99,7 @@ export const searchMetrics = {
         taskKind,
         isInitialIndexing,
         isIncrementalUpdate,
+        isInitialAttempt,
     }: {
         decision: ErrorDecision;
         error: unknown;
@@ -105,9 +107,14 @@ export const searchMetrics = {
         taskKind: IndexerTaskKind;
         isInitialIndexing?: boolean;
         isIncrementalUpdate?: boolean;
+        /** Required when `isInitialIndexing` is set: false when this failure follows a prior retry. */
+        isInitialAttempt?: boolean;
     }): void {
         if (isInitialIndexing) {
-            metrics.drive_search_initial_indexing_total.increment({ outcome: 'failure' });
+            metrics.drive_search_initial_indexing_total.increment({
+                outcome: 'failure',
+                isInitialAttempt: isInitialAttempt ? 'true' : 'false',
+            });
         }
         if (isIncrementalUpdate) {
             metrics.drive_search_incremental_update_total.increment({ outcome: 'failure' });
@@ -170,8 +177,18 @@ export const searchMetrics = {
      * Initial indexing run completed. Increments lifecycle counter and observes
      * the duration histogram.
      */
-    markInitialIndexingSucceeded({ durationInSeconds }: { durationInSeconds: number }): void {
-        metrics.drive_search_initial_indexing_total.increment({ outcome: 'success' });
+    markInitialIndexingSucceeded({
+        durationInSeconds,
+        isInitialAttempt,
+    }: {
+        durationInSeconds: number;
+        /** False when this success follows one or more retried attempts. */
+        isInitialAttempt: boolean;
+    }): void {
+        metrics.drive_search_initial_indexing_total.increment({
+            outcome: 'success',
+            isInitialAttempt: isInitialAttempt ? 'true' : 'false',
+        });
         metrics.drive_search_index_build_time_histogram.observe({
             Labels: { searchVersion: SEARCH_VERSION_V1 },
             Value: durationInSeconds,
@@ -261,10 +278,10 @@ export const searchMetrics = {
         error,
     }: {
         populatorUid: string;
-        operation: string;
+        operation: RepairOperation;
         error: unknown;
     }): void {
-        // TODO(DRVWEB-5567): Add grafana metric.
+        metrics.drive_search_node_quarantined_total.increment({ operation });
 
         if (shouldReportQuarantineToSentry(populatorUid)) {
             sendErrorReportForSearch('Adding node to repair table', error, {
@@ -279,17 +296,17 @@ export const searchMetrics = {
     /**
      * A previously-quarantined node was reprocessed successfully and removed from the repair table.
      */
-    markNodeRepaired(): void {
-        // TODO(DRVWEB-5567): Add grafana metric.
+    markNodeRepaired({ operation }: { operation: RepairOperation }): void {
+        metrics.drive_search_node_repaired_total.increment({ operation });
     },
 
     /**
      * Report other search error.
      */
     markSearchOtherError({ error }: { error: unknown }): void {
-        // TODO(DRVWEB-5567): Add grafana metric.
+        metrics.drive_search_other_error_total.increment({});
 
-        sendErrorReportForSearch('Search unknown error', error, {
+        sendErrorReportForSearch('Search other error', error, {
             tags: { label: 'search-other-errors' },
         });
     },
