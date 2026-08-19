@@ -1,6 +1,7 @@
 import { ThemeColor, getVariableFromThemeColor } from '@proton/colors';
-import useUid from '@proton/components/hooks/useUid';
 import percentOf from '@proton/utils/percentOf';
+
+import { useSvgId } from '../helpers/useSvgId';
 
 export type DonutSegmentColor = ThemeColor | string;
 
@@ -46,7 +47,7 @@ export const Donut = ({
     backgroundSegmentColor = 'var(--background-strong)',
     rounded = false,
 }: DonutProps) => {
-    const uid = useUid('straight-gaps');
+    const uid = useSvgId('straight-gaps');
 
     const box = 200;
 
