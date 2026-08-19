@@ -1727,6 +1727,9 @@
       ],
       "Skip": [
         "Omitir"
+      ],
+      "Set up categories": [
+        "Configurar categorías"
       ]
     },
     "Actions message": {
@@ -4372,6 +4375,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ya has creado 10 alias. Obtén alias ilimitados y 500 GB de almacenamiento con ${ BRAND_NAME } Unlimited."
+      ],
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Haz clic derecho en un correo y selecciona «Mover a», o arrástralo y suéltalo en otra categoría. Los correos similares se clasificarán allí automáticamente en el futuro."
       ]
     },
     "description": {
@@ -9180,6 +9186,22 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Estás a solo unos clics de tener una bandeja de entrada ordenada"
+      ],
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "Tienes **${ count } conversación** en tu categoría ${ categoryLabel }",
+        "Tienes **${ count } conversaciones** en tu categoría ${ categoryLabel }"
+      ],
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "Tienes **${ count } mensaje** en tu categoría ${ categoryLabel }",
+        "Tienes **${ count } mensajes** en tu categoría ${ categoryLabel }"
+      ],
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "Has seleccionado **${ checked } conversación** en tu categoría ${ categoryLabel }",
+        "Has seleccionado **${ checked } conversaciones** en tu categoría ${ categoryLabel }"
+      ],
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "Has seleccionado **${ checked } mensaje** en tu categoría ${ categoryLabel }",
+        "Has seleccionado **${ checked } mensajes** en tu categoría ${ categoryLabel }"
       ]
     },
     "info": {
@@ -10366,6 +10388,15 @@
       ],
       "Duration": [
         "Duración"
+      ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Todo lo que necesita tu atención, además de los correos de las categorías desactivadas"
+      ],
+      "Folder name": [
+        "Nombre de la carpeta"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Principal - Todo lo que necesita tu atención, además de los correos de las categorías desactivadas"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15104,6 +15135,9 @@
       ],
       "You have successfully unsubscribed": [
         "Has cancelado la suscripción."
+      ],
+      "Moved to ${ label }. Similar messages will be categorized there in the future.": [
+        "Movido a ${ label }. Los mensajes similares se clasificarán allí en el futuro."
       ]
     },
     "Success notification": {
@@ -16397,6 +16431,9 @@
       ],
       "Your shorter address is now ready": [
         "Tu dirección en formato más corto ya está lista."
+      ],
+      "Refine your Categories": [
+        "Perfecciona tus categorías"
       ]
     },
     "Title header for keys table": {

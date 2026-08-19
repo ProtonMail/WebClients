@@ -1736,6 +1736,9 @@
       ],
       "Skip": [
         "Ignora"
+      ],
+      "Set up categories": [
+        "Configura le categorie"
       ]
     },
     "Actions message": {
@@ -4389,6 +4392,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Hai già creato 10 alias. Ottieni alias illimitati e 500 GB di spazio di archiviazione con ${ BRAND_NAME } Unlimited."
+      ],
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Fai clic con il pulsante destro su un'email e seleziona «Sposta in», oppure trascinala in un'altra categoria. Le email simili verranno ordinate lì automaticamente in futuro."
       ]
     },
     "description": {
@@ -5380,6 +5386,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "La tua ricerca ha restituito troppi risultati. Limita la ricerca e riprova."
+      ],
+      "Could not grant access to the organization key": [
+        "Impossibile concedere l'accesso alla chiave dell'organizzazione"
       ]
     },
     "error": {
@@ -9215,6 +9224,42 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sei a pochi clic da una posta in arrivo organizzata"
+      ],
+      "${ count } email": [
+        "${ count } email",
+        "${ count } email"
+      ],
+      "${ count } email · ${ names }": [
+        "${ count } email · ${ names }",
+        "${ count } email · ${ names }"
+      ],
+      "Apply labels": [
+        "Applica etichette"
+      ],
+      "Expand logs": [
+        "Espandi i log"
+      ],
+      "Mark as read": [
+        "Segna come letto"
+      ],
+      "Mark as unread": [
+        "Segna come non letto"
+      ],
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "Hai **${ count } conversazione** nella categoria ${ categoryLabel }",
+        "Hai **${ count } conversazioni** nella categoria ${ categoryLabel }"
+      ],
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "Hai **${ count } messaggio** nella categoria ${ categoryLabel }",
+        "Hai **${ count } messaggi** nella categoria ${ categoryLabel }"
+      ],
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "Hai selezionato **${ checked } conversazione** nella categoria ${ categoryLabel }",
+        "Hai selezionato **${ checked } conversazioni** nella categoria ${ categoryLabel }"
+      ],
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "Hai selezionato **${ checked } messaggio** nella categoria ${ categoryLabel }",
+        "Hai selezionato **${ checked } messaggi** nella categoria ${ categoryLabel }"
       ]
     },
     "info": {
@@ -10404,6 +10449,18 @@
       ],
       "Duration": [
         "Durata"
+      ],
+      "Account holder name": [
+        "Nome intestatario del conto"
+      ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Tutto ciò che richiede la tua attenzione, più le email dalle categorie disattivate"
+      ],
+      "Folder name": [
+        "Nome cartella"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Principale - Tutto ciò che richiede la tua attenzione, più le email dalle categorie disattivate"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12870,6 +12927,9 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "La tua carta è stata rifiutata. Prova con una carta diversa o contatta la tua banca per autorizzare l'addebito."
+      ],
+      "Please enter the account holder name": [
+        "Inserisci il nome del titolare del conto"
       ]
     },
     "Payments.error": {
@@ -15148,6 +15208,9 @@
       ],
       "You have successfully unsubscribed": [
         "Abbonamento annullato con successo"
+      ],
+      "Moved to ${ label }. Similar messages will be categorized there in the future.": [
+        "Spostato in ${ label }. I messaggi simili verranno categorizzati lì in futuro."
       ]
     },
     "Success notification": {
@@ -16441,6 +16504,12 @@
       ],
       "Your shorter address is now ready": [
         "Il tuo indirizzo breve ora è pronto"
+      ],
+      "Apply labels": [
+        "Applica etichette"
+      ],
+      "Refine your Categories": [
+        "Perfeziona le tue categorie"
       ]
     },
     "Title header for keys table": {

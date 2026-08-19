@@ -1739,6 +1739,9 @@
       ],
       "Skip": [
         "Пропустить"
+      ],
+      "Set up categories": [
+        "Настроить категории"
       ]
     },
     "Actions message": {
@@ -4441,6 +4444,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Вы уже создали 10 псевдонимов. Получите неограниченное количество псевдонимов и 500 ГБ для хранения с помощью неограниченным ${ BRAND_NAME }."
+      ],
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Щёлкните письмо правой кнопкой мыши и выберите «Переместить в» или перетащите его в другую категорию. В будущем похожие письма будут попадать туда автоматически."
       ]
     },
     "description": {
@@ -9504,6 +9510,30 @@
         "Нашелся актуальный поисковый указатель с ${ oldIndexSize } сообщениями.",
         "Нашелся актуальный поисковый указатель с ${ oldIndexSize } сообщениями.",
         "Нашелся актуальный поисковый указатель с ${ oldIndexSize } сообщениями."
+      ],
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "В категории ${ categoryLabel } у вас **${ count } беседа**",
+        "В категории ${ categoryLabel } у вас **${ count } беседы**",
+        "В категории ${ categoryLabel } у вас **${ count } бесед**",
+        "В категории ${ categoryLabel } у вас **${ count } беседы**"
+      ],
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "В категории ${ categoryLabel } у вас **${ count } сообщение**",
+        "В категории ${ categoryLabel } у вас **${ count } сообщения**",
+        "В категории ${ categoryLabel } у вас **${ count } сообщений**",
+        "В категории ${ categoryLabel } у вас **${ count } сообщения**"
+      ],
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "В категории ${ categoryLabel } вы выбрали **${ checked } беседу**",
+        "В категории ${ categoryLabel } вы выбрали **${ checked } беседы**",
+        "В категории ${ categoryLabel } вы выбрали **${ checked } бесед**",
+        "В категории ${ categoryLabel } вы выбрали **${ checked } беседы**"
+      ],
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "В категории ${ categoryLabel } вы выбрали **${ checked } сообщение**",
+        "В категории ${ categoryLabel } вы выбрали **${ checked } сообщения**",
+        "В категории ${ categoryLabel } вы выбрали **${ checked } сообщений**",
+        "В категории ${ categoryLabel } вы выбрали **${ checked } сообщения**"
       ]
     },
     "info": {
@@ -10700,6 +10730,15 @@
       ],
       "Duration": [
         "Продолжительность"
+      ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Всё, что требует вашего внимания, а также письма из отключённых категорий"
+      ],
+      "Folder name": [
+        "Имя папки"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Основные — всё, что требует вашего внимания, а также письма из отключённых категорий"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15681,6 +15720,9 @@
       ],
       "You have successfully unsubscribed": [
         "Подписка отменена"
+      ],
+      "Moved to ${ label }. Similar messages will be categorized there in the future.": [
+        "Перемещено в ${ label }. В будущем похожие сообщения будут попадать туда же."
       ]
     },
     "Success notification": {
@@ -17020,6 +17062,9 @@
       ],
       "Your shorter address is now ready": [
         "Ваш укороченный адрес готов"
+      ],
+      "Refine your Categories": [
+        "Настройте свои категории"
       ]
     },
     "Title header for keys table": {

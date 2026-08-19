@@ -1739,6 +1739,9 @@
       ],
       "Skip": [
         "Přeskočit"
+      ],
+      "Set up categories": [
+        "Nastavit kategorie"
       ]
     },
     "Actions message": {
@@ -4441,6 +4444,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Vytvořili jste již 10 aliasů. Získejte neomezený počet aliasů a 500 GB úložného prostoru s ${ BRAND_NAME } Unlimited."
+      ],
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Klikněte na e-mail pravým tlačítkem a vyberte „Přesunout do“, nebo jej přetáhněte do jiné kategorie. Podobné e-maily budou v budoucnu automaticky zařazeny tam."
       ]
     },
     "description": {
@@ -9468,6 +9474,30 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Od doručené pošty bez nepořádku vás dělí jen několik kliknutí"
+      ],
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "V kategorii ${ categoryLabel } máte **${ count } konverzaci**",
+        "V kategorii ${ categoryLabel } máte **${ count } konverzace**",
+        "V kategorii ${ categoryLabel } máte **${ count } konverzace**",
+        "V kategorii ${ categoryLabel } máte **${ count } konverzací**"
+      ],
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "V kategorii ${ categoryLabel } máte **${ count } zprávu**",
+        "V kategorii ${ categoryLabel } máte **${ count } zprávy**",
+        "V kategorii ${ categoryLabel } máte **${ count } zprávy**",
+        "V kategorii ${ categoryLabel } máte **${ count } zpráv**"
+      ],
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "V kategorii ${ categoryLabel } jste vybrali **${ checked } konverzaci**",
+        "V kategorii ${ categoryLabel } jste vybrali **${ checked } konverzace**",
+        "V kategorii ${ categoryLabel } jste vybrali **${ checked } konverzace**",
+        "V kategorii ${ categoryLabel } jste vybrali **${ checked } konverzací**"
+      ],
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "V kategorii ${ categoryLabel } jste vybrali **${ checked } zprávu**",
+        "V kategorii ${ categoryLabel } jste vybrali **${ checked } zprávy**",
+        "V kategorii ${ categoryLabel } jste vybrali **${ checked } zprávy**",
+        "V kategorii ${ categoryLabel } jste vybrali **${ checked } zpráv**"
       ]
     },
     "info": {
@@ -10667,6 +10697,15 @@
       ],
       "Duration": [
         "Doba trvání"
+      ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Vše, co potřebuje vaši pozornost, a e-maily ze zakázaných kategorií"
+      ],
+      "Folder name": [
+        "Název složky"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Primární – vše, co potřebuje vaši pozornost, a e-maily ze zakázaných kategorií"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15651,6 +15690,9 @@
       ],
       "You have successfully unsubscribed": [
         "Předplatné bylo úspěšně zrušeno"
+      ],
+      "Moved to ${ label }. Similar messages will be categorized there in the future.": [
+        "Přesunuto do ${ label }. Podobné zprávy budou v budoucnu zařazeny tam."
       ]
     },
     "Success notification": {
@@ -16987,6 +17029,9 @@
       ],
       "Your shorter address is now ready": [
         "Vaše kratší adresa je nyní připravena"
+      ],
+      "Refine your Categories": [
+        "Vylaďte své kategorie"
       ]
     },
     "Title header for keys table": {

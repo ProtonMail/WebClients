@@ -1736,6 +1736,9 @@
       ],
       "Skip": [
         "Ignorar"
+      ],
+      "Set up categories": [
+        "Configurar categorias"
       ]
     },
     "Actions message": {
@@ -4385,6 +4388,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Já criou 10 aliases. Obtenha aliases ilimitados e 500 GB de armazenamento com o ${ BRAND_NAME } Unlimited."
+      ],
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Clique com o botão direito num e-mail e selecione «Mover para», ou arraste-o para outra categoria. Os e-mails semelhantes serão organizados aí automaticamente no futuro."
       ]
     },
     "description": {
@@ -10472,6 +10478,15 @@
       ],
       "Duration": [
         "Duração"
+      ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Tudo o que precisa da sua atenção, além dos e-mails das categorias desativadas"
+      ],
+      "Folder name": [
+        "Nome da pasta"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Principal - Tudo o que precisa da sua atenção, além dos e-mails das categorias desativadas"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15224,6 +15239,9 @@
       ],
       "You have successfully unsubscribed": [
         "A sua subscrição foi cancelada."
+      ],
+      "Moved to ${ label }. Similar messages will be categorized there in the future.": [
+        "Movido para ${ label }. As mensagens semelhantes serão categorizadas aí no futuro."
       ]
     },
     "Success notification": {

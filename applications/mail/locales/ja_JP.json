@@ -1721,6 +1721,9 @@
       ],
       "Skip": [
         "スキップ"
+      ],
+      "Set up categories": [
+        "カテゴリを設定"
       ]
     },
     "Actions message": {
@@ -4336,6 +4339,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "すでに 10 個のエリアスを作成しました。${ BRAND_NAME }Unlimitedで無制限のエイリアスと 500 GBのストレージを獲得しましょう。"
+      ],
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "メールを右クリックして「移動先」を選択するか、別のカテゴリにドラッグ＆ドロップしてください。今後、類似のメールは自動的にそちらに振り分けられます。"
       ]
     },
     "description": {
@@ -9027,6 +9033,18 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "不要なものが整理された受信トレイまで、あと数クリックです。"
+      ],
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "${ categoryLabel } カテゴリに **${ count } 件の会話** があります"
+      ],
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "${ categoryLabel } カテゴリに **${ count } 件のメッセージ** があります"
+      ],
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "${ categoryLabel } カテゴリで **${ checked } 件の会話** を選択しました"
+      ],
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "${ categoryLabel } カテゴリで **${ checked } 件のメッセージ** を選択しました"
       ]
     },
     "info": {
@@ -10202,6 +10220,15 @@
       ],
       "Duration": [
         "期間"
+      ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "注意が必要なすべてのメールと、無効化されたカテゴリからのメール"
+      ],
+      "Folder name": [
+        "フォルダー名"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "プライマリー - 注意が必要なすべてのメールと、無効化されたカテゴリからのメール"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14817,6 +14844,9 @@
       ],
       "You have successfully unsubscribed": [
         "サブスクリプションをキャンセルしました"
+      ],
+      "Moved to ${ label }. Similar messages will be categorized there in the future.": [
+        "${ label } へ移動しました。今後は類似のメッセージがそちらに振り分けられます。"
       ]
     },
     "Success notification": {
@@ -16087,6 +16117,9 @@
       ],
       "Your shorter address is now ready": [
         "短いアドレスの準備ができました"
+      ],
+      "Refine your Categories": [
+        "カテゴリを調整"
       ]
     },
     "Title header for keys table": {
