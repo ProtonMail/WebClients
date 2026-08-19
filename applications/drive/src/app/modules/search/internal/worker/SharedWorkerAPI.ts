@@ -158,6 +158,13 @@ export class SharedWorkerAPI {
             this.searchMetrics?.markSearchQuerySucceeded({ durationInSeconds: stopTimer() });
         } catch (error) {
             this.searchMetrics?.markSearchQueryFailed({ error });
+            // Search bypasses the task queue entirely (see SearchQueryExecutor), so nothing else
+            // would ever surface a permanent error from this path - without this, the rebuild
+            // banner (driven by `permanentError`) would never appear for a failure hit mid-query.
+            const permanentError = classifyPermanentError(error);
+            if (permanentError) {
+                this.stateChannel?.postMessage({ permanentError });
+            }
             throw error;
         } finally {
             onEvent?.({ type: 'done' });

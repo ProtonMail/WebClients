@@ -40,6 +40,12 @@ describe('IndexRegistry integration', () => {
         expect(first).toBe(second);
     });
 
+    it('get() called concurrently for the same kind only builds one engine', async () => {
+        const [first, second] = await Promise.all([registry.get(IndexKind.MAIN, db), registry.get(IndexKind.MAIN, db)]);
+        expect(first).toBe(second);
+        expect([...registry.getAll()]).toHaveLength(1);
+    });
+
     it('getAll() iterates created instances', async () => {
         await registry.get(IndexKind.MAIN, db);
         await registry.get('TEST' as IndexKind, db);
