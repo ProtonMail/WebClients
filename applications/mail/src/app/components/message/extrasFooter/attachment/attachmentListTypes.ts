@@ -1,6 +1,6 @@
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 
-import type { PendingUpload } from 'proton-mail/hooks/composer/useAttachments/interface';
+import type { PendingUpload } from '../../../../hooks/composer/useAttachments/interface';
 
 export enum AttachmentAction {
     Download,

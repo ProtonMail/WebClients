@@ -3,8 +3,8 @@ import type { Draft } from '@reduxjs/toolkit';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import type { Conversation, ConversationLabel } from 'proton-mail/models/conversation';
-import type { ElementsState } from 'proton-mail/store/elements/elementsTypes';
+import type { Conversation, ConversationLabel } from '../../../models/conversation';
+import type { ElementsState } from '../elementsTypes';
 import {
     CONVERSATION_ID,
     CUSTOM_LABEL_ID1,
@@ -15,7 +15,7 @@ import {
     expectMessagesLabelsSameArray,
     setupConversation,
     setupMessage,
-} from 'proton-mail/store/elements/tests/elementsReducer.test.helpers';
+} from './elementsReducer.test.helpers';
 
 import { unlabelMessagesPending } from '../elementsReducers';
 

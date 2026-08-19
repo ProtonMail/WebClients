@@ -1,6 +1,6 @@
 import type { IncomingDefault, IncomingDefaultStatus } from '@proton/shared/lib/interfaces';
 
-import { useMailSelector } from 'proton-mail/store/hooks';
+import { useMailSelector } from '../../store/hooks';
 
 import {
     getIncomingDefaultStatus,

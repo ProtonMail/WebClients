@@ -2,13 +2,13 @@ import { renderHook } from '@testing-library/react-hooks';
 
 import { useVariant } from '@proton/unleash/useVariant';
 
-import { selectShouldShowMoveToPrimaryBadge } from 'proton-mail/store/categories/categoriesSelector';
-import { useMailSelector } from 'proton-mail/store/hooks';
+import { selectShouldShowMoveToPrimaryBadge } from '../../../store/categories/categoriesSelector';
+import { useMailSelector } from '../../../store/hooks';
 
 import { useMoveToPrimaryBadge } from './useMoveToPrimaryBadge';
 
 jest.mock('@proton/unleash/useVariant');
-jest.mock('proton-mail/store/hooks');
+jest.mock('../../../store/hooks');
 
 const mockUseVariant = jest.mocked(useVariant);
 const mockUseMailSelector = jest.mocked(useMailSelector);

@@ -4,7 +4,7 @@ import { messageCountsActions, selectMessageCounts } from '@proton/mail/store/co
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import type { LabelCount } from '@proton/shared/lib/interfaces/Label';
 
-import { useMailDispatch, useMailStore } from 'proton-mail/store/hooks';
+import { useMailDispatch, useMailStore } from '../../store/hooks';
 
 import { replaceCounter } from '../../helpers/counter';
 import { hasLabel } from '../../helpers/elements';

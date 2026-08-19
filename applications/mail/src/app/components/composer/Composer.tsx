@@ -29,9 +29,9 @@ import { getPublicRecipients, getRecipients, getSender } from '@proton/shared/li
 import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
-import ComposerAssistant from 'proton-mail/components/assistant/ComposerAssistant';
-import { insertTextBeforeContent, prepareContentToInsert } from 'proton-mail/helpers/message/messageContent';
-import { useMailStore } from 'proton-mail/store/hooks';
+import ComposerAssistant from '../assistant/ComposerAssistant';
+import { insertTextBeforeContent, prepareContentToInsert } from '../../helpers/message/messageContent';
+import { useMailStore } from '../../store/hooks';
 
 import { DRAG_ADDRESS_KEY } from '../../constants';
 import { useComposerContent } from '../../hooks/composer/useComposerContent';

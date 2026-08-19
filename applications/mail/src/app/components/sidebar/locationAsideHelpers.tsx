@@ -4,7 +4,7 @@ import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
-import { getNUnreadConversationsText, getNUnreadMessagesText } from 'proton-mail/helpers/text';
+import { getNUnreadConversationsText, getNUnreadMessagesText } from '../../helpers/text';
 
 const UNREAD_LIMIT = 9999;
 const MAIL_SUBSCRIPTION_LIMIT = 999;

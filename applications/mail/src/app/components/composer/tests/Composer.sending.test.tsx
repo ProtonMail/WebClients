@@ -8,7 +8,7 @@ import { MIME_TYPES } from '@proton/shared/lib/constants';
 import type { AddressKey, MailSettings } from '@proton/shared/lib/interfaces';
 import { SIGN } from '@proton/shared/lib/mail/mailSettings';
 
-import type { MailState } from 'proton-mail/store/store';
+import type { MailState } from '../../../store/store';
 
 import { addApiContact } from '../../../helpers/test/contact';
 import type { GeneratedKey } from '../../../helpers/test/crypto';

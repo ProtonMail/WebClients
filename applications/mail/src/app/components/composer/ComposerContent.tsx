@@ -13,8 +13,8 @@ import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { getAttachments } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
-import type { AddAttachmentsParams, PendingUpload } from 'proton-mail/hooks/composer/useAttachments/interface';
-import type { MailState } from 'proton-mail/store/store';
+import type { AddAttachmentsParams, PendingUpload } from '../../hooks/composer/useAttachments/interface';
+import type { MailState } from '../../store/store';
 
 import AttachmentList, { AttachmentAction } from '../../components/message/extrasFooter/attachment/AttachmentList';
 import type { MessageChange } from './Composer';

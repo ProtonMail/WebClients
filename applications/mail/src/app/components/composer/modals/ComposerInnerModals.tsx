@@ -9,7 +9,7 @@ import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import type { AddAttachmentsParams } from 'proton-mail/hooks/composer/useAttachments/interface';
+import type { AddAttachmentsParams } from '../../../hooks/composer/useAttachments/interface';
 
 import { NO_REPLY_EMAIL_DONT_SHOW_AGAIN_KEY } from '../../../constants';
 import { ComposerInnerModalStates } from '../../../hooks/composer/useComposerInnerModals';

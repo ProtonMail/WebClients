@@ -1,7 +1,7 @@
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Filter, Sort } from '@proton/shared/lib/mail/search';
 
-import { hasAttachmentsFilter } from 'proton-mail/helpers/elements';
+import { hasAttachmentsFilter } from '../../../helpers/elements';
 
 export const getActiveState = (filter: Filter, sort: Sort, labelID: string) => {
     const isUnreadActive = filter.Unread === 1;

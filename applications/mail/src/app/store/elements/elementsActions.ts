@@ -13,7 +13,7 @@ import { DEFAULT_MAIL_PAGE_SIZE, MAILBOX_LABEL_IDS, SECOND } from '@proton/share
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import unique from '@proton/utils/unique';
 
-import { isElementMessage } from 'proton-mail/helpers/elements';
+import { isElementMessage } from '../../helpers/elements';
 
 import type { Element } from '../../models/element';
 import type { ConversationParams, ConversationResult } from '../conversations/conversationsTypes';

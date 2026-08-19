@@ -3,21 +3,21 @@ import type { Draft } from '@reduxjs/toolkit';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import type { Conversation, ConversationLabel } from 'proton-mail/models/conversation';
+import type { Conversation, ConversationLabel } from '../../../models/conversation';
 import {
     markConversationsAsReadPending,
     markConversationsAsUnreadPending,
     markMessagesAsReadPending,
     markMessagesAsUnreadPending,
-} from 'proton-mail/store/elements/elementsReducers';
-import type { ElementsState } from 'proton-mail/store/elements/elementsTypes';
+} from '../elementsReducers';
+import type { ElementsState } from '../elementsTypes';
 import {
     CONVERSATION_ID,
     MESSAGE_ID,
     expectConversationLabelsSameArray,
     setupConversation,
     setupMessage,
-} from 'proton-mail/store/elements/tests/elementsReducer.test.helpers';
+} from './elementsReducer.test.helpers';
 
 describe('markMessageAs', () => {
     let testState: Draft<ElementsState>;

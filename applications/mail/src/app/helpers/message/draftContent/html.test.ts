@@ -3,27 +3,27 @@ import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 import { FORWARDED_MESSAGE } from '@proton/shared/lib/mail/messages';
 
-import { formatFullDate } from 'proton-mail/helpers/date';
+import { formatFullDate } from '../../date';
 import {
     createHTMLDraftContent,
     generateBlockquote,
     generatePreviousMessageInfos,
-} from 'proton-mail/helpers/message/draftContent/html';
+} from './html';
 
 // Mock dependencies to avoid DOM and other issues in tests
-jest.mock('proton-mail/helpers/message/messageContentConversion', () => ({
+jest.mock('../messageContentConversion', () => ({
     plainTextToHTML: jest.fn((_message, body) => {
         return `<p>${body}</p>`;
     }),
 }));
 
-jest.mock('proton-mail/helpers/message/messageContentQuery', () => ({
+jest.mock('../messageContentQuery', () => ({
     getDocumentContent: jest.fn((doc: any) => {
         return doc?.innerHTML || '<p>HTML content</p>';
     }),
 }));
 
-jest.mock('proton-mail/helpers/message/messageSignature', () => ({
+jest.mock('../messageSignature', () => ({
     insertSignature: jest.fn((content, signature) => {
         if (signature) {
             // Mimics real insertSignature which prepends signature before content

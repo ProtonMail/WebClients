@@ -6,13 +6,13 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { snoozeConversations, unsnoozeConversations } from '@proton/shared/lib/api/conversations';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
-import type { SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
+import type { SOURCE_ACTION } from '../../components/list/list-telemetry/useListTelemetry';
 import useListTelemetry, {
     ACTION_TYPE,
     numberSelectionElements,
-} from 'proton-mail/components/list/list-telemetry/useListTelemetry';
-import type { SNOOZE_DURATION, SnoozeState } from 'proton-mail/components/list/snooze/constant';
-import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
+} from '../../components/list/list-telemetry/useListTelemetry';
+import type { SNOOZE_DURATION, SnoozeState } from '../../components/list/snooze/constant';
+import { useMailDispatch, useMailSelector } from '../../store/hooks';
 
 import { getSnoozeNotificationText, getSnoozeUnixTime } from '../../helpers/snooze';
 import type { Element } from '../../models/element';

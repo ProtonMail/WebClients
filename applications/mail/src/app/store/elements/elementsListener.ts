@@ -1,5 +1,5 @@
-import { resetRetry } from 'proton-mail/store/elements/elementsActions';
-import type { AppStartListening } from 'proton-mail/store/store';
+import { resetRetry } from './elementsActions';
+import type { AppStartListening } from '../store';
 
 export const startElementsListener = (startListening: AppStartListening) => {
     startListening({

@@ -57,11 +57,11 @@ import { CUSTOM_VIEWS, CUSTOM_VIEWS_LABELS, MARK_AS_STATUS } from '@proton/share
 import { isExpiringByRetentionRule } from '@proton/shared/lib/mail/messages';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
-import { APPLY_LOCATION_TYPES } from 'proton-mail/hooks/actions/applyLocation/interface';
-import { useApplyLocation } from 'proton-mail/hooks/actions/applyLocation/useApplyLocation';
-import { useMailDispatch } from 'proton-mail/store/hooks';
-import { newsletterSubscriptionsActions } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSlice';
+import { SOURCE_ACTION } from '../../list/list-telemetry/useListTelemetry';
+import { APPLY_LOCATION_TYPES } from '../../../hooks/actions/applyLocation/interface';
+import { useApplyLocation } from '../../../hooks/actions/applyLocation/useApplyLocation';
+import { useMailDispatch } from '../../../store/hooks';
+import { newsletterSubscriptionsActions } from '../../../store/newsletterSubscriptions/newsletterSubscriptionsSlice';
 
 import { formatFileNameDate } from '../../../helpers/date';
 import { isStarred as IsMessageStarred, getDate } from '../../../helpers/elements';

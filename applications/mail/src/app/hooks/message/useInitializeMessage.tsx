@@ -27,10 +27,10 @@ import type { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTracker
 import { useFlag } from '@proton/unleash/useFlag';
 import uniqueBy from '@proton/utils/uniqueBy';
 
-import { SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
-import { transformEmbedded } from 'proton-mail/helpers/transforms/transformEmbedded';
-import { transformRemote } from 'proton-mail/helpers/transforms/transformRemote';
-import { useMailDispatch } from 'proton-mail/store/hooks';
+import { SOURCE_ACTION } from '../../components/list/list-telemetry/useListTelemetry';
+import { transformEmbedded } from '../../helpers/transforms/transformEmbedded';
+import { transformRemote } from '../../helpers/transforms/transformRemote';
+import { useMailDispatch } from '../../store/hooks';
 
 import { LOAD_RETRY_COUNT, LOAD_RETRY_DELAY } from '../../constants';
 import { getPureAttachments } from '../../helpers/attachment/attachment';

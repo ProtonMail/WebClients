@@ -7,7 +7,7 @@ import { TelemetryMeasurementGroups, TelemetryProtonTipsEvents } from '@proton/s
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import type { SimpleMap } from '@proton/shared/lib/interfaces';
 
-import type { TipActionType } from 'proton-mail/models/tip';
+import type { TipActionType } from '../../../models/tip';
 
 const useProtonTipsTelemetry = () => {
     const api = useApi();

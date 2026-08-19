@@ -2,9 +2,9 @@ import { useMemo } from 'react';
 
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 
-import type { TipData } from 'proton-mail/models/tip';
-import { selectLabelID } from 'proton-mail/store/elements/elementsSelectors';
-import { useMailSelector } from 'proton-mail/store/hooks';
+import type { TipData } from '../../../models/tip';
+import { selectLabelID } from '../../../store/elements/elementsSelectors';
+import { useMailSelector } from '../../../store/hooks';
 
 const useGetRandomTip = (tipMessages: TipData[]) => {
     const labelID = useMailSelector(selectLabelID);

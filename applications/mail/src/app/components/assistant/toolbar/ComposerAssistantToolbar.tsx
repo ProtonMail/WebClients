@@ -15,10 +15,10 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import generatingLoader from '@proton/styles/assets/img/illustrations/dot-loader.svg';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { useComposerAssistantProvider } from 'proton-mail/components/assistant/provider/ComposerAssistantProvider';
-import type { ComposerAssistantInitialSetupSpotlightRef } from 'proton-mail/components/assistant/spotlights/ComposerAssistantInitialSetupSpotlight';
-import type { GenerateResultProps } from 'proton-mail/hooks/assistant/useComposerAssistantGenerate';
-import type { ComposerAssistantSelection } from 'proton-mail/hooks/assistant/useComposerAssistantSelectedText';
+import { useComposerAssistantProvider } from '../provider/ComposerAssistantProvider';
+import type { ComposerAssistantInitialSetupSpotlightRef } from '../spotlights/ComposerAssistantInitialSetupSpotlight';
+import type { GenerateResultProps } from '../../../hooks/assistant/useComposerAssistantGenerate';
+import type { ComposerAssistantSelection } from '../../../hooks/assistant/useComposerAssistantSelectedText';
 
 import ComposerAssistantCustomInput from './ComposerAssistantCustomInput';
 import ComposerAssistantQuickAction from './ComposerAssistantQuickAction';

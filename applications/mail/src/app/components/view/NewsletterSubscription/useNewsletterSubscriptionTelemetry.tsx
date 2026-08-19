@@ -12,9 +12,9 @@ import {
 import { sendTelemetryReportWithBaseDimensions } from '@proton/shared/lib/helpers/metrics';
 import type { SimpleMap } from '@proton/shared/lib/interfaces';
 
-import { useMailSelector } from 'proton-mail/store/hooks';
-import type { SortSubscriptionsValue } from 'proton-mail/store/newsletterSubscriptions/interface';
-import { allSubscriptionCount } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSelector';
+import { useMailSelector } from '../../../store/hooks';
+import type { SortSubscriptionsValue } from '../../../store/newsletterSubscriptions/interface';
+import { allSubscriptionCount } from '../../../store/newsletterSubscriptions/newsletterSubscriptionsSelector';
 
 import { type ModalFilterType, NewsletterMessagesAction, type NewsletterSubscriptionAction } from './interface';
 import {

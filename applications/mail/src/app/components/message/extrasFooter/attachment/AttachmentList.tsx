@@ -12,9 +12,9 @@ import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import type { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import clsx from '@proton/utils/clsx';
 
-import { isDummyAttachmentUpload } from 'proton-mail/hooks/composer/useAttachments/helpers';
-import type { PendingUpload } from 'proton-mail/hooks/composer/useAttachments/interface';
-import { useHasScroll } from 'proton-mail/hooks/useHasScroll';
+import { isDummyAttachmentUpload } from '../../../../hooks/composer/useAttachments/helpers';
+import type { PendingUpload } from '../../../../hooks/composer/useAttachments/interface';
+import { useHasScroll } from '../../../../hooks/useHasScroll';
 
 import { canPreviewAttachment } from '../../../../helpers/attachment/attachment';
 import { getAttachmentCounts } from '../../../../helpers/message/messages';

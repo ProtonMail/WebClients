@@ -1,7 +1,7 @@
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Label } from '@proton/shared/lib/interfaces';
 
-import { getIsElementMovingOutFromLabel } from 'proton-mail/hooks/optimistic/useOptimisticApplyLabels';
+import { getIsElementMovingOutFromLabel } from './useOptimisticApplyLabels';
 
 describe('useOptimisticApplyLabels', () => {
     describe('getIsElementMovingOutFromLabel', () => {

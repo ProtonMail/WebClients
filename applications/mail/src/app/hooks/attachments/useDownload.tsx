@@ -8,8 +8,8 @@ import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { getAttachments } from '@proton/shared/lib/mail/messages';
 
-import ConfirmDownloadAttachments from 'proton-mail/components/message/extrasFooter/attachment/ConfirmDownloadAttachments';
-import { useMailDispatch } from 'proton-mail/store/hooks';
+import ConfirmDownloadAttachments from '../../components/message/extrasFooter/attachment/ConfirmDownloadAttachments';
+import { useMailDispatch } from '../../store/hooks';
 
 import type { Download } from '../../helpers/attachment/attachmentDownloader';
 import {

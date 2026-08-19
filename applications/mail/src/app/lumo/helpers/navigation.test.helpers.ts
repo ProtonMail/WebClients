@@ -11,11 +11,11 @@ import type { ESStatusBooleans } from '@proton/encrypted-search/models';
 import type { CategoryLabelID } from '@proton/shared/lib/constants';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
-import { getElementContextIdentifier } from 'proton-mail/helpers/elements';
-import { categoryIDFromUrl, extractSearchParameters, filterFromUrl, sortFromUrl } from 'proton-mail/helpers/mailboxUrl';
-import type { Element } from 'proton-mail/models/element';
-import { newElementsState } from 'proton-mail/store/elements/elementsSlice';
-import type { ElementsState } from 'proton-mail/store/elements/elementsTypes';
+import { getElementContextIdentifier } from '../../helpers/elements';
+import { categoryIDFromUrl, extractSearchParameters, filterFromUrl, sortFromUrl } from '../../helpers/mailboxUrl';
+import type { Element } from '../../models/element';
+import { newElementsState } from '../../store/elements/elementsSlice';
+import type { ElementsState } from '../../store/elements/elementsTypes';
 
 import type { ToolStore } from '../toolModule';
 

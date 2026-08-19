@@ -31,14 +31,14 @@ import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { isDesktopInboxUser, isDriveUser, isPassUser, isVPNUser } from '@proton/shared/lib/helpers/usedClientsFlags';
 import { AUTO_DELETE_SPAM_AND_TRASH_DAYS } from '@proton/shared/lib/mail/mailSettings';
 
-import { MAIL_UPSELL_BANNERS_OPTIONS_URLS } from 'proton-mail/constants';
-import { isConversationMode } from 'proton-mail/helpers/mailSettings';
-import useHasScheduledMessages from 'proton-mail/hooks/useHasScheduledMessages';
-import useHasSnoozedMessages from 'proton-mail/hooks/useHasSnoozedMessages';
-import type { TipData } from 'proton-mail/models/tip';
-import { TipActionType } from 'proton-mail/models/tip';
-import { selectLabelID } from 'proton-mail/store/elements/elementsSelectors';
-import { useMailSelector } from 'proton-mail/store/hooks';
+import { MAIL_UPSELL_BANNERS_OPTIONS_URLS } from '../../../constants';
+import { isConversationMode } from '../../../helpers/mailSettings';
+import useHasScheduledMessages from '../../../hooks/useHasScheduledMessages';
+import useHasSnoozedMessages from '../../../hooks/useHasSnoozedMessages';
+import type { TipData } from '../../../models/tip';
+import { TipActionType } from '../../../models/tip';
+import { selectLabelID } from '../../../store/elements/elementsSelectors';
+import { useMailSelector } from '../../../store/hooks';
 
 import PassAliasTipCTA from './PassAliasTipCTA';
 import ProtonTipCTA from './ProtonTipCTA';

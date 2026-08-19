@@ -3,11 +3,11 @@ import type { Draft } from '@reduxjs/toolkit';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 
-import type { ElementsState } from 'proton-mail/store/elements/elementsTypes';
+import type { ElementsState } from '../elementsTypes';
 import {
     generateElementContextIdentifier,
     setupMessage,
-} from 'proton-mail/store/elements/tests/elementsReducer.test.helpers';
+} from '../tests/elementsReducer.test.helpers';
 
 import {
     computeContextTotals,

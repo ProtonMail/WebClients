@@ -12,9 +12,9 @@ import { IcInbox } from '@proton/icons/icons/IcInbox';
 import { useFilters } from '@proton/mail/store/filters/hooks';
 import { MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 
-import { useMailSelector } from 'proton-mail/store/hooks';
-import { SubscriptionTabs } from 'proton-mail/store/newsletterSubscriptions/interface';
-import { selectedTab } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSelector';
+import { useMailSelector } from '../../../../store/hooks';
+import { SubscriptionTabs } from '../../../../store/newsletterSubscriptions/interface';
+import { selectedTab } from '../../../../store/newsletterSubscriptions/newsletterSubscriptionsSelector';
 
 import { getReceivedMessagesCount, getUnsubscribeMethod, shouldOpenUpsellOnFilterClick } from '../helper';
 import { type ModalFilterType, NewsletterSubscriptionAction, type PropsWithNewsletterSubscription } from '../interface';

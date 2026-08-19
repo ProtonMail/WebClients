@@ -1,6 +1,6 @@
 import type { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
 
-import type { Element } from 'proton-mail/models/element';
+import type { Element } from '../../../models/element';
 
 export interface ApplyLocationParams {
     elements: Element[];

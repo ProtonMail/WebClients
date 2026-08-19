@@ -14,7 +14,7 @@ import { isAppInView } from '@proton/shared/lib/drawer/helpers';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
-import FeatureTourDrawerButton from 'proton-mail/components/drawer/FeatureTourDrawerButton';
+import FeatureTourDrawerButton from '../../components/drawer/FeatureTourDrawerButton';
 
 const useMailDrawer = () => {
     const { appInView, showDrawerSidebar } = useDrawer();

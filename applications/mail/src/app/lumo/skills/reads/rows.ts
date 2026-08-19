@@ -4,17 +4,17 @@
  */
 import type { ReferenceRegistry } from '@proton/llm/lib/lumoAgent/contracts/types';
 
-import { getDate, hasAttachments, isStarred, isUnread } from 'proton-mail/helpers/elements';
-import { getCurrentFolders, getElementLabels } from 'proton-mail/helpers/labels';
-import { getDisplayRecipients, getUniqueElementSenders } from 'proton-mail/helpers/recipients';
-import type { Element } from 'proton-mail/models/element';
+import { getDate, hasAttachments, isStarred, isUnread } from '../../../helpers/elements';
+import { getCurrentFolders, getElementLabels } from '../../../helpers/labels';
+import { getDisplayRecipients, getUniqueElementSenders } from '../../../helpers/recipients';
+import type { Element } from '../../../models/element';
 import {
     contextTotal as contextTotalSelector,
     elements as elementsSelector,
     selectConversationMode,
     selectLabelID,
     taskRunningInLabel,
-} from 'proton-mail/store/elements/elementsSelectors';
+} from '../../../store/elements/elementsSelectors';
 
 import { formatLocalDate, formatSender } from '../../helpers/formatting';
 import type { MailToolDeps } from '../../toolModule';

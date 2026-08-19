@@ -1,12 +1,12 @@
 import { render, screen } from '@testing-library/react';
 
-import { useMailSelector } from 'proton-mail/store/hooks';
+import { useMailSelector } from '../../store/hooks';
 
 import type { Conversation } from '../../models/conversation';
 import type { Element } from '../../models/element';
 import ItemDate from './ItemDate';
 
-jest.mock('proton-mail/store/hooks');
+jest.mock('../../store/hooks');
 jest.mocked(useMailSelector).mockImplementation(() => ({ conversationMode: true }));
 
 const element = {

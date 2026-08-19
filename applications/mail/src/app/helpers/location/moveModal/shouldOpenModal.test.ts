@@ -4,10 +4,10 @@ import type { Folder, MailSettings } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
 
-import { HIDE_SNOOZE_CONFIRMATION_LS_KEY } from 'proton-mail/components/list/snooze/constant';
-import { ModalType } from 'proton-mail/containers/globalModals/inteface';
-import type { Element } from 'proton-mail/models/element';
-import type { ConversationState } from 'proton-mail/store/conversations/conversationsTypes';
+import { HIDE_SNOOZE_CONFIRMATION_LS_KEY } from '../../../components/list/snooze/constant';
+import { ModalType } from '../../../containers/globalModals/inteface';
+import type { Element } from '../../../models/element';
+import type { ConversationState } from '../../../store/conversations/conversationsTypes';
 
 import {
     shouldOpenConfirmationModalForConverversation,

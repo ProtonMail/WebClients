@@ -8,7 +8,7 @@ import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpo
 import range from '@proton/utils/range';
 
 // mock useGetMessageKeys on-the-fly when needed
-import { useGetMessageKeys } from 'proton-mail/hooks/message/useGetMessageKeys';
+import { useGetMessageKeys } from '../../hooks/message/useGetMessageKeys';
 
 import {
     addApiKeys,
@@ -29,7 +29,7 @@ import * as messageDraftActions from '../../store/messages/draft/messagesDraftAc
 import { initialize as initializeMessage } from '../../store/messages/read/messagesReadActions';
 import ConversationView from './ConversationView';
 
-jest.mock('proton-mail/hooks/message/useGetMessageKeys');
+jest.mock('../../hooks/message/useGetMessageKeys');
 const mockUseGetMessageKeys = () => {
     // empty return value since the result is not used in these tests; if this were to change,
     // this mock should be dropped a valid key setup should be put in place.

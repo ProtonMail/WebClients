@@ -4,7 +4,7 @@ import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { DEFAULT_MAIL_SETTINGS } from '@proton/shared/lib/mail/mailSettings';
 
-import { useMailSelector } from 'proton-mail/store/hooks';
+import { useMailSelector } from '../../../store/hooks';
 
 import {
     elementsAreUnread as elementsAreUnreadSelector,
@@ -15,13 +15,13 @@ import ReadUnreadButtons from './ReadUnreadButtons';
 jest.mock('@proton/mail/store/mailSettings/hooks');
 jest.mocked(useMailSettings).mockReturnValue([DEFAULT_MAIL_SETTINGS, false]);
 
-jest.mock('proton-mail/store/hooks');
+jest.mock('../../../store/hooks');
 const mockUseMailSelector = jest.mocked(useMailSelector);
 
-jest.mock('proton-mail/hooks/useSelectAll', () => ({
+jest.mock('../../../hooks/useSelectAll', () => ({
     useSelectAll: jest.fn(() => ({ selectAll: false })),
 }));
-const mockUseSelectAll = jest.requireMock('proton-mail/hooks/useSelectAll').useSelectAll;
+const mockUseSelectAll = jest.requireMock('../../../hooks/useSelectAll').useSelectAll;
 
 const getProps = (selectedIDs: string[] = ['id1', 'id2']) => ({
     selectedIDs,

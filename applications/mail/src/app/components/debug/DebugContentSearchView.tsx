@@ -7,9 +7,9 @@ import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import Progress from '@proton/components/components/progress/Progress';
 
-import { lookupDoc } from 'proton-mail/contentSearch/devTools.ts';
-import { ImportIssueSeverity } from 'proton-mail/contentSearch/import/Import';
-import { findEncryptedSearchIndexSize } from 'proton-mail/contentSearch/import/indexSize.ts';
+import { lookupDoc } from '../../contentSearch/devTools.ts';
+import { ImportIssueSeverity } from '../../contentSearch/import/Import';
+import { findEncryptedSearchIndexSize } from '../../contentSearch/import/indexSize.ts';
 
 import { useImporter } from '../../contentSearch/import/useImporter';
 

@@ -6,7 +6,7 @@ import useLocalState from '@proton/components/hooks/useLocalState';
 import { TelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 
-import { useGetStartedChecklist } from 'proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider';
+import { useGetStartedChecklist } from '../../../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 
 import { useMailOnboardingTelemetry } from '../../useMailOnboardingTelemetry';
 import OnboardingChecklistModalsProvider from '../OnboardingChecklistModalsProvider';

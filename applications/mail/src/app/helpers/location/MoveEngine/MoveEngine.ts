@@ -2,7 +2,7 @@ import { isCustomFolder, isCustomLabel } from '@proton/mail/helpers/location';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Folder, Label } from '@proton/shared/lib/interfaces';
 
-import type { Element } from 'proton-mail/models/element';
+import type { Element } from '../../../models/element';
 
 import type { MoveEngineCanMoveResult, MoveEngineError, MoveEngineRule } from './moveEngineInterface';
 import { CUSTOM_FOLDER_KEY, CUSTOM_LABEL_KEY, MoveEngineRuleResult } from './moveEngineInterface';

@@ -8,7 +8,7 @@ import { initializeEncryptedSearch, serializeAndEncryptItem } from '@proton/encr
 import { openESDB } from '@proton/encrypted-search/esIDB';
 import type { DecryptedKey } from '@proton/shared/lib/interfaces';
 
-import type { ESBaseMessage, ESMessageContent } from 'proton-mail/models/encryptedSearch.ts';
+import type { ESBaseMessage, ESMessageContent } from '../../models/encryptedSearch.ts';
 
 import {
     generateKeys,

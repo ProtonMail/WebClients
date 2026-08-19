@@ -17,7 +17,7 @@ import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { isExpiringByRetentionRule } from '@proton/shared/lib/mail/messages';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 
-import { getMinExpirationTime } from 'proton-mail/helpers/expiration';
+import { getMinExpirationTime } from '../../../helpers/expiration';
 
 import { EXPIRATION_TIME_MAX_DAYS } from '../../../constants';
 import { getChooseDateText } from '../../composer/modals/helper';

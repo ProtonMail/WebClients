@@ -7,7 +7,7 @@ import userEvent from '@testing-library/user-event';
 import { getModelState } from '@proton/account/test';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
-import { mailTestRender } from 'proton-mail/helpers/test/render';
+import { mailTestRender } from '../../../helpers/test/render';
 
 import AddressInput from './AddressInput';
 

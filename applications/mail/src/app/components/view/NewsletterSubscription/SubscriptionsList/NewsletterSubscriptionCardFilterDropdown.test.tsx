@@ -3,7 +3,7 @@ import { fireEvent, screen } from '@testing-library/react';
 import { useFilters } from '@proton/mail/store/filters/hooks';
 import { FILTER_STATUS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
-import { mailTestRender } from 'proton-mail/helpers/test/render';
+import { mailTestRender } from '../../../../helpers/test/render';
 
 import { activeSubscription } from '../testData';
 import { NewsletterSubscriptionCardFilterDropdown } from './NewsletterSubscriptionCardFilterDropdown';

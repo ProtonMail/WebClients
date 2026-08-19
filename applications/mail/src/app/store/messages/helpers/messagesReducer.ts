@@ -8,8 +8,8 @@ import type { Folder, Label } from '@proton/shared/lib/interfaces';
 import type { Message, MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 import { isDraft } from '@proton/shared/lib/mail/messages';
 
-import type { Conversation } from 'proton-mail/models/conversation';
-import { applyLabelToMessage, removeLabelFromMessage } from 'proton-mail/store/mailbox/locationHelpers';
+import type { Conversation } from '../../../models/conversation';
+import { applyLabelToMessage, removeLabelFromMessage } from '../../mailbox/locationHelpers';
 
 import { isElementMessage } from '../../../helpers/elements';
 import type { QueryParams, QueryResults, TaskRunningInfo } from '../../elements/elementsTypes';

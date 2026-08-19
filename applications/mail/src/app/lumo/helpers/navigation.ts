@@ -10,7 +10,7 @@ import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { ALMOST_ALL_MAIL, SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
 import type { SearchParameters } from '@proton/shared/lib/mail/search';
 
-import { getStandardFolders } from 'proton-mail/helpers/labels';
+import { getStandardFolders } from '../../helpers/labels';
 import {
     categoryIDFromUrl,
     extractSearchParameters,
@@ -18,7 +18,7 @@ import {
     filterToString,
     sortFromUrl,
     sortToString,
-} from 'proton-mail/helpers/mailboxUrl';
+} from '../../helpers/mailboxUrl';
 import {
     contextTotal as contextTotalSelector,
     esSearching as esSearchingSelector,
@@ -28,8 +28,8 @@ import {
     selectParams,
     taskRunningInLabel as taskRunningInLabelSelector,
     usedEncryptedSearch as usedEncryptedSearchSelector,
-} from 'proton-mail/store/elements/elementsSelectors';
-import type { ElementsStateParams } from 'proton-mail/store/elements/elementsTypes';
+} from '../../store/elements/elementsSelectors';
+import type { ElementsStateParams } from '../../store/elements/elementsTypes';
 
 import type { MailboxFilter, MailboxSort } from '../skills/reads/mailboxView';
 import type { OpenFolderLocation } from '../skills/reads/openFolder';

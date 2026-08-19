@@ -6,8 +6,8 @@ import { PM_SIGNATURE } from '@proton/shared/lib/mail/mailSettings';
 import { FORWARDED_MESSAGE } from '@proton/shared/lib/mail/messages';
 import { getProtonMailSignature } from '@proton/shared/lib/mail/signature';
 
-import { formatFullDate } from 'proton-mail/helpers/date';
-import { createNewDraft } from 'proton-mail/helpers/message/messageDraft';
+import { formatFullDate } from '../date';
+import { createNewDraft } from './messageDraft';
 
 import mails from './__fixtures__/messageBlockquote.fixtures';
 import {

@@ -2,9 +2,9 @@ import { MAILBOX_LABEL_IDS, MIME_TYPES } from '@proton/shared/lib/constants';
 import type { AttachmentsMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { hasIcalExtension, hasKeyExtension } from 'proton-mail/helpers/attachment/attachment';
-import { hasLabel } from 'proton-mail/helpers/elements';
-import type { Element } from 'proton-mail/models/element';
+import { hasIcalExtension, hasKeyExtension } from './attachment';
+import { hasLabel } from '../elements';
+import type { Element } from '../../models/element';
 
 const ATTACHMENT_THUMBNAILS_BLOCK_LIST: string[] = [MIME_TYPES.ICS, MIME_TYPES.APPLICATION_ICS, MIME_TYPES.PGP_KEYS];
 

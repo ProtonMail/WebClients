@@ -7,10 +7,10 @@ import { getItem, setItem } from '@proton/shared/lib/helpers/sessionStorage';
 import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
-import { isUnread } from 'proton-mail/helpers/conversation';
-import type { ElementsStructure } from 'proton-mail/hooks/mailbox/useElements';
-import { selectShouldReportUnreadCount } from 'proton-mail/store/categories/categoriesSelector';
-import { useMailSelector } from 'proton-mail/store/hooks';
+import { isUnread } from '../helpers/conversation';
+import type { ElementsStructure } from '../hooks/mailbox/useElements';
+import { selectShouldReportUnreadCount } from '../store/categories/categoriesSelector';
+import { useMailSelector } from '../store/hooks';
 
 const key = 'unreadCategoryCount';
 const REPORT_WINDOW_MS = 60 * 60 * 1000; // 1 hour, avoids duplicate reports across tabs opened around the same time

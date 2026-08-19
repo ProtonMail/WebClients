@@ -3,7 +3,7 @@ import type { Draft } from '@reduxjs/toolkit';
 import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import type { Conversation } from 'proton-mail/models/conversation';
+import type { Conversation } from '../../../models/conversation';
 
 import {
     markConversationsAsReadPending,

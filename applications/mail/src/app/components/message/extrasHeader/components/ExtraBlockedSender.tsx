@@ -8,7 +8,7 @@ import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { getBlockedIncomingDefaultByAddress } from '@proton/shared/lib/helpers/incomingDefaults';
 import { getSender } from '@proton/shared/lib/mail/messages';
 
-import { useMailDispatch } from 'proton-mail/store/hooks';
+import { useMailDispatch } from '../../../../store/hooks';
 
 import {
     useIncomingDefaultsAddresses,

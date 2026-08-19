@@ -10,22 +10,22 @@ import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import isTruthy from '@proton/utils/isTruthy';
 import uniqueBy from '@proton/utils/uniqueBy';
 
-import type { SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
+import type { SOURCE_ACTION } from '../../../components/list/list-telemetry/useListTelemetry';
 import useListTelemetry, {
     ACTION_TYPE,
     numberSelectionElements,
-} from 'proton-mail/components/list/list-telemetry/useListTelemetry';
-import { useMarkAllAs } from 'proton-mail/hooks/actions/markAs/useMarkAllAs';
-import { MOVE_BACK_ACTION_TYPES } from 'proton-mail/hooks/actions/moveBackAction/interfaces';
-import { useMoveBackAction } from 'proton-mail/hooks/actions/moveBackAction/useMoveBackAction';
-import { useGetConversationsByIDs } from 'proton-mail/hooks/conversation/useConversation';
-import { useMailDispatch } from 'proton-mail/store/hooks';
+} from '../../../components/list/list-telemetry/useListTelemetry';
+import { useMarkAllAs } from './useMarkAllAs';
+import { MOVE_BACK_ACTION_TYPES } from '../moveBackAction/interfaces';
+import { useMoveBackAction } from '../moveBackAction/useMoveBackAction';
+import { useGetConversationsByIDs } from '../../conversation/useConversation';
+import { useMailDispatch } from '../../../store/hooks';
 import {
     markConversationsAsRead,
     markConversationsAsUnread,
     markMessagesAsRead,
     markMessagesAsUnread,
-} from 'proton-mail/store/mailbox/mailboxActions';
+} from '../../../store/mailbox/mailboxActions';
 
 import { isElementMessage } from '../../../helpers/elements';
 import type { Element } from '../../../models/element';

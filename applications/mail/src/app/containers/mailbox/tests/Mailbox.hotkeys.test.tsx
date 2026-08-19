@@ -3,14 +3,14 @@ import { act, fireEvent, waitFor } from '@testing-library/react';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import * as mailboxActions from 'proton-mail/store/mailbox/mailboxActions';
+import * as mailboxActions from '../../../store/mailbox/mailboxActions';
 
 import { addApiMock, assertCheck, assertFocus, clearAll, tick } from '../../../helpers/test/helper';
 import { RouterMailboxContainer } from '../../../router/RouterMailboxContainer';
 import type { SetupArgs } from './Mailbox.test.helpers';
 import { setup as generalSetup, getElements, props } from './Mailbox.test.helpers';
 
-jest.mock('proton-mail/metrics/useMailELDTMetric', () => ({
+jest.mock('../../../metrics/useMailELDTMetric', () => ({
     useMailELDTMetric: () => {
         return { stopELDTMetric: jest.fn() };
     },

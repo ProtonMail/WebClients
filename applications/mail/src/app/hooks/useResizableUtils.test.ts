@@ -1,6 +1,6 @@
 import { act, renderHook } from '@testing-library/react';
 
-import { ResizeHandlePosition } from 'proton-mail/components/list/ResizeHandle';
+import { ResizeHandlePosition } from '../components/list/ResizeHandle';
 
 import { resetMemoryCacheForTesting, useResizableUtils } from './useResizableUtils';
 
