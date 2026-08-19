@@ -1,7 +1,7 @@
 import type { History } from 'history';
 
 import type { CardRenderer } from '@proton/components/components/lumoAgent/types';
-import type { Filter } from '@proton/components/containers/filters/interfaces';
+import type { CreateFilter, Filter } from '@proton/components/containers/filters/interfaces';
 import type { ESStatusBooleans } from '@proton/encrypted-search/models';
 import type { ToolDefinition, ToolHandler } from '@proton/llm/lib/lumoAgent/contracts/types';
 import type { CategoryTab } from '@proton/mail/features/categoriesView/categoriesConstants';
@@ -61,6 +61,11 @@ export interface MailToolDeps {
     snooze: (params: SnoozeProps, sourceAction: SOURCE_ACTION) => Promise<void>;
     createLabel: (params: Parameters<typeof createLabelAction>[0]) => Promise<Label>;
     updateLabel: (params: Parameters<typeof updateLabelAction>[0]) => Promise<void>;
+    /** Returns the upserted filter: the server names it, and a tool mints its reference from that. */
+    addFilter: (filter: CreateFilter) => Promise<Filter>;
+    updateFilter: (id: string, filter: CreateFilter) => Promise<void>;
+    /** Rejects with the backend's own issues, so a tool can hand the model something to correct. */
+    validateSieve: (sieve: string) => Promise<void>;
     getESStatus: () => ESStatusBooleans;
     loadConversation: (conversationID: string) => Promise<unknown>;
     initializeMessage: (messageID: string, labelID: string) => Promise<void>;
