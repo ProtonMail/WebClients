@@ -15,18 +15,8 @@ import {
     selectReconnectionFailed,
     setReconnectionFailed,
 } from '@proton/meet/store/slices/connectionSlice';
-import {
-    selectMeetingLink,
-    selectMeetingLinkName,
-    selectMeetingPassword,
-} from '@proton/meet/store/slices/currentMeeting';
-import {
-    setInvalidMeetingLinkModalOpen,
-    setPreviousMeetingLink,
-    setUpsellModalType,
-} from '@proton/meet/store/slices/meetAppStateSlice';
-import { meetingInfoThunk } from '@proton/meet/store/slices/meetingInfoModel';
-import { meetingsThunk } from '@proton/meet/store/slices/meetings';
+import { selectMeetingLinkName, selectMeetingPassword } from '@proton/meet/store/slices/currentMeeting';
+import { setPreviousMeetingLink, setUpsellModalType } from '@proton/meet/store/slices/meetAppStateSlice';
 import {
     selectHasAnotherAdmin,
     selectIsGuestAdmin,
@@ -36,11 +26,7 @@ import { toggleMeetingLockThunk } from '@proton/meet/store/slices/settings';
 import { PopUpControls, setPopupStateValue } from '@proton/meet/store/slices/uiStateSlice';
 import { selectIsGuest, selectSubscriptionStatus, selectUserId } from '@proton/meet/store/slices/userSlice';
 import { UpsellModalTypes } from '@proton/meet/types/types';
-import { CacheType } from '@proton/redux-utilities/interface';
-import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { isFirefox } from '@proton/shared/lib/helpers/browser';
-import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import { useFlag } from '@proton/unleash/useFlag';
 
@@ -55,6 +41,7 @@ import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
 import { MeetingRecorderProvider } from '../../contexts/MeetingRecorderContext';
 import { WaitingRoomProvider } from '../../contexts/WaitingRoomContext';
 import { useIsRecordingInProgressReceiver } from '../../hooks/bridges/useIsRecordingInProgressReceiver';
+import { useDesktopAppRedirect } from '../../hooks/protonMeetContainer/useDesktopAppRedirect';
 import { useJoinFlow } from '../../hooks/protonMeetContainer/useJoinFlow';
 import { useMeetingCleanup } from '../../hooks/protonMeetContainer/useMeetingCleanup';
 import { useMeetingConnection } from '../../hooks/protonMeetContainer/useMeetingConnection';
@@ -62,7 +49,6 @@ import { useMeetingErrorContext } from '../../hooks/protonMeetContainer/useMeeti
 import { useMeetingInfoHydration } from '../../hooks/protonMeetContainer/useMeetingInfoHydration';
 import { useMlsSession } from '../../hooks/protonMeetContainer/useMlsSession';
 import { useRoomEventHandlers } from '../../hooks/protonMeetContainer/useRoomEventHandlers';
-import { useMeetingAuthentication } from '../../hooks/srp/useMeetingAuthentication';
 import { useMeetingSetup } from '../../hooks/srp/useMeetingSetup';
 import { useAssignHost } from '../../hooks/useAssignHost';
 import { useConnectionHealthCheck } from '../../hooks/useConnectionHealthCheck';
@@ -76,15 +62,9 @@ import { useStableCallback } from '../../hooks/useStableCallback';
 import { useWakeLock } from '../../hooks/useWakeLock';
 import type { JoinLocationState } from '../../types';
 import type { ProtonMeetKeyProvider } from '../../utils/ProtonMeetKeyProvider';
-import { getDesktopAppPreference, tryOpenInDesktopApp } from '../../utils/desktopAppDetector';
 import { cleanupWasmDependencies } from '../../utils/wasmUtils';
 import { MeetContainer } from '../MeetContainer';
 import { PrejoinContainer } from '../PrejoinContainer/PrejoinContainer';
-
-enum MeetingDecryptionReadinessStatus {
-    UNINITIALIZED = 'uninitialized',
-    READY_TO_DECRYPT = 'readyToDecrypt',
-}
 
 interface ProtonMeetContainerProps {
     keyProvider: ProtonMeetKeyProvider;
@@ -102,7 +82,6 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
     const promptOnTabClose = useFlag('MeetPromptOnTabClose');
     const showUpsellModalAfterMeeting = useFlag('MeetShowUpsellModalAfterMeeting');
     const meetUpsellEnabled = useFlag('MeetUpsell');
-    const meetOpenLinksInDesktopApp = useFlag('MeetOpenLinksInDesktopApp');
 
     useWakeLock();
 
@@ -125,21 +104,17 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
 
     const history = useHistory();
 
-    const [decryptionReadinessStatus, setDecryptionReadinessStatus] = useState(
-        MeetingDecryptionReadinessStatus.UNINITIALIZED
-    );
-
     const [isMeetingLockedModalOpen, setIsMeetingLockedModalOpen] = useState(false);
     const [isWebRtcUnsupportedModalOpen, setIsWebRtcUnsupportedModalOpen] = useState(false);
-    const [openedInDesktopApp, setOpenedInDesktopApp] = useState(false);
     const [isConnectionFailedModalOpen, setIsConnectionFailedModalOpen] = useState(false);
 
     const { token, urlPassword } = useMeetingSetup();
-    const { initHandshake } = useMeetingAuthentication();
 
     const instantMeetingRef = useRef(!token);
 
-    useMeetingInfoHydration({
+    const { openedInDesktopApp } = useDesktopAppRedirect({ token, isInstantJoin });
+
+    const { isReadyToDecrypt } = useMeetingInfoHydration({
         meetingLinkName: token,
         meetingPassword: urlPassword,
         instantMeeting: instantMeetingRef.current,
@@ -246,8 +221,6 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
         joinedRoom,
     });
 
-    const shareLink = useMeetSelector(selectMeetingLink);
-
     const assignHost = useAssignHost(accessTokenRef.current as string, token);
 
     const { isReconnectingRef, websocketUrlRef, performFullReconnection, connectWithMls } = useMeetingConnection({
@@ -291,34 +264,6 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
             withMeetingLinkNameTag,
         });
 
-    const handleInvalidMeetingLink = () => {
-        dispatch(setInvalidMeetingLinkModalOpen(true));
-
-        // Refresh the meeting list to remove the invalid link
-        if (!isGuest && location.state?.meetingDetails) {
-            void dispatch(meetingsThunk({ cache: CacheType.None }));
-        }
-
-        history.push('/dashboard');
-    };
-
-    const handleHandshakeInfoFetch = async (token: string) => {
-        try {
-            const handshakeInfo = await initHandshake(token);
-
-            setDecryptionReadinessStatus(MeetingDecryptionReadinessStatus.READY_TO_DECRYPT);
-
-            return {
-                handshakeInfo,
-                readyToDecrypt: true,
-            };
-        } catch {
-            handleInvalidMeetingLink();
-
-            return;
-        }
-    };
-
     const { joinMeeting, joinInstantMeeting, waitingRoomProviderProps } = useJoinFlow({
         token,
         urlPassword,
@@ -336,63 +281,12 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
         setIsMeetingLockedModalOpen,
         setIsConnectionFailedModalOpen,
         isUsingTurnRelay,
-        handleHandshakeInfoFetch,
         reportMeetError,
         withMeetingLinkNameTag,
         displayName,
         cleanupMlsState,
         disallowHealthCheck,
     });
-
-    const setup = async () => {
-        // Delegates to desktop app
-        if (meetOpenLinksInDesktopApp && getDesktopAppPreference() && token && !isInstantJoin && !isElectronApp) {
-            setOpenedInDesktopApp(true);
-
-            tryOpenInDesktopApp(shareLink);
-            return;
-        }
-
-        if (
-            // Instant meeting does not need to fetch meeting info
-            instantMeetingRef.current ||
-            // Valid password is required to fetch meeting info
-            !urlPassword
-        ) {
-            setDecryptionReadinessStatus(MeetingDecryptionReadinessStatus.READY_TO_DECRYPT);
-
-            return;
-        }
-
-        // Display meeting info from the navigation state
-        if (location.state?.meetingDetails) {
-            setDecryptionReadinessStatus(MeetingDecryptionReadinessStatus.READY_TO_DECRYPT);
-        }
-
-        // Fetch meeting info
-        try {
-            await dispatch(meetingInfoThunk({ meetingLinkName: token, meetingPassword: urlPassword }));
-
-            setDecryptionReadinessStatus(MeetingDecryptionReadinessStatus.READY_TO_DECRYPT);
-        } catch (error) {
-            const { code } = getApiError(error);
-
-            // Only a meeting that no longer exists justifies sending the user away
-            if (code === API_CUSTOM_ERROR_CODES.NOT_FOUND) {
-                handleInvalidMeetingLink();
-
-                return;
-            }
-
-            // Anything else can be transient, keep the prejoin usable and let the join fetch again
-            setDecryptionReadinessStatus(MeetingDecryptionReadinessStatus.READY_TO_DECRYPT);
-        }
-    };
-
-    useEffect(() => {
-        void setup();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
 
     useEffect(() => {
         return () => {
@@ -585,7 +479,7 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
         return <MeetingOpenedInDesktopApp />;
     }
 
-    if (decryptionReadinessStatus === MeetingDecryptionReadinessStatus.UNINITIALIZED) {
+    if (!isReadyToDecrypt) {
         return null;
     }
 
