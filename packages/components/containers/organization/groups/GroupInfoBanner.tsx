@@ -1,26 +1,25 @@
 import type { ReactNode } from 'react';
 
+import { c } from 'ttag';
+
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { Href } from '@proton/atoms/Href/Href';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 interface Props {
     icon: React.JSX.Element;
+    knowledgeBaseUrlPath: string;
     children: ReactNode;
 }
 
-const GroupInfoBanner = ({ icon, children }: Props) => {
-    const showLearnMoreLink = false; // TO BE REMOVED: for now we just do not show link
-
+const GroupInfoBanner = ({ icon, knowledgeBaseUrlPath, children }: Props) => {
     return (
         <Banner icon={icon} contentWrapperClassName="flex items-center">
             <span className="flex gap-1">
                 {children}
-                {/* TODO: link should be updated once we have knowledge page for scim */}
-                {showLearnMoreLink && (
-                    <Href href="https://proton.me/support/groups" className="color-primary inline-block">
-                        PLEASE UPDATE ME
-                    </Href>
-                )}
+                <Href href={getKnowledgeBaseUrl(knowledgeBaseUrlPath)} className="color-primary inline-block">
+                    {c('Link').t`Learn more`}
+                </Href>
             </span>
         </Banner>
     );
