@@ -14,14 +14,19 @@ import { parseInteger } from '../../util/number';
 import { convertRefTokensToSpans, normalizeBrTags } from '../../util/tokens';
 import { getDomain } from '../Conversation/messageChain/message/toolCall/helpers';
 import { InlineImageComponent } from './InlineImageComponent';
+import { LumoMarkdownCodeBlock } from './LumoMarkdownCodeBlock';
 import { LumoMarkdownCardBlock } from './card/LumoMarkdownCardBlock';
-import { buildMarkdownRenderUnits } from './card/coalesceMetricCardBlocks';
-import { parseCardRowFence, parseCardRowSegmentCode } from './card/parseCardRowFence';
-import { looksLikeMetricCardPartial, isCardRowLanguage, shouldRenderAsCard, splitAroundOpenCardCodeFence } from './card/detectCardSpec';
 import { LumoMetricCardRow } from './card/LumoMetricCardRow';
+import { buildMarkdownRenderUnits } from './card/coalesceMetricCardBlocks';
+import {
+    isCardRowLanguage,
+    looksLikeMetricCardPartial,
+    shouldRenderAsCard,
+    splitAroundOpenCardCodeFence,
+} from './card/detectCardSpec';
+import { parseCardRowFence, parseCardRowSegmentCode } from './card/parseCardRowFence';
 import { tryParseCardSpec } from './card/parseCardSpec';
 import { renderCardAwareSegment } from './card/renderCardSegments';
-import { LumoMarkdownCodeBlock } from './LumoMarkdownCodeBlock';
 import { LUMO_MARKDOWN_CARD_SHELL_CLASS, TRAILING_VEGA_CHART_KEY } from './lumoMarkdownCardShell';
 import { normalizeGfmTableSpacing } from './normalizeGfmTableSpacing';
 import { remarkLatexDelimiters } from './remarkLatexDelimiters';
@@ -30,6 +35,7 @@ import { extractCodeBlockText, getCodeBlockLanguage } from './vega/codeBlockUtil
 import { shouldRenderAsVegaChart, splitAroundOpenVegaCodeFence } from './vega/detectVegaSpec';
 import {
     blockContainsCompleteCodeFence,
+    findCompleteMarkdownCodeFence,
     parseMarkdownCodeFence,
     splitMarkdownWithCompleteCodeFences,
 } from './vega/parseMarkdownCodeFence';
@@ -110,11 +116,13 @@ function splitIntoBlocks(content: string, isStreaming: boolean): ContentBlock[] 
     // Process content sequentially looking for complete blocks
     while (position < content.length) {
         const remaining = content.substring(position);
+        const completeCodeFence = findCompleteMarkdownCodeFence(remaining);
+        const hasBlockBoundaryAfterFence =
+            completeCodeFence && /^\s*(?:\n\n|\n(?=[^\n\s])|$)/.test(remaining.slice(completeCodeFence.end));
 
         // 1. Check for complete code block (closing fence before blank line, prose, or EOF)
-        const codeMatch = remaining.match(/^```[\w-]*[ \t]*\n[\s\S]*?\n```(?=\s*(?:\n\n|\n(?=[^\n\s])|$))/);
-        if (codeMatch) {
-            const blockContent = codeMatch[0];
+        if (completeCodeFence?.start === 0 && hasBlockBoundaryAfterFence) {
+            const blockContent = remaining.slice(0, completeCodeFence.end);
             blocks.push({
                 type: 'complete',
                 content: blockContent,
@@ -158,24 +166,17 @@ function splitIntoBlocks(content: string, isStreaming: boolean): ContentBlock[] 
         }
 
         // 3b. While streaming, peel complete code fences even when prefixed by unfinished prose.
-        if (isStreaming) {
-            const embeddedCodeMatch = remaining.match(
-                /```[\w-]*[ \t]*\n[\s\S]*?\n```(?=\s*(?:\n\n|\n(?=[^\n\s])|$))/
-            );
-            const embeddedIndex = embeddedCodeMatch?.index ?? -1;
-
-            if (embeddedIndex > 0) {
-                const prefix = remaining.slice(0, embeddedIndex);
-                if (prefix.trim()) {
-                    blocks.push({
-                        type: 'incomplete',
-                        content: prefix,
-                        key: `streaming-prefix-${simpleHash(prefix)}`,
-                    });
-                }
-                position += embeddedIndex;
-                continue;
+        if (isStreaming && completeCodeFence && completeCodeFence.start > 0 && hasBlockBoundaryAfterFence) {
+            const prefix = remaining.slice(0, completeCodeFence.start);
+            if (prefix.trim()) {
+                blocks.push({
+                    type: 'incomplete',
+                    content: prefix,
+                    key: `streaming-prefix-${simpleHash(prefix)}`,
+                });
             }
+            position += completeCodeFence.start;
+            continue;
         }
 
         // 4. Everything else
@@ -333,9 +334,7 @@ const MarkdownBlock: React.FC<{
 
                     const cardSpec = tryParseCardSpec(value);
                     if (cardSpec?.type === 'metric') {
-                        return (
-                            <LumoMetricCardRow cards={[{ code: value, language: language || 'card' }]} />
-                        );
+                        return <LumoMetricCardRow cards={[{ code: value, language: language || 'card' }]} />;
                     }
 
                     return <LumoMarkdownCardBlock code={value} language={language || 'card'} />;
@@ -500,14 +499,10 @@ export const ProgressiveMarkdownRenderer: React.FC<ProgressiveMarkdownProps> = R
                     const block = unit.block;
                     const singleFence = parseMarkdownCodeFence(block.content);
                     const openVegaFence =
-                        block.type === 'incomplete' && isStreaming
-                            ? splitAroundOpenVegaCodeFence(block.content)
-                            : null;
+                        block.type === 'incomplete' && isStreaming ? splitAroundOpenVegaCodeFence(block.content) : null;
 
                     const openCardFence =
-                        block.type === 'incomplete' && isStreaming
-                            ? splitAroundOpenCardCodeFence(block.content)
-                            : null;
+                        block.type === 'incomplete' && isStreaming ? splitAroundOpenCardCodeFence(block.content) : null;
 
                     if (openCardFence) {
                         const isMetricStreaming = looksLikeMetricCardPartial(openCardFence.body);
@@ -577,10 +572,7 @@ export const ProgressiveMarkdownRenderer: React.FC<ProgressiveMarkdownProps> = R
                         );
                     }
 
-                    if (
-                        singleFence &&
-                        shouldRenderAsVegaChart(singleFence.language, singleFence.code)
-                    ) {
+                    if (singleFence && shouldRenderAsVegaChart(singleFence.language, singleFence.code)) {
                         const wrapperKey = isTrailingUnit ? TRAILING_VEGA_CHART_KEY : block.key;
 
                         return (
@@ -595,10 +587,7 @@ export const ProgressiveMarkdownRenderer: React.FC<ProgressiveMarkdownProps> = R
                         );
                     }
 
-                    if (
-                        singleFence &&
-                        shouldRenderAsCard(singleFence.language, singleFence.code)
-                    ) {
+                    if (singleFence && shouldRenderAsCard(singleFence.language, singleFence.code)) {
                         const cardRow = parseCardRowFence(block.content);
                         if (cardRow && cardRow.length > 0) {
                             return (
