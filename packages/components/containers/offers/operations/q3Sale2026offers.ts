@@ -43,29 +43,33 @@ const getMaxSavingsTitle = () => {
     return c('q3campaign2026: Title').t`One plan, max savings`;
 };
 
+// Each ordering needs its own context. The app names stay interpolated so they cannot be translated,
+// but that makes every ordering collapse to the same `Premium ${0}, ${1}, ...` msgid, which
+// i18n:validate rejects as a duplicate within one context. The context also tells the translator which
+// app leads the list, which the positional placeholders alone do not.
 const getPremiumApps = (product: OfferProduct) => {
     if (product === 'drive') {
-        return c('q3campaign2026: Info')
+        return c('q3campaign2026: Info, Drive first')
             .t`Premium ${DRIVE_SHORT_APP_NAME}, ${MAIL_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, ${VPN_SHORT_APP_NAME}, and ${CALENDAR_SHORT_APP_NAME}`;
     }
 
     if (product === 'calendar') {
-        return c('q3campaign2026: Info')
+        return c('q3campaign2026: Info, Calendar first')
             .t`Premium ${CALENDAR_SHORT_APP_NAME}, ${MAIL_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, ${DRIVE_SHORT_APP_NAME}, and ${VPN_SHORT_APP_NAME}`;
     }
 
-    return c('q3campaign2026: Info')
+    return c('q3campaign2026: Info, Mail first')
         .t`Premium ${MAIL_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, ${DRIVE_SHORT_APP_NAME}, ${VPN_SHORT_APP_NAME}, and ${CALENDAR_SHORT_APP_NAME}`;
 };
 
 // Family copy lists four apps and Calendar is not one of them, so a Calendar user keeps the default order.
 const getFamilyPremiumApps = (product: OfferProduct) => {
     if (product === 'drive') {
-        return c('q3campaign2026: Info')
+        return c('q3campaign2026: Info, Family, Drive first')
             .t`Premium ${DRIVE_SHORT_APP_NAME}, ${MAIL_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, ${VPN_SHORT_APP_NAME}`;
     }
 
-    return c('q3campaign2026: Info')
+    return c('q3campaign2026: Info, Family, Mail first')
         .t`Premium ${MAIL_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, ${DRIVE_SHORT_APP_NAME}, ${VPN_SHORT_APP_NAME}`;
 };
 
