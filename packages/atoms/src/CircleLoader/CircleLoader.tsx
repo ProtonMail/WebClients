@@ -3,7 +3,8 @@ import type { ComponentPropsWithoutRef } from 'react';
 import { c } from 'ttag';
 
 import clsx from '@proton/utils/clsx';
-import generateUID from '@proton/utils/generateUID';
+
+import { useSvgId } from '../helpers/useSvgId';
 
 import './CircleLoader.scss';
 
@@ -22,7 +23,7 @@ export interface CircleLoaderProps extends ComponentPropsWithoutRef<'svg'> {
 }
 
 export const CircleLoader = ({ size, className, srLabelHidden, ...rest }: CircleLoaderProps) => {
-    const uid = generateUID('circle-loader');
+    const uid = useSvgId('circle-loader');
 
     return (
         <>
