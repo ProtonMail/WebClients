@@ -37,9 +37,7 @@ const InviteShareLink = ({ className }: { className?: string }) => {
     );
 
     return (
-        <div className={clsx('flex flex-column gap-4', className)}>
-            <h2 className="h3 text-bold">{c('Label').t`Share your referral link`}</h2>
-
+        <div className={clsx('flex flex-column gap-6', className)}>
             <div className="flex gap-2 flex-column lg:flex-row bg-weak rounded-lg p-1">
                 <div className="flex-auto flex items-center p-2 user-select" title={referrerLink}>
                     <span className="text-ellipsis">{referrerLink}</span>

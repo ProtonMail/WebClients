@@ -8,9 +8,7 @@ import { DashboardCard, DashboardCardContent, DashboardCardDivider } from '@prot
 import { DashboardGrid } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import { Href } from '@proton/atoms/Href/Href';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import SettingsDescription, {
-    SettingsDescriptionItem,
-} from '@proton/components/containers/account/SettingsDescription';
+import SettingsDescription from '@proton/components/containers/account/SettingsDescription';
 import { SettingsToggleRow } from '@proton/components/containers/account/SettingsToggleRow';
 import { LastChanged } from '@proton/components/containers/recovery/LastChanged';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
@@ -43,20 +41,6 @@ const RecoveryPhraseSubpage = () => {
 
             <DashboardGrid>
                 <SettingsDescription
-                    left={
-                        <>
-                            <SettingsDescriptionItem>
-                                {c('Info')
-                                    .t`Your recovery phrase will allow you to sign in and recover your data if you get locked out of your ${BRAND_NAME} Account. It is composed of 12 words and acts like a backup password.`}
-                            </SettingsDescriptionItem>
-                            <SettingsDescriptionItem>
-                                {c('Info')
-                                    .t`It’s the only way to instantly recover everything, so make sure you keep it somewhere safe but accessible.`}{' '}
-                                <Href key="learn" href={getKnowledgeBaseUrl('/recovery-phrase')}>{c('Link')
-                                    .t`Learn more`}</Href>
-                            </SettingsDescriptionItem>
-                        </>
-                    }
                     right={
                         <img
                             src={isDarkTheme ? darkIllustration : illustration}
@@ -66,7 +50,18 @@ const RecoveryPhraseSubpage = () => {
                             height={80}
                         />
                     }
-                />
+                >
+                    <SettingsDescription.Item>
+                        {c('Info')
+                            .t`Your recovery phrase will allow you to sign in and recover your data if you get locked out of your ${BRAND_NAME} Account. It is composed of 12 words and acts like a backup password.`}
+                    </SettingsDescription.Item>
+                    <SettingsDescription.Item>
+                        {c('Info')
+                            .t`It’s the only way to instantly recover everything, so make sure you keep it somewhere safe but accessible.`}{' '}
+                        <Href key="learn" href={getKnowledgeBaseUrl('/recovery-phrase')}>{c('Link')
+                            .t`Learn more`}</Href>
+                    </SettingsDescription.Item>
+                </SettingsDescription>
 
                 {mnemonicData.hasOutdatedMnemonic && (
                     <Banner variant="danger">

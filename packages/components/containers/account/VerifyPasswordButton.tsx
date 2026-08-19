@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import PasswordReminderModal from '@proton/account/passwordReminder/PasswordReminderModal';
 import { usePasswordReminder } from '@proton/account/passwordReminder/hooks';
-import { Button } from '@proton/atoms/Button/Button';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 
 const VerifyPasswordButton = () => {
@@ -18,9 +18,9 @@ const VerifyPasswordButton = () => {
             {renderPasswordReminderModal && (
                 <PasswordReminderModal {...passwordReminderModalProps} source="password_settings" disableDismiss />
             )}
-            <Button shape="ghost" color="norm" onClick={() => setPasswordReminderModalOpen(true)}>
+            <InlineLinkButton className="text-sm self-start" onClick={() => setPasswordReminderModalOpen(true)}>
                 {c('Action').t`Verify password`}
-            </Button>
+            </InlineLinkButton>
         </>
     );
 };

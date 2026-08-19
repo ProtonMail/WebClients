@@ -262,28 +262,40 @@ export const getRoutes = ({
             icon: 'user-circle',
             subsections: [
                 {
+                    text: c('Title').t`User profile`,
+                    invisibleTitle: true,
                     id: 'account',
+                },
+                {
+                    text: c('Title').t`Password`,
+                    invisibleTitle: true,
+                    id: 'password',
                     available: !isSSOUser,
                 },
                 {
                     id: 'language',
+                    variant: SettingsLayoutVariant.Card,
                 },
                 {
                     text: c('Title').t`Two-factor authentication`,
+                    invisibleTitle: true,
                     id: 'two-fa',
                     available: !isSSOUser,
                 },
                 {
                     text: c('Title').t`OpenVPN username`,
                     id: 'openvpn',
+                    variant: SettingsLayoutVariant.Card,
                 },
                 {
                     text: c('Title').t`Email subscriptions`,
                     available: !user.isMember,
                     id: 'news',
+                    variant: SettingsLayoutVariant.Card,
                 },
                 {
                     text: c('Title').t`Delete`,
+                    invisibleTitle: true,
                     available: user.canPay && !user.isMember,
                     id: 'delete',
                 },
@@ -297,6 +309,7 @@ export const getRoutes = ({
             subsections: [
                 {
                     text: c('Themes').t`Themes`,
+                    invisibleTitle: true,
                     id: 'themes',
                 },
             ],
@@ -311,35 +324,42 @@ export const getRoutes = ({
                     text: PROTON_SENTINEL_NAME,
                     id: 'sentinel',
                     available: !isSSOUser,
+                    variant: SettingsLayoutVariant.Card,
                 },
                 {
                     text: DARK_WEB_MONITORING_NAME,
                     id: 'breaches',
                     available: !isSSOUser,
+                    variant: SettingsLayoutVariant.Card,
                 },
                 {
                     text: c('sso').t`Devices management`,
                     id: 'devices',
                     available: getIsGlobalSSOAccount(user),
+                    variant: SettingsLayoutVariant.Card,
                 },
                 {
                     text: c('Title').t`Session management`,
                     id: 'sessions',
                     available: !isSSOUser,
+                    variant: SettingsLayoutVariant.Card,
                 },
                 {
                     text: c('Title').t`Account monitor`,
                     id: 'logs',
                     available: !isSSOUser,
+                    variant: SettingsLayoutVariant.Card,
                 },
                 {
                     text: c('Title').t`Third-party apps and services`,
                     id: 'third-party',
                     available: showVideoConferenceSection,
+                    variant: SettingsLayoutVariant.Card,
                 },
                 {
                     text: c('Title').t`Privacy and data collection`,
                     id: 'privacy',
+                    variant: SettingsLayoutVariant.Card,
                 },
             ],
         },
@@ -377,6 +397,7 @@ export const getRoutes = ({
                 },
                 {
                     text: c('Title').t`Your referrals`,
+                    invisibleTitle: true,
                     id: 'referral-reward-section',
                 },
             ],

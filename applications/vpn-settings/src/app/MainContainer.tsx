@@ -36,14 +36,14 @@ import SSODomainUnverifiedBanner from '@proton/components/containers/account/sso
 import PrivateAppContainer from '@proton/components/containers/app/PrivateAppContainer';
 import UnAuthenticated from '@proton/components/containers/authentication/UnAuthenticated';
 import CredentialLeakSection from '@proton/components/containers/credentialLeak/CredentialLeakSection';
-import LanguageSection from '@proton/components/containers/general/LanguageSection';
+import LanguageSection, { LanguageTranslationHelp } from '@proton/components/containers/general/LanguageSection';
 import PrivateHeader from '@proton/components/containers/heading/PrivateHeader';
 import UserDropdown from '@proton/components/containers/heading/UserDropdown';
 import InvoicesSection from '@proton/components/containers/invoices/InvoicesSection';
 import PrivateMainAreaLoading from '@proton/components/containers/layout/PrivateMainAreaLoading';
 import PrivateMainSettingsArea from '@proton/components/containers/layout/PrivateMainSettingsArea';
 import { getIsSectionAvailable, getRoutePaths } from '@proton/components/containers/layout/helper';
-import { SettingsCardMaxWidth } from '@proton/components/containers/layout/interface';
+import { SettingsCardMaxWidth, SettingsLayoutVariant } from '@proton/components/containers/layout/interface';
 import LogsSection from '@proton/components/containers/logs/LogsSection';
 import CreditsSection from '@proton/components/containers/payments/CreditsSection';
 import GiftCodeSection from '@proton/components/containers/payments/GiftCodeSection';
@@ -378,12 +378,17 @@ const MainContainer: FunctionComponent = () => {
                                     <Redirect to={vpnRoutes.account.to} />
                                 </Route>
                                 <Route path={vpnRoutes.account.to}>
-                                    <PrivateMainSettingsArea config={vpnRoutes.account}>
+                                    <PrivateMainSettingsArea
+                                        config={vpnRoutes.account}
+                                        variant={SettingsLayoutVariant.Card}
+                                        maxWidth={SettingsCardMaxWidth.Narrow}
+                                    >
+                                        <UsernameSection app={app} />
+                                        <PasswordsSection />
                                         <>
-                                            <UsernameSection app={app} />
-                                            <PasswordsSection />
+                                            <LanguageSection locales={locales} />
+                                            <LanguageTranslationHelp />
                                         </>
-                                        <LanguageSection locales={locales} />
                                         <TwoFactorSection />
                                         <OpenVPNCredentialsSection />
                                         <EmailSubscriptionSection toggleContainerClassName="gap-4" />
@@ -391,13 +396,21 @@ const MainContainer: FunctionComponent = () => {
                                     </PrivateMainSettingsArea>
                                 </Route>
                                 <Route path={vpnRoutes.appearance.to}>
-                                    <PrivateMainSettingsArea config={vpnRoutes.appearance}>
+                                    <PrivateMainSettingsArea
+                                        config={vpnRoutes.appearance}
+                                        variant={SettingsLayoutVariant.Card}
+                                        maxWidth={SettingsCardMaxWidth.Medium}
+                                    >
                                         <ThemesSection />
                                     </PrivateMainSettingsArea>
                                 </Route>
                                 <Route path={vpnRoutes.vpnSecurity.to}>
                                     <AutomaticSubscriptionModal />
-                                    <PrivateMainSettingsArea config={vpnRoutes.vpnSecurity}>
+                                    <PrivateMainSettingsArea
+                                        config={vpnRoutes.vpnSecurity}
+                                        variant={SettingsLayoutVariant.Card}
+                                        maxWidth={SettingsCardMaxWidth.Medium}
+                                    >
                                         <SentinelSection app={app} />
                                         <CredentialLeakSection />
                                         <AuthDevicesSettings />
@@ -414,7 +427,11 @@ const MainContainer: FunctionComponent = () => {
                                     <Route path={vpnRoutes.referral.to}>
                                         <ReferralPageTelemetry />
                                         <ReferralInvitesContextProvider>
-                                            <PrivateMainSettingsArea config={vpnRoutes.referral}>
+                                            <PrivateMainSettingsArea
+                                                config={vpnRoutes.referral}
+                                                variant={SettingsLayoutVariant.Card}
+                                                maxWidth={SettingsCardMaxWidth.Medium}
+                                            >
                                                 <InviteSection />
                                                 <RewardSection />
                                             </PrivateMainSettingsArea>

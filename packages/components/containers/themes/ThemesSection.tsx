@@ -1,13 +1,11 @@
 import { c } from 'ttag';
 
-import Info from '@proton/components/components/link/Info';
-import Toggle from '@proton/components/components/toggle/Toggle';
-import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
-import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
-import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
-import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
-import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
+import { DashboardCard, DashboardCardContent, DashboardCardDivider } from '@proton/atoms/DashboardCard/DashboardCard';
+import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
+import { SettingsIconRow } from '@proton/components/containers/account/SettingsIconRow';
+import { SettingsToggleRow } from '@proton/components/containers/account/SettingsToggleRow';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { IcCircleHalfFilled } from '@proton/icons/icons/IcCircleHalfFilled';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { hasInboxDesktopFeature } from '@proton/shared/lib/desktop/ipcHelpers';
 import { ColorScheme, ThemeModeSetting } from '@proton/shared/lib/themes/constants';
@@ -30,74 +28,78 @@ const ThemesSection = () => {
     const showManualThemeSelection = settings.Mode !== ThemeModeSetting.Auto;
 
     return (
-        <>
-            <SettingsSectionWide>
-                <SettingsParagraph>{c('Info')
-                    .t`Customize the look and feel of ${BRAND_NAME} applications.`}</SettingsParagraph>
-            </SettingsSectionWide>
-
-            <SettingsLayout>
-                <SettingsLayoutLeft>
-                    <label htmlFor="themeSyncToggle" className="text-semibold">
-                        <span className="mr-2">{c('Label').t`Sync with system`}</span>
-                        <Info
-                            title={c('Tooltip')
-                                .t`Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes`}
+        <DashboardGrid>
+            <DashboardGridSectionHeader
+                title={c('Title').t`Theme`}
+                subtitle={c('Info').t`Customize the look and feel of ${BRAND_NAME} applications.`}
+            />
+            <DashboardCard>
+                <DashboardCardContent>
+                    <SettingsIconRow icon={IcCircleHalfFilled}>
+                        <SettingsToggleRow
+                            id="themeSyncToggle"
+                            label={
+                                <>
+                                    <SettingsToggleRow.Label>{c('Label').t`Sync with system`}</SettingsToggleRow.Label>
+                                    <SettingsToggleRow.Description>
+                                        {c('Tooltip')
+                                            .t`Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes`}
+                                    </SettingsToggleRow.Description>
+                                </>
+                            }
+                            toggle={
+                                <SettingsToggleRow.Toggle
+                                    checked={settings.Mode === ThemeModeSetting.Auto}
+                                    onChange={(e) => {
+                                        setAutoTheme(e.target.checked);
+                                        notifyPreferenceSaved();
+                                    }}
+                                />
+                            }
                         />
-                    </label>
-                </SettingsLayoutLeft>
-                <SettingsLayoutRight isToggleContainer>
-                    <Toggle
-                        id="themeSyncToggle"
-                        checked={settings.Mode === ThemeModeSetting.Auto}
-                        onChange={(e) => {
-                            setAutoTheme(e.target.checked);
-                            notifyPreferenceSaved();
-                        }}
-                    />
-                </SettingsLayoutRight>
-            </SettingsLayout>
+                    </SettingsIconRow>
+                    <DashboardCardDivider />
 
-            {showSyncThemeSelection && (
-                <SettingsSectionWide className="flex mt-6 flex-nowrap gap-4 flex-column lg:flex-row">
-                    <ThemeSyncModeCard
-                        className="lg:flex-1"
-                        mode="light"
-                        list={themes}
-                        themeIdentifier={settings.LightTheme}
-                        onChange={(themeType) => {
-                            setTheme(themeType, ThemeModeSetting.Light);
-                            notifyPreferenceSaved();
-                        }}
-                        active={information.colorScheme === ColorScheme.Light}
-                    />
-                    <ThemeSyncModeCard
-                        className="lg:flex-1"
-                        mode="dark"
-                        list={themes}
-                        themeIdentifier={settings.DarkTheme}
-                        onChange={(themeType) => {
-                            setTheme(themeType, ThemeModeSetting.Dark);
-                            notifyPreferenceSaved();
-                        }}
-                        active={information.colorScheme === ColorScheme.Dark}
-                    />
-                </SettingsSectionWide>
-            )}
-            {showManualThemeSelection && (
-                <SettingsSectionWide className="mt-6">
-                    <ThemeCards
-                        size="large"
-                        list={themes}
-                        themeIdentifier={information.theme}
-                        onChange={(themeType) => {
-                            setTheme(themeType);
-                            notifyPreferenceSaved();
-                        }}
-                    />
-                </SettingsSectionWide>
-            )}
-        </>
+                    {showSyncThemeSelection && (
+                        <div className="flex flex-nowrap gap-4 flex-column lg:flex-row">
+                            <ThemeSyncModeCard
+                                className="lg:flex-1"
+                                mode="light"
+                                list={themes}
+                                themeIdentifier={settings.LightTheme}
+                                onChange={(themeType) => {
+                                    setTheme(themeType, ThemeModeSetting.Light);
+                                    notifyPreferenceSaved();
+                                }}
+                                active={information.colorScheme === ColorScheme.Light}
+                            />
+                            <ThemeSyncModeCard
+                                className="lg:flex-1"
+                                mode="dark"
+                                list={themes}
+                                themeIdentifier={settings.DarkTheme}
+                                onChange={(themeType) => {
+                                    setTheme(themeType, ThemeModeSetting.Dark);
+                                    notifyPreferenceSaved();
+                                }}
+                                active={information.colorScheme === ColorScheme.Dark}
+                            />
+                        </div>
+                    )}
+                    {showManualThemeSelection && (
+                        <ThemeCards
+                            size="large"
+                            list={themes}
+                            themeIdentifier={information.theme}
+                            onChange={(themeType) => {
+                                setTheme(themeType);
+                                notifyPreferenceSaved();
+                            }}
+                        />
+                    )}
+                </DashboardCardContent>
+            </DashboardCard>
+        </DashboardGrid>
     );
 };
 

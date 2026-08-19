@@ -219,11 +219,13 @@ const AccountSettingsRouter = ({
             )}
             {getIsSectionAvailable(password) && (
                 <Route path={getSectionPath(path, password)}>
-                    <PrivateMainSettingsArea config={password}>
-                        <>
-                            <UsernameSection app={app} />
-                            <PasswordsSection />
-                        </>
+                    <PrivateMainSettingsArea
+                        config={password}
+                        variant={SettingsLayoutVariant.Card}
+                        maxWidth={SettingsCardMaxWidth.Narrow}
+                    >
+                        <UsernameSection app={app} />
+                        <PasswordsSection />
                         <TwoFactorSection />
                         {/* The following two sections are for non-private users */}
                         <NonPrivateRecoverySection />
@@ -240,19 +242,31 @@ const AccountSettingsRouter = ({
                 </Route>
             )}
             <Route path={getSectionPath(path, language)}>
-                <PrivateMainSettingsArea config={language}>
+                <PrivateMainSettingsArea
+                    config={language}
+                    variant={SettingsLayoutVariant.Card}
+                    maxWidth={SettingsCardMaxWidth.Narrow}
+                >
                     <LanguageAndTimeSection />
                 </PrivateMainSettingsArea>
             </Route>
             <Route path={getSectionPath(path, appearance)}>
-                <PrivateMainSettingsArea config={appearance}>
+                <PrivateMainSettingsArea
+                    config={appearance}
+                    variant={SettingsLayoutVariant.Card}
+                    maxWidth={SettingsCardMaxWidth.Medium}
+                >
                     <ThemesSection />
                     <AccessibilitySection />
                 </PrivateMainSettingsArea>
             </Route>
             <Route path={getSectionPath(path, security)}>
                 <AutomaticSubscriptionModal />
-                <PrivateMainSettingsArea config={security}>
+                <PrivateMainSettingsArea
+                    config={security}
+                    variant={SettingsLayoutVariant.Card}
+                    maxWidth={SettingsCardMaxWidth.Medium}
+                >
                     <SentinelSection app={app} />
                     <CredentialLeakSection />
                     <AuthDevicesSettings />
@@ -266,7 +280,11 @@ const AccountSettingsRouter = ({
                 <Route path={getSectionPath(path, referral)}>
                     <ReferralPageTelemetry />
                     <ReferralInvitesContextProvider>
-                        <PrivateMainSettingsArea config={referral}>
+                        <PrivateMainSettingsArea
+                            config={referral}
+                            variant={SettingsLayoutVariant.Card}
+                            maxWidth={SettingsCardMaxWidth.Medium}
+                        >
                             <InviteSection />
                             <RewardSection />
                         </PrivateMainSettingsArea>
