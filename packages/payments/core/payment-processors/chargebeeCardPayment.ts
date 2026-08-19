@@ -5,7 +5,7 @@ import {
     chargebeeValidationErrorName,
     isMessageBusResponseFailure,
     paymentAttemptRefusedChargebeeErrorName,
-} from '@proton/chargebee/lib';
+} from '@proton/chargebee/lib/types';
 import type { Api } from '@proton/shared/lib/interfaces';
 
 import { PAYMENT_METHOD_TYPES } from '../constants';

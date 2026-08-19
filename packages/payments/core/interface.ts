@@ -20,7 +20,7 @@ import type {
     SetIdealPaymentIntentPayload,
     SetPaypalPaymentIntentPayload,
     ThreeDsChallengePayload,
-} from '@proton/chargebee/lib';
+} from '@proton/chargebee/lib/types';
 
 import type { CheckSubscriptionData } from './api/api';
 import type { BillingAddress, FullBillingAddress } from './billing-address/billing-address';
