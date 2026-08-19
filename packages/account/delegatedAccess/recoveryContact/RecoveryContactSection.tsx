@@ -1,4 +1,6 @@
-import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
+import { c } from 'ttag';
+
+import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
@@ -16,21 +18,18 @@ export const RecoveryContactSection = ({ app }: { app: APP_NAMES }) => {
     const { hasAccountRecoveryMethod } = useSelector(selectAvailableRecoveryMethods);
 
     return (
-        <>
-            <SettingsSectionWide className="mb-6">
-                <OutgoingDelegatedAccessProvider>
-                    <OutgoingDelegatedAccessActions />
-                    <OutgoingRecoveryContactParams />
-                    <OutgoingRecoveryContactSettings userHasNoAccountRecoveryMethodSet={!hasAccountRecoveryMethod} />
-                </OutgoingDelegatedAccessProvider>
-            </SettingsSectionWide>
-            <SettingsSectionWide>
-                <IncomingDelegatedAccessProvider>
-                    <IncomingDelegatedAccessActions app={app} />
-                    <IncomingRecoveryContactSettings hideEmptyIncomingHelpText={false} />
-                    <IncomingRecoveryContactParams />
-                </IncomingDelegatedAccessProvider>
-            </SettingsSectionWide>
-        </>
+        <DashboardGrid>
+            <DashboardGridSectionHeader title={c('emergency_access').t`Data recovery contacts`} />
+            <OutgoingDelegatedAccessProvider>
+                <OutgoingDelegatedAccessActions />
+                <OutgoingRecoveryContactParams />
+                <OutgoingRecoveryContactSettings userHasNoAccountRecoveryMethodSet={!hasAccountRecoveryMethod} />
+            </OutgoingDelegatedAccessProvider>
+            <IncomingDelegatedAccessProvider>
+                <IncomingDelegatedAccessActions app={app} />
+                <IncomingRecoveryContactSettings hideEmptyIncomingHelpText={false} />
+                <IncomingRecoveryContactParams />
+            </IncomingDelegatedAccessProvider>
+        </DashboardGrid>
     );
 };

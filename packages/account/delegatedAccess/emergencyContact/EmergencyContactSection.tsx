@@ -1,4 +1,6 @@
-import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
+import { c } from 'ttag';
+
+import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
 import { IncomingDelegatedAccessActions } from '../shared/IncomingDelegatedAccessActions';
@@ -12,21 +14,22 @@ import { OutgoingEmergencyContactUpsell } from './outgoing/OutgoingEmergencyCont
 
 export const EmergencyContactSection = ({ app }: { app: APP_NAMES }) => {
     return (
-        <div className="pt-6">
-            <SettingsSectionWide className="mb-6">
+        <DashboardGrid>
+            <DashboardGridSectionHeader title={c('Title').t`Emergency access`} />
+            <div>
                 <OutgoingDelegatedAccessProvider>
                     <OutgoingEmergencyContactUpsell app={app} />
                     <OutgoingDelegatedAccessActions />
                     <OutgoingEmergencyContactSearchParams />
                     <OutgoingEmergencyContactSettings />
                 </OutgoingDelegatedAccessProvider>
-            </SettingsSectionWide>
-            <SettingsSectionWide>
+            </div>
+            <div>
                 <IncomingDelegatedAccessProvider>
                     <IncomingDelegatedAccessActions app={app} />
                     <IncomingEmergencyContactSettings hideEmptyIncomingHelpText={false} />
                 </IncomingDelegatedAccessProvider>
-            </SettingsSectionWide>
-        </div>
+            </div>
+        </DashboardGrid>
     );
 };

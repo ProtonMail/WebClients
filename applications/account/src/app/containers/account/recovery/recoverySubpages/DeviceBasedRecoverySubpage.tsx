@@ -8,9 +8,7 @@ import { DashboardGrid } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import { Href } from '@proton/atoms/Href/Href';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
-import SettingsDescription, {
-    SettingsDescriptionItem,
-} from '@proton/components/containers/account/SettingsDescription';
+import SettingsDescription from '@proton/components/containers/account/SettingsDescription';
 import { SettingsToggleRow } from '@proton/components/containers/account/SettingsToggleRow';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { useLoading } from '@proton/hooks';
@@ -49,16 +47,6 @@ const DeviceBasedRecoverySubpage = ({ emailSubpagePath }: { emailSubpagePath: st
             {updateRecoveryFile.el}
             <DashboardGrid>
                 <SettingsDescription
-                    left={
-                        <>
-                            <SettingsDescriptionItem>
-                                {c('Info')
-                                    .t`Enabling the data backup on this device will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset, simply by signing in on this device.`}{' '}
-                                <Href key="learn" href={getKnowledgeBaseUrl('/device-data-recovery')}>{c('Link')
-                                    .t`Learn more`}</Href>
-                            </SettingsDescriptionItem>
-                        </>
-                    }
                     right={
                         <img
                             src={isDarkTheme ? darkIllustration : illustration}
@@ -68,7 +56,14 @@ const DeviceBasedRecoverySubpage = ({ emailSubpagePath }: { emailSubpagePath: st
                             height={80}
                         />
                     }
-                />
+                >
+                    <SettingsDescription.Item>
+                        {c('Info')
+                            .t`Enabling the data backup on this device will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset, simply by signing in on this device.`}{' '}
+                        <Href key="learn" href={getKnowledgeBaseUrl('/device-data-recovery')}>{c('Link')
+                            .t`Learn more`}</Href>
+                    </SettingsDescription.Item>
+                </SettingsDescription>
                 <DashboardCard>
                     <PasswordResetOptionRequiredWarning emailSubpagePath={emailSubpagePath} />
                     <DashboardCardContent>

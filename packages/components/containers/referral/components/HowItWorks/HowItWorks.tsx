@@ -59,13 +59,15 @@ const HowItWorks = ({ className, style }: Props) => {
                     </li>
                 </ol>
 
-                <p className="m-0">{getReferralMaxRewardCopy(maxRewardAmount)}</p>
+                <div>
+                    <p className="m-0">{getReferralMaxRewardCopy(maxRewardAmount)}</p>
 
-                <p className="m-0">
-                    <Href className="inline-block" href={getKnowledgeBaseUrl('/referral-program')}>
-                        {c('Link').t`Learn more`}
-                    </Href>
-                </p>
+                    <p className="m-0">
+                        <Href className="inline-block" href={getKnowledgeBaseUrl('/referral-program')}>
+                            {c('Link').t`Learn more`}
+                        </Href>
+                    </p>
+                </div>
             </div>
         </div>
     );

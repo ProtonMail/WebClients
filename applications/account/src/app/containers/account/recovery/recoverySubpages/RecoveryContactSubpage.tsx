@@ -11,9 +11,7 @@ import { OutgoingDelegatedAccessProvider } from '@proton/account/delegatedAccess
 import { selectAvailableRecoveryMethods } from '@proton/account/recovery/sessionRecoverySelectors';
 import { DashboardGrid } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import { Href } from '@proton/atoms/Href/Href';
-import SettingsDescription, {
-    SettingsDescriptionItem,
-} from '@proton/components/containers/account/SettingsDescription';
+import SettingsDescription from '@proton/components/containers/account/SettingsDescription';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -30,13 +28,6 @@ export const RecoveryContactSubpage = ({ app, emailSubpagePath }: { app: APP_NAM
     return (
         <DashboardGrid>
             <SettingsDescription
-                left={
-                    <SettingsDescriptionItem>
-                        {c('Info')
-                            .t`By adding people you trust as recovery contacts, we'll be able to send them an email to help you if you're having trouble recovering your data after a password reset. You can also be a recovery contact for others.`}{' '}
-                        <Href href={getKnowledgeBaseUrl('/contact-data-recovery')}>{c('Link').t`Learn more`}</Href>
-                    </SettingsDescriptionItem>
-                }
                 right={
                     <img
                         src={isDarkTheme ? darkIllustration : illustration}
@@ -46,7 +37,13 @@ export const RecoveryContactSubpage = ({ app, emailSubpagePath }: { app: APP_NAM
                         height={80}
                     />
                 }
-            />
+            >
+                <SettingsDescription.Item>
+                    {c('Info')
+                        .t`By adding people you trust as recovery contacts, we'll be able to send them an email to help you if you're having trouble recovering your data after a password reset. You can also be a recovery contact for others.`}{' '}
+                    <Href href={getKnowledgeBaseUrl('/contact-data-recovery')}>{c('Link').t`Learn more`}</Href>
+                </SettingsDescription.Item>
+            </SettingsDescription>
             <OutgoingDelegatedAccessProvider>
                 <OutgoingDelegatedAccessActions />
                 <OutgoingRecoveryContactParams />

@@ -11,7 +11,7 @@ export enum SettingsLayoutVariant {
 
 export enum SettingsCardMaxWidth {
     Wide = '93.75rem',
-    Medium = '68rem',
+    Medium = '65.5rem',
     Narrow = '46.25rem',
 }
 

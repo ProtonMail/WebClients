@@ -1,22 +1,25 @@
 import { c } from 'ttag';
 
-import SettingsLayout from '../account/SettingsLayout';
-import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
-import SettingsLayoutRight from '../account/SettingsLayoutRight';
+import { SettingsSelectRow } from '@proton/components/containers/account/SettingsSelectRow';
+import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
+
+import { SettingsIconRow } from '../account/SettingsIconRow';
 import WeekStartSelector from '../calendar/settings/WeekStartSelector';
 
 const WeekStartSection = () => {
     return (
-        <SettingsLayout>
-            <SettingsLayoutLeft>
-                <label className="text-semibold" htmlFor="week-start-select" id="label-week-start-select">
-                    {c('Label').t`Week start`}
-                </label>
-            </SettingsLayoutLeft>
-            <SettingsLayoutRight>
-                <WeekStartSelector />
-            </SettingsLayoutRight>
-        </SettingsLayout>
+        <SettingsIconRow icon={IcCalendarGrid}>
+            <SettingsSelectRow
+                // WeekStartSelector owns this id on its own select
+                id="week-start-select"
+                label={
+                    <SettingsSelectRow.Label id="label-week-start-select">
+                        {c('Label').t`Week start`}
+                    </SettingsSelectRow.Label>
+                }
+                select={<WeekStartSelector />}
+            />
+        </SettingsIconRow>
     );
 };
 

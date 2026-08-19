@@ -5,10 +5,12 @@ import { c } from 'ttag';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { Button } from '@proton/atoms/Button/Button';
+import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import { Href } from '@proton/atoms/Href/Href';
 import Loader from '@proton/components/components/loader/Loader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import useConfig from '@proton/components/hooks/useConfig';
+import { IcTrashCross } from '@proton/icons/icons/IcTrashCross';
 import { hasMigrationDiscount, hasVisionary } from '@proton/payments/core/subscription/helpers';
 import { ADDRESS_TYPE, APPS, MAIL_APP_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 
@@ -78,29 +80,37 @@ const DeleteSection = (props: Props) => {
                 />
             )}
             {renderDeleteAccountModal && <DeleteAccountModal {...deleteAccountModalProps} />}
-            <SettingsParagraph>
-                {c('Info')
-                    .t`This will permanently delete your account and all of its data. You will not be able to reactivate this account.`}
-            </SettingsParagraph>
-            <Button
-                color="danger"
-                shape="outline"
-                id="deleteButton"
-                fullWidth={deleteButtonFullWidth}
-                onClick={() => {
-                    if (hasMigrationDiscount(subscription)) {
-                        setMigrationDiscountModal(true);
-                        return;
-                    }
-                    if (hasVisionary(subscription)) {
-                        setVisionaryLossModal(true);
-                        return;
-                    }
-                    setDeleteAccountModalOpen(true);
-                }}
-            >
-                {deleteButtonText}
-            </Button>
+            <DashboardGrid>
+                <DashboardGridSectionHeader
+                    title={c('Title').t`Delete account`}
+                    subtitle={c('Info')
+                        .t`This will permanently delete your account and all of its data. You will not be able to reactivate this account.`}
+                />
+                <div>
+                    <Button
+                        color="danger"
+                        shape="outline"
+                        id="deleteButton"
+                        fullWidth={deleteButtonFullWidth}
+                        onClick={() => {
+                            if (hasMigrationDiscount(subscription)) {
+                                setMigrationDiscountModal(true);
+                                return;
+                            }
+                            if (hasVisionary(subscription)) {
+                                setVisionaryLossModal(true);
+                                return;
+                            }
+                            setDeleteAccountModalOpen(true);
+                        }}
+                    >
+                        <span className="flex gap-2 items-center justify-center">
+                            <IcTrashCross />
+                            {deleteButtonText}
+                        </span>
+                    </Button>
+                </div>
+            </DashboardGrid>
         </>
     );
 };

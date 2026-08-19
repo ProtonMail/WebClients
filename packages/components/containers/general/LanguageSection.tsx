@@ -4,11 +4,13 @@ import { userSettingsActions } from '@proton/account/userSettings';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Href } from '@proton/atoms/Href/Href';
 import Option from '@proton/components/components/option/Option';
-import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
+import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import { SettingsSelectRow } from '@proton/components/containers/account/SettingsSelectRow';
 import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { IcLanguage } from '@proton/icons/icons/IcLanguage';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateLocale as updateLocaleConfig } from '@proton/shared/lib/api/settings';
 import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
@@ -18,13 +20,29 @@ import { loadLocales } from '@proton/shared/lib/i18n/loadLocale';
 import type { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import noop from '@proton/utils/noop';
 
-import SettingsLayout from '../account/SettingsLayout';
-import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
-import SettingsLayoutRight from '../account/SettingsLayoutRight';
+import { SettingsIconRow } from '../account/SettingsIconRow';
 
 interface Props {
     locales: TtagLocaleMap;
 }
+
+/**
+ * Sits below the language card rather than inside its row, so it's exported separately
+ * for each page that renders {@link LanguageSection} to place itself.
+ */
+export const LanguageTranslationHelp = () => {
+    const helpTranslateLink = (
+        <Href key="help-translate" href={getBlogURL('/translation-community')}>
+            {c('Link').t`Help translate`}
+        </Href>
+    );
+
+    return (
+        <SettingsParagraph className="mb-0">
+            {c('Info').jt`${helpTranslateLink} by joining our localization community.`}
+        </SettingsParagraph>
+    );
+};
 
 const LanguageSection = ({ locales = {} }: Props) => {
     const { LOCALES = {} } = useConfig();
@@ -52,30 +70,30 @@ const LanguageSection = ({ locales = {} }: Props) => {
     const displayedValue = getClosestLocaleCode(userSettings?.Locale, locales);
 
     return (
-        <SettingsLayout>
-            <SettingsLayoutLeft>
-                <label className="text-semibold" htmlFor="languageSelect" id="label-languageSelect">
-                    {c('Label').t`Default language`}
-                </label>
-            </SettingsLayoutLeft>
-            <SettingsLayoutRight>
-                <SelectTwo
-                    id="languageSelect"
-                    value={displayedValue}
-                    onChange={({ value }) => {
-                        handleChange(value);
-                    }}
-                    aria-describedby="label-languageSelect"
-                >
-                    {Object.entries(LOCALES).map(([key, value]) => (
-                        <Option key={key} title={value} value={key} />
-                    ))}
-                </SelectTwo>
-                <div className="mt-1 text-sm">
-                    <Href href={getBlogURL('/translation-community')}>{c('Link').t`Help translate`}</Href>
-                </div>
-            </SettingsLayoutRight>
-        </SettingsLayout>
+        <SettingsIconRow icon={IcLanguage}>
+            <SettingsSelectRow
+                id="languageSelect"
+                label={
+                    <SettingsSelectRow.Label id="label-languageSelect">
+                        {c('Label').t`Default language`}
+                    </SettingsSelectRow.Label>
+                }
+                select={
+                    <SettingsSelectRow.Select
+                        value={displayedValue}
+                        onChange={({ value }) => {
+                            // handleChange reports its own errors
+                            void handleChange(value);
+                        }}
+                        aria-describedby="label-languageSelect"
+                    >
+                        {Object.entries(LOCALES).map(([key, value]) => (
+                            <Option key={key} title={value} value={key} />
+                        ))}
+                    </SettingsSelectRow.Select>
+                }
+            />
+        </SettingsIconRow>
     );
 };
 

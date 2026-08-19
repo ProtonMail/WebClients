@@ -39,7 +39,7 @@ const SettingsNavGroup = ({ title, description, subsections, header, children, v
 
     return (
         <div>
-            {title && <h2 className="text-lg text-semibold m-0 mb-2">{title}</h2>}
+            {title && <h2 className="text-lg text-semibold m-0 mb-1">{title}</h2>}
             {description && <p className="color-weak m-0 mb-4">{description}</p>}
             <div
                 className={clsx(

@@ -7,7 +7,7 @@ import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLa
 import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import ViewPreferenceSelector from '@proton/components/containers/calendar/settings/ViewPreferenceSelector';
-import WeekStartSection from '@proton/components/containers/general/WeekStartSection';
+import WeekStartSelector from '@proton/components/containers/calendar/settings/WeekStartSelector';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
@@ -55,7 +55,16 @@ const CalendarLayoutSection = ({ calendarUserSettings: { ViewPreference, Display
                     />
                 </SettingsLayoutRight>
             </SettingsLayout>
-            <WeekStartSection />
+            <SettingsLayout>
+                <SettingsLayoutLeft>
+                    <label className="text-semibold" htmlFor="week-start-select" id="label-week-start-select">
+                        {c('Label').t`Week start`}
+                    </label>
+                </SettingsLayoutLeft>
+                <SettingsLayoutRight>
+                    <WeekStartSelector />
+                </SettingsLayoutRight>
+            </SettingsLayout>
             <SettingsLayout>
                 <SettingsLayoutLeft>
                     <label className="text-semibold" htmlFor="week-numbers-display" id="label-week-numbers-display">
