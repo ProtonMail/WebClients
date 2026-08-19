@@ -2,5 +2,5 @@
 @use '~@proton/styles/scss/lib/rem' as *;
 
 .settings-icon-row {
-	grid-template-columns: rem(24) 1fr;
+	grid-template-columns: rem(24) minmax(0, 1fr);
 }
