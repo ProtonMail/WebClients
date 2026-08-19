@@ -52,14 +52,23 @@ const addGlobalOptions = (program) => {
 };
 
 const getWebpackArgs = (options, env) => {
-    const extraWebpackArgs = env.args.join(' ');
-    return `--env protonPackOptions=${JSON.stringify(options)} ${extraWebpackArgs}`;
+    return [`--env`, `protonPackOptions=${JSON.stringify(options)}`, ...env.args];
 };
 
 const commandWithLog = (...args) => {
     // eslint-disable-next-line no-console
     console.log(styleText('cyan', args[0]), '\n');
     return execa.command(...args);
+};
+
+/**
+ * `execa.command` splits its input on whitespace, so an argument holding an absolute
+ * path breaks when the repository lives under a directory containing a space.
+ */
+const nodeScriptWithLog = (script, args, options) => {
+    // eslint-disable-next-line no-console
+    console.log(styleText('cyan', [script, ...args].join(' ')), '\n');
+    return execa(process.execPath, [script, ...args], options);
 };
 
 addGlobalOptions(program.command('build').description('create an optimized production build'))
@@ -71,14 +80,15 @@ addGlobalOptions(program.command('build').description('create an optimized produ
         const webpackArgs = getWebpackArgs(options, env);
 
         const outputPath = path.resolve('./dist');
-        await commandWithLog(`rm -rf ${outputPath}`);
-        await commandWithLog(
-            `${require.resolve('webpack-cli/bin/cli.js')} --progress --output-path=${outputPath} ${webpackArgs}`,
+        await execa('rm', ['-rf', outputPath]);
+        await nodeScriptWithLog(
+            require.resolve('webpack-cli/bin/cli.js'),
+            ['--progress', `--output-path=${outputPath}`, ...webpackArgs],
             {
                 stdio: 'inherit',
             }
         );
-        await commandWithLog(`${path.resolve(__dirname, `../scripts/validate.sh`)} ${outputPath}`, {
+        await execa(path.resolve(__dirname, `../scripts/validate.sh`), [outputPath], {
             stdio: 'inherit',
         });
         const dotFiles = await Promise.all(
@@ -111,8 +121,9 @@ addGlobalOptions(program.command('dev-server').description('run locally'))
 
         const port = await getPort(options.port || 8080);
 
-        await commandWithLog(
-            `${require.resolve('webpack-cli/bin/cli.js')} serve --progress --port=${port} ${webpackArgs}`,
+        await nodeScriptWithLog(
+            require.resolve('webpack-cli/bin/cli.js'),
+            ['serve', '--progress', `--port=${port}`, ...webpackArgs],
             {
                 stdio: 'inherit',
             }
