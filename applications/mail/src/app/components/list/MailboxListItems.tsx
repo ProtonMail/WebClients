@@ -11,15 +11,15 @@ import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 import { CUSTOM_VIEWS, CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
-import { useGetStartedChecklist } from 'proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider';
-import { useMailboxLayoutProvider } from 'proton-mail/router/components/MailboxLayoutContext';
+import { useGetStartedChecklist } from '../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
+import { useMailboxLayoutProvider } from '../../router/components/MailboxLayoutContext';
 import {
     selectConversationMode,
     selectElementID,
     selectIsSearching,
     selectLabelID,
-} from 'proton-mail/store/elements/elementsSelectors';
-import { useMailSelector } from 'proton-mail/store/hooks';
+} from '../../store/elements/elementsSelectors';
+import { useMailSelector } from '../../store/hooks';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { isElementMessage } from '../../helpers/elements';

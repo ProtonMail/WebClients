@@ -1,4 +1,4 @@
-import type { ESMessageContent } from 'proton-mail/models/encryptedSearch';
+import type { ESMessageContent } from '../../../../models/encryptedSearch';
 
 import { CONTENT_VERSION } from '../../esBuild';
 import type { CleanTextFn, MigrationMethod } from '../interface';

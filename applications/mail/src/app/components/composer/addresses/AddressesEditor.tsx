@@ -11,7 +11,7 @@ import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
-import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
+import { useMailDispatch, useMailSelector } from '../../../store/hooks';
 
 import type { MessageSendInfo } from '../../../hooks/useSendInfo';
 import type { RecipientType } from '../../../models/address';

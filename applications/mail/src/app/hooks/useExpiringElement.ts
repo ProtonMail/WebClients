@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 
 import { getUnixTime } from 'date-fns';
 
-import { isElementConversation } from 'proton-mail/helpers/elements';
+import { isElementConversation } from '../helpers/elements';
 
 import type { Element } from '../models/element';
 import { useGetAllMessages, useGetMessage } from './message/useMessage';

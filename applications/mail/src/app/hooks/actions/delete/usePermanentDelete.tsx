@@ -1,8 +1,8 @@
 import { useCallback } from 'react';
 
-import type { SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
-import { usePermanentDeleteAll } from 'proton-mail/hooks/actions/delete/usePermanentDeleteAll';
-import { usePermanentDeleteSelection } from 'proton-mail/hooks/actions/delete/usePermanentDeleteSelection';
+import type { SOURCE_ACTION } from '../../../components/list/list-telemetry/useListTelemetry';
+import { usePermanentDeleteAll } from './usePermanentDeleteAll';
+import { usePermanentDeleteSelection } from './usePermanentDeleteSelection';
 
 export const usePermanentDelete = (labelID: string) => {
     const { handleDeleteSelection, deleteSelectionModal } = usePermanentDeleteSelection(labelID);

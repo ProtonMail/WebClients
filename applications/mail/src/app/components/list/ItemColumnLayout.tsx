@@ -12,9 +12,9 @@ import type { AttachmentsMetadata } from '@proton/shared/lib/interfaces/mail/Mes
 import { getHasOnlyIcsAttachments } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
-import ItemAttachmentThumbnails from 'proton-mail/components/list/ItemAttachmentThumbnails';
-import { canShowAttachmentThumbnails } from 'proton-mail/helpers/attachment/attachmentThumbnails';
-import { useMailSelector } from 'proton-mail/store/hooks';
+import ItemAttachmentThumbnails from './ItemAttachmentThumbnails';
+import { canShowAttachmentThumbnails } from '../../helpers/attachment/attachmentThumbnails';
+import { useMailSelector } from '../../store/hooks';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { getLabelIDs, isStarred as testIsStarred } from '../../helpers/elements';

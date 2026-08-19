@@ -4,7 +4,7 @@ import type { Api } from '@proton/shared/lib/interfaces';
 import chunk from '@proton/utils/chunk';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { MAIL_ACTION_DEFAULT_CHUNK_SIZE } from 'proton-mail/constants';
+import { MAIL_ACTION_DEFAULT_CHUNK_SIZE } from '../constants';
 
 /**
  * Takes an api action and split it in several requests to have smaller actions on the api side

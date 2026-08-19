@@ -11,11 +11,11 @@ import { isAutoFlaggedPhishing, isPlainText, isSuspicious } from '@proton/shared
 import iframeSVG from '@proton/styles/assets/img/icons/email-sprite-icons.source.svg';
 import clsx from '@proton/utils/clsx';
 
-import MessageBodyPlaceholder from 'proton-mail/components/message/MessageBodyPlaceholder';
-import MessageBodyPrint from 'proton-mail/components/message/MessageBodyPrint';
-import useMessageImagesLoadError from 'proton-mail/components/message/hooks/useMessageImagesLoadError';
-import { useMailboxContainerContext } from 'proton-mail/containers/mailbox/MailboxContainerProvider';
-import { isMessageContentEmpty } from 'proton-mail/helpers/message/messageContent';
+import MessageBodyPlaceholder from './MessageBodyPlaceholder';
+import MessageBodyPrint from './MessageBodyPrint';
+import useMessageImagesLoadError from './hooks/useMessageImagesLoadError';
+import { useMailboxContainerContext } from '../../containers/mailbox/MailboxContainerProvider';
+import { isMessageContentEmpty } from '../../helpers/message/messageContent';
 
 import { useOnMailTo } from '../../containers/ComposeProvider';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';

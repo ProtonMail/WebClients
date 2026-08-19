@@ -1,7 +1,7 @@
 import type { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 
-import type { UploadResult } from 'proton-mail/helpers/attachment/attachmentUploader';
-import type { Upload } from 'proton-mail/helpers/upload';
+import type { UploadResult } from '../../../helpers/attachment/attachmentUploader';
+import type { Upload } from '../../../helpers/upload';
 
 export type AttachmentUpload = {
     file: File;

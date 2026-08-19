@@ -1,12 +1,12 @@
 import useOpenDrawerOnLoad from '@proton/components/hooks/drawer/useOpenDrawerOnLoad';
 
-import { useContactsListener } from 'proton-mail/hooks/contact/useContactsListener';
-import { useConversationsEvent } from 'proton-mail/hooks/events/useConversationsEvents';
-import { useMessagesEvents } from 'proton-mail/hooks/events/useMessagesEvents';
-import useIncomingDefaultsEvents from 'proton-mail/hooks/incomingDefaults/useIncomingDefaultsEvents';
-import { usePageHotkeys } from 'proton-mail/hooks/mailbox/usePageHotkeys';
-import useComposerEvent from 'proton-mail/hooks/useComposerEvent';
-import { useMailPTTMetric } from 'proton-mail/metrics/useMailPTTMetric';
+import { useContactsListener } from '../../hooks/contact/useContactsListener';
+import { useConversationsEvent } from '../../hooks/events/useConversationsEvents';
+import { useMessagesEvents } from '../../hooks/events/useMessagesEvents';
+import useIncomingDefaultsEvents from '../../hooks/incomingDefaults/useIncomingDefaultsEvents';
+import { usePageHotkeys } from '../../hooks/mailbox/usePageHotkeys';
+import useComposerEvent from '../../hooks/useComposerEvent';
+import { useMailPTTMetric } from '../../metrics/useMailPTTMetric';
 
 import { useMailNavigationLogger } from './useMailNavigationLogger';
 

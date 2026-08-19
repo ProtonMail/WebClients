@@ -2,7 +2,7 @@ import type { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { formatFolderName } from '@proton/shared/lib/helpers/folder';
 import type { FolderWithSubFolders } from '@proton/shared/lib/interfaces';
 
-import type { getStandardFolders } from 'proton-mail/helpers/labels';
+import type { getStandardFolders } from '../../../../helpers/labels';
 
 import type { Item, ItemCustomFolder, ItemDefaultFolder, ItemLabel } from './useLocationFieldOptions';
 

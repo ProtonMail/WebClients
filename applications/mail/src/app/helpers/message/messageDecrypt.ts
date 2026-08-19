@@ -17,7 +17,7 @@ import { getParsedHeadersFirstValue, getSender, isAutoForwardee, isMIME } from '
 import { getMailVerificationStatus } from '@proton/shared/lib/mail/signature';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
-import type { DecryptedAttachment } from 'proton-mail/store/attachments/attachmentsTypes';
+import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
 
 import { convert } from '../attachment/attachmentConverter';
 

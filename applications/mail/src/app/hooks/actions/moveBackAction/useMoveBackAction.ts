@@ -5,11 +5,11 @@ import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
-import { isElementMessage } from 'proton-mail/helpers/elements';
-import { useGetConversation } from 'proton-mail/hooks/conversation/useConversation';
-import { useRouterNavigation } from 'proton-mail/router/hooks/useRouterNavigation';
-import { selectElementID, selectLabelID } from 'proton-mail/store/elements/elementsSelectors';
-import { useMailSelector } from 'proton-mail/store/hooks';
+import { isElementMessage } from '../../../helpers/elements';
+import { useGetConversation } from '../../conversation/useConversation';
+import { useRouterNavigation } from '../../../router/hooks/useRouterNavigation';
+import { selectElementID, selectLabelID } from '../../../store/elements/elementsSelectors';
+import { useMailSelector } from '../../../store/hooks';
 
 import {
     getOpenedElementUpdated,

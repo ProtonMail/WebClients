@@ -9,8 +9,8 @@ import { formatFolderName } from '@proton/shared/lib/helpers/folder';
 import type { Folder, FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 import clsx from '@proton/utils/clsx';
 
-import type { ApplyLabelsParams } from 'proton-mail/hooks/actions/label/interface';
-import type { MoveParams } from 'proton-mail/hooks/actions/applyLocation/interface';
+import type { ApplyLabelsParams } from '../../hooks/actions/label/interface';
+import type { MoveParams } from '../../hooks/actions/applyLocation/interface';
 
 import SidebarItem from './SidebarItem';
 import SidebarLabelActions from './SidebarLabelActions';

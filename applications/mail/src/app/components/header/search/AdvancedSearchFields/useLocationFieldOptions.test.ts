@@ -3,13 +3,13 @@ import { mockUseFolders } from '@proton/testing/lib/mockUseFolders';
 import { mockUseLabels } from '@proton/testing/lib/mockUseLabels';
 import { mockUseMailSettings } from '@proton/testing/lib/mockUseMailSettings';
 
-import { mockUseScheduleSendFeature } from 'proton-mail/helpers/test/mockUseScheduleSendFeature';
+import { mockUseScheduleSendFeature } from '../../../../helpers/test/mockUseScheduleSendFeature';
 
 import { isCustomFolder, isDefaultFolder, isLabel } from './advancesSearchFieldHelpers';
 import { useLocationFieldOptions } from './useLocationFieldOptions';
 import { expectedAll, expectedGrouped } from './useLocationFieldOptions.test.data';
 
-jest.mock('proton-mail/components/categoryView/useCategoriesView', () => ({
+jest.mock('../../../categoryView/useCategoriesView', () => ({
     useCategoriesView: jest.fn(() => ({
         categoriesStore: [],
         activeCategoriesTabs: [],

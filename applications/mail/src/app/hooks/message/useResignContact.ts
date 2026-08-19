@@ -4,7 +4,7 @@ import useApi from '@proton/components/hooks/useApi';
 import useGetEncryptionPreferences from '@proton/components/hooks/useGetEncryptionPreferences';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 
-import { useMailDispatch } from 'proton-mail/store/hooks';
+import { useMailDispatch } from '../../store/hooks';
 
 import { loadMessage } from '../../helpers/message/messageRead';
 import { resign } from '../../store/messages/read/messagesReadActions';

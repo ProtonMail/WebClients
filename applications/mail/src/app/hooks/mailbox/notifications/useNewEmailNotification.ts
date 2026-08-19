@@ -12,7 +12,7 @@ import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { isImported } from '@proton/shared/lib/mail/messages';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { useMailSelector } from 'proton-mail/store/hooks';
+import { useMailSelector } from '../../../store/hooks';
 
 import { isElementReminded } from '../../../helpers/snooze';
 import type { ConversationEvent, Event, MessageEvent } from '../../../models/event';

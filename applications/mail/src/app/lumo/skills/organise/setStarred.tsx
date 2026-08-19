@@ -5,7 +5,7 @@ import { IcStar } from '@proton/icons/icons/IcStar';
 import type { ToolDefinition, ToolHandler } from '@proton/llm/lib/lumoAgent/contracts/types';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
-import { APPLY_LOCATION_TYPES } from 'proton-mail/hooks/actions/applyLocation/interface';
+import { APPLY_LOCATION_TYPES } from '../../../hooks/actions/applyLocation/interface';
 
 import { resolveElements } from '../../helpers/references';
 import type { MailToolDeps, MailToolModule } from '../../toolModule';

@@ -33,7 +33,7 @@ import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 import generateUID from '@proton/utils/generateUID';
 
-import { useMailDispatch } from 'proton-mail/store/hooks';
+import { useMailDispatch } from '../../../store/hooks';
 
 import { MAX_EXPIRATION_TIME } from '../../../constants';
 import { useExternalExpiration } from '../../../hooks/composer/useExternalExpiration';

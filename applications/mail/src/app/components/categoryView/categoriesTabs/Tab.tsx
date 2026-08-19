@@ -17,7 +17,7 @@ import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
-import { setCategoryInUrl } from 'proton-mail/helpers/mailboxUrl';
+import { setCategoryInUrl } from '../../../helpers/mailboxUrl';
 
 import { useCategoriesOnboarding } from '../categoriesOnboarding/CategoriesOnboardingContext';
 import { OnboardingStep } from '../categoriesOnboarding/onboardingInterface';

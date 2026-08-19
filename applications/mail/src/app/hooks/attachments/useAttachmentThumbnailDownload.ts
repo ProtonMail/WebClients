@@ -6,16 +6,16 @@ import type { AttachmentFullMetadata, AttachmentsMetadata } from '@proton/shared
 import { MAIL_VERIFICATION_STATUS, MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import { getSessionKey } from '@proton/shared/lib/mail/send/attachments';
 
-import ConfirmDownloadAttachments from 'proton-mail/components/message/extrasFooter/attachment/ConfirmDownloadAttachments';
-import type { Download } from 'proton-mail/helpers/attachment/attachmentDownloader';
-import { generateDownload } from 'proton-mail/helpers/attachment/attachmentDownloader';
-import { decryptAndVerify, getVerificationStatusFromKeys } from 'proton-mail/helpers/attachment/attachmentLoader';
-import { useGetAttachment } from 'proton-mail/hooks/attachments/useAttachment';
-import { useContactsMap } from 'proton-mail/hooks/contact/useContacts';
-import { useGetMessageKeys } from 'proton-mail/hooks/message/useGetMessageKeys';
-import { updateAttachment } from 'proton-mail/store/attachments/attachmentsActions';
-import type { DecryptedAttachment } from 'proton-mail/store/attachments/attachmentsTypes';
-import { useMailDispatch } from 'proton-mail/store/hooks';
+import ConfirmDownloadAttachments from '../../components/message/extrasFooter/attachment/ConfirmDownloadAttachments';
+import type { Download } from '../../helpers/attachment/attachmentDownloader';
+import { generateDownload } from '../../helpers/attachment/attachmentDownloader';
+import { decryptAndVerify, getVerificationStatusFromKeys } from '../../helpers/attachment/attachmentLoader';
+import { useGetAttachment } from './useAttachment';
+import { useContactsMap } from '../contact/useContacts';
+import { useGetMessageKeys } from '../message/useGetMessageKeys';
+import { updateAttachment } from '../../store/attachments/attachmentsActions';
+import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
+import { useMailDispatch } from '../../store/hooks';
 
 /**
  * Get this value as an exact Number (max 53 bits)

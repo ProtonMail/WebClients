@@ -3,8 +3,8 @@ import type { Folder, Label } from '@proton/shared/lib/interfaces';
 import type { Attachment, Message, MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 import type { Filter, Sort } from '@proton/shared/lib/mail/search';
 
-import { getElementContextIdentifier } from 'proton-mail/helpers/elements';
-import type { Conversation, ConversationLabel } from 'proton-mail/models/conversation';
+import { getElementContextIdentifier } from '../../../helpers/elements';
+import type { Conversation, ConversationLabel } from '../../../models/conversation';
 
 export const CUSTOM_LABEL_ID1 = 'custom-label-1';
 export const CUSTOM_LABEL_ID2 = 'custom-label-2';

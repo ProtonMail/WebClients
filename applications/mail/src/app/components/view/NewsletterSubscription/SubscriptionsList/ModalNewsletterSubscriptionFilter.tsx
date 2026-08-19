@@ -9,12 +9,12 @@ import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import useNotifications from '@proton/components/hooks/useNotifications';
 
-import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
+import { useMailDispatch, useMailSelector } from '../../../../store/hooks';
 import {
     deleteNewsletterSubscription,
     filterSubscriptionList,
-} from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsActions';
-import { getFilteredSubscriptionIndex } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSelector';
+} from '../../../../store/newsletterSubscriptions/newsletterSubscriptionsActions';
+import { getFilteredSubscriptionIndex } from '../../../../store/newsletterSubscriptions/newsletterSubscriptionsSelector';
 
 import { getFilterData, getNewsletterCopyForFilterAction } from '../helper';
 import type { ModalFilterType, PropsWithNewsletterSubscription } from '../interface';

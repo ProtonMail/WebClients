@@ -11,8 +11,8 @@ import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 import { SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
 
-import { useCategoriesShortcuts } from 'proton-mail/components/categoryView/useCategoriesShortcuts';
-import { useOnCompose } from 'proton-mail/containers/ComposeProvider';
+import { useCategoriesShortcuts } from '../../components/categoryView/useCategoriesShortcuts';
+import { useOnCompose } from '../../containers/ComposeProvider';
 
 import { useLabelActionsContext } from '../../components/sidebar/EditLabelContext';
 import { ComposeTypes } from '../composer/useCompose';

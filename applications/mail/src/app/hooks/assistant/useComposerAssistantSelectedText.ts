@@ -1,7 +1,7 @@
 import type { RefObject } from 'react';
 import { useEffect, useRef, useState } from 'react';
 
-import { useComposerAssistantProvider } from 'proton-mail/components/assistant/provider/ComposerAssistantProvider';
+import { useComposerAssistantProvider } from '../../components/assistant/provider/ComposerAssistantProvider';
 
 export interface ComposerAssistantSelection {
     // Text that is currently selected in the composer (where the generation will be inserted when the user click replace)

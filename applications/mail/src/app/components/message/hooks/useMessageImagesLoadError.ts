@@ -1,8 +1,8 @@
 import useApi from '@proton/components/hooks/useApi';
 
-import type { OnMessageImageLoadError } from 'proton-mail/components/message/interface';
-import { useMailDispatch } from 'proton-mail/store/hooks';
-import { failedRemoteDirectLoading, loadRemoteProxy } from 'proton-mail/store/messages/images/messagesImagesActions';
+import type { OnMessageImageLoadError } from '../interface';
+import { useMailDispatch } from '../../../store/hooks';
+import { failedRemoteDirectLoading, loadRemoteProxy } from '../../../store/messages/images/messagesImagesActions';
 
 interface Props {
     localID: string;

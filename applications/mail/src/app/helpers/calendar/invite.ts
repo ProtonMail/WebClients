@@ -80,7 +80,7 @@ import type { RequireSome, Unwrap } from '@proton/shared/lib/interfaces/utils';
 import { getOriginalTo, hasSimpleLoginSender } from '@proton/shared/lib/mail/messages';
 import unary from '@proton/utils/unary';
 
-import { hasIcalExtension } from 'proton-mail/helpers/attachment/attachment';
+import { hasIcalExtension } from '../attachment/attachment';
 
 import type { FetchAllEventsByUID } from './inviteApi';
 

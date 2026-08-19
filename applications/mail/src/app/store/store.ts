@@ -3,9 +3,8 @@ import { configureStore, createListenerMiddleware } from '@reduxjs/toolkit';
 
 import { ignoredActions, ignoredPaths } from '@proton/redux-shared-store/sharedSerializable';
 
-import { errorMiddleware } from 'proton-mail/store/middleware';
-
 import { start } from './listener';
+import { errorMiddleware } from './middleware';
 import { type MailState, rootReducer } from './rootReducer';
 import { mailIgnoredActionPaths, mailIgnoredPaths } from './serializable';
 import { type MailThunkArguments, extraThunkArguments } from './thunk';

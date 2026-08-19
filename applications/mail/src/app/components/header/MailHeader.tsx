@@ -12,11 +12,11 @@ import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { APPS } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 
-import type { ElementsStructure } from 'proton-mail/hooks/mailbox/useElements';
-import type { MailboxActions } from 'proton-mail/router/interface';
-import { selectHasFocusedComposer } from 'proton-mail/store/composers/composerSelectors';
-import { selectElementID } from 'proton-mail/store/elements/elementsSelectors';
-import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
+import type { ElementsStructure } from '../../hooks/mailbox/useElements';
+import type { MailboxActions } from '../../router/interface';
+import { selectHasFocusedComposer } from '../../store/composers/composerSelectors';
+import { selectElementID } from '../../store/elements/elementsSelectors';
+import { useMailDispatch, useMailSelector } from '../../store/hooks';
 
 import { useOnCompose } from '../../containers/ComposeProvider';
 import { getLabelName } from '../../helpers/labels';

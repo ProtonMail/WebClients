@@ -7,7 +7,7 @@ import {
     escapeBackslash,
     extractContentFromPtag,
     getMarkdownParser,
-} from 'proton-mail/helpers/textToHtmlUtils';
+} from '../textToHtmlUtils';
 
 const turndownService = new TurndownService({
     bulletListMarker: '-', // Use '-' instead of '*'

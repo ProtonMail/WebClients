@@ -4,7 +4,7 @@ import { utf8StringToUint8Array } from '@protontech/crypto/utils';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { ATTACHMENT_DISPOSITION, MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 
-import type { DecryptedAttachment } from 'proton-mail/store/attachments/attachmentsTypes';
+import type { DecryptedAttachment } from '../../../store/attachments/attachmentsTypes';
 
 import { ENCRYPTED_STATUS } from '../../../constants';
 import { ID_PREFIX, convert, convertSingle, convertToFile, getHeaders, getId } from '../attachmentConverter';

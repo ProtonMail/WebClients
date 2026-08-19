@@ -12,7 +12,7 @@ import { blobURLtoBlob } from '@proton/shared/lib/helpers/file';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { useMailDispatch } from 'proton-mail/store/hooks';
+import { useMailDispatch } from '../../store/hooks';
 
 import SendingMessageNotification, {
     createSendingMessageNotificationManager,

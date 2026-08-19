@@ -15,19 +15,19 @@ import { mockUseMailSettings } from '@proton/testing/lib/mockUseMailSettings';
 import { mockUseOrganization } from '@proton/testing/lib/mockUseOrganization';
 import { mockUseUser } from '@proton/testing/lib/mockUseUser';
 
-import { useGetStartedChecklist } from 'proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider';
-import { useMailboxCounter } from 'proton-mail/hooks/mailboxCounter/useMailboxCounter';
-import { useMailSelector } from 'proton-mail/store/hooks';
+import { useGetStartedChecklist } from '../../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
+import { useMailboxCounter } from '../../../hooks/mailboxCounter/useMailboxCounter';
+import { useMailSelector } from '../../../store/hooks';
 
 import { useCategoriesView } from '../useCategoriesView';
 import { OnboardingFlow } from './onboardingInterface';
 import { useCategoriesOnboardingEligibility } from './useCategoriesOnboardingEligibility';
 
-jest.mock('proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider');
-jest.mock('proton-mail/hooks/mailboxCounter/useMailboxCounter');
+jest.mock('../../../containers/onboardingChecklist/provider/GetStartedChecklistProvider');
+jest.mock('../../../hooks/mailboxCounter/useMailboxCounter');
 jest.mock('@proton/account/welcomeFlags');
 jest.mock('@proton/features/useFeature');
-jest.mock('proton-mail/store/hooks');
+jest.mock('../../../store/hooks');
 jest.mock('../useCategoriesView');
 
 const ONBOARDING_ACCOUNT_THRESHOLD = 1738371600; // 2025-02-01

@@ -11,7 +11,7 @@ import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { updateBlockSenderConfirmation } from '@proton/shared/lib/api/mailSettings';
 import { BLOCK_SENDER_CONFIRMATION } from '@proton/shared/lib/mail/constants';
 
-import { useMailDispatch } from 'proton-mail/store/hooks';
+import { useMailDispatch } from '../store/hooks';
 
 import BlockSenderModal from '../components/message/modals/BlockSenderModal';
 import { getSendersToBlock } from '../helpers/message/messageRecipients';

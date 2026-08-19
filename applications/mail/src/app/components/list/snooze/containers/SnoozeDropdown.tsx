@@ -14,8 +14,8 @@ import { IcClock } from '@proton/icons/icons/IcClock';
 import { TelemetryMailEvents } from '@proton/shared/lib/api/telemetry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
-import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
-import { selectSnoozeDropdownState, selectSnoozeElement } from 'proton-mail/store/snooze/snoozeSliceSelectors';
+import { useMailDispatch, useMailSelector } from '../../../../store/hooks';
+import { selectSnoozeDropdownState, selectSnoozeElement } from '../../../../store/snooze/snoozeSliceSelectors';
 
 import useSnooze from '../../../../hooks/actions/useSnooze';
 import type { Element } from '../../../../models/element';

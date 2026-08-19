@@ -35,7 +35,7 @@ import { appMode } from '@proton/shared/lib/webpack.constants';
 import { CommonFeatureFlag } from '@proton/unleash/Flags';
 import noop from '@proton/utils/noop';
 
-import { registerMailToProtocolHandler } from 'proton-mail/helpers/url';
+import { registerMailToProtocolHandler } from './helpers/url';
 
 import { cleanLegacyLogsDatabase } from './helpers/cleanLegacyLogsDatabase';
 import {

@@ -3,8 +3,8 @@ import { createContext, useContext, useEffect, useState } from 'react';
 
 import debounce from 'lodash/debounce';
 
-import { selectElementID } from 'proton-mail/store/elements/elementsSelectors';
-import { useMailSelector } from 'proton-mail/store/hooks';
+import { selectElementID } from '../../store/elements/elementsSelectors';
+import { useMailSelector } from '../../store/hooks';
 
 interface ContextProps {
     /**

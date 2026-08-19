@@ -22,11 +22,11 @@ import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 import { SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { APPLY_LOCATION_TYPES } from 'proton-mail/hooks/actions/applyLocation/interface';
-import { useApplyLocation } from 'proton-mail/hooks/actions/applyLocation/useApplyLocation';
-import { useApplyLabelsToAll } from 'proton-mail/hooks/actions/label/useApplyLabelsToAll';
-import { MoveAllType, useMoveAllToFolder } from 'proton-mail/hooks/actions/move/useMoveAllToFolder';
-import { useMailboxCounter } from 'proton-mail/hooks/mailboxCounter/useMailboxCounter';
+import { APPLY_LOCATION_TYPES } from '../../hooks/actions/applyLocation/interface';
+import { useApplyLocation } from '../../hooks/actions/applyLocation/useApplyLocation';
+import { useApplyLabelsToAll } from '../../hooks/actions/label/useApplyLabelsToAll';
+import { MoveAllType, useMoveAllToFolder } from '../../hooks/actions/move/useMoveAllToFolder';
+import { useMailboxCounter } from '../../hooks/mailboxCounter/useMailboxCounter';
 
 import { LabelActionsContextProvider } from './EditLabelContext';
 import { MailSidebarCollapsedButton } from './MailSidebarCollapsedButton';

@@ -5,7 +5,7 @@ import { DENSITY, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
-import { isAllowedAutoDeleteLabelID } from 'proton-mail/helpers/autoDelete';
+import { isAllowedAutoDeleteLabelID } from '../../helpers/autoDelete';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { isInDeletedFolder } from '../../helpers/elements';

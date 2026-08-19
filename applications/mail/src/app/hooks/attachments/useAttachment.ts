@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 
-import { useMailStore } from 'proton-mail/store/hooks';
+import { useMailStore } from '../../store/hooks';
 
 import { attachmentByID } from '../../store/attachments/attachmentsSelectors';
 

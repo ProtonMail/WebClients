@@ -5,7 +5,7 @@ import { type TelemetryMailOnboardingEvents, TelemetryMeasurementGroups } from '
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import type { ThemeTypes } from '@proton/shared/lib/themes/constants';
 
-import { useMailDispatch } from 'proton-mail/store/hooks';
+import { useMailDispatch } from '../../store/hooks';
 
 import type { OnlineServicesKey } from './checklist/constants';
 

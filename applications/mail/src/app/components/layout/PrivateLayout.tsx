@@ -13,9 +13,9 @@ import { APPS } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 
-import { selectHasFocusedComposer } from 'proton-mail/store/composers/composerSelectors';
-import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
-import { selectLayoutIsExpanded } from 'proton-mail/store/layout/layoutSliceSelectors';
+import { selectHasFocusedComposer } from '../../store/composers/composerSelectors';
+import { useMailDispatch, useMailSelector } from '../../store/hooks';
+import { selectLayoutIsExpanded } from '../../store/layout/layoutSliceSelectors';
 
 import { ADVANCED_SEARCH_OVERLAY_CLOSE_EVENT } from '../../constants';
 import { useOnCompose, useOnMailTo } from '../../containers/ComposeProvider';

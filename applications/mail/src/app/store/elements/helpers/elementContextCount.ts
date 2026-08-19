@@ -5,7 +5,7 @@ import {
     getElementContextIdentifier,
     getSearchParameters,
     parseElementContextIdentifier,
-} from 'proton-mail/helpers/elements';
+} from '../../../helpers/elements';
 
 import type { ElementsState } from '../elementsTypes';
 

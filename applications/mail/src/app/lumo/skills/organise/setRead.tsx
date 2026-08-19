@@ -5,8 +5,8 @@ import { IcEnvelope } from '@proton/icons/icons/IcEnvelope';
 import type { ToolDefinition, ToolHandler } from '@proton/llm/lib/lumoAgent/contracts/types';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
-import { SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
-import { selectParams } from 'proton-mail/store/elements/elementsSelectors';
+import { SOURCE_ACTION } from '../../../components/list/list-telemetry/useListTelemetry';
+import { selectParams } from '../../../store/elements/elementsSelectors';
 
 import { resolveElements } from '../../helpers/references';
 import type { MailToolDeps, MailToolModule } from '../../toolModule';

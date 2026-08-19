@@ -6,7 +6,7 @@ import type { Address, MailSettings, UserSettings } from '@proton/shared/lib/int
 import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { PM_SIGNATURE } from '@proton/shared/lib/mail/mailSettings';
 
-import { fromFields, protonSignature, recipients } from 'proton-mail/components/composer/tests/Composer.test.data';
+import { fromFields, protonSignature, recipients } from '../../components/composer/tests/Composer.test.data';
 
 import { addressID, messageID, subject } from '../../components/message/tests/Message.test.helpers';
 import { generateKeys, releaseCryptoProxy, setupCryptoProxyForTesting } from '../test/crypto';

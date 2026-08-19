@@ -10,7 +10,7 @@ import { getOnlineStatus } from '@proton/components/hooks/useOnline';
 import type { MessageState, MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { useMailDispatch } from 'proton-mail/store/hooks';
+import { useMailDispatch } from '../../store/hooks';
 
 import type { SendingMessageNotificationManager } from '../../components/notifications/SendingMessageNotification';
 import SendingMessageNotification, {

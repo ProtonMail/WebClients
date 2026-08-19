@@ -9,7 +9,7 @@ import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import type { RequireSome } from '@proton/shared/lib/interfaces/utils';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
-import { useMailDispatch, useMailStore } from 'proton-mail/store/hooks';
+import { useMailDispatch, useMailStore } from '../../store/hooks';
 
 import { updateCountersForMarkAs } from '../../helpers/counter';
 import { isElementMessage, isUnread } from '../../helpers/elements';

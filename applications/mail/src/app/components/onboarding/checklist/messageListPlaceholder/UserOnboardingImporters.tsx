@@ -11,7 +11,7 @@ import { APPS, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { ChecklistKey } from '@proton/shared/lib/interfaces';
 import checklistImportersImg from '@proton/styles/assets/img/illustrations/checklist-importers.svg';
 
-import { useGetStartedChecklist } from 'proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider';
+import { useGetStartedChecklist } from '../../../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 
 interface Props {
     goToNextStep: () => void;

@@ -20,9 +20,9 @@ import { isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages
 import clsx from '@proton/utils/clsx';
 import diff from '@proton/utils/diff';
 
-import type { AddAttachmentsParams } from 'proton-mail/hooks/composer/useAttachments/interface';
-import { attachmentByCidOrCloc } from 'proton-mail/store/attachments/attachmentsSelectors';
-import type { MailState } from 'proton-mail/store/store';
+import type { AddAttachmentsParams } from '../../../hooks/composer/useAttachments/interface';
+import { attachmentByCidOrCloc } from '../../../store/attachments/attachmentsSelectors';
+import type { MailState } from '../../../store/store';
 
 import { locateBlockquote } from '../../../helpers/message/messageBlockquote';
 import { getContent } from '../../../helpers/message/messageContent';

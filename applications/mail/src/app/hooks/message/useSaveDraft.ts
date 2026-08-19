@@ -13,7 +13,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { useMailDispatch } from 'proton-mail/store/hooks';
+import { useMailDispatch } from '../../store/hooks';
 
 import { SAVE_DRAFT_ERROR_CODES } from '../../constants';
 import { isDecryptionError, isNetworkError, pickMessageInfosForSentry } from '../../helpers/errors';

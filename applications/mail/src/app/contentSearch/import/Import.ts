@@ -2,7 +2,7 @@ import type { IDBPDatabase } from 'idb';
 
 import createListeners from '@proton/shared/lib/helpers/listeners';
 
-import type { ESBaseMessage } from 'proton-mail/models/encryptedSearch';
+import type { ESBaseMessage } from '../../models/encryptedSearch';
 
 import type { Database } from '../db/schema.ts';
 import { IndexWriter } from '../indexation/IndexWriter.ts';

@@ -5,7 +5,7 @@ import { openNewTab } from '@proton/shared/lib/helpers/browser';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { CONFIRM_LINK } from '@proton/shared/lib/mail/mailSettings';
 
-import { mailTestRender } from 'proton-mail/helpers/test/render';
+import { mailTestRender } from '../../../../../helpers/test/render';
 
 import { activeSubscription } from '../../testData';
 import ModalUnsubscribe from './ModalUnsubscribe';

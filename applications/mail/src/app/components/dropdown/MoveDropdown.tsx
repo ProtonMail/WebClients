@@ -31,13 +31,13 @@ import generateUID from '@proton/utils/generateUID';
 import isTruthy from '@proton/utils/isTruthy';
 import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
-import { APPLY_LOCATION_TYPES } from 'proton-mail/hooks/actions/applyLocation/interface';
-import { useApplyLocation } from 'proton-mail/hooks/actions/applyLocation/useApplyLocation';
-import { MoveAllType, useMoveAllToFolder } from 'proton-mail/hooks/actions/move/useMoveAllToFolder';
-import type { FolderItem } from 'proton-mail/hooks/useMailTreeView/interface';
-import { useMailFolderTreeView } from 'proton-mail/hooks/useMailTreeView/useMailFolderTreeView';
-import { selectCategoryIDs } from 'proton-mail/store/elements/elementsSelectors';
-import { useMailSelector } from 'proton-mail/store/hooks';
+import { APPLY_LOCATION_TYPES } from '../../hooks/actions/applyLocation/interface';
+import { useApplyLocation } from '../../hooks/actions/applyLocation/useApplyLocation';
+import { MoveAllType, useMoveAllToFolder } from '../../hooks/actions/move/useMoveAllToFolder';
+import type { FolderItem } from '../../hooks/useMailTreeView/interface';
+import { useMailFolderTreeView } from '../../hooks/useMailTreeView/useMailFolderTreeView';
+import { selectCategoryIDs } from '../../store/elements/elementsSelectors';
+import { useMailSelector } from '../../store/hooks';
 
 import { isElementMessage } from '../../helpers/elements';
 import { getMessagesAuthorizedToMove } from '../../helpers/message/messages';

@@ -8,7 +8,7 @@ import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 
-import { useMailSelector } from 'proton-mail/store/hooks';
+import { useMailSelector } from '../../store/hooks';
 
 import type { MessageChange } from '../../components/composer/Composer';
 import { getAddressFromEmail } from '../../helpers/addresses';

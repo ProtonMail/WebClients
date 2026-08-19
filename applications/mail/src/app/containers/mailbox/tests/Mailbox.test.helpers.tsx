@@ -21,7 +21,7 @@ import type { Filter, SearchParameters, Sort } from '@proton/shared/lib/mail/sea
 import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 import range from '@proton/utils/range';
 
-import type { MailState } from 'proton-mail/store/rootReducer';
+import type { MailState } from '../../../store/rootReducer';
 
 import { filterToString, keywordToString, sortToString } from '../../../helpers/mailboxUrl';
 import { addApiMock, mailTestRender, minimalCache, triggerEvent } from '../../../helpers/test/helper';

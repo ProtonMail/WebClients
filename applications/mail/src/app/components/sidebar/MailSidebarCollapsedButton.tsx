@@ -8,7 +8,7 @@ import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
-import { useMailboxCounter } from 'proton-mail/hooks/mailboxCounter/useMailboxCounter';
+import { useMailboxCounter } from '../../hooks/mailboxCounter/useMailboxCounter';
 
 interface Props {
     type: 'folders' | 'labels';

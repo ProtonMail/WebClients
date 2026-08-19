@@ -9,7 +9,7 @@ import Info from '@proton/components/components/link/Info';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 
-import type { AddAttachmentsParams } from 'proton-mail/hooks/composer/useAttachments/interface';
+import type { AddAttachmentsParams } from '../../../hooks/composer/useAttachments/interface';
 
 import ComposerInnerModal from './ComposerInnerModal';
 

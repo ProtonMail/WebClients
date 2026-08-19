@@ -1,4 +1,4 @@
-import { useMailSelector } from 'proton-mail/store/hooks';
+import { useMailSelector } from '../../store/hooks';
 
 import {
     contactGroupsMap,

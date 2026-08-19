@@ -19,7 +19,7 @@ import {
 } from '@proton/shared/lib/mail/constants';
 import { getAttachments, isPlainText } from '@proton/shared/lib/mail/messages';
 
-import { useMailDispatch } from 'proton-mail/store/hooks';
+import { useMailDispatch } from '../../../store/hooks';
 
 import type { MessageChange } from '../../../components/composer/Composer';
 import type { ExternalEditorActions } from '../../../components/composer/editor/EditorWrapper';

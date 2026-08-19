@@ -8,10 +8,10 @@ import { domIsBusy } from '@proton/shared/lib/busy';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { setBit } from '@proton/shared/lib/helpers/bitset';
 
-import { useMailGlobalModals } from 'proton-mail/containers/globalModals/globalModalContext';
-import { ModalType } from 'proton-mail/containers/globalModals/inteface';
-import { contextTotal, selectLabelID } from 'proton-mail/store/elements/elementsSelectors';
-import { useMailSelector } from 'proton-mail/store/hooks';
+import { useMailGlobalModals } from '../../../containers/globalModals/globalModalContext';
+import { ModalType } from '../../../containers/globalModals/inteface';
+import { contextTotal, selectLabelID } from '../../../store/elements/elementsSelectors';
+import { useMailSelector } from '../../../store/hooks';
 
 import {
     getB2COnboardingStep,

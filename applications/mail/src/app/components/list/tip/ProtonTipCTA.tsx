@@ -2,9 +2,9 @@ import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButto
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import { APPS } from '@proton/shared/lib/constants';
 
-import { TipActionType } from 'proton-mail/models/tip';
-import { useMailSelector } from 'proton-mail/store/hooks';
-import { selectSnoozeElement } from 'proton-mail/store/snooze/snoozeSliceSelectors';
+import { TipActionType } from '../../../models/tip';
+import { useMailSelector } from '../../../store/hooks';
+import { selectSnoozeElement } from '../../../store/snooze/snoozeSliceSelectors';
 
 import useTipConfig from './useTipConfig';
 

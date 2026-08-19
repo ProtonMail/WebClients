@@ -5,9 +5,9 @@ import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
-import { isColumnMode } from 'proton-mail/helpers/mailSettings';
-import { selectLabelID } from 'proton-mail/store/elements/elementsSelectors';
-import { useMailSelector } from 'proton-mail/store/hooks';
+import { isColumnMode } from '../../helpers/mailSettings';
+import { selectLabelID } from '../../store/elements/elementsSelectors';
+import { useMailSelector } from '../../store/hooks';
 
 export interface MailboxProviderProps {
     labelDropdownToggleRef: RefObject<() => void>;

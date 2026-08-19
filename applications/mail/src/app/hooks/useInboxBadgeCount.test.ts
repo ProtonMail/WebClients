@@ -2,13 +2,13 @@ import { renderHook } from '@testing-library/react-hooks';
 
 import * as desktopHelpers from '@proton/shared/lib/helpers/desktop';
 
-import { useMailboxCounter } from 'proton-mail/hooks/mailboxCounter/useMailboxCounter';
-import useInboxBadgeCount from 'proton-mail/hooks/useInboxBadgeCount';
+import { useMailboxCounter } from './mailboxCounter/useMailboxCounter';
+import useInboxBadgeCount from './useInboxBadgeCount';
 
 jest.mock('@proton/shared/lib/helpers/desktop');
 const desktopHelpersMock = desktopHelpers as jest.MockedObject<typeof desktopHelpers>;
 
-jest.mock('proton-mail/hooks/mailboxCounter/useMailboxCounter');
+jest.mock('./mailboxCounter/useMailboxCounter');
 const mockUseMailboxCounter = useMailboxCounter as jest.Mock;
 
 declare const global: {

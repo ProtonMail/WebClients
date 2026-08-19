@@ -8,7 +8,7 @@ import { getIsB2BAudienceFromPlan } from '@proton/payments/core/plan/helpers';
 import { isAdmin } from '@proton/shared/lib/user/helpers';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import MailB2COnboardingModal from 'proton-mail/components/onboarding/modal/MailB2COnboardingModal';
+import MailB2COnboardingModal from './MailB2COnboardingModal';
 
 const B2BOnboardingModal = lazy(
     () =>

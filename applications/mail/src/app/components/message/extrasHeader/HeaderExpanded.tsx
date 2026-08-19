@@ -34,7 +34,7 @@ import { MailFeatureFlag } from '@proton/unleash/Flags';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
-import { hasLabel } from 'proton-mail/helpers/elements';
+import { hasLabel } from '../../../helpers/elements';
 
 import { useOnCompose, useOnMailTo } from '../../../containers/ComposeProvider';
 import { isSelfAddress } from '../../../helpers/addresses';

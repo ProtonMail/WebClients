@@ -5,7 +5,7 @@ import { isCategoryLabel } from '@proton/mail/helpers/location';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 
-import { setParamsInLocation } from 'proton-mail/helpers/mailboxUrl';
+import { setParamsInLocation } from '../helpers/mailboxUrl';
 
 /**
  * Deep links coming from the desktop app open an element in the mailbox.

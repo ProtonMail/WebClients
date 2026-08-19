@@ -5,8 +5,8 @@ import LabelStack from '@proton/components/components/labelStack/LabelStack';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
 import clsx from '@proton/utils/clsx';
 
-import { APPLY_LOCATION_TYPES } from 'proton-mail/hooks/actions/applyLocation/interface';
-import { useApplyLocation } from 'proton-mail/hooks/actions/applyLocation/useApplyLocation';
+import { APPLY_LOCATION_TYPES } from '../../hooks/actions/applyLocation/interface';
+import { useApplyLocation } from '../../hooks/actions/applyLocation/useApplyLocation';
 
 import { getElementLabels } from '../../helpers/labels';
 import type { Element } from '../../models/element';

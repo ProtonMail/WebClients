@@ -12,16 +12,16 @@ import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { encryptAttachment } from '@proton/shared/lib/mail/send/attachments';
 import { type ApiMockHandler, addApiMock } from '@proton/testing/lib/api';
 
-import ExtraEvents from 'proton-mail/components/message/extrasHeader/components/ExtraEvents';
-import { getCompleteAddress, minimalCache } from 'proton-mail/helpers/test/cache';
+import ExtraEvents from './ExtraEvents';
+import { getCompleteAddress, minimalCache } from '../../../../helpers/test/cache';
 import {
     type GeneratedKey,
     generateKeys as generateAddressKeys,
     getAddressKeyCache,
     releaseCryptoProxy,
     setupCryptoProxyForTesting,
-} from 'proton-mail/helpers/test/crypto';
-import { mailTestRender } from 'proton-mail/helpers/test/render';
+} from '../../../../helpers/test/crypto';
+import { mailTestRender } from '../../../../helpers/test/render';
 
 jest.setTimeout(20000);
 

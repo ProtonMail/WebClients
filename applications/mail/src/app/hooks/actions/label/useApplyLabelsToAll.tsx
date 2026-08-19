@@ -6,17 +6,17 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { useFolders } from '@proton/mail/store/labels/hooks';
 import { TelemetryMailSelectAllEvents } from '@proton/shared/lib/api/telemetry';
 
-import SelectAllLabelModal from 'proton-mail/components/list/select-all/modals/SelectAllLabelModal';
-import { getSortedChanges } from 'proton-mail/helpers/labels';
-import { getCleanedFolderID, sendSelectAllTelemetryReport } from 'proton-mail/helpers/moveToFolder';
-import { getSelectAllNotificationText } from 'proton-mail/helpers/selectAll';
-import { backendActionStarted, labelAll } from 'proton-mail/store/elements/elementsActions';
-import { useMailDispatch } from 'proton-mail/store/hooks';
-import { layoutActions } from 'proton-mail/store/layout/layoutSlice';
-import { hasLabel, isElementMessage } from 'proton-mail/helpers/elements';
+import SelectAllLabelModal from '../../../components/list/select-all/modals/SelectAllLabelModal';
+import { getSortedChanges } from '../../../helpers/labels';
+import { getCleanedFolderID, sendSelectAllTelemetryReport } from '../../../helpers/moveToFolder';
+import { getSelectAllNotificationText } from '../../../helpers/selectAll';
+import { backendActionStarted, labelAll } from '../../../store/elements/elementsActions';
+import { useMailDispatch } from '../../../store/hooks';
+import { layoutActions } from '../../../store/layout/layoutSlice';
+import { hasLabel, isElementMessage } from '../../../helpers/elements';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/useFlag';
-import type { Element } from 'proton-mail/models/element';
+import type { Element } from '../../../models/element';
 
 interface ApplyLabelsToAllParams {
     elements: Element[];

@@ -17,12 +17,12 @@ import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
-import { SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
+import { SOURCE_ACTION } from '../../components/list/list-telemetry/useListTelemetry';
 import {
     MESSAGE_FILTER_DROPDOWN_ID,
     MESSAGE_FOLDER_DROPDOWN_ID,
     MESSAGE_LABEL_DROPDOWN_ID,
-} from 'proton-mail/components/message/extrasHeader/constants';
+} from '../../components/message/extrasHeader/constants';
 
 import { useOnCompose } from '../../containers/ComposeProvider';
 import { hasLabel, isStarred } from '../../helpers/elements';
