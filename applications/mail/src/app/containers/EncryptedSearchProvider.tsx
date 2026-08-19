@@ -10,11 +10,12 @@ import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import useApi from '@proton/components/hooks/useApi';
 import { useSubscribeEventManager } from '@proton/components/hooks/useHandler';
 import { useLocalStateSync } from '@proton/components/hooks/useLocalStateSync';
-import { getIndexKey } from '@proton/encrypted-search/esHelpers';
+import { getIndexKey, setESLogger } from '@proton/encrypted-search/esHelpers';
 import { contentIndexingProgress, hasESDB, wrappedGetOldestInfo } from '@proton/encrypted-search/esIDB';
 import type { NormalizedSearchParams } from '@proton/encrypted-search/models';
 import { useEncryptedSearch } from '@proton/encrypted-search/useEncryptedSearch';
 import { useIndexedDBSupport } from '@proton/encrypted-search/useIndexedDBSupport';
+import { logger } from '@proton/logger';
 import { useGetMessageCounts } from '@proton/mail/store/counts/messageCountsSlice';
 import { SECOND } from '@proton/shared/lib/constants';
 import { isESEnabledUserChoiceInboxDesktop } from '@proton/shared/lib/desktop/encryptedSearch';
@@ -40,6 +41,10 @@ import type {
     EncryptedSearchFunctionsMail,
 } from '../models/encryptedSearch';
 import type { Event } from '../models/event';
+
+// Encrypted search has no logging implementation of its own (see esLogger.ts) - mail is the one
+// that knows about @proton/logger, so this is where that link is made explicit.
+setESLogger(logger);
 
 const EncryptedSearchContext = createContext<EncryptedSearchFunctionsMail>(defaultESContextMail);
 export const useEncryptedSearchContext = () => useContext(EncryptedSearchContext);

@@ -3,6 +3,7 @@ export * from './esBuild';
 export * from './esCache';
 export * from './esDecrypt';
 export * from './esHighlight';
+export * from './esLogger';
 export * from './esSearch';
 export * from './esSync';
 export * from './esUtils';
