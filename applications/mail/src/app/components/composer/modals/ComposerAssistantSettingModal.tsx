@@ -27,8 +27,8 @@ import serverImg from '@proton/styles/assets/img/illustrations/servers.svg';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
-import { useComposerAssistantProvider } from 'proton-mail/components/assistant/provider/ComposerAssistantProvider';
-import ComposerInnerModal from 'proton-mail/components/composer/modals/ComposerInnerModal';
+import { useComposerAssistantProvider } from '../../assistant/provider/ComposerAssistantProvider';
+import ComposerInnerModal from './ComposerInnerModal';
 
 interface Props {
     composerID: string;

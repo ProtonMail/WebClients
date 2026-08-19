@@ -18,8 +18,8 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import clsx from '@proton/utils/clsx';
 
-import AssistantFeedbackModal from 'proton-mail/components/assistant/modals/AssistantFeedbackModal';
-import { ASSISTANT_INSERT_TYPE } from 'proton-mail/hooks/assistant/useComposerAssistantGenerate';
+import AssistantFeedbackModal from './modals/AssistantFeedbackModal';
+import { ASSISTANT_INSERT_TYPE } from '../../hooks/assistant/useComposerAssistantGenerate';
 
 import ComposerAssistantResult from './ComposerAssistantResult';
 

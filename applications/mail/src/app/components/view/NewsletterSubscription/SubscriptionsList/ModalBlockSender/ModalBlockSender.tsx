@@ -8,13 +8,13 @@ import Prompt from '@proton/components/components/prompt/Prompt';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 
-import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
-import { addBlockAddresses } from 'proton-mail/store/incomingDefaults/incomingDefaultsActions';
+import { useMailDispatch, useMailSelector } from '../../../../../store/hooks';
+import { addBlockAddresses } from '../../../../../store/incomingDefaults/incomingDefaultsActions';
 import {
     filterSubscriptionList,
     updateSubscription,
-} from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsActions';
-import { getFilteredSubscriptionIndex } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSelector';
+} from '../../../../../store/newsletterSubscriptions/newsletterSubscriptionsActions';
+import { getFilteredSubscriptionIndex } from '../../../../../store/newsletterSubscriptions/newsletterSubscriptionsSelector';
 
 import { getUnsubscribeData } from '../../helper';
 import { NewsletterSubscriptionAction, type PropsWithNewsletterSubscription } from '../../interface';

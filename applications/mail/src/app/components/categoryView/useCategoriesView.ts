@@ -1,7 +1,7 @@
 import { useCategoriesData } from '@proton/mail/features/categoriesView/useCategoriesData';
 
-import { selectShouldShowCategoryViewTabs } from 'proton-mail/store/categories/categoriesSelector';
-import { useMailSelector } from 'proton-mail/store/hooks';
+import { selectShouldShowCategoryViewTabs } from '../../store/categories/categoriesSelector';
+import { useMailSelector } from '../../store/hooks';
 
 export const useCategoriesView = () => {
     const categoriesData = useCategoriesData();

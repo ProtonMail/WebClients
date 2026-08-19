@@ -21,7 +21,7 @@ import type { MailSettings, Recipient, UserModel } from '@proton/shared/lib/inte
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 import { getFeatureFlagsState } from '@proton/testing/lib/features';
 
-import type { MailState } from 'proton-mail/store/store';
+import type { MailState } from '../../../store/store';
 
 import { getMinScheduleTime } from '../../../helpers/schedule';
 import { addApiMock } from '../../../helpers/test/api';

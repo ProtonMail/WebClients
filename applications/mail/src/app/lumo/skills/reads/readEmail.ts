@@ -2,7 +2,7 @@ import { c, msgid } from 'ttag';
 
 import type { ToolDefinition, ToolHandler } from '@proton/llm/lib/lumoAgent/contracts/types';
 
-import type { Element } from 'proton-mail/models/element';
+import type { Element } from '../../../models/element';
 
 import type { DecryptedMessage } from '../../helpers/messages';
 import {

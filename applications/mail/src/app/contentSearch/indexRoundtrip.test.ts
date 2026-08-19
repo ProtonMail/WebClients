@@ -7,7 +7,7 @@ import type { IDBPDatabase } from 'idb';
 
 import type { NormalizedSearchParams } from '@proton/encrypted-search/models';
 
-import type { ESBaseMessage } from 'proton-mail/models/encryptedSearch.ts';
+import type { ESBaseMessage } from '../models/encryptedSearch.ts';
 
 import { openContentSearchDB } from './db/open';
 import type { Database } from './db/schema';

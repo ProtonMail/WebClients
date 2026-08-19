@@ -9,8 +9,8 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import GetMobileAppStep, {
     isGetMobileAppStepEligible,
-} from 'proton-mail/components/onboarding/modal/steps/GetMobileAppStep';
-import { useMailDispatch } from 'proton-mail/store/hooks';
+} from './steps/GetMobileAppStep';
+import { useMailDispatch } from '../../../store/hooks';
 
 import { useMailOnboardingTelemetry } from '../useMailOnboardingTelemetry';
 import type { OnboardingStepEligibleCallback } from './interface';

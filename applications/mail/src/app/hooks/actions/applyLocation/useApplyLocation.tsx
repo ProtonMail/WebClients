@@ -14,30 +14,30 @@ import type { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
 import isTruthy from '@proton/utils/isTruthy';
 import unique from '@proton/utils/unique';
 
-import UndoActionNotification from 'proton-mail/components/notifications/UndoActionNotification';
-import { SUCCESS_NOTIFICATION_EXPIRATION } from 'proton-mail/constants';
-import { useMailGlobalModals } from 'proton-mail/containers/globalModals/globalModalContext';
-import { ModalType } from 'proton-mail/containers/globalModals/inteface';
-import { getFilteredUndoTokens } from 'proton-mail/helpers/chunk';
-import { isElementConversation, isElementMessage } from 'proton-mail/helpers/elements';
-import { useMoveEngine } from 'proton-mail/helpers/location/MoveEngine/useMoveEngine';
+import UndoActionNotification from '../../../components/notifications/UndoActionNotification';
+import { SUCCESS_NOTIFICATION_EXPIRATION } from '../../../constants';
+import { useMailGlobalModals } from '../../../containers/globalModals/globalModalContext';
+import { ModalType } from '../../../containers/globalModals/inteface';
+import { getFilteredUndoTokens } from '../../../helpers/chunk';
+import { isElementConversation, isElementMessage } from '../../../helpers/elements';
+import { useMoveEngine } from '../../../helpers/location/MoveEngine/useMoveEngine';
 import {
     shouldOpenConfirmationModalForConverversation,
     shouldOpenConfirmationModalForMessages,
-} from 'proton-mail/helpers/location/moveModal/shouldOpenModal';
-import { useMoveBackAction } from 'proton-mail/hooks/actions/moveBackAction/useMoveBackAction';
-import { useCreateFilters } from 'proton-mail/hooks/actions/useCreateFilters';
-import { useGetConversation, useGetConversationsByIDs } from 'proton-mail/hooks/conversation/useConversation';
-import { useGetElementByID } from 'proton-mail/hooks/mailbox/useElements';
-import { load } from 'proton-mail/store/conversations/conversationsActions';
-import { selectLabelID } from 'proton-mail/store/elements/elementsSelectors';
-import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
+} from '../../../helpers/location/moveModal/shouldOpenModal';
+import { useMoveBackAction } from '../moveBackAction/useMoveBackAction';
+import { useCreateFilters } from '../useCreateFilters';
+import { useGetConversation, useGetConversationsByIDs } from '../../conversation/useConversation';
+import { useGetElementByID } from '../../mailbox/useElements';
+import { load } from '../../../store/conversations/conversationsActions';
+import { selectLabelID } from '../../../store/elements/elementsSelectors';
+import { useMailDispatch, useMailSelector } from '../../../store/hooks';
 import {
     labelConversations,
     labelMessages,
     unlabelConversations,
     unlabelMessages,
-} from 'proton-mail/store/mailbox/mailboxActions';
+} from '../../../store/mailbox/mailboxActions';
 
 import { getApplyLabelNotificationText } from '../label/helper';
 import { MOVE_BACK_ACTION_TYPES } from '../moveBackAction/interfaces';

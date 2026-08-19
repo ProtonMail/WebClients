@@ -11,10 +11,10 @@ import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import unique from '@proton/utils/unique';
 
-import { isPageConsecutive } from 'proton-mail/helpers/paging';
-import { PaginationSources, useTelemetryPagingControls } from 'proton-mail/hooks/useTelemetryPagingControls';
-import { contextPages } from 'proton-mail/store/elements/elementsSelectors';
-import { useMailSelector } from 'proton-mail/store/hooks';
+import { isPageConsecutive } from '../../helpers/paging';
+import { PaginationSources, useTelemetryPagingControls } from '../../hooks/useTelemetryPagingControls';
+import { contextPages } from '../../store/elements/elementsSelectors';
+import { useMailSelector } from '../../store/hooks';
 
 interface MailboxListPaginationProps {
     handlePrevious: () => void;

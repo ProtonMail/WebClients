@@ -16,9 +16,9 @@ import { ERROR_TYPE } from '@proton/shared/lib/assistant';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import AssistantUnsafeErrorFeedbackModal from 'proton-mail/components/assistant/modals/AssistantUnsafeErrorFeedbackModal';
-import type { ComposerAssistantInitialSetupSpotlightRef } from 'proton-mail/components/assistant/spotlights/ComposerAssistantInitialSetupSpotlight';
-import ComposerAssistantInitialSetupSpotlight from 'proton-mail/components/assistant/spotlights/ComposerAssistantInitialSetupSpotlight';
+import AssistantUnsafeErrorFeedbackModal from '../modals/AssistantUnsafeErrorFeedbackModal';
+import type { ComposerAssistantInitialSetupSpotlightRef } from '../spotlights/ComposerAssistantInitialSetupSpotlight';
+import ComposerAssistantInitialSetupSpotlight from '../spotlights/ComposerAssistantInitialSetupSpotlight';
 
 interface Props {
     assistantID: string;

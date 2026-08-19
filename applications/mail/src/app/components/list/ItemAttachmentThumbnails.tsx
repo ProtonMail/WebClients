@@ -9,10 +9,10 @@ import type { AttachmentsMetadata } from '@proton/shared/lib/interfaces/mail/Mes
 import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import clsx from '@proton/utils/clsx';
 
-import AttachmentThumbnail from 'proton-mail/components/list/AttachmentThumbnail';
-import { MAX_COLUMN_ATTACHMENT_THUMBNAILS } from 'proton-mail/constants';
-import { getOtherAttachmentsTitle } from 'proton-mail/helpers/attachment/attachmentThumbnails';
-import { useAttachmentThumbnailDownload } from 'proton-mail/hooks/attachments/useAttachmentThumbnailDownload';
+import AttachmentThumbnail from './AttachmentThumbnail';
+import { MAX_COLUMN_ATTACHMENT_THUMBNAILS } from '../../constants';
+import { getOtherAttachmentsTitle } from '../../helpers/attachment/attachmentThumbnails';
+import { useAttachmentThumbnailDownload } from '../../hooks/attachments/useAttachmentThumbnailDownload';
 
 interface Preview {
     attachment: AttachmentsMetadata;

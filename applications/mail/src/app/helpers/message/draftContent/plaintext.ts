@@ -7,7 +7,7 @@ import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { FORWARDED_MESSAGE, isPlainText } from '@proton/shared/lib/mail/messages';
 
-import { formatRecipientsString } from 'proton-mail/helpers/message/messageDraftFormat';
+import { formatRecipientsString } from '../messageDraftFormat';
 
 import { formatFullDate } from '../../date';
 import { getDate } from '../../elementTypeGuards';

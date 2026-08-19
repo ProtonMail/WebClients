@@ -9,7 +9,7 @@ import type { Recipient } from '@proton/shared/lib/interfaces';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { addComposerAction } from 'proton-mail/store/composers/composerActions';
+import { addComposerAction } from '../../../store/composers/composerActions';
 
 import { mergeMessages } from '../../../helpers/message/messages';
 import { addApiMock, clearAll, mailTestRender, minimalCache } from '../../../helpers/test/helper';

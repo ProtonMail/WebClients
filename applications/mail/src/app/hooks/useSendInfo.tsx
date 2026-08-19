@@ -22,7 +22,7 @@ import getSendPreferences from '@proton/shared/lib/mail/send/getSendPreferences'
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
-import { getAddressFromEmail } from 'proton-mail/helpers/addresses';
+import { getAddressFromEmail } from '../helpers/addresses';
 
 import AskForKeyPinningModal from '../components/composer/addresses/AskForKeyPinningModal';
 import ContactResignModal from '../components/message/modals/ContactResignModal';

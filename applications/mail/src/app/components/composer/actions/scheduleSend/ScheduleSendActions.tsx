@@ -17,8 +17,8 @@ import plusLogo from '@proton/styles/assets/img/illustrations/mail-plus-logo.svg
 import scheduleSendImg from '@proton/styles/assets/img/illustrations/new-upsells-img/paperplane-clock.svg';
 import clsx from '@proton/utils/clsx';
 
-import { selectComposer } from 'proton-mail/store/composers/composerSelectors';
-import { useMailSelector } from 'proton-mail/store/hooks';
+import { selectComposer } from '../../../../store/composers/composerSelectors';
+import { useMailSelector } from '../../../../store/hooks';
 
 import { FUTURE_MESSAGES_BUFFER } from '../../../../constants';
 import { isScheduledDuringNight } from './helpers';

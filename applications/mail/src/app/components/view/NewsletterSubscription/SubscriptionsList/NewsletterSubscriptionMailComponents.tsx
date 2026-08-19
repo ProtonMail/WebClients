@@ -3,10 +3,10 @@ import { c, msgid } from 'ttag';
 import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import type { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
-import type { SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
-import type { ElementsStructure } from 'proton-mail/hooks/mailbox/useElements';
-import { MailboxToolbar } from 'proton-mail/router/components/MailboxToolbar';
-import type { MailboxActions, RouterNavigation } from 'proton-mail/router/interface';
+import type { SOURCE_ACTION } from '../../../list/list-telemetry/useListTelemetry';
+import type { ElementsStructure } from '../../../../hooks/mailbox/useElements';
+import { MailboxToolbar } from '../../../../router/components/MailboxToolbar';
+import type { MailboxActions, RouterNavigation } from '../../../../router/interface';
 
 import type { PropsWithNewsletterSubscription } from '../interface';
 

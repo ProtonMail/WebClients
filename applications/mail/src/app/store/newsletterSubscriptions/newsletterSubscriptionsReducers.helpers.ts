@@ -3,7 +3,7 @@ import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import type { CreateEventItemUpdate, UpdateEventItemUpdate } from '@proton/shared/lib/helpers/updateCollection';
 import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
-import { getReceivedMessagesCount } from 'proton-mail/components/view/NewsletterSubscription/helper';
+import { getReceivedMessagesCount } from '../../components/view/NewsletterSubscription/helper';
 
 import { type NewsletterSubscriptionsInterface, SortSubscriptionsValue } from './interface';
 import type {

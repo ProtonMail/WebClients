@@ -14,7 +14,7 @@ import mobileAppImg1x from '@proton/styles/assets/img/onboarding/mail_onboarding
 import mobileAppImg2x from '@proton/styles/assets/img/onboarding/mail_onboarding_mobile_app_download_qr@2x.webp';
 import clsx from '@proton/utils/clsx';
 
-import OnboardingContent from 'proton-mail/components/onboarding/modal/layout/OnboardingContent';
+import OnboardingContent from '../layout/OnboardingContent';
 
 import type { OnboardingStepEligibleCallback } from '../interface';
 

@@ -5,7 +5,7 @@ import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
-import { useMailboxCounter } from 'proton-mail/hooks/mailboxCounter/useMailboxCounter';
+import { useMailboxCounter } from '../../../../hooks/mailboxCounter/useMailboxCounter';
 
 interface Props extends ModalProps {
     onResolve: () => void;

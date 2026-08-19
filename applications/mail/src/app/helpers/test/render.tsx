@@ -39,18 +39,18 @@ import { DEFAULT_MAIL_SETTINGS, DELAY_IN_SECONDS, PM_SIGNATURE } from '@proton/s
 import { registerFeatureFlagsApiMock } from '@proton/testing/lib/features';
 import { getOrganizationState, getSubscriptionState } from '@proton/testing/lib/initialReduxState';
 
-import { ComposerAssistantProvider } from 'proton-mail/components/assistant/provider/ComposerAssistantProvider';
-import { GlobalModalProvider } from 'proton-mail/containers/globalModals/GlobalModalProvider';
-import QuickSettingsTestProvider from 'proton-mail/helpers/test/quick-settings';
-import { MailboxLayoutProvider } from 'proton-mail/router/components/MailboxLayoutContext';
-import type { AttachmentsState } from 'proton-mail/store/attachments/attachmentsTypes';
-import { composersInitialState } from 'proton-mail/store/composers/composersSlice';
-import { mailContactsInitialState } from 'proton-mail/store/contacts/contactsSlice';
-import type { ConversationsState } from 'proton-mail/store/conversations/conversationsTypes';
-import { newElementsState } from 'proton-mail/store/elements/elementsSlice';
-import { incomingDefaultsInitialState } from 'proton-mail/store/incomingDefaults/incomingDefaultsSlice';
-import { layoutInitialState } from 'proton-mail/store/layout/layoutSlice';
-import { snoozeInitialState } from 'proton-mail/store/snooze/snoozeSlice';
+import { ComposerAssistantProvider } from '../../components/assistant/provider/ComposerAssistantProvider';
+import { GlobalModalProvider } from '../../containers/globalModals/GlobalModalProvider';
+import QuickSettingsTestProvider from './quick-settings';
+import { MailboxLayoutProvider } from '../../router/components/MailboxLayoutContext';
+import type { AttachmentsState } from '../../store/attachments/attachmentsTypes';
+import { composersInitialState } from '../../store/composers/composersSlice';
+import { mailContactsInitialState } from '../../store/contacts/contactsSlice';
+import type { ConversationsState } from '../../store/conversations/conversationsTypes';
+import { newElementsState } from '../../store/elements/elementsSlice';
+import { incomingDefaultsInitialState } from '../../store/incomingDefaults/incomingDefaultsSlice';
+import { layoutInitialState } from '../../store/layout/layoutSlice';
+import { snoozeInitialState } from '../../store/snooze/snoozeSlice';
 
 import { LabelActionsContextProvider } from '../../components/sidebar/EditLabelContext';
 import { MAIN_ROUTE_PATH } from '../../constants';

@@ -5,7 +5,7 @@ import useLoading from '@proton/hooks/useLoading';
 import type { ChecklistId, UserModel } from '@proton/shared/lib/interfaces';
 import { CHECKLIST_DISPLAY_TYPE, ChecklistKey, ChecklistType } from '@proton/shared/lib/interfaces';
 
-import { renderHook } from 'proton-mail/helpers/test/render';
+import { renderHook } from '../../../helpers/test/render';
 
 import useChecklist from '../hooks/useChecklist';
 import { getMailChecklistItemsToComplete, useGetStartedChecklist } from './GetStartedChecklistProvider';

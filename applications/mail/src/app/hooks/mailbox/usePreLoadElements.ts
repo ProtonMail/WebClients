@@ -5,10 +5,10 @@ import { unwrapResult } from '@reduxjs/toolkit';
 import { FeatureCode, useFeature } from '@proton/features';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 
-import { isElementConversation } from 'proton-mail/helpers/elements';
-import type { Element } from 'proton-mail/models/element';
-import { allConversations } from 'proton-mail/store/conversations/conversationsSelectors';
-import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
+import { isElementConversation } from '../../helpers/elements';
+import type { Element } from '../../models/element';
+import { allConversations } from '../../store/conversations/conversationsSelectors';
+import { useMailDispatch, useMailSelector } from '../../store/hooks';
 
 import { findMessageToExpand } from '../../helpers/message/messageExpandable';
 import { load } from '../../store/conversations/conversationsActions';

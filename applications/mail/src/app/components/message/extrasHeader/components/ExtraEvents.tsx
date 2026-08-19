@@ -45,8 +45,8 @@ import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 import unary from '@proton/utils/unary';
 
-import { useContactsMap } from 'proton-mail/hooks/contact/useContacts';
-import { useMailDispatch } from 'proton-mail/store/hooks';
+import { useContactsMap } from '../../../../hooks/contact/useContacts';
+import { useMailDispatch } from '../../../../store/hooks';
 
 import { formatDownload } from '../../../../helpers/attachment/attachmentDownloader';
 import type { EventInvitation } from '../../../../helpers/calendar/invite';

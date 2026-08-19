@@ -10,7 +10,7 @@ import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
 import type { Address } from '@proton/shared/lib/interfaces';
 
-import { useMailDispatch } from 'proton-mail/store/hooks';
+import { useMailDispatch } from '../../store/hooks';
 
 import type { MessageChange } from '../../components/composer/Composer';
 import { getAddressFromEmail, getFromAddress } from '../../helpers/addresses';

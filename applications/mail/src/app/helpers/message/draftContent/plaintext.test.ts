@@ -5,12 +5,12 @@ import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 import { FORWARDED_MESSAGE } from '@proton/shared/lib/mail/messages';
 
-import { formatFullDate } from 'proton-mail/helpers/date';
+import { formatFullDate } from '../../date';
 import {
     createPlaintextDraftContent,
     generatePlaintextBlockquote,
     generatePlaintextPreviousMessageInfos,
-} from 'proton-mail/helpers/message/draftContent/plaintext';
+} from './plaintext';
 
 const ID = 'ID';
 const now = new Date();

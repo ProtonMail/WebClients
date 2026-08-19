@@ -10,16 +10,16 @@ import {
     categoryIDFromUrl,
     removeCategoryFromCurrentUrl,
     setCategoryInCurrentUrl,
-} from 'proton-mail/helpers/mailboxUrl';
-import { selectLabelID } from 'proton-mail/store/elements/elementsSelectors';
-import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
+} from '../../helpers/mailboxUrl';
+import { selectLabelID } from '../../store/elements/elementsSelectors';
+import { useMailDispatch, useMailSelector } from '../../store/hooks';
 
 import { useCategoriesView } from './useCategoriesView';
 import { useCategoryFlagWatcher } from './useCategoryFlagWatcher';
 
 jest.mock('react-router');
-jest.mock('proton-mail/helpers/mailboxUrl');
-jest.mock('proton-mail/store/hooks');
+jest.mock('../../helpers/mailboxUrl');
+jest.mock('../../store/hooks');
 jest.mock('./useCategoriesView');
 
 const INBOX_URL = `/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]}`;

@@ -6,7 +6,7 @@ import { FeatureCode } from '@proton/features/interface';
 import { SECOND } from '@proton/shared/lib/constants';
 import { isUserAccountOlderThanOrEqualToDays } from '@proton/shared/lib/user/helpers';
 
-import { useNewsletterSubscriptions } from 'proton-mail/store/newsletterSubscriptions/hook';
+import { useNewsletterSubscriptions } from '../../../../store/newsletterSubscriptions/hook';
 
 const REQUIRED_MAIL_SUBSCRIPTIONS = 10;
 

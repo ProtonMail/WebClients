@@ -12,14 +12,14 @@ import { createLabel as createLabelAction, updateLabel as updateLabelAction } fr
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 
-import { useEncryptedSearchContext } from 'proton-mail/containers/EncryptedSearchProvider';
-import { useApplyLocation } from 'proton-mail/hooks/actions/applyLocation/useApplyLocation';
-import { useMarkAs } from 'proton-mail/hooks/actions/markAs/useMarkAs';
-import useSnooze from 'proton-mail/hooks/actions/useSnooze';
-import { useInitializeMessage } from 'proton-mail/hooks/message/useInitializeMessage';
-import { load as loadConversationAction } from 'proton-mail/store/conversations/conversationsActions';
-import { backendActionStarted, markAll as markAllAction } from 'proton-mail/store/elements/elementsActions';
-import { useMailDispatch, useMailStore } from 'proton-mail/store/hooks';
+import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
+import { useApplyLocation } from '../../hooks/actions/applyLocation/useApplyLocation';
+import { useMarkAs } from '../../hooks/actions/markAs/useMarkAs';
+import useSnooze from '../../hooks/actions/useSnooze';
+import { useInitializeMessage } from '../../hooks/message/useInitializeMessage';
+import { load as loadConversationAction } from '../../store/conversations/conversationsActions';
+import { backendActionStarted, markAll as markAllAction } from '../../store/elements/elementsActions';
+import { useMailDispatch, useMailStore } from '../../store/hooks';
 
 import { buildLumoMailConfig } from '../registry';
 import type { MailToolDeps } from '../toolModule';

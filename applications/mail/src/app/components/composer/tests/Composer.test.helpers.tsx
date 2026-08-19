@@ -8,8 +8,8 @@ import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 
-import { addComposerAction } from 'proton-mail/store/composers/composerActions';
-import type { MailStore } from 'proton-mail/store/store';
+import { addComposerAction } from '../../../store/composers/composerActions';
+import type { MailStore } from '../../../store/store';
 
 import { mergeMessages } from '../../../helpers/message/messages';
 import {

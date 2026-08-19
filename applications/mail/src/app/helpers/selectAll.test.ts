@@ -10,7 +10,7 @@ import {
     getSelectAllBannerTextWithLocation,
     getSelectAllButtonText,
     getSelectAllNotificationText,
-} from 'proton-mail/helpers/selectAll';
+} from './selectAll';
 
 const customLabelID = 'customLabelID';
 const customLabelName = 'Custom Label';

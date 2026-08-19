@@ -10,7 +10,7 @@ import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import noop from '@proton/utils/noop';
 
-import type { MailStore } from 'proton-mail/store/store';
+import type { MailStore } from '../../../store/store';
 
 import * as messageDecrypt from '../../../helpers/message/messageDecrypt';
 import { mergeMessages } from '../../../helpers/message/messages';

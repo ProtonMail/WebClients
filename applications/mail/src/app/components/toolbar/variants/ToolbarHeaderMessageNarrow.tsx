@@ -8,7 +8,7 @@ import useElementBreakpoints from '@proton/components/hooks/useElementBreakpoint
 import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 import clsx from '@proton/utils/clsx';
 
-import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
+import { useSelectAll } from '../../../hooks/useSelectAll';
 
 import { getToolbarResponsiveSizes } from '../../../helpers/toolbar/getToolbarResponsiveSizes';
 import SnoozeToolbarDropdown from '../../list/snooze/containers/SnoozeToolbarDropdown';

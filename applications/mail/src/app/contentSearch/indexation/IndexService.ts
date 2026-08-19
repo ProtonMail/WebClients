@@ -8,7 +8,7 @@ import { getIndexKey as getIndexKeyV1 } from '@proton/encrypted-search/esHelpers
 import type { ESEvent } from '@proton/encrypted-search/lib/models';
 import type { DecryptedKey } from '@proton/shared/lib/interfaces';
 
-import type { ESBaseMessage } from 'proton-mail/models/encryptedSearch';
+import type { ESBaseMessage } from '../../models/encryptedSearch';
 
 import { getOrGenerateIndexKey as getOrGenerateIndexKeyV2 } from '../crypto/indexKey';
 import { openContentSearchDB } from '../db/open';

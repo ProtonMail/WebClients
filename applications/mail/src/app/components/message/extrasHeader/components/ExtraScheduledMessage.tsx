@@ -21,7 +21,7 @@ import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 import { SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
 import { isScheduled } from '@proton/shared/lib/mail/messages';
 
-import { useMailDispatch } from 'proton-mail/store/hooks';
+import { useMailDispatch } from '../../../../store/hooks';
 
 import { PREVENT_CANCEL_SEND_INTERVAL } from '../../../../constants';
 import { useOnCompose } from '../../../../containers/ComposeProvider';

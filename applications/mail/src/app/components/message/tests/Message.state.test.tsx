@@ -5,13 +5,13 @@ import { MIME_TYPES } from '@proton/shared/lib/constants';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 // mock useGetMessageKeys on-the-fly when needed
-import { useGetMessageKeys } from 'proton-mail/hooks/message/useGetMessageKeys';
+import { useGetMessageKeys } from '../../../hooks/message/useGetMessageKeys';
 
 import { addApiKeys, addApiMock, clearAll } from '../../../helpers/test/helper';
 import { initialize } from '../../../store/messages/read/messagesReadActions';
 import { addressID, getIframeRootDiv, messageID, setup } from './Message.test.helpers';
 
-jest.mock('proton-mail/hooks/message/useGetMessageKeys');
+jest.mock('../../../hooks/message/useGetMessageKeys');
 const mockUseGetMessageKeys = () => {
     // empty return value since the result is not used in these tests; if this were to change,
     // this mock should be dropped a valid key setup should be put in place.

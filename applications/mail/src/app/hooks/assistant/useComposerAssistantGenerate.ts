@@ -20,10 +20,10 @@ import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
 
-import { prepareContentToModel } from 'proton-mail/helpers/assistant/input';
-import { markdownToHTML } from 'proton-mail/helpers/assistant/markdown';
-import type { ComposerReturnType } from 'proton-mail/helpers/composer/contentFromComposerMessage';
-import type { ComposerAssistantSelection } from 'proton-mail/hooks/assistant/useComposerAssistantSelectedText';
+import { prepareContentToModel } from '../../helpers/assistant/input';
+import { markdownToHTML } from '../../helpers/assistant/markdown';
+import type { ComposerReturnType } from '../../helpers/composer/contentFromComposerMessage';
+import type { ComposerAssistantSelection } from './useComposerAssistantSelectedText';
 
 export enum ASSISTANT_INSERT_TYPE {
     INSERT = 'INSERT',

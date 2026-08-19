@@ -11,7 +11,7 @@ import LogoBase from '@proton/components/components/logo/LogoBase';
 import type { Optional } from '@proton/shared/lib/interfaces';
 import generateUID from '@proton/utils/generateUID';
 
-import { useMailDispatch } from 'proton-mail/store/hooks';
+import { useMailDispatch } from '../../store/hooks';
 
 const FeatureTourDrawerButton = ({ ...rest }: Optional<Omit<Props, 'tooltipText' | 'buttonContent'>, 'onClick'>) => {
     const dispatch = useMailDispatch();

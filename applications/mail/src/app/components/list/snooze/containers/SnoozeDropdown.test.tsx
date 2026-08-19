@@ -5,7 +5,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
-import { useMailDispatch } from 'proton-mail/store/hooks';
+import { useMailDispatch } from '../../../../store/hooks';
 
 import useSnooze from '../../../../hooks/actions/useSnooze';
 import type { Element } from '../../../../models/element';
@@ -21,11 +21,11 @@ jest.mock('../components/SnoozeUpsellModal', () => ({
         return createElement('div', { 'data-testid': 'composer:snooze-message:upsell-modal' });
     },
 }));
-jest.mock('proton-mail/store/hooks', () => ({
+jest.mock('../../../../store/hooks', () => ({
     useMailDispatch: jest.fn().mockReturnValue(jest.fn()),
     useMailSelector: jest.fn().mockReturnValue(jest.fn()),
 }));
-jest.mock('proton-mail/hooks/actions/useSnooze', () => ({
+jest.mock('../../../../hooks/actions/useSnooze', () => ({
     __esModule: true,
     default: jest.fn().mockReturnValue({
         canSnooze: true,

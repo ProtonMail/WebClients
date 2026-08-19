@@ -9,7 +9,7 @@ import { useHandler } from '@proton/components/hooks/useHandler';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 import clamp from '@proton/utils/clamp';
 
-import { ResizeHandlePosition } from 'proton-mail/components/list/ResizeHandle';
+import { ResizeHandlePosition } from '../components/list/ResizeHandle';
 
 /**
  * Base options for resizable components

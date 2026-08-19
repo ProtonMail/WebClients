@@ -5,10 +5,10 @@ import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import type { IndexingMetrics } from '@proton/encrypted-search/esHelpers';
 import type { ESCallbacks, EncryptedSearchFunctions, NormalizedSearchParams } from '@proton/encrypted-search/models';
 
-import { isSearch } from 'proton-mail/helpers/elements';
-import type { ESBaseMessage, ESMessageContent } from 'proton-mail/models/encryptedSearch';
-import { selectSearch } from 'proton-mail/store/elements/elementsSelectors';
-import { useMailSelector } from 'proton-mail/store/hooks';
+import { isSearch } from '../../helpers/elements';
+import type { ESBaseMessage, ESMessageContent } from '../../models/encryptedSearch';
+import { selectSearch } from '../../store/elements/elementsSelectors';
+import { useMailSelector } from '../../store/hooks';
 
 import { getSharedIndexService } from '../indexation/IndexService';
 import { SearchService } from '../search/SearchService';

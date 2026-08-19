@@ -13,8 +13,8 @@ import {
     selectLabelID,
     selectPage,
     selectSort,
-} from 'proton-mail/store/elements/elementsSelectors';
-import { useMailSelector } from 'proton-mail/store/hooks';
+} from '../../store/elements/elementsSelectors';
+import { useMailSelector } from '../../store/hooks';
 
 export interface MailboxFocusProps {
     showList: boolean; // Column is visible

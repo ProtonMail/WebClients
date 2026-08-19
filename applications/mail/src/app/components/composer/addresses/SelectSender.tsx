@@ -7,8 +7,8 @@ import type { SelectChangeEvent } from '@proton/components/components/selectTwo/
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import generateUID from '@proton/utils/generateUID';
 
-import useGetSenderOptions from 'proton-mail/hooks/composer/useGetSenderOptions';
-import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
+import useGetSenderOptions from '../../../hooks/composer/useGetSenderOptions';
+import { useMailDispatch, useMailSelector } from '../../../store/hooks';
 
 import { selectComposer } from '../../../store/composers/composerSelectors';
 import type { ComposerID } from '../../../store/composers/composerTypes';

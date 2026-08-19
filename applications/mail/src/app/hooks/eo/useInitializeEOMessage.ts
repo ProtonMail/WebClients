@@ -21,9 +21,9 @@ import { EO_DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/eo/constants';
 import { isPlainText } from '@proton/shared/lib/mail/messages';
 import noop from '@proton/utils/noop';
 
-import { transformEmbedded } from 'proton-mail/helpers/transforms/transformEmbedded';
-import { transformRemote } from 'proton-mail/helpers/transforms/transformRemote';
-import { useMailDispatch } from 'proton-mail/store/hooks';
+import { transformEmbedded } from '../../helpers/transforms/transformEmbedded';
+import { transformRemote } from '../../helpers/transforms/transformRemote';
+import { useMailDispatch } from '../../store/hooks';
 
 import { LOAD_RETRY_COUNT, LOAD_RETRY_DELAY } from '../../constants';
 import { isNetworkError } from '../../helpers/errors';

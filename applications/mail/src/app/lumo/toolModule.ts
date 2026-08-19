@@ -11,17 +11,17 @@ import type {
 } from '@proton/mail/store/labels/actions';
 import type { Folder, Label, MailSettings } from '@proton/shared/lib/interfaces';
 
-import type { SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
+import type { SOURCE_ACTION } from '../components/list/list-telemetry/useListTelemetry';
 import type {
     ApplyLocationLabelProps,
     ApplyLocationMoveProps,
     ApplyLocationStarProps,
     ApplyMultipleLocationsParams,
-} from 'proton-mail/hooks/actions/applyLocation/interface';
-import type { MarkAsParams } from 'proton-mail/hooks/actions/markAs/useMarkAs';
-import type { SnoozeProps } from 'proton-mail/hooks/actions/useSnooze';
-import type { markAll as markAllAction } from 'proton-mail/store/elements/elementsActions';
-import type { MailStore } from 'proton-mail/store/store';
+} from '../hooks/actions/applyLocation/interface';
+import type { MarkAsParams } from '../hooks/actions/markAs/useMarkAs';
+import type { SnoozeProps } from '../hooks/actions/useSnooze';
+import type { markAll as markAllAction } from '../store/elements/elementsActions';
+import type { MailStore } from '../store/store';
 
 /** The single-location apply mutation, as exposed by `useApplyLocation`. */
 export type ApplyLocation = (

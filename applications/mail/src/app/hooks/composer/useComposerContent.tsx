@@ -25,19 +25,19 @@ import { getRecipients, isPlainText as testIsPlainText } from '@proton/shared/li
 import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
-import type { ComposerReturnType } from 'proton-mail/helpers/composer/contentFromComposerMessage';
+import type { ComposerReturnType } from '../../helpers/composer/contentFromComposerMessage';
 import {
     getMessageContentBeforeBlockquote,
     setMessageContentBeforeBlockquote,
-} from 'proton-mail/helpers/composer/contentFromComposerMessage';
-import { exportPlainTextSignature, insertSignature } from 'proton-mail/helpers/message/messageSignature';
-import { MOVE_BACK_ACTION_TYPES } from 'proton-mail/hooks/actions/moveBackAction/interfaces';
-import { useMoveBackAction } from 'proton-mail/hooks/actions/moveBackAction/useMoveBackAction';
-import { useLoadEmbeddedImages, useLoadRemoteImages } from 'proton-mail/hooks/message/useLoadImages';
-import { selectComposer } from 'proton-mail/store/composers/composerSelectors';
-import { composerActions } from 'proton-mail/store/composers/composersSlice';
-import { useMailDispatch, useMailStore } from 'proton-mail/store/hooks';
-import { messageByID } from 'proton-mail/store/messages/messagesSelectors';
+} from '../../helpers/composer/contentFromComposerMessage';
+import { exportPlainTextSignature, insertSignature } from '../../helpers/message/messageSignature';
+import { MOVE_BACK_ACTION_TYPES } from '../actions/moveBackAction/interfaces';
+import { useMoveBackAction } from '../actions/moveBackAction/useMoveBackAction';
+import { useLoadEmbeddedImages, useLoadRemoteImages } from '../message/useLoadImages';
+import { selectComposer } from '../../store/composers/composerSelectors';
+import { composerActions } from '../../store/composers/composersSlice';
+import { useMailDispatch, useMailStore } from '../../store/hooks';
+import { messageByID } from '../../store/messages/messagesSelectors';
 
 import type { MessageChange } from '../../components/composer/Composer';
 import type { ExternalEditorActions } from '../../components/composer/editor/EditorWrapper';

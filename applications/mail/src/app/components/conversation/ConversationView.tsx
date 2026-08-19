@@ -12,9 +12,9 @@ import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import { isDraft } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
-import useUnreadNotifications from 'proton-mail/hooks/useUnreadNotifications';
-import { selectComposersCount } from 'proton-mail/store/composers/composerSelectors';
-import { useMailSelector } from 'proton-mail/store/hooks';
+import useUnreadNotifications from '../../hooks/useUnreadNotifications';
+import { selectComposersCount } from '../../store/composers/composerSelectors';
+import { useMailSelector } from '../../store/hooks';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { hasLabel } from '../../helpers/elements';

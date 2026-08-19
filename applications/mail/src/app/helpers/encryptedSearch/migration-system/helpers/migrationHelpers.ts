@@ -4,7 +4,7 @@ import { decryptFromDB } from '@proton/encrypted-search/esHelpers';
 import type { EncryptedSearchDB } from '@proton/encrypted-search/models';
 import { SentryMailInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 
-import type { ESMessageContent } from 'proton-mail/models/encryptedSearch';
+import type { ESMessageContent } from '../../../../models/encryptedSearch';
 
 import type { CleanTextFn, MigrationMethod, PreparedMessageContent } from '../interface';
 import { getMigrationArray } from './contentMigrations';

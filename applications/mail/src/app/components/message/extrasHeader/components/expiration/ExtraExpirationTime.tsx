@@ -9,7 +9,7 @@ import { IcHourglass } from '@proton/icons/icons/IcHourglass';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import clsx from '@proton/utils/clsx';
 
-import { useMailDispatch } from 'proton-mail/store/hooks';
+import { useMailDispatch } from '../../../../../store/hooks';
 
 import { canSetExpiration } from '../../../../../helpers/expiration';
 import useExpiration from '../../../../../hooks/useExpiration';

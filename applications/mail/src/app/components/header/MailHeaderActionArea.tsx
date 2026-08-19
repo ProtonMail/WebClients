@@ -5,11 +5,11 @@ import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { useCategoriesData } from '@proton/mail/features/categoriesView/useCategoriesData';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 
-import { isColumnMode } from 'proton-mail/helpers/mailSettings';
-import type { ElementsStructure } from 'proton-mail/hooks/mailbox/useElements';
-import type { MailboxActions } from 'proton-mail/router/interface';
-import { selectElementID, selectLabelID } from 'proton-mail/store/elements/elementsSelectors';
-import { useMailSelector } from 'proton-mail/store/hooks';
+import { isColumnMode } from '../../helpers/mailSettings';
+import type { ElementsStructure } from '../../hooks/mailbox/useElements';
+import type { MailboxActions } from '../../router/interface';
+import { selectElementID, selectLabelID } from '../../store/elements/elementsSelectors';
+import { useMailSelector } from '../../store/hooks';
 
 import { MailToolbar } from '../toolbar/MailToolbar';
 import MailSearch from './search/MailSearch';

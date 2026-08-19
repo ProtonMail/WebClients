@@ -1,6 +1,6 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import type { EOStoreState } from 'proton-mail/store/eo/eoStore';
+import type { EOStoreState } from './eoStore';
 
 const eoState = (state: EOStoreState) => state.eo;
 

@@ -13,8 +13,8 @@ import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { SearchParameters } from '@proton/shared/lib/mail/search';
 
-import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
-import { useMailSelector } from 'proton-mail/store/hooks';
+import { useSelectAll } from '../../hooks/useSelectAll';
+import { useMailSelector } from '../../store/hooks';
 
 import { isSearch as testIsSearch } from '../../helpers/elements';
 import { getLabelName } from '../../helpers/labels';

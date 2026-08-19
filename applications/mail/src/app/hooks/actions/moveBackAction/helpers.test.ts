@@ -2,8 +2,8 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Folder, Label } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import type { Element } from 'proton-mail/models/element';
-import type { ConversationState } from 'proton-mail/store/conversations/conversationsTypes';
+import type { Element } from '../../../models/element';
+import type { ConversationState } from '../../../store/conversations/conversationsTypes';
 
 import {
     getOpenedElementUpdated,

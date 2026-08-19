@@ -13,7 +13,7 @@ import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
 import type { Contact } from '@proton/shared/lib/interfaces/contacts';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 
-import { useMailDispatch } from 'proton-mail/store/hooks';
+import { useMailDispatch } from '../../store/hooks';
 
 import { refresh } from '../../store/contacts/contactsActions';
 import { resetVerification } from '../../store/messages/read/messagesReadActions';

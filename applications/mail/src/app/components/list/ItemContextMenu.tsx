@@ -10,7 +10,7 @@ import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
-import { useMailSelector } from 'proton-mail/store/hooks';
+import { useMailSelector } from '../../store/hooks';
 
 import { useLabelActions } from '../../hooks/useLabelActions';
 import { elementsAreUnread as elementsAreUnreadSelector } from '../../store/elements/elementsSelectors';

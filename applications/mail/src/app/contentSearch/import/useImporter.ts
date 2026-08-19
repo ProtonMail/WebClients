@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react';
 import { useUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 
-import type { ImportIssue } from 'proton-mail/contentSearch/import/Import';
-import type { ImportHandle } from 'proton-mail/contentSearch/import/ImportHandle';
+import type { ImportIssue } from './Import';
+import type { ImportHandle } from './ImportHandle';
 
 import { getSharedIndexService } from '../indexation/IndexService';
 

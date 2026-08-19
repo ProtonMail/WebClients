@@ -9,7 +9,7 @@ import {
 import { ChecklistKey } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
-import { useGetStartedChecklist } from 'proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider';
+import { useGetStartedChecklist } from '../../../../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 
 import { useOnboardingChecklistModalsContext } from '../../OnboardingChecklistModalsProvider';
 

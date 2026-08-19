@@ -1,6 +1,6 @@
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 
-import { readContentIDandLocation } from 'proton-mail/helpers/message/messageEmbeddeds';
+import { readContentIDandLocation } from '../../../helpers/message/messageEmbeddeds';
 
 export const getAttachedCIDs = (message: MessageState) => {
     if (!message.data?.Attachments) {

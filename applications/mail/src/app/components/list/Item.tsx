@@ -12,10 +12,10 @@ import { MailFeatureFlag } from '@proton/unleash/Flags';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
-import { filterAttachmentToPreview } from 'proton-mail/helpers/attachment/attachmentThumbnails';
-import OneTimeCodeDetector from 'proton-mail/helpers/message/otp/OneTimeCodeDetector';
-import { shouldRunOtpExtraction } from 'proton-mail/helpers/message/otp/shouldRunOtpExtraction';
-import { useMailSelector } from 'proton-mail/store/hooks';
+import { filterAttachmentToPreview } from '../../helpers/attachment/attachmentThumbnails';
+import OneTimeCodeDetector from '../../helpers/message/otp/OneTimeCodeDetector';
+import { shouldRunOtpExtraction } from '../../helpers/message/otp/shouldRunOtpExtraction';
+import { useMailSelector } from '../../store/hooks';
 
 import { getRecipients as getConversationRecipients, getSenders } from '../../helpers/conversation';
 import { getDate, isElementMessage, isUnread } from '../../helpers/elements';

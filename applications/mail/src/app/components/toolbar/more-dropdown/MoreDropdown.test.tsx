@@ -4,7 +4,7 @@ import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { DEFAULT_MAIL_SETTINGS } from '@proton/shared/lib/mail/mailSettings';
 
-import { useMailSelector } from 'proton-mail/store/hooks';
+import { useMailSelector } from '../../../store/hooks';
 
 import useSnooze from '../../../hooks/actions/useSnooze';
 import { useLabelActions } from '../../../hooks/useLabelActions';
@@ -13,19 +13,19 @@ import { MoreDropdown } from './MoreDropdown';
 jest.mock('@proton/mail/store/mailSettings/hooks');
 jest.mocked(useMailSettings).mockReturnValue([DEFAULT_MAIL_SETTINGS, false]);
 
-jest.mock('proton-mail/store/hooks');
+jest.mock('../../../store/hooks');
 jest.mocked(useMailSelector).mockReturnValue(MAILBOX_LABEL_IDS.INBOX);
 
-jest.mock('proton-mail/hooks/useSelectAll', () => ({
+jest.mock('../../../hooks/useSelectAll', () => ({
     useSelectAll: () => ({ selectAll: false }),
 }));
 
-jest.mock('proton-mail/hooks/useLabelActions');
-jest.mock('proton-mail/hooks/actions/useSnooze');
-jest.mock('proton-mail/hooks/actions/useEmptyLabel', () => ({
+jest.mock('../../../hooks/useLabelActions');
+jest.mock('../../../hooks/actions/useSnooze');
+jest.mock('../../../hooks/actions/useEmptyLabel', () => ({
     useEmptyLabel: () => ({ emptyLabel: '', modal: null }),
 }));
-jest.mock('proton-mail/hooks/actions/move/useMoveAllToFolder', () => ({
+jest.mock('../../../hooks/actions/move/useMoveAllToFolder', () => ({
     useMoveAllToFolder: () => ({ moveAllToFolder: '', selectAllMoveModal: null, moveAllModal: null }),
 }));
 

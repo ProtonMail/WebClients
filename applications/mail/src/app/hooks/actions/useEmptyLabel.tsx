@@ -8,8 +8,8 @@ import { getHumanLabelID, isCustomLabel } from '@proton/mail/helpers/location';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { emptyLabel as emptyLabelRequest } from '@proton/shared/lib/api/messages';
 
-import SelectAllDeleteModal from 'proton-mail/components/list/select-all/modals/SelectAllDeleteModal';
-import { useMailDispatch } from 'proton-mail/store/hooks';
+import SelectAllDeleteModal from '../../components/list/select-all/modals/SelectAllDeleteModal';
+import { useMailDispatch } from '../../store/hooks';
 
 import { backendActionFinished, backendActionStarted } from '../../store/elements/elementsActions';
 import { useOptimisticEmptyLabel } from '../optimistic/useOptimisticEmptyLabel';

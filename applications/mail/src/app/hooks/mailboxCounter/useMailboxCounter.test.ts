@@ -11,9 +11,9 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Folder, Label, MailSettings } from '@proton/shared/lib/interfaces';
 import { DEFAULT_MAIL_SETTINGS, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
-import { useCategoriesView } from 'proton-mail/components/categoryView/useCategoriesView';
-import { selectCategoryIDs, selectLabelID } from 'proton-mail/store/elements/elementsSelectors';
-import { useMailSelector } from 'proton-mail/store/hooks';
+import { useCategoriesView } from '../../components/categoryView/useCategoriesView';
+import { selectCategoryIDs, selectLabelID } from '../../store/elements/elementsSelectors';
+import { useMailSelector } from '../../store/hooks';
 
 import { useMailboxCounter } from './useMailboxCounter';
 
@@ -22,8 +22,8 @@ jest.mock('@proton/mail/store/labels/hooks');
 jest.mock('@proton/mail/store/counts/conversationCountsSlice');
 jest.mock('@proton/mail/store/counts/messageCountsSlice');
 
-jest.mock('proton-mail/store/hooks');
-jest.mock('proton-mail/components/categoryView/useCategoriesView');
+jest.mock('../../store/hooks');
+jest.mock('../../components/categoryView/useCategoriesView');
 
 type CategoryViewType = ReturnType<typeof useCategoriesView>;
 

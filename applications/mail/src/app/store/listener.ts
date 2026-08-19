@@ -9,7 +9,7 @@ import { startHolidaysDirectoryListener } from '@proton/calendar/holidaysDirecto
 import { mailSettingsHeartbeatListener } from '@proton/redux-shared-store/mailSettingsHeartbeatListener';
 import { startSharedListening } from '@proton/redux-shared-store/sharedListeners';
 
-import { startElementsListener } from 'proton-mail/store/elements/elementsListener';
+import { startElementsListener } from './elements/elementsListener';
 
 import { startCategoriesUnseenListener } from './categories/categoriesUnseenListener';
 import { startIncomingDefaultListener } from './incomingDefaults/incomingDefaultListener';

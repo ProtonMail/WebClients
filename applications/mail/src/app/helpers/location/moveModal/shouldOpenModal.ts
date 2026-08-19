@@ -5,11 +5,11 @@ import { getItem } from '@proton/shared/lib/helpers/storage';
 import type { Folder, MailSettings } from '@proton/shared/lib/interfaces';
 import { isUnsubscribable } from '@proton/shared/lib/mail/messages';
 
-import { HIDE_SNOOZE_CONFIRMATION_LS_KEY } from 'proton-mail/components/list/snooze/constant';
-import { ModalType } from 'proton-mail/containers/globalModals/inteface';
-import { hasLabel } from 'proton-mail/helpers/elements';
-import type { Element } from 'proton-mail/models/element';
-import type { ConversationState } from 'proton-mail/store/conversations/conversationsTypes';
+import { HIDE_SNOOZE_CONFIRMATION_LS_KEY } from '../../../components/list/snooze/constant';
+import { ModalType } from '../../../containers/globalModals/inteface';
+import { hasLabel } from '../../elements';
+import type { Element } from '../../../models/element';
+import type { ConversationState } from '../../../store/conversations/conversationsTypes';
 
 interface ShouldOpenConfirmationModalMessageParams {
     elements: Element[];

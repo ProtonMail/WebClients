@@ -6,7 +6,7 @@ import Prompt from '@proton/components/components/prompt/Prompt';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import clsx from '@proton/utils/clsx';
 
-import { useMailboxCounter } from 'proton-mail/hooks/mailboxCounter/useMailboxCounter';
+import { useMailboxCounter } from '../../../../hooks/mailboxCounter/useMailboxCounter';
 
 import { getLabelNames } from '../../../../helpers/labels';
 

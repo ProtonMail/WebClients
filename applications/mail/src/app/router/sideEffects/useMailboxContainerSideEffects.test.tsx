@@ -3,39 +3,39 @@ import { renderHook } from '@testing-library/react-hooks';
 import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
 
-import { useMailboxPageTitle } from 'proton-mail/hooks/mailbox/mailboxPageTitle/useMailboxPageTitle';
-import useNewEmailNotification from 'proton-mail/hooks/mailbox/notifications/useNewEmailNotification';
-import { useApplyEncryptedSearch } from 'proton-mail/hooks/mailbox/useApplyEncryptedSearch';
-import { useMailboxFavicon } from 'proton-mail/hooks/mailbox/useMailboxFavicon';
-import usePreLoadElements from 'proton-mail/hooks/mailbox/usePreLoadElements';
-import useInboxBadgeCount from 'proton-mail/hooks/useInboxBadgeCount';
-import useInboxDesktopElementId from 'proton-mail/hooks/useInboxDesktopElementId';
-import useMailtoHash from 'proton-mail/hooks/useMailtoHash';
+import { useMailboxPageTitle } from '../../hooks/mailbox/mailboxPageTitle/useMailboxPageTitle';
+import useNewEmailNotification from '../../hooks/mailbox/notifications/useNewEmailNotification';
+import { useApplyEncryptedSearch } from '../../hooks/mailbox/useApplyEncryptedSearch';
+import { useMailboxFavicon } from '../../hooks/mailbox/useMailboxFavicon';
+import usePreLoadElements from '../../hooks/mailbox/usePreLoadElements';
+import useInboxBadgeCount from '../../hooks/useInboxBadgeCount';
+import useInboxDesktopElementId from '../../hooks/useInboxDesktopElementId';
+import useMailtoHash from '../../hooks/useMailtoHash';
 
 import { useMailboxContainerSideEffects } from './useMailboxContainerSideEffects';
 
-jest.mock('proton-mail/hooks/useMailtoHash', () => ({
+jest.mock('../../hooks/useMailtoHash', () => ({
     __esModule: true,
     default: jest.fn(),
 }));
-jest.mock('proton-mail/hooks/useInboxDesktopElementId', () => ({
+jest.mock('../../hooks/useInboxDesktopElementId', () => ({
     __esModule: true,
     default: jest.fn(),
 }));
-jest.mock('proton-mail/hooks/mailbox/useApplyEncryptedSearch', () => ({
+jest.mock('../../hooks/mailbox/useApplyEncryptedSearch', () => ({
     useApplyEncryptedSearch: jest.fn(),
 }));
-jest.mock('proton-mail/hooks/mailbox/mailboxPageTitle/useMailboxPageTitle', () => ({
+jest.mock('../../hooks/mailbox/mailboxPageTitle/useMailboxPageTitle', () => ({
     useMailboxPageTitle: jest.fn(),
 }));
-jest.mock('proton-mail/hooks/mailbox/useMailboxFavicon', () => ({
+jest.mock('../../hooks/mailbox/useMailboxFavicon', () => ({
     useMailboxFavicon: jest.fn(),
 }));
-jest.mock('proton-mail/hooks/useInboxBadgeCount', () => ({
+jest.mock('../../hooks/useInboxBadgeCount', () => ({
     __esModule: true,
     default: jest.fn(),
 }));
-jest.mock('proton-mail/hooks/mailbox/notifications/useNewEmailNotification', () => ({
+jest.mock('../../hooks/mailbox/notifications/useNewEmailNotification', () => ({
     __esModule: true,
     default: jest.fn(),
 }));
@@ -45,12 +45,12 @@ jest.mock('@proton/calendar/calendars/hooks', () => ({
 jest.mock('@proton/calendar/calendarUserSettings/hooks', () => ({
     useCalendarUserSettings: jest.fn(),
 }));
-jest.mock('proton-mail/hooks/mailbox/usePreLoadElements', () => ({
+jest.mock('../../hooks/mailbox/usePreLoadElements', () => ({
     __esModule: true,
     default: jest.fn(),
 }));
 
-jest.mock('proton-mail/hooks/drawer/useAutoOpenContactsDrawer', () => ({
+jest.mock('../../hooks/drawer/useAutoOpenContactsDrawer', () => ({
     __esModule: true,
     default: jest.fn(),
 }));

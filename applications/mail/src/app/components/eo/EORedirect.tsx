@@ -6,7 +6,7 @@ import Loader from '@proton/components/components/loader/Loader';
 import useApi from '@proton/components/hooks/useApi';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 
-import { useMailDispatch } from 'proton-mail/store/hooks';
+import { useMailDispatch } from '../../store/hooks';
 
 import { EO_REDIRECT_PATH, LOAD_RETRY_COUNT } from '../../constants';
 import { useInitializeEOMessage } from '../../hooks/eo/useInitializeEOMessage';

@@ -12,8 +12,8 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { FeatureCode, useFeature } from '@proton/features';
 import { IcCross } from '@proton/icons/icons/IcCross';
 
-import useGetRandomTip from 'proton-mail/components/list/tip/useGetRandomTip';
-import type { TipData } from 'proton-mail/models/tip';
+import useGetRandomTip from './useGetRandomTip';
+import type { TipData } from '../../../models/tip';
 
 import useProtonTipsTelemetry from './useProtonTipsTelemetry';
 

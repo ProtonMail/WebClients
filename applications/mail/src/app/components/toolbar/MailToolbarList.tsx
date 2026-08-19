@@ -7,14 +7,14 @@ import { Vr } from '@proton/atoms/Vr/Vr';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
-import { getLabelNameForToolbar, isLabelIDNewsletterSubscription } from 'proton-mail/helpers/labels';
-import { pageFromUrl, setPageInUrl } from 'proton-mail/helpers/mailboxUrl';
-import type { ElementsStructure } from 'proton-mail/hooks/mailbox/useElements';
-import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
-import { useMailboxLayoutProvider } from 'proton-mail/router/components/MailboxLayoutContext';
-import type { MailboxActions } from 'proton-mail/router/interface';
-import { selectElementID, selectIsSearching, selectLabelID } from 'proton-mail/store/elements/elementsSelectors';
-import { useMailSelector } from 'proton-mail/store/hooks';
+import { getLabelNameForToolbar, isLabelIDNewsletterSubscription } from '../../helpers/labels';
+import { pageFromUrl, setPageInUrl } from '../../helpers/mailboxUrl';
+import type { ElementsStructure } from '../../hooks/mailbox/useElements';
+import { useSelectAll } from '../../hooks/useSelectAll';
+import { useMailboxLayoutProvider } from '../../router/components/MailboxLayoutContext';
+import type { MailboxActions } from '../../router/interface';
+import { selectElementID, selectIsSearching, selectLabelID } from '../../store/elements/elementsSelectors';
+import { useMailSelector } from '../../store/hooks';
 
 import { CategoriesTabs } from '../categoryView/categoriesTabs/CategoriesTabs';
 import { useCategoriesView } from '../categoryView/useCategoriesView';

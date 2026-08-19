@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { useMailboxLayoutProvider } from 'proton-mail/router/components/MailboxLayoutContext';
+import { useMailboxLayoutProvider } from '../components/MailboxLayoutContext';
 import {
     selectCategoryIDs,
     selectFilter,
@@ -8,8 +8,8 @@ import {
     selectPage,
     selectSearch,
     selectSort,
-} from 'proton-mail/store/elements/elementsSelectors';
-import { useMailSelector } from 'proton-mail/store/hooks';
+} from '../../store/elements/elementsSelectors';
+import { useMailSelector } from '../../store/hooks';
 
 export const useScrollListToTopOnViewChange = () => {
     const { scrollContainerRef } = useMailboxLayoutProvider();
