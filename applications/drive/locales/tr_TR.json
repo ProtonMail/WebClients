@@ -1349,7 +1349,7 @@
         "Hata ayıklama çıktısını kopyala"
       ],
       "Preview logs": [
-        "Günlükleri önizle"
+        "Günlük ön izlemesi"
       ]
     },
     "Action: Docs": {
@@ -7874,7 +7874,19 @@
         "Hata ayıklama çıktısı kopyalandı"
       ],
       "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
-        "Günlükler sorunun ortaya çıkmasından önce neler olduğunu anlamamıza yardımcı olur. Bu günlükler uygulama eylemlerini ve hata mesajlarını içerir. Ancak iletilerin içeriği yer almaz."
+        "Günlük kayıtları sorunun ortaya çıkmasından önce neler olduğunu anlamamıza yardımcı olur. Bu günlük kayıtlarında uygulama işlemleri ve hata iletileri bulunur. Ancak iletilerin içeriği bulunmaz."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Kimlik doğrulama uygulamanıza erişemiyorsanız iki adımlı doğrulamayı kurarken size verilen 16 yedek kurtarma kodundan birini kullanabilirsiniz. ${ learnMoreLink }"
+      ],
+      "Loading folder": [
+        "Klasör yükleniyor"
+      ],
+      "Not in My files": [
+        "Dosyalarımda değil"
+      ],
+      "Read folder context": [
+        "Klasör bağlamını oku"
       ]
     },
     "info": {
@@ -14521,6 +14533,9 @@
       ],
       "Still working on it": [
         "Üzerinde çalışılıyor"
+      ],
+      "September Sale": [
+        "Eylül indirimi"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15228,6 +15243,79 @@
     "Payments.iDEAL": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
         "Bu ödemeyi onayladığınızda, bankanıza ${ BRAND_NAME } ve ödeme hizmeti sağlayıcımız Stripe hizmetine hesabınızdan ödeme alma yetkisi verirsiniz. Bankanızla yaptığınız anlaşmanın koşullarına bağlı olarak, ödemenin yapıldığı tarihten başlayan 8 hafta içinde iade isteğinde bulunabilirsiniz."
+      ]
+    },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "Fırsatı değerlendirin"
+      ],
+      "Special Offer": [
+        "Özel teklif"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "/month": [
+        "/ay"
+      ],
+      "2 individual accounts": [
+        "2 bireysel hesap"
+      ],
+      "2 TB of secure storage": [
+        "2 TB güvenli depolama alanı"
+      ],
+      "3 TB of secure storage": [
+        "3 TB güvenli depolama alanı"
+      ],
+      "500 GB of secure storage": [
+        "500 GB güvenli depolama alanı"
+      ],
+      "6 individual accounts": [
+        "6 bireysel hesap"
+      ],
+      "Advanced protection against cyber threats": [
+        "Siber tehditlere karşı gelişmiş koruma"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "İndirimler standart aylık fiyatlara göre hesaplanır. Fatura dönemi sona erdiğinde aboneliğiniz standart yıllık ücret üzerinden yenilenir."
+      ]
+    },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ve ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "12 ay için"
+      ],
+      "One plan, full power": [
+        "Tek tarife, tam güç"
+      ],
+      "One plan, max savings": [
+        "Tek tarife, en yüksek kazanç"
+      ],
+      "One plan, more power": [
+        "Tek tarife, daha fazla güç"
       ]
     }
   }
