@@ -1,12 +1,15 @@
 import { GenerateUUID } from '../GenerateUuid'
 import metrics from '@proton/metrics'
-
 import Persistence from './Persistence'
-
-const REPORT_FILE_NAME = 'tracer-report'
-const SESSION_KEY = 'docs-open-tracer-session-id'
-const LOOP_DETECT_THRESHOLD = 2
-const IGNORE_PATHS = ['/recents', '/trash']
+import {
+  REPORT_FILE_NAME,
+  SESSION_KEY,
+  LOOP_DETECT_FIRST_THRESHOLD,
+  LOOP_DETECT_SECOND_THRESHOLD,
+  LOOP_DETECT_THIRD_THRESHOLD,
+  IGNORE_PATHS,
+  LOOP_CAUSE_MAP,
+} from './constants'
 
 let isEnabled = false
 
@@ -136,11 +139,21 @@ async function resolveAttempt() {
     ...attempt,
     resolvedAt: timestamp,
   })
+
+  const cause = await getAttemptLoopCause(attempt)
+  metrics.docs_document_open_redirect_histogram.observe({
+    Labels: { cause },
+    Value: attempt.redirectCount,
+  })
+
   await trace('resolve_attempt')
   sessionStorage.removeItem(SESSION_KEY)
   log('resolve', `loop detected with attempt, marking resolution time: ${truncate(attempt.id)}`)
 }
 
+/**
+ * Gets a JSON report of all detected attempts and all events associated with them.
+ */
 async function getReportFile() {
   if (shouldIgnore()) {
     return
@@ -237,11 +250,17 @@ async function incrementAttemptRedirectCount(attempt: Attempt) {
     return
   }
   const newRedirectCount = attempt.redirectCount + 1
-  const isLoop = newRedirectCount >= LOOP_DETECT_THRESHOLD
+  const isLoop = newRedirectCount >= LOOP_DETECT_FIRST_THRESHOLD
 
-  // increment metric for newly detected loops
-  if (isLoop && attempt.outcome !== AttemptOutcome.LOOP_DETECTED) {
-    metrics.docs_document_open_redirect_total.increment({ action: 'loop_detected' })
+  // ping metrics for specific redirect counts
+  if (newRedirectCount === LOOP_DETECT_FIRST_THRESHOLD) {
+    metrics.docs_document_open_redirect_total.increment({ action: 'loop_detected_first' })
+  }
+  if (newRedirectCount === LOOP_DETECT_SECOND_THRESHOLD) {
+    metrics.docs_document_open_redirect_total.increment({ action: 'loop_detected_second' })
+  }
+  if (newRedirectCount === LOOP_DETECT_THIRD_THRESHOLD) {
+    metrics.docs_document_open_redirect_total.increment({ action: 'loop_detected_third' })
   }
 
   await Persistence.saveAttempt({
@@ -298,6 +317,18 @@ async function getCurrentAttempt(): Promise<Attempt | null> {
   }
   const attempt = await Persistence.getAttempt(attemptId)
   return attempt || null
+}
+
+async function getAttemptLoopCause(attempt: Attempt) {
+  const _events = await Persistence.getEvents(attempt.id)
+  const events = _events.sort((a, b) => b.timestamp - a.timestamp)
+  for (const event of events) {
+    const cause = LOOP_CAUSE_MAP[event.type as keyof typeof LOOP_CAUSE_MAP]
+    if (cause) {
+      return cause
+    }
+  }
+  return 'unknown'
 }
 
 export default {
