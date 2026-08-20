@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { FeatureCode } from '@proton/features/interface';
@@ -80,26 +81,25 @@ export const GlobalCategoriesB2BOnboarding = () => {
                             {c('Info')
                                 .t`With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.`}
                         </p>
-                        <div className="flex justify-center mb-4">
-                            <Button
-                                disabled={loading}
-                                color="norm"
-                                className="mb-2"
-                                fullWidth
-                                onClick={() => withLoading(handleClick(true))}
-                            >
-                                {c('Action').t`Try categories`}
-                            </Button>
-                            <Button disabled={loading} fullWidth onClick={() => withLoading(handleClick(false))}>{c(
-                                'Action'
-                            ).t`Continue without categories`}</Button>
-                        </div>
                         <div className="flex justify-center">
                             <IcLockFilled className="color-hint" />
                             <p className="text-sm text-center color-weak m-0 mt-1">{c('Info')
                                 .t`Categories work just like spam filters. ${MAIL_APP_NAME} never reads your emails or shares your data.`}</p>
                         </div>
                     </ModalTwoContent>
+                    <ModalTwoFooter className="flex-column">
+                        <Button
+                            disabled={loading}
+                            color="norm"
+                            fullWidth
+                            onClick={() => withLoading(handleClick(true))}
+                        >
+                            {c('Action').t`Try categories`}
+                        </Button>
+                        <Button disabled={loading} fullWidth onClick={() => withLoading(handleClick(false))}>{c(
+                            'Action'
+                        ).t`Continue without categories`}</Button>
+                    </ModalTwoFooter>
                 </ModalTwo>
             )}
         </>
