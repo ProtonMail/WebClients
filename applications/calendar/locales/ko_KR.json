@@ -1042,6 +1042,15 @@
       ],
       "Stop here": [
         "여기서 중단"
+      ],
+      "Copy debug transcript": [
+        "디버그 기록 복사"
+      ],
+      "Get the deal": [
+        "혜택 얻기"
+      ],
+      "Preview logs": [
+        "로그 미리보기"
       ]
     },
     "action": {
@@ -2942,6 +2951,9 @@
       ],
       "Åland Islands": [
         "올란드 제도"
+      ],
+      "Micronesia": [
+        "미크로네시아"
       ]
     },
     "Country select label": {
@@ -6993,6 +7005,15 @@
       ],
       "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "이 거래를 완료하기 위해 새 브라우저 탭의 ${ IDEAL_BRAND_NAME }에 리디렉션됩니다. 팝업 차단기를 사용하는 경우 계속하려면 비활성화하세요."
+      ],
+      "Debug transcript copied": [
+        "디버그 기록 복사됨"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "인증 앱에 접근할 수 없는 경우, 2단계 인증을 설정할 때 제공된 16개의 백업 복구 코드 중 1개를 사용할 수 있습니다. ${ learnMoreLink }"
+      ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "로그는 개발자가 문제가 발생하기 전에 앱에 어떤 문제가 발생했는지 이해할 수 있는데 도움을 줍니다. 로그에는 앱 동작 및 오류 메시지가 포함되오나, 메시지 내용은 포함되지 않습니다."
       ]
     },
     "info": {
@@ -12921,6 +12942,9 @@
       ],
       "Still working on it": [
         "아직 작업 중"
+      ],
+      "September Sale": [
+        "9월 할인"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13507,6 +13531,79 @@
     "Payments.iDEAL": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
         "이 지불을 확인함으로써, ${ BRAND_NAME }과 당사 지불 서비스 제공자인 Stripe가 사용자의 은행 계좌에서 인출하도록 동의하는 것으로 간주합니다. 은행과의 합의 조건에 따라 인출일로부터 8주 이내에 환불을 받을 수 있습니다."
+      ]
+    },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "할인 받기"
+      ],
+      "Special Offer": [
+        "특별 제안"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "/month": [
+        "/월간"
+      ],
+      "2 individual accounts": [
+        "2개 개별 계정"
+      ],
+      "2 TB of secure storage": [
+        "2 TB 보안 스토리지"
+      ],
+      "3 TB of secure storage": [
+        "3 TB 보안 스토리지"
+      ],
+      "500 GB of secure storage": [
+        "500 GB 보안 스토리지"
+      ],
+      "6 individual accounts": [
+        "6개 개별 계정"
+      ],
+      "Advanced protection against cyber threats": [
+        "사이버 위협에 대한 더욱 향상된 보호 기능"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "할인은 표준 월간 요금을 기준으로 합니다. 결제일이 종료되면 구독은 표준 연간 요금으로 갱신됩니다."
+      ]
+    },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "프리미엄 ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, 및 ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "프리미엄 ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, 및 ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "프리미엄 ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "프리미엄 ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "프리미엄 ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, 및 ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "12개월간"
+      ],
+      "One plan, full power": [
+        "하나의 플랜에서 더 많은 가능성을"
+      ],
+      "One plan, max savings": [
+        "하나의 플랜으로 더욱 알뜰하게"
+      ],
+      "One plan, more power": [
+        "하나의 플랜에서 더 많은 가능성을"
       ]
     }
   }
