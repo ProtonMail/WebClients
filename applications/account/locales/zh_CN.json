@@ -4326,6 +4326,9 @@
       "Mexico": [
         "墨西哥"
       ],
+      "Micronesia": [
+        "密克罗尼西亚"
+      ],
       "Moldova": [
         "摩尔多瓦"
       ],
@@ -5666,9 +5669,6 @@
       "**How it works:** Enter in this device the code displayed on the device you want to sign in to. You will be signed in as **${ email }**. Both devices will stay active.": [
         "**操作方式：**在此设备中输入您要登录的设备上显示的代码。您将以 **${ email }** 的身份登录，并且两台设备都将保持在线状态。"
       ],
-      "Allow QR code sign‒in": [
-        "允许扫码登录"
-      ],
       "Be cautious of messages with QR codes. Only scan a code if you trust the source.": [
         "请谨慎对待带有二维码的信息，仅在您信任来源时才扫描二维码。"
       ],
@@ -5698,9 +5698,6 @@
       ],
       "QR code sign-in enabled": [
         "二维码登录已启用"
-      ],
-      "Scan QR code on your mobile device to sign in": [
-        "使用移动设备扫描二维码即可登录"
       ],
       "Scan the code to sign in": [
         "扫码以登录"
@@ -9134,9 +9131,6 @@
       "Contact us": [
         "联系我们"
       ],
-      "Downloads": [
-        "下载"
-      ],
       "Enjoying ${ planName }?": [
         "喜欢 ${ planName } 吗？"
       ],
@@ -9967,9 +9961,6 @@
       ],
       "add a recovery method": [
         "添加恢复方法"
-      ],
-      "Add additional users from your organization to manage this company.": [
-        "从您的组织中添加其他用户来管理公司"
       ],
       "Add an email address in case we need to contact you": [
         "请添加一个邮箱地址，以便我们必要时与您联系"
@@ -11165,9 +11156,6 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "如果您丢失了启用双因素身份验证的设备，可以使用这些代码代替 6 位双因素身份验证代码来登录您的账户。每个代码只能使用一次。"
       ],
-      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
-        "如果您无法访问验证器应用，可以使用设置 2FA 时提供的 16 个备用恢复码之一。${ learnMoreLink }"
-      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "降级账户后您将不能再使用 ${ MAIL_APP_NAME } 和 ${ VPN_APP_NAME } 的收费功能。"
       ],
@@ -12193,6 +12181,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "作为 Proton 忠实用户，您拥有以下特权。"
+      ],
+      "Smart Routed through a different country.": [
+        "通过其他国家/地区进行智能路由。"
       ],
       "Smart Routed through: ${ joinedCountries }.": [
         "智能路由经由：${ joinedCountries }。"
@@ -14299,7 +14290,7 @@
         "或"
       ],
       "Anything that needs your attention, plus emails from disabled categories": [
-        "所有需要您关注的内容，以及来自已禁用类别的邮件"
+        "所有需要您关注的内容，以及来自已禁用分类的邮件"
       ],
       "App password": [
         "应用密码"
@@ -14711,6 +14702,9 @@
       ],
       "Email addresses per user": [
         "每位用户的邮箱地址数量"
+      ],
+      "Email categories": [
+        "邮件分类"
       ],
       "Email or username": [
         "邮箱或账户名"
@@ -15295,7 +15289,7 @@
         "基本的"
       ],
       "Primary - Anything that needs your attention, plus emails from disabled categories": [
-        "主要 - 所有需要您关注的内容，以及来自已禁用类别的邮件"
+        "主要 - 所有需要您关注的内容，以及来自已禁用分类的邮件"
       ],
       "Priority support": [
         "优先支持"
@@ -25575,9 +25569,6 @@
       "Manage files across devices on Windows, Mac, Android, and iOS.": [
         "在 Windows、Mac、Android 和 iOS 设备间管理文件。"
       ],
-      "Managers": [
-        "管理员"
-      ],
       "Messages": [
         "邮件"
       ],
@@ -26611,7 +26602,7 @@
         "编辑标签名称"
       ],
       "Emails in your inbox are shown organized into categories": [
-        "您收件箱中的邮件按类别整理"
+        "您收件箱中的邮件按分类整理"
       ],
       "Enable/disable desktop and mobile notifications": [
         "开启或关闭推送通知"

@@ -4308,6 +4308,9 @@
       "Mexico": [
         "México"
       ],
+      "Micronesia": [
+        "Micronésia"
+      ],
       "Moldova": [
         "Moldávia"
       ],
@@ -5657,9 +5660,6 @@
       "**How it works:** Enter in this device the code displayed on the device you want to sign in to. You will be signed in as **${ email }**. Both devices will stay active.": [
         "**Como funciona:** Introduza neste dispositivo o código apresentado no dispositivo em que pretende iniciar sessão. Irá iniciar sessão como **${ email }**. Ambos os dispositivos permanecerão ativos."
       ],
-      "Allow QR code sign‒in": [
-        "Permitir o início de sessão com o código QR"
-      ],
       "Be cautious of messages with QR codes. Only scan a code if you trust the source.": [
         "Tenha cuidado com mensagens com códigos QR. Leia um código apenas se confiar na fonte."
       ],
@@ -5689,9 +5689,6 @@
       ],
       "QR code sign-in enabled": [
         "Início de sessão com código QR ativado"
-      ],
-      "Scan QR code on your mobile device to sign in": [
-        "Leia o código QR no seu dispositivo móvel para iniciar sessão."
       ],
       "Scan the code to sign in": [
         "Leia o código para iniciar sessão"
@@ -10905,9 +10902,6 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Se perder o seu dispositivo habilitado com a autenticação de dois fatores, estes códigos poderão ser utilizados no lugar do código de 6 dígitos para iniciar sessão na sua conta. Cada código poderá ser utilizado apenas uma vez."
       ],
-      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
-        "Se perdeu o acesso à sua aplicação de autenticação, pode utilizar 1 dos 16 códigos de recuperação de cópia de segurança fornecidos quando configurou a autenticação de dois fatores. ${ learnMoreLink }"
-      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Ao mudar para uma subscrição mais barata, perderá o acesso às funcionalidades pagas do ${ MAIL_APP_NAME } e ${ VPN_APP_NAME }."
       ],
@@ -11905,6 +11899,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Sendo utilizador(a) leal, a sua conta dispõe de funcionalidades adicionais."
+      ],
+      "Smart Routed through a different country.": [
+        "Encaminhado de forma inteligente através de outro país."
       ],
       "Smart Routed through: ${ joinedCountries }.": [
         "Encaminhado de forma inteligente através de: ${ joinedCountries }."
@@ -13944,6 +13941,9 @@
       "ANY": [
         "QUALQUER"
       ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Tudo o que precisa da sua atenção, além dos e-mails das categorias desativadas"
+      ],
       "App password": [
         "Palavra-passe da aplicação"
       ],
@@ -14334,6 +14334,9 @@
       ],
       "Email addresses per user": [
         "Endereços de e-mail por utilizador"
+      ],
+      "Email categories": [
+        "Categorias de e-mail"
       ],
       "Email or username": [
         "Email ou utilizador"
@@ -14907,6 +14910,9 @@
       ],
       "Primary": [
         "Principal"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Principal - Tudo o que precisa da sua atenção, além dos e-mails das categorias desativadas"
       ],
       "Priority support": [
         "Apoio ao cliente prioritário"

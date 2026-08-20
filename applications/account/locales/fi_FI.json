@@ -4325,6 +4325,9 @@
       "Mexico": [
         "Meksiko"
       ],
+      "Micronesia": [
+        "Mikronesia"
+      ],
       "Moldova": [
         "Moldova"
       ],
@@ -5674,9 +5677,6 @@
       "**How it works:** Enter in this device the code displayed on the device you want to sign in to. You will be signed in as **${ email }**. Both devices will stay active.": [
         "**Miten se toimii:** Syötä tähän laitteeseen koodi, joka näkyy laitteessa, jolle haluat kirjautua sisään. Sinut kirjataan sisään käyttäjänä **${ email }**. Molemmat laitteet pysyvät aktiivisina."
       ],
-      "Allow QR code sign‒in": [
-        "Salli kirjautuminen QR-koodilla"
-      ],
       "Be cautious of messages with QR codes. Only scan a code if you trust the source.": [
         "Varo viestejä, joissa on QR-koodeja. Skannaa koodi vain, jos luotat lähteeseen."
       ],
@@ -5706,9 +5706,6 @@
       ],
       "QR code sign-in enabled": [
         "QR-koodilla kirjautuminen otettu käyttöön"
-      ],
-      "Scan QR code on your mobile device to sign in": [
-        "Kirjaudu skannaamalla QR-koodi mobiililaitteellasi"
       ],
       "Scan the code to sign in": [
         "Kirjaudu skannaamalla koodi"
@@ -8927,9 +8924,6 @@
       "Contact us": [
         "Ota yhteyttä"
       ],
-      "Downloads": [
-        "Lataukset"
-      ],
       "Enjoying ${ planName }?": [
         "Nautitko ${ planName }ista?"
       ],
@@ -9775,9 +9769,6 @@
       "add a recovery method": [
         "lisäät palautustavan"
       ],
-      "Add additional users from your organization to manage this company.": [
-        "Lisää organisaatiostasi muita käyttäjiä hallinnoimaan tätä yritystä."
-      ],
       "Add an email address in case we need to contact you": [
         "Lisätkää sähköpostiosoite siltä varalta, että meidän on otettava teihin yhteyttä"
       ],
@@ -9863,7 +9854,7 @@
         "Kaikki jäsenet on lisätty."
       ],
       "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
-        "Kaikki viestit tullaan näyttämään saapuneissa, eikä kategorioiden välikehtiä tai tägejä enää näytetä. "
+        "Kaikki viestit tullaan näyttämään saapuneissa, eikä luokkien välikehtiä tai tägejä enää näytetä. "
       ],
       "All users": [
         "Kaikki käyttäjät"
@@ -10922,9 +10913,6 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Jos menetät todennuslaitteesi, voit kirjautua tilillesi käyttäen näitä koodeja 6-numeroisen vahvistuskoodin sijaan. Koodit ovat kertakäyttöisiä."
       ],
-      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
-        "Jos et voi käyttää tunnistautumissovellustasi, voit käyttää yhtä kuudestatoista varmuuspalautuskoodistasi, jotka sait lisätessäsi kaksivaiheisen tunnistautumisen. ${ learnMoreLink }"
-      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Jos jatkat alennusta, menetät maksullisten ${ MAIL_APP_NAME } ja ${ VPN_APP_NAME } -ominaisuuksien käyttöoikeuden."
       ],
@@ -11692,7 +11680,7 @@
         "Ota meihin yhteyttä saadaksesi apua mihin tahansa ${ BRAND_NAME }."
       ],
       "Receive notifications for ${ categoryLabel }": [
-        "Vastaanota ilmoituksia kategoriasta ${ categoryLabel }"
+        "Vastaanota ilmoituksia luokasta ${ categoryLabel }"
       ],
       "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
         "Vastaanota varauskuponki sähköpostitse. Sinä tai lapsi voitte käyttää sitä osoitteen aktivoimiseksi seuraavien 15 vuoden aikana. ${ learnMoreLink }"
@@ -14006,6 +13994,9 @@
       "ANY": [
         "JOKIN"
       ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Kaikki, mikä vaatii huomiotasi, sekä sähköpostit poistetuista luokista"
+      ],
       "App password": [
         "Sovellussalasana"
       ],
@@ -14154,7 +14145,7 @@
         "Catch-all-sähköpostiosoite"
       ],
       "Categories": [
-        "Kategoriat"
+        "Luokat"
       ],
       "Category": [
         "Aihe"
@@ -14405,6 +14396,9 @@
       ],
       "Email addresses per user": [
         "Sähköpostiosoitteet käyttäjää kohden"
+      ],
+      "Email categories": [
+        "Sähköpostiluokat"
       ],
       "Email or username": [
         "Sähköpostiosoite tai käyttäjätunnus"
@@ -14981,6 +14975,9 @@
       ],
       "Primary": [
         "Ensisijainen"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Ensisijainen – kaikki, mikä vaatii huomiotasi, sekä sähköpostit poistetuista luokista"
       ],
       "Priority support": [
         "Ensisijainen tuki"
@@ -25345,9 +25342,6 @@
       ],
       "Manage files across devices on Windows, Mac, Android, and iOS.": [
         "Hallitkaa tiedostoja laitteiden välillä Windowsilla, Macilla, Androidilla ja iOS:llä."
-      ],
-      "Managers": [
-        "Ylläpitäjät"
       ],
       "Messages": [
         "Viestit"

@@ -4307,6 +4307,9 @@
       "Mexico": [
         "მექსიკა"
       ],
+      "Micronesia": [
+        "მიკრონეზია"
+      ],
       "Moldova": [
         "მოლდოვა"
       ],
@@ -5656,9 +5659,6 @@
       "**How it works:** Enter in this device the code displayed on the device you want to sign in to. You will be signed in as **${ email }**. Both devices will stay active.": [
         "**როგორ მუშაობს:** შეიყვანეთ ამ მოწყობილობაში კოდი, რომელიც ნაჩვენებია იმ მოწყობილობაზე, რომელშიც გსურთ შესვლა. თქვენ შესული იქნებით, როგორც **${ email }**. ორივე მოწყობილობა დარჩება აქტიური."
       ],
-      "Allow QR code sign‒in": [
-        "QR კოდით შესვლის დაშვება"
-      ],
       "Be cautious of messages with QR codes. Only scan a code if you trust the source.": [
         "ფრთხილად იყავით QR კოდის შემცველ შეტყობინებებთან. დაასკანერეთ კოდი მხოლოდ მაშინ, თუ წყაროს ენდობით."
       ],
@@ -5688,9 +5688,6 @@
       ],
       "QR code sign-in enabled": [
         "QR კოდით შესვლა ჩართულია"
-      ],
-      "Scan QR code on your mobile device to sign in": [
-        "შესასვლელად დაასკანერეთ QR კოდი თქვენს მობილურ მოწყობილობაზე"
       ],
       "Scan the code to sign in": [
         "დაასკანირეთ კოდი შესასვლელად"
@@ -10840,9 +10837,6 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "თუ თქვენს 2FA-ჩართულ მოწყობილობას დაკარგავთ, ეს კოდები თქვენს ანგარიშში შესასვლელად 6-ციფრიანი 2FA კოდის მაგიერ შეგიძლიათ, გამოიყენოთ. ყოველი კოდი, მხოლოდ, ერთხელ იქნება ნაჩვენები."
       ],
-      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
-        "თუ დაკარგეთ წვდომა თქვენს აუტენტიფიკატორ აპლიკაციაზე, შეგიძლიათ გამოიყენოთ ორფაქტორიანი აუტენტიფიკაციის აწყობისას მოწოდებული 16 სარეზერვო აღდგენის კოდიდან 1. ${ learnMoreLink }"
-      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "თუ მაინც აპირებთ, ჩამოსწიოთ სატარიფო გეგმა, გაითვალისწინეთ, რომ ${ MAIL_APP_NAME }-ის და ${ VPN_APP_NAME }-ის ფასიან ფუნქციებთან წვდომას დაკარგავთ."
       ],
@@ -11840,6 +11834,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "რადგან თქვენ ერთგული მომხმარებელი ბრძანდებით, ანგარიშისთვის დამატებითი თვისებებია ხელმისაწვდომი."
+      ],
+      "Smart Routed through a different country.": [
+        "ჭკვიანი მარშრუტიზაციით გატარებულია სხვა ქვეყნის გავლით."
       ],
       "Smart Routed through: ${ joinedCountries }.": [
         "სმარტ-მარშრუტიზებული შემდეგი ქვეყნების გავლით: ${ joinedCountries }."
@@ -13879,6 +13876,9 @@
       "ANY": [
         "ნებისმიერი"
       ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "ყველაფერი, რაც ყურადღებას საჭიროებს, და წერილები გათიშული კატეგორიებიდან"
+      ],
       "App password": [
         "აპის პაროლი"
       ],
@@ -14272,6 +14272,9 @@
       ],
       "Email addresses per user": [
         "ელფოსტის მისამართები თითოეულ მომხმარებელზე"
+      ],
+      "Email categories": [
+        "ელფოსტის კატეგორიები"
       ],
       "Email or username": [
         "ელფოსტა ან მომხმარებლის სახელი"
@@ -14845,6 +14848,9 @@
       ],
       "Primary": [
         "ძირითადი"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "ძირითადი - ყველაფერი, რაც ყურადღებას საჭიროებს, და წერილები გათიშული კატეგორიებიდან"
       ],
       "Priority support": [
         "პრიორიტეტული მხარდაჭერა"

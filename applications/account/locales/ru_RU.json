@@ -4353,6 +4353,9 @@
       "Mexico": [
         "Мексика"
       ],
+      "Micronesia": [
+        "Микронезия"
+      ],
       "Moldova": [
         "Молдавия"
       ],
@@ -5720,9 +5723,6 @@
       "**How it works:** Enter in this device the code displayed on the device you want to sign in to. You will be signed in as **${ email }**. Both devices will stay active.": [
         "**Как это работает:** Введите на этом устройстве код, отображаемый на устройстве, на которое вы хотите войти. Вы войдете в учетную запись как **${ email }**. Оба устройства останутся активными."
       ],
-      "Allow QR code sign‒in": [
-        "Разрешить вход с помощью QR-кода"
-      ],
       "Be cautious of messages with QR codes. Only scan a code if you trust the source.": [
         "Будьте осторожны с сообщениями с QR-кодами. Сканируйте код, только если доверяете источнику."
       ],
@@ -5752,9 +5752,6 @@
       ],
       "QR code sign-in enabled": [
         "Вход с помощью QR-кода включен"
-      ],
-      "Scan QR code on your mobile device to sign in": [
-        "Отсканируйте QR code на своем мобильном устройстве, чтобы войти"
       ],
       "Scan the code to sign in": [
         "Отсканируйте код, чтобы войти"
@@ -11079,9 +11076,6 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Если вы потеряете устройство, привязанное к двухфакторной аутентификации, то эти коды могут быть использованы вместо 6-значного кода двухфакторной аутентификации для входа в аккаунт. Каждый код можно использовать только один раз."
       ],
-      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
-        "Если вы потеряли доступ к своему приложению для аутентификации, вы можете использовать 1 из 16 резервных кодов восстановления, предоставленных при настройке двухфакторной аутентификации. ${ learnMoreLink }"
-      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Если вы продолжите переход на более дешевую версию, то вы потеряете доступ к ${ MAIL_APP_NAME } и платным функциям ${ VPN_APP_NAME }."
       ],
@@ -12098,6 +12092,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Так как вы наш постоянный пользователь, для вашего аккаунта появился дополнительный функционал."
+      ],
+      "Smart Routed through a different country.": [
+        "Смарт-маршрутизация через другую страну."
       ],
       "Smart Routed through: ${ joinedCountries }.": [
         "Смарт-маршрутизация через: ${ joinedCountries }."
@@ -14185,6 +14182,9 @@
       "ANY": [
         "ЛЮБОЕ"
       ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Всё, что требует вашего внимания, а также письма из отключённых категорий"
+      ],
       "App password": [
         "Пароль приложения"
       ],
@@ -14577,6 +14577,9 @@
       ],
       "Email addresses per user": [
         "Адреса электронной почты на пользователя"
+      ],
+      "Email categories": [
+        "Категории электронных писем"
       ],
       "Email or username": [
         "Эл. почта или имя пользователя"
@@ -15150,6 +15153,9 @@
       ],
       "Primary": [
         "Основной"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Основные — всё, что требует вашего внимания, а также письма из отключённых категорий"
       ],
       "Priority support": [
         "Приоритетная поддержка"

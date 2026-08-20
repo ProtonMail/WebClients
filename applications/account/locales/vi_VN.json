@@ -4275,6 +4275,9 @@
       "Mexico": [
         "Mexico"
       ],
+      "Micronesia": [
+        "Micrônêsia"
+      ],
       "Moldova": [
         "Moldova"
       ],
@@ -5615,9 +5618,6 @@
       "**How it works:** Enter in this device the code displayed on the device you want to sign in to. You will be signed in as **${ email }**. Both devices will stay active.": [
         "**Cách hoạt động:** Nhập mã hiển thị trên thiết bị muốn đăng nhập vào thiết bị này. Sẽ được đăng nhập với tên **${ email }**. Cả hai thiết bị sẽ vẫn hoạt động."
       ],
-      "Allow QR code sign‒in": [
-        "Cho phép đăng nhập bằng mã QR"
-      ],
       "Be cautious of messages with QR codes. Only scan a code if you trust the source.": [
         "Cẩn trọng với các thư có mã QR. Chỉ quét mã nếu tin cậy nguồn."
       ],
@@ -5647,9 +5647,6 @@
       ],
       "QR code sign-in enabled": [
         "Đăng nhập bằng mã QR được kích hoạt"
-      ],
-      "Scan QR code on your mobile device to sign in": [
-        "Quét mã QR trên thiết bị di động để đăng nhập"
       ],
       "Scan the code to sign in": [
         "Quét mã để đăng nhập"
@@ -10713,9 +10710,6 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Nếu mất thiết bị hỗ trợ xác thực hai yếu tố, có thể sử dụng các mã này thay vì mã xác thực hai yếu tố gồm 6 chữ số để đăng nhập vào tài khoản. Mỗi mã chỉ có thể được sử dụng một lần."
       ],
-      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
-        "Nếu mất quyền truy cập vào ứng dụng xác thực, có thể sử dụng 1 trong 16 mã khôi phục sao lưu được cung cấp khi thiết lập xác thực hai yếu tố. ${ learnMoreLink }"
-      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Nếu tiến hành hạ cấp, bạn sẽ mất truy cập vào các tính năng trả phí của ${ MAIL_APP_NAME } và ${ VPN_APP_NAME }."
       ],
@@ -11705,6 +11699,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Vì bạn là một người dùng trung thành, tài khoản có thêm các tính năng bổ sung được mở."
+      ],
+      "Smart Routed through a different country.": [
+        "Được định tuyến thông minh qua một quốc gia khác."
       ],
       "Smart Routed through: ${ joinedCountries }.": [
         "Định tuyến thông minh qua: ${ joinedCountries }."
@@ -13720,6 +13717,9 @@
       "ANY": [
         "BẤT KỲ"
       ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Mọi thứ cần bạn chú ý, cùng với email từ các danh mục đã tắt"
+      ],
       "App password": [
         "Mật khẩu ứng dụng"
       ],
@@ -14109,6 +14109,9 @@
       ],
       "Email addresses per user": [
         "Địa chỉ email cho mỗi người dùng"
+      ],
+      "Email categories": [
+        "Danh mục email"
       ],
       "Email or username": [
         "Email hoặc tên người dùng"
@@ -14682,6 +14685,9 @@
       ],
       "Primary": [
         "Chính"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Chính - Mọi thứ cần bạn chú ý, cùng với email từ các danh mục đã tắt"
       ],
       "Priority support": [
         "Hỗ trợ ưu tiên"

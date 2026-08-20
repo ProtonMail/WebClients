@@ -371,9 +371,6 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
       ],
-      "+${ remaining } more": [
-        "+${ remaining } mere"
-      ],
       "Accept": [
         "Accepter"
       ],
@@ -4724,6 +4721,9 @@
       "Mexico": [
         "Mexico"
       ],
+      "Micronesia": [
+        "Mikronesien"
+      ],
       "Moldova": [
         "Moldova"
       ],
@@ -6090,9 +6090,6 @@
       "**How it works:** Enter in this device the code displayed on the device you want to sign in to. You will be signed in as **${ email }**. Both devices will stay active.": [
         "**Sådan virker det:** På denne enhed indtaster du den kode, der vises på den enhed, du vil logge ind på. Du vil blive logget ind som **${ email }**. Begge enheder forbliver aktive."
       ],
-      "Allow QR code sign‒in": [
-        "Tillad login med QR-kode"
-      ],
       "Be cautious of messages with QR codes. Only scan a code if you trust the source.": [
         "Vær forsigtig med beskeder med QR-koder. Scan kun en kode, hvis du stoler på kilden."
       ],
@@ -6122,9 +6119,6 @@
       ],
       "QR code sign-in enabled": [
         "Login med QR-kode aktiveret"
-      ],
-      "Scan QR code on your mobile device to sign in": [
-        "Scan QR-kode på din mobilenhed for at logge ind"
       ],
       "Scan the code to sign in": [
         "Scan koden for at logge ind"
@@ -9649,9 +9643,6 @@
       "Contact us": [
         "Kontakt os"
       ],
-      "Downloads": [
-        "Downloads"
-      ],
       "Enjoying ${ planName }?": [
         "Glad for ${ planName }?"
       ],
@@ -10550,9 +10541,6 @@
       ],
       "add a recovery method": [
         "tilføj en gendannelsesmetode"
-      ],
-      "Add additional users from your organization to manage this company.": [
-        "Tilføj flere brugere fra din organisation til at administrere denne virksomhed."
       ],
       "Add an email address in case we need to contact you": [
         "Tilføj en e-mailadresse i tilfælde af at vi får brug for at kontakte dig"
@@ -11827,9 +11815,6 @@
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Mister du din tofaktoraktiverede enhed, kan disse koder benyttes i stedet for den 6-cifrede tofaktorgodkendelseskode til at logge ind på din konto. Hver kode kan kun benyttes én gang."
-      ],
-      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
-        "Hvis du har mistet adgangen til din godkender-app kan du bruge 1 af de 16 gendannelseskoder som du fik da du satte to-faktor-godkendelses op. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Hvis du fortsætter med nedgraderingen, vil du miste adgang til betalte funktioner i ${ MAIL_APP_NAME } og ${ VPN_APP_NAME }."
@@ -14965,6 +14950,9 @@
       "Account holder": [
         "Kontohaver"
       ],
+      "Account holder name": [
+        "Kontohavers navn"
+      ],
       "Account holder: ${ sepaDetails.AccountName }": [
         "Kontoejer: ${ sepaDetails.AccountName }"
       ],
@@ -15517,6 +15505,9 @@
       ],
       "Email addresses per user": [
         "E-mailadresser per bruger"
+      ],
+      "Email categories": [
+        "E-mailkategorier"
       ],
       "Email or username": [
         "E-mail eller brugernavn"
@@ -20483,6 +20474,11 @@
         "Du skal have adgang til organisationsnøglen for at udføre denne handling."
       ]
     },
+    "Payment Method": {
+      "Bank Account": [
+        "Bankkonto"
+      ]
+    },
     "Payment method option": {
       "Apple Pay": [
         "Apple Pay"
@@ -20696,6 +20692,9 @@
       ],
       "Invalid security code": [
         "Ugyldig sikkerhedskode"
+      ],
+      "Please enter the account holder name": [
+        "Anfør kontohavers navn"
       ],
       "Something went wrong. Please try again later.": [
         "Noget gik galt. Prøv igen senere."
@@ -26769,9 +26768,6 @@
       ],
       "Manage files across devices on Windows, Mac, Android, and iOS.": [
         "Administrér filer på tværs af enheder på Windows, Mac, Android og iOS."
-      ],
-      "Managers": [
-        "Administratorer"
       ],
       "Messages": [
         "Beskeder"
