@@ -37,7 +37,8 @@ import SettingsSectionExtraWide from '@proton/components/containers/account/Sett
 import { IcArrowOutSquare } from '@proton/icons/icons/IcArrowOutSquare';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import type { MspDelegatedManager } from '@proton/shared/lib/api/msp';
-import { ORGANIZATION_STATE } from '@proton/shared/lib/constants';
+import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
+import { APPS, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import { MEMBER_STATE } from '@proton/shared/lib/interfaces/Member';
 import type { MspSubsidiary } from '@proton/shared/lib/interfaces/MspSubsidiary';
 import type { UserOrganization } from '@proton/shared/lib/interfaces/Organization';
@@ -93,8 +94,7 @@ const ManagersCell = ({ managers, onManage }: { managers: MspDelegatedManager[];
     const remaining = names.length - MANAGERS_VISIBLE_COUNT;
     return (
         <InlineLinkButton onClick={onManage}>
-            {names.slice(0, MANAGERS_VISIBLE_COUNT).join(', ')}{' '}
-            <span className="color-weak">{`+${remaining}`}</span>
+            {names.slice(0, MANAGERS_VISIBLE_COUNT).join(', ')} <span className="color-weak">{`+${remaining}`}</span>
         </InlineLinkButton>
     );
 };
@@ -106,7 +106,7 @@ const ManageButton = ({ className, ...props }: { className?: string } & ButtonPr
     </Button>
 );
 
-const MspCompaniesSection = ({ path }: { path: string }) => {
+const MspCompaniesSection = () => {
     const { createNotification } = useNotifications();
     const handleError = useErrorHandler();
     const dispatch = useMspDispatch();
@@ -197,7 +197,8 @@ const MspCompaniesSection = ({ path }: { path: string }) => {
             const result = await dispatch(
                 manageCompanyAndOpenTabThunk({
                     id: company.id,
-                    path,
+                    // Workaround: hardcode the landing path to Pass settings, since org-level operations MSP managers need are only exposed there
+                    path: `/${getSlugFromApp(APPS.PROTONPASS)}/users-addresses`,
                     loadingPath: UNAUTHENTICATED_ROUTES.MSP_SETTING_UP_ACCESS,
                 })
             );
