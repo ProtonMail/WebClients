@@ -28,7 +28,7 @@ export const selectPendingScimUsers = createSelector(selectJoinedUnprivatization
     joinedState.approval.map(({ member }) => member)
 );
 
-/** Pending-admin members keyed by group ID. */
+/** Pending-keys group members keyed by group ID. */
 export const selectPendingScimMembersByGroup = createSelector(
     selectGroups,
     selectGroupMembers,
@@ -46,7 +46,7 @@ export const selectPendingScimMembersByGroup = createSelector(
             const groupMembers = groupMembersState[group.ID]?.value;
             if (groupMembers) {
                 pendingMembersByGroup[group.ID] = Object.values(groupMembers).filter((m) => {
-                    if (m.State !== GROUP_MEMBER_STATE.PENDING_ADMIN_APPROVAL) {
+                    if (m.State !== GROUP_MEMBER_STATE.PENDING_KEYS) {
                         return false;
                     }
 
@@ -60,7 +60,7 @@ export const selectPendingScimMembersByGroup = createSelector(
 
 /**
  * Groups that need finalizing during SCIM setup: newly synced groups still missing keys, plus
- * existing SCIM groups that have keys but gained pending-admin members.
+ * existing SCIM groups that have keys but gained pending-keys members.
  */
 export const selectPendingScimGroups = createSelector(
     selectIsKeylessSsoOrganizationPlan,
