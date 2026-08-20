@@ -42,7 +42,13 @@ import {
     type Turn,
 } from '../types';
 import type { GenerationResponseMessage, WireImage } from '../types-api';
-import { separateAttachmentsByType } from './attachments';
+import {
+    MAX_IMAGES_PER_REQUEST,
+    countOmittedImageAttachments,
+    formatOmittedImagePlaceholders,
+    isImageAttachment,
+    separateAttachmentsByType,
+} from './attachments';
 import { collapseCompactedChain } from './compaction';
 import type { ContextFilter } from './contextFilter';
 import { formatPersonalization } from './formatPersonalization';
@@ -92,6 +98,32 @@ function attachmentToWireImage(attachment: Attachment): WireImage {
     };
 }
 
+/**
+ * Determine which image attachments should be sent to the backend, keeping only the
+ * most recent {@link MAX_IMAGES_PER_REQUEST} images across the whole conversation.
+ *
+ * Images are ordered chronologically by walking the (post-compaction) chain and
+ * applying the same context-filter exclusions used when building turns, so the result
+ * matches exactly what would otherwise be sent. Returns the set of image attachment
+ * IDs to keep; non-image attachments are unaffected.
+ */
+function computeKeptImageIds(effectiveChain: Message[], contextFilters: ContextFilter[]): Set<string> {
+    const orderedImageIds: string[] = [];
+    for (const message of effectiveChain) {
+        const filtered = filterMessageAttachments(message.attachments, message.id, contextFilters) ?? [];
+        for (const attachment of filtered) {
+            if (isImageAttachment(attachment as Attachment)) {
+                orderedImageIds.push(attachment.id);
+            }
+        }
+    }
+
+    if (orderedImageIds.length <= MAX_IMAGES_PER_REQUEST) {
+        return new Set(orderedImageIds);
+    }
+    return new Set(orderedImageIds.slice(orderedImageIds.length - MAX_IMAGES_PER_REQUEST));
+}
+
 export function prepareTurns(
     linearChain: Message[],
     personalization: PersonalizationSettings,
@@ -107,12 +139,24 @@ export function prepareTurns(
     // untouched for display.
     const { summaryTurn, chain: effectiveChain } = collapseCompactedChain(linearChain);
 
+    // Keep only the most recent images across the conversation; older images beyond
+    // the limit are dropped from the request (but remain visible in the UI).
+    const keptImageIds = computeKeptImageIds(effectiveChain, c?.contextFilters ?? []);
+
     // Step 1: Transform messages to turns by iterating over blocks
     let turns: TurnInProgress[] = [];
 
     for (const message of effectiveChain) {
         const blocks = getMessageBlocks(message);
-        const filteredAttachments = filterMessageAttachments(message.attachments, message.id, c?.contextFilters ?? []);
+        const contextFilters = c?.contextFilters ?? [];
+        const filteredAttachments = filterMessageAttachments(message.attachments, message.id, contextFilters);
+        const omittedImageCount = countOmittedImageAttachments(
+            message.attachments,
+            message.id,
+            contextFilters,
+            keptImageIds
+        );
+        const hasAttachmentWork = (filteredAttachments?.length ?? 0) > 0 || omittedImageCount > 0;
 
         // Convert each block to appropriate turn(s)
         for (const block of blocks) {
@@ -138,20 +182,23 @@ export function prepareTurns(
             }
         }
 
-        // Add attachments to the last turn of this message if it's a user or assistant message
+        // Add attachments to the last turn of this message if it's a user or assistant message.
+        // When every image was excluded, still emit placeholder text so vLLM never receives null content.
         if (
             c?.allConversationAttachments &&
-            filteredAttachments &&
-            filteredAttachments.length > 0 &&
-            (message.role === Role.User || message.role === Role.Assistant) &&
-            turns.length > 0
+            hasAttachmentWork &&
+            (message.role === Role.User || message.role === Role.Assistant)
         ) {
-            // Expand attachments into separate turns
+            if (turns.length === 0) {
+                turns.push({ role: message.role, content: '' });
+            }
             const lastTurnIndex = turns.length - 1;
             const lastTurn = turns[lastTurnIndex];
             const attachmentTurns = expandAttachmentsIntoTurns(
-                { ...lastTurn, attachments: filteredAttachments } as TurnInProgress,
-                c.allConversationAttachments
+                { ...lastTurn, attachments: filteredAttachments ?? [] } as TurnInProgress,
+                c.allConversationAttachments,
+                keptImageIds,
+                omittedImageCount
             );
             // Replace last turn with expanded turns
             turns = [...turns.slice(0, lastTurnIndex), ...attachmentTurns];
@@ -288,7 +335,8 @@ function createTextAttachmentTurn(shallowAttachment: ShallowAttachment, allAttac
 function createGroupedImageTurn(
     shallowAttachments: ShallowAttachment[],
     allAttachments: Attachment[],
-    role: Role
+    role: Role,
+    keptImageIds: Set<string>
 ): Turn | null {
     const refs: string[] = [];
     const images: WireImage[] = [];
@@ -299,6 +347,9 @@ function createGroupedImageTurn(
 
         const { imageAttachments } = separateAttachmentsByType([fullAttachment]);
         if (imageAttachments.length === 0) continue;
+
+        // Drop images beyond the most-recent-images limit so they aren't sent.
+        if (!keptImageIds.has(shallow.id)) continue;
 
         const wireImage = tryConvertToWireImage(fullAttachment);
         if (!wireImage) continue;
@@ -340,28 +391,38 @@ function filterMessageAttachments(
  * image in one turn, not one turn per image). The user's own message turn comes
  * last so the attachments are presented as context to it.
  */
-function expandAttachmentsIntoTurns(turn: TurnInProgress, allAttachments: Attachment[]): Turn[] {
+function expandAttachmentsIntoTurns(
+    turn: TurnInProgress,
+    allAttachments: Attachment[],
+    keptImageIds: Set<string>,
+    omittedImageCount = 0
+): Turn[] {
     const { attachments, ...baseTurn } = turn;
     const shallowAttachments = attachments ?? [];
+    const omittedText = formatOmittedImagePlaceholders(omittedImageCount);
 
     const textTurns = shallowAttachments
         .map((att) => createTextAttachmentTurn(att, allAttachments))
         .filter((t): t is Turn => t !== null);
 
-    const imageTurn = createGroupedImageTurn(shallowAttachments, allAttachments, turn.role);
+    const imageTurn = createGroupedImageTurn(shallowAttachments, allAttachments, turn.role, keptImageIds);
+
+    const withOmittedText = (contentParts: (string | undefined)[]) => {
+        const content = [...contentParts, omittedText].filter(Boolean).join('\n');
+        return content ? { content } : {};
+    };
 
     if (!imageTurn) {
-        return [...textTurns, baseTurn];
+        return [...textTurns, { ...baseTurn, ...withOmittedText([baseTurn.content]) }];
     }
 
     // Merge image markers and bytes into the base turn so that each <lumo-image>
     // marker and its corresponding image_url bytes land in the same Parts content
     // block. The backend zips markers with image_url parts within a single turn;
     // putting them in separate turns breaks UUID assignment on replay.
-    const mergedContent = [baseTurn.content, imageTurn.content].filter(Boolean).join('\n');
     const mergedTurn: Turn = {
         ...baseTurn,
-        ...(mergedContent ? { content: mergedContent } : {}),
+        ...withOmittedText([baseTurn.content, imageTurn.content]),
         images: imageTurn.images,
     };
 

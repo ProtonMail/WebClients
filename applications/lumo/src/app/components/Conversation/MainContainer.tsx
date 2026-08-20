@@ -22,12 +22,18 @@ import { FilePreviewModal } from '../Files/Common/FilePreviewModal';
 import { PublicHeader } from '../Guest/PublicHeader';
 import TermsAndConditions from '../TermsAndConditions';
 import WhatsNew from '../WhatsNew/WhatsNew';
+import { ImageLimitNotice } from './ImageLimitNotice';
 import LumoCatAnimation from './MainContainer/LumoCatAnimation';
 import LumoMainText from './MainContainer/LumoMainText';
 import MainContainerFooter from './MainContainer/MainContainerFooter';
 import ProtectedByProton from './MainContainer/ProtectedByProton';
+import { useImageLimitInfo } from './useImageLimitInfo';
 
 import './MainContainer.scss';
+
+// Stable reference so the image-limit memoization isn't invalidated on every render.
+// The new-conversation screen has no prior messages, only composer (provisional) images.
+const EMPTY_MESSAGE_CHAIN: Message[] = [];
 
 interface MainContainerProps {
     isProcessingAttachment: boolean;
@@ -57,6 +63,7 @@ const MainContainer = ({ isProcessingAttachment, initialQuery, prefillQuery }: M
     const { hasLumoPlus } = useLumoPlan();
     const remainingLimits = useRemainingLimits();
     const showWeeklyLimitUpsell = shouldShowWeeklyLimitUpsell(remainingLimits, tierErrors.length > 0, hasLumoPlus);
+    const { exceedsLimit: imageLimitExceeded } = useImageLimitInfo(EMPTY_MESSAGE_CHAIN);
     const handleOpenFilePreview = useCallback(
         (attachment: Attachment) => {
             setPreviewAttachment(attachment);
@@ -109,6 +116,7 @@ const MainContainer = ({ isProcessingAttachment, initialQuery, prefillQuery }: M
 
                         <div className="composer-container md:px-4 w-full relative">
                             {showWeeklyLimitUpsell && <UpsellCard showSadCat={false} error={tierErrors[0]} />}
+                            <ImageLimitNotice exceedsLimit={imageLimitExceeded} />
                             <ComposerComponent
                                 composerMode={ComposerMode.NEW_CONVERSATION}
                                 handleSendMessage={handleSendMessage}
@@ -132,6 +140,7 @@ const MainContainer = ({ isProcessingAttachment, initialQuery, prefillQuery }: M
                                     )
                                 }
                             />
+                            {/* <Blobs /> */}
                         </div>
                         <WhatsNew />
                     </div>
