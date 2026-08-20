@@ -515,6 +515,9 @@
       "Get the apps": [
         "Skaffa apparna"
       ],
+      "Get the deal": [
+        "Ta del av erbjudandet"
+      ],
       "Get the writing assistant": [
         "Skaffa skrivassistenten"
       ],
@@ -937,6 +940,9 @@
       ],
       "Search countries": [
         "Sök länder"
+      ],
+      "Search drive": [
+        "Sök Drive"
       ],
       "Search is unavailable": [
         "Sök är inte tillgänglig"
@@ -2565,6 +2571,9 @@
       "Mexico": [
         "Mexiko"
       ],
+      "Micronesia": [
+        "Mikronesien"
+      ],
       "Moldova": [
         "Moldavien"
       ],
@@ -3488,6 +3497,12 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "Innehållssökning kan inte aktiveras. Starta om applikationen eller rensa data."
       ],
+      "Copy operation aborted": [
+        "Kopieringsåtgärd avbröts"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Kopiering av objekt till utanför en mapp är inte tillåtet"
+      ],
       "Could not add to favorites": [
         "Kunde inte lägga till i favoriter"
       ],
@@ -3517,6 +3532,12 @@
       ],
       "Could not unlock this item": [
         "Kunde inte låsa upp detta objekt"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Upprättande av mappar utanför mappar är inte tillåtet"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Upprättande av mappar utanför mappar är inte tillåtet"
       ],
       "Data integrity check failed": [
         "Kontroll av dataintegritet misslyckades"
@@ -3595,6 +3616,18 @@
       "Failed to create public share node": [
         "Misslyckades att skapa offentlig delningsnod"
       ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Misslyckades avkryptera innehållsnyckel: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Kunde inte avkryptera lösenord för bokmärke: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "Misslyckades avkryptera innehållsnyckel: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Kunde inte dekryptera objekt: ${ message }"
+      ],
       "Failed to expand folder": [
         "Misslyckades att expandera mapp"
       ],
@@ -3654,6 +3687,9 @@
       ],
       "Forward address is required": [
         "Adress för vidarebefordran är obligatoriskt"
+      ],
+      "Image preview not found": [
+        "Förhandsvisning av bild hittades inte"
       ],
       "Image upload failed": [
         "Bilduppladdning misslyckades"
@@ -3715,12 +3751,18 @@
       "Last name is too long": [
         "Efternamn är för långt"
       ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "Äldre publik länk kan inte uppdateras. Vänligen återskapa en ny publik länk."
+      ],
       "Member address not found. Please contact customer support to resolve this": [
         "Medlemsadress hittades inte. Kontakta kundsupport för att lösa detta"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Slå samman minst ${ calendarsToFixCount } kalender med en befintlig ${ BRAND_NAME }-kalender",
         "Slå samman minst ${ calendarsToFixCount } kalendrar med befintliga ${ BRAND_NAME }-kalendrar"
+      ],
+      "Missing inviter email": [
+        "Saknar e-post för inbjudan"
       ],
       "Missing key packet": [
         "Saknar nyckelpaket"
@@ -3737,8 +3779,15 @@
       "Missing signature for ${ signatureType }": [
         "Saknar signatur för ${ signatureType }"
       ],
+      "Moving item to a non-folder is not allowed": [
+        "Flytt av objekt till utanför en mapp är inte tillåtet"
+      ],
       "Name is required": [
         "Namn är obligatoriskt"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "Namn måste vara ${ MAX_NODE_NAME_LENGTH } tecken långt som mest",
+        "Namn måste vara ${ MAX_NODE_NAME_LENGTH } tecken långt som mest"
       ],
       "Name must not be empty": [
         "Namn får inte vara tomt"
@@ -3894,6 +3943,9 @@
         "Tog bort duplicerad inbjudan: ${ joinedInvitee }",
         "Tog bort duplicerade inbjudningar: ${ joinedInvitee }"
       ],
+      "Renaming root item is not allowed": [
+        "Byta namn på root objekt är inte tillåtet"
+      ],
       "Report failed to be sent": [
         "Rapport kunde inte skickas"
       ],
@@ -3926,6 +3978,9 @@
       ],
       "Some contacts could not be deleted": [
         "Några kontakter kunde inte tas bort"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "Viss fildata kunde inte laddas upp. Vänligen pröva igen."
       ],
       "Some groups could not be deleted": [
         "Några grupper kunde inte tas bort"
@@ -4152,6 +4207,9 @@
       "You can only upload a new version to a file": [
         "Du kan bara ladda upp en ny version till en fil"
       ],
+      "You can update a public link for your own files only": [
+        "Du kan endast uppdatera en offentlig länk för dina egna filer"
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Du kan inte skicka ett e-postmeddelande till mer än ${ maxContacts } mottagare",
         "Du kan inte skicka ett e-postmeddelande till fler än ${ maxContacts } mottagare"
@@ -4327,6 +4385,9 @@
       ],
       "App currently unavailable": [
         "App är för närvarande inte tillgänglig"
+      ],
+      "Brace yourself till we get the error fixed.": [
+        "Ha tålamod tills vi åtgärdar felet."
       ],
       "Error: ${ errorMessage }": [
         "Fel: ${ errorMessage }"
@@ -5412,6 +5473,9 @@
       "Already in your library": [
         "Redan i ditt bibliotek"
       ],
+      "Also try looking in Trash.": [
+        "Prova också att titta i papperskorgen."
+      ],
       "American Express SafeKey logo": [
         "Logga för American Express SafeKey"
       ],
@@ -5546,6 +5610,9 @@
       ],
       "Clear encrypted search data": [
         "Rensa krypterad sökdata"
+      ],
+      "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
+        "Rensning av webbläsardata kommer att rensa sökindex på den här enheten. Alla filer behöver då indexeras igen för att kunna använda sökfunktionen."
       ],
       "Clears browser data related to the encrypted search.": [
         "Rensar webbläsardata relaterad till krypterade sökningar."
@@ -5863,6 +5930,9 @@
       "How does encrypted search work?": [
         "Hur fungerar krypterad sökning?"
       ],
+      "I have not finished this one yet.": [
+        "Jag har inte slutförd denna än."
+      ],
       "I hereby confirm, in good faith, that the information and statements contained in the report are correct and complete.": [
         "Jag bekräftar härmed på heder och samvete att informationen och uttalandena i rapporten är korrekta och fullständiga."
       ],
@@ -5871,6 +5941,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Om du har problem med att skapa ditt konto, begär en inbjudan så svarar vi inom en arbetsdag."
+      ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "Om du avbryter nu, kommer du att förlora åtkomst till ${ BRAND_NAME } ${ planTitle } den ${ expiryDate }, inklusive dessa funktioner:"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Om du avbryter kommer din ${ planTitle }-prenumeration inte att förnyas när den löper ut den ${ expiryDate }."
@@ -5883,9 +5956,6 @@
       ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
         "Om du har en av dessa, fortsätt till ${ BRAND_NAME }-kontoinställning för att starta avblockeringsprocessen."
-      ],
-      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
-        "Om du har förlorat åtkomsten till din autentiseringsapp kan du använda 1 av de 16 återställningskoderna för säkerhetskopiering som tillhandahölls när du konfigurerade tvåfaktorsautentisering. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Om du fortsätter med nedgraderingen förlorar du åtkomst till betalfunktioner för ${ MAIL_APP_NAME } och ${ VPN_APP_NAME }."
@@ -5989,6 +6059,9 @@
       ],
       "Items in the trash will stay here until you delete them permanently": [
         "Objekt i papperskorgen blir kvar här tills du tar bort dem permanent"
+      ],
+      "Items moved to the trash will stay here until deleted": [
+        "Objekt som flyttats till papperskorgen stannar här tills de tas bort"
       ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "Det är bäst att alltid använda ett VPN. Men här är när cybersäkerhetshoten kan vara som störst:"
@@ -6721,6 +6794,9 @@
       "To migrate this user, enable their address under ${ usersAddressesLink }.": [
         "För att migrera denna användare, aktivera deras adress under ${ usersAddressesLink }."
       ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "För att migrera denna användare, upphäv deras arkivering från ditt ${ provider.adminConsoleName }."
+      ],
       "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
         "För att migrera denna användare, aktivera deras konto i din ${ provider.adminConsoleName }."
       ],
@@ -6786,6 +6862,9 @@
       ],
       "Update required": [
         "Uppdatering krävs"
+      ],
+      "Updating drive search...": [
+        "Uppdaterar Drive-sök…"
       ],
       "Upgrade anytime to bring over the rest": [
         "Uppgradera när som helst för att flytta över resten"
@@ -7228,6 +7307,9 @@
       ]
     },
     "Label": {
+      "# of downloads": [
+        "# nedladdningar"
+      ],
       "${ albumProgress.added } of ${ albumProgress.total }": [
         "${ albumProgress.added } av ${ albumProgress.total }"
       ],
@@ -7320,6 +7402,9 @@
       ],
       "Apply to all unverified items": [
         "Tillämpa på alla overifierade objekt"
+      ],
+      "Asset": [
+        "Tillgång"
       ],
       "Attach screenshot(s)": [
         "Bifoga skärmdump(ar)"
@@ -7458,6 +7543,9 @@
       ],
       "Device": [
         "Enhet"
+      ],
+      "Device #${ position }": [
+        "Enhet #${ position }"
       ],
       "Device name": [
         "Enhetsnamn"
@@ -7903,6 +7991,9 @@
       "Theme": [
         "Tema"
       ],
+      "This will permanently delete all files in your locked drive.": [
+        "Detta kommer att permanent ta bort alla filer på din låsta lagringsenhet."
+      ],
       "Thomas": [
         "Tomas"
       ],
@@ -7914,6 +8005,9 @@
       ],
       "Type": [
         "Typ"
+      ],
+      "Unlock drive": [
+        "Lås upp Drive"
       ],
       "Unlock later": [
         "Lås upp senare"
@@ -8267,6 +8361,9 @@
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME }-användarplatser"
+      ],
+      "${ price } per seat": [
+        "${ price } per plats"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME }-användarplats",
@@ -10521,6 +10618,9 @@
       "You will soon be redirected to verify your payment.": [
         "Du kommer snart att omdirigeras för att verifiera din betalning."
       ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
+        "Din valuta har ändrats till euro (€) på grund av att  ${ IDEAL_BRAND_NAME } endast stödjer betalningar i euro."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Din valuta har ändrats till euro (€) eftersom SEPA-banköverföringar endast stöder betalningar i euro."
       ],
@@ -10886,6 +10986,9 @@
     "Property": {
       "attributes": [
         "attribut"
+      ],
+      "hash key": [
+        "hash-nyckel"
       ],
       "key": [
         "nyckel"
@@ -12815,6 +12918,9 @@
       "Download unverified folder?": [
         "Ladda ner overifierad mapp?"
       ],
+      "Drive": [
+        "Drive"
+      ],
       "Drop to upload": [
         "Släpp för att ladda upp"
       ],
@@ -13333,6 +13439,9 @@
       ],
       "Total size": [
         "Total storlek"
+      ],
+      "Trash": [
+        "Papperskorg"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Slå på ${ DARK_WEB_MONITORING_NAME }"
