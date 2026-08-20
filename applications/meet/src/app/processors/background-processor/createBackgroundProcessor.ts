@@ -43,6 +43,8 @@ const loadBackgroundProcessorImplementation = async (
     return import('./MulticlassBackgroundProcessor');
 };
 
+export const supportsBackgroundEffects = () => supportsBackgroundProcessors() && !isMobile();
+
 const getBackgroundProcessorOptions = (useSimpleSegmentation: boolean): BackgroundProcessorOptions => ({
     assetPaths: {
         tasksVisionFileSet: '/assets/background-blur',
@@ -55,7 +57,7 @@ export const createBackgroundProcessor = async (
     version: BackgroundProcessorVersion = DEFAULT_BACKGROUND_PROCESSOR_VERSION,
     constantOverrides?: TunableConstantsOverrides
 ): Promise<BackgroundBlurProcessor | null> => {
-    if (!supportsBackgroundProcessors() || isMobile()) {
+    if (!supportsBackgroundEffects()) {
         return null;
     }
 
@@ -85,7 +87,7 @@ export const createCustomBackgroundProcessor = async (
     forceSimpleSegmentation = false,
     constantOverrides?: TunableConstantsOverrides
 ): Promise<CustomBackgroundProcessor | null> => {
-    if (!supportsBackgroundProcessors() || isMobile()) {
+    if (!supportsBackgroundEffects()) {
         return null;
     }
 
@@ -116,7 +118,7 @@ export const createCustomBackgroundProcessor = async (
 export const preloadBackgroundProcessorAssets = async (
     version: BackgroundProcessorVersion = DEFAULT_BACKGROUND_PROCESSOR_VERSION
 ) => {
-    if (!supportsBackgroundProcessors() || isMobile()) {
+    if (!supportsBackgroundEffects()) {
         return;
     }
 
