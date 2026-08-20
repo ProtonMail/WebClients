@@ -22,10 +22,12 @@ import { FilePreviewPanel } from '../Files/Common/FilePreviewPanel';
 import { FloatingRetryPanel } from '../FloatingRetryPanel';
 import ErrorCard from '../Notifications/ErrorCard';
 import { ConversationSurvey } from '../Survey/ConversationSurvey';
+import { ImageLimitNotice } from './ImageLimitNotice';
 import { ConversationHeader } from './messageChain/ConversationHeader';
 import { MessageChainComponent } from './messageChain/MessageChainComponent';
 import DesktopApprovalCards from './messageChain/message/DesktopToolApproval/DesktopApprovalCards';
 import { WebSearchSourcesView } from './messageChain/message/toolCall/WebSearchSourcesView';
+import { useImageLimitInfo } from './useImageLimitInfo';
 
 import './ConversationComponent.scss';
 
@@ -81,6 +83,8 @@ const ConversationComponent = ({
     });
 
     const conversationId = conversation?.id;
+
+    const { exceedsLimit: imageLimitExceeded } = useImageLimitInfo(messageChain);
 
     const conversationErrors = useLumoSelector((state) =>
         conversationId ? selectConversationErrors(state, conversationId) : []
@@ -163,6 +167,7 @@ const ConversationComponent = ({
                                 style={{ '--max-w-custom': '51.25rem' } as React.CSSProperties}
                             >
                                 {showWeeklyLimitUpsell && <UpsellCard error={tierErrors[0]} />}
+                                <ImageLimitNotice exceedsLimit={imageLimitExceeded} />
                                 <ComposerComponent
                                     composerMode={ComposerMode.CONVERSATION}
                                     handleSendMessage={handleSendMessage}

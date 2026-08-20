@@ -5,6 +5,7 @@ import type { Attachment, Message } from '../types';
 import { Role } from '../types';
 import { ENABLE_U2L_ENCRYPTION } from './config';
 import { prepareTurns } from './index';
+import { MAX_IMAGES_PER_REQUEST, OMITTED_IMAGE_PLACEHOLDER } from './attachments';
 
 describe('llm encryption configuration', () => {
     it('enables U2L encryption', () => {
@@ -111,22 +112,25 @@ describe('prepareTurns — attachment content blocks', () => {
 describe('prepareTurns — image attachments', () => {
     const personalization = {} as PersonalizationSettings;
 
-    const makeContext = (allConversationAttachments: Attachment[]): ConversationContext =>
+    const makeContext = (
+        allConversationAttachments: Attachment[],
+        contextFilters: ConversationContext['contextFilters'] = []
+    ): ConversationContext =>
         ({
             spaceId: 'space-1',
             conversationId: 'conv-1',
             allConversationAttachments,
             messageChain: [],
-            contextFilters: [],
+            contextFilters,
         }) as unknown as ConversationContext;
 
-    const makeImageMessage = (ids: string[]): Message =>
+    const makeImageMessage = (id: string, messageId = 'msg-1'): Message =>
         ({
-            id: 'msg-1',
+            id: messageId,
             role: Role.User,
             content: 'describe these',
             conversationId: 'conv-1',
-            attachments: ids.map((id) => ({ id, filename: `${id}.png`, mimeType: 'image/png' })),
+            attachments: [{ id, filename: `${id}.png`, mimeType: 'image/png' }],
         }) as unknown as Message;
 
     const makeImageAttachment = (id: string): Attachment =>
@@ -142,7 +146,13 @@ describe('prepareTurns — image attachments', () => {
 
     it('groups multiple images into a single turn instead of one turn per image', () => {
         const ids = ['a', 'b', 'c'];
-        const message = makeImageMessage(ids);
+        const message = {
+            id: 'msg-1',
+            role: Role.User,
+            content: 'describe these',
+            conversationId: 'conv-1',
+            attachments: ids.map((id) => ({ id, filename: `${id}.png`, mimeType: 'image/png' })),
+        } as unknown as Message;
 
         const turns = prepareTurns([message], personalization, undefined, makeContext(ids.map(makeImageAttachment)));
 
@@ -155,5 +165,74 @@ describe('prepareTurns — image attachments', () => {
         expect(imageTurns[0].content).toContain('<lumo-image id="a" source="user" name="a.png"');
         expect(imageTurns[0].content).toContain('<lumo-image id="b" source="user" name="b.png"');
         expect(imageTurns[0].content).toContain('<lumo-image id="c" source="user" name="c.png"');
+    });
+
+    it('drops excluded images but leaves a placeholder in the turn text', () => {
+        const ids = ['a', 'b', 'c'];
+        const message = {
+            id: 'msg-1',
+            role: Role.User,
+            content: 'describe these',
+            conversationId: 'conv-1',
+            attachments: ids.map((id) => ({ id, filename: `${id}.png`, mimeType: 'image/png' })),
+        } as unknown as Message;
+
+        const turns = prepareTurns(
+            [message],
+            personalization,
+            undefined,
+            makeContext(ids.map(makeImageAttachment), [{ messageId: 'msg-1', excludedFiles: ['b.png'] }])
+        );
+
+        const imageTurns = turns.filter((t) => Array.isArray(t.images) && t.images.length > 0);
+        expect(imageTurns).toHaveLength(1);
+        // 'b.png' is excluded via context filter, so only a and c are sent.
+        expect(imageTurns[0].images).toHaveLength(2);
+        expect(imageTurns[0].content).toContain('<lumo-image id="a" source="user" name="a.png"');
+        expect(imageTurns[0].content).not.toContain('<lumo-image id="b"');
+        expect(imageTurns[0].content).toContain('<lumo-image id="c" source="user" name="c.png"');
+        expect(imageTurns[0].content).toContain(OMITTED_IMAGE_PLACEHOLDER);
+    });
+
+    it('emits placeholders instead of empty content when every image is excluded', () => {
+        const ids = ['a', 'b'];
+        const message = {
+            id: 'msg-1',
+            role: Role.User,
+            content: '',
+            conversationId: 'conv-1',
+            blocks: [{ type: 'text', content: '' }],
+            attachments: ids.map((id) => ({ id, filename: `${id}.png`, mimeType: 'image/png' })),
+        } as unknown as Message;
+
+        const turns = prepareTurns(
+            [message],
+            personalization,
+            undefined,
+            makeContext(ids.map(makeImageAttachment), [{ messageId: 'msg-1', excludedFiles: ['a.png', 'b.png'] }])
+        );
+
+        const userTurns = turns.filter((t) => t.role === Role.User);
+        expect(userTurns).toHaveLength(1);
+        expect(userTurns[0].content).toBe(`${OMITTED_IMAGE_PLACEHOLDER}\n${OMITTED_IMAGE_PLACEHOLDER}`);
+        expect(userTurns[0].images).toBeUndefined();
+    });
+
+    it('drops images beyond the limit but leaves placeholders in the turn text', () => {
+        const ids = Array.from({ length: MAX_IMAGES_PER_REQUEST + 2 }, (_, i) => `img-${i}`);
+        const messages = ids.map((id, index) => makeImageMessage(id, `msg-${index}`));
+        const attachments = ids.map(makeImageAttachment);
+
+        const turns = prepareTurns(messages, personalization, undefined, makeContext(attachments));
+
+        const imageTurns = turns.filter((t) => Array.isArray(t.images) && t.images.length > 0);
+        const sentImageIds = imageTurns.flatMap((t) => t.images?.map((img) => img.image_id) ?? []);
+        expect(sentImageIds).toHaveLength(MAX_IMAGES_PER_REQUEST);
+        expect(sentImageIds).toEqual(ids.slice(-MAX_IMAGES_PER_REQUEST));
+
+        const omittedTurns = turns.filter((t) => t.content?.includes(OMITTED_IMAGE_PLACEHOLDER));
+        expect(omittedTurns).toHaveLength(2);
+        expect(omittedTurns.every((t) => t.content?.endsWith(OMITTED_IMAGE_PLACEHOLDER))).toBe(true);
+        expect(omittedTurns.every((t) => t.images === undefined)).toBe(true);
     });
 });
