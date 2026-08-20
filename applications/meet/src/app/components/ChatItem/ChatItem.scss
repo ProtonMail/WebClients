@@ -77,6 +77,8 @@
 	}
 
 	.chat-item-emoji-reaction-btn {
+		touch-action: none;
+		user-select: none;
 		background: var(--interaction-weak-minor-2);
 		line-height: 1;
 		font-size: rem(12) !important;
