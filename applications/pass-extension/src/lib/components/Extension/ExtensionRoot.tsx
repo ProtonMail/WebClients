@@ -1,6 +1,6 @@
 import type { FC, PropsWithChildren } from 'react';
 
-import { Portal } from '@proton/components/components/portal';
+import { Portal } from '@proton/atoms/Portal/Portal';
 import ModalsChildren from '@proton/components/containers/modals/Children';
 import ModalsProvider from '@proton/components/containers/modals/Provider';
 import NotificationsChildren from '@proton/components/containers/notifications/Children';

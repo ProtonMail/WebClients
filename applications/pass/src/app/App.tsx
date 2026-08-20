@@ -14,7 +14,7 @@ import { spotlightProxy as spotlight } from 'proton-pass-web/lib/spotlight';
 import { telemetry } from 'proton-pass-web/lib/telemetry';
 import { getTheme } from 'proton-pass-web/lib/theme';
 
-import { Portal } from '@proton/components/components/portal';
+import { Portal } from '@proton/atoms/Portal/Portal';
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import { StandardErrorPageDisplay } from '@proton/components/containers/app/StandardErrorPage';
 import CompatibilityCheck from '@proton/components/containers/compatibilityCheck/CompatibilityCheck';

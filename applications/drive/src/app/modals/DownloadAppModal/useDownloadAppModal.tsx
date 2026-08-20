@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import type { ModalStateProps } from '@proton/components';
 import {
     ButtonGroup,
@@ -13,7 +14,6 @@ import {
     ModalTwoContent,
     ModalTwoHeader,
     useActiveBreakpoint,
-    usePopperAnchor,
 } from '@proton/components';
 import QRCode from '@proton/components/components/image/QRCode';
 import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';

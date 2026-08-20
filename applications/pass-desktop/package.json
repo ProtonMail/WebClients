@@ -30,6 +30,7 @@
         "update:serve": "node update/serve.mjs"
     },
     "dependencies": {
+        "@proton/atoms": "workspace:^",
         "@proton/icons": "workspace:^",
         "browserslist": "^4.28.7",
         "electron-log": "^5.4.4",

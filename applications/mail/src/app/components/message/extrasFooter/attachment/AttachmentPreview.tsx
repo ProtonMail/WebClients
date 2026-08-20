@@ -1,7 +1,7 @@
 import type { MutableRefObject, Ref } from 'react';
 import { forwardRef, useEffect, useRef, useState } from 'react';
 
-import Portal from '@proton/components/components/portal/Portal';
+import { Portal } from '@proton/atoms/Portal/Portal';
 import FilePreview from '@proton/components/containers/filePreview/FilePreview';
 import NavigationControl from '@proton/components/containers/filePreview/NavigationControl';
 import type { MessageStateWithData, OutsideKey } from '@proton/mail/store/messages/messagesTypes';

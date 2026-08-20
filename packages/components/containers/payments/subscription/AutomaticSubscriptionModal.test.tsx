@@ -238,7 +238,7 @@ describe('getParameters', () => {
 });
 
 jest.mock('@proton/components/hooks/useModals');
-jest.mock('@proton/components/components/portal/Portal');
+jest.mock('@proton/atoms/Portal/Portal');
 jest.mock('./subscriptionEligbility');
 
 const mockOpenSubscriptionModal = jest.fn();

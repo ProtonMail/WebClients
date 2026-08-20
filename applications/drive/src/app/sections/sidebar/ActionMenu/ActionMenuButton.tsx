@@ -2,7 +2,8 @@ import type { PropsWithChildren } from 'react';
 
 import { c } from 'ttag';
 
-import { Dropdown, DropdownMenu, DropdownSizeUnit, SidebarPrimaryButton, usePopperAnchor } from '@proton/components';
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
+import { Dropdown, DropdownMenu, DropdownSizeUnit, SidebarPrimaryButton } from '@proton/components';
 import { generateNodeUid } from '@proton/drive/index';
 import { useCreateFolderModal } from '@proton/drive/modals/createFolderModal';
 import { uploadManager } from '@proton/drive/modules/upload';

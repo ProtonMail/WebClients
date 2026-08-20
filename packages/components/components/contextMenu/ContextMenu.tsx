@@ -1,10 +1,10 @@
 import type { ReactNode, RefObject } from 'react';
 import { useEffect, useState } from 'react';
 
+import type { PopperPosition } from '@proton/atoms/Popper/interface';
+import { cornerPopperPlacements } from '@proton/atoms/Popper/utils';
 import type { DropdownBorderRadius, DropdownProps } from '@proton/components/components/dropdown/Dropdown';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
-import type { PopperPosition } from '@proton/components/components/popper/interface';
-import { cornerPopperPlacements } from '@proton/components/components/popper/utils';
 import generateUID from '@proton/utils/generateUID';
 
 export interface ContextMenuProps {

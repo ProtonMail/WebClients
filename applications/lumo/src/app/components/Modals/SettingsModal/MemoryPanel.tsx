@@ -4,6 +4,7 @@ import { clsx } from 'clsx';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import {
     Dropdown,
@@ -14,8 +15,7 @@ import {
     Toggle,
     useModalStateObject,
     useNotifications,
-    usePopperAnchor,
-} from '@proton/components/index';
+} from '@proton/components';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useLumoUserSettings } from '../../../hooks';
@@ -433,14 +433,8 @@ const MemoryRow = ({ memory, isEditing, onStartEdit, onCancelEdit, onSaveEdit, o
 const MemoryPanel = ({ onClose: _onClose }: MemoryPanelProps) => {
     const { lumoUserSettings, updateSettings } = useLumoUserSettings();
     const { createNotification } = useNotifications();
-    const {
-        generateFromChats,
-        optimizeMemories,
-        canGenerateFromChats,
-        isGenerating,
-        isBootstrapping,
-        isOptimizing,
-    } = useMemoryGeneration();
+    const { generateFromChats, optimizeMemories, canGenerateFromChats, isGenerating, isBootstrapping, isOptimizing } =
+        useMemoryGeneration();
     const dispatch = useLumoDispatch();
     const store = useLumoStore();
 
@@ -623,7 +617,8 @@ const MemoryPanel = ({ onClose: _onClose }: MemoryPanelProps) => {
             if (removed > 0) {
                 createNotification({
                     type: 'success',
-                    text: c('collider_2025: Success').t`Optimized memories: reduced from ${beforeCount} to ${optimized.length}.`,
+                    text: c('collider_2025: Success')
+                        .t`Optimized memories: reduced from ${beforeCount} to ${optimized.length}.`,
                 });
             } else {
                 createNotification({
@@ -799,12 +794,7 @@ const MemoryPanel = ({ onClose: _onClose }: MemoryPanelProps) => {
                 {...optimizeModal.modalProps}
                 title={c('collider_2025: Title').t`Optimize memories?`}
                 buttons={[
-                    <Button
-                        key="confirm"
-                        color="norm"
-                        loading={isOptimizing}
-                        onClick={handleConfirmOptimizeMemories}
-                    >
+                    <Button key="confirm" color="norm" loading={isOptimizing} onClick={handleConfirmOptimizeMemories}>
                         {c('collider_2025: Action').t`Optimize`}
                     </Button>,
                     <Button key="cancel" onClick={optimizeModal.modalProps.onClose} disabled={isOptimizing}>

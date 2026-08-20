@@ -4,7 +4,7 @@ import DropdownMenuButton from '@proton/components/components/dropdown/DropdownM
 import Icon from '@proton/components/components/icon/Icon'
 import useAuthentication from '@proton/components/hooks/useAuthentication'
 import useNotifications from '@proton/components/hooks/useNotifications'
-import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor'
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor'
 import { Avatar } from '@proton/atoms/Avatar/Avatar'
 import { Button } from '@proton/atoms/Button/Button'
 import { Input } from '@proton/atoms/Input/Input'

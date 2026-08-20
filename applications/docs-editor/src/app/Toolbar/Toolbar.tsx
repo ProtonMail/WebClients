@@ -4,7 +4,7 @@ import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu'
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton'
 import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown'
 import Spotlight from '@proton/components/components/spotlight/Spotlight'
-import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor'
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor'
 import { Fragment, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
 import { $isCodeNode } from '@lexical/code'

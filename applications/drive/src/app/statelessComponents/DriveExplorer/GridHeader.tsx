@@ -3,6 +3,7 @@ import { type ReactNode, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import {
     Checkbox,
     Dropdown,
@@ -10,7 +11,6 @@ import {
     DropdownMenu,
     DropdownMenuButton,
     TableHeaderCell,
-    usePopperAnchor,
 } from '@proton/components';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';

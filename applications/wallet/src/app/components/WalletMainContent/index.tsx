@@ -3,7 +3,8 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import type { WasmApiWalletAccount } from '@proton/andromeda';
-import { Dropdown, DropdownCaret, DropdownMenu, DropdownMenuButton, usePopperAnchor } from '@proton/components';
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
+import { Dropdown, DropdownCaret, DropdownMenu, DropdownMenuButton } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 import type { IWasmApiWalletData } from '@proton/wallet/types';
 

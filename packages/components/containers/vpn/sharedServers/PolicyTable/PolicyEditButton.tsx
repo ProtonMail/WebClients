@@ -2,10 +2,10 @@ import React from 'react';
 
 import { c } from 'ttag';
 
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
-import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 
 import EditPolicyDropdownMenu from '../EditPolicyDropdownMenu';
 import type { VpnLocationFilterPolicy } from '../useSharedServers';

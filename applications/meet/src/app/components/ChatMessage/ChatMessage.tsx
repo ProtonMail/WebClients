@@ -15,9 +15,9 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import { Popper } from '@proton/atoms/Popper/Popper';
+import { usePopper } from '@proton/atoms/Popper/usePopper';
 import useFocusTrap from '@proton/components/components/focus/useFocusTrap';
-import Popper from '@proton/components/components/popper/Popper';
-import usePopper from '@proton/components/components/popper/usePopper';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
 import { useHotkeys } from '@proton/components/hooks/useHotkeys';

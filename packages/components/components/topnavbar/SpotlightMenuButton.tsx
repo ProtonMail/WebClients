@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import Icon from '@proton/components/components/icon/Icon';
 import Spotlight from '@proton/components/components/spotlight/Spotlight';
 import useToggle from '@proton/components/hooks/useToggle';
@@ -13,7 +14,6 @@ import Dropdown from '../dropdown/Dropdown';
 import DropdownMenu from '../dropdown/DropdownMenu';
 import DropdownMenuButton from '../dropdown/DropdownMenuButton';
 import SettingsLink from '../link/SettingsLink';
-import usePopperAnchor from '../popper/usePopperAnchor';
 import { GetStartedButton } from './GetStartedButton';
 
 export type DisplayItem = DropdownDisplayItem | LinkDisplayItem;

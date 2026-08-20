@@ -7,10 +7,10 @@ import { c, msgid } from 'ttag';
 
 import type { InputProps } from '@proton/atoms/Input/Input';
 import { Input } from '@proton/atoms/Input/Input';
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
-import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import { findLongestMatchingIndex } from '@proton/shared/lib/helpers/string';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import generateUID from '@proton/utils/generateUID';

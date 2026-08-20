@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import type { Location } from 'history';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
-import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import TopNavbarListItemSearchButton from '@proton/components/components/topnavbar/TopNavbarListItemSearchButton';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useToggle from '@proton/components/hooks/useToggle';

@@ -1,9 +1,9 @@
 import { useMemo, useRef } from 'react';
 
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
-import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import { omit } from '@proton/shared/lib/helpers/object';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';

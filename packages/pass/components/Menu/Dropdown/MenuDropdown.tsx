@@ -3,12 +3,12 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
+import { verticalPopperPlacements } from '@proton/atoms/Popper/utils';
 import type { DropdownProps } from '@proton/components/components/dropdown/Dropdown';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
-import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
-import { verticalPopperPlacements } from '@proton/components/components/popper/utils';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { AdminPanelLabel } from '@proton/pass/components/Menu/B2B/AdminPanelLabel';
