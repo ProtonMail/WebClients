@@ -61,8 +61,8 @@ import { MediaManagementContext } from './MediaManagementContext';
 import { PermissionsModal } from './PermissionsModal/PermissionsModal';
 import { useAudioToggle } from './mediaToggle/useAudioToggle';
 import { useVideoToggle } from './mediaToggle/useVideoToggle';
+import { useBackgroundEffectInitializationState } from './useBackgroundEffectInitializationState';
 import { useBackgroundProcessorPreload } from './useBackgroundProcessorPreload';
-import { useBlurInitializationState } from './useBlurInitializationState';
 import { useCameraPreview } from './useCameraPreview';
 import { useDeviceManagement } from './useDeviceManagement/useDeviceManagement';
 import { useMicrophoneVolumeAnalysis } from './useMicrophoneVolumeAnalysis';
@@ -189,25 +189,31 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
     );
 
     const {
-        isBackgroundBlurInitializing,
-        isBackgroundBlurInitializationFailed,
-        trackBlurInitialization,
-        cancelBlurInitialization,
-    } = useBlurInitializationState();
+        initializingBackgroundEffect,
+        failedBackgroundEffect,
+        trackBackgroundEffectInitialization,
+        cancelBackgroundEffectInitialization,
+        reportBackgroundEffectFailure,
+    } = useBackgroundEffectInitializationState();
 
     const {
         toggleVideo,
         handleRotateCamera,
         backgroundBlur,
         toggleBackgroundBlur,
+        virtualBackgroundId,
+        appliedBackgroundEffect,
+        pendingBackgroundEffect,
+        selectBackgroundEffect,
         isVideoEnabled,
         facingMode,
         isBackgroundBlurSupported,
     } = useVideoToggle({
         switchActiveDevice,
         backgroundProcessorVersion,
-        trackBlurInitialization,
-        cancelBlurInitialization,
+        trackBackgroundEffectInitialization,
+        cancelBackgroundEffectInitialization,
+        reportBackgroundEffectFailure,
     });
 
     const { toggleAudio, noiseFilter, toggleNoiseFilter, isAudioEnabled } = useAudioToggle(switchActiveDevice);
@@ -218,11 +224,11 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
         selectedCameraId: activeCameraDeviceId,
         facingMode: 'user',
         isBackgroundBlurSupported,
-        backgroundBlur,
+        backgroundEffect: appliedBackgroundEffect,
         backgroundProcessorVersion,
         room,
-        trackBlurInitialization,
-        cancelBlurInitialization,
+        trackBackgroundEffectInitialization,
+        cancelBackgroundEffectInitialization,
     });
 
     const cameraPermission = useMeetSelector(selectCameraPermission);
@@ -674,6 +680,7 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
             value={{
                 handlePreviewCameraToggle,
                 cleanupPreviewTrack,
+                cleanupCameraPreview,
                 isVideoEnabled,
                 isAudioEnabled,
                 facingMode,
@@ -683,9 +690,13 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
                 handleCameraToggle,
                 backgroundBlur,
                 toggleBackgroundBlur,
+                virtualBackgroundId,
+                appliedBackgroundEffect,
+                pendingBackgroundEffect,
+                selectBackgroundEffect,
                 isBackgroundBlurSupported,
-                isBackgroundBlurInitializing,
-                isBackgroundBlurInitializationFailed,
+                initializingBackgroundEffect,
+                failedBackgroundEffect,
                 noiseFilter,
                 toggleNoiseFilter,
                 handleRotateCamera,

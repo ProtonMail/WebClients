@@ -38,6 +38,7 @@ export function VideoSettings({ anchorRef, onClose, anchorPosition }: VideoSetti
             anchorPosition={anchorPosition}
             isCameraLoading={(deviceId) => isLoading('camera', deviceId)}
             withCameraLoading={(deviceId, operation) => withLoading('camera', deviceId, operation)}
+            showVirtualBackgroundButton
         />
     );
 }

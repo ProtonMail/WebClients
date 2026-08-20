@@ -28,7 +28,7 @@ import { useMediaManagementContext } from '../../contexts/MediaManagementProvide
 import { useDebouncedSpeakingStatus } from '../../hooks/useDebouncedSpeakingStatus';
 import { useParticipantDisplayColors } from '../../hooks/useParticipantDisplayColors';
 import { shouldShowParticipantVideo } from '../../utils/shouldShowParticipantVideo';
-import { BackgroundBlurInitializingOverlay } from '../BackgroundBlurInitializingOverlay/BackgroundBlurInitializingOverlay';
+import { BackgroundEffectInitializingOverlay } from '../BackgroundEffectInitializingOverlay/BackgroundEffectInitializingOverlay';
 import { NetworkQualityIndicator } from '../NetworkQualityIndicator/NetworkQualityIndicator';
 import { ParticipantPlaceholder } from '../ParticipantPlaceholder/ParticipantPlaceholder';
 import { ParticipantTileReaction } from './ParticipantTileReaction';
@@ -323,7 +323,7 @@ export const ParticipantTile = memo(({ participant, viewSize = 'large' }: Partic
                         autoPlay={true}
                         playsInline={true}
                     />
-                    {isLocalParticipant && <BackgroundBlurInitializingOverlay viewSize={viewSize} />}
+                    {isLocalParticipant && <BackgroundEffectInitializingOverlay viewSize={viewSize} />}
                 </>
             ) : (
                 <ParticipantPlaceholder

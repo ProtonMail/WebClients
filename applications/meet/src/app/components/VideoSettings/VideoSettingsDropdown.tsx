@@ -7,7 +7,14 @@ import { useActiveBreakpoint } from '@proton/components';
 import type { PopperPosition } from '@proton/components/components/popper/interface';
 import useLoading from '@proton/hooks/useLoading';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
+import { IcImage } from '@proton/icons/icons/IcImage';
+import { IcMeetBlur } from '@proton/icons/icons/IcMeetBlur';
+import { useMeetDispatch } from '@proton/meet/store/hooks';
+import { MeetingSideBars, toggleSideBarState } from '@proton/meet/store/slices/uiStateSlice';
 import type { SerializableDeviceInfo } from '@proton/meet/utils/deviceUtils';
+import { isMobile } from '@proton/shared/lib/helpers/browser';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { OptionButton } from '../../atoms/OptionButton/OptionButton';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
@@ -23,6 +30,7 @@ interface VideoSettingsDropdownProps {
     anchorPosition?: PopperPosition;
     isCameraLoading: (deviceId: string) => boolean;
     withCameraLoading: (deviceId: string, operation: () => Promise<void>) => Promise<void>;
+    showVirtualBackgroundButton?: boolean;
 }
 
 const VideoSettingsDropdownComponent = ({
@@ -34,12 +42,17 @@ const VideoSettingsDropdownComponent = ({
     anchorPosition,
     isCameraLoading,
     withCameraLoading,
+    showVirtualBackgroundButton = false,
 }: VideoSettingsDropdownProps) => {
     const noCameraDetected = cameras.length === 0;
+
+    const dispatch = useMeetDispatch();
 
     const { activeBreakpoint } = useActiveBreakpoint();
 
     const { backgroundBlur, toggleBackgroundBlur, isBackgroundBlurSupported } = useMediaManagementContext();
+
+    const isVirtualBackgroundEnabled = useFlag('MeetVirtualBackground');
 
     const [loadingBackgroundBlur, withLoadingBackgroundBlur] = useLoading();
 
@@ -85,19 +98,50 @@ const VideoSettingsDropdownComponent = ({
                 </div>
                 <div className="flex flex-column gap-4">
                     <div className="color-weak meet-font-weight text-uppercase text-sm">{c('Info')
-                        .t`Video effects`}</div>
-                    <div className="w-full pl-8 pr-4 ml-0.5">
-                        <BackgroundBlurToggle
-                            backgroundBlur={backgroundBlur}
-                            loadingBackgroundBlur={loadingBackgroundBlur}
-                            isBackgroundBlurSupported={isBackgroundBlurSupported}
-                            onChange={() => {
-                                void withLoadingBackgroundBlur(toggleBackgroundBlur());
-                            }}
-                            withTooltip
-                            size="medium"
-                        />
+                        .t`Camera effects`}</div>
+                    <div className="flex items-center flex-nowrap w-full pr-4">
+                        <div
+                            className="flex items-center justify-center w-custom min-w-custom mr-2"
+                            style={{ '--w-custom': '2rem', '--min-w-custom': '2rem' }}
+                        >
+                            <IcMeetBlur size={5} style={{ color: 'var(--text-weak)' }} />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                            <BackgroundBlurToggle
+                                backgroundBlur={backgroundBlur}
+                                loadingBackgroundBlur={loadingBackgroundBlur}
+                                isBackgroundBlurSupported={isBackgroundBlurSupported}
+                                onChange={() => {
+                                    void withLoadingBackgroundBlur(toggleBackgroundBlur());
+                                }}
+                                withTooltip
+                                size="medium"
+                            />
+                        </div>
                     </div>
+                    {showVirtualBackgroundButton && isVirtualBackgroundEnabled && !isMobile() && (
+                        <>
+                            <hr className="w-full m-0 border-weak" />
+
+                            <OptionButton
+                                showIcon
+                                Icon={IcImage}
+                                label={c('Action').t`Virtual backgrounds`}
+                                disabled={!isBackgroundBlurSupported}
+                                onClick={() => {
+                                    onClose();
+                                    dispatch(toggleSideBarState(MeetingSideBars.Backgrounds));
+                                }}
+                                rightContent={
+                                    <IcChevronRight
+                                        size={4}
+                                        className="ml-auto shrink-0"
+                                        style={{ color: 'var(--text-weak)' }}
+                                    />
+                                }
+                            />
+                        </>
+                    )}
                 </div>
             </section>
         </DeviceSettingsDropdown>

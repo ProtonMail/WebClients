@@ -1,6 +1,7 @@
-import { type BackgroundOptions, ProcessorWrapper, type SegmenterOptions } from '@livekit/track-processors';
+import type { BackgroundOptions, SegmenterOptions } from '@livekit/track-processors';
 
 import BaseBackgroundProcessor from './BaseBackgroundProcessor';
+import { createProcessorWrapper } from './createProcessorWrapper';
 import type { BackgroundBlurProcessor, BackgroundProcessorOptions } from './types';
 
 // Re-exported for backward compatibility: asset preloading is shared across
@@ -42,7 +43,7 @@ export const BackgroundBlur = (
         ...processorOptions,
     };
     const transformer = new MulticlassBackgroundProcessor(options);
-    const processor = new ProcessorWrapper<BackgroundOptions>(
+    const processor = createProcessorWrapper<BackgroundOptions>(
         transformer,
         'background-blur',
         processorOptions

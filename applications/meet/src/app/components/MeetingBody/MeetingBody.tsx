@@ -29,6 +29,7 @@ import { useIsNarrowHeight } from '../../hooks/useIsNarrowHeight';
 import { useMeetingInitialisation } from '../../hooks/useMeetingInitialisation';
 import { SpatialAudioRoomAudioRenderer } from '../../utils/spatialAudio/SpatialAudioRoomAudioRenderer';
 import { AssignHostSidebar } from '../AssignHostSidebar/AssignHostSidebar';
+import { Backgrounds } from '../Backgrounds/Backgrounds';
 import { Chat } from '../Chat/Chat';
 import { MeetingDetails, WrappedMeetingDetails } from '../MeetingDetails/MeetingDetails';
 import { MeetingName } from '../MeetingName/MeetingName';
@@ -343,6 +344,7 @@ export const MeetingBody = ({
                             <Settings />
                             <Chat />
                             <AssignHostSidebar />
+                            <Backgrounds />
                             {isGuest || !isEarlyAccess ? <MeetingDetails /> : <WrappedMeetingDetails />}
                         </div>
                     )}
