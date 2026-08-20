@@ -5898,6 +5898,9 @@
       ],
       "You have successfully signed in to another device": [
         "Vous vous êtes connecté à un autre appareil."
+      ],
+      "Scan QR code on your mobile device to sign in.": [
+        "Scannez le QR code sur votre appareil mobile pour vous connecter."
       ]
     },
     "Email": {
@@ -9271,6 +9274,12 @@
       ],
       "Your plan": [
         "Votre abonnement"
+      ],
+      "Downloads": [
+        "Téléchargements"
+      ],
+      "Invited friends": [
+        "Amis invités"
       ]
     },
     "Hint": {
@@ -13749,6 +13758,24 @@
       ],
       "Zoom meeting": [
         "réunion Zoom"
+      ],
+      "${ helpTranslateLink } by joining our localization community.": [
+        "${ helpTranslateLink } en rejoignant notre communauté de localisation."
+      ],
+      "Changes to your default language and time are reflected on the web. To change the default for mobile apps, go to the settings on your device.": [
+        "Les modifications apportées à la langue et au format d'heure par défaut sont prises en compte sur le site web. Pour modifier les paramètres par défaut des applications mobiles, accédez aux paramètres de votre appareil."
+      ],
+      "Choose a strong ${ BRAND_NAME } password and don’t reuse it for other accounts.": [
+        "Choisissez un mot de passe ${ BRAND_NAME } fort et ne le réutilisez pas pour d'autres comptes."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Si vous avez perdu l'accès à votre application d'authentification, vous pouvez utiliser 1 des 16 codes de récupération de sauvegarde fournis lors de la configuration de l'authentification à deux facteurs. ${ learnMoreLink }"
+      ],
+      "Your default language and time for ${ BRAND_NAME } services.": [
+        "Votre langue et votre fuseau horaire par défaut pour les services de ${ BRAND_NAME }."
+      ],
+      "Your profile and changes to it will be visible to other ${ BRAND_NAME } users.": [
+        "Votre profil et les modifications que vous y apporterez seront visibles par les autres utilisateurs de ${ BRAND_NAME }."
       ]
     },
     "info": {
@@ -16057,6 +16084,9 @@
       ],
       "ZIP code": [
         "Code postal"
+      ],
+      "Mailbox settings": [
+        "Paramètres de la messagerie"
       ]
     },
     "label": {
@@ -19201,6 +19231,9 @@
       ],
       "Windows": [
         "Windows"
+      ],
+      "Mute notifications": [
+        "Mettre les notifications en sourdine"
       ]
     },
     "option": {
@@ -26912,6 +26945,12 @@
       ],
       "Your subscriptions": [
         "Vos abonnements"
+      ],
+      "September Sale": [
+        "Soldes de septembre"
+      ],
+      "User profile": [
+        "Profil de l'utilisateur"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -28475,6 +28514,79 @@
       ],
       "Yearly, ${ untilString }": [
         "Chaque année, ${ untilString }"
+      ]
+    },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "Profitez de l'offre"
+      ],
+      "Special Offer": [
+        "Offre spéciale"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "/month": [
+        "/mois"
+      ],
+      "2 individual accounts": [
+        "2 comptes individuels"
+      ],
+      "2 TB of secure storage": [
+        "2 To d'espace de stockage sécurisé"
+      ],
+      "3 TB of secure storage": [
+        "3 To d'espace de stockage sécurisé"
+      ],
+      "500 GB of secure storage": [
+        "500 Go d'espace de stockage sécurisé"
+      ],
+      "6 individual accounts": [
+        "6 comptes individuels"
+      ],
+      "Advanced protection against cyber threats": [
+        "Une protection avancée contre les cybermenaces"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Les réductions sont calculées sur la base du tarif mensuel standard. Votre abonnement sera renouvelé au tarif annuel standard à la fin du cycle de facturation."
+      ]
+    },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, et ${ VPN_SHORT_APP_NAME } Premium"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, et ${ CALENDAR_SHORT_APP_NAME } Premium"
+      ]
+    },
+    "q3campaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } Premium"
+      ]
+    },
+    "q3campaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } Premium"
+      ]
+    },
+    "q3campaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, et ${ CALENDAR_SHORT_APP_NAME } Premium"
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "pendant 12 mois"
+      ],
+      "One plan, full power": [
+        "Un abonnement, pleine puissance"
+      ],
+      "One plan, max savings": [
+        "Un abonnement, un maximum d'économies"
+      ],
+      "One plan, more power": [
+        "Un seul abonnement, plus de puissance"
       ]
     }
   }
