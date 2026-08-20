@@ -70,6 +70,9 @@
       "Force Reload": [
         "Pakota uudelleenlataus"
       ],
+      "Help and feedback": [
+        "Ohje ja palaute"
+      ],
       "Hide ${ MAIL_APP_NAME }": [
         "Piilota ${ MAIL_APP_NAME }"
       ],
@@ -78,6 +81,9 @@
       ],
       "Minimize": [
         "Pienennä"
+      ],
+      "OK": [
+        "OK"
       ],
       "Paste": [
         "Liitä"
@@ -147,6 +153,9 @@
       ],
       "Uninstall ${ MAIL_APP_NAME }": [
         "Poista ${ MAIL_APP_NAME }"
+      ],
+      "Version ${ version } (${ buildInfo })\n${ pkg.config.copyright }": [
+        "Versio ${ version } (${ buildInfo })\n${ pkg.config.copyright }"
       ],
       "When hardware acceleration is enabled, the app uses your device's dedicated graphics hardware for rendering. This can cause compatibility issues on some systems.": [
         "Kun laitteistokiihdytys on käytössä, sovellus käyttää laitteen erillistä grafiikkapiiriä kuvan renderointiin. Tämä voi aiheuttaa yhteensopivuusongelmia joissakin järjestelmissä."
@@ -255,11 +264,19 @@
       "File": [
         "Tiedosto"
       ],
+      "Help": [
+        "Ohje"
+      ],
       "View": [
         "Näytä"
       ],
       "Window": [
         "Ikkuna"
+      ]
+    },
+    "Title": {
+      "About ${ MAIL_APP_NAME }": [
+        "Tietoja ${ MAIL_APP_NAME }ista"
       ]
     },
     "Unload warning": {
