@@ -10447,10 +10447,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/encrypted-search@workspace:packages/encrypted-search"
   dependencies:
+    "@proton/account": "workspace:^"
     "@proton/components": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/i18n": "workspace:^"
     "@proton/jest-env": "workspace:^"
+    "@proton/mail": "workspace:^"
     "@proton/shared": "workspace:^"
     "@proton/utils": "workspace:^"
     "@protontech/crypto": "npm:*"
@@ -10460,6 +10462,7 @@ __metadata:
     fake-indexeddb: "npm:^6.2.5"
     idb: "npm:^8.0.3"
     jest: "npm:^30.4.2"
+    lodash: "npm:^4.18.1"
     playwright: "npm:^1.61.1"
     react: "npm:^18.3.1"
     ts-jest: "npm:^29.4.12"
