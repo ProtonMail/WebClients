@@ -2837,6 +2837,9 @@
       "Mexico": [
         "Mehika"
       ],
+      "Micronesia": [
+        "Mikronezija"
+      ],
       "Moldova": [
         "Moldavija"
       ],
@@ -2896,6 +2899,9 @@
       ],
       "North Korea": [
         "Severna Koreja"
+      ],
+      "North Macedonia": [
+        "Severna Makedonija"
       ],
       "Northern Mariana Islands": [
         "Severni Marijanski otoki"
@@ -7044,9 +7050,6 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Če izgubite svojo napravo z omogočenim dvojnim preverjanjem pristnosti, lahko te kode uporabite namesto 6-mestne kode za dvojno preverjanje pristnosti za prijavo v svoj račun. Vsako kodo lahko uporabite samo enkrat."
       ],
-      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
-        "Če ste izgubili dostop do aplikacije za preverjanje pristnosti, lahko uporabite eno od 16. kod za obnovitev, ki ste jih prejeli ob nastavitvi dvojnega preverjanja pristnosti. ${ learnMoreLink }"
-      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Če nadaljujete s podgradnjo, boste izgubili dostop do plačljivih funkcij ${ MAIL_APP_NAME } in ${ VPN_APP_NAME }."
       ],
@@ -7644,6 +7647,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Ker ste zvest uporabnik, smo vašemu računu omogočili dodatne funkcionalnosti."
       ],
+      "Smart Routed through a different country.": [
+        "Pametno usmerjeno prek druge države."
+      ],
       "Smart Routed through: ${ joinedCountries }.": [
         "Pametno usmerjeno prek: ${ joinedCountries }."
       ],
@@ -8162,6 +8168,9 @@
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "S šifriranim naslovom ${ BRAND_NAME } lahko uporabljate vse storitve ${ BRAND_NAME }."
+      ],
+      "With email categories, important messages land in a primary inbox. Everything else is organized into categories.": [
+        "S kategorijami e-pošte pomembna sporočila prispejo v primarno mapo »Prejeto«. Vse ostalo je razvrščeno po kategorijah."
       ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "S skupinami lahko hitro in enostavno pošiljate sporočila vsem osebam v določeni skupini."
@@ -14954,6 +14963,9 @@
       ],
       "Email": [
         "E-pošta"
+      ],
+      "Email categories": [
+        "Kategorije e-pošte"
       ],
       "Email subscriptions": [
         "E-poštne naročnine"
