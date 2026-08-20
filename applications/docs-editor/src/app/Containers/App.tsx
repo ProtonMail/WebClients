@@ -47,9 +47,7 @@ import useEffectOnce from '@proton/hooks/useEffectOnce'
 import { useEditorState } from './EditorStateProvider'
 import { IS_CHROME } from '../Shared/environment'
 import type { DocumentType } from '@proton/drive-store/store/_documents'
-import { SpreadsheetProvider } from '@rowsncolumns/spreadsheet'
 import type { SpreadsheetRef } from './Spreadsheet/Spreadsheet'
-import { Spreadsheet } from './Spreadsheet/Spreadsheet'
 import { $generateJSONFromSelectedNodes } from '@lexical/clipboard'
 import { getEditorStateFromSerializedNodes } from '../Conversion/get-editor-state-from-nodes'
 import { uint8ArrayToUtf8String } from '@protontech/crypto/utils'
@@ -58,6 +56,8 @@ import { OPEN_LINK_EVENT } from './Spreadsheet/constants'
 import { useStore } from 'zustand'
 import DocsLayout from './DocsLayout'
 import { getDocsLayoutScrollContainer } from './docsLayoutUtils'
+import { SheetsAdapter } from './Spreadsheet/adapters/SheetsAdapter'
+import { StandaloneSheetsEditor } from './Spreadsheet/StandaloneSheetsEditor'
 import SheetsLayout from './SheetsLayout'
 
 type AppProps = {
@@ -705,6 +705,8 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
   }
 
   if (documentType === 'sheet') {
+    const editorInitializationConfig = editorConfig.current.editorInitializationConfig
+
     return (
       <SheetsLayout>
         <ErrorBoundary
@@ -712,13 +714,13 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
             reportErrorToSentry(error)
           }}
         >
-          <SpreadsheetProvider>
-            <Spreadsheet
+          <SheetsAdapter>
+            <StandaloneSheetsEditor
               ref={spreadsheetRef}
               docState={docState}
               hidden={editorHidden}
               onEditorLoadResult={onEditorLoadResult}
-              editorInitializationConfig={editorConfig.current.editorInitializationConfig}
+              editorInitializationConfig={editorInitializationConfig}
               systemMode={systemMode}
               editingLocked={editingLocked || userMode === EditorUserMode.Preview}
               updateLocalStateToLog={(state) => {
@@ -727,7 +729,7 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
               clientInvoker={bridge.getClientInvoker()}
               isPublicMode={isPublicMode}
             />
-          </SpreadsheetProvider>
+          </SheetsAdapter>
         </ErrorBoundary>
       </SheetsLayout>
     )
