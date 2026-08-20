@@ -1,9 +1,9 @@
 import { useEffect, useMemo, useState } from 'react';
 
-import { useBookmarks } from '@proton/drive-store/store/_bookmarks/useBookmarks';
-import { usePublicSessionUser } from '@proton/drive-store/store/_user';
 import useLoading from '@proton/hooks/useLoading';
 
+import { useBookmarks } from '../../store/_bookmarks/useBookmarks';
+import { usePublicSessionUser } from '../../store/_user';
 import { Actions, countActionWithTelemetry } from '../../utils/telemetry';
 
 export interface Props {
@@ -32,7 +32,6 @@ export const useDocsBookmarks = ({ token, urlPassword, customPassword }: Props) 
         return () => {
             abortControler.abort();
         };
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [user, UID]);
 
     const isAlreadyBookmarked = useMemo(() => {
