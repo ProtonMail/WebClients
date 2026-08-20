@@ -19,7 +19,7 @@ interface SettingsIconRowProps {
 
 const SettingsIconRow = ({ icon: Icon, centered = true, children, className }: SettingsIconRowProps) => {
     return (
-        <div className={clsx('settings-icon-row grid gap-3', centered && 'items-center', className)}>
+        <div className={clsx('settings-icon-row w-full grid gap-3', centered && 'items-center', className)}>
             {Icon ? <Icon className="settings-icon-row-icon shrink-0 color-weak" size={6} /> : <span aria-hidden />}
             {children}
         </div>
