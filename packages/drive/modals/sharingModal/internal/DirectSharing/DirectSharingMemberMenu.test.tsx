@@ -2,7 +2,7 @@ import { MemberRole, NonProtonInvitationState } from '@protontech/drive-sdk';
 import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { usePopperAnchor } from '@proton/components';
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import useLoading from '@proton/hooks/useLoading';
 import noop from '@proton/utils/noop';
 
@@ -10,7 +10,9 @@ import type { DirectSharingRole } from '../interfaces';
 import { useEditorsManageAccessContext } from '../useEditorsManageAccess';
 import { DirectSharingMemberMenu } from './DirectSharingMemberMenu';
 
-jest.mock('@proton/components/components/popper/usePopperAnchor');
+jest.mock('@proton/atoms/Popper/usePopperAnchor', () => ({
+    usePopperAnchor: jest.fn(),
+}));
 jest.mock('@proton/hooks/useLoading');
 jest.mock('@proton/utils/noop');
 jest.mock('@proton/unleash/useFlag', () => jest.fn(() => false));
