@@ -3021,6 +3021,9 @@
       "Mexico": [
         "Messico"
       ],
+      "Micronesia": [
+        "Micronesia"
+      ],
       "Moldova": [
         "Moldavia"
       ],
@@ -4688,6 +4691,9 @@
       "Could not generate the device profile. Please try again.": [
         "Non è stato possibile creare il profilo del dispositivo. Riprova."
       ],
+      "Could not grant access to the organization key": [
+        "Impossibile concedere l'accesso alla chiave dell'organizzazione"
+      ],
       "Couldn't load invoices. Please try again later.": [
         "Impossibile caricare le fatture. Riprova più tardi."
       ],
@@ -5016,6 +5022,14 @@
       "Role assignment could not be completed for ${ errors.length } member": [
         "Impossibile completare l'assegnazione del ruolo per ${ errors.length } membro",
         "Impossibile completare l'assegnazione del ruolo per ${ errors.length } membri"
+      ],
+      "Role assignment could not be completed for ${ failedCount } group": [
+        "Impossibile completare l'assegnazione del ruolo per ${ failedCount } gruppo",
+        "Impossibile completare l'assegnazione del ruolo per ${ failedCount } gruppi"
+      ],
+      "Role assignment could not be completed for ${ failedCount } user": [
+        "L'assegnazione dei ruoli non ha potuto essere completata per ${ failedCount } utente.",
+        "L'assegnazione dei ruoli non ha potuto essere completata per ${ failedCount } utenti."
       ],
       "Server not found": [
         "Server non trovato"
@@ -7864,9 +7878,6 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Se perdi il tuo dispositivo abilitato al secondo fattore, questi codici possono essere usati al posto del codice di 6 cifre dell'autenticazione a due fattori per accedere al tuo account. Ogni codice può essere usato una sola volta."
       ],
-      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
-        "Se hai perso l'accesso alla tua app di autenticazione, puoi usare 1 dei 16 codici di recupero di backup forniti quando hai configurato l'autenticazione a due fattori. ${ learnMoreLink }"
-      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Se procedi con il downgrade, perderai l'accesso alle funzionalità a pagamento di ${ MAIL_APP_NAME } e ${ VPN_APP_NAME }."
       ],
@@ -8651,6 +8662,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Dato che sei un utente fedele, il tuo account ha funzionalità aggiuntive abilitate."
       ],
+      "Smart Routed through a different country.": [
+        "Instradato tramite Smart Routing attraverso un paese diverso."
+      ],
       "Smart Routed through: ${ joinedCountries }.": [
         "Instradamento smart tramite: ${ joinedCountries }."
       ],
@@ -8795,6 +8809,10 @@
       ],
       "The name will be visible to your users while they are signed in.": [
         "Il nome sarà visibile agli utenti durante l'accesso."
+      ],
+      "The process was interrupted for ${ pausedCount } ${ roleAssignmentSource }. Click Continue to resume assigning roles.": [
+        "Il processo è stato interrotto per ${ pausedCount } ${ roleAssignmentSource }. Fai clic su Continua per riprendere l'assegnazione dei ruoli.",
+        "Il processo è stato interrotto per ${ pausedCount } ${ roleAssignmentSource }s. Fai clic su Continua per riprendere l'assegnazione dei ruoli."
       ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
         "Il credito di referral può essere assegnato fino a 2 mesi dopo la fine del periodo di prova del tuo amico, solo se il tuo amico ha sottoscritto un abbonamento."
@@ -9113,6 +9131,9 @@
       ],
       "User activated": [
         "Utente attivato"
+      ],
+      "User roles assigned": [
+        "Ruoli utente assegnati"
       ],
       "Username": [
         "Nome utente"
@@ -9853,6 +9874,9 @@
       ],
       "Account holder": [
         "Titolare del conto"
+      ],
+      "Account holder name": [
+        "Nome intestatario del conto"
       ],
       "Account storage": [
         "Spazio dell'account"
@@ -11463,6 +11487,9 @@
       ],
       "Resend invite link": [
         "Rispedisci il link di invito"
+      ],
+      "Resume role assignment": [
+        "Riprendi l'assegnazione dei ruoli"
       ],
       "Revoke sessions": [
         "Revoca le sessioni"
@@ -13426,6 +13453,11 @@
         "Devi avere accesso alla chiave dell'organizzazione per eseguire questa operazione."
       ]
     },
+    "Payment Method": {
+      "Bank Account": [
+        "Conto bancario"
+      ]
+    },
     "Payment method option": {
       "Apple Pay": [
         "Apple Pay"
@@ -13621,6 +13653,9 @@
       ],
       "Invalid security code": [
         "Codice di sicurezza non valido"
+      ],
+      "Please enter the account holder name": [
+        "Inserisci il nome del titolare del conto"
       ],
       "Something went wrong. Please try again later.": [
         "Si è verificato un errore. Riprova più tardi."
@@ -17006,6 +17041,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Assistente alla scrittura ${ BRAND_NAME } Scribe"
       ],
+      "${ capitalizedSource } role assignment paused": [
+        "Assegnazione del ruolo ${ capitalizedSource } in pausa"
+      ],
       "${ feature } is now active": [
         "${ feature } è adesso attivo"
       ],
@@ -18131,6 +18169,9 @@
       ],
       "Single sign-on": [
         "Single sign-on"
+      ],
+      "Single sign-on (SSO)": [
+        "Single sign-on (SSO)"
       ],
       "SMS verification": [
         "Verifica tramite SMS"
