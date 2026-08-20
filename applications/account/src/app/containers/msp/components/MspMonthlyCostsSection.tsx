@@ -96,7 +96,7 @@ const MspMonthlyCostsSection = () => {
         { label: c('Label').t`Billable licenses`, value: Math.round(billingSummary.TotalBilledLicenses) },
         {
             label: c('Label').t`Cost per license`,
-            value: getSimplePriceString(currency, billingSummary.CostPerLicense * 100),
+            value: getSimplePriceString(billingSummary.CostPerLicenseCurrency, billingSummary.CostPerLicense),
         },
     ];
 
@@ -115,7 +115,7 @@ const MspMonthlyCostsSection = () => {
                     </div>
                     <div className="flex flex-column md:items-end">
                         <p className="m-0 text-bold text-7xl">
-                            {getSimplePriceString(currency, billingSummary.TotalCost * 100)}
+                            {getSimplePriceString(billingSummary.TotalCostCurrency, billingSummary.TotalCost)}
                         </p>
                         <p className="m-0 text-sm color-weak">{c('Label').t`Total cost`}</p>
                     </div>
