@@ -14,7 +14,7 @@ export const InviteSection = () => {
                 <DashboardGridSectionHeader title={c('Label').t`Share your referral link`} />
             </DashboardGrid>
             <DashboardGrid columns={3}>
-                <div className="flex flex-column gap-6 grid-col-span-2">
+                <div className="flex flex-column gap-x-6 gap-y-4 xl:gap-y-6 grid-col-span-2">
                     <DashboardCard className="h-auto">
                         <DashboardCardContent>
                             <InviteShareLink />

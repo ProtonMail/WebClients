@@ -62,7 +62,7 @@ export const DashboardGridSectionTitle = ({
     return (
         <div
             className={clsx(
-                'DashboardGrid-SectionTitle flex gap-2 lg:flex-nowrap justify-space-between',
+                'DashboardGrid-SectionTitle flex gap-2 lg:flex-nowrap justify-space-between items-baseline',
                 hasSubtitle && 'mb-1',
                 className
             )}
