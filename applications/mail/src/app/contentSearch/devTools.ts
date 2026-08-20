@@ -26,3 +26,17 @@ export async function lookupDoc(user: UserModel, userKeys: DecryptedKey[], docId
         db.close();
     }
 }
+
+export async function getIndexByteSize(userId: string): Promise<number> {
+    const db = await openContentSearchDB(userId);
+    try {
+        const store = db.transaction('index_blobs').store;
+        let byteSize = 0;
+        for await (const cursor of store.iterate()) {
+            byteSize += cursor.value.byteLength;
+        }
+        return byteSize;
+    } finally {
+        db.close();
+    }
+}

@@ -7,10 +7,9 @@ import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import Progress from '@proton/components/components/progress/Progress';
 
-import { lookupDoc } from '../../contentSearch/devTools.ts';
+import { getIndexByteSize, lookupDoc } from '../../contentSearch/devTools.ts';
 import { ImportIssueSeverity } from '../../contentSearch/import/Import';
 import { findEncryptedSearchIndexSize } from '../../contentSearch/import/indexSize.ts';
-
 import { useImporter } from '../../contentSearch/import/useImporter';
 
 import './DebugContentSearchView.scss';
@@ -80,6 +79,16 @@ export function DebugContentSearchView() {
                         }}
                     >
                         {c('Action').t`Lookup document`}
+                    </Button>
+                    <Button
+                        size="small"
+                        onClick={async () => {
+                            const size = await getIndexByteSize(user.ID);
+                            console.log('size is', size);
+                            alert(size);
+                        }}
+                    >
+                        {c('Action').t`Get index size on disk`}
                     </Button>
                 </div>
             )}
