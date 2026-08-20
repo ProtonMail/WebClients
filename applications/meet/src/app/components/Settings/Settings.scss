@@ -1,0 +1,7 @@
+.virtual-backgrounds-button {
+	&:hover,
+	&:focus-visible {
+		color: var(--interaction-norm-major-1) !important;
+		background: transparent !important;
+	}
+}
