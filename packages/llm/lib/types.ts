@@ -1,6 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable @typescript-eslint/no-use-before-define */
-import type { CacheId, DownloadResult, LlmFile } from '@proton/llm/lib/downloader';
+import type { CacheId, DownloadResult, LlmFile } from './downloader';
 
 export type PromiseResolve = (value: PromiseLike<void> | void) => void;
 
@@ -243,7 +241,4 @@ interface DownloadErrorMessage {
 export type ParentToIframeMessage = StartDownloadMessage | PauseDownloadMessage;
 
 export type IframeToParentMessage =
-    | IframeReady
-    | DownloadedChunkMessage
-    | DownloadProgressMessage
-    | DownloadErrorMessage;
+    IframeReady | DownloadedChunkMessage | DownloadProgressMessage | DownloadErrorMessage;

@@ -6,29 +6,16 @@ import { useUser } from '@proton/account/user/hooks';
 import { useApi, useNotifications } from '@proton/components';
 import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
 import useStateRef from '@proton/hooks/useStateRef';
-import type { AssistantHooksProps, AssistantRunningActions, GenerateAssistantResult } from '@proton/llm/lib';
-import {
-    CACHING_FAILED,
-    FAILED_TO_DOWNLOAD,
-    MODEL_UNLOADED,
-    PromptRejectedError,
-    UNLOAD_ASSISTANT_TIMEOUT,
-    buildMLCConfig,
-    getGenerationType,
-    queryAssistantModels,
-} from '@proton/llm/lib';
-import { GpuLlmManager } from '@proton/llm/lib/actions';
-import type useAssistantCommons from '@proton/llm/lib/hooks/useAssistantCommons';
-import type {
-    AssistantConfig,
-    DownloadProgressInfo,
-    GenerationCallbackDetails,
-    LlmManager,
-    LlmModel,
-} from '@proton/llm/lib/types';
 import { ASSISTANT_TYPE, ERROR_TYPE, GENERATION_SELECTION_TYPE } from '@proton/shared/lib/assistant';
 import { domIsBusy } from '@proton/shared/lib/busy';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
+
+import { GpuLlmManager } from '../actions';
+import { CACHING_FAILED, FAILED_TO_DOWNLOAD, MODEL_UNLOADED, UNLOAD_ASSISTANT_TIMEOUT } from '../constants';
+import { PromptRejectedError, buildMLCConfig, getGenerationType, queryAssistantModels } from '../helpers';
+import type { AssistantConfig, DownloadProgressInfo, GenerationCallbackDetails, LlmManager, LlmModel } from '../types';
+import type { AssistantHooksProps, AssistantRunningActions, GenerateAssistantResult } from './useAssistant';
+import type useAssistantCommons from './useAssistantCommons';
 
 interface Props {
     commonState: ReturnType<typeof useAssistantCommons>;
@@ -331,7 +318,7 @@ export const useAssistantLocal = ({ commonState, active }: Props): AssistantHook
                         userDownloadedModel: false,
                     }));
                 }
-            } catch { }
+            } catch {}
         })().finally(() => {
             // Reset init promise after init or when init failed so that we can
             // - Start init again if necessary
