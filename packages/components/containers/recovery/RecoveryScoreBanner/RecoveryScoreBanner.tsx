@@ -1,13 +1,12 @@
 import { c } from 'ttag';
 
-import { selectRecoveryState } from '@proton/account/safetyReview/recoveryState/recoveryState';
+import { useRecoveryState } from '@proton/account/safetyReview/recoveryState/useRecoveryState';
 import { Button } from '@proton/atoms/Button/Button';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { SettingsLayoutVariant } from '@proton/components/containers/layout/interface';
 import useConfig from '@proton/components/hooks/useConfig';
 import { SkeletonLoader } from '@proton/components/index';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
-import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { APPS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
@@ -33,7 +32,7 @@ const RecoveryScoreBanner = ({ variant }: Props) => {
     const {
         loading,
         recoveryScore: { score, maxScore },
-    } = useSelector(selectRecoveryState);
+    } = useRecoveryState();
     const { label: scoreLabel, tone: scoreTone } = getRecoveryScoreState(score);
     const scoreHint = getRecoveryScoreHint(score);
     const scoreTitle = getRecoveryScoreTitle(score);
