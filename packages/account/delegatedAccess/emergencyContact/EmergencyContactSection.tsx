@@ -16,7 +16,7 @@ export const EmergencyContactSection = ({ app }: { app: APP_NAMES }) => {
     return (
         <DashboardGrid>
             <DashboardGridSectionHeader title={c('Title').t`Emergency access`} />
-            <div>
+            <div className="empty:hidden">
                 <OutgoingDelegatedAccessProvider>
                     <OutgoingEmergencyContactUpsell app={app} />
                     <OutgoingDelegatedAccessActions />
