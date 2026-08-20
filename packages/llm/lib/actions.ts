@@ -1,6 +1,10 @@
 import type { ChatOptions, WebWorkerEngine } from '@mlc-ai/web-llm';
 
-import type { ServerAssistantInteraction, TransformCallback } from '@proton/llm/lib/formatPrompt';
+import { getTransformForAction } from './actionTransforms';
+import { CACHING_FAILED, GENERAL_STOP_STRINGS, IFRAME_COMMUNICATION_TIMEOUT } from './constants';
+import type { AppCaches, CacheId } from './downloader';
+import { getCachedFiles, storeInCache } from './downloader';
+import type { ServerAssistantInteraction } from './formatPrompt';
 import {
     expandActionToCustomRefineAction,
     formalActionToCustomRefineAction,
@@ -15,12 +19,8 @@ import {
     getCustomStopStringsForAction,
     makeRefineCleanup,
     proofreadActionToCustomRefineAction,
-} from '@proton/llm/lib/formatPrompt';
-
-import { CACHING_FAILED, GENERAL_STOP_STRINGS, IFRAME_COMMUNICATION_TIMEOUT } from './constants';
-import type { AppCaches, CacheId } from './downloader';
-import { getCachedFiles, storeInCache } from './downloader';
-import { isAssistantPostMessage, makeTransformWriteFullEmail, postMessageParentToIframe } from './helpers';
+} from './formatPrompt';
+import { isAssistantPostMessage, postMessageParentToIframe } from './helpers';
 import { BaseRunningAction } from './runningAction';
 import type {
     Action,
@@ -122,7 +122,6 @@ export class GpuLlmModel implements LlmModel {
         this.manager.unload();
     }
 
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     async performAction(action: Action, callback: GenerationCallback): Promise<RunningAction> {
         switch (action.type) {
             case 'writeFullEmail':
@@ -412,15 +411,6 @@ export function getPromptForAction(action: Action) {
             return formatPromptCustomRefine(action);
         default:
             throw Error('unimplemented');
-    }
-}
-
-export function getTransformForAction(action: Action): TransformCallback {
-    switch (action.type) {
-        case 'writeFullEmail':
-            return makeTransformWriteFullEmail(action.sender);
-        default:
-            return makeRefineCleanup(action);
     }
 }
 

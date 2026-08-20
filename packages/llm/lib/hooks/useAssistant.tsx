@@ -1,11 +1,11 @@
 import { createContext, useContext, useMemo } from 'react';
 
 import type { AssistantSubscriptionStatus } from '@proton/components/hooks/assistant/useAssistantSubscriptionStatus';
-import type { AssistantError } from '@proton/llm/lib/hooks/useAssistantErrors';
-import { AssistantErrorTypes } from '@proton/llm/lib/hooks/useAssistantErrors';
 import type { ASSISTANT_TYPE, ERROR_TYPE } from '@proton/shared/lib/assistant';
 
 import type { Action, AssistantConfig, GenerationCallback, OpenedAssistant, OpenedAssistantStatus } from '../types';
+import type { AssistantError } from './useAssistantErrors';
+import { AssistantErrorTypes } from './useAssistantErrors';
 
 export interface GenerateAssistantResult {
     assistantID: string;
