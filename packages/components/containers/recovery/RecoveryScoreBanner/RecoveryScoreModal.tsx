@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { type RecoveryItemIds, selectRecoveryState } from '@proton/account/safetyReview/recoveryState/recoveryState';
+import type { RecoveryItemIds } from '@proton/account/safetyReview/recoveryState/recoveryState';
+import { useRecoveryState } from '@proton/account/safetyReview/recoveryState/useRecoveryState';
 import { Button } from '@proton/atoms/Button/Button';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Modal from '@proton/components/components/modalTwo/Modal';
@@ -12,7 +13,6 @@ import { IcCheckmarkCircle } from '@proton/icons/icons/IcCheckmarkCircle';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 import { IcCircleRadioEmpty } from '@proton/icons/icons/IcCircleRadioEmpty';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
-import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { APPS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
@@ -31,7 +31,7 @@ const RecoveryScoreModal = ({ onClose, ...rest }: ModalProps) => {
     const {
         recoveryScore: { score, maxScore },
         recoveryItems,
-    } = useSelector(selectRecoveryState);
+    } = useRecoveryState();
     const availableItems = recoveryItems.filter((item) => item.isAvailable);
     const checkedItems: RecoveryScoreModalItem[] = availableItems
         .filter((item) => item.isEnabled && item.countsTowardScore !== false)
