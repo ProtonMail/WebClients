@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import type { IconName } from '@proton/icons/types';
+import { APPS } from '@proton/shared/lib/constants';
 import appleAppStoreImage from '@proton/styles/assets/img/vpn/download-section/apple-app-store.svg';
 import googlePlayStoreImage from '@proton/styles/assets/img/vpn/download-section/google-play-store.svg';
 
@@ -221,7 +222,7 @@ const downloadData = [
 ];
 
 const PassDownloadSection = () => {
-    return <DashboardDownloadSection downloadConfig={downloadData} />;
+    return <DashboardDownloadSection downloadConfig={downloadData} app={APPS.PROTONPASS} />;
 };
 
 export default PassDownloadSection;
