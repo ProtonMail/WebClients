@@ -25,15 +25,24 @@ export const passwordReminderListener = (startListening: SharedStartListening<Re
             const previousUserSettings = selectUserSettings(previousState);
             const currentUserSettings = selectUserSettings(currentState);
 
-            // The organization is fetched lazily, so recompute once it lands: it decides
-            // whether an admin counts as belonging to an organization.
+            // The organization decides whether an admin counts as belonging to an organization,
+            // and so which feature gate applies. It's fetched lazily, so wait for it: computing
+            // while it's missing evaluates an org user as an individual, which shows them the
+            // reminders until it lands and they're hidden again. Nothing here triggers the fetch,
+            // UserDropdown -> useUserDropdownInfo -> useOrganization does, in every app.
             const previousOrganization = selectOrganization(previousState);
             const currentOrganization = selectOrganization(currentState);
+            // A `fetchedAt` of 0 means the value is awaiting a refetch: a cached free organization
+            // whose user has since turned paid still holds the dummy organization until it lands.
+            const hasOrganization = currentOrganization.value !== undefined && currentOrganization.meta.fetchedAt !== 0;
 
             return (
-                currentUser !== previousUser ||
-                currentUserSettings !== previousUserSettings ||
-                currentOrganization !== previousOrganization
+                (currentUser !== previousUser ||
+                    currentUserSettings !== previousUserSettings ||
+                    currentOrganization !== previousOrganization) &&
+                hasOrganization &&
+                currentUser.value !== undefined &&
+                currentUserSettings.value !== undefined
             );
         },
         effect: async (action, listenerApi) => {
