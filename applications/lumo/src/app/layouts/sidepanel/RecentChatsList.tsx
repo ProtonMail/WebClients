@@ -1,9 +1,11 @@
-import { memo } from 'react';
+import { memo, useState } from 'react';
 
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { LumoLink } from '../../components/Links/LumoLink';
+import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
+import { useIsTouchDevice } from '../../hooks/useIsTouchDevice';
 import type { Conversation, ConversationId } from '../../types';
 import { ConversationExpirationIndicator } from './ConversationExpirationIndicator';
 import { ConversationSidebarActions } from './ConversationSidebarActions';
@@ -18,6 +20,11 @@ export interface ConversationListItemProps {
 export const ConversationListItem = memo(
     ({ conversation, isSelected, showDropdown, onItemClick }: ConversationListItemProps) => {
         const label = conversation.title.trim() || c('collider_2025:Button').t`Untitled chat`;
+        const { isSmallScreen } = useIsLumoSmallScreen();
+        const isTouchDevice = useIsTouchDevice();
+        const [isHovered, setIsHovered] = useState(false);
+        const alwaysShowActions = isSmallScreen || isTouchDevice;
+        const shouldMountActions = showDropdown && (alwaysShowActions || isHovered);
 
         return (
             <li
@@ -27,6 +34,8 @@ export const ConversationListItem = memo(
                     'hover:bg-weak rounded-md transition-colors text-sm',
                     isSelected && 'is-active'
                 )}
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
             >
                 <LumoLink
                     to={`/c/${conversation.id}`}
@@ -41,7 +50,7 @@ export const ConversationListItem = memo(
                         {label}
                     </span>
                 </LumoLink>
-                {showDropdown && (
+                {shouldMountActions && (
                     <div className="relative z-1 ml-auto pl-1 shrink-0">
                         <ConversationSidebarActions conversation={conversation} />
                     </div>
