@@ -8,6 +8,7 @@ import { moveEmailsDefinition } from './skills/organise/moveEmails';
 import { setLocationReadDefinition } from './skills/organise/setLocationRead';
 import { setReadDefinition } from './skills/organise/setRead';
 import { setStarredDefinition } from './skills/organise/setStarred';
+import { findContactsDefinition } from './skills/reads/findContacts';
 import { listFiltersDefinition } from './skills/reads/listFilters';
 import { listFoldersDefinition } from './skills/reads/listFolders';
 import { listLabelsDefinition } from './skills/reads/listLabels';
@@ -102,6 +103,22 @@ const TOOL_PAYLOADS = [
     payloads(listFiltersDefinition, [
         { filters: [] },
         { filters: [{ reference: 'filter-q1w2e3', name: 'Newsletters', enabled: true }] },
+    ]),
+    payloads(findContactsDefinition, [
+        { query: 'ada', matches: [], total: 0, addressBookIsEmpty: true },
+        { query: 'ada', matches: [], total: 0, addressBookIsEmpty: false },
+        {
+            query: 'ada',
+            matches: [{ reference: 'contact-k9d2s1', name: 'Ada Lovelace', email: 'ada@example.com' }],
+            total: 1,
+            addressBookIsEmpty: false,
+        },
+        {
+            query: null,
+            matches: [{ reference: 'contact-k9d2s1', name: 'Ada Lovelace', email: 'ada@example.com' }],
+            total: 60,
+            addressBookIsEmpty: false,
+        },
     ]),
     payloads(moveEmailsDefinition, [undefined]),
     payloads(setStarredDefinition, [undefined]),
