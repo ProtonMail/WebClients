@@ -10,6 +10,7 @@ interface BackgroundTileProps {
     isPending?: boolean;
     disabled?: boolean;
     style?: React.CSSProperties;
+    className?: string;
     children?: React.ReactNode;
 }
 
@@ -20,6 +21,7 @@ export const BackgroundTile = ({
     isPending = false,
     disabled,
     style,
+    className,
     children,
 }: BackgroundTileProps) => {
     return (
@@ -34,9 +36,10 @@ export const BackgroundTile = ({
             disabled={disabled}
             onClick={onClick}
             className={clsx(
-                'background-tile flex items-center justify-center w-full ratio-16/9 rounded-lg border color-norm transition-all',
-                isSelected ? 'border-2 border-currentcolor' : 'border-transparent',
-                disabled && 'opacity-50'
+                'background-tile flex items-center justify-center w-full ratio-16/9 rounded-lg border border-2 color-norm transition-all',
+                isSelected ? 'border-currentcolor' : 'border-transparent',
+                disabled && 'opacity-50',
+                className
             )}
             style={style}
         >
