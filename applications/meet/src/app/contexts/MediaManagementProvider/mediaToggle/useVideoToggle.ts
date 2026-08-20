@@ -23,6 +23,7 @@ import {
     createBackgroundProcessor,
     createCustomBackgroundProcessor,
     ensureBackgroundProcessor,
+    supportsBackgroundEffects,
 } from '../../../processors/background-processor/createBackgroundProcessor';
 import type {
     BackgroundBlurProcessor,
@@ -30,8 +31,11 @@ import type {
     CustomBackgroundProcessor,
 } from '../../../processors/background-processor/types';
 import type { SwitchActiveDevice, ToggleVideoType } from '../../../types';
-import { getPersistedBackgroundBlur, persistBackgroundBlur } from '../../../utils/backgroundBlurPersistance';
 import { isDummyVideoTrack, markVideoTrackDeviceBacked } from '../../../utils/dummyVideoTrack';
+import {
+    getPersistedBackgroundBlur,
+    persistBackgroundBlur,
+} from '../../../utils/virtualBackgrounds/backgroundBlurPersistance';
 import {
     getPersistedVirtualBackground,
     persistVirtualBackground,
@@ -102,6 +106,7 @@ export const useVideoToggle = ({
     const preventAutoApplyingBlur = useRef(false);
 
     const backgroundBlurProcessorInstanceRef = useRef<BackgroundBlurProcessor | null>(null);
+    const backgroundBlurProcessorCreationRef = useRef<Promise<BackgroundBlurProcessor | null> | null>(null);
     const customBackgroundProcessorInstanceRef = useRef<CustomBackgroundProcessor | null>(null);
     const customBackgroundProcessorCreationRef = useRef<Promise<CustomBackgroundProcessor | null> | null>(null);
 
@@ -140,19 +145,20 @@ export const useVideoToggle = ({
         }
     };
 
-    const attachBackgroundBlurProcessor = useStableCallback(async () => {
+    const attachBackgroundBlurProcessor = useStableCallback(async (blurProcessor?: BackgroundBlurProcessor | null) => {
         if (processorAttachInProgress.current) {
             return ATTACH_SKIPPED;
         }
 
         processorAttachInProgress.current = true;
 
+        const processorToAttach = blurProcessor ?? backgroundBlurProcessorInstanceRef.current;
         const videoTrack = getCurrentVideoTrack();
-        const isSwappingProcessor = !isProcessorAttached(backgroundBlurProcessorInstanceRef.current);
+        const isSwappingProcessor = !isProcessorAttached(processorToAttach);
 
         try {
             return await withBlankedRawFrames(videoTrack, isSwappingProcessor, async () => {
-                const result = await ensureBackgroundProcessor(videoTrack, backgroundBlurProcessorInstanceRef.current);
+                const result = await ensureBackgroundProcessor(videoTrack, processorToAttach);
 
                 if (result?.waitUntilBlurApplied) {
                     const { waitUntilBlurApplied } = result;
@@ -384,21 +390,33 @@ export const useVideoToggle = ({
         recordBackgroundEffect('none');
     };
 
-    const applyBackgroundEffect = useStableCallback(async (effect: BackgroundEffect) => {
-        const isCameraLive = hasLiveCameraTrack();
+    const ensureBackgroundBlurProcessorInstance = useStableCallback(async () => {
+        if (backgroundBlurProcessorInstanceRef.current) {
+            return backgroundBlurProcessorInstanceRef.current;
+        }
 
+        const creation = backgroundBlurProcessorCreationRef.current;
+        const processor = await creation;
+
+        return backgroundBlurProcessorCreationRef.current === creation ? processor : null;
+    });
+
+    const applyBackgroundEffect = useStableCallback(async (effect: BackgroundEffect) => {
         if (effect === 'none') {
             backgroundBlurProcessorInstanceRef.current?.disable?.();
             customBackgroundProcessorInstanceRef.current?.disable?.();
             cancelBackgroundEffectInitialization();
         } else if (effect === 'blur') {
-            if (!backgroundBlurProcessorInstanceRef.current) {
+            // The processor is still loading when blur is picked right after landing on the page.
+            const blurProcessor = await ensureBackgroundBlurProcessorInstance();
+
+            if (!blurProcessor) {
                 reportError('The background blur processor is unavailable', { context: { effect } });
                 return;
             }
 
-            if (isCameraLive) {
-                const processor = await attachBackgroundBlurProcessor();
+            if (hasLiveCameraTrack()) {
+                const processor = await attachBackgroundBlurProcessor(blurProcessor);
 
                 if (!processor) {
                     reportError('Failed to attach the background blur processor', { context: { effect } });
@@ -425,7 +443,7 @@ export const useVideoToggle = ({
                 return;
             }
 
-            if (isCameraLive) {
+            if (hasLiveCameraTrack()) {
                 const processor = await attachCustomBackgroundProcessor();
 
                 if (!processor) {
@@ -538,8 +556,11 @@ export const useVideoToggle = ({
     useEffect(() => {
         let cancelled = false;
 
+        const creation = createBackgroundProcessor(false, backgroundProcessorVersion);
+        backgroundBlurProcessorCreationRef.current = creation;
+
         void (async () => {
-            const processor = await createBackgroundProcessor(false, backgroundProcessorVersion);
+            const processor = await creation;
 
             // The effect was cleaned up before the implementation finished loading,
             // so tear down the freshly created processor instead of keeping it.
@@ -554,6 +575,7 @@ export const useVideoToggle = ({
 
         return () => {
             cancelled = true;
+            backgroundBlurProcessorCreationRef.current = null;
             backgroundBlurProcessorInstanceRef.current?.disable?.();
             void backgroundBlurProcessorInstanceRef.current?.destroy?.();
         };
@@ -589,6 +611,8 @@ export const useVideoToggle = ({
 
     const appliedBackgroundEffect: BackgroundEffect = virtualBackgroundId ?? (backgroundBlur ? 'blur' : 'none');
 
+    const isBackgroundBlurSupported = useMemo(() => supportsBackgroundEffects(), []);
+
     return {
         toggleVideo: debouncedToggleVideo,
         handleRotateCamera,
@@ -600,6 +624,6 @@ export const useVideoToggle = ({
         selectBackgroundEffect,
         isVideoEnabled: isCameraEnabled,
         facingMode,
-        isBackgroundBlurSupported: !!backgroundBlurProcessorInstanceRef.current,
+        isBackgroundBlurSupported,
     };
 };

@@ -1,7 +1,5 @@
 import { c } from 'ttag';
 
-import { IcCircleSlash } from '@proton/icons/icons/IcCircleSlash';
-import { IcMeetBlur } from '@proton/icons/icons/IcMeetBlur';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { selectActiveCameraId } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
 import { selectIsScreenShare } from '@proton/meet/store/slices/screenShareStatusSlice';
@@ -13,9 +11,9 @@ import { SideBar } from '../../atoms/SideBar/SideBar';
 import { SideBarSection } from '../../atoms/SideBarSection/SideBarSection';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import type { BackgroundEffect } from '../../utils/virtualBackgrounds/virtualBackgrounds';
-import { VIRTUAL_BACKGROUNDS, getVirtualBackgroundLabel } from '../../utils/virtualBackgrounds/virtualBackgrounds';
 import { BackgroundPreview } from './BackgroundPreview';
 import { BackgroundTile } from './BackgroundTile';
+import { getBackgroundEffectOptions, getVirtualBackgroundOptions } from './backgroundOptions';
 
 export const Backgrounds = () => {
     const dispatch = useMeetDispatch();
@@ -69,25 +67,18 @@ export const Backgrounds = () => {
                             role="listbox"
                             aria-label={c('Aria').t`Background effects`}
                         >
-                            <BackgroundTile
-                                label={c('Action').t`No effect`}
-                                isSelected={selectedEffect === 'none'}
-                                isPending={pendingBackgroundEffect === 'none'}
-                                disabled={!isBackgroundBlurSupported}
-                                onClick={() => handleSelectEffect('none')}
-                            >
-                                <IcCircleSlash size={6} />
-                            </BackgroundTile>
-
-                            <BackgroundTile
-                                label={c('Action').t`Blur background`}
-                                isSelected={selectedEffect === 'blur'}
-                                isPending={pendingBackgroundEffect === 'blur'}
-                                disabled={!isBackgroundBlurSupported}
-                                onClick={() => handleSelectEffect('blur')}
-                            >
-                                <IcMeetBlur size={6} />
-                            </BackgroundTile>
+                            {getBackgroundEffectOptions().map(({ effect, label, Icon }) => (
+                                <BackgroundTile
+                                    key={effect}
+                                    label={label}
+                                    isSelected={selectedEffect === effect}
+                                    isPending={pendingBackgroundEffect === effect}
+                                    disabled={!isBackgroundBlurSupported}
+                                    onClick={() => handleSelectEffect(effect)}
+                                >
+                                    <Icon size={6} />
+                                </BackgroundTile>
+                            ))}
                         </div>
 
                         {!isBackgroundBlurSupported && (
@@ -103,14 +94,14 @@ export const Backgrounds = () => {
                             role="listbox"
                             aria-label={c('Aria').t`Virtual backgrounds`}
                         >
-                            {VIRTUAL_BACKGROUNDS.map(({ id, color }) => (
+                            {getVirtualBackgroundOptions().map(({ effect, label, color }) => (
                                 <BackgroundTile
-                                    key={id}
-                                    label={getVirtualBackgroundLabel(id)}
-                                    isSelected={selectedEffect === id}
-                                    isPending={pendingBackgroundEffect === id}
+                                    key={effect}
+                                    label={label}
+                                    isSelected={selectedEffect === effect}
+                                    isPending={pendingBackgroundEffect === effect}
                                     disabled={!isBackgroundBlurSupported}
-                                    onClick={() => handleSelectEffect(id)}
+                                    onClick={() => handleSelectEffect(effect)}
                                     style={{ backgroundColor: color }}
                                 />
                             ))}

@@ -3,6 +3,7 @@ import { useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import { IcImage } from '@proton/icons/icons/IcImage';
 import { IcMeetCamera } from '@proton/icons/icons/IcMeetCamera';
 import { IcMeetCameraOff } from '@proton/icons/icons/IcMeetCameraOff';
 import { IcMeetMicrophoneOff } from '@proton/icons/icons/IcMeetMicrophoneOff';
@@ -22,6 +23,7 @@ import {
 import type { SerializableDeviceInfo } from '@proton/meet/utils/deviceUtils';
 import { filterDevices, isDefaultDevice, resolveDevice } from '@proton/meet/utils/deviceUtils';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { CircleButton } from '../../atoms/CircleButton/CircleButton';
@@ -36,6 +38,7 @@ import { AudioSettingsDropdown } from '../AudioSettings/AudioSettingsDropdown';
 import { DeviceSelect } from '../DeviceSelect/DeviceSelect';
 import { MicrophoneWithVolumeWithMicrophoneStateDirect } from '../MicrophoneWithVolume';
 import { ParticipantPlaceholder } from '../ParticipantPlaceholder/ParticipantPlaceholder';
+import { PrejoinBackgrounds } from '../PrejoinBackgrounds/PrejoinBackgrounds';
 import { VideoPreview } from '../VideoPreview/VideoPreview';
 import { VideoSettingsDropdown } from '../VideoSettings/VideoSettingsDropdown';
 
@@ -78,7 +81,10 @@ export const DeviceSettings = ({
     const cameras = useMeetSelector(selectCameras);
     const microphones = useMeetSelector(selectMicrophones);
     const speakers = useMeetSelector(selectSpeakers);
-    const { handleRotateCamera, facingMode, handleMicrophoneToggle, handleCameraToggle } = useMediaManagementContext();
+    const { handleRotateCamera, facingMode, handleMicrophoneToggle, handleCameraToggle, isBackgroundBlurSupported } =
+        useMediaManagementContext();
+
+    const isVirtualBackgroundEnabled = useFlag('MeetVirtualBackground');
 
     const noCameraPermission = camera !== 'granted';
     const noMicrophonePermission = microphone !== 'granted';
@@ -108,6 +114,7 @@ export const DeviceSettings = ({
 
     const [isAudioSettingsOpen, setIsAudioSettingsOpen] = useState(false);
     const [isVideoSettingsOpen, setIsVideoSettingsOpen] = useState(false);
+    const [isBackgroundsOpen, setIsBackgroundsOpen] = useState(false);
     const { isLoading: isDeviceLoading, withLoading } = useDeviceLoading();
 
     const filteredMicrophones = useMemo(() => filterDevices(microphones), [microphones]);
@@ -192,6 +199,15 @@ export const DeviceSettings = ({
     };
 
     const { backgroundColor, profileColor } = getParticipantDisplayColorsByIndex(colorIndex);
+
+    const canSelectBackgrounds = isVirtualBackgroundEnabled && !isMobile();
+    const backgroundsButtonLabel = c('Alt').t`Backgrounds`;
+
+    const handleBackgroundsToggle = () => {
+        setIsBackgroundsOpen(!isBackgroundsOpen);
+        setIsAudioSettingsOpen(false);
+        setIsVideoSettingsOpen(false);
+    };
 
     return (
         <div
@@ -280,63 +296,104 @@ export const DeviceSettings = ({
                         tooltipPlacement="top"
                     />
                 </div>
+
+                {canSelectBackgrounds && (
+                    <div
+                        className="absolute right-custom bottom-custom z-custom"
+                        style={{
+                            '--right-custom': '1.5rem',
+                            '--bottom-custom': isLargerThanMd ? '2rem' : '1.5rem',
+                            '--z-custom': '2',
+                        }}
+                    >
+                        <CircleButton
+                            className="border white-border"
+                            onClick={handleBackgroundsToggle}
+                            IconComponent={IcImage}
+                            variant={'transparent'}
+                            noBorder={false}
+                            buttonStyle={circleButtonStyle}
+                            ariaLabel={backgroundsButtonLabel}
+                            ariaPressed={isBackgroundsOpen}
+                            ariaExpanded={isBackgroundsOpen}
+                            disabled={!isBackgroundBlurSupported}
+                            tooltipTitle={backgroundsButtonLabel}
+                            tooltipClassName="meet-tooltip--nowrap"
+                            tooltipPlacement="top"
+                        />
+                    </div>
+                )}
             </div>
             {!isMobile() && (
-                <div className="device-selectors flex flex-nowrap gap-2 mt-2">
-                    <DeviceSelect
-                        label={microphoneLabel}
-                        icon="meet-microphone"
-                        title={c('Label').t`Audio`}
-                        disabled={microphoneHasWarning}
-                        isOpen={isAudioSettingsOpen}
-                        setIsOpen={(newIsOpen) => {
-                            setIsAudioSettingsOpen(newIsOpen);
+                <div className="relative">
+                    {isBackgroundsOpen && (
+                        <div className="absolute top-0 left-0 w-full">
+                            <PrejoinBackgrounds onClose={() => setIsBackgroundsOpen(false)} />
+                        </div>
+                    )}
+                    <div
+                        className={clsx(
+                            'device-selectors flex flex-nowrap gap-2 mt-2',
+                            isBackgroundsOpen && 'visibility-hidden'
+                        )}
+                    >
+                        <DeviceSelect
+                            label={microphoneLabel}
+                            icon="meet-microphone"
+                            title={c('Label').t`Audio`}
+                            disabled={microphoneHasWarning}
+                            isOpen={isAudioSettingsOpen}
+                            setIsOpen={(newIsOpen) => {
+                                setIsAudioSettingsOpen(newIsOpen);
 
-                            if (newIsOpen) {
-                                setIsVideoSettingsOpen(false);
-                            }
-                        }}
-                        Content={AudioSettingsDropdown}
-                        contentProps={{
-                            microphones: filteredMicrophones,
-                            speakers: filteredSpeakers,
-                            handleInputDeviceChange: handleMicrophoneChange,
-                            handleOutputDeviceChange: handleOutputDeviceChange,
-                            audioDeviceId: selectedMicrophoneId,
-                            activeOutputDeviceId: selectedAudioOutputDeviceId,
-                            microphoneState,
-                            speakerState,
-                            isMicrophoneLoading: (deviceId: string) => isDeviceLoading('microphone', deviceId),
-                            isSpeakerLoading: (deviceId: string) => isDeviceLoading('speaker', deviceId),
-                            withMicrophoneLoading: (deviceId: string, operation: () => Promise<void>) =>
-                                withLoading('microphone', deviceId, operation),
-                            withSpeakerLoading: (deviceId: string, operation: () => Promise<void>) =>
-                                withLoading('speaker', deviceId, operation),
-                        }}
-                    />
-                    <DeviceSelect
-                        label={cameraLabel}
-                        icon="meet-camera"
-                        title={c('Label').t`Video`}
-                        disabled={cameraHasWarning}
-                        isOpen={isVideoSettingsOpen}
-                        setIsOpen={(newIsOpen) => {
-                            setIsVideoSettingsOpen(newIsOpen);
+                                if (newIsOpen) {
+                                    setIsVideoSettingsOpen(false);
+                                    setIsBackgroundsOpen(false);
+                                }
+                            }}
+                            Content={AudioSettingsDropdown}
+                            contentProps={{
+                                microphones: filteredMicrophones,
+                                speakers: filteredSpeakers,
+                                handleInputDeviceChange: handleMicrophoneChange,
+                                handleOutputDeviceChange: handleOutputDeviceChange,
+                                audioDeviceId: selectedMicrophoneId,
+                                activeOutputDeviceId: selectedAudioOutputDeviceId,
+                                microphoneState,
+                                speakerState,
+                                isMicrophoneLoading: (deviceId: string) => isDeviceLoading('microphone', deviceId),
+                                isSpeakerLoading: (deviceId: string) => isDeviceLoading('speaker', deviceId),
+                                withMicrophoneLoading: (deviceId: string, operation: () => Promise<void>) =>
+                                    withLoading('microphone', deviceId, operation),
+                                withSpeakerLoading: (deviceId: string, operation: () => Promise<void>) =>
+                                    withLoading('speaker', deviceId, operation),
+                            }}
+                        />
+                        <DeviceSelect
+                            label={cameraLabel}
+                            icon="meet-camera"
+                            title={c('Label').t`Video`}
+                            disabled={cameraHasWarning}
+                            isOpen={isVideoSettingsOpen}
+                            setIsOpen={(newIsOpen) => {
+                                setIsVideoSettingsOpen(newIsOpen);
 
-                            if (newIsOpen) {
-                                setIsAudioSettingsOpen(false);
-                            }
-                        }}
-                        Content={VideoSettingsDropdown}
-                        contentProps={{
-                            handleCameraChange,
-                            videoDeviceId: selectedCameraId,
-                            cameras: filteredCameras,
-                            isCameraLoading: (deviceId: string) => isDeviceLoading('camera', deviceId),
-                            withCameraLoading: (deviceId: string, operation: () => Promise<void>) =>
-                                withLoading('camera', deviceId, operation),
-                        }}
-                    />
+                                if (newIsOpen) {
+                                    setIsAudioSettingsOpen(false);
+                                    setIsBackgroundsOpen(false);
+                                }
+                            }}
+                            Content={VideoSettingsDropdown}
+                            contentProps={{
+                                handleCameraChange,
+                                videoDeviceId: selectedCameraId,
+                                cameras: filteredCameras,
+                                isCameraLoading: (deviceId: string) => isDeviceLoading('camera', deviceId),
+                                withCameraLoading: (deviceId: string, operation: () => Promise<void>) =>
+                                    withLoading('camera', deviceId, operation),
+                            }}
+                        />
+                    </div>
                 </div>
             )}
         </div>
