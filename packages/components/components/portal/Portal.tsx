@@ -1,12 +1,1 @@
-import type { ReactNode } from 'react';
-import ReactDOM from 'react-dom';
-
-interface Props {
-    children: ReactNode;
-}
-
-const Portal = ({ children }: Props) => {
-    return ReactDOM.createPortal(children, document.body);
-};
-
-export default Portal;
+export { Portal as default } from '@proton/atoms/Portal/Portal';

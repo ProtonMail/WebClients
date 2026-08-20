@@ -211,12 +211,12 @@ export { default as withPermissionGuard } from './components/orgPermissions/with
 export { default as Pagination } from './components/pagination/Pagination';
 export { default as usePagination } from './components/pagination/usePagination';
 export { default as usePaginationAsync } from './components/pagination/usePaginationAsync';
-export type { ArrowOffset, PopperArrow, PopperPlacement, PopperPosition } from './components/popper/interface';
-export { default as Popper } from './components/popper/Popper';
-export { default as usePopper } from './components/popper/usePopper';
-export { default as usePopperAnchor } from './components/popper/usePopperAnchor';
-export { default as usePopperState } from './components/popper/usePopperState';
-export { allPopperPlacements } from './components/popper/utils';
+export type { ArrowOffset, PopperArrow, PopperPlacement, PopperPosition } from '@proton/atoms/Popper/interface';
+export { Popper } from '@proton/atoms/Popper/Popper';
+export { usePopper } from '@proton/atoms/Popper/usePopper';
+export { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
+export { usePopperState } from '@proton/atoms/Popper/usePopperState';
+export { allPopperPlacements } from '@proton/atoms/Popper/utils';
 export { default as Price } from './components/price/Price';
 export { default as CircularProgress } from './components/progress/CircularProgress';
 export { default as DynamicProgress } from './components/progress/DynamicProgress';
