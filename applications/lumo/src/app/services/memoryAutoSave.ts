@@ -2,6 +2,7 @@ import { quickChat } from '@proton/lumo-api-client';
 import type { Api } from '@proton/shared/lib/interfaces';
 
 import { ENABLE_U2L_ENCRYPTION } from '../llm/config';
+import { selectMasterKey } from '../redux/selectors';
 import {
     appendGeneratedMemoriesThunk,
     updateLumoUserSettings,
@@ -44,7 +45,7 @@ export const maybeAutoSaveMemoriesFromChats = ({ api, dispatch, getState, hasLum
         return;
     }
 
-    if (!state.credentials?.masterKey) {
+    if (!selectMasterKey(state)) {
         return;
     }
 

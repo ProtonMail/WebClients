@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -29,40 +29,43 @@ export const ConversationSidebarActions = ({
         location: 'sidebar',
     });
 
-    const options: DropdownOptions[] = [
-        ...(includeStarOption
-            ? [
-                  {
-                      label: !isStarred ? c('Option').t`Add to favorites` : c('Option').t`Remove from favorites`,
-                      icon: <LumoIcon name="Star" size={16} />,
-                      onClick: (e?: React.MouseEvent) => {
-                          e?.stopPropagation();
-                          handleStarToggle();
+    const options: DropdownOptions[] = useMemo(
+        () => [
+            ...(includeStarOption
+                ? [
+                      {
+                          label: !isStarred ? c('Option').t`Add to favorites` : c('Option').t`Remove from favorites`,
+                          icon: <LumoIcon name="Star" size={16} />,
+                          onClick: (e?: React.MouseEvent) => {
+                              e?.stopPropagation();
+                              handleStarToggle();
+                          },
                       },
-                  },
-              ]
-            : []),
-        ...(onRename
-            ? [
-                  {
-                      label: c('Option').t`Rename`,
-                      icon: <LumoIcon name="Pencil" size={16} />,
-                      onClick: (e?: React.MouseEvent) => {
-                          e?.stopPropagation();
-                          onRename();
+                  ]
+                : []),
+            ...(onRename
+                ? [
+                      {
+                          label: c('Option').t`Rename`,
+                          icon: <LumoIcon name="Pencil" size={16} />,
+                          onClick: (e?: React.MouseEvent) => {
+                              e?.stopPropagation();
+                              onRename();
+                          },
                       },
-                  },
-              ]
-            : []),
-        {
-            label: c('Option').t`Delete`,
-            icon: <LumoIcon name="Trash2" size={16} />,
-            onClick: (e) => {
-                e?.stopPropagation();
-                setShowDeleteFlow(true);
+                  ]
+                : []),
+            {
+                label: c('Option').t`Delete`,
+                icon: <LumoIcon name="Trash2" size={16} />,
+                onClick: (e) => {
+                    e?.stopPropagation();
+                    setShowDeleteFlow(true);
+                },
             },
-        },
-    ];
+        ],
+        [handleStarToggle, includeStarOption, isStarred, onRename]
+    );
 
     return (
         <>

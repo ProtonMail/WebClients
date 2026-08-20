@@ -13,6 +13,7 @@ import {
     updateLumoUserSettingsWithAutoSave,
 } from '../slices/lumoUserSettings';
 import { updatePersonalizationSettings } from '../slices/personalization';
+import { setLumoUserSettingsBootstrapped } from '../slices/meta/initialization';
 import type { AppStartListening } from '../store';
 
 /**
@@ -144,6 +145,8 @@ export function startLumoUserSettingsListeners(startListening: AppStartListening
                 // Personalization data will be synced by the personalization listener when it loads
             } catch (error) {
                 safeLogger.error('Failed to load Lumo user settings from storage:', error);
+            } finally {
+                listenerApi.dispatch(setLumoUserSettingsBootstrapped());
             }
         },
     });

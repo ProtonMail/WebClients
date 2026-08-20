@@ -6,7 +6,6 @@ import bluePainting21 from '@proton/styles/assets/img/lumo/lumo-image-inspiratio
 import brownWood19 from '@proton/styles/assets/img/lumo/lumo-image-inspiration/brownwood19.png';
 import fastCar3 from '@proton/styles/assets/img/lumo/lumo-image-inspiration/fastcar3.png';
 import futureHand13 from '@proton/styles/assets/img/lumo/lumo-image-inspiration/futurehand13.png';
-import grassWord6 from '@proton/styles/assets/img/lumo/lumo-image-inspiration/grassword6.png';
 import greenFuture10 from '@proton/styles/assets/img/lumo/lumo-image-inspiration/greenfuture10.png';
 import greenHill11 from '@proton/styles/assets/img/lumo/lumo-image-inspiration/greenhill11.png';
 import orangeBoard22 from '@proton/styles/assets/img/lumo/lumo-image-inspiration/orangeboard22.png';
@@ -70,14 +69,6 @@ export const INSPIRATION_SUGGESTIONS: InspirationSuggestion[] = [
         getPrompt: () =>
             c('collider_2025:Inspiration suggestion prompt')
                 .t`Photorealistic white T-shirt mockup hanging on a wall inside a modern boutique clothing store, blank white premium cotton T-shirt displayed neatly on a wooden hanger, mounted against a soft pastel-colored wall (light beige, blush pink, or sage green), stylish retail interior in the background with clothing racks and shelves softly blurred, natural daylight mixed with warm ambient store lighting, realistic fabric texture and folds, clean minimal aesthetic, high-end fashion merchandising, shallow depth of field, centered composition, commercial apparel mockup, blank T-shirt ready for custom design placement, ultra-realistic, high resolution, 8k.`,
-    },
-    {
-        id: 'grassword6',
-        img: grassWord6,
-        // translator: Prompt sent to the AI for the grass word inspiration card
-        getPrompt: () =>
-            c('collider_2025:Inspiration suggestion prompt')
-                .t`The word "FLUORISH" formed entirely from lush green grass and natural vegetation, each letter crafted from dense fresh blades of grass, realistic organic texture, vibrant green tones, intricate botanical details, photorealistic nature typography, soft natural sunlight, subtle shadows, highly detailed eco-friendly design, isolated on a clean background, premium 3D lettering, ultra-realistic, 8k, sharp focus, professional advertising quality.`,
     },
     {
         id: 'purpleice7',

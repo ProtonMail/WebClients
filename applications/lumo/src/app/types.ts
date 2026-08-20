@@ -1018,12 +1018,27 @@ export type PopulateInitialStateAction = {
 
 // *** Credentials ***
 
+/**
+ * The master key is fetched and decrypted off the render gate, so consumers have to be able to tell
+ * "not yet" from "never". A single `Base64` conflated three states — absent because we are still
+ * booting, absent because the user is not eligible, and absent because the load failed — and every
+ * consumer's `if (!masterKey)` was ambiguous between them.
+ *
+ * `loading` is the initial state and is the only one that is worth waiting on; see
+ * `redux/sagas/masterKey.ts`.
+ */
+export type MasterKeyState =
+    | { status: 'loading' }
+    | { status: 'ready'; masterKey: Base64 } // CryptoKey (Wrap), base64-encoded
+    | { status: 'ineligible' }
+    | { status: 'failed'; message: string };
+
 export type Credentials = {
-    masterKey: Base64; // CryptoKey (Wrap)
+    masterKeyState: MasterKeyState;
 };
 
 export function isCredentials(obj: any): obj is Credentials {
-    return obj && typeof obj === 'object' && typeof obj.masterKey === 'string';
+    return obj && typeof obj === 'object' && typeof obj.masterKeyState?.status === 'string';
 }
 
 export type MasterKey = {

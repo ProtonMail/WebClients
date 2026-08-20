@@ -11,12 +11,14 @@ import { Input } from '@proton/atoms/Input/Input';
 import { Checkbox, useModalStateObject, useNotifications } from '@proton/components';
 
 import FavoritesUpsellPrompt from '../../components/Guest/FavoritesUpsellPrompt';
+import { ChatHistoryLoadingSkeleton } from '../../components/ChatHistoryLoadingSkeleton';
 import { LumoLink } from '../../components/Links/LumoLink';
 import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import ConfirmDeleteModal from '../../components/Modals/ConfirmDeleteModal';
 import { ProjectIcon } from '../../components/ProjectIcon/ProjectIcon';
 import { useConversationStar } from '../../hooks/useConversationStar';
 import { useDriveFolderIndexing } from '../../hooks/useDriveFolderIndexing';
+import { useIsChatHistoryHydrating } from '../../hooks/useIsChatHistoryHydrating';
 import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
 import { useLumoPlan } from '../../hooks/useLumoPlan';
 import { useSearchService } from '../../hooks/useSearchService';
@@ -508,6 +510,7 @@ export const AllChatsView = () => {
     const { removeIndexedFoldersBySpace } = useDriveFolderIndexing();
     const searchService = useSearchService();
     const { isSmallScreen: isMobileLayout } = useIsLumoSmallScreen();
+    const isChatHistoryHydrating = useIsChatHistoryHydrating();
 
     const [filter, setFilter] = useState<FilterValue>('all');
     const [searchQuery, setSearchQuery] = useState('');
@@ -736,7 +739,7 @@ export const AllChatsView = () => {
 
     const emptyVariant = getAllChatsEmptyVariant(searchQuery, filter);
 
-    const isEmpty = filteredConversations.length === 0;
+    const isEmpty = !isChatHistoryHydrating && filteredConversations.length === 0;
 
     return (
         <LumoLayoutWithDrawer drawer={{ disabled: true }} header={layoutHeader}>
@@ -747,7 +750,11 @@ export const AllChatsView = () => {
                             conversationCount={filteredConversations.length}
                             allSelected={allSelected}
                             someSelected={someSelected}
-                            showSelectAll={!isEmpty && (!isMobileLayout || isSelectionMode)}
+                            showSelectAll={
+                                !isChatHistoryHydrating &&
+                                filteredConversations.length > 0 &&
+                                (!isMobileLayout || isSelectionMode)
+                            }
                             onToggleSelectAll={toggleSelectAll}
                             isMobileLayout={isMobileLayout}
                             isSelectionMode={isSelectionMode}
@@ -770,7 +777,12 @@ export const AllChatsView = () => {
                                     !isMobileLayout && selectedCount > 0 && 'all-chats-has-bulk-selection'
                                 )}
                             >
-                                {isEmpty ? (
+                                {isChatHistoryHydrating ? (
+                                    <ChatHistoryLoadingSkeleton
+                                        rows={12}
+                                        className="flex flex-column gap-2 px-2 pt-4"
+                                    />
+                                ) : isEmpty ? (
                                     <AllChatsEmptyState variant={emptyVariant} />
                                 ) : (
                                     <div style={{ height: `${virtualizer.getTotalSize()}px`, position: 'relative' }}>
