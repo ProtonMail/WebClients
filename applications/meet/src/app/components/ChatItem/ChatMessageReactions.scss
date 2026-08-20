@@ -1,5 +1,7 @@
 .chat-message-reactions {
 	.chat-message-reaction-pill {
+		touch-action: none;
+		user-select: none;
 		padding-block: 0.125rem;
 		padding-inline: 0.375rem;
 		border-radius: 999px;
