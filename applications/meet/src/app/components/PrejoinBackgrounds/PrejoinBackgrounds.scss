@@ -1,0 +1,10 @@
+.prejoin-backgrounds.border {
+	border-color: color-mix(in srgb, var(--background-invert), transparent 96%);
+	background: var(--background-card);
+	box-shadow: 0 0.25rem 0.25rem 0 rgb(0 0 0 / 0.25);
+}
+
+.prejoin-backgrounds-option {
+	flex: 1 1 0;
+	min-inline-size: 0;
+}
