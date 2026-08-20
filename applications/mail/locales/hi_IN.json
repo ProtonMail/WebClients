@@ -636,6 +636,9 @@
       "Get the browser extension": [
         "ब्राउज़र एक्सटेंशन प्राप्त करें"
       ],
+      "Get the deal": [
+        "सौदा लें"
+      ],
       "Get the writing assistant": [
         "लेखन सहायक प्राप्त करें"
       ],
@@ -1720,6 +1723,9 @@
       ],
       "Not now": [
         "अभी नहीं"
+      ],
+      "Set up categories": [
+        "श्रेणियाँ सेट करें"
       ],
       "Skip": [
         "छोड़ें"
@@ -3605,6 +3611,9 @@
       "Mexico": [
         "मेक्सिको"
       ],
+      "Micronesia": [
+        "माइक्रोनेशिया"
+      ],
       "Moldova": [
         "मोल्डोवा"
       ],
@@ -4200,6 +4209,9 @@
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME } के भीतर से ही Gmail पढ़ें, जवाब दें और हर गतिविधि पर नज़र रखें"
+      ],
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "किसी ईमेल पर राइट-क्लिक करें और \"इसमें ले जाएं\" चुनें, या उसे खींचकर दूसरी श्रेणी में छोड़ें। भविष्य में इसी तरह के ईमेल स्वचालित रूप से वहीं व्यवस्थित किए जाएंगे।"
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
         "सीधे ${ MAIL_APP_NAME } में Gmail संदेश भेजें और प्राप्त करें। ${ addressesSettingsLink } में अपना पता कनेक्ट करें।"
@@ -7616,9 +7628,6 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "यदि आप अपने इनबॉक्स में ईमेल नहीं पाते हैं, तो कृपया अपने स्पैम फ़ोल्डर की जाँच करें।"
       ],
-      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
-        "यदि आप अपने ऑथेंटिकेटर ऐप का एक्सेस खो देते हैं, तो आप दो-फैक्टर सत्यापन सेटअप करते समय प्रदान किए गए 16 बैकअप रिकवर कोड में से 1 का उपयोग कर सकते हैं। ${ learnMoreLink }"
-      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "यदि आप डाउनग्रेड के साथ आगे बढ़ते हैं, तो आप ${ MAIL_APP_NAME } और ${ VPN_APP_NAME } सशुल्क सुविधाओं तक पहुंच खो देंगे।"
       ],
@@ -8930,6 +8939,10 @@
       "You have ${ totalLabel } in your inbox.": [
         "आपके इनबॉक्स में ${ totalLabel } है।"
       ],
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "आपकी ${ categoryLabel } श्रेणी में **${ count } बातचीत** है",
+        "आपकी ${ categoryLabel } श्रेणी में **${ count } बातचीत** हैं"
+      ],
       "You have **${ count } conversation** stored in this folder": [
         "आपके पास **${ count } वार्तालाप** इस फ़ोल्डर में संग्रहीत है",
         "आपके पास **${ count } वार्तालाप** इस फ़ोल्डर में संग्रहीत है"
@@ -8937,6 +8950,10 @@
       "You have **${ count } conversation** tagged with this label": [
         "आपने **${ count } बातचीत** को इस लेबल के साथ टैग किया है",
         "आपने **${ count } बातचीत** को इस लेबल के साथ टैग किया है"
+      ],
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "आपकी ${ categoryLabel } श्रेणी में **${ count } संदेश** है",
+        "आपकी ${ categoryLabel } श्रेणी में **${ count } संदेश** हैं"
       ],
       "You have **${ count } message** stored in this folder": [
         "आपके पास **${ count } संदेश** इस फ़ोल्डर में संग्रहीत है",
@@ -8972,6 +8989,14 @@
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "डाउनग्रेड करने से पहले आपको किसी भी अतिरिक्त ${ MAIL_APP_NAME } उपयोगकर्ताओं, पतों और कस्टम डोमेन को अक्षम या निकालना होगा।"
+      ],
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "आपने अपनी ${ categoryLabel } श्रेणी में **${ checked } बातचीत** चुनी है",
+        "आपने अपनी ${ categoryLabel } श्रेणी में **${ checked } बातचीत** चुनी हैं"
+      ],
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "आपने अपनी ${ categoryLabel } श्रेणी में **${ checked } संदेश** चुना है",
+        "आपने अपनी ${ categoryLabel } श्रेणी में **${ checked } संदेश** चुने हैं"
       ],
       "You selected **${ count } conversation** from this folder": [
         "आपने इस फ़ोल्डर से **${ count } वार्तालाप** का चयन किया",
@@ -9532,6 +9557,9 @@
       "ANY": [
         "कोई भी"
       ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "वह सब कुछ जिस पर आपका ध्यान चाहिए, साथ ही अक्षम श्रेणियों के ईमेल"
+      ],
       "App password": [
         "ऐप का पासवर्ड"
       ],
@@ -9792,6 +9820,9 @@
       ],
       "Folder location": [
         "फ़ोल्डर स्थान"
+      ],
+      "Folder name": [
+        "फोल्डर नाम"
       ],
       "Forwards to": [
         "इधर फॉरवर्ड होगा"
@@ -10071,6 +10102,9 @@
       ],
       "Primary": [
         "प्राथमिक"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "मुख्य - वह सब कुछ जिस पर आपका ध्यान चाहिए, साथ ही अक्षम श्रेणियों के ईमेल"
       ],
       "Promotions": [
         "प्रचार"
@@ -14990,6 +15024,9 @@
         "${ selectionCount } संदेश ले जाएँ",
         "${ selectionCount } संदेशों को स्थानांतरित करें"
       ],
+      "Moved to ${ label }. Similar messages will be categorized there in the future.": [
+        "${ label } में ले जाया गया। भविष्य में इसी तरह के संदेश वहीं वर्गीकृत किए जाएंगे।"
+      ],
       "Password copied to clipboard": [
         "पासवर्ड क्लिपबोर्ड पे कॉपी किया"
       ],
@@ -16025,6 +16062,9 @@
       ],
       "Referral": [
         "रेफरल"
+      ],
+      "Refine your Categories": [
+        "अपनी श्रेणियों को परिष्कृत करें"
       ],
       "Remove forwarding address": [
         "फ़ॉरवर्डिंग पता हटाएं"

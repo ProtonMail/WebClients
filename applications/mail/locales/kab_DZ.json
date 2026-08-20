@@ -235,6 +235,9 @@
       "Continue with Outlook": [
         "Kemmel s Outlook"
       ],
+      "Continue without categories": [
+        "Kemmel war taggayin"
+      ],
       "Contract composer": [
         "Sekmec amsuddes"
       ],
@@ -465,6 +468,9 @@
       "Get started": [
         "Bdu"
       ],
+      "Get the deal": [
+        "Faṛes tagnit"
+      ],
       "Get verification code": [
         "Awi tangalt n usentem"
       ],
@@ -684,6 +690,9 @@
       ],
       "Move to Archive": [
         "Awi ar uɣbar"
+      ],
+      "Move to category...": [
+        "Senkez ɣer taggayt..."
       ],
       "Move to folder": [
         "Awi ɣer ukaram"
@@ -1102,6 +1111,9 @@
       "Try another method": [
         "Ɛreḍ tarrayt nniḍen"
       ],
+      "Try categories": [
+        "Ɛreḍ taggayin"
+      ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Ɛreḍ ad teskelseḍ tikkelt niḍen. Asekles yecceḍ ssebba n: ${ saveError }"
       ],
@@ -1235,6 +1247,11 @@
     "action": {
       "Search messages": [
         "Nadi iznan"
+      ]
+    },
+    "Actions": {
+      "Set up categories": [
+        "Sbadu taggayin"
       ]
     },
     "Actions message": {
@@ -2209,6 +2226,9 @@
       "British Indian Ocean Territory": [
         "Timura n ugaraw ahendi abṛitani"
       ],
+      "British Virgin Islands": [
+        "Tigzirin n Lɛeḍra Tibṛiṭaniyin"
+      ],
       "Brunei Darussalam": [
         "Brunay Darussalam"
       ],
@@ -2229,6 +2249,9 @@
       ],
       "Canada": [
         "Kanada"
+      ],
+      "Canary Islands": [
+        "Tigzirin n Kanari"
       ],
       "Cape Verde": [
         "Aqerru azegzaw"
@@ -2262,6 +2285,9 @@
       ],
       "Congo": [
         "Kungu"
+      ],
+      "Congo (The Democratic Republic of the)": [
+        "Kungu (Tagduda Tamagdayt n)"
       ],
       "Congo, Democratic Republic of the": [
         "Kungu, Tagelda Tagdudant n"
@@ -2302,6 +2328,9 @@
       "Dominican Republic": [
         "Tigduda Taduminikit"
       ],
+      "East Timor": [
+        "Timur n Usammar"
+      ],
       "Ecuador": [
         "Ikwaṭur"
       ],
@@ -2334,6 +2363,9 @@
       ],
       "Faroe Islands": [
         "Tigzirin n Faṛwi"
+      ],
+      "Federated States of Micronesia": [
+        "Iwanaken Idduklen n Mikrunizya"
       ],
       "Fiji": [
         "Fiji"
@@ -2407,6 +2439,9 @@
       "Heard Island and McDonald Islands": [
         "Tigzirin n Hird d Tigzirin n MakDunald"
       ],
+      "Holy See (Vatican City State)": [
+        "Aserf Agwerram (Awanek n Iγrem n Vatikan)"
+      ],
       "Honduras": [
         "Hunduṛas"
       ],
@@ -2436,6 +2471,9 @@
       ],
       "Ireland": [
         "Irland"
+      ],
+      "Islamic Republic of Iran": [
+        "Tagduda Taslamiyt n Iran"
       ],
       "Isle of Man": [
         "Tigzirt n Man"
@@ -2467,6 +2505,12 @@
       "Kiribati": [
         "Kiribati"
       ],
+      "Korea (Democratic People's Republic of)": [
+        "Kuriya (Tagduda Tamagdayt Taγerfanet n)"
+      ],
+      "Korea (Republic of)": [
+        "Kuriya (Tagduda n)"
+      ],
       "Kosovo": [
         "Kuṣuvu"
       ],
@@ -2475,6 +2519,9 @@
       ],
       "Kyrgyzstan": [
         "Kirigistan"
+      ],
+      "Lao People's Democratic Republic": [
+        "Tagduda Tamagdayt Taγerfanet n Laos"
       ],
       "Laos": [
         "Lawus"
@@ -2493,6 +2540,9 @@
       ],
       "Libya": [
         "Libya"
+      ],
+      "Libyan Arab Jamahiriya": [
+        "Tajmahirit Taɛrabt n Libia"
       ],
       "Liechtenstein": [
         "Lictencṭayn"
@@ -2541,6 +2591,9 @@
       ],
       "Mexico": [
         "Miksik"
+      ],
+      "Micronesia": [
+        "Mikrunizya"
       ],
       "Moldova": [
         "Muldavya"
@@ -2601,6 +2654,9 @@
       ],
       "North Korea": [
         "Kuriya n Ugafa"
+      ],
+      "North Macedonia": [
+        "Masidunya n Ugafa"
       ],
       "Northern Mariana Islands": [
         "Tigzirin n Maryan Ufella"
@@ -2755,6 +2811,9 @@
       "Svalbard and Jan Mayen": [
         "Svalbard d Jan Mayen"
       ],
+      "Swaziland": [
+        "Swaziland"
+      ],
       "Sweden": [
         "Sswid"
       ],
@@ -2775,6 +2834,9 @@
       ],
       "Tanzania": [
         "Tanẓanya"
+      ],
+      "Tanzania, United Republic of": [
+        "Tanzanya, Tagduda Yeddukklen n"
       ],
       "Thailand": [
         "Ṭayland"
@@ -2972,6 +3034,15 @@
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink } deg yiɣewwaren."
       ],
+      "A blue dot appears when a category has unread messages since your last visit.": [
+        "Taqat tazerqaqt tettban-d mi ara tili taggayt tesɛa iznan ur ttwaɣran ara seg tirza-k taneggarut."
+      ],
+      "Add or remove categories, manage notifications, and adjust your setup anytime in settings.": [
+        "Rnu neɣ kkes taggayin, sefrek ilɣa yerna ẓreg tuqqna-k melmi i tebɣiḍ deg iɣewwaren."
+      ],
+      "Add or remove categories, manage notifications, or turn them off entirely - anytime in Settings.": [
+        "Rnu neɣ kkes taggayin, sefrek ilɣa neɣ sens-iten akk — melmi i tebɣiḍ deg Iɣewwaren."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Tukksa n uwgelhen i yinermasen… Ayagi yezmer ad yeṭṭef kra n tsedidin.\nMi yekfa ukala-agi, ad tizmireḍ ad tsidreḍ afaylu s yinermisen-inek m meṛṛa ttusifḍen."
       ],
@@ -2992,6 +3063,9 @@
       ],
       "No labels": [
         "Ulac tibzimin"
+      ],
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Sit s tqeffalt tayeffust ɣef yimayl syen fren «Senkez ɣer», neɣ zuɣer-it ɣer teggayt nniḍen. Imaylen icuban ad ttwasmizzwren dinna s wudem awurman deg yimal."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Seqdec tawuri Zuɣer Sers iwakken ad tesmizzwireḍ tazwart n usmezdi gar yinermisen. Kkes afran i yinermisen ur tebɣiḍ ara ad tesmezdiḍ."
@@ -3613,6 +3687,9 @@
       ]
     },
     "Error message": {
+      "An error occurred with the categories": [
+        "Tella-d tuccḍa akked taggayin"
+      ],
       "Error: ${ errorMessage }": [
         "Tuccḍa: ${ errorMessage }"
       ],
@@ -4388,6 +4465,9 @@
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } yezmer ad immesten amahil-ik akken igerrez."
       ],
+      "${ MAIL_APP_NAME } now automatically sorts your emails into categories like Primary, Social, Promotions, and more, helping you find and manage messages more easily.": [
+        "${ MAIL_APP_NAME } tura yessismel imaylen-ik s wudem awurman ɣer taggayin am Tagejdant, Timetti, Isemlen d wiyaḍ, akken ad tafeḍ yerna ad tesferkeḍ iznan akken ifessas."
+      ],
       "${ n } unread conversation": [
         "${ n } n udiwenni ur yettwaɣran ara",
         "${ n } n yidiwenniyen ur yettwaɣran ara"
@@ -4589,6 +4669,9 @@
       "Automatically delete messages that have been in trash and spam for more than 30 days.": [
         "Kkes iznan s wudem awurman i yellan deg tqecwalt neɣ deg uspam i wugar n 30 wussan."
       ],
+      "Automatically sort incoming emails into categories": [
+        "Sismel s wudem awurman imaylen i d-ikeččmen ɣer taggayin"
+      ],
       "Background color": [
         "Ini n ugilal"
       ],
@@ -4612,6 +4695,9 @@
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Ur tezmireḍ ara ad d-temmektiḍ awal uffir-inek•m? Nezmer ad k-nɛiwen akken ad tsefḍeḍ isefka iwgelhanen n yinermisen meṛṛa iwgelhen s tsarut-agi akked telɣut n uzgel."
+      ],
+      "Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
+        "Taggayin xeddment am imsizedgen n uspam. ${ MAIL_APP_NAME } werǧin iɣeṛṛ imaylen-ik neɣ ibeṭṭu isefka-k."
       ],
       "Center": [
         "Slemmes"
@@ -5466,6 +5552,9 @@
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Mi tesremdeḍ tisura yettwamanen i ${ senderName }, tisura tizayazin ttwarnant ɣer telɣut n unermis."
       ],
+      "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
+        "S taggayin timaynutin n yimaylen, ala iznan yesɛan azal ad awḍen ɣer tinicin-ik tagejdant. Ayen nniḍen akk yettwasuddes deg taggayin."
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Tebɣiḍ ad d-teṭṭfeḍ tangalt n usenqed tamaynut neɣ ad tesqedceḍ ttawil n usenqed nniḍen?"
       ],
@@ -5502,6 +5591,10 @@
       "You do not have any messages here": [
         "Ur teɛiḍ ula d izen da"
       ],
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "Tesɛiḍ **${ count } udiwenni** deg teggayt ${ categoryLabel }",
+        "Tesɛiḍ **${ count } idiwenniyen** deg teggayt ${ categoryLabel }"
+      ],
       "You have **${ count } conversation** stored in this folder": [
         "Ɣur-k **${ count } usqerdec** i yettaskelsen deg ukaram-a",
         "Ɣur-k **${ count } yisqerdcen** i yettaskelsen deg ukaram-a"
@@ -5510,6 +5603,10 @@
         "Ɣur-k **${ count } usqerdec** i d-yettwabedren s tebzimt-a",
         "Ɣur-k **${ count } yisqerdcen** i d-yettwabedren s tebzimt-a"
       ],
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "Tesɛiḍ **${ count } izen** deg teggayt ${ categoryLabel }",
+        "Tesɛiḍ **${ count } iznan** deg teggayt ${ categoryLabel }"
+      ],
       "You have **${ count } message** stored in this folder": [
         "Ɣur-k **${ count } yizen** i yettaskelsen deg ukaram-a",
         "Ɣur-k **${ count } yiznan** i yettaskelsen deg ukaram-a"
@@ -5517,6 +5614,12 @@
       "You have **${ count } message** tagged with this label": [
         "Ɣur-k **${ count } yizen** i d-yettwabedren s tebzimt-a",
         "Ɣur-k **${ count } yiznan** i d-yettwabedren s tebzimt-a"
+      ],
+      "You have no conversations in this category": [
+        "Ur tesɛiḍ ara idiwenniyen deg taggayt-a"
+      ],
+      "You have no messages in this category": [
+        "Ur tesɛiḍ ara iznan deg taggayt-a"
       ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "Ur as-tmuddeḍ ara akk i yimayl-inek asentel. Tebɣiḍ ad tazneḍ izen ɣas akken?"
@@ -5529,6 +5632,14 @@
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Yessefk ad tessenseḍ neɣ ad tekkseḍ akk iseqdacen imernan n ${ MAIL_APP_NAME }, tansiwin, d taɣulin tudmawanin send ad tessadreḍ deg lqem."
+      ],
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "Tferneḍ **${ checked } udiwenni** deg teggayt ${ categoryLabel }",
+        "Tferneḍ **${ checked } idiwenniyen** deg teggayt ${ categoryLabel }"
+      ],
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "Tferneḍ **${ checked } izen** deg teggayt ${ categoryLabel }",
+        "Tferneḍ **${ checked } iznan** deg teggayt ${ categoryLabel }"
       ],
       "You selected **${ count } conversation** from this folder": [
         "Tferneḍ **${ count } udiwenni** seg ukaram-a",
@@ -5896,6 +6007,9 @@
       "ANY": [
         "Ayen yellan"
       ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Akk ayen yesran lḥir-ik, rnu ɣer-s imaylen seg taggayin yensan"
+      ],
       "App password": [
         "Awal uffir n usnas"
       ],
@@ -6037,6 +6151,9 @@
       "Email address": [
         "Tansa imayl"
       ],
+      "Email categories": [
+        "Taggayin n yimaylen"
+      ],
       "Email format": [
         "Amasal n yimayl"
       ],
@@ -6075,6 +6192,9 @@
       ],
       "Folder location": [
         "Ideg n ukaram"
+      ],
+      "Folder name": [
+        "Isem n ukaram"
       ],
       "Forwards to": [
         "Welleh ɣer"
@@ -6261,6 +6381,9 @@
       ],
       "Primary": [
         "Agejdan"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Tagejdant – akk ayen yesran lḥir-ik, rnu ɣer-s imaylen seg taggayin yensan"
       ],
       "Proration": [
         "Asiḍen aktassaɣan"
@@ -8533,6 +8656,9 @@
         "Senkez izen n ${ selectionCount }",
         "Senkez iznan n ${ selectionCount }"
       ],
+      "Moved to ${ label }. Similar messages will be categorized there in the future.": [
+        "Yettwasenkez ɣer ${ label }. Iznan icuban ad ttwassismelen dinna deg yimal."
+      ],
       "Password copied to clipboard": [
         "Awal uffir yettwanɣel ɣer tecfawt"
       ],
@@ -9206,6 +9332,9 @@
       ],
       "Recover data": [
         "Err-d isefka"
+      ],
+      "Refine your Categories": [
+        "Seɣti tiggayin-ik"
       ],
       "Reply": [
         "Err"
