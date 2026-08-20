@@ -239,6 +239,7 @@ export enum TelemetryAccountDashboardEvents {
     featureCardClick = 'feature_card_click',
     upgradeButtonClick = 'upgrade_button_click',
     upsellCtaClick = 'upsell_cta_click',
+    downloadCtaClick = 'download_cta_click',
 }
 
 export enum TelemetryUpgradePageEvents {

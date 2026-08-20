@@ -126,7 +126,7 @@ const DriveDownloadSection = () => {
         },
     ];
 
-    return <DashboardDownloadSection downloadConfig={downloadData} />;
+    return <DashboardDownloadSection downloadConfig={downloadData} app={APPS.PROTONDRIVE} />;
 };
 
 export default DriveDownloadSection;
