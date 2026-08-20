@@ -3284,6 +3284,9 @@
       "Mexico": [
         "Mexico"
       ],
+      "Micronesia": [
+        "Mikronesien"
+      ],
       "Moldova": [
         "Moldova"
       ],
@@ -8498,9 +8501,6 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Mister du din tofaktoraktiverede enhed, kan disse koder benyttes i stedet for den 6-cifrede tofaktorgodkendelseskode til at logge ind på din konto. Hver kode kan kun benyttes én gang."
       ],
-      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
-        "Hvis du har mistet adgangen til din godkender-app kan du bruge 1 af de 16 gendannelseskoder som du fik da du satte to-faktor-godkendelses op. ${ learnMoreLink }"
-      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Hvis du fortsætter med nedgraderingen, vil du miste adgang til betalte funktioner i ${ MAIL_APP_NAME } og ${ VPN_APP_NAME }."
       ],
@@ -10568,6 +10568,9 @@
       ],
       "Account holder": [
         "Kontohaver"
+      ],
+      "Account holder name": [
+        "Kontohavers navn"
       ],
       "Account storage": [
         "Kontolagerplads"
@@ -14197,6 +14200,11 @@
         "Du skal have adgang til organisationsnøglen for at udføre denne handling."
       ]
     },
+    "Payment Method": {
+      "Bank Account": [
+        "Bankkonto"
+      ]
+    },
     "Payment method option": {
       "Apple Pay": [
         "Apple Pay"
@@ -14401,6 +14409,9 @@
       ],
       "Invalid security code": [
         "Ugyldig sikkerhedskode"
+      ],
+      "Please enter the account holder name": [
+        "Anfør kontohavers navn"
       ],
       "Something went wrong. Please try again later.": [
         "Noget gik galt. Prøv igen senere."

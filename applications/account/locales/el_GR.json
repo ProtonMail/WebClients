@@ -371,9 +371,6 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } κατάστημα"
       ],
-      "+${ remaining } more": [
-        "+${ remaining } επιπλέον"
-      ],
       "Accept": [
         "Αποδοχή"
       ],
@@ -517,6 +514,9 @@
       ],
       "Approve": [
         "Έγκριση"
+      ],
+      "Assign manager(s)": [
+        "Ανάθεση διαχειριστή/ων"
       ],
       "Attach screenshot(s)": [
         "Επισύναψη στιγμιότυπου/ων οθόνης"
@@ -1579,6 +1579,9 @@
       ],
       "Preview": [
         "Προεπισκόπηση"
+      ],
+      "Preview logs": [
+        "Προεπισκόπηση αρχείων καταγραφής"
       ],
       "Previous": [
         "Προηγούμενο"
@@ -4724,6 +4727,9 @@
       "Mexico": [
         "Μεξικό"
       ],
+      "Micronesia": [
+        "Μικρονησία"
+      ],
       "Moldova": [
         "Μολδαβία"
       ],
@@ -6090,9 +6096,6 @@
       "**How it works:** Enter in this device the code displayed on the device you want to sign in to. You will be signed in as **${ email }**. Both devices will stay active.": [
         "**Πώς λειτουργεί:** Εισαγάγετε σε αυτή τη συσκευή τον κωδικό που εμφανίζεται στη συσκευή στην οποία θέλετε να συνδεθείτε. Θα συνδεθείτε ως **${ email }**. Και οι δύο συσκευές θα παραμείνουν ενεργές.."
       ],
-      "Allow QR code sign‒in": [
-        "Να επιτρέπεται η σύνδεση με κώδικα QR"
-      ],
       "Be cautious of messages with QR codes. Only scan a code if you trust the source.": [
         "Να είστε προσεκτικοί με τα μηνύματα που περιέχουν κωδικούς QR. Σαρώστε έναν κωδικό μόνο εάν εμπιστεύεστε την πηγή."
       ],
@@ -6122,9 +6125,6 @@
       ],
       "QR code sign-in enabled": [
         "Η σύνδεση μέσω κωδικού QR είναι ενεργοποιημένη"
-      ],
-      "Scan QR code on your mobile device to sign in": [
-        "Σαρώστε τον κώδικα QR στην κινητή συσκευή σας για σύνδεση"
       ],
       "Scan the code to sign in": [
         "Σαρώστε τον κωδικό για σύνδεση"
@@ -9657,9 +9657,6 @@
       "Contact us": [
         "Επικοινωνήστε μαζί μας"
       ],
-      "Downloads": [
-        "Λήψεις"
-      ],
       "Enjoying ${ planName }?": [
         "Απολαμβάνετε το ${ planName };"
       ],
@@ -10559,8 +10556,8 @@
       "add a recovery method": [
         "προσθήκη μεθόδου ανάκτησης"
       ],
-      "Add additional users from your organization to manage this company.": [
-        "Προσθέστε επιπλέον χρήστες από τον οργανισμό σας για να διαχειριστείτε αυτήν την εταιρεία."
+      "Add additional users to **${ company.name }** from your organization to manage this company.": [
+        "Προσθέστε επιπλέον χρήστες στο **${ company.name }** από τον οργανισμό σας για να διαχειριστείτε αυτήν την εταιρεία."
       ],
       "Add an email address in case we need to contact you": [
         "Προσθέστε μια διεύθυνση ηλεκτρονικού ταχυδρομείου σε περίπτωση που χρειαστεί να επικοινωνήσουμε μαζί σας"
@@ -11836,9 +11833,6 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Εάν χάσετε τη συσκευή σας με δύο παράγοντες, αυτοί οι κωδικοί μπορούν να χρησιμοποιηθούν αντί για τον 6-ψήφιο κωδικό ελέγχου ταυτότητας δύο παραγόντων για να συνδεθείτε στον λογαριασμό σας. Κάθε κωδικός μπορεί να χρησιμοποιηθεί μόνο μία φορά."
       ],
-      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
-        "Εάν χάσατε την πρόσβαση στην εφαρμογή ελέγχου ταυτότητας, μπορείτε να χρησιμοποιήσετε 1 από τους 16 εφεδρικούς κωδικούς ανάκτησης που παρέχονται κατά τη ρύθμιση της ταυτοποίησης δύο παραγόντων. ${ learnMoreLink }"
-      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Αν προχωρήσετε με την υποβάθμιση, θα χάσετε πρόσβαση στα χαρακτηριστικά επί πληρωμή των ${ MAIL_APP_NAME } και ${ VPN_APP_NAME }."
       ],
@@ -12156,6 +12150,9 @@
       ],
       "Loading...": [
         "Φόρτωση..."
+      ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "Τα αρχεία καταγραφής μας βοηθούν να κατανοήσουμε τι συνέβη πριν από την εμφάνιση του προβλήματος. Περιλαμβάνουν ενέργειες εφαρμογής και μηνύματα σφάλματος, αλλά όχι περιεχόμενο μηνύματος."
       ],
       "Low Priority": [
         "Χαμηλή προτεραιότητα"
@@ -15536,6 +15533,9 @@
       "Email addresses per user": [
         "Διευθύνσεις ηλεκτρονικού ταχυδρομείου ανά χρήστη"
       ],
+      "Email categories": [
+        "Κατηγορίες ηλεκτρονικών μηνυμάτων"
+      ],
       "Email or username": [
         "Διεύθυνση ή όνομα χρήστη"
       ],
@@ -15853,6 +15853,9 @@
       ],
       "Mail Server (IMAP)": [
         "Διακομιστής Αλληλογραφίας (IMAP)"
+      ],
+      "Mailbox settings": [
+        "Ρυθμίσεις γραμματοκιβωτίου"
       ],
       "Main": [
         "Κύριο"
@@ -19715,6 +19718,9 @@
       ],
       "Move to...": [
         "Μετακίνηση σε..."
+      ],
+      "Mute notifications": [
+        "Απενεργοποίηση ειδοποιήσεων"
       ],
       "My reason isn't listed": [
         "Ο λόγος δεν συμπεριλαμβάνεται στη λίστα"
@@ -26805,8 +26811,8 @@
       "Manage files across devices on Windows, Mac, Android, and iOS.": [
         "Διαχειριστείτε αρχεία σε όλες τις συσκευές, σε Windows, Mac, Android και iOS."
       ],
-      "Managers": [
-        "Διαχειριστές"
+      "Manage managers": [
+        "Διαχείριση διαχειριστών"
       ],
       "Messages": [
         "Μηνύματα"

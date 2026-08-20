@@ -340,6 +340,9 @@
       "Copy alias “${ name }”": [
         "Alias “${ name }” kopieren"
       ],
+      "Copy debug transcript": [
+        "Fehlerbehebungsprotokoll kopieren"
+      ],
       "Copy email to clipboard": [
         "E-Mail in Zwischenablage kopieren"
       ],
@@ -638,6 +641,9 @@
       ],
       "Get the browser extension": [
         "Hol dir die Browsererweiterung"
+      ],
+      "Get the deal": [
+        "Jetzt zugreifen"
       ],
       "Get the writing assistant": [
         "Hol dir den Schreibassistenten"
@@ -1080,6 +1086,9 @@
       ],
       "Preview contact": [
         "Vorschau des Kontakts"
+      ],
+      "Preview logs": [
+        "Protokollvorschau"
       ],
       "Previous": [
         "Zurück"
@@ -3663,6 +3672,9 @@
       ],
       "Mexico": [
         "Mexiko"
+      ],
+      "Micronesia": [
+        "Mikronesien"
       ],
       "Moldova": [
         "Moldawien"
@@ -7562,6 +7574,9 @@
       "Change your password": [
         "Passwort ändern"
       ],
+      "Checked Proton support": [
+        "Proton Support geprüft"
+      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Kontakt ${ progress } von ${ max } wird geprüft…"
       ],
@@ -7648,8 +7663,14 @@
         "Erstelle eine sichere Cloud für ${ memberCount } Mitglied",
         "Erstelle eine sichere Cloud für ${ memberCount } Mitglieder"
       ],
+      "Create folder": [
+        "Ordner erstellen"
+      ],
       "Create in": [
         "Erstellen in"
+      ],
+      "Create label": [
+        "Kategorie erstellen"
       ],
       "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
         "Mehrere kostenlose Konten zu erstellen ist gemäß unseren ${ termsLink } nicht erlaubt."
@@ -7683,6 +7704,9 @@
       ],
       "Daily": [
         "Täglich"
+      ],
+      "Debug transcript copied": [
+        "Fehlerbehebungsprotokoll kopiert"
       ],
       "Dedicated servers": [
         "Dezidierte Server"
@@ -8032,8 +8056,8 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Wenn du die E-Mail nicht in deinem Posteingang finden kannst, überprüfe bitte deinen Spam-Ordner."
       ],
-      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
-        "Wenn du den Zugriff auf deine Authenticator-App verloren hast, kannst du 1 der 16 Wiederherstellungscodes verwenden, die du bei der Einrichtung der Zwei-Faktor-Authentifizierung erhalten hast. ${ learnMoreLink }"
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Wenn du den Zugriff auf deine Authenticator-App verloren hast, kannst du 1 der 16 Wiederherstellungscodes verwenden, die du beim Einrichten der Zwei-Faktor-Authentifizierung erhalten hast. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Wenn du mit dem Downgrade fortfährst, verlierst du den Zugang zu den kostenpflichtigen Funktionen von ${ MAIL_APP_NAME } und ${ VPN_APP_NAME }."
@@ -8196,6 +8220,9 @@
       "Loading...": [
         "Wird geladen..."
       ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "Protokolle helfen uns dabei, zu verstehen, was vor dem Auftreten des Problems geschehen ist. Sie enthalten App-Aktionen und Fehlermeldungen, jedoch keine Nachrichteninhalte."
+      ],
       "Low Priority": [
         "Niedrige Priorität"
       ],
@@ -8210,6 +8237,9 @@
       ],
       "Mark all as read": [
         "Alle als gelesen markieren"
+      ],
+      "Mark all as unread": [
+        "Alle als ungelesen markieren"
       ],
       "Mark as read": [
         "Als gelesen markieren"
@@ -8688,6 +8718,9 @@
       ],
       "Searched for “${ keyword }”": [
         "Nach \"${ keyword }\" gesucht"
+      ],
+      "Searched the web": [
+        "Im Web gesucht"
       ],
       "Searched your mail": [
         "Deine E-Mail durchsucht"
@@ -10409,6 +10442,9 @@
       "Folder location": [
         "Pfad des Ordners"
       ],
+      "Folder name": [
+        "Ordnername"
+      ],
       "Forwards to": [
         "Leitet weiter an"
       ],
@@ -10507,6 +10543,9 @@
       ],
       "Label messages as": [
         "Nachrichten kategorisieren als"
+      ],
+      "Label name": [
+        "Name der Kategorie"
       ],
       "Last 12 months only": [
         "Nur die letzten 12 Monate"
@@ -14016,6 +14055,79 @@
         "SOMMER SALE"
       ]
     },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "Hol dir das Angebot"
+      ],
+      "Special Offer": [
+        "Sonderangebot"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "/month": [
+        "/Monat"
+      ],
+      "2 individual accounts": [
+        "2 Einzelkonten"
+      ],
+      "2 TB of secure storage": [
+        "2 TB sicherer Speicher"
+      ],
+      "3 TB of secure storage": [
+        "3 TB sicherer Speicher"
+      ],
+      "500 GB of secure storage": [
+        "500 GB sicherer Speicher"
+      ],
+      "6 individual accounts": [
+        "6 Einzelkonten"
+      ],
+      "Advanced protection against cyber threats": [
+        "Erweiterter Schutz vor Cyber-Bedrohungen"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Die Rabatte beziehen sich auf die regulären monatlichen Preise. Dein Abonnement verlängert sich nach Ablauf des Abrechnungszeitraums zum regulären Jahrespreis."
+      ]
+    },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } und ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } und ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } und ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "für 12 Monate"
+      ],
+      "One plan, full power": [
+        "Ein Abonnement, volle Leistung"
+      ],
+      "One plan, max savings": [
+        "Ein Abonnement, maximale Ersparnisse"
+      ],
+      "One plan, more power": [
+        "Ein Abonnement, mehr Leistung"
+      ]
+    },
     "Received email icon": {
       "End-to-end encrypted and signed message": [
         "Ende-zu-Ende verschlüsselte und signierte Nachricht"
@@ -16222,8 +16334,14 @@
       "Create contact": [
         "Kontakt erstellen"
       ],
+      "Create folder": [
+        "Ordner erstellen"
+      ],
       "Create folder \"${ search }\"": [
         "Ordner „${ search }“ erstellen"
+      ],
+      "Create label": [
+        "Kategorie erstellen"
       ],
       "Create label \"${ search }\"": [
         "Kategorie „${ search }“ erstellen"
@@ -16534,6 +16652,12 @@
       ],
       "Make your inbox your own": [
         "Deinen Posteingang nach deinen Wünschen gestalten"
+      ],
+      "Mark all as read": [
+        "Alle als gelesen markieren"
+      ],
+      "Mark all as unread": [
+        "Alle als ungelesen markieren"
       ],
       "Mark all messages as read": [
         "Alle Nachrichten als gelesen markieren"
@@ -16873,6 +16997,9 @@
       ],
       "Sending original message": [
         "Originalnachricht wird gesendet"
+      ],
+      "September Sale": [
+        "September-Sonderverkauf"
       ],
       "Set recovery methods": [
         "Wiederherstellungsmethoden festlegen"

@@ -224,6 +224,9 @@
       "Copy as markdown": [
         "Copiere în format markdown"
       ],
+      "Copy debug transcript": [
+        "Copiere transcriere depanare"
+      ],
       "Copy email to clipboard": [
         "Copiere mesaj în memorie"
       ],
@@ -608,6 +611,9 @@
       ],
       "Preview contact": [
         "Examinare contact"
+      ],
+      "Preview logs": [
+        "Examinare jurnale"
       ],
       "Previous month": [
         "Luna trecută"
@@ -2186,6 +2192,9 @@
       ],
       "Mexico": [
         "Mexic"
+      ],
+      "Micronesia": [
+        "Micronezia"
       ],
       "Moldova": [
         "Republica Moldova"
@@ -5067,6 +5076,9 @@
       "Custom email domains": [
         "Domenii personale de e-mail"
       ],
+      "Debug transcript copied": [
+        "Transcrierea depanării a fost copiată."
+      ],
       "Decrypting your document": [
         "Se decriptează documentul"
       ],
@@ -5259,7 +5271,7 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Dacă nu vedeți mesajul verificați în folderul de mesaje nedorite."
       ],
-      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
         "Dacă v-ați pierdut accesul la aplicația de autentificare, puteți utiliza unul din cele 16 coduri de recuperare de rezervă furnizate la configurarea autentificării cu doi factori. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
@@ -5377,6 +5389,9 @@
       ],
       "Loading...": [
         "Se încarcă…"
+      ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "Jurnalele ne ajută să înțelegem ce s-a întâmplat înainte de apariția problemei. Acestea includ acțiuni ale aplicației și mesaje de eroare, dar nu și conținutul mesajelor."
       ],
       "Looks like you're offline. The document can not be edited while you are offline. Please check your device's connectivity.": [
         "Se pare ca nu aveți conexiune. Documentul nu poate fi editat fără a avea conexiune. Verificați starea de conectare a dispozitivului la internet."
@@ -9204,6 +9219,79 @@
       ],
       "SUMMER SALE": [
         "REDUCERI DE VARĂ"
+      ]
+    },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "Luați oferta"
+      ],
+      "Special Offer": [
+        "Ofertă specială"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "/month": [
+        "/lună"
+      ],
+      "2 individual accounts": [
+        "Două conturi individuale"
+      ],
+      "2 TB of secure storage": [
+        "2 TiB de stocare securizată"
+      ],
+      "3 TB of secure storage": [
+        "3 TiB de stocare securizată"
+      ],
+      "500 GB of secure storage": [
+        "500 GiB de stocare securizată"
+      ],
+      "6 individual accounts": [
+        "Șase conturi individuale"
+      ],
+      "Advanced protection against cyber threats": [
+        "Protecție avansată împotriva amenințărilor cibernetice"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Reducerile se bazează pe prețurile lunare standard. Abonamentul se va reînnoi la tariful anual standard la sfârșitul ciclului de facturare."
+      ]
+    },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } și ${ VPN_SHORT_APP_NAME } premium"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME } premium"
+      ]
+    },
+    "q3campaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } premium"
+      ]
+    },
+    "q3campaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } premium"
+      ]
+    },
+    "q3campaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME } premium"
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "pentru 12 luni"
+      ],
+      "One plan, full power": [
+        "Un singur plan, putere completă"
+      ],
+      "One plan, max savings": [
+        "Un singur plan, reduceri maxime"
+      ],
+      "One plan, more power": [
+        "Un singur plan, mai multă putere"
       ]
     },
     "Recent documents table header": {

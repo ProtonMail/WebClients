@@ -3122,6 +3122,9 @@
       "Mexico": [
         "Mexique"
       ],
+      "Micronesia": [
+        "Micronésie"
+      ],
       "Moldova": [
         "Moldavie"
       ],
@@ -8192,9 +8195,6 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "En cas de perte de l'appareil que vous utilisez pour l'authentification à deux facteurs, ces codes peuvent être utilisés à la place du code d'authentification à 6 chiffres pour vous connecter à votre compte. Chaque code ne peut être utilisé qu'une seule fois."
       ],
-      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
-        "Si vous avez perdu l'accès à votre application d'authentification, vous pouvez utiliser 1 des 16 codes de récupération de sauvegarde fournis lors de la configuration de l'authentification à deux facteurs. ${ learnMoreLink }"
-      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "En passant à un abonnement inférieur, vous perdrez l'accès aux fonctionnalités payantes de ${ MAIL_APP_NAME } et ${ VPN_APP_NAME }."
       ],
@@ -8993,6 +8993,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Votre compte bénéficie de fonctionnalités supplémentaires parce que vous êtes un utilisateur fidèle."
+      ],
+      "Smart Routed through a different country.": [
+        "Routé via Smart Routing à travers un autre pays."
       ],
       "Smart Routed through: ${ joinedCountries }.": [
         "Routé intelligemment via : ${ joinedCountries }."
