@@ -246,7 +246,11 @@ const ThinkingPathTrace = ({ lines }: { lines: string[] }) => {
                 <p
                     key={`${index}-${line.slice(-24)}`}
                     className="thinking-path-trace-line m-0 color-weak text-rg lh130"
-                    style={{ opacity: getTraceLineOpacity(index, visibleLines.length) }}
+                    style={{
+                        opacity: getTraceLineOpacity(index, visibleLines.length),
+                        display: '-webkit-box',
+                        WebkitBoxOrient: 'vertical',
+                    }}
                 >
                     {line}
                 </p>
