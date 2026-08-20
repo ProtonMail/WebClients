@@ -24,6 +24,7 @@ interface SidebarState {
     isSmallScreen: boolean;
 
     toggle: () => void; // Universal toggle (works on all screens)
+    closeOverlay: () => void; // Hide overlay sidebar on small screens only
     closeOnItemClick: () => void; // Context-aware item click handler
 
     isVisible: boolean;
@@ -68,13 +69,17 @@ export const SidebarProvider = ({ children, defaultMode = 'expanded' }: SidebarP
         }
     }, [isSmallScreen]);
 
-    const closeOnItemClick = useCallback(() => {
-        setGhostChatMode(false);
+    const closeOverlay = useCallback(() => {
         if (!isSmallScreen) {
             return;
         }
         setSmallScreenMode('hidden');
-    }, [isSmallScreen, setGhostChatMode]);
+    }, [isSmallScreen]);
+
+    const closeOnItemClick = useCallback(() => {
+        setGhostChatMode(false);
+        closeOverlay();
+    }, [closeOverlay, setGhostChatMode]);
 
     const computedValues = useMemo(() => {
         const isVisible = mode !== 'hidden';
@@ -93,10 +98,11 @@ export const SidebarProvider = ({ children, defaultMode = 'expanded' }: SidebarP
             mode,
             isSmallScreen,
             toggle,
+            closeOverlay,
             closeOnItemClick,
             ...computedValues,
         }),
-        [mode, isSmallScreen, toggle, closeOnItemClick, computedValues]
+        [mode, isSmallScreen, toggle, closeOverlay, closeOnItemClick, computedValues]
     );
 
     return <SidebarContext.Provider value={value}>{children}</SidebarContext.Provider>;
