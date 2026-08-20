@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
-import { usePopperAnchor } from '@proton/components';
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import emptySvg from '@proton/styles/assets/img/illustrations/empty-my-files.svg';
 
 import { DriveEmptyView } from '../../../legacy/components/layout/DriveEmptyView';

@@ -4,7 +4,7 @@ import React from 'react';
 import { c } from 'ttag';
 
 import { Card } from '@proton/atoms/Card/Card';
-import type { PopperPosition } from '@proton/components/components/popper/interface';
+import type { PopperPosition } from '@proton/atoms/Popper/interface';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { DEFAULT_DEVICE_ID } from '@proton/meet/constants';

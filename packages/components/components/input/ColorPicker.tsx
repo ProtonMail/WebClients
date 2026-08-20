@@ -3,12 +3,12 @@ import { useState } from 'react';
 import tinycolor from 'tinycolor2';
 import { c } from 'ttag';
 
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import ColorSelector from '@proton/components/components/color/ColorSelector';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
 import type { DropdownButtonProps } from '@proton/components/components/dropdown/DropdownButton';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
-import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import { IcCircleFilled } from '@proton/icons/icons/IcCircleFilled';
 import { ACCENT_COLORS_MAP, getColorName } from '@proton/shared/lib/colors';
 import { omit } from '@proton/shared/lib/helpers/object';
@@ -25,8 +25,7 @@ interface OwnProps {
 type ButtonProps = DropdownButtonProps<'button'>;
 
 export type Props =
-    | ({ layout: 'inline' } & OwnProps)
-    | ({ layout?: 'dropdown' } & OwnProps & Omit<ButtonProps, 'onChange' | 'as'>);
+    ({ layout: 'inline' } & OwnProps) | ({ layout?: 'dropdown' } & OwnProps & Omit<ButtonProps, 'onChange' | 'as'>);
 
 const getOptions = () => {
     return Object.values(ACCENT_COLORS_MAP).map(({ color, getName }) => ({ value: color, label: getName() }));

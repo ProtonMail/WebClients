@@ -30,6 +30,7 @@
         "test:watch": "jest --watch"
     },
     "dependencies": {
+        "@proton/atoms": "workspace:^",
         "@proton/icons": "workspace:^",
         "@proton/pass": "workspace:^",
         "@protontech/autofill": "0.0.38040317",

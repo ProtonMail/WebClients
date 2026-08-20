@@ -5,6 +5,7 @@ import { useShallow } from 'zustand/react/shallow';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import { Vr } from '@proton/atoms/Vr/Vr';
 import {
     Dropdown,
@@ -16,7 +17,6 @@ import {
     Toolbar,
     ToolbarButton,
     useActiveBreakpoint,
-    usePopperAnchor,
 } from '@proton/components';
 import { MemberRole, getDriveForPhotos } from '@proton/drive/index';
 import { useSharingModal } from '@proton/drive/modals/sharingModal';

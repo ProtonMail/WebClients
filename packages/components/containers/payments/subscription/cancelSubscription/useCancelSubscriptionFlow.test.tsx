@@ -19,7 +19,7 @@ import { getOrganizationState, getSubscriptionState } from '@proton/testing/lib/
 
 import { useCancelSubscriptionFlow } from './useCancelSubscriptionFlow';
 
-jest.mock('@proton/components/components/portal/Portal');
+jest.mock('@proton/atoms/Portal/Portal');
 
 const userModel: UserModel = {
     ID: 'user-123',

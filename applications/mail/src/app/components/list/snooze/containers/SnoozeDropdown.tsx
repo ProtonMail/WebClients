@@ -4,22 +4,21 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import useApi from '@proton/components/hooks/useApi';
 import { IcClock } from '@proton/icons/icons/IcClock';
 import { TelemetryMailEvents } from '@proton/shared/lib/api/telemetry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
-import { useMailDispatch, useMailSelector } from '../../../../store/hooks';
-import { selectSnoozeDropdownState, selectSnoozeElement } from '../../../../store/snooze/snoozeSliceSelectors';
-
 import useSnooze from '../../../../hooks/actions/useSnooze';
 import type { Element } from '../../../../models/element';
+import { useMailDispatch, useMailSelector } from '../../../../store/hooks';
 import { snoozeActions } from '../../../../store/snooze/snoozeSlice';
+import { selectSnoozeDropdownState, selectSnoozeElement } from '../../../../store/snooze/snoozeSliceSelectors';
 import { SOURCE_ACTION } from '../../list-telemetry/useListTelemetry';
 import SnoozeCustomTime from '../components/SnoozeCustomTime';
 import SnoozeDurationSelection from '../components/SnoozeDurationSelection';

@@ -5,6 +5,7 @@ import { c, msgid } from 'ttag';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import Form from '@proton/components/components/form/Form';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
@@ -12,7 +13,6 @@ import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import {
     type VpnLocationFilterPolicy,
     useSharedServers,

@@ -1,9 +1,9 @@
 import { type ElementType, createContext, useEffect, useLayoutEffect, useRef, useState } from 'react';
 
+import { Portal } from '@proton/atoms/Portal/Portal';
 import Dialog from '@proton/components/components/dialog/Dialog';
 import useFocusTrap from '@proton/components/components/focus/useFocusTrap';
 import { useModalPosition } from '@proton/components/components/modalTwo/modalPositions';
-import Portal from '@proton/components/components/portal/Portal';
 import type { HotkeyTuple } from '@proton/components/hooks/useHotkeys';
 import { useHotkeys } from '@proton/components/hooks/useHotkeys';
 import useInstance from '@proton/hooks/useInstance';

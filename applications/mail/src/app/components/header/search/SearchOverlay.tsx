@@ -10,8 +10,8 @@ import { useLayoutEffect, useRef } from 'react';
 
 import { c } from 'ttag';
 
+import { Portal } from '@proton/atoms/Portal/Portal';
 import useFocusTrap from '@proton/components/components/focus/useFocusTrap';
-import { Portal } from '@proton/components/components/portal';
 import { getCustomSizingClasses } from '@proton/components/helpers/getCustomSizingClasses';
 import type { HotkeyTuple } from '@proton/components/hooks/useHotkeys';
 import { useHotkeys } from '@proton/components/hooks/useHotkeys';

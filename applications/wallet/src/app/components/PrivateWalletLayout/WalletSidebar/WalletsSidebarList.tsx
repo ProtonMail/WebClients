@@ -4,6 +4,7 @@ import { useLocation, useParams } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import {
     Dropdown,
     DropdownButton,
@@ -16,7 +17,6 @@ import {
     SidebarListItemLink,
     SubSidebarListItem,
     useModalState,
-    usePopperAnchor,
     useToggle,
 } from '@proton/components';
 import { IcCogDrawer } from '@proton/icons/icons/IcCogDrawer';

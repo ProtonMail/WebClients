@@ -1,11 +1,11 @@
 import { c, msgid } from 'ttag';
 
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import withPermissionGuard from '@proton/components/components/orgPermissions/withPermissionGuard';
-import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import { IcPen } from '@proton/icons/icons/IcPen';
 import { IcServers } from '@proton/icons/icons/IcServers';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';

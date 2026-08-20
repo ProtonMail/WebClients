@@ -4,9 +4,9 @@ import type { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import { Portal } from '@proton/atoms/Portal/Portal';
 import { useConfirmActionModal, useNotifications } from '@proton/components';
 import type { ModalStateProps } from '@proton/components';
-import { Portal } from '@proton/components/components/portal';
 import type { ProtonDriveClient, Revision } from '@proton/drive';
 import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { type NormalizedNode, getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';

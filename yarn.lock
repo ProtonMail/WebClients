@@ -41621,6 +41621,7 @@ __metadata:
     "@electron-forge/plugin-webpack": "npm:^7.5.0"
     "@electron-forge/shared-types": "npm:^7.5.0"
     "@electron/fuses": "npm:^1.8.0"
+    "@proton/atoms": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/i18n": "workspace:^"
     "@proton/icons": "workspace:^"
@@ -41650,6 +41651,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "proton-pass-extension@workspace:applications/pass-extension"
   dependencies:
+    "@proton/atoms": "workspace:^"
     "@proton/i18n": "workspace:^"
     "@proton/icons": "workspace:^"
     "@proton/jest-env": "workspace:^"
@@ -41866,6 +41868,7 @@ __metadata:
   resolution: "proton-wallet@workspace:applications/wallet"
   dependencies:
     "@proton/andromeda": "workspace:packages/wasm/andromeda"
+    "@proton/atoms": "workspace:^"
     "@proton/components": "workspace:packages/components"
     "@proton/cross-storage": "workspace:packages/cross-storage"
     "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"

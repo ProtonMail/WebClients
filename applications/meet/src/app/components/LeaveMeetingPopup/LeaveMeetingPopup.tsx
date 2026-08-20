@@ -3,8 +3,8 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
-import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import useLoading from '@proton/hooks/useLoading';
 import { IcMeetPhone } from '@proton/icons/icons/IcMeetPhone';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';

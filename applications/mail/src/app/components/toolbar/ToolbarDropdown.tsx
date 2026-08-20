@@ -1,13 +1,13 @@
 import type { ReactNode, Ref } from 'react';
 import { useImperativeHandle, useState } from 'react';
 
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { DropdownBorderRadius, DropdownProps } from '@proton/components/components/dropdown/Dropdown';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import type { DropdownButtonProps } from '@proton/components/components/dropdown/DropdownButton';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
-import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 

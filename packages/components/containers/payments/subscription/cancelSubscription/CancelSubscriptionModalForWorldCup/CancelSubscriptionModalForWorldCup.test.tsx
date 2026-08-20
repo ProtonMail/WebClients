@@ -10,7 +10,7 @@ import { buildSubscription } from '@proton/testing/builders/subscription';
 import { CancelSubscriptionModalForWorldCup } from './CancelSubscriptionModalForWorldCup';
 import { features } from './feature';
 
-jest.mock('@proton/components/components/portal/Portal');
+jest.mock('@proton/atoms/Portal/Portal');
 jest.mock('@proton/components/hooks/useDashboardPaymentFlow');
 
 const mockOpenSubscriptionModal = jest.fn();
