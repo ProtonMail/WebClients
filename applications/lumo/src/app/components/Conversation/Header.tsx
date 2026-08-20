@@ -25,7 +25,7 @@ export const SidebarToggleButton = ({ className }: { className?: string }) => {
             <span className="sr-only">
                 {isVisible ? c('collider_2025:Button').t`Close sidebar` : c('collider_2025:Action').t`Show sidebar`}
             </span>
-            <LumoIcon name="PanelRight" size={20} />
+            <LumoIcon name="PanelLeft" size={20} />
         </Button>
     );
 };
