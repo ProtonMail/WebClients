@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
 import type { EditorRequiresClientMethods } from '@proton/docs-shared'
 import type { FeatureFlag } from '@proton/unleash/Flags'
-import { isDevOrBlack } from '@proton/utils/env'
+import { useSheetsDependencies } from './SheetsDependenciesProvider'
 
 function useFeatureFlag(clientInvoker: EditorRequiresClientMethods, featureFlag: FeatureFlag) {
+  const { isDevOrBlack } = useSheetsDependencies()
   const [enabled, setEnabled] = useState(isDevOrBlack())
 
   useEffect(() => {
@@ -21,7 +22,7 @@ function useFeatureFlag(clientInvoker: EditorRequiresClientMethods, featureFlag:
     return () => {
       cancelled = true
     }
-  }, [clientInvoker, featureFlag])
+  }, [clientInvoker, featureFlag, isDevOrBlack])
 
   return enabled
 }
