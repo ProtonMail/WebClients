@@ -129,7 +129,7 @@ const MeetDownloadSection = () => {
         },
     ];
 
-    return <DashboardDownloadSection downloadConfig={downloadData} />;
+    return <DashboardDownloadSection downloadConfig={downloadData} app={APPS.PROTONMEET} />;
 };
 
 export default MeetDownloadSection;
