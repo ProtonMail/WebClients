@@ -5,6 +5,7 @@
     "type": "module",
     "exports": {
         "./builders/address": "./builders/address.ts",
+        "./builders/contactEmail": "./builders/contactEmail.ts",
         "./builders/entitlements": "./builders/entitlements.ts",
         "./builders/filter": "./builders/filter.ts",
         "./builders/folder": "./builders/folder.ts",
