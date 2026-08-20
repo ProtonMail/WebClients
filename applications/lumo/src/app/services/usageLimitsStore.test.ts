@@ -1,7 +1,11 @@
 import {
+    getMaxModelAvailability,
+    getRemainingLimits,
     isModelSwitchSuggestionEligible,
     resolveAvailableModelTier,
     resolveDefaultModelTier,
+    setDebugMaxModelOverride,
+    setRemainingLimits,
     shouldShowModelSwitchSuggestion,
 } from './usageLimitsStore';
 
@@ -84,5 +88,73 @@ describe('shouldShowModelSwitchSuggestion', () => {
     it('hides while generating even when otherwise eligible', () => {
         expect(isModelSwitchSuggestionEligible(baseArgs)).toBe(true);
         expect(shouldShowModelSwitchSuggestion({ ...baseArgs, isGenerating: true })).toBe(false);
+    });
+});
+
+describe('getMaxModelAvailability', () => {
+    it('reports available when max is selectable', () => {
+        expect(getMaxModelAvailability({ lite: 10, max: 20 }, { isMaxAvailable: true })).toBe('available');
+        expect(getMaxModelAvailability(null)).toBe('available');
+    });
+
+    it('reports an exhausted quota', () => {
+        expect(getMaxModelAvailability({ lite: 10, max: 0 }, { isMaxAvailable: true })).toBe(
+            'unavailable_limit_reached'
+        );
+    });
+
+    it('reports the availability flag being off', () => {
+        expect(getMaxModelAvailability({ lite: 10, max: 20 }, { isMaxAvailable: false })).toBe('unavailable_high_load');
+    });
+
+    it('prefers high load over an exhausted quota, matching the web picker', () => {
+        expect(getMaxModelAvailability({ lite: 10, max: 0 }, { isMaxAvailable: false })).toBe('unavailable_high_load');
+    });
+});
+
+describe('setDebugMaxModelOverride', () => {
+    afterEach(() => {
+        setDebugMaxModelOverride(null);
+    });
+
+    it('pins max to zero for a forced limit while keeping the other pools intact', () => {
+        setRemainingLimits({ lite: 10, max: 20, images: 3 });
+        setDebugMaxModelOverride('unavailable_limit_reached');
+
+        expect(getRemainingLimits()).toEqual({ lite: 10, max: 0, images: 3 });
+        expect(resolveDefaultModelTier(getRemainingLimits())).toBe('lumo-lite');
+    });
+
+    it('leaves the quota alone for forced high load, which the availability flag handles', () => {
+        setRemainingLimits({ lite: 10, max: 20 });
+        setDebugMaxModelOverride('unavailable_high_load');
+
+        expect(getRemainingLimits()).toEqual({ lite: 10, max: 20 });
+    });
+
+    it('reports max as exhausted even before the backend sends any limits', () => {
+        // Fresh module instance so no earlier `setRemainingLimits` call is in scope.
+        jest.isolateModules(() => {
+            const store = require('./usageLimitsStore');
+            store.setDebugMaxModelOverride('unavailable_limit_reached');
+
+            expect(store.getRemainingLimits()).toEqual({ max: 0 });
+            store.setDebugMaxModelOverride(null);
+        });
+    });
+
+    it('keeps overriding limits that arrive after it is switched on', () => {
+        setDebugMaxModelOverride('unavailable_limit_reached');
+        setRemainingLimits({ lite: 5, max: 42 });
+
+        expect(getRemainingLimits()).toEqual({ lite: 5, max: 0 });
+    });
+
+    it('restores the backend limits when switched off', () => {
+        setRemainingLimits({ lite: 10, max: 20 });
+        setDebugMaxModelOverride('unavailable_limit_reached');
+        setDebugMaxModelOverride(null);
+
+        expect(getRemainingLimits()).toEqual({ lite: 10, max: 20 });
     });
 });
