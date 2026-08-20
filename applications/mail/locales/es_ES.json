@@ -636,6 +636,9 @@
       "Get the browser extension": [
         "Obtén la extensión del navegador"
       ],
+      "Get the deal": [
+        "Obtener la promoción"
+      ],
       "Get the writing assistant": [
         "Obtener el asistente de escritura"
       ],
@@ -1723,6 +1726,9 @@
       ],
       "Not now": [
         "Ahora no"
+      ],
+      "Set up categories": [
+        "Configurar categorías"
       ],
       "Skip": [
         "Omitir"
@@ -3614,6 +3620,9 @@
       "Mexico": [
         "México"
       ],
+      "Micronesia": [
+        "Micronesia"
+      ],
       "Moldova": [
         "Moldavia"
       ],
@@ -4209,6 +4218,9 @@
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Lee, responde y mantente al día con Gmail desde ${ MAIL_APP_NAME }"
+      ],
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Haz clic derecho en un correo y selecciona «Mover a», o arrástralo y suéltalo en otra categoría. Los correos similares se clasificarán allí automáticamente en el futuro."
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
         "Envía y recibe mensajes de Gmail directamente en ${ MAIL_APP_NAME }. Conecta tu dirección en ${ addressesSettingsLink }."
@@ -7637,9 +7649,6 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si no encuentras el correo electrónico en tu bandeja de entrada, verifica tu carpeta de spam."
       ],
-      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
-        "Si has perdido el acceso a tu aplicación de autenticación, puedes usar uno de los 16 códigos de recuperación que se han facilitado al configurar la autenticación de dos factores. ${ learnMoreLink }"
-      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Si continúas con un plan con menos funciones, perderás el acceso a las funciones de pago de ${ MAIL_APP_NAME } y ${ VPN_APP_NAME }."
       ],
@@ -8964,6 +8973,10 @@
       "You have ${ totalLabel } in your inbox.": [
         "Tienes ${ totalLabel } en tu bandeja de entrada."
       ],
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "Tienes **${ count } conversación** en tu categoría ${ categoryLabel }",
+        "Tienes **${ count } conversaciones** en tu categoría ${ categoryLabel }"
+      ],
       "You have **${ count } conversation** stored in this folder": [
         "Tienes **${ count } conversación** almacenada en esta carpeta",
         "Tienes **${ count } conversaciones** almacenadas en esta carpeta"
@@ -8971,6 +8984,10 @@
       "You have **${ count } conversation** tagged with this label": [
         "Tienes **${ count } conversación** marcada con esta etiqueta",
         "Tienes **${ count } conversaciones** marcadas con esta etiqueta"
+      ],
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "Tienes **${ count } mensaje** en tu categoría ${ categoryLabel }",
+        "Tienes **${ count } mensajes** en tu categoría ${ categoryLabel }"
       ],
       "You have **${ count } message** stored in this folder": [
         "Tienes **${ count } mensaje** almacenado en esta carpeta",
@@ -9006,6 +9023,14 @@
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Debes desactivar o eliminar los usuarios, direcciones y dominios personalizados adicionales de ${ MAIL_APP_NAME } antes de poder pasar a un plan con menos funciones."
+      ],
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "Has seleccionado **${ checked } conversación** en tu categoría ${ categoryLabel }",
+        "Has seleccionado **${ checked } conversaciones** en tu categoría ${ categoryLabel }"
+      ],
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "Has seleccionado **${ checked } mensaje** en tu categoría ${ categoryLabel }",
+        "Has seleccionado **${ checked } mensajes** en tu categoría ${ categoryLabel }"
       ],
       "You selected **${ count } conversation** from this folder": [
         "Has seleccionado **${ count } conversación** de esta carpeta",
@@ -9566,6 +9591,9 @@
       "ANY": [
         "CUALQUIERA"
       ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Todo lo que necesita tu atención, además de los correos de las categorías desactivadas"
+      ],
       "App password": [
         "Contraseña de la aplicación"
       ],
@@ -9826,6 +9854,9 @@
       ],
       "Folder location": [
         "Ubicación de la carpeta"
+      ],
+      "Folder name": [
+        "Nombre de la carpeta"
       ],
       "Forwards to": [
         "Reenvía a"
@@ -10105,6 +10136,9 @@
       ],
       "Primary": [
         "Principal"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Principal - Todo lo que necesita tu atención, además de los correos de las categorías desactivadas"
       ],
       "Promotions": [
         "Promociones"
@@ -15027,6 +15061,9 @@
         "Mover ${ selectionCount } mensaje",
         "Mover ${ selectionCount } mensajes"
       ],
+      "Moved to ${ label }. Similar messages will be categorized there in the future.": [
+        "Movido a ${ label }. Los mensajes similares se clasificarán allí en el futuro."
+      ],
       "Password copied to clipboard": [
         "Se ha copiado la contraseña al portapapeles."
       ],
@@ -16062,6 +16099,9 @@
       ],
       "Referral": [
         "Referido"
+      ],
+      "Refine your Categories": [
+        "Perfecciona tus categorías"
       ],
       "Remove forwarding address": [
         "Eliminar dirección de reenvío"

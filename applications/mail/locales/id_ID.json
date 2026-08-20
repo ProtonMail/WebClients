@@ -633,6 +633,9 @@
       "Get the browser extension": [
         "Dapatkan ekstensi peramban"
       ],
+      "Get the deal": [
+        "Dapatkan penawaran ini"
+      ],
       "Get the writing assistant": [
         "Dapatkan asisten penulisan"
       ],
@@ -1718,6 +1721,9 @@
       ],
       "Not now": [
         "Tidak sekarang"
+      ],
+      "Set up categories": [
+        "Siapkan kategori"
       ],
       "Skip": [
         "Lewati"
@@ -3587,6 +3593,9 @@
       "Mexico": [
         "Meksiko"
       ],
+      "Micronesia": [
+        "Mikronesia"
+      ],
       "Moldova": [
         "Moldova"
       ],
@@ -4177,6 +4186,9 @@
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Baca, balas, dan pantau Gmail dari dalam ${ MAIL_APP_NAME }"
+      ],
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Klik kanan email lalu pilih \"Pindahkan ke\", atau seret dan lepas ke kategori lain. Email serupa akan otomatis diurutkan ke sana ke depannya."
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
         "Kirim dan terima pesan Gmail secara langsung di ${ MAIL_APP_NAME }. Hubungkan alamat Anda di ${ addressesSettingsLink }."
@@ -7492,9 +7504,6 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Apabila Anda tidak menemukan email ini pada kotak masuk, silakan periksa folder spam Anda."
       ],
-      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
-        "Jika kehilangan akses ke aplikasi autentikator, gunakan 1 dari 16 kode pemulihan cadangan yang disediakan saat menyiapkan autentikasi dua faktor. ${ learnMoreLink }"
-      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Apabila Anda lanjut menurunkan akun, Anda akan kehilangan akses ke berbagai fitur berbayar ${ MAIL_APP_NAME } dan ${ VPN_APP_NAME }."
       ],
@@ -8800,11 +8809,17 @@
       "You have ${ totalLabel } in your inbox.": [
         "Memiliki ${ totalLabel } di kotak masuk."
       ],
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "Anda memiliki **${ count } percakapan** di kategori ${ categoryLabel }"
+      ],
       "You have **${ count } conversation** stored in this folder": [
         "Anda memiliki **${ count } percakapan** yang tersimpan dalam folder ini"
       ],
       "You have **${ count } conversation** tagged with this label": [
         "Anda memiliki **${ count } percakapan** yang ditandai dengan label ini"
+      ],
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "Anda memiliki **${ count } pesan** di kategori ${ categoryLabel }"
       ],
       "You have **${ count } message** stored in this folder": [
         "Anda memiliki **${ count } pesan** yang tersimpan dalam folder ini"
@@ -8838,6 +8853,12 @@
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Anda harus terlebih dahulu menonaktifkan atau menghapus seluruh pengguna, alamat, dan domain khusus tambahan yang terdapat pada ${ MAIL_APP_NAME } sebelum Anda dapat menurunkan jenis akun Anda."
+      ],
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "Anda memilih **${ checked } percakapan** di kategori ${ categoryLabel }"
+      ],
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "Anda memilih **${ checked } pesan** di kategori ${ categoryLabel }"
       ],
       "You selected **${ count } conversation** from this folder": [
         "Anda memilih **${ count } percakapan** dari folder ini"
@@ -9378,6 +9399,9 @@
       "ANY": [
         "SEMBARANG"
       ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Semua yang memerlukan perhatian Anda, ditambah email dari kategori yang dinonaktifkan"
+      ],
       "App password": [
         "Kata sandi aplikasi"
       ],
@@ -9638,6 +9662,9 @@
       ],
       "Folder location": [
         "Lokasi folder"
+      ],
+      "Folder name": [
+        "Nama folder"
       ],
       "Forwards to": [
         "Teruskan ke"
@@ -9917,6 +9944,9 @@
       ],
       "Primary": [
         "Utama"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Utama - Semua yang memerlukan perhatian Anda, ditambah email dari kategori yang dinonaktifkan"
       ],
       "Promotions": [
         "Penawaran"
@@ -14713,6 +14743,9 @@
       "Move ${ selectionCount } message": [
         "Pindahkan ${ selectionCount } pesan"
       ],
+      "Moved to ${ label }. Similar messages will be categorized there in the future.": [
+        "Dipindahkan ke ${ label }. Pesan serupa akan dikategorikan di sana ke depannya."
+      ],
       "Password copied to clipboard": [
         "Kata sandi disalin ke papan klip"
       ],
@@ -15727,6 +15760,9 @@
       ],
       "Referral": [
         "Rujukan"
+      ],
+      "Refine your Categories": [
+        "Sempurnakan kategori Anda"
       ],
       "Remove forwarding address": [
         "Hapus alamat penerusan"

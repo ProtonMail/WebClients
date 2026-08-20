@@ -639,6 +639,9 @@
       "Get the browser extension": [
         "Hanki selainlaajennus"
       ],
+      "Get the deal": [
+        "Hyödynnä tarjous"
+      ],
       "Get the writing assistant": [
         "Hanki kirjoitusavustaja"
       ],
@@ -1735,6 +1738,9 @@
       ],
       "Not now": [
         "Ei nyt"
+      ],
+      "Set up categories": [
+        "Määritä luokat"
       ],
       "Skip": [
         "Ohita"
@@ -3623,6 +3629,9 @@
       "Mexico": [
         "Meksiko"
       ],
+      "Micronesia": [
+        "Mikronesia"
+      ],
       "Moldova": [
         "Moldova"
       ],
@@ -4102,7 +4111,7 @@
         "2FA lisää ylimääräisen turvakerroksen, joka estää luvattoman pääsyn tilillesi."
       ],
       "A blue dot appears when a category has unread messages since your last visit.": [
-        "Sininen piste tulee näkyviin, kun kategoriassa on lukemattomia viestejä edellisen vierailunne jälkeen."
+        "Sininen piste tulee näkyviin, kun luokassa on lukemattomia viestejä edellisen vierailunne jälkeen."
       ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Lisää kansioita ja tiedostoja ${ DRIVE_APP_NAME }en ja kutsu tiimin jäseniä tarkastelemaan tai muokkaamaan."
@@ -4218,6 +4227,9 @@
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Lue, vastaa ja pysy ajan tasalla Gmailista suoraan ${ MAIL_APP_NAME } -sovelluksessa"
+      ],
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Napsauta sähköpostia hiiren oikealla painikkeella ja valitse ”Siirrä kohteeseen” tai vedä ja pudota se toiseen luokkaan. Vastaavat sähköpostit siirretään jatkossa sinne automaattisesti."
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
         "Lähetä ja vastaanota Gmail-viestejä suoraan palvelussa ${ MAIL_APP_NAME }. Yhdistä osoitteenne kohdassa ${ addressesSettingsLink }."
@@ -7212,7 +7224,7 @@
         "Etkö muista salasanaasi? Voimme auttaa kaikkien tällä avaimella salattujen yhteystietojen salattujen tietojen tyhjennyksessä, jolloin myös hälytys kuittaantuu."
       ],
       "Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
-        "Kategoriat toimivat roskapostisuodattimien tapaan. ${ MAIL_APP_NAME } ei koskaan lue sähköpostejasi tai jaa tietojasi."
+        "Luokat toimivat roskapostisuodattimien tapaan. ${ MAIL_APP_NAME } ei koskaan lue sähköpostejasi tai jaa tietojasi."
       ],
       "Center": [
         "Keskitä"
@@ -7667,9 +7679,6 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Jos et löydä viestiä saapuneista viesteistäsi, tarkista roskapostikansiosi."
-      ],
-      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
-        "Jos et voi käyttää tunnistautumissovellustasi, voit käyttää yhtä kuudestatoista varmuuspalautuskoodistasi, jotka sait lisätessäsi kaksivaiheisen tunnistautumisen. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Jos jatkat alennusta, menetät maksullisten ${ MAIL_APP_NAME } ja ${ VPN_APP_NAME } -ominaisuuksien käyttöoikeuden."
@@ -8914,7 +8923,7 @@
         "Kun matkustat tai käytät julkista Wi-Fiä, voit käyttää ilmaista ${ VPN_APP_NAME } -palvelua, jotta kukaan ei voi seurata verkkotoimintaasi tai varastaa tietojasi."
       ],
       "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
-        "Uusilla sähköpostikategorioilla vain tärkeät viestit päätyvät pääasialliseen postilaatikkoosi. Kaikki muu lajitellaan kategorioihin."
+        "Uusilla sähköpostiluokilla vain tärkeät viestit päätyvät pääasialliseen postilaatikkoosi. Kaikki muu lajitellaan luokkiin."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Haluatko uuden vahvistuskoodin vai käyttää vaihtoehtoista tunnistautumistapaa?"
@@ -9005,6 +9014,10 @@
       "You have ${ totalLabel } in your inbox.": [
         "Teillä on ${ totalLabel } saapuneissa."
       ],
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "Sinulla on **${ count } keskustelu** luokassa ${ categoryLabel }",
+        "Sinulla on **${ count } keskustelua** luokassa ${ categoryLabel }"
+      ],
       "You have **${ count } conversation** stored in this folder": [
         "Kansio sisältää **${ count } keskustelun**",
         "Kansio sisältää **${ count } keskustelua**"
@@ -9012,6 +9025,10 @@
       "You have **${ count } conversation** tagged with this label": [
         "Olet merkinnyt **${ count } keskustelun** tällä tunnisteella",
         "Olet merkinnyt **${ count } keskustelua** tällä tunnisteella"
+      ],
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "Sinulla on **${ count } viesti** luokassa ${ categoryLabel }",
+        "Sinulla on **${ count } viestiä** luokassa ${ categoryLabel }"
       ],
       "You have **${ count } message** stored in this folder": [
         "Kansio sisältää **${ count } viestin**",
@@ -9047,6 +9064,14 @@
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Kaikki laajemmat ${ MAIL_APP_NAME } -määritykset, kuten käyttäjät, osoitteet ja omat verkkotunnukset on poistettava käytöstä tai poistettava ennen tilauksen alennusta."
+      ],
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "Valitsit **${ checked } keskustelun** luokassa ${ categoryLabel }",
+        "Valitsit **${ checked } keskustelua** luokassa ${ categoryLabel }"
+      ],
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "Valitsit **${ checked } viestin** luokassa ${ categoryLabel }",
+        "Valitsit **${ checked } viestiä** luokassa ${ categoryLabel }"
       ],
       "You selected **${ count } conversation** from this folder": [
         "Valitsit kansiosta **${ count } keskustelun**",
@@ -9607,6 +9632,9 @@
       "ANY": [
         "JOKIN"
       ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Kaikki, mikä vaatii huomiotasi, sekä sähköpostit poistetuista luokista"
+      ],
       "App password": [
         "Sovellussalasana"
       ],
@@ -9876,6 +9904,9 @@
       ],
       "Folder location": [
         "Kansion sijainti"
+      ],
+      "Folder name": [
+        "Kansion nimi"
       ],
       "Forwards to": [
         "Ohjaa osoitteeseen"
@@ -10155,6 +10186,9 @@
       ],
       "Primary": [
         "Ensisijainen"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Ensisijainen – kaikki, mikä vaatii huomiotasi, sekä sähköpostit poistetuista luokista"
       ],
       "Promotions": [
         "Kampanjat"
@@ -15094,6 +15128,9 @@
         "Siirrä ${ selectionCount } viesti",
         "Siirrä ${ selectionCount } viestiä"
       ],
+      "Moved to ${ label }. Similar messages will be categorized there in the future.": [
+        "Siirretty kohteeseen ${ label }. Vastaavat viestit luokitellaan jatkossa sinne."
+      ],
       "Password copied to clipboard": [
         "Salasana kopioitiin leikepöydälle"
       ],
@@ -16138,6 +16175,9 @@
       ],
       "Referral": [
         "Suosittelu"
+      ],
+      "Refine your Categories": [
+        "Tarkenna luokkiasi"
       ],
       "Remove forwarding address": [
         "Poista välitysosoite"

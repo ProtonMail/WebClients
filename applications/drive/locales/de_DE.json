@@ -253,6 +253,9 @@
       "Copy alias “${ name }”": [
         "Alias “${ name }” kopieren"
       ],
+      "Copy debug transcript": [
+        "Fehlerbehebungsprotokoll kopieren"
+      ],
       "Copy email to clipboard": [
         "E-Mail in Zwischenablage kopieren"
       ],
@@ -446,6 +449,9 @@
       ],
       "Get the apps": [
         "Apps herunterladen"
+      ],
+      "Get the deal": [
+        "Jetzt zugreifen"
       ],
       "Get the writing assistant": [
         "Hol dir den Schreibassistenten"
@@ -665,6 +671,9 @@
       ],
       "Preview contact": [
         "Vorschau des Kontakts"
+      ],
+      "Preview logs": [
+        "Protokollvorschau"
       ],
       "Previous": [
         "Zurück"
@@ -2373,6 +2382,9 @@
       ],
       "Mexico": [
         "Mexiko"
+      ],
+      "Micronesia": [
+        "Mikronesien"
       ],
       "Moldova": [
         "Moldawien"
@@ -5332,6 +5344,9 @@
       "Data integrity check failed": [
         "Prüfung der Datenintegrität fehlgeschlagen"
       ],
+      "Debug transcript copied": [
+        "Fehlerbehebungsprotokoll kopiert"
+      ],
       "Decrypting files": [
         "Dateien werden entschlüsselt"
       ],
@@ -5550,8 +5565,8 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Wenn du die E-Mail nicht in deinem Posteingang finden kannst, überprüfe bitte deinen Spam-Ordner."
       ],
-      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
-        "Wenn du den Zugriff auf deine Authenticator-App verloren hast, kannst du 1 der 16 Wiederherstellungscodes verwenden, die du bei der Einrichtung der Zwei-Faktor-Authentifizierung erhalten hast. ${ learnMoreLink }"
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Wenn du den Zugriff auf deine Authenticator-App verloren hast, kannst du 1 der 16 Wiederherstellungscodes verwenden, die du beim Einrichten der Zwei-Faktor-Authentifizierung erhalten hast. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Wenn du mit dem Downgrade fortfährst, verlierst du den Zugang zu den kostenpflichtigen Funktionen von ${ MAIL_APP_NAME } und ${ VPN_APP_NAME }."
@@ -5665,11 +5680,17 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Kalender wird geladen, bitte warte. Du wirst in einer neuen Registerkarte zu unserer Terminplanungsplattform Calendly weitergeleitet."
       ],
+      "Loading folder": [
+        "Ordner wird geladen"
+      ],
       "Loading preview": [
         "Vorschau wird geladen"
       ],
       "Loading...": [
         "Wird geladen..."
+      ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "Protokolle helfen uns dabei, zu verstehen, was vor dem Auftreten des Problems geschehen ist. Sie enthalten App-Aktionen und Fehlermeldungen, jedoch keine Nachrichteninhalte."
       ],
       "Low Priority": [
         "Niedrige Priorität"
@@ -5737,6 +5758,9 @@
       ],
       "Not connected": [
         "Nicht verbunden"
+      ],
+      "Not in My files": [
+        "Nicht in \"Meine Dateien\""
       ],
       "Number of dedicated servers in the organization": [
         "Anzahl der dedizierten Server in der Organisation"
@@ -5891,6 +5915,9 @@
       ],
       "Public sharing of documents is not yet supported.": [
         "Die öffentliche Freigabe von Dokumenten wird noch nicht unterstützt."
+      ],
+      "Read folder context": [
+        "Ordnerkontext lesen"
       ],
       "RECOMMENDED": [
         "EMPFOHLEN"
@@ -10030,6 +10057,79 @@
         "SOMMER SALE"
       ]
     },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "Hol dir das Angebot"
+      ],
+      "Special Offer": [
+        "Sonderangebot"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "/month": [
+        "/Monat"
+      ],
+      "2 individual accounts": [
+        "2 Einzelkonten"
+      ],
+      "2 TB of secure storage": [
+        "2 TB sicherer Speicher"
+      ],
+      "3 TB of secure storage": [
+        "3 TB sicherer Speicher"
+      ],
+      "500 GB of secure storage": [
+        "500 GB sicherer Speicher"
+      ],
+      "6 individual accounts": [
+        "6 Einzelkonten"
+      ],
+      "Advanced protection against cyber threats": [
+        "Erweiterter Schutz vor Cyber-Bedrohungen"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Die Rabatte beziehen sich auf die regulären monatlichen Preise. Dein Abonnement verlängert sich nach Ablauf des Abrechnungszeitraums zum regulären Jahrespreis."
+      ]
+    },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } und ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } und ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } und ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "für 12 Monate"
+      ],
+      "One plan, full power": [
+        "Ein Abonnement, volle Leistung"
+      ],
+      "One plan, max savings": [
+        "Ein Abonnement, maximale Ersparnisse"
+      ],
+      "One plan, more power": [
+        "Ein Abonnement, mehr Leistung"
+      ]
+    },
     "Referral": {
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } pro Empfehlung"
@@ -12052,6 +12152,9 @@
       ],
       "Select users to migrate": [
         "Benutzer für die Übernahme auswählen"
+      ],
+      "September Sale": [
+        "September-Sonderverkauf"
       ],
       "Set recovery methods": [
         "Wiederherstellungsmethoden festlegen"

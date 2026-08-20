@@ -571,10 +571,10 @@
         "アカウントモニターを無効化"
       ],
       "Disable categories": [
-        "カテゴリーを無効化"
+        "カテゴリを無効化"
       ],
       "Disable category": [
-        "カテゴリーを無効化"
+        "カテゴリを無効化"
       ],
       "Disable company": [
         "会社を無効化"
@@ -1012,7 +1012,7 @@
         "保持"
       ],
       "Keep categories": [
-        "カテゴリーを保持"
+        "カテゴリを保持"
       ],
       "Keep current plan": [
         "現在のプランを維持する"
@@ -4278,6 +4278,9 @@
       "Mexico": [
         "メキシコ"
       ],
+      "Micronesia": [
+        "ミクロネシア"
+      ],
       "Moldova": [
         "モルドバ"
       ],
@@ -5618,9 +5621,6 @@
       "**How it works:** Enter in this device the code displayed on the device you want to sign in to. You will be signed in as **${ email }**. Both devices will stay active.": [
         "**動作方法：** サインインしたいデバイスに表示されたコードをこのデバイスに入力してください。**${ email }**としてサインインされます。両方のデバイスはアクティブのままになります。"
       ],
-      "Allow QR code sign‒in": [
-        "QRコードでのサインインを許可"
-      ],
       "Be cautious of messages with QR codes. Only scan a code if you trust the source.": [
         "QRコードが記載されたメッセージにはご注意ください。送信元が信頼できる場合のみ、コードをスキャンしてください。"
       ],
@@ -5650,9 +5650,6 @@
       ],
       "QR code sign-in enabled": [
         "QRコードサインインが有効になりました"
-      ],
-      "Scan QR code on your mobile device to sign in": [
-        "モバイルデバイスの QR コードをスキャンして、サインインしてください"
       ],
       "Scan the code to sign in": [
         "コードをスキャンしてサインイン"
@@ -8787,9 +8784,6 @@
       "Contact us": [
         "お問い合わせ"
       ],
-      "Downloads": [
-        "ダウンロード"
-      ],
       "Enjoying ${ planName }?": [
         "${ planName } を楽しんでいますか？"
       ],
@@ -10731,9 +10725,6 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "2 要素認証デバイスを紛失した場合、6 桁の 2 要素認証パスコード代わりに、以下のコードを使用してアカウントにログインすることができます。各コードは一度しか使用できません。"
       ],
-      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
-        "認証アプリへのアクセスを失った場合は、2要素認証のセットアップ時に提供された16個のバックアップ回復用コードの1つを使用できます。${ learnMoreLink }"
-      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "ダウングレードすると ${ MAIL_APP_NAME } と ${ VPN_APP_NAME } の有料機能が使えなくなります。"
       ],
@@ -11726,6 +11717,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "あなたは忠実なユーザーですので、あなたのアカウントには追加機能が有効になっています。"
+      ],
+      "Smart Routed through a different country.": [
+        "別の国を経由してスマートルーティングされています。"
       ],
       "Smart Routed through: ${ joinedCountries }.": [
         "スマートルーティング経由: ${ joinedCountries }."
@@ -13750,6 +13744,9 @@
       "ANY": [
         "いずれか"
       ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "注意が必要なすべてのメールと、無効化されたカテゴリからのメール"
+      ],
       "App password": [
         "アプリのパスワード"
       ],
@@ -14139,6 +14136,9 @@
       ],
       "Email addresses per user": [
         "ユーザー毎のメールアドレス"
+      ],
+      "Email categories": [
+        "メールカテゴリ"
       ],
       "Email or username": [
         "メールアドレスまたはユーザー名"
@@ -14712,6 +14712,9 @@
       ],
       "Primary": [
         "プライマリー"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "プライマリー - 注意が必要なすべてのメールと、無効化されたカテゴリからのメール"
       ],
       "Priority support": [
         "優先的なサポート"
@@ -24386,7 +24389,7 @@
         "アカウントモニターを無効化しますか？"
       ],
       "Disable categories?": [
-        "カテゴリーを無効にしますか？"
+        "カテゴリを無効にしますか？"
       ],
       "Disable company": [
         "会社を無効化"

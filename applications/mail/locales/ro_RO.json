@@ -341,6 +341,9 @@
       "Copy alias “${ name }”": [
         "Copiază aliasul „${ name }”"
       ],
+      "Copy debug transcript": [
+        "Copiere transcriere depanare"
+      ],
       "Copy email to clipboard": [
         "Copiere mesaj în memorie"
       ],
@@ -641,6 +644,9 @@
       ],
       "Get the browser extension": [
         "Luați extensia pentru navigatorul web"
+      ],
+      "Get the deal": [
+        "Obțineți oferta"
       ],
       "Get the writing assistant": [
         "Luați asistentul de scriere"
@@ -1087,6 +1093,9 @@
       ],
       "Preview contact": [
         "Examinare contact"
+      ],
+      "Preview logs": [
+        "Examinare jurnale"
       ],
       "Previous": [
         "Anteriorul"
@@ -3695,6 +3704,9 @@
       ],
       "Mexico": [
         "Mexic"
+      ],
+      "Micronesia": [
+        "Micronezia"
       ],
       "Moldova": [
         "Republica Moldova"
@@ -7696,6 +7708,9 @@
       "Change your password": [
         "Modificare parolă"
       ],
+      "Checked Proton support": [
+        "Am verificat asistența de la Proton"
+      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Se verifică contactul ${ progress } din ${ max }..."
       ],
@@ -7784,8 +7799,14 @@
         "Creați un cont cloud securizat pentru ${ memberCount } membri",
         "Creați un cont cloud securizat pentru ${ memberCount } de membri"
       ],
+      "Create folder": [
+        "Creare folder"
+      ],
       "Create in": [
         "Creare în"
+      ],
+      "Create label": [
+        "Creare etichetă"
       ],
       "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
         "Crearea de conturi gratuite multiple nu este permisă așa cum se specifică și în ${ termsLink }."
@@ -7819,6 +7840,9 @@
       ],
       "Daily": [
         "Zilnic"
+      ],
+      "Debug transcript copied": [
+        "Transcrierea depanării a fost copiată."
       ],
       "Dedicated servers": [
         "Servere dedicate"
@@ -8177,7 +8201,7 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Dacă nu vedeți mesajul verificați în folderul de mesaje nedorite."
       ],
-      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
         "Dacă v-ați pierdut accesul la aplicația de autentificare, puteți utiliza unul din cele 16 coduri de recuperare de rezervă furnizate la configurarea autentificării cu doi factori. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
@@ -8343,6 +8367,9 @@
       "Loading...": [
         "Se încarcă…"
       ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "Jurnalele ne ajută să înțelegem ce s-a întâmplat înainte de apariția problemei. Acestea includ acțiuni ale aplicației și mesaje de eroare, dar nu și conținutul mesajelor."
+      ],
       "Low Priority": [
         "Prioritate scăzută"
       ],
@@ -8357,6 +8384,9 @@
       ],
       "Mark all as read": [
         "Marcare toate - citite"
+      ],
+      "Mark all as unread": [
+        "Marcare toate: citit"
       ],
       "Mark as read": [
         "Marcare: citit"
@@ -8842,6 +8872,9 @@
       ],
       "Searched for “${ keyword }”": [
         "S-a căutat „${ keyword }”"
+      ],
+      "Searched the web": [
+        "Am căutat pe web"
       ],
       "Searched your mail": [
         "Vi s-a căutat corespondența."
@@ -10601,6 +10634,9 @@
       "Folder location": [
         "Amplasare folder"
       ],
+      "Folder name": [
+        "Nume folder"
+      ],
       "Forwards to": [
         "Transferare către"
       ],
@@ -10699,6 +10735,9 @@
       ],
       "Label messages as": [
         "Etichetare mesaje cu"
+      ],
+      "Label name": [
+        "Nume etichetă"
       ],
       "Last 12 months only": [
         "Doar ultimele 12 luni"
@@ -14264,6 +14303,79 @@
         "REDUCERI DE VARĂ"
       ]
     },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "Luați oferta"
+      ],
+      "Special Offer": [
+        "Ofertă specială"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "/month": [
+        "/lună"
+      ],
+      "2 individual accounts": [
+        "Două conturi individuale"
+      ],
+      "2 TB of secure storage": [
+        "2 TiB de stocare securizată"
+      ],
+      "3 TB of secure storage": [
+        "3 TiB de stocare securizată"
+      ],
+      "500 GB of secure storage": [
+        "500 GiB de stocare securizată"
+      ],
+      "6 individual accounts": [
+        "Șase conturi individuale"
+      ],
+      "Advanced protection against cyber threats": [
+        "Protecție avansată împotriva amenințărilor cibernetice"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Reducerile se bazează pe prețurile lunare standard. Abonamentul se va reînnoi la tariful anual standard la sfârșitul ciclului de facturare."
+      ]
+    },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } și ${ VPN_SHORT_APP_NAME } premium"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME } premium"
+      ]
+    },
+    "q3campaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } premium"
+      ]
+    },
+    "q3campaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } premium"
+      ]
+    },
+    "q3campaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME } premium"
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "pentru 12 luni"
+      ],
+      "One plan, full power": [
+        "Un singur plan, putere completă"
+      ],
+      "One plan, max savings": [
+        "Un singur plan, reduceri maxime"
+      ],
+      "One plan, more power": [
+        "Un singur plan, mai multă putere"
+      ]
+    },
     "Received email icon": {
       "End-to-end encrypted and signed message": [
         "Mesaj criptat bilateral și semnat"
@@ -16551,8 +16663,14 @@
       "Create contact": [
         "Creare contact"
       ],
+      "Create folder": [
+        "Creare folder"
+      ],
       "Create folder \"${ search }\"": [
         "Creare folder „${ search }”"
+      ],
+      "Create label": [
+        "Creare etichetă"
       ],
       "Create label \"${ search }\"": [
         "Creare eticheta „${ search }”"
@@ -16870,6 +16988,12 @@
       ],
       "Make your inbox your own": [
         "Personalizați-vă contul"
+      ],
+      "Mark all as read": [
+        "Marcare toate ca și citite"
+      ],
+      "Mark all as unread": [
+        "Marcare toate ca și necitite"
       ],
       "Mark all messages as read": [
         "Marcare toate mesajele ca fiind citite"
@@ -17209,6 +17333,9 @@
       ],
       "Sending original message": [
         "Se trimite mesajul original"
+      ],
+      "September Sale": [
+        "Reduceri de septembrie"
       ],
       "Set recovery methods": [
         "Setați metodele de recuperare"

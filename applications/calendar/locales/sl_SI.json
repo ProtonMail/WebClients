@@ -116,6 +116,9 @@
       "Attention required": [
         "Pozornost!"
       ],
+      "Authenticate": [
+        "Preverjanje pristnosti"
+      ],
       "Back": [
         "Nazaj"
       ],
@@ -124,6 +127,9 @@
       ],
       "Cancel subscription": [
         "Prekliči naročnino"
+      ],
+      "Change password": [
+        "Spremeni geslo"
       ],
       "Chat with us": [
         "Klepetajte z nami"
@@ -170,6 +176,9 @@
       "Close this banner": [
         "Zapri to pasico"
       ],
+      "Collaborate on documents": [
+        "Sodelujte pri dokumentih"
+      ],
       "Collapse navigation bar": [
         "Skrči vrstico za krmarjenje"
       ],
@@ -181,6 +190,12 @@
       ],
       "Confirm opening of link ${ linkToShow }": [
         "Potrdite odpiranje povezave ${ linkToShow }"
+      ],
+      "Connect apps and devices": [
+        "Povežite aplikacije in naprave"
+      ],
+      "Connect to video conferencing": [
+        "Poveži se z videokonferenco"
       ],
       "Contact group": [
         "Skupina stikov"
@@ -233,11 +248,17 @@
       "Create a new contact group": [
         "Ustvari novo skupino stikov"
       ],
+      "Create and copy alias": [
+        "Ustvari in kopiraj vzdevek"
+      ],
       "Create calendar": [
         "Ustvari koledar"
       ],
       "Create event": [
         "Ustvari dogodek"
+      ],
+      "Create folder": [
+        "Ustvari mapo"
       ],
       "Create new contact": [
         "Ustvari nov stik"
@@ -305,8 +326,14 @@
       "Download": [
         "Prenesi"
       ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Prenesite aplikacije ${ DRIVE_APP_NAME }"
+      ],
       "Download logs": [
         "Prenesite dnevnike"
+      ],
+      "Download now": [
+        "Prenesi zdaj"
       ],
       "Edit": [
         "Uredi"
@@ -314,8 +341,17 @@
       "Edit billing address": [
         "Uredi naslov za izstavitev računa"
       ],
+      "Edit email address": [
+        "Uredi e-poštni naslov"
+      ],
       "Edit label": [
         "Uredi oznako"
+      ],
+      "Edit phone number": [
+        "Uredi telefonsko številko"
+      ],
+      "Edit sign-in details": [
+        "Uredi podrobnosti prijave"
       ],
       "Edit subscription": [
         "Urejanje naročnine"
@@ -341,6 +377,9 @@
       "Export selection as .vcf": [
         "Izvozi izbor kot .vcf"
       ],
+      "Forgot password?": [
+        "Pozabljeno geslo?"
+      ],
       "Forward as attachment": [
         "Posreduj kot priponko"
       ],
@@ -362,8 +401,17 @@
       "Get started": [
         "Začnite"
       ],
+      "Get the apps": [
+        "Namesti aplikacije"
+      ],
+      "Get the deal": [
+        "Izkoristite posebno ponudbo"
+      ],
       "Get the writing assistant": [
         "Pridobite pomočnika pri pisanju"
+      ],
+      "Get verification code": [
+        "Pridobi kodo za preverjanje"
       ],
       "Go back": [
         "Pojdi nazaj"
@@ -422,6 +470,9 @@
       "Import contacts": [
         "Uvozite stike"
       ],
+      "Import emails, calendars, contacts": [
+        "Uvozi e-pošto, koledarje, stike"
+      ],
       "Import events": [
         "Uvoz dogodkov"
       ],
@@ -434,6 +485,9 @@
       "Import from Outlook": [
         "Uvoz iz Outlooka"
       ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "Na voljo je pomembna posodobitev. Pred nadaljnjo uporabo aplikacije jo posodobite na najnovejšo različico. ${ downloadUpdate }"
+      ],
       "Increase": [
         "Povečaj"
       ],
@@ -445,6 +499,9 @@
       ],
       "Keep current time zone": [
         "Ohrani trenutni časovni pas"
+      ],
+      "Keep going": [
+        "Nadaljuj …"
       ],
       "Keep my subscription": [
         "Ohrani mojo naročnino"
@@ -476,11 +533,20 @@
       "Manage addresses": [
         "Upravljanje naslovov"
       ],
+      "Manage advanced account protections": [
+        "Upravljajte z naprednimi zaščitami računa"
+      ],
       "Manage folders": [
         "Upravljanje map"
       ],
+      "Manage groups": [
+        "Upravljanje skupin"
+      ],
       "Manage labels": [
         "Upravljanje oznak"
+      ],
+      "Manage users/addresses": [
+        "Upravljanje uporabnikov/naslovov"
       ],
       "Mark as resolved": [
         "Označi kot rešeno"
@@ -608,6 +674,9 @@
       "Refresh the page": [
         "Osveži stran"
       ],
+      "Reject": [
+        "Zavrni"
+      ],
       "Remove": [
         "Odstrani"
       ],
@@ -641,6 +710,12 @@
       "Request a feature": [
         "Predlagajte novo funkcijo"
       ],
+      "Request new code": [
+        "Zahtevaj novo kodo"
+      ],
+      "Resend code": [
+        "Znova pošlji kodo"
+      ],
       "Reset to default": [
         "Ponastavi na privzeto"
       ],
@@ -653,8 +728,14 @@
       "Search": [
         "Iskanje"
       ],
+      "Search countries": [
+        "Iskanje držav"
+      ],
       "See how": [
         "Poglejte, kako"
+      ],
+      "See plan features": [
+        "Oglejte si funkcije paketa."
       ],
       "Select ${ planOrAppName }": [
         "Izberite ${ planOrAppName }"
@@ -683,14 +764,29 @@
       "Send Feedback": [
         "Pošlji povratne informacije"
       ],
+      "Set recovery methods": [
+        "Nastavite načine obnovitve"
+      ],
       "Set recovery phrase": [
         "Nastavi obnovitveno frazo"
+      ],
+      "Set up 2FA": [
+        "Nastavi 2FA"
+      ],
+      "Set up a custom domain": [
+        "Nastavite domeno po meri"
+      ],
+      "Set up email forwarding": [
+        "Nastavi posredovanje pošte"
       ],
       "Settings": [
         "Nastavitve"
       ],
       "Share": [
         "Deli"
+      ],
+      "Share your calendar with your team": [
+        "Deli svoj koledar s svojo ekipo"
       ],
       "Show advanced PGP settings": [
         "Prikaži napredne nastavitve PGP"
@@ -740,11 +836,17 @@
       "Stay": [
         "Ostani"
       ],
+      "Stop here": [
+        "Tukaj se ustavi"
+      ],
       "Submit": [
         "Pošlji"
       ],
       "Switch or add account": [
         "Preklopi ali dodaj račun"
+      ],
+      "Take a tour": [
+        "Oglejte si"
       ],
       "Today": [
         "Danes"
@@ -764,8 +866,14 @@
       "Try again": [
         "Poskusi znova"
       ],
+      "Try another method": [
+        "Poskusi z drugim načinom"
+      ],
       "Turn off auto-add": [
         "Izklopi samodejno dodajanje"
+      ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Vklopi ${ DARK_WEB_MONITORING_NAME }"
       ],
       "Unlock data": [
         "Odkleni podatke"
@@ -788,11 +896,26 @@
       "Upgrade": [
         "Nadgradi"
       ],
+      "Upgrade Now": [
+        "Nadgradi zdaj"
+      ],
+      "Upgrade now": [
+        "Nadgradi zdaj"
+      ],
+      "Upload and share files": [
+        "Naloži in deli datoteke"
+      ],
       "Upload picture": [
         "Naloži sliko"
       ],
       "Use ${ label } theme": [
         "Uporabi temo ${ label }"
+      ],
+      "Use ${ PASS_APP_NAME } for Business": [
+        "Uporabite ${ PASS_APP_NAME } for Business"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Uporabljajte ${ VPN_SHORT_APP_NAME } za zasebnost podatkov"
       ],
       "Use a different card": [
         "Uporabite drugo kartico"
@@ -800,11 +923,20 @@
       "Use a different payment method": [
         "Uporabite drug način plačila"
       ],
+      "Use authentication code": [
+        "Uporabi kodo za preverjanje pristnosti"
+      ],
       "Use for sending": [
         "Uporabi za pošiljanje"
       ],
+      "Use recovery code": [
+        "Uporabite kode za obnovitev"
+      ],
       "Verify": [
         "Preveri"
+      ],
+      "Verify account": [
+        "Potrdi račun"
       ],
       "Verify now": [
         "Preveri zdaj"
@@ -835,6 +967,20 @@
         "Pošiljanje datotek vCard z več kot ${ maxAttachments } stikoma ni mogoče.",
         "Pošiljanje datotek vCard z več kot ${ maxAttachments } stiki ni mogoče.",
         "Pošiljanje datotek vCard z več kot ${ maxAttachments } stiki ni mogoče."
+      ],
+      "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
+        "Brezplačni preizkus namizne aplikacije poteče čez 2 dni. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
+        "Brezplačni preizkus namizne aplikacije poteče čez pet dni. ${ upgradeButton }"
+      ],
+      "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
+        "Brezplačno preskušanje namizne aplikacije poteče dne ${ formattedEndDate }. ${ upgradeButton }"
+      ]
+    },
+    "action": {
+      "Search messages": [
+        "Išči sporočila"
       ]
     },
     "Action subline": {
@@ -1094,12 +1240,150 @@
         "Premijski upravitelj gesel"
       ]
     },
+    "bf2023: Offers": {
+      "30-day money-back guarantee": [
+        "30-dnevno jamstvo z vračilom denarja"
+      ]
+    },
+    "bf2023: Tooltip": {
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Vključuje podporo za eno e-poštno domeno po meri, 10 e-poštnih naslovov, 10 vzdevkov hide-my-email, deljenje koledarjev in še več."
+      ]
+    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Program ${ MAIL_APP_NAME } za namizje"
       ],
+      "${ storageSize } storage": [
+        "${ storageSize } shrambe"
+      ],
+      "1 user account": [
+        "1 uporabniški račun"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB shrambe: 40x vaš trenutni paket"
+      ],
+      "6 user accounts": [
+        "6 uporabniških računov"
+      ],
+      "Admin panel to manage your family": [
+        "Administrativna plošča za upravljanje vaše družine"
+      ],
+      "Advanced account protection": [
+        "Napredni program za zaščito računa"
+      ],
+      "Easily add or remove users": [
+        "Enostavno dodajte ali odstranite uporabnike"
+      ],
+      "Online document editor": [
+        "Spletni urejevalnik dokumentov"
+      ],
+      "Password health alerts": [
+        "Opozorila o kakovosti gesla"
+      ],
+      "Recover previous file versions": [
+        "Obnovi prejšnje različice datoteke"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Neomejeno število map, oznak in filtrov"
+      ],
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "Neomejeno število prijav, kreditnih kartic, hide-my-email vzdevkov in več"
+      ],
       "Use your own email domain": [
         "Uporabite svojo e-poštno domeno"
+      ]
+    },
+    "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "Zaračunano ${ amount } enkrat"
+      ],
+      "Renews after 1 month at ${ regularAmount }.": [
+        "Obnovitev po enem mesecu za ${ regularAmount }."
+      ]
+    },
+    "BF2024: Tooltip": {
+      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
+        "Dostopajte do blokirane vsebine in brskajte zasebno. Vključuje več kot 8.500 strežnikov v več kot 110 državah, 10 naprav, pretočne storitve z visoko hitrostjo, onemogočanje oglasov in zaščito pred zlonamerno programsko opremo, VPN Accelerator in še več."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Zaščitite svoje e-pošte in urnike s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštni naslov, podporo za e-poštne domene po meri, ${ BRAND_NAME } Scribe pisni asistent, neomejeno število vzdevkov hide-my-email in še več.",
+        "Zaščitite svoje e-pošte in urnike s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštne naslove, podporo za e-poštne domene po meri, ${ BRAND_NAME } Scribe pisni asistent, neomejeno število vzdevkov hide-my-email in še več.",
+        "Zaščitite svoje e-pošte in urnike s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštne naslove, podporo za e-poštne domene po meri, ${ BRAND_NAME } Scribe pisni asistent, neomejeno število vzdevkov hide-my-email in še več.",
+        "Zaščitite svoje e-pošte in urnike s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštne naslove, podporo za e-poštne domene po meri, ${ BRAND_NAME } Scribe pisni asistent, neomejeno število vzdevkov hide-my-email in še več."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Zaščitite svojo e-pošto in urnike s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštni naslov, podporo za e-poštne domene po meri, ${ LUMO_SHORT_APP_NAME } pomočnika pri pisanju, neomejeno število vzdevkov hide-my-email in še več.",
+        "Zaščitite svojo e-pošto in urnike s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštna naslova, podporo za e-poštne domene po meri, ${ LUMO_SHORT_APP_NAME } pomočnika pri pisanju, neomejeno število vzdevkov hide-my-email in še več.",
+        "Zaščitite svojo e-pošto in urnike s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštne naslove, podporo za e-poštne domene po meri, ${ LUMO_SHORT_APP_NAME } pomočnika pri pisanju, neomejeno število vzdevkov hide-my-email in še več.",
+        "Zaščitite svojo e-pošto in urnike s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštnih naslovov, podporo za e-poštne domene po meri, ${ LUMO_SHORT_APP_NAME } pomočnika pri pisanju, neomejeno število vzdevkov hide-my-email in še več."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Zavarujte svoja e-poštna sporočila in urnik s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštni naslov, podporo za e-poštne domene po meri, neomejene vzdevke hide-my-email in drugo.",
+        "Zavarujte svoja e-poštna sporočila in urnik s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštna naslova, podporo za e-poštne domene po meri, neomejene vzdevke hide-my-email in drugo.",
+        "Zavarujte svoja e-poštna sporočila in urnik s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštne naslove, podporo za e-poštne domene po meri, neomejene vzdevke hide-my-email in drugo.",
+        "Zavarujte svoja e-poštna sporočila in urnik s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštnih naslovov, podporo za e-poštne domene po meri, neomejene vzdevke hide-my-email in drugo."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Zavarujte svoje e-pošte in urnike s šifriranjem od konca do konca. Vključuje 15 e-poštnih naslovov, podporo za e-poštne domene po meri, ${ BRAND_NAME } Scribe pisni asistent, neomejeno število vzdevkov hide-my-email in še več."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ LUMO_SHORT_APP_NAME } writing assistant, unlimited hide-my-email aliases and more.": [
+        "Zavarujte svojo e-pošto in urnike s šifriranjem od konca do konca. Vključuje 15 e-poštnih naslovov, podporo za e-poštne domene po meri, ${ LUMO_SHORT_APP_NAME } pomočnika pri pisanju, neomejeno število vzdevkov hide-my-email in še več."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Zavarujte svojo e-pošto in urnik s celovitim šifriranjem. Vključuje 15 e-poštnih naslovov, podporo za prilagojene e-poštne domene, neomejeno število vzdevkov hide-my-email in drugo."
+      ],
+      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
+        "Zaščitite svoje datoteke s šifrirano shrambo v oblaku. Vključuje spletni urejevalnik dokumentov, varnostno kopijo fotografij, zgodovino različic, šifrirano delitev datotek in še več."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } services.": [
+        "Prostor za shranjevanje si delijo vse aplikacije ${ BRAND_NAME }."
+      ]
+    },
+    "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 TB prostora za shranjevanje"
+      ],
+      "3 TB data storage": [
+        "3 TB prostora za shranjevanje"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Dostop do več kot 15.000 strežnikov v več kot 120 državah"
+      ],
+      "Access advanced AI models": [
+        "Dostop do naprednih modelov UI"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Vse premijske funkcije ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } in ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blokiranje oglasov, sledilnikov in zlonamerne programske opreme"
+      ],
+      "Built-in 2FA authenticator": [
+        "Vgrajen overitelj 2FA"
+      ],
+      "Connect 10 devices at once": [
+        "Povežite 10 naprav hkrati"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Celotna zgodovina klepetov z enostavnim iskanjem in možnostjo priljubljenih"
+      ],
+      "Individual accounts for 6 users": [
+        "Posamezni računi za 6 uporabnikov"
+      ],
+      "Individual accounts for you and a partner": [
+        "Posamezni računi za vas in partnerja"
+      ],
+      "Stronger protection against cyber threats": [
+        "Močnejša zaščita pred kibernetskimi grožnjami"
+      ],
+      "Unlimited daily chats": [
+        "Neomejeno število dnevnih pogovorov"
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Posebej zasnovan NetShield ščiti vaše naprave in pospeši vaše brskanje z blokiranjem oglasov, sledilnikov in zlonamerne programske opreme."
       ]
     },
     "Billing cycle option": {
@@ -1244,8 +1528,26 @@
       "Continue your subscription": [
         "Podaljšajte naročnino"
       ],
+      "Create label": [
+        "Ustvarite oznako"
+      ],
+      "Discover and set up features": [
+        "Odkrijte in nastavite funkcije"
+      ],
       "Get 50% offer": [
         "Izkoristite ponudbo s 50 % popustom"
+      ],
+      "Maybe later": [
+        "Morda kasneje"
+      ],
+      "Remind me later": [
+        "Opomni me kasneje"
+      ],
+      "Set up other features": [
+        "Nastavite druge funkcije"
+      ],
+      "Take a tour": [
+        "Oglejte si"
       ]
     },
     "Calendar access select label": {
@@ -1643,6 +1945,32 @@
         "jagoda"
       ]
     },
+    "Commander action": {
+      "Day view": [
+        "Dnevni pogled"
+      ],
+      "Month view": [
+        "Mesečni pogled"
+      ],
+      "New event": [
+        "Nov dogodek"
+      ],
+      "Next period": [
+        "Naslednje obdobje"
+      ],
+      "Previous period": [
+        "Prejšnje obdobje"
+      ],
+      "Search events": [
+        "Iskanje dogodkov"
+      ],
+      "Today": [
+        "Danes"
+      ],
+      "Week view": [
+        "Tedenski pogled"
+      ]
+    },
     "Confirm modal title": {
       "Quit import customization?": [
         "Ali želite prekiniti prilagajanje uvoza?"
@@ -1748,6 +2076,9 @@
       ]
     },
     "Country name": {
+      "Abkhazia": [
+        "Abhazija"
+      ],
       "Afghanistan": [
         "Afganistan"
       ],
@@ -1757,6 +2088,9 @@
       "Algeria": [
         "Alžirija"
       ],
+      "American Samoa": [
+        "Ameriška Samoa"
+      ],
       "Andorra": [
         "Andora"
       ],
@@ -1765,6 +2099,9 @@
       ],
       "Anguilla": [
         "Angvila"
+      ],
+      "Antarctica": [
+        "Antarktika"
       ],
       "Antigua and Barbuda": [
         "Antigva in Barbuda"
@@ -1777,6 +2114,9 @@
       ],
       "Aruba": [
         "Aruba"
+      ],
+      "Ascension Island": [
+        "Otok Ascension"
       ],
       "Australia": [
         "Avstralija"
@@ -1819,6 +2159,9 @@
       ],
       "Bolivia": [
         "Bolivija"
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "Bonaire, Sveti Evstahij in Saba"
       ],
       "Bosnia and Herzegovina": [
         "Bosna in Hercegovina"
@@ -1898,6 +2241,9 @@
       "Congo (The Democratic Republic of the)": [
         "Kongo (Demokratična republika)"
       ],
+      "Congo, Democratic Republic of the": [
+        "Demokratična republika Kongo"
+      ],
       "Cook Islands": [
         "Cookovi otoki"
       ],
@@ -1955,14 +2301,23 @@
       "Estonia": [
         "Estonija"
       ],
+      "Eswatini": [
+        "Esvatini"
+      ],
       "Ethiopia": [
         "Etiopija"
+      ],
+      "Falkland Islands": [
+        "Falklandski otoki"
       ],
       "Falkland Islands (Malvinas)": [
         "Falklandski otoki (Malvini)"
       ],
       "Faroe Islands": [
         "Ferski otoki"
+      ],
+      "Federated States of Micronesia": [
+        "Zvezne države Mikronezije"
       ],
       "Fiji": [
         "Fidži"
@@ -2012,6 +2367,9 @@
       "Guadeloupe": [
         "Gvadelup"
       ],
+      "Guam": [
+        "Guam"
+      ],
       "Guatemala": [
         "Gvatemala"
       ],
@@ -2054,6 +2412,12 @@
       "Indonesia": [
         "Indonezija"
       ],
+      "International": [
+        "Mednarodno"
+      ],
+      "Iran": [
+        "Iran"
+      ],
       "Iraq": [
         "Irak"
       ],
@@ -2062,6 +2426,9 @@
       ],
       "Islamic Republic of Iran": [
         "Islamska republika Iran"
+      ],
+      "Isle of Man": [
+        "Otok Man"
       ],
       "Israel": [
         "Izrael"
@@ -2074,6 +2441,9 @@
       ],
       "Japan": [
         "Japonska"
+      ],
+      "Jersey": [
+        "Jersey"
       ],
       "Jordan": [
         "Jordanija"
@@ -2105,6 +2475,9 @@
       "Lao People's Democratic Republic": [
         "Laoška ljudska demokratična republika"
       ],
+      "Laos": [
+        "Laos"
+      ],
       "Latvia": [
         "Latvija"
       ],
@@ -2116,6 +2489,9 @@
       ],
       "Liberia": [
         "Liberija"
+      ],
+      "Libya": [
+        "Libija"
       ],
       "Libyan Arab Jamahiriya": [
         "Libija"
@@ -2167,6 +2543,9 @@
       ],
       "Mexico": [
         "Mehika"
+      ],
+      "Micronesia": [
+        "Mikronezija"
       ],
       "Moldova": [
         "Moldavija"
@@ -2225,6 +2604,15 @@
       "Norfolk Island": [
         "Otok Norfolk"
       ],
+      "North Korea": [
+        "Severna Koreja"
+      ],
+      "North Macedonia": [
+        "Severna Makedonija"
+      ],
+      "Northern Mariana Islands": [
+        "Severni Marijanski otoki"
+      ],
       "Norway": [
         "Norveška"
       ],
@@ -2282,6 +2670,9 @@
       "Rwanda": [
         "Ruanda"
       ],
+      "Saint Barthélemy": [
+        "Sveti Bartolomej"
+      ],
       "Saint Helena": [
         "Sveta Helena"
       ],
@@ -2290,6 +2681,9 @@
       ],
       "Saint Lucia": [
         "Sveta Lucija"
+      ],
+      "Saint Martin (French Part)": [
+        "Sveti Martin (francoski del)"
       ],
       "Saint Pierre and Miquelon": [
         "Sveta Peter in Mihael"
@@ -2324,6 +2718,9 @@
       "Singapore": [
         "Singapur"
       ],
+      "Sint Maarten": [
+        "Sveti Martin"
+      ],
       "Slovakia": [
         "Slovaška"
       ],
@@ -2341,6 +2738,12 @@
       ],
       "South Georgia and the South Sandwich Islands": [
         "Južna Georgija in Južni Sandwichevi otoki"
+      ],
+      "South Korea": [
+        "Južna Koreja"
+      ],
+      "South Ossetia": [
+        "Južna Osetija"
       ],
       "South Sudan": [
         "Južni Sudan"
@@ -2369,6 +2772,9 @@
       "Switzerland": [
         "Švica"
       ],
+      "Syria": [
+        "Sirija"
+      ],
       "Syrian Arab Republic": [
         "Sirija"
       ],
@@ -2378,11 +2784,17 @@
       "Tajikistan": [
         "Tadžikistan"
       ],
+      "Tanzania": [
+        "Tanzanija"
+      ],
       "Tanzania, United Republic of": [
         "Tanzanija, Združena republika"
       ],
       "Thailand": [
         "Tajska"
+      ],
+      "Timor-Leste": [
+        "Vzhodni Timor"
       ],
       "Togo": [
         "Togo"
@@ -2395,6 +2807,9 @@
       ],
       "Trinidad and Tobago": [
         "Trinidad in Tobago"
+      ],
+      "Tristan da Cunha": [
+        "Tristan da Cunha"
       ],
       "Tunisia": [
         "Tunizija"
@@ -2426,6 +2841,9 @@
       "United States": [
         "Združene države Amerike"
       ],
+      "United States Minor Outlying Islands": [
+        "Manjši zunanji otoki Združenih držav"
+      ],
       "Uruguay": [
         "Urugvaj"
       ],
@@ -2441,6 +2859,12 @@
       "Vietnam": [
         "Vietnam"
       ],
+      "Virgin Islands, British": [
+        "Britanski Deviški otoki"
+      ],
+      "Virgin Islands, U.S.": [
+        "Deviški otoki Združenih držav"
+      ],
       "Wallis and Futuna": [
         "Wallis in Futuna"
       ],
@@ -2455,6 +2879,9 @@
       ],
       "Zimbabwe": [
         "Zimbabve"
+      ],
+      "Åland Islands": [
+        "Alandski otoki"
       ]
     },
     "Country select label": {
@@ -2608,14 +3035,23 @@
       ]
     },
     "Description": {
+      "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
+        "${ DOCS_SHORT_APP_NAME } v ${ DRIVE_APP_NAME } vam omogočata varno in šifrirano sodelovanje z drugimi."
+      ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } varuje vaš račun z namenskim stalnim nadzorom sumljivih dejavnosti, vključno z obveščanjem varnostnih strokovnjakov."
       ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA doda dodatno varnostno plast, ki preprečuje nepooblaščen dostop."
       ],
+      "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
+        "Dodajte mape in datoteke v ${ DRIVE_APP_NAME } ter povabite člane ekipe, da si jih ogledajo ali jih uredijo."
+      ],
       "Also included": [
         "Tudi vključeno"
+      ],
+      "Automatically forward incoming email to another email address.": [
+        "Samodejno posreduj dohodno e-pošto na drug e-poštni naslov."
       ],
       "Availability unknown": [
         "Razpoložljivost ni znana"
@@ -2626,14 +3062,26 @@
       "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
         "Dogodke prilagodite z barvami, da si lažje organizirate dan, spremljate čas in razvrščate opravila po pomembnosti."
       ],
+      "Connect your CRM, website, printers, and more.": [
+        "Povežite svoj CRM, spletno stran, tiskalnike in drugo."
+      ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Ustvarite sestanek Zoom in dodajte podrobnosti za pridružitev vašemu dogodku z enim klikom."
+      ],
+      "Create groups you can email with a single address.": [
+        "Ustvarite skupine, ki jim lahko pošiljate e-pošto z enim samim naslovom."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Dešifriranje stikov … To lahko traja nekaj minut. Po končanem postopku boste lahko prenesli datoteko z vsemi izvoženimi stiki."
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Brisanje stikov … To lahko traja nekaj minut. Ko se postopek konča, lahko zaprete to okno."
+      ],
+      "Easily access your email and calendar on desktop and mobile.": [
+        "Preprosto dostopajte do svoje e-pošte in koledarja v računalniku in mobilni napravi."
+      ],
+      "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
+        "Preprosto sinhronizirajte datoteke v oblak iz namizja in do njih dostopajte iz mobilne naprave."
       ],
       "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
         "E-poštna sporočila, poslana na naslov ${ connectedAddressText }, bodo zdaj prikazana v ${ MAIL_APP_NAME }."
@@ -2644,11 +3092,26 @@
       "Enough room for years of emails, attachments and more.": [
         "Dovolj prostora za leta e-pošte, priponk in drugega."
       ],
+      "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
+        "Zagotovite si varen dostop do podatkov organizacije, tudi če je vaša ekipa oddaljena ali uporablja javni WiFi."
+      ],
+      "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
+        "Zagotovite vrhunsko varnost za svoj račun s programom ${ PROTON_SENTINEL_NAME }."
+      ],
+      "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
+        "Zagotovite si, da boste še vedno lahko dostopali do svojega računa in podatkov, tudi če izgubite geslo za ${ BRAND_NAME }."
+      ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Prejmite obvestilo, če so vaše geslo ali drugi podatki ušli iz storitve tretje osebe."
       ],
+      "Help your team securely store passwords to sensitive business and client information.": [
+        "Pomagajte svoji ekipi varno shranjevati gesla za občutljive poslovne informacije in informacije o strankah."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Zdi se, da seznam stikov, ki ga uvažate, vsebuje nekaj skupin. Preverite, kako naj se te skupine uvozijo."
+      ],
+      "Let's you instantly add meeting links to your event invitations.": [
+        "Omogoča vam takojšnje dodajanje povezav do srečanj v vaša povabila na dogodke."
       ],
       "Loading availability": [
         "Nalaganje razpoložljivosti"
@@ -2683,11 +3146,17 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Za uvoz stikov iz Googla ali Outlooka ${ easySwitchLink }."
       ],
+      "To start, give your organization a name.": [
+        "Za začetek imenujte svojo organizacijo."
+      ],
       "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
         "Odklenite 15 GB shrambe za samo ${ config.offerPrice }."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Z vlečenjem in spuščanjem določite prioriteto združevanja med stiki. Poleg stikov, ki jih ne želite združiti, pobrišite potrditvena polja."
+      ],
+      "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
+        "Uporabite ta priročnik, da bo vaša organizacija čim prej začela izkoriščati prednosti vodilnega ekosistema za šifriranje in varstvo zasebnosti podjetja ${ BRAND_NAME }."
       ],
       "We can't access ${ boldEmails } anymore.": [
         "Do ${ boldEmails } ne moremo več dostopati."
@@ -2724,6 +3193,9 @@
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "Vaš brezplačni račun ${ MAIL_APP_NAME } ima omejeno shrambo, zato bomo uvozili le vaša najnovejša e-poštna sporočila iz Gmaila."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "Ustvarili ste že 10 vzdevkov. Zagotovite si neomejeno število vzdevkov in 500 GB shrambe s paketom ${ BRAND_NAME } Unlimited."
       ]
     },
     "description": {
@@ -2816,9 +3288,61 @@
         "Vaša ${ PLAN_NAMES[PLANS.PASS] } naročnina je po posebni ceni ${ price } na leto. S podgraditvijo na paket Free boste trajno izgubili popust, tudi če v prihodnosti znova nadgradite."
       ]
     },
+    "Drawer tab, Action": {
+      "Download for Linux": [
+        "Prenesi za Linux"
+      ],
+      "Download for macOS": [
+        "Prenesi za macOS"
+      ],
+      "Download for Windows": [
+        "Prenesi za Windows"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Razširjena zgodovina različic"
+      ],
+      "Priority support": [
+        "Prednostna podpora"
+      ]
+    },
     "Dropdown action icon tooltip": {
       "Add calendar": [
         "Dodaj koledar"
+      ]
+    },
+    "Duo offer": {
+      "/month": [
+        "/mesec"
+      ],
+      "2 TB of storage to share": [
+        "2 TB shrambe za souporabo"
+      ],
+      "2 user accounts": [
+        "2 uporabniška računa"
+      ],
+      "All premium features from your current plan": [
+        "Vse premijske funkcije iz vašega trenutnega paketa"
+      ],
+      "Only": [
+        "Samo"
+      ]
+    },
+    "Duo offer: Link": {
+      "Get 4x more storage": [
+        "Pridobite 4x več prostora za shranjevanje"
+      ],
+      "Share your plan": [
+        "Delite svoj paket"
+      ]
+    },
+    "Duo offer: Title": {
+      "Get 4x more storage with ${ BRAND_NAME } Duo": [
+        "Pridobite 4x več shrambe s ${ BRAND_NAME } Duo"
+      ],
+      "Share your plan benefits with ${ BRAND_NAME } Duo": [
+        "Delite prednosti vašega paketa z ${ BRAND_NAME } Duo"
       ]
     },
     "Duplicate event button tooltip": {
@@ -2969,6 +3493,9 @@
       "A group with this name already exists": [
         "Skupina z enakim imenom že obstaja"
       ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Pri prijavi kršitve avtorskih pravic ali kraje podatkov je obvezno sporočilo"
+      ],
       "A problem occurred, please try again.": [
         "Prišlo je do težave, poskusite znova."
       ],
@@ -2980,6 +3507,18 @@
       ],
       "Address primary private key not found": [
         "Primarni zasebni ključ naslova ni najden"
+      ],
+      "Alias is not valid": [
+        "Vzdevek ni veljaven"
+      ],
+      "Alias is required": [
+        "Zahtevan je vzdevek"
+      ],
+      "Alias options could not be resolved": [
+        "Možnosti vzdevka ni bilo mogoče razrešiti"
+      ],
+      "Aliases could not be loaded": [
+        "Vzdevkov ni bilo mogoče naložiti"
       ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Ves prostor na disku je že dodeljen. Zmanjšajte dodelitev prostora drugim uporabnikom."
@@ -2993,6 +3532,12 @@
       "Amount below minimum (${ minimumAmount }).": [
         "Znesek je manjši od minimalnega (${ minimumAmount })."
       ],
+      "An error occurred while loading alias options": [
+        "Pri nalaganju možnosti vzdevkov je prišlo do napake"
+      ],
+      "An error occurred while saving your alias": [
+        "Pri shranjevanju vzdevka je prišlo do napake"
+      ],
       "Answer failed to be sent": [
         "Odgovora ni bilo mogoče poslati"
       ],
@@ -3002,14 +3547,29 @@
       "Authentication error.": [
         "Napaka pri preverjanju pristnosti."
       ],
+      "Bookmark password is not available": [
+        "Geslo zaznamka ni na voljo"
+      ],
       "Calendar limit reached": [
         "Dosežena omejitev števila koledarjev."
       ],
       "Cancellation failed to be sent": [
         "Preklica ni bilo mogoče poslati"
       ],
+      "Cannot download a folder": [
+        "Mape ni mogoče prenesti"
+      ],
       "Cannot export this contact": [
         "Tega stika ni mogoče izvoziti"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Predmeta ni mogoče premakniti brez veljavnega imena. Najprej preimenujte predmet"
+      ],
+      "Cannot share root folder": [
+        "Korenske mape ni mogoče deliti"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Ni mogoče preveriti, kdo je naložil to datoteko"
       ],
       "Checkout expired, please try again": [
         "Seja je potekla, poskusite znova."
@@ -3035,8 +3595,38 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "Iskanje po vsebini ni mogoče omogočiti. Znova zaženite aplikacijo ali počistite podatke."
       ],
+      "Copying item to a non-folder is not allowed": [
+        "Kopiranje predmetov v mapo, ki to ni, ni dovoljeno"
+      ],
       "Could not grant access to the organization key": [
         "Dostop do ključa organizacije ni bil odobren"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "Predogleda slike ni mogoče naložiti: ${ message }"
+      ],
+      "Could not open created vault": [
+        "Ni bilo mogoče odpreti ustvarjenega trezorja"
+      ],
+      "Could not open updated vault": [
+        "Ni bilo mogoče odpreti posodobljenega trezorja"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Dela naslednje datoteke ni bilo mogoče prebrati: ${ message }"
+      ],
+      "Could not unlock the parent folder": [
+        "Nadrejene mape ni bilo mogoče odkleniti"
+      ],
+      "Could not unlock this item": [
+        "Predmeta ni bilo mogoče odkleniti"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Ustvarjanje dokumentov v mapah, ki to niso, ni dovoljeno"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Ustvarjanje datotek v mapah, ki to niso, ni dovoljeno"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Ustvarjanje map v mapah, ki to niso, ni dovoljeno"
       ],
       "Decryption error: Decryption of this event's content failed.": [
         "Napaka pri dešifriranju: dešifriranje vsebine tega dogodka ni uspelo."
@@ -3052,6 +3642,9 @@
         "Izberite vsaj ${ calendarsToFixCount } koledarja manj ali",
         "Izberite vsaj ${ calendarsToFixCount } koledarje manj ali",
         "Izberite vsaj ${ calendarsToFixCount } koledarjev manj ali"
+      ],
+      "Device not found": [
+        "Naprave ni bilo mogoče najti"
       ],
       "Domain not available, try again later": [
         "Domena ni na voljo, poskusite znova pozneje"
@@ -3074,6 +3667,9 @@
       "Ends on date must be after start time": [
         "Končni datum mora biti po začetnem času"
       ],
+      "Enter 6 digits": [
+        "Vnesite 6 števk"
+      ],
       "Enter your username without the domain (@example.com)": [
         "Vnesite svoje uporabniško ime brez domene (@primer.com)"
       ],
@@ -3089,11 +3685,32 @@
       "Event not found": [
         "Dogodek ni bil najden"
       ],
+      "Expiration date cannot be in the past": [
+        "Datum poteka ne more biti v preteklosti"
+      ],
+      "Failed loading group members": [
+        "Napaka pri nalaganju članov skupine"
+      ],
       "Failed to add existing ${ MEET_APP_NAME } video conference": [
         "Ni uspelo dodati obstoječe video konference ${ MEET_APP_NAME }"
       ],
       "Failed to create meeting": [
         "Ni uspelo ustvariti sestanka."
+      ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Ključa zaznamka ni bilo mogoče dešifrirati: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Imena zaznamka ni bilo mogoče dešifrirati: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Imena predmeta ni bilo mogoče dešifrirati: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Ključa vozlišča ni bilo mogoče dešifrirati: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Metapodatkov revizije ni bilo mogoče dešifrirati"
       ],
       "Failed to get event": [
         "Dogodka ni bilo mogoče pridobiti"
@@ -3113,11 +3730,23 @@
       "Failed to update settings": [
         "Posodobitev nastavitev ni uspela"
       ],
+      "Failed to verify invitation": [
+        "Povabila ni bilo mogoče preveriti"
+      ],
+      "File download failed due to empty response": [
+        "Prenos datoteke ni uspel zaradi praznega odziva"
+      ],
       "First name is too long": [
         "Ime je predolgo"
       ],
       "Folder name cannot be empty.": [
         "Ime mape ne sme biti prazno."
+      ],
+      "Forward address is required": [
+        "Zahtevan je naslov za posredovanje"
+      ],
+      "Image preview not found": [
+        "Predogleda slike ni bilo mogoče najti"
       ],
       "Image upload failed": [
         "Nalaganje slike ni uspelo"
@@ -3158,17 +3787,32 @@
       "Invalid public key file": [
         "Neveljavna datoteka z javnim ključem"
       ],
+      "Invalid URL": [
+        "Neveljaven URL"
+      ],
       "Invalid VAT number": [
         "Neveljavna DDV številka"
       ],
+      "Invalid verification code": [
+        "Neveljavna koda za preverjanje"
+      ],
       "Invitation failed to be sent": [
         "Povabilo ni bilo poslano"
+      ],
+      "Invitation not found": [
+        "Povabila ni bilo mogoče najti"
       ],
       "It is only possible to create events between ${ minDateString } - ${ maxDateString }": [
         "Dogodke lahko ustvarite le med ${ minDateString } in ${ maxDateString }"
       ],
       "It is only possible to move events between ${ minDateString } - ${ maxDateString }": [
         "Dogodke lahko premikate le med ${ minDateString } in ${ maxDateString }"
+      ],
+      "Item content cannot exceed 40KB": [
+        "Vsebina predmeta ne sme presegati 40 KB"
+      ],
+      "Item not found": [
+        "Predmeta ni bilo mogoče najti"
       ],
       "Label name cannot be empty.": [
         "Ime oznake ne sme biti prazno."
@@ -3191,8 +3835,23 @@
       "Missing signature": [
         "Manjka podpis"
       ],
+      "Missing signature for ${ signatureType }": [
+        "Za ${ signatureType } manjka podpis"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "Premikanje predmetov v mapo, ki to ni, ni dovoljeno"
+      ],
+      "Name is required": [
+        "Zahtevano je ime"
+      ],
+      "Name must not be empty": [
+        "Ime ne sme biti prazno"
+      ],
       "Name required": [
         "Ime je obvezno"
+      ],
+      "Network error": [
+        "Omrežna napaka"
       ],
       "No calendars found to import": [
         "Ni najdenih koledarjev za uvoz."
@@ -3233,6 +3892,9 @@
         "V nekaterih skupinah ni stikov: ${ noContactGroupList } ",
         "V nekaterih skupinah ni stikov: ${ noContactGroupList } "
       ],
+      "Only admins can convert external invitations": [
+        "Zunanja povabila lahko pretvorijo samo skrbniki"
+      ],
       "Organization does not have enough seats available": [
         "Organizacija nima na voljo dovolj sedežev"
       ],
@@ -3265,6 +3927,12 @@
       ],
       "Payment process not supported": [
         "Postopek plačila ni podprt"
+      ],
+      "Photo is already in the target album": [
+        "Fotografija je že v ciljnem albumu"
+      ],
+      "Photo not found": [
+        "Fotografije ni bilo mogoče najti"
       ],
       "Please activate your search again": [
         "Prosimo, ponovno aktivirajte iskanje."
@@ -3353,11 +4021,26 @@
       "Signature verification failed": [
         "Preverjanje podpisa ni uspelo"
       ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Preverjanje podpisa ni uspelo: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "Preverjanje podpisa za ${ signatureType } ni uspelo"
+      ],
       "Some contacts could not be deleted": [
         "Nekaterih stikov ni bilo mogoče izbrisati"
       ],
+      "Some file data failed to upload. Please try again.": [
+        "Podatki nekaterih datotek se niso uspeli naložiti. Poskusite znova."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "Deli nekaterih datotek se niso uspeli naložiti. Poskusite znova."
+      ],
       "Some groups could not be deleted": [
         "Nekaterih skupin ni bilo mogoče izbrisati"
+      ],
+      "Some items could not be loaded": [
+        "Nekaterih predmetov ni bilo mogoče naložiti"
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Nekatera imena map niso na voljo. Prosimo prilagodite uvoz tako, da uredite takšna imena."
@@ -3374,8 +4057,14 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Nekatera imena vaših oznak presegajo največje dovoljeno število znakov za ${ MAIL_APP_NAME }. Prilagodite uvoz za urejanje teh imen."
       ],
+      "Something went wrong": [
+        "Nekaj je šlo narobe"
+      ],
       "Something went wrong while fetching available domains": [
         "Med pridobivanjem razpoložljivih domen je prišlo do napake"
+      ],
+      "Something went wrong. Please try again.": [
+        "Nekaj je šlo narobe. Poskusite znova."
       ],
       "Start time must be before end time": [
         "Čas začetka mora biti pred končnim časom"
@@ -3434,6 +4123,9 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "To polje zahteva vsaj ${ minimumLength } znakov."
       ],
+      "This file version could not be uploaded": [
+        "Te različice datoteke ni bilo mogoče naložiti"
+      ],
       "This folder name is not available. Please choose a different name.": [
         "To ime mape ni na voljo. Izberite drugačno ime."
       ],
@@ -3443,11 +4135,20 @@
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "To sporočilo morda vsebuje povezave, ki jih vaš trenutni brskalnik ne more pravilno odpreti."
       ],
+      "Too many server errors, please try again later": [
+        "Preveč napak strežnika, poskusite znova pozneje"
+      ],
+      "Too many server requests, please try again later": [
+        "Preveč zahtev strežniku, poskusite znova pozneje"
+      ],
       "Trusted keys are not valid for sending": [
         "Zaupanja vredni ključi niso veljavni za pošiljanje"
       ],
       "Try using only letters, numerals, and _.-": [
         "Poskusite uporabiti samo črke, števke in _.-"
+      ],
+      "Unable to load VPN dashboard. Please check your connection and try again.": [
+        "Ni mogoče naložiti nadzorne plošče VPN. Preverite svojo povezavo in poskusite znova."
       ],
       "Unexpected error, we can't import the contacts": [
         "Nepričakovana napaka, ne moremo uvoziti stikov"
@@ -3473,6 +4174,9 @@
       "VAT number must start with ${ prefixes }": [
         "Davčna številka se mora začeti z ${ prefixes }"
       ],
+      "We couldn’t send a verification code using this method.": [
+        "S to metodo nam ni uspelo poslati potrditvenega kode."
+      ],
       "Wrong billing address": [
         "Napačen naslov za izstavitev računa"
       ],
@@ -3482,6 +4186,18 @@
       "You are reconnected to Zoom. You can save your event now.": [
         "Ponovno ste se povezali s storitvijo Zoom. Zdaj lahko shranite svoj dogodek."
       ],
+      "You can create public links for your own files only": [
+        "Javne povezave lahko ustvarjate samo do lastnih datotek"
+      ],
+      "You can only leave items that are shared with you": [
+        "Zapustite lahko le predmete, ki so v skupni rabi z vami"
+      ],
+      "You can only upload a new version to a file": [
+        "Naložite lahko samo novo različico datoteke"
+      ],
+      "You can update a public link for your own files only": [
+        "Javno povezavo lahko posodobite samo za lastne datoteke"
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Sporočilo lahko pošljete največ ${ maxContacts } prejemniku.",
         "Sporočilo lahko pošljete največ ${ maxContacts } prejemnikoma.",
@@ -3490,6 +4206,9 @@
       ],
       "You cannot enter the organizer's email": [
         "Ne morete vnesti e-pošte organizatorja"
+      ],
+      "You do not have access to this shared item": [
+        "Nimate dostopa do tega predmeta v skupni rabi"
       ],
       "You have reached the maximum number of calendars.": [
         "Dosegli ste največje število koledarjev."
@@ -3675,6 +4394,9 @@
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Te strani ni bilo mogoče naložiti. Osvežite stran ali preverite svojo povezavo z internetom."
       ],
+      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
+        "Ko je omogočeno dodatno geslo, je upravljanje vzdevkov mogoče samo v ${ PASS_APP_NAME }."
+      ],
       "You need an active personal calendar to import events": [
         "Za uvoz dogodkov potrebujete aktiven osebni koledar"
       ]
@@ -3796,6 +4518,16 @@
         "(brez naslova)"
       ]
     },
+    "familyOffer_2023: Deal details": {
+      "3 TB total storage": [
+        "3 TB skupnega prostora shrambe"
+      ]
+    },
+    "familyOffer_2023: Tooltip": {
+      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Prostor za shranjevanje si delijo družinski člani ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } in ${ DRIVE_APP_NAME }"
+      ]
+    },
     "familyOffer_2023:Action": {
       "Decline invitation": [
         "Zavrni povabilo"
@@ -3805,6 +4537,11 @@
       ],
       "Switch plans": [
         "Zamenjaj paket"
+      ]
+    },
+    "familyOffer_2023:Deal details": {
+      "Up to 6 users": [
+        "Do šest uporabnikov"
       ]
     },
     "familyOffer_2023:Error": {
@@ -3921,6 +4658,17 @@
         "Izbriši organizacijo?"
       ]
     },
+    "familyOffer_2023:Tooltip": {
+      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Vključuje 2700 strežnikov v več kot 65 državah, povežite do 10 naprav, dostop do svetovnih storitev pretakanja, zlonamerne programske opreme in zaviralcev oglasov ter več."
+      ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
+        "Vključuje podporo za tri e-poštne domene po meri, 90 e-poštnih naslovov, neomejeno število vzdevkov hide-my-email, deljenje koledarjev in še več."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Zaščitite vaše datoteke s šifrirano shrambo v oblaku. Vključuje samodejno sinhronizacijo, šifrirano delitev datotek in drugo."
+      ]
+    },
     "Feature": {
       "10+ premium features": [
         "10+ premijskih funkcij"
@@ -3947,6 +4695,24 @@
     "Features": {
       "Lightning-fast speeds": [
         "Bliskovite hitrosti"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Pri preverjanju vašega varnostnega ključa je prišlo do napake. Prosimo, poskusite znova."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Vstavite varnostni ključ, povezan z vašim ${ BRAND_NAME } računom."
+      ],
+      "Security key": [
+        "Varnostni ključ"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Varnostni ključ"
       ]
     },
     "file size format": {
@@ -4114,6 +4880,23 @@
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "S smernimi tipkama gor in dol si oglejte in izberite predloge. Za potrditev izbire pritisnite Enter, za preklic in zapiranje polja s predlogi pritisnite Esc."
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Email": [
+        "E-pošta"
+      ],
+      "Manual": [
+        "Ročno"
+      ],
+      "No verification method available": [
+        "Način preverjanja ni na voljo"
+      ],
+      "SMS": [
+        "SMS"
       ]
     },
     "ICS event error": {
@@ -4527,6 +5310,9 @@
         "${ planName } poteče v ${ daysLeft } dneh.",
         "${ planName } poteče v ${ daysLeft } dneh."
       ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
+        "${ PROTON_SENTINEL_NAME } varuje vaš račun z namenskim nadzorom sumljivih dejavnosti."
+      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } najdena mapa",
         "${ providerFoldersNumLocalized } najdeni mapi",
@@ -4578,6 +5364,9 @@
         "${ updated } stiki so uspešno posodobljeni.",
         "${ updated } stikov je uspešno posodobljenih."
       ],
+      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
+        "${ VPN_APP_NAME } prikriva vaš naslov IP, zato vas spletne strani ne morejo prepoznati."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } član)",
         "(${ memberCount } člana)",
@@ -4587,8 +5376,14 @@
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/mesec)"
       ],
+      "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
+        "**Samodejna povezava**: Odpre in vzpostavi povezavo s storitvijo VPN takoj, ko vklopite svojo napravo."
+      ],
       "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
         "**Povabite vaše prijatelje** na ${ BRAND_NAME } z vašo povezavo za priporočilo."
+      ],
+      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
+        "**Stikalo za odklop**: Ustavi uhajanje podatkov tako, da blokira vašo internetno povezavo, če VPN nepričakovano preneha delovati."
       ],
       "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
         "**Pridobijo ${ refereeRewardAmount }** v dobroimetju, če se naročijo."
@@ -4617,14 +5412,32 @@
       "A cancellation email will be sent to the event participants. Would you like to delete this event?": [
         "Udeležencem dogodka bo poslano e-poštno sporočilo o preklicu. Ali želite izbrisati ta dogodek?"
       ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "S telefonsko številko lahko preverite samo en ${ BRAND_NAME } račun"
+      ],
+      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
+        "Varna povezava je bistvena pri delu na daljavo. VPN ščiti podatke podjetja pred kibernetskimi grožnjami in ohranja vaše delo zasebno."
+      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Uporabnik je račun, povezan s posameznim uporabniškim imenom, poštnim nabiralnikom in osebo."
+      ],
+      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
+        "VPN šifrira vašo povezavo in skrije vaš naslov IP, zato je veliko težje komu slediti ali nadzorovati vaše brskanje."
+      ],
+      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
+        "VPN skrije vaš IP naslov in šifrira vaše brskanje, s čimer spletnim stranem, oglaševalcem in ponudnikom internetnih storitev (ISP) oteži sledenje vam skozi čas."
+      ],
+      "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
+        "VPN je varen tunel med vašo napravo in internetom. Skrije vašo lokacijo in dejavnost pred vašim ponudnikom internetnih storitev (ISP) in spletnimi stranmi, ki jih obiskujete."
       ],
       "Access to 20,000+ servers in 145 countries": [
         "Dostop do več kot 20.000 strežnikov v več kot 145 državah"
       ],
       "Account successfully updated": [
         "Račun je uspešno posodobljen"
+      ],
+      "Ad targeting": [
+        "Ciljno oglaševanje"
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Dodaj ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
@@ -4638,8 +5451,14 @@
       "Added and removed participants will be notified.": [
         "Dodani in odstranjeni udeleženci bodo obveščeni."
       ],
+      "Address copied to clipboard": [
+        "Naslov kopiran v odložišče"
+      ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Za ta naslov je omogočena potrditev naslova z zaupnimi ključi. Če želite pošiljati na ta naslov, najprej označite javne ključe, ki jih lahko uporabite za pošiljanje, kot vredne zaupanja."
+      ],
+      "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
+        "Oglaševalci sledijo vašemu brskanju, da vam kažejo ciljno usmerjene oglase. ${ VPN_APP_NAME } blokira sledilnike in oglase, s čimer pospeši vašo povezavo in izboljša vašo spletno izkušnjo."
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Pomočnik z umetno inteligenco za hitro in preprosto ustvarjanje boljše e-pošte."
@@ -4710,6 +5529,9 @@
       "Based on your time zone": [
         "Glede na vaš časovni pas"
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Preden zahtevate novo kodo za preverjanje, preverite mapo za neželeno pošto in preverite, ali je ${ strong } pravilen naslov."
+      ],
       "Billing cycle: ${ text }": [
         "Obračunski cikel: ${ text }."
       ],
@@ -4758,8 +5580,14 @@
       "Clears browser data related to the encrypted search.": [
         "Počisti podatke brskalnika, povezane s šifriranim iskanjem."
       ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Kliknite »Zahtevaj novo kodo« za pošiljanje nove kode za preverjanje na ${ strong }. Če je ta telefonska številka napačna, kliknite »Uredi« in jo popravite."
+      ],
       "Close this screen to exit.": [
         "Za izhod zaprite ta zaslon."
+      ],
+      "Connect to ${ VPN_APP_NAME } to browse privately": [
+        "Povežite se s programom ${ VPN_APP_NAME } za zasebno brskanje"
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Stik dodeljen skupini ${ contactGroupName }"
@@ -4775,6 +5603,9 @@
       ],
       "Copy your referral link": [
         "Kopirajte svojo povezavo za priporočilo"
+      ],
+      "Country code": [
+        "Koda države"
       ],
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "Ustvari ${ calendarsToBeCreatedCount } nov koledar",
@@ -4833,14 +5664,26 @@
       "Dedicated VPN servers": [
         "Namenski VPN strežniki"
       ],
+      "default email address": [
+        "privzeti e-poštni naslov"
+      ],
       "Deleting event...": [
         "Brisanje dogodka ...",
         "Brisanje dogodkov ...",
         "Brisanje dogodkov ...",
         "Brisanje dogodkov ..."
       ],
+      "Details": [
+        "Podrobnosti"
+      ],
       "Discard changes?": [
         "Zavrzi spremembe?"
+      ],
+      "Discover new features unlocked and start using them right away!": [
+        "Odkrijte nove odklenjene funkcije in jih takoj začnite uporabljati!"
+      ],
+      "Discover new features unlocked with ${ planTitle } and start using them right away!": [
+        "Odkrijte nove funkcije, ki so odklenjene s paketom ${ planTitle }, in jih takoj začnite uporabljati!"
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logotip"
@@ -4872,6 +5715,12 @@
       "Duplicate key updated": [
         "Podvojeni ključ je posodobljen"
       ],
+      "Each code can only be used once": [
+        "Vsaka koda se lahko uporabi samo enkrat"
+      ],
+      "Edit email address": [
+        "Uredi e-poštni naslov"
+      ],
       "email": [
         "e-pošta"
       ],
@@ -4881,11 +5730,29 @@
       "Emails are automatically signed": [
         "Sporočila so samodejno podpisana"
       ],
+      "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
+        "E-poštna sporočila, ki so bila premaknjena v smeti in neželeno pošto pred več kot 30 dnevi, bodo samodejno izbrisana."
+      ],
+      "Enabling auto-deletion…": [
+        "Omogočanje samodejnega brisanja …"
+      ],
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Zagotovite si popolnoma zasebno in šifrirano komunikacijo. Prevzemite svoj brezplačni e-poštni naslov ${ BRAND_NAME } zdaj."
       ],
+      "Enter code": [
+        "Vnesi kodo"
+      ],
+      "Enter the code from your authenticator app": [
+        "Vnesite kodo iz aplikacije za preverjanje pristnosti"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Vnesite poverilnice e-poštnega računa, iz katerega želite uvoziti podatke."
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "Vnesite kodo za preverjanje, ki je bila poslana na ${ destinationText }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Vpišite vaše lastno geslo (kot skrbnik organizacije)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Predvideni preostali čas: ${ estimatedMinutes } minuta",
@@ -4944,8 +5811,14 @@
       "Frequency modifications will be lost.": [
         "Spremembe pogostosti bodo izgubljene."
       ],
+      "Geoblocking": [
+        "Geoblokiranje"
+      ],
       "Google Pay mark": [
         "Oznaka Google Pay"
+      ],
+      "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
+        "Vlade in ponudniki internetnih storitev lahko spremljajo vašo spletno dejavnost. S skrivanjem vašega resničnega IP-ja in šifriranjem vaše dejavnosti postane vaše brskanje zasebno."
       ],
       "Have some more time to decide without interruption.": [
         "Imate še nekaj časa, da se odločite, ne da bi vas pri tem kaj motilo."
@@ -4965,6 +5838,9 @@
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "Če so bližnjice na tipkovnici omogočene, lahko uporabite naslednje tipke za hitra dejanja ali za skok na različne poglede. ${ metaKey } + K je vedno omogočeno."
       ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Če imate težave z ustvarjanjem računa, lahko zahtevate povabilo in odzvali se bomo v enem delovnem dnevu."
+      ],
       "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
         "Če naročnino prekinete zdaj, boste dne ${ expiryDate } izgubili dostop do ${ BRAND_NAME } ${ planTitle }, vključno z naslednjimi funkcijami:"
       ],
@@ -4973,6 +5849,9 @@
       ],
       "If you change your mind, you can subscribe again at any time. Sorry to see you go!": [
         "Če si premislite, se lahko kadarkoli ponovno naročite. Žal nam je, da odhajate!"
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "Če sporočila ne najdete v nabiralniku, poglejte v mapo z neželeno pošto."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Če nadaljujete s podgradnjo, boste izgubili dostop do plačljivih funkcij ${ MAIL_APP_NAME } in ${ VPN_APP_NAME }."
@@ -5004,6 +5883,9 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Uvažanje podatkov iz ${ fromEmail } v ${ toEmail }."
       ],
+      "In restrictive countries": [
+        "V državah z omejitvami"
+      ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "V naslednjem koraku boste lahko vložili polog z uporabo Bitcoin naslova."
       ],
@@ -5030,6 +5912,9 @@
       ],
       "It's better to have:": [
         "Bolje je imeti:"
+      ],
+      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
+        "Najbolje je VPN uporabljati ves čas. Tukaj pa so kibernetske grožnje lahko največje:"
       ],
       "JCB logo": [
         "Logotip JCB"
@@ -5109,6 +5994,9 @@
       "Monthly ${ onDayString }": [
         "Mesečno ${ onDayString }"
       ],
+      "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
+        "Večina javnih omrežij WiFi je varnih, vendar nekatera nimajo ustrezne varnosti, zato ste izpostavljeni kibernetskim grožnjam. VPN šifrira vaš promet in vas ohranja zaščitene."
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Poimenujte novo mapo in izberite, v kateri mapi naj se ustvari. Če ne izberete nadrejene mape, bo ta mapa ustvarjena kot mapa najvišje ravni."
       ],
@@ -5130,6 +6018,9 @@
       "No payment is required at this time.": [
         "Plačilo ni potrebno."
       ],
+      "No results found": [
+        "Ni najdenih rezultatov"
+      ],
       "None of the participants can be notified about your changes:": [
         "O vaših spremembah ni mogoče obvestiti nobenega od udeležencev:"
       ],
@@ -5138,6 +6029,9 @@
       ],
       "Not a valid URL": [
         "Neveljaven URL"
+      ],
+      "Not connected": [
+        "Niste povezani"
       ],
       "Not on the same day": [
         "Ne na isti dan"
@@ -5154,6 +6048,9 @@
       "Occurrences previously updated by the organizer will be kept.": [
         "Ponovitve, ki jih je organizator predhodno posodobil, se bodo obdržale."
       ],
+      "On public WiFi networks": [
+        "V javnih omrežjih WiFi"
+      ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Enega ali več vaših zaupanja vrednih ključev je njihov lastnik označil kot \"ogroženo\". Priporočamo, da tem ključem \"ne zaupate\"."
       ],
@@ -5162,6 +6059,9 @@
       ],
       "Open the guide for recommended actions and helpful links.": [
         "Odprite priročnik za priporočena dejanja in koristne povezave."
+      ],
+      "or discover other features:": [
+        "ali odkrijte druge funkcije:"
       ],
       "Organization size": [
         "Velikost organizacije"
@@ -5259,6 +6159,9 @@
       "Primary": [
         "Glavni"
       ],
+      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
+        "Zasebno brskanje (ali »način brez beleženja zgodovine«) je uporabno samo za ohranjanje zasebnosti vaše dejavnosti znotraj vaše naprave. Preprečuje, da bi vaš brskalnik shranjeval zgodovino in piškotke, vendar vas ne naredi nevidne. Vaš internetni ponudnik, skrbnik omrežja in spletne strani, ki jih obiskujete, lahko še vedno vidijo, kaj počnete v spletu."
+      ],
       "Range is too short.": [
         "Obdobje je prekratko."
       ],
@@ -5280,6 +6183,9 @@
       "Removed participants will be notified.": [
         "Odstranjeni udeleženci bodo obveščeni."
       ],
+      "Scan the QR code with your mobile device": [
+        "Skenirajte kodo QR z mobilno napravo."
+      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Izberite obliko sporočil, ki jo želite uporabiti kot privzeto ob pošiljanju na ta e-poštni naslov."
       ],
@@ -5298,14 +6204,32 @@
       "Set up your organization": [
         "Nastavite svojo organizacijo"
       ],
+      "Setting up ${ feature }…": [
+        "Nastavljanje ${ feature } …"
+      ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Nastavitev PGP vam omogoča pošiljanje šifriranih e-poštnih sporočil od konca do konca z ne-uporabnikom ${ BRAND_NAME }, ki uporablja združljivo storitev PGP."
+      ],
+      "Setting up your new address…": [
+        "Nastavljanje novega naslova …"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Ker ste zvest uporabnik, smo vašemu računu omogočili dodatne funkcionalnosti."
       ],
+      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
+        "Nekatere vlade blokirajo ali omejujejo dostop do določenih spletnih strani. VPN vam pomaga zaobiti cenzuro, pri tem pa ohranja vašo dejavnost in identiteto zasebno."
+      ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Nekaj vaših odgovorov na ponavljanja, ki jih je orgnizator predhodno posodobil, bo izgubljenih."
+      ],
+      "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
+        "Nekatera spletna mesta in storitve pretakanja blokirajo vsebino glede na regijo. VPN vam omogoča, da zaobidete te omejitve in prosto dostopate do interneta."
+      ],
+      "Start sharing it with contacts and use it for online services.": [
+        "Začnite ga deliti s stiki in ga uporabljajte za spletne storitve."
+      ],
+      "Stay connected effortlessly by enabling the following VPN settings:": [
+        "Ostanite povezani brez težav tako, da omogočite naslednje nastavitve VPN:"
       ],
       "Stay on your plan and get 50% off your next month": [
         "Ostanite pri trenutnem paketu in naslednji mesec izkoristite 50 % popust"
@@ -5330,6 +6254,9 @@
       ],
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Naročnina se izteka: Za ohranitev ugodnosti ${ planName }, obnovite vašo naročnino v trgovini Google Play do ${ byDate }. ${ reactivateLink }"
+      ],
+      "Surveillance": [
+        "Nadzor"
       ],
       "Symbols (#$&)": [
         "Simboli (#$&)"
@@ -5379,6 +6306,9 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Postopek preverjanja bo odprl nov zavihek brskalnika. Pred tem onemogočite prepoved pojavnih oken."
       ],
+      "Thinking about this": [
+        "Razmišljanje"
+      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Ta naslov je onemogočen. Za pošiljanje na ta naslov ga mora lastnik najprej omogočiti."
       ],
@@ -5394,11 +6324,26 @@
       "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
         "Ta dogodek je bil posodobljen. Organizator ne bo obveščen, da ste zavrnili vabilo, saj ne morete pošiljati e-poštnih sporočil s povabljenega naslova. Ali želite vseeno izbrisati ta dogodek?"
       ],
+      "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
+        "To je ime ali vzdevek vaše organizacije, ki ga bodo videli vaši uporabniki. Spremenite ga lahko kadarkoli."
+      ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "To je zdaj vaš naslov ${ defaultEmailAddress } za pošiljanje novih sporočil."
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Za ta postopek je potrebnih več korakov. Nadaljujemo?"
+      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Ta povezava vodi na spletno mesto, ki bi lahko poskušalo ukrasti vaše podatke, kot so gesla in podatki o plačilnih karticah."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Ta povezava je lahko homografski napad. Preverite, ali je to povezava, ki jo želite obiskati, ali pa je ne odpirajte."
+      ],
+      "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
+        "To pomeni, da vaš ponudnik internetnih storitev in spletne strani, ki jih obiskujete, ne morejo povezati vaših osebnih podatkov z vašo spletno aktivnostjo."
+      ],
+      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
+        "To edinstveno kodo lahko spletne strani in ponudniki internetnih storitev (ISP) uporabijo za povezavo vaše lokacije in zgodovine brskanja z vašo napravo"
       ],
       "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
         "Tega uporabnika ni mogoče prenesti, ker njegov e-poštni naslov ni na voljo v storitvi ${ BRAND_NAME }."
@@ -5420,6 +6365,9 @@
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Za dokončanje plačila, prosimo pošljite ${ btcAmountBold } na spodnji naslov."
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "Zaradi boja proti neželeni vsebini in zlorabam najprej potrdite, da ste človek."
       ],
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "Da si boste lažje zapomnili geslo, vas bomo občasno prosili, da ga vnesete. Sčasoma vas bomo za to prosili vse redkeje."
@@ -5454,6 +6402,9 @@
       "Total VPN connections": [
         "Skupno število VPN povezav"
       ],
+      "Tracking": [
+        "Sledenje"
+      ],
       "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
         "Zaupaj ključu \"${ activeSignerText }\", da boš lahko preverjal nova sporočila od tega stika."
       ],
@@ -5462,6 +6413,9 @@
       ],
       "Upgrade anytime to bring over the rest": [
         "Nadgradite kadar koli, da prenesete preostalo"
+      ],
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Nadgradite in dobite premijske funkcije, izdelke in shrambo po posebni ceni"
       ],
       "Upgrade or clear space anytime to bring over the rest": [
         "Nadgradite ali kadar koli počistite prostor, da prenesete preostalo"
@@ -5489,6 +6443,9 @@
       ],
       "Visa Secure logo": [
         "Visa Secure logotip"
+      ],
+      "VPN IP": [
+        "VPN IP"
       ],
       "Warning": [
         "Opozorilo"
@@ -5520,11 +6477,20 @@
       "We'll remind you to verify your password again later": [
         "Kasneje vas bomo opomnili, da znova preverite vaše geslo."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "Poslali vam bomo novo kodo za preverjanje na ${ strong }."
+      ],
       "Week": [
         "Teden"
       ],
       "Week and month views only apply to desktop.": [
         "Tedenski in mesečni pogledi veljajo samo za namizje."
+      ],
+      "When working remotely": [
+        "Pri delu na daljavo"
+      ],
+      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
+        "Ko se povežete z VPN, ta uporablja tehnologijo šifriranja, da skrije vaš IP naslov (edinstvena koda, dodeljena vaši napravi)."
       ],
       "Which calendars should block bookings?": [
         "Kateri koledarji naj blokirajo rezervacije?"
@@ -5549,6 +6515,12 @@
       ],
       "Would you like to delete this event?": [
         "Ali želite izbrisati ta dogodek?"
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Ali želite prejeti novo kodo za preverjanje ali uporabiti drugačen način preverjanja?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Bi želeli prejeti novo kodo za preverjanje?"
       ],
       "Would you like to update all events in this series?": [
         "Želite posodobiti vse dogodke v tej seriji?"
@@ -5589,6 +6561,9 @@
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Uvožene koledarje lahko tudi združite z obstoječimi koledarji v ${ BRAND_NAME }u."
       ],
+      "You can change this anytime in ${ settingsLink }.": [
+        "To lahko kadar koli spremenite v ${ settingsLink }"
+      ],
       "You can check the progress ${ importProgressLink }.": [
         "Napredek si lahko ogledate ${ importProgressLink }."
       ],
@@ -5607,11 +6582,17 @@
         "Lahko obdržite do ${ MAX_CALENDARS_FREE } koledarje. Preden prekličete naročnino, prosimo odstranite deljene povezave do koledarjev in slehernega uporabnika ${ BRAND_NAME }, s katerim ste delili svoje koledarje.",
         "Lahko obdržite do ${ MAX_CALENDARS_FREE } koledarjev. Preden prekličete naročnino, prosimo odstranite deljene povezave do koledarjev in slehernega uporabnika ${ BRAND_NAME }, s katerim ste delili svoje koledarje."
       ],
+      "You can now return to the application to continue": [
+        "Zdaj se lahko vrnete v aplikacijo in nadaljujete"
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Vklopite lahko obvestila o prispetju novih e-poštnih sporočil v to mapo."
       ],
       "You cannot undo this action.": [
         "Tega dejanja ne morete razveljaviti."
+      ],
+      "You get notified if your password or other data was leaked from a third-party service.": [
+        "Prejmite obvestilo, če so vaše geslo ali drugi podatki ušli iz storitve tretje osebe."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Imate preizkusno naročnino ${ planTitle }. Če želite nadaljevati naročnino po preizkusnem obdobju, dodajte način plačila."
@@ -5697,6 +6678,9 @@
       "Your email address was exposed:": [
         "Vaš e-poštni naslov je bil izpostavljen:"
       ],
+      "Your email will only be used for this one-time verification.": [
+        "Vaš e-poštni naslov bo uporabljen le za to enkratno preverjanje."
+      ],
       "Your events will be encrypted and then saved.": [
         "Vaši dogodki bodo šifrirani in nato shranjeni."
       ],
@@ -5709,6 +6693,15 @@
       "Your information was found on ${ displayedDate }": [
         "Vaše informacije so bile najdene ${ displayedDate }"
       ],
+      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
+        "Vaš ponudnik internetnih storitev lahko nadzoruje in včasih prodaja vaše podatke ali celo omeji, katere spletne strani lahko obiščete."
+      ],
+      "Your IP": [
+        "Vaš IP"
+      ],
+      "Your IP address is visible and can be used to track your online activity.": [
+        "Vaš IP naslov je viden in se lahko uporablja za sledenje vaši spletni aktivnosti."
+      ],
       "Your login information will not be saved after the import is completed.": [
         "Po končanem uvozu vaši podatki za prijavo ne bodo shranjeni."
       ],
@@ -5718,8 +6711,17 @@
       "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
         "Vaš naslednji datum obračuna je ${ renewalTime }. Kadar koli lahko prekličete naročnino. Če potrebujete takojšnjo spremembo paketa, se obrnite na podporo."
       ],
+      "Your online activity is protected": [
+        "Vaša spletna aktivnost je zaščitena"
+      ],
       "Your password was leaked:": [
         "Vaše geslo je bilo izpostavljeno:"
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "Vaša telefonska številka bo uporabljena le za to enkratno preverjanje."
+      ],
+      "Your physical location is visible and can be used to restrict your access to the internet.": [
+        "Vaša fizična lokacija je vidna in se lahko uporablja za omejevanje vašega dostopa do interneta."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Vaš načrtovani paket se začne ${ renewalTime } in se bo samodejno obnavljal vsak ${ cycle } mesec.",
@@ -5744,6 +6746,12 @@
       ]
     },
     "info": {
+      "${ filteredList.length } command found.": [
+        "Najden ${ filteredList.length } ukaz.",
+        "Najdena ${ filteredList.length } ukaza.",
+        "Najdeni ${ filteredList.length } ukazi.",
+        "Najdenih ${ filteredList.length } ukazov."
+      ],
       "Optional": [
         "Neobvezno"
       ],
@@ -5984,6 +6992,9 @@
       "Attach screenshot(s)": [
         "Priloži posnetke zaslona"
       ],
+      "Authenticator app": [
+        "Aplikacija za preverjanje pristnosti"
+      ],
       "Beta Access": [
         "Dostop beta"
       ],
@@ -6034,6 +7045,9 @@
       ],
       "Client version": [
         "Različica odjemalca"
+      ],
+      "Code is 6 digits without spaces": [
+        "Koda vsebuje 6 števk brez presledkov"
       ],
       "Color": [
         "Barva"
@@ -6101,6 +7115,9 @@
       "Drive": [
         "Drive"
       ],
+      "e.g., Amazon, eBay, Etsy": [
+        "npr. Amazon, eBay, Etsy"
+      ],
       "Email": [
         "E-pošta"
       ],
@@ -6160,6 +7177,9 @@
       ],
       "Folder location": [
         "Mesto mape"
+      ],
+      "Forwards to": [
+        "Posreduje na"
       ],
       "From: ${ fromEmail }": [
         "Od: ${ fromEmail }"
@@ -6251,6 +7271,9 @@
       "New password": [
         "Novo geslo"
       ],
+      "Note": [
+        "Opomba"
+      ],
       "Notification": [
         "Obvestilo"
       ],
@@ -6302,6 +7325,9 @@
       "PGP scheme": [
         "Shema PGP"
       ],
+      "Phone number": [
+        "Telefonska številka"
+      ],
       "Port": [
         "Vrata"
       ],
@@ -6311,17 +7337,26 @@
       "Postal code": [
         "Poštna številka"
       ],
+      "Premium domain": [
+        "Premium domena"
+      ],
       "Primary": [
         "Glavni"
       ],
       "Proration": [
         "Sorazmerna delitev"
       ],
+      "Public domain": [
+        "Javna domena"
+      ],
       "Public keys": [
         "Javni ključi"
       ],
       "Region": [
         "Regija"
+      ],
+      "Regular expression": [
+        "Regularni izraz"
       ],
       "Remove ${ MEET_APP_NAME } video conference": [
         "Odstrani ${ MEET_APP_NAME } video konferenco"
@@ -6358,6 +7393,9 @@
       ],
       "Start date": [
         "Začetni datum"
+      ],
+      "Starts with": [
+        "Se začne z"
       ],
       "State": [
         "Država"
@@ -6407,6 +7445,9 @@
       "Username": [
         "Uporabniško ime"
       ],
+      "Verification code": [
+        "Koda za preverjanje"
+      ],
       "Very Dissatisfied": [
         "Zelo nezadovoljen/-na"
       ],
@@ -6428,8 +7469,26 @@
       "What happened?": [
         "Kaj se je zgodilo?"
       ],
+      "Your alias": [
+        "Vaš vzdevek"
+      ],
       "Your calendar URL": [
         "Povezava do vašega koledarja"
+      ],
+      "Your domain": [
+        "Vaša domena"
+      ],
+      "Your IP": [
+        "Vaš IP"
+      ],
+      "Your ISP": [
+        "Vaš internetni ponudnik"
+      ],
+      "Your location": [
+        "Vaša lokacija"
+      ],
+      "Your password (admin)": [
+        "Vaše geslo (admin)"
       ],
       "ZIP code": [
         "Poštna številka"
@@ -6517,8 +7576,50 @@
       "clearing your browser cache": [
         "izpraznitev predpomnilnika brskalnika"
       ],
+      "How to add users": [
+        "Kako dodati uporabnike"
+      ],
+      "How to add Zoom links": [
+        "Kako dodati Zoomove povezave"
+      ],
+      "How to collaborate in ${ DOCS_SHORT_APP_NAME }": [
+        "Kako sodelovati v storitvi ${ DOCS_SHORT_APP_NAME }"
+      ],
+      "How to enable ${ PROTON_SENTINEL_NAME }": [
+        "Kako omogočiti ${ PROTON_SENTINEL_NAME }"
+      ],
+      "How to migrate to ${ BRAND_NAME }": [
+        "Kako migrirati v ${ BRAND_NAME }"
+      ],
       "How to pay with Bitcoin?": [
         "Kako plačati z Bitcoinom?"
+      ],
+      "How to set up ${ VPN_APP_NAME }": [
+        "Kako nastaviti ${ VPN_APP_NAME }"
+      ],
+      "How to set up a custom domain": [
+        "Kako nastaviti domeno po meri"
+      ],
+      "How to set up SMTP": [
+        "Kako nastaviti SMTP"
+      ],
+      "How to share a calendar": [
+        "Kako deli koledar"
+      ],
+      "How to share via email": [
+        "Kako dati v skupno rabo prek e-pošte"
+      ],
+      "How to use ${ DARK_WEB_MONITORING_NAME }": [
+        "Kako uporabljati ${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "How to use ${ PASS_APP_NAME } for Business": [
+        "Kako uporabljati ${ PASS_APP_NAME } for Business"
+      ],
+      "How to use email forwarding": [
+        "Kako uporabljati posredovanje e-pošte"
+      ],
+      "How to use Groups": [
+        "Kako uporabljati skupine"
       ],
       "Learn more": [
         "Več o tem"
@@ -6538,11 +7639,20 @@
       "Reactivate subscription": [
         "Obnovi naročnino"
       ],
+      "Request an invite": [
+        "Zahtevaj povabilo"
+      ],
       "Resume now": [
         "Obnovi zdaj"
       ],
+      "settings": [
+        "nastavitve"
+      ],
       "Terms and conditions": [
         "Pogoji uporabe"
+      ],
+      "Types of recovery methods": [
+        "Vrste načinov obnovitve"
       ],
       "What’s this?": [
         "Kaj je to?"
@@ -6768,6 +7878,9 @@
       ],
       "Re:": [
         "Odgovor:"
+      ],
+      "Regular expression rule": [
+        "Pravilo regularnega izraza"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Vaše brezplačno preizkusno obdobje se je izteklo. ${ nonAutoRenewalAction }"
@@ -8237,6 +9350,108 @@
         "Izberite, do česa lahko ${ BRAND_NAME } dostopa: ogled e-poštnih sporočil in nastavitev, ogled in prenos stikov, ogled in prenos vseh dnevnih redov, do katerih dostopate iz storitve Google Koledar."
       ]
     },
+    "Offer": {
+      "${ BRAND_NAME } Unlimited for 12 months": [
+        "${ BRAND_NAME } Unlimited za 12 mesecev"
+      ],
+      "${ planName } for 12 months": [
+        "${ planName } za 12 mesecev"
+      ],
+      "${ pricingTitle } offer expires today!": [
+        "Ponudba ${ pricingTitle } poteče danes!"
+      ],
+      "Don't show this again": [
+        "Ne prikazuj več"
+      ],
+      "Don’t show this again": [
+        "Tega ne prikaži več"
+      ],
+      "Don’t show this offer again": [
+        "Te ponudbe ne prikazuj več"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Pridobi ${ BRAND_NAME } Duo"
+      ],
+      "Get the deal": [
+        "Izkoristite posebno ponudbo"
+      ],
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "Zadnja priložnost, da dobite 80 % popusta na prvi mesec ${ plan }."
+      ],
+      "Last day to save": [
+        "Zadnji dan za prihranek"
+      ],
+      "Limited-time offer": [
+        "Časovno omejena ponudba"
+      ],
+      "Maybe later": [
+        "Morda kasneje"
+      ],
+      "Offer expires ${ formattedDate }.": [
+        "Ponudba poteče ${ formattedDate }."
+      ],
+      "Pay annually, secure our best offer": [
+        "Plačajte letno, zagotovite si našo najboljšo ponudbo"
+      ],
+      "Save": [
+        "Prihranite"
+      ],
+      "Save big when you pay annually": [
+        "Prihranite čim več z izbiro letnega plačila!"
+      ],
+      "Special offer": [
+        "Posebna ponudba"
+      ],
+      "This offer won't be shown again.": [
+        "Ta ponudba se ne bo več prikazovala."
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Nadgradite svojo shrambo za samo ${ pricingTitle } s paketom ${ planName }"
+      ],
+      "When you switch from a monthly to annual subscription.": [
+        "Ko preklopite z mesečne na letno naročnino."
+      ],
+      "You currently pay": [
+        "Trenutno plačujete"
+      ],
+      "Your subscription renews soon": [
+        "Vaša naročnina se bo kmalu obnovila"
+      ]
+    },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Šifriran upravitelj gesel"
+      ]
+    },
+    "Offer feature": {
+      "+10 more premium features": [
+        "+Še 10 premijskih funkcij"
+      ],
+      "500 GB secure storage": [
+        "500 GB varne shrambe"
+      ],
+      "Advanced threat protection": [
+        "Napredni program za zaščito računa"
+      ],
+      "Custom email domain": [
+        "E-poštna domena po meri"
+      ],
+      "Email addresses": [
+        "E-poštni naslovi"
+      ],
+      "File version history (over 1 week)": [
+        "Zgodovina različic datoteke (več kot en teden)"
+      ],
+      "Free": [
+        "Brezplačno"
+      ],
+      "Plus": [
+        "Plus"
+      ],
+      "Storage": [
+        "Shramba"
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Dobrodošli v ${ appName }"
@@ -8274,14 +9489,41 @@
       ]
     },
     "Onboarding Trial": {
+      "Cancel anytime before ${ cancelDate }.": [
+        "Prekličite kadarkoli pred ${ cancelDate }."
+      ],
       "Cancel anytime before then.": [
         "Prekličite kadar koli pred tem."
+      ],
+      "contact our support team": [
+        "kontaktirajte našo podporo"
+      ],
+      "Continue": [
+        "Nadaljuj"
+      ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "Uživajte brezplačne funkcije za poslovne uporabnike do ${ trialEndsOnFormatted }."
+      ],
+      "help center": [
+        "središče za pomoč"
+      ],
+      "If you need help,": [
+        "Če potrebujete pomoč,"
       ],
       "Once your full subscription starts...": [
         "Ko se začne vaša polna naročnina ..."
       ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
+        "Še vedno lahko prekličete v 30 dneh in prejmete sorazmerno vračilo denarja."
+      ],
       "You can still cancel within 30 days and get a prorated refund.": [
         "Še vedno lahko prekličete v 30 dneh in prejmete sorazmerno vračilo denarja."
+      ],
+      "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "Uporabljate lahko ${ planTitle } do konca preskusnega obdobja, česar vam ne bomo zaračunali."
+      ],
+      "Your free trial has started": [
+        "Vaše brezplačno poskusno obdobje se je začelo"
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Vaša polna ${ planTitle } naročnina se začne dne ${ boldEndDate }."
@@ -8427,6 +9669,26 @@
       ],
       "Team policies": [
         "Pravilniki skupine"
+      ]
+    },
+    "PassFamilyPlan2024": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Vse premijske funkcije. 6 uporabnikov. 1 preprosta naročnina."
+      ],
+      "Billed yearly at ${ yearlyPrice }. Save ${ yearlySavedPrice } with ${ passFamilyPlanName } (vs 6 individual ${ passPlusPlanName } subscriptions).": [
+        "Obračunano letno po ${ yearlyPrice }. Prihrani ${ yearlySavedPrice } z ${ passFamilyPlanName } (v primerjavi s 6 posameznimi naročninami ${ passPlusPlanName })."
+      ],
+      "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
+        "Ekskluzivna ponudba je na voljo samo zgodnjim podpornikom ${ PASS_APP_NAME }."
+      ],
+      "Get it for ${ monthlyPrice }": [
+        "Pridobite ga za ${ monthlyPrice }"
+      ],
+      "Introducing ${ passFamilyPlanName }": [
+        "Predstavljamo ${ passFamilyPlanName }"
+      ],
+      "Limited-time deal.": [
+        "Časovno omejena ponudba."
       ]
     },
     "passwordless": {
@@ -8783,6 +10045,9 @@
       "Anytown": [
         "Mesto"
       ],
+      "Ask anything…": [
+        "Vprašajte karkoli …"
+      ],
       "Company name": [
         "Ime podjetja"
       ],
@@ -8797,6 +10062,9 @@
       ],
       "Filter groups": [
         "Filtriraj skupine"
+      ],
+      "Filter quick actions": [
+        "Filtriraj hitra dejanja"
       ],
       "First name": [
         "Ime"
@@ -8830,6 +10098,12 @@
       ],
       "Optional feedback": [
         "Neobvezne povratne informacije"
+      ],
+      "Organization name": [
+        "Ime organizacije"
+      ],
+      "Password": [
+        "Geslo"
       ],
       "Please describe the problem and include any error messages": [
         "Opišite težavo in vključite morebitna sporočila o napakah."
@@ -8878,6 +10152,9 @@
       ],
       "Thomas": [
         "Janez"
+      ],
+      "Your organization name": [
+        "Ime vaše organizacije"
       ],
       "ZIP code": [
         "Poštna številka"
@@ -9127,6 +10404,54 @@
     "Safety review": {
       "Review account safety": [
         "Preglejte varnost računa"
+      ]
+    },
+    "Section": {
+      "Org setup and account security": [
+        "Nastavitev organizacije in varnost računa"
+      ]
+    },
+    "Security Center": {
+      "All aliases": [
+        "Vsi vzdevki"
+      ],
+      "Create alias": [
+        "Ustvari vzdevek"
+      ],
+      "Create an alias": [
+        "Ustvari vzdevek"
+      ],
+      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
+        "Ustvarite vzdevke sproti in preprosto upravljajte svoje vzdevke in gesla."
+      ],
+      "Hide-my-email aliases": [
+        "Vzdevki hide-my-email"
+      ],
+      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
+        "Hide-my-email vzdevki vam omogočajo, da se prijavite na straneh v spletu, ne da bi razkrili svoj e-poštni naslov. ${ learnMoreLink }"
+      ],
+      "New alias": [
+        "Nov vzdevek"
+      ],
+      "Open ${ PASS_APP_NAME }": [
+        "Odpri ${ PASS_APP_NAME }"
+      ],
+      "Protect your online identity": [
+        "Zaščitite svojo spletno identiteto"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "Poizkusite ${ PASS_APP_NAME }"
+      ],
+      "Used on Amazon for shopping, etc.": [
+        "Uporablja se v spletnih trgovinah, kot je Amazon, itd."
+      ],
+      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
+        "Ko vas vprašajo za vaš e-poštni naslov, namesto tega navedite ta vzdevek. Vzdevke ponuja ${ passLink }."
+      ]
+    },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(bo odprlo ${ PASS_APP_NAME })"
       ]
     },
     "Security Center - Action": {
@@ -9429,7 +10754,61 @@
         "Zasebno, hitro in organizirano"
       ]
     },
+    "specialoffer: Action": {
+      "Close": [
+        "Zapri"
+      ],
+      "Don't show this offer again": [
+        "Te ponudbe ne prikazuj več"
+      ],
+      "Special offer": [
+        "Posebna ponudba"
+      ]
+    },
+    "specialoffer: Action, Unlimited is a plan name": {
+      "Go Unlimited": [
+        "Izberite Neomejeno"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } dan",
+        "${ days } dneva",
+        "${ days } dnevi",
+        "${ days } dni"
+      ],
+      "${ hours } hour": [
+        "${ hours } ura",
+        "${ hours } uri",
+        "${ hours } ure",
+        "${ hours } ur"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuta",
+        "${ minutes } minuti",
+        "${ minutes } minute",
+        "${ minutes } minut"
+      ],
+      "${ seconds } second": [
+        "${ seconds } sekunda",
+        "${ seconds } sekundi",
+        "${ seconds } sekunde",
+        "${ seconds } sekund"
+      ]
+    },
     "specialoffer: Deal details": {
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 users": [
+        "6 uporabnikov"
+      ],
+      "All paid Mail and Calendar features": [
+        "Vse plačljive funkcije Pošte in Koledarja"
+      ],
+      "High speed VPN": [
+        "Visoka hitrost VPN"
+      ],
       "Highest VPN speed": [
         "Najhitrejši VPN"
       ],
@@ -9442,21 +10821,150 @@
       "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
         "Premijski ${ appName1 }, ${ appName2 } in ${ appName3 }"
       ],
+      "Premium early access": [
+        "Premijski zgodnji dostop"
+      ],
+      "Secure cloud storage": [
+        "Varna shramba v oblaku"
+      ],
       "Secure streaming": [
         "Varni pretočni prenos"
+      ],
+      "Support online privacy": [
+        "Podprite zasebnost na spletu"
+      ]
+    },
+    "specialoffer: Footer": {
+      "The special offer is valid for the first 2 years.": [
+        "Posebna ponudba velja za prvi 2 leti."
+      ],
+      "Your subscription will renew at the same rate every year.": [
+        "Vaša naročnina bo vsako leto obnovljena po enaki ceni."
       ]
     },
     "specialoffer: Link": {
+      "Browse securely": [
+        "Varno brskajte"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "Naredite več z ${ BRAND_NAME }."
+      ],
+      "Get unlimited aliases": [
+        "Pridobite neomejeno število vzdevkov"
+      ],
       "Go to subscription plans": [
         "Ogled naročniških paketov"
+      ],
+      "Guard against threats": [
+        "Zaščitite se pred grožnjami"
       ],
       "Upgrade": [
         "Nadgradnja"
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } mesec",
+        "${ n } meseca",
+        "${ n } meseci",
+        "${ n } mesecev"
+      ],
+      "/ month": [
+        "/mesec"
+      ],
       "/month": [
         "/mesec"
+      ],
+      "1 year": [
+        "1 leto"
+      ],
+      "15 months": [
+        "15 mesecev"
+      ],
+      "2 years": [
+        "2 leti"
+      ],
+      "30 months": [
+        "30 mesecev"
+      ],
+      "Billed at ${ amount } for 1 month": [
+        "Zaračunano ${ amount } za en mesec"
+      ],
+      "Billed at ${ amount } for 12 months": [
+        "Zaračunano ${ amount } za 12 mesecev"
+      ],
+      "Billed at ${ amount } for 15 months": [
+        "Zaračunano ${ amount } za 15 mesecev"
+      ],
+      "Billed at ${ amount } for 24 months": [
+        "Zaračunano ${ amount } za 24 mesecev"
+      ],
+      "Billed at ${ amount } for 30 months": [
+        "Zaračunano ${ amount } za 30 mesecev"
+      ],
+      "Get the deal": [
+        "Izkoristite posebno ponudbo"
+      ],
+      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Obnovitev po 1 letu po znižani ceni ali ${ discountedAmount } namesto ${ regularAmount } (${ discount }% popusta)"
+      ],
+      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Obnovitev po 2 letih po znižani ceni ali ${ discountedAmount } namesto ${ regularAmount } (${ discount }% popust)"
+      ],
+      "Save ${ discount }%": [
+        "Prihranite ${ discount } %"
+      ],
+      "Standard price ${ amount } for 1 month": [
+        "Običajna cena ${ amount } za en mesec"
+      ],
+      "Standard price ${ amount } for 12 months": [
+        "Običajna cena ${ amount } za 12 mesecev"
+      ],
+      "Standard price ${ amount } for 15 months": [
+        "Običajna cena ${ amount } za 15 mesecev"
+      ],
+      "Standard price ${ amount } for 24 months": [
+        "Običajna cena ${ amount } za 24 mesecev"
+      ],
+      "Standard price ${ amount } for 30 months": [
+        "Običajna cena ${ amount } za 30 mesecev"
+      ],
+      "The special offer is valid for the first 2 years": [
+        "Posebna ponudba velja za prvi 2 leti."
+      ]
+    },
+    "specialoffer: Title": {
+      "Keep your passwords safe and organized in multiple vaults": [
+        "Imejte svoja gesla varna in organizirana v več trezorjih"
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Zaščitite svoj račun pred grožnjami s Sentinelom"
+      ],
+      "Upgrade and save more with 2 years of ${ planName }": [
+        "Nadgradite in prihranite več z 2 leti ${ planName }"
+      ]
+    },
+    "specialoffer: Tooltip": {
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Dostopajte do blokirane vsebine in brskajte zasebno. Vključuje 1700 strežnikov v več kot 60 državah, najvišjo hitrost VPN, 10 povezav VPN na uporabnika, storitve pretakanja po vsem svetu, zlonamerno programsko opremo in zaviralce oglasov ter več."
+      ],
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Dostopajte do blokirane vsebine in brskajte zasebno. Vključuje 1700 strežnikov v več kot 60 državah, najvišjo hitrost VPN, 10 povezav VPN, storitve pretakanja po vsem svetu, zlonamerno programsko opremo in zaviralce oglasov ter več."
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "Vse naše premijske storitve z največjim možnim obsegom: 100 e-poštnih naslovov, podpora za 10 e-poštnih domen po meri, neomejeno število vzdevkov hide-my-email, deljenje koledarjev, šifrirana shramba v oblaku in še več."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Vključuje podporo za tri e-poštne domene po meri, 15 e-poštnih naslovov, neomejeno število vzdevkov hide-my-email, deljenje koledarjev in še več."
+      ],
+      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
+        "Odlično za družine ali majhne ekipe, vsak ima lahko svoj nabiralnik in vzdevke. Zahtevana je domena po meri."
+      ],
+      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
+        "Brez dodatnih stroškov prejmite plačljive različice vseh novih storitev zasebnosti, ki jih izdamo v prihodnosti, skupaj z zgodnjim dostopom do vseh prihodnjih funkcij in izdelkov."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Zaščitite vaše datoteke s šifrirano shrambo v oblaku. Vključuje samodejno sinhronizacijo, šifrirano delitev datotek in drugo."
       ]
     },
     "Spotlight": {
@@ -9471,6 +10979,17 @@
       ],
       "Video conferencing is here!": [
         "Video konferenca je na voljo!"
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Prijava"
+      ],
+      "Sign in to your organization": [
+        "Prijavite se v svojo organizacijo"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Preusmerjeni boste k ponudniku SSO tretje osebe."
       ]
     },
     "State": {
@@ -9928,6 +11447,47 @@
         "Vaš kratek e-poštni vzdevek @pm.me"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB prostora za shranjevanje"
+      ],
+      "and 15 more premium features": [
+        "in še 15 premijskih funkcij"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Samodejno posredovanje e-pošte ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Opozorila o kršitvah varstva podatkov ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Namizna aplikacija"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Pomagajte nam ohraniti varen in zaseben internet za vse. Nadgradite na plačljiv paket."
+      ],
+      "No ads or tracking": [
+        "Brez oglasov ali sledenja"
+      ],
+      "Short @pm.me email address": [
+        "Kratek e-poštni naslov @pm.me"
+      ],
+      "Support our mission": [
+        "Podprite naše poslanstvo"
+      ],
+      "Upgrade": [
+        "Prehod na plačljiv paket"
+      ],
+      "Upgrade your productivity": [
+        "Povečajte svojo storilnost"
+      ],
+      "We don't sell your data": [
+        "Vaših podatkov ne prodajamo"
+      ],
+      "Your privacy is our mission": [
+        "Vaša zasebnost je naše poslanstvo"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Ali ste prepričani?"
@@ -9971,6 +11531,12 @@
       ],
       "Address copied to clipboard": [
         "Naslov kopiran v odložišče"
+      ],
+      "Alias copied to clipboard": [
+        "Vzdevek kopiran v odložišče"
+      ],
+      "Alias saved and copied": [
+        "Vzdevek shranjen in kopiran"
       ],
       "All events deleted": [
         "Vsi dogodki so izbrisani"
@@ -10016,6 +11582,9 @@
       ],
       "Cancellation sent and participants removed from all events": [
         "Odpoved je poslana in udeleženci so odstranjeni iz vseh dogodkov"
+      ],
+      "Code sent to ${ methodTo }": [
+        "Koda je poslana na ${ methodTo }"
       ],
       "Contact deleted": [
         "Stik izbrisan",
@@ -10089,6 +11658,9 @@
       "Keyboard shortcuts preferences updated": [
         "Nastavitve bližnjic na tipkovnici so posodobljene"
       ],
+      "Last modified aliases stored in your oldest vault": [
+        "Zadnji spremenjeni vzdevki, shranjeni v vašem najstarejšem trezorju"
+      ],
       "Participants notified and all events updated": [
         "Udeleženci so bili obveščeni in vsi dogodki posodobljeni"
       ],
@@ -10125,6 +11697,9 @@
       "Undo in progress": [
         "Razveljavljanje poteka"
       ],
+      "Verification successful": [
+        "Preverjanje uspešno"
+      ],
       "You have successfully canceled your subscription.": [
         "Uspešno ste preklicali naročnino."
       ],
@@ -10146,6 +11721,20 @@
       ],
       "per user per month": [
         "na uporabnika mesečno"
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Ustvarite varne podatke za prijavo v vseh svojih napravah. Vključuje neomejeno število vzdevkov, 20 trezorjev, integrirano 2FA, samodejno izpolnjevanje plačilnih kartic in drugo."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Vključuje več kot 2950 strežnikov v več kot 65 državah, povezovanje do 10 naprav, dostop do svetovnih storitev pretakanja, zlonamerne programske opreme in zaviralcev oglasov ter več."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Vključuje podporo za eno e-poštno domeno po meri, 10 e-poštnih naslovov, 10 vzdevkov hide-my-email, deljenje koledarjev in še več."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Zaščitite vaše datoteke s šifrirano shrambo v oblaku. Vključuje zgodovino različic, šifrirano delitev datotek in drugo."
       ]
     },
     "Tab subscription modal": {
@@ -10315,14 +11904,23 @@
         "${ emailsCount } e-poštni naslovi",
         "${ emailsCount } e-poštnih naslovov"
       ],
+      "${ feature } is now active": [
+        "${ feature } je zdaj aktivna"
+      ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } pomočnik pri pisanju"
       ],
       "Account recovery": [
         "Obnovitev računa"
       ],
+      "Account restricted": [
+        "Račun je omejen"
+      ],
       "Account security": [
         "Varnost računa"
+      ],
+      "Account temporarily locked": [
+        "Račun je začasno zaklenjen"
       ],
       "Add a custom logo": [
         "Dodaj logotip po meri"
@@ -10360,6 +11958,9 @@
       "Add to ${ groupName }": [
         "Dodaj v skupino ${ groupName }"
       ],
+      "Add user": [
+        "Dodaj uporabnika"
+      ],
       "Addresses": [
         "Naslovi"
       ],
@@ -10374,6 +11975,9 @@
       ],
       "Are you sure?": [
         "Ali ste prepričani?"
+      ],
+      "Auto-deletion is active": [
+        "Samodejno brisanje je aktivno"
       ],
       "Billing cycle": [
         "Cikel obračunavanja"
@@ -10420,11 +12024,23 @@
       "Clearing data": [
         "Čiščenje podatkov"
       ],
+      "Collaborate on documents": [
+        "Sodelujte pri dokumentih"
+      ],
       "Confirm downgrade": [
         "Potrdite zmanjšanje paketa"
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Potrdite izgubo bonusov za ${ BRAND_NAME }"
+      ],
+      "Connect apps and devices": [
+        "Povežite aplikacije in naprave"
+      ],
+      "Connect to video conferencing": [
+        "Poveži se z videokonferenco"
+      ],
+      "Connect your custom domain": [
+        "Povežite svojo domeno po meri"
       ],
       "Contact Details": [
         "Podrobnosti stika"
@@ -10501,6 +12117,9 @@
       "Deleting contacts": [
         "Brisanje stikov"
       ],
+      "Desktop": [
+        "Namizje"
+      ],
       "Discard changes?": [
         "Zavrzi spremembe?"
       ],
@@ -10518,6 +12137,12 @@
       ],
       "Downgrade to ${ downgradedPlanName }?": [
         "Zmanjšaj na paket ${ downgradedPlanName }?"
+      ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "Prenesite aplikacije ${ DRIVE_APP_NAME }"
+      ],
+      "Download the app": [
+        "Prenesi aplikacijo"
       ],
       "Drop to upload": [
         "Spusti za nalaganje"
@@ -10549,8 +12174,14 @@
       "Enable 2FA": [
         "Omogoči 2FA"
       ],
+      "Enable advanced account protection": [
+        "Omogoči napredno zaščito računa"
+      ],
       "Encrypted event": [
         "Šifriran dogodek"
+      ],
+      "Enter your password": [
+        "Vnesite svoje geslo"
       ],
       "Error": [
         "Napaka"
@@ -10582,11 +12213,17 @@
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
         "Prejmite **${ referralInfo.uiData.refereeRewardAmount }** v dobroimetju z ${ planTitle }"
       ],
+      "Get more from your VPN": [
+        "Izkoristite več od svoje VPN"
+      ],
       "Get more storage with ${ MAIL_APP_NAME } Plus": [
         "Pridobite več shrambe s ${ MAIL_APP_NAME } Plus"
       ],
       "Get the ${ appName[APP_NAME] } apps": [
         "Prenesite aplikacijo ${ appName[APP_NAME] }"
+      ],
+      "Get the apps": [
+        "Namesti aplikacije"
       ],
       "Gift": [
         "Darilo"
@@ -10609,11 +12246,17 @@
       "Host": [
         "Gostitelj"
       ],
+      "How does it all work?": [
+        "Kako vse to deluje?"
+      ],
       "How does it work?": [
         "Kako deluje?"
       ],
       "How your free trial works": [
         "Kako deluje vaš brezplačni preizkus"
+      ],
+      "Human verification": [
+        "Ali si človek"
       ],
       "Import as simple event?": [
         "Uvozite kot preprost dogodek?",
@@ -10639,11 +12282,17 @@
       "Information exposed in breach": [
         "Informacije, razkrite pri kršitvi"
       ],
+      "Invalid verification code": [
+        "Neveljavna koda za preverjanje"
+      ],
       "Link confirmation": [
         "Potrditvena povezava"
       ],
       "Location": [
         "Lokacija"
+      ],
+      "Make a secure connection your default": [
+        "Nastavite varno povezavo kot privzeto"
       ],
       "Merge contacts": [
         "Združi stike"
@@ -10651,8 +12300,17 @@
       "Merging contacts": [
         "Združevanje stikov"
       ],
+      "Migrate your organization to ${ BRAND_NAME }": [
+        "Prestavite vašo organizacijo na ${ BRAND_NAME }"
+      ],
       "Minicalendar": [
         "Mini koledar"
+      ],
+      "Mobile": [
+        "Mobilni"
+      ],
+      "Need more aliases?": [
+        "Potrebujete več vzdevkov?"
       ],
       "Network error": [
         "Napaka v omrežju"
@@ -10708,6 +12366,9 @@
       "Previous": [
         "Prejšnja stran"
       ],
+      "Private browsing vs VPN": [
+        "Zasebno brskanje v primerjavi z VPN"
+      ],
       "Processing...": [
         "Obdelovanje ..."
       ],
@@ -10743,6 +12404,9 @@
       ],
       "Report a problem": [
         "Poročanje o težavi"
+      ],
+      "Request new code": [
+        "Zahtevaj novo kodo"
       ],
       "Reshare your calendars": [
         "Ponovno deljenje vaših koledarjev"
@@ -10813,11 +12477,23 @@
       "Send invitation": [
         "Pošlji povabilo"
       ],
+      "Set recovery methods": [
+        "Nastavite načine obnovitve"
+      ],
       "Set recovery phrase": [
         "Nastavi obnovitveno frazo"
       ],
+      "Set up email forwarding": [
+        "Nastavi posredovanje pošte"
+      ],
+      "Set up your organization": [
+        "Nastavite svojo organizacijo"
+      ],
       "Settings": [
         "Nastavitve"
+      ],
+      "Share your calendar with your team": [
+        "Deli svoj koledar s svojo ekipo"
       ],
       "Share your link": [
         "Delite vašo povezavo"
@@ -10831,6 +12507,12 @@
       "Sign out": [
         "Odjava"
       ],
+      "Simplify email distribution": [
+        "Poenostavite distribucijo e-pošte"
+      ],
+      "Simplify password management": [
+        "Poenostavite upravljanje z gesli"
+      ],
       "Start a new import": [
         "Začni z novim uvozom"
       ],
@@ -10839,6 +12521,9 @@
       ],
       "Stay for 50% off your next month": [
         "V naslednjem mesecu izkoristite 50 % popust"
+      ],
+      "Still working on it": [
+        "Še vedno delam na tem"
       ],
       "Subscription canceled": [
         "Naročnina preklicana"
@@ -10852,14 +12537,35 @@
       "Time zone": [
         "Časovni pas"
       ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "Vklopi ${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "Two-factor authentication": [
+        "Dvojno preverjanja pristnosti"
+      ],
       "Update event": [
         "Posodobi dogodek"
       ],
       "Update recurring event": [
         "Posodobitev ponavljajočega se dogodka"
       ],
+      "Upgrade complete!": [
+        "Nadgradnja opravljena!"
+      ],
+      "Upgrade to ${ planName }": [
+        "Nadgradi na ${ planName }."
+      ],
       "Upgrade to keep your premium benefits.": [
         "Nadgradite za ohranitev vaših premijskih ugodnosti."
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Povečajte svojo produktivnost za ${ formattedPrice } s paketom ${ planName }"
+      ],
+      "Upload and share files": [
+        "Naloži in deli datoteke"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Uporabljajte ${ VPN_SHORT_APP_NAME } za zasebnost podatkov"
       ],
       "Users and addresses": [
         "Uporabniki in naslovi"
@@ -10875,6 +12581,9 @@
       ],
       "Verifying your payment...": [
         "Preverjanje vašega plačila ..."
+      ],
+      "VPN explained": [
+        "Pojasnilo o VPN"
       ],
       "Warning": [
         "Opozorilo"
@@ -10894,14 +12603,32 @@
       "We've locked your calendars to protect your data": [
         "Zaradi zaščite vaših podatkov smo zaklenili koledarje"
       ],
+      "Welcome to ${ BRAND_NAME } for Business": [
+        "Dobrodošli v ${ BRAND_NAME } for Business"
+      ],
       "What are you migrating?": [
         "Kaj selite?"
+      ],
+      "What can a VPN protect you from?": [
+        "Pred čim vas lahko VPN zaščiti?"
+      ],
+      "What is a VPN?": [
+        "Kaj je VPN?"
+      ],
+      "When is it most important to use a VPN?": [
+        "Kdaj je uporaba VPN najbolj pomembna?"
       ],
       "You are all set": [
         "Vse je nastavljeno"
       ],
+      "You can now create unlimited folders and labels": [
+        "Zdaj lahko ustvarite neomejeno število map in oznak"
+      ],
       "You have invited participants with equivalent emails": [
         "Povabili ste udeležence z enakimi e-poštnimi naslovi"
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Vaš ${ planName } brezplačen preizkus se konča ${ textDate }"
       ],
       "Your ${ planTitle } subscription has started": [
         "Vaša naročnina na ${ planTitle } se je začela"
@@ -10917,6 +12644,9 @@
       ],
       "Your plan": [
         "Vaš paket"
+      ],
+      "Your shorter address is now ready": [
+        "Vaš krajši naslov je zdaj pripravljen"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11047,6 +12777,14 @@
       ],
       "Shared end-to-end encrypted with verified contact": [
         "V skupni rabi celovito šifrirano s preverjenim stikom"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/mesec"
+      ],
+      "Only": [
+        "Samo"
       ]
     },
     "Validation": {

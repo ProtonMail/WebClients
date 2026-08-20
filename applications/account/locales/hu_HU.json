@@ -434,6 +434,12 @@
       "Disable": [
         "Letiltás"
       ],
+      "Disable categories": [
+        "Kategóriák letiltása"
+      ],
+      "Disable category": [
+        "Kategória letiltása"
+      ],
       "Disable recovery phrase": [
         "Helyreállító jelmondat kikapcsolása"
       ],
@@ -559,6 +565,9 @@
       ],
       "Enable ${ darkWebMonitoring }": [
         "${ darkWebMonitoring } engedélyezése"
+      ],
+      "Enable category": [
+        "Kategória engedélyezése"
       ],
       "enable desktop notifications": [
         "asztali értesítéset küldhessen"
@@ -736,6 +745,9 @@
       ],
       "Keep": [
         "Megtartás"
+      ],
+      "Keep categories": [
+        "Kategóriák megtartása"
       ],
       "Keep Editing": [
         "Szerkesztés folytatása"
@@ -3126,6 +3138,9 @@
       "Mexico": [
         "Mexikó"
       ],
+      "Micronesia": [
+        "Mikronézia"
+      ],
       "Moldova": [
         "Moldova"
       ],
@@ -3185,6 +3200,9 @@
       ],
       "North Korea": [
         "Észak-Korea"
+      ],
+      "North Macedonia": [
+        "Észak-Macedónia"
       ],
       "Northern Mariana Islands": [
         "Északi-Mariana-szigetek"
@@ -3763,6 +3781,9 @@
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Olvassa, válaszolja meg és tartsa kézben Gmail-üzeneteit a ${ MAIL_APP_NAME } alkalmazáson belül"
       ],
+      "Select which categories you want to add and if you want to receive push notifications for each category.": [
+        "Válassza ki, mely kategóriákat szeretné hozzáadni, és hogy szeretne-e push értesítéseket kapni az egyes kategóriákról."
+      ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "Állítson be fiókokat minden felhasználó számára, és hívja meg őket, hogy csatlakozzanak a(z) ${ BRAND_NAME }-hoz/höz."
       ],
@@ -4192,9 +4213,6 @@
       "**How it works:** Enter in this device the code displayed on the device you want to sign in to. You will be signed in as **${ email }**. Both devices will stay active.": [
         "**Hogyan működik:** Írja be erre az eszközre azt a kódot, amely azon az eszközön jelenik meg, amelyre be szeretne jelentkezni. Ön **${ email }** néven lesz bejelentkezve. Mindkét eszköz aktív marad."
       ],
-      "Allow QR code sign‒in": [
-        "QR-kódos bejelentkezés engedélyezése"
-      ],
       "Be cautious of messages with QR codes. Only scan a code if you trust the source.": [
         "Legyen óvatos a QR-kódokat tartalmazó üzenetekkel. Csak akkor olvassa be a kódot, ha megbízik a forrásban."
       ],
@@ -4224,9 +4242,6 @@
       ],
       "QR code sign-in enabled": [
         "A QR-kódos bejelentkezés engedélyezve"
-      ],
-      "Scan QR code on your mobile device to sign in": [
-        "A QR-kód beolvasásával a mobilkészülékén bejelentkezhet"
       ],
       "Scan the code to sign in": [
         "Olvassa be a kódot a bejelentkezéshez"
@@ -7027,6 +7042,9 @@
       "All members have been added.": [
         "Minden tag hozzáadva."
       ],
+      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
+        "Minden üzenet a Beérkezett üzenetek mappában jelenik meg, és a kategóriafülek és címkék többé nem lesznek láthatók. "
+      ],
       "All users": [
         "Minden felhasználó"
       ],
@@ -8287,6 +8305,9 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Forduljon hozzánk segítségért bármilyen ${ BRAND_NAME } témában."
       ],
+      "Receive notifications for ${ categoryLabel }": [
+        "Értesítések fogadása a következőhöz: ${ categoryLabel }"
+      ],
       "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
         "Kapja meg a foglalási utalványt e-mailben. Ön vagy a gyermek a következő 15 éven belül felhasználhatja a cím aktiválására. ${ learnMoreLink }"
       ],
@@ -8479,6 +8500,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Mivel ön a hűséges felhasználónk, fiókja extra funkciókat tartalmaz."
+      ],
+      "Smart Routed through a different country.": [
+        "Smart Routing segítségével egy másik országon keresztül átirányítva."
       ],
       "Smart Routed through: ${ joinedCountries }.": [
         "Okos útvonalválasztás a következőn keresztül: ${ joinedCountries }."
@@ -9099,6 +9123,9 @@
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Egy titkosított ${ BRAND_NAME } címmel hozzáférhet az összes ${ BRAND_NAME } szolgáltatáshoz"
+      ],
+      "With email categories, important messages land in a primary inbox. Everything else is organized into categories.": [
+        "Az e-mail-kategóriákkal a fontos üzenetek az elsődleges beérkezett üzenetek mappájába kerülnek. Minden más kategóriákba rendeződik."
       ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Csoportok segítségével könnyen küldhet egyszerre e-mailt egy adott csoportba tartozó személyeknek."
@@ -9927,6 +9954,9 @@
       "ANY": [
         "BÁRMELYIK"
       ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Minden, ami az Ön figyelmét igényli, valamint a letiltott kategóriákból származó e-mailek"
+      ],
       "App password": [
         "Jelszó hozzáadása"
       ],
@@ -10028,6 +10058,9 @@
       ],
       "Cash": [
         "Készpénz"
+      ],
+      "Categories": [
+        "Kategóriák"
       ],
       "Category": [
         "Kategória"
@@ -10197,6 +10230,9 @@
       "Email address": [
         "E-mail cím"
       ],
+      "Email categories": [
+        "E-mail-kategóriák"
+      ],
       "Email or username": [
         "Email cím, vagy felhasználónév"
       ],
@@ -10214,6 +10250,9 @@
       ],
       "Emails (last month)": [
         "E-mailek (utolsó hónap)"
+      ],
+      "Enable categories": [
+        "Kategóriák engedélyezése"
       ],
       "Enabled": [
         "Elérhető"
@@ -10593,6 +10632,9 @@
       "Primary": [
         "Elsődleges"
       ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Elsődleges – minden, ami az Ön figyelmét igényli, valamint a letiltott kategóriákból származó e-mailek"
+      ],
       "Promotions": [
         "Promóciók"
       ],
@@ -10809,6 +10851,9 @@
       ],
       "URL": [
         "URL"
+      ],
+      "Use email categories": [
+        "E-mail-kategóriák használata"
       ],
       "Use folder colors": [
         "Mappa színek használata"
@@ -17235,6 +17280,9 @@
       "Add another notification to remind you of this event": [
         "További emlékeztető hozzáadása az eseményhez"
       ],
+      "Add categories": [
+        "Kategóriák hozzáadása"
+      ],
       "Add contact group name": [
         "Adjon nevet a névjegy csoportnak"
       ],
@@ -17372,6 +17420,9 @@
       ],
       "Catch-all address": [
         "Gyűjtő e-mail cím"
+      ],
+      "Categories": [
+        "Kategóriák"
       ],
       "Change login password": [
         "Bejelentkezési jelszó megváltoztatása"
@@ -17588,6 +17639,9 @@
       "Device name": [
         "Eszköz neve"
       ],
+      "Disable categories?": [
+        "Letiltja a kategóriákat?"
+      ],
       "Disable two-factor authentication": [
         "Kétlépcsős hitelesítés kikapcsolása"
       ],
@@ -17680,6 +17734,9 @@
       ],
       "Email": [
         "E-mail"
+      ],
+      "Email categories": [
+        "E-mail-kategóriák"
       ],
       "Email composer": [
         "E-mail szerkesztő"
@@ -18602,6 +18659,9 @@
       ],
       "Edit label names": [
         "Címke nevek szerkesztése"
+      ],
+      "Emails in your inbox are shown organized into categories": [
+        "A beérkezett üzenetei kategóriákba rendezve jelennek meg"
       ],
       "Enable/disable desktop and mobile notifications": [
         "Mobil és asztali értesítések ki- és bekapcsolása"

@@ -223,6 +223,9 @@
       "Copy as markdown": [
         "Markdown olarak kopyala"
       ],
+      "Copy debug transcript": [
+        "Hata ayıklama çıktısını kopyala"
+      ],
       "Copy email to clipboard": [
         "E-postayı panoya kopyala"
       ],
@@ -605,6 +608,9 @@
       ],
       "Preview contact": [
         "Kişiyi ön izle"
+      ],
+      "Preview logs": [
+        "Günlük ön izlemesi"
       ],
       "Previous month": [
         "Önceki ay"
@@ -2164,6 +2170,9 @@
       ],
       "Mexico": [
         "Meksika"
+      ],
+      "Micronesia": [
+        "Mikronezya"
       ],
       "Moldova": [
         "Moldova"
@@ -4995,6 +5004,9 @@
       "Custom email domains": [
         "Özel e-posta etki alanları"
       ],
+      "Debug transcript copied": [
+        "Hata ayıklama çıktısı kopyalandı"
+      ],
       "Decrypting your document": [
         "Belgenizin şifresi çözülüyor"
       ],
@@ -5187,7 +5199,7 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "E-postayı Gelen kutunuzda göremezseniz, İstenmeyen kutusuna bakmayı unutmayın."
       ],
-      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
         "Kimlik doğrulama uygulamanıza erişemiyorsanız iki adımlı doğrulamayı kurarken size verilen 16 yedek kurtarma kodundan birini kullanabilirsiniz. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
@@ -5304,6 +5316,9 @@
       ],
       "Loading...": [
         "Yükleniyor..."
+      ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "Günlük kayıtları sorunun ortaya çıkmasından önce neler olduğunu anlamamıza yardımcı olur. Bu günlük kayıtlarında uygulama işlemleri ve hata iletileri bulunur. Ancak iletilerin içeriği bulunmaz."
       ],
       "Looks like you're offline. The document can not be edited while you are offline. Please check your device's connectivity.": [
         "Çevrim dışı görünüyorsunuz. Belge çevrim dışı olarak düzenlenemez. Lütfen aygıtınızın bağlantısını denetleyin."
@@ -9055,6 +9070,79 @@
       ],
       "SUMMER SALE": [
         "YAZ İNDİRİMİ"
+      ]
+    },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "Fırsatı değerlendirin"
+      ],
+      "Special Offer": [
+        "Özel teklif"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "/month": [
+        "/ay"
+      ],
+      "2 individual accounts": [
+        "2 bireysel hesap"
+      ],
+      "2 TB of secure storage": [
+        "2 TB güvenli depolama alanı"
+      ],
+      "3 TB of secure storage": [
+        "3 TB güvenli depolama alanı"
+      ],
+      "500 GB of secure storage": [
+        "500 GB güvenli depolama alanı"
+      ],
+      "6 individual accounts": [
+        "6 bireysel hesap"
+      ],
+      "Advanced protection against cyber threats": [
+        "Siber tehditlere karşı gelişmiş koruma"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "İndirimler standart aylık fiyatlara göre hesaplanır. Fatura dönemi sona erdiğinde aboneliğiniz standart yıllık ücret üzerinden yenilenir."
+      ]
+    },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ve ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "12 ay için"
+      ],
+      "One plan, full power": [
+        "Tek tarife, tam güç"
+      ],
+      "One plan, max savings": [
+        "Tek tarife, en yüksek kazanç"
+      ],
+      "One plan, more power": [
+        "Tek tarife, daha fazla güç"
       ]
     },
     "Recent documents table header": {

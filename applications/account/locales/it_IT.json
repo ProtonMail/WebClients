@@ -4327,6 +4327,9 @@
       "Mexico": [
         "Messico"
       ],
+      "Micronesia": [
+        "Micronesia"
+      ],
       "Moldova": [
         "Moldavia"
       ],
@@ -5676,9 +5679,6 @@
       "**How it works:** Enter in this device the code displayed on the device you want to sign in to. You will be signed in as **${ email }**. Both devices will stay active.": [
         "**Come funziona:** inserisci in questo dispositivo il codice visualizzato sul dispositivo su cui vuoi accedere. L'accesso verrà eseguito come **${ email }**. Entrambi i dispositivi rimarranno attivi."
       ],
-      "Allow QR code sign‒in": [
-        "Consenti l'accesso con codice QR"
-      ],
       "Be cautious of messages with QR codes. Only scan a code if you trust the source.": [
         "Fai attenzione ai messaggi con codici QR. Scansiona un codice solo se ti fidi della fonte."
       ],
@@ -5708,9 +5708,6 @@
       ],
       "QR code sign-in enabled": [
         "Accesso tramite codice QR attivato"
-      ],
-      "Scan QR code on your mobile device to sign in": [
-        "Scansiona il codice QR sul tuo dispositivo mobile per accedere"
       ],
       "Scan the code to sign in": [
         "Scansiona il codice per accedere"
@@ -6744,6 +6741,9 @@
       "Could not generate the device profile. Please try again.": [
         "Non è stato possibile creare il profilo del dispositivo. Riprova."
       ],
+      "Could not grant access to the organization key": [
+        "Impossibile concedere l'accesso alla chiave dell'organizzazione"
+      ],
       "Could not open created vault": [
         "Impossibile aprire la cassaforte creata"
       ],
@@ -7148,6 +7148,14 @@
       "Role assignment could not be completed for ${ errors.length } member": [
         "Impossibile completare l'assegnazione del ruolo per ${ errors.length } membro",
         "Impossibile completare l'assegnazione del ruolo per ${ errors.length } membri"
+      ],
+      "Role assignment could not be completed for ${ failedCount } group": [
+        "Impossibile completare l'assegnazione del ruolo per ${ failedCount } gruppo",
+        "Impossibile completare l'assegnazione del ruolo per ${ failedCount } gruppi"
+      ],
+      "Role assignment could not be completed for ${ failedCount } user": [
+        "L'assegnazione dei ruoli non ha potuto essere completata per ${ failedCount } utente.",
+        "L'assegnazione dei ruoli non ha potuto essere completata per ${ failedCount } utenti."
       ],
       "Server not found": [
         "Server non trovato"
@@ -8885,9 +8893,6 @@
       ],
       "Contact us": [
         "Contattaci"
-      ],
-      "Downloads": [
-        "Download"
       ],
       "Enjoying ${ planName }?": [
         "Ti piace ${ planName }?"
@@ -10932,9 +10937,6 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Se perdi il tuo dispositivo abilitato al secondo fattore, questi codici possono essere usati al posto del codice di 6 cifre dell'autenticazione a due fattori per accedere al tuo account. Ogni codice può essere usato una sola volta."
       ],
-      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
-        "Se hai perso l'accesso alla tua app di autenticazione, puoi usare 1 dei 16 codici di recupero di backup forniti quando hai configurato l'autenticazione a due fattori. ${ learnMoreLink }"
-      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Se procedi con il downgrade, perderai l'accesso alle funzionalità a pagamento di ${ MAIL_APP_NAME } e ${ VPN_APP_NAME }."
       ],
@@ -11960,6 +11962,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Dato che sei un utente fedele, il tuo account ha funzionalità aggiuntive abilitate."
       ],
+      "Smart Routed through a different country.": [
+        "Instradato tramite Smart Routing attraverso un paese diverso."
+      ],
       "Smart Routed through: ${ joinedCountries }.": [
         "Instradamento smart tramite: ${ joinedCountries }."
       ],
@@ -12183,6 +12188,10 @@
       ],
       "The name will be visible to your users while they are signed in.": [
         "Il nome sarà visibile agli utenti durante l'accesso."
+      ],
+      "The process was interrupted for ${ pausedCount } ${ roleAssignmentSource }. Click Continue to resume assigning roles.": [
+        "Il processo è stato interrotto per ${ pausedCount } ${ roleAssignmentSource }. Fai clic su Continua per riprendere l'assegnazione dei ruoli.",
+        "Il processo è stato interrotto per ${ pausedCount } ${ roleAssignmentSource }s. Fai clic su Continua per riprendere l'assegnazione dei ruoli."
       ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
         "Il credito di referral può essere assegnato fino a 2 mesi dopo la fine del periodo di prova del tuo amico, solo se il tuo amico ha sottoscritto un abbonamento."
@@ -12573,6 +12582,9 @@
       ],
       "User activated": [
         "Utente attivato"
+      ],
+      "User roles assigned": [
+        "Ruoli utente assegnati"
       ],
       "Username": [
         "Nome utente"
@@ -13899,6 +13911,9 @@
       "Account holder": [
         "Titolare del conto"
       ],
+      "Account holder name": [
+        "Nome intestatario del conto"
+      ],
       "Account holder: ${ sepaDetails.AccountName }": [
         "Titolare dell'account: ${ sepaDetails.AccountName }"
       ],
@@ -14018,6 +14033,9 @@
       ],
       "ANY": [
         "QUALSIASI"
+      ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Tutto ciò che richiede la tua attenzione, più le email dalle categorie disattivate"
       ],
       "App password": [
         "Password app"
@@ -14428,6 +14446,9 @@
       "Email addresses per user": [
         "Indirizzi email per utente"
       ],
+      "Email categories": [
+        "Categorie email"
+      ],
       "Email or username": [
         "Email o nome utente"
       ],
@@ -14734,6 +14755,9 @@
       "Mail Server (IMAP)": [
         "Server di posta (IMAP)"
       ],
+      "Mailbox settings": [
+        "Impostazioni della casella di posta"
+      ],
       "Main": [
         "Principale"
       ],
@@ -15009,6 +15033,9 @@
       ],
       "Primary": [
         "Primario"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Principale - Tutto ciò che richiede la tua attenzione, più le email dalle categorie disattivate"
       ],
       "Priority support": [
         "Supporto prioritario"
@@ -16410,6 +16437,9 @@
       ],
       "Resend invite link": [
         "Rispedisci il link di invito"
+      ],
+      "Resume role assignment": [
+        "Riprendi l'assegnazione dei ruoli"
       ],
       "Revoke sessions": [
         "Revoca le sessioni"
@@ -18510,6 +18540,9 @@
       "Move to...": [
         "Sposta in..."
       ],
+      "Mute notifications": [
+        "Silenzia notifiche"
+      ],
       "My reason isn't listed": [
         "Il motivo non è elencato"
       ],
@@ -19298,6 +19331,11 @@
         "Devi avere accesso alla chiave dell'organizzazione per eseguire questa operazione."
       ]
     },
+    "Payment Method": {
+      "Bank Account": [
+        "Conto bancario"
+      ]
+    },
     "Payment method option": {
       "Apple Pay": [
         "Apple Pay"
@@ -19502,6 +19540,9 @@
       ],
       "Invalid security code": [
         "Codice di sicurezza non valido"
+      ],
+      "Please enter the account holder name": [
+        "Inserisci il nome del titolare del conto"
       ],
       "Something went wrong. Please try again later.": [
         "Si è verificato un errore. Riprova più tardi."
@@ -24248,6 +24289,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Assistente alla scrittura ${ BRAND_NAME } Scribe"
       ],
+      "${ capitalizedSource } role assignment paused": [
+        "Assegnazione del ruolo ${ capitalizedSource } in pausa"
+      ],
       "${ feature } is now active": [
         "${ feature } è adesso attivo"
       ],
@@ -24791,6 +24835,9 @@
       ],
       "Dashboard": [
         "Pannello di controllo"
+      ],
+      "Data collection": [
+        "Raccolta dati"
       ],
       "Data recovery": [
         "Recupero dei dati"
@@ -25575,6 +25622,9 @@
       "Priority support:": [
         "Supporto prioritario:"
       ],
+      "Privacy": [
+        "Privacy"
+      ],
       "Privacy and data collection": [
         "Privacy e raccolta dati"
       ],
@@ -25853,6 +25903,9 @@
       ],
       "Single sign-on": [
         "Single sign-on"
+      ],
+      "Single sign-on (SSO)": [
+        "Single sign-on (SSO)"
       ],
       "SMS verification": [
         "Verifica tramite SMS"

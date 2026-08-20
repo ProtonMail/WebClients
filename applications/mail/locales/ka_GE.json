@@ -636,6 +636,9 @@
       "Get the browser extension": [
         "ბრაუზერის გაფართოების მიღება"
       ],
+      "Get the deal": [
+        "ფასდაკლების მიღება"
+      ],
       "Get the writing assistant": [
         "მიიღეთ წერის დამხმარე"
       ],
@@ -1723,6 +1726,9 @@
       ],
       "Not now": [
         "არა ახლა"
+      ],
+      "Set up categories": [
+        "კატეგორიების დაყენება"
       ],
       "Skip": [
         "გამოტოვება"
@@ -3614,6 +3620,9 @@
       "Mexico": [
         "მექსიკა"
       ],
+      "Micronesia": [
+        "მიკრონეზია"
+      ],
       "Moldova": [
         "მოლდოვა"
       ],
@@ -4209,6 +4218,9 @@
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "წაიკითხეთ, უპასუხეთ და მართეთ Gmail-ი ${ MAIL_APP_NAME }-ის საშუალებით"
+      ],
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "დააწკაპუნეთ წერილზე მარჯვენა ღილაკით და აირჩიეთ „გადატანა“, ან გადაათრიეთ სხვა კატეგორიაში. მომავალში მსგავსი წერილები ავტომატურად იმავე კატეგორიაში მოხვდება."
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
         "გაგზავნეთ და მიიღეთ Gmail-ის შეტყობინებები პირდაპირ ${ MAIL_APP_NAME }-ში. დააკავშირეთ თქვენი მისამართი ${ addressesSettingsLink }-ში."
@@ -7625,9 +7637,6 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "თუ ვერ იპოვეთ ელფოსტა თქვენს საფოსტო ყუთში, გადაამოწმეთ სპამის საქაღალდეც."
       ],
-      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
-        "თუ დაკარგეთ წვდომა თქვენს აუტენტიფიკატორ აპლიკაციაზე, შეგიძლიათ გამოიყენოთ ორფაქტორიანი აუტენტიფიკაციის აწყობისას მოწოდებული 16 სარეზერვო აღდგენის კოდიდან 1. ${ learnMoreLink }"
-      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "თუ მაინც აპირებთ, ჩამოსწიოთ სატარიფო გეგმა, გაითვალისწინეთ, რომ ${ MAIL_APP_NAME }-ის და ${ VPN_APP_NAME }-ის ფასიან ფუნქციებთან წვდომას დაკარგავთ."
       ],
@@ -8943,6 +8952,10 @@
       "You have ${ totalLabel } in your inbox.": [
         "თქვენს შემოსულებში არის ${ totalLabel }."
       ],
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "თქვენს ${ categoryLabel } კატეგორიაში გაქვთ **${ count } საუბარი**",
+        "თქვენს ${ categoryLabel } კატეგორიაში გაქვთ **${ count } საუბარი**"
+      ],
       "You have **${ count } conversation** stored in this folder": [
         "ამ საქაღალდეში გაქვთ **${ count } შეტყობინება**",
         "ამ საქაღალდეში გაქვთ **${ count } შეტყობინება**"
@@ -8950,6 +8963,10 @@
       "You have **${ count } conversation** tagged with this label": [
         "ამ ჭდით არსებობს **${ count } შეტყობინება**",
         "ამ ჭდით არსებობს **${ count } შეტყობინება**"
+      ],
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "თქვენს ${ categoryLabel } კატეგორიაში გაქვთ **${ count } შეტყობინება**",
+        "თქვენს ${ categoryLabel } კატეგორიაში გაქვთ **${ count } შეტყობინება**"
       ],
       "You have **${ count } message** stored in this folder": [
         "ამ საქაღალდეში შენახულია **${ count } შეტყობინება**",
@@ -8985,6 +9002,14 @@
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "სატარიფო გეგმის ჩამოწევამდე საჭიროა ${ MAIL_APP_NAME }-ის მომხმარებლების, მისამართების და ხელით მითითებული დომენების წაშლა."
+      ],
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "თქვენს ${ categoryLabel } კატეგორიაში აირჩიეთ **${ checked } საუბარი**",
+        "თქვენს ${ categoryLabel } კატეგორიაში აირჩიეთ **${ checked } საუბარი**"
+      ],
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "თქვენს ${ categoryLabel } კატეგორიაში აირჩიეთ **${ checked } შეტყობინება**",
+        "თქვენს ${ categoryLabel } კატეგორიაში აირჩიეთ **${ checked } შეტყობინება**"
       ],
       "You selected **${ count } conversation** from this folder": [
         "ამ საქაღალდიდან მონიშნული გაქვთ **${ count } საუბარი**",
@@ -9545,6 +9570,9 @@
       "ANY": [
         "ნებისმიერი"
       ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "ყველაფერი, რაც ყურადღებას საჭიროებს, და წერილები გათიშული კატეგორიებიდან"
+      ],
       "App password": [
         "აპის პაროლი"
       ],
@@ -9805,6 +9833,9 @@
       ],
       "Folder location": [
         "საქაღალდის მდებარეობა"
+      ],
+      "Folder name": [
+        "საქაღალდის სახელი"
       ],
       "Forwards to": [
         "გადაგზავნა"
@@ -10084,6 +10115,9 @@
       ],
       "Primary": [
         "ძირითადი"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "ძირითადი - ყველაფერი, რაც ყურადღებას საჭიროებს, და წერილები გათიშული კატეგორიებიდან"
       ],
       "Promotions": [
         "რეკლამა"
@@ -15003,6 +15037,9 @@
         "${ selectionCount } შეტყობინების გადატანა",
         "${ selectionCount } შეტყობინების გადატანა"
       ],
+      "Moved to ${ label }. Similar messages will be categorized there in the future.": [
+        "გადატანილია ${ label }-ში. მომავალში მსგავსი შეტყობინებები იმავე კატეგორიაში მოხვდება."
+      ],
       "Password copied to clipboard": [
         "პაროლი დაკოპირდა გაცვლის ბუფერში"
       ],
@@ -16038,6 +16075,9 @@
       ],
       "Referral": [
         "რეფერალი"
+      ],
+      "Refine your Categories": [
+        "დააზუსტეთ თქვენი კატეგორიები"
       ],
       "Remove forwarding address": [
         "გადაგზავნის მისამართის წაშლა"

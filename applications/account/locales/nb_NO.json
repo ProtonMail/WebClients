@@ -4357,6 +4357,9 @@
       "Mexico": [
         "Mexico"
       ],
+      "Micronesia": [
+        "Mikronesiaføderasjonen"
+      ],
       "Moldova": [
         "Moldova"
       ],
@@ -5706,9 +5709,6 @@
       "**How it works:** Enter in this device the code displayed on the device you want to sign in to. You will be signed in as **${ email }**. Both devices will stay active.": [
         "**Slik fungerer det:** Skriv inn koden som vises på enheten du vil logge på, på denne enheten. Du blir logget på som **${ email }**. Begge enhetene vil forbli aktive."
       ],
-      "Allow QR code sign‒in": [
-        "Tillat pålogging med QR-kode"
-      ],
       "Be cautious of messages with QR codes. Only scan a code if you trust the source.": [
         "Vær forsiktig med meldinger med QR-koder. Skann bare en kode hvis du klarert kilden."
       ],
@@ -5738,9 +5738,6 @@
       ],
       "QR code sign-in enabled": [
         "QR-kode pålogging aktivert"
-      ],
-      "Scan QR code on your mobile device to sign in": [
-        "Skann QR-koden på mobilenheten for å logge på"
       ],
       "Scan the code to sign in": [
         "Skann koden for å logge på"
@@ -9227,9 +9224,6 @@
       "Contact us": [
         "Kontakt oss"
       ],
-      "Downloads": [
-        "Nedlastinger"
-      ],
       "Enjoying ${ planName }?": [
         "Liker du ${ planName }?"
       ],
@@ -10107,9 +10101,6 @@
       ],
       "add a recovery method": [
         "legger til en gjenoppretingsmetode"
-      ],
-      "Add additional users from your organization to manage this company.": [
-        "Legg til flere brukere fra organisasjonen for å administrere denne bedriften."
       ],
       "Add an email address in case we need to contact you": [
         "Legg til en e-postadresse i tilfelle vi trenger å kontakte deg"
@@ -11330,9 +11321,6 @@
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Hvis du mister den tofaktoraktiverte enheten din, kan disse kodene brukes i stedet for den 6-sifrede tofaktorautentiseringskoden for å logge på kontoen din. Hver kode kan bare brukes én gang."
-      ],
-      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
-        "Hvis du mistet tilgangen til autentiseringsappen din, kan du bruke én av de 16 sikkerhetskopi-gjenopprettingskodene du fikk da du konfigurerte tofaktorautentisering. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Hvis du fortsetter med nedgraderingen, vil du miste tilgang til de betalte funksjonene til ${ MAIL_APP_NAME } og ${ VPN_APP_NAME }."
@@ -14919,6 +14907,9 @@
       ],
       "Email addresses per user": [
         "E-postadresser per bruker"
+      ],
+      "Email categories": [
+        "E-postkategorier"
       ],
       "Email or username": [
         "E-post eller brukernavn"
@@ -26007,9 +25998,6 @@
       ],
       "Manage files across devices on Windows, Mac, Android, and iOS.": [
         "Administrer filer på tvers av enheter på Windows, Mac, Android og iOS."
-      ],
-      "Managers": [
-        "Administratorer"
       ],
       "Messages": [
         "Meldinger"

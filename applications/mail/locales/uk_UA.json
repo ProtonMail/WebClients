@@ -645,6 +645,9 @@
       "Get the browser extension": [
         "Отримати розширення для браузера"
       ],
+      "Get the deal": [
+        "Скористатися пропозицією"
+      ],
       "Get the writing assistant": [
         "Отримати помічника з написання"
       ],
@@ -3694,6 +3697,9 @@
       ],
       "Mexico": [
         "Мексика"
+      ],
+      "Micronesia": [
+        "Мікронезія"
       ],
       "Moldova": [
         "Молдова"
@@ -8200,9 +8206,6 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Якщо ви не можете знайти лист у вхідних повідомленнях, перевірте свою теку спаму."
       ],
-      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
-        "Якщо ви втратили доступ до своєї програми-автентифікатора, ви можете скористатися 1 із 16 резервних кодів відновлення, наданих під час налаштування двоетапної перевірки. ${ learnMoreLink }"
-      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Якщо ви продовжите перехід на нижчий тарифний план, ви втратите доступ до платних функцій ${ MAIL_APP_NAME } та ${ VPN_APP_NAME }."
       ],
@@ -9613,6 +9616,12 @@
       "You have ${ totalLabel } in your inbox.": [
         "У ваших вхідних ${ totalLabel }."
       ],
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "У категорії ${ categoryLabel } у вас **${ count } розмова**",
+        "У категорії ${ categoryLabel } у вас **${ count } розмови**",
+        "У категорії ${ categoryLabel } у вас **${ count } розмов**",
+        "У категорії ${ categoryLabel } у вас **${ count } розмови**"
+      ],
       "You have **${ count } conversation** stored in this folder": [
         "У цій теці розміщена **${ count } розмова**",
         "У цій теці розміщені **${ count } розмови**",
@@ -9624,6 +9633,12 @@
         "**${ count } розмови** позначені цією міткою",
         "**${ count } розмов** позначені цією міткою",
         "**${ count } розмов** позначені цією міткою"
+      ],
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "У категорії ${ categoryLabel } у вас **${ count } повідомлення**",
+        "У категорії ${ categoryLabel } у вас **${ count } повідомлення**",
+        "У категорії ${ categoryLabel } у вас **${ count } повідомлень**",
+        "У категорії ${ categoryLabel } у вас **${ count } повідомлення**"
       ],
       "You have **${ count } message** stored in this folder": [
         "У цій теці розміщено **${ count } повідомлення**",
@@ -9663,6 +9678,18 @@
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Для можливості переходу на тарифний план нижчого рівня ви повинні вилучити будь-яких додаткових користувачів ${ MAIL_APP_NAME }, адреси та власні домени."
+      ],
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "У категорії ${ categoryLabel } ви вибрали **${ checked } розмову**",
+        "У категорії ${ categoryLabel } ви вибрали **${ checked } розмови**",
+        "У категорії ${ categoryLabel } ви вибрали **${ checked } розмов**",
+        "У категорії ${ categoryLabel } ви вибрали **${ checked } розмови**"
+      ],
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "У категорії ${ categoryLabel } ви вибрали **${ checked } повідомлення**",
+        "У категорії ${ categoryLabel } ви вибрали **${ checked } повідомлення**",
+        "У категорії ${ categoryLabel } ви вибрали **${ checked } повідомлень**",
+        "У категорії ${ categoryLabel } ви вибрали **${ checked } повідомлення**"
       ],
       "You selected **${ count } conversation** from this folder": [
         "Ви вибрали **${ count } розмову** з цієї теки",
@@ -10535,6 +10562,9 @@
       ],
       "Folder location": [
         "Розташування теки"
+      ],
+      "Folder name": [
+        "Назва теки"
       ],
       "Forwards to": [
         "Пересилається на"
@@ -16024,6 +16054,9 @@
         "Перемістити ${ selectionCount } повідомлення",
         "Перемістити ${ selectionCount } повідомлень",
         "Перемістити ${ selectionCount } повідомлень"
+      ],
+      "Moved to ${ label }. Similar messages will be categorized there in the future.": [
+        "Переміщено до ${ label }. Надалі подібні повідомлення потраплятимуть туди ж."
       ],
       "Password copied to clipboard": [
         "Пароль скопійовано до буфера обміну"

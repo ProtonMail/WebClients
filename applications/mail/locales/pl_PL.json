@@ -642,6 +642,9 @@
       "Get the browser extension": [
         "Pobierz rozszerzenie przeglądarki"
       ],
+      "Get the deal": [
+        "Skorzystaj z oferty"
+      ],
       "Get the writing assistant": [
         "Uzyskaj asystenta pisania"
       ],
@@ -1733,6 +1736,9 @@
       ],
       "Not now": [
         "Nie teraz"
+      ],
+      "Set up categories": [
+        "Skonfiguruj kategorie"
       ],
       "Skip": [
         "Pomiń"
@@ -3662,6 +3668,9 @@
       "Mexico": [
         "Meksyk"
       ],
+      "Micronesia": [
+        "Mikronezja"
+      ],
       "Moldova": [
         "Mołdawia"
       ],
@@ -4267,6 +4276,9 @@
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Czytaj, odpowiadaj i bądź na bieżąco z Gmailem bezpośrednio w ${ MAIL_APP_NAME }"
+      ],
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Kliknij wiadomość prawym przyciskiem myszy i wybierz „Przenieś do” lub przeciągnij ją do innej kategorii. Podobne wiadomości będą w przyszłości automatycznie tam trafiać."
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
         "Wysyłaj i odbieraj wiadomości Gmail bezpośrednio w aplikacji ${ MAIL_APP_NAME }. Połącz adres w ${ addressesSettingsLink }."
@@ -7897,9 +7909,6 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Jeśli nie widzisz wiadomości w skrzynce odbiorczej, sprawdź folder spam."
       ],
-      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
-        "Jeśli stracisz dostęp do swojej aplikacji uwierzytelniającej, możesz użyć 1 z 16 zapasowych kodów odzyskiwania dostarczonych podczas konfigurowania uwierzytelniania dwustopniowego. ${ learnMoreLink }"
-      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Po obniżeniu planu stracisz dostęp do płatnych funkcji poczty ${ MAIL_APP_NAME } i usługi ${ VPN_APP_NAME }."
       ],
@@ -9241,6 +9250,12 @@
       "You have ${ totalLabel } in your inbox.": [
         "Masz ${ totalLabel } w swojej skrzynce odbiorczej."
       ],
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "W kategorii ${ categoryLabel } masz **${ count } rozmowę**",
+        "W kategorii ${ categoryLabel } masz **${ count } rozmowy**",
+        "W kategorii ${ categoryLabel } masz **${ count } rozmów**",
+        "W kategorii ${ categoryLabel } masz **${ count } rozmowy**"
+      ],
       "You have **${ count } conversation** stored in this folder": [
         "Masz **${ count } wątek** w tym folderze",
         "Masz **${ count } wątki** w tym folderze",
@@ -9252,6 +9267,12 @@
         "Masz **${ count } wątki** oznaczone tą etykietą",
         "Masz **${ count } wątków** oznaczonych tą etykietą",
         "Masz **${ count } wątków** oznaczonych tą etykietą"
+      ],
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "W kategorii ${ categoryLabel } masz **${ count } wiadomość**",
+        "W kategorii ${ categoryLabel } masz **${ count } wiadomości**",
+        "W kategorii ${ categoryLabel } masz **${ count } wiadomości**",
+        "W kategorii ${ categoryLabel } masz **${ count } wiadomości**"
       ],
       "You have **${ count } message** stored in this folder": [
         "Masz **${ count } wiadomość** w tym folderze",
@@ -9291,6 +9312,18 @@
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Przed obniżeniem planu musisz wyłączyć lub usunąć dodatkowych użytkowników ${ MAIL_APP_NAME }, adresy i niestandardowe domeny."
+      ],
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "W kategorii ${ categoryLabel } wybrałeś **${ checked } rozmowę**",
+        "W kategorii ${ categoryLabel } wybrałeś **${ checked } rozmowy**",
+        "W kategorii ${ categoryLabel } wybrałeś **${ checked } rozmów**",
+        "W kategorii ${ categoryLabel } wybrałeś **${ checked } rozmowy**"
+      ],
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "W kategorii ${ categoryLabel } wybrałeś **${ checked } wiadomość**",
+        "W kategorii ${ categoryLabel } wybrałeś **${ checked } wiadomości**",
+        "W kategorii ${ categoryLabel } wybrałeś **${ checked } wiadomości**",
+        "W kategorii ${ categoryLabel } wybrałeś **${ checked } wiadomości**"
       ],
       "You selected **${ count } conversation** from this folder": [
         "Zaznaczono **${ count } wątek** z tego folderu",
@@ -9891,6 +9924,9 @@
       "ANY": [
         "JAKIKOLWIEK"
       ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Wszystko, co wymaga Twojej uwagi, oraz wiadomości z wyłączonych kategorii"
+      ],
       "App password": [
         "Hasło aplikacji"
       ],
@@ -10151,6 +10187,9 @@
       ],
       "Folder location": [
         "Lokalizacja folderu"
+      ],
+      "Folder name": [
+        "Nazwa folderu"
       ],
       "Forwards to": [
         "Przekaż do"
@@ -10430,6 +10469,9 @@
       ],
       "Primary": [
         "Główna"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Główne – wszystko, co wymaga Twojej uwagi, oraz wiadomości z wyłączonych kategorii"
       ],
       "Promotions": [
         "Promocje"
@@ -15595,6 +15637,9 @@
         "Przenieś ${ selectionCount } wiadomości",
         "Przenieś ${ selectionCount } wiadomości"
       ],
+      "Moved to ${ label }. Similar messages will be categorized there in the future.": [
+        "Przeniesiono do ${ label }. Podobne wiadomości będą w przyszłości trafiać do tej kategorii."
+      ],
       "Password copied to clipboard": [
         "Hasło zostało skopiowane do schowka"
       ],
@@ -16672,6 +16717,9 @@
       ],
       "Referral": [
         "Polecenia"
+      ],
+      "Refine your Categories": [
+        "Dopracuj swoje kategorie"
       ],
       "Remove forwarding address": [
         "Usuń adres przekierowania"

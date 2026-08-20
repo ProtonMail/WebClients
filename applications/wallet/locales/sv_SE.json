@@ -172,6 +172,9 @@
       "Get the apps": [
         "Skaffa apparna"
       ],
+      "Get the deal": [
+        "Ta del av erbjudandet"
+      ],
       "Get verification code": [
         "Skaffa verifieringskod"
       ],
@@ -1724,6 +1727,9 @@
       "Mexico": [
         "Mexiko"
       ],
+      "Micronesia": [
+        "Mikronesien"
+      ],
       "Moldova": [
         "Moldavien"
       ],
@@ -2970,14 +2976,14 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Om du har problem med att skapa ditt konto, begär en inbjudan så svarar vi inom en arbetsdag."
       ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "Om du avbryter nu, kommer du att förlora åtkomst till ${ BRAND_NAME } ${ planTitle } den ${ expiryDate }, inklusive dessa funktioner:"
+      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Om du avbryter kommer din ${ planTitle }-prenumeration inte att förnyas när den löper ut den ${ expiryDate }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Om du inte hittar e-postmeddelandet i din inkorg, kontrollera din skräppostmapp."
-      ],
-      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
-        "Om du har förlorat åtkomsten till din autentiseringsapp kan du använda 1 av de 16 återställningskoderna för säkerhetskopiering som tillhandahölls när du konfigurerade tvåfaktorsautentisering. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Om du fortsätter med nedgraderingen förlorar du åtkomst till betalfunktioner för ${ MAIL_APP_NAME } och ${ VPN_APP_NAME }."
@@ -3687,6 +3693,9 @@
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME }-användarplatser"
+      ],
+      "${ price } per seat": [
+        "${ price } per plats"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME }-användarplats",
@@ -4925,6 +4934,9 @@
       ],
       "You will soon be redirected to verify your payment.": [
         "Du kommer snart att omdirigeras för att verifiera din betalning."
+      ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
+        "Din valuta har ändrats till euro (€) på grund av att  ${ IDEAL_BRAND_NAME } endast stödjer betalningar i euro."
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Din valuta har ändrats till euro (€) eftersom SEPA-banköverföringar endast stöder betalningar i euro."
