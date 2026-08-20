@@ -2,22 +2,54 @@ import { useSyncExternalStore } from 'react';
 
 import type { ModelTier } from '../providers/modelTierConstants';
 import { getSelectedModelTier } from '../providers/modelTierConstants';
+import type { MaxModelAvailability } from '../remote/nativeComposerBridge';
 import type { GenerationResponseMessage, LumoRemainingLimits } from '../types-api';
 
 type Listener = () => void;
 
+/** The Debug View can force either unavailable state; `null` means "no override, use the real one". */
+export type DebugMaxModelOverride = Exclude<MaxModelAvailability, 'available'>;
+
+const DEBUG_MAX_AVAILABILITY_KEY = 'lumo_debug_max_availability';
+
+const readPersistedMaxOverride = (): DebugMaxModelOverride | null => {
+    try {
+        const stored = localStorage.getItem(DEBUG_MAX_AVAILABILITY_KEY);
+        return stored === 'unavailable_high_load' || stored === 'unavailable_limit_reached' ? stored : null;
+    } catch {
+        return null;
+    }
+};
+
 let remainingLimits: LumoRemainingLimits | null = null;
+let debugMaxOverride = readPersistedMaxOverride();
+/**
+ * What consumers actually observe: the backend limits with any debug override applied.
+ * Cached so `useSyncExternalStore` keeps seeing a stable reference between updates.
+ */
+let effectiveLimits: LumoRemainingLimits | null = null;
 const listeners = new Set<Listener>();
 
 export type UsageModelTier = Exclude<ModelTier, 'auto'>;
 
-export function setRemainingLimits(limits: LumoRemainingLimits): void {
-    remainingLimits = limits;
+function publish(): void {
+    // With no backend limits yet, an override still has to produce an object — a `null`
+    // snapshot means "unknown", which every selectability check treats as "allowed".
+    effectiveLimits =
+        debugMaxOverride === 'unavailable_limit_reached' ? { ...(remainingLimits ?? {}), max: 0 } : remainingLimits;
+
     listeners.forEach((listener) => listener());
 }
 
+publish();
+
+export function setRemainingLimits(limits: LumoRemainingLimits): void {
+    remainingLimits = limits;
+    publish();
+}
+
 export function getRemainingLimits(): LumoRemainingLimits | null {
-    return remainingLimits;
+    return effectiveLimits;
 }
 
 function subscribeRemainingLimits(listener: Listener): () => void {
@@ -27,6 +59,36 @@ function subscribeRemainingLimits(listener: Listener): () => void {
 
 export function useRemainingLimits(): LumoRemainingLimits | null {
     return useSyncExternalStore(subscribeRemainingLimits, getRemainingLimits, getRemainingLimits);
+}
+
+/**
+ * Debug View only: forces Max into one of its unavailable states, so both branches can be
+ * exercised without burning a real quota or waiting for a high-load rollout.
+ *
+ * `unavailable_limit_reached` pins the Max pool to zero here; `unavailable_high_load` is applied
+ * by `useMaxModelAvailability`, since that path is driven by feature flags rather than quota.
+ * Persisted so it survives the reloads a WebView goes through.
+ */
+export function setDebugMaxModelOverride(override: DebugMaxModelOverride | null): void {
+    debugMaxOverride = override;
+    try {
+        if (override) {
+            localStorage.setItem(DEBUG_MAX_AVAILABILITY_KEY, override);
+        } else {
+            localStorage.removeItem(DEBUG_MAX_AVAILABILITY_KEY);
+        }
+    } catch {
+        // Storage unavailable (private mode / wrapper) — the override still applies for this session.
+    }
+    publish();
+}
+
+export function getDebugMaxModelOverride(): DebugMaxModelOverride | null {
+    return debugMaxOverride;
+}
+
+export function useDebugMaxModelOverride(): DebugMaxModelOverride | null {
+    return useSyncExternalStore(subscribeRemainingLimits, getDebugMaxModelOverride, getDebugMaxModelOverride);
 }
 
 export function isLimitExhausted(remaining: number | undefined): boolean {
@@ -121,6 +183,28 @@ export function isModelTierSelectable(
     }
 
     return !isModelTierLimitExhausted(modelTier, limits);
+}
+
+/**
+ * Whether Max can be picked right now, and why not when it can't — the single derivation behind
+ * both the web picker's badge and the value pushed over the native bridge.
+ *
+ * High load wins over an exhausted quota when both apply: it's the segment-wide state, and
+ * `ModelModePanel` labels the row the same way, so native and web never disagree.
+ */
+export function getMaxModelAvailability(
+    limits: LumoRemainingLimits | null,
+    options?: ModelTierAvailabilityOptions
+): MaxModelAvailability {
+    if (options?.isMaxAvailable === false) {
+        return 'unavailable_high_load';
+    }
+
+    if (isModelTierLimitExhausted('lumo-max', limits)) {
+        return 'unavailable_limit_reached';
+    }
+
+    return 'available';
 }
 
 /** Default model tier: max when selectable, otherwise lite. */
