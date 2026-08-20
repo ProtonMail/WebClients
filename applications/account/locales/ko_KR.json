@@ -4687,6 +4687,9 @@
       "Mexico": [
         "멕시코"
       ],
+      "Micronesia": [
+        "미크로네시아"
+      ],
       "Moldova": [
         "몰도바"
       ],
@@ -6044,9 +6047,6 @@
       "**How it works:** Enter in this device the code displayed on the device you want to sign in to. You will be signed in as **${ email }**. Both devices will stay active.": [
         "**작동 방식:** 로그인하려는 기기에 표시된 코드를 입력하세요. **${ email }**(으)로 로그인됩니다. 두 기기 모두 활성 상태로 유지됩니다."
       ],
-      "Allow QR code sign‒in": [
-        "QR 코드 로그인 허용"
-      ],
       "Be cautious of messages with QR codes. Only scan a code if you trust the source.": [
         "QR 코드가 포함된 메시지를 주의하십시오. 출처를 신뢰할 수 있는 경우에만 코드를 스캔하십시오."
       ],
@@ -6076,9 +6076,6 @@
       ],
       "QR code sign-in enabled": [
         "QR 코드 로그인이 활성화됨"
-      ],
-      "Scan QR code on your mobile device to sign in": [
-        "로그인하려면 모바일 디바이스에서 QR 코드를 스캔하세요"
       ],
       "Scan the code to sign in": [
         "코드를 스캔하여 로그인하세요."
@@ -6606,7 +6603,7 @@
         "${ user }님이 사용자의 계정을 사용 및 데이터를 변경할 수 있게 됩니다."
       ],
       "${ user } will be signed out of your account, and will not be able to access it again until the next emergency access.": [
-        "${ user }님이 사용자의 계정에서 로그아웃되며, 다음 긴급 접근 시까지 다시 접근할 수 없게 됩니다."
+        "${ user }님이 사용자의 계정에서 로그아웃되며, 다음 비상 접근 시까지 다시 접근할 수 없게 됩니다."
       ],
       "${ user } will no longer be able to help you recover your data after a password reset.": [
         "${ user }님이 비밀번호 재설정 후 데이터를 복구하는 데 더 이상 도움을 줄 수 없게 됩니다."
@@ -6714,28 +6711,28 @@
         "비활성화됨"
       ],
       "Don't lose emergency access. Enable auto-renew today.": [
-        "긴급 접근 권한을 잃지 마세요. 자동 갱신을 오늘 활성화하세요."
+        "비상 접근 권한을 잃지 마세요. 자동 갱신을 오늘 활성화하세요."
       ],
       "Emergency access": [
         "비상 접근"
       ],
       "Emergency access for ${ user } removed": [
-        "사용자 ${ user }의 긴급 접근권한이 삭제되었습니다."
+        "사용자 ${ user }의 비상 접근권한이 삭제되었습니다."
       ],
       "Emergency access granted": [
-        "긴급 접근이 승인됨"
+        "비상 접근이 승인됨"
       ],
       "Emergency access refused": [
-        "긴급 접근 거부됨"
+        "비상 접근 거부됨"
       ],
       "Emergency access request": [
-        "긴급 접근 요청"
+        "비상 접근 요청"
       ],
       "Emergency access requested": [
-        "긴급 접근 요청됨"
+        "비상 접근 요청됨"
       ],
       "Emergency access revoked": [
-        "긴급 접근 취소됨"
+        "비상 접근 취소됨"
       ],
       "Emergency contact added": [
         "비상 연락처 추가됨"
@@ -6795,7 +6792,7 @@
         "단 "
       ],
       "Only request emergency access when there's a **valid situation** requiring you to manage another user's account.": [
-        "긴급 접근은 **유효한 상황**이 발생하여 사용자가 다른 사용자의 계정을 관리해야 할 경우에만 요청하십시오."
+        "비상 접근은 **유효한 상황**이 발생하여 사용자가 다른 사용자의 계정을 관리해야 할 경우에만 요청해야 합니다."
       ],
       "Pending request": [
         "요청 대기 중"
@@ -6855,7 +6852,7 @@
         "계속하려면 복구 연락처를 삭제하십시오"
       ],
       "Renew to get emergency access again.": [
-        "다시 긴급 접근을 얻으려면 갱신하십시오."
+        "다시 비상 접근을 얻으려면 플랜을 갱신하십시오."
       ],
       "Request access": [
         "접근 요청"
@@ -6963,7 +6960,7 @@
         "복구 데이터를 확인할 수 없습니다. 그래도 진행하시겠습니까?"
       ],
       "We’ll notify **${ user }** that you requested emergency access.": [
-        "사용자가 긴급 접근을 요청했음을 **${ user }**님이 알림 받게됩니다."
+        "사용자가 비상 접근을 요청했음을 **${ user }**님이 알림 받게됩니다."
       ],
       "You are signed in to the account ${ account }.": [
         "${ account } 계정으로 로그인했습니다."
@@ -7036,7 +7033,7 @@
         "${ user.Name }이(가) 회원님의 사용자 이름입니다. ${ emailAddress }를 생성하려면, 설정 > 신원 및 주소 > 짧은 도메인 (pm.me)로 이동하세요."
       ],
       "A delegated access recovery or emergency-access process has been initiated: generating a new key is not allowed to avoid disrupting it": [
-        "위임된 접근 복구 또는 긴급 접근 절차가 시작되었습니다: 새로운 키를 생성하는 것은 작업 방해를 방지하기 위해 허용되지 않습니다."
+        "위임된 접근 복구 또는 비상 접근 절차가 시작되었습니다: 새로운 키를 생성하는 것은 작업 방해를 방지하기 위해 허용되지 않습니다."
       ],
       "A group with this name already exists": [
         "이 이름을 가진 그룹이 이미 있습니다"
@@ -8885,10 +8882,10 @@
         "보안 키를 기기에 삽입하세요."
       ],
       "PIN requirement for security keys disabled": [
-        "보안 키 비활성화를 위한 PIN 요구 조건"
+        "보안 키에 PIN 필요 비활성화됨"
       ],
       "PIN requirement for security keys enabled": [
-        "보안 키 활성화를 위한 PIN 요구 조건"
+        "보안 키에 PIN 필요 활성화됨"
       ],
       "Require PIN for security key": [
         "보안 키에 PIN 필요"
@@ -9575,9 +9572,6 @@
       ],
       "Contact us": [
         "문의"
-      ],
-      "Downloads": [
-        "다운로드"
       ],
       "Enjoying ${ planName }?": [
         "${ planName }을(를) 잘 사용하고 계신가요?"
@@ -10436,9 +10430,6 @@
       ],
       "add a recovery method": [
         "복구 수단 추가"
-      ],
-      "Add additional users from your organization to manage this company.": [
-        "조직에서 별도의 사용자를 추가하여 이 회사를 관리하도록 권한을 부여하세요."
       ],
       "Add an email address in case we need to contact you": [
         "만일 연락이 필요할 경우를 위해 이메일 주소를 추가하세요"
@@ -11699,9 +11690,6 @@
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "2단계 인증 기기를 분실한 경우, 6자리 인증코드 대신 이 코드들을 사용하여 계정에 로그인 할 수 있습니다. 각 코드는 한번씩만 사용이 가능합니다."
-      ],
-      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
-        "인증 앱에 접근할 수 없는 경우, 2단계 인증을 설정할 때 제공된 16개의 백업 복구 코드 중 1개를 사용할 수 있습니다. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "다운그레이드를 진행하면 ${ MAIL_APP_NAME } 과 ${ VPN_APP_NAME } 의 유료 기능을 사용할 수 없습니다."
@@ -15363,6 +15351,9 @@
       "Email addresses per user": [
         "사용자당 이메일 주소"
       ],
+      "Email categories": [
+        "이메일 카테고리"
+      ],
       "Email or username": [
         "이메일 또는 사용자 이름"
       ],
@@ -17004,7 +16995,7 @@
         "2단계 인증 비활성화됨 (인증 앱)"
       ],
       "Second factor disabled (security key)": [
-        "이중 인증 비활성화됨 (보안 키)"
+        "2단게 인증 비활성화됨 (보안 키)"
       ],
       "Second factor enabled (authenticator app)": [
         "이중 요소 활성화됨 (인증 앱)"
@@ -21964,7 +21955,7 @@
         "나중에"
       ],
       "Protect your legacy with Emergency Access": [
-        "긴급 접근으로 나의 유산을 보호하기"
+        "비상 접근으로 나의 유산을 보호하기"
       ],
       "Save recovery phrase": [
         "복구 키 저장"
@@ -26447,9 +26438,6 @@
       ],
       "Manage files across devices on Windows, Mac, Android, and iOS.": [
         "Windows, Mac, Android 및 iOS에서 파일을 관리하세요."
-      ],
-      "Managers": [
-        "매니저"
       ],
       "Messages": [
         "메시지"

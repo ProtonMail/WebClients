@@ -4327,6 +4327,9 @@
       "Mexico": [
         "Meksiko"
       ],
+      "Micronesia": [
+        "Mikronezija"
+      ],
       "Moldova": [
         "Moldavija"
       ],
@@ -5685,9 +5688,6 @@
       "**How it works:** Enter in this device the code displayed on the device you want to sign in to. You will be signed in as **${ email }**. Both devices will stay active.": [
         "**Kako to radi:** unesite u ovaj uređaj kôd prikazan na uređaju na koji se želite prijaviti. Bit ćete prijavljeni kao **${ email }**. Oba uređaja će ostati aktivna."
       ],
-      "Allow QR code sign‒in": [
-        "Dopusti prijavu QR kôdom"
-      ],
       "Be cautious of messages with QR codes. Only scan a code if you trust the source.": [
         "Budite oprezni porukama s QR kôdovima. Skenirajte kôd samo ako vjerujete izvoru."
       ],
@@ -5717,9 +5717,6 @@
       ],
       "QR code sign-in enabled": [
         "Prijava QR kôdom omogućena"
-      ],
-      "Scan QR code on your mobile device to sign in": [
-        "Skenirajte QR kôd na svom mobilnom uređaju za prijavu"
       ],
       "Scan the code to sign in": [
         "Skenirajte kôd za prijavu"
@@ -10949,9 +10946,6 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Ukoliko izgubite svoj uređaj za dvofaktorsku autentikaciju, ovi kôdovi se mogu upotrijebiti umjesto 6-znamenkastog kôda dvofaktorske autentikacije da bi se prijavili na vaš korisnički račun. Svaki kôd može se upotrijebiti samo jednom."
       ],
-      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
-        "Ako ste izgubili pristup svojoj autentifikator apl., možete upotrijebiti 1 od 16 sigurnosnih kôdova za oporavak koji su vam pruženi kada ste postavili dvofaktorsku autentikaciju. ${ learnMoreLink }"
-      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Ako nastavite s snižavanjem statusa, izgubit ćete pristup plaćenim ${ MAIL_APP_NAME } i ${ VPN_APP_NAME } značajkama."
       ],
@@ -11957,6 +11951,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Budući da ste odani korisnik, na vašem su računu omogućene dodatne značajke."
+      ],
+      "Smart Routed through a different country.": [
+        "Pametno usmjereno kroz drugu državu."
       ],
       "Smart Routed through: ${ joinedCountries }.": [
         "Pametno usmjereno kroz: ${ joinedCountries }."
@@ -14020,6 +14017,9 @@
       "ANY": [
         "BILO KOJI"
       ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Sve što zahtijeva vašu pozornost, plus e-poruke iz onemogućenih kategorija"
+      ],
       "App password": [
         "Lozinka aplikacije"
       ],
@@ -14411,6 +14411,9 @@
       ],
       "Email addresses per user": [
         "Adrese e-pošte po korisniku"
+      ],
+      "Email categories": [
+        "Kategorije e-pošte"
       ],
       "Email or username": [
         "Adresa e-pošte ili korisničko ime"
@@ -14984,6 +14987,9 @@
       ],
       "Primary": [
         "Glavno"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Primarno – sve što zahtijeva vašu pozornost, plus e-poruke iz onemogućenih kategorija"
       ],
       "Priority support": [
         "Prioritetna podrška"
