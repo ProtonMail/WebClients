@@ -1523,8 +1523,7 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel",
-        "Lita på nycklar"
+        "Lita på nyckel"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -1736,6 +1735,9 @@
       ],
       "Stop here": [
         "Stoppa här"
+      ],
+      "Get the deal": [
+        "Ta del av erbjudandet"
       ]
     },
     "action": {
@@ -8027,7 +8029,8 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild"
+        "Infoga bild",
+        "Infoga bilder"
       ],
       "Insert link": [
         "Infoga länk"
@@ -17040,6 +17043,9 @@
       ],
       "Mark all as unread": [
         "Markera alla som olästa"
+      ],
+      "September Sale": [
+        "Septemberrea"
       ]
     },
     "Title header for keys table": {
@@ -17663,6 +17669,76 @@
       ],
       "Passcode:": [
         "Lösenkod:"
+      ]
+    },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "Ta del av erbjudandet"
+      ],
+      "Special Offer": [
+        "Specialerbjudande"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "/month": [
+        "/månad"
+      ],
+      "2 individual accounts": [
+        "2 individuella konton"
+      ],
+      "2 TB of secure storage": [
+        "2 TB säkert lagringsutrymme"
+      ],
+      "3 TB of secure storage": [
+        "3 TB säkert lagringsutrymme"
+      ],
+      "500 GB of secure storage": [
+        "500 GB säkert lagringsutrymme"
+      ],
+      "6 individual accounts": [
+        "6 individuella konton"
+      ],
+      "Advanced protection against cyber threats": [
+        "Avancerat skydd mot cyberhot"
+      ]
+    },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } och ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "för 12 månader"
+      ],
+      "One plan, full power": [
+        "Ett paket, full kraft"
+      ],
+      "One plan, max savings": [
+        "Ett paket, maximal besparing"
+      ],
+      "One plan, more power": [
+        "Ett paket, mer kraft"
       ]
     }
   }
