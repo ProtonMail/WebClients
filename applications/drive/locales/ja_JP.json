@@ -2940,6 +2940,9 @@
       ],
       "Canary Islands": [
         "カナリア諸島"
+      ],
+      "Micronesia": [
+        "ミクロネシア"
       ]
     },
     "customer_support.feature.all": {
@@ -4150,6 +4153,57 @@
       ],
       "Something went wrong": [
         "何か問題が発生しました"
+      ],
+      "Cannot verify the author of this file": [
+        "このファイルの作成者を確認できません"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "フォルダではない場所へのアイテムのコピーはできません"
+      ],
+      "Could not load sharing details": [
+        "共有の詳細を読み込めませんでした"
+      ],
+      "Could not unlock the parent folder": [
+        "親フォルダをアンロックできませんでした"
+      ],
+      "Could not unlock this item": [
+        "このアイテムをアンロックできませんでした"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "フォルダではない場所にフォルダを作成することはできません"
+      ],
+      "File has no revision": [
+        "ファイルに修正はありません"
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "レガシー公開リンクは変更できません。新しい公開リンクを再生成してください。"
+      ],
+      "Missing organization public key": [
+        "組織の公開鍵が見つかりません"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "名前は${ MAX_NODE_NAME_LENGTH }文字以内で入力してください"
+      ],
+      "No file data was received. Please try again.": [
+        "ファイルデータを受け取っていません。再度お試しください。"
+      ],
+      "Operation aborted": [
+        "操作は中断されました"
+      ],
+      "Part of the file appears to be corrupted": [
+        "ファイルの一部が破損しているようです"
+      ],
+      "This item is no longer shared": [
+        "このアイテムはもう共有されません"
+      ],
+      "This item is not shared": [
+        "このアイテムは共有されていません"
+      ],
+      "Verification keys are not available": [
+        "検証キーは利用できません"
+      ],
+      "You do not have access to this item": [
+        "このアイテムにはアクセスできません"
       ]
     },
     "error": {
@@ -7340,6 +7394,18 @@
       ],
       "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
         "このユーザーを移行するには、${ domainNamesLink } にメールドメインを追加して確認してください"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }執筆アシスタント"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "移行したい内容を正確に選択してください。それはすべての組織ユーザーに適用されます。"
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "このユーザーを移行するには、${ provider.adminConsoleName }でアーカイブを解除してください。"
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "このユーザーを移行するには、${ provider.adminConsoleName }でアカウントの一時停止を解除してください。"
       ]
     },
     "info": {
@@ -8481,6 +8547,9 @@
       ],
       "for ${ price }": [
         "${ price } の場合"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }執筆アシスタント"
       ]
     },
     "meet_2025: Feature": {
@@ -9295,6 +9364,9 @@
       ],
       "Unlock streaming": [
         "ストリーミングのブロックを解除"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }執筆アシスタント"
       ]
     },
     "new_plans: feature highlight": {
@@ -14098,6 +14170,9 @@
       ],
       "${ MEET_APP_NAME } (for ${ quantity } user)": [
         "${ MEET_APP_NAME } (${ quantity } ユーザー用)"
+      ],
+      "${ price } per seat": [
+        "シートあたり ${ price }"
       ]
     },
     "meet_2025: Info": {
@@ -14382,6 +14457,34 @@
       ],
       "Migrated": [
         "移行済み"
+      ]
+    },
+    "Filter": {
+      "Pending": [
+        "保留中"
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "属性"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "2 TB of secure storage": [
+        "2 TBのセキュアなストレージ"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } ${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME }、 のすべてのプレミアム機能"
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "12ヶ月で"
+      ],
+      "One plan, more power": [
+        "1つのプランで、より多くのパワーを"
       ]
     }
   }
