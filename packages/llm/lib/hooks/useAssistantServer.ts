@@ -1,17 +1,20 @@
+import throttle from 'lodash/throttle';
+
 import { useApi } from '@proton/components';
 import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
 import useStateRef from '@proton/hooks/useStateRef';
-import type { AssistantHooksProps, AssistantRunningActions, GenerateAssistantResult } from '@proton/llm/lib';
-import { ASSISTANT_SERVER_THROTTLE_TIMEOUT, PromptRejectedError, getGenerationType } from '@proton/llm/lib';
-import { prepareServerAssistantInteraction } from '@proton/llm/lib/actions';
-import type useAssistantCommons from '@proton/llm/lib/hooks/useAssistantCommons';
 import { LumoApiClient, Role } from '@proton/lumo-api-client';
 import type { Turn } from '@proton/lumo-api-client/core/types';
 import { ASSISTANT_TYPE, ERROR_TYPE, GENERATION_SELECTION_TYPE } from '@proton/shared/lib/assistant';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import noop from '@proton/utils/noop';
-import throttle from 'lodash/throttle';
+
+import { prepareServerAssistantInteraction } from '../actions';
+import { ASSISTANT_SERVER_THROTTLE_TIMEOUT } from '../constants';
+import { PromptRejectedError, getGenerationType } from '../helpers';
+import type { AssistantHooksProps, AssistantRunningActions, GenerateAssistantResult } from './useAssistant';
+import type useAssistantCommons from './useAssistantCommons';
 
 interface Props {
     commonState: ReturnType<typeof useAssistantCommons>;
