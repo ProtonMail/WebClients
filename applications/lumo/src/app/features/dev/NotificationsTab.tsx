@@ -17,8 +17,27 @@ import {
 } from '../../redux/slices/meta/errors';
 import { isNativeComposerBridgeAvailable, onLimitReachedError } from '../../remote/nativeComposerBridgeHelpers';
 import { handleGenerationError } from '../../services/errors/errorHandling';
+import type { DebugMaxModelOverride } from '../../services/usageLimitsStore';
+import {
+    getRemainingForModelTier,
+    setDebugMaxModelOverride,
+    useDebugMaxModelOverride,
+    useRemainingLimits,
+} from '../../services/usageLimitsStore';
 import type { ConversationId, SpaceId } from '../../types';
 import { LUMO_API_ERRORS } from '../../types';
+
+/** off → limit reached → high load → off. */
+const nextMaxModelOverride = (current: DebugMaxModelOverride | null): DebugMaxModelOverride | null => {
+    switch (current) {
+        case null:
+            return 'unavailable_limit_reached';
+        case 'unavailable_limit_reached':
+            return 'unavailable_high_load';
+        default:
+            return null;
+    }
+};
 
 const overrideLabel = (override: DebugLimitOverride) => {
     if (override === 'approaching') return 'APPROACHING';
@@ -37,6 +56,9 @@ export const NotificationsTab = ({ currentConversationId, currentSpaceId }: Noti
     const dispatch = useLumoDispatch();
     const debugOverrides = useLumoSelector(selectAllDebugLimitOverrides);
     const { lumoUserType } = useLumoPlan();
+    const debugMaxOverride = useDebugMaxModelOverride();
+    const remainingLimits = useRemainingLimits();
+    const remainingMax = getRemainingForModelTier('lumo-max', remainingLimits);
 
     const triggerLimitError = (resource: Resource, limit: number) => {
         dispatch(
@@ -62,9 +84,7 @@ export const NotificationsTab = ({ currentConversationId, currentSpaceId }: Noti
     };
 
     const cycleOverride = (resource: Resource, current: DebugLimitOverride) => {
-        const next: DebugLimitOverride =
-            // eslint-disable-next-line no-nested-ternary
-            current === null ? 'approaching' : current === 'approaching' ? 'at' : null;
+        const next: DebugLimitOverride = current === null ? 'approaching' : current === 'approaching' ? 'at' : null;
         dispatch(
             setDebugLimitOverride({
                 resource,
@@ -198,6 +218,26 @@ export const NotificationsTab = ({ currentConversationId, currentSpaceId }: Noti
                 <div className="debug-view-hint">
                     {c('lumo: Debug View')
                         .t`Forces the inline composer banner into "approaching" or "at limit" state so you can preview it in any context.`}
+                </div>
+            </div>
+
+            <div className="debug-view-header" style={{ marginTop: '12px' }}>
+                <span className="debug-view-header-icon">🧠</span>
+                {c('lumo: Debug View').t`Model usage limits`}
+            </div>
+            <div className="debug-view-actions">
+                <button
+                    className="debug-view-btn debug-view-btn--secondary"
+                    onClick={() => setDebugMaxModelOverride(nextMaxModelOverride(debugMaxOverride))}
+                >
+                    🚫 {c('lumo: Debug View').t`Max model availability`}: {debugMaxOverride ?? 'available'}
+                </button>
+                <div className="debug-view-hint">
+                    {c('lumo: Debug View')
+                        .t`Forces either unavailable state, without burning a real quota or waiting for a flag rollout. "unavailable_limit_reached" pins the Max pool to 0 remaining, exactly as the backend would after the weekly cap; "unavailable_high_load" switches off the availability flag. Both disable the Max row in the picker, fall the selection back to Lite, and push maxModelAvailability to native. Persists across reloads until switched off.`}
+                </div>
+                <div className="debug-view-hint">
+                    {c('lumo: Debug View').t`Remaining (Max)`}: {remainingMax === undefined ? '—' : remainingMax}
                 </div>
             </div>
 

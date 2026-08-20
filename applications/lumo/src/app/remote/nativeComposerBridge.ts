@@ -189,6 +189,17 @@ export interface SidebarLayout {
     animationDurationMs: number;
 }
 
+/**
+ * Whether Lumo Max can be picked, and if not, why the picker greys it out.
+ *
+ * - `available` — selectable.
+ * - `unavailable_high_load` — turned off for this user segment while the backend is under load.
+ *   Transient: suggest trying again later, don't upsell.
+ * - `unavailable_limit_reached` — the user's Max quota for the period is spent. Durable until the
+ *   quota resets: this is the state where an upgrade prompt makes sense.
+ */
+export type MaxModelAvailability = 'available' | 'unavailable_high_load' | 'unavailable_limit_reached';
+
 export interface State {
     lumoMode: LumoMode;
     /** Legacy field for old native clients; derived from `responseMode`. */
@@ -196,11 +207,18 @@ export interface State {
     /** Selectable model for new clients (the web's `auto` collapses to lite). */
     model: Exclude<ModelTier, 'auto'>;
     /**
-     * Whether the Max model can currently be selected. `false` when Max is
-     * temporarily unavailable (e.g. high load) for the current user segment;
-     * native greys out the row and shows a "High load" badge.
+     * Whether the Max model can currently be selected. Kept only for native clients released
+     * before `maxModelAvailability` existed — it carries no information that field doesn't,
+     * and is always exactly `maxModelAvailability === 'available'`. New clients should read
+     * `maxModelAvailability` alone and ignore this, so they can word the badge correctly.
      */
     isMaxModelAvailable: boolean;
+    /**
+     * Whether the Max model can be selected, and why not when it can't. Precedence matches the
+     * web picker: high load wins over a spent quota when both apply, so native and web never
+     * label the same state differently.
+     */
+    maxModelAvailability: MaxModelAvailability;
     responseMode: ResponseMode;
     isGhostModeEnabled: boolean;
     isWebSearchEnabled: boolean;
@@ -364,6 +382,7 @@ class NativeComposerApi {
         modelTier: 'thinking',
         model: getSelectedModelTier(DEFAULT_MODEL_TIER),
         isMaxModelAvailable: true,
+        maxModelAvailability: 'available',
         responseMode: DEFAULT_RESPONSE_MODE,
         isCreateImageEnabled: false,
         availableAspectRatios: AVAILABLE_ASPECT_RATIOS,
@@ -586,9 +605,16 @@ class NativeComposerApi {
         return { success: true };
     }
 
-    public setMaxModelAvailable(available: boolean): void {
-        console.log(`NativeComposerApi: Setting max model available to ${available}`);
-        this.updateState({ isMaxModelAvailable: available });
+    /**
+     * Writes both the availability and the legacy `isMaxModelAvailable` boolean in one update,
+     * so the two can never be observed disagreeing in an intermediate state push.
+     */
+    public setMaxModelAvailability(availability: MaxModelAvailability): void {
+        console.log(`NativeComposerApi: Setting max model availability to ${availability}`);
+        this.updateState({
+            isMaxModelAvailable: availability === 'available',
+            maxModelAvailability: availability,
+        });
     }
 
     public setNativeResponseMode(responseMode: ResponseMode): void {
