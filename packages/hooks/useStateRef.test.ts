@@ -1,6 +1,6 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 
-import { useStateRef } from '@proton/hooks';
+import useStateRef from './useStateRef';
 
 describe('useStateRef', () => {
     it('should update ref when state is updated', () => {
