@@ -9,8 +9,12 @@ import DownloadClientCard from '@proton/components/components/downloadClientCard
 import DropdownMenuLink from '@proton/components/components/dropdown/DropdownMenuLink';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
+import { getTelemetryUserTier } from '@proton/components/helpers/getTelemetryUserTier';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { VPN_APP_NAME } from '@proton/shared/lib/constants';
+import { useApi } from '@proton/components/index';
+import { TelemetryAccountDashboardEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
+import { APPS, VPN_APP_NAME } from '@proton/shared/lib/constants';
+import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 import { appendUrlSearchParams } from '@proton/shared/lib/helpers/url';
 import { VPN_MOBILE_APP_LINKS } from '@proton/shared/lib/vpn/constants';
@@ -22,12 +26,12 @@ import DownloadModal from './DownloadModal';
 import { FeedbackSurveyModal } from './FeedbackSurveyModal';
 import { FeedbackSurveyModalWrapper } from './FeedbackSurveyModalWrapper';
 
-const LinkItem = ({ href, text }: { href: string; text: string }) => {
+const LinkItem = ({ href, text, onClick }: { href: string; text: string; onClick?: () => void }) => {
     const { createNotification } = useNotifications();
 
     return (
         <div className="flex items-center overflow-hidden" key={text}>
-            <DropdownMenuLink className="flex-1" href={href}>
+            <DropdownMenuLink className="flex-1" href={href} onClick={onClick}>
                 {text}
             </DropdownMenuLink>
             <Copy
@@ -47,10 +51,25 @@ const LinkItem = ({ href, text }: { href: string; text: string }) => {
 const FIVE_MINUTES = 5 * 60 * 1000;
 
 export const VPNClientsSection = () => {
+    const api = useApi();
     const history = useHistory();
     const location = useLocation();
     const { createNotification } = useNotifications();
     const [user] = useUser();
+
+    const handleDownloadClick = (destination: string) => {
+        void sendTelemetryReport({
+            api,
+            delay: false,
+            event: TelemetryAccountDashboardEvents.downloadCtaClick,
+            measurementGroup: TelemetryMeasurementGroups.accountDashboard,
+            dimensions: {
+                app: APPS.PROTONVPN_SETTINGS,
+                download_destination: destination.toLowerCase(),
+                user_tier: getTelemetryUserTier(user),
+            },
+        });
+    };
     // We only want to display the survey when the user just created the account && it is not a free user
     const [isFeedbackModalOpen, setIsFeedbackModalOpen] = useState(() => {
         if (!user.hasPaidVpn) {
@@ -115,23 +134,41 @@ export const VPNClientsSection = () => {
                     icon="brand-android"
                     link={androidMarketplaceUrl}
                     items={androidLinks}
+                    onClick={() => handleDownloadClick('google_play')}
                 />
-                <DownloadClientCard title={c('VPNClient').t`iOS`} icon="brand-apple" link={iosMarketplaceUrl} />
+                <DownloadClientCard
+                    title={c('VPNClient').t`iOS`}
+                    icon="brand-apple"
+                    link={iosMarketplaceUrl}
+                    onClick={() => handleDownloadClick('app_store')}
+                />
                 <DownloadClientCard
                     title={c('VPNClient').t`Windows`}
                     icon="brand-windows"
                     link="https://protonvpn.com/download-windows/"
                     items={links.windows?.map(({ title, link: href }) => (
-                        <LinkItem key={title()} text={title()} href={href} />
+                        <LinkItem
+                            key={title()}
+                            text={title()}
+                            href={href}
+                            onClick={() => handleDownloadClick('windows')}
+                        />
                     ))}
+                    onClick={() => handleDownloadClick('windows')}
                 />
                 <DownloadClientCard
                     title={c('VPNClient').t`macOS`}
                     icon="brand-mac"
                     link="https://protonvpn.com/download-macos/"
                     items={links.mac?.map(({ title, link: href }) => (
-                        <LinkItem key={title()} text={title()} href={href} />
+                        <LinkItem
+                            key={title()}
+                            text={title()}
+                            href={href}
+                            onClick={() => handleDownloadClick('macos')}
+                        />
                     ))}
+                    onClick={() => handleDownloadClick('macos')}
                 />
                 <DownloadClientCard
                     title={c('VPNClient').t`GNU/Linux`}
@@ -141,6 +178,7 @@ export const VPNClientsSection = () => {
                             ? 'https://protonvpn.com/support/linux-vpn-setup'
                             : 'https://protonvpn.com/download-linux/'
                     }
+                    onClick={() => handleDownloadClick('linux')}
                 />
                 <DownloadClientCard
                     title={c('VPNClient').t`Chromebook`}
@@ -153,6 +191,7 @@ export const VPNClientsSection = () => {
                         utm_term: 'chromebook',
                     })}
                     items={androidLinks}
+                    onClick={() => handleDownloadClick('chrome')}
                 />
                 <DownloadClientCard
                     title={c('VPNClient').t`Android TV`}
@@ -165,6 +204,7 @@ export const VPNClientsSection = () => {
                         utm_term: 'androidtv',
                     })}
                     items={androidLinks}
+                    onClick={() => handleDownloadClick('google_play')}
                 />
             </div>
         </SettingsSectionWide>

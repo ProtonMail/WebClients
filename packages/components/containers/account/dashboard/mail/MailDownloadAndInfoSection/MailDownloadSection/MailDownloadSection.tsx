@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import type { IconName } from '@proton/icons/types';
+import { APPS } from '@proton/shared/lib/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import appleAppStoreImage from '@proton/styles/assets/img/vpn/download-section/apple-app-store.svg';
 import googlePlayStoreImage from '@proton/styles/assets/img/vpn/download-section/google-play-store.svg';
@@ -123,7 +124,7 @@ const downloadData = [
 ];
 
 const MailDownloadSection = () => {
-    return <DashboardDownloadSection downloadConfig={downloadData} />;
+    return <DashboardDownloadSection downloadConfig={downloadData} app={APPS.PROTONMAIL} />;
 };
 
 export default MailDownloadSection;

@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { DashboardCard, DashboardCardContent } from '@proton/atoms/DashboardCard/DashboardCard';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
@@ -12,10 +13,16 @@ import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import type { Tab } from '@proton/components/components/tabs/Tabs';
 import { Tabs } from '@proton/components/components/tabs/Tabs';
+import { getTelemetryUserTier } from '@proton/components/helpers/getTelemetryUserTier';
+import { mapTelemetryOsVersionWithStore } from '@proton/components/helpers/mapTelemetryOsVersionWithStore';
+import { useApi } from '@proton/components/index';
 import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import { IcArrowOutSquare } from '@proton/icons/icons/IcArrowOutSquare';
 import type { IconName } from '@proton/icons/types';
+import { TelemetryAccountDashboardEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
+import { APPS } from '@proton/shared/lib/constants';
 import { isAndroid, isDesktop, isIos, isLinux, isMac, isMobile, isWindows } from '@proton/shared/lib/helpers/browser';
+import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import appleAppStoreImage from '@proton/styles/assets/img/vpn/download-section/apple-app-store.svg';
 import androidPreview from '@proton/styles/assets/img/vpn/download-section/download-preview-android.png';
 import androidTVPreview from '@proton/styles/assets/img/vpn/download-section/download-preview-androidtv.png';
@@ -306,8 +313,24 @@ const CategoryTabs = ({
     category: Category;
     deviceCategoryIndex: DeviceCategoryIndex;
 }) => {
+    const api = useApi();
+    const [user] = useUser();
     const [activeTabIndex, setActiveTabIndex] = useState(() => findPlatformTabIndex(deviceCategoryIndex));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
+
+    const handleDownloadClick = (destination: string) => {
+        void sendTelemetryReport({
+            api,
+            delay: false,
+            event: TelemetryAccountDashboardEvents.downloadCtaClick,
+            measurementGroup: TelemetryMeasurementGroups.accountDashboard,
+            dimensions: {
+                app: APPS.PROTONVPN_SETTINGS,
+                download_destination: mapTelemetryOsVersionWithStore(destination.replaceAll(' ', '-')),
+                user_tier: getTelemetryUserTier(user),
+            },
+        });
+    };
 
     const subTabs = category.tabs.map((tab: CategoryTab) => ({
         title: tab.title(),
@@ -354,6 +377,7 @@ const CategoryTabs = ({
                                             rel="noopener noreferrer"
                                             className="text-left flex flex-nowrap items-center justify-space-between gap-2"
                                             key={download.title()}
+                                            onClick={() => handleDownloadClick(tab.title())}
                                         >
                                             <span>{download.title()}</span>
                                             <IcArrowDownLine className="ml-auto shrink-0" />
@@ -377,6 +401,7 @@ const CategoryTabs = ({
                             target="_blank"
                             rel="noopener noreferrer"
                             title={tab.content.downloadButton.title()}
+                            onClick={() => handleDownloadClick(tab.title())}
                         >
                             {tab.content.downloadButton.image ? (
                                 <img src={tab.content.downloadButton.image} alt={tab.content.downloadButton.title()} />
