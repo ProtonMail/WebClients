@@ -9,9 +9,14 @@ import { Card } from '@proton/atoms/Card/Card';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { DownloadClientCard, SettingsLink, SettingsParagraph, SettingsSectionWide } from '@proton/components';
 import { PromotionButton } from '@proton/components/components/button/PromotionButton';
+import { getTelemetryUserTier } from '@proton/components/helpers/getTelemetryUserTier';
+import { mapTelemetryOsVersionWithStore } from '@proton/components/helpers/mapTelemetryOsVersionWithStore';
+import { useApi } from '@proton/components/index';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { PLANS } from '@proton/payments/core/constants';
-import { PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import { TelemetryAccountDashboardEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
+import { APPS, PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { Clients, clients } from '@proton/shared/lib/pass/constants';
 import { hasPassLifetime } from '@proton/shared/lib/user/helpers';
 import clsx from '@proton/utils/clsx';
@@ -49,11 +54,26 @@ const PaidDownloadClientTitle = ({ title }: { title: string }) => {
 };
 
 const PassDownloadsSettingsPage = () => {
+    const api = useApi();
     const [user] = useUser();
     const [plansResult, loadingPlans] = usePlans();
 
     const passPlan = plansResult?.plans?.find(({ Name }) => Name === PLANS.PASS);
     const showUpsell = !loadingPlans && user.isFree && passPlan && !hasPassLifetime(user);
+
+    const handleDownloadClick = (destination: string) => {
+        void sendTelemetryReport({
+            api,
+            delay: false,
+            event: TelemetryAccountDashboardEvents.downloadCtaClick,
+            measurementGroup: TelemetryMeasurementGroups.accountDashboard,
+            dimensions: {
+                app: APPS.PROTONPASS,
+                download_destination: mapTelemetryOsVersionWithStore(destination),
+                user_tier: getTelemetryUserTier(user),
+            },
+        });
+    };
 
     const sections: Section[] = [
         {
@@ -87,13 +107,13 @@ const PassDownloadsSettingsPage = () => {
                                 ) : (
                                     clients[platform].title
                                 );
-
                             return (
                                 <DownloadClientCard
                                     key={clients[platform].title}
                                     title={title}
                                     icon={icon}
                                     link={link}
+                                    onClick={() => handleDownloadClick(Clients[platform])}
                                 />
                             );
                         })}
