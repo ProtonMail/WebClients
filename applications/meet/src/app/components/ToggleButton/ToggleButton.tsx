@@ -5,9 +5,9 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import type { PopperPosition } from '@proton/atoms/Popper/interface';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { IconProps } from '@proton/components/components/icon/Icon';
-import type { PopperPosition } from '@proton/components/components/popper/interface';
 import { useActiveBreakpoint } from '@proton/components/index';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { IcChevronUp } from '@proton/icons/icons/IcChevronUp';

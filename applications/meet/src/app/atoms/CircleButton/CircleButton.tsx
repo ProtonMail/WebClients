@@ -2,8 +2,8 @@ import type { CSSProperties, ReactNode, RefObject } from 'react';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import type { PopperPlacement } from '@proton/atoms/Popper/interface';
 import type { IconProps } from '@proton/components/components/icon/Icon';
-import type { PopperPlacement } from '@proton/components/index';
 import type { IconSize } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
 

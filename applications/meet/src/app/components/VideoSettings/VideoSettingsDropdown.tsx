@@ -3,8 +3,8 @@ import React from 'react';
 
 import { c } from 'ttag';
 
+import type { PopperPosition } from '@proton/atoms/Popper/interface';
 import { useActiveBreakpoint } from '@proton/components';
-import type { PopperPosition } from '@proton/components/components/popper/interface';
 import useLoading from '@proton/hooks/useLoading';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';

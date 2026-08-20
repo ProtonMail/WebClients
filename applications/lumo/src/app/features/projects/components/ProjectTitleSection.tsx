@@ -3,7 +3,8 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Dropdown, DropdownMenu, DropdownMenuButton, usePopperAnchor } from '@proton/components';
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
+import { Dropdown, DropdownMenu, DropdownMenuButton } from '@proton/components';
 
 import { LumoIcon } from '../../../components/LumoIcon/LumoIcon';
 import { ProjectIcon } from '../../../components/ProjectIcon/ProjectIcon';

@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownCaret from '@proton/components/components/dropdown/DropdownCaret';
-import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import { useSettingsLink } from '@proton/components/index';
 import useLoading from '@proton/hooks/useLoading';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';

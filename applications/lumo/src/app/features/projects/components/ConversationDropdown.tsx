@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Dropdown, DropdownMenu, DropdownMenuButton, usePopperAnchor } from '@proton/components';
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
+import { Dropdown, DropdownMenu, DropdownMenuButton } from '@proton/components';
 
 import { LumoIcon } from '../../../components/LumoIcon/LumoIcon';
 

@@ -3,6 +3,7 @@ import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import Collapsible from '@proton/components/components/collapsible/Collapsible';
 import CollapsibleContent from '@proton/components/components/collapsible/CollapsibleContent';
 import CollapsibleHeader from '@proton/components/components/collapsible/CollapsibleHeader';
@@ -15,7 +16,6 @@ import DropdownMenuButton from '@proton/components/components/dropdown/DropdownM
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import RadioGroup from '@proton/components/components/input/RadioGroup';
 import Option from '@proton/components/components/option/Option';
-import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 

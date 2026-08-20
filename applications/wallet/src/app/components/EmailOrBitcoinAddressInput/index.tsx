@@ -5,9 +5,9 @@ import { c } from 'ttag';
 
 import type { WasmNetwork } from '@proton/andromeda';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import { verticalPopperPlacements } from '@proton/atoms/Popper/utils';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Dropdown, DropdownSizeUnit } from '@proton/components';
-import { verticalPopperPlacements } from '@proton/components/components/popper/utils';
 import { IcArrowLeftAndDown } from '@proton/icons/icons/IcArrowLeftAndDown';
 import { IcCrossCircleFilled } from '@proton/icons/icons/IcCrossCircleFilled';
 import { IcLightbulb } from '@proton/icons/icons/IcLightbulb';

@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
+import type { PopperPlacement } from '@proton/atoms/Popper/interface';
+import { allPopperPlacements } from '@proton/atoms/Popper/utils';
 import RadioGroup from '@proton/components/components/input/RadioGroup';
-import type { PopperPlacement } from '@proton/components/components/popper/interface';
-import { allPopperPlacements } from '@proton/components/components/popper/utils';
 import Spotlight from '@proton/components/components/spotlight/Spotlight';
 
 type BorderRadius = 'xl' | 'lg' | 'md' | 'sm';

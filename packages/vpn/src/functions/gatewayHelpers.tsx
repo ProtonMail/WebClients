@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
-import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import { IcUserFilled } from '@proton/icons/icons/IcUserFilled';
 import { IcUsersFilled } from '@proton/icons/icons/IcUsersFilled';
 import { type CountryOptions, getLocalizedCountryByAbbr } from '@proton/payments/core/countries';

@@ -1,11 +1,11 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import { Prompt, useApi, useModalState } from '@proton/components';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
-import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import { useLoading } from '@proton/hooks';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 import { IcTrash } from '@proton/icons/icons/IcTrash';

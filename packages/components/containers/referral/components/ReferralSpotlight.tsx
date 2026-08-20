@@ -3,7 +3,7 @@ import type { CSSProperties, ReactElement, RefObject } from 'react';
 import { c } from 'ttag';
 
 import { useReferralInfo } from '@proton/account/referralInfo/hooks';
-import type { PopperPlacement } from '@proton/components/components/popper/interface';
+import type { PopperPlacement } from '@proton/atoms/Popper/interface';
 import Spotlight from '@proton/components/components/spotlight/Spotlight';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 

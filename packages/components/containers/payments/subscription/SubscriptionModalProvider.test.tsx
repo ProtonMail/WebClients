@@ -23,7 +23,7 @@ import type { OpenSubscriptionModalCallback } from './SubscriptionModalProvider'
 import SubscriptionModalProvider, { useSubscriptionModal } from './SubscriptionModalProvider';
 
 jest.mock('@proton/components/hooks/useModals');
-jest.mock('@proton/components/components/portal/Portal');
+jest.mock('@proton/atoms/Portal/Portal');
 jest.mock('@proton/components/containers/payments/subscription/SubscriptionContainer');
 jest.mock('@proton/features/useFeature', () => () => ({}));
 
