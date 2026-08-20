@@ -6,6 +6,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { FeatureCode } from '@proton/features/interface';
@@ -97,22 +98,20 @@ export const GlobalCategoriesB2COnboarding = () => {
                                 href={getKnowledgeBaseUrl('/mail-categories')}
                             >{c('Link').t`Learn more.`}</Href>
                         </div>
-
-                        <div className="flex justify-center mb-4">
-                            <Button
-                                disabled={loading}
-                                color="norm"
-                                className="mb-2"
-                                fullWidth
-                                onClick={() => withLoading(handleClick(true))}
-                            >
-                                {c('Action').t`Yes, organize it`}
-                            </Button>
-                            <Button disabled={loading} fullWidth onClick={() => withLoading(handleClick(false))}>{c(
-                                'Action'
-                            ).t`Keep inbox as before`}</Button>
-                        </div>
                     </ModalTwoContent>
+                    <ModalTwoFooter className="flex-column">
+                        <Button
+                            disabled={loading}
+                            color="norm"
+                            fullWidth
+                            onClick={() => withLoading(handleClick(true))}
+                        >
+                            {c('Action').t`Yes, organize it`}
+                        </Button>
+                        <Button disabled={loading} fullWidth onClick={() => withLoading(handleClick(false))}>{c(
+                            'Action'
+                        ).t`Keep inbox as before`}</Button>
+                    </ModalTwoFooter>
                 </ModalTwo>
             )}
         </>
