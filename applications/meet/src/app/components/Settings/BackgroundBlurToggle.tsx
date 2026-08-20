@@ -20,7 +20,7 @@ export const BackgroundBlurToggle = ({
     return (
         <SettingToggle
             id="blur-background"
-            label={c('Action').t`Background blur`}
+            label={c('Action').t`Blur background`}
             ariaLabel={c('Alt').t`Blur background`}
             onChange={onChange}
             checked={backgroundBlur}

@@ -54,17 +54,19 @@ export const SettingToggle = ({
                     descriptionColor="color-hint"
                 />
             </div>
-            <ConditionalTooltip title={tooltip}>
-                <Toggle
-                    id={id}
-                    checked={checked}
-                    onChange={onChange}
-                    className={clsx('setting-toggle', checked ? '' : 'setting-toggle-inactive')}
-                    aria-label={ariaLabel}
-                    disabled={disabled}
-                    loading={loading}
-                />
-            </ConditionalTooltip>
+            <div className="shrink-0">
+                <ConditionalTooltip title={tooltip}>
+                    <Toggle
+                        id={id}
+                        checked={checked}
+                        onChange={onChange}
+                        className={clsx('setting-toggle', checked ? '' : 'setting-toggle-inactive')}
+                        aria-label={ariaLabel}
+                        disabled={disabled}
+                        loading={loading}
+                    />
+                </ConditionalTooltip>
+            </div>
         </div>
     );
 };

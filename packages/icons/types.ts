@@ -302,6 +302,7 @@ export type IconName =
     | 'megaphone'
     | 'megaphone-filled'
     | 'microphone'
+    | 'meet-blur'
     | 'meet-camera'
     | 'meet-camera-off'
     | 'meet-camera-filled'

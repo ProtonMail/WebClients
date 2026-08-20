@@ -8,49 +8,77 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 
 import {
     createBackgroundProcessor,
-    ensureBackgroundBlurProcessor,
+    createCustomBackgroundProcessor,
+    ensureBackgroundProcessor,
 } from '../../processors/background-processor/createBackgroundProcessor';
-import type { BackgroundBlurProcessor, BackgroundProcessorVersion } from '../../processors/background-processor/types';
-import type { BlurInitializationState } from './useBlurInitializationState';
+import type {
+    BackgroundBlurProcessor,
+    BackgroundProcessorVersion,
+    CustomBackgroundProcessor,
+} from '../../processors/background-processor/types';
+import type { BackgroundEffect } from '../../utils/virtualBackgrounds/virtualBackgrounds';
+import { getVirtualBackgroundColor } from '../../utils/virtualBackgrounds/virtualBackgrounds';
+import type { BackgroundEffectInitializationState } from './useBackgroundEffectInitializationState';
 
 interface UseCameraPreviewParams {
     selectedCameraId: string;
     facingMode: 'environment' | 'user';
     isBackgroundBlurSupported: boolean;
-    backgroundBlur: boolean;
+    backgroundEffect: BackgroundEffect;
     backgroundProcessorVersion: BackgroundProcessorVersion;
     room: Room;
-    trackBlurInitialization: BlurInitializationState['trackBlurInitialization'];
-    cancelBlurInitialization: BlurInitializationState['cancelBlurInitialization'];
+    trackBackgroundEffectInitialization: BackgroundEffectInitializationState['trackBackgroundEffectInitialization'];
+    cancelBackgroundEffectInitialization: BackgroundEffectInitializationState['cancelBackgroundEffectInitialization'];
 }
 
 export const useCameraPreview = ({
     selectedCameraId,
     facingMode,
     isBackgroundBlurSupported,
-    backgroundBlur,
+    backgroundEffect,
     backgroundProcessorVersion,
     room,
-    trackBlurInitialization,
-    cancelBlurInitialization,
+    trackBackgroundEffectInitialization,
+    cancelBackgroundEffectInitialization,
 }: UseCameraPreviewParams) => {
     const previewTrackRef = useRef<LocalVideoTrack | null>(null);
-    const processorAttachInProgress = useRef(false);
-    const previewBlurInitTokenRef = useRef<number | undefined>(undefined);
+    const previewEffectInitTokenRef = useRef<number | undefined>(undefined);
 
     const backgroundBlurProcessorInstanceRef = useRef<BackgroundBlurProcessor | null>(null);
     const backgroundProcessorCreationRequestIdRef = useRef(0);
 
-    const cancelPreviewBlurInitialization = useCallback(() => {
-        if (previewBlurInitTokenRef.current === undefined) {
+    const customBackgroundProcessorInstanceRef = useRef<CustomBackgroundProcessor | null>(null);
+    const customBackgroundProcessorCreationRef = useRef<Promise<CustomBackgroundProcessor | null> | null>(null);
+
+    const previewEffectQueueRef = useRef<Promise<void>>(Promise.resolve());
+    const pendingPreviewEffectRef = useRef<BackgroundEffect | null>(null);
+
+    const previewLifecycleQueueRef = useRef<Promise<unknown>>(Promise.resolve());
+
+    const enqueuePreviewLifecycleOperation = <T>(operation: () => Promise<T>): Promise<T> => {
+        const run = () => operation();
+        const result = previewLifecycleQueueRef.current.then(run, run);
+
+        previewLifecycleQueueRef.current = result.catch(() => undefined);
+
+        return result;
+    };
+
+    const cancelPreviewEffectInitialization = useCallback(() => {
+        if (previewEffectInitTokenRef.current === undefined) {
             return;
         }
-        cancelBlurInitialization(previewBlurInitTokenRef.current);
-        previewBlurInitTokenRef.current = undefined;
-    }, [cancelBlurInitialization]);
+        cancelBackgroundEffectInitialization(previewEffectInitTokenRef.current);
+        previewEffectInitTokenRef.current = undefined;
+    }, [cancelBackgroundEffectInitialization]);
 
-    const cleanupPreviewTrack = async () => {
-        cancelPreviewBlurInitialization();
+    const isPreviewProcessor = (processor: unknown) =>
+        !!processor &&
+        (processor === backgroundBlurProcessorInstanceRef.current ||
+            processor === customBackgroundProcessorInstanceRef.current);
+
+    const stopPreviewTrack = async () => {
+        cancelPreviewEffectInitialization();
 
         const track = previewTrackRef.current;
         if (!track) {
@@ -60,7 +88,7 @@ export const useCameraPreview = ({
         previewTrackRef.current = null;
 
         try {
-            if (track.getProcessor() === backgroundBlurProcessorInstanceRef.current) {
+            if (isPreviewProcessor(track.getProcessor())) {
                 await track.stopProcessor();
             }
         } catch {
@@ -71,54 +99,142 @@ export const useCameraPreview = ({
         }
     };
 
-    const applyPreviewBackgroundBlurPreference = useCallback(
-        async (enable: boolean) => {
+    const ensurePreviewBlurProcessor = useCallback(async () => {
+        if (backgroundBlurProcessorInstanceRef.current) {
+            return backgroundBlurProcessorInstanceRef.current;
+        }
+
+        const requestId = ++backgroundProcessorCreationRequestIdRef.current;
+        const processor = await createBackgroundProcessor(false, backgroundProcessorVersion);
+
+        if (requestId !== backgroundProcessorCreationRequestIdRef.current) {
+            // Deps changed while awaiting: discard this now-stale processor.
+            void processor?.destroy?.();
+            return null;
+        }
+
+        backgroundBlurProcessorInstanceRef.current = processor;
+
+        return processor;
+    }, [backgroundProcessorVersion]);
+
+    const ensurePreviewCustomBackgroundProcessor = useCallback(async (backgroundColor: string) => {
+        const creation =
+            customBackgroundProcessorCreationRef.current ?? createCustomBackgroundProcessor({ backgroundColor });
+        customBackgroundProcessorCreationRef.current = creation;
+
+        let processor: CustomBackgroundProcessor | null = null;
+
+        try {
+            processor = await creation;
+        } finally {
+            if (!processor && customBackgroundProcessorCreationRef.current === creation) {
+                customBackgroundProcessorCreationRef.current = null;
+            }
+        }
+
+        customBackgroundProcessorInstanceRef.current = processor;
+
+        await processor?.setBackground?.({ backgroundColor });
+
+        return processor;
+    }, []);
+
+    const applyPreviewBackgroundEffect = useCallback(
+        async (effect: BackgroundEffect) => {
             const videoTrack = previewTrackRef.current;
 
-            if (!backgroundBlurProcessorInstanceRef.current) {
-                const requestId = ++backgroundProcessorCreationRequestIdRef.current;
-                const processor = await createBackgroundProcessor(false, backgroundProcessorVersion);
+            if (!videoTrack) {
+                return;
+            }
 
-                if (requestId !== backgroundProcessorCreationRequestIdRef.current) {
-                    // Deps changed while awaiting: discard this now-stale processor.
-                    void processor?.destroy?.();
+            if (effect === 'none') {
+                backgroundBlurProcessorInstanceRef.current?.disable?.();
+                customBackgroundProcessorInstanceRef.current?.disable?.();
+                cancelPreviewEffectInitialization();
+                return;
+            }
+
+            if (effect === 'blur') {
+                const blurProcessor = await ensurePreviewBlurProcessor();
+
+                // The preview was torn down or restarted while the processor was loading.
+                if (!blurProcessor || previewTrackRef.current !== videoTrack) {
                     return;
                 }
 
-                backgroundBlurProcessorInstanceRef.current = processor;
-            }
+                customBackgroundProcessorInstanceRef.current?.disable?.();
 
-            if (!backgroundBlurProcessorInstanceRef.current || !videoTrack || !enable) {
-                backgroundBlurProcessorInstanceRef.current?.disable?.();
-                cancelPreviewBlurInitialization();
-                return;
-            }
-
-            if (processorAttachInProgress.current) {
-                return;
-            }
-
-            processorAttachInProgress.current = true;
-            try {
-                const processor = await ensureBackgroundBlurProcessor(
-                    videoTrack,
-                    backgroundBlurProcessorInstanceRef.current
-                );
+                const processor = await ensureBackgroundProcessor(videoTrack, blurProcessor);
                 processor?.enable?.();
 
                 if (processor?.waitUntilBlurApplied) {
                     const { waitUntilBlurApplied } = processor;
-                    previewBlurInitTokenRef.current = trackBlurInitialization(() => waitUntilBlurApplied());
+                    previewEffectInitTokenRef.current = trackBackgroundEffectInitialization('blur', () =>
+                        waitUntilBlurApplied()
+                    );
                 }
-            } finally {
-                processorAttachInProgress.current = false;
+
+                return;
+            }
+
+            const backgroundColor = getVirtualBackgroundColor(effect);
+            const customProcessor = backgroundColor
+                ? await ensurePreviewCustomBackgroundProcessor(backgroundColor)
+                : null;
+
+            if (!customProcessor || previewTrackRef.current !== videoTrack) {
+                return;
+            }
+
+            backgroundBlurProcessorInstanceRef.current?.disable?.();
+
+            const processor = await ensureBackgroundProcessor(videoTrack, customProcessor);
+            processor?.enable?.();
+
+            if (processor?.waitUntilBackgroundApplied) {
+                const { waitUntilBackgroundApplied } = processor;
+                previewEffectInitTokenRef.current = trackBackgroundEffectInitialization('virtualBackground', () =>
+                    waitUntilBackgroundApplied()
+                );
             }
         },
-        [backgroundProcessorVersion, trackBlurInitialization, cancelPreviewBlurInitialization]
+        [
+            cancelPreviewEffectInitialization,
+            ensurePreviewBlurProcessor,
+            ensurePreviewCustomBackgroundProcessor,
+            trackBackgroundEffectInitialization,
+        ]
     );
 
-    const handlePreviewCameraToggle = async (videoElement: HTMLVideoElement) => {
-        await cleanupPreviewTrack();
+    const requestPreviewBackgroundEffect = useCallback(
+        (effect: BackgroundEffect) => {
+            pendingPreviewEffectRef.current = effect;
+
+            previewEffectQueueRef.current = previewEffectQueueRef.current.then(async () => {
+                const pending = pendingPreviewEffectRef.current;
+
+                if (!pending) {
+                    return;
+                }
+
+                pendingPreviewEffectRef.current = null;
+
+                try {
+                    await applyPreviewBackgroundEffect(pending);
+                } catch (error) {
+                    // eslint-disable-next-line no-console
+                    console.error('Error applying the preview background effect', error);
+                }
+            });
+
+            return previewEffectQueueRef.current;
+        },
+        [applyPreviewBackgroundEffect]
+    );
+
+    const startPreviewTrack = async (videoElement: HTMLVideoElement) => {
+        await stopPreviewTrack();
 
         const deviceIdToUse = isMobile() ? undefined : selectedCameraId;
 
@@ -136,26 +252,28 @@ export const useCameraPreview = ({
                     }),
             });
 
-            if (videoElement && videoTrack) {
-                videoTrack.attach(videoElement);
-                previewTrackRef.current = videoTrack;
-
-                if (isBackgroundBlurSupported && backgroundBlur) {
-                    await applyPreviewBackgroundBlurPreference(true);
-                } else {
-                    backgroundBlurProcessorInstanceRef.current?.disable?.();
-                }
+            if (!videoElement || !videoTrack) {
+                return false;
             }
+
+            videoTrack.attach(videoElement);
+            previewTrackRef.current = videoTrack;
+
+            if (isBackgroundBlurSupported) {
+                await requestPreviewBackgroundEffect(backgroundEffect);
+            }
+
+            return true;
         };
 
         try {
-            await executeToggle(deviceIdToUse);
+            return await executeToggle(deviceIdToUse);
         } catch (e) {
             const fallbackDeviceId = room.localParticipant.activeDeviceMap.get('videoinput');
 
             try {
                 await wait(100);
-                await executeToggle(fallbackDeviceId);
+                return await executeToggle(fallbackDeviceId);
             } catch (e) {
                 // eslint-disable-next-line no-console
                 console.error(fallbackDeviceId, e);
@@ -163,42 +281,58 @@ export const useCameraPreview = ({
                 if (videoElement) {
                     videoElement.srcObject = null;
                 }
+
+                return false;
             }
         }
     };
 
-    const cleanupCameraPreview = async () => {
-        await cleanupPreviewTrack();
+    const releaseCameraPreview = async () => {
+        await stopPreviewTrack();
 
-        if (backgroundBlurProcessorInstanceRef.current) {
+        await previewEffectQueueRef.current;
+
+        const processors = [backgroundBlurProcessorInstanceRef.current, customBackgroundProcessorInstanceRef.current];
+
+        backgroundBlurProcessorInstanceRef.current = null;
+        customBackgroundProcessorInstanceRef.current = null;
+        customBackgroundProcessorCreationRef.current = null;
+
+        for (const processor of processors) {
             try {
-                await backgroundBlurProcessorInstanceRef.current.destroy();
+                await processor?.destroy();
             } catch (error) {
                 // eslint-disable-next-line no-console
                 console.error(error);
-            } finally {
-                backgroundBlurProcessorInstanceRef.current = null;
             }
         }
     };
 
-    const handlePreviewBackgroundBlurPreferenceUpdate = useCallback(async () => {
+    const handlePreviewCameraToggle = (videoElement: HTMLVideoElement) =>
+        enqueuePreviewLifecycleOperation(() => startPreviewTrack(videoElement));
+
+    const cleanupPreviewTrack = () => enqueuePreviewLifecycleOperation(stopPreviewTrack);
+
+    const cleanupCameraPreview = () => enqueuePreviewLifecycleOperation(releaseCameraPreview);
+
+    const handlePreviewBackgroundEffectUpdate = useCallback(async () => {
         if (!isBackgroundBlurSupported) {
             backgroundBlurProcessorInstanceRef.current?.disable?.();
+            customBackgroundProcessorInstanceRef.current?.disable?.();
             return;
         }
 
-        void applyPreviewBackgroundBlurPreference(backgroundBlur);
-    }, [applyPreviewBackgroundBlurPreference, backgroundBlur, isBackgroundBlurSupported]);
+        await requestPreviewBackgroundEffect(backgroundEffect);
+    }, [backgroundEffect, isBackgroundBlurSupported, requestPreviewBackgroundEffect]);
 
     useEffect(() => {
-        void handlePreviewBackgroundBlurPreferenceUpdate();
-    }, [handlePreviewBackgroundBlurPreferenceUpdate]);
+        void handlePreviewBackgroundEffectUpdate();
+    }, [handlePreviewBackgroundEffectUpdate]);
 
     return {
         handlePreviewCameraToggle,
         cleanupCameraPreview,
-        handlePreviewBackgroundBlurPreferenceUpdate,
+        handlePreviewBackgroundEffectUpdate,
         cleanupPreviewTrack,
     };
 };
