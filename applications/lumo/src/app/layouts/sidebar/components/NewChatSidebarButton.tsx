@@ -17,7 +17,7 @@ import { useSidebar } from '../../../providers/SidebarProvider';
 export const NewChatSidebarButton = () => {
     const isGuest = useIsGuest();
     const history = useHistory();
-    const { isSmallScreen } = useSidebar();
+    const { isSmallScreen, closeOverlay } = useSidebar();
     const { isGhostChatMode, setGhostChatMode } = useGhostChat();
     const { handleGuestClick, handleDisclaimerClose, disclaimerModalProps } = useGuestChatHandler();
     const isNewChatRoute = useRouteMatch('/')?.isExact;
@@ -30,7 +30,8 @@ export const NewChatSidebarButton = () => {
             setGhostChatMode(false);
         }
         history.push('/');
-    }, [setGhostChatMode, history, isGhostChatMode]);
+        closeOverlay();
+    }, [setGhostChatMode, history, isGhostChatMode, closeOverlay]);
 
     const handleModalClose = useCallback(() => {
         handleDisclaimerClose();
