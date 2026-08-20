@@ -58,44 +58,50 @@ const ThemesSection = () => {
                             }
                         />
                     </SettingsIconRow>
-                    <DashboardCardDivider />
 
                     {showSyncThemeSelection && (
-                        <div className="flex flex-nowrap gap-4 flex-column lg:flex-row">
-                            <ThemeSyncModeCard
-                                className="lg:flex-1"
-                                mode="light"
-                                list={themes}
-                                themeIdentifier={settings.LightTheme}
-                                onChange={(themeType) => {
-                                    setTheme(themeType, ThemeModeSetting.Light);
-                                    notifyPreferenceSaved();
-                                }}
-                                active={information.colorScheme === ColorScheme.Light}
-                            />
-                            <ThemeSyncModeCard
-                                className="lg:flex-1"
-                                mode="dark"
-                                list={themes}
-                                themeIdentifier={settings.DarkTheme}
-                                onChange={(themeType) => {
-                                    setTheme(themeType, ThemeModeSetting.Dark);
-                                    notifyPreferenceSaved();
-                                }}
-                                active={information.colorScheme === ColorScheme.Dark}
-                            />
-                        </div>
+                        <>
+                            <DashboardCardDivider />
+                            <div className="flex flex-nowrap gap-4 flex-column lg:flex-row">
+                                <ThemeSyncModeCard
+                                    className="lg:flex-1"
+                                    mode="light"
+                                    list={themes}
+                                    themeIdentifier={settings.LightTheme}
+                                    onChange={(themeType) => {
+                                        setTheme(themeType, ThemeModeSetting.Light);
+                                        notifyPreferenceSaved();
+                                    }}
+                                    active={information.colorScheme === ColorScheme.Light}
+                                />
+                                <ThemeSyncModeCard
+                                    className="lg:flex-1"
+                                    mode="dark"
+                                    list={themes}
+                                    themeIdentifier={settings.DarkTheme}
+                                    onChange={(themeType) => {
+                                        setTheme(themeType, ThemeModeSetting.Dark);
+                                        notifyPreferenceSaved();
+                                    }}
+                                    active={information.colorScheme === ColorScheme.Dark}
+                                />
+                            </div>
+                        </>
                     )}
                     {showManualThemeSelection && (
-                        <ThemeCards
-                            size="large"
-                            list={themes}
-                            themeIdentifier={information.theme}
-                            onChange={(themeType) => {
-                                setTheme(themeType);
-                                notifyPreferenceSaved();
-                            }}
-                        />
+                        <>
+                            <DashboardCardDivider />
+
+                            <ThemeCards
+                                size="large"
+                                list={themes}
+                                themeIdentifier={information.theme}
+                                onChange={(themeType) => {
+                                    setTheme(themeType);
+                                    notifyPreferenceSaved();
+                                }}
+                            />
+                        </>
                     )}
                 </DashboardCardContent>
             </DashboardCard>
