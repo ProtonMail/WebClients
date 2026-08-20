@@ -1,14 +1,10 @@
 import { useEffect } from 'react';
 
-import type { Action, ThunkDispatch } from '@reduxjs/toolkit';
-
-import { type ContactEmailsState, contactEmailsThunk } from '@proton/mail/store/contactEmails';
-import { baseUseDispatch, baseUseSelector } from '@proton/react-redux-store';
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import { contactEmailsThunk } from '@proton/mail/store/contactEmails';
+import { useDispatch, useSelector } from '@proton/redux-shared-store/sharedProvider';
 import noop from '@proton/utils/noop';
 
 import { listIncomingDelegatedAccess } from '../../incomingActions';
-import type { DelegatedAccessState } from '../../index';
 import { type EnrichedIncomingDelegatedAccessReturnValue, selectEnrichedIncomingDelegatedAccess } from './selector';
 
 export interface IncomingItemsResult {
@@ -16,13 +12,9 @@ export interface IncomingItemsResult {
     loading: boolean;
 }
 
-type RequiredState = DelegatedAccessState & ContactEmailsState;
-
 export const useIncomingItems = (): IncomingItemsResult => {
-    const dispatch = baseUseDispatch<ThunkDispatch<RequiredState, ProtonThunkArguments, Action>>();
-    const { items, loading } = baseUseSelector<RequiredState, EnrichedIncomingDelegatedAccessReturnValue>(
-        selectEnrichedIncomingDelegatedAccess
-    );
+    const dispatch = useDispatch();
+    const { items, loading } = useSelector(selectEnrichedIncomingDelegatedAccess);
 
     useEffect(() => {
         Promise.all([dispatch(listIncomingDelegatedAccess()), dispatch(contactEmailsThunk())]).catch(noop);

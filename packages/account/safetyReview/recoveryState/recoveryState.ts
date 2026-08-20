@@ -281,7 +281,10 @@ export const selectRecoveryState = createSelector(
             !user ||
             !userSettings ||
             mnemonicData.loading ||
-            outgoingDelegatedAccess.loading ||
+            // Only wait for the delegated access list when it can actually contribute to the state. When it's
+            // unavailable the recovery/emergency contact items are disabled regardless of what the list contains,
+            // and nothing is guaranteed to fetch it, so waiting would never resolve.
+            (outgoingDelegatedAccess.isAvailable && outgoingDelegatedAccess.loading) ||
             recoveryFileData.loading ||
             accountRecoveryData.loading;
 
