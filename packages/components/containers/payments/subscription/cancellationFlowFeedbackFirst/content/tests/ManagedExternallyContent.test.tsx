@@ -5,7 +5,7 @@ import { SubscriptionPlatform } from '@proton/payments/core/subscription/constan
 
 import { ManagedExternallyContent } from '../ManagedExternallyContent';
 
-jest.mock('@proton/components/components/portal/Portal');
+jest.mock('@proton/atoms/Portal/Portal');
 
 const renderContent = (subscription: any, onClose = () => {}) => {
     return render(

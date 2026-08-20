@@ -4,11 +4,11 @@ import { useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
+import { verticalPopperPlacements } from '@proton/atoms/Popper/utils';
 import type { DropdownProps } from '@proton/components/components/dropdown/Dropdown';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
-import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
-import { verticalPopperPlacements } from '@proton/components/components/popper/utils';
 import { SharedMenuContent } from '@proton/pass/components/Menu/Shared/SharedMenu';
 import { VaultMenu } from '@proton/pass/components/Menu/Vault/VaultMenu';
 import { getVaultOptionInfo } from '@proton/pass/components/Menu/Vault/utils';

@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Dropdown, DropdownMenu, DropdownMenuButton, usePopperAnchor } from '@proton/components';
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
+import { Dropdown, DropdownMenu, DropdownMenuButton } from '@proton/components';
 import { InfoIconTooltip } from '@proton/drive/components/InfoIconTooltip';
 import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 

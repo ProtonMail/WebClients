@@ -4,9 +4,9 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import type { ButtonLikeOwnProps } from '@proton/atoms/Button/ButtonLike';
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
-import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { getExtraFieldOptions } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraField.utils';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';

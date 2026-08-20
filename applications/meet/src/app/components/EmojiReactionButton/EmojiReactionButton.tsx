@@ -2,8 +2,8 @@ import { useRef } from 'react';
 
 import { c } from 'ttag';
 
-import Popper from '@proton/components/components/popper/Popper';
-import usePopper from '@proton/components/components/popper/usePopper';
+import { Popper } from '@proton/atoms/Popper/Popper';
+import { usePopper } from '@proton/atoms/Popper/usePopper';
 import { IcEmoji } from '@proton/icons/icons/IcEmoji';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { selectEmojiReactionPopupOpen, setEmojiReactionPopupOpen } from '@proton/meet/store/slices/uiStateSlice';

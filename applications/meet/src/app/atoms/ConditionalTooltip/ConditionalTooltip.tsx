@@ -1,5 +1,5 @@
+import type { PopperPlacement } from '@proton/atoms/Popper/interface';
 import { Tooltip, type Props as TooltipProps } from '@proton/atoms/Tooltip/Tooltip';
-import type { PopperPlacement } from '@proton/components/index';
 
 type Props = {
     children: React.ReactElement;

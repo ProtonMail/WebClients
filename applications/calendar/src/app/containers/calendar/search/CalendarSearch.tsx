@@ -1,6 +1,6 @@
 import { type RefObject, useEffect, useRef, useState } from 'react';
 
-import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import generateUID from '@proton/utils/generateUID';
 
 import { useEncryptedSearchLibrary } from '../../EncryptedSearchLibraryProvider';

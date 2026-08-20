@@ -2,7 +2,8 @@ import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Dropdown, DropdownMenu, DropdownMenuButton, Icon, ToolbarButton, usePopperAnchor } from '@proton/components';
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
+import { Dropdown, DropdownMenu, DropdownMenuButton, Icon, ToolbarButton } from '@proton/components';
 import { generateNodeUid, getDrive } from '@proton/drive';
 import { useMoveItemsModal } from '@proton/drive/modals/moveItemsModal';
 import { useSharingModal } from '@proton/drive/modals/sharingModal';

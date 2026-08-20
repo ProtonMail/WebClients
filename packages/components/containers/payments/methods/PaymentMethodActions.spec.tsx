@@ -36,7 +36,7 @@ jest.mock('@proton/components/hooks/useApi', () => jest.fn().mockReturnValue(jes
 
 // The real DropdownActions renders its overflow actions inside a Portal-backed dropdown.
 // Mocking Portal to render its children inline lets us exercise the real component.
-jest.mock('@proton/components/components/portal/Portal');
+jest.mock('@proton/atoms/Portal/Portal');
 
 jest.mock('@proton/payments/ui/containers/EditCardModal', () => ({
     __esModule: true,

@@ -9,8 +9,8 @@ import {
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
-import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
 import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';

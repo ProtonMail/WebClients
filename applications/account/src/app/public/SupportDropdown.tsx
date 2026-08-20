@@ -3,7 +3,8 @@ import * as React from 'react';
 
 import { c } from 'ttag';
 
-import { Dropdown, DropdownMenu, usePopperAnchor } from '@proton/components';
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
+import { Dropdown, DropdownMenu } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 

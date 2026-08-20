@@ -1,5 +1,5 @@
-import usePopper from '@proton/components/components/popper/usePopper'
-import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor'
+import { usePopper } from '@proton/atoms/Popper/usePopper'
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor'
 import type { CommentThreadInterface } from '@proton/docs-shared'
 import { CommentsPanelListThread } from './CommentsPanelListThread'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'

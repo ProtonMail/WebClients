@@ -5,14 +5,8 @@ import { c, msgid } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import {
-    Dropdown,
-    DropdownButton,
-    DropdownMenu,
-    DropdownMenuButton,
-    usePopperAnchor,
-    useTheme,
-} from '@proton/components';
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
+import { Dropdown, DropdownButton, DropdownMenu, DropdownMenuButton, useTheme } from '@proton/components';
 import { getDriveForPhotos } from '@proton/drive/index';
 import { loadThumbnail, useThumbnail } from '@proton/drive/modules/thumbnails';
 import { IcPencil } from '@proton/icons/icons/IcPencil';

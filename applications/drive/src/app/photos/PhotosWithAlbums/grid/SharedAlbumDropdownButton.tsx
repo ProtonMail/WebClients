@@ -2,14 +2,8 @@ import { useCallback } from 'react';
 
 import { c } from 'ttag';
 
-import {
-    Dropdown,
-    DropdownButton,
-    DropdownMenu,
-    DropdownMenuButton,
-    useConfirmActionModal,
-    usePopperAnchor,
-} from '@proton/components';
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
+import { Dropdown, DropdownButton, DropdownMenu, DropdownMenuButton, useConfirmActionModal } from '@proton/components';
 import { getDriveForPhotos } from '@proton/drive';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
