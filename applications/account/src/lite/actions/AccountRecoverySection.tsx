@@ -26,7 +26,9 @@ export const AccountRecoverySection = ({ divider = true }: { divider?: boolean }
             {accountRecovery.el}
             <SettingsSection>
                 <SettingsDivider enabled={divider}>
-                    <SignInWithAnotherDeviceSettings />
+                    <SettingsLayout>
+                        <SignInWithAnotherDeviceSettings />
+                    </SettingsLayout>
 
                     <SettingsLayout>
                         <SettingsLayoutLeft>
