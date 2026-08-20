@@ -1,6 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 
 import { useUser } from '@proton/account/user/hooks';
+import { useQ3Sale2026 } from '@proton/components/containers/offers/operations/q3Sale2026configs';
 import { getAppSpace, getSpace } from '@proton/shared/lib/user/storage';
 
 import { useSuggestBusinessModal } from '../../../../modals/SuggestBusinessModal/useSuggestBusinessModal';
@@ -16,6 +17,9 @@ const mockedGetAppSpace = jest.mocked(getAppSpace);
 jest.mock('../../../../modals/SuggestBusinessModal/useSuggestBusinessModal');
 const mockedUseSuggestBusinessModal = jest.mocked(useSuggestBusinessModal);
 
+jest.mock('@proton/components/containers/offers/operations/q3Sale2026configs');
+const mockedUseQ3Sale2026 = jest.mocked(useQ3Sale2026);
+
 describe('SuggestBusinessButton', () => {
     const mockShowModal = jest.fn();
     const mockModal = <div data-testid="suggest-business-modal">Modal</div>;
@@ -25,6 +29,7 @@ describe('SuggestBusinessButton', () => {
         mockedUseSuggestBusinessModal.mockReturnValue([mockModal, mockShowModal]);
         mockedGetSpace.mockReturnValue({ usedSpace: 100, maxSpace: 1000 } as ReturnType<typeof getSpace>);
         mockedGetAppSpace.mockReturnValue({ usedSpace: 100, maxSpace: 1000 });
+        mockedUseQ3Sale2026.mockReturnValue([{ isLoading: false, isValid: false }] as ReturnType<typeof useQ3Sale2026>);
     });
 
     const mockUser = (isPaid: boolean) => {
@@ -70,6 +75,32 @@ describe('SuggestBusinessButton', () => {
             mockUser(true);
             mockDate(15);
             mockedGetAppSpace.mockReturnValue({ usedSpace: 40, maxSpace: 100 });
+
+            const { container } = render(<SuggestBusinessButton />);
+            expect(container).toBeEmptyDOMElement();
+        });
+    });
+
+    describe('when the Q3 sale is running', () => {
+        beforeEach(() => {
+            mockUser(false);
+            mockDate(15);
+            mockedGetAppSpace.mockReturnValue({ usedSpace: 40, maxSpace: 100 });
+        });
+
+        it('should not render the button when a Q3 offer is valid', () => {
+            mockedUseQ3Sale2026.mockReturnValue([{ isLoading: false, isValid: true }] as ReturnType<
+                typeof useQ3Sale2026
+            >);
+
+            const { container } = render(<SuggestBusinessButton />);
+            expect(container).toBeEmptyDOMElement();
+        });
+
+        it('should not render the button while the Q3 offers are still loading', () => {
+            mockedUseQ3Sale2026.mockReturnValue([{ isLoading: true, isValid: false }] as ReturnType<
+                typeof useQ3Sale2026
+            >);
 
             const { container } = render(<SuggestBusinessButton />);
             expect(container).toBeEmptyDOMElement();
