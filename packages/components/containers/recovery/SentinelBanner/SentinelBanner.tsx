@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { selectSentinelRecoveryBannerDisplay } from '@proton/account/safetyReview/recoveryState/recoveryState';
+import { useLoadRecoveryState } from '@proton/account/safetyReview/recoveryState/useRecoveryState';
 import { SettingsLayoutVariant } from '@proton/components/containers/layout/interface';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
@@ -16,6 +17,7 @@ interface Props {
 const SentinelBanner = ({ variant: layoutVariant }: Props) => {
     const theme = useTheme();
     const isDarkTheme = theme.information.dark;
+    useLoadRecoveryState();
     const { loading, variant } = useSelector(selectSentinelRecoveryBannerDisplay);
 
     if (loading || variant === null) {
