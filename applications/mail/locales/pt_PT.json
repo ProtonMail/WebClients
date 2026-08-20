@@ -636,6 +636,9 @@
       "Get the browser extension": [
         "Obtenha a extensão do navegador"
       ],
+      "Get the deal": [
+        "Obtenha a promoção"
+      ],
       "Get the writing assistant": [
         "Obter o assistente de escrita"
       ],
@@ -1732,6 +1735,9 @@
       ],
       "Not now": [
         "Agora não"
+      ],
+      "Set up categories": [
+        "Configurar categorias"
       ],
       "Skip": [
         "Ignorar"
@@ -3627,6 +3633,9 @@
       "Mexico": [
         "México"
       ],
+      "Micronesia": [
+        "Micronésia"
+      ],
       "Moldova": [
         "Moldávia"
       ],
@@ -4222,6 +4231,9 @@
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Leia, responda e mantenha-se a par do Gmail a partir do ${ MAIL_APP_NAME }"
+      ],
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Clique com o botão direito num e-mail e selecione «Mover para», ou arraste-o para outra categoria. Os e-mails semelhantes serão organizados aí automaticamente no futuro."
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
         "Envie e receba mensagens do Gmail diretamente no ${ MAIL_APP_NAME }. Ligue o seu endereço em ${ addressesSettingsLink }."
@@ -7723,9 +7735,6 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Se não encontrar o e-mail na sua caixa de entrada, verifique a pasta de spam."
       ],
-      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
-        "Se perdeu o acesso à sua aplicação de autenticação, pode utilizar 1 dos 16 códigos de recuperação de cópia de segurança fornecidos quando configurou a autenticação de dois fatores. ${ learnMoreLink }"
-      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Ao mudar para uma subscrição mais barata, perderá o acesso às funcionalidades pagas do ${ MAIL_APP_NAME } e ${ VPN_APP_NAME }."
       ],
@@ -9669,6 +9678,9 @@
       "ANY": [
         "QUALQUER"
       ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Tudo o que precisa da sua atenção, além dos e-mails das categorias desativadas"
+      ],
       "App password": [
         "Palavra-passe da aplicação"
       ],
@@ -9932,6 +9944,9 @@
       ],
       "Folder location": [
         "Localização da pasta"
+      ],
+      "Folder name": [
+        "Nome da pasta"
       ],
       "Forwards to": [
         "Encaminha para"
@@ -10211,6 +10226,9 @@
       ],
       "Primary": [
         "Principal"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Principal - Tudo o que precisa da sua atenção, além dos e-mails das categorias desativadas"
       ],
       "Promotions": [
         "Promoções"
@@ -15146,6 +15164,9 @@
       "Move ${ selectionCount } message": [
         "Mover ${ selectionCount } mensagem",
         "Mover ${ selectionCount } mensagens"
+      ],
+      "Moved to ${ label }. Similar messages will be categorized there in the future.": [
+        "Movido para ${ label }. As mensagens semelhantes serão categorizadas aí no futuro."
       ],
       "Password copied to clipboard": [
         "A palavra-passe foi copiada para a área de transferência."
