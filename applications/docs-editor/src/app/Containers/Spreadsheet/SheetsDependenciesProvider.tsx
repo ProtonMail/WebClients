@@ -3,6 +3,7 @@ import { createContext, useContext } from 'react'
 
 export type SheetsDependencies = {
   isDevOrBlack: () => boolean
+  showNotification: (notification: { text: string; type?: 'error' | 'warning' | 'info' | 'success' }) => void
 }
 
 const SheetsDependenciesContext = createContext<SheetsDependencies | undefined>(undefined)
