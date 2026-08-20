@@ -48,6 +48,10 @@
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Adicionar ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
+      "Add ${ photoCount } photo to a new album": [
+        "Adicionar ${ photoCount } foto para um novo álbum",
+        "Adicionar ${ photoCount } fotos para um novo álbum"
+      ],
       "Add account": [
         "Adicionar conta"
       ],
@@ -84,8 +88,15 @@
       "Add phone number": [
         "Adicionar número de telefone"
       ],
+      "Add photos": [
+        "Adicionar fotos"
+      ],
       "Add storage": [
         "Adicionar armazenamento"
+      ],
+      "Add to \"${ name }\" (${ photoCount } photo)": [
+        "Adicionar para \"${ name }\" (${ photoCount } foto)",
+        "Adicionar para \"${ name }\" (${ photoCount } fotos)"
       ],
       "Add to album": [
         "Adicionar ao álbum"
@@ -208,6 +219,9 @@
       "Collaborate on documents": [
         "Colaborar em documentos"
       ],
+      "Collapse folder": [
+        "Recolher pasta"
+      ],
       "Collapse navigation bar": [
         "Esconder barra de navegação"
       ],
@@ -280,8 +294,14 @@
       "Create a new contact group": [
         "Criar um grupo de contatos"
       ],
+      "Create album": [
+        "Criar álbum"
+      ],
       "Create and copy alias": [
         "Criar e copiar alias"
+      ],
+      "Create business account": [
+        "Criar conta business"
       ],
       "Create folder": [
         "Criar pasta"
@@ -324,6 +344,9 @@
         "Excluir ${ selectedCount } grupo de contatos",
         "Excluir ${ selectedCount } grupos de contatos"
       ],
+      "Delete album": [
+        "Excluir álbum"
+      ],
       "Delete contact": [
         "Excluir contato"
       ],
@@ -333,14 +356,23 @@
       "Delete permanently": [
         "Excluir permanentemente"
       ],
+      "Delete this version": [
+        "Excluir esta versão"
+      ],
       "Delete version": [
         "Excluir versão"
+      ],
+      "Delete without saving": [
+        "Excluir sem salvar"
       ],
       "Deselect all": [
         "Desmarcar todos"
       ],
       "Details": [
         "Detalhes"
+      ],
+      "Diagnostics": [
+        "Diagnósticos"
       ],
       "Discard": [
         "Descartar"
@@ -353,6 +385,9 @@
       ],
       "Display next": [
         "Mostrar próximo"
+      ],
+      "Display previous": [
+        "Mostrar anterior"
       ],
       "Done": [
         "Concluído"
@@ -380,6 +415,9 @@
       ],
       "Download for Windows": [
         "Baixar para Windows"
+      ],
+      "Download info": [
+        "Fazer download de informações"
       ],
       "Download logs": [
         "Registros de downloads"
@@ -420,8 +458,14 @@
       "enable desktop notifications": [
         "ativar notificações na área de trabalho"
       ],
+      "Enable drive search": [
+        "Ativar pesquisa de drive"
+      ],
       "Encrypted": [
         "Criptografado"
+      ],
+      "Explore more": [
+        "Explorar mais"
       ],
       "Explore other plans": [
         "Explorar outros planos"
@@ -471,6 +515,9 @@
       "Get the apps": [
         "Obtenha os aplicativos"
       ],
+      "Get the deal": [
+        "Obtenha a oferta"
+      ],
       "Get the writing assistant": [
         "Obter assistente de escrita"
       ],
@@ -488,6 +535,12 @@
       ],
       "Go to label": [
         "Ir para marcador"
+      ],
+      "Go to my files": [
+        "Ir para meus arquivos"
+      ],
+      "Go to parent": [
+        "Ir para pasta principal"
       ],
       "Go to settings": [
         "Ir para configurações"
@@ -543,6 +596,9 @@
       "Increase": [
         "Aumentar"
       ],
+      "Join album": [
+        "Junte-se ao álbum"
+      ],
       "Keep going": [
         "Continue"
       ],
@@ -593,6 +649,9 @@
       ],
       "Manage labels": [
         "Gerenciar marcadores"
+      ],
+      "Manage share": [
+        "Gerenciar compartilhamentos"
       ],
       "Manage users/addresses": [
         "Gerenciar usuários/endereços"
@@ -648,8 +707,14 @@
       "Move to trash": [
         "Mover para a lixeira"
       ],
+      "Name your album": [
+        "Dê um nome ao seu álbum"
+      ],
       "New": [
         "Novo"
+      ],
+      "New album": [
+        "Novo álbum"
       ],
       "New document": [
         "Novo documento"
@@ -705,6 +770,9 @@
       "Preview contact": [
         "Pré-visualizar contato"
       ],
+      "Preview logs": [
+        "Visualização prévia de registros"
+      ],
       "Previous": [
         "Anterior"
       ],
@@ -719,6 +787,9 @@
       ],
       "Re-index": [
         "Reindexar"
+      ],
+      "Re-indexing in progress": [
+        "Nova indexação em andamento"
       ],
       "Re-sign": [
         "Assinar novamente"
@@ -737,6 +808,9 @@
       ],
       "Refer a friend": [
         "Indicar um amigo"
+      ],
+      "Refetch index": [
+        "Recarregar índice"
       ],
       "Refresh the page": [
         "Atualizar a página"
@@ -759,14 +833,26 @@
       "Remove button": [
         "Remover botão"
       ],
+      "Remove device": [
+        "Remover dispositivo"
+      ],
+      "Remove from album": [
+        "Remover do álbum"
+      ],
       "Remove from favorites": [
         "Remover dos favoritos"
       ],
       "Remove gift code": [
         "Remover código de vale-presente"
       ],
+      "Remove me": [
+        "Remover"
+      ],
       "Remove my access": [
         "Remover meu acesso"
+      ],
+      "Remove without saving": [
+        "Remover sem salvar"
       ],
       "Rename": [
         "Renomear"
@@ -782,6 +868,9 @@
       ],
       "Report a problem": [
         "Relatar um problema"
+      ],
+      "Report abuse": [
+        "Reportar abuso"
       ],
       "Report an issue": [
         "Reportar um problema"
@@ -813,14 +902,23 @@
       "Restore this version": [
         "Restaurar essa versão"
       ],
+      "Restore version": [
+        "Restaurar versão"
+      ],
       "Retry": [
         "Tentar novamente"
       ],
       "Retry failed items": [
         "Tentar novamente itens com falha"
       ],
+      "Run diagnostics": [
+        "Executar diagnósticos"
+      ],
       "Save": [
         "Salvar"
+      ],
+      "Save and remove": [
+        "Salvar e remover"
       ],
       "Save changes": [
         "Salvar alterações"
@@ -845,6 +943,12 @@
       ],
       "Search countries": [
         "Pesquisar países"
+      ],
+      "Search drive": [
+        "Pesquisar no drive"
+      ],
+      "Search is unavailable": [
+        "Pesquisa indisponível"
       ],
       "See how": [
         "Veja como"
@@ -879,6 +983,9 @@
       "Set as album cover": [
         "Definir como capa do álbum"
       ],
+      "Set as cover": [
+        "Definir como capa"
+      ],
       "Set password or expiration date": [
         "Definir senha ou data de expiração"
       ],
@@ -905,6 +1012,9 @@
       ],
       "Share album": [
         "Compartilhar álbum"
+      ],
+      "Share file": [
+        "Compartilhar arquivo"
       ],
       "Share item": [
         "Compartilhar item"
@@ -957,8 +1067,14 @@
       "Skip verification": [
         "Pular verificação"
       ],
+      "Start": [
+        "Iniciar"
+      ],
       "Start import": [
         "Iniciar importação"
+      ],
+      "Start recovering": [
+        "Comece a recuperar"
       ],
       "Stay": [
         "Permanecer"
@@ -1010,6 +1126,9 @@
       ],
       "Trust": [
         "Confiar"
+      ],
+      "Try ${ BRAND_NAME } Workspace": [
+        "Testar ${ BRAND_NAME } Workspace"
       ],
       "Try again": [
         "Tentar novamente"
@@ -1068,6 +1187,9 @@
       "Upload from computer": [
         "Enviar do computador"
       ],
+      "Upload photos": [
+        "Enviar fotos"
+      ],
       "Upload picture": [
         "Carregar imagem"
       ],
@@ -1118,6 +1240,9 @@
       ],
       "Windows 11 (ARM64)": [
         "Windows 11 (ARM64)"
+      ],
+      "Windows 11/10 (x64)": [
+        "Windows 11/10 (x64)"
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Você não pode enviar arquivos vCards de mais de ${ maxAttachments } contatos",
@@ -1337,6 +1462,11 @@
     "b2b_trials_Title": {
       "Your free trial ends in ${ timeRemaining }": [
         "Sua avaliação gratuita termina em ${ timeRemaining }"
+      ]
+    },
+    "Badge": {
+      "Invited": [
+        "Convidado"
       ]
     },
     "bf2023: Deal details": {
@@ -2451,6 +2581,9 @@
       "Mexico": [
         "México"
       ],
+      "Micronesia": [
+        "Micronésia"
+      ],
       "Moldova": [
         "Moldávia"
       ],
@@ -3029,6 +3162,9 @@
     "Docs Info": {
       "Collaborating just got easier. Now anyone can suggest edits without changing the document.": [
         "Colaborar ficou ainda mais fácil. Agora, qualquer pessoa pode sugerir mudanças sem precisar alterar o documento."
+      ],
+      "Suggestion mode is here": [
+        "Modo de sugestão está aqui"
       ]
     },
     "Downgrade account reason": {
@@ -3320,6 +3456,12 @@
       "Calendar limit reached": [
         "Limite de calendários atingido"
       ],
+      "Can't find any secure link": [
+        "Não consigo encontrar nenhum link seguro"
+      ],
+      "Can't retrieve device name": [
+        "Não foi possível recuperar o nome do dispositivo"
+      ],
       "Cannot download a folder": [
         "Não é possível baixar uma pasta"
       ],
@@ -3364,6 +3506,9 @@
       ],
       "Copying item to a non-folder is not allowed": [
         "Não é permitido copiar o item para um local que não seja uma pasta"
+      ],
+      "Could not add to favorites": [
+        "Não foi possível adicionar aos favoritos"
       ],
       "Could not load sharing details": [
         "Não foi possível carregar os detalhes do compartilhamento"
@@ -3435,6 +3580,9 @@
       ],
       "Error decrypting a computer": [
         "Erro ao descriptografar o computador"
+      ],
+      "Error reading file": [
+        "Erro ao ler arquivo"
       ],
       "Expected structure attached": [
         "Estrutura esperada em anexo"
@@ -3787,6 +3935,9 @@
       "Reverse charge scheme is not supported for this plan": [
         "O regime de reverse charge não é suportado para este plano"
       ],
+      "Search failed": [
+        "A pesquisa falhou"
+      ],
       "Signature is missing": [
         "Assinatura ausente"
       ],
@@ -3835,8 +3986,14 @@
       "Something went wrong": [
         "Algo deu errado"
       ],
+      "Something went wrong during folder listing": [
+        "Ocorreu um erro ao listar a pasta"
+      ],
       "Something went wrong while fetching available domains": [
         "Ocorreu um erro ao buscar os domínios disponíveis"
+      ],
+      "Something went wrong with search. Please try again later.": [
+        "Ocorreu um erro com a pesquisa. Tente novamente mais tarde."
       ],
       "Something went wrong with search: Not enough storage space.": [
         "Algo deu errado com a pesquisa: espaço de armazenamento insuficiente."
@@ -3982,6 +4139,9 @@
       "Verification keys for ${ signatureType } are not available": [
         "As chaves de verificação para ${ signatureType } não estão disponíveis"
       ],
+      "We cannot retrieve this item": [
+        "Não foi possível recuperar este item"
+      ],
       "We couldn’t send a verification code using this method.": [
         "Não conseguimos enviar um código de verificação usando este método."
       ],
@@ -3996,6 +4156,15 @@
       ],
       "We were not able to load some of your invitation to shared items": [
         "Não foi possível carregar alguns dos seus convites para itens compartilhados"
+      ],
+      "We were not able to load some of your saved shared links": [
+        "Não foi possível carregar alguns de seus links compartilhados salvos"
+      ],
+      "We were not able to load some of your shared items": [
+        "Não foi possível carregar alguns dos seus itens compartilhados"
+      ],
+      "We were not able to load some search results": [
+        "Não foi possível carregar alguns resultados de pesquisa"
       ],
       "We were not able to load the folder contents": [
         "Não foi possível carregar o conteúdo da pasta"
@@ -4185,8 +4354,17 @@
       "App currently unavailable": [
         "Aplicativo atualmente indisponível"
       ],
+      "Brace yourself till we get the error fixed.": [
+        "Fique tranquilo, logo iremos corrigir este erro."
+      ],
       "Error: ${ errorMessage }": [
         "Erro: ${ errorMessage }"
+      ],
+      "Internal server error": [
+        "Erro interno do servidor"
+      ],
+      "Not found": [
+        "Não encontrado"
       ],
       "Oops, something went wrong": [
         "Opa, alguma coisa deu errado"
@@ -4208,6 +4386,9 @@
       ],
       "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
         "Quando a senha extra está ativada, o gerenciamento de alias pode ser feito apenas pelo ${ PASS_APP_NAME }."
+      ],
+      "You may also refresh the page or try again later.": [
+        "Você pode atualizar a página ou tentar novamente mais tarde."
       ]
     },
     "Error notification": {
@@ -4572,6 +4753,12 @@
       "Contacts": [
         "Contatos"
       ],
+      "Create new album": [
+        "Criar um álbum"
+      ],
+      "Create new shared album": [
+        "Criar novo álbum compartilhado"
+      ],
       "Domain": [
         "Domínio"
       ],
@@ -4592,11 +4779,22 @@
       ]
     },
     "Heading": {
+      "Add ${ photoCount } photo to": [
+        "Adicionar ${ photoCount } foto a",
+        "Adicionar ${ photoCount } fotos a"
+      ],
       "Add to shared album": [
         "Adicionar ao álbum compartilhado"
       ],
+      "All albums": [
+        "Todos os álbuns"
+      ],
       "Recent": [
         "Recente"
+      ],
+      "Share ${ photoCount } photo via": [
+        "Compartilhar ${ photoCount } foto via",
+        "Compartilhar ${ photoCount } fotos via"
       ]
     },
     "Hint": {
@@ -4948,6 +5146,9 @@
         "${ addressCount } endereço de e-mail",
         "${ addressCount } endereços de e-mail"
       ],
+      "${ albumName } has been successfully deleted": [
+        "${ albumName } foi excluído com sucesso"
+      ],
       "${ albums } album": [
         "${ albums } álbum",
         "${ albums } álbuns"
@@ -5006,6 +5207,12 @@
       "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
         "O ${ DRIVE_APP_NAME } detectou que o índice de pesquisa local está corrompido e não pode mais ser utilizado. Reconstrua o índice para restaurar a funcionalidade de pesquisa."
       ],
+      "${ DRIVE_APP_NAME } on App Store": [
+        "${ DRIVE_APP_NAME } na App Store"
+      ],
+      "${ DRIVE_APP_NAME } on Play Store": [
+        "${ DRIVE_APP_NAME } na Play Store"
+      ],
       "${ email } invited you to join ${ albumName }": [
         "${ email } convidou você para juntar-se a ${ albumName }"
       ],
@@ -5014,6 +5221,10 @@
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }: pré-visualização em baixa resolução"
+      ],
+      "${ files } file": [
+        "${ files } arquivo",
+        "${ files } arquivos"
       ],
       "${ folders } folder": [
         "${ folders } pasta",
@@ -5230,6 +5441,9 @@
       "Already in your library": [
         "Já está na sua biblioteca"
       ],
+      "Also try looking in Trash.": [
+        "Verifique sua lixeira."
+      ],
       "American Express SafeKey logo": [
         "Logotipo do American Express SafeKey"
       ],
@@ -5238,6 +5452,9 @@
       ],
       "Amount below minimum (${ amount }).": [
         "Valor total abaixo do mínimo (${ amount })."
+      ],
+      "An issue occurred during the restore process.": [
+        "Ocorreu um problema durante o processo de restauração."
       ],
       "and": [
         "e"
@@ -5281,6 +5498,9 @@
       "Attention required": [
         "Atenção necessária"
       ],
+      "Aug": [
+        "Ago."
+      ],
       "Author is not provided on public link": [
         "O autor não forneceu um link público"
       ],
@@ -5295,6 +5515,9 @@
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Antes de pedir um novo código de verificação, verifique sua pasta de spam e verifique que ${ strong } é o endereço correto."
+      ],
+      "Better in the app": [
+        "Melhor no aplicativo"
       ],
       "Billing cycle: ${ text }": [
         "Ciclo de faturamento: ${ text }"
@@ -5328,6 +5551,9 @@
       ],
       "Canceled": [
         "Cancelado"
+      ],
+      "Cannot load links": [
+        "Os links não foram carregados"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Não consegue lembrar sua senha? Nós podemos ajudar a limpar os dados criptografados de todos os contatos criptografados com esta chave e, no processo, descartar o alerta."
@@ -5377,6 +5603,9 @@
       "Continue": [
         "Continuar"
       ],
+      "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
+        "Continue usando ${ DRIVE_APP_NAME } e desbloqueie o drive depois"
+      ],
       "Copy the link to clipboard": [
         "Copiar link para a área de transferência"
       ],
@@ -5409,6 +5638,9 @@
       "Create in": [
         "Criar em"
       ],
+      "Create links and share your files with others.": [
+        "Crie links e compartilhe seus arquivos com outros."
+      ],
       "Credit for the unused portion of your previous plan subscription": [
         "Crédito pela parte não usada no plano anterior da sua assinatura"
       ],
@@ -5423,6 +5655,9 @@
       ],
       "Data integrity check failed": [
         "Falha na verificação de integridade dos dados"
+      ],
+      "Dec": [
+        "Dez."
       ],
       "Decrypting files": [
         "Descriptografando arquivos"
@@ -5521,8 +5756,17 @@
       "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
         "Os e-mails movidos para a Lixeira e Spam há mais de 30 dias serão excluídos automaticamente."
       ],
+      "Empty folder": [
+        "Pasta vazia"
+      ],
       "Enabling auto-deletion…": [
         "Ativando a exclusão automática…"
+      ],
+      "Enabling drive search": [
+        "Ativando pesquisa de drive"
+      ],
+      "Encrypted search is here": [
+        "A pesquisa criptografada está aqui"
       ],
       "End-to-end encrypted": [
         "Criptografado de ponta a ponta"
@@ -5591,6 +5835,9 @@
       "File will not be updated": [
         "O arquivo não será atualizado"
       ],
+      "Files and folders that others shared with you will appear here": [
+        "Arquivos e pastas que outras pessoas compartilharam com você aparecerão aqui"
+      ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Apenas arquivos (sem fotos, ${ DOCS_APP_NAME } ou ${ SHEETS_APP_NAME }) - até 100 GB no total, 100.000 arquivos e 50 GB por arquivo"
       ],
@@ -5603,6 +5850,9 @@
       "Folder will not be uploaded": [
         "A pasta não será enviada"
       ],
+      "Folders you sync from your computer will appear here.": [
+        "As pastas do seu computador que você sincronizar aparecerão aqui."
+      ],
       "for ${ price }": [
         "por ${ price }"
       ],
@@ -5614,6 +5864,9 @@
       ],
       "Free 5GB encrypted storage to get started": [
         "Armazenamento criptografado gratuito de 5 GB para começar"
+      ],
+      "from the version history?": [
+        "do histórico de versões?"
       ],
       "Geoblocking": [
         "Bloqueio geográfico"
@@ -5645,6 +5898,9 @@
       "High Priority": [
         "Alta prioridade"
       ],
+      "How does encrypted search work?": [
+        "Como a pesquisa criptografada funciona?"
+      ],
       "I hereby confirm, in good faith, that the information and statements contained in the report are correct and complete.": [
         "Confirmo, por meio deste e de boa-fé, que as informações e declarações contidas no relatório estão corretas e completas."
       ],
@@ -5668,9 +5924,6 @@
       ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
         "Se você tiver um desses, vá para a configuração da conta da ${ BRAND_NAME } para iniciar o processo de desbloqueio."
-      ],
-      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
-        "If Se você perdeu o acesso ao seu aplicativo de autenticação, pode usar um dos 16 códigos de recuperação de backup fornecidos quando configurou a autenticação de dois fatores. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Se você prosseguir com o downgrade, perderá o acesso aos recursos pagos do ${ MAIL_APP_NAME } e ${ VPN_APP_NAME }."
@@ -5718,8 +5971,17 @@
       "Indexed ${ first }": [
         "Indexado ${ first }"
       ],
+      "Indexed ${ first } and ${ second }": [
+        "Indexado ${ first } e ${ second }"
+      ],
+      "Indexed ${ first }, ${ second } and ${ third }": [
+        "Indexado ${ first }, ${ second } e ${ third }"
+      ],
       "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
         "Indexado ${ first }, ${ second }, ${ third } e ${ fourth }"
+      ],
+      "Indexing in progress": [
+        "Indexação em progresso"
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "Indexando itens ${ esProgress } de ${ totalProgressToShow }"
@@ -5760,14 +6022,23 @@
       "Items in the trash will stay here until you delete them permanently": [
         "Os itens na lixeira permanecerão aqui até que você os exclua permanentemente"
       ],
+      "Items moved to the trash will stay here until deleted": [
+        "Os itens movidos para a lixeira permanecerão aqui até serem excluídos"
+      ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "É melhor usar uma VPN o tempo todo. Mas é aqui que as ameaças à segurança cibernética podem ser maiores:"
+      ],
+      "It’s easy and secure": [
+        "É fácil e seguro"
       ],
       "JCB logo": [
         "Logotipo JCB"
       ],
       "Jul": [
         "Jul."
+      ],
+      "Jun": [
+        "Jun."
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Apenas confirme sua seleção e faremos o restante."
@@ -5814,6 +6085,9 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Carregando o calendário, aguarde. Você será redirecionado à nossa plataforma de agendamento Calendly numa nova guia."
       ],
+      "Loading links": [
+        "Carregando links"
+      ],
       "Loading preview": [
         "Carregando visualização"
       ],
@@ -5822,6 +6096,9 @@
       ],
       "Low Priority": [
         "Baixa prioridade"
+      ],
+      "Makes your account safer": [
+        "Torne sua conta mais segura"
       ],
       "Malware detected": [
         "Malware detectado"
@@ -5864,6 +6141,12 @@
         "Mover ${ dragCount } item",
         "Mover ${ dragCount } itens"
       ],
+      "Moving files": [
+        "Movendo arquivos"
+      ],
+      "My Links": [
+        "Meus links"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nomeie sua nova pasta e selecione a pasta superior onde deseja colocá-la. Se você não selecionar uma pasta superior, esta nova pasta será criada como uma pasta de nível superior."
       ],
@@ -5872,6 +6155,9 @@
       ],
       "No": [
         "Não"
+      ],
+      "No Albums": [
+        "Nenhum álbum"
       ],
       "No contacts added yet": [
         "Nenhum contato foi adicionado ainda"
@@ -5888,6 +6174,9 @@
       "No results found": [
         "Nenhum resultado encontrado"
       ],
+      "No synced folders": [
+        "Sem pastas sincronizadas"
+      ],
       "No users to display": [
         "Nenhum usuário para exibir"
       ],
@@ -5900,8 +6189,14 @@
       "Not connected": [
         "Não conectado"
       ],
+      "Not enough storage space": [
+        "Não há espaço suficiente no armazenamento"
+      ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Observação: Os dados ainda podem estar disponíveis localmente em dispositivos onde você instalou ${ DRIVE_APP_NAME }."
+      ],
+      "Nov": [
+        "Nov."
       ],
       "Number of dedicated servers in the organization": [
         "Número de servidores dedicados na organização"
@@ -5932,6 +6227,9 @@
       ],
       "or discover other features:": [
         "ou descubra outros recursos:"
+      ],
+      "Or use the \"+ New\" button": [
+        "Ou use o botão \"+ Novo\""
       ],
       "Organization size": [
         "Tamanho da organização"
@@ -5969,8 +6267,17 @@
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME automaticamente envia a mensagem usando o modo compositor atual."
       ],
+      "Photo is not saved to your library": [
+        "A foto não foi salva na sua biblioteca"
+      ],
       "Photo is set as album cover": [
         "A foto está configurada como uma capa do álbum"
+      ],
+      "Photo was copied to stream and marked favorite there.": [
+        "A foto foi copiada para o fluxo e marcada como favorita lá."
+      ],
+      "Photos have been successfully recovered.": [
+        "As fotos foram recuperadas com sucesso."
       ],
       "Please ask the owner to directly invite you to the document.": [
         "Solicite ao proprietário para convidá-lo diretamente para o documento."
@@ -6075,6 +6382,9 @@
       "Public sharing of documents is not yet supported.": [
         "O compartilhamento público de documentos ainda não é suportado."
       ],
+      "Re-indexing in progress": [
+        "Nova indexação em andamento"
+      ],
       "Ready to add some photos?": [
         "Vamos adicionar algumas fotos?"
       ],
@@ -6083,6 +6393,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "As informações de recuperação permanecerão neste dispositivo, a menos que você opte por excluí-las."
+      ],
+      "Recovery process might take some time.": [
+        "O processo de recuperação pode levar algum tempo."
       ],
       "Referral link copied to your clipboard": [
         "Link de referência copiado para sua área de transferência"
@@ -6105,8 +6418,17 @@
       "Restore": [
         "Restaurar"
       ],
+      "Restore Photos": [
+        "Restaurar fotos"
+      ],
       "Restored files ${ formattedDate }": [
         "Arquivos restaurados ${ formattedDate }"
+      ],
+      "Restoring Photos... Please keep the tab open": [
+        "Restaurando fotos... Mantenha a guia aberta"
+      ],
+      "Running diagnostics...": [
+        "Executando diagnósticos..."
       ],
       "Saving...": [
         "Salvando..."
@@ -6114,8 +6436,14 @@
       "Scan the QR code with your mobile device": [
         "Escaneie o código QR com seu dispositivo móvel"
       ],
+      "Scan to download": [
+        "Digitalizar para baixar"
+      ],
       "Search cannot be enabled in this browser": [
         "A pesquisa não pode ser ativada nesse navegador"
+      ],
+      "Search data is corrupted": [
+        "Os dados de pesquisa estão corrompidos"
       ],
       "Search Enabled": [
         "Busca habilitada"
@@ -6126,6 +6454,9 @@
       "Search is in an invalid state": [
         "A pesquisa está em um estado invalido"
       ],
+      "Search is ready. Your files have been indexed.": [
+        "A pesquisa está pronta. Seus arquivos foram indexados."
+      ],
       "Select a destination folder": [
         "Selecione uma pasta de destino"
       ],
@@ -6135,8 +6466,17 @@
       "Select a folder to move to.": [
         "Selecione uma pasta para onde deseja mover."
       ],
+      "Select all items for": [
+        "Select all items para"
+      ],
+      "Select an uploaded file or folder and create a link to it.": [
+        "Selecione um arquivo ou pasta enviado e crie um link para ele."
+      ],
       "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
         "Selecione exatamente o que deseja migrar. Isso se aplicará a todos os usuários da organização."
+      ],
+      "Select item": [
+        "Selecionar item"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Selecione o formato de e-mail que você deseja que seja usado por padrão ao enviar um e-mail para este endereço."
@@ -6171,8 +6511,17 @@
       "Share files with links": [
         "Compartilhar arquivos com links"
       ],
+      "Shared": [
+        "Compartilhado"
+      ],
+      "Shared by ": [
+        "Compartilhado por "
+      ],
       "Shared link not found": [
         "Link compartilhado não encontrado"
+      ],
+      "Shared with me": [
+        "Compartilhado comigo"
       ],
       "Shared with you": [
         "Compartilhado com você"
@@ -6244,6 +6593,9 @@
       "that": [
         "que"
       ],
+      "The albums you create are shown here.": [
+        "Os álbuns que você cria são exibidos aqui."
+      ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "A contagem de downloads inclui downloads reais e instâncias em que os arquivos são visualizados."
       ],
@@ -6261,6 +6613,9 @@
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Há arquivos que ainda precisam ser transferidos. Fechar o gerenciador de transferência encerrará todas as operações."
+      ],
+      "There is nothing to see here": [
+        "Não há nada para ver aqui"
       ],
       "Thinking about this": [
         "Pensando nisso"
@@ -6309,6 +6664,9 @@
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "Isso significa que o seu ISP e os sites que você visita não conseguem conectar suas informações pessoais com sua atividade on-line."
       ],
+      "This month": [
+        "Este mês"
+      ],
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Esse código único pode ser usado por sites e provedores de serviços de internet para vincular sua localização e histórico de navegação ao seu dispositivo"
       ],
@@ -6341,6 +6699,9 @@
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Isto irá te desconectar de todas as contas atualmente conectadas."
+      ],
+      "Time": [
+        "Hora"
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Para completar o seu pagamento, envie ${ btcAmountBold } para o endereço abaixo."
@@ -6393,6 +6754,9 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Para poder usar a verificação de endereço, você deve confiar em uma ou mais chaves públicas disponíveis, incluindo aquela que você deseja usar para o envio. Isso evita que as chaves de criptografia possam ser falsificadas."
       ],
+      "Today": [
+        "Hoje"
+      ],
       "Total email addresses": [
         "Endereços de e-mail adicionais"
       ],
@@ -6411,6 +6775,9 @@
       "Trash": [
         "Lixeira"
       ],
+      "Trash is empty": [
+        "A lixeira está vazia"
+      ],
       "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
         "Confie na chave \"${ activeSignerText }\" para verificar novas mensagens deste contato."
       ],
@@ -6426,6 +6793,9 @@
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Infelizmente, parece que o arquivo ou alguns de seus dados não podem ser descriptografados."
       ],
+      "Unlock drive to recover files": [
+        "Desbloquear drive para recuperar arquivos"
+      ],
       "Unsaved changes": [
         "Alterações não salvas"
       ],
@@ -6434,6 +6804,12 @@
       ],
       "Unsupported file type for Photos": [
         "Tipo de arquivo não compatível para Fotos"
+      ],
+      "Update required": [
+        "Atualização necessária"
+      ],
+      "Updating drive search...": [
+        "Atualizando pesquisa de drive..."
       ],
       "Upgrade anytime to bring over the rest": [
         "Faça upgrade a qualquer momento para importar o resto"
@@ -6507,6 +6883,13 @@
       "Warning": [
         "Alerta"
       ],
+      "Way to go, you've just increased your storage to 5 GB!": [
+        "Muito bom! Você acaba de aumentar seu armazenamento para 5 GB!"
+      ],
+      "We couldn't save this photo to your Drive": [
+        "Não foi possível salvar esta foto no seu Drive",
+        "Não foi possível salvar várias fotos no seu Drive"
+      ],
       "We couldn't verify ${ nameAuthor } uploaded ${ nodeName }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "Não foi possível verificar se ${ nameAuthor } enviou ${ nodeName }. Os seguintes dados podem ter sido adulterados: ordem dos dados do arquivo. Abra somente se você confiar no conteúdo."
       ],
@@ -6549,6 +6932,9 @@
       "What do you want to do?": [
         "O que você deseja fazer?"
       ],
+      "What would you like to do?": [
+        "O que você gostaria de fazer?"
+      ],
       "When working remotely": [
         "Ao trabalhar remotamente"
       ],
@@ -6573,6 +6959,9 @@
       "Would you like to receive a new verification code?": [
         "Deseja receber um novo código de verificação?"
       ],
+      "Would you like to restore your files?": [
+        "Você gostaria de restaurar os arquivos?"
+      ],
       "Would you like to save them before removing?": [
         "Gostaria de salvá-los antes de removê-los?"
       ],
@@ -6581,6 +6970,9 @@
       ],
       "Yes": [
         "Sim"
+      ],
+      "Yesterday": [
+        "Ontem"
       ],
       "You": [
         "Você"
@@ -6659,6 +7051,9 @@
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Você deve desativar ou remover quaisquer usuários adicionais, endereços e domínios personalizados do ${ MAIL_APP_NAME } antes de poder fazer o downgrade."
+      ],
+      "You need access": [
+        "Você precisa de acesso"
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Você perderá o acesso aos recursos do ${ planTitle } nessa data."
@@ -6769,6 +7164,9 @@
       "Your plan is limited to 10 versions for up to 7 days": [
         "Seu plano é limitado a 10 versões por até 7 dias"
       ],
+      "Your previous password": [
+        "Sua senha anterior"
+      ],
       "Your previous recovery phrase": [
         "Sua frase de recuperação anterior"
       ],
@@ -6864,8 +7262,17 @@
       ]
     },
     "Label": {
+      "# of downloads": [
+        "# de downloads"
+      ],
+      "${ albumProgress.added } of ${ albumProgress.total }": [
+        "${ albumProgress.added } de ${ albumProgress.total }"
+      ],
       "${ BRAND_NAME } username": [
         "Nome de usuário da ${ BRAND_NAME }"
+      ],
+      "${ downloads } downloads": [
+        "${ downloads } baixados"
       ],
       "${ n } month": [
         "${ n } mês",
@@ -6881,6 +7288,9 @@
       ],
       "${ value.length }/${ maxLength } characters": [
         "${ value.length }/${ maxLength } caracteres"
+      ],
+      "(Expired)": [
+        "(Expirado)"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporariamente indisponível. Retorne mais tarde.)"
@@ -6953,6 +7363,9 @@
       ],
       "Apply to all unverified items": [
         "Aplicar a todos os itens não verificados"
+      ],
+      "Asset": [
+        "Ativo"
       ],
       "Attach screenshot(s)": [
         "Anexar captura(s) de tela"
@@ -7071,6 +7484,9 @@
       "Created": [
         "Criado"
       ],
+      "Created ${ created }": [
+        "Criado em ${ created }"
+      ],
       "Credits": [
         "Créditos"
       ],
@@ -7083,11 +7499,23 @@
       "Delete recovery-related information.": [
         "Excluir a informação de recuperação."
       ],
+      "Deleted": [
+        "Excluído"
+      ],
+      "Deleted ${ deleted }": [
+        "Excluído ${ deleted }"
+      ],
       "Device": [
         "Dispositivo"
       ],
+      "Device #${ position }": [
+        "Dispositivo #${ position }"
+      ],
       "Device name": [
         "Nome do dispositivo"
+      ],
+      "Device: ${ name }": [
+        "Dispositivo: ${ name }"
       ],
       "Disable this link on a specific date": [
         "Desativar este link em uma data específica"
@@ -7146,6 +7574,9 @@
       "Enter device name": [
         "Digite o nome do dispositivo"
       ],
+      "Environment compatible": [
+        "Ambiente compatível"
+      ],
       "Exact host matching": [
         "Correspondência exata de host"
       ],
@@ -7160,6 +7591,9 @@
       ],
       "Expires": [
         "Data de validade"
+      ],
+      "Expires ${ formatted }": [
+        "Expira em ${ formatted }"
       ],
       "Expiry": [
         "Expiração"
@@ -7227,6 +7661,9 @@
       "Include message and file name in invite email": [
         "Incluir mensagem e nome do arquivo no e-mail de convite."
       ],
+      "Indexing": [
+        "Indexando"
+      ],
       "Integrated 2FA authenticator": [
         "Autenticador A2F integrado"
       ],
@@ -7257,6 +7694,9 @@
       "Location": [
         "Localização"
       ],
+      "Location: ${ item.location }": [
+        "Localização: ${ item.location }"
+      ],
       "Log in or sign up ": [
         "Iniciar sessão ou criar conta "
       ],
@@ -7278,6 +7718,9 @@
       "Modified": [
         "Modificado"
       ],
+      "Modified ${ modified }": [
+        "Modificado: ${ modified }"
+      ],
       "Move to Archive": [
         "Mover para Arquivo"
       ],
@@ -7298,6 +7741,9 @@
       ],
       "Never": [
         "Nunca"
+      ],
+      "Never expires": [
+        "Nunca expira"
       ],
       "Never fill on this exact URL": [
         "Nunca preencher nesta URL exata"
@@ -7353,6 +7799,9 @@
       "Payment method": [
         "Forma de pagamento"
       ],
+      "Pending invitation": [
+        "Convite pendente"
+      ],
       "PGP scheme": [
         "Esquema PGP"
       ],
@@ -7404,6 +7853,9 @@
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
       ],
+      "Searchable": [
+        "Pesquisável"
+      ],
       "Select type of abuse": [
         "Selecione a categoria de abuso"
       ],
@@ -7413,14 +7865,35 @@
       "Set a password to limit access via link": [
         "Defina uma senha para limitar o acesso por link"
       ],
+      "Set recovery method": [
+        "Definir um método de recuperação"
+      ],
+      "Share a file, folder, or album": [
+        "Compartilhe um arquivo, pasta ou álbum"
+      ],
       "Shared": [
         "Compartilhado"
+      ],
+      "Shared by": [
+        "Compartilhado por"
+      ],
+      "Shared by ${ sharedBy }": [
+        "Compartilhado por ${ sharedBy }"
       ],
       "Shared by Public link": [
         "Compartilhado por link público"
       ],
+      "Shared on": [
+        "Compartilhado em"
+      ],
+      "Shared on ${ sharedOn }": [
+        "Compartilhado em ${ sharedOn }"
+      ],
       "Shared with me": [
         "Compartilhado comigo"
+      ],
+      "Show indexing progress of Encrypted Search": [
+        "Mostrar processo de indexação de pesquisa criptografada"
       ],
       "Sign emails": [
         "Assinar e-mails"
@@ -7479,6 +7952,9 @@
       "Theme": [
         "Tema"
       ],
+      "This will permanently delete all files in your locked drive.": [
+        "Isso irá excluir permanentemente todos os arquivos em sua unidade bloqueada."
+      ],
       "Thomas": [
         "Andrea"
       ],
@@ -7491,14 +7967,29 @@
       "Type": [
         "Tipo"
       ],
+      "Unlock drive": [
+        "Desbloquear drive"
+      ],
+      "Unlock drive (recommended)": [
+        "Desbloquear drive (recomendado)"
+      ],
+      "Unlock later": [
+        "Desbloquear depois"
+      ],
       "Upload picture": [
         "Carregar imagem"
+      ],
+      "Upload your first file": [
+        "Carregue seu primeiro arquivo"
       ],
       "Uploaded by": [
         "Enviado por"
       ],
       "URL wildcard pattern": [
         "Padrão de URL com caractere curinga"
+      ],
+      "User opted in": [
+        "O usuário aceitoiu"
       ],
       "Username": [
         "Nome de usuário"
@@ -7511,6 +8002,9 @@
       ],
       "Viewer": [
         "Visualizador"
+      ],
+      "Visible columns:": [
+        "Colunas visíveis:"
       ],
       "Vulnerable": [
         "Vulnerável"
@@ -7526,6 +8020,9 @@
       ],
       "What happened?": [
         "O que aconteceu?"
+      ],
+      "Yes, I want to permanently delete my old files": [
+        "Sim, quero excluir permanentemente meus arquivos antigos"
       ],
       "Your alias": [
         "Seu alias"
@@ -7617,6 +8114,9 @@
       "Add a gift code": [
         "Adicionar código de vale-presente"
       ],
+      "Albums": [
+        "Álbuns"
+      ],
       "clearing your browser cache": [
         "limpando o cache do seu navegador"
       ],
@@ -7697,6 +8197,9 @@
       ],
       "Shared": [
         "Compartilhado"
+      ],
+      "Shared with me": [
+        "Compartilhado comigo"
       ],
       "Terms and conditions": [
         "Termos e condições"
@@ -9169,6 +9672,9 @@
       "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
         "\"${ ellipsedName }\" falhou ao ser excluído permanentemente da lixeira"
       ],
+      "\"${ ellipsedName }\" failed to be moved": [
+        "\"${ ellipsedName }\" falhou ao ser movido"
+      ],
       "\"${ ellipsedName }\" failed to be restored from trash": [
         "Erro ao restaurar \"${ ellipsedName }\" da lixeira"
       ],
@@ -9204,6 +9710,10 @@
       "${ errors.length } item failed to be deleted": [
         "${ errors.length } item não foi excluído",
         "${ errors.length } itens não foram excluídos"
+      ],
+      "${ numberOfItems } item copied": [
+        "${ numberOfItems } item copiado",
+        "${ numberOfItems } itens copiados"
       ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } item excluído",
@@ -9256,6 +9766,9 @@
       ],
       "Access updated": [
         "Acesso atualizado"
+      ],
+      "Album renamed successfully": [
+        "O álbum foi renomeado com sucesso"
       ],
       "All items deleted permanently from trash": [
         "Todos os itens foram excluídos permanentemente da lixeira"
@@ -9343,6 +9856,9 @@
       ],
       "The item was not added to your drive": [
         "O item não foi adicionado ao seu drive"
+      ],
+      "The item was successfully added to your drive": [
+        "O item foi adicionado ao seu drive com sucesso"
       ],
       "The link to your item was deleted": [
         "O link para seu item foi excluído"
@@ -9520,17 +10036,44 @@
       ]
     },
     "Onboarding Action": {
+      "Continue": [
+        "Continuar"
+      ],
+      "Create a document": [
+        "Criar um documento"
+      ],
+      "Get started": [
+        "Começar a usar"
+      ],
+      "Install and continue": [
+        "Instalar e continuar"
+      ],
       "Install later": [
         "Instalar depois"
       ],
+      "Invite members": [
+        "Convidar membros"
+      ],
+      "Maybe Later": [
+        "Talvez mais tarde"
+      ],
+      "Maybe later": [
+        "Talvez mais tarde"
+      ],
       "Select theme": [
         "Selecionar tema"
+      ],
+      "Skip": [
+        "Pular"
       ],
       "Skip for now": [
         "Pular por enquanto"
       ],
       "Try the app": [
         "Experimente o aplicativo"
+      ],
+      "Upload file": [
+        "Enviar arquivo"
       ],
       "Upload folder": [
         "Enviar pasta"
@@ -9543,14 +10086,44 @@
       "10 minutes": [
         "10 minutos"
       ],
+      "Access your files on the go": [
+        "Acesse seus arquivos em qualquer lugar"
+      ],
+      "Back up your photos and memories": [
+        "Faça backup de suas fotos e memórias"
+      ],
+      "Backup your photos and memories": [
+        "Faça backup de suas fotos e memórias"
+      ],
+      "Choose your favorite theme": [
+        "Escolha seu tema favorito"
+      ],
+      "Collaborate on documents": [
+        "Colaborar em documentos"
+      ],
       "Do you prefer ${ DRIVE_APP_NAME } in light or dark mode? Select the color that inspires you the most.": [
         "Você prefere o ${ DRIVE_APP_NAME } no modo claro ou escuro? Selecione a cor que mais inspira você."
+      ],
+      "Drag and drop your files here": [
+        "Arraste e solte os seus arquivos aqui"
+      ],
+      "Edit documents online": [
+        "Editar documentos on-line"
       ],
       "End-to-end encrypted storage for your files": [
         "Armazenamento criptografado de ponta a ponta para seus arquivos"
       ],
+      "Faster uploads for large or multiple files": [
+        "Envie mais rápidos para arquivos grandes ou múltiplos arquivos"
+      ],
       "Files uploaded during this time won’t count towards your storage limit.": [
         "Os arquivos enviados durante esse tempo não contarão para o seu limite de armazenamento."
+      ],
+      "Files uploaded now will not count towards your storage limit": [
+        "Os arquivos enviados agora não contarão para o seu limite de armazenamento."
+      ],
+      "Final approval pending": [
+        "Aprovação final pendente"
       ],
       "Free up hard drive space on your computer": [
         "Libere espaço no disco rígido de seu computador"
@@ -9558,11 +10131,23 @@
       "Get the desktop app": [
         "Obter o aplicativo para computador"
       ],
+      "Get the mobile app": [
+        "Obter o aplicativo para dispositivos móveis"
+      ],
       "Got an Android? We've got you covered.": [
         "Tem um Android? Nós temos a solução para você."
       ],
       "Got an iPhone? We've got you covered.": [
         "Tem um iPhone? Nós temos a solução."
+      ],
+      "Hang tight": [
+        "Aguente firme"
+      ],
+      "Invitation accepted": [
+        "Convite aceito"
+      ],
+      "Invitation received": [
+        "Convite recebido"
       ],
       "Invite team members": [
         "Convidar membros da equipe"
@@ -9570,11 +10155,23 @@
       "Keep the momentum going by uploading more files using the storage included with your plan.": [
         "Continue aproveitando: envie mais arquivos usando o armazenamento incluído no seu plano."
       ],
+      "Manage access": [
+        "Gerenciar acesso"
+      ],
+      "Organize files right from your desktop": [
+        "Organize arquivos diretamente da sua área de trabalho"
+      ],
       "Protect your financial documents, ID cards, project files, photos, and more with end-to-end encryption.": [
         "Proteja seus documentos financeiros, carteiras de identidade, arquivos de projetos, fotos e muito mais com criptografia de ponta a ponta."
       ],
       "Scan the QR code to install the mobile app": [
         "Leia o código QR para instalar o aplicativo móvel"
+      ],
+      "Secure your files": [
+        "Proteja seus arquivos"
+      ],
+      "Securely share files and folders": [
+        "Compartilhe arquivos e pastas com segurança"
       ],
       "Share files & folders": [
         "Compartilhar arquivos e pastas"
@@ -9584,6 +10181,12 @@
       ],
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
         "O proprietário precisa confirmar o acesso de compartilhamento. Você receberá um e-mail quando isso for feito."
+      ],
+      "Upload your first file": [
+        "Carregue seu primeiro arquivo"
+      ],
+      "Work faster, smarter": [
+        "Trabalhe com mais rapidez e inteligência"
       ],
       "Work together": [
         "Trabalhe em conjunto"
@@ -9658,8 +10261,14 @@
       "Only current location": [
         "Única localização atual"
       ],
+      "Select JSON file": [
+        "Selecionar arquivo JSON"
+      ],
       "Verify content": [
         "Verificar conteúdo"
+      ],
+      "Verify thumbnails": [
+        "Verificar miniaturas"
       ]
     },
     "Option group label": {
@@ -10128,8 +10737,14 @@
       "Enter a name": [
         "Insira um nome"
       ],
+      "Enter a new file name": [
+        "Digite um nome para o novo arquivo"
+      ],
       "Enter a new folder name": [
         "Digite o nome para nova pasta"
+      ],
+      "Enter device name": [
+        "Digite o nome do dispositivo"
       ],
       "Enter your email address": [
         "Digite seu endereço de e-mail"
@@ -11609,17 +12224,41 @@
       ]
     },
     "Subtitle": {
+      "Albums shared with you will appear here": [
+        "Os álbuns compartilhados com você aparecerão aqui."
+      ],
+      "Albums you've shared will appear here": [
+        "Os álbuns que você compartilhou aparecerão aqui."
+      ],
       "Shared by ${ sharedBy }": [
         "Compartilhado por ${ sharedBy }"
       ],
+      "Your favorited photos will appear here": [
+        "Suas fotos favoritas aparecerão aqui."
+      ],
       "Your Live Photos will appear here": [
         "Suas fotos ao vivo aparecerão aqui."
+      ],
+      "Your panorama photos will appear here": [
+        "Suas fotos panorâmicas aparecerão aqui."
       ],
       "Your photo bursts will appear here": [
         "Suas sequências de fotos aparecerão aqui"
       ],
       "Your portraits photos will appear here": [
         "Suas fotos de retrato aparecerão aqui."
+      ],
+      "Your RAW photos will appear here": [
+        "Suas fotos RAW aparecerão aqui."
+      ],
+      "Your screenshots will appear here": [
+        "Suas capturas de tela aparecerão aqui."
+      ],
+      "Your selfies photos will appear here": [
+        "Suas selfies aparecerão aqui."
+      ],
+      "Your tagged photos will appear here": [
+        "Suas fotos marcadas aparecerão aqui."
       ]
     },
     "Success": {
@@ -11694,6 +12333,9 @@
       ],
       "Problem reported": [
         "Problema reportado"
+      ],
+      "Recovery has started": [
+        "Recuperação iniciada"
       ],
       "Secure link copied": [
         "Link seguro copiado"
@@ -11829,8 +12471,17 @@
       "Bursts": [
         "Rajadas"
       ],
+      "Favorites": [
+        "Favoritos"
+      ],
+      "Live Photos": [
+        "Fotos ao vivo"
+      ],
       "Panoramas": [
         "Panoramas"
+      ],
+      "Portraits": [
+        "Retratos"
       ],
       "RAW": [
         "RAW"
@@ -11926,6 +12577,9 @@
       "Album details": [
         "Detalhes do álbum"
       ],
+      "Albums": [
+        "Álbuns"
+      ],
       "All settings": [
         "Todas as configurações"
       ],
@@ -11943,6 +12597,10 @@
       ],
       "Are you sure you want to close the preview?": [
         "Você tem certeza que deseja fechar a pré-visualização?"
+      ],
+      "Are you sure you want to remove this item from your list?": [
+        "Tem certeza que deseja excluir esse item da sua lista?",
+        "Tem certeza que deseja excluir esses itens da sua lista?"
       ],
       "Are you sure?": [
         "Você tem certeza?"
@@ -12012,6 +12670,9 @@
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Confirmar a perda dos benefícios da ${ BRAND_NAME }"
+      ],
+      "Confirmation required": [
+        "Confirmação necessária"
       ],
       "Connect apps and devices": [
         "Conectar aplicativos e dispositivos"
@@ -12117,6 +12778,9 @@
       ],
       "Devices": [
         "Dispositivos"
+      ],
+      "Diagnostics": [
+        "Diagnósticos"
       ],
       "Digital signature partially verified. This file was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Assinatura digital parcialmente verificada. Este arquivo foi criado usando um link de compartilhamento publicamente acessível por um usuário sem uma conta ${ BRAND_NAME }, então a identidade dele não pode ser verificada."
@@ -12232,6 +12896,9 @@
       "File details": [
         "Detalhes do arquivo"
       ],
+      "File recovery process": [
+        "Processo de recuperação de arquivo"
+      ],
       "Folder": [
         "Pasta"
       ],
@@ -12242,11 +12909,17 @@
         "Encontrado ${ resultCount } resultado",
         "Encontrados ${ resultCount } resultados"
       ],
+      "Get ${ DRIVE_SHORT_APP_NAME } on your phone": [
+        "Obtenha o ${ DRIVE_SHORT_APP_NAME } no seu celular"
+      ],
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
         "Receba **${ referralInfo.uiData.refereeRewardAmount }** em créditos com ${ planTitle }"
       ],
       "Get full access to ${ CALENDAR_APP_NAME }": [
         "Obter acesso total ao ${ CALENDAR_APP_NAME }"
+      ],
+      "Get mobile and desktop apps": [
+        "Obtenha aplicativos móveis e para computador"
       ],
       "Get more from your VPN": [
         "Obter mais da sua VPN"
@@ -12327,6 +13000,9 @@
       "Last uploaded by": [
         "Último envio por"
       ],
+      "Level": [
+        "Nível"
+      ],
       "Link confirmation": [
         "Confirmar redirecionamento"
       ],
@@ -12384,6 +13060,9 @@
       "Night theme": [
         "Tema noturno"
       ],
+      "No albums shared with me": [
+        "Sem álbum compartilhado comigo"
+      ],
       "No breaches detected": [
         "Nenhuma violação detetada"
       ],
@@ -12393,11 +13072,17 @@
       "No favorites": [
         "Não há favoritos"
       ],
+      "No Live Photos": [
+        "Sem fotos ao vivo"
+      ],
       "No panorama": [
         "Sem panorama"
       ],
       "No photos": [
         "Nenhuma foto"
+      ],
+      "No portraits": [
+        "Sem retratos"
       ],
       "No RAW": [
         "Sem RAW"
@@ -12405,11 +13090,26 @@
       "No results found": [
         "Nenhum resultado encontrado"
       ],
+      "No screenshots": [
+        "Sem capturas de tela"
+      ],
+      "No selfies": [
+        "Sem selfies"
+      ],
+      "No shared albums": [
+        "Sem álbum compartilhado"
+      ],
+      "No videos": [
+        "Sem vídeos"
+      ],
       "Notes": [
         "Notas"
       ],
       "Number of downloads": [
         "Numero de downloads"
+      ],
+      "Number of items": [
+        "Número de itens"
       ],
       "One email, many recipients": [
         "Um e-mail, muitos destinatários"
@@ -12477,6 +13177,9 @@
       "Re-signing contacts": [
         "Assinando os contatos novamente"
       ],
+      "Ready, set, upload.": [
+        "Preparar, apontar, enviar."
+      ],
       "Recommended": [
         "Recomendado"
       ],
@@ -12494,6 +13197,10 @@
       ],
       "Remove device?": [
         "Remover dispositivo?"
+      ],
+      "Remove item?": [
+        "Remover item?",
+        "Remover itens?"
       ],
       "Remove your access?": [
         "Remover seu acesso?"
@@ -12513,6 +13220,9 @@
       "Request new code": [
         "Solicitar um novo código"
       ],
+      "Restore your files": [
+        "Restaurar seus arquivos"
+      ],
       "Reverse charge not supported": [
         "Carregamento reverso não suportado"
       ],
@@ -12524,6 +13234,9 @@
       ],
       "Search results": [
         "Resultado da busca"
+      ],
+      "Searching…": [
+        "Pesquisando…"
       ],
       "Security center": [
         "Centro de segurança"
@@ -12654,6 +13367,12 @@
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Para pré-visualizar esta planilha, abra-a no ${ SHEETS_APP_NAME } ou faça o download."
       ],
+      "Total size": [
+        "Tamanho total"
+      ],
+      "Trash": [
+        "Lixeira"
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Ativar ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -12765,6 +13484,9 @@
       "We'd love to hear from you!": [
         "Adoraríamos ouvir você!"
       ],
+      "Welcome offer": [
+        "Oferta de boas-vindas"
+      ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Boas-vindas ao ${ BRAND_NAME } for Business"
       ],
@@ -12815,6 +13537,9 @@
       ],
       "Your shorter address is now ready": [
         "Seu endereço mais curto já está pronto"
+      ],
+      "You’re off to a great start!": [
+        "Você começou muito bem!"
       ],
       "You’ve got 5 GB of storage": [
         "Você tem 5 GB de armazenamento"
@@ -12982,6 +13707,11 @@
       ],
       "The user must have an address to request data access": [
         "O usuário deve ter um endereço para solicitar o acesso aos dados"
+      ]
+    },
+    "Upsell": {
+      "Get Drive for Business": [
+        "Obter Drive for Business"
       ]
     },
     "user_modal": {

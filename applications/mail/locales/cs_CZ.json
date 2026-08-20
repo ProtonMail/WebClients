@@ -642,6 +642,9 @@
       "Get the browser extension": [
         "Získat rozšíření prohlížeče"
       ],
+      "Get the deal": [
+        "Využít nabídku"
+      ],
       "Get the writing assistant": [
         "Získat asistenta psaní"
       ],
@@ -1733,6 +1736,9 @@
       ],
       "Not now": [
         "Nyní ne"
+      ],
+      "Set up categories": [
+        "Nastavit kategorie"
       ],
       "Skip": [
         "Přeskočit"
@@ -3659,6 +3665,9 @@
       "Mexico": [
         "Mexiko"
       ],
+      "Micronesia": [
+        "Mikronésie"
+      ],
       "Moldova": [
         "Moldavsko"
       ],
@@ -4264,6 +4273,9 @@
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Čtěte, odpovídejte a mějte přehled o Gmailu přímo z aplikace ${ MAIL_APP_NAME }"
+      ],
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Klikněte na e-mail pravým tlačítkem a vyberte „Přesunout do“, nebo jej přetáhněte do jiné kategorie. Podobné e-maily budou v budoucnu automaticky zařazeny tam."
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
         "Odesílejte a přijímejte zprávy Gmailu přímo v aplikaci ${ MAIL_APP_NAME }. Připojte svou adresu na stránce ${ addressesSettingsLink }."
@@ -7882,9 +7894,6 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Pokud jste nenašli e-mail ve vaší schránce, zkontrolujte prosím složku se spamem."
       ],
-      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
-        "Pokud jste ztratili přístup ke své ověřovací aplikaci, můžete použít jeden ze 16 záložních obnovovacích kódů, které jste obdrželi při nastavování dvoufázového ověřování. ${ learnMoreLink }"
-      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Pokud budete pokračovat ve snížení úrovně účtu, ztratíte přístup k placeným funkcím ${ MAIL_APP_NAME } a ${ VPN_APP_NAME }."
       ],
@@ -9220,6 +9229,12 @@
       "You have ${ totalLabel } in your inbox.": [
         "V doručené poště máte ${ totalLabel }."
       ],
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "V kategorii ${ categoryLabel } máte **${ count } konverzaci**",
+        "V kategorii ${ categoryLabel } máte **${ count } konverzace**",
+        "V kategorii ${ categoryLabel } máte **${ count } konverzace**",
+        "V kategorii ${ categoryLabel } máte **${ count } konverzací**"
+      ],
       "You have **${ count } conversation** stored in this folder": [
         "V této složce máte uloženou **${ count } konverzaci**",
         "V této složce máte uloženy **${ count } konverzace**",
@@ -9231,6 +9246,12 @@
         "Máte **${ count } konverzace** označené tímto štítkem",
         "Máte **${ count } konverzací** označených tímto štítkem",
         "Máte **${ count } konverzací** označených tímto štítkem"
+      ],
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "V kategorii ${ categoryLabel } máte **${ count } zprávu**",
+        "V kategorii ${ categoryLabel } máte **${ count } zprávy**",
+        "V kategorii ${ categoryLabel } máte **${ count } zprávy**",
+        "V kategorii ${ categoryLabel } máte **${ count } zpráv**"
       ],
       "You have **${ count } message** stored in this folder": [
         "V této složce máte uloženou **${ count } zprávu**",
@@ -9270,6 +9291,18 @@
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Než budete moci přejít na nižší verzi, musíte deaktivovat nebo odebrat všechny další uživatele, adresy a vlastní domény účtu ${ MAIL_APP_NAME }."
+      ],
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "V kategorii ${ categoryLabel } jste vybrali **${ checked } konverzaci**",
+        "V kategorii ${ categoryLabel } jste vybrali **${ checked } konverzace**",
+        "V kategorii ${ categoryLabel } jste vybrali **${ checked } konverzace**",
+        "V kategorii ${ categoryLabel } jste vybrali **${ checked } konverzací**"
+      ],
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "V kategorii ${ categoryLabel } jste vybrali **${ checked } zprávu**",
+        "V kategorii ${ categoryLabel } jste vybrali **${ checked } zprávy**",
+        "V kategorii ${ categoryLabel } jste vybrali **${ checked } zprávy**",
+        "V kategorii ${ categoryLabel } jste vybrali **${ checked } zpráv**"
       ],
       "You selected **${ count } conversation** from this folder": [
         "Z této složky jste vybral(a) **${ count } konverzaci**",
@@ -9870,6 +9903,9 @@
       "ANY": [
         "JAKÝKOLI"
       ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Vše, co potřebuje vaši pozornost, a e-maily ze zakázaných kategorií"
+      ],
       "App password": [
         "Heslo aplikace"
       ],
@@ -10130,6 +10166,9 @@
       ],
       "Folder location": [
         "Umístění složky"
+      ],
+      "Folder name": [
+        "Název složky"
       ],
       "Forwards to": [
         "Přeposílá na"
@@ -10409,6 +10448,9 @@
       ],
       "Primary": [
         "Primární"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Primární – vše, co potřebuje vaši pozornost, a e-maily ze zakázaných kategorií"
       ],
       "Promotions": [
         "Propagační akce"
@@ -15574,6 +15616,9 @@
         "Přesunout ${ selectionCount } zpráv",
         "Přesunout ${ selectionCount } zpráv"
       ],
+      "Moved to ${ label }. Similar messages will be categorized there in the future.": [
+        "Přesunuto do ${ label }. Podobné zprávy budou v budoucnu zařazeny tam."
+      ],
       "Password copied to clipboard": [
         "Heslo bylo zkopírováno do schránky"
       ],
@@ -16651,6 +16696,9 @@
       ],
       "Referral": [
         "Doporučení"
+      ],
+      "Refine your Categories": [
+        "Vylaďte své kategorie"
       ],
       "Remove forwarding address": [
         "Odebrat adresu přeposílání"

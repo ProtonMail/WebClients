@@ -371,9 +371,6 @@
       "${ BRAND_NAME } shop": [
         "Magazin ${ BRAND_NAME }"
       ],
-      "+${ remaining } more": [
-        "+ încă ${ remaining }"
-      ],
       "Accept": [
         "Acceptare"
       ],
@@ -517,6 +514,9 @@
       ],
       "Approve": [
         "Aprobare"
+      ],
+      "Assign manager(s)": [
+        "Atribuire manager(i)"
       ],
       "Attach screenshot(s)": [
         "Atașare capturi de ecran"
@@ -1579,6 +1579,9 @@
       ],
       "Preview": [
         "Examinare"
+      ],
+      "Preview logs": [
+        "Examinare jurnale"
       ],
       "Previous": [
         "Anteriorul"
@@ -4752,6 +4755,9 @@
       "Mexico": [
         "Mexic"
       ],
+      "Micronesia": [
+        "Micronezia"
+      ],
       "Moldova": [
         "Republica Moldova"
       ],
@@ -6127,9 +6133,6 @@
       "**How it works:** Enter in this device the code displayed on the device you want to sign in to. You will be signed in as **${ email }**. Both devices will stay active.": [
         "**Cum funcționează**: Introduceți în acest dispozitiv codul afișat pe dispozitivul de pe care doriți să vă conectați. Veți fi conectat ca **${ email }**. Ambele dispozitive vor rămâne active."
       ],
-      "Allow QR code sign‒in": [
-        "Permitere conectare cu cod QR"
-      ],
       "Be cautious of messages with QR codes. Only scan a code if you trust the source.": [
         "Aveți grijă la mesajele care au coduri QR. Scanați un cod doar dacă aveți încredere în sursă."
       ],
@@ -6160,8 +6163,8 @@
       "QR code sign-in enabled": [
         "Autentificare cu cod QR activată"
       ],
-      "Scan QR code on your mobile device to sign in": [
-        "Scanați codul QR pe dispozitivul mobil pentru a vă conecta"
+      "Scan QR code on your mobile device to sign in.": [
+        "Scanați codul QR pe dispozitivul mobil pentru a vă conecta."
       ],
       "Scan the code to sign in": [
         "Scanați codul pentru conectare"
@@ -9735,6 +9738,9 @@
       "Enjoying ${ planName }?": [
         "Vă bucurați de ${ planName }?"
       ],
+      "Invited friends": [
+        "Persoane invitate"
+      ],
       "Unlock 4 premium privacy services for just **${ priceString }** more each month": [
         "Deblocați încă patru servicii premium de confidențialitate cu doar **${ priceString }** în plus lunar"
       ],
@@ -10295,6 +10301,9 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } membri fără autentificare unică folosesc autentificarea cu doi factori pentru a se conecta la organizație.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } de membri fără autentificare unică folosesc autentificarea cu doi factori pentru a se conecta la organizație."
       ],
+      "${ helpTranslateLink } by joining our localization community.": [
+        "${ helpTranslateLink } alăturându-vă comunității noastre de localizare."
+      ],
       "${ IDEAL_BRAND_NAME } mark": [
         "Marca ${ IDEAL_BRAND_NAME }"
       ],
@@ -10672,8 +10681,8 @@
       "add a recovery method": [
         "adăugat o metodă de recuperare"
       ],
-      "Add additional users from your organization to manage this company.": [
-        "Adăugați utilizatori din organizația proprie pentru a gestiona această companie."
+      "Add additional users to **${ company.name }** from your organization to manage this company.": [
+        "Adăugați utilizatori suplimentari la **${ company.name }** din organizație pentru a gestiona această companie."
       ],
       "Add an email address in case we need to contact you": [
         "Adăugați o adresă de e-mail în caz că trebuie să vă contactăm"
@@ -11102,6 +11111,9 @@
       "Change your password": [
         "Modificare parolă"
       ],
+      "Changes to your default language and time are reflected on the web. To change the default for mobile apps, go to the settings on your device.": [
+        "Modificările limbii și orei implicite se reflectă pe web. Pentru a schimba setările implicite pentru aplicațiile mobile, accesați setările dispozitivului."
+      ],
       "Check if your recovery phrase can be used to fully recover your account.": [
         "Verificați dacă fraza de recuperare poate fi folosită pentru a vă recupera complet contul."
       ],
@@ -11110,6 +11122,9 @@
       ],
       "Choose a plan that works best for you.": [
         "Alegeți un plan care vi se potrivește cel mai bine."
+      ],
+      "Choose a strong ${ BRAND_NAME } password and don’t reuse it for other accounts.": [
+        "Alegeți o parolă puternică pentru ${ BRAND_NAME } și nu o reutilizați pentru alte conturi."
       ],
       "Choose an Entity ID to continue.": [
         "Alegeți un ID de entitate pentru a continua."
@@ -11963,7 +11978,7 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Dacă vă pierdeți dispozitivul pentru autentificarea cu doi factori (A2F), puteți folosi aceste coduri în locul celor 6 cifre pentru autentificarea cu doi factori pentru a vă conecta la cont. Fiecare cod e de unică folosință."
       ],
-      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
         "Dacă v-ați pierdut accesul la aplicația de autentificare, puteți utiliza unul din cele 16 coduri de recuperare de rezervă furnizate la configurarea autentificării cu doi factori. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
@@ -12286,6 +12301,9 @@
       ],
       "Loading...": [
         "Se încarcă…"
+      ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "Jurnalele ne ajută să înțelegem ce s-a întâmplat înainte de apariția problemei. Acestea includ acțiuni ale aplicației și mesaje de eroare, dar nu și conținutul mesajelor."
       ],
       "Low Priority": [
         "Prioritate scăzută"
@@ -14342,6 +14360,9 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Datele vă sunt pregătite pentru importare din ${ importedEmailAddressStrong } în contul ${ BRAND_NAME }."
       ],
+      "Your default language and time for ${ BRAND_NAME } services.": [
+        "Limba și ora implicite pentru serviciile ${ BRAND_NAME }."
+      ],
       "Your email will only be used for this one-time verification.": [
         "Adresa va fi folosită doar pentru această verificare unică."
       ],
@@ -14395,6 +14416,9 @@
       ],
       "Your plan is limited to 10 versions for up to 7 days": [
         "Planul este limitat la 10 versiuni pentru maxim 7 zile."
+      ],
+      "Your profile and changes to it will be visible to other ${ BRAND_NAME } users.": [
+        "Profilul personal și modificările aduse acestuia vor fi vizibile pentru ceilalți utilizatori din ${ BRAND_NAME }."
       ],
       "Your recent changes have been published. They will be visible to users in the next few hours.": [
         "Modificările recente au fost publicate. Vor fi vizibile utilizatorilor în următoarele câteva ore."
@@ -15692,6 +15716,9 @@
       "Email addresses per user": [
         "Adrese de e-mail per utilizator"
       ],
+      "Email categories": [
+        "Categorii de mesaje"
+      ],
       "Email or username": [
         "E-mail sau utilizator"
       ],
@@ -16009,6 +16036,9 @@
       ],
       "Mail Server (IMAP)": [
         "Server e-mail (IMAP)"
+      ],
+      "Mailbox settings": [
+        "Setările cont e-mail"
       ],
       "Main": [
         "Principală"
@@ -19927,6 +19957,9 @@
       "Move to...": [
         "Mutare în..."
       ],
+      "Mute notifications": [
+        "Oprire notificări"
+      ],
       "My reason isn't listed": [
         "Motivul meu nu este afișat"
       ],
@@ -21635,6 +21668,79 @@
       ],
       "SUMMER SALE": [
         "REDUCERI DE VARĂ"
+      ]
+    },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "Luați oferta"
+      ],
+      "Special Offer": [
+        "Ofertă specială"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "/month": [
+        "/lună"
+      ],
+      "2 individual accounts": [
+        "Două conturi individuale"
+      ],
+      "2 TB of secure storage": [
+        "2 TiB de stocare securizată"
+      ],
+      "3 TB of secure storage": [
+        "3 TiB de stocare securizată"
+      ],
+      "500 GB of secure storage": [
+        "500 GiB de stocare securizată"
+      ],
+      "6 individual accounts": [
+        "Șase conturi individuale"
+      ],
+      "Advanced protection against cyber threats": [
+        "Protecție avansată împotriva amenințărilor cibernetice"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Reducerile se bazează pe prețurile lunare standard. Abonamentul se va reînnoi la tariful anual standard la sfârșitul ciclului de facturare."
+      ]
+    },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } și ${ VPN_SHORT_APP_NAME } premium"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME } premium"
+      ]
+    },
+    "q3campaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } premium"
+      ]
+    },
+    "q3campaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } premium"
+      ]
+    },
+    "q3campaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME } premium"
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "pentru 12 luni"
+      ],
+      "One plan, full power": [
+        "Un singur plan, putere completă"
+      ],
+      "One plan, max savings": [
+        "Un singur plan, reduceri maxime"
+      ],
+      "One plan, more power": [
+        "Un singur plan, mai multă putere"
       ]
     },
     "Recovery Email": {
@@ -27127,8 +27233,8 @@
       "Manage files across devices on Windows, Mac, Android, and iOS.": [
         "Gestionați fișierele pe diferite dispozitive, pe Windows, Mac, Android și iOS."
       ],
-      "Managers": [
-        "Manageri"
+      "Manage managers": [
+        "Gestionare manageri"
       ],
       "Messages": [
         "Mesaje"
@@ -27541,6 +27647,9 @@
       "Send new invite?": [
         "Trimiteți o invitație nouă?"
       ],
+      "September Sale": [
+        "Reduceri de septembrie"
+      ],
       "Service": [
         "Serviciu"
       ],
@@ -27857,6 +27966,9 @@
       ],
       "User converted to SSO": [
         "Utilizator a fost convertit la autentificarea unică (SSO)."
+      ],
+      "User profile": [
+        "Profil utilizator"
       ],
       "Users": [
         "Utilizatori"

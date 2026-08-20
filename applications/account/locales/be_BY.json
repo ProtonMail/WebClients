@@ -4395,6 +4395,9 @@
       "Mexico": [
         "Мексіка"
       ],
+      "Micronesia": [
+        "Мікранезія"
+      ],
       "Moldova": [
         "Малдова"
       ],
@@ -5765,9 +5768,6 @@
       "**How it works:** Enter in this device the code displayed on the device you want to sign in to. You will be signed in as **${ email }**. Both devices will stay active.": [
         "**Як гэта працуе:** Увядзіце на гэтай прыладзе код, паказаны на прыладзе, з якой вы хочаце ўвайсці. Вы ўвойдзеце ў сістэму як **${ email }**. Абедзве прылады застануцца актыўнымі."
       ],
-      "Allow QR code sign‒in": [
-        "Дазволіць уваход з дапамогай QR-кода"
-      ],
       "Be cautious of messages with QR codes. Only scan a code if you trust the source.": [
         "Будзьце асцярожныя з паведамленнямі, якія змяшчаюць QR-коды. Сканіруйце код, толькі калі вы давяраеце крыніцы."
       ],
@@ -5797,9 +5797,6 @@
       ],
       "QR code sign-in enabled": [
         "Уваход з дапамогай QR-кода ўключаны"
-      ],
-      "Scan QR code on your mobile device to sign in": [
-        "Адсканіруйце QR-код на сваёй мабільнай прыладзе для ўваходу"
       ],
       "Scan the code to sign in": [
         "Сканіруйце код для ўваходу"
@@ -11477,9 +11474,6 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Калі вы згубіце сваю прыладу двухфактарнай аўтэнтыфікацыі, то гэтыя коды могуць быць выкарыстаны замест 6-значнага кода двухфактарнай аўтэнтыфікацыі, каб увайсці ў ваш уліковы запіс. Кожны код можна выкарыстаць толькі адзін раз."
       ],
-      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
-        "Вы можаце выкарыстаць 1 з 16 рэзервовых кодаў аднаўлення, якія вы атрымалі пры наладжванні двухфактарнай аўтэнтыфікацыі, калі вы страцілі доступ да вашай праграмы аўтэнтыфікацыі. ${ learnMoreLink }"
-      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Калі вы працягніце паніжэнне свайго тарыфнага плана, то страціце доступ да платных функцый ${ MAIL_APP_NAME } і ${ VPN_APP_NAME }."
       ],
@@ -12523,6 +12517,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Паколькі вы з'яўляецеся пастаянным карыстальнікам, мы дадалі ў ваш уліковы запіс дадатковыя функцыі."
+      ],
+      "Smart Routed through a different country.": [
+        "Разумна маршрутызавана праз іншую краіну."
       ],
       "Smart Routed through: ${ joinedCountries }.": [
         "Разумна маршрутызуецца праз: ${ joinedCountries }."
@@ -15077,6 +15074,9 @@
       ],
       "Email addresses per user": [
         "Адрасы электроннай пошты на карыстальніка"
+      ],
+      "Email categories": [
+        "Катэгорыі электроннай пошты"
       ],
       "Email or username": [
         "Электронная пошта або імя карыстальніка"

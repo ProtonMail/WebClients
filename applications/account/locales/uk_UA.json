@@ -4365,6 +4365,9 @@
       "Mexico": [
         "Мексика"
       ],
+      "Micronesia": [
+        "Мікронезія"
+      ],
       "Moldova": [
         "Молдова"
       ],
@@ -5732,9 +5735,6 @@
       "**How it works:** Enter in this device the code displayed on the device you want to sign in to. You will be signed in as **${ email }**. Both devices will stay active.": [
         "**Як це працює:** введіть на цьому пристрої код, що відображається на пристрої, на якому ви хочете увійти. Ви увійдете як **${ email }**. Обидва пристрої залишаться активними."
       ],
-      "Allow QR code sign‒in": [
-        "Дозволити вхід за QR-кодом"
-      ],
       "Be cautious of messages with QR codes. Only scan a code if you trust the source.": [
         "Будьте обережні з повідомленнями з QR-кодами. Скануйте код, лише якщо ви довіряєте джерелу."
       ],
@@ -5764,9 +5764,6 @@
       ],
       "QR code sign-in enabled": [
         "Вхід за QR-кодом увімкнено"
-      ],
-      "Scan QR code on your mobile device to sign in": [
-        "Відскануйте QR-код на своєму мобільному пристрої для входу"
       ],
       "Scan the code to sign in": [
         "Відскануйте код для входу"
@@ -11354,9 +11351,6 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Якщо ви втратите свій пристрій двоетапної перевірки, можна скористатися цими кодами замість 6-значного коду перевірки для входу в обліковий запис. Кожен код можна використати лише один раз."
       ],
-      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
-        "Якщо ви втратили доступ до своєї програми-автентифікатора, ви можете скористатися 1 із 16 резервних кодів відновлення, наданих під час налаштування двоетапної перевірки. ${ learnMoreLink }"
-      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Якщо ви продовжите перехід на нижчий тарифний план, ви втратите доступ до платних функцій ${ MAIL_APP_NAME } та ${ VPN_APP_NAME }."
       ],
@@ -12379,6 +12373,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Оскільки ви лояльний користувач, ваш обліковий запис має увімкнені додаткові функції."
+      ],
+      "Smart Routed through a different country.": [
+        "Перенаправлено через іншу країну за допомогою Smart Routing."
       ],
       "Smart Routed through: ${ joinedCountries }.": [
         "Smart Routing через: ${ joinedCountries }."
@@ -14897,6 +14894,9 @@
       ],
       "Email addresses per user": [
         "Адреси електронної пошти на користувача"
+      ],
+      "Email categories": [
+        "Категорії електронної пошти"
       ],
       "Email or username": [
         "Е-пошта чи ім'я користувача"

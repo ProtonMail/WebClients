@@ -3041,6 +3041,9 @@
       "Mexico": [
         "Mexiko"
       ],
+      "Micronesia": [
+        "Mikronésie"
+      ],
       "Moldova": [
         "Moldavsko"
       ],
@@ -7987,9 +7990,6 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Ztratíte-li zařízení určené pro dvoufázové ověření, můžete pro přihlášení použít následující kódy místo 6-místného 2FA kódu. Každý kód může být použit pouze jednou."
       ],
-      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
-        "Pokud jste ztratili přístup ke své ověřovací aplikaci, můžete použít jeden ze 16 záložních obnovovacích kódů, které jste obdrželi při nastavování dvoufázového ověřování. ${ learnMoreLink }"
-      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Pokud budete pokračovat ve snížení úrovně účtu, ztratíte přístup k placeným funkcím ${ MAIL_APP_NAME } a ${ VPN_APP_NAME }."
       ],
@@ -8766,6 +8766,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Vzhledem k tomu, že jste věrný uživatel, má Váš účet povolené další funkce."
+      ],
+      "Smart Routed through a different country.": [
+        "Chytře směrováno přes jinou zemi."
       ],
       "Smart Routed through: ${ joinedCountries }.": [
         "Chytře směrováno přes: ${ joinedCountries }."

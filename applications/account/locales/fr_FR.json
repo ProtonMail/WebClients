@@ -155,9 +155,6 @@
       "${ BRAND_NAME } shop": [
         "Boutique ${ BRAND_NAME }"
       ],
-      "+${ remaining } more": [
-        "+ ${ remaining } de plus"
-      ],
       "Accept": [
         "Accepter"
       ],
@@ -4476,6 +4473,9 @@
       "Mexico": [
         "Mexique"
       ],
+      "Micronesia": [
+        "Micronésie"
+      ],
       "Moldova": [
         "Moldavie"
       ],
@@ -5839,9 +5839,6 @@
       "**How it works:** Enter in this device the code displayed on the device you want to sign in to. You will be signed in as **${ email }**. Both devices will stay active.": [
         "**Fonctionnement :** Saisissez sur cet appareil le code affiché sur l’appareil auquel vous voulez vous connecter. Vous serez connecté en tant que **${ email }**. Les deux appareils resteront actifs."
       ],
-      "Allow QR code sign‒in": [
-        "Autoriser la connexion par QR code"
-      ],
       "Be cautious of messages with QR codes. Only scan a code if you trust the source.": [
         "Méfiez-vous des messages contenant des QR codes. Ne scannez un code que si vous faites confiance à la source."
       ],
@@ -5871,9 +5868,6 @@
       ],
       "QR code sign-in enabled": [
         "Connexion par QR code activée"
-      ],
-      "Scan QR code on your mobile device to sign in": [
-        "Scannez le QR code sur votre appareil mobile pour vous connecter."
       ],
       "Scan the code to sign in": [
         "Scannez le code pour vous connecter"
@@ -9263,9 +9257,6 @@
       "Contact us": [
         "Contactez-nous"
       ],
-      "Downloads": [
-        "Téléchargements"
-      ],
       "Enjoying ${ planName }?": [
         "Vous appréciez ${ planName } ?"
       ],
@@ -11354,9 +11345,6 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "En cas de perte de l'appareil que vous utilisez pour l'authentification à deux facteurs, ces codes peuvent être utilisés à la place du code d'authentification à 6 chiffres pour vous connecter à votre compte. Chaque code ne peut être utilisé qu'une seule fois."
       ],
-      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
-        "Si vous avez perdu l'accès à votre application d'authentification, vous pouvez utiliser 1 des 16 codes de récupération de sauvegarde fournis lors de la configuration de l'authentification à deux facteurs. ${ learnMoreLink }"
-      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "En passant à un abonnement inférieur, vous perdrez l'accès aux fonctionnalités payantes de ${ MAIL_APP_NAME } et ${ VPN_APP_NAME }."
       ],
@@ -12405,6 +12393,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Votre compte bénéficie de fonctionnalités supplémentaires parce que vous êtes un utilisateur fidèle."
+      ],
+      "Smart Routed through a different country.": [
+        "Routé via Smart Routing à travers un autre pays."
       ],
       "Smart Routed through: ${ joinedCountries }.": [
         "Routé intelligemment via : ${ joinedCountries }."
@@ -14976,6 +14967,9 @@
       ],
       "Email addresses per user": [
         "Adresses e-mail par utilisateur"
+      ],
+      "Email categories": [
+        "Catégories d'e-mails"
       ],
       "Email or username": [
         "E-mail ou nom d'utilisateur"
@@ -25478,6 +25472,9 @@
       "Dashboard": [
         "Tableau de bord"
       ],
+      "Data collection": [
+        "Collecte de données"
+      ],
       "Data recovery": [
         "Récupération de données"
       ],
@@ -26075,9 +26072,6 @@
       "Manage files across devices on Windows, Mac, Android, and iOS.": [
         "Gérer vos fichiers sur l'ensemble de vos appareils sur Windows, Mac, Android et iOS."
       ],
-      "Managers": [
-        "Gestionnaires"
-      ],
       "Messages": [
         "Messages"
       ],
@@ -26272,6 +26266,9 @@
       ],
       "Priority support:": [
         "Assistance prioritaire :"
+      ],
+      "Privacy": [
+        "Confidentialité"
       ],
       "Privacy and data collection": [
         "Vie privée et collecte de données"

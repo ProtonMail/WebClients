@@ -340,6 +340,9 @@
       "Copy alias “${ name }”": [
         "Copier l'alias « ${ name } »"
       ],
+      "Copy debug transcript": [
+        "Copier la transcription de débogage"
+      ],
       "Copy email to clipboard": [
         "Copier l’adresse e-mail dans le presse-papiers"
       ],
@@ -638,6 +641,9 @@
       ],
       "Get the browser extension": [
         "Téléchargez l'extension de navigateur"
+      ],
+      "Get the deal": [
+        "J'en profite"
       ],
       "Get the writing assistant": [
         "Obtenir l'assistant d'écriture"
@@ -3663,6 +3669,9 @@
       ],
       "Mexico": [
         "Mexique"
+      ],
+      "Micronesia": [
+        "Micronésie"
       ],
       "Moldova": [
         "Moldavie"
@@ -6907,6 +6916,14 @@
         "${ contactsLength } contact",
         "${ contactsLength } contacts"
       ],
+      "${ count } email": [
+        "${ count } message",
+        "${ count } messages"
+      ],
+      "${ count } email · ${ names }": [
+        "${ count } message · ${ names }",
+        "${ count } messages · ${ names }"
+      ],
       "${ count } email → ${ dest }": [
         "${ count } email → ${ dest }",
         "${ count } emails → ${ dest }"
@@ -7299,6 +7316,9 @@
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Tous les sous-dossiers seront également supprimés. Les messages conservés dans le dossier ${ nameDeleted } ne seront toutefois pas supprimés et pourront toujours être retrouvés dans le dossier « Tous les messages »."
       ],
+      "Apply labels": [
+        "Appliquer les labels"
+      ],
       "Apply to future messages": [
         "Appliquer aux futurs messages"
       ],
@@ -7437,6 +7457,9 @@
       "Change your password": [
         "Modifier votre mot de passe"
       ],
+      "Checked Proton support": [
+        "J'ai consulté le support de Proton"
+      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Vérification des contacts en cours : ${ progress } de ${ max }"
       ],
@@ -7523,8 +7546,14 @@
         "Créer un cloud sécurisé pour ${ memberCount } membre",
         "Créer un cloud sécurisé pour ${ memberCount } membres"
       ],
+      "Create folder": [
+        "Créer un dossier"
+      ],
       "Create in": [
         "Créer dans"
+      ],
+      "Create label": [
+        "Créer un label"
       ],
       "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
         "La création de plusieurs comptes gratuits n'est pas autorisée par nos ${ termsLink }."
@@ -7558,6 +7587,9 @@
       ],
       "Daily": [
         "Chaque jour"
+      ],
+      "Debug transcript copied": [
+        "Transcription de débogage copiée"
       ],
       "Dedicated servers": [
         "Serveurs dédiés"
@@ -7763,6 +7795,9 @@
       "Everything in ${ planOrAppName }, plus:": [
         "Tout ce qui est inclus dans ${ planOrAppName }, et plus encore :"
       ],
+      "Expand logs": [
+        "Développer les journaux"
+      ],
       "Expand selection": [
         "Étendre la sélection"
       ],
@@ -7903,9 +7938,6 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si vous ne trouvez pas le message dans votre boite de réception, vérifiez votre dossier Indésirables/spam."
-      ],
-      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
-        "Si vous avez perdu l'accès à votre application d'authentification, vous pouvez utiliser 1 des 16 codes de récupération de sauvegarde fournis lors de la configuration de l'authentification à deux facteurs. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "En passant à un abonnement inférieur, vous perdrez l'accès aux fonctionnalités payantes de ${ MAIL_APP_NAME } et ${ VPN_APP_NAME }."
@@ -8072,7 +8104,7 @@
         "Priorité basse"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Définir ${ MAIL_APP_NAME } comme application de messagerie par défaut."
+        "Faire de ${ MAIL_APP_NAME } votre application de messagerie par défaut."
       ],
       "Manage your folders": [
         "Gérer vos dossiers"
@@ -8082,6 +8114,15 @@
       ],
       "Mark all as read": [
         "Marquer tout comme lu"
+      ],
+      "Mark all as unread": [
+        "Marquer tout comme non lu"
+      ],
+      "Mark as read": [
+        "Marquer comme lu"
+      ],
+      "Mark as unread": [
+        "Marquer comme non lu"
       ],
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
@@ -8519,6 +8560,9 @@
       ],
       "Searched for “${ keyword }”": [
         "Recherche effectuée pour « ${ keyword } »"
+      ],
+      "Searched the web": [
+        "Recherche effectuée sur le Web"
       ],
       "Searched your mail": [
         "J'ai parcouru tes e-mails"
@@ -9935,7 +9979,7 @@
         "Appliquer aux futurs messages"
       ],
       "Archive": [
-        "Archives"
+        "Archive"
       ],
       "Attach screenshot(s)": [
         "Joindre une ou plusieurs captures d’écran"
@@ -10207,6 +10251,9 @@
       "Folder location": [
         "Emplacement du dossier"
       ],
+      "Folder name": [
+        "Nom du dossier"
+      ],
       "Forwards to": [
         "Transfert vers"
       ],
@@ -10302,6 +10349,9 @@
       ],
       "Label messages as": [
         "Labelliser les messages"
+      ],
+      "Label name": [
+        "Nom du label"
       ],
       "Last 12 months only": [
         "Seulement les 12 derniers mois"
@@ -15855,6 +15905,9 @@
       "Apply gift code": [
         "Appliquer un code-cadeau"
       ],
+      "Apply labels": [
+        "Appliquer les labels"
+      ],
       "Archive all messages?": [
         "Archiver tous les messages ?"
       ],
@@ -15981,8 +16034,14 @@
       "Create contact": [
         "Créer un contact"
       ],
+      "Create folder": [
+        "Créer un dossier"
+      ],
       "Create folder \"${ search }\"": [
         "Créer un dossier « ${ search } »"
+      ],
+      "Create label": [
+        "Créer un label"
       ],
       "Create label \"${ search }\"": [
         "Créer un label « ${ search } »"
@@ -16293,6 +16352,12 @@
       ],
       "Make your inbox your own": [
         "Personnalisez votre boîte de réception selon vos envies"
+      ],
+      "Mark all as read": [
+        "Marquer tout comme lu"
+      ],
+      "Mark all as unread": [
+        "Marquer tout comme non lu"
       ],
       "Mark all messages as read": [
         "Marquer tous les messages comme lus"

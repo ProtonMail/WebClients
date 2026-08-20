@@ -371,9 +371,6 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } mağazası"
       ],
-      "+${ remaining } more": [
-        "+${ remaining } diğer"
-      ],
       "Accept": [
         "Kabul et"
       ],
@@ -517,6 +514,9 @@
       ],
       "Approve": [
         "Onayla"
+      ],
+      "Assign manager(s)": [
+        "Yönetici(ler) ata"
       ],
       "Attach screenshot(s)": [
         "Ekran görüntüsü ekle"
@@ -1579,6 +1579,9 @@
       ],
       "Preview": [
         "Ön izle"
+      ],
+      "Preview logs": [
+        "Günlük ön izlemesi"
       ],
       "Previous": [
         "Önceki"
@@ -4724,6 +4727,9 @@
       "Mexico": [
         "Meksika"
       ],
+      "Micronesia": [
+        "Mikronezya"
+      ],
       "Moldova": [
         "Moldova"
       ],
@@ -6090,9 +6096,6 @@
       "**How it works:** Enter in this device the code displayed on the device you want to sign in to. You will be signed in as **${ email }**. Both devices will stay active.": [
         "**Nasıl çalışır:** Oturum açmak istediğiniz aygıtta görüntülenen kodu bu aygıta yazın. **${ email }** olarak oturumunuz açılır. Her iki aygıt da etkin kalır."
       ],
-      "Allow QR code sign‒in": [
-        "Kare kod ile oturum açmaya izin ver"
-      ],
       "Be cautious of messages with QR codes. Only scan a code if you trust the source.": [
         "Kare kod içeren iletilere karşı dikkatli olun. Bir kodu yalnızca kaynağına güvenirseniz tarayın."
       ],
@@ -6123,8 +6126,8 @@
       "QR code sign-in enabled": [
         "Kare kod ile oturum açma özelliği açık"
       ],
-      "Scan QR code on your mobile device to sign in": [
-        "Oturum açmak için mobil aygıtınızdaki kare kodu tarayın"
+      "Scan QR code on your mobile device to sign in.": [
+        "Oturum açmak için mobil aygıtınızla kare kodu tarayın."
       ],
       "Scan the code to sign in": [
         "Oturum açmak için kodu tarayın"
@@ -9663,6 +9666,9 @@
       "Enjoying ${ planName }?": [
         "${ planName } hoşunuza gitti mi?"
       ],
+      "Invited friends": [
+        "Davet edilmiş arkadaşlar"
+      ],
       "Unlock 4 premium privacy services for just **${ priceString }** more each month": [
         "Ayda yalnızca **${ priceString }** fazla ödeyerek 4 ücretli gizlilik hizmetine erişin"
       ],
@@ -10204,6 +10210,9 @@
         "Tek oturum açma kullanmayan ${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } üyeniz kuruluşunuzda oturum açmak için iki adımlı doğrulama kullanıyor.",
         "Tek oturum açma kullanmayan ${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } üyeniz kuruluşunuzda oturum açmak için iki adımlı doğrulama kullanıyor."
       ],
+      "${ helpTranslateLink } by joining our localization community.": [
+        "${ helpTranslateLink } yerelleştirme topluluğumuza katılabilirsiniz."
+      ],
       "${ IDEAL_BRAND_NAME } mark": [
         "${ IDEAL_BRAND_NAME } markası"
       ],
@@ -10559,8 +10568,8 @@
       "add a recovery method": [
         "bir kurtarma yöntemi ekleyin"
       ],
-      "Add additional users from your organization to manage this company.": [
-        "Bu birimi yönetmek için kuruluşunuzdan ek kullanıcılar ekleyin."
+      "Add additional users to **${ company.name }** from your organization to manage this company.": [
+        "Bu birimi yönetmek için kuruluşunuzdan **${ company.name }** birimine yeni kullanıcılar ekleyin."
       ],
       "Add an email address in case we need to contact you": [
         "Sizinle iletişim kurmamız gerekirse kullanabileceğimiz bir e-posta adresi ekleyin"
@@ -10981,6 +10990,9 @@
       "Change your password": [
         "Parolanızı değiştirin"
       ],
+      "Changes to your default language and time are reflected on the web. To change the default for mobile apps, go to the settings on your device.": [
+        "Varsayılan dil ve saat ayarlarındaki değişiklikler siteye de yansıtılır. Mobil uygulamalardaki varsayılan ayarları değiştirmek için aygıtınızdaki ayarlara gidin."
+      ],
       "Check if your recovery phrase can be used to fully recover your account.": [
         "Kurtarma ifadenizin hesabınızı tümüyle kurtarmaya uygun olup olmadığına bakın."
       ],
@@ -10989,6 +11001,9 @@
       ],
       "Choose a plan that works best for you.": [
         "Size en uygun tarifeyi seçin."
+      ],
+      "Choose a strong ${ BRAND_NAME } password and don’t reuse it for other accounts.": [
+        "Güçlü bir ${ BRAND_NAME } parolası seçin ve bu parolayı diğer hesaplarınızda yeniden kullanmayın."
       ],
       "Choose an Entity ID to continue.": [
         "İlerlemek için bir varlık kimliği seçin"
@@ -11836,7 +11851,7 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "İki adımlı doğrulama aygıtınızı kaybederseniz, hesabınıza oturum açmak için 6 rakamlı iki adımlı doğrulama kodu yerine bu kodları kullanabilirsiniz. Her kod yalnızca bir kez kullanılabilir."
       ],
-      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
         "Kimlik doğrulama uygulamanıza erişemiyorsanız iki adımlı doğrulamayı kurarken size verilen 16 yedek kurtarma kodundan birini kullanabilirsiniz. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
@@ -12156,6 +12171,9 @@
       ],
       "Loading...": [
         "Yükleniyor..."
+      ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "Günlük kayıtları sorunun ortaya çıkmasından önce neler olduğunu anlamamıza yardımcı olur. Bu günlük kayıtlarında uygulama işlemleri ve hata iletileri bulunur. Ancak iletilerin içeriği bulunmaz."
       ],
       "Low Priority": [
         "Düşük Öncelik"
@@ -14195,6 +14213,9 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Verileriniz ${ importedEmailAddressStrong } üzerinden ${ BRAND_NAME } hesabınız içine aktarılmaya hazır."
       ],
+      "Your default language and time for ${ BRAND_NAME } services.": [
+        "${ BRAND_NAME } hizmetleri için varsayılan diliniz ve saat ayarınız."
+      ],
       "Your email will only be used for this one-time verification.": [
         "E-posta adresiniz yalnızca bu tek seferlik doğrulama için kullanılacak."
       ],
@@ -14248,6 +14269,9 @@
       ],
       "Your plan is limited to 10 versions for up to 7 days": [
         "Tarifeniz 10 sürüm ve 7 gün ile sınırlıdır"
+      ],
+      "Your profile and changes to it will be visible to other ${ BRAND_NAME } users.": [
+        "Profiliniz ve üzerindeki değişiklikler diğer ${ BRAND_NAME } kullanıcıları tarafından görülebilecek."
       ],
       "Your recent changes have been published. They will be visible to users in the next few hours.": [
         "Son değişiklikleriniz yayınlandı. Önümüzdeki birkaç saat içinde kullanıcılar tarafından görülebilecek."
@@ -15536,6 +15560,9 @@
       "Email addresses per user": [
         "Her kullanıcı için e-posta adresi"
       ],
+      "Email categories": [
+        "E-posta kategorileri"
+      ],
       "Email or username": [
         "E-posta adresi ya da kullanıcı adı"
       ],
@@ -15853,6 +15880,9 @@
       ],
       "Mail Server (IMAP)": [
         "E-posta sunucusu (IMAP)"
+      ],
+      "Mailbox settings": [
+        "E-posta kutusu ayarları"
       ],
       "Main": [
         "Ana"
@@ -19716,6 +19746,9 @@
       "Move to...": [
         "Taşı..."
       ],
+      "Mute notifications": [
+        "Bildirimleri kapat"
+      ],
       "My reason isn't listed": [
         "Gerekçem listede yok"
       ],
@@ -21411,6 +21444,79 @@
       ],
       "SUMMER SALE": [
         "YAZ İNDİRİMİ"
+      ]
+    },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "Fırsatı değerlendirin"
+      ],
+      "Special Offer": [
+        "Özel teklif"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "/month": [
+        "/ay"
+      ],
+      "2 individual accounts": [
+        "2 bireysel hesap"
+      ],
+      "2 TB of secure storage": [
+        "2 TB güvenli depolama alanı"
+      ],
+      "3 TB of secure storage": [
+        "3 TB güvenli depolama alanı"
+      ],
+      "500 GB of secure storage": [
+        "500 GB güvenli depolama alanı"
+      ],
+      "6 individual accounts": [
+        "6 bireysel hesap"
+      ],
+      "Advanced protection against cyber threats": [
+        "Siber tehditlere karşı gelişmiş koruma"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "İndirimler standart aylık fiyatlara göre hesaplanır. Fatura dönemi sona erdiğinde aboneliğiniz standart yıllık ücret üzerinden yenilenir."
+      ]
+    },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ve ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "12 ay için"
+      ],
+      "One plan, full power": [
+        "Tek tarife, tam güç"
+      ],
+      "One plan, max savings": [
+        "Tek tarife, en yüksek kazanç"
+      ],
+      "One plan, more power": [
+        "Tek tarife, daha fazla güç"
       ]
     },
     "Recovery Email": {
@@ -26805,8 +26911,8 @@
       "Manage files across devices on Windows, Mac, Android, and iOS.": [
         "Dosyaları Windows, Mac, Android ve iOS aygıtları arasında yönetin."
       ],
-      "Managers": [
-        "Yöneticiler"
+      "Manage managers": [
+        "Yönetici yönetimi"
       ],
       "Messages": [
         "İletiler"
@@ -27219,6 +27325,9 @@
       "Send new invite?": [
         "Yeni davet gönderilsin mi?"
       ],
+      "September Sale": [
+        "Eylül indirimi"
+      ],
       "Service": [
         "Hizmet"
       ],
@@ -27534,6 +27643,9 @@
       ],
       "User converted to SSO": [
         "Kullanıcıya tek oturum açma eklendi"
+      ],
+      "User profile": [
+        "Kullanıcı profili"
       ],
       "Users": [
         "Kullanıcılar"

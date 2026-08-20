@@ -642,6 +642,9 @@
       "Get the browser extension": [
         "Получить расширение для браузера"
       ],
+      "Get the deal": [
+        "Воспользоваться"
+      ],
       "Get the writing assistant": [
         "Получить помощник по написанию"
       ],
@@ -1733,6 +1736,9 @@
       ],
       "Not now": [
         "Не сейчас"
+      ],
+      "Set up categories": [
+        "Настроить категории"
       ],
       "Skip": [
         "Пропустить"
@@ -3659,6 +3665,9 @@
       "Mexico": [
         "Мексика"
       ],
+      "Micronesia": [
+        "Микронезия"
+      ],
       "Moldova": [
         "Молдавия"
       ],
@@ -4264,6 +4273,9 @@
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Читайте, отвечайте и управляйте почтой Gmail прямо из ${ MAIL_APP_NAME }"
+      ],
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Щёлкните письмо правой кнопкой мыши и выберите «Переместить в» или перетащите его в другую категорию. В будущем похожие письма будут попадать туда автоматически."
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
         "Отправляйте и получайте сообщения Gmail прямо в ${ MAIL_APP_NAME }. Подключите свой адрес в ${ addressesSettingsLink }."
@@ -7920,9 +7932,6 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Если сообщения нет в папке Входящие, проверьте, не попало ли оно в папку Спам."
       ],
-      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
-        "Если вы потеряли доступ к своему приложению для аутентификации, вы можете использовать 1 из 16 резервных кодов восстановления, предоставленных при настройке двухфакторной аутентификации. ${ learnMoreLink }"
-      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Если вы продолжите переход на более дешевую версию, то вы потеряете доступ к ${ MAIL_APP_NAME } и платным функциям ${ VPN_APP_NAME }."
       ],
@@ -9264,6 +9273,12 @@
       "You have ${ totalLabel } in your inbox.": [
         "У вас ${ totalLabel } в вашем почтовом ящике."
       ],
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "В категории ${ categoryLabel } у вас **${ count } беседа**",
+        "В категории ${ categoryLabel } у вас **${ count } беседы**",
+        "В категории ${ categoryLabel } у вас **${ count } бесед**",
+        "В категории ${ categoryLabel } у вас **${ count } беседы**"
+      ],
       "You have **${ count } conversation** stored in this folder": [
         "У Вас **${ count } цепочка писем** в этой папке",
         "У Вас **${ count } цепочки писем** в этой папке",
@@ -9275,6 +9290,12 @@
         "У Вас **${ count } цепочки писем** с этим ярлыком",
         "У Вас **${ count } цепочек писем** с этим ярлыком",
         "У Вас **${ count } цепочек писем** с этим ярлыком"
+      ],
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "В категории ${ categoryLabel } у вас **${ count } сообщение**",
+        "В категории ${ categoryLabel } у вас **${ count } сообщения**",
+        "В категории ${ categoryLabel } у вас **${ count } сообщений**",
+        "В категории ${ categoryLabel } у вас **${ count } сообщения**"
       ],
       "You have **${ count } message** stored in this folder": [
         "У Вас **${ count } сообщение** в этой папке",
@@ -9314,6 +9335,18 @@
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Вы должны отключить или удалить всех дополнительных пользователей ${ MAIL_APP_NAME }, адреса и свои доменты перед переходом на более дешевую версию."
+      ],
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "В категории ${ categoryLabel } вы выбрали **${ checked } беседу**",
+        "В категории ${ categoryLabel } вы выбрали **${ checked } беседы**",
+        "В категории ${ categoryLabel } вы выбрали **${ checked } бесед**",
+        "В категории ${ categoryLabel } вы выбрали **${ checked } беседы**"
+      ],
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "В категории ${ categoryLabel } вы выбрали **${ checked } сообщение**",
+        "В категории ${ categoryLabel } вы выбрали **${ checked } сообщения**",
+        "В категории ${ categoryLabel } вы выбрали **${ checked } сообщений**",
+        "В категории ${ categoryLabel } вы выбрали **${ checked } сообщения**"
       ],
       "You selected **${ count } conversation** from this folder": [
         "Вы выбрали **${ count } цепочку писем** из этой папки",
@@ -9911,6 +9944,9 @@
       "ANY": [
         "ЛЮБОЕ"
       ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Всё, что требует вашего внимания, а также письма из отключённых категорий"
+      ],
       "App password": [
         "Пароль приложения"
       ],
@@ -10171,6 +10207,9 @@
       ],
       "Folder location": [
         "Размещение папки"
+      ],
+      "Folder name": [
+        "Имя папки"
       ],
       "Forwards to": [
         "Переслать"
@@ -10450,6 +10489,9 @@
       ],
       "Primary": [
         "Основной"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Основные — всё, что требует вашего внимания, а также письма из отключённых категорий"
       ],
       "Promotions": [
         "Акции"
@@ -15612,6 +15654,9 @@
         "Переместить ${ selectionCount } сообщений",
         "Переместить ${ selectionCount } сообщений"
       ],
+      "Moved to ${ label }. Similar messages will be categorized there in the future.": [
+        "Перемещено в ${ label }. В будущем похожие сообщения будут попадать туда же."
+      ],
       "Password copied to clipboard": [
         "Пароль скопирован в буфер обмена"
       ],
@@ -16689,6 +16734,9 @@
       ],
       "Referral": [
         "Реферальная программа"
+      ],
+      "Refine your Categories": [
+        "Настройте свои категории"
       ],
       "Remove forwarding address": [
         "Удалить адрес для пересылки"

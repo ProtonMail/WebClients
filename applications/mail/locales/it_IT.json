@@ -639,6 +639,9 @@
       "Get the browser extension": [
         "Ottieni l’estensione per il browser"
       ],
+      "Get the deal": [
+        "Approfitta dell'offerta"
+      ],
       "Get the writing assistant": [
         "Ottieni l'assistente alla scrittura"
       ],
@@ -1732,6 +1735,9 @@
       ],
       "Not now": [
         "Non ora"
+      ],
+      "Set up categories": [
+        "Configura le categorie"
       ],
       "Skip": [
         "Ignora"
@@ -3631,6 +3637,9 @@
       "Mexico": [
         "Messico"
       ],
+      "Micronesia": [
+        "Micronesia"
+      ],
       "Moldova": [
         "Moldavia"
       ],
@@ -4227,6 +4236,9 @@
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Leggi, rispondi e gestisci Gmail da ${ MAIL_APP_NAME }"
       ],
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Fai clic con il pulsante destro su un'email e seleziona «Sposta in», oppure trascinala in un'altra categoria. Le email simili verranno ordinate lì automaticamente in futuro."
+      ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
         "Invia e ricevi messaggi Gmail direttamente in ${ MAIL_APP_NAME }. Connetti il tuo indirizzo in ${ addressesSettingsLink }."
       ],
@@ -4787,6 +4799,9 @@
       ],
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "Impossibile abilitare la ricerca nel contenuto. Riavvia l'applicazione o cancella il testo."
+      ],
+      "Could not grant access to the organization key": [
+        "Impossibile concedere l'accesso alla chiave dell'organizzazione"
       ],
       "Could not open created vault": [
         "Impossibile aprire la cassaforte creata"
@@ -6696,6 +6711,14 @@
         "${ contactsLength } contatto",
         "${ contactsLength } contatti"
       ],
+      "${ count } email": [
+        "${ count } email",
+        "${ count } email"
+      ],
+      "${ count } email · ${ names }": [
+        "${ count } email · ${ names }",
+        "${ count } email · ${ names }"
+      ],
       "${ count } email → ${ dest }": [
         "${ count } email → ${ dest }",
         "${ count } email → ${ dest }"
@@ -7076,6 +7099,9 @@
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Verrà eliminata anche qualsiasi sottocartella. Tuttavia non verranno eliminate le email presenti nella cartella ${ nameDeleted }, le quali potranno ancora essere trovate in Tutta la posta."
       ],
+      "Apply labels": [
+        "Applica etichette"
+      ],
       "Apply to future messages": [
         "Applica ai messaggi futuri"
       ],
@@ -7211,6 +7237,9 @@
       "Change your password": [
         "Cambia la password"
       ],
+      "Checked Proton support": [
+        "Consultato il supporto Proton."
+      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Controllo contatto ${ progress } di ${ max }..."
       ],
@@ -7297,8 +7326,14 @@
         "Crea un cloud sicuro per ${ memberCount } membro",
         "Crea un cloud sicuro per ${ memberCount } membri"
       ],
+      "Create folder": [
+        "Crea una cartella"
+      ],
       "Create in": [
         "Crea in"
+      ],
+      "Create label": [
+        "Crea etichetta"
       ],
       "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
         "Creare account gratuiti multipli non è permesso dal nostro ${ termsLink }."
@@ -7332,6 +7367,9 @@
       ],
       "Daily": [
         "Ogni giorno"
+      ],
+      "Debug transcript copied": [
+        "Trascrizione di debug copiata."
       ],
       "Dedicated servers": [
         "Server dedicati"
@@ -7537,6 +7575,9 @@
       "Everything in ${ planOrAppName }, plus:": [
         "Tutto ciò che è compreso in ${ planOrAppName }, più:"
       ],
+      "Expand logs": [
+        "Espandi i log"
+      ],
       "Expand selection": [
         "Espandi selezione"
       ],
@@ -7671,9 +7712,6 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Se non trovi l'email nella casella di posta, controlla la cartella spam."
-      ],
-      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
-        "Se hai perso l'accesso alla tua app di autenticazione, puoi usare 1 dei 16 codici di recupero di backup forniti quando hai configurato l'autenticazione a due fattori. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Se procedi con il downgrade, perderai l'accesso alle funzionalità a pagamento di ${ MAIL_APP_NAME } e ${ VPN_APP_NAME }."
@@ -7836,6 +7874,9 @@
       "Low Priority": [
         "Priorità bassa"
       ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Imposta ${ MAIL_APP_NAME } come applicazione email predefinita."
+      ],
       "Manage your folders": [
         "Gestisci le tue cartelle"
       ],
@@ -7844,6 +7885,15 @@
       ],
       "Mark all as read": [
         "Segna tutti come letti"
+      ],
+      "Mark all as unread": [
+        "Segna tutte come da leggere"
+      ],
+      "Mark as read": [
+        "Segna come letto"
+      ],
+      "Mark as unread": [
+        "Segna come non letto"
       ],
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
@@ -8253,6 +8303,9 @@
       ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "La ricerca sta impiegando troppo tempo? ${ dropdownButton } o ${ toggleOffButton } da questa sessione di ricerca."
+      ],
+      "Searched the web": [
+        "Cercato sul web"
       ],
       "Secure your files with encrypted cloud storage for free, today.": [
         "Proteggi i tuoi file con l'archiviazione cloud crittografata gratuitamente, oggi."
@@ -8999,6 +9052,10 @@
       "You have ${ totalLabel } in your inbox.": [
         "Hai ${ totalLabel } nella tua posta in arrivo."
       ],
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "Hai **${ count } conversazione** nella categoria ${ categoryLabel }",
+        "Hai **${ count } conversazioni** nella categoria ${ categoryLabel }"
+      ],
       "You have **${ count } conversation** stored in this folder": [
         "Hai **${ count } conversazione** memorizzata in questa cartella",
         "Hai **${ count } conversazioni** memorizzate in questa cartella"
@@ -9006,6 +9063,10 @@
       "You have **${ count } conversation** tagged with this label": [
         "Hai **${ count } conversazione** taggata con questa etichetta",
         "Hai **${ count } conversazioni** taggate con questa etichetta"
+      ],
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "Hai **${ count } messaggio** nella categoria ${ categoryLabel }",
+        "Hai **${ count } messaggi** nella categoria ${ categoryLabel }"
       ],
       "You have **${ count } message** stored in this folder": [
         "Hai **${ count } messaggio ** archiviato in questa cartella",
@@ -9041,6 +9102,14 @@
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Devi disabilitare o rimuovere qualsiasi utente aggiuntivo di ${ MAIL_APP_NAME }, indirizzi e domini personalizzati prima di poter effettuare il downgrade."
+      ],
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "Hai selezionato **${ checked } conversazione** nella categoria ${ categoryLabel }",
+        "Hai selezionato **${ checked } conversazioni** nella categoria ${ categoryLabel }"
+      ],
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "Hai selezionato **${ checked } messaggio** nella categoria ${ categoryLabel }",
+        "Hai selezionato **${ checked } messaggi** nella categoria ${ categoryLabel }"
       ],
       "You selected **${ count } conversation** from this folder": [
         "Hai selezionato **${ count } conversazione** da questa cartella",
@@ -9547,6 +9616,9 @@
       "Account holder": [
         "Titolare del conto"
       ],
+      "Account holder name": [
+        "Nome intestatario del conto"
+      ],
       "Actions": [
         "Azioni"
       ],
@@ -9600,6 +9672,9 @@
       ],
       "ANY": [
         "QUALSIASI"
+      ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Tutto ciò che richiede la tua attenzione, più le email dalle categorie disattivate"
       ],
       "App password": [
         "Password app"
@@ -9868,6 +9943,9 @@
       "Folder location": [
         "Percorso cartella"
       ],
+      "Folder name": [
+        "Nome cartella"
+      ],
       "Forwards to": [
         "Inoltra a"
       ],
@@ -9963,6 +10041,9 @@
       ],
       "Label messages as": [
         "Etichetta messaggi come"
+      ],
+      "Label name": [
+        "Nome etichetta"
       ],
       "Last 12 months only": [
         "Solo gli ultimi 12 mesi"
@@ -10146,6 +10227,9 @@
       ],
       "Primary": [
         "Primario"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Principale - Tutto ciò che richiede la tua attenzione, più le email dalle categorie disattivate"
       ],
       "Promotions": [
         "Promozioni"
@@ -12554,6 +12638,12 @@
       ],
       "No parent folder": [
         "Nessuna cartella principale"
+      ],
+      "Remind me later": [
+        "Ricordamelo più tardi"
+      ],
+      "Yes, don't show again": [
+        "Sì, non mostrare più"
       ]
     },
     "Option group": {
@@ -12846,6 +12936,9 @@
       ],
       "Invalid security code": [
         "Codice di sicurezza non valido"
+      ],
+      "Please enter the account holder name": [
+        "Inserisci il nome del titolare del conto"
       ],
       "Something went wrong. Please try again later.": [
         "Si è verificato un errore. Riprova più tardi."
@@ -15071,6 +15164,9 @@
         "Sposta ${ selectionCount } messaggio",
         "Sposta ${ selectionCount } messaggi"
       ],
+      "Moved to ${ label }. Similar messages will be categorized there in the future.": [
+        "Spostato in ${ label }. I messaggi simili verranno categorizzati lì in futuro."
+      ],
       "Password copied to clipboard": [
         "Password copiata negli appunti"
       ],
@@ -15431,6 +15527,9 @@
       "Apply gift code": [
         "Applica codice regalo"
       ],
+      "Apply labels": [
+        "Applica etichette"
+      ],
       "Archive all messages?": [
         "Archiviare tutti i messaggi?"
       ],
@@ -15557,8 +15656,14 @@
       "Create contact": [
         "Crea contatto"
       ],
+      "Create folder": [
+        "Crea una cartella"
+      ],
       "Create folder \"${ search }\"": [
         "Crea cartella \"${ search }\""
+      ],
+      "Create label": [
+        "Crea etichetta"
       ],
       "Create label \"${ search }\"": [
         "Crea etichetta \"${ search }\""
@@ -15833,6 +15938,9 @@
       "Invalid verification code": [
         "Codice di verifica non valido"
       ],
+      "Keep this banner hidden?": [
+        "Vuoi tenere nascosto questo banner?"
+      ],
       "Label as": [
         "Etichetta come..."
       ],
@@ -15860,6 +15968,12 @@
       ],
       "Make a secure connection your default": [
         "Rendi la connessione sicura la tua connessione predefinita"
+      ],
+      "Mark all as read": [
+        "Segna tutti come già letti"
+      ],
+      "Mark all as unread": [
+        "Contrassegna tutti come non letti"
       ],
       "Mark all messages as read": [
         "Segna tutti i messaggi come letti"
@@ -16106,6 +16220,9 @@
       ],
       "Referral": [
         "Segnalazione"
+      ],
+      "Refine your Categories": [
+        "Perfeziona le tue categorie"
       ],
       "Remove forwarding address": [
         "Rimuovere indirizzo d'inoltro"

@@ -4275,6 +4275,9 @@
       "Mexico": [
         "เม็กซิโก"
       ],
+      "Micronesia": [
+        "ไมโครนีเซีย"
+      ],
       "Moldova": [
         "มอลโดวา"
       ],
@@ -5615,9 +5618,6 @@
       "**How it works:** Enter in this device the code displayed on the device you want to sign in to. You will be signed in as **${ email }**. Both devices will stay active.": [
         "**วิธีการทำงาน:** ป้อนรหัสที่แสดงบนอุปกรณ์ที่คุณต้องการลงชื่อเข้าใช้ลงในอุปกรณ์นี้ คุณจะเข้าสู่ระบบในชื่อ **${ email }** อุปกรณ์ทั้งสองจะยังคงใช้งานได้"
       ],
-      "Allow QR code sign‒in": [
-        "อนุญาตให้ลงชื่อเข้าใช้ด้วยคิวอาร์โค้ด"
-      ],
       "Be cautious of messages with QR codes. Only scan a code if you trust the source.": [
         "ระวังข้อความที่มีคิวอาร์โค้ด สแกนรหัสเฉพาะเมื่อคุณเชื่อถือแหล่งที่มาเท่านั้น"
       ],
@@ -5647,9 +5647,6 @@
       ],
       "QR code sign-in enabled": [
         "เปิดใช้งานการลงชื่อเข้าใช้ด้วยคิวอาร์โค้ด"
-      ],
-      "Scan QR code on your mobile device to sign in": [
-        "สแกนคิวอาร์โค้ดบนอุปกรณ์มือถือของคุณเพื่อลงชื่อเข้าใช้"
       ],
       "Scan the code to sign in": [
         "สแกนรหัสเพื่อลงชื่อเข้าใช้"
@@ -10713,9 +10710,6 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "หากทำอุปกรณ์ที่เปิดใช้งานการยืนยันตัวตนผ่านสองขั้นตอนหาย สามารถใช้รหัสเหล่านี้แทนรหัสการยืนยันตัวตนผ่านสองขั้นตอน 6 หลักเพื่อเข้าสู่ระบบบัญชีได้ แต่ละรหัสสามารถใช้ได้เพียงครั้งเดียวเท่านั้น"
       ],
-      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
-        "หากสูญเสียการเข้าถึงแอปยืนยันตัวตน สามารถใช้ 1 ใน 16 รหัสกู้คืนสำรองข้อมูลที่ให้ไว้เมื่อตั้งค่าการยืนยันตัวตนผ่านสองขั้นตอน ${ learnMoreLink }"
-      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "หากคุณดำเนินการดาวน์เกรดต่อ คุณจะสูญเสียการเข้าถึงคุณสมบัติที่ต้องชำระเงินของ ${ MAIL_APP_NAME } และ ${ VPN_APP_NAME }"
       ],
@@ -11705,6 +11699,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "เราได้เปิดฟีเจอร์เพิ่มให้กับบัญชีของคุณเพราะคุณคือผู้ใช้บริการที่ยึดมั่นในบริการของเรา"
+      ],
+      "Smart Routed through a different country.": [
+        "กำหนดเส้นทางแบบสมาร์ทผ่านประเทศอื่น"
       ],
       "Smart Routed through: ${ joinedCountries }.": [
         "กำหนดเส้นทางอัจฉริยะผ่าน: ${ joinedCountries }."
@@ -13720,6 +13717,9 @@
       "ANY": [
         "ข้อความไหนก็ได้"
       ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "ทุกอย่างที่ต้องการความสนใจจากคุณ พร้อมกับอีเมลจากหมวดหมู่ที่ปิดใช้งาน"
+      ],
       "App password": [
         "รหัสผ่านของแอปพลิเคชั่น"
       ],
@@ -14109,6 +14109,9 @@
       ],
       "Email addresses per user": [
         "ที่อยู่อีเมลต่อผู้ใช้"
+      ],
+      "Email categories": [
+        "หมวดหมู่อีเมล"
       ],
       "Email or username": [
         "อีเมลหรือชื่อผู้ใช้"
@@ -14682,6 +14685,9 @@
       ],
       "Primary": [
         "เป็นหลัก"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "หลัก - ทุกอย่างที่ต้องการความสนใจจากคุณ พร้อมกับอีเมลจากหมวดหมู่ที่ปิดใช้งาน"
       ],
       "Priority support": [
         "การสนับสนุนพิเศษ"

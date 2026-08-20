@@ -2158,6 +2158,9 @@
       "Mexico": [
         "Mexiko"
       ],
+      "Micronesia": [
+        "Mikronesien"
+      ],
       "Moldova": [
         "Moldavien"
       ],
@@ -3051,6 +3054,12 @@
       "Contact signature not verified": [
         "Kontaktsignatur inte verifierad"
       ],
+      "Copy operation aborted": [
+        "Kopieringsåtgärd avbröts"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Kopiering av objekt till utanför en mapp är inte tillåtet"
+      ],
       "Could not find an available name": [
         "Kunde inte hitta ett tillgängligt namn"
       ],
@@ -3074,6 +3083,12 @@
       ],
       "Could not unlock this item": [
         "Kunde inte låsa upp detta objekt"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Upprättande av mappar utanför mappar är inte tillåtet"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Upprättande av mappar utanför mappar är inte tillåtet"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Avmarkera minst ${ calendarsToFixCount } kalender",
@@ -3130,6 +3145,18 @@
       ],
       "Failed to create public share node": [
         "Misslyckades att skapa offentlig delningsnod"
+      ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Misslyckades avkryptera innehållsnyckel: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Kunde inte avkryptera lösenord för bokmärke: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "Misslyckades avkryptera innehållsnyckel: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Kunde inte dekryptera objekt: ${ message }"
       ],
       "Failed to expand folder": [
         "Misslyckades att expandera mapp"
@@ -3194,6 +3221,9 @@
       "Forward address is required": [
         "Adress för vidarebefordran är obligatoriskt"
       ],
+      "Image preview not found": [
+        "Förhandsvisning av bild hittades inte"
+      ],
       "Image upload failed": [
         "Bilduppladdning misslyckades"
       ],
@@ -3239,12 +3269,18 @@
       "Last name is too long": [
         "Efternamn är för långt"
       ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "Äldre publik länk kan inte uppdateras. Vänligen återskapa en ny publik länk."
+      ],
       "Member address not found. Please contact customer support to resolve this": [
         "Medlemsadress hittades inte. Kontakta kundsupport för att lösa detta"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Slå samman minst ${ calendarsToFixCount } kalender med en befintlig ${ BRAND_NAME }-kalender",
         "Slå samman minst ${ calendarsToFixCount } kalendrar med befintliga ${ BRAND_NAME }-kalendrar"
+      ],
+      "Missing inviter email": [
+        "Saknar e-post för inbjudan"
       ],
       "Missing key packet": [
         "Saknar nyckelpaket"
@@ -3261,8 +3297,15 @@
       "Missing signature for ${ signatureType }": [
         "Saknar signatur för ${ signatureType }"
       ],
+      "Moving item to a non-folder is not allowed": [
+        "Flytt av objekt till utanför en mapp är inte tillåtet"
+      ],
       "Name is required": [
         "Namn är obligatoriskt"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "Namn måste vara ${ MAX_NODE_NAME_LENGTH } tecken långt som mest",
+        "Namn måste vara ${ MAX_NODE_NAME_LENGTH } tecken långt som mest"
       ],
       "Name must not be empty": [
         "Namn får inte vara tomt"
@@ -3388,6 +3431,9 @@
         "Tog bort duplicerad inbjudan: ${ joinedInvitee }",
         "Tog bort duplicerade inbjudningar: ${ joinedInvitee }"
       ],
+      "Renaming root item is not allowed": [
+        "Byta namn på root objekt är inte tillåtet"
+      ],
       "Request timed out": [
         "Förfrågan gjorde timeout"
       ],
@@ -3417,6 +3463,9 @@
       ],
       "Some documents could not be loaded": [
         "Några dokument kunde inte laddas"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "Viss fildata kunde inte laddas upp. Vänligen pröva igen."
       ],
       "Some groups could not be deleted": [
         "Några grupper kunde inte tas bort"
@@ -3618,6 +3667,9 @@
       ],
       "You can only upload a new version to a file": [
         "Du kan bara ladda upp en ny version till en fil"
+      ],
+      "You can update a public link for your own files only": [
+        "Du kan endast uppdatera en offentlig länk för dina egna filer"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Du kan inte skicka ett e-postmeddelande till mer än ${ maxContacts } mottagare",
@@ -5065,6 +5117,9 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Om du har problem med att skapa ditt konto, begär en inbjudan så svarar vi inom en arbetsdag."
       ],
+      "If you cancel now, you will lose access to ${ BRAND_NAME } ${ planTitle } on ${ expiryDate }, including these features:": [
+        "Om du avbryter nu, kommer du att förlora åtkomst till ${ BRAND_NAME } ${ planTitle } den ${ expiryDate }, inklusive dessa funktioner:"
+      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Om du avbryter kommer din ${ planTitle }-prenumeration inte att förnyas när den löper ut den ${ expiryDate }."
       ],
@@ -5073,9 +5128,6 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Om du inte hittar e-postmeddelandet i din inkorg, kontrollera din skräppostmapp."
-      ],
-      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
-        "Om du har förlorat åtkomsten till din autentiseringsapp kan du använda 1 av de 16 återställningskoderna för säkerhetskopiering som tillhandahölls när du konfigurerade tvåfaktorsautentisering. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Om du fortsätter med nedgraderingen förlorar du åtkomst till betalfunktioner för ${ MAIL_APP_NAME } och ${ VPN_APP_NAME }."
@@ -5617,6 +5669,9 @@
       ],
       "To migrate this user, enable their address under ${ usersAddressesLink }.": [
         "För att migrera denna användare, aktivera deras adress under ${ usersAddressesLink }."
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "För att migrera denna användare, upphäv deras arkivering från ditt ${ provider.adminConsoleName }."
       ],
       "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
         "För att migrera denna användare, aktivera deras konto i din ${ provider.adminConsoleName }."
@@ -6701,6 +6756,9 @@
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME }-användarplatser"
+      ],
+      "${ price } per seat": [
+        "${ price } per plats"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME }-användarplats",
@@ -8828,6 +8886,9 @@
     "Property": {
       "attributes": [
         "attribut"
+      ],
+      "hash key": [
+        "hash-nyckel"
       ],
       "key": [
         "nyckel"
