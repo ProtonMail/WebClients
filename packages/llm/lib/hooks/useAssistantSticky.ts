@@ -3,9 +3,10 @@ import { differenceInDays, fromUnixTime } from 'date-fns';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import useLocalState from '@proton/components/hooks/useLocalState';
-import { getIsAssistantOpened } from '@proton/llm/lib';
-import type { OpenedAssistant } from '@proton/llm/lib/types';
 import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
+
+import { getIsAssistantOpened } from '../helpers';
+import type { OpenedAssistant } from '../types';
 
 interface Props {
     openedAssistants: OpenedAssistant[];
