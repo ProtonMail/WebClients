@@ -2,9 +2,9 @@ import type { ReactNode, RefObject } from 'react';
 
 import { c } from 'ttag';
 
+import type { PopperPlacement, PopperPosition } from '@proton/atoms/Popper/interface';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
-import type { PopperPlacement, PopperPosition } from '@proton/components/components/popper/interface';
 
 interface DeviceSettingsDropdownProps {
     anchorRef: RefObject<HTMLElement>;

@@ -4,11 +4,11 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Input } from '@proton/atoms/Input/Input';
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
-import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import { IcPlus } from '@proton/icons/icons/IcPlus';

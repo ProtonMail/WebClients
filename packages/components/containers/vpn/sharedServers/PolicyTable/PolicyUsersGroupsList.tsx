@@ -2,16 +2,16 @@ import React, { useEffect, useRef, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
-import { IcUserFilled } from '@proton/icons/icons/IcUserFilled';
-import { IcUsersFilled } from '@proton/icons/icons/IcUsersFilled';
-import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import type {
     SharedServerGroup,
     SharedServerUser,
     VpnLocationFilterPolicy,
 } from '@proton/components/containers/vpn/sharedServers/useSharedServers';
+import { IcUserFilled } from '@proton/icons/icons/IcUserFilled';
+import { IcUsersFilled } from '@proton/icons/icons/IcUsersFilled';
 import clsx from '@proton/utils/clsx';
 
 import type { LocalStatus } from '../constants';

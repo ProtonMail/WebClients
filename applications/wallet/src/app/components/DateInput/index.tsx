@@ -1,13 +1,13 @@
-import type { ChangeEvent, FocusEvent} from 'react';
+import type { ChangeEvent, FocusEvent } from 'react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 
 import type { Locale } from 'date-fns';
 import { addDays, format, parse } from 'date-fns';
 import { c } from 'ttag';
 
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import LocalizedMiniCalendar from '@proton/components/components/miniCalendar/LocalizedMiniCalendar';
-import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import { useHotkeys } from '@proton/components/hooks/useHotkeys';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import generateUID from '@proton/utils/generateUID';
@@ -102,7 +102,6 @@ const DateInput = ({
                 return;
             }
             return newDate;
-            // eslint-disable-next-line no-empty
         } catch (e: any) {}
     }, [temporaryInput]);
 

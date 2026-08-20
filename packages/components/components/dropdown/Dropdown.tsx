@@ -10,10 +10,11 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import type { PopperPlacement, PopperPosition } from '@proton/atoms/Popper/interface';
+import { usePopper } from '@proton/atoms/Popper/usePopper';
+import { allPopperPlacements } from '@proton/atoms/Popper/utils';
+import { Portal } from '@proton/atoms/Portal/Portal';
 import useFocusTrap from '@proton/components/components/focus/useFocusTrap';
-import type { PopperPlacement, PopperPosition } from '@proton/components/components/popper/interface';
-import usePopper from '@proton/components/components/popper/usePopper';
-import { allPopperPlacements } from '@proton/components/components/popper/utils';
 import useDropdownArrowNavigation from '@proton/components/hooks/useDropdownArrowNavigation';
 import useIsClosing from '@proton/components/hooks/useIsClosing';
 import { useCombinedRefs } from '@proton/hooks';
@@ -23,7 +24,6 @@ import noop from '@proton/utils/noop';
 
 import useElementRect from '../../hooks/useElementRect';
 import { type HotkeyTuple, useHotkeys } from '../../hooks/useHotkeys';
-import Portal from '../portal/Portal';
 import type { DropdownSize } from './utils';
 import { DropdownSizeUnit, getHeightValue, getMaxSizeValue, getProp, getWidthValue } from './utils';
 

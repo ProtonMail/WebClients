@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { Portal } from '@proton/components/components/portal';
+import { Portal } from '@proton/atoms/Portal/Portal';
 
 interface Props {
     show: boolean;

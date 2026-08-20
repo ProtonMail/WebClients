@@ -4,9 +4,9 @@ import { c } from 'ttag';
 
 import { NotificationCounter } from '@proton/atoms/NotificationCounter/NotificationCounter';
 import { NotificationDot } from '@proton/atoms/NotificationDot/NotificationDot';
+import type { PopperPlacement } from '@proton/atoms/Popper/interface';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { ThemeColor } from '@proton/colors/types';
-import type { PopperPlacement } from '@proton/components/components/popper/interface';
 import clsx from '@proton/utils/clsx';
 
 export interface Props extends ComponentPropsWithRef<'button'> {

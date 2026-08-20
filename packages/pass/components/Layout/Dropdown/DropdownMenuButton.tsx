@@ -13,13 +13,13 @@ import {
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import type { PopperPlacement } from '@proton/atoms/Popper/interface';
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import type { Props as DropdownMenuButtonCoreProps } from '@proton/components/components/dropdown/DropdownMenuButton';
 import { default as DropdownMenuButtonCore } from '@proton/components/components/dropdown/DropdownMenuButton';
 import Icon from '@proton/components/components/icon/Icon';
-import type { PopperPlacement } from '@proton/components/components/popper/interface';
-import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 import type { IconName } from '@proton/icons/types';

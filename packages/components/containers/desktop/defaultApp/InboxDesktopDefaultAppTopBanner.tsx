@@ -4,9 +4,9 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import RadioGroup from '@proton/components/components/input/RadioGroup';
-import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import {
     getInboxDesktopInfo,

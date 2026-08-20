@@ -2,7 +2,8 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { ContextSeparator, Dropdown, DropdownMenu, ToolbarButton, usePopperAnchor } from '@proton/components';
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
+import { ContextSeparator, Dropdown, DropdownMenu, ToolbarButton } from '@proton/components';
 import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';

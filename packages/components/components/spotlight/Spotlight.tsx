@@ -12,11 +12,12 @@ import { Children, cloneElement, useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import type { PopperPlacement } from '@proton/atoms/Popper/interface';
+import { usePopper } from '@proton/atoms/Popper/usePopper';
+import { usePopperState } from '@proton/atoms/Popper/usePopperState';
+import { shouldShowSideRadius } from '@proton/atoms/Popper/utils';
+import { Portal } from '@proton/atoms/Portal/Portal';
 import Icon from '@proton/components/components/icon/Icon';
-import type { PopperPlacement } from '@proton/components/components/popper/interface';
-import usePopper from '@proton/components/components/popper/usePopper';
-import usePopperState from '@proton/components/components/popper/usePopperState';
-import { shouldShowSideRadius } from '@proton/components/components/popper/utils';
 import useIsClosing from '@proton/components/hooks/useIsClosing';
 import { useCombinedRefs } from '@proton/hooks';
 import type { IconName } from '@proton/icons/types';
@@ -24,8 +25,6 @@ import discoverIllustration from '@proton/styles/assets/img/illustrations/spotli
 import newIllustration from '@proton/styles/assets/img/illustrations/spotlight-stars.svg';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
-
-import Portal from '../portal/Portal';
 
 type SpotlightType = 'discover' | 'new';
 

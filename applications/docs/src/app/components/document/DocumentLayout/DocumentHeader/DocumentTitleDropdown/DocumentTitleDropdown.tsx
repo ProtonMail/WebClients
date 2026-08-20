@@ -7,7 +7,7 @@ import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdow
 import Toggle from '@proton/components/components/toggle/Toggle'
 import useAppTitle from '@proton/components/hooks/useAppTitle'
 import useAuthentication from '@proton/components/hooks/useAuthentication'
-import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor'
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor'
 import useConfig from '@proton/components/hooks/useConfig'
 import useNotifications from '@proton/components/hooks/useNotifications'
 import { getAppVersion } from '@proton/components/helpers/appVersion'

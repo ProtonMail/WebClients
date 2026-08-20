@@ -2,15 +2,15 @@ import React, { useMemo, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
-import { IcEarth } from '@proton/icons/icons/IcEarth';
-import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableCell from '@proton/components/components/table/TableCell';
 import TableRow from '@proton/components/components/table/TableRow';
 import Tabs from '@proton/components/components/tabs/Tabs';
+import { IcEarth } from '@proton/icons/icons/IcEarth';
 
 import { CountryFlagAndName } from '../../gateways/CountryFlagAndName';
 import type { Location, VpnLocationFilterPolicyLocal } from '../constants';

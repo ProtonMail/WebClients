@@ -3,8 +3,8 @@ import { type ReactNode, useEffect, useRef } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { Portal } from '@proton/atoms/Portal/Portal';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { Portal } from '@proton/components/components/portal';
 
 import { LumoIcon } from '../LumoIcon/LumoIcon';
 

@@ -1,4 +1,5 @@
-import { Portal } from '../portal';
+import { Portal } from '@proton/atoms/Portal/Portal';
+
 import Backdrop from './Backdrop';
 import { useModalPositions } from './modalPositions';
 

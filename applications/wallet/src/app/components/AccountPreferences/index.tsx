@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import type { WasmApiWalletAccount } from '@proton/andromeda';
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import {
     Dropdown,
     DropdownButton,
@@ -10,7 +11,6 @@ import {
     DropdownMenuButton,
     DropdownSizeUnit,
     useModalState,
-    usePopperAnchor,
 } from '@proton/components';
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
 import { IcKey } from '@proton/icons/icons/IcKey';
