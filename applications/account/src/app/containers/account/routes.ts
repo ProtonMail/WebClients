@@ -493,12 +493,16 @@ export const getAccountAppRoutes = ({
         (isVisionaryPlan && isMemberProton && isMember);
 
     const canAccessBilling = isFree || canPay || !isMember;
+    // MSP subsidiary orgs have their subscription managed by the MSP manager, so no one in the
+    // subsidiary org can edit it: the dashboard and subscription pages should be hidden for everyone.
+    const isSubsidiaryOrg = !!organization?.IsSubsidiary;
     // There are two paths where the dashboard is shown:
     // 1. (!isAdmin && canAccessBilling): if user can access billing, they can see the dashboard. "!isAdmin" is added because
     //  admin without `account.dashboard.read` permission should not see the dashboard (e.g. User Admin has isAdmin = true
     //  but their responsiblity are CRUD members and groups only)
     // 2. permissions['account.dashboard.read']: this path grants the dashboard to any org member who holds the permission
-    const shouldShowDashboard = (!isAdmin && canAccessBilling) || permissions['account.dashboard.read'];
+    const shouldShowDashboard =
+        !isSubsidiaryOrg && ((!isAdmin && canAccessBilling) || permissions['account.dashboard.read']);
     // We do not have to check app names here as the hook responsible to populate these values will do it for us.
     const shouldShowV2Dashboard = showGenericDashboard || showVPNDashboard || showDashboard || showDriveDashboard;
 
