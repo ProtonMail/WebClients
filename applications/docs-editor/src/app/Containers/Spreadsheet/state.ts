@@ -1,4 +1,3 @@
-import useNotifications from '@proton/components/hooks/useNotifications'
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef } from 'react'
 import { flushSync } from 'react-dom'
 
@@ -48,6 +47,7 @@ import { detectLocalYjsUpdateDrift, recordSpreadsheetLocalStateChange } from './
 import { formatSpreadsheetYjsDriftLogDetails } from './yjs-drift-log'
 import { minutesToMs, secondsToMs } from './time-utils'
 import { getAccentColorForUsername } from './getAccentColorForUsername'
+import { useSheetsDependencies } from './SheetsDependenciesProvider'
 
 // local state
 // -----------
@@ -676,17 +676,17 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
     onSelectRange({ ...range, sheetId })
   })
 
-  const { createNotification } = useNotifications()
+  const { showNotification } = useSheetsDependencies()
   const onDeleteRow = useEvent((sheetId: number, rowIndexes: number[]) => {
     if (baseState.rowCount === rowIndexes.length) {
-      createNotification({ text: c('sheets_2025:Spreadsheet editor').t`Cannot delete all rows`, type: 'error' })
+      showNotification({ text: c('sheets_2025:Spreadsheet editor').t`Cannot delete all rows`, type: 'error' })
       return
     }
     baseState.onDeleteRow(sheetId, rowIndexes)
   })
   const onDeleteColumn = useEvent((sheetId: number, columnIndexes: number[]) => {
     if (baseState.columnCount === columnIndexes.length) {
-      createNotification({ text: c('sheets_2025:Spreadsheet editor').t`Cannot delete all columns`, type: 'error' })
+      showNotification({ text: c('sheets_2025:Spreadsheet editor').t`Cannot delete all columns`, type: 'error' })
       return
     }
     baseState.onDeleteColumn(sheetId, columnIndexes)

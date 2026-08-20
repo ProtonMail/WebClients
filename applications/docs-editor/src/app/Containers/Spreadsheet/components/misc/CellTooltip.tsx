@@ -1,5 +1,4 @@
 import * as Ariakit from '@ariakit/react'
-import useNotifications from '@proton/components/hooks/useNotifications'
 import type { IconName } from '@proton/icons/types'
 import type { CellInterface } from '@rowsncolumns/grid'
 import type { CellTooltipProps } from '@rowsncolumns/spreadsheet'
@@ -9,6 +8,7 @@ import { type Ref, useCallback, useLayoutEffect, useRef, useState } from 'react'
 import { c } from 'ttag'
 import { useApplication } from '../../../ApplicationProvider'
 import { OPEN_LINK_EVENT } from '../../constants'
+import { useSheetsDependencies } from '../../SheetsDependenciesProvider'
 import { createStringifier } from '../../stringifier'
 import { useUI } from '../../ui-store'
 import * as UI from '../ui'
@@ -226,17 +226,17 @@ function LinkInfo({
   const url = link.startsWith('http') ? link : 'https://' + link
   const isReadonly = useUI((state) => state.info.isReadonly)
 
-  const { createNotification } = useNotifications()
+  const { showNotification } = useSheetsDependencies()
   const copyLink = useCallback(() => {
     copyTextToClipboard(url)
-    createNotification({ text: s('Copied') })
-  }, [createNotification, url])
+    showNotification({ text: s('Copied') })
+  }, [showNotification, url])
 
   const selections = useUI((state) => state.legacy.selections)
   const removeLink = useCallback(() => {
     onRemoveLink(sheetId, cell, selections)
-    createNotification({ text: s('Removed') })
-  }, [cell, createNotification, onRemoveLink, selections, sheetId])
+    showNotification({ text: s('Removed') })
+  }, [cell, showNotification, onRemoveLink, selections, sheetId])
 
   const openInsertLinkDialog = useUI.$.view.insertLinkDialog.open
   const editLink = useCallback(() => {
