@@ -1523,7 +1523,8 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel"
+        "Lita på nyckel",
+        "Lita på nycklar"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -5628,6 +5629,9 @@
       ],
       "You can update a public link for your own files only": [
         "Du kan endast uppdatera en offentlig länk för dina egna filer"
+      ],
+      "Expiration date cannot be in the past": [
+        "Utgångsdatum kan inte vara i det förflutna"
       ]
     },
     "error": {
@@ -8029,8 +8033,7 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild",
-        "Infoga bilder"
+        "Infoga bild"
       ],
       "Insert link": [
         "Infoga länk"
