@@ -28,6 +28,7 @@ export enum CommonFeatureFlag {
     NewCancellationFlowUpsell = 'NewCancellationFlowUpsell',
     GoUnlimitedOffer2025 = 'GoUnlimitedOffer2025',
     UnlimitedToDuoPermanentOffer = 'UnlimitedToDuoPermanentOffer',
+    Q3Sale2026FreeToUnlimitedSecondPopup = 'Q3Sale2026FreeToUnlimitedSecondPopup',
     ScribeAdminSetting = 'ScribeAdminSetting',
     SelfTroubleshoot = 'SelfTroubleshoot',
     WalletAztecoWeb = 'WalletAztecoWeb',

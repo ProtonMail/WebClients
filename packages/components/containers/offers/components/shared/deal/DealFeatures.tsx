@@ -1,17 +1,20 @@
 import { useMemo } from 'react';
+import { useLocation } from 'react-router';
 
 import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
-import Badge from '@proton/components/components/badge/Badge';
+import { Badge } from '@proton/components/components/badge/Badge';
 import Icon from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';
 import StripedItem from '@proton/components/components/stripedList/StripedItem';
 import { StripedList } from '@proton/components/components/stripedList/StripedList';
+import useConfig from '@proton/components/hooks/useConfig';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import clsx from '@proton/utils/clsx';
 
+import { getOfferProduct } from '../../../helpers/getOfferProduct';
 import { useDealContext } from './DealContext';
 
 interface Props {
@@ -21,7 +24,11 @@ interface Props {
 
 const DealFeatures = ({ isExpanded, expand }: Props) => {
     const { deal } = useDealContext();
-    const features = useMemo(() => deal.features?.(), [deal.features]);
+    const { APP_NAME } = useConfig();
+    const { pathname } = useLocation();
+
+    const product = getOfferProduct(APP_NAME, pathname);
+    const features = useMemo(() => deal.features?.(product), [deal.features, product]);
 
     if (!features?.length) {
         return null;

@@ -143,6 +143,22 @@ export const getHas2025OfferCoupon = (coupon: string | undefined | null): boolea
     return blackFriday2025Discounts.has(coupon?.toUpperCase());
 };
 
+const q3Sale2026Discounts: Set<string> = new Set([
+    COUPON_CODES.SEP26BUNDLESALE,
+    COUPON_CODES.SEP26BUNDLEDEAL,
+
+    COUPON_CODES.SEP26BUNDLESALECS,
+    COUPON_CODES.SEP26BUNDLEDEALCS,
+]);
+
+export function hasQ3Sale2026Coupon(subscription: MaybeFreeSubscription): boolean {
+    const coupon = subscription?.CouponCode;
+    if (!coupon) {
+        return false;
+    }
+    return q3Sale2026Discounts.has(coupon.toUpperCase());
+}
+
 export const hasMigrationDiscount = (subscription: MaybeFreeSubscription) => {
     return subscription?.CouponCode?.startsWith('MIGRATION');
 };
