@@ -1,15 +1,15 @@
-import {ENABLE_FOUNDATION_SEARCH} from '../../config/search';
-import type {AesGcmCryptoKey} from '../../crypto/types';
-import {DbApi} from '../../indexedDb/db';
-import {selectMasterKey} from '../../redux/selectors';
-import type {SpaceMap} from '../../redux/slices/core/spaces';
-import {getStoreRef} from '../../redux/storeRef';
-import {Role} from '../../types';
-import type {DriveDocument} from '../../types/documents';
+import { ENABLE_FOUNDATION_SEARCH } from '../../config/search';
+import type { AesGcmCryptoKey } from '../../crypto/types';
+import { DbApi } from '../../indexedDb/db';
 import { applyRetentionPolicy } from '../../layouts/sidepanel/helpers';
-import {BM25Index} from './bm25Index';
-import {chunkDocument} from './documentChunker';
-import type {SearchResult, SearchServiceStatus, SearchState} from './types';
+import { selectMasterKey } from '../../redux/selectors';
+import type { SpaceMap } from '../../redux/slices/core/spaces';
+import { getStoreRef } from '../../redux/storeRef';
+import { Role } from '../../types';
+import type { DriveDocument } from '../../types/documents';
+import { BM25Index } from './bm25Index';
+import { chunkDocument } from './documentChunker';
+import type { SearchResult, SearchServiceStatus, SearchState } from './types';
 
 const WorkerMessageType = {
     Search: 0,
@@ -72,7 +72,7 @@ export class SearchService {
     private getMasterKey(): string | null {
         const store = getStoreRef();
         if (!store) return null;
-        return selectMasterKey(store.getState());
+        return selectMasterKey(store.getState()) ?? null;
     }
 
     /**
@@ -186,7 +186,7 @@ export class SearchService {
         const id = message.id ?? crypto.randomUUID();
         const payload = { ...message, id, userId: this.userId, searchIndexKey };
         return new Promise((resolve, reject) => {
-            this.pending.set(id, {resolve, reject});
+            this.pending.set(id, { resolve, reject });
             this.worker!.postMessage(payload);
         });
     }
@@ -872,9 +872,7 @@ export class SearchService {
             return this.toMentionRetrievalResult(nonChunk);
         }
 
-        const chunks = inSpace
-            .filter((doc) => doc.isChunk)
-            .sort((a, b) => (a.chunkIndex || 0) - (b.chunkIndex || 0));
+        const chunks = inSpace.filter((doc) => doc.isChunk).sort((a, b) => (a.chunkIndex || 0) - (b.chunkIndex || 0));
         if (chunks.length > 0) {
             const parentId = chunks[0]!.parentDocumentId || chunks[0]!.id;
             const bestChunk = this.rankDocumentChunks(chunks, searchQuery);
@@ -888,9 +886,7 @@ export class SearchService {
         documentId: string,
         searchQuery: string
     ): ReturnType<SearchService['retrieveDocumentForMention']> {
-        const exactMatch = this.driveDocuments.find(
-            (doc) => doc.id === documentId && !doc.isChunk && doc.content
-        );
+        const exactMatch = this.driveDocuments.find((doc) => doc.id === documentId && !doc.isChunk && doc.content);
         if (exactMatch) {
             return this.toMentionRetrievalResult(exactMatch);
         }

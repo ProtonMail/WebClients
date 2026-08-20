@@ -2,6 +2,7 @@ import { type ReactNode, lazy } from 'react';
 import { useRouteMatch } from 'react-router-dom';
 
 import { useNativeSidebarLayoutApi } from '../components/Composer/hooks/useNativeSidebarLayoutApi';
+import { MasterKeyBanner } from '../components/MasterKeyBanner';
 import HighLoadWarning from '../components/Notifications/HighLoadWarning';
 import { RightDrawer } from '../components/RightDrawer';
 import { useGuestMigrationNotification } from '../components/useGuestMigrationNotification';
@@ -47,6 +48,7 @@ const MainLayoutContent = ({ children }: Props) => {
                             <main className="flex-1 flex flex-column flex-nowrap reset4print md:rounded-xl relative overflow-hidden">
                                 {isHomepage && <MainLayoutAnimatedBackground />}
                                 <HighLoadWarning />
+                                <MasterKeyBanner />
                                 {children}
                             </main>
                             {isOpen && <RightDrawer onClose={toggle} />}

@@ -1,9 +1,21 @@
-import {useCallback, useMemo, useState} from 'react';
+import { useCallback, useMemo, useState } from 'react';
 
-import {useIsGuest} from '../providers/IsGuestProvider';
-import type {WhatsNewFeature} from '../components/WhatsNew/types';
-import {getSeenFeatureFlags, hasSeenFeatureFlag, markFeatureFlagAsSeen} from '../util/whatsNewStorage';
-import {useFeatureFlags} from './useFeatureFlags';
+import type { WhatsNewFeature } from '../components/WhatsNew/types';
+import { useIsGuest } from '../providers/IsGuestProvider';
+import { useLumoSelector } from '../redux/hooks';
+import type { FeatureFlag } from '../redux/slices/featureFlags';
+import { getSeenFeatureFlags, hasSeenFeatureFlag, markFeatureFlagAsSeen } from '../util/whatsNewStorage';
+import { useFeatureFlags } from './useFeatureFlags';
+
+const mergeFeatureFlags = (primary: FeatureFlag[], secondary: FeatureFlag[]): FeatureFlag[] => {
+    const merged = [...primary];
+    for (const flag of secondary) {
+        if (!merged.some((existing) => existing.id === flag.id && existing.versionId === flag.versionId)) {
+            merged.push(flag);
+        }
+    }
+    return merged;
+};
 
 interface UseStaggeredWhatsNewFeaturesReturn {
     currentFeature: WhatsNewFeature | null;
@@ -20,9 +32,15 @@ export const useStaggeredWhatsNewFeatures = (
     features: WhatsNewFeature[],
     isFeatureEnabled: boolean
 ): UseStaggeredWhatsNewFeaturesReturn => {
-    const { isDismissed, dismissFlag, featureFlags } = useFeatureFlags();
+    const { dismissFlag, featureFlags } = useFeatureFlags();
+    const settingsFeatureFlags = useLumoSelector((state) => state.lumoUserSettings.featureFlags);
     const isGuest = useIsGuest();
     const [dismissalVersion, setDismissalVersion] = useState(0);
+
+    const effectiveFeatureFlags = useMemo(
+        () => (isGuest ? featureFlags : mergeFeatureFlags(featureFlags, settingsFeatureFlags)),
+        [featureFlags, isGuest, settingsFeatureFlags]
+    );
 
     const dismissFeature = useCallback(
         (featureId: string, versionFlag: string) => {
@@ -52,11 +70,11 @@ export const useStaggeredWhatsNewFeatures = (
         (featureId: string, versionFlag: string) => {
             if (isGuest) {
                 return hasSeenFeatureFlag(featureId, versionFlag);
-            } else {
-                return isDismissed(featureId, versionFlag);
             }
+
+            return effectiveFeatureFlags.some((flag) => flag.id === featureId && flag.versionId === versionFlag);
         },
-        [isDismissed, isGuest]
+        [effectiveFeatureFlags, isGuest]
     );
 
     return useMemo(() => {
@@ -90,7 +108,7 @@ export const useStaggeredWhatsNewFeatures = (
                     .filter(Boolean);
                 return dismissalTimes.length > 0 ? Math.max(...dismissalTimes) : 0;
             } else {
-                const dismissalTimes = featureFlags
+                const dismissalTimes = effectiveFeatureFlags
                     .map((flag: { dismissedAt: number }) => flag.dismissedAt)
                     .filter(Boolean);
                 return dismissalTimes.length > 0 ? Math.max(...dismissalTimes) : 0;
@@ -122,5 +140,14 @@ export const useStaggeredWhatsNewFeatures = (
             declineFeature,
             isFeatureDismissed,
         };
-    }, [features, isFeatureEnabled, isFeatureDismissed, dismissFlag, isGuest, featureFlags, declineFeature, dismissalVersion]);
+    }, [
+        features,
+        isFeatureEnabled,
+        isFeatureDismissed,
+        dismissFeature,
+        isGuest,
+        effectiveFeatureFlags,
+        declineFeature,
+        dismissalVersion,
+    ]);
 };

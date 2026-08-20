@@ -28,7 +28,6 @@ import { isoToUnixTimestamp } from '../../util/date';
 import {
     selectAttachmentsBySpaceId,
     selectConversationsBySpaceId,
-    selectMasterKey,
     selectMessagesBySpaceId,
     selectRemoteIdFromLocal,
     selectSpaceById,
@@ -75,6 +74,7 @@ import {
 import { updateLumoUserSettingsWithAutoSave } from '../slices/lumoUserSettings';
 import { addResourceLimitError } from '../slices/meta/errors';
 import type { LumoState } from '../store';
+import { waitForMasterKey } from './masterKey';
 import { RETRY_PUSH_EVERY_MS, callWithRetry, isClientError, isLimitReachedError } from './sagaErrors';
 
 /*** helpers ***/
@@ -151,10 +151,7 @@ export function* softDeleteSpaceFromLocal({ payload: localId }: { payload: Space
 
 export function* serializeSpaceSaga(space: Space): SagaIterator<SerializedSpace> {
     const { id: localId } = space;
-    const masterKeyBase64 = yield select(selectMasterKey);
-    if (!masterKeyBase64) {
-        throw new Error(`serializeRemoteSpace ${localId}: no master key in state`);
-    }
+    const masterKeyBase64 = yield call(waitForMasterKey, `serializeSpaceSaga ${localId}`);
     const masterKey: AesKwCryptoKey = yield call(base64ToMasterKey, masterKeyBase64);
     const serializedSpace: SerializedSpace | undefined = yield call(serializeSpace, space, masterKey);
     if (!serializedSpace) {
@@ -166,10 +163,7 @@ export function* serializeSpaceSaga(space: Space): SagaIterator<SerializedSpace>
 export function* deserializeSpaceSaga(serializedSpace: SerializedSpace): SagaIterator<Space> {
     const { id: localId } = serializedSpace;
 
-    const masterKeyBase64 = yield select(selectMasterKey);
-    if (!masterKeyBase64) {
-        throw new Error(`deserializeRemoteSpace ${localId}: no master key in state`);
-    }
+    const masterKeyBase64 = yield call(waitForMasterKey, `deserializeSpaceSaga ${localId}`);
     const masterKey: AesKwCryptoKey = yield call(base64ToMasterKey, masterKeyBase64);
     const deserializedSpace: Space | null = yield call(deserializeSpace, serializedSpace, masterKey);
     if (!deserializedSpace) {
@@ -559,10 +553,7 @@ export function* refreshSpaceFromRemote({
     const dbApi: DbApi = yield getContext('dbApi');
     const { id: localId, remoteId } = encryptedRemoteSpace;
 
-    const masterKeyBase64 = yield select(selectMasterKey);
-    if (!masterKeyBase64) {
-        throw new Error(`refreshSpaceFromRemote ${localId}: no master key in state`);
-    }
+    const masterKeyBase64 = yield call(waitForMasterKey, `refreshSpaceFromRemote ${localId}`);
     const masterKey: AesKwCryptoKey = yield call(base64ToMasterKey, masterKeyBase64);
     const deserializedRemoteSpace: Space | null | undefined = yield call(
         deserializeSpace,

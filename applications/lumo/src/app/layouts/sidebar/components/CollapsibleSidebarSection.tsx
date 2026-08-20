@@ -30,7 +30,7 @@ export const CollapsibleSidebarSection = ({
 
     useEffect(() => {
         if (isSmallScreen) {
-            setIsExpanded(isVisible);
+            setIsExpanded((previous) => (previous === isVisible ? previous : isVisible));
         }
     }, [isVisible, isSmallScreen]);
 
