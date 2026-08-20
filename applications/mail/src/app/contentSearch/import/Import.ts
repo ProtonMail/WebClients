@@ -44,6 +44,7 @@ export class Import {
         private batchSize: number
     ) {}
 
+    /** ids that are missing from the initial import */
     private async getMissingDstIds(srcReader: EncryptedSearchReader, dstReader: IndexReader): Promise<string[]> {
         const newIds = new Set(await dstReader.getAllIds());
         const missingIds: string[] = [];
@@ -55,42 +56,55 @@ export class Import {
         return missingIds;
     }
 
-    private async getOutdatedAndDeletedIds() {
-        const deletedIds = [];
-        const outdatedIds = [];
+    /** ids that have been marked as outdated by the event loop */
+    private async getOutdatedIds() {
+        const deleted = [];
+        const updated = [];
         const txn = this.db.transaction('outdated_import_ids');
         for await (const cursor of txn.store) {
             if (cursor.key !== 'refresh' && typeof cursor.value === 'object') {
                 if (cursor.value.deleted === true) {
-                    deletedIds.push(cursor.key);
+                    deleted.push(cursor.key);
                 } else {
-                    outdatedIds.push(cursor.key);
+                    updated.push(cursor.key);
                 }
             }
         }
-        return { deletedIds, outdatedIds };
+        return { deleted, updated };
+    }
+
+    /** merges getOutdatedIds and getMissingDstIds */
+    private async getIdsToProcess(dstReader: IndexReader) {
+        const outdated = await this.getOutdatedIds();
+        const missing = await this.getMissingDstIds(this.srcReader, dstReader);
+        if (outdated.deleted.length === 0 && outdated.updated.length === 0 && missing.length === 0) {
+            // return undefined when there is no work, so the while loop in `run` exits
+            return;
+        }
+        const mergedSet = new Set(outdated.updated.concat(missing));
+        return {
+            deleted: outdated.deleted,
+            inserted: Array.from(mergedSet)
+        };
     }
 
     public async run() {
         await this.applyRefreshIfNeeded();
         const dstReader = new IndexReader(this.db, this.indexKey);
-        const missingIds = await this.getMissingDstIds(this.srcReader, dstReader);
-        // note: don't close dstReader, it shares this.db (owned by the caller) with the writer below.
-        const { deletedIds, outdatedIds } = await this.getOutdatedAndDeletedIds();
-        const totalToImport = outdatedIds.length + missingIds.length;
-        this.notifications.onTotalAvailable(totalToImport);
-        let totalCompleted = 0;
-        const onMessageCompleted = (completed: number) => {
-            totalCompleted += completed;
-            this.notifications.onCompleted(totalCompleted);
-        };
         const dstWriter = new IndexWriter(this.db, this.indexKey);
+        let idsToProcess: Awaited<ReturnType<Import["getIdsToProcess"]>>;
         try {
-            await this.deleteMessages(deletedIds, dstWriter);
-            const missingSrc = this.srcReader.createBatchReader(missingIds);
-            await this.importMessages(missingSrc, dstWriter, onMessageCompleted);
-            const outdatedSrc = this.srcReader.createBatchReader(outdatedIds);
-            await this.importMessages(outdatedSrc, dstWriter, onMessageCompleted);
+            while (idsToProcess = await this.getIdsToProcess(dstReader)) {
+                this.notifications.onTotalAvailable(idsToProcess.inserted.length);
+                let totalCompleted = 0;
+                const onMessageCompleted = (completed: number) => {
+                    totalCompleted += completed;
+                    this.notifications.onCompleted(totalCompleted);
+                };
+                await this.deleteMessages(idsToProcess.deleted, dstWriter);
+                const insertedSrc = this.srcReader.createBatchReader(idsToProcess.inserted);
+                await this.importMessages(insertedSrc, dstWriter, onMessageCompleted);
+            }
         } finally {
             // this closes the db
             dstWriter.dispose();
@@ -111,18 +125,17 @@ export class Import {
         // cleanup before writing, otherwise index grows enormous
         await dstWriter.cleanup(blobTxn);
         const sealedTxn = await blobTxn.encrypt();
-        const txn = this.db.transaction(['config', 'index_blobs'], 'readwrite');
+        const txn = this.db.transaction(['config', 'index_blobs', 'outdated_import_ids'], 'readwrite');
+        const outdatedStore = txn.objectStore("outdated_import_ids");
         try {
             await sealedTxn.verifyAndWrite(txn);
+            for (const id of ids) {
+                void outdatedStore.delete(id);
+            }
         } catch (err) {
             txn.abort();
             throw err;
         }
-        // we don't delete the deleted ids from outdated_import_ids btw
-        // so we'll try to delete these on every import, which should be fine.
-        // we do this so that if a deleted message somehow is still present
-        // in the old index, we don't bring it back.
-        // e.g. we preserve the delete intent.
         await txn.done;
     }
 
@@ -142,8 +155,7 @@ export class Import {
                 await sealedTxn.verifyAndWrite(txn);
                 const outdatedStore = txn.objectStore('outdated_import_ids');
                 for (const m of messages) {
-                    // eslint-disable-next-line @typescript-eslint/no-floating-promises
-                    outdatedStore.delete(m.metadata.ID);
+                    void outdatedStore.delete(m.metadata.ID);
                 }
             } catch (err) {
                 txn.abort();
