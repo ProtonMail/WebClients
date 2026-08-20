@@ -341,6 +341,7 @@ enum MeetFeatureFlag {
     MeetBlurMulticlassPersonConfidenceBoost = 'MeetBlurMulticlassPersonConfidenceBoost',
     MeetUseNewBackgroundBlurVersion = 'MeetUseNewBackgroundBlurVersion',
     MeetChatThreads = 'MeetChatThreads',
+    MeetVirtualBackground = 'MeetVirtualBackground',
 }
 
 enum LumoFeatureFlag {
