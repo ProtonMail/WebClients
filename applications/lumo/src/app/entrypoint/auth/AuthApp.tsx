@@ -20,7 +20,6 @@ import { newVersionUpdater } from '@proton/shared/lib/busy';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
 import type { UserModel } from '@proton/shared/lib/interfaces';
-import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces';
 import { FlagProvider } from '@proton/unleash/proxy';
 
 import { bootstrapApp } from '../../bootstrap';
@@ -76,11 +75,11 @@ const AuthApp = () => {
                     return;
                 }
 
-                const { user, userSettings, store } = result;
+                const { user, showDrawerSidebar, store } = result;
 
                 setState({
                     store,
-                    showDrawerSidebar: userSettings.HideSidePanel === DRAWER_VISIBILITY.SHOW,
+                    showDrawerSidebar,
                     initialUser: user,
                 });
             } catch (error: any) {
