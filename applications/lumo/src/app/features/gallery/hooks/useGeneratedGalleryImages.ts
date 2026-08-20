@@ -1,6 +1,7 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 import { AssetType, type GeneratedAssetFromApi } from '../../../remote/api';
+import { useIsChatHistoryHydrating } from '../../../hooks/useIsChatHistoryHydrating';
 import { useLumoDispatch, useLumoSelector } from '../../../redux/hooks';
 import { addIdMapEntry } from '../../../redux/slices/core/idmap';
 import { addAttachment } from '../../../redux/slices/core/attachments';
@@ -51,12 +52,14 @@ function groupIntoSections(items: GalleryImageItem[]): GallerySection[] {
 
 export function useGeneratedGalleryImages() {
     const dispatch = useLumoDispatch();
+    const isDataHydrating = useIsChatHistoryHydrating();
     const idmap = useLumoSelector((state) => state.idmap);
     const spaces = useLumoSelector((state) => state.spaces);
     const [sections, setSections] = useState<GallerySection[]>([]);
     const [status, setStatus] = useState<FetchStatus>('idle');
     const [hasMore, setHasMore] = useState(false);
     const [oldestTimestamp, setOldestTimestamp] = useState<number | undefined>(undefined);
+    const hasLoadedRef = useRef(false);
 
     const seedAssetsIntoRedux = useCallback(
         (assets: GeneratedAssetFromApi[]) => {
@@ -181,12 +184,19 @@ export function useGeneratedGalleryImages() {
     }, [oldestTimestamp, status, fetchSection, seedAssetsIntoRedux]);
 
     useEffect(() => {
+        if (isDataHydrating || hasLoadedRef.current) {
+            return;
+        }
+        hasLoadedRef.current = true;
         void load();
-    }, []);
+        // Intentionally omit `load`: it changes when seedAssetsIntoRedux mutates idmap/spaces.
+    }, [isDataHydrating]);
+
+    const effectiveStatus: FetchStatus = isDataHydrating ? 'loading' : status;
 
     return {
         sections,
-        status,
+        status: effectiveStatus,
         hasMore,
         loadMore,
         reload: load,

@@ -17,23 +17,24 @@ export const useConversationStar = ({ conversation, location }: UseConversationS
     const { id, starred } = conversation;
     const dispatch = useLumoDispatch();
     const isGuest = useIsGuest();
-    const favoritesUpsellModal = useModalStateObject();
+    const { openModal: openFavoritesUpsellModal, render: showFavoritesUpsellModal, modalProps: favoritesUpsellModalProps } =
+        useModalStateObject();
 
     const handleStarToggle = useCallback(() => {
         sendConversationFavoriteEvent(isGuest, starred, location);
 
         if (isGuest) {
-            favoritesUpsellModal.openModal(true);
+            openFavoritesUpsellModal(true);
         } else {
             dispatch(toggleConversationStarred(id));
             dispatch(pushConversationRequest({ id }));
         }
-    }, [isGuest, starred, location, favoritesUpsellModal, dispatch, id]);
+    }, [dispatch, id, isGuest, location, openFavoritesUpsellModal, starred]);
 
     return {
         handleStarToggle,
         isStarred: starred,
-        showFavoritesUpsellModal: favoritesUpsellModal.render,
-        favoritesUpsellModalProps: favoritesUpsellModal.modalProps,
+        showFavoritesUpsellModal,
+        favoritesUpsellModalProps,
     };
 };

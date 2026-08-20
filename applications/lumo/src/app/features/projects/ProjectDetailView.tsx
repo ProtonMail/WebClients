@@ -4,6 +4,7 @@ import { useHistory, useParams } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import Loader from '@proton/components/components/loader/Loader';
 import { useModalStateObject } from '@proton/components';
 import useApi from '@proton/components/hooks/useApi';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
@@ -15,6 +16,7 @@ import { FilesManagementView } from '../../components/Files';
 import ConfirmDeleteModal from '../../components/Modals/ConfirmDeleteModal';
 import { SelectableConversationList } from '../../components/SelectableConversationList';
 import { useLumoUserSettings, usePersonalization } from '../../hooks';
+import { useIsChatHistoryHydrating } from '../../hooks/useIsChatHistoryHydrating';
 import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
 import type { HandleSendMessage } from '../../hooks/useLumoActions';
 import { useLumoFlags } from '../../hooks/useLumoFlags';
@@ -59,6 +61,7 @@ interface RouteParams {
 const ProjectDetailViewInner = () => {
     const { projectId } = useParams<RouteParams>();
     const history = useHistory();
+    const isDataHydrating = useIsChatHistoryHydrating();
     const dispatch = useLumoDispatch();
     const api = useApi();
     const [showSidebar] = useState(true);
@@ -234,6 +237,15 @@ const ProjectDetailViewInner = () => {
     );
 
     if (!space || !space.isProject) {
+        if (isDataHydrating) {
+            return (
+                <div className="project-detail-not-found flex flex-column items-center justify-center">
+                    <Loader size="medium" />
+                    <p className="color-weak m-0">{c('collider_2025:Info').t`Loading…`}</p>
+                </div>
+            );
+        }
+
         return (
             <div className="project-detail-not-found flex flex-column items-center justify-center">
                 <img src={lumoProjects} alt="Projects" width={200} />

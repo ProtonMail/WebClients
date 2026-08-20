@@ -4,6 +4,7 @@ import { base64ToMasterKey } from '../../crypto';
 import { deserializeUserSettings, serializeUserSettings } from '../../serialization';
 import { mergeAppendedGeneratedMemories, normalizeMemories } from '../../util/memoryHelpers';
 import { safeLogger } from '../../util/safeLogger';
+import { selectMasterKey } from '../selectors';
 import type { LumoDispatch, LumoState } from '../store';
 import type { LumoThunkArguments } from '../thunk';
 import { updateLumoUserSettingsWithAutoSave } from './lumoUserSettingsActions';
@@ -40,8 +41,8 @@ export const saveLumoUserSettingsToRemote = createAsyncThunk<void, LumoUserSetti
     'lumoUserSettings/saveToRemote',
     async (lumoUserSettings, { extra, getState }) => {
         const { lumoApi } = extra;
-        const state = getState() as any;
-        const masterKey = state.credentials?.masterKey;
+        const state = getState() as LumoState;
+        const masterKey = selectMasterKey(state);
 
         if (!masterKey) {
             throw new Error('Master key not available');
@@ -87,8 +88,8 @@ export const loadLumoUserSettingsFromRemote = createAsyncThunk<
     { extra: LumoThunkArguments }
 >('lumoUserSettings/loadFromRemote', async (_, { extra, getState }) => {
     const { lumoApi } = extra;
-    const state = getState() as any;
-    const masterKey = state.credentials?.masterKey;
+    const state = getState() as LumoState;
+    const masterKey = selectMasterKey(state);
 
     if (!masterKey) {
         throw new Error('Master key not available');
