@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { useModalStateObject, useNotifications } from '@proton/components';
 
-import { useLumoDispatch, useLumoSelector } from '../redux/hooks';
+import { useLumoDispatch, useLumoMemoSelector } from '../redux/hooks';
 import { selectConversationHasGeneratedImages, selectSpaceById } from '../redux/selectors';
 import { locallyDeleteConversationFromLocalRequest } from '../redux/slices/core/conversations';
 import { locallyDeleteSpaceFromLocalRequest } from '../redux/slices/core/spaces';
@@ -22,13 +22,17 @@ export const useConversationDelete = ({ conversation, navigateAfterDelete = true
     const dispatch = useLumoDispatch();
     const navigate = useLumoNavigate();
     const { createNotification } = useNotifications();
-    const confirmDeleteModal = useModalStateObject();
-    const space = useLumoSelector(selectSpaceById(spaceId));
-    const hasGeneratedImages = useLumoSelector(selectConversationHasGeneratedImages(conversationId));
+    const {
+        openModal: openConfirmDeleteModal,
+        render: showConfirmDeleteModal,
+        modalProps: confirmDeleteModalProps,
+    } = useModalStateObject();
+    const space = useLumoMemoSelector(selectSpaceById, [spaceId]);
+    const hasGeneratedImages = useLumoMemoSelector(selectConversationHasGeneratedImages, [conversationId]);
 
     const openConfirmationModal = useCallback(() => {
-        confirmDeleteModal.openModal(true);
-    }, [confirmDeleteModal]);
+        openConfirmDeleteModal(true);
+    }, [openConfirmDeleteModal]);
 
     const handleDelete = useCallback(async () => {
         sendConversationDeleteEvent();
@@ -48,7 +52,7 @@ export const useConversationDelete = ({ conversation, navigateAfterDelete = true
             createNotification({ text: <>{error}</>, type: 'error' });
         }
 
-        confirmDeleteModal.openModal(false);
+        openConfirmDeleteModal(false);
 
         if (navigateAfterDelete) {
             navigate('/');
@@ -59,15 +63,15 @@ export const useConversationDelete = ({ conversation, navigateAfterDelete = true
         space?.isProject,
         dispatch,
         createNotification,
-        confirmDeleteModal,
+        openConfirmDeleteModal,
         navigate,
         navigateAfterDelete,
     ]);
 
     return {
         openConfirmationModal,
-        showConfirmDeleteModal: confirmDeleteModal.render,
-        confirmDeleteModalProps: confirmDeleteModal.modalProps,
+        showConfirmDeleteModal,
+        confirmDeleteModalProps,
         handleDelete,
         hasGeneratedImages,
     };

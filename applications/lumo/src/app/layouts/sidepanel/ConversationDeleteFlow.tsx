@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 import ConfirmDeleteModal from '../../components/Modals/ConfirmDeleteModal';
 import { useConversationDelete } from '../../hooks/useConversationDelete';
@@ -18,7 +18,13 @@ export const ConversationDeleteFlow = ({ conversation, onClose, navigateAfterDel
             navigateAfterDelete,
         });
 
+    const hasOpenedRef = useRef(false);
+
     useEffect(() => {
+        if (hasOpenedRef.current) {
+            return;
+        }
+        hasOpenedRef.current = true;
         openConfirmationModal();
     }, [openConfirmationModal]);
 

@@ -4,12 +4,14 @@ import { Link } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { ChatHistoryLoadingSkeleton } from '../../../components/ChatHistoryLoadingSkeleton';
 import { useLumoUserSettings } from '../../../hooks';
+import { useIsChatHistoryHydrating } from '../../../hooks/useIsChatHistoryHydrating';
 import { useLumoPlan } from '../../../hooks/useLumoPlan';
 import { useConversation } from '../../../providers/ConversationProvider';
 import { useIsGuest } from '../../../providers/IsGuestProvider';
 import { useSidebar } from '../../../providers/SidebarProvider';
-import { useLumoSelector } from '../../../redux/hooks';
+import { useLumoMemoSelector, useLumoSelector } from '../../../redux/hooks';
 import {
     historyRowsEqual,
     selectConversationById,
@@ -23,18 +25,6 @@ import { applyRetentionPolicy } from '../../sidepanel/helpers';
 import { SIDEBAR_CHAT_TOTAL_LIMIT } from '../constants';
 import { CollapsibleSidebarSection } from './CollapsibleSidebarSection';
 
-const SKELETON_ROWS = 8;
-
-const ChatsSidebarLoadingSkeleton = () => {
-    return (
-        <div className="flex flex-column gap-1 px-1.5 pt-1">
-            {Array.from({ length: SKELETON_ROWS }).map((_, i) => (
-                <div key={i} className="skeleton rounded-lg" style={{ height: '32px', opacity: 1 - i * 0.08 }} />
-            ))}
-        </div>
-    );
-};
-
 interface ConnectedItemProps {
     id: string;
     isSelected: boolean;
@@ -42,7 +32,7 @@ interface ConnectedItemProps {
 }
 
 const ConnectedConversationListItem = memo(({ id, isSelected, onItemClick }: ConnectedItemProps) => {
-    const conversation = useLumoSelector(selectConversationById(id));
+    const conversation = useLumoMemoSelector(selectConversationById, [id]);
 
     if (!conversation) {
         return null;
@@ -159,7 +149,7 @@ interface ChatsSidebarSectionProps {
 }
 
 export const ChatsSidebarSection = ({ onItemClick }: ChatsSidebarSectionProps) => {
-    const reduxLoadedFromIdb = useLumoSelector((state) => state.initialization.reduxLoadedFromIdb);
+    const isChatHistoryHydrating = useIsChatHistoryHydrating();
     const isGuest = useIsGuest();
     const { closeOnItemClick } = useSidebar();
 
@@ -169,8 +159,8 @@ export const ChatsSidebarSection = ({ onItemClick }: ChatsSidebarSectionProps) =
 
     const handleItemClick = onItemClick ?? closeOnItemClick;
 
-    if (!reduxLoadedFromIdb) {
-        return <ChatsSidebarLoadingSkeleton />;
+    if (isChatHistoryHydrating) {
+        return <ChatHistoryLoadingSkeleton />;
     }
 
     return <ChatsSidebarSectionInner onItemClick={handleItemClick} />;

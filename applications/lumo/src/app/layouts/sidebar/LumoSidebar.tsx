@@ -41,14 +41,15 @@ const LumoSidebarContent = () => {
     const { showMobileHeader, showSearch, showGallery } = useSidebarVisibility();
     const isGuest = useIsGuest();
     const settingsModal = useModalStateObject();
-    const searchModal = useModalStateObject();
+    const { modalProps: searchModalProps, openModal: openSearchModal, render: searchModalRender } =
+        useModalStateObject();
     const { registerOpenFunction } = useSearchModal();
 
     const { apiKeyManagement } = useLumoFlags();
 
     useEffect(() => {
-        registerOpenFunction(() => searchModal.openModal(true));
-    }, [searchModal, registerOpenFunction]);
+        registerOpenFunction(() => openSearchModal(true));
+    }, [openSearchModal, registerOpenFunction]);
 
     useNativeComposerAccountApi();
 
@@ -75,7 +76,7 @@ const LumoSidebarContent = () => {
 
                 <Scroll className="sidebar-main-scroll flex flex-column flex-1 min-h-0" scrollContained>
                     <div className="sidebar-section flex flex-column gap-1">
-                        {showSearch && <SearchSection onSearchClick={() => searchModal.openModal(true)} />}
+                        {showSearch && <SearchSection onSearchClick={() => openSearchModal(true)} />}
                         {showGallery && <GallerySidebarButton onItemClick={closeOnItemClick} />}
                         {apiKeyManagement && (
                             <SidebarItem
@@ -106,7 +107,7 @@ const LumoSidebarContent = () => {
                 </div>
             </div>
             {settingsModal.render && <SettingsModal {...settingsModal.modalProps} />}
-            {searchModal.render && <SearchModal {...searchModal.modalProps} />}
+            {searchModalRender && <SearchModal {...searchModalProps} />}
         </>
     );
 };
