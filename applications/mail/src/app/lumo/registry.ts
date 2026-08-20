@@ -13,6 +13,7 @@ import { moveEmailsModule } from './skills/organise/moveEmails';
 import { setLocationReadModule } from './skills/organise/setLocationRead';
 import { setReadModule } from './skills/organise/setRead';
 import { setStarredModule } from './skills/organise/setStarred';
+import { findContactsModule } from './skills/reads/findContacts';
 import { listFiltersModule } from './skills/reads/listFilters';
 import { listFoldersModule } from './skills/reads/listFolders';
 import { listLabelsModule } from './skills/reads/listLabels';
@@ -41,6 +42,7 @@ const MODULES: MailToolModule[] = [
     listFoldersModule,
     listLabelsModule,
     listFiltersModule,
+    findContactsModule,
     // Mutations
     moveEmailsModule,
     setStarredModule,
