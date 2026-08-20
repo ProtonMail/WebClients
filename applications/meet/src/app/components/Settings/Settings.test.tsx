@@ -53,6 +53,7 @@ const createMockStore = (
                     [MeetingSideBars.Settings]: true,
                     [MeetingSideBars.Chat]: false,
                     [MeetingSideBars.MeetingDetails]: false,
+                    [MeetingSideBars.Backgrounds]: false,
                 },
                 popupState: {
                     Microphone: false,

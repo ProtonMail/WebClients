@@ -9,6 +9,7 @@ export enum MeetingSideBars {
     Settings = 'Settings',
     Chat = 'Chat',
     MeetingDetails = 'MeetingDetails',
+    Backgrounds = 'Backgrounds',
 }
 
 export enum PopUpControls {
@@ -41,6 +42,7 @@ export interface UIState {
         [MeetingSideBars.Settings]: boolean;
         [MeetingSideBars.Chat]: boolean;
         [MeetingSideBars.MeetingDetails]: boolean;
+        [MeetingSideBars.Backgrounds]: boolean;
     };
     popupState: Record<PopUpControls, boolean>;
     permissionPromptStatus: PermissionPromptStatus;
@@ -58,6 +60,7 @@ const initialState: UIState = {
         [MeetingSideBars.Settings]: false,
         [MeetingSideBars.Chat]: false,
         [MeetingSideBars.MeetingDetails]: false,
+        [MeetingSideBars.Backgrounds]: false,
     },
     popupState: {
         [PopUpControls.Microphone]: false,

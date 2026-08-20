@@ -1,6 +1,8 @@
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms/Button/Button';
 import { useLoading } from '@proton/hooks';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { selectIsLocalParticipantAdminOrHost } from '@proton/meet/store/slices/participants/participantsSlice';
 import { selectIsLocalScreenShare } from '@proton/meet/store/slices/screenShareStatusSlice';
@@ -14,6 +16,7 @@ import {
 } from '@proton/meet/store/slices/uiStateSlice';
 import { selectSubscriptionStatus } from '@proton/meet/store/slices/userSlice';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { SettingToggle } from '../../atoms/SettingToggle/SettingToggle';
 import { SideBar } from '../../atoms/SideBar/SideBar';
@@ -23,6 +26,8 @@ import { BackgroundBlurToggle } from './BackgroundBlurToggle';
 import { NoiseCancellingToggle } from './NoiseCancellingToggle';
 import { WaitingRoomToggle } from './WaitingRoomToggle';
 import { SettingsArea } from './shared/SettingsArea';
+
+import './Settings.scss';
 
 export const Settings = () => {
     const dispatch = useMeetDispatch();
@@ -37,6 +42,8 @@ export const Settings = () => {
     const { isPaidUser } = useMeetSelector(selectSubscriptionStatus);
     const showDuration = useMeetSelector(selectShowDuration);
     const isLocalParticipantAdminOrHost = useMeetSelector(selectIsLocalParticipantAdminOrHost);
+
+    const isVirtualBackgroundEnabled = useFlag('MeetVirtualBackground');
 
     const [loadingLock, withLoadingLock] = useLoading();
     const [loadingBackgroundBlur, withLoadingBackgroundBlur] = useLoading();
@@ -83,6 +90,21 @@ export const Settings = () => {
                                 }}
                                 withTooltip={true}
                             />
+                        )}
+                        {isVirtualBackgroundEnabled && !isMobile() && (
+                            <Button
+                                shape="ghost"
+                                className="virtual-backgrounds-button w-full flex items-center justify-space-between flex-nowrap gap-2 px-0 py-2 text-left"
+                                disabled={!isBackgroundBlurSupported}
+                                onClick={() => dispatch(toggleSideBarStateAction(MeetingSideBars.Backgrounds))}
+                            >
+                                <span className="meet-font-weight">{c('Action').t`Virtual backgrounds`}</span>
+                                <IcChevronRight
+                                    size={4}
+                                    className="shrink-0 mr-custom"
+                                    style={{ '--mr-custom': 'calc(var(--space-1) * -1)' }}
+                                />
+                            </Button>
                         )}
                         <SettingToggle
                             id="disable-videos"

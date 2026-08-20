@@ -4,7 +4,7 @@ import { isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import { useStableCallback } from '../../hooks/useStableCallback';
-import { BackgroundBlurInitializingOverlay } from '../BackgroundBlurInitializingOverlay/BackgroundBlurInitializingOverlay';
+import { BackgroundEffectInitializingOverlay } from '../BackgroundEffectInitializingOverlay/BackgroundEffectInitializingOverlay';
 
 import './VideoPreview.scss';
 
@@ -35,7 +35,7 @@ export const VideoPreview = ({ selectedCameraId, facingMode }: VideoPreviewProps
 
     return (
         <>
-            <div className="h-full w-full relative overflow-hidden">
+            <div className="video-preview h-full w-full relative overflow-hidden">
                 <div
                     className="gradient-overlay absolute top-0 left-0 w-full h-full z-custom"
                     style={{ '--z-custom': '2' }}
@@ -54,7 +54,7 @@ export const VideoPreview = ({ selectedCameraId, facingMode }: VideoPreviewProps
                             (isSafari() || facingMode === 'environment') && isMobile() ? undefined : 'scaleX(-1)',
                     }}
                 />
-                <BackgroundBlurInitializingOverlay />
+                <BackgroundEffectInitializingOverlay />
             </div>
         </>
     );
