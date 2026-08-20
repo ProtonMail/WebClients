@@ -639,6 +639,9 @@
       "Get the browser extension": [
         "Preuzmite proširenje za preglednik"
       ],
+      "Get the deal": [
+        "Ugrabite ponudu"
+      ],
       "Get the writing assistant": [
         "Nabavite pomoćnika za pisanje"
       ],
@@ -1728,6 +1731,9 @@
       ],
       "Not now": [
         "Ne sada"
+      ],
+      "Set up categories": [
+        "Postavi kategorije"
       ],
       "Skip": [
         "Preskoči"
@@ -3635,6 +3641,9 @@
       "Mexico": [
         "Meksiko"
       ],
+      "Micronesia": [
+        "Mikronezija"
+      ],
       "Moldova": [
         "Moldavija"
       ],
@@ -4235,6 +4244,9 @@
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Čitajte, odgovarajte i budite u tijeku s Gmailom unutar aplikacije ${ MAIL_APP_NAME }"
+      ],
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Kliknite desnom tipkom miša na e-poruku i odaberite „Premjesti u“ ili je povucite i ispustite u drugu kategoriju. Slične e-poruke bit će u budućnosti automatski sortirane tamo."
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
         "Šaljite i primajte Gmail poruke izravno u aplikaciji ${ MAIL_APP_NAME }. Povežite svoju adresu na ${ addressesSettingsLink }."
@@ -7752,9 +7764,6 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Ako ne pronađete e-poštu u pristigloj pošti, provjerite svoju mapu neželjene pošte."
       ],
-      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
-        "Ako ste izgubili pristup svojoj autentifikator apl., možete upotrijebiti 1 od 16 sigurnosnih kôdova za oporavak koji su vam pruženi kada ste postavili dvofaktorsku autentikaciju. ${ learnMoreLink }"
-      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Ako nastavite s snižavanjem statusa, izgubit ćete pristup plaćenim ${ MAIL_APP_NAME } i ${ VPN_APP_NAME } značajkama."
       ],
@@ -9080,6 +9089,11 @@
       "You have ${ totalLabel } in your inbox.": [
         "Imate ${ totalLabel } u svojoj pristigloj pošti."
       ],
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "U kategoriji ${ categoryLabel } imate **${ count } razgovor**",
+        "U kategoriji ${ categoryLabel } imate **${ count } razgovora**",
+        "U kategoriji ${ categoryLabel } imate **${ count } razgovora**"
+      ],
       "You have **${ count } conversation** stored in this folder": [
         "Imate **${ count } razgovor** spremljen u ovoj mapi",
         "Imate **${ count } razgovora** spremljenih u ovoj mapi",
@@ -9089,6 +9103,11 @@
         "Imate **${ count } razgovor** označen ovom oznakom",
         "Imate **${ count } razgovora** označena ovom oznakom",
         "Imate **${ count } razgovora** označenih ovom oznakom"
+      ],
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "U kategoriji ${ categoryLabel } imate **${ count } poruku**",
+        "U kategoriji ${ categoryLabel } imate **${ count } poruke**",
+        "U kategoriji ${ categoryLabel } imate **${ count } poruka**"
       ],
       "You have **${ count } message** stored in this folder": [
         "Imate **${ count } poruku** spremljenu u ovoj mapi",
@@ -9126,6 +9145,16 @@
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Morate onemogućiti ili ukloniti sve dodatne korisnike ${ MAIL_APP_NAME }-a, adrese i prilagođene domene prije nego što možete sniziti status."
+      ],
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "U kategoriji ${ categoryLabel } odabrali ste **${ checked } razgovor**",
+        "U kategoriji ${ categoryLabel } odabrali ste **${ checked } razgovora**",
+        "U kategoriji ${ categoryLabel } odabrali ste **${ checked } razgovora**"
+      ],
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "U kategoriji ${ categoryLabel } odabrali ste **${ checked } poruku**",
+        "U kategoriji ${ categoryLabel } odabrali ste **${ checked } poruke**",
+        "U kategoriji ${ categoryLabel } odabrali ste **${ checked } poruka**"
       ],
       "You selected **${ count } conversation** from this folder": [
         "Odabrali ste **${ count } razgovor** iz ove mape",
@@ -9706,6 +9735,9 @@
       "ANY": [
         "BILO KOJI"
       ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Sve što zahtijeva vašu pozornost, plus e-poruke iz onemogućenih kategorija"
+      ],
       "App password": [
         "Lozinka aplikacije"
       ],
@@ -9966,6 +9998,9 @@
       ],
       "Folder location": [
         "Lokacija mape"
+      ],
+      "Folder name": [
+        "Naziv mape"
       ],
       "Forwards to": [
         "Prosljeđuje se na"
@@ -10245,6 +10280,9 @@
       ],
       "Primary": [
         "Glavno"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Primarno – sve što zahtijeva vašu pozornost, plus e-poruke iz onemogućenih kategorija"
       ],
       "Promotions": [
         "Promocije"
@@ -15287,6 +15325,9 @@
         "Premjesti ${ selectionCount } poruke",
         "Premjesti ${ selectionCount } poruka"
       ],
+      "Moved to ${ label }. Similar messages will be categorized there in the future.": [
+        "Premješteno u ${ label }. Slične poruke bit će u budućnosti kategorizirane tamo."
+      ],
       "Password copied to clipboard": [
         "Lozinka je kopirana u međuspremnik"
       ],
@@ -16343,6 +16384,9 @@
       ],
       "Referral": [
         "Preporuka"
+      ],
+      "Refine your Categories": [
+        "Precizirajte svoje kategorije"
       ],
       "Remove forwarding address": [
         "Ukloni adresu za prosljeđivanje"

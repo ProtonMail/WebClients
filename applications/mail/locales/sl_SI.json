@@ -633,6 +633,9 @@
       "Get the browser extension": [
         "Prenesite razširitev brskalnika"
       ],
+      "Get the deal": [
+        "Izkoristite posebno ponudbo"
+      ],
       "Get the writing assistant": [
         "Pridobite pomočnika pri pisanju"
       ],
@@ -1718,6 +1721,9 @@
       ],
       "Not now": [
         "Ne zdaj"
+      ],
+      "Set up categories": [
+        "Nastavi kategorije"
       ],
       "Skip": [
         "Preskoči"
@@ -3588,6 +3594,9 @@
       "Mexico": [
         "Mehika"
       ],
+      "Micronesia": [
+        "Mikronezija"
+      ],
       "Moldova": [
         "Moldavija"
       ],
@@ -3647,6 +3656,9 @@
       ],
       "North Korea": [
         "Severna Koreja"
+      ],
+      "North Macedonia": [
+        "Severna Makedonija"
       ],
       "Northern Mariana Islands": [
         "Severni Marijanski otoki"
@@ -7845,9 +7857,6 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Če sporočila ne najdete v nabiralniku, poglejte v mapo z neželeno pošto."
       ],
-      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
-        "Če ste izgubili dostop do aplikacije za preverjanje pristnosti, lahko uporabite eno od 16. kod za obnovitev, ki ste jih prejeli ob nastavitvi dvojnega preverjanja pristnosti. ${ learnMoreLink }"
-      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Če nadaljujete s podgradnjo, boste izgubili dostop do plačljivih funkcij ${ MAIL_APP_NAME } in ${ VPN_APP_NAME }."
       ],
@@ -9222,6 +9231,12 @@
       "You have ${ totalLabel } in your inbox.": [
         "V mapi Prejeto imate ${ totalLabel }."
       ],
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "V kategoriji ${ categoryLabel } imate **${ count } pogovor**",
+        "V kategoriji ${ categoryLabel } imate **${ count } pogovora**",
+        "V kategoriji ${ categoryLabel } imate **${ count } pogovore**",
+        "V kategoriji ${ categoryLabel } imate **${ count } pogovorov**"
+      ],
       "You have **${ count } conversation** stored in this folder": [
         "V tej mapi je shranjen **${ count } pogovor**",
         "V tej mapi sta shranjena **${ count } pogovora**",
@@ -9233,6 +9248,12 @@
         "Imate **${ count } pogovora** s to oznako",
         "Imate **${ count } pogovore** s to oznako",
         "Imate **${ count } pogovorov** s to oznako"
+      ],
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "V kategoriji ${ categoryLabel } imate **${ count } sporočilo**",
+        "V kategoriji ${ categoryLabel } imate **${ count } sporočili**",
+        "V kategoriji ${ categoryLabel } imate **${ count } sporočila**",
+        "V kategoriji ${ categoryLabel } imate **${ count } sporočil**"
       ],
       "You have **${ count } message** stored in this folder": [
         "V tej mapi je shranjeno **${ count } sporočilo**",
@@ -9272,6 +9293,18 @@
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Preden lahko zmanjšate paket, morate onemogočiti ali odstraniti vse dodatne uporabnike, naslove in domene po meri aplikacije ${ MAIL_APP_NAME }."
+      ],
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "V kategoriji ${ categoryLabel } ste izbrali **${ checked } pogovor**",
+        "V kategoriji ${ categoryLabel } ste izbrali **${ checked } pogovora**",
+        "V kategoriji ${ categoryLabel } ste izbrali **${ checked } pogovore**",
+        "V kategoriji ${ categoryLabel } ste izbrali **${ checked } pogovorov**"
+      ],
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "V kategoriji ${ categoryLabel } ste izbrali **${ checked } sporočilo**",
+        "V kategoriji ${ categoryLabel } ste izbrali **${ checked } sporočili**",
+        "V kategoriji ${ categoryLabel } ste izbrali **${ checked } sporočila**",
+        "V kategoriji ${ categoryLabel } ste izbrali **${ checked } sporočil**"
       ],
       "You selected **${ count } conversation** from this folder": [
         "Izbrali ste **${ count } pogovor** iz te mape",
@@ -9839,6 +9872,9 @@
       "ANY": [
         "KATERIKOLI"
       ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Vse, kar zahteva vašo pozornost, in e-pošta iz onemogočenih kategorij"
+      ],
       "App password": [
         "Geslo aplikacije"
       ],
@@ -10093,6 +10129,9 @@
       ],
       "Folder location": [
         "Mesto mape"
+      ],
+      "Folder name": [
+        "Ime mape"
       ],
       "Forwards to": [
         "Posreduje na"
@@ -10357,6 +10396,9 @@
       ],
       "Primary": [
         "Glavni"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Primarno – vse, kar zahteva vašo pozornost, in e-pošta iz onemogočenih kategorij"
       ],
       "Promotions": [
         "Reklame"
@@ -16309,6 +16351,9 @@
       ],
       "Referral": [
         "Priporočilo"
+      ],
+      "Refine your Categories": [
+        "Izboljšajte svoje kategorije"
       ],
       "Remove from list?": [
         "Odstrani s seznama?"

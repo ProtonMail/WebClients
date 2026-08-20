@@ -340,6 +340,9 @@
       "Copy alias “${ name }”": [
         "“${ name }” takma adını kopyala"
       ],
+      "Copy debug transcript": [
+        "Hata ayıklama çıktısını kopyala"
+      ],
       "Copy email to clipboard": [
         "E-postayı panoya kopyala"
       ],
@@ -638,6 +641,9 @@
       ],
       "Get the browser extension": [
         "Tarayıcı eklentisini edinin"
+      ],
+      "Get the deal": [
+        "Tekliften yararlanın"
       ],
       "Get the writing assistant": [
         "Yazma yardımcısını edinin"
@@ -1083,6 +1089,9 @@
       ],
       "Preview contact": [
         "Kişiyi ön izle"
+      ],
+      "Preview logs": [
+        "Günlük ön izlemesi"
       ],
       "Previous": [
         "Önceki"
@@ -3669,6 +3678,9 @@
       ],
       "Mexico": [
         "Meksika"
+      ],
+      "Micronesia": [
+        "Mikronezya"
       ],
       "Moldova": [
         "Moldova"
@@ -7568,6 +7580,9 @@
       "Change your password": [
         "Parolanızı değiştirin"
       ],
+      "Checked Proton support": [
+        "Proton desteği denetlendi"
+      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Kişi denetleniyor ${ progress }/${ max }..."
       ],
@@ -7654,8 +7669,14 @@
         "${ memberCount } üye için güvenli bir bulut oluşturun",
         "${ memberCount } üye için güvenli bir bulut oluşturun"
       ],
+      "Create folder": [
+        "Klasör oluştur"
+      ],
       "Create in": [
         "Şuraya ekle"
+      ],
+      "Create label": [
+        "Etiket oluştur"
       ],
       "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
         "${ termsLink } kapsamımız birden fazla ücretsiz hesap oluşturulmasına izin vermez."
@@ -7689,6 +7710,9 @@
       ],
       "Daily": [
         "Günlük"
+      ],
+      "Debug transcript copied": [
+        "Hata ayıklama çıktısı kopyalandı"
       ],
       "Dedicated servers": [
         "Size ayrılmış sunucular"
@@ -8038,7 +8062,7 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "E-postayı Gelen kutunuzda göremezseniz, İstenmeyen kutusuna bakmayı unutmayın."
       ],
-      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
         "Kimlik doğrulama uygulamanıza erişemiyorsanız iki adımlı doğrulamayı kurarken size verilen 16 yedek kurtarma kodundan birini kullanabilirsiniz. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
@@ -8202,6 +8226,9 @@
       "Loading...": [
         "Yükleniyor..."
       ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "Günlük kayıtları sorunun ortaya çıkmasından önce neler olduğunu anlamamıza yardımcı olur. Bu günlük kayıtlarında uygulama işlemleri ve hata iletileri bulunur. Ancak iletilerin içeriği bulunmaz."
+      ],
       "Low Priority": [
         "Düşük Öncelik"
       ],
@@ -8216,6 +8243,9 @@
       ],
       "Mark all as read": [
         "Tümünü okunmuş olarak işaretle"
+      ],
+      "Mark all as unread": [
+        "Tümünü okunmamış olarak işaretle"
       ],
       "Mark as read": [
         "Okunmuş olarak işaretle"
@@ -8694,6 +8724,9 @@
       ],
       "Searched for “${ keyword }”": [
         "“${ keyword }” arandı"
+      ],
+      "Searched the web": [
+        "İnternet üzerinde arandı"
       ],
       "Searched your mail": [
         "E-postalarınız arandı"
@@ -10418,6 +10451,9 @@
       "Folder location": [
         "Klasör konumu"
       ],
+      "Folder name": [
+        "Klasör adı"
+      ],
       "Forwards to": [
         "Şuraya iletiyor"
       ],
@@ -10516,6 +10552,9 @@
       ],
       "Label messages as": [
         "İletiler şu şekilde etiketlensin"
+      ],
+      "Label name": [
+        "Etiket adı"
       ],
       "Last 12 months only": [
         "Yalnızca son 12 ay"
@@ -14025,6 +14064,79 @@
         "YAZ İNDİRİMİ"
       ]
     },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "Fırsatı değerlendirin"
+      ],
+      "Special Offer": [
+        "Özel teklif"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "/month": [
+        "/ay"
+      ],
+      "2 individual accounts": [
+        "2 bireysel hesap"
+      ],
+      "2 TB of secure storage": [
+        "2 TB güvenli depolama alanı"
+      ],
+      "3 TB of secure storage": [
+        "3 TB güvenli depolama alanı"
+      ],
+      "500 GB of secure storage": [
+        "500 GB güvenli depolama alanı"
+      ],
+      "6 individual accounts": [
+        "6 bireysel hesap"
+      ],
+      "Advanced protection against cyber threats": [
+        "Siber tehditlere karşı gelişmiş koruma"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "İndirimler standart aylık fiyatlara göre hesaplanır. Fatura dönemi sona erdiğinde aboneliğiniz standart yıllık ücret üzerinden yenilenir."
+      ]
+    },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ve ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "12 ay için"
+      ],
+      "One plan, full power": [
+        "Tek tarife, tam güç"
+      ],
+      "One plan, max savings": [
+        "Tek tarife, en yüksek kazanç"
+      ],
+      "One plan, more power": [
+        "Tek tarife, daha fazla güç"
+      ]
+    },
     "Received email icon": {
       "End-to-end encrypted and signed message": [
         "Uçtan uca şifrelenmiş ve imzalanmış ileti"
@@ -16231,8 +16343,14 @@
       "Create contact": [
         "Kişi ekle"
       ],
+      "Create folder": [
+        "Klasör oluştur"
+      ],
       "Create folder \"${ search }\"": [
         "\"${ search }\" klasörü ekle"
+      ],
+      "Create label": [
+        "Etiket oluştur"
       ],
       "Create label \"${ search }\"": [
         "\"${ search }\" etiketi ekle"
@@ -16543,6 +16661,12 @@
       ],
       "Make your inbox your own": [
         "Gelen kutunuzu kendinize göre düzenleyin"
+      ],
+      "Mark all as read": [
+        "Tümünü okunmuş olarak işaretle"
+      ],
+      "Mark all as unread": [
+        "Tümünü okunmamış olarak işaretle"
       ],
       "Mark all messages as read": [
         "Tüm iletileri okunmuş olarak işaretle"
@@ -16882,6 +17006,9 @@
       ],
       "Sending original message": [
         "Özgün ileti gönderiliyor"
+      ],
+      "September Sale": [
+        "Eylül indirimi"
       ],
       "Set recovery methods": [
         "Kurtarma yöntemlerini ayarlayın"

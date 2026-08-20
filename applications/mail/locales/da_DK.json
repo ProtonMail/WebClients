@@ -639,6 +639,9 @@
       "Get the browser extension": [
         "Hent browserudvidelsen"
       ],
+      "Get the deal": [
+        "Gør brug af tilbuddet"
+      ],
       "Get the writing assistant": [
         "Hent skriveassistenten"
       ],
@@ -3669,6 +3672,9 @@
       ],
       "Mexico": [
         "Mexico"
+      ],
+      "Micronesia": [
+        "Mikronesien"
       ],
       "Moldova": [
         "Moldova"
@@ -7024,6 +7030,14 @@
         "${ contactsLength } kontakt",
         "${ contactsLength } kontakter"
       ],
+      "${ count } email": [
+        "${ count } e-mail",
+        "${ count } e-mails"
+      ],
+      "${ count } email · ${ names }": [
+        "${ count } e-mail → ${ names }",
+        "${ count } e-mails → ${ names }"
+      ],
       "${ count } email → ${ dest }": [
         "${ count } e-mail → ${ dest }",
         "${ count } e-mails → ${ dest }"
@@ -7415,6 +7429,9 @@
       ],
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Eventuelle undermapper vil også blive slettet. E-mails, der er gemt i mappen ${ nameDeleted } slettes dog ikke og kan findes i mappen Alle e-mails."
+      ],
+      "Apply labels": [
+        "Anvend etiketter"
       ],
       "Apply to future messages": [
         "Anvendes for fremtidige meddelelser"
@@ -8021,9 +8038,6 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Hvis du ikke kan se mailen i din indbakke, bedes du tjekke din spammappe."
       ],
-      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
-        "Hvis du har mistet adgangen til din godkender-app kan du bruge 1 af de 16 gendannelseskoder som du fik da du satte to-faktor-godkendelses op. ${ learnMoreLink }"
-      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Hvis du fortsætter med nedgraderingen, vil du miste adgang til betalte funktioner i ${ MAIL_APP_NAME } og ${ VPN_APP_NAME }."
       ],
@@ -8188,6 +8202,9 @@
       "Low Priority": [
         "Lav prioritet"
       ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Gør ${ MAIL_APP_NAME } til din standard e-mail-applikation."
+      ],
       "Manage your folders": [
         "Administrer dine mapper"
       ],
@@ -8196,6 +8213,15 @@
       ],
       "Mark all as read": [
         "Marker alle som læst"
+      ],
+      "Mark all as unread": [
+        "Markér alle som ikke-læst(e)"
+      ],
+      "Mark as read": [
+        "Markér som læst(e)"
+      ],
+      "Mark as unread": [
+        "Markér som ikke-læst(e)"
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode-logo"
@@ -10038,6 +10064,9 @@
       "Account holder": [
         "Kontohaver"
       ],
+      "Account holder name": [
+        "Kontohavers navn"
+      ],
       "Actions": [
         "Handlinger"
       ],
@@ -10388,6 +10417,9 @@
       ],
       "Folder location": [
         "Mappeplacering"
+      ],
+      "Folder name": [
+        "Mappenavn"
       ],
       "Forwards to": [
         "Videresender til"
@@ -13132,6 +13164,12 @@
       ],
       "No parent folder": [
         "Ingen overordnet mappe"
+      ],
+      "Remind me later": [
+        "Påmind mig senere"
+      ],
+      "Yes, don't show again": [
+        "Ja, vis det ikke igen"
       ]
     },
     "Option group": {
@@ -13433,6 +13471,9 @@
       ],
       "Invalid security code": [
         "Ugyldig sikkerhedskode"
+      ],
+      "Please enter the account holder name": [
+        "Anfør kontohavers navn"
       ],
       "Something went wrong. Please try again later.": [
         "Noget gik galt. Prøv igen senere."
@@ -16061,6 +16102,9 @@
       "Apply gift code": [
         "Tilføj gavekode"
       ],
+      "Apply labels": [
+        "Anvend etiketter"
+      ],
       "Archive all messages?": [
         "Arkivere alle beskeder?"
       ],
@@ -16469,6 +16513,9 @@
       "Invalid verification code": [
         "Ugyldig bekræftelseskode"
       ],
+      "Keep this banner hidden?": [
+        "Hold dette banner skjult?"
+      ],
       "Label as": [
         "Mærk som"
       ],
@@ -16499,6 +16546,12 @@
       ],
       "Make your inbox your own": [
         "Gør indbakken til din egen"
+      ],
+      "Mark all as read": [
+        "Markér alle som læst(e)"
+      ],
+      "Mark all as unread": [
+        "Markér alle som ikke-læst(e)"
       ],
       "Mark all messages as read": [
         "Marker alle meddelelser som læste"

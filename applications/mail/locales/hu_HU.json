@@ -618,6 +618,9 @@
       "Get the browser extension": [
         "Böngészőbővítmény beszerzése"
       ],
+      "Get the deal": [
+        "Érdekel az ajánlat"
+      ],
       "Get the writing assistant": [
         "Az írási segéd beszerzése"
       ],
@@ -933,6 +936,9 @@
       ],
       "Move to Archive": [
         "Áthelyezés az archívumba"
+      ],
+      "Move to category...": [
+        "Áthelyezés kategóriába..."
       ],
       "Move to folder": [
         "Áthelyezés mappába"
@@ -1662,6 +1668,11 @@
     "action": {
       "Search messages": [
         "Üzenetek keresése"
+      ]
+    },
+    "Actions": {
+      "Set up categories": [
+        "Kategóriák beállítása"
       ]
     },
     "Actions message": {
@@ -3393,6 +3404,9 @@
       "Mexico": [
         "Mexikó"
       ],
+      "Micronesia": [
+        "Mikronézia"
+      ],
       "Moldova": [
         "Moldova"
       ],
@@ -3452,6 +3466,9 @@
       ],
       "North Korea": [
         "Észak-Korea"
+      ],
+      "North Macedonia": [
+        "Észak-Macedónia"
       ],
       "Northern Mariana Islands": [
         "Északi-Mariana-szigetek"
@@ -3863,8 +3880,17 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "A Kétlépcsős hitelesítés egy extra biztonsági réteget ad hozzá, megakadályozva a jogosulatlan hozzáférést."
       ],
+      "A blue dot appears when a category has unread messages since your last visit.": [
+        "Kék pont jelenik meg, ha egy kategóriában az utolsó látogatása óta olvasatlan üzenetek vannak."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Adjon hozzá mappákat és fájlokat a ${ DRIVE_APP_NAME }-hoz, és hívjon meg csapattagokat megtekinteni vagy szerkeszteni."
+      ],
+      "Add or remove categories, manage notifications, and adjust your setup anytime in settings.": [
+        "A beállításokban bármikor hozzáadhat vagy eltávolíthat kategóriákat, kezelheti az értesítéseket és módosíthatja a beállításait."
+      ],
+      "Add or remove categories, manage notifications, or turn them off entirely - anytime in Settings.": [
+        "Adjon hozzá vagy távolítson el kategóriákat, kezelje az értesítéseket, vagy kapcsolja ki őket teljesen – bármikor a Beállításokban."
       ],
       "Also included": [
         "Benne van a csomagban"
@@ -3965,6 +3991,9 @@
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Olvassa, válaszolja meg és tartsa kézben Gmail-üzeneteit a ${ MAIL_APP_NAME } alkalmazáson belül"
+      ],
+      "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
+        "Kattintson a jobb gombbal egy e-mailre, és válassza az „Áthelyezés ide” lehetőséget, vagy húzza át egy másik kategóriába. A hasonló e-mailek a jövőben automatikusan oda kerülnek."
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
         "Küldjön és fogadjon Gmail-üzeneteket közvetlenül a ${ MAIL_APP_NAME } alkalmazásban. Csatlakoztassa a címét itt: ${ addressesSettingsLink }."
@@ -6335,6 +6364,9 @@
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "A ${ MAIL_APP_NAME } képes megvédeni üzletét is."
       ],
+      "${ MAIL_APP_NAME } now automatically sorts your emails into categories like Primary, Social, Promotions, and more, helping you find and manage messages more easily.": [
+        "A ${ MAIL_APP_NAME } mostantól automatikusan kategóriákba rendezi az e-mailjeit, például Elsődleges, Közösségi, Promóciók és továbbiak, hogy könnyebben megtalálja és kezelje az üzeneteket."
+      ],
       "${ n } unread conversation": [
         "${ n } olvasatlan beszélgetés",
         "${ n } olvasatlan beszélgetés"
@@ -6677,6 +6709,9 @@
       ],
       "Automatically delete messages that have been in trash and spam for more than 30 days.": [
         "A 30 napnál régebben a lomtárba vagy a levélszemét mappába helyezett üzenetek automatikus törlése."
+      ],
+      "Automatically sort incoming emails into categories": [
+        "Beérkező e-mailek automatikus kategóriákba rendezése"
       ],
       "Awaiting transaction": [
         "Tranzakcióra várakozás."
@@ -8411,6 +8446,10 @@
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Értesítést fog kapni, ha jelszava vagy más adata kiszivárgott harmadik fél szolgáltatása miatt."
       ],
+      "You have **${ count } conversation** in your ${ categoryLabel } category": [
+        "**${ count } beszélgetése** van a(z) ${ categoryLabel } kategóriában",
+        "**${ count } beszélgetése** van a(z) ${ categoryLabel } kategóriában"
+      ],
       "You have **${ count } conversation** stored in this folder": [
         "Ebben a mappában **${ count } beszélgetés** van tárolva",
         "Ebben a mappában **${ count } beszélgetés** van tárolva"
@@ -8418,6 +8457,10 @@
       "You have **${ count } conversation** tagged with this label": [
         "Ezzel a címkével **${ count } beszélgetés** van megjelölve",
         "Ezzel a címkével **${ count } beszélgetés** van megjelölve"
+      ],
+      "You have **${ count } message** in your ${ categoryLabel } category": [
+        "**${ count } üzenete** van a(z) ${ categoryLabel } kategóriában",
+        "**${ count } üzenete** van a(z) ${ categoryLabel } kategóriában"
       ],
       "You have **${ count } message** stored in this folder": [
         "Ebben a mappában **${ count } üzenet** van tárolva",
@@ -8433,6 +8476,12 @@
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "Önnek próbaverziós ${ planTitle } előfizetése van. Egyelőre nem kell fizetnie. Az ön előfizetése automatikusan megújul a próbaidő befejezése után."
       ],
+      "You have no conversations in this category": [
+        "Nincsenek beszélgetései ebben a kategóriában"
+      ],
+      "You have no messages in this category": [
+        "Nincsenek üzenetei ebben a kategóriában"
+      ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "Nem adott meg tárgyat az üzenethez. Elküldi tárgy nélkül?"
       ],
@@ -8447,6 +8496,14 @@
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "A lemondás előtt le kell tiltani vagy el kell távolítani a ${ MAIL_APP_NAME } további felhasználóit, címeit és a saját domain neveket."
+      ],
+      "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
+        "**${ checked } beszélgetést** választott ki a(z) ${ categoryLabel } kategóriában",
+        "**${ checked } beszélgetést** választott ki a(z) ${ categoryLabel } kategóriában"
+      ],
+      "You selected **${ checked } message** in your ${ categoryLabel } category": [
+        "**${ checked } üzenetet** választott ki a(z) ${ categoryLabel } kategóriában",
+        "**${ checked } üzenetet** választott ki a(z) ${ categoryLabel } kategóriában"
       ],
       "You selected **${ count } conversation** from this folder": [
         "Ebből a mappából **${ count } beszélgetés** van kiválasztva",
@@ -8958,6 +9015,9 @@
       "ANY": [
         "BÁRMELYIK"
       ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Minden, ami az Ön figyelmét igényli, valamint a letiltott kategóriákból származó e-mailek"
+      ],
       "App password": [
         "Jelszó hozzáadása"
       ],
@@ -9126,6 +9186,9 @@
       "Email address": [
         "E-mail cím"
       ],
+      "Email categories": [
+        "E-mail-kategóriák"
+      ],
       "Email format": [
         "E-mail formátum"
       ],
@@ -9173,6 +9236,9 @@
       ],
       "Folder location": [
         "Mappa helye"
+      ],
+      "Folder name": [
+        "Mappa neve"
       ],
       "Forwards to": [
         "Továbbít:"
@@ -9422,6 +9488,9 @@
       ],
       "Primary": [
         "Elsődleges"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Elsődleges – minden, ami az Ön figyelmét igényli, valamint a letiltott kategóriákból származó e-mailek"
       ],
       "Promotions": [
         "Promóciók"
@@ -13917,6 +13986,9 @@
         "${ selectionCount } üzenet áthelyezése",
         "${ selectionCount } üzenet áthelyezése"
       ],
+      "Moved to ${ label }. Similar messages will be categorized there in the future.": [
+        "Áthelyezve: ${ label }. A hasonló üzenetek a jövőben oda lesznek sorolva."
+      ],
       "Password copied to clipboard": [
         "Jelszó a vágólapra másolva"
       ],
@@ -14913,6 +14985,9 @@
       ],
       "Referral": [
         "Ajánló"
+      ],
+      "Refine your Categories": [
+        "Finomítsa kategóriáit"
       ],
       "Remove from list?": [
         "Eltávolítás a listából?"
