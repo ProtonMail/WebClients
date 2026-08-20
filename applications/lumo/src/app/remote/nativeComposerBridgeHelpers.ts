@@ -8,6 +8,7 @@ import {
     type LimitReachedResource,
     type LumoFile,
     type LumoMode,
+    type MaxModelAvailability,
     type SidebarLayout,
     type State,
     limitResourceToErrorType,
@@ -111,12 +112,12 @@ export const setNativeModelTier = (modelTier: ModelTier): void => {
     (window as any).nativeComposerApiInstance.setNativeModelTier(modelTier);
 };
 
-export const setNativeMaxModelAvailable = (available: boolean): void => {
+export const setNativeMaxModelAvailability = (availability: MaxModelAvailability): void => {
     if (!isNativeComposerBridgeAvailable()) {
         console.warn('Native Composer Bridge not available');
         return;
     }
-    (window as any).nativeComposerApiInstance.setMaxModelAvailable(available);
+    (window as any).nativeComposerApiInstance.setMaxModelAvailability(availability);
 };
 
 export const setNativeResponseMode = (responseMode: ResponseMode): void => {
@@ -320,6 +321,7 @@ export type {
     LimitReachedResource,
     LumoFile,
     LumoMode,
+    MaxModelAvailability,
     State,
 };
 export {

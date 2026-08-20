@@ -1,5 +1,6 @@
-import { useLumoFlags } from './useLumoFlags';
 import { useLumoPlan } from '../providers/LumoPlanProvider';
+import { useDebugMaxModelOverride } from '../services/usageLimitsStore';
+import { useLumoFlags } from './useLumoFlags';
 
 /**
  * Whether Lumo Max can be selected for the current user segment.
@@ -8,8 +9,10 @@ import { useLumoPlan } from '../providers/LumoPlanProvider';
 export const useMaxModelAvailability = () => {
     const { hasLumoPlus, isGuest } = useLumoPlan();
     const { maxAvailableFree, maxAvailableGuest } = useLumoFlags();
+    const debugOverride = useDebugMaxModelOverride();
 
-    const isMaxAvailableByFlag = hasLumoPlus || (isGuest ? maxAvailableGuest : maxAvailableFree);
+    const isMaxAvailableByFlag =
+        debugOverride !== 'unavailable_high_load' && (hasLumoPlus || (isGuest ? maxAvailableGuest : maxAvailableFree));
 
     return { isMaxAvailableByFlag };
 };
