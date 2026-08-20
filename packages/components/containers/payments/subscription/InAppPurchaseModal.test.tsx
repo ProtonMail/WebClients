@@ -4,7 +4,7 @@ import { SubscriptionPlatform } from '@proton/payments/core/subscription/constan
 
 import InAppPurchaseModal from './InAppPurchaseModal';
 
-jest.mock('@proton/components/components/portal/Portal');
+jest.mock('@proton/atoms/Portal/Portal');
 
 it('should render', () => {
     const { container } = render(

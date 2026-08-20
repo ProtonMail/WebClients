@@ -3,9 +3,9 @@ import { useEffect } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import PreventTrackingToggle from '@proton/components/containers/emailPrivacy/PreventTrackingToggle';
 import useApi from '@proton/components/hooks/useApi';
 import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
@@ -19,10 +19,9 @@ import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import noTrackersImage from '@proton/styles/assets/img/illustrations/no-trackers-found.svg';
 import trackersImage from '@proton/styles/assets/img/illustrations/trackers-found.svg';
 
-import { useMailDispatch } from '../../../store/hooks';
-
 import { emailTrackerProtectionURL } from '../../../constants';
 import { useMessageTrackers } from '../../../hooks/message/useMessageTrackers';
+import { useMailDispatch } from '../../../store/hooks';
 import { loadFakeTrackers } from '../../../store/messages/images/messagesImagesActions';
 import SpyTrackerIcon from './SpyTrackerIcon';
 import SpyTrackerModal from './SpyTrackerModal';

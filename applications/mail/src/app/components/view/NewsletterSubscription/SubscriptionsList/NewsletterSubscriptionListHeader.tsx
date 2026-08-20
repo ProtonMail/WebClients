@@ -1,20 +1,18 @@
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 // eslint-disable-next-line @typescript-eslint/no-restricted-imports
 import Icon from '@proton/components/components/icon/Icon';
-import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import { IcListArrowDown } from '@proton/icons/icons/IcListArrowDown';
 import type { IconName } from '@proton/icons/types';
 import { CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
 import clsx from '@proton/utils/clsx';
 
-import { useCategoriesView } from '../../../categoryView/useCategoriesView';
-import { getUnreadCount } from '../../../sidebar/locationAsideHelpers';
 import { getUnreadNewslettersText } from '../../../../helpers/text';
 import { useMailDispatch, useMailSelector } from '../../../../store/hooks';
 import { SortSubscriptionsValue, SubscriptionTabs } from '../../../../store/newsletterSubscriptions/interface';
@@ -26,7 +24,8 @@ import {
     selectedTabSubscriptionsCount,
 } from '../../../../store/newsletterSubscriptions/newsletterSubscriptionsSelector';
 import { newsletterSubscriptionsActions } from '../../../../store/newsletterSubscriptions/newsletterSubscriptionsSlice';
-
+import { useCategoriesView } from '../../../categoryView/useCategoriesView';
+import { getUnreadCount } from '../../../sidebar/locationAsideHelpers';
 import { useNewsletterSubscriptionTelemetry } from '../useNewsletterSubscriptionTelemetry';
 
 const SortingDropdownMenu = () => {

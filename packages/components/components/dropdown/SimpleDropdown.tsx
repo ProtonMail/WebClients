@@ -1,11 +1,11 @@
 import type { ElementType, ForwardedRef, HTMLAttributes, MouseEventHandler, ReactNode, RefObject } from 'react';
 import { forwardRef, useEffect, useState } from 'react';
 
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import type { DropdownProps } from '@proton/components/components/dropdown/Dropdown';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import type { DropdownButtonProps } from '@proton/components/components/dropdown/DropdownButton';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
-import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import { useCombinedRefs } from '@proton/hooks';
 import generateUID from '@proton/utils/generateUID';
 

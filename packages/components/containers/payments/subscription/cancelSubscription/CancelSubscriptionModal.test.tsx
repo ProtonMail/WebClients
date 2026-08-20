@@ -7,7 +7,7 @@ import { buildSubscription } from '@proton/testing/builders/subscription';
 
 import { CancelSubscriptionModal } from './CancelSubscriptionModal';
 
-jest.mock('@proton/components/components/portal/Portal');
+jest.mock('@proton/atoms/Portal/Portal');
 
 const onResolve = jest.fn();
 const onReject = jest.fn();

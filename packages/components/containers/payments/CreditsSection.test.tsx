@@ -16,7 +16,7 @@ let subscription: Subscription;
 let upcoming: Subscription | null = null;
 let user: typeof userDefault;
 
-jest.mock('@proton/components/components/portal/Portal');
+jest.mock('@proton/atoms/Portal/Portal');
 
 const ContextCreditsSection = applyHOCs(withApi(), withCache())(CreditsSection);
 

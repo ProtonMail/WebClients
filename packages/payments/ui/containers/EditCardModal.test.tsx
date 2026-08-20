@@ -15,7 +15,7 @@
 // import { renderWithProviders } from '@proton/testing/lib/context/renderWithProviders';
 // import EditCardModal from './EditCardModal';
 
-// jest.mock('@proton/components/components/portal/Portal');
+// jest.mock('@proton/atoms/Portal/Portal');
 // jest.mock('@proton/components/components/toggle/Toggle');
 
 // const defaultCard: CardModel = {

@@ -2,7 +2,7 @@ import { Router } from 'react-router-dom';
 
 import { createHashHistory } from 'history';
 
-import { Portal } from '@proton/components/components/portal';
+import { Portal } from '@proton/atoms/Portal/Portal';
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import StandardErrorPage from '@proton/components/containers/app/StandardErrorPage';
 import ModalsChildren from '@proton/components/containers/modals/Children';

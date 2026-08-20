@@ -2,12 +2,12 @@ import { type MouseEvent, useCallback, useEffect, useMemo } from 'react';
 
 import { getLoginHref, getSwitchHref, handleSwitchAccountFork } from '@proton/account/accountSessions/sessionsHelper';
 import { selectSessionRecoveryData } from '@proton/account/recovery/sessionRecoverySelectors';
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import ConfirmSignOutModal, {
     shouldShowConfirmSignOutModal,
 } from '@proton/components/components/confirmSignOutModal/ConfirmSignOutModal';
 import ConfirmSignOutAllModal from '@proton/components/components/confirmSignOutModal/ConfirmSignoutAllModal';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import SessionRecoverySignOutConfirmPrompt from '@proton/components/containers/account/sessionRecovery/SessionRecoverySignOutConfirmPrompt';
 import type AccountSessionsSwitcher from '@proton/components/containers/heading/AccountSessionsSwitcher';
 import AuthenticatedBugModal from '@proton/components/containers/support/AuthenticatedBugModal';

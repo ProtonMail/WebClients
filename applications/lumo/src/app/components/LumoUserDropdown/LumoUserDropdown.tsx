@@ -1,7 +1,7 @@
 import type { MouseEvent } from 'react';
 
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import UserDropdownButton, {
     type Props as UserDropdownButtonProps,
 } from '@proton/components/containers/heading/UserDropdownButton';

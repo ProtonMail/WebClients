@@ -2,11 +2,11 @@ import { c } from 'ttag';
 
 import { EasySwitchOauthImportButton } from '@proton/activation/index';
 import { EASY_SWITCH_SOURCES, ImportProvider, ImportType } from '@proton/activation/src/interface';
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
-import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import { IcCardIdentity } from '@proton/icons/icons/IcCardIdentity';
 import { useFlag } from '@proton/unleash/useFlag';
 

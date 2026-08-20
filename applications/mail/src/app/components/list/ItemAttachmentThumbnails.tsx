@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 
+import { Portal } from '@proton/atoms/Portal/Portal';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Portal from '@proton/components/components/portal/Portal';
 import FilePreview from '@proton/components/containers/filePreview/FilePreview';
 import NavigationControl from '@proton/components/containers/filePreview/NavigationControl';
 import { couldPotentiallyBeRenderedAsSVG } from '@proton/shared/lib/helpers/mimetype';
@@ -9,10 +9,10 @@ import type { AttachmentsMetadata } from '@proton/shared/lib/interfaces/mail/Mes
 import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import clsx from '@proton/utils/clsx';
 
-import AttachmentThumbnail from './AttachmentThumbnail';
 import { MAX_COLUMN_ATTACHMENT_THUMBNAILS } from '../../constants';
 import { getOtherAttachmentsTitle } from '../../helpers/attachment/attachmentThumbnails';
 import { useAttachmentThumbnailDownload } from '../../hooks/attachments/useAttachmentThumbnailDownload';
+import AttachmentThumbnail from './AttachmentThumbnail';
 
 interface Preview {
     attachment: AttachmentsMetadata;

@@ -7,7 +7,7 @@ import { withNotifications } from '@proton/testing/lib/context/hocs/with-notific
 import type { PromiseWithController, Props } from './PaymentVerificationModal';
 import PaymentVerificationModal from './PaymentVerificationModal';
 
-jest.mock('@proton/components/components/portal/Portal');
+jest.mock('@proton/atoms/Portal/Portal');
 
 let props: Props;
 let promiseWithController: PromiseWithController;

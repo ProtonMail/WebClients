@@ -2,8 +2,8 @@ import { format } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
-import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import { TimeZoneSelector } from '@proton/components/components/timezoneSelector/TimeZoneSelector';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';

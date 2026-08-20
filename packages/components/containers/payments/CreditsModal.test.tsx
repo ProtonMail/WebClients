@@ -22,7 +22,7 @@ import CreditsModal from './CreditsModal';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import PaymentMethodSelector from './methods/PaymentMethodSelector';
 
-jest.mock('@proton/components/components/portal/Portal');
+jest.mock('@proton/atoms/Portal/Portal');
 
 const mockPaymentMethodSelectorRenders = { count: 0 };
 jest.mock('./methods/PaymentMethodSelector', () => {

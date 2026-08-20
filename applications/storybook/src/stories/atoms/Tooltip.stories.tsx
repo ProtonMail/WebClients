@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
 import { Button } from '@proton/atoms/Button/Button';
+import type { PopperPlacement } from '@proton/atoms/Popper/interface';
 import { Tooltip, TooltipTypeEnum } from '@proton/atoms/Tooltip/Tooltip';
-import type { PopperPlacement } from '@proton/components/components/popper/interface';
 import { IcGlobe } from '@proton/icons/icons/IcGlobe';
 
 const placements: PopperPlacement[] = ['bottom', 'left', 'right', 'top'];

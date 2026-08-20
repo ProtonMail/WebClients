@@ -1,6 +1,6 @@
 import { type RefObject, useMemo } from 'react';
 
-import type { PopperPosition } from '@proton/components/components/popper/interface';
+import type { PopperPosition } from '@proton/atoms/Popper/interface';
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import {

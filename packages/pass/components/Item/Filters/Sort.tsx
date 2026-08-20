@@ -2,12 +2,12 @@ import { type KeyboardEvent, type MouseEvent, memo } from 'react';
 
 import { c } from 'ttag';
 
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { DropdownProps } from '@proton/components/components/dropdown/Dropdown';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
-import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import type { IconName } from '@proton/icons/types';
 import { FilterClearButton } from '@proton/pass/components/Item/Filters/FilterClearButton';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';

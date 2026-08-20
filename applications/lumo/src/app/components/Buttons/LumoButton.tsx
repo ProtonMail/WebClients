@@ -3,8 +3,8 @@ import { clsx } from 'clsx';
 import { Button } from '@proton/atoms/Button/Button';
 import type { ButtonProps } from '@proton/atoms/Button/Button';
 import type { ButtonLikeSize } from '@proton/atoms/Button/ButtonLike';
+import type { PopperPlacement } from '@proton/atoms/Popper/interface';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import type { PopperPlacement } from '@proton/components/index';
 
 import { type IconName, LumoIcon } from '../LumoIcon/LumoIcon';
 
