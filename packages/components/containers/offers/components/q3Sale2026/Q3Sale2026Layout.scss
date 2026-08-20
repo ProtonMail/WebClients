@@ -1,0 +1,220 @@
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+@use '~@proton/styles/scss/specifics/arizona' as *;
+
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
+
+// Remove the content margin so the header image bleeds to dialog edges.
+// Do NOT touch .modal-two padding — that's the viewport breathing room.
+.modal-two:has([class*='offer-q3-sale-2026-']) {
+	.modal-two-content {
+		margin: 0;
+	}
+}
+
+.q3SaleHeaderSection {
+	position: relative;
+	min-block-size: 19rem;
+	overflow: hidden;
+
+	@include im.media('<=small') {
+		min-block-size: 15rem;
+	}
+}
+
+.q3SaleKVImage {
+	position: absolute;
+	inset-block-start: -20%;
+	inset-inline: 0;
+	inline-size: 100%;
+
+	// Taller than container so the image scales wider, giving more horizontal range
+	// to pan the subject to the right away from the headline
+	block-size: 140%;
+	object-fit: cover;
+
+	// Lower first value anchors a further-left slice of the source, which pushes
+	// the person toward the right edge of the modal
+	object-position: 20% 50%;
+}
+
+// Dark gradient overlay for readability of text on the left/bottom
+.q3SaleHeaderOverlay {
+	position: absolute;
+	inset: 0;
+	background:
+		linear-gradient(134.9deg, rgb(0 2 63 / 0.4) 1.5%, rgb(0 2 63 / 0) 26.7%),
+		linear-gradient(89.4deg, rgb(7 0 39 / 0.6) 0.3%, rgb(8 0 47 / 0) 54.8%),
+		linear-gradient(to bottom, rgb(0 0 0 / 0) 40%, rgb(0 0 0 / 0.25) 100%);
+}
+
+.q3SaleHeaderContent {
+	position: relative;
+	inline-size: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	gap: 1rem;
+	align-items: flex-start;
+	padding-block: 2.5rem 1.25rem;
+	padding-inline: 3rem;
+	color: white;
+
+	@include im.media('<=small') {
+		padding-block: 1.5rem 1rem;
+		padding-inline: 1.5rem;
+		gap: 0.5rem;
+	}
+}
+
+.q3SaleTitle {
+	font-size: 2.8125rem; // 45px
+	color: white;
+	line-height: 1.1;
+	font-style: normal;
+	font-weight: 500;
+	font-synthesis: none;
+	letter-spacing: -0.04em; // -1.8px at 45px
+	margin: 0;
+	text-shadow:
+		0 1px 2px rgb(55 37 128 / 0.1),
+		0 2px 4px rgb(55 37 128 / 0.1);
+
+	// Narrow enough that "One plan, full power" wraps after the comma, but wide
+	// enough that the longest second line ("max savings") still fits on one line
+	max-inline-size: 9ch;
+	text-wrap: balance;
+
+	@include im.media('<=small') {
+		font-size: 2.5rem;
+	}
+}
+
+html:is(
+		[lang^='zh'],
+		[lang^='id'],
+		[lang^='kab'],
+		[lang='es'],
+		[lang='pt-PT'],
+		[lang^='vi'],
+		[lang^='th'],
+		[lang^='fil'],
+		[lang^='cs']
+	)
+	.q3SaleTitle {
+	font-size: 2rem;
+}
+
+html:is([lang^='ja'], [lang^='ko'], [lang^='th'], [lang^='fil'], [lang^='hi']) .q3SaleTitle {
+	inline-size: auto;
+}
+
+.q3SalePlanLockup {
+	.logo {
+		margin-inline-end: -0.25rem;
+	}
+}
+
+.q3SalePlanName {
+	font-size: 1.5rem;
+}
+
+.q3SaleForMonths {
+	font-size: 1rem;
+}
+
+.q3SaleContent {
+	padding-block: 1.25rem;
+	padding-inline: 3rem;
+	background: white;
+
+	@include im.media('<=small') {
+		padding-inline: 1.5rem;
+	}
+}
+
+.q3SaleFeatures {
+	padding: 0;
+	list-style-type: none;
+	color: #372580;
+
+	li:not(:last-child) {
+		border-block-end: 1px solid rgb(55 37 128 / 0.28);
+	}
+}
+
+.q3SalePrice {
+	font-size: 3rem;
+	line-height: 1;
+	color: #372580;
+}
+
+.q3SaleText {
+	color: #372580;
+	text-wrap: pretty;
+}
+
+.offer-modal[class*='offer-q3-sale-2026-'] {
+	max-inline-size: 31rem;
+	background: white;
+
+	.offer-close-button {
+		--top-custom: 0 !important;
+
+		background: #fffc;
+		border-radius: 50%;
+		inline-size: 2rem;
+		block-size: 2rem;
+		margin-block-start: 0.75rem;
+		margin-inline-end: 0.75rem;
+	}
+
+	.modal-close-icon {
+		fill: black;
+	}
+
+	.offer-disable-button {
+		color: #372580;
+	}
+
+	.scroll-child {
+		overflow-y: scroll;
+	}
+
+	&.offer-modal--one-deal {
+		&#{&} {
+			.scroll-outer-vertical .scroll-inner,
+			.scroll-outer-vertical .scroll-child {
+				overflow: overlay;
+			}
+		}
+	}
+}
+
+[data-theme-mode='dark'] {
+	.q3SaleContent {
+		background: #1b1340;
+	}
+
+	.q3SalePrice,
+	.q3SaleText {
+		color: white;
+	}
+
+	.q3SaleFeatures {
+		color: white;
+
+		li:not(:last-child) {
+			border-block-end-color: rgb(255 255 255 / 0.28);
+		}
+	}
+
+	.offer-modal[class*='offer-q3-sale-2026-'] {
+		background: #1b1340;
+
+		.offer-disable-button {
+			color: white;
+		}
+	}
+}

@@ -7,6 +7,7 @@ import { useWelcomeFlags } from '@proton/account';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import useOfferFlags from '@proton/components/containers/offers/hooks/useOfferFlags';
+import usePreloadOfferImage from '@proton/components/containers/offers/hooks/usePreloadOfferImage';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useConfig from '@proton/components/hooks/useConfig';
 import { CYCLE } from '@proton/payments/core/constants';
@@ -38,7 +39,7 @@ const TopNavbarOffer = ({ app, offerConfig, ignoreVisited, ignoreOnboarding, sho
     const [subscription, loadingSubscription] = useSubscription();
     const history = useHistory();
     const location = useLocation();
-    const { isVisited, loading: loadingOfferFlags } = useOfferFlags(offerConfig);
+    const { isVisited, isReplayConsumed, loading: loadingOfferFlags } = useOfferFlags(offerConfig);
     const {
         offer,
         loadingOffer,
@@ -54,6 +55,10 @@ const TopNavbarOffer = ({ app, offerConfig, ignoreVisited, ignoreOnboarding, sho
 
     const { viewportWidth } = useActiveBreakpoint();
 
+    // This component only renders for an offer that is already eligible, so mounting is the signal
+    // that the artwork will very likely be needed. Preload it now rather than when the modal mounts.
+    usePreloadOfferImage(hasEstimationError ? undefined : offerConfig.images?.modalImage);
+
     // Listen custom event to open offer modal
     useEffect(() => {
         const open = () => {
@@ -68,13 +73,11 @@ const TopNavbarOffer = ({ app, offerConfig, ignoreVisited, ignoreOnboarding, sho
             document.removeEventListener(OPEN_OFFER_MODAL_EVENT, open);
         };
     }, [renderOfferModal]);
-
     // Auto-popup offer modal
     useEffect(() => {
         const searchParams = new URLSearchParams(location.search);
         const autoOffer = searchParams.get('offer') === 'auto';
         const plan = searchParams.get('plan');
-
         // Common conditions that would prevent the offer modal from showing
         if (
             loadingOfferFlags ||
@@ -91,8 +94,12 @@ const TopNavbarOffer = ({ app, offerConfig, ignoreVisited, ignoreOnboarding, sho
             return;
         }
 
+        // Offers can opt into replaying their one-time popup once more, for users who didn't opt out.
+        // Users who hid the offer never reach this point: the Hide bit clears isActive, so the offer isn't valid.
+        const isReplayingAutoPopUp = !!offerConfig.replayAutoPopUp && !isReplayConsumed;
+
         // We want to always auto-show the offer modal for the VPN application
-        const combinedIgnoreVisited = ignoreVisited || autoOffer || isVPNApp;
+        const combinedIgnoreVisited = ignoreVisited || isReplayingAutoPopUp || autoOffer || isVPNApp;
         if (
             (isVisited && !combinedIgnoreVisited) ||
             onceRef.current ||
@@ -112,15 +119,18 @@ const TopNavbarOffer = ({ app, offerConfig, ignoreVisited, ignoreOnboarding, sho
         onceRef.current = true;
         setFetchOffer(true);
         setOfferModalOpen(true);
-    }, [loadingOfferFlags, loadingSubscription, user.hasPaidMail, subscription, welcomeFlags.isDone]);
+    }, [loadingOfferFlags, loadingSubscription, user.hasPaidMail, subscription, welcomeFlags.isDone, isReplayConsumed]);
 
     if (hasEstimationError || (shouldPrefetch && !initialized)) {
         return null;
     }
 
     const CTAText = offerConfig.topButton?.getCTAContent?.() || c('specialoffer: Action').t`Special offer`;
+    const IconContent = offerConfig.topButton?.iconContent;
+    const defaultIconName = IconContent ? undefined : 'bag-percent';
     const upgradeIcon =
-        CTAText.length > 20 && viewportWidth['>=large'] ? undefined : offerConfig.topButton?.icon || 'bag-percent';
+        CTAText.length > 20 && viewportWidth['>=large'] ? undefined : (offerConfig.topButton?.icon ?? defaultIconName);
+    const upgradeIconContent = IconContent ? <IconContent /> : undefined;
 
     const buttonSize =
         viewportWidth['<=small'] ||
@@ -142,6 +152,7 @@ const TopNavbarOffer = ({ app, offerConfig, ignoreVisited, ignoreOnboarding, sho
                     iconGradient={!!offerConfig.topButton?.iconGradient}
                     iconSize={offerConfig.topButton?.iconSize}
                     iconName={upgradeIcon}
+                    iconContent={upgradeIconContent}
                     onClick={() => {
                         setOfferModalOpen(true);
                         setFetchOffer(true);
