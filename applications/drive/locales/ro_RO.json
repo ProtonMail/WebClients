@@ -276,6 +276,9 @@
       "Copy alias “${ name }”": [
         "Copiază aliasul „${ name }”"
       ],
+      "Copy debug transcript": [
+        "Copiere transcriere depanare"
+      ],
       "Copy email to clipboard": [
         "Copiere mesaj în memorie"
       ],
@@ -525,6 +528,9 @@
       ],
       "Get the apps": [
         "Luați aplicațiile"
+      ],
+      "Get the deal": [
+        "Obțineți oferta"
       ],
       "Get the writing assistant": [
         "Luați asistentul de scriere"
@@ -777,6 +783,9 @@
       ],
       "Preview contact": [
         "Examinare contact"
+      ],
+      "Preview logs": [
+        "Examinare jurnale"
       ],
       "Previous": [
         "Anteriorul"
@@ -2607,6 +2616,9 @@
       ],
       "Mexico": [
         "Mexic"
+      ],
+      "Micronesia": [
+        "Micronezia"
       ],
       "Moldova": [
         "Republica Moldova"
@@ -5857,6 +5869,9 @@
       "Data integrity check failed": [
         "Verificarea integrității datelor a eșuat."
       ],
+      "Debug transcript copied": [
+        "Transcrierea depanării a fost copiată."
+      ],
       "Dec": [
         "Dec"
       ],
@@ -6136,7 +6151,7 @@
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
         "Dacă aveți una dintre acestea, accesați setările contului ${ BRAND_NAME } pentru a începe procesul de deblocare."
       ],
-      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
         "Dacă v-ați pierdut accesul la aplicația de autentificare, puteți utiliza unul din cele 16 coduri de recuperare de rezervă furnizate la configurarea autentificării cu doi factori. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
@@ -6312,6 +6327,9 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Calendarul se încarcă, așteptați. Pagina se va redirecționa către platforma noastră de planificări Calendly într-o filă nouă."
       ],
+      "Loading folder": [
+        "Se încarcă folderul"
+      ],
       "Loading links": [
         "Se încarcă legăturile web."
       ],
@@ -6320,6 +6338,9 @@
       ],
       "Loading...": [
         "Se încarcă…"
+      ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "Jurnalele ne ajută să înțelegem ce s-a întâmplat înainte de apariția problemei. Acestea includ acțiuni ale aplicației și mesaje de eroare, dar nu și conținutul mesajelor."
       ],
       "Low Priority": [
         "Prioritate scăzută"
@@ -6644,6 +6665,9 @@
       ],
       "Re-indexing in progress": [
         "Reindexare în derulare"
+      ],
+      "Read folder context": [
+        "Citire context folder"
       ],
       "Ready to add some photos?": [
         "Sunteți gata să adăugați fotografii?"
@@ -11485,6 +11509,79 @@
         "REDUCERI DE VARĂ"
       ]
     },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "Luați oferta"
+      ],
+      "Special Offer": [
+        "Ofertă specială"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "/month": [
+        "/lună"
+      ],
+      "2 individual accounts": [
+        "Două conturi individuale"
+      ],
+      "2 TB of secure storage": [
+        "2 TiB de stocare securizată"
+      ],
+      "3 TB of secure storage": [
+        "3 TiB de stocare securizată"
+      ],
+      "500 GB of secure storage": [
+        "500 GiB de stocare securizată"
+      ],
+      "6 individual accounts": [
+        "Șase conturi individuale"
+      ],
+      "Advanced protection against cyber threats": [
+        "Protecție avansată împotriva amenințărilor cibernetice"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Reducerile se bazează pe prețurile lunare standard. Abonamentul se va reînnoi la tariful anual standard la sfârșitul ciclului de facturare."
+      ]
+    },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } și ${ VPN_SHORT_APP_NAME } premium"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME } premium"
+      ]
+    },
+    "q3campaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } premium"
+      ]
+    },
+    "q3campaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } premium"
+      ]
+    },
+    "q3campaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME } premium"
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "pentru 12 luni"
+      ],
+      "One plan, full power": [
+        "Un singur plan, putere completă"
+      ],
+      "One plan, max savings": [
+        "Un singur plan, reduceri maxime"
+      ],
+      "One plan, more power": [
+        "Un singur plan, mai multă putere"
+      ]
+    },
     "Referral": {
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } per recomandare"
@@ -13758,6 +13855,9 @@
       ],
       "Select users to migrate": [
         "Selectați utilizatorii pentru migrare"
+      ],
+      "September Sale": [
+        "Reduceri de septembrie"
       ],
       "Set recovery methods": [
         "Setați metodele de recuperare"
