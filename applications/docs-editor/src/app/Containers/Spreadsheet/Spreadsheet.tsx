@@ -41,8 +41,8 @@ import { useActiveBreakpoint } from './useActiveBreakpoint'
 
 import type { SpreadsheetLocalYjsUpdateAuditResult } from './yjs-local-update-audit'
 import { reportErrorToSentry } from '../../Utils/errorMessage'
-import { isDevOrBlack } from '@proton/utils/env'
 import type { SheetsActionType } from '@proton/docs-shared/lib/SheetsActionType'
+import { useSheetsDependencies } from './SheetsDependenciesProvider'
 
 export type SpreadsheetRef = {
   exportData: (format: DataTypesThatDocumentCanBeExportedAs) => Promise<Uint8Array<ArrayBuffer>>
@@ -87,6 +87,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
   ref: ForwardedRef<SpreadsheetRef>,
 ) {
   const { application } = useApplication()
+  const { isDevOrBlack } = useSheetsDependencies()
   const { viewportWidth } = useActiveBreakpoint()
 
   const didConvertFromFile = useRef(false)
@@ -156,7 +157,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
       .checkIfFeatureFlagIsEnabled('SheetsDriftDetectionEnabled')
       .then((enabled) => setIsDriftDetectionEnabled(enabled || isDevOrBlack()))
       .catch(console.error)
-  }, [clientInvoker])
+  }, [clientInvoker, isDevOrBlack])
 
   const state = useProtonSheetsState({
     docState,
