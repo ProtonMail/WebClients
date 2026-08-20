@@ -273,6 +273,9 @@
       "Copy alias “${ name }”": [
         "Copia l'àlies «${ name }»"
       ],
+      "Copy debug transcript": [
+        "Copia la transcripció de depuració"
+      ],
       "Copy email to clipboard": [
         "Copiar correu electrònic al porta-retalls"
       ],
@@ -520,6 +523,9 @@
       ],
       "Get the apps": [
         "Obtén les aplicacions"
+      ],
+      "Get the deal": [
+        "Obteniu l’oferta"
       ],
       "Get the writing assistant": [
         "Obteniu l'assistent d'escriptura"
@@ -772,6 +778,9 @@
       ],
       "Preview contact": [
         "Previsualitzar contacte"
+      ],
+      "Preview logs": [
+        "Vista prèvia dels registres"
       ],
       "Previous": [
         "Anterior"
@@ -2580,6 +2589,9 @@
       ],
       "Mexico": [
         "Mèxic"
+      ],
+      "Micronesia": [
+        "Micronèsia"
       ],
       "Moldova": [
         "Moldàvia"
@@ -5770,6 +5782,9 @@
       "Data integrity check failed": [
         "Ha fallat la comprovació de la integritat de les dades"
       ],
+      "Debug transcript copied": [
+        "S'ha copiat la transcripció de depuració"
+      ],
       "Dec": [
         "des."
       ],
@@ -6046,7 +6061,7 @@
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
         "Si en teniu algun d'aquests, aneu a la configuració del Compte ${ BRAND_NAME } per iniciar el procés de desbloqueig."
       ],
-      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
         "Si heu perdut l'accés a la vostra aplicació d'autenticació, podeu fer servir 1 dels 16 codis de recuperació de seguretat que se us van proporcionar quan vau configurar l'autenticació de doble factor. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
@@ -6221,6 +6236,9 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "S'està carregant el calendari, espereu. Se us redirigirà a la nostra plataforma de planificació Calendly en una pestanya nova."
       ],
+      "Loading folder": [
+        "S'està carregant la carpeta"
+      ],
       "Loading links": [
         "S'estan carregant els enllaços"
       ],
@@ -6229,6 +6247,9 @@
       ],
       "Loading...": [
         "S'està carregant..."
+      ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "Els registres ens ajuden a entendre què va passar abans que es produís el problema. Inclouen accions de l'aplicació i missatges d'error, però no el contingut dels missatges."
       ],
       "Low Priority": [
         "Prioritat baixa"
@@ -6341,6 +6362,9 @@
       ],
       "Not enough storage space": [
         "No hi ha prou espai d'emmagatzematge"
+      ],
+      "Not in My files": [
+        "No es troba a Els meus fitxers"
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Nota: pot ser que les dades encara estiguin disponibles localment en dispositius on hàgiu instal·lat ${ DRIVE_APP_NAME }."
@@ -6547,6 +6571,9 @@
       ],
       "Re-indexing in progress": [
         "La reindexació està en curs"
+      ],
+      "Read folder context": [
+        "Llegir el context de la carpeta"
       ],
       "Ready to add some photos?": [
         "Preparat per afegir algunes fotos?"
@@ -11353,6 +11380,79 @@
         "REBAIXES D'ESTIU"
       ]
     },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "Obtingueu l’oferta"
+      ],
+      "Special Offer": [
+        "Oferta especial"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "/month": [
+        "/mes"
+      ],
+      "2 individual accounts": [
+        "2 comptes individuals"
+      ],
+      "2 TB of secure storage": [
+        "2 TB d'emmagatzematge segur"
+      ],
+      "3 TB of secure storage": [
+        "3 TB d'emmagatzematge segur"
+      ],
+      "500 GB of secure storage": [
+        "500 GB d'emmagatzematge segur"
+      ],
+      "6 individual accounts": [
+        "6 comptes individuals"
+      ],
+      "Advanced protection against cyber threats": [
+        "Protecció avançada contra amenaces cibernètiques"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Els descomptes es basen en el preu mensual estàndard. La vostra subscripció es renovarà a la tarifa anual estàndard quan finalitzi el cicle de facturació."
+      ]
+    },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME } prèmium"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME } prèmium"
+      ]
+    },
+    "q3campaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME } prèmium"
+      ]
+    },
+    "q3campaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME } prèmium"
+      ]
+    },
+    "q3campaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME } prèmium"
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "durant 12 mesos"
+      ],
+      "One plan, full power": [
+        "Un pla, màxima potència"
+      ],
+      "One plan, max savings": [
+        "Un pla, màxim estalvi"
+      ],
+      "One plan, more power": [
+        "Un pla, més potència"
+      ]
+    },
     "Referral": {
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } per referència"
@@ -13576,6 +13676,9 @@
       ],
       "Select users to migrate": [
         "Seleccioneu els usuaris que voleu migrar"
+      ],
+      "September Sale": [
+        "Oferta de setembre"
       ],
       "Set recovery methods": [
         "Configuració dels mètodes de recuperació"
