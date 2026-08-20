@@ -2,15 +2,17 @@ import type { CanvasGridMethods } from '@rowsncolumns/spreadsheet'
 import { CanvasGrid } from '@rowsncolumns/spreadsheet'
 import { GRID_THEME_PROPS, FUNCTION_DESCRIPTIONS } from '../../constants'
 import { ChartComponent } from '@rowsncolumns/charts'
-import { isDevOrBlack } from '@proton/utils/env'
 import { useEffect, useMemo, useRef } from 'react'
 import { type ProtonSheetsUIStoreSetters, useUI } from '../../ui-store'
 import { CellTooltip } from '../misc/CellTooltip'
 import { GridFooter } from '../GridFooter/GridFooter'
 import { ContextMenu, ContextMenuWrapper } from '../ContextMenu'
 import { FilterBox } from '../FilterBox/FilterBox'
+import type { SheetsDependencies } from '../../SheetsDependenciesProvider'
+import { useSheetsDependencies } from '../../SheetsDependenciesProvider'
 
 const exposeCanvasGrid = (
+  isDevOrBlack: SheetsDependencies['isDevOrBlack'],
   instance: CanvasGridMethods | null,
   setters: ProtonSheetsUIStoreSetters['legacy'],
   activeSheetId: number,
@@ -98,6 +100,7 @@ const exposeCanvasGrid = (
 }
 
 export function LegacyGrid() {
+  const { isDevOrBlack } = useSheetsDependencies()
   const canvasGridRef = useRef<CanvasGridMethods | null>(null)
   const activeSheetId = useUI((ui) => ui.legacy.activeSheetId)
   const activeCell = useUI((ui) => ui.legacy.activeCell)
@@ -175,11 +178,11 @@ export function LegacyGrid() {
   const setters = useUI.$.legacy
   const ref = (instance: CanvasGridMethods | null) => {
     canvasGridRef.current = instance
-    exposeCanvasGrid(instance, setters, activeSheetId, snapshot)
+    exposeCanvasGrid(isDevOrBlack, instance, setters, activeSheetId, snapshot)
   }
   useEffect(() => {
-    exposeCanvasGrid(canvasGridRef.current, setters, activeSheetId, snapshot)
-  }, [setters, activeSheetId, snapshot])
+    exposeCanvasGrid(isDevOrBlack, canvasGridRef.current, setters, activeSheetId, snapshot)
+  }, [setters, activeSheetId, snapshot, isDevOrBlack])
 
   const getSeriesValuesFromRange = useUI((ui) => ui.legacy.getSeriesValuesFromRange)
   const getDomainValuesFromRange = useUI((ui) => ui.legacy.getDomainValuesFromRange)
