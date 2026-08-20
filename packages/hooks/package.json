@@ -9,9 +9,13 @@
         "test:watch": "jest --watch"
     },
     "dependencies": {
+        "@proton/shared": "workspace:^",
+        "@proton/utils": "workspace:^",
         "@testing-library/react": "^15.0.7",
         "@testing-library/react-hooks": "^8.0.1",
+        "date-fns": "^2.30.0",
         "react": "^18.3.1",
+        "react-router-dom": "^5.3.4",
         "react-test-renderer": "^18.3.1"
     },
     "devDependencies": {
