@@ -371,9 +371,6 @@
       "${ BRAND_NAME } shop": [
         "Obchod ${ BRAND_NAME }"
       ],
-      "+${ remaining } more": [
-        "+${ remaining } ďalšie"
-      ],
       "Accept": [
         "Prijať"
       ],
@@ -4780,6 +4777,9 @@
       "Mexico": [
         "Mexiko"
       ],
+      "Micronesia": [
+        "Mikronézia"
+      ],
       "Moldova": [
         "Moldavsko"
       ],
@@ -6164,9 +6164,6 @@
       "**How it works:** Enter in this device the code displayed on the device you want to sign in to. You will be signed in as **${ email }**. Both devices will stay active.": [
         "**Ako to funguje:** Do tohto zariadenia zadajte kód zobrazený na zariadení, do ktorého sa chcete prihlásiť. Prihlásite sa ako **${ email }**. Obe zariadenia zostanú aktívne."
       ],
-      "Allow QR code sign‒in": [
-        "Povoliť prihlásenie pomocou QR kódu"
-      ],
       "Be cautious of messages with QR codes. Only scan a code if you trust the source.": [
         "Dávajte si pozor na správy s QR kódmi. Kód skenujte len vtedy, ak zdroju dôverujete."
       ],
@@ -6196,9 +6193,6 @@
       ],
       "QR code sign-in enabled": [
         "Prihlásenie pomocou QR kódu je povolené"
-      ],
-      "Scan QR code on your mobile device to sign in": [
-        "Pre prihlásenie naskenujte QR kód na svojom mobilnom zariadení"
       ],
       "Scan the code to sign in": [
         "Naskenujte kód, aby ste sa mohli prihlásiť"
@@ -9801,9 +9795,6 @@
       "Contact us": [
         "Kontaktujte nás"
       ],
-      "Downloads": [
-        "Na stiahnutie"
-      ],
       "Enjoying ${ planName }?": [
         "Páči sa vám ${ planName }?"
       ],
@@ -10784,9 +10775,6 @@
       ],
       "add a recovery method": [
         "pridali spôsob obnovenia"
-      ],
-      "Add additional users from your organization to manage this company.": [
-        "Pridajte ďalších používateľov z vašej organizácie, ktorí budú spravovať túto spoločnosť."
       ],
       "Add an email address in case we need to contact you": [
         "Zadajte emailovú adresu pre prípad, že vás budeme potrebovať kontaktovať"
@@ -12089,9 +12077,6 @@
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Ak stratíte zariadenie určené pre dvojstupňové overenie, tieto kódy môžete použiť namiesto 6-miestneho dvojstupňového overovacieho kódu na prihlásenie do svojho účtu. Každý kód je možné použiť iba raz."
-      ],
-      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
-        "Ak ste stratili prístup k aplikácii na overovanie, môžete použiť jeden zo 16 záložných obnovovacích kódov, ktoré ste dostali pri nastavovaní dvojfaktorovej autentifikácie. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Ak znížite predplatné, stratíte prístup k plateným funkciám ${ MAIL_APP_NAME } a ${ VPN_APP_NAME }."
@@ -15857,6 +15842,9 @@
       ],
       "Email addresses per user": [
         "emailových adries na používateľa"
+      ],
+      "Email categories": [
+        "Kategórie emailov"
       ],
       "Email or username": [
         "Email alebo používateľské meno"
@@ -27455,9 +27443,6 @@
       ],
       "Manage files across devices on Windows, Mac, Android, and iOS.": [
         "Spravujte súbory na rôznych zariadeniach so systémom Windows, Mac, Android a iOS."
-      ],
-      "Managers": [
-        "Správcovia"
       ],
       "Messages": [
         "Správy"

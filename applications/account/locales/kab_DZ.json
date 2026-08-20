@@ -306,6 +306,12 @@
       "Disable": [
         "Sens"
       ],
+      "Disable categories": [
+        "Sens taggayin"
+      ],
+      "Disable category": [
+        "Sens taggayt"
+      ],
       "Disable recovery phrase": [
         "Sens tafyirt n tririt"
       ],
@@ -404,6 +410,9 @@
       ],
       "Enable ${ darkWebMonitoring }": [
         "Rmed ${ darkWebMonitoring }"
+      ],
+      "Enable category": [
+        "Rmed taggayt"
       ],
       "enable desktop notifications": [
         "rmed talɣutin n tnarit"
@@ -527,6 +536,9 @@
       ],
       "Keep": [
         "Eǧǧ"
+      ],
+      "Keep categories": [
+        "Eǧǧ taggayin"
       ],
       "Keep Editing": [
         "Kemmel taẓrigt"
@@ -1842,6 +1854,9 @@
       "British Indian Ocean Territory": [
         "Timura n ugaraw ahendi abṛitani"
       ],
+      "British Virgin Islands": [
+        "Tigzirin n Lɛeḍra Tibṛiṭaniyin"
+      ],
       "Brunei Darussalam": [
         "Brunay Darussalam"
       ],
@@ -1862,6 +1877,9 @@
       ],
       "Canada": [
         "Kanada"
+      ],
+      "Canary Islands": [
+        "Tigzirin n Kanari"
       ],
       "Cape Verde": [
         "Aqerru azegzaw"
@@ -1895,6 +1913,9 @@
       ],
       "Congo": [
         "Kungu"
+      ],
+      "Congo (The Democratic Republic of the)": [
+        "Kungu (Tagduda Tamagdayt n)"
       ],
       "Congo, Democratic Republic of the": [
         "Kungu, Tagelda Tagdudant n"
@@ -1935,6 +1956,9 @@
       "Dominican Republic": [
         "Tigduda Taduminikit"
       ],
+      "East Timor": [
+        "Timur n Usammar"
+      ],
       "Ecuador": [
         "Ikwaṭur"
       ],
@@ -1967,6 +1991,9 @@
       ],
       "Faroe Islands": [
         "Tigzirin n Faṛwi"
+      ],
+      "Federated States of Micronesia": [
+        "Iwanaken Idduklen n Mikrunizya"
       ],
       "Fiji": [
         "Fiji"
@@ -2040,6 +2067,9 @@
       "Heard Island and McDonald Islands": [
         "Tigzirin n Hird d Tigzirin n MakDunald"
       ],
+      "Holy See (Vatican City State)": [
+        "Aserf Agwerram (Awanek n Iγrem n Vatikan)"
+      ],
       "Honduras": [
         "Hunduṛas"
       ],
@@ -2069,6 +2099,9 @@
       ],
       "Ireland": [
         "Irland"
+      ],
+      "Islamic Republic of Iran": [
+        "Tagduda Taslamiyt n Iran"
       ],
       "Isle of Man": [
         "Tigzirt n Man"
@@ -2100,6 +2133,12 @@
       "Kiribati": [
         "Kiribati"
       ],
+      "Korea (Democratic People's Republic of)": [
+        "Kuriya (Tagduda Tamagdayt Taγerfanet n)"
+      ],
+      "Korea (Republic of)": [
+        "Kuriya (Tagduda n)"
+      ],
       "Kosovo": [
         "Kuṣuvu"
       ],
@@ -2108,6 +2147,9 @@
       ],
       "Kyrgyzstan": [
         "Kirigistan"
+      ],
+      "Lao People's Democratic Republic": [
+        "Tagduda Tamagdayt Taγerfanet n Laos"
       ],
       "Laos": [
         "Lawus"
@@ -2126,6 +2168,9 @@
       ],
       "Libya": [
         "Libya"
+      ],
+      "Libyan Arab Jamahiriya": [
+        "Tajmahirit Taɛrabt n Libia"
       ],
       "Liechtenstein": [
         "Lictencṭayn"
@@ -2174,6 +2219,9 @@
       ],
       "Mexico": [
         "Miksik"
+      ],
+      "Micronesia": [
+        "Mikrunizya"
       ],
       "Moldova": [
         "Muldavya"
@@ -2234,6 +2282,9 @@
       ],
       "North Korea": [
         "Kuriya n Ugafa"
+      ],
+      "North Macedonia": [
+        "Masidunya n Ugafa"
       ],
       "Northern Mariana Islands": [
         "Tigzirin n Maryan Ufella"
@@ -2388,6 +2439,9 @@
       "Svalbard and Jan Mayen": [
         "Svalbard d Jan Mayen"
       ],
+      "Swaziland": [
+        "Swaziland"
+      ],
       "Sweden": [
         "Sswid"
       ],
@@ -2408,6 +2462,9 @@
       ],
       "Tanzania": [
         "Tanẓanya"
+      ],
+      "Tanzania, United Republic of": [
+        "Tanzanya, Tagduda Yeddukklen n"
       ],
       "Thailand": [
         "Ṭayland"
@@ -2635,6 +2692,9 @@
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Akka d-yettban tabdart n yinermisen i d-tketreḍ deg-s kra n yigrawen. Ttxil-k·m senqed amek i ilaq ad d-ttwaktaren yigrawen-a."
+      ],
+      "Select which categories you want to add and if you want to receive push notifications for each category.": [
+        "Fren anwa taggayin i tebɣiḍ ad ternuḍ akked ma tebɣiḍ ad tremseḍ ilɣa i yal taggayt."
       ],
       "With new email categories, only important messages land in your primary inbox. Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
         "S tiggayin timaynutin n yimaylen, d izenan yesɛan azal kan i d-yettawḍen ɣer tnakat-ik n unermas tagejdant. Tiggayin xeddment am yimsizdigen n yispamen. ${ MAIL_APP_NAME } leɛmer yeɣra imaylen-ik neɣ ibḍa isefka-ik."
@@ -4530,6 +4590,9 @@
       "All keys successfully reactivated": [
         "Akk tisura ulsent asermed akken iwata"
       ],
+      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
+        "Akk iznan ad d-ttwaskanen deg Tinicin, yerna accaren d tibzimin n teggayin ur ttbanen ara. "
+      ],
       "All your changes will be lost.": [
         "Ad ruḥen akk ibeddilen-inek/m."
       ],
@@ -5124,6 +5187,9 @@
       "Public link invite": [
         "Aseɣwen n usnubget azayaz"
       ],
+      "Receive notifications for ${ categoryLabel }": [
+        "Remmes ilɣa i ${ categoryLabel }"
+      ],
       "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
         "Rmes-d abun n uḥraz s yimayl. Kečč neɣ aqcic-nni tzemrem ad t-tesqedcem i usermed n tansa di 15 iseggasen i d-iteddun. ${ learnMoreLink }"
       ],
@@ -5213,6 +5279,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Segmi telliḍ d aseqdac imekdi, amiḍan-inek• inem yesɛa tiwuriwin n zzyada iremden."
+      ],
+      "Smart Routed through a different country.": [
+        "Yettwaweḥḥed s tbridt tusmigt deg tamurt nniḍen."
       ],
       "Smart Routed through: ${ joinedCountries }.": [
         "Isubec s ubrid unziz seg: ${ joinedCountries }."
@@ -5466,6 +5535,9 @@
       ],
       "Why?": [
         "Ayɣer?"
+      ],
+      "With email categories, important messages land in a primary inbox. Everything else is organized into categories.": [
+        "S taggayin n yimaylen, iznan yesɛan azal ad awḍen ɣer tinicin tagejdant. Ayen nniḍen akk yettwasuddes deg taggayin."
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "S war armad, ur tettizmireḍ ara ad ternuḍ iseqdacen imaynuten, ad ternuḍ tansiwin i yiseqdacen yellan, neɣ ad tkecmeḍ ar umiḍan n iseqdacen ur yellin ara d usligen."
@@ -5991,6 +6063,9 @@
       "ANY": [
         "Ayen yellan"
       ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Akk ayen yesran lḥir-ik, rnu ɣer-s imaylen seg taggayin yensan"
+      ],
       "App password": [
         "Awal uffir n usnas"
       ],
@@ -6074,6 +6149,9 @@
       ],
       "Cash": [
         "Ṣṣerf"
+      ],
+      "Categories": [
+        "Taggayin"
       ],
       "Category": [
         "Taggayt"
@@ -6213,6 +6291,9 @@
       "Email address": [
         "Tansa imayl"
       ],
+      "Email categories": [
+        "Taggayin n yimaylen"
+      ],
       "Email or username": [
         "Imayl neɣ isem n useqdac"
       ],
@@ -6230,6 +6311,9 @@
       ],
       "Emails (last month)": [
         "Imaylen ( ayyur aneggar)"
+      ],
+      "Enable categories": [
+        "Rmed taggayin"
       ],
       "Enabled": [
         "Asermed"
@@ -6378,6 +6462,9 @@
       "Mail Server (IMAP)": [
         "Ameẓlu n yimayl (IMAP)"
       ],
+      "Mailbox settings": [
+        "Iɣewwaren n tbewwaḍt n yimaylen"
+      ],
       "Main": [
         "Agejdan"
       ],
@@ -6509,6 +6596,9 @@
       ],
       "Primary": [
         "Agejdan"
+      ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Tagejdant – akk ayen yesran lḥir-ik, rnu ɣer-s imaylen seg taggayin yensan"
       ],
       "Proration": [
         "Asiḍen aktassaɣan"
@@ -6647,6 +6737,9 @@
       ],
       "URL": [
         "URL"
+      ],
+      "Use email categories": [
+        "Seqdec taggayin n yimaylen"
       ],
       "Use folder colors": [
         "Seqdec initen n ukaram"
@@ -7913,6 +8006,9 @@
       ],
       "Mark as read": [
         "Creḍ-it yettwaɣra"
+      ],
+      "Mute notifications": [
+        "Sgugem ilɣa"
       ],
       "My reason isn't listed": [
         "Taɣzint-inu ur d-ttunefk ara"
@@ -9705,6 +9801,9 @@
       "Add another notification to remind you of this event": [
         "Rnu alɣu-nniḍen i wakken ad ak·akem-d-yesmekti s uneḍru-a"
       ],
+      "Add categories": [
+        "Rnu taggayin"
+      ],
       "Add contact group name": [
         "Rnu isem n ugraw n unermes"
       ],
@@ -9803,6 +9902,9 @@
       ],
       "Catch-all address": [
         "Tansa n urmas n meṛṛa iznan"
+      ],
+      "Categories": [
+        "Taggayin"
       ],
       "Change login password": [
         "Snifel awal uffir n tuqqna"
@@ -9955,6 +10057,9 @@
       "Device name": [
         "Isem n yibenk"
       ],
+      "Disable categories?": [
+        "Sens taggayin?"
+      ],
       "Disable two-factor authentication": [
         "Sens asesteb s snat n tarrayin"
       ],
@@ -10020,6 +10125,9 @@
       ],
       "Email": [
         "Imayl"
+      ],
+      "Email categories": [
+        "Taggayin n yimaylen"
       ],
       "Email composer": [
         "Amsuddes n imayl"
@@ -10602,6 +10710,9 @@
       ],
       "Edit label names": [
         "Ẓreg ismawen n tebzimin"
+      ],
+      "Emails in your inbox are shown organized into categories": [
+        "Imaylen deg tinicin-ik ttwaskanen d asuddes deg taggayin"
       ],
       "Enable/disable desktop and mobile notifications": [
         "Rmed/sens ilɣa n uselkim akked uziraz"

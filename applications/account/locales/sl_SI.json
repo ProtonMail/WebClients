@@ -781,6 +781,9 @@
       "Disable categories": [
         "Onemogoči kategorije"
       ],
+      "Disable category": [
+        "Onemogoči kategorijo"
+      ],
       "Disable recovery phrase": [
         "Onemogoči obnovitveno frazo"
       ],
@@ -915,6 +918,9 @@
       ],
       "Enable ${ darkWebMonitoring }": [
         "Omogoči ${ darkWebMonitoring }"
+      ],
+      "Enable category": [
+        "Omogoči kategorijo"
       ],
       "enable desktop notifications": [
         "prikazovanje obvestil na namizju"
@@ -3715,6 +3721,9 @@
       "Mexico": [
         "Mehika"
       ],
+      "Micronesia": [
+        "Mikronezija"
+      ],
       "Moldova": [
         "Moldavija"
       ],
@@ -3774,6 +3783,9 @@
       ],
       "North Korea": [
         "Severna Koreja"
+      ],
+      "North Macedonia": [
+        "Severna Makedonija"
       ],
       "Northern Mariana Islands": [
         "Severni Marijanski otoki"
@@ -4369,6 +4381,9 @@
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Berite, odgovarjajte in bodite na tekočem z Gmailom neposredno v ${ MAIL_APP_NAME }"
       ],
+      "Select which categories you want to add and if you want to receive push notifications for each category.": [
+        "Izberite, katere kategorije želite dodati in ali želite prejemati potisna obvestila za vsako kategorijo."
+      ],
       "This may happen if permissions were removed or your password changed.": [
         "To se lahko zgodi, če so bila dovoljenja odstranjena ali se je spremenilo vaše geslo."
       ],
@@ -4806,9 +4821,6 @@
       ]
     },
     "edm": {
-      "Allow QR code sign‒in": [
-        "Dovoli prijavo s kodo QR"
-      ],
       "Be cautious of messages with QR codes. Only scan a code if you trust the source.": [
         "Bodite previdni s sporočili, ki vsebujejo kodo QR. Kodo skenirajte le, če zaupate pošiljatelju."
       ],
@@ -9027,9 +9039,6 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Če izgubite svojo napravo z omogočenim dvojnim preverjanjem pristnosti, lahko te kode uporabite namesto 6-mestne kode za dvojno preverjanje pristnosti za prijavo v svoj račun. Vsako kodo lahko uporabite samo enkrat."
       ],
-      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
-        "Če ste izgubili dostop do aplikacije za preverjanje pristnosti, lahko uporabite eno od 16. kod za obnovitev, ki ste jih prejeli ob nastavitvi dvojnega preverjanja pristnosti. ${ learnMoreLink }"
-      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Če nadaljujete s podgradnjo, boste izgubili dostop do plačljivih funkcij ${ MAIL_APP_NAME } in ${ VPN_APP_NAME }."
       ],
@@ -9615,6 +9624,9 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Za pomoč pri vsem, kar je povezano z ${ BRAND_NAME }, se obrnite na nas."
       ],
+      "Receive notifications for ${ categoryLabel }": [
+        "Prejemaj obvestila za ${ categoryLabel }"
+      ],
       "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
         "Prejmite rezervacijski kupon po e-pošti. Vi ali otrok ga lahko uporabite za aktivacijo naslova v naslednjih 15 letih. ${ learnMoreLink }"
       ],
@@ -9794,6 +9806,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Ker ste zvest uporabnik, smo vašemu računu omogočili dodatne funkcionalnosti."
+      ],
+      "Smart Routed through a different country.": [
+        "Pametno usmerjeno prek druge države."
       ],
       "Smart Routed through: ${ joinedCountries }.": [
         "Pametno usmerjeno prek: ${ joinedCountries }."
@@ -10445,6 +10460,9 @@
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "S šifriranim naslovom ${ BRAND_NAME } lahko uporabljate vse storitve ${ BRAND_NAME }."
+      ],
+      "With email categories, important messages land in a primary inbox. Everything else is organized into categories.": [
+        "S kategorijami e-pošte pomembna sporočila prispejo v primarno mapo »Prejeto«. Vse ostalo je razvrščeno po kategorijah."
       ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "S skupinami lahko hitro in enostavno pošiljate sporočila vsem osebam v določeni skupini."
@@ -11367,6 +11385,9 @@
       "ANY": [
         "KATERIKOLI"
       ],
+      "Anything that needs your attention, plus emails from disabled categories": [
+        "Vse, kar zahteva vašo pozornost, in e-pošta iz onemogočenih kategorij"
+      ],
       "App password": [
         "Geslo aplikacije"
       ],
@@ -11477,6 +11498,9 @@
       ],
       "Cash": [
         "Gotovina"
+      ],
+      "Categories": [
+        "Kategorije"
       ],
       "Category": [
         "Vrsta napake"
@@ -11682,6 +11706,9 @@
       "Email address": [
         "E-poštni naslov"
       ],
+      "Email categories": [
+        "E-poštne kategorije"
+      ],
       "Email or username": [
         "E-pošta ali uporabniško ime"
       ],
@@ -11702,6 +11729,9 @@
       ],
       "Emails (last month)": [
         "E-pošto (zadnji mesec)"
+      ],
+      "Enable categories": [
+        "Omogoči kategorije"
       ],
       "Enabled": [
         "Omogočeno"
@@ -12102,6 +12132,9 @@
       "Primary": [
         "Glavni"
       ],
+      "Primary - Anything that needs your attention, plus emails from disabled categories": [
+        "Primarno – vse, kar zahteva vašo pozornost, in e-pošta iz onemogočenih kategorij"
+      ],
       "Promotions": [
         "Reklame"
       ],
@@ -12365,6 +12398,9 @@
       ],
       "Use another payment method": [
         "Uporabite drug način plačila"
+      ],
+      "Use email categories": [
+        "Uporabi kategorije e-pošte"
       ],
       "Use folder colors": [
         "Uporabi barve mape"
@@ -19249,6 +19285,9 @@
       "Add another notification to remind you of this event": [
         "Dodajte še eno obvestilo, ki vas bo opomnilo na ta dogodek"
       ],
+      "Add categories": [
+        "Dodaj kategorije"
+      ],
       "Add contact group name": [
         "Dodaj ime skupine stikov"
       ],
@@ -19380,6 +19419,9 @@
       ],
       "Catch-all address": [
         "Prestreženi naslovi"
+      ],
+      "Categories": [
+        "Kategorije"
       ],
       "Change login password": [
         "Spremenite geslo za prijavo"
@@ -19707,6 +19749,9 @@
       ],
       "Email": [
         "E-pošta"
+      ],
+      "Email categories": [
+        "Kategorije e-pošte"
       ],
       "Email composer": [
         "Urejevalnik e-pošte"
@@ -20718,6 +20763,9 @@
       ],
       "Edit label names": [
         "Uredi imena oznak"
+      ],
+      "Emails in your inbox are shown organized into categories": [
+        "E-poštna sporočila v vaši mapi »Prejeto« so prikazana razvrščena po kategorijah"
       ],
       "Enable/disable desktop and mobile notifications": [
         "Vklop/izklop obvestil na namizju in mobilnih napravah"
