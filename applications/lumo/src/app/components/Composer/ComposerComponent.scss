@@ -106,6 +106,16 @@ im.$media-expressions: $media-expressions;
 			color: var(--ghost-text);
 		}
 
+		// Agent badge — bg-weak stays light while ghost mode forces white text
+		[data-testid='composer-agent-badge'] {
+			background-color: var(--ghost-bg-secondary);
+			color: var(--ghost-text);
+
+			button {
+				color: var(--ghost-text);
+			}
+		}
+
 		// Component styling
 		.file-card {
 			background-color: var(--ghost-bg-secondary);
