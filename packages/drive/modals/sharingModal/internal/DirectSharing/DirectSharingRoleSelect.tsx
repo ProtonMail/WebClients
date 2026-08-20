@@ -1,4 +1,5 @@
-import { Dropdown, DropdownButton, usePopperAnchor } from '@proton/components';
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
+import { Dropdown, DropdownButton } from '@proton/components';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 
 import type { DirectSharingRole } from '../interfaces';
