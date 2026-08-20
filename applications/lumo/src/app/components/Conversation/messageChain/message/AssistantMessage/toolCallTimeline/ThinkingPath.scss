@@ -85,9 +85,8 @@
 }
 
 .thinking-path-trace-line {
-	display: box;
+	flex-shrink: 0;
 	overflow: hidden;
-	-webkit-box-orient: vertical;
 	-webkit-line-clamp: 1;
 	line-clamp: 1;
 	text-overflow: ellipsis;
