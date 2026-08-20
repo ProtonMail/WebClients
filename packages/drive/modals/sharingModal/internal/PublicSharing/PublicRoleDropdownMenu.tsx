@@ -1,7 +1,8 @@
 import { MemberRole } from '@protontech/drive-sdk';
 import { c } from 'ttag';
 
-import { Dropdown, DropdownButton, DropdownMenu, usePopperAnchor } from '@proton/components/index';
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
+import { Dropdown, DropdownButton, DropdownMenu } from '@proton/components/index';
 import useLoading from '@proton/hooks/useLoading';
 
 import { DropdownMenuItem } from '../DropdownMenuItem';

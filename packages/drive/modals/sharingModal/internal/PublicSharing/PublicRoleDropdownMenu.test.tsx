@@ -2,12 +2,14 @@ import { MemberRole } from '@protontech/drive-sdk';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { usePopperAnchor } from '@proton/components/index';
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import useLoading from '@proton/hooks/useLoading';
 
 import { PublicRoleDropdownMenu } from './PublicRoleDropdownMenu';
 
-jest.mock('@proton/components/components/popper/usePopperAnchor');
+jest.mock('@proton/atoms/Popper/usePopperAnchor', () => ({
+    usePopperAnchor: jest.fn(),
+}));
 jest.mock('@proton/hooks/useLoading');
 
 const mockedUsePopperAnchor = jest.mocked(usePopperAnchor);

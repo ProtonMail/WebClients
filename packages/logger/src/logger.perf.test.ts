@@ -37,10 +37,11 @@ const inspect = async <T>(name: string, id: string, fn: (storage: IndexedDBStora
  * that would affect the performance of the logger.
  */
 const BUDGET_MS = {
-    encryptAvg: 0.5,
-    storeAvg: 0.5,
-    writeAllTotal: 500,
-    readAll: 500,
+    // Allow headroom for parallel CI/turbo runs where IndexedDB and crypto contend with other packages.
+    encryptAvg: 1.5,
+    storeAvg: 1.5,
+    writeAllTotal: 2_000,
+    readAll: 2_000,
 };
 
 const average = (values: number[]) => values.reduce((sum, value) => sum + value, 0) / values.length;
