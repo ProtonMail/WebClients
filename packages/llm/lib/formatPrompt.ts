@@ -1,5 +1,5 @@
-import { GENERAL_STOP_STRINGS, STOP_STRINGS_REFINE, STOP_STRINGS_WRITE_FULL_EMAIL } from '@proton/llm/lib/constants';
-import { convertToDoubleNewlines, removeStopStrings } from '@proton/llm/lib/helpers';
+import { GENERAL_STOP_STRINGS, STOP_STRINGS_REFINE, STOP_STRINGS_WRITE_FULL_EMAIL } from './constants';
+import { convertToDoubleNewlines, removeStopStrings } from './promptTextUtils';
 import type {
     Action,
     CustomRefineAction,
@@ -9,7 +9,7 @@ import type {
     ProofreadAction,
     ShortenAction,
     WriteFullEmailAction,
-} from '@proton/llm/lib/types';
+} from './types';
 
 const SUPPORTED_LLM_LANGS = 'en,fr,de,es,it,pt,ru,zh,ja,cs,sk,pl'.split(',');
 

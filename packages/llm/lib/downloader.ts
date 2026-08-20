@@ -1,8 +1,8 @@
-import { FAILED_TO_DOWNLOAD } from '@proton/llm/lib/constants';
-import { postMessageIframeToParent } from '@proton/llm/lib/helpers';
-import * as _ndarrayCache from '@proton/llm/resources/Mistral-7B-Instruct-v0.2-q4f16_1-MLC/ndarray-cache.json';
 import throttle from 'lodash/throttle';
 
+import * as _ndarrayCache from '../resources/Mistral-7B-Instruct-v0.2-q4f16_1-MLC/ndarray-cache.json';
+import { FAILED_TO_DOWNLOAD } from './constants';
+import { postMessageIframeToParent } from './helpers';
 import type { AssistantConfig, AssistantConfigModel } from './types';
 import { AssistantEvent } from './types';
 
