@@ -1,6 +1,7 @@
 import { type BackgroundOptions, VideoTransformer, type VideoTransformerInitOptions } from '@livekit/track-processors';
 
 import { withTimeout } from '@proton/meet/utils/withTimeout';
+import { isFirefox } from '@proton/shared/lib/helpers/browser';
 
 import {
     DEFAULT_ASSET_PATH,
@@ -622,8 +623,17 @@ export default abstract class BaseBackgroundProcessor<
                     // fallback so units match, and only fall back when it's truly absent.
                     timestamp: frame.timestamp ?? Math.round(frameTimeMs * 1000),
                 });
-                controller.enqueue(newFrame);
-                this.resolveApplied();
+                // Firefox uses LiveKit's canvas fallback, whose enqueue callback draws and closes
+                // the VideoFrame synchronously, so resolving afterwards would observe an already
+                // closed frame. Mark initialization complete before handing ownership over: the
+                // mask has been applied and the composited frame created successfully by now.
+                if (isFirefox()) {
+                    this.resolveApplied();
+                    controller.enqueue(newFrame);
+                } else {
+                    controller.enqueue(newFrame);
+                    this.resolveApplied();
+                }
             } else {
                 // No mask yet (worker warming up or a transient failure). Emit an
                 // opaque black frame instead of the raw camera frame so the

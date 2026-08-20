@@ -1,3 +1,11 @@
+.video-preview {
+	border-radius: inherit;
+
+	video {
+		border-radius: inherit;
+	}
+}
+
 .allow-button {
 	background-color: var(--interaction-weak-minor-1);
 	padding-block: 1.25rem !important;

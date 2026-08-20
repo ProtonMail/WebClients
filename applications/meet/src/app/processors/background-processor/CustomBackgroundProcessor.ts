@@ -1,6 +1,7 @@
-import { type BackgroundOptions, ProcessorWrapper, type SegmenterOptions } from '@livekit/track-processors';
+import type { BackgroundOptions, SegmenterOptions } from '@livekit/track-processors';
 
 import BaseBackgroundProcessor from './BaseBackgroundProcessor';
+import { createProcessorWrapper } from './createProcessorWrapper';
 import type {
     CustomBackgroundProcessor as CustomBackgroundProcessorHandle,
     CustomBackgroundProcessorOptions,
@@ -130,7 +131,7 @@ export const CustomBackground = (
         ...processorOptions,
     };
     const transformer = new CustomBackgroundProcessor(options);
-    const processor = new ProcessorWrapper<BackgroundOptions>(
+    const processor = createProcessorWrapper<BackgroundOptions>(
         transformer,
         'custom-background',
         processorOptions

@@ -1,0 +1,7 @@
+.background-tile {
+	background-color: var(--interaction-weak);
+
+	&:hover {
+		filter: brightness(1.15);
+	}
+}

@@ -130,10 +130,10 @@ export const preloadBackgroundProcessorAssets = async (
     }
 };
 
-export const ensureBackgroundBlurProcessor = async (
+export const ensureBackgroundProcessor = async <T extends BackgroundBlurProcessor | CustomBackgroundProcessor>(
     videoTrack: LocalVideoTrack | null | undefined,
-    processor?: BackgroundBlurProcessor | null
-) => {
+    processor?: T | null
+): Promise<T | null> => {
     if (!videoTrack || !processor) {
         return null;
     }
