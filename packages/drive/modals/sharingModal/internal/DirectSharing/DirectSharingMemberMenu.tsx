@@ -1,9 +1,9 @@
 import { NonProtonInvitationState } from '@protontech/drive-sdk';
 import { c } from 'ttag';
 
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Dropdown, DropdownButton, DropdownMenu } from '@proton/components';
-import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import useLoading from '@proton/hooks/useLoading';
 
 import { DropdownMenuItem } from '../DropdownMenuItem';

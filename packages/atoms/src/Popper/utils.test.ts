@@ -1,4 +1,4 @@
-import { getFallbackPlacements, getInvertedRTLPlacement } from '@proton/components/components/popper/utils';
+import { getFallbackPlacements, getInvertedRTLPlacement } from './utils';
 
 describe('popper utils', () => {
     describe('fallback placements', () => {
