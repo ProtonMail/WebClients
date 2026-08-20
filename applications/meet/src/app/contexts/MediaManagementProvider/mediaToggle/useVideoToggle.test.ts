@@ -40,10 +40,11 @@ const processorMocks = vi.hoisted(() => ({
     createBackgroundProcessor: vi.fn((): unknown => null),
     createCustomBackgroundProcessor: vi.fn(),
     ensureBackgroundProcessor: vi.fn(),
+    supportsBackgroundEffects: vi.fn(() => true),
 }));
 vi.mock('../../../processors/background-processor/createBackgroundProcessor', () => processorMocks);
 
-vi.mock('../../../utils/backgroundBlurPersistance', () => ({
+vi.mock('../../../utils/virtualBackgrounds/backgroundBlurPersistance', () => ({
     getPersistedBackgroundBlur: () => false,
     persistBackgroundBlur: vi.fn(),
 }));
@@ -196,8 +197,50 @@ describe('useVideoToggle — background effects', () => {
     afterEach(() => {
         vi.clearAllMocks();
         processorMocks.createBackgroundProcessor.mockReturnValue(null);
+        processorMocks.supportsBackgroundEffects.mockReturnValue(true);
         virtualBackgroundPersistenceMocks.getPersistedVirtualBackground.mockReturnValue(null);
         unleashMocks.useFlag.mockReturnValue(true);
+    });
+
+    it('reports blur as supported while the processor is still loading', () => {
+        // A promise that never settles: the implementation is still being fetched.
+        processorMocks.createBackgroundProcessor.mockReturnValue(new Promise(() => {}));
+
+        const { result } = setup(false);
+
+        // Support is a browser capability, so it must not wait on the download. Reporting it as
+        // unsupported here leaves the prejoin preview unprocessed with no later render to fix it.
+        expect(result.current.isBackgroundBlurSupported).toBe(true);
+    });
+
+    it('applies blur picked before the processor finished loading', async () => {
+        const blurProcessor = createBlurProcessor();
+        let finishLoading: () => void = () => {};
+        processorMocks.createBackgroundProcessor.mockReturnValue(
+            new Promise((resolve) => {
+                finishLoading = () => resolve(blurProcessor);
+            })
+        );
+        processorMocks.ensureBackgroundProcessor.mockImplementation((_track, processor) => processor);
+
+        const { result } = setup(false);
+
+        await act(async () => {
+            const pick = result.current.selectBackgroundEffect('blur');
+            finishLoading();
+            await pick;
+        });
+
+        expect(result.current.backgroundBlur).toBe(true);
+        expect(blurProcessor.enable).toHaveBeenCalled();
+    });
+
+    it('reports blur as unsupported when the browser cannot run processors', () => {
+        processorMocks.supportsBackgroundEffects.mockReturnValue(false);
+
+        const { result } = setup(false);
+
+        expect(result.current.isBackgroundBlurSupported).toBe(false);
     });
 
     it('applies the picked virtual background to the camera track', async () => {
