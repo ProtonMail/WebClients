@@ -63,7 +63,7 @@ $header-children: "> [class*='-Section-header'], > [class*='-SectionHeader']";
 .DashboardGrid {
 	display: flex;
 	flex-direction: column;
-	gap: var(--space-6);
+	gap: var(--space-4) var(--space-6);
 
 	@include im.media('>large') {
 		display: grid;
