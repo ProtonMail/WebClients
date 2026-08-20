@@ -19,7 +19,8 @@ import type { HttpsProtonMeDocsCommentsTotalV1SchemaJson } from './types/docs_co
 import type { HttpsProtonMeDocsCommitIdOutOfSyncTotalV1SchemaJson } from './types/docs_commit_id_out_of_sync_total_v1.schema';
 import type { HttpsProtonMeDocsCommitSignatureErrorTotalV1SchemaJson } from './types/docs_commit_signature_error_total_v1.schema';
 import type { HttpsProtonMeDocsConnectionReadyTotalV2SchemaJson } from './types/docs_connection_ready_total_v2.schema';
-import type { HttpsProtonMeDocsDocumentOpenRedirectTotalV1SchemaJson } from './types/docs_document_open_redirect_total_v1.schema';
+import type { HttpsProtonMeDocsDocumentOpenRedirectHistogramV1SchemaJson } from './types/docs_document_open_redirect_histogram_v1.schema';
+import type { HttpsProtonMeDocsDocumentOpenRedirectTotalV2SchemaJson } from './types/docs_document_open_redirect_total_v2.schema';
 import type { HttpsProtonMeDocsDocumentUpdatesAckErrorTotalV1SchemaJson } from './types/docs_document_updates_ack_error_total_v1.schema';
 import type { HttpsProtonMeDocsDocumentUpdatesDecryptionErrorTotalV1SchemaJson } from './types/docs_document_updates_decryption_error_total_v1.schema';
 import type { HttpsProtonMeDocsDocumentUpdatesLoadErrorTotalV1SchemaJson } from './types/docs_document_updates_load_error_total_v1.schema';
@@ -233,7 +234,9 @@ class Metrics extends MetricsBase {
 
     public docs_connection_ready_total: Counter<HttpsProtonMeDocsConnectionReadyTotalV2SchemaJson>;
 
-    public docs_document_open_redirect_total: Counter<HttpsProtonMeDocsDocumentOpenRedirectTotalV1SchemaJson>;
+    public docs_document_open_redirect_histogram: Histogram<HttpsProtonMeDocsDocumentOpenRedirectHistogramV1SchemaJson>;
+
+    public docs_document_open_redirect_total: Counter<HttpsProtonMeDocsDocumentOpenRedirectTotalV2SchemaJson>;
 
     public docs_document_updates_ack_error_total: Counter<HttpsProtonMeDocsDocumentUpdatesAckErrorTotalV1SchemaJson>;
 
@@ -670,8 +673,14 @@ class Metrics extends MetricsBase {
             this.requestService
         );
 
-        this.docs_document_open_redirect_total = new Counter<HttpsProtonMeDocsDocumentOpenRedirectTotalV1SchemaJson>(
-            { name: 'docs_document_open_redirect_total', version: 1 },
+        this.docs_document_open_redirect_histogram =
+            new Histogram<HttpsProtonMeDocsDocumentOpenRedirectHistogramV1SchemaJson>(
+                { name: 'docs_document_open_redirect_histogram', version: 1 },
+                this.requestService
+            );
+
+        this.docs_document_open_redirect_total = new Counter<HttpsProtonMeDocsDocumentOpenRedirectTotalV2SchemaJson>(
+            { name: 'docs_document_open_redirect_total', version: 2 },
             this.requestService
         );
 
