@@ -22,12 +22,15 @@
         "test:watch": "jest --watch"
     },
     "dependencies": {
+        "@proton/account": "workspace:^",
         "@proton/components": "workspace:^",
         "@proton/i18n": "workspace:^",
+        "@proton/mail": "workspace:^",
         "@proton/shared": "workspace:^",
         "@proton/utils": "workspace:^",
         "@protontech/crypto": "*",
         "idb": "^8.0.3",
+        "lodash": "^4.18.1",
         "react": "^18.3.1",
         "ttag": "^1.8.12"
     },
