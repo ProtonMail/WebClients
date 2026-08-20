@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import { useState } from 'react';
 
+import { useUser } from '@proton/account/user/hooks';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { DashboardCard, DashboardCardContent } from '@proton/atoms/DashboardCard/DashboardCard';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
@@ -11,9 +12,15 @@ import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import type { Tab } from '@proton/components/components/tabs/Tabs';
 import { Tabs } from '@proton/components/components/tabs/Tabs';
+import { getTelemetryUserTier } from '@proton/components/helpers/getTelemetryUserTier';
+import { mapTelemetryOsVersionWithStore } from '@proton/components/helpers/mapTelemetryOsVersionWithStore';
+import { useApi } from '@proton/components/index';
 import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import { IcArrowOutSquare } from '@proton/icons/icons/IcArrowOutSquare';
 import type { IconName } from '@proton/icons/types';
+import { TelemetryAccountDashboardEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import clsx from '@proton/utils/clsx';
 
 import './DashboardDownloadSection.scss';
@@ -54,9 +61,27 @@ interface Category {
     enabled?: boolean;
 }
 
-const CategoryTabs = ({ category }: { category: Category }) => {
+const CategoryTabs = ({ category, app }: { category: Category; app: APP_NAMES }) => {
     const [activeTabIndex, setActiveTabIndex] = useState(0);
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
+    const api = useApi();
+    const [user] = useUser();
+
+    const handleDownloadClick = (destination: string) => {
+        if (app) {
+            void sendTelemetryReport({
+                api,
+                delay: false,
+                event: TelemetryAccountDashboardEvents.downloadCtaClick,
+                measurementGroup: TelemetryMeasurementGroups.accountDashboard,
+                dimensions: {
+                    app,
+                    download_destination: mapTelemetryOsVersionWithStore(destination),
+                    user_tier: getTelemetryUserTier(user),
+                },
+            });
+        }
+    };
 
     const subTabs = category.tabs.map((tab: CategoryTab) => ({
         title: tab.title(),
@@ -111,6 +136,7 @@ const CategoryTabs = ({ category }: { category: Category }) => {
                                                             rel="noopener noreferrer"
                                                             className="text-left flex flex-nowrap items-center justify-space-between gap-2"
                                                             key={download.title()}
+                                                            onClick={() => handleDownloadClick(tab.title())}
                                                         >
                                                             <span>{download.title()}</span>
                                                             <IcArrowDownLine className="ml-auto shrink-0" />
@@ -136,6 +162,7 @@ const CategoryTabs = ({ category }: { category: Category }) => {
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             title={downloadButton.title()}
+                                            onClick={() => handleDownloadClick(tab.title())}
                                         >
                                             {downloadButton.image ? (
                                                 <img src={downloadButton.image} alt={downloadButton.title()} />
@@ -185,15 +212,16 @@ const CategoryTabs = ({ category }: { category: Category }) => {
 
 interface Props {
     downloadConfig: Category[];
+    app: APP_NAMES;
 }
-const DashboardDownloadSection = ({ downloadConfig }: Props) => {
+const DashboardDownloadSection = ({ downloadConfig, app }: Props) => {
     const [activeCategoryIndex, setActiveCategoryIndex] = useState(0);
 
     const categoryTabs = downloadConfig
         .filter(({ enabled }) => enabled)
         .map((category) => ({
             title: category.title(),
-            content: <CategoryTabs category={category} />,
+            content: <CategoryTabs category={category} app={app} />,
         }));
     return (
         <DashboardCard>

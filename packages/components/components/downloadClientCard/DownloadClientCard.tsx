@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Href } from '@proton/atoms/Href/Href';
-import ButtonGroup from '@proton/components/components/button/ButtonGroup';
+import { ButtonGroup } from '@proton/components/components/button/ButtonGroup';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
 import Icon from '@proton/components/components/icon/Icon';
@@ -16,11 +16,12 @@ interface Props {
     link?: string;
     icon: IconName;
     items?: ReactNode[];
+    onClick?: () => void;
 }
 
-const DownloadClientCard = ({ title, link, items, icon }: Props) => {
+const DownloadClientCard = ({ title, link, items, icon, onClick }: Props) => {
     const downloadButton = (
-        <ButtonLike as={Href} href={link} disabled={!link}>
+        <ButtonLike as={Href} href={link} disabled={!link} onClick={onClick}>
             {c('Action').t`Download`}
             <span className="sr-only">{title}</span>
         </ButtonLike>
