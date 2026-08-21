@@ -10,18 +10,18 @@ import { useCopyNotification } from '../../../../../hooks/useCopyNotification';
 import type { HandleRegenerateMessage } from '../../../../../hooks/useLumoActions';
 import { useTierErrors } from '../../../../../hooks/useTierErrors';
 import type { SearchItem, ToolCallName } from '../../../../../lib/toolCall/types';
-import { getMessageBlocks, messagesEqualForRendering } from '../../../../../messageHelpers';
+import { getMessageBlocks, getMessageContent, messagesEqualForRendering } from '../../../../../messageHelpers';
 import { useIsGuest } from '../../../../../providers/IsGuestProvider';
 import { useWebSearch } from '../../../../../providers/WebSearchProvider';
 import type { ContentBlock, Message, MessageUsage, RetryStrategy, SiblingInfo } from '../../../../../types';
 import { sendMessageCopyEvent } from '../../../../../util/telemetry';
+import { isTrustedProtonLink, openTrustedLink } from '../../../../../util/trustedLinks';
 import LumoButton from '../../../../Buttons/LumoButton';
 import { ReferenceFilesButton } from '../../../../Files';
 import LumoAvatar from '../../../../LumoAvatar/LumoAvatar/LumoAvatar';
 import { LumoIcon } from '../../../../LumoIcon/LumoIcon';
 import AssistantFeedbackModal from '../../../../Modals/AssistantFeedbackModal';
 import LinkWarningModal from '../../../../Modals/LinkWarningModal';
-import { isTrustedProtonLink, openTrustedLink } from '../../../../../util/trustedLinks';
 import SiblingSelector from '../../../../SiblingSelector';
 import LumoCopyButton from '../actionToolbar/LumoCopyButton';
 import { SourcesButton } from '../toolCall/SourcesBlock';
@@ -110,6 +110,7 @@ const AssistantActionToolbar = ({
                             onClick={onToggleFilesManagement}
                         />
                         <LumoCopyButton
+                            textToCopy={getMessageContent(message)}
                             containerRef={markdownContainerRef}
                             onSuccess={handleCopy}
                             disabled={!isFinishedGenerating || generationFailed || isMessageEmpty}

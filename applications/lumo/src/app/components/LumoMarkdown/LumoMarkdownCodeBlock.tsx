@@ -43,7 +43,11 @@ export const LumoMarkdownCodeBlock = ({ code, language }: LumoMarkdownCodeBlockP
                                 {code}
                             </pre>
                             <div className={copyButtonClassName}>
-                                <LumoCopyButton containerRef={codeBlockCopyRef} onSuccess={showCopyNotification} />
+                                <LumoCopyButton
+                                    textToCopy={code}
+                                    containerRef={codeBlockCopyRef}
+                                    onSuccess={showCopyNotification}
+                                />
                             </div>
                         </>
                     }
@@ -52,7 +56,11 @@ export const LumoMarkdownCodeBlock = ({ code, language }: LumoMarkdownCodeBlockP
                         <LumoMarkdownCodeBlockHighlighter code={code} language={language} theme={theme} />
                     </div>
                     <div className={copyButtonClassName}>
-                        <LumoCopyButton containerRef={codeBlockCopyRef} onSuccess={showCopyNotification} />
+                        <LumoCopyButton
+                            textToCopy={code}
+                            containerRef={codeBlockCopyRef}
+                            onSuccess={showCopyNotification}
+                        />
                     </div>
                 </Suspense>
             </div>
