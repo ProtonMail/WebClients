@@ -269,11 +269,13 @@ export const inviteMember = ({
     maxSpace,
     maxAI,
     maxLumo,
+    maxVPN,
 }: {
     email: string;
     maxSpace: number;
     maxAI?: number;
     maxLumo?: number;
+    maxVPN?: number;
 }) => ({
     url: `core/v4/members/invitations`,
     method: 'post',
@@ -282,6 +284,7 @@ export const inviteMember = ({
         MaxSpace: maxSpace,
         MaxAI: maxAI,
         MaxLumo: maxLumo,
+        MaxVPN: maxVPN,
     },
 });
 
@@ -310,11 +313,12 @@ export const addSSOSamlMember = (memberID: string) => ({
     method: 'post',
 });
 
-export const editMemberInvitation = (memberID: string, maxSpace: number) => ({
+export const editMemberInvitation = (memberID: string, maxSpace: number, maxVPN?: number) => ({
     method: 'put',
     url: `core/v4/members/invitations/${memberID}`,
     data: {
         MaxSpace: maxSpace,
+        MaxVPN: maxVPN,
     },
 });
 
