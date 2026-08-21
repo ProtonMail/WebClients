@@ -2,8 +2,9 @@ import { ADDON_NAMES, PLANS } from '@proton/payments/core/constants';
 import type { SubscriptionPlan } from '@proton/payments/core/plan/interface';
 import type { OrganizationExtended, UserModel } from '@proton/shared/lib/interfaces';
 
-import type { InternalBookingPage } from '../../../store/internalBooking/interface';
-import { MAX_BOOKING_PAGES, MAX_BOOKING_PAGE_MAIL_FREE, MAX_BOOKING_PAGE_MAIL_PAID } from '../interface';
+export const MAX_BOOKING_PAGE_MAIL_FREE = 0 as const;
+export const MAX_BOOKING_PAGE_MAIL_PAID = 1 as const;
+export const MAX_BOOKING_PAGES = 25 as const;
 
 /**
  * Test if the user has reached the plan limit and can be upsold to higher.
@@ -67,7 +68,7 @@ export const hasUserReachPlanLimit = (
  */
 export const hasOrgMemberReachedBookingLimit = (
     user: UserModel,
-    bookingsPages?: InternalBookingPage[],
+    bookingsPages?: unknown[],
     organization?: OrganizationExtended
 ): boolean => {
     if (!bookingsPages) {
@@ -103,7 +104,7 @@ export const hasOrgMemberReachedBookingLimit = (
     }
 };
 
-export const hasUserReachBookingsLimit = (bookingsPages?: InternalBookingPage[]): boolean => {
+export const hasUserReachBookingsLimit = (bookingsPages?: unknown[]): boolean => {
     if (!bookingsPages) {
         return false;
     }
