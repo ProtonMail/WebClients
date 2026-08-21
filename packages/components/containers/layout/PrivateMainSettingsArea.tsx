@@ -1,11 +1,9 @@
-import { Children, type ReactNode, cloneElement, isValidElement, useEffect, useRef } from 'react';
-import { useLocation } from 'react-router';
+import { Children, type ReactNode, cloneElement, isValidElement, useRef } from 'react';
 
 import SettingsPageTitle from '@proton/components/containers/account/SettingsPageTitle';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import clsx from '@proton/utils/clsx';
 
-import createScrollIntoView from '../../helpers/createScrollIntoView';
 import useAppTitle from '../../hooks/useAppTitle';
 import ErrorBoundary from '../app/ErrorBoundary';
 import PrivateMainArea from './PrivateMainArea';
@@ -45,70 +43,14 @@ export const PrivateMainSettingsAreaBase = ({
     style,
     maxWidth,
 }: PrivateMainSettingsAreaBaseProps) => {
-    const location = useLocation();
-
     const mainAreaRef = useRef<HTMLDivElement>(null);
 
     useAppTitle(title);
 
     useScrollRestoration(mainAreaRef);
 
-    useEffect(() => {
-        const { hash } = location;
-
-        if (!hash) {
-            return;
-        }
-
-        if (!mainAreaRef.current) {
-            return;
-        }
-        const mainArea = mainAreaRef.current;
-        let el: Element | null | undefined;
-        try {
-            el = mainArea.querySelector(hash);
-        } catch (e) {}
-        if (!el) {
-            return;
-        }
-
-        const abortScroll = createScrollIntoView(el, mainArea, true);
-        let removeListeners: () => void;
-
-        const abort = () => {
-            abortScroll();
-            removeListeners?.();
-        };
-
-        const options = {
-            passive: true,
-            capture: true,
-        };
-
-        // Abort on any user interaction such as scrolling, touching, or keyboard interaction
-        window.addEventListener('wheel', abort, options);
-        window.addEventListener('keydown', abort, options);
-        window.addEventListener('mousedown', abort, options);
-        window.addEventListener('touchstart', abort, options);
-        // Automatically abort after some time where it's assumed to have successfully scrolled into place.
-        const timeoutId = window.setTimeout(abort, 15000);
-
-        removeListeners = () => {
-            window.removeEventListener('wheel', abort, options);
-            window.removeEventListener('keydown', abort, options);
-            window.removeEventListener('mousedown', abort, options);
-            window.removeEventListener('touchstart', abort, options);
-            window.clearTimeout(timeoutId);
-        };
-
-        return () => {
-            abort();
-        };
-        // Listen to location instead of location.hash since it's possible to click the same #section multiple times and end up with a new entry in history
-    }, [location]);
-
     const wrappedSections = Children.toArray(children).map((child) => {
-        if (!isValidElement<{ observer: IntersectionObserver; className: string }>(child)) {
+        if (!isValidElement(child)) {
             return null;
         }
 
@@ -179,7 +121,7 @@ const PrivateMainSettingsArea = ({
     const { text, title, noTitle, description, subsections } = config;
 
     const wrappedSections = Children.toArray(children).map((child, i) => {
-        if (!isValidElement<{ observer: IntersectionObserver; className: string }>(child)) {
+        if (!isValidElement(child)) {
             return null;
         }
         const subsectionConfig = subsections?.[i];
