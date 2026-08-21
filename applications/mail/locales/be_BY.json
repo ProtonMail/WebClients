@@ -1516,10 +1516,7 @@
         "Давяраць"
       ],
       "Trust key": [
-        "Давяраць ключу",
-        "Давяраць ключам",
-        "Давяраць ключам",
-        "Давяраць ключам"
+        "Давяраць ключу"
       ],
       "Trust public key": [
         "Давяраць адкрытаму ключу"
@@ -1754,6 +1751,12 @@
       ],
       "Get the deal": [
         "Скарыстацца прапановай"
+      ],
+      "Copy debug transcript": [
+        "Скапіяваць расшыфроўку адладкі"
+      ],
+      "Get index size on disk": [
+        "Атрымаць памер індэксу на дыску"
       ]
     },
     "action": {
@@ -2425,7 +2428,7 @@
         "Зразумела"
       ],
       "Maybe later": [
-        "Магчыма пазней"
+        "Магчыма, пазней"
       ],
       "Next": [
         "Далей"
@@ -8339,7 +8342,10 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс"
+        "Уставіць відарыс",
+        "Уставіць відарысы",
+        "Уставіць відарысы",
+        "Уставіць відарысы"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -8432,7 +8438,7 @@
         "Нізкі прыярытэт"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Зрабіць ${ MAIL_APP_NAME } вашай прадвызначанай праграмай электроннай пошты."
+        "Зрабіце ${ MAIL_APP_NAME } вашай прадвызначанай праграмай электроннай пошты."
       ],
       "Manage your folders": [
         "Кіруйце сваімі папкамі"
@@ -10044,6 +10050,51 @@
       ],
       "Not supported by this browser": [
         "Не падтрымліваецца гэтым браўзерам"
+      ],
+      "${ count } email": [
+        "${ count } ліст",
+        "${ count } лісты",
+        "${ count } лістоў",
+        "${ count } лістоў"
+      ],
+      "${ count } email · ${ names }": [
+        "${ count } ліст · ${ names }",
+        "${ count } лісты · ${ names }",
+        "${ count } лістоў · ${ names }",
+        "${ count } лістоў · ${ names }"
+      ],
+      "Apply labels": [
+        "Прымяніць меткі"
+      ],
+      "Checked Proton support": [
+        "Праверана падтрымкай Proton"
+      ],
+      "Create folder": [
+        "Стварыць папку"
+      ],
+      "Create label": [
+        "Стварыць метку"
+      ],
+      "Debug transcript copied": [
+        "Расшыфроўка адладкі скапіявана"
+      ],
+      "Expand logs": [
+        "Разгарнуць журналы"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Вы можаце выкарыстаць 1 з 16 рэзервовых кодаў аднаўлення, якія вы атрымалі пры наладжванні двухфактарнай аўтэнтыфікацыі, калі вы страцілі доступ да вашай праграмы аўтэнтыфікацыі. ${ learnMoreLink }"
+      ],
+      "Mark all as unread": [
+        "Пазначыць усе як непрачытаныя"
+      ],
+      "Mark as read": [
+        "Пазначыць як прачытанае"
+      ],
+      "Mark as unread": [
+        "Пазначыць як непрачытанае"
+      ],
+      "Searched the web": [
+        "Пошук у інтэрнэце"
       ]
     },
     "info": {
@@ -11324,6 +11375,12 @@
       ],
       "Folder name": [
         "Назва папкі"
+      ],
+      "Label name": [
+        "Назва меткі"
+      ],
+      "Write-chain drain after last line": [
+        "Скінуць ланцужок запісу пасля апошняга радка"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13264,7 +13321,7 @@
         "Прапанова абмежавана па часе і дзейнічае за ваш першы месяц"
       ],
       "Maybe later": [
-        "Магчыма пазней"
+        "Магчыма, пазней"
       ],
       "Offer expires ${ formattedDate }.": [
         "Прапанова міне ${ formattedDate }"
@@ -13357,7 +13414,7 @@
         "Выберыце пастаўшчыка"
       ],
       "Maybe later": [
-        "Магчыма пазней"
+        "Магчыма, пазней"
       ],
       "Protect your accounts": [
         "Абараніце свае ўліковыя запісы"
@@ -13455,7 +13512,7 @@
         "Атрымлівайце максімум ад свайго платнага тарыфнага плана."
       ],
       "Maybe later": [
-        "Магчыма пазней"
+        "Магчыма, пазней"
       ],
       "Next": [
         "Далей"
@@ -17725,6 +17782,24 @@
       ],
       "Unstar emails": [
         "Не пазначаныя зорачкай лісты"
+      ],
+      "Apply labels": [
+        "Прымяніць меткі"
+      ],
+      "Create folder": [
+        "Стварыць папку"
+      ],
+      "Create label": [
+        "Стварыць метку"
+      ],
+      "Mark all as read": [
+        "Пазначыць усе як прачытаныя"
+      ],
+      "Mark all as unread": [
+        "Пазначыць усе як непрачытаныя"
+      ],
+      "September Sale": [
+        "Вераснёўскі распродаж"
       ]
     },
     "Title header for keys table": {
@@ -18480,6 +18555,79 @@
       ],
       "content key": [
         "ключ змесціва"
+      ]
+    },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "Скарыстацца прапановай"
+      ],
+      "Special Offer": [
+        "Спецыяльная прапанова"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "/month": [
+        "/месяц"
+      ],
+      "2 individual accounts": [
+        "2 асабістых уліковых запісы"
+      ],
+      "2 TB of secure storage": [
+        "2 ТБ бяспечнага сховішча"
+      ],
+      "3 TB of secure storage": [
+        "3 ТБ бяспечнага сховішча"
+      ],
+      "500 GB of secure storage": [
+        "500 ГБ бяспечнага сховішча"
+      ],
+      "6 individual accounts": [
+        "6 асабістых уліковых запісаў"
+      ],
+      "Advanced protection against cyber threats": [
+        "Пашыраная абарона супраць кіберпагроз"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Скідкі разлічваюцца на падставе стандартнай платы за месяц. Ваша падпіска будзе аўтаматычна падаўжацца па стандартнай гадавой стаўцы пасля заканчэння перыяду аплаты."
+      ]
+    },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Прэміяльныя ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } і ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Прэміяльныя ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Прэміяльныя ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Прэміяльныя ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Прэміяльныя ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "за 12 месяцаў"
+      ],
+      "One plan, full power": [
+        "Адзін тарыфны план, максімум магчымасцяў"
+      ],
+      "One plan, max savings": [
+        "Адзін тарыфны план, максімальная эканомія"
+      ],
+      "One plan, more power": [
+        "Адзін тарыфны план, больш магчымасцяў"
       ]
     }
   }

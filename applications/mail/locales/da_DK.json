@@ -1523,8 +1523,7 @@
         "Hav tillid til"
       ],
       "Trust key": [
-        "Betroet nøgle",
-        "Betroede nøgler"
+        "Stol på nøgle"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -8093,7 +8092,8 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede"
+        "Indsæt billede",
+        "Indsæt billeder"
       ],
       "Insert link": [
         "Indsæt link"
@@ -9732,6 +9732,9 @@
       ],
       "Mark as unread": [
         "Markér som ikke-læst(e)"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Har du mistet adgangen til din autentificeringsapp kan du bruge 1 af de 16 backup recovery koder, der leveres, når du konfigurerer to-faktor godkendelse. ${ learnMoreLink }"
       ]
     },
     "info": {

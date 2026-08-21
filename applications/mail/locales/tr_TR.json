@@ -1526,8 +1526,7 @@
         "Güven"
       ],
       "Trust key": [
-        "Anahtara güven",
-        "Anahtarlara güven"
+        "Anahtara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -1748,6 +1747,9 @@
       ],
       "Get the deal": [
         "Tekliften yararlanın"
+      ],
+      "Get index size on disk": [
+        "Diskteki dizin boyutunu al"
       ]
     },
     "action": {
@@ -8108,7 +8110,8 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle"
+        "Görsel ekle",
+        "Görseller ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -9771,6 +9774,13 @@
       ],
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
         "Kimlik doğrulama uygulamanıza erişemiyorsanız iki adımlı doğrulamayı kurarken size verilen 16 yedek kurtarma kodundan birini kullanabilirsiniz. ${ learnMoreLink }"
+      ],
+      "Found ${ count } contact": [
+        "${ count } kişi bulundu",
+        "${ count } kişi bulundu"
+      ],
+      "No contacts found": [
+        "Herhangi bir kişi bulunamadı"
       ]
     },
     "info": {
