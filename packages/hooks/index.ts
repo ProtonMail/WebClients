@@ -12,3 +12,4 @@ export { default as useToggle } from './useToggle';
 export { default as useSynchronizingState } from './useSynchronizingState';
 export { default as usePrevious } from './usePrevious';
 export { default as useIsMounted } from './useIsMounted';
+export { default as useRightToLeft } from './useRightToLeft';
