@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import { BookingLocation, MinimumNoticeMode } from '@proton/calendar/bookings/types';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import RadioGroup from '@proton/components/components/input/RadioGroup';
 import Option from '@proton/components/components/option/Option';
@@ -23,7 +24,7 @@ import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useBookings } from '../bookingsProvider/BookingsProvider';
-import { BookingLocation, BookingState, MinimumNoticeMode } from '../interface';
+import { BookingState } from '../interface';
 import { validateFormData } from '../utils/form/formHelpers';
 import { BookingFormCalendarField } from './BookingFormCalendarField';
 import { FormErrorWrapper, FormIconRow, FormLocationOptionContent } from './BookingsFormComponents';

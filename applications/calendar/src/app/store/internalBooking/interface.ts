@@ -1,5 +1,9 @@
-import type { APIBooking, SerializedFormData } from '../../containers/bookings/bookingsTypes';
-import type { MinimumNoticeMode } from '../../containers/bookings/interface';
+import type {
+    APIBooking,
+    BookingPageEditData,
+    MinimumNoticeMode,
+    SerializedFormData,
+} from '@proton/calendar/bookings/types';
 
 export interface VerificationError {
     secretVerificationError: boolean;
@@ -17,23 +21,6 @@ export interface InternalBookingPage {
     withProtonMeetLink: boolean;
     link: string;
     verificationErrors: VerificationError;
-    minimumNoticeMode: MinimumNoticeMode;
-    conflictCalendarIDs: string[];
-}
-
-export interface EditSlotData {
-    start: number;
-    end: number;
-    timezone: string;
-    rrule: string | null;
-}
-
-export interface BookingPageEditData {
-    slots: EditSlotData[];
-    bookingUID: string;
-    encryptedSecret: string;
-    encryptedContent: string;
-    bookingKeySalt: string;
     minimumNoticeMode: MinimumNoticeMode;
     conflictCalendarIDs: string[];
 }

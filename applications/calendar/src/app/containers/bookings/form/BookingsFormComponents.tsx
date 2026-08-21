@@ -1,12 +1,11 @@
 import type { PropsWithChildren, ReactElement, ReactNode } from 'react';
 
+import { BookingLocation } from '@proton/calendar/bookings/types';
 import IconRow from '@proton/components/components/iconRow/IconRow';
 import MeetLogo from '@proton/components/components/logo/MeetLogo';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import { IcMapPin } from '@proton/icons/icons/IcMapPin';
 import clsx from '@proton/utils/clsx';
-
-import { BookingLocation } from '../interface';
 
 interface FormIconRowProps extends PropsWithChildren {
     title: string;

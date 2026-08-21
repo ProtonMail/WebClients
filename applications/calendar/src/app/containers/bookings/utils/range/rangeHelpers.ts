@@ -16,6 +16,7 @@ import {
     subMinutes,
 } from 'date-fns';
 
+import type { BookingPageEditData } from '@proton/calendar/bookings/types';
 import {
     convertUTCDateTimeToZone,
     fromLocalDate,
@@ -28,7 +29,6 @@ import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Cale
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 import isTruthy from '@proton/utils/isTruthy';
 
-import type { BookingPageEditData } from '../../../../store/internalBooking/interface';
 import type { CalendarViewEvent } from '../../../calendar/interface';
 import type { BookingFormData, BookingRange, Intersection, RecurringRangeDisplay } from '../../interface';
 import { BOOKING_SLOT_ID, BookingRangeError, DEFAULT_RANGE_END_HOUR, DEFAULT_RANGE_START_HOUR } from '../../interface';

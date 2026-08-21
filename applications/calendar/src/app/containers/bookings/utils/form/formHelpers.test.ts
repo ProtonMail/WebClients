@@ -1,7 +1,8 @@
+import { BookingLocation } from '@proton/calendar/bookings/types';
+
 import {
     type BookingFormData,
     BookingFormValidationReasons,
-    BookingLocation,
     BookingRangeError,
     MAX_BOOKING_SLOTS,
 } from '../../interface';

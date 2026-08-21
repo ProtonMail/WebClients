@@ -1,13 +1,17 @@
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import {
+    hasOrgMemberReachedBookingLimit,
+    hasUserReachBookingsLimit,
+    hasUserReachPlanLimit,
+} from '@proton/calendar/bookings/eligibility';
 import { ADDON_PREFIXES } from '@proton/payments/core/constants';
 import { isAddonType } from '@proton/payments/core/plan/addons';
 import { getAddons } from '@proton/payments/core/subscription/helpers';
 import { isFreeSubscription } from '@proton/payments/core/type-guards';
 
 import { useInternalBooking } from '../../../store/internalBooking/bookingsHook';
-import { hasOrgMemberReachedBookingLimit, hasUserReachBookingsLimit, hasUserReachPlanLimit } from './upsellHelpers';
 
 export const useBookingUpsell = () => {
     const [user, loadingUser] = useUser();

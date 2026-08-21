@@ -1,5 +1,7 @@
 import { areIntervalsOverlapping, differenceInMinutes, isBefore, isSameDay, subMinutes } from 'date-fns';
 
+import { BookingLocation } from '@proton/calendar/bookings/types';
+import type { BookingPageEditData } from '@proton/calendar/bookings/types';
 import { getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
 import { convertUTCDateTimeToZone, fromUTCDate, getTimezone, toLocalDate } from '@proton/shared/lib/date/timezone';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
@@ -9,9 +11,9 @@ import type {
     VisualCalendar,
 } from '@proton/shared/lib/interfaces/calendar/Calendar';
 
-import type { BookingPageEditData, InternalBookingPage } from '../../../../store/internalBooking/interface';
+import type { InternalBookingPage } from '../../../../store/internalBooking/interface';
 import type { BookingRange, InternalBookingForm, Slot } from '../../interface';
-import { BookingLocation, DEFAULT_EVENT_DURATION, DEFAULT_RECURRING } from '../../interface';
+import { DEFAULT_EVENT_DURATION, DEFAULT_RECURRING } from '../../interface';
 import { BookingErrorMessages } from '../bookingCopy';
 import { generateDefaultBookingRange, generateRangeFromSlots } from '../range/rangeHelpers';
 import { generateSlotsFromRange } from '../slot/slotHelpers';
