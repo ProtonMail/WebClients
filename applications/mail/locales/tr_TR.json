@@ -1544,7 +1544,8 @@
         "Güven"
       ],
       "Trust key": [
-        "Anahtara güven"
+        "Anahtara güven",
+        "Anahtarlara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -1747,6 +1748,9 @@
       ],
       "Zoom out": [
         "Uzaklaştır"
+      ],
+      "Get index size on disk": [
+        "Diskteki dizin boyutunu al"
       ]
     },
     "action": {
@@ -8136,8 +8140,7 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle",
-        "Görseller ekle"
+        "Görsel ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -9759,6 +9762,13 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Dağınıklıktan arındırılmış bir gelen kutusundan yalnızca birkaç tık uzaktasınız."
+      ],
+      "Found ${ count } contact": [
+        "${ count } kişi bulundu",
+        "${ count } kişi bulundu"
+      ],
+      "No contacts found": [
+        "Herhangi bir kişi bulunamadı"
       ]
     },
     "info": {
