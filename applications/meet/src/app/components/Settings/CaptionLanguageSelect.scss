@@ -1,0 +1,36 @@
+.caption-language-caret {
+	margin-inline-end: -0.2775rem;
+}
+
+.dropdown.caption-language-dropdown {
+	background-color: transparent;
+	backdrop-filter: blur(20px);
+	translate: var(--space-4);
+
+	[dir='rtl'] & {
+		translate: calc(-1 * var(--space-4));
+	}
+
+	.dropdown-content {
+		background-color: transparent;
+
+		&::before,
+		&::after {
+			display: none;
+		}
+	}
+
+	.caption-language-option {
+		padding: var(--space-3);
+
+		&.is-selected {
+			background: var(--interaction-norm-minor-3);
+		}
+
+		// Listed after the selected state so that pointing at the current language still lights up.
+		&:hover,
+		&:focus-within {
+			background: var(--interaction-norm-minor-2);
+		}
+	}
+}

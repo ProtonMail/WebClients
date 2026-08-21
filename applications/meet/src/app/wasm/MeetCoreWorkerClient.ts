@@ -2,6 +2,8 @@ import type { ConnectionStateInfo, MeetCoreErrorEnum } from '@proton-meet/proton
 
 import type { CreateJoinRequestResult, MeetCoreClient } from './MeetCoreClient';
 import {
+    emitMeetCoreAgentLeftEvent,
+    emitMeetCoreAgentPendingEvent,
     emitMeetCoreDisconnectionEvent,
     emitMeetCoreLivekitAdminChangeEvent,
     emitMeetCoreMlsSyncStateEvent,
@@ -99,6 +101,22 @@ export class MeetCoreWorkerClient implements MeetCoreClient {
         return this.request('joinRoomWithProposal', args);
     }
 
+    public listPendingAgents(...args: Parameters<MeetCoreClient['listPendingAgents']>): Promise<string[]> {
+        return this.request('listPendingAgents', args);
+    }
+
+    public admitAgent(...args: Parameters<MeetCoreClient['admitAgent']>): Promise<void> {
+        return this.request('admitAgent', args);
+    }
+
+    public requestClosedCaptions(...args: Parameters<MeetCoreClient['requestClosedCaptions']>): Promise<void> {
+        return this.request('requestClosedCaptions', args);
+    }
+
+    public stopClosedCaptions(...args: Parameters<MeetCoreClient['stopClosedCaptions']>): Promise<void> {
+        return this.request('stopClosedCaptions', args);
+    }
+
     public leaveMeeting(): Promise<void> {
         return this.request('leaveMeeting', []);
     }
@@ -141,6 +159,14 @@ export class MeetCoreWorkerClient implements MeetCoreClient {
 
     public setLiveKitAdminChangeHandler(): Promise<void> {
         return this.request('setLiveKitAdminChangeHandler', []);
+    }
+
+    public setAgentPendingHandler(): Promise<void> {
+        return this.request('setAgentPendingHandler', []);
+    }
+
+    public setAgentLeftHandler(): Promise<void> {
+        return this.request('setAgentLeftHandler', []);
     }
 
     public setDisconnectionHandler(): Promise<void> {
@@ -449,6 +475,12 @@ export class MeetCoreWorkerClient implements MeetCoreClient {
                     message.participantUid,
                     message.expiresAt
                 );
+                return;
+            case 'meet-core:event:agent-pending':
+                await emitMeetCoreAgentPendingEvent(message.deviceId);
+                return;
+            case 'meet-core:event:agent-left':
+                await emitMeetCoreAgentLeftEvent(message.deviceId);
                 return;
         }
     }

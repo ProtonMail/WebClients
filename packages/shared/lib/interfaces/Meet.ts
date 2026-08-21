@@ -96,6 +96,7 @@ export interface Meeting extends Omit<MeetingPayload, 'Name'> {
 export interface UserSettings {
     MeetingID: string;
     AddressID: string;
+    CaptionLanguage?: string | null;
 }
 
 export interface CreateMeetingResponse {

@@ -1,3 +1,5 @@
+import { useEffect, useRef } from 'react';
+
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -22,7 +24,11 @@ import { SettingToggle } from '../../atoms/SettingToggle/SettingToggle';
 import { SideBar } from '../../atoms/SideBar/SideBar';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import { useMeetContext } from '../../contexts/MeetContext';
+import { useCaptionsPreference } from '../../hooks/captions/useCaptionsPreference';
+import { useLiveCaptionsFeatureEnabled } from '../../hooks/captions/useLiveCaptionsFeatureEnabled';
 import { BackgroundBlurToggle } from './BackgroundBlurToggle';
+import { CaptionLanguageSelect } from './CaptionLanguageSelect';
+import { LiveCaptionsToggle } from './LiveCaptionsToggle';
 import { NoiseCancellingToggle } from './NoiseCancellingToggle';
 import { WaitingRoomToggle } from './WaitingRoomToggle';
 import { SettingsArea } from './shared/SettingsArea';
@@ -42,11 +48,26 @@ export const Settings = () => {
     const { isPaidUser } = useMeetSelector(selectSubscriptionStatus);
     const showDuration = useMeetSelector(selectShowDuration);
     const isLocalParticipantAdminOrHost = useMeetSelector(selectIsLocalParticipantAdminOrHost);
+    const liveCaptionsEnabled = useLiveCaptionsFeatureEnabled();
+    const { wantsCaptions } = useCaptionsPreference();
 
     const isVirtualBackgroundEnabled = useFlag('MeetVirtualBackground');
 
     const [loadingLock, withLoadingLock] = useLoading();
     const [loadingBackgroundBlur, withLoadingBackgroundBlur] = useLoading();
+
+    const accessibilityRef = useRef<HTMLDivElement>(null);
+    const captionsWereOn = useRef(wantsCaptions);
+
+    // The captions bar takes its height from the panel, which can push this section out of view.
+    useEffect(() => {
+        const justTurnedOn = wantsCaptions && !captionsWereOn.current;
+        captionsWereOn.current = wantsCaptions;
+
+        if (justTurnedOn) {
+            accessibilityRef.current?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+        }
+    }, [wantsCaptions]);
 
     if (!sideBarState[MeetingSideBars.Settings]) {
         return null;
@@ -148,6 +169,14 @@ export const Settings = () => {
                                 checked={showDuration}
                             />
                         </SettingsArea>
+                    )}
+                    {liveCaptionsEnabled && (
+                        <div ref={accessibilityRef} className="shrink-0">
+                            <SettingsArea title={c('Title').t`Accessibility`}>
+                                <LiveCaptionsToggle />
+                                {wantsCaptions && <CaptionLanguageSelect />}
+                            </SettingsArea>
+                        </div>
                     )}
                 </div>
             </div>
