@@ -13,7 +13,7 @@ export interface TelemetryInitOptions {
      * Event options are opt in - each defaults to false
      */
     eventOptions?: TelemetryConfig['events'];
-    overridenPageTitle?: string;
+    overriddenPageTitle?: string;
 }
 
 class ProtonTelemetry {
@@ -31,14 +31,14 @@ class ProtonTelemetry {
      */
     private preInitialisationEventQueue: EventArgs[] = [];
 
-    public init({ config, uid, eventOptions, overridenPageTitle }: TelemetryInitOptions) {
+    public init({ config, uid, eventOptions, overriddenPageTitle }: TelemetryInitOptions) {
         this.UID = uid;
         this.config = {
             endpoint: `${config.API_URL}/data/v1/telemetry`,
             appVersion: getAppVersionStr(getClientID(config.APP_NAME), config.APP_VERSION),
             debug: process.env.NODE_ENV !== 'production',
             events: { ...eventOptions, click: false },
-            pageTitle: overridenPageTitle,
+            pageTitle: overriddenPageTitle,
         };
 
         this.setTelemetry();
