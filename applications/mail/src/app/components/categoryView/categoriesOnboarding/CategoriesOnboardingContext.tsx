@@ -16,7 +16,7 @@ import { useMailSelector } from 'proton-mail/store/hooks';
 import {
     getB2COnboardingStep,
     getListSpotlightStep,
-    getSocialTabSpotlightStep,
+    getTabSpotlightStep,
     hasSeenOnboardingModal,
 } from './categoriesOnboarding.helpers';
 import type { CategorizeStepLocation } from './onboardingInterface';
@@ -26,7 +26,7 @@ import { useCategoriesOnboardingEligibility } from './useCategoriesOnboardingEli
 interface CategoriesOnboardingContextProps {
     userIsInB2COnboardingFlow: boolean;
     activeStep: OnboardingStep;
-    socialTabSpotlightStep: OnboardingStep | undefined;
+    tabSpotlightStep: OnboardingStep | undefined;
     listSpotlightStep: OnboardingStep | undefined;
     handleSkip: () => void;
     completeCurrentStep: () => void;
@@ -157,7 +157,7 @@ export const CategoriesOnboardingProvider = ({ children }: PropsWithChildren) =>
         void flagRef.current.update(setBit(flagValue, bit));
     }, [activeStep]);
 
-    const socialTabSpotlightStep = getSocialTabSpotlightStep(activeStep, categorizeStepLocationRef.current);
+    const tabSpotlightStep = getTabSpotlightStep(activeStep, categorizeStepLocationRef.current);
     const listSpotlightStep = getListSpotlightStep(activeStep, categorizeStepLocationRef.current);
 
     const userIsInB2COnboardingFlow = B2C_ONBOARDING_STEPS.has(activeStep);
@@ -165,20 +165,13 @@ export const CategoriesOnboardingProvider = ({ children }: PropsWithChildren) =>
     const value: CategoriesOnboardingContextProps = useMemo(
         () => ({
             activeStep,
-            socialTabSpotlightStep,
+            tabSpotlightStep,
             listSpotlightStep,
             userIsInB2COnboardingFlow,
             handleSkip,
             completeCurrentStep,
         }),
-        [
-            activeStep,
-            socialTabSpotlightStep,
-            listSpotlightStep,
-            userIsInB2COnboardingFlow,
-            handleSkip,
-            completeCurrentStep,
-        ]
+        [activeStep, tabSpotlightStep, listSpotlightStep, userIsInB2COnboardingFlow, handleSkip, completeCurrentStep]
     );
 
     return <CategoriesOnboardingContext.Provider value={value}>{children}</CategoriesOnboardingContext.Provider>;
