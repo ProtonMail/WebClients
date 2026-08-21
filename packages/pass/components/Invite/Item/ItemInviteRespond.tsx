@@ -7,7 +7,7 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { useMaybeGroup } from '@proton/pass/components/Groups/GroupsProvider';
-import { useInviteActions } from '@proton/pass/components/Invite/InviteProvider';
+import { useInviteActions } from '@proton/pass/components/Invite/InviteContext';
 import { InviteStepResponse } from '@proton/pass/components/Invite/Steps/InviteStepResponse';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
 import { selectInviteByToken } from '@proton/pass/store/selectors/invites';

@@ -8,7 +8,7 @@ import { dedupeShares } from '@proton/pass/lib/shares/share.dedupe';
 import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
 import { requestShares } from '@proton/pass/lib/shares/share.requests';
 import { createDefaultVault } from '@proton/pass/lib/sync/common/vaults';
-import { notifyInactiveShares } from '@proton/pass/lib/sync/migrate';
+import { notifyInactiveShares } from '@proton/pass/lib/sync/notifications';
 import type { EventProcessor } from '@proton/pass/lib/sync/types';
 import { getUserAccess } from '@proton/pass/lib/user/user.requests';
 import { syncResult } from '@proton/pass/store/actions';

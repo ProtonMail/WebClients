@@ -16,7 +16,6 @@ import type {
     ItemEditIntent,
     ItemId,
     ItemImportIntent,
-    ItemLatestKeyResponse,
     ItemMoveIndividualToShareRequest,
     ItemMoveMultipleToShareRequest,
     ItemRevision,
@@ -145,15 +144,6 @@ export const createItemWithAlias = async (
 
     return [login, alias];
 };
-
-/** FIXME: we should start caching the item keys */
-export const getLatestItemKey = async ({ shareId, itemId }: SelectedItem): Promise<ItemLatestKeyResponse> =>
-    (
-        await api({
-            url: `pass/v1/share/${shareId}/item/${itemId}/key/latest`,
-            method: 'get',
-        })
-    ).Key!;
 
 export const editItem = async (editIntent: ItemEditIntent, lastRevision: number): Promise<ItemRevision> => {
     const { shareId, itemId, files, ...edit } = editIntent;
