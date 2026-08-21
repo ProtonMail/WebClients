@@ -762,14 +762,16 @@ export function* unindexAttachment({ payload }: { payload: UnindexAttachmentRequ
     console.log('Saga triggered: unindexAttachment', localId);
     const userId: string | undefined = yield select((state: LumoState) => state.user?.value?.ID);
     if (!userId) return;
+    const attachment: Attachment | undefined = yield select((state: LumoState) => state.attachments[localId]);
     try {
-        // todo consider a pattern like this instead:
-        //    const dbApi: DbApi = yield getContext('dbApi');
         const SearchService = yield call(() =>
             import('../../services/search/searchService').then((m) => m.SearchService)
         );
         const searchService = SearchService.get(userId);
-        searchService.removeDocument(localId);
+        yield call([searchService, searchService.removeDocument], localId);
+        if (attachment?.driveNodeId && attachment.driveNodeId !== localId) {
+            yield call([searchService, searchService.removeDocument], attachment.driveNodeId);
+        }
         console.log('[Attachment] Removed from search index:', localId);
     } catch (error) {
         console.error('[Attachment] Failed to remove from search index:', error);
