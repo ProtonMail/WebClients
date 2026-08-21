@@ -1,4 +1,4 @@
-import { getMaxDepth, hasChildren } from '../../lib/helpers/dom';
+import { getMaxDepth, getScrollParent, hasChildren } from '../../lib/helpers/dom';
 
 describe('hasChildren', () => {
     it('should return false for text node', () => {
@@ -57,5 +57,70 @@ describe('getMaxDepth', () => {
     it('should return 1 for element with greatgrandchildren', () => {
         const div = document.getElementById('greatgrandchild');
         expect(getMaxDepth(div as HTMLDivElement)).toBe(1);
+    });
+});
+
+describe('getScrollParent', () => {
+    // Nothing in the test DOM has a size, so overflow has to be faked.
+    const makeScrollable = (element: HTMLElement) => {
+        Object.defineProperty(element, 'scrollHeight', { value: 200, configurable: true });
+        Object.defineProperty(element, 'clientHeight', { value: 100, configurable: true });
+    };
+
+    const makeScrollableHorizontally = (element: HTMLElement) => {
+        Object.defineProperty(element, 'scrollWidth', { value: 200, configurable: true });
+        Object.defineProperty(element, 'clientWidth', { value: 100, configurable: true });
+    };
+
+    const getElementById = (id: string) => document.getElementById(id) as HTMLElement;
+
+    beforeEach(() => {
+        document.body.innerHTML = `
+            <div id="scroller" style="overflow: auto">
+                <div id="wrapper" style="overflow: auto">
+                    <div id="target"></div>
+                </div>
+            </div>
+        `;
+    });
+
+    it('should skip an overflow ancestor that does not actually scroll', () => {
+        makeScrollable(getElementById('scroller'));
+
+        expect(getScrollParent(getElementById('target'))).toBe(getElementById('scroller'));
+    });
+
+    it('should return the nearest ancestor that scrolls', () => {
+        makeScrollable(getElementById('scroller'));
+        makeScrollable(getElementById('wrapper'));
+
+        expect(getScrollParent(getElementById('target'))).toBe(getElementById('wrapper'));
+    });
+
+    it('should skip an ancestor that only scrolls horizontally', () => {
+        makeScrollableHorizontally(getElementById('wrapper'));
+        makeScrollable(getElementById('scroller'));
+
+        expect(getScrollParent(getElementById('target'))).toBe(getElementById('scroller'));
+    });
+
+    it('should return the nearest ancestor that could scroll when nothing overflows yet', () => {
+        expect(getScrollParent(getElementById('target'))).toBe(getElementById('wrapper'));
+    });
+
+    it('should prefer an ancestor scrolling horizontally over one that only could scroll', () => {
+        makeScrollableHorizontally(getElementById('scroller'));
+
+        expect(getScrollParent(getElementById('target'))).toBe(getElementById('scroller'));
+    });
+
+    it('should fall back to the scrolling root without any overflow ancestor', () => {
+        document.body.innerHTML = `<div><div id="target"></div></div>`;
+
+        expect(getScrollParent(getElementById('target'))).toBe(document.scrollingElement);
+    });
+
+    it('should fall back to the scrolling root without an element', () => {
+        expect(getScrollParent(null)).toBe(document.scrollingElement);
     });
 });
