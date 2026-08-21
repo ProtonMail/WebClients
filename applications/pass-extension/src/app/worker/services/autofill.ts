@@ -14,6 +14,11 @@ import type { FrameFormsResult } from 'proton-pass-extension/types/frames';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { clientBooted } from '@proton/pass/lib/client';
+import {
+    mergeModelArtifactCache,
+    parseModelArtifactCache,
+} from '@proton/pass/lib/extension/model-artifact/model-artifact-cache';
+import type { ModelArtifactCache } from '@proton/pass/lib/extension/model-artifact/model-artifact-cache';
 import { parseModelRegistry, resolveModelId } from '@proton/pass/lib/extension/model-registry/model-registry';
 import type { ModelRegistry } from '@proton/pass/lib/extension/model-registry/model-registry';
 import { compileRules, matchRules, parseRules } from '@proton/pass/lib/extension/rules/rules';
@@ -65,13 +70,14 @@ import noop from '@proton/utils/noop';
 import { resolveCCFormFields } from './autofill.cc';
 
 type AutofillServiceState = {
+    modelArtifacts: ModelArtifactCache;
     modelRegistry: MaybeNull<ModelRegistry>;
     privateDomains: PrivateDomains;
     rules: MaybeNull<CompiledRules>;
 };
 
 export const createAutoFillService = () => {
-    const state: AutofillServiceState = { modelRegistry: null, privateDomains: null, rules: null };
+    const state: AutofillServiceState = { modelArtifacts: {}, modelRegistry: null, privateDomains: null, rules: null };
 
     /** Guards sub-frame content-script injection. Gated only on the global
      * killswitch: per-type user settings (eg: `autofill.cc`) are enforced
@@ -101,7 +107,12 @@ export const createAutoFillService = () => {
     });
 
     const init = withContext(async (ctx) => {
-        const result = await ctx.service.storage.local.getItems(['websiteRules', 'privateDomains', 'modelRegistry']);
+        const result = await ctx.service.storage.local.getItems([
+            'websiteRules',
+            'privateDomains',
+            'modelRegistry',
+            'modelArtifacts',
+        ]);
 
         const rules = parseRules(result.websiteRules ?? null);
         state.rules = rules ? compileRules(rules) : null;
@@ -115,6 +126,12 @@ export const createAutoFillService = () => {
             state.modelRegistry = parsed.registry;
             if (state.modelRegistry) logger.info(`[AutofillService] Hydrated model registry`);
         } else logger.warn(`[AutofillService] ${parsed.error}`);
+
+        const parsedArtifacts = parseModelArtifactCache(result.modelArtifacts ?? null);
+        if (parsedArtifacts.ok) {
+            state.modelArtifacts = parsedArtifacts.cache;
+            if (Object.keys(state.modelArtifacts).length) logger.info(`[AutofillService] Hydrated model artifacts`);
+        } else logger.warn(`[AutofillService] ${parsedArtifacts.error}`);
 
         refreshAssignedModelId();
     });
@@ -516,6 +533,11 @@ export const createAutoFillService = () => {
                     state.modelRegistry = evt.data;
                     refreshAssignedModelId();
                     break;
+
+                case 'model-artifact::resolved':
+                    state.modelArtifacts = mergeModelArtifactCache(state.modelArtifacts, evt.data);
+                    void ctx.service.storage.local.setItem('modelArtifacts', JSON.stringify(state.modelArtifacts));
+                    break;
             }
         })
     );
@@ -527,6 +549,7 @@ export const createAutoFillService = () => {
         clear,
         getAssignedModelId,
         getLoginCandidates,
+        getModelArtifact: (modelId: string) => state.modelArtifacts[modelId] ?? null,
         getModelRegistry: () => state.modelRegistry,
         getRules: () => state.rules,
         refreshAssignedModelId,

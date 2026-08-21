@@ -61,6 +61,7 @@ export type LocalStoreData = {
     forceLock: boolean; /** flag indicating if we should force lock on next resume */
     lastReload: number;
     logs: string;
+    modelArtifacts: string;
     modelRegistry: string;
     onboarding: string;
     privateDomains: string;

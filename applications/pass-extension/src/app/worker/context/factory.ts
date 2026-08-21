@@ -42,7 +42,9 @@ import { clientBooted, clientStatusResolved } from '@proton/pass/lib/client';
 import { exposePassCrypto } from '@proton/pass/lib/crypto';
 import { createPassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { QA_SERVICE } from '@proton/pass/lib/qa/service';
+import { resolveModelArtifact } from '@proton/pass/store/actions/creators/model-artifact';
 import { registerStoreEffect } from '@proton/pass/store/connect/effect';
+import { selectAssignedModelId } from '@proton/pass/store/selectors/assigned-model-id';
 import { selectLockSetupRequired } from '@proton/pass/store/selectors/settings';
 import { selectAutofillModelExperimentGroup } from '@proton/pass/store/selectors/user';
 import { AppStatus } from '@proton/pass/types/worker/state';
@@ -168,6 +170,11 @@ export const createWorkerContext = (config: ProtonConfig) => {
     registerStoreEffect(store, selectAutofillModelExperimentGroup, () =>
         context.service.autofill.refreshAssignedModelId()
     );
+
+    /* Fetch the model artifact whenever the assigned model ID changes */
+    registerStoreEffect(store, selectAssignedModelId, (modelId) => {
+        if (modelId) store.dispatch(resolveModelArtifact.intent(modelId));
+    });
 
     if (ENV === 'development') {
         WorkerMessageBroker.registerMessage(WorkerMessageType.DEBUG, ({ payload }) => {
