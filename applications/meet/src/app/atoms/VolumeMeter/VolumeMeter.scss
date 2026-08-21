@@ -1,0 +1,7 @@
+.volume-meter {
+	background: var(--border-norm);
+
+	&-fill {
+		background: var(--interaction-norm);
+	}
+}
