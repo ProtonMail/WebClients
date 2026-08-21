@@ -87,7 +87,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
   ref: ForwardedRef<SpreadsheetRef>,
 ) {
   const { application } = useApplication()
-  const { isDevOrBlack } = useSheetsDependencies()
+  const { canEdit, isDevOrBlack } = useSheetsDependencies()
   const { viewportWidth } = useActiveBreakpoint()
 
   const didConvertFromFile = useRef(false)
@@ -95,7 +95,6 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
 
   // TODO: Consider refactoring these into a single derived mode "state"
   const isRevisionMode = systemMode === EditorSystemMode.Revision
-  const canEdit = application.getRole().canEdit()
   const isViewOnlyMode = !canEdit || viewportWidth['<=small']
   const isReadonly = editingLocked || isRevisionMode || isViewOnlyMode
 
