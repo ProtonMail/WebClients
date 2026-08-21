@@ -27,7 +27,7 @@ import {
     hasVisionary,
 } from '@proton/payments/core/subscription/helpers';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { BRAND_NAME, LUMO_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME, LUMO_APP_NAME, MAIL_APP_NAME, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { sizeUnits } from '@proton/shared/lib/helpers/size';
 import type { Member, Organization } from '@proton/shared/lib/interfaces';
@@ -47,6 +47,7 @@ interface Props extends ModalStateProps {
     allowLumoUpdate: boolean;
     lumoSeatsRemaining: boolean;
     allowStorageConfiguration?: boolean;
+    allowVpnAccessConfiguration?: boolean;
 }
 
 interface MemberState {
@@ -54,6 +55,7 @@ interface MemberState {
     storage: number;
     numAI: boolean;
     lumo: boolean;
+    vpn: boolean;
 }
 
 const getMemberState = ({
@@ -82,6 +84,10 @@ const getMemberState = ({
             : clamp(getInitialStorage(organization, storageRange), storageRange.min, storageRange.max),
         numAI: aiSeatsRemaining && (isVisionary || isDuo || isFamily), // Visionary, Duo and Family users should have the toggle set to true by default
         lumo: member ? !!member.NumLumo : lumoSeatsRemaining && isVisionary, // Visionary users should have the toggle set to true by default
+        vpn: member
+            ? !!member.MaxVPN
+            : // Only default to on when the organization has enough connections left for a full allocation
+              Boolean(organization?.MaxVPN && organization.MaxVPN - organization.UsedVPN >= VPN_CONNECTIONS),
     };
 };
 
@@ -103,6 +109,7 @@ const UserInviteOrEditModal = ({
     organization,
     member,
     allowStorageConfiguration,
+    allowVpnAccessConfiguration,
     allowAIAssistantConfiguration,
     allowAIAssistantUpdate,
     aiSeatsRemaining,
@@ -119,6 +126,7 @@ const UserInviteOrEditModal = ({
     const storageRange = getStorageRange(member ?? {}, organization);
     const storageSizeUnit = sizeUnits.GB;
     const isEditing = !!member?.ID;
+    const hasVPN = Boolean(organization?.MaxVPN);
 
     const [subscription] = useSubscription();
 
@@ -152,6 +160,7 @@ const UserInviteOrEditModal = ({
             ...model,
             numAI: !allowAIAssistantUpdate ? undefined : model.numAI,
             lumo: !allowLumoUpdate ? undefined : model.lumo,
+            vpn: !allowVpnAccessConfiguration || !hasVPN ? undefined : model.vpn,
         };
     };
 
@@ -233,6 +242,25 @@ const UserInviteOrEditModal = ({
                         disableChange={submitting}
                         autoFocus
                     />
+                )}
+
+                {allowVpnAccessConfiguration && hasVPN && (
+                    <div className="mb-4">
+                        <MemberToggleContainer
+                            toggle={
+                                <Toggle
+                                    id="vpn-toggle"
+                                    checked={model.vpn}
+                                    onChange={({ target }) => handleChange('vpn')(target.checked)}
+                                />
+                            }
+                            label={
+                                <label className="text-semibold" htmlFor="vpn-toggle">
+                                    {c('user_modal').t`VPN connections`}
+                                </label>
+                            }
+                        />
+                    </div>
                 )}
 
                 {allowAIAssistantConfiguration && (
