@@ -19,6 +19,12 @@ export const isElectronOnMac = isElectronApp && isMac();
 export const isElectronOnWindows = isElectronApp && isWindows();
 export const isElectronOnLinux = isElectronApp && isLinux();
 
+/* Tauri defines `window.isTauri` in every webview's main frame*/
+export const isTauriApp = typeof window !== 'undefined' && (window as { isTauri?: boolean }).isTauri === true;
+export const isTauriOnMac = isTauriApp && isMac();
+export const isTauriOnWindows = isTauriApp && isWindows();
+export const isTauriOnLinux = isTauriApp && isLinux();
+
 export const isElectronOnSupportedApps = (app: APP_NAMES) => {
     return isElectronApp && SUPPORTED_ELECTRON_APP.includes(app);
 };
