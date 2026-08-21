@@ -3,8 +3,6 @@ import path from 'node:path';
 import { checkNestedPackagePath, normalizePackagePath } from '../lib/is-nested-package-path.js';
 import rule from '../no-nested-packages.js';
 
-/* eslint-env es6 */
-
 const repoRoot = path.resolve(import.meta.dirname, '../../..');
 const defaultAllowedPaths = [
     'applications/lumo/src/app/lib/lumo-api-client',
