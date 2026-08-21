@@ -14,3 +14,6 @@ export const EXTENSION_MANIFEST_VERSION = (() => {
         return EXTENSION_BUILD_VERSION;
     }
 })();
+
+/** Model ID used when the registry has no entry for the resolved group */
+export const BUNDLED_MODEL_ID = `${EXTENSION_MANIFEST_VERSION}-bundled`;
