@@ -4,7 +4,7 @@ import TextFieldBody from '@proton/components/components/lumoAgent/cardBodies/Te
 import type { CardBodyProps, CardRenderer } from '@proton/components/components/lumoAgent/types';
 import { IcFolderPlus } from '@proton/icons/icons/IcFolderPlus';
 import { IcTagPlus } from '@proton/icons/icons/IcTagPlus';
-import type { ToolDefinition, ToolHandler } from '@proton/llm/lib/lumoAgent/contracts/types';
+import type { ActionRequest, ToolDefinition, ToolHandler } from '@proton/llm/lib/lumoAgent/contracts/types';
 import { getRandomAccentColor } from '@proton/shared/lib/colors';
 import { LABEL_TYPE } from '@proton/shared/lib/constants';
 
@@ -13,13 +13,14 @@ import type { MailToolDeps, MailToolModule } from '../../toolModule';
 
 export interface CreateEntityParams {
     name: string;
-    /** `create_folder` only: a folder-… reference to nest under, or null for a top-level folder. */
+    /** `create_folder` only — a label takes no parent. */
     parentId?: string | null;
 }
 
 /**
- * The only mutation result the model consumes: `reference` is minted from the entity the SERVER returned,
- * so the model can chain "create a folder, then move mail into it" without re-reading list_folders.
+ * The only mutation result the model consumes: both fields come from the entity the SERVER returned, which
+ * normalises the name — so they name something that exists, and the model can chain "create a folder, then
+ * move mail into it" without re-reading list_folders.
  */
 export interface CreatedEntityResult {
     reference: string;
@@ -34,13 +35,13 @@ const ENTITY_LABEL_TYPES: Record<EntityKind, LABEL_TYPE> = {
 };
 
 /**
- * A folder name is free text that can be shaped exactly like a reference — "e-ticket" matches
+ * A name is free text that can be shaped exactly like a reference — "e-ticket" matches
  * `<kind>-<6 base36>` — so the hallucination guard would reject the call outright. `parentId` stays
  * guarded, which is what keeps this safe.
  */
-const NAME_IS_FREE_TEXT = ['name'] as const;
+const FREE_TEXT_PARAMS = ['name'] as const;
 
-/** Both entities are created through the same `createLabel` endpoint, differing only in `Type`. */
+/** A folder is created through the same `createLabel` endpoint as a label, differing only in `Type`. */
 const createEntityHandler =
     (kind: EntityKind) =>
     (mail: MailToolDeps): ToolHandler<CreateEntityParams, CreatedEntityResult> =>
@@ -59,7 +60,6 @@ const createEntityHandler =
         return { reference: references.referenceFor(kind, created.ID, created.Name), name: created.Name };
     };
 
-/** The server normalises the name, so what is reported back is what was actually created. */
 const serializeCreated =
     (kind: EntityKind) =>
     ({ reference, name }: CreatedEntityResult): string =>
@@ -76,7 +76,7 @@ export const createFolderDefinition: ToolDefinition<CreateEntityParams, CreatedE
         required: ['name', 'parentId'],
         properties: { name: { type: 'string' }, parentId: { type: ['string', 'null'] } },
     },
-    freeTextParams: NAME_IS_FREE_TEXT,
+    freeTextParams: FREE_TEXT_PARAMS,
     examples: [
         {
             context: 'The user asks for a new top-level folder for their hotel bookings.',
@@ -102,7 +102,7 @@ export const createLabelDefinition: ToolDefinition<CreateEntityParams, CreatedEn
         required: ['name'],
         properties: { name: { type: 'string' } },
     },
-    freeTextParams: NAME_IS_FREE_TEXT,
+    freeTextParams: FREE_TEXT_PARAMS,
     examples: [
         {
             context: 'The user asks for a Receipts tag so they can label their invoices with it.',
@@ -113,7 +113,9 @@ export const createLabelDefinition: ToolDefinition<CreateEntityParams, CreatedEn
     summarizeChip: () => ({ label: c('Info').t`Create label` }),
 };
 
-const entityName = (params: Record<string, any>): string => String(params.name ?? '');
+const entityName = (source: Record<string, any>): string => String(source.name ?? '');
+
+const proposedName = (action: ActionRequest) => entityName(action) || undefined;
 
 /** An emptied field would create an unnamed entity the backend rejects, reaching the model only as a failure. */
 const hasName = (params: Record<string, any>): boolean => entityName(params).trim().length > 0;
@@ -126,7 +128,7 @@ const entityCardRenderer = (
 ): CardRenderer => ({
     icon,
     title,
-    subtitle: (action) => entityName(action) || undefined,
+    subtitle: proposedName,
     renderBody: ({ params, onChange }: CardBodyProps) => (
         <TextFieldBody
             label={fieldLabel()}
@@ -135,7 +137,7 @@ const entityCardRenderer = (
         />
     ),
     canApply: hasName,
-    detail: (action) => entityName(action) || undefined,
+    detail: proposedName,
 });
 
 export const createFolderCardRenderer = entityCardRenderer(
