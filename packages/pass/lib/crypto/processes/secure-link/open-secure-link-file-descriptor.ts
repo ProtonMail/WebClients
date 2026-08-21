@@ -1,8 +1,8 @@
 import {
     type FileDescriptorProcessResult,
     getFileMetadataEncryptionTag,
-    openItemKey,
-} from '@proton/pass/lib/crypto/processes';
+} from '@proton/pass/lib/crypto/processes/file/create-file-descriptor';
+import { openItemKey } from '@proton/pass/lib/crypto/processes/item/open-item-key';
 import { decryptData, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { PassEncryptionTag } from '@proton/pass/types';
 

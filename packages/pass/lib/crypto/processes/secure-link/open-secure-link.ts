@@ -1,4 +1,4 @@
-import { openItemKey } from '@proton/pass/lib/crypto/processes';
+import { openItemKey } from '@proton/pass/lib/crypto/processes/item/open-item-key';
 import { decryptData, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { PassEncryptionTag } from '@proton/pass/types';
 
