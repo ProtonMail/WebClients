@@ -1,10 +1,10 @@
 import { c } from 'ttag'
 import { createStringifier } from '../../stringifier'
 import type { EditorRequiresClientMethods } from '@proton/docs-shared'
-import { useApplication } from '../../../ApplicationProvider'
 import { Icon } from '../ui'
 import { useAppPlatform } from '../../../../Hooks/useAppPlatform'
 import { useActiveBreakpoint } from '../../useActiveBreakpoint'
+import { useSheetsDependencies } from '../../SheetsDependenciesProvider'
 
 const { s } = createStringifier(strings)
 
@@ -13,9 +13,8 @@ interface EditingButtonProps {
 }
 
 export function EditingDisabledButton({ clientInvoker }: EditingButtonProps) {
-  const { application } = useApplication()
+  const { canEdit } = useSheetsDependencies()
   const { viewportWidth } = useActiveBreakpoint()
-  const canEdit = application.getRole().canEdit()
   const isSmallViewport = viewportWidth['<=small']
   const appPlatform = useAppPlatform(clientInvoker)
 

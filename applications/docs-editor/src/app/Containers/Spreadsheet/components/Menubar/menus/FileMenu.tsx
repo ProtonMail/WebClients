@@ -7,7 +7,7 @@ import * as UI from '../../ui'
 import type { EditorRequiresClientMethods, FileMenuAction } from '@proton/docs-shared'
 import { reportErrorToSentry } from '../../../../../Utils/errorMessage'
 import { CircleLoader } from '../../CircleLoader/CircleLoader'
-import { useApplication } from '../../../../ApplicationProvider'
+import { useSheetsDependencies } from '../../../SheetsDependenciesProvider'
 import { useUI } from '../../../ui-store'
 import { VersionNumber } from '../../VersionNumber/VersionNumber'
 
@@ -82,7 +82,7 @@ export interface FileMenuProps extends Ariakit.MenuProviderProps {
 }
 
 export function FileMenu({ renderMenuButton, clientInvoker, isPublicMode, ...props }: FileMenuProps) {
-  const { application } = useApplication()
+  const { canEdit, canTrash, versionInfo } = useSheetsDependencies()
 
   const [showVersionNumber, setShowVersionNumber] = useState(false)
   const [showDebugToggle, setShowDebugToggle] = useState(false)
@@ -145,7 +145,7 @@ export function FileMenu({ renderMenuButton, clientInvoker, isPublicMode, ...pro
               type: 'import',
             })
           }}
-          disabled={!application.getRole().canEdit()}
+          disabled={!canEdit}
         >
           {s('Import')}
         </UI.MenuItem>
@@ -173,7 +173,7 @@ export function FileMenu({ renderMenuButton, clientInvoker, isPublicMode, ...pro
             >
               {s('See version history')}
             </UI.MenuItem>
-            {application.getRole().canTrash() && <MoveToTrashOption triggerMenuAction={triggerMenuAction} />}
+            {canTrash && <MoveToTrashOption triggerMenuAction={triggerMenuAction} />}
           </>
         )}
         <UI.MenuSeparator />
@@ -201,8 +201,8 @@ export function FileMenu({ renderMenuButton, clientInvoker, isPublicMode, ...pro
             showVersionNumber && (
               <VersionNumber
                 className="ml-auto text-[--text-hint]"
-                version={application.appVersion}
-                environment={application.environment}
+                version={versionInfo.version}
+                environment={versionInfo.environment}
               />
             )
           }
