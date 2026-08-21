@@ -4,8 +4,8 @@ import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import debounce from 'lodash/debounce';
 
 import Icon from '@proton/components/components/icon/Icon';
-import { useRightToLeft } from '@proton/components/containers/rightToLeft/useRightToLeft';
 import { equivalentReducer } from '@proton/components/hooks/useElementRect';
+import useRightToLeft from '@proton/hooks/useRightToLeft';
 import type { IconName } from '@proton/icons/types';
 import clamp from '@proton/utils/clamp';
 import clsx from '@proton/utils/clsx';

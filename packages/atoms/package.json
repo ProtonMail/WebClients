@@ -103,13 +103,5 @@
         "ts-node": "^10.9.2",
         "typescript": "^6.0.3",
         "webpack": "^5.109.2"
-    },
-    "peerDependencies": {
-        "@proton/components": "workspace:^"
-    },
-    "peerDependenciesMeta": {
-        "@proton/components": {
-            "optional": true
-        }
     }
 }
