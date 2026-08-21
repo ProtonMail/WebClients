@@ -18,6 +18,7 @@ interface OptionButtonProps {
     loading?: boolean;
     role?: string;
     ariaSelected?: boolean;
+    ariaPressed?: boolean;
     iconOnTheRight?: boolean;
     className?: string;
     disabled?: boolean;
@@ -41,7 +42,7 @@ const CheckComponent = ({
         <div
             className={clsx(
                 'flex items-center justify-center w-custom min-w-custom w-4',
-                iconOnTheRight ? 'ml-2 icon-on-the-right' : 'mr-2 icon-on-the-left'
+                iconOnTheRight ? 'ml-2' : 'mr-2'
             )}
             style={{ '--w-custom': '2rem', '--min-w-custom': '2rem' }}
         >
@@ -64,6 +65,7 @@ export const OptionButton = ({
     loading,
     role,
     ariaSelected,
+    ariaPressed,
     iconOnTheRight = false,
     className,
     disabled = false,
@@ -72,14 +74,14 @@ export const OptionButton = ({
     return (
         <Button
             className={clsx(
-                'option-button w-full max-w-custom flex items-center justify-start flex-nowrap pl-0 text-rg meet-font-weight rounded-xl pr-2',
+                'option-button flex items-center justify-start flex-nowrap text-rg meet-font-weight rounded-lg',
                 className
             )}
             onClick={onClick}
             shape="ghost"
-            style={{ '--max-w-custom': '25rem' }}
             role={role}
             aria-selected={ariaSelected}
+            aria-pressed={ariaPressed}
             disabled={disabled}
         >
             {!iconOnTheRight && (
@@ -96,7 +98,7 @@ export const OptionButton = ({
                     />
                 </div>
             ) : (
-                <TruncatedTextWithTooltip label={label} />
+                <TruncatedTextWithTooltip label={label} className="mr-4" />
             )}
             {iconOnTheRight && <CheckComponent showIcon={showIcon} Icon={Icon} iconSize={iconSize} loading={loading} />}
             {rightContent}

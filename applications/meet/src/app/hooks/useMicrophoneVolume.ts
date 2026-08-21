@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { useLocalParticipant } from '@livekit/components-react';
 import { Track } from 'livekit-client';
@@ -10,99 +10,35 @@ import {
 } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
 
 import { useMediaManagementContext } from '../contexts/MediaManagementProvider/MediaManagementContext';
-
-const calculateRms = (data: Uint8Array<ArrayBuffer>): number => {
-    let sum = 0;
-    for (let i = 0; i < data.length; i++) {
-        const normalized = (data[i] - 128) / 128;
-        sum += normalized * normalized;
-    }
-    const rms = Math.sqrt(sum / data.length);
-
-    return Math.pow(Math.min(rms, 1), 0.5);
-};
+import { useAnalyserLevel } from './useAnalyserLevel';
 
 export const useMicrophoneVolumeDirect = (isMicOn: boolean, throttleMs: number = 100) => {
     const { getMicrophoneVolumeAnalysis, initializeMicrophoneVolumeAnalysis, cleanupMicrophoneVolumeAnalysis } =
         useMediaManagementContext();
     const selectedMicrophoneId = useMeetSelector(selectSelectedMicrophoneId);
     const micPermission = useMeetSelector(selectMicrophonePermission);
-    const [volume, setVolume] = useState(0);
-    const rafRef = useRef<number | null>(null);
-    const lastUpdateRef = useRef<number>(0);
-    const mountedRef = useRef(true);
-    const deviceIdRef = useRef<string | null>(null);
+
+    const isCapturing = isMicOn && micPermission === 'granted';
 
     useEffect(() => {
-        if (!isMicOn || micPermission !== 'granted') {
-            setVolume(0);
-            cleanupMicrophoneVolumeAnalysis();
+        if (!isCapturing) {
+            void cleanupMicrophoneVolumeAnalysis();
             return;
         }
 
-        mountedRef.current = true;
+        // An init that is still in flight when this is torn down discards its own stream.
+        void initializeMicrophoneVolumeAnalysis(selectedMicrophoneId ?? null);
 
-        lastUpdateRef.current = 0;
-
-        const cleanup = () => {
-            mountedRef.current = false;
-            if (rafRef.current !== null) {
-                cancelAnimationFrame(rafRef.current);
-                rafRef.current = null;
-            }
-            cleanupMicrophoneVolumeAnalysis();
+        return () => {
+            void cleanupMicrophoneVolumeAnalysis();
         };
+    }, [isCapturing, selectedMicrophoneId, initializeMicrophoneVolumeAnalysis, cleanupMicrophoneVolumeAnalysis]);
 
-        const updateVolume = () => {
-            const { analyser, dataArray } = getMicrophoneVolumeAnalysis();
-            if (!mountedRef.current || !analyser || !dataArray) {
-                return;
-            }
-
-            analyser.getByteTimeDomainData(dataArray);
-            const rms = calculateRms(dataArray);
-
-            const now = Date.now();
-            if (now - lastUpdateRef.current >= throttleMs) {
-                setVolume(rms);
-                lastUpdateRef.current = now;
-            }
-
-            rafRef.current = requestAnimationFrame(updateVolume);
-        };
-
-        const initialize = async () => {
-            const currentDeviceId = selectedMicrophoneId ?? null;
-            deviceIdRef.current = currentDeviceId;
-
-            await initializeMicrophoneVolumeAnalysis(currentDeviceId);
-
-            if (!mountedRef.current || deviceIdRef.current !== currentDeviceId) {
-                return;
-            }
-
-            const { analyser, dataArray } = getMicrophoneVolumeAnalysis();
-            if (analyser && dataArray) {
-                rafRef.current = requestAnimationFrame(updateVolume);
-            } else {
-                setVolume(0);
-            }
-        };
-
-        void initialize();
-
-        return cleanup;
-    }, [
-        isMicOn,
-        micPermission,
+    return useAnalyserLevel({
+        getAnalysis: getMicrophoneVolumeAnalysis,
+        isActive: isCapturing,
         throttleMs,
-        selectedMicrophoneId,
-        getMicrophoneVolumeAnalysis,
-        initializeMicrophoneVolumeAnalysis,
-        cleanupMicrophoneVolumeAnalysis,
-    ]);
-
-    return volume;
+    });
 };
 
 export const useMicrophoneVolume = (isMicOn: boolean, throttleMs: number = 100) => {
