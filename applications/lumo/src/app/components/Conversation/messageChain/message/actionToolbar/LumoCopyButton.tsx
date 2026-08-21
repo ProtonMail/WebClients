@@ -10,27 +10,27 @@ import { copyDomToClipboard } from '@proton/shared/lib/helpers/browser';
 import { LumoIcon } from '../../../../LumoIcon/LumoIcon.tsx';
 
 interface Props extends Omit<ButtonProps, 'value'> {
-    /** Copy plain text directly — avoids cloning the live syntax-highlighter DOM tree. */
+    /** Plain-text clipboard payload (e.g. markdown source). Used alone or with containerRef. */
     textToCopy?: string;
+    /** Rendered DOM for rich HTML clipboard payload (e.g. Google Docs paste). */
     containerRef?: React.MutableRefObject<HTMLDivElement | null>;
     onSuccess?: () => void;
 }
 
-const copyRichHtmlToClipboard = async (element: HTMLDivElement): Promise<boolean> => {
+const copyRichHtmlToClipboard = async (element: HTMLDivElement, plainText?: string): Promise<boolean> => {
     if (!navigator.clipboard || typeof navigator.clipboard.write !== 'function') {
         return false;
     }
 
-    const plainText = element.textContent || element.innerText || '';
+    const plainTextPayload = plainText ?? element.textContent ?? element.innerText ?? '';
     const htmlContent = element.innerHTML;
 
+    const blobs = {
+        'text/plain': new Blob([plainTextPayload], { type: 'text/plain' }),
+        'text/html': new Blob([htmlContent], { type: 'text/html' }),
+    };
     try {
-        await navigator.clipboard.write([
-            new ClipboardItem({
-                'text/plain': new Blob([plainText], { type: 'text/plain' }),
-                'text/html': new Blob([htmlContent], { type: 'text/html' }),
-            }),
-        ]);
+        await navigator.clipboard.write([new ClipboardItem(blobs)]);
         return true;
     } catch (err) {
         console.warn('Failed to copy with Clipboard API, falling back to DOM copy', err);
@@ -38,11 +38,15 @@ const copyRichHtmlToClipboard = async (element: HTMLDivElement): Promise<boolean
     }
 };
 
-const copyToClipboard = async (element: HTMLDivElement): Promise<boolean> => {
+const copyToClipboard = async (element: HTMLDivElement, plainText?: string): Promise<boolean> => {
     try {
         // Prefer Clipboard API (HTML + plain) when available — execCommand('copy') is unreliable in
         // Firefox and can omit text/html in some browsers, which pastes as plain text only.
-        if (await copyRichHtmlToClipboard(element)) {
+        if (await copyRichHtmlToClipboard(element, plainText)) {
+            return true;
+        }
+
+        if (plainText !== undefined && (await copyPlainText(plainText))) {
             return true;
         }
 
@@ -104,14 +108,14 @@ const LumoCopyButton = ({ children, onSuccess, containerRef, textToCopy, ...rest
             try {
                 let success = false;
 
-                if (textToCopy !== undefined) {
-                    success = await copyPlainText(textToCopy);
-                } else {
-                    const element = containerRef?.current;
-                    if (!element) {
-                        return;
-                    }
+                const element = containerRef?.current;
 
+                if (textToCopy !== undefined && !element) {
+                    success = await copyPlainText(textToCopy);
+                } else if (textToCopy !== undefined && element) {
+                    const clonedElement = prepareElementForCopy(element);
+                    success = await copyToClipboard(clonedElement, textToCopy);
+                } else if (element) {
                     const clonedElement = prepareElementForCopy(element);
                     success = await copyToClipboard(clonedElement);
                 }
