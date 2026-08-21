@@ -14,6 +14,8 @@ export default defineConfig([
             'import/no-extraneous-dependencies': 'off',
             // TODO: Migrate same-package imports to relative paths and remove this rule
             'custom-rules/no-package-self-import': 'off',
+            // TODO: Remove this rule once the cycles are fixed
+            'import-x/no-cycle': 'off',
         },
     },
     globalIgnores(['fathom/', 'asm/', 'docs/starlight/']),
