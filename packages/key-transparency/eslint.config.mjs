@@ -1,10 +1,3 @@
-import { defineConfig } from 'eslint/config';
+import config from '@proton/eslint-config-proton/all';
 
-import defaultConfig from '@proton/eslint-config-proton/all';
-
-export default defineConfig(defaultConfig, {
-    rules: {
-        // TODO: Add the missing explicit deps and remove this rule
-        'import/no-extraneous-dependencies': 'off',
-    },
-});
+export default config;
