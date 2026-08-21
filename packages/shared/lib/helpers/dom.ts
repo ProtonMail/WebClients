@@ -49,10 +49,22 @@ export const getElement = (node: Node | null) => (isElement(node) ? (node as Ele
 
 /**
  * From https://stackoverflow.com/a/42543908
+ *
+ * Note that a scrolling overflow value alone isn't enough to identify the scroll
+ * container: layouts routinely nest `overflow: auto` wrappers that never overflow inside
+ * the element that actually scrolls, and returning one of those gives a node whose
+ * scrollTop is permanently 0. So an ancestor that overflows right now wins.
+ *
+ * Nothing overflowing yet doesn't mean there's no scroll container, though — content may
+ * still be arriving. Falling back to the scrolling root there would be wrong in an app
+ * layout, where the document itself never scrolls, so the nearest ancestor that could
+ * scroll is the better guess.
  */
 export const getScrollParent = (element: HTMLElement | null | undefined, includeHidden = false) => {
+    const root = document.scrollingElement ?? document.documentElement;
+
     if (!element) {
-        return document.body;
+        return root;
     }
 
     const style = getComputedStyle(element);
@@ -60,20 +72,33 @@ export const getScrollParent = (element: HTMLElement | null | undefined, include
     const overflowRegex = includeHidden ? /(auto|scroll|hidden)/ : /(auto|scroll)/;
 
     if (style.position === 'fixed') {
-        return document.body;
+        return root;
     }
+
+    // Fallbacks for when no ancestor overflows vertically, in decreasing order of confidence.
+    let scrollsHorizontally: HTMLElement | undefined;
+    let couldScroll: HTMLElement | undefined;
 
     for (let parent = element.parentElement; parent; parent = parent.parentElement) {
         const style = getComputedStyle(parent);
         if (excludeStaticParent && style.position === 'static') {
             continue;
         }
-        if (overflowRegex.test(style.overflow + style.overflowY + style.overflowX)) {
+        if (!overflowRegex.test(style.overflow + style.overflowY + style.overflowX)) {
+            continue;
+        }
+        if (parent.scrollHeight > parent.clientHeight) {
             return parent;
+        }
+        if (!scrollsHorizontally && parent.scrollWidth > parent.clientWidth) {
+            scrollsHorizontally = parent;
+        }
+        if (!couldScroll) {
+            couldScroll = parent;
         }
     }
 
-    return document.body;
+    return scrollsHorizontally ?? couldScroll ?? root;
 };
 
 /**
@@ -102,7 +127,6 @@ export const scrollIntoView = (element: HTMLElement | undefined | null, extra?: 
     }
     try {
         element.scrollIntoView(extra);
-        // eslint-disable-next-line no-empty
     } catch (e: any) {}
 };
 
