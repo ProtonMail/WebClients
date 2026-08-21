@@ -14,6 +14,8 @@ type Props = {
     children: string;
     className?: string;
     defaultExpanded?: boolean;
+    expanded?: boolean;
+    onExpandedChange?: (expanded: boolean) => void;
 };
 type ExpansionState = 'initial' | 'collapsed' | 'expanded';
 
@@ -37,10 +39,16 @@ const getMaxHeight = () => {
     else return Math.floor(maxHeight / lineHeight) * lineHeight;
 };
 
-export const TextAreaReadonly: FC<Props> = ({ children, className, defaultExpanded = false }) => {
+export const TextAreaReadonly: FC<Props> = ({
+    children,
+    className,
+    defaultExpanded = false,
+    expanded,
+    onExpandedChange,
+}) => {
     const ref = useRef<HTMLTextAreaElement>(null);
     const [scrollHeight, setScrollHeight] = useState(0);
-    const [expansionState, setExpansionState] = useState<ExpansionState>('initial');
+    const [internalExpansionState, setInternalExpansionState] = useState<ExpansionState>('initial');
     const [maxHeight, setMaxHeight] = useState(getMaxHeight);
     /** Only true for the duration of a user-triggered expand/collapse
      * transition — background `maxHeight` recomputes (from resize)
@@ -48,6 +56,10 @@ export const TextAreaReadonly: FC<Props> = ({ children, className, defaultExpand
      * restarts the CSS transition every debounce tick, producing a
      * stuttering, multi-stage animation instead of a smooth one. */
     const [isToggling, setIsToggling] = useState(false);
+
+    const isControlled = expanded !== undefined;
+    const controlledExpansionState: ExpansionState = expanded ? 'expanded' : 'collapsed';
+    const expansionState: ExpansionState = isControlled ? controlledExpansionState : internalExpansionState;
 
     const isExpanded = isStateExpanded(expansionState, defaultExpanded);
     const needsExpansion = scrollHeight > maxHeight;
@@ -58,9 +70,11 @@ export const TextAreaReadonly: FC<Props> = ({ children, className, defaultExpand
             evt.preventDefault();
             evt.stopPropagation();
             setIsToggling(true);
-            setExpansionState((prev) => (isStateExpanded(prev, defaultExpanded) ? 'collapsed' : 'expanded'));
+            const next = !isExpanded;
+            if (isControlled) onExpandedChange?.(next);
+            else setInternalExpansionState(next ? 'expanded' : 'collapsed');
         },
-        [defaultExpanded]
+        [isControlled, isExpanded, onExpandedChange]
     );
 
     useEffect(() => {
