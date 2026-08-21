@@ -20,15 +20,7 @@ import { extraThunkArguments } from './store/thunk';
 const getAppContainer = () =>
     import(/* webpackChunkName: "MainContainer" */ './MainContainer').then((result) => result.default);
 
-export const bootstrapApp = async ({
-    store,
-    locales,
-    signal,
-}: {
-    store: AccountStore;
-    locales: TtagLocaleMap;
-    signal?: AbortSignal;
-}) => {
+export const bootstrapApp = async ({ store, locales }: { store: AccountStore; locales: TtagLocaleMap }) => {
     const pathname = window.location.pathname;
     const searchParams = new URLSearchParams(window.location.search);
     const { config, api, authentication, history } = extraThunkArguments;
@@ -56,12 +48,10 @@ export const bootstrapApp = async ({
 
             dispatch(welcomeFlagsActions.initial(userSettings));
 
-            const [scopes] = await Promise.all([
-                bootstrap.enableTelemetryBasedOnUserSettings({ userSettings }),
-                bootstrap.loadLocales({ userSettings, locales }),
-            ]);
+            bootstrap.enableTelemetryBasedOnUserSettings({ userSettings });
+            await bootstrap.loadLocales({ userSettings, locales });
 
-            return { user, userSettings, earlyAccessScope: undefined, scopes };
+            return { user, userSettings, earlyAccessScope: undefined };
         };
 
         const userPromise = loadUser();
@@ -87,7 +77,7 @@ export const bootstrapApp = async ({
                     modal: false,
                     exit: false,
                 },
-                overridenPageTitle: 'VPN Settings',
+                overriddenPageTitle: 'VPN Settings',
             });
         }
 
@@ -100,17 +90,11 @@ export const bootstrapApp = async ({
 
         const eventManager = bootstrap.eventManager({ api: silentApi });
         extendStore({ eventManager });
-        const unsubscribeEventManager = eventManager.subscribe((event) => {
+
+        eventManager.subscribe((event) => {
             dispatch(serverEvent(event));
         });
         eventManager.start();
-
-        bootstrap.onAbort(signal, () => {
-            unsubscribeEventManager();
-            eventManager.reset();
-            unleashClient.stop();
-            store.unsubscribe();
-        });
 
         dispatch(bootstrapEvent({ type: 'complete' }));
 

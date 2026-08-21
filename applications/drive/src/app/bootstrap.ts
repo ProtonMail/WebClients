@@ -1,6 +1,7 @@
-import { initEvent, serverEvent, userSettingsThunk, userThunk, welcomeFlagsActions } from '@proton/account';
+import { initEvent, userSettingsThunk, userThunk, welcomeFlagsActions } from '@proton/account';
 import * as bootstrap from '@proton/account/bootstrap';
 import { bootstrapEvent } from '@proton/account/bootstrap/action';
+import { serverEvent } from '@proton/account/eventLoop';
 import { getDecryptedPersistedState } from '@proton/account/persist/helper';
 import { setupGuestCrossStorage } from '@proton/cross-storage/account/guest';
 import { featureFlagStore } from '@proton/drive/modules/flags';
@@ -23,7 +24,7 @@ import { clearOPFS } from './utils/opfs';
 import { Features, measureFeaturePerformance } from './utils/telemetry';
 import { loadStreamsPolyfill } from './utils/webStreamsPolyfill';
 
-export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; signal?: AbortSignal }) => {
+export const bootstrapApp = async ({ config }: { config: ProtonConfig }) => {
     setMetricsEnabled(true);
     const appName = config.APP_NAME;
     const pathname = window.location.pathname;
@@ -94,13 +95,11 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
 
             const userInitFeature = measureFeaturePerformance(api, Features.globalBootstrapAppUserInit);
             userInitFeature.start();
-            const [scopes] = await Promise.all([
-                bootstrap.enableTelemetryBasedOnUserSettings({ userSettings }),
-                bootstrap.loadLocales({ userSettings, locales }),
-            ]);
+            bootstrap.enableTelemetryBasedOnUserSettings({ userSettings });
+            await bootstrap.loadLocales({ userSettings, locales });
             userInitFeature.end();
 
-            return { user, userSettings, earlyAccessScope: features[FeatureCode.EarlyAccessScope], scopes };
+            return { user, userSettings, earlyAccessScope: features[FeatureCode.EarlyAccessScope] };
         };
 
         const loadUserFeature = measureFeaturePerformance(api, Features.globalBootstrapAppLoadUser);
@@ -151,17 +150,11 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
 
         const eventManager = bootstrap.eventManager({ api: silentApi });
         extendStore({ eventManager });
-        const unsubscribeEventManager = eventManager.subscribe((event) => {
+
+        eventManager.subscribe((event) => {
             dispatch(serverEvent(event));
         });
         eventManager.start();
-
-        bootstrap.onAbort(signal, () => {
-            unsubscribeEventManager();
-            eventManager.reset();
-            unleashClient.stop();
-            store.unsubscribe();
-        });
 
         dispatch(bootstrapEvent({ type: 'complete' }));
 
