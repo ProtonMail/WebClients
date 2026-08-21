@@ -307,7 +307,7 @@ const ComposerComponentInner = ({
             return;
         }
         clear();
-        await handleSendMessage(currentValue, isWebSearchButtonToggled);
+        await handleSendMessage(currentValue, isWebSearchButtonToggled, undefined, true);
     }, [textareaRef, clear, handleSendMessage, isWebSearchButtonToggled, isChatLimitBlocked, ensureTierError]);
 
     useEditorQuery(initialQuery, textareaRef, setValue, isProcessingAttachment, handleInitialQueryReady);
