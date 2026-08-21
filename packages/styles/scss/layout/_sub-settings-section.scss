@@ -5,6 +5,10 @@ im.$breakpoints: $breakpoints-product;
 im.$media-expressions: $media-expressions;
 
 .sub-settings-section {
+	// Sections are scrolled to the top of the settings scroller, so leave a gap above
+	// rather than landing the title flush against the edge.
+	scroll-margin-block-start: rem(24);
+
 	&-anchor {
 		inset-inline-start: rem(-22);
 		padding-inline-end: rem(6); // Cover the title to avoid it disappearing and reappearing when hovering
