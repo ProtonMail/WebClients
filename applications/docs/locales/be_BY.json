@@ -523,7 +523,7 @@
         "Markdown (.md)"
       ],
       "Maybe later": [
-        "Магчыма пазней"
+        "Магчыма, пазней"
       ],
       "Merge": [
         "Аб'яднаць"
@@ -959,6 +959,9 @@
         "Вы не можаце адправіць файлы vCard больш чым ${ maxAttachments } кантактам",
         "Вы не можаце адправіць файлы vCard больш чым ${ maxAttachments } кантактам",
         "Вы не можаце адправіць файлы vCard больш чым ${ maxAttachments } кантактам"
+      ],
+      "Copy debug transcript": [
+        "Скапіяваць расшыфроўку адладкі"
       ]
     },
     "Actions message": {
@@ -1441,7 +1444,7 @@
         "Скарыстайцеся скідкай у памеры 50%"
       ],
       "Maybe later": [
-        "Магчыма пазней"
+        "Магчыма, пазней"
       ]
     },
     "Cancellation upsell": {
@@ -6179,6 +6182,15 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Вы ўсё яшчэ зможаце праглядаць даныя свайго ўласнага ўліковага запісу, але ўсе ўліковыя запісы карыстальнікаў будуць выдалены з вашай арганізацыі."
+      ],
+      "Debug transcript copied": [
+        "Расшыфроўка адладкі скапіявана"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Вы можаце выкарыстаць 1 з 16 рэзервовых кодаў аднаўлення, якія вы атрымалі пры наладжванні двухфактарнай аўтэнтыфікацыі, калі вы страцілі доступ да вашай праграмы аўтэнтыфікацыі. ${ learnMoreLink }"
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing your access to viewer. The owner or an editor with sharing access can restore your edit access. You can’t undo this change yourself.": [
+        "У вас не будзе магчымасці абагуліць файл з назвай \"${ fileName }\" пасля змянення вашага доступу на праглядальніка. Уладальнік або рэдактар з правамі абагульвання можа аднавіць ваш доступ рэдагавання. Самі вы не зможаце адрабіць гэтыя змяненні."
       ]
     },
     "info": {
@@ -8706,7 +8718,7 @@
         "Прапанова абмежавана па часе і дзейнічае за ваш першы месяц"
       ],
       "Maybe later": [
-        "Магчыма пазней"
+        "Магчыма, пазней"
       ],
       "Offer expires ${ formattedDate }.": [
         "Прапанова міне ${ formattedDate }"
@@ -11614,6 +11626,79 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Ваш пробны перыяд завершыцца ${ textDate }. З вас не будзе спаганяцца плата, калі вы адмовіцеся да ${ textDate }. ${ action }"
+      ]
+    },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "Скарыстацца прапановай"
+      ],
+      "Special Offer": [
+        "Спецыяльная прапанова"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "/month": [
+        "/месяц"
+      ],
+      "2 individual accounts": [
+        "2 асабістых уліковых запісы"
+      ],
+      "2 TB of secure storage": [
+        "2 ТБ бяспечнага сховішча"
+      ],
+      "3 TB of secure storage": [
+        "3 ТБ бяспечнага сховішча"
+      ],
+      "500 GB of secure storage": [
+        "500 ГБ бяспечнага сховішча"
+      ],
+      "6 individual accounts": [
+        "6 асабістых уліковых запісаў"
+      ],
+      "Advanced protection against cyber threats": [
+        "Пашыраная абарона супраць кіберпагроз"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Скідкі разлічваюцца на падставе стандартнай платы за месяц. Ваша падпіска будзе аўтаматычна падаўжацца па стандартнай гадавой стаўцы пасля заканчэння перыяду аплаты."
+      ]
+    },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Прэміяльныя ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } і ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Прэміяльныя ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Прэміяльныя ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Прэміяльныя ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Прэміяльныя ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "за 12 месяцаў"
+      ],
+      "One plan, full power": [
+        "Адзін тарыфны план, максімум магчымасцяў"
+      ],
+      "One plan, max savings": [
+        "Адзін тарыфны план, максімальная эканомія"
+      ],
+      "One plan, more power": [
+        "Адзін тарыфны план, больш магчымасцяў"
       ]
     }
   }
