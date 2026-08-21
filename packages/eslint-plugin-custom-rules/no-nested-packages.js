@@ -1,4 +1,3 @@
-/* eslint-env es6 */
 import fs from 'node:fs';
 import path from 'node:path';
 

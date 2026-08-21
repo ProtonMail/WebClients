@@ -1,4 +1,5 @@
 //@ts-check
+import { fixupPluginRules } from '@eslint/compat';
 import customRules from 'eslint-plugin-custom-rules';
 import jsxA11yPlugin from 'eslint-plugin-jsx-a11y';
 import react from 'eslint-plugin-react';
@@ -10,10 +11,11 @@ export default defineConfig(
     {
         name: 'register-react-plugins',
         plugins: {
-            react,
+            // react and jsx-a11y still use deprecated `context` methods removed in ESLint 10
+            react: fixupPluginRules(react),
             // @ts-expect-error -- Types incompatibility
             'react-hooks': reactHooks,
-            'jsx-a11y': jsxA11yPlugin.flatConfigs.recommended.plugins['jsx-a11y'],
+            'jsx-a11y': fixupPluginRules(jsxA11yPlugin.flatConfigs.recommended.plugins['jsx-a11y']),
             testingLibrary,
             'custom-rules': customRules,
         },

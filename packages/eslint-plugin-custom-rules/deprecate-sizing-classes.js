@@ -1,4 +1,3 @@
-/* eslint-env es6 */
 import { createClassNameRule } from './lib/deprecate-classname-utils.js';
 
 const deprecatedClasses = [
