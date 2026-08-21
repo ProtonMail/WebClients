@@ -27,6 +27,22 @@ export function uint8ArrayToBase64String(bytes: Uint8Array<ArrayBuffer>): string
 }
 
 /**
+ * Encrypt one image for U2L encryption
+ */
+async function encryptImage(image: WireImage, encryption: RequestEncryptionParams) {
+    const data = base64StringToUint8Array(image.data);
+    console.log('image.data (truncated):', image.data.slice(0, 128));
+    console.log('decoded data (truncated):', data.slice(0, 128));
+    const encryptedData = await encryption.encryptUint8Array(data);
+    console.log('encryptedData (truncated):', encryptedData.slice(0, 128));
+    return {
+        ...image,
+        data: encryptedData,
+        encrypted: true,
+    };
+}
+
+/**
  * Encrypt one conversation turn for U2L encryption
  */
 async function encryptTurn(turn: Turn, encryption: RequestEncryptionParams) {
@@ -55,20 +71,4 @@ async function encryptTurn(turn: Turn, encryption: RequestEncryptionParams) {
  */
 export async function encryptTurns(turns: Turn[], encryption: RequestEncryptionParams): Promise<EncryptedTurn[]> {
     return Promise.all(turns.map((turn) => encryptTurn(turn, encryption)));
-}
-
-/**
- * Encrypt one image for U2L encryption
- */
-async function encryptImage(image: WireImage, encryption: RequestEncryptionParams) {
-    const data = base64StringToUint8Array(image.data);
-    console.log('image.data (truncated):', image.data.slice(0, 128));
-    console.log('decoded data (truncated):', data.slice(0, 128));
-    const encryptedData = await encryption.encryptUint8Array(data);
-    console.log('encryptedData (truncated):', encryptedData.slice(0, 128));
-    return {
-        ...image,
-        data: encryptedData,
-        encrypted: true,
-    };
 }
