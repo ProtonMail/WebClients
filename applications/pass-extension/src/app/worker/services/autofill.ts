@@ -8,12 +8,13 @@ import type { AutofillableFrame } from 'proton-pass-extension/lib/utils/frames';
 import { getAutofillableFrames } from 'proton-pass-extension/lib/utils/frames';
 import { setPopupIconBadge } from 'proton-pass-extension/lib/utils/popup';
 import { isContentScriptPort } from 'proton-pass-extension/lib/utils/port';
+import { BUNDLED_MODEL_ID } from 'proton-pass-extension/lib/utils/version';
 import type { AutofillActionDTO, AutofillRequest, AutofillSequence } from 'proton-pass-extension/types/autofill';
 import type { FrameFormsResult } from 'proton-pass-extension/types/frames';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { clientBooted } from '@proton/pass/lib/client';
-import { parseModelRegistry } from '@proton/pass/lib/extension/model-registry/model-registry';
+import { parseModelRegistry, resolveModelId } from '@proton/pass/lib/extension/model-registry/model-registry';
 import type { ModelRegistry } from '@proton/pass/lib/extension/model-registry/model-registry';
 import { compileRules, matchRules, parseRules } from '@proton/pass/lib/extension/rules/rules';
 import type { CompiledRules } from '@proton/pass/lib/extension/rules/types';
@@ -30,9 +31,11 @@ import { DEFAULT_RANDOM_PW_OPTIONS } from '@proton/pass/lib/password/constants';
 import type { PrivateDomains } from '@proton/pass/lib/search/types';
 import type { SearchItemsByDomainOptions } from '@proton/pass/lib/urls/types';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
+import { assignedModelIdUpdated } from '@proton/pass/store/actions/creators/assigned-model-id';
 import { itemAutofilled } from '@proton/pass/store/actions/creators/item';
 import { sagaEvents } from '@proton/pass/store/events';
 import { getInitialSettings } from '@proton/pass/store/reducers/settings';
+import { selectAssignedModelId } from '@proton/pass/store/selectors/assigned-model-id';
 import {
     selectAutofillCCCandidates,
     selectAutofillIdentityCandidates,
@@ -47,7 +50,7 @@ import {
     selectClipboardTTL,
     selectPasswordOptions,
 } from '@proton/pass/store/selectors/settings';
-import { selectPassPlan } from '@proton/pass/store/selectors/user';
+import { selectAutofillModelExperimentGroup, selectPassPlan } from '@proton/pass/store/selectors/user';
 import type { ItemContent, ItemRevision, SelectedItem } from '@proton/pass/types/data/items';
 import type { AutofillPageTelemetryDimensions } from '@proton/pass/types/data/telemetry';
 import { NO_PAGE_CONTEXT_TELEMETRY_DIMENSIONS } from '@proton/pass/types/data/telemetry';
@@ -80,6 +83,23 @@ export const createAutoFillService = () => {
         return Boolean(!features.PassIFrameKillswitch);
     });
 
+    /** Assigned model, distinct from the one actually used for a given page load. */
+    const getAssignedModelId = withContext((ctx) =>
+        resolveModelId(
+            state.modelRegistry,
+            selectAutofillModelExperimentGroup(ctx.service.store.getState()),
+            BUNDLED_MODEL_ID
+        )
+    );
+
+    /** Recomputes and dispatches `assignedModelId`; call on registry or group changes. */
+    const refreshAssignedModelId = withContext((ctx) => {
+        const modelId = getAssignedModelId();
+        if (modelId !== selectAssignedModelId(ctx.service.store.getState())) {
+            ctx.service.store.dispatch(assignedModelIdUpdated(modelId));
+        }
+    });
+
     const init = withContext(async (ctx) => {
         const result = await ctx.service.storage.local.getItems(['websiteRules', 'privateDomains', 'modelRegistry']);
 
@@ -95,6 +115,8 @@ export const createAutoFillService = () => {
             state.modelRegistry = parsed.registry;
             if (state.modelRegistry) logger.info(`[AutofillService] Hydrated model registry`);
         } else logger.warn(`[AutofillService] ${parsed.error}`);
+
+        refreshAssignedModelId();
     });
 
     const getLoginCandidates = withContext<
@@ -492,6 +514,7 @@ export const createAutoFillService = () => {
                 case 'model-registry::resolved':
                     void ctx.service.storage.local.setItem('modelRegistry', JSON.stringify(evt.data));
                     state.modelRegistry = evt.data;
+                    refreshAssignedModelId();
                     break;
             }
         })
@@ -502,9 +525,11 @@ export const createAutoFillService = () => {
         iframeAutofillEnabled,
         init,
         clear,
+        getAssignedModelId,
         getLoginCandidates,
         getModelRegistry: () => state.modelRegistry,
         getRules: () => state.rules,
+        refreshAssignedModelId,
         queryTabLoginForms,
         sync,
     };

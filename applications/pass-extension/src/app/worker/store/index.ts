@@ -133,6 +133,7 @@ export const options: RootSagaOptions = {
             ctx.service.telemetry?.start().catch(noop);
             ctx.service.b2bEvents?.start().catch(noop);
             ctx.service.i18n.setLocale(selectLocale(state), selectUserSettings(state)?.DateFormatOptions).catch(noop);
+            ctx.service.autofill.refreshAssignedModelId();
             WorkerMessageBroker.buffer.flush();
 
             const lockMode = authStore.getLockMode();
