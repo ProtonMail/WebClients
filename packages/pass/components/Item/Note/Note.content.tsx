@@ -4,25 +4,37 @@ import { ExtraFieldsControl } from '@proton/pass/components/Form/Field/Control/E
 import { FieldBox } from '@proton/pass/components/Form/Field/Layout/FieldBox';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { TextAreaReadonly } from '@proton/pass/components/Form/legacy/TextAreaReadonly';
+import { useItemFieldExpansion } from '@proton/pass/components/Item/Containers/ItemFieldExpansion';
 import type { ItemContentProps } from '@proton/pass/components/Views/types';
 import { useDeobfuscatedValue } from '@proton/pass/hooks/useDeobfuscatedValue';
 import { deobfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
+import { getItemKey } from '@proton/pass/lib/items/item.utils';
 
-export const NoteContent: FC<ItemContentProps<'note'>> = ({ revision: { data, itemId, shareId, revision } }) => {
+export const NoteContent: FC<ItemContentProps<'note'>> = ({
+    revision: { data, itemId, shareId, revision },
+    viewingHistory,
+}) => {
     const note = useDeobfuscatedValue(data.metadata.note);
     const extraFields = deobfuscateExtraFields(data.extraFields);
+    const [expanded, setExpanded] = useItemFieldExpansion(getItemKey({ shareId, itemId }), true);
 
     return (
         <>
             {Boolean(note) && (
                 <FieldsetCluster mode="read" as="div">
                     <FieldBox className="pass-input-group--no-focus">
-                        {/** `revision` is used as key here to trigger in an internal
-                         * state reset of `TextAreaReadonly` when toggling between
-                         * note revisions when comparing history (resets expansion) */}
-                        <TextAreaReadonly key={revision} defaultExpanded>
-                            {note}
-                        </TextAreaReadonly>
+                        {viewingHistory ? (
+                            /** `revision` is used as key here to trigger an internal
+                             * state reset of `TextAreaReadonly` when toggling between
+                             * note revisions when comparing history (resets expansion) */
+                            <TextAreaReadonly key={revision} defaultExpanded>
+                                {note}
+                            </TextAreaReadonly>
+                        ) : (
+                            <TextAreaReadonly expanded={expanded} onExpandedChange={setExpanded}>
+                                {note}
+                            </TextAreaReadonly>
+                        )}
                     </FieldBox>
                 </FieldsetCluster>
             )}
