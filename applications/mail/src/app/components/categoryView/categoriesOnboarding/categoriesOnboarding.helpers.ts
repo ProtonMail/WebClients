@@ -42,7 +42,7 @@ export const hasSeenFreeUserSpotlight = (flagValue: number): boolean => {
     return hasBit(flagValue, CategoriesOnboardingFlags.SPOTLIGHT_FREE_USERS);
 };
 
-export const getSocialTabSpotlightStep = (
+export const getTabSpotlightStep = (
     activeStep: OnboardingStep,
     categorizeStepLocation: CategorizeStepLocation
 ): OnboardingStep | undefined => {
