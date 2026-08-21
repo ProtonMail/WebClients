@@ -1,5 +1,3 @@
-/* eslint-env es6 */
-
 /*
 import { format } from 'date-fns'
 import { dateLocale } from '@proton/shared/lib/i18n';

@@ -1,5 +1,3 @@
-/* eslint-env es6 */
-
 const isValidTranslatorNode = (node) => {
     return node.callee && node.callee.type === 'Identifier' && node.callee.name === 'c' && node.arguments.length === 1;
 };
