@@ -23,7 +23,7 @@ const getInvitationBadgeMap = ({
 }: {
     isPendingUserActivation: boolean;
 }): InvitationBadgeMap => ({
-    [GROUP_MEMBER_STATE.PENDING_ADMIN_APPROVAL]: {
+    [GROUP_MEMBER_STATE.PENDING_KEYS]: {
         label: c('invitation status').t`Pending`,
 
         tooltip: isPendingUserActivation
@@ -77,10 +77,10 @@ export const GroupMemberItem = ({
     // Admin can only approve once the user has activated their account (first SSO login + password), which is
     // when their keys get set up. Before that there's no public key, so we're waiting on the user, not the admin.
     const isPendingUserActivation =
-        State === GROUP_MEMBER_STATE.PENDING_ADMIN_APPROVAL && member !== undefined && !getIsMemberSetup(member);
+        State === GROUP_MEMBER_STATE.PENDING_KEYS && member !== undefined && !getIsMemberSetup(member);
 
     const badge =
-        State === GROUP_MEMBER_STATE.PENDING_ADMIN_APPROVAL && isKeylessSsoOrganizationPlan
+        State === GROUP_MEMBER_STATE.PENDING_KEYS && isKeylessSsoOrganizationPlan
             ? undefined
             : getInvitationBadgeMap({ isPendingUserActivation })[State];
 
@@ -96,7 +96,7 @@ export const GroupMemberItem = ({
                 groupMemberType={groupMember.Type}
                 showMailFeatures={showMailFeatures}
                 isMemberDisabled={
-                    groupMember.State === GROUP_MEMBER_STATE.PENDING_ADMIN_APPROVAL && !isKeylessSsoOrganizationPlan
+                    groupMember.State === GROUP_MEMBER_STATE.PENDING_KEYS && !isKeylessSsoOrganizationPlan
                 }
             >
                 <div className="flex flex-row gap-2 flex-nowrap self-center">
