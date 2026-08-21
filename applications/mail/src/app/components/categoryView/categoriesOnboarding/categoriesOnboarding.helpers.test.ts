@@ -1,43 +1,43 @@
-import { getListSpotlightStep, getSocialTabSpotlightStep } from './categoriesOnboarding.helpers';
+import { getListSpotlightStep, getTabSpotlightStep } from './categoriesOnboarding.helpers';
 import { OnboardingStep } from './onboardingInterface';
 
 describe('categoriesOnboarding helpers', () => {
-    describe('getSocialTabSpotlightStep', () => {
+    describe('getTabSpotlightStep', () => {
         it('should anchor the message spotlight on the social tab regardless of the categorize location', () => {
-            expect(getSocialTabSpotlightStep(OnboardingStep.MESSAGE, 'list')).toBe(OnboardingStep.MESSAGE);
-            expect(getSocialTabSpotlightStep(OnboardingStep.MESSAGE, 'tab')).toBe(OnboardingStep.MESSAGE);
-            expect(getSocialTabSpotlightStep(OnboardingStep.MESSAGE, undefined)).toBe(OnboardingStep.MESSAGE);
+            expect(getTabSpotlightStep(OnboardingStep.MESSAGE, 'list')).toBe(OnboardingStep.MESSAGE);
+            expect(getTabSpotlightStep(OnboardingStep.MESSAGE, 'tab')).toBe(OnboardingStep.MESSAGE);
+            expect(getTabSpotlightStep(OnboardingStep.MESSAGE, undefined)).toBe(OnboardingStep.MESSAGE);
         });
 
         it('should anchor the free user spotlight on the social tab regardless of the categorize location', () => {
-            expect(getSocialTabSpotlightStep(OnboardingStep.FREE_USERS_SPOTLIGHT, 'list')).toBe(
+            expect(getTabSpotlightStep(OnboardingStep.FREE_USERS_SPOTLIGHT, 'list')).toBe(
                 OnboardingStep.FREE_USERS_SPOTLIGHT
             );
-            expect(getSocialTabSpotlightStep(OnboardingStep.FREE_USERS_SPOTLIGHT, 'tab')).toBe(
+            expect(getTabSpotlightStep(OnboardingStep.FREE_USERS_SPOTLIGHT, 'tab')).toBe(
                 OnboardingStep.FREE_USERS_SPOTLIGHT
             );
-            expect(getSocialTabSpotlightStep(OnboardingStep.FREE_USERS_SPOTLIGHT, undefined)).toBe(
+            expect(getTabSpotlightStep(OnboardingStep.FREE_USERS_SPOTLIGHT, undefined)).toBe(
                 OnboardingStep.FREE_USERS_SPOTLIGHT
             );
         });
 
         it('should anchor the categorize spotlight on the social tab when it was placed on the tab', () => {
-            expect(getSocialTabSpotlightStep(OnboardingStep.CATEGORIZE, 'tab')).toBe(OnboardingStep.CATEGORIZE);
+            expect(getTabSpotlightStep(OnboardingStep.CATEGORIZE, 'tab')).toBe(OnboardingStep.CATEGORIZE);
         });
 
         it('should not anchor the categorize spotlight on the tab when it was placed on the list', () => {
-            expect(getSocialTabSpotlightStep(OnboardingStep.CATEGORIZE, 'list')).toBeUndefined();
+            expect(getTabSpotlightStep(OnboardingStep.CATEGORIZE, 'list')).toBeUndefined();
         });
 
         it('should not anchor the categorize spotlight on the tab when no location has been resolved yet', () => {
-            expect(getSocialTabSpotlightStep(OnboardingStep.CATEGORIZE, undefined)).toBeUndefined();
+            expect(getTabSpotlightStep(OnboardingStep.CATEGORIZE, undefined)).toBeUndefined();
         });
 
         it('should return undefined for all unsupported steps', () => {
-            expect(getSocialTabSpotlightStep(OnboardingStep.NONE, 'tab')).toBeUndefined();
-            expect(getSocialTabSpotlightStep(OnboardingStep.INITIAL_MODAL, 'tab')).toBeUndefined();
-            expect(getSocialTabSpotlightStep(OnboardingStep.CUSTOMIZE, 'tab')).toBeUndefined();
-            expect(getSocialTabSpotlightStep(OnboardingStep.DONE, 'tab')).toBeUndefined();
+            expect(getTabSpotlightStep(OnboardingStep.NONE, 'tab')).toBeUndefined();
+            expect(getTabSpotlightStep(OnboardingStep.INITIAL_MODAL, 'tab')).toBeUndefined();
+            expect(getTabSpotlightStep(OnboardingStep.CUSTOMIZE, 'tab')).toBeUndefined();
+            expect(getTabSpotlightStep(OnboardingStep.DONE, 'tab')).toBeUndefined();
         });
     });
     describe('getListSpotlightStep', () => {
