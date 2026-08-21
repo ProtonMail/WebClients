@@ -13,6 +13,7 @@ import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/mes
 import { BUNDLED_MODEL_ID } from 'proton-pass-extension/lib/utils/version';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
+import type { ModelArtifact } from '@proton/pass/lib/extension/model-artifact/model-artifact';
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
 import { assignedModelIdUpdated } from '@proton/pass/store/actions/creators/assigned-model-id';
 import { sagaEvents } from '@proton/pass/store/events';
@@ -35,6 +36,7 @@ describe('AutofillService', () => {
     let authorized: boolean;
     let dispatch: jest.Mock;
     let getItems: jest.Mock;
+    let setItem: jest.Mock;
     let service: ReturnType<typeof createAutoFillService>;
 
     const setLoginItem = (urls: string[]) => {
@@ -72,12 +74,13 @@ describe('AutofillService', () => {
         browser.tabs.get.mockResolvedValue({ id: 1, url: topLevelURL });
         dispatch = jest.fn();
         getItems = jest.fn().mockResolvedValue({});
+        setItem = jest.fn();
 
         WorkerContext.set({
             ensureReady: jest.fn().mockResolvedValue(undefined),
             getState: jest.fn(() => ({ authorized })),
             service: {
-                storage: { local: { getItems, setItem: jest.fn() } },
+                storage: { local: { getItems, setItem } },
                 store: {
                     dispatch,
                     getState: jest.fn(() => state),
@@ -266,6 +269,44 @@ describe('AutofillService', () => {
 
             expect(dispatch).toHaveBeenCalledWith(assignedModelIdUpdated('2026.10.2-rf'));
             expect(service.getAssignedModelId()).toBe('2026.10.2-rf');
+        });
+    });
+
+    describe('`modelArtifact`', () => {
+        const artifact = (modelId: string): ModelArtifact => ({ modelId, arch: 'lr', weights: {} }) as ModelArtifact;
+
+        test('Returns null before any model artifact has been resolved', () => {
+            expect(service.getModelArtifact('2026.8.2475-lr')).toBeNull();
+        });
+
+        test('Persists and exposes the artifact on `model-artifact::resolved`', async () => {
+            await sagaEvents.publishAsync({ type: 'model-artifact::resolved', data: artifact('2026.8.2475-lr') });
+
+            expect(service.getModelArtifact('2026.8.2475-lr')).toEqual(artifact('2026.8.2475-lr'));
+            expect(setItem).toHaveBeenCalledWith(
+                'modelArtifacts',
+                JSON.stringify({ '2026.8.2475-lr': artifact('2026.8.2475-lr') })
+            );
+        });
+
+        test('Evicts the oldest cached artifact beyond 2 models', async () => {
+            await sagaEvents.publishAsync({ type: 'model-artifact::resolved', data: artifact('model-a') });
+            await sagaEvents.publishAsync({ type: 'model-artifact::resolved', data: artifact('model-b') });
+            await sagaEvents.publishAsync({ type: 'model-artifact::resolved', data: artifact('model-c') });
+
+            expect(service.getModelArtifact('model-a')).toBeNull();
+            expect(service.getModelArtifact('model-b')).toEqual(artifact('model-b'));
+            expect(service.getModelArtifact('model-c')).toEqual(artifact('model-c'));
+        });
+
+        test('Hydrates the cached artifacts on `init`', async () => {
+            getItems.mockResolvedValueOnce({
+                modelArtifacts: JSON.stringify({ '2026.8.2475-lr': artifact('2026.8.2475-lr') }),
+            });
+
+            await service.init();
+
+            expect(service.getModelArtifact('2026.8.2475-lr')).toEqual(artifact('2026.8.2475-lr'));
         });
     });
 });
