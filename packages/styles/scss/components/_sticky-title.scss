@@ -32,20 +32,9 @@
 	}
 }
 
-/* trick for fixing anchor links */
-.header-height-anchor {
-	position: absolute;
-	inset-block-start: -#{rem(100)};
-}
-
 // not sticky on mobile
 @include media('<=small') {
 	.container-section-sticky-section {
 		margin-block-end: rem(80);
-	}
-
-	.header-height-anchor {
-		position: static;
-		inset-block-start: 0;
 	}
 }

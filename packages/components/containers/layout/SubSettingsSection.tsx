@@ -1,5 +1,5 @@
 import type { ComponentPropsWithoutRef, ReactNode } from 'react';
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -10,6 +10,7 @@ import ProtonBadge from '@proton/components/components/protonBadge/ProtonBadge';
 import SettingsSectionTitle from '@proton/components/containers/account/SettingsSectionTitle';
 import { SettingsLayoutVariant } from '@proton/components/containers/layout/interface';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import useScrollIntoView from '@proton/hooks/useScrollIntoView';
 import { IcLink } from '@proton/icons/icons/IcLink';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
@@ -17,7 +18,6 @@ import clsx from '@proton/utils/clsx';
 export interface SubSettingsSectionProps extends ComponentPropsWithoutRef<'div'> {
     id: string;
     className?: string;
-    observer?: IntersectionObserver;
     title?: string;
     invisibleTitle?: boolean;
     beta?: boolean;
@@ -27,7 +27,6 @@ export interface SubSettingsSectionProps extends ComponentPropsWithoutRef<'div'>
 
 const SubSettingsSection = ({
     id,
-    observer,
     title,
     invisibleTitle,
     beta,
@@ -40,22 +39,7 @@ const SubSettingsSection = ({
     const { createNotification } = useNotifications();
     const location = useLocation();
 
-    useEffect(() => {
-        if (location.hash === `#${id}`) {
-            ref.current?.scrollIntoView({ behavior: 'smooth' });
-        }
-    }, []);
-
-    useEffect(() => {
-        const el = ref.current;
-        if (!observer || !el) {
-            return;
-        }
-        observer.observe(el);
-        return () => {
-            observer.unobserve(el);
-        };
-    }, [observer, ref.current]);
+    useScrollIntoView(ref, location.hash === `#${id}`, location.key);
 
     const handleLinkClick = () => {
         const hash = document.location.hash;
@@ -81,69 +65,65 @@ const SubSettingsSection = ({
         </Link>
     );
 
+    // Prefix ids with section- to avoid collision, for example #password or
+    // #username for inputs in other context. Note: the id is not used to
+    // scroll into the anchor. This is done programmatically with
+    // scrollIntoView. This id is just as a helper to be used for css.
+    const sectionId = `section-${id}`;
+
     if (variant === 'card') {
         return (
-            <>
-                <div className="relative">
-                    <div id={id} className="header-height-anchor" />
-                </div>
-                <section
-                    {...rest}
-                    id={id}
-                    ref={ref}
-                    data-target-id={id}
-                    className={clsx([className, 'sub-settings-section'])}
-                >
-                    <div className="group-hover-opacity-container relative">
-                        {linkElement}
-                        <DashboardGrid as="div">
-                            {title && !invisibleTitle && <DashboardGridSectionHeader title={title} />}
-                            <DashboardCard>
-                                <DashboardCardContent>{children}</DashboardCardContent>
-                            </DashboardCard>
-                        </DashboardGrid>
-                    </div>
-                </section>
-            </>
-        );
-    }
-
-    return (
-        <>
-            <div className="relative">
-                <div id={id} className="header-height-anchor" />
-            </div>
             <section
                 {...rest}
-                id={id}
+                id={sectionId}
                 ref={ref}
                 data-target-id={id}
                 className={clsx([className, 'sub-settings-section'])}
             >
-                {title && !invisibleTitle && (
-                    <SettingsSectionTitle className="group-hover-opacity-container relative">
-                        {linkElement}
-                        <span className={clsx(invisibleTitle && 'sr-only')}>{title}</span>
-                        {beta && (
-                            <ProtonBadge
-                                className="align-middle"
-                                text={c('Info').t`Beta`}
-                                tooltipText={c('Tooltip').t`Feature in early access`}
-                            />
-                        )}
-                    </SettingsSectionTitle>
-                )}
-
-                {title && invisibleTitle ? (
-                    <div className="group-hover-opacity-container relative">
-                        {linkElement}
-                        {children}
-                    </div>
-                ) : (
-                    children
-                )}
+                <div className="group-hover-opacity-container relative">
+                    {linkElement}
+                    <DashboardGrid as="div">
+                        {title && !invisibleTitle && <DashboardGridSectionHeader title={title} />}
+                        <DashboardCard>
+                            <DashboardCardContent>{children}</DashboardCardContent>
+                        </DashboardCard>
+                    </DashboardGrid>
+                </div>
             </section>
-        </>
+        );
+    }
+
+    return (
+        <section
+            {...rest}
+            id={sectionId}
+            ref={ref}
+            data-target-id={id}
+            className={clsx([className, 'sub-settings-section'])}
+        >
+            {title && !invisibleTitle && (
+                <SettingsSectionTitle className="group-hover-opacity-container relative">
+                    {linkElement}
+                    <span className={clsx(invisibleTitle && 'sr-only')}>{title}</span>
+                    {beta && (
+                        <ProtonBadge
+                            className="align-middle"
+                            text={c('Info').t`Beta`}
+                            tooltipText={c('Tooltip').t`Feature in early access`}
+                        />
+                    )}
+                </SettingsSectionTitle>
+            )}
+
+            {title && invisibleTitle ? (
+                <div className="group-hover-opacity-container relative">
+                    {linkElement}
+                    {children}
+                </div>
+            ) : (
+                children
+            )}
+        </section>
     );
 };
 
