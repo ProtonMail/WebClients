@@ -5,31 +5,21 @@ const ATTACHMENT_LINE_MAX_CHARS = 256;
 const ATTACHMENT_HEAD_LINES = 3;
 const ATTACHMENT_TAIL_LINES = 3;
 
-export function extractTitleSourceText(turns: Turn[], maxLines = TITLE_MAX_LINES): string | null {
-    const userTurns = turns.filter((turn) => turn.role === Role.User);
-
-    const parts: string[] = [];
-    for (const turn of userTurns) {
-        const content = turn.content?.trim() ?? '';
-        if (!content || isImageAttachmentTurnContent(content)) {
-            continue;
-        }
-        if (isFileAttachmentTurnContent(content)) {
-            parts.push(truncateFileAttachmentContent(content));
-        } else {
-            parts.push(truncateLines(content, maxLines));
-        }
-    }
-
-    return parts.length > 0 ? parts.join('\n') : null;
-}
-
 function isFileAttachmentTurnContent(content: string): boolean {
     return content.startsWith('Filename:');
 }
 
 function isImageAttachmentTurnContent(content: string): boolean {
     return content.startsWith('<lumo-image');
+}
+
+function truncateLines(content: string, maxLines: number): string {
+    const lines = content
+        .split('\n')
+        .map((line) => line.trim())
+        .filter(Boolean);
+
+    return lines.slice(0, maxLines).join('\n');
 }
 
 function truncateFileAttachmentContent(content: string): string {
@@ -62,11 +52,21 @@ function truncateFileAttachmentContent(content: string): string {
     return [metadata, beginMarker, contentBlock, endMarker].join('\n');
 }
 
-function truncateLines(content: string, maxLines: number): string {
-    const lines = content
-        .split('\n')
-        .map((line) => line.trim())
-        .filter(Boolean);
+export function extractTitleSourceText(turns: Turn[], maxLines = TITLE_MAX_LINES): string | null {
+    const userTurns = turns.filter((turn) => turn.role === Role.User);
 
-    return lines.slice(0, maxLines).join('\n');
+    const parts: string[] = [];
+    for (const turn of userTurns) {
+        const content = turn.content?.trim() ?? '';
+        if (!content || isImageAttachmentTurnContent(content)) {
+            continue;
+        }
+        if (isFileAttachmentTurnContent(content)) {
+            parts.push(truncateFileAttachmentContent(content));
+        } else {
+            parts.push(truncateLines(content, maxLines));
+        }
+    }
+
+    return parts.length > 0 ? parts.join('\n') : null;
 }
