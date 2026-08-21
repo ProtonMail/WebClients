@@ -1,32 +1,14 @@
 import unary from '@proton/utils/unary';
 
-import { ADDRESS_FLAGS, ADDRESS_RECEIVE, ADDRESS_SEND, ADDRESS_STATUS, ADDRESS_TYPE, MEMBER_TYPE } from '../constants';
+import { ADDRESS_FLAGS, ADDRESS_TYPE, MEMBER_TYPE } from '../constants';
 import type { Address, Domain, Member, Recipient, UserModel } from '../interfaces';
-import { AddressConfirmationState } from '../interfaces';
 import type { ContactEmail } from '../interfaces/contacts';
-import { getIsDomainActive } from '../organization/helper';
+import { getIsDomainActive } from '../organization/domain';
+import { getIsAddressActive } from './addressStatus';
 import { hasBit } from './bitset';
 import { canonicalizeInternalEmail } from './email';
 
-export const getIsAddressEnabled = (address: Address) => {
-    return address.Status === ADDRESS_STATUS.STATUS_ENABLED;
-};
-
-export const getIsAddressConfirmed = (address: Address) => {
-    return address.ConfirmationState === AddressConfirmationState.CONFIRMATION_CONFIRMED;
-};
-
-export const getIsAddressDisabled = (address: Address) => {
-    return address.Status === ADDRESS_STATUS.STATUS_DISABLED;
-};
-
-export const getIsAddressActive = (address: Address) => {
-    return (
-        address.Status === ADDRESS_STATUS.STATUS_ENABLED &&
-        address.Receive === ADDRESS_RECEIVE.RECEIVE_YES &&
-        address.Send === ADDRESS_SEND.SEND_YES
-    );
-};
+export { getIsAddressActive, getIsAddressConfirmed, getIsAddressDisabled, getIsAddressEnabled } from './addressStatus';
 
 export const getActiveAddresses = (addresses: Address[]): Address[] => {
     return addresses.filter(unary(getIsAddressActive));
