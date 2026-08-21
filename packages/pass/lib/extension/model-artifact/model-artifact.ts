@@ -1,9 +1,11 @@
 import { createPerceptronModelProvider } from '@protontech/autofill/models/perceptron';
 import { createRandomForestModelProvider } from '@protontech/autofill/models/random_forest';
 import { formatValidationProblem } from '@protontech/autofill/models/validate_weights';
+import { detectionClasses } from '@protontech/autofill/types';
 import type { DetectionClass, ModelProvider, PerceptronParams } from '@protontech/autofill/types';
 
 import { MODEL_ARTIFACTS_BASE_URL } from '@proton/pass/constants';
+import { readZIP } from '@proton/pass/lib/import/helpers/zip.reader';
 import type { Result } from '@proton/pass/types';
 import { escapeRegex } from '@proton/shared/lib/helpers/regex';
 
@@ -49,4 +51,50 @@ export const createModelProvider = (artifact: ModelArtifact): Result<{ provider:
 
     if (result.ok) return { ok: true, provider: result.value };
     return { ok: false, error: result.error.map(formatValidationProblem).join('; ') };
+};
+
+export const fetchModelArtifact = async (modelId: string): Promise<Result<{ artifact: ModelArtifact }>> => {
+    const archResult = getModelArch(modelId);
+    if (!archResult.ok) return archResult;
+    const { arch } = archResult;
+
+    let blob: Blob;
+    try {
+        const response = await fetch(getModelArtifactURL(modelId));
+        if (!response.ok) return { ok: false, error: `failed to fetch model artifact: ${response.status}` };
+        blob = await response.blob();
+    } catch (err) {
+        return { ok: false, error: err instanceof Error ? err.message : 'unknown error fetching model artifact' };
+    }
+
+    let reader: Awaited<ReturnType<typeof readZIP>>;
+    try {
+        reader = await readZIP(new File([blob], 'model-artifact.zip'));
+    } catch (err) {
+        return { ok: false, error: err instanceof Error ? err.message : 'model artifact is not a valid zip archive' };
+    }
+
+    const weights = {} as Record<DetectionClass, unknown>;
+
+    try {
+        for (const klass of detectionClasses) {
+            const entry = await reader.getFile(`${klass}-model.json`);
+            if (!entry) return { ok: false, error: `model artifact is missing "${klass}-model.json"` };
+
+            try {
+                weights[klass] = JSON.parse(await entry.text());
+            } catch (err) {
+                const reason = err instanceof Error ? err.message : 'not valid JSON';
+                return { ok: false, error: `"${klass}-model.json" is not valid JSON: ${reason}` };
+            }
+        }
+    } finally {
+        reader.close();
+    }
+
+    const artifact = { modelId, arch, weights } as ModelArtifact;
+    const validated = createModelProvider(artifact);
+    if (!validated.ok) return { ok: false, error: validated.error };
+
+    return { ok: true, artifact };
 };

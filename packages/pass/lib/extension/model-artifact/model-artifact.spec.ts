@@ -1,7 +1,13 @@
 import { detectionClasses } from '@protontech/autofill/types';
 import type { DetectionClass } from '@protontech/autofill/types';
 
-import { createModelProvider, getModelArch, getModelArtifactURL, isModelArch } from './model-artifact';
+import {
+    createModelProvider,
+    fetchModelArtifact,
+    getModelArch,
+    getModelArtifactURL,
+    isModelArch,
+} from './model-artifact';
 import type { ModelArtifact } from './model-artifact';
 
 /** Empty `coeffs` trivially satisfies pass-ml's structural validation. */
@@ -32,6 +38,21 @@ const validRandomForestWeights = () =>
             },
         ])
     );
+
+const makeArtifactZip = async (files: Record<string, unknown>, rawFiles: Record<string, string> = {}) => {
+    const zip = await import('@zip.js/zip.js');
+    zip.configure({ useWebWorkers: false, useCompressionStream: false });
+    const blobWriter = new zip.BlobWriter('application/zip');
+    const writer = new zip.ZipWriter(blobWriter);
+    for (const [filename, content] of Object.entries(files)) {
+        await writer.add(filename, new zip.TextReader(JSON.stringify(content)));
+    }
+    for (const [filename, content] of Object.entries(rawFiles)) {
+        await writer.add(filename, new zip.TextReader(content));
+    }
+    await writer.close();
+    return blobWriter.getData();
+};
 
 describe('`isModelArch`', () => {
     test.each(['lr', 'rf'])('"%s" is a valid arch', (value) => {
@@ -138,5 +159,111 @@ describe('`createModelProvider`', () => {
         const result = createModelProvider(artifact);
         expect(result.ok).toBe(false);
         if (!result.ok) expect(result.error).toContain('nn');
+    });
+});
+
+describe('`fetchModelArtifact`', () => {
+    const fetchMock = jest.spyOn(global, 'fetch' as any);
+
+    afterEach(() => fetchMock.mockReset());
+    afterAll(() => fetchMock.mockRestore());
+
+    test('fetches, unzips and validates a real artifact', async () => {
+        const files = Object.fromEntries(
+            detectionClasses.map((klass) => [`${klass}-model.json`, validPerceptronWeights()[klass]])
+        );
+        const blob = await makeArtifactZip(files);
+        fetchMock.mockResolvedValue({ ok: true, blob: () => Promise.resolve(blob) } as Response);
+
+        const result = await fetchModelArtifact('2026.8.2475-lr');
+        expect(result.ok).toBe(true);
+        if (result.ok) {
+            expect(result.artifact.modelId).toBe('2026.8.2475-lr');
+            expect(result.artifact.arch).toBe('lr');
+        }
+        expect(fetchMock).toHaveBeenCalledWith(getModelArtifactURL('2026.8.2475-lr'));
+    });
+
+    test('fails when a class file is missing from the zip', async () => {
+        const weights = validPerceptronWeights();
+        const files = Object.fromEntries(
+            detectionClasses
+                .filter((klass) => klass !== 'email')
+                .map((klass) => [`${klass}-model.json`, weights[klass]])
+        );
+        const blob = await makeArtifactZip(files);
+        fetchMock.mockResolvedValue({ ok: true, blob: () => Promise.resolve(blob) } as Response);
+
+        const result = await fetchModelArtifact('2026.8.2475-lr');
+        expect(result.ok).toBe(false);
+        if (!result.ok) expect(result.error).toContain('email-model.json');
+    });
+
+    test('propagates the real JSON.parse error instead of a generic message', async () => {
+        const weights = validPerceptronWeights();
+        const files = Object.fromEntries(
+            detectionClasses
+                .filter((klass) => klass !== 'email')
+                .map((klass) => [`${klass}-model.json`, weights[klass]])
+        );
+
+        const blobA = await makeArtifactZip(files, { 'email-model.json': '{not-json' });
+        fetchMock.mockResolvedValueOnce({ ok: true, blob: () => Promise.resolve(blobA) } as Response);
+        const resultA = await fetchModelArtifact('2026.8.2475-lr');
+
+        const blobB = await makeArtifactZip(files, { 'email-model.json': '[1, 2' });
+        fetchMock.mockResolvedValueOnce({ ok: true, blob: () => Promise.resolve(blobB) } as Response);
+        const resultB = await fetchModelArtifact('2026.8.2475-lr');
+
+        expect(resultA.ok).toBe(false);
+        expect(resultB.ok).toBe(false);
+        if (!resultA.ok && !resultB.ok) {
+            expect(resultA.error).toContain('email-model.json');
+            expect(resultB.error).toContain('email-model.json');
+            // A hardcoded/generic fallback would make these identical regardless of input.
+            expect(resultA.error).not.toBe(resultB.error);
+        }
+    });
+
+    test('fails on structurally invalid weights without throwing', async () => {
+        const files = Object.fromEntries(
+            detectionClasses.map((klass) => [`${klass}-model.json`, { bias: 'not-a-number', coeffs: [] }])
+        );
+        const blob = await makeArtifactZip(files);
+        fetchMock.mockResolvedValue({ ok: true, blob: () => Promise.resolve(blob) } as Response);
+
+        const result = await fetchModelArtifact('2026.8.2475-lr');
+        expect(result.ok).toBe(false);
+    });
+
+    test('fails when the zip archive is corrupt', async () => {
+        fetchMock.mockResolvedValue({ ok: true, blob: () => Promise.resolve(new Blob(['not a zip'])) } as Response);
+
+        const result = await fetchModelArtifact('2026.8.2475-lr');
+        expect(result.ok).toBe(false);
+        // Proves the real rejection reason propagates rather than falling back to the generic message.
+        if (!result.ok) expect(result.error).not.toBe('model artifact is not a valid zip archive');
+    });
+
+    test('fails without fetching for an unrecognized model ID', async () => {
+        const result = await fetchModelArtifact('not-a-model-id');
+        expect(result.ok).toBe(false);
+        expect(fetchMock).not.toHaveBeenCalled();
+    });
+
+    test('fails when the response is not ok', async () => {
+        fetchMock.mockResolvedValue({ ok: false, status: 404 } as Response);
+
+        const result = await fetchModelArtifact('2026.8.2475-lr');
+        expect(result.ok).toBe(false);
+        if (!result.ok) expect(result.error).toContain('404');
+    });
+
+    test('fails without throwing when the network request rejects', async () => {
+        fetchMock.mockRejectedValue(new Error('network down'));
+
+        const result = await fetchModelArtifact('2026.8.2475-lr');
+        expect(result.ok).toBe(false);
+        if (!result.ok) expect(result.error).toContain('network down');
     });
 });
