@@ -4,10 +4,11 @@ import {
     createNoiseSuppressionAudioWorklet,
     runNoiseSuppressionAudioWorkletBenchmark,
 } from '@workadventure/noise-suppression/audio-worklet';
-import type { AudioProcessorOptions, Track, TrackProcessor } from 'livekit-client';
 
 import type { ReportMeetError } from '@proton/meet/hooks/useMeetErrorReporting';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
+
+import type { AudioTrackProcessor } from '../../types';
 
 export const isDTLNFilterSupported = (): boolean => {
     return !isMobile() && typeof AudioWorklet !== 'undefined';
@@ -87,21 +88,30 @@ export const DTLNFilter = ({
 }: {
     isDtlnPerfMonitorEnabled: boolean;
     reportError: ReportMeetError;
-}): TrackProcessor<Track.Kind.Audio, AudioProcessorOptions> => {
+}): AudioTrackProcessor => {
     let currentAudioContext: AudioContext | undefined;
     let sourceNode: MediaStreamAudioSourceNode | undefined;
     let workletHandle: NoiseSuppressionAudioWorkletHandle | undefined;
     let destinationNode: MediaStreamAudioDestinationNode | undefined;
     let perfMonitorActive = false;
 
-    const teardown = () => {
+    /**
+     * Unwires the graph but keeps the worklet, so the loaded model can be re-used. Disconnecting
+     * the worklet output also stops it being pulled, so it runs no inference while detached.
+     */
+    const disconnectNodes = () => {
         perfMonitorActive = false;
-        workletHandle?.dispose();
         sourceNode?.disconnect();
+        workletHandle?.node.disconnect();
         destinationNode?.disconnect();
-        workletHandle = undefined;
         sourceNode = undefined;
         destinationNode = undefined;
+    };
+
+    const teardown = () => {
+        disconnectNodes();
+        workletHandle?.dispose();
+        workletHandle = undefined;
     };
 
     const startPerfMonitor = () => {
@@ -140,24 +150,43 @@ export const DTLNFilter = ({
         })();
     };
 
-    const processor: TrackProcessor<Track.Kind.Audio, AudioProcessorOptions> = {
+    const processor: AudioTrackProcessor = {
         name: 'dtln-noise-suppression',
         processedTrack: undefined,
+
+        // Until this resolves the worklet is bypassed, so the audio is still the raw capture.
+        whenReady: () => workletHandle?.ready ?? Promise.resolve(),
+
+        detach: () => {
+            disconnectNodes();
+            processor.processedTrack = undefined;
+        },
 
         async init({ audioContext, track }) {
             if (!audioContext) {
                 throw new Error('Cannot initialize DTLN processor without an AudioContext');
             }
 
-            teardown();
+            // Re-attaching on the same context re-uses the worklet: LiteRT caches its runtime per
+            // worklet scope, but each new worklet node recompiles the models, which costs seconds.
+            const canReuseWorklet = !!workletHandle && currentAudioContext === audioContext;
+
+            if (canReuseWorklet) {
+                disconnectNodes();
+            } else {
+                teardown();
+            }
+
             currentAudioContext = audioContext;
 
             sourceNode = audioContext.createMediaStreamSource(new MediaStream([track]));
-            // bypassUntilReady: raw mic audio passes through while LiteRT + DTLN warm up,
-            // then the worklet swaps in the denoised stream once ready.
-            workletHandle = await createNoiseSuppressionAudioWorklet(audioContext, {
-                bypassUntilReady: true,
-            });
+            if (!workletHandle) {
+                // bypassUntilReady: raw mic audio passes through while LiteRT + DTLN warm up,
+                // then the worklet swaps in the denoised stream once ready.
+                workletHandle = await createNoiseSuppressionAudioWorklet(audioContext, {
+                    bypassUntilReady: true,
+                });
+            }
             destinationNode = audioContext.createMediaStreamDestination();
 
             sourceNode.connect(workletHandle.node).connect(destinationNode);
@@ -174,7 +203,6 @@ export const DTLNFilter = ({
                 throw new Error('Cannot restart DTLN processor without an AudioContext');
             }
 
-            teardown();
             await processor.init({ ...opts, audioContext });
         },
 

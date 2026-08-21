@@ -1,13 +1,25 @@
 .option-button {
+	// The button reaches past its container, into the padding of the dropdown, while the matching
+	// inline padding keeps the icon and the label where they would be without the bleed.
+	--bleed: 0.5rem;
+
+	inline-size: calc(100% + 2 * var(--bleed));
+	max-inline-size: calc(25rem + 2 * var(--bleed));
+	margin-inline: calc(-1 * var(--bleed));
+	padding-block: 0.625rem;
+	padding-inline: var(--bleed);
 	word-break: keep-all;
 	white-space: nowrap;
-
-	&.icon-on-the-left {
-		margin-inline-start: -0.425rem;
-	}
 
 	&:hover,
 	&:focus-within {
 		background: var(--interaction-norm-minor-3);
+	}
+}
+
+.option-button-no-hover {
+	&:hover,
+	&:focus-within {
+		background: transparent;
 	}
 }

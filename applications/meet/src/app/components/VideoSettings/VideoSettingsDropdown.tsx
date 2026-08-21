@@ -64,7 +64,7 @@ const VideoSettingsDropdownComponent = ({
             originalPlacement={activeBreakpoint === 'small' ? 'top-end' : 'top-start'}
         >
             <section
-                className="flex flex-column gap-2 px-4 py-2 meet-scrollbar overflow-x-hidden overflow-y-auto"
+                className="flex flex-column gap-2 px-4 py-2 meet-scrollbar scrollbar-always-visible overflow-x-hidden overflow-y-auto"
                 aria-label={c('Aria').t`Video settings`}
                 // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
                 tabIndex={0}
