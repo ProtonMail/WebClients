@@ -21,6 +21,7 @@ import { getIconResourcePath } from "../../constants/resources";
 import pkg from "../../../package.json";
 import { getFeatureFlagManager } from "../flags/manager";
 import { FeatureFlag } from "../flags/flags";
+import { isWindowValid } from "../view/windowUtils";
 
 type MenuKey = "app" | "file" | "edit" | "view" | "window" | "help";
 interface MenuProps extends MenuItemConstructorOptions {
@@ -267,7 +268,22 @@ export const setApplicationMenu = () => {
                 },
                 { label: c("App menu").t`Zoom Out`, accelerator: "CmdOrCtrl+-", click: () => updateZoom("out") },
                 { type: "separator" },
-                { role: "togglefullscreen", label: c("App menu").t`Toggle Full Screen` },
+                // Avoid duplica `Toggle Full Screen` on macOS (electron-bug) (https://github.com/electron/electron/issues/50531)
+                ...(isMac
+                    ? ([
+                          {
+                              label: c("App menu").t`Toggle Full Screen`,
+                              accelerator: "CmdOrCtrl+Shift+F",
+                              click: () => {
+                                  const mainWindow = getMainWindow();
+                                  if (!isWindowValid(mainWindow)) return;
+                                  mainWindow.setFullScreen(!mainWindow.isFullScreen());
+                              },
+                          },
+                      ] satisfies MenuItemConstructorOptions[])
+                    : ([
+                          { role: "togglefullscreen", label: c("App menu").t`Toggle Full Screen` },
+                      ] satisfies MenuItemConstructorOptions[])),
             ],
         },
         {
