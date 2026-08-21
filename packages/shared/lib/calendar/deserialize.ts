@@ -1,4 +1,5 @@
 import type { PrivateKeyReference, PublicKeyReference, SessionKey } from '@protontech/crypto';
+
 import isTruthy from '@proton/utils/isTruthy';
 
 import { getIsAddressActive, getIsAddressExternal } from '../helpers/address';
@@ -25,8 +26,8 @@ import {
     getDecryptedSessionKey,
 } from './crypto/decrypt';
 import { unwrap } from './helper';
-import { parseWithFoldingRecovery } from './icsSurgery/ics';
 import { getAttendeePartstat, getIsEventComponent } from './vcalHelper';
+import { parseWithFoldingRecovery } from './vcalRecovery';
 
 export const readSessionKey = (
     KeyPacket?: Nullable<string>,

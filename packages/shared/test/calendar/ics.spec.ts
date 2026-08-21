@@ -1,13 +1,13 @@
 import {
     getTriggerValue,
     isValidTriggerDuration,
-    parseWithRecovery,
     reformatDateTimes,
     reformatLineBreaks,
     removeAlarm,
     replaceTrigger,
     unfoldLines,
 } from '../../lib/calendar/icsSurgery/ics';
+import { parseWithRecovery } from '../../lib/calendar/vcalRecovery';
 
 describe('reformatLineBreaks()', () => {
     it('should reformat line breaks with RFC 7896 properties', () => {

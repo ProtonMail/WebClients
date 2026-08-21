@@ -3,7 +3,7 @@ import { CryptoProxy } from '@protontech/crypto';
 import { KT_SKL_SIGNING_CONTEXT } from '@proton/key-transparency/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { getIsAddressDisabled } from '../helpers/address';
+import { getIsAddressDisabled } from '../helpers/addressStatus';
 import type {
     ActiveAddressKeysByVersion,
     Address,
