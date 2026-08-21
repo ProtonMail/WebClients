@@ -26,7 +26,7 @@ import './CategoriesTabs.scss';
 export const CategoriesTabsList = () => {
     const recategorizeElement = useRecategorizeElement();
     const { activeCategoriesTabs } = useCategoriesView();
-    const { socialTabSpotlightStep } = useCategoriesOnboarding();
+    const { tabSpotlightStep } = useCategoriesOnboarding();
 
     const categoryIDs = useMailSelector(selectCategoryIDs);
     const activeCategoryID = useMailSelector(selectActiveCategoryID);
@@ -95,9 +95,9 @@ export const CategoriesTabsList = () => {
 
                     // Show the spotlight on the second tab.
                     // It will be social most of the time but some users might have changed categories
-                    if (idx === 1 && socialTabSpotlightStep) {
+                    if (idx === 1 && tabSpotlightStep) {
                         return (
-                            <CategoriesOnboardingSpotlight step={socialTabSpotlightStep} key={category.id}>
+                            <CategoriesOnboardingSpotlight step={tabSpotlightStep} key={category.id}>
                                 <div
                                     className="tab-wrapper"
                                     onDragOver={handleDragOver(category.id)}
