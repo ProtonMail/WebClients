@@ -1,9 +1,15 @@
 import { updateCalendarSettings, updateMember } from '@proton/shared/lib/api/calendars';
 import { getHasUserReachedCalendarsLimit } from '@proton/shared/lib/calendar/calendarLimits';
 import {
+    getIsHolidaysCalendar,
+    getIsOwnedCalendar,
+    getIsPersonalCalendar,
+    getIsSubscribedCalendar,
+    getOwnedPersonalCalendars,
+} from '@proton/shared/lib/calendar/calendarTaxonomy';
+import {
     AutoAddVideoConferenceLinkProvider,
     CALENDAR_FLAGS,
-    CALENDAR_TYPE,
     SETTINGS_VIEW,
 } from '@proton/shared/lib/calendar/constants';
 import { reactivateCalendarsKeys } from '@proton/shared/lib/calendar/crypto/keys/reactivateCalendarKeys';
@@ -22,11 +28,23 @@ import type {
     CalendarWithOwnMembers,
     VisualCalendar,
 } from '@proton/shared/lib/interfaces/calendar/Calendar';
-import type { SubscribedCalendar } from '@proton/shared/lib/interfaces/calendar/Subscription';
 import type { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
 import type { GetAddresses } from '@proton/shared/lib/interfaces/hooks/GetAddresses';
 import isTruthy from '@proton/utils/isTruthy';
 import unary from '@proton/utils/unary';
+
+export {
+    getIsHolidaysCalendar,
+    getIsOwnedCalendar,
+    getIsPersonalCalendar,
+    getIsSubscribedCalendar,
+    getIsUnknownCalendar,
+    getOwnedPersonalCalendars,
+    getPersonalCalendars,
+    getSharedCalendars,
+    getSubscribedCalendars,
+    groupCalendarsByTaxonomy,
+} from '@proton/shared/lib/calendar/calendarTaxonomy';
 
 export const getIsCalendarActive = ({ Flags } = { Flags: 0 }) => {
     return hasBit(Flags, CALENDAR_FLAGS.ACTIVE);
@@ -58,26 +76,8 @@ export const getProbablyActiveCalendars = <T extends Calendar>(calendars: T[] = 
     return calendars.filter(unary(getIsCalendarProbablyActive));
 };
 
-export const getIsPersonalCalendar = (calendar: VisualCalendar | SubscribedCalendar): calendar is VisualCalendar => {
-    return calendar.Type === CALENDAR_TYPE.PERSONAL;
-};
-
-export const getIsOwnedCalendar = (calendar: CalendarWithOwnMembers) => {
-    return calendar.Owner.Email === calendar.Members[0].Email;
-};
-
 export const getIsSharedCalendar = (calendar: VisualCalendar) => {
     return getIsPersonalCalendar(calendar) && !getIsOwnedCalendar(calendar);
-};
-
-export const getIsSubscribedCalendar = (
-    calendar: Calendar | VisualCalendar | SubscribedCalendar
-): calendar is SubscribedCalendar => {
-    return calendar.Type === CALENDAR_TYPE.SUBSCRIPTION;
-};
-
-export const getPersonalCalendars = <T extends Calendar>(calendars: T[] = []): T[] => {
-    return calendars.filter(unary(getIsPersonalCalendar));
 };
 
 export const getIsCalendarWritable = (calendar: VisualCalendar) => {
@@ -88,61 +88,8 @@ export const getWritableCalendars = (calendars: VisualCalendar[]) => {
     return calendars.filter(unary(getIsCalendarWritable));
 };
 
-export const getIsHolidaysCalendar = (calendar: VisualCalendar) => {
-    return calendar.Type === CALENDAR_TYPE.HOLIDAYS;
-};
-
-export const getIsUnknownCalendar = (calendar: VisualCalendar) => {
-    const knownTypes = [CALENDAR_TYPE.PERSONAL, CALENDAR_TYPE.SUBSCRIPTION, CALENDAR_TYPE.HOLIDAYS];
-
-    return !knownTypes.includes(calendar.Type);
-};
-
 export const getShowDuration = (calendar: VisualCalendar) => {
     return getIsCalendarWritable(calendar) && getIsPersonalCalendar(calendar) && getIsOwnedCalendar(calendar);
-};
-
-export const groupCalendarsByTaxonomy = (calendars: VisualCalendar[] = []) => {
-    return calendars.reduce<{
-        ownedPersonalCalendars: VisualCalendar[];
-        sharedCalendars: VisualCalendar[];
-        subscribedCalendars: VisualCalendar[];
-        holidaysCalendars: VisualCalendar[];
-        unknownCalendars: VisualCalendar[];
-    }>(
-        (acc, calendar) => {
-            if (getIsSubscribedCalendar(calendar)) {
-                acc.subscribedCalendars.push(calendar);
-            } else if (getIsPersonalCalendar(calendar)) {
-                const calendarsGroup = getIsOwnedCalendar(calendar) ? acc.ownedPersonalCalendars : acc.sharedCalendars;
-                calendarsGroup.push(calendar);
-            } else if (getIsHolidaysCalendar(calendar)) {
-                acc.holidaysCalendars.push(calendar);
-            } else {
-                acc.unknownCalendars.push(calendar);
-            }
-            return acc;
-        },
-        {
-            ownedPersonalCalendars: [],
-            sharedCalendars: [],
-            subscribedCalendars: [],
-            holidaysCalendars: [],
-            unknownCalendars: [],
-        }
-    );
-};
-
-export const getOwnedPersonalCalendars = (calendars: VisualCalendar[] = []) => {
-    return groupCalendarsByTaxonomy(calendars).ownedPersonalCalendars;
-};
-
-export const getSharedCalendars = (calendars: VisualCalendar[] = []) => {
-    return groupCalendarsByTaxonomy(calendars).sharedCalendars;
-};
-
-export const getSubscribedCalendars = (calendars: VisualCalendar[] = []) => {
-    return groupCalendarsByTaxonomy(calendars).subscribedCalendars;
 };
 
 enum CALENDAR_WEIGHT {
