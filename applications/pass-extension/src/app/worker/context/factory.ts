@@ -44,6 +44,7 @@ import { createPassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { QA_SERVICE } from '@proton/pass/lib/qa/service';
 import { registerStoreEffect } from '@proton/pass/store/connect/effect';
 import { selectLockSetupRequired } from '@proton/pass/store/selectors/settings';
+import { selectAutofillModelExperimentGroup } from '@proton/pass/store/selectors/user';
 import { AppStatus } from '@proton/pass/types/worker/state';
 import { coalesce } from '@proton/pass/utils/fp/control';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';
@@ -162,6 +163,11 @@ export const createWorkerContext = (config: ProtonConfig) => {
     /* Watch for `lockSetup` state changes. Notify all extension
      * components on update in order for clients' states to sync. */
     registerStoreEffect(store, selectLockSetupRequired, () => onStateUpdate());
+
+    /* Re-resolve the assigned model ID when the experiment group changes */
+    registerStoreEffect(store, selectAutofillModelExperimentGroup, () =>
+        context.service.autofill.refreshAssignedModelId()
+    );
 
     if (ENV === 'development') {
         WorkerMessageBroker.registerMessage(WorkerMessageType.DEBUG, ({ payload }) => {

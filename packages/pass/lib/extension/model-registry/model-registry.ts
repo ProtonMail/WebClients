@@ -1,4 +1,5 @@
 import type { MaybeNull, Result } from '@proton/pass/types';
+import type { AutofillModelExperimentGroup } from '@proton/pass/types/api/features';
 import { isObject } from '@proton/pass/utils/object/is-object';
 
 // maps experiment group to model ID
@@ -26,3 +27,9 @@ export const parseModelRegistry = (data: MaybeNull<string>): Result<{ registry: 
 
     return validateModelRegistry(json);
 };
+
+export const resolveModelId = (
+    registry: MaybeNull<ModelRegistry>,
+    group: AutofillModelExperimentGroup,
+    fallbackModelId: string
+): string => registry?.[group] ?? fallbackModelId;
