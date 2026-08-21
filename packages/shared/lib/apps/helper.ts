@@ -11,6 +11,9 @@ import {
     isElectronOnMac,
     isElectronOnWindows,
     isElectronPass,
+    isTauriOnLinux,
+    isTauriOnMac,
+    isTauriOnWindows,
 } from '../helpers/desktop';
 import { stripLeadingAndTrailingSlash } from '../helpers/string';
 import window from '../window';
@@ -92,13 +95,13 @@ export const getClientID = (appName: APP_NAMES): string => {
         linuxClientID = clientID,
     } = APPS_CONFIGURATION[app];
 
-    if (isElectronOnWindows) {
+    if (isElectronOnWindows || isTauriOnWindows) {
         return windowsClientID;
     }
-    if (isElectronOnMac) {
+    if (isElectronOnMac || isTauriOnMac) {
         return macosClientID;
     }
-    if (isElectronOnLinux) {
+    if (isElectronOnLinux || isTauriOnLinux) {
         return linuxClientID;
     }
     return clientID;
