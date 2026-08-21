@@ -38,11 +38,9 @@ const getAppContainer = () =>
 
 export const bootstrapApp = async ({
     config,
-    signal,
     notificationsManager,
 }: {
     config: ProtonConfig;
-    signal?: AbortSignal;
     notificationsManager: NotificationsManager;
 }) => {
     const appName = config.APP_NAME;
@@ -107,12 +105,10 @@ export const bootstrapApp = async ({
 
             dispatch(welcomeFlagsActions.initial(userSettings));
 
-            const [scopes] = await Promise.all([
-                bootstrap.enableTelemetryBasedOnUserSettings({ userSettings }),
-                bootstrap.loadLocales({ userSettings, locales }),
-            ]);
+            bootstrap.enableTelemetryBasedOnUserSettings({ userSettings });
+            await bootstrap.loadLocales({ userSettings, locales });
 
-            return { user, userSettings, earlyAccessScope: features[FeatureCode.EarlyAccessScope], scopes };
+            return { user, userSettings, earlyAccessScope: features[FeatureCode.EarlyAccessScope] };
         };
 
         const loadPreload = () => {
@@ -136,17 +132,11 @@ export const bootstrapApp = async ({
 
         const eventManager = bootstrap.eventManager({ api: silentApi });
         extendStore({ eventManager });
-        const unsubscribeEventManager = eventManager.subscribe((event) => {
+
+        eventManager.subscribe((event) => {
             dispatch(serverEvent(event));
         });
         eventManager.start();
-
-        bootstrap.onAbort(signal, () => {
-            unsubscribeEventManager();
-            eventManager.reset();
-            unleashClient.stop();
-            store.unsubscribe();
-        });
 
         dispatch(bootstrapEvent({ type: 'complete' }));
 

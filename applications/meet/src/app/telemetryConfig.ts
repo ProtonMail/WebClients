@@ -1,6 +1,6 @@
 import type { TelemetryInitOptions } from '@proton/shared/lib/telemetry';
 
-export const meetTelemetryConfig: Pick<TelemetryInitOptions, 'eventOptions' | 'overridenPageTitle'> = {
+export const meetTelemetryConfig: Pick<TelemetryInitOptions, 'eventOptions' | 'overriddenPageTitle'> = {
     eventOptions: {
         pageView: false,
         click: false,
@@ -9,5 +9,5 @@ export const meetTelemetryConfig: Pick<TelemetryInitOptions, 'eventOptions' | 'o
         modal: false,
         exit: false,
     },
-    overridenPageTitle: 'Meet',
+    overriddenPageTitle: 'Meet',
 };
