@@ -1,5 +1,3 @@
-/* eslint-env es6 */
-
 const HOOK_ESCAPE_HATCH = {
     useSubscriptionModal: 'useSubscriptionModalRaw',
     useOptionalSubscriptionModal: 'useOptionalSubscriptionModalRaw',

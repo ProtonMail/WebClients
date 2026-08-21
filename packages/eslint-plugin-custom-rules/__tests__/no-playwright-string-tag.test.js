@@ -1,7 +1,5 @@
 import rule from '../no-playwright-string-tag';
 
-/* eslint-env es6 */
-
 const { RuleTester } = require('eslint');
 
 const ruleTester = new RuleTester({

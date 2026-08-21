@@ -23,8 +23,6 @@ function identity(x) {
     return x;
 }
 
-/*eslint-env browser*/
-
 /**
  * From an iterable return the best item, according to an arbitrary comparator
  * function. In case of a tie, the first item wins.
