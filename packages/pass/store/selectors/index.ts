@@ -3,6 +3,7 @@ export * from '@proton/pass/store/request/selectors';
 export * from './access';
 export * from './access-token';
 export * from './alias';
+export * from './assigned-model-id';
 export * from './autofill';
 export * from './autosave';
 export * from './bulk';

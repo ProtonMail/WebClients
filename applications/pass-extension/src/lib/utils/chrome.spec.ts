@@ -17,6 +17,9 @@ jest.mock('proton-pass-extension/lib/utils/version', (): MockVersionModule => {
         get EXTENSION_MANIFEST_VERSION() {
             return module._MOCK_EXTENSION_MANIFEST_VERSION_;
         },
+        get BUNDLED_MODEL_ID() {
+            return `${module._MOCK_EXTENSION_MANIFEST_VERSION_}-bundled`;
+        },
 
         _MOCK_EXTENSION_BUILD_VERSION_: '1.0.0',
         _MOCK_EXTENSION_MANIFEST_VERSION_: '1.0.0',
