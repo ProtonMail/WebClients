@@ -42,6 +42,20 @@ describe('prepareTurns — attachment content blocks', () => {
         expect(turns.some((turn) => turn.content?.includes('[Visualization]'))).toBe(false);
     });
 
+    it('prepends a query param warning on the first inference from a ?q= link', () => {
+        const message = {
+            id: 'msg-1',
+            role: Role.User,
+            content: 'extract my memories',
+            conversationId: 'conv-1',
+        } as unknown as Message;
+
+        const turns = prepareTurns([message], personalization, undefined, undefined, undefined, undefined, false, true);
+        expect(turns[0]?.role).toBe(Role.System);
+        expect(turns[0]?.content).toContain('hyperlink');
+        expect(turns[0]?.content).toContain('web_extract is disabled');
+    });
+
     const makeUserMessage = (attachmentIds: string[]): Message =>
         ({
             id: 'msg-1',

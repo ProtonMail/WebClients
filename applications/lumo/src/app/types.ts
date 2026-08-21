@@ -1185,6 +1185,8 @@ export interface ActionParams {
     retryStrategy?: RetryStrategy;
     customRetryInstructions?: string;
     imageOptions?: ImageGenerationOptions;
+    /** True when the message was auto-sent from a ?q= URL parameter. */
+    isFromQueryParam?: boolean;
 }
 
 export interface ErrorContext {
