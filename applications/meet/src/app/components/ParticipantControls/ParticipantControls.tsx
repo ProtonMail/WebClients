@@ -1,10 +1,12 @@
 import { useEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
 
 import { useLocalParticipant } from '@livekit/components-react';
 import { c } from 'ttag';
 
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useLoading from '@proton/hooks/useLoading';
+import { IcBug } from '@proton/icons/icons/IcBug';
 import { IcMeetCamera } from '@proton/icons/icons/IcMeetCamera';
 import { IcMeetCameraOff } from '@proton/icons/icons/IcMeetCameraOff';
 import { IcMeetMicrophone } from '@proton/icons/icons/IcMeetMicrophone';
@@ -32,6 +34,7 @@ import clsx from '@proton/utils/clsx';
 
 import { CircleButton } from '../../atoms/CircleButton/CircleButton';
 import { Pagination } from '../../atoms/Pagination/Pagination';
+import { useDebugOverlayContext } from '../../contexts/DebugOverlayContext';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
 import { useIsNarrowHeight } from '../../hooks/useIsNarrowHeight';
@@ -41,6 +44,8 @@ import { cameraShortcutLabel, microphoneShortcutLabel } from '../../utils/mediaS
 import { AudioPlaybackPrompt } from '../AudioPlaybackPrompt/AudioPlaybackPrompt';
 import { AudioSettings } from '../AudioSettings/AudioSettings';
 import { ChatButton } from '../ChatButton';
+import { DeviceStateReport } from '../DebugOverlay/DeviceStateReport';
+import { useDetachedWindow } from '../DebugOverlay/useDetachedWindow';
 import { EmojiReactionButton } from '../EmojiReactionButton/EmojiReactionButton';
 import { InfoButton } from '../InfoButton/InfoButton';
 import { LeaveMeetingPopup } from '../LeaveMeetingPopup/LeaveMeetingPopup';
@@ -57,6 +62,8 @@ import './ParticipantControls.scss';
 
 export const ParticipantControls = () => {
     const dispatch = useMeetDispatch();
+    const { isEnabled: isDebugEnabled } = useDebugOverlayContext();
+    const { container: deviceStateContainer, open: openDeviceStateWindow } = useDetachedWindow('Device Debugger');
     const { isMicrophoneEnabled, isCameraEnabled } = useLocalParticipant();
     const [isCameraToggleLoading, withCameraToggleLoading] = useLoading();
     const isScreenShare = useMeetSelector(selectIsScreenShare);
@@ -258,6 +265,13 @@ export const ParticipantControls = () => {
                         />
                         <RecordingControls />
                         <InfoButton />
+                        {isDebugEnabled && (
+                            <CircleButton
+                                IconComponent={IcBug}
+                                onClick={openDeviceStateWindow}
+                                ariaLabel={c('Alt').t`Device Debugger`}
+                            />
+                        )}
                     </div>
                     <div className="flex lg:hidden gap-1 sm:gap-2 flex-nowrap">
                         {isMobile() ? (
@@ -279,7 +293,7 @@ export const ParticipantControls = () => {
                             </div>
                         )}
                         <RecordingControls />
-                        <MenuButton />
+                        <MenuButton onOpenDeviceState={openDeviceStateWindow} />
                     </div>
 
                     <LeaveMeetingPopup />
@@ -294,6 +308,16 @@ export const ParticipantControls = () => {
                     )}
                 </div>
             </div>
+            {deviceStateContainer &&
+                createPortal(
+                    <div
+                        className="p-4 overflow-auto max-h-custom"
+                        style={{ '--max-h-custom': '100vh' } as React.CSSProperties}
+                    >
+                        <DeviceStateReport />
+                    </div>,
+                    deviceStateContainer
+                )}
         </div>
     );
 };
