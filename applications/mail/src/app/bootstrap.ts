@@ -3,7 +3,6 @@ import {
     initEvent,
     organizationThunk,
     retentionPoliciesThunk,
-    serverEvent,
     startLogoutListener,
     userSettingsThunk,
     userThunk,
@@ -11,6 +10,7 @@ import {
 } from '@proton/account';
 import * as bootstrap from '@proton/account/bootstrap';
 import { bootstrapEvent } from '@proton/account/bootstrap/action';
+import { serverEvent } from '@proton/account/eventLoop';
 import { getDecryptedPersistedState } from '@proton/account/persist/helper';
 import { createCalendarModelEventManager } from '@proton/calendar/calendarModelEventManager';
 import { setupGuestCrossStorage } from '@proton/cross-storage/account/guest';
@@ -35,21 +35,20 @@ import { appMode } from '@proton/shared/lib/webpack.constants';
 import { CommonFeatureFlag } from '@proton/unleash/Flags';
 import noop from '@proton/utils/noop';
 
-import { registerMailToProtocolHandler } from './helpers/url';
-
 import { cleanLegacyLogsDatabase } from './helpers/cleanLegacyLogsDatabase';
 import {
     canLoadRunner,
     shouldLoadMigrationWorker,
 } from './helpers/encryptedSearch/migration-system/helpers/shouldLoadMigrationWorker';
 import { migrationToolWorker } from './helpers/encryptedSearch/migration-system/migrationToolWorker';
+import { registerMailToProtocolHandler } from './helpers/url';
 import locales from './locales';
 import { type MailState, extendStore, setupStore } from './store/store';
 
 const getAppContainer = () =>
     import(/* webpackChunkName: "MainContainer" */ './MainContainer').then((result) => result.default);
 
-export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; signal?: AbortSignal }) => {
+export const bootstrapApp = async ({ config }: { config: ProtonConfig }) => {
     const appName = config.APP_NAME;
     const pathname = window.location.pathname;
     const searchParams = new URLSearchParams(window.location.search);
@@ -133,12 +132,10 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
 
             dispatch(welcomeFlagsActions.initial(userSettings));
 
-            const [scopes] = await Promise.all([
-                bootstrap.enableTelemetryBasedOnUserSettings({ userSettings }),
-                bootstrap.loadLocales({ userSettings, locales }),
-            ]);
+            bootstrap.enableTelemetryBasedOnUserSettings({ userSettings });
+            await bootstrap.loadLocales({ userSettings, locales });
 
-            return { user, userSettings, earlyAccessScope: features[FeatureCode.EarlyAccessScope], scopes };
+            return { user, userSettings, earlyAccessScope: features[FeatureCode.EarlyAccessScope] };
         };
 
         const loadPreload = () => {
@@ -237,17 +234,11 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         const calendarModelEventManager = createCalendarModelEventManager({ api: silentApi });
 
         extendStore({ eventManager, calendarModelEventManager });
-        const unsubscribeEventManager = eventManager.subscribe((event) => {
+
+        eventManager.subscribe((event) => {
             dispatch(serverEvent(event));
         });
         eventManager.start();
-
-        bootstrap.onAbort(signal, () => {
-            unsubscribeEventManager();
-            eventManager.reset();
-            unleashClient.stop();
-            store.unsubscribe();
-        });
 
         dispatch(bootstrapEvent({ type: 'complete' }));
 
