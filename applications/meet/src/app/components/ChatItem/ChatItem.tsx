@@ -19,11 +19,11 @@ import {
 } from '@proton/meet/types/types';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import { ParticipantAvatar } from '../../atoms/ParticipantAvatar/ParticipantAvatar';
 import { useChatMessage } from '../../hooks/bridges/useChatMessage';
 import { useChatMessageReaction } from '../../hooks/bridges/useChatMessageReaction';
-import { useParticipantDisplayColors } from '../../hooks/useParticipantDisplayColors';
 import { useToolbarRovingFocus } from '../../hooks/useToolbarRovingFocus';
-import { getParticipantInitials } from '../../utils/getParticipantInitials';
+import { getAgentDisplayInfo } from '../../utils/getAgentDisplayInfo';
 import { ChatMessageContent } from '../ChatMessageContent';
 import { announcementMessages } from '../MeetingAnnouncer/messages';
 import { useAnnounce } from '../MeetingAnnouncer/useAnnounce';
@@ -74,10 +74,13 @@ export const ChatItem = ({
     const participantName = useMeetSelector((state) => selectParticipantName(state, identity));
     const localParticipantIdentity = useMeetSelector(selectLocalParticipantIdentity);
     const isLocalParticipant = identity === localParticipantIdentity;
+
+    // Agents aren't in the decrypted name map, so resolve their name/avatar from
+    // the metadata captured on the event — consistent with the participant list.
+    const agentInfo = isParticipantEventRecord(item) && item.isAgent ? getAgentDisplayInfo(item.identity) : null;
+    const displayName = agentInfo ? agentInfo.displayName : participantName;
     const sendReaction = useChatMessageReaction();
     const { retryMessage, discardMessage } = useChatMessage();
-
-    const { participantColors } = useParticipantDisplayColors(identity);
 
     const isChatThreadsEnabled = useFlag('MeetChatThreads');
 
@@ -164,23 +167,19 @@ export const ChatItem = ({
             onClick={handleRowClick}
         >
             <div className="flex flex-nowrap items-start shrink-0">
-                <div
-                    className={clsx(
-                        participantColors.backgroundColor,
-                        participantColors.profileTextColor,
-                        'color-invert rounded-full flex items-center justify-center w-custom h-custom',
-                        isThreadItem && 'text-sm'
-                    )}
-                    style={{ '--w-custom': avatarSize, '--h-custom': avatarSize }}
-                >
-                    <div>{getParticipantInitials(participantName)}</div>
-                </div>
+                <ParticipantAvatar
+                    identity={identity}
+                    participantName={participantName}
+                    isAgent={Boolean(agentInfo)}
+                    size={avatarSize}
+                    className={clsx('color-invert', isThreadItem && 'text-sm')}
+                />
             </div>
 
             <div className="flex flex-column flex-nowrap justify-start flex-1 min-w-0">
                 <div className="flex items-start text-semibold flex-nowrap">
-                    <span className="text-ellipsis" title={participantName}>
-                        <bdi>{participantName}</bdi>
+                    <span className="text-ellipsis" title={displayName}>
+                        <bdi>{displayName}</bdi>
                         {isLocalParticipant && <span className="color-weak ml-1">{c('Info').t`(You)`}</span>}
                     </span>
                     {displayDate && (

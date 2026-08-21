@@ -1,17 +1,26 @@
-import { type MutableRefObject, useRef } from 'react';
+import { type MutableRefObject, useEffect, useRef } from 'react';
 
 import { MeetCoreErrorEnum, MlsSyncStateInfo, RejoinReasonInfo } from '@proton-meet/proton-meet-core';
 import { c } from 'ttag';
 
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { useMeetErrorReporting } from '@proton/meet';
-import { useMeetDispatch } from '@proton/meet/store/hooks';
+import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { setMlsRetrying } from '@proton/meet/store/slices/connectionSlice';
 import { setMlsGroupState } from '@proton/meet/store/slices/meetingInfo';
+import { selectCaptionsAgentPresent } from '@proton/meet/store/slices/participants/agentParticipantsSlice';
 import type { MLSGroupState } from '@proton/meet/types/types';
 
+import { CAPTIONS_AGENT_RETRY_DELAYS_MS } from '../../constants';
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
-import { setupLiveKitAdminChangeEvent, setupWasmDependencies } from '../../utils/wasmUtils';
+import { retry } from '../../utils/retry';
+import {
+    setupAgentLeftEvent,
+    setupAgentPendingEvent,
+    setupLiveKitAdminChangeEvent,
+    setupWasmDependencies,
+} from '../../utils/wasmUtils';
+import { useLiveCaptionsFeatureEnabled } from '../captions/useLiveCaptionsFeatureEnabled';
 import { useNotifyError } from '../useNotifyError';
 
 interface UseMlsSessionParams {
@@ -34,6 +43,18 @@ export interface UseMlsSessionResult {
     ) => Promise<{ key: string; epoch: bigint } | undefined>;
 }
 
+// Grace before a catch-up pass, so the pending-agent event can do the work first.
+export const RECONCILE_DELAY_MS = 2_000;
+
+// How long an admission we have already made is assumed to still be settling. Past that, an agent
+// the backend keeps listing as pending never made it into the group and is admitted again. It has to
+// outlast the retries an admission makes, or a sweep would start a second one alongside the first.
+export const ADMISSION_SETTLE_MS = CAPTIONS_AGENT_RETRY_DELAYS_MS.reduce((total, delay) => total + delay, 0) + 5_000;
+
+interface AgentAdmissionController {
+    admitPendingAgents: () => Promise<void>;
+}
+
 export const useMlsSession = ({
     getGroupKeyInfo,
     onNewGroupKeyInfo,
@@ -52,6 +73,122 @@ export const useMlsSession = ({
     const notifyError = useNotifyError();
 
     const mlsSetupDone = useRef(false);
+
+    const captionsAgentPresent = useMeetSelector(selectCaptionsAgentPresent);
+
+    const liveCaptionsEnabled = useLiveCaptionsFeatureEnabled();
+    const liveCaptionsEnabledRef = useRef(liveCaptionsEnabled);
+    liveCaptionsEnabledRef.current = liveCaptionsEnabled;
+
+    const agentAdmissionRef = useRef<AgentAdmissionController | null>(null);
+
+    // Nothing else retries a missed pending-agent event, which would leave the agent transcribing
+    // into a group it isn't part of.
+    useEffect(() => {
+        const timeout = setTimeout(() => {
+            void agentAdmissionRef.current?.admitPendingAgents();
+        }, RECONCILE_DELAY_MS);
+
+        return () => clearTimeout(timeout);
+    }, [captionsAgentPresent]);
+
+    const startAgentAdmission = (meetingLinkName: string, meetingPassword: string): AgentAdmissionController => {
+        // Device ids we have already asked to admit, and when we first asked, so a sweep can tell
+        // an admission that is still settling from one that never landed.
+        const admittedAt = new Map<string, number>();
+        // A first sweep finding pending agents is routine, since they can go pending before we join;
+        // a later one finding them means something dropped the work.
+        let hasSwept = false;
+
+        // Every client calls this: meet-core staggers the commit by a deterministic rank and drops
+        // out if the epoch advanced during the wait, so a wedged low-ranked client can't hold up
+        // admission and the others don't race it.
+        const admit = async (deviceId: string) => {
+            if (admittedAt.has(deviceId)) {
+                return;
+            }
+            admittedAt.set(deviceId, Date.now());
+
+            await retry(() => meetCoreClient.admitAgent(meetingLinkName, deviceId, meetingPassword), {
+                delayMs: CAPTIONS_AGENT_RETRY_DELAYS_MS,
+                stopAfterFirstSuccess: true,
+                // The agent can leave while we back off, leaving nothing to admit.
+                shouldAttempt: () => admittedAt.has(deviceId),
+                onFailure: (error) => {
+                    // Re-arm so a later pending event or sweep can try again.
+                    admittedAt.delete(deviceId);
+                    reportMeetError('Failed to admit agent after retries', {
+                        context: { error },
+                        tags: { meetingLinkName },
+                    });
+                },
+            });
+        };
+
+        const forgetAgent = async (deviceId: string) => {
+            admittedAt.delete(deviceId);
+        };
+
+        // Failing here leaves admission to the sweep below rather than to the events, so it is
+        // reported instead of failing the join: captions are not worth losing the meeting over.
+        const registerAgentEvents = async () => {
+            try {
+                setupAgentPendingEvent({ onAgentPending: admit });
+                await meetCoreClient.setAgentPendingHandler();
+
+                setupAgentLeftEvent({ onAgentLeft: forgetAgent });
+                await meetCoreClient.setAgentLeftHandler();
+            } catch (error) {
+                reportMeetError('Failed to subscribe to captions agent events', {
+                    context: { error },
+                    tags: { meetingLinkName },
+                });
+            }
+        };
+
+        void registerAgentEvents();
+
+        // Catches up on agents that went pending while we were joining, or whose event we missed.
+        const admitPendingAgents = async () => {
+            if (!liveCaptionsEnabledRef.current) {
+                return;
+            }
+            const isCatchUp = hasSwept;
+            hasSwept = true;
+
+            let pending: string[];
+            try {
+                pending = await meetCoreClient.listPendingAgents(meetingLinkName);
+            } catch (error) {
+                reportMeetError('Failed to list pending agents', {
+                    context: { error },
+                    tags: { meetingLinkName },
+                });
+                return;
+            }
+
+            const now = Date.now();
+            const isSettling = (deviceId: string) => {
+                const admissionTime = admittedAt.get(deviceId);
+                return admissionTime !== undefined && now - admissionTime < ADMISSION_SETTLE_MS;
+            };
+
+            const unhandled = pending.filter((deviceId) => !isSettling(deviceId));
+            unhandled.forEach((deviceId) => admittedAt.delete(deviceId));
+
+            if (isCatchUp && unhandled.length > 0) {
+                reportMeetError('Captions agent was still unadmitted when reconciling', {
+                    level: 'warning',
+                    context: { unhandled: unhandled.length },
+                    tags: { meetingLinkName },
+                });
+            }
+
+            await Promise.all(unhandled.map(admit));
+        };
+
+        return { admitPendingAgents };
+    };
 
     const handleMlsSetup = async (
         meetingLinkName: string,
@@ -104,6 +241,10 @@ export const useMlsSession = ({
                     });
                 }
             }
+
+            agentAdmissionRef.current = startAgentAdmission(meetingLinkName, meetingPassword);
+            // Picks up an agent that went pending before this client had a handler registered.
+            void agentAdmissionRef.current.admitPendingAgents();
 
             const groupKeyData = await meetCoreClient.getGroupKey();
 
