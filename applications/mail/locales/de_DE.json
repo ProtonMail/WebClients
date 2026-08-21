@@ -1526,8 +1526,7 @@
         "Vertrauen"
       ],
       "Trust key": [
-        "Schlüssel vertrauen",
-        "Schlüsseln vertrauen"
+        "Schlüssel vertrauen"
       ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
@@ -1742,6 +1741,9 @@
       ],
       "Get the deal": [
         "Jetzt zugreifen"
+      ],
+      "Get index size on disk": [
+        "Indexgröße auf der Festplatte abrufen"
       ]
     },
     "action": {
@@ -8102,7 +8104,8 @@
         "Wird initialisiert…"
       ],
       "Insert image": [
-        "Bild einfügen"
+        "Bild einfügen",
+        "Bilder einfügen"
       ],
       "Insert link": [
         "Link einfügen"
@@ -9756,6 +9759,13 @@
       ],
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
         "Wenn du den Zugriff auf deine Authenticator-App verloren hast, kannst du 1 der 16 Wiederherstellungscodes verwenden, die du beim Einrichten der Zwei-Faktor-Authentifizierung erhalten hast. ${ learnMoreLink }"
+      ],
+      "Found ${ count } contact": [
+        "${ count } Kontakt gefunden",
+        "${ count } Kontakte gefunden"
+      ],
+      "No contacts found": [
+        "Keine Kontakte gefunden"
       ]
     },
     "info": {
