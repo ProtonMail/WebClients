@@ -1,7 +1,6 @@
 import { all, call, put, select } from 'redux-saga/effects';
 
 import { isShareRemovedError } from '@proton/pass/lib/api/errors';
-import { PassCrypto } from '@proton/pass/lib/crypto';
 import { getGroupInvites, getUserInvites } from '@proton/pass/lib/invites/invite.requests';
 import { getOrganizationForPlan } from '@proton/pass/lib/organization/organization.requests';
 import { getShareEvents, getShareLatestEventId, getShares } from '@proton/pass/lib/shares/share.requests';
@@ -21,7 +20,7 @@ import {
 import { type SyncResultV1, syncV1 } from '@proton/pass/lib/sync/v1/sync';
 import { getUserEventLatestID } from '@proton/pass/lib/sync/v2/user-events.requests';
 import { getUserAccess } from '@proton/pass/lib/user/user.requests';
-import { notification, setUserAccess, syncMigration } from '@proton/pass/store/actions';
+import { setUserAccess, syncMigration } from '@proton/pass/store/actions';
 import { setOrganization } from '@proton/pass/store/actions/creators/organization';
 import type { HydratedAccessState } from '@proton/pass/store/reducers';
 import type { OrganizationState } from '@proton/pass/store/reducers/organization';
@@ -31,7 +30,6 @@ import { selectLoadGroupInvites } from '@proton/pass/store/selectors/invites';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { InvitesGetResponse, Maybe, MaybeNull, PassEventListResponse, ShareGetResponse } from '@proton/pass/types';
 import type { Share } from '@proton/pass/types/data/shares';
-import { NotificationKey } from '@proton/pass/types/worker/notification';
 import { logger } from '@proton/pass/utils/logger';
 
 export function* drainShareEvents(share: Share, options: RootSagaOptions, nextEventID?: string): Generator {
@@ -71,20 +69,6 @@ export function* drainInvites() {
 export function* updateSyncStrategy(strategy: SyncStrategy, userEventId: MaybeNull<string>) {
     setSyncStrategy(strategy);
     yield put(syncMigration({ userEventId, strategy }));
-}
-
-export function* notifyInactiveShares() {
-    if (PassCrypto.ready) {
-        yield put(
-            notification({
-                endpoint: 'popup',
-                type: 'error',
-                expiration: 5_000,
-                key: NotificationKey.INACTIVE_SHARES,
-                text: '',
-            })
-        );
-    }
 }
 
 /** V1 → V2 migration. Runs at boot-time during hydration, before polling

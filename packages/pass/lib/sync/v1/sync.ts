@@ -6,7 +6,7 @@ import { dedupeShares } from '@proton/pass/lib/shares/share.dedupe';
 import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
 import { requestShares } from '@proton/pass/lib/shares/share.requests';
 import { createDefaultVault } from '@proton/pass/lib/sync/common/vaults';
-import { notifyInactiveShares } from '@proton/pass/lib/sync/migrate';
+import { notifyInactiveShares } from '@proton/pass/lib/sync/notifications';
 import { SyncStrategy } from '@proton/pass/lib/sync/types';
 import { asIfNotOptimistic } from '@proton/pass/store//optimistic/selectors/select-is-optimistic';
 import type { VaultShareItem } from '@proton/pass/store/reducers';
@@ -55,15 +55,15 @@ export function* syncV1({ getCore }: RootSagaOptions): Generator<any, SyncResult
      * Share loading may fail if the userkey it was encrypted
      * with is inactive */
     const remoteShares = (yield Promise.all(
-        remote.filter(pipe(prop('ShareID'), notIn(cachedShareIds))).map(
-            async (encryptedShare): Promise<RemoteShare> => ({
+        remote
+            .filter(pipe(prop('ShareID'), notIn(cachedShareIds)))
+            .map(async (encryptedShare): Promise<RemoteShare> => ({
                 shareId: encryptedShare.ShareID,
                 /** Force `LEGACY` so per-share `eventIds` are always resolved: a V1
                  * sync needs them even when the ambient `SYNC_STRATEGY` is still
                  * `USER_EVENTS` during a V2→V1 rollback, before commit. */
                 share: await parseShareResponse(encryptedShare, { strategy: SyncStrategy.LEGACY }),
-            })
-        )
+            }))
     )) as RemoteShare[];
 
     /* Split active from inactive shares : if share is not defined
@@ -90,11 +90,9 @@ export function* syncV1({ getCore }: RootSagaOptions): Generator<any, SyncResult
     const itemShareIds = remoteShareIds.filter(notIn(disabledShareIds));
 
     const syncedItems = (yield Promise.all(
-        itemShareIds.map(
-            async (shareId): Promise<ItemsByShareId> => ({
-                [shareId]: toMap(await requestItemsForShareId(shareId), 'itemId'),
-            })
-        )
+        itemShareIds.map(async (shareId): Promise<ItemsByShareId> => ({
+            [shareId]: toMap(await requestItemsForShareId(shareId), 'itemId'),
+        }))
     )) as ItemsByShareId[];
 
     /* Exclude the deleted shares from the cached shares

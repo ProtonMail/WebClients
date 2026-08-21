@@ -1,5 +1,5 @@
 import type { SanitizedUrl } from '@proton/pass/lib/urls/types';
-import { MAX_HOSTNAME_LENGTH, RegexURL, isValidURLScheme } from '@proton/pass/lib/urls/utils/utils';
+import { MAX_HOSTNAME_LENGTH, RegexURL, isValidURLScheme } from '@proton/pass/lib/urls/utils/url.constants';
 
 /* Will first try to validate against the URL constructor.
  * If it fails, try to append https:// scheme and revalidate

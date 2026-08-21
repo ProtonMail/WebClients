@@ -11,8 +11,8 @@ import { verifyCustomDomain } from '@proton/pass/store/actions';
 import type { MaybeNull } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
 
+import { useAliasDomains, useCustomDomain } from './AliasDomainsContext';
 import { DNSSectionID, getDNSSections } from './DomainUtils';
-import { useAliasDomains, useCustomDomain } from './DomainsProvider';
 
 type Props = { domainID: number };
 

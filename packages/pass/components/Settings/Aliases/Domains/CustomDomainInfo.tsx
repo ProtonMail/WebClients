@@ -21,7 +21,7 @@ import {
 import type { CustomDomainSettingsOutput, MaybeNull } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
 
-import { useCustomDomain } from './DomainsProvider';
+import { useCustomDomain } from './AliasDomainsContext';
 
 type Props = { domainID: number };
 

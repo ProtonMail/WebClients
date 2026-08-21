@@ -5,9 +5,9 @@ import { c } from 'ttag';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useStateRef from '@proton/hooks/useStateRef';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import type { MaybeNull } from '@proton/pass/types';
-import { UpdateErrorType, UpdateStatus as UpdateStatusEnum } from '@proton/pass/types/desktop';
+import { getErrorLabel } from '@proton/pass/components/Settings/Update/Update.utils.desktop';
 import type { UpdateStore } from '@proton/pass/types/desktop';
+import { UpdateStatus as UpdateStatusEnum } from '@proton/pass/types/desktop';
 import { logger } from '@proton/pass/utils/logger';
 
 import { SettingsPanel } from '../SettingsPanel';
@@ -26,25 +26,6 @@ const DEFAULT_UPDATE_STORE = (currentVersion: string): UpdateStore => ({
     mockDownload: false,
     mockDoDownloadError: false,
 });
-
-export const getErrorLabel = (type: MaybeNull<UpdateErrorType>): string => {
-    if (type === null) return c('Error').t`Update failed`;
-    const typeLabel = (() => {
-        switch (type) {
-            case UpdateErrorType.ManifestUnavailable:
-                return c('Error').t`could not reach the update server`;
-            case UpdateErrorType.ManifestInvalid:
-                return c('Error').t`invalid update manifest`;
-            case UpdateErrorType.DownloadFailed:
-                return c('Error').t`could not download the update`;
-            case UpdateErrorType.InstallFailed:
-                return c('Error').t`could not install the update`;
-            case UpdateErrorType.NotEnoughDiskSpace:
-                return c('Error').t`not enough disk space`;
-        }
-    })();
-    return c('Error').t`Update failed (${typeLabel}).`;
-};
 
 const useUpdateStore = () => {
     const { createNotification } = useNotifications();

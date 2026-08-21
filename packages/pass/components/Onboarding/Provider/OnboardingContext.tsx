@@ -1,11 +1,14 @@
-import { type ComponentType, createContext } from 'react';
+import { type ComponentType, createContext, useContext } from 'react';
 
+import type { PLANS } from '@proton/payments/core/constants';
 import noop from '@proton/utils/noop';
 
 export enum OnboardingType {
     WELCOME = 'WELCOME',
     B2B = 'B2B',
 }
+
+export type AvailablePlans = PLANS.PASS | PLANS.BUNDLE;
 
 export type OnboardingStep = {
     action?: () => void;
@@ -43,3 +46,5 @@ export const OnboardingContext = createContext<OnboardingContextValue>({
     steps: [],
     type: OnboardingType.WELCOME,
 });
+
+export const useOnboarding = <T = any,>() => useContext(OnboardingContext) as OnboardingContextValue<T>;
