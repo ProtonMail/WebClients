@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
-import { useIsAlpha } from '../../Hooks/useIsAlpha'
+import { useSheetsDependencies } from './SheetsDependenciesProvider'
 
 const LOCAL_STORAGE_KEY = 'new-ui-enabled-new-key'
 const EVENT_NAME = 'konami-time'
@@ -23,7 +23,8 @@ const KONAMI_SEQUENCE = [
 const KONAMI_SEQUENCE_JOINED = KONAMI_SEQUENCE.join(',')
 
 export function useNewUIEnabled() {
-  const isAlpha = useIsAlpha()
+  const { isDevOrBlack, versionInfo } = useSheetsDependencies()
+  const isAlpha = versionInfo.environment === 'alpha' || isDevOrBlack()
   const [enabled, setEnabled] = useState(() => isEnabled())
 
   useEffect(() => {
