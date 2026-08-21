@@ -45,7 +45,7 @@ import SetPasswordWithPolicyForm from './SetPasswordWithPolicyForm';
 import Testflight from './Testflight';
 import TwoFactorStep from './TwoFactorStep';
 import UnlockForm from './UnlockForm';
-import { RememberMode } from './rememberMode';
+import { RememberMode, getRememberModeSearchParameter } from './rememberMode';
 import SSOLogin from './sso/SSOLogin';
 import { UnauthedLost2FAContainer } from './unauth-lost-2fa/UnauthedLost2FAContainer';
 
@@ -124,18 +124,12 @@ const LoginContainer = ({
     const searchParams = new URLSearchParams(location.search);
     const isPorkbun = searchParams.get('partner') === 'porkbun';
 
-    const rememberParam = searchParams.get('remember');
     const rememberConfig = (() => {
         if (isElectronApp) {
             return RememberMode.HiddenEnabled;
         }
-        if (rememberParam) {
-            const numericValue = parseInt(rememberParam, 10);
-            if (!isNaN(numericValue) && numericValue in RememberMode) {
-                return numericValue as RememberMode;
-            }
-        }
-        return remember;
+        // The initial search parameters are included to support the parameter being passed to /authorize
+        return getRememberModeSearchParameter(searchParams, initialSearchParams) ?? remember;
     })();
 
     useMetaTags(metaTags);
