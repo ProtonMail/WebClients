@@ -23,9 +23,14 @@
     "dependencies": {
         "@noble/ed25519": "1.7.5",
         "@proton/cross-storage": "workspace:^",
+        "@proton/metrics": "workspace:^",
         "@proton/shared": "workspace:^",
+        "@proton/utils": "workspace:^",
         "@protontech/crypto": "*",
-        "pkijs": "^3.4.0"
+        "asn1js": "^3.0.6",
+        "date-fns": "^2.30.0",
+        "pkijs": "^3.4.0",
+        "pvutils": "^1.1.3"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:^",
