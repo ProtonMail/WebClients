@@ -1095,12 +1095,14 @@ interface InviteMemberPayload {
     storage: number;
     numAI: boolean | undefined;
     lumo: boolean | undefined;
+    vpn: boolean | undefined;
 }
 export const createInvite = ({
     email,
     storage,
     numAI,
     lumo,
+    vpn,
 }: InviteMemberPayload): ThunkAction<
     Promise<void>,
     KtState & MemberState & MembersState & OrganizationKeyState,
@@ -1108,6 +1110,13 @@ export const createInvite = ({
     UnknownAction
 > => {
     return async (dispatch, getState, extra) => {
+        if (vpn) {
+            const [members, organization] = await Promise.all([
+                dispatch(membersThunk()),
+                dispatch(organizationThunk()),
+            ]);
+            await resetSelfVpnConnectionsHelper({ api: extra.api, members, organization }).catch(noop);
+        }
         const { Member } = await extra.api<{ Member: Member }>(
             inviteMember({
                 email,
@@ -1116,6 +1125,8 @@ export const createInvite = ({
                 maxAI: numAI === undefined ? undefined : numAI ? 1 : 0,
                 // eslint-disable-next-line no-nested-ternary
                 maxLumo: lumo === undefined ? undefined : lumo ? 1 : 0,
+                // eslint-disable-next-line no-nested-ternary
+                maxVPN: vpn === undefined ? undefined : vpn ? VPN_CONNECTIONS : 0,
             })
         );
         dispatch(upsertMember({ member: Member }));
@@ -1138,8 +1149,23 @@ export const editInvite = ({
     return async (dispatch, getState, extra) => {
         const api = extra.api;
         let diff = false;
-        if (memberDiff.storage !== undefined) {
-            await api(editMemberInvitation(member.ID, memberDiff.storage));
+        if (memberDiff.storage !== undefined || memberDiff.vpn !== undefined) {
+            if (memberDiff.vpn) {
+                const [members, organization] = await Promise.all([
+                    dispatch(membersThunk()),
+                    dispatch(organizationThunk()),
+                ]);
+                await resetSelfVpnConnectionsHelper({ api, members, organization }).catch(noop);
+            }
+            await api(
+                editMemberInvitation(
+                    member.ID,
+                    // MaxSpace is required by the API, so the current value is sent when only the VPN access changed
+                    memberDiff.storage ?? member.MaxSpace,
+                    // eslint-disable-next-line no-nested-ternary
+                    memberDiff.vpn === undefined ? undefined : memberDiff.vpn ? VPN_CONNECTIONS : 0
+                )
+            );
             diff = true;
         }
         if (memberDiff.numAI !== undefined) {

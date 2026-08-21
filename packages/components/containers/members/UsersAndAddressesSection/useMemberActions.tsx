@@ -483,6 +483,7 @@ export const useMemberActions = ({
                     allowAIAssistantConfiguration={allowAIAssistantConfiguration && !Boolean(tmpMember?.SSO)}
                     allowAIAssistantUpdate={allowAIAssistantUpdate}
                     allowStorageConfiguration={allowStorageConfiguration}
+                    allowVpnAccessConfiguration={allowVpnAccessConfiguration}
                     allowLumoConfiguration={allowLumoConfiguration && !Boolean(tmpMember?.SSO)}
                     allowLumoUpdate={allowLumoUpdate}
                     {...userInviteOrEditModalProps}
