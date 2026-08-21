@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 
-import ConfigContext from '@proton/components/containers/config/configContext';
+import { ConfigContext } from '@proton/app-context/configContext';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 
 export type PassConfig = ProtonConfig & { SSO_URL: string };
