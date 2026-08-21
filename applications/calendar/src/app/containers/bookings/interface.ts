@@ -1,5 +1,7 @@
+import type { BookingLocation, BookingPageEditData, MinimumNoticeMode } from '@proton/calendar/bookings/types';
+
 import type { LayoutEvent } from '../../components/calendar/layout';
-import type { BookingPageEditData, InternalBookingPage } from '../../store/internalBooking/interface';
+import type { InternalBookingPage } from '../../store/internalBooking/interface';
 import type { CalendarViewEvent } from '../calendar/interface';
 
 export const BOOKING_SLOT_ID = 'booking-slot-' as const;
@@ -9,10 +11,6 @@ export const DEFAULT_EVENT_DURATION = 30;
 export const DEFAULT_RANGE_START_HOUR = 9;
 export const DEFAULT_RANGE_END_HOUR = 17;
 export const DEFAULT_RECURRING = true;
-
-export const MAX_BOOKING_PAGE_MAIL_FREE = 0 as const;
-export const MAX_BOOKING_PAGE_MAIL_PAID = 1 as const;
-export const MAX_BOOKING_PAGES = 25 as const;
 
 export enum BookingLimitReached {
     NONE = 'none',
@@ -48,11 +46,6 @@ export interface Intersection {
     end: Date;
 }
 
-export enum BookingLocation {
-    MEET = 'Meet',
-    OTHER_LOCATION = 'other-location',
-}
-
 export enum BookingState {
     OFF = 'OFF',
     CREATE_NEW = 'CREATE_NEW',
@@ -61,13 +54,6 @@ export enum BookingState {
 
 export enum BookingRangeError {
     TOO_SHORT = 'TOO_SHORT',
-}
-
-export enum MinimumNoticeMode {
-    OFF = 0,
-    TWO_HOURS = 1,
-    FORTY_EIGHT_HOURS = 2,
-    NOT_SAME_DAY = 3,
 }
 
 export interface BookingRange {

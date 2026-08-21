@@ -1,4 +1,14 @@
-import type { BookingLocation, MinimumNoticeMode } from './interface';
+export enum BookingLocation {
+    MEET = 'Meet',
+    OTHER_LOCATION = 'other-location',
+}
+
+export enum MinimumNoticeMode {
+    OFF = 0,
+    TWO_HOURS = 1,
+    FORTY_EIGHT_HOURS = 2,
+    NOT_SAME_DAY = 3,
+}
 
 export interface APISlot {
     ID: string;
@@ -47,6 +57,23 @@ export interface SerializedFormData {
     location?: string;
     bookingSlots: SerializedSlot[];
     bookingRanges: SerializedBookingRange[];
+    minimumNoticeMode: MinimumNoticeMode;
+    conflictCalendarIDs: string[];
+}
+
+export interface EditSlotData {
+    start: number;
+    end: number;
+    timezone: string;
+    rrule: string | null;
+}
+
+export interface BookingPageEditData {
+    slots: EditSlotData[];
+    bookingUID: string;
+    encryptedSecret: string;
+    encryptedContent: string;
+    bookingKeySalt: string;
     minimumNoticeMode: MinimumNoticeMode;
     conflictCalendarIDs: string[];
 }

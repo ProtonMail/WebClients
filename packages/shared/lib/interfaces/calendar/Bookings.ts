@@ -1,4 +1,4 @@
-import type { MinimumNoticeMode } from 'proton-calendar/src/app/containers/bookings/interface';
+import type { MinimumNoticeMode } from '@proton/calendar/bookings/types';
 
 export interface BookingPageSlotsPayload {
     StartTime: number;

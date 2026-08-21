@@ -36,8 +36,8 @@ export const JSONFormatTextData = ({
     return JSON.stringify({ EndTime, RRule, StartTime, Timezone });
 };
 
-export const createBookingLink = (secretBytes: Uint8Array<ArrayBuffer>) => {
+export const createBookingLink = (origin: string, secretBytes: Uint8Array<ArrayBuffer>) => {
     const base64Secret = secretBytes.toBase64({ alphabet: 'base64url' });
 
-    return `${window.location.origin}/bookings#${base64Secret}`;
+    return `${origin}/bookings#${base64Secret}`;
 };

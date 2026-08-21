@@ -1,6 +1,7 @@
-import { shouldCheckSignatureVerificationStatus } from '@proton/account/publicKeys/verificationPreferences';
 import type { PrivateKeyReference } from '@protontech/crypto';
 import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
+
+import { shouldCheckSignatureVerificationStatus } from '@proton/account/publicKeys/verificationPreferences';
 import { SentryCalendarInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import type { VerificationPreferences } from '@proton/shared/lib/interfaces/VerificationPreferences';
 

@@ -5,6 +5,11 @@ import type { AddressKeysState } from '@proton/account/addressKeys';
 import { getAddressKeysByUsageThunk } from '@proton/account/addressKeys/getAddressKeysByUsage';
 import type { KtState } from '@proton/account/kt';
 import { getVerificationPreferencesThunk } from '@proton/account/publicKeys/verificationPreferences';
+import {
+    decryptAndVerifyBookingPageSecret,
+    decryptBookingContent,
+} from '@proton/calendar/bookings/crypto/bookingDecryption';
+import { BookingLocation } from '@proton/calendar/bookings/types';
 import { type CalendarsState, calendarsThunk } from '@proton/calendar/calendars';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
@@ -14,12 +19,7 @@ import { deleteBookingPage, getUserBookingPage } from '@proton/shared/lib/api/ca
 import { SentryCalendarInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import type { InternalBookingPagePayload } from '@proton/shared/lib/interfaces/calendar/Bookings';
 
-import { BookingLocation } from '../../containers/bookings/interface';
 import { getCalendarAndOwner } from '../../containers/bookings/utils/calendar/calendarHelper';
-import {
-    decryptAndVerifyBookingPageSecret,
-    decryptBookingContent,
-} from '../../containers/bookings/utils/crypto/bookingDecryption';
 import type { InternalBookingPage, InternalBookingPageSliceInterface } from './interface';
 import { createNewBookingPage, editBookingPage, loadBookingPage } from './internalBookingActions';
 

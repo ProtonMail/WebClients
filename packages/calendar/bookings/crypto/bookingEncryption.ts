@@ -1,6 +1,7 @@
 import type { SessionKey } from '@protontech/crypto';
 import { CryptoProxy } from '@protontech/crypto';
 import { deriveKey, exportKey, generateKey } from '@protontech/crypto/subtle/aesGcm.ts';
+
 import { getPrimaryCalendarKey } from '@proton/shared/lib/calendar/crypto/keys/helpers';
 import type {
     BookingPageCreationPayload,
@@ -9,9 +10,8 @@ import type {
 import type { DecryptedCalendarKey } from '@proton/shared/lib/interfaces/calendar/CalendarKey';
 import type { PrimaryAddressKeyForEncryption, PrimaryAddressKeysForSigning } from '@proton/shared/lib/keys';
 
-import type { BookingPageEditData } from '../../../../store/internalBooking/interface';
-import type { SerializedFormData } from '../../bookingsTypes';
-import { BookingLocation } from '../../interface';
+import type { BookingPageEditData, SerializedFormData } from '../types';
+import { BookingLocation } from '../types';
 import { JSONFormatData, JSONFormatTextData, createBookingLink } from './bookingEncryptionHelpers';
 import {
     bookingCalendarKeySignatureContextValue,
@@ -133,7 +133,8 @@ export const encryptBookingPage = async ({
     encryptionKey,
     signingKeys,
     calendarID,
-}: EncryptionParams & { calendarID: string }): Promise<
+    origin,
+}: EncryptionParams & { calendarID: string; origin: string }): Promise<
     Omit<BookingPageCreationPayload, 'CalendarID'> & { BookingLink: string }
 > => {
     const salt = crypto.getRandomValues(new Uint8Array(32));
@@ -170,7 +171,7 @@ export const encryptBookingPage = async ({
 
     return {
         BookingUID: bookingUID,
-        BookingLink: createBookingLink(secretBytes),
+        BookingLink: createBookingLink(origin, secretBytes),
         BookingKeySalt: salt.toBase64(),
         EncryptedSecret: encryptedSecret.message.toBase64(),
         EncryptedContent: encryptedContent.toBase64(),

@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import type { BookingPageEditData } from '@proton/calendar/bookings/types';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import DropdownMenuLink from '@proton/components/components/dropdown/DropdownMenuLink';
@@ -25,7 +26,7 @@ import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import clsx from '@proton/utils/clsx';
 
 import { useCalendarDispatch } from '../../../store/hooks';
-import type { BookingPageEditData, InternalBookingPage } from '../../../store/internalBooking/interface';
+import type { InternalBookingPage } from '../../../store/internalBooking/interface';
 import { loadBookingPage } from '../../../store/internalBooking/internalBookingActions';
 import { useBookings } from '../../bookings/bookingsProvider/BookingsProvider';
 import {
