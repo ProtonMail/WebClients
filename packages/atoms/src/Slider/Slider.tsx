@@ -7,7 +7,7 @@ import type {
 import { useRef, useState } from 'react';
 
 import type { ThemeColorUnion } from '@proton/colors';
-import { useRightToLeft } from '@proton/components/containers/rightToLeft/useRightToLeft';
+import useRightToLeft from '@proton/hooks/useRightToLeft';
 import useSynchronizingState from '@proton/hooks/useSynchronizingState';
 import { IcArrowsLeftRight } from '@proton/icons/icons/IcArrowsLeftRight';
 import clamp from '@proton/utils/clamp';

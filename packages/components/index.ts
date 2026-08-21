@@ -705,7 +705,7 @@ export { default as RecoveryPageTelemetry } from './containers/recovery/Recovery
 export { InviteSection } from './containers/referral/invite/InviteSection';
 export { ReferralInvitesContextProvider } from './containers/referral/ReferralInvitesContext';
 export { RightToLeftProvider } from './containers/rightToLeft/Provider';
-export { useRightToLeft } from './containers/rightToLeft/useRightToLeft';
+export { default as useRightToLeft } from '@proton/hooks/useRightToLeft';
 export { AddressVerificationSection } from './containers/security/AddressVerificationSection';
 export { ExternalPGPSettingsSection } from './containers/security/ExternalPGPSettingsSection';
 export { SentinelSection } from './containers/sentinel/SentinelSection';
