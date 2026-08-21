@@ -155,12 +155,10 @@ const loadUserData = async (dispatch: MeetDispatch) => {
 
     dispatch(welcomeFlagsActions.initial(userSettings));
 
-    const [scopes] = await Promise.all([
-        bootstrap.enableTelemetryBasedOnUserSettings({ userSettings }),
-        bootstrap.loadLocales({ userSettings, locales }),
-    ]);
+    bootstrap.enableTelemetryBasedOnUserSettings({ userSettings });
+    await bootstrap.loadLocales({ userSettings, locales });
 
-    return { user, userSettings, earlyAccessScope: features[FeatureCode.EarlyAccessScope], scopes };
+    return { user, userSettings, earlyAccessScope: features[FeatureCode.EarlyAccessScope] };
 };
 
 const eventManagerSetup = ({

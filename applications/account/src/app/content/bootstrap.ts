@@ -1,6 +1,5 @@
 import {
     initEvent,
-    serverEvent,
     startLogoutListener,
     userPermissionsThunk,
     userSettingsThunk,
@@ -10,6 +9,7 @@ import {
 import * as bootstrap from '@proton/account/bootstrap';
 import { bootstrapEvent } from '@proton/account/bootstrap/action';
 import { coreEventLoopV6 } from '@proton/account/coreEventLoop';
+import { serverEvent } from '@proton/account/eventLoop';
 import { getDecryptedPersistedState } from '@proton/account/persist/helper';
 import { calendarEventLoopV6 } from '@proton/calendar/calendarEventLoop';
 import { createCalendarModelEventManager } from '@proton/calendar/calendarModelEventManager';
@@ -36,7 +36,7 @@ import type { AccountState } from '../store/store';
 import { extendStore, setupStore } from '../store/store';
 import { maybeSetAppSubdomainFromRedirectUrl } from './setAppSubdomainFromRedirectUrl';
 
-export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; signal?: AbortSignal }) => {
+export const bootstrapApp = async ({ config }: { config: ProtonConfig }) => {
     const url = new URL(window.location.href);
     const pathname = url.pathname;
     const searchParams = url.searchParams;
@@ -99,12 +99,10 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
 
             dispatch(welcomeFlagsActions.initial(userSettings));
 
-            const [scopes] = await Promise.all([
-                bootstrap.enableTelemetryBasedOnUserSettings({ userSettings }),
-                bootstrap.loadLocales({ userSettings, locales }),
-            ]);
+            bootstrap.enableTelemetryBasedOnUserSettings({ userSettings });
+            await bootstrap.loadLocales({ userSettings, locales });
 
-            return { user, userSettings, earlyAccessScope: features[FeatureCode.EarlyAccessScope], scopes };
+            return { user, userSettings, earlyAccessScope: features[FeatureCode.EarlyAccessScope] };
         };
 
         const userPromise = loadUser();
@@ -128,7 +126,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
                     modal: false,
                     exit: false,
                 },
-                overridenPageTitle: 'Account',
+                overriddenPageTitle: 'Account',
             });
         }
 
@@ -151,9 +149,6 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
             pathname.includes(APPS_CONFIGURATION[app].settingsSlug)
         );
 
-        let unsubscribe: () => void | undefined;
-        let reset: () => void | undefined;
-
         if (hasEventLoopV6Enabled) {
             coreEventV6Manager = bootstrap.coreEventManagerV6({ api: silentApi });
             mailEventV6Manager = bootstrap.mailEventManagerV6({ api: silentApi });
@@ -164,43 +159,29 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
                 eventManagers: [coreEventV6Manager, mailEventV6Manager, contactEventV6Manager, calendarEventV6Manager],
             });
 
-            const unsubscribeCoreEventManagerV6 = coreEventV6Manager?.subscribe(async (event) => {
+            coreEventV6Manager?.subscribe(async (event) => {
                 const promises: Promise<void>[] = [];
                 dispatch(coreEventLoopV6({ event, promises }));
                 await Promise.all(promises);
             });
 
-            const unsubscribeMailEventManagerV6 = mailEventV6Manager?.subscribe(async (event) => {
+            mailEventV6Manager?.subscribe(async (event) => {
                 const promises: Promise<void>[] = [];
                 dispatch(mailEventLoopV6({ event, promises }));
                 await Promise.all(promises);
             });
 
-            const unsubscribeContactEventManagerV6 = contactEventV6Manager?.subscribe(async (event) => {
+            contactEventV6Manager?.subscribe(async (event) => {
                 const promises: Promise<void>[] = [];
                 dispatch(contactEventLoopV6({ event, promises }));
                 await Promise.all(promises);
             });
 
-            const unsubscribeCalendarEventManagerV6 = calendarEventV6Manager?.subscribe(async (event) => {
+            calendarEventV6Manager?.subscribe(async (event) => {
                 const promises: Promise<void>[] = [];
                 dispatch(calendarEventLoopV6({ event, promises }));
                 await Promise.all(promises);
             });
-
-            unsubscribe = () => {
-                unsubscribeMailEventManagerV6();
-                unsubscribeCoreEventManagerV6();
-                unsubscribeContactEventManagerV6();
-                unsubscribeCalendarEventManagerV6();
-            };
-
-            reset = () => {
-                coreEventV6Manager?.reset();
-                mailEventV6Manager?.reset();
-                contactEventV6Manager?.reset();
-                calendarEventV6Manager?.reset();
-            };
 
             coreEventV6Manager.start();
             mailEventV6Manager.start();
@@ -209,13 +190,9 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         } else {
             eventManager = bootstrap.eventManager({ api: silentApi });
 
-            unsubscribe = eventManager?.subscribe((event) => {
+            eventManager?.subscribe((event) => {
                 dispatch(serverEvent(event));
             });
-
-            reset = () => {
-                eventManager?.reset();
-            };
 
             eventManager.start();
         }
@@ -227,13 +204,6 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
             mailEventV6Manager,
             calendarEventV6Manager,
             calendarModelEventManager,
-        });
-
-        bootstrap.onAbort(signal, () => {
-            unsubscribe?.();
-            reset();
-            unleashClient.stop();
-            store.unsubscribe();
         });
 
         dispatch(bootstrapEvent({ type: 'complete' }));

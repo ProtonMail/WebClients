@@ -134,7 +134,7 @@ const hasOptimisticSessions = async ({
     return { hasSessions: getPersistedSessions().length > 0 };
 };
 
-export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; signal?: AbortSignal }) => {
+export const bootstrapApp = async ({ config }: { config: ProtonConfig }) => {
     const pathname = window.location.pathname;
     const api = createApi({ config });
     const silentApi = getSilentApi(api);
@@ -267,12 +267,10 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
             // `loadLocales` runs again here on purpose: the gate used the persisted `Locale`, which
             // is stale if the language was changed on another device. This call has the fresh value,
             // and is a no-op when the two agree.
-            const [scopes] = await Promise.all([
-                bootstrap.enableTelemetryBasedOnUserSettings({ userSettings }),
-                bootstrap.loadLocales({ userSettings, locales }),
-            ]);
+            bootstrap.enableTelemetryBasedOnUserSettings({ userSettings });
+            await bootstrap.loadLocales({ userSettings, locales });
 
-            return { user, userSettings, earlyAccessScope: features[FeatureCode.EarlyAccessScope], scopes };
+            return { user, userSettings, earlyAccessScope: features[FeatureCode.EarlyAccessScope] };
         };
 
         // Wrapped at creation, so these measure total duration. The `await`s below are wrapped
@@ -380,25 +378,17 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
             .catch(noop);
 
         extendStore({ eventManager, lumoEventManager });
-        const unsubscribeEventManager = eventManager.subscribe((event) => {
+
+        eventManager.subscribe((event) => {
             dispatch(serverEvent(event));
         });
-        const unsubscribeLumoEventManager = lumoEventManager.subscribe(async (event) => {
+        lumoEventManager.subscribe(async (event) => {
             const promises: Promise<void>[] = [];
             dispatch(lumoEventLoop({ event, promises }));
             await Promise.all(promises);
         });
         eventManager.start();
         lumoEventManager.start();
-
-        bootstrap.onAbort(signal, () => {
-            unsubscribeEventManager();
-            unsubscribeLumoEventManager();
-            eventManager.reset();
-            lumoEventManager.reset();
-            unleashClient.stop();
-            store.unsubscribe();
-        });
 
         return {
             user: gateUser,
