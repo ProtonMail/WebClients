@@ -27,6 +27,7 @@
         "@livekit/krisp-noise-filter": "^0.4.4",
         "@livekit/track-processors": "^0.7.2",
         "@proton-meet/proton-meet-core": "1.3.3",
+        "@proton/app-context": "workspace:packages/app-context",
         "@proton/atoms": "workspace:packages/atoms",
         "@proton/components": "workspace:packages/components",
         "@proton/cross-storage": "workspace:packages/cross-storage",
