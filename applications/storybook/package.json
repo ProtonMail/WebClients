@@ -20,6 +20,7 @@
         "test:visual:update": "yarn run test:visual:clean && yarn run test:visual -u"
     },
     "dependencies": {
+        "@proton/app-context": "workspace:^",
         "@proton/atoms": "workspace:^",
         "@proton/components": "workspace:^",
         "@proton/eslint-config-proton": "workspace:^",

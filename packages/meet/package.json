@@ -15,6 +15,7 @@
         "test:watch": "yarn test --watch"
     },
     "dependencies": {
+        "@proton/app-context": "workspace:packages/app-context",
         "@proton/shared": "workspace:packages/shared",
         "@protontech/crypto": "*",
         "@types/react": "^18.3.31",
