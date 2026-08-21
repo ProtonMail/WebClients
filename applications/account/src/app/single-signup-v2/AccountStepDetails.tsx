@@ -5,16 +5,9 @@ import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
-import {
-    Challenge,
-    DropdownSizeUnit,
-    Info,
-    InputFieldTwo,
-    Option,
-    PasswordInputTwo,
-    useRightToLeft,
-} from '@proton/components';
+import { Challenge, DropdownSizeUnit, Info, InputFieldTwo, Option, PasswordInputTwo } from '@proton/components';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
+import useRightToLeft from '@proton/hooks/useRightToLeft';
 import { IcCheckmarkCircle } from '@proton/icons/icons/IcCheckmarkCircle';
 import { PLANS } from '@proton/payments/core/constants';
 import type { StrictPlan } from '@proton/payments/core/plan/interface';
