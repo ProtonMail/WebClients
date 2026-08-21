@@ -67,4 +67,31 @@ describe('serialization', () => {
 
         expect(deserialized).toEqual(mockMessage);
     });
+
+    it('message with usage round-trips through encryption and the MessagePriv guard', async () => {
+        const mockMessage: Message = {
+            id: 'MessageId',
+            createdAt: 'messageCreationData',
+            role: Role.Assistant,
+            parentId: 'ParentId',
+            conversationId: 'ConversationId',
+            placeholder: false,
+            status: 'succeeded',
+            content: 'answer',
+            usage: {
+                promptTokens: 696,
+                completionTokens: 7,
+                totalTokens: 703,
+                ctxFilesTokenEstimate: 512,
+            },
+        };
+
+        const spaceDek = await getSpaceDek(mockSpace);
+        const serialized = await serializeMessage(mockMessage, spaceDek);
+        expect(serialized).not.toBeNull();
+        const deserialized = await deserializeMessage(serialized!, spaceDek);
+
+        expect(deserialized).toEqual(mockMessage);
+        expect(deserialized?.usage).toEqual(mockMessage.usage);
+    });
 });
