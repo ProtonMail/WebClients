@@ -1,5 +1,3 @@
-/* eslint-env es6 */
-
 export const createClassNameRule = (deprecatedClasses) => (context) => {
     const hasClsxPattern = deprecatedClasses?.some?.((d) => d?.pattern?.toString()?.includes?.('clsx')) ?? false;
 

@@ -1,7 +1,5 @@
 import rule from '../validate-ttag-key-autofix-warning';
 
-/* eslint-env es6 */
-
 const { RuleTester } = require('eslint');
 
 const ruleTester = new RuleTester({
