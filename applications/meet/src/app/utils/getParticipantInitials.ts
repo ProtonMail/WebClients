@@ -1,4 +1,4 @@
-export const getParticipantInitials = (participantName: string) => {
+export const getParticipantInitials = (participantName?: string) => {
     if (!participantName) {
         return 'NA';
     }

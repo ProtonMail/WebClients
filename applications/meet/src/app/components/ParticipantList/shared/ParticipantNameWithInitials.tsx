@@ -1,28 +1,28 @@
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import clsx from '@proton/utils/clsx';
+import { isCaptionAgentIdentity } from '@proton/meet/utils/agents';
 
-import { useParticipantDisplayColors } from '../../../hooks/useParticipantDisplayColors';
-import { getParticipantInitials } from '../../../utils/getParticipantInitials';
+import { ParticipantAvatar } from '../../../atoms/ParticipantAvatar/ParticipantAvatar';
+import { getAgentDisplayInfo } from '../../../utils/getAgentDisplayInfo';
 
-const getInitials = (participantName: string) => {
-    return participantName ? (
-        getParticipantInitials(participantName)
-    ) : (
-        <CircleLoader
-            aria-hidden="true"
-            className="color-primary w-custom h-custom"
-            style={{ '--w-custom': '1rem', '--h-custom': '1rem' }}
-        />
-    );
-};
+import './ParticipantNameWithInitials.scss';
 
+const nameLoader = (
+    <CircleLoader
+        aria-hidden="true"
+        className="color-primary w-custom h-custom"
+        style={{ '--w-custom': '1rem', '--h-custom': '1rem' }}
+    />
+);
+
+// An agent row takes its name and status from the identity, so it needs neither of them.
 type Props = {
-    participantName: string;
+    participantName?: string;
     identity: string;
     isLocal?: boolean;
-    statusNode: React.ReactNode;
+    statusNode?: React.ReactNode;
+    isAgent?: boolean;
     children?: React.ReactNode;
 };
 
@@ -31,33 +31,37 @@ export const ParticipantNameWithInitials = ({
     identity,
     isLocal = false,
     statusNode,
+    isAgent,
     children,
 }: Props) => {
-    const {
-        participantColors: { backgroundColor, profileTextColor },
-    } = useParticipantDisplayColors(identity);
+    const isCaptionAgent = Boolean(isAgent && isCaptionAgentIdentity(identity));
+    const agentInfo = isAgent ? getAgentDisplayInfo(identity) : undefined;
+    const agentStatus = isCaptionAgent ? c('Status').t`Transcribing...` : undefined;
+    const agentInformation = isCaptionAgent
+        ? c('Subtitle').t`This system agent creates live captions. It is not a participant and cannot send messages.`
+        : undefined;
 
-    const displayName = participantName ?? c('Info').t`Loading...`;
+    const participantDisplayName = participantName ?? c('Info').t`Loading...`;
+    const displayName = isAgent ? agentInfo?.displayName : participantDisplayName;
 
     return (
-        <div className="flex flex-nowrap gap-2 h-custom" style={{ '--h-custom': 'fit-content', flexShrink: 0 }}>
-            <div
-                className={clsx(
-                    backgroundColor,
-                    profileTextColor,
-                    'rounded-full flex items-center justify-center w-custom h-custom shrink-0'
-                )}
-                style={{ '--w-custom': '2.5rem', '--h-custom': '2.5rem' }}
-            >
-                <div>{getInitials(participantName)}</div>
-            </div>
-            <div className="flex flex-column justify-center">
-                <div className="text-ellipsis w-full" title={displayName}>
-                    {displayName} {isLocal ? c('Info').t`(You)` : null}
+        <>
+            <div className="flex flex-nowrap gap-2 h-custom" style={{ '--h-custom': 'fit-content', flexShrink: 0 }}>
+                <ParticipantAvatar
+                    identity={identity}
+                    participantName={participantName}
+                    isAgent={isAgent}
+                    loadingNode={nameLoader}
+                />
+                <div className="flex flex-column justify-center">
+                    <div className="text-ellipsis w-full" title={displayName}>
+                        {displayName} {isLocal ? c('Info').t`(You)` : null}
+                    </div>
+                    {isAgent ? <div className="text-sm agent-status w-full">{agentStatus}</div> : statusNode}
                 </div>
-                {statusNode}
+                <div className="flex flex-nowrap items-center ml-auto gap-1 shrink-0">{children}</div>
             </div>
-            <div className="flex flex-nowrap items-center ml-auto gap-1 shrink-0">{children}</div>
-        </div>
+            {agentInformation && <div className="agent-information text-sm pt-3">{agentInformation}</div>}
+        </>
     );
 };

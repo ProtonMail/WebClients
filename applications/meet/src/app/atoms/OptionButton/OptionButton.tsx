@@ -71,6 +71,22 @@ export const OptionButton = ({
     disabled = false,
     rightContent,
 }: OptionButtonProps) => {
+    const labelContent = description ? (
+        <LabelAndDescription
+            label={label}
+            description={description}
+            labelColor={showIcon ? 'color-norm' : 'color-weak'}
+            descriptionColor={showIcon ? 'color-norm' : 'color-weak'}
+            size="medium"
+        />
+    ) : (
+        <TruncatedTextWithTooltip label={label} className="mr-4" />
+    );
+
+    // The label only has to fill the row when something is rendered after it, so that the trailing
+    // content lands on the far edge. Left content-sized otherwise.
+    const labelFillsRow = Boolean(description || iconOnTheRight || rightContent);
+
     return (
         <Button
             className={clsx(
@@ -87,18 +103,12 @@ export const OptionButton = ({
             {!iconOnTheRight && (
                 <CheckComponent showIcon={showIcon} Icon={Icon} iconSize={iconSize} loading={loading} />
             )}
-            {description ? (
-                <div className="flex flex-column flex-nowrap flex-1 min-w-0 text-left p-3">
-                    <LabelAndDescription
-                        label={label}
-                        description={description}
-                        labelColor={showIcon ? 'color-norm' : 'color-weak'}
-                        descriptionColor={showIcon ? 'color-norm' : 'color-weak'}
-                        size="medium"
-                    />
+            {labelFillsRow ? (
+                <div className={clsx('flex flex-column flex-nowrap flex-1 min-w-0 text-left', description && 'p-3')}>
+                    {labelContent}
                 </div>
             ) : (
-                <TruncatedTextWithTooltip label={label} className="mr-4" />
+                labelContent
             )}
             {iconOnTheRight && <CheckComponent showIcon={showIcon} Icon={Icon} iconSize={iconSize} loading={loading} />}
             {rightContent}

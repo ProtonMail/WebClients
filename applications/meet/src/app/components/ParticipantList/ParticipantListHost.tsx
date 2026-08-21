@@ -50,7 +50,13 @@ export const ParticipantListHost = ({
                 {
                     title: 'all-participants',
                     titleNode: <TabHeader title={c('Title').t`All participants`} count={participantsCount} />,
-                    content: <AllParticipantsTab participants={participants} setIsScrolled={setIsScrolled} />,
+                    content: (
+                        <AllParticipantsTab
+                            participants={participants}
+                            setIsScrolled={setIsScrolled}
+                            searchExpression={hasSearchQuery ? searchExpression : ''}
+                        />
+                    ),
                 },
             ]}
         />

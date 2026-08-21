@@ -63,16 +63,17 @@ export const ParticipantList = () => {
         .map((identity) => participantsMap.get(identity))
         .filter(isTruthy);
 
-    const lowerCaseSearchExpression = searchExpression.toLowerCase();
+    // Empty while the search is closed, so everything below reads "no search" the same way.
+    const activeSearchExpression = isSearchOn ? searchExpression : '';
+    const lowerCaseSearchExpression = activeSearchExpression.toLowerCase();
 
-    const filteredParticipants =
-        !isSearchOn || !searchExpression
-            ? updatedParticipantsWithSorting
-            : updatedParticipantsWithSorting.filter((participant) => {
-                  return participantDecryptedNameMap[participant.identity]
-                      ?.toLowerCase()
-                      .includes(lowerCaseSearchExpression);
-              });
+    const filteredParticipants = !activeSearchExpression
+        ? updatedParticipantsWithSorting
+        : updatedParticipantsWithSorting.filter((participant) => {
+              return participantDecryptedNameMap[participant.identity]
+                  ?.toLowerCase()
+                  .includes(lowerCaseSearchExpression);
+          });
 
     if (!sideBarState[MeetingSideBars.Participants]) {
         return null;
@@ -108,7 +109,11 @@ export const ParticipantList = () => {
                         participantsCount={participantsCount}
                     />
                 ) : (
-                    <AllParticipantsTab participants={filteredParticipants} setIsScrolled={setIsScrolled} />
+                    <AllParticipantsTab
+                        participants={filteredParticipants}
+                        setIsScrolled={setIsScrolled}
+                        searchExpression={activeSearchExpression}
+                    />
                 )}
             </div>
         </SideBar>

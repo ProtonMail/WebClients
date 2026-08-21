@@ -1,11 +1,17 @@
+import { c } from 'ttag';
+
+import './ParticipantListContainer.scss';
+
 export const ParticipantListContainer = ({
     title,
     setIsScrolled,
-    children,
+    participantsList,
+    agentsList,
 }: {
     title: string;
     setIsScrolled: (isScrolled: boolean) => void;
-    children: React.ReactNode;
+    participantsList: React.ReactNode;
+    agentsList?: React.ReactNode;
 }) => {
     return (
         <div
@@ -15,7 +21,14 @@ export const ParticipantListContainer = ({
             }}
         >
             <h2 className="sr-only">{title}</h2>
-            <ul className="unstyled m-0 p-0 flex flex-column flex-nowrap gap-4">{children}</ul>
+            {agentsList && (
+                <>
+                    <div className="category pt-4 pb-4">{c('Title').t`System`}</div>
+                    <ul className="unstyled m-0 p-0 flex flex-column flex-nowrap gap-4">{agentsList}</ul>
+                    <div className="category pt-4 pb-4">{c('Title').t`People`}</div>
+                </>
+            )}
+            <ul className="unstyled m-0 p-0 flex flex-column flex-nowrap gap-4">{participantsList}</ul>
         </div>
     );
 };
