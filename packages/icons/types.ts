@@ -326,6 +326,7 @@ export type IconName =
     | 'meet-shield-star'
     | 'meet-speaker'
     | 'meet-speaker-alt'
+    | 'meet-stop'
     | 'meet-participants'
     | 'meet-record'
     | 'meet-record-stop'

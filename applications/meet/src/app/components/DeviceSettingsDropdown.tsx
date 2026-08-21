@@ -23,7 +23,10 @@ export const DeviceSettingsDropdown = ({
 }: DeviceSettingsDropdownProps) => {
     return (
         <Dropdown
-            className="meet-dropdown device-selector-dropdown border border-card rounded-xl shadow-none meet-radius meet-scrollbar py-2 overflow-x-hidden overflow-y-auto"
+            className="meet-dropdown device-selector-dropdown border border-card rounded-xl shadow-none meet-radius meet-scrollbar scrollbar-always-visible py-2 overflow-x-hidden overflow-y-auto"
+            // Which of the nested boxes ends up scrolling depends on what caps the height, so every
+            // one of them opts out of the global rule that hides the thumb until hover.
+            contentProps={{ className: 'meet-scrollbar scrollbar-always-visible' }}
             aria-label={c('Aria').t`Device settings`}
             isOpen={true}
             anchorRef={anchorRef}
