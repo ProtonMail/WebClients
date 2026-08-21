@@ -1,5 +1,5 @@
 import { PassCrypto } from '@proton/pass/lib/crypto';
-import { getLatestItemKey } from '@proton/pass/lib/items/item.requests';
+import { getLatestItemKey } from '@proton/pass/lib/items/item.keys';
 import type { ItemKey } from '@proton/pass/types';
 import { ShareType } from '@proton/pass/types';
 

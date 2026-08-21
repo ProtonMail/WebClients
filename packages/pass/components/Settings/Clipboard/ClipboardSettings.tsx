@@ -6,19 +6,10 @@ import { c } from 'ttag';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import { useSetClipboardTTL } from '@proton/pass/components/Settings/Clipboard/ClipboardProvider';
-import { ClipboardTTL, DEFAULT_CLIPBOARD_TTL } from '@proton/pass/lib/clipboard/types';
+import { getClipboardTTLOptions } from '@proton/pass/components/Settings/Clipboard/ClipboardSettings.utils';
+import { ClipboardTTL } from '@proton/pass/lib/clipboard/types';
 import { selectClipboardTTL } from '@proton/pass/store/selectors';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
-
-export const getClipboardTTLOptions = (): Map<ClipboardTTL, string> =>
-    new Map([
-        [ClipboardTTL.TTL_NEVER, c('Label').t`Never`],
-        [ClipboardTTL.TTL_15_SEC, c('Label').t`15 seconds`],
-        [ClipboardTTL.TTL_1_MIN, c('Label').t`1 minute`],
-        [ClipboardTTL.TTL_2_MIN, c('Label').t`2 minutes`],
-    ]);
-
-export const getDefaultClipboardTTLOption = () => getClipboardTTLOptions().get(DEFAULT_CLIPBOARD_TTL);
 
 type Props = { disabled?: boolean };
 

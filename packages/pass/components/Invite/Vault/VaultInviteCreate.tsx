@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { Form, FormikProvider } from 'formik';
 import { c } from 'ttag';
 
-import { useInviteActions } from '@proton/pass/components/Invite/InviteProvider';
+import { useInviteActions } from '@proton/pass/components/Invite/InviteContext';
 import type { InviteStepAttributes } from '@proton/pass/components/Invite/Steps/InviteStepActions';
 import { InviteStepActions } from '@proton/pass/components/Invite/Steps/InviteStepActions';
 import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';

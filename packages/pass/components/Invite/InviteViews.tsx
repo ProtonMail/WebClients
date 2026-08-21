@@ -1,8 +1,8 @@
 import type { FC } from 'react';
 
 import { GroupsProvider } from '@proton/pass/components/Groups/GroupsProvider';
+import type { InviteContextState } from '@proton/pass/components/Invite/InviteContext';
 import { InviteError } from '@proton/pass/components/Invite/InviteError';
-import type { InviteContextState } from '@proton/pass/components/Invite/InviteProvider';
 import { ItemAccessManager } from '@proton/pass/components/Invite/Item/ItemAccessManager';
 import { ItemInviteCreate } from '@proton/pass/components/Invite/Item/ItemInviteCreate';
 import { ItemInviteRespond } from '@proton/pass/components/Invite/Item/ItemInviteRespond';
