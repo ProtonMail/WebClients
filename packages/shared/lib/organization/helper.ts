@@ -2,11 +2,13 @@ import { c } from 'ttag';
 
 import { PLANS } from '@proton/payments/core/constants';
 import { getIsB2BAudienceFromPlan } from '@proton/payments/core/plan/helpers';
-import { getIsPasswordless } from '@proton/shared/lib/keys';
+import { getIsPasswordless } from '@proton/shared/lib/keys/organizationKeys';
 
 import { MEMBER_ROLE, MEMBER_SUBSCRIBER } from '../constants';
-import type { Address, CachedOrganizationKey, Domain, EnhancedMember, Member, Organization } from '../interfaces';
-import { DOMAIN_STATE, MEMBER_ORG_KEY_STATE } from '../interfaces';
+import type { Address, CachedOrganizationKey, EnhancedMember, Member, Organization } from '../interfaces';
+import { MEMBER_ORG_KEY_STATE } from '../interfaces';
+
+export { getIsDomainActive } from './domain';
 
 export const isSuperAdmin = (members: Member[]) =>
     (members || []).some(({ Subscriber, Self }) => Self === 1 && Subscriber === MEMBER_SUBSCRIBER.PAYER);
@@ -183,12 +185,4 @@ export const validateOrganizationKey = (info: OrganizationKeyInfo) => {
     if (info.state === OrganizationKeyState.Setup) {
         return c('passwordless').t`Organization key does not exist.`;
     }
-};
-
-// Active domains is one that's verified or in warning state, but it can be used to create addresses to
-export const getIsDomainActive = (domain: Domain) => {
-    return (
-        (domain.State === DOMAIN_STATE.DOMAIN_STATE_VERIFIED || domain.State === DOMAIN_STATE.DOMAIN_STATE_WARN) &&
-        domain.Flags['mail-intent']
-    );
 };

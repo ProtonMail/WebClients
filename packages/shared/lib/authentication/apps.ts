@@ -1,6 +1,6 @@
 import { DEFAULT_APP } from '@proton/shared/lib/apps/slugHelper';
 import type { User } from '@proton/shared/lib/interfaces';
-import { getIsExternalAccount, getIsSSOVPNOnlyAccount, getIsVPNOnlyAccount } from '@proton/shared/lib/keys';
+import { getIsExternalAccount, getIsSSOVPNOnlyAccount, getIsVPNOnlyAccount } from '@proton/shared/lib/keys/accountType';
 
 import type { APP_NAMES } from '../constants';
 import { APPS, APPS_CONFIGURATION, CLIENT_TYPES, PRODUCT_BIT } from '../constants';
