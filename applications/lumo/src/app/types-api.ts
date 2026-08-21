@@ -215,6 +215,8 @@ export type LumoUsageLimitsResponse = {
 
 export type LumoStreamUsage = {
     completion_tokens?: number;
+    prompt_tokens?: number;
+    total_tokens?: number;
     remaining_limits?: LumoRemainingLimits;
     applied_limit_category?: string;
     image_limit_applied?: boolean;
