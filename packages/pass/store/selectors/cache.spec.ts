@@ -30,4 +30,9 @@ describe('selectCachableState', () => {
         expect(cachable.invites).toEqual({});
         expect(cachable.monitor).toBeNull();
     });
+
+    test('never caches `assignedModelId`', () => {
+        const state = { ...stateFor(SyncStrategy.USER_EVENTS), assignedModelId: '2026.10.1-lr' };
+        expect(selectCachableState(state).assignedModelId).toBeNull();
+    });
 });

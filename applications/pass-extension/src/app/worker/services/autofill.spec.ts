@@ -10,10 +10,14 @@ import { expectMessageFailure, expectMessageSuccess } from 'proton-pass-extensio
 import browser, { clearBrowserMocks } from 'proton-pass-extension/__mocks__/webextension-polyfill';
 import { WorkerContext } from 'proton-pass-extension/app/worker/context/inject';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
+import { BUNDLED_MODEL_ID } from 'proton-pass-extension/lib/utils/version';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
+import { assignedModelIdUpdated } from '@proton/pass/store/actions/creators/assigned-model-id';
+import { sagaEvents } from '@proton/pass/store/events';
 import type { State } from '@proton/pass/store/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { AutofillMode } from '@proton/pass/types/protobuf';
 import type { AutofillQueryFilter } from '@proton/pass/types/worker/autofill';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
@@ -29,6 +33,9 @@ describe('AutofillService', () => {
 
     let state: State;
     let authorized: boolean;
+    let dispatch: jest.Mock;
+    let getItems: jest.Mock;
+    let service: ReturnType<typeof createAutoFillService>;
 
     const setLoginItem = (urls: string[]) => {
         state.items.byShareId[mockShareId][mockItemId] = getMockItemRevision({
@@ -63,23 +70,29 @@ describe('AutofillService', () => {
         state = getMockState();
         setLoginItem([topLevelURL]);
         browser.tabs.get.mockResolvedValue({ id: 1, url: topLevelURL });
+        dispatch = jest.fn();
+        getItems = jest.fn().mockResolvedValue({});
 
         WorkerContext.set({
             ensureReady: jest.fn().mockResolvedValue(undefined),
             getState: jest.fn(() => ({ authorized })),
             service: {
+                storage: { local: { getItems, setItem: jest.fn() } },
                 store: {
-                    dispatch: jest.fn(),
+                    dispatch,
                     getState: jest.fn(() => state),
                 },
             },
         } as any);
 
-        createAutoFillService();
+        service = createAutoFillService();
         setMockMessageSender(topLevelURL, 1);
     });
 
-    afterEach(() => WorkerContext.clear());
+    afterEach(() => {
+        WorkerContext.clear();
+        sagaEvents.unsubscribe();
+    });
 
     describe('`AUTOFILL_LOGIN_QUERY`', () => {
         test('Returns matching item previews and reflects badge count', async () => {
@@ -202,6 +215,57 @@ describe('AutofillService', () => {
                 }),
                 { frameId: subFrameId }
             );
+        });
+    });
+
+    describe('`assignedModelId`', () => {
+        test('Resolves the bundled model ID before the registry has been hydrated', () => {
+            expect(service.getAssignedModelId()).toBe(BUNDLED_MODEL_ID);
+        });
+
+        test('Dispatches the group-specific resolved model ID on `model-registry::resolved`', async () => {
+            await sagaEvents.publishAsync({
+                type: 'model-registry::resolved',
+                data: { control: '2026.10.1-lr', challenger: '2026.10.2-rf' },
+            });
+
+            expect(dispatch).toHaveBeenCalledWith(assignedModelIdUpdated('2026.10.1-lr'));
+            expect(service.getAssignedModelId()).toBe('2026.10.1-lr');
+        });
+
+        test('Falls back to the bundled model ID when the resolved registry has no entry for the group', async () => {
+            await sagaEvents.publishAsync({
+                type: 'model-registry::resolved',
+                data: { challenger: '2026.10.2-rf' },
+            });
+
+            expect(dispatch).toHaveBeenCalledWith(assignedModelIdUpdated(BUNDLED_MODEL_ID));
+            expect(service.getAssignedModelId()).toBe(BUNDLED_MODEL_ID);
+        });
+
+        test('Dispatches the resolved model ID from the hydrated registry on `init`', async () => {
+            getItems.mockResolvedValueOnce({
+                modelRegistry: JSON.stringify({ control: '2026.10.1-lr', challenger: '2026.10.2-rf' }),
+            });
+
+            await service.init();
+
+            expect(dispatch).toHaveBeenCalledWith(assignedModelIdUpdated('2026.10.1-lr'));
+            expect(service.getAssignedModelId()).toBe('2026.10.1-lr');
+        });
+
+        test('Reads the experiment group from the live store rather than assuming `control`', async () => {
+            state.user.featureVariants = {
+                [PassFeature.PassAutofillModelExperimentGroup]: { name: 'challenger', payload: null },
+            };
+
+            await sagaEvents.publishAsync({
+                type: 'model-registry::resolved',
+                data: { control: '2026.10.1-lr', challenger: '2026.10.2-rf' },
+            });
+
+            expect(dispatch).toHaveBeenCalledWith(assignedModelIdUpdated('2026.10.2-rf'));
+            expect(service.getAssignedModelId()).toBe('2026.10.2-rf');
         });
     });
 });
