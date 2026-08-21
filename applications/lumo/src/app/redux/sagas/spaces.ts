@@ -21,8 +21,13 @@ import type {
 } from '../../remote/types';
 import { deserializeSpace, serializeSpace } from '../../serialization';
 import { removeIndexedContentForSpace } from '../../services/removeIndexedContentForSpace';
+import {
+    buildProjectKnowledgeSnapshot,
+    buildProjectKnowledgeSnapshots,
+} from '../../services/reconcileProjectSearchIndex';
 import { SearchService } from '../../services/search/searchService';
 import { type SerializedSpace, type Space, type SpaceId, cleanSerializedSpace, cleanSpace } from '../../types';
+import type { Project } from '../../services/reconcileProjectSearchIndex';
 import { listify, mapIds, mapify } from '../../util/collections';
 import { isoToUnixTimestamp } from '../../util/date';
 import {
@@ -606,4 +611,74 @@ export function* refreshSpaceFromRemote({
     yield put(addSpace(remoteSpace));
     yield put(addIdMapEntry({ type, localId, remoteId, saveToIdb: true }));
     yield call([dbApi, dbApi.updateSpace], encryptedRemoteSpace, { dirty: false });
+}
+
+export function* reconcileProjectSearchIndex(): SagaIterator {
+    try {
+        const userId: string | undefined = yield select((state: LumoState) => state.user?.value?.ID);
+        if (!userId) {
+            return;
+        }
+
+        const spaces: Record<string, Space> = yield select((state: LumoState) => state.spaces);
+        const attachments: AttachmentMap = yield select((state: LumoState) => state.attachments);
+        const indexedDriveFolders: { spaceId?: string }[] =
+            (yield select((state: LumoState) => state.lumoUserSettings.indexedDriveFolders)) || [];
+
+        for (const space of Object.values(spaces)) {
+            if (!space.isProject || space.linkedDriveFolder) {
+                continue;
+            }
+
+            if (indexedDriveFolders.some((folder) => folder.spaceId === space.id)) {
+                yield call(removeIndexedContentForSpace, space.id, userId, { documentScope: 'drive-only' });
+            }
+        }
+
+        const snapshots = buildProjectKnowledgeSnapshots(spaces, attachments);
+        if (snapshots.length === 0) {
+            return;
+        }
+
+        const searchService = SearchService.get(userId);
+        const removed: number = yield call([searchService, searchService.reconcileStaleProjectDocuments], snapshots);
+        if (removed > 0) {
+            console.log('[reconcileProjectSearchIndex] Removed stale project documents:', removed);
+        }
+    } catch (error) {
+        console.error('[reconcileProjectSearchIndex] Failed:', error);
+    }
+}
+
+export function* cleanupProjectSearchIndexOnSpaceUpdate({
+    payload: space,
+}: ReturnType<typeof addSpace>): SagaIterator {
+    if (!space.isProject || space.linkedDriveFolder) {
+        return;
+    }
+
+    try {
+        const userId: string | undefined = yield select((state: LumoState) => state.user?.value?.ID);
+        if (!userId) {
+            return;
+        }
+
+        const indexedDriveFolders: { spaceId?: string }[] =
+            (yield select((state: LumoState) => state.lumoUserSettings.indexedDriveFolders)) || [];
+        if (indexedDriveFolders.some((folder) => folder.spaceId === space.id)) {
+            yield call(removeIndexedContentForSpace, space.id, userId, { documentScope: 'drive-only' });
+        }
+
+        const attachments: AttachmentMap = yield select((state: LumoState) => state.attachments);
+        const searchService = SearchService.get(userId);
+        const removed: number = yield call(
+            [searchService, searchService.reconcileStaleProjectDocuments],
+            [buildProjectKnowledgeSnapshot(space as Project, attachments)]
+        );
+        if (removed > 0) {
+            console.log('[cleanupProjectSearchIndexOnSpaceUpdate] Removed stale project documents:', removed);
+        }
+    } catch (error) {
+        console.error('[cleanupProjectSearchIndexOnSpaceUpdate] Failed:', error);
+    }
 }

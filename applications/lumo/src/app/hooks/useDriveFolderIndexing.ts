@@ -114,7 +114,7 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
     const removeIndexedFoldersBySpace = useCallback(
         async (spaceId: SpaceId) => {
             try {
-                removeIndexedContentForSpace(spaceId, user?.ID);
+                removeIndexedContentForSpace(spaceId, user?.ID, { documentScope: 'drive-only' });
                 resetIndexingStatus();
             } catch (error) {
                 console.error('Failed to remove indexed folders for space:', error);
