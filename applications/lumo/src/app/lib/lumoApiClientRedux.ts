@@ -26,6 +26,7 @@ import {
     deleteMessage,
     finishMessage,
     pushMessageRequest,
+    recordMessageUsage,
     setSuggestedQuestions,
     setToolCall,
     setToolResult,
@@ -266,8 +267,12 @@ export function sendMessageWithRedux(
 
                         case 'usage':
                             applyUsageFromStreamMessage(message);
-                            if (message.usage.model) {
-                                servingModelID = message.usage.model;
+                            // Persist backend usage on the assistant message: token counts for
+                            // context-size estimates and model id for feedback. Only the main
+                            // generation reaches this path (title/compaction summaries use
+                            // quickChat), so we never mis-attribute sub-request usage.
+                            if (messageId) {
+                                dispatch(recordMessageUsage(messageId, message.usage));
                             }
                             break;
 

@@ -13,7 +13,7 @@ import type { SearchItem, ToolCallName } from '../../../../../lib/toolCall/types
 import { getMessageBlocks, messagesEqualForRendering } from '../../../../../messageHelpers';
 import { useIsGuest } from '../../../../../providers/IsGuestProvider';
 import { useWebSearch } from '../../../../../providers/WebSearchProvider';
-import type { ContentBlock, Message, RetryStrategy, SiblingInfo } from '../../../../../types';
+import type { ContentBlock, Message, MessageUsage, RetryStrategy, SiblingInfo } from '../../../../../types';
 import { sendMessageCopyEvent } from '../../../../../util/telemetry';
 import LumoButton from '../../../../Buttons/LumoButton';
 import { ReferenceFilesButton } from '../../../../Files';
@@ -168,10 +168,12 @@ function DebugInfo(props: {
     hasToolCall: boolean;
     blocks: ContentBlock[];
     searchResults: SearchItem[];
+    usage?: MessageUsage;
 }) {
     if (!ENABLE_DEBUG_INFO) {
         return null;
     }
+    const { usage } = props;
     return (
         <div className="border border-weak rounded p-2" style={{ fontFamily: 'monospace' }}>
             <p className="color-weak font-bold mb-1">DEBUG INFO</p>
@@ -179,6 +181,15 @@ function DebugInfo(props: {
             <p className="color-weak m-0">hasToolCall: {JSON.stringify(props.hasToolCall)}</p>
             <p className="color-weak m-0 break-all">blocks: {JSON.stringify(props.blocks.length)}</p>
             <p className="color-weak m-0">searchResults: {JSON.stringify(props.searchResults !== null)}</p>
+            {usage ? (
+                <p className="color-weak m-0 break-all">
+                    usage: prompt={usage.promptTokens ?? '—'} completion={usage.completionTokens ?? '—'} total=
+                    {usage.totalTokens ?? '—'} files={usage.ctxFilesTokenEstimate ?? '—'} baseline=
+                    {usage.promptTokens !== undefined ? usage.promptTokens - (usage.ctxFilesTokenEstimate ?? 0) : '—'}
+                </p>
+            ) : (
+                <p className="color-weak m-0">usage: none</p>
+            )}
         </div>
     );
 }
@@ -274,6 +285,7 @@ const AssistantMessage = ({
                                 hasToolCall={hasToolCall}
                                 blocks={blocks}
                                 searchResults={searchResults ?? []}
+                                usage={message.usage}
                             />
                             {isLoading && !hasToolCall && !isGenerating ? (
                                 <div className="w-full pt-1" style={{ minHeight: '2em' }}>
