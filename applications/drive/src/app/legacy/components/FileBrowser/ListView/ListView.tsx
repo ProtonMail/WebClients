@@ -2,14 +2,8 @@ import { useRef } from 'react';
 import type { ListChildComponentProps } from 'react-window';
 import { FixedSizeList } from 'react-window';
 
-import {
-    Table,
-    TableBody,
-    TableCellBusy,
-    useActiveBreakpoint,
-    useElementRect,
-    useRightToLeft,
-} from '@proton/components';
+import { Table, TableBody, TableCellBusy, useActiveBreakpoint, useElementRect } from '@proton/components';
+import useRightToLeft from '@proton/hooks/useRightToLeft';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 import clsx from '@proton/utils/clsx';
 
