@@ -95,9 +95,7 @@ const ViewGroup = () => {
 
     const isScimGroup = getIsScimGroup(group);
     const isScimGroupPendingKeys = getIsScimGroupPendingKeys(group);
-    const pendingAdminApprovalCount = groupMembers.filter(
-        (m) => m.State === GROUP_MEMBER_STATE.PENDING_ADMIN_APPROVAL
-    ).length;
+    const pendingKeysMemberCount = groupMembers.filter((m) => m.State === GROUP_MEMBER_STATE.PENDING_KEYS).length;
     const invitedMemberCount = groupMembers.filter((m) => m.State === GROUP_MEMBER_STATE.PENDING).length;
 
     const isAddGroupMemberDisabled = isScimGroup || isFrozen;
@@ -199,15 +197,15 @@ const ViewGroup = () => {
                         </GroupInfoBanner>
                     )}
 
-                    {pendingAdminApprovalCount > 0 && !isKeylessSsoOrganizationPlan && (
+                    {pendingKeysMemberCount > 0 && !isKeylessSsoOrganizationPlan && (
                         <GroupInfoBanner
                             icon={<IcCogWheel size={4.5} className="shrink-0" />}
                             knowledgeBaseUrlPath="/scim-groups"
                         >
                             {c('Info').ngettext(
-                                msgid`${pendingAdminApprovalCount} new member added via your identity provider and pending review.`,
-                                `${pendingAdminApprovalCount} new members added via your identity provider and pending review.`,
-                                pendingAdminApprovalCount
+                                msgid`${pendingKeysMemberCount} new member added via your identity provider and pending review.`,
+                                `${pendingKeysMemberCount} new members added via your identity provider and pending review.`,
+                                pendingKeysMemberCount
                             )}
                         </GroupInfoBanner>
                     )}

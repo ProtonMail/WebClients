@@ -4,7 +4,7 @@ export enum GROUP_MEMBER_STATE {
     OUTDATED = 2,
     PAUSED = 3,
     REJECTED = 4,
-    PENDING_ADMIN_APPROVAL = 5,
+    PENDING_KEYS = 5,
 }
 
 export enum GROUP_MEMBER_TYPE {
