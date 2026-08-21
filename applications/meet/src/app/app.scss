@@ -162,6 +162,12 @@ $profile-colors:
 	}
 }
 
+// Paired with `.scrollbar-always-visible`, which opts out of the global rule hiding the thumb
+// until hover. The default thumb color is too dim over the dark meet surfaces.
+.meet-scrollbar {
+	--scrollbar-thumb-color: rgb(255 255 255 / 0.2);
+}
+
 .meet-dropdown {
 	backdrop-filter: blur(24px);
 	background-color: rgb(0 0 0 / 0.5);

@@ -4,6 +4,13 @@ export type AudioTrackProcessor = TrackProcessor<Track.Kind.Audio, AudioProcesso
     /** Krisp can be toggled in place, models without these have to be detached and re-attached. */
     isEnabled?: () => boolean;
     setEnabled?: (enabled: boolean) => Promise<unknown>;
+    /** Resolves once the model denoises. Before that, models that bypass emit the raw capture. */
+    whenReady?: () => Promise<unknown>;
+    /**
+     * Unwires the model but keeps it loaded and idle, so a later `init` on the same AudioContext
+     * re-attaches without paying for the model again. Models without it have to be re-created.
+     */
+    detach?: () => void;
 };
 
 /**
