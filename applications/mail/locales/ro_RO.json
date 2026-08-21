@@ -1548,7 +1548,9 @@
         "Aprobare"
       ],
       "Trust key": [
-        "Aprobare cheie"
+        "Aprobare cheie",
+        "Aprobare chei",
+        "Aprobare chei"
       ],
       "Trust public key": [
         "Aprobare cheie publică"
@@ -1752,6 +1754,9 @@
       ],
       "Zoom out": [
         "Micșorare"
+      ],
+      "Get index size on disk": [
+        "Obținere dimensiune index pe disc"
       ]
     },
     "action": {
@@ -7231,7 +7236,7 @@
         "${ MAIL_APP_NAME } vă poate proteja și afacerea."
       ],
       "${ MAIL_APP_NAME } now automatically sorts your emails into categories like Primary, Social, Promotions, and more, helping you find and manage messages more easily.": [
-        "${ MAIL_APP_NAME } vă sortează acum automat mesajele în categorii precum Principal, Social, Promoții și altele, ajutându-vă să găsiți și să le gestionați mai ușor."
+        "${ MAIL_APP_NAME } vă sortează acum automat mesajele în categorii precum Principale, Rețele sociale, Promoții și altele, ajutându-vă să le găsiți și să le gestionați mai ușor."
       ],
       "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
         "${ MEET_APP_NAME } este o soluție de videoconferință criptată bilateral. Adăugați-o la planul personal pentru a găzdui conferințe securizate."
@@ -8276,9 +8281,7 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine",
-        "Inserare imagini",
-        "Inserare imagini"
+        "Inserare imagine"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -8473,7 +8476,7 @@
         "Mutare aici"
       ],
       "Move to Primary": [
-        "Mutare în primare"
+        "Mutare în principale"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Denumiți noul folder și selectați folderul părinte în care doriți să îl puneți. Dacă nu selectaţi un folder părinte, acest folder nou va fi creat ca un folder de nivel superior."
@@ -8727,7 +8730,7 @@
         "Prețul include toate reducerile ciclice aplicabile și cupoanele neexpirate salvate în cont."
       ],
       "Primary": [
-        "Primară"
+        "Principal"
       ],
       "Print email": [
         "Tipărire e-mail"
@@ -9934,6 +9937,14 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sunteți la doar câteva clicuri distanță de un cont cu mesaje ordonate."
+      ],
+      "Found ${ count } contact": [
+        "Contacte găsite: ${ count }",
+        "Contacte găsite: ${ count }",
+        "Contacte găsite: ${ count }"
+      ],
+      "No contacts found": [
+        "Nu s-au găsit contacte."
       ]
     },
     "info": {
@@ -10932,7 +10943,7 @@
         "Domeniu premium"
       ],
       "Primary": [
-        "Primar"
+        "Principal"
       ],
       "Primary - Anything that needs your attention, plus emails from disabled categories": [
         "Primare - Orice vă solicită atenția, plus mesaje din categoriile dezactivate"
@@ -10941,7 +10952,7 @@
         "Promoții"
       ],
       "Promotions - Deals, offers, and marketing emails": [
-        "Promoții - Oferte, promoții și e-mailuri de marketing"
+        "Promoții - Mesaje cu oferte, promoții și de marketing"
       ],
       "Proration": [
         "Taxe zilnice"
@@ -11019,7 +11030,7 @@
         "Rețele sociale"
       ],
       "Social - Social media updates, activity, and messages": [
-        "Social - Actualizări de pe rețelele sociale, activitate și mesaje"
+        "Rețele sociale - Actualizări, activitate și mesaje de pe rețelele sociale"
       ],
       "Social media updates and activity": [
         "Actualizări și activitate pe rețelele sociale"

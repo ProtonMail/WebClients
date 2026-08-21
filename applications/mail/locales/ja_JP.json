@@ -1700,6 +1700,9 @@
       ],
       "Zoom out": [
         "縮小"
+      ],
+      "Lookup document": [
+        "書類を参照"
       ]
     },
     "action": {
@@ -5318,6 +5321,57 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "一致する項目が多すぎるため、検索対象をより絞り込んでもう一度お試しください。"
+      ],
+      "Cannot verify the author of this file": [
+        "このファイルの作成者を確認できません"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "フォルダではない場所へのアイテムのコピーはできません"
+      ],
+      "Could not load sharing details": [
+        "共有の詳細を読み込めませんでした"
+      ],
+      "Could not unlock the parent folder": [
+        "親フォルダをアンロックできませんでした"
+      ],
+      "Could not unlock this item": [
+        "このアイテムをアンロックできませんでした"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "フォルダではない場所にフォルダを作成することはできません"
+      ],
+      "File has no revision": [
+        "ファイルに修正はありません"
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "レガシー公開リンクは変更できません。新しい公開リンクを再生成してください。"
+      ],
+      "Missing organization public key": [
+        "組織の公開鍵が見つかりません"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "名前は${ MAX_NODE_NAME_LENGTH }文字以内で入力してください"
+      ],
+      "No file data was received. Please try again.": [
+        "ファイルデータを受け取っていません。再度お試しください。"
+      ],
+      "Operation aborted": [
+        "操作は中断されました"
+      ],
+      "Part of the file appears to be corrupted": [
+        "ファイルの一部が破損しているようです"
+      ],
+      "This item is no longer shared": [
+        "このアイテムはもう共有されません"
+      ],
+      "This item is not shared": [
+        "このアイテムは共有されていません"
+      ],
+      "Verification keys are not available": [
+        "検証キーは利用できません"
+      ],
+      "You do not have access to this item": [
+        "このアイテムにはアクセスできません"
       ]
     },
     "error": {
@@ -5840,6 +5894,9 @@
       ],
       "Unread": [
         "未読"
+      ],
+      "Pending": [
+        "保留中"
       ]
     },
     "Filter Actions": {
@@ -7586,7 +7643,7 @@
         "初期化中…"
       ],
       "Insert image": [
-        "画像を挿入"
+        "画像の挿入"
       ],
       "Insert link": [
         "リンクを挿入"
@@ -9042,6 +9099,63 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "不要なものが整理された受信トレイまで、あと数クリックです。"
+      ],
+      "${ count } email": [
+        "${ count }件のメール"
+      ],
+      "${ count } email · ${ names }": [
+        "${ count }件のメール · ${ names }"
+      ],
+      "${ count } email → ${ dest }": [
+        "${ count }件のメール→${ dest }"
+      ],
+      "${ issues.length } issue during import:": [
+        "インポート中の${ issues.length }件の問題:"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }執筆アシスタント"
+      ],
+      "Found a current encrypted search index with ${ oldIndexSize } message.": [
+        "現在の暗号化された検索インデックスが見つかりました。メッセージ数: ${ oldIndexSize }。"
+      ],
+      "Mark all as unread": [
+        "全てを未読にする"
+      ],
+      "Move emails": [
+        "メールを移動"
+      ],
+      "Read ${ count } email": [
+        "${ count }件のメールを既読にする"
+      ],
+      "Read ${ count } email on screen": [
+        "画面上の${ count }件のメールを既読にする"
+      ],
+      "Read ${ count } message in this thread": [
+        "このスレッドの${ count }件のメッセージを既読にする"
+      ],
+      "Read your ${ count } filter": [
+        "${ count }件のフィルターを既読にする"
+      ],
+      "Read your ${ count } folder": [
+        "${ count }件のフォルダを既読にする"
+      ],
+      "Read your ${ count } label": [
+        "${ count }件のラベルを既読にする"
+      ],
+      "Searched the web": [
+        "ウェブを検索しました"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "移行したい内容を正確に選択してください。それはすべての組織ユーザーに適用されます。"
+      ],
+      "Star emails": [
+        "スター付きのメール"
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "このユーザーを移行するには、${ provider.adminConsoleName }でアーカイブを解除してください。"
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "このユーザーを移行するには、${ provider.adminConsoleName }でアカウントの一時停止を解除してください。"
       ]
     },
     "info": {
@@ -10223,6 +10337,12 @@
       ],
       "ZIP code": [
         "郵便番号"
+      ],
+      "Archive": [
+        "アーカイブ"
+      ],
+      "Long tasks (≥ 50 ms)": [
+        "長いタスク (≥ 50 ms)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10665,6 +10785,9 @@
       ],
       "for ${ price }": [
         "${ price } の場合"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }執筆アシスタント"
       ]
     },
     "Mailbox": {
@@ -10693,6 +10816,9 @@
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats }${ MEET_APP_NAME }シート"
+      ],
+      "${ price } per seat": [
+        "シートあたり ${ price }"
       ]
     },
     "meet_2025: Feature": {
@@ -11483,6 +11609,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "ダークウェブをスキャンして、お客様の ${ BRAND_NAME } アドレスやエイリアスが漏洩していないかを確認し、何か見つかった場合はすぐに警告します。"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }執筆アシスタント"
       ]
     },
     "new_plans: feature highlight": {
@@ -16102,6 +16231,9 @@
       ],
       "Your shorter address is now ready": [
         "短いアドレスの準備ができました"
+      ],
+      "Keep this banner hidden?": [
+        "このバナーを隠したままにしますか？"
       ]
     },
     "Title header for keys table": {
@@ -16677,6 +16809,34 @@
       ],
       "Passcode:": [
         "パスコード："
+      ]
+    },
+    "Desktop notification body": {
+      "${ messageCount } new message": [
+        "${ messageCount }件の新着メッセージ"
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "属性"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "2 TB of secure storage": [
+        "2 TBのセキュアなストレージ"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } ${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME }、 のすべてのプレミアム機能"
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "12ヶ月で"
+      ],
+      "One plan, more power": [
+        "1つのプランで、より多くのパワーを"
       ]
     }
   }

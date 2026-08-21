@@ -1544,7 +1544,8 @@
         "De confiança"
       ],
       "Trust key": [
-        "Marca com a clau de confiança"
+        "Clau de confiança",
+        "Claus de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -1747,6 +1748,9 @@
       ],
       "Zoom out": [
         "Allunyar"
+      ],
+      "Get index size on disk": [
+        "Obté la mida de l'índex al disc"
       ]
     },
     "action": {
@@ -8136,8 +8140,7 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge",
-        "Insereix imatges"
+        "Insereix una imatge"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -9759,6 +9762,13 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sou tot just a uns quants clics d'una safata d'entrada ordenada"
+      ],
+      "Found ${ count } contact": [
+        "S'ha trobat ${ count } contacte",
+        "S'han trobat ${ count } contactes"
+      ],
+      "No contacts found": [
+        "No s'ha trobat cap contacte"
       ]
     },
     "info": {
