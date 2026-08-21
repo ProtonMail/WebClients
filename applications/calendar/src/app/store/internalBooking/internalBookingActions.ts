@@ -2,25 +2,17 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 import { getAddressKeysByUsageThunk } from '@proton/account/addressKeys/getAddressKeysByUsage';
 import { getVerificationPreferencesThunk } from '@proton/account/publicKeys/verificationPreferences';
+import { decryptAndVerifyBookingPageSecret } from '@proton/calendar/bookings/crypto/bookingDecryption';
+import { encryptBookingPage, encryptBookingPageEdition } from '@proton/calendar/bookings/crypto/bookingEncryption';
+import { verifyBookingSlots } from '@proton/calendar/bookings/crypto/bookingVerification';
+import { MinimumNoticeMode } from '@proton/calendar/bookings/types';
+import type { APIBooking, BookingPageEditData, SerializedFormData } from '@proton/calendar/bookings/types';
 import { getDecryptedPassphraseAndCalendarKeysThunk } from '@proton/calendar/calendarBootstrap/keys';
 import { createBookingPage, getBookingPageDetails, updateBookingPage } from '@proton/shared/lib/api/calendarBookings';
 
-import type { APIBooking, SerializedFormData } from '../../containers/bookings/bookingsTypes';
-import { MinimumNoticeMode } from '../../containers/bookings/interface';
 import { getCalendarAndOwner } from '../../containers/bookings/utils/calendar/calendarHelper';
-import { decryptAndVerifyBookingPageSecret } from '../../containers/bookings/utils/crypto/bookingDecryption';
-import {
-    encryptBookingPage,
-    encryptBookingPageEdition,
-} from '../../containers/bookings/utils/crypto/bookingEncryption';
-import { verifyBookingSlots } from '../../containers/bookings/utils/crypto/bookingVerification';
 import type { CalendarThunkExtra } from '../store';
-import type {
-    BookingPageCreationReturn,
-    BookingPageEditData,
-    BookingPageEditionReturn,
-    VerificationError,
-} from './interface';
+import type { BookingPageCreationReturn, BookingPageEditionReturn, VerificationError } from './interface';
 
 export const loadBookingPage = createAsyncThunk<
     Omit<BookingPageEditData, 'verificationErrors'> & {
@@ -122,6 +114,7 @@ export const createNewBookingPage = createAsyncThunk<
         encryptionKey,
         signingKeys,
         calendarID: calData.calendar.ID,
+        origin: window.location.origin,
     });
 
     const { BookingLink: bookingLink, ...apiPayload } = data;

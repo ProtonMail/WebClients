@@ -3,10 +3,10 @@ import { renderHook } from '@testing-library/react-hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { MAX_BOOKING_PAGES } from '@proton/calendar/bookings/eligibility';
 import { ADDON_NAMES, PLANS, PLAN_TYPES } from '@proton/payments/core/constants';
 
 import { useInternalBooking } from '../../../store/internalBooking/bookingsHook';
-import { MAX_BOOKING_PAGES } from '../interface';
 import { useBookingUpsell } from './useBookingUpsell';
 
 jest.mock('@proton/account/user/hooks');

@@ -5,6 +5,13 @@
     "sideEffects": false,
     "type": "module",
     "exports": {
+        "./bookings/crypto/bookingDecryption": "./bookings/crypto/bookingDecryption.ts",
+        "./bookings/crypto/bookingEncryption": "./bookings/crypto/bookingEncryption.ts",
+        "./bookings/crypto/bookingEncryptionHelpers": "./bookings/crypto/bookingEncryptionHelpers.ts",
+        "./bookings/crypto/bookingVerification": "./bookings/crypto/bookingVerification.ts",
+        "./bookings/crypto/cryptoHelpers": "./bookings/crypto/cryptoHelpers.ts",
+        "./bookings/eligibility": "./bookings/eligibility.ts",
+        "./bookings/types": "./bookings/types.ts",
         "./calendarBootstrap": "./calendarBootstrap/index.ts",
         "./calendarBootstrap/hooks": "./calendarBootstrap/hooks.ts",
         "./calendarBootstrap/keys": "./calendarBootstrap/keys.ts",
@@ -35,6 +42,7 @@
     "dependencies": {
         "@proton/account": "workspace:^",
         "@proton/meet": "workspace:^",
+        "@proton/payments": "workspace:^",
         "@proton/react-redux-store": "workspace:^",
         "@proton/redux-shared-store-types": "workspace:^",
         "@proton/redux-utilities": "workspace:^",
