@@ -1,8 +1,8 @@
+import type { LumoApiClientConfig } from '@proton/lumo-api-client/core/types';
 import type { Api } from '@proton/shared/lib/interfaces';
 
 import { generateSpaceKeyBase64 } from '../../crypto';
 import { findAgentById } from '../../features/agents/registry';
-import { getDefaultNewConversationTitle } from '../../util/conversationTitle';
 import {
     collectContextAttachmentIds,
     planRagAttachmentStorage,
@@ -49,6 +49,7 @@ import {
     getAttachmentPub,
 } from '../../types';
 import type { GenerationResponseMessage } from '../../types-api';
+import { getDefaultNewConversationTitle } from '../../util/conversationTitle';
 import { parseFileReferences } from '../../util/fileReferences';
 import {
     referencedFileNamesWithContent,
@@ -97,15 +98,46 @@ export type { ConversationContext } from './conversationContext';
  * Resolved entries win over stale copies with the same id (e.g. shallow @mention provisionals
  * that were filled from the search index after the composer snapshot was taken).
  */
-export function mergeConversationAttachmentsForTurns(
-    existing: Attachment[],
-    resolved: Attachment[]
-): Attachment[] {
+export function mergeConversationAttachmentsForTurns(existing: Attachment[], resolved: Attachment[]): Attachment[] {
     const resolvedById = new Map(resolved.map((attachment) => [attachment.id, attachment]));
     const updatedExisting = existing.map((attachment) => resolvedById.get(attachment.id) ?? attachment);
     const existingIds = new Set(updatedExisting.map((attachment) => attachment.id));
     const newOnly = resolved.filter((attachment) => !existingIds.has(attachment.id));
     return [...updatedExisting, ...newOnly];
+}
+
+// ?q= deep-link security (first inference only)
+//
+// Opening a link with ?q= auto-sends a prompt the user did not type and has not reviewed yet.
+// An attacker could embed instructions to call web_extract with exfiltration URLs. We mitigate
+// the immediate auto-send by:
+//   1. Excluding web_extract from the external-tool allowlist (see below).
+//   2. Injecting a one-shot system notice in prepareTurns (isFromQueryParam).
+//
+// Accepted trade-offs (intentional):
+//   - First inference only. After the link opens the prompt appears as the first user message;
+//     if the user continues the conversation they have seen it and are responsible for proceeding.
+//     Follow-up sends and edits use the normal tool list, including web_extract when enabled.
+//   - Regenerate and retry after a transient failure also skip isFromQueryParam: the user has
+//     already seen the prompt in the thread and is explicitly choosing to re-run it.
+//
+// This list is opt-in — add new tools here only after confirming they cannot leak user data.
+const EXTERNAL_TOOLS_SAFE_FOR_QUERY_PARAM_REQUEST: LumoApiClientConfig['externalTools'] = [
+    'web_search',
+    'weather',
+    'stock',
+    'cryptocurrency',
+    'proton_info',
+];
+
+export function buildQueryParamExternalToolsConfig(
+    isFromQueryParam: boolean | undefined,
+    enableExternalTools: boolean
+): Pick<LumoApiClientConfig, 'externalTools'> | Record<string, never> {
+    if (isFromQueryParam && enableExternalTools) {
+        return { externalTools: EXTERNAL_TOOLS_SAFE_FOR_QUERY_PARAM_REQUEST };
+    }
+    return {};
 }
 
 export type ProjectContext = {
@@ -126,6 +158,8 @@ export type UiContext = {
     navigateCallback?: (conversationId: ConversationId) => void; // todo remove optional
     isGhostMode?: boolean; // todo remove optional
     imageAspectRatio?: ImageAspectRatio;
+    /** Set only on the auto-send from a ?q= URL; see ?q= deep-link security comment above. */
+    isFromQueryParam?: boolean;
 };
 
 export type SettingsContext = {
@@ -469,7 +503,8 @@ export function sendMessage({
                     updatedC,
                     memories,
                     agentInstructions,
-                    shouldIncludeVisualizationInstructions(s, state.lumoUserSettings)
+                    shouldIncludeVisualizationInstructions(s, state.lumoUserSettings),
+                    ui.isFromQueryParam
                 );
 
             await dispatch(
@@ -496,6 +531,7 @@ export function sendMessage({
                         config: {
                             enableU2LEncryption: ENABLE_U2L_ENCRYPTION,
                             enableSmoothing: ui.enableSmoothing,
+                            ...buildQueryParamExternalToolsConfig(ui.isFromQueryParam, ui.enableExternalTools),
                         },
                         errorHandler: createLumoErrorHandler(),
                     },
