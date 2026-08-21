@@ -1,7 +1,8 @@
 import { addDays, addHours, set, subDays } from 'date-fns';
 
+import { BookingLocation } from '@proton/calendar/bookings/types';
+
 import type { BookingRange, InternalBookingForm } from '../../interface';
-import { BookingLocation } from '../../interface';
 import { BookingErrorMessages } from '../bookingCopy';
 import { validateRangeOperation, wasBookingFormTouched } from './providerHelper';
 

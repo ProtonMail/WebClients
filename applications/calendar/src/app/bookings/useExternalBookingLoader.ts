@@ -6,6 +6,9 @@ import { c } from 'ttag';
 
 import { shouldCheckSignatureVerificationStatus } from '@proton/account/publicKeys/verificationPreferences';
 import { useGetUser } from '@proton/account/user/hooks';
+import { decryptBookingContent } from '@proton/calendar/bookings/crypto/bookingDecryption';
+import { deriveBookingUid } from '@proton/calendar/bookings/crypto/bookingEncryption';
+import { bookingCalendarKeySignatureContextValue } from '@proton/calendar/bookings/crypto/cryptoHelpers';
 import useGetVerificationPreferences from '@proton/components/hooks/useGetVerificationPreferences';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { getNextAvailableSlot, queryPublicBookingPage } from '@proton/shared/lib/api/calendarBookings';
@@ -19,9 +22,6 @@ import type {
 } from '@proton/shared/lib/interfaces/calendar/Bookings';
 import type { GetVerificationPreferences } from '@proton/shared/lib/interfaces/hooks/GetVerificationPreferences';
 
-import { decryptBookingContent } from '../containers/bookings/utils/crypto/bookingDecryption';
-import { deriveBookingUid } from '../containers/bookings/utils/crypto/bookingEncryption';
-import { bookingCalendarKeySignatureContextValue } from '../containers/bookings/utils/crypto/cryptoHelpers';
 import { type BookingTimeslot, useBookingStore } from './booking.store';
 import { generateWeeklyRangeSimple, transformAvailableSlotToTimeslot } from './utils/bookingsHelpers';
 

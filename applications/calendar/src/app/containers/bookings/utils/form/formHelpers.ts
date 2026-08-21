@@ -1,10 +1,11 @@
 import { addHours, getUnixTime, isSameDay } from 'date-fns';
 
+import { BookingLocation, MinimumNoticeMode } from '@proton/calendar/bookings/types';
+import type { SerializedFormData } from '@proton/calendar/bookings/types';
 import { convertZonedDateTimeToUTC, fromLocalDate, toUTCDate } from '@proton/shared/lib/date/timezone';
 
-import type { SerializedFormData } from '../../bookingsTypes';
 import type { BookingFormData, BookingFormValidation, BookingRange } from '../../interface';
-import { BookingFormValidationReasons, BookingLocation, MAX_BOOKING_SLOTS, MinimumNoticeMode } from '../../interface';
+import { BookingFormValidationReasons, MAX_BOOKING_SLOTS } from '../../interface';
 import { BookingErrorMessages } from '../bookingCopy';
 
 export const validateFormData = (data: BookingFormData): BookingFormValidation | undefined => {

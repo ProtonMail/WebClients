@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { useGetAddresses } from '@proton/account/addresses/hooks';
+import { extractBookingUidFromSecret } from '@proton/calendar/bookings/crypto/bookingEncryption';
 import { useGetCalendarKeys } from '@proton/calendar/calendarBootstrap/keys';
 import { useGetCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import useApi from '@proton/components/hooks/useApi';
@@ -13,7 +14,6 @@ import { useSaveMeeting } from '@proton/meet';
 import { confirmBookingSlot } from '@proton/shared/lib/api/calendarBookings';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 
-import { extractBookingUidFromSecret } from '../containers/bookings/utils/crypto/bookingEncryption';
 import { useBookingStore } from './booking.store';
 import type { BookingTimeslot } from './booking.store';
 import { prepareBookingSubmission } from './bookingSubmissionUtils';
