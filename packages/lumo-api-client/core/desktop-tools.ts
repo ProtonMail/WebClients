@@ -213,23 +213,6 @@ async function executeBridgeToolCalls(toolCalls: PendingClientToolCall[]): Promi
     throw new Error('Desktop tool bridge does not support execution');
 }
 
-export function createDesktopClientToolExecutor(): ClientToolExecutor {
-    initDesktopToolApprovals();
-
-    return {
-        getClientTools: getDesktopOpenAITools,
-        canExecute: isDesktopNativeTool,
-        normalizeCalls: normalizeDesktopToolCalls,
-        execute: async (calls) => {
-            const results = await executeBridgeToolCalls(calls);
-            return results.map((result): ClientToolResult => ({
-                content: result.content,
-                is_error: result.is_error,
-            }));
-        },
-    };
-}
-
 type ApprovalListener = () => void;
 
 const APPROVAL_FALLBACK_TIMEOUT_MS = 130_000;
@@ -323,4 +306,21 @@ export function initDesktopToolApprovals(): void {
     approvalListenerAttached = true;
     window.addEventListener(TOOL_APPROVAL_REQUEST_EVENT, handleApprovalRequest);
     window.addEventListener(TOOL_APPROVAL_RESOLVED_EVENT, handleApprovalResolved);
+}
+
+export function createDesktopClientToolExecutor(): ClientToolExecutor {
+    initDesktopToolApprovals();
+
+    return {
+        getClientTools: getDesktopOpenAITools,
+        canExecute: isDesktopNativeTool,
+        normalizeCalls: normalizeDesktopToolCalls,
+        execute: async (calls) => {
+            const results = await executeBridgeToolCalls(calls);
+            return results.map((result): ClientToolResult => ({
+                content: result.content,
+                is_error: result.is_error,
+            }));
+        },
+    };
 }

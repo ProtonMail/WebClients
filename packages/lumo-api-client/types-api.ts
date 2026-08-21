@@ -47,6 +47,16 @@ export type WireTurn = {
 export type EncryptedWireTurn = WireTurn & { encrypted: true };
 export type UnencryptedWireTurn = WireTurn & { encrypted?: false };
 
+export function isWireImage(obj: any): obj is WireImage {
+    return (
+        obj &&
+        typeof obj === 'object' &&
+        typeof obj.encrypted === 'boolean' &&
+        typeof obj.image_id === 'string' &&
+        typeof obj.data === 'string'
+    );
+}
+
 export function isWireTurn(obj: any): obj is WireTurn {
     return (
         obj &&
@@ -56,16 +66,6 @@ export function isWireTurn(obj: any): obj is WireTurn {
         (obj.content === undefined || typeof obj.content === 'string') &&
         (obj.encrypted === undefined || typeof obj.encrypted === 'boolean') &&
         (obj.images === undefined || (Array.isArray(obj.images) && obj.images.every((img: any) => isWireImage(img))))
-    );
-}
-
-export function isWireImage(obj: any): obj is WireImage {
-    return (
-        obj &&
-        typeof obj === 'object' &&
-        typeof obj.encrypted === 'boolean' &&
-        typeof obj.image_id === 'string' &&
-        typeof obj.data === 'string'
     );
 }
 
@@ -362,6 +362,12 @@ export type GenerationResponseMessageDecrypted =
 
 // *** Type Guards ***
 
+export type GenerationTarget = 'message' | 'title' | 'tool_call' | 'tool_result' | 'reasoning' | 'suggested_questions';
+
+export function isGenerationTarget(value: any): value is GenerationTarget {
+    return ['message', 'title', 'tool_call', 'tool_result', 'reasoning', 'suggested_questions'].includes(value);
+}
+
 export function isQueuedMessage(obj: any): obj is QueuedMessage {
     return typeof obj === 'object' && obj !== null && obj.type === 'queued';
 }
@@ -542,12 +548,6 @@ export type RequestableGenerationTarget = 'message' | 'title';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function isRequestableGenerationTarget(value: any): value is RequestableGenerationTarget {
     return ['message', 'title'].includes(value);
-}
-
-export type GenerationTarget = 'message' | 'title' | 'tool_call' | 'tool_result' | 'reasoning' | 'suggested_questions';
-
-export function isGenerationTarget(value: any): value is GenerationTarget {
-    return ['message', 'title', 'tool_call', 'tool_result', 'reasoning', 'suggested_questions'].includes(value);
 }
 
 /*

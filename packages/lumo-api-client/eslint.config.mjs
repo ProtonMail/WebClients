@@ -18,7 +18,6 @@ export default defineConfig([
                     varsIgnorePattern: '^_',
                 },
             ],
-            '@typescript-eslint/no-use-before-define': 'off',
             // TODO: Remove this rule once the compat issue is resolved
             'compat/compat': 'off',
         },
