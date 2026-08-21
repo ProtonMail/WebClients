@@ -2,6 +2,7 @@ import type { ToolDefinition } from '@proton/llm/lib/lumoAgent/contracts/types';
 import { LOAD_GUIDE_TOOL_NAME } from '@proton/llm/lib/lumoAgent/engine/loadGuide';
 
 import { buildLumoMailConfig } from './registry';
+import { updateFilterDefinition } from './skills/filters/updateFilter';
 import { applyLabelsDefinition } from './skills/organise/applyLabels';
 import { createFolderDefinition, createLabelDefinition } from './skills/organise/createEntity';
 import { moveEmailsDefinition } from './skills/organise/moveEmails';
@@ -127,6 +128,7 @@ const TOOL_PAYLOADS = [
     payloads(setLocationReadDefinition, [undefined]),
     payloads(createFolderDefinition, [{ reference: 'folder-x7b2q1', name: 'Hotels' }]),
     payloads(createLabelDefinition, [{ reference: 'label-m3n4p5', name: 'Receipts' }]),
+    payloads(updateFilterDefinition, [undefined]),
 ];
 
 const DIRECTIVES = [

@@ -33,7 +33,7 @@ export const createLoadGuideDefinition = (definitions: ToolDefinition[]): ToolDe
         kind: 'read',
         toolDescription: `Fetch the argument rules for a tool before you call it — internal wiring, invisible to the user, and not a step of the task. Required before you use: ${guidedTools.join(
             ', '
-        )}. This call and the call it unlocks are ONE action: load, then immediately call that tool. The \`guide\` argument must be exactly one of those tool names.`,
+        )}. This call and the call it unlocks are ONE action: load, then immediately call that tool. Say NOTHING alongside this call — the one-line lead-in a change tool needs belongs to the tool this unlocks, not to this one. The \`guide\` argument must be exactly one of those tool names.`,
         paramsSchema: {
             type: 'object',
             additionalProperties: false,
