@@ -2,7 +2,8 @@ import { useRef } from 'react';
 import type { GridChildComponentProps } from 'react-window';
 import { FixedSizeGrid } from 'react-window';
 
-import { Loader, Table, useElementRect, useRightToLeft } from '@proton/components';
+import { Loader, Table, useElementRect } from '@proton/components';
+import useRightToLeft from '@proton/hooks/useRightToLeft';
 import clsx from '@proton/utils/clsx';
 
 import { Features, useMeasureFeaturePerformanceOnMount } from '../../../../utils/telemetry';
