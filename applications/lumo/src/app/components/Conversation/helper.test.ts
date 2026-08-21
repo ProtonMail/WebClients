@@ -1,5 +1,26 @@
 import type { Attachment } from '../../types';
-import { mergeConversationAttachmentsForTurns } from './helper';
+import { buildQueryParamExternalToolsConfig, mergeConversationAttachmentsForTurns } from './helper';
+
+describe('buildQueryParamExternalToolsConfig', () => {
+    it('replaces external tools with the safe allowlist on a ?q= first inference when external tools are enabled', () => {
+        const config = buildQueryParamExternalToolsConfig(true, true);
+
+        expect(config.externalTools).toEqual(['web_search', 'weather', 'stock', 'cryptocurrency', 'proton_info']);
+        expect(config.externalTools).not.toContain('web_extract');
+    });
+
+    it('does not override external tools when external tools are disabled', () => {
+        const config = buildQueryParamExternalToolsConfig(true, false);
+
+        expect(config.externalTools).toBeUndefined();
+    });
+
+    it('does not override external tools on normal sends', () => {
+        const config = buildQueryParamExternalToolsConfig(false, true);
+
+        expect(config.externalTools).toBeUndefined();
+    });
+});
 
 describe('mergeConversationAttachmentsForTurns', () => {
     it('replaces stale provisionals with send-time resolved attachments that share the same id', () => {
