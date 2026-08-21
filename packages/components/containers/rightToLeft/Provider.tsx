@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import RightToLeftContext from './context';
+import RightToLeftContext from '@proton/hooks/rightToLeftContext';
 
 const getIsRTL = (lang: string) => {
     return /^(fa|ar)/.test(lang);

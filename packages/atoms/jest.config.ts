@@ -5,7 +5,7 @@ export default {
     moduleDirectories: ['<rootDir>/node_modules', 'node_modules'],
     testEnvironment: '@proton/jest-env',
     transformIgnorePatterns: [
-        'node_modules/(?!(@proton/shared|@proton/components|@protontech/telemetry|mutex-browser|@protontech/crypto|bip39|@preact/signals-core)/)',
+        'node_modules/(?!(@proton/shared|@protontech/telemetry|mutex-browser|@protontech/crypto|bip39|@preact/signals-core)/)',
     ],
     transform: {
         '^.+\\.(ts|js|mjs)x?$': [
@@ -33,8 +33,8 @@ export default {
     },
 
     moduleNameMapper: {
-        '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm)$': '@proton/components/__mocks__/fileMock.js',
-        '\\.(css|scss|less)$': '@proton/components/__mocks__/styleMock.js',
+        '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm)$': '<rootDir>/__mocks__/fileMock.js',
+        '\\.(css|scss|less)$': '<rootDir>/__mocks__/styleMock.js',
         '\\.(md)$': '<rootDir>/src/__mocks__/mdMock.ts',
     },
     modulePathIgnorePatterns: ['<rootDir>/tests'],

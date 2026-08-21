@@ -1,9 +1,9 @@
 import { useRef, useState } from 'react';
 
+import useRightToLeft from '@proton/hooks/useRightToLeft';
 import { getApiSubdomainUrl } from '@proton/shared/lib/helpers/url';
 import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
-import { useRightToLeft } from '../rightToLeft/useRightToLeft';
 import ChallengeError from './ChallengeError';
 import type { Props as ChallengeProps } from './ChallengeFrame';
 import ChallengeFrame from './ChallengeFrame';
