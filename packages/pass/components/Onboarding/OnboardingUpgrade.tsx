@@ -21,7 +21,8 @@ import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFi
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
-import { useOnboarding } from '@proton/pass/components/Onboarding/OnboardingProvider';
+import type { AvailablePlans } from '@proton/pass/components/Onboarding/Provider/OnboardingContext';
+import { useOnboarding } from '@proton/pass/components/Onboarding/Provider/OnboardingContext';
 import { PASS_PLUS_LIFETIME_PRICE, PASS_PLUS_PRICE, PROTON_UNLIMITED_PRICE, UpsellRef } from '@proton/pass/constants';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { useFeatureFlagVariant } from '@proton/pass/hooks/useFeatureFlagVariant';
@@ -47,7 +48,6 @@ import clsx from '@proton/utils/clsx';
 
 import './OnboardingUpgrade.scss';
 
-export type AvailablePlans = PLANS.PASS | PLANS.BUNDLE;
 type FeaturesTable = {
     comparisons: { label: string; badge?: 'light' | 'dark' }[];
     included: {

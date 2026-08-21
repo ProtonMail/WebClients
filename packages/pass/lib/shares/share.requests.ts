@@ -1,5 +1,4 @@
 import { api } from '@proton/pass/lib/api/api';
-import { isShareRemovedError } from '@proton/pass/lib/api/errors';
 import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
 import type { SharesState } from '@proton/pass/store/reducers';
 import type {
@@ -9,25 +8,14 @@ import type {
     ShareGetResponse,
     ShareHideUnhideBatchRequest,
     ShareId,
-    ShareKeyResponse,
     ShareRole,
     ShareType,
 } from '@proton/pass/types';
 import type { ShareEditMemberAccessIntent, ShareRemoveMemberAccessIntent } from '@proton/pass/types/data/access.dto';
 import type { ShareMember } from '@proton/pass/types/data/invites';
 import { truthy } from '@proton/pass/utils/fp/predicates';
-import { logId, logger } from '@proton/pass/utils/logger';
 
-/* ⚠️ This endpoint is not paginated yet back-end side. */
-export const getAllShareKeys = async (shareId: string): Promise<ShareKeyResponse[]> => {
-    const response = await api({
-        url: `pass/v1/share/${shareId}/key`,
-        params: { Page: 0 },
-        method: 'get',
-    });
-
-    return response.ShareKeys?.Keys ?? [];
-};
+export { getAllShareKeys, getShareLatestEventId } from '@proton/pass/lib/shares/share.keys';
 
 export const getSharesQuery = () => ({ url: 'pass/v1/share', method: 'get' }) as const;
 export const getShares = async () => {
@@ -41,20 +29,6 @@ export const getShareEvents = async (shareId: ShareId, eventId: string): Promise
     const res = await api(getShareEventsQuery(shareId, eventId));
     return res.Events;
 };
-
-export const getShareLatestEventId = async (shareId: string): Promise<string> =>
-    api({
-        url: `pass/v1/share/${shareId}/event`,
-        method: 'get',
-    })
-        .then(({ EventID }) => EventID)
-        .catch((err) => {
-            logger.info(`[Share] Failed getting latest eventID for share ${logId(shareId)}`);
-            /** Propagate share-removal so callers can clean up the share.
-             * Tolerate transient errors with an empty cursor. */
-            if (isShareRemovedError(err)) throw err;
-            return '';
-        });
 
 export const requestShares = async (): Promise<ShareGetResponse[]> =>
     (

@@ -9,7 +9,7 @@ import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { OnboardingLockSetup } from '@proton/pass/components/Onboarding/OnboardingLockSetup';
 import { OnboardingModal } from '@proton/pass/components/Onboarding/OnboardingModal';
 import { OnboardingThemeSelect } from '@proton/pass/components/Onboarding/OnboardingThemeSelect';
-import type { AvailablePlans } from '@proton/pass/components/Onboarding/OnboardingUpgrade';
+import type { AvailablePlans } from '@proton/pass/components/Onboarding/Provider/OnboardingContext';
 import { AspectRatioBox } from '@proton/pass/components/Utils/AspectRatioBox';
 import { PASS_DOWNLOAD_URL, UpsellRef } from '@proton/pass/constants';
 import { useFeatureFlagVariant } from '@proton/pass/hooks/useFeatureFlagVariant';

@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import Progress from '@proton/components/components/progress/Progress';
-import { useInviteActions } from '@proton/pass/components/Invite/InviteProvider';
+import { useInviteActions } from '@proton/pass/components/Invite/InviteContext';
 import { useRequest } from '@proton/pass/hooks/useRequest';
 import { groupInviteAccept, groupInviteReject, inviteAccept, inviteReject } from '@proton/pass/store/actions';
 import type { ItemInvite, VaultInvite } from '@proton/pass/types';
