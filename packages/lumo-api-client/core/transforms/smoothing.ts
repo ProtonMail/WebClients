@@ -96,6 +96,11 @@ const makeSmoothingTransformer = (): Transformer<M, M> => {
     let ending = false;
     let debugEnabled = typeof window !== 'undefined' && localStorage.getItem('lumo_debug_perf') === 'true';
 
+    function disableTimeout() {
+        clearTimeout(timeoutHandle);
+        timeoutHandle = undefined;
+    }
+
     // The readable side may be cancelled/errored (e.g. the consumer aborts the generation or
     // navigates away) while a smoothing timer is still scheduled. When that happens the
     // controller can no longer accept chunks and `enqueue` throws. `desiredSize` is `null`
@@ -124,36 +129,6 @@ const makeSmoothingTransformer = (): Transformer<M, M> => {
             count,
         };
         controller.enqueue(value);
-    }
-
-    function disableTimeout() {
-        clearTimeout(timeoutHandle);
-        timeoutHandle = undefined;
-    }
-
-    async function flush(controller: TransformStreamDefaultController<M>) {
-        if (DISABLE_SMOOTHING) return;
-
-        // Clear scheduled invocation
-        disableTimeout();
-
-        // Make sure we go till the end, otherwise we'll stop when the spring is at rest length,
-        // missing lag0 chars in the buffer
-        ending = true;
-
-        // Make progress manually until stream is over. Stop early if the stream became
-        // cancelled/errored, otherwise the buffer would never drain and we'd loop forever.
-        while (!buffer.isEmpty() && controller.desiredSize !== null) {
-            progress(controller, false);
-            await sleep(REFRESH_MS);
-        }
-
-        buffer.clear();
-        count = 0;
-        lag = 0;
-        rate = 0;
-        started = false;
-        ending = false;
     }
 
     function progress(controller: TransformStreamDefaultController<any>, restart: boolean = true) {
@@ -221,6 +196,31 @@ const makeSmoothingTransformer = (): Transformer<M, M> => {
             disableTimeout();
             timeoutHandle = setTimeout(() => progress(controller), REFRESH_MS) as unknown as number;
         }
+    }
+
+    async function flush(controller: TransformStreamDefaultController<M>) {
+        if (DISABLE_SMOOTHING) return;
+
+        // Clear scheduled invocation
+        disableTimeout();
+
+        // Make sure we go till the end, otherwise we'll stop when the spring is at rest length,
+        // missing lag0 chars in the buffer
+        ending = true;
+
+        // Make progress manually until stream is over. Stop early if the stream became
+        // cancelled/errored, otherwise the buffer would never drain and we'd loop forever.
+        while (!buffer.isEmpty() && controller.desiredSize !== null) {
+            progress(controller, false);
+            await sleep(REFRESH_MS);
+        }
+
+        buffer.clear();
+        count = 0;
+        lag = 0;
+        rate = 0;
+        started = false;
+        ending = false;
     }
 
     async function transform(value: M, controller: TransformStreamDefaultController) {
