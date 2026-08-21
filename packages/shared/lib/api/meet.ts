@@ -1,4 +1,8 @@
-import type { MeetingPayload, ParticipantPermissions, WaitingRoomState } from '../interfaces/Meet';
+import type { MeetingPayload, ParticipantPermissions, UserSettings, WaitingRoomState } from '../interfaces/Meet';
+
+export enum AgentType {
+    ClosedCaptions = 1,
+}
 
 export const queryParticipants = (meetingLinkName: string) => {
     return {
@@ -64,6 +68,15 @@ export const deleteMeetingCall = (meetingId: string) => {
 export const getMeetUserSettings = {
     method: 'get',
     url: `meet/v1/user-settings`,
+};
+
+// Replaces the settings as a whole, not just the fields sent.
+export const updateMeetUserSettingsCall = (data: UserSettings) => {
+    return {
+        method: 'put',
+        url: `meet/v1/user-settings`,
+        data,
+    };
 };
 
 export const createMeetingCall = (data: MeetingPayload) => {

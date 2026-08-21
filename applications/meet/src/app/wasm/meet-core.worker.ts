@@ -35,6 +35,12 @@ interface WorkerCallbackGlobals extends DedicatedWorkerGlobalScope {
     joinRequestEvent?: {
         on_join_request: (change: 0 | 1, requestId: string, participantUid: string, expiresAt: number) => void;
     };
+    agentPendingEvent?: {
+        on_agent_pending: (deviceId: string) => Promise<void>;
+    };
+    agentLeftEvent?: {
+        on_agent_left: (deviceId: string) => Promise<void>;
+    };
 }
 
 const workerGlobal = self as WorkerCallbackGlobals;
@@ -149,6 +155,26 @@ const installWorkerCallbackNamespaces = () => {
             workerGlobal.postMessage(message);
         },
     };
+
+    workerGlobal.agentPendingEvent = {
+        on_agent_pending: async (deviceId: string) => {
+            const message: MeetCoreWorkerEventMessage = {
+                type: 'meet-core:event:agent-pending',
+                deviceId,
+            };
+            workerGlobal.postMessage(message);
+        },
+    };
+
+    workerGlobal.agentLeftEvent = {
+        on_agent_left: async (deviceId: string) => {
+            const message: MeetCoreWorkerEventMessage = {
+                type: 'meet-core:event:agent-left',
+                deviceId,
+            };
+            workerGlobal.postMessage(message);
+        },
+    };
 };
 
 const handleInit = async (request: MeetCoreInitRequestMessage) => {
@@ -173,6 +199,14 @@ const handleRpcRequest = async (request: MeetCoreRpcRequestMessage): Promise<Mee
             return activeApp.joinMeetingWithAccessTokenWithSwitchJoinType(...request.params);
         case 'joinRoomWithProposal':
             return activeApp.joinRoomWithProposal(...request.params);
+        case 'listPendingAgents':
+            return activeApp.listPendingAgents(...request.params);
+        case 'admitAgent':
+            return activeApp.admitAgent(...request.params);
+        case 'requestClosedCaptions':
+            return activeApp.requestClosedCaptions(...request.params);
+        case 'stopClosedCaptions':
+            return activeApp.stopClosedCaptions(...request.params);
         case 'leaveMeeting':
             return activeApp.leaveMeeting();
         case 'triggerWebSocketReconnect':
@@ -199,6 +233,10 @@ const handleRpcRequest = async (request: MeetCoreRpcRequestMessage): Promise<Mee
             return activeApp.setMlsSyncStateUpdateHandler();
         case 'setLiveKitAdminChangeHandler':
             return activeApp.setLiveKitAdminChangeHandler();
+        case 'setAgentPendingHandler':
+            return activeApp.setAgentPendingHandler();
+        case 'setAgentLeftHandler':
+            return activeApp.setAgentLeftHandler();
         case 'setDisconnectionHandler':
             return activeApp.setDisconnectionHandler();
         case 'setLivekitActiveUuids':

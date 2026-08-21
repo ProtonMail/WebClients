@@ -67,15 +67,17 @@ export const WaitingRoomTab = ({ setIsScrolled, searchExpression }: Props) => {
             {isEmpty ? (
                 <EmptyWaitingRoomList hasSearchQuery={hasSearchQuery} />
             ) : (
-                <ParticipantListContainer title={c('Title').t`Waiting room`} setIsScrolled={setIsScrolled}>
-                    {filteredRequests.map((request) => {
+                <ParticipantListContainer
+                    title={c('Title').t`Waiting room`}
+                    setIsScrolled={setIsScrolled}
+                    participantsList={filteredRequests.map((request) => {
                         return (
                             <li key={request.requestId}>
                                 <WaitingRoomItem request={request} />
                             </li>
                         );
                     })}
-                </ParticipantListContainer>
+                />
             )}
             <div className="waiting-room-tab-footer absolute bottom-0 left-0 w-full p-4">
                 <Button

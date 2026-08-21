@@ -49,6 +49,14 @@ export type MeetCoreWorkerEventMessage =
           requestId: string;
           participantUid: string;
           expiresAt: number;
+      }
+    | {
+          type: 'meet-core:event:agent-pending';
+          deviceId: string;
+      }
+    | {
+          type: 'meet-core:event:agent-left';
+          deviceId: string;
       };
 
 export interface MeetCoreWorkerFailureMessage {

@@ -77,6 +77,11 @@ export interface MeetCoreClient {
         ...args: Parameters<App['joinMeetingWithAccessTokenWithSwitchJoinType']>
     ): Promise<void>;
     joinRoomWithProposal(...args: Parameters<App['joinRoomWithProposal']>): Promise<void>;
+    listPendingAgents(...args: Parameters<App['listPendingAgents']>): Promise<string[]>;
+    admitAgent(...args: Parameters<App['admitAgent']>): Promise<void>;
+    // Safe to call from every client that wants captions: core arbitrates who actually asks.
+    requestClosedCaptions(...args: Parameters<App['requestClosedCaptions']>): Promise<void>;
+    stopClosedCaptions(...args: Parameters<App['stopClosedCaptions']>): Promise<void>;
     leaveMeeting(): Promise<void>;
     triggerWebSocketReconnect(): Promise<void>;
     getJoinType(...args: Parameters<App['getJoinType']>): Promise<JoinTypeInfo>;
@@ -88,6 +93,8 @@ export interface MeetCoreClient {
     setMlsGroupUpdateHandler(): Promise<void>;
     setMlsSyncStateUpdateHandler(): Promise<void>;
     setLiveKitAdminChangeHandler(): Promise<void>;
+    setAgentPendingHandler(): Promise<void>;
+    setAgentLeftHandler(): Promise<void>;
     setDisconnectionHandler(): Promise<void>;
     setLivekitActiveUuids(...args: Parameters<App['setLivekitActiveUuids']>): Promise<void>;
     setWebsocketPingInterval(...args: Parameters<App['setWebsocketPingInterval']>): Promise<void>;
