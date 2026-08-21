@@ -28,7 +28,11 @@ export default defineConfig([
     },
     {
         rules: {
-            'import/no-internal-modules': ['error', { forbid: ['@proton/atoms', '@proton/components'] }],
+            'import/no-internal-modules': ['error', { forbid: ['@proton/atoms'] }],
+            'no-restricted-imports': [
+                'error',
+                { patterns: [{ group: ['@proton/components', '@proton/components/*'], message: 'atoms must not depend on @proton/components' }] },
+            ],
         },
     },
     globalIgnores(['.storybook']),
