@@ -7,6 +7,10 @@ import type { SpaceMap } from '../../redux/slices/core/spaces';
 import { getStoreRef } from '../../redux/storeRef';
 import { Role } from '../../types';
 import type { DriveDocument } from '../../types/documents';
+import {
+    findStaleProjectDocumentIds,
+    type ProjectKnowledgeSnapshot,
+} from '../reconcileProjectSearchIndex';
 import { BM25Index } from './bm25Index';
 import { chunkDocument } from './documentChunker';
 import type { SearchResult, SearchServiceStatus, SearchState } from './types';
@@ -688,39 +692,79 @@ export class SearchService {
         }
     }
 
-    removeDocument(documentId: string): void {
-        const docsToRemove = this.driveDocuments.filter(
-            (d) => d.id === documentId || d.parentDocumentId === documentId
+    private removeDocumentsMatchingInternal(predicate: (doc: DriveDocument) => boolean): number {
+        const docsToRemove = this.driveDocuments.filter(predicate);
+        for (const doc of docsToRemove) {
+            this.bm25Index.removeDocument(doc.id, buildSearchableText(doc));
+        }
+        const removeIds = new Set(docsToRemove.map((doc) => doc.id));
+        this.driveDocuments = this.driveDocuments.filter((doc) => !removeIds.has(doc.id));
+        return docsToRemove.length;
+    }
+
+    private async persistIndexChanges(): Promise<void> {
+        await this.persistManifest();
+        await this.persistBM25Index();
+    }
+
+    async removeDocument(documentId: string): Promise<void> {
+        const removed = this.removeDocumentsMatchingInternal(
+            (doc) => doc.id === documentId || doc.parentDocumentId === documentId
         );
-        for (const doc of docsToRemove) {
-            this.bm25Index.removeDocument(doc.id, buildSearchableText(doc));
-        }
-        const removeIds = new Set(docsToRemove.map((d) => d.id));
-        this.driveDocuments = this.driveDocuments.filter((d) => !removeIds.has(d.id));
-        if (docsToRemove.length > 0) {
-            void this.persistManifest();
-            void this.persistBM25Index();
+        if (removed > 0) {
+            await this.persistIndexChanges();
         }
     }
 
-    removeDocumentsByFolder(folderId: string): void {
-        const docsToRemove = this.driveDocuments.filter((doc) => doc.folderId === folderId);
-        for (const doc of docsToRemove) {
-            this.bm25Index.removeDocument(doc.id, buildSearchableText(doc));
+    async removeDocumentsByFolder(folderId: string): Promise<void> {
+        const removed = this.removeDocumentsMatchingInternal((doc) => doc.folderId === folderId);
+        if (removed > 0) {
+            await this.persistIndexChanges();
         }
-        this.driveDocuments = this.driveDocuments.filter((doc) => doc.folderId !== folderId);
-        void this.persistManifest();
-        void this.persistBM25Index();
     }
 
-    removeDocumentsBySpace(spaceId: string): void {
-        const docsToRemove = this.driveDocuments.filter((doc) => doc.spaceId === spaceId);
-        for (const doc of docsToRemove) {
-            this.bm25Index.removeDocument(doc.id, buildSearchableText(doc));
+    async removeDocumentsBySpace(spaceId: string): Promise<void> {
+        const removed = this.removeDocumentsMatchingInternal((doc) => doc.spaceId === spaceId);
+        if (removed > 0) {
+            await this.persistIndexChanges();
         }
-        this.driveDocuments = this.driveDocuments.filter((doc) => doc.spaceId !== spaceId);
-        void this.persistManifest();
-        void this.persistBM25Index();
+    }
+
+    /**
+     * Remove Drive-indexed documents for a project without touching uploaded project files.
+     */
+    async removeDriveDocumentsBySpace(spaceId: string): Promise<void> {
+        const removed = this.removeDocumentsMatchingInternal(
+            (doc) => doc.spaceId === spaceId && doc.folderPath !== 'Uploaded Files'
+        );
+        if (removed > 0) {
+            await this.persistIndexChanges();
+        }
+    }
+
+    /**
+     * Remove project search index entries that no longer match project knowledge sources.
+     */
+    async reconcileStaleProjectDocuments(projects: ProjectKnowledgeSnapshot[]): Promise<number> {
+        await this.ensureManifestReady();
+
+        const staleIds = new Set(findStaleProjectDocumentIds(this.driveDocuments, projects));
+        if (staleIds.size === 0) {
+            return 0;
+        }
+
+        const removed = this.removeDocumentsMatchingInternal(
+            (doc) =>
+                staleIds.has(doc.id) ||
+                (doc.parentDocumentId !== undefined && staleIds.has(doc.parentDocumentId))
+        );
+
+        if (removed > 0) {
+            console.log('[SearchService] Reconciled stale project documents:', removed);
+            await this.persistIndexChanges();
+        }
+
+        return removed;
     }
 
     /**
@@ -1012,14 +1056,14 @@ export class SearchService {
             totalChunks: orphaned.totalChunks,
         });
 
-        // Remove documents for each orphaned space
-        for (const spaceId of orphanedSpaceIds) {
-            this.removeDocumentsBySpace(spaceId);
-        }
+        const orphanedSpaceIdSet = new Set(orphanedSpaceIds);
+        const removed = this.removeDocumentsMatchingInternal(
+            (doc) => doc.spaceId !== undefined && orphanedSpaceIdSet.has(doc.spaceId)
+        );
 
-        // Persist changes
-        await this.persistManifest();
-        await this.persistBM25Index();
+        if (removed > 0) {
+            await this.persistIndexChanges();
+        }
 
         console.log('[SearchService] Orphaned documents cleanup complete');
         return orphanedSpaceIds;
