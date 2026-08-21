@@ -64,6 +64,7 @@ export interface ParticipantEventRecord {
     eventType: ParticipantEvent;
     timestamp: number;
     type?: 'event';
+    isAgent?: boolean;
 }
 
 export type MeetingRoomUpdate = ParticipantEventRecord | MeetChatMessage;

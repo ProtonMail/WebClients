@@ -30,6 +30,7 @@ import { useMeetingInitialisation } from '../../hooks/useMeetingInitialisation';
 import { SpatialAudioRoomAudioRenderer } from '../../utils/spatialAudio/SpatialAudioRoomAudioRenderer';
 import { AssignHostSidebar } from '../AssignHostSidebar/AssignHostSidebar';
 import { Backgrounds } from '../Backgrounds/Backgrounds';
+import { Captions } from '../Captions/Captions';
 import { Chat } from '../Chat/Chat';
 import { MeetingDetails, WrappedMeetingDetails } from '../MeetingDetails/MeetingDetails';
 import { MeetingName } from '../MeetingName/MeetingName';
@@ -349,6 +350,7 @@ export const MeetingBody = ({
                         </div>
                     )}
                 </div>
+                <Captions />
                 <ParticipantControls />
                 {isSpatialAudioEnabled ? <SpatialAudioRoomAudioRenderer /> : <RoomAudioRenderer />}
                 <NoDeviceDetectedInfo />

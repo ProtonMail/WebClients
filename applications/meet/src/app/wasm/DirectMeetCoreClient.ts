@@ -53,6 +53,22 @@ export class DirectMeetCoreClient implements MeetCoreClient {
         return this.app.joinRoomWithProposal(...args);
     }
 
+    public listPendingAgents(...args: Parameters<App['listPendingAgents']>): Promise<string[]> {
+        return this.app.listPendingAgents(...args);
+    }
+
+    public admitAgent(...args: Parameters<App['admitAgent']>): Promise<void> {
+        return this.app.admitAgent(...args);
+    }
+
+    public requestClosedCaptions(...args: Parameters<App['requestClosedCaptions']>): Promise<void> {
+        return this.app.requestClosedCaptions(...args);
+    }
+
+    public stopClosedCaptions(...args: Parameters<App['stopClosedCaptions']>): Promise<void> {
+        return this.app.stopClosedCaptions(...args);
+    }
+
     public leaveMeeting(): Promise<void> {
         return this.app.leaveMeeting();
     }
@@ -97,6 +113,14 @@ export class DirectMeetCoreClient implements MeetCoreClient {
 
     public setLiveKitAdminChangeHandler(): Promise<void> {
         return this.app.setLiveKitAdminChangeHandler();
+    }
+
+    public setAgentPendingHandler(): Promise<void> {
+        return this.app.setAgentPendingHandler();
+    }
+
+    public setAgentLeftHandler(): Promise<void> {
+        return this.app.setAgentLeftHandler();
     }
 
     public setDisconnectionHandler(): Promise<void> {

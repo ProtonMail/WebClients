@@ -376,6 +376,10 @@ $profile-colors:
 	color: white;
 }
 
+.agent-color {
+	background-color: var(--signal-info-major-1);
+}
+
 .dashboard-meeting-list-container {
 	position: relative;
 	isolation: isolate;

@@ -6,6 +6,7 @@ import { deviceManagementReducer } from './deviceManagementSlice';
 import { meetAppStateReducer } from './meetAppStateSlice';
 import { meetingInfoModelReducer } from './meetingInfoModel';
 import { meetingsReducer } from './meetings';
+import { agentParticipantsReducer } from './participants/agentParticipantsSlice';
 import { participantsReducer } from './participants/participantsSlice';
 import { sortedParticipantsReducer } from './participants/sortedParticipantsSlice';
 import { recordingStatusReducer } from './recordingStatusSlice';
@@ -27,6 +28,7 @@ export const meetReducers = {
     ...meetingInfoModelReducer,
     ...meetingsReducer,
     ...participantsReducer,
+    ...agentParticipantsReducer,
     ...sortedParticipantsReducer,
     ...userSettingsReducer,
     ...recordingsReducer,
