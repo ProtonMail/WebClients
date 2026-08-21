@@ -145,6 +145,7 @@ import {
     retryPushMessage,
 } from './messages';
 import {
+    cleanupProjectSearchIndexOnSpaceUpdate,
     deserializeSpaceSaga,
     handleDeleteAllSpaces,
     logDeleteAllSpacesFailure,
@@ -160,6 +161,7 @@ import {
     pullSpace,
     pullSpaces,
     pushSpace,
+    reconcileProjectSearchIndex,
     refreshSpaceFromRemote,
     retryPushSpace,
     softDeleteSpaceFromLocal,
@@ -395,23 +397,24 @@ function* reindexUploadedAttachments(): SagaIterator {
 
         if (projectAttachments.length === 0) {
             console.log('[reindexUploadedAttachments] No uploaded attachments to reindex');
-            return;
+        } else {
+            console.log(
+                `[reindexUploadedAttachments] Checking ${projectAttachments.length} uploaded attachments for indexing`
+            );
+
+            const searchService = SearchService.get(userId);
+            const result: { success: boolean; indexed: number } = yield call(
+                [searchService, searchService.reindexUploadedAttachments],
+                projectAttachments
+            );
+
+            console.log('[reindexUploadedAttachments] Result:', result);
         }
-
-        console.log(
-            `[reindexUploadedAttachments] Checking ${projectAttachments.length} uploaded attachments for indexing`
-        );
-
-        const searchService = SearchService.get(userId);
-        const result: { success: boolean; indexed: number } = yield call(
-            [searchService, searchService.reindexUploadedAttachments],
-            projectAttachments
-        );
-
-        console.log('[reindexUploadedAttachments] Result:', result);
     } catch (error) {
         console.error('[reindexUploadedAttachments] Failed:', error);
     }
+
+    yield call(reconcileProjectSearchIndex);
 }
 
 export function* unloadRedux(): SagaIterator {
@@ -492,6 +495,7 @@ export function* rootSaga(opts?: { crashIfErrors: boolean }) {
     const watchers = ([
         function*() { yield takeEvery(addIdMapEntry, considerSavingIdMapToIdb) },
 
+        function*() { yield takeEvery(addSpace, cleanupProjectSearchIndexOnSpaceUpdate)},
         function*() { yield takeEvery(pushSpaceRequest, noRaceSameId(pushSpace))},
         function*() { yield takeEvery(pushSpaceSuccess, logPushSpaceSuccess)},
         function*() { yield takeEvery(pushSpaceFailure, logPushSpaceFailure)},

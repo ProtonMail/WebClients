@@ -68,4 +68,14 @@ describe('removeIndexedContentForSpace', () => {
         expect(dispatch).not.toHaveBeenCalled();
         expect(removeDocumentsBySpace).toHaveBeenCalledWith('space-1');
     });
+
+    it('removes only drive documents when unlinking a folder', () => {
+        const removeDriveDocumentsBySpace = jest.fn();
+        (SearchService.get as jest.Mock).mockReturnValue({ removeDriveDocumentsBySpace });
+
+        removeIndexedContentForSpace('space-1', 'user-1', { documentScope: 'drive-only' });
+
+        expect(removeDriveDocumentsBySpace).toHaveBeenCalledWith('space-1');
+        expect(removeDocumentsBySpace).not.toHaveBeenCalled();
+    });
 });
