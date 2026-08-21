@@ -1489,13 +1489,13 @@
     },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
-        "${ LUMO_SHORT_APP_NAME } -ongelma"
+        "${ LUMO_SHORT_APP_NAME }-ongelma"
       ],
       "Application problem": [
         "Sovellusongelma"
       ],
       "Authenticator problem": [
-        "Todennusvirhe"
+        "Todentajan virhe"
       ],
       "Bridge problem": [
         "Bridge-ongelma"
@@ -4803,7 +4803,7 @@
         "Verkko"
       ],
       "Other category": [
-        "Muut aiheet"
+        "Muut kategoriat"
       ],
       "Services": [
         "Palvelut"
@@ -5188,7 +5188,7 @@
         "${ bookingDetails.duration } min"
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe kirjoitusavustaja"
+        "${ BRAND_NAME } Scribe -kirjoitusavustaja"
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }in salaustekniikan ansioista kukaan ei voi päästä käsiksi salasanaasi - emme edes me."
@@ -5231,7 +5231,7 @@
         "${ groupCounts } ryhmää löytyi"
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
-        "${ LUMO_APP_NAME } sisältää ${ BRAND_NAME } Scribe-kirjoitusavustajan"
+        "${ LUMO_APP_NAME } sisältää ${ BRAND_NAME } Scribe -kirjoitusavustajan"
       ],
       "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
         "${ MEET_APP_NAME } on päästä päähän -salattu videoneuvotteluratkaisu. Lisää se tilaukseenne järjestääksenne turvallisia kokouksia."
@@ -7802,10 +7802,10 @@
     },
     "mail_signup_2024: Info": {
       "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe kirjoitusavustaja"
+        "${ BRAND_NAME } Scribe -kirjoitusavustaja"
       ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
-        "Lisää ${ BRAND_NAME } Scribe kirjoitusavustaja"
+        "Lisää ${ BRAND_NAME } Scribe -kirjoitusavustaja"
       ],
       "Add-on with free trial": [
         "Lisäosa ilmaisella kokeilujaksolla"
@@ -8201,7 +8201,7 @@
     },
     "new_plans: feature": {
       "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe kirjoitusavustaja"
+        "${ BRAND_NAME } Scribe -kirjoitusavustaja"
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } ja ${ PROTON_SENTINEL_NAME }"
@@ -8486,7 +8486,7 @@
         "Selaimella käytettävä dokumenttieditori"
       ],
       "Organize items with multiple vaults": [
-        "Järjestele kohteita useilla holveilla"
+        "Järjestele kohteita useisiin holveihin"
       ],
       "Passkeys supported": [
         "Tuki pääsyavaimille"
@@ -11004,7 +11004,7 @@
         "Hanki rajattomasti aliaksia suojellaksesi henkilöllisyyttäsi ja vähentääksesi roskapostia."
       ],
       "Keep your passwords safe and organized in multiple vaults": [
-        "Pidä salasanasi turvassa ja järjestettynä useissa holveissa"
+        "Pidä salasanasi turvassa ja järjestyksessä useissa holveissa"
       ],
       "Protect your account from threats with Sentinel": [
         "Suojatkaa tilinne uhilta Sentinelin avulla"
@@ -11961,7 +11961,7 @@
         "${ appName }-pikanäppäimet"
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe kirjoitusavustaja"
+        "${ BRAND_NAME } Scribe -kirjoitusavustaja"
       ],
       "${ emailsCount } email address": [
         "${ emailsCount } sähköpostiosoite",
@@ -11971,7 +11971,7 @@
         "${ feature } on nyt käytössä"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
-        "Kirjoitusavustaja ${ LUMO_SHORT_APP_NAME }"
+        "${ LUMO_SHORT_APP_NAME }-kirjoitusavustaja"
       ],
       "Account recovery": [
         "Tilin palautus"
@@ -12815,7 +12815,7 @@
         "Tiedot on salattu vahvistetulla sähköisellä allekirjoituksella"
       ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
-        "Gmail lajittelee joitakin viestejä automaattisesti kategorioihin kuten Sosiaaliset verkostot ja Tarjoukset. Voit valita minne nämä viestit tuodaan."
+        "Gmail lajittelee joitakin viestejä automaattisesti kategorioihin kuten \"Sosiaaliset verkostot\" ja \"Tarjoukset\". Voit valita minne nämä viestit tuodaan."
       ],
       "Hide side panel": [
         "Piilota sivupaneeli"
