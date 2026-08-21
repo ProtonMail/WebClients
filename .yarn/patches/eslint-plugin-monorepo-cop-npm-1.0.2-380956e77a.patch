@@ -1,0 +1,13 @@
+diff --git a/lib/rules/no-relative-import-outside-package.js b/lib/rules/no-relative-import-outside-package.js
+index 468dae0284fa500afa78a2ff8ad8c219df22bda7..8c516f2aba881dd37a2e69d19a853bcd044989ca 100644
+--- a/lib/rules/no-relative-import-outside-package.js
++++ b/lib/rules/no-relative-import-outside-package.js
+@@ -62,7 +62,7 @@ module.exports = {
+         return null;
+       }
+ 
+-      const fileName = context.getFilename();
++      const fileName = context.filename;
+       const fileDir = path.dirname(fileName);
+       const importDir = path.resolve(fileDir, importBase);
+ 

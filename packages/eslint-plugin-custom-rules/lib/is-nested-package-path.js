@@ -1,4 +1,3 @@
-/* eslint-env es6 */
 const MONOREPO_ROOTS = ['applications', 'packages', 'tests'];
 
 export const normalizePackagePath = (packagePath) => {

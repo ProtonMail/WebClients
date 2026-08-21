@@ -1,4 +1,3 @@
-/* eslint-env jest */
 import type log from 'loglevel';
 
 const loglevel = jest.createMockFromModule<typeof log>('loglevel');

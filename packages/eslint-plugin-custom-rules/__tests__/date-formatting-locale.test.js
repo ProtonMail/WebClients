@@ -1,7 +1,5 @@
 import rule from '../date-formatting-locale';
 
-/* eslint-env es6 */
-
 const { RuleTester } = require('eslint');
 
 const ruleTester = new RuleTester({

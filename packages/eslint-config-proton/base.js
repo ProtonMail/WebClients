@@ -1,4 +1,5 @@
 //@ts-check
+import { fixupPluginRules } from '@eslint/compat';
 import protontechEnforceUint8ArrayArraybuffer from '@protontech/eslint-plugin-enforce-uint8array-arraybuffer';
 import compat from 'eslint-plugin-compat';
 import customRules from 'eslint-plugin-custom-rules';
@@ -20,7 +21,8 @@ export default defineConfig(
         plugins: {
             '@typescript-eslint': plugin,
             'custom-rules': customRules,
-            import: importPlugin,
+            // import still uses deprecated `context` methods removed in ESLint 10
+            import: fixupPluginRules(importPlugin),
             // monorepo-cop is legacy typed, so we need to cast it to the correct type
             'monorepo-cop': /** @type {import('eslint').ESLint.Plugin} */ (/** @type {unknown} */ (monorepoCop)),
             'no-only-tests': noOnlyTests,
@@ -70,6 +72,11 @@ export default defineConfig(
             sourceType: 'module',
             parserOptions: {
                 projectService: true, // auto-detect nearest tsconfig
+                // Required because lint-staged can invoke ESLint with files from multiple
+                // sibling workspaces in a single run; without this, `@typescript-eslint/parser`
+                // can't disambiguate between candidate roots and fails with a parsing error.
+                // See https://tseslint.com/parser-tsconfigrootdir
+                tsconfigRootDir: process.cwd(),
             },
         },
         rules: {

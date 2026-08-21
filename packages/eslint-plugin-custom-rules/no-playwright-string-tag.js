@@ -1,4 +1,3 @@
-/* eslint-env es6 */
 const isObjectTagField = (node) => {
     return node && node.type === 'Property' && node.key && node.key.type === 'Identifier' && node.key.name === 'tag';
 };

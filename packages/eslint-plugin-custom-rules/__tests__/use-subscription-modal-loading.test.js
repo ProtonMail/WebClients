@@ -1,7 +1,5 @@
 import rule from '../use-subscription-modal-loading';
 
-/* eslint-env es6 */
-
 const { RuleTester } = require('eslint');
 
 const ruleTester = new RuleTester({
