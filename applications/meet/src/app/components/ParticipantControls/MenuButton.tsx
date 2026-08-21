@@ -30,7 +30,7 @@ import { SlideClosable } from '../SlideClosable/SlideClosable';
 
 import './MenuButton.scss';
 
-export const MenuButton = () => {
+export const MenuButton = ({ onOpenDeviceState }: { onOpenDeviceState: () => void }) => {
     const dispatch = useMeetDispatch();
     const { isEnabled: isDebugEnabled, open: openDebugOverlay } = useDebugOverlayContext();
 
@@ -110,6 +110,14 @@ export const MenuButton = () => {
                       label: c('Alt').t`Debug overlay`,
                       onClick: () => {
                           openDebugOverlay();
+                          setIsOpen(false);
+                      },
+                  },
+                  {
+                      icon: IcBug,
+                      label: c('Alt').t`Debug devices`,
+                      onClick: () => {
+                          onOpenDeviceState();
                           setIsOpen(false);
                       },
                   },
