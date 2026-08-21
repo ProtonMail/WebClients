@@ -1,0 +1,37 @@
+.captions {
+	block-size: 4.5rem;
+	font-size: 0.875rem;
+	font-weight: var(--font-weight-weak);
+
+	&__line {
+		padding-block: 0.1rem;
+
+		&--old .captions__text {
+			color: color-mix(in srgb, var(--text-norm) 55%, transparent);
+		}
+	}
+
+	&__text {
+		transition: color 0.3s ease;
+	}
+
+	&__cursor {
+		display: inline-block;
+		inline-size: 0.09em;
+		block-size: 1em;
+		margin-inline-start: 0.4em;
+		vertical-align: baseline;
+		background: currentcolor;
+		animation: caption-cursor-linger 1s steps(1, end) forwards;
+	}
+}
+
+@keyframes caption-cursor-linger {
+	from {
+		opacity: 1;
+	}
+
+	to {
+		opacity: 0;
+	}
+}

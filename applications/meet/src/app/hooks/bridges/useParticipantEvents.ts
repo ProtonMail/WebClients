@@ -6,6 +6,7 @@ import type { Participant } from 'livekit-client';
 import { useMeetDispatch } from '@proton/meet/store/hooks';
 import { addEvent } from '@proton/meet/store/slices/chatAndReactionsSlice';
 import { ParticipantEvent } from '@proton/meet/types/types';
+import { isCaptionAgentIdentity } from '@proton/meet/utils/agents';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { JOIN_SOUND_NOTIFICATION_PARTICIPANT_LIMIT } from '../../constants';
@@ -41,34 +42,41 @@ export const useParticipantEvents = () => {
         };
 
         const handleParticipantConnected = async (participant: Participant) => {
-            dispatch(
-                addEvent([
-                    {
-                        identity: participant.identity,
-                        eventType: ParticipantEvent.Join,
-                        timestamp: Date.now(),
-                        type: 'event',
-                    },
-                ])
-            );
+            if (!isCaptionAgentIdentity(participant.identity)) {
+                dispatch(
+                    addEvent([
+                        {
+                            identity: participant.identity,
+                            eventType: ParticipantEvent.Join,
+                            timestamp: Date.now(),
+                            type: 'event',
+                            isAgent: participant.isAgent,
+                        },
+                    ])
+                );
 
-            if (room.numParticipants <= JOIN_SOUND_NOTIFICATION_PARTICIPANT_LIMIT && areSoundNotificationsEnabled) {
-                playAudio();
+                if (room.numParticipants <= JOIN_SOUND_NOTIFICATION_PARTICIPANT_LIMIT && areSoundNotificationsEnabled) {
+                    playAudio();
+                }
             }
+
             await updateActiveUuids();
         };
 
         const handleParticipantDisconnected = async (participant: Participant) => {
-            dispatch(
-                addEvent([
-                    {
-                        identity: participant.identity,
-                        eventType: ParticipantEvent.Leave,
-                        timestamp: Date.now(),
-                        type: 'event',
-                    },
-                ])
-            );
+            if (!isCaptionAgentIdentity(participant.identity)) {
+                dispatch(
+                    addEvent([
+                        {
+                            identity: participant.identity,
+                            eventType: ParticipantEvent.Leave,
+                            timestamp: Date.now(),
+                            type: 'event',
+                            isAgent: participant.isAgent,
+                        },
+                    ])
+                );
+            }
 
             await updateActiveUuids();
         };

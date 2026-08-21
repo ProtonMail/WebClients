@@ -4,6 +4,8 @@ import { configureStore } from '@reduxjs/toolkit';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import NotificationsProvider from '@proton/components/containers/notifications/Provider';
+import { connectionReducer, initialState as initialConnectionState } from '@proton/meet/store/slices/connectionSlice';
 import {
     initialState as initialParticipantsState,
     participantsReducer,
@@ -16,12 +18,30 @@ import { screenShareStatusReducer } from '@proton/meet/store/slices/screenShareS
 import type { MeetSettingsState } from '@proton/meet/store/slices/settings';
 import { settingsReducer } from '@proton/meet/store/slices/settings';
 import { MeetingSideBars, uiStateReducer } from '@proton/meet/store/slices/uiStateSlice';
+import { meetUserReducer } from '@proton/meet/store/slices/userSlice';
 import { ParticipantCapabilityPermission } from '@proton/meet/types/types';
 import { ProtonStoreContext } from '@proton/react-redux-store';
 
 import type { MeetContextValues } from '../../contexts/MeetContext';
 import { MeetContext } from '../../contexts/MeetContext';
+import { WANTS_CAPTIONS_ATTR } from '../../hooks/captions/useCaptionsPreference';
 import { Settings } from './Settings';
+
+const localAttributes = vi.hoisted(() => ({ current: {} as Record<string, string> }));
+
+vi.mock('@livekit/components-react', () => ({
+    useRoomContext: () => ({
+        localParticipant: { attributes: localAttributes.current, setAttributes: vi.fn() },
+        remoteParticipants: new Map(),
+        on: vi.fn(),
+        off: vi.fn(),
+    }),
+    useParticipantAttributes: () => ({ attributes: localAttributes.current }),
+}));
+
+vi.mock('@proton/unleash/useFlag', () => ({
+    useFlag: (flag: string) => flag === 'MeetLiveCaptions',
+}));
 
 const createMockStore = (
     settingsState: Partial<MeetSettingsState> = {},
@@ -35,6 +55,8 @@ const createMockStore = (
             ...participantsReducer,
             ...screenShareStatusReducer,
             ...sortedParticipantsReducer,
+            ...connectionReducer,
+            ...meetUserReducer,
         },
         preloadedState: {
             meetSettings: {
@@ -76,6 +98,14 @@ const createMockStore = (
             sortedParticipants: {
                 ...initialSortedParticipantsState,
             },
+            // Settings are only reachable from inside a meeting.
+            connection: {
+                ...initialConnectionState,
+                joinedRoom: true,
+            },
+            meetUser: {
+                isGuest: false,
+            },
         },
     });
 };
@@ -99,13 +129,21 @@ const Wrapper = ({
 
     return (
         <Provider context={ProtonStoreContext} store={store}>
-            {/* @ts-expect-error - contextValue is a partial MeetContextValues */}
-            <MeetContext.Provider value={{ ...mockContextValues, ...contextValue }}>{children}</MeetContext.Provider>
+            <NotificationsProvider>
+                {/* @ts-expect-error - contextValue is a partial MeetContextValues */}
+                <MeetContext.Provider value={{ ...mockContextValues, ...contextValue }}>
+                    {children}
+                </MeetContext.Provider>
+            </NotificationsProvider>
         </Provider>
     );
 };
 
 describe('Settings', () => {
+    beforeEach(() => {
+        localAttributes.current = {};
+    });
+
     it('should have the correct title', () => {
         render(
             <Wrapper>
@@ -161,5 +199,72 @@ describe('Settings', () => {
 
         expect(screen.getByText('Security')).toBeInTheDocument();
         expect(screen.getByText('Lock meeting')).toBeInTheDocument();
+    });
+
+    it('should show the live captions accessibility option', () => {
+        render(
+            <Wrapper>
+                <Settings />
+            </Wrapper>
+        );
+
+        expect(screen.getByText('Accessibility')).toBeInTheDocument();
+        expect(screen.getByRole('checkbox', { name: 'Live captions' })).toBeInTheDocument();
+    });
+
+    it('should only offer the spoken language while live captions are on', () => {
+        const { rerender } = render(
+            <Wrapper>
+                <Settings />
+            </Wrapper>
+        );
+
+        expect(screen.queryByText('Spoken language')).not.toBeInTheDocument();
+
+        localAttributes.current = { [WANTS_CAPTIONS_ATTR]: 'true' };
+        rerender(
+            <Wrapper>
+                <Settings />
+            </Wrapper>
+        );
+
+        expect(screen.getByText('Spoken language')).toBeInTheDocument();
+    });
+
+    // The captions bar takes its height from the panel, so the section can end up below the fold.
+    it('scrolls the captions setting back into view once captions are turned on', () => {
+        const scrollIntoView = vi.spyOn(Element.prototype, 'scrollIntoView').mockImplementation(() => {});
+
+        const { rerender } = render(
+            <Wrapper>
+                <Settings />
+            </Wrapper>
+        );
+
+        expect(scrollIntoView).not.toHaveBeenCalled();
+
+        localAttributes.current = { [WANTS_CAPTIONS_ATTR]: 'true' };
+        rerender(
+            <Wrapper>
+                <Settings />
+            </Wrapper>
+        );
+
+        expect(scrollIntoView).toHaveBeenCalled();
+        scrollIntoView.mockRestore();
+    });
+
+    it('leaves the panel at the top when it is opened with captions already on', () => {
+        const scrollIntoView = vi.spyOn(Element.prototype, 'scrollIntoView').mockImplementation(() => {});
+        localAttributes.current = { [WANTS_CAPTIONS_ATTR]: 'true' };
+
+        render(
+            <Wrapper>
+                <Settings />
+            </Wrapper>
+        );
+
+        expect(scrollIntoView).not.toHaveBeenCalled();
+        scrollIntoView.mockRestore();
     });
 });

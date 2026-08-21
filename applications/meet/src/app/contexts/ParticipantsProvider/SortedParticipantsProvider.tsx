@@ -6,6 +6,7 @@ import { type Participant, RoomEvent } from 'livekit-client';
 import { useHandler } from '@proton/components/hooks/useHandler';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { selectRaisedHands } from '@proton/meet/store/slices/chatAndReactionsSlice';
+import { setAgentIdentities } from '@proton/meet/store/slices/participants/agentParticipantsSlice';
 import { setLocalParticipantIdentity } from '@proton/meet/store/slices/participants/participantsSlice';
 import {
     removeSortedParticipant,
@@ -15,12 +16,15 @@ import {
     updateSortedParticipants,
 } from '@proton/meet/store/slices/participants/sortedParticipantsSlice';
 
+import { PARTICIPANT_SET_EVENTS } from '../../constants';
+
+// `isAgent` derives from `permissions.agent`, so the agents split can change without anyone joining.
 const updateOnlyOn = [
-    RoomEvent.ParticipantConnected,
-    RoomEvent.ParticipantDisconnected,
-    RoomEvent.Connected,
+    ...PARTICIPANT_SET_EVENTS,
     RoomEvent.Disconnected,
-    RoomEvent.Reconnected,
+    RoomEvent.ParticipantPermissionsChanged,
+    RoomEvent.ParticipantMetadataChanged,
+    RoomEvent.ParticipantNameChanged,
 ];
 
 const ParticipantsMapContext = createContext<Map<string, Participant>>(new Map());
@@ -28,9 +32,21 @@ const ParticipantsMapContext = createContext<Map<string, Participant>>(new Map()
 export const SortedParticipantsProvider = ({ children }: { children: React.ReactNode }) => {
     const dispatch = useMeetDispatch();
     const room = useRoomContext();
-    const participants = useParticipants({
+    const allParticipants = useParticipants({
         updateOnlyOn,
     });
+    const { humans: participants, agents } = useMemo(() => {
+        const humans: Participant[] = [];
+        const agents: string[] = [];
+        for (const p of allParticipants) {
+            if (p.isAgent) {
+                agents.push(p.identity);
+            } else {
+                humans.push(p);
+            }
+        }
+        return { humans, agents };
+    }, [allParticipants]);
     const participantsMap = useMemo(
         () =>
             new Map(
@@ -66,6 +82,10 @@ export const SortedParticipantsProvider = ({ children }: { children: React.React
     const raisedHands = useMeetSelector(selectRaisedHands);
 
     useEffect(() => {
+        dispatch(setAgentIdentities(agents));
+    }, [agents, dispatch]);
+
+    useEffect(() => {
         throttledUpdateSortedParticipants();
     }, [
         participants,
@@ -90,7 +110,9 @@ export const SortedParticipantsProvider = ({ children }: { children: React.React
         };
     }, [throttledUpdateSortedParticipants, handleConnected, handleDisconnected, handleParticipantDisconnected, room]);
 
-    return <ParticipantsMapContext.Provider value={participantsMap}>{children}</ParticipantsMapContext.Provider>;
+    return (
+        <ParticipantsMapContext.Provider value={participantsMap}>{children}</ParticipantsMapContext.Provider>
+    );
 };
 
 export const useParticipantsMapContext = () => {

@@ -1,5 +1,7 @@
 import {
     resetMeetCoreCallbacks,
+    setMeetCoreAgentLeftCallback,
+    setMeetCoreAgentPendingCallback,
     setMeetCoreCallbacks,
     setMeetCoreLivekitAdminChangeCallback,
 } from '../wasm/meetCoreCallbacks';
@@ -42,6 +44,12 @@ declare global {
                 expiresAt: number
             ) => void;
         };
+        agentPendingEvent: {
+            on_agent_pending: (device_id: string) => Promise<void>;
+        };
+        agentLeftEvent: {
+            on_agent_left: (device_id: string) => Promise<void>;
+        };
     }
 }
 
@@ -78,6 +86,8 @@ export const cleanupWasmDependencies = () => {
     };
     window.disconnectionEvent = { disconnection_handler: async () => {} };
     window.mlsSyncStateChangeEvent = { on_mls_sync_state_changed: async () => {} };
+    window.agentPendingEvent = { on_agent_pending: async () => {} };
+    window.agentLeftEvent = { on_agent_left: async () => {} };
 
     resetMeetCoreCallbacks();
 };
@@ -151,4 +161,28 @@ export const setupLiveKitAdminChangeEvent = ({ onLiveKitAdminChanged }: SetupLiv
     };
 
     setMeetCoreLivekitAdminChangeCallback(callback);
+};
+
+interface SetupAgentPendingEventParameters {
+    onAgentPending: (deviceId: string) => Promise<void>;
+}
+
+export const setupAgentPendingEvent = ({ onAgentPending }: SetupAgentPendingEventParameters) => {
+    window.agentPendingEvent = {
+        on_agent_pending: onAgentPending,
+    };
+
+    setMeetCoreAgentPendingCallback(onAgentPending);
+};
+
+interface SetupAgentLeftEventParameters {
+    onAgentLeft: (deviceId: string) => Promise<void>;
+}
+
+export const setupAgentLeftEvent = ({ onAgentLeft }: SetupAgentLeftEventParameters) => {
+    window.agentLeftEvent = {
+        on_agent_left: onAgentLeft,
+    };
+
+    setMeetCoreAgentLeftCallback(onAgentLeft);
 };

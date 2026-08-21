@@ -5,6 +5,7 @@ import { selectEvents } from '@proton/meet/store/slices/chatAndReactionsSlice';
 import { selectParticipantDecryptedNameMap } from '@proton/meet/store/slices/participants/participantsSlice';
 import { ParticipantEvent } from '@proton/meet/types/types';
 
+import { getAgentDisplayInfo } from '../../../utils/getAgentDisplayInfo';
 import { announcementMessages } from '../messages';
 import { useAnnounce } from '../useAnnounce';
 
@@ -31,7 +32,7 @@ export const useParticipantAnnouncements = () => {
                 continue;
             }
 
-            const name = nameMap[event.identity];
+            const name = event.isAgent ? getAgentDisplayInfo(event.identity).displayName : nameMap[event.identity];
 
             // Joins fire before the display name is decrypted; wait for it so we can
             // announce the participant by name rather than the generic fallback. The effect
