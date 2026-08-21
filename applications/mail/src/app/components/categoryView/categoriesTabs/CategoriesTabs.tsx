@@ -6,13 +6,11 @@ import { useCategoriesTelemetry } from '@proton/mail/features/categoriesView/use
 import { selectCategoryUnreadCount } from '@proton/mail/store/categoriesView/categoriesViewSelector';
 import { updateLastSeenEventId } from '@proton/mail/store/labels/actions';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 import { selectActiveCategoryID, selectCategoryIDs } from '../../../store/elements/elementsSelectors';
 import { useMailSelector } from '../../../store/hooks';
 import { selectDraggingElements, selectSelectAll } from '../../../store/layout/layoutSliceSelectors';
-
 import { useCategoriesOnboarding } from '../categoriesOnboarding/CategoriesOnboardingContext';
 import { CategoriesOnboardingSpotlight } from '../categoriesOnboarding/CategoriesOnboardingSpotlights';
 import { useCategoriesView } from '../useCategoriesView';
@@ -87,7 +85,7 @@ export const CategoriesTabsList = () => {
                 onDragLeave={handleDragLeave}
                 onDragEnd={handleDragEnd}
             >
-                {activeCategoriesTabs.map((category) => {
+                {activeCategoriesTabs.map((category, idx) => {
                     const tabState = getTabState({
                         category,
                         draggedOverCategoryId,
@@ -95,8 +93,9 @@ export const CategoriesTabsList = () => {
                         selectAll,
                     });
 
-                    const isSocialCategory = category.id === MAILBOX_LABEL_IDS.CATEGORY_SOCIAL;
-                    if (isSocialCategory && socialTabSpotlightStep) {
+                    // Show the spotlight on the second tab.
+                    // It will be social most of the time but some users might have changed categories
+                    if (idx === 1 && socialTabSpotlightStep) {
                         return (
                             <CategoriesOnboardingSpotlight step={socialTabSpotlightStep} key={category.id}>
                                 <div
