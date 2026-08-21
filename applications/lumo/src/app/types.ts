@@ -429,6 +429,42 @@ export type MessagePriv = {
     // rather than ordinary content: it records how the conversation was condensed
     // and is rendered as a divider in the UI. See CompactionMeta.
     compaction?: CompactionMeta;
+
+    // Exact token usage reported by the backend for the request that produced this
+    // (assistant) message. Used to anchor context-size estimates on real numbers
+    // instead of the local ~4-chars/token approximation. Absent on older messages
+    // and on requests where the backend did not report usage. See MessageUsage.
+    usage?: MessageUsage;
+};
+
+/**
+ * Backend-reported token usage for the request that produced an assistant message.
+ *
+ * `promptTokens`/`completionTokens`/`totalTokens` come verbatim from the SSE
+ * `usage` chunk (exact, server-tokenized).
+ * `ctxFilesTokenEstimate` is our own estimate of the file attachments that were active
+ * in that request.
+ * If we want to estimate the token count for a new request, but the user changes the
+ * files that are active in the conversation, we can subtract the estimated token count
+ * for the files in the previous context data, and add the estimated token count for the
+ * current files.
+ * If the attached files are the same, the token count is exact, if they change,
+ * the estimate differs depending on the accuracy of our estimate of the changed files.
+ *
+ * The version number is here so we can bump it when we change the way we estimate the
+ * token count for files, to avoid under or overestimating the token count for a message.
+ *
+ * All fields are optional: store
+ * whatever the backend provided without assuming completeness.
+ */
+export type MessageUsage = {
+    promptTokens?: number;
+    completionTokens?: number;
+    totalTokens?: number;
+    ctxFilesTokenEstimate?: number;
+    // This has a version number, because if we change the way we estimate the token count for files,
+    // we cannot use persisted estimates calculated with the old logic.
+    tokenEstimateVersion?: number;
 };
 
 export type Message = MessagePub & MessagePriv;
@@ -488,7 +524,8 @@ export function isMessagePriv(value: any): value is MessagePriv {
         (value.suggestedQuestions === undefined || Array.isArray(value.suggestedQuestions)) &&
         (value.modelID === undefined || typeof value.modelID === 'string') &&
         (value.requestedModel === undefined || typeof value.requestedModel === 'string') &&
-        (value.compaction === undefined || (typeof value.compaction === 'object' && value.compaction !== null))
+        (value.compaction === undefined || (typeof value.compaction === 'object' && value.compaction !== null)) &&
+        (value.usage === undefined || (typeof value.usage === 'object' && value.usage !== null))
     );
 }
 
@@ -513,6 +550,7 @@ export function getMessagePriv(m: MessagePriv): MessagePriv {
         modelID,
         requestedModel,
         compaction,
+        usage,
     } = m;
     return {
         content,
@@ -529,6 +567,7 @@ export function getMessagePriv(m: MessagePriv): MessagePriv {
         modelID,
         requestedModel,
         compaction,
+        usage,
     };
 }
 
@@ -566,6 +605,7 @@ export function cleanMessage(message: Message): Message {
         modelID,
         requestedModel,
         compaction,
+        usage,
     } = message;
     return {
         id,
@@ -589,6 +629,7 @@ export function cleanMessage(message: Message): Message {
         ...(modelID !== undefined && { modelID }),
         ...(requestedModel !== undefined && { requestedModel }),
         ...(compaction !== undefined && { compaction }),
+        ...(usage !== undefined && { usage }),
     };
 }
 
@@ -639,7 +680,8 @@ export function isEmptyMessagePriv(value: MessagePriv): boolean {
         value.suggestedQuestions === undefined &&
         value.modelID === undefined &&
         value.requestedModel === undefined &&
-        value.compaction === undefined
+        value.compaction === undefined &&
+        value.usage === undefined
     );
 }
 

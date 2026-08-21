@@ -1,6 +1,7 @@
 import { createAction, createReducer } from '@reduxjs/toolkit';
 import { v4 as uuidv4 } from 'uuid';
 
+import { countAttachmentToken, countAttachmentTokenVersion } from '../../../llm/utils';
 import { appendTextToBlocks, setToolCallInBlocks, setToolResultInBlocks } from '../../../messageHelpers';
 import type { Priority } from '../../../remote/scheduler';
 import type { IdMapEntry, RemoteMessage } from '../../../remote/types';
@@ -10,8 +11,11 @@ import type {
     Message,
     MessageId,
     MessagePub,
+    MessageUsage,
     ShallowAttachment,
 } from '../../../types';
+import type { LumoStreamUsage } from '../../../types-api';
+import type { LumoDispatch, LumoState } from '../../store';
 
 export type PushMessageRequest = {
     id: MessageId;
@@ -34,6 +38,16 @@ export type SetSuggestedQuestionsAction = {
     questions: string[];
 };
 
+export type SetMessageUsageAction = {
+    messageId: MessageId;
+    usage: MessageUsage;
+};
+
+export type SetMessageModelIDAction = {
+    messageId: MessageId;
+    modelID: string;
+};
+
 // Low-level Redux store operations without side effects.
 export const addMessage = createAction<MessagePub>('lumo/message/add');
 export const appendChunk = createAction<ChunkAction>('lumo/message/appendChunk');
@@ -41,6 +55,8 @@ export const appendReasoning = createAction<ChunkAction>('lumo/message/appendRea
 export const setToolCall = createAction<ChunkAction>('lumo/message/setToolCall');
 export const setToolResult = createAction<ChunkAction>('lumo/message/setToolResult');
 export const setSuggestedQuestions = createAction<SetSuggestedQuestionsAction>('lumo/message/setSuggestedQuestions');
+export const setMessageUsage = createAction<SetMessageUsageAction>('lumo/message/setUsage');
+export const setMessageModelID = createAction<SetMessageModelIDAction>('lumo/message/setModelID');
 export const addImageAttachment = createAction<AddImageAttachmentAction>('lumo/message/addImageAttachment');
 export const finishMessage = createAction<FinishMessageAction>('lumo/message/finish');
 export const deleteMessage = createAction<MessageId>('lumo/message/delete');
@@ -167,6 +183,25 @@ const messagesReducer = createReducer<MessageMap>(EMPTY_MESSAGE_MAP, (builder) =
             }
             message.suggestedQuestions = questions;
         })
+        .addCase(setMessageUsage, (state, action) => {
+            const { messageId, usage } = action.payload;
+            const message = state[messageId];
+            if (!message) {
+                console.warn(`setMessageUsage: message ${messageId} not found`);
+                return;
+            }
+            // Merge so partial updates don't clobber previously stored fields.
+            message.usage = { ...message.usage, ...usage };
+        })
+        .addCase(setMessageModelID, (state, action) => {
+            const { messageId, modelID } = action.payload;
+            const message = state[messageId];
+            if (!message) {
+                console.warn(`setMessageModelID: message ${messageId} not found`);
+                return;
+            }
+            message.modelID = modelID;
+        })
         .addCase(addImageAttachment, (state, action) => {
             const { messageId, attachment } = action.payload;
             const message = state[messageId];
@@ -205,34 +240,93 @@ const messagesReducer = createReducer<MessageMap>(EMPTY_MESSAGE_MAP, (builder) =
         .addCase(deleteAllMessages, () => {
             return EMPTY_MESSAGE_MAP;
         })
-        .addCase(pushMessageRequest, (state, _action) => {
+        .addCase(pushMessageRequest, (state) => {
             return state;
         })
-        .addCase(pushMessageSuccess, (state, _action) => {
+        .addCase(pushMessageSuccess, (state) => {
             return state;
         })
-        .addCase(pushMessageNoop, (state, _action) => {
+        .addCase(pushMessageNoop, (state) => {
             return state;
         })
-        .addCase(pushMessageNeedsRetry, (state, _action) => {
+        .addCase(pushMessageNeedsRetry, (state) => {
             return state;
         })
-        .addCase(pushMessageFailure, (state, _action) => {
+        .addCase(pushMessageFailure, (state) => {
             return state;
         })
-        .addCase(locallyRefreshMessageFromRemoteRequest, (state, _action) => {
+        .addCase(locallyRefreshMessageFromRemoteRequest, (state) => {
             return state;
         })
-        .addCase(pullMessageRequest, (state, _action) => {
+        .addCase(pullMessageRequest, (state) => {
             return state;
         })
-        .addCase(pullMessageSuccess, (state, _action) => {
+        .addCase(pullMessageSuccess, (state) => {
             return state;
         })
-        .addCase(pullMessageFailure, (state, _action) => {
+        .addCase(pullMessageFailure, (state) => {
             return state;
         });
 });
+
+/**
+ * Persist backend-reported usage onto an assistant message.
+ *
+ * Reads the raw SSE `usage` payload and stores `model` on `message.modelID` (for
+ * feedback) when present. Token counts are mapped to `message.usage`; using the
+ * message's `contextFiles`, computes `ctxFilesTokenEstimate` (our estimate of the
+ * file attachments that were active in that request) so a file-independent baseline
+ * can be reconstructed later. Stores nothing when usage is absent or carries neither
+ * token counts nor a model id, and never throws on missing/partial data.
+ */
+export function recordMessageUsage(messageId: MessageId, usage: LumoStreamUsage | undefined) {
+    return (dispatch: LumoDispatch, getState: () => LumoState): void => {
+        if (!usage) {
+            return;
+        }
+
+        const {
+            prompt_tokens: promptTokens,
+            completion_tokens: completionTokens,
+            total_tokens: totalTokens,
+            model,
+        } = usage;
+
+        if (model) {
+            dispatch(setMessageModelID({ messageId, modelID: model }));
+        }
+
+        const hasTokenCounts =
+            promptTokens !== undefined || completionTokens !== undefined || totalTokens !== undefined;
+        if (!hasTokenCounts) {
+            return;
+        }
+
+        const state = getState();
+        const message = state.messages[messageId];
+
+        let ctxFilesTokenEstimate: number | undefined;
+        const tokenEstimateVersion: number = countAttachmentTokenVersion;
+        const contextFiles = message?.contextFiles;
+        if (contextFiles && contextFiles.length > 0) {
+            const attachments = state.attachments;
+            ctxFilesTokenEstimate = contextFiles.reduce((sum, id) => {
+                const attachment = attachments[id];
+                return sum + (attachment ? countAttachmentToken(attachment) : 0);
+            }, 0);
+        }
+
+        const next: MessageUsage = {
+            ...(promptTokens !== undefined && { promptTokens }),
+            ...(completionTokens !== undefined && { completionTokens }),
+            ...(totalTokens !== undefined && { totalTokens }),
+            ...(ctxFilesTokenEstimate !== undefined && { ctxFilesTokenEstimate }),
+            ...(tokenEstimateVersion !== undefined && { tokenEstimateVersion }),
+        };
+
+        dispatch(setMessageUsage({ messageId, usage: next }));
+    };
+}
 
 export function newMessageId(): MessageId {
     return uuidv4();
