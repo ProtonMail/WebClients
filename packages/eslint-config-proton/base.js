@@ -1,9 +1,11 @@
 //@ts-check
 import { fixupPluginRules } from '@eslint/compat';
 import protontechEnforceUint8ArrayArraybuffer from '@protontech/eslint-plugin-enforce-uint8array-arraybuffer';
+import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript';
 import compat from 'eslint-plugin-compat';
 import customRules from 'eslint-plugin-custom-rules';
 import importPlugin from 'eslint-plugin-import';
+import { createNodeResolver, importX } from 'eslint-plugin-import-x';
 import lodash from 'eslint-plugin-lodash';
 import monorepoCop from 'eslint-plugin-monorepo-cop';
 import noOnlyTests from 'eslint-plugin-no-only-tests';
@@ -23,6 +25,7 @@ export default defineConfig(
             'custom-rules': customRules,
             // import still uses deprecated `context` methods removed in ESLint 10
             import: fixupPluginRules(importPlugin),
+            'import-x': importX,
             // monorepo-cop is legacy typed, so we need to cast it to the correct type
             'monorepo-cop': /** @type {import('eslint').ESLint.Plugin} */ (/** @type {unknown} */ (monorepoCop)),
             'no-only-tests': noOnlyTests,
@@ -187,7 +190,6 @@ export default defineConfig(
             'no-nested-ternary': 'warn',
             'no-param-reassign': 'off',
             'no-plusplus': 'off',
-            'import/no-cycle': 'error',
 
             'no-restricted-syntax': [
                 'error',
@@ -283,6 +285,24 @@ export default defineConfig(
             'import/no-named-as-default-member': 'warn',
 
             /**
+             * Cycle detection comes from `eslint-plugin-import-x` because `eslint-plugin-import`'s
+             * `no-cycle` accounted for >90% of total rule time across the monorepo.
+             *
+             * With `ignoreExternal: true`, import-x skips imports classified as "external" by
+             * `isExternalModule`. That classification is broader than
+             * `import-x/external-module-folders` alone: a resolved path is external when it is
+             * either outside the linting package root (pkgUp from the file being linted) or under
+             * one of the configured external-module folders (here `node_modules`).
+             *
+             * In this Yarn workspace, `@proton/*` imports follow symlinks to real paths under
+             * `packages/` or `applications/`, which sit outside the linting package folder, so
+             * cross-package edges are generally not traversed even though they are not in
+             * `node_modules`. npm dependencies resolve under the repo-root `node_modules/` and
+             * are external for the same outside-package-folder reason.
+             */
+            'import-x/no-cycle': ['error', { ignoreExternal: true }],
+
+            /**
              * NOTE: We use `no-duplicate-imports` with `allowSeparateTypeImports: true`
              * instead of `import/no-duplicates` because the import plugin's fixer is
              * broken in certain cases.
@@ -322,6 +342,12 @@ export default defineConfig(
                 },
                 typescript: true,
             },
+            'import-x/extensions': allExtensions,
+            'import-x/external-module-folders': ['node_modules', 'node_modules/@types'],
+            'import-x/resolver-next': [
+                createTypeScriptImportResolver({ alwaysTryTypes: true }),
+                createNodeResolver({ extensions: allExtensions }),
+            ],
         },
     },
     {
