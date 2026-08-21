@@ -38,10 +38,14 @@ export const calculateMessageContentTokens = (messageChain: Message[]): number =
 };
 
 // Calculate estimated tokn size for a single attachment
+export const countAttachmentTokenVersion = 1;
 export const countAttachmentToken = (attachment: Attachment): number => {
     if (!attachment || attachment.processing || !attachment.filename) {
         return 0;
     }
+
+    // IMPORTANT: If we change the logic here,
+    // we need to bump countAttachmentTokenVersion!
 
     // Prefer the cached token count. This must come before the markdown check:
     // historical/shallow attachments keep `tokenCount` but have their `markdown`
