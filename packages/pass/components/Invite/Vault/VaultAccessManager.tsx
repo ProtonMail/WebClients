@@ -8,7 +8,7 @@ import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import { AccessLimitPrompt } from '@proton/pass/components/Invite/Access/AccessLimitPrompt';
 import { AccessList } from '@proton/pass/components/Invite/Access/AccessList';
 import { AccessUpgrade } from '@proton/pass/components/Invite/Access/AccessUpgrade';
-import { useInviteActions } from '@proton/pass/components/Invite/InviteProvider';
+import { useInviteActions } from '@proton/pass/components/Invite/InviteContext';
 import { VaultHeading } from '@proton/pass/components/Invite/Vault/VaultHeading';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';

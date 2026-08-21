@@ -1,5 +1,5 @@
 import { PassCrypto } from '@proton/pass/lib/crypto';
-import { getAllShareKeys, getShareLatestEventId } from '@proton/pass/lib/shares/share.requests';
+import { getAllShareKeys, getShareLatestEventId } from '@proton/pass/lib/shares/share.keys';
 import { SYNC_STRATEGY } from '@proton/pass/lib/sync/global';
 import { SyncStrategy } from '@proton/pass/lib/sync/types';
 import { decodeVaultContent } from '@proton/pass/lib/vaults/vault-proto.transformer';

@@ -6,7 +6,7 @@ import { c } from 'ttag';
 
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { getClipboardTTLOptions } from '@proton/pass/components/Settings/Clipboard/ClipboardSettings';
+import { getClipboardTTLOptions } from '@proton/pass/components/Settings/Clipboard/ClipboardSettings.utils';
 import { ClipboardSettingsModal } from '@proton/pass/components/Settings/Clipboard/ClipboardSettingsModal';
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
 import { ClipboardTTL } from '@proton/pass/lib/clipboard/types';

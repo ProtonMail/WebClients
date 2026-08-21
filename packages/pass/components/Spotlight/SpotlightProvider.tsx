@@ -1,41 +1,27 @@
 import type { FC, PropsWithChildren } from 'react';
-import { createContext, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { useInviteActions, useLatestInvite } from '@proton/pass/components/Invite/InviteProvider';
+import { useInviteActions, useLatestInvite } from '@proton/pass/components/Invite/InviteContext';
 import { PendingNewUsersApprovalModal } from '@proton/pass/components/Invite/Member/PendingNewUsersApprovalModal';
 import { PendingShareAccessModal } from '@proton/pass/components/Invite/Member/PendingShareAccessModal';
 import type { SpotlightMessageDefinition } from '@proton/pass/components/Spotlight/SpotlightContent';
-import { createUseContext } from '@proton/pass/hooks/useContextFactory';
+import { SpotlightContext, type SpotlightContextValue } from '@proton/pass/components/Spotlight/SpotlightContext';
 import { useStatefulRef } from '@proton/pass/hooks/useStatefulRef';
 import { selectHasPendingShareAccess } from '@proton/pass/store/selectors';
 import { InviteType, type MaybeNull, ShareType, SpotlightMessage } from '@proton/pass/types';
 
 import { InviteIcon } from './SpotlightIcon';
 
-type SpotlightState = {
-    open: boolean;
-    pendingShareAccess: boolean;
-    message: MaybeNull<SpotlightMessageDefinition>;
-};
-
-export type SpotlightContextValue = {
-    /** Acknowledges the provided spotlight message type.
-     * Resets the SpotlightContext's current message to `null` */
-    acknowledge: (messageType: SpotlightMessage) => void;
-    /** Controls the Pending Share Access modal */
-    setPendingShareAccess: (value: boolean) => void;
-    /** Sets the current message - if an invite  */
-    setSpotlight: (message: MaybeNull<SpotlightMessageDefinition>) => void;
-    state: SpotlightState;
-};
+type SpotlightState = SpotlightContextValue['state'];
 
 const INITIAL_STATE: SpotlightState = { open: false, message: null, pendingShareAccess: false };
 
-export const SpotlightContext = createContext<MaybeNull<SpotlightContextValue>>(null);
+export type { SpotlightContextValue } from '@proton/pass/components/Spotlight/SpotlightContext';
+export { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightContext';
 
 export const SpotlightProvider: FC<PropsWithChildren> = ({ children }) => {
     const { spotlight } = usePassCore();
@@ -142,5 +128,3 @@ export const SpotlightProvider: FC<PropsWithChildren> = ({ children }) => {
         </SpotlightContext.Provider>
     );
 };
-
-export const useSpotlight = createUseContext(SpotlightContext);
