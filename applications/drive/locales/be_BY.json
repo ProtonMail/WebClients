@@ -385,7 +385,7 @@
         "Паказваць панэль навігацыі"
       ],
       "Display next": [
-        "Паказваць наступны"
+        "Паказаць наступны"
       ],
       "Display previous": [
         "Паказваць папярэдні"
@@ -1358,6 +1358,9 @@
       ],
       "Stop here": [
         "Спыніцца тут"
+      ],
+      "Copy debug transcript": [
+        "Скапіяваць расшыфроўку адладкі"
       ]
     },
     "Action: Docs": {
@@ -1910,7 +1913,7 @@
         "Пазнаёміцца і наладзіць функцыі"
       ],
       "Maybe later": [
-        "Магчыма пазней"
+        "Магчыма, пазней"
       ],
       "Remind me later": [
         "Нагадаць мне пазней"
@@ -8080,6 +8083,24 @@
       ],
       "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Для завяршэння трансакцыі мы адкрыем новую ўкладку браўзера і перанакіруем вас на сайт ${ IDEAL_BRAND_NAME }. Калі вы выкарыстоўваеце пашырэнні блакіроўкі ўсплывальных вокнаў, адключыце іх, каб працягнуць."
+      ],
+      "Debug transcript copied": [
+        "Расшыфроўка адладкі скапіявана"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Вы можаце выкарыстаць 1 з 16 рэзервовых кодаў аднаўлення, якія вы атрымалі пры наладжванні двухфактарнай аўтэнтыфікацыі, калі вы страцілі доступ да вашай праграмы аўтэнтыфікацыі. ${ learnMoreLink }"
+      ],
+      "Not in My files": [
+        "Не ў \"Мае файлы\""
+      ],
+      "Read folder context": [
+        "Прачытаць кантэкст папкі"
+      ],
+      "Search data can't be read": [
+        "Немагчыма прачытаць даныя пошуку"
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing your access to viewer. The owner or an editor with sharing access can restore your edit access. You can’t undo this change yourself.": [
+        "У вас не будзе магчымасці абагуліць файл з назвай \"${ fileName }\" пасля змянення вашага доступу на праглядальніка. Уладальнік або рэдактар з правамі абагульвання можа аднавіць ваш доступ рэдагавання. Самі вы не зможаце адрабіць гэтыя змяненні."
       ]
     },
     "info": {
@@ -8395,7 +8416,7 @@
         "Выдаліць інфармацыю звязаную з аднаўленнем."
       ],
       "Deleted": [
-        "Выдалена"
+        "Выдаленыя"
       ],
       "Device": [
         "Прылада"
@@ -11202,7 +11223,7 @@
         "Прапанова абмежавана па часе і дзейнічае за ваш першы месяц"
       ],
       "Maybe later": [
-        "Магчыма пазней"
+        "Магчыма, пазней"
       ],
       "Offer expires ${ formattedDate }.": [
         "Прапанова міне ${ formattedDate }"
@@ -11309,10 +11330,10 @@
         "Запрасіць удзельнікаў"
       ],
       "Maybe Later": [
-        "Магчыма пазней"
+        "Магчыма, пазней"
       ],
       "Maybe later": [
-        "Магчыма пазней"
+        "Магчыма, пазней"
       ],
       "Select theme": [
         "Выбар тэмы"
@@ -11377,7 +11398,7 @@
         "Файлы, якія вы цяпер запампавалі, не будуць улічвацца ў агульным памеры вашага сховішча."
       ],
       "Final approval in progress": [
-        "Адбываецца канчатковае зацвярджэнне"
+        "Адбываецца фінальнае зацвярджэнне"
       ],
       "Final approval pending": [
         "Чакаецца фінальнае зацвярджэнне"
@@ -11398,7 +11419,7 @@
         "У вас iPhone? У нас нешта для вас ёсць."
       ],
       "Hang tight": [
-        "Адну хвіліну"
+        "Пачакайце хвіліну"
       ],
       "Invitation accepted": [
         "Запрашэнне прынята"
@@ -13480,7 +13501,7 @@
         "Вашы серыйныя фатаграфіі з'явяцца тут"
       ],
       "Your portraits photos will appear here": [
-        "Вашыя партрэтныя фатаграфіі з'явяцца тут"
+        "Вашы партрэтныя фатаграфіі з'явяцца тут"
       ],
       "Your RAW photos will appear here": [
         "Вашы фатаграфіі RAW з'явяцца тут"
@@ -14223,7 +14244,7 @@
         "Атрымайце больш ад свайго VPN"
       ],
       "Get started with 10 minutes of free uploads, on the house.": [
-        "Пачніце з 10 хвілін бясплатнага запампоўвання за наш кошт."
+        "Пачніце з 10 хвілін запампоўвання за наш кошт."
       ],
       "Get the apps": [
         "Атрымаць праграмы"
@@ -14790,7 +14811,7 @@
         "Не ўдалося пацвердзіць, што вузел быў створаны ${ claimedKeyAuthor }. Прычына: ${ nodeEntity.keyAuthor.error.error }"
       ],
       "Welcome offer": [
-        "Прывітальная прапанова"
+        "Вітальная прапанова"
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Вітаем у ${ BRAND_NAME } for Business"
@@ -14868,7 +14889,7 @@
         "Адключана ад Gmail"
       ],
       "Index populators": [
-        "Індэкс папулятараў"
+        "Індэксаванне папулятараў"
       ],
       "Continue with free storage": [
         "Працягнуць карыстацца бясплатным сховішчам"
@@ -14956,6 +14977,12 @@
       ],
       "Still working on it": [
         "Усё яшчэ працуем над гэтым"
+      ],
+      "September Sale": [
+        "Вераснёўскі распродаж"
+      ],
+      "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ node.activeRevision.contentAuthor.error.error }": [
+        "Не ўдалося пацвердзіць, што змесціва файла было запампавана ${ claimedContentAuthor }. Прычына: ${ node.activeRevision.contentAuthor.error.error }"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15690,6 +15717,79 @@
     "Payments.iDEAL": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
         "Пацвярджаючы гэты плацеж, вы надзяляеце паўнамоцтвамі ${ BRAND_NAME } і Stripe, нашага пастаўшчыка плацежных паслуг, даць указанне вашаму банку спісаць з вашага рахунку адпаведныя сродкі. Вы можаце вярнуць спісаныя сродкі на працягу 8 тыдняў з даты спісання ў адпаведнасці з умовамі дагавора з вашым банкам."
+      ]
+    },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "Скарыстацца прапановай"
+      ],
+      "Special Offer": [
+        "Спецыяльная прапанова"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "/month": [
+        "/месяц"
+      ],
+      "2 individual accounts": [
+        "2 асабістых уліковых запісы"
+      ],
+      "2 TB of secure storage": [
+        "2 ТБ бяспечнага сховішча"
+      ],
+      "3 TB of secure storage": [
+        "3 ТБ бяспечнага сховішча"
+      ],
+      "500 GB of secure storage": [
+        "500 ГБ бяспечнага сховішча"
+      ],
+      "6 individual accounts": [
+        "6 асабістых уліковых запісаў"
+      ],
+      "Advanced protection against cyber threats": [
+        "Пашыраная абарона супраць кіберпагроз"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Скідкі разлічваюцца на падставе стандартнай платы за месяц. Ваша падпіска будзе аўтаматычна падаўжацца па стандартнай гадавой стаўцы пасля заканчэння перыяду аплаты."
+      ]
+    },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Прэміяльныя ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } і ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Прэміяльныя ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Прэміяльныя ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Прэміяльныя ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Прэміяльныя ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "за 12 месяцаў"
+      ],
+      "One plan, full power": [
+        "Адзін тарыфны план, максімум магчымасцяў"
+      ],
+      "One plan, max savings": [
+        "Адзін тарыфны план, максімальная эканомія"
+      ],
+      "One plan, more power": [
+        "Адзін тарыфны план, больш магчымасцяў"
       ]
     }
   }
