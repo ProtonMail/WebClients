@@ -3,6 +3,7 @@ import type { NodeEntity, NodeEvent } from '@protontech/drive-sdk';
 import { IDBFactory } from 'fake-indexeddb';
 import 'fake-indexeddb/auto';
 
+import { NodeType } from '@proton/drive';
 import { createMockNodeEntity } from '@proton/drive/modules/testing';
 
 import { SearchDB } from '../../../shared/SearchDB';
@@ -563,5 +564,41 @@ describe('NodeTreeIndexPopulator descendant removal', () => {
                 ctx
             )
         ).rejects.toBeInstanceOf(RepairableNodeError);
+    });
+});
+
+describe('NodeTreeIndexPopulator incremental blob cleanup', () => {
+    let db: SearchDB;
+    let bridge: FakeMainThreadBridge;
+    let indexRegistry: IndexRegistry;
+
+    beforeEach(async () => {
+        indexedDB = new IDBFactory();
+        db = await SearchDB.open('test-user');
+        bridge = new FakeMainThreadBridge();
+        indexRegistry = new IndexRegistry(await generateAndImportKey());
+        bridge.setNode('root', makeMaybeNode({ uid: 'root', name: 'root', type: NodeType.Folder }));
+    });
+
+    it('keeps the blob store bounded across a batch of incremental node_created events instead of accumulating an unreleased blob generation per event', async () => {
+        const populator = new TestNodeTreePopulator('root');
+        const ctx = makeTaskContext({ bridge: bridge.asBridge(), db, indexRegistry });
+
+        const childUids = Array.from({ length: 20 }, (_, i) => `vol1~node${i}`);
+        bridge.setChildren(
+            'root',
+            childUids.map((uid, i) => makeMaybeNode({ uid, name: `file-${i}.txt`, type: NodeType.File }))
+        );
+
+        const events = childUids.map((uid, i) => nodeCreated(uid, `e${i}`));
+        const processed = await populator.processIncrementalUpdates(events, ctx);
+
+        expect(processed).toBe(events.length);
+        // Without cleanup interleaved after every event, this index accumulates ~6 new,
+        // never-released blobs per commit - 20 events would leave over 120
+        // blobs behind. With cleanup running after every event, it stays near the small
+        // steady-state regardless of how many events were processed.
+        const blobCount = await db.countIndexBlobs(IndexKind.MAIN);
+        expect(blobCount).toBeLessThan(20);
     });
 });

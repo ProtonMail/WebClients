@@ -15,6 +15,7 @@ import type { IndexEntry } from '../indexEntry';
 import { createIndexEntry, toCoreNodeFields } from '../indexEntry';
 import { removeTreeEventScope } from '../removeTreeEventScope';
 import type { TaskContext } from '../tasks/BaseTask';
+import { CleanUpStaleBlobsTask } from '../tasks/CleanUpTasks/CleanUpStaleBlobsTask';
 import { CleanUpStaleIndexEntryTask } from '../tasks/CleanUpTasks/CleanUpStaleIndexEntryTask';
 import { IndexPopulatorTask } from '../tasks/CoreTasks/IndexPopulatorTask';
 import { ResumableFolderBFSVisitor } from '../utils/resumableTreeVisitor/ResumableFolderBFSVisitor';
@@ -233,6 +234,11 @@ export abstract class NodeTreeIndexPopulator extends IndexPopulator {
             }
 
             processed++;
+
+            // One WriteSession/commit per event here (unlike the chunked tree walk) means each
+            // event leaves behind an unreleased blob generation; without cleaning up after every
+            // event, a large batch accumulates unbounded, never-freed blobs.
+            await new CleanUpStaleBlobsTask().execute(ctx);
         }
 
         return processed;
