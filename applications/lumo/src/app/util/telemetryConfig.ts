@@ -1,6 +1,6 @@
 import type { TelemetryInitOptions } from '@proton/shared/lib/telemetry';
 
-export const lumoTelemetryConfig: Pick<TelemetryInitOptions, 'eventOptions' | 'overridenPageTitle'> = {
+export const lumoTelemetryConfig: Pick<TelemetryInitOptions, 'eventOptions' | 'overriddenPageTitle'> = {
     eventOptions: {
         pageView: true,
         click: false,
@@ -9,5 +9,5 @@ export const lumoTelemetryConfig: Pick<TelemetryInitOptions, 'eventOptions' | 'o
         modal: false,
         exit: false,
     },
-    overridenPageTitle: 'Lumo',
+    overriddenPageTitle: 'Lumo',
 };

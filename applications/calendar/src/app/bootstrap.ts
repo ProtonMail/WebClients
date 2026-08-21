@@ -2,7 +2,6 @@ import {
     addressesThunk,
     initEvent,
     organizationThunk,
-    serverEvent,
     startLogoutListener,
     userSettingsThunk,
     userThunk,
@@ -10,6 +9,7 @@ import {
 } from '@proton/account';
 import * as bootstrap from '@proton/account/bootstrap';
 import { bootstrapEvent } from '@proton/account/bootstrap/action';
+import { serverEvent } from '@proton/account/eventLoop';
 import { getDecryptedPersistedState } from '@proton/account/persist/helper';
 import { calendarBootstrapThunk } from '@proton/calendar/calendarBootstrap';
 import { createCalendarModelEventManager } from '@proton/calendar/calendarModelEventManager';
@@ -44,7 +44,7 @@ const getAppContainer = () =>
 
 const { isIframe, isDrawerApp, parentApp } = embeddedDrawerAppInfos;
 
-export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; signal?: AbortSignal }) => {
+export const bootstrapApp = async ({ config }: { config: ProtonConfig }) => {
     const appName = config.APP_NAME;
     const pathname = window.location.pathname;
     const searchParams = new URLSearchParams(window.location.search);
@@ -157,12 +157,10 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
 
             dispatch(welcomeFlagsActions.initial(userSettings));
 
-            const [scopes] = await Promise.all([
-                bootstrap.enableTelemetryBasedOnUserSettings({ userSettings }),
-                bootstrap.loadLocales({ userSettings, locales }),
-            ]);
+            bootstrap.enableTelemetryBasedOnUserSettings({ userSettings });
+            await bootstrap.loadLocales({ userSettings, locales });
 
-            return { user, userSettings, earlyAccessScope: features[FeatureCode.EarlyAccessScope], scopes };
+            return { user, userSettings, earlyAccessScope: features[FeatureCode.EarlyAccessScope] };
         };
 
         const loadPreload = () => {
@@ -206,17 +204,11 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         const calendarModelEventManager = createCalendarModelEventManager({ api: silentApi });
 
         extendStore({ eventManager, calendarModelEventManager });
-        const unsubscribeEventManager = eventManager.subscribe((event) => {
+
+        eventManager.subscribe((event) => {
             dispatch(serverEvent(event));
         });
         eventManager.start();
-
-        bootstrap.onAbort(signal, () => {
-            unsubscribeEventManager();
-            eventManager.reset();
-            unleashClient.stop();
-            store.unsubscribe();
-        });
 
         dispatch(bootstrapEvent({ type: 'complete' }));
 

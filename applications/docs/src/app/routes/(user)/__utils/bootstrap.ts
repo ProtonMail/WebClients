@@ -1,7 +1,6 @@
 import {
   addressesThunk,
   initEvent,
-  serverEvent,
   startLogoutListener,
   userSettingsThunk,
   userThunk,
@@ -16,7 +15,7 @@ import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig'
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames'
 import type { ProtonConfig } from '@proton/shared/lib/interfaces'
 import noop from '@proton/utils/noop'
-import { sendErrorReport, getRefreshError } from '@proton/drive-store'
+import { getRefreshError, sendErrorReport } from '@proton/drive-store'
 
 import { locales } from '~/utils/locales'
 import { extendStore, setupStore } from '~/redux-store/store'
@@ -29,6 +28,7 @@ import { handleInvalidSession } from '@proton/shared/lib/authentication/logout'
 import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
 import { getCookie } from '@proton/shared/lib/helpers/cookies'
 import { versionCookieAtLoad } from '@proton/components/helpers/versionCookie'
+import { serverEvent } from '@proton/account/eventLoop'
 
 async function getAppContainer() {
   try {
@@ -41,7 +41,7 @@ async function getAppContainer() {
   }
 }
 
-export async function bootstrapApp({ config, signal }: { config: ProtonConfig; signal?: AbortSignal }) {
+export async function bootstrapApp({ config }: { config: ProtonConfig }) {
   let localID: number | undefined
 
   const pathname = window.location.pathname
@@ -125,12 +125,10 @@ export async function bootstrapApp({ config, signal }: { config: ProtonConfig; s
 
       dispatch(welcomeFlagsActions.initial(userSettings))
 
-      const [scopes] = await Promise.all([
-        bootstrap.enableTelemetryBasedOnUserSettings({ userSettings }),
-        bootstrap.loadLocales({ userSettings, locales }),
-      ])
+      bootstrap.enableTelemetryBasedOnUserSettings({ userSettings })
+      await bootstrap.loadLocales({ userSettings, locales })
 
-      return { user, userSettings, earlyAccessScope: features[FeatureCode.EarlyAccessScope], scopes }
+      return { user, userSettings, earlyAccessScope: features[FeatureCode.EarlyAccessScope] }
     }
 
     const loadPreload = () => {
@@ -168,17 +166,11 @@ export async function bootstrapApp({ config, signal }: { config: ProtonConfig; s
 
     const eventManager = bootstrap.eventManager({ api: silentApi })
     extendStore({ eventManager })
-    const unsubscribeEventManager = eventManager.subscribe((event) => {
+
+    eventManager.subscribe((event) => {
       dispatch(serverEvent(event))
     })
     eventManager.start()
-
-    bootstrap.onAbort(signal, () => {
-      unsubscribeEventManager()
-      eventManager.reset()
-      unleashClient.stop()
-      store.unsubscribe()
-    })
 
     dispatch(bootstrapEvent({ type: 'complete' }))
     void OpenTracer.trace('boot_bootstrap_complete')
