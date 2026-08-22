@@ -1,4 +1,4 @@
-import { type FC, useMemo, useState } from 'react';
+import { type FC, type ReactElement, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
@@ -6,11 +6,19 @@ import { c } from 'ttag';
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { Href } from '@proton/atoms/Href/Href';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
+import type { IconName } from '@proton/icons/types';
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { ExtraFieldsControl } from '@proton/pass/components/Form/Field/Control/ExtraFieldsControl';
 import { OTPValueControl } from '@proton/pass/components/Form/Field/Control/OTPValueControl';
 import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { TextAreaReadonly } from '@proton/pass/components/Form/legacy/TextAreaReadonly';
+import {
+    MultiCopyCheckbox,
+    type MultiCopyField,
+    MultiCopyToolbar,
+    useMultiCopy,
+} from '@proton/pass/components/Item/MultiCopy/MultiCopy';
 import { PasskeyContentModal } from '@proton/pass/components/Item/Passkey/Passkey.modal';
 import { PasswordStrength } from '@proton/pass/components/Password/PasswordStrength';
 import { UpgradeButton } from '@proton/pass/components/Upsell/UpgradeButton';
@@ -27,6 +35,9 @@ import { selectAliasByAliasEmail, selectTOTPLimits } from '@proton/pass/store/se
 import type { MaybeNull } from '@proton/pass/types';
 import { TelemetryFieldType } from '@proton/pass/types/data/telemetry';
 import { AutofillMode } from '@proton/pass/types/protobuf';
+import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
+import { formatYYYYMMDD } from '@proton/pass/utils/time/format';
+import clsx from '@proton/utils/clsx';
 
 export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision, secureLinkItem = false }) => {
     const { data: item, shareId, itemId } = revision;
@@ -57,9 +68,79 @@ export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision, secureLi
     );
 
     const sendClipboardTelemetry = useLoginClipboardTelemetry(item);
+    const core = usePassCore();
+
+    const multiCopyFields = useMemo<MultiCopyField[]>(() => {
+        const fields: MultiCopyField[] = [];
+        const totpGetter = (uri: string) => async () =>
+            (await core.generateOTP({ totpUri: uri, type: 'uri' }))?.token ?? '';
+
+        if (itemEmail) {
+            fields.push({
+                key: 'email',
+                label: relatedAlias ? c('Label').t`Email (alias)` : c('Label').t`Email`,
+                value: itemEmail,
+            });
+        }
+
+        if (itemUsername) fields.push({ key: 'username', label: c('Label').t`Username`, value: itemUsername });
+        if (password) fields.push({ key: 'password', label: c('Label').t`Password`, value: password });
+        if (totpUri && totpAllowed) {
+            fields.push({ key: 'totp', label: c('Label').t`2FA token (TOTP)`, value: totpGetter(totpUri) });
+        }
+
+        sanitizedUrls.forEach((url, index) =>
+            fields.push({ key: `url-${index}`, label: c('Label').t`Website`, value: url.url })
+        );
+
+        if (note) fields.push({ key: 'note', label: c('Label').t`Note`, value: note });
+
+        extraFields.forEach((extraField, index) => {
+            const key = `${index}-${extraField.fieldName}`;
+            const { fieldName } = extraField;
+
+            if (extraField.type === 'text' || extraField.type === 'hidden') {
+                const { content } = extraField.data;
+                if (!isEmptyString(content)) fields.push({ key, label: fieldName, value: content });
+            } else if (extraField.type === 'totp') {
+                const { totpUri } = extraField.data;
+                if (!isEmptyString(totpUri)) fields.push({ key, label: fieldName, value: totpGetter(totpUri) });
+            } else if (extraField.type === 'timestamp') {
+                const { timestamp } = extraField.data;
+                if (!isEmptyString(timestamp)) {
+                    fields.push({ key, label: fieldName, value: formatYYYYMMDD(timestamp) ?? timestamp });
+                }
+            }
+        });
+
+        return fields;
+    }, [core, extraFields, itemEmail, itemUsername, note, password, relatedAlias, sanitizedUrls, totpAllowed, totpUri]);
+
+    const multicopy = useMultiCopy(multiCopyFields);
+
+    /** while multi-copy selection is enabled, replace the field icon with a selection checkbox */
+    const selectionIcon = (key: string, icon: IconName | ReactElement) =>
+        multicopy.enabled ? (
+            <MultiCopyCheckbox checked={multicopy.isSelected(key)} onChange={() => multicopy.toggleField(key)} />
+        ) : (
+            icon
+        );
 
     return (
         <>
+            {multiCopyFields.length > 0 && (
+                <MultiCopyToolbar
+                    commaSeparator={multicopy.separator === 'comma'}
+                    enabled={multicopy.enabled}
+                    selectedCount={multicopy.selectedCount}
+                    totalCount={multiCopyFields.length}
+                    onCopy={multicopy.copySelected}
+                    onToggleEnabled={multicopy.toggleEnabled}
+                    onToggleSelectAll={multicopy.toggleSelectAll}
+                    onToggleSeparator={multicopy.setCommaSeparator}
+                />
+            )}
+
             {!secureLinkItem &&
                 (passkeys ?? []).map((passkey) => (
                     <FieldsetCluster mode="read" key={passkey.keyId}>
@@ -83,8 +164,8 @@ export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision, secureLi
 
                 {itemEmail && (
                     <ValueControl
-                        clickToCopy
-                        icon={relatedAlias ? 'alias' : 'envelope'}
+                        clickToCopy={!multicopy.enabled}
+                        icon={selectionIcon('email', relatedAlias ? 'alias' : 'envelope')}
                         label={relatedAlias ? c('Label').t`Email (alias)` : c('Label').t`Email`}
                         value={itemEmail}
                         onCopy={() => sendClipboardTelemetry?.(TelemetryFieldType.email)}
@@ -93,8 +174,8 @@ export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision, secureLi
 
                 {itemUsername && (
                     <ValueControl
-                        clickToCopy
-                        icon="user"
+                        clickToCopy={!multicopy.enabled}
+                        icon={selectionIcon('username', 'user')}
                         label={c('Label').t`Username`}
                         value={itemUsername}
                         onCopy={() => sendClipboardTelemetry?.(TelemetryFieldType.username)}
@@ -102,9 +183,9 @@ export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision, secureLi
                 )}
 
                 <ValueControl
-                    clickToCopy
+                    clickToCopy={!multicopy.enabled}
                     hidden
-                    icon="key"
+                    icon={selectionIcon('password', 'key')}
                     label={c('Label').t`Password`}
                     value={password}
                     ellipsis={false}
@@ -122,7 +203,7 @@ export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision, secureLi
 
                 {totpUri && totpAllowed && (
                     <OTPValueControl
-                        icon="lock"
+                        icon={selectionIcon('totp', 'lock')}
                         payload={{ totpUri, type: 'uri' }}
                         onCopy={() => sendClipboardTelemetry?.(TelemetryFieldType.totp)}
                     />
@@ -153,30 +234,45 @@ export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision, secureLi
                                 }
                             </Banner>
                         )}
-                        {sanitizedUrls.map((url, index) => (
-                            <li
-                                key={index}
-                                className="w-full flex flex-column border border-weak bg-weak rounded-lg px-2 py-1 gap-1"
-                            >
-                                <p className="w-full text-ellipsis">
-                                    {isAutofillModeDataOfTypeUrl(url.mode) ? (
-                                        <Href
-                                            className="block text-ellipsis"
-                                            href={url.url}
-                                            key={url.url}
-                                            title={url.url}
-                                        >
-                                            {url.url}
-                                        </Href>
-                                    ) : (
-                                        <span title={url.url}>{url.url}</span>
+                        {sanitizedUrls.map((url, index) => {
+                            const urlKey = `url-${index}`;
+
+                            return (
+                                <li
+                                    key={index}
+                                    className={clsx(
+                                        'w-full flex border border-weak bg-weak rounded-lg px-2 py-1 gap-1',
+                                        multicopy.enabled ? 'flex-row items-center' : 'flex-column'
                                     )}
-                                </p>
-                                {url.mode === AutofillMode.Default ? null : (
-                                    <p className="color-weak text-ellipsis">{getModeDescription(url.mode)}</p>
-                                )}
-                            </li>
-                        ))}
+                                >
+                                    {multicopy.enabled && (
+                                        <MultiCopyCheckbox
+                                            checked={multicopy.isSelected(urlKey)}
+                                            onChange={() => multicopy.toggleField(urlKey)}
+                                        />
+                                    )}
+                                    <div className={clsx('flex flex-column gap-1', multicopy.enabled && 'w-full')}>
+                                        <p className="w-full text-ellipsis">
+                                            {isAutofillModeDataOfTypeUrl(url.mode) ? (
+                                                <Href
+                                                    className="block text-ellipsis"
+                                                    href={url.url}
+                                                    key={url.url}
+                                                    title={url.url}
+                                                >
+                                                    {url.url}
+                                                </Href>
+                                            ) : (
+                                                <span title={url.url}>{url.url}</span>
+                                            )}
+                                        </p>
+                                        {url.mode === AutofillMode.Default ? null : (
+                                            <p className="color-weak text-ellipsis">{getModeDescription(url.mode)}</p>
+                                        )}
+                                    </div>
+                                </li>
+                            );
+                        })}
                     </ValueControl>
                 </FieldsetCluster>
             )}
@@ -184,9 +280,9 @@ export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision, secureLi
             {note && (
                 <FieldsetCluster mode="read" as="div">
                     <ValueControl
-                        clickToCopy
+                        clickToCopy={!multicopy.enabled}
                         as={TextAreaReadonly}
-                        icon="note"
+                        icon={selectionIcon('note', 'note')}
                         label={c('Label').t`Note`}
                         value={note}
                         onCopy={() => sendClipboardTelemetry?.(TelemetryFieldType.note)}
@@ -199,6 +295,15 @@ export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision, secureLi
                     extraFields={extraFields}
                     itemId={itemId}
                     shareId={shareId}
+                    copyable={!multicopy.enabled}
+                    renderIcon={(key) =>
+                        multicopy.enabled ? (
+                            <MultiCopyCheckbox
+                                checked={multicopy.isSelected(key)}
+                                onChange={() => multicopy.toggleField(key)}
+                            />
+                        ) : undefined
+                    }
                     onCopy={() => sendClipboardTelemetry?.(TelemetryFieldType.customField)}
                 />
             )}
