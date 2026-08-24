@@ -18,7 +18,6 @@ export const IdealAccountHolderInput = ({ chargebeeIdeal }: IdealAccountHolderIn
             id="ideal-account-holder-name"
             name="ideal-account-holder-name"
             autoComplete="off"
-            disableChange={chargebeeIdeal.initializing}
             data-protonpass-ignore={true}
             data-testid="ideal-account-holder-name"
         />

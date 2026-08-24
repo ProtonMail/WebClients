@@ -6,6 +6,7 @@ import { BannerVariants } from '@proton/atoms/Banner/Banner';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { InfoBanner } from '@proton/components/containers/payments/subscription/confirm-button/InfoBanner';
 import type { ChargebeeIdealProcessorHook } from '@proton/components/payments/react-extensions/useChargebeeIdeal';
+import { useStableLoading } from '@proton/hooks';
 import { IDEAL_BRAND_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
@@ -34,6 +35,7 @@ const FakeChargebeeButton = ({
 
     return (
         <ButtonLike
+            type="button"
             className={idealButtonClassName}
             color="norm"
             loading={loading}
@@ -65,13 +67,17 @@ export const ChargebeeIdealButton = ({
 }: ChargebeeIdealButtonProps) => {
     const initializing = props.chargebeeIdeal.initializing;
     const initializationError = props.chargebeeIdeal.initializationError;
-    const disabled = props.disabled || !props.chargebeeIdeal.readyToPay;
+    const disabled = props.disabled || props.chargebeeIdeal.accountHolderNameMissing;
 
-    const renderFakeButton = initializing || initializationError || disabled || formInvalid || loading;
+    const syncingName = !disabled && !props.chargebeeIdeal.readyToPay;
+
+    const showLoading = useStableLoading(initializing || !!loading || syncingName, { initialState: false });
+    const renderFakeButton =
+        initializationError || disabled || formInvalid || initializing || !!loading || showLoading || syncingName;
+
     const fakeIdealButton = useMemo(() => {
         const fakeButtonProps = {
             className: '',
-            onClick: () => onClick?.({ source: 'fake-button', type: 'ideal' }),
             ...props,
             children: children ?? c('Payments').t`Pay with ${IDEAL_BRAND_NAME}`,
         };
@@ -79,7 +85,7 @@ export const ChargebeeIdealButton = ({
         let button: ReactNode;
         if (disabled || initializationError) {
             button = <FakeChargebeeButton {...fakeButtonProps} disabled={true} />;
-        } else if (initializing || loading) {
+        } else if (showLoading) {
             button = <FakeChargebeeButton {...fakeButtonProps} loading={true} />;
         } else {
             button = <FakeChargebeeButton {...fakeButtonProps} />;
@@ -88,7 +94,7 @@ export const ChargebeeIdealButton = ({
         if (renderFakeButton) {
             return <div className="w-full">{button}</div>;
         }
-    }, [initializing, initializationError, disabled, renderFakeButton, loading, formInvalid, onClick, children]);
+    }, [initializationError, disabled, renderFakeButton, showLoading, children]);
 
     return (
         <div className="relative">
