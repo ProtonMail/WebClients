@@ -7,7 +7,9 @@ import { IcBuildings } from '@proton/icons/icons/IcBuildings';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import clsx from '@proton/utils/clsx';
 
-import { ButtonGroup, TopNavbarListItemButton, useActiveBreakpoint } from '../../index';
+import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
+import ButtonGroup from '../button/ButtonGroup';
+import TopNavbarListItemButton from './TopNavbarListItemButton';
 
 type Props = {
     onGetStarted: () => void;

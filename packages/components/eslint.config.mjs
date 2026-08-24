@@ -14,8 +14,6 @@ export default defineConfig([
             'import/no-internal-modules': ['error', { forbid: ['./index', './index'] }],
             // TODO: Add the missing explicit deps and remove this rule
             'import/no-extraneous-dependencies': 'off',
-            // TODO: Remove this rule once the cycles are fixed
-            'import-x/no-cycle': 'off',
         },
     },
     globalIgnores(['**/iwad/**']),

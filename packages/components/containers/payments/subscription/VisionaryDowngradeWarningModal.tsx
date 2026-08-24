@@ -8,15 +8,13 @@ import { getPlanTitle } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { APPS } from '@proton/shared/lib/constants';
 
-import {
-    type ModalStateProps,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    useConfig,
-    useModalTwoPromise,
-} from '../../../index';
+import ModalTwo from '../../../components/modalTwo/Modal';
+import ModalTwoContent from '../../../components/modalTwo/ModalContent';
+import ModalTwoFooter from '../../../components/modalTwo/ModalFooter';
+import ModalTwoHeader from '../../../components/modalTwo/ModalHeader';
+import type { ModalStateProps } from '../../../components/modalTwo/useModalState';
+import { useModalTwoPromise } from '../../../components/modalTwo/useModalTwo';
+import useConfig from '../../../hooks/useConfig';
 
 const getVisionaryWarningTitle = () => {
     return c('Payments.ModificationWarning').t`Your plan includes this feature already.`;
