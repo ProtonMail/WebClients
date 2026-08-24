@@ -8,7 +8,7 @@ import * as bootstrap from '@proton/account/bootstrap';
 import { bootstrapEvent } from '@proton/account/bootstrap/action';
 import { initEvent, serverEvent, userSettingsThunk, userThunk, welcomeFlagsActions } from '@proton/account/index';
 import { getDecryptedPersistedState } from '@proton/account/persist/helper';
-import type { NotificationsManager } from '@proton/components/containers/notifications/manager';
+import type { NotificationsManager } from '@proton/app-context/notifications/manager';
 import { setupGuestCrossStorage } from '@proton/cross-storage/account/guest';
 import { FeatureCode, fetchFeatures } from '@proton/features/index';
 import { meetEventLoop } from '@proton/meet/store/meetEventLoop';

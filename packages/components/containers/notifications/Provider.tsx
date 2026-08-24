@@ -3,12 +3,12 @@ import { useEffect, useReducer, useState } from 'react';
 
 import isDeepEqual from 'lodash/isEqual';
 
+import type { Notification, NotificationOffset } from '@proton/app-context/notifications/interfaces';
+import createManager from '@proton/app-context/notifications/manager';
+import { NotificationsContext } from '@proton/app-context/notifications/notificationsContext';
 import useInstance from '@proton/hooks/useInstance';
 
 import NotificationsChildrenContext from './childrenContext';
-import type { Notification, NotificationOffset } from './interfaces';
-import createManager from './manager';
-import NotificationsContext from './notificationsContext';
 
 interface Props {
     children: ReactNode;

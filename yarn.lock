@@ -9751,6 +9751,7 @@ __metadata:
   resolution: "@proton/activation@workspace:packages/activation"
   dependencies:
     "@proton/account": "workspace:^"
+    "@proton/app-context": "workspace:^"
     "@proton/atoms": "workspace:^"
     "@proton/calendar": "workspace:^"
     "@proton/components": "workspace:^"
@@ -10440,6 +10441,7 @@ __metadata:
   dependencies:
     "@openpgp/web-stream-tools": "npm:~0.3.1"
     "@proton/account": "workspace:^"
+    "@proton/app-context": "workspace:^"
     "@proton/atoms": "workspace:^"
     "@proton/components": "workspace:^"
     "@proton/hooks": "workspace:^"
@@ -10849,6 +10851,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/meet@workspace:packages/meet"
   dependencies:
+    "@proton/app-context": "workspace:packages/app-context"
     "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
     "@proton/i18n": "workspace:packages/i18n"
     "@proton/shared": "workspace:packages/shared"
@@ -10989,6 +10992,7 @@ __metadata:
   resolution: "@proton/pass@workspace:packages/pass"
   dependencies:
     "@protobuf-ts/plugin": "npm:^2.11.1"
+    "@proton/app-context": "workspace:^"
     "@proton/atoms": "workspace:^"
     "@proton/components": "workspace:^"
     "@proton/cross-storage": "workspace:^"
@@ -11053,6 +11057,7 @@ __metadata:
   resolution: "@proton/payments@workspace:packages/payments"
   dependencies:
     "@proton/account": "workspace:^"
+    "@proton/app-context": "workspace:^"
     "@proton/atoms": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/jest-env": "workspace:^"
@@ -11453,6 +11458,7 @@ __metadata:
   dependencies:
     "@proton/account": "workspace:^"
     "@proton/andromeda": "workspace:packages/wasm/andromeda"
+    "@proton/app-context": "workspace:^"
     "@proton/redux-shared-store": "workspace:^"
     "@proton/testing": "workspace:^"
     "@reduxjs/toolkit": "npm:^2.12.0"
@@ -40902,6 +40908,7 @@ __metadata:
   dependencies:
     "@proton/account": "workspace:^"
     "@proton/activation": "workspace:^"
+    "@proton/app-context": "workspace:^"
     "@proton/atoms": "workspace:^"
     "@proton/calendar": "workspace:^"
     "@proton/calendar-video-conferencing": "workspace:^"
@@ -41026,6 +41033,7 @@ __metadata:
     "@dnd-kit/react": "npm:^0.5.0"
     "@iarna/toml": "npm:^2.2.5"
     "@pmmmwh/react-refresh-webpack-plugin": "npm:^0.6.2"
+    "@proton/app-context": "workspace:^"
     "@proton/atoms": "workspace:^"
     "@proton/colors": "workspace:^"
     "@proton/components": "workspace:^"
@@ -41084,6 +41092,7 @@ __metadata:
     "@babel/preset-typescript": "npm:^7.29.7"
     "@proton/account": "workspace:^"
     "@proton/activation": "workspace:^"
+    "@proton/app-context": "workspace:^"
     "@proton/atoms": "workspace:^"
     "@proton/calendar": "workspace:^"
     "@proton/calendar-video-conferencing": "workspace:^"
@@ -41247,6 +41256,7 @@ __metadata:
     "@lexical/yjs": "npm:0.30.0"
     "@prettier/plugin-xml": "npm:^3.4.2"
     "@proton/account": "workspace:^"
+    "@proton/app-context": "workspace:^"
     "@proton/atoms": "workspace:^"
     "@proton/components": "workspace:^"
     "@proton/cross-storage": "workspace:^"
@@ -41621,6 +41631,7 @@ __metadata:
     "@jest/globals": "npm:^30.4.1"
     "@proton/account": "workspace:^"
     "@proton/activation": "workspace:^"
+    "@proton/app-context": "workspace:^"
     "@proton/atoms": "workspace:^"
     "@proton/calendar": "workspace:^"
     "@proton/calendar-video-conferencing": "workspace:^"
@@ -41772,6 +41783,7 @@ __metadata:
     "@livekit/krisp-noise-filter": "npm:^0.4.4"
     "@livekit/track-processors": "npm:^0.7.2"
     "@proton-meet/proton-meet-core": "npm:1.3.3"
+    "@proton/app-context": "workspace:packages/app-context"
     "@proton/atoms": "workspace:packages/atoms"
     "@proton/components": "workspace:packages/components"
     "@proton/cross-storage": "workspace:packages/cross-storage"
@@ -41859,6 +41871,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "proton-pass-extension@workspace:applications/pass-extension"
   dependencies:
+    "@proton/app-context": "workspace:^"
     "@proton/atoms": "workspace:^"
     "@proton/i18n": "workspace:^"
     "@proton/icons": "workspace:^"
@@ -41899,6 +41912,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "proton-pass@workspace:applications/pass"
   dependencies:
+    "@proton/app-context": "workspace:^"
     "@proton/atoms": "workspace:^"
     "@proton/components": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
@@ -41945,6 +41959,7 @@ __metadata:
   dependencies:
     "@babel/core": "npm:^7.29.7"
     "@playwright/test": "npm:^1.61.1"
+    "@proton/app-context": "workspace:^"
     "@proton/atoms": "workspace:^"
     "@proton/components": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
@@ -41984,6 +41999,7 @@ __metadata:
   resolution: "proton-verify@workspace:applications/verify"
   dependencies:
     "@proton/account": "workspace:^"
+    "@proton/app-context": "workspace:^"
     "@proton/components": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/hooks": "workspace:^"
@@ -42076,6 +42092,7 @@ __metadata:
   resolution: "proton-wallet@workspace:applications/wallet"
   dependencies:
     "@proton/andromeda": "workspace:packages/wasm/andromeda"
+    "@proton/app-context": "workspace:^"
     "@proton/atoms": "workspace:^"
     "@proton/components": "workspace:packages/components"
     "@proton/cross-storage": "workspace:packages/cross-storage"
