@@ -87,13 +87,16 @@ const slice = createSlice({
             if (!state.value || state.value.role === user.Role) {
                 return;
             }
-            // This will cause a refetch to happen the next time this thunk or hook is requested.
-            // This is cleared when the user's role is changed to make sure that permissions are kept up-to-date.
-            // fetchedAt is also reset so cacheHelper treats the cache as expired and fetches synchronously,
-            // instead of serving this stale default while refetching in the background.
+            // Invalidate the cache so the permissions are refetched: clearing fetchedEphemeral is what
+            // makes the hook re-enqueue the thunk, and resetting fetchedAt makes cacheHelper treat the
+            // cache as expired so thunk consumers await the fresh value instead of being served this one.
+            // The previous value is deliberately left in place until that refetch lands. Consumers gate on
+            // `permissions === null` as their loading signal, so blanking it here would drop the org
+            // entries from the sidebar and swap the settings area for a spinner on every role change. The
+            // trade-off is that a demoted user keeps seeing entries they no longer have access to until
+            // the refetch resolves; the API rejects the underlying calls in the meantime.
             state.meta.fetchedEphemeral = undefined;
             state.meta.fetchedAt = 0;
-            state.value = defaultUserPermissions;
         };
 
         // NOTE: Since there's no event loop updates for self permissions, we currently rely on the user role to know when to refetch.
