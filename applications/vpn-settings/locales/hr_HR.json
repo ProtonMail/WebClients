@@ -6839,11 +6839,6 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "Doživotna ponuda za ${ PASS_SHORT_APP_NAME } nema cijenu obnove, to je jednokratno plaćanje za doživotni pristup za ${ PASS_SHORT_APP_NAME }. Cijena i datum obnove vaše ${ planTitle } pretplata ostaju nepromijenjeni."
       ],
-      "${ pendingAdminApprovalCount } new member added via your identity provider and pending review.": [
-        "${ pendingAdminApprovalCount } novi član dodan je putem vašeg pružatelja identiteta i čeka pregled.",
-        "${ pendingAdminApprovalCount } nova člana dodana su putem vašeg pružatelja identiteta i čekaju pregled.",
-        "${ pendingAdminApprovalCount } novih članova dodano je putem vašeg pružatelja identiteta i čeka pregled."
-      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } zahtijeva barem 1 namjenski poslužitelj ${ serverPricePerMonth }"
       ],

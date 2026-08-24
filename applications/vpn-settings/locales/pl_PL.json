@@ -6922,12 +6922,6 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "Dożywotnia subskrypcja ${ PASS_SHORT_APP_NAME } nie ma ceny odnowienia. Jest to jednorazowa płatność za dożywotni dostęp do ${ PASS_SHORT_APP_NAME }. Cena i data odnowienia subskrypcji ${ planTitle } pozostaje niezmienna."
       ],
-      "${ pendingAdminApprovalCount } new member added via your identity provider and pending review.": [
-        "${ pendingAdminApprovalCount } nowy członek dodany za pośrednictwem Twojego dostawcy tożsamości oczekuje na sprawdzenie.",
-        "${ pendingAdminApprovalCount } nowych członków dodanych za pośrednictwem Twojego dostawcy tożsamości oczekuje na sprawdzenie.",
-        "${ pendingAdminApprovalCount } nowych członków dodanych za pośrednictwem Twojego dostawcy tożsamości oczekuje na sprawdzenie.",
-        "${ pendingAdminApprovalCount } nowych członków dodanych za pośrednictwem Twojego dostawcy tożsamości oczekuje na sprawdzenie."
-      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "Plan ${ plan.Title } wymaga co najmniej 1 dedykowanego serwera ${ serverPricePerMonth }"
       ],
@@ -14377,6 +14371,54 @@
       ],
       "SUMMER SALE": [
         "LETNIE PROMOCJE"
+      ]
+    },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "Skorzystaj z oferty"
+      ],
+      "Special Offer": [
+        "Oferta specjalna"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "/month": [
+        "/miesiąc"
+      ],
+      "2 individual accounts": [
+        "2 indywidualne konta"
+      ],
+      "2 TB of secure storage": [
+        "2 TB bezpiecznej przestrzeni dyskowej"
+      ],
+      "3 TB of secure storage": [
+        "3 TB bezpiecznej przestrzeni dyskowej"
+      ],
+      "500 GB of secure storage": [
+        "500 GB bezpiecznej przestrzeni dyskowej"
+      ],
+      "6 individual accounts": [
+        "6 indywidualnych kont"
+      ],
+      "Advanced protection against cyber threats": [
+        "Zaawansowana ochrona przed cyberzagrożeniami"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Zniżki są naliczane na podstawie standardowych cen miesięcznych. Twoja subskrypcja odnowi się po standardowej stawce rocznej po zakończeniu cyklu rozliczeniowego."
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "na 12 miesięcy"
+      ],
+      "One plan, full power": [
+        "Jeden plan, pełna moc"
+      ],
+      "One plan, max savings": [
+        "Jeden plan, maksymalne oszczędności"
+      ],
+      "One plan, more power": [
+        "Jeden plan, większa moc"
       ]
     },
     "Recovery Email": {
