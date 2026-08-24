@@ -2,7 +2,7 @@ import { queryCreateDriveVolume, queryUserVolumes } from '@proton/shared/lib/api
 import type { CreatedDriveVolumeResult, UserDriveVolumesResult } from '@proton/shared/lib/interfaces/drive/volume';
 import { generateDriveBootstrap, generateNodeHashKey } from '@proton/shared/lib/keys/driveKeys';
 
-import { useDebouncedRequest } from '../_api';
+import useDebouncedRequest from '../_api/useDebouncedRequest';
 import { useDriveCrypto } from '../_crypto';
 
 export default function useVolume() {

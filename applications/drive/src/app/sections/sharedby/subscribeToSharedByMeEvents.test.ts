@@ -6,7 +6,6 @@ import { getFormattedNodeLocation } from '@proton/drive/modules/nodes';
 
 import { getSignatureIssues } from '../../utils/sdk/getSignatureIssues';
 import { subscribeToSharedByMeEvents } from './subscribeToSharedByMeEvents';
-import { useSharedByMeStore } from './useSharedByMe.store';
 import { getOldestShareCreationTime } from './utils/getOldestShareCreationTime';
 
 jest.mock('@proton/drive');
@@ -21,7 +20,6 @@ jest.mock('@proton/drive/modules/nodes', () => ({
     getFormattedNodeLocation: jest.fn(),
 }));
 jest.mock('../../utils/sdk/getSignatureIssues');
-jest.mock('./useSharedByMe.store');
 jest.mock('./utils/getOldestShareCreationTime');
 
 const mockGetDrivePerNodeType = jest.mocked(getDrivePerNodeType);
@@ -30,7 +28,6 @@ const mockHandleSdkError = jest.mocked(handleSdkError);
 const mockGetNodeEntity = jest.mocked(getNodeEntity);
 const mockGetNodeLocation = jest.mocked(getFormattedNodeLocation);
 const mockGetSignatureIssues = jest.mocked(getSignatureIssues);
-const mockUseSharedByMeStore = jest.mocked(useSharedByMeStore);
 const mockGetOldestShareCreationTime = jest.mocked(getOldestShareCreationTime);
 
 const mockDrive = {
@@ -86,7 +83,6 @@ describe('subscribeToSharedByMeEvents', () => {
 
         mockGetDrivePerNodeType.mockReturnValue(mockDrive as any);
         mockGetBusDriver.mockReturnValue(mockEventManager as any);
-        mockUseSharedByMeStore.getState = jest.fn().mockReturnValue(mockStore);
 
         mockEventManager.subscribe.mockImplementation((eventType) => {
             const index = [
@@ -119,7 +115,7 @@ describe('subscribeToSharedByMeEvents', () => {
     });
 
     it('should subscribe to all required event types', () => {
-        subscribeToSharedByMeEvents();
+        subscribeToSharedByMeEvents(() => mockStore);
 
         expect(mockEventManager.subscribe).toHaveBeenCalledWith(BusDriverEventName.CREATED_NODES, expect.any(Function));
         expect(mockEventManager.subscribe).toHaveBeenCalledWith(BusDriverEventName.UPDATED_NODES, expect.any(Function));
@@ -127,7 +123,7 @@ describe('subscribeToSharedByMeEvents', () => {
     });
 
     it('should return cleanup function that unsubscribes from all events', () => {
-        const cleanup = subscribeToSharedByMeEvents();
+        const cleanup = subscribeToSharedByMeEvents(() => mockStore);
 
         cleanup();
 
@@ -140,7 +136,7 @@ describe('subscribeToSharedByMeEvents', () => {
         let createdNodesHandler: jest.Mock;
 
         beforeEach(() => {
-            subscribeToSharedByMeEvents();
+            subscribeToSharedByMeEvents(() => mockStore);
             createdNodesHandler = mockEventManager.subscribe.mock.calls.find(
                 (call) => call[0] === BusDriverEventName.CREATED_NODES
             )[1];
@@ -206,7 +202,7 @@ describe('subscribeToSharedByMeEvents', () => {
         let updatedNodesHandler: jest.Mock;
 
         beforeEach(() => {
-            subscribeToSharedByMeEvents();
+            subscribeToSharedByMeEvents(() => mockStore);
             updatedNodesHandler = mockEventManager.subscribe.mock.calls.find(
                 (call) => call[0] === BusDriverEventName.UPDATED_NODES
             )[1];
@@ -275,7 +271,7 @@ describe('subscribeToSharedByMeEvents', () => {
         let deletedNodesHandler: jest.Mock;
 
         beforeEach(() => {
-            subscribeToSharedByMeEvents();
+            subscribeToSharedByMeEvents(() => mockStore);
             deletedNodesHandler = mockEventManager.subscribe.mock.calls.find(
                 (call) => call[0] === BusDriverEventName.DELETED_NODES
             )[1];
@@ -311,7 +307,7 @@ describe('subscribeToSharedByMeEvents', () => {
         let createdNodesHandler: jest.Mock;
 
         beforeEach(() => {
-            subscribeToSharedByMeEvents();
+            subscribeToSharedByMeEvents(() => mockStore);
             createdNodesHandler = mockEventManager.subscribe.mock.calls.find(
                 (call) => call[0] === BusDriverEventName.CREATED_NODES
             )[1];

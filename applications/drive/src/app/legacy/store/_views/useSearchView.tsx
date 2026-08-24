@@ -7,7 +7,7 @@ import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { useLoading } from '@proton/hooks';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
-import { useLinksListing } from '../_links';
+import { useLinksListing } from '../_links/useLinksListing';
 import { useSearchResults } from '../_search';
 import { useUserSettings } from '../_settings';
 import { useAbortSignal, useMemoArrayNoMatterTheOrder, useSorting, useSortingWithDefault } from './utils';

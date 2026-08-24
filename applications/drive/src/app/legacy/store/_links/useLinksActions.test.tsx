@@ -111,7 +111,7 @@ jest.mock('../_shares/useDefaultShare', () => {
             getDefaultPhotosShare: mockGetDefaultPhotosShare,
         };
     };
-    return useDefaultShare;
+    return { useDefaultShare };
 });
 
 jest.mock('../_utils/useBatchHelper', () => {
