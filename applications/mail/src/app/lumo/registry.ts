@@ -14,6 +14,7 @@ import { moveEmailsModule } from './skills/organise/moveEmails';
 import { setLocationReadModule } from './skills/organise/setLocationRead';
 import { setReadModule } from './skills/organise/setRead';
 import { setStarredModule } from './skills/organise/setStarred';
+import { snoozeEmailsModule } from './skills/organise/snoozeEmails';
 import { findContactsModule } from './skills/reads/findContacts';
 import { listFiltersModule } from './skills/reads/listFilters';
 import { listFoldersModule } from './skills/reads/listFolders';
@@ -52,6 +53,7 @@ const MODULES: MailToolModule[] = [
     setLocationReadModule,
     createFolderModule,
     createLabelModule,
+    snoozeEmailsModule,
     // Filters
     updateFilterModule,
 ];
