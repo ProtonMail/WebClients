@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import SettingsLink from '@proton/components/components/link/SettingsLink';
-import useConfig from '@proton/components/hooks/useConfig';
+
+import useConfig from '../../../../hooks/useConfig';
+import SettingsLink from '../../../link/SettingsLink';
 
 const DrawerAllSettingsView = () => {
     const { APP_NAME } = useConfig();

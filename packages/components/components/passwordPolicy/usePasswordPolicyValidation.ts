@@ -1,8 +1,8 @@
 import { useCallback, useMemo, useState } from 'react';
 
-import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { type PasswordPolicies, PasswordPolicyState } from '@proton/shared/lib/interfaces';
 
+import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
 import { useLoadPasswordStrengthIndicatorWasm } from '../passwordStrengthIndicator/PasswordStrengthIndicator';
 import type { PasswordPolicyValidationResult } from './interface';
 

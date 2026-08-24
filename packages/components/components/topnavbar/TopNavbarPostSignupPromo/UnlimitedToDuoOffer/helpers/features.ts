@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { Feature } from '@proton/components/containers/offers/interface';
+import type { Feature } from '../../../../../containers/offers/interface';
 
 const getStorageFeature = () => {
     return { name: c('Duo offer').t`2 TB of storage to share` };

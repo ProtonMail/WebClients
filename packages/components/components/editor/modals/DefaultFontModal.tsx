@@ -3,19 +3,19 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Form from '@proton/components/components/form/Form';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import useApi from '@proton/components/hooks/useApi';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useGetMailSettings, useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { updateFontFace, updateFontSize } from '@proton/shared/lib/api/mailSettings';
 
 import FontFaceSelect from '../../../containers/layouts/FontFaceSelect';
 import FontSizeSelect from '../../../containers/layouts/FontSizeSelect';
+import useApi from '../../../hooks/useApi';
+import useNotifications from '../../../hooks/useNotifications';
+import Form from '../../form/Form';
+import ModalTwo from '../../modalTwo/Modal';
+import ModalTwoContent from '../../modalTwo/ModalContent';
+import ModalTwoFooter from '../../modalTwo/ModalFooter';
+import ModalTwoHeader from '../../modalTwo/ModalHeader';
 import { DEFAULT_FONT_FACE, DEFAULT_FONT_SIZE } from '../constants';
 import { getFontFaceIdFromValue, getFontFaceValueFromId } from '../helpers/fontFace';
 

@@ -1,10 +1,11 @@
 import { useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import useAuthentication from '@proton/components/hooks/useAuthentication';
-import useConfig from '@proton/components/hooks/useConfig';
 import { appLink } from '@proton/shared/lib/apps/appLink';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
+
+import useAuthentication from '../../hooks/useAuthentication';
+import useConfig from '../../hooks/useConfig';
 
 const useAppLink = () => {
     const { APP_NAME } = useConfig();

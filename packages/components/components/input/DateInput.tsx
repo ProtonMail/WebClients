@@ -6,13 +6,13 @@ import { addDays, format, parse } from 'date-fns';
 import { c } from 'ttag';
 
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
-import Dropdown from '@proton/components/components/dropdown/Dropdown';
-import LocalizedMiniCalendar from '@proton/components/components/miniCalendar/LocalizedMiniCalendar';
 import { fromUTCDateToTimezone } from '@proton/shared/lib/date/timezone';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import generateUID from '@proton/utils/generateUID';
 
 import { useHotkeys } from '../../hooks/useHotkeys';
+import Dropdown from '../dropdown/Dropdown';
+import LocalizedMiniCalendar from '../miniCalendar/LocalizedMiniCalendar';
 import type { Props as InputProps } from './Input';
 import Input from './Input';
 

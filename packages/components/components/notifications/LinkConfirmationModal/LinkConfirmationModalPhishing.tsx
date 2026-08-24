@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import Checkbox from '@proton/components/components/input/Checkbox';
-import Label from '@proton/components/components/label/Label';
+import Checkbox from '../../input/Checkbox';
+import Label from '../../label/Label';
 
 interface Props {
     link: string;

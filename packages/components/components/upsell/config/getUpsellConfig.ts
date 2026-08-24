@@ -1,8 +1,3 @@
-import type {
-    OpenCallbackProps,
-    OpenSubscriptionModalCallback,
-} from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
-import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import { type COUPON_CODES, CYCLE } from '@proton/payments/core/constants';
 import type { PlanIDs } from '@proton/payments/core/interface';
 import type { Plan } from '@proton/payments/core/plan/interface';
@@ -12,6 +7,12 @@ import { addUpsellPath, getUpgradePath } from '@proton/shared/lib/helpers/upsell
 import { formatURLForAjaxRequest } from '@proton/shared/lib/helpers/url';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
+
+import type {
+    OpenCallbackProps,
+    OpenSubscriptionModalCallback,
+} from '../../../containers/payments/subscription/SubscriptionModalProvider';
+import { SUBSCRIPTION_STEPS } from '../../../containers/payments/subscription/constants';
 
 export interface GetUpsellConfigProps {
     upsellRef?: string;

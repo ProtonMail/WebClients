@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import type { IconName } from '@proton/icons/types';
@@ -11,6 +10,7 @@ import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import useToggle from '../../hooks/useToggle';
+import Icon from '../icon/Icon';
 import Input, { type Props as InputProps } from '../input/Input';
 
 interface Props extends Omit<InputProps, 'icon' | 'children' | 'onSubmit'> {

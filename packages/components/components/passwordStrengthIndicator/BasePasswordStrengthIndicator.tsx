@@ -4,8 +4,6 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcPassShieldFillDanger } from '@proton/icons/icons/IcPassShieldFillDanger';
@@ -16,6 +14,8 @@ import { MIN_PASSWORD_LENGTH } from '@proton/shared/lib/constants';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 
+import useNotifications from '../../hooks/useNotifications';
+import InputFieldTwo from '../v2/field/InputField';
 import empty from './illustrations/empty.svg';
 import strong from './illustrations/strong.svg';
 import vulnerable from './illustrations/vulnerable.svg';

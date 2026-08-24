@@ -1,4 +1,4 @@
-import { FONT_FACES } from '@proton/components/components/editor/constants';
+import { FONT_FACES } from '../constants';
 
 /**
  * getFontFaceValueFromId

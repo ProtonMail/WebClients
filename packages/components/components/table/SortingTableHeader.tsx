@@ -1,9 +1,10 @@
 import type { HTMLAttributes, ReactNode, ThHTMLAttributes } from 'react';
 
-import TableCell from '@proton/components/components/table/TableCell';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
+
+import TableCell from './TableCell';
 
 const { ASC, DESC } = SORT_DIRECTION;
 

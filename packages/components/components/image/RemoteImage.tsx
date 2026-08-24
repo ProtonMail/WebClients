@@ -5,11 +5,11 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Loader from '@proton/components/components/loader/Loader';
 import { IcCrossCircle } from '@proton/icons/icons/IcCrossCircle';
 
 import LoadRemoteImageBanner from '../../containers/banner/LoadRemoteImageBanner';
 import useLoadContactImage from '../../hooks/useLoadContactImage';
+import Loader from '../loader/Loader';
 
 export interface Props extends DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement> {
     src: string;

@@ -1,21 +1,21 @@
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-import NetPromoterScoreModal from '@proton/components/containers/netPromoterScore/NetPromoterScoreModal';
-import { useNPSEligiblity } from '@proton/components/containers/netPromoterScore/hooks/useNPSEligibility';
-import ScimGroupsOnboardingModal from '@proton/components/containers/organization/ScimGroupsOnboardingModal';
-import LightLabellingFeatureModal from '@proton/components/containers/organization/logoUpload/LightLabellingFeatureModal';
-import { useShowLightLabellingFeatureModal } from '@proton/components/containers/organization/logoUpload/useShowLightLabellingFeatureModal';
-import { useShowScimGroupsOnboardingModal } from '@proton/components/containers/organization/useShowScimGroupsOnboardingModal';
-import CancellationReminderModal from '@proton/components/containers/payments/subscription/cancellationReminder/CancellationReminderModal';
-import type { ReminderFlag } from '@proton/components/containers/payments/subscription/cancellationReminder/cancellationReminderHelper';
-import { shouldOpenReminderModal } from '@proton/components/containers/payments/subscription/cancellationReminder/cancellationReminderHelper';
-import TrialEndedModal from '@proton/components/containers/subscription/TrialEndedModal';
 import { FeatureCode, useFeature } from '@proton/features';
 
+import NetPromoterScoreModal from '../../containers/netPromoterScore/NetPromoterScoreModal';
 import { npsConfig } from '../../containers/netPromoterScore/config';
 import { getFeatureCode } from '../../containers/netPromoterScore/helpers';
+import { useNPSEligiblity } from '../../containers/netPromoterScore/hooks/useNPSEligibility';
 import type { NPSApplication } from '../../containers/netPromoterScore/interface';
+import ScimGroupsOnboardingModal from '../../containers/organization/ScimGroupsOnboardingModal';
+import LightLabellingFeatureModal from '../../containers/organization/logoUpload/LightLabellingFeatureModal';
+import { useShowLightLabellingFeatureModal } from '../../containers/organization/logoUpload/useShowLightLabellingFeatureModal';
+import { useShowScimGroupsOnboardingModal } from '../../containers/organization/useShowScimGroupsOnboardingModal';
+import CancellationReminderModal from '../../containers/payments/subscription/cancellationReminder/CancellationReminderModal';
+import type { ReminderFlag } from '../../containers/payments/subscription/cancellationReminder/cancellationReminderHelper';
+import { shouldOpenReminderModal } from '../../containers/payments/subscription/cancellationReminder/cancellationReminderHelper';
+import TrialEndedModal from '../../containers/subscription/TrialEndedModal';
+import useModalState from '../modalTwo/useModalState';
 import type { StartupModal } from './types';
 
 export const useLightLabellingFeatureModal: () => StartupModal = () => {

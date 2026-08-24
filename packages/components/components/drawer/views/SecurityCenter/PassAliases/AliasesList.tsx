@@ -1,11 +1,11 @@
 import { c } from 'ttag';
 
 import { Card } from '@proton/atoms/Card/Card';
-import Copy from '@proton/components/components/button/Copy';
-import Info from '@proton/components/components/link/Info';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import type { PassBridgeAliasItem } from '@proton/pass/lib/bridge/types';
 
+import useNotifications from '../../../../../hooks/useNotifications';
+import Copy from '../../../../button/Copy';
+import Info from '../../../../link/Info';
 import DrawerAppHeadline from '../../shared/DrawerAppHeadline';
 
 type FilteredAlias = { name: string; alias: string };

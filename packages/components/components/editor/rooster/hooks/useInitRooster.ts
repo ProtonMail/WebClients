@@ -3,11 +3,11 @@ import { useCallback, useEffect, useRef } from 'react';
 
 import type { IEditor } from 'roosterjs-editor-types';
 
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
-import useSyncIframeStyles from '@proton/components/containers/themes/useSyncIframeStyles';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 
+import { useTheme } from '../../../../containers/themes/ThemeProvider';
+import useSyncIframeStyles from '../../../../containers/themes/useSyncIframeStyles';
 import {
     EDITOR_BLOCKQUOTE_TOGGLE_CONTAINER_ID,
     EDITOR_DROPZONE,

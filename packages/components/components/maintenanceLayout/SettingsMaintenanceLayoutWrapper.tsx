@@ -2,11 +2,12 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { PrivateMainSettingsAreaBase } from '@proton/components/containers/layout/PrivateMainSettingsArea';
-import type { SettingsAreaConfig } from '@proton/components/containers/layout/interface';
 import errorImg from '@proton/styles/assets/img/errors/error-generic.svg';
 import type { FeatureFlag } from '@proton/unleash/Flags';
 import { useFlag } from '@proton/unleash/useFlag';
+
+import { PrivateMainSettingsAreaBase } from '../../containers/layout/PrivateMainSettingsArea';
+import type { SettingsAreaConfig } from '../../containers/layout/interface';
 
 interface Props {
     config: SettingsAreaConfig;

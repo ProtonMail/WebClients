@@ -1,13 +1,13 @@
 import { useState } from 'react';
 
-import useSettingsLink from '@proton/components/components/link/useSettingsLink';
-import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
-import useUpsellConfig from '@proton/components/components/upsell/config/useUpsellConfig';
-import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import { TelemetryAlwaysOnUpsellEvents } from '@proton/shared/lib/api/telemetry';
 import { SECOND, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 
+import { SUBSCRIPTION_STEPS } from '../../../../containers/payments/subscription/constants';
+import useSettingsLink from '../../../link/useSettingsLink';
+import useSpotlightShow from '../../../spotlight/useSpotlightShow';
+import useUpsellConfig from '../../../upsell/config/useUpsellConfig';
 import { SpotlightWithPromo } from '../common/SpotlightWithPromo';
 import { AlwaysOnUpsellContent } from './AlwaysOnUpsellContent';
 import { useAlwaysOnUpsell } from './useAlwaysOnUpsell';

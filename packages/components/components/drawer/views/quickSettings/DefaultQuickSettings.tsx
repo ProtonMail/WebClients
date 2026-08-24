@@ -2,10 +2,6 @@ import type { ChangeEvent } from 'react';
 
 import { c } from 'ttag';
 
-import Info from '@proton/components/components/link/Info';
-import Toggle from '@proton/components/components/toggle/Toggle';
-import useEarlyAccess from '@proton/components/hooks/useEarlyAccess';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { hasInboxDesktopFeature } from '@proton/shared/lib/desktop/ipcHelpers';
@@ -17,7 +13,11 @@ import { PROTON_THEMES_MAP, getThemes } from '@proton/shared/lib/themes/themes';
 import ThemeCards from '../../../../containers/themes/ThemeCards';
 import { useTheme } from '../../../../containers/themes/ThemeProvider';
 import ThemeSyncModeDropdown from '../../../../containers/themes/ThemeSyncModeDropdown';
+import useEarlyAccess from '../../../../hooks/useEarlyAccess';
+import useNotifications from '../../../../hooks/useNotifications';
 import useShowThemeSelection from '../../../../hooks/useShowThemeSelection';
+import Info from '../../../link/Info';
+import Toggle from '../../../toggle/Toggle';
 import DrawerAppHeadline from '../shared/DrawerAppHeadline';
 import DrawerAppSection from '../shared/DrawerAppSection';
 import QuickSettingsRemindersSection from './QuickSettingsRemindersSection';

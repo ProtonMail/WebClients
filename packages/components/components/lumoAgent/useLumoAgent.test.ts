@@ -22,7 +22,7 @@ type Script = (ctx: {
 let script: Script = async () => {};
 const sentTurns: Turn[][] = [];
 
-jest.mock('@proton/components/hooks/useApi', () => ({
+jest.mock('../../hooks/useApi', () => ({
     __esModule: true,
     default: () => jest.fn(),
 }));

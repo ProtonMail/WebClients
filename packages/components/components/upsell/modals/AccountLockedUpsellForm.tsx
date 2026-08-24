@@ -4,10 +4,6 @@ import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Href } from '@proton/atoms/Href/Href';
-import SettingsLink from '@proton/components/components/link/SettingsLink';
-import UpsellFeatureList from '@proton/components/components/upsell/UpsellFeatureList';
-import type { UpsellFeatureName } from '@proton/components/components/upsell/constants';
-import useConfig from '@proton/components/hooks/useConfig';
 import type { Plan } from '@proton/payments/core/plan/interface';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getAbuseURL, getStaticURL, getTermsURL } from '@proton/shared/lib/helpers/url';
@@ -15,7 +11,11 @@ import accountLockedImage from '@proton/styles/assets/img/illustrations/account-
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
+import useConfig from '../../../hooks/useConfig';
+import SettingsLink from '../../link/SettingsLink';
+import UpsellFeatureList from '../UpsellFeatureList';
 import type useUpsellConfig from '../config/useUpsellConfig';
+import type { UpsellFeatureName } from '../constants';
 
 interface AccountLockedUpsellFormProps {
     selectedPlan?: Plan;

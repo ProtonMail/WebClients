@@ -1,6 +1,7 @@
-import type { OpenCallbackProps } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
-import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import { type ADDON_NAMES, CYCLE, type PLANS } from '@proton/payments/core/constants';
+
+import type { OpenCallbackProps } from '../../containers/payments/subscription/SubscriptionModalProvider';
+import { SUBSCRIPTION_STEPS } from '../../containers/payments/subscription/constants';
 
 interface Props extends Pick<
     OpenCallbackProps,

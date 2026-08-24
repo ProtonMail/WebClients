@@ -6,17 +6,6 @@ import { c } from 'ttag';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import ContextMenu from '@proton/components/components/contextMenu/ContextMenu';
-import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-import Spotlight from '@proton/components/components/spotlight/Spotlight';
-import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
-import TopNavbarListItemButton from '@proton/components/components/topnavbar/TopNavbarListItemButton';
-import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
-import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import useApi from '@proton/components/hooks/useApi';
-import useConfig from '@proton/components/hooks/useConfig';
-import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
 import { useFeature } from '@proton/features/index';
 import { FeatureCode } from '@proton/features/interface';
 import { IcBuildings } from '@proton/icons/icons/IcBuildings';
@@ -30,13 +19,25 @@ import buildingImg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-buildi
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
+import ErrorBoundary from '../../containers/app/ErrorBoundary';
+import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
+import useApi from '../../hooks/useApi';
+import useConfig from '../../hooks/useConfig';
+import useSpotlightOnFeature from '../../hooks/useSpotlightOnFeature';
+import ContextMenu from '../contextMenu/ContextMenu';
+import DropdownMenuButton from '../dropdown/DropdownMenuButton';
+import useModalState from '../modalTwo/useModalState';
+import Spotlight from '../spotlight/Spotlight';
+import useSpotlightShow from '../spotlight/useSpotlightShow';
+import TopNavbarListItemButton from './TopNavbarListItemButton';
+
 import './TopNavbarB2BOnboardingButton.scss';
 
 const B2BOnboardingModal = lazy(
     () =>
         import(
             /* webpackChunkName: "B2BOnboardingModal" */
-            '@proton/components/components/onboarding/b2b/B2BOnboardingModal'
+            '../onboarding/b2b/B2BOnboardingModal'
         )
 );
 

@@ -5,18 +5,19 @@ import { c } from 'ttag';
 import { MAX_CHARS_API } from '@proton/account/organization';
 import { initOrganization } from '@proton/account/organization/actions';
 import { Button } from '@proton/atoms/Button/Button';
-import InputFieldStacked from '@proton/components/components/inputFieldStacked/InputFieldStacked';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import AuthModal from '@proton/components/containers/password/AuthModal';
-import type { AuthModalResult } from '@proton/components/containers/password/interface';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import b2bBuildings from '@proton/styles/assets/img/onboarding/b2b/img-b2b-buildings.svg';
+
+import AuthModal from '../../../../containers/password/AuthModal';
+import type { AuthModalResult } from '../../../../containers/password/interface';
+import InputFieldStacked from '../../../inputFieldStacked/InputFieldStacked';
+import ModalTwoContent from '../../../modalTwo/ModalContent';
+import ModalTwoFooter from '../../../modalTwo/ModalFooter';
+import ModalTwoHeader from '../../../modalTwo/ModalHeader';
+import { useModalTwoPromise } from '../../../modalTwo/useModalTwo';
+import InputFieldTwo from '../../../v2/field/InputField';
 
 interface Props {
     onNextStep: () => void;

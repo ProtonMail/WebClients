@@ -4,16 +4,17 @@ import tinycolor from 'tinycolor2';
 import { c } from 'ttag';
 
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
-import ColorSelector from '@proton/components/components/color/ColorSelector';
-import Dropdown from '@proton/components/components/dropdown/Dropdown';
-import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
-import type { DropdownButtonProps } from '@proton/components/components/dropdown/DropdownButton';
-import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import { IcCircleFilled } from '@proton/icons/icons/IcCircleFilled';
 import { ACCENT_COLORS_MAP, getColorName } from '@proton/shared/lib/colors';
 import { omit } from '@proton/shared/lib/helpers/object';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
+
+import ColorSelector from '../color/ColorSelector';
+import Dropdown from '../dropdown/Dropdown';
+import DropdownButton from '../dropdown/DropdownButton';
+import type { DropdownButtonProps } from '../dropdown/DropdownButton';
+import { DropdownSizeUnit } from '../dropdown/utils';
 
 interface OwnProps {
     color?: string;
