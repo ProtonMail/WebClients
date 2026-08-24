@@ -1532,7 +1532,8 @@
         "Güven"
       ],
       "Trust key": [
-        "Anahtara güven"
+        "Anahtara güven",
+        "Anahtarlara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -8116,8 +8117,7 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle",
-        "Görseller ekle"
+        "Görsel ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -9775,6 +9775,9 @@
       ],
       "No contacts found": [
         "Herhangi bir kişi bulunamadı"
+      ],
+      "Update filter": [
+        "Süzgeci güncelle"
       ]
     },
     "info": {
@@ -11051,6 +11054,12 @@
       ],
       "Label name": [
         "Etiket adı"
+      ],
+      "Filter name": [
+        "Süzgeç adı"
+      ],
+      "Sieve script": [
+        "Sieve betiği"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -17206,6 +17215,9 @@
       ],
       "September Sale": [
         "Eylül indirimi"
+      ],
+      "Update filter": [
+        "Süzgeci güncelle"
       ]
     },
     "Title header for keys table": {
