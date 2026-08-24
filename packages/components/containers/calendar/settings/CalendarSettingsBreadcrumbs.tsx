@@ -3,14 +3,15 @@ import { useHistory } from 'react-router';
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
-import CollapsingBreadcrumbs from '@proton/components/components/collapsingBreadcrumbs/CollapsingBreadcrumbs';
-import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
-import Option from '@proton/components/components/option/Option';
-import SelectOptions from '@proton/components/components/selectTwo/SelectOptions';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { getCalendarSubpagePath, getCalendarsSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+
+import CalendarSelectIcon from '../../../components/calendarSelect/CalendarSelectIcon';
+import CollapsingBreadcrumbs from '../../../components/collapsingBreadcrumbs/CollapsingBreadcrumbs';
+import SimpleDropdown from '../../../components/dropdown/SimpleDropdown';
+import Option from '../../../components/option/Option';
+import SelectOptions from '../../../components/selectTwo/SelectOptions';
 
 interface Props {
     calendar: VisualCalendar;

@@ -1,5 +1,4 @@
-import TimeInput from '@proton/components/components/input/TimeInput';
-
+import TimeInput from '../../../../components/input/TimeInput';
 import SettingsLayout from '../../../account/SettingsLayout';
 import SettingsLayoutLeft from '../../../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../../../account/SettingsLayoutRight';

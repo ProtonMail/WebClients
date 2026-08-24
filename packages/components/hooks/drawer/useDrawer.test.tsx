@@ -1,13 +1,9 @@
 import type { ReactNode } from 'react';
 
+import { serverTime } from '@protontech/crypto';
 import { act, renderHook } from '@testing-library/react-hooks';
 
 import { useGetUser } from '@proton/account/user/hooks';
-import useDrawerLocalStorage from '@proton/components/hooks/drawer/useDrawerLocalStorage';
-import useToggleDrawerApp from '@proton/components/hooks/drawer/useToggleDrawerApp';
-import useApi from '@proton/components/hooks/useApi';
-import useAuthentication from '@proton/components/hooks/useAuthentication';
-import { serverTime } from '@protontech/crypto';
 import { getClientID } from '@proton/shared/lib/apps/helper';
 import {
     getDrawerAppFromURL,
@@ -18,14 +14,18 @@ import {
 import { DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
 import { getAppVersionHeaders } from '@proton/shared/lib/fetch/headers';
 
+import useApi from '../useApi';
+import useAuthentication from '../useAuthentication';
 import useDrawer, { DrawerProvider } from './useDrawer';
+import useDrawerLocalStorage from './useDrawerLocalStorage';
+import useToggleDrawerApp from './useToggleDrawerApp';
 
 jest.mock('@proton/account/user/hooks');
-jest.mock('@proton/components/helpers/versionCookie', () => ({ versionCookieAtLoad: 'test-version' }));
-jest.mock('@proton/components/hooks/drawer/useDrawerLocalStorage');
-jest.mock('@proton/components/hooks/drawer/useToggleDrawerApp');
-jest.mock('@proton/components/hooks/useApi');
-jest.mock('@proton/components/hooks/useAuthentication');
+jest.mock('../../helpers/versionCookie', () => ({ versionCookieAtLoad: 'test-version' }));
+jest.mock('./useDrawerLocalStorage');
+jest.mock('./useToggleDrawerApp');
+jest.mock('../useApi');
+jest.mock('../useAuthentication');
 jest.mock('@protontech/crypto');
 jest.mock('@proton/shared/lib/apps/helper');
 jest.mock('@proton/shared/lib/apps/slugHelper');

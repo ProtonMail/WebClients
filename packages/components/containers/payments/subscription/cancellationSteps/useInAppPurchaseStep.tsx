@@ -1,6 +1,6 @@
 import { useSubscription } from '@proton/account/subscription/hooks';
-import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
 
+import { useModalTwoPromise } from '../../../../components/modalTwo/useModalTwo';
 import InAppPurchaseModal from '../InAppPurchaseModal';
 import type { CancellationStep, CancellationStepConfig } from './types';
 

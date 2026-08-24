@@ -3,19 +3,19 @@ import { c } from 'ttag';
 import { userSettingsActions } from '@proton/account/userSettings';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import useApi from '@proton/components/hooks/useApi';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateDensity } from '@proton/shared/lib/api/settings';
 import type { DENSITY } from '@proton/shared/lib/constants';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
 
+import type { ModalProps } from '../../components/modalTwo/Modal';
+import ModalTwo from '../../components/modalTwo/Modal';
+import ModalTwoContent from '../../components/modalTwo/ModalContent';
+import ModalTwoFooter from '../../components/modalTwo/ModalFooter';
+import ModalTwoHeader from '../../components/modalTwo/ModalHeader';
+import useApi from '../../hooks/useApi';
+import useNotifications from '../../hooks/useNotifications';
 import DensityRadiosCards from '../layouts/DensityRadiosCards';
 
 import './ModalSettingsLayoutCards.scss';

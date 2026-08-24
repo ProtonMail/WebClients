@@ -5,13 +5,6 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { DashboardGridSection } from '@proton/atoms/DashboardGrid/DashboardGrid';
-import { getSimplePriceString } from '@proton/components/components/price/helper';
-import { PromotionBanner } from '@proton/components/containers/banner/PromotionBanner';
-import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
-import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
-import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
-import useLoad from '@proton/components/hooks/useLoad';
 import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
 import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { getPricePerCycle } from '@proton/payments/core/price-helpers';
@@ -20,6 +13,13 @@ import { getPlanByName } from '@proton/payments/core/subscription/plans-map-wrap
 import { getExploreText } from '@proton/shared/lib/apps/i18n';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
+import { getSimplePriceString } from '../../../../../components/price/helper';
+import getBoldFormattedText from '../../../../../helpers/getBoldFormattedText';
+import useDashboardPaymentFlow from '../../../../../hooks/useDashboardPaymentFlow';
+import useLoad from '../../../../../hooks/useLoad';
+import { PromotionBanner } from '../../../../banner/PromotionBanner';
+import { useSubscriptionModal } from '../../SubscriptionModalProvider';
+import { SUBSCRIPTION_STEPS } from '../../constants';
 import bundleLogo from '../images/bundle.svg';
 
 const BundleUpsellBanner = ({ app }: { app: APP_NAMES }) => {

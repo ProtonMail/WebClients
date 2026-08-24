@@ -1,17 +1,17 @@
 import type { ComponentType, ReactNode } from 'react';
 
-import SpotlightProvider from '@proton/components/components/spotlight/Provider';
-import { CacheProvider } from '@proton/components/containers/cache/Provider';
-import { RightToLeftProvider } from '@proton/components/containers/rightToLeft/Provider';
 import Icons from '@proton/icons/Icons';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 
+import SpotlightProvider from '../../components/spotlight/Provider';
 import { PreventLeaveProvider } from '../../hooks/usePreventLeave';
+import { CacheProvider } from '../cache/Provider';
 import CompatibilityCheck from '../compatibilityCheck/CompatibilityCheck';
 import ConfigProvider from '../config/Provider';
 import ModalsProvider from '../modals/Provider';
 import NotificationsProvider from '../notifications/Provider';
+import { RightToLeftProvider } from '../rightToLeft/Provider';
 import DefaultThemeProvider from '../themes/ThemeProvider';
 
 interface Props {

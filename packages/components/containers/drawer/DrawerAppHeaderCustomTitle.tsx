@@ -2,11 +2,11 @@ import type { ReactNode } from 'react';
 import { useRef } from 'react';
 
 import { Button } from '@proton/atoms/Button/Button';
-import type { Color } from '@proton/components/components/button/ButtonGroup';
 import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled';
 import { IcChevronUpFilled } from '@proton/icons/icons/IcChevronUpFilled';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';
 
+import type { Color } from '../../components/button/ButtonGroup';
 import { useHotkeys } from '../../hooks/useHotkeys';
 
 interface Props {

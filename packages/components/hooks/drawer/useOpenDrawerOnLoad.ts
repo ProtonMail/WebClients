@@ -1,11 +1,6 @@
 import { useEffect } from 'react';
 
 import { useUser } from '@proton/account/user/hooks';
-import useDrawer from '@proton/components/hooks/drawer/useDrawer';
-import useApiStatus from '@proton/components/hooks/useApiStatus';
-import useAuthentication from '@proton/components/hooks/useAuthentication';
-import useConfig from '@proton/components/hooks/useConfig';
-import useOnline from '@proton/components/hooks/useOnline';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getLocalIDFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -19,6 +14,12 @@ import {
 } from '@proton/shared/lib/drawer/helpers';
 import type { DrawerLocalStorageValue } from '@proton/shared/lib/drawer/interfaces';
 import { getItem } from '@proton/shared/lib/helpers/storage';
+
+import useApiStatus from '../useApiStatus';
+import useAuthentication from '../useAuthentication';
+import useConfig from '../useConfig';
+import useOnline from '../useOnline';
+import useDrawer from './useDrawer';
 
 const useOpenDrawerOnLoad = () => {
     const [user] = useUser();
@@ -89,6 +90,7 @@ const useOpenDrawerOnLoad = () => {
                     setAppInView(app);
                 }
             } catch (e: any) {
+                // eslint-disable-next-line no-console
                 console.error(e);
             }
         }

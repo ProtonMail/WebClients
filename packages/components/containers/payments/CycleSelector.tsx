@@ -3,12 +3,12 @@ import type { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import ButtonGroup from '@proton/components/components/button/ButtonGroup';
 import { CYCLE, DEFAULT_CYCLE } from '@proton/payments/core/constants';
 import type { Cycle } from '@proton/payments/core/interface';
 import { omit } from '@proton/shared/lib/helpers/object';
 import clsx from '@proton/utils/clsx';
 
+import ButtonGroup from '../../components/button/ButtonGroup';
 import type { Props as ForwardedButtonGroupProps } from '../../components/button/ButtonGroup';
 import Option from '../../components/option/Option';
 import type { Props as ForwardedSelectProps } from '../../components/select/Select';

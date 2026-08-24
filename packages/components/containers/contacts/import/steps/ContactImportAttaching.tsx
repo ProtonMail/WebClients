@@ -5,14 +5,6 @@ import { c } from 'ttag';
 import { EASY_SWITCH_SEARCH_SOURCES } from '@proton/activation/src/interface';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
-import Alert from '@proton/components/components/alert/Alert';
-import AttachedFile from '@proton/components/components/attachedFile/AttachedFile';
-import Dropzone from '@proton/components/components/dropzone/Dropzone';
-import FileInput from '@proton/components/components/input/FileInput';
-import SettingsLink from '@proton/components/components/link/SettingsLink';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { FeatureCode, useFeature } from '@proton/features';
 import { APPS } from '@proton/shared/lib/constants';
 import { MAX_IMPORT_FILE_SIZE, MAX_IMPORT_FILE_SIZE_STRING } from '@proton/shared/lib/contacts/constants';
@@ -27,6 +19,14 @@ import type { ImportContactsModel } from '@proton/shared/lib/interfaces/contacts
 import { EXTENSION, IMPORT_STEPS } from '@proton/shared/lib/interfaces/contacts/Import';
 import { getMaxContactsImportConfig } from '@proton/unleash/getMaxContactsImportConfig';
 
+import Alert from '../../../../components/alert/Alert';
+import AttachedFile from '../../../../components/attachedFile/AttachedFile';
+import Dropzone from '../../../../components/dropzone/Dropzone';
+import FileInput from '../../../../components/input/FileInput';
+import SettingsLink from '../../../../components/link/SettingsLink';
+import ModalTwoContent from '../../../../components/modalTwo/ModalContent';
+import ModalTwoFooter from '../../../../components/modalTwo/ModalFooter';
+import ModalTwoHeader from '../../../../components/modalTwo/ModalHeader';
 import { getInitialState } from '../initialstate';
 
 const { CSV, VCF } = EXTENSION;

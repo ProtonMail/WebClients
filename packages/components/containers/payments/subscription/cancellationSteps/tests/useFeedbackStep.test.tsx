@@ -1,14 +1,14 @@
 import { useUser } from '@proton/account/user/hooks';
-import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
-import { componentsHookRenderer } from '@proton/components/containers/contacts/tests/render';
 import type { FeedbackDowngradeData } from '@proton/payments/core/api/api';
 
+import { useModalTwoPromise } from '../../../../../components/modalTwo/useModalTwo';
+import { componentsHookRenderer } from '../../../../contacts/tests/render';
 import type { FeedbackDowngradeFormData, FeedbackDowngradeResult } from '../../content/interface';
 import { useFeedbackStep } from '../useFeedbackStep';
 import type { FeedbackStepResult } from '../useFeedbackStep';
 
 jest.mock('@proton/account/user/hooks');
-jest.mock('@proton/components/components/modalTwo/useModalTwo');
+jest.mock('../../../../../components/modalTwo/useModalTwo');
 
 const mockSendFeedbackModalCancelReport = jest.fn();
 const mockSendFeedbackModalSubmitReport = jest.fn();

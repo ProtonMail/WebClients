@@ -1,10 +1,5 @@
 import type { ReactNode } from 'react';
 
-import InputFieldStacked from '@proton/components/components/inputFieldStacked/InputFieldStacked';
-import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
-import Info from '@proton/components/components/link/Info';
-import Toggle from '@proton/components/components/toggle/Toggle';
-import useConfig from '@proton/components/hooks/useConfig';
 import { APPS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import {
@@ -13,6 +8,11 @@ import {
     getSubscriptionPatchUpdate,
 } from '@proton/shared/lib/helpers/newsletter';
 
+import InputFieldStacked from '../../components/inputFieldStacked/InputFieldStacked';
+import InputFieldStackedGroup from '../../components/inputFieldStacked/InputFieldStackedGroup';
+import Info from '../../components/link/Info';
+import Toggle from '../../components/toggle/Toggle';
+import useConfig from '../../hooks/useConfig';
 import type { EmailSubscription } from './constants/email-subscriptions';
 
 export interface EmailSubscriptionCheckboxesProps {

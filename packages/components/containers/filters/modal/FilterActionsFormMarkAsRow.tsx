@@ -1,11 +1,11 @@
 import { c } from 'ttag';
 
-import Checkbox from '@proton/components/components/input/Checkbox';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { IcEye } from '@proton/icons/icons/IcEye';
 import { IcStar } from '@proton/icons/icons/IcStar';
 import clsx from '@proton/utils/clsx';
 
+import Checkbox from '../../../components/input/Checkbox';
 import type { Actions } from '../interfaces';
 
 interface Props {

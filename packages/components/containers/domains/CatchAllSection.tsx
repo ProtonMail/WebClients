@@ -2,9 +2,6 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useUserPermissions } from '@proton/account/userPermissions/hooks';
-import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
-import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
-import UpgradeBanner from '@proton/components/containers/account/UpgradeBanner';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import {
     APP_UPSELL_REF_PATH,
@@ -15,6 +12,10 @@ import {
 } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+
+import SettingsParagraph from '../account/SettingsParagraph';
+import SettingsSectionWide from '../account/SettingsSectionWide';
+import UpgradeBanner from '../account/UpgradeBanner';
 
 const CatchAllSection = () => {
     const [user] = useUser();

@@ -1,12 +1,12 @@
 import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
-import Logo from '@proton/components/components/logo/Logo';
-import TableRow from '@proton/components/components/table/TableRow';
 import type { RetentionRule, RetentionRuleScope } from '@proton/shared/lib/interfaces/RetentionRule';
 import isTruthy from '@proton/utils/isTruthy';
 
+import DropdownActions from '../../../components/dropdown/DropdownActions';
+import Logo from '../../../components/logo/Logo';
+import TableRow from '../../../components/table/TableRow';
 import { getActionLabel, getDaysStringFromLifetime, getLogoProductLabel } from './helpers';
 import { useRetentionRuleScopeSuggestion } from './useRetentionRuleScopeSuggestion';
 

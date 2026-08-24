@@ -4,26 +4,27 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import Form from '@proton/components/components/form/Form';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import Modal from '@proton/components/components/modalTwo/Modal';
-import ModalContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
-import Option from '@proton/components/components/option/Option';
-import Prompt from '@proton/components/components/prompt/Prompt';
-import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
-import useFormErrors from '@proton/components/components/v2/useFormErrors';
-import { getClientName } from '@proton/components/helpers/report';
-import useApi from '@proton/components/hooks/useApi';
-import useConfig from '@proton/components/hooks/useConfig';
-import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { reportCancelPlan } from '@proton/shared/lib/api/reports';
 import { getBrowser, getOS } from '@proton/shared/lib/helpers/browser';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import noop from '@proton/utils/noop';
+
+import Form from '../../../../components/form/Form';
+import type { ModalProps } from '../../../../components/modalTwo/Modal';
+import Modal from '../../../../components/modalTwo/Modal';
+import ModalContent from '../../../../components/modalTwo/ModalContent';
+import ModalFooter from '../../../../components/modalTwo/ModalFooter';
+import ModalHeader from '../../../../components/modalTwo/ModalHeader';
+import Option from '../../../../components/option/Option';
+import Prompt from '../../../../components/prompt/Prompt';
+import SelectTwo from '../../../../components/selectTwo/SelectTwo';
+import InputFieldTwo from '../../../../components/v2/field/InputField';
+import TextAreaTwo from '../../../../components/v2/input/TextArea';
+import useFormErrors from '../../../../components/v2/useFormErrors';
+import { getClientName } from '../../../../helpers/report';
+import useApi from '../../../../hooks/useApi';
+import useConfig from '../../../../hooks/useConfig';
+import useErrorHandler from '../../../../hooks/useErrorHandler';
 
 enum STEP {
     FORM,

@@ -2,7 +2,6 @@ import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { getModelState } from '@proton/account/test';
-import { organization } from '@proton/components/containers/payments/subscription/__mocks__/data';
 import { changeRenewState, deleteSubscription } from '@proton/payments/core/api/api';
 import { FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
 import { Renew } from '@proton/payments/core/subscription/constants';
@@ -17,6 +16,7 @@ import { apiMock } from '@proton/testing/lib/api';
 import { renderWithProviders } from '@proton/testing/lib/context/renderWithProviders';
 import { getOrganizationState, getSubscriptionState } from '@proton/testing/lib/initialReduxState';
 
+import { organization } from '../__mocks__/data';
 import { useCancelSubscriptionFlow } from './useCancelSubscriptionFlow';
 
 jest.mock('@proton/atoms/Portal/Portal');

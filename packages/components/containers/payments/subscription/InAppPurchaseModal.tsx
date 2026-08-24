@@ -3,16 +3,17 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { FreeSubscription } from '@proton/payments/core/interface';
 import { SubscriptionPlatform } from '@proton/payments/core/subscription/constants';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { isFreeSubscription, isPaidSubscription } from '@proton/payments/core/type-guards';
+
+import type { ModalProps } from '../../../components/modalTwo/Modal';
+import ModalTwo from '../../../components/modalTwo/Modal';
+import ModalTwoContent from '../../../components/modalTwo/ModalContent';
+import ModalTwoFooter from '../../../components/modalTwo/ModalFooter';
+import ModalTwoHeader from '../../../components/modalTwo/ModalHeader';
 
 interface InAppPurchaseModalProps extends ModalProps {
     subscription: Subscription | FreeSubscription;

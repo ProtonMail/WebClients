@@ -3,7 +3,6 @@ import type { PropsWithChildren } from 'react';
 import { c } from 'ttag';
 
 import { Banner, BannerVariants } from '@proton/atoms/Banner/Banner';
-import Price from '@proton/components/components/price/Price';
 import {
     getMaxCreditAmount,
     getMinPaypalAmountChargebee,
@@ -11,6 +10,8 @@ import {
 } from '@proton/payments/core/amount-limits';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { Currency, PlainPaymentMethodType } from '@proton/payments/core/interface';
+
+import Price from '../../components/price/Price';
 
 interface Props {
     amount: number;

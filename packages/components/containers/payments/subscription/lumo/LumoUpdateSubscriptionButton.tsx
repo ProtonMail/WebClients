@@ -2,8 +2,9 @@ import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import SettingsLink from '@proton/components/components/link/SettingsLink';
 import { getUpgradePath } from '@proton/shared/lib/helpers/upsell';
+
+import SettingsLink from '../../../../components/link/SettingsLink';
 
 const LumoUpdateSubscriptionButton = () => {
     const [user] = useUser();

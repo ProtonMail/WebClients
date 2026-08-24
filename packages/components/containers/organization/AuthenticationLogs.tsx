@@ -7,21 +7,6 @@ import { useMembers } from '@proton/account/members/hooks';
 import { organizationActions } from '@proton/account/organization';
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
-import AddressesInput, { AddressesInputItem } from '@proton/components/components/addressesInput/AddressesInput';
-import withPermissionGuard from '@proton/components/components/orgPermissions/withPermissionGuard';
-import DateInput from '@proton/components/components/input/DateInput';
-import Label from '@proton/components/components/label/Label';
-import Info from '@proton/components/components/link/Info';
-import Loader from '@proton/components/components/loader/Loader';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-import Pagination from '@proton/components/components/pagination/Pagination';
-import usePaginationAsync from '@proton/components/components/pagination/usePaginationAsync';
-import Toggle from '@proton/components/components/toggle/Toggle';
-import AddressesAutocompleteTwo from '@proton/components/components/v2/addressesAutocomplete/AddressesAutocomplete';
-import InputField from '@proton/components/components/v2/field/InputField';
-import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import useApi from '@proton/components/hooks/useApi';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import { IcArrowRotateRight } from '@proton/icons/icons/IcArrowRotateRight';
@@ -32,6 +17,21 @@ import type { OrganizationExtended, OrganizationSettings, Recipient } from '@pro
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
+import AddressesInput, { AddressesInputItem } from '../../components/addressesInput/AddressesInput';
+import DateInput from '../../components/input/DateInput';
+import Label from '../../components/label/Label';
+import Info from '../../components/link/Info';
+import Loader from '../../components/loader/Loader';
+import useModalState from '../../components/modalTwo/useModalState';
+import withPermissionGuard from '../../components/orgPermissions/withPermissionGuard';
+import Pagination from '../../components/pagination/Pagination';
+import usePaginationAsync from '../../components/pagination/usePaginationAsync';
+import Toggle from '../../components/toggle/Toggle';
+import AddressesAutocompleteTwo from '../../components/v2/addressesAutocomplete/AddressesAutocomplete';
+import InputField from '../../components/v2/field/InputField';
+import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
+import useApi from '../../hooks/useApi';
+import useNotifications from '../../hooks/useNotifications';
 import SettingsSectionWide from '../account/SettingsSectionWide';
 import RecipientsLimitationModal from '../b2bDashboard/ActivityMonitor/RecipientsLimitationModal';
 import { updateMonitoringSetting } from '../b2bDashboard/ActivityMonitor/api';
@@ -357,9 +357,7 @@ const AuthenticationLogs = ({
                                     <GuardedExportButton
                                         shape="outline"
                                         className="self-end"
-                                        onClick={() =>
-                                            withLoadingDownload(handleDownload(authLogs, organization))
-                                        }
+                                        onClick={() => withLoadingDownload(handleDownload(authLogs, organization))}
                                         loading={loadingDownload}
                                         tooltip={{ wrapperClassName: 'inline-flex items-center' }}
                                     >

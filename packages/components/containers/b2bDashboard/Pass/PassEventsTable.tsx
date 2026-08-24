@@ -5,18 +5,18 @@ import { c } from 'ttag';
 
 import { Avatar } from '@proton/atoms/Avatar/Avatar';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import AppLink from '@proton/components/components/link/AppLink';
-import { SortingTableHeader } from '@proton/components/components/table/SortingTableHeader';
-import Table from '@proton/components/components/table/Table';
-import TableBody from '@proton/components/components/table/TableBody';
-import TableRow from '@proton/components/components/table/TableRow';
-import Time from '@proton/components/components/time/Time';
-import useApi from '@proton/components/hooks/useApi';
 import { getShareID } from '@proton/shared/lib/api/b2bevents';
 import { APPS, SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import isTruthy from '@proton/utils/isTruthy';
 
+import AppLink from '../../../components/link/AppLink';
+import { SortingTableHeader } from '../../../components/table/SortingTableHeader';
+import Table from '../../../components/table/Table';
+import TableBody from '../../../components/table/TableBody';
+import TableRow from '../../../components/table/TableRow';
+import Time from '../../../components/time/Time';
+import useApi from '../../../hooks/useApi';
 import { NoEventsInfo } from '../NoEventsInfo';
 import { getDesciptionText, getDescriptionTextWithLink } from './helpers';
 import type { PassEvent } from './interface';

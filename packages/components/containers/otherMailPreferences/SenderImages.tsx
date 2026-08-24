@@ -1,10 +1,9 @@
 import { c } from 'ttag';
 
-import Info from '@proton/components/components/link/Info';
-import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
-import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
-import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
-
+import Info from '../../components/link/Info';
+import SettingsLayout from '../account/SettingsLayout';
+import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
+import SettingsLayoutRight from '../account/SettingsLayoutRight';
 import SenderImagesToggle from './SenderImagesToggle';
 
 export const SenderImages = () => {

@@ -1,14 +1,15 @@
+import { CryptoProxy } from '@protontech/crypto';
+import { computeKeyPassword } from '@protontech/crypto/srp';
 import { c } from 'ttag';
 
-import type { AuthTypes } from '@proton/components/containers/login/interface';
-import { CryptoProxy } from '@protontech/crypto';
 import type { AuthResponse } from '@proton/shared/lib/authentication/interface';
 import { getTwoFactorTypes } from '@proton/shared/lib/authentication/twoFactor';
 import { type APP_NAMES, PASSWORD_MODE } from '@proton/shared/lib/constants';
 import type { KeySalt as tsKeySalt } from '@proton/shared/lib/interfaces/KeySalt';
 import type { User as tsUser } from '@proton/shared/lib/interfaces/User';
 import { getPrimaryKeyWithSalt } from '@proton/shared/lib/keys/keys';
-import { computeKeyPassword } from '@protontech/crypto/srp';
+
+import type { AuthTypes } from './interface';
 
 /**
  * Get two factor types and password mode for a user signing in.

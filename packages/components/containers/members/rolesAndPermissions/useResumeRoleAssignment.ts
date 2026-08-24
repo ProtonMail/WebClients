@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 
-import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useNotifications from '@proton/components/hooks/useNotifications';
+import useErrorHandler from '../../../hooks/useErrorHandler';
+import useNotifications from '../../../hooks/useNotifications';
 
 /** Currently supported RoleAssignmentSources: EnhancedMember | EnhancedGroup */
 type Resume = (sourceId: string, isCancelRequested: () => boolean) => Promise<void>;

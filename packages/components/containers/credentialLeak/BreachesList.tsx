@@ -2,13 +2,13 @@ import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
-import Tabs from '@proton/components/components/tabs/Tabs';
-import type { FetchedBreaches } from '@proton/components/containers/credentialLeak/models';
 
+import Tabs from '../../components/tabs/Tabs';
 import BreachListItem from './BreachListItem';
 import BreachListUpgradeLink from './BreachListUpgradeLink';
 import EmptyBreachListCard from './EmptyBreachListCard';
 import { getStyle } from './helpers';
+import type { FetchedBreaches } from './models';
 import type { ListType } from './models';
 import { BREACH_STATE } from './models';
 

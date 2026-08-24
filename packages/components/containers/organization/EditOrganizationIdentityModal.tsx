@@ -8,22 +8,23 @@ import { useAddresses } from '@proton/account/addresses/hooks';
 import { getIsEligibleOrganizationIdentityAddress } from '@proton/account/organizationKey/actions';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import SettingsLink from '@proton/components/components/link/SettingsLink';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import Modal from '@proton/components/components/modalTwo/Modal';
-import ModalContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
-import Option from '@proton/components/components/option/Option';
-import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import useFormErrors from '@proton/components/components/v2/useFormErrors';
-import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { getIsAddressConfirmed } from '@proton/shared/lib/helpers/address';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+
+import SettingsLink from '../../components/link/SettingsLink';
+import type { ModalProps } from '../../components/modalTwo/Modal';
+import Modal from '../../components/modalTwo/Modal';
+import ModalContent from '../../components/modalTwo/ModalContent';
+import ModalFooter from '../../components/modalTwo/ModalFooter';
+import ModalHeader from '../../components/modalTwo/ModalHeader';
+import Option from '../../components/option/Option';
+import SelectTwo from '../../components/selectTwo/SelectTwo';
+import InputFieldTwo from '../../components/v2/field/InputField';
+import useFormErrors from '../../components/v2/useFormErrors';
+import useErrorHandler from '../../hooks/useErrorHandler';
+import useNotifications from '../../hooks/useNotifications';
 
 interface Props extends ModalProps<'div'> {
     signatureAddress?: string;

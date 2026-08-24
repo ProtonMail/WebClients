@@ -2,16 +2,16 @@ import { useContext } from 'react';
 
 import { c } from 'ttag';
 
-import PassLogo from '@proton/components/components/logo/PassLogo';
+import { APPS, PASS_APP_NAME } from '@proton/shared/lib/constants';
+import { goToPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
+
+import PassLogo from '../../../../../../components/logo/PassLogo';
 import {
     PASS_PLUS_VAULT_SHARING,
     get2FAAuthenticator,
     getLoginsAndNotes,
     getVaultSharing,
-} from '@proton/components/containers/payments/features/pass';
-import { APPS, PASS_APP_NAME } from '@proton/shared/lib/constants';
-import { goToPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
-
+} from '../../../../../payments/features/pass';
 import { AlsoInYourPlanSectionContext } from '../AlsoInYourPlanSection';
 import AlsoInYourPlanSectionCard from '../AlsoInYourPlanSectionCard';
 import pass from '../illustrations/pass.jpg';

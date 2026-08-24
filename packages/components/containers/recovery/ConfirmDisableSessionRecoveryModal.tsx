@@ -2,11 +2,12 @@ import { c } from 'ttag';
 
 import { toggleSignedInReset } from '@proton/account/recovery/userSettingsActions';
 import { Button } from '@proton/atoms/Button/Button';
-import Prompt from '@proton/components/components/prompt/Prompt';
 import useLoading from '@proton/hooks/useLoading';
 import metrics, { observeApiError } from '@proton/metrics';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import noop from '@proton/utils/noop';
+
+import Prompt from '../../components/prompt/Prompt';
 
 interface Props {
     onClose: () => void;

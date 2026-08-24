@@ -1,14 +1,14 @@
 import { isValidElement, useState } from 'react';
 
 import { useWelcomeFlags } from '@proton/account';
-import type { ModalSize } from '@proton/components/components/modalTwo/Modal';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import StepDot from '@proton/components/components/stepDot/StepDot';
-import StepDots from '@proton/components/components/stepDots/StepDots';
 import clsx from '@proton/utils/clsx';
 import range from '@proton/utils/range';
 
+import type { ModalSize } from '../../components/modalTwo/Modal';
+import ModalTwo from '../../components/modalTwo/Modal';
+import ModalTwoContent from '../../components/modalTwo/ModalContent';
+import StepDot from '../../components/stepDot/StepDot';
+import StepDots from '../../components/stepDots/StepDots';
 import type { OnboardingStepComponent, OnboardingStepProps } from './interface';
 import useGenericSteps from './useGenericSteps';
 

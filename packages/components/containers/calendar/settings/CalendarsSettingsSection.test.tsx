@@ -60,9 +60,9 @@ jest.mock('../../eventManager/calendar/useCalendarsInfoListener', () => () => ({
 jest.mock('../../eventManager/calendar/CalendarModelEventManagerProvider', () => ({
     useCalendarModelEventManager: jest.fn(() => ({ call: jest.fn() })),
 }));
-jest.mock('@proton/components/hooks/useNotifications', () => () => ({}));
+jest.mock('../../../hooks/useNotifications', () => () => ({}));
 jest.mock('@proton/features/useFeature', () => jest.fn(() => ({ feature: { Value: true } })));
-jest.mock('@proton/components/hooks/useEarlyAccess', () => () => ({}));
+jest.mock('../../../hooks/useEarlyAccess', () => () => ({}));
 
 jest.mock('@proton/calendar/holidaysDirectory/hooks', () => ({
     __esModule: true,

@@ -1,5 +1,3 @@
-import useSettingsLink from '@proton/components/components/link/useSettingsLink';
-import useConfig from '@proton/components/hooks/useConfig';
 import type { Currency } from '@proton/payments/core/interface';
 import { getPlanNameFromIDs } from '@proton/payments/core/plan/helpers';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
@@ -9,6 +7,8 @@ import { isElectronApp, isElectronMail } from '@proton/shared/lib/helpers/deskto
 import { formatURLForAjaxRequest } from '@proton/shared/lib/helpers/url';
 import noop from '@proton/utils/noop';
 
+import useSettingsLink from '../../../components/link/useSettingsLink';
+import useConfig from '../../../hooks/useConfig';
 import { openLinkInBrowser } from '../../desktop/openExternalLink';
 import { useHasInboxDesktopInAppPayments } from '../../desktop/useHasInboxDesktopInAppPayments';
 import {

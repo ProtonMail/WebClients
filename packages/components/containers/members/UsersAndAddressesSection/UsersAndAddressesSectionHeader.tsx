@@ -3,18 +3,19 @@ import type { CSSProperties, JSX } from 'react';
 import { c } from 'ttag';
 
 import { AdminRolesUIState, useAdminRolesUI } from '@proton/account/userPermissions/hooks';
-import Info from '@proton/components/components/link/Info';
-import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
-import TableCell from '@proton/components/components/table/TableCell';
-import { adminTooltipText } from '@proton/components/containers/members/constants';
-import AdminRolesSpotlight from '@proton/components/containers/members/rolesAndPermissions/AdminRolesSpotlight';
-import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
 import { FeatureCode, useFeature } from '@proton/features';
 import type { MemberUsageColumnDisplay } from '@proton/shared/lib/api/members';
 import { SECOND, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
+
+import Info from '../../../components/link/Info';
+import useSpotlightShow from '../../../components/spotlight/useSpotlightShow';
+import TableCell from '../../../components/table/TableCell';
+import useSpotlightOnFeature from '../../../hooks/useSpotlightOnFeature';
+import { adminTooltipText } from '../constants';
+import AdminRolesSpotlight from '../rolesAndPermissions/AdminRolesSpotlight';
 
 type HeaderCellItem = {
     key: string;

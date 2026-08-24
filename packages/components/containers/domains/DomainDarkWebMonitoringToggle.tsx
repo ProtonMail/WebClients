@@ -3,14 +3,15 @@ import { useId } from 'react';
 import { c } from 'ttag';
 
 import { syncDomain } from '@proton/account/domains/actions';
-import Toggle from '@proton/components/components/toggle/Toggle';
-import useApi from '@proton/components/hooks/useApi';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { disableDomainBreachAlert, enableDomainBreachAlert } from '@proton/shared/lib/api/breaches';
 import { DARK_WEB_MONITORING_NAME } from '@proton/shared/lib/constants';
 import type { Domain } from '@proton/shared/lib/interfaces';
+
+import Toggle from '../../components/toggle/Toggle';
+import useApi from '../../hooks/useApi';
+import useNotifications from '../../hooks/useNotifications';
 
 interface Props {
     domain: Domain;

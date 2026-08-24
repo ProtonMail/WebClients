@@ -5,13 +5,6 @@ import { c } from 'ttag';
 
 import { selectIsKeylessSsoOrganizationPlan } from '@proton/account/scimSetup';
 import { Button } from '@proton/atoms/Button/Button';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import StepDot from '@proton/components/components/stepDot/StepDot';
-import StepDots from '@proton/components/components/stepDots/StepDots';
 import { FeatureCode, useFeature } from '@proton/features';
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import scimGroupsHeroImg from '@proton/styles/assets/img/onboarding/scim-groups-onboarding-hero.svg';
@@ -21,6 +14,13 @@ import scimGroupsSyncedImg from '@proton/styles/assets/img/onboarding/scim-group
 import clsx from '@proton/utils/clsx';
 import range from '@proton/utils/range';
 
+import type { ModalProps } from '../../components/modalTwo/Modal';
+import ModalTwo from '../../components/modalTwo/Modal';
+import ModalTwoContent from '../../components/modalTwo/ModalContent';
+import ModalTwoFooter from '../../components/modalTwo/ModalFooter';
+import ModalTwoHeader from '../../components/modalTwo/ModalHeader';
+import StepDot from '../../components/stepDot/StepDot';
+import StepDots from '../../components/stepDots/StepDots';
 import getBoldFormattedText from '../../helpers/getBoldFormattedText';
 
 // Organizations with the keyless SSO entitlement don't have to approve group changes,

@@ -4,7 +4,6 @@ import { forwardRef } from 'react';
 import type { useSortable } from '@dnd-kit/react/sortable';
 import { c } from 'ttag';
 
-import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import { IcTextAlignJustify } from '@proton/icons/icons/IcTextAlignJustify';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
@@ -13,6 +12,7 @@ import type { ContactEmail, ContactEmailModel } from '@proton/shared/lib/interfa
 import type { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 import clsx from '@proton/utils/clsx';
 
+import DropdownActions from '../../../components/dropdown/DropdownActions';
 import ContactGroupDropdown from '../ContactGroupDropdown';
 import type { ContactGroupEditProps } from '../group/ContactGroupEditModal';
 import type { ContactGroupLimitReachedProps } from '../modals/ContactGroupLimitReachedModal';

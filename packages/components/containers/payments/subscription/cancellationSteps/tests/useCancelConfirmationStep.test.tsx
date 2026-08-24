@@ -1,13 +1,13 @@
 import { useSubscription } from '@proton/account/subscription/hooks';
-import { componentsHookRenderer } from '@proton/components/containers/contacts/tests/render';
 import { buildSubscription } from '@proton/testing/builders/subscription';
 
 import { useModalTwoPromise } from '../../../../../components/modalTwo/useModalTwo';
+import { componentsHookRenderer } from '../../../../contacts/tests/render';
 import type { CancelSubscriptionResult } from '../../cancelSubscription/types';
 import { useCancelConfirmationStep } from '../useCancelConfirmationStep';
 
 jest.mock('@proton/account/subscription/hooks');
-jest.mock('@proton/components/components/modalTwo/useModalTwo');
+jest.mock('../../../../../components/modalTwo/useModalTwo');
 
 const mockShowModal = jest.fn();
 const subscription = buildSubscription();

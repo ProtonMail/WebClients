@@ -4,14 +4,14 @@ import { useSortable } from '@dnd-kit/react/sortable';
 import { c } from 'ttag';
 
 import { useUserKeys } from '@proton/account/userKeys/hooks';
-import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
-import { Handle } from '@proton/components/components/table/Handle';
-import TableCell from '@proton/components/components/table/TableCell';
-import TableRow from '@proton/components/components/table/TableRow';
 import { useContact } from '@proton/mail/store/contacts/contactHooks';
 import type { ContactFormatted } from '@proton/shared/lib/interfaces/contacts';
 import clsx from '@proton/utils/clsx';
 
+import DropdownActions from '../../../../components/dropdown/DropdownActions';
+import { Handle } from '../../../../components/table/Handle';
+import TableCell from '../../../../components/table/TableCell';
+import TableRow from '../../../../components/table/TableRow';
 import useVCardContact from '../../hooks/useVCardContact';
 import EmailsTableCell from './EmailsTableCell';
 import NameTableCell from './NameTableCell';

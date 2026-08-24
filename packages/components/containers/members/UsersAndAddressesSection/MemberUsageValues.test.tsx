@@ -3,7 +3,7 @@ import { render } from '@testing-library/react';
 import { LastActivityValue, LastConnectionValue } from './MemberUsageValues';
 
 // Isolate the relative-day + gateway logic from TimeIntl's locale formatting.
-jest.mock('@proton/components/components/time/TimeIntl', () => ({
+jest.mock('../../../components/time/TimeIntl', () => ({
     __esModule: true,
     default: ({ children }: { children: number }) => <span>{`time:${children}`}</span>,
 }));

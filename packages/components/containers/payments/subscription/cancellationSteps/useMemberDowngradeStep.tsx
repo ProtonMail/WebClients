@@ -1,6 +1,6 @@
 import { useOrganization } from '@proton/account/organization/hooks';
-import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
 
+import { useModalTwoPromise } from '../../../../components/modalTwo/useModalTwo';
 import MemberDowngradeModal from '../../MemberDowngradeModal';
 import type { CancellationStep, CancellationStepConfig } from './types';
 

@@ -1,7 +1,7 @@
 import { getConfigTemplate } from './getConfigTemplate';
 import type { Peer } from './peer';
 
-jest.mock('@proton/components/helpers/getObjectKeys', () => ({
+jest.mock('../../../helpers/getObjectKeys', () => ({
     getObjectKeys: jest.fn((obj) => (obj ? Object.keys(obj) : [])),
 }));
 

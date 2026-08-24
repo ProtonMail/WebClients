@@ -1,11 +1,11 @@
 import { c } from 'ttag';
 
 import type { KeyMetadata } from '@proton/account/addressKeys/getKeyMetadata';
-import { Badge } from '@proton/components/components/badge/Badge';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import type { Key } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
+import { Badge } from '../../components/badge/Badge';
 import type { KeyStatus } from './shared/interface';
 import { KeyType } from './shared/interface';
 

@@ -3,7 +3,6 @@ import { useLayoutEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import useConfig from '@proton/components/hooks/useConfig';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
@@ -11,6 +10,7 @@ import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { Status, getStatus, request } from '@proton/shared/lib/helpers/desktopNotification';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
 
+import useConfig from '../../hooks/useConfig';
 import useLocalState from '../../hooks/useLocalState';
 import TopBanner from './TopBanner';
 

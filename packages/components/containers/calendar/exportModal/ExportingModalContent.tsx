@@ -7,16 +7,16 @@ import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { useGetCalendarKeys } from '@proton/calendar/calendarBootstrap/keys';
 import { useGetCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
-import DynamicProgress from '@proton/components/components/progress/DynamicProgress';
-import useApi from '@proton/components/hooks/useApi';
-import useGetVerificationPreferences from '@proton/components/hooks/useGetVerificationPreferences';
 import { getEventsCount } from '@proton/shared/lib/api/calendars';
 import { getApiWithAbort } from '@proton/shared/lib/api/helpers/customConfig';
 import { processInBatches } from '@proton/shared/lib/calendar/export/export';
 import type { ExportCalendarModel, ExportError, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 import { EXPORT_ERRORS, EXPORT_STEPS } from '@proton/shared/lib/interfaces/calendar';
 
+import DynamicProgress from '../../../components/progress/DynamicProgress';
+import useApi from '../../../hooks/useApi';
 import useGetCalendarInfo from '../../../hooks/useGetCalendarInfo';
+import useGetVerificationPreferences from '../../../hooks/useGetVerificationPreferences';
 import { useContactEmailsCache } from '../../contacts/ContactEmailsProvider';
 
 interface Props {

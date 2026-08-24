@@ -2,17 +2,17 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import SettingsLink from '@proton/components/components/link/SettingsLink';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import StripedItem from '@proton/components/components/stripedList/StripedItem';
-import { StripedList } from '@proton/components/components/stripedList/StripedList';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 
+import SettingsLink from '../../../../components/link/SettingsLink';
+import type { ModalProps } from '../../../../components/modalTwo/Modal';
+import ModalTwo from '../../../../components/modalTwo/Modal';
+import ModalTwoContent from '../../../../components/modalTwo/ModalContent';
+import ModalTwoFooter from '../../../../components/modalTwo/ModalFooter';
+import ModalTwoHeader from '../../../../components/modalTwo/ModalHeader';
+import StripedItem from '../../../../components/stripedList/StripedItem';
+import { StripedList } from '../../../../components/stripedList/StripedList';
 import type { ConfirmationModal } from './interface';
 import useCancellationTelemetry from './useCancellationTelemetry';
 

@@ -4,18 +4,18 @@ import { c } from 'ttag';
 
 import { reactivateKeysThunk } from '@proton/account/addressKeys/reactivateKeysActions';
 import { selectRecoveryFileData } from '@proton/account/recovery/recoveryFile';
-import useFormErrors from '@proton/components/components/v2/useFormErrors';
-import { getKeyReactivationNotification } from '@proton/components/containers/keys/reactivateKeys/reactivateHelper';
-import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useDispatch, useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import type { KeyReactivationRequestStateData } from '@proton/shared/lib/keys';
 import isTruthy from '@proton/utils/isTruthy';
 
+import useFormErrors from '../../../components/v2/useFormErrors';
+import useErrorHandler from '../../../hooks/useErrorHandler';
+import useNotifications from '../../../hooks/useNotifications';
 import type { ProcessedKey } from '../importKeys/useProcessKey';
 import { FileContent } from './FileContent';
 import type { ReactivateKeysContentProps } from './interface';
+import { getKeyReactivationNotification } from './reactivateHelper';
 
 export const FileFormId = 'file-form';
 

@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Table from '@proton/components/components/table/Table';
-import TableCell from '@proton/components/components/table/TableCell';
 import type { ContactFormatted } from '@proton/shared/lib/interfaces/contacts';
 
+import Table from '../../../../components/table/Table';
+import TableCell from '../../../../components/table/TableCell';
 import MergeTableBody from './MergeTableBody';
 
 const MergeTableHeader = () => {

@@ -2,7 +2,6 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import MailLogo from '@proton/components/components/logo/MailLogo';
 import { PLANS } from '@proton/payments/core/constants';
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import gmail from '@proton/styles/assets/img/illustrations/gmail-logo.svg';
@@ -12,6 +11,7 @@ import outlookLogo from '@proton/styles/assets/img/import/providers/outlook.svg'
 import yahoo from '@proton/styles/assets/img/import/providers/yahoo_short.svg';
 import clsx from '@proton/utils/clsx';
 
+import MailLogo from '../../../../../components/logo/MailLogo';
 import type { ComparisonFeatureRow } from '../components/ComparisonTable';
 import { CustomLogoHeader } from '../components/CustomLogoHeader';
 

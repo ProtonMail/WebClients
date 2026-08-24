@@ -3,10 +3,10 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Loader from '@proton/components/components/loader/Loader';
 import errorSvg from '@proton/styles/assets/img/errors/error-generic.svg';
 
 import Form from '../../../components/form/Form';
+import Loader from '../../../components/loader/Loader';
 import ModalTwo from '../../../components/modalTwo/Modal';
 import ModalTwoContent from '../../../components/modalTwo/ModalContent';
 import ModalTwoFooter from '../../../components/modalTwo/ModalFooter';

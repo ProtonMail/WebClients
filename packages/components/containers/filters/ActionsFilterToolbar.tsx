@@ -2,12 +2,12 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-import MailUpsellButton from '@proton/components/components/upsell/MailUpsellButton';
-import FiltersUpsellModal from '@proton/components/components/upsell/modals/FiltersUpsellModal';
 import { useFilters } from '@proton/mail/store/filters/hooks';
 import { hasReachedFiltersLimit } from '@proton/shared/lib/helpers/filters';
 
+import useModalState from '../../components/modalTwo/useModalState';
+import MailUpsellButton from '../../components/upsell/MailUpsellButton';
+import FiltersUpsellModal from '../../components/upsell/modals/FiltersUpsellModal';
 import FilterModal from './modal/FilterModal';
 import AdvancedFilterModal from './modal/advanced/AdvancedFilterModal';
 

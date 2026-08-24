@@ -6,17 +6,6 @@ import { useSessionRecoveryLocalStorage } from '@proton/account/recovery/session
 import { userThunk } from '@proton/account/user';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import Form from '@proton/components/components/form/Form';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import Modal from '@proton/components/components/modalTwo/Modal';
-import ModalContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
-import useFormErrors from '@proton/components/components/v2/useFormErrors';
-import useApi from '@proton/components/hooks/useApi';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import metrics, { observeApiError } from '@proton/metrics';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
@@ -25,6 +14,18 @@ import { abortSessionRecovery } from '@proton/shared/lib/api/sessionRecovery';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { srpAuth } from '@proton/shared/lib/srp';
 import noop from '@proton/utils/noop';
+
+import Form from '../../../components/form/Form';
+import type { ModalProps } from '../../../components/modalTwo/Modal';
+import Modal from '../../../components/modalTwo/Modal';
+import ModalContent from '../../../components/modalTwo/ModalContent';
+import ModalFooter from '../../../components/modalTwo/ModalFooter';
+import ModalHeader from '../../../components/modalTwo/ModalHeader';
+import InputFieldTwo from '../../../components/v2/field/InputField';
+import PasswordInputTwo from '../../../components/v2/input/PasswordInput';
+import useFormErrors from '../../../components/v2/useFormErrors';
+import useApi from '../../../hooks/useApi';
+import useNotifications from '../../../hooks/useNotifications';
 
 interface Props extends ModalProps {
     onBack?: () => void;

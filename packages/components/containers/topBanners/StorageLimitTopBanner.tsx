@@ -1,9 +1,9 @@
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import useConfig from '@proton/components/hooks/useConfig';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { getSpace } from '@proton/shared/lib/user/storage';
 
+import useConfig from '../../hooks/useConfig';
 import useLocalState from '../../hooks/useLocalState';
 import { LockedStateTopBanner } from './LockedStateTopBanner';
 import { PooledStorageLimitTopBanner } from './StorageTopBanner/PooledStorageLimitTopBanner';

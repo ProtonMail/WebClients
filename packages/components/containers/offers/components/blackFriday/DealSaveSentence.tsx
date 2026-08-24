@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
-import Price from '@proton/components/components/price/Price';
-
+import Price from '../../../../components/price/Price';
 import { useDealContext } from '../shared/deal/DealContext';
 
 const DealSaveSentence = ({

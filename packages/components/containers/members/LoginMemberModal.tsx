@@ -5,13 +5,14 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Href } from '@proton/atoms/Href/Href';
-import Prompt, { type PromptProps } from '@proton/components/components/prompt/Prompt';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Member } from '@proton/shared/lib/interfaces/Member';
 import { getMemberEmailOrName } from '@proton/shared/lib/keys/memberHelper';
+
+import Prompt, { type PromptProps } from '../../components/prompt/Prompt';
 
 interface Props extends Omit<PromptProps, 'title' | 'children' | 'buttons'> {
     member: Member;

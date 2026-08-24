@@ -4,10 +4,10 @@ import { getIsScimGroup } from '@proton/account/groups/groupFlags';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { getTranslatedRoleName } from '@proton/account/organizationRoles/helpers';
 import { Button } from '@proton/atoms/Button/Button';
-import RoleAssignmentStatusIcon from '@proton/components/containers/members/rolesAndPermissions/RoleAssignmentStatusIcon';
 import type { EnhancedGroup } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
+import RoleAssignmentStatusIcon from '../../members/rolesAndPermissions/RoleAssignmentStatusIcon';
 import GroupIcon from './GroupIcon';
 import GroupItemMoreOptionsDropdown from './GroupItemMoreOptionsDropdown';
 import { useGroupsManagement } from './context/GroupsManagementContext';

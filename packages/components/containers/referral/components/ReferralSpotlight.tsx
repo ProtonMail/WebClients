@@ -4,9 +4,9 @@ import { c } from 'ttag';
 
 import { useReferralInfo } from '@proton/account/referralInfo/hooks';
 import type { PopperPlacement } from '@proton/atoms/Popper/interface';
-import Spotlight from '@proton/components/components/spotlight/Spotlight';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
+import Spotlight from '../../../components/spotlight/Spotlight';
 import illustration from '../illustrations/spotlight.svg';
 
 interface Props {

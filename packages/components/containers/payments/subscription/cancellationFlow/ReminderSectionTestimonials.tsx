@@ -1,8 +1,7 @@
-import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
-import SettingsSection from '@proton/components/containers/account/SettingsSection';
-import SettingsSectionTitle from '@proton/components/containers/account/SettingsSectionTitle';
-import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
-
+import SettingsParagraph from '../../../account/SettingsParagraph';
+import SettingsSection from '../../../account/SettingsSection';
+import SettingsSectionTitle from '../../../account/SettingsSectionTitle';
+import SettingsSectionWide from '../../../account/SettingsSectionWide';
 import type { PlanConfigTestimonial } from './interface';
 
 import './ReminderSectionTestimonials.scss';

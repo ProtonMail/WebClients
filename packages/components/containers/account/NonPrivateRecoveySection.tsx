@@ -4,9 +4,9 @@ import { c } from 'ttag';
 
 import { useUpdateAccountRecovery } from '@proton/account/recovery/useUpdateAccountRecovery';
 import { DashboardCardDivider } from '@proton/atoms/DashboardCard/DashboardCard';
-import Loader from '@proton/components/components/loader/Loader';
-import useMyCountry from '@proton/components/hooks/useMyCountry';
 
+import Loader from '../../components/loader/Loader';
+import useMyCountry from '../../hooks/useMyCountry';
 import { RecoveryFieldForm } from '../recovery/RecoveryFieldForm';
 import RecoveryEmail from '../recovery/email/RecoveryEmail';
 import RecoveryPhone from '../recovery/phone/RecoveryPhone';

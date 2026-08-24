@@ -1,24 +1,25 @@
 import { type FormEvent, useState } from 'react';
 
+import type { PrivateKeyReference } from '@protontech/crypto';
+import { CryptoProxy, KeyCompatibilityLevel } from '@protontech/crypto';
 import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account';
 import { Button } from '@proton/atoms/Button/Button';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import Modal from '@proton/components/components/modalTwo/Modal';
-import ModalContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
-import useFormErrors from '@proton/components/components/v2/useFormErrors';
-import type { PrivateKeyReference } from '@protontech/crypto';
-import { CryptoProxy, KeyCompatibilityLevel } from '@protontech/crypto';
 import { useLoading } from '@proton/hooks';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import type { ArmoredKeyWithInfo } from '@proton/shared/lib/keys';
 import generateUID from '@proton/utils/generateUID';
 import noop from '@proton/utils/noop';
+
+import type { ModalProps } from '../../../components/modalTwo/Modal';
+import Modal from '../../../components/modalTwo/Modal';
+import ModalContent from '../../../components/modalTwo/ModalContent';
+import ModalFooter from '../../../components/modalTwo/ModalFooter';
+import ModalHeader from '../../../components/modalTwo/ModalHeader';
+import InputFieldTwo from '../../../components/v2/field/InputField';
+import PasswordInputTwo from '../../../components/v2/input/PasswordInput';
+import useFormErrors from '../../../components/v2/useFormErrors';
 
 interface Props extends ModalProps {
     privateKeyInfo: ArmoredKeyWithInfo;

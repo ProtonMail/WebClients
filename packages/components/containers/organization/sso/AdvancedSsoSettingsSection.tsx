@@ -3,22 +3,22 @@ import { c } from 'ttag';
 import { organizationActions } from '@proton/account/organization';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useUserPermissions } from '@proton/account/userPermissions/hooks';
-import { PermissionTooltip } from '@proton/components/components/orgPermissions';
-import Toggle from '@proton/components/components/toggle/Toggle';
-import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
-import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
-import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
-import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
-import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
-import useApi from '@proton/components/hooks/useApi';
-import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateOrganizationSettings } from '@proton/shared/lib/api/organization';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { OrganizationSettings } from '@proton/shared/lib/interfaces';
 
+import { PermissionTooltip } from '../../../components/orgPermissions/index';
+import Toggle from '../../../components/toggle/Toggle';
+import useApi from '../../../hooks/useApi';
+import useErrorHandler from '../../../hooks/useErrorHandler';
+import useNotifications from '../../../hooks/useNotifications';
+import SettingsLayout from '../../account/SettingsLayout';
+import SettingsLayoutLeft from '../../account/SettingsLayoutLeft';
+import SettingsLayoutRight from '../../account/SettingsLayoutRight';
+import SettingsParagraph from '../../account/SettingsParagraph';
+import SettingsSectionWide from '../../account/SettingsSectionWide';
 import SubSettingsSection from '../../layout/SubSettingsSection';
 
 const AdvancedSsoSettingsSection = () => {

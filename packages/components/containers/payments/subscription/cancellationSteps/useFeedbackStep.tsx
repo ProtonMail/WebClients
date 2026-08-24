@@ -1,7 +1,7 @@
 import { useUser } from '@proton/account/user/hooks';
-import Modal from '@proton/components/components/modalTwo/Modal';
-import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
 
+import Modal from '../../../../components/modalTwo/Modal';
+import { useModalTwoPromise } from '../../../../components/modalTwo/useModalTwo';
 import useCancellationTelemetry from '../cancellationFlow/useCancellationTelemetry';
 import FeedbackDowngradeContent, { isKeepSubscription } from '../content/FeedbackDowngradeContent';
 import type { FeedbackDowngradeFormData, FeedbackDowngradeResult } from '../content/interface';

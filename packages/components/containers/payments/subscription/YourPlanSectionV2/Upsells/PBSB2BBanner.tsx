@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
 
+import useDashboardPaymentFlow from '../../../../../hooks/useDashboardPaymentFlow';
 import { useSubscriptionModal } from '../../SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '../../constants';
 import { PlanIcon } from '../PlanIcon';

@@ -1,8 +1,9 @@
 import { isToday, isYesterday } from 'date-fns';
 import { c } from 'ttag';
 
-import TimeIntl from '@proton/components/components/time/TimeIntl';
 import type { MemberLastConnection } from '@proton/shared/lib/api/members';
+
+import TimeIntl from '../../../components/time/TimeIntl';
 
 const NO_VALUE = '-';
 
@@ -21,7 +22,9 @@ const renderTimeLabel = (unixSeconds: number, options: Intl.DateTimeFormatOption
         <TimeIntl key="time" options={timeOptions}>
             {unixSeconds}
         </TimeIntl>
-    ) : '';
+    ) : (
+        ''
+    );
 
     if (isToday(date)) {
         return withTime ? <>{c('Members table usage').jt`Today, ${time}`}</> : <>{c('Members table usage').t`Today`}</>;

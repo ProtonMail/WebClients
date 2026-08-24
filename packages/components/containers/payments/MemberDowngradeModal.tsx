@@ -5,18 +5,19 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Card } from '@proton/atoms/Card/Card';
-import Form from '@proton/components/components/form/Form';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import Modal from '@proton/components/components/modalTwo/Modal';
-import ModalContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import type { Organization } from '@proton/shared/lib/interfaces';
 import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
+
+import Form from '../../components/form/Form';
+import type { ModalProps } from '../../components/modalTwo/Modal';
+import Modal from '../../components/modalTwo/Modal';
+import ModalContent from '../../components/modalTwo/ModalContent';
+import ModalFooter from '../../components/modalTwo/ModalFooter';
+import ModalHeader from '../../components/modalTwo/ModalHeader';
+import InputFieldTwo from '../../components/v2/field/InputField';
+import useFormErrors from '../../components/v2/useFormErrors';
 
 interface Props extends ModalProps {
     organization: Organization;

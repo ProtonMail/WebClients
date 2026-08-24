@@ -4,20 +4,21 @@ import { useEffect, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Alert from '@proton/components/components/alert/Alert';
-import Field from '@proton/components/components/container/Field';
-import Row from '@proton/components/components/container/Row';
-import Checkbox from '@proton/components/components/input/Checkbox';
-import Label from '@proton/components/components/label/Label';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import { useContactGroups } from '@proton/mail/store/labels/hooks';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
+import { useContactGroups } from '@proton/mail/store/labels/hooks';
 import type { Contact, ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import isTruthy from '@proton/utils/isTruthy';
+
+import Alert from '../../../components/alert/Alert';
+import Field from '../../../components/container/Field';
+import Row from '../../../components/container/Row';
+import Checkbox from '../../../components/input/Checkbox';
+import Label from '../../../components/label/Label';
+import type { ModalProps } from '../../../components/modalTwo/Modal';
+import ModalTwo from '../../../components/modalTwo/Modal';
+import ModalTwoContent from '../../../components/modalTwo/ModalContent';
+import ModalTwoFooter from '../../../components/modalTwo/ModalFooter';
+import ModalTwoHeader from '../../../components/modalTwo/ModalHeader';
 
 export interface SelectEmailsProps {
     groupIDs: string[];

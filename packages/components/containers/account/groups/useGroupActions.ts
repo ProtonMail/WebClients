@@ -2,10 +2,11 @@ import { c } from 'ttag';
 
 import { acceptGroupInvitation } from '@proton/account/groups/acceptGroupInvitation';
 import { declineGroupInvitation } from '@proton/account/groups/declineGroupInvitation';
-import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import type { GroupMembership } from '@proton/shared/lib/interfaces';
+
+import useErrorHandler from '../../../hooks/useErrorHandler';
+import useNotifications from '../../../hooks/useNotifications';
 
 const useGroupActions = () => {
     const handleError = useErrorHandler();

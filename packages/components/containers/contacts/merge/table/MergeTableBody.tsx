@@ -1,10 +1,10 @@
 import { useRef } from 'react';
 
-import { SortableList } from '@proton/components/components/dnd/SortableList';
-import TableBody from '@proton/components/components/table/TableBody';
 import type { ContactFormatted } from '@proton/shared/lib/interfaces/contacts';
 import type { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 
+import { SortableList } from '../../../../components/dnd/SortableList';
+import TableBody from '../../../../components/table/TableBody';
 import MergeTableBodyRow from './MergeTableBodyRow';
 
 interface Props {

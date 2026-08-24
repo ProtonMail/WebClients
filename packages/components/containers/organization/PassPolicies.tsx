@@ -4,19 +4,6 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import Option from '@proton/components/components/option/Option';
-import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
-import Toggle from '@proton/components/components/toggle/Toggle';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
-import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
-import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
-import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
-import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
-import { PassLockSelector } from '@proton/components/containers/pass/PassLockSelector';
-import { PauseList } from '@proton/components/containers/pass/pauseList/PauseListPolicy';
-import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { usePassBridge } from '@proton/pass/lib/bridge/PassBridgeProvider';
 import type { OrganizationGetResponse, OrganizationUpdatePasswordPolicyInput } from '@proton/pass/types';
@@ -25,10 +12,23 @@ import type { OrganizationSettings } from '@proton/pass/types/data/organization'
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
+import Option from '../../components/option/Option';
+import SelectTwo from '../../components/selectTwo/SelectTwo';
+import Toggle from '../../components/toggle/Toggle';
+import InputFieldTwo from '../../components/v2/field/InputField';
+import useErrorHandler from '../../hooks/useErrorHandler';
+import useNotifications from '../../hooks/useNotifications';
+import SettingsLayout from '../account/SettingsLayout';
+import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
+import SettingsLayoutRight from '../account/SettingsLayoutRight';
+import SettingsParagraph from '../account/SettingsParagraph';
+import SettingsSectionWide from '../account/SettingsSectionWide';
 import { PromotionBanner } from '../banner/PromotionBanner';
 import GenericError from '../error/GenericError';
 import SubSettingsSection from '../layout/SubSettingsSection';
+import { PassLockSelector } from '../pass/PassLockSelector';
 import { PasswordGeneratorPolicyForm } from '../pass/PasswordGeneratorPolicyForm';
+import { PauseList } from '../pass/pauseList/PauseListPolicy';
 import { useSubscriptionModal } from '../payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '../payments/subscription/constants';
 

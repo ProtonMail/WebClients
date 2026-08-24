@@ -3,17 +3,6 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Form from '@proton/components/components/form/Form';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import type { ModalTwoPromiseHandlers } from '@proton/components/components/modalTwo/useModalTwo';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import useFormErrors from '@proton/components/components/v2/useFormErrors';
-import useNotifications from '@proton/components/hooks/useNotifications';
-import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import type { FullBillingAddress } from '@proton/payments/core/billing-address/billing-address';
 import { zipCodeValidator } from '@proton/payments/core/billing-address/billing-address';
@@ -26,6 +15,18 @@ import { getVatFormErrors } from '@proton/payments/ui/billing-address/hooks/useV
 import { useVatPrefixSync } from '@proton/payments/ui/billing-address/hooks/useVatPrefixSync';
 import { cleanBillingAddressVat } from '@proton/payments/ui/billing-address/hooks/vatPrefixHelper';
 import { useFlag } from '@proton/unleash/useFlag';
+
+import Form from '../../../components/form/Form';
+import type { ModalProps } from '../../../components/modalTwo/Modal';
+import ModalTwo from '../../../components/modalTwo/Modal';
+import ModalTwoContent from '../../../components/modalTwo/ModalContent';
+import ModalTwoFooter from '../../../components/modalTwo/ModalFooter';
+import ModalTwoHeader from '../../../components/modalTwo/ModalHeader';
+import type { ModalTwoPromiseHandlers } from '../../../components/modalTwo/useModalTwo';
+import InputFieldTwo from '../../../components/v2/field/InputField';
+import useFormErrors from '../../../components/v2/useFormErrors';
+import useNotifications from '../../../hooks/useNotifications';
+import { usePaymentsApi } from '../../../payments/react-extensions/usePaymentsApi';
 
 export type EditInvoiceModalInputs = {
     initialFullBillingAddress: FullBillingAddress;

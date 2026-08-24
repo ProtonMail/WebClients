@@ -3,12 +3,6 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
-import Loader from '@proton/components/components/loader/Loader';
-import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
-import SettingsSection from '@proton/components/containers/account/SettingsSection';
-import { useFilterDispatch } from '@proton/components/containers/filters/useFilterDispatch';
-import useApi from '@proton/components/hooks/useApi';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { filtersThunk } from '@proton/mail/store/filters';
 import { useFilters } from '@proton/mail/store/filters/hooks';
 import { CacheType } from '@proton/redux-utilities/interface';
@@ -16,9 +10,15 @@ import { applyFilters, updateFilterOrder } from '@proton/shared/lib/api/filters'
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import move from '@proton/utils/move';
 
+import Loader from '../../components/loader/Loader';
+import useApi from '../../hooks/useApi';
+import useNotifications from '../../hooks/useNotifications';
+import SettingsParagraph from '../account/SettingsParagraph';
+import SettingsSection from '../account/SettingsSection';
 import ActionsFilterToolbar from './ActionsFilterToolbar';
 import FilterSortableList from './FilterSortableList';
 import type { Filter } from './interfaces';
+import { useFilterDispatch } from './useFilterDispatch';
 
 function FiltersSection() {
     const dispatch = useFilterDispatch();

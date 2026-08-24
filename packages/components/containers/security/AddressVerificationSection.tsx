@@ -1,15 +1,15 @@
 import { c } from 'ttag';
 
-import BetaBadge from '@proton/components/components/badge/BetaBadge';
-import Info from '@proton/components/components/link/Info';
-import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
-import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
-import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
-import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import BetaBadge from '../../components/badge/BetaBadge';
+import Info from '../../components/link/Info';
+import SettingsLayout from '../account/SettingsLayout';
+import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
+import SettingsLayoutRight from '../account/SettingsLayoutRight';
+import SettingsSection from '../account/SettingsSection';
 import KTToggle from './KTToggle';
 import PromptPinToggle from './PromptPinToggle';
 

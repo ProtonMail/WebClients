@@ -3,12 +3,6 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import Info from '@proton/components/components/link/Info';
-import TreeViewContainer from '@proton/components/components/treeview/TreeViewContainer';
-import TreeViewItem from '@proton/components/components/treeview/TreeViewItem';
-import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import { useLoading } from '@proton/hooks';
 import { IcArrowsCross } from '@proton/icons/icons/IcArrowsCross';
 import { IcDots } from '@proton/icons/icons/IcDots';
@@ -18,6 +12,12 @@ import { getParents, order } from '@proton/shared/lib/helpers/folder';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 import clsx from '@proton/utils/clsx';
 
+import Info from '../../components/link/Info';
+import TreeViewContainer from '../../components/treeview/TreeViewContainer';
+import TreeViewItem from '../../components/treeview/TreeViewItem';
+import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
+import useApi from '../../hooks/useApi';
+import useEventManager from '../../hooks/useEventManager';
 import ActionsLabel from './ActionsLabel';
 import FolderIcon from './FolderIcon';
 import ToggleNotify from './ToggleNotify';

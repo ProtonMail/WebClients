@@ -6,14 +6,15 @@ import BYOEClaimProtonAddressModal from '@proton/activation/src/components/Modal
 import { BYOE_CLAIM_PROTON_ADDRESS_SOURCE } from '@proton/activation/src/constants';
 import { Button } from '@proton/atoms/Button/Button';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
-import SettingsLink from '@proton/components/components/link/SettingsLink';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-import BugModal from '@proton/components/containers/support/BugModal';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { getIsBYOEOnlyAccount } from '@proton/shared/lib/helpers/address';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import type { AcceptInvitationValidation, PendingInvitation } from '@proton/shared/lib/interfaces';
 import { getUsedSpace } from '@proton/shared/lib/user/storage';
+
+import SettingsLink from '../../../components/link/SettingsLink';
+import useModalState from '../../../components/modalTwo/useModalState';
+import BugModal from '../../support/BugModal';
 
 interface Props {
     invite: PendingInvitation;

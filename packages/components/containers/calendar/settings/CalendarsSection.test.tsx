@@ -3,11 +3,11 @@ import { Router } from 'react-router-dom';
 import { render, screen } from '@testing-library/react';
 import { createMemoryHistory } from 'history';
 
-import { CacheProvider } from '@proton/components/containers/cache/Provider';
 import createCache from '@proton/shared/lib/helpers/cache';
 import { generateSimpleCalendar } from '@proton/testing/lib/builders';
 import { mockUseAuthentication } from '@proton/testing/lib/mockUseAuthentication';
 
+import { CacheProvider } from '../../cache/Provider';
 import ModalsProvider from '../../modals/Provider';
 import type { CalendarsSectionProps } from './CalendarsSection';
 import CalendarsSection from './CalendarsSection';
@@ -31,7 +31,7 @@ jest.mock('../../eventManager/calendar/useCalendarsInfoListener', () => () => ({
 jest.mock('../../eventManager/calendar/CalendarModelEventManagerProvider', () => ({
     useCalendarModelEventManager: jest.fn(),
 }));
-jest.mock('@proton/components/hooks/useConfig', () => () => ({ APP_NAME: 'proton-calendar', APP_VERSION: 'test' }));
+jest.mock('../../../hooks/useConfig', () => () => ({ APP_NAME: 'proton-calendar', APP_VERSION: 'test' }));
 jest.mock('@proton/account/addresses/hooks', () => ({
     __esModule: true,
     default: jest.fn(() => [

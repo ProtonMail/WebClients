@@ -2,11 +2,11 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import Spotlight from '@proton/components/components/spotlight/Spotlight';
-import { useAccountSpotlights } from '@proton/components/containers/account/spotlights/AccountSpotlightsProvider';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, PASS_APP_NAME } from '@proton/shared/lib/constants';
 
+import Spotlight from '../../../../components/spotlight/Spotlight';
+import { useAccountSpotlights } from '../AccountSpotlightsProvider';
 import spotlightAddUsers from './spotlight-add-users.svg';
 import spotlightVault from './spotlight-vault.svg';
 

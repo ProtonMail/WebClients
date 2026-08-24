@@ -1,8 +1,8 @@
-import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
-import SettingsSection from '@proton/components/containers/account/SettingsSection';
-import SettingsSectionTitle from '@proton/components/containers/account/SettingsSectionTitle';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 
+import SettingsParagraph from '../../../account/SettingsParagraph';
+import SettingsSection from '../../../account/SettingsSection';
+import SettingsSectionTitle from '../../../account/SettingsSectionTitle';
 import type { PlanConfigStorage } from './interface';
 
 const ReminderSectionStorage = ({ title, description, warning }: PlanConfigStorage) => {

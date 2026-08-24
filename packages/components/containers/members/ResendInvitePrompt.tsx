@@ -1,10 +1,11 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import type { PromptProps } from '@proton/components/components/prompt/Prompt';
-import Prompt from '@proton/components/components/prompt/Prompt';
-import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useLoading from '@proton/hooks/useLoading';
+
+import type { PromptProps } from '../../components/prompt/Prompt';
+import Prompt from '../../components/prompt/Prompt';
+import getBoldFormattedText from '../../helpers/getBoldFormattedText';
 
 interface Props extends Omit<PromptProps, 'title' | 'buttons' | 'children'> {
     onResend: () => Promise<void>;

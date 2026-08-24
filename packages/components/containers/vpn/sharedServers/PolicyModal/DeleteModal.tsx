@@ -3,13 +3,14 @@ import { useCallback } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Form from '@proton/components/components/form/Form';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import type { VpnLocationFilterPolicy } from '@proton/components/containers/vpn/sharedServers/useSharedServers';
+
+import Form from '../../../../components/form/Form';
+import type { ModalProps } from '../../../../components/modalTwo/Modal';
+import ModalTwo from '../../../../components/modalTwo/Modal';
+import ModalTwoContent from '../../../../components/modalTwo/ModalContent';
+import ModalTwoFooter from '../../../../components/modalTwo/ModalFooter';
+import ModalTwoHeader from '../../../../components/modalTwo/ModalHeader';
+import type { VpnLocationFilterPolicy } from '../useSharedServers';
 
 interface DeleteModalProps extends ModalProps {
     onSuccess: (policy: VpnLocationFilterPolicy) => void;

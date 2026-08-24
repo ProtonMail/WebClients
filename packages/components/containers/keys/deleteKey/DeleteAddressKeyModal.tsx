@@ -4,17 +4,17 @@ import { c } from 'ttag';
 
 import { deleteAddressKeyAction } from '@proton/account/addressKeys/deleteAddressKeyAction';
 import { Button } from '@proton/atoms/Button/Button';
-import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
-import type { PromptProps } from '@proton/components/components/prompt/Prompt';
-import Prompt from '@proton/components/components/prompt/Prompt';
-import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { Address, AddressKey, DecryptedAddressKey } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
+import { useModalTwoPromise } from '../../../components/modalTwo/useModalTwo';
+import type { PromptProps } from '../../../components/prompt/Prompt';
+import Prompt from '../../../components/prompt/Prompt';
+import useErrorHandler from '../../../hooks/useErrorHandler';
+import useNotifications from '../../../hooks/useNotifications';
 import ExportPrivateKeyModal from '../exportKey/ExportPrivateKeyModal';
 
 enum STEPS {
@@ -151,4 +151,3 @@ export const DeleteAddressKeyModal = ({ name, address, addressKey, fingerprint, 
         </>
     );
 };
-

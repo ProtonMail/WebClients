@@ -1,9 +1,6 @@
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Icon from '@proton/components/components/icon/Icon';
-import getNotificationsTexts from '@proton/components/containers/calendar/notifications/getNotificationsTexts';
-import NotificationInput from '@proton/components/containers/calendar/notifications/inputs/NotificationInput';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 import type { IconName } from '@proton/icons/types';
 import type { NotificationModel } from '@proton/shared/lib/interfaces/calendar/Notification';
@@ -12,6 +9,10 @@ import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 import removeItem from '@proton/utils/removeIndex';
 import updateItem from '@proton/utils/updateItem';
+
+import Icon from '../../../components/icon/Icon';
+import getNotificationsTexts from './getNotificationsTexts';
+import NotificationInput from './inputs/NotificationInput';
 
 export const NOTIFICATION_ID = 'notifications';
 

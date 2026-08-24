@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
-import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+
+import getBoldFormattedText from '../../helpers/getBoldFormattedText';
 
 export const getReferralStep1Copy = () =>
     getBoldFormattedText(c('Info').t`**Invite your friends** to ${BRAND_NAME} with your referral link.`);

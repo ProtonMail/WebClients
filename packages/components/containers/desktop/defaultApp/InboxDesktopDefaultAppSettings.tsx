@@ -1,15 +1,15 @@
 import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
-import Info from '@proton/components/components/link/Info';
-import Toggle from '@proton/components/components/toggle/Toggle';
-import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
-import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
-import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
+import Info from '../../../components/link/Info';
+import Toggle from '../../../components/toggle/Toggle';
+import SettingsLayout from '../../account/SettingsLayout';
+import SettingsLayoutLeft from '../../account/SettingsLayoutLeft';
+import SettingsLayoutRight from '../../account/SettingsLayoutRight';
 import { useElectronDefaultApp } from './useElectronDefaultApp';
 
 export function InboxDesktopDefaultAppSettings() {

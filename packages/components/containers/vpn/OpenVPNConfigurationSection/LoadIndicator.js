@@ -2,7 +2,8 @@ import PropTypes from 'prop-types';
 import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import CircularProgress from '@proton/components/components/progress/CircularProgress';
+
+import CircularProgress from '../../../components/progress/CircularProgress';
 
 /**
  * 1-75% load is GREEN color #5db039

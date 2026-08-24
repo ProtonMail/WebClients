@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
-import { SettingsSelectRow } from '@proton/components/containers/account/SettingsSelectRow';
 import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
 
 import { SettingsIconRow } from '../account/SettingsIconRow';
+import { SettingsSelectRow } from '../account/SettingsSelectRow';
 import WeekStartSelector from '../calendar/settings/WeekStartSelector';
 
 const WeekStartSection = () => {

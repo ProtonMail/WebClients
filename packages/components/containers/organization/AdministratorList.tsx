@@ -1,10 +1,11 @@
 import { c, msgid } from 'ttag';
 
-import Collapsible from '@proton/components/components/collapsible/Collapsible';
-import CollapsibleContent from '@proton/components/components/collapsible/CollapsibleContent';
-import CollapsibleHeader from '@proton/components/components/collapsible/CollapsibleHeader';
-import CollapsibleHeaderIconButton from '@proton/components/components/collapsible/CollapsibleHeaderIconButton';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
+
+import Collapsible from '../../components/collapsible/Collapsible';
+import CollapsibleContent from '../../components/collapsible/CollapsibleContent';
+import CollapsibleHeader from '../../components/collapsible/CollapsibleHeader';
+import CollapsibleHeaderIconButton from '../../components/collapsible/CollapsibleHeaderIconButton';
 
 export const AdministratorItem = ({ name, email }: { name: string; email: string }) => {
     return (

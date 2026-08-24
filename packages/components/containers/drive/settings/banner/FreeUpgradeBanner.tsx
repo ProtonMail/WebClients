@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import AppLink from '@proton/components/components/link/AppLink';
 import { APPS } from '@proton/shared/lib/constants';
 
+import AppLink from '../../../../components/link/AppLink';
 import { UpgradeBanner } from './UpgradeBanner';
 
 export const FreeUpgradeBanner = () => {

@@ -3,15 +3,6 @@ import { useHistory } from 'react-router';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Alert from '@proton/components/components/alert/Alert';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-import Prompt from '@proton/components/components/prompt/Prompt';
-import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
-import SettingsSection from '@proton/components/containers/account/SettingsSection';
-import { getNextDefaultCalendar } from '@proton/components/containers/calendar/settings/defaultCalendar';
-import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import {
     removeCalendar,
@@ -30,6 +21,16 @@ import {
 import { getCalendarsSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import noop from '@proton/utils/noop';
+
+import Alert from '../../../components/alert/Alert';
+import useModalState from '../../../components/modalTwo/useModalState';
+import Prompt from '../../../components/prompt/Prompt';
+import useApi from '../../../hooks/useApi';
+import useEventManager from '../../../hooks/useEventManager';
+import useNotifications from '../../../hooks/useNotifications';
+import SettingsParagraph from '../../account/SettingsParagraph';
+import SettingsSection from '../../account/SettingsSection';
+import { getNextDefaultCalendar } from './defaultCalendar';
 
 const getTexts = ({
     isSubscribedCalendar,

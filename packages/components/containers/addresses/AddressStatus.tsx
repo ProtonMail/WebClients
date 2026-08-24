@@ -1,11 +1,11 @@
 import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Badge from '@proton/components/components/badge/Badge';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
+import Badge from '../../components/badge/Badge';
 import type { AddressStatuses } from './helper';
 
 const AddressStatus = ({

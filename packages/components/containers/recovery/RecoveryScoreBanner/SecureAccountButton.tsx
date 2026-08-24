@@ -4,11 +4,11 @@ import { c } from 'ttag';
 
 import type { ButtonLikeProps } from '@proton/atoms/Button/ButtonLike';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import AppLink from '@proton/components/components/link/AppLink';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS, SECURITY_CHECKUP_PATHS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
+import AppLink from '../../../components/link/AppLink';
 import { useRecoverySettingsTelemetry } from '../recoverySettingsTelemetry';
 import { type RecoveryScoreTone, SCORE_TONE_CLASS } from './recoveryScoreState';
 

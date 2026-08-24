@@ -2,10 +2,11 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
-import SettingsSectionTitle from '@proton/components/containers/account/SettingsSectionTitle';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import clsx from '@proton/utils/clsx';
+
+import SettingsSectionTitle from '../account/SettingsSectionTitle';
 
 interface Props {
     onDismiss: () => void;

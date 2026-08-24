@@ -11,9 +11,6 @@ import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-import { MemberListBanner, MembersList } from '@proton/components/containers/organization/MemberListBanner';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { MEMBER_ROLE } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Member } from '@proton/shared/lib/interfaces';
@@ -26,11 +23,14 @@ import {
     getOrganizationKeyInfo,
 } from '@proton/shared/lib/organization/helper';
 
+import useModalState from '../../components/modalTwo/useModalState';
+import useNotifications from '../../hooks/useNotifications';
 import ActivatePasswordlessOrganizationKey from './ActivatePasswordlessOrganizationKey';
 import ChangeOrganizationKeysModal from './ChangeOrganizationKeysModal';
 import ChangeOrganizationKeysPasswordlessModal from './ChangeOrganizationKeysPasswordlessModal';
 import ChangeOrganizationPasswordModal from './ChangeOrganizationPasswordModal';
 import InviteOrganizationKeysModal from './InviteOrganizationKeysModal';
+import { MemberListBanner, MembersList } from './MemberListBanner';
 import ReactivateOrganizationKeysModal from './ReactivateOrganizationKeysModal';
 import ReactivatePasswordlessOrganizationKey from './ReactivatePasswordlessOrganizationKey';
 import { getActivationText, getReactivationText } from './helper';

@@ -2,13 +2,14 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import Collapsible from '@proton/components/components/collapsible/Collapsible';
-import CollapsibleContent from '@proton/components/components/collapsible/CollapsibleContent';
-import CollapsibleHeader from '@proton/components/components/collapsible/CollapsibleHeader';
-import CollapsibleHeaderIconButton from '@proton/components/components/collapsible/CollapsibleHeaderIconButton';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import type { Included } from '@proton/shared/lib/helpers/checkout';
+
+import Collapsible from '../../../../../components/collapsible/Collapsible';
+import CollapsibleContent from '../../../../../components/collapsible/CollapsibleContent';
+import CollapsibleHeader from '../../../../../components/collapsible/CollapsibleHeader';
+import CollapsibleHeaderIconButton from '../../../../../components/collapsible/CollapsibleHeaderIconButton';
 
 export const PlanDescription = ({ list }: { list: Included[] }) => {
     const [isExpanded, setIsExpanded] = useState(false);

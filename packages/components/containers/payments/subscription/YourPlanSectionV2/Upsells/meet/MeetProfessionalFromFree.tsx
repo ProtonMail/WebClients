@@ -5,13 +5,21 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { DashboardCard } from '@proton/atoms/DashboardCard/DashboardCard';
 import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
-import Icon from '@proton/components/components/icon/Icon';
-import Info from '@proton/components/components/link/Info';
-import { Tabs } from '@proton/components/components/tabs/Tabs';
-import CycleSelector from '@proton/components/containers/payments/CycleSelector';
-import { getShortStorageFeatureB2B } from '@proton/components/containers/payments/features/drive';
-import type { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
-import { getNDomainsFeature } from '@proton/components/containers/payments/features/mail';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
+import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
+import { DASHBOARD_UPSELL_PATHS, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import isTruthy from '@proton/utils/isTruthy';
+
+import Icon from '../../../../../../components/icon/Icon';
+import Info from '../../../../../../components/link/Info';
+import { Tabs } from '../../../../../../components/tabs/Tabs';
+import useDashboardPaymentFlow from '../../../../../../hooks/useDashboardPaymentFlow';
+import { SUBSCRIPTION_STEPS, useSubscriptionModal } from '../../../../../../index';
+import CycleSelector from '../../../../CycleSelector';
+import { getShortStorageFeatureB2B } from '../../../../features/drive';
+import type { PlanCardFeatureDefinition } from '../../../../features/interface';
+import { getNDomainsFeature } from '../../../../features/mail';
 import {
     PAID_MAX_PARTICIPANTS,
     PAID_PREMIUM_MAX_PARTICIPANTS,
@@ -24,21 +32,9 @@ import {
     getMeetScreenSharingText,
     getMeetingMaxLength,
     getVideoMeetingsFeature,
-} from '@proton/components/containers/payments/features/meet';
-import type { GetPlanUpsellArgs } from '@proton/components/containers/payments/subscription/helpers';
-import {
-    type Upsell,
-    type UpsellFeature,
-    getUpsell,
-} from '@proton/components/containers/payments/subscription/helpers';
-import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
-import { SUBSCRIPTION_STEPS, useSubscriptionModal } from '@proton/components/index';
-import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
-import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
-import type { Subscription } from '@proton/payments/core/subscription/interface';
-import { DASHBOARD_UPSELL_PATHS, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
-import isTruthy from '@proton/utils/isTruthy';
-
+} from '../../../../features/meet';
+import type { GetPlanUpsellArgs } from '../../../helpers/index';
+import { type Upsell, type UpsellFeature, getUpsell } from '../../../helpers/index';
 import UpsellPanelsV2 from '../../../panels/UpsellPanelsV2';
 import { PlanIcon } from '../../PlanIcon';
 import type { UpsellSectionProps, UpsellsHook } from '../../YourPlanUpsellsSectionV2';

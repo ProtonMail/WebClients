@@ -6,14 +6,15 @@ import { c } from 'ttag';
 
 import { DashboardCard, DashboardCardContent } from '@proton/atoms/DashboardCard/DashboardCard';
 import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
-import ProtonBadge from '@proton/components/components/protonBadge/ProtonBadge';
-import SettingsSectionTitle from '@proton/components/containers/account/SettingsSectionTitle';
-import { SettingsLayoutVariant } from '@proton/components/containers/layout/interface';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import useScrollIntoView from '@proton/hooks/useScrollIntoView';
 import { IcLink } from '@proton/icons/icons/IcLink';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
+
+import ProtonBadge from '../../components/protonBadge/ProtonBadge';
+import useNotifications from '../../hooks/useNotifications';
+import SettingsSectionTitle from '../account/SettingsSectionTitle';
+import { SettingsLayoutVariant } from './interface';
 
 export interface SubSettingsSectionProps extends ComponentPropsWithoutRef<'div'> {
     id: string;
