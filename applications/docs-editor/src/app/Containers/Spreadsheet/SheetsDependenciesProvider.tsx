@@ -1,3 +1,4 @@
+import type { FeatureFlag } from '@proton/unleash/Flags'
 import type { PropsWithChildren } from 'react'
 import { createContext, useContext } from 'react'
 
@@ -5,6 +6,7 @@ export type SheetsDependencies = {
   isDevOrBlack: () => boolean
   canEdit: boolean
   canTrash: boolean
+  isFeatureFlagEnabled: (featureFlag: FeatureFlag) => Promise<boolean>
   versionInfo: {
     environment: 'alpha' | 'beta' | undefined
     version: string
