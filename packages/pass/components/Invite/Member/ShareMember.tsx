@@ -4,25 +4,25 @@ import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Info from '@proton/components/components/link/Info';
-import { ConfirmationModal } from '@proton/pass/components/Confirmation/ConfirmationModal';
-import { useMaybeGroup } from '@proton/pass/components/Groups/GroupsProvider';
-import { MaybeGroupName } from '@proton/pass/components/Groups/MaybeGroupName';
-import { type InviteLabels, useInviteLabels } from '@proton/pass/components/Invite/useInviteLabels';
-import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
-import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
-import { ButtonIfNeeded } from '@proton/pass/components/Utils/ButtonIfNeeded';
-import { useConfirm } from '@proton/pass/hooks/useConfirm';
-import { useActionRequest } from '@proton/pass/hooks/useRequest';
-import type { AccessDTO } from '@proton/pass/lib/access/types';
-import { AccessTarget } from '@proton/pass/lib/access/types';
+import clsx from '@proton/utils/clsx';
+
+import { useConfirm } from '../../../hooks/useConfirm';
+import { useActionRequest } from '../../../hooks/useRequest';
+import type { AccessDTO } from '../../../lib/access/types';
+import { AccessTarget } from '../../../lib/access/types';
 import {
     shareEditMemberAccessIntent,
     shareRemoveMemberAccessIntent,
     vaultTransferOwnerIntent,
-} from '@proton/pass/store/actions';
-import { ShareRole } from '@proton/pass/types';
-import clsx from '@proton/utils/clsx';
-
+} from '../../../store/actions';
+import { ShareRole } from '../../../types';
+import { ConfirmationModal } from '../../Confirmation/ConfirmationModal';
+import { useMaybeGroup } from '../../Groups/GroupsProvider';
+import { MaybeGroupName } from '../../Groups/MaybeGroupName';
+import { DropdownMenuButton } from '../../Layout/Dropdown/DropdownMenuButton';
+import { QuickActionsDropdown } from '../../Layout/Dropdown/QuickActionsDropdown';
+import { ButtonIfNeeded } from '../../Utils/ButtonIfNeeded';
+import { type InviteLabels, useInviteLabels } from '../useInviteLabels';
 import { ShareMemberAvatar } from './ShareMemberAvatar';
 import { getShareRoleDefinition } from './ShareRoleOptions';
 

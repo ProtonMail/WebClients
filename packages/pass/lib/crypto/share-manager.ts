@@ -1,10 +1,3 @@
-import { PassCrypto } from '@proton/pass/lib/crypto';
-import {
-    hydrateShare,
-    hydrateShareKeys,
-    serializeShare,
-    serializeShareKeys,
-} from '@proton/pass/lib/crypto/utils/seralize';
 import type {
     Maybe,
     SerializedCryptoContext,
@@ -12,10 +5,11 @@ import type {
     ShareKey,
     ShareManager,
     TypedOpenedShare,
-} from '@proton/pass/types';
-import { ShareType } from '@proton/pass/types';
-
+} from '../../types';
+import { ShareType } from '../../types';
+import { PassCrypto } from './index';
 import { PassCryptoItemError, PassCryptoShareError, PassCryptoVaultError } from './utils/errors';
+import { hydrateShare, hydrateShareKeys, serializeShare, serializeShareKeys } from './utils/seralize';
 
 export const createShareManager = <T extends ShareType = ShareType>(
     share: TypedOpenedShare<T>,

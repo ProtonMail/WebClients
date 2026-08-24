@@ -1,14 +1,14 @@
 import { getSrp } from '@protontech/crypto/srp';
 
-import { api } from '@proton/pass/lib/api/api';
-import { type OfflineComponents, getOfflineKeyDerivation } from '@proton/pass/lib/cache/crypto';
-import { decryptData, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
-import { PassEncryptionTag } from '@proton/pass/types';
-import type { XorObfuscation } from '@proton/pass/utils/obfuscate/xor';
 import { queryUnlock } from '@proton/shared/lib/api/user';
 import { binaryStringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import { srpAuth, srpGetVerify } from '@proton/shared/lib/srp';
 
+import { PassEncryptionTag } from '../../types';
+import type { XorObfuscation } from '../../utils/obfuscate/xor';
+import { api } from '../api/api';
+import { type OfflineComponents, getOfflineKeyDerivation } from '../cache/crypto';
+import { decryptData, importSymmetricKey } from '../crypto/utils/crypto-helpers';
 import type { AuthStore } from './store';
 
 export enum PasswordVerification {

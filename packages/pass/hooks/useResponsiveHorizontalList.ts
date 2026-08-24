@@ -1,6 +1,6 @@
 import { useCallback, useLayoutEffect, useMemo, useRef, useState } from 'react';
 
-import { useStatefulRef } from '@proton/pass/hooks/useStatefulRef';
+import { useStatefulRef } from './useStatefulRef';
 
 type UseResponsiveItemsOptions = { gap: number; maxChildWidth: number };
 

@@ -6,20 +6,21 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import { IcCross } from '@proton/icons/icons/IcCross';
-import stamp from '@proton/pass/assets/alias/alias-contact-stamp.svg';
-import { AliasContactCard } from '@proton/pass/components/Item/Alias/Contact/AliasContactCard';
-import { AliasContactCreate } from '@proton/pass/components/Item/Alias/Contact/AliasContactCreate';
-import { useAliasContacts } from '@proton/pass/components/Item/Alias/Contact/AliasContactsContext';
-import { AliasContactsMoreInfo } from '@proton/pass/components/Item/Alias/Contact/AliasContactsMoreInfo';
-import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';
-import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
-import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
-import { PassPlusIcon } from '@proton/pass/components/Upsell/PassPlusIcon';
-import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
-import { UpsellRef } from '@proton/pass/constants';
-import { useItem } from '@proton/pass/hooks/useItem';
-import { selectPassPlan } from '@proton/pass/store/selectors';
-import { UserPassPlan } from '@proton/pass/types/api/plan';
+
+import stamp from '../../../../assets/alias/alias-contact-stamp.svg';
+import { UpsellRef } from '../../../../constants';
+import { useItem } from '../../../../hooks/useItem';
+import { selectPassPlan } from '../../../../store/selectors';
+import { UserPassPlan } from '../../../../types/api/plan';
+import { SidebarModal } from '../../../Layout/Modal/SidebarModal';
+import { Panel } from '../../../Layout/Panel/Panel';
+import { PanelHeader } from '../../../Layout/Panel/PanelHeader';
+import { PassPlusIcon } from '../../../Upsell/PassPlusIcon';
+import { useUpselling } from '../../../Upsell/UpsellingProvider';
+import { AliasContactCard } from './AliasContactCard';
+import { AliasContactCreate } from './AliasContactCreate';
+import { useAliasContacts } from './AliasContactsContext';
+import { AliasContactsMoreInfo } from './AliasContactsMoreInfo';
 
 type Props = Pick<ModalStateProps, 'onClose'>;
 

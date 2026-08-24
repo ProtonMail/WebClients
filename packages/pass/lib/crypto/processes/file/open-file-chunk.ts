@@ -1,5 +1,5 @@
-import { getFileChunkEncryptionTag } from '@proton/pass/lib/crypto/processes/file/create-file-chunk';
-import { decryptData, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
+import { decryptData, importSymmetricKey } from '../../utils/crypto-helpers';
+import { getFileChunkEncryptionTag } from './create-file-chunk';
 
 export const openFileChunk = async (
     chunk: Uint8Array<ArrayBuffer>,

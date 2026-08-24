@@ -2,21 +2,21 @@ import type { FC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect, useParams } from 'react-router-dom';
 
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { AliasEdit } from '@proton/pass/components/Item/Alias/Alias.edit';
-import { CreditCardEdit } from '@proton/pass/components/Item/CreditCard/CreditCard.edit';
-import { CustomEdit } from '@proton/pass/components/Item/Custom/Custom.edit';
-import { IdentityEdit } from '@proton/pass/components/Item/Identity/Identity.edit';
-import { LoginEdit } from '@proton/pass/components/Item/Login/Login.edit';
-import { NoteEdit } from '@proton/pass/components/Item/Note/Note.edit';
-import { useNavigationActions } from '@proton/pass/components/Navigation/NavigationActions';
-import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
-import { getLocalPath } from '@proton/pass/components/Navigation/routing';
-import type { ItemEditViewProps } from '@proton/pass/components/Views/types';
-import { useItem } from '@proton/pass/hooks/useItem';
-import { itemEdit } from '@proton/pass/store/actions';
-import { selectShare } from '@proton/pass/store/selectors';
-import type { ItemEditIntent, ItemType, SelectedItem } from '@proton/pass/types';
+import { useItem } from '../../../hooks/useItem';
+import { itemEdit } from '../../../store/actions';
+import { selectShare } from '../../../store/selectors';
+import type { ItemEditIntent, ItemType, SelectedItem } from '../../../types';
+import { usePassCore } from '../../Core/PassCoreProvider';
+import { useNavigationActions } from '../../Navigation/NavigationActions';
+import { useItemScope } from '../../Navigation/NavigationMatches';
+import { getLocalPath } from '../../Navigation/routing';
+import type { ItemEditViewProps } from '../../Views/types';
+import { AliasEdit } from '../Alias/Alias.edit';
+import { CreditCardEdit } from '../CreditCard/CreditCard.edit';
+import { CustomEdit } from '../Custom/Custom.edit';
+import { IdentityEdit } from '../Identity/Identity.edit';
+import { LoginEdit } from '../Login/Login.edit';
+import { NoteEdit } from '../Note/Note.edit';
 
 const itemEditMap: { [T in ItemType]: FC<ItemEditViewProps<T>> } = {
     login: LoginEdit,

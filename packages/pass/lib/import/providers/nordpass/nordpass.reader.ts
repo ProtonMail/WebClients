@@ -1,7 +1,11 @@
 import { c } from 'ttag';
 
-import { readCSV } from '@proton/pass/lib/import/helpers/csv.reader';
-import { ImportProviderError } from '@proton/pass/lib/import/helpers/error';
+import type { ItemImportIntent, Maybe } from '../../../../types';
+import { groupByKey } from '../../../../utils/array/group-by-key';
+import { safeCall } from '../../../../utils/fp/safe-call';
+import { logger } from '../../../../utils/logger';
+import { readCSV } from '../../helpers/csv.reader';
+import { ImportProviderError } from '../../helpers/error';
 import {
     getEmailOrUsername,
     getImportedVaultName,
@@ -9,13 +13,8 @@ import {
     importIdentityItem,
     importLoginItem,
     importNoteItem,
-} from '@proton/pass/lib/import/helpers/transformers';
-import type { ImportReaderResult, ImportVault } from '@proton/pass/lib/import/types';
-import type { ItemImportIntent, Maybe } from '@proton/pass/types';
-import { groupByKey } from '@proton/pass/utils/array/group-by-key';
-import { safeCall } from '@proton/pass/utils/fp/safe-call';
-import { logger } from '@proton/pass/utils/logger';
-
+} from '../../helpers/transformers';
+import type { ImportReaderResult, ImportVault } from '../../types';
 import { type NordPassItem, NordPassType } from './nordpass.types';
 import { NORDPASS_EXPECTED_HEADERS, extractNordPassExtraFields, extractNordPassIdentity } from './nordpass.utils';
 

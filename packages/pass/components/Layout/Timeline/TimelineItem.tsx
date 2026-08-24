@@ -1,9 +1,9 @@
 import type { FC, PropsWithChildren } from 'react';
 
-import timelineBottom from '@proton/pass/assets/history/timeline-bottom.svg';
-import timelineMiddle from '@proton/pass/assets/history/timeline-middle.svg';
-import timelineTop from '@proton/pass/assets/history/timeline-top.svg';
-import type { Maybe } from '@proton/pass/types';
+import timelineBottom from '../../../assets/history/timeline-bottom.svg';
+import timelineMiddle from '../../../assets/history/timeline-middle.svg';
+import timelineTop from '../../../assets/history/timeline-top.svg';
+import type { Maybe } from '../../../types';
 
 type Props = { index: number; total: number };
 

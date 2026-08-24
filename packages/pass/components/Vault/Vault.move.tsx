@@ -4,12 +4,11 @@ import { useDispatch } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { useConfirm } from '@proton/pass/hooks/useConfirm';
-import { vaultMoveAllItemsIntent } from '@proton/pass/store/actions';
-import type { VaultShareItem } from '@proton/pass/store/reducers';
-import type { MaybeNull } from '@proton/pass/types';
-import { pipe, tap } from '@proton/pass/utils/fp/pipe';
-
+import { useConfirm } from '../../hooks/useConfirm';
+import { vaultMoveAllItemsIntent } from '../../store/actions';
+import type { VaultShareItem } from '../../store/reducers';
+import type { MaybeNull } from '../../types';
+import { pipe, tap } from '../../utils/fp/pipe';
 import { ConfirmVaultMove } from './Actions/ConfirmVaultMove';
 import { VaultSelect, VaultSelectMode } from './VaultSelect';
 

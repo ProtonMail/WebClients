@@ -1,12 +1,12 @@
-import { MAX_MAX_BATCH_PER_REQUEST } from '@proton/pass/constants';
-import { api } from '@proton/pass/lib/api/api';
-import type { ItemMarkAsReadRequest, MaybeNull } from '@proton/pass/types';
-import { type B2BEvent, B2BEventName } from '@proton/pass/types/data/b2b';
-import { groupByKey } from '@proton/pass/utils/array/group-by-key';
-import type { EventBundle } from '@proton/pass/utils/event/dispatcher';
 import { getIsOfflineError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import chunk from '@proton/utils/chunk';
 
+import { MAX_MAX_BATCH_PER_REQUEST } from '../../constants';
+import type { ItemMarkAsReadRequest, MaybeNull } from '../../types';
+import { type B2BEvent, B2BEventName } from '../../types/data/b2b';
+import { groupByKey } from '../../utils/array/group-by-key';
+import type { EventBundle } from '../../utils/event/dispatcher';
+import { api } from '../api/api';
 import { isB2BEvent } from './b2b.utils';
 
 const sendItemReadEvents = async (events: B2BEvent<B2BEventName.ItemRead>[]) =>

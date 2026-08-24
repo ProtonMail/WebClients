@@ -4,19 +4,19 @@ import { Provider as ReduxProvider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
 import createSagaMiddleware from 'redux-saga';
 
-import { AppStateManager } from '@proton/pass/components/Core/AppStateManager';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
-import type { AuthService } from '@proton/pass/lib/auth/service';
-import { authStore, createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
-import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
-import { sagaEvents } from '@proton/pass/store/events';
-import reducer from '@proton/pass/store/reducers';
-import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
-import { requestMiddleware } from '@proton/pass/store/request/middleware';
-import { rootSagaFactory } from '@proton/pass/store/sagas';
-import { WEB_SAGAS } from '@proton/pass/store/sagas/web';
-import { createMemoryStore } from '@proton/pass/utils/store';
+import { AppStateManager } from '../../components/Core/AppStateManager';
+import { usePassCore } from '../../components/Core/PassCoreProvider';
+import { usePassConfig } from '../../hooks/usePassConfig';
+import type { AuthService } from '../../lib/auth/service';
+import { authStore, createAuthStore, exposeAuthStore } from '../../lib/auth/store';
+import { ACTIVE_POLLING_TIMEOUT } from '../../lib/events/constants';
+import { sagaEvents } from '../../store/events';
+import reducer from '../../store/reducers';
+import type { ProxiedSettings } from '../../store/reducers/settings';
+import { requestMiddleware } from '../../store/request/middleware';
+import { rootSagaFactory } from '../../store/sagas';
+import { WEB_SAGAS } from '../../store/sagas/web';
+import { createMemoryStore } from '../store';
 
 export const sagaMiddleware = createSagaMiddleware();
 

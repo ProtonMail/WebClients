@@ -1,12 +1,13 @@
 import { select } from 'redux-saga/effects';
 
-import { toggleVisibility } from '@proton/pass/lib/shares/share.requests';
-import { sharesVisibilityEdit } from '@proton/pass/store/actions';
-import type { SharesState } from '@proton/pass/store/reducers';
-import { createRequestSaga } from '@proton/pass/store/request/sagas';
-import { selectShareState } from '@proton/pass/store/selectors';
-import type { Share, ShareType } from '@proton/pass/types';
 import { toMap } from '@proton/shared/lib/helpers/object';
+
+import { toggleVisibility } from '../../../lib/shares/share.requests';
+import type { Share, ShareType } from '../../../types';
+import { sharesVisibilityEdit } from '../../actions';
+import type { SharesState } from '../../reducers';
+import { createRequestSaga } from '../../request/sagas';
+import { selectShareState } from '../../selectors';
 
 export default [
     createRequestSaga({

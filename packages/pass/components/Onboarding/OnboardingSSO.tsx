@@ -6,12 +6,13 @@ import { Button } from '@proton/atoms/Button/Button';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
-import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
-import { OnboardingLockSetup } from '@proton/pass/components/Onboarding/OnboardingLockSetup';
-import type { WithSpotlightRenderProps } from '@proton/pass/components/Spotlight/WithSpotlight';
-import { useLockSetup } from '@proton/pass/hooks/auth/useLockSetup';
-import { LockMode } from '@proton/pass/lib/auth/lock/types';
+
+import { useLockSetup } from '../../hooks/auth/useLockSetup';
+import { LockMode } from '../../lib/auth/lock/types';
+import { useOnline } from '../Core/ConnectivityProvider';
+import { PassModal } from '../Layout/Modal/PassModal';
+import type { WithSpotlightRenderProps } from '../Spotlight/WithSpotlight';
+import { OnboardingLockSetup } from './OnboardingLockSetup';
 
 import './OnboardingModal.scss';
 

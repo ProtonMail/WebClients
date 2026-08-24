@@ -8,9 +8,10 @@ import type { Input } from '@proton/atoms/Input/Input';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import type { InputFieldProps } from '@proton/components/components/v2/field/InputField';
 import DateInputTwo from '@proton/components/components/v2/input/DateInputTwo';
-import type { Maybe } from '@proton/pass/types/utils';
-import { dateFromYYYYMMDD, formatISODate, formatPlaceholder } from '@proton/pass/utils/time/format';
 import clsx from '@proton/utils/clsx';
+
+import type { Maybe } from '../../../types/utils';
+import { dateFromYYYYMMDD, formatISODate, formatPlaceholder } from '../../../utils/time/format';
 
 export type Props = FieldProps<string> & InputFieldProps<typeof Input>;
 

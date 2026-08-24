@@ -1,5 +1,5 @@
-import type { DetectionRulesV2, RuleV2 } from '@proton/pass/lib/extension/rules/v2/types';
-import { isObject } from '@proton/pass/utils/object/is-object';
+import { isObject } from '../../../../utils/object/is-object';
+import type { DetectionRulesV2, RuleV2 } from './types';
 
 /** Ideally we should validate recursively but for now
  * the JSON schema is enforced before publishing. */

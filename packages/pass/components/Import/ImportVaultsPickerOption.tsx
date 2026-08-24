@@ -9,12 +9,13 @@ import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
-import { VAULT_ICON_MAP } from '@proton/pass/components/Vault/constants';
-import type { ImportVault } from '@proton/pass/lib/import/types';
-import { formatItemsCount } from '@proton/pass/lib/items/item.utils';
-import type { VaultShareItem } from '@proton/pass/store/reducers';
-import type { MaybeNull } from '@proton/pass/types';
-import { truthy } from '@proton/pass/utils/fp/predicates';
+
+import type { ImportVault } from '../../lib/import/types';
+import { formatItemsCount } from '../../lib/items/item.utils';
+import type { VaultShareItem } from '../../store/reducers';
+import type { MaybeNull } from '../../types';
+import { truthy } from '../../utils/fp/predicates';
+import { VAULT_ICON_MAP } from '../Vault/constants';
 
 type VaultsPickerOptionProps = {
     data: ImportVault;

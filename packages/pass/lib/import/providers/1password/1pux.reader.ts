@@ -1,7 +1,11 @@
 import { c } from 'ttag';
 
-import { ImportProviderError } from '@proton/pass/lib/import/helpers/error';
-import { attachFilesToItem } from '@proton/pass/lib/import/helpers/files';
+import type { DeobfuscatedItemExtraField, ItemImportIntent, Maybe } from '../../../../types';
+import { extractFirst } from '../../../../utils/array/extract-first';
+import { prop } from '../../../../utils/fp/lens';
+import { logger } from '../../../../utils/logger';
+import { ImportProviderError } from '../../helpers/error';
+import { attachFilesToItem } from '../../helpers/files';
 import {
     getEmailOrUsername,
     getImportedVaultName,
@@ -12,14 +16,9 @@ import {
     importNoteItem,
     importSshKeyItem,
     importWifiItem,
-} from '@proton/pass/lib/import/helpers/transformers';
-import { readZIP } from '@proton/pass/lib/import/helpers/zip.reader';
-import type { ImportReaderResult, ImportVault } from '@proton/pass/lib/import/types';
-import type { DeobfuscatedItemExtraField, ItemImportIntent, Maybe } from '@proton/pass/types';
-import { extractFirst } from '@proton/pass/utils/array/extract-first';
-import { prop } from '@proton/pass/utils/fp/lens';
-import { logger } from '@proton/pass/utils/logger';
-
+} from '../../helpers/transformers';
+import { readZIP } from '../../helpers/zip.reader';
+import type { ImportReaderResult, ImportVault } from '../../types';
 import {
     extract1PasswordExtraFields,
     extract1PasswordIdentity,

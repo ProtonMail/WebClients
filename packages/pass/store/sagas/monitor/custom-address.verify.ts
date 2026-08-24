@@ -1,7 +1,7 @@
-import { verifyCustomEmail } from '@proton/pass/lib/monitor/monitor.request';
-import { intoCustomMonitorAddress } from '@proton/pass/lib/monitor/monitor.utils';
-import { verifyCustomAddress } from '@proton/pass/store/actions';
-import { createRequestSaga } from '@proton/pass/store/request/sagas';
+import { verifyCustomEmail } from '../../../lib/monitor/monitor.request';
+import { intoCustomMonitorAddress } from '../../../lib/monitor/monitor.utils';
+import { verifyCustomAddress } from '../../actions';
+import { createRequestSaga } from '../../request/sagas';
 
 export default createRequestSaga({
     actions: verifyCustomAddress,

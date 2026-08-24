@@ -1,17 +1,17 @@
 import { select } from 'redux-saga/effects';
 
-import { MODEL_REGISTRY_URL } from '@proton/pass/constants';
-import { fetchIfModified } from '@proton/pass/lib/api/utils';
-import { validateModelRegistry } from '@proton/pass/lib/extension/model-registry/model-registry';
-import type { ModelRegistry } from '@proton/pass/lib/extension/model-registry/model-registry';
-import { resolveModelRegistry } from '@proton/pass/store/actions/creators/model-registry';
-import { createRequestSaga } from '@proton/pass/store/request/sagas';
-import type { RequestEntry, RequestStatus } from '@proton/pass/store/request/types';
-import { selectRequest } from '@proton/pass/store/selectors';
-import type { Maybe } from '@proton/pass/types';
-import { logger } from '@proton/pass/utils/logger';
+import { MODEL_REGISTRY_URL } from '../../../constants';
+import { fetchIfModified } from '../../../lib/api/utils';
+import { validateModelRegistry } from '../../../lib/extension/model-registry/model-registry';
+import type { ModelRegistry } from '../../../lib/extension/model-registry/model-registry';
+import type { Maybe } from '../../../types';
+import { logger } from '../../../utils/logger';
+import { resolveModelRegistry } from '../../actions/creators/model-registry';
+import { createRequestSaga } from '../../request/sagas';
+import type { RequestEntry, RequestStatus } from '../../request/types';
+import { selectRequest } from '../../selectors';
 
-declare module '@proton/pass/store/events' {
+declare module '../../events' {
     interface SagaEvents {
         'model-registry::resolved': ModelRegistry;
     }

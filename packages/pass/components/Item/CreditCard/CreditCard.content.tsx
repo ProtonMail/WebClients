@@ -3,27 +3,23 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { ExtraFieldsControl } from '@proton/pass/components/Form/Field/Control/ExtraFieldsControl';
-import { MaskedValueControl } from '@proton/pass/components/Form/Field/Control/MaskedValueControl';
-import { ObfuscatedValueControl } from '@proton/pass/components/Form/Field/Control/ObfuscatedValueControl';
-import { UpgradeControl } from '@proton/pass/components/Form/Field/Control/UpgradeControl';
-import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
-import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
-import {
-    cardNumberHiddenValue,
-    cardNumberMask,
-    expDateMask,
-} from '@proton/pass/components/Form/Field/masks/credit-card';
-import { TextAreaReadonly } from '@proton/pass/components/Form/legacy/TextAreaReadonly';
-import type { ItemContentProps } from '@proton/pass/components/Views/types';
-import { UpsellRef } from '@proton/pass/constants';
-import { usePartialDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
-import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
-import { selectPassPlan } from '@proton/pass/store/selectors';
-import { PassFeature } from '@proton/pass/types/api/features';
-import { UserPassPlan } from '@proton/pass/types/api/plan';
-import { deobfuscateCCField } from '@proton/pass/utils/obfuscate/xor';
-import { formatExpirationDateMMYY } from '@proton/pass/utils/time/expiration-date';
+import { UpsellRef } from '../../../constants';
+import { usePartialDeobfuscatedItem } from '../../../hooks/useDeobfuscatedItem';
+import { useFeatureFlag } from '../../../hooks/useFeatureFlag';
+import { selectPassPlan } from '../../../store/selectors';
+import { PassFeature } from '../../../types/api/features';
+import { UserPassPlan } from '../../../types/api/plan';
+import { deobfuscateCCField } from '../../../utils/obfuscate/xor';
+import { formatExpirationDateMMYY } from '../../../utils/time/expiration-date';
+import { ExtraFieldsControl } from '../../Form/Field/Control/ExtraFieldsControl';
+import { MaskedValueControl } from '../../Form/Field/Control/MaskedValueControl';
+import { ObfuscatedValueControl } from '../../Form/Field/Control/ObfuscatedValueControl';
+import { UpgradeControl } from '../../Form/Field/Control/UpgradeControl';
+import { ValueControl } from '../../Form/Field/Control/ValueControl';
+import { FieldsetCluster } from '../../Form/Field/Layout/FieldsetCluster';
+import { cardNumberHiddenValue, cardNumberMask, expDateMask } from '../../Form/Field/masks/credit-card';
+import { TextAreaReadonly } from '../../Form/legacy/TextAreaReadonly';
+import type { ItemContentProps } from '../../Views/types';
 
 export const CreditCardContent: FC<ItemContentProps<'creditCard'>> = ({ secureLinkItem, revision }) => {
     const { data: item, itemId, shareId } = revision;

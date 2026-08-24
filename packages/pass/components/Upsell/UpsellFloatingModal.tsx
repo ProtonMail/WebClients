@@ -5,10 +5,11 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import PassLogo from '@proton/components/components/logo/PassLogo';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { PASS_BLOG_TRIAL_URL } from '@proton/pass/constants';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
+
+import { PASS_BLOG_TRIAL_URL } from '../../constants';
+import { usePassCore } from '../Core/PassCoreProvider';
 
 import './UpsellFloatingModal.scss';
 

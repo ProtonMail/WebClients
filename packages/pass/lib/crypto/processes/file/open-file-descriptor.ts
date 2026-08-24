@@ -1,11 +1,8 @@
-import {
-    type FileDescriptorProcessResult,
-    getFileMetadataEncryptionTag,
-} from '@proton/pass/lib/crypto/processes/file/create-file-descriptor';
-import { decryptData, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
-import { PassCryptoFileError } from '@proton/pass/lib/crypto/utils/errors';
-import type { RotationKey } from '@proton/pass/types';
-import { PassEncryptionTag } from '@proton/pass/types';
+import type { RotationKey } from '../../../../types';
+import { PassEncryptionTag } from '../../../../types';
+import { decryptData, importSymmetricKey } from '../../utils/crypto-helpers';
+import { PassCryptoFileError } from '../../utils/errors';
+import { type FileDescriptorProcessResult, getFileMetadataEncryptionTag } from './create-file-descriptor';
 
 export const openFileDescriptor = async (
     encryptedMetadata: string,

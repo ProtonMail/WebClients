@@ -1,8 +1,9 @@
-import type { ClipboardApi, ClipboardService } from '@proton/pass/lib/clipboard/types';
-import type { MaybeNull } from '@proton/pass/types';
-import type { AlarmFactory } from '@proton/pass/utils/time/alarm';
-import { createTimeoutAlarm } from '@proton/pass/utils/time/alarm';
 import noop from '@proton/utils/noop';
+
+import type { MaybeNull } from '../../types';
+import type { AlarmFactory } from '../../utils/time/alarm';
+import { createTimeoutAlarm } from '../../utils/time/alarm';
+import type { ClipboardApi, ClipboardService } from './types';
 
 export const createClipboardService = (
     clipboard: ClipboardApi,

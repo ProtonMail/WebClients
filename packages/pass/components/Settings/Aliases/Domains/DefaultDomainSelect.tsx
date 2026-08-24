@@ -4,15 +4,15 @@ import { c } from 'ttag';
 
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
-import { PassPlusPromotionButton } from '@proton/pass/components/Upsell/PassPlusPromotionButton';
-import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
-import { UpsellRef } from '@proton/pass/constants';
-import { useRequest } from '@proton/pass/hooks/useRequest';
-import { getDomainLabel } from '@proton/pass/lib/alias/alias.utils';
-import { setDefaultAliasDomain } from '@proton/pass/store/actions';
-import type { MaybeNull } from '@proton/pass/types';
-import { truthy } from '@proton/pass/utils/fp/predicates';
 
+import { UpsellRef } from '../../../../constants';
+import { useRequest } from '../../../../hooks/useRequest';
+import { getDomainLabel } from '../../../../lib/alias/alias.utils';
+import { setDefaultAliasDomain } from '../../../../store/actions';
+import type { MaybeNull } from '../../../../types';
+import { truthy } from '../../../../utils/fp/predicates';
+import { PassPlusPromotionButton } from '../../../Upsell/PassPlusPromotionButton';
+import { useUpselling } from '../../../Upsell/UpsellingProvider';
 import { useAliasDomains } from './DomainsProvider';
 
 type Props = { className?: string };

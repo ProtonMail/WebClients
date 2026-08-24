@@ -1,4 +1,4 @@
-import type { MaybeNull } from '@proton/pass/types';
+import type { MaybeNull } from '../../../../types';
 
 export enum BitwardenType {
     LOGIN = 1,
@@ -106,11 +106,7 @@ export type BitwardenSshKeyItem = BitwardenBaseItem & {
 };
 
 export type BitwardenItem =
-    | BitwardenLoginItem
-    | BitwardenNoteItem
-    | BitwardenCCItem
-    | BitwardenIdentityItem
-    | BitwardenSshKeyItem;
+    BitwardenLoginItem | BitwardenNoteItem | BitwardenCCItem | BitwardenIdentityItem | BitwardenSshKeyItem;
 
 export type BitwardenData = {
     encrypted: boolean;

@@ -1,11 +1,11 @@
 import type { FC } from 'react';
 
-import { ExtraFieldsControl } from '@proton/pass/components/Form/Field/Control/ExtraFieldsControl';
-import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
-import { FieldBox } from '@proton/pass/components/Form/Field/Layout/FieldBox';
-import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
-import type { ItemContentProps } from '@proton/pass/components/Views/types';
-import { useIdentityContent } from '@proton/pass/hooks/identity/useIdentityContent';
+import { useIdentityContent } from '../../../hooks/identity/useIdentityContent';
+import { ExtraFieldsControl } from '../../Form/Field/Control/ExtraFieldsControl';
+import { ValueControl } from '../../Form/Field/Control/ValueControl';
+import { FieldBox } from '../../Form/Field/Layout/FieldBox';
+import { FieldsetCluster } from '../../Form/Field/Layout/FieldsetCluster';
+import type { ItemContentProps } from '../../Views/types';
 
 export const IdentityContent: FC<ItemContentProps<'identity'>> = ({ revision }) => {
     const { shareId, itemId } = revision;

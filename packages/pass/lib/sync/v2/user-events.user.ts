@@ -1,21 +1,21 @@
 import { call, put } from 'redux-saga/effects';
 
-import { getAllBreaches } from '@proton/pass/lib/monitor/monitor.request';
-import { getOrganizationSettings } from '@proton/pass/lib/organization/organization.requests';
-import { onOrganizationSettingsUpdated } from '@proton/pass/lib/sync/common/organization';
-import type { EventProcessor } from '@proton/pass/lib/sync/types';
-import { getUserAccess } from '@proton/pass/lib/user/user.requests';
-import { setBreaches, setUserAccess } from '@proton/pass/store/actions';
-import { setOrganizationSettings } from '@proton/pass/store/actions/creators/organization';
-import type { HydratedAccessState } from '@proton/pass/store/reducers';
-import type { RootSagaOptions } from '@proton/pass/store/types';
+import { setBreaches, setUserAccess } from '../../../store/actions';
+import { setOrganizationSettings } from '../../../store/actions/creators/organization';
+import type { HydratedAccessState } from '../../../store/reducers';
+import type { RootSagaOptions } from '../../../store/types';
 import type {
     BreachesGetResponse,
     Maybe,
     MaybeNull,
     OrganizationGetResponse,
     SyncEventChangedWithTokenOutput,
-} from '@proton/pass/types';
+} from '../../../types';
+import { getAllBreaches } from '../../monitor/monitor.request';
+import { getOrganizationSettings } from '../../organization/organization.requests';
+import { getUserAccess } from '../../user/user.requests';
+import { onOrganizationSettingsUpdated } from '../common/organization';
+import type { EventProcessor } from '../types';
 
 /** Refreshes user access state when the server signals a change. */
 export function* processUserRefresh(refresh: boolean): EventProcessor {

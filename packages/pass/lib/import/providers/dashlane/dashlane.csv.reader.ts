@@ -1,12 +1,11 @@
 import { c } from 'ttag';
 
-import { readCSV } from '@proton/pass/lib/import/helpers/csv.reader';
-import { ImportProviderError } from '@proton/pass/lib/import/helpers/error';
-import { getImportedVaultName } from '@proton/pass/lib/import/helpers/transformers';
-import type { ImportReaderResult, ImportVault } from '@proton/pass/lib/import/types';
-import { seq } from '@proton/pass/utils/fp/promises';
-import { logger } from '@proton/pass/utils/logger';
-
+import { seq } from '../../../../utils/fp/promises';
+import { logger } from '../../../../utils/logger';
+import { readCSV } from '../../helpers/csv.reader';
+import { ImportProviderError } from '../../helpers/error';
+import { getImportedVaultName } from '../../helpers/transformers';
+import type { ImportReaderResult, ImportVault } from '../../types';
 import type { DashlaneItem, DashlaneItemAsyncParser, DashlaneItemParser } from './dashlane.types';
 import { DashlaneFileKey } from './dashlane.types';
 import {

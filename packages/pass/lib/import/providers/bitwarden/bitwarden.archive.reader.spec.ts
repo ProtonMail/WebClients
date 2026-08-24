@@ -1,9 +1,8 @@
 import JSZip from 'jszip';
 
-import type { ItemImportIntent } from '@proton/pass/types';
-import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
-import { uniqueId } from '@proton/pass/utils/string/unique-id';
-
+import type { ItemImportIntent } from '../../../../types';
+import { deobfuscate } from '../../../../utils/obfuscate/xor';
+import { uniqueId } from '../../../../utils/string/unique-id';
 import { readBitwardenArchiveData } from './bitwarden.archive.reader';
 
 const createBitwardenLoginItem = () => ({

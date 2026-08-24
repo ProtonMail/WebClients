@@ -1,10 +1,9 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import { isActive } from '@proton/pass/lib/items/item.predicates';
-import { sortItems } from '@proton/pass/lib/items/item.utils';
-import { isShareManageable } from '@proton/pass/lib/shares/share.predicates';
-import type { ItemRevision, SelectedItem, Share } from '@proton/pass/types';
-
+import { isActive } from '../../lib/items/item.predicates';
+import { sortItems } from '../../lib/items/item.utils';
+import { isShareManageable } from '../../lib/shares/share.predicates';
+import type { ItemRevision, SelectedItem, Share } from '../../types';
 import { itemsFromSelection, selectItem, selectItems, selectTrashedItems, selectVisibleItems } from './items';
 import { selectItemShares, selectShare, selectShareState } from './shares';
 

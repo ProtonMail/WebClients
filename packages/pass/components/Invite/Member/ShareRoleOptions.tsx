@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
-import type { InviteLabels } from '@proton/pass/components/Invite/useInviteLabels';
-import { AccessTarget } from '@proton/pass/lib/access/types';
-import { ShareRole } from '@proton/pass/types';
+import { AccessTarget } from '../../../lib/access/types';
+import { ShareRole } from '../../../types';
+import type { InviteLabels } from '../useInviteLabels';
 
 export const getShareRoleDefinition = (
     target: AccessTarget,

@@ -5,27 +5,28 @@ import { useFormik } from 'formik';
 import { c } from 'ttag';
 
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
-import { useCurrentPort, useCurrentTabID } from '@proton/pass/components/Core/PassCoreProvider';
-import { ExportForm } from '@proton/pass/components/Export/ExportForm';
-import { ProgressModal } from '@proton/pass/components/FileAttachments/ProgressModal';
-import { usePasswordTypeSwitch, usePasswordUnlock } from '@proton/pass/components/Lock/PasswordUnlockProvider';
-import { useAsyncRequestDispatch } from '@proton/pass/hooks/useDispatchAsyncRequest';
-import { isAbortError } from '@proton/pass/lib/api/errors';
-import { ReauthAction } from '@proton/pass/lib/auth/reauth';
-import { ExportFormat, type ExportRequestOptions } from '@proton/pass/lib/export/types';
-import { mimetypeForDownload } from '@proton/pass/lib/file-attachments/helpers';
-import { fileStorage } from '@proton/pass/lib/file-storage/fs';
-import { getSafeStorage } from '@proton/pass/lib/file-storage/utils';
-import { validateExportForm } from '@proton/pass/lib/validation/export';
-import { exportData } from '@proton/pass/store/actions/creators/export';
-import { requestCancel } from '@proton/pass/store/request/actions';
-import { selectRequest } from '@proton/pass/store/selectors';
-import type { MaybePromise } from '@proton/pass/types';
-import { download } from '@proton/pass/utils/dom/download';
-import { throwError } from '@proton/pass/utils/fp/throw';
-import type { XorObfuscation } from '@proton/pass/utils/obfuscate/xor';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
+
+import { useAsyncRequestDispatch } from '../../hooks/useDispatchAsyncRequest';
+import { isAbortError } from '../../lib/api/errors';
+import { ReauthAction } from '../../lib/auth/reauth';
+import { ExportFormat, type ExportRequestOptions } from '../../lib/export/types';
+import { mimetypeForDownload } from '../../lib/file-attachments/helpers';
+import { fileStorage } from '../../lib/file-storage/fs';
+import { getSafeStorage } from '../../lib/file-storage/utils';
+import { validateExportForm } from '../../lib/validation/export';
+import { exportData } from '../../store/actions/creators/export';
+import { requestCancel } from '../../store/request/actions';
+import { selectRequest } from '../../store/selectors';
+import type { MaybePromise } from '../../types';
+import { download } from '../../utils/dom/download';
+import { throwError } from '../../utils/fp/throw';
+import type { XorObfuscation } from '../../utils/obfuscate/xor';
+import { useOnline } from '../Core/ConnectivityProvider';
+import { useCurrentPort, useCurrentTabID } from '../Core/PassCoreProvider';
+import { ProgressModal } from '../FileAttachments/ProgressModal';
+import { usePasswordTypeSwitch, usePasswordUnlock } from '../Lock/PasswordUnlockProvider';
+import { ExportForm } from './ExportForm';
 
 type Props = {
     /** Optional assertion function that will be triggered

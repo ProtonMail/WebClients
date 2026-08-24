@@ -5,10 +5,9 @@ import type { EnhancedStore, UnknownAction } from '@reduxjs/toolkit';
 import { configureStore, createAction } from '@reduxjs/toolkit';
 import { act, renderHook } from '@testing-library/react-hooks';
 
-import { withRequest } from '@proton/pass/store/request/enhancers';
-import { requestMiddleware } from '@proton/pass/store/request/middleware';
-import request from '@proton/pass/store/request/reducer';
-
+import { withRequest } from '../store/request/enhancers';
+import { requestMiddleware } from '../store/request/middleware';
+import request from '../store/request/reducer';
 import { useActionRequest } from './useRequest';
 
 const requestId = 'test::id';

@@ -1,6 +1,17 @@
 import isDeepEqual from 'lodash/isEqual';
 import type { Reducer } from 'redux';
 
+import { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/constants';
+import updateCollection from '@proton/shared/lib/helpers/updateCollection';
+import type { Address, DateFormatOptions, SETTINGS_PASSWORD_MODE, SETTINGS_STATUS, User } from '@proton/shared/lib/interfaces';
+import type { AuthDeviceOutput } from '@proton/shared/lib/keys/device';
+
+import type { BitField, Id, MaybeNull, PassPlanResponse, RequiredNonNull, UserMonitorStatusResponse } from '../../types';
+import { EventActions } from '../../types';
+import type { FeatureFlagVariant, PassFeature } from '../../types/api/features';
+import { or } from '../../utils/fp/predicates';
+import { objectDelete } from '../../utils/object/delete';
+import { merge, partialMerge } from '../../utils/object/merge';
 import {
     aliasPendingCreate,
     aliasPendingCreated,
@@ -18,18 +29,8 @@ import {
     setUserFeatureFlags,
     syncMigration,
     userRefresh,
-} from '@proton/pass/store/actions';
-import { confirmPendingAuthDevice, getAuthDevices, rejectPendingAuthDevice } from '@proton/pass/store/actions/creators/sso';
-import type { BitField, Id, MaybeNull, PassPlanResponse, RequiredNonNull, UserMonitorStatusResponse } from '@proton/pass/types';
-import { EventActions } from '@proton/pass/types';
-import type { FeatureFlagVariant, PassFeature } from '@proton/pass/types/api/features';
-import { or } from '@proton/pass/utils/fp/predicates';
-import { objectDelete } from '@proton/pass/utils/object/delete';
-import { merge, partialMerge } from '@proton/pass/utils/object/merge';
-import { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/constants';
-import updateCollection from '@proton/shared/lib/helpers/updateCollection';
-import type { Address, DateFormatOptions, SETTINGS_PASSWORD_MODE, SETTINGS_STATUS, User } from '@proton/shared/lib/interfaces';
-import type { AuthDeviceOutput } from '@proton/shared/lib/keys/device';
+} from '../actions';
+import { confirmPendingAuthDevice, getAuthDevices, rejectPendingAuthDevice } from '../actions/creators/sso';
 
 export type AddressState = { [addressId: string]: Address };
 export type FeatureFlagState = Partial<Record<PassFeature, boolean>>;

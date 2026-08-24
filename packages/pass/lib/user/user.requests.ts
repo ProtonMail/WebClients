@@ -1,23 +1,24 @@
-import { DEFAULT_PASS_FEATURES } from '@proton/pass/constants';
-import { api } from '@proton/pass/lib/api/api';
-import type {
-    FeatureFlagAndVariantState,
-    FeatureFlagState,
-    FeatureFlagVariants,
-    HydratedAccessState,
-    HydratedUserState,
-} from '@proton/pass/store/reducers';
-import type { Maybe } from '@proton/pass/types';
-import type { FeatureFlagsResponse } from '@proton/pass/types/api/features';
-import { PassFeature, PassFeaturesValues, isAutofillModelExperimentGroup } from '@proton/pass/types/api/features';
-import { prop } from '@proton/pass/utils/fp/lens';
-import { logger } from '@proton/pass/utils/logger';
 import { getAllAddresses } from '@proton/shared/lib/api/addresses';
 import { getLatestID } from '@proton/shared/lib/api/events';
 import { getSettings } from '@proton/shared/lib/api/settings';
 import { getUser } from '@proton/shared/lib/api/user';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import type { Address, User, UserSettings } from '@proton/shared/lib/interfaces';
+
+import { DEFAULT_PASS_FEATURES } from '../../constants';
+import type {
+    FeatureFlagAndVariantState,
+    FeatureFlagState,
+    FeatureFlagVariants,
+    HydratedAccessState,
+    HydratedUserState,
+} from '../../store/reducers';
+import type { Maybe } from '../../types';
+import type { FeatureFlagsResponse } from '../../types/api/features';
+import { PassFeature, PassFeaturesValues, isAutofillModelExperimentGroup } from '../../types/api/features';
+import { prop } from '../../utils/fp/lens';
+import { logger } from '../../utils/logger';
+import { api } from '../api/api';
 
 export const getFeatureFlags = async (webExtensionId: Maybe<string>): Promise<FeatureFlagAndVariantState> => {
     logger.info(`[User] syncing feature flags`);

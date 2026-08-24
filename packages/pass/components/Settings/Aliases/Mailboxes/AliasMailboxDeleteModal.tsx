@@ -7,15 +7,15 @@ import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import Toggle from '@proton/components/components/toggle/Toggle';
-import { ConfirmationModal } from '@proton/pass/components/Confirmation/ConfirmationModal';
-import { InlineFieldBox } from '@proton/pass/components/Form/Field/Layout/InlineFieldBox';
-import { useRequest } from '@proton/pass/hooks/useRequest';
-import { mailboxVerificationRequired } from '@proton/pass/lib/alias/alias.utils';
-import { deleteMailbox } from '@proton/pass/store/actions';
-import type { MaybeNull } from '@proton/pass/types';
-import { prop } from '@proton/pass/utils/fp/lens';
-import { pipe } from '@proton/pass/utils/fp/pipe';
 
+import { useRequest } from '../../../../hooks/useRequest';
+import { mailboxVerificationRequired } from '../../../../lib/alias/alias.utils';
+import { deleteMailbox } from '../../../../store/actions';
+import type { MaybeNull } from '../../../../types';
+import { prop } from '../../../../utils/fp/lens';
+import { pipe } from '../../../../utils/fp/pipe';
+import { ConfirmationModal } from '../../../Confirmation/ConfirmationModal';
+import { InlineFieldBox } from '../../../Form/Field/Layout/InlineFieldBox';
 import { useAliasMailboxes } from './AliasMailboxesContext';
 
 type Props = { mailboxID: number };

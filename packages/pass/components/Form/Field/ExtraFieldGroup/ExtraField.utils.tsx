@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
 import type { IconName } from '@proton/icons/types';
-import type { DeobfuscatedItemExtraField, ExtraFieldType } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
+
+import type { DeobfuscatedItemExtraField, ExtraFieldType } from '../../../../types';
 
 export const createExtraField = <T extends ExtraFieldType>(type: T): DeobfuscatedItemExtraField => {
     switch (type) {

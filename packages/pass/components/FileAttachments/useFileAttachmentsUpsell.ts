@@ -1,9 +1,10 @@
-import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
-import { UpsellRef } from '@proton/pass/constants';
-import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
-import { useMatchUser } from '@proton/pass/hooks/useMatchUser';
-import { PassFeature } from '@proton/pass/types/api/features';
 import { PLANS } from '@proton/payments/core/constants';
+
+import { UpsellRef } from '../../constants';
+import { useFeatureFlag } from '../../hooks/useFeatureFlag';
+import { useMatchUser } from '../../hooks/useMatchUser';
+import { PassFeature } from '../../types/api/features';
+import { useUpselling } from '../Upsell/UpsellingProvider';
 
 export type FileAttachmentsUpsell = {
     /** Hide the file-attachments field entirely (Essentials user while the upsell flag is

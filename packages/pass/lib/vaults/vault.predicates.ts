@@ -1,7 +1,7 @@
-import { PassCrypto } from '@proton/pass/lib/crypto';
-import type { ShareItem } from '@proton/pass/store/reducers';
-import { type Share, ShareRole, ShareType } from '@proton/pass/types';
-import { and, not } from '@proton/pass/utils/fp/predicates';
+import type { ShareItem } from '../../store/reducers';
+import { type Share, ShareRole, ShareType } from '../../types';
+import { and, not } from '../../utils/fp/predicates';
+import { PassCrypto } from '../crypto';
 
 export const isActiveVault = <T extends Share>(share: T): share is T & Share<ShareType.Vault> =>
     share.targetType === ShareType.Vault && PassCrypto.canOpenShare(share.shareId);

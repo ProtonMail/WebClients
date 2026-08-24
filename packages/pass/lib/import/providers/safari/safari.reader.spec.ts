@@ -1,10 +1,9 @@
 import fs from 'fs';
 
-import type { ImportPayload } from '@proton/pass/lib/import/types';
-import type { ItemImportIntent } from '@proton/pass/types';
-import { AutofillMode } from '@proton/pass/types/protobuf';
-import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
-
+import type { ItemImportIntent } from '../../../../types';
+import { AutofillMode } from '../../../../types/protobuf';
+import { deobfuscate } from '../../../../utils/obfuscate/xor';
+import type { ImportPayload } from '../../types';
 import { readSafariData } from './safari.reader';
 
 describe('Import Safari CSV', () => {

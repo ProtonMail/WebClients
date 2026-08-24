@@ -3,18 +3,18 @@ import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
 
-import { useItemsActions } from '@proton/pass/components/Item/ItemActionsProvider';
-import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
-import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
-import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
-import { useItemDrop } from '@proton/pass/hooks/useItemDrag';
-import { intoBulkSelection } from '@proton/pass/lib/items/item.utils';
-import { selectTrashedItems } from '@proton/pass/store/selectors';
-import type { UniqueItem } from '@proton/pass/types';
-import { pipe } from '@proton/pass/utils/fp/pipe';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
+import { useItemDrop } from '../../../hooks/useItemDrag';
+import { intoBulkSelection } from '../../../lib/items/item.utils';
+import { selectTrashedItems } from '../../../store/selectors';
+import type { UniqueItem } from '../../../types';
+import { pipe } from '../../../utils/fp/pipe';
+import { useItemsActions } from '../../Item/ItemActionsProvider';
+import { DropdownMenuButton } from '../../Layout/Dropdown/DropdownMenuButton';
+import { useVaultActions } from '../../Vault/VaultActionsProvider';
+import { VaultIcon } from '../../Vault/VaultIcon';
 import { getVaultOptionInfo } from './utils';
 
 type Props = {

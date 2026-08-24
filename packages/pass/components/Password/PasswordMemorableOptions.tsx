@@ -7,13 +7,14 @@ import { SliderSizeEnum } from '@proton/atoms/Slider/Slider';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import Toggle from '@proton/components/components/toggle/Toggle';
-import { OrganizationPolicyTooltip } from '@proton/pass/components/Organization/OrganizationPolicyTooltip';
-import type { PasswordGeneratorResult } from '@proton/pass/hooks/usePasswordGenerator';
-import { getSeperatorTranslation } from '@proton/pass/lib/password/memorable';
-import type { MemorablePasswordOptions } from '@proton/pass/lib/password/types';
-import { SeperatorOptions } from '@proton/pass/lib/password/types';
-import { oneOf } from '@proton/pass/utils/fp/predicates';
 import clsx from '@proton/utils/clsx';
+
+import type { PasswordGeneratorResult } from '../../hooks/usePasswordGenerator';
+import { getSeperatorTranslation } from '../../lib/password/memorable';
+import type { MemorablePasswordOptions } from '../../lib/password/types';
+import { SeperatorOptions } from '../../lib/password/types';
+import { oneOf } from '../../utils/fp/predicates';
+import { OrganizationPolicyTooltip } from '../Organization/OrganizationPolicyTooltip';
 
 type Props = PasswordGeneratorResult<'memorable'> & { advanced: boolean; dense?: boolean };
 

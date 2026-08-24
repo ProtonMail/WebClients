@@ -5,11 +5,12 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import { ExpirationTimeSelect, ExpireTime } from '@proton/pass/components/Form/Field/Custom/ExpirationTimeSelect';
-import { MaxReadsToggleInput } from '@proton/pass/components/Form/Field/Custom/MaxReadsToggleInput';
-import { useRequest } from '@proton/pass/hooks/useRequest';
-import { secureLinkCreate } from '@proton/pass/store/actions';
-import type { SecureLink, SecureLinkOptions, UniqueItem } from '@proton/pass/types';
+
+import { useRequest } from '../../hooks/useRequest';
+import { secureLinkCreate } from '../../store/actions';
+import type { SecureLink, SecureLinkOptions, UniqueItem } from '../../types';
+import { ExpirationTimeSelect, ExpireTime } from '../Form/Field/Custom/ExpirationTimeSelect';
+import { MaxReadsToggleInput } from '../Form/Field/Custom/MaxReadsToggleInput';
 
 type Props = UniqueItem & { onLinkGenerated: (data: SecureLink) => void };
 type SecureLinkState = Omit<SecureLinkOptions, 'linkKeyEncryptedWithItemKey'>;

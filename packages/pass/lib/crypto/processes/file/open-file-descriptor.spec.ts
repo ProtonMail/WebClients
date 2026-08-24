@@ -1,9 +1,8 @@
-import { createFileDescriptor } from '@proton/pass/lib/crypto/processes/file/create-file-descriptor';
-import { encryptData } from '@proton/pass/lib/crypto/utils/crypto-helpers';
-import { PassCryptoFileError } from '@proton/pass/lib/crypto/utils/errors';
-import { createRandomItemKey } from '@proton/pass/lib/crypto/utils/testing';
-import { PassEncryptionTag } from '@proton/pass/types';
-
+import { PassEncryptionTag } from '../../../../types';
+import { encryptData } from '../../utils/crypto-helpers';
+import { PassCryptoFileError } from '../../utils/errors';
+import { createRandomItemKey } from '../../utils/testing';
+import { createFileDescriptor } from './create-file-descriptor';
 import { openFileDescriptor } from './open-file-descriptor';
 
 describe('`openFileDescriptor` crypto process', () => {

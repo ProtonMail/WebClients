@@ -1,8 +1,8 @@
 import { put, takeEvery } from 'redux-saga/effects';
 
-import { createVault } from '@proton/pass/lib/vaults/vault.requests';
-import { vaultCreationFailure, vaultCreationIntent, vaultCreationSuccess } from '@proton/pass/store/actions';
-import type { Maybe, Share, ShareType } from '@proton/pass/types';
+import { createVault } from '../../../lib/vaults/vault.requests';
+import type { Maybe, Share, ShareType } from '../../../types';
+import { vaultCreationFailure, vaultCreationIntent, vaultCreationSuccess } from '../../actions';
 
 export function* createVaultWorker({ payload, meta }: ReturnType<typeof vaultCreationIntent>): Generator<unknown, Maybe<string>> {
     try {

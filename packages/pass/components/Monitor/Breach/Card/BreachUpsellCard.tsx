@@ -3,12 +3,13 @@ import type { FC } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import shield from '@proton/pass/assets/monitor/shield-bolt.svg';
-import { Card } from '@proton/pass/components/Layout/Card/Card';
-import { CardContent } from '@proton/pass/components/Layout/Card/CardContent';
-import { PassPlusPromotionButton } from '@proton/pass/components/Upsell/PassPlusPromotionButton';
 import { DARK_WEB_MONITORING_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
+
+import shield from '../../../../assets/monitor/shield-bolt.svg';
+import { Card } from '../../../Layout/Card/Card';
+import { CardContent } from '../../../Layout/Card/CardContent';
+import { PassPlusPromotionButton } from '../../../Upsell/PassPlusPromotionButton';
 
 type Props = { className?: string; onUpsell: () => void };
 

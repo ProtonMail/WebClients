@@ -1,16 +1,16 @@
-import { isB2BAdmin } from '@proton/pass/lib/organization/helpers';
-import type { FiltersState } from '@proton/pass/store/reducers';
-import type { MaybeNull, PassCryptoSnapshot, SerializedCryptoContext } from '@proton/pass/types';
-import { AutofillMode } from '@proton/pass/types/protobuf';
-import type { EncryptedPassCache } from '@proton/pass/types/worker/cache';
-import { logId, logger } from '@proton/pass/utils/logger';
-import { type XorObfuscation, obfuscate } from '@proton/pass/utils/obfuscate/xor';
-import { objectFilter } from '@proton/pass/utils/object/filter';
-import { objectMap } from '@proton/pass/utils/object/map';
-import { semver } from '@proton/pass/utils/string/semver';
 import type { Organization } from '@proton/shared/lib/interfaces';
 
+import { isB2BAdmin } from '../lib/organization/helpers';
+import type { MaybeNull, PassCryptoSnapshot, SerializedCryptoContext } from '../types';
+import { AutofillMode } from '../types/protobuf';
+import type { EncryptedPassCache } from '../types/worker/cache';
+import { logId, logger } from '../utils/logger';
+import { type XorObfuscation, obfuscate } from '../utils/obfuscate/xor';
+import { objectFilter } from '../utils/object/filter';
+import { objectMap } from '../utils/object/map';
+import { semver } from '../utils/string/semver';
 import { unwrapOptimisticState } from './optimistic/utils/transformers';
+import type { FiltersState } from './reducers';
 import { INITIAL_ORGANIZATION_SETTINGS } from './reducers/organization';
 import { INITIAL_HIGHSECURITY_SETTINGS } from './reducers/user';
 import { selectAllLoginItems, selectPassPlan, selectUser } from './selectors';

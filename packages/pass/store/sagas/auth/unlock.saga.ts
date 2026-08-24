@@ -1,7 +1,7 @@
 import { put, takeLeading } from 'redux-saga/effects';
 
-import { unlock } from '@proton/pass/store/actions';
-import type { RootSagaOptions } from '@proton/pass/store/types';
+import { unlock } from '../../actions';
+import type { RootSagaOptions } from '../../types';
 
 function* unlockWorker({ getAuthService }: RootSagaOptions, { payload, meta: { request } }: ReturnType<typeof unlock.intent>) {
     try {

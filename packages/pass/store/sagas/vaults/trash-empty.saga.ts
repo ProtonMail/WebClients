@@ -1,9 +1,9 @@
 import { put, select, take, takeLeading } from 'redux-saga/effects';
 
-import { emptyTrashFailure, emptyTrashIntent, emptyTrashProgress, emptyTrashSuccess } from '@proton/pass/store/actions';
-import { type BulkDeleteChannel, bulkDeleteChannel } from '@proton/pass/store/sagas/items/item-bulk-delete.saga';
-import { selectTrashedItems } from '@proton/pass/store/selectors';
-import type { ItemRevision } from '@proton/pass/types';
+import type { ItemRevision } from '../../../types';
+import { emptyTrashFailure, emptyTrashIntent, emptyTrashProgress, emptyTrashSuccess } from '../../actions';
+import { selectTrashedItems } from '../../selectors';
+import { type BulkDeleteChannel, bulkDeleteChannel } from '../items/item-bulk-delete.saga';
 
 function* emptyTrashWorker({ meta }: ReturnType<typeof emptyTrashIntent>) {
     const requestId = meta.request.id;

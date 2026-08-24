@@ -5,8 +5,9 @@ import type { InputMask, InputMaskElement } from 'imask';
 import IMask from 'imask/esm/imask';
 import type { FactoryOpts } from 'imask/masked/factory';
 
-import type { MaybeNull } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
+
+import type { MaybeNull } from '../types';
 
 export const useFieldMask = <Opts extends FactoryOpts>({ form, field }: FieldProps, options: Opts) => {
     const { value, name } = field;

@@ -1,10 +1,9 @@
 import fs from 'fs';
 
-import type { ImportPayload } from '@proton/pass/lib/import/types';
-import { deobfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
-import type { ItemImportIntent } from '@proton/pass/types';
-import { AutofillMode } from '@proton/pass/types/protobuf';
-
+import type { ItemImportIntent } from '../../../../types';
+import { AutofillMode } from '../../../../types/protobuf';
+import { deobfuscateItem } from '../../../items/item.obfuscation';
+import type { ImportPayload } from '../../types';
 import { readDashlaneDataCSV } from './dashlane.csv.reader';
 
 const readCSVData = async (filename: string): Promise<ImportPayload> => {

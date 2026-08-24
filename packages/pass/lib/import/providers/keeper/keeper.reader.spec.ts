@@ -1,11 +1,10 @@
 import fs from 'fs';
 
-import type { ImportPayload } from '@proton/pass/lib/import/types';
-import { deobfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
-import type { ItemImportIntent, ItemType } from '@proton/pass/types';
-import { AutofillMode, WifiSecurity } from '@proton/pass/types/protobuf';
-import * as epochUtils from '@proton/pass/utils/time/epoch';
-
+import type { ItemImportIntent, ItemType } from '../../../../types';
+import { AutofillMode, WifiSecurity } from '../../../../types/protobuf';
+import * as epochUtils from '../../../../utils/time/epoch';
+import { deobfuscateItem } from '../../../items/item.obfuscation';
+import type { ImportPayload } from '../../types';
 import { readKeeperData } from './keeper.reader';
 
 const dateMock = jest.spyOn(epochUtils, 'getEpoch').mockImplementation(() => 1682585156);

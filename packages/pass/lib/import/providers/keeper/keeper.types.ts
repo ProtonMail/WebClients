@@ -1,4 +1,4 @@
-import type { MaybeArray } from '@proton/pass/types';
+import type { MaybeArray } from '../../../../types';
 
 export type KeeperCustomFieldValue = MaybeArray<string | Record<string, string>>;
 

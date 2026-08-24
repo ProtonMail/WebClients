@@ -3,16 +3,17 @@ import type { FC, MouseEvent } from 'react';
 import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
-import { FileAttachmentsContentView } from '@proton/pass/components/FileAttachments/FileAttachmentsView';
-import { AliasContent } from '@proton/pass/components/Item/Alias/Alias.content';
-import { ItemHistoryStats } from '@proton/pass/components/Item/History/ItemHistoryStats';
-import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
-import { MoreInfoDropdown } from '@proton/pass/components/Layout/Dropdown/MoreInfoDropdown';
-import { ItemViewPanel } from '@proton/pass/components/Layout/Panel/ItemViewPanel';
-import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
-import { getNewItemRoute } from '@proton/pass/components/Navigation/routing';
-import type { ItemViewProps } from '@proton/pass/components/Views/types';
-import { isTrashed } from '@proton/pass/lib/items/item.predicates';
+
+import { isTrashed } from '../../../lib/items/item.predicates';
+import { FileAttachmentsContentView } from '../../FileAttachments/FileAttachmentsView';
+import { DropdownMenuButton } from '../../Layout/Dropdown/DropdownMenuButton';
+import { MoreInfoDropdown } from '../../Layout/Dropdown/MoreInfoDropdown';
+import { ItemViewPanel } from '../../Layout/Panel/ItemViewPanel';
+import { useNavigate } from '../../Navigation/NavigationActions';
+import { getNewItemRoute } from '../../Navigation/routing';
+import type { ItemViewProps } from '../../Views/types';
+import { ItemHistoryStats } from '../History/ItemHistoryStats';
+import { AliasContent } from './Alias.content';
 
 export const AliasView: FC<ItemViewProps<'alias'>> = (itemViewProps) => {
     const navigate = useNavigate();

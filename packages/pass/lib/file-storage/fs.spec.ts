@@ -1,10 +1,10 @@
-import type { FileStorage } from '@proton/pass/lib/file-storage/types';
 import * as browserUtils from '@proton/shared/lib/helpers/browser';
 
 import { getSupportedFileStorage, onStorageFallback } from './fs';
 import * as IDB from './fs.idb';
 import * as MEMORY from './fs.memory';
 import * as OPFS from './fs.opfs';
+import type { FileStorage } from './types';
 
 describe('file-storage/fs', () => {
     const isSafari = jest.spyOn(browserUtils, 'isSafari').mockImplementation(() => false);

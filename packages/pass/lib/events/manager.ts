@@ -1,10 +1,10 @@
-import type { Maybe } from '@proton/pass/types';
-import type { Api } from '@proton/pass/types/api';
-import { logger } from '@proton/pass/utils/logger';
 import { FIBONACCI_LIST } from '@proton/shared/lib/constants';
 import createListeners from '@proton/shared/lib/helpers/listeners';
 import { onceWithQueue } from '@proton/shared/lib/helpers/onceWithQueue';
 
+import type { Maybe } from '../../types';
+import type { Api } from '../../types/api';
+import { logger } from '../../utils/logger';
 import { ACTIVE_POLLING_TIMEOUT } from './constants';
 
 export type EventManagerEvent<T extends {}> = T | { error: unknown };

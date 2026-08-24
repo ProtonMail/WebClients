@@ -1,5 +1,5 @@
 import type { FetchedBreaches } from '@proton/components/containers/credentialLeak/models';
-import { isBreached, isMonitored } from '@proton/pass/lib/items/item.predicates';
+
 import type {
     Breach,
     BreachAddressGetResponse,
@@ -8,9 +8,9 @@ import type {
     Item,
     ItemRevision,
     UniqueItem,
-} from '@proton/pass/types';
-import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
-
+} from '../../types';
+import { deobfuscate } from '../../utils/obfuscate/xor';
+import { isBreached, isMonitored } from '../items/item.predicates';
 import type { AddressBreachDTO, MonitorAddress, MonitorDomain } from './types';
 import { AddressType, BreachFlag } from './types';
 

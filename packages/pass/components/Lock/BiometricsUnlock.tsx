@@ -7,19 +7,20 @@ import { Button } from '@proton/atoms/Button/Button';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcFingerprint } from '@proton/icons/icons/IcFingerprint';
 import { IcPassLockmodeBiometrics } from '@proton/icons/icons/IcPassLockmodeBiometrics';
-import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
-import { useOffline } from '@proton/pass/components/Core/ConnectivityProvider';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import type { AuthRouteState } from '@proton/pass/components/Navigation/routing';
-import { useAutoUnlock } from '@proton/pass/hooks/auth/useAutoUnlock';
-import { useUnlockGuard } from '@proton/pass/hooks/auth/useUnlockGuard';
-import { useRequest } from '@proton/pass/hooks/useRequest';
-import { useRerender } from '@proton/pass/hooks/useRerender';
-import { LockMode } from '@proton/pass/lib/auth/lock/types';
-import { unlock } from '@proton/pass/store/actions';
-import type { MaybeNull } from '@proton/pass/types';
 import { getBasename } from '@proton/shared/lib/authentication/pathnameHelper';
 import { isMac } from '@proton/shared/lib/helpers/browser';
+
+import { useAutoUnlock } from '../../hooks/auth/useAutoUnlock';
+import { useUnlockGuard } from '../../hooks/auth/useUnlockGuard';
+import { useRequest } from '../../hooks/useRequest';
+import { useRerender } from '../../hooks/useRerender';
+import { LockMode } from '../../lib/auth/lock/types';
+import { unlock } from '../../store/actions';
+import type { MaybeNull } from '../../types';
+import { useAuthStore } from '../Core/AuthStoreProvider';
+import { useOffline } from '../Core/ConnectivityProvider';
+import { usePassCore } from '../Core/PassCoreProvider';
+import type { AuthRouteState } from '../Navigation/routing';
 
 type Props = { offlineEnabled?: boolean };
 

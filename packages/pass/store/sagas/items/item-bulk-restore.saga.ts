@@ -1,12 +1,13 @@
 import { END, eventChannel } from 'redux-saga';
 import { put, select, take, takeLeading } from 'redux-saga/effects';
 
-import { restoreItems } from '@proton/pass/lib/items/item.requests';
-import { itemBulkRestoreFailure, itemBulkRestoreIntent, itemBulkRestoreProgress, itemBulkRestoreSuccess } from '@proton/pass/store/actions';
-import type { RequestProgress } from '@proton/pass/store/request/types';
-import { selectBulkSelection } from '@proton/pass/store/selectors';
-import type { BatchItemRevisionIDs, ItemRevision, ItemRevisionResponse } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
+
+import { restoreItems } from '../../../lib/items/item.requests';
+import type { BatchItemRevisionIDs, ItemRevision, ItemRevisionResponse } from '../../../types';
+import { itemBulkRestoreFailure, itemBulkRestoreIntent, itemBulkRestoreProgress, itemBulkRestoreSuccess } from '../../actions';
+import type { RequestProgress } from '../../request/types';
+import { selectBulkSelection } from '../../selectors';
 
 export type BulkRestoreChannel = RequestProgress<ItemRevisionResponse[], BatchItemRevisionIDs>;
 

@@ -5,9 +5,9 @@ import { c } from 'ttag';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
-import type { SanitizedPasskey } from '@proton/pass/lib/passkeys/types';
 
+import type { SanitizedPasskey } from '../../../lib/passkeys/types';
+import { PassModal } from '../../Layout/Modal/PassModal';
 import { PasskeyContent } from './Passkey.content';
 
 type Props = ModalProps & { passkey: SanitizedPasskey };

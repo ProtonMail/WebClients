@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { asyncRequestDispatcherFactory } from '@proton/pass/store/request/utils';
+import { asyncRequestDispatcherFactory } from '../store/request/utils';
 
 export const useAsyncRequestDispatch = () => {
     const dispatch = useDispatch();

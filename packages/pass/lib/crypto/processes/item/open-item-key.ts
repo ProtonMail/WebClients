@@ -1,6 +1,6 @@
-import { decryptData, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
-import type { EncodedItemKeyRotation, ItemKey, ShareKey } from '@proton/pass/types';
-import { PassEncryptionTag } from '@proton/pass/types';
+import type { EncodedItemKeyRotation, ItemKey, ShareKey } from '../../../../types';
+import { PassEncryptionTag } from '../../../../types';
+import { decryptData, importSymmetricKey } from '../../utils/crypto-helpers';
 
 type OpenItemKeyProcessParams = {
     encryptedItemKey: EncodedItemKeyRotation;

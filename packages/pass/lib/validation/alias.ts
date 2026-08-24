@@ -1,8 +1,7 @@
 import type { FormikErrors } from 'formik';
 import { c } from 'ttag';
 
-import type { SanitizedAliasOptions } from '@proton/pass/hooks/useAliasOptions';
-import PassUI from '@proton/pass/lib/core/ui.proxy';
+import type { SanitizedAliasOptions } from '../../hooks/useAliasOptions';
 import type {
     AliasContactValues,
     AliasFormValues,
@@ -11,8 +10,8 @@ import type {
     Maybe,
     MaybeNull,
     NewAliasFormValues,
-} from '@proton/pass/types';
-
+} from '../../types';
+import PassUI from '../core/ui.proxy';
 import { validateItemErrors } from './item';
 
 export const validateAliasPrefix = async (prefix: string = ''): Promise<Maybe<string>> => {

@@ -1,12 +1,11 @@
-import type { AuthStore } from '@proton/pass/lib/auth/store';
-import { createAuthStore } from '@proton/pass/lib/auth/store';
-import type { Api } from '@proton/pass/types';
-import { createMemoryStore } from '@proton/pass/utils/store';
-
+import type { Api } from '../../types';
+import { createMemoryStore } from '../../utils/store';
 import type { Lock } from './lock/types';
 import { LockMode } from './lock/types';
 import type { AuthService } from './service';
 import { createAuthService } from './service';
+import type { AuthStore } from './store';
+import { createAuthStore } from './store';
 
 describe('Core AuthService', () => {
     let api: Api;

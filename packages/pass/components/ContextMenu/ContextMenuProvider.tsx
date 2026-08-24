@@ -1,11 +1,11 @@
 import type { FC, MouseEvent, PropsWithChildren } from 'react';
 import { createContext, useCallback, useMemo, useState } from 'react';
 
-import { createUseContext } from '@proton/pass/hooks/useContextFactory';
-import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
-import { useStatefulRef } from '@proton/pass/hooks/useStatefulRef';
-import type { MaybeNull } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
+import { createUseContext } from '../../hooks/useContextFactory';
+import { useFeatureFlag } from '../../hooks/useFeatureFlag';
+import { useStatefulRef } from '../../hooks/useStatefulRef';
+import type { MaybeNull } from '../../types';
+import { PassFeature } from '../../types/api/features';
 
 type ContextMenuState = { id: string; position: { top: number; left: number } };
 

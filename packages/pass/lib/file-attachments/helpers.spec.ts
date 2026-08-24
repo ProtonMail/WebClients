@@ -1,6 +1,5 @@
-import { exposePassCrypto } from '@proton/pass/lib/crypto';
-import type { FileDescriptor, ItemFileOutput, ItemKey } from '@proton/pass/types';
-
+import type { FileDescriptor, ItemFileOutput, ItemKey } from '../../types';
+import { exposePassCrypto } from '../crypto';
 import {
     filesFormInitializer,
     getExportFileName,

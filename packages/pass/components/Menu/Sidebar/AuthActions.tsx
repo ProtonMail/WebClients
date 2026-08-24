@@ -3,13 +3,14 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
-import { useUserInitiatedLock } from '@proton/pass/hooks/auth/useUserInitiatedLock';
-import { LockMode } from '@proton/pass/lib/auth/lock/types';
-import { offlineResume } from '@proton/pass/store/actions';
-import { lockCreateRequest } from '@proton/pass/store/actions/requests';
-import { selectLockMode, selectRequestInFlight } from '@proton/pass/store/selectors';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+
+import { useUserInitiatedLock } from '../../../hooks/auth/useUserInitiatedLock';
+import { LockMode } from '../../../lib/auth/lock/types';
+import { offlineResume } from '../../../store/actions';
+import { lockCreateRequest } from '../../../store/actions/requests';
+import { selectLockMode, selectRequestInFlight } from '../../../store/selectors';
+import { DropdownMenuButton } from '../../Layout/Dropdown/DropdownMenuButton';
 
 type Props = {
     onLock: () => void;

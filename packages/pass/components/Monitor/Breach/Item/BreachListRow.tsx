@@ -8,7 +8,8 @@ import ReadableDate from '@proton/components/containers/credentialLeak/ReadableD
 import { getBreachIcon } from '@proton/components/containers/credentialLeak/helpers';
 import type { FetchedBreaches } from '@proton/components/containers/credentialLeak/models';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
-import { getLocalPath } from '@proton/pass/components/Navigation/routing';
+
+import { getLocalPath } from '../../../Navigation/routing';
 
 type Props = { breach: FetchedBreaches };
 

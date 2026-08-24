@@ -1,9 +1,9 @@
-import { encryptData } from '@proton/pass/lib/crypto/utils/crypto-helpers';
-import { PassCryptoItemError } from '@proton/pass/lib/crypto/utils/errors';
-import { validateItemContentSize } from '@proton/pass/lib/crypto/utils/validators';
-import type { ItemKey, ItemUpdateRequest } from '@proton/pass/types';
-import { ContentFormatVersion, PassEncryptionTag } from '@proton/pass/types';
-import { pipe } from '@proton/pass/utils/fp/pipe';
+import type { ItemKey, ItemUpdateRequest } from '../../../../types';
+import { ContentFormatVersion, PassEncryptionTag } from '../../../../types';
+import { pipe } from '../../../../utils/fp/pipe';
+import { encryptData } from '../../utils/crypto-helpers';
+import { PassCryptoItemError } from '../../utils/errors';
+import { validateItemContentSize } from '../../utils/validators';
 
 type UpdateItemProcessParams = {
     itemKey: ItemKey;
@@ -25,7 +25,7 @@ export const updateItem = async ({
     return {
         KeyRotation: itemKey.rotation,
         LastRevision: lastRevision,
-        Content: pipe(bytes => bytes.toBase64(), validateItemContentSize)(encryptedItemContent),
+        Content: pipe((bytes) => bytes.toBase64(), validateItemContentSize)(encryptedItemContent),
         ContentFormatVersion: ContentFormatVersion.Item,
     };
 };

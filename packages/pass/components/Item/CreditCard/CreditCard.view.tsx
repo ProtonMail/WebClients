@@ -1,12 +1,12 @@
 import type { FC } from 'react';
 
-import { FileAttachmentsContentView } from '@proton/pass/components/FileAttachments/FileAttachmentsView';
-import { CreditCardContent } from '@proton/pass/components/Item/CreditCard/CreditCard.content';
-import { ItemHistoryStats } from '@proton/pass/components/Item/History/ItemHistoryStats';
-import { MoreInfoDropdown } from '@proton/pass/components/Layout/Dropdown/MoreInfoDropdown';
-import { ItemViewPanel } from '@proton/pass/components/Layout/Panel/ItemViewPanel';
-import { SecureLinkCardList } from '@proton/pass/components/SecureLink/SecureLinkCardList';
-import type { ItemViewProps } from '@proton/pass/components/Views/types';
+import { FileAttachmentsContentView } from '../../FileAttachments/FileAttachmentsView';
+import { MoreInfoDropdown } from '../../Layout/Dropdown/MoreInfoDropdown';
+import { ItemViewPanel } from '../../Layout/Panel/ItemViewPanel';
+import { SecureLinkCardList } from '../../SecureLink/SecureLinkCardList';
+import type { ItemViewProps } from '../../Views/types';
+import { ItemHistoryStats } from '../History/ItemHistoryStats';
+import { CreditCardContent } from './CreditCard.content';
 
 export const CreditCardView: FC<ItemViewProps<'creditCard'>> = (itemViewProps) => {
     const { revision, share } = itemViewProps;

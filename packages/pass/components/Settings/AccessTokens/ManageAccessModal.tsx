@@ -9,16 +9,17 @@ import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
-import { VaultMultiSelect } from '@proton/pass/components/Vault/VaultSelect';
-import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
-import { useRequest } from '@proton/pass/hooks/useRequest';
-import type { PersonalAccessToken } from '@proton/pass/lib/access-token/access-token.types';
-import { getAccessTokenGrants, updateAccessTokenAccess } from '@proton/pass/store/actions';
-import { selectAccessTokenGrants, selectWritableVaults } from '@proton/pass/store/selectors';
-import type { PersonalAccessTokenShareResponse, ShareId } from '@proton/pass/types';
-import { prop } from '@proton/pass/utils/fp/lens';
-import { sortOn } from '@proton/pass/utils/fp/sort';
+
+import { useMemoSelector } from '../../../hooks/useMemoSelector';
+import { useRequest } from '../../../hooks/useRequest';
+import type { PersonalAccessToken } from '../../../lib/access-token/access-token.types';
+import { getAccessTokenGrants, updateAccessTokenAccess } from '../../../store/actions';
+import { selectAccessTokenGrants, selectWritableVaults } from '../../../store/selectors';
+import type { PersonalAccessTokenShareResponse, ShareId } from '../../../types';
+import { prop } from '../../../utils/fp/lens';
+import { sortOn } from '../../../utils/fp/sort';
+import { PassModal } from '../../Layout/Modal/PassModal';
+import { VaultMultiSelect } from '../../Vault/VaultSelect';
 
 type Props = {
     token: PersonalAccessToken;

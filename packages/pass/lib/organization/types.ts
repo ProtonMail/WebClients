@@ -3,7 +3,7 @@ import type {
     OrgMemberVaultItemReport,
     OrganizationUrlPauseEntryValues,
     UserMonitorReport,
-} from '@proton/pass/types';
+} from '../../types';
 
 export type OrganizationReportDTO = { page?: number; pageSize?: number };
 

@@ -1,8 +1,8 @@
-import type { AccessDTO, AccessKeys } from '@proton/pass/lib/access/types';
-import type { InviteData } from '@proton/pass/lib/invites/invite.requests';
-import type { ItemRevision } from '@proton/pass/types/data/items';
-import type { Share, ShareRole } from '@proton/pass/types/data/shares';
-import type { MaybeNull } from '@proton/pass/types/utils';
+import type { AccessDTO, AccessKeys } from '../../lib/access/types';
+import type { InviteData } from '../../lib/invites/invite.requests';
+import type { MaybeNull } from '../utils';
+import type { ItemRevision } from './items';
+import type { Share, ShareRole } from './shares';
 
 export type InviteUserDTO = { email: string; publicKey: string; role: ShareRole };
 export type InviteNewUserDTO = Omit<InviteUserDTO, 'publicKey'>;

@@ -1,14 +1,9 @@
 import { type FC, useEffect } from 'react';
 
-import {
-    EmailVerifyModal,
-    SECONDS_BEFORE_RESEND,
-    getInitialCountdown,
-} from '@proton/pass/components/Layout/Modal/EmailVerifyModal';
-import { useCountdown } from '@proton/pass/hooks/useCountdown';
-import { useRequest } from '@proton/pass/hooks/useRequest';
-import { resendVerifyMailbox, validateMailbox } from '@proton/pass/store/actions';
-
+import { useCountdown } from '../../../../hooks/useCountdown';
+import { useRequest } from '../../../../hooks/useRequest';
+import { resendVerifyMailbox, validateMailbox } from '../../../../store/actions';
+import { EmailVerifyModal, SECONDS_BEFORE_RESEND, getInitialCountdown } from '../../../Layout/Modal/EmailVerifyModal';
 import { useAliasMailboxes, useMailbox } from './AliasMailboxesContext';
 
 type Props = { mailboxID: number; sentAt?: number };

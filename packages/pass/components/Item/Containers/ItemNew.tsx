@@ -2,28 +2,28 @@ import { type FC, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { AliasNew } from '@proton/pass/components/Item/Alias/Alias.new';
-import { CreditCardNew } from '@proton/pass/components/Item/CreditCard/CreditCard.new';
-import { CustomNew } from '@proton/pass/components/Item/Custom/Custom.new';
-import { IdentityNew } from '@proton/pass/components/Item/Identity/Identity.new';
-import { LoginNew } from '@proton/pass/components/Item/Login/Login.new';
-import { NoteNew } from '@proton/pass/components/Item/Note/Note.new';
-import { useNavigationActions } from '@proton/pass/components/Navigation/NavigationActions';
-import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
-import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
-import { type ItemNewRouteParams, getLocalPath } from '@proton/pass/components/Navigation/routing';
-import type { ItemNewViewProps } from '@proton/pass/components/Views/types';
-import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
-import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
-import { itemCreate } from '@proton/pass/store/actions';
+import { useMemoSelector } from '../../../hooks/useMemoSelector';
+import { isWritableVault } from '../../../lib/vaults/vault.predicates';
+import { itemCreate } from '../../../store/actions';
 import {
     selectDefaultVault,
     selectMostRecentVaultShareID,
     selectShare,
     selectVaultLimits,
-} from '@proton/pass/store/selectors';
-import type { ItemCreateIntent, ItemType } from '@proton/pass/types';
+} from '../../../store/selectors';
+import type { ItemCreateIntent, ItemType } from '../../../types';
+import { usePassCore } from '../../Core/PassCoreProvider';
+import { useNavigationActions } from '../../Navigation/NavigationActions';
+import { useNavigationFilters } from '../../Navigation/NavigationFilters';
+import { useItemScope } from '../../Navigation/NavigationMatches';
+import { type ItemNewRouteParams, getLocalPath } from '../../Navigation/routing';
+import type { ItemNewViewProps } from '../../Views/types';
+import { AliasNew } from '../Alias/Alias.new';
+import { CreditCardNew } from '../CreditCard/CreditCard.new';
+import { CustomNew } from '../Custom/Custom.new';
+import { IdentityNew } from '../Identity/Identity.new';
+import { LoginNew } from '../Login/Login.new';
+import { NoteNew } from '../Note/Note.new';
 
 const itemNewMap: { [T in ItemType]: FC<ItemNewViewProps<T>> } = {
     login: LoginNew,

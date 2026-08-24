@@ -1,10 +1,10 @@
 import { renderHook, waitFor } from '@testing-library/react';
 
-import { InAppNotificationDisplayType, InAppNotificationState } from '@proton/pass/types';
-import type { InAppNotification } from '@proton/pass/types/data/notification';
-import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import * as busy from '@proton/shared/lib/busy';
 
+import { InAppNotificationDisplayType, InAppNotificationState } from '../../types';
+import type { InAppNotification } from '../../types/data/notification';
+import { uniqueId } from '../../utils/string/unique-id';
 import { useInAppNotificationVisibility } from './useInAppNotificationVisibility';
 
 jest.mock('@proton/shared/lib/busy', () => ({ isModalOpen: jest.fn() }));

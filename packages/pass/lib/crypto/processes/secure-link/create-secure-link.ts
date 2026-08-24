@@ -1,5 +1,5 @@
-import { encryptData, generateKey, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
-import { type ItemKey, PassEncryptionTag } from '@proton/pass/types';
+import { type ItemKey, PassEncryptionTag } from '../../../../types';
+import { encryptData, generateKey, importSymmetricKey } from '../../utils/crypto-helpers';
 
 type CreateSecureLinkProcessParams = { itemKey: ItemKey };
 

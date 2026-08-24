@@ -1,13 +1,14 @@
 import { call, put, select, takeLeading } from 'redux-saga/effects';
 
-import { PassCrypto } from '@proton/pass/lib/crypto';
-import { getGroups as fetchGroups } from '@proton/pass/lib/groups/groups.requests';
-import type { GroupsResponse } from '@proton/pass/lib/groups/groups.types';
-import { getGroups } from '@proton/pass/store/actions/creators/groups';
-import { selectFeatureFlag, selectOrganization } from '@proton/pass/store/selectors';
-import type { MaybeNull } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
 import type { Organization } from '@proton/shared/lib/interfaces';
+
+import { PassCrypto } from '../../../lib/crypto';
+import { getGroups as fetchGroups } from '../../../lib/groups/groups.requests';
+import type { GroupsResponse } from '../../../lib/groups/groups.types';
+import type { MaybeNull } from '../../../types';
+import { PassFeature } from '../../../types/api/features';
+import { getGroups } from '../../actions/creators/groups';
+import { selectFeatureFlag, selectOrganization } from '../../selectors';
 
 function* getGroupsWorker({ meta }: ReturnType<typeof getGroups.intent>) {
     try {

@@ -2,10 +2,10 @@ import type { FC, PropsWithChildren } from 'react';
 import { Fragment, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
-import { B2BProvider } from '@proton/pass/components/Onboarding/Provider/B2BProvider';
-import { WelcomeProvider } from '@proton/pass/components/Onboarding/Provider/WelcomeProvider';
-import { isBusinessPlan } from '@proton/pass/lib/organization/helpers';
-import { selectCanCreateItems, selectPassPlan } from '@proton/pass/store/selectors';
+import { isBusinessPlan } from '../../lib/organization/helpers';
+import { selectCanCreateItems, selectPassPlan } from '../../store/selectors';
+import { B2BProvider } from './Provider/B2BProvider';
+import { WelcomeProvider } from './Provider/WelcomeProvider';
 
 export const OnboardingProvider: FC<PropsWithChildren> = ({ children }) => {
     const plan = useSelector(selectPassPlan);
@@ -20,4 +20,4 @@ export const OnboardingProvider: FC<PropsWithChildren> = ({ children }) => {
     return <Provider>{children}</Provider>;
 };
 
-export { useOnboarding } from '@proton/pass/components/Onboarding/Provider/OnboardingContext';
+export { useOnboarding } from './Provider/OnboardingContext';

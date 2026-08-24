@@ -3,17 +3,15 @@ import { type FC, useEffect } from 'react';
 import { c } from 'ttag';
 
 import Alert from '@proton/components/components/alert/Alert';
-import {
-    ConfirmationPrompt,
-    type ConfirmationPromptHandles,
-} from '@proton/pass/components/Confirmation/ConfirmationPrompt';
-import { ConfirmDeleteAlias } from '@proton/pass/components/Item/Actions/ConfirmAliasActions';
-import { WithVault } from '@proton/pass/components/Vault/WithVault';
-import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
-import { isAliasItem } from '@proton/pass/lib/items/item.predicates';
-import { selectItemSecureLinks, selectItemShared } from '@proton/pass/store/selectors';
-import type { ItemMoveIntent, ItemRevision } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
+
+import { useMemoSelector } from '../../../hooks/useMemoSelector';
+import { isAliasItem } from '../../../lib/items/item.predicates';
+import { selectItemSecureLinks, selectItemShared } from '../../../store/selectors';
+import type { ItemMoveIntent, ItemRevision } from '../../../types';
+import { ConfirmationPrompt, type ConfirmationPromptHandles } from '../../Confirmation/ConfirmationPrompt';
+import { WithVault } from '../../Vault/WithVault';
+import { ConfirmDeleteAlias } from './ConfirmAliasActions';
 
 export const ConfirmDeleteItem: FC<ConfirmationPromptHandles & { item: ItemRevision }> = (props) => {
     const { shareId, itemId } = props.item;

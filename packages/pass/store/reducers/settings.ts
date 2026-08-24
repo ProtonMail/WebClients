@@ -1,13 +1,17 @@
 import type { Reducer } from 'redux';
 
-import type { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
-import { PASS_DEFAULT_THEME } from '@proton/pass/constants';
-import { LockMode } from '@proton/pass/lib/auth/lock/types';
-import type { ClipboardSettings } from '@proton/pass/lib/clipboard/types';
-import type { GeneratePasswordConfig } from '@proton/pass/lib/password/types';
-import type { DomainCriterias } from '@proton/pass/lib/settings/pause-list';
-import { toggleCriteria } from '@proton/pass/lib/settings/pause-list';
-import { SyncStrategy } from '@proton/pass/lib/sync/types';
+import type { PassThemeOption } from '../../components/Layout/Theme/types';
+import { PASS_DEFAULT_THEME } from '../../constants';
+import { LockMode } from '../../lib/auth/lock/types';
+import type { ClipboardSettings } from '../../lib/clipboard/types';
+import type { GeneratePasswordConfig } from '../../lib/password/types';
+import type { DomainCriterias } from '../../lib/settings/pause-list';
+import { toggleCriteria } from '../../lib/settings/pause-list';
+import { SyncStrategy } from '../../lib/sync/types';
+import type { MaybeNull, Unpack } from '../../types';
+import type { AutoFillSettings, AutoSaveSettings, AutoSuggestSettings, PasskeySettings } from '../../types/worker/settings';
+import { or } from '../../utils/fp/predicates';
+import { partialMerge } from '../../utils/object/merge';
 import {
     coreEvent,
     extraPasswordToggle,
@@ -18,13 +22,9 @@ import {
     settingsEditSuccess,
     syncMigration,
     updatePauseListItem,
-} from '@proton/pass/store/actions';
-import { getOrganizationPauseList } from '@proton/pass/store/actions/creators/organization';
-import { passwordOptionsEdit } from '@proton/pass/store/actions/creators/password';
-import type { MaybeNull, Unpack } from '@proton/pass/types';
-import type { AutoFillSettings, AutoSaveSettings, AutoSuggestSettings, PasskeySettings } from '@proton/pass/types/worker/settings';
-import { or } from '@proton/pass/utils/fp/predicates';
-import { partialMerge } from '@proton/pass/utils/object/merge';
+} from '../actions';
+import { getOrganizationPauseList } from '../actions/creators/organization';
+import { passwordOptionsEdit } from '../actions/creators/password';
 
 export type SettingsState = {
     aliasTrashAcknowledged?: boolean;

@@ -1,10 +1,11 @@
 import { c } from 'ttag';
 import type { Runtime } from 'webextension-polyfill';
 
-import type { Maybe } from '@proton/pass/types';
-import { NativeMessageErrorType } from '@proton/pass/types';
-import { logger } from '@proton/pass/utils/logger';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+
+import type { Maybe } from '../../types';
+import { NativeMessageErrorType } from '../../types';
+import { logger } from '../../utils/logger';
 
 const log = (...content: any[]) => logger.debug('[NativeMessaging]', ...content);
 

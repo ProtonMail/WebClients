@@ -1,6 +1,13 @@
 /** combined in main items reducer: `./items.ts` */
 import type { Reducer } from 'redux';
 
+import type { IndexedByShareIdAndItemId, ItemId, SecureLink, ShareId } from '../../types';
+import { prop } from '../../utils/fp/lens';
+import { eq, not, notIn, or } from '../../utils/fp/predicates';
+import { objectDelete } from '../../utils/object/delete';
+import { objectFilter } from '../../utils/object/filter';
+import { objectMap } from '../../utils/object/map';
+import { partialMerge } from '../../utils/object/merge';
 import {
     itemBulkDeleteProgress,
     itemBulkMoveProgress,
@@ -14,14 +21,7 @@ import {
     shareDeleted,
     vaultDeleteSuccess,
     vaultMoveAllItemsProgress,
-} from '@proton/pass/store/actions';
-import type { IndexedByShareIdAndItemId, ItemId, SecureLink, ShareId } from '@proton/pass/types';
-import { prop } from '@proton/pass/utils/fp/lens';
-import { eq, not, notIn, or } from '@proton/pass/utils/fp/predicates';
-import { objectDelete } from '@proton/pass/utils/object/delete';
-import { objectFilter } from '@proton/pass/utils/object/filter';
-import { objectMap } from '@proton/pass/utils/object/map';
-import { partialMerge } from '@proton/pass/utils/object/merge';
+} from '../actions';
 
 export type SecureLinkState = IndexedByShareIdAndItemId<SecureLink[]>;
 

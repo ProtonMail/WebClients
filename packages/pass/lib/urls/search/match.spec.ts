@@ -1,10 +1,10 @@
-import { searchItemsByDomain } from '@proton/pass/lib/urls/search/match';
-import type { SearchItemsByDomainOptions } from '@proton/pass/lib/urls/types';
-import { selectVisibleItems } from '@proton/pass/store/selectors';
-import { getStateMock } from '@proton/pass/store/selectors/mock';
-import type { ItemRevision } from '@proton/pass/types';
-import { ItemState } from '@proton/pass/types';
-import { AutofillMode } from '@proton/pass/types/protobuf';
+import { selectVisibleItems } from '../../../store/selectors';
+import { getStateMock } from '../../../store/selectors/mock';
+import type { ItemRevision } from '../../../types';
+import { ItemState } from '../../../types';
+import { AutofillMode } from '../../../types/protobuf';
+import type { SearchItemsByDomainOptions } from '../types';
+import { searchItemsByDomain } from './match';
 
 const state = getStateMock();
 

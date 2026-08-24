@@ -1,8 +1,8 @@
-import { itemBuilder } from '@proton/pass/lib/items/item.builder';
-import type { State } from '@proton/pass/store/types';
-import { ItemState } from '@proton/pass/types';
-import { AutofillMode } from '@proton/pass/types/protobuf';
-import { getEpoch } from '@proton/pass/utils/time/epoch';
+import { itemBuilder } from '../../lib/items/item.builder';
+import { ItemState } from '../../types';
+import { AutofillMode } from '../../types/protobuf';
+import { getEpoch } from '../../utils/time/epoch';
+import type { State } from '../types';
 
 export const getStateMock = () =>
     ({
@@ -146,9 +146,7 @@ export const getStateMock = () =>
                         ).data,
                     },
                 },
-                share4: {
-                    /* empty share */
-                },
+                share4: {/* empty share */},
                 share5: {
                     item1: {
                         /* subdomain `A` OTP */

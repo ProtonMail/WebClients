@@ -1,8 +1,8 @@
-import { withRequest } from '@proton/pass/store/request/enhancers';
-import { uniqueId } from '@proton/pass/utils/string/unique-id';
-import * as time from '@proton/pass/utils/time/epoch';
 import noop from '@proton/utils/noop';
 
+import { uniqueId } from '../../utils/string/unique-id';
+import * as time from '../../utils/time/epoch';
+import { withRequest } from './enhancers';
 import { type RequestTracker, requestMiddlewareFactory, requestTrackerFactory } from './middleware';
 
 describe('requestMiddleware', () => {

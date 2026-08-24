@@ -1,5 +1,4 @@
-import type { ContextBridgeApi, Maybe, SSHKeyItem } from '@proton/pass/types';
-
+import type { ContextBridgeApi, Maybe, SSHKeyItem } from '../../types';
 import { createSshAgentService } from './service';
 
 type SshAgentBridge = ContextBridgeApi['sshAgent'];

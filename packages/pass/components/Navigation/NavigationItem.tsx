@@ -2,8 +2,7 @@ import type { PropsWithChildren } from 'react';
 import { type FC, createContext, useContext, useMemo } from 'react';
 import { useRouteMatch } from 'react-router-dom';
 
-import type { Maybe, SelectedItem } from '@proton/pass/types';
-
+import type { Maybe, SelectedItem } from '../../types';
 import { getItemRoutes } from './routing';
 
 const NavigationItemContext = createContext<Maybe<SelectedItem>>(undefined);

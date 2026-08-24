@@ -1,5 +1,4 @@
-import type { WifiSecurity } from '@proton/pass/types/protobuf';
-
+import type { WifiSecurity } from '../../../../types/protobuf';
 import type { OnePassFieldType, OnePassLoginDesignation } from './1pux.types';
 
 export enum OnePassLegacyItemType {

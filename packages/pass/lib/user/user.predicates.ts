@@ -1,5 +1,5 @@
-import type { HydratedUserState, UserState } from '@proton/pass/store/reducers';
-import { UserPassPlan } from '@proton/pass/types/api/plan';
+import type { HydratedUserState, UserState } from '../../store/reducers';
+import { UserPassPlan } from '../../types/api/plan';
 
 export const isPaidPlan = (plan: UserPassPlan) => plan !== UserPassPlan.FREE;
 

@@ -3,12 +3,13 @@ import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
 
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
-import { PROVIDER_INFO_MAP } from '@proton/pass/lib/import/types';
-import { formatItemsCount } from '@proton/pass/lib/items/item.utils';
-import { selectImportReport } from '@proton/pass/store/selectors';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+
+import { PROVIDER_INFO_MAP } from '../../lib/import/types';
+import { formatItemsCount } from '../../lib/items/item.utils';
+import { selectImportReport } from '../../store/selectors';
+import { usePassCore } from '../Core/PassCoreProvider';
+import { SettingsPanel } from './SettingsPanel';
 
 export const ImportReport: FC = () => {
     const { endpoint } = usePassCore();

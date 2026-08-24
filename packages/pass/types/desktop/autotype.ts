@@ -1,7 +1,8 @@
 import type { ReactNode } from 'react';
 
 import type { IconName } from '@proton/icons/types';
-import type { WithSpotlightRenderProps } from '@proton/pass/components/Spotlight/WithSpotlight';
+
+import type { WithSpotlightRenderProps } from '../../components/Spotlight/WithSpotlight';
 
 export type AutotypeProperties = { fields: string[]; enterAtTheEnd?: boolean };
 

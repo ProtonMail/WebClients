@@ -3,12 +3,12 @@ import { type FC, useRef } from 'react';
 import { c } from 'ttag';
 
 import type { IconName } from '@proton/icons/types';
-import { OTPDonut } from '@proton/pass/components/Otp/OTPDonut';
-import { OTPValue } from '@proton/pass/components/Otp/OTPValue';
-import type { IOtpRenderer } from '@proton/pass/components/Otp/types';
-import { useOTPCode } from '@proton/pass/hooks/useOTPCode';
-import type { MaybeNull, OtpRequest } from '@proton/pass/types';
 
+import { useOTPCode } from '../../../../hooks/useOTPCode';
+import type { MaybeNull, OtpRequest } from '../../../../types';
+import { OTPDonut } from '../../../Otp/OTPDonut';
+import { OTPValue } from '../../../Otp/OTPValue';
+import type { IOtpRenderer } from '../../../Otp/types';
 import { ValueControl } from './ValueControl';
 
 type Props = { label?: string; payload: OtpRequest; onCopy?: () => void; icon?: IconName };

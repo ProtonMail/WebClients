@@ -1,8 +1,8 @@
 import type { Reducer } from 'redux';
 
-import { getItemKey } from '@proton/pass/lib/items/item.utils';
-import type { CompromisedPasswordEntry } from '@proton/pass/lib/monitor/types';
-import { compromisedPasswordUpdate, compromisedPasswordsSync } from '@proton/pass/store/actions';
+import { getItemKey } from '../../lib/items/item.utils';
+import type { CompromisedPasswordEntry } from '../../lib/monitor/types';
+import { compromisedPasswordUpdate, compromisedPasswordsSync } from '../actions';
 
 export type CompromisedPasswordsState = {
     lastSyncedChange: EpochTimeStamp;

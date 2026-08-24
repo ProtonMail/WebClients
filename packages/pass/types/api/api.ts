@@ -1,7 +1,6 @@
-import type { RefreshSessionData } from '@proton/pass/lib/api/refresh';
-import type { Awaiter } from '@proton/pass/utils/fp/promises';
-import type { Subscriber } from '@proton/pass/utils/pubsub/factory';
-
+import type { RefreshSessionData } from '../../lib/api/refresh';
+import type { Awaiter } from '../../utils/fp/promises';
+import type { Subscriber } from '../../utils/pubsub/factory';
 import type { Maybe } from '../utils';
 import type { ApiResponse } from './pass';
 

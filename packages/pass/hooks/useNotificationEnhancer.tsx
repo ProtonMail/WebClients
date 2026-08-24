@@ -6,12 +6,12 @@ import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import NotificationButton from '@proton/components/containers/notifications/NotificationButton';
 import { IcArrowOutSquare } from '@proton/icons/icons/IcArrowOutSquare';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { AccountPath } from '@proton/pass/constants';
-import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
-import type { Notification } from '@proton/pass/store/actions/enhancers/notification';
-import { NotificationKey } from '@proton/pass/types/worker/notification';
 
+import { usePassCore } from '../components/Core/PassCoreProvider';
+import { AccountPath } from '../constants';
+import type { Notification } from '../store/actions/enhancers/notification';
+import { NotificationKey } from '../types/worker/notification';
+import { useNavigateToAccount } from './useNavigateToAccount';
 import { usePassConfig } from './usePassConfig';
 
 type NotificationEnhancerOptions = { onLink: (url: string) => void };

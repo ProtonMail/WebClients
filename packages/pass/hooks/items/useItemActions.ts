@@ -1,14 +1,11 @@
 import { useMemo } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { useInviteActions } from '@proton/pass/components/Invite/InviteProvider';
-import { useItemsActions } from '@proton/pass/components/Item/ItemActionsProvider';
-import { VaultSelectMode } from '@proton/pass/components/Vault/VaultSelect';
-import type { ItemNavigationActions } from '@proton/pass/hooks/items/useItemNavigation';
-import { useItemNavigation } from '@proton/pass/hooks/items/useItemNavigation';
-import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
-import { isMonitored } from '@proton/pass/lib/items/item.predicates';
-import { getItemEntityID } from '@proton/pass/lib/items/item.utils';
+import { useInviteActions } from '../../components/Invite/InviteProvider';
+import { useItemsActions } from '../../components/Item/ItemActionsProvider';
+import { VaultSelectMode } from '../../components/Vault/VaultSelect';
+import { isMonitored } from '../../lib/items/item.predicates';
+import { getItemEntityID } from '../../lib/items/item.utils';
 import {
     itemCreate,
     itemCreateDismiss,
@@ -17,9 +14,12 @@ import {
     itemPinIntent,
     itemUnpinIntent,
     setItemFlags,
-} from '@proton/pass/store/actions';
-import { selectOptimisticFailedAction } from '@proton/pass/store/selectors';
-import type { ItemRevision } from '@proton/pass/types';
+} from '../../store/actions';
+import { selectOptimisticFailedAction } from '../../store/selectors';
+import type { ItemRevision } from '../../types';
+import { useMemoSelector } from '../useMemoSelector';
+import type { ItemNavigationActions } from './useItemNavigation';
+import { useItemNavigation } from './useItemNavigation';
 
 export type ItemActions = ItemNavigationActions & {
     onClone: () => void;

@@ -4,19 +4,12 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
-import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { Card } from '@proton/pass/components/Layout/Card/Card';
-import { PassTextLogo } from '@proton/pass/components/Layout/Logo/PassTextLogo';
-import { BiometricsUnlock } from '@proton/pass/components/Lock/BiometricsUnlock';
-import { DesktopUnlock } from '@proton/pass/components/Lock/DesktopUnlock';
-import { PasswordConfirm } from '@proton/pass/components/Lock/PasswordConfirm';
-import { PasswordUnlock } from '@proton/pass/components/Lock/PasswordUnlock';
-import { useAuthStorePasswordTypeSwitch } from '@proton/pass/components/Lock/PasswordUnlockProvider';
-import { PinUnlock } from '@proton/pass/components/Lock/PinUnlock';
-import { PasswordVerification } from '@proton/pass/lib/auth/password';
-import type { AuthOptions } from '@proton/pass/lib/auth/service';
+import { BRAND_NAME, PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import clsx from '@proton/utils/clsx';
+import noop from '@proton/utils/noop';
+
+import { PasswordVerification } from '../../../lib/auth/password';
+import type { AuthOptions } from '../../../lib/auth/service';
 import {
     clientBusy,
     clientDesktopLocked,
@@ -25,11 +18,19 @@ import {
     clientPasswordLocked,
     clientSessionLocked,
     clientStale,
-} from '@proton/pass/lib/client';
-import { AppStatus, type Maybe } from '@proton/pass/types';
-import { BRAND_NAME, PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
-import clsx from '@proton/utils/clsx';
-import noop from '@proton/utils/noop';
+} from '../../../lib/client';
+import { AppStatus, type Maybe } from '../../../types';
+import { useAuthStore } from '../../Core/AuthStoreProvider';
+import { useOnline } from '../../Core/ConnectivityProvider';
+import { usePassCore } from '../../Core/PassCoreProvider';
+import { BiometricsUnlock } from '../../Lock/BiometricsUnlock';
+import { DesktopUnlock } from '../../Lock/DesktopUnlock';
+import { PasswordConfirm } from '../../Lock/PasswordConfirm';
+import { PasswordUnlock } from '../../Lock/PasswordUnlock';
+import { useAuthStorePasswordTypeSwitch } from '../../Lock/PasswordUnlockProvider';
+import { PinUnlock } from '../../Lock/PinUnlock';
+import { Card } from '../Card/Card';
+import { PassTextLogo } from '../Logo/PassTextLogo';
 
 import './LobbyContent.scss';
 

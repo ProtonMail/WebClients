@@ -1,24 +1,7 @@
 import { createAction } from '@reduxjs/toolkit';
 import { c, msgid } from 'ttag';
 
-import { withCache } from '@proton/pass/store/actions/enhancers/cache';
-import { withShareDedupe } from '@proton/pass/store/actions/enhancers/dedupe';
-import { withItems } from '@proton/pass/store/actions/enhancers/items';
-import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
-import {
-    inviteAddressesValidateRequest,
-    inviteCreateRequest,
-    inviteRecommendationsRequest,
-    inviteRecommendationsSuggestedRequest,
-    inviteRemoveRequest,
-    inviteResendRequest,
-    newUserInvitePromoteRequest,
-    newUserInviteRemoveRequest,
-} from '@proton/pass/store/actions/requests';
-import type { InviteState } from '@proton/pass/store/reducers';
-import { withRequest, withRequestFailure, withRequestSuccess } from '@proton/pass/store/request/enhancers';
-import { requestActionsFactory } from '@proton/pass/store/request/flow';
-import type { InviteFormValues, InviteType } from '@proton/pass/types';
+import type { InviteFormValues, InviteType } from '../../../types';
 import type {
     GroupInviteAcceptSuccess,
     InviteAcceptIntent,
@@ -36,10 +19,27 @@ import type {
     NewUserInvitePromoteIntent,
     NewUserInvitePromoteSuccess,
     NewUserInviteRemoveIntent,
-} from '@proton/pass/types/data/invites.dto';
-import { prop } from '@proton/pass/utils/fp/lens';
-import { pipe } from '@proton/pass/utils/fp/pipe';
-import { uniqueId } from '@proton/pass/utils/string/unique-id';
+} from '../../../types/data/invites.dto';
+import { prop } from '../../../utils/fp/lens';
+import { pipe } from '../../../utils/fp/pipe';
+import { uniqueId } from '../../../utils/string/unique-id';
+import type { InviteState } from '../../reducers';
+import { withRequest, withRequestFailure, withRequestSuccess } from '../../request/enhancers';
+import { requestActionsFactory } from '../../request/flow';
+import { withCache } from '../enhancers/cache';
+import { withShareDedupe } from '../enhancers/dedupe';
+import { withItems } from '../enhancers/items';
+import { withNotification } from '../enhancers/notification';
+import {
+    inviteAddressesValidateRequest,
+    inviteCreateRequest,
+    inviteRecommendationsRequest,
+    inviteRecommendationsSuggestedRequest,
+    inviteRemoveRequest,
+    inviteResendRequest,
+    newUserInvitePromoteRequest,
+    newUserInviteRemoveRequest,
+} from '../requests';
 
 const INVITE_RECOMMENDATION_ERROR = 'INVITE_RECOMMENDATION_ERROR';
 

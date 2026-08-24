@@ -1,6 +1,14 @@
 import { c } from 'ttag';
 
-import { ImportProviderError } from '@proton/pass/lib/import/helpers/error';
+import lastItem from '@proton/utils/lastItem';
+
+import type { ItemImportIntent, Maybe } from '../../../../types';
+import { WifiSecurity } from '../../../../types/protobuf';
+import { groupByKey } from '../../../../utils/array/group-by-key';
+import { truthy } from '../../../../utils/fp/predicates';
+import { logger } from '../../../../utils/logger';
+import { formatExpirationDateMMYYYY } from '../../../../utils/time/expiration-date';
+import { ImportProviderError } from '../../helpers/error';
 import {
     getEmailOrUsername,
     getImportedVaultName,
@@ -11,16 +19,8 @@ import {
     importNoteItem,
     importSshKeyItem,
     importWifiItem,
-} from '@proton/pass/lib/import/helpers/transformers';
-import type { ImportReaderResult, ImportVault } from '@proton/pass/lib/import/types';
-import type { ItemImportIntent, Maybe } from '@proton/pass/types';
-import { WifiSecurity } from '@proton/pass/types/protobuf';
-import { groupByKey } from '@proton/pass/utils/array/group-by-key';
-import { truthy } from '@proton/pass/utils/fp/predicates';
-import { logger } from '@proton/pass/utils/logger';
-import { formatExpirationDateMMYYYY } from '@proton/pass/utils/time/expiration-date';
-import lastItem from '@proton/utils/lastItem';
-
+} from '../../helpers/transformers';
+import type { ImportReaderResult, ImportVault } from '../../types';
 import type { KeeperData } from './keeper.types';
 import { extractKeeperExtraFields, extractKeeperIdentity, getKeeperBuiltinExtraFields } from './keeper.utils';
 

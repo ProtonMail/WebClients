@@ -1,6 +1,6 @@
-import type { ImportProvider } from '@proton/pass/lib/import/types';
-import type { InAppNotification, PassPlanResponse } from '@proton/pass/types';
-import type { TelemetryInAppNotificationStatus } from '@proton/pass/types/data/notification';
+import type { InAppNotification, PassPlanResponse } from '..';
+import type { ImportProvider } from '../../lib/import/types';
+import type { TelemetryInAppNotificationStatus } from './notification';
 
 export type TelemetryPlatform = 'browser' | 'any';
 

@@ -1,13 +1,13 @@
 import type { FormikErrors } from 'formik';
 import { c } from 'ttag';
 
-import { getRegexError } from '@proton/pass/lib/urls/safe-regex/safe-regex';
-import { isAutofillModeDataOfTypeUrl } from '@proton/pass/lib/urls/utils/autofill';
-import { sanitizeURL } from '@proton/pass/lib/urls/utils/sanitize';
-import type { UrlGroupValues } from '@proton/pass/types';
-import { AutofillMode } from '@proton/pass/types/protobuf';
-import { duplicates } from '@proton/pass/utils/array/duplicate';
-import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
+import type { UrlGroupValues } from '../../types';
+import { AutofillMode } from '../../types/protobuf';
+import { duplicates } from '../../utils/array/duplicate';
+import { isEmptyString } from '../../utils/string/is-empty-string';
+import { getRegexError } from '../urls/safe-regex/safe-regex';
+import { isAutofillModeDataOfTypeUrl } from '../urls/utils/autofill';
+import { sanitizeURL } from '../urls/utils/sanitize';
 
 /* validates the active URL input field */
 export const validateUrl = <V extends UrlGroupValues>({ url, urls }: V) => {

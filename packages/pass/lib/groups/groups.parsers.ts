@@ -1,5 +1,6 @@
-import type { Group, GroupMember } from '@proton/pass/lib/groups/groups.types';
 import type { Group as CoreGroup, GroupMember as CoreGroupMember } from '@proton/shared/lib/interfaces';
+
+import type { Group, GroupMember } from './groups.types';
 
 export const parseGroup = (input: CoreGroup): Group => ({
     groupId: input.ID,

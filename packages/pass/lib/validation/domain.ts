@@ -1,9 +1,10 @@
 import type { FormikErrors } from 'formik';
 import { c } from 'ttag';
 
-import type { DomainFormValues } from '@proton/pass/types/forms';
-import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import { validateDomain } from '@proton/shared/lib/helpers/email';
+
+import type { DomainFormValues } from '../../types/forms';
+import { isEmptyString } from '../../utils/string/is-empty-string';
 
 export const validateAliasDomain = ({ domain }: DomainFormValues): FormikErrors<DomainFormValues> => {
     if (isEmptyString(domain)) return { domain: c('Warning').t`Domain cannot be empty` };

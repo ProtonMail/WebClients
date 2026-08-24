@@ -1,13 +1,12 @@
-import { decodeUserData, encodeUserData } from '@proton/pass/lib/auth/store.utils';
-import type { OfflineComponents, OfflineConfig } from '@proton/pass/lib/cache/crypto';
-import { AuthMode, type Maybe, type Store } from '@proton/pass/types';
-import { isObject } from '@proton/pass/utils/object/is-object';
-import { encodedGetter, encodedSetter } from '@proton/pass/utils/store';
-
+import { AuthMode, type Maybe, type Store } from '../../types';
+import { isObject } from '../../utils/object/is-object';
+import { encodedGetter, encodedSetter } from '../../utils/store';
+import type { OfflineComponents, OfflineConfig } from '../cache/crypto';
 import { AUTH_MODE } from './flags';
 import { LockMode } from './lock/types';
 import type { AuthSessionVersion, EncryptedAuthSession } from './session';
 import { type AuthSession, SESSION_VERSION } from './session';
+import { decodeUserData, encodeUserData } from './store.utils';
 
 export type AuthStore = ReturnType<typeof createAuthStore>;
 export type AuthStoreOptions = { cookies: boolean };

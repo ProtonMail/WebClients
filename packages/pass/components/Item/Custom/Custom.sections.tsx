@@ -4,18 +4,17 @@ import type { FieldArrayRenderProps } from 'formik';
 import { FieldArray, type FormikContextType } from 'formik';
 import { c } from 'ttag';
 
-import { AddExtraFieldDropdown } from '@proton/pass/components/Form/Field/ExtraFieldGroup/AddExtraFieldDropdown';
-import { DeleteButton, ExtraFieldComponent } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraField';
-import { createExtraField } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraField.utils';
-import { Field } from '@proton/pass/components/Form/Field/Field';
-import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
-import { BaseTextField } from '@proton/pass/components/Form/Field/TextField';
-import { CollapsibleSection } from '@proton/pass/components/Layout/Collapsible/CollapsibleSection';
-import { UpsellRef } from '@proton/pass/constants';
-import type { ExtraSectionsError } from '@proton/pass/lib/validation/custom-item';
-import type { CustomItemFormValues, DeobfuscatedItemExtraField, ExtraFieldType, Maybe } from '@proton/pass/types';
-import { autofocusInput } from '@proton/pass/utils/dom/input';
-
+import { UpsellRef } from '../../../constants';
+import type { ExtraSectionsError } from '../../../lib/validation/custom-item';
+import type { CustomItemFormValues, DeobfuscatedItemExtraField, ExtraFieldType, Maybe } from '../../../types';
+import { autofocusInput } from '../../../utils/dom/input';
+import { AddExtraFieldDropdown } from '../../Form/Field/ExtraFieldGroup/AddExtraFieldDropdown';
+import { DeleteButton, ExtraFieldComponent } from '../../Form/Field/ExtraFieldGroup/ExtraField';
+import { createExtraField } from '../../Form/Field/ExtraFieldGroup/ExtraField.utils';
+import { Field } from '../../Form/Field/Field';
+import { FieldsetCluster } from '../../Form/Field/Layout/FieldsetCluster';
+import { BaseTextField } from '../../Form/Field/TextField';
+import { CollapsibleSection } from '../../Layout/Collapsible/CollapsibleSection';
 import { CustomNewSection } from './Custom.sections.new';
 
 type Props = { form: FormikContextType<CustomItemFormValues> };

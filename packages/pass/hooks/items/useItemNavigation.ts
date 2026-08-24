@@ -1,8 +1,8 @@
 import { useMemo } from 'react';
 
-import { useNavigationActions } from '@proton/pass/components/Navigation/NavigationActions';
-import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
-import type { UniqueItem } from '@proton/pass/types';
+import { useNavigationActions } from '../../components/Navigation/NavigationActions';
+import { useItemScope } from '../../components/Navigation/NavigationMatches';
+import type { UniqueItem } from '../../types';
 
 export type ItemNavigationActions = {
     onEdit: () => void;

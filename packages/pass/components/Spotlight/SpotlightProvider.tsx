@@ -4,24 +4,23 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { useInviteActions, useLatestInvite } from '@proton/pass/components/Invite/InviteContext';
-import { PendingNewUsersApprovalModal } from '@proton/pass/components/Invite/Member/PendingNewUsersApprovalModal';
-import { PendingShareAccessModal } from '@proton/pass/components/Invite/Member/PendingShareAccessModal';
-import type { SpotlightMessageDefinition } from '@proton/pass/components/Spotlight/SpotlightContent';
-import { SpotlightContext, type SpotlightContextValue } from '@proton/pass/components/Spotlight/SpotlightContext';
-import { useStatefulRef } from '@proton/pass/hooks/useStatefulRef';
-import { selectHasPendingShareAccess } from '@proton/pass/store/selectors';
-import { InviteType, type MaybeNull, ShareType, SpotlightMessage } from '@proton/pass/types';
-
+import { useStatefulRef } from '../../hooks/useStatefulRef';
+import { selectHasPendingShareAccess } from '../../store/selectors';
+import { InviteType, type MaybeNull, ShareType, SpotlightMessage } from '../../types';
+import { usePassCore } from '../Core/PassCoreProvider';
+import { useInviteActions, useLatestInvite } from '../Invite/InviteContext';
+import { PendingNewUsersApprovalModal } from '../Invite/Member/PendingNewUsersApprovalModal';
+import { PendingShareAccessModal } from '../Invite/Member/PendingShareAccessModal';
+import type { SpotlightMessageDefinition } from './SpotlightContent';
+import { SpotlightContext, type SpotlightContextValue } from './SpotlightContext';
 import { InviteIcon } from './SpotlightIcon';
 
 type SpotlightState = SpotlightContextValue['state'];
 
 const INITIAL_STATE: SpotlightState = { open: false, message: null, pendingShareAccess: false };
 
-export type { SpotlightContextValue } from '@proton/pass/components/Spotlight/SpotlightContext';
-export { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightContext';
+export type { SpotlightContextValue } from './SpotlightContext';
+export { useSpotlight } from './SpotlightContext';
 
 export const SpotlightProvider: FC<PropsWithChildren> = ({ children }) => {
     const { spotlight } = usePassCore();

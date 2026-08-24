@@ -7,21 +7,21 @@ import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import { IcArrowDown } from '@proton/icons/icons/IcArrowDown';
 import { IcCross } from '@proton/icons/icons/IcCross';
-import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
-import { ClickableDiv } from '@proton/pass/components/Layout/Button/ClickableDiv';
-import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
-import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
-import { useAsyncModalHandles } from '@proton/pass/hooks/useAsyncModalHandles';
-import { useMatchUser } from '@proton/pass/hooks/useMatchUser';
-import { getFileParts, sanitizeFileName } from '@proton/pass/lib/file-attachments/helpers';
-import type { fileUpdateMetadata } from '@proton/pass/store/actions';
-import type { RequestFlowAsyncResult } from '@proton/pass/store/request/types';
-import type { Maybe } from '@proton/pass/types';
-import { not } from '@proton/pass/utils/fp/predicates';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
+import { useAsyncModalHandles } from '../../hooks/useAsyncModalHandles';
+import { useMatchUser } from '../../hooks/useMatchUser';
+import { getFileParts, sanitizeFileName } from '../../lib/file-attachments/helpers';
+import type { fileUpdateMetadata } from '../../store/actions';
+import type { RequestFlowAsyncResult } from '../../store/request/types';
+import type { Maybe } from '../../types';
+import { not } from '../../utils/fp/predicates';
+import { useOnline } from '../Core/ConnectivityProvider';
+import { ClickableDiv } from '../Layout/Button/ClickableDiv';
+import { DropdownMenuButton } from '../Layout/Dropdown/DropdownMenuButton';
+import { QuickActionsDropdown } from '../Layout/Dropdown/QuickActionsDropdown';
 import { FileAttachmentIcon } from './FileAttachmentIcon';
 
 export type FileOrDescriptor = {

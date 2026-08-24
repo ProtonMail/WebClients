@@ -1,9 +1,23 @@
-import { getAliasOptions } from '@proton/pass/lib/alias/alias.requests';
-import { exposeApi } from '@proton/pass/lib/api/api';
-import { exposePassCrypto } from '@proton/pass/lib/crypto';
-import { createPassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
-import { parseItemRevision } from '@proton/pass/lib/items/item.parser';
-import { createAlias, requestAllItemsForShareId } from '@proton/pass/lib/items/item.requests';
+import type { Api } from '@proton/shared/lib/interfaces';
+
+import type { ItemRevision, Api as PassApi, Share, ShareType } from '../../types';
+import { first } from '../../utils/array/first';
+import { prop } from '../../utils/fp/lens';
+import { maxAgeMemoize } from '../../utils/fp/memo';
+import { pipe } from '../../utils/fp/pipe';
+import { and, truthy } from '../../utils/fp/predicates';
+import { sortOn } from '../../utils/fp/sort';
+import { waitUntil } from '../../utils/fp/wait-until';
+import { obfuscate } from '../../utils/obfuscate/xor';
+import { uniqueId } from '../../utils/string/unique-id';
+import { UNIX_DAY, UNIX_MINUTE } from '../../utils/time/constants';
+import { epochToMs } from '../../utils/time/epoch';
+import { getAliasOptions } from '../alias/alias.requests';
+import { exposeApi } from '../api/api';
+import { exposePassCrypto } from '../crypto';
+import { createPassCrypto } from '../crypto/pass-crypto';
+import { parseItemRevision } from '../items/item.parser';
+import { createAlias, requestAllItemsForShareId } from '../items/item.requests';
 import {
     addUrlPauseListEntry,
     deleteUrlPauseListEntry,
@@ -13,26 +27,12 @@ import {
     setOrganizationSettings,
     setPasswordGeneratorPolicySettings,
     updateUrlPauseListEntry,
-} from '@proton/pass/lib/organization/organization.requests';
-import { parseUnpolledShareResponse } from '@proton/pass/lib/shares/share.parser';
-import { requestShares } from '@proton/pass/lib/shares/share.requests';
-import { getUserAccess } from '@proton/pass/lib/user/user.requests';
-import { isActiveVault, isOwnVault, isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
-import { createVault } from '@proton/pass/lib/vaults/vault.requests';
-import type { ItemRevision, Api as PassApi, Share, ShareType } from '@proton/pass/types';
-import { first } from '@proton/pass/utils/array/first';
-import { prop } from '@proton/pass/utils/fp/lens';
-import { maxAgeMemoize } from '@proton/pass/utils/fp/memo';
-import { pipe } from '@proton/pass/utils/fp/pipe';
-import { and, truthy } from '@proton/pass/utils/fp/predicates';
-import { sortOn } from '@proton/pass/utils/fp/sort';
-import { waitUntil } from '@proton/pass/utils/fp/wait-until';
-import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
-import { uniqueId } from '@proton/pass/utils/string/unique-id';
-import { UNIX_DAY, UNIX_MINUTE } from '@proton/pass/utils/time/constants';
-import { epochToMs } from '@proton/pass/utils/time/epoch';
-import type { Api } from '@proton/shared/lib/interfaces';
-
+} from '../organization/organization.requests';
+import { parseUnpolledShareResponse } from '../shares/share.parser';
+import { requestShares } from '../shares/share.requests';
+import { getUserAccess } from '../user/user.requests';
+import { isActiveVault, isOwnVault, isWritableVault } from '../vaults/vault.predicates';
+import { createVault } from '../vaults/vault.requests';
 import type { PassBridge, PassBridgeAliasItem } from './types';
 
 let passBridgeInstance: PassBridge | undefined;

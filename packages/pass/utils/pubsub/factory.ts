@@ -1,5 +1,5 @@
-import type { MaybePromise } from '@proton/pass/types';
-import { safeCall } from '@proton/pass/utils/fp/safe-call';
+import type { MaybePromise } from '../../types';
+import { safeCall } from '../fp/safe-call';
 
 export type Subscriber<E> = (event: E) => MaybePromise<any>;
 

@@ -4,19 +4,20 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
 
-import { GroupMembersModal } from '@proton/pass/components/Groups/GroupMembersModal';
-import type { MaybeGroupProps } from '@proton/pass/components/Groups/MaybeGroupName';
-import { createUseContext } from '@proton/pass/hooks/useContextFactory';
-import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
-import { useRequest } from '@proton/pass/hooks/useRequest';
-import type { Group, GroupId, GroupMembersResponse } from '@proton/pass/lib/groups/groups.types';
-import { isBusinessPlan } from '@proton/pass/lib/organization/helpers';
-import { getGroupMembers, getGroups } from '@proton/pass/store/actions/creators/groups';
-import { selectOrganization, selectPassPlan, selectUser } from '@proton/pass/store/selectors';
-import { selectGroupByEmail, selectGroups } from '@proton/pass/store/selectors/groups';
-import type { Maybe, MaybeNull } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
 import noop from '@proton/utils/noop';
+
+import { createUseContext } from '../../hooks/useContextFactory';
+import { useFeatureFlag } from '../../hooks/useFeatureFlag';
+import { useRequest } from '../../hooks/useRequest';
+import type { Group, GroupId, GroupMembersResponse } from '../../lib/groups/groups.types';
+import { isBusinessPlan } from '../../lib/organization/helpers';
+import { getGroupMembers, getGroups } from '../../store/actions/creators/groups';
+import { selectOrganization, selectPassPlan, selectUser } from '../../store/selectors';
+import { selectGroupByEmail, selectGroups } from '../../store/selectors/groups';
+import type { Maybe, MaybeNull } from '../../types';
+import { PassFeature } from '../../types/api/features';
+import { GroupMembersModal } from './GroupMembersModal';
+import type { MaybeGroupProps } from './MaybeGroupName';
 
 type GroupsContextValue = {
     organizationGroups: Group[];

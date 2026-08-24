@@ -1,13 +1,12 @@
-import type { AnyStorage, Maybe } from '@proton/pass/types';
-import type { TelemetryEvent } from '@proton/pass/types/data/telemetry';
-import type { EventDispatcher } from '@proton/pass/utils/event/dispatcher';
-import { createEventDispatcher } from '@proton/pass/utils/event/dispatcher';
-import { logger } from '@proton/pass/utils/logger';
-import { merge } from '@proton/pass/utils/object/merge';
-import type { AbstractAlarm } from '@proton/pass/utils/time/alarm';
-import { UNIX_HOUR, UNIX_MINUTE } from '@proton/pass/utils/time/constants';
-import { getEpoch } from '@proton/pass/utils/time/epoch';
-
+import type { AnyStorage, Maybe } from '../../types';
+import type { TelemetryEvent } from '../../types/data/telemetry';
+import type { EventDispatcher } from '../../utils/event/dispatcher';
+import { createEventDispatcher } from '../../utils/event/dispatcher';
+import { logger } from '../../utils/logger';
+import { merge } from '../../utils/object/merge';
+import type { AbstractAlarm } from '../../utils/time/alarm';
+import { UNIX_HOUR, UNIX_MINUTE } from '../../utils/time/constants';
+import { getEpoch } from '../../utils/time/epoch';
 import { sendTelemetryBundle } from './telemetry.requests';
 
 const MIN_DT = ENV === 'production' ? 6 * UNIX_HOUR : UNIX_MINUTE; /* DEV: chrome alarms need to be >60 seconds */

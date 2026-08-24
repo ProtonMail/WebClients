@@ -1,6 +1,6 @@
-import type { DeobfuscatedItem, DeobfuscatedItemExtraField, Item, ItemExtraField, ItemType } from '@proton/pass/types';
-import type { DeobfuscateMode } from '@proton/pass/types/data/obfuscation';
-import { deobfuscate, obfuscate } from '@proton/pass/utils/obfuscate/xor';
+import type { DeobfuscatedItem, DeobfuscatedItemExtraField, Item, ItemExtraField, ItemType } from '../../types';
+import type { DeobfuscateMode } from '../../types/data/obfuscation';
+import { deobfuscate, obfuscate } from '../../utils/obfuscate/xor';
 
 export const obfuscateExtraFields = (extraFields?: DeobfuscatedItemExtraField[]): ItemExtraField[] =>
     extraFields?.map((field) => {

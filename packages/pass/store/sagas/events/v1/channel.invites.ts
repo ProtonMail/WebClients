@@ -1,13 +1,12 @@
 import { all, call, fork } from 'redux-saga/effects';
 
-import type { EventManagerEvent } from '@proton/pass/lib/events/manager';
-import { NOOP_EVENT } from '@proton/pass/lib/events/manager';
-import { getUserInvitesQuery } from '@proton/pass/lib/invites/invite.requests';
-import { processUserInvitePollingEvent } from '@proton/pass/lib/sync/v1/invite-polling.processor';
-import type { RootSagaOptions } from '@proton/pass/store/types';
-import type { Api, InvitesGetResponse } from '@proton/pass/types';
-import { logger } from '@proton/pass/utils/logger';
-
+import type { EventManagerEvent } from '../../../../lib/events/manager';
+import { NOOP_EVENT } from '../../../../lib/events/manager';
+import { getUserInvitesQuery } from '../../../../lib/invites/invite.requests';
+import { processUserInvitePollingEvent } from '../../../../lib/sync/v1/invite-polling.processor';
+import type { Api, InvitesGetResponse } from '../../../../types';
+import { logger } from '../../../../utils/logger';
+import type { RootSagaOptions } from '../../../types';
 import { eventChannelFactory } from './channel.factory';
 import { channelEvents, channelInitalize } from './channel.worker';
 

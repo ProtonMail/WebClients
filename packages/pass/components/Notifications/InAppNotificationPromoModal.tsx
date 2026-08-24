@@ -2,9 +2,10 @@ import { type FC, useState } from 'react';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { ModalHeaderCloseButton } from '@proton/components/components/modalTwo/ModalHeader';
-import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
-import type { InAppNotification } from '@proton/pass/types/data/notification';
-import { intoColorHex } from '@proton/pass/utils/dom/colors';
+
+import type { InAppNotification } from '../../types/data/notification';
+import { intoColorHex } from '../../utils/dom/colors';
+import { PassModal } from '../Layout/Modal/PassModal';
 
 type Props = {
     disabled?: boolean;

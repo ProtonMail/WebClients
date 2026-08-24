@@ -1,5 +1,5 @@
-import { isShareVisible } from '@proton/pass/lib/shares/share.predicates';
-import type { VaultShareItem } from '@proton/pass/store/reducers';
+import type { VaultShareItem } from '../../store/reducers';
+import { isShareVisible } from '../shares/share.predicates';
 
 /** Sort vaults with visible ones first, then alphabetically by name */
 export const sortVaults = (a: VaultShareItem, b: VaultShareItem) => {

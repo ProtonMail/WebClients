@@ -8,8 +8,9 @@ import CollapsibleHeader from '@proton/components/components/collapsible/Collaps
 import CollapsibleHeaderIconButton from '@proton/components/components/collapsible/CollapsibleHeaderIconButton';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
-import { getOccurrenceString } from '@proton/pass/lib/i18n/helpers';
-import type { SelectedRevision } from '@proton/pass/types';
+
+import { getOccurrenceString } from '../../../lib/i18n/helpers';
+import type { SelectedRevision } from '../../../types';
 
 type Props = SelectedRevision & { vaultId: string };
 

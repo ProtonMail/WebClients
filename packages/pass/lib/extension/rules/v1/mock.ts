@@ -1,4 +1,4 @@
-import type { DetectionRulesV1 } from '@proton/pass/lib/extension/rules/v1/types';
+import type { DetectionRulesV1 } from './types';
 
 export const RULES_V1_MOCK: DetectionRulesV1 = {
     version: '1',

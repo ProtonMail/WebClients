@@ -1,6 +1,6 @@
-import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { omit } from '@proton/shared/lib/helpers/object';
 
+import { uniqueId } from '../../../utils/string/unique-id';
 import type { WrappedOptimisticState } from '../types';
 import type { TestState } from '../utils/testing.utils';
 import { createTestDeterministicAction, createTestOptimisticHistoryItem, testReducer } from '../utils/testing.utils';
@@ -34,12 +34,7 @@ describe('optimistic revert reducer', () => {
             },
         };
 
-        const [nextInner, nextOptimistic] = revertReducer(
-            omit(state, ['optimistic']),
-            testReducer,
-            state.optimistic,
-            optimisticUpdate2.id
-        );
+        const [nextInner, nextOptimistic] = revertReducer(omit(state, ['optimistic']), testReducer, state.optimistic, optimisticUpdate2.id);
 
         expect(nextInner).toEqual({ items: [1] });
         expect(nextOptimistic).toEqual({ checkpoint: { items: [] }, history: [optimisticUpdate1] });
@@ -57,12 +52,7 @@ describe('optimistic revert reducer', () => {
             },
         };
 
-        const [nextInner, nextOptimistic] = revertReducer(
-            omit(state, ['optimistic']),
-            testReducer,
-            state.optimistic,
-            optimisticUpdate1.id
-        );
+        const [nextInner, nextOptimistic] = revertReducer(omit(state, ['optimistic']), testReducer, state.optimistic, optimisticUpdate1.id);
 
         expect(nextInner).toEqual({ items: [2, 3] });
         expect(nextOptimistic).toEqual({ checkpoint: { items: [2] }, history: [optimisticUpdate2] });
@@ -79,12 +69,7 @@ describe('optimistic revert reducer', () => {
             },
         };
 
-        const [nextInner, nextOptimistic] = revertReducer(
-            omit(state, ['optimistic']),
-            testReducer,
-            state.optimistic,
-            optimisticUpdate.id
-        );
+        const [nextInner, nextOptimistic] = revertReducer(omit(state, ['optimistic']), testReducer, state.optimistic, optimisticUpdate.id);
 
         expect(nextInner).toEqual({ items: [] });
         expect(nextOptimistic).toEqual({ checkpoint: undefined, history: [] });

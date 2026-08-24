@@ -1,11 +1,11 @@
 import { c } from 'ttag';
 
-import { linkPendingFiles } from '@proton/pass/lib/file-attachments/file-attachments.requests';
-import { PendingFileLinkTracker } from '@proton/pass/lib/file-attachments/file-link.tracker';
-import { getItemKey } from '@proton/pass/lib/items/item.utils';
-import type { RootSagaOptions } from '@proton/pass/store/types';
-import type { FileAttachmentsDTO, ItemRevision } from '@proton/pass/types';
-import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
+import { linkPendingFiles } from '../../../lib/file-attachments/file-attachments.requests';
+import { PendingFileLinkTracker } from '../../../lib/file-attachments/file-link.tracker';
+import { getItemKey } from '../../../lib/items/item.utils';
+import type { FileAttachmentsDTO, ItemRevision } from '../../../types';
+import { getErrorMessage } from '../../../utils/errors/get-error-message';
+import type { RootSagaOptions } from '../../types';
 
 export function* itemLinkPendingFiles(
     item: ItemRevision,

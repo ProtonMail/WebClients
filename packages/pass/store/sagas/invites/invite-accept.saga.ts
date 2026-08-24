@@ -2,18 +2,19 @@ import { END, eventChannel } from 'redux-saga';
 import { put, select, take, takeEvery } from 'redux-saga/effects';
 import { c } from 'ttag';
 
-import { acceptInvite } from '@proton/pass/lib/invites/invite.requests';
-import { requestItemsForShareId } from '@proton/pass/lib/items/item.requests';
-import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
-import { createTelemetryEvent } from '@proton/pass/lib/telemetry/utils';
-import { inviteAccept, startEventPolling, stopEventPolling } from '@proton/pass/store/actions';
-import { requestProgress } from '@proton/pass/store/request/actions';
-import type { RequestProgress } from '@proton/pass/store/request/types';
-import { selectInviteByToken } from '@proton/pass/store/selectors/invites';
-import type { RootSagaOptions } from '@proton/pass/store/types';
-import { type Invite, type ItemRevision, type Maybe, type Share, type ShareGetResponse, ShareType } from '@proton/pass/types';
-import { TelemetryEventName, TelemetryItemType, TelemetryTargetType } from '@proton/pass/types/data/telemetry';
 import noop from '@proton/utils/noop';
+
+import { acceptInvite } from '../../../lib/invites/invite.requests';
+import { requestItemsForShareId } from '../../../lib/items/item.requests';
+import { parseShareResponse } from '../../../lib/shares/share.parser';
+import { createTelemetryEvent } from '../../../lib/telemetry/utils';
+import { type Invite, type ItemRevision, type Maybe, type Share, type ShareGetResponse, ShareType } from '../../../types';
+import { TelemetryEventName, TelemetryItemType, TelemetryTargetType } from '../../../types/data/telemetry';
+import { inviteAccept, startEventPolling, stopEventPolling } from '../../actions';
+import { requestProgress } from '../../request/actions';
+import type { RequestProgress } from '../../request/types';
+import { selectInviteByToken } from '../../selectors/invites';
+import type { RootSagaOptions } from '../../types';
 
 type AcceptInviteChannel = RequestProgress<ItemRevision[], null>;
 

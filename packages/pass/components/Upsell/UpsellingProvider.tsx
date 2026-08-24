@@ -1,11 +1,11 @@
 import type { FC, PropsWithChildren } from 'react';
 import { createContext, useState } from 'react';
 
-import type { UpsellType } from '@proton/pass/components/Upsell/UpsellingModal';
-import { UpsellingModal } from '@proton/pass/components/Upsell/UpsellingModal';
-import type { UpsellRef } from '@proton/pass/constants';
-import { createUseContext } from '@proton/pass/hooks/useContextFactory';
-import type { MaybeNull } from '@proton/pass/types';
+import type { UpsellRef } from '../../constants';
+import { createUseContext } from '../../hooks/useContextFactory';
+import type { MaybeNull } from '../../types';
+import type { UpsellType } from './UpsellingModal';
+import { UpsellingModal } from './UpsellingModal';
 
 type UpsellingState = { type: UpsellType; upsellRef: UpsellRef };
 type UpsellFn = (value: MaybeNull<UpsellingState>) => void;

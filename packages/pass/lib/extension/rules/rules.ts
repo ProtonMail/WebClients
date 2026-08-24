@@ -1,11 +1,10 @@
-import { I18N_TLDS, I18N_TLD_FLAG } from '@proton/pass/lib/extension/rules/tlds';
-import type { RuleV2 } from '@proton/pass/lib/extension/rules/v2/types';
-import type { MaybeNull } from '@proton/pass/types';
-import { isObject } from '@proton/pass/utils/object/is-object';
-
+import type { MaybeNull } from '../../../types';
+import { isObject } from '../../../utils/object/is-object';
+import { I18N_TLDS, I18N_TLD_FLAG } from './tlds';
 import type { CompiledRules, DetectionRules, DetectionRulesMatch, RuleNode, RuleVersion } from './types';
 import { validateRulesV1 } from './v1/definition';
 import { mergeRuleV2, validateRulesV2 } from './v2/definition';
+import type { RuleV2 } from './v2/types';
 
 export const getRuleVersion = (experimental: boolean): RuleVersion => (experimental ? '2' : '1');
 

@@ -1,6 +1,6 @@
-import type { PassFeature } from '@proton/pass/types/api/features';
 import { getCookie, setCookie } from '@proton/shared/lib/helpers/cookies';
 
+import type { PassFeature } from '../../types/api/features';
 import { getFeaturesFromCookie, updateFeatureVariantCookie } from './features';
 
 jest.mock('@proton/shared/lib/helpers/cookies');

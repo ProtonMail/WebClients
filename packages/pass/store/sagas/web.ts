@@ -1,3 +1,3 @@
-import type { PassSaga } from '@proton/pass/store/types';
+import type { PassSaga } from '../types';
 
 export const WEB_SAGAS: PassSaga[] = [];

@@ -1,31 +1,32 @@
 import { call, put, select } from 'redux-saga/effects';
 
-import { isPassB2BPlan } from '@proton/pass/lib/b2b/b2b.utils';
-import { decryptCache } from '@proton/pass/lib/cache/decrypt';
-import { getCacheKey } from '@proton/pass/lib/cache/keys';
-import { PassCrypto } from '@proton/pass/lib/crypto';
-import { PassCryptoHydrationError } from '@proton/pass/lib/crypto/utils/errors';
-import { getOrganization } from '@proton/pass/lib/organization/organization.requests';
-import { sanitizeBetaSetting } from '@proton/pass/lib/settings/beta';
-import { enableLoginAutofill } from '@proton/pass/lib/settings/utils';
-import { DEFAULT_SYNC_STRATEGY, setSyncStrategy } from '@proton/pass/lib/sync/global';
-import { SyncStrategy } from '@proton/pass/lib/sync/types';
-import { userStateHydrated } from '@proton/pass/lib/user/user.predicates';
-import { getUserData } from '@proton/pass/lib/user/user.requests';
-import { stateHydrate } from '@proton/pass/store/actions';
-import { migrate } from '@proton/pass/store/migrate';
-import type { HydratedUserState, UserState } from '@proton/pass/store/reducers';
-import type { OrganizationState } from '@proton/pass/store/reducers/organization';
-import type { SettingsState } from '@proton/pass/store/reducers/settings';
-import { selectUserState } from '@proton/pass/store/selectors';
-import type { RootSagaOptions, State } from '@proton/pass/store/types';
-import type { Maybe, MaybeNull } from '@proton/pass/types';
-import type { EncryptedPassCache, PassCache } from '@proton/pass/types/worker/cache';
-import { logger } from '@proton/pass/utils/logger';
-import { partialMerge } from '@proton/pass/utils/object/merge';
 import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces';
 import identity from '@proton/utils/identity';
 import noop from '@proton/utils/noop';
+
+import { isPassB2BPlan } from '../../../lib/b2b/b2b.utils';
+import { decryptCache } from '../../../lib/cache/decrypt';
+import { getCacheKey } from '../../../lib/cache/keys';
+import { PassCrypto } from '../../../lib/crypto';
+import { PassCryptoHydrationError } from '../../../lib/crypto/utils/errors';
+import { getOrganization } from '../../../lib/organization/organization.requests';
+import { sanitizeBetaSetting } from '../../../lib/settings/beta';
+import { enableLoginAutofill } from '../../../lib/settings/utils';
+import { DEFAULT_SYNC_STRATEGY, setSyncStrategy } from '../../../lib/sync/global';
+import { SyncStrategy } from '../../../lib/sync/types';
+import { userStateHydrated } from '../../../lib/user/user.predicates';
+import { getUserData } from '../../../lib/user/user.requests';
+import type { Maybe, MaybeNull } from '../../../types';
+import type { EncryptedPassCache, PassCache } from '../../../types/worker/cache';
+import { logger } from '../../../utils/logger';
+import { partialMerge } from '../../../utils/object/merge';
+import { stateHydrate } from '../../actions';
+import { migrate } from '../../migrate';
+import type { HydratedUserState, UserState } from '../../reducers';
+import type { OrganizationState } from '../../reducers/organization';
+import type { SettingsState } from '../../reducers/settings';
+import { selectUserState } from '../../selectors';
+import type { RootSagaOptions, State } from '../../types';
 
 /** `allowFailure` defines how we should treat cache decryption errors.
  * If `true` they will be by-passed - else you can pass a custom error

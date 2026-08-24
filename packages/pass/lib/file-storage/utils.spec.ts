@@ -1,5 +1,4 @@
-import { uniqueId } from '@proton/pass/utils/string/unique-id';
-
+import { uniqueId } from '../../utils/string/unique-id';
 import { base64ToBlob, base64ToFile, blobToBase64 } from './utils';
 
 const self = global as any;

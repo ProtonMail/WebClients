@@ -5,21 +5,22 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { IcCross } from '@proton/icons/icons/IcCross';
-import { Field } from '@proton/pass/components/Form/Field/Field';
-import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
-import { TextField } from '@proton/pass/components/Form/Field/TextField';
-import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';
-import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
-import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
-import { useMonitor } from '@proton/pass/components/Monitor/MonitorContext';
-import { useRequest } from '@proton/pass/hooks/useRequest';
-import PassUI from '@proton/pass/lib/core/ui.proxy';
-import { intoCustomMonitorAddress } from '@proton/pass/lib/monitor/monitor.utils';
-import { addCustomAddress } from '@proton/pass/store/actions';
-import { prop } from '@proton/pass/utils/fp/lens';
-import { pipe } from '@proton/pass/utils/fp/pipe';
-import { toLowerCase } from '@proton/pass/utils/string/to-lower-case';
-import { getEpoch } from '@proton/pass/utils/time/epoch';
+
+import { useRequest } from '../../../hooks/useRequest';
+import PassUI from '../../../lib/core/ui.proxy';
+import { intoCustomMonitorAddress } from '../../../lib/monitor/monitor.utils';
+import { addCustomAddress } from '../../../store/actions';
+import { prop } from '../../../utils/fp/lens';
+import { pipe } from '../../../utils/fp/pipe';
+import { toLowerCase } from '../../../utils/string/to-lower-case';
+import { getEpoch } from '../../../utils/time/epoch';
+import { Field } from '../../Form/Field/Field';
+import { FieldsetCluster } from '../../Form/Field/Layout/FieldsetCluster';
+import { TextField } from '../../Form/Field/TextField';
+import { SidebarModal } from '../../Layout/Modal/SidebarModal';
+import { Panel } from '../../Layout/Panel/Panel';
+import { PanelHeader } from '../../Layout/Panel/PanelHeader';
+import { useMonitor } from '../MonitorContext';
 
 export const FORM_ID = 'custom-address-add';
 type Props = { onClose: () => void };

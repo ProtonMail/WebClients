@@ -1,10 +1,9 @@
 import { runSaga } from 'redux-saga';
 
-import { PendingFileLinkTracker } from '@proton/pass/lib/file-attachments/file-link.tracker';
-import { sagaReturn, sagaSetup } from '@proton/pass/store/sagas/testing';
-import type { RootSagaOptions } from '@proton/pass/store/types';
-import type { SyncEventListOutput } from '@proton/pass/types';
-
+import { sagaReturn, sagaSetup } from '../../../store/sagas/testing';
+import type { RootSagaOptions } from '../../../store/types';
+import type { SyncEventListOutput } from '../../../types';
+import { PendingFileLinkTracker } from '../../file-attachments/file-link.tracker';
 import * as alias from './user-events.alias';
 import * as folders from './user-events.folders';
 import * as invites from './user-events.invites';

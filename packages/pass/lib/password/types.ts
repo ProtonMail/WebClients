@@ -1,4 +1,4 @@
-import type { Maybe, MaybeNull, OrganizationUpdatePasswordPolicyInput } from '@proton/pass/types';
+import type { Maybe, MaybeNull, OrganizationUpdatePasswordPolicyInput } from '../../types';
 
 export enum SeperatorOptions {
     HYPHEN = '-',

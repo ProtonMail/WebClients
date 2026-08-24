@@ -1,31 +1,29 @@
 import type { Store } from 'redux';
 
-import { WASM_PROCEDURE_BATCH_SIZE } from '@proton/pass/lib/core/constants';
-import type { PassCoreProxy } from '@proton/pass/lib/core/core.types';
-import { hasDomain, hasOTP, hasPasskeys } from '@proton/pass/lib/items/item.predicates';
-import { getItemKey, intoSelectedItem } from '@proton/pass/lib/items/item.utils';
-import {
-    checkPasswordCompromised,
-    getLastChangeTimestamp,
-} from '@proton/pass/lib/monitor/compromised-password.request';
-import type { CompromisedPasswordEntry } from '@proton/pass/lib/monitor/types';
-import { getAutofillUrls } from '@proton/pass/lib/urls/utils/autofill';
-import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
-import { compromisedPasswordsSync } from '@proton/pass/store/actions';
+import chunk from '@proton/utils/chunk';
+
+import { compromisedPasswordsSync } from '../../store/actions';
 import {
     selectCompromisedPasswordsCache,
     selectFeatureFlag,
     selectLastSyncedChange,
     selectMonitoredLogins,
     selectPassPlan,
-} from '@proton/pass/store/selectors';
-import type { State } from '@proton/pass/store/types';
-import type { ItemRevision, ShareId, UniqueItem } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
-import { and, not, or } from '@proton/pass/utils/fp/predicates';
-import { seq } from '@proton/pass/utils/fp/promises';
-import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
-import chunk from '@proton/utils/chunk';
+} from '../../store/selectors';
+import type { State } from '../../store/types';
+import type { ItemRevision, ShareId, UniqueItem } from '../../types';
+import { PassFeature } from '../../types/api/features';
+import { and, not, or } from '../../utils/fp/predicates';
+import { seq } from '../../utils/fp/promises';
+import { deobfuscate } from '../../utils/obfuscate/xor';
+import { WASM_PROCEDURE_BATCH_SIZE } from '../core/constants';
+import type { PassCoreProxy } from '../core/core.types';
+import { hasDomain, hasOTP, hasPasskeys } from '../items/item.predicates';
+import { getItemKey, intoSelectedItem } from '../items/item.utils';
+import { getAutofillUrls } from '../urls/utils/autofill';
+import { isPaidPlan } from '../user/user.predicates';
+import { checkPasswordCompromised, getLastChangeTimestamp } from './compromised-password.request';
+import type { CompromisedPasswordEntry } from './types';
 
 export type MonitorCheckOptions = { shareIds?: ShareId[] };
 export interface MonitorService {

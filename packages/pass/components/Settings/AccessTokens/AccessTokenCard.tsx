@@ -6,12 +6,13 @@ import { Card } from '@proton/atoms/Card/Card';
 import type { BadgeType } from '@proton/components/components/badge/Badge';
 import { Badge } from '@proton/components/components/badge/Badge';
 import { IcKey } from '@proton/icons/icons/IcKey';
-import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
-import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
-import type { PersonalAccessToken } from '@proton/pass/lib/access-token/access-token.types';
-import { type TokenStatus, getTokenStatus } from '@proton/pass/lib/access-token/access-token.utils';
-import { epochToDate, epochToDateTime } from '@proton/pass/utils/time/format';
 import clsx from '@proton/utils/clsx';
+
+import type { PersonalAccessToken } from '../../../lib/access-token/access-token.types';
+import { type TokenStatus, getTokenStatus } from '../../../lib/access-token/access-token.utils';
+import { epochToDate, epochToDateTime } from '../../../utils/time/format';
+import { DropdownMenuButton } from '../../Layout/Dropdown/DropdownMenuButton';
+import { QuickActionsDropdown } from '../../Layout/Dropdown/QuickActionsDropdown';
 
 type Derived = {
     statusBadge: { label: string; type: BadgeType };

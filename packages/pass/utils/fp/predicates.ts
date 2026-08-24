@@ -1,4 +1,4 @@
-import type { Maybe, Unpack } from '@proton/pass/types';
+import type { Maybe, Unpack } from '../../types';
 
 export type Predicate<T extends any[] = any[]> = (...a: T) => boolean;
 export type TypePredicate<A, B extends A> = (a: A) => a is B;

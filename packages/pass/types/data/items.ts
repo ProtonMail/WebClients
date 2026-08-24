@@ -1,6 +1,6 @@
-import type { ItemIDRevision } from '@proton/pass/types/api/pass';
-import type { OpenedItem } from '@proton/pass/types/crypto';
-import type { Deobfuscate, DeobfuscateMode, Obfuscate } from '@proton/pass/types/data/obfuscation';
+import type { SanitizedBuffers } from '../../utils/buffer/sanitization';
+import type { ItemIDRevision } from '../api/pass';
+import type { OpenedItem } from '../crypto';
 import type {
     ExtraFieldType,
     ItemType,
@@ -13,16 +13,16 @@ import type {
     ProtobufItemNote,
     ProtobufItemSSHKey,
     ProtobufItemWifi,
-} from '@proton/pass/types/protobuf';
+} from '../protobuf';
 import type {
     ExtraField,
     ExtraHiddenField,
     ExtraTimestampField,
     ExtraTotp,
     PlatformSpecific,
-} from '@proton/pass/types/protobuf/item-v1';
-import type { MaybeNull, TypeMapper } from '@proton/pass/types/utils';
-import type { SanitizedBuffers } from '@proton/pass/utils/buffer/sanitization';
+} from '../protobuf/item-v1';
+import type { MaybeNull, TypeMapper } from '../utils';
+import type { Deobfuscate, DeobfuscateMode, Obfuscate } from './obfuscation';
 
 type ExtraFieldContent<T extends ExtraFieldType> = {
     totp: Obfuscate<ExtraTotp, 'totpUri', never>;

@@ -8,13 +8,13 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
 import { getReportInfo } from '@proton/components/helpers/report';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { useActionRequest } from '@proton/pass/hooks/useRequest';
-import { reportBugIntent } from '@proton/pass/store/actions';
-import { selectUser } from '@proton/pass/store/selectors';
-import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import type { BugPayload } from '@proton/shared/lib/api/reports';
 
+import { useActionRequest } from '../../hooks/useRequest';
+import { reportBugIntent } from '../../store/actions';
+import { selectUser } from '../../store/selectors';
+import { isEmptyString } from '../../utils/string/is-empty-string';
+import { usePassCore } from '../Core/PassCoreProvider';
 import { SettingsPanel } from './SettingsPanel';
 
 type FormValues = { description: string };

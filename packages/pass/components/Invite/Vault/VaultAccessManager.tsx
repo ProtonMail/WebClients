@@ -5,24 +5,25 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
-import { AccessLimitPrompt } from '@proton/pass/components/Invite/Access/AccessLimitPrompt';
-import { AccessList } from '@proton/pass/components/Invite/Access/AccessList';
-import { AccessUpgrade } from '@proton/pass/components/Invite/Access/AccessUpgrade';
-import { useInviteActions } from '@proton/pass/components/Invite/InviteContext';
-import { VaultHeading } from '@proton/pass/components/Invite/Vault/VaultHeading';
-import { Card } from '@proton/pass/components/Layout/Card/Card';
-import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';
-import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
-import { PanelFallback } from '@proton/pass/components/Layout/Panel/PanelFallback';
-import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
-import { useShareAccess } from '@proton/pass/hooks/invite/useShareAccess';
-import { useShareAccessOptionsPolling } from '@proton/pass/hooks/useShareAccessOptionsPolling';
-import { AccessTarget } from '@proton/pass/lib/access/types';
-import { getLimitReachedText } from '@proton/pass/lib/invites/invite.utils';
-import { isGroupManagedShare, isShareManageable } from '@proton/pass/lib/shares/share.predicates';
-import { selectOwnWritableVaults, selectPassPlan, selectShareOrThrow } from '@proton/pass/store/selectors';
-import type { ShareType } from '@proton/pass/types';
-import { UserPassPlan } from '@proton/pass/types/api/plan';
+
+import { useShareAccess } from '../../../hooks/invite/useShareAccess';
+import { useShareAccessOptionsPolling } from '../../../hooks/useShareAccessOptionsPolling';
+import { AccessTarget } from '../../../lib/access/types';
+import { getLimitReachedText } from '../../../lib/invites/invite.utils';
+import { isGroupManagedShare, isShareManageable } from '../../../lib/shares/share.predicates';
+import { selectOwnWritableVaults, selectPassPlan, selectShareOrThrow } from '../../../store/selectors';
+import type { ShareType } from '../../../types';
+import { UserPassPlan } from '../../../types/api/plan';
+import { Card } from '../../Layout/Card/Card';
+import { SidebarModal } from '../../Layout/Modal/SidebarModal';
+import { Panel } from '../../Layout/Panel/Panel';
+import { PanelFallback } from '../../Layout/Panel/PanelFallback';
+import { PanelHeader } from '../../Layout/Panel/PanelHeader';
+import { AccessLimitPrompt } from '../Access/AccessLimitPrompt';
+import { AccessList } from '../Access/AccessList';
+import { AccessUpgrade } from '../Access/AccessUpgrade';
+import { useInviteActions } from '../InviteContext';
+import { VaultHeading } from './VaultHeading';
 
 type Props = { shareId: string };
 

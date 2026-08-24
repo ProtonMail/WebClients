@@ -2,16 +2,16 @@ import { type ComponentType, type FC, useMemo } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { getLocalPath, getPassWebUrl } from '@proton/pass/components/Navigation/routing';
-import { UpsellRef } from '@proton/pass/constants';
-import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
-import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
-import { useTelemetryEvent } from '@proton/pass/hooks/useTelemetryEvent';
-import { updateInAppNotificationState } from '@proton/pass/store/actions';
-import { InAppNotificationCtaType, InAppNotificationState } from '@proton/pass/types';
-import type { InAppNotification, TelemetryInAppNotificationStatus } from '@proton/pass/types/data/notification';
-import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
+import { UpsellRef } from '../../constants';
+import { useNavigateToUpgrade } from '../../hooks/useNavigateToUpgrade';
+import { usePassConfig } from '../../hooks/usePassConfig';
+import { useTelemetryEvent } from '../../hooks/useTelemetryEvent';
+import { updateInAppNotificationState } from '../../store/actions';
+import { InAppNotificationCtaType, InAppNotificationState } from '../../types';
+import type { InAppNotification, TelemetryInAppNotificationStatus } from '../../types/data/notification';
+import { TelemetryEventName } from '../../types/data/telemetry';
+import { usePassCore } from '../Core/PassCoreProvider';
+import { getLocalPath, getPassWebUrl } from '../Navigation/routing';
 
 export type InAppNotificationRenderProps = {
     notification: InAppNotification;

@@ -15,7 +15,7 @@ global.File = File;
 
 global.ENV = 'test';
 
-jest.mock('@proton/pass/lib/import/helpers/zip.reader.wasm', () => ({ wasmURI: undefined }));
+jest.mock('./lib/import/helpers/zip.reader.wasm', () => ({ wasmURI: undefined }));
 
 // Do not start crypto worker pool, let the single tests setup/mock the CryptoProxy as needed
 jest.mock('@proton/shared/lib/helpers/setupCryptoWorker', () => ({
@@ -23,10 +23,10 @@ jest.mock('@proton/shared/lib/helpers/setupCryptoWorker', () => ({
     loadCryptoWorker: jest.fn(),
 }));
 
-jest.mock('loglevel', () => require('@proton/pass/utils/logger/loglevel.mock'));
-jest.mock('@proton/pass/lib/core/ui.proxy');
-jest.mock('@proton/pass/lib/core/core.proxy');
-jest.mock('@proton/pass/lib/crypto/utils/worker');
+jest.mock('loglevel', () => require('./utils/logger/loglevel.mock'));
+jest.mock('./lib/core/ui.proxy');
+jest.mock('./lib/core/core.proxy');
+jest.mock('./lib/crypto/utils/worker');
 
 // JSDom does not include webcrypto
 global.crypto.subtle = require('crypto').webcrypto.subtle;

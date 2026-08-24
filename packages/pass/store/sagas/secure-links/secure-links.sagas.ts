@@ -6,14 +6,14 @@ import {
     openSecureLink,
     removeInactiveSecureLinks,
     removeSecureLink,
-} from '@proton/pass/lib/secure-links/secure-links.requests';
-import { createTelemetryEvent } from '@proton/pass/lib/telemetry/utils';
-import { secureLinkCreate, secureLinkOpen, secureLinkRemove, secureLinksGet, secureLinksRemoveInactive } from '@proton/pass/store/actions';
-import { createRequestSaga } from '@proton/pass/store/request/sagas';
-import { selectItem } from '@proton/pass/store/selectors';
-import type { RootSagaOptions } from '@proton/pass/store/types';
-import type { ItemRevision, Maybe, SecureLink } from '@proton/pass/types';
-import { TelemetryEventName, TelemetryItemType, TelemetryTargetType } from '@proton/pass/types/data/telemetry';
+} from '../../../lib/secure-links/secure-links.requests';
+import { createTelemetryEvent } from '../../../lib/telemetry/utils';
+import type { ItemRevision, Maybe, SecureLink } from '../../../types';
+import { TelemetryEventName, TelemetryItemType, TelemetryTargetType } from '../../../types/data/telemetry';
+import { secureLinkCreate, secureLinkOpen, secureLinkRemove, secureLinksGet, secureLinksRemoveInactive } from '../../actions';
+import { createRequestSaga } from '../../request/sagas';
+import { selectItem } from '../../selectors';
+import type { RootSagaOptions } from '../../types';
 
 const open = createRequestSaga({ actions: secureLinkOpen, call: openSecureLink });
 

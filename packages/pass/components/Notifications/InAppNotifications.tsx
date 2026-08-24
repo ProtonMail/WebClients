@@ -1,15 +1,14 @@
 import { type FC, useMemo } from 'react';
 
-import type { InAppNotificationRenderProps } from '@proton/pass/components/Notifications/WithInAppNotification';
-import { useInAppNotificationVisibility } from '@proton/pass/hooks/notifications/useInAppNotificationVisibility';
-import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
-import { selectActiveNotification } from '@proton/pass/store/selectors/notification';
-import type { MaybeNull } from '@proton/pass/types';
-import { InAppNotificationDisplayType } from '@proton/pass/types';
-import { getEpoch } from '@proton/pass/utils/time/epoch';
-
+import { useInAppNotificationVisibility } from '../../hooks/notifications/useInAppNotificationVisibility';
+import { useMemoSelector } from '../../hooks/useMemoSelector';
+import { selectActiveNotification } from '../../store/selectors/notification';
+import type { MaybeNull } from '../../types';
+import { InAppNotificationDisplayType } from '../../types';
+import { getEpoch } from '../../utils/time/epoch';
 import { InAppNotificationBanner } from './InAppNotificationBanner';
 import { InAppNotificationModal } from './InAppNotificationModal';
+import type { InAppNotificationRenderProps } from './WithInAppNotification';
 
 const getNotificationComponent = (
     displayType: InAppNotificationDisplayType

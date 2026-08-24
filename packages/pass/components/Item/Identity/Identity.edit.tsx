@@ -2,14 +2,14 @@ import type { FC } from 'react';
 
 import { useFormik } from 'formik';
 
-import { IdentityForm } from '@proton/pass/components/Item/Identity/Identity.form';
-import type { ItemEditViewProps } from '@proton/pass/components/Views/types';
-import { useDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
-import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
-import { filesFormInitializer } from '@proton/pass/lib/file-attachments/helpers';
-import { validateIdentityForm } from '@proton/pass/lib/validation/identity';
-import type { IdentityItemFormValues } from '@proton/pass/types';
-import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
+import { useDeobfuscatedItem } from '../../../hooks/useDeobfuscatedItem';
+import { useItemDraft } from '../../../hooks/useItemDraft';
+import { filesFormInitializer } from '../../../lib/file-attachments/helpers';
+import { validateIdentityForm } from '../../../lib/validation/identity';
+import type { IdentityItemFormValues } from '../../../types';
+import { obfuscate } from '../../../utils/obfuscate/xor';
+import type { ItemEditViewProps } from '../../Views/types';
+import { IdentityForm } from './Identity.form';
 
 export const IdentityEdit: FC<ItemEditViewProps<'identity'>> = ({ share, revision, onSubmit, onCancel }) => {
     const { shareId } = share;

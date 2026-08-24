@@ -1,11 +1,12 @@
 import type { PropsWithChildren } from 'react';
 import { type FC, createContext, useContext, useEffect, useLayoutEffect, useState } from 'react';
 
-import { usePassCore } from '@proton/pass/components/Core/PassCoreContext';
-import { PassThemeOption, themeOptionToDesktop } from '@proton/pass/components/Layout/Theme/types';
-import { matchDarkTheme } from '@proton/pass/components/Layout/Theme/utils';
-import { PASS_DEFAULT_THEME } from '@proton/pass/constants';
 import noop from '@proton/utils/noop';
+
+import { PASS_DEFAULT_THEME } from '../../../constants';
+import { usePassCore } from '../../Core/PassCoreContext';
+import { PassThemeOption, themeOptionToDesktop } from './types';
+import { matchDarkTheme } from './utils';
 
 // @ts-ignore
 import passDarkTheme from '@proton/colors/themes/dist/pass-dark.theme.css';

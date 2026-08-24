@@ -4,19 +4,20 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { useMaybeGroup } from '@proton/pass/components/Groups/GroupsProvider';
-import { MaybeGroupName } from '@proton/pass/components/Groups/MaybeGroupName';
-import { ShareMemberAvatar } from '@proton/pass/components/Invite/Member/ShareMemberAvatar';
-import { getShareRoleDefinition } from '@proton/pass/components/Invite/Member/ShareRoleOptions';
-import { useInviteLabels } from '@proton/pass/components/Invite/useInviteLabels';
-import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
-import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
-import { IconBox } from '@proton/pass/components/Layout/Icon/IconBox';
-import { ButtonIfNeeded } from '@proton/pass/components/Utils/ButtonIfNeeded';
-import type { AccessTarget } from '@proton/pass/lib/access/types';
-import type { InviteFormMemberItem } from '@proton/pass/types';
-import { ShareRole } from '@proton/pass/types';
 import generateUID from '@proton/utils/generateUID';
+
+import type { AccessTarget } from '../../../lib/access/types';
+import type { InviteFormMemberItem } from '../../../types';
+import { ShareRole } from '../../../types';
+import { useMaybeGroup } from '../../Groups/GroupsProvider';
+import { MaybeGroupName } from '../../Groups/MaybeGroupName';
+import { DropdownMenuButton } from '../../Layout/Dropdown/DropdownMenuButton';
+import { QuickActionsDropdown } from '../../Layout/Dropdown/QuickActionsDropdown';
+import { IconBox } from '../../Layout/Icon/IconBox';
+import { ButtonIfNeeded } from '../../Utils/ButtonIfNeeded';
+import { ShareMemberAvatar } from '../Member/ShareMemberAvatar';
+import { getShareRoleDefinition } from '../Member/ShareRoleOptions';
+import { useInviteLabels } from '../useInviteLabels';
 
 export type InviteMemberProps = InviteFormMemberItem & {
     target: AccessTarget;

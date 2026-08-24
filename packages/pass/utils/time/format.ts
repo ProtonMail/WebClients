@@ -1,11 +1,11 @@
 import { formatRelative as dateFnsFormatRelative, format, formatISO, intervalToDuration, isThisWeek } from 'date-fns';
 import { c, msgid } from 'ttag';
 
-import type { Maybe } from '@proton/pass/types';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import capitalize from '@proton/utils/capitalize';
 import identity from '@proton/utils/identity';
 
+import type { Maybe } from '../../types';
 import { epochToMs } from './epoch';
 
 export const formatRelative = (date: Date | number) =>

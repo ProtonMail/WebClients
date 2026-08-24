@@ -4,18 +4,19 @@ import type { FormikContextType } from 'formik';
 import { c } from 'ttag';
 
 import Option from '@proton/components/components/option/Option';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { Field } from '@proton/pass/components/Form/Field/Field';
-import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
-import { SelectField } from '@proton/pass/components/Form/Field/SelectField';
-import { TextField } from '@proton/pass/components/Form/Field/TextField';
-import { SpotlightGradient } from '@proton/pass/components/Spotlight/SpotlightGradient';
-import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
-import { WithSpotlight } from '@proton/pass/components/Spotlight/WithSpotlight';
-import type { SanitizedAliasOptions } from '@proton/pass/hooks/useAliasOptions';
-import { getDomainLabel } from '@proton/pass/lib/alias/alias.utils';
-import { type AliasFormValues, type AliasMailbox, type MaybeNull, SpotlightMessage } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
+
+import type { SanitizedAliasOptions } from '../../../hooks/useAliasOptions';
+import { getDomainLabel } from '../../../lib/alias/alias.utils';
+import { type AliasFormValues, type AliasMailbox, type MaybeNull, SpotlightMessage } from '../../../types';
+import { usePassCore } from '../../Core/PassCoreProvider';
+import { Field } from '../../Form/Field/Field';
+import { FieldsetCluster } from '../../Form/Field/Layout/FieldsetCluster';
+import { SelectField } from '../../Form/Field/SelectField';
+import { TextField } from '../../Form/Field/TextField';
+import { SpotlightGradient } from '../../Spotlight/SpotlightGradient';
+import { useSpotlight } from '../../Spotlight/SpotlightProvider';
+import { WithSpotlight } from '../../Spotlight/WithSpotlight';
 
 type AliasFormProps<V extends AliasFormValues> = {
     aliasOptions: MaybeNull<SanitizedAliasOptions>;

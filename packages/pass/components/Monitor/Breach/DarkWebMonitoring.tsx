@@ -2,8 +2,8 @@ import { type FC, useEffect, useLayoutEffect, useRef } from 'react';
 import { Route, type RouteChildrenProps, Switch } from 'react-router-dom';
 
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
-import { useMonitor } from '@proton/pass/components/Monitor/MonitorContext';
 
+import { useMonitor } from '../MonitorContext';
 import { Breach } from './Breach';
 import { BreachGroup } from './BreachGroup';
 import { Breaches } from './Breaches';

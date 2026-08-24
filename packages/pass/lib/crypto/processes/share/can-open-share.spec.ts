@@ -1,15 +1,16 @@
-import { exposePassCrypto } from '@proton/pass/lib/crypto';
-import { canOpenShare } from '@proton/pass/lib/crypto/processes/share/can-open-share';
-import { PassCryptoShareError } from '@proton/pass/lib/crypto/utils/errors';
-import { releaseCryptoProxy, setupCryptoProxyForTesting } from '@proton/pass/lib/crypto/utils/testing';
+import type { Address, AddressKey, DecryptedKey } from '@proton/shared/lib/interfaces';
+
+import { exposePassCrypto } from '../..';
 import type {
     PassCryptoManagerContext,
     PassCryptoWorker,
     ShareGetResponse,
     ShareKeyResponse,
     ShareManager,
-} from '@proton/pass/types';
-import type { Address, AddressKey, DecryptedKey } from '@proton/shared/lib/interfaces';
+} from '../../../../types';
+import { PassCryptoShareError } from '../../utils/errors';
+import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../utils/testing';
+import { canOpenShare } from './can-open-share';
 
 describe('canOpenShare', () => {
     const passCrypto = {} as PassCryptoWorker;

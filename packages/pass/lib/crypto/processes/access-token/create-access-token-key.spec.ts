@@ -1,7 +1,6 @@
 import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
 
-import { createRandomKey, releaseCryptoProxy, setupCryptoProxyForTesting } from '@proton/pass/lib/crypto/utils/testing';
-
+import { createRandomKey, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../utils/testing';
 import { createAccessTokenKey } from './create-access-token-key';
 
 describe('createAccessTokenKey crypto process', () => {

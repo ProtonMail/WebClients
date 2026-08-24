@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import { filesFormInitializer } from '@proton/pass/lib/file-attachments/helpers';
-import { obfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
+import { filesFormInitializer } from '../../../lib/file-attachments/helpers';
+import { obfuscateExtraFields } from '../../../lib/items/item.obfuscation';
 import type {
     CustomItemFormValues,
     DeobfuscatedItem,
@@ -10,11 +10,10 @@ import type {
     ItemEditIntent,
     MaybeNull,
     ShareId,
-} from '@proton/pass/types';
-import { WifiSecurity } from '@proton/pass/types/protobuf/item-v1.static';
-import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
-import { uniqueId } from '@proton/pass/utils/string/unique-id';
-
+} from '../../../types';
+import { WifiSecurity } from '../../../types/protobuf/item-v1.static';
+import { obfuscate } from '../../../utils/obfuscate/xor';
+import { uniqueId } from '../../../utils/string/unique-id';
 import { type CustomTemplate, customTemplateToFormFields } from './Custom.templates';
 
 type GetNewCustomItemValuesOptions = {

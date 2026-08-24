@@ -1,11 +1,12 @@
 import { put, select } from 'redux-saga/effects';
 
-import { redeemCouponApi } from '@proton/pass/lib/user/user.requests';
-import { getUserAccessIntent, redeemCoupon } from '@proton/pass/store/actions';
-import { withRevalidate } from '@proton/pass/store/request/enhancers';
-import { createRequestSaga } from '@proton/pass/store/request/sagas';
-import { selectUser } from '@proton/pass/store/selectors';
 import type { User } from '@proton/shared/lib/interfaces';
+
+import { redeemCouponApi } from '../../../lib/user/user.requests';
+import { getUserAccessIntent, redeemCoupon } from '../../actions';
+import { withRevalidate } from '../../request/enhancers';
+import { createRequestSaga } from '../../request/sagas';
+import { selectUser } from '../../selectors';
 
 export default createRequestSaga({
     actions: redeemCoupon,

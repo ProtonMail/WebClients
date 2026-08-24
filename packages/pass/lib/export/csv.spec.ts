@@ -1,15 +1,14 @@
 import Papa from 'papaparse';
 
-import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
-import { readProtonPassCSV } from '@proton/pass/lib/import/providers/protonpass/protonpass.csv.reader';
-import { itemBuilder } from '@proton/pass/lib/items/item.builder';
-import { selectExportData } from '@proton/pass/store/selectors/export';
-import type { State } from '@proton/pass/store/types';
-import type { ItemImportIntent } from '@proton/pass/types';
-import { ContentFormatVersion, ItemState } from '@proton/pass/types';
-import { ShareType } from '@proton/pass/types/data/shares';
-import { AutofillMode } from '@proton/pass/types/protobuf';
-
+import type { PassConfig } from '../../hooks/usePassConfig';
+import { selectExportData } from '../../store/selectors/export';
+import type { State } from '../../store/types';
+import type { ItemImportIntent } from '../../types';
+import { ContentFormatVersion, ItemState } from '../../types';
+import { ShareType } from '../../types/data/shares';
+import { AutofillMode } from '../../types/protobuf';
+import { readProtonPassCSV } from '../import/providers/protonpass/protonpass.csv.reader';
+import { itemBuilder } from '../items/item.builder';
 import { createPassExportCSV } from './csv';
 import type { ExportCSVItem } from './types';
 

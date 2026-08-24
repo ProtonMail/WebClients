@@ -2,37 +2,31 @@ import type { Task } from 'redux-saga';
 import { call, fork, put, select, take, takeLeading } from 'redux-saga/effects';
 import { c } from 'ttag';
 
-import { MAX_BATCH_PER_IMPORT_REQUEST } from '@proton/pass/constants';
-import { type ImportReport, formatIgnoredItem } from '@proton/pass/lib/import/helpers/report';
-import type { ImportVault } from '@proton/pass/lib/import/types';
-import { importItemsBatch } from '@proton/pass/lib/items/item.requests';
-import { createTelemetryEvent } from '@proton/pass/lib/telemetry/utils';
-import { isAutofillModeDataOfTypeUrl, uniqueAutofillUrls } from '@proton/pass/lib/urls/utils/autofill';
-import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
-import {
-    importItems,
-    importItemsProgress,
-    notification,
-    startEventPolling,
-    stopEventPolling,
-    vaultCreationIntent,
-} from '@proton/pass/store/actions';
-import type { WithSenderAction } from '@proton/pass/store/actions/enhancers/endpoint';
-import { matchCancel } from '@proton/pass/store/request/actions';
-import { createVaultWorker } from '@proton/pass/store/sagas/vaults/vault-creation.saga';
-import { selectFeatureFlag, selectPassPlan, selectUserPlan } from '@proton/pass/store/selectors';
-import type { RootSagaOptions } from '@proton/pass/store/types';
-import type { IndexedByShareIdAndItemId, ItemImportIntent, ItemRevision, Maybe, MaybeNull, PassPlanResponse } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
-import type { UserPassPlan } from '@proton/pass/types/api/plan';
-import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
-import { AutofillMode } from '@proton/pass/types/protobuf';
-import { groupByKey } from '@proton/pass/utils/array/group-by-key';
-import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
-import { prop } from '@proton/pass/utils/fp/lens';
-import { logger } from '@proton/pass/utils/logger';
-import { getEpoch } from '@proton/pass/utils/time/epoch';
 import chunk from '@proton/utils/chunk';
+
+import { MAX_BATCH_PER_IMPORT_REQUEST } from '../../../constants';
+import { type ImportReport, formatIgnoredItem } from '../../../lib/import/helpers/report';
+import type { ImportVault } from '../../../lib/import/types';
+import { importItemsBatch } from '../../../lib/items/item.requests';
+import { createTelemetryEvent } from '../../../lib/telemetry/utils';
+import { isAutofillModeDataOfTypeUrl, uniqueAutofillUrls } from '../../../lib/urls/utils/autofill';
+import { isPaidPlan } from '../../../lib/user/user.predicates';
+import type { IndexedByShareIdAndItemId, ItemImportIntent, ItemRevision, Maybe, MaybeNull, PassPlanResponse } from '../../../types';
+import { PassFeature } from '../../../types/api/features';
+import type { UserPassPlan } from '../../../types/api/plan';
+import { TelemetryEventName } from '../../../types/data/telemetry';
+import { AutofillMode } from '../../../types/protobuf';
+import { groupByKey } from '../../../utils/array/group-by-key';
+import { getErrorMessage } from '../../../utils/errors/get-error-message';
+import { prop } from '../../../utils/fp/lens';
+import { logger } from '../../../utils/logger';
+import { getEpoch } from '../../../utils/time/epoch';
+import { importItems, importItemsProgress, notification, startEventPolling, stopEventPolling, vaultCreationIntent } from '../../actions';
+import type { WithSenderAction } from '../../actions/enhancers/endpoint';
+import { matchCancel } from '../../request/actions';
+import { selectFeatureFlag, selectPassPlan, selectUserPlan } from '../../selectors';
+import type { RootSagaOptions } from '../../types';
+import { createVaultWorker } from '../vaults/vault-creation.saga';
 
 type ImportWorkerState = {
     /** `true` when the import request has been cancelled via
@@ -144,12 +138,10 @@ function* importWorker(
         };
     };
 
-    const importVaults = groupByKey(sanitized, 'shareId', { splitEmpty: true }).map(
-        ([vault, ...vaults]): ImportVault => ({
-            ...vault,
-            items: vault.items.concat(...vaults.map(prop('items'))),
-        })
-    );
+    const importVaults = groupByKey(sanitized, 'shareId', { splitEmpty: true }).map(([vault, ...vaults]): ImportVault => ({
+        ...vault,
+        items: vault.items.concat(...vaults.map(prop('items'))),
+    }));
 
     try {
         yield put(stopEventPolling());

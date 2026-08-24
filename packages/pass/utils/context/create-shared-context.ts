@@ -1,4 +1,4 @@
-import type { Callback, Maybe, MaybeNull } from '@proton/pass/types';
+import type { Callback, Maybe, MaybeNull } from '../../types';
 
 export interface ContextHandler<T = any> {
     set: (ctx: T) => T;

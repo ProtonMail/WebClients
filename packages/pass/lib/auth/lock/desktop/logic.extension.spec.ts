@@ -1,6 +1,6 @@
-import { sendSetupLockSecretMessage } from '@proton/pass/lib/auth/lock/desktop/logic.extension';
-import { NativeMessageError } from '@proton/pass/lib/native-messaging/errors';
-import { NativeMessageErrorType, NativeMessageType } from '@proton/pass/types';
+import { NativeMessageErrorType, NativeMessageType } from '../../../../types';
+import { NativeMessageError } from '../../../native-messaging/errors';
+import { sendSetupLockSecretMessage } from './logic.extension';
 
 const makeNativeMessaging = (response: any) => ({
     sendNativeMessageRequest: jest.fn().mockResolvedValue(response),

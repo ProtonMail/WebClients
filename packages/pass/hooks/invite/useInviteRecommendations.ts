@@ -3,28 +3,28 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import debounce from 'lodash/debounce';
 
-import { useActionRequest } from '@proton/pass/hooks/useRequest';
-import type { AccessKeys } from '@proton/pass/lib/access/types';
-import { isBusinessPlan } from '@proton/pass/lib/organization/helpers';
+import type { AccessKeys } from '../../lib/access/types';
+import { isBusinessPlan } from '../../lib/organization/helpers';
 import type {
     inviteRecommendationsOrganizationFailure,
     inviteRecommendationsOrganizationSuccess,
     inviteRecommendationsSuggestedFailure,
     inviteRecommendationsSuggestedSuccess,
-} from '@proton/pass/store/actions';
+} from '../../store/actions';
 import {
     getShareAccessOptions,
     inviteRecommendationsOrganizationIntent,
     inviteRecommendationsSuggestedIntent,
-} from '@proton/pass/store/actions';
-import { selectPassPlan } from '@proton/pass/store/selectors';
-import type { MaybeNull } from '@proton/pass/types';
+} from '../../store/actions';
+import { selectPassPlan } from '../../store/selectors';
+import type { MaybeNull } from '../../types';
 import type {
     InviteRecommendationsOrganizationIntent,
     InviteRecommendationsOrganizationSuccess,
     InviteRecommendationsSuggestedSuccess,
-} from '@proton/pass/types/data/invites.dto';
-import { uniqueId } from '@proton/pass/utils/string/unique-id';
+} from '../../types/data/invites.dto';
+import { uniqueId } from '../../utils/string/unique-id';
+import { useActionRequest } from '../useRequest';
 
 type InviteRecommendationsState = {
     suggestions: InviteRecommendationsSuggestedSuccess & { loading: boolean };

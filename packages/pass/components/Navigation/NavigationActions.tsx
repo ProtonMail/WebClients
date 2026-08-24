@@ -4,10 +4,9 @@ import { useHistory } from 'react-router-dom';
 
 import type { Location } from 'history';
 
-import { createUseContext } from '@proton/pass/hooks/useContextFactory';
-import type { ItemFilters, MaybeNull } from '@proton/pass/types';
-import { objectFilter } from '@proton/pass/utils/object/filter';
-
+import { createUseContext } from '../../hooks/useContextFactory';
+import type { ItemFilters, MaybeNull } from '../../types';
+import { objectFilter } from '../../utils/object/filter';
 import type { ItemScope } from './routing';
 import { decodeFilters, encodeFilters, getItemRoute } from './routing';
 

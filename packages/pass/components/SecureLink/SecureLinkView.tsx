@@ -3,15 +3,16 @@ import { useLocation, useParams } from 'react-router';
 
 import { c } from 'ttag';
 
-import warningIcon from '@proton/pass/assets/secure-link/secure-link-warning.svg';
-import { ItemContentView } from '@proton/pass/components/Item/Containers/ItemContentView';
-import { DateBadge } from '@proton/pass/components/Layout/Badge/DateBadge';
-import { SecureLinkFilesList } from '@proton/pass/components/SecureLink/SecureLinkFilesList';
-import { useRequest } from '@proton/pass/hooks/useRequest';
-import { intoSecureLinkItemRevision } from '@proton/pass/lib/secure-links/secure-links.utils';
-import { secureLinkOpen } from '@proton/pass/store/actions';
-import type { Maybe, MaybeNull, SecureLinkItem } from '@proton/pass/types';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+
+import warningIcon from '../../assets/secure-link/secure-link-warning.svg';
+import { useRequest } from '../../hooks/useRequest';
+import { intoSecureLinkItemRevision } from '../../lib/secure-links/secure-links.utils';
+import { secureLinkOpen } from '../../store/actions';
+import type { Maybe, MaybeNull, SecureLinkItem } from '../../types';
+import { ItemContentView } from '../Item/Containers/ItemContentView';
+import { DateBadge } from '../Layout/Badge/DateBadge';
+import { SecureLinkFilesList } from './SecureLinkFilesList';
 
 type SecureLinkParams = { token: string };
 

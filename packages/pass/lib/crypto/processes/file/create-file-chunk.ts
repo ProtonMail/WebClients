@@ -1,7 +1,8 @@
-import { encryptData, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
-import { PassCryptoError } from '@proton/pass/lib/crypto/utils/errors';
-import { PassEncryptionTag } from '@proton/pass/types';
 import { blobToUint8Array, uint8ArrayToBlob } from '@proton/shared/lib/helpers/encoding';
+
+import { PassEncryptionTag } from '../../../../types';
+import { encryptData, importSymmetricKey } from '../../utils/crypto-helpers';
+import { PassCryptoError } from '../../utils/errors';
 
 export const getFileChunkEncryptionTag = (chunkIndex: number, totalChunks: number, encryptionVersion: number) => {
     switch (encryptionVersion) {

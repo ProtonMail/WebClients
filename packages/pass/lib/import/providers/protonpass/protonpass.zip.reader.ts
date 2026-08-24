@@ -1,11 +1,12 @@
-import { decryptPassExport } from '@proton/pass/lib/crypto/utils/export';
-import { archivePath } from '@proton/pass/lib/export/archive';
-import { ImportProviderError } from '@proton/pass/lib/import/helpers/error';
-import { readZIP } from '@proton/pass/lib/import/helpers/zip.reader';
-import { readProtonPassJSON } from '@proton/pass/lib/import/providers/protonpass/protonpass.json.reader';
-import type { ImportReaderResult } from '@proton/pass/lib/import/types';
-import { logger } from '@proton/pass/utils/logger';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+
+import { logger } from '../../../../utils/logger';
+import { decryptPassExport } from '../../../crypto/utils/export';
+import { archivePath } from '../../../export/archive';
+import { ImportProviderError } from '../../helpers/error';
+import { readZIP } from '../../helpers/zip.reader';
+import type { ImportReaderResult } from '../../types';
+import { readProtonPassJSON } from './protonpass.json.reader';
 
 type ProtonPassReaderPayload = {
     /** list of current email aliases so we don't import

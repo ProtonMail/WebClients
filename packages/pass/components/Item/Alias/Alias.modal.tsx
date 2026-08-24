@@ -8,18 +8,19 @@ import { Button } from '@proton/atoms/Button/Button';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import { IcCogWheel } from '@proton/icons/icons/IcCogWheel';
 import { IcCross } from '@proton/icons/icons/IcCross';
-import { AliasPreview } from '@proton/pass/components/Alias/Alias.preview';
-import { AliasForm } from '@proton/pass/components/Item/Alias/Alias.form';
-import { Card } from '@proton/pass/components/Layout/Card/Card';
-import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';
-import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
-import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
-import { UpgradeButton } from '@proton/pass/components/Upsell/UpgradeButton';
-import { UpsellRef } from '@proton/pass/constants';
-import type { SanitizedAliasOptions } from '@proton/pass/hooks/useAliasOptions';
-import { selectAliasLimits } from '@proton/pass/store/selectors';
-import type { AliasFormValues, MaybeNull } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
+
+import { UpsellRef } from '../../../constants';
+import type { SanitizedAliasOptions } from '../../../hooks/useAliasOptions';
+import { selectAliasLimits } from '../../../store/selectors';
+import type { AliasFormValues, MaybeNull } from '../../../types';
+import { AliasPreview } from '../../Alias/Alias.preview';
+import { Card } from '../../Layout/Card/Card';
+import { SidebarModal } from '../../Layout/Modal/SidebarModal';
+import { Panel } from '../../Layout/Panel/Panel';
+import { PanelHeader } from '../../Layout/Panel/PanelHeader';
+import { UpgradeButton } from '../../Upsell/UpgradeButton';
+import { AliasForm } from './Alias.form';
 
 type AliasModalProps<T extends AliasFormValues> = {
     form: FormikContextType<T>;

@@ -1,9 +1,8 @@
 import type { FormikErrors } from 'formik';
 import { c } from 'ttag';
 
-import type { CustomItemFormValues, ItemSectionFormValues } from '@proton/pass/types';
-import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
-
+import type { CustomItemFormValues, ItemSectionFormValues } from '../../types';
+import { isEmptyString } from '../../utils/string/is-empty-string';
 import type { ExtraFieldErrors } from './extra-field';
 import { validateExtraFieldName } from './extra-field';
 import { validateItemErrors } from './item';

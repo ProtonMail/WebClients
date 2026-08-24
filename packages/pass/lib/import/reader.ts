@@ -1,30 +1,27 @@
 import { c } from 'ttag';
 
-import { ExportFormat } from '@proton/pass/lib/export/types';
-import { read1Password1PifArchiveData } from '@proton/pass/lib/import/providers/1password/1pif.archive.reader';
-import { readBitwardenArchiveData } from '@proton/pass/lib/import/providers/bitwarden/bitwarden.archive.reader';
-import { readKasperskyData } from '@proton/pass/lib/import/providers/kaspersky/kaspersky.reader';
-import { readProtonPassCSV } from '@proton/pass/lib/import/providers/protonpass/protonpass.csv.reader';
-import { readProtonPassJSON } from '@proton/pass/lib/import/providers/protonpass/protonpass.json.reader';
-import {
-    decryptProtonPassImport,
-    getProtonPassImportPGPType,
-} from '@proton/pass/lib/import/providers/protonpass/utils';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
+import { ExportFormat } from '../export/types';
+import { read1Password1PifArchiveData } from './providers/1password/1pif.archive.reader';
 import { read1Password1PifData } from './providers/1password/1pif.reader';
 import { read1Password1PuxData } from './providers/1password/1pux.reader';
+import { readBitwardenArchiveData } from './providers/bitwarden/bitwarden.archive.reader';
 import { readBitwardenData } from './providers/bitwarden/bitwarden.reader';
 import { readChromiumData } from './providers/chromium/chromium.reader';
 import { readDashlaneDataCSV } from './providers/dashlane/dashlane.csv.reader';
 import { readDashlaneDataZIP } from './providers/dashlane/dashlane.zip.reader';
 import { readEnpassData } from './providers/enpass/enpass.reader';
 import { readFirefoxData } from './providers/firefox/firefox.reader';
+import { readKasperskyData } from './providers/kaspersky/kaspersky.reader';
 import { readKeePassData } from './providers/keepass/keepass.reader';
 import { readKeeperData } from './providers/keeper/keeper.reader';
 import { readLastPassData } from './providers/lastpass/lastpass.reader';
 import { readNordPassData } from './providers/nordpass/nordpass.reader';
+import { readProtonPassCSV } from './providers/protonpass/protonpass.csv.reader';
+import { readProtonPassJSON } from './providers/protonpass/protonpass.json.reader';
 import { readProtonPassZIP } from './providers/protonpass/protonpass.zip.reader';
+import { decryptProtonPassImport, getProtonPassImportPGPType } from './providers/protonpass/utils';
 import { readRoboformData } from './providers/roboform/roboform.reader';
 import { readSafariData } from './providers/safari/safari.reader';
 import type { ImportReaderResult } from './types';

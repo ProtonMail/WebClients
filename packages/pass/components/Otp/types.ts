@@ -1,4 +1,4 @@
-import type { MaybeNull } from '@proton/pass/types';
+import type { MaybeNull } from '../../types';
 
 export interface IOtpRenderer {
     /** Draws the OTP progress ring for the given percentage of the period */

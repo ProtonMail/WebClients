@@ -1,16 +1,16 @@
 import { select } from 'redux-saga/effects';
 
-import { PRIVATE_DOMAINS_URL } from '@proton/pass/constants';
-import { fetchIfModified } from '@proton/pass/lib/api/utils';
-import { extractPrivateDomains } from '@proton/pass/lib/extension/tlds/parser';
-import { resolvePrivateDomains } from '@proton/pass/store/actions/creators/private-domains';
-import { createRequestSaga } from '@proton/pass/store/request/sagas';
-import type { RequestEntry, RequestStatus } from '@proton/pass/store/request/types';
-import { selectFeatureFlag, selectRequest } from '@proton/pass/store/selectors';
-import type { Maybe } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
+import { PRIVATE_DOMAINS_URL } from '../../../constants';
+import { fetchIfModified } from '../../../lib/api/utils';
+import { extractPrivateDomains } from '../../../lib/extension/tlds/parser';
+import type { Maybe } from '../../../types';
+import { PassFeature } from '../../../types/api/features';
+import { resolvePrivateDomains } from '../../actions/creators/private-domains';
+import { createRequestSaga } from '../../request/sagas';
+import type { RequestEntry, RequestStatus } from '../../request/types';
+import { selectFeatureFlag, selectRequest } from '../../selectors';
 
-declare module '@proton/pass/store/events' {
+declare module '../../events' {
     interface SagaEvents {
         'private-domains::resolved': string[];
     }

@@ -8,8 +8,8 @@ import {
     editMailbox,
     resendVerifyMailbox,
     setDefaultMailbox,
-} from '@proton/pass/store/actions';
-import { selectRequestInFlight } from '@proton/pass/store/selectors';
+} from '../../../../store/actions';
+import { selectRequestInFlight } from '../../../../store/selectors';
 
 type Props = { mailboxID: number; children: (loading: boolean) => ReactNode };
 

@@ -1,5 +1,4 @@
-import { logger } from '@proton/pass/utils/logger';
-
+import { logger } from '../../utils/logger';
 import { SyncStrategy } from './types';
 
 export const DEFAULT_SYNC_STRATEGY = SyncStrategy.LEGACY;

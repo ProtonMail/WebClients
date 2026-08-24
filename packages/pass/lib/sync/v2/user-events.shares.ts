@@ -1,21 +1,22 @@
 import type { Action } from 'redux';
 import { call, put, select } from 'redux-saga/effects';
 
-import { MIN_MAX_BATCH_PER_REQUEST } from '@proton/pass/constants';
-import { isShareRemovedError } from '@proton/pass/lib/api/errors';
-import { PassCrypto } from '@proton/pass/lib/crypto';
-import { requestItemsForShareId } from '@proton/pass/lib/items/item.requests';
-import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
-import { requestShare } from '@proton/pass/lib/shares/share.requests';
-import { discardDrafts } from '@proton/pass/lib/sync/common/drafts';
-import type { EventProcessor } from '@proton/pass/lib/sync/types';
-import { shareCreated, shareDeleted, shareUpdated } from '@proton/pass/store/actions';
-import { refreshUserData } from '@proton/pass/store/sagas/events/core/channel.core';
-import { selectShare } from '@proton/pass/store/selectors';
-import type { RootSagaOptions } from '@proton/pass/store/types';
-import type { Maybe, MaybeNull, Share, ShareCreatedDTO, ShareId, SyncEventShareOutput } from '@proton/pass/types';
-import { prop } from '@proton/pass/utils/fp/lens';
 import chunk from '@proton/utils/chunk';
+
+import { MIN_MAX_BATCH_PER_REQUEST } from '../../../constants';
+import { shareCreated, shareDeleted, shareUpdated } from '../../../store/actions';
+import { refreshUserData } from '../../../store/sagas/events/core/channel.core';
+import { selectShare } from '../../../store/selectors';
+import type { RootSagaOptions } from '../../../store/types';
+import type { Maybe, MaybeNull, Share, ShareCreatedDTO, ShareId, SyncEventShareOutput } from '../../../types';
+import { prop } from '../../../utils/fp/lens';
+import { isShareRemovedError } from '../../api/errors';
+import { PassCrypto } from '../../crypto';
+import { requestItemsForShareId } from '../../items/item.requests';
+import { parseShareResponse } from '../../shares/share.parser';
+import { requestShare } from '../../shares/share.requests';
+import { discardDrafts } from '../common/drafts';
+import type { EventProcessor } from '../types';
 
 /** Fetches and decrypts a single share. `parseShareResponse` will
  * internally request share keys if not already in `PassCrypto`. */

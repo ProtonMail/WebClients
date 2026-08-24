@@ -1,8 +1,8 @@
-import type { Api, ApiAuth } from '@proton/pass/types';
-import { partition } from '@proton/pass/utils/array/partition';
 import { revoke } from '@proton/shared/lib/api/auth';
 import noop from '@proton/utils/noop';
 
+import type { Api, ApiAuth } from '../../types';
+import { partition } from '../../utils/array/partition';
 import { getActiveSessions } from './session';
 
 export type SwitchableSession = {

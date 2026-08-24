@@ -6,15 +6,15 @@ import { c, msgid } from 'ttag';
 
 import TableCell from '@proton/components/components/table/TableCell';
 import TableRow from '@proton/components/components/table/TableRow';
-import { getLocalPath } from '@proton/pass/components/Navigation/routing';
-import type { MonitorTableRow } from '@proton/pass/hooks/monitor/useBreachesTable';
-import { getAddressId } from '@proton/pass/lib/monitor/monitor.utils';
-import { AddressType } from '@proton/pass/lib/monitor/types';
-import { selectMonitorSettingByType } from '@proton/pass/store/selectors';
-import { epochToDate } from '@proton/pass/utils/time/format';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
+import type { MonitorTableRow } from '../../../../hooks/monitor/useBreachesTable';
+import { getAddressId } from '../../../../lib/monitor/monitor.utils';
+import { AddressType } from '../../../../lib/monitor/types';
+import { selectMonitorSettingByType } from '../../../../store/selectors';
+import { epochToDate } from '../../../../utils/time/format';
+import { getLocalPath } from '../../../Navigation/routing';
 import { BreachGroupRowActions } from './BreachGroupRowActions';
 
 const getStatusClassname = (row: MonitorTableRow) => {

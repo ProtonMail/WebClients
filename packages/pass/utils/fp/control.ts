@@ -2,7 +2,7 @@
 import type { DebounceSettings } from 'lodash';
 import debounce from 'lodash/debounce';
 
-import type { Callback } from '@proton/pass/types';
+import type { Callback } from '../../types';
 
 /** Creates a debounced function that accumulates parameters
  * between calls. Params are collected in a buffer and processe
