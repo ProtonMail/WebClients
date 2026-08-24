@@ -2,16 +2,17 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import Prompt from '@proton/components/components/prompt/Prompt';
-import useNotifications from '@proton/components/hooks/useNotifications';
-import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import useLoading from '@proton/hooks/useLoading';
 import { ChargebeePaypalButton } from '@proton/payments/ui/components/ChargebeePaypalButton';
 import { usePaymentPollers } from '@proton/payments/ui/hooks/usePaymentPollers';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
+
+import type { ModalProps } from '../../components/modalTwo/Modal';
+import Prompt from '../../components/prompt/Prompt';
+import useNotifications from '../../hooks/useNotifications';
+import { usePaymentFacade } from '../../payments/client-extensions/index';
 
 const PAYMENT_AUTHORIZATION_AMOUNT = 100;
 const PAYMENT_AUTHORIZATION_CURRENCY = 'CHF';

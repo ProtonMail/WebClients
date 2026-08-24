@@ -4,11 +4,6 @@ import { c } from 'ttag';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import StripedItem from '@proton/components/components/stripedList/StripedItem';
-import { StripedList } from '@proton/components/components/stripedList/StripedList';
 import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
 import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
 import { IcEnvelopeDot } from '@proton/icons/icons/IcEnvelopeDot';
@@ -16,6 +11,12 @@ import { IcFolderArrowUp } from '@proton/icons/icons/IcFolderArrowUp';
 import { IcPaperClip } from '@proton/icons/icons/IcPaperClip';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { dateLocale } from '@proton/shared/lib/i18n';
+
+import ModalTwoContent from '../../../../../components/modalTwo/ModalContent';
+import ModalTwoFooter from '../../../../../components/modalTwo/ModalFooter';
+import ModalTwoHeader from '../../../../../components/modalTwo/ModalHeader';
+import StripedItem from '../../../../../components/stripedList/StripedItem';
+import { StripedList } from '../../../../../components/stripedList/StripedList';
 
 interface Props {
     onKeepPlan: () => void;

@@ -3,10 +3,10 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import clsx from '@proton/utils/clsx';
 
+import useModalState from '../../../../components/modalTwo/useModalState';
 import ConfirmSessionRecoveryCancellationModal from '../ConfirmSessionRecoveryCancellationModal';
 import PasswordResetAvailableAccountModal from '../PasswordResetAvailableAccountModal';
 import SessionRecoveryStatusTitle from './SessionRecoveryStatusTitle';

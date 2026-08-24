@@ -4,16 +4,17 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import Checkbox from '@proton/components/components/input/Checkbox';
-import LabelStack from '@proton/components/components/labelStack/LabelStack';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-import type { Actions } from '@proton/components/containers/filters/interfaces';
-import type { LabelModel } from '@proton/components/containers/labels/modals/EditLabelModal';
-import EditLabelModal from '@proton/components/containers/labels/modals/EditLabelModal';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { hasReachedLabelLimit } from '@proton/shared/lib/helpers/folder';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
 import clsx from '@proton/utils/clsx';
+
+import Checkbox from '../../../components/input/Checkbox';
+import LabelStack from '../../../components/labelStack/LabelStack';
+import useModalState from '../../../components/modalTwo/useModalState';
+import type { LabelModel } from '../../labels/modals/EditLabelModal';
+import EditLabelModal from '../../labels/modals/EditLabelModal';
+import type { Actions } from '../interfaces';
 
 interface Props {
     labels: Label[];

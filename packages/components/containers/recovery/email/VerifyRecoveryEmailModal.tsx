@@ -3,13 +3,14 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import Prompt from '@proton/components/components/prompt/Prompt';
-import useApi from '@proton/components/hooks/useApi';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { postVerifySend } from '@proton/shared/lib/api/verify';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
+
+import type { ModalProps } from '../../../components/modalTwo/Modal';
+import Prompt from '../../../components/prompt/Prompt';
+import useApi from '../../../hooks/useApi';
+import useNotifications from '../../../hooks/useNotifications';
 
 export const getVerificationSentText = (address: string) => {
     return c('Email verification').t`Verification email sent to ${address}`;

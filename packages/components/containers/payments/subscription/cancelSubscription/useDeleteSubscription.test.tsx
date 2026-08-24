@@ -1,15 +1,15 @@
-import { componentsHookRenderer } from '@proton/components/containers/contacts/tests/render';
-import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { type FeedbackDowngradeData, deleteSubscription } from '@proton/payments/core/api/api';
 
+import useApi from '../../../../hooks/useApi';
+import useEventManager from '../../../../hooks/useEventManager';
+import useNotifications from '../../../../hooks/useNotifications';
+import { componentsHookRenderer } from '../../../contacts/tests/render';
 import { useCancellationLoadingStep } from '../cancellationSteps/useCancellationLoadingStep';
 import { useDeleteSubscription } from './useDeleteSubscription';
 
-jest.mock('@proton/components/hooks/useApi');
-jest.mock('@proton/components/hooks/useEventManager');
-jest.mock('@proton/components/hooks/useNotifications');
+jest.mock('../../../../hooks/useApi');
+jest.mock('../../../../hooks/useEventManager');
+jest.mock('../../../../hooks/useNotifications');
 jest.mock('../cancellationSteps/useCancellationLoadingStep');
 
 const mockApi = jest.fn().mockResolvedValue({});

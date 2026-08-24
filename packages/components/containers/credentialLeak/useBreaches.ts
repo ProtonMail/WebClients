@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 
-import type { FetchedBreaches } from '@proton/components/containers/credentialLeak/models';
-import { BREACH_STATE } from '@proton/components/containers/credentialLeak/models';
+import type { FetchedBreaches } from './models';
+import { BREACH_STATE } from './models';
 
 export const useBreaches = () => {
     const [breaches, setBreaches] = useState<FetchedBreaches[]>([]);

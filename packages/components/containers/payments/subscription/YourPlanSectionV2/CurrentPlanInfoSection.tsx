@@ -5,10 +5,6 @@ import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Href } from '@proton/atoms/Href/Href';
 import { Pill } from '@proton/atoms/Pill/Pill';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import SettingsLink from '@proton/components/components/link/SettingsLink';
-import useSettingsLink from '@proton/components/components/link/useSettingsLink';
-import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
-import { useTrialOnlyPaymentMethods } from '@proton/components/hooks/useTrialOnlyPaymentMethods';
 import type { ADDON_NAMES } from '@proton/payments/core/constants';
 import type { FreeSubscription } from '@proton/payments/core/interface';
 import {
@@ -37,6 +33,10 @@ import { MailFeatureFlag } from '@proton/unleash/Flags';
 import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 
+import SettingsLink from '../../../../components/link/SettingsLink';
+import useSettingsLink from '../../../../components/link/useSettingsLink';
+import useDashboardPaymentFlow from '../../../../hooks/useDashboardPaymentFlow';
+import { useTrialOnlyPaymentMethods } from '../../../../hooks/useTrialOnlyPaymentMethods';
 import { useSubscriptionModal } from '../SubscriptionModalProvider';
 import { REACTIVATE_SOURCE } from '../cancellationFlow/useCancellationTelemetry';
 import { SUBSCRIPTION_STEPS } from '../constants';

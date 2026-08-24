@@ -1,11 +1,11 @@
 import { featureTourActions } from '@proton/account/featuresTour';
 import { remindMeLaterAboutFeatureTourAction } from '@proton/account/featuresTour/actions';
-import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
-import { usePostSubscriptionTourTelemetry } from '@proton/components/hooks/mail/usePostSubscriptionTourTelemetry';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { TelemetryPostSubscriptionTourEvents } from '@proton/shared/lib/api/telemetry';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
+import type { ModalStateProps } from '../../../../components/modalTwo/useModalState';
+import { usePostSubscriptionTourTelemetry } from '../../../../hooks/mail/usePostSubscriptionTourTelemetry';
 import type { SubscriptionOverridableStep } from '../SubscriptionModalProvider';
 import type { PostSubscriptionFlowName } from './interface';
 import postSubscriptionConfig from './postSubscriptionConfig';

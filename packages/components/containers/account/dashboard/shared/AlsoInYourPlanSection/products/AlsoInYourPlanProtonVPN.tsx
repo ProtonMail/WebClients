@@ -2,15 +2,15 @@ import { useContext } from 'react';
 
 import { c } from 'ttag';
 
-import VpnLogo from '@proton/components/components/logo/VpnLogo';
+import { APPS, VPN_APP_NAME } from '@proton/shared/lib/constants';
+import { goToPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
+
+import VpnLogo from '../../../../../../components/logo/VpnLogo';
 import {
     getVPNLightningFastSpeedFeature,
     getVPNPaidCountriesFeature,
     getVPNPaidServersFeature,
-} from '@proton/components/containers/payments/features/vpn';
-import { APPS, VPN_APP_NAME } from '@proton/shared/lib/constants';
-import { goToPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
-
+} from '../../../../../payments/features/vpn';
 import { AlsoInYourPlanSectionContext } from '../AlsoInYourPlanSection';
 import AlsoInYourPlanSectionCard from '../AlsoInYourPlanSectionCard';
 import vpn from '../illustrations/vpn.jpg';

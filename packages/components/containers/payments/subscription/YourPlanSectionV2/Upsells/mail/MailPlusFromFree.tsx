@@ -2,17 +2,17 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
-import Icon from '@proton/components/components/icon/Icon';
-import Info from '@proton/components/components/link/Info';
-import type { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
-import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
-import { SUBSCRIPTION_STEPS, useSubscriptionModal } from '@proton/components/index';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { DARK_WEB_MONITORING_NAME, DASHBOARD_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
+import Icon from '../../../../../../components/icon/Icon';
+import Info from '../../../../../../components/link/Info';
+import useDashboardPaymentFlow from '../../../../../../hooks/useDashboardPaymentFlow';
+import { SUBSCRIPTION_STEPS, useSubscriptionModal } from '../../../../../../index';
+import type { PlanCardFeatureDefinition } from '../../../../features/interface';
 import type { GetPlanUpsellArgs } from '../../../helpers';
 import UpsellPanelsV2 from '../../../panels/UpsellPanelsV2';
 import { PlanIcon } from '../../PlanIcon';

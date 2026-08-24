@@ -6,10 +6,6 @@ import { userSettingsActions } from '@proton/account';
 import { useUpdateAccountRecovery } from '@proton/account/recovery/useUpdateAccountRecovery';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import Info from '@proton/components/components/link/Info';
-import SettingsLink from '@proton/components/components/link/SettingsLink';
-import useApi from '@proton/components/hooks/useApi';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { patchNews } from '@proton/shared/lib/api/settings';
 import { APPS, MAIL_APP_NAME } from '@proton/shared/lib/constants';
@@ -23,6 +19,10 @@ import {
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 import { SETTINGS_STATUS } from '@proton/shared/lib/interfaces';
 
+import Info from '../../components/link/Info';
+import SettingsLink from '../../components/link/SettingsLink';
+import useApi from '../../hooks/useApi';
+import useNotifications from '../../hooks/useNotifications';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
@@ -31,9 +31,7 @@ import ToggleAssistantContainer from '../general/ToggleAssistant/ToggleAssistant
 import DailyEmailNotificationToggle from '../recovery/DailyEmailNotificationToggle';
 import RecoveryEmail from '../recovery/email/RecoveryEmail';
 
-const LazyInboxDesktopDefaultAppSettings = lazy(
-    () => import('@proton/components/containers/desktop/defaultApp/InboxDesktopDefaultAppSettings')
-);
+const LazyInboxDesktopDefaultAppSettings = lazy(() => import('../desktop/defaultApp/InboxDesktopDefaultAppSettings'));
 
 const MessagesGeneralSection = () => {
     const [userSettings] = useUserSettings();

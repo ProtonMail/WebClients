@@ -1,12 +1,12 @@
 import { c } from 'ttag';
 
-import Info from '@proton/components/components/link/Info';
 import { IcMoon } from '@proton/icons/icons/IcMoon';
 import { IcSun } from '@proton/icons/icons/IcSun';
 import type { ThemeTypes } from '@proton/shared/lib/themes/constants';
 import { PROTON_THEMES_MAP } from '@proton/shared/lib/themes/themes';
 import clsx from '@proton/utils/clsx';
 
+import Info from '../../components/link/Info';
 import type { Theme } from './ThemeCards';
 import ThemeCards from './ThemeCards';
 import type { ThemeSvgSize } from './ThemeSvg';

@@ -4,9 +4,9 @@ import { c } from 'ttag';
 
 import { useUserPermissions } from '@proton/account/userPermissions/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import RadioGroup from '@proton/components/components/input/RadioGroup';
 import type { RetentionRuleProduct, RetentionRuleScopeType } from '@proton/shared/lib/interfaces/RetentionRule';
 
+import RadioGroup from '../../../components/input/RadioGroup';
 import RetentionScopeItem from './RetentionScopeItem';
 import { PRODUCT_FILTER_OPTIONS } from './constants';
 import { generateClientIDForRuleScope } from './helpers';

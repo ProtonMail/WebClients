@@ -1,8 +1,8 @@
-import SettingsPageTitle from '@proton/components/containers/account/SettingsPageTitle';
-import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
-import SettingsSection from '@proton/components/containers/account/SettingsSection';
-import SettingsSectionTitle from '@proton/components/containers/account/SettingsSectionTitle';
-import PrivateMainArea from '@proton/components/containers/layout/PrivateMainArea';
+import SettingsPageTitle from '../account/SettingsPageTitle';
+import SettingsParagraph from '../account/SettingsParagraph';
+import SettingsSection from '../account/SettingsSection';
+import SettingsSectionTitle from '../account/SettingsSectionTitle';
+import PrivateMainArea from './PrivateMainArea';
 
 const PrivateMainAreaLoading = () => {
     return (

@@ -3,10 +3,11 @@ import { forwardRef, useContext } from 'react';
 
 import type { ButtonLikeOwnProps, ButtonLikeProps } from '@proton/atoms/Button/ButtonLike';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import NotificationContext from '@proton/components/containers/notifications/notificationContext';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import type { PolymorphicForwardRefExoticComponent, PolymorphicPropsWithoutRef } from '@proton/react-polymorphic-types';
 import clsx from '@proton/utils/clsx';
+
+import NotificationContext from './notificationContext';
 
 type ButtonPropsFilter<T> = Omit<T, 'shape' | 'color' | 'size'>;
 type NotificationOwnProps = { close?: boolean } & ButtonPropsFilter<ButtonLikeOwnProps>;

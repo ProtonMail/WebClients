@@ -5,15 +5,6 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Card } from '@proton/atoms/Card/Card';
-import SettingsLink from '@proton/components/components/link/SettingsLink';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
-import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
-import CalendarMemberAndInvitationList from '@proton/components/containers/calendar/settings/CalendarMemberAndInvitationList';
-import ShareCalendarModal from '@proton/components/containers/calendar/shareProton/ShareCalendarModal';
-import CalendarShareUrlSection from '@proton/components/containers/calendar/shareURL/CalendarShareUrlSection';
-import useApi from '@proton/components/hooks/useApi';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import { removeInvitation, removeMember } from '@proton/shared/lib/api/calendars';
 import { CALENDAR_SETTINGS_SECTION_ID, MAX_CALENDAR_MEMBERS } from '@proton/shared/lib/calendar/constants';
@@ -30,7 +21,16 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Address, UserModel } from '@proton/shared/lib/interfaces';
 import type { CalendarMember, CalendarMemberInvitation, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
+import SettingsLink from '../../../components/link/SettingsLink';
+import useModalState from '../../../components/modalTwo/useModalState';
+import useApi from '../../../hooks/useApi';
+import useNotifications from '../../../hooks/useNotifications';
+import SettingsParagraph from '../../account/SettingsParagraph';
+import SettingsSectionWide from '../../account/SettingsSectionWide';
 import SubSettingsSection from '../../layout/SubSettingsSection';
+import ShareCalendarModal from '../shareProton/ShareCalendarModal';
+import CalendarShareUrlSection from '../shareURL/CalendarShareUrlSection';
+import CalendarMemberAndInvitationList from './CalendarMemberAndInvitationList';
 
 import './CalendarMemberGrid.scss';
 

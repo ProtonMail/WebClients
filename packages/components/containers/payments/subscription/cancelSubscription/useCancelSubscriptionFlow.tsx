@@ -3,7 +3,6 @@ import { c } from 'ttag';
 import { usePlans } from '@proton/account/plans/hooks';
 import { useGetSubscription, useSubscription } from '@proton/account/subscription/hooks';
 import { useGetUser } from '@proton/account/user/hooks';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import type { PLANS } from '@proton/payments/core/constants';
 import { Renew } from '@proton/payments/core/subscription/constants';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
@@ -19,6 +18,7 @@ import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { APPS } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import useNotifications from '../../../../hooks/useNotifications';
 import { useCalendarDowngradeStep } from '../cancellationSteps/useCalendarDowngradeStep';
 import { useCancelConfirmationStep } from '../cancellationSteps/useCancelConfirmationStep';
 import { useCancelTrialStep } from '../cancellationSteps/useCancelTrialStep';

@@ -3,13 +3,14 @@ import { c } from 'ttag';
 import { leaveOrganization } from '@proton/account/organization/actions';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
-import Prompt from '@proton/components/components/prompt/Prompt';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+
+import type { ModalStateProps } from '../../components/modalTwo/useModalState';
+import Prompt from '../../components/prompt/Prompt';
+import useNotifications from '../../hooks/useNotifications';
 
 const LeaveFamilyModal = (props: ModalStateProps) => {
     const [loading, withLoading] = useLoading();

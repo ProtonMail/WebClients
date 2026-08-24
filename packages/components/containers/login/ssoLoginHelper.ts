@@ -1,4 +1,3 @@
-import { syncAddresses, syncUser } from '@proton/components/containers/login/syncCache';
 import { activateAuthDeviceConfig } from '@proton/shared/lib/api/authDevice';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
@@ -51,6 +50,7 @@ import type {
 } from './interface';
 import { type AuthActionResponse, AuthStep, SSOLoginCapabilites } from './interface';
 import { getBackupPasswordError, handleUnlockKey } from './loginHelper';
+import { syncAddresses, syncUser } from './syncCache';
 
 /**
  * Whether the organization disabled the SSO backup password. Only present on SSO login responses.

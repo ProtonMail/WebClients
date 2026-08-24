@@ -3,14 +3,14 @@ import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import SettingsLink from '@proton/components/components/link/SettingsLink';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import Prompt from '@proton/components/components/prompt/Prompt';
 import { PLANS } from '@proton/payments/core/constants';
 import { getRenewalTime } from '@proton/payments/core/subscription/helpers';
 import { isFreeSubscription } from '@proton/payments/core/type-guards';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
+import SettingsLink from '../../../../components/link/SettingsLink';
+import type { ModalProps } from '../../../../components/modalTwo/Modal';
+import Prompt from '../../../../components/prompt/Prompt';
 import useEventManager from '../../../../hooks/useEventManager';
 import useCancellationTelemetry, { REACTIVATE_SOURCE } from './useCancellationTelemetry';
 

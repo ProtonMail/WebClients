@@ -5,20 +5,6 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
-import Form from '@proton/components/components/form/Form';
-import Loader from '@proton/components/components/loader/Loader';
-import BasicModal from '@proton/components/components/modalTwo/BasicModal';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import BusySlotsCheckbox from '@proton/components/containers/calendar/calendarModal/BusySlotsCheckbox';
-import {
-    getCalendarPayload,
-    getCalendarSettingsPayload,
-    getDefaultModel,
-} from '@proton/components/containers/calendar/calendarModal/personalCalendarModal/calendarModalState';
-import useGetCalendarActions from '@proton/components/containers/calendar/hooks/useGetCalendarActions';
-import useGetCalendarSetup from '@proton/components/containers/calendar/hooks/useGetCalendarSetup';
-import GenericError from '@proton/components/containers/error/GenericError';
-import useApi from '@proton/components/hooks/useApi';
 import { useLoading } from '@proton/hooks';
 import { validateSubscription } from '@proton/shared/lib/api/calendars';
 import { CALENDAR_TYPE, MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
@@ -28,6 +14,21 @@ import { truncateMore } from '@proton/shared/lib/helpers/string';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { CALENDAR_SUBSCRIPTION_STATUS } from '@proton/shared/lib/interfaces/calendar';
+
+import Form from '../../../../components/form/Form';
+import Loader from '../../../../components/loader/Loader';
+import BasicModal from '../../../../components/modalTwo/BasicModal';
+import InputFieldTwo from '../../../../components/v2/field/InputField';
+import useApi from '../../../../hooks/useApi';
+import GenericError from '../../../error/GenericError';
+import useGetCalendarActions from '../../hooks/useGetCalendarActions';
+import useGetCalendarSetup from '../../hooks/useGetCalendarSetup';
+import BusySlotsCheckbox from '../BusySlotsCheckbox';
+import {
+    getCalendarPayload,
+    getCalendarSettingsPayload,
+    getDefaultModel,
+} from '../personalCalendarModal/calendarModalState';
 
 interface Props {
     open: boolean;

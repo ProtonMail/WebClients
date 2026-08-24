@@ -1,18 +1,6 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Info from '@proton/components/components/link/Info';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-import type { PromptProps } from '@proton/components/components/prompt/Prompt';
-import Prompt from '@proton/components/components/prompt/Prompt';
-import Toggle from '@proton/components/components/toggle/Toggle';
-import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
-import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
-import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
-import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
-import SettingsSection from '@proton/components/containers/account/SettingsSection';
-import useApi from '@proton/components/hooks/useApi';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
@@ -23,6 +11,18 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { ATTACH_PUBLIC_KEY, SIGN } from '@proton/shared/lib/mail/mailSettings';
 
+import Info from '../../components/link/Info';
+import useModalState from '../../components/modalTwo/useModalState';
+import type { PromptProps } from '../../components/prompt/Prompt';
+import Prompt from '../../components/prompt/Prompt';
+import Toggle from '../../components/toggle/Toggle';
+import useApi from '../../hooks/useApi';
+import useNotifications from '../../hooks/useNotifications';
+import SettingsLayout from '../account/SettingsLayout';
+import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
+import SettingsLayoutRight from '../account/SettingsLayoutRight';
+import SettingsParagraph from '../account/SettingsParagraph';
+import SettingsSection from '../account/SettingsSection';
 import { PGPSchemeSelect } from './PGPSchemeSelect';
 
 interface AutomaticallySignModalProps extends Omit<PromptProps, 'title' | 'buttons' | 'children'> {

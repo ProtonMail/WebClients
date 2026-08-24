@@ -7,46 +7,43 @@ import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
-import Loader from '@proton/components/components/loader/Loader';
-import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
-import withPermissionGuard from '@proton/components/components/orgPermissions/withPermissionGuard';
-import Table from '@proton/components/components/table/Table';
-import TableBody from '@proton/components/components/table/TableBody';
-import TableCell from '@proton/components/components/table/TableCell';
-import TableRow from '@proton/components/components/table/TableRow';
-import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
-import { CountryFlagAndName } from '@proton/components/containers/vpn/gateways/CountryFlagAndName';
-import DeleteModal from '@proton/components/containers/vpn/sharedServers/PolicyModal/DeleteModal';
-import Modal from '@proton/components/containers/vpn/sharedServers/PolicyModal/Modal';
-import SharedServersTypeButton from '@proton/components/containers/vpn/sharedServers/SharedServersTypeButton';
-import type {
-    CreateLocationFilterPayload,
-    FilterPolicyRequest,
-} from '@proton/components/containers/vpn/sharedServers/api';
-import { createLocationFilter } from '@proton/components/containers/vpn/sharedServers/api';
-import { PolicyState, PolicyType } from '@proton/components/containers/vpn/sharedServers/constants';
-import { mapPoliciesToFilterRequest } from '@proton/components/containers/vpn/sharedServers/mapPoliciesToFilterRequest';
-import { sortLocationsByLocalizedCountryName } from '@proton/components/containers/vpn/sharedServers/sortLocationsByLocalizedCountryName';
-import type { VpnLocationFilterPolicy } from '@proton/components/containers/vpn/sharedServers/useSharedServers';
-import { useSharedServers } from '@proton/components/containers/vpn/sharedServers/useSharedServers';
-import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import useApi from '@proton/components/hooks/useApi';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { getCountryOptions } from '@proton/payments/core/countries';
 import { MINUTE, SECOND, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import clsx from '@proton/utils/clsx';
 
+import Loader from '../../../components/loader/Loader';
+import { useModalTwoStatic } from '../../../components/modalTwo/useModalTwo';
+import withPermissionGuard from '../../../components/orgPermissions/withPermissionGuard';
+import Table from '../../../components/table/Table';
+import TableBody from '../../../components/table/TableBody';
+import TableCell from '../../../components/table/TableCell';
+import TableRow from '../../../components/table/TableRow';
+import getBoldFormattedText from '../../../helpers/getBoldFormattedText';
+import useApi from '../../../hooks/useApi';
 import useLocalState from '../../../hooks/useLocalState';
+import useNotifications from '../../../hooks/useNotifications';
+import SettingsSectionWide from '../../account/SettingsSectionWide';
 import NotificationButton from '../../notifications/NotificationButton';
+import { CountryFlagAndName } from '../gateways/CountryFlagAndName';
+import DeleteModal from './PolicyModal/DeleteModal';
+import Modal from './PolicyModal/Modal';
 import PolicyPreviewModal from './PolicyModal/PolicyPreviewModal';
 import UnpublishedChangesModal from './PolicyModal/UnpublishedChangesModal';
 import PolicyEditButton from './PolicyTable/PolicyEditButton';
 import PolicyUsersGroupsList from './PolicyTable/PolicyUsersGroupsList';
 import SelectedCountriesButton from './PolicyTable/SelectedCountriesButton';
+import SharedServersTypeButton from './SharedServersTypeButton';
+import type { CreateLocationFilterPayload, FilterPolicyRequest } from './api';
+import { createLocationFilter } from './api';
+import { PolicyState, PolicyType } from './constants';
 import type { LocalStatus, VpnLocationFilterPolicyLocal } from './constants';
+import { mapPoliciesToFilterRequest } from './mapPoliciesToFilterRequest';
+import { sortLocationsByLocalizedCountryName } from './sortLocationsByLocalizedCountryName';
 import { useCustomPrompt } from './useCustomPrompt';
+import type { VpnLocationFilterPolicy } from './useSharedServers';
+import { useSharedServers } from './useSharedServers';
 
 import './SharedServersSection.scss';
 

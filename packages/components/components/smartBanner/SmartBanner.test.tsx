@@ -85,7 +85,7 @@ const storeLinks = {
     },
 };
 
-describe('@proton/components/components/SmartBanner', () => {
+describe('../SmartBanner', () => {
     beforeEach(() => {
         jest.resetAllMocks();
         mockUseUser();

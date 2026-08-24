@@ -6,8 +6,6 @@ import { fromUnixTime } from 'date-fns';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import useConfig from '@proton/components/hooks/useConfig';
-import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import { isPaidSubscription } from '@proton/payments/core/type-guards';
@@ -17,6 +15,8 @@ import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { NEWSLETTER_SUBSCRIPTIONS_BITS } from '@proton/shared/lib/helpers/newsletter';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import useConfig from '../../../hooks/useConfig';
+import useSpotlightOnFeature from '../../../hooks/useSpotlightOnFeature';
 import { getIsReferralUserEligible } from './useReferralUserEligible';
 
 export const useReferralDiscover = () => {

@@ -4,18 +4,6 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import useFormErrors from '@proton/components/components/v2/useFormErrors';
-import { ExternalSSOError, handleExternalSSOLogin } from '@proton/components/containers/login/ssoExternalLogin';
-import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import useConfig from '@proton/components/hooks/useConfig';
-import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { auth, createSession, getInfo, revoke } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getAuthAPI } from '@proton/shared/lib/api/helpers/customConfig';
@@ -31,6 +19,18 @@ import { getVpnAccountUrl } from '@proton/shared/lib/helpers/url';
 import type { Api, Domain } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
+import type { ModalProps } from '../../../components/modalTwo/Modal';
+import ModalTwo from '../../../components/modalTwo/Modal';
+import ModalTwoContent from '../../../components/modalTwo/ModalContent';
+import ModalTwoFooter from '../../../components/modalTwo/ModalFooter';
+import ModalTwoHeader from '../../../components/modalTwo/ModalHeader';
+import InputFieldTwo from '../../../components/v2/field/InputField';
+import useFormErrors from '../../../components/v2/useFormErrors';
+import getBoldFormattedText from '../../../helpers/getBoldFormattedText';
+import useConfig from '../../../hooks/useConfig';
+import useErrorHandler from '../../../hooks/useErrorHandler';
+import { useSilentApi } from '../../../hooks/useSilentApi';
+import { ExternalSSOError, handleExternalSSOLogin } from '../../login/ssoExternalLogin';
 import successSvg from './cloud-lock-check.svg';
 import errorSvg from './cloud-lock-cross.svg';
 

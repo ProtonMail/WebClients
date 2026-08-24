@@ -4,19 +4,20 @@ import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import Form from '@proton/components/components/form/Form';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
-import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { updateInvoiceText } from '@proton/shared/lib/api/settings';
+
+import Form from '../../components/form/Form';
+import type { ModalProps } from '../../components/modalTwo/Modal';
+import ModalTwo from '../../components/modalTwo/Modal';
+import ModalTwoContent from '../../components/modalTwo/ModalContent';
+import ModalTwoFooter from '../../components/modalTwo/ModalFooter';
+import ModalTwoHeader from '../../components/modalTwo/ModalHeader';
+import InputFieldTwo from '../../components/v2/field/InputField';
+import TextAreaTwo from '../../components/v2/input/TextArea';
+import useApi from '../../hooks/useApi';
+import useEventManager from '../../hooks/useEventManager';
+import useNotifications from '../../hooks/useNotifications';
 
 const InvoiceTextModal = (props: ModalProps) => {
     const [{ InvoiceText }] = useUserSettings();

@@ -3,14 +3,14 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
-import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
-import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
+import DropdownMenu from '../../../../../components/dropdown/DropdownMenu';
+import DropdownMenuButton from '../../../../../components/dropdown/DropdownMenuButton';
+import SimpleDropdown from '../../../../../components/dropdown/SimpleDropdown';
+import ModalTwoContent from '../../../../../components/modalTwo/ModalContent';
+import ModalTwoFooter from '../../../../../components/modalTwo/ModalFooter';
+import ModalTwoHeader from '../../../../../components/modalTwo/ModalHeader';
 import { B2BStoryCards } from '../components/B2BStoryCards';
 import { B2CStoryCards } from '../components/B2CStoryCards';
 import { ComparisonTable } from '../components/ComparisonTable';

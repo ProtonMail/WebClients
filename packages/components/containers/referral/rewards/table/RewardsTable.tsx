@@ -2,14 +2,14 @@ import { c } from 'ttag';
 
 import { DashboardCard, DashboardCardContent } from '@proton/atoms/DashboardCard/DashboardCard';
 import { DashboardGrid } from '@proton/atoms/DashboardGrid/DashboardGrid';
-import Table from '@proton/components/components/table/Table';
-import TableBody from '@proton/components/components/table/TableBody';
-import TableHeader from '@proton/components/components/table/TableHeader';
-import TableRow from '@proton/components/components/table/TableRow';
-import { getHasCompletedReferral } from '@proton/components/containers/referral/rewards/helpers';
 import type { Referral } from '@proton/shared/lib/interfaces';
 import { ReferralState } from '@proton/shared/lib/interfaces';
 
+import Table from '../../../../components/table/Table';
+import TableBody from '../../../../components/table/TableBody';
+import TableHeader from '../../../../components/table/TableHeader';
+import TableRow from '../../../../components/table/TableRow';
+import { getHasCompletedReferral } from '../helpers';
 import ActivityCell from './ActivityCell';
 import DateCell from './DateCell';
 import RewardCell from './RewardCell';

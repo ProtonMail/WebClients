@@ -1,13 +1,13 @@
 import { c } from 'ttag';
 
-import { Badge } from '@proton/components/components/badge/Badge';
-import Icon from '@proton/components/components/icon/Icon';
-import Info from '@proton/components/components/link/Info';
-import StripedItem from '@proton/components/components/stripedList/StripedItem';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
+import { Badge } from '../../../../../components/badge/Badge';
+import Icon from '../../../../../components/icon/Icon';
+import Info from '../../../../../components/link/Info';
+import StripedItem from '../../../../../components/stripedList/StripedItem';
 import { getProtonPassFeatureLifetime } from '../../../features/pass';
 import type { Item } from './Item';
 

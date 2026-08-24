@@ -1,11 +1,11 @@
 import { useOrganization } from '@proton/account/organization/hooks';
-import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
-import { componentsHookRenderer } from '@proton/components/containers/contacts/tests/render';
 
+import { useModalTwoPromise } from '../../../../../components/modalTwo/useModalTwo';
+import { componentsHookRenderer } from '../../../../contacts/tests/render';
 import { useLossLoyaltyStep } from '../useLossLoyaltyStep';
 
 jest.mock('@proton/account/organization/hooks');
-jest.mock('@proton/components/components/modalTwo/useModalTwo');
+jest.mock('../../../../../components/modalTwo/useModalTwo');
 
 const mockShowModal = jest.fn();
 

@@ -1,8 +1,9 @@
 import type { ChangeEvent } from 'react';
 
-import EmailInput from '@proton/components/components/input/EmailInput';
 import { getAllFieldLabels } from '@proton/shared/lib/helpers/contacts';
 import type { VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
+
+import EmailInput from '../../../../components/input/EmailInput';
 
 interface Props {
     vCardProperty: VCardProperty<string>;

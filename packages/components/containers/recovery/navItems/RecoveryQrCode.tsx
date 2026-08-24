@@ -2,11 +2,11 @@ import { c } from 'ttag';
 
 import { getLastModifiedDate } from '@proton/account/recovery/lastModifiedTime';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import SettingsNavItem from '@proton/components/containers/layout/SettingsNavItem';
-import { StatusBadge, StatusBadgeStatus } from '@proton/components/containers/layout/StatusBadge';
 import { IcQrCode } from '@proton/icons/icons/IcQrCode';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
+import SettingsNavItem from '../../layout/SettingsNavItem';
+import { StatusBadge, StatusBadgeStatus } from '../../layout/StatusBadge';
 import { LastChanged } from '../LastChanged';
 import { NavItemStatus } from './NavItemStatus';
 

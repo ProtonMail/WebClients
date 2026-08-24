@@ -5,10 +5,11 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Input } from '@proton/atoms/Input/Input';
-import Info from '@proton/components/components/link/Info';
-import useToggle from '@proton/components/hooks/useToggle';
 import { IcGift } from '@proton/icons/icons/IcGift';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
+
+import Info from '../../components/link/Info';
+import useToggle from '../../hooks/useToggle';
 
 interface Props {
     loading?: boolean;

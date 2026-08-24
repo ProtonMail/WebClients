@@ -1,6 +1,5 @@
 import { render, screen, waitFor } from '@testing-library/react';
 
-import type { ViewPaymentMethod } from '@proton/components/payments/client-extensions';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { SavedPaymentMethod } from '@proton/payments/core/interface';
 import { applyHOCs } from '@proton/testing/lib/context/hocs/helpers';
@@ -10,6 +9,7 @@ import { withConfig } from '@proton/testing/lib/context/hocs/with-config';
 import { withNotifications } from '@proton/testing/lib/context/hocs/with-notifications';
 import { withReduxStore } from '@proton/testing/lib/context/hocs/with-redux-store';
 
+import type { ViewPaymentMethod } from '../../payments/client-extensions/index';
 import { PaymentsNoApi } from './Payment';
 
 const apiMock = jest.fn();
@@ -28,8 +28,8 @@ jest.mock('@proton/payments/ui/components/ChargebeeWrapper', () => ({
 }));
 
 // Same for the SEPA form: it renders a third-party iframe and reads the full directDebit hook.
-jest.mock('@proton/components/payments/chargebee/SepaDirectDebit', () => ({
-    ...jest.requireActual('@proton/components/payments/chargebee/SepaDirectDebit'),
+jest.mock('../../payments/chargebee/SepaDirectDebit', () => ({
+    ...jest.requireActual('../../payments/chargebee/SepaDirectDebit'),
     SepaDirectDebit: () => <div data-testid="sepa-direct-debit" />,
 }));
 

@@ -7,7 +7,7 @@ import { PLANS_MAP } from '@proton/testing/data/payments/data-plans';
 
 import ScribeAddon from './ScribeAddon';
 
-jest.mock('@proton/components/containers/payments/subscription/assistant/helpers', () => ({
+jest.mock('./subscription/assistant/helpers', () => ({
     getScribeUpsellText: () => 'AI-powered writing assistant',
     getScribeUpsellLearnMore: () => 'https://proton.me/support',
     getScribeWritingAssistantText: () => 'Proton Scribe writing assistant',

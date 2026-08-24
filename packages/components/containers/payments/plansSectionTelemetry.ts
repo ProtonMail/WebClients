@@ -1,9 +1,10 @@
 import { useCallback } from 'react';
 
-import useApi from '@proton/components/hooks/useApi';
 import { TelemetryMeasurementGroups, TelemetryUpgradePageEvents } from '@proton/shared/lib/api/telemetry';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { sendTelemetryReport, telemetryReportsBatchQueue } from '@proton/shared/lib/helpers/metrics';
+
+import useApi from '../../hooks/useApi';
 
 type Cta = 'select_plan' | 'view_plans_details';
 

@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
 
-import useEarlyAccess from '@proton/components/hooks/useEarlyAccess';
 import useLoading from '@proton/hooks/useLoading';
 import metrics from '@proton/metrics';
 import { VersionLoadError } from '@proton/shared/lib/apps/desktopVersions';
@@ -12,6 +11,8 @@ import { getInboxDesktopIsSnapPackage } from '@proton/shared/lib/desktop/snapHel
 import { isDebianBased, isFedoraOrRedHatBased, isMac, isWindows } from '@proton/shared/lib/helpers/browser';
 import { isElectronOnLinux, isElectronOnMac, isElectronOnWindows } from '@proton/shared/lib/helpers/desktop';
 import { getDownloadUrl } from '@proton/shared/lib/helpers/url';
+
+import useEarlyAccess from '../../hooks/useEarlyAccess';
 
 const initialLinuxClients: DesktopVersion = {
     CategoryName: RELEASE_CATEGORIES.EARLY_ACCESS,

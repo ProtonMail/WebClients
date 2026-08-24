@@ -1,20 +1,21 @@
 import { c, msgid } from 'ttag';
 
-import Alert from '@proton/components/components/alert/Alert';
-import Table from '@proton/components/components/table/Table';
-import TableBody from '@proton/components/components/table/TableBody';
-import TableHeader from '@proton/components/components/table/TableHeader';
-import TableHeaderCell from '@proton/components/components/table/TableHeaderCell';
-import TableRow from '@proton/components/components/table/TableRow';
-import CalendarMemberRow from '@proton/components/containers/calendar/settings/CalendarMemberRow';
-import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
-import useApi from '@proton/components/hooks/useApi';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { updateInvitation, updateMemberPermission } from '@proton/shared/lib/api/calendars';
 import { MAX_CALENDAR_MEMBERS } from '@proton/shared/lib/calendar/constants';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import type { CalendarMember, CalendarMemberInvitation } from '@proton/shared/lib/interfaces/calendar';
 import { MEMBER_INVITATION_STATUS } from '@proton/shared/lib/interfaces/calendar';
+
+import Alert from '../../../components/alert/Alert';
+import Table from '../../../components/table/Table';
+import TableBody from '../../../components/table/TableBody';
+import TableHeader from '../../../components/table/TableHeader';
+import TableHeaderCell from '../../../components/table/TableHeaderCell';
+import TableRow from '../../../components/table/TableRow';
+import useApi from '../../../hooks/useApi';
+import useNotifications from '../../../hooks/useNotifications';
+import { useContactEmailsCache } from '../../contacts/ContactEmailsProvider';
+import CalendarMemberRow from './CalendarMemberRow';
 
 interface MemberAndInvitationListProps {
     members: CalendarMember[];

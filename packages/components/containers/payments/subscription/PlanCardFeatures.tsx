@@ -3,17 +3,6 @@ import { Fragment, cloneElement, isValidElement, useState } from 'react';
 
 import { c } from 'ttag';
 
-import Icon from '@proton/components/components/icon/Icon';
-import Info from '@proton/components/components/link/Info';
-import CalendarLogo from '@proton/components/components/logo/CalendarLogo';
-import DriveLogo from '@proton/components/components/logo/DriveLogo';
-import LumoLogo from '@proton/components/components/logo/LumoLogo';
-import MailLogo from '@proton/components/components/logo/MailLogo';
-import MeetLogo from '@proton/components/components/logo/MeetLogo';
-import PassLogo from '@proton/components/components/logo/PassLogo';
-import VpnLogo from '@proton/components/components/logo/VpnLogo';
-import WalletLogo from '@proton/components/components/logo/WalletLogo';
-import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { IcCross } from '@proton/icons/icons/IcCross';
@@ -25,6 +14,17 @@ import { APPS } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
+import Icon from '../../../components/icon/Icon';
+import Info from '../../../components/link/Info';
+import CalendarLogo from '../../../components/logo/CalendarLogo';
+import DriveLogo from '../../../components/logo/DriveLogo';
+import LumoLogo from '../../../components/logo/LumoLogo';
+import MailLogo from '../../../components/logo/MailLogo';
+import MeetLogo from '../../../components/logo/MeetLogo';
+import PassLogo from '../../../components/logo/PassLogo';
+import VpnLogo from '../../../components/logo/VpnLogo';
+import WalletLogo from '../../../components/logo/WalletLogo';
+import useActiveBreakpoint from '../../../hooks/useActiveBreakpoint';
 import type { AllFeatures } from '../features';
 import { getFeatureDefinitions } from '../features';
 import type { PlanCardFeatureDefinition, ShortPlan } from '../features/interface';

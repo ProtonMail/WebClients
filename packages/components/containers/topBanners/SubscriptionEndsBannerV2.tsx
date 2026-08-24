@@ -4,19 +4,20 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Href } from '@proton/atoms/Href/Href';
-import SettingsLink from '@proton/components/components/link/SettingsLink';
-import { REACTIVATE_SOURCE } from '@proton/components/containers/payments/subscription/cancellationFlow/useCancellationTelemetry';
-import {
-    getReactivateSubscriptionAction,
-    getSubscriptionExpiresDaysLeft,
-    getSubscriptionExpiresText,
-} from '@proton/components/containers/payments/subscription/helpers/subscriptionExpires';
-import useConfig from '@proton/components/hooks/useConfig';
 import { hasDeprecatedVPN, hasVPN2024, subscriptionExpires } from '@proton/payments/core/subscription/helpers';
 import { isFreeSubscription } from '@proton/payments/core/type-guards';
 import { getAppShortName } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
+
+import SettingsLink from '../../components/link/SettingsLink';
+import useConfig from '../../hooks/useConfig';
+import { REACTIVATE_SOURCE } from '../payments/subscription/cancellationFlow/useCancellationTelemetry';
+import {
+    getReactivateSubscriptionAction,
+    getSubscriptionExpiresDaysLeft,
+    getSubscriptionExpiresText,
+} from '../payments/subscription/helpers/subscriptionExpires';
 
 const SubscriptionEndsBannerV2 = ({ app }: { app: APP_NAMES }) => {
     const { APP_NAME } = useConfig();

@@ -4,22 +4,22 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import Modal from '@proton/components/components/modalTwo/Modal';
-import ModalContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-import SubUserCreateHint from '@proton/components/containers/members/SubUserCreateHint';
-import CreateUserAccountsModal from '@proton/components/containers/members/multipleUserCreation/CreateUserAccountsModal/CreateUserAccountsModal';
-import UploadCSVFileButton from '@proton/components/containers/members/multipleUserCreation/UploadCSVFileButton';
-import type { UserTemplate } from '@proton/components/containers/members/multipleUserCreation/types';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { Domain, EnhancedMember } from '@proton/shared/lib/interfaces';
 import { CreateMemberMode } from '@proton/shared/lib/interfaces';
 
+import type { ModalProps } from '../../components/modalTwo/Modal';
+import Modal from '../../components/modalTwo/Modal';
+import ModalContent from '../../components/modalTwo/ModalContent';
+import ModalFooter from '../../components/modalTwo/ModalFooter';
+import ModalHeader from '../../components/modalTwo/ModalHeader';
+import useModalState from '../../components/modalTwo/useModalState';
+import SubUserCreateHint from './SubUserCreateHint';
+import CreateUserAccountsModal from './multipleUserCreation/CreateUserAccountsModal/CreateUserAccountsModal';
+import UploadCSVFileButton from './multipleUserCreation/UploadCSVFileButton/index';
 import type { CsvConfig } from './multipleUserCreation/csv';
 import { downloadSampleCSV } from './multipleUserCreation/csv';
+import type { UserTemplate } from './multipleUserCreation/types';
 
 enum Step {
     INSTRUCTION,

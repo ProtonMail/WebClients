@@ -1,16 +1,17 @@
 import { c } from 'ttag';
 
-import type { DropdownProps } from '@proton/components/components/dropdown/Dropdown';
-import Option from '@proton/components/components/option/Option';
-import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
-import useApi from '@proton/components/hooks/useApi';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updatePageSize } from '@proton/shared/lib/api/mailSettings';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
+
+import type { DropdownProps } from '../../components/dropdown/Dropdown';
+import Option from '../../components/option/Option';
+import SelectTwo from '../../components/selectTwo/SelectTwo';
+import useApi from '../../hooks/useApi';
+import useNotifications from '../../hooks/useNotifications';
 
 interface Props {
     id?: string;

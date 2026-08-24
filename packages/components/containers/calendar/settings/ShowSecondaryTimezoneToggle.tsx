@@ -2,14 +2,15 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import Toggle from '@proton/components/components/toggle/Toggle';
-import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import { getTimezone } from '@proton/shared/lib/date/timezone';
 import type { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
+
+import Toggle from '../../../components/toggle/Toggle';
+import useApi from '../../../hooks/useApi';
+import useEventManager from '../../../hooks/useEventManager';
+import useNotifications from '../../../hooks/useNotifications';
 
 interface Props {
     calendarUserSettings: CalendarUserSettings;

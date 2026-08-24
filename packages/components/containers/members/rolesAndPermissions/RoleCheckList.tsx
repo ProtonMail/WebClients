@@ -2,10 +2,11 @@ import { c } from 'ttag';
 
 import { getTranslatedRoleName } from '@proton/account/organizationRoles/helpers';
 import { Href } from '@proton/atoms/Href/Href';
-import Checkbox from '@proton/components/components/input/Checkbox';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { PREDEFINED_ROLE_NAME } from '@proton/shared/lib/interfaces/OrganizationRole';
 import clsx from '@proton/utils/clsx';
+
+import Checkbox from '../../../components/input/Checkbox';
 
 const ROLE_KNOWLEDGE_BASE_LINKS: Record<string, string> = {
     [PREDEFINED_ROLE_NAME.OWNER]: '/admin-roles#organizational-admin',

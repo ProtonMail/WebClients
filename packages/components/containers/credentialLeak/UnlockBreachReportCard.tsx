@@ -1,10 +1,11 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import ModalContent from '@proton/components/components/modalTwo/ModalContent';
-import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
-import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import sentinelBoltShield from '@proton/styles/assets/img/illustrations/sentinel-shield-bolt-breach-alert.svg';
+
+import ModalContent from '../../components/modalTwo/ModalContent';
+import { useSubscriptionModal } from '../payments/subscription/SubscriptionModalProvider';
+import { SUBSCRIPTION_STEPS } from '../payments/subscription/constants';
 
 import './UnlockReportModal.scss';
 

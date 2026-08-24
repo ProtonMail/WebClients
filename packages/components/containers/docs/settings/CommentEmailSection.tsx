@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
-import Toggle from '@proton/components/components/toggle/Toggle';
-import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
-import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
-import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
-import { useDocsNotificationsSettings } from '@proton/components/hooks/docs/useDocsNotificationsSettings';
+import Toggle from '../../../components/toggle/Toggle';
+import { useDocsNotificationsSettings } from '../../../hooks/docs/useDocsNotificationsSettings';
+import SettingsLayout from '../../account/SettingsLayout';
+import SettingsLayoutLeft from '../../account/SettingsLayoutLeft';
+import SettingsLayoutRight from '../../account/SettingsLayoutRight';
 
 export const CommentEmailSection = () => {
     const {

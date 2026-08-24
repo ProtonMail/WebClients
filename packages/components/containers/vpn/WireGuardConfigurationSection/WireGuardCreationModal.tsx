@@ -3,16 +3,17 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Form from '@proton/components/components/form/Form';
-import QRCode from '@proton/components/components/image/QRCode';
-import Loader from '@proton/components/components/loader/Loader';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import { Tabs } from '@proton/components/components/tabs/Tabs';
-import { TextAreaTwo } from '@proton/components/index';
+
+import Form from '../../../components/form/Form';
+import QRCode from '../../../components/image/QRCode';
+import Loader from '../../../components/loader/Loader';
+import type { ModalProps } from '../../../components/modalTwo/Modal';
+import ModalTwo from '../../../components/modalTwo/Modal';
+import ModalTwoContent from '../../../components/modalTwo/ModalContent';
+import ModalTwoFooter from '../../../components/modalTwo/ModalFooter';
+import ModalTwoHeader from '../../../components/modalTwo/ModalHeader';
+import { Tabs } from '../../../components/tabs/Tabs';
+import { TextAreaTwo } from '../../../index';
 
 export interface WireGuardCreationModalProps extends ModalProps {
     text?: string;

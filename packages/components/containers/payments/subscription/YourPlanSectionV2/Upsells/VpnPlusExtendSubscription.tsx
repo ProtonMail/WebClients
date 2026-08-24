@@ -2,11 +2,6 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
-import { getSimplePriceString } from '@proton/components/components/price/helper';
-import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import { getTelemetryUserTier } from '@proton/components/helpers/getTelemetryUserTier';
-import useApi from '@proton/components/hooks/useApi';
-import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { getAddonsFromIDs } from '@proton/payments/core/planIDs';
@@ -19,6 +14,11 @@ import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import type { Api, User } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
+import { getSimplePriceString } from '../../../../../components/price/helper';
+import getBoldFormattedText from '../../../../../helpers/getBoldFormattedText';
+import { getTelemetryUserTier } from '../../../../../helpers/getTelemetryUserTier';
+import useApi from '../../../../../hooks/useApi';
+import useDashboardPaymentFlow from '../../../../../hooks/useDashboardPaymentFlow';
 import { useSubscriptionModalRaw } from '../../SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '../../constants';
 import type { GetPlanUpsellArgs, MaybeUpsell } from '../../helpers';

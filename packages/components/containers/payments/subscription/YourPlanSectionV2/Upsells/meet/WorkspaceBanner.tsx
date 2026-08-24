@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import { PLANS } from '@proton/payments/core/constants';
 import {
     BRAND_NAME,
@@ -16,6 +15,7 @@ import {
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
 
+import useDashboardPaymentFlow from '../../../../../../hooks/useDashboardPaymentFlow';
 import { useSubscriptionModal } from '../../../SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '../../../constants';
 import { PlanIcon } from '../../PlanIcon';

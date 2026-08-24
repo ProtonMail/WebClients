@@ -1,20 +1,20 @@
 import type { ComponentType, Dispatch, ReactNode, SetStateAction } from 'react';
 
+import { CryptoProxy } from '@protontech/crypto';
 import { c } from 'ttag';
 
 import type { ButtonProps } from '@proton/atoms/Button/Button';
 import { Button } from '@proton/atoms/Button/Button';
-import Table from '@proton/components/components/table/Table';
-import TableBody from '@proton/components/components/table/TableBody';
-import TableRow from '@proton/components/components/table/TableRow';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import useNotifications from '@proton/components/hooks/useNotifications';
-import { CryptoProxy } from '@protontech/crypto';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 import type { ArmoredKeyWithInfo } from '@proton/shared/lib/keys';
 import removeItem from '@proton/utils/removeIndex';
 import uniqueBy from '@proton/utils/uniqueBy';
 
+import Table from '../../../components/table/Table';
+import TableBody from '../../../components/table/TableBody';
+import TableRow from '../../../components/table/TableRow';
+import InputFieldTwo from '../../../components/v2/field/InputField';
+import useNotifications from '../../../hooks/useNotifications';
 import { type ProcessedKey, useProcessKey } from '../importKeys/useProcessKey';
 
 interface FileInputProps {

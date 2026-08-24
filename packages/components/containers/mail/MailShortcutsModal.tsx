@@ -2,15 +2,6 @@ import { c } from 'ttag';
 
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
-import Field from '@proton/components/components/container/Field';
-import Row from '@proton/components/components/container/Row';
-import Label from '@proton/components/components/label/Label';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import ShortcutsSectionView from '@proton/components/components/shortcuts/ShortcutsSectionView';
 import { getCategoryCommanderKeyboardShortcut } from '@proton/mail/features/categoriesView/categoriesHelpers';
 import { getLabelFromCategoryIdInCommander } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
 import { useCategoriesData } from '@proton/mail/features/categoriesView/useCategoriesData';
@@ -20,6 +11,15 @@ import { getKeyboardShortcutsWithAppName } from '@proton/shared/lib/shortcuts/i1
 import { getShortcuts } from '@proton/shared/lib/shortcuts/mail';
 import clsx from '@proton/utils/clsx';
 
+import Field from '../../components/container/Field';
+import Row from '../../components/container/Row';
+import Label from '../../components/label/Label';
+import type { ModalProps } from '../../components/modalTwo/Modal';
+import ModalTwo from '../../components/modalTwo/Modal';
+import ModalTwoContent from '../../components/modalTwo/ModalContent';
+import ModalTwoFooter from '../../components/modalTwo/ModalFooter';
+import ModalTwoHeader from '../../components/modalTwo/ModalHeader';
+import ShortcutsSectionView from '../../components/shortcuts/ShortcutsSectionView';
 import InboxDesktopAppSwitchingShortcuts from '../desktop/InboxDesktopAppSwitchingShortcuts';
 import ShortcutsToggle from '../general/ShortcutsToggle';
 

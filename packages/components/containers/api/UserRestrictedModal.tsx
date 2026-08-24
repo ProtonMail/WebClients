@@ -1,13 +1,14 @@
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import SettingsLink from '@proton/components/components/link/SettingsLink';
-import Modal from '@proton/components/components/modalTwo/Modal';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import ModalContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { sanitizeMessage } from '@proton/sanitize/purify';
+
+import SettingsLink from '../../components/link/SettingsLink';
+import Modal from '../../components/modalTwo/Modal';
+import type { ModalProps } from '../../components/modalTwo/Modal';
+import ModalContent from '../../components/modalTwo/ModalContent';
+import ModalFooter from '../../components/modalTwo/ModalFooter';
+import ModalHeader from '../../components/modalTwo/ModalHeader';
 
 enum Code {
     ForcePasswordChange = 'ChangePassword',

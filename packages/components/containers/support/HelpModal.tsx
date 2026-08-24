@@ -2,15 +2,16 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import Modal, { type ModalProps } from '@proton/components/components/modalTwo/Modal';
-import ModalContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { IcArrowWithinSquare } from '@proton/icons/icons/IcArrowWithinSquare';
 import { IcBug } from '@proton/icons/icons/IcBug';
 import { IcLightbulb } from '@proton/icons/icons/IcLightbulb';
 import { IcQuestionCircle } from '@proton/icons/icons/IcQuestionCircle';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
+
+import Modal, { type ModalProps } from '../../components/modalTwo/Modal';
+import ModalContent from '../../components/modalTwo/ModalContent';
+import ModalHeader from '../../components/modalTwo/ModalHeader';
 
 export interface Props extends ModalProps {
     APP_NAME: APP_NAMES;

@@ -1,7 +1,7 @@
-import CalendarLogo from '@proton/components/components/logo/CalendarLogo';
-import DriveLogo from '@proton/components/components/logo/DocsLogo';
-import MailLogo from '@proton/components/components/logo/MailLogo';
-import VpnLogo from '@proton/components/components/logo/VpnLogo';
+import CalendarLogo from '../../../../components/logo/CalendarLogo';
+import DriveLogo from '../../../../components/logo/DocsLogo';
+import MailLogo from '../../../../components/logo/MailLogo';
+import VpnLogo from '../../../../components/logo/VpnLogo';
 
 const ProtonLogos = () => (
     <div className="text-center">

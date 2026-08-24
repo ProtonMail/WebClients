@@ -7,17 +7,6 @@ import { createInvite, editInvite } from '@proton/account/members/actions';
 import { getInitialStorage, getStorageRange, getTotalStorage } from '@proton/account/organization/storage';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import Modal from '@proton/components/components/modalTwo/Modal';
-import ModalContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
-import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
-import Toggle from '@proton/components/components/toggle/Toggle';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import useFormErrors from '@proton/components/components/v2/useFormErrors';
-import { disableStorageSelection } from '@proton/components/containers/members/helper';
-import AssistantUpdateSubscriptionButton from '@proton/components/containers/payments/subscription/assistant/AssistantUpdateSubscriptionButton';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import {
     type MaybeFreeSubscription,
@@ -33,9 +22,20 @@ import { sizeUnits } from '@proton/shared/lib/helpers/size';
 import type { Member, Organization } from '@proton/shared/lib/interfaces';
 import clamp from '@proton/utils/clamp';
 
+import Modal from '../../components/modalTwo/Modal';
+import ModalContent from '../../components/modalTwo/ModalContent';
+import ModalFooter from '../../components/modalTwo/ModalFooter';
+import ModalHeader from '../../components/modalTwo/ModalHeader';
+import type { ModalStateProps } from '../../components/modalTwo/useModalState';
+import Toggle from '../../components/toggle/Toggle';
+import InputFieldTwo from '../../components/v2/field/InputField';
+import useFormErrors from '../../components/v2/useFormErrors';
+import useNotifications from '../../hooks/useNotifications';
+import AssistantUpdateSubscriptionButton from '../payments/subscription/assistant/AssistantUpdateSubscriptionButton';
 import LumoUpdateSubscriptionButton from '../payments/subscription/lumo/LumoUpdateSubscriptionButton';
 import MemberStorageSelector from './MemberStorageSelector';
 import MemberToggleContainer from './MemberToggleContainer';
+import { disableStorageSelection } from './helper';
 
 interface Props extends ModalStateProps {
     organization?: Organization;

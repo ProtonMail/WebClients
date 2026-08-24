@@ -4,11 +4,12 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Card } from '@proton/atoms/Card/Card';
-import Copy from '@proton/components/components/button/Copy';
-import Loader from '@proton/components/components/loader/Loader';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
+
+import Copy from '../../components/button/Copy';
+import Loader from '../../components/loader/Loader';
+import useNotifications from '../../hooks/useNotifications';
 
 export const MnemonicPhraseStepContent = ({
     recoveryPhrase,

@@ -1,12 +1,5 @@
 import { c } from 'ttag';
 
-import type { DropdownSize } from '@proton/components/components/dropdown/utils';
-import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
-import Icon from '@proton/components/components/icon/Icon';
-import Radio from '@proton/components/components/input/Radio';
-import Option from '@proton/components/components/option/Option';
-import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
-import type { ViewPaymentMethod } from '@proton/components/payments/client-extensions';
 import type { IconName } from '@proton/icons/types';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { AvailablePaymentMethod, PaymentMethodType } from '@proton/payments/core/interface';
@@ -19,6 +12,14 @@ import jcbLogoSvg from '@proton/styles/assets/img/bank-icons/jcb-logo.png';
 import mastercardSecurecodeSvg from '@proton/styles/assets/img/bank-icons/mastercard-securecode-colored.svg';
 import verifiedByVisaSvg from '@proton/styles/assets/img/bank-icons/visa-secure-colored.svg';
 import clsx from '@proton/utils/clsx';
+
+import type { DropdownSize } from '../../../components/dropdown/utils';
+import { DropdownSizeUnit } from '../../../components/dropdown/utils';
+import Icon from '../../../components/icon/Icon';
+import Radio from '../../../components/input/Radio';
+import Option from '../../../components/option/Option';
+import SelectTwo from '../../../components/selectTwo/SelectTwo';
+import type { ViewPaymentMethod } from '../../../payments/client-extensions/index';
 
 interface Props {
     options: ViewPaymentMethod[];

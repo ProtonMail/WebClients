@@ -3,8 +3,6 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
-import useConfig from '@proton/components/hooks/useConfig';
 import { IcAppSwitch } from '@proton/icons/icons/IcAppSwitch';
 import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
 import { IcInbox } from '@proton/icons/icons/IcInbox';
@@ -17,6 +15,8 @@ import { isElectronOnMac } from '@proton/shared/lib/helpers/desktop';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
+import SimpleDropdown from '../../components/dropdown/SimpleDropdown';
+import useConfig from '../../hooks/useConfig';
 import ProductIcon from '../app/ProductIcon';
 
 const showShortcutTooltips = hasInboxDesktopFeature('SwitchViewShortcuts');

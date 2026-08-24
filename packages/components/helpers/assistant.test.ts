@@ -1,11 +1,12 @@
+import { PLANS } from '@proton/payments/core/constants';
+import type { Organization, UserModel } from '@proton/shared/lib/interfaces';
+
 import {
     B2B_PLANS_SUPPORTING_SCRIBE,
     PLANS_SUPPORTING_SCRIBE,
     isB2bPlanSupportingScribe,
     isScribeSupported,
-} from '@proton/components/helpers/assistant';
-import { PLANS } from '@proton/payments/core/constants';
-import type { Organization, UserModel } from '@proton/shared/lib/interfaces';
+} from './assistant';
 
 describe('assistant helpers', () => {
     describe('isScribeSupported', () => {

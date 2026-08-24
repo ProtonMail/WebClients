@@ -5,10 +5,6 @@ import { flushSync } from 'react-dom';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import SettingsLink from '@proton/components/components/link/SettingsLink';
-import Loader from '@proton/components/components/loader/Loader';
-import { isVerifyAddressOwnership } from '@proton/components/containers/api/humanVerification/helper';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import {
@@ -19,10 +15,14 @@ import {
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import type { Api, HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 
+import SettingsLink from '../../../components/link/SettingsLink';
+import Loader from '../../../components/loader/Loader';
+import useNotifications from '../../../hooks/useNotifications';
 import RequestNewCodeModal from './RequestNewCodeModal';
 import Text from './Text';
 import VerifyCodeForm from './VerifyCodeForm';
 import accountVerified from './account-verified.svg';
+import { isVerifyAddressOwnership } from './helper';
 import type {
     OwnershipCache,
     OwnershipVerificationModel,

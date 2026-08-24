@@ -1,18 +1,18 @@
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { componentsHookRenderer } from '@proton/components/containers/contacts/tests/render';
-import useApi from '@proton/components/hooks/useApi';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import { PRODUCT_BIT } from '@proton/shared/lib/constants';
 import { buildSubscription } from '@proton/testing/builders/subscription';
 
+import useApi from '../../../../hooks/useApi';
+import { componentsHookRenderer } from '../../../contacts/tests/render';
 import { useCancellationStepEligibility } from './useCancellationStepEligibility';
 
 jest.mock('@proton/account/subscription/hooks');
 jest.mock('@proton/account/organization/hooks');
 jest.mock('@proton/account/user/hooks');
-jest.mock('@proton/components/hooks/useApi');
+jest.mock('../../../../hooks/useApi');
 jest.mock('@proton/calendar/calendars/hooks', () => ({
     useGetCalendars: () => jest.fn(),
 }));

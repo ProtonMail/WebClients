@@ -1,9 +1,10 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import TableCell from '@proton/components/components/table/TableCell';
 import { IcChevronLeft } from '@proton/icons/icons/IcChevronLeft';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
+
+import TableCell from '../../../../components/table/TableCell';
 
 interface Props {
     disabledPrevious: boolean;

@@ -6,14 +6,14 @@ import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Input } from '@proton/atoms/Input/Input';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import { IcMapPin } from '@proton/icons/icons/IcMapPin';
-import Checkbox from '@proton/components/components/input/Checkbox';
-import Table from '@proton/components/components/table/Table';
-import TableBody from '@proton/components/components/table/TableBody';
-import TableCell from '@proton/components/components/table/TableCell';
-import TableRow from '@proton/components/components/table/TableRow';
-import { CountryFlagAndName } from '@proton/components/containers/vpn/gateways/CountryFlagAndName';
 import clsx from '@proton/utils/clsx';
 
+import Checkbox from '../../../../components/input/Checkbox';
+import Table from '../../../../components/table/Table';
+import TableBody from '../../../../components/table/TableBody';
+import TableCell from '../../../../components/table/TableCell';
+import TableRow from '../../../../components/table/TableRow';
+import { CountryFlagAndName } from '../../gateways/CountryFlagAndName';
 import type { GroupedLocation } from './getGroupedLocations';
 
 interface SharedServersCountriesStepProps {

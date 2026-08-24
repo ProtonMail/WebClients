@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import SettingsLink from '@proton/components/components/link/SettingsLink';
-import { getInvoicesPathname } from '@proton/components/containers/invoices/helpers';
 
+import SettingsLink from '../../components/link/SettingsLink';
+import { getInvoicesPathname } from '../invoices/helpers';
 import TopBanner from './TopBanner';
 
 const UnpaidInvoiceTopBanner = () => {

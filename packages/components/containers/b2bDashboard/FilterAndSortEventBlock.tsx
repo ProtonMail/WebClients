@@ -4,17 +4,17 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Input } from '@proton/atoms/Input/Input';
-import DateInput from '@proton/components/components/input/DateInput';
-import Label from '@proton/components/components/label/Label';
-import Option from '@proton/components/components/option/Option';
-import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
-import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useLoading from '@proton/hooks/useLoading';
 import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import { IcArrowRotateRight } from '@proton/icons/icons/IcArrowRotateRight';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import clsx from '@proton/utils/clsx';
 
+import DateInput from '../../components/input/DateInput';
+import Label from '../../components/label/Label';
+import Option from '../../components/option/Option';
+import SelectTwo from '../../components/selectTwo/SelectTwo';
+import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
 import type { FilterModel } from './VPN/VPNEvents';
 
 interface Event {

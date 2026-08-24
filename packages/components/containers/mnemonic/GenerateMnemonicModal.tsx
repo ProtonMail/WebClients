@@ -6,15 +6,6 @@ import { userThunk } from '@proton/account/user';
 import { useUser } from '@proton/account/user/hooks';
 import { userKeysThunk } from '@proton/account/userKeys';
 import { Button } from '@proton/atoms/Button/Button';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import Modal from '@proton/components/components/modalTwo/Modal';
-import ModalContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-import Prompt from '@proton/components/components/prompt/Prompt';
-import AuthModal from '@proton/components/containers/password/AuthModal';
-import useApi from '@proton/components/hooks/useApi';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { CacheType } from '@proton/redux-utilities/interface';
@@ -25,6 +16,15 @@ import type { GeneratedMnemonicData } from '@proton/shared/lib/mnemonic';
 import { generateMnemonicPayload, generateMnemonicWithSalt } from '@proton/shared/lib/mnemonic';
 import noop from '@proton/utils/noop';
 
+import type { ModalProps } from '../../components/modalTwo/Modal';
+import Modal from '../../components/modalTwo/Modal';
+import ModalContent from '../../components/modalTwo/ModalContent';
+import ModalFooter from '../../components/modalTwo/ModalFooter';
+import ModalHeader from '../../components/modalTwo/ModalHeader';
+import useModalState from '../../components/modalTwo/useModalState';
+import Prompt from '../../components/prompt/Prompt';
+import useApi from '../../hooks/useApi';
+import AuthModal from '../password/AuthModal';
 import { MnemonicPhraseStepButtons, MnemonicPhraseStepContent } from './MnemonicPhraseStep';
 
 enum STEPS {

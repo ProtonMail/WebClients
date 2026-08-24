@@ -1,8 +1,5 @@
 import { c } from 'ttag';
 
-import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
-import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import {
     acceptForwarding,
@@ -13,6 +10,10 @@ import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import type { Address, IncomingAddressForwarding } from '@proton/shared/lib/interfaces';
 import { ForwardingState } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
+
+import DropdownActions from '../../components/dropdown/DropdownActions';
+import useErrorHandler from '../../hooks/useErrorHandler';
+import useNotifications from '../../hooks/useNotifications';
 
 interface Props {
     forward: IncomingAddressForwarding;

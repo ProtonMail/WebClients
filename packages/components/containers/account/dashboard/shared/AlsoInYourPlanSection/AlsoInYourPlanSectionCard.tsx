@@ -4,12 +4,13 @@ import { useUser } from '@proton/account/user/hooks';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { DashboardCard, DashboardCardContent, DashboardCardImage } from '@proton/atoms/DashboardCard/DashboardCard';
 import { DashboardGridSection } from '@proton/atoms/DashboardGrid/DashboardGrid';
-import ProductLink from '@proton/components/containers/app/ProductLink';
-import type { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
-import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
-import useConfig from '@proton/components/hooks/useConfig';
 import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
+
+import useConfig from '../../../../../hooks/useConfig';
+import ProductLink from '../../../../app/ProductLink';
+import type { PlanCardFeatureDefinition } from '../../../../payments/features/interface';
+import { PlanCardFeatureList } from '../../../../payments/subscription/PlanCardFeatures';
 
 interface Configuration {
     app: APP_NAMES;

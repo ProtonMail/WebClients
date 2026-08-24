@@ -1,13 +1,13 @@
 import { c, msgid } from 'ttag';
 
 import { useUserInvitations } from '@proton/account/userInvitations/hooks';
-import useSettingsLink from '@proton/components/components/link/useSettingsLink';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-import useConfig from '@proton/components/hooks/useConfig';
-import useUid from '@proton/components/hooks/useUid';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 
+import useSettingsLink from '../../components/link/useSettingsLink';
+import useModalState from '../../components/modalTwo/useModalState';
+import useConfig from '../../hooks/useConfig';
+import useUid from '../../hooks/useUid';
 import PendingInvitationModal from '../payments/subscription/PendingInvitationModal';
 import TopBanner from './TopBanner';
 

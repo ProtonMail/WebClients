@@ -3,10 +3,6 @@ import { c } from 'ttag';
 import { DashboardCard, DashboardCardContent, DashboardCardDivider } from '@proton/atoms/DashboardCard/DashboardCard';
 import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Option from '@proton/components/components/option/Option';
-import { SettingsSelectRow } from '@proton/components/containers/account/SettingsSelectRow';
-import { SettingsToggleRow } from '@proton/components/containers/account/SettingsToggleRow';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcChevronUpDown } from '@proton/icons/icons/IcChevronUpDown';
 import { IcPauseAnimation } from '@proton/icons/icons/IcPauseAnimation';
 import { IcTextFontFamily } from '@proton/icons/icons/IcTextFontFamily';
@@ -21,8 +17,12 @@ import {
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
+import Option from '../../components/option/Option';
+import useNotifications from '../../hooks/useNotifications';
 import { useTheme } from '../themes/ThemeProvider';
 import { SettingsIconRow } from './SettingsIconRow';
+import { SettingsSelectRow } from './SettingsSelectRow';
+import { SettingsToggleRow } from './SettingsToggleRow';
 
 const themeFontFaceEntries = getThemeFontFaceEntries();
 const themeFontSizeEntries = getThemeFontSizeEntries();

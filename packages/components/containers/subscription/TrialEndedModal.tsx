@@ -2,18 +2,19 @@ import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
-import Time from '@proton/components/components/time/Time';
-import useApi from '@proton/components/hooks/useApi';
 import { CYCLE } from '@proton/payments/core/constants';
 import { getPlanTitle, getRenewalTime } from '@proton/payments/core/subscription/helpers';
 import { isFreeSubscription } from '@proton/payments/core/type-guards';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import illustration from '@proton/styles/assets/img/illustrations/b2b-trial-end.svg';
+
+import ModalTwo from '../../components/modalTwo/Modal';
+import ModalTwoContent from '../../components/modalTwo/ModalContent';
+import ModalTwoFooter from '../../components/modalTwo/ModalFooter';
+import ModalTwoHeader from '../../components/modalTwo/ModalHeader';
+import type { ModalStateProps } from '../../components/modalTwo/useModalState';
+import Time from '../../components/time/Time';
+import useApi from '../../hooks/useApi';
 
 const TrialEndedModal = ({ onClose, ...rest }: ModalStateProps) => {
     const api = useApi();

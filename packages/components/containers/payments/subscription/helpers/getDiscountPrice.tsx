@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
-import { getSimplePriceString } from '@proton/components/components/price/helper';
 import type { Currency } from '@proton/payments/core/interface';
+
+import { getSimplePriceString } from '../../../../components/price/helper';
 
 export const getDiscountPrice = (discount: number, currency: Currency) => {
     const priceString = getSimplePriceString(currency, discount);

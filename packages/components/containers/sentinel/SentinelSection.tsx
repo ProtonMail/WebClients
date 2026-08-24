@@ -1,6 +1,6 @@
-import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
+import SettingsSectionWide from '../account/SettingsSectionWide';
 import SentinelDescription from './SentinelDescription';
 import SentinelEmailNotificationsToggle from './SentinelEmailNotificationsToggle';
 import SentinelToggle from './SentinelToggle';

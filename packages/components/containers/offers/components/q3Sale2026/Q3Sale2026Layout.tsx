@@ -4,13 +4,13 @@ import { useLocation } from 'react-router';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import ProtonLogo from '@proton/components/components/logo/ProtonLogo';
-import { getSimplePriceString } from '@proton/components/components/price/helper';
-import useConfig from '@proton/components/hooks/useConfig';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { CYCLE } from '@proton/payments/core/constants';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
+import ProtonLogo from '../../../../components/logo/ProtonLogo';
+import { getSimplePriceString } from '../../../../components/price/helper';
+import useConfig from '../../../../hooks/useConfig';
 import { getOfferProduct } from '../../helpers/getOfferProduct';
 import type { OfferLayoutProps } from '../../interface';
 import OfferDisableButton from '../shared/OfferDisableButton';

@@ -1,9 +1,10 @@
 import { c } from 'ttag';
 
-import { ButtonWithTextAndIcon } from '@proton/components/components/button/ButtonWithTextAndIcon';
-import MimeIcon from '@proton/components/components/icon/MimeIcon';
 import { SHEETS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
+
+import { ButtonWithTextAndIcon } from '../../components/button/ButtonWithTextAndIcon';
+import MimeIcon from '../../components/icon/MimeIcon';
 
 export function ExcelPreview({ onOpenInDocs, onDownload }: { onOpenInDocs?: () => void; onDownload?: () => void }) {
     const hasActions = onOpenInDocs || onDownload;

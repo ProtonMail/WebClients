@@ -5,13 +5,6 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserInvitations } from '@proton/account/userInvitations/hooks';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
-import Loader from '@proton/components/components/loader/Loader';
-import SettingsSectionExtraWide from '@proton/components/containers/account/SettingsSectionExtraWide';
-import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
-import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
-import useLoad from '@proton/components/hooks/useLoad';
-import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
-import { useTrialOnlyPaymentMethods } from '@proton/components/hooks/useTrialOnlyPaymentMethods';
 import { useEntitlementChecks } from '@proton/payments/core/entitlements/hooks';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import {
@@ -29,6 +22,13 @@ import { pick } from '@proton/shared/lib/helpers/object';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
+import Loader from '../../../components/loader/Loader';
+import useDashboardPaymentFlow from '../../../hooks/useDashboardPaymentFlow';
+import useLoad from '../../../hooks/useLoad';
+import { usePreferredPlansMap } from '../../../hooks/usePreferredPlansMap';
+import { useTrialOnlyPaymentMethods } from '../../../hooks/useTrialOnlyPaymentMethods';
+import SettingsSectionExtraWide from '../../account/SettingsSectionExtraWide';
+import SettingsSectionWide from '../../account/SettingsSectionWide';
 import TrialInfo from '../../referral/components/TrialInfo/TrialInfo';
 import { useSubscriptionModalRaw } from './SubscriptionModalProvider';
 import { useUpsellsToDisplay } from './helpers';

@@ -5,20 +5,6 @@ import { c } from 'ttag';
 
 import { userSettingsThunk } from '@proton/account/userSettings';
 import { Button } from '@proton/atoms/Button/Button';
-import Form from '@proton/components/components/form/Form';
-import Checkbox from '@proton/components/components/input/Checkbox';
-import Info from '@proton/components/components/link/Info';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import Modal from '@proton/components/components/modalTwo/Modal';
-import ModalContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import useFormErrors from '@proton/components/components/v2/useFormErrors';
-import RegisterSecurityKeyContent from '@proton/components/containers/account/fido/RegisterSecurityKeyContent';
-import AuthModal from '@proton/components/containers/password/AuthModal';
-import useApi from '@proton/components/hooks/useApi';
-import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { CacheType } from '@proton/redux-utilities/interface';
@@ -31,6 +17,20 @@ import { getCreatePayload } from '@proton/shared/lib/webauthn/create';
 import type { RegisterCredentials } from '@proton/shared/lib/webauthn/interface';
 import physicalKeyRegistered from '@proton/styles/assets/img/illustrations/physical-key-registered.svg';
 
+import Form from '../../../components/form/Form';
+import Checkbox from '../../../components/input/Checkbox';
+import Info from '../../../components/link/Info';
+import type { ModalProps } from '../../../components/modalTwo/Modal';
+import Modal from '../../../components/modalTwo/Modal';
+import ModalContent from '../../../components/modalTwo/ModalContent';
+import ModalFooter from '../../../components/modalTwo/ModalFooter';
+import ModalHeader from '../../../components/modalTwo/ModalHeader';
+import InputFieldTwo from '../../../components/v2/field/InputField';
+import useFormErrors from '../../../components/v2/useFormErrors';
+import useApi from '../../../hooks/useApi';
+import useErrorHandler from '../../../hooks/useErrorHandler';
+import AuthModal from '../../password/AuthModal';
+import RegisterSecurityKeyContent from './RegisterSecurityKeyContent';
 import { maxSecurityKeyNameLength } from './constants';
 
 enum Steps {

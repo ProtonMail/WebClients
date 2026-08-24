@@ -1,11 +1,12 @@
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import SettingsLink from '@proton/components/components/link/SettingsLink';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import Prompt from '@proton/components/components/prompt/Prompt';
-import { getInvoicesPathname } from '@proton/components/containers/invoices/helpers';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+
+import SettingsLink from '../../components/link/SettingsLink';
+import type { ModalProps } from '../../components/modalTwo/Modal';
+import Prompt from '../../components/prompt/Prompt';
+import { getInvoicesPathname } from '../invoices/helpers';
 
 interface Props extends ModalProps {}
 

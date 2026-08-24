@@ -11,13 +11,13 @@ import { mockUseUserSettings } from '@proton/testing/lib/mockUseUserSettings';
 
 import PMSignatureField from './PMSignatureField';
 
-jest.mock('@proton/components/hooks/useNotifications', () => () => mockNotifications);
+jest.mock('../../hooks/useNotifications', () => () => mockNotifications);
 
-jest.mock('@proton/components/hooks/useConfig', () => () => ({
+jest.mock('../../hooks/useConfig', () => () => ({
     APP_NAME: APPS.PROTONACCOUNT,
 }));
 
-jest.mock('@proton/components/components/upsell/UpsellModal/UpsellModal', () => {
+jest.mock('../../components/upsell/UpsellModal/UpsellModal', () => {
     const MockUpsellModal = (props: any) => {
         return <div data-testid="upsell-modal">{props.title || 'Upsell Modal'}</div>;
     };
@@ -28,11 +28,11 @@ jest.mock('@proton/account');
 jest.mock('@proton/account/user/hooks');
 jest.mock('@proton/mail/store/mailSettings/hooks');
 jest.mock('@proton/account/organization/hooks');
-jest.mock('@proton/components/hooks/useApi');
+jest.mock('../../hooks/useApi');
 jest.mock('@proton/redux-shared-store/sharedProvider', () => ({ useDispatch: () => jest.fn() }));
-jest.mock('@proton/components/hooks/useToggle', () => () => ({ state: false, toggle: jest.fn() }));
+jest.mock('../../hooks/useToggle', () => () => ({ state: false, toggle: jest.fn() }));
 jest.mock('@proton/hooks', () => ({ useLoading: () => [false, (fn: any) => fn] }));
-jest.mock('@proton/components/components/modalTwo/useModalState', () => () => [{}, jest.fn(), true]);
+jest.mock('../../components/modalTwo/useModalState', () => () => [{}, jest.fn(), true]);
 
 describe('PMSignatureField', () => {
     const id = 'pmSignatureToggle';

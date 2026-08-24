@@ -4,11 +4,6 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import FileIcon from '@proton/components/components/fileIcon/FileIcon';
-import FileNameDisplay from '@proton/components/components/fileNameDisplay/FileNameDisplay';
-import MimeIcon from '@proton/components/components/icon/MimeIcon';
-import TimeIntl from '@proton/components/components/time/TimeIntl';
-import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { useLoading } from '@proton/hooks';
 import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import { IcCross } from '@proton/icons/icons/IcCross';
@@ -26,6 +21,12 @@ import { isElectronMail, isElectronOnMac } from '@proton/shared/lib/helpers/desk
 import { mimeTypeToOpenInDocsType } from '@proton/shared/lib/helpers/mimetype';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
+
+import FileIcon from '../../components/fileIcon/FileIcon';
+import FileNameDisplay from '../../components/fileNameDisplay/FileNameDisplay';
+import MimeIcon from '../../components/icon/MimeIcon';
+import TimeIntl from '../../components/time/TimeIntl';
+import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
 
 const SHARED_STATUS_TO_COLOR = {
     '': undefined,

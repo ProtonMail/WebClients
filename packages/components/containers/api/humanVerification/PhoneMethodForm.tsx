@@ -4,12 +4,13 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import PhoneInput from '@proton/components/components/v2/phone/LazyPhoneInput';
-import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import { useLoading } from '@proton/hooks';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import noop from '@proton/utils/noop';
+
+import InputFieldTwo from '../../../components/v2/field/InputField';
+import PhoneInput from '../../../components/v2/phone/LazyPhoneInput';
+import useFormErrors from '../../../components/v2/useFormErrors';
 
 interface Props {
     onSubmit: (phone: string) => Promise<void>;

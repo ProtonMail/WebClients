@@ -1,7 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
 
-import useEventManager from '@proton/components/hooks/useEventManager';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import {
     getIsCalendarUrlEventManagerCreate,
@@ -20,8 +18,10 @@ import type {
 import { splitKeys } from '@proton/shared/lib/keys';
 import updateItem from '@proton/utils/updateItem';
 
+import useEventManager from '../../../hooks/useEventManager';
 import useGetCalendarInfo from '../../../hooks/useGetCalendarInfo';
 import { useGetCalendarPublicLinks } from '../../../hooks/useGetCalendarPublicLinks';
+import useNotifications from '../../../hooks/useNotifications';
 import { useCalendarModelEventManager } from '../../eventManager/calendar/CalendarModelEventManagerProvider';
 
 const useCalendarShareUrls = (calendars: VisualCalendar[]) => {

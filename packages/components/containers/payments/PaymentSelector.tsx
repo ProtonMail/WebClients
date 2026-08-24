@@ -4,13 +4,13 @@ import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import Input from '@proton/components/components/input/Input';
-import Label from '@proton/components/components/label/Label';
-import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
 import { getCurrencyFormattingConfig, getNaiveCurrencyRate } from '@proton/payments/core/currencies';
 import type { Currency, PaymentStatus } from '@proton/payments/core/interface';
 import { isNumber } from '@proton/shared/lib/helpers/validators';
 
+import Input from '../../components/input/Input';
+import Label from '../../components/label/Label';
+import { useCurrencies } from '../../payments/client-extensions/useCurrencies';
 import AmountButton from './AmountButton';
 import CurrencySelector from './CurrencySelector';
 

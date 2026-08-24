@@ -1,10 +1,11 @@
 import { c } from 'ttag';
 
-import Price from '@proton/components/components/price/Price';
 import { CYCLE } from '@proton/payments/core/constants';
 import { isManagedExternally } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import type { UserModel } from '@proton/shared/lib/interfaces';
+
+import Price from '../../../../components/price/Price';
 
 interface Props {
     subscription: Subscription;

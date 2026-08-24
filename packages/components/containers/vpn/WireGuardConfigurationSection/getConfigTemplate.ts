@@ -1,5 +1,4 @@
-import { getObjectKeys } from '@proton/components/helpers/getObjectKeys';
-
+import { getObjectKeys } from '../../../helpers/getObjectKeys';
 import { type FeaturesValues, formatFeatureShortName, formatFeatureValue, getKeyOfCheck } from './feature';
 import type { ExtraCertificateFeatures } from './features';
 import type { Peer } from './peer';

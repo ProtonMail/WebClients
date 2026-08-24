@@ -1,13 +1,14 @@
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
-import QRCode from '@proton/components/components/image/QRCode';
-import Logo from '@proton/components/components/logo/Logo';
 import { CALENDAR_MOBILE_APP_LINKS } from '@proton/shared/lib/calendar/constants';
 import { CALENDAR_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { MAIL_MOBILE_APP_LINKS } from '@proton/shared/lib/mail/constants';
 import appStoreSvg from '@proton/styles/assets/img/illustrations/app-store.svg';
 import playStoreSvg from '@proton/styles/assets/img/illustrations/play-store.svg';
+
+import QRCode from '../../components/image/QRCode';
+import Logo from '../../components/logo/Logo';
 
 type SupportedAPPS = 'proton-mail' | 'proton-calendar';
 

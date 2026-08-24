@@ -1,9 +1,10 @@
-import useApi from '@proton/components/hooks/useApi';
 import {
     TelemetryAccountOrganizationLogoUploadEvents,
     TelemetryMeasurementGroups,
 } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
+
+import useApi from '../../../hooks/useApi';
 
 const useOrgLogoUploadTelemetry = () => {
     const api = useApi();

@@ -1,9 +1,10 @@
 import { c } from 'ttag';
 
-import ShortcutsSectionView from '@proton/components/components/shortcuts/ShortcutsSectionView';
 import { CALENDAR_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { hasInboxDesktopFeature } from '@proton/shared/lib/desktop/ipcHelpers';
 import { metaKey } from '@proton/shared/lib/helpers/browser';
+
+import ShortcutsSectionView from '../../components/shortcuts/ShortcutsSectionView';
 
 export const showInboxDesktopAppSwitchingShortcuts = hasInboxDesktopFeature('SwitchViewShortcuts');
 

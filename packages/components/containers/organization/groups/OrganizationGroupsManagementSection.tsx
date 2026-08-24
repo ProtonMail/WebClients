@@ -8,14 +8,6 @@ import { AdminRolesUIState, useAdminRolesUI } from '@proton/account/userPermissi
 import { Button } from '@proton/atoms/Button/Button';
 import { Card } from '@proton/atoms/Card/Card';
 import { Href } from '@proton/atoms/Href/Href';
-import SettingsLink from '@proton/components/components/link/SettingsLink';
-import SettingsPageTitle from '@proton/components/containers/account/SettingsPageTitle';
-import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
-import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
-import { PromotionBanner } from '@proton/components/containers/banner/PromotionBanner';
-import AdminRolesOnboardingModal from '@proton/components/containers/members/rolesAndPermissions/AdminRolesOnboardingModal';
-import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
-import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import { FeatureCode, useFeature } from '@proton/features';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
@@ -25,7 +17,15 @@ import securityUpsellSvg from '@proton/styles/assets/img/illustrations/security-
 import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
+import SettingsLink from '../../../components/link/SettingsLink';
+import SettingsPageTitle from '../../account/SettingsPageTitle';
+import SettingsParagraph from '../../account/SettingsParagraph';
+import SettingsSectionWide from '../../account/SettingsSectionWide';
+import { PromotionBanner } from '../../banner/PromotionBanner';
+import AdminRolesOnboardingModal from '../../members/rolesAndPermissions/AdminRolesOnboardingModal';
 import RoleAssignmentPausedBanner from '../../members/rolesAndPermissions/RoleAssignmentPausedBanner';
+import { useSubscriptionModal } from '../../payments/subscription/SubscriptionModalProvider';
+import { SUBSCRIPTION_STEPS } from '../../payments/subscription/constants';
 import ScimSetupBannerAndModal from '../ScimSetupBannerAndModal';
 import GroupsMemberManagementPanel from './components/GroupsMemberManagementPanel';
 import { useGroupsManagement, withGroupsManagementContext } from './context/GroupsManagementContext';

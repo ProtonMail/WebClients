@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import Info from '@proton/components/components/link/Info';
+import Info from '../../components/link/Info';
 
 interface BreachInfoProps {
     inModal?: boolean;

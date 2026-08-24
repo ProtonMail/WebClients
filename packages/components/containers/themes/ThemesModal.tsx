@@ -1,17 +1,17 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Info from '@proton/components/components/link/Info';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import Toggle from '@proton/components/components/toggle/Toggle';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { ColorScheme, ThemeModeSetting } from '@proton/shared/lib/themes/constants';
 import { getThemes } from '@proton/shared/lib/themes/themes';
 
+import Info from '../../components/link/Info';
+import type { ModalProps } from '../../components/modalTwo/Modal';
+import ModalTwo from '../../components/modalTwo/Modal';
+import ModalTwoContent from '../../components/modalTwo/ModalContent';
+import ModalTwoFooter from '../../components/modalTwo/ModalFooter';
+import ModalTwoHeader from '../../components/modalTwo/ModalHeader';
+import Toggle from '../../components/toggle/Toggle';
 import ThemeCards from './ThemeCards';
 import { useTheme } from './ThemeProvider';
 import ThemeSyncModeCard from './ThemeSyncModeCard';

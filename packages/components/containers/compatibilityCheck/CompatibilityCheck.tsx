@@ -1,10 +1,10 @@
 import type { ReactNode } from 'react';
 import { useEffect, useState } from 'react';
 
-import useConfig from '@proton/components/hooks/useConfig';
 import { decryptData, encryptData, importKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import { utf8StringToUint8Array } from '@protontech/crypto/utils';
 
+import useConfig from '../../hooks/useConfig';
 import CompatibilityCheckView from './CompatibilityCheckView';
 import { type CompatibilityItem, getCompatibilityList } from './compatibilityCheckHelper';
 

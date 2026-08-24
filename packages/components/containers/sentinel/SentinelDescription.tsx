@@ -2,13 +2,14 @@ import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { Href } from '@proton/atoms/Href/Href';
-import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
-import { useBundleProPlan } from '@proton/components/hooks/useHasPlan';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { getPlanName } from '@proton/payments/core/subscription/helpers';
 import { PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { useFlag } from '@proton/unleash/useFlag';
+
+import { useBundleProPlan } from '../../hooks/useHasPlan';
+import SettingsParagraph from '../account/SettingsParagraph';
 
 interface Props {
     variant: 'user' | 'organization';

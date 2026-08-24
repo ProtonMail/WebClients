@@ -1,13 +1,13 @@
 import { fireEvent, screen, waitFor } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/test';
-import TopNavbarUpsell from '@proton/components/components/topnavbar/TopNavbarUpsell';
 import type { FeatureCode } from '@proton/features';
 import { APPS } from '@proton/shared/lib/constants';
 import { setBit } from '@proton/shared/lib/helpers/bitset';
 import { NEWSLETTER_SUBSCRIPTIONS_BITS } from '@proton/shared/lib/helpers/newsletter';
 import type { UserModel, UserSettings } from '@proton/shared/lib/interfaces';
 
+import TopNavbarUpsell from '../../components/topnavbar/TopNavbarUpsell';
 import { clearAll, renderWithProviders } from '../contacts/tests/render';
 import { OffersTestProvider } from './Offers.test.helpers';
 import useOfferConfig from './hooks/useOfferConfig';
@@ -47,7 +47,7 @@ jest.mock('./hooks/useOfferFlags', function () {
     };
 });
 
-jest.mock('@proton/components/payments/client-extensions', () => ({
+jest.mock('../../payments/client-extensions/index', () => ({
     __esModule: true,
     useAutomaticCurrency: jest.fn().mockReturnValue(['EUR', false]),
 }));

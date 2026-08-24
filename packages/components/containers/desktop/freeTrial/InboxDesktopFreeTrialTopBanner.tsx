@@ -2,17 +2,13 @@ import { differenceInDays, format, startOfDay } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import {
-    FIRST_REMINDER_DAYS,
-    SECOND_REMINDER_DAYS,
-    THIRD_REMINDER_DAYS,
-} from '@proton/components/containers/desktop/freeTrial/constants';
-import TopBanner from '@proton/components/containers/topBanners/TopBanner';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import clsx from '@proton/utils/clsx';
 
+import TopBanner from '../../topBanners/TopBanner';
 import { freeTrialUpgradeClick } from '../openExternalLink';
+import { FIRST_REMINDER_DAYS, SECOND_REMINDER_DAYS, THIRD_REMINDER_DAYS } from './constants';
 import useInboxFreeTrial from './useInboxFreeTrial';
 
 const UpgradeButton = () => {
@@ -23,9 +19,12 @@ const UpgradeButton = () => {
     });
 
     return (
-        <Button shape="underline" onClick={() => freeTrialUpgradeClick(upsellRef)} className="py-0 align-baseline" data-testid='inbox-desktop-upgrade-free-trial-banner-button'>{c(
-            'Action'
-        ).t`Upgrade Now`}</Button>
+        <Button
+            shape="underline"
+            onClick={() => freeTrialUpgradeClick(upsellRef)}
+            className="py-0 align-baseline"
+            data-testid="inbox-desktop-upgrade-free-trial-banner-button"
+        >{c('Action').t`Upgrade Now`}</Button>
     );
 };
 
@@ -74,7 +73,11 @@ export const InboxDesktopFreeTrialTopBanner = ({ className }: { className?: stri
     };
 
     return (
-        <TopBanner onClose={handleClose} className={clsx('bg-info', className)} data-testid='inbox-desktop-free-trial-banner'>
+        <TopBanner
+            onClose={handleClose}
+            className={clsx('bg-info', className)}
+            data-testid="inbox-desktop-free-trial-banner"
+        >
             {message}
         </TopBanner>
     );

@@ -3,16 +3,6 @@ import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import Icon from '@proton/components/components/icon/Icon';
-import SettingsLink from '@proton/components/components/link/SettingsLink';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import StripedItem from '@proton/components/components/stripedList/StripedItem';
-import { StripedList } from '@proton/components/components/stripedList/StripedList';
-import { REACTIVATE_SOURCE } from '@proton/components/containers/payments/subscription/cancellationFlow/useCancellationTelemetry';
 import { FeatureCode, useFeature } from '@proton/features';
 import { isFreeSubscription } from '@proton/payments/core/type-guards';
 import { dateLocale } from '@proton/shared/lib/i18n';
@@ -20,7 +10,17 @@ import subscriptionEnding from '@proton/styles/assets/img/illustrations/subscrip
 import { MailFeatureFlag } from '@proton/unleash/Flags';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import Icon from '../../../../components/icon/Icon';
+import SettingsLink from '../../../../components/link/SettingsLink';
+import type { ModalProps } from '../../../../components/modalTwo/Modal';
+import ModalTwo from '../../../../components/modalTwo/Modal';
+import ModalTwoContent from '../../../../components/modalTwo/ModalContent';
+import ModalTwoFooter from '../../../../components/modalTwo/ModalFooter';
+import ModalTwoHeader from '../../../../components/modalTwo/ModalHeader';
+import StripedItem from '../../../../components/stripedList/StripedItem';
+import { StripedList } from '../../../../components/stripedList/StripedList';
 import { getReminderPageConfig } from '../cancellationFlow/reminderPageConfig';
+import { REACTIVATE_SOURCE } from '../cancellationFlow/useCancellationTelemetry';
 import type { ReminderFlag } from './cancellationReminderHelper';
 import { markRemindersAsSeen } from './cancellationReminderHelper';
 

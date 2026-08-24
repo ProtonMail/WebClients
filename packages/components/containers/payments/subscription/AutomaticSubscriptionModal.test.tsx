@@ -1,8 +1,6 @@
 import { fireEvent, screen, waitFor } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/test';
-import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
-import type { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
 import {
     ADDON_PREFIXES,
     CURRENCIES,
@@ -23,7 +21,9 @@ import { renderWithProviders } from '@proton/testing/lib/context/renderWithProvi
 import { getPaymentStatusState, getSubscriptionState } from '@proton/testing/lib/initialReduxState';
 
 import { userDefault } from '../../../hooks/helpers/test';
+import type { useCurrencies } from '../../../payments/client-extensions/useCurrencies';
 import AutomaticSubscriptionModal, { getGenericNameFromPrefix, getParameters } from './AutomaticSubscriptionModal';
+import { SUBSCRIPTION_STEPS } from './constants';
 import { getEligibility } from './subscriptionEligbility';
 
 const plans = getLongTestPlans();
@@ -237,12 +237,12 @@ describe('getParameters', () => {
     });
 });
 
-jest.mock('@proton/components/hooks/useModals');
+jest.mock('../../../hooks/useModals');
 jest.mock('@proton/atoms/Portal/Portal');
 jest.mock('./subscriptionEligbility');
 
 const mockOpenSubscriptionModal = jest.fn();
-jest.mock('@proton/components/containers/payments/subscription/SubscriptionModalProvider', () => ({
+jest.mock('./SubscriptionModalProvider', () => ({
     useSubscriptionModal: () => [mockOpenSubscriptionModal, false],
 }));
 

@@ -3,15 +3,13 @@ import type { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Info from '@proton/components/components/link/Info';
-import withPermissionGuard from '@proton/components/components/orgPermissions/withPermissionGuard';
-import { SetupOrgSpotlight } from '@proton/components/containers/account/spotlights/passB2bOnboardingSpotlights/PassB2bOnboardingSpotlights';
-import {
-    getInvitationAcceptLimit,
-    getInvitationLimit,
-} from '@proton/components/containers/members/UsersAndAddressesSection/helper';
-import type { UseUserMemberActions } from '@proton/components/containers/members/UsersAndAddressesSection/useMemberActions';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
+
+import Info from '../../../components/link/Info';
+import withPermissionGuard from '../../../components/orgPermissions/withPermissionGuard';
+import { SetupOrgSpotlight } from '../../account/spotlights/passB2bOnboardingSpotlights/PassB2bOnboardingSpotlights';
+import { getInvitationAcceptLimit, getInvitationLimit } from './helper';
+import type { UseUserMemberActions } from './useMemberActions';
 
 const GuardedAddUserButton = withPermissionGuard('account.user.create')(Button);
 const GuardedAddAddressButton = withPermissionGuard('account.user.update')(Button);

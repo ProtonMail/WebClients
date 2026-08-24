@@ -1,4 +1,3 @@
-import { componentsHookRenderer } from '@proton/components/containers/contacts/tests/render';
 import { ProrationMode } from '@proton/payments/core/api/api';
 import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/payments/core/billing-address/billing-address';
 import { CYCLE, PAYMENT_METHOD_TYPES, PLANS } from '@proton/payments/core/constants';
@@ -9,6 +8,7 @@ import { isSubscriptionCheckForbiddenWithReason } from '@proton/payments/core/su
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import { buildSubscription } from '@proton/testing/builders/subscription';
 
+import { componentsHookRenderer } from '../../contacts/tests/render';
 import type { Model } from './SubscriptionContainer';
 import { SUBSCRIPTION_STEPS } from './constants';
 import { getAllowedCycles } from './helpers/getAllowedCycles';

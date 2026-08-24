@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Prompt from '@proton/components/components/prompt/Prompt';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
+
+import Prompt from '../../components/prompt/Prompt';
 
 interface Props {
     open: boolean;

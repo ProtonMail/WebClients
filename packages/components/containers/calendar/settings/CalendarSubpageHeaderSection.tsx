@@ -3,15 +3,6 @@ import { c } from 'ttag';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Href } from '@proton/atoms/Href/Href';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Alert from '@proton/components/components/alert/Alert';
-import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
-import HolidaysCalendarModal from '@proton/components/containers/calendar/calendarModal/holidaysCalendarModal/HolidaysCalendarModal';
-import { CALENDAR_MODAL_TYPE } from '@proton/components/containers/calendar/calendarModal/interface';
-import { PersonalCalendarModal } from '@proton/components/containers/calendar/calendarModal/personalCalendarModal/PersonalCalendarModal';
-import CalendarBadge from '@proton/components/containers/calendar/settings/CalendarBadge';
-import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { IcPen } from '@proton/icons/icons/IcPen';
 import { CALENDAR_STATUS_TYPE, getCalendarStatusBadges } from '@proton/shared/lib/calendar/badges';
 import { getIsHolidaysCalendar } from '@proton/shared/lib/calendar/calendar';
@@ -23,6 +14,16 @@ import { getCalendarHasSubscriptionParameters } from '@proton/shared/lib/calenda
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import clsx from '@proton/utils/clsx';
+
+import Alert from '../../../components/alert/Alert';
+import CalendarSelectIcon from '../../../components/calendarSelect/CalendarSelectIcon';
+import useModalState from '../../../components/modalTwo/useModalState';
+import SettingsSectionWide from '../../account/SettingsSectionWide';
+import { useContactEmailsCache } from '../../contacts/ContactEmailsProvider';
+import HolidaysCalendarModal from '../calendarModal/holidaysCalendarModal/HolidaysCalendarModal';
+import { CALENDAR_MODAL_TYPE } from '../calendarModal/interface';
+import { PersonalCalendarModal } from '../calendarModal/personalCalendarModal/PersonalCalendarModal';
+import CalendarBadge from './CalendarBadge';
 
 interface Props {
     calendar: VisualCalendar | SubscribedCalendar;

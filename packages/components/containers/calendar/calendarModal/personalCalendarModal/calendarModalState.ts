@@ -1,6 +1,5 @@
 import { c } from 'ttag';
 
-import { getBusySlotSettingValue } from '@proton/components/helpers/busySlots';
 import { sortNotificationsByAscendingTrigger } from '@proton/shared/lib/calendar/alarms';
 import { modelToNotifications } from '@proton/shared/lib/calendar/alarms/modelToNotifications';
 import {
@@ -20,6 +19,8 @@ import type {
     VisualCalendar,
 } from '@proton/shared/lib/interfaces/calendar';
 import type { CalendarCreateData } from '@proton/shared/lib/interfaces/calendar/Api';
+
+import { getBusySlotSettingValue } from '../../../../helpers/busySlots';
 
 export const getCalendarEventSettingsModel = (settings: Partial<CalendarSettings>) => {
     const {

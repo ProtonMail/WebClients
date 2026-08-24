@@ -7,12 +7,6 @@ import { useOrganization } from '@proton/account/organization/hooks';
 import { useSamlSSO } from '@proton/account/samlSSO/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Logo from '@proton/components/components/logo/Logo';
-import Toggle from '@proton/components/components/toggle/Toggle';
-import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
-import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
-import useApi from '@proton/components/hooks/useApi';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoadingByKey } from '@proton/hooks/useLoading';
 import { hasMeet, hasMeetBusiness } from '@proton/payments/core/subscription/helpers';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
@@ -42,7 +36,13 @@ import {
 } from '@proton/shared/lib/organization/accessControl/serialization';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import Logo from '../../../components/logo/Logo';
+import Toggle from '../../../components/toggle/Toggle';
+import useApi from '../../../hooks/useApi';
+import useNotifications from '../../../hooks/useNotifications';
+import SettingsParagraph from '../../account/SettingsParagraph';
 import SettingsSection from '../../account/SettingsSection';
+import SettingsSectionWide from '../../account/SettingsSectionWide';
 import MailCalendarIcon from './MailCalendarIcon';
 
 const getUpdatedProducts = ({

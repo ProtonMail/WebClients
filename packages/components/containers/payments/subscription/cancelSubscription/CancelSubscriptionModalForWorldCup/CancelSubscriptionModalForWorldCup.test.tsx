@@ -2,19 +2,19 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { addMonths, format, getUnixTime } from 'date-fns';
 
-import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { buildSubscription } from '@proton/testing/builders/subscription';
 
+import { SUBSCRIPTION_STEPS } from '../../constants';
 import { CancelSubscriptionModalForWorldCup } from './CancelSubscriptionModalForWorldCup';
 import { features } from './feature';
 
 jest.mock('@proton/atoms/Portal/Portal');
-jest.mock('@proton/components/hooks/useDashboardPaymentFlow');
+jest.mock('../../../../../hooks/useDashboardPaymentFlow');
 
 const mockOpenSubscriptionModal = jest.fn();
-jest.mock('@proton/components/containers/payments/subscription/SubscriptionModalProvider', () => ({
+jest.mock('../../SubscriptionModalProvider', () => ({
     useSubscriptionModal: () => [mockOpenSubscriptionModal, false],
 }));
 
@@ -140,7 +140,7 @@ describe('CancelSubscriptionModalForWorldCup', () => {
 
     it('should render loading state on get 50% offer button', () => {
         const mockLoadingOpenSubscriptionModal = jest.fn();
-        jest.mock('@proton/components/containers/payments/subscription/SubscriptionModalProvider', () => ({
+        jest.mock('../../SubscriptionModalProvider', () => ({
             useSubscriptionModal: () => [mockLoadingOpenSubscriptionModal, true],
         }));
 

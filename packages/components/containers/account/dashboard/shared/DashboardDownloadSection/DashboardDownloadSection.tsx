@@ -5,16 +5,6 @@ import { useUser } from '@proton/account/user/hooks';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { DashboardCard, DashboardCardContent } from '@proton/atoms/DashboardCard/DashboardCard';
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
-import Dropdown from '@proton/components/components/dropdown/Dropdown';
-import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
-import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
-import DropdownMenuLink from '@proton/components/components/dropdown/DropdownMenuLink';
-import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
-import type { Tab } from '@proton/components/components/tabs/Tabs';
-import { Tabs } from '@proton/components/components/tabs/Tabs';
-import { getTelemetryUserTier } from '@proton/components/helpers/getTelemetryUserTier';
-import { mapTelemetryOsVersionWithStore } from '@proton/components/helpers/mapTelemetryOsVersionWithStore';
-import { useApi } from '@proton/components/index';
 import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import { IcArrowOutSquare } from '@proton/icons/icons/IcArrowOutSquare';
 import type { IconName } from '@proton/icons/types';
@@ -22,6 +12,17 @@ import { TelemetryAccountDashboardEvents, TelemetryMeasurementGroups } from '@pr
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import clsx from '@proton/utils/clsx';
+
+import Dropdown from '../../../../../components/dropdown/Dropdown';
+import DropdownButton from '../../../../../components/dropdown/DropdownButton';
+import DropdownMenu from '../../../../../components/dropdown/DropdownMenu';
+import DropdownMenuLink from '../../../../../components/dropdown/DropdownMenuLink';
+import { DropdownSizeUnit } from '../../../../../components/dropdown/utils';
+import type { Tab } from '../../../../../components/tabs/Tabs';
+import { Tabs } from '../../../../../components/tabs/Tabs';
+import { getTelemetryUserTier } from '../../../../../helpers/getTelemetryUserTier';
+import { mapTelemetryOsVersionWithStore } from '../../../../../helpers/mapTelemetryOsVersionWithStore';
+import useApi from '../../../../../hooks/useApi';
 
 import './DashboardDownloadSection.scss';
 

@@ -3,23 +3,24 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { useUserPermissions } from '@proton/account/userPermissions/hooks';
-import Info from '@proton/components/components/link/Info';
-import Loader from '@proton/components/components/loader/Loader';
-import { PermissionBanner, PermissionTooltip } from '@proton/components/components/orgPermissions';
-import Toggle from '@proton/components/components/toggle/Toggle';
-import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
-import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
-import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
-import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
-import useApi from '@proton/components/hooks/useApi';
-import useConfig from '@proton/components/hooks/useConfig';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { queryEnforceTwoFA, queryRemoveTwoFA } from '@proton/shared/lib/api/organization';
 import { APPS, ORGANIZATION_TWOFA_SETTING } from '@proton/shared/lib/constants';
 import { hasTwoFARequiredForAdminOnly, hasTwoFARequiredForAll } from '@proton/shared/lib/helpers/organization';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Organization } from '@proton/shared/lib/interfaces';
 import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
+
+import Info from '../../components/link/Info';
+import Loader from '../../components/loader/Loader';
+import { PermissionBanner, PermissionTooltip } from '../../components/orgPermissions/index';
+import Toggle from '../../components/toggle/Toggle';
+import useApi from '../../hooks/useApi';
+import useConfig from '../../hooks/useConfig';
+import useNotifications from '../../hooks/useNotifications';
+import SettingsLayout from '../account/SettingsLayout';
+import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
+import SettingsLayoutRight from '../account/SettingsLayoutRight';
+import SettingsParagraph from '../account/SettingsParagraph';
 
 interface Props {
     organization?: Organization;

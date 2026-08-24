@@ -7,16 +7,6 @@ import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Card } from '@proton/atoms/Card/Card';
 import { Href } from '@proton/atoms/Href/Href';
-import Alert from '@proton/components/components/alert/Alert';
-import SettingsLink from '@proton/components/components/link/SettingsLink';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-import Prompt from '@proton/components/components/prompt/Prompt';
-import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
-import SharedCalendarsSection from '@proton/components/containers/calendar/settings/SharedCalendarsSection';
-import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
-import { useModalsMap } from '@proton/components/hooks/useModalsMap';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import { removeCalendar } from '@proton/shared/lib/api/calendars';
 import { getCalendarsLimitReachedText } from '@proton/shared/lib/calendar/calendarLimits';
@@ -32,10 +22,20 @@ import type {
     VisualCalendar,
 } from '@proton/shared/lib/interfaces/calendar';
 
+import Alert from '../../../components/alert/Alert';
+import SettingsLink from '../../../components/link/SettingsLink';
+import useModalState from '../../../components/modalTwo/useModalState';
+import Prompt from '../../../components/prompt/Prompt';
+import useApi from '../../../hooks/useApi';
+import useEventManager from '../../../hooks/useEventManager';
+import { useModalsMap } from '../../../hooks/useModalsMap';
+import useNotifications from '../../../hooks/useNotifications';
+import SettingsParagraph from '../../account/SettingsParagraph';
 import HolidaysCalendarModal from '../calendarModal/holidaysCalendarModal/HolidaysCalendarModal';
 import { PersonalCalendarModal } from '../calendarModal/personalCalendarModal/PersonalCalendarModal';
 import SubscribedCalendarModal from '../calendarModal/subscribedCalendarModal/SubscribedCalendarModal';
 import CalendarsSection from './CalendarsSection';
+import SharedCalendarsSection from './SharedCalendarsSection';
 
 type ModalsMap = {
     calendarModal: ModalWithProps<{

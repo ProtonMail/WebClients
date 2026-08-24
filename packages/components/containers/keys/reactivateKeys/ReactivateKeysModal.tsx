@@ -12,12 +12,6 @@ import {
 } from '@proton/account/delegatedAccess/shared/outgoing/helper';
 import { selectMnemonicData } from '@proton/account/recovery/mnemonic';
 import { Button } from '@proton/atoms/Button/Button';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import { Tabs } from '@proton/components/components/tabs/Tabs';
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { pick } from '@proton/shared/lib/helpers/object';
 import { getInitialStates } from '@proton/shared/lib/keys/getInactiveKeys';
@@ -27,6 +21,12 @@ import type {
 } from '@proton/shared/lib/keys/reactivation/interface';
 import isTruthy from '@proton/utils/isTruthy';
 
+import type { ModalProps } from '../../../components/modalTwo/Modal';
+import ModalTwo from '../../../components/modalTwo/Modal';
+import ModalTwoContent from '../../../components/modalTwo/ModalContent';
+import ModalTwoFooter from '../../../components/modalTwo/ModalFooter';
+import ModalTwoHeader from '../../../components/modalTwo/ModalHeader';
+import { Tabs } from '../../../components/tabs/Tabs';
 import { FileForm, FileFormId } from './FileForm';
 import { MnemonicForm, MnemonicFormId } from './MnemonicForm';
 import { PasswordForm, PasswordFormId } from './PasswordForm';

@@ -4,20 +4,21 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
-import Copy from '@proton/components/components/button/Copy';
-import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
-import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
-import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
-import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
-import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
-import useApi from '@proton/components/hooks/useApi';
-import useNotifications from '@proton/components/hooks/useNotifications';
-import useUserVPN from '@proton/components/hooks/useUserVPN';
 import { useLoading } from '@proton/hooks';
 import { IcEye } from '@proton/icons/icons/IcEye';
 import { IcEyeSlash } from '@proton/icons/icons/IcEyeSlash';
 import { resetVPNSettings } from '@proton/shared/lib/api/vpn';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
+
+import Copy from '../../components/button/Copy';
+import useApi from '../../hooks/useApi';
+import useNotifications from '../../hooks/useNotifications';
+import useUserVPN from '../../hooks/useUserVPN';
+import SettingsLayout from '../account/SettingsLayout';
+import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
+import SettingsLayoutRight from '../account/SettingsLayoutRight';
+import SettingsParagraph from '../account/SettingsParagraph';
+import SettingsSectionWide from '../account/SettingsSectionWide';
 
 interface Props {
     app?: string;

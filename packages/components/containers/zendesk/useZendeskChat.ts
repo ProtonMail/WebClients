@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import type { ZendeskRef } from '@proton/components/containers/zendesk/helper';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
 import { hasActiveZendeskChat } from './LiveChatZendesk';
+import type { ZendeskRef } from './helper';
 import { useCanAccessZendeskChat } from './useCanAccessZendeskChat';
 
 export const useZendeskChat = (user: UserModel) => {

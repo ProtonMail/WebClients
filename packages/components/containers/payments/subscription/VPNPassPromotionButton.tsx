@@ -1,14 +1,14 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Logo from '@proton/components/components/logo/Logo';
-import { PromotionBanner } from '@proton/components/containers/banner/PromotionBanner';
 import { CYCLE } from '@proton/payments/core/constants';
 import type { Currency } from '@proton/payments/core/interface';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
+import Logo from '../../../components/logo/Logo';
 import { getSimplePriceString } from '../../../components/price/helper';
 import getBoldFormattedText from '../../../helpers/getBoldFormattedText';
+import { PromotionBanner } from '../../banner/PromotionBanner';
 
 interface VPNPassPromotionButtonProps {
     onClick: () => void;
