@@ -1,5 +1,7 @@
 import { c } from 'ttag';
 
+import { BRAND_NAME } from '@proton/shared/lib/constants';
+
 export const announcementMessages = {
     participantJoined: (name?: string) =>
         name
@@ -91,6 +93,22 @@ export const announcementMessages = {
     autoCloseIn30Seconds: () => c('Accessibility announcement').t`The meeting will close in 30 seconds`,
 
     autoCloseIn15Seconds: () => c('Accessibility announcement').t`The meeting will close in 15 seconds`,
+
+    backgroundBlurApplied: () => c('Accessibility announcement').t`Blurred background applied`,
+
+    protonBackgroundApplied: () => c('Accessibility announcement').t`${BRAND_NAME} background applied`,
+
+    officeBackgroundApplied: () => c('Accessibility announcement').t`Office background applied`,
+
+    mountainBackgroundApplied: () => c('Accessibility announcement').t`Mountain background applied`,
+
+    abstractBackgroundApplied: () => c('Accessibility announcement').t`Abstract background applied`,
+
+    beachBackgroundApplied: () => c('Accessibility announcement').t`Beach background applied`,
+
+    coffeeBackgroundApplied: () => c('Accessibility announcement').t`Coffee place background applied`,
+
+    backgroundEffectCleared: () => c('Accessibility announcement').t`Background effect turned off`,
 
     turnRelayActive: () =>
         c('Accessibility announcement')

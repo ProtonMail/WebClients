@@ -1,7 +1,15 @@
 .background-tile {
+	border-color: var(--border-card);
+	border-radius: 1.25rem;
 	background-color: var(--interaction-weak);
 
 	&:hover {
+		border-color: var(--interaction-norm-major-1);
 		filter: brightness(1.15);
+	}
+
+	// Placed after the hover rule so the selected border wins at equal specificity.
+	&[aria-checked='true'] {
+		border-color: var(--interaction-norm-contrast);
 	}
 }

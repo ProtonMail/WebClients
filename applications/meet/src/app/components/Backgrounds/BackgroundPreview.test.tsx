@@ -1,4 +1,10 @@
+import { Provider } from 'react-redux';
+
+import { configureStore } from '@reduxjs/toolkit';
 import { render, screen, waitFor } from '@testing-library/react';
+
+import { deviceManagementReducer } from '@proton/meet/store/slices/deviceManagementSlice';
+import { ProtonStoreContext } from '@proton/react-redux-store';
 
 import type { MediaManagementContextType } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import { MediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
@@ -17,19 +23,37 @@ vi.mock('@livekit/components-react', () => livekitReact);
 
 vi.mock('@proton/shared/lib/helpers/browser', () => ({ isMobile: () => false, isSafari: () => false }));
 
-const renderPreview = (contextValue: Partial<MediaManagementContextType>) =>
+const createMockStore = (cameraPermission: PermissionState) =>
+    configureStore({
+        // @ts-expect-error - mock data
+        reducer: {
+            ...deviceManagementReducer,
+        },
+        preloadedState: {
+            deviceManagement: {
+                permissions: { camera: cameraPermission, microphone: cameraPermission },
+            },
+        },
+    });
+
+const renderPreview = (
+    contextValue: Partial<MediaManagementContextType>,
+    { cameraPermission = 'granted' as PermissionState } = {}
+) =>
     render(
-        <MediaManagementContext.Provider
-            // @ts-expect-error - contextValue is a partial MediaManagementContextType
-            value={{
-                facingMode: 'user',
-                cleanupPreviewTrack: vi.fn(),
-                cleanupCameraPreview: vi.fn(),
-                ...contextValue,
-            }}
-        >
-            <BackgroundPreview selectedCameraId="camera-1" />
-        </MediaManagementContext.Provider>
+        <Provider context={ProtonStoreContext} store={createMockStore(cameraPermission)}>
+            <MediaManagementContext.Provider
+                // @ts-expect-error - contextValue is a partial MediaManagementContextType
+                value={{
+                    facingMode: 'user',
+                    cleanupPreviewTrack: vi.fn(),
+                    cleanupCameraPreview: vi.fn(),
+                    ...contextValue,
+                }}
+            >
+                <BackgroundPreview selectedCameraId="camera-1" />
+            </MediaManagementContext.Provider>
+        </Provider>
     );
 
 describe('BackgroundPreview', () => {
@@ -94,9 +118,23 @@ describe('BackgroundPreview', () => {
         expect(await screen.findByText('Preview unavailable')).toBeInTheDocument();
     });
 
-    it('should label the preview so it is clear whose camera it is', () => {
-        renderPreview({ isVideoEnabled: true });
+    it.each<PermissionState>(['prompt', 'denied'])(
+        'should ask for camera access instead of previewing when the permission is %s',
+        (cameraPermission) => {
+            const handlePreviewCameraToggle = vi.fn().mockResolvedValue(true);
 
-        expect(screen.getByText('Your preview')).toBeInTheDocument();
+            renderPreview({ isVideoEnabled: false, handlePreviewCameraToggle }, { cameraPermission });
+
+            expect(screen.getByText('Allow camera access to preview your background')).toBeInTheDocument();
+            // Starting a track here would trigger a permission prompt from the picker itself.
+            expect(handlePreviewCameraToggle).not.toHaveBeenCalled();
+        }
+    );
+
+    it('should not reuse the published track without the camera permission', () => {
+        renderPreview({ isVideoEnabled: true }, { cameraPermission: 'denied' });
+
+        expect(screen.queryByTestId('published-camera')).not.toBeInTheDocument();
+        expect(screen.getByText('Allow camera access to preview your background')).toBeInTheDocument();
     });
 });

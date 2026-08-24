@@ -5,6 +5,8 @@ import { Track } from 'livekit-client';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import { useMeetSelector } from '@proton/meet/store/hooks';
+import { selectCameraPermission } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
 import { isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
@@ -119,6 +121,18 @@ interface BackgroundPreviewProps {
 
 export const BackgroundPreview = ({ selectedCameraId }: BackgroundPreviewProps) => {
     const { isVideoEnabled } = useMediaManagementContext();
+    const cameraPermission = useMeetSelector(selectCameraPermission);
+
+    if (cameraPermission !== 'granted') {
+        return (
+            <div className="relative w-full ratio-16/9 bg-norm meet-radius overflow-hidden">
+                <div className="absolute inset-0 flex items-center justify-center px-4 text-center">
+                    <span className="text-sm color-norm max-w-custom" style={{ maxWidth: '12rem' }}>{c('Info')
+                        .t`Allow camera access to preview your background`}</span>
+                </div>
+            </div>
+        );
+    }
 
     return (
         <div className="relative w-full ratio-16/9 bg-norm meet-radius overflow-hidden">
@@ -129,8 +143,6 @@ export const BackgroundPreview = ({ selectedCameraId }: BackgroundPreviewProps) 
             )}
 
             <div className="gradient-overlay absolute inset-0" />
-
-            <span className="absolute bottom-0 left-0 p-3 text-sm color-norm">{c('Info').t`Your preview`}</span>
 
             <BackgroundEffectInitializingOverlay viewSize="small" />
         </div>
