@@ -75,9 +75,8 @@ import { textToClipboard } from '@proton/shared/lib/helpers/browser'
 import { VersionNumber } from '@proton/docs-shared/components/ui/VersionNumber'
 import { versionCookieAtLoad } from '@proton/components/helpers/versionCookie'
 import { useMoveItemsModal } from '@proton/drive/public/moveItemsModal'
-import { generateNodeUid, getDrive } from '@proton/drive'
+import { generateNodeUid } from '@proton/drive'
 import { IcListBullets } from '@proton/icons/icons/IcListBullets'
-import { reportTrashError, trashDocument as trashDocumentSDK } from '~/drive-sdk/trash'
 
 export type DocumentTitleDropdownProps = {
   authenticatedController: AuthenticatedDocControllerInterface | undefined
@@ -345,23 +344,11 @@ export function DocumentTitleDropdown({
     }
 
     try {
-      if (trashWithSDK) {
-        const drive = getDrive()
-        const { volumeId, linkId } = documentState.getProperty('entitlements').nodeMeta as NodeMeta
-        try {
-          await trashDocumentSDK(drive, generateNodeUid(volumeId, linkId))
-          authenticatedController.markAsTrashed()
-        } catch (error) {
-          reportTrashError(error)
-          createNotification({ type: 'error', text: c('Notification').t`Failed to trash document` })
-        }
-      } else {
-        await authenticatedController.trashDocument()
-      }
+      await authenticatedController.trashDocument(trashWithSDK)
     } finally {
       close()
     }
-  }, [authenticatedController, close, createNotification, documentState, trashWithSDK])
+  }, [authenticatedController, close, trashWithSDK])
 
   const showVersionHistory = useCallback(() => {
     if (!authenticatedController) {

@@ -7,7 +7,7 @@ import { c } from 'ttag'
 import { renameNode } from '../DriveSDK/renameNode'
 
 export interface RenameControllerInterface {
-  renameDocument(newName: string, useSDK: boolean): Promise<TranslatedResult<void>>
+  renameDocument(newName: string, useSDK?: boolean): Promise<TranslatedResult<void>>
 }
 
 export class PublicRenameController implements RenameControllerInterface {
