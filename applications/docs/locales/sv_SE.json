@@ -952,6 +952,9 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kan inte skicka vCard-filer med fler än ${ maxAttachments } kontakter",
         "Du kan inte skicka vCard-filer med fler än ${ maxAttachments } kontakter"
+      ],
+      "Preview logs": [
+        "Förhandsgranska loggar"
       ]
     },
     "Actions message": {
@@ -3704,6 +3707,24 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Odekrypterbart namn"
+      ],
+      "Expiration date cannot be in the past": [
+        "Utgångsdatum kan inte vara i det förflutna"
+      ],
+      "Moving root item is not allowed": [
+        "Att flytta rotobjekt är inte tillåtet"
+      ],
+      "Request aborted": [
+        "Åtgärd avbruten"
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "Några fildelar misslyckades att laddas upp. Försök igen."
+      ],
+      "This item has no image preview": [
+        "Detta objekt har ingen bild förhandsgranskning"
+      ],
+      "You can only leave items that are shared with you": [
+        "Du kan endast lämna objekt som är delade med dig."
       ]
     },
     "error": {
@@ -11187,6 +11208,76 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Din provperiod slutar den ${ textDate }. Du debiteras inte om du avbryter före ${ textDate }. ${ action }"
+      ]
+    },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "Ta del av erbjudandet"
+      ],
+      "Special Offer": [
+        "Specialerbjudande"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "/month": [
+        "/månad"
+      ],
+      "2 individual accounts": [
+        "2 individuella konton"
+      ],
+      "2 TB of secure storage": [
+        "2 TB säkert lagringsutrymme"
+      ],
+      "3 TB of secure storage": [
+        "3 TB säkert lagringsutrymme"
+      ],
+      "500 GB of secure storage": [
+        "500 GB säkert lagringsutrymme"
+      ],
+      "6 individual accounts": [
+        "6 individuella konton"
+      ],
+      "Advanced protection against cyber threats": [
+        "Avancerat skydd mot cyberhot"
+      ]
+    },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } och ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "för 12 månader"
+      ],
+      "One plan, full power": [
+        "Ett paket, full kraft"
+      ],
+      "One plan, max savings": [
+        "Ett paket, maximal besparing"
+      ],
+      "One plan, more power": [
+        "Ett paket, mer kraft"
       ]
     }
   }

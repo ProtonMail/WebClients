@@ -6061,6 +6061,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du kannst weiterhin deine eigenen Kontodaten ansehen, aber alle Benutzerkonten werden aus deiner Organisation entfernt."
+      ],
+      "To help troubleshoot the issue, debug information will be uploaded to your Drive and shared securely with the ${ BRAND_NAME } support team. It may include file contents. You can stop sharing at any time, and the shared data is deleted after the review is complete.": [
+        "Um die Problembehebung zu erleichtern, werden Fehlerbehebungsinformationen auf deinen Drive hochgeladen und auf sichere Weise mit dem Support-Team von ${ BRAND_NAME } geteilt. Diese können auch Dateiinhalte umfassen. Du kannst die Freigabe jederzeit beenden, und die freigegebenen Daten werden nach Abschluss der Überprüfung gelöscht."
       ]
     },
     "info": {
@@ -6603,6 +6606,9 @@
       ],
       "Your password (trusted contact)": [
         "Dein Passwort (vertrauenswürdiger Kontakt)"
+      ],
+      "Include debug information": [
+        "Debug-Informationen einbeziehen"
       ]
     },
     "Label for contact group color": {
@@ -8428,6 +8434,12 @@
       ],
       "Your settings have been changed successfully": [
         "Deine Einstellungen wurden erfolgreich geändert"
+      ],
+      "Failed to submit report": [
+        "Bericht konnte nicht gesendet werden"
+      ],
+      "Report submitted successfully": [
+        "Bericht erfolgreich gesendet"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9110,7 +9122,7 @@
     },
     "q3campaign2026: Action": {
       "Get the deal": [
-        "Hol dir das Angebot"
+        "Deal sichern"
       ],
       "Special Offer": [
         "Sonderangebot"
@@ -9121,7 +9133,7 @@
         "/Monat"
       ],
       "2 individual accounts": [
-        "2 Einzelkonten"
+        "2 individuelle Konten"
       ],
       "2 TB of secure storage": [
         "2 TB sicherer Speicher"
@@ -9130,10 +9142,10 @@
         "3 TB sicherer Speicher"
       ],
       "500 GB of secure storage": [
-        "500 GB sicherer Speicher"
+        "500 GB sicherer Speicherplatz"
       ],
       "6 individual accounts": [
-        "6 Einzelkonten"
+        "6 individuelle Konten"
       ],
       "Advanced protection against cyber threats": [
         "Erweiterter Schutz vor Cyber-Bedrohungen"
@@ -9175,7 +9187,7 @@
         "Ein Abonnement, volle Leistung"
       ],
       "One plan, max savings": [
-        "Ein Abonnement, maximale Ersparnisse"
+        "Ein Abonnement, maximal sparen"
       ],
       "One plan, more power": [
         "Ein Abonnement, mehr Leistung"
@@ -10996,6 +11008,9 @@
       ],
       "Your exposed information": [
         "Deine exponierten Informationen"
+      ],
+      "Report issue": [
+        "Problem melden"
       ]
     },
     "Title header for keys table": {
