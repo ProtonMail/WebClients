@@ -316,6 +316,7 @@ const SubUserCreateModal = ({
                 disableStorageValidation={disableStorageValidation}
                 disableDomainValidation={disableDomainValidation}
                 disableAddressValidation={disableAddressValidation}
+                useEmail={useEmail}
                 csvConfig={{
                     mode: csvMode,
                     multipleAddresses: !useEmail,
