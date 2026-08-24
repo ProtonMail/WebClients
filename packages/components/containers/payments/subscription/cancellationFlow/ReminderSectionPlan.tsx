@@ -1,6 +1,5 @@
-import SettingsPageTitle from '@proton/components/containers/account/SettingsPageTitle';
-import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
-
+import SettingsPageTitle from '../../../account/SettingsPageTitle';
+import SettingsSectionWide from '../../../account/SettingsSectionWide';
 import type { PlanConfigReminder } from './interface';
 
 const ReminderSectionPlan = ({ title }: PlanConfigReminder) => {

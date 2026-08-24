@@ -1,10 +1,10 @@
 import { c, msgid } from 'ttag';
 
 import { useReferrals } from '@proton/account/referrals/hooks';
-import DrawerAppHeadline from '@proton/components/components/drawer/views/shared/DrawerAppHeadline';
-import DrawerAppSection from '@proton/components/components/drawer/views/shared/DrawerAppSection';
-import Loader from '@proton/components/components/loader/Loader';
 
+import DrawerAppHeadline from '../../../components/drawer/views/shared/DrawerAppHeadline';
+import DrawerAppSection from '../../../components/drawer/views/shared/DrawerAppSection';
+import Loader from '../../../components/loader/Loader';
 import joinedEmpty from './illustrations/joined-empty.svg';
 import joined from './illustrations/joined.svg';
 import subscribedEmpty from './illustrations/subscribed-empty.svg';

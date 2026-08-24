@@ -4,8 +4,6 @@ import { useAccountSessions } from '@proton/account/accountSessions';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import useConfig from '@proton/components/hooks/useConfig';
-import { useTrialOnlyPaymentMethods } from '@proton/components/hooks/useTrialOnlyPaymentMethods';
 import { getSubscriptionPlanTitles } from '@proton/payments/core/subscription/helpers';
 import { useTrialInfo } from '@proton/payments/ui/hooks/useTrialInfo';
 import { type APP_NAMES, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
@@ -13,6 +11,8 @@ import { getInitials } from '@proton/shared/lib/helpers/string';
 import { addUpsellPath, getUpgradePath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 import isTruthy from '@proton/utils/isTruthy';
 
+import useConfig from '../../hooks/useConfig';
+import { useTrialOnlyPaymentMethods } from '../../hooks/useTrialOnlyPaymentMethods';
 import type { UserDropdownValue } from './UserDropdownContext';
 import { useReferral } from './useReferral';
 

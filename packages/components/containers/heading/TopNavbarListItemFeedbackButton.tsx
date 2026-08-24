@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
-import TopNavbarListItemButton from '@proton/components/components/topnavbar/TopNavbarListItemButton';
 import { IcSpeechBubble } from '@proton/icons/icons/IcSpeechBubble';
+
+import TopNavbarListItemButton from '../../components/topnavbar/TopNavbarListItemButton';
 
 interface Props {
     onClick: () => void;

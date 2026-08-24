@@ -6,14 +6,14 @@ import { useCustomDomains } from '@proton/account/domains/hooks';
 import { useMembers } from '@proton/account/members/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
-import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { CreateMemberMode } from '@proton/shared/lib/interfaces';
 import { getIsDomainActive } from '@proton/shared/lib/organization/helper';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import useModalState from '../../../components/modalTwo/useModalState';
+import SettingsParagraph from '../../account/SettingsParagraph';
+import SettingsSectionWide from '../../account/SettingsSectionWide';
 import CreateUserAccountsModal from './CreateUserAccountsModal/CreateUserAccountsModal';
 import UploadCSVFileButton from './UploadCSVFileButton';
 import type { CsvConfig } from './csv';

@@ -1,15 +1,15 @@
 import { render, screen } from '@testing-library/react';
 
-import useConfig from '@proton/components/hooks/useConfig';
 import { PLANS } from '@proton/payments/core/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import { MAIL_MOBILE_APP_LINKS } from '@proton/shared/lib/mail/constants';
 import { VPN_MOBILE_APP_LINKS } from '@proton/shared/lib/vpn/constants';
 
+import useConfig from '../../../../hooks/useConfig';
 import SubscriptionThanks from './SubscriptionThanks';
 
 // Mock the useConfig hook
-jest.mock('@proton/components/hooks/useConfig');
+jest.mock('../../../../hooks/useConfig');
 
 describe('SubscriptionThanks', () => {
     const mockOnClose = jest.fn();

@@ -5,11 +5,11 @@ import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcSquares } from '@proton/icons/icons/IcSquares';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 
+import useNotifications from '../../../hooks/useNotifications';
 import { useReferralTelemetry } from '../hooks/useReferralTelemetry';
 import ReferralShareLinks from './inviteActions/ReferralShareLinks';
 import ReferralSignatureToggle from './inviteActions/ReferralSignatureToggle';

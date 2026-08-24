@@ -9,12 +9,12 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { DashboardCard, DashboardCardContent } from '@proton/atoms/DashboardCard/DashboardCard';
 import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
-import Loader from '@proton/components/components/loader/Loader';
-import TrialInfoDashboardV2 from '@proton/components/containers/referral/components/TrialInfo/TrialInfoDashboardV2';
-import SubscriptionEndsBannerV2 from '@proton/components/containers/topBanners/SubscriptionEndsBannerV2';
-import useLoad from '@proton/components/hooks/useLoad';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
+import Loader from '../../../../components/loader/Loader';
+import useLoad from '../../../../hooks/useLoad';
+import TrialInfoDashboardV2 from '../../../referral/components/TrialInfo/TrialInfoDashboardV2';
+import SubscriptionEndsBannerV2 from '../../../topBanners/SubscriptionEndsBannerV2';
 import { CurrentPlanInfoSection } from './CurrentPlanInfoSection';
 
 interface YourPlanSectionV2Props {

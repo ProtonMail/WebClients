@@ -4,17 +4,17 @@ import { getUnixTime, parseISO } from 'date-fns';
 import { c } from 'ttag';
 
 import { Avatar } from '@proton/atoms/Avatar/Avatar';
-import Icon from '@proton/components/components/icon/Icon';
-import { SortingTableHeader } from '@proton/components/components/table/SortingTableHeader';
-import Table from '@proton/components/components/table/Table';
-import TableBody from '@proton/components/components/table/TableBody';
-import TableRow from '@proton/components/components/table/TableRow';
-import Time from '@proton/components/components/time/Time';
 import { type CountryOptions, getLocalizedCountryByAbbr } from '@proton/payments/core/countries';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import clsx from '@proton/utils/clsx';
 
+import Icon from '../../../components/icon/Icon';
+import { SortingTableHeader } from '../../../components/table/SortingTableHeader';
+import Table from '../../../components/table/Table';
+import TableBody from '../../../components/table/TableBody';
+import TableRow from '../../../components/table/TableRow';
+import Time from '../../../components/time/Time';
 import { getFlagSvg } from '../../vpn/flag';
 import { NoEventsInfo } from '../NoEventsInfo';
 import { getVPNEventColor, getVPNEventIcon } from './helpers';

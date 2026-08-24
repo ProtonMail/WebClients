@@ -2,8 +2,6 @@ import { useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { SepaAuthorizationText } from '@proton/components/payments/chargebee/SepaAuthorizationText';
-import { formattedShortSavedSepaDetails } from '@proton/components/payments/client-extensions';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { PayPalDetails, SavedCardDetails, SepaDetails } from '@proton/payments/core/interface';
 import { isPaypalDetails, isSavedCardDetails, isSepaDetails } from '@proton/payments/core/type-guards';
@@ -11,6 +9,8 @@ import { type CreditCardType, getBankSvg } from '@proton/payments/ui/helpers/cre
 
 import Bordered from '../../../components/container/Bordered';
 import useSvgGraphicsBbox from '../../../hooks/useSvgGraphicsBbox';
+import { SepaAuthorizationText } from '../../../payments/chargebee/SepaAuthorizationText';
+import { formattedShortSavedSepaDetails } from '../../../payments/client-extensions/index';
 
 import './PaymentMethodDetails.scss';
 

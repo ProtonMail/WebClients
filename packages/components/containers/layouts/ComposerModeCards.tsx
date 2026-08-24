@@ -1,9 +1,10 @@
 import { c } from 'ttag';
 
-import LayoutCards from '@proton/components/components/input/LayoutCards';
 import { COMPOSER_MODE } from '@proton/shared/lib/mail/mailSettings';
 import composerMaximizedSvg from '@proton/styles/assets/img/layout/layout-thumb-composer-maximized.svg';
 import composerPopUpSvg from '@proton/styles/assets/img/layout/layout-thumb-composer-normal.svg';
+
+import LayoutCards from '../../components/input/LayoutCards';
 
 const { POPUP, MAXIMIZED } = COMPOSER_MODE;
 

@@ -1,10 +1,5 @@
 import { c } from 'ttag';
 
-import ColorPicker from '@proton/components/components/input/ColorPicker';
-import Label from '@proton/components/components/label/Label';
-import Info from '@proton/components/components/link/Info';
-import Toggle from '@proton/components/components/toggle/Toggle';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { getColorName } from '@proton/shared/lib/colors';
 import { LABEL_TYPE, MAX_FOLDER_NESTING_LEVEL } from '@proton/shared/lib/constants';
@@ -12,6 +7,11 @@ import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 import type { Label as tsLabel } from '@proton/shared/lib/interfaces/Label';
 
+import ColorPicker from '../../components/input/ColorPicker';
+import Label from '../../components/label/Label';
+import Info from '../../components/link/Info';
+import Toggle from '../../components/toggle/Toggle';
+import InputFieldTwo from '../../components/v2/field/InputField';
 import ParentFolderSelector from './ParentFolderSelector';
 
 interface Props {

@@ -9,14 +9,14 @@ import {
 import { selectSessionRecoveryData } from '@proton/account/recovery/sessionRecoverySelectors';
 import { useUser } from '@proton/account/user/hooks';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
-import SettingsLink from '@proton/components/components/link/SettingsLink';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-import PasswordResetAvailableAccountModal from '@proton/components/containers/account/sessionRecovery/PasswordResetAvailableAccountModal';
-import SessionRecoveryInProgressModal from '@proton/components/containers/account/sessionRecovery/SessionRecoveryInProgressModal';
-import useConfig from '@proton/components/hooks/useConfig';
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { APPS } from '@proton/shared/lib/constants';
 
+import SettingsLink from '../../components/link/SettingsLink';
+import useModalState from '../../components/modalTwo/useModalState';
+import useConfig from '../../hooks/useConfig';
+import PasswordResetAvailableAccountModal from '../account/sessionRecovery/PasswordResetAvailableAccountModal';
+import SessionRecoveryInProgressModal from '../account/sessionRecovery/SessionRecoveryInProgressModal';
 import TopBanner from './TopBanner';
 
 const SessionRecoveryInProgressBanner = () => {

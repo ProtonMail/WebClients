@@ -4,21 +4,21 @@ import { c } from 'ttag';
 
 import { organizationActions } from '@proton/account/organization';
 import { useOrganization } from '@proton/account/organization/hooks';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-import Toggle from '@proton/components/components/toggle/Toggle';
-import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
-import useApi from '@proton/components/hooks/useApi';
+import { Href } from '@proton/atoms/Href/Href';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { deleteOrgUsersAuthLogs } from '@proton/shared/lib/api/b2bevents';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { OrganizationSettings } from '@proton/shared/lib/interfaces';
 
+import useModalState from '../../../components/modalTwo/useModalState';
+import Toggle from '../../../components/toggle/Toggle';
+import useApi from '../../../hooks/useApi';
+import SettingsSectionWide from '../../account/SettingsSectionWide';
 import AuthenticationLogs from '../../organization/AuthenticationLogs';
 import B2BOrganizationUpsellBanner from './B2BOrganizationUpsellBanner';
 import TogglingMonitoringModal from './TogglingMonitoringModal';
 import WipeLogsModal from './WipeLogsModal';
 import { updateMonitoringSetting } from './api';
-import { getKnowledgeBaseUrl } from "@proton/shared/lib/helpers/url";
-import { Href } from "@proton/atoms/Href/Href";
 
 const ActivityMonitorEvents = () => {
     const api = useApi();
@@ -94,8 +94,7 @@ const ActivityMonitorEvents = () => {
                             <div className="flex flex-column">
                                 <span className="text-bold">{c('Info').t`Account monitor`}</span>
                                 <span className="color-weak">
-                                    {c('Message').t`View user sign-in, recovery and security events.`}
-                                    {' '}
+                                    {c('Message').t`View user sign-in, recovery and security events.`}{' '}
                                     <Href href={getKnowledgeBaseUrl('/account-monitor')}>
                                         {c('Link').t`Learn more`}
                                     </Href>

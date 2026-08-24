@@ -4,18 +4,6 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import Editor from '@proton/components/components/editor/Editor';
-import { useToolbar } from '@proton/components/components/editor/hooks/useToolbar';
-import type { EditorActions } from '@proton/components/components/editor/interface';
-import Toggle from '@proton/components/components/toggle/Toggle';
-import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
-import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
-import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
-import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
-import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
-import useApi from '@proton/components/hooks/useApi';
-import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
@@ -33,7 +21,19 @@ import {
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 
+import Editor from '../../components/editor/Editor';
+import { useToolbar } from '../../components/editor/hooks/useToolbar';
+import type { EditorActions } from '../../components/editor/interface';
+import Toggle from '../../components/toggle/Toggle';
+import useApi from '../../hooks/useApi';
+import useErrorHandler from '../../hooks/useErrorHandler';
 import { useHotkeys } from '../../hooks/useHotkeys';
+import useNotifications from '../../hooks/useNotifications';
+import SettingsLayout from '../account/SettingsLayout';
+import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
+import SettingsLayoutRight from '../account/SettingsLayoutRight';
+import SettingsParagraph from '../account/SettingsParagraph';
+import SettingsSectionWide from '../account/SettingsSectionWide';
 import UpgradeBanner from '../account/UpgradeBanner';
 import AutoReplyFormDaily from './AutoReplyForm/AutoReplyFormDaily';
 import AutoReplyFormFixed from './AutoReplyForm/AutoReplyFormFixed';

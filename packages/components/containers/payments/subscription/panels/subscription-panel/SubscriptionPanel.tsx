@@ -1,13 +1,6 @@
 import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
-import { Badge } from '@proton/components/components/badge/Badge';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-import Meter from '@proton/components/components/progress/Meter';
-import StripedItem from '@proton/components/components/stripedList/StripedItem';
-import { StripedList } from '@proton/components/components/stripedList/StripedList';
-import Time from '@proton/components/components/time/Time';
-import LearnMoreModal from '@proton/components/containers/topBanners/LearnMoreModal';
 import { IcStorage } from '@proton/icons/icons/IcStorage';
 import { ADDON_PREFIXES } from '@proton/payments/core/constants';
 import type { EntitlementChecks } from '@proton/payments/core/entitlements/resolver';
@@ -45,6 +38,13 @@ import isTruthy from '@proton/utils/isTruthy';
 import percentage from '@proton/utils/percentage';
 import { VPN_SERVERS } from '@proton/vpn/constants/vpnServers';
 
+import { Badge } from '../../../../../components/badge/Badge';
+import useModalState from '../../../../../components/modalTwo/useModalState';
+import Meter from '../../../../../components/progress/Meter';
+import StripedItem from '../../../../../components/stripedList/StripedItem';
+import { StripedList } from '../../../../../components/stripedList/StripedList';
+import Time from '../../../../../components/time/Time';
+import LearnMoreModal from '../../../../topBanners/LearnMoreModal';
 import { getBasicFeatures, getVersionHistory } from '../../../features/drive';
 import { getSentinel, getSupport } from '../../../features/highlights';
 import { getLumoFreeFeatures, getLumoPlusFeatures } from '../../../features/lumo';

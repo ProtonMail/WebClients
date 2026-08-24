@@ -5,11 +5,6 @@ import { c } from 'ttag';
 import { userSettingsThunk } from '@proton/account/userSettings';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import Prompt from '@proton/components/components/prompt/Prompt';
-import { setSecurityKeyRequirePinFlag } from '@proton/components/containers/account/fido/setSecurityKeyRequirePinFlag';
-import useApi from '@proton/components/hooks/useApi';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { disable2FA } from '@proton/shared/lib/api/settings';
@@ -17,7 +12,12 @@ import { lockSensitiveSettings } from '@proton/shared/lib/api/user';
 import { getHasFIDO2SettingEnabled } from '@proton/shared/lib/settings/twoFactor';
 import noop from '@proton/utils/noop';
 
+import type { ModalProps } from '../../components/modalTwo/Modal';
+import Prompt from '../../components/prompt/Prompt';
+import useApi from '../../hooks/useApi';
+import useNotifications from '../../hooks/useNotifications';
 import ReauthUsingRecoveryModal from './ReauthUsingRecoveryModal';
+import { setSecurityKeyRequirePinFlag } from './fido/setSecurityKeyRequirePinFlag';
 
 interface Props extends ModalProps {
     availableRecoveryMethods: ('mnemonic' | 'email' | 'sms')[];

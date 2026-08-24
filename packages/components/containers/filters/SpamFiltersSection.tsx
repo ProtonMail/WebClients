@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
-import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
-import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
+import SettingsParagraph from '../account/SettingsParagraph';
+import SettingsSectionWide from '../account/SettingsSectionWide';
 import Spams from './spams/Spams';
 
 const SpamFiltersSection = () => (

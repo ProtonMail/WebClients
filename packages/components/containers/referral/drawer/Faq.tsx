@@ -2,13 +2,13 @@ import { c } from 'ttag';
 
 import { useReferralInfo } from '@proton/account/referralInfo/hooks';
 import { Href } from '@proton/atoms/Href/Href';
-import Details from '@proton/components/components/container/Details';
-import Summary from '@proton/components/components/container/Summary';
 import { IcGift } from '@proton/icons/icons/IcGift';
 import { IcMoneyBills } from '@proton/icons/icons/IcMoneyBills';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 
+import Details from '../../../components/container/Details';
+import Summary from '../../../components/container/Summary';
 import {
     getReferralMaxRewardCopy,
     getReferralStep1Copy,

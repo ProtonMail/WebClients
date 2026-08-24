@@ -7,12 +7,6 @@ import { usePlans } from '@proton/account/plans/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
-import { Badge } from '@proton/components/components/badge/Badge';
-import { getIsB2CUserAbleToRunScribe } from '@proton/components/components/upsell/modals/ComposerAssistantUpsellModal.helpers';
-import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
-import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
-import useAssistantSubscriptionStatus from '@proton/components/hooks/assistant/useAssistantSubscriptionStatus';
-import useAssistantUpsellConfig from '@proton/components/hooks/assistant/useAssistantUpsellConfig';
 import { IcPenSparks } from '@proton/icons/icons/IcPenSparks';
 import { hasAIAssistant, hasPlanWithAIAssistantIncluded } from '@proton/payments/core/subscription/helpers';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
@@ -22,6 +16,12 @@ import lumoIcon from '@proton/styles/assets/img/lumo/lumo-cat-icon.svg';
 import { MailFeatureFlag } from '@proton/unleash/Flags';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import { Badge } from '../../../../components/badge/Badge';
+import { getIsB2CUserAbleToRunScribe } from '../../../../components/upsell/modals/ComposerAssistantUpsellModal.helpers';
+import useAssistantFeatureEnabled from '../../../../hooks/assistant/useAssistantFeatureEnabled';
+import useAssistantSubscriptionStatus from '../../../../hooks/assistant/useAssistantSubscriptionStatus';
+import useAssistantUpsellConfig from '../../../../hooks/assistant/useAssistantUpsellConfig';
+import { useSubscriptionModal } from '../SubscriptionModalProvider';
 import { getScribeUpsellLearnMore, getScribeUpsellText, getScribeWritingAssistantText } from './helpers';
 
 const AssistantToggle = () => {

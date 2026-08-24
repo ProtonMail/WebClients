@@ -2,10 +2,10 @@ import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
-import SettingsSection from '@proton/components/containers/account/SettingsSection';
 
+import useModalState from '../../../../components/modalTwo/useModalState';
+import SettingsParagraph from '../../../account/SettingsParagraph';
+import SettingsSection from '../../../account/SettingsSection';
 import CancelSubscriptionViaSupportModal from './CancelSubscriptionViaSupportModal';
 
 const CancelSubscriptionViaSupportSection = () => {

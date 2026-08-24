@@ -5,9 +5,6 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
-import useConfig from '@proton/components/hooks/useConfig';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import {
     closeDrawerFromChildApp,
@@ -21,7 +18,10 @@ import clsx from '@proton/utils/clsx';
 
 import Header from '../../components/header/Header';
 import useDrawer from '../../hooks/drawer/useDrawer';
+import useConfig from '../../hooks/useConfig';
+import useEventManager from '../../hooks/useEventManager';
 import { useHotkeys } from '../../hooks/useHotkeys';
+import { useTheme } from '../themes/ThemeProvider';
 
 import './DrawerAppHeader.scss';
 

@@ -1,5 +1,4 @@
-import Price from '@proton/components/components/price/Price';
-
+import Price from '../../../../../components/price/Price';
 import { getDealBilledDescription } from '../../../helpers/offerCopies';
 import { useDealContext } from './DealContext';
 

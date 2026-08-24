@@ -3,13 +3,13 @@ import type { Dispatch, SetStateAction } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Alert from '@proton/components/components/alert/Alert';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { ContactFormatted, ContactMergeModel } from '@proton/shared/lib/interfaces/contacts';
 import move from '@proton/utils/move';
 
+import Alert from '../../../components/alert/Alert';
+import ModalTwoContent from '../../../components/modalTwo/ModalContent';
+import ModalTwoFooter from '../../../components/modalTwo/ModalFooter';
+import ModalTwoHeader from '../../../components/modalTwo/ModalHeader';
 import type { ContactMergePreviewModalProps } from './ContactMergePreviewModal';
 import MergeTable from './table/MergeTable';
 

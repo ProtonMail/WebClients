@@ -1,7 +1,6 @@
-import Option from '@proton/components/components/option/Option';
-import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
-
 import { DEFAULT_FONT_SIZE, FONT_SIZES } from '../../components/editor/constants';
+import Option from '../../components/option/Option';
+import SelectTwo from '../../components/selectTwo/SelectTwo';
 
 interface Props {
     id: string;

@@ -3,18 +3,6 @@ import React, { useEffect, useMemo, useState } from 'react';
 import isDeepEqual from 'lodash/isEqual';
 import { c } from 'ttag';
 
-import Form from '@proton/components/components/form/Form';
-import Checkbox from '@proton/components/components/input/Checkbox';
-import Loader from '@proton/components/components/loader/Loader';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-import { useFilterDispatch } from '@proton/components/containers/filters/useFilterDispatch';
-import useApi from '@proton/components/hooks/useApi';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { addFilter, updateFilter } from '@proton/mail/store/filters/actions';
 import { useFilters } from '@proton/mail/store/filters/hooks';
@@ -24,6 +12,17 @@ import { applyFilters } from '@proton/shared/lib/api/filters';
 import { AUTO_REPLY_CHARACTER_COUNT_LIMIT } from '@proton/shared/lib/mail/constants';
 import generateUID from '@proton/utils/generateUID';
 
+import Form from '../../../components/form/Form';
+import Checkbox from '../../../components/input/Checkbox';
+import Loader from '../../../components/loader/Loader';
+import type { ModalProps } from '../../../components/modalTwo/Modal';
+import ModalTwo from '../../../components/modalTwo/Modal';
+import ModalTwoContent from '../../../components/modalTwo/ModalContent';
+import ModalTwoFooter from '../../../components/modalTwo/ModalFooter';
+import ModalTwoHeader from '../../../components/modalTwo/ModalHeader';
+import useModalState from '../../../components/modalTwo/useModalState';
+import useApi from '../../../hooks/useApi';
+import useNotifications from '../../../hooks/useNotifications';
 import { getDefaultFolders, noFolderValue } from '../constants';
 import type {
     Actions,
@@ -37,6 +36,7 @@ import type {
     SimpleFilterModalModel,
 } from '../interfaces';
 import { FilterStatement, Step } from '../interfaces';
+import { useFilterDispatch } from '../useFilterDispatch';
 import { computeFromTree, convertModel } from '../utils';
 import CloseFilterModal from './CloseFilterModal';
 import FilterActionsForm from './FilterActionsForm';

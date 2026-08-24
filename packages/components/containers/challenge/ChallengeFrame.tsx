@@ -1,9 +1,9 @@
 import type { DetailedHTMLProps, IframeHTMLAttributes, MutableRefObject, ReactNode } from 'react';
 import { useLayoutEffect, useMemo, useRef, useState } from 'react';
 
-import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import clsx from '@proton/utils/clsx';
 
+import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
 import { getStyleSrcUrls, getStyleSrcsData, handleEvent } from './challengeHelper';
 import type { ChallengeLog, ChallengeLogType, ChallengeRef, ChallengeResult } from './interface';
 
@@ -12,8 +12,10 @@ export const CHALLENGE_TIMEOUT_MS = ERROR_TIMEOUT_MS + 9000;
 
 type Stage = 'initialize' | 'initialized' | 'load' | 'loaded' | 'error';
 
-export interface Props
-    extends Omit<DetailedHTMLProps<IframeHTMLAttributes<HTMLIFrameElement>, HTMLIFrameElement>, 'onClick' | 'onError'> {
+export interface Props extends Omit<
+    DetailedHTMLProps<IframeHTMLAttributes<HTMLIFrameElement>, HTMLIFrameElement>,
+    'onClick' | 'onError'
+> {
     challengeRef: MutableRefObject<ChallengeRef | undefined>;
     children?: ReactNode;
     src: string;

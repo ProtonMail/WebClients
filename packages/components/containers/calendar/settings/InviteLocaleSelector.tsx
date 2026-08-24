@@ -1,12 +1,13 @@
 import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import Option from '@proton/components/components/option/Option';
-import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
-import useConfig from '@proton/components/hooks/useConfig';
 import { getClosestLocaleCode } from '@proton/shared/lib/i18n/helper';
 import type { Nullable } from '@proton/shared/lib/interfaces';
 import type { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
+
+import Option from '../../../components/option/Option';
+import SelectTwo from '../../../components/selectTwo/SelectTwo';
+import useConfig from '../../../hooks/useConfig';
 
 interface Props {
     id: string;

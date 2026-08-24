@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 
-import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLoading from '@proton/hooks/useLoading';
 import { getOrgAuthLogs } from '@proton/shared/lib/api/b2bevents';
 
+import useErrorHandler from '../../hooks/useErrorHandler';
 import type { AuthLogsQueryParams } from '../b2bDashboard/ActivityMonitor/helpers';
 
 export const getFormattedQueryString = (params: { [key: string]: any }) => {

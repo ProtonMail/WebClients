@@ -4,18 +4,18 @@ import { useSortable } from '@dnd-kit/react/sortable';
 import { c } from 'ttag';
 
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
-import { SortableList } from '@proton/components/components/dnd/SortableList';
-import { Handle } from '@proton/components/components/table/Handle';
-import Table from '@proton/components/components/table/Table';
-import TableBody from '@proton/components/components/table/TableBody';
-import TableCell from '@proton/components/components/table/TableCell';
-import TableHeader from '@proton/components/components/table/TableHeader';
-import TableRow from '@proton/components/components/table/TableRow';
 import { IcArrowsCross } from '@proton/icons/icons/IcArrowsCross';
 import { IcTag } from '@proton/icons/icons/IcTag';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
 import clsx from '@proton/utils/clsx';
 
+import { SortableList } from '../../components/dnd/SortableList';
+import { Handle } from '../../components/table/Handle';
+import Table from '../../components/table/Table';
+import TableBody from '../../components/table/TableBody';
+import TableCell from '../../components/table/TableCell';
+import TableHeader from '../../components/table/TableHeader';
+import TableRow from '../../components/table/TableRow';
 import ActionsLabel from './ActionsLabel';
 
 const SortableListItem = ({ label, index }: { label: Label; index: number }) => {

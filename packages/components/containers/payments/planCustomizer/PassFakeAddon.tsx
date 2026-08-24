@@ -3,16 +3,17 @@ import type { ReactElement } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Badge } from '@proton/components/components/badge/Badge';
-import PassLogo from '@proton/components/components/logo/PassLogo';
-import Price from '@proton/components/components/price/Price';
-import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import type { Currency, Cycle, PlanIDs } from '@proton/payments/core/interface';
 import { getPrice } from '@proton/payments/core/price-helpers';
 import type { FullPlansMap } from '@proton/payments/core/subscription/interface';
 import { BRAND_NAME, PASS_SHORT_APP_NAME, VPN_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
+
+import { Badge } from '../../../components/badge/Badge';
+import PassLogo from '../../../components/logo/PassLogo';
+import Price from '../../../components/price/Price';
+import getBoldFormattedText from '../../../helpers/getBoldFormattedText';
 
 import './PassFakeAddon.scss';
 

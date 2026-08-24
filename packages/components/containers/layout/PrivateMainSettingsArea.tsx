@@ -1,10 +1,10 @@
 import { Children, type ReactNode, cloneElement, isValidElement, useRef } from 'react';
 
-import SettingsPageTitle from '@proton/components/containers/account/SettingsPageTitle';
-import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import clsx from '@proton/utils/clsx';
 
 import useAppTitle from '../../hooks/useAppTitle';
+import SettingsPageTitle from '../account/SettingsPageTitle';
+import SettingsParagraph from '../account/SettingsParagraph';
 import ErrorBoundary from '../app/ErrorBoundary';
 import PrivateMainArea from './PrivateMainArea';
 import SubSettingsSection from './SubSettingsSection';

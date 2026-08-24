@@ -1,11 +1,11 @@
 import { c } from 'ttag';
 
 import { selectMnemonicData } from '@proton/account/recovery/mnemonic';
-import SettingsNavItem from '@proton/components/containers/layout/SettingsNavItem';
-import { StatusBadge, StatusBadgeStatus } from '@proton/components/containers/layout/StatusBadge';
 import { IcRecoveryPhrase } from '@proton/icons/icons/IcRecoveryPhrase';
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 
+import SettingsNavItem from '../../layout/SettingsNavItem';
+import { StatusBadge, StatusBadgeStatus } from '../../layout/StatusBadge';
 import { LastChanged } from '../LastChanged';
 import { NavItemStatus } from './NavItemStatus';
 

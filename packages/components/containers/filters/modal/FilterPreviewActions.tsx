@@ -2,13 +2,13 @@ import { Fragment } from 'react';
 
 import { c } from 'ttag';
 
-import LabelStack from '@proton/components/components/labelStack/LabelStack';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
 import clsx from '@proton/utils/clsx';
 
+import LabelStack from '../../../components/labelStack/LabelStack';
 import { getDefaultFolders } from '../constants';
 import type { SimpleFilterModalModel } from '../interfaces';
 

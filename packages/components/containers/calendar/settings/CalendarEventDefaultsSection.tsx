@@ -3,25 +3,6 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Option from '@proton/components/components/option/Option';
-import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
-import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
-import Toggle from '@proton/components/components/toggle/Toggle';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
-import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
-import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
-import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
-import { BusySlotsLabelInfo } from '@proton/components/containers/calendar/calendarModal/BusySlotsCheckbox';
-import {
-    getCalendarEventSettingsModel,
-    getDefaultModel,
-} from '@proton/components/containers/calendar/calendarModal/personalCalendarModal/calendarModalState';
-import useBusySlotsAvailable from '@proton/components/containers/calendar/hooks/useBusySlotsAvailable';
-import Notifications from '@proton/components/containers/calendar/notifications/Notifications';
-import { useCalendarModelEventManager } from '@proton/components/containers/eventManager/calendar/CalendarModelEventManagerProvider';
-import useApi from '@proton/components/hooks/useApi';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { updateCalendarSettings } from '@proton/shared/lib/api/calendars';
 import { dedupeNotifications, sortNotificationsByAscendingTrigger } from '@proton/shared/lib/calendar/alarms';
@@ -35,6 +16,26 @@ import type {
     SubscribedCalendar,
     VisualCalendar,
 } from '@proton/shared/lib/interfaces/calendar';
+
+import Option from '../../../components/option/Option';
+import SelectTwo from '../../../components/selectTwo/SelectTwo';
+import type { SelectChangeEvent } from '../../../components/selectTwo/select';
+import Toggle from '../../../components/toggle/Toggle';
+import InputFieldTwo from '../../../components/v2/field/InputField';
+import useApi from '../../../hooks/useApi';
+import useNotifications from '../../../hooks/useNotifications';
+import SettingsLayout from '../../account/SettingsLayout';
+import SettingsLayoutLeft from '../../account/SettingsLayoutLeft';
+import SettingsLayoutRight from '../../account/SettingsLayoutRight';
+import SettingsSectionWide from '../../account/SettingsSectionWide';
+import { useCalendarModelEventManager } from '../../eventManager/calendar/CalendarModelEventManagerProvider';
+import { BusySlotsLabelInfo } from '../calendarModal/BusySlotsCheckbox';
+import {
+    getCalendarEventSettingsModel,
+    getDefaultModel,
+} from '../calendarModal/personalCalendarModal/calendarModalState';
+import useBusySlotsAvailable from '../hooks/useBusySlotsAvailable';
+import Notifications from '../notifications/Notifications';
 
 interface Props {
     calendar: VisualCalendar | SubscribedCalendar;

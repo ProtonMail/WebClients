@@ -1,6 +1,5 @@
 import isEqual from 'lodash/isEqual';
 
-import type { PaymentFacade } from '@proton/components/payments/client-extensions';
 import type { Currency, Cycle, FreeSubscription, PlanIDs } from '@proton/payments/core/interface';
 import { getPlanNameFromIDs } from '@proton/payments/core/plan/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
@@ -14,6 +13,7 @@ import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { RequireOnly, UserModel } from '@proton/shared/lib/interfaces';
 
+import type { PaymentFacade } from '../../../../payments/client-extensions/index';
 import type { Model } from '../SubscriptionContainer';
 import { SUBSCRIPTION_STEPS } from '../constants';
 

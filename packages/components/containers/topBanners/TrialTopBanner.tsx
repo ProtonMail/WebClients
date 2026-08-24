@@ -6,10 +6,6 @@ import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-import Time from '@proton/components/components/time/Time';
-import TimeRemaining from '@proton/components/components/timeRemaining/TimeRemaining';
-import useConfig from '@proton/components/hooks/useConfig';
 import { Renew } from '@proton/payments/core/subscription/constants';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { getTrialInfoForSingleSubscription } from '@proton/payments/core/trials';
@@ -17,6 +13,10 @@ import { isPaidSubscription } from '@proton/payments/core/type-guards';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 
+import useModalState from '../../components/modalTwo/useModalState';
+import Time from '../../components/time/Time';
+import TimeRemaining from '../../components/timeRemaining/TimeRemaining';
+import useConfig from '../../hooks/useConfig';
 import LearnMoreModal from './LearnMoreModal';
 import TopBanner from './TopBanner';
 import TrialCanceledModal from './TrialCanceledModal';

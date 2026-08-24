@@ -1,9 +1,10 @@
 import { createContext, useContext } from 'react';
 import type { ReactNode } from 'react';
 
-import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
-import type { SelectTwoProps } from '@proton/components/components/selectTwo/SelectTwo';
 import clsx from '@proton/utils/clsx';
+
+import SelectTwo from '../../components/selectTwo/SelectTwo';
+import type { SelectTwoProps } from '../../components/selectTwo/SelectTwo';
 
 const SettingsSelectRowContext = createContext<{ id: string }>({ id: '' });
 

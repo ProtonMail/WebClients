@@ -8,11 +8,6 @@ import { setPasswordReminderFlag } from '@proton/account/passwordReminder/setPas
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { DashboardCard, DashboardCardContent } from '@proton/atoms/DashboardCard/DashboardCard';
 import { Href } from '@proton/atoms/Href/Href';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-import { SettingsIconRow } from '@proton/components/containers/account/SettingsIconRow';
-import { SettingsToggleRow } from '@proton/components/containers/account/SettingsToggleRow';
-import { EnforcedByOrganization } from '@proton/components/containers/organization/EnforcedByOrganization';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { IcBell } from '@proton/icons/icons/IcBell';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
@@ -20,6 +15,11 @@ import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { PASSWORD_REMINDERS_VALUE } from '@proton/shared/lib/interfaces';
 
+import useModalState from '../../../components/modalTwo/useModalState';
+import useNotifications from '../../../hooks/useNotifications';
+import { EnforcedByOrganization } from '../../organization/EnforcedByOrganization';
+import { SettingsIconRow } from '../SettingsIconRow';
+import { SettingsToggleRow } from '../SettingsToggleRow';
 import ConfirmDisablePasswordRemindersModal from './ConfirmDisablePasswordRemindersModal';
 
 const PasswordRemindersSettings = () => {

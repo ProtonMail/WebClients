@@ -1,14 +1,14 @@
 import { usePlans } from '@proton/account/plans/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
-import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
 import type { PLANS } from '@proton/payments/core/constants';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import { getPlan, getRenewalTime } from '@proton/payments/core/subscription/helpers';
 import { isPaidSubscription } from '@proton/payments/core/type-guards';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 
+import { useModalTwoPromise } from '../../../../components/modalTwo/useModalTwo';
+import { usePreferredPlansMap } from '../../../../hooks/usePreferredPlansMap';
 import { getShortPlan } from '../../features/plan';
 import type { HighlightPlanDowngradeModalOwnProps } from '../HighlightPlanDowngradeModal';
 import HighlightPlanDowngradeModal, { planSupportsCancellationDowngradeModal } from '../HighlightPlanDowngradeModal';

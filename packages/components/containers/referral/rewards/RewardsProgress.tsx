@@ -6,8 +6,8 @@ import { useReferralInfo } from '@proton/account/referralInfo/hooks';
 import { useReferrals } from '@proton/account/referrals/hooks';
 import { DashboardCard, DashboardCardContent } from '@proton/atoms/DashboardCard/DashboardCard';
 import { DashboardGrid } from '@proton/atoms/DashboardGrid/DashboardGrid';
-import Price from '@proton/components/components/price/Price';
 
+import Price from '../../../components/price/Price';
 import moneyGrey from './img/money-grey.svg';
 import money from './img/money.svg';
 import subscribedGrey from './img/subscribed-grey.svg';

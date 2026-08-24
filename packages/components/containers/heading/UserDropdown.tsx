@@ -3,15 +3,6 @@ import { type MouseEvent, useCallback, useEffect, useMemo } from 'react';
 import { getLoginHref, getSwitchHref, handleSwitchAccountFork } from '@proton/account/accountSessions/sessionsHelper';
 import { selectSessionRecoveryData } from '@proton/account/recovery/sessionRecoverySelectors';
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
-import ConfirmSignOutModal, {
-    shouldShowConfirmSignOutModal,
-} from '@proton/components/components/confirmSignOutModal/ConfirmSignOutModal';
-import ConfirmSignOutAllModal from '@proton/components/components/confirmSignOutModal/ConfirmSignoutAllModal';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-import SessionRecoverySignOutConfirmPrompt from '@proton/components/containers/account/sessionRecovery/SessionRecoverySignOutConfirmPrompt';
-import type AccountSessionsSwitcher from '@proton/components/containers/heading/AccountSessionsSwitcher';
-import AuthenticatedBugModal from '@proton/components/containers/support/AuthenticatedBugModal';
-import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import type { ForkType } from '@proton/shared/lib/authentication/fork';
 import type { ExtraSessionForkData } from '@proton/shared/lib/authentication/interface';
@@ -25,8 +16,17 @@ import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { getShouldProcessLinkClick } from '@proton/shared/lib/helpers/dom';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import ConfirmSignOutModal, {
+    shouldShowConfirmSignOutModal,
+} from '../../components/confirmSignOutModal/ConfirmSignOutModal';
+import ConfirmSignOutAllModal from '../../components/confirmSignOutModal/ConfirmSignoutAllModal';
+import useModalState from '../../components/modalTwo/useModalState';
+import useAuthentication from '../../hooks/useAuthentication';
+import SessionRecoverySignOutConfirmPrompt from '../account/sessionRecovery/SessionRecoverySignOutConfirmPrompt';
+import AuthenticatedBugModal from '../support/AuthenticatedBugModal';
 import HelpModal from '../support/HelpModal';
 import SelfHelpModal from '../support/SelfHelpModal';
+import type AccountSessionsSwitcher from './AccountSessionsSwitcher';
 import UserDropdownButton, { type Props as UserDropdownButtonProps } from './UserDropdownButton';
 import UserDropdownContent from './UserDropdownContent';
 import { UserDropdownContext, type UserDropdownValue } from './UserDropdownContext';

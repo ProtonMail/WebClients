@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
 import type { ButtonLikeShape } from '@proton/atoms/Button/ButtonLike';
-import Time from '@proton/components/components/time/Time';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import { hasBundle } from '@proton/payments/core/subscription/helpers';
@@ -9,6 +8,7 @@ import { getTrialInfoForSingleSubscription } from '@proton/payments/core/trials'
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
+import Time from '../../../../components/time/Time';
 import { type Upsell, type UpsellWithPlan, isUpsellWithPlan } from '../helpers';
 import UpsellPanel from './UpsellPanel';
 import UpsellPriceV1 from './components/UpsellPriceV1';

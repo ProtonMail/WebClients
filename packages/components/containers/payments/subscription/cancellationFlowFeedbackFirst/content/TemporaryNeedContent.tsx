@@ -3,13 +3,13 @@ import { c } from 'ttag';
 import { usePlans } from '@proton/account/plans/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import { getPlanName } from '@proton/payments/core/subscription/helpers';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
+import ModalTwoContent from '../../../../../components/modalTwo/ModalContent';
+import ModalTwoFooter from '../../../../../components/modalTwo/ModalFooter';
+import ModalTwoHeader from '../../../../../components/modalTwo/ModalHeader';
 import { B2BStoryCards } from '../components/B2BStoryCards';
 import { B2CStoryCards } from '../components/B2CStoryCards';
 import { ComparisonTable } from '../components/ComparisonTable';

@@ -2,20 +2,21 @@ import { c } from 'ttag';
 
 import { useGetSamlSSO } from '@proton/account/samlSSO/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import type { SsoAppInfo } from '@proton/components/containers/organization/sso/ssoAppInfo';
-import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import useApi from '@proton/components/hooks/useApi';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { removeSAMLConfig } from '@proton/shared/lib/api/samlSSO';
 import type { SSO } from '@proton/shared/lib/interfaces';
 import errorImg from '@proton/styles/assets/img/errors/error-generic-triangle.svg';
+
+import type { ModalProps } from '../../../components/modalTwo/Modal';
+import ModalTwo from '../../../components/modalTwo/Modal';
+import ModalTwoContent from '../../../components/modalTwo/ModalContent';
+import ModalTwoFooter from '../../../components/modalTwo/ModalFooter';
+import ModalTwoHeader from '../../../components/modalTwo/ModalHeader';
+import getBoldFormattedText from '../../../helpers/getBoldFormattedText';
+import useApi from '../../../hooks/useApi';
+import useNotifications from '../../../hooks/useNotifications';
+import type { SsoAppInfo } from './ssoAppInfo';
 
 interface Props extends ModalProps {
     sso: SSO;

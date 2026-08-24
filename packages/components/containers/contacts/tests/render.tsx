@@ -9,7 +9,6 @@ import { createMemoryHistory } from 'history';
 
 import { getModelState } from '@proton/account/test';
 import { NotificationsContext } from '@proton/app-context/notifications/notificationsContext';
-import { CacheProvider } from '@proton/components/containers/cache/Provider';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import { APPS, CONTACT_CARD_TYPE } from '@proton/shared/lib/constants';
@@ -34,6 +33,7 @@ import {
 
 import ApiContext from '../../api/apiContext';
 import AuthenticationProvider from '../../authentication/Provider';
+import { CacheProvider } from '../../cache/Provider';
 import ConfigProvider from '../../config/Provider';
 import EventManagerContext from '../../eventManager/context';
 import { extendStore, setupStore } from './store';

@@ -2,10 +2,6 @@ import { c } from 'ttag';
 
 import { userSettingsActions } from '@proton/account/userSettings';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import Option from '@proton/components/components/option/Option';
-import { SettingsSelectRow } from '@proton/components/containers/account/SettingsSelectRow';
-import useApi from '@proton/components/hooks/useApi';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { IcCalendarToday } from '@proton/icons/icons/IcCalendarToday';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
@@ -16,7 +12,11 @@ import { loadDateLocale } from '@proton/shared/lib/i18n/loadLocale';
 import { SETTINGS_DATE_FORMAT, type UserSettings } from '@proton/shared/lib/interfaces';
 import { getDefaultDateFormat } from '@proton/shared/lib/settings/helper';
 
+import Option from '../../components/option/Option';
+import useApi from '../../hooks/useApi';
+import useNotifications from '../../hooks/useNotifications';
 import { SettingsIconRow } from '../account/SettingsIconRow';
+import { SettingsSelectRow } from '../account/SettingsSelectRow';
 import { getAutomaticText } from './helper';
 
 const DateFormatSection = () => {

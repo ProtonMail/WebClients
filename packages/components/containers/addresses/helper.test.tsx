@@ -1,4 +1,15 @@
 import {
+    ADDRESS_FLAGS,
+    ADDRESS_PERMISSIONS,
+    ADDRESS_PERMISSION_TYPE,
+    ADDRESS_STATUS,
+    ADDRESS_TYPE,
+    MEMBER_ROLE,
+    MEMBER_TYPE,
+} from '@proton/shared/lib/constants';
+import type { Address, Member, PartialMemberAddress, UserModel } from '@proton/shared/lib/interfaces';
+
+import {
     canReceive,
     canSend,
     getPermission,
@@ -11,17 +22,7 @@ import {
     permissionsReceiveMap,
     permissionsSendMap,
     setupIncompletePermissionMap,
-} from '@proton/components/containers/addresses/helper';
-import {
-    ADDRESS_FLAGS,
-    ADDRESS_PERMISSIONS,
-    ADDRESS_PERMISSION_TYPE,
-    ADDRESS_STATUS,
-    ADDRESS_TYPE,
-    MEMBER_ROLE,
-    MEMBER_TYPE,
-} from '@proton/shared/lib/constants';
-import type { Address, Member, PartialMemberAddress, UserModel } from '@proton/shared/lib/interfaces';
+} from './helper';
 
 describe('addresses helper functions', () => {
     describe('canReceive', () => {

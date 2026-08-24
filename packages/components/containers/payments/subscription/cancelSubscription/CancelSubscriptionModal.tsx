@@ -1,13 +1,13 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import Prompt from '@proton/components/components/prompt/Prompt';
-import Time from '@proton/components/components/time/Time';
 import { getPlanTitle, getRenewalTime } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 
+import type { ModalProps } from '../../../../components/modalTwo/Modal';
 import type { ModalTwoPromiseHandlers } from '../../../../components/modalTwo/useModalTwo';
+import Prompt from '../../../../components/prompt/Prompt';
+import Time from '../../../../components/time/Time';
 import type { CancelSubscriptionResult } from './types';
 
 type PromiseHandlers = ModalTwoPromiseHandlers<CancelSubscriptionResult>;

@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
-import PassLogo from '@proton/components/components/logo/PassLogo';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { APPS, PASS_APP_NAME } from '@proton/shared/lib/constants';
 
+import PassLogo from '../../../../../../components/logo/PassLogo';
 import type { DashboardMoreInfoSection } from '../../../shared/DashboardMoreInfoSection/DashboardMoreInfoSection';
 import {
     DashboardMoreInfoSectionTag,

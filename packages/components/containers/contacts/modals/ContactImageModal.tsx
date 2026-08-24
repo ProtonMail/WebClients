@@ -6,21 +6,22 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Input } from '@proton/atoms/Input/Input';
-import Field from '@proton/components/components/container/Field';
-import Row from '@proton/components/components/container/Row';
-import Form from '@proton/components/components/form/Form';
-import FileInput from '@proton/components/components/input/FileInput';
-import Label from '@proton/components/components/label/Label';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import ErrorZone from '@proton/components/components/text/ErrorZone';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { CONTACT_IMG_SIZE } from '@proton/shared/lib/contacts/constants';
 import { resizeImage } from '@proton/shared/lib/helpers/image';
 import { isValidHttpUrl } from '@proton/shared/lib/helpers/url';
+
+import Field from '../../../components/container/Field';
+import Row from '../../../components/container/Row';
+import Form from '../../../components/form/Form';
+import FileInput from '../../../components/input/FileInput';
+import Label from '../../../components/label/Label';
+import type { ModalProps } from '../../../components/modalTwo/Modal';
+import ModalTwo from '../../../components/modalTwo/Modal';
+import ModalTwoContent from '../../../components/modalTwo/ModalContent';
+import ModalTwoFooter from '../../../components/modalTwo/ModalFooter';
+import ModalTwoHeader from '../../../components/modalTwo/ModalHeader';
+import ErrorZone from '../../../components/text/ErrorZone';
+import useNotifications from '../../../hooks/useNotifications';
 
 export interface ContactImageProps extends Omit<ModalProps<typeof Form>, 'onSubmit'> {
     url?: string;

@@ -2,11 +2,11 @@ import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { getAudienceFromSubscription } from '@proton/payments/core/subscription/helpers';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
+import useDashboardPaymentFlow from '../../../../hooks/useDashboardPaymentFlow';
 import { useSubscriptionModal } from '../SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '../constants';
 

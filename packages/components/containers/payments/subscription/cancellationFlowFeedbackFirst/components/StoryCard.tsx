@@ -1,4 +1,4 @@
-import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import useActiveBreakpoint from '../../../../../hooks/useActiveBreakpoint';
 
 interface Props {
     image: string;

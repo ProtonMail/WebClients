@@ -1,8 +1,8 @@
 import { useOrganization } from '@proton/account/organization/hooks';
 import useBYOEFeatureStatus from '@proton/activation/src/hooks/useBYOEFeatureStatus';
-import Loader from '@proton/components/components/loader/Loader';
-import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 
+import Loader from '../../components/loader/Loader';
+import SettingsSectionWide from '../account/SettingsSectionWide';
 import Addresses from './Addresses';
 
 interface Props {

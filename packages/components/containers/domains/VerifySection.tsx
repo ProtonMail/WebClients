@@ -1,16 +1,17 @@
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
-import Alert from '@proton/components/components/alert/Alert';
-import Copy from '@proton/components/components/button/Copy';
-import Label from '@proton/components/components/label/Label';
-import Table from '@proton/components/components/table/Table';
-import TableBody from '@proton/components/components/table/TableBody';
-import TableHeader from '@proton/components/components/table/TableHeader';
-import TableRow from '@proton/components/components/table/TableRow';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Domain } from '@proton/shared/lib/interfaces';
+
+import Alert from '../../components/alert/Alert';
+import Copy from '../../components/button/Copy';
+import Label from '../../components/label/Label';
+import Table from '../../components/table/Table';
+import TableBody from '../../components/table/TableBody';
+import TableHeader from '../../components/table/TableHeader';
+import TableRow from '../../components/table/TableRow';
+import useNotifications from '../../hooks/useNotifications';
 
 interface Props {
     domain: Partial<Domain>;

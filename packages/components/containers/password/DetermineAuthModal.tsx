@@ -1,14 +1,15 @@
 import { useEffect, useState } from 'react';
 
-import type { AuthModalProps } from '@proton/components/containers/password/AuthModal';
-import SSOAuthModal from '@proton/components/containers/password/SSOAuthModal';
-import SrpAuthModal from '@proton/components/containers/password/SrpAuthModal';
-import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { getInfo } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import type { InfoAuthedResponse, SSOInfoResponse } from '@proton/shared/lib/authentication/interface';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
+
+import useErrorHandler from '../../hooks/useErrorHandler';
+import { useSilentApi } from '../../hooks/useSilentApi';
+import type { AuthModalProps } from './AuthModal';
+import SSOAuthModal from './SSOAuthModal';
+import SrpAuthModal from './SrpAuthModal';
 
 type InfoResult =
     | {

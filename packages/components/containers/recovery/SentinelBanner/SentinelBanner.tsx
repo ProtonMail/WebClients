@@ -2,12 +2,12 @@ import { c } from 'ttag';
 
 import { selectSentinelRecoveryBannerDisplay } from '@proton/account/safetyReview/recoveryState/recoveryState';
 import { useLoadRecoveryState } from '@proton/account/safetyReview/recoveryState/useRecoveryState';
-import { SettingsLayoutVariant } from '@proton/components/containers/layout/interface';
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME, PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
+import { SettingsLayoutVariant } from '../../layout/interface';
+import { useTheme } from '../../themes/ThemeProvider';
 import SentinelShieldDark from './SentinelShield-dark.svg';
 import SentinelShield from './SentinelShield.svg';
 

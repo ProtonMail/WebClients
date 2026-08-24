@@ -2,15 +2,6 @@ import { Form, type FormikErrors, FormikProvider, useFormik } from 'formik';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import { type ModalStateProps, useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
-import Prompt from '@proton/components/components/prompt/Prompt';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { maxLengthValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import {
@@ -20,6 +11,15 @@ import {
 } from '@proton/shared/lib/interfaces/RetentionRule';
 import isTruthy from '@proton/utils/isTruthy';
 
+import ModalTwo from '../../../components/modalTwo/Modal';
+import ModalTwoContent from '../../../components/modalTwo/ModalContent';
+import ModalTwoFooter from '../../../components/modalTwo/ModalFooter';
+import ModalTwoHeader from '../../../components/modalTwo/ModalHeader';
+import { type ModalStateProps, useModalStateObject } from '../../../components/modalTwo/useModalState';
+import Prompt from '../../../components/prompt/Prompt';
+import InputFieldTwo from '../../../components/v2/field/InputField';
+import TextAreaTwo from '../../../components/v2/input/TextArea';
+import useNotifications from '../../../hooks/useNotifications';
 import ProductSelection from './ProductSelection';
 import RetentionDurationSetting from './RetentionDurationSetting';
 import RetentionScopes from './RetentionScopes';

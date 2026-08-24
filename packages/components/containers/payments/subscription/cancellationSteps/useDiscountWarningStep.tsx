@@ -1,5 +1,4 @@
-import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
-
+import { useModalTwoPromise } from '../../../../components/modalTwo/useModalTwo';
 import { DiscountWarningModal } from '../PlanLossWarningModal';
 import type { CancellationStep, CancellationStepConfig } from './types';
 

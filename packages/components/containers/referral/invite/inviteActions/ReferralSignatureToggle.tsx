@@ -5,10 +5,6 @@ import { c } from 'ttag';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import Info from '@proton/components/components/link/Info';
-import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
-import Toggle from '@proton/components/components/toggle/Toggle';
-import useApi from '@proton/components/hooks/useApi';
 import { useLoading } from '@proton/hooks';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
@@ -19,6 +15,11 @@ import { APPS, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { PM_SIGNATURE_REFERRAL } from '@proton/shared/lib/mail/mailSettings';
 import { getProtonMailSignature } from '@proton/shared/lib/mail/signature';
 import { useFlag } from '@proton/unleash/useFlag';
+
+import Info from '../../../../components/link/Info';
+import SkeletonLoader from '../../../../components/skeletonLoader/SkeletonLoader';
+import Toggle from '../../../../components/toggle/Toggle';
+import useApi from '../../../../hooks/useApi';
 
 const useAvailableApps = () => {
     const [user] = useUser();

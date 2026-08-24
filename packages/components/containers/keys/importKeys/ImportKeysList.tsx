@@ -1,12 +1,11 @@
 import { c } from 'ttag';
 
-import Badge from '@proton/components/components/badge/Badge';
-import LoaderIcon from '@proton/components/components/loader/LoaderIcon';
-import Table from '@proton/components/components/table/Table';
-import TableBody from '@proton/components/components/table/TableBody';
-import TableHeader from '@proton/components/components/table/TableHeader';
-import TableRow from '@proton/components/components/table/TableRow';
-
+import Badge from '../../../components/badge/Badge';
+import LoaderIcon from '../../../components/loader/LoaderIcon';
+import Table from '../../../components/table/Table';
+import TableBody from '../../../components/table/TableBody';
+import TableHeader from '../../../components/table/TableHeader';
+import TableRow from '../../../components/table/TableRow';
 import type { ImportKeyState } from './interface';
 import { Status } from './interface';
 

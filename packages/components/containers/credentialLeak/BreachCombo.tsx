@@ -1,15 +1,14 @@
 import { c } from 'ttag';
 
-import Pagination from '@proton/components/components/pagination/Pagination';
-import usePagination from '@proton/components/components/pagination/usePagination';
-import Table from '@proton/components/components/table/Table';
-import TableBody from '@proton/components/components/table/TableBody';
-import TableCell from '@proton/components/components/table/TableCell';
-import TableHeader from '@proton/components/components/table/TableHeader';
-import TableHeaderCell from '@proton/components/components/table/TableHeaderCell';
-import TableRow from '@proton/components/components/table/TableRow';
-import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-
+import Pagination from '../../components/pagination/Pagination';
+import usePagination from '../../components/pagination/usePagination';
+import Table from '../../components/table/Table';
+import TableBody from '../../components/table/TableBody';
+import TableCell from '../../components/table/TableCell';
+import TableHeader from '../../components/table/TableHeader';
+import TableHeaderCell from '../../components/table/TableHeaderCell';
+import TableRow from '../../components/table/TableRow';
+import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
 import type { FetchedBreaches } from './models';
 
 interface Props {

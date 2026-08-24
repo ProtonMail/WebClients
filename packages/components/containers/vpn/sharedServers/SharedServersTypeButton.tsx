@@ -1,9 +1,10 @@
 import React from 'react';
 
-import Radio from '@proton/components/components/input/Radio';
-import { illustrations, isValidLabel } from '@proton/components/containers/vpn/sharedServers/illustrations';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
+
+import Radio from '../../../components/input/Radio';
+import { illustrations, isValidLabel } from './illustrations';
 
 type SharedServersTypeButtonProps = {
     onClick: () => void;

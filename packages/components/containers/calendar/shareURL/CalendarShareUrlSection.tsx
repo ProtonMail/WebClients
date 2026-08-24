@@ -4,13 +4,6 @@ import { useEffect, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Alert from '@proton/components/components/alert/Alert';
-import Loader from '@proton/components/components/loader/Loader';
-import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
-import useApi from '@proton/components/hooks/useApi';
-import { useGetCalendarInfo } from '@proton/components/hooks/useGetCalendarInfo';
-import { useModalsMap } from '@proton/components/hooks/useModalsMap';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { deletePublicLink, editPublicLink, getPublicLinks } from '@proton/shared/lib/api/calendars';
@@ -26,6 +19,13 @@ import type { ACCESS_LEVEL, CalendarLink, CalendarUrl, VisualCalendar } from '@p
 import type { Nullable } from '@proton/shared/lib/interfaces/utils';
 import { splitKeys } from '@proton/shared/lib/keys';
 
+import Alert from '../../../components/alert/Alert';
+import Loader from '../../../components/loader/Loader';
+import useApi from '../../../hooks/useApi';
+import { useGetCalendarInfo } from '../../../hooks/useGetCalendarInfo';
+import { useModalsMap } from '../../../hooks/useModalsMap';
+import useNotifications from '../../../hooks/useNotifications';
+import SettingsParagraph from '../../account/SettingsParagraph';
 import DeleteLinkConfirmationModal from './DeleteLinkConfirmationModal';
 import EditLinkModal from './EditLinkModal';
 import LinkTable from './LinkTable';

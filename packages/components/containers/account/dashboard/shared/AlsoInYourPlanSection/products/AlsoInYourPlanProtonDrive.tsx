@@ -3,18 +3,14 @@ import { useContext } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import DriveLogo from '@proton/components/components/logo/DriveLogo';
-import {
-    getDocumentEditor,
-    getStorageFeature,
-    getVersionHistory,
-} from '@proton/components/containers/payments/features/drive';
 import { PLANS } from '@proton/payments/core/constants';
 import { APPS, DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { goToPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
 import { getSpace } from '@proton/shared/lib/user/storage';
 
+import DriveLogo from '../../../../../../components/logo/DriveLogo';
+import { getDocumentEditor, getStorageFeature, getVersionHistory } from '../../../../../payments/features/drive';
 import { AlsoInYourPlanSectionContext } from '../AlsoInYourPlanSection';
 import AlsoInYourPlanSectionCard from '../AlsoInYourPlanSectionCard';
 import drive from '../illustrations/drive.jpg';

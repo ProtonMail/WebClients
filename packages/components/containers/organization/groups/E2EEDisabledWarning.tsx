@@ -1,10 +1,11 @@
 import { c } from 'ttag';
 
 import { Banner } from '@proton/atoms/Banner/Banner';
-import Loader from '@proton/components/components/loader/Loader';
 import { IcExclamationTriangleFilled } from '@proton/icons/icons/IcExclamationTriangleFilled';
 import type { GroupMember } from '@proton/shared/lib/interfaces';
 import { GROUP_MEMBER_TYPE } from '@proton/shared/lib/interfaces';
+
+import Loader from '../../../components/loader/Loader';
 
 const E2EEDisabledWarning = ({
     groupMembers,

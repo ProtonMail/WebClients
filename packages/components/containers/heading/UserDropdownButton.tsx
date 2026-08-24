@@ -5,11 +5,12 @@ import { c } from 'ttag';
 
 import { NotificationDot } from '@proton/atoms/NotificationDot/NotificationDot';
 import type { ThemeColor } from '@proton/colors';
-import DropdownCaret from '@proton/components/components/dropdown/DropdownCaret';
 import type { IconName } from '@proton/icons/types';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
+
+import DropdownCaret from '../../components/dropdown/DropdownCaret';
 
 import './UserDropdownButton.scss';
 

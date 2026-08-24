@@ -2,11 +2,11 @@ import { c } from 'ttag';
 
 import { selectAccountRecovery } from '@proton/account/recovery/accountRecovery';
 import { useIsSentinelUser } from '@proton/account/recovery/sentinelHooks';
-import SettingsNavItem from '@proton/components/containers/layout/SettingsNavItem';
 import { IcMobile } from '@proton/icons/icons/IcMobile';
 import { IcShieldExclamationFilled } from '@proton/icons/icons/IcShieldExclamationFilled';
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 
+import SettingsNavItem from '../../layout/SettingsNavItem';
 import { StatusBadge, StatusBadgeStatus } from '../../layout/StatusBadge';
 import { LastChanged } from '../LastChanged';
 import { NavItemStatus } from './NavItemStatus';

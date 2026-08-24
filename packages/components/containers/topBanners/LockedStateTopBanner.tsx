@@ -5,7 +5,6 @@ import { c } from 'ttag';
 import { selectPreviousSubscription } from '@proton/account/previousSubscription';
 import { useGetPreviousSubscription } from '@proton/account/previousSubscription/hooks';
 import { Href } from '@proton/atoms/Href/Href';
-import SettingsLink from '@proton/components/components/link/SettingsLink';
 import { PLANS } from '@proton/payments/core/constants';
 import type { PlanIDs } from '@proton/payments/core/interface';
 import { getPlanNameFromIDs } from '@proton/payments/core/plan/helpers';
@@ -21,6 +20,7 @@ import { UserLockedFlags } from '@proton/shared/lib/interfaces';
 import { getAppStorage } from '@proton/shared/lib/user/storage';
 import noop from '@proton/utils/noop';
 
+import SettingsLink from '../../components/link/SettingsLink';
 import TopBanner from './TopBanner';
 
 const StorageBannerText = ({

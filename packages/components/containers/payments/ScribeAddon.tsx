@@ -4,11 +4,6 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
-import {
-    getScribeUpsellLearnMore,
-    getScribeUpsellText,
-    getScribeWritingAssistantText,
-} from '@proton/components/containers/payments/subscription/assistant/helpers';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { BRAND_NAME, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
@@ -17,6 +12,11 @@ import { useFlag } from '@proton/unleash/useFlag';
 
 import { NumberCustomiser, type NumberCustomiserProps } from './planCustomizer/NumberCustomiser';
 import type { CustomiserMode } from './planCustomizer/addonCustomizerHelpers';
+import {
+    getScribeUpsellLearnMore,
+    getScribeUpsellText,
+    getScribeWritingAssistantText,
+} from './subscription/assistant/helpers';
 
 const ScribeB2BBanner = ({ onClick, price }: { onClick: () => void; price: ReactElement }) => {
     const scribeToLumo = useFlag(MailFeatureFlag.ScribeToLumo);

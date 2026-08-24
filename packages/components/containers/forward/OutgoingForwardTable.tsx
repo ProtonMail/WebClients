@@ -1,13 +1,13 @@
 import { c } from 'ttag';
 
-import Table from '@proton/components/components/table/Table';
-import TableBody from '@proton/components/components/table/TableBody';
-import TableCell from '@proton/components/components/table/TableCell';
-import TableHeader from '@proton/components/components/table/TableHeader';
-import TableHeaderCell from '@proton/components/components/table/TableHeaderCell';
-import TableRow from '@proton/components/components/table/TableRow';
 import type { Address, OutgoingAddressForwarding, UserModel } from '@proton/shared/lib/interfaces';
 
+import Table from '../../components/table/Table';
+import TableBody from '../../components/table/TableBody';
+import TableCell from '../../components/table/TableCell';
+import TableHeader from '../../components/table/TableHeader';
+import TableHeaderCell from '../../components/table/TableHeaderCell';
+import TableRow from '../../components/table/TableRow';
 import ForwardStatus from './ForwardStatus';
 import OutgoingForwardActions from './OutgoingForwardActions';
 import WarningChainedForwarding from './WarningChainedForwarding';

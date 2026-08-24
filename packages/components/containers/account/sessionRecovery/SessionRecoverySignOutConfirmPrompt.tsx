@@ -3,10 +3,11 @@ import { c, msgid } from 'ttag';
 import { useSessionRecoveryGracePeriodHoursRemaining } from '@proton/account/recovery/sessionRecoveryHooks';
 import { selectSessionRecoveryData } from '@proton/account/recovery/sessionRecoverySelectors';
 import { Button } from '@proton/atoms/Button/Button';
-import SettingsLink from '@proton/components/components/link/SettingsLink';
-import Prompt from '@proton/components/components/prompt/Prompt';
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { SessionRecoveryState } from '@proton/shared/lib/interfaces';
+
+import SettingsLink from '../../../components/link/SettingsLink';
+import Prompt from '../../../components/prompt/Prompt';
 
 const GracePeriodText = () => {
     const gracePeriodHoursRemaining = useSessionRecoveryGracePeriodHoursRemaining();

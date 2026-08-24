@@ -4,14 +4,15 @@ import { useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import AutocompleteList from '@proton/components/components/autocomplete/AutocompleteList';
-import { useAutocomplete, useAutocompleteFilter } from '@proton/components/components/autocomplete/useAutocomplete';
-import Option from '@proton/components/components/option/Option';
-import Marks from '@proton/components/components/text/Marks';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { isValidHttpUrl } from '@proton/shared/lib/helpers/url';
 import type { EduGainOrganization } from '@proton/shared/lib/interfaces';
+
+import AutocompleteList from '../../../components/autocomplete/AutocompleteList';
+import { useAutocomplete, useAutocompleteFilter } from '../../../components/autocomplete/useAutocomplete';
+import Option from '../../../components/option/Option';
+import Marks from '../../../components/text/Marks';
+import InputFieldTwo from '../../../components/v2/field/InputField';
 
 interface Props {
     organizationData: EduGainOrganization[];

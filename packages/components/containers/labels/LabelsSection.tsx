@@ -5,16 +5,6 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import useDebounceInput from '@proton/components/components/input/useDebounceInput';
-import Loader from '@proton/components/components/loader/Loader';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
-import MailUpsellButton from '@proton/components/components/upsell/MailUpsellButton';
-import LabelsUpsellModal from '@proton/components/components/upsell/modals/LabelsUpsellModal';
-import SettingsSection from '@proton/components/containers/account/SettingsSection';
-import ConfirmSortModal from '@proton/components/containers/labels/modals/ConfirmSortModal';
-import useApi from '@proton/components/hooks/useApi';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { categoriesThunk } from '@proton/mail/store/labels';
 import { useLabels } from '@proton/mail/store/labels/hooks';
@@ -26,7 +16,17 @@ import { hasReachedLabelLimit } from '@proton/shared/lib/helpers/folder';
 import type { Label } from '@proton/shared/lib/interfaces';
 import move from '@proton/utils/move';
 
+import useDebounceInput from '../../components/input/useDebounceInput';
+import Loader from '../../components/loader/Loader';
+import useModalState from '../../components/modalTwo/useModalState';
+import { useModalTwoPromise } from '../../components/modalTwo/useModalTwo';
+import MailUpsellButton from '../../components/upsell/MailUpsellButton';
+import LabelsUpsellModal from '../../components/upsell/modals/LabelsUpsellModal';
+import useApi from '../../hooks/useApi';
+import useNotifications from '../../hooks/useNotifications';
+import SettingsSection from '../account/SettingsSection';
 import LabelSortableList from './LabelSortableList';
+import ConfirmSortModal from './modals/ConfirmSortModal';
 import EditLabelModal from './modals/EditLabelModal';
 
 const DEBOUNCE_VALUE = 1600;

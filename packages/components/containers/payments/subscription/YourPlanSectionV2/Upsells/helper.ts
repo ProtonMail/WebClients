@@ -1,6 +1,5 @@
 import { useMemo } from 'react';
 
-import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
 import type { PLANS } from '@proton/payments/core/constants';
 import type { FreeSubscription, PlanIDs } from '@proton/payments/core/interface';
 import { getPrice } from '@proton/payments/core/price-helpers';
@@ -9,6 +8,7 @@ import type { Subscription } from '@proton/payments/core/subscription/interface'
 import { isFreeSubscription } from '@proton/payments/core/type-guards';
 import type { APP_NAMES, DASHBOARD_UPSELL_PATHS } from '@proton/shared/lib/constants';
 
+import { usePreferredPlansMap } from '../../../../../hooks/usePreferredPlansMap';
 import { SUBSCRIPTION_STEPS } from '../../constants';
 import {
     type GetPlanUpsellArgs,

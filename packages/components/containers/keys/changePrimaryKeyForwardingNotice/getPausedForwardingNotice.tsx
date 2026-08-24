@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
-import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-
+import getBoldFormattedText from '../../../helpers/getBoldFormattedText';
 import { getMailRouteTitles } from '../../account/constants/settingsRouteTitles';
 
 const getPausedForwardingNotice = () => {

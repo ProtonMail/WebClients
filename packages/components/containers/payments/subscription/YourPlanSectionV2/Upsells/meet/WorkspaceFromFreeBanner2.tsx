@@ -5,11 +5,6 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { DashboardGridSection } from '@proton/atoms/DashboardGrid/DashboardGrid';
-import { PromotionBanner } from '@proton/components/containers/banner/PromotionBanner';
-import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
-import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
-import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
-import useLoad from '@proton/components/hooks/useLoad';
 import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { hasFreeOrPlus, isManagedExternally } from '@proton/payments/core/subscription/helpers';
@@ -28,6 +23,11 @@ import {
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
 
+import useDashboardPaymentFlow from '../../../../../../hooks/useDashboardPaymentFlow';
+import useLoad from '../../../../../../hooks/useLoad';
+import { PromotionBanner } from '../../../../../banner/PromotionBanner';
+import { useSubscriptionModal } from '../../../SubscriptionModalProvider';
+import { SUBSCRIPTION_STEPS } from '../../../constants';
 import { PlanIcon } from '../../PlanIcon';
 
 const BundleUpsellBanner = ({ app }: { app: APP_NAMES }) => {

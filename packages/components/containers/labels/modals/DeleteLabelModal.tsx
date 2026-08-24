@@ -1,14 +1,15 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import Prompt from '@proton/components/components/prompt/Prompt';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { deleteLabel } from '@proton/mail/store/labels/actions';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { LABEL_TYPE } from '@proton/shared/lib/constants';
 import type { Label } from '@proton/shared/lib/interfaces';
+
+import type { ModalProps } from '../../../components/modalTwo/Modal';
+import Prompt from '../../../components/prompt/Prompt';
+import useNotifications from '../../../hooks/useNotifications';
 
 interface Props extends ModalProps {
     label: Label;

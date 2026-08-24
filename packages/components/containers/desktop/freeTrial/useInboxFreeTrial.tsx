@@ -2,13 +2,13 @@ import { useEffect, useState } from 'react';
 
 import { addDays, isBefore, startOfDay } from 'date-fns';
 
-import { DEFAULT_TRIAL_DAYS } from '@proton/components/containers/desktop/freeTrial/constants';
 import { FeatureCode, useFeature } from '@proton/features';
 import type {
     InboxDesktopFreeTrialDates,
     InboxDesktopFreeTrialReminders,
 } from '@proton/shared/lib/desktop/desktopTypes';
 
+import { DEFAULT_TRIAL_DAYS } from './constants';
 import { shouldDisplayReminder } from './shouldDisplayReminder';
 
 const { InboxDesktopFreeTrialDates: DatesFlag, InboxDesktopFreeTrialReminders: RemindersFlag } = FeatureCode;

@@ -1,9 +1,10 @@
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
-import Icon from '@proton/components/components/icon/Icon';
-import type { FetchedBreaches } from '@proton/components/containers/credentialLeak/models';
 import { getBlogURL } from '@proton/shared/lib/helpers/url';
+
+import Icon from '../../components/icon/Icon';
+import type { FetchedBreaches } from './models';
 
 interface Props {
     actions: FetchedBreaches['actions'];

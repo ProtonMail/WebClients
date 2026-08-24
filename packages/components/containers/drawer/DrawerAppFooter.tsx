@@ -1,11 +1,13 @@
 import type { ReactElement } from 'react';
 import { cloneElement, useEffect, useRef } from 'react';
 
-import Footer from '@proton/components/components/footer/Footer';
-import useElementRect from '@proton/components/hooks/useElementRect';
-import useNotifications from '@proton/components/hooks/useNotifications';
-import { modalTwoBackdropRootClassName } from '@proton/shared/lib/busy';
 import throttle from 'lodash/throttle';
+
+import { modalTwoBackdropRootClassName } from '@proton/shared/lib/busy';
+
+import Footer from '../../components/footer/Footer';
+import useElementRect from '../../hooks/useElementRect';
+import useNotifications from '../../hooks/useNotifications';
 
 interface Props {
     buttons: ReactElement[];

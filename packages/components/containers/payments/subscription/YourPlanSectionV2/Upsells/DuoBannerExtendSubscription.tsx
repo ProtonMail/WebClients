@@ -2,9 +2,6 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
-import { getSimplePriceString } from '@proton/components/components/price/helper';
-import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { getAddonsFromIDs } from '@proton/payments/core/planIDs';
@@ -15,6 +12,9 @@ import { DASHBOARD_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
+import { getSimplePriceString } from '../../../../../components/price/helper';
+import getBoldFormattedText from '../../../../../helpers/getBoldFormattedText';
+import useDashboardPaymentFlow from '../../../../../hooks/useDashboardPaymentFlow';
 import { useSubscriptionModalRaw } from '../../SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '../../constants';
 import type { GetPlanUpsellArgs, MaybeUpsell } from '../../helpers';

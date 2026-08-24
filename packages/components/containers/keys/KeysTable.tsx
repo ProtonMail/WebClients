@@ -2,16 +2,16 @@ import { format } from 'date-fns';
 import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Table from '@proton/components/components/table/Table';
-import TableBody from '@proton/components/components/table/TableBody';
-import TableCell from '@proton/components/components/table/TableCell';
-import TableRow from '@proton/components/components/table/TableRow';
-import KeyVersionBadge from '@proton/components/containers/keys/KeyVersionBadge';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
 import Copy from '../../components/button/Copy';
 import PersonalKeyWarningIcon from '../../components/icon/PersonalKeyWarningIcon';
+import Table from '../../components/table/Table';
+import TableBody from '../../components/table/TableBody';
+import TableCell from '../../components/table/TableCell';
+import TableRow from '../../components/table/TableRow';
+import useNotifications from '../../hooks/useNotifications';
+import KeyVersionBadge from './KeyVersionBadge';
 import KeysActions from './KeysActions';
 import KeysStatus, { getKeyFunction } from './KeysStatus';
 import type { KeyActions, KeyDisplay } from './shared/interface';

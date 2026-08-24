@@ -4,13 +4,14 @@ import { c } from 'ttag';
 import { useReferralInfo } from '@proton/account/referralInfo/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { Banner } from '@proton/atoms/Banner/Banner';
-import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { getPlanTitle, isAutoRenewTrial, isTrialRenewing } from '@proton/payments/core/subscription/helpers';
 import { getTrialSubscription } from '@proton/payments/core/trials';
 import { isPaidSubscription } from '@proton/payments/core/type-guards';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { dateLocale } from '@proton/shared/lib/i18n';
+
+import getBoldFormattedText from '../../../../helpers/getBoldFormattedText';
 
 const TrialInfoDashboardV2 = () => {
     const [subscription] = useSubscription();

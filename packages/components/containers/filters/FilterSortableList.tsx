@@ -2,11 +2,10 @@ import { useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { SortableList } from '@proton/components/components/dnd/SortableList';
-import Table from '@proton/components/components/table/Table';
-import TableBody from '@proton/components/components/table/TableBody';
-import TableHeader from '@proton/components/components/table/TableHeader';
-
+import { SortableList } from '../../components/dnd/SortableList';
+import Table from '../../components/table/Table';
+import TableBody from '../../components/table/TableBody';
+import TableHeader from '../../components/table/TableHeader';
 import FilterItemRow from './FilterItemRow';
 import type { Filter } from './interfaces';
 

@@ -4,9 +4,6 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-import Prompt from '@proton/components/components/prompt/Prompt';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import {
     addIPCHostUpdateListener,
@@ -17,6 +14,10 @@ import {
 import { isMac, isWindows } from '@proton/shared/lib/helpers/browser';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { useFlag } from '@proton/unleash/useFlag';
+
+import type { ModalProps } from '../../../components/modalTwo/Modal';
+import useModalState from '../../../components/modalTwo/useModalState';
+import Prompt from '../../../components/prompt/Prompt';
 
 interface DefaultAppPromptProps extends ModalProps {
     setDefault: () => void;

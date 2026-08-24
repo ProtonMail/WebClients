@@ -3,11 +3,6 @@ import type { PropsWithChildren } from 'react';
 import { c, msgid } from 'ttag';
 
 import { useMember } from '@proton/account/member/hook';
-import Icon from '@proton/components/components/icon/Icon';
-import Meter from '@proton/components/components/progress/Meter';
-import StripedItem from '@proton/components/components/stripedList/StripedItem';
-import { StripedList } from '@proton/components/components/stripedList/StripedList';
-import { getHighSpeedVPNConnectionsText } from '@proton/components/containers/payments/features/vpn';
 import { IcStorage } from '@proton/icons/icons/IcStorage';
 import type { IconName } from '@proton/icons/types';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
@@ -16,6 +11,11 @@ import type { Calendar } from '@proton/shared/lib/interfaces/calendar';
 import isTruthy from '@proton/utils/isTruthy';
 import percentage from '@proton/utils/percentage';
 
+import Icon from '../../../../components/icon/Icon';
+import Meter from '../../../../components/progress/Meter';
+import StripedItem from '../../../../components/stripedList/StripedItem';
+import { StripedList } from '../../../../components/stripedList/StripedList';
+import { getHighSpeedVPNConnectionsText } from '../../features/vpn';
 import Panel from './Panel';
 
 interface Item {

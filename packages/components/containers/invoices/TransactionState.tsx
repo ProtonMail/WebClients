@@ -1,6 +1,7 @@
-import { Badge } from '@proton/components/components/badge/Badge';
 import { TransactionState } from '@proton/payments/core/constants';
 import { getTransactionStateTitle } from '@proton/payments/core/transactions';
+
+import { Badge } from '../../components/badge/Badge';
 
 const TYPES = {
     [TransactionState.SUCCESS]: 'success',

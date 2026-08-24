@@ -2,11 +2,6 @@
 import { renderHook } from '@testing-library/react-hooks';
 
 import { useUser } from '@proton/account/user/hooks';
-import useDrawer from '@proton/components/hooks/drawer/useDrawer';
-import useApiStatus from '@proton/components/hooks/useApiStatus';
-import useAuthentication from '@proton/components/hooks/useAuthentication';
-import useConfig from '@proton/components/hooks/useConfig';
-import useOnline from '@proton/components/hooks/useOnline';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getLocalIDFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
 import { APPS_CONFIGURATION } from '@proton/shared/lib/constants';
@@ -18,20 +13,25 @@ import {
 } from '@proton/shared/lib/drawer/helpers';
 import { getItem } from '@proton/shared/lib/helpers/storage';
 
+import useApiStatus from '../useApiStatus';
+import useAuthentication from '../useAuthentication';
+import useConfig from '../useConfig';
+import useOnline from '../useOnline';
+import useDrawer from './useDrawer';
 import useOpenDrawerOnLoad from './useOpenDrawerOnLoad';
 
 // Mock dependencies
 jest.mock('@proton/account/user/hooks');
 const mockUseUseUser = useUser as jest.Mock;
-jest.mock('@proton/components/hooks/drawer/useDrawer');
+jest.mock('./useDrawer');
 const mockUseDrawer = useDrawer as jest.Mock;
-jest.mock('@proton/components/hooks/useApiStatus');
+jest.mock('../useApiStatus');
 const mockUseApiStatus = useApiStatus as jest.Mock;
-jest.mock('@proton/components/hooks/useAuthentication');
+jest.mock('../useAuthentication');
 const mockUseAuthentication = useAuthentication as jest.Mock;
-jest.mock('@proton/components/hooks/useConfig');
+jest.mock('../useConfig');
 const mockUseConfig = useConfig as jest.Mock;
-jest.mock('@proton/components/hooks/useOnline');
+jest.mock('../useOnline');
 const mockUseOnline = useOnline as jest.Mock;
 jest.mock('@proton/shared/lib/helpers/storage');
 const mockGetItem = getItem as jest.Mock;

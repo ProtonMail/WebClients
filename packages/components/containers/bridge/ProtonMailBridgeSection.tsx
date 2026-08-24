@@ -5,11 +5,6 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import Icon from '@proton/components/components/icon/Icon';
-import Select from '@proton/components/components/select/Select';
-import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
-import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
-import UpgradeBanner from '@proton/components/containers/account/UpgradeBanner';
 import type { IconName } from '@proton/icons/types';
 import metrics from '@proton/metrics';
 import { semver } from '@proton/pass/utils/string/semver';
@@ -24,6 +19,12 @@ import {
 } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getBridgeURL, getStaticURL } from '@proton/shared/lib/helpers/url';
+
+import Icon from '../../components/icon/Icon';
+import Select from '../../components/select/Select';
+import SettingsParagraph from '../account/SettingsParagraph';
+import SettingsSectionWide from '../account/SettingsSectionWide';
+import UpgradeBanner from '../account/UpgradeBanner';
 
 import './ProtonMailBridgeSection.scss';
 

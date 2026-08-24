@@ -2,9 +2,9 @@ import type { DependencyList, RefObject } from 'react';
 import { useEffect, useMemo, useRef } from 'react';
 
 import debounce from 'lodash/debounce';
-
-import useEventManager from '@proton/components/hooks/useEventManager';
 import throttle from 'lodash/throttle';
+
+import useEventManager from './useEventManager';
 
 export type Handler = (...args: any[]) => void;
 

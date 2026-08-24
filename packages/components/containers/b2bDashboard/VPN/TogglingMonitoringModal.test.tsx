@@ -1,7 +1,6 @@
 import { render } from '@testing-library/react';
 
-import ModalsProvider from '@proton/components/containers/modals/Provider';
-
+import ModalsProvider from '../../modals/Provider';
 import TogglingMonitoringModal from './TogglingMonitoringModal';
 
 // Mocked so that the modal renders in the same container

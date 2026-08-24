@@ -1,5 +1,4 @@
 import { getModelState } from '@proton/account/test';
-import { userDefault } from '@proton/components/hooks/helpers/test';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { APPS } from '@proton/shared/lib/constants';
@@ -10,6 +9,7 @@ import { withCache } from '@proton/testing/lib/context/hocs/with-cache';
 import { renderWithProviders } from '@proton/testing/lib/context/renderWithProviders';
 import { getSubscriptionState } from '@proton/testing/lib/initialReduxState';
 
+import { userDefault } from '../../hooks/helpers/test/index';
 import CreditsSection from './CreditsSection';
 
 let subscription: Subscription;

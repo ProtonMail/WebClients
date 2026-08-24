@@ -4,8 +4,9 @@ import JSZip from 'jszip';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import clsx from '@proton/utils/clsx';
+
+import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
 
 const extract = (files: typeof JSZip.files) =>
     Object.keys(files)

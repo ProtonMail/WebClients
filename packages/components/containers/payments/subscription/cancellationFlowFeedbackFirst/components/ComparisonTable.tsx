@@ -2,13 +2,14 @@
 import type { ReactNode } from 'react';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Table from '@proton/components/components/table/Table';
-import TableBody from '@proton/components/components/table/TableBody';
-import TableCell from '@proton/components/components/table/TableCell';
-import TableRow from '@proton/components/components/table/TableRow';
-import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import clsx from '@proton/utils/clsx';
+
+import Table from '../../../../../components/table/Table';
+import TableBody from '../../../../../components/table/TableBody';
+import TableCell from '../../../../../components/table/TableCell';
+import TableRow from '../../../../../components/table/TableRow';
+import useActiveBreakpoint from '../../../../../hooks/useActiveBreakpoint';
 
 const CURRENT_PLAN_COLUMN_BG = 'bg-weak';
 const TABLE_CLASS = 'simple-table--border-weak simple-table--border-lines-rounded shadow-norm rounded-xl mb-0';

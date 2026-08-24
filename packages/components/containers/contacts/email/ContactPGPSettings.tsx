@@ -4,13 +4,6 @@ import { CryptoProxy, KeyCompatibilityLevel } from '@protontech/crypto';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
-import Alert from '@proton/components/components/alert/Alert';
-import Field from '@proton/components/components/container/Field';
-import Row from '@proton/components/components/container/Row';
-import Label from '@proton/components/components/label/Label';
-import Info from '@proton/components/components/link/Info';
-import Toggle from '@proton/components/components/toggle/Toggle';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import type { CONTACT_PGP_SCHEMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -18,6 +11,13 @@ import type { ContactPublicKeyModelWithApiKeySource, MailSettings } from '@proto
 import type { ArmoredKeyWithInfo } from '@proton/shared/lib/keys';
 import { getIsValidForSending, getKeyEncryptionCapableStatus } from '@proton/shared/lib/keys/publicKeys';
 
+import Alert from '../../../components/alert/Alert';
+import Field from '../../../components/container/Field';
+import Row from '../../../components/container/Row';
+import Label from '../../../components/label/Label';
+import Info from '../../../components/link/Info';
+import Toggle from '../../../components/toggle/Toggle';
+import useNotifications from '../../../hooks/useNotifications';
 import SelectKeyFiles from '../../keys/shared/SelectKeyFiles';
 import ContactKeysTable, { activeSignerText } from './ContactKeysTable';
 import ContactSchemeSelect from './ContactSchemeSelect';
