@@ -61,7 +61,16 @@ describe('useChargebeeIdeal', () => {
 
         expect(tokenCalls()).toHaveLength(1);
         expect(tokenCalls()[0][0].data).toMatchObject({ Currency: 'EUR' });
-        expect(handles.setIdealPaymentIntent).toHaveBeenCalled();
+    });
+
+    it('should not arm the iframe button before the account holder name is known', async () => {
+        const handles = getMockedIframeHandles();
+        const { result } = renderIdealHook({ Amount: 999, Currency: 'EUR' }, handles);
+
+        await initialize(result.current.initialize);
+
+        expect(handles.setIdealPaymentIntent).not.toHaveBeenCalled();
+        expect(result.current.readyToPay).toBe(false);
     });
 
     it('should clear the initialization error after a successful retry', async () => {
@@ -129,28 +138,7 @@ describe('useChargebeeIdeal', () => {
 
         expect(result.current.initializationError).toBe(false);
         expect(result.current.readyToPay).toBe(true);
-
-        jest.useRealTimers();
-    });
-
-    it('should retry the name send after the initial one failed, without re-initializing', async () => {
-        jest.useFakeTimers();
-
-        const handles = getMockedIframeHandles();
-        jest.mocked(handles.setIdealPaymentIntent).mockRejectedValueOnce(new Error('iframe failure'));
-
-        const { result } = renderIdealHook({ Amount: 999, Currency: 'EUR' }, handles);
-
-        await initialize(result.current.initialize);
-        expect(result.current.initializationError).toBe(true);
-
-        act(() => result.current.setAccountHolderName('Jan'));
-        await act(async () => {
-            jest.runOnlyPendingTimers();
-        });
-
-        expect(result.current.initializationError).toBe(false);
-        expect(result.current.readyToPay).toBe(true);
+        // the retry reuses the payment token instead of re-initializing
         expect(tokenCalls()).toHaveLength(1);
 
         jest.useRealTimers();
@@ -173,13 +161,9 @@ describe('useChargebeeIdeal', () => {
 
     it('should not register duplicate iDEAL listeners when the initialization is retried', async () => {
         const handles = getMockedIframeHandles();
-        jest.mocked(handles.setIdealPaymentIntent).mockRejectedValueOnce(new Error('iframe failure'));
-
         const { result } = renderIdealHook({ Amount: 999, Currency: 'EUR' }, handles);
 
         await initialize(result.current.initialize);
-        await waitFor(() => expect(result.current.initializationError).toBe(true));
-
         await initialize(result.current.initialize);
 
         expect(events.onIdealAuthorized).toHaveBeenCalledTimes(2);
