@@ -1,6 +1,7 @@
 import type { PLANS } from '@proton/payments/core/constants';
 import type { Product } from '@proton/shared/lib/ProductEnum';
 import type {
+    INVOICE_EMAIL_STATE,
     MEMBER_ROLE,
     ORGANIZATION_POLICY_ENFORCED,
     ORGANIZATION_STATE,
@@ -94,6 +95,8 @@ export interface OrganizationSettings {
     PasswordReminderEnforced: boolean;
     AllowedProducts: SerializedOrganizationSettingsAllowedProduct[];
     // Settings for admin
+    InvoiceEmail: string | null;
+    InvoiceEmailState: INVOICE_EMAIL_STATE;
     PasswordPolicies: PasswordPolicySettings;
     LogAuth: number; // 0 = no logging, 1 = loging default, 2 = loging detailed auth
     HighSecurity: SETTINGS_PROTON_SENTINEL_STATE; // 0 = no high security, 1 = high security enable
@@ -101,6 +104,9 @@ export interface OrganizationSettings {
         Enforced: ORGANIZATION_POLICY_ENFORCED;
     };
 }
+
+/** The editable part of the organization's invoice email settings. */
+export type InvoiceEmailSettings = Pick<OrganizationSettings, 'InvoiceEmail' | 'InvoiceEmailState'>;
 
 export type OrganizationSettingsBooleanProperties = {
     [K in keyof OrganizationSettings]: OrganizationSettings[K] extends boolean ? K : never;

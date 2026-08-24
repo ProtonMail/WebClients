@@ -52,6 +52,8 @@ export const updateOrganizationSettings = (data: {
     PasswordReminderEnforced?: boolean;
     AllowedProducts?: OrganizationSettings['AllowedProducts'];
     PasswordPolicies?: OrganizationSettings['PasswordPolicies'];
+    InvoiceEmail?: OrganizationSettings['InvoiceEmail'];
+    InvoiceEmailState?: OrganizationSettings['InvoiceEmailState'];
 }) => ({
     url: 'core/v4/organizations/settings',
     method: 'put',
