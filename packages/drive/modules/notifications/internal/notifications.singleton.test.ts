@@ -1,4 +1,4 @@
-import type { NotificationsManager } from '@proton/components/containers/notifications/manager';
+import type { NotificationsManager } from '@proton/app-context/notifications/manager';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 
 import { getNotificationsManager, setNotificationsManager } from './notifications.singleton';
