@@ -2,7 +2,8 @@ import { act, renderHook, waitFor } from '@testing-library/react';
 
 import { useUser } from '@proton/account/user/hooks';
 import { OAUTH_PROVIDER } from '@proton/activation/src/interface';
-import { useApi, useModalStateObject } from '@proton/components';
+import { useApi } from '@proton/app-context/useApi';
+import { useModalStateObject } from '@proton/components';
 import { createZoomMeeting } from '@proton/shared/lib/api/calendars';
 import { VIDEO_CONFERENCE_PROVIDER } from '@proton/shared/lib/interfaces/calendar/Api';
 import type { EventModel } from '@proton/shared/lib/interfaces/calendar/Event';
@@ -29,8 +30,11 @@ jest.mock('@proton/activation/index', () => ({
 }));
 
 jest.mock('@proton/components', () => ({
-    useApi: jest.fn(() => ({})),
     useModalStateObject: jest.fn(() => ({})),
+}));
+
+jest.mock('@proton/app-context/useApi', () => ({
+    useApi: jest.fn(() => ({})),
 }));
 
 jest.mock('@proton/app-context/useNotifications', () => ({

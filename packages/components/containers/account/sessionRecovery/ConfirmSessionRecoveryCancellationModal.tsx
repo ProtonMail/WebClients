@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { useSessionRecoveryLocalStorage } from '@proton/account/recovery/sessionRecoveryHooks';
 import { userThunk } from '@proton/account/user';
 import { useUser } from '@proton/account/user/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import useLoading from '@proton/hooks/useLoading';
@@ -25,7 +26,6 @@ import ModalHeader from '../../../components/modalTwo/ModalHeader';
 import InputFieldTwo from '../../../components/v2/field/InputField';
 import PasswordInputTwo from '../../../components/v2/input/PasswordInput';
 import useFormErrors from '../../../components/v2/useFormErrors';
-import useApi from '../../../hooks/useApi';
 
 interface Props extends ModalProps {
     onBack?: () => void;

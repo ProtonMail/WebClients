@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { organizationThunk } from '@proton/account/organization';
+import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { useLoading } from '@proton/hooks';
@@ -22,7 +23,6 @@ import ModalFooter from '../../components/modalTwo/ModalFooter';
 import ModalHeader from '../../components/modalTwo/ModalHeader';
 import InputFieldTwo from '../../components/v2/field/InputField';
 import useFormErrors from '../../components/v2/useFormErrors';
-import useApi from '../../hooks/useApi';
 
 interface Props extends ModalProps {
     organization: Organization;

@@ -14,10 +14,10 @@ import {
     OAUTH_PROVIDER,
     type OAuthProps,
 } from '@proton/activation/src/interface';
+import { useApi } from '@proton/app-context/useApi';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { useModalState } from '@proton/components';
 import ProtonLogo from '@proton/components/components/logo/ProtonLogo';
-import useApi from '@proton/components/hooks/useApi';
 import { useLoading } from '@proton/hooks/index';
 import { IcBrandGoogle } from '@proton/icons/icons/IcBrandGoogle';
 import { useVariant } from '@proton/unleash/useVariant';

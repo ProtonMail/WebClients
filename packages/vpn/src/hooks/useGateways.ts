@@ -1,6 +1,6 @@
 import { c, msgid } from 'ttag';
 
-import useApi from '@proton/components/hooks/useApi';
+import { useApi } from '@proton/app-context/useApi';
 import { useFetchData } from '@proton/components/hooks/useFetchData';
 import { PLANS } from '@proton/payments/core/constants';
 import type { Organization } from '@proton/shared/lib/interfaces';

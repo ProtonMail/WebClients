@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 import { useState } from 'react';
 
 import { useUser } from '@proton/account/user/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { DashboardCard, DashboardCardContent } from '@proton/atoms/DashboardCard/DashboardCard';
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
@@ -22,7 +23,6 @@ import type { Tab } from '../../../../../components/tabs/Tabs';
 import { Tabs } from '../../../../../components/tabs/Tabs';
 import { getTelemetryUserTier } from '../../../../../helpers/getTelemetryUserTier';
 import { mapTelemetryOsVersionWithStore } from '../../../../../helpers/mapTelemetryOsVersionWithStore';
-import useApi from '../../../../../hooks/useApi';
 
 import './DashboardDownloadSection.scss';
 

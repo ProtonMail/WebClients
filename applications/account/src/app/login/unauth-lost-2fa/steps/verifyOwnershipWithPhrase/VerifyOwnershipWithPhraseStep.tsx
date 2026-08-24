@@ -3,11 +3,12 @@ import { useEffect, useState } from 'react';
 import { useSelector } from '@xstate/react';
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
 import { Button } from '@proton/atoms/Button/Button';
 import MnemonicInputField, {
     useMnemonicInputValidation,
 } from '@proton/components/containers/mnemonic/MnemonicInputField';
-import { Form, useApi, useErrorHandler, useFormErrors } from '@proton/components/index';
+import { Form, useErrorHandler, useFormErrors } from '@proton/components/index';
 import useLoading from '@proton/hooks/useLoading';
 import { getMnemonicAuthInfo, reauthMnemonic } from '@proton/shared/lib/api/auth';
 import { disable2FA } from '@proton/shared/lib/api/settings';

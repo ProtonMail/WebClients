@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 
+import { useApi } from '@proton/app-context/useApi';
 import { searchMembersSummary } from '@proton/shared/lib/api/members';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
 import useDebounceInput from '../../../../components/input/useDebounceInput';
-import useApi from '../../../../hooks/useApi';
 
 /**
  * Searches org members by name or email and returns their addresses as ContactEmail objects,

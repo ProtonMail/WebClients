@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { useLoading } from '@proton/hooks';
@@ -11,7 +12,6 @@ import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
 import InputFieldTwo from '../../components/v2/field/InputField';
 import useFormErrors from '../../components/v2/useFormErrors';
-import useApi from '../../hooks/useApi';
 import useEventManager from '../../hooks/useEventManager';
 import SettingsParagraph from '../account/SettingsParagraph';
 import SettingsSection from '../account/SettingsSection';

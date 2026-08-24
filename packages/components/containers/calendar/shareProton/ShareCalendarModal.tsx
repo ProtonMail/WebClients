@@ -5,6 +5,7 @@ import type { PublicKeyReference } from '@protontech/crypto';
 import { c, msgid } from 'ttag';
 
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
@@ -44,7 +45,6 @@ import ModalFooter from '../../../components/modalTwo/ModalFooter';
 import ModalHeader from '../../../components/modalTwo/ModalHeader';
 import AddressesAutocompleteTwo from '../../../components/v2/addressesAutocomplete/AddressesAutocomplete';
 import { InputField } from '../../../components/v2/field/InputField';
-import useApi from '../../../hooks/useApi';
 import useGetEncryptionPreferences from '../../../hooks/useGetEncryptionPreferences';
 import { useContactEmailsCache } from '../../contacts/ContactEmailsProvider';
 import { useKeyTransparencyContext } from '../../keyTransparency/useKeyTransparencyContext';

@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import { signoutAction } from '@proton/account/authenticationService';
 import { useGetOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
@@ -35,7 +36,6 @@ import StepDots from '../../components/stepDots/StepDots';
 import InputFieldTwo from '../../components/v2/field/InputField';
 import TextAreaTwo from '../../components/v2/input/TextArea';
 import useFormErrors from '../../components/v2/useFormErrors';
-import useApi from '../../hooks/useApi';
 import useEventManager from '../../hooks/useEventManager';
 import AuthModal from '../password/AuthModal';
 

@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Href } from '@proton/atoms/Href/Href';
@@ -8,7 +9,6 @@ import { TelemetrySecurityCenterEvents } from '@proton/shared/lib/api/telemetry'
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import aliasSampleSvg from '@proton/styles/assets/img/illustrations/pass-aliases-alias-sample.svg';
 
-import useApi from '../../../../../../hooks/useApi';
 import type { ModalProps } from '../../../../../modalTwo/Modal';
 import ModalTwo from '../../../../../modalTwo/Modal';
 import ModalTwoContent from '../../../../../modalTwo/ModalContent';

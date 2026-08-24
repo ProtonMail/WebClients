@@ -1,4 +1,4 @@
-import useApi from '@proton/components/hooks/useApi';
+import { useApi } from '@proton/app-context/useApi';
 import { getAllPublicKeys } from '@proton/shared/lib/api/keys';
 import type { KEY_FLAG } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';

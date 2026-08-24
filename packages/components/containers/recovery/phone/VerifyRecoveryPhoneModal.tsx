@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { userSettingsThunk } from '@proton/account/userSettings';
+import { useApi } from '@proton/app-context/useApi';
 import { Button } from '@proton/atoms/Button/Button';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { CacheType } from '@proton/redux-utilities/interface';
@@ -11,7 +12,6 @@ import noop from '@proton/utils/noop';
 
 import type { ModalProps } from '../../../components/modalTwo/Modal';
 import Prompt from '../../../components/prompt/Prompt';
-import useApi from '../../../hooks/useApi';
 
 interface Props extends ModalProps {}
 

@@ -3,6 +3,7 @@ import { useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { useLoading } from '@proton/hooks';
@@ -26,7 +27,6 @@ import Editor from '../../components/editor/Editor';
 import { useToolbar } from '../../components/editor/hooks/useToolbar';
 import type { EditorActions } from '../../components/editor/interface';
 import Toggle from '../../components/toggle/Toggle';
-import useApi from '../../hooks/useApi';
 import useErrorHandler from '../../hooks/useErrorHandler';
 import { useHotkeys } from '../../hooks/useHotkeys';
 import SettingsLayout from '../account/SettingsLayout';

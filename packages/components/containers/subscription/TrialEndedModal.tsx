@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { Button } from '@proton/atoms/Button/Button';
 import { CYCLE } from '@proton/payments/core/constants';
 import { getPlanTitle, getRenewalTime } from '@proton/payments/core/subscription/helpers';
@@ -14,7 +15,6 @@ import ModalTwoFooter from '../../components/modalTwo/ModalFooter';
 import ModalTwoHeader from '../../components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '../../components/modalTwo/useModalState';
 import Time from '../../components/time/Time';
-import useApi from '../../hooks/useApi';
 
 const TrialEndedModal = ({ onClose, ...rest }: ModalStateProps) => {
     const api = useApi();

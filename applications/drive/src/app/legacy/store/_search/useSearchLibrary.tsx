@@ -5,8 +5,8 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
-import { useApi } from '@proton/components';
 import { useFlagsDriveFoundationSearch } from '@proton/drive/modules/flags';
 import { INDEXING_STATUS } from '@proton/encrypted-search/constants';
 import { hasESDB, metadataIndexingProgress, readSize } from '@proton/encrypted-search/esIDB';

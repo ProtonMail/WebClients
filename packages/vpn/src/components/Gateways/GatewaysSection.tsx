@@ -5,6 +5,7 @@ import { c, msgid } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserPermissions } from '@proton/account/userPermissions/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
@@ -19,7 +20,6 @@ import EmptyViewContainer from '@proton/components/containers/app/EmptyViewConta
 import { PromotionBanner } from '@proton/components/containers/banner/PromotionBanner';
 import { useSubscriptionModalRaw } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
-import useApi from '@proton/components/hooks/useApi';
 import useSortedList from '@proton/components/hooks/useSortedList';
 import { PLANS } from '@proton/payments/core/constants';
 import { getCountryOptions } from '@proton/payments/core/countries';

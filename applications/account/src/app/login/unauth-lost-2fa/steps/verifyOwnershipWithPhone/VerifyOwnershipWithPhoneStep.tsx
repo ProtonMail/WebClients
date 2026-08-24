@@ -5,8 +5,9 @@ import { useSelector } from '@xstate/react';
 import { c } from 'ttag';
 
 import { initiateVerification, sendNewCode, verifyCode } from '@proton/account/safetyReview/verification/verification';
+import { useApi } from '@proton/app-context/useApi';
 import { Button } from '@proton/atoms/Button/Button';
-import { Form, InputFieldTwo, TotpInput, useApi, useErrorHandler, useFormErrors } from '@proton/components/index';
+import { Form, InputFieldTwo, TotpInput, useErrorHandler, useFormErrors } from '@proton/components/index';
 import useLoading from '@proton/hooks/useLoading';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { disable2FA } from '@proton/shared/lib/api/settings';

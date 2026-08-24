@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react';
 
-import useApi from '@proton/components/hooks/useApi';
+import { useApi } from '@proton/app-context/useApi';
 
 import { initializeNewSpaceAndConversation, sendMessage } from '../../components/Conversation/helper';
 import { usePersonalization } from '../../hooks';
@@ -9,8 +9,8 @@ import { useLumoDispatch } from '../../redux/hooks';
 import { newAttachmentId } from '../../redux/slices/core/attachments';
 import { setGhostChatMode } from '../../redux/slices/ghostChat';
 import type { Attachment, ConversationId } from '../../types';
-import { addRecentPaperTrailFile } from '../../util/paperTrailRecentStorage';
 import { shouldPersistPaperTrailLocally } from '../../util/paperTrailLocalSavePreference';
+import { addRecentPaperTrailFile } from '../../util/paperTrailRecentStorage';
 import { buildPaperTrailContext } from './buildPaperTrailContext';
 import { type NormalizedExport, parseExportFile } from './parsers';
 import { buildPaperTrailPrompt, getExportFilename } from './prompt';

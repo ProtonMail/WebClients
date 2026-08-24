@@ -1,6 +1,6 @@
 import throttle from 'lodash/throttle';
 
-import { useApi } from '@proton/components';
+import { useApi } from '@proton/app-context/useApi';
 import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
 import useStateRef from '@proton/hooks/useStateRef';
 import { LumoApiClient, Role } from '@proton/lumo-api-client';

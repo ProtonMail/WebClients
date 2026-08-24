@@ -2,13 +2,13 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
 import { Button } from '@proton/atoms/Button/Button';
 import type { MemberUsageColumnState } from '@proton/shared/lib/api/members';
 import { Audience } from '@proton/shared/lib/interfaces';
 import monitorGatewaysIllustration from '@proton/styles/assets/img/vpn/users/monitor-gateways-illustration.png';
 
 import useModalState from '../../../components/modalTwo/useModalState';
-import useApi from '../../../hooks/useApi';
 import TogglingMonitoringModal from '../../b2bDashboard/VPN/TogglingMonitoringModal';
 import { updateMonitoringSetting } from '../../b2bDashboard/VPN/api';
 import { useSubscriptionModal } from '../../payments/subscription/SubscriptionModalProvider';

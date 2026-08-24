@@ -1,7 +1,8 @@
 import { useEffect, useMemo } from 'react';
 
-import { useApi } from '@proton/components';
 import { CryptoProxy } from '@protontech/crypto';
+
+import { useApi } from '@proton/app-context/useApi';
 import createApi from '@proton/shared/lib/api/createApi';
 import localStorageWithExpiry from '@proton/shared/lib/api/helpers/localStorageWithExpiry';
 import { TelemetryDriveWebFeature, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';

@@ -1,10 +1,9 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
+import { useApi } from '@proton/app-context/useApi';
 import { useCache } from '@proton/app-context/useCache';
 import { queryVPNLogicalServerInfo, queryVPNLogicalServerLookup } from '@proton/shared/lib/api/vpn';
 import type { Logical } from '@proton/shared/lib/vpn/Logical';
-
-import useApi from './useApi';
 
 const useVPNLogicals = () => {
     const api = useApi();

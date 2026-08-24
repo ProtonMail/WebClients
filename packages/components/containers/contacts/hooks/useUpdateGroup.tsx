@@ -3,6 +3,7 @@ import { useCallback } from 'react';
 import { c } from 'ttag';
 
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { addContacts, labelContactEmails, unLabelContactEmails } from '@proton/shared/lib/api/contacts';
 import { createContactGroup, updateLabel } from '@proton/shared/lib/api/labels';
@@ -12,7 +13,6 @@ import { createContactPropertyUid } from '@proton/shared/lib/contacts/properties
 import type { Label } from '@proton/shared/lib/interfaces';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
-import useApi from '../../../hooks/useApi';
 import useEventManager from '../../../hooks/useEventManager';
 
 export type UpdateGroupOptions = {

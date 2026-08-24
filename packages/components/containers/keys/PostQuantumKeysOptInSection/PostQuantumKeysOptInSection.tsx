@@ -7,6 +7,7 @@ import { useUserSettings } from '@proton/account';
 import { useAddressesKeys } from '@proton/account/addressKeys/hooks';
 import { getHasAccountKeyChangeBlockingDelegatedAccess } from '@proton/account/delegatedAccess/accountKeyChangeBlocking';
 import { useUserKeys } from '@proton/account/userKeys/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import useIsMounted from '@proton/hooks/useIsMounted';
@@ -18,7 +19,6 @@ import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import noop from '@proton/utils/noop';
 
 import { useModalTwoStatic } from '../../../components/modalTwo/useModalTwo';
-import useApi from '../../../hooks/useApi';
 import SettingsParagraph from '../../account/SettingsParagraph';
 import SettingsSection from '../../account/SettingsSection';
 import SettingsSectionTitle from '../../account/SettingsSectionTitle';

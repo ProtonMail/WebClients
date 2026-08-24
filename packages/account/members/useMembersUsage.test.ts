@@ -1,11 +1,11 @@
 import { renderHook, waitFor } from '@testing-library/react';
 
-import useApi from '@proton/components/hooks/useApi';
+import { useApi } from '@proton/app-context/useApi';
 import type { MembersUsageResponse } from '@proton/shared/lib/api/members';
 
 import { useMembersUsage } from './useMembersUsage';
 
-jest.mock('@proton/components/hooks/useApi');
+jest.mock('@proton/app-context/useApi');
 jest.mock('@proton/shared/lib/api/helpers/customConfig', () => ({
     getSilentApi: (api: unknown) => api,
 }));

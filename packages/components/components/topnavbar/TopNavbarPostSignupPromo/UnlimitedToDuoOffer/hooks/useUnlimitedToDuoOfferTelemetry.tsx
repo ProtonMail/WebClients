@@ -1,13 +1,13 @@
 import { useUserSettings } from '@proton/account/index';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { useConfig } from '@proton/app-context/useConfig';
 import type { TelemetryUnlimitedToDuoOffer } from '@proton/shared/lib/api/telemetry';
 import { TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { normalizeProduct } from '@proton/shared/lib/apps/product';
 import { sendTelemetryReportWithBaseDimensions } from '@proton/shared/lib/helpers/metrics';
 
-import useApi from '../../../../../hooks/useApi';
 import type { UnlimitedToDuoMessageType } from '../helpers/interface';
 
 export const useUnlimitedToDuoOfferTelemetry = () => {

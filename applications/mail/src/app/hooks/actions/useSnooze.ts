@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
+import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
-import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { snoozeConversations, unsnoozeConversations } from '@proton/shared/lib/api/conversations';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';

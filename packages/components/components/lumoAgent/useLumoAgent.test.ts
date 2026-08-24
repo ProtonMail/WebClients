@@ -22,9 +22,9 @@ type Script = (ctx: {
 let script: Script = async () => {};
 const sentTurns: Turn[][] = [];
 
-jest.mock('../../hooks/useApi', () => ({
+jest.mock('@proton/app-context/useApi', () => ({
     __esModule: true,
-    default: () => jest.fn(),
+    useApi: () => jest.fn(),
 }));
 
 jest.mock('@proton/lumo-api-client', () => ({

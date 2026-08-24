@@ -1,4 +1,4 @@
-import { useApi } from '@proton/components';
+import { useApi } from '@proton/app-context/useApi';
 import { querySharedURLInformation, querySubmitAbuseReport } from '@proton/shared/lib/api/drive/sharing';
 import type { SharedURLInfoPayload } from '@proton/shared/lib/interfaces/drive/sharing';
 

@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 
-import useApi from './useApi';
+import { useApi } from '@proton/app-context/useApi';
+
 import useAsync from './useAsync';
 
 export type QueryFunction = (...args: any[]) => { method: string; url: string };

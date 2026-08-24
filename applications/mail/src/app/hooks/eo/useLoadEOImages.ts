@@ -1,18 +1,17 @@
 import { useCallback } from 'react';
 
-import useApi from '@proton/components/hooks/useApi';
+import { useApi } from '@proton/app-context/useApi';
 import type { MessageRemoteImage, MessageState } from '@proton/mail/store/messages/messagesTypes';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { EO_DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/eo/constants';
 
+import { updateImages } from '../../helpers/message/messageImages';
 import { transformEmbedded } from '../../helpers/transforms/transformEmbedded';
 import { transformRemote } from '../../helpers/transforms/transformRemote';
-import { useMailDispatch } from '../../store/hooks';
-
-import { updateImages } from '../../helpers/message/messageImages';
 import { EOLoadEmbedded, EOLoadRemote } from '../../store/eo/eoActions';
 import type { EOLoadEmbeddedResults, EOLoadRemoteResults } from '../../store/eo/eoType';
+import { useMailDispatch } from '../../store/hooks';
 import { useGetEODecryptedToken, useGetEOMessageState, useGetEOPassword } from './useLoadEOMessage';
 
 export const useLoadEORemoteImages = (mailSettings: MailSettings) => {

@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { userThunk } from '@proton/account/user';
+import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { useLoading } from '@proton/hooks';
@@ -10,7 +11,6 @@ import { deleteRecoverySecrets } from '@proton/shared/lib/api/settingsRecovery';
 
 import type { ModalProps } from '../../components/modalTwo/Modal';
 import Prompt from '../../components/prompt/Prompt';
-import useApi from '../../hooks/useApi';
 
 interface Props extends Omit<ModalProps, 'children' | 'size'> {
     deviceRecoveryEnabled: boolean | undefined;

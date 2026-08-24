@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { Button } from '@proton/atoms/Button/Button';
 import {
     DashboardGrid,
@@ -16,7 +17,6 @@ import { useSubscriptionModal } from '@proton/components/containers/payments/sub
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import { getTelemetryUserTier } from '@proton/components/helpers/getTelemetryUserTier';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
-import { useApi } from '@proton/components/index';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { hasAnyPlusWithoutVPN, hasFree } from '@proton/payments/core/subscription/helpers';
 import { TelemetryAccountDashboardEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';

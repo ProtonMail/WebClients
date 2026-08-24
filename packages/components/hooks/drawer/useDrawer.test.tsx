@@ -4,6 +4,7 @@ import { serverTime } from '@protontech/crypto';
 import { act, renderHook } from '@testing-library/react-hooks';
 
 import { useGetUser } from '@proton/account/user/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { getClientID } from '@proton/shared/lib/apps/helper';
 import {
     getDrawerAppFromURL,
@@ -14,7 +15,6 @@ import {
 import { DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
 import { getAppVersionHeaders } from '@proton/shared/lib/fetch/headers';
 
-import useApi from '../useApi';
 import useAuthentication from '../useAuthentication';
 import useDrawer, { DrawerProvider } from './useDrawer';
 import useDrawerLocalStorage from './useDrawerLocalStorage';
@@ -24,7 +24,7 @@ jest.mock('@proton/account/user/hooks');
 jest.mock('../../helpers/versionCookie', () => ({ versionCookieAtLoad: 'test-version' }));
 jest.mock('./useDrawerLocalStorage');
 jest.mock('./useToggleDrawerApp');
-jest.mock('../useApi');
+jest.mock('@proton/app-context/useApi');
 jest.mock('../useAuthentication');
 jest.mock('@protontech/crypto');
 jest.mock('@proton/shared/lib/apps/helper');

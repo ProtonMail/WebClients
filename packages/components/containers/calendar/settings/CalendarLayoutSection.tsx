@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
@@ -7,7 +8,6 @@ import type { CalendarUserSettings } from '@proton/shared/lib/interfaces/calenda
 
 import Info from '../../../components/link/Info';
 import Toggle from '../../../components/toggle/Toggle';
-import useApi from '../../../hooks/useApi';
 import useEventManager from '../../../hooks/useEventManager';
 import SettingsLayout from '../../account/SettingsLayout';
 import SettingsLayoutLeft from '../../account/SettingsLayoutLeft';

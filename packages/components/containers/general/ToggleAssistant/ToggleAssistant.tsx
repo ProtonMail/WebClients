@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { userSettingsActions } from '@proton/account';
+import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
@@ -8,7 +9,6 @@ import { updateAIAssistant } from '@proton/shared/lib/api/settings';
 import { AI_ASSISTANT_ACCESS, type UserSettings } from '@proton/shared/lib/interfaces';
 
 import Toggle from '../../../components/toggle/Toggle';
-import useApi from '../../../hooks/useApi';
 import useToggle from '../../../hooks/useToggle';
 
 interface Props {

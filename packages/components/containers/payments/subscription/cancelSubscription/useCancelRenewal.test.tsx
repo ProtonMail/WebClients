@@ -1,19 +1,19 @@
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { changeRenewState } from '@proton/payments/core/api/api';
 import { PLANS } from '@proton/payments/core/constants';
 import { Renew } from '@proton/payments/core/subscription/constants';
 import { buildSubscription } from '@proton/testing/builders/subscription';
 
-import useApi from '../../../../hooks/useApi';
 import useEventManager from '../../../../hooks/useEventManager';
 import { componentsHookRenderer } from '../../../contacts/tests/render';
 import { OPEN_TRIAL_CANCELED_MODAL } from '../../../topBanners/constants';
 import type { FeedbackDowngradeFormData } from '../content/interface';
 import { useCancelRenewal } from './useCancelRenewal';
 
-jest.mock('../../../../hooks/useApi');
+jest.mock('@proton/app-context/useApi');
 jest.mock('../../../../hooks/useEventManager');
 jest.mock('@proton/app-context/useNotifications');
 jest.mock('@proton/account/subscription/hooks');

@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { useAppName } from '@proton/account/appName';
 import { useUser } from '@proton/account/user/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { useGetCalendars } from '@proton/calendar/calendars/hooks';
 import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
@@ -9,7 +10,6 @@ import { changeDefaultPaymentMethodBeforePayment } from '@proton/components/cont
 import { useCancelSubscriptionFlow } from '@proton/components/containers/payments/subscription/cancelSubscription/useCancelSubscriptionFlow';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import { useAvailableCurrenciesForPlan } from '@proton/components/containers/payments/subscription/modal-components/SubscriptionCheckout';
-import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { sortMethodsBasedOnDevice } from '@proton/components/payments/client-extensions';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions/usePaymentFacade';

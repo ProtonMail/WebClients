@@ -1,4 +1,4 @@
-import { useApi } from '@proton/components';
+import { useApi } from '@proton/app-context/useApi';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { toggleWaitingRoom } from '@proton/shared/lib/api/meet';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';

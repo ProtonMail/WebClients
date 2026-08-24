@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import useApi from '@proton/components/hooks/useApi';
+import { useApi } from '@proton/app-context/useApi';
 
 import { debugCompactCurrentConversation } from '../../components/Conversation/compactionDebug';
 import IndexedDBUnavailablePage from '../../components/IndexedDBUnavailablePage';

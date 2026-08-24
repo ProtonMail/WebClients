@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 
 import type { PayloadAction } from '@reduxjs/toolkit';
 
-import useApi from '@proton/components/hooks/useApi';
+import { useApi } from '@proton/app-context/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { FeatureCode, useFeature } from '@proton/features';
 import type { Preparation } from '@proton/mail-renderer/helpers/transforms/transforms';
@@ -28,10 +28,6 @@ import { useFlag } from '@proton/unleash/useFlag';
 import uniqueBy from '@proton/utils/uniqueBy';
 
 import { SOURCE_ACTION } from '../../components/list/list-telemetry/useListTelemetry';
-import { transformEmbedded } from '../../helpers/transforms/transformEmbedded';
-import { transformRemote } from '../../helpers/transforms/transformRemote';
-import { useMailDispatch } from '../../store/hooks';
-
 import { LOAD_RETRY_COUNT, LOAD_RETRY_DELAY } from '../../constants';
 import { getPureAttachments } from '../../helpers/attachment/attachment';
 import { isUnreadMessage } from '../../helpers/elements';
@@ -43,8 +39,11 @@ import {
     handleDispatchLoadRemoteImagesDirect,
 } from '../../helpers/message/messageImages';
 import { loadMessage } from '../../helpers/message/messageRead';
+import { transformEmbedded } from '../../helpers/transforms/transformEmbedded';
+import { transformRemote } from '../../helpers/transforms/transformRemote';
 import { updateAttachment } from '../../store/attachments/attachmentsActions';
 import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
+import { useMailDispatch } from '../../store/hooks';
 import { loadEmbedded } from '../../store/messages/images/messagesImagesActions';
 import {
     cleanUTMTrackers,

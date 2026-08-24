@@ -1,4 +1,4 @@
-import { useApi } from '@proton/components';
+import { useApi } from '@proton/app-context/useApi';
 import { deleteMeetingCall } from '@proton/shared/lib/api/meet';
 
 import { useMeetErrorReporting } from './useMeetErrorReporting';

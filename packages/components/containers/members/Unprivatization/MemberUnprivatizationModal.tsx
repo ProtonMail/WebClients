@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { memberAcceptUnprivatization, memberRejectUnprivatization } from '@proton/account/member/actions';
+import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
@@ -17,7 +18,6 @@ import ModalTwoFooter from '../../../components/modalTwo/ModalFooter';
 import ModalTwoHeader from '../../../components/modalTwo/ModalHeader';
 import useModalState from '../../../components/modalTwo/useModalState';
 import getBoldFormattedText from '../../../helpers/getBoldFormattedText';
-import useApi from '../../../hooks/useApi';
 import useErrorHandler from '../../../hooks/useErrorHandler';
 import AuthModal from '../../password/AuthModal';
 

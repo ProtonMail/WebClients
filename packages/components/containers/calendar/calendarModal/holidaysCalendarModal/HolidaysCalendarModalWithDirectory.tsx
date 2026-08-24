@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useGetAddresses } from '@proton/account/addresses/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { useGetCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
@@ -50,7 +51,6 @@ import Option from '../../../../components/option/Option';
 import SelectTwo from '../../../../components/selectTwo/SelectTwo';
 import { InputField } from '../../../../components/v2/field/InputField';
 import useFormErrors from '../../../../components/v2/useFormErrors';
-import useApi from '../../../../hooks/useApi';
 import useEventManager from '../../../../hooks/useEventManager';
 import { useCalendarModelEventManager } from '../../../eventManager/calendar/CalendarModelEventManagerProvider';
 import Notifications from '../../notifications/Notifications';

@@ -7,6 +7,7 @@ import { useGetAllEntitlements } from '@proton/account/entitlements/hooks';
 import { useGetOrganization } from '@proton/account/organization/hooks';
 import { useGetPaymentMethods } from '@proton/account/paymentMethods/hooks';
 import { useGetUser, useUser } from '@proton/account/user/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { useConfig } from '@proton/app-context/useConfig';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
@@ -87,7 +88,6 @@ import { usePaymentsApi } from '../../../../components/payments/react-extensions
 import useModalState from '../../../components/modalTwo/useModalState';
 import { useModalTwoPromise } from '../../../components/modalTwo/useModalTwo';
 import useAssistantFeatureEnabled from '../../../hooks/assistant/useAssistantFeatureEnabled';
-import useApi from '../../../hooks/useApi';
 import useEventManager from '../../../hooks/useEventManager';
 import { useHandler } from '../../../hooks/useHandler';
 import { useCurrencies } from '../../../payments/client-extensions/useCurrencies';

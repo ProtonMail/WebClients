@@ -1,13 +1,13 @@
 import { renderHook } from '@testing-library/react';
 import type { MockedFunction } from 'vitest';
 
-import useApi from '@proton/components/hooks/useApi';
+import { useApi } from '@proton/app-context/useApi';
 import { TelemetryMeasurementGroups, TelemetryVpnAlwaysOnPolicyEvents } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 
 import { useAlwaysOnPolicyTelemetry } from './useAlwaysOnPolicyTelemetry';
 
-vi.mock('@proton/components/hooks/useApi', () => ({ default: vi.fn() }));
+vi.mock('@proton/app-context/useApi', () => ({ useApi: vi.fn() }));
 vi.mock('@proton/shared/lib/helpers/metrics', () => ({ sendTelemetryReport: vi.fn() }));
 
 const mockUseApi = useApi as MockedFunction<typeof useApi>;

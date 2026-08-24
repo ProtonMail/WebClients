@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { Button } from '@proton/atoms/Button/Button';
 import { getApiWithAbort } from '@proton/shared/lib/api/helpers/customConfig';
 import { CATEGORIES, OVERWRITE } from '@proton/shared/lib/contacts/constants';
@@ -22,7 +23,6 @@ import ModalTwoContent from '../../../../components/modalTwo/ModalContent';
 import ModalTwoFooter from '../../../../components/modalTwo/ModalFooter';
 import ModalTwoHeader from '../../../../components/modalTwo/ModalHeader';
 import DynamicProgress from '../../../../components/progress/DynamicProgress';
-import useApi from '../../../../hooks/useApi';
 import useBeforeUnload from '../../../../hooks/useBeforeUnload';
 import useEventManager from '../../../../hooks/useEventManager';
 import { extractTotals, processContactsInBatches } from '../encryptAndSubmit';

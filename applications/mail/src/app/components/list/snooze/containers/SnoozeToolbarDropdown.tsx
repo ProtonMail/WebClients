@@ -1,14 +1,13 @@
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
 import { Vr } from '@proton/atoms/Vr/Vr';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import useApi from '@proton/components/hooks/useApi';
 import { IcClock } from '@proton/icons/icons/IcClock';
 import { TelemetryMailEvents } from '@proton/shared/lib/api/telemetry';
 
-import { useSelectAll } from '../../../../hooks/useSelectAll';
-
 import useSnooze from '../../../../hooks/actions/useSnooze';
+import { useSelectAll } from '../../../../hooks/useSelectAll';
 import type { DropdownRenderProps } from '../../../toolbar/ToolbarDropdown';
 import ToolbarDropdown from '../../../toolbar/ToolbarDropdown';
 import SnoozeUpsellModal from '../components/SnoozeUpsellModal';

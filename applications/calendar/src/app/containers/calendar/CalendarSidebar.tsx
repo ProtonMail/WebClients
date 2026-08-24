@@ -4,6 +4,7 @@ import { useMemo, useRef } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import SidebarDrawerItems from '@proton/components/components/drawer/SidebarDrawerItems';
 import Sidebar from '@proton/components/components/sidebar/Sidebar';
@@ -12,7 +13,6 @@ import SidebarNav from '@proton/components/components/sidebar/SidebarNav';
 import AppVersion from '@proton/components/components/version/AppVersion';
 import AppsDropdown from '@proton/components/containers/app/AppsDropdown';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import useApi from '@proton/components/hooks/useApi';
 import useDisplayContactsWidget from '@proton/components/hooks/useDisplayContactsWidget';
 import useLocalState from '@proton/components/hooks/useLocalState';
 import useSubscribedCalendars from '@proton/components/hooks/useSubscribedCalendars';

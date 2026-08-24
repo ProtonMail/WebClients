@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { useLoading } from '@proton/hooks';
@@ -14,7 +15,6 @@ import ModalTwoContent from '../../../components/modalTwo/ModalContent';
 import ModalTwoFooter from '../../../components/modalTwo/ModalFooter';
 import ModalTwoHeader from '../../../components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '../../../components/modalTwo/useModalState';
-import useApi from '../../../hooks/useApi';
 import useEventManager from '../../../hooks/useEventManager';
 import PendingInvitationModalErrors from './PendingInvitationModalErrors';
 

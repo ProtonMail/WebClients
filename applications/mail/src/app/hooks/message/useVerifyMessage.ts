@@ -1,20 +1,20 @@
 import { useCallback } from 'react';
 
-import { useGetUserSettings } from '@proton/account';
-import useApi from '@proton/components/hooks/useApi';
-import useGetVerificationPreferences from '@proton/components/hooks/useGetVerificationPreferences';
 import type { PublicKeyReference } from '@protontech/crypto';
 import { getMatchingSigningKey } from '@protontech/crypto';
+
+import { useGetUserSettings } from '@proton/account';
+import { useApi } from '@proton/app-context/useApi';
+import useGetVerificationPreferences from '@proton/components/hooks/useGetVerificationPreferences';
 import type { MessageErrors, MessageStateWithDataFull } from '@proton/mail/store/messages/messagesTypes';
 import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
-
-import { useMailDispatch } from '../../store/hooks';
 
 import { isNetworkError } from '../../helpers/errors';
 import { verifyMessage } from '../../helpers/message/messageDecrypt';
 import { extractKeysFromAttachments, extractKeysFromAutocrypt } from '../../helpers/message/messageKeys';
 import { updateAttachment } from '../../store/attachments/attachmentsActions';
 import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
+import { useMailDispatch } from '../../store/hooks';
 import { verificationComplete } from '../../store/messages/read/messagesReadActions';
 import { useGetAttachment } from '../attachments/useAttachment';
 import { useContactsMap } from '../contact/useContacts';

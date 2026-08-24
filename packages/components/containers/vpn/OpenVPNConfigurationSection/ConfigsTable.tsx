@@ -3,6 +3,7 @@ import { memo } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
@@ -23,7 +24,6 @@ import Table from '../../../components/table/Table';
 import TableBody from '../../../components/table/TableBody';
 import TableCell from '../../../components/table/TableCell';
 import TableRow from '../../../components/table/TableRow';
-import useApi from '../../../hooks/useApi';
 import Country from './Country';
 import LoadIndicator from './LoadIndicator';
 import type { EnhancedLogical } from './interface';

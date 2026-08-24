@@ -3,6 +3,7 @@ import { memo, useCallback, useRef } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import SidebarDrawerItems from '@proton/components/components/drawer/SidebarDrawerItems';
 import Sidebar from '@proton/components/components/sidebar/Sidebar';
@@ -13,7 +14,6 @@ import AppVersion from '@proton/components/components/version/AppVersion';
 import AppsDropdown from '@proton/components/containers/app/AppsDropdown';
 import SidebarStorageUpsell from '@proton/components/containers/payments/subscription/SidebarStorageUpsell';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import useApi from '@proton/components/hooks/useApi';
 import useDisplayContactsWidget from '@proton/components/hooks/useDisplayContactsWidget';
 import useLocalState from '@proton/components/hooks/useLocalState';
 import { IcChevronsLeft } from '@proton/icons/icons/IcChevronsLeft';
@@ -30,12 +30,11 @@ import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
-import { selectHasFocusedComposer } from '../../store/composers/composerSelectors';
-import { useMailDispatch, useMailSelector } from '../../store/hooks';
-
 import { useOnCompose } from '../../containers/ComposeProvider';
 import { useGetStartedChecklist } from '../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 import { ComposeTypes } from '../../hooks/composer/useCompose';
+import { selectHasFocusedComposer } from '../../store/composers/composerSelectors';
+import { useMailDispatch, useMailSelector } from '../../store/hooks';
 import { layoutActions } from '../../store/layout/layoutSlice';
 import { selectLayoutIsExpanded } from '../../store/layout/layoutSliceSelectors';
 import OnboardingChecklistSidebar from '../onboarding/checklist/sidebar/OnboardingChecklistSidebar';

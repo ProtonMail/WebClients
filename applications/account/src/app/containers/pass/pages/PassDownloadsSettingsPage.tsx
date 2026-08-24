@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { usePlans } from '@proton/account/plans/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Card } from '@proton/atoms/Card/Card';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
@@ -11,7 +12,6 @@ import { DownloadClientCard, SettingsLink, SettingsParagraph, SettingsSectionWid
 import { PromotionButton } from '@proton/components/components/button/PromotionButton';
 import { getTelemetryUserTier } from '@proton/components/helpers/getTelemetryUserTier';
 import { mapTelemetryOsVersionWithStore } from '@proton/components/helpers/mapTelemetryOsVersionWithStore';
-import { useApi } from '@proton/components/index';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { PLANS } from '@proton/payments/core/constants';
 import { TelemetryAccountDashboardEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';

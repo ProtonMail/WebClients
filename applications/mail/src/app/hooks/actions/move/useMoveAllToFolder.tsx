@@ -2,9 +2,9 @@ import type { Dispatch, SetStateAction } from 'react';
 
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
-import useApi from '@proton/components/hooks/useApi';
 import { isCategoryLabel } from '@proton/mail/helpers/location';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';

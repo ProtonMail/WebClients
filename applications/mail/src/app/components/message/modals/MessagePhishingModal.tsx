@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Prompt from '@proton/components/components/prompt/Prompt';
-import useApi from '@proton/components/hooks/useApi';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { reportPhishing } from '@proton/shared/lib/api/reports';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';

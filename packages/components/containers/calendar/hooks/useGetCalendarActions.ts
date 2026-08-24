@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useGetAddresses } from '@proton/account/addresses/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { useGetCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
 import { createCalendar, updateCalendarSettings, updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
@@ -18,7 +19,6 @@ import type { CalendarSettings, CalendarWithOwnMembers, VisualCalendar } from '@
 import type { CalendarCreateData } from '@proton/shared/lib/interfaces/calendar/Api';
 import { getPrimaryKey } from '@proton/shared/lib/keys';
 
-import useApi from '../../../hooks/useApi';
 import useEventManager from '../../../hooks/useEventManager';
 import { useCalendarModelEventManager } from '../../eventManager/calendar/CalendarModelEventManagerProvider';
 import { CALENDAR_MODAL_TYPE } from '../calendarModal/interface';

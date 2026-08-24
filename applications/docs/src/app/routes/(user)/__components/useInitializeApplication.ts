@@ -1,4 +1,4 @@
-import useApi from '@proton/components/hooks/useApi'
+import { useApi } from '@proton/app-context/useApi'
 import useAuthentication from '@proton/components/hooks/useAuthentication'
 import { useConfig } from '@proton/app-context/useConfig'
 import type { DriveCompat } from '@proton/drive-store'

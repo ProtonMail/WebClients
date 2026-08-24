@@ -1,5 +1,5 @@
 import { useSubscription } from '@proton/account/subscription/hooks';
-import useApi from '@proton/components/hooks/useApi';
+import { useApi } from '@proton/app-context/useApi';
 import { PLANS } from '@proton/payments/core/constants';
 import { getPlan } from '@proton/payments/core/subscription/helpers';
 import type { TelemetryCalendarEvents } from '@proton/shared/lib/api/telemetry';

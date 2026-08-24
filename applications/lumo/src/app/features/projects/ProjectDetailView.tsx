@@ -3,10 +3,10 @@ import { useHistory, useParams } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
 import { Button } from '@proton/atoms/Button/Button';
-import Loader from '@proton/components/components/loader/Loader';
 import { useModalStateObject } from '@proton/components';
-import useApi from '@proton/components/hooks/useApi';
+import Loader from '@proton/components/components/loader/Loader';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import lumoProjects from '@proton/styles/assets/img/lumo/lumo-projects.svg';
 

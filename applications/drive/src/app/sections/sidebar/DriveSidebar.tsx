@@ -6,6 +6,7 @@ import { useShallow } from 'zustand/react/shallow';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import {
     Sidebar,
@@ -13,7 +14,6 @@ import {
     SidebarLogo,
     SidebarNav,
     useActiveBreakpoint,
-    useApi,
     useLocalState,
 } from '@proton/components';
 import AppsDropdown from '@proton/components/containers/app/AppsDropdown';
