@@ -18,9 +18,9 @@ import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import clsx from '@proton/utils/clsx';
 
 import Radio from '../../../components/input/Radio';
+import useSettingsLink from '../../../components/link/useSettingsLink';
 import useErrorHandler from '../../../hooks/useErrorHandler';
 import useNotifications from '../../../hooks/useNotifications';
-import { useSettingsLink } from '../../../index';
 import type { ReactivateKeysContentProps } from './interface';
 
 const ContactSelector = ({
