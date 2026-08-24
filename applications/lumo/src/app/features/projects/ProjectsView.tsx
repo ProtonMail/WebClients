@@ -64,7 +64,7 @@ export const ProjectsView = () => {
         }
     };
 
-    useNativeComposerVisibilityApi({ isBlocking: true });
+    useNativeComposerVisibilityApi({ hideComposer: true });
 
     const renderContent = () => {
         if (isGuest) {
