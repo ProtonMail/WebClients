@@ -3,18 +3,17 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import type { CustomNotificationProps } from '@proton/app-context/notifications/interfaces';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 // eslint-disable-next-line @typescript-eslint/no-restricted-imports
 import Icon from '@proton/components/components/icon/Icon';
 import NotificationButton from '@proton/components/containers/notifications/NotificationButton';
-import type { CustomNotificationProps } from '@proton/components/containers/notifications/interfaces';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { FeatureCode, useFeature } from '@proton/features';
 import { IcCross } from '@proton/icons/icons/IcCross';
 
-import useGetRandomTip from './useGetRandomTip';
 import type { TipData } from '../../../models/tip';
-
+import useGetRandomTip from './useGetRandomTip';
 import useProtonTipsTelemetry from './useProtonTipsTelemetry';
 
 import './TipBox.scss';

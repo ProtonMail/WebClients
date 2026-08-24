@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 
-import type { CreateNotificationOptions } from '@proton/components';
+import type { CreateNotificationOptions } from '@proton/app-context/notifications/interfaces';
 import {
     ApiProvider,
     ConfigProvider,
