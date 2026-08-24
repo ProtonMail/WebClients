@@ -9,6 +9,7 @@ import { moveEmailsDefinition } from './skills/organise/moveEmails';
 import { setLocationReadDefinition } from './skills/organise/setLocationRead';
 import { setReadDefinition } from './skills/organise/setRead';
 import { setStarredDefinition } from './skills/organise/setStarred';
+import { snoozeEmailsDefinition } from './skills/organise/snoozeEmails';
 import { findContactsDefinition } from './skills/reads/findContacts';
 import { listFiltersDefinition } from './skills/reads/listFilters';
 import { listFoldersDefinition } from './skills/reads/listFolders';
@@ -128,6 +129,7 @@ const TOOL_PAYLOADS = [
     payloads(setLocationReadDefinition, [undefined]),
     payloads(createFolderDefinition, [{ reference: 'folder-x7b2q1', name: 'Hotels' }]),
     payloads(createLabelDefinition, [{ reference: 'label-m3n4p5', name: 'Receipts' }]),
+    payloads(snoozeEmailsDefinition, [undefined]),
     payloads(updateFilterDefinition, [undefined]),
 ];
 
