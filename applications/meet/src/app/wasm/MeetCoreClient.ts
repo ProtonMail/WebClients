@@ -82,6 +82,7 @@ export interface MeetCoreClient {
     // Safe to call from every client that wants captions: core arbitrates who actually asks.
     requestClosedCaptions(...args: Parameters<App['requestClosedCaptions']>): Promise<void>;
     stopClosedCaptions(...args: Parameters<App['stopClosedCaptions']>): Promise<void>;
+    setClosedCaptionsAvailabilityAsHost(...args: Parameters<App['setClosedCaptionsAvailabilityAsHost']>): Promise<void>;
     leaveMeeting(): Promise<void>;
     triggerWebSocketReconnect(): Promise<void>;
     getJoinType(...args: Parameters<App['getJoinType']>): Promise<JoinTypeInfo>;
