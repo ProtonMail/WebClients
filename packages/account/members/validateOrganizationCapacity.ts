@@ -22,7 +22,11 @@ export class OrganizationCapacityError extends Error {
     }
 }
 
-const validateOrganizationCapacity = (usersToImport: UserTemplate[], organization: Organization) => {
+const validateOrganizationCapacity = (
+    usersToImport: UserTemplate[],
+    organization: Organization,
+    { useEmail }: { useEmail?: boolean } = {}
+) => {
     const availableNumberOfMembers = organization.MaxMembers - organization.UsedMembers;
     if (usersToImport.length > availableNumberOfMembers) {
         throw new OrganizationCapacityError(
@@ -60,16 +64,21 @@ const validateOrganizationCapacity = (usersToImport: UserTemplate[], organizatio
         );
     }
 
-    const availableAddresses = organization.MaxAddresses - organization.UsedAddresses;
-    if (totalAddresses > availableAddresses) {
-        throw new OrganizationCapacityError(
-            ORGANIZATION_CAPACITY_ERROR_TYPE.ADDRESSES,
-            c('Organization capacity error').ngettext(
-                msgid`Your plan includes a maximum of ${availableAddresses} more address.`,
-                `Your plan includes a maximum of ${availableAddresses} more addresses.`,
-                availableAddresses
-            )
-        );
+    /**
+     * External email addresses are not created in the organization, so they don't count towards its address limit.
+     */
+    if (!useEmail) {
+        const availableAddresses = organization.MaxAddresses - organization.UsedAddresses;
+        if (totalAddresses > availableAddresses) {
+            throw new OrganizationCapacityError(
+                ORGANIZATION_CAPACITY_ERROR_TYPE.ADDRESSES,
+                c('Organization capacity error').ngettext(
+                    msgid`Your plan includes a maximum of ${availableAddresses} more address.`,
+                    `Your plan includes a maximum of ${availableAddresses} more addresses.`,
+                    availableAddresses
+                )
+            );
+        }
     }
 
     const availableVPNAccess = organization.MaxVPN - organization.UsedVPN;

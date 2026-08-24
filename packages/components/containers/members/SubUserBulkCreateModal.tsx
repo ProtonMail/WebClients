@@ -78,6 +78,7 @@ interface Props extends ModalProps {
     disableStorageValidation?: boolean;
     disableDomainValidation?: boolean;
     disableAddressValidation?: boolean;
+    useEmail?: boolean;
 }
 
 const SubUserBulkCreateModal = ({
@@ -90,6 +91,7 @@ const SubUserBulkCreateModal = ({
     disableStorageValidation,
     disableDomainValidation,
     disableAddressValidation,
+    useEmail,
     ...rest
 }: Props) => {
     const [step, setStep] = useState<Step>(Step.INSTRUCTION);
@@ -113,6 +115,7 @@ const SubUserBulkCreateModal = ({
                 disableStorageValidation={disableStorageValidation}
                 disableDomainValidation={disableDomainValidation}
                 disableAddressValidation={disableAddressValidation}
+                useEmail={useEmail}
                 mode={mode}
                 {...createUserAccountsModal}
                 {...rest}
