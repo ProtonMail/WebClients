@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 
 import { FileIcon, FileNameDisplay, Loader, SidebarListItem, SidebarListItemContent } from '@proton/components';
 import { splitNodeUid } from '@proton/drive/index';
@@ -6,18 +6,17 @@ import type { TreeItemWithChildren } from '@proton/drive/modules/directoryTree';
 
 import SidebarListItemLink from '../../../legacy/components/layout/sidebar/SidebarListItemLink';
 import { useSidebarStore } from '../hooks/useSidebar.store';
-import { generateSidebarItemStyle } from '../utils';
+import { generateSidebarItemStyle, sortChildrenByName } from '../utils';
 import { DriveExpandButton } from './DriveExpandButton';
-import { DriveSidebarSubfolders } from './DriveSidebarSubfolders';
 
-type Props = {
+type SubfolderProps = {
     shareId: string;
     item: TreeItemWithChildren;
     toggleExpand: (treeItemId: string) => Promise<void>;
     level: number;
 };
 
-export const DriveSidebarSubfolder = ({ shareId, item, toggleExpand, level }: Props) => {
+export const DriveSidebarSubfolder = ({ shareId, item, toggleExpand, level }: SubfolderProps) => {
     const { expandLevel, collapseLevel } = useSidebarStore((state) => ({
         expandLevel: state.expandLevel,
         collapseLevel: state.collapseLevel,
@@ -25,7 +24,7 @@ export const DriveSidebarSubfolder = ({ shareId, item, toggleExpand, level }: Pr
     const [isLoading, setIsLoading] = useState(false);
     const { nodeId: linkId } = splitNodeUid(item.nodeUid);
     const isExpanded = item.children !== null;
-    const children = item.children ? Object.values(item.children) : [];
+    const sortedChildItems = useMemo(() => sortChildrenByName(item.children), [item.children]);
     const shouldShowArrow = !item.hasLoadedChildren || item.hasChildren;
 
     const handleExpand = () => {
@@ -75,14 +74,16 @@ export const DriveSidebarSubfolder = ({ shareId, item, toggleExpand, level }: Pr
                     </SidebarListItemContent>
                 </SidebarListItemLink>
             </SidebarListItem>
-            {isExpanded && children.length > 0 && (
-                <DriveSidebarSubfolders
-                    shareId={shareId}
-                    children={children}
-                    toggleExpand={toggleExpand}
-                    level={level + 1}
-                />
-            )}
+            {isExpanded &&
+                sortedChildItems.map((childItem) => (
+                    <DriveSidebarSubfolder
+                        key={childItem.treeItemId}
+                        shareId={shareId}
+                        item={childItem}
+                        toggleExpand={toggleExpand}
+                        level={level + 1}
+                    />
+                ))}
         </>
     );
 };

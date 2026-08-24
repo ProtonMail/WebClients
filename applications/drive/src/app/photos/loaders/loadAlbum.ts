@@ -5,8 +5,8 @@ import { getNodeAncestry } from '@proton/drive/modules/nodes';
 
 import { createDebouncedBuffer } from '../../utils/createDebouncedBuffer';
 import { getSignatureIssues } from '../../utils/sdk/getSignatureIssues';
+import type { GetPhotosStoreState, PhotoItem } from '../photos.types';
 import { useAlbumsStore } from '../useAlbums.store';
-import { type PhotoItem, usePhotosStore } from '../usePhotos.store';
 
 export const refreshAlbumMetadata = async (albumNodeUid: string) => {
     const drive = getDriveForPhotos();
@@ -61,7 +61,11 @@ export const refreshAlbumMetadata = async (albumNodeUid: string) => {
     return album;
 };
 
-export const loadCurrentAlbum = async (albumNodeUid: string, abortSignal?: AbortSignal) => {
+export const loadCurrentAlbum = async (
+    albumNodeUid: string,
+    getPhotosStoreState: GetPhotosStoreState,
+    abortSignal?: AbortSignal
+) => {
     const drive = getDriveForPhotos();
     const albumsStore = useAlbumsStore.getState();
     albumsStore.setCurrentAlbumNodeUid(albumNodeUid);
@@ -73,7 +77,7 @@ export const loadCurrentAlbum = async (albumNodeUid: string, abortSignal?: Abort
         }
 
         const collectedUids: string[] = [];
-        const photosStore = usePhotosStore.getState();
+        const photosStore = getPhotosStoreState();
 
         const { push, drain } = createDebouncedBuffer<PhotoItem>((items) => {
             photosStore.setPhotoItemsWithoutTimeline(items);

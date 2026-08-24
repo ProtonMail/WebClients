@@ -7,7 +7,7 @@ import clsx from '@proton/utils/clsx';
 import DriveExpandButton from '../../../legacy/components/layout/sidebar/DriveSidebar/DriveSidebarFolders/DriveExpandButton';
 import DriveSidebarListItem from '../../../legacy/components/layout/sidebar/DriveSidebar/DriveSidebarListItem';
 import { getDevicesSectionName } from '../../../legacy/components/sections/Devices/constants';
-import { stringComparator } from '../../../modules/sorting';
+import { sortChildrenByName } from '../utils';
 import { DevicesSidebarItem } from './DevicesSidebarItem';
 
 type Props = {
@@ -21,10 +21,7 @@ export const DevicesSidebar = ({ isCollapsed, deviceRoot, toggleExpand, isExpand
     const [isLoading, setIsLoading] = useState(false);
     const sectionTitle = getDevicesSectionName();
 
-    const sortedDevices = useMemo(() => {
-        const unsorted = deviceRoot.children ? Object.values(deviceRoot.children) : [];
-        return unsorted.sort((a, b) => stringComparator(a.name, b.name));
-    }, [deviceRoot.children]);
+    const sortedDevices = useMemo(() => sortChildrenByName(deviceRoot.children), [deviceRoot.children]);
 
     const showList = !isCollapsed && isExpanded && sortedDevices.length > 0;
     const shouldShowArrow = !deviceRoot.hasLoadedChildren || deviceRoot.hasChildren;

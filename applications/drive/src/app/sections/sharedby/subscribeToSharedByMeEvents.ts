@@ -5,8 +5,7 @@ import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDrive
 import { getFormattedNodeLocation } from '@proton/drive/modules/nodes';
 
 import { getSignatureIssues } from '../../utils/sdk/getSignatureIssues';
-import type { SharedByMeItem } from './useSharedByMe.store';
-import { useSharedByMeStore } from './useSharedByMe.store';
+import type { GetSharedByMeStoreState, SharedByMeItem } from './sharedByMe.types';
 import { getOldestShareCreationTime } from './utils/getOldestShareCreationTime';
 
 type Drive = Pick<ProtonDriveClient, 'getNode' | 'getSharingInfo'>;
@@ -45,11 +44,11 @@ const createSharedByMeItemFromNode = async (nodeUid: string, drive: Drive): Prom
     }
 };
 
-export const subscribeToSharedByMeEvents = () => {
+export const subscribeToSharedByMeEvents = (getSharedByMeStoreState: GetSharedByMeStoreState) => {
     const eventManager = getBusDriver();
 
     const createSubscription = eventManager.subscribe(BusDriverEventName.CREATED_NODES, async (event, driveClient) => {
-        const store = useSharedByMeStore.getState();
+        const store = getSharedByMeStoreState();
 
         for (const item of event.items) {
             const storeItem = store.getSharedByMeItem(item.uid);
@@ -63,7 +62,7 @@ export const subscribeToSharedByMeEvents = () => {
     });
 
     const updateSubscription = eventManager.subscribe(BusDriverEventName.UPDATED_NODES, async (event, driveClient) => {
-        const store = useSharedByMeStore.getState();
+        const store = getSharedByMeStoreState();
 
         for (const item of event.items) {
             const storeItem = store.getSharedByMeItem(item.uid);
@@ -79,7 +78,7 @@ export const subscribeToSharedByMeEvents = () => {
     });
 
     const deleteSubscription = eventManager.subscribe(BusDriverEventName.DELETED_NODES, async (event) => {
-        const store = useSharedByMeStore.getState();
+        const store = getSharedByMeStoreState();
 
         for (const uid of event.uids) {
             if (store.getSharedByMeItem(uid)) {

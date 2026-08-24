@@ -35,10 +35,11 @@ import groupWith from '@proton/utils/groupWith';
 import isTruthy from '@proton/utils/isTruthy';
 import unique from '@proton/utils/unique';
 
-import { shareUrlPayloadToShareUrl, useDebouncedRequest } from '../_api';
-import { useDriveCrypto } from '../_crypto';
+import { shareUrlPayloadToShareUrl } from '../_api/transformers';
+import useDebouncedRequest from '../_api/useDebouncedRequest';
+import useDriveCrypto from '../_crypto/useDriveCrypto';
 import { useDriveEventManager } from '../_events';
-import { useLink } from '../_links';
+import useLink from '../_links/useLink';
 import { useVolumesState } from '../_volumes';
 import type { ShareURL, UpdateSharedURL } from './interface';
 import { getSharedLink } from './shareUrl';
