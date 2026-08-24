@@ -1,7 +1,7 @@
 import { IDBFactory } from 'fake-indexeddb';
 import 'fake-indexeddb/auto';
 
-import type { RepairNodeEntry } from './SearchDB';
+import type { IndexPopulatorState, RepairNodeEntry } from './SearchDB';
 import { SearchDB } from './SearchDB';
 import type { TreeEventScopeId } from './types';
 import { IndexKind } from './types';
@@ -256,6 +256,45 @@ describe('SearchDB', () => {
             await db.deletePopulatorState('pop-1');
             expect(await db.getPopulatorState('pop-1')).toBeUndefined();
         });
+
+        describe('documentCount', () => {
+            const seedPopulatorState = (overrides: Partial<IndexPopulatorState> = {}) =>
+                db.putPopulatorState({
+                    uid: 'pop-1',
+                    indexKind: IndexKind.MAIN,
+                    indexPopulatorKind: 'pop-1',
+                    treeEventScopeId: 'scope-1' as TreeEventScopeId,
+                    done: true,
+                    generation: 1,
+                    version: 1,
+                    progress: { files: 0, folders: 0, albums: 0, photos: 0 },
+                    ...overrides,
+                });
+
+            it('returns undefined when no populator state exists for the index kind', async () => {
+                expect(await db.getDocumentCount(IndexKind.MAIN)).toBeUndefined();
+            });
+
+            it('returns undefined before setDocumentCount is called', async () => {
+                await seedPopulatorState();
+                expect(await db.getDocumentCount(IndexKind.MAIN)).toBeUndefined();
+            });
+
+            it('returns the stored count after setDocumentCount, without disturbing other fields', async () => {
+                await seedPopulatorState();
+                await db.setDocumentCount(IndexKind.MAIN, 42);
+
+                expect(await db.getDocumentCount(IndexKind.MAIN)).toBe(42);
+                expect(await db.getPopulatorState('pop-1')).toEqual(
+                    expect.objectContaining({ uid: 'pop-1', done: true, documentCount: 42 })
+                );
+            });
+
+            it('is a no-op when no populator state exists yet for the index kind', async () => {
+                await db.setDocumentCount(IndexKind.MAIN, 42);
+                expect(await db.getDocumentCount(IndexKind.MAIN)).toBeUndefined();
+            });
+        });
     });
 
     describe('searchCryptoKey', () => {
@@ -380,6 +419,14 @@ describe('SearchDB', () => {
             await db.deleteRepairEntry([IndexKind.MAIN, 'node-1']);
             const remaining = await db.getAllRepairEntries();
             expect(remaining.map((e) => e.nodeUid)).toEqual(['node-2']);
+        });
+
+        it('countRepairEntries counts across all index kinds', async () => {
+            expect(await db.countRepairEntries()).toBe(0);
+
+            await db.putRepairEntry(makeRepairEntry({ nodeUid: 'node-1' }));
+            await db.putRepairEntry(makeRepairEntry({ nodeUid: 'node-2', indexKind: 'photos' as IndexKind }));
+            expect(await db.countRepairEntries()).toBe(2);
         });
 
         const SCOPE = 'scope-1' as TreeEventScopeId;

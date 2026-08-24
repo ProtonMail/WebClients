@@ -42,7 +42,7 @@ describe('IndexBlobStore crypto failures', () => {
         // Write blobs under one key, then read them back under another. Real AES-GCM, so this is a
         // genuine auth-tag mismatch rather than a stubbed rejection.
         const writeKey = await generateAndImportKey();
-        const writer = new IndexWriter(engine, new IndexBlobStore(IndexKind.MAIN, db, writeKey));
+        const writer = new IndexWriter(engine, new IndexBlobStore(IndexKind.MAIN, db, writeKey), async () => {});
         await indexDocuments(writer, [makeTestIndexEntry('doc-1')]);
 
         const readKey = await generateAndImportKey();
@@ -62,7 +62,7 @@ describe('IndexBlobStore crypto failures', () => {
         // inside putEncryptedIndexBlob's callback: with a bare `return`, the rejection would skip
         // the SearchBlobCryptoError wrap and land as a generic SearchLibraryError instead.
         const decryptOnlyKey = await generateAndImportKey(['decrypt']);
-        const writer = new IndexWriter(engine, new IndexBlobStore(IndexKind.MAIN, db, decryptOnlyKey));
+        const writer = new IndexWriter(engine, new IndexBlobStore(IndexKind.MAIN, db, decryptOnlyKey), async () => {});
 
         const error = await indexDocuments(writer, [makeTestIndexEntry('doc-1')]).catch((e: unknown) => e);
 
@@ -72,7 +72,7 @@ describe('IndexBlobStore crypto failures', () => {
     it('round-trips normally when the same key is used', async () => {
         const cryptoKey = await generateAndImportKey();
         const blobStore = new IndexBlobStore(IndexKind.MAIN, db, cryptoKey);
-        const writer = new IndexWriter(engine, blobStore);
+        const writer = new IndexWriter(engine, blobStore, async () => {});
         await indexDocuments(writer, [makeTestIndexEntry('doc-1')]);
 
         const reader = new IndexReader(engine, blobStore);
