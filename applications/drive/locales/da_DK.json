@@ -99,7 +99,7 @@
         "Føj til gruppe"
       ],
       "Album name": [
-        "Albumnavn"
+        "Album-navn"
       ],
       "Apply": [
         "Anvend"
@@ -211,7 +211,7 @@
         "Arbejd sammen om dokumenter"
       ],
       "Collapse folder": [
-        "Luk mappe sammen"
+        "Fold mappe sammen"
       ],
       "Collapse navigation bar": [
         "Sammenfold navigationsbjælke"
@@ -363,7 +363,7 @@
         "Detaljer"
       ],
       "Diagnostics": [
-        "Diagnostik"
+        "Diagnosticering"
       ],
       "Discard": [
         "Kassér"
@@ -420,7 +420,7 @@
         "Download resultater"
       ],
       "Drive Locked": [
-        "Drive låst"
+        "Drev låst"
       ],
       "Edit": [
         "Redigér"
@@ -459,7 +459,7 @@
         "Krypteret"
       ],
       "Expand folder": [
-        "Udvid mappe"
+        "Fold mappe ud"
       ],
       "Explore more": [
         "Udforsk mere"
@@ -477,7 +477,7 @@
         "Eksportér det valgte som .vcf"
       ],
       "Export system log": [
-        "Eksportér systemlog"
+        "Eksportér systemloggen"
       ],
       "Fit to window": [
         "Tilpas til vinduet"
@@ -543,10 +543,10 @@
         "Gå til etikette"
       ],
       "Go to my files": [
-        "Gå til mine filer"
+        "Gå til Mine filer"
       ],
       "Go to parent": [
-        "Gå til overordnet"
+        "Gå til det overordnede niveau"
       ],
       "Go to settings": [
         "Gå til indstillinger"
@@ -654,7 +654,7 @@
         "Håndter link"
       ],
       "Manage share": [
-        "Håndter deling"
+        "Håndtér deling"
       ],
       "Manage users/addresses": [
         "Administrer brugere/adresser"
@@ -897,7 +897,7 @@
         "Gendan denne version"
       ],
       "Restore version": [
-        "Genskab version"
+        "Gendan version"
       ],
       "Resume all": [
         "Genoptag alle"
@@ -927,7 +927,7 @@
         "Gem ændringer"
       ],
       "Save photos and remove": [
-        "Gem fotos og slet"
+        "Gem fotos og fjern"
       ],
       "Scan & Download": [
         "Scan og download"
@@ -972,7 +972,7 @@
         "Indstil som albumcover"
       ],
       "Set as cover": [
-        "Brug som cover"
+        "Indstil som cover"
       ],
       "Set password or expiration date": [
         "Indstil adgangskode eller udløbsdato"
@@ -1261,7 +1261,7 @@
         "Gå tilbage til albummet “${ ellipsedAlbumName }“"
       ],
       "Re-index": [
-        "Re-indeksér"
+        "Re-indeksering"
       ],
       "Add to \"${ name }\" (${ photoCount } photo)": [
         "Tilføj til \"${ name }\" (${ photoCount } foto)",
@@ -1277,10 +1277,10 @@
         "Tilføj ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
       "Rebuild index": [
-        "Opret indeks"
+        "Genopbyg indeks"
       ],
       "Search is unavailable": [
-        "Søgning utilgængelig"
+        "Søgning er ikke tilgængelig"
       ],
       "Go back to album \"${ ellipsedAlbumName }\"": [
         "Gå tilbage til albummet “${ ellipsedAlbumName }\""
@@ -1313,10 +1313,10 @@
         "Send feedback"
       ],
       "Report abuse": [
-        "Anmeld misbrug"
+        "Rapportér misbrug"
       ],
       "Re-indexing in progress": [
-        "Gen-indeksering i gang"
+        "Gen-indeksering er i gang"
       ],
       "Skip": [
         "Spring over"
@@ -1344,6 +1344,12 @@
       ],
       "Stop here": [
         "Stop her"
+      ],
+      "Copy debug transcript": [
+        "Kopiér fejlfindingstranskibering"
+      ],
+      "Preview logs": [
+        "Preview logfiler"
       ]
     },
     "Action: Docs": {
@@ -3597,7 +3603,7 @@
         "Domæne er ikke tilgængeligt, prøv igen senere"
       ],
       "Downloads of desktop apps are currently unavailable": [
-        "Downloads af desktop-apps er i øjeblikket ikke tilgængelige"
+        "Downloads af desktop-apps er ikke mulig for øjeblikket"
       ],
       "Editing billing address is not available at the moment. Please try again later.": [
         "Redigering af faktureringsadresse er ikke tilgængelig i øjeblikket. Prøv igen senere."
@@ -3899,7 +3905,7 @@
         "Omvendt betalingsordning understøttes ikke for dette abonnement"
       ],
       "Search failed": [
-        "Søgning mislykkedes"
+        "Søgningen mislykkedes"
       ],
       "Signature not verified": [
         "Signatur ikke bekræftet"
@@ -3932,7 +3938,7 @@
         "Nogle af dine etikettenavne overskrider ${ MAIL_APP_NAME }'s maksimale tegngrænse. Tilpas venligst importen for at ændre disse navne."
       ],
       "Something went wrong during folder listing": [
-        "Der opstod en fejl under mappelistningen"
+        "Fejl opstod under mappelistningen"
       ],
       "Something went wrong. Please try again.": [
         "Et eller andet gik galt. Prøv igen."
@@ -4161,7 +4167,7 @@
         "Noget gik galt med søgningen. Prøv igen senere."
       ],
       "Something went wrong with search: Not enough storage space.": [
-        "Der opstod en fejl under søgningen: Ikke nok lagerplads."
+        "Der opstod en fejl i søgningen: Ikke nok lagerplads."
       ],
       "Address could not be added.": [
         "Adressen kunne ikke tilføjes."
@@ -4479,6 +4485,9 @@
       ],
       "Something went wrong, please try again later": [
         "Noget gik galt, prøv igen senere"
+      ],
+      "Could not grant access to the organization key": [
+        "Kunne ikke give adgang til organistationsnøglen"
       ]
     },
     "error": {
@@ -4656,7 +4665,7 @@
         "Med ekstra adgangskode aktiveret kan håndteringen af alias kun ske i ${ PASS_APP_NAME }."
       ],
       "You may also refresh the page or try again later.": [
-        "Du kan også opfriske siden, eller forsøge igen senere."
+        "Du kan også opfriske siden - eller forsøge igen senere."
       ]
     },
     "Error notification": {
@@ -5036,7 +5045,7 @@
         "Alle albummer"
       ],
       "Recent": [
-        "Nylig(e)"
+        "Seneste"
       ],
       "Share ${ photoCount } photo via": [
         "Del ${ photoCount } foto via",
@@ -5698,7 +5707,7 @@
         "og"
       ],
       "And access it from anywhere": [
-        "Og få adgang til den hvor som helst"
+        "Og få adgang alle steder fra"
       ],
       "Anonymous": [
         "Anonym"
@@ -5725,7 +5734,7 @@
         "Er du sikker på, at du ønsker at slette de valgte elementer permanent fra papirkurven?"
       ],
       "Are you sure you want to proceed?": [
-        "Er du sikker på, at du vil fortsætte?"
+        "Er du sikker på du vil fortsætte?"
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Mindst ${ BETTER_PASSWORD_LENGTH } tegn"
@@ -5821,7 +5830,7 @@
         "Ryd krypterede søgedata"
       ],
       "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
-        "Ryddes browserdata, ryddes søgeindekset på denne enhed. Alle filer skal indekseres igen, når du bruger søgefunktionen."
+        "Rydning af browserdata vil rydde søgeindekset på denne enhed. Alle filer skal indekseres igen for at bruge søgefunktionen."
       ],
       "Clears browser data related to the encrypted search.": [
         "Rydder browserdata relateret til den krypterede søgning."
@@ -5857,7 +5866,7 @@
         "Fortsæt"
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
-        "Fortsæt med at bruge ${ DRIVE_APP_NAME } og lås op for drev senere"
+        "Fortsæt med at bruge ${ DRIVE_APP_NAME } og lås drevet op senere"
       ],
       "Copy the link to clipboard": [
         "Kopiér linket til udklipsholder"
@@ -6119,13 +6128,13 @@
         "Gratis 5 GB krypteret lagerplads til at starte med"
       ],
       "from the version history?": [
-        "fra versionshistorikken"
+        "fra versionshistorikken?"
       ],
       "Geoblocking": [
         "Geoblokering"
       ],
       "Get logs and other information for technical support and troubleshooting": [
-        "Hent logs og anden information til teknisk support og fejlfinding"
+        "Hent logfiler og anden information til teknisk support og fejlfinding"
       ],
       "Get the app to backup photos from your phone or upload them here.": [
         "Hent appen til at sikkerhedskopiere fotos fra din telefon, eller upload dem her."
@@ -6167,7 +6176,7 @@
         "Hvis du ikke kan se mailen i din indbakke, bedes du tjekke din spammappe."
       ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
-        "Hvis du har en af disse, skal du fortsætte til ${ BRAND_NAME }-kontoindstillingerne for at starte processen med at fjerne blokeringen."
+        "Har du en af disse skal du fortsætte til ${ BRAND_NAME }-kontoindstillingerne for at starte processen med at fjerne blokeringen."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Hvis du fortsætter med nedgraderingen, vil du miste adgang til betalte funktioner i ${ MAIL_APP_NAME } og ${ VPN_APP_NAME }."
@@ -6207,7 +6216,7 @@
         "I det næste trin kan du foretage en indbetaling ved hjælp af en Bitcoin-adresse."
       ],
       "Indexing in progress": [
-        "Indeksering i gang"
+        "Indeksering er i gang"
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "Indekserer ${ esProgress } elementer ud of ${ totalProgressToShow }"
@@ -6252,7 +6261,7 @@
         "Indhold i papirkurven forbliver der, indtil du sletter det permanent"
       ],
       "Items moved to the trash will stay here until deleted": [
-        "Elementer, der flyttes til papirkurven, bliver her, indtil de slettes."
+        "Elementer, der flyttes til papirkurven, forbliver her, indtil de slettes."
       ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "Det er bedst at bruge en VPN til enhver tid. Men her er, hvornår cybertrusler kan være højest:"
@@ -6370,7 +6379,7 @@
         "Overvåg konti"
       ],
       "More": [
-        "Flere"
+        "Mere"
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "De fleste offentlige WiFi-netværk er sikre, men nogle mangler sikkerhed, hvilket udsætter dig for cybertrusler. En VPN krypterer din trafik og holder dig beskyttet."
@@ -6379,7 +6388,7 @@
         "Flytter filer"
       ],
       "My Links": [
-        "Mine Links"
+        "Mine links"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Navngiv din nye mappe og vælg den overordnede mappe, du vil placere den i. Hvis du ikke vælger en overordnet mappe, vil denne nye mappe blive oprettet som en topniveaumappe."
@@ -6614,7 +6623,7 @@
         "Privat browsing (eller \"inkognito\"-tilstand) er kun nyttig til at holde din aktivitet skjult på din enhed. Den forhindrer din browser i at gemme historik og cookies, men den gør dig ikke usynlig. Din internetudbyder, netværksadministrator og de websteder, du besøger, kan stadig se, hvad du foretager dig online."
       ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
-        "Privat søgning aktiveret. Du kan nu lukke dialogen og søge efter filer og mapper."
+        "Privat søgning aktiveret. Du kan nu lukke denne dialog og søge efter filer og mapper."
       ],
       "Public link": [
         "Offentligt link"
@@ -6632,7 +6641,7 @@
         "Gendannelsesoplysninger vil forblive på denne enhed, medmindre du vælger at slette dem."
       ],
       "Recovery process might take some time.": [
-        "Gendannelsesprocessen kan tage noget tid."
+        "Gendannelsesprocessen kan tage nogen tid."
       ],
       "Referral link copied to your clipboard": [
         "Henvisningslink kopieret til din udklipsholder"
@@ -6677,7 +6686,7 @@
         "Scan QR-koden med din mobilenhed"
       ],
       "Scan to download": [
-        "Scan for at downloade"
+        "Skan for at downloade"
       ],
       "Search cannot be enabled in this browser": [
         "Søgning kan ikke aktiveres i denne browser"
@@ -6873,7 +6882,7 @@
         "Der er stadig filer, der skal overføres. Ved at lukke overførselsadministratoren afsluttes alle operationer."
       ],
       "There is nothing to see here": [
-        "Der er ikke noget at se her"
+        "Der er intet at se her"
       ],
       "This action will delete the link and revoke access for all users.": [
         "Denne handling vil slette linket og fjerne adgangen for alle brugere."
@@ -6934,7 +6943,7 @@
         "Dette vil annullere eventuelle resterende uploads. Annullerede filer gemmes ikke i ${ DRIVE_APP_NAME }."
       ],
       "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
-        "Dette sletter kun albummet. Dine billede forbliver i din tidslinje. Denne handling kan ikke fortrydes."
+        "Dette sletter kun albummet. Dine billeder forbliver i din tidslinje. Denne handling kan ikke fortrydes."
       ],
       "This will permanently delete the file you uploaded.": [
         "Dette vil permanent slette filen, du har uploadet."
@@ -7075,7 +7084,7 @@
         "Uden titel"
       ],
       "Update required": [
-        "Opdatering kræves"
+        "Opdatering nødvendig"
       ],
       "Updating drive search...": [
         "Opdaterer drevsøgning..."
@@ -7087,7 +7096,7 @@
         "Opgradér for at beholde dine ${ planTitle }-fordele."
       ],
       "upgrade your storage": [
-        "opgradere dit drev."
+        "opgradér din lagerplads"
       ],
       "Upload Failed": [
         "Upload mislykkedes"
@@ -7195,7 +7204,7 @@
         "Hvad ønsker du at gøre?"
       ],
       "What would you like to do?": [
-        "Hvad ønsker du at gøre?"
+        "Hvad vil du gøre?"
       ],
       "When working remotely": [
         "Når du arbejder eksternt"
@@ -7213,7 +7222,7 @@
         "Hvem har adgang"
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
-        "vil blive gendannet til versionen fra ${ formattedRevisionDate }. Alle andre versioner vil blive gemt."
+        "vil blive gendannet til versionen fra ${ formattedRevisionDate }. Alle andre versioner vil stadig blive gemt."
       ],
       "With ${ DRIVE_APP_NAME } your data is protected by end-to-end encryption.": [
         "Med ${ DRIVE_APP_NAME } er dine data beskyttet med end-to-end kryptering."
@@ -7225,7 +7234,7 @@
         "Ønsker du at modtage en ny verifikationskode?"
       ],
       "Would you like to restore your files?": [
-        "Ønsker du at gendanne dine filer?"
+        "Vil du gendanne dine filer?"
       ],
       "Would you like to save it before removing?": [
         "Vil du gemme det, før det fjernes?",
@@ -7250,7 +7259,7 @@
         "Du har allerede en gratis konto"
       ],
       "You are about to leave the shared item. You will not be able to access it again until the owner shares it with you.": [
-        "Du er ved at forlade det delte element. Du vil ikke kunne tilgå det igen, før ejeren deler det med dig."
+        "Du er ved at forlade det delte element. Du vil først kunne tilgå det igen når ejeren deler det med dig."
       ],
       "You are about to open another browser tab and visit:": [
         "Du er ved at åbne en anden browserfane og besøge:"
@@ -7466,7 +7475,7 @@
         "Vælg tjenesten du vil forbinde til"
       ],
       "Clear all search data": [
-        "Ryd alt søgedata"
+        "Ryd alle søgedata"
       ],
       "Clears browser data related to the search.": [
         "Rydder browserdata relateret til søgningen."
@@ -7478,7 +7487,7 @@
         "Hvis du fjerner dig selv, mister du adgang til \"${ fileName }\" og du vil ikke kunne åbne den igen, medmindre ejeren deler den med dig."
       ],
       "Search enabled. You may now close this dialogue and search for files and folders.": [
-        "Søgning aktiveret. Du kan nu lukke dialogen og søge efter filer og mapper."
+        "Søgning aktiveret. Du kan nu lukke denne dialog og søge efter filer og mapper."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Når du indstiller to-faktor-godkendelse, giver vi dig gendannelseskoder, som du kan bruge til at logge på, hvis du mister adgangen til din godkendelsesapp."
@@ -7511,13 +7520,13 @@
         "Tilføj ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ],
       "${ state.result.entries.length } entries": [
-        "${ state.result.entries.length } elementer"
+        "${ state.result.entries.length } indtastninger"
       ],
       "Index is empty.": [
-        "Indeks er tom."
+        "Indeks er tomt."
       ],
       "Search module is not available.": [
-        "Søgningsmodulet er ikke tilgængeligt."
+        "Søgemodulet er ikke tilgængeligt."
       ],
       "Unsupported file type for Photos": [
         "Filtypen for Fotos er ikke understøttet"
@@ -7544,7 +7553,7 @@
         "Invitation bekræftet"
       ],
       "No populator states found.": [
-        "Ingen populator states fundet."
+        "Ingen populator tilstande fundet."
       ],
       "${ albums } album": [
         "${ albums } album",
@@ -7596,10 +7605,10 @@
         "For kun ${ bundlePlanPriceInline }"
       ],
       "Indexing hit an unexpected state and cannot continue. Rebuild the index to recover.": [
-        "Indekseringen ramte en uventet status og kan ikke fortsætte. Opret indekset igen for at gendanne søgning."
+        "Indekseringen endte i en uventet tilstand og kan ikke fortsætte. Opret indekset igen for gendannelse."
       ],
       "Not enough storage space": [
-        "Ikke nok lagerplads"
+        "Utilstrækkelig lagerplads"
       ],
       "RECOMMENDED": [
         "FORSLÅET"
@@ -7608,25 +7617,25 @@
         "Søgningsdata er beskadiget"
       ],
       "Search encountered an internal error. Rebuild the index to recover.": [
-        "Der opstod en intern fejl med søgning. Opret indekset igen for at gendanne søgning."
+        "Intern fejl opstået i søgningen. Genopbyg indekset for at gendanne søgningen."
       ],
       "Search engine error": [
-        "Fejl med søgemaskine"
+        "Søgemaskinefejl"
       ],
       "Search error": [
         "Søgefejl"
       ],
       "Search is in an invalid state": [
-        "Søgning har en ugyldig status"
+        "Søgning er i en ugyldig tilstand"
       ],
       "Search is ready. Your files have been indexed.": [
         "Søgning er klar. Dine filer er blevet indekseret."
       ],
       "The search engine encountered an internal error. Rebuild the index to recover.": [
-        "Der opstod en intern fejl med søgemaskinen. Opret indekset igen for at gendanne søgning."
+        "Der opstod en intern fejl i søgemaskinen. Genopbyg indekset for at gendanne søgningen."
       ],
       "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
-        "Din browser løb tør for plads under indekseringen af filer til søgning. Frigør lagerplads, og opret derefter indekset igen."
+        "Din browser løb tør for plads under indekseringen af filer til søgning. Frigør lagerplads og genopbyg derefter indekset."
       ],
       "Create a secure cloud for ${ memberCount } member": [
         "Opret en sikker sky til ${ memberCount } medlem",
@@ -7715,10 +7724,10 @@
         "Jeg bekræfter hermed, at jeg handler i god tro og informationerne og udtalelserne i rapporten er korrekte og fuldstændige."
       ],
       "Re-indexing in progress": [
-        "Gen-indeksering i gang"
+        "Gen-indeksering er i gang"
       ],
       "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
-        "Dine filer bliver gen-indekseret. Du kan blive ved med at søge - resultaterne kan være ufuldstændige, indtil de er færdige. Vi giver dig besked, når det er færdigt."
+        "Dine filer bliver gen-indekseret. Du kan fortsætte søgningen - resultaterne kan dog være ufuldstændige indtil søgningen er færdig. Vi giver dig besked når den er færdig."
       ],
       "Album": [
         "Album"
@@ -7771,7 +7780,7 @@
         "${ LUMO_SHORT_APP_NAME }-skriveassistent"
       ],
       "To enable search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally, and we'll let you know when indexing is done. If you leave this page, indexing will pause and resume when you come back.": [
-        "For at kunne søge skal vi indeksere dine filer lokalt. Du kan stadig bruge ${ DRIVE_APP_NAME } normalt, og vi giver dig besked når indekseringen er færdig. Hvis du forlader denne side bliver indekseringen sat på pause og genoptages så når du vender tilbage."
+        "For at kunne søge skal vi indeksere dine filer lokalt. Du kan stadig bruge ${ DRIVE_APP_NAME } som normalt, og vi giver dig besked når indekseringen er færdig. Hvis du forlader denne side bliver indekseringen sat på pause og genoptages når du vender tilbage."
       ],
       "Thinking about this": [
         "Overvejer..."
@@ -7840,7 +7849,22 @@
         "Du omdirigeres til ${ IDEAL_BRAND_NAME } i en ny browserfane for at gennemføre transaktionen. Benytter du evt. pop-up blockere, så deaktiver disse for at fortsætte."
       ],
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
-        "Har du mistet adgangen til din autentificeringsapp kan du bruge 1 af de 16 backup recovery koder, der leveres, når du konfigurerer to-faktor godkendelse. ${ learnMoreLink }"
+        "Hvis du har mistet adgangen til din godkender-app kan du bruge 1 af de 16 gendannelseskoder, som du fik da du satte to-faktor-godkendelses op. ${ learnMoreLink }"
+      ],
+      "Debug transcript copied": [
+        "Fejlfindingstranskibering kopieret"
+      ],
+      "Loading folder": [
+        "Indlæser mappe"
+      ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "Logfiler hjælper os med at forstå hvad der skete før problemer opstod. De inkluderer handlinger og appen og fejlmeddelelser, men intet beskedindhold."
+      ],
+      "Not in My files": [
+        "Ikke i Mine filer"
+      ],
+      "Read folder context": [
+        "Læste mappekontekst"
       ]
     },
     "info": {
@@ -7939,7 +7963,7 @@
     },
     "Label": {
       "# of downloads": [
-        "# af downloads"
+        "# downloads"
       ],
       "${ albumProgress.added } of ${ albumProgress.total }": [
         "${ albumProgress.added } af ${ albumProgress.total }"
@@ -8135,7 +8159,7 @@
       ],
       "Delete drive?": [
         "Slet drev?",
-        "Slet drev?"
+        "Slet drevene?"
       ],
       "Delete link and remove access for everyone": [
         "Slet link og fjern adgang for alle"
@@ -8150,7 +8174,7 @@
         "Enhed"
       ],
       "Device name": [
-        "Enhedsnavn"
+        "Enhedens navn"
       ],
       "Disable this link on a specific date": [
         "Deaktiver dette link på en bestemt dato"
@@ -8444,7 +8468,7 @@
         "Indstil gendannelsesmetode"
       ],
       "Share a file, folder, or album": [
-        "Del en fil, mappe eller et album"
+        "Del en fil, en mappe eller et album"
       ],
       "Shared": [
         "Delt"
@@ -8453,13 +8477,13 @@
         "Delt af"
       ],
       "Shared on": [
-        "Delt"
+        "Delt på"
       ],
       "Shared with me": [
         "Delt med mig"
       ],
       "Show indexing progress of Encrypted Search": [
-        "Vis fremskridt for indeksering af krypteret søgning"
+        "Vis fremskridt i indeksering af krypteret søgning"
       ],
       "Sign emails": [
         "Signér e-mails"
@@ -8510,7 +8534,7 @@
         "Tema"
       ],
       "This will permanently delete all files in your locked drive.": [
-        "Dette vil slette alle filer på dit låste drev permanent."
+        "Dette vil slette alle filer permanent på dit låste drev."
       ],
       "Thomas": [
         "Kim"
@@ -8618,7 +8642,7 @@
         "Kompatibel til miljøet"
       ],
       "Index kinds": [
-        "Typer af indeks"
+        "Indekstyper"
       ],
       "Initial indexing": [
         "Første indeksering"
@@ -8681,7 +8705,7 @@
         "Delt af ${ sharedBy }"
       ],
       "Shared by Public link": [
-        "Delt gennem Offentligt link"
+        "Delt gennem et offentligt link"
       ],
       "Shared on ${ sharedOn }": [
         "Delt den ${ sharedOn }"
@@ -10508,13 +10532,13 @@
         "Kunne ikke afvise invitation til at dele"
       ],
       "Failed to remove device": [
-        "Kunne ikke fjerne enhed"
+        "Enheden kunne ikke fjernes"
       ],
       "Failed to remove the file": [
         "Kunne ikke fjerne filen"
       ],
       "Failed to rename device": [
-        "Kunne ikke omdøbe enhed"
+        "Enheden kunne ikke omdøbes."
       ],
       "Failed to upload files: ${ err }": [
         "Kunne ikke uploade filer: ${ err }"
@@ -10612,7 +10636,7 @@
         "Regnearket kunne ikke oprettes"
       ],
       "This secure link expired, please change expire date in sharing settings": [
-        "Dette sikre link er udløbet, du kan ændre udløbsdatoen i delingsindstillingerne."
+        "Dette sikre link er udløbet. Du kan ændre udløbsdatoen i delingsindstillingerne."
       ],
       "Trash failed to be emptied": [
         "Papirkurv kunne ikke tømmes"
@@ -10646,7 +10670,7 @@
         "\"${ ellipsedName }\" slettet"
       ],
       "\"${ ellipsedName }\" deleted permanently from trash": [
-        "\"${ ellipsedName }\" slettet permanent fra papirkurven"
+        "\"${ ellipsedName }\" er slettet permanent fra papirkurven"
       ],
       "\"${ ellipsedName }\" failed to be created": [
         "\"${ ellipsedName }\" kunne ikke oprettes"
@@ -10910,19 +10934,19 @@
         "Arbejd sammen om dokumenter"
       ],
       "Do you prefer ${ DRIVE_APP_NAME } in light or dark mode? Select the color that inspires you the most.": [
-        "Foretrækker du ${ DRIVE_APP_NAME } i lyst eller mørkt tema? Vælg den farve der inspirerer dig mest."
+        "Foretrækker du ${ DRIVE_APP_NAME } i lyst eller mørkt tema? Vælg det tema der inspirerer dig mest."
       ],
       "Drag and drop your files here": [
         "Træk og slip dine filer her"
       ],
       "Edit documents online": [
-        "Redigér dine dokumenter online"
+        "Redigér dokumenter online"
       ],
       "End-to-end encrypted storage for your files": [
         "End-to-end krypteret lagring for dine filer"
       ],
       "Faster uploads for large or multiple files": [
-        "Hurtigere uploads for større eller flere filer"
+        "Hurtigere uploads for store eller mange filer"
       ],
       "Files uploaded during this time won’t count towards your storage limit.": [
         "Filer, der uploades i dette tidsrum, vil ikke tælle med i din lagerpladsgrænse."
@@ -10931,7 +10955,7 @@
         "Filer, der uploades nu, vil ikke tælle med i din lagerpladsgrænse."
       ],
       "Final approval in progress": [
-        "Endelig godkendelse i gang"
+        "Endelig godkendelse er i gang"
       ],
       "Final approval pending": [
         "Afventer endelig godkendelse"
@@ -10943,7 +10967,7 @@
         "Få desktop-appen."
       ],
       "Get the mobile app": [
-        "Hent mobil-appen"
+        "Hent mobil appen"
       ],
       "Got an Android? We've got you covered.": [
         "Har du en Android? Vi er der for dig."
@@ -10967,10 +10991,10 @@
         "Bevar momentum ved at uploade flere filer og bruge den lagerplads, der er inkluderet i dit abonnement."
       ],
       "Manage access": [
-        "Håndter adgang"
+        "Håndtér adgang"
       ],
       "Organize files right from your desktop": [
-        "Organisér filer direkte fra dit skrivebord"
+        "Organisér filer direkte fra din desktop"
       ],
       "Protect your financial documents, ID cards, project files, photos, and more with end-to-end encryption.": [
         "Beskyt dine finansielle dokumenter, ID-kort, projektfiler, billeder og mere med end-to-end kryptering."
@@ -11073,19 +11097,19 @@
         "Ingen overordnet mappe"
       ],
       "Only current location": [
-        "Kun nuværende placering"
+        "Kun den nuværende placering"
       ],
       "Only current location: ${ name }": [
-        "Kun nuværende placering: ${ name }"
+        "Kun den nuværende placering: ${ name }"
       ],
       "Select JSON file": [
         "Vælg JSON-fil"
       ],
       "Verify content": [
-        "Verificer indhold"
+        "Verificér indhold"
       ],
       "Verify thumbnails": [
-        "Kontrollér miniaturer"
+        "Verificér miniaturer"
       ]
     },
     "Option group label": {
@@ -11387,7 +11411,7 @@
         "Kunne ikke initialisere ${ IDEAL_BRAND_NAME }. Prøv igen senere."
       ],
       "Please enter the account holder name": [
-        "Anfør kontohavers navn"
+        "Indtast kontohavers navn"
       ]
     },
     "Payments.error": {
@@ -13302,7 +13326,7 @@
         "Skærmbilleder"
       ],
       "Selfies": [
-        "Selfies"
+        "Selfier"
       ],
       "Videos": [
         "Videoer"
@@ -13399,7 +13423,7 @@
         "Albumdetaljer"
       ],
       "Albums": [
-        "Albummer"
+        "Albums"
       ],
       "All": [
         "Alle"
@@ -13661,7 +13685,7 @@
         "Download ubekræftet mappe?"
       ],
       "Drive": [
-        "Drive"
+        "Drev"
       ],
       "Drop to upload": [
         "Slip for at uploade"
@@ -13727,7 +13751,7 @@
         "Fildetaljer"
       ],
       "File recovery process": [
-        "Filgendannelsesproces"
+        "Filgendannelsens fremskriden"
       ],
       "Folder": [
         "Mappe"
@@ -13755,7 +13779,7 @@
         "Få mere ud af deres VPN"
       ],
       "Get started with 10 minutes of free uploads, on the house.": [
-        "Kom i gang med 10 minutters gratis uploads, på husets regning."
+        "Kom i gang med 10 minutters gratis upload, på husets regning."
       ],
       "Get the apps": [
         "Hent appsene"
@@ -13840,7 +13864,7 @@
         "Logbog"
       ],
       "Logs": [
-        "Log-filer"
+        "Logfiler"
       ],
       "Make a copy": [
         "Lav en kopi"
@@ -13897,7 +13921,7 @@
         "Nattetema"
       ],
       "No albums shared with me": [
-        "Intet album delt med mig"
+        "Ingen albummer delt med mig"
       ],
       "No breaches detected": [
         "Ingen databrud registreret"
@@ -13933,7 +13957,7 @@
         "Ingen selfies"
       ],
       "No shared albums": [
-        "Ingen delte album"
+        "Ingen delte albummer"
       ],
       "No videos": [
         "Ingen videoer"
@@ -14204,7 +14228,7 @@
         "Åbn dette regneark i ${ SHEETS_APP_NAME } eller download det for at forhåndsvise det."
       ],
       "Total size": [
-        "Samlet størrelse"
+        "Total størrelse"
       ],
       "Trash": [
         "Papirkurv"
@@ -14387,7 +14411,7 @@
         "Handlinger"
       ],
       "Global": [
-        "Globalt"
+        "Global"
       ],
       "Search": [
         "Søg"
@@ -14396,7 +14420,7 @@
         "Forbindelsen til Gmail er afbrudt"
       ],
       "Index populators": [
-        "Index populators"
+        "Index-populatorer"
       ],
       "Continue with free storage": [
         "Fortsæt med gratis lagerplads"
@@ -14487,6 +14511,9 @@
       ],
       "Still working on it": [
         "Arbejder stadig på det"
+      ],
+      "September Sale": [
+        "Septemberudsalg"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15201,6 +15228,79 @@
     "Payments.iDEAL": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
         "Ved at bekræfte denne betaling autoriserer du ${ BRAND_NAME } og Stripe, vores betalingstjenesteudbyder, til at instruere din bank om at debitere din konto tilsvarende. Du kan få en tilbagebetaling inden for 8 uger fra debiteringsdatoen, under betingelserne i din aftale med din bank."
+      ]
+    },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "Få tilbuddet"
+      ],
+      "Special Offer": [
+        "Særtilbud"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "/month": [
+        "/måned"
+      ],
+      "2 individual accounts": [
+        "2 individuelle konti"
+      ],
+      "2 TB of secure storage": [
+        "2 TB sikker lagerplads"
+      ],
+      "3 TB of secure storage": [
+        "3 TB sikker lagerplads"
+      ],
+      "500 GB of secure storage": [
+        "500 GB sikker lagerplads"
+      ],
+      "6 individual accounts": [
+        "6 individuelle konti"
+      ],
+      "Advanced protection against cyber threats": [
+        "Avanceret beskyttelse mod cybertrusler"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Rabatter beregnes ud fra den normale månedspris. Dit abonnement fornyes til den årlige standardpris, når faktureringsperioden udløber."
+      ]
+    },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, og ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, og ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, og ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "i 12 måneder"
+      ],
+      "One plan, full power": [
+        "Ét abonnement, fuld power"
+      ],
+      "One plan, max savings": [
+        "Et abonnement, maksimal besparelse"
+      ],
+      "One plan, more power": [
+        "Ét abonnement, mere power"
       ]
     }
   }

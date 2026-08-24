@@ -1288,7 +1288,7 @@
         "Спампаваць для macOS"
       ],
       "Rebuild index": [
-        "Аднавіць індэкс"
+        "Перабудаваць індэкс"
       ],
       "Search is unavailable": [
         "Пошук недаступны"
@@ -6177,7 +6177,7 @@
         "Паніжэнне тарыфнага плана спыніць усе бягучыя падключэнні да платных сервераў ${ VPN_APP_NAME }."
       ],
       "Download ${ name } app": [
-        "Спампаваць праграму для ${ name }"
+        "Спампаваць праграму ${ name }"
       ],
       "Download current logs": [
         "Спампоўванне бягучых журналаў"
@@ -6600,7 +6600,7 @@
         "Назіранне за ўліковымі запісамі"
       ],
       "More": [
-        "Больш"
+        "Яшчэ"
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "Большасць агульнадаступных сетак Wi-Fi з'яўляюцца бяспечнымі, але ў некаторых адсутнічаюць функцыі бяспекі і гэта падвяргае вас кіберпагрозам. VPN шыфруе трафік і абараняе ваша падключэнне."
@@ -6858,7 +6858,7 @@
         "У чарзе"
       ],
       "Ready to add some photos?": [
-        "Гатовыя дадаць некаторыя фатаграфіі?"
+        "Гатовы дадаць некаторыя фатаграфіі?"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Інфармацыя аб аднаўленні застанецца на гэтай прыладзе пакуль вы не выдаліце яе."
@@ -7824,7 +7824,7 @@
         "Індэксавана ${ first }, ${ second } і ${ third }"
       ],
       "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
-        "${ DRIVE_APP_NAME } выявіў, што лакальны індэкс пошуку пашкоджаны і яго больш нельга выкарыстоўваць. Паспрабуйце аднавіць індэкс, каб мець магчымасць карыстацца пошукам далей."
+        "Праграма ${ DRIVE_APP_NAME } выявіла, што лакальны індэкс пошуку пашкоджаны і яго больш нельга выкарыстоўваць. Паспрабуйце аднавіць індэкс, каб мець магчымасць карыстацца пошукам далей."
       ],
       "Could not scan file for malware": [
         "Немагчыма праверыць файл на шкодныя праграмы"
@@ -7836,7 +7836,7 @@
         "Файл пазначаны як патэнцыйна шкодны"
       ],
       "Indexing hit an unexpected state and cannot continue. Rebuild the index to recover.": [
-        "Адбыўся нечаканы стан пры індэксацыі і працэс немагчыма працягнуць далей. Паспрабуйце аднавіць індэкс."
+        "Адбыўся нечаканы стан пры індэксацыі і працэс немагчыма працягнуць далей. Паспрабуйце перабудаваць індэкс."
       ],
       "Not enough storage space": [
         "Недастаткова месца для захоўвання"
@@ -7845,7 +7845,7 @@
         "Пошук даных пашкоджаны"
       ],
       "Search encountered an internal error. Rebuild the index to recover.": [
-        "У пошуку адбылася ўнутраная памылка. Паспрабуйце аднавіць індэкс."
+        "У пошуку адбылася ўнутраная памылка. Паспрабуйце перабудаваць індэкс."
       ],
       "Search engine error": [
         "Памылка рухавіка пошуку"
@@ -7860,10 +7860,10 @@
         "Усё гатова для пошуку. Вашы фалы праіндэксаваны."
       ],
       "The search engine encountered an internal error. Rebuild the index to recover.": [
-        "У пошукавым рухавіку адбылася ўнутраная памылка. Паспрабуйце аднавіць індэкс."
+        "У пошукавым рухавіку адбылася ўнутраная памылка. Паспрабуйце перабудаваць індэкс."
       ],
       "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
-        "У вашым браўзеры скончылася месца пры індэксацыі файлаў для пошуку. Паспрабуйце аднавіць індэкс."
+        "У вашым браўзеры скончылася месца пры індэксацыі файлаў для пошуку. Паспрабуйце перабудаваць індэкс."
       ],
       "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
         "${ VPN_SHORT_APP_NAME } хавае ваш трафік. ${ PASS_SHORT_APP_NAME } хавае вашу ідэнтычнасць\nз дапамогай неабмежаванай колькасці псеўданімаў **hide-my-email** і **папярэджанняў цёмнай сеткі**, калі раптам адбудзецца ўцечка вашых даных."
@@ -8101,6 +8101,9 @@
       ],
       "You won’t be able to share \"${ fileName }\" after changing your access to viewer. The owner or an editor with sharing access can restore your edit access. You can’t undo this change yourself.": [
         "У вас не будзе магчымасці абагуліць файл з назвай \"${ fileName }\" пасля змянення вашага доступу на праглядальніка. Уладальнік або рэдактар з правамі абагульвання можа аднавіць ваш доступ рэдагавання. Самі вы не зможаце адрабіць гэтыя змяненні."
+      ],
+      "${ DRIVE_APP_NAME } could not decrypt the local search index. Rebuild the index to restore search.": [
+        "${ DRIVE_APP_NAME } не ўдалося расшыфраваць лакальны індэкс пошуку. Перабудуйце індэкс, каб аднавіць пошук."
       ]
     },
     "info": {
@@ -11428,7 +11431,7 @@
         "Запрашэнне атрымана"
       ],
       "Invite team members": [
-        "Запрасіць удзельнікаў каманды"
+        "Запрасіце ўдзельнікаў каманды"
       ],
       "Keep the momentum going by uploading more files using the storage included with your plan.": [
         "Захоўвайце дынаміку, запампоўваючы больш файлаў пры дапамозе сховішча, якое ўключана ў ваш тарыфны план."
