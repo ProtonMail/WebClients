@@ -339,6 +339,9 @@
       "Copy alias “${ name }”": [
         "별칭 \"${ name }\" 복사"
       ],
+      "Copy debug transcript": [
+        "디버그 기록 복사"
+      ],
       "Copy email to clipboard": [
         "클립보드에 이메일 복사"
       ],
@@ -623,6 +626,9 @@
       ],
       "Get in touch": [
         "연락하기"
+      ],
+      "Get index size on disk": [
+        "디스크에서 색인 크기 받기"
       ],
       "Get started": [
         "시작하기"
@@ -1082,6 +1088,9 @@
       ],
       "Preview contact": [
         "연락처 미리보기"
+      ],
+      "Preview logs": [
+        "로그 미리보기"
       ],
       "Previous": [
         "이전"
@@ -6954,6 +6963,12 @@
       "${ contactsLength } contact": [
         "연락처 ${ contactsLength }개"
       ],
+      "${ count } email": [
+        "${ count }개 이메일"
+      ],
+      "${ count } email · ${ names }": [
+        "${ count }개 이메일 · ${ names }"
+      ],
       "${ count } email → ${ dest }": [
         "${ count }개 이메일 → ${ dest }"
       ],
@@ -7302,6 +7317,9 @@
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "모든 하위폴더 역시 삭제됩니다. 하지만, 이 폴더 ${ nameDeleted }에 보관된 이메일들은 삭제되지 않으며 모든 메일함에서 찾을 수 있습니다."
       ],
+      "Apply labels": [
+        "라벨 적용"
+      ],
       "Apply to future messages": [
         "추후 메시지에 적용"
       ],
@@ -7437,6 +7455,9 @@
       "Change your password": [
         "비밀번호를 변경하십시오"
       ],
+      "Checked Proton support": [
+        "Proton 지원 확인됨"
+      ],
       "Checking contact ${ progress } of ${ max }...": [
         "연락처 확인 중 ${ max } 중 ${ progress }..."
       ],
@@ -7521,8 +7542,14 @@
       "Create a secure cloud for ${ memberCount } member": [
         "${ memberCount }명의 구성원을 위한 보안 클라우드 만들기"
       ],
+      "Create folder": [
+        "폴더 생성"
+      ],
       "Create in": [
         "만들기"
+      ],
+      "Create label": [
+        "라벨 생성"
       ],
       "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
         "여러개의 무료 계정을 생성하는 행위는 당사의 ${ termsLink }에 따라 허용되지 않습니다."
@@ -7556,6 +7583,9 @@
       ],
       "Daily": [
         "일간"
+      ],
+      "Debug transcript copied": [
+        "디버그 기록 복사됨"
       ],
       "Dedicated servers": [
         "전용 서버"
@@ -7758,6 +7788,9 @@
       "Everything in ${ planOrAppName }, plus:": [
         "${ planOrAppName }(에)서의 모든 것, 게다가:"
       ],
+      "Expand logs": [
+        "추가 기록 보기"
+      ],
       "Expand selection": [
         "선택 영역 늘리기"
       ],
@@ -7820,6 +7853,9 @@
       ],
       "Forgot password?": [
         "비밀번호를 잊으셨나요?"
+      ],
+      "Found ${ count } contact": [
+        "${ count }개의 연락처 찾음"
       ],
       "Found a current encrypted search index with ${ oldIndexSize } message.": [
         "${ oldIndexSize }개 메시지가 포함된 현재 암호화된 검색 인덱스를 찾았습니다."
@@ -7892,6 +7928,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "받은 편지함에서 이메일을 찾지 못하셨다면 스팸 폴더를 확인하세요."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "인증 앱에 접근할 수 없는 경우, 2단계 인증을 설정할 때 제공된 16개의 백업 복구 코드 중 1개를 사용할 수 있습니다. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "다운그레이드를 진행하면 ${ MAIL_APP_NAME } 과 ${ VPN_APP_NAME } 의 유료 기능을 사용할 수 없습니다."
@@ -8052,8 +8091,14 @@
       "Loading...": [
         "불러오는 중..."
       ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "로그는 개발자가 문제가 발생하기 전에 앱에 어떤 문제가 발생했는지 이해할 수 있는데 도움을 줍니다. 로그에는 앱 동작 및 오류 메시지가 포함되오나, 메시지 내용은 포함되지 않습니다."
+      ],
       "Low Priority": [
         "중요도 낮음"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "${ MAIL_APP_NAME }을 기본 이메일 어플리케이션으로 설정하세요."
       ],
       "Manage your folders": [
         "폴더 관리"
@@ -8063,6 +8108,15 @@
       ],
       "Mark all as read": [
         "모두 읽은 상태로 표시"
+      ],
+      "Mark all as unread": [
+        "모두 읽지 않은 상태로 표시"
+      ],
+      "Mark as read": [
+        "읽은 상태로 표시"
+      ],
+      "Mark as unread": [
+        "읽지 않은 상태로 표시"
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode 로고"
@@ -8162,6 +8216,9 @@
       ],
       "No contacts added yet": [
         "아직 추가된 연락처가 없습니다"
+      ],
+      "No contacts found": [
+        "연락처 없음"
       ],
       "No conversation to read": [
         "읽을 대화가 없습니다"
@@ -8528,6 +8585,9 @@
       ],
       "Searched for “${ keyword }”": [
         "\"${ keyword }\" 검색 결과"
+      ],
+      "Searched the web": [
+        "웹에서 검색됨"
       ],
       "Searched your mail": [
         "내 메일 검색 결과"
@@ -9047,6 +9107,9 @@
       ],
       "Unsupported file": [
         "지원되지 않는 파일"
+      ],
+      "Update filter": [
+        "필터 업데이트"
       ],
       "Updating message content search...": [
         "메시지 컨텐츠 검색 업데이트..."
@@ -10205,6 +10268,9 @@
       "Filter": [
         "필터"
       ],
+      "Filter name": [
+        "필터 이름"
+      ],
       "Filter Name": [
         "필터 이름"
       ],
@@ -10318,6 +10384,9 @@
       ],
       "Label messages as": [
         "메시지에 다음으로 라벨 지정"
+      ],
+      "Label name": [
+        "라벨 이름"
       ],
       "Last 12 months only": [
         "지난 12개월"
@@ -10585,6 +10654,9 @@
       ],
       "Share your availability with booking pages in ${ CALENDAR_APP_NAME }, and host secure meetings with ${ MEET_APP_NAME }.": [
         "${ CALENDAR_APP_NAME }에서 예약 페이지를 통해 가능한 일정을 공유하고, ${ MEET_APP_NAME }으로 안전하게 회의를 개최하세요."
+      ],
+      "Sieve script": [
+        "Sieve 스크립트"
       ],
       "Sign emails": [
         "이메일 서명"
@@ -12918,6 +12990,12 @@
       ],
       "No parent folder": [
         "상위 폴더 없음"
+      ],
+      "Remind me later": [
+        "나중에 다시 알림"
+      ],
+      "Yes, don't show again": [
+        "네, 다시 보지 않을게요."
       ]
     },
     "Option group": {
@@ -13763,6 +13841,79 @@
       ],
       "SUMMER SALE": [
         "여름 세일"
+      ]
+    },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "특가로 구매"
+      ],
+      "Special Offer": [
+        "특가 할인"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "/month": [
+        "/월"
+      ],
+      "2 individual accounts": [
+        "개별 계정 2개"
+      ],
+      "2 TB of secure storage": [
+        "2TB 보안 스토리지"
+      ],
+      "3 TB of secure storage": [
+        "3TB 보안 스토리지"
+      ],
+      "500 GB of secure storage": [
+        "500GB 보안 스토리지"
+      ],
+      "6 individual accounts": [
+        "개별 계정 6개"
+      ],
+      "Advanced protection against cyber threats": [
+        "사이버 위협에 대한 고급 보호"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "할인은 표준 월간 요금을 기준으로 합니다. 결제일이 종료되면 구독은 표준 연간 요금으로 갱신됩니다."
+      ]
+    },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "프리미엄 ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, 및 ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "프리미엄 ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, 및 ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "프리미엄 ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "프리미엄 ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "프리미엄 ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, 및 ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "12개월 플랜"
+      ],
+      "One plan, full power": [
+        "하나의 플랜에서 더 많은 가능성을"
+      ],
+      "One plan, max savings": [
+        "단 하나의 요금제, 압도적인 비용 절감"
+      ],
+      "One plan, more power": [
+        "하나의 플랜에서 더 많은 가능성을"
       ]
     },
     "Received email icon": {
@@ -15758,6 +15909,9 @@
       "Apply gift code": [
         "기프트 코드 적용"
       ],
+      "Apply labels": [
+        "라벨 적용"
+      ],
       "Archive all messages?": [
         "모든 메시지를 보관하시겠어요?"
       ],
@@ -15887,8 +16041,14 @@
       "Create contact": [
         "연락처 추가"
       ],
+      "Create folder": [
+        "폴더 생성"
+      ],
       "Create folder \"${ search }\"": [
         "\"${ search }\" 폴더 생성"
+      ],
+      "Create label": [
+        "라벨 생성"
       ],
       "Create label \"${ search }\"": [
         "\"${ search }\" 라벨 생성"
@@ -16160,6 +16320,9 @@
       "Invalid verification code": [
         "잘못된 검증 코드"
       ],
+      "Keep this banner hidden?": [
+        "이 배너를 숨기시겠어요?"
+      ],
       "Label as": [
         "라벨 추가"
       ],
@@ -16189,6 +16352,12 @@
       ],
       "Make your inbox your own": [
         "나만의 받은 편지함 만들기"
+      ],
+      "Mark all as read": [
+        "모두 읽은 상태로 표시"
+      ],
+      "Mark all as unread": [
+        "모두 읽지 않은 상태로 표시"
       ],
       "Mark all messages as read": [
         "모든 메시지를 읽음으로 표시"
@@ -16529,6 +16698,9 @@
       "Sending original message": [
         "원본 메시지 보내기"
       ],
+      "September Sale": [
+        "9월 할인"
+      ],
       "Set recovery methods": [
         "복구 방법 마련하기"
       ],
@@ -16651,6 +16823,9 @@
       ],
       "Unsubscribe request sent": [
         "수신 거부 요청이 전송됨"
+      ],
+      "Update filter": [
+        "필터 업데이트"
       ],
       "Upgrade complete!": [
         "업그레이드 완료!"

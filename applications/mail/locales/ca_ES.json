@@ -630,6 +630,9 @@
       "Get in touch": [
         "Contacte"
       ],
+      "Get index size on disk": [
+        "Obté la mida de l'índex al disc"
+      ],
       "Get started": [
         "Comença"
       ],
@@ -1544,7 +1547,8 @@
         "De confiança"
       ],
       "Trust key": [
-        "Marca com a clau de confiança"
+        "Clau de confiança",
+        "Claus de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -7987,6 +7991,10 @@
       "Forgot password?": [
         "Heu oblidat la contrasenya?"
       ],
+      "Found ${ count } contact": [
+        "S'ha trobat ${ count } contacte",
+        "S'han trobat ${ count } contactes"
+      ],
       "Found a current encrypted search index with ${ oldIndexSize } message.": [
         "S'ha trobat un índex de cerca xifrat actual amb ${ oldIndexSize } missatge.",
         "S'ha trobat un índex de cerca xifrat actual amb ${ oldIndexSize } missatges."
@@ -8136,8 +8144,7 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge",
-        "Insereix imatges"
+        "Insereix una imatge"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -8351,6 +8358,9 @@
       ],
       "No contacts added yet": [
         "Encara no s'han afegit contactes"
+      ],
+      "No contacts found": [
+        "No s'ha trobat cap contacte"
       ],
       "No conversation to read": [
         "No hi ha cap conversa per llegir"
@@ -9251,6 +9261,9 @@
       ],
       "Unsupported file": [
         "Fitxer no compatible"
+      ],
+      "Update filter": [
+        "Actualitzar el filtre"
       ],
       "Updating message content search...": [
         "S'està actualitzant la cerca del contingut del missatge..."
@@ -10439,6 +10452,9 @@
       "Filter": [
         "Filtrar"
       ],
+      "Filter name": [
+        "Nom del filtre"
+      ],
       "Filter Name": [
         "Nom del filtre"
       ],
@@ -10822,6 +10838,9 @@
       ],
       "Share your availability with booking pages in ${ CALENDAR_APP_NAME }, and host secure meetings with ${ MEET_APP_NAME }.": [
         "Compartiu la vostra disponibilitat amb les pàgines de reserva a ${ CALENDAR_APP_NAME } i organitzeu reunions segures amb ${ MEET_APP_NAME }."
+      ],
+      "Sieve script": [
+        "Script Sieve"
       ],
       "Sign emails": [
         "Signar correu electrònics"
@@ -17133,6 +17152,9 @@
       ],
       "Unsubscribe request sent": [
         "S'ha enviat la sol·licitud per cancel·lar la subscripció"
+      ],
+      "Update filter": [
+        "Actualitzar el filtre"
       ],
       "Upgrade complete!": [
         "S'ha millorat el pla."
