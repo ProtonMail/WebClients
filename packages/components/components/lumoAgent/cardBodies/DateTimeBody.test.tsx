@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { format } from 'date-fns';
@@ -26,6 +28,28 @@ const renderBody = (fields: DateTimeFieldSpec[], params: Record<string, any>, on
     return onChange;
 };
 
+/** The body is controlled, so a second edit only sees the first one through a parent that feeds params back. */
+const renderControlledBody = (fields: DateTimeFieldSpec[], initial: Record<string, any>) => {
+    const onChange = jest.fn();
+    const Harness = () => {
+        const [params, setParams] = useState(initial);
+
+        return (
+            <DateTimeBody
+                fields={fields}
+                params={params}
+                onChange={(next) => {
+                    onChange(next);
+                    setParams(next);
+                }}
+            />
+        );
+    };
+    render(<Harness />);
+
+    return onChange;
+};
+
 describe('DateTimeBody', () => {
     it('carries the time of day over to a newly picked date, on the field it belongs to', async () => {
         const onChange = renderBody([field('wake_at')], { ids: ['m1'], wake_at: wakeAt.toISOString() });
@@ -47,6 +71,45 @@ describe('DateTimeBody', () => {
         const onChange = renderBody([field('wake_at')], { ids: ['m1'], wake_at: raw });
 
         expect(onChange).toHaveBeenCalledWith({ ids: ['m1'], wake_at: wakeAt.toISOString() });
+    });
+
+    describe('a range rule the registering tool passes', () => {
+        const futureOnly = (param: string): DateTimeFieldSpec => ({
+            ...field(param),
+            accepts: (date) => date > new Date(),
+        });
+
+        it('replaces a proposal it rejects, so the tool is never handed a value it can only refuse', () => {
+            const onChange = renderBody([futureOnly('wake_at')], {
+                ids: ['m1'],
+                wake_at: new Date(2020, 0, 1, 9, 0).toISOString(),
+            });
+
+            expect(onChange).toHaveBeenCalledWith({ ids: ['m1'], wake_at: wakeAt.toISOString() });
+        });
+
+        it('keeps editing an out-of-range date the user picked, rather than snapping back to the fallback', async () => {
+            const picked = new Date(2020, 0, 5);
+            const onChange = renderControlledBody([futureOnly('wake_at')], {
+                ids: ['m1'],
+                wake_at: wakeAt.toISOString(),
+            });
+
+            const dateInput = screen.getByLabelText('wake_at date');
+            await userEvent.clear(dateInput);
+            await userEvent.type(dateInput, format(picked, 'PP', { locale: dateLocale }));
+            await userEvent.tab();
+
+            const timeInput = screen.getByLabelText('wake_at time');
+            await userEvent.clear(timeInput);
+            await userEvent.type(timeInput, format(new Date(2020, 0, 5, 8, 15), 'p', { locale: dateLocale }));
+            await userEvent.tab();
+
+            expect(onChange).toHaveBeenLastCalledWith({
+                ids: ['m1'],
+                wake_at: new Date(2020, 0, 5, 8, 15).toISOString(),
+            });
+        });
     });
 
     it('renders one pair per field, so a window gets a start and an end', () => {
