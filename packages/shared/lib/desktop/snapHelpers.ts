@@ -1,8 +1,4 @@
-import {
-    canListenInboxDesktopHostMessages,
-    getInboxDesktopInfo,
-    hasInboxDesktopFeature,
-} from '@proton/shared/lib/desktop/ipcHelpers';
+import { canListenInboxDesktopHostMessages, getInboxDesktopInfo, hasInboxDesktopFeature } from './ipcHelpers';
 
 export const getInboxDesktopIsSnapPackage = () => {
     if (

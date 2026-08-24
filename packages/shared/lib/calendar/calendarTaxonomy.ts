@@ -1,7 +1,8 @@
-import { CALENDAR_TYPE } from '@proton/shared/lib/calendar/constants';
-import type { Calendar, CalendarWithOwnMembers, VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
-import type { SubscribedCalendar } from '@proton/shared/lib/interfaces/calendar/Subscription';
 import unary from '@proton/utils/unary';
+
+import type { Calendar, CalendarWithOwnMembers, VisualCalendar } from '../interfaces/calendar/Calendar';
+import type { SubscribedCalendar } from '../interfaces/calendar/Subscription';
+import { CALENDAR_TYPE } from './constants';
 
 export const getIsPersonalCalendar = (calendar: VisualCalendar | SubscribedCalendar): calendar is VisualCalendar => {
     return calendar.Type === CALENDAR_TYPE.PERSONAL;

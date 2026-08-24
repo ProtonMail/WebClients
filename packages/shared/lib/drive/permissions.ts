@@ -1,4 +1,4 @@
-import { hasBit } from '@proton/shared/lib/helpers/bitset';
+import { hasBit } from '../helpers/bitset';
 
 export enum DRIVE_PERMISSIONS {
     READ = 4,

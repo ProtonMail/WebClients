@@ -1,11 +1,6 @@
 import type { PublicKeyReference, SessionKey } from '@protontech/crypto';
 import { CryptoProxy, toPublicKeyReference } from '@protontech/crypto';
 
-import { getIsAllDay } from '@proton/shared/lib/calendar/veventHelper';
-import { ACCENT_COLORS_MAP } from '@proton/shared/lib/colors';
-import { omit } from '@proton/shared/lib/helpers/object';
-import type { VerificationPreferences } from '@proton/shared/lib/interfaces/VerificationPreferences';
-
 import {
     ATTENDEE_MORE_ATTENDEES,
     ATTENDEE_STATUS_API,
@@ -16,8 +11,12 @@ import { readCalendarEvent, readSessionKeys } from '../../lib/calendar/deseriali
 import { unwrap, wrap } from '../../lib/calendar/helper';
 import { createCalendarEvent } from '../../lib/calendar/serialize';
 import { setVcalProdId } from '../../lib/calendar/vcalConfig';
+import { getIsAllDay } from '../../lib/calendar/veventHelper';
+import { ACCENT_COLORS_MAP } from '../../lib/colors';
+import { omit } from '../../lib/helpers/object';
 import { toCRLF } from '../../lib/helpers/string';
 import type { RequireSome } from '../../lib/interfaces';
+import type { VerificationPreferences } from '../../lib/interfaces/VerificationPreferences';
 import type {
     Attendee,
     CalendarEventData,

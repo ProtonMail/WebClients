@@ -1,4 +1,4 @@
-import { PROPERTIES } from '@proton/shared/lib/calendar/vcalDefinition';
+import { PROPERTIES } from '../vcalDefinition';
 
 /**
  * If a vcalendar ics does not have the proper enclosing, add it

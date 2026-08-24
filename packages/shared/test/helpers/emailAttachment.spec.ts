@@ -1,6 +1,5 @@
-import { setLocales } from '@proton/shared/lib/i18n';
-
 import { mentionAttachment } from '../../lib/helpers/emailAttachment';
+import { setLocales } from '../../lib/i18n';
 
 describe('mentionAttachment', () => {
     beforeAll(() => {

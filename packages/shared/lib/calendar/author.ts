@@ -1,12 +1,13 @@
 import type { PublicKeyReference } from '@protontech/crypto';
-import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
-import type { GetVerificationPreferences } from '@proton/shared/lib/interfaces/hooks/GetVerificationPreferences';
+
 import isTruthy from '@proton/utils/isTruthy';
 import unique from '@proton/utils/unique';
 
 import { canonicalizeInternalEmail } from '../helpers/email';
+import { captureMessage } from '../helpers/sentry';
 import type { CalendarEvent, CalendarEventData } from '../interfaces/calendar';
+import type { ContactEmail } from '../interfaces/contacts';
+import type { GetVerificationPreferences } from '../interfaces/hooks/GetVerificationPreferences';
 import type { SimpleMap } from '../interfaces/utils';
 import { CALENDAR_CARD_TYPE } from './constants';
 

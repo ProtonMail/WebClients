@@ -1,6 +1,5 @@
-import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
-
 import type { APP_NAMES } from '../../constants';
+import { getSecondLevelDomain } from '../../helpers/url';
 import { getValidatedProtonProtocol } from './getValidatedProtonProtocol';
 
 export const getIsLocalhostRedirectUrl = ({ protocol, hostname }: URL) => {

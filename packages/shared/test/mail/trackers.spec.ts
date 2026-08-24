@@ -1,5 +1,5 @@
-import { getUTMTrackersFromURL } from '@proton/shared/lib/mail/trackers';
-import type { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
+import { getUTMTrackersFromURL } from '../../lib/mail/trackers';
+import type { MessageUTMTracker } from '../../lib/models/mailUtmTrackers';
 
 // Complete to verify that links are cleaned as expected
 const links: { originalLink: string; cleanedLink: string }[] = [

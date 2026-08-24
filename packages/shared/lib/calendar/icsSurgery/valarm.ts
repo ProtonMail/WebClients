@@ -1,6 +1,6 @@
-import { DAY_IN_SECONDS } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
+import { DAY_IN_SECONDS } from '../../constants';
 import { normalize } from '../../helpers/string';
 import type {
     DateTimeValue,

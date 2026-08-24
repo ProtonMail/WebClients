@@ -1,4 +1,3 @@
-import { getHasSharedEventContent, getHasSharedKeyPacket } from '@proton/shared/lib/calendar/apiModels';
 import chunk from '@proton/utils/chunk';
 
 import { syncMultipleEvents } from '../../api/calendars';
@@ -15,6 +14,7 @@ import type {
     VcalVeventComponent,
 } from '../../interfaces/calendar';
 import type { CreateCalendarEventSyncData } from '../../interfaces/calendar/Api';
+import { getHasSharedEventContent, getHasSharedKeyPacket } from '../apiModels';
 import { DEFAULT_ATTENDEE_PERMISSIONS } from '../constants';
 import { getCreationKeys } from '../crypto/keys/helpers';
 import { getIsSuccessSyncApiResponse } from '../helper';
@@ -67,12 +67,10 @@ const submitEvents = async (
     withJails?: boolean
 ): Promise<SyncMultipleApiResponses[]> => {
     try {
-        const Events = events.map(
-            ({ data }): CreateCalendarEventSyncData => ({
-                Overwrite: overwrite ? 1 : 0,
-                Event: { Permissions: DEFAULT_ATTENDEE_PERMISSIONS, ...data },
-            })
-        );
+        const Events = events.map(({ data }): CreateCalendarEventSyncData => ({
+            Overwrite: overwrite ? 1 : 0,
+            Event: { Permissions: DEFAULT_ATTENDEE_PERMISSIONS, ...data },
+        }));
         const { Responses } = await api<SyncMultipleApiResponse>({
             ...syncMultipleEvents(calendarID, { MemberID: memberID, IsImport: 1, Events }),
             timeout: HOUR,

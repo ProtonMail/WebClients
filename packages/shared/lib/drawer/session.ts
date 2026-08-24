@@ -1,11 +1,10 @@
-import { AccessType } from '@proton/shared/lib/authentication/accessType';
-import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-
 import { type PersistedSession, SessionSource } from '../authentication/SessionInterface';
+import { AccessType } from '../authentication/accessType';
 import type { ResumedSessionResult } from '../authentication/persistedSessionHelper';
 import type { APP_NAMES } from '../constants';
 import { SECOND } from '../constants';
 import { createTimeoutError } from '../fetch/ApiError';
+import { captureMessage } from '../helpers/sentry';
 import { getIsAuthorizedApp, getIsDrawerPostMessage, postMessageFromIframe } from './helpers';
 import { DRAWER_EVENTS, type SESSION_MESSAGE } from './interfaces';
 

@@ -1,7 +1,5 @@
-import { getAllMembers, getCalendarInvitations, getPublicLinks } from '@proton/shared/lib/api/calendars';
-import { getApiWithAbort } from '@proton/shared/lib/api/helpers/customConfig';
-import { filterOutDeclinedInvitations } from '@proton/shared/lib/calendar/sharing/shareProton/shareProton';
-
+import { getAllMembers, getCalendarInvitations, getPublicLinks } from '../../api/calendars';
+import { getApiWithAbort } from '../../api/helpers/customConfig';
 import type { Api } from '../../interfaces';
 import type {
     CalendarUrlsResponse,
@@ -10,6 +8,7 @@ import type {
     GetCalendarInvitationsResponse,
 } from '../../interfaces/calendar';
 import { getIsOwnedCalendar } from '../calendar';
+import { filterOutDeclinedInvitations } from './shareProton/shareProton';
 
 const getHasSharedCalendars = async ({
     calendars,

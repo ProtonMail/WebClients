@@ -1,4 +1,4 @@
-import { isURL } from '@proton/shared/lib/helpers/validators';
+import { isURL } from '../../lib/helpers/validators';
 
 describe('isURL', () => {
     it('should return true for valid URLs', () => {

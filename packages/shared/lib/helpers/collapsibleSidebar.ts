@@ -1,11 +1,10 @@
 import type { RefObject } from 'react';
 import { useEffect, useState } from 'react';
 
-import { TelemetryCollapsibleLeftSidebarEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
-import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
-
+import { TelemetryCollapsibleLeftSidebarEvents, TelemetryMeasurementGroups } from '../api/telemetry';
 import type { APP_NAMES } from '../constants';
 import type { Api } from '../interfaces';
+import { sendTelemetryReport } from './metrics';
 
 export const enum COLLAPSE_EVENTS {
     COLLAPSE = 'COLLAPSE',

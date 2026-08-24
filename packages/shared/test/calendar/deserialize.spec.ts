@@ -1,9 +1,9 @@
-import { ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
-import { getSelfAddressData } from '@proton/shared/lib/calendar/deserialize';
-import { buildVcalOrganizer } from '@proton/shared/lib/calendar/vcalConverter';
-import { ADDRESS_RECEIVE, ADDRESS_SEND, ADDRESS_STATUS, ADDRESS_TYPE } from '@proton/shared/lib/constants';
-import { buildMailTo } from '@proton/shared/lib/helpers/email';
-import type { Address } from '@proton/shared/lib/interfaces';
+import { ICAL_ATTENDEE_STATUS } from '../../lib/calendar/constants';
+import { getSelfAddressData } from '../../lib/calendar/deserialize';
+import { buildVcalOrganizer } from '../../lib/calendar/vcalConverter';
+import { ADDRESS_RECEIVE, ADDRESS_SEND, ADDRESS_STATUS, ADDRESS_TYPE } from '../../lib/constants';
+import { buildMailTo } from '../../lib/helpers/email';
+import type { Address } from '../../lib/interfaces';
 
 const buildVcalAttendee = ({
     email,

@@ -1,6 +1,6 @@
-import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
-import { createApiError } from '@proton/shared/lib/fetch/ApiError';
-import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
+import { HTTP_ERROR_CODES } from '../../lib/errors';
+import { createApiError } from '../../lib/fetch/ApiError';
+import { getNonEmptyErrorMessage } from '../../lib/helpers/error';
 
 describe('getNonEmptyErrorMessage', () => {
     describe('should extract the message from api errors', () => {

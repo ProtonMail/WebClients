@@ -1,6 +1,5 @@
-import type { AuthenticationStore } from '@proton/shared/lib/authentication/createAuthenticationStore';
-
 import type createApi from '../api/createApi';
+import type { AuthenticationStore } from '../authentication/createAuthenticationStore';
 import { initElectronClassnames } from '../helpers/initElectronClassnames';
 import type { ProtonConfig } from '../interfaces';
 import { listenFreeTrialSessionExpiration } from './endOfTrialHelpers';

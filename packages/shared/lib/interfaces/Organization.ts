@@ -1,5 +1,6 @@
 import type { PLANS } from '@proton/payments/core/constants';
-import type { Product } from '@proton/shared/lib/ProductEnum';
+
+import type { Product } from '../ProductEnum';
 import type {
     INVOICE_EMAIL_STATE,
     MEMBER_ROLE,
@@ -8,8 +9,7 @@ import type {
     ORGANIZATION_TWOFA_SETTING,
     OrganizationPlanFlag,
     SETTINGS_PROTON_SENTINEL_STATE,
-} from '@proton/shared/lib/constants';
-
+} from '../constants';
 import type { MEMBER_STATE } from './Member';
 import type { PasswordPolicySettings } from './PasswordPolicy';
 

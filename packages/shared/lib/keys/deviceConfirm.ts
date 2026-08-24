@@ -1,9 +1,8 @@
 import { c } from 'ttag';
 
-import { activateAuthDeviceConfig } from '@proton/shared/lib/api/authDevice';
-import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import type { Address, Api, DecryptedKey } from '@proton/shared/lib/interfaces';
-
+import { activateAuthDeviceConfig } from '../api/authDevice';
+import { getApiError } from '../api/helpers/apiErrorHelper';
+import type { Address, Api, DecryptedKey } from '../interfaces';
 import {
     type AuthDeviceOutput,
     type DeviceSecretData,

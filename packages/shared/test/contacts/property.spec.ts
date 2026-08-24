@@ -1,5 +1,5 @@
-import { getDateFromVCardProperty, guessDateFromText } from '@proton/shared/lib/contacts/property';
-import type { VCardDateOrText, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
+import { getDateFromVCardProperty, guessDateFromText } from '../../lib/contacts/property';
+import type { VCardDateOrText, VCardProperty } from '../../lib/interfaces/contacts/VCard';
 
 describe('property', () => {
     describe('guessDateFromText', () => {

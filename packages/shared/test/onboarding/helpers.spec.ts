@@ -1,7 +1,8 @@
 import type { Subscription } from '@proton/payments/core/subscription/interface';
-import { addDays } from '@proton/shared/lib/date-fns-utc';
-import { canShowB2BOnboardingButton } from '@proton/shared/lib/onboarding/helpers';
 import { buildSubscription } from '@proton/testing/builders/subscription';
+
+import { addDays } from '../../lib/date-fns-utc';
+import { canShowB2BOnboardingButton } from '../../lib/onboarding/helpers';
 
 describe('onboarding helpers', () => {
     describe('canShowB2BOnboardingButton', () => {

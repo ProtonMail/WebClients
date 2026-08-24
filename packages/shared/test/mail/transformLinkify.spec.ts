@@ -1,5 +1,5 @@
-import { CUSTOM_TLDS } from '@proton/shared/lib/mail/linkifyInstance';
-import { transformLinkify } from '@proton/shared/lib/mail/transformLinkify';
+import { CUSTOM_TLDS } from '../../lib/mail/linkifyInstance';
+import { transformLinkify } from '../../lib/mail/transformLinkify';
 
 const generateTestCaces = (domains: string[]) => {
     const testCases: { content: string; expected: string }[] = [];

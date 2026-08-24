@@ -1,5 +1,3 @@
-import { parseInvitationData } from '@proton/shared/lib/keys/unprivatization';
-
 import { ADDRESS_STATUS } from '../constants';
 import { canonicalizeInternalEmail } from '../helpers/email';
 import {
@@ -9,6 +7,7 @@ import {
     type MemberInvitationData,
     MemberUnprivatizationState,
 } from '../interfaces';
+import { parseInvitationData } from './unprivatization';
 
 export const getHasMemberUnprivatization = (
     member?: Member

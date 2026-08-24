@@ -1,5 +1,3 @@
-import { buildMailTo } from '@proton/shared/lib/helpers/email';
-
 import {
     dateTimeToProperty,
     dayToNumericDay,
@@ -10,6 +8,7 @@ import {
     propertyToLocalDate,
     propertyToUTCDate,
 } from '../../lib/calendar/vcalConverter';
+import { buildMailTo } from '../../lib/helpers/email';
 
 describe('propertyToUTCDate', () => {
     it('should convert all-day properties to UTC end-of-day times', () => {

@@ -1,6 +1,5 @@
-import { ADDRESS_TYPE, KEYGEN_CONFIGS, KEYGEN_TYPES } from '@proton/shared/lib/constants';
-import type { Address } from '@proton/shared/lib/interfaces';
-
+import { ADDRESS_TYPE, KEYGEN_CONFIGS, KEYGEN_TYPES } from '../../lib/constants';
+import type { Address } from '../../lib/interfaces';
 import { getSignedKeyList } from '../../lib/keys';
 import { getActiveAddressKeys, getActiveKeyObject } from '../../lib/keys/getActiveKeys';
 import { getAddressKey, getAddressKeyForE2EEForwarding, getAddressKeyHelper, getUserKey } from './keyDataHelper';

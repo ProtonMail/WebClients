@@ -1,6 +1,6 @@
 import type { PrivateKeyReference } from '@protontech/crypto';
 import { CryptoProxy, toPublicKeyReference } from '@protontech/crypto';
-import { getMemberKeys } from '@proton/shared/lib/keys/memberKeys';
+
 import noop from '@proton/utils/noop';
 
 import { queryScopes } from '../api/auth';
@@ -27,6 +27,7 @@ import { getDecryptedAddressKeysHelper } from './getDecryptedAddressKeys';
 import { getDecryptedOrganizationKeyHelper } from './getDecryptedOrganizationKey';
 import { getDecryptedUserKeysHelper } from './getDecryptedUserKeys';
 import { getPrimaryKey } from './getPrimaryKey';
+import { getMemberKeys } from './memberKeys';
 import type { OnSKLPublishSuccess } from './signedKeyList';
 import { createSignedKeyListForMigration } from './signedKeyList';
 

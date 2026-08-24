@@ -1,8 +1,6 @@
 import { z } from 'zod';
 
-import type { APP_NAMES } from '@proton/shared/lib/constants';
-
-import { RELEASE_CATEGORIES } from '../constants';
+import { type APP_NAMES, RELEASE_CATEGORIES } from '../constants';
 
 export const DesktopVersionSchema = z.object({
     CategoryName: z.enum(Object.values(RELEASE_CATEGORIES) as [string, ...string[]]),

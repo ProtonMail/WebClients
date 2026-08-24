@@ -1,5 +1,5 @@
-import type { DESKTOP_APP_NAMES, DESKTOP_PLATFORMS, RELEASE_CATEGORIES } from '@proton/shared/lib/constants';
-import { getDownloadUrl } from '@proton/shared/lib/helpers/url';
+import type { DESKTOP_APP_NAMES, DESKTOP_PLATFORMS, RELEASE_CATEGORIES } from '../constants';
+import { getDownloadUrl } from '../helpers/url';
 
 export interface Props {
     appName: DESKTOP_APP_NAMES;

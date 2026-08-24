@@ -1,15 +1,15 @@
 import merge from 'lodash/merge';
 
-import { Product } from '@proton/shared/lib/ProductEnum';
-import { getAvailableApps } from '@proton/shared/lib/apps/apps';
-import { APPS, type APP_NAMES, USER_ROLES } from '@proton/shared/lib/constants';
+import { Product } from '../../lib/ProductEnum';
+import { getAvailableApps } from '../../lib/apps/apps';
+import { APPS, type APP_NAMES, USER_ROLES } from '../../lib/constants';
 import {
     type OrganizationExtended,
     type OrganizationSettingsAllowedProduct,
     type User,
     UserType,
-} from '@proton/shared/lib/interfaces';
-import { allAllowedProducts } from '@proton/shared/lib/organization/accessControl/serialization';
+} from '../../lib/interfaces';
+import { allAllowedProducts } from '../../lib/organization/accessControl/serialization';
 
 const getDefaultUser = (): User => {
     return {

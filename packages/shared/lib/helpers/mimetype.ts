@@ -1,5 +1,3 @@
-import { getBrowser, getOS } from '@proton/shared/lib/helpers/browser';
-
 import { MIME_TYPES } from '../constants';
 import type { DocsConversionType } from '../docs/constants';
 import {
@@ -8,6 +6,7 @@ import {
     SupportedMimeTypes,
     SupportedProtonDocsMimeTypes,
 } from '../drive/constants';
+import { getBrowser, getOS } from './browser';
 import { Version } from './version';
 
 const isWebpSupported = () => {

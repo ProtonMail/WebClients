@@ -1,5 +1,4 @@
-import { WEEK } from '@proton/shared/lib/constants';
-
+import { WEEK } from '../constants';
 import startOfDay from './startOfDay';
 
 const differenceInCalendarWeeks = (left: Date, right: Date) => {

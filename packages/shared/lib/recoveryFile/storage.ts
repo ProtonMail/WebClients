@@ -1,4 +1,4 @@
-import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
+import { getItem, removeItem, setItem } from '../helpers/storage';
 
 const getRecoveryMessageId = (userID: string) => `dr-${userID}`;
 

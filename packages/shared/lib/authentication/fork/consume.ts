@@ -1,9 +1,10 @@
 import { importKey } from '@protontech/crypto/subtle/aesGcm.ts';
-import { getAuthAPI } from '@proton/shared/lib/api/helpers/customConfig';
+
 import getRandomString from '@proton/utils/getRandomString';
 import noop from '@proton/utils/noop';
 
 import { pullForkSession, revoke, setCookies } from '../../api/auth';
+import { getAuthAPI } from '../../api/helpers/customConfig';
 import { getAppHref } from '../../apps/helper';
 import { InvalidForkConsumeError, InvalidPersistentSessionError } from '../../authentication/error';
 import type { ExtraSessionForkData, PullForkResponse } from '../../authentication/interface';

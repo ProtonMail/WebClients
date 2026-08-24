@@ -1,14 +1,8 @@
-import { updateAddressFlags } from '@proton/shared/lib/api/members';
-import type {
-    ActiveKeyWithVersion,
-    Address,
-    Api,
-    DecryptedAddressKey,
-    KeyTransparencyVerify,
-} from '@proton/shared/lib/interfaces';
-import { getActiveAddressKeys, getNormalizedActiveAddressKeys } from '@proton/shared/lib/keys/getActiveKeys';
-import { FlagAction, getNewAddressKeyFlags } from '@proton/shared/lib/keys/getNewAddressKeyFlags';
-import { getSignedKeyListWithDeferredPublish } from '@proton/shared/lib/keys/signedKeyList';
+import { updateAddressFlags } from '../api/members';
+import type { ActiveKeyWithVersion, Address, Api, DecryptedAddressKey, KeyTransparencyVerify } from '../interfaces';
+import { getActiveAddressKeys, getNormalizedActiveAddressKeys } from './getActiveKeys';
+import { FlagAction, getNewAddressKeyFlags } from './getNewAddressKeyFlags';
+import { getSignedKeyListWithDeferredPublish } from './signedKeyList';
 
 export const setAddressFlagsHelper = async ({
     encryptionDisabled,

@@ -1,8 +1,7 @@
-import { c } from 'ttag';
-
 import type { PrivateKeyReference, PublicKeyReference, SessionKey } from '@protontech/crypto';
 import { CryptoProxy, VERIFICATION_STATUS, toPublicKeyReference } from '@protontech/crypto';
-import { getSignatureContext } from '@proton/shared/lib/calendar/crypto/helpers';
+import { c } from 'ttag';
+
 import isTruthy from '@proton/utils/isTruthy';
 
 import { KEYGEN_CONFIGS, KEYGEN_TYPES } from '../../../constants';
@@ -13,6 +12,7 @@ import type {
     CalendarKey as tsKey,
 } from '../../../interfaces/calendar';
 import { getEncryptedSessionKey } from '../encrypt';
+import { getSignatureContext } from '../helpers';
 
 export const generatePassphrase = () => {
     const value = crypto.getRandomValues(new Uint8Array(32));

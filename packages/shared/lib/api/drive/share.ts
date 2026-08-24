@@ -1,5 +1,4 @@
-import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
-
+import { HTTP_STATUS_CODE } from '../../constants';
 import { EXPENSIVE_REQUEST_TIMEOUT } from '../../drive/constants';
 import { API_CUSTOM_ERROR_CODES } from '../../errors';
 import type { MoveLink } from '../../interfaces/drive/link';

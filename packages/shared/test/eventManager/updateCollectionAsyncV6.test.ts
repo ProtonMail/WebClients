@@ -1,5 +1,4 @@
-import { ActionEventV6, type EventV6Response } from '@proton/shared/lib/api/events';
-
+import { ActionEventV6, type EventV6Response } from '../../lib/api/events';
 import { updateCollectionAsyncV6 } from '../../lib/eventManager/updateCollectionAsyncV6';
 
 describe('updateCollectionAsyncV6', () => {

@@ -1,7 +1,5 @@
 import Papa from 'papaparse';
 
-import { IMPORT_CONTACT_ERROR_TYPE, ImportContactError } from '@proton/shared/lib/contacts/errors/ImportContactError';
-import { getContactId, getSupportedContactProperties, splitErrors } from '@proton/shared/lib/contacts/helpers/import';
 import isTruthy from '@proton/utils/isTruthy';
 import range from '@proton/utils/range';
 
@@ -13,8 +11,10 @@ import type {
     PreVcardsProperty,
 } from '../../interfaces/contacts/Import';
 import type { VCardContact, VCardKey, VCardProperty } from '../../interfaces/contacts/VCard';
+import { IMPORT_CONTACT_ERROR_TYPE, ImportContactError } from '../errors/ImportContactError';
 import { createContactPropertyUid, fromVCardProperties, generateNewGroupName } from '../properties';
 import { combine, getFirstValue, standarize, toPreVcard } from './csvFormat';
+import { getContactId, getSupportedContactProperties, splitErrors } from './import';
 
 interface PapaParseOnCompleteArgs {
     data?: string[][];
