@@ -222,6 +222,9 @@
       "Copy as markdown": [
         "Капіяваць як markdown"
       ],
+      "Copy debug transcript": [
+        "Скапіяваць расшыфроўку адладкі"
+      ],
       "Copy email to clipboard": [
         "Скапіяваць ліст у буфер абмену"
       ],
@@ -523,7 +526,7 @@
         "Markdown (.md)"
       ],
       "Maybe later": [
-        "Магчыма пазней"
+        "Магчыма, пазней"
       ],
       "Merge": [
         "Аб'яднаць"
@@ -1441,7 +1444,7 @@
         "Скарыстайцеся скідкай у памеры 50%"
       ],
       "Maybe later": [
-        "Магчыма пазней"
+        "Магчыма, пазней"
       ]
     },
     "Cancellation upsell": {
@@ -5130,6 +5133,9 @@
       "Custom email domains": [
         "Карыстальніцкія дамены электроннай пошты"
       ],
+      "Debug transcript copied": [
+        "Расшыфроўка адладкі скапіявана"
+      ],
       "Decrypting your document": [
         "Расшыфроўка ваша дакумента"
       ],
@@ -5309,6 +5315,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Калі паведамлення няма ў папцы з уваходнымі лістамі, то магчыма, што яно трапіла ў папку са спамам."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Вы можаце выкарыстаць 1 з 16 рэзервовых кодаў аднаўлення, якія вы атрымалі пры наладжванні двухфактарнай аўтэнтыфікацыі, калі вы страцілі доступ да вашай праграмы аўтэнтыфікацыі. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Калі вы працягніце паніжэнне свайго тарыфнага плана, то страціце доступ да платных функцый ${ MAIL_APP_NAME } і ${ VPN_APP_NAME }."
@@ -6059,6 +6068,9 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "З вас не будзе спаганяцца плата, калі вы скасуеце да ${ trialEndsOnFormatted }."
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing your access to viewer. The owner or an editor with sharing access can restore your edit access. You can’t undo this change yourself.": [
+        "У вас не будзе магчымасці абагуліць файл з назвай \"${ fileName }\" пасля змянення вашага доступу на праглядальніка. Уладальнік або рэдактар з правамі абагульвання можа аднавіць ваш доступ рэдагавання. Самі вы не зможаце адрабіць гэтыя змяненні."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Вы атрымаеце ўзнагароду ў крэдытах праз 1 месяц пасля таго, як ваш сябар падпішацца на гадавы тарыфны план. Праз 2 месяцы можна разлічваць на ўзнагароду, калі ваш сябар падпішацца на месячны тарыфны план."
@@ -8706,7 +8718,7 @@
         "Прапанова абмежавана па часе і дзейнічае за ваш першы месяц"
       ],
       "Maybe later": [
-        "Магчыма пазней"
+        "Магчыма, пазней"
       ],
       "Offer expires ${ formattedDate }.": [
         "Прапанова міне ${ formattedDate }"
@@ -9341,6 +9353,79 @@
       ],
       "SUMMER SALE": [
         "ЛЕТНІ РАСПРОДАЖ"
+      ]
+    },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "Скарыстацца прапановай"
+      ],
+      "Special Offer": [
+        "Спецыяльная прапанова"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "/month": [
+        "/месяц"
+      ],
+      "2 individual accounts": [
+        "2 асабістых уліковых запісы"
+      ],
+      "2 TB of secure storage": [
+        "2 ТБ бяспечнага сховішча"
+      ],
+      "3 TB of secure storage": [
+        "3 ТБ бяспечнага сховішча"
+      ],
+      "500 GB of secure storage": [
+        "500 ГБ бяспечнага сховішча"
+      ],
+      "6 individual accounts": [
+        "6 асабістых уліковых запісаў"
+      ],
+      "Advanced protection against cyber threats": [
+        "Пашыраная абарона супраць кіберпагроз"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Скідкі разлічваюцца на падставе стандартнай платы за месяц. Ваша падпіска будзе аўтаматычна падаўжацца па стандартнай гадавой стаўцы пасля заканчэння перыяду аплаты."
+      ]
+    },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Прэміяльныя ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } і ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Прэміяльныя ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Прэміяльныя ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Прэміяльныя ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Прэміяльныя ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "за 12 месяцаў"
+      ],
+      "One plan, full power": [
+        "Адзін тарыфны план, максімум магчымасцяў"
+      ],
+      "One plan, max savings": [
+        "Адзін тарыфны план, максімальная эканомія"
+      ],
+      "One plan, more power": [
+        "Адзін тарыфны план, больш магчымасцяў"
       ]
     },
     "Recent documents table header": {
