@@ -36,6 +36,9 @@ import { getDocsReportContextLines } from '~/utils/report-context'
 import { useSharingModal } from '@proton/drive/public/sharingModal'
 import { WorkspacePromoBanner } from '../../DocumentViewer/WorkspacePromoBanner'
 import { HeaderShareButton } from './HeaderShareButton'
+import { generateNodeUid, getDrive } from '@proton/drive'
+import { replaceAddress, reportChangeAddressError } from '../../useChangeAddressWhenPubliclyShared'
+import useAuthentication from '@proton/components/hooks/useAuthentication'
 
 function getWindowLocationExcludingDomain() {
   return stripLocalBasenameFromPathname(window.location.pathname) + window.location.search + window.location.hash
@@ -163,9 +166,29 @@ function DocsHeaderForDocument({
   const { publicContext } = useDocsContext()
   const { APP_VERSION, CLIENT_TYPE } = useConfig()
   const isHomepageEnabled = useFlag('DocsHomepageEnabled')
+  const { getLocalID } = useAuthentication()
 
   const sharingModalDriveSdkEnabled = useSharingModalDriveSdkEnabled()
   const { showSharingModal, sharingModal } = useSharingModal()
+  function openSharingModalReplaceAddressSDK() {
+    showSharingModal({
+      drive: getDrive(),
+      nodeUid: generateNodeUid(volumeId, nodeId),
+      onShareSnapshot(result) {
+        if (result.ok) {
+          const { urlAccess } = result.value
+          try {
+            replaceAddress({ getLocalID, urlAccess, volumeId, nodeId })
+          } catch (error: any) {
+            reportChangeAddressError(error, {
+              volumeId,
+              nodeId,
+            })
+          }
+        }
+      },
+    })
+  }
 
   const role = documentState.getProperty('userRole')
   const { volumeId, nodeId } = documentState.getProperty('decryptedNode')
@@ -227,11 +250,11 @@ function DocsHeaderForDocument({
 
               {documentState.getProperty('userRole').canShare() && (
                 <HeaderShareButton
-                  sharingModalDriveSdkEnabled={sharingModalDriveSdkEnabled}
-                  showSharingModal={showSharingModal}
-                  volumeId={volumeId}
-                  nodeId={nodeId}
-                  authenticatedController={authenticatedController}
+                  onClick={
+                    sharingModalDriveSdkEnabled
+                      ? openSharingModalReplaceAddressSDK
+                      : () => authenticatedController?.openDocumentSharingModal()
+                  }
                 />
               )}
             </>
