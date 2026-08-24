@@ -215,9 +215,8 @@ const CreditsModal = ({ paymentStatus, app, ...props }: Props) => {
                 await processor.processPaymentToken();
             } catch (e) {
                 tracePaymentError(e, {
-                    tags: {
-                        component: 'credits-modal',
-                    },
+                    component: 'credits-modal',
+                    subscription,
                     extra: {
                         app: APP_NAME,
                         currency,
