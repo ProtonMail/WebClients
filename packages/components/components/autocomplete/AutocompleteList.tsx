@@ -4,9 +4,9 @@ import { Children, cloneElement } from 'react';
 import { c, msgid } from 'ttag';
 
 import { verticalPopperPlacements } from '@proton/atoms/Popper/utils';
-import Dropdown from '@proton/components/components/dropdown/Dropdown';
-import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 
+import Dropdown from '../dropdown/Dropdown';
+import { DropdownSizeUnit } from '../dropdown/utils';
 import type { OptionProps } from '../option/Option';
 
 interface Props<V> {

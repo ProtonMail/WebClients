@@ -2,8 +2,6 @@ import { c } from 'ttag';
 
 import { useUserSettings, userSettingsActions } from '@proton/account';
 import { featureTourActions } from '@proton/account/featuresTour';
-import useApi from '@proton/components/hooks/useApi';
-import useToggle from '@proton/components/hooks/useToggle';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { enableBreachAlert } from '@proton/shared/lib/api/settings';
 import { DARK_WEB_MONITORING_NAME } from '@proton/shared/lib/constants';
@@ -11,6 +9,8 @@ import { SentryMailInitiatives, traceError } from '@proton/shared/lib/helpers/se
 import { DARK_WEB_MONITORING_STATE } from '@proton/shared/lib/interfaces';
 import darkWebMonitoringIllustration from '@proton/styles/assets/img/illustrations/dwm-upsell-shield.svg';
 
+import useApi from '../../../hooks/useApi';
+import useToggle from '../../../hooks/useToggle';
 import type { FeatureTourStepProps, ShouldDisplayTourStep } from '../interface';
 import FeatureTourStepCTA from './components/FeatureTourStepCTA';
 import FeatureTourStepsContent from './components/FeatureTourStepsContent';

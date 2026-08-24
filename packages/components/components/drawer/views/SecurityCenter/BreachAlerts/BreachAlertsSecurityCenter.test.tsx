@@ -5,14 +5,14 @@ import { useUser } from '@proton/account/user/hooks';
 
 import BreachAlertsSecurityCenter from './BreachAlertsSecurityCenter';
 
-jest.mock('@proton/components/hooks/useNotifications', () => ({
+jest.mock('../../../../../hooks/useNotifications', () => ({
     __esModule: true,
     default: jest.fn().mockReturnValue({
         createNotification: jest.fn(),
     }),
 }));
 
-jest.mock('@proton/components/containers/credentialLeak/useBreaches', () => ({
+jest.mock('../../../../../containers/credentialLeak/useBreaches', () => ({
     __esModule: true,
     useBreaches: jest.fn().mockReturnValue({ breaches: [], actions: jest.fn() }),
 }));
@@ -23,7 +23,7 @@ jest.mock('@proton/react-redux-store', () => ({
     baseUseSelector: jest.fn(),
 }));
 
-jest.mock('@proton/components/hooks/useEventManager', () => ({
+jest.mock('../../../../../hooks/useEventManager', () => ({
     __esModule: true,
     default: jest.fn().mockReturnValue({ call: jest.fn() }),
 }));

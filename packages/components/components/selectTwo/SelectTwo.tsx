@@ -2,12 +2,12 @@ import type { KeyboardEvent, MutableRefObject, ReactNode } from 'react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 
 import type { PopperPlacement } from '@proton/atoms/Popper/interface';
-import type { DropdownProps } from '@proton/components/components/dropdown/Dropdown';
-import Dropdown from '@proton/components/components/dropdown/Dropdown';
-import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import clsx from '@proton/utils/clsx';
 
+import type { DropdownProps } from '../dropdown/Dropdown';
+import Dropdown from '../dropdown/Dropdown';
+import { DropdownSizeUnit } from '../dropdown/utils';
 import Option from '../option/Option';
 import SelectButton from './SelectButton';
 import { SelectDisplayValue } from './SelectDisplayValue';

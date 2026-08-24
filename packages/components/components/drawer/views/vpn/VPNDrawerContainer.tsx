@@ -4,8 +4,6 @@ import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account';
 import { Button } from '@proton/atoms/Button/Button';
-import Loader from '@proton/components/components/loader/Loader';
-import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import useLoading from '@proton/hooks/useLoading';
 import useStateRef from '@proton/hooks/useStateRef';
 import {
@@ -15,6 +13,8 @@ import {
 import { MINUTE } from '@proton/shared/lib/constants';
 import { VPN_HUB_URL } from '@proton/shared/lib/vpn/constants';
 
+import { useSilentApi } from '../../../../hooks/useSilentApi';
+import Loader from '../../../loader/Loader';
 import DrawerAppScrollContainer from '../shared/DrawerAppScrollContainer';
 import DrawerAppSection from '../shared/DrawerAppSection';
 import GetVPNApp from './GetVPNApp';

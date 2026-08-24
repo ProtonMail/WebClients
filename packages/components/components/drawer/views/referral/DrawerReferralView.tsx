@@ -2,14 +2,13 @@ import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import { ReferralInvitesContextProvider } from '@proton/components/containers/referral/ReferralInvitesContext';
-import Explanation from '@proton/components/containers/referral/drawer/Explanation';
-import FAQ from '@proton/components/containers/referral/drawer/Faq';
-import Footer from '@proton/components/containers/referral/drawer/Footer';
-import { FriendsSection } from '@proton/components/containers/referral/drawer/FriendsSection';
-import InviteShareLink from '@proton/components/containers/referral/drawer/InviteShareLink';
-import { useReferralTelemetry } from '@proton/components/containers/referral/hooks/useReferralTelemetry';
-
+import { ReferralInvitesContextProvider } from '../../../../containers/referral/ReferralInvitesContext';
+import Explanation from '../../../../containers/referral/drawer/Explanation';
+import FAQ from '../../../../containers/referral/drawer/Faq';
+import Footer from '../../../../containers/referral/drawer/Footer';
+import { FriendsSection } from '../../../../containers/referral/drawer/FriendsSection';
+import InviteShareLink from '../../../../containers/referral/drawer/InviteShareLink';
+import { useReferralTelemetry } from '../../../../containers/referral/hooks/useReferralTelemetry';
 import type { SelectedDrawerOption } from '../DrawerView';
 import DrawerView from '../DrawerView';
 import DrawerAppScrollContainer from '../shared/DrawerAppScrollContainer';

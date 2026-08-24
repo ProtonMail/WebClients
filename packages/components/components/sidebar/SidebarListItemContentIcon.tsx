@@ -1,6 +1,6 @@
-import Icon from '@proton/components/components/icon/Icon';
 import clsx from '@proton/utils/clsx';
 
+import Icon from '../icon/Icon';
 import type { IconProps } from '../icon/Icon';
 
 const SidebarListItemContentIcon = ({ className, ...rest }: IconProps) => {

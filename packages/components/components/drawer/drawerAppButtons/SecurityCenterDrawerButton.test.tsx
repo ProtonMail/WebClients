@@ -8,12 +8,12 @@ import {
     selectUnreadBreachesCount,
 } from '@proton/account';
 import { ThemeColor } from '@proton/colors/types';
-import DrawerAppButton from '@proton/components/components/drawer/drawerAppButtons/DrawerAppButton';
 import { baseUseSelector } from '@proton/react-redux-store';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import SecurityCenterDrawerAppButton from '../drawerAppButtons/SecurityCenterDrawerAppButton';
 import useSecurityCenter from '../views/SecurityCenter/useSecurityCenter';
+import DrawerAppButton from './DrawerAppButton';
 
 jest.mock('@proton/account', () => ({
     selectUnreadBreachesCount: jest.fn(),
@@ -31,19 +31,19 @@ jest.mock('@proton/react-redux-store', () => ({
     baseUseSelector: jest.fn(),
 }));
 
-jest.mock('@proton/components/hooks/drawer/useDrawer', () => ({
+jest.mock('../../../hooks/drawer/useDrawer', () => ({
     __esModule: true,
     default: jest.fn(),
 }));
 
 jest.mock('../views/SecurityCenter/useSecurityCenter', () => jest.fn());
-jest.mock('@proton/components/components/drawer/drawerAppButtons/DrawerAppButton', () => jest.fn(() => null));
+jest.mock('./DrawerAppButton', () => jest.fn(() => null));
 jest.mock('../views/SecurityCenter/BreachAlertsSpotlight', () => jest.fn(({ children }) => <div>{children}</div>));
 jest.mock('../drawerIcons/SecurityCenterDrawerLogo', () => ({
     SecurityCenterDrawerLogo: jest.fn(() => <div>SecurityCenterDrawerLogo</div>),
 }));
 
-jest.mock('@proton/components/hooks/drawer/useDrawer', () => ({
+jest.mock('../../../hooks/drawer/useDrawer', () => ({
     __esModule: true,
     default: jest.fn(() => ({
         toggleDrawerApp: jest.fn(),

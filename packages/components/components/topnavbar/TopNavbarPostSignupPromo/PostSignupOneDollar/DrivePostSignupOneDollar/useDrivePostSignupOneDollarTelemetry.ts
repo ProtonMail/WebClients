@@ -1,13 +1,13 @@
 import { useUserSettings } from '@proton/account/index';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import useApi from '@proton/components/hooks/useApi';
 import {
     type TelemetryMailDrivePostSignupOneDollarEvents,
     TelemetryMeasurementGroups,
 } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReportWithBaseDimensions } from '@proton/shared/lib/helpers/metrics';
 
+import useApi from '../../../../../hooks/useApi';
 import { getOfferAgeTelemetryCategory } from '../postSignupOffersHelpers';
 
 export const useDrivePostSignupOneDollarTelemetry = () => {

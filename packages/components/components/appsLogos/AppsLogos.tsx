@@ -1,15 +1,5 @@
 import React from 'react';
 
-import CalendarLogo from '@proton/components/components/logo/CalendarLogo';
-import DocsLogo from '@proton/components/components/logo/DocsLogo';
-import DriveLogo from '@proton/components/components/logo/DriveLogo';
-import type { LogoProps } from '@proton/components/components/logo/LogoBase';
-import LumoLogo from '@proton/components/components/logo/LumoLogo';
-import MailLogo from '@proton/components/components/logo/MailLogo';
-import PassLogo from '@proton/components/components/logo/PassLogo';
-import SheetsLogo from '@proton/components/components/logo/SheetsLogo';
-import VpnLogo from '@proton/components/components/logo/VpnLogo';
-import WalletLogo from '@proton/components/components/logo/WalletLogo';
 import type { IconSize } from '@proton/icons/types';
 import {
     APPS,
@@ -37,7 +27,17 @@ import {
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
+import CalendarLogo from '../logo/CalendarLogo';
+import DocsLogo from '../logo/DocsLogo';
+import DriveLogo from '../logo/DriveLogo';
+import type { LogoProps } from '../logo/LogoBase';
+import LumoLogo from '../logo/LumoLogo';
+import MailLogo from '../logo/MailLogo';
 import MeetLogo from '../logo/MeetLogo';
+import PassLogo from '../logo/PassLogo';
+import SheetsLogo from '../logo/SheetsLogo';
+import VpnLogo from '../logo/VpnLogo';
+import WalletLogo from '../logo/WalletLogo';
 
 interface AppLogo {
     title: string;

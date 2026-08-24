@@ -1,11 +1,12 @@
 import { useEffect } from 'react';
 
-import { useModalStateWithData } from '@proton/components/components/modalTwo/useModalState';
-import AuthenticatedBugModal from '@proton/components/containers/support/AuthenticatedBugModal';
-import useConfig from '@proton/components/hooks/useConfig';
 import { getIsDrawerPostMessage } from '@proton/shared/lib/drawer/helpers';
 import type { BugModalPrefill } from '@proton/shared/lib/drawer/interfaces';
 import { DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
+
+import AuthenticatedBugModal from '../../containers/support/AuthenticatedBugModal';
+import useConfig from '../../hooks/useConfig';
+import { useModalStateWithData } from '../modalTwo/useModalState';
 
 /**
  * Hosts the "Report a problem" modal for native drawer tabs, which render in this window and so cannot

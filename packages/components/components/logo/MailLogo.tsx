@@ -1,8 +1,9 @@
 import { useState } from 'react';
 
-import LogoBase, { type LogoProps } from '@proton/components/components/logo/LogoBase';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import generateUID from '@proton/utils/generateUID';
+
+import LogoBase, { type LogoProps } from './LogoBase';
 
 const MailLogo = ({ variant = 'with-wordmark', hasTitle = true, ...rest }: LogoProps) => {
     const [uid] = useState(generateUID('logo'));

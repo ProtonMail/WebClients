@@ -1,11 +1,11 @@
 import { c } from 'ttag';
 
-import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import type { MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { APP_UPSELL_REF_PATH, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import labelsImg from '@proton/styles/assets/img/illustrations/new-upsells-img/labels.svg';
 
+import type { ModalStateProps } from '../../modalTwo/useModalState';
 import UpsellModal from '../UpsellModal/UpsellModal';
 
 interface Props {

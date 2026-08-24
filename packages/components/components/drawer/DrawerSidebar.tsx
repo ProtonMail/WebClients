@@ -3,10 +3,10 @@ import { cloneElement, useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import useDrawer from '@proton/components/hooks/drawer/useDrawer';
 import clsx from '@proton/utils/clsx';
 
 import { useTheme } from '../../containers/themes/ThemeProvider';
+import useDrawer from '../../hooks/drawer/useDrawer';
 
 import './DrawerSidebar.scss';
 

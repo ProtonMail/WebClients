@@ -1,7 +1,5 @@
 import { c } from 'ttag';
 
-import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
-import UpsellModal from '@proton/components/components/upsell/UpsellModal/UpsellModal';
 import {
     APP_UPSELL_REF_PATH,
     MAIL_UPSELL_PATHS,
@@ -10,6 +8,9 @@ import {
 } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import shieldImg from '@proton/styles/assets/img/illustrations/new-upsells-img/shield.svg';
+
+import type { ModalStateProps } from '../../../../../modalTwo/useModalState';
+import UpsellModal from '../../../../../upsell/UpsellModal/UpsellModal';
 
 interface Props {
     modalProps: ModalStateProps;

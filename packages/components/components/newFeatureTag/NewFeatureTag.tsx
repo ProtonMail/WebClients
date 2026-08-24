@@ -3,12 +3,13 @@ import { useEffect, useState } from 'react';
 import { isPast } from 'date-fns';
 import { c } from 'ttag';
 
-import type { SpotlightProps } from '@proton/components/components/spotlight/Spotlight';
-import Spotlight from '@proton/components/components/spotlight/Spotlight';
-import { versionCookieAtLoad } from '@proton/components/helpers/versionCookie';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 import type { EnvironmentExtended } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
+
+import { versionCookieAtLoad } from '../../helpers/versionCookie';
+import type { SpotlightProps } from '../spotlight/Spotlight';
+import Spotlight from '../spotlight/Spotlight';
 
 export type IsActiveInEnvironmentContainer = { [key in EnvironmentExtended]?: boolean };
 

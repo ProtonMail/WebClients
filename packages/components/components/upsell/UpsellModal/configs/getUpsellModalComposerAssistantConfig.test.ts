@@ -1,6 +1,5 @@
 import * as memberModule from '@proton/account/member';
 import * as organizationModule from '@proton/account/organization';
-import * as assistantUpsellConfigModule from '@proton/components/hooks/assistant/assistantUpsellConfig';
 import * as checkoutModule from '@proton/payments/core/checkout';
 import { CYCLE, PLANS, PLAN_TYPES } from '@proton/payments/core/constants';
 import type { Currency, PaymentsApi } from '@proton/payments/core/interface';
@@ -8,6 +7,7 @@ import type { Plan } from '@proton/payments/core/plan/interface';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import * as organizationHelperModule from '@proton/shared/lib/organization/helper';
 
+import * as assistantUpsellConfigModule from '../../../../hooks/assistant/assistantUpsellConfig';
 import * as composerAssistantUpsellModalHelpersModule from '../../modals/ComposerAssistantUpsellModal.helpers';
 import { UpsellModalComposerAssistantSubmitButton } from '../components/UpsellModalSubmitButtons';
 import { getUpsellModalComposerAssistantConfig } from './getUpsellModalComposerAssistantConfig';
@@ -20,7 +20,7 @@ jest.mock('@proton/account/organization');
 jest.mock('@proton/account/member');
 jest.mock('../../modals/ComposerAssistantUpsellModal.helpers');
 jest.mock('@proton/shared/lib/organization/helper');
-jest.mock('@proton/components/hooks/assistant/assistantUpsellConfig');
+jest.mock('../../../../hooks/assistant/assistantUpsellConfig');
 const fakeDispatch = (result: unknown) => Promise.resolve(result);
 
 const organisationThunkMock = jest.fn();

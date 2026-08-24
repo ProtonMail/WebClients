@@ -4,18 +4,18 @@ import { useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import type { Unit } from '@proton/components/components/dropdown/utils';
-import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
-import Option from '@proton/components/components/option/Option';
-import type { SearcheableSelectProps } from '@proton/components/components/selectTwo/SearchableSelect';
-import SearchableSelect from '@proton/components/components/selectTwo/SearchableSelect';
-import useApi from '@proton/components/hooks/useApi';
 import { TelemetryCalendarEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import type { AbbreviatedTimezone } from '@proton/shared/lib/date/timezone';
 import { getAbbreviatedTimezoneName, getTimeZoneOptions, getTimezoneAndOffset } from '@proton/shared/lib/date/timezone';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import type { SimpleMap } from '@proton/shared/lib/interfaces';
 
+import useApi from '../../hooks/useApi';
+import type { Unit } from '../dropdown/utils';
+import { DropdownSizeUnit } from '../dropdown/utils';
+import Option from '../option/Option';
+import type { SearcheableSelectProps } from '../selectTwo/SearchableSelect';
+import SearchableSelect from '../selectTwo/SearchableSelect';
 import type { SelectTwoProps } from '../selectTwo/SelectTwo';
 
 interface Props extends Omit<SelectTwoProps<string>, 'onChange' | 'children'> {

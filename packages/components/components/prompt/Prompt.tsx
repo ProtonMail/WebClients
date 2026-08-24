@@ -1,14 +1,15 @@
 import type { ReactElement, ReactNode } from 'react';
 import React, { cloneElement, useContext } from 'react';
 
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import ModalTwo, { ModalContext } from '@proton/components/components/modalTwo/Modal';
-import type { ModalContentProps } from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import type { HotkeyTuple } from '@proton/components/hooks/useHotkeys';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
+
+import type { HotkeyTuple } from '../../hooks/useHotkeys';
+import type { ModalProps } from '../modalTwo/Modal';
+import ModalTwo, { ModalContext } from '../modalTwo/Modal';
+import type { ModalContentProps } from '../modalTwo/ModalContent';
+import ModalTwoContent from '../modalTwo/ModalContent';
+import ModalTwoFooter from '../modalTwo/ModalFooter';
 
 import './Prompt.scss';
 

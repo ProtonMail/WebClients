@@ -3,16 +3,16 @@ import { c } from 'ttag';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import BYOEClaimProtonAddressModal from '@proton/activation/src/components/Modals/BYOEClaimProtonAddressModal/BYOEClaimProtonAddressModal';
 import { BYOE_CLAIM_PROTON_ADDRESS_SOURCE } from '@proton/activation/src/constants';
-import type { Props } from '@proton/components/components/drawer/drawerAppButtons/DrawerAppButton';
-import DrawerAppButton from '@proton/components/components/drawer/drawerAppButtons/DrawerAppButton';
-import useDynamicMonthDay from '@proton/components/hooks/useDynamicMonthDay';
 import { APPS, BRAND_NAME, CALENDAR_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getIsBYOEOnlyAccount } from '@proton/shared/lib/helpers/address';
 import type { Optional } from '@proton/shared/lib/interfaces';
 
 import useDrawer from '../../../hooks/drawer/useDrawer';
+import useDynamicMonthDay from '../../../hooks/useDynamicMonthDay';
 import useModalState from '../../modalTwo/useModalState';
 import CalendarDrawerLogo from '../drawerIcons/CalendarDrawerLogo';
+import type { Props } from './DrawerAppButton';
+import DrawerAppButton from './DrawerAppButton';
 
 const CalendarDrawerAppButton = ({
     onClick,

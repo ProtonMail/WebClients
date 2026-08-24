@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
-import Details from '@proton/components/components/container/Details';
-import Summary from '@proton/components/components/container/Summary';
-import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 
+import getBoldFormattedText from '../../../../helpers/getBoldFormattedText';
+import Details from '../../../container/Details';
+import Summary from '../../../container/Summary';
 import adTargetIcon from './icon-ad-target.svg';
 import computerIcon from './icon-computer.svg';
 import geoIcon from './icon-geo.svg';

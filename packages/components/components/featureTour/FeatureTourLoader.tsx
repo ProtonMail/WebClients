@@ -1,5 +1,5 @@
-import Loader from '@proton/components/components/loader/Loader';
-import ModalContent from '@proton/components/components/modalTwo/ModalContent';
+import Loader from '../loader/Loader';
+import ModalContent from '../modalTwo/ModalContent';
 
 const FeatureTourLoader = () => (
     <ModalContent

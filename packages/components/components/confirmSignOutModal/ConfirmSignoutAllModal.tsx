@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Prompt, { type PromptProps } from '@proton/components/components/prompt/Prompt';
+
+import Prompt, { type PromptProps } from '../prompt/Prompt';
 
 interface Props extends Omit<PromptProps, 'title' | 'buttons' | 'children'> {
     onSignOut: () => void;

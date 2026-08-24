@@ -1,10 +1,11 @@
 import { type ReactNode, useRef } from 'react';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import { PromotionButton } from '@proton/components/components/button/PromotionButton';
-import Spotlight from '@proton/components/components/spotlight/Spotlight';
 import type { IconName } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
+
+import { PromotionButton } from '../../../button/PromotionButton/index';
+import Spotlight from '../../../spotlight/Spotlight';
 
 interface Props {
     promoOnClick: () => void;

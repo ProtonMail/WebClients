@@ -1,5 +1,6 @@
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { PROTON_THEMES_MAP } from '@proton/shared/lib/themes/themes';
+
+import { useTheme } from '../../containers/themes/ThemeProvider';
 
 export function WavyMeter() {
     const theme = useTheme();
