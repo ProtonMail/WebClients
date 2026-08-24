@@ -38,6 +38,12 @@ export interface DelegatedAccessState
         OrganizationKeyState,
         KtState {
     [name]: {
+        /**
+         * Whether the app currently running supports delegated access at all, see
+         * `getIsDelegatedAccessSupportedInApp`. Seeded once at bootstrap, defaults to unsupported so that an app
+         * which never seeds it doesn't offer recovery contacts or emergency access it can't deliver.
+         */
+        supportedInApp: boolean;
         incomingDelegatedAccess: ModelState<IncomingDelegatedAccessOutput[]> & {
             ephemeral?: IncomingEphemeral;
         };
@@ -49,10 +55,12 @@ export interface DelegatedAccessState
 
 type SliceState = DelegatedAccessState[typeof name];
 
+export const selectIsDelegatedAccessSupported = (state: DelegatedAccessState) => state[name].supportedInApp;
 export const selectIncomingDelegatedAccess = (state: DelegatedAccessState) => state[name].incomingDelegatedAccess;
 export const selectOutgoingDelegatedAccess = (state: DelegatedAccessState) => state[name].outgoingDelegatedAccess;
 
 const initialState: SliceState = {
+    supportedInApp: false,
     incomingDelegatedAccess: getInitialModelState<IncomingDelegatedAccessOutput[]>(),
     outgoingDelegatedAccess: getInitialModelState<OutgoingDelegatedAccessOutput[]>(),
 };
@@ -65,6 +73,9 @@ const slice = createSlice({
     name,
     initialState,
     reducers: {
+        setSupportedInApp: (state, action: PayloadAction<boolean>) => {
+            state.supportedInApp = action.payload;
+        },
         loadIncomingItem: (state, action: PayloadAction<{ id: string; value: boolean; type: 'access' }>) => {
             if (!state.incomingDelegatedAccess.ephemeral) {
                 state.incomingDelegatedAccess.ephemeral = {};

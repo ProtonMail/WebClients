@@ -52,7 +52,8 @@ export const safetyReviewTelemetryListener = (startListening: SharedStartListeni
                 accountRecovery.loading ||
                 mnemonicData.loading ||
                 recoveryFileData.loading ||
-                outgoingDelegatedAccess.loading
+                // Nothing fetches the delegated access list where it's unavailable, so waiting would never resolve.
+                (outgoingDelegatedAccess.isAvailable && outgoingDelegatedAccess.loading)
             ) {
                 return;
             }
