@@ -109,9 +109,17 @@ export const SidebarProvider = ({ children, defaultMode = 'expanded' }: SidebarP
 };
 
 export const useSidebar = (): SidebarState => {
-    const context = useContext(SidebarContext);
+    const context = useOptionalSidebar();
     if (!context) {
         throw new Error('useSidebar must be used within a SidebarProvider');
     }
     return context;
 };
+
+/**
+ * The sidebar state, or `null` on the full-screen routes that render outside the sidebar layout
+ * (the AI paper trail). Only for code that has to work on both — a missing provider there means
+ * there is no sidebar, not a bug. Anything inside the layout should use `useSidebar` and let it
+ * throw.
+ */
+export const useOptionalSidebar = (): SidebarState | null => useContext(SidebarContext);

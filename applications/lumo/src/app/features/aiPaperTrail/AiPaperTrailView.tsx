@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 
+import { useNativeComposerVisibilityApi } from '../../components/Composer/hooks/useNativeComposerVisibilityApi';
 import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import { exitPaperTrail } from '../../entrypoint/lumoRoutes';
 import { useLumoNavigate } from '../../hooks/useLumoNavigate';
@@ -32,6 +33,8 @@ import './AiPaperTrailView.scss';
 type WizardStep = 'landing' | 'instructions' | 'upload';
 
 export const AiPaperTrailView = () => {
+    useNativeComposerVisibilityApi({ hideComposer: true });
+
     const { status, error, conversationId, importId, start, reset } = useStartPaperTrail();
     const navigate = useLumoNavigate();
     const dispatch = useLumoDispatch();

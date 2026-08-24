@@ -2,9 +2,9 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { LUMO_ROUTES } from '../../entrypoint/lumoRoutes';
 import { hasDismissedPaperTrailPanel, markPaperTrailPanelDismissed } from '../../util/paperTrailPanelStorage';
 import NotificationPanel from '../notification/NotificationPanel';
+import { openPaperTrail } from './openPaperTrail';
 
 /**
  * The "See your AI paper trail" entry point, surfaced as the shared notification
@@ -25,9 +25,7 @@ export default function PaperTrailPanel() {
             text={c('collider_2025:Info')
                 .t`Discover what Big Tech AI could piece together about you from your chat history — and get a privacy score you can share.`}
             actionLabel={c('collider_2025:Action').t`Reveal my profile`}
-            onAction={() => {
-                window.location.assign(LUMO_ROUTES.AI_PAPER_TRAIL);
-            }}
+            onAction={openPaperTrail}
             onDismiss={() => {
                 markPaperTrailPanelDismissed();
                 setDismissed(true);

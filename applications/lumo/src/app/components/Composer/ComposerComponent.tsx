@@ -46,7 +46,7 @@ import { useNativeComposerCustomLumoApi } from './hooks/useNativeComposerCustomL
 import { useNativeComposerFeatureFlagsApi } from './hooks/useNativeComposerFeatureFlagsApi';
 import { useNativeComposerFileApi } from './hooks/useNativeComposerFileApi';
 import { useNativeComposerLumoStateApi } from './hooks/useNativeComposerLumoStateApi';
-import { useNativeComposerVisibilityApi } from './hooks/useNativeComposerVisibilityApi';
+import { useNativeComposerHostVisibilityApi } from './hooks/useNativeComposerVisibilityApi';
 
 import './ComposerComponent.scss';
 
@@ -199,9 +199,8 @@ const ComposerComponentInner = ({
         }
     }, [autoOpenSketch]);
 
-    const nativeComposerVisibilityApi = useNativeComposerVisibilityApi({
-        showDrawingModal,
-        showFileModal: isSheetModalOpen,
+    const nativeComposerVisibilityApi = useNativeComposerHostVisibilityApi({
+        hideComposer: showDrawingModal || isSheetModalOpen,
     });
     useNativeComposerFeatureFlagsApi();
     useNativeComposerCustomLumoApi(messageChain?.[0]?.conversationId, canUseAgents);
