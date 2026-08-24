@@ -5,6 +5,7 @@ import { addDays, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Kbd } from '@proton/atoms/Kbd/Kbd';
@@ -16,7 +17,6 @@ import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import type { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import useApi from '@proton/components/hooks/useApi';
 import { FeatureCode, useFeature } from '@proton/features';
 import { useLoading } from '@proton/hooks';
 import { IcArchiveBox } from '@proton/icons/icons/IcArchiveBox';

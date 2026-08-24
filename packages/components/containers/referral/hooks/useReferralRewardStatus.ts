@@ -1,10 +1,9 @@
 import type { Reducer } from 'react';
 import { useEffect, useReducer } from 'react';
 
+import { useApi } from '@proton/app-context/useApi';
 import { getReferralsStatus } from '@proton/shared/lib/api/core/referrals';
 import type { ReferralStatus } from '@proton/shared/lib/interfaces';
-
-import useApi from '../../../hooks/useApi';
 
 type Action = { type: 'success'; payload: ReferralStatus } | { type: 'error' };
 

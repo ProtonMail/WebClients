@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { userSettingsActions } from '@proton/account/userSettings';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { IcCalendarToday } from '@proton/icons/icons/IcCalendarToday';
@@ -14,7 +15,6 @@ import { SETTINGS_DATE_FORMAT, type UserSettings } from '@proton/shared/lib/inte
 import { getDefaultDateFormat } from '@proton/shared/lib/settings/helper';
 
 import Option from '../../components/option/Option';
-import useApi from '../../hooks/useApi';
 import { SettingsIconRow } from '../account/SettingsIconRow';
 import { SettingsSelectRow } from '../account/SettingsSelectRow';
 import { getAutomaticText } from './helper';

@@ -32,7 +32,7 @@ jest.mock('@proton/account');
 jest.mock('@proton/account/user/hooks');
 jest.mock('@proton/mail/store/mailSettings/hooks');
 jest.mock('@proton/account/organization/hooks');
-jest.mock('../../hooks/useApi');
+jest.mock('@proton/app-context/useApi');
 jest.mock('@proton/redux-shared-store/sharedProvider', () => ({ useDispatch: () => jest.fn() }));
 jest.mock('../../hooks/useToggle', () => () => ({ state: false, toggle: jest.fn() }));
 jest.mock('@proton/hooks', () => ({ useLoading: () => [false, (fn: any) => fn] }));

@@ -1,5 +1,6 @@
 import { c, msgid } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { useLoading } from '@proton/hooks';
@@ -11,7 +12,6 @@ import type { ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 import Alert from '../../../components/alert/Alert';
 import type { ModalProps } from '../../../components/modalTwo/Modal';
 import Prompt from '../../../components/prompt/Prompt';
-import useApi from '../../../hooks/useApi';
 import useEventManager from '../../../hooks/useEventManager';
 import { getDeleteText } from '../../general/helper';
 

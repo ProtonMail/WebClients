@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 
 import AutoDeleteBanner from './AutoDeleteBanner';
 
-jest.mock('@proton/components/hooks/useApi', () => () => jest.fn());
+jest.mock('@proton/app-context/useApi', () => ({ useApi: () => jest.fn() }));
 jest.mock('@proton/redux-shared-store/sharedProvider', () => ({
     useDispatch: () => jest.fn(),
 }));

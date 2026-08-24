@@ -5,9 +5,9 @@ import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { useCalendarModelEventManager } from '@proton/components/containers/eventManager/calendar/CalendarModelEventManagerProvider';
-import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useGetCalendarEventRaw from '@proton/components/hooks/useGetCalendarEventRaw';
 import { defaultESContext } from '@proton/encrypted-search/constants';

@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { userSettingsActions } from '@proton/account/userSettings';
+import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
@@ -32,7 +33,6 @@ import ModalHeader from '../../../components/modalTwo/ModalHeader';
 import InputFieldTwo from '../../../components/v2/field/InputField';
 import TotpInput from '../../../components/v2/input/TotpInput';
 import useFormErrors from '../../../components/v2/useFormErrors';
-import useApi from '../../../hooks/useApi';
 import useErrorHandler from '../../../hooks/useErrorHandler';
 import AuthModal from '../../password/AuthModal';
 

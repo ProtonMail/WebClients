@@ -1,8 +1,8 @@
 import { useUserSettings, userSettingsActions } from '@proton/account';
+import { useApi } from '@proton/app-context/useApi';
 import { SettingsLayout, SettingsLayoutLeft, SettingsLayoutRight, SettingsSection } from '@proton/components';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import { getEnableString } from '@proton/components/containers/credentialLeak/helpers';
-import useApi from '@proton/components/hooks/useApi';
 import useLoading from '@proton/hooks/useLoading';
 import { setProductDisabled } from '@proton/shared/lib/api/settings';
 import { getAppName } from '@proton/shared/lib/apps/helper';

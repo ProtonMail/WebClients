@@ -1,3 +1,4 @@
+import { useApi } from '@proton/app-context/useApi';
 import {
     addIncomingDefault,
     deleteIncomingDefaults,
@@ -13,7 +14,6 @@ import {
 import { INCOMING_DEFAULTS_LOCATION } from '@proton/shared/lib/constants';
 import type { IncomingDefault } from '@proton/shared/lib/interfaces';
 
-import useApi from '../../../../hooks/useApi';
 import type { SpamItem, SpamLocation, SpamNavItem } from '../Spams.interfaces';
 
 const LOCATION_BY_TYPE: Record<SpamLocation, number> = {

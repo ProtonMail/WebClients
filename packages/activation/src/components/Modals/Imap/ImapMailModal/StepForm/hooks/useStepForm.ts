@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import throttle from 'lodash/throttle';
 
-import { useApi } from '@proton/components';
+import { useApi } from '@proton/app-context/useApi';
 
 import { updateImport } from '../../../../../../api';
 import { AuthenticationMethod, IMPORT_ERROR, ImportType } from '../../../../../../interface';

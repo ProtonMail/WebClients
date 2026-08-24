@@ -11,6 +11,7 @@ import {
 import { useUser } from '@proton/account/user/hooks';
 import { userSettingsActions } from '@proton/account/userSettings';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Href } from '@proton/atoms/Href/Href';
 import { useLoading } from '@proton/hooks';
@@ -39,7 +40,6 @@ import type { FetchedBreaches, SampleBreach } from '../../../../../containers/cr
 import { BREACH_STATE } from '../../../../../containers/credentialLeak/models';
 import { useBreaches } from '../../../../../containers/credentialLeak/useBreaches';
 import GenericError from '../../../../../containers/error/GenericError';
-import useApi from '../../../../../hooks/useApi';
 import useErrorHandler from '../../../../../hooks/useErrorHandler';
 import Loader from '../../../../loader/Loader';
 import { useModalStateObject } from '../../../../modalTwo/useModalState';

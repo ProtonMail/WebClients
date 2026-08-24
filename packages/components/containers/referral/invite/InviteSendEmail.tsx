@@ -3,6 +3,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { useLoading } from '@proton/hooks';
@@ -15,7 +16,6 @@ import type { Recipient, Referral } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import AddressesAutocomplete from '../../../components/addressesAutocomplete/AddressesAutocomplete';
-import useApi from '../../../hooks/useApi';
 import { useReferralInvitesContext } from '../ReferralInvitesContext';
 import { useReferralTelemetry } from '../hooks/useReferralTelemetry';
 import InviteSendEmailRecipient from './InviteSendEmailRecipient';

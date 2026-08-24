@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { userSettingsThunk } from '@proton/account/userSettings';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
@@ -15,7 +16,6 @@ import noop from '@proton/utils/noop';
 
 import type { ModalProps } from '../../components/modalTwo/Modal';
 import Prompt from '../../components/prompt/Prompt';
-import useApi from '../../hooks/useApi';
 import ReauthUsingRecoveryModal from './ReauthUsingRecoveryModal';
 import { setSecurityKeyRequirePinFlag } from './fido/setSecurityKeyRequirePinFlag';
 

@@ -2,9 +2,10 @@ import { type CSSProperties, useCallback, useEffect, useRef, useState } from 're
 
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
-import { Option, SelectTwo, TextAreaTwo, useApi } from '@proton/components/index';
+import { Option, SelectTwo, TextAreaTwo } from '@proton/components/index';
 import { LumoApiClient, createSystemTurn, createUserTurn } from '@proton/lumo-api-client';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 

@@ -11,9 +11,9 @@ import {
 
 import { useFeedbackFirstTelemetry } from '../useFeedbackFirstTelemetry';
 
-jest.mock('../../../../../../hooks/useApi', () => ({
+jest.mock('@proton/app-context/useApi', () => ({
     __esModule: true,
-    default: () => jest.fn(),
+    useApi: () => jest.fn(),
 }));
 
 jest.mock('@proton/account/user/hooks', () => ({

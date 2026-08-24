@@ -2,9 +2,10 @@ import { useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
 import { Button } from '@proton/atoms/Button/Button';
 import type { PromptProps } from '@proton/components';
-import { InputFieldTwo, PhoneInput, Prompt, useApi, useFormErrors, useModalState } from '@proton/components';
+import { InputFieldTwo, PhoneInput, Prompt, useFormErrors, useModalState } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { validateEmail, validatePhone } from '@proton/shared/lib/api/core/validate';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';

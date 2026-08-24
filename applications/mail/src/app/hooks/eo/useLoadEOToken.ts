@@ -2,8 +2,8 @@ import { useHistory } from 'react-router';
 
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
-import useApi from '@proton/components/hooks/useApi';
 
 import { EO_MESSAGE_REDIRECT_PATH } from '../../constants';
 import { eoDecrypt } from '../../helpers/eo/message';

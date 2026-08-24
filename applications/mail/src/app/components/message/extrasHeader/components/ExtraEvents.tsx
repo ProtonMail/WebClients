@@ -1,17 +1,18 @@
 import { useEffect, useState } from 'react';
 
+import { CryptoProxy } from '@protontech/crypto';
+import { uint8ArrayToUtf8String } from '@protontech/crypto/utils';
+
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { useGetCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
-import useApi from '@proton/components/hooks/useApi';
 import useGetCalendarEventRaw from '@proton/components/hooks/useGetCalendarEventRaw';
 import { useGetCalendarInfo } from '@proton/components/hooks/useGetCalendarInfo';
 import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonicalEmailsMap';
 import useGetOrCreateCalendarAndSettings from '@proton/components/hooks/useGetOrCreateCalendarAndSettings';
-import { CryptoProxy } from '@protontech/crypto';
-import { uint8ArrayToUtf8String } from '@protontech/crypto/utils';
 import { useLoading } from '@proton/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
@@ -45,9 +46,6 @@ import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 import unary from '@proton/utils/unary';
 
-import { useContactsMap } from '../../../../hooks/contact/useContacts';
-import { useMailDispatch } from '../../../../store/hooks';
-
 import { formatDownload } from '../../../../helpers/attachment/attachmentDownloader';
 import type { EventInvitation } from '../../../../helpers/calendar/invite';
 import {
@@ -58,9 +56,11 @@ import {
 import { isNetworkError } from '../../../../helpers/errors';
 import { getMessageHasData } from '../../../../helpers/message/messages';
 import { useGetAttachment } from '../../../../hooks/attachments/useAttachment';
+import { useContactsMap } from '../../../../hooks/contact/useContacts';
 import { useGetMessageKeys } from '../../../../hooks/message/useGetMessageKeys';
 import { updateAttachment } from '../../../../store/attachments/attachmentsActions';
 import type { DecryptedAttachment } from '../../../../store/attachments/attachmentsTypes';
+import { useMailDispatch } from '../../../../store/hooks';
 import { errors as errorsAction } from '../../../../store/messages/read/messagesReadActions';
 import ExtraEvent from './calendar/ExtraEvent';
 

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { serverTime } from '@protontech/crypto';
 
-import { useApi } from '@proton/components';
+import { useApi } from '@proton/app-context/useApi';
 import { useDriveDiagnostics } from '@proton/drive/diagnostic';
 import { queryUserSettings } from '@proton/shared/lib/api/drive/user';
 

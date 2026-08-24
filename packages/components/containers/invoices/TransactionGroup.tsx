@@ -2,6 +2,7 @@ import { useRef } from 'react';
 
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
 import { getTransactionPDF } from '@proton/payments/core/api/api';
 import type { Transaction } from '@proton/payments/core/interface';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
@@ -14,7 +15,6 @@ import TableCell from '../../components/table/TableCell';
 import TableHeader from '../../components/table/TableHeader';
 import TableRow from '../../components/table/TableRow';
 import Time from '../../components/time/Time';
-import useApi from '../../hooks/useApi';
 import PaymentsPdfPreview, { type PdfPreviewControls } from './PaymentsPdfPreview';
 import TransactionActions from './TransactionActions';
 import TransactionState from './TransactionState';

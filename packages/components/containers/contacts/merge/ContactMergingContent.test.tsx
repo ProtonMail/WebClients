@@ -1,13 +1,13 @@
 import { render, waitFor } from '@testing-library/react';
 
+import { useApi } from '@proton/app-context/useApi';
 import { prepareVCardContact } from '@proton/shared/lib/contacts/encrypt';
 
-import useApi from '../../../hooks/useApi';
 import ContactMergingContent from './ContactMergingContent';
 
 const encrypt = prepareVCardContact as jest.Mock;
 
-jest.mock('../../../hooks/useApi', () => {
+jest.mock('@proton/app-context/useApi', () => {
     const apiMock = jest.fn(({ url, method }) => {
         if (method === 'get') {
             const parts = url.split('/');
@@ -21,7 +21,7 @@ jest.mock('../../../hooks/useApi', () => {
         }
     });
 
-    return () => apiMock;
+    return { useApi: () => apiMock };
 });
 
 jest.mock('@proton/account/userKeys/hooks', () => {

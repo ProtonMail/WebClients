@@ -3,7 +3,7 @@ import React from 'react';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { verifyAllWhenMocksCalled, when } from 'jest-when';
 
-import useApi from '@proton/components/hooks/useApi';
+import { useApi } from '@proton/app-context/useApi';
 import localStorageWithExpiry from '@proton/shared/lib/api/helpers/localStorageWithExpiry';
 import { DRIVE_SIGNIN, DRIVE_SIGNUP } from '@proton/shared/lib/drive/urls';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
@@ -13,7 +13,7 @@ import usePublicToken from '../../../../legacy/hooks/drive/usePublicToken';
 import { PUBLIC_SHARE_REDIRECT_PASSWORD_STORAGE_KEY } from '../../../../utils/url/password';
 import { SignupFlowModal } from './SignupFlowModal';
 
-jest.mock('@proton/components/hooks/useApi');
+jest.mock('@proton/app-context/useApi');
 const mockedUseApi = jest.mocked(useApi);
 
 jest.mock('@proton/shared/lib/helpers/browser');

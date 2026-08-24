@@ -1,4 +1,5 @@
-import { useApi, usePreventLeave } from '@proton/components';
+import { useApi } from '@proton/app-context/useApi';
+import { usePreventLeave } from '@proton/components';
 import { queryDeviceDeletion, queryDeviceRename } from '@proton/shared/lib/api/drive/devices';
 
 import useDevicesListing from './useDevicesListing';

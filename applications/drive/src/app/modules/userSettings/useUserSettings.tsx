@@ -1,6 +1,6 @@
 import { useCallback, useMemo } from 'react';
 
-import { useApi } from '@proton/components';
+import { useApi } from '@proton/app-context/useApi';
 import { queryUpdateUserSettings } from '@proton/shared/lib/api/drive/user';
 import type { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 

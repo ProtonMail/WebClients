@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { createPublicLink } from '@proton/shared/lib/api/calendars';
@@ -23,7 +24,6 @@ import BasicModal from '../../../components/modalTwo/BasicModal';
 import Option from '../../../components/option/Option';
 import SelectTwo from '../../../components/selectTwo/SelectTwo';
 import InputFieldTwo from '../../../components/v2/field/InputField';
-import useApi from '../../../hooks/useApi';
 import useGetCalendarInfo from '../../../hooks/useGetCalendarInfo';
 
 interface Props extends Omit<BasicModalProps, 'children' | 'footer'> {

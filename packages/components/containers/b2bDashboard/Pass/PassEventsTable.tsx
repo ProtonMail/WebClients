@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { getUnixTime, parseISO } from 'date-fns';
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
 import { Avatar } from '@proton/atoms/Avatar/Avatar';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { getShareID } from '@proton/shared/lib/api/b2bevents';
@@ -16,7 +17,6 @@ import Table from '../../../components/table/Table';
 import TableBody from '../../../components/table/TableBody';
 import TableRow from '../../../components/table/TableRow';
 import Time from '../../../components/time/Time';
-import useApi from '../../../hooks/useApi';
 import { NoEventsInfo } from '../NoEventsInfo';
 import { getDesciptionText, getDescriptionTextWithLink } from './helpers';
 import type { PassEvent } from './interface';

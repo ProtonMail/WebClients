@@ -2,8 +2,8 @@ import { c } from 'ttag';
 
 import { organizationActions } from '@proton/account/organization';
 import { useOrganization } from '@proton/account/organization/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
-import { useApi } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import { IcDrawerDividers } from '@proton/icons/icons/IcDrawerDividers';
 import { useCategoriesData } from '@proton/mail/features/categoriesView/useCategoriesData';

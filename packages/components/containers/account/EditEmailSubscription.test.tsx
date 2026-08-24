@@ -3,15 +3,15 @@ import { sub } from 'date-fns';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { NEWSLETTER_SUBSCRIPTIONS_BITS } from '@proton/shared/lib/helpers/newsletter';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import { mockUseConfig } from '@proton/testing/lib/mockUseConfig';
 
-import useApi from '../../hooks/useApi';
 import EditEmailSubscription from './EditEmailSubscription';
 
-jest.mock('../../hooks/useApi');
+jest.mock('@proton/app-context/useApi');
 const mockedUseApi = useApi as jest.MockedFunction<any>;
 let mockedApi: ReturnType<typeof mockedUseApi>;
 

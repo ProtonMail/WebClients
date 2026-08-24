@@ -3,9 +3,10 @@ import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
 import { useConfig } from '@proton/app-context/useConfig';
 import type { OnLoginCallback } from '@proton/components';
-import { AbuseModal, useApi, useErrorHandler, useIsInboxElectronApp } from '@proton/components';
+import { AbuseModal, useErrorHandler, useIsInboxElectronApp } from '@proton/components';
 import ElectronBlockedContainer from '@proton/components/containers/app/ElectronBlockedContainer';
 import type {
     AuthActionResponse,

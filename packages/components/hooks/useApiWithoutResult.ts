@@ -1,6 +1,7 @@
 import { useCallback } from 'react';
 
-import useApi from './useApi';
+import { useApi } from '@proton/app-context/useApi';
+
 import type { QueryFunction } from './useApiResult';
 import useAsync from './useAsync';
 

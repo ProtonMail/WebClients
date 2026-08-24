@@ -91,9 +91,9 @@ jest.mock('@proton/app-context/useNotifications', () => ({
     })),
 }));
 
-jest.mock('@proton/components/hooks/useApi', () => ({
+jest.mock('@proton/app-context/useApi', () => ({
     __esModule: true,
-    default: jest.fn(() => jest.fn()),
+    useApi: jest.fn(() => jest.fn()),
 }));
 
 jest.mock('@proton/components/hooks/useEventManager', () => ({

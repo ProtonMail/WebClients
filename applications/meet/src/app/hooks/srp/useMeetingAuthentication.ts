@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 
-import useApi from '@proton/components/hooks/useApi';
+import { useApi } from '@proton/app-context/useApi';
 import { useMeetErrorReporting } from '@proton/meet';
 import { requestAccessToken, requestHandshakeInfo } from '@proton/meet/api/meetSrpRequests';
 

@@ -3,6 +3,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { useUserKeys } from '@proton/account/userKeys/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { Button } from '@proton/atoms/Button/Button';
 import { useLoading } from '@proton/hooks';
 import { addContacts, deleteContacts, getContact } from '@proton/shared/lib/api/contacts';
@@ -26,7 +27,6 @@ import ModalTwoContent from '../../../components/modalTwo/ModalContent';
 import ModalTwoFooter from '../../../components/modalTwo/ModalFooter';
 import ModalTwoHeader from '../../../components/modalTwo/ModalHeader';
 import DynamicProgress from '../../../components/progress/DynamicProgress';
-import useApi from '../../../hooks/useApi';
 
 const { OVERWRITE_CONTACT } = OVERWRITE;
 const { INCLUDE, IGNORE } = CATEGORIES;

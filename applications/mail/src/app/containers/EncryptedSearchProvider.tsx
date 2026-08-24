@@ -7,7 +7,7 @@ import { useWelcomeFlags } from '@proton/account';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
-import useApi from '@proton/components/hooks/useApi';
+import { useApi } from '@proton/app-context/useApi';
 import { useSubscribeEventManager } from '@proton/components/hooks/useHandler';
 import { useLocalStateSync } from '@proton/components/hooks/useLocalStateSync';
 import { getIndexKey, setESLogger } from '@proton/encrypted-search/esHelpers';
@@ -25,13 +25,10 @@ import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import ESDeletedConversationsCache from '../helpers/encryptedSearch/ESDeletedConversationsCache';
-import { selectCategoryIDs } from '../store/elements/elementsSelectors';
-import { useMailSelector } from '../store/hooks';
-
 import { defaultESContextMail, defaultESMailStatus } from '../constants';
 import { useContentSearch } from '../contentSearch/integration/useContentSearch';
 import { convertEventType, getESCallbacks, getESFreeBlobKey, parseSearchParams } from '../helpers/encryptedSearch';
+import ESDeletedConversationsCache from '../helpers/encryptedSearch/ESDeletedConversationsCache';
 import { useGetMessageKeys } from '../hooks/message/useGetMessageKeys';
 import useISESEnabledElectron from '../hooks/useISESEnabledElectron';
 import type {
@@ -41,6 +38,8 @@ import type {
     EncryptedSearchFunctionsMail,
 } from '../models/encryptedSearch';
 import type { Event } from '../models/event';
+import { selectCategoryIDs } from '../store/elements/elementsSelectors';
+import { useMailSelector } from '../store/hooks';
 
 // Encrypted search has no logging implementation of its own (see esLogger.ts) - mail is the one
 // that knows about @proton/logger, so this is where that link is made explicit.

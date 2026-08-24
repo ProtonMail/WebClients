@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
@@ -11,7 +12,6 @@ import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { DELAY_IN_SECONDS } from '@proton/shared/lib/mail/mailSettings';
 
 import Select from '../../components/select/Select';
-import useApi from '../../hooks/useApi';
 
 interface Props {
     id: string;

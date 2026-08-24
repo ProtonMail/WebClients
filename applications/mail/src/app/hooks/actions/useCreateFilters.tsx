@@ -3,12 +3,12 @@ import { useCallback, useMemo } from 'react';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import useAppLink from '@proton/components/components/link/useAppLink';
 import type { Filter } from '@proton/components/containers/filters/interfaces';
 import { createDefaultLabelsFilter } from '@proton/components/containers/filters/utils';
 import NotificationButton from '@proton/components/containers/notifications/NotificationButton';
-import useApi from '@proton/components/hooks/useApi';
 import { useFilters } from '@proton/mail/store/filters/hooks';
 import { useGetFolders, useGetLabels } from '@proton/mail/store/labels/hooks';
 import { addTreeFilter, deleteFilter } from '@proton/shared/lib/api/filters';

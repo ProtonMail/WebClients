@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 
-import useApi from '@proton/components/hooks/useApi';
+import { useApi } from '@proton/app-context/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type {
@@ -11,18 +11,17 @@ import type {
 } from '@proton/mail/store/messages/messagesTypes';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { transformEmbedded } from '../../helpers/transforms/transformEmbedded';
-import { transformRemote } from '../../helpers/transforms/transformRemote';
-import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
-import { useMailDispatch } from '../../store/hooks';
-
 import {
     handleDispatchLoadFakeImagesProxy,
     handleDispatchLoadImagesProxy,
     handleDispatchLoadRemoteImagesDirect,
     updateImages,
 } from '../../helpers/message/messageImages';
+import { transformEmbedded } from '../../helpers/transforms/transformEmbedded';
+import { transformRemote } from '../../helpers/transforms/transformRemote';
 import { updateAttachment } from '../../store/attachments/attachmentsActions';
+import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
+import { useMailDispatch } from '../../store/hooks';
 import { loadEmbedded } from '../../store/messages/images/messagesImagesActions';
 import { useGetAttachment } from '../attachments/useAttachment';
 import { useGetMessageKeys } from './useGetMessageKeys';

@@ -2,6 +2,7 @@ import { useOrganization } from '@proton/account/organization/hooks';
 import { usePlans } from '@proton/account/plans/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { useGetCalendars } from '@proton/calendar/calendars/hooks';
 import {
     getAvailableSubscriptionActions,
@@ -11,8 +12,6 @@ import {
 import { getShouldCalendarPreventSubscripitionChange } from '@proton/shared/lib/calendar/plans';
 import { hasBonuses } from '@proton/shared/lib/helpers/organization';
 import { hasPaidMail, hasPaidVpn } from '@proton/shared/lib/user/helpers';
-
-import useApi from '../../../../hooks/useApi';
 
 export const useCancellationStepEligibility = () => {
     const [user] = useUser();

@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
 import { Href } from '@proton/atoms/Href/Href';
 import { ping } from '@proton/shared/lib/api/tests';
 import { HOUR, SECOND } from '@proton/shared/lib/constants';
@@ -10,7 +11,6 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import useApi from '../../hooks/useApi';
 import useApiServerTime from '../../hooks/useApiServerTime';
 import TopBanner from './TopBanner';
 

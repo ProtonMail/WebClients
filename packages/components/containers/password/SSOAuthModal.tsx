@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
 import { useConfig } from '@proton/app-context/useConfig';
 import { Button } from '@proton/atoms/Button/Button';
 import { SCOPE_REAUTH_SSO, getInfo } from '@proton/shared/lib/api/auth';
@@ -14,7 +15,6 @@ import type { Api } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import Prompt, { type PromptProps } from '../../components/prompt/Prompt';
-import useApi from '../../hooks/useApi';
 import useErrorHandler from '../../hooks/useErrorHandler';
 import { ExternalSSOError, handleExternalSSOLogin } from '../login/ssoExternalLogin';
 import type { OwnAuthModalProps, SSOAuthModalResult } from './interface';

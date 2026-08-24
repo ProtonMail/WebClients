@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { Button } from '@proton/atoms/Button/Button';
 import { useContacts } from '@proton/mail/store/contacts/hooks';
 import { dropDataEncryptedWithAKey } from '@proton/shared/lib/contacts/globalOperations';
@@ -15,7 +16,6 @@ import ModalTwoContent from '../../../components/modalTwo/ModalContent';
 import ModalTwoFooter from '../../../components/modalTwo/ModalFooter';
 import ModalTwoHeader from '../../../components/modalTwo/ModalHeader';
 import DynamicProgress from '../../../components/progress/DynamicProgress';
-import useApi from '../../../hooks/useApi';
 import useEventManager from '../../../hooks/useEventManager';
 
 export interface ContactClearDataExecutionProps {

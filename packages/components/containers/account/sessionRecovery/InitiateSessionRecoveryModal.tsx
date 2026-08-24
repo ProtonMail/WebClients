@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { selectAvailableRecoveryMethods } from '@proton/account/recovery/sessionRecoverySelectors';
 import { userThunk } from '@proton/account/user';
 import { useUser } from '@proton/account/user/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import useLoading from '@proton/hooks/useLoading';
@@ -21,7 +22,6 @@ import ModalContent from '../../../components/modalTwo/ModalContent';
 import ModalFooter from '../../../components/modalTwo/ModalFooter';
 import ModalHeader from '../../../components/modalTwo/ModalHeader';
 import getBoldFormattedText from '../../../helpers/getBoldFormattedText';
-import useApi from '../../../hooks/useApi';
 import SessionRecoveryResetConfirmedPrompt from './SessionRecoveryResetConfirmedPrompt';
 import sessionRecoveryIllustration from './session-recovery-illustration.svg';
 

@@ -3,6 +3,7 @@ import { useCallback, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
@@ -14,7 +15,6 @@ import {
     ModalTwoFooter,
     ModalTwoHeader,
     TextAreaTwo,
-    useApi,
     useErrorHandler,
     useModalStateObject,
 } from '@proton/components';

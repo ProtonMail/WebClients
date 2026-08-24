@@ -37,9 +37,9 @@ jest.mock('@proton/account/organization/hooks', () => ({
 }));
 
 const mockApi = jest.fn();
-jest.mock('../../../../hooks/useApi', () => ({
+jest.mock('@proton/app-context/useApi', () => ({
     __esModule: true,
-    default: jest.fn(() => mockApi),
+    useApi: jest.fn(() => mockApi),
 }));
 
 const mockHandleCreateCalendar = jest.fn();

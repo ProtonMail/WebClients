@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
-import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { logger } from '@proton/logger';
 import { getHumanLabelID, isCategoryLabel, isCustomFolder, isSystemFolder } from '@proton/mail/helpers/location';
