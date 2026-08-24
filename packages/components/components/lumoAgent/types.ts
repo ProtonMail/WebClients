@@ -3,6 +3,7 @@ import type { ComponentType, ReactNode } from 'react';
 import type { ActionRequest, ToolDefinition, ToolHandlers, ToolName } from '@proton/llm/lib/lumoAgent/contracts/types';
 import type { ToolName as ServerToolName } from '@proton/lumo-api-client';
 import type { ServerToolSource } from '@proton/lumo-ui';
+import type { IconComponent } from '@proton/lumo-ui/types';
 
 /** The chat items the panel renders — the human-facing view of the executor's event stream. */
 export type LumoAgentItem =
@@ -32,7 +33,7 @@ export interface CardBodyProps {
  * renderer may mount a shared body from `@proton/lumo-ui` or a bespoke one. Reads need no renderer.
  */
 export interface CardRenderer {
-    icon: ComponentType<{ className?: string }>;
+    icon: IconComponent;
     title: (action: ActionRequest, labels: Record<string, string>) => string;
     subtitle?: (action: ActionRequest, labels: Record<string, string>) => string | undefined;
     /** Optional editable body; omit for a plain confirm (title + apply/cancel only). */
