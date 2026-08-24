@@ -2,6 +2,7 @@ import noop from '@proton/utils/noop';
 
 import type {
     ApplePayAuthorizedPayload,
+    ApplePayAvailability,
     ApplePayCancelledMessage,
     ApplePayClickedMessage,
     ApplePayFailedMessage,
@@ -59,8 +60,8 @@ import {
     threeDsChallengeMessageType,
     unhandledError,
 } from '../lib/types';
+import { getParentOrigin } from '../lib/get-parent-origin';
 import { addCheckpoint, chargebeeWrapperVersion, getCheckpoints } from './checkpoints';
-import { getParentOrigin } from './get-parent-origin';
 
 function isChargebeeEvent(event: any): boolean {
     return !!event?.cbEvent;
@@ -239,10 +240,7 @@ export type OnSetApplePayPaymentIntentHandler = (
 export type GetCanMakePaymentsWithActiveCardEvent = {
     type: 'get-can-make-payments-with-active-card';
     correlationId: string;
-};
-
-export type GetCanMakePaymentsWithActiveCardResponse = {
-    canMakePaymentsWithActiveCard: boolean;
+    applePayCapabilitiesEnabled?: boolean;
 };
 
 export function isGetCanMakePaymentsWithActiveCardEvent(event: any): event is GetCanMakePaymentsWithActiveCardEvent {
@@ -251,7 +249,7 @@ export function isGetCanMakePaymentsWithActiveCardEvent(event: any): event is Ge
 
 export type OnGetCanMakePaymentsWithActiveCardHandler = (
     event: GetCanMakePaymentsWithActiveCardEvent,
-    sendResponseToParent: SendResponseToParent<GetCanMakePaymentsWithActiveCardResponse>
+    sendResponseToParent: SendResponseToParent<ApplePayAvailability>
 ) => void;
 
 export const setGooglePayPaymentIntentMessageType = 'set-google-pay-payment-intent';
