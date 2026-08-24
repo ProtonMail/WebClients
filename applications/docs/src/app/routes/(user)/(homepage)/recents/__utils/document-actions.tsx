@@ -24,7 +24,7 @@ import {
   trashAndNotify,
   restoreAndNotify,
   handleRestoreError,
-} from '~/drive-sdk/trash'
+} from '@proton/docs-core/lib/DriveSDK/trash'
 import { SentryRealtimeInitiatives, traceError } from '@proton/shared/lib/helpers/sentry'
 
 export type DocumentActionsContextValue = {
@@ -178,7 +178,7 @@ export function DocumentActionsProvider({ children }: DocumentActionsProviderPro
     if (trashWithSDK) {
       try {
         const nodeUid = generateNodeUid(document.volumeId, document.linkId)
-        await trashAndNotify(drive, createNotification, nodeUid)
+        await trashAndNotify(createNotification, nodeUid)
       } catch (error) {
         reportTrashError(error)
         createNotification({
@@ -207,7 +207,7 @@ export function DocumentActionsProvider({ children }: DocumentActionsProviderPro
     if (trashWithSDK) {
       try {
         const nodeUid = generateNodeUid(document.volumeId, document.linkId)
-        await restoreAndNotify(drive, createNotification, nodeUid)
+        await restoreAndNotify(createNotification, nodeUid)
       } catch (error: any) {
         handleRestoreError(createNotification, error)
         return
@@ -233,10 +233,9 @@ export function DocumentActionsProvider({ children }: DocumentActionsProviderPro
         submitText: c('Action').t`Delete permanently`,
         message: c('Info').t`Are you sure you want to permanently delete "${itemName}" from trash?`,
         onSubmit: async () => {
-          const drive = getDrive()
           try {
             const nodeUid = generateNodeUid(document.volumeId, document.linkId)
-            await deleteDocument(drive, nodeUid)
+            await deleteDocument(nodeUid)
           } catch (error) {
             reportTrashError(error)
             createNotification({
