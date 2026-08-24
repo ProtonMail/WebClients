@@ -1,17 +1,13 @@
 import { put, select, takeEvery } from 'redux-saga/effects';
 
-import type { AccessItem } from '@proton/pass/lib/access/types';
-import { getPrimaryPublicKeyForEmail } from '@proton/pass/lib/auth/address';
-import type { InviteData } from '@proton/pass/lib/invites/invite.requests';
-import { loadInvites, promoteInvite } from '@proton/pass/lib/invites/invite.requests';
-import {
-    newUserInvitePromoteFailure,
-    newUserInvitePromoteIntent,
-    newUserInvitePromoteSuccess,
-} from '@proton/pass/store/actions';
-import { syncAccess } from '@proton/pass/store/actions/creators/polling';
-import { selectAccessOrThrow } from '@proton/pass/store/selectors';
-import type { Maybe } from '@proton/pass/types';
+import type { AccessItem } from '../../../lib/access/types';
+import { getPrimaryPublicKeyForEmail } from '../../../lib/auth/address';
+import type { InviteData } from '../../../lib/invites/invite.requests';
+import { loadInvites, promoteInvite } from '../../../lib/invites/invite.requests';
+import type { Maybe } from '../../../types';
+import { newUserInvitePromoteFailure, newUserInvitePromoteIntent, newUserInvitePromoteSuccess } from '../../actions';
+import { syncAccess } from '../../actions/creators/polling';
+import { selectAccessOrThrow } from '../../selectors';
 
 function* promoteInviteWorker({ payload, meta: { request } }: ReturnType<typeof newUserInvitePromoteIntent>) {
     try {

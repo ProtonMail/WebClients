@@ -1,12 +1,13 @@
 import { type CSSProperties, type FC, useEffect, useState } from 'react';
 
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { useEnsureMounted } from '@proton/pass/hooks/useEnsureMounted';
-import { useStatefulRef } from '@proton/pass/hooks/useStatefulRef';
-import { intoDomainImageHostname } from '@proton/pass/lib/urls/utils/utils';
-import type { Maybe } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
+
+import { useEnsureMounted } from '../../../hooks/useEnsureMounted';
+import { useStatefulRef } from '../../../hooks/useStatefulRef';
+import { intoDomainImageHostname } from '../../../lib/urls/utils/utils';
+import type { Maybe } from '../../../types';
+import { usePassCore } from '../../Core/PassCoreProvider';
 
 export enum ImageStatus {
     LOADING,

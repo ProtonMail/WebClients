@@ -1,6 +1,7 @@
 import { uint8ArrayToUtf8String, utf8StringToUint8Array } from '@protontech/crypto/utils';
-import { deobfuscate, obfuscate, obfuscateLegacy } from '@proton/pass/utils/obfuscate/xor';
-import { deserialize, serialize } from '@proton/pass/utils/object/serialize';
+
+import { deobfuscate, obfuscate, obfuscateLegacy } from '../../utils/obfuscate/xor';
+import { deserialize, serialize } from '../../utils/object/serialize';
 
 /** @deprecated use encodeUserData */
 export const encodeUserDataLegacy = (email: string = '', displayName: string = ''): string => {

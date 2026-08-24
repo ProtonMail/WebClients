@@ -1,10 +1,11 @@
 import { c } from 'ttag';
 
-import { usePasswordTypeSwitch, usePasswordUnlock } from '@proton/pass/components/Lock/PasswordUnlockProvider';
-import { useRequest } from '@proton/pass/hooks/useRequest';
-import { ReauthAction } from '@proton/pass/lib/auth/reauth';
-import { offlineSetup } from '@proton/pass/store/actions';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+
+import { usePasswordTypeSwitch, usePasswordUnlock } from '../../components/Lock/PasswordUnlockProvider';
+import { ReauthAction } from '../../lib/auth/reauth';
+import { offlineSetup } from '../../store/actions';
+import { useRequest } from '../useRequest';
 
 export const useOfflineSetup = () => {
     const confirmPassword = usePasswordUnlock();

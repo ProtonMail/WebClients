@@ -1,8 +1,12 @@
 import capitalize from 'lodash/capitalize';
 import { c } from 'ttag';
 
-import { ImportProviderError, ImportReaderError } from '@proton/pass/lib/import/helpers/error';
-import { attachFilesToItem } from '@proton/pass/lib/import/helpers/files';
+import type { ItemImportIntent, Maybe } from '../../../../types';
+import { truthy } from '../../../../utils/fp/predicates';
+import { logger } from '../../../../utils/logger';
+import { isObject } from '../../../../utils/object/is-object';
+import { ImportProviderError, ImportReaderError } from '../../helpers/error';
+import { attachFilesToItem } from '../../helpers/files';
 import {
     getImportedVaultName,
     importCreditCardItem,
@@ -10,13 +14,8 @@ import {
     importIdentityItem,
     importLoginItem,
     importNoteItem,
-} from '@proton/pass/lib/import/helpers/transformers';
-import type { ImportReaderResult, ImportVault } from '@proton/pass/lib/import/types';
-import type { ItemImportIntent, Maybe } from '@proton/pass/types';
-import { truthy } from '@proton/pass/utils/fp/predicates';
-import { logger } from '@proton/pass/utils/logger';
-import { isObject } from '@proton/pass/utils/object/is-object';
-
+} from '../../helpers/transformers';
+import type { ImportReaderResult, ImportVault } from '../../types';
 import type { EnpassItem } from './enpass.types';
 import { EnpassCategory, type EnpassData } from './enpass.types';
 import {

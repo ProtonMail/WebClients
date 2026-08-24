@@ -1,10 +1,11 @@
 import type { AesGcmCryptoKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import { deriveKey } from '@protontech/crypto/subtle/aesGcm.ts';
-import type { AuthStore } from '@proton/pass/lib/auth/store';
-import { decryptData, encryptData } from '@proton/pass/lib/crypto/utils/crypto-helpers';
-import type { ExportRequestOptions } from '@proton/pass/lib/export/types';
-import { PassEncryptionTag } from '@proton/pass/types';
 import { uint8ArrayToUtf8String, utf8StringToUint8Array } from '@protontech/crypto/utils';
+
+import { PassEncryptionTag } from '../../types';
+import { decryptData, encryptData } from '../crypto/utils/crypto-helpers';
+import type { ExportRequestOptions } from '../export/types';
+import type { AuthStore } from './store';
 
 export enum ReauthAction {
     BIOMETRICS_SETUP = 'BIOMETRICS_SETUP',

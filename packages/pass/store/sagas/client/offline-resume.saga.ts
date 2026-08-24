@@ -1,11 +1,11 @@
 import { put } from 'redux-saga/effects';
 
-import { api } from '@proton/pass/lib/api/api';
-import { isPassCryptoError } from '@proton/pass/lib/crypto/utils/errors';
-import { offlineResume, startEventPolling } from '@proton/pass/store/actions';
-import { createRequestSaga } from '@proton/pass/store/request/sagas';
 import identity from '@proton/utils/identity';
 
+import { api } from '../../../lib/api/api';
+import { isPassCryptoError } from '../../../lib/crypto/utils/errors';
+import { offlineResume, startEventPolling } from '../../actions';
+import { createRequestSaga } from '../../request/sagas';
 import { hydrate } from './hydrate.saga';
 
 export default createRequestSaga({

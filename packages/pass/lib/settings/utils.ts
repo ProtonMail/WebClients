@@ -1,8 +1,8 @@
-import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
-import { selectCanCreateItems } from '@proton/pass/store/selectors/shares';
-import type { State } from '@proton/pass/store/types';
-import type { AutoFillSettings } from '@proton/pass/types/worker/settings';
-import { partialMerge } from '@proton/pass/utils/object/merge';
+import type { ProxiedSettings } from '../../store/reducers/settings';
+import { selectCanCreateItems } from '../../store/selectors/shares';
+import type { State } from '../../store/types';
+import type { AutoFillSettings } from '../../types/worker/settings';
+import { partialMerge } from '../../utils/object/merge';
 
 /** When migrating to >=1.24.0 :
  * - if `inject` AND `openOnFocus` are undefined then it's a

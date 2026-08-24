@@ -1,8 +1,8 @@
 import { useCallback, useMemo, useRef, useState } from 'react';
 
-import type { MaybePromise } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
+import type { MaybePromise } from '../types';
 import { useRerender } from './useRerender';
 
 export class AsyncModalAbortedError extends Error {}

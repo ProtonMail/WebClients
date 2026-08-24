@@ -1,15 +1,15 @@
 import { call, put, select } from 'redux-saga/effects';
 
-import { hasAttachments, hasHadAttachments } from '@proton/pass/lib/items/item.predicates';
-import { deleteItemRevisions, deleteItems } from '@proton/pass/lib/items/item.requests';
-import { createTelemetryEvent } from '@proton/pass/lib/telemetry/utils';
-import { filesResolve, itemDelete, itemDeleteRevisions } from '@proton/pass/store/actions';
-import { withRevalidate } from '@proton/pass/store/request/enhancers';
-import { createRequestSaga } from '@proton/pass/store/request/sagas';
-import { selectItem } from '@proton/pass/store/selectors';
-import type { ItemRevision, Maybe } from '@proton/pass/types';
-import { TelemetryEventName, TelemetryItemType } from '@proton/pass/types/data/telemetry';
-import { or } from '@proton/pass/utils/fp/predicates';
+import { hasAttachments, hasHadAttachments } from '../../../lib/items/item.predicates';
+import { deleteItemRevisions, deleteItems } from '../../../lib/items/item.requests';
+import { createTelemetryEvent } from '../../../lib/telemetry/utils';
+import type { ItemRevision, Maybe } from '../../../types';
+import { TelemetryEventName, TelemetryItemType } from '../../../types/data/telemetry';
+import { or } from '../../../utils/fp/predicates';
+import { filesResolve, itemDelete, itemDeleteRevisions } from '../../actions';
+import { withRevalidate } from '../../request/enhancers';
+import { createRequestSaga } from '../../request/sagas';
+import { selectItem } from '../../selectors';
 
 const removeItems = createRequestSaga({
     actions: itemDelete,

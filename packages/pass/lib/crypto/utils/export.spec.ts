@@ -1,5 +1,5 @@
-import { decryptPassExport, encryptPassExport } from '@proton/pass/lib/crypto/utils/export';
-import { randomContents, releaseCryptoProxy, setupCryptoProxyForTesting } from '@proton/pass/lib/crypto/utils/testing';
+import { decryptPassExport, encryptPassExport } from './export';
+import { randomContents, releaseCryptoProxy, setupCryptoProxyForTesting } from './testing';
 
 describe('PGP Exporting', () => {
     beforeAll(async () => setupCryptoProxyForTesting());

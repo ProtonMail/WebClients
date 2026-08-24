@@ -1,7 +1,6 @@
 import { parse } from 'tldts';
 
-import type { MaybeNull } from '@proton/pass/types';
-
+import type { MaybeNull } from '../../../types';
 import type { ParsedUrl } from '../types';
 import { sanitizeURL } from './sanitize';
 

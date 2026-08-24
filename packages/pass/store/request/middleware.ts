@@ -1,12 +1,12 @@
 import type { Action } from '@reduxjs/toolkit';
 import { type Middleware, isAction } from 'redux';
 
-import { selectRequest } from '@proton/pass/store/selectors';
-import type { Awaiter } from '@proton/pass/utils/fp/promises';
-import { awaiter } from '@proton/pass/utils/fp/promises';
-import { getEpoch } from '@proton/pass/utils/time/epoch';
 import noop from '@proton/utils/noop';
 
+import type { Awaiter } from '../../utils/fp/promises';
+import { awaiter } from '../../utils/fp/promises';
+import { getEpoch } from '../../utils/time/epoch';
+import { selectRequest } from '../selectors';
 import type { RequestAsyncResult, RequestState, RequestType, WithRequest } from './types';
 import { isActionWithRequest } from './utils';
 
@@ -77,8 +77,7 @@ export const requestMiddlewareFactory =
                          * to match the `redux-thunk` pattern. Otherwise, returns `noop` to
                          * avoid unnecessary promise tracking. This aligns with our saga
                          * architecture while maintaining thunk-like API for UI requests. */
-                        const maybePromise = (result: () => Promise<RequestAsyncResult>) =>
-                            (acceptAsync(action) ? result : noop)();
+                        const maybePromise = (result: () => Promise<RequestAsyncResult>) => (acceptAsync(action) ? result : noop)();
 
                         const pendingRequest = selectRequest(requestID)(getState());
 

@@ -1,12 +1,12 @@
 import { createContext } from 'react';
 
-import { createUseContext } from '@proton/pass/hooks/useContextFactory';
+import { createUseContext } from '../../../../hooks/useContextFactory';
 import type {
     AliasContactGetResponse,
     AliasContactWithStatsGetResponse,
     MaybeNull,
     SelectedItem,
-} from '@proton/pass/types';
+} from '../../../../types';
 
 export interface AliasContactsContextValue extends SelectedItem {
     contacts: { active: AliasContactWithStatsGetResponse[]; blocked: AliasContactWithStatsGetResponse[] };

@@ -1,18 +1,18 @@
 import { type FC, type ReactElement, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
-import { VaultMenuAll } from '@proton/pass/components/Menu/Vault/VaultMenuAll';
-import { VaultMenuItem } from '@proton/pass/components/Menu/Vault/VaultMenuItem';
-import { VaultMenuTrash } from '@proton/pass/components/Menu/Vault/VaultMenuTrash';
-import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
-import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
-import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
-import { isShareManageable } from '@proton/pass/lib/shares/share.predicates';
-import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
-import { selectActiveSharedWithMeCount, selectShare, selectVisibleVaultsWithCount } from '@proton/pass/store/selectors';
-import type { ShareType } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
+import { isShareManageable } from '../../../lib/shares/share.predicates';
+import { isWritableVault } from '../../../lib/vaults/vault.predicates';
+import { selectActiveSharedWithMeCount, selectShare, selectVisibleVaultsWithCount } from '../../../store/selectors';
+import type { ShareType } from '../../../types';
+import { useNavigationFilters } from '../../Navigation/NavigationFilters';
+import { useItemScope } from '../../Navigation/NavigationMatches';
+import { useVaultActions } from '../../Vault/VaultActionsProvider';
+import { VaultMenuAll } from './VaultMenuAll';
+import { VaultMenuItem } from './VaultMenuItem';
+import { VaultMenuTrash } from './VaultMenuTrash';
 import { type VaultMenuOption, getVaultOptionInfo } from './utils';
 
 import './VaultMenu.scss';

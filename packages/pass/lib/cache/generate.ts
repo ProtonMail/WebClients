@@ -1,12 +1,12 @@
-import { PassCrypto } from '@proton/pass/lib/crypto';
-import { encryptData } from '@proton/pass/lib/crypto/utils/crypto-helpers';
-import { selectCachableState } from '@proton/pass/store/selectors/cache';
-import type { State } from '@proton/pass/store/types';
-import { PassEncryptionTag } from '@proton/pass/types';
-import type { EncryptedPassCache } from '@proton/pass/types/worker/cache';
-import { serialize } from '@proton/pass/utils/object/serialize';
 import { binaryStringToUint8Array, uint8ArrayToBinaryString } from '@proton/shared/lib/helpers/encoding';
 
+import { selectCachableState } from '../../store/selectors/cache';
+import type { State } from '../../store/types';
+import { PassEncryptionTag } from '../../types';
+import type { EncryptedPassCache } from '../../types/worker/cache';
+import { serialize } from '../../utils/object/serialize';
+import { PassCrypto } from '../crypto';
+import { encryptData } from '../crypto/utils/crypto-helpers';
 import { CACHE_SALT_LENGTH, encryptOfflineCacheKey, getCacheEncryptionKey } from './crypto';
 
 type GenerateCacheOptions = {

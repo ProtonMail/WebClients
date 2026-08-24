@@ -1,16 +1,16 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import { isActive, isTrashed } from '@proton/pass/lib/items/item.predicates';
-import { filterItemsByShareId, filterItemsByType, sortItems } from '@proton/pass/lib/items/item.utils';
-import { searchItems } from '@proton/pass/lib/search/match-items';
-import type { SelectItemsOptions } from '@proton/pass/lib/search/types';
-import { itemsFromSelection, selectAllItems, selectItems, selectVisibleItems } from '@proton/pass/store/selectors/items';
-import { selectVisibleSecureLinkedItems, selectVisibleSecureLinksCount } from '@proton/pass/store/selectors/secure-links';
-import { selectSharedByMe, selectSharedWithMe } from '@proton/pass/store/selectors/shared';
-import { selectState } from '@proton/pass/store/selectors/utils';
-import type { State } from '@proton/pass/store/types';
-import type { ItemRevision } from '@proton/pass/types';
-import { pipe } from '@proton/pass/utils/fp/pipe';
+import { isActive, isTrashed } from '../../lib/items/item.predicates';
+import { filterItemsByShareId, filterItemsByType, sortItems } from '../../lib/items/item.utils';
+import { searchItems } from '../../lib/search/match-items';
+import type { SelectItemsOptions } from '../../lib/search/types';
+import type { ItemRevision } from '../../types';
+import { pipe } from '../../utils/fp/pipe';
+import type { State } from '../types';
+import { itemsFromSelection, selectAllItems, selectItems, selectVisibleItems } from './items';
+import { selectVisibleSecureLinkedItems, selectVisibleSecureLinksCount } from './secure-links';
+import { selectSharedByMe, selectSharedWithMe } from './shared';
+import { selectState } from './utils';
 
 export type ItemsSearchResults = {
     filtered: ItemRevision[];

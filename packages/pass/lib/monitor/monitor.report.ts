@@ -5,14 +5,13 @@ import {
     selectExcludedItems,
     selectOwnedVaults,
     selectPassPlan,
-} from '@proton/pass/store/selectors';
-import type { State } from '@proton/pass/store/types';
-import type { B2BEvent } from '@proton/pass/types/data/b2b';
-import { B2BEventName } from '@proton/pass/types/data/b2b';
-import type { EventDispatcher } from '@proton/pass/utils/event/dispatcher';
-import { prop } from '@proton/pass/utils/fp/lens';
-import { getEpoch } from '@proton/pass/utils/time/epoch';
-
+} from '../../store/selectors';
+import type { State } from '../../store/types';
+import type { B2BEvent } from '../../types/data/b2b';
+import { B2BEventName } from '../../types/data/b2b';
+import type { EventDispatcher } from '../../utils/event/dispatcher';
+import { prop } from '../../utils/fp/lens';
+import { getEpoch } from '../../utils/time/epoch';
 import { isBusinessPlan } from '../organization/helpers';
 import type { MonitorService } from './service';
 

@@ -4,11 +4,12 @@ import { useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { CardContent } from '@proton/pass/components/Layout/Card/CardContent';
-import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
-import { selectPassPlan } from '@proton/pass/store/selectors';
-import type { MaybeNull } from '@proton/pass/types';
-import { epochToRelativeDaysAgo } from '@proton/pass/utils/time/format';
+
+import { isPaidPlan } from '../../../lib/user/user.predicates';
+import { selectPassPlan } from '../../../store/selectors';
+import type { MaybeNull } from '../../../types';
+import { epochToRelativeDaysAgo } from '../../../utils/time/format';
+import { CardContent } from '../../Layout/Card/CardContent';
 
 type Props = {
     createTime: number;

@@ -1,15 +1,15 @@
 import { channel, eventChannel, runSaga } from 'redux-saga';
 
-import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
-import * as itemRequests from '@proton/pass/lib/items/item.requests';
-import * as shareParser from '@proton/pass/lib/shares/share.parser';
-import { sharesEventNew } from '@proton/pass/store/actions';
-import { sagaSetup } from '@proton/pass/store/sagas/testing';
-import type { RootSagaOptions } from '@proton/pass/store/types';
-import type { Api, IndexedByShareIdAndItemId, ItemRevision, Share, ShareGetResponse, SharesGetResponse } from '@proton/pass/types';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import noop from '@proton/utils/noop';
 
+import { ACTIVE_POLLING_TIMEOUT } from '../../../../lib/events/constants';
+import * as itemRequests from '../../../../lib/items/item.requests';
+import * as shareParser from '../../../../lib/shares/share.parser';
+import type { Api, IndexedByShareIdAndItemId, ItemRevision, Share, ShareGetResponse, SharesGetResponse } from '../../../../types';
+import { sharesEventNew } from '../../../actions';
+import type { RootSagaOptions } from '../../../types';
+import { sagaSetup } from '../../testing';
 import * as channelShare from './channel.share';
 import * as SharesChannel from './channel.shares';
 import type { EventChannel } from './types';

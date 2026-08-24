@@ -1,7 +1,7 @@
 import { put, takeEvery } from 'redux-saga/effects';
 
-import { resendInvite } from '@proton/pass/lib/invites/invite.requests';
-import { inviteResendFailure, inviteResendIntent, inviteResendSuccess } from '@proton/pass/store/actions';
+import { resendInvite } from '../../../lib/invites/invite.requests';
+import { inviteResendFailure, inviteResendIntent, inviteResendSuccess } from '../../actions';
 
 function* resendInviteWorker({ payload, meta: { request } }: ReturnType<typeof inviteResendIntent>) {
     try {

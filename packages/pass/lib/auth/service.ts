@@ -1,23 +1,6 @@
 import { importKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import { c } from 'ttag';
 
-import { DEFAULT_LOCK_TTL } from '@proton/pass/constants';
-import { PassErrorCode } from '@proton/pass/lib/api/errors';
-import type { RefreshSessionData } from '@proton/pass/lib/api/refresh';
-import type { ReauthActionPayload } from '@proton/pass/lib/auth/reauth';
-import { generateOfflineComponents } from '@proton/pass/lib/cache/crypto';
-import { PassCryptoError } from '@proton/pass/lib/crypto/utils/errors';
-import { loadCoreCryptoWorker } from '@proton/pass/lib/crypto/utils/worker';
-import type { Notification } from '@proton/pass/store/actions/enhancers/notification';
-import type { Api, Maybe, MaybeNull, MaybePromise } from '@proton/pass/types';
-import { NotificationKey } from '@proton/pass/types/worker/notification';
-import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
-import { asyncLock } from '@proton/pass/utils/fp/promises';
-import { safeCall } from '@proton/pass/utils/fp/safe-call';
-import { logger } from '@proton/pass/utils/logger';
-import { partialMerge } from '@proton/pass/utils/object/merge';
-import { deleteKey } from '@proton/pass/utils/object/zero';
-import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { revoke, setLocalKey } from '@proton/shared/lib/api/auth';
 import {
     getApiError,
@@ -31,6 +14,22 @@ import { getForkDecryptedBlob } from '@proton/shared/lib/authentication/fork/blo
 import type { LocalKeyResponse } from '@proton/shared/lib/authentication/interface';
 import noop from '@proton/utils/noop';
 
+import { DEFAULT_LOCK_TTL } from '../../constants';
+import type { Notification } from '../../store/actions/enhancers/notification';
+import type { Api, Maybe, MaybeNull, MaybePromise } from '../../types';
+import { NotificationKey } from '../../types/worker/notification';
+import { getErrorMessage } from '../../utils/errors/get-error-message';
+import { asyncLock } from '../../utils/fp/promises';
+import { safeCall } from '../../utils/fp/safe-call';
+import { logger } from '../../utils/logger';
+import { partialMerge } from '../../utils/object/merge';
+import { deleteKey } from '../../utils/object/zero';
+import { getEpoch } from '../../utils/time/epoch';
+import { PassErrorCode } from '../api/errors';
+import type { RefreshSessionData } from '../api/refresh';
+import { generateOfflineComponents } from '../cache/crypto';
+import { PassCryptoError } from '../crypto/utils/errors';
+import { loadCoreCryptoWorker } from '../crypto/utils/worker';
 import type { PullForkCall, RequestForkData } from './fork';
 import {
     type ConsumeForkPayload,
@@ -54,6 +53,7 @@ import {
     verifyOfflinePassword,
     verifyPassword,
 } from './password';
+import type { ReauthActionPayload } from './reauth';
 import {
     type AuthSession,
     type EncryptedAuthSession,

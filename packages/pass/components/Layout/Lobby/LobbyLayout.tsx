@@ -1,6 +1,6 @@
 import type { FC, ReactNode } from 'react';
 
-import { PassIconLogo } from '@proton/pass/components/Layout/Logo/PassIconLogo';
+import { PassIconLogo } from '../Logo/PassIconLogo';
 
 import './LobbyLayout.scss';
 

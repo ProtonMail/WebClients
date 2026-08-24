@@ -4,17 +4,16 @@ import { useSelector } from 'react-redux';
 import { Form, FormikProvider } from 'formik';
 import { c } from 'ttag';
 
-import { useInviteActions } from '@proton/pass/components/Invite/InviteContext';
-import type { InviteStepAttributes } from '@proton/pass/components/Invite/Steps/InviteStepActions';
-import { InviteStepActions } from '@proton/pass/components/Invite/Steps/InviteStepActions';
-import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';
-import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
-import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
-import { useInviteForm } from '@proton/pass/hooks/invite/useInviteForm';
-import { AccessTarget } from '@proton/pass/lib/access/types';
-import { selectShareOrThrow } from '@proton/pass/store/selectors';
-import type { SelectedShare, ShareType, VaultInviteFormValues } from '@proton/pass/types';
-
+import { useInviteForm } from '../../../hooks/invite/useInviteForm';
+import { AccessTarget } from '../../../lib/access/types';
+import { selectShareOrThrow } from '../../../store/selectors';
+import type { SelectedShare, ShareType, VaultInviteFormValues } from '../../../types';
+import { SidebarModal } from '../../Layout/Modal/SidebarModal';
+import { Panel } from '../../Layout/Panel/Panel';
+import { PanelHeader } from '../../Layout/Panel/PanelHeader';
+import { useInviteActions } from '../InviteContext';
+import type { InviteStepAttributes } from '../Steps/InviteStepActions';
+import { InviteStepActions } from '../Steps/InviteStepActions';
 import { FORM_ID, VaultInviteForm } from './VaultInviteForm';
 
 export const VaultInviteCreate: FC<SelectedShare> = ({ shareId }) => {

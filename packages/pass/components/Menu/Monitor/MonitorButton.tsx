@@ -3,13 +3,14 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { PillBadge } from '@proton/pass/components/Layout/Badge/PillBadge';
-import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
-import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
-import type { RouteMatchProps } from '@proton/pass/components/Navigation/RouteMatch';
-import { getLocalPath } from '@proton/pass/components/Navigation/routing';
-import { selectTotalBreaches } from '@proton/pass/store/selectors';
 import clsx from '@proton/utils/clsx';
+
+import { selectTotalBreaches } from '../../../store/selectors';
+import { PillBadge } from '../../Layout/Badge/PillBadge';
+import { DropdownMenuButton } from '../../Layout/Dropdown/DropdownMenuButton';
+import { useNavigate } from '../../Navigation/NavigationActions';
+import type { RouteMatchProps } from '../../Navigation/RouteMatch';
+import { getLocalPath } from '../../Navigation/routing';
 
 export const MonitorButton: FC<RouteMatchProps> = ({ active, exact }) => {
     const navigate = useNavigate();

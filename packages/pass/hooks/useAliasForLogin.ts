@@ -3,13 +3,12 @@ import { useSelector } from 'react-redux';
 
 import type { FormikContextType } from 'formik';
 
-import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
-import { selectAliasByAliasEmail } from '@proton/pass/store/selectors';
-import type { ItemRevision, LoginItemFormValues, Maybe } from '@proton/pass/types';
-import { OrganizationAliasCreateMode } from '@proton/pass/types';
-import { merge } from '@proton/pass/utils/object/merge';
-import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
-
+import { useOrganization } from '../components/Organization/OrganizationProvider';
+import { selectAliasByAliasEmail } from '../store/selectors';
+import type { ItemRevision, LoginItemFormValues, Maybe } from '../types';
+import { OrganizationAliasCreateMode } from '../types';
+import { merge } from '../utils/object/merge';
+import { isEmptyString } from '../utils/string/is-empty-string';
 import type { UseAliasOptionsResult } from './useAliasOptions';
 import { useAliasOptions } from './useAliasOptions';
 

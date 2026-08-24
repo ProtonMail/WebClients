@@ -1,4 +1,4 @@
-import { requestActionsFactory } from '@proton/pass/store/request/flow';
+import { requestActionsFactory } from './flow';
 
 type IntentDTO = { value: number };
 type FailureDTO = { ok: false };

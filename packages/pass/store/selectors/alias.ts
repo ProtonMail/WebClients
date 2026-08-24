@@ -1,14 +1,14 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import { isActive, isTrashed } from '@proton/pass/lib/items/item.predicates';
-import type { AliasDetailsState } from '@proton/pass/store/reducers';
-import type { State } from '@proton/pass/store/types';
-import type { ItemRevision, Maybe } from '@proton/pass/types';
-import type { AliasMailbox } from '@proton/pass/types/data/alias';
-import { prop } from '@proton/pass/utils/fp/lens';
-import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import isTruthy from '@proton/utils/isTruthy';
 
+import { isActive, isTrashed } from '../../lib/items/item.predicates';
+import type { ItemRevision, Maybe } from '../../types';
+import type { AliasMailbox } from '../../types/data/alias';
+import { prop } from '../../utils/fp/lens';
+import { deobfuscate } from '../../utils/obfuscate/xor';
+import type { AliasDetailsState } from '../reducers';
+import type { State } from '../types';
 import { selectVisibleAliasItems, selectVisibleLoginItems } from './items';
 
 export const selectAliasState = ({ alias }: State) => alias;
@@ -22,9 +22,8 @@ export const selectMailboxesForAlias = (aliasEmail: string) =>
     createSelector([selectAliasState], (alias): Maybe<AliasMailbox[]> => alias.aliasDetails?.[aliasEmail]?.mailboxes);
 
 export const selectAliasByAliasEmail = (aliasEmail: string) =>
-    createSelector(
-        [selectVisibleAliasItems],
-        (aliasItems): Maybe<ItemRevision<'alias'>> => aliasItems.find((item) => item.aliasEmail! === aliasEmail)
+    createSelector([selectVisibleAliasItems], (aliasItems): Maybe<ItemRevision<'alias'>> =>
+        aliasItems.find((item) => item.aliasEmail! === aliasEmail)
     );
 
 export const selectCanManageAlias = ({ user: { plan } }: State) => Boolean(plan?.ManageAlias);

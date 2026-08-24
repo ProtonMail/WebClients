@@ -1,9 +1,9 @@
 import { put, select, take, takeLeading } from 'redux-saga/effects';
 
-import { restoreTrashFailure, restoreTrashIntent, restoreTrashProgress, restoreTrashSuccess } from '@proton/pass/store/actions';
-import { type BulkRestoreChannel, bulkRestoreChannel } from '@proton/pass/store/sagas/items/item-bulk-restore.saga';
-import { selectTrashedItems } from '@proton/pass/store/selectors';
-import type { ItemRevision } from '@proton/pass/types';
+import type { ItemRevision } from '../../../types';
+import { restoreTrashFailure, restoreTrashIntent, restoreTrashProgress, restoreTrashSuccess } from '../../actions';
+import { selectTrashedItems } from '../../selectors';
+import { type BulkRestoreChannel, bulkRestoreChannel } from '../items/item-bulk-restore.saga';
 
 function* restoreTrash({ meta }: ReturnType<typeof restoreTrashIntent>) {
     const requestId = meta.request.id;

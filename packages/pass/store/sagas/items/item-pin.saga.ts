@@ -1,7 +1,7 @@
 import { put, takeEvery } from 'redux-saga/effects';
 
-import { pinItem } from '@proton/pass/lib/items/item.requests';
-import { itemPinFailure, itemPinIntent, itemPinSuccess } from '@proton/pass/store/actions';
+import { pinItem } from '../../../lib/items/item.requests';
+import { itemPinFailure, itemPinIntent, itemPinSuccess } from '../../actions';
 
 function* itemPinWorker({ payload, meta: { request } }: ReturnType<typeof itemPinIntent>) {
     try {

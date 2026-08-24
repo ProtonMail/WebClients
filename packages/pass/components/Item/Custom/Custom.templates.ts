@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
 import type { IconName } from '@proton/icons/types';
-import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
-import type { CustomExtraFieldType, DeobfuscatedItemExtraField, ItemCustomType } from '@proton/pass/types';
+
+import type { CustomExtraFieldType, DeobfuscatedItemExtraField, ItemCustomType } from '../../../types';
+import { SubTheme } from '../../Layout/Theme/types';
 
 export type CustomTemplate = {
     label: string;

@@ -2,10 +2,11 @@ import type { FC, ReactNode } from 'react';
 import { useEffect, useMemo } from 'react';
 
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import type { SpotlightMessage } from '@proton/pass/types';
-import { pipe } from '@proton/pass/utils/fp/pipe';
 import noop from '@proton/utils/noop';
+
+import type { SpotlightMessage } from '../../types';
+import { pipe } from '../../utils/fp/pipe';
+import { usePassCore } from '../Core/PassCoreProvider';
 
 export type WithSpotlightRenderProps = {
     acknowledge: () => void;

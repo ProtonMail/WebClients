@@ -1,12 +1,12 @@
-import { importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
-import type { ShareId, ShareManager } from '@proton/pass/types';
+import type { ShareId, ShareManager } from '../../../types';
 import {
     type OpenedShare,
     type Rotation,
     type SerializedCryptoContext,
     type ShareKey,
     ShareType,
-} from '@proton/pass/types';
+} from '../../../types';
+import { importSymmetricKey } from './crypto-helpers';
 
 export const hydrateShareKeys = async (
     serializedKeys: SerializedCryptoContext<Map<Rotation, ShareKey>>

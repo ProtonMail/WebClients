@@ -2,11 +2,10 @@ import { type FC, useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import { ConfirmationModal } from '@proton/pass/components/Confirmation/ConfirmationModal';
-import { useRequest } from '@proton/pass/hooks/useRequest';
-import { deleteCustomDomain } from '@proton/pass/store/actions';
-import { pipe } from '@proton/pass/utils/fp/pipe';
-
+import { useRequest } from '../../../../hooks/useRequest';
+import { deleteCustomDomain } from '../../../../store/actions';
+import { pipe } from '../../../../utils/fp/pipe';
+import { ConfirmationModal } from '../../../Confirmation/ConfirmationModal';
 import { useAliasDomains, useCustomDomain } from './AliasDomainsContext';
 
 type Props = { domainID: number };

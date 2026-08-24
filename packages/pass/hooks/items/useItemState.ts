@@ -1,18 +1,18 @@
 import { useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
-import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
-import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
-import { isClonableItem, isItemShared, isMonitored, isPinned, isTrashed } from '@proton/pass/lib/items/item.predicates';
-import { isGroupShare, isShareManageable, isVaultShare } from '@proton/pass/lib/shares/share.predicates';
-import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
-import { itemPinRequest, itemUnpinRequest } from '@proton/pass/store/actions/requests';
-import type { ShareItem } from '@proton/pass/store/reducers';
-import { selectAllVaults, selectPassPlan, selectRequestInFlight } from '@proton/pass/store/selectors';
-import type { ItemRevision } from '@proton/pass/types';
-import { OrganizationItemShareMode, OrganizationPublicLinkMode, ShareRole } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
-import { UserPassPlan } from '@proton/pass/types/api/plan';
+import { useOrganization } from '../../components/Organization/OrganizationProvider';
+import { isClonableItem, isItemShared, isMonitored, isPinned, isTrashed } from '../../lib/items/item.predicates';
+import { isGroupShare, isShareManageable, isVaultShare } from '../../lib/shares/share.predicates';
+import { isPaidPlan } from '../../lib/user/user.predicates';
+import { itemPinRequest, itemUnpinRequest } from '../../store/actions/requests';
+import type { ShareItem } from '../../store/reducers';
+import { selectAllVaults, selectPassPlan, selectRequestInFlight } from '../../store/selectors';
+import type { ItemRevision } from '../../types';
+import { OrganizationItemShareMode, OrganizationPublicLinkMode, ShareRole } from '../../types';
+import { PassFeature } from '../../types/api/features';
+import { UserPassPlan } from '../../types/api/plan';
+import { useFeatureFlag } from '../useFeatureFlag';
 
 export type ItemState = {
     canClone: boolean;

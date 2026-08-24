@@ -1,15 +1,10 @@
 import type { Reducer } from 'redux';
 
-import { MAX_PASSWORD_HISTORY_RETENTION_WEEKS } from '@proton/pass/constants';
-import {
-    passwordDelete,
-    passwordHistoryClear,
-    passwordHistoryGarbageCollect,
-    passwordSave,
-} from '@proton/pass/store/actions/creators/password';
-import type { MaybeNull } from '@proton/pass/types';
-import { UNIX_WEEK } from '@proton/pass/utils/time/constants';
-import { getEpoch } from '@proton/pass/utils/time/epoch';
+import { MAX_PASSWORD_HISTORY_RETENTION_WEEKS } from '../../constants';
+import type { MaybeNull } from '../../types';
+import { UNIX_WEEK } from '../../utils/time/constants';
+import { getEpoch } from '../../utils/time/epoch';
+import { passwordDelete, passwordHistoryClear, passwordHistoryGarbageCollect, passwordSave } from '../actions/creators/password';
 
 export type PasswordHistoryEntry = {
     id: string;

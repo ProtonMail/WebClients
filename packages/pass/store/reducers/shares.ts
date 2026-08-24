@@ -1,5 +1,9 @@
 import type { Action, Reducer } from 'redux';
 
+import type { Share, ShareId, ShareType } from '../../types';
+import { or } from '../../utils/fp/predicates';
+import { objectDelete } from '../../utils/object/delete';
+import { fullMerge, partialMerge } from '../../utils/object/merge';
 import {
     inviteAccept,
     matchSyncAction,
@@ -15,11 +19,7 @@ import {
     vaultCreationSuccess,
     vaultDeleteSuccess,
     vaultEditSuccess,
-} from '@proton/pass/store/actions';
-import type { Share, ShareId, ShareType } from '@proton/pass/types';
-import { or } from '@proton/pass/utils/fp/predicates';
-import { objectDelete } from '@proton/pass/utils/object/delete';
-import { fullMerge, partialMerge } from '@proton/pass/utils/object/merge';
+} from '../actions';
 
 export type ShareItem<T extends ShareType = ShareType> = Share<T>;
 

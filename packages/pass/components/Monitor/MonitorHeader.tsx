@@ -4,10 +4,11 @@ import { type RouteChildrenProps, Switch } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { IcPassShieldMonitoringOk } from '@proton/icons/icons/IcPassShieldMonitoringOk';
-import { Breadcrumb } from '@proton/pass/components/Layout/Breadcrumbs/Breadcrumb';
-import { type BreadcrumbRoute, BreadcrumbSwitch } from '@proton/pass/components/Layout/Breadcrumbs/BreadcrumbSwitch';
-import { getLocalPath, subPath } from '@proton/pass/components/Navigation/routing';
 import { BRAND_NAME, DARK_WEB_MONITORING_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+
+import { Breadcrumb } from '../Layout/Breadcrumbs/Breadcrumb';
+import { type BreadcrumbRoute, BreadcrumbSwitch } from '../Layout/Breadcrumbs/BreadcrumbSwitch';
+import { getLocalPath, subPath } from '../Navigation/routing';
 
 const getMonitorBreadcrumbs = (): BreadcrumbRoute[] => [
     { path: 'duplicates', label: c('Title').t`Reused passwords`, active: true },

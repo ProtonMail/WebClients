@@ -4,12 +4,13 @@ import { c } from 'ttag';
 
 import { Kbd } from '@proton/atoms/Kbd/Kbd';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { AutotypeKeyboardShortcut } from '@proton/pass/components/Item/Autotype/AutotypeKeyboardShortcut';
-import type { Item } from '@proton/pass/types';
-import type { AutotypeAction } from '@proton/pass/types/desktop/autotype';
-import { AutotypeKey } from '@proton/pass/types/desktop/autotype';
-import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+
+import { AutotypeKeyboardShortcut } from '../../components/Item/Autotype/AutotypeKeyboardShortcut';
+import type { Item } from '../../types';
+import type { AutotypeAction } from '../../types/desktop/autotype';
+import { AutotypeKey } from '../../types/desktop/autotype';
+import { deobfuscate } from '../../utils/obfuscate/xor';
 
 export const useAutotypeActions = (data: Item<'login'>) =>
     useMemo(() => {

@@ -1,8 +1,9 @@
-import type { MaybeNull } from '@proton/pass/types';
-import type { Rect } from '@proton/pass/types/utils/dom';
-import { safeAsyncCall } from '@proton/pass/utils/fp/safe-call';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
+
+import type { MaybeNull } from '../../types';
+import type { Rect } from '../../types/utils/dom';
+import { safeAsyncCall } from '../fp/safe-call';
 
 export const REFRESH_RATE = 1000 / 24;
 

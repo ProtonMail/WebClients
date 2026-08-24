@@ -8,14 +8,14 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
-import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
-import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
-import { AccessTarget } from '@proton/pass/lib/access/types';
-import { newUserInvitePromoteIntent } from '@proton/pass/store/actions';
-import { selectAccessForMany, selectVaultsWithNewUserInvites } from '@proton/pass/store/selectors';
-import { NewUserInviteState, type ShareId } from '@proton/pass/types';
 
+import { useMemoSelector } from '../../../hooks/useMemoSelector';
+import { AccessTarget } from '../../../lib/access/types';
+import { newUserInvitePromoteIntent } from '../../../store/actions';
+import { selectAccessForMany, selectVaultsWithNewUserInvites } from '../../../store/selectors';
+import { NewUserInviteState, type ShareId } from '../../../types';
+import { useOnline } from '../../Core/ConnectivityProvider';
+import { PassModal } from '../../Layout/Modal/PassModal';
 import { PendingNewUsersForShare } from './PendingNewUsersForShare';
 
 export const PendingNewUsersApprovalModal: FC = () => {

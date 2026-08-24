@@ -5,11 +5,12 @@ import { c } from 'ttag';
 
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
-import { useSetClipboardTTL } from '@proton/pass/components/Settings/Clipboard/ClipboardProvider';
-import { getClipboardTTLOptions } from '@proton/pass/components/Settings/Clipboard/ClipboardSettings.utils';
-import { ClipboardTTL } from '@proton/pass/lib/clipboard/types';
-import { selectClipboardTTL } from '@proton/pass/store/selectors';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+
+import { ClipboardTTL } from '../../../lib/clipboard/types';
+import { selectClipboardTTL } from '../../../store/selectors';
+import { useSetClipboardTTL } from './ClipboardProvider';
+import { getClipboardTTLOptions } from './ClipboardSettings.utils';
 
 type Props = { disabled?: boolean };
 

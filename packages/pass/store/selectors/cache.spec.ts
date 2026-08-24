@@ -1,10 +1,9 @@
-import { SyncStrategy } from '@proton/pass/lib/sync/types';
-import { default as rootReducer } from '@proton/pass/store/reducers';
-import type { State } from '@proton/pass/store/types';
-import type { Invite } from '@proton/pass/types';
-import { InviteType } from '@proton/pass/types';
-import { uniqueId } from '@proton/pass/utils/string/unique-id';
-
+import { SyncStrategy } from '../../lib/sync/types';
+import type { Invite } from '../../types';
+import { InviteType } from '../../types';
+import { uniqueId } from '../../utils/string/unique-id';
+import { default as rootReducer } from '../reducers';
+import type { State } from '../types';
 import { selectCachableState } from './cache';
 
 const stateFor = (syncStrategy: SyncStrategy): State => {

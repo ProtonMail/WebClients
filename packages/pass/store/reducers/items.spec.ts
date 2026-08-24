@@ -1,6 +1,5 @@
-import { createTestItem } from '@proton/pass/lib/items/item.test.utils';
-import { uniqueId } from '@proton/pass/utils/string/unique-id';
-
+import { createTestItem } from '../../lib/items/item.test.utils';
+import { uniqueId } from '../../utils/string/unique-id';
 import itemsReducer, { updateItem, updateItems, withOptimisticItemsByShareId } from './items';
 
 const slice = withOptimisticItemsByShareId.reducer(undefined, { type: '__TEST__' });

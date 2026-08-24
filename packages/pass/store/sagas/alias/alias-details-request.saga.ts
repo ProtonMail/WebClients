@@ -1,8 +1,8 @@
 import { put, takeEvery } from 'redux-saga/effects';
 
-import { getAliasDetails } from '@proton/pass/lib/alias/alias.requests';
-import { getAliasDetailsFailure, getAliasDetailsIntent, getAliasDetailsSuccess } from '@proton/pass/store/actions';
-import type { AliasDetails } from '@proton/pass/types';
+import { getAliasDetails } from '../../../lib/alias/alias.requests';
+import type { AliasDetails } from '../../../types';
+import { getAliasDetailsFailure, getAliasDetailsIntent, getAliasDetailsSuccess } from '../../actions';
 
 function* requestAliasDetails(action: ReturnType<typeof getAliasDetailsIntent>) {
     const {

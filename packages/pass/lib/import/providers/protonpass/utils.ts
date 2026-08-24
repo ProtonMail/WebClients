@@ -1,9 +1,10 @@
 import { c } from 'ttag';
 
-import { decryptPassExport } from '@proton/pass/lib/crypto/utils/export';
-import { ExportFormat } from '@proton/pass/lib/export/types';
-import { ImportReaderError } from '@proton/pass/lib/import/helpers/error';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+
+import { decryptPassExport } from '../../../crypto/utils/export';
+import { ExportFormat } from '../../../export/types';
+import { ImportReaderError } from '../../helpers/error';
 
 export const getProtonPassImportPGPType = async (buffer: Uint8Array<ArrayBuffer>): Promise<ExportFormat> => {
     const head = buffer.slice(0, 5);

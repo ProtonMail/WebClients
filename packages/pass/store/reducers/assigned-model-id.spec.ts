@@ -1,6 +1,5 @@
-import { assignedModelIdUpdated } from '@proton/pass/store/actions/creators/assigned-model-id';
-import { selectAssignedModelId } from '@proton/pass/store/selectors/assigned-model-id';
-
+import { assignedModelIdUpdated } from '../actions/creators/assigned-model-id';
+import { selectAssignedModelId } from '../selectors/assigned-model-id';
 import reducer from './assigned-model-id';
 
 describe('`assignedModelId` reducer', () => {

@@ -1,13 +1,14 @@
 import { put, select } from 'redux-saga/effects';
 
-import { resolveGroupInvites, resolveUserInvites } from '@proton/pass/lib/invites/invite.requests';
-import { partitionGroupInvites } from '@proton/pass/lib/invites/invite.utils';
-import type { EventProcessor } from '@proton/pass/lib/sync/types';
-import { getShareAccessOptions, syncInvites } from '@proton/pass/store/actions';
-import { selectItemsByShareId, selectShare } from '@proton/pass/store/selectors';
-import type { GroupInvite, ItemRevision, Maybe, Share, SyncEventShareOutput, UserInvite } from '@proton/pass/types';
-import { InviteType, type MaybeNull, ShareType, type SyncEventChangedWithTokenOutput } from '@proton/pass/types';
 import { toMap } from '@proton/shared/lib/helpers/object';
+
+import { getShareAccessOptions, syncInvites } from '../../../store/actions';
+import { selectItemsByShareId, selectShare } from '../../../store/selectors';
+import type { GroupInvite, ItemRevision, Maybe, Share, SyncEventShareOutput, UserInvite } from '../../../types';
+import { InviteType, type MaybeNull, ShareType, type SyncEventChangedWithTokenOutput } from '../../../types';
+import { resolveGroupInvites, resolveUserInvites } from '../../invites/invite.requests';
+import { partitionGroupInvites } from '../../invites/invite.utils';
+import type { EventProcessor } from '../types';
 
 export function* processInvitesChanged(event?: MaybeNull<SyncEventChangedWithTokenOutput>): EventProcessor {
     if (!event) return true;

@@ -5,17 +5,18 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
-import img from '@proton/pass/assets/upsell/family-plan-2024.png';
-import type { BaseSpotlightMessage } from '@proton/pass/components/Spotlight/SpotlightContent';
-import { UpsellRef } from '@proton/pass/constants';
-import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
-import { selectUser, selectUserPlan } from '@proton/pass/store/selectors';
-import type { MaybeNull } from '@proton/pass/types';
-import { pipe } from '@proton/pass/utils/fp/pipe';
 import { getDefaultMainCurrency } from '@proton/payments/core/currencies';
 import { PASS_LAUNCH_OFFER } from '@proton/payments/core/subscription/helpers';
 import { PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
+
+import img from '../../assets/upsell/family-plan-2024.png';
+import { UpsellRef } from '../../constants';
+import { useNavigateToUpgrade } from '../../hooks/useNavigateToUpgrade';
+import { selectUser, selectUserPlan } from '../../store/selectors';
+import type { MaybeNull } from '../../types';
+import { pipe } from '../../utils/fp/pipe';
+import type { BaseSpotlightMessage } from '../Spotlight/SpotlightContent';
 
 import './FamilyPlanPromo2024.scss';
 

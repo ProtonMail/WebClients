@@ -1,13 +1,7 @@
-import type { SanitizedPasskey } from '@proton/pass/lib/passkeys/types';
-import type {
-    AliasMailbox,
-    DeobfuscatedItemExtraField,
-    FileAttachmentValues,
-    ItemContent,
-} from '@proton/pass/types/data';
-import type { ItemCustomType, WifiSecurity } from '@proton/pass/types/protobuf';
-import type { ExtractKeysOfType } from '@proton/pass/types/utils';
-
+import type { SanitizedPasskey } from '../../lib/passkeys/types';
+import type { AliasMailbox, DeobfuscatedItemExtraField, FileAttachmentValues, ItemContent } from '../data';
+import type { ItemCustomType, WifiSecurity } from '../protobuf';
+import type { ExtractKeysOfType } from '../utils';
 import type { CustomSectionGroupValues, ExtraFieldGroupValues, UrlGroupValues } from './fields';
 
 export type BaseItemValues = {

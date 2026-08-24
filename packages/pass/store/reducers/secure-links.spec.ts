@@ -1,6 +1,5 @@
-import { itemDelete, itemsDeleteEvent, secureLinkCreate, secureLinkRemove, secureLinksGet, shareDeleted } from '@proton/pass/store/actions';
-import type { SecureLink } from '@proton/pass/types';
-
+import type { SecureLink } from '../../types';
+import { itemDelete, itemsDeleteEvent, secureLinkCreate, secureLinkRemove, secureLinksGet, shareDeleted } from '../actions';
 import type { SecureLinkState } from './secure-links';
 import { removeSecureLinksForItems, removeSecureLinksForShare, secureLinksReducer } from './secure-links';
 

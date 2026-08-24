@@ -1,6 +1,9 @@
 import type { Reducer } from 'redux';
 
-import type { DecodedPatMonitorRecord, PersonalAccessToken } from '@proton/pass/lib/access-token/access-token.types';
+import type { DecodedPatMonitorRecord, PersonalAccessToken } from '../../lib/access-token/access-token.types';
+import type { MaybeNull, PersonalAccessTokenShareResponse } from '../../types';
+import { or } from '../../utils/fp/predicates';
+import { objectDelete } from '../../utils/object/delete';
 import {
     createAccessToken,
     deleteAccessToken,
@@ -8,10 +11,7 @@ import {
     getAccessTokenGrants,
     getAccessTokens,
     updateAccessTokenAccess,
-} from '@proton/pass/store/actions';
-import type { MaybeNull, PersonalAccessTokenShareResponse } from '@proton/pass/types';
-import { or } from '@proton/pass/utils/fp/predicates';
-import { objectDelete } from '@proton/pass/utils/object/delete';
+} from '../actions';
 
 export type AccessTokenActionsState = {
     records: DecodedPatMonitorRecord[];

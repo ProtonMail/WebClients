@@ -4,12 +4,12 @@ import { c } from 'ttag';
 
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import { presentListItem } from '@proton/pass/components/Item/List/utils';
-import { SafeItemIcon } from '@proton/pass/components/Layout/Icon/ItemIcon';
-import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
-import { useItem } from '@proton/pass/hooks/useItem';
-import type { MaybeNull, SecureLink } from '@proton/pass/types';
 
+import { useItem } from '../../hooks/useItem';
+import type { MaybeNull, SecureLink } from '../../types';
+import { presentListItem } from '../Item/List/utils';
+import { SafeItemIcon } from '../Layout/Icon/ItemIcon';
+import { PassModal } from '../Layout/Modal/PassModal';
 import { SecureLinkDetails } from './SecureLinkDetails';
 import { SecureLinkGenerate } from './SecureLinkGenerate';
 

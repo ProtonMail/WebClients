@@ -1,8 +1,7 @@
-import { decryptData, generateKey, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
-import { TEST_USER_KEY_ID } from '@proton/pass/lib/crypto/utils/testing';
-import type { ItemKey, VaultShareKey } from '@proton/pass/types';
-import { PassEncryptionTag } from '@proton/pass/types';
-
+import type { ItemKey, VaultShareKey } from '../../../../types';
+import { PassEncryptionTag } from '../../../../types';
+import { decryptData, generateKey, importSymmetricKey } from '../../utils/crypto-helpers';
+import { TEST_USER_KEY_ID } from '../../utils/testing';
 import { moveItem } from './move-item';
 
 describe('moveItem crypto process', () => {

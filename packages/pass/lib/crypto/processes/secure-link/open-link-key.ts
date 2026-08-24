@@ -1,5 +1,5 @@
-import { decryptData } from '@proton/pass/lib/crypto/utils/crypto-helpers';
-import { PassEncryptionTag } from '@proton/pass/types';
+import { PassEncryptionTag } from '../../../../types';
+import { decryptData } from '../../utils/crypto-helpers';
 
 type OpenLinkKeyParams = {
     encryptedLinkKey: string;

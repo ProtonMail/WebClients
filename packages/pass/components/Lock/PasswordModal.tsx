@@ -10,14 +10,14 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
-import { Card } from '@proton/pass/components/Layout/Card/Card';
-import { usePasswordForm } from '@proton/pass/hooks/auth/usePasswordForm';
-import type { AsyncModalState } from '@proton/pass/hooks/useAsyncModalHandles';
-import type { RequestForkOptions } from '@proton/pass/lib/auth/fork';
-import type { ReauthActionPayload } from '@proton/pass/lib/auth/reauth';
-import type { Maybe, MaybePromise } from '@proton/pass/types';
-import type { XorObfuscation } from '@proton/pass/utils/obfuscate/xor';
 
+import { usePasswordForm } from '../../hooks/auth/usePasswordForm';
+import type { AsyncModalState } from '../../hooks/useAsyncModalHandles';
+import type { RequestForkOptions } from '../../lib/auth/fork';
+import type { ReauthActionPayload } from '../../lib/auth/reauth';
+import type { Maybe, MaybePromise } from '../../types';
+import type { XorObfuscation } from '../../utils/obfuscate/xor';
+import { Card } from '../Layout/Card/Card';
 import type { OnReauthFn } from './PasswordUnlockProvider';
 
 export type PasswordReauthOptions = ReauthActionPayload & {

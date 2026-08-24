@@ -5,23 +5,23 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
-import { UserStorage } from '@proton/pass/components/Account/UserStorage';
-import { MonitorButton } from '@proton/pass/components/Menu/Monitor/MonitorButton';
-import { SharedMenu } from '@proton/pass/components/Menu/Shared/SharedMenu';
-import { AuthActions } from '@proton/pass/components/Menu/Sidebar/AuthActions';
-import { OnboardingActions } from '@proton/pass/components/Menu/Sidebar/OnboardingActions';
-import { OrganizationActions } from '@proton/pass/components/Menu/Sidebar/OrganizationActions';
-import { Submenu } from '@proton/pass/components/Menu/Submenu';
-import { VaultMenu } from '@proton/pass/components/Menu/Vault/VaultMenu';
-import { RouteMatch } from '@proton/pass/components/Navigation/RouteMatch';
-import { getMonitorRoute } from '@proton/pass/components/Navigation/routing';
-import { InAppNotificationContainer } from '@proton/pass/components/Notifications/InAppNotificationPortal';
-import { OrganizationPolicyTooltip } from '@proton/pass/components/Organization/OrganizationPolicyTooltip';
-import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
-import { useVaultCreationPolicy } from '@proton/pass/hooks/organization/useVaultCreationPolicy';
-import { useMenuItems } from '@proton/pass/hooks/useMenuItems';
 
+import { useVaultCreationPolicy } from '../../../hooks/organization/useVaultCreationPolicy';
+import { useMenuItems } from '../../../hooks/useMenuItems';
+import { UserStorage } from '../../Account/UserStorage';
+import { RouteMatch } from '../../Navigation/RouteMatch';
+import { getMonitorRoute } from '../../Navigation/routing';
+import { InAppNotificationContainer } from '../../Notifications/InAppNotificationPortal';
+import { OrganizationPolicyTooltip } from '../../Organization/OrganizationPolicyTooltip';
+import { useVaultActions } from '../../Vault/VaultActionsProvider';
+import { MonitorButton } from '../Monitor/MonitorButton';
+import { SharedMenu } from '../Shared/SharedMenu';
+import { Submenu } from '../Submenu';
+import { VaultMenu } from '../Vault/VaultMenu';
+import { AuthActions } from './AuthActions';
 import { MenuActions } from './MenuActions';
+import { OnboardingActions } from './OnboardingActions';
+import { OrganizationActions } from './OrganizationActions';
 
 type Props = {
     onLock: () => void;

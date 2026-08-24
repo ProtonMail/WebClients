@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
-import type { ItemImportIntent, MaybeNull } from '@proton/pass/types';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+
+import type { ItemImportIntent, MaybeNull } from '../../types';
 
 export enum ImportProvider {
     APPLEPASSWORDS = 'applepasswords',

@@ -1,6 +1,6 @@
 import { readFile } from 'fs/promises';
 
-import { extractPrivateDomains } from '@proton/pass/lib/extension/tlds/parser';
+import { extractPrivateDomains } from './parser';
 
 describe('`extractPrivateDomains`', () => {
     test('should correctly extract private domains', async () => {

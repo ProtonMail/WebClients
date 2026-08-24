@@ -1,8 +1,7 @@
-import type { Maybe, MaybeNull } from '@proton/pass/types';
-import type { ApiOptions, ApiState } from '@proton/pass/types/api';
-import { objectHandler } from '@proton/pass/utils/object/handler';
-import { msToEpoch } from '@proton/pass/utils/time/epoch';
-
+import type { Maybe, MaybeNull } from '../../types';
+import type { ApiOptions, ApiState } from '../../types/api';
+import { objectHandler } from '../../utils/object/handler';
+import { msToEpoch } from '../../utils/time/epoch';
 import { PassErrorCode } from './errors';
 
 export const API_BODYLESS_STATUS_CODES = [101, 204, 205, 304];

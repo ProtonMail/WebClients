@@ -1,9 +1,10 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import type { Group, GroupId } from '@proton/pass/lib/groups/groups.types';
-import type { State } from '@proton/pass/store/types';
-import type { Maybe } from '@proton/pass/types';
 import { toMap } from '@proton/shared/lib/helpers/object';
+
+import type { Group, GroupId } from '../../lib/groups/groups.types';
+import type { Maybe } from '../../types';
+import type { State } from '../types';
 
 export const selectGroups = ({ groups }: State) => groups;
 

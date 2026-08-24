@@ -3,9 +3,9 @@ import type {
     WasmResolvePasskeyChallengeResponse,
 } from '@protontech/pass-rust-core/worker';
 
-import type { SelectedItem } from '@proton/pass/types';
-import type { Passkey } from '@proton/pass/types/protobuf/item-v1';
-import type { SanitizedBuffers } from '@proton/pass/utils/buffer/sanitization';
+import type { SelectedItem } from '../../types';
+import type { Passkey } from '../../types/protobuf/item-v1';
+import type { SanitizedBuffers } from '../../utils/buffer/sanitization';
 
 export type SanitizedPublicKeyCreate = SanitizedBuffers<PublicKeyCredentialCreationOptions, number[]>;
 export type SanitizedPublicKeyRequest = SanitizedBuffers<PublicKeyCredentialRequestOptions, number[]>;

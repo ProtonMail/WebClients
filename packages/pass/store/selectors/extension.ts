@@ -1,6 +1,6 @@
-import { exportData, fileDownload, fileUploadChunk, importItems } from '@proton/pass/store/actions';
-import type { State } from '@proton/pass/store/types';
-import type { TabId } from '@proton/pass/types';
+import type { TabId } from '../../types';
+import { exportData, fileDownload, fileUploadChunk, importItems } from '../actions';
+import type { State } from '../types';
 
 const matchesTabRequest =
     (namespace: string, tabId: TabId) =>

@@ -4,9 +4,10 @@ import ContextMenuButton from '@proton/components/components/contextMenu/Context
 import ContextSeparator from '@proton/components/components/contextMenu/ContextSeparator';
 import { IcPassLock } from '@proton/icons/icons/IcPassLock';
 import type { IconName } from '@proton/icons/types';
-import { useContextMenu } from '@proton/pass/components/ContextMenu/ContextMenuProvider';
-import { useCopyToClipboard } from '@proton/pass/components/Settings/Clipboard/ClipboardProvider';
-import type { Maybe, MaybeNull, MaybePromise } from '@proton/pass/types';
+
+import type { Maybe, MaybeNull, MaybePromise } from '../../types';
+import { useCopyToClipboard } from '../Settings/Clipboard/ClipboardProvider';
+import { useContextMenu } from './ContextMenuProvider';
 
 export type ContextMenuItemCopy = Maybe<() => MaybePromise<MaybeNull<string>>>;
 

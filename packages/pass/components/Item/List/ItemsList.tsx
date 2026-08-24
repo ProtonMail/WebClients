@@ -1,20 +1,20 @@
 import { memo, useCallback, useEffect } from 'react';
 import { useStore } from 'react-redux';
 
-import { useBulkActions } from '@proton/pass/components/Bulk/BulkSelectionActions';
-import { useBulkEnabled } from '@proton/pass/components/Bulk/BulkSelectionState';
-import { useItems } from '@proton/pass/components/Item/Context/ItemsProvider';
-import { ItemsListBase } from '@proton/pass/components/Item/List/ItemsListBase';
-import { ItemsListHeader } from '@proton/pass/components/Item/List/ItemsListHeader';
-import { ItemsListPlaceholder } from '@proton/pass/components/Item/List/ItemsListPlaceholder';
-import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
-import { useSelectedItem } from '@proton/pass/components/Navigation/NavigationItem';
-import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
-import type { ItemScope } from '@proton/pass/components/Navigation/routing';
-import { useSelectItemAction } from '@proton/pass/hooks/useSelectItemAction';
-import { selectIsWritableVault } from '@proton/pass/store/selectors';
-import type { State } from '@proton/pass/store/types';
-import type { ItemRevision } from '@proton/pass/types';
+import { useSelectItemAction } from '../../../hooks/useSelectItemAction';
+import { selectIsWritableVault } from '../../../store/selectors';
+import type { State } from '../../../store/types';
+import type { ItemRevision } from '../../../types';
+import { useBulkActions } from '../../Bulk/BulkSelectionActions';
+import { useBulkEnabled } from '../../Bulk/BulkSelectionState';
+import { useNavigationFilters } from '../../Navigation/NavigationFilters';
+import { useSelectedItem } from '../../Navigation/NavigationItem';
+import { useItemScope } from '../../Navigation/NavigationMatches';
+import type { ItemScope } from '../../Navigation/routing';
+import { useItems } from '../Context/ItemsProvider';
+import { ItemsListBase } from './ItemsListBase';
+import { ItemsListHeader } from './ItemsListHeader';
+import { ItemsListPlaceholder } from './ItemsListPlaceholder';
 
 const BulkEnabledRoutes: ItemScope[] = ['share', 'trash'];
 const canBulk = (prefix?: ItemScope) => prefix && BulkEnabledRoutes.includes(prefix);

@@ -1,7 +1,6 @@
-import type { ImportFileReader } from '@proton/pass/lib/import/types';
-import { prop } from '@proton/pass/utils/fp/lens';
-import { not } from '@proton/pass/utils/fp/predicates';
-
+import { prop } from '../../../utils/fp/lens';
+import { not } from '../../../utils/fp/predicates';
+import type { ImportFileReader } from '../types';
 import { wasmURI } from './zip.reader.wasm';
 
 export const readZIP = async (file: File): Promise<ImportFileReader> => {

@@ -1,5 +1,4 @@
-import { uniqueId } from '@proton/pass/utils/string/unique-id';
-
+import { uniqueId } from '../../../utils/string/unique-id';
 import type { OptimisticState } from '../types';
 import { removeHistoryItem } from './remove-history-item';
 import type { TestState } from './testing.utils';
@@ -42,11 +41,7 @@ describe('removeHistoryItem', () => {
 
     test('should pop optimistic history item from history', () => {
         const optimisticAction = createTestOptimisticHistoryItem('remove', 1);
-        const history = [
-            createTestDeterministicAction('add', 1),
-            optimisticAction,
-            createTestDeterministicAction('add', 2),
-        ];
+        const history = [createTestDeterministicAction('add', 1), optimisticAction, createTestDeterministicAction('add', 2)];
 
         const optimistic: OptimisticState<TestState> = { checkpoint: { items: [0] }, history };
         const nextOptimistic = removeHistoryItem(testReducer, optimistic, optimisticAction.id);

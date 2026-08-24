@@ -3,8 +3,7 @@ import { type FC, createContext, useContext } from 'react';
 
 import { c } from 'ttag';
 
-import { type UseAsyncModalHandle, useAsyncModalHandles } from '@proton/pass/hooks/useAsyncModalHandles';
-
+import { type UseAsyncModalHandle, useAsyncModalHandles } from '../../hooks/useAsyncModalHandles';
 import type { PinUnlockModalState } from './PinUnlockModal';
 import { PinUnlockModal } from './PinUnlockModal';
 

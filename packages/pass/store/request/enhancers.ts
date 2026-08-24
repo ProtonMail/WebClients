@@ -1,8 +1,7 @@
 import type { PrepareAction } from '@reduxjs/toolkit';
 import type { Action } from 'redux';
 
-import { withMetaFactory } from '@proton/pass/store/actions/enhancers/meta';
-
+import { withMetaFactory } from '../actions/enhancers/meta';
 import type { RequestConfig, RequestMeta, RequestMetadata, RequestType, WithRequest } from './types';
 
 export const withRequest = <T extends RequestType, D extends any = never>(request: RequestMetadata<T, D>) =>

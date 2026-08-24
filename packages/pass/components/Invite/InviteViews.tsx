@@ -1,16 +1,16 @@
 import type { FC } from 'react';
 
-import { GroupsProvider } from '@proton/pass/components/Groups/GroupsProvider';
-import type { InviteContextState } from '@proton/pass/components/Invite/InviteContext';
-import { InviteError } from '@proton/pass/components/Invite/InviteError';
-import { ItemAccessManager } from '@proton/pass/components/Invite/Item/ItemAccessManager';
-import { ItemInviteCreate } from '@proton/pass/components/Invite/Item/ItemInviteCreate';
-import { ItemInviteRespond } from '@proton/pass/components/Invite/Item/ItemInviteRespond';
-import { VaultAccessManager } from '@proton/pass/components/Invite/Vault/VaultAccessManager';
-import { VaultInviteCreate } from '@proton/pass/components/Invite/Vault/VaultInviteCreate';
-import { VaultInviteRespond } from '@proton/pass/components/Invite/Vault/VaultInviteRespond';
-import type { Invite, MaybeNull } from '@proton/pass/types';
-import { ShareType } from '@proton/pass/types';
+import type { Invite, MaybeNull } from '../../types';
+import { ShareType } from '../../types';
+import { GroupsProvider } from '../Groups/GroupsProvider';
+import type { InviteContextState } from './InviteContext';
+import { InviteError } from './InviteError';
+import { ItemAccessManager } from './Item/ItemAccessManager';
+import { ItemInviteCreate } from './Item/ItemInviteCreate';
+import { ItemInviteRespond } from './Item/ItemInviteRespond';
+import { VaultAccessManager } from './Vault/VaultAccessManager';
+import { VaultInviteCreate } from './Vault/VaultInviteCreate';
+import { VaultInviteRespond } from './Vault/VaultInviteRespond';
 
 type Props = {
     inviteState: MaybeNull<InviteContextState>;

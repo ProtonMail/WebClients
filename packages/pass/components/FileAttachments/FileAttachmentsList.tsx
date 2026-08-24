@@ -3,17 +3,16 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { ConfirmationPrompt } from '@proton/pass/components/Confirmation/ConfirmationPrompt';
-import { useFileDownload } from '@proton/pass/hooks/files/useFileDownload';
-import { useAsyncModalHandles } from '@proton/pass/hooks/useAsyncModalHandles';
-import { useAsyncRequestDispatch } from '@proton/pass/hooks/useDispatchAsyncRequest';
-import { useMatchUser } from '@proton/pass/hooks/useMatchUser';
-import { validateFileName } from '@proton/pass/lib/file-attachments/helpers';
-import { isShareWritable } from '@proton/pass/lib/shares/share.predicates';
-import { fileUpdateMetadata } from '@proton/pass/store/actions';
-import { selectShare } from '@proton/pass/store/selectors';
-import type { BaseFileDescriptor, FileDescriptor, FileID, SelectedItem } from '@proton/pass/types';
-
+import { useFileDownload } from '../../hooks/files/useFileDownload';
+import { useAsyncModalHandles } from '../../hooks/useAsyncModalHandles';
+import { useAsyncRequestDispatch } from '../../hooks/useDispatchAsyncRequest';
+import { useMatchUser } from '../../hooks/useMatchUser';
+import { validateFileName } from '../../lib/file-attachments/helpers';
+import { isShareWritable } from '../../lib/shares/share.predicates';
+import { fileUpdateMetadata } from '../../store/actions';
+import { selectShare } from '../../store/selectors';
+import type { BaseFileDescriptor, FileDescriptor, FileID, SelectedItem } from '../../types';
+import { ConfirmationPrompt } from '../Confirmation/ConfirmationPrompt';
 import { FileAttachment } from './FileAttachment';
 
 type Props = SelectedItem & {

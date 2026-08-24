@@ -1,6 +1,8 @@
-import type { CreateSecureLinkData, FileDescriptorProcessResult } from '@proton/pass/lib/crypto/processes';
-import type { DecryptedActionPayload } from '@proton/pass/lib/crypto/processes/access-token/open-action-payload';
-import type { Group, GroupWithPublicKeys } from '@proton/pass/lib/groups/groups.types';
+import type { Address, DecryptedAddressKey, DecryptedKey, OrganizationKey, User } from '@proton/shared/lib/interfaces';
+
+import type { CreateSecureLinkData, FileDescriptorProcessResult } from '../../lib/crypto/processes';
+import type { DecryptedActionPayload } from '../../lib/crypto/processes/access-token/open-action-payload';
+import type { Group, GroupWithPublicKeys } from '../../lib/groups/groups.types';
 import type {
     EncodedItemKeyRotation,
     InviteAcceptRequest,
@@ -18,13 +20,11 @@ import type {
     ShareKeyResponse,
     VaultCreateRequest,
     VaultUpdateRequest,
-} from '@proton/pass/types/api';
-import type { FileID, FileIdentifier } from '@proton/pass/types/data';
-import type { ShareRole, ShareType } from '@proton/pass/types/data/shares';
-import type { NativeMessageData } from '@proton/pass/types/desktop';
-import type { MaybeNull } from '@proton/pass/types/utils';
-import type { Address, DecryptedAddressKey, DecryptedKey, OrganizationKey, User } from '@proton/shared/lib/interfaces';
-
+} from '../api';
+import type { FileID, FileIdentifier } from '../data';
+import type { ShareRole, ShareType } from '../data/shares';
+import type { NativeMessageData } from '../desktop';
+import type { MaybeNull } from '../utils';
 import type {
     InviteTargetKey,
     ItemId,

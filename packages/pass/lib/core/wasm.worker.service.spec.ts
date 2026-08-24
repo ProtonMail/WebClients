@@ -1,6 +1,5 @@
-import { WASM_WORKER_READY_EVENT } from '@proton/pass/lib/core/constants';
-import type { Maybe } from '@proton/pass/types';
-
+import type { Maybe } from '../../types';
+import { WASM_WORKER_READY_EVENT } from './constants';
 import { wasmWorkerServiceFactory } from './wasm.worker.service';
 
 type TestMethods = {

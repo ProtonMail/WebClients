@@ -2,12 +2,12 @@
  * Keep this file inline with the rust source: `proton-pass-common/src/share.rs::visible_share_ids` */
 import type { Share as ShareCore, TargetType } from '@protontech/pass-rust-core/worker';
 
-import type { PassCoreProxy } from '@proton/pass/lib/core/core.types';
-import { isGroupShare, isShareVisible } from '@proton/pass/lib/shares/share.predicates';
-import type { ShareDedupeState } from '@proton/pass/store/reducers/shares-dedupe';
-import type { Share, ShareId } from '@proton/pass/types';
-import { ShareType } from '@proton/pass/types';
-import { logger } from '@proton/pass/utils/logger';
+import type { ShareDedupeState } from '../../store/reducers/shares-dedupe';
+import type { Share, ShareId } from '../../types';
+import { ShareType } from '../../types';
+import { logger } from '../../utils/logger';
+import type { PassCoreProxy } from '../core/core.types';
+import { isGroupShare, isShareVisible } from './share.predicates';
 
 const intoTargetType = (type: ShareType): TargetType => {
     switch (type) {

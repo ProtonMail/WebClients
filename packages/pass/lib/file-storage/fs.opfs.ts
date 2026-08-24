@@ -1,8 +1,8 @@
-import { FileStorageGarbageCollector } from '@proton/pass/lib/file-storage/fs.gc';
-import type { AnyStorage, Maybe, StorageData } from '@proton/pass/types';
-import { logId, logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
 
+import type { AnyStorage, Maybe, StorageData } from '../../types';
+import { logId, logger } from '../../utils/logger';
+import { FileStorageGarbageCollector } from './fs.gc';
 import type { FileBuffer, FileStorage } from './types';
 
 export class FileStorageOPFS implements FileStorage {

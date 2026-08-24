@@ -1,10 +1,10 @@
 import type { FormikErrors } from 'formik';
 import { c, msgid } from 'ttag';
 
-import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '@proton/pass/constants';
-import { validateExtraFields } from '@proton/pass/lib/validation/extra-field';
-import type { BaseItemValues, Maybe } from '@proton/pass/types';
-import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
+import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../../constants';
+import type { BaseItemValues, Maybe } from '../../types';
+import { isEmptyString } from '../../utils/string/is-empty-string';
+import { validateExtraFields } from './extra-field';
 
 export const validateItemName = (name: string): Maybe<string> => {
     if (isEmptyString(name)) return c('Warning').t`Title is required`;

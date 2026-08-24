@@ -1,8 +1,8 @@
 import cloneDeep from 'lodash/cloneDeep';
 
-import { type ProxiedSettings, getInitialSettings } from '@proton/pass/store/reducers/settings';
-import type { MaybePromise } from '@proton/pass/types';
-import { merge } from '@proton/pass/utils/object/merge';
+import { type ProxiedSettings, getInitialSettings } from '../../store/reducers/settings';
+import type { MaybePromise } from '../../types';
+import { merge } from '../../utils/object/merge';
 
 export interface SettingsServiceOptions {
     clear: (localID?: number) => MaybePromise<void>;

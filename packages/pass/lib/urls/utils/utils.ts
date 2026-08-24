@@ -1,8 +1,7 @@
 import safeRegex from 'safe-regex2';
 
-import type { MaybeNull } from '@proton/pass/types';
-import { dynMemo } from '@proton/pass/utils/fp/memo';
-
+import type { MaybeNull } from '../../../types';
+import { dynMemo } from '../../../utils/fp/memo';
 import type { ParsedUrl, URLComponents } from '../types';
 import { sanitizeURL } from './sanitize';
 import { UNSUPPORTED_SCHEMES_REGEX } from './url.constants';

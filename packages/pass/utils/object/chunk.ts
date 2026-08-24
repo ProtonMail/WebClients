@@ -1,6 +1,6 @@
-import { sortOn } from '@proton/pass/utils/fp/sort';
-import { deserialize, serialize } from '@proton/pass/utils/object/serialize';
-import { uniqueId } from '@proton/pass/utils/string/unique-id';
+import { sortOn } from '../fp/sort';
+import { uniqueId } from '../string/unique-id';
+import { deserialize, serialize } from './serialize';
 
 export type Chunk = {
     /** batch identifier */

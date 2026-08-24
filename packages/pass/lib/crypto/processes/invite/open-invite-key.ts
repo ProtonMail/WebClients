@@ -1,9 +1,9 @@
 import type { PrivateKeyReference, PublicKeyReference } from '@protontech/crypto';
 import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
 
-import { PassCryptoError } from '@proton/pass/lib/crypto/utils/errors';
-import type { KeyRotationKeyPair } from '@proton/pass/types';
-import { PassSignatureContext } from '@proton/pass/types';
+import type { KeyRotationKeyPair } from '../../../../types';
+import { PassSignatureContext } from '../../../../types';
+import { PassCryptoError } from '../../utils/errors';
 
 type OpenInviteKeyProcessParams = {
     inviteKey: KeyRotationKeyPair;

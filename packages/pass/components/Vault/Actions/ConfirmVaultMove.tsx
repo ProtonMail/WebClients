@@ -2,13 +2,10 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import {
-    ConfirmationPrompt,
-    type ConfirmationPromptHandles,
-} from '@proton/pass/components/Confirmation/ConfirmationPrompt';
-import { WithVault } from '@proton/pass/components/Vault/WithVault';
-import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
-import { selectSecureLinksByShareId } from '@proton/pass/store/selectors';
+import { useMemoSelector } from '../../../hooks/useMemoSelector';
+import { selectSecureLinksByShareId } from '../../../store/selectors';
+import { ConfirmationPrompt, type ConfirmationPromptHandles } from '../../Confirmation/ConfirmationPrompt';
+import { WithVault } from '../WithVault';
 
 type Props = ConfirmationPromptHandles & { targetShareId: string; shareId: string };
 

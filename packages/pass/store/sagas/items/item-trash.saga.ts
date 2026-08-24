@@ -1,6 +1,6 @@
-import { trashItems } from '@proton/pass/lib/items/item.requests';
-import { itemTrash } from '@proton/pass/store/actions';
-import { createRequestSaga } from '@proton/pass/store/request/sagas';
+import { trashItems } from '../../../lib/items/item.requests';
+import { itemTrash } from '../../actions';
+import { createRequestSaga } from '../../request/sagas';
 
 export default createRequestSaga({
     actions: itemTrash,

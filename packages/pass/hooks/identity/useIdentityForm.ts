@@ -1,9 +1,8 @@
 import { type ComponentType, useMemo, useState } from 'react';
 
-import type { IdentityExtraFieldsKey, IdentityFieldName, IdentityValues } from '@proton/pass/types';
-import { arrayRemove } from '@proton/pass/utils/array/remove';
-import { prop } from '@proton/pass/utils/fp/lens';
-
+import type { IdentityExtraFieldsKey, IdentityFieldName, IdentityValues } from '../../types';
+import { arrayRemove } from '../../utils/array/remove';
+import { prop } from '../../utils/fp/lens';
 import { getIdentityFields, getInitialSections } from './utils';
 
 export type IdentityFormField = {

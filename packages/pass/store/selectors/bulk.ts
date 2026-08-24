@@ -1,11 +1,11 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import { isAliasItem } from '@proton/pass/lib/items/item.predicates';
-import { selectItems, selectItemsState } from '@proton/pass/store/selectors/items';
-import { selectSecureLinksState } from '@proton/pass/store/selectors/secure-links';
-import { isItemShared } from '@proton/pass/store/selectors/shared';
-import { selectShareState } from '@proton/pass/store/selectors/shares';
-import type { BulkSelectionDTO } from '@proton/pass/types';
+import { isAliasItem } from '../../lib/items/item.predicates';
+import type { BulkSelectionDTO } from '../../types';
+import { selectItems, selectItemsState } from './items';
+import { selectSecureLinksState } from './secure-links';
+import { isItemShared } from './shared';
+import { selectShareState } from './shares';
 
 export const selectBulkSelection = (dto: BulkSelectionDTO) =>
     createSelector(selectItemsState, (items) =>

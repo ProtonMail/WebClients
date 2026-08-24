@@ -1,10 +1,11 @@
 import type { FC } from 'react';
 
-import { SafeItemIcon } from '@proton/pass/components/Layout/Icon/ItemIcon';
-import { itemTypeToSubThemeClassName } from '@proton/pass/components/Layout/Theme/types';
-import type { ItemRevision } from '@proton/pass/types';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 import clsx from '@proton/utils/clsx';
+
+import type { ItemRevision } from '../../../types';
+import { SafeItemIcon } from '../../Layout/Icon/ItemIcon';
+import { itemTypeToSubThemeClassName } from '../../Layout/Theme/types';
 
 export const ITEM_TAG_MAX_WIDTH = 150;
 

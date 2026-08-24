@@ -3,9 +3,9 @@ import { createContext, useContext } from 'react';
 
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import useInstance from '@proton/hooks/useInstance';
-import type { MaybeNull } from '@proton/pass/types';
 
 import { createPassBridge } from '.';
+import type { MaybeNull } from '../../types';
 import type { PassBridge } from './types';
 
 export const PassBridgeContext = createContext<MaybeNull<PassBridge>>(null);

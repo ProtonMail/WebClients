@@ -1,9 +1,9 @@
 import { useEffect, useMemo } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { deobfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
-import type { DeobfuscatedItem, ItemRevision, MaybeNull } from '@proton/pass/types';
-import type { BaseItemValues } from '@proton/pass/types/forms';
+import { deobfuscateItem } from '../../lib/items/item.obfuscation';
+import type { DeobfuscatedItem, ItemRevision, MaybeNull } from '../../types';
+import type { BaseItemValues } from '../../types/forms';
 
 export type ItemCloneLocationState = { clone: ItemRevision };
 export type ItemInitialValuesOptions = { clone: DeobfuscatedItem; shareId: string };

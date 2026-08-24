@@ -8,11 +8,11 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { IcCross } from '@proton/icons/icons/IcCross';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
-import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
 import clsx from '@proton/utils/clsx';
 
+import { usePassCore } from '../../Core/PassCoreProvider';
+import { Panel } from '../Panel/Panel';
+import { PanelHeader } from '../Panel/PanelHeader';
 import { PassModal } from './PassModal';
 import { SidebarModal } from './SidebarModal';
 

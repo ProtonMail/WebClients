@@ -1,7 +1,7 @@
 import type * as PassUIWorker from '@protontech/pass-rust-core/ui';
 
-import type { WasmWorkerService } from '@proton/pass/lib/core/wasm.worker.service';
-import type { Callback, ExtractKeysOfType, Result } from '@proton/pass/types';
+import type { Callback, ExtractKeysOfType, Result } from '../../types';
+import type { WasmWorkerService } from './wasm.worker.service';
 
 type PassUIModule = typeof PassUIWorker;
 

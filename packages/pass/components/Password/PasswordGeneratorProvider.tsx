@@ -6,14 +6,14 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { IcCogWheel } from '@proton/icons/icons/IcCogWheel';
 import { IcCross } from '@proton/icons/icons/IcCross';
-import { usePasswordStrength } from '@proton/pass/hooks/monitor/usePasswordStrength';
-import type { PasswordGeneratorResult } from '@proton/pass/hooks/usePasswordGenerator';
+
+import { usePasswordStrength } from '../../hooks/monitor/usePasswordStrength';
+import type { PasswordGeneratorResult } from '../../hooks/usePasswordGenerator';
 import {
     getCharsGroupedByColor,
     isUsingMemorablePassword,
     isUsingRandomPassword,
-} from '@proton/pass/hooks/usePasswordGenerator';
-
+} from '../../hooks/usePasswordGenerator';
 import { PasswordMemorableOptions } from './PasswordMemorableOptions';
 import { PasswordRandomOptions } from './PasswordRandomOptions';
 import { PasswordStrength } from './PasswordStrength';

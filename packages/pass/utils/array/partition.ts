@@ -1,4 +1,4 @@
-import type { Predicate, TypePredicate } from '@proton/pass/utils/fp/predicates';
+import type { Predicate, TypePredicate } from '../fp/predicates';
 
 type PartitionResult<T, P extends Predicate> =
     P extends TypePredicate<T, infer U> ? [U[], Exclude<T, U>[]] : [T[], T[]];

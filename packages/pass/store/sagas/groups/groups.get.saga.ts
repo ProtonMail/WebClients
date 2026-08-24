@@ -1,11 +1,11 @@
 import { call, put, select, takeEvery } from 'redux-saga/effects';
 
-import { PassCrypto } from '@proton/pass/lib/crypto';
-import { getGroup as fetchGroup } from '@proton/pass/lib/groups/groups.requests';
-import type { Group } from '@proton/pass/lib/groups/groups.types';
-import { getGroup } from '@proton/pass/store/actions/creators/groups';
-import { selectFeatureFlag } from '@proton/pass/store/selectors';
-import { PassFeature } from '@proton/pass/types/api/features';
+import { PassCrypto } from '../../../lib/crypto';
+import { getGroup as fetchGroup } from '../../../lib/groups/groups.requests';
+import type { Group } from '../../../lib/groups/groups.types';
+import { PassFeature } from '../../../types/api/features';
+import { getGroup } from '../../actions/creators/groups';
+import { selectFeatureFlag } from '../../selectors';
 
 function* getGroupWorker({ meta, payload }: ReturnType<typeof getGroup.intent>) {
     try {

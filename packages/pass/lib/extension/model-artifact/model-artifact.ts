@@ -4,10 +4,11 @@ import { formatValidationProblem } from '@protontech/autofill/models/validate_we
 import { detectionClasses } from '@protontech/autofill/types';
 import type { DetectionClass, ModelProvider, PerceptronParams } from '@protontech/autofill/types';
 
-import { MODEL_ARTIFACTS_BASE_URL } from '@proton/pass/constants';
-import { readZIP } from '@proton/pass/lib/import/helpers/zip.reader';
-import type { Result } from '@proton/pass/types';
 import { escapeRegex } from '@proton/shared/lib/helpers/regex';
+
+import { MODEL_ARTIFACTS_BASE_URL } from '../../../constants';
+import type { Result } from '../../../types';
+import { readZIP } from '../../import/helpers/zip.reader';
 
 const MODEL_ARCH_VALUES = ['lr', 'rf'] as const;
 export type ModelArch = (typeof MODEL_ARCH_VALUES)[number];

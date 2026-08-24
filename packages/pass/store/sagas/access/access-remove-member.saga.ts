@@ -1,12 +1,8 @@
 import { put, takeEvery } from 'redux-saga/effects';
 
-import { removeUserAccess } from '@proton/pass/lib/shares/share.requests';
-import {
-    shareRemoveMemberAccessFailure,
-    shareRemoveMemberAccessIntent,
-    shareRemoveMemberAccessSuccess,
-} from '@proton/pass/store/actions';
-import { syncAccess } from '@proton/pass/store/actions/creators/polling';
+import { removeUserAccess } from '../../../lib/shares/share.requests';
+import { shareRemoveMemberAccessFailure, shareRemoveMemberAccessIntent, shareRemoveMemberAccessSuccess } from '../../actions';
+import { syncAccess } from '../../actions/creators/polling';
 
 function* removeUserAccessWorker({ payload, meta: { request } }: ReturnType<typeof shareRemoveMemberAccessIntent>) {
     try {

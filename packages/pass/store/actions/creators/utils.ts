@@ -1,5 +1,5 @@
-import { isAbortError } from '@proton/pass/lib/api/errors';
-import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
+import { isAbortError } from '../../../lib/api/errors';
+import { getErrorMessage } from '../../../utils/errors/get-error-message';
 
 export const withAbortPayload = (error: unknown) => ({
     payload: {

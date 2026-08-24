@@ -1,10 +1,9 @@
 import { useEffect, useMemo, useState } from 'react';
 
-import { PassErrorCode } from '@proton/pass/lib/api/errors';
-import { requestAliasOptions } from '@proton/pass/store/actions';
-import type { MaybeNull, MaybePromise, Result } from '@proton/pass/types';
-import type { AliasMailbox } from '@proton/pass/types/data/alias';
-
+import { PassErrorCode } from '../lib/api/errors';
+import { requestAliasOptions } from '../store/actions';
+import type { MaybeNull, MaybePromise, Result } from '../types';
+import type { AliasMailbox } from '../types/data/alias';
 import { useRequest } from './useRequest';
 
 export type SanitizedAliasOptions = {

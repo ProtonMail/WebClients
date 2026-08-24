@@ -1,8 +1,6 @@
 import type { Store } from 'redux';
 
-import { ITEM_COUNT_RATING_PROMPT } from '@proton/pass/constants';
-import { hasAttachments, hasHadAttachments } from '@proton/pass/lib/items/item.predicates';
-import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
+import { ITEM_COUNT_RATING_PROMPT } from '../../constants';
 import {
     selectAllAliasItems,
     selectAllItems,
@@ -14,15 +12,16 @@ import {
     selectPassPlan,
     selectUserData,
     selectUserPlan,
-} from '@proton/pass/store/selectors';
-import type { State } from '@proton/pass/store/types';
-import { type Maybe, type MaybeNull, PlanType, SpotlightMessage } from '@proton/pass/types';
-import { UserPassPlan } from '@proton/pass/types/api/plan';
-import { or } from '@proton/pass/utils/fp/predicates';
-import { merge } from '@proton/pass/utils/object/merge';
-import { UNIX_DAY, UNIX_MONTH, UNIX_WEEK } from '@proton/pass/utils/time/constants';
-import { getEpoch } from '@proton/pass/utils/time/epoch';
-
+} from '../../store/selectors';
+import type { State } from '../../store/types';
+import { type Maybe, type MaybeNull, PlanType, SpotlightMessage } from '../../types';
+import { UserPassPlan } from '../../types/api/plan';
+import { or } from '../../utils/fp/predicates';
+import { merge } from '../../utils/object/merge';
+import { UNIX_DAY, UNIX_MONTH, UNIX_WEEK } from '../../utils/time/constants';
+import { getEpoch } from '../../utils/time/epoch';
+import { hasAttachments, hasHadAttachments } from '../items/item.predicates';
+import { isPaidPlan } from '../user/user.predicates';
 import { type SpotlightRule, createSpotlightRule } from './service';
 
 export const createPendingShareAccessRule = (store: Store<State>) =>

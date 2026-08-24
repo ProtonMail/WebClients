@@ -1,6 +1,5 @@
-import { PassCrypto } from '@proton/pass/lib/crypto';
-import type { ItemRevision, ItemRevisionContentsResponse, ItemType } from '@proton/pass/types';
-
+import type { ItemRevision, ItemRevisionContentsResponse, ItemType } from '../../types';
+import { PassCrypto } from '../crypto';
 import { parseOpenedItem } from './item-proto.transformer';
 
 export const parseItemRevision = async <T extends ItemType = ItemType>(

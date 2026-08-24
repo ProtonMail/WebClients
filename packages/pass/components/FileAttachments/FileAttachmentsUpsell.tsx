@@ -5,11 +5,12 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
-import { Card } from '@proton/pass/components/Layout/Card/Card';
-import { UpsellRef } from '@proton/pass/constants';
-import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
-import { selectUser, selectUserPlan } from '@proton/pass/store/selectors';
 import { isAdmin } from '@proton/shared/lib/user/helpers';
+
+import { UpsellRef } from '../../constants';
+import { useNavigateToUpgrade } from '../../hooks/useNavigateToUpgrade';
+import { selectUser, selectUserPlan } from '../../store/selectors';
+import { Card } from '../Layout/Card/Card';
 
 type Props = {
     /** Pass Ess users upgrade via an inline link (admin) or their admin (member),

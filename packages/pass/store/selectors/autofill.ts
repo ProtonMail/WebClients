@@ -1,19 +1,19 @@
-import { belongsToShares, hasOTP, hasUserIdentifier, isActive, isPasskeyItem } from '@proton/pass/lib/items/item.predicates';
-import type { PasskeyQueryPayload, SelectedPasskey } from '@proton/pass/lib/passkeys/types';
-import { isAutofillableShare } from '@proton/pass/lib/shares/share.predicates';
-import { searchItemsByDomain } from '@proton/pass/lib/urls/search/match';
-import type { SearchItemsByDomainOptions } from '@proton/pass/lib/urls/types';
-import { parseUrl } from '@proton/pass/lib/urls/utils/parser';
-import { selectItemsFactory, selectVisibleItems } from '@proton/pass/store/selectors/items';
-import { selectVisibleShares } from '@proton/pass/store/selectors/shares';
-import { selectFeatureFlag } from '@proton/pass/store/selectors/user';
-import { createUncachedSelector } from '@proton/pass/store/selectors/utils';
-import type { State } from '@proton/pass/store/types';
-import type { FormSubmission, ItemRevision, Maybe, ShareId } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
-import { prop } from '@proton/pass/utils/fp/lens';
-import { and } from '@proton/pass/utils/fp/predicates';
-import { sortOn } from '@proton/pass/utils/fp/sort';
+import { belongsToShares, hasOTP, hasUserIdentifier, isActive, isPasskeyItem } from '../../lib/items/item.predicates';
+import type { PasskeyQueryPayload, SelectedPasskey } from '../../lib/passkeys/types';
+import { isAutofillableShare } from '../../lib/shares/share.predicates';
+import { searchItemsByDomain } from '../../lib/urls/search/match';
+import type { SearchItemsByDomainOptions } from '../../lib/urls/types';
+import { parseUrl } from '../../lib/urls/utils/parser';
+import type { FormSubmission, ItemRevision, Maybe, ShareId } from '../../types';
+import { PassFeature } from '../../types/api/features';
+import { prop } from '../../utils/fp/lens';
+import { and } from '../../utils/fp/predicates';
+import { sortOn } from '../../utils/fp/sort';
+import type { State } from '../types';
+import { selectItemsFactory, selectVisibleItems } from './items';
+import { selectVisibleShares } from './shares';
+import { selectFeatureFlag } from './user';
+import { createUncachedSelector } from './utils';
 
 export const selectAutofillableShareIDs = createUncachedSelector(
     [selectVisibleShares, (_: State, writableOnly?: boolean) => writableOnly],

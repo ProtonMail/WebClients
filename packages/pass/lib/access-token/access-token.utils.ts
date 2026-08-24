@@ -1,13 +1,10 @@
-import type {
-    DecodedPatMonitorPayload,
-    DecodedPatMonitorRecord,
-} from '@proton/pass/lib/access-token/access-token.types';
-import { PassCrypto } from '@proton/pass/lib/crypto';
-import type { PatMonitorListEntryOutput } from '@proton/pass/types';
-import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
-import { logger } from '@proton/pass/utils/logger';
-import { UNIX_HOUR } from '@proton/pass/utils/time/constants';
-import { getEpoch } from '@proton/pass/utils/time/epoch';
+import type { PatMonitorListEntryOutput } from '../../types';
+import { getErrorMessage } from '../../utils/errors/get-error-message';
+import { logger } from '../../utils/logger';
+import { UNIX_HOUR } from '../../utils/time/constants';
+import { getEpoch } from '../../utils/time/epoch';
+import { PassCrypto } from '../crypto';
+import type { DecodedPatMonitorPayload, DecodedPatMonitorRecord } from './access-token.types';
 
 export const PAT_PRODUCT = 'pass';
 

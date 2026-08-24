@@ -2,12 +2,19 @@ import type { Action } from 'redux';
 import { call, put, race, select, take, takeLeading } from 'redux-saga/effects';
 import { c } from 'ttag';
 
-import { api } from '@proton/pass/lib/api/api';
-import { PassCrypto } from '@proton/pass/lib/crypto';
-import { PassCryptoError, isPassCryptoError } from '@proton/pass/lib/crypto/utils/errors';
-import { migrate } from '@proton/pass/lib/sync/migrate';
-import { sync } from '@proton/pass/lib/sync/sync';
-import { type SyncResult, SyncStrategy } from '@proton/pass/lib/sync/types';
+import { loadCryptoWorker } from '@proton/shared/lib/helpers/setupCryptoWorker';
+
+import { api } from '../../../lib/api/api';
+import { PassCrypto } from '../../../lib/crypto';
+import { PassCryptoError, isPassCryptoError } from '../../../lib/crypto/utils/errors';
+import { migrate } from '../../../lib/sync/migrate';
+import { sync } from '../../../lib/sync/sync';
+import { type SyncResult, SyncStrategy } from '../../../lib/sync/types';
+import type { Maybe } from '../../../types';
+import { AppStatus } from '../../../types';
+import { PassFeature } from '../../../types/api/features';
+import { logger } from '../../../utils/logger';
+import { merge } from '../../../utils/object/merge';
 import {
     aliasSyncStatus,
     bootFailure,
@@ -26,23 +33,16 @@ import {
     startEventPolling,
     stateDestroy,
     stopEventPolling,
-} from '@proton/pass/store/actions';
-import { resolveModelRegistry } from '@proton/pass/store/actions/creators/model-registry';
-import { getOrganizationPauseList, getOrganizationSettings } from '@proton/pass/store/actions/creators/organization';
-import { resolvePrivateDomains } from '@proton/pass/store/actions/creators/private-domains';
-import { resolveWebsiteRules } from '@proton/pass/store/actions/creators/rules';
-import { getAuthDevices } from '@proton/pass/store/actions/creators/sso';
-import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
-import { withRevalidate } from '@proton/pass/store/request/enhancers';
-import { selectFeatureFlag, selectProxiedSettings, selectSyncStrategy } from '@proton/pass/store/selectors';
-import type { RootSagaOptions } from '@proton/pass/store/types';
-import type { Maybe } from '@proton/pass/types';
-import { AppStatus } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
-import { logger } from '@proton/pass/utils/logger';
-import { merge } from '@proton/pass/utils/object/merge';
-import { loadCryptoWorker } from '@proton/shared/lib/helpers/setupCryptoWorker';
-
+} from '../../actions';
+import { resolveModelRegistry } from '../../actions/creators/model-registry';
+import { getOrganizationPauseList, getOrganizationSettings } from '../../actions/creators/organization';
+import { resolvePrivateDomains } from '../../actions/creators/private-domains';
+import { resolveWebsiteRules } from '../../actions/creators/rules';
+import { getAuthDevices } from '../../actions/creators/sso';
+import type { ProxiedSettings } from '../../reducers/settings';
+import { withRevalidate } from '../../request/enhancers';
+import { selectFeatureFlag, selectProxiedSettings, selectSyncStrategy } from '../../selectors';
+import type { RootSagaOptions } from '../../types';
 import { type HydrationResult, hydrate } from './hydrate.saga';
 
 function* bootWorker({ payload }: ReturnType<typeof bootIntent>, options: RootSagaOptions) {

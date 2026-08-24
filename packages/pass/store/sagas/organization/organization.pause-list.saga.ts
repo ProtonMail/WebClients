@@ -1,12 +1,13 @@
 import { call, select } from 'redux-saga/effects';
 
-import { getUrlPauseList } from '@proton/pass/lib/organization/organization.requests';
-import { intoPauseCriterias } from '@proton/pass/lib/settings/pause-list';
-import { getOrganizationPauseList } from '@proton/pass/store/actions/creators/organization';
-import { createRequestSaga } from '@proton/pass/store/request/sagas';
-import { selectOrganization } from '@proton/pass/store/selectors';
-import type { MaybeNull, OrganizationUrlPauseEntryDto } from '@proton/pass/types';
 import type { Organization } from '@proton/shared/lib/interfaces';
+
+import { getUrlPauseList } from '../../../lib/organization/organization.requests';
+import { intoPauseCriterias } from '../../../lib/settings/pause-list';
+import type { MaybeNull, OrganizationUrlPauseEntryDto } from '../../../types';
+import { getOrganizationPauseList } from '../../actions/creators/organization';
+import { createRequestSaga } from '../../request/sagas';
+import { selectOrganization } from '../../selectors';
 
 export default createRequestSaga({
     actions: getOrganizationPauseList,

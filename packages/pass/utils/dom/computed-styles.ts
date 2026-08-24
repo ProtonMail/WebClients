@@ -1,5 +1,5 @@
-import type { Identity } from '@proton/pass/types';
-import { pipe } from '@proton/pass/utils/fp/pipe';
+import type { Identity } from '../../types';
+import { pipe } from '../fp/pipe';
 
 export interface StyleParser {
     <T extends (value: string, node: HTMLElement) => any = Identity<string>>(

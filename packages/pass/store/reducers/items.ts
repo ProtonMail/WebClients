@@ -1,7 +1,18 @@
 import type { Action, Reducer } from 'redux';
 
-import { getItemEntityID } from '@proton/pass/lib/items/item.utils';
-import { AddressType } from '@proton/pass/lib/monitor/types';
+import { toMap } from '@proton/shared/lib/helpers/object';
+
+import { getItemEntityID } from '../../lib/items/item.utils';
+import { AddressType } from '../../lib/monitor/types';
+import type { IndexedByShareIdAndItemId, ItemRevision, RequiredProps, UniqueItem } from '../../types';
+import { ContentFormatVersion, ItemFlag, ItemState } from '../../types';
+import { prop } from '../../utils/fp/lens';
+import { notIn, or } from '../../utils/fp/predicates';
+import { objectDelete } from '../../utils/object/delete';
+import { objectFilter } from '../../utils/object/filter';
+import { objectMap } from '../../utils/object/map';
+import { fullMerge, partialMerge } from '../../utils/object/merge';
+import { getEpoch } from '../../utils/time/epoch';
 import {
     aliasPendingCreate,
     aliasPendingCreated,
@@ -39,21 +50,10 @@ import {
     sharesEventNew,
     vaultDeleteSuccess,
     vaultMoveAllItemsProgress,
-} from '@proton/pass/store/actions';
-import type { WrappedOptimisticState } from '@proton/pass/store/optimistic/types';
-import { combineOptimisticReducers } from '@proton/pass/store/optimistic/utils/combine-optimistic-reducers';
-import withOptimistic from '@proton/pass/store/optimistic/with-optimistic';
-import type { IndexedByShareIdAndItemId, ItemRevision, RequiredProps, UniqueItem } from '@proton/pass/types';
-import { ContentFormatVersion, ItemFlag, ItemState } from '@proton/pass/types';
-import { prop } from '@proton/pass/utils/fp/lens';
-import { notIn, or } from '@proton/pass/utils/fp/predicates';
-import { objectDelete } from '@proton/pass/utils/object/delete';
-import { objectFilter } from '@proton/pass/utils/object/filter';
-import { objectMap } from '@proton/pass/utils/object/map';
-import { fullMerge, partialMerge } from '@proton/pass/utils/object/merge';
-import { getEpoch } from '@proton/pass/utils/time/epoch';
-import { toMap } from '@proton/shared/lib/helpers/object';
-
+} from '../actions';
+import type { WrappedOptimisticState } from '../optimistic/types';
+import { combineOptimisticReducers } from '../optimistic/utils/combine-optimistic-reducers';
+import withOptimistic from '../optimistic/with-optimistic';
 import type { Draft } from './drafts';
 import { draftsReducer } from './drafts';
 import { secureLinksReducer } from './secure-links';

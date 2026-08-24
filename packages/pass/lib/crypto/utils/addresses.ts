@@ -1,5 +1,6 @@
-import { and, or } from '@proton/pass/utils/fp/predicates';
 import { getIsAddressActive, getIsAddressEnabled, getIsAddressExternal } from '@proton/shared/lib/helpers/address';
+
+import { and, or } from '../../../utils/fp/predicates';
 
 /**
  * When user is external : make sure the address is enabled

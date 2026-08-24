@@ -3,14 +3,15 @@ import { memo } from 'react';
 import { c, msgid } from 'ttag';
 
 import type { IconName } from '@proton/icons/types';
-import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
-import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
-import { getInitialFilters, getLocalPath } from '@proton/pass/components/Navigation/routing';
-import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
-import { pipe } from '@proton/pass/utils/fp/pipe';
 import { omit } from '@proton/shared/lib/helpers/object';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
+
+import { pipe } from '../../../utils/fp/pipe';
+import { DropdownMenuButton } from '../../Layout/Dropdown/DropdownMenuButton';
+import { useNavigate } from '../../Navigation/NavigationActions';
+import { getInitialFilters, getLocalPath } from '../../Navigation/routing';
+import { VaultIcon } from '../../Vault/VaultIcon';
 
 type Props = {
     count: number;

@@ -5,8 +5,9 @@ import debounce from 'lodash/debounce';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { repaint } from '@proton/pass/utils/dom/repaint';
 import clsx from '@proton/utils/clsx';
+
+import { repaint } from '../../../utils/dom/repaint';
 
 import './TextAreaReadonly.scss';
 

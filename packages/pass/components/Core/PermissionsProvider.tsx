@@ -4,9 +4,9 @@ import { createContext, useContext, useMemo } from 'react';
 import { c } from 'ttag';
 import type { Permissions } from 'webextension-polyfill';
 
-import { ConfirmationPrompt } from '@proton/pass/components/Confirmation/ConfirmationPrompt';
-import { useAsyncModalHandles } from '@proton/pass/hooks/useAsyncModalHandles';
-import type { MaybeNull, Unpack } from '@proton/pass/types/utils/index';
+import { useAsyncModalHandles } from '../../hooks/useAsyncModalHandles';
+import type { MaybeNull, Unpack } from '../../types/utils';
+import { ConfirmationPrompt } from '../Confirmation/ConfirmationPrompt';
 
 export type Permission = Unpack<Permissions.Permissions['permissions']>;
 export type PermissionPrompt = { title: string; message: string };

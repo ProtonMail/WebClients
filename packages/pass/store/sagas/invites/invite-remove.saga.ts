@@ -1,13 +1,13 @@
 import { put, select, takeEvery } from 'redux-saga/effects';
 
-import { removeInvite } from '@proton/pass/lib/invites/invite.requests';
-import { createTelemetryEvent } from '@proton/pass/lib/telemetry/utils';
-import { inviteRemoveFailure, inviteRemoveIntent, inviteRemoveSuccess } from '@proton/pass/store/actions';
-import { syncAccess } from '@proton/pass/store/actions/creators/polling';
-import { selectItem } from '@proton/pass/store/selectors';
-import type { RootSagaOptions } from '@proton/pass/store/types';
-import type { ItemRevision, Maybe } from '@proton/pass/types';
-import { TelemetryEventName, TelemetryItemType, TelemetryTargetType } from '@proton/pass/types/data/telemetry';
+import { removeInvite } from '../../../lib/invites/invite.requests';
+import { createTelemetryEvent } from '../../../lib/telemetry/utils';
+import type { ItemRevision, Maybe } from '../../../types';
+import { TelemetryEventName, TelemetryItemType, TelemetryTargetType } from '../../../types/data/telemetry';
+import { inviteRemoveFailure, inviteRemoveIntent, inviteRemoveSuccess } from '../../actions';
+import { syncAccess } from '../../actions/creators/polling';
+import { selectItem } from '../../selectors';
+import type { RootSagaOptions } from '../../types';
 
 function* removeInviteWorker({ getTelemetry }: RootSagaOptions, { payload, meta: { request } }: ReturnType<typeof inviteRemoveIntent>) {
     try {

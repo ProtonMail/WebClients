@@ -1,4 +1,4 @@
-import type { Maybe } from '@proton/pass/types';
+import type { Maybe } from '../../types';
 
 export const groupByKey = <T extends { [key: string]: any }, K extends keyof T>(
     list: T[],

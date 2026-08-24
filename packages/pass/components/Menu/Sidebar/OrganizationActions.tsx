@@ -1,7 +1,7 @@
 import { memo } from 'react';
 
-import { AdminPanelButton } from '@proton/pass/components/Menu/B2B/AdminPanelButton';
-import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
+import { useOrganization } from '../../Organization/OrganizationProvider';
+import { AdminPanelButton } from '../B2B/AdminPanelButton';
 
 export const OrganizationActions = memo(() => {
     const org = useOrganization();

@@ -1,7 +1,8 @@
 import { generateKey } from '@protontech/crypto/subtle/aesGcm.ts';
-import { encryptData, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
-import { PassCryptoError, PassCryptoFileError } from '@proton/pass/lib/crypto/utils/errors';
-import { PassEncryptionTag } from '@proton/pass/types';
+
+import { PassEncryptionTag } from '../../../../types';
+import { encryptData, importSymmetricKey } from '../../utils/crypto-helpers';
+import { PassCryptoError, PassCryptoFileError } from '../../utils/errors';
 
 export type FileDescriptorProcessResult = {
     /** Raw file key contents */

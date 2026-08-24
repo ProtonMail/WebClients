@@ -1,11 +1,11 @@
 import type { IDBPTransaction } from 'idb';
 import { type DBSchema, type IDBPDatabase, deleteDB, openDB } from 'idb';
 
-import { FileStorageGarbageCollector } from '@proton/pass/lib/file-storage/fs.gc';
-import type { AnyStorage, Maybe, StorageData } from '@proton/pass/types';
-import { logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
 
+import type { AnyStorage, Maybe, StorageData } from '../../types';
+import { logger } from '../../utils/logger';
+import { FileStorageGarbageCollector } from './fs.gc';
 import type { FileBuffer, FileStorage } from './types';
 
 /** File name type used as keys in IndexedDB */

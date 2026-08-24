@@ -1,11 +1,12 @@
 import type { PrivateKeyReference } from '@protontech/crypto';
 import { CryptoProxy } from '@protontech/crypto';
-import type { ItemKey, ShareGetResponse, ShareKeyResponse, TypedOpenedShare, VaultShareKey } from '@proton/pass/types';
-import { ContentFormatVersion, ShareType } from '@proton/pass/types';
+
 import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
 import type { AddressKey, Group } from '@proton/shared/lib/interfaces';
 import { type Address, AddressConfirmationState, type DecryptedKey } from '@proton/shared/lib/interfaces';
 
+import type { ItemKey, ShareGetResponse, ShareKeyResponse, TypedOpenedShare, VaultShareKey } from '../../../types';
+import { ContentFormatVersion, ShareType } from '../../../types';
 import { createVault } from '../processes/vault/create-vault';
 import { generateKey, importSymmetricKey } from './crypto-helpers';
 

@@ -1,5 +1,4 @@
-import { itemBuilder } from '@proton/pass/lib/items/item.builder';
-
+import { itemBuilder } from '../../lib/items/item.builder';
 import { MOCK_FIELDS, MOCK_SECTIONS } from './identity.mocks';
 import { buildContentSections } from './useIdentityContent';
 import * as utils from './utils';

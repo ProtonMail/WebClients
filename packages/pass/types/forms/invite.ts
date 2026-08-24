@@ -1,6 +1,6 @@
-import type { ListFieldValue } from '@proton/pass/components/Form/Field/ListField';
-import type { AccessTarget } from '@proton/pass/lib/access/types';
-import type { SelectedItem, SelectedShare, ShareRole } from '@proton/pass/types';
+import type { SelectedItem, SelectedShare, ShareRole } from '..';
+import type { ListFieldValue } from '../../components/Form/Field/ListField';
+import type { AccessTarget } from '../../lib/access/types';
 
 export type InviteFormStep = 'members' | 'permissions' | 'review';
 export type InviteFormMemberValue = { email: string; role: ShareRole; isGroup: boolean };

@@ -1,8 +1,9 @@
-import type { AnyStorage, MaybePromise } from '@proton/pass/types';
-import { type Maybe, type SpotlightAcknowledgment, SpotlightMessage, type SpotlightState } from '@proton/pass/types';
-import { logger } from '@proton/pass/utils/logger';
-import { getEpoch } from '@proton/pass/utils/time/epoch';
 import identity from '@proton/utils/identity';
+
+import type { AnyStorage, MaybePromise } from '../../types';
+import { type Maybe, type SpotlightAcknowledgment, SpotlightMessage, type SpotlightState } from '../../types';
+import { logger } from '../../utils/logger';
+import { getEpoch } from '../../utils/time/epoch';
 
 type SpotlightServiceOptions<StorageKey extends string> = {
     /** defines where spotlight data will be stored */

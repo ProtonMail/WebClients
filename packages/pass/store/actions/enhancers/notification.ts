@@ -1,9 +1,9 @@
 import type { Action } from 'redux';
 
 import type { CreateNotificationOptions, NotificationType } from '@proton/app-context/notifications/interfaces';
-import type { ClientEndpoint } from '@proton/pass/types';
-import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 
+import type { ClientEndpoint } from '../../../types';
+import { getErrorMessage } from '../../../utils/errors/get-error-message';
 import { type WithMeta, withMetaFactory } from './meta';
 
 export type Notification = CreateNotificationOptions & {

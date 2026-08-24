@@ -1,9 +1,8 @@
 import fs from 'fs';
 
-import type { ItemImportIntent } from '@proton/pass/types';
-import { AutofillMode } from '@proton/pass/types/protobuf';
-import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
-
+import type { ItemImportIntent } from '../../../../types';
+import { AutofillMode } from '../../../../types/protobuf';
+import { deobfuscate } from '../../../../utils/obfuscate/xor';
 import { readChromiumData } from './chromium.reader';
 
 describe('Import Chrome CSV', () => {

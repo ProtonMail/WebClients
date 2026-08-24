@@ -1,7 +1,6 @@
 import type { Reducer } from 'redux';
 
-import { arrayRemove } from '@proton/pass/utils/array/remove';
-
+import { arrayRemove } from '../../../utils/array/remove';
 import type { OptimisticState } from '../types';
 import { isOptimisticHistoryItemWithId } from './assertions';
 import { splitHistoryOnFirstOptimisticItem } from './split-history';
@@ -16,11 +15,7 @@ import { getActionFromHistoryItem } from './transformers';
  *   this NEXT optimistic item in history.
  * - If the matched item is anywhere else in the optimistic history, remove it.
  */
-export const removeHistoryItem = <T>(
-    reducer: Reducer<T>,
-    optimistic: OptimisticState<T>,
-    optimisticId: string
-): OptimisticState<T> => {
+export const removeHistoryItem = <T>(reducer: Reducer<T>, optimistic: OptimisticState<T>, optimisticId: string): OptimisticState<T> => {
     const { history, checkpoint } = optimistic;
     const historyItemIndex = history.findIndex(isOptimisticHistoryItemWithId(optimisticId));
 

@@ -1,15 +1,16 @@
 import type { Action } from 'redux';
 import { select, takeLatest } from 'redux-saga/effects';
 
-import { generateCache } from '@proton/pass/lib/cache/generate';
-import { PassCrypto } from '@proton/pass/lib/crypto';
-import { cacheCancel, stateDestroy } from '@proton/pass/store/actions';
-import { type WithCache, isCachingAction } from '@proton/pass/store/actions/enhancers/cache';
-import type { RootSagaOptions, State } from '@proton/pass/store/types';
-import type { EncryptedPassCache } from '@proton/pass/types/worker/cache';
-import { or } from '@proton/pass/utils/fp/predicates';
-import { logger } from '@proton/pass/utils/logger';
 import { wait } from '@proton/shared/lib/helpers/promise';
+
+import { generateCache } from '../../../lib/cache/generate';
+import { PassCrypto } from '../../../lib/crypto';
+import type { EncryptedPassCache } from '../../../types/worker/cache';
+import { or } from '../../../utils/fp/predicates';
+import { logger } from '../../../utils/logger';
+import { cacheCancel, stateDestroy } from '../../actions';
+import { type WithCache, isCachingAction } from '../../actions/enhancers/cache';
+import type { RootSagaOptions, State } from '../../types';
 
 const CACHE_THROTTLING_TIMEOUT = 1_000;
 

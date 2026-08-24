@@ -1,10 +1,11 @@
-import { isB2BAdmin } from '@proton/pass/lib/organization/helpers';
-import { getPassPlan } from '@proton/pass/lib/user/user.plan';
-import type { OrganizationState } from '@proton/pass/store/reducers/organization';
-import type { State } from '@proton/pass/store/types';
-import type { MaybeNull, OrganizationUpdatePasswordPolicyInput, OrganizationVaultCreateMode } from '@proton/pass/types';
-import type { OrganizationSettings } from '@proton/pass/types/data/organization';
 import type { Organization } from '@proton/shared/lib/interfaces';
+
+import { isB2BAdmin } from '../../lib/organization/helpers';
+import { getPassPlan } from '../../lib/user/user.plan';
+import type { MaybeNull, OrganizationUpdatePasswordPolicyInput, OrganizationVaultCreateMode } from '../../types';
+import type { OrganizationSettings } from '../../types/data/organization';
+import type { OrganizationState } from '../reducers/organization';
+import type { State } from '../types';
 
 export const selectOrganizationState = ({ organization }: State): MaybeNull<OrganizationState> => organization;
 

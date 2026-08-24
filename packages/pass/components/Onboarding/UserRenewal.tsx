@@ -4,18 +4,19 @@ import { useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
-import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import type { BaseSpotlightMessage } from '@proton/pass/components/Spotlight/SpotlightContent';
-import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
-import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
-import { selectPlanDisplayName, selectUserPlan } from '@proton/pass/store/selectors';
-import { PassFeature } from '@proton/pass/types/api/features';
-import { pipe } from '@proton/pass/utils/fp/pipe';
-import { epochToDate } from '@proton/pass/utils/time/format';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
+
+import { useFeatureFlag } from '../../hooks/useFeatureFlag';
+import { usePassConfig } from '../../hooks/usePassConfig';
+import { selectPlanDisplayName, selectUserPlan } from '../../store/selectors';
+import { PassFeature } from '../../types/api/features';
+import { pipe } from '../../utils/fp/pipe';
+import { epochToDate } from '../../utils/time/format';
+import { useAuthStore } from '../Core/AuthStoreProvider';
+import { useOnline } from '../Core/ConnectivityProvider';
+import { usePassCore } from '../Core/PassCoreProvider';
+import type { BaseSpotlightMessage } from '../Spotlight/SpotlightContent';
 
 export const UserRenewal: FC<BaseSpotlightMessage> = ({ onClose = noop }) => {
     const { onLink } = usePassCore();

@@ -1,5 +1,5 @@
-import type { BaseTelemetryEvent, TelemetryEvent, TelemetryPlatform } from '@proton/pass/types/data/telemetry';
-import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
+import type { BaseTelemetryEvent, TelemetryEvent, TelemetryPlatform } from '../../types/data/telemetry';
+import { TelemetryEventName } from '../../types/data/telemetry';
 
 export const AUTOFILL_TELEMETRY_EVENTS = [
     TelemetryEventName.ExtensionCopiedFromLogin,

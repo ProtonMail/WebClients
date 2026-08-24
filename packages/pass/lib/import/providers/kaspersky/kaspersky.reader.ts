@@ -1,18 +1,9 @@
-import { ImportProviderError } from '@proton/pass/lib/import/helpers/error';
-import {
-    getEmailOrUsername,
-    getImportedVaultName,
-    importLoginItem,
-    importNoteItem,
-} from '@proton/pass/lib/import/helpers/transformers';
-import {
-    type KasperskyItem,
-    KasperskyItemKey,
-    KasperskyItemKeys,
-} from '@proton/pass/lib/import/providers/kaspersky/kaspersky.types';
-import type { ImportReaderResult } from '@proton/pass/lib/import/types';
-import type { ItemImportIntent, MaybeNull } from '@proton/pass/types';
-import { logger } from '@proton/pass/utils/logger';
+import type { ItemImportIntent, MaybeNull } from '../../../../types';
+import { logger } from '../../../../utils/logger';
+import { ImportProviderError } from '../../helpers/error';
+import { getEmailOrUsername, getImportedVaultName, importLoginItem, importNoteItem } from '../../helpers/transformers';
+import type { ImportReaderResult } from '../../types';
+import { type KasperskyItem, KasperskyItemKey, KasperskyItemKeys } from './kaspersky.types';
 
 const LOGIN_NAME_KEYS = [KasperskyItemKey.LOGIN_NAME, KasperskyItemKey.ACCOUNT_NAME, KasperskyItemKey.WEBSITE_NAME];
 

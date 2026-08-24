@@ -7,16 +7,17 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import { useGroups } from '@proton/pass/components/Groups/GroupsProvider';
-import { InviteRecommendationRow } from '@proton/pass/components/Invite/Steps/InviteRecommendationRow';
-import { ButtonBar } from '@proton/pass/components/Layout/Button/ButtonBar';
-import { VirtualList } from '@proton/pass/components/Layout/List/VirtualList';
-import { useInviteRecommendations } from '@proton/pass/hooks/invite/useInviteRecommendations';
-import { useDebouncedValue } from '@proton/pass/hooks/useDebouncedValue';
-import type { AccessKeys } from '@proton/pass/lib/access/types';
-import { selectDefaultVault } from '@proton/pass/store/selectors';
-import type { MaybeNull } from '@proton/pass/types';
-import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
+
+import { useInviteRecommendations } from '../../../hooks/invite/useInviteRecommendations';
+import { useDebouncedValue } from '../../../hooks/useDebouncedValue';
+import type { AccessKeys } from '../../../lib/access/types';
+import { selectDefaultVault } from '../../../store/selectors';
+import type { MaybeNull } from '../../../types';
+import { isEmptyString } from '../../../utils/string/is-empty-string';
+import { useGroups } from '../../Groups/GroupsProvider';
+import { ButtonBar } from '../../Layout/Button/ButtonBar';
+import { VirtualList } from '../../Layout/List/VirtualList';
+import { InviteRecommendationRow } from './InviteRecommendationRow';
 
 export type InviteSuggestionItem = { email: string; isGroup: boolean; groupName: string | undefined };
 

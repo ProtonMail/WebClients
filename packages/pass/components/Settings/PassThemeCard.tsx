@@ -4,9 +4,10 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import Info from '@proton/components/components/link/Info';
-import { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
+
+import { PassThemeOption } from '../Layout/Theme/types';
 
 import './PassThemeCard.scss';
 

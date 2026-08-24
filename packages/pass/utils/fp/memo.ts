@@ -1,4 +1,4 @@
-import type { Callback, Maybe } from '@proton/pass/types';
+import type { Callback, Maybe } from '../../types';
 
 export type MaxAgeMemoCacheEntry<F extends Callback> = { validUntil: number; result: ReturnType<F> };
 export type MaxAgeMemoizedFn<F extends Callback> = F & { flush: F; clear: () => void };

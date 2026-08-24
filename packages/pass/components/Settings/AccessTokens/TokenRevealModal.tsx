@@ -9,12 +9,13 @@ import { Href } from '@proton/atoms/Href/Href';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
-import { useCopyToClipboard } from '@proton/pass/components/Settings/Clipboard/ClipboardProvider';
-import { AGENT_INSTRUCTIONS_URL } from '@proton/pass/constants.runtime';
-import { useRequest } from '@proton/pass/hooks/useRequest';
-import { getAgentInstructions } from '@proton/pass/store/actions';
-import type { MaybeNull } from '@proton/pass/types';
+
+import { AGENT_INSTRUCTIONS_URL } from '../../../constants.runtime';
+import { useRequest } from '../../../hooks/useRequest';
+import { getAgentInstructions } from '../../../store/actions';
+import type { MaybeNull } from '../../../types';
+import { PassModal } from '../../Layout/Modal/PassModal';
+import { useCopyToClipboard } from '../Clipboard/ClipboardProvider';
 
 type Props = {
     /** Full env-var value: `<server-issued-token>::<urlsafe-base64-no-pad(raw-key)>`.

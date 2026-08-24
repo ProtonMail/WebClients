@@ -1,11 +1,11 @@
-import { BIOMETRICS_KEY } from '@proton/pass/constants';
+import { BIOMETRICS_KEY } from '../../../../constants';
+import type { AuthStore } from '../../store';
 import {
     BIOMETRICS_KEY_VERSION_PREFIX,
     fromBiometricsEncryptedOfflineKD,
     inferBiometricsStorageKey,
     intoBiometricsEncryptedOfflineKD,
-} from '@proton/pass/lib/auth/lock/biometrics/utils';
-import type { AuthStore } from '@proton/pass/lib/auth/store';
+} from './utils';
 
 describe('Biometrics utils', () => {
     describe('`intoBiometricsEncryptedOfflineKD`', () => {

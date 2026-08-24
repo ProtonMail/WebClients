@@ -1,14 +1,14 @@
 import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
-import { createPassCoreProxy } from '@proton/pass/lib/core/core.proxy';
-import type { PassCoreProxy } from '@proton/pass/lib/core/core.types';
+
+import { PassSignatureContext } from '../../../../types';
+import { createPassCoreProxy } from '../../../core/core.proxy';
+import type { PassCoreProxy } from '../../../core/core.types';
 import {
     createRandomKey,
     createRandomVaultKey,
     releaseCryptoProxy,
     setupCryptoProxyForTesting,
-} from '@proton/pass/lib/crypto/utils/testing';
-import { PassSignatureContext } from '@proton/pass/types';
-
+} from '../../utils/testing';
 import { createNewUserSignatureFactory } from './create-new-user-signature';
 
 describe('create new user invite signature', () => {
@@ -25,7 +25,10 @@ describe('create new user invite signature', () => {
         const shareKey = await createRandomVaultKey(0);
         const addressKey = await createRandomKey();
         const invitedEmail = 'test@proton.me';
-        const signatureBody = await core.create_new_user_invite_signature_body(invitedEmail, shareKey.raw) as Uint8Array<ArrayBuffer>;
+        const signatureBody = (await core.create_new_user_invite_signature_body(
+            invitedEmail,
+            shareKey.raw
+        )) as Uint8Array<ArrayBuffer>;
 
         const signature = await createNewUserSignatureFactory(core)({
             invitedEmail,

@@ -5,18 +5,19 @@ import { c, msgid } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcPaperPlane } from '@proton/icons/icons/IcPaperPlane';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { FieldBox } from '@proton/pass/components/Form/Field/Layout/FieldBox';
-import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
-import { useAliasContacts } from '@proton/pass/components/Item/Alias/Contact/AliasContactsContext';
-import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
-import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
-import { useCopyToClipboard } from '@proton/pass/components/Settings/Clipboard/ClipboardProvider';
-import { useRequest } from '@proton/pass/hooks/useRequest';
-import { aliasBlockContact, aliasDeleteContact } from '@proton/pass/store/actions';
-import type { AliasContactWithStatsGetResponse } from '@proton/pass/types';
-import { epochToRelativeDuration } from '@proton/pass/utils/time/format';
 import clsx from '@proton/utils/clsx';
+
+import { useRequest } from '../../../../hooks/useRequest';
+import { aliasBlockContact, aliasDeleteContact } from '../../../../store/actions';
+import type { AliasContactWithStatsGetResponse } from '../../../../types';
+import { epochToRelativeDuration } from '../../../../utils/time/format';
+import { usePassCore } from '../../../Core/PassCoreProvider';
+import { FieldBox } from '../../../Form/Field/Layout/FieldBox';
+import { FieldsetCluster } from '../../../Form/Field/Layout/FieldsetCluster';
+import { DropdownMenuButton } from '../../../Layout/Dropdown/DropdownMenuButton';
+import { QuickActionsDropdown } from '../../../Layout/Dropdown/QuickActionsDropdown';
+import { useCopyToClipboard } from '../../../Settings/Clipboard/ClipboardProvider';
+import { useAliasContacts } from './AliasContactsContext';
 
 type Props = { contact: AliasContactWithStatsGetResponse };
 

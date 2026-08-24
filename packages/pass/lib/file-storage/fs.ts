@@ -1,10 +1,10 @@
-import { FileStorageMemory } from '@proton/pass/lib/file-storage/fs.memory';
-import { awaiter } from '@proton/pass/utils/fp/promises';
-import { logger } from '@proton/pass/utils/logger';
 import { isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 import noop from '@proton/utils/noop';
 
+import { awaiter } from '../../utils/fp/promises';
+import { logger } from '../../utils/logger';
 import { FileStorageIDB, openPassFileDB } from './fs.idb';
+import { FileStorageMemory } from './fs.memory';
 import { FileStorageOPFS } from './fs.opfs';
 import type { FileStorage } from './types';
 

@@ -1,12 +1,6 @@
-import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
-import { selectItem, selectItemWithOptimistic, selectOptimisticItemState } from '@proton/pass/store/selectors/items';
-import type {
-    ItemOptimisticState,
-    ItemRevision,
-    ItemRevisionWithOptimistic,
-    ItemType,
-    Maybe,
-} from '@proton/pass/types';
+import { selectItem, selectItemWithOptimistic, selectOptimisticItemState } from '../store/selectors/items';
+import type { ItemOptimisticState, ItemRevision, ItemRevisionWithOptimistic, ItemType, Maybe } from '../types';
+import { useMemoSelector } from './useMemoSelector';
 
 export const useItem = <T extends ItemType = ItemType>(shareId: string, itemId: string): Maybe<ItemRevision<T>> =>
     useMemoSelector(selectItem<T>, [shareId, itemId]);

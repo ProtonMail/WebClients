@@ -4,25 +4,19 @@ import { useDispatch } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { ConfirmationModal } from '@proton/pass/components/Confirmation/ConfirmationModal';
-import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
-import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
-import { getLocalPath, getTrashRoute } from '@proton/pass/components/Navigation/routing';
-import { ConfirmTrashEmpty } from '@proton/pass/components/Vault/Actions/ConfirmTrashEmpty';
-import { OrganizeVaultsModal } from '@proton/pass/components/Vault/OrganizeVaultsModal';
-import { VaultDelete } from '@proton/pass/components/Vault/Vault.delete';
-import { createUseContext } from '@proton/pass/hooks/useContextFactory';
-import {
-    emptyTrashIntent,
-    restoreTrashIntent,
-    shareLeaveIntent,
-    sharesVisibilityEdit,
-} from '@proton/pass/store/actions';
-import type { VaultShareItem } from '@proton/pass/store/reducers';
-import type { VaultsVisibilityDTO } from '@proton/pass/types';
-import { type MaybeNull, ShareType } from '@proton/pass/types';
-import { pipe } from '@proton/pass/utils/fp/pipe';
-
+import { createUseContext } from '../../hooks/useContextFactory';
+import { emptyTrashIntent, restoreTrashIntent, shareLeaveIntent, sharesVisibilityEdit } from '../../store/actions';
+import type { VaultShareItem } from '../../store/reducers';
+import type { VaultsVisibilityDTO } from '../../types';
+import { type MaybeNull, ShareType } from '../../types';
+import { pipe } from '../../utils/fp/pipe';
+import { ConfirmationModal } from '../Confirmation/ConfirmationModal';
+import { useNavigate } from '../Navigation/NavigationActions';
+import { useNavigationFilters } from '../Navigation/NavigationFilters';
+import { getLocalPath, getTrashRoute } from '../Navigation/routing';
+import { ConfirmTrashEmpty } from './Actions/ConfirmTrashEmpty';
+import { OrganizeVaultsModal } from './OrganizeVaultsModal';
+import { VaultDelete } from './Vault.delete';
 import { VaultEdit } from './Vault.edit';
 import { VaultMove } from './Vault.move';
 import { VaultNew } from './Vault.new';

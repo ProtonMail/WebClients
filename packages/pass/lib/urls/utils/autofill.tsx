@@ -1,15 +1,16 @@
 import { c } from 'ttag';
 
-import { ItemUrlMatch, getItemPriorityForUrl } from '@proton/pass/lib/urls/search/match-url';
-import { parseUrl } from '@proton/pass/lib/urls/utils/parser';
-import type { ItemRevision, UrlItem } from '@proton/pass/types';
-import { AutofillMode } from '@proton/pass/types/protobuf';
-import type { AutofillUrl } from '@proton/pass/types/protobuf/item-v1';
-import { deduplicate } from '@proton/pass/utils/array/duplicate';
-import { partition } from '@proton/pass/utils/array/partition';
-import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
-import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import uniqueBy from '@proton/utils/uniqueBy';
+
+import type { ItemRevision, UrlItem } from '../../../types';
+import { AutofillMode } from '../../../types/protobuf';
+import type { AutofillUrl } from '../../../types/protobuf/item-v1';
+import { deduplicate } from '../../../utils/array/duplicate';
+import { partition } from '../../../utils/array/partition';
+import { isEmptyString } from '../../../utils/string/is-empty-string';
+import { uniqueId } from '../../../utils/string/unique-id';
+import { ItemUrlMatch, getItemPriorityForUrl } from '../search/match-url';
+import { parseUrl } from './parser';
 
 /** List of modes where the url field is an actual url and can be used as such */
 export const autofillWithUrls = [

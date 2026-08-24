@@ -1,6 +1,6 @@
-import { toggleSentinel } from '@proton/pass/lib/monitor/monitor.request';
-import { sentinelToggle } from '@proton/pass/store/actions';
-import { createRequestSaga } from '@proton/pass/store/request/sagas';
+import { toggleSentinel } from '../../../lib/monitor/monitor.request';
+import { sentinelToggle } from '../../actions';
+import { createRequestSaga } from '../../request/sagas';
 
 export default createRequestSaga({
     actions: sentinelToggle,

@@ -1,6 +1,6 @@
-import { PassCrypto } from '@proton/pass/lib/crypto';
-import { PassCryptoShareError } from '@proton/pass/lib/crypto/utils/errors';
-import type { Maybe, ShareGetResponse, ShareKeyResponse, ShareManager } from '@proton/pass/types';
+import { PassCrypto } from '../..';
+import type { Maybe, ShareGetResponse, ShareKeyResponse, ShareManager } from '../../../../types';
+import { PassCryptoShareError } from '../../utils/errors';
 
 /** Check if share can be opened with available keys - either from existing
  * `shareManager` or provided `encryptedShareKeys` matched against

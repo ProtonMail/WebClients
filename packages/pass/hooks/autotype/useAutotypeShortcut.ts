@@ -1,16 +1,17 @@
 import { useSelector } from 'react-redux';
 
 import useKeyPress from '@proton/components/hooks/useKeyPress';
-import { useItemsActions } from '@proton/pass/components/Item/ItemActionsProvider';
-import { useSpotlightFor } from '@proton/pass/components/Spotlight/WithSpotlight';
-import { useAutotypeActions } from '@proton/pass/hooks/autotype/useAutotypeActions';
-import { useAutotypeExecute } from '@proton/pass/hooks/autotype/useAutotypeExecute';
-import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
-import { selectPassPlan, selectUserPlan } from '@proton/pass/store/selectors';
-import { type Item, SpotlightMessage } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
-import { UserPassPlan } from '@proton/pass/types/api/plan';
 import noop from '@proton/utils/noop';
+
+import { useItemsActions } from '../../components/Item/ItemActionsProvider';
+import { useSpotlightFor } from '../../components/Spotlight/WithSpotlight';
+import { selectPassPlan, selectUserPlan } from '../../store/selectors';
+import { type Item, SpotlightMessage } from '../../types';
+import { PassFeature } from '../../types/api/features';
+import { UserPassPlan } from '../../types/api/plan';
+import { useFeatureFlag } from '../useFeatureFlag';
+import { useAutotypeActions } from './useAutotypeActions';
+import { useAutotypeExecute } from './useAutotypeExecute';
 
 export const useAutotypeShortcut = DESKTOP_BUILD
     ? (data: Item<'login'>) => {

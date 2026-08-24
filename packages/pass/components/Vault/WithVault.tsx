@@ -1,9 +1,9 @@
 import { type FC, type ReactNode, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
-import { isVaultShare } from '@proton/pass/lib/shares/share.predicates';
-import { selectShare } from '@proton/pass/store/selectors';
-import type { MaybeNull, Share, ShareType } from '@proton/pass/types';
+import { isVaultShare } from '../../lib/shares/share.predicates';
+import { selectShare } from '../../store/selectors';
+import type { MaybeNull, Share, ShareType } from '../../types';
 
 type Props = {
     shareId?: MaybeNull<string>;

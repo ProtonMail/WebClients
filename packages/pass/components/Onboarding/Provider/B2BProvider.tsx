@@ -3,19 +3,19 @@ import { useEffect, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useRouteMatch } from 'react-router-dom';
 
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { usePassExtensionLink } from '@proton/pass/components/Core/PassExtensionLink';
-import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
-import { getLocalPath } from '@proton/pass/components/Navigation/routing';
-import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
+import noop from '@proton/utils/noop';
+
+import { useMemoSelector } from '../../../hooks/useMemoSelector';
 import {
     selectB2BOnboardingComplete,
     selectB2BOnboardingEnabled,
     selectB2BOnboardingState,
-} from '@proton/pass/store/selectors';
-import { SpotlightMessage } from '@proton/pass/types';
-import noop from '@proton/utils/noop';
-
+} from '../../../store/selectors';
+import { SpotlightMessage } from '../../../types';
+import { usePassCore } from '../../Core/PassCoreProvider';
+import { usePassExtensionLink } from '../../Core/PassExtensionLink';
+import { useNavigate } from '../../Navigation/NavigationActions';
+import { getLocalPath } from '../../Navigation/routing';
 import { OnboardingContext, type OnboardingContextValue, OnboardingType } from './OnboardingContext';
 
 export const B2BProvider: FC<PropsWithChildren> = ({ children }) => {

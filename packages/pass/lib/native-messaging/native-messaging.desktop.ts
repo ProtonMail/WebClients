@@ -1,7 +1,7 @@
-import { messageToPayload, payloadToMessage } from '@proton/pass/lib/native-messaging/crypto';
-import type { NativeMessageRequestForType, SendNativeMessageResponse } from '@proton/pass/types';
-import { NativeMessageErrorType, NativeMessageType } from '@proton/pass/types';
-import { logger } from '@proton/pass/utils/logger';
+import type { NativeMessageRequestForType, SendNativeMessageResponse } from '../../types';
+import { NativeMessageErrorType, NativeMessageType } from '../../types';
+import { logger } from '../../utils/logger';
+import { messageToPayload, payloadToMessage } from './crypto';
 
 const log = (...content: any[]) => logger.debug('[NativeMessaging]', ...content);
 

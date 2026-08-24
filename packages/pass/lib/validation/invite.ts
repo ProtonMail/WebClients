@@ -3,11 +3,11 @@ import type { MutableRefObject, RefObject } from 'react';
 import type { FormikErrors } from 'formik';
 import type { Store } from 'redux';
 
-import { AccessTarget } from '@proton/pass/lib/access/types';
-import PassUI from '@proton/pass/lib/core/ui.proxy';
-import { selectAccessMembers, selectShare } from '@proton/pass/store/selectors';
-import type { State } from '@proton/pass/store/types';
-import type { InviteFormValues, Maybe } from '@proton/pass/types';
+import { selectAccessMembers, selectShare } from '../../store/selectors';
+import type { State } from '../../store/types';
+import type { InviteFormValues, Maybe } from '../../types';
+import { AccessTarget } from '../access/types';
+import PassUI from '../core/ui.proxy';
 
 export enum InviteEmailsError {
     DUPLICATE = 'DUPLICATE' /* duplicate members */,

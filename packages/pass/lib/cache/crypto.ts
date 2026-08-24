@@ -2,11 +2,12 @@ import { ARGON2_PARAMS, CryptoProxy } from '@protontech/crypto';
 import { type AesGcmCryptoKey, deriveKey, exportKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import { utf8StringToUint8Array } from '@protontech/crypto/utils';
 
-import { encryptData, generateKey, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
-import { PassCryptoError } from '@proton/pass/lib/crypto/utils/errors';
-import { type Maybe, PassEncryptionTag } from '@proton/pass/types';
-import { logger } from '@proton/pass/utils/logger';
 import { binaryStringToUint8Array, uint8ArrayToBinaryString } from '@proton/shared/lib/helpers/encoding';
+
+import { type Maybe, PassEncryptionTag } from '../../types';
+import { logger } from '../../utils/logger';
+import { encryptData, generateKey, importSymmetricKey } from '../crypto/utils/crypto-helpers';
+import { PassCryptoError } from '../crypto/utils/errors';
 
 type Argon2Params = (typeof ARGON2_PARAMS)[keyof typeof ARGON2_PARAMS];
 

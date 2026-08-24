@@ -3,9 +3,9 @@ import type { FC } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
-import { PassPlusIcon } from '@proton/pass/components/Upsell/PassPlusIcon';
 
+import { PassPlusIcon } from '../../../Upsell/PassPlusIcon';
+import { SettingsPanel } from '../../SettingsPanel';
 import { CustomDomainsTable } from './CustomDomainsTable';
 import { DefaultDomainSelect } from './DefaultDomainSelect';
 import { useAliasDomains } from './DomainsProvider';

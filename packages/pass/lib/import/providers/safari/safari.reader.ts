@@ -1,14 +1,9 @@
-import { readCSV } from '@proton/pass/lib/import/helpers/csv.reader';
-import { ImportProviderError } from '@proton/pass/lib/import/helpers/error';
-import {
-    getEmailOrUsername,
-    getImportedVaultName,
-    importLoginItem,
-} from '@proton/pass/lib/import/helpers/transformers';
-import type { ImportReaderResult } from '@proton/pass/lib/import/types';
-import type { ItemImportIntent } from '@proton/pass/types';
-import { logger } from '@proton/pass/utils/logger';
-
+import type { ItemImportIntent } from '../../../../types';
+import { logger } from '../../../../utils/logger';
+import { readCSV } from '../../helpers/csv.reader';
+import { ImportProviderError } from '../../helpers/error';
+import { getEmailOrUsername, getImportedVaultName, importLoginItem } from '../../helpers/transformers';
+import type { ImportReaderResult } from '../../types';
 import type { SafariItem } from './safari.types';
 
 /* Safari old version has Title,Url,Username,Password

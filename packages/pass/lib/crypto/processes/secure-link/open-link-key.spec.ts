@@ -1,6 +1,5 @@
-import { generateKey, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
-import type { ItemKey } from '@proton/pass/types';
-
+import type { ItemKey } from '../../../../types';
+import { generateKey, importSymmetricKey } from '../../utils/crypto-helpers';
 import { createSecureLink } from './create-secure-link';
 import { openLinkKey } from './open-link-key';
 

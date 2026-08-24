@@ -19,21 +19,6 @@ import TableHeaderCell from '@proton/components/components/table/TableHeaderCell
 import TableRow from '@proton/components/components/table/TableRow';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
-import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
-import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
-import type { AvailablePlans } from '@proton/pass/components/Onboarding/Provider/OnboardingContext';
-import { useOnboarding } from '@proton/pass/components/Onboarding/Provider/OnboardingContext';
-import { PASS_PLUS_LIFETIME_PRICE, PASS_PLUS_PRICE, PROTON_UNLIMITED_PRICE, UpsellRef } from '@proton/pass/constants';
-import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
-import { useFeatureFlagVariant } from '@proton/pass/hooks/useFeatureFlagVariant';
-import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
-import { useActionRequest } from '@proton/pass/hooks/useRequest';
-import { deletePassCookie } from '@proton/pass/lib/cookies/cookies';
-import { UNLEASH_FLAG_COOKIE_NAME, updateFeatureVariantCookie } from '@proton/pass/lib/cookies/features';
-import { getUserCurrency, supportedCurrencies } from '@proton/pass/lib/user/user.currency';
-import { getUserFeaturesIntent } from '@proton/pass/store/actions';
-import { selectUser } from '@proton/pass/store/selectors';
-import { PassFeature } from '@proton/pass/types/api/features';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import {
     BRAND_NAME,
@@ -45,6 +30,22 @@ import {
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
+
+import { PASS_PLUS_LIFETIME_PRICE, PASS_PLUS_PRICE, PROTON_UNLIMITED_PRICE, UpsellRef } from '../../constants';
+import { useFeatureFlag } from '../../hooks/useFeatureFlag';
+import { useFeatureFlagVariant } from '../../hooks/useFeatureFlagVariant';
+import { useNavigateToUpgrade } from '../../hooks/useNavigateToUpgrade';
+import { useActionRequest } from '../../hooks/useRequest';
+import { deletePassCookie } from '../../lib/cookies/cookies';
+import { UNLEASH_FLAG_COOKIE_NAME, updateFeatureVariantCookie } from '../../lib/cookies/features';
+import { getUserCurrency, supportedCurrencies } from '../../lib/user/user.currency';
+import { getUserFeaturesIntent } from '../../store/actions';
+import { selectUser } from '../../store/selectors';
+import { PassFeature } from '../../types/api/features';
+import { useAuthStore } from '../Core/AuthStoreProvider';
+import { useOnline } from '../Core/ConnectivityProvider';
+import type { AvailablePlans } from './Provider/OnboardingContext';
+import { useOnboarding } from './Provider/OnboardingContext';
 
 import './OnboardingUpgrade.scss';
 

@@ -1,9 +1,10 @@
 import { useSelector } from 'react-redux';
 
 import Progress from '@proton/components/components/progress/Progress';
-import { WithPaidUser } from '@proton/pass/components/Core/WithPaidUser';
-import { selectUserStorageAllowed, selectUserStorageQuota, selectUserStorageUsed } from '@proton/pass/store/selectors';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
+
+import { selectUserStorageAllowed, selectUserStorageQuota, selectUserStorageUsed } from '../../store/selectors';
+import { WithPaidUser } from '../Core/WithPaidUser';
 
 export const UserStorage = WithPaidUser(() => {
     const usedStorage = useSelector(selectUserStorageUsed);

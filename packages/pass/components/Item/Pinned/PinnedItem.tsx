@@ -2,9 +2,10 @@ import { memo } from 'react';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import type { ButtonLikeProps } from '@proton/atoms/Button/ButtonLike';
-import { ItemTag } from '@proton/pass/components/Item/List/ItemTag';
-import type { ItemRevision } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
+
+import type { ItemRevision } from '../../../types';
+import { ItemTag } from '../List/ItemTag';
 
 import './PinnedItem.scss';
 

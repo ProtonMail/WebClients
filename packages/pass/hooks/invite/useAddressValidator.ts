@@ -1,13 +1,13 @@
 import { type MutableRefObject, useMemo, useRef } from 'react';
 
-import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
-import { useActionRequest } from '@proton/pass/hooks/useRequest';
-import type { inviteAddressesValidateFailure, inviteAddressesValidateSuccess } from '@proton/pass/store/actions';
-import { inviteAddressesValidateIntent } from '@proton/pass/store/actions';
-import type { MaybeNull } from '@proton/pass/types';
-import { OrganizationShareMode } from '@proton/pass/types';
-import { type Awaiter, awaiter } from '@proton/pass/utils/fp/promises';
-import { uniqueId } from '@proton/pass/utils/string/unique-id';
+import { useOrganization } from '../../components/Organization/OrganizationProvider';
+import type { inviteAddressesValidateFailure, inviteAddressesValidateSuccess } from '../../store/actions';
+import { inviteAddressesValidateIntent } from '../../store/actions';
+import type { MaybeNull } from '../../types';
+import { OrganizationShareMode } from '../../types';
+import { type Awaiter, awaiter } from '../../utils/fp/promises';
+import { uniqueId } from '../../utils/string/unique-id';
+import { useActionRequest } from '../useRequest';
 
 type InviteAddressesCache = Map<string, boolean>;
 export interface InviteAddressValidator {

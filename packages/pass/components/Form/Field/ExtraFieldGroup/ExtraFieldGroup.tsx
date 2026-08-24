@@ -3,15 +3,14 @@ import { useSelector } from 'react-redux';
 import type { FormikErrors, FormikProps } from 'formik';
 import { FieldArray } from 'formik';
 
-import { createExtraField } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraField.utils';
-import { selectExtraFieldLimits } from '@proton/pass/store/selectors';
-import type { DeobfuscatedItemExtraField, ExtraFieldGroupValues, ExtraFieldType } from '@proton/pass/types';
-import { autofocusInput } from '@proton/pass/utils/dom/input';
-
+import { selectExtraFieldLimits } from '../../../../store/selectors';
+import type { DeobfuscatedItemExtraField, ExtraFieldGroupValues, ExtraFieldType } from '../../../../types';
+import { autofocusInput } from '../../../../utils/dom/input';
 import { Field } from '../Field';
 import { FieldsetCluster } from '../Layout/FieldsetCluster';
 import { AddExtraFieldDropdown, type CustomButtonProps } from './AddExtraFieldDropdown';
 import { ExtraFieldComponent } from './ExtraField';
+import { createExtraField } from './ExtraField.utils';
 
 export type ExtraFieldGroupProps<V extends ExtraFieldGroupValues> = {
     form: FormikProps<V>;

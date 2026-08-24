@@ -2,8 +2,7 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import { useVaultCreationPolicy } from '@proton/pass/hooks/organization/useVaultCreationPolicy';
-
+import { useVaultCreationPolicy } from '../../../../hooks/organization/useVaultCreationPolicy';
 import { ContactAdminWarning } from './ContactAdminWarning';
 
 export const NoVaultPlaceholder: FC = () => {

@@ -7,10 +7,11 @@ import { IcClockRotateLeft } from '@proton/icons/icons/IcClockRotateLeft';
 import { IcFolderArrowIn } from '@proton/icons/icons/IcFolderArrowIn';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { IcTrashCross } from '@proton/icons/icons/IcTrashCross';
-import { useBulkSelection } from '@proton/pass/components/Bulk/BulkSelectionState';
-import { bulkSelectionDTO } from '@proton/pass/components/Bulk/utils';
-import { useItemsActions } from '@proton/pass/components/Item/ItemActionsProvider';
-import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
+
+import { useItemsActions } from '../Item/ItemActionsProvider';
+import { useItemScope } from '../Navigation/NavigationMatches';
+import { useBulkSelection } from './BulkSelectionState';
+import { bulkSelectionDTO } from './utils';
 
 type Props = { disabled?: boolean };
 

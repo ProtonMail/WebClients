@@ -1,4 +1,4 @@
-import type { NewUserPendingInvite, PendingInvite, SelectedShare, ShareMember } from '@proton/pass/types';
+import type { NewUserPendingInvite, PendingInvite, SelectedShare, ShareMember } from '../../types';
 
 /** Passing an `itemId` means operating on an item's access state,
  * regardless of whether access is via vault or item share */

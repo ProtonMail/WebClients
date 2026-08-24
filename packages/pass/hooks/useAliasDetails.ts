@@ -3,11 +3,11 @@ import { useEffect, useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import useNotifications from '@proton/components/hooks/useNotifications';
-import type { getAliasDetailsFailure, getAliasDetailsSuccess } from '@proton/pass/store/actions';
-import { getAliasDetailsIntent } from '@proton/pass/store/actions';
-import { aliasDetailsRequest } from '@proton/pass/store/actions/requests';
-import type { AliasMailbox, Maybe, Result } from '@proton/pass/types';
 
+import type { getAliasDetailsFailure, getAliasDetailsSuccess } from '../store/actions';
+import { getAliasDetailsIntent } from '../store/actions';
+import { aliasDetailsRequest } from '../store/actions/requests';
+import type { AliasMailbox, Maybe, Result } from '../types';
 import { useActionRequest } from './useRequest';
 
 type UseAliasDetailsConfig = {

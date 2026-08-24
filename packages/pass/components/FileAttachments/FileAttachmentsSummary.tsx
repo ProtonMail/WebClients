@@ -7,13 +7,13 @@ import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { IcPaperClip } from '@proton/icons/icons/IcPaperClip';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
-import { ConfirmationPrompt } from '@proton/pass/components/Confirmation/ConfirmationPrompt';
-import { UpsellingContext } from '@proton/pass/components/Upsell/UpsellingProvider';
-import { UpsellRef } from '@proton/pass/constants';
-import { useAsyncModalHandles } from '@proton/pass/hooks/useAsyncModalHandles';
-import { selectUserStorageAllowed } from '@proton/pass/store/selectors';
 
+import { UpsellRef } from '../../constants';
+import { useAsyncModalHandles } from '../../hooks/useAsyncModalHandles';
+import { selectUserStorageAllowed } from '../../store/selectors';
+import { ConfirmationPrompt } from '../Confirmation/ConfirmationPrompt';
 import { PassPlusPromotionButton } from '../Upsell/PassPlusPromotionButton';
+import { UpsellingContext } from '../Upsell/UpsellingProvider';
 
 type FileSummaryHeaderProps = PropsWithChildren<{
     deleteDisabled?: boolean;
