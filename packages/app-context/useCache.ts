@@ -4,7 +4,7 @@ import type { Cache } from '@proton/shared/lib/helpers/cache';
 
 import { CacheContext } from './cacheContext';
 
-const useCache = <K = string, V = any>() => {
+export const useCache = <K = string, V = any>() => {
     const cache = useContext(CacheContext);
 
     if (!cache) {
@@ -13,5 +13,3 @@ const useCache = <K = string, V = any>() => {
 
     return cache as Cache<K, V>;
 };
-
-export default useCache;
