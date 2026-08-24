@@ -1,10 +1,11 @@
-import type { AppLinkProps } from '@proton/components/components/link/AppLink';
-import AppLink from '@proton/components/components/link/AppLink';
-import CustomLogo from '@proton/components/components/logo/CustomLogo';
-import MainLogo from '@proton/components/components/logo/MainLogo';
-import { useOrganizationTheme } from '@proton/components/containers/organization/logoUpload/useOrganizationTheme';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
+
+import { useOrganizationTheme } from '../../containers/organization/logoUpload/useOrganizationTheme';
+import type { AppLinkProps } from '../link/AppLink';
+import AppLink from '../link/AppLink';
+import CustomLogo from '../logo/CustomLogo';
+import MainLogo from '../logo/MainLogo';
 
 interface Props extends AppLinkProps {
     app: APP_NAMES;

@@ -3,13 +3,14 @@ import type { ComponentProps } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
-import SettingsLink from '@proton/components/components/link/SettingsLink';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import type { IconName } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
+
+import Icon from '../../../../icon/Icon';
+import SettingsLink from '../../../../link/SettingsLink';
 
 import './AccountSecurityCard.scss';
 

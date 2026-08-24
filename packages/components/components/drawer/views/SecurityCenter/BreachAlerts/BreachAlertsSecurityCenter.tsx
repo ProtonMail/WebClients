@@ -2,30 +2,16 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import {
+    decreaseUnreadBreachCount,
+    selectShouldBreachAlertsRefresh,
+    selectUnreadBreachesCount,
+    setUnreadBreachesCount,
+} from '@proton/account';
 import { useUser } from '@proton/account/user/hooks';
 import { userSettingsActions } from '@proton/account/userSettings';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Href } from '@proton/atoms/Href/Href';
-import Loader from '@proton/components/components/loader/Loader';
-import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
-import Toggle from '@proton/components/components/toggle/Toggle';
-import DWMUpsellModal from '@proton/components/components/upsell/modals/DWMUpsellModal';
-import BreachModal from '@proton/components/containers/credentialLeak/BreachModal';
-import {
-    BREACH_API_ERROR,
-    getEnabledString,
-    getStyle,
-    isResolved,
-    isUnread,
-    toCamelCase,
-} from '@proton/components/containers/credentialLeak/helpers';
-import type { FetchedBreaches, SampleBreach } from '@proton/components/containers/credentialLeak/models';
-import { BREACH_STATE } from '@proton/components/containers/credentialLeak/models';
-import { useBreaches } from '@proton/components/containers/credentialLeak/useBreaches';
-import GenericError from '@proton/components/containers/error/GenericError';
-import useApi from '@proton/components/hooks/useApi';
-import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 import { baseUseDispatch, baseUseSelector } from '@proton/react-redux-store';
@@ -39,15 +25,29 @@ import ProtonSentinelPlusLogo from '@proton/styles/assets/img/illustrations/sent
 import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
+import BreachModal from '../../../../../containers/credentialLeak/BreachModal';
+import {
+    BREACH_API_ERROR,
+    getEnabledString,
+    getStyle,
+    isResolved,
+    isUnread,
+    toCamelCase,
+} from '../../../../../containers/credentialLeak/helpers';
+import type { FetchedBreaches, SampleBreach } from '../../../../../containers/credentialLeak/models';
+import { BREACH_STATE } from '../../../../../containers/credentialLeak/models';
+import { useBreaches } from '../../../../../containers/credentialLeak/useBreaches';
+import GenericError from '../../../../../containers/error/GenericError';
+import useApi from '../../../../../hooks/useApi';
+import useErrorHandler from '../../../../../hooks/useErrorHandler';
+import useNotifications from '../../../../../hooks/useNotifications';
+import Loader from '../../../../loader/Loader';
+import { useModalStateObject } from '../../../../modalTwo/useModalState';
+import Toggle from '../../../../toggle/Toggle';
+import DWMUpsellModal from '../../../../upsell/modals/DWMUpsellModal';
 import DrawerAppSection from '../../shared/DrawerAppSection';
 import BreachCard from './BreachCard';
 import FreeUserBreachToggle from './FreeUserBreachToggle';
-import {
-    decreaseUnreadBreachCount,
-    selectShouldBreachAlertsRefresh,
-    selectUnreadBreachesCount,
-    setUnreadBreachesCount,
-} from '@proton/account';
 
 const BreachAlertsSecurityCenter = () => {
     const handleError = useErrorHandler();

@@ -6,14 +6,15 @@ import { useWelcomeFlags } from '@proton/account';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import Spotlight from '@proton/components/components/spotlight/Spotlight';
-import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
-import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
 import { FeatureCode } from '@proton/features';
 import { PLANS } from '@proton/payments/core/constants';
 import { DARK_WEB_MONITORING_NAME, SECOND } from '@proton/shared/lib/constants';
 import { isUserAccountOlderThanOrEqualToDays } from '@proton/shared/lib/user/helpers';
 import spotlightImg from '@proton/styles/assets/img/illustrations/sentinel-shield-bolt-breach-alert.svg';
+
+import useSpotlightOnFeature from '../../../../hooks/useSpotlightOnFeature';
+import Spotlight from '../../../spotlight/Spotlight';
+import useSpotlightShow from '../../../spotlight/useSpotlightShow';
 
 interface Props {
     children: React.ReactNode;

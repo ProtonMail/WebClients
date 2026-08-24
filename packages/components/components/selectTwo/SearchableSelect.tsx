@@ -4,12 +4,12 @@ import { useMemo, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import type { PopperPlacement } from '@proton/atoms/Popper/interface';
-import Dropdown from '@proton/components/components/dropdown/Dropdown';
-import type { DropdownSize } from '@proton/components/components/dropdown/utils';
-import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
-import SearchInput from '@proton/components/components/input/SearchInput';
 import clsx from '@proton/utils/clsx';
 
+import Dropdown from '../dropdown/Dropdown';
+import type { DropdownSize } from '../dropdown/utils';
+import { DropdownSizeUnit } from '../dropdown/utils';
+import SearchInput from '../input/SearchInput';
 import type { OptionProps } from '../option/Option';
 import Option from '../option/Option';
 import SelectButton from './SelectButton';

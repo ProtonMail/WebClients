@@ -4,11 +4,6 @@ import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import useSettingsLink from '@proton/components/components/link/useSettingsLink';
-import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
-import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
-import useConfig from '@proton/components/hooks/useConfig';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
@@ -17,6 +12,11 @@ import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS, APPS_WITH_IN_APP_PAYMENTS, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { addUpsellPath, getUpgradePath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 
+import { useSubscriptionModal } from '../../../../containers/payments/subscription/SubscriptionModalProvider';
+import { SUBSCRIPTION_STEPS } from '../../../../containers/payments/subscription/constants';
+import useConfig from '../../../../hooks/useConfig';
+import useNotifications from '../../../../hooks/useNotifications';
+import useSettingsLink from '../../../link/useSettingsLink';
 import { SpotlightWithPromo } from '../common/SpotlightWithPromo';
 import { GoUnlimitedOfferContent } from './components/GoUnlimitedOfferContent';
 import { useGoUnlimited2025Config } from './helpers/configuration';

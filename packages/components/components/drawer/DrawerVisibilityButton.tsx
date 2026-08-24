@@ -4,7 +4,6 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import useApi from '@proton/components/hooks/useApi';
 import { IcChevronsLeft } from '@proton/icons/icons/IcChevronsLeft';
 import { IcChevronsRight } from '@proton/icons/icons/IcChevronsRight';
 import { updateHideDrawer } from '@proton/shared/lib/api/settings';
@@ -12,6 +11,7 @@ import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import useDrawer from '../../hooks/drawer/useDrawer';
+import useApi from '../../hooks/useApi';
 
 import './DrawerVisibilityButton.scss';
 

@@ -2,7 +2,6 @@ import { useCallback, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import useApi from '@proton/components/hooks/useApi';
 import type { ConfirmDecision, ToolChip } from '@proton/llm/lib/lumoAgent/engine/engine';
 import { createClientToolExecutor } from '@proton/llm/lib/lumoAgent/engine/engine';
 import { LOAD_GUIDE_TOOL_NAME } from '@proton/llm/lib/lumoAgent/engine/loadGuide';
@@ -18,6 +17,7 @@ import type {
 } from '@proton/lumo-api-client';
 import type { ServerToolSource } from '@proton/lumo-ui';
 
+import useApi from '../../hooks/useApi';
 import type { LumoAgentConfig, LumoAgentItem } from './types';
 
 const SYSTEM = 'system' as Role;

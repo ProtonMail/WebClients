@@ -4,12 +4,6 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import Loader from '@proton/components/components/loader/Loader';
-import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
-import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
-import { GenericErrorDisplay } from '@proton/components/containers/error/GenericError';
-import useApi from '@proton/components/hooks/useApi';
-import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { IcArrowWithinSquare } from '@proton/icons/icons/IcArrowWithinSquare';
 import { encodeFilters } from '@proton/pass/components/Navigation/routing';
 import { PassErrorCode } from '@proton/pass/lib/api/errors';
@@ -20,6 +14,12 @@ import { APPS, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import aliasSampleSvg from '@proton/styles/assets/img/illustrations/pass-aliases-alias-sample.svg';
 import clsx from '@proton/utils/clsx';
 
+import ErrorBoundary from '../../../../../containers/app/ErrorBoundary';
+import { GenericErrorDisplay } from '../../../../../containers/error/GenericError';
+import useApi from '../../../../../hooks/useApi';
+import useAuthentication from '../../../../../hooks/useAuthentication';
+import Loader from '../../../../loader/Loader';
+import { useModalStateObject } from '../../../../modalTwo/useModalState';
 import DrawerAppSection from '../../shared/DrawerAppSection';
 import { DRAWER_PASS_ALIASES_CREATE_ALIAS_MODAL_CTA_ID } from '../constants';
 import { sendSecurityCenterReport } from '../securityCenterTelemetry';

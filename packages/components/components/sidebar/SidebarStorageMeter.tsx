@@ -1,5 +1,4 @@
-import Meter from '@proton/components/components/progress/Meter';
-
+import Meter from '../progress/Meter';
 import { WavyMeter } from '../progress/WavyMeter';
 
 import './SidebarStorageMeter.scss';

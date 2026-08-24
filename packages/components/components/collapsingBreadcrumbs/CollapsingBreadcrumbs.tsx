@@ -1,10 +1,10 @@
 import { Fragment, useMemo } from 'react';
 
-import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { omit } from '@proton/shared/lib/helpers/object';
 import clsx from '@proton/utils/clsx';
 
+import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
 import Breadcrumb from './Breadcrumb';
 import CollapsedBreadcrumbs from './CollapsedBreadcrumbs';
 import type { BreadcrumbInfo } from './interfaces';

@@ -1,14 +1,16 @@
 import type { ComponentPropsWithoutRef } from 'react';
 
-import Option from '@proton/components/components/option/Option';
-import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import type { CalendarSelectOption } from '@proton/shared/lib/interfaces/calendar';
 
+import Option from '../option/Option';
+import SelectTwo from '../selectTwo/SelectTwo';
 import type { SelectChangeEvent } from '../selectTwo/select';
 import CalendarSelectIcon from './CalendarSelectIcon';
 
-interface Props
-    extends Omit<ComponentPropsWithoutRef<'button'>, 'value' | 'onClick' | 'onChange' | 'onKeyDown' | 'aria-label'> {
+interface Props extends Omit<
+    ComponentPropsWithoutRef<'button'>,
+    'value' | 'onClick' | 'onChange' | 'onKeyDown' | 'aria-label'
+> {
     calendarID: string;
     options: CalendarSelectOption[];
     onChange: (e: SelectChangeEvent<string>) => void;

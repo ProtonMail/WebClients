@@ -5,9 +5,6 @@ import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import useSettingsLink from '@proton/components/components/link/useSettingsLink';
-import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
-import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
@@ -16,6 +13,9 @@ import { APP_UPSELL_REF_PATH, DRIVE_UPSELL_PATHS, SECOND, UPSELL_COMPONENT } fro
 import { addUpsellPath, getUpgradePath, getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import clsx from '@proton/utils/clsx';
 
+import useActiveBreakpoint from '../../../../../hooks/useActiveBreakpoint';
+import useSettingsLink from '../../../../link/useSettingsLink';
+import useSpotlightShow from '../../../../spotlight/useSpotlightShow';
 import { SpotlightWithPromo } from '../../common/SpotlightWithPromo';
 import { usePostSignupOneDollarPromotionPrice } from '../components/usePostSignupOneDollarPromotionPrice';
 import { EXTENDED_REMINDER_DAY, LAST_REMINDER_DAY, type PostSubscriptionOneDollarOfferState } from '../interface';

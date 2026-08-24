@@ -1,5 +1,3 @@
-import { getFeatures, getSections } from '@proton/components/components/onboarding/b2b/helpers';
-import type { B2BFeaturesSection } from '@proton/components/components/onboarding/b2b/interface';
 import { PLANS } from '@proton/payments/core/constants';
 import { getPlan } from '@proton/payments/core/subscription/helpers';
 import {
@@ -11,6 +9,9 @@ import {
     VPN_APP_NAME,
 } from '@proton/shared/lib/constants';
 import { buildSubscription } from '@proton/testing/builders/subscription';
+
+import { getFeatures, getSections } from './helpers';
+import type { B2BFeaturesSection } from './interface';
 
 jest.mock('@proton/payments/core/subscription/helpers', () => ({
     __esModule: true,

@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react';
 
-import useModalState from '@proton/components/components/modalTwo/useModalState';
+import useModalState from '../../modalTwo/useModalState';
 
 function useEditorModal<P>() {
     const [modalsStateProps, openModal, render] = useModalState();

@@ -3,12 +3,6 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import useApi from '@proton/components/hooks/useApi';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateConfirmLink } from '@proton/shared/lib/api/mailSettings';
@@ -17,8 +11,14 @@ import { rtlSanitize } from '@proton/shared/lib/helpers/string';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { CONFIRM_LINK } from '@proton/shared/lib/mail/mailSettings';
 
+import useApi from '../../../hooks/useApi';
 import Checkbox from '../../input/Checkbox';
 import Label from '../../label/Label';
+import type { ModalProps } from '../../modalTwo/Modal';
+import ModalTwo from '../../modalTwo/Modal';
+import ModalTwoContent from '../../modalTwo/ModalContent';
+import ModalTwoFooter from '../../modalTwo/ModalFooter';
+import ModalTwoHeader from '../../modalTwo/ModalHeader';
 import LinkConfirmationModalLink from './LinkConfirmationModalLink';
 import LinkConfirmationModalPhishing from './LinkConfirmationModalPhishing';
 

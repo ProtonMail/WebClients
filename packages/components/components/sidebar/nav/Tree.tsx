@@ -4,11 +4,11 @@ import { c } from 'ttag';
 
 import { NotificationDot } from '@proton/atoms/NotificationDot/NotificationDot';
 import { ThemeColor } from '@proton/colors/types';
-import { Badge } from '@proton/components/components/badge/Badge';
-import Icon from '@proton/components/components/icon/Icon';
-import { Sidebar } from '@proton/components/components/sidebar/nav';
 import type { SidebarNode, SidebarTree } from '@proton/nav/types/sidebar';
 
+import { Badge } from '../../badge/Badge';
+import Icon from '../../icon/Icon';
+import { Sidebar } from './index';
 import { getActiveBranches } from './traverse';
 
 function isThemeColor(value: unknown): value is ThemeColor {

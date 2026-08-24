@@ -1,13 +1,13 @@
 import { useMemo, useRef } from 'react';
 
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
-import Dropdown from '@proton/components/components/dropdown/Dropdown';
-import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
-import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import { omit } from '@proton/shared/lib/helpers/object';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
+import Dropdown from '../dropdown/Dropdown';
+import DropdownMenu from '../dropdown/DropdownMenu';
+import DropdownMenuButton from '../dropdown/DropdownMenuButton';
 import Breadcrumb from './Breadcrumb';
 import type { BreadcrumbInfo } from './interfaces';
 

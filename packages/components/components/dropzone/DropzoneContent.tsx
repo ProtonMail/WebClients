@@ -1,14 +1,14 @@
 import { c } from 'ttag';
 
-import type { DropzoneProps } from '@proton/components/components/dropzone/Dropzone';
 import dragAndDrop from '@proton/styles/assets/img/illustrations/drag-and-drop-img.svg';
 import clsx from '@proton/utils/clsx';
 
-export interface DropzoneContentProps
-    extends Pick<
-        DropzoneProps,
-        'size' | 'shape' | 'rounded' | 'border' | 'customContent' | 'className' | 'contentTitle' | 'contentSubText'
-    > {
+import type { DropzoneProps } from './Dropzone';
+
+export interface DropzoneContentProps extends Pick<
+    DropzoneProps,
+    'size' | 'shape' | 'rounded' | 'border' | 'customContent' | 'className' | 'contentTitle' | 'contentSubText'
+> {
     /** Embedded in iframe */
     embedded?: boolean;
 }

@@ -1,10 +1,11 @@
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
-import Copy from '@proton/components/components/button/Copy';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+
+import useNotifications from '../../../hooks/useNotifications';
+import Copy from '../../button/Copy';
 
 interface Props {
     link: string;

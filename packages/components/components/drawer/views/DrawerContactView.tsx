@@ -5,22 +5,23 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { EasySwitchProvider } from '@proton/activation';
 import { Button } from '@proton/atoms/Button/Button';
-import type { SelectedDrawerOption } from '@proton/components/components/drawer/views/DrawerView';
-import DrawerView from '@proton/components/components/drawer/views/DrawerView';
-import { CONTACT_TAB } from '@proton/components/components/drawer/views/interface';
-import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
-import { useContactMergeModals } from '@proton/components/containers/contacts/hooks/useContactMergeModals';
-import { useContactModals } from '@proton/components/containers/contacts/hooks/useContactModals';
-import ContactImportModal from '@proton/components/containers/contacts/import/ContactImportModal';
-import ContactsTabImportDropdown from '@proton/components/containers/contacts/widget/ContactsTabImportDropdown';
-import ContactsWidgetContainer from '@proton/components/containers/contacts/widget/ContactsWidgetContainer';
-import ContactsWidgetGroupsContainer from '@proton/components/containers/contacts/widget/ContactsWidgetGroupsContainer';
-import type { CustomAction } from '@proton/components/containers/contacts/widget/types';
-import { CONTACT_WIDGET_TABS } from '@proton/components/containers/contacts/widget/types';
-import useDrawerContactFocus from '@proton/components/hooks/useDrawerContactFocus';
 import useContactsDrawerFromURL from '@proton/mail/hooks/autoOpenContacts/useContactsDrawerFromURL';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
+
+import { useContactMergeModals } from '../../../containers/contacts/hooks/useContactMergeModals';
+import { useContactModals } from '../../../containers/contacts/hooks/useContactModals';
+import ContactImportModal from '../../../containers/contacts/import/ContactImportModal';
+import ContactsTabImportDropdown from '../../../containers/contacts/widget/ContactsTabImportDropdown';
+import ContactsWidgetContainer from '../../../containers/contacts/widget/ContactsWidgetContainer';
+import ContactsWidgetGroupsContainer from '../../../containers/contacts/widget/ContactsWidgetGroupsContainer';
+import type { CustomAction } from '../../../containers/contacts/widget/types';
+import { CONTACT_WIDGET_TABS } from '../../../containers/contacts/widget/types';
+import useDrawerContactFocus from '../../../hooks/useDrawerContactFocus';
+import { useModalTwoStatic } from '../../modalTwo/useModalTwo';
+import type { SelectedDrawerOption } from './DrawerView';
+import DrawerView from './DrawerView';
+import { CONTACT_TAB } from './interface';
 
 interface Props {
     onCompose?: (recipients: Recipient[], attachments: File[]) => void;

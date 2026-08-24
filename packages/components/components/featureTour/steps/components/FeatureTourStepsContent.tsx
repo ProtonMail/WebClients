@@ -1,9 +1,9 @@
 import type { ReactNode } from 'react';
 
-import ModalContent from '@proton/components/components/modalTwo/ModalContent';
-import { ModalHeaderCloseButton } from '@proton/components/components/modalTwo/ModalHeader';
 import clsx from '@proton/utils/clsx';
 
+import ModalContent from '../../../modalTwo/ModalContent';
+import { ModalHeaderCloseButton } from '../../../modalTwo/ModalHeader';
 import type { FeatureTourStepProps } from '../../interface';
 
 interface FeatureTourStepsContentProps {
@@ -57,7 +57,7 @@ const FeatureTourStepsContent = ({
                     <img
                         src={illustration}
                         alt=""
-                        // eslint-disable-next-line no-nested-ternary
+
                         width={illustrationWidth}
                         height={illustrationHeight}
                         className={illustrationClassName}

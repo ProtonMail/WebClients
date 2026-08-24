@@ -1,7 +1,6 @@
-import Option from '@proton/components/components/option/Option';
-import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-
+import Option from '../../option/Option';
+import SelectTwo from '../../selectTwo/SelectTwo';
+import InputFieldTwo from '../../v2/field/InputField';
 import type { CardBodyProps } from '../types';
 
 export interface PickerOption {

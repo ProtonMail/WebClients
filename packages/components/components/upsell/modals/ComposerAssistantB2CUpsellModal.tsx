@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import {
     APP_UPSELL_REF_PATH,
     BRAND_NAME,
@@ -14,6 +13,7 @@ import scribeIllustration from '@proton/styles/assets/img/illustrations/upsell-c
 import lumoIllustration from '@proton/styles/assets/img/lumo/lumo-upsell-modal-header.svg';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import type { ModalStateProps } from '../../modalTwo/useModalState';
 import UpsellFeatureList from '../UpsellFeatureList';
 import UpsellModal from '../UpsellModal/UpsellModal';
 

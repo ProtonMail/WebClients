@@ -1,13 +1,13 @@
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
-import Toggle from '@proton/components/components/toggle/Toggle';
-import { getUpsellText } from '@proton/components/containers/credentialLeak/helpers';
-import type { SampleBreach } from '@proton/components/containers/credentialLeak/models';
 import { DARK_WEB_MONITORING_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import ProtonSentinelPlusLogo from '@proton/styles/assets/img/illustrations/sentinel-shield-bolt-breach-alert.svg';
 
+import { getUpsellText } from '../../../../../containers/credentialLeak/helpers';
+import type { SampleBreach } from '../../../../../containers/credentialLeak/models';
+import Toggle from '../../../../toggle/Toggle';
 import DrawerAppSection from '../../shared/DrawerAppSection';
 
 interface Props {

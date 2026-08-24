@@ -3,17 +3,17 @@ import { useMemo } from 'react';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
-import Icon from '@proton/components/components/icon/Icon';
-import Spotlight from '@proton/components/components/spotlight/Spotlight';
-import useToggle from '@proton/components/hooks/useToggle';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 import type { IconName } from '@proton/icons/types';
 
+import useToggle from '../../hooks/useToggle';
 import Dropdown from '../dropdown/Dropdown';
 import DropdownMenu from '../dropdown/DropdownMenu';
 import DropdownMenuButton from '../dropdown/DropdownMenuButton';
+import Icon from '../icon/Icon';
 import SettingsLink from '../link/SettingsLink';
+import Spotlight from '../spotlight/Spotlight';
 import { GetStartedButton } from './GetStartedButton';
 
 export type DisplayItem = DropdownDisplayItem | LinkDisplayItem;

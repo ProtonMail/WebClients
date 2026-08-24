@@ -1,11 +1,12 @@
 import { useMemo } from 'react';
 
-import QuickSettingsReminder from '@proton/components/components/drawer/views/quickSettings/QuickSettingsReminder';
-import DrawerAppSection from '@proton/components/components/drawer/views/shared/DrawerAppSection';
-import useSettingsLink from '@proton/components/components/link/useSettingsLink';
-import useRecoveryNotification from '@proton/components/hooks/useRecoveryNotification';
 import type { QuickSettingsReminders } from '@proton/shared/lib/drawer/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
+
+import useRecoveryNotification from '../../../../hooks/useRecoveryNotification';
+import useSettingsLink from '../../../link/useSettingsLink';
+import DrawerAppSection from '../shared/DrawerAppSection';
+import QuickSettingsReminder from './QuickSettingsReminder';
 
 interface Props {
     inAppReminders?: QuickSettingsReminders[];

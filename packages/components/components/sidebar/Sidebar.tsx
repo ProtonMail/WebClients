@@ -6,10 +6,6 @@ import { c } from 'ttag';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import SettingsLink from '@proton/components/components/link/SettingsLink';
-import { getMeterColor } from '@proton/components/components/progress/Meter';
-import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import useConfig from '@proton/components/hooks/useConfig';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -29,7 +25,11 @@ import clsx from '@proton/utils/clsx';
 import percentage from '@proton/utils/percentage';
 
 import UserDropdown from '../../containers/heading/UserDropdown';
+import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
+import useConfig from '../../hooks/useConfig';
 import useFocusTrap from '../focus/useFocusTrap';
+import SettingsLink from '../link/SettingsLink';
+import { getMeterColor } from '../progress/Meter';
 import Hamburger from './Hamburger';
 import SidebarStorageMeter from './SidebarStorageMeter';
 

@@ -6,15 +6,6 @@ import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
 import { usePlans } from '@proton/account/plans/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import ModalTwo, { type ModalProps } from '@proton/components/components/modalTwo/Modal';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import Option from '@proton/components/components/option/Option';
-import Price from '@proton/components/components/price/Price';
-import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
-import useUpsellConfig from '@proton/components/components/upsell/config/useUpsellConfig';
-import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
-import { useCurrencies } from '@proton/components/payments/client-extensions';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { Currency } from '@proton/payments/core/interface';
 import type { Plan } from '@proton/payments/core/plan/interface';
@@ -25,6 +16,15 @@ import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proto
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import isTruthy from '@proton/utils/isTruthy';
 
+import { SUBSCRIPTION_STEPS } from '../../../containers/payments/subscription/constants';
+import { useCurrencies } from '../../../payments/client-extensions/index';
+import ModalTwo, { type ModalProps } from '../../modalTwo/Modal';
+import ModalTwoContent from '../../modalTwo/ModalContent';
+import ModalTwoHeader from '../../modalTwo/ModalHeader';
+import Option from '../../option/Option';
+import Price from '../../price/Price';
+import SelectTwo from '../../selectTwo/SelectTwo';
+import useUpsellConfig from '../config/useUpsellConfig';
 import AccountLockedUpsellForm from './AccountLockedUpsellForm';
 
 interface PlanOption {

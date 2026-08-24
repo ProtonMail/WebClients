@@ -3,10 +3,10 @@ import { c } from 'ttag';
 import { organizationThunk } from '@proton/account/organization';
 import { userThunk } from '@proton/account/user';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import SettingsLink from '@proton/components/components/link/SettingsLink';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import duoPlanBackground from '@proton/styles/assets/img/onboarding/duoPlan.svg';
 
+import SettingsLink from '../../link/SettingsLink';
 import type { FeatureTourStepProps, ShouldDisplayTourStep } from '../interface';
 import FeatureTourStepCTA from './components/FeatureTourStepCTA';
 import FeatureTourStepsContent from './components/FeatureTourStepsContent';

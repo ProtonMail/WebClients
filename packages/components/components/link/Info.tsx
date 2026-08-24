@@ -5,10 +5,10 @@ import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Icon from '@proton/components/components/icon/Icon';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
+import Icon from '../icon/Icon';
 import type { IconProps } from '../icon/Icon';
 
 import './Info.scss';

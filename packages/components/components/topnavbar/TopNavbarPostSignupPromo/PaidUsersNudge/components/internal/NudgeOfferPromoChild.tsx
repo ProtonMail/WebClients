@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
-import Price from '@proton/components/components/price/Price';
-
+import Price from '../../../../../price/Price';
 import type { PriceData } from '../../helpers/interface';
 
 interface Props {

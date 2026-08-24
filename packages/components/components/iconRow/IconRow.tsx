@@ -1,10 +1,11 @@
 import type { ReactElement, ReactNode } from 'react';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Icon from '@proton/components/components/icon/Icon';
-import Label from '@proton/components/components/label/Label';
 import type { IconName } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
+
+import Icon from '../icon/Icon';
+import Label from '../label/Label';
 
 export interface IconRowProps {
     className?: string;
