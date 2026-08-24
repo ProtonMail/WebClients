@@ -4,11 +4,11 @@ import { useHistory, useParams } from 'react-router-dom';
 import { c } from 'ttag';
 
 import type { FetchedBreaches } from '@proton/components/containers/credentialLeak/models';
-import { useAddressBreaches } from '@proton/pass/hooks/monitor/useAddressBreaches';
-import type { MonitorAddress } from '@proton/pass/lib/monitor/types';
-import type { Maybe } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
 
+import { useAddressBreaches } from '../../../../hooks/monitor/useAddressBreaches';
+import type { MonitorAddress } from '../../../../lib/monitor/types';
+import type { Maybe } from '../../../../types';
 import { BreachActions } from './BreachActions';
 import { BreachList } from './BreachList';
 import { BreachModal } from './BreachModal';

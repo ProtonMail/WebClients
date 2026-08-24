@@ -5,22 +5,22 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Info from '@proton/components/components/link/Info';
-import { useMaybeGroup } from '@proton/pass/components/Groups/GroupsProvider';
-import { MaybeGroupName } from '@proton/pass/components/Groups/MaybeGroupName';
-import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
-import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
-import { ButtonIfNeeded } from '@proton/pass/components/Utils/ButtonIfNeeded';
-import { useActionRequest } from '@proton/pass/hooks/useRequest';
-import type { AccessDTO } from '@proton/pass/lib/access/types';
+import clsx from '@proton/utils/clsx';
+
+import { useActionRequest } from '../../../hooks/useRequest';
+import type { AccessDTO } from '../../../lib/access/types';
 import {
     inviteRemoveIntent,
     inviteResendIntent,
     newUserInvitePromoteIntent,
     newUserInviteRemoveIntent,
-} from '@proton/pass/store/actions';
-import { NewUserInviteState } from '@proton/pass/types';
-import clsx from '@proton/utils/clsx';
-
+} from '../../../store/actions';
+import { NewUserInviteState } from '../../../types';
+import { useMaybeGroup } from '../../Groups/GroupsProvider';
+import { MaybeGroupName } from '../../Groups/MaybeGroupName';
+import { DropdownMenuButton } from '../../Layout/Dropdown/DropdownMenuButton';
+import { QuickActionsDropdown } from '../../Layout/Dropdown/QuickActionsDropdown';
+import { ButtonIfNeeded } from '../../Utils/ButtonIfNeeded';
 import { ShareMemberAvatar } from './ShareMemberAvatar';
 
 type PendingMemberBase = AccessDTO & { canManage: boolean; email: string; isGroup: boolean; className?: string };

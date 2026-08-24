@@ -2,14 +2,14 @@ import { type FC, type RefObject, useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import type { BulkSelection } from '@proton/pass/components/Bulk/types';
-import { bulkSelectionDTO } from '@proton/pass/components/Bulk/utils';
-import { ContextMenu } from '@proton/pass/components/ContextMenu/ContextMenu';
-import type { ContextMenuElement, ContextMenuItem } from '@proton/pass/components/ContextMenu/ContextMenuItems';
-import { useItemsActions } from '@proton/pass/components/Item/ItemActionsProvider';
-import { isTrashed } from '@proton/pass/lib/items/item.predicates';
-import { getItemKey } from '@proton/pass/lib/items/item.utils';
-import type { BulkSelectionDTO, ItemRevision } from '@proton/pass/types';
+import { isTrashed } from '../../../lib/items/item.predicates';
+import { getItemKey } from '../../../lib/items/item.utils';
+import type { BulkSelectionDTO, ItemRevision } from '../../../types';
+import type { BulkSelection } from '../../Bulk/types';
+import { bulkSelectionDTO } from '../../Bulk/utils';
+import { ContextMenu } from '../../ContextMenu/ContextMenu';
+import type { ContextMenuElement, ContextMenuItem } from '../../ContextMenu/ContextMenuItems';
+import { useItemsActions } from '../ItemActionsProvider';
 
 /** Returns context menu items about actions on the bulk selection */
 const getBulkActionButtons = (

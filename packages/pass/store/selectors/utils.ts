@@ -1,7 +1,8 @@
 import { createSelectorCreator } from '@reduxjs/toolkit';
 
-import type { State } from '@proton/pass/store/types';
 import identity from '@proton/utils/identity';
+
+import type { State } from '../types';
 
 export const EMPTY_LIST: any[] = [];
 export const NOOP_LIST_SELECTOR = <T>() => EMPTY_LIST as T[];

@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react';
 
-import { useStatefulRef } from '@proton/pass/hooks/useStatefulRef';
-import type { Maybe } from '@proton/pass/types';
-import { InAppNotificationDisplayType } from '@proton/pass/types';
-import type { InAppNotification } from '@proton/pass/types/data/notification';
-import { cancelable } from '@proton/pass/utils/fp/promises';
 import { isModalOpen } from '@proton/shared/lib/busy';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
+
+import type { Maybe } from '../../types';
+import { InAppNotificationDisplayType } from '../../types';
+import type { InAppNotification } from '../../types/data/notification';
+import { cancelable } from '../../utils/fp/promises';
+import { useStatefulRef } from '../useStatefulRef';
 
 export const useInAppNotificationVisibility = (notification: Maybe<InAppNotification>) => {
     /** Create a stable key to prevent effect retriggering when notification object changes

@@ -1,5 +1,5 @@
-import type { Tagged } from '@proton/pass/types/utils';
-import type { XorObfuscation } from '@proton/pass/utils/obfuscate/xor';
+import type { XorObfuscation } from '../../utils/obfuscate/xor';
+import type { Tagged } from '../utils';
 
 /** Deobfuscation strategy modes */
 export enum DeobfuscateMode {

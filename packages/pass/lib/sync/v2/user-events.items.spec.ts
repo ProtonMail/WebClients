@@ -1,13 +1,13 @@
 import { runSaga } from 'redux-saga';
 
-import * as itemRequests from '@proton/pass/lib/items/item.requests';
-import { createTestItem } from '@proton/pass/lib/items/item.test.utils';
-import type { EventProcessor } from '@proton/pass/lib/sync/types';
-import { itemsDeleteEvent, itemsUpdated } from '@proton/pass/store/actions';
-import { sagaSetup } from '@proton/pass/store/sagas/testing';
-import type { ItemId, ShareId, SyncEventShareItemOutput } from '@proton/pass/types';
 import { ApiError } from '@proton/shared/lib/fetch/ApiError';
 
+import { itemsDeleteEvent, itemsUpdated } from '../../../store/actions';
+import { sagaSetup } from '../../../store/sagas/testing';
+import type { ItemId, ShareId, SyncEventShareItemOutput } from '../../../types';
+import * as itemRequests from '../../items/item.requests';
+import { createTestItem } from '../../items/item.test.utils';
+import type { EventProcessor } from '../types';
 import { processItemsDeleted, processItemsUpdated } from './user-events.items';
 
 const requestItem = jest.spyOn(itemRequests, 'requestItem');

@@ -9,20 +9,21 @@ import { IcAlias } from '@proton/icons/icons/IcAlias';
 import { IcEnvelope } from '@proton/icons/icons/IcEnvelope';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { IcUser } from '@proton/icons/icons/IcUser';
-import { Field } from '@proton/pass/components/Form/Field/Field';
-import { PasswordField } from '@proton/pass/components/Form/Field/PasswordField';
-import { TextField } from '@proton/pass/components/Form/Field/TextField';
-import { AliasModal } from '@proton/pass/components/Item/Alias/Alias.modal';
-import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
-import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
-import { usePasswordHistoryActions } from '@proton/pass/components/Password/PasswordHistoryActions';
-import type { AliasForLoginProps } from '@proton/pass/hooks/useAliasForLogin';
-import { deriveAliasPrefix } from '@proton/pass/lib/alias/alias.utils';
-import PassUI from '@proton/pass/lib/core/ui.proxy';
-import { intoCleanHostname } from '@proton/pass/lib/urls/utils/utils';
-import type { LoginItemFormValues } from '@proton/pass/types';
-import { merge, withMerge } from '@proton/pass/utils/object/merge';
-import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
+
+import type { AliasForLoginProps } from '../../../hooks/useAliasForLogin';
+import { deriveAliasPrefix } from '../../../lib/alias/alias.utils';
+import PassUI from '../../../lib/core/ui.proxy';
+import { intoCleanHostname } from '../../../lib/urls/utils/utils';
+import type { LoginItemFormValues } from '../../../types';
+import { merge, withMerge } from '../../../utils/object/merge';
+import { isEmptyString } from '../../../utils/string/is-empty-string';
+import { Field } from '../../Form/Field/Field';
+import { PasswordField } from '../../Form/Field/PasswordField';
+import { TextField } from '../../Form/Field/TextField';
+import { DropdownMenuButton } from '../../Layout/Dropdown/DropdownMenuButton';
+import { QuickActionsDropdown } from '../../Layout/Dropdown/QuickActionsDropdown';
+import { usePasswordHistoryActions } from '../../Password/PasswordHistoryActions';
+import { AliasModal } from '../Alias/Alias.modal';
 
 import './Login.edit.credentials.scss';
 

@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { ClipboardTTL, DEFAULT_CLIPBOARD_TTL } from '@proton/pass/lib/clipboard/types';
+import { ClipboardTTL, DEFAULT_CLIPBOARD_TTL } from '../../../lib/clipboard/types';
 
 export const getClipboardTTLOptions = (): Map<ClipboardTTL, string> =>
     new Map([

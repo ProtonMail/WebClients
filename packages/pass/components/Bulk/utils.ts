@@ -1,5 +1,5 @@
-import type { BulkSelection } from '@proton/pass/components/Bulk/types';
-import type { BulkSelectionDTO } from '@proton/pass/types';
+import type { BulkSelectionDTO } from '../../types';
+import type { BulkSelection } from './types';
 
 export const bulkSelectionDTO = (selection: BulkSelection): BulkSelectionDTO =>
     Array.from(selection.keys()).reduce<BulkSelectionDTO>((dto, shareId) => {

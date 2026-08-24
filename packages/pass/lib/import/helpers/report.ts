@@ -1,7 +1,8 @@
-import { MAX_BATCH_PER_IMPORT_REQUEST } from '@proton/pass/constants';
-import type { ImportPayload, ImportProvider } from '@proton/pass/lib/import/types';
-import type { ItemImportIntent, MaybeNull } from '@proton/pass/types';
 import capitalize from '@proton/utils/capitalize';
+
+import { MAX_BATCH_PER_IMPORT_REQUEST } from '../../../constants';
+import type { ItemImportIntent, MaybeNull } from '../../../types';
+import type { ImportPayload, ImportProvider } from '../types';
 
 export type ImportReport = {
     /** Optional error in case abort failed or aborted */

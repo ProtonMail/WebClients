@@ -1,10 +1,10 @@
-import * as API from '@proton/pass/lib/api/api';
-import { PassErrorCode } from '@proton/pass/lib/api/errors';
-import { createTestItem } from '@proton/pass/lib/items/item.test.utils';
-import { createShareRemovedError } from '@proton/pass/lib/shares/share.test.utils';
 import { ApiError } from '@proton/shared/lib/fetch/ApiError';
 
+import * as API from '../api/api';
+import { PassErrorCode } from '../api/errors';
+import { createShareRemovedError } from '../shares/share.test.utils';
 import { batchByShareId, intoRevisionID, requestItem } from './item.requests';
+import { createTestItem } from './item.test.utils';
 
 const api = jest.fn();
 (API as any).api = api;

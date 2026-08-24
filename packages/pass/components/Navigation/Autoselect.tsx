@@ -2,13 +2,13 @@ import type { FC } from 'react';
 import { useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
-import { useItems } from '@proton/pass/components/Item/Context/ItemsProvider';
-import { useNavigationActions } from '@proton/pass/components/Navigation/NavigationActions';
-import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
-import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
-import { getItemRoute, getLocalPath } from '@proton/pass/components/Navigation/routing';
-import { isShareVisible } from '@proton/pass/lib/shares/share.predicates';
-import { selectShare } from '@proton/pass/store/selectors';
+import { isShareVisible } from '../../lib/shares/share.predicates';
+import { selectShare } from '../../store/selectors';
+import { useItems } from '../Item/Context/ItemsProvider';
+import { useNavigationActions } from './NavigationActions';
+import { useNavigationFilters } from './NavigationFilters';
+import { useItemScope } from './NavigationMatches';
+import { getItemRoute, getLocalPath } from './routing';
 
 export const Autoselect: FC = () => {
     const scope = useItemScope();

@@ -1,7 +1,14 @@
 import { c } from 'ttag';
 
-import { readCSV } from '@proton/pass/lib/import/helpers/csv.reader';
-import { ImportProviderError } from '@proton/pass/lib/import/helpers/error';
+import capitalize from '@proton/utils/capitalize';
+import lastItem from '@proton/utils/lastItem';
+
+import type { ItemImportIntent } from '../../../../types';
+import { WifiSecurity } from '../../../../types/protobuf';
+import { groupByKey } from '../../../../utils/array/group-by-key';
+import { logger } from '../../../../utils/logger';
+import { readCSV } from '../../helpers/csv.reader';
+import { ImportProviderError } from '../../helpers/error';
 import {
     getEmailOrUsername,
     getImportedVaultName,
@@ -12,15 +19,8 @@ import {
     importNoteItem,
     importSshKeyItem,
     importWifiItem,
-} from '@proton/pass/lib/import/helpers/transformers';
-import type { ImportReaderResult, ImportVault } from '@proton/pass/lib/import/types';
-import type { ItemImportIntent } from '@proton/pass/types';
-import { WifiSecurity } from '@proton/pass/types/protobuf';
-import { groupByKey } from '@proton/pass/utils/array/group-by-key';
-import { logger } from '@proton/pass/utils/logger';
-import capitalize from '@proton/utils/capitalize';
-import lastItem from '@proton/utils/lastItem';
-
+} from '../../helpers/transformers';
+import type { ImportReaderResult, ImportVault } from '../../types';
 import { type LastPassItem, LastPassNoteType } from './lastpass.types';
 import {
     LASTPASS_EXPECTED_HEADERS,

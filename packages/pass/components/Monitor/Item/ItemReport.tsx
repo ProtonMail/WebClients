@@ -7,20 +7,21 @@ import { Button } from '@proton/atoms/Button/Button';
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
-import { ItemTag } from '@proton/pass/components/Item/List/ItemTag';
-import { Card } from '@proton/pass/components/Layout/Card/Card';
-import { CardContent } from '@proton/pass/components/Layout/Card/CardContent';
-import { CardIcon } from '@proton/pass/components/Layout/Card/CardIcon';
-import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
-import { useMonitor } from '@proton/pass/components/Monitor/MonitorContext';
-import { useSelectItem } from '@proton/pass/components/Navigation/NavigationActions';
-import { getLocalPath } from '@proton/pass/components/Navigation/routing';
-import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
-import { itemEq } from '@proton/pass/lib/items/item.predicates';
-import { getItemKey } from '@proton/pass/lib/items/item.utils';
-import { selectSelectedItems } from '@proton/pass/store/selectors';
-import type { ItemRevision, SelectedItem } from '@proton/pass/types';
-import { not } from '@proton/pass/utils/fp/predicates';
+
+import { useMemoSelector } from '../../../hooks/useMemoSelector';
+import { itemEq } from '../../../lib/items/item.predicates';
+import { getItemKey } from '../../../lib/items/item.utils';
+import { selectSelectedItems } from '../../../store/selectors';
+import type { ItemRevision, SelectedItem } from '../../../types';
+import { not } from '../../../utils/fp/predicates';
+import { ItemTag } from '../../Item/List/ItemTag';
+import { Card } from '../../Layout/Card/Card';
+import { CardContent } from '../../Layout/Card/CardContent';
+import { CardIcon } from '../../Layout/Card/CardIcon';
+import { DropdownMenuButton } from '../../Layout/Dropdown/DropdownMenuButton';
+import { useSelectItem } from '../../Navigation/NavigationActions';
+import { getLocalPath } from '../../Navigation/routing';
+import { useMonitor } from '../MonitorContext';
 
 const BTN_STYLES = {
     '--button-default-background-color': 'var(--interaction-weak-major-1)',

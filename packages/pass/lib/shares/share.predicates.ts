@@ -1,7 +1,8 @@
-import type { ShareItem } from '@proton/pass/store/reducers';
-import type { Share, ShareGetResponse, ShareId } from '@proton/pass/types';
-import { ShareFlags, ShareRole, ShareType } from '@proton/pass/types';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
+
+import type { ShareItem } from '../../store/reducers';
+import type { Share, ShareGetResponse, ShareId } from '../../types';
+import { ShareFlags, ShareRole, ShareType } from '../../types';
 
 /* overload for subtypes */
 export function isVaultShare(share: ShareItem): share is ShareItem<ShareType.Vault>;

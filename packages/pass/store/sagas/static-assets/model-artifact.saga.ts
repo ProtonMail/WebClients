@@ -1,10 +1,10 @@
-import { fetchModelArtifact } from '@proton/pass/lib/extension/model-artifact/model-artifact';
-import type { ModelArtifact } from '@proton/pass/lib/extension/model-artifact/model-artifact';
-import { resolveModelArtifact } from '@proton/pass/store/actions/creators/model-artifact';
-import { createRequestSaga } from '@proton/pass/store/request/sagas';
-import { logger } from '@proton/pass/utils/logger';
+import { fetchModelArtifact } from '../../../lib/extension/model-artifact/model-artifact';
+import type { ModelArtifact } from '../../../lib/extension/model-artifact/model-artifact';
+import { logger } from '../../../utils/logger';
+import { resolveModelArtifact } from '../../actions/creators/model-artifact';
+import { createRequestSaga } from '../../request/sagas';
 
-declare module '@proton/pass/store/events' {
+declare module '../../events' {
     interface SagaEvents {
         'model-artifact::resolved': ModelArtifact;
     }

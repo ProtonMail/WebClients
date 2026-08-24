@@ -1,3 +1,5 @@
+import { normalize } from '@proton/shared/lib/helpers/string';
+
 import type {
     DeobfuscatedItemExtraField,
     ExtraFieldType,
@@ -5,11 +7,9 @@ import type {
     ItemExtraField,
     ItemRevision,
     ItemType,
-} from '@proton/pass/types';
-import { dynMemo } from '@proton/pass/utils/fp/memo';
-import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
-import { normalize } from '@proton/shared/lib/helpers/string';
-
+} from '../../types';
+import { dynMemo } from '../../utils/fp/memo';
+import { deobfuscate } from '../../utils/obfuscate/xor';
 import type { FieldMatch, ItemMatch, ItemMatchMap } from './types';
 
 /** We used to match on hidden fields but switched over to only text types */

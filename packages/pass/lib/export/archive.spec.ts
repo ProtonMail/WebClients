@@ -1,14 +1,16 @@
-import { decryptPassExport } from '@proton/pass/lib/crypto/utils/export';
-import { releaseCryptoProxy, setupCryptoProxyForTesting } from '@proton/pass/lib/crypto/utils/testing';
-import { archivePath, createArchive, createExportDataStream, getArchiveName } from '@proton/pass/lib/export/archive';
-import type { ExportData } from '@proton/pass/lib/export/types';
-import { consumeStream } from '@proton/pass/lib/file-attachments/download';
-import { readZIP } from '@proton/pass/lib/import/helpers/zip.reader';
-import { ContentFormatVersion, ItemState } from '@proton/pass/types';
-import { uniqueId } from '@proton/pass/utils/string/unique-id';
-import { getEpoch } from '@proton/pass/utils/time/epoch';
-import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { uint8ArrayToUtf8String } from '@protontech/crypto/utils';
+
+import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+
+import { ContentFormatVersion, ItemState } from '../../types';
+import { uniqueId } from '../../utils/string/unique-id';
+import { getEpoch } from '../../utils/time/epoch';
+import { decryptPassExport } from '../crypto/utils/export';
+import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../crypto/utils/testing';
+import { consumeStream } from '../file-attachments/download';
+import { readZIP } from '../import/helpers/zip.reader';
+import { archivePath, createArchive, createExportDataStream, getArchiveName } from './archive';
+import type { ExportData } from './types';
 
 const getMockExport = (): ExportData => ({
     version: '5.0.0.99',

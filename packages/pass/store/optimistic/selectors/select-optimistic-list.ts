@@ -1,6 +1,5 @@
-import type { Unpack } from '@proton/pass/types';
-import { not } from '@proton/pass/utils/fp/predicates';
-
+import type { Unpack } from '../../../types';
+import { not } from '../../../utils/fp/predicates';
 import type { OptimisticReducersMapObject, OptimisticSelector, StateFromOptimisticReducersMapObject } from '../types';
 import { asIfNotFailed } from './select-is-failed';
 import { asIfNotOptimistic } from './select-is-optimistic';

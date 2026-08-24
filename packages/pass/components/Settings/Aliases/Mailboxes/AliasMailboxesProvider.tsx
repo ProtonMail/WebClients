@@ -2,16 +2,15 @@ import type { FC, PropsWithChildren } from 'react';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 
-import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
-import { UpsellRef } from '@proton/pass/constants';
-import { useRequest } from '@proton/pass/hooks/useRequest';
-import { mailboxVerificationRequired } from '@proton/pass/lib/alias/alias.utils';
-import { getMailboxes } from '@proton/pass/store/actions';
-import { selectAliasMailboxes, selectCanManageAlias } from '@proton/pass/store/selectors';
-import type { MailboxDeleteDTO, Maybe, MaybeNull, UserMailboxOutput } from '@proton/pass/types';
-import { pipe } from '@proton/pass/utils/fp/pipe';
-import { getEpoch } from '@proton/pass/utils/time/epoch';
-
+import { UpsellRef } from '../../../../constants';
+import { useRequest } from '../../../../hooks/useRequest';
+import { mailboxVerificationRequired } from '../../../../lib/alias/alias.utils';
+import { getMailboxes } from '../../../../store/actions';
+import { selectAliasMailboxes, selectCanManageAlias } from '../../../../store/selectors';
+import type { MailboxDeleteDTO, Maybe, MaybeNull, UserMailboxOutput } from '../../../../types';
+import { pipe } from '../../../../utils/fp/pipe';
+import { getEpoch } from '../../../../utils/time/epoch';
+import { useUpselling } from '../../../Upsell/UpsellingProvider';
 import { AliasMailboxCreateModal } from './AliasMailboxCreateModal';
 import { AliasMailboxDeleteModal } from './AliasMailboxDeleteModal';
 import { AliasMailboxEditModal } from './AliasMailboxEdit';

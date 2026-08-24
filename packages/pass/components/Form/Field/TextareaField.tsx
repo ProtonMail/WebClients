@@ -6,13 +6,13 @@ import type { FieldProps } from 'formik';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import type { InputFieldProps } from '@proton/components/components/v2/field/InputField';
 import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
-import { useFieldControl } from '@proton/pass/hooks/useFieldControl';
-import { useMaxLengthLimiter } from '@proton/pass/hooks/useMaxLengthLimiter';
-import { usePasteLengthLimiter } from '@proton/pass/hooks/usePasteLengthLimiter';
-import { pipe } from '@proton/pass/utils/fp/pipe';
-import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import clsx from '@proton/utils/clsx';
 
+import { useFieldControl } from '../../../hooks/useFieldControl';
+import { useMaxLengthLimiter } from '../../../hooks/useMaxLengthLimiter';
+import { usePasteLengthLimiter } from '../../../hooks/usePasteLengthLimiter';
+import { pipe } from '../../../utils/fp/pipe';
+import { isEmptyString } from '../../../utils/string/is-empty-string';
 import { FieldBox, type FieldBoxProps } from './Layout/FieldBox';
 
 import './TextareaField.scss';

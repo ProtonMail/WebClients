@@ -1,12 +1,11 @@
 import { runSaga } from 'redux-saga';
 
-import type { LockCreateDTO } from '@proton/pass/lib/auth/lock/types';
-import { LockMode } from '@proton/pass/lib/auth/lock/types';
-import { lockCreateFailure, lockCreateIntent, lockCreateSuccess, stateDestroy } from '@proton/pass/store/actions';
-import { sagaSetup } from '@proton/pass/store/sagas/testing';
-import { last } from '@proton/pass/utils/fp/lens';
-import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
-
+import type { LockCreateDTO } from '../../../lib/auth/lock/types';
+import { LockMode } from '../../../lib/auth/lock/types';
+import { last } from '../../../utils/fp/lens';
+import { obfuscate } from '../../../utils/obfuscate/xor';
+import { lockCreateFailure, lockCreateIntent, lockCreateSuccess, stateDestroy } from '../../actions';
+import { sagaSetup } from '../testing';
 import watcher from './lock-create.saga';
 
 describe('lock-create saga', () => {

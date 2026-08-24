@@ -7,29 +7,27 @@ import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { IcPassShieldMonitoringOk } from '@proton/icons/icons/IcPassShieldMonitoringOk';
-import { useContextMenu } from '@proton/pass/components/ContextMenu/ContextMenuProvider';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import {
-    ItemsListContextMenu,
-    useItemContextMenu,
-} from '@proton/pass/components/Item/ContextMenu/ItemsListContextMenu';
-import { ItemsListItem } from '@proton/pass/components/Item/List/ItemsListItem';
-import { VirtualList } from '@proton/pass/components/Layout/List/VirtualList';
-import { useMonitor } from '@proton/pass/components/Monitor/MonitorContext';
-import { useSelectedItem } from '@proton/pass/components/Navigation/NavigationItem';
-import { getLocalPath } from '@proton/pass/components/Navigation/routing';
-import { useAutoSelect } from '@proton/pass/hooks/items/useAutoSelect';
-import { useFeatureFlag, useFeatureFlagsReady } from '@proton/pass/hooks/useFeatureFlag';
-import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
-import { useSelectItemAction } from '@proton/pass/hooks/useSelectItemAction';
-import { useTelemetryEvent } from '@proton/pass/hooks/useTelemetryEvent';
-import { itemEq } from '@proton/pass/lib/items/item.predicates';
-import { getItemKey } from '@proton/pass/lib/items/item.utils';
-import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
-import { selectPassPlan, selectSelectedItems } from '@proton/pass/store/selectors';
-import type { ItemRevision } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
-import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
+
+import { useAutoSelect } from '../../../hooks/items/useAutoSelect';
+import { useFeatureFlag, useFeatureFlagsReady } from '../../../hooks/useFeatureFlag';
+import { useMemoSelector } from '../../../hooks/useMemoSelector';
+import { useSelectItemAction } from '../../../hooks/useSelectItemAction';
+import { useTelemetryEvent } from '../../../hooks/useTelemetryEvent';
+import { itemEq } from '../../../lib/items/item.predicates';
+import { getItemKey } from '../../../lib/items/item.utils';
+import { isPaidPlan } from '../../../lib/user/user.predicates';
+import { selectPassPlan, selectSelectedItems } from '../../../store/selectors';
+import type { ItemRevision } from '../../../types';
+import { PassFeature } from '../../../types/api/features';
+import { TelemetryEventName } from '../../../types/data/telemetry';
+import { useContextMenu } from '../../ContextMenu/ContextMenuProvider';
+import { usePassCore } from '../../Core/PassCoreProvider';
+import { ItemsListContextMenu, useItemContextMenu } from '../../Item/ContextMenu/ItemsListContextMenu';
+import { ItemsListItem } from '../../Item/List/ItemsListItem';
+import { VirtualList } from '../../Layout/List/VirtualList';
+import { useSelectedItem } from '../../Navigation/NavigationItem';
+import { getLocalPath } from '../../Navigation/routing';
+import { useMonitor } from '../MonitorContext';
 
 export const CompromisedPasswords: FC = () => {
     const { onTelemetry } = usePassCore();

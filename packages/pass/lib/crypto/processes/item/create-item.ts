@@ -1,9 +1,9 @@
-import { encryptData, generateKey, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
-import { PassCryptoItemError } from '@proton/pass/lib/crypto/utils/errors';
-import { validateItemContentSize } from '@proton/pass/lib/crypto/utils/validators';
-import type { ItemCreateRequest, VaultShareKey } from '@proton/pass/types';
-import { ContentFormatVersion, PassEncryptionTag } from '@proton/pass/types';
-import { pipe } from '@proton/pass/utils/fp/pipe';
+import type { ItemCreateRequest, VaultShareKey } from '../../../../types';
+import { ContentFormatVersion, PassEncryptionTag } from '../../../../types';
+import { pipe } from '../../../../utils/fp/pipe';
+import { encryptData, generateKey, importSymmetricKey } from '../../utils/crypto-helpers';
+import { PassCryptoItemError } from '../../utils/errors';
+import { validateItemContentSize } from '../../utils/validators';
 
 type CreateItemProcessParams = {
     content: Uint8Array<ArrayBuffer>;
@@ -21,7 +21,7 @@ export const createItem = async ({ content, vaultKey }: CreateItemProcessParams)
     const encryptedItemKey = await encryptData(vaultKey.key, key, PassEncryptionTag.ItemKey);
 
     return {
-        Content: pipe(bytes => bytes.toBase64(), validateItemContentSize)(encryptedItemContent),
+        Content: pipe((bytes) => bytes.toBase64(), validateItemContentSize)(encryptedItemContent),
         ContentFormatVersion: ContentFormatVersion.Item,
         ItemKey: encryptedItemKey.toBase64(),
         KeyRotation: vaultKey.rotation,

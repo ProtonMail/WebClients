@@ -1,11 +1,10 @@
 import { put, select } from 'redux-saga/effects';
 
-import { parseGroupInvite, parseUserInvite } from '@proton/pass/lib/invites/invite.parser';
-import { partitionGroupInvites } from '@proton/pass/lib/invites/invite.utils';
-import type { EventProcessor } from '@proton/pass/lib/sync/types';
-import { syncInvites } from '@proton/pass/store/actions';
-import type { InviteState } from '@proton/pass/store/reducers';
-import { selectInvites } from '@proton/pass/store/selectors/invites';
+import { toMap } from '@proton/shared/lib/helpers/object';
+
+import { syncInvites } from '../../../store/actions';
+import type { InviteState } from '../../../store/reducers';
+import { selectInvites } from '../../../store/selectors/invites';
 import type {
     GroupInvite,
     GroupInvitesListResponse,
@@ -13,11 +12,13 @@ import type {
     Maybe,
     MaybeNull,
     UserInvite,
-} from '@proton/pass/types';
-import { InviteType } from '@proton/pass/types';
-import { truthy } from '@proton/pass/utils/fp/predicates';
-import { logger } from '@proton/pass/utils/logger';
-import { toMap } from '@proton/shared/lib/helpers/object';
+} from '../../../types';
+import { InviteType } from '../../../types';
+import { truthy } from '../../../utils/fp/predicates';
+import { logger } from '../../../utils/logger';
+import { parseGroupInvite, parseUserInvite } from '../../invites/invite.parser';
+import { partitionGroupInvites } from '../../invites/invite.utils';
+import type { EventProcessor } from '../types';
 
 export type GroupInvitesGetResponse = { Invites: GroupInvitesListResponse };
 

@@ -1,10 +1,9 @@
 import type { Dispatch, SetStateAction } from 'react';
 import { type FC, type PropsWithChildren, createContext, useMemo } from 'react';
 
-import { createUseContext } from '@proton/pass/hooks/useContextFactory';
-import type { MaybeNull, SelectedItem } from '@proton/pass/types';
-import { pipe } from '@proton/pass/utils/fp/pipe';
-
+import { createUseContext } from '../../hooks/useContextFactory';
+import type { MaybeNull, SelectedItem } from '../../types';
+import { pipe } from '../../utils/fp/pipe';
 import type { BulkSelection } from './types';
 
 type Props = {

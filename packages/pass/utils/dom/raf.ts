@@ -1,4 +1,4 @@
-import type { MaybeNull } from '@proton/pass/types';
+import type { MaybeNull } from '../../types';
 
 export type RafHandle = {
     /** Flag indicating wether the current RAF

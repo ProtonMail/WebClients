@@ -8,18 +8,19 @@ import Badge from '@proton/components/components/badge/Badge';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
-import { useItemsActions } from '@proton/pass/components/Item/ItemActionsProvider';
-import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
-import { DropdownMenuLabel } from '@proton/pass/components/Layout/Dropdown/DropdownMenuLabel';
-import { useSpotlightFor } from '@proton/pass/components/Spotlight/WithSpotlight';
-import { PassPlusIcon } from '@proton/pass/components/Upsell/PassPlusIcon';
-import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
-import { UpsellRef } from '@proton/pass/constants';
-import { useAutotypeExecute } from '@proton/pass/hooks/autotype/useAutotypeExecute';
-import { selectPassPlan } from '@proton/pass/store/selectors';
-import { SpotlightMessage } from '@proton/pass/types';
-import { UserPassPlan } from '@proton/pass/types/api/plan';
-import type { AutotypeAction } from '@proton/pass/types/desktop/autotype';
+
+import { UpsellRef } from '../../../constants';
+import { useAutotypeExecute } from '../../../hooks/autotype/useAutotypeExecute';
+import { selectPassPlan } from '../../../store/selectors';
+import { SpotlightMessage } from '../../../types';
+import { UserPassPlan } from '../../../types/api/plan';
+import type { AutotypeAction } from '../../../types/desktop/autotype';
+import { DropdownMenuButton } from '../../Layout/Dropdown/DropdownMenuButton';
+import { DropdownMenuLabel } from '../../Layout/Dropdown/DropdownMenuLabel';
+import { useSpotlightFor } from '../../Spotlight/WithSpotlight';
+import { PassPlusIcon } from '../../Upsell/PassPlusIcon';
+import { useUpselling } from '../../Upsell/UpsellingProvider';
+import { useItemsActions } from '../ItemActionsProvider';
 
 type AutotypeDropdownProps = {
     actions: AutotypeAction[];

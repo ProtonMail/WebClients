@@ -5,14 +5,15 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import { IcCross } from '@proton/icons/icons/IcCross';
-import createContactImg from '@proton/pass/assets/alias/alias-contact-create.svg';
-import fromToImg from '@proton/pass/assets/alias/alias-contact-from-to.png';
-import stampedLetter from '@proton/pass/assets/alias/alias-contact-stamped-letter.svg';
-import { Counter } from '@proton/pass/components/Layout/Badge/Counter';
-import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';
-import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
-import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+
+import createContactImg from '../../../../assets/alias/alias-contact-create.svg';
+import fromToImg from '../../../../assets/alias/alias-contact-from-to.png';
+import stampedLetter from '../../../../assets/alias/alias-contact-stamped-letter.svg';
+import { Counter } from '../../../Layout/Badge/Counter';
+import { SidebarModal } from '../../../Layout/Modal/SidebarModal';
+import { Panel } from '../../../Layout/Panel/Panel';
+import { PanelHeader } from '../../../Layout/Panel/PanelHeader';
 
 import './AliasContactsMoreInfo.scss';
 

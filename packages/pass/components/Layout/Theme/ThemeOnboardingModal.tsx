@@ -7,11 +7,12 @@ import { Button } from '@proton/atoms/Button/Button';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
-import { PassThemeCardList } from '@proton/pass/components/Settings/PassThemeCardList';
-import { settingsEditIntent } from '@proton/pass/store/actions';
-import { selectTheme } from '@proton/pass/store/selectors';
+
+import { settingsEditIntent } from '../../../store/actions';
+import { selectTheme } from '../../../store/selectors';
+import { usePassCore } from '../../Core/PassCoreProvider';
+import { PassThemeCardList } from '../../Settings/PassThemeCardList';
+import { PassModal } from '../Modal/PassModal';
 
 /** This component can be deleted once the theme feature is no longer considered new
  * and we want to stop prompting this modal to users */

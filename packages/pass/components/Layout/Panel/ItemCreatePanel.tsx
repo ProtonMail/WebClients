@@ -7,13 +7,13 @@ import { Kbd } from '@proton/atoms/Kbd/Kbd';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Icon from '@proton/components/components/icon/Icon';
 import type { IconName } from '@proton/icons/types';
-import { ItemFeatureDiscovery } from '@proton/pass/components/Layout/Panel/ItemFeatureDiscovery/ItemFeatureDiscovery';
-import { itemTypeToSubThemeClassName } from '@proton/pass/components/Layout/Theme/types';
-import { useSaveShortcut } from '@proton/pass/hooks/useSaveShortcut';
-import type { ItemType, MaybeNull } from '@proton/pass/types';
 import { metaKey } from '@proton/shared/lib/helpers/browser';
 
+import { useSaveShortcut } from '../../../hooks/useSaveShortcut';
+import type { ItemType, MaybeNull } from '../../../types';
+import { itemTypeToSubThemeClassName } from '../Theme/types';
 import { DiscardableModalPanel, type DiscardableModalProps } from './DiscardableModalPanel';
+import { ItemFeatureDiscovery } from './ItemFeatureDiscovery/ItemFeatureDiscovery';
 import { Panel } from './Panel';
 import { PanelHeader } from './PanelHeader';
 

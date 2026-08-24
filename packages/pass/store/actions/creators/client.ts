@@ -1,22 +1,23 @@
 import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import type { ReauthActionPayload } from '@proton/pass/lib/auth/reauth';
-import type { SyncMigration, SyncResult } from '@proton/pass/lib/sync/types';
-import { type CacheMeta, withCache, withCacheOptions } from '@proton/pass/store/actions/enhancers/cache';
-import { withStreamableAction } from '@proton/pass/store/actions/enhancers/client';
-import { type EndpointOptions, withReceiver } from '@proton/pass/store/actions/enhancers/endpoint';
-import { withItems } from '@proton/pass/store/actions/enhancers/items';
-import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
-import { bootRequest, syncRequest } from '@proton/pass/store/actions/requests';
-import { withRequest } from '@proton/pass/store/request/enhancers';
-import { requestActionsFactory } from '@proton/pass/store/request/flow';
-import type { AppStatus } from '@proton/pass/types';
-import { pipe } from '@proton/pass/utils/fp/pipe';
-import { or } from '@proton/pass/utils/fp/predicates';
-import type { Chunk } from '@proton/pass/utils/object/chunk';
 import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import identity from '@proton/utils/identity';
+
+import type { ReauthActionPayload } from '../../../lib/auth/reauth';
+import type { SyncMigration, SyncResult } from '../../../lib/sync/types';
+import type { AppStatus } from '../../../types';
+import { pipe } from '../../../utils/fp/pipe';
+import { or } from '../../../utils/fp/predicates';
+import type { Chunk } from '../../../utils/object/chunk';
+import { withRequest } from '../../request/enhancers';
+import { requestActionsFactory } from '../../request/flow';
+import { type CacheMeta, withCache, withCacheOptions } from '../enhancers/cache';
+import { withStreamableAction } from '../enhancers/client';
+import { type EndpointOptions, withReceiver } from '../enhancers/endpoint';
+import { withItems } from '../enhancers/items';
+import { withNotification } from '../enhancers/notification';
+import { bootRequest, syncRequest } from '../requests';
 
 export const startEventPolling = createAction('events::polling::start');
 export const stopEventPolling = createAction('events::polling::stop');

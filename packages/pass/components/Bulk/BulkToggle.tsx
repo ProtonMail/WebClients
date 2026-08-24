@@ -5,11 +5,12 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Kbd } from '@proton/atoms/Kbd/Kbd';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { useBulkActions } from '@proton/pass/components/Bulk/BulkSelectionActions';
-import { useBulkEnabled } from '@proton/pass/components/Bulk/BulkSelectionState';
-import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
-import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import { metaKey } from '@proton/shared/lib/helpers/browser';
+
+import { DropdownMenuButton } from '../Layout/Dropdown/DropdownMenuButton';
+import { QuickActionsDropdown } from '../Layout/Dropdown/QuickActionsDropdown';
+import { useBulkActions } from './BulkSelectionActions';
+import { useBulkEnabled } from './BulkSelectionState';
 
 type Props = { disabled?: boolean };
 

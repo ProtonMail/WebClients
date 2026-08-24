@@ -4,16 +4,17 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { IcUsersPlus } from '@proton/icons/icons/IcUsersPlus';
-import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
-import { ShareMember } from '@proton/pass/components/Invite/Member/ShareMember';
-import { PendingExistingMember, PendingNewMember } from '@proton/pass/components/Invite/Member/SharePendingMember';
-import { OrganizationPolicyTooltip } from '@proton/pass/components/Organization/OrganizationPolicyTooltip';
-import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
-import { type AccessDTO, AccessTarget } from '@proton/pass/lib/access/types';
-import { isGroupInvite } from '@proton/pass/lib/invites/invite.utils';
-import type { NewUserPendingInvite, PendingInvite, ShareMember as ShareMemberType } from '@proton/pass/types';
-import { OrganizationItemShareMode } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
+
+import { type AccessDTO, AccessTarget } from '../../../lib/access/types';
+import { isGroupInvite } from '../../../lib/invites/invite.utils';
+import type { NewUserPendingInvite, PendingInvite, ShareMember as ShareMemberType } from '../../../types';
+import { OrganizationItemShareMode } from '../../../types';
+import { FieldsetCluster } from '../../Form/Field/Layout/FieldsetCluster';
+import { OrganizationPolicyTooltip } from '../../Organization/OrganizationPolicyTooltip';
+import { useOrganization } from '../../Organization/OrganizationProvider';
+import { ShareMember } from '../Member/ShareMember';
+import { PendingExistingMember, PendingNewMember } from '../Member/SharePendingMember';
 
 export type InviteListItem =
     | { key: string; type: 'existing'; invite: PendingInvite }

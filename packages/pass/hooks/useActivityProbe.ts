@@ -2,8 +2,8 @@ import { useEffect, useMemo, useRef } from 'react';
 
 import debounce from 'lodash/debounce';
 
-import type { ActivityProbe } from '@proton/pass/utils/time/probe';
-import { createActivityProbe } from '@proton/pass/utils/time/probe';
+import type { ActivityProbe } from '../utils/time/probe';
+import { createActivityProbe } from '../utils/time/probe';
 
 /** Debounce delay to prevent rapid probe start/stop cycles. */
 const PROBE_START_DEBOUNCE_MS = 250;

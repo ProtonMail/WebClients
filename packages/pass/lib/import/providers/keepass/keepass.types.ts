@@ -1,4 +1,4 @@
-import type { DeobfuscatedItemExtraField, Maybe, MaybeArray } from '@proton/pass/types';
+import type { DeobfuscatedItemExtraField, Maybe, MaybeArray } from '../../../../types';
 
 export type KeePassEntryValue = { _ProtectInMemory: string; __text: string } | string;
 

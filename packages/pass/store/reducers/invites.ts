@@ -1,11 +1,12 @@
 import type { Reducer } from 'redux';
 
-import { groupInviteAccept, groupInviteReject, inviteAccept, inviteReject, matchSyncAction, syncInvites } from '@proton/pass/store/actions';
-import type { Invite } from '@proton/pass/types/data/invites';
-import { or } from '@proton/pass/utils/fp/predicates';
-import { objectDelete } from '@proton/pass/utils/object/delete';
-import { objectFilter } from '@proton/pass/utils/object/filter';
 import { toMap } from '@proton/shared/lib/helpers/object';
+
+import type { Invite } from '../../types/data/invites';
+import { or } from '../../utils/fp/predicates';
+import { objectDelete } from '../../utils/object/delete';
+import { objectFilter } from '../../utils/object/filter';
+import { groupInviteAccept, groupInviteReject, inviteAccept, inviteReject, matchSyncAction, syncInvites } from '../actions';
 
 export type InviteState = Record<string, Invite>;
 

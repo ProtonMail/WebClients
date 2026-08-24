@@ -1,9 +1,9 @@
 import type { FC } from 'react';
 import { useSelector } from 'react-redux';
 
-import { AliasSyncDisabled } from '@proton/pass/components/Settings/Aliases/Sync/AliasSyncDisabled';
-import { AliasSyncEnabled } from '@proton/pass/components/Settings/Aliases/Sync/AliasSyncEnabled';
-import { selectCanCreateItems, selectUserState } from '@proton/pass/store/selectors';
+import { selectCanCreateItems, selectUserState } from '../../../../store/selectors';
+import { AliasSyncDisabled } from './AliasSyncDisabled';
+import { AliasSyncEnabled } from './AliasSyncEnabled';
 
 export const AliasSyncToggle: FC = () => {
     const { userData } = useSelector(selectUserState);

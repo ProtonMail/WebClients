@@ -1,20 +1,14 @@
 import { runSaga } from 'redux-saga';
 
-import * as inviteRequests from '@proton/pass/lib/invites/invite.requests';
-import { createTestItem } from '@proton/pass/lib/items/item.test.utils';
-import { createTestShare } from '@proton/pass/lib/shares/share.test.utils';
-import type { EventProcessor } from '@proton/pass/lib/sync/types';
-import { getShareAccessOptions, syncInvites } from '@proton/pass/store/actions';
-import { sagaSetup } from '@proton/pass/store/sagas/testing';
-import type {
-    GroupInvite,
-    SyncEventChangedWithTokenOutput,
-    SyncEventShareOutput,
-    UserInvite,
-} from '@proton/pass/types';
-import { InviteType, ShareType } from '@proton/pass/types';
-import { uniqueId } from '@proton/pass/utils/string/unique-id';
-
+import { getShareAccessOptions, syncInvites } from '../../../store/actions';
+import { sagaSetup } from '../../../store/sagas/testing';
+import type { GroupInvite, SyncEventChangedWithTokenOutput, SyncEventShareOutput, UserInvite } from '../../../types';
+import { InviteType, ShareType } from '../../../types';
+import { uniqueId } from '../../../utils/string/unique-id';
+import * as inviteRequests from '../../invites/invite.requests';
+import { createTestItem } from '../../items/item.test.utils';
+import { createTestShare } from '../../shares/share.test.utils';
+import type { EventProcessor } from '../types';
 import {
     processGroupInvitesChanged,
     processInvitesChanged,

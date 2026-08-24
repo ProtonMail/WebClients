@@ -1,15 +1,15 @@
 import { call, put } from 'redux-saga/effects';
 
-import { syncPendingAliases } from '@proton/pass/lib/sync/common/alias';
-import type { EventProcessor } from '@proton/pass/lib/sync/types';
-import { aliasPendingCreated, itemsUpdated } from '@proton/pass/store/actions';
+import { aliasPendingCreated, itemsUpdated } from '../../../store/actions';
 import type {
     ItemRevision,
     MaybeNull,
     SyncEventChangedWithTokenOutput,
     SyncEventShareItemOutput,
-} from '@proton/pass/types';
-import { NoDefaultVaultError } from '@proton/pass/utils/errors/errors';
+} from '../../../types';
+import { NoDefaultVaultError } from '../../../utils/errors/errors';
+import { syncPendingAliases } from '../common/alias';
+import type { EventProcessor } from '../types';
 
 /** Alias notes are retrieved at the UI layer level for now, no need
  * to process this event for now. If we ever decide to cache the `slNote`

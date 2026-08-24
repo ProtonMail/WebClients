@@ -5,14 +5,14 @@ import { c } from 'ttag';
 
 import Option from '@proton/components/components/option/Option';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
-import type { VaultIconName } from '@proton/pass/components/Vault/VaultIcon';
-import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
-import type { ShareItem } from '@proton/pass/store/reducers';
-import { selectWritableVaults } from '@proton/pass/store/selectors';
-import type { Maybe, ShareType } from '@proton/pass/types';
-import { VaultColor } from '@proton/pass/types/protobuf/vault-v1.static';
 import clsx from '@proton/utils/clsx';
 
+import type { ShareItem } from '../../../store/reducers';
+import { selectWritableVaults } from '../../../store/selectors';
+import type { Maybe, ShareType } from '../../../types';
+import { VaultColor } from '../../../types/protobuf/vault-v1.static';
+import type { VaultIconName } from '../../Vault/VaultIcon';
+import { VaultIcon } from '../../Vault/VaultIcon';
 import { VAULT_COLOR_MAP } from '../../Vault/constants';
 import { SelectField, type SelectFieldProps } from './SelectField';
 

@@ -1,13 +1,13 @@
 import { call, cancelled, delay, put, race, select, take } from 'redux-saga/effects';
 
-import { processUserEvents } from '@proton/pass/lib/sync/v2/user-events.processor';
-import { getUserEventsSince } from '@proton/pass/lib/sync/v2/user-events.requests';
-import { setUserEventID } from '@proton/pass/store/actions';
-import { forcePollV2 } from '@proton/pass/store/actions/creators/polling';
-import { selectLatestUserEventId } from '@proton/pass/store/selectors';
-import type { RootSagaOptions } from '@proton/pass/store/types';
-import type { Api, Id, MaybeNull, SyncEventListOutput } from '@proton/pass/types';
-import { logId, logger } from '@proton/pass/utils/logger';
+import { processUserEvents } from '../../../../lib/sync/v2/user-events.processor';
+import { getUserEventsSince } from '../../../../lib/sync/v2/user-events.requests';
+import type { Api, Id, MaybeNull, SyncEventListOutput } from '../../../../types';
+import { logId, logger } from '../../../../utils/logger';
+import { setUserEventID } from '../../../actions';
+import { forcePollV2 } from '../../../actions/creators/polling';
+import { selectLatestUserEventId } from '../../../selectors';
+import type { RootSagaOptions } from '../../../types';
 
 const CHANNEL_ID = 'Polling::UserEventsV2';
 

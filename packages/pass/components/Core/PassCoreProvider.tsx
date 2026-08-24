@@ -3,10 +3,10 @@ import { useEffect, useState } from 'react';
 
 import ConfigProvider from '@proton/components/containers/config/Provider';
 import useInstance from '@proton/hooks/useInstance';
-import { PassThemeProvider } from '@proton/pass/components/Layout/Theme/ThemeProvider';
-import { preloadPassUI } from '@proton/pass/lib/core/ui.proxy';
 import noop from '@proton/utils/noop';
 
+import { preloadPassUI } from '../../lib/core/ui.proxy';
+import { PassThemeProvider } from '../Layout/Theme/ThemeProvider';
 import { AppStateProvider } from './AppStateProvider';
 import { PassCoreContext, type PassCoreContextValue, type PassCoreProviderProps } from './PassCoreContext';
 

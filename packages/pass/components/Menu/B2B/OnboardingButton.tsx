@@ -5,9 +5,10 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { default as DropdownMenuButtonCore } from '@proton/components/components/dropdown/DropdownMenuButton';
 import { IcCross } from '@proton/icons/icons/IcCross';
-import { DropdownMenuButtonLabel } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
-import { useOnboarding } from '@proton/pass/components/Onboarding/OnboardingProvider';
 import clsx from '@proton/utils/clsx';
+
+import { DropdownMenuButtonLabel } from '../../Layout/Dropdown/DropdownMenuButton';
+import { useOnboarding } from '../../Onboarding/OnboardingProvider';
 
 import './OnboardingButton.scss';
 

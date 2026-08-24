@@ -7,15 +7,15 @@ import { Button } from '@proton/atoms/Button/Button';
 import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { IcCross } from '@proton/icons/icons/IcCross';
-import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';
-import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
-import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
-import type { AsyncModalState } from '@proton/pass/hooks/useAsyncModalHandles';
-import { usePasswordGenerator } from '@proton/pass/hooks/usePasswordGenerator';
-import type { GeneratePasswordConfig } from '@proton/pass/lib/password/types';
-import { passwordOptionsEdit } from '@proton/pass/store/actions';
-import { selectOrganizationPasswordGeneratorPolicy, selectPasswordOptions } from '@proton/pass/store/selectors';
 
+import type { AsyncModalState } from '../../hooks/useAsyncModalHandles';
+import { usePasswordGenerator } from '../../hooks/usePasswordGenerator';
+import type { GeneratePasswordConfig } from '../../lib/password/types';
+import { passwordOptionsEdit } from '../../store/actions';
+import { selectOrganizationPasswordGeneratorPolicy, selectPasswordOptions } from '../../store/selectors';
+import { SidebarModal } from '../Layout/Modal/SidebarModal';
+import { Panel } from '../Layout/Panel/Panel';
+import { PanelHeader } from '../Layout/Panel/PanelHeader';
 import { PasswordGenerator } from './PasswordGenerator';
 import { usePasswordHistoryActions } from './PasswordHistoryActions';
 

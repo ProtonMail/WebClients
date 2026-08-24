@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import { useStatefulRef } from '@proton/pass/hooks/useStatefulRef';
+import { useStatefulRef } from './useStatefulRef';
 
 export const useStableRef = <T extends object>(value: T) => {
     const ref = useStatefulRef(value);

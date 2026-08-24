@@ -1,11 +1,8 @@
 import { c } from 'ttag';
 
-import { MAX_MAX_BATCH_PER_REQUEST } from '@proton/pass/constants';
-import { api } from '@proton/pass/lib/api/api';
-import { createPageIterator } from '@proton/pass/lib/api/utils';
-import { PassCrypto } from '@proton/pass/lib/crypto';
-import { serializeItemContent } from '@proton/pass/lib/items/item-proto.transformer';
-import { itemBuilder } from '@proton/pass/lib/items/item.builder';
+import chunk from '@proton/utils/chunk';
+
+import { MAX_MAX_BATCH_PER_REQUEST } from '../../constants';
 import type {
     AliasContactBlockDTO,
     AliasContactGetResponse,
@@ -33,8 +30,12 @@ import type {
     RandomPrefixDTO,
     SlSyncStatusOutput,
     UniqueItem,
-} from '@proton/pass/types';
-import chunk from '@proton/utils/chunk';
+} from '../../types';
+import { api } from '../api/api';
+import { createPageIterator } from '../api/utils';
+import { PassCrypto } from '../crypto';
+import { serializeItemContent } from '../items/item-proto.transformer';
+import { itemBuilder } from '../items/item.builder';
 
 export const getAliasOptions = async (shareId: string): Promise<AliasOptions> => {
     const aliasOptions = await api({

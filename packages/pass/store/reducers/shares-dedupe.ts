@@ -1,7 +1,7 @@
 import type { Action, Reducer } from 'redux';
 
-import { matchSyncAction, sharesDedupeUpdate } from '@proton/pass/store/actions';
-import type { Share, ShareId, ShareType } from '@proton/pass/types';
+import type { Share, ShareId, ShareType } from '../../types';
+import { matchSyncAction, sharesDedupeUpdate } from '../actions';
 
 export type ShareItem<T extends ShareType = ShareType> = Share<T>;
 

@@ -1,6 +1,6 @@
-import { ContentFormatVersion, type ItemRevision, ItemState, type SecureLinkItem } from '@proton/pass/types';
-import { uniqueId } from '@proton/pass/utils/string/unique-id';
-import { getEpoch } from '@proton/pass/utils/time/epoch';
+import { ContentFormatVersion, type ItemRevision, ItemState, type SecureLinkItem } from '../../types';
+import { uniqueId } from '../../utils/string/unique-id';
+import { getEpoch } from '../../utils/time/epoch';
 
 export const buildSecureLink = (url: string, linkKey: Uint8Array<ArrayBuffer>) =>
     `${url}#${linkKey.toBase64({ alphabet: 'base64url', omitPadding: true })}`;

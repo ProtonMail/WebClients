@@ -1,12 +1,13 @@
 import { CryptoProxy } from '@protontech/crypto';
-import { createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
-import { parseGroup } from '@proton/pass/lib/groups/groups.parsers';
-import type { ItemRevisionContentsResponse, ShareGetResponse, ShareKeyResponse } from '@proton/pass/types';
-import { ContentFormatVersion, ItemState, PassEncryptionTag, ShareRole, ShareType } from '@proton/pass/types';
-import { createMemoryStore } from '@proton/pass/utils/store';
+
 import { ADDRESS_RECEIVE, ADDRESS_SEND, ADDRESS_STATUS } from '@proton/shared/lib/constants';
 import type { DecryptedKey, Key, User } from '@proton/shared/lib/interfaces';
 
+import type { ItemRevisionContentsResponse, ShareGetResponse, ShareKeyResponse } from '../../types';
+import { ContentFormatVersion, ItemState, PassEncryptionTag, ShareRole, ShareType } from '../../types';
+import { createMemoryStore } from '../../utils/store';
+import { createAuthStore, exposeAuthStore } from '../auth/store';
+import { parseGroup } from '../groups/groups.parsers';
 import { PassCrypto, exposePassCrypto } from './index';
 import { createPassCrypto } from './pass-crypto';
 import * as processes from './processes';

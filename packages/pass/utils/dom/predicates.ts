@@ -1,4 +1,4 @@
-import type { MaybeNull } from '@proton/pass/types';
+import type { MaybeNull } from '../../types';
 
 export const isHTMLElement = (node: Node | EventTarget): node is HTMLElement =>
     'nodeType' in node && node.nodeType === Node.ELEMENT_NODE && 'tagName' in node;

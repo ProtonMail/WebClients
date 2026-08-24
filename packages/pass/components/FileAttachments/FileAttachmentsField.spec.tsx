@@ -1,14 +1,14 @@
 import { fireEvent } from '@testing-library/react';
 import type { FieldProps } from 'formik';
 
-import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
-import { useMatchUser } from '@proton/pass/hooks/useMatchUser';
-import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
-import { selectUser, selectUserStorageAllowed } from '@proton/pass/store/selectors';
-import { uniqueId } from '@proton/pass/utils/string/unique-id';
-import { render } from '@proton/pass/utils/tests/render';
 import { USER_ROLES } from '@proton/shared/lib/constants';
 
+import { useFeatureFlag } from '../../hooks/useFeatureFlag';
+import { useMatchUser } from '../../hooks/useMatchUser';
+import { useNavigateToUpgrade } from '../../hooks/useNavigateToUpgrade';
+import { selectUser, selectUserStorageAllowed } from '../../store/selectors';
+import { uniqueId } from '../../utils/string/unique-id';
+import { render } from '../../utils/tests/render';
 import { FileAttachmentsField } from './FileAttachmentsField';
 
 jest.mock('webextension-polyfill', () => ({}));
@@ -16,11 +16,11 @@ jest.mock('imask/esm/masked/range', () => ({}));
 
 /** Branches under test are driven by these hooks/selectors. Mock them directly
  * rather than seeding the redux store, so each scenario is isolated. */
-jest.mock('@proton/pass/hooks/useFeatureFlag', () => ({ useFeatureFlag: jest.fn() }));
-jest.mock('@proton/pass/hooks/useMatchUser', () => ({ useMatchUser: jest.fn() }));
-jest.mock('@proton/pass/hooks/useNavigateToUpgrade', () => ({ useNavigateToUpgrade: jest.fn() }));
-jest.mock('@proton/pass/store/selectors', () => ({
-    ...jest.requireActual('@proton/pass/store/selectors'),
+jest.mock('../../hooks/useFeatureFlag', () => ({ useFeatureFlag: jest.fn() }));
+jest.mock('../../hooks/useMatchUser', () => ({ useMatchUser: jest.fn() }));
+jest.mock('../../hooks/useNavigateToUpgrade', () => ({ useNavigateToUpgrade: jest.fn() }));
+jest.mock('../../store/selectors', () => ({
+    ...jest.requireActual('../../store/selectors'),
     selectUser: jest.fn(),
     selectUserStorageAllowed: jest.fn(),
 }));

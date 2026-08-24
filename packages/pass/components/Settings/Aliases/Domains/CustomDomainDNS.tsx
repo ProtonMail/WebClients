@@ -5,12 +5,12 @@ import { c } from 'ttag';
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
 import { IcInfoCircleFilled } from '@proton/icons/icons/IcInfoCircleFilled';
-import { Card } from '@proton/pass/components/Layout/Card/Card';
-import { useRequest } from '@proton/pass/hooks/useRequest';
-import { verifyCustomDomain } from '@proton/pass/store/actions';
-import type { MaybeNull } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
 
+import { useRequest } from '../../../../hooks/useRequest';
+import { verifyCustomDomain } from '../../../../store/actions';
+import type { MaybeNull } from '../../../../types';
+import { Card } from '../../../Layout/Card/Card';
 import { useAliasDomains, useCustomDomain } from './AliasDomainsContext';
 import { DNSSectionID, getDNSSections } from './DomainUtils';
 

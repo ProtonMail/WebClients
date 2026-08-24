@@ -2,8 +2,8 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import { UpgradeButton } from '@proton/pass/components/Upsell/UpgradeButton';
-import { UpsellRef } from '@proton/pass/constants';
+import { UpsellRef } from '../../../constants';
+import { UpgradeButton } from '../../Upsell/UpgradeButton';
 
 export const AccessUpgrade: FC = () => (
     <UpgradeButton

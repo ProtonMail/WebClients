@@ -1,6 +1,6 @@
-import browser from '@proton/pass/lib/globals/browser';
-import type { TabId } from '@proton/pass/types';
-import { truthy } from '@proton/pass/utils/fp/predicates';
+import type { TabId } from '../../../types';
+import { truthy } from '../../../utils/fp/predicates';
+import browser from '../../globals/browser';
 
 export const filterDeletedTabIds = async (tabIds: TabId[]): Promise<TabId[]> =>
     (

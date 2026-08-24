@@ -1,5 +1,4 @@
-import type { Rect } from '@proton/pass/types/utils/dom';
-
+import type { Rect } from '../../types/utils/dom';
 import { REFRESH_RATE, animatePositionChange } from './animation';
 
 describe('animatePositionChange', () => {

@@ -1,15 +1,16 @@
 import groupBy from 'lodash/groupBy';
 import { call, put } from 'redux-saga/effects';
 
-import { MIN_MAX_BATCH_PER_REQUEST } from '@proton/pass/constants';
-import { requestItem } from '@proton/pass/lib/items/item.requests';
-import { discardDrafts } from '@proton/pass/lib/sync/common/drafts';
-import type { EventProcessor } from '@proton/pass/lib/sync/types';
-import { itemsDeleteEvent, itemsUpdated } from '@proton/pass/store/actions';
-import type { ItemRevision, Maybe, SyncEventShareItemOutput } from '@proton/pass/types';
-import { prop } from '@proton/pass/utils/fp/lens';
-import { truthy } from '@proton/pass/utils/fp/predicates';
 import chunk from '@proton/utils/chunk';
+
+import { MIN_MAX_BATCH_PER_REQUEST } from '../../../constants';
+import { itemsDeleteEvent, itemsUpdated } from '../../../store/actions';
+import type { ItemRevision, Maybe, SyncEventShareItemOutput } from '../../../types';
+import { prop } from '../../../utils/fp/lens';
+import { truthy } from '../../../utils/fp/predicates';
+import { requestItem } from '../../items/item.requests';
+import { discardDrafts } from '../common/drafts';
+import type { EventProcessor } from '../types';
 
 /** Processes item updates in batches, dispatching `itemsUpdated` per batch.
  * Items that fail to decrypt, or that belong to a removed share, resolve to

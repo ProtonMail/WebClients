@@ -3,30 +3,13 @@ import { useDispatch, useStore } from 'react-redux';
 
 import { c, msgid } from 'ttag';
 
-import { useBulkActions } from '@proton/pass/components/Bulk/BulkSelectionActions';
-import { ConfirmTrashAlias } from '@proton/pass/components/Item/Actions/ConfirmAliasActions';
-import {
-    ConfirmDeleteManyItems,
-    ConfirmMoveManyItems,
-    ConfirmTrashManyItems,
-} from '@proton/pass/components/Item/Actions/ConfirmBulkActions';
-import {
-    ConfirmDeleteItem,
-    ConfirmLeaveItem,
-    ConfirmMoveItem,
-} from '@proton/pass/components/Item/Actions/ConfirmItemActions';
-import { ConfirmAutotype, ConfirmAutotypeShortcut } from '@proton/pass/components/Item/Autotype/ConfirmAutotype';
-import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
-import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
-import { getNewItemRoute } from '@proton/pass/components/Navigation/routing';
-import { VaultSelect, VaultSelectMode, useVaultSelectModalHandles } from '@proton/pass/components/Vault/VaultSelect';
-import { useAutotypeExecute } from '@proton/pass/hooks/autotype/useAutotypeExecute';
-import type { ItemCloneLocationState } from '@proton/pass/hooks/items/useInitialValues';
-import { useConfirm } from '@proton/pass/hooks/useConfirm';
-import { useStatefulRef } from '@proton/pass/hooks/useStatefulRef';
-import { isAliasItem, isDisabledAlias } from '@proton/pass/lib/items/item.predicates';
-import { cloneItemName, getBulkSelectionCount } from '@proton/pass/lib/items/item.utils';
-import { isVaultShare } from '@proton/pass/lib/shares/share.predicates';
+import { useAutotypeExecute } from '../../hooks/autotype/useAutotypeExecute';
+import type { ItemCloneLocationState } from '../../hooks/items/useInitialValues';
+import { useConfirm } from '../../hooks/useConfirm';
+import { useStatefulRef } from '../../hooks/useStatefulRef';
+import { isAliasItem, isDisabledAlias } from '../../lib/items/item.predicates';
+import { cloneItemName, getBulkSelectionCount } from '../../lib/items/item.utils';
+import { isVaultShare } from '../../lib/shares/share.predicates';
 import {
     itemBulkDeleteIntent,
     itemBulkMoveIntent,
@@ -37,18 +20,27 @@ import {
     itemRestore,
     itemTrash,
     shareLeaveIntent,
-} from '@proton/pass/store/actions';
+} from '../../store/actions';
 import {
     selectAliasTrashAcknowledged,
     selectItemsByEmail,
     selectMostRecentVaultShareID,
     selectShareOrThrow,
-} from '@proton/pass/store/selectors';
-import type { State } from '@proton/pass/store/types';
-import type { ItemMoveIntent } from '@proton/pass/types';
-import { type BulkSelectionDTO, type ItemRevision, type MaybeNull, ShareType } from '@proton/pass/types';
-import type { AutotypeConfirmProps } from '@proton/pass/types/desktop/autotype';
-import { partialMerge } from '@proton/pass/utils/object/merge';
+} from '../../store/selectors';
+import type { State } from '../../store/types';
+import type { ItemMoveIntent } from '../../types';
+import { type BulkSelectionDTO, type ItemRevision, type MaybeNull, ShareType } from '../../types';
+import type { AutotypeConfirmProps } from '../../types/desktop/autotype';
+import { partialMerge } from '../../utils/object/merge';
+import { useBulkActions } from '../Bulk/BulkSelectionActions';
+import { useNavigate } from '../Navigation/NavigationActions';
+import { useItemScope } from '../Navigation/NavigationMatches';
+import { getNewItemRoute } from '../Navigation/routing';
+import { VaultSelect, VaultSelectMode, useVaultSelectModalHandles } from '../Vault/VaultSelect';
+import { ConfirmTrashAlias } from './Actions/ConfirmAliasActions';
+import { ConfirmDeleteManyItems, ConfirmMoveManyItems, ConfirmTrashManyItems } from './Actions/ConfirmBulkActions';
+import { ConfirmDeleteItem, ConfirmLeaveItem, ConfirmMoveItem } from './Actions/ConfirmItemActions';
+import { ConfirmAutotype, ConfirmAutotypeShortcut } from './Autotype/ConfirmAutotype';
 
 /** Ongoing: move every item action definition to this
  * context object. This context should be loosely connected */

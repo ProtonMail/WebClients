@@ -2,17 +2,16 @@ import type { Action } from 'redux';
 import type { Task } from 'redux-saga';
 import { all, call, cancel, fork, select, take } from 'redux-saga/effects';
 
-import { api } from '@proton/pass/lib/api/api';
-import { SYNC_STRATEGY } from '@proton/pass/lib/sync/global';
-import { SyncStrategy } from '@proton/pass/lib/sync/types';
-import { lockCreateSuccess, startEventPolling, stopEventPolling } from '@proton/pass/store/actions';
-import { getOrganizationSettings } from '@proton/pass/store/actions/creators/organization';
-import { selectLockSetupRequired } from '@proton/pass/store/selectors';
-import { selectLoadGroupInvites } from '@proton/pass/store/selectors/invites';
-import type { RootSagaOptions } from '@proton/pass/store/types';
-import type { Api, MaybeNull } from '@proton/pass/types';
-import { logger } from '@proton/pass/utils/logger';
-
+import { api } from '../../../lib/api/api';
+import { SYNC_STRATEGY } from '../../../lib/sync/global';
+import { SyncStrategy } from '../../../lib/sync/types';
+import type { Api, MaybeNull } from '../../../types';
+import { logger } from '../../../utils/logger';
+import { lockCreateSuccess, startEventPolling, stopEventPolling } from '../../actions';
+import { getOrganizationSettings } from '../../actions/creators/organization';
+import { selectLockSetupRequired } from '../../selectors';
+import { selectLoadGroupInvites } from '../../selectors/invites';
+import type { RootSagaOptions } from '../../types';
 import { coreChannel } from './core/channel.core';
 import { groupInvitesChannel } from './v1/channel.group-invites';
 import { invitesChannel } from './v1/channel.invites';

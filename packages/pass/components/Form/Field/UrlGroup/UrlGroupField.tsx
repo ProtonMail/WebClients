@@ -9,21 +9,17 @@ import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import { IcCogWheel } from '@proton/icons/icons/IcCogWheel';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
-import { UrlAdvancedModal } from '@proton/pass/components/Form/Field/UrlGroup/UrlAdvancedModal';
-import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
-import { maybeErrorMessage } from '@proton/pass/hooks/useFieldControl';
-import {
-    createNewUrlItem,
-    getModeDescription,
-    isAutofillModeDataOfTypeUrl,
-} from '@proton/pass/lib/urls/utils/autofill';
-import { sanitizeURL } from '@proton/pass/lib/urls/utils/sanitize';
-import type { UrlGroupValues, UrlItem } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
-import { AutofillMode } from '@proton/pass/types/protobuf';
-import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 
+import { useFeatureFlag } from '../../../../hooks/useFeatureFlag';
+import { maybeErrorMessage } from '../../../../hooks/useFieldControl';
+import { createNewUrlItem, getModeDescription, isAutofillModeDataOfTypeUrl } from '../../../../lib/urls/utils/autofill';
+import { sanitizeURL } from '../../../../lib/urls/utils/sanitize';
+import type { UrlGroupValues, UrlItem } from '../../../../types';
+import { PassFeature } from '../../../../types/api/features';
+import { AutofillMode } from '../../../../types/protobuf';
+import { isEmptyString } from '../../../../utils/string/is-empty-string';
 import { FieldBox } from '../Layout/FieldBox';
+import { UrlAdvancedModal } from './UrlAdvancedModal';
 
 export type UrlGroupProps = {
     initialTestUrl?: string;

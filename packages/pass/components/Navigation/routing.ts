@@ -1,12 +1,13 @@
 import { uint8ArrayToUtf8String, utf8StringToUint8Array } from '@protontech/crypto/utils';
 import { type Location, createBrowserHistory } from 'history';
 
-import { authStore } from '@proton/pass/lib/auth/store';
-import type { ItemFilters, ItemType, MaybeNull, Unpack } from '@proton/pass/types';
-import { partialMerge } from '@proton/pass/utils/object/merge';
 import { getLocalIDPath, stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
 import { APPS } from '@proton/shared/lib/constants';
 import { getAppUrlFromApiUrl } from '@proton/shared/lib/helpers/url';
+
+import { authStore } from '../../lib/auth/store';
+import type { ItemFilters, ItemType, MaybeNull, Unpack } from '../../types';
+import { partialMerge } from '../../utils/object/merge';
 
 export type ItemNewRouteParams = { type: ItemType };
 export type ItemRouteOptions = { scope?: ItemScope };

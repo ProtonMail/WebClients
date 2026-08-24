@@ -5,8 +5,9 @@ import { c, msgid } from 'ttag';
 import { Slider } from '@proton/atoms/Slider/Slider';
 import { SliderSizeEnum } from '@proton/atoms/Slider/Slider';
 import Toggle from '@proton/components/components/toggle/Toggle';
-import { OrganizationPolicyTooltip } from '@proton/pass/components/Organization/OrganizationPolicyTooltip';
-import type { PasswordGeneratorResult } from '@proton/pass/hooks/usePasswordGenerator';
+
+import type { PasswordGeneratorResult } from '../../hooks/usePasswordGenerator';
+import { OrganizationPolicyTooltip } from '../Organization/OrganizationPolicyTooltip';
 
 type Props = PasswordGeneratorResult<'random'> & { advanced: boolean; dense?: boolean };
 

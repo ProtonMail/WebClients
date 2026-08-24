@@ -1,10 +1,11 @@
 import { c } from 'ttag';
 
 import useNotifications from '@proton/components/hooks/useNotifications';
-import type { AutotypeProperties } from '@proton/pass/types';
-import { logger } from '@proton/pass/utils/logger';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
+
+import type { AutotypeProperties } from '../../types';
+import { logger } from '../../utils/logger';
 
 export const useAutotypeExecute = DESKTOP_BUILD
     ? () => {

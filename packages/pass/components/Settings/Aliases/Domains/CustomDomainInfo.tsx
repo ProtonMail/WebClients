@@ -7,20 +7,20 @@ import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Href } from '@proton/atoms/Href/Href';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import { Card } from '@proton/pass/components/Layout/Card/Card';
-import { DomainMailboxesSelector } from '@proton/pass/components/Settings/Aliases/Mailboxes/AliasMailboxesSelect';
-import { SIMPLELOGIN_DOMAIN_SETTINGS_URL } from '@proton/pass/constants';
-import { useRequest } from '@proton/pass/hooks/useRequest';
+import clsx from '@proton/utils/clsx';
+
+import { SIMPLELOGIN_DOMAIN_SETTINGS_URL } from '../../../../constants';
+import { useRequest } from '../../../../hooks/useRequest';
 import {
     getCustomDomainSettings,
     updateCatchAll,
     updateCustomDomainDisplayName,
     updateCustomDomainMailboxes,
     updateRandomPrefix,
-} from '@proton/pass/store/actions';
-import type { CustomDomainSettingsOutput, MaybeNull } from '@proton/pass/types';
-import clsx from '@proton/utils/clsx';
-
+} from '../../../../store/actions';
+import type { CustomDomainSettingsOutput, MaybeNull } from '../../../../types';
+import { Card } from '../../../Layout/Card/Card';
+import { DomainMailboxesSelector } from '../Mailboxes/AliasMailboxesSelect';
 import { useCustomDomain } from './AliasDomainsContext';
 
 type Props = { domainID: number };

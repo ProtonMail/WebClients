@@ -1,10 +1,10 @@
-import { SyncStrategy } from '@proton/pass/lib/sync/types';
-import { asIfNotOptimistic } from '@proton/pass/store/optimistic/selectors/select-is-optimistic';
-import { getInitialPATState, reducerMap } from '@proton/pass/store/reducers';
-import { selectSyncStrategy } from '@proton/pass/store/selectors/settings';
-import type { State } from '@proton/pass/store/types';
-import { objectFilter } from '@proton/pass/utils/object/filter';
-import { partialMerge } from '@proton/pass/utils/object/merge';
+import { SyncStrategy } from '../../lib/sync/types';
+import { objectFilter } from '../../utils/object/filter';
+import { partialMerge } from '../../utils/object/merge';
+import { asIfNotOptimistic } from '../optimistic/selectors/select-is-optimistic';
+import { getInitialPATState, reducerMap } from '../reducers';
+import type { State } from '../types';
+import { selectSyncStrategy } from './settings';
 
 export const selectCachableState = (state: State) => {
     const cachable = asIfNotOptimistic(state, reducerMap);

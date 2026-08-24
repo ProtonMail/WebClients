@@ -4,7 +4,8 @@ import {
     getInviteRecommendations,
     getInviteRecommendationsOrganization,
     getInviteRecommendationsSuggested,
-} from '@proton/pass/lib/invites/invite.requests';
+} from '../../../lib/invites/invite.requests';
+import type { InviteRecommendationOrgOutput, InviteRecommendationSuggestedListOutput, InviteRecommendationsResponse } from '../../../types';
 import {
     inviteRecommendationsFailure,
     inviteRecommendationsIntent,
@@ -15,13 +16,8 @@ import {
     inviteRecommendationsSuggestedFailure,
     inviteRecommendationsSuggestedIntent,
     inviteRecommendationsSuggestedSuccess,
-} from '@proton/pass/store/actions';
-import { requestInvalidate } from '@proton/pass/store/request/actions';
-import type {
-    InviteRecommendationOrgOutput,
-    InviteRecommendationSuggestedListOutput,
-    InviteRecommendationsResponse,
-} from '@proton/pass/types';
+} from '../../actions';
+import { requestInvalidate } from '../../request/actions';
 
 function* loadRecommendationsWorker({ payload, meta: { request } }: ReturnType<typeof inviteRecommendationsIntent>): Generator {
     const ctrl = new AbortController();

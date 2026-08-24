@@ -5,12 +5,13 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import Progress from '@proton/components/components/progress/Progress';
-import { useOffline } from '@proton/pass/components/Core/ConnectivityProvider';
-import { getErrorLabel } from '@proton/pass/components/Settings/Update/Update.utils.desktop';
-import type { UpdateErrorType, UpdateStore } from '@proton/pass/types/desktop';
-import { UpdateStatus as UpdateStatusEnum } from '@proton/pass/types/desktop';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { isWindows } from '@proton/shared/lib/helpers/browser';
+
+import type { UpdateErrorType, UpdateStore } from '../../../types/desktop';
+import { UpdateStatus as UpdateStatusEnum } from '../../../types/desktop';
+import { useOffline } from '../../Core/ConnectivityProvider';
+import { getErrorLabel } from './Update.utils.desktop';
 
 const getStatusLabel = (
     status: UpdateStatusEnum,

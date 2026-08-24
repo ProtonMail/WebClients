@@ -1,21 +1,15 @@
 import type { Selector } from '@reduxjs/toolkit';
 import { createSelector } from '@reduxjs/toolkit';
 
-import { isActive } from '@proton/pass/lib/items/item.predicates';
-import type { VaultShareItem } from '@proton/pass/store/reducers';
-import { selectAllItems, selectItems } from '@proton/pass/store/selectors/items';
-import {
-    selectOwnWritableVaults,
-    selectShare,
-    selectVisibleVaults,
-    selectWritableSharedVaults,
-    selectWritableVaults,
-} from '@proton/pass/store/selectors/shares';
-import type { State } from '@proton/pass/store/types';
-import type { Maybe, MaybeNull, ShareType } from '@proton/pass/types';
-import { first } from '@proton/pass/utils/array/first';
-import { prop } from '@proton/pass/utils/fp/lens';
-import { sortOn } from '@proton/pass/utils/fp/sort';
+import { isActive } from '../../lib/items/item.predicates';
+import type { Maybe, MaybeNull, ShareType } from '../../types';
+import { first } from '../../utils/array/first';
+import { prop } from '../../utils/fp/lens';
+import { sortOn } from '../../utils/fp/sort';
+import type { VaultShareItem } from '../reducers';
+import type { State } from '../types';
+import { selectAllItems, selectItems } from './items';
+import { selectOwnWritableVaults, selectShare, selectVisibleVaults, selectWritableSharedVaults, selectWritableVaults } from './shares';
 
 const createVaultsWithItemsCountSelector = (vaultSelector: Selector<State, VaultShareItem[]>) =>
     createSelector([vaultSelector, selectItems], (shares, itemsByShareId) =>
@@ -30,11 +24,8 @@ export const selectWritableVaultsWithCount = createVaultsWithItemsCountSelector(
 export const selectWritableSharedVaultsWithCount = createVaultsWithItemsCountSelector(selectWritableSharedVaults);
 
 export const selectVaultItemsCount = (shareId: MaybeNull<string>) =>
-    createSelector(
-        selectShare<ShareType.Vault>(shareId),
-        selectItems,
-        (share, itemsByShareId): MaybeNull<number> =>
-            share ? Object.values(itemsByShareId?.[share?.shareId] ?? {}).filter(isActive).length : null
+    createSelector(selectShare<ShareType.Vault>(shareId), selectItems, (share, itemsByShareId): MaybeNull<number> =>
+        share ? Object.values(itemsByShareId?.[share?.shareId] ?? {}).filter(isActive).length : null
     );
 
 /** The default vault should be the oldest vault I own and can write to.

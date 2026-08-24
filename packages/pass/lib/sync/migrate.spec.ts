@@ -1,22 +1,21 @@
 import { runSaga } from 'redux-saga';
 
-import * as inviteRequests from '@proton/pass/lib/invites/invite.requests';
-import * as organizationRequests from '@proton/pass/lib/organization/organization.requests';
-import * as shareRequests from '@proton/pass/lib/shares/share.requests';
-import { createTestShare } from '@proton/pass/lib/shares/share.test.utils';
-import * as v1Sync from '@proton/pass/lib/sync/v1/sync';
-import * as userEventRequests from '@proton/pass/lib/sync/v2/user-events.requests';
-import * as userRequests from '@proton/pass/lib/user/user.requests';
-import { setUserAccess, syncMigration } from '@proton/pass/store/actions';
-import { type HydratedAccessState, default as rootReducer } from '@proton/pass/store/reducers';
-import { sagaReturn, sagaSetup } from '@proton/pass/store/sagas/testing';
-import type { RootSagaOptions, State } from '@proton/pass/store/types';
-import type { Maybe } from '@proton/pass/types';
-import { type PassEventListResponse, PlanType } from '@proton/pass/types';
-
+import { setUserAccess, syncMigration } from '../../store/actions';
+import { type HydratedAccessState, default as rootReducer } from '../../store/reducers';
+import { sagaReturn, sagaSetup } from '../../store/sagas/testing';
+import type { RootSagaOptions, State } from '../../store/types';
+import type { Maybe } from '../../types';
+import { type PassEventListResponse, PlanType } from '../../types';
+import * as inviteRequests from '../invites/invite.requests';
+import * as organizationRequests from '../organization/organization.requests';
+import * as shareRequests from '../shares/share.requests';
+import { createTestShare } from '../shares/share.test.utils';
+import * as userRequests from '../user/user.requests';
 import { migrate } from './migrate';
 import type { SyncResult } from './types';
 import { SyncStrategy } from './types';
+import * as v1Sync from './v1/sync';
+import * as userEventRequests from './v2/user-events.requests';
 
 const getUserEventLatestID = jest.spyOn(userEventRequests, 'getUserEventLatestID');
 const getUserAccess = jest.spyOn(userRequests, 'getUserAccess');

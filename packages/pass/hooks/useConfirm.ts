@@ -1,8 +1,9 @@
 import { type Dispatch, type SetStateAction, useCallback, useState } from 'react';
 
-import type { Maybe, MaybeNull } from '@proton/pass/types';
-import { pipe, tap } from '@proton/pass/utils/fp/pipe';
 import noop from '@proton/utils/noop';
+
+import type { Maybe, MaybeNull } from '../types';
+import { pipe, tap } from '../utils/fp/pipe';
 
 type UseConfirmResult<P, R> = {
     call: (param: P) => R;

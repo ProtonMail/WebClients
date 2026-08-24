@@ -1,9 +1,8 @@
 import { c } from 'ttag';
 
-import { itemBuilder } from '@proton/pass/lib/items/item.builder';
-import type { DeobfuscatedItemExtraField, ItemContent } from '@proton/pass/types';
-import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
-
+import type { DeobfuscatedItemExtraField, ItemContent } from '../../../../types';
+import { isEmptyString } from '../../../../utils/string/is-empty-string';
+import { itemBuilder } from '../../../items/item.builder';
 import type { KeeperCustomFieldValue, KeeperCustomFields, KeeperItem, KeeperPhoneField } from './keeper.types';
 
 const getCleanLabel = (label?: string) => {

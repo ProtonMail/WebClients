@@ -3,14 +3,15 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
-import type { RouteMatchProps } from '@proton/pass/components/Navigation/RouteMatch';
-import { PassPlusPromotionButton } from '@proton/pass/components/Upsell/PassPlusPromotionButton';
-import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
-import { UpsellRef } from '@proton/pass/constants';
-import { selectPassPlan } from '@proton/pass/store/selectors';
-import { UserPassPlan } from '@proton/pass/types/api/plan';
 import clsx from '@proton/utils/clsx';
+
+import { UpsellRef } from '../../../constants';
+import { selectPassPlan } from '../../../store/selectors';
+import { UserPassPlan } from '../../../types/api/plan';
+import { DropdownMenuButton } from '../../Layout/Dropdown/DropdownMenuButton';
+import type { RouteMatchProps } from '../../Navigation/RouteMatch';
+import { PassPlusPromotionButton } from '../../Upsell/PassPlusPromotionButton';
+import { useUpselling } from '../../Upsell/UpsellingProvider';
 
 type SecureLinkButtonProps = RouteMatchProps & {
     className?: string;

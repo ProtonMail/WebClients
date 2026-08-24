@@ -2,11 +2,12 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
-import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
-import type { SanitizedPasskey } from '@proton/pass/lib/passkeys/types';
-import { epochToDateTime } from '@proton/pass/utils/time/format';
 import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+
+import type { SanitizedPasskey } from '../../../lib/passkeys/types';
+import { epochToDateTime } from '../../../utils/time/format';
+import { ValueControl } from '../../Form/Field/Control/ValueControl';
+import { FieldsetCluster } from '../../Form/Field/Layout/FieldsetCluster';
 
 type Props = { passkey: SanitizedPasskey };
 

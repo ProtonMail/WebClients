@@ -1,6 +1,5 @@
-import { itemBuilder } from '@proton/pass/lib/items/item.builder';
-import type { IdentityFieldName } from '@proton/pass/types';
-
+import { itemBuilder } from '../../lib/items/item.builder';
+import type { IdentityFieldName } from '../../types';
 import { MOCK_FIELDS, MOCK_SECTIONS } from './identity.mocks';
 import { addFormSectionOptionalField, buildFormSections } from './useIdentityForm';
 import * as utils from './utils';

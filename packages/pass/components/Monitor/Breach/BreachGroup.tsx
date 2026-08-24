@@ -5,15 +5,15 @@ import { type RouteChildrenProps, useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Card } from '@proton/atoms/Card/Card';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { SubHeader } from '@proton/pass/components/Layout/Section/SubHeader';
-import { CustomAddressAddButton } from '@proton/pass/components/Monitor/Address/CustomAddressAddButton';
-import { getLocalPath } from '@proton/pass/components/Navigation/routing';
-import { useBreachesTable } from '@proton/pass/hooks/monitor/useBreachesTable';
-import { AddressType } from '@proton/pass/lib/monitor/types';
-import { selectHasCustomDomains } from '@proton/pass/store/selectors';
-import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 
+import { useBreachesTable } from '../../../hooks/monitor/useBreachesTable';
+import { AddressType } from '../../../lib/monitor/types';
+import { selectHasCustomDomains } from '../../../store/selectors';
+import { TelemetryEventName } from '../../../types/data/telemetry';
+import { usePassCore } from '../../Core/PassCoreProvider';
+import { SubHeader } from '../../Layout/Section/SubHeader';
+import { getLocalPath } from '../../Navigation/routing';
+import { CustomAddressAddButton } from '../Address/CustomAddressAddButton';
 import { BreachGroupList } from './Group/BreachGroupList';
 import { BreachGroupToggleButton } from './Group/BreachGroupToggleButton';
 

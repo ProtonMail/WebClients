@@ -12,14 +12,21 @@ import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
-import { VaultMultiSelect } from '@proton/pass/components/Vault/VaultSelect';
-import { useRequest } from '@proton/pass/hooks/useRequest';
-import type { PersonalAccessToken } from '@proton/pass/lib/access-token/access-token.types';
-import { createAccessToken } from '@proton/pass/store/actions';
-import { selectWritableVaults } from '@proton/pass/store/selectors';
-import { sortOn } from '@proton/pass/utils/fp/sort';
-import { DAY_IN_MINUTES, HOUR_IN_MINUTES, MONTH_IN_MINUTES, WEEK_IN_MINUTES, YEAR_IN_MINUTES } from '@proton/pass/utils/time/constants';
+
+import { useRequest } from '../../../hooks/useRequest';
+import type { PersonalAccessToken } from '../../../lib/access-token/access-token.types';
+import { createAccessToken } from '../../../store/actions';
+import { selectWritableVaults } from '../../../store/selectors';
+import { sortOn } from '../../../utils/fp/sort';
+import {
+    DAY_IN_MINUTES,
+    HOUR_IN_MINUTES,
+    MONTH_IN_MINUTES,
+    WEEK_IN_MINUTES,
+    YEAR_IN_MINUTES,
+} from '../../../utils/time/constants';
+import { PassModal } from '../../Layout/Modal/PassModal';
+import { VaultMultiSelect } from '../../Vault/VaultSelect';
 
 type Props = {
     onClose: () => void;

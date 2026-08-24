@@ -5,10 +5,11 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { IcFingerprint } from '@proton/icons/icons/IcFingerprint';
 import { IcPassLockmodeBiometrics } from '@proton/icons/icons/IcPassLockmodeBiometrics';
-import { useOffline } from '@proton/pass/components/Core/ConnectivityProvider';
-import { useAutoDesktopUnlock } from '@proton/pass/hooks/auth/useDesktopUnlock';
 import { isMac } from '@proton/shared/lib/helpers/browser';
 import noop from '@proton/utils/noop';
+
+import { useAutoDesktopUnlock } from '../../hooks/auth/useDesktopUnlock';
+import { useOffline } from '../Core/ConnectivityProvider';
 
 type Props = {
     offlineEnabled?: boolean;

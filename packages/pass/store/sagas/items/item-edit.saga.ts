@@ -1,28 +1,22 @@
 import { call, put, select, takeEvery } from 'redux-saga/effects';
 
-import { syncAliasMailboxes, syncAliasName, syncAliasSLNote } from '@proton/pass/lib/alias/alias.requests';
-import { hasAttachments, hasHadAttachments } from '@proton/pass/lib/items/item.predicates';
-import { editItem } from '@proton/pass/lib/items/item.requests';
-import { createTelemetryEvent } from '@proton/pass/lib/telemetry/utils';
-import { aliasDetailsSync, filesResolve, itemEdit, itemEditDismiss } from '@proton/pass/store/actions';
-import type { AliasDetailsState, AliasState } from '@proton/pass/store/reducers';
-import { withRevalidate } from '@proton/pass/store/request/enhancers';
-import { itemLinkPendingFiles } from '@proton/pass/store/sagas/items/item-files.sagas';
-import {
-    selectAliasDetails,
-    selectAliasOptions,
-    selectItem,
-    selectItemOrThrow,
-    selectMailboxesForAlias,
-} from '@proton/pass/store/selectors';
-import { SelectorError } from '@proton/pass/store/selectors/errors';
-import type { RootSagaOptions } from '@proton/pass/store/types';
-import type { ItemEditIntent, ItemRevision, Maybe } from '@proton/pass/types';
-import { TelemetryEventName, TelemetryItemType } from '@proton/pass/types/data/telemetry';
-import { prop } from '@proton/pass/utils/fp/lens';
-import { or, truthy } from '@proton/pass/utils/fp/predicates';
-import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
-import { isEqual } from '@proton/pass/utils/set/is-equal';
+import { syncAliasMailboxes, syncAliasName, syncAliasSLNote } from '../../../lib/alias/alias.requests';
+import { hasAttachments, hasHadAttachments } from '../../../lib/items/item.predicates';
+import { editItem } from '../../../lib/items/item.requests';
+import { createTelemetryEvent } from '../../../lib/telemetry/utils';
+import type { ItemEditIntent, ItemRevision, Maybe } from '../../../types';
+import { TelemetryEventName, TelemetryItemType } from '../../../types/data/telemetry';
+import { prop } from '../../../utils/fp/lens';
+import { or, truthy } from '../../../utils/fp/predicates';
+import { deobfuscate } from '../../../utils/obfuscate/xor';
+import { isEqual } from '../../../utils/set/is-equal';
+import { aliasDetailsSync, filesResolve, itemEdit, itemEditDismiss } from '../../actions';
+import type { AliasDetailsState, AliasState } from '../../reducers';
+import { withRevalidate } from '../../request/enhancers';
+import { selectAliasDetails, selectAliasOptions, selectItem, selectItemOrThrow, selectMailboxesForAlias } from '../../selectors';
+import { SelectorError } from '../../selectors/errors';
+import type { RootSagaOptions } from '../../types';
+import { itemLinkPendingFiles } from './item-files.sagas';
 
 function* aliasEditWorker(aliasEditIntent: ItemEditIntent<'alias'>) {
     if (!aliasEditIntent.extraData) return;

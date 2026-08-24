@@ -1,14 +1,15 @@
 import { memo } from 'react';
 
 import CoreHeader from '@proton/components/components/header/Header';
-import { HeaderVaultSelector } from '@proton/pass/components/Header/HeaderVaultSelector';
-import type { HeaderProps } from '@proton/pass/components/Header/types';
-import { PinnedItemsBar } from '@proton/pass/components/Item/Pinned/PinnedItemsBar';
-import { SearchBar } from '@proton/pass/components/Item/Search/SearchBar';
-import { MenuDropdown } from '@proton/pass/components/Menu/Dropdown/MenuDropdown';
-import { ItemQuickActions } from '@proton/pass/components/Menu/Item/ItemQuickActions';
-import { UpsellButton } from '@proton/pass/components/Menu/Upsell/UpsellButton';
-import { Spotlight } from '@proton/pass/components/Spotlight/Spotlight';
+
+import { PinnedItemsBar } from '../Item/Pinned/PinnedItemsBar';
+import { SearchBar } from '../Item/Search/SearchBar';
+import { MenuDropdown } from '../Menu/Dropdown/MenuDropdown';
+import { ItemQuickActions } from '../Menu/Item/ItemQuickActions';
+import { UpsellButton } from '../Menu/Upsell/UpsellButton';
+import { Spotlight } from '../Spotlight/Spotlight';
+import { HeaderVaultSelector } from './HeaderVaultSelector';
+import type { HeaderProps } from './types';
 
 export const HeaderMain = memo(({ onLock, onLogout, interactive, origin }: HeaderProps) => {
     return (

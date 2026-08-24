@@ -1,17 +1,18 @@
-import { archivePath } from '@proton/pass/lib/export/archive';
-import type { ExportData, ExportedItem } from '@proton/pass/lib/export/types';
-import { ImportProviderError } from '@proton/pass/lib/import/helpers/error';
-import { sanitizeAutofillUrls } from '@proton/pass/lib/import/helpers/transformers';
-import type { ImportReaderResult, ImportVault } from '@proton/pass/lib/import/types';
-import { obfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
-import { type ItemImportIntent, ItemState } from '@proton/pass/types';
-import { AutofillMode } from '@proton/pass/types/protobuf';
-import { partition } from '@proton/pass/utils/array/partition';
-import { prop } from '@proton/pass/utils/fp/lens';
-import { logger } from '@proton/pass/utils/logger';
-import { semver } from '@proton/pass/utils/string/semver';
-import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+
+import { type ItemImportIntent, ItemState } from '../../../../types';
+import { AutofillMode } from '../../../../types/protobuf';
+import { partition } from '../../../../utils/array/partition';
+import { prop } from '../../../../utils/fp/lens';
+import { logger } from '../../../../utils/logger';
+import { semver } from '../../../../utils/string/semver';
+import { uniqueId } from '../../../../utils/string/unique-id';
+import { archivePath } from '../../../export/archive';
+import type { ExportData, ExportedItem } from '../../../export/types';
+import { obfuscateItem } from '../../../items/item.obfuscation';
+import { ImportProviderError } from '../../helpers/error';
+import { sanitizeAutofillUrls } from '../../helpers/transformers';
+import type { ImportReaderResult, ImportVault } from '../../types';
 
 type ProtonPassReaderPayload = {
     /** list of current email aliases so we don't import

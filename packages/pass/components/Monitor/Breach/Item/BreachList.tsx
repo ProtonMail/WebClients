@@ -9,8 +9,8 @@ import TableHeader from '@proton/components/components/table/TableHeader';
 import TableHeaderCell from '@proton/components/components/table/TableHeaderCell';
 import TableRow from '@proton/components/components/table/TableRow';
 import type { FetchedBreaches } from '@proton/components/containers/credentialLeak/models';
-import { TableRowLoading } from '@proton/pass/components/Layout/Table/TableRowLoading';
 
+import { TableRowLoading } from '../../../Layout/Table/TableRowLoading';
 import { BreachListRow } from './BreachListRow';
 
 type Props = {

@@ -1,9 +1,9 @@
-import type { SanitizedPasskey } from '@proton/pass/lib/passkeys/types';
-import type { SelectedItem, SelectedShare } from '@proton/pass/types/data';
-import type { AutofillPageTelemetryDimensions } from '@proton/pass/types/data/telemetry';
-import type { MaybeNull } from '@proton/pass/types/utils';
-import type { LoginItemPreview } from '@proton/pass/types/worker/data';
-import type { FormCredentials } from '@proton/pass/types/worker/form';
+import type { SanitizedPasskey } from '../../lib/passkeys/types';
+import type { SelectedItem, SelectedShare } from '../data';
+import type { AutofillPageTelemetryDimensions } from '../data/telemetry';
+import type { MaybeNull } from '../utils';
+import type { LoginItemPreview } from './data';
+import type { FormCredentials } from './form';
 
 export enum AutosaveMode {
     NEW = 'NEW',

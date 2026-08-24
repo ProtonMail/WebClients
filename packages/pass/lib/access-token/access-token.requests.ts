@@ -1,12 +1,10 @@
-import { AGENT_INSTRUCTIONS_URL } from '@proton/pass/constants.runtime';
-import { PAT_PRODUCT, decodePatRecord } from '@proton/pass/lib/access-token/access-token.utils';
-import { api } from '@proton/pass/lib/api/api';
-import { PassCrypto } from '@proton/pass/lib/crypto';
-import type { GrantAccessRequest, PersonalAccessTokenShareResponse, ShareId } from '@proton/pass/types';
-import { ShareRole, ShareType } from '@proton/pass/types';
-import { UNIX_MINUTE } from '@proton/pass/utils/time/constants';
-import { getEpoch } from '@proton/pass/utils/time/epoch';
-
+import { AGENT_INSTRUCTIONS_URL } from '../../constants.runtime';
+import type { GrantAccessRequest, PersonalAccessTokenShareResponse, ShareId } from '../../types';
+import { ShareRole, ShareType } from '../../types';
+import { UNIX_MINUTE } from '../../utils/time/constants';
+import { getEpoch } from '../../utils/time/epoch';
+import { api } from '../api/api';
+import { PassCrypto } from '../crypto';
 import type {
     AccessTokenActionsPage,
     CreateAccessTokenIntent,
@@ -16,6 +14,7 @@ import type {
     PersonalAccessToken,
     PersonalAccessTokenWithKey,
 } from './access-token.types';
+import { PAT_PRODUCT, decodePatRecord } from './access-token.utils';
 
 const PAT_BASE_URL = 'account/v4/personal-access-token';
 const PASS_PAT_BASE_URL = 'pass/v1/personal-access-token';

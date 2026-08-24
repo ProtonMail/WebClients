@@ -3,10 +3,9 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { LocaleSelect } from '@proton/pass/components/Form/legacy/LocaleSelect';
-import { settingsEditIntent } from '@proton/pass/store/actions';
-import { selectLocale } from '@proton/pass/store/selectors';
-
+import { settingsEditIntent } from '../../store/actions';
+import { selectLocale } from '../../store/selectors';
+import { LocaleSelect } from '../Form/legacy/LocaleSelect';
 import { SettingsPanel } from './SettingsPanel';
 
 export const Locale: FC = () => {

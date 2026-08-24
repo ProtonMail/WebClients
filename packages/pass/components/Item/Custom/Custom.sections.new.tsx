@@ -11,16 +11,17 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
-import { Field } from '@proton/pass/components/Form/Field/Field';
-import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
-import { TextField } from '@proton/pass/components/Form/Field/TextField';
-import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
-import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
-import type { UpsellRef } from '@proton/pass/constants';
-import { validateCustomSectionName } from '@proton/pass/lib/validation/custom-item';
-import { selectPassPlan } from '@proton/pass/store/selectors';
-import type { ItemSectionFormValues } from '@proton/pass/types';
-import { UserPassPlan } from '@proton/pass/types/api/plan';
+
+import type { UpsellRef } from '../../../constants';
+import { validateCustomSectionName } from '../../../lib/validation/custom-item';
+import { selectPassPlan } from '../../../store/selectors';
+import type { ItemSectionFormValues } from '../../../types';
+import { UserPassPlan } from '../../../types/api/plan';
+import { Field } from '../../Form/Field/Field';
+import { FieldsetCluster } from '../../Form/Field/Layout/FieldsetCluster';
+import { TextField } from '../../Form/Field/TextField';
+import { PassModal } from '../../Layout/Modal/PassModal';
+import { useUpselling } from '../../Upsell/UpsellingProvider';
 
 const FORM_ID = 'new-section-modal';
 /** : UpsellRef.IDENTITY_CUSTOM_FIELDS */

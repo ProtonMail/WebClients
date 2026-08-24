@@ -1,8 +1,8 @@
 import { useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import type { AuthRouteState } from '@proton/pass/components/Navigation/routing';
-import type { MaybeNull } from '@proton/pass/types';
+import type { AuthRouteState } from '../../components/Navigation/routing';
+import type { MaybeNull } from '../../types';
 
 export const useUserInitiatedLock = (onLock: () => void) => {
     const history = useHistory<MaybeNull<AuthRouteState>>();

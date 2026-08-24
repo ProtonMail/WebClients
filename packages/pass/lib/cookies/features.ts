@@ -1,6 +1,7 @@
-import { getPassCookie, setPassCookie } from '@proton/pass/lib/cookies/cookies';
-import type { PassFeature } from '@proton/pass/types/api/features';
 import { addDays, endOfDay } from '@proton/shared/lib/date-fns-utc';
+
+import type { PassFeature } from '../../types/api/features';
+import { getPassCookie, setPassCookie } from './cookies';
 
 export const UNLEASH_FLAG_COOKIE_NAME = 'Features';
 

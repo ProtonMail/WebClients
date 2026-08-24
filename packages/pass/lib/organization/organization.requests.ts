@@ -1,7 +1,7 @@
-import { api } from '@proton/pass/lib/api/api';
-import { createPageIterator } from '@proton/pass/lib/api/utils';
-import { isPassB2BPlan } from '@proton/pass/lib/b2b/b2b.utils';
-import type { OrganizationState } from '@proton/pass/store/reducers/organization';
+import { getOrganization as coreGetOrganization, getOrganizationKeys } from '@proton/shared/lib/api/organization';
+import type { Organization, OrganizationKey } from '@proton/shared/lib/interfaces';
+
+import type { OrganizationState } from '../../store/reducers/organization';
 import type {
     MaybeNull,
     MemberMonitorReportList,
@@ -9,12 +9,12 @@ import type {
     OrganizationUpdatePasswordPolicyInput,
     OrganizationUrlPauseEntryDto,
     PassPlanResponse,
-} from '@proton/pass/types';
-import type { OrganizationSettings } from '@proton/pass/types/data/organization';
-import { logger } from '@proton/pass/utils/logger';
-import { getOrganization as coreGetOrganization, getOrganizationKeys } from '@proton/shared/lib/api/organization';
-import type { Organization, OrganizationKey } from '@proton/shared/lib/interfaces';
-
+} from '../../types';
+import type { OrganizationSettings } from '../../types/data/organization';
+import { logger } from '../../utils/logger';
+import { api } from '../api/api';
+import { createPageIterator } from '../api/utils';
+import { isPassB2BPlan } from '../b2b/b2b.utils';
 import type { OrganizationReportDTO, PauseListEntryAddDTO, PauseListEntryUpdateDTO } from './types';
 
 export const getUserOrganization = async (): Promise<MaybeNull<Organization>> => {

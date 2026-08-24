@@ -1,7 +1,6 @@
-import { selectSyncStrategy } from '@proton/pass/store/selectors';
-import type { RootSagaOptions, State } from '@proton/pass/store/types';
-import type { MaybeNull } from '@proton/pass/types';
-
+import { selectSyncStrategy } from '../../store/selectors';
+import type { RootSagaOptions, State } from '../../store/types';
+import type { MaybeNull } from '../../types';
 import { SyncStrategy } from './types';
 import { syncV1 } from './v1/sync';
 import { syncV2 } from './v2/user-events.sync';

@@ -5,47 +5,47 @@ import { useHistory } from 'react-router-dom';
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { FileAttachmentsField } from '@proton/pass/components/FileAttachments/FileAttachmentsField';
-import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
-import { ExtraFieldGroup } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraFieldGroup';
-import { Field } from '@proton/pass/components/Form/Field/Field';
-import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
-import { TextField } from '@proton/pass/components/Form/Field/TextField';
-import { TextAreaField } from '@proton/pass/components/Form/Field/TextareaField';
-import { TitleField } from '@proton/pass/components/Form/Field/TitleField';
-import { UrlGroupField } from '@proton/pass/components/Form/Field/UrlGroup/UrlGroupField';
-import { VaultPickerField } from '@proton/pass/components/Form/Field/VaultPickerField';
-import { LoginEditCredentials } from '@proton/pass/components/Item/Login/Login.edit.credentials';
-import { ItemCreatePanel } from '@proton/pass/components/Layout/Panel/ItemCreatePanel';
-import { UpgradeButton } from '@proton/pass/components/Upsell/UpgradeButton';
-import type { ItemNewViewProps } from '@proton/pass/components/Views/types';
-import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH, UpsellRef } from '@proton/pass/constants';
-import { useInitialValues } from '@proton/pass/hooks/items/useInitialValues';
-import { useAliasForLogin } from '@proton/pass/hooks/useAliasForLogin';
-import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
-import { usePortal } from '@proton/pass/hooks/usePortal';
-import { filesFormInitializer } from '@proton/pass/lib/file-attachments/helpers';
-import { obfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
+import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH, UpsellRef } from '../../../constants';
+import { useInitialValues } from '../../../hooks/items/useInitialValues';
+import { useAliasForLogin } from '../../../hooks/useAliasForLogin';
+import { useItemDraft } from '../../../hooks/useItemDraft';
+import { usePortal } from '../../../hooks/usePortal';
+import { filesFormInitializer } from '../../../lib/file-attachments/helpers';
+import { obfuscateExtraFields } from '../../../lib/items/item.obfuscation';
 import {
     bindOTPSanitizer,
     getSanitizedUserIdentifiers,
     resolveDefaultItemName,
     sanitizeExtraField,
-} from '@proton/pass/lib/items/item.utils';
-import { getSecretOrUri } from '@proton/pass/lib/otp/otp';
-import { createNewUrlItem, fromItems } from '@proton/pass/lib/urls/utils/autofill';
-import { sanitizeURL } from '@proton/pass/lib/urls/utils/sanitize';
-import { intoDomainWithPort, resolveSubdomain } from '@proton/pass/lib/urls/utils/utils';
-import { sanitizeLoginAliasHydration, sanitizeLoginAliasSave } from '@proton/pass/lib/validation/alias';
-import { validateLoginForm } from '@proton/pass/lib/validation/login';
-import { selectShowUsernameField, selectTOTPLimits, selectVaultLimits } from '@proton/pass/store/selectors';
-import type { LoginItemFormValues, LoginWithAliasCreationDTO } from '@proton/pass/types';
-import { AutofillMode } from '@proton/pass/types/protobuf';
-import { pipe } from '@proton/pass/utils/fp/pipe';
-import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
-import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
-import { uniqueId } from '@proton/pass/utils/string/unique-id';
+} from '../../../lib/items/item.utils';
+import { getSecretOrUri } from '../../../lib/otp/otp';
+import { createNewUrlItem, fromItems } from '../../../lib/urls/utils/autofill';
+import { sanitizeURL } from '../../../lib/urls/utils/sanitize';
+import { intoDomainWithPort, resolveSubdomain } from '../../../lib/urls/utils/utils';
+import { sanitizeLoginAliasHydration, sanitizeLoginAliasSave } from '../../../lib/validation/alias';
+import { validateLoginForm } from '../../../lib/validation/login';
+import { selectShowUsernameField, selectTOTPLimits, selectVaultLimits } from '../../../store/selectors';
+import type { LoginItemFormValues, LoginWithAliasCreationDTO } from '../../../types';
+import { AutofillMode } from '../../../types/protobuf';
+import { pipe } from '../../../utils/fp/pipe';
+import { obfuscate } from '../../../utils/obfuscate/xor';
+import { isEmptyString } from '../../../utils/string/is-empty-string';
+import { uniqueId } from '../../../utils/string/unique-id';
+import { usePassCore } from '../../Core/PassCoreProvider';
+import { FileAttachmentsField } from '../../FileAttachments/FileAttachmentsField';
+import { ValueControl } from '../../Form/Field/Control/ValueControl';
+import { ExtraFieldGroup } from '../../Form/Field/ExtraFieldGroup/ExtraFieldGroup';
+import { Field } from '../../Form/Field/Field';
+import { FieldsetCluster } from '../../Form/Field/Layout/FieldsetCluster';
+import { TextField } from '../../Form/Field/TextField';
+import { TextAreaField } from '../../Form/Field/TextareaField';
+import { TitleField } from '../../Form/Field/TitleField';
+import { UrlGroupField } from '../../Form/Field/UrlGroup/UrlGroupField';
+import { VaultPickerField } from '../../Form/Field/VaultPickerField';
+import { ItemCreatePanel } from '../../Layout/Panel/ItemCreatePanel';
+import { UpgradeButton } from '../../Upsell/UpgradeButton';
+import type { ItemNewViewProps } from '../../Views/types';
+import { LoginEditCredentials } from './Login.edit.credentials';
 
 const FORM_ID = 'new-login';
 

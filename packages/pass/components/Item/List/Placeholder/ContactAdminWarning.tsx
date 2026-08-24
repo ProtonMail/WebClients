@@ -3,7 +3,8 @@ import type { FC } from 'react';
 import { c } from 'ttag';
 
 import { IcInfoCircleFilled } from '@proton/icons/icons/IcInfoCircleFilled';
-import { Card } from '@proton/pass/components/Layout/Card/Card';
+
+import { Card } from '../../../Layout/Card/Card';
 
 export const ContactAdminWarning: FC = () => {
     return (

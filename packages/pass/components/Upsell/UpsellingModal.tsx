@@ -2,14 +2,14 @@ import type { FC, ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import monitorSVG from '@proton/pass/assets/monitor/upgrade.svg';
-import onboardingSVG from '@proton/pass/assets/onboarding.svg';
-import { type AdapativeModalProps, AdaptiveModal } from '@proton/pass/components/Layout/Modal/AdaptiveModal';
-import { UpgradeButton } from '@proton/pass/components/Upsell/UpgradeButton';
-import type { UpsellRef } from '@proton/pass/constants';
 import { DARK_WEB_MONITORING_NAME } from '@proton/shared/lib/constants';
 
+import monitorSVG from '../../assets/monitor/upgrade.svg';
+import onboardingSVG from '../../assets/onboarding.svg';
+import type { UpsellRef } from '../../constants';
+import { type AdapativeModalProps, AdaptiveModal } from '../Layout/Modal/AdaptiveModal';
 import { FreeTrialActions } from './FreeTrialActions';
+import { UpgradeButton } from './UpgradeButton';
 import { UpsellFeatures } from './UpsellFeatures';
 
 type UpsellModalContent = {

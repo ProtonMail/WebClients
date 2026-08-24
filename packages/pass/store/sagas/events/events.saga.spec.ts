@@ -1,14 +1,13 @@
 import { runSaga } from 'redux-saga';
 
-import { LockMode } from '@proton/pass/lib/auth/lock/types';
-import { setSyncStrategy } from '@proton/pass/lib/sync/global';
-import { SyncStrategy } from '@proton/pass/lib/sync/types';
-import { lockCreateSuccess, startEventPolling, stopEventPolling } from '@proton/pass/store/actions';
-import { getOrganizationSettings } from '@proton/pass/store/actions/creators/organization';
-import { sagaSetup } from '@proton/pass/store/sagas/testing';
-import type { RootSagaOptions } from '@proton/pass/store/types';
-import type { MaybeNull } from '@proton/pass/types';
-
+import { LockMode } from '../../../lib/auth/lock/types';
+import { setSyncStrategy } from '../../../lib/sync/global';
+import { SyncStrategy } from '../../../lib/sync/types';
+import type { MaybeNull } from '../../../types';
+import { lockCreateSuccess, startEventPolling, stopEventPolling } from '../../actions';
+import { getOrganizationSettings } from '../../actions/creators/organization';
+import type { RootSagaOptions } from '../../types';
+import { sagaSetup } from '../testing';
 import { coreChannel } from './core/channel.core';
 import watcher, { getEventChannels } from './events.saga';
 import { groupInvitesChannel } from './v1/channel.group-invites';

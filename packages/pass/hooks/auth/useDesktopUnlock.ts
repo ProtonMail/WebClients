@@ -1,15 +1,16 @@
 import { useCallback, useState } from 'react';
 
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { useOnlineRef } from '@proton/pass/components/Core/ConnectivityProvider';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { useUnlock } from '@proton/pass/components/Lock/UnlockProvider';
-import { PASS_DESKTOP_NATIVE_MESSAGE_TIMEOUT } from '@proton/pass/constants';
-import { useAutoUnlock } from '@proton/pass/hooks/auth/useAutoUnlock';
-import type { UnlockDTO } from '@proton/pass/lib/auth/lock/types';
-import { LockMode } from '@proton/pass/lib/auth/lock/types';
-import { NativeMessageError, getNativeMessageErrorKind } from '@proton/pass/lib/native-messaging/errors';
-import { NativeMessageErrorType } from '@proton/pass/types';
+
+import { useOnlineRef } from '../../components/Core/ConnectivityProvider';
+import { usePassCore } from '../../components/Core/PassCoreProvider';
+import { useUnlock } from '../../components/Lock/UnlockProvider';
+import { PASS_DESKTOP_NATIVE_MESSAGE_TIMEOUT } from '../../constants';
+import type { UnlockDTO } from '../../lib/auth/lock/types';
+import { LockMode } from '../../lib/auth/lock/types';
+import { NativeMessageError, getNativeMessageErrorKind } from '../../lib/native-messaging/errors';
+import { NativeMessageErrorType } from '../../types';
+import { useAutoUnlock } from './useAutoUnlock';
 
 export const useDesktopUnlock = ({ silentErrors } = { silentErrors: false }) => {
     const { getDesktopUnlockSecret } = usePassCore();

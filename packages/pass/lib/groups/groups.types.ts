@@ -1,5 +1,6 @@
-import type { MaybeNull } from '@proton/pass/types/utils';
 import type { AddressKey, Group as CoreGroup, GroupMember as CoreGroupMember } from '@proton/shared/lib/interfaces';
+
+import type { MaybeNull } from '../../types/utils';
 
 export type GroupId = string;
 

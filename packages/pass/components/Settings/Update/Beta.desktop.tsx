@@ -3,11 +3,12 @@ import type { FC } from 'react';
 import { c } from 'ttag';
 
 import Toggle from '@proton/components/components/toggle/Toggle';
-import { useOffline } from '@proton/pass/components/Core/ConnectivityProvider';
-import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
-import { PassFeature } from '@proton/pass/types/api/features';
-import type { UpdateStore } from '@proton/pass/types/desktop';
 import { BRAND_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+
+import { useFeatureFlag } from '../../../hooks/useFeatureFlag';
+import { PassFeature } from '../../../types/api/features';
+import type { UpdateStore } from '../../../types/desktop';
+import { useOffline } from '../../Core/ConnectivityProvider';
 
 type Props = { updateStore: UpdateStore; onCheckForUpdates: () => Promise<void> };
 

@@ -1,10 +1,10 @@
 import { call, select } from 'redux-saga/effects';
 
-import { restoreItems } from '@proton/pass/lib/items/item.requests';
-import { itemRestore } from '@proton/pass/store/actions';
-import { createRequestSaga } from '@proton/pass/store/request/sagas';
-import { selectItem } from '@proton/pass/store/selectors';
-import type { ItemRevision, Maybe } from '@proton/pass/types';
+import { restoreItems } from '../../../lib/items/item.requests';
+import type { ItemRevision, Maybe } from '../../../types';
+import { itemRestore } from '../../actions';
+import { createRequestSaga } from '../../request/sagas';
+import { selectItem } from '../../selectors';
 
 export default createRequestSaga({
     actions: itemRestore,

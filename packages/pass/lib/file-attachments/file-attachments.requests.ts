@@ -1,10 +1,6 @@
-import { FILE_DOWNLOAD_TIMEOUT, FILE_UPLOAD_TIMEOUT } from '@proton/pass/constants';
-import { api } from '@proton/pass/lib/api/api';
-import { createPageIterator } from '@proton/pass/lib/api/utils';
-import { PassCrypto } from '@proton/pass/lib/crypto';
-import { resolveItemKey } from '@proton/pass/lib/crypto/utils/helpers';
-import { intoPublicFileDescriptors } from '@proton/pass/lib/file-attachments/helpers';
-import { parseItemRevision } from '@proton/pass/lib/items/item.parser';
+import chunk from '@proton/utils/chunk';
+
+import { FILE_DOWNLOAD_TIMEOUT, FILE_UPLOAD_TIMEOUT } from '../../constants';
 import type {
     CreatePendingFileRequest,
     FileDownloadChunk,
@@ -21,8 +17,13 @@ import type {
     SecureLinkItem,
     SelectedItem,
     UniqueItem,
-} from '@proton/pass/types';
-import chunk from '@proton/utils/chunk';
+} from '../../types';
+import { api } from '../api/api';
+import { createPageIterator } from '../api/utils';
+import { PassCrypto } from '../crypto';
+import { resolveItemKey } from '../crypto/utils/helpers';
+import { parseItemRevision } from '../items/item.parser';
+import { intoPublicFileDescriptors } from './helpers';
 
 export const createPendingFile = async (
     metadata: string,
@@ -92,9 +93,7 @@ export const restoreSingleFile = async (
             url: `pass/v1/share/${shareId}/item/${itemId}/file/${fileId}/restore`,
             method: 'post',
             data: {
-                FileKey: (
-                    await PassCrypto.encryptFileKey({ fileID: fileId, itemKey, shareId })
-                ).toBase64(),
+                FileKey: (await PassCrypto.encryptFileKey({ fileID: fileId, itemKey, shareId })).toBase64(),
                 ItemKeyRotation: itemKey.rotation,
             },
         })

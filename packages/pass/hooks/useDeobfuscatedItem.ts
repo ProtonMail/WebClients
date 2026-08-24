@@ -1,8 +1,8 @@
 import { useMemo } from 'react';
 
-import { deobfuscateItem, deobfuscateItemPartial } from '@proton/pass/lib/items/item.obfuscation';
-import type { DeobfuscatedItem, Item, ItemType } from '@proton/pass/types';
-import type { DeobfuscateMode } from '@proton/pass/types/data/obfuscation';
+import { deobfuscateItem, deobfuscateItemPartial } from '../lib/items/item.obfuscation';
+import type { DeobfuscatedItem, Item, ItemType } from '../types';
+import type { DeobfuscateMode } from '../types/data/obfuscation';
 
 export const useDeobfuscatedItem = <T extends ItemType>(item: Item<T>) =>
     useMemo(() => deobfuscateItem(item as Item) as DeobfuscatedItem<T>, [item]);

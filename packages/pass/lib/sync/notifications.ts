@@ -1,8 +1,8 @@
 import { put } from 'redux-saga/effects';
 
-import { PassCrypto } from '@proton/pass/lib/crypto';
-import { notification } from '@proton/pass/store/actions';
-import { NotificationKey } from '@proton/pass/types/worker/notification';
+import { notification } from '../../store/actions';
+import { NotificationKey } from '../../types/worker/notification';
+import { PassCrypto } from '../crypto';
 
 export function* notifyInactiveShares() {
     if (PassCrypto.ready) {

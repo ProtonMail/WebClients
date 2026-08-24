@@ -1,9 +1,8 @@
-import { isNativeJSError } from '@proton/pass/lib/core/utils';
-import browser from '@proton/pass/lib/globals/browser';
-import type { MaybeNull } from '@proton/pass/types';
-import { logger } from '@proton/pass/utils/logger';
-
+import type { MaybeNull } from '../../types';
+import { logger } from '../../utils/logger';
+import browser from '../globals/browser';
 import type { PassCore, PassCoreService } from './core.types';
+import { isNativeJSError } from './utils';
 
 export const createPassCoreMainThreadService = (): PassCoreService => {
     let wasmPromise: MaybeNull<Promise<PassCore>> = null;

@@ -1,5 +1,4 @@
-import type { Maybe } from '@proton/pass/types';
-
+import type { Maybe } from '../../../types';
 import type { OptimisticFailedHistoryItem, WrappedOptimisticState } from '../types';
 import { isOptimisticHistoryItemWithId } from '../utils/assertions';
 
@@ -12,9 +11,7 @@ const selectFailedAction: (
 
         const failedHistoryItemIndex = history.findIndex(isOptimisticHistoryItemWithId(entityID, { failed: true }));
 
-        return failedHistoryItemIndex !== -1
-            ? (history[failedHistoryItemIndex] as OptimisticFailedHistoryItem)
-            : undefined;
+        return failedHistoryItemIndex !== -1 ? (history[failedHistoryItemIndex] as OptimisticFailedHistoryItem) : undefined;
     };
 
 export default selectFailedAction;

@@ -6,19 +6,20 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
-import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
-import { useMonitor } from '@proton/pass/components/Monitor/MonitorContext';
-import { getLocalPath } from '@proton/pass/components/Navigation/routing';
-import { MAX_CUSTOM_ADDRESSES } from '@proton/pass/constants';
-import type { MonitorTableRow } from '@proton/pass/hooks/monitor/useBreachesTable';
-import { useRequest } from '@proton/pass/hooks/useRequest';
-import { getAddressId, intoCustomMonitorAddress } from '@proton/pass/lib/monitor/monitor.utils';
-import { AddressType } from '@proton/pass/lib/monitor/types';
-import { addCustomAddress, deleteCustomAddress } from '@proton/pass/store/actions';
-import { selectRequestInFlight } from '@proton/pass/store/selectors';
-import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
+
+import { MAX_CUSTOM_ADDRESSES } from '../../../../constants';
+import type { MonitorTableRow } from '../../../../hooks/monitor/useBreachesTable';
+import { useRequest } from '../../../../hooks/useRequest';
+import { getAddressId, intoCustomMonitorAddress } from '../../../../lib/monitor/monitor.utils';
+import { AddressType } from '../../../../lib/monitor/types';
+import { addCustomAddress, deleteCustomAddress } from '../../../../store/actions';
+import { selectRequestInFlight } from '../../../../store/selectors';
+import { TelemetryEventName } from '../../../../types/data/telemetry';
+import { usePassCore } from '../../../Core/PassCoreProvider';
+import { DropdownMenuButton } from '../../../Layout/Dropdown/DropdownMenuButton';
+import { QuickActionsDropdown } from '../../../Layout/Dropdown/QuickActionsDropdown';
+import { getLocalPath } from '../../../Navigation/routing';
+import { useMonitor } from '../../MonitorContext';
 
 export const BreachGroupRowActions: FC<MonitorTableRow> = (row) => {
     const { onTelemetry } = usePassCore();

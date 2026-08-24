@@ -11,7 +11,8 @@
  * which only lives in the background page context.
  * This gives us the benefit of not having to modify existing code
  * to handle Firefox specifics when dealing with the session API */
-import browser from '@proton/pass/lib/globals/browser';
+import noop from '@proton/utils/noop';
+
 import type {
     GetItem,
     GetItems,
@@ -21,8 +22,8 @@ import type {
     SetItem,
     SetItems,
     StorageInterface,
-} from '@proton/pass/types';
-import noop from '@proton/utils/noop';
+} from '../../../types';
+import browser from '../../globals/browser';
 
 const MEMORY_STORAGE_EVENT = 'MEMORY_STORAGE_EVENT';
 

@@ -1,10 +1,10 @@
 import { createAction } from '@reduxjs/toolkit';
 
-import type { GeneratePasswordConfig } from '@proton/pass/lib/password/types';
-import { withCache } from '@proton/pass/store/actions/enhancers/cache';
-import { withSettings } from '@proton/pass/store/actions/enhancers/settings';
-import type { PasswordHistoryEntry } from '@proton/pass/store/reducers';
-import { pipe } from '@proton/pass/utils/fp/pipe';
+import type { GeneratePasswordConfig } from '../../../lib/password/types';
+import { pipe } from '../../../utils/fp/pipe';
+import type { PasswordHistoryEntry } from '../../reducers';
+import { withCache } from '../enhancers/cache';
+import { withSettings } from '../enhancers/settings';
 
 export const passwordSave = createAction('password::save', (payload: PasswordHistoryEntry) => withCache({ payload }));
 export const passwordDelete = createAction('password::delete', (payload: { id: string }) => withCache({ payload }));

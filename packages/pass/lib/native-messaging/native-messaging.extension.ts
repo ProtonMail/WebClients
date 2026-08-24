@@ -1,13 +1,7 @@
 import type { Runtime } from 'webextension-polyfill';
 
-import { PASS_DESKTOP_NATIVE_MESSAGE_KEY, PASS_DESKTOP_NATIVE_MESSAGE_TIMEOUT } from '@proton/pass/constants';
-import browser from '@proton/pass/lib/globals/browser';
-import { messageToPayload, payloadToMessage } from '@proton/pass/lib/native-messaging/crypto';
-import {
-    NativeMessageError,
-    getForNativeMessageErrorFromConnectionError,
-} from '@proton/pass/lib/native-messaging/errors';
-import { NativeMessageErrorType } from '@proton/pass/types';
+import { PASS_DESKTOP_NATIVE_MESSAGE_KEY, PASS_DESKTOP_NATIVE_MESSAGE_TIMEOUT } from '../../constants';
+import { NativeMessageErrorType } from '../../types';
 import type {
     MaybeNull,
     NativeMessage,
@@ -15,9 +9,12 @@ import type {
     NativeMessageRequest,
     NativeMessageResponseForRequest,
     SendNativeMessageRequest,
-} from '@proton/pass/types';
-import { logger } from '@proton/pass/utils/logger';
-import { uniqueId } from '@proton/pass/utils/string/unique-id';
+} from '../../types';
+import { logger } from '../../utils/logger';
+import { uniqueId } from '../../utils/string/unique-id';
+import browser from '../globals/browser';
+import { messageToPayload, payloadToMessage } from './crypto';
+import { NativeMessageError, getForNativeMessageErrorFromConnectionError } from './errors';
 
 const log = (...content: any[]) => logger.debug('[NativeMessaging]', ...content);
 const info = (...content: any[]) => logger.info('[NativeMessaging]', ...content);

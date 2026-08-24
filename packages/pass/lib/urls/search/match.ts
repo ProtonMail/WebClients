@@ -1,10 +1,10 @@
-import { isActive, isItemType } from '@proton/pass/lib/items/item.predicates';
-import { ItemUrlMatch, getItemPriorityForUrl } from '@proton/pass/lib/urls/search/match-url';
-import type { ItemWithPriority, SearchItemsByDomainOptions, SortOnItems } from '@proton/pass/lib/urls/types';
-import { parseUrl } from '@proton/pass/lib/urls/utils/parser';
-import type { ItemRevision, Maybe } from '@proton/pass/types';
-import { AutofillMode } from '@proton/pass/types/protobuf';
-import { prop } from '@proton/pass/utils/fp/lens';
+import type { ItemRevision, Maybe } from '../../../types';
+import { AutofillMode } from '../../../types/protobuf';
+import { prop } from '../../../utils/fp/lens';
+import { isActive, isItemType } from '../../items/item.predicates';
+import type { ItemWithPriority, SearchItemsByDomainOptions, SortOnItems } from '../types';
+import { parseUrl } from '../utils/parser';
+import { ItemUrlMatch, getItemPriorityForUrl } from './match-url';
 
 const sortMatchItems = (sortOn: SortOnItems) => (a: ItemWithPriority, b: ItemWithPriority) => {
     const aPrio = a.priority;

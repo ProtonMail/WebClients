@@ -1,7 +1,7 @@
 import { createContext, useMemo } from 'react';
 
-import { createUseContext } from '@proton/pass/hooks/useContextFactory';
-import type { MailboxDeleteDTO, MaybeNull, UserMailboxOutput } from '@proton/pass/types';
+import { createUseContext } from '../../../../hooks/useContextFactory';
+import type { MailboxDeleteDTO, MaybeNull, UserMailboxOutput } from '../../../../types';
 
 export interface AliasMailboxesContextValue {
     action: MaybeNull<AliasMailboxAction>;

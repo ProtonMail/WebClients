@@ -1,29 +1,30 @@
 import { call, select } from 'redux-saga/effects';
 
-import { PassCrypto } from '@proton/pass/lib/crypto';
-import { requestItemsForShareId } from '@proton/pass/lib/items/item.requests';
-import { dedupeShares } from '@proton/pass/lib/shares/share.dedupe';
-import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
-import { requestShares } from '@proton/pass/lib/shares/share.requests';
-import { createDefaultVault } from '@proton/pass/lib/sync/common/vaults';
-import { notifyInactiveShares } from '@proton/pass/lib/sync/notifications';
-import { SyncStrategy } from '@proton/pass/lib/sync/types';
-import { asIfNotOptimistic } from '@proton/pass/store//optimistic/selectors/select-is-optimistic';
-import type { VaultShareItem } from '@proton/pass/store/reducers';
-import { type ItemsByShareId, type SharesState, reducerMap } from '@proton/pass/store/reducers';
-import type { ShareDedupeState } from '@proton/pass/store/reducers/shares-dedupe';
-import { selectAllShares } from '@proton/pass/store/selectors';
-import type { RootSagaOptions, State } from '@proton/pass/store/types';
-import type { Maybe, Share, ShareGetResponse } from '@proton/pass/types';
-import { partition } from '@proton/pass/utils/array/partition';
-import { prop } from '@proton/pass/utils/fp/lens';
-import { pipe } from '@proton/pass/utils/fp/pipe';
-import { not, notIn } from '@proton/pass/utils/fp/predicates';
-import { sortOn } from '@proton/pass/utils/fp/sort';
-import { diadic } from '@proton/pass/utils/fp/variadics';
-import { logger } from '@proton/pass/utils/logger';
-import { partialMerge } from '@proton/pass/utils/object/merge';
 import { toMap } from '@proton/shared/lib/helpers/object';
+
+import { asIfNotOptimistic } from '../../../store/optimistic/selectors/select-is-optimistic';
+import type { VaultShareItem } from '../../../store/reducers';
+import { type ItemsByShareId, type SharesState, reducerMap } from '../../../store/reducers';
+import type { ShareDedupeState } from '../../../store/reducers/shares-dedupe';
+import { selectAllShares } from '../../../store/selectors';
+import type { RootSagaOptions, State } from '../../../store/types';
+import type { Maybe, Share, ShareGetResponse } from '../../../types';
+import { partition } from '../../../utils/array/partition';
+import { prop } from '../../../utils/fp/lens';
+import { pipe } from '../../../utils/fp/pipe';
+import { not, notIn } from '../../../utils/fp/predicates';
+import { sortOn } from '../../../utils/fp/sort';
+import { diadic } from '../../../utils/fp/variadics';
+import { logger } from '../../../utils/logger';
+import { partialMerge } from '../../../utils/object/merge';
+import { PassCrypto } from '../../crypto';
+import { requestItemsForShareId } from '../../items/item.requests';
+import { dedupeShares } from '../../shares/share.dedupe';
+import { parseShareResponse } from '../../shares/share.parser';
+import { requestShares } from '../../shares/share.requests';
+import { createDefaultVault } from '../common/vaults';
+import { notifyInactiveShares } from '../notifications';
+import { SyncStrategy } from '../types';
 
 export type SyncResultV1 = {
     shares: SharesState;

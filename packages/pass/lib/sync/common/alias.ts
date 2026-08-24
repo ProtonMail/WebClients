@@ -1,11 +1,11 @@
 import { select } from 'redux-saga/effects';
 
-import { createAliasesFromPending, getPendingAliases } from '@proton/pass/lib/alias/alias.requests';
-import { parseItemRevision } from '@proton/pass/lib/items/item.parser';
-import { selectUserDefaultShareID } from '@proton/pass/store/selectors';
-import type { AliasPending, ItemRevision, ItemRevisionContentsResponse, Maybe } from '@proton/pass/types';
-import { NoDefaultVaultError } from '@proton/pass/utils/errors/errors';
-import { logger } from '@proton/pass/utils/logger';
+import { selectUserDefaultShareID } from '../../../store/selectors';
+import type { AliasPending, ItemRevision, ItemRevisionContentsResponse, Maybe } from '../../../types';
+import { NoDefaultVaultError } from '../../../utils/errors/errors';
+import { logger } from '../../../utils/logger';
+import { createAliasesFromPending, getPendingAliases } from '../../alias/alias.requests';
+import { parseItemRevision } from '../../items/item.parser';
 
 export function* syncPendingAliases(): Generator<unknown, ItemRevision[]> {
     try {

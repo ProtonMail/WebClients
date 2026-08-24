@@ -1,4 +1,4 @@
-import type { ItemType } from '@proton/pass/types';
+import type { ItemType } from '../../../../types';
 
 // Used for both Proton Pass CSV import & Generic CSV import
 export type ProtonPassCSVItem = {

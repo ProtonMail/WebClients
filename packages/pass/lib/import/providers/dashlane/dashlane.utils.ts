@@ -1,22 +1,21 @@
 import { c } from 'ttag';
 
-import {
-    getEmailOrUsername,
-    importCreditCardItem,
-    importIdentityItem,
-    importLoginItem,
-    importNoteItem,
-} from '@proton/pass/lib/import/helpers/transformers';
-import { itemBuilder } from '@proton/pass/lib/items/item.builder';
 import type {
     IdentityExtraFieldsKey,
     IdentityFieldName,
     ItemContent,
     ItemImportIntent,
     Maybe,
-} from '@proton/pass/types';
-import { truthy } from '@proton/pass/utils/fp/predicates';
-
+} from '../../../../types';
+import { truthy } from '../../../../utils/fp/predicates';
+import { itemBuilder } from '../../../items/item.builder';
+import {
+    getEmailOrUsername,
+    importCreditCardItem,
+    importIdentityItem,
+    importLoginItem,
+    importNoteItem,
+} from '../../helpers/transformers';
 import type {
     DashlaneIdItem,
     DashlaneItemAsyncParser,

@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
-import { cardNumberHiddenValue } from '@proton/pass/components/Form/Field/masks/credit-card';
-import { intoUserIdentifier } from '@proton/pass/lib/items/item.utils';
-import type { ItemRevision, ItemType } from '@proton/pass/types';
-import { deobfuscate, deobfuscateCCField } from '@proton/pass/utils/obfuscate/xor';
+import { intoUserIdentifier } from '../../../lib/items/item.utils';
+import type { ItemRevision, ItemType } from '../../../types';
+import { deobfuscate, deobfuscateCCField } from '../../../utils/obfuscate/xor';
+import { cardNumberHiddenValue } from '../../Form/Field/masks/credit-card';
 
 type PresentedListItem = { heading: string; subheading: string };
 type ItemListPresenterMap = { [T in ItemType]: (revision: ItemRevision<T>) => PresentedListItem };

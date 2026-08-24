@@ -1,7 +1,6 @@
 import type { FormikErrors } from 'formik';
 
-import type { NoteFormValues } from '@proton/pass/types';
-
+import type { NoteFormValues } from '../../types';
 import { validateItemErrors } from './item';
 
 export const validateNoteForm = (values: NoteFormValues): FormikErrors<NoteFormValues> => validateItemErrors(values);

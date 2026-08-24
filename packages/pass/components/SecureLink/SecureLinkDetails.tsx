@@ -6,13 +6,14 @@ import { Button } from '@proton/atoms/Button/Button';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import type { IconName } from '@proton/icons/types';
-import { Card } from '@proton/pass/components/Layout/Card/Card';
-import { CardContent } from '@proton/pass/components/Layout/Card/CardContent';
-import { useCopyToClipboard } from '@proton/pass/components/Settings/Clipboard/ClipboardProvider';
-import { getOccurrenceString } from '@proton/pass/lib/i18n/helpers';
-import type { SecureLink } from '@proton/pass/types';
-import { epochToRemainingDuration } from '@proton/pass/utils/time/format';
 import clsx from '@proton/utils/clsx';
+
+import { getOccurrenceString } from '../../lib/i18n/helpers';
+import type { SecureLink } from '../../types';
+import { epochToRemainingDuration } from '../../utils/time/format';
+import { Card } from '../Layout/Card/Card';
+import { CardContent } from '../Layout/Card/CardContent';
+import { useCopyToClipboard } from '../Settings/Clipboard/ClipboardProvider';
 
 type SecureLinkCard = { title: string; subtitle: string; icon: IconName; className?: string };
 

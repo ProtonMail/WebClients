@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
 import { matchPath, useHistory } from 'react-router-dom';
 
-import { useSelectedItem } from '@proton/pass/components/Navigation/NavigationItem';
-import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
-import { getNewItemRoute } from '@proton/pass/components/Navigation/routing';
-import { useSelectItemAction } from '@proton/pass/hooks/useSelectItemAction';
-import type { ItemRevision, Maybe } from '@proton/pass/types';
+import { useSelectedItem } from '../../components/Navigation/NavigationItem';
+import { useItemScope } from '../../components/Navigation/NavigationMatches';
+import { getNewItemRoute } from '../../components/Navigation/routing';
+import type { ItemRevision, Maybe } from '../../types';
+import { useSelectItemAction } from '../useSelectItemAction';
 
 /** Auto-select first item when none selected. Monitor views use this
  * instead of `ItemsProvider` & `Autoselect` component flow.

@@ -2,13 +2,12 @@ import { memo } from 'react';
 
 import { c } from 'ttag';
 
-import { useItems } from '@proton/pass/components/Item/Context/ItemsProvider';
-import { ScopeFilter } from '@proton/pass/components/Item/Filters/Scope';
-import { ItemsListActions } from '@proton/pass/components/Item/List/ItemsListActions';
-import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
-import { SecureLinkQuickActions } from '@proton/pass/components/SecureLink/SecureLinkQuickActions';
-
 import { getVaultOptionInfo } from '../../Menu/Vault/utils';
+import { useItemScope } from '../../Navigation/NavigationMatches';
+import { SecureLinkQuickActions } from '../../SecureLink/SecureLinkQuickActions';
+import { useItems } from '../Context/ItemsProvider';
+import { ScopeFilter } from '../Filters/Scope';
+import { ItemsListActions } from './ItemsListActions';
 
 export const ItemsListHeader = memo(() => {
     const scope = useItemScope();

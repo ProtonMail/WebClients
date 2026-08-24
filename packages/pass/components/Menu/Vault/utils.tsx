@@ -1,10 +1,11 @@
 import { c } from 'ttag';
 
 import type { IconName } from '@proton/icons/types';
-import { VAULT_ICON_MAP } from '@proton/pass/components/Vault/constants';
-import type { VaultShareItem } from '@proton/pass/store/reducers';
-import type { MaybeNull } from '@proton/pass/types';
-import { VaultColor as VaultColorEnum } from '@proton/pass/types/protobuf/vault-v1.static';
+
+import type { VaultShareItem } from '../../../store/reducers';
+import type { MaybeNull } from '../../../types';
+import { VaultColor as VaultColorEnum } from '../../../types/protobuf/vault-v1.static';
+import { VAULT_ICON_MAP } from '../../Vault/constants';
 
 export type VaultMenuOption = {
     id: MaybeNull<string>;

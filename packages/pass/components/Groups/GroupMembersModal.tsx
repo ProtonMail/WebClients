@@ -2,10 +2,11 @@ import type { FC } from 'react';
 
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
-import { ShareMemberAvatar } from '@proton/pass/components/Invite/Member/ShareMemberAvatar';
-import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
-import type { GroupMember } from '@proton/pass/lib/groups/groups.types';
-import { truthy } from '@proton/pass/utils/fp/predicates';
+
+import type { GroupMember } from '../../lib/groups/groups.types';
+import { truthy } from '../../utils/fp/predicates';
+import { ShareMemberAvatar } from '../Invite/Member/ShareMemberAvatar';
+import { PassModal } from '../Layout/Modal/PassModal';
 
 type ModalProps = { name: string; members: GroupMember[]; onClose: () => void };
 

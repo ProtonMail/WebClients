@@ -1,9 +1,8 @@
 import type { FormikErrors } from 'formik';
 import { c } from 'ttag';
 
-import { parseOTPValue } from '@proton/pass/lib/otp/otp';
-import type { LoginItemFormValues } from '@proton/pass/types';
-
+import type { LoginItemFormValues } from '../../types';
+import { parseOTPValue } from '../otp/otp';
 import { validateAliasForm } from './alias';
 import { validateItemErrors } from './item';
 import { validateUrl, validateUrls } from './url';

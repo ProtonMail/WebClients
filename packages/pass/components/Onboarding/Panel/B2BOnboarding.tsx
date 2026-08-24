@@ -5,22 +5,23 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
-import onboardingExtension from '@proton/pass/assets/b2b-onboarding/icons/extension-icon.svg';
-import onboardingImport from '@proton/pass/assets/b2b-onboarding/icons/import-icon.svg';
-import onboardingShare from '@proton/pass/assets/b2b-onboarding/icons/share-icon.svg';
-import onboardingVault from '@proton/pass/assets/b2b-onboarding/icons/vault-icon.svg';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { usePassExtensionLink } from '@proton/pass/components/Core/PassExtensionLink';
-import { useInviteActions } from '@proton/pass/components/Invite/InviteProvider';
-import { useOnboarding } from '@proton/pass/components/Onboarding/OnboardingProvider';
-import { OnboardingArrow } from '@proton/pass/components/Onboarding/Panel/OnboardingArrow';
-import type { OnboardingCardProps } from '@proton/pass/components/Onboarding/Panel/OnboardingCard';
-import { OnboardingCard } from '@proton/pass/components/Onboarding/Panel/OnboardingCard';
-import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
-import { VaultSelect, VaultSelectMode } from '@proton/pass/components/Vault/VaultSelect';
-import { selectB2BOnboardingState, selectWritableVaults } from '@proton/pass/store/selectors';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { clients } from '@proton/shared/lib/pass/constants';
+
+import onboardingExtension from '../../../assets/b2b-onboarding/icons/extension-icon.svg';
+import onboardingImport from '../../../assets/b2b-onboarding/icons/import-icon.svg';
+import onboardingShare from '../../../assets/b2b-onboarding/icons/share-icon.svg';
+import onboardingVault from '../../../assets/b2b-onboarding/icons/vault-icon.svg';
+import { selectB2BOnboardingState, selectWritableVaults } from '../../../store/selectors';
+import { usePassCore } from '../../Core/PassCoreProvider';
+import { usePassExtensionLink } from '../../Core/PassExtensionLink';
+import { useInviteActions } from '../../Invite/InviteProvider';
+import { useVaultActions } from '../../Vault/VaultActionsProvider';
+import { VaultSelect, VaultSelectMode } from '../../Vault/VaultSelect';
+import { useOnboarding } from '../OnboardingProvider';
+import { OnboardingArrow } from './OnboardingArrow';
+import type { OnboardingCardProps } from './OnboardingCard';
+import { OnboardingCard } from './OnboardingCard';
 
 import './B2BOnboarding.scss';
 

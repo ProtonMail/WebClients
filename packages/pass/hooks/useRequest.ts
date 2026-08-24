@@ -3,14 +3,14 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import type { ActionCreatorWithPreparedPayload, PayloadAction } from '@reduxjs/toolkit';
 
-import { useEnsureMounted } from '@proton/pass/hooks/useEnsureMounted';
-import { useStatefulRef } from '@proton/pass/hooks/useStatefulRef';
-import { withAsyncRequest, withRevalidate } from '@proton/pass/store/request/enhancers';
-import type { RequestFlow } from '@proton/pass/store/request/flow';
-import type { RequestAsyncResult, RequestMeta, RequestSuccessDTO, WithRequest } from '@proton/pass/store/request/types';
-import { selectRequest } from '@proton/pass/store/selectors';
-import type { MaybeNull, MaybePromise } from '@proton/pass/types/utils';
-import { pipe } from '@proton/pass/utils/fp/pipe';
+import { withAsyncRequest, withRevalidate } from '../store/request/enhancers';
+import type { RequestFlow } from '../store/request/flow';
+import type { RequestAsyncResult, RequestMeta, RequestSuccessDTO, WithRequest } from '../store/request/types';
+import { selectRequest } from '../store/selectors';
+import type { MaybeNull, MaybePromise } from '../types/utils';
+import { pipe } from '../utils/fp/pipe';
+import { useEnsureMounted } from './useEnsureMounted';
+import { useStatefulRef } from './useStatefulRef';
 
 export const useActionRequestDispatch = <
     IntentActionPA extends ActionCreatorWithPreparedPayload<any[], any, string, never, RequestMeta<'start', any>>,

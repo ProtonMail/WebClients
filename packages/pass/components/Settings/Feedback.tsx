@@ -6,10 +6,10 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import Icon from '@proton/components/components/icon/Icon';
 import type { IconName } from '@proton/icons/types';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { PASS_HOWTO_URL, PASS_REDDIT_URL, PASS_REQUEST_URL, PASS_X_URL } from '@proton/pass/constants';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
+import { PASS_HOWTO_URL, PASS_REDDIT_URL, PASS_REQUEST_URL, PASS_X_URL } from '../../constants';
+import { usePassCore } from '../Core/PassCoreProvider';
 import { CouponModal } from './CouponModal';
 import { SettingsPanel } from './SettingsPanel';
 

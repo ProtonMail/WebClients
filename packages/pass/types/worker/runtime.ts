@@ -1,21 +1,13 @@
-import type { AuthSession } from '@proton/pass/lib/auth/session';
-import type { ConnectivityStatus } from '@proton/pass/lib/network/connectivity.utils';
-import type { ParsedUrl } from '@proton/pass/lib/urls/types';
-import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
-import type { FeatureFlagState } from '@proton/pass/store/reducers/user';
-import type { Maybe, MaybeNull } from '@proton/pass/types/utils';
-import type { AppState } from '@proton/pass/types/worker/state';
+import type { AuthSession } from '../../lib/auth/session';
+import type { ConnectivityStatus } from '../../lib/network/connectivity.utils';
+import type { ParsedUrl } from '../../lib/urls/types';
+import type { ProxiedSettings } from '../../store/reducers/settings';
+import type { FeatureFlagState } from '../../store/reducers/user';
+import type { Maybe, MaybeNull } from '../utils';
+import type { AppState } from './state';
 
 export type ClientEndpoint =
-    | 'popup'
-    | 'contentscript'
-    | 'background'
-    | 'page'
-    | 'notification'
-    | 'dropdown'
-    | 'web'
-    | 'desktop'
-    | 'offscreen';
+    'popup' | 'contentscript' | 'background' | 'page' | 'notification' | 'dropdown' | 'web' | 'desktop' | 'offscreen';
 
 export type TabId = number;
 export type FrameId = number;

@@ -10,16 +10,17 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
-import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
-import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
-import { isShareVisible } from '@proton/pass/lib/shares/share.predicates';
-import { intoShareVisibilityMap } from '@proton/pass/lib/shares/share.utils';
-import { sharesVisibilityEdit } from '@proton/pass/store/actions';
-import type { ShareItem } from '@proton/pass/store/reducers';
-import { selectDedupedVaults, selectRequestInFlight } from '@proton/pass/store/selectors';
-import type { ShareId, ShareType, ShareVisibilityMap, VaultsVisibilityDTO } from '@proton/pass/types';
-import { partition } from '@proton/pass/utils/array/partition';
 import clsx from '@proton/utils/clsx';
+
+import { isShareVisible } from '../../lib/shares/share.predicates';
+import { intoShareVisibilityMap } from '../../lib/shares/share.utils';
+import { sharesVisibilityEdit } from '../../store/actions';
+import type { ShareItem } from '../../store/reducers';
+import { selectDedupedVaults, selectRequestInFlight } from '../../store/selectors';
+import type { ShareId, ShareType, ShareVisibilityMap, VaultsVisibilityDTO } from '../../types';
+import { partition } from '../../utils/array/partition';
+import { PassModal } from '../Layout/Modal/PassModal';
+import { VaultIcon } from './VaultIcon';
 
 const FORM_ID = 'organize-vaults';
 const ICON_PROPS = { color: "var('--interaction-norm-contrast')", size: 3.5 } as const;

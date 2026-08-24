@@ -5,12 +5,13 @@ import { c, msgid } from 'ttag';
 
 import useItemsDraggable from '@proton/components/containers/items/useItemsDraggable';
 import useItemsDroppable from '@proton/components/containers/items/useItemsDroppable';
-import { useBulkEnabled, useBulkSelection } from '@proton/pass/components/Bulk/BulkSelectionState';
-import { useStableRef } from '@proton/pass/hooks/useStableRef';
-import { fromItemKey, getItemKey } from '@proton/pass/lib/items/item.utils';
-import type { SelectedItem } from '@proton/pass/types';
-import { partialMerge } from '@proton/pass/utils/object/merge';
 import noop from '@proton/utils/noop';
+
+import { useBulkEnabled, useBulkSelection } from '../components/Bulk/BulkSelectionState';
+import { fromItemKey, getItemKey } from '../lib/items/item.utils';
+import type { SelectedItem } from '../types';
+import { partialMerge } from '../utils/object/merge';
+import { useStableRef } from './useStableRef';
 
 export type DraggableItem = { ID?: string };
 export type ItemDropProps = ReturnType<typeof useItemsDroppable>;

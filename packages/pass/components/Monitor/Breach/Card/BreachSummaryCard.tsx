@@ -5,12 +5,13 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import shieldDanger from '@proton/pass/assets/monitor/shield-bolt-danger.svg';
-import { ButtonCard, type ButtonCardProps } from '@proton/pass/components/Layout/Card/ButtonCard';
-import { Card } from '@proton/pass/components/Layout/Card/Card';
-import { CardContent } from '@proton/pass/components/Layout/Card/CardContent';
-import { useMonitor } from '@proton/pass/components/Monitor/MonitorContext';
 import { DARK_WEB_MONITORING_NAME } from '@proton/shared/lib/constants';
+
+import shieldDanger from '../../../../assets/monitor/shield-bolt-danger.svg';
+import { ButtonCard, type ButtonCardProps } from '../../../Layout/Card/ButtonCard';
+import { Card } from '../../../Layout/Card/Card';
+import { CardContent } from '../../../Layout/Card/CardContent';
+import { useMonitor } from '../../MonitorContext';
 
 type Props = { className?: string; onClick: () => void };
 

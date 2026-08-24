@@ -5,17 +5,18 @@ import { useDispatch, useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
-import type { BottomBarProps } from '@proton/pass/components/Layout/Bar/BottomBar';
-import { BottomBar } from '@proton/pass/components/Layout/Bar/BottomBar';
-import { useStatefulRef } from '@proton/pass/hooks/useStatefulRef';
-import { clientOffline } from '@proton/pass/lib/client';
-import type { ConnectivityService } from '@proton/pass/lib/network/connectivity.service';
-import { ConnectivityStatus, getConnectivityWarning } from '@proton/pass/lib/network/connectivity.utils';
-import { offlineResume } from '@proton/pass/store/actions/creators/client';
-import { selectRequestInFlight } from '@proton/pass/store/request/selectors';
-import type { AppStatus, MaybeNull } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
+
+import { useStatefulRef } from '../../hooks/useStatefulRef';
+import { clientOffline } from '../../lib/client';
+import type { ConnectivityService } from '../../lib/network/connectivity.service';
+import { ConnectivityStatus, getConnectivityWarning } from '../../lib/network/connectivity.utils';
+import { offlineResume } from '../../store/actions/creators/client';
+import { selectRequestInFlight } from '../../store/request/selectors';
+import type { AppStatus, MaybeNull } from '../../types';
+import type { BottomBarProps } from '../Layout/Bar/BottomBar';
+import { BottomBar } from '../Layout/Bar/BottomBar';
+import { useAppState } from './AppStateProvider';
 
 type Props = { service: ConnectivityService };
 type ConnectivityState = { status: ConnectivityStatus };

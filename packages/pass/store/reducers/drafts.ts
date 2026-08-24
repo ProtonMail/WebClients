@@ -1,9 +1,9 @@
 /** combined in main items reducer: `./items.ts` */
 import type { Reducer } from 'redux';
 
-import { itemEq } from '@proton/pass/lib/items/item.predicates';
-import { draftDiscard, draftSave, draftsGarbageCollect } from '@proton/pass/store/actions';
-import type { ItemType } from '@proton/pass/types';
+import { itemEq } from '../../lib/items/item.predicates';
+import type { ItemType } from '../../types';
+import { draftDiscard, draftSave, draftsGarbageCollect } from '../actions';
 
 /** revision number is stored on the `EditDraft` type in order
  * to future-proof drafts v2 : this will allow detecting stale

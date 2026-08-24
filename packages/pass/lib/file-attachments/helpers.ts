@@ -1,10 +1,12 @@
-import { utf8StringToUint8Array, uint8ArrayToUtf8String } from '@protontech/crypto/utils';
-import { PassCrypto } from '@proton/pass/lib/crypto';
-import { decodeFileMetadata } from '@proton/pass/lib/file-attachments/file-proto.transformer';
-import type { FileAttachmentValues, FileDescriptor, ItemFileOutput, ItemKey, Maybe } from '@proton/pass/types';
-import { truthy } from '@proton/pass/utils/fp/predicates';
-import { logger } from '@proton/pass/utils/logger';
+import { uint8ArrayToUtf8String, utf8StringToUint8Array } from '@protontech/crypto/utils';
+
 import { getHashCode } from '@proton/shared/lib/helpers/string';
+
+import type { FileAttachmentValues, FileDescriptor, ItemFileOutput, ItemKey, Maybe } from '../../types';
+import { truthy } from '../../utils/fp/predicates';
+import { logger } from '../../utils/logger';
+import { PassCrypto } from '../crypto';
+import { decodeFileMetadata } from './file-proto.transformer';
 
 export const isFileForRevision = (revision: number) => (file: FileDescriptor) =>
     revision >= file.revisionAdded && (!file.revisionRemoved || revision < file.revisionRemoved);

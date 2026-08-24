@@ -1,12 +1,12 @@
 import type { FC } from 'react';
 import { useSelector } from 'react-redux';
 
-import { WithFeatureFlag } from '@proton/pass/components/Core/WithFeatureFlag';
-import { AutotypeDropdown } from '@proton/pass/components/Item/Autotype/AutotypeDropdown';
-import { useAutotypeActions } from '@proton/pass/hooks/autotype/useAutotypeActions';
-import { selectUserPlan } from '@proton/pass/store/selectors';
-import type { Item } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
+import { useAutotypeActions } from '../../../hooks/autotype/useAutotypeActions';
+import { selectUserPlan } from '../../../store/selectors';
+import type { Item } from '../../../types';
+import { PassFeature } from '../../../types/api/features';
+import { WithFeatureFlag } from '../../Core/WithFeatureFlag';
+import { AutotypeDropdown } from './AutotypeDropdown';
 
 type AutotypeDropdownLoginProps = {
     data: Item<'login'>;

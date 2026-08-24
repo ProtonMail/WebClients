@@ -1,17 +1,17 @@
 import { select } from 'redux-saga/effects';
 
-import { WEBSITE_RULES_EXPERIMENTAL_URL, WEBSITE_RULES_URL } from '@proton/pass/constants';
-import { fetchIfModified } from '@proton/pass/lib/api/utils';
-import { validateRules } from '@proton/pass/lib/extension/rules/rules';
-import type { DetectionRules } from '@proton/pass/lib/extension/rules/types';
-import { resolveWebsiteRules } from '@proton/pass/store/actions/creators/rules';
-import { createRequestSaga } from '@proton/pass/store/request/sagas';
-import type { RequestEntry, RequestStatus } from '@proton/pass/store/request/types';
-import { selectFeatureFlag, selectRequest } from '@proton/pass/store/selectors';
-import type { Maybe } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
+import { WEBSITE_RULES_EXPERIMENTAL_URL, WEBSITE_RULES_URL } from '../../../constants';
+import { fetchIfModified } from '../../../lib/api/utils';
+import { validateRules } from '../../../lib/extension/rules/rules';
+import type { DetectionRules } from '../../../lib/extension/rules/types';
+import type { Maybe } from '../../../types';
+import { PassFeature } from '../../../types/api/features';
+import { resolveWebsiteRules } from '../../actions/creators/rules';
+import { createRequestSaga } from '../../request/sagas';
+import type { RequestEntry, RequestStatus } from '../../request/types';
+import { selectFeatureFlag, selectRequest } from '../../selectors';
 
-declare module '@proton/pass/store/events' {
+declare module '../../events' {
     interface SagaEvents {
         'website-rules::resolved': DetectionRules;
     }

@@ -5,13 +5,14 @@ import { c } from 'ttag';
 import Collapsible from '@proton/components/components/collapsible/Collapsible';
 import CollapsibleContent from '@proton/components/components/collapsible/CollapsibleContent';
 import CollapsibleHeader from '@proton/components/components/collapsible/CollapsibleHeader';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import CollapsibleHeaderToggleButton from '@proton/pass/components/Layout/Button/CollapsibleHeaderToggleButton';
-import { LearnMoreCard, type LearnMoreProps } from '@proton/pass/components/Layout/Card/LearnMoreCard';
-import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
-import { type MaybeNull, SpotlightMessage } from '@proton/pass/types';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
+
+import { type MaybeNull, SpotlightMessage } from '../../types';
+import { usePassCore } from '../Core/PassCoreProvider';
+import CollapsibleHeaderToggleButton from '../Layout/Button/CollapsibleHeaderToggleButton';
+import { LearnMoreCard, type LearnMoreProps } from '../Layout/Card/LearnMoreCard';
+import { SubTheme } from '../Layout/Theme/types';
 
 export const MonitorLearnMore: FC = () => {
     const { onLink, spotlight } = usePassCore();

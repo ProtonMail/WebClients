@@ -1,9 +1,9 @@
-import { AuthMode } from '@proton/pass/types';
 import { RETRY_ATTEMPTS_MAX } from '@proton/shared/lib/constants';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { createOfflineError } from '@proton/shared/lib/fetch/ApiError';
 import * as time from '@proton/shared/lib/helpers/promise';
 
+import { AuthMode } from '../../types';
 import { refreshHandlerFactory } from './refresh';
 import { TEST_SERVER_TIME, mockAPIResponse } from './testing';
 

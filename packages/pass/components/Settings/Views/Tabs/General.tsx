@@ -2,16 +2,17 @@ import type { FC } from 'react';
 
 import { SshAgent } from 'proton-pass-web/app/Views/Settings/SshAgent/SshAgent';
 
-import { ApplicationLogs } from '@proton/pass/components/Settings/ApplicationLogs';
-import { Display } from '@proton/pass/components/Settings/Display';
-import { Locale } from '@proton/pass/components/Settings/Locale';
-import { Offline } from '@proton/pass/components/Settings/Offline';
-import { Theme } from '@proton/pass/components/Settings/Theme';
-import { Beta } from '@proton/pass/components/Settings/Update/Beta.web';
-import { Update } from '@proton/pass/components/Settings/Update/Update.desktop';
-import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
-import { PassFeature } from '@proton/pass/types/api/features';
 import isTruthy from '@proton/utils/isTruthy';
+
+import { useFeatureFlag } from '../../../../hooks/useFeatureFlag';
+import { PassFeature } from '../../../../types/api/features';
+import { ApplicationLogs } from '../../ApplicationLogs';
+import { Display } from '../../Display';
+import { Locale } from '../../Locale';
+import { Offline } from '../../Offline';
+import { Theme } from '../../Theme';
+import { Beta } from '../../Update/Beta.web';
+import { Update } from '../../Update/Update.desktop';
 
 export const General: FC = () => {
     const showSshAgent = useFeatureFlag(PassFeature.PassDesktopSSHAgent);

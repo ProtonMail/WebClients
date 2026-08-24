@@ -1,6 +1,6 @@
-import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { omit } from '@proton/shared/lib/helpers/object';
 
+import { uniqueId } from '../../../utils/string/unique-id';
 import type { WrappedOptimisticState } from '../types';
 import { HistoryFlag } from '../types';
 import type { TestState } from '../utils/testing.utils';
@@ -20,13 +20,7 @@ describe('optimistic initiate reducer', () => {
         const testAction = createTestAction('add', 1);
         const optimisticId = uniqueId();
 
-        const result = initiateReducer(
-            omit(state, ['optimistic']),
-            testReducer,
-            testAction,
-            state.optimistic,
-            optimisticId
-        );
+        const result = initiateReducer(omit(state, ['optimistic']), testReducer, testAction, state.optimistic, optimisticId);
 
         expect(result).toEqual({
             ...state.optimistic,
@@ -46,13 +40,7 @@ describe('optimistic initiate reducer', () => {
         const optimisticId = uniqueId();
         const testAction = createTestAction('remove', 1);
 
-        const result = initiateReducer(
-            omit(state, ['optimistic']),
-            testReducer,
-            testAction,
-            state.optimistic,
-            optimisticId
-        );
+        const result = initiateReducer(omit(state, ['optimistic']), testReducer, testAction, state.optimistic, optimisticId);
 
         expect(result).toEqual({
             checkpoint: { items: [1, 2, 3] },
@@ -69,11 +57,7 @@ describe('optimistic initiate reducer', () => {
             items: [1, 2],
             optimistic: {
                 checkpoint: { items: [] },
-                history: [
-                    optimisticUpdate1,
-                    { type: HistoryFlag.DETERMINISTIC, action: testAction },
-                    optimisticUpdate2,
-                ],
+                history: [optimisticUpdate1, { type: HistoryFlag.DETERMINISTIC, action: testAction }, optimisticUpdate2],
             },
         };
 

@@ -1,5 +1,5 @@
-import type { MaybeNull } from '@proton/pass/types';
-import { getParent } from '@proton/pass/utils/dom/tree';
+import type { MaybeNull } from '../../types';
+import { getParent } from './tree';
 
 /** Resolves the first parent element which can be scrolled vertically.
  * Traverses up the DOM tree until finding a scrollable element or reaching

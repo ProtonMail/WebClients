@@ -6,16 +6,17 @@ import { c } from 'ttag';
 import RadioGroup from '@proton/components/components/input/RadioGroup';
 import Info from '@proton/components/components/link/Info';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
-import automaticThemeImg from '@proton/pass/assets/settings/theme-automatic.svg';
-import darkThemeImg from '@proton/pass/assets/settings/theme-dark.svg';
-import lightThemeImg from '@proton/pass/assets/settings/theme-light.svg';
-import { usePassTheme } from '@proton/pass/components/Layout/Theme/ThemeProvider';
-import { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
-import type { PassThemeCardProps } from '@proton/pass/components/Settings/PassThemeCard';
-import { settingsEditIntent } from '@proton/pass/store/actions';
-import { selectTheme } from '@proton/pass/store/selectors';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
+
+import automaticThemeImg from '../../assets/settings/theme-automatic.svg';
+import darkThemeImg from '../../assets/settings/theme-dark.svg';
+import lightThemeImg from '../../assets/settings/theme-light.svg';
+import { settingsEditIntent } from '../../store/actions';
+import { selectTheme } from '../../store/selectors';
+import { usePassTheme } from '../Layout/Theme/ThemeProvider';
+import { PassThemeOption } from '../Layout/Theme/types';
+import type { PassThemeCardProps } from '../Settings/PassThemeCard';
 
 const getThemeCards = (): PassThemeCardProps[] => [
     {

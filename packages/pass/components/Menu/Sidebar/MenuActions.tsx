@@ -7,19 +7,20 @@ import { c } from 'ttag';
 import { Badge } from '@proton/components/components/badge/Badge';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import type { IconName } from '@proton/icons/types';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
-import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
-import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
-import { useSpotlightFor } from '@proton/pass/components/Spotlight/WithSpotlight';
-import { AccountPath } from '@proton/pass/constants';
-import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
-import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
-import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
-import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
-import { selectPassPlan } from '@proton/pass/store/selectors';
-import { OrganizationAliasCreateMode, SpotlightMessage } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
+
+import { AccountPath } from '../../../constants';
+import { useFeatureFlag } from '../../../hooks/useFeatureFlag';
+import { useNavigateToAccount } from '../../../hooks/useNavigateToAccount';
+import { useNotificationEnhancer } from '../../../hooks/useNotificationEnhancer';
+import { isPaidPlan } from '../../../lib/user/user.predicates';
+import { selectPassPlan } from '../../../store/selectors';
+import { OrganizationAliasCreateMode, SpotlightMessage } from '../../../types';
+import { PassFeature } from '../../../types/api/features';
+import { usePassCore } from '../../Core/PassCoreProvider';
+import { DropdownMenuButton } from '../../Layout/Dropdown/DropdownMenuButton';
+import { QuickActionsDropdown } from '../../Layout/Dropdown/QuickActionsDropdown';
+import { useOrganization } from '../../Organization/OrganizationProvider';
+import { useSpotlightFor } from '../../Spotlight/WithSpotlight';
 
 type MenuAction = {
     icon: IconName;

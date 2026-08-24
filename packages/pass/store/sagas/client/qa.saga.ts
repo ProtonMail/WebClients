@@ -1,15 +1,15 @@
 import { eventChannel } from 'redux-saga';
 import { put, select, take } from 'redux-saga/effects';
 
-import { DEFAULT_PASS_FEATURES } from '@proton/pass/constants';
-import type { QAEvent } from '@proton/pass/lib/qa/service';
-import { QA_SERVICE } from '@proton/pass/lib/qa/service';
-import { SyncStrategy } from '@proton/pass/lib/sync/types';
-import { setUserFeatureFlags } from '@proton/pass/store/actions';
-import type { FeatureFlagState } from '@proton/pass/store/reducers';
-import { selectFeatureFlags } from '@proton/pass/store/selectors';
-import type { RootSagaOptions } from '@proton/pass/store/types';
-import { PassFeature } from '@proton/pass/types/api/features';
+import { DEFAULT_PASS_FEATURES } from '../../../constants';
+import type { QAEvent } from '../../../lib/qa/service';
+import { QA_SERVICE } from '../../../lib/qa/service';
+import { SyncStrategy } from '../../../lib/sync/types';
+import { PassFeature } from '../../../types/api/features';
+import { setUserFeatureFlags } from '../../actions';
+import type { FeatureFlagState } from '../../reducers';
+import { selectFeatureFlags } from '../../selectors';
+import type { RootSagaOptions } from '../../types';
 
 /** Dev-only saga: allows toggling QA scenarios from the browser console. */
 export default function* qa(options: RootSagaOptions) {

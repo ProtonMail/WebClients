@@ -2,18 +2,19 @@ import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
-import { AliasSync } from '@proton/pass/components/Onboarding/AliasSync';
-import { UserRenewal } from '@proton/pass/components/Onboarding/UserRenewal';
-import type { SpotlightMessageDefinition } from '@proton/pass/components/Spotlight/SpotlightContent';
-import { FiveStarIcon, ShieldIcon } from '@proton/pass/components/Spotlight/SpotlightIcon';
-import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
-import { UpsellRef } from '@proton/pass/constants';
-import { SpotlightMessage } from '@proton/pass/types';
 import { BRAND_NAME, PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import noop from '@proton/utils/noop';
+
+import { usePassCore } from '../components/Core/PassCoreProvider';
+import { SubTheme } from '../components/Layout/Theme/types';
+import { AliasSync } from '../components/Onboarding/AliasSync';
+import { UserRenewal } from '../components/Onboarding/UserRenewal';
+import type { SpotlightMessageDefinition } from '../components/Spotlight/SpotlightContent';
+import { FiveStarIcon, ShieldIcon } from '../components/Spotlight/SpotlightIcon';
+import { useUpselling } from '../components/Upsell/UpsellingProvider';
+import { UpsellRef } from '../constants';
+import { SpotlightMessage } from '../types';
 
 export const useSpotlightMessages = (extra: SpotlightMessageDefinition[] = []) => {
     const { onLink, openSettings, getRatingURL, onForceUpdate } = usePassCore();

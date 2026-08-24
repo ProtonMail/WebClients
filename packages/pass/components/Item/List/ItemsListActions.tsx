@@ -1,21 +1,21 @@
 import { useCallback, useEffect, useMemo } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { BulkActions } from '@proton/pass/components/Bulk/BulkActions';
-import { useBulkActions } from '@proton/pass/components/Bulk/BulkSelectionActions';
-import { useBulkEnabled } from '@proton/pass/components/Bulk/BulkSelectionState';
-import { BulkToggle } from '@proton/pass/components/Bulk/BulkToggle';
-import { useItems } from '@proton/pass/components/Item/Context/ItemsProvider';
-import { ResetFiltersButton } from '@proton/pass/components/Item/Filters/ResetFiltersButton';
-import { SortFilter } from '@proton/pass/components/Item/Filters/Sort';
-import { TypeFilter } from '@proton/pass/components/Item/Filters/Type';
-import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
-import { useSelectedItem } from '@proton/pass/components/Navigation/NavigationItem';
-import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
-import { useStatefulRef } from '@proton/pass/hooks/useStatefulRef';
-import { intoDisplayedSortFilter } from '@proton/pass/lib/items/item.utils';
-import { saveFilters } from '@proton/pass/store/actions/creators/filters';
-import type { ItemSortFilter, ItemTypeFilter } from '@proton/pass/types';
+import { useStatefulRef } from '../../../hooks/useStatefulRef';
+import { intoDisplayedSortFilter } from '../../../lib/items/item.utils';
+import { saveFilters } from '../../../store/actions/creators/filters';
+import type { ItemSortFilter, ItemTypeFilter } from '../../../types';
+import { BulkActions } from '../../Bulk/BulkActions';
+import { useBulkActions } from '../../Bulk/BulkSelectionActions';
+import { useBulkEnabled } from '../../Bulk/BulkSelectionState';
+import { BulkToggle } from '../../Bulk/BulkToggle';
+import { useNavigationFilters } from '../../Navigation/NavigationFilters';
+import { useSelectedItem } from '../../Navigation/NavigationItem';
+import { useItemScope } from '../../Navigation/NavigationMatches';
+import { useItems } from '../Context/ItemsProvider';
+import { ResetFiltersButton } from '../Filters/ResetFiltersButton';
+import { SortFilter } from '../Filters/Sort';
+import { TypeFilter } from '../Filters/Type';
 
 export const ItemsListActions = () => {
     const dispatch = useDispatch();

@@ -1,13 +1,8 @@
 import { CCFieldType } from '@protontech/autofill/types';
 import { c, msgid } from 'ttag';
 
-import { MAX_ITEM_NAME_LENGTH } from '@proton/pass/constants';
-import PassUI from '@proton/pass/lib/core/ui.proxy';
-import { parseOTPValue } from '@proton/pass/lib/otp/otp';
-import type { ParsedUrl } from '@proton/pass/lib/urls/types';
-import { getFirstUrl } from '@proton/pass/lib/urls/utils/autofill';
-import { resolveSubdomain } from '@proton/pass/lib/urls/utils/utils';
-import type { Draft } from '@proton/pass/store/reducers/drafts';
+import { MAX_ITEM_NAME_LENGTH } from '../../constants';
+import type { Draft } from '../../store/reducers/drafts';
 import type {
     BulkSelectionDTO,
     CCItemData,
@@ -25,12 +20,16 @@ import type {
     SelectedItem,
     SelectedRevision,
     UniqueItem,
-} from '@proton/pass/types';
-import { arrayInterpolate } from '@proton/pass/utils/array/interpolate';
-import { deobfuscate, deobfuscateCCField } from '@proton/pass/utils/obfuscate/xor';
-import { UNIX_DAY, UNIX_MONTH, UNIX_WEEK } from '@proton/pass/utils/time/constants';
-import { getEpoch } from '@proton/pass/utils/time/epoch';
-
+} from '../../types';
+import { arrayInterpolate } from '../../utils/array/interpolate';
+import { deobfuscate, deobfuscateCCField } from '../../utils/obfuscate/xor';
+import { UNIX_DAY, UNIX_MONTH, UNIX_WEEK } from '../../utils/time/constants';
+import { getEpoch } from '../../utils/time/epoch';
+import PassUI from '../core/ui.proxy';
+import { parseOTPValue } from '../otp/otp';
+import type { ParsedUrl } from '../urls/types';
+import { getFirstUrl } from '../urls/utils/autofill';
+import { resolveSubdomain } from '../urls/utils/utils';
 import { hasUserIdentifier, isEditItemDraft, isExtraOTPField } from './item.predicates';
 
 /** Default item title when creating from a web page: prefer the page title when

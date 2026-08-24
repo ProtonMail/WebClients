@@ -1,7 +1,7 @@
-import { isModelArch } from '@proton/pass/lib/extension/model-artifact/model-artifact';
-import type { ModelArtifact } from '@proton/pass/lib/extension/model-artifact/model-artifact';
-import type { MaybeNull, Result } from '@proton/pass/types';
-import { isObject } from '@proton/pass/utils/object/is-object';
+import type { MaybeNull, Result } from '../../../types';
+import { isObject } from '../../../utils/object/is-object';
+import { isModelArch } from './model-artifact';
+import type { ModelArtifact } from './model-artifact';
 
 export type ModelArtifactCache = Record<string, ModelArtifact>;
 

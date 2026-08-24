@@ -1,5 +1,4 @@
-import { isObject } from '@proton/pass/utils/object/is-object';
-
+import { isObject } from '../object/is-object';
 import { objectMap } from '../object/map';
 
 type ByteArrays = ArrayBuffer | ArrayBufferView | Uint8Array<ArrayBuffer>;

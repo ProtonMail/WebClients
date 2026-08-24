@@ -1,21 +1,5 @@
 import { updateServerTime } from '@protontech/crypto/serverTime';
 
-import { API_CONCURRENCY_TRESHOLD } from '@proton/pass/constants';
-import { authStore } from '@proton/pass/lib/auth/store';
-import {
-    type Api,
-    type ApiAuth,
-    type ApiCallFn,
-    type ApiOptions,
-    type ApiResult,
-    type ApiSubscriptionEvent,
-    AuthMode,
-    type Maybe,
-} from '@proton/pass/types';
-import { awaiter } from '@proton/pass/utils/fp/promises';
-import { waitUntil } from '@proton/pass/utils/fp/wait-until';
-import { logger } from '@proton/pass/utils/logger';
-import { createPubSub } from '@proton/pass/utils/pubsub/factory';
 import { configureApi } from '@proton/shared/lib/api';
 import {
     getApiError,
@@ -34,6 +18,22 @@ import { localeCode } from '@proton/shared/lib/i18n';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 import noop from '@proton/utils/noop';
 
+import { API_CONCURRENCY_TRESHOLD } from '../../constants';
+import {
+    type Api,
+    type ApiAuth,
+    type ApiCallFn,
+    type ApiOptions,
+    type ApiResult,
+    type ApiSubscriptionEvent,
+    AuthMode,
+    type Maybe,
+} from '../../types';
+import { awaiter } from '../../utils/fp/promises';
+import { waitUntil } from '../../utils/fp/wait-until';
+import { logger } from '../../utils/logger';
+import { createPubSub } from '../../utils/pubsub/factory';
+import { authStore } from '../auth/store';
 import { PassErrorCode, isAbortError } from './errors';
 import { withApiHandlers } from './handlers';
 import { refreshHandlerFactory } from './refresh';

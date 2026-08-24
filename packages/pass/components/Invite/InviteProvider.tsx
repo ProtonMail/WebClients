@@ -2,23 +2,23 @@ import type { FC, PropsWithChildren } from 'react';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 
+import { selectMostRecentInvite } from '../../store/selectors/invites';
+import type { MaybeNull } from '../../types';
+import type { Invite } from '../../types/data/invites';
+import { useSelectItem } from '../Navigation/NavigationActions';
+import { useVaultActions } from '../Vault/VaultActionsProvider';
 import {
     InviteActionsContext,
     type InviteActionsContextValue,
     type InviteContextState,
     LatestInviteContext,
-} from '@proton/pass/components/Invite/InviteContext';
-import { InviteViews } from '@proton/pass/components/Invite/InviteViews';
-import { useSelectItem } from '@proton/pass/components/Navigation/NavigationActions';
-import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
-import { selectMostRecentInvite } from '@proton/pass/store/selectors/invites';
-import type { MaybeNull } from '@proton/pass/types';
-import type { Invite } from '@proton/pass/types/data/invites';
+} from './InviteContext';
+import { InviteViews } from './InviteViews';
 
 import './InviteProvider.scss';
 
-export type { InviteContextState, InviteResponseDTO } from '@proton/pass/components/Invite/InviteContext';
-export { useInviteActions, useLatestInvite } from '@proton/pass/components/Invite/InviteContext';
+export type { InviteContextState, InviteResponseDTO } from './InviteContext';
+export { useInviteActions, useLatestInvite } from './InviteContext';
 
 export const InviteProvider: FC<PropsWithChildren> = ({ children }) => {
     const latestInvite = useSelector(selectMostRecentInvite);

@@ -1,8 +1,8 @@
 import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
-import { decryptData, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
-import { PassCryptoVaultError } from '@proton/pass/lib/crypto/utils/errors';
-import { ContentFormatVersion, PassEncryptionTag } from '@proton/pass/types';
 
+import { ContentFormatVersion, PassEncryptionTag } from '../../../../types';
+import { decryptData, importSymmetricKey } from '../../utils/crypto-helpers';
+import { PassCryptoVaultError } from '../../utils/errors';
 import {
     createRandomKey,
     randomAddress,

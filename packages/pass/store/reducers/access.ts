@@ -1,7 +1,9 @@
 import type { Action, Reducer } from 'redux';
 
-import { toShareAccessKey } from '@proton/pass/lib/access/access.utils';
-import type { AccessItem } from '@proton/pass/lib/access/types';
+import { toShareAccessKey } from '../../lib/access/access.utils';
+import type { AccessItem } from '../../lib/access/types';
+import type { Maybe } from '../../types/utils';
+import { partialMerge } from '../../utils/object/merge';
 import {
     getShareAccessOptions,
     inviteRemoveSuccess,
@@ -10,9 +12,7 @@ import {
     shareEditMemberAccessSuccess,
     shareRemoveMemberAccessSuccess,
     vaultTransferOwnershipSuccess,
-} from '@proton/pass/store/actions';
-import type { Maybe } from '@proton/pass/types/utils';
-import { partialMerge } from '@proton/pass/utils/object/merge';
+} from '../actions';
 
 export type AccessState = { [accessKey: string]: Maybe<AccessItem> };
 
@@ -60,9 +60,7 @@ export const access: Reducer<AccessState> = (state = {}, action: Action) => {
         const accessKey = toShareAccessKey(action.payload);
 
         return updateAccess(state)(accessKey, {
-            newUserInvites: (state[accessKey]?.newUserInvites ?? []).filter(
-                (invite) => invite.newUserInviteId !== newUserInviteId
-            ),
+            newUserInvites: (state[accessKey]?.newUserInvites ?? []).filter((invite) => invite.newUserInviteId !== newUserInviteId),
         });
     }
 

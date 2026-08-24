@@ -5,12 +5,12 @@ import { useHistory } from 'react-router-dom';
 import type { FormikContextType, FormikTouched } from 'formik';
 import debounce from 'lodash/debounce';
 
-import { itemEq } from '@proton/pass/lib/items/item.predicates';
-import { draftDiscard, draftSave } from '@proton/pass/store/actions';
-import type { Draft, DraftBase } from '@proton/pass/store/reducers/drafts';
-import { selectItemDrafts } from '@proton/pass/store/selectors';
-import type { MaybeNull } from '@proton/pass/types';
-import { first } from '@proton/pass/utils/array/first';
+import { itemEq } from '../lib/items/item.predicates';
+import { draftDiscard, draftSave } from '../store/actions';
+import type { Draft, DraftBase } from '../store/reducers/drafts';
+import { selectItemDrafts } from '../store/selectors';
+import type { MaybeNull } from '../types';
+import { first } from '../utils/array/first';
 
 const SAVE_DRAFT_TIMEOUT = 500;
 const DRAFT_HASH = '#draft';

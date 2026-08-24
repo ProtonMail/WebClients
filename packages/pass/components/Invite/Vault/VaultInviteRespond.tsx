@@ -6,17 +6,18 @@ import { c, msgid } from 'ttag';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import { useMaybeGroup } from '@proton/pass/components/Groups/GroupsProvider';
-import { useInviteActions } from '@proton/pass/components/Invite/InviteContext';
-import { InviteStepResponse } from '@proton/pass/components/Invite/Steps/InviteStepResponse';
-import { Card } from '@proton/pass/components/Layout/Card/Card';
-import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
-import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
-import { formatItemsCount } from '@proton/pass/lib/items/item.utils';
-import { selectVaultLimits } from '@proton/pass/store/selectors';
-import { selectInviteByToken } from '@proton/pass/store/selectors/invites';
-import type { Invite } from '@proton/pass/types';
-import { ShareType } from '@proton/pass/types';
+
+import { formatItemsCount } from '../../../lib/items/item.utils';
+import { selectVaultLimits } from '../../../store/selectors';
+import { selectInviteByToken } from '../../../store/selectors/invites';
+import type { Invite } from '../../../types';
+import { ShareType } from '../../../types';
+import { useMaybeGroup } from '../../Groups/GroupsProvider';
+import { Card } from '../../Layout/Card/Card';
+import { PassModal } from '../../Layout/Modal/PassModal';
+import { VaultIcon } from '../../Vault/VaultIcon';
+import { useInviteActions } from '../InviteContext';
+import { InviteStepResponse } from '../Steps/InviteStepResponse';
 
 const getTexts = (invite: Invite, name: string, isGroup: boolean) => {
     const { inviterEmail, fromNewUser } = invite;

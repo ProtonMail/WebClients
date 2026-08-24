@@ -1,12 +1,12 @@
 import { c } from 'ttag';
 
-import type { EnpassCategory, EnpassItem } from '@proton/pass/lib/import/providers/enpass/enpass.types';
-import type { ImportFileReader } from '@proton/pass/lib/import/types';
-import { itemBuilder } from '@proton/pass/lib/items/item.builder';
-import type { DeobfuscatedItemExtraField, IdentityFieldName, ItemContent } from '@proton/pass/types';
-import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import noop from '@proton/utils/noop';
 
+import type { DeobfuscatedItemExtraField, IdentityFieldName, ItemContent } from '../../../../types';
+import { uniqueId } from '../../../../utils/string/unique-id';
+import { itemBuilder } from '../../../items/item.builder';
+import type { ImportFileReader } from '../../types';
+import type { EnpassCategory, EnpassItem } from './enpass.types';
 import type { EnpassField } from './enpass.types';
 
 const ENPASS_IDENTITY_FIELD_MAP: Record<string, IdentityFieldName> = {

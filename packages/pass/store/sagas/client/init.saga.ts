@@ -1,18 +1,19 @@
 import { fork, put, select, takeEvery } from 'redux-saga/effects';
 
-import { clientBooted, clientOffline } from '@proton/pass/lib/client';
-import { filterDeletedTabIds } from '@proton/pass/lib/extension/utils/tabs';
-import { SyncStrategy } from '@proton/pass/lib/sync/types';
-import { clientInit, getUserAccessIntent, secureLinksGet, stateHydrate } from '@proton/pass/store/actions';
-import { garbageCollectTabState } from '@proton/pass/store/actions/creators/filters';
-import { passwordHistoryGarbageCollect } from '@proton/pass/store/actions/creators/password';
-import { forcePollV2 } from '@proton/pass/store/actions/creators/polling';
-import type { WithReceiverAction } from '@proton/pass/store/actions/enhancers/endpoint';
-import { withRevalidate } from '@proton/pass/store/request/enhancers';
-import { selectSyncStrategy, selectTabIDs } from '@proton/pass/store/selectors';
-import type { RootSagaOptions, State } from '@proton/pass/store/types';
-import type { TabId } from '@proton/pass/types';
 import identity from '@proton/utils/identity';
+
+import { clientBooted, clientOffline } from '../../../lib/client';
+import { filterDeletedTabIds } from '../../../lib/extension/utils/tabs';
+import { SyncStrategy } from '../../../lib/sync/types';
+import type { TabId } from '../../../types';
+import { clientInit, getUserAccessIntent, secureLinksGet, stateHydrate } from '../../actions';
+import { garbageCollectTabState } from '../../actions/creators/filters';
+import { passwordHistoryGarbageCollect } from '../../actions/creators/password';
+import { forcePollV2 } from '../../actions/creators/polling';
+import type { WithReceiverAction } from '../../actions/enhancers/endpoint';
+import { withRevalidate } from '../../request/enhancers';
+import { selectSyncStrategy, selectTabIDs } from '../../selectors';
+import type { RootSagaOptions, State } from '../../types';
 
 function* clientInitWorker(
     { getAuthStore: getAuth }: RootSagaOptions,

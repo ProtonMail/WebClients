@@ -1,9 +1,11 @@
 import { cancelled, select } from 'redux-saga/effects';
 
-import { FILE_PUBLIC_SHARE } from '@proton/pass/constants';
-import { PassCrypto } from '@proton/pass/lib/crypto';
-import { resolveItemKey } from '@proton/pass/lib/crypto/utils/helpers';
-import { createDownloadStream } from '@proton/pass/lib/file-attachments/download';
+import noop from '@proton/utils/noop';
+
+import { FILE_PUBLIC_SHARE } from '../../../constants';
+import { PassCrypto } from '../../../lib/crypto';
+import { resolveItemKey } from '../../../lib/crypto/utils/helpers';
+import { createDownloadStream } from '../../../lib/file-attachments/download';
 import {
     createPendingFile,
     downloadFileChunk,
@@ -15,12 +17,14 @@ import {
     updateLinkedFileMetadata,
     updatePendingFileMetadata,
     uploadFileChunk,
-} from '@proton/pass/lib/file-attachments/file-attachments.requests';
-import { encodeFileMetadata } from '@proton/pass/lib/file-attachments/file-proto.transformer';
-import { intoFileDescriptors } from '@proton/pass/lib/file-attachments/helpers';
-import { fileStorage } from '@proton/pass/lib/file-storage/fs';
-import type { FileStorage } from '@proton/pass/lib/file-storage/types';
-import { base64ToBlob, getSafeStorage, getSafeWriter } from '@proton/pass/lib/file-storage/utils';
+} from '../../../lib/file-attachments/file-attachments.requests';
+import { encodeFileMetadata } from '../../../lib/file-attachments/file-proto.transformer';
+import { intoFileDescriptors } from '../../../lib/file-attachments/helpers';
+import { fileStorage } from '../../../lib/file-storage/fs';
+import type { FileStorage } from '../../../lib/file-storage/types';
+import { base64ToBlob, getSafeStorage, getSafeWriter } from '../../../lib/file-storage/utils';
+import type { FileDescriptor, FileForDownload, ItemFileOutput, ItemKey, ItemRevision, Maybe } from '../../../types';
+import { uniqueId } from '../../../utils/string/unique-id';
 import {
     fileDownload,
     fileDownloadPublic,
@@ -30,12 +34,9 @@ import {
     fileUploadChunk,
     fileUploadInitiate,
     filesResolve,
-} from '@proton/pass/store/actions';
-import { createRequestSaga } from '@proton/pass/store/request/sagas';
-import { selectItem } from '@proton/pass/store/selectors';
-import type { FileDescriptor, FileForDownload, ItemFileOutput, ItemKey, ItemRevision, Maybe } from '@proton/pass/types';
-import { uniqueId } from '@proton/pass/utils/string/unique-id';
-import noop from '@proton/utils/noop';
+} from '../../actions';
+import { createRequestSaga } from '../../request/sagas';
+import { selectItem } from '../../selectors';
 
 const initiateUpload = createRequestSaga({
     actions: fileUploadInitiate,
@@ -48,11 +49,7 @@ const initiateUpload = createRequestSaga({
             pending: true,
         });
 
-        const fileID = await createPendingFile(
-            fileDescriptor.metadata.toBase64(),
-            totalChunks,
-            encryptionVersion
-        );
+        const fileID = await createPendingFile(fileDescriptor.metadata.toBase64(), totalChunks, encryptionVersion);
 
         PassCrypto.registerFileKey({
             fileID,
@@ -184,9 +181,7 @@ const updateMetadata = createRequestSaga({
 
         const metadata = fileDescriptor.metadata.toBase64();
 
-        await (pending
-            ? updatePendingFileMetadata(metadata, fileID)
-            : updateLinkedFileMetadata({ metadata, fileID, shareId, itemId }));
+        await (pending ? updatePendingFileMetadata(metadata, fileID) : updateLinkedFileMetadata({ metadata, fileID, shareId, itemId }));
 
         return { ...descriptor, shareId, itemId };
     },
@@ -228,13 +223,4 @@ const restore = createRequestSaga({
     },
 });
 
-export default [
-    downloadFile,
-    downloadPublicChunk,
-    initiateUpload,
-    linkPending,
-    resolveFiles,
-    restore,
-    updateMetadata,
-    uploadChunk,
-];
+export default [downloadFile, downloadPublicChunk, initiateUpload, linkPending, resolveFiles, restore, updateMetadata, uploadChunk];

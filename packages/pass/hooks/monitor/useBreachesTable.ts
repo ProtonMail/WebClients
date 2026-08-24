@@ -3,21 +3,22 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import type { MonitorContextValue } from '@proton/pass/components/Monitor/MonitorContext';
-import { useMonitor } from '@proton/pass/components/Monitor/MonitorContext';
-import { MAX_CUSTOM_ADDRESSES } from '@proton/pass/constants';
-import PassUI from '@proton/pass/lib/core/ui.proxy';
-import { filterItemsByUserIdentifier } from '@proton/pass/lib/items/item.utils';
-import { AddressType, type MonitorAddress } from '@proton/pass/lib/monitor/types';
-import { selectNonAliasedLoginItems, selectVisibleLoginItems } from '@proton/pass/store/selectors';
-import type { ItemRevision, LoginItem, MaybeNull } from '@proton/pass/types';
-import { prop } from '@proton/pass/utils/fp/lens';
-import { pipe } from '@proton/pass/utils/fp/pipe';
-import { sortOn } from '@proton/pass/utils/fp/sort';
-import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
-import { toLowerCase } from '@proton/pass/utils/string/to-lower-case';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
+
+import type { MonitorContextValue } from '../../components/Monitor/MonitorContext';
+import { useMonitor } from '../../components/Monitor/MonitorContext';
+import { MAX_CUSTOM_ADDRESSES } from '../../constants';
+import PassUI from '../../lib/core/ui.proxy';
+import { filterItemsByUserIdentifier } from '../../lib/items/item.utils';
+import { AddressType, type MonitorAddress } from '../../lib/monitor/types';
+import { selectNonAliasedLoginItems, selectVisibleLoginItems } from '../../store/selectors';
+import type { ItemRevision, LoginItem, MaybeNull } from '../../types';
+import { prop } from '../../utils/fp/lens';
+import { pipe } from '../../utils/fp/pipe';
+import { sortOn } from '../../utils/fp/sort';
+import { deobfuscate } from '../../utils/obfuscate/xor';
+import { toLowerCase } from '../../utils/string/to-lower-case';
 
 export type MonitorTableRow<T extends AddressType = AddressType> = MonitorAddress<T> & { usageCount: number };
 

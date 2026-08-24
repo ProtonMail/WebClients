@@ -1,7 +1,7 @@
 import { createContext, useContext } from 'react';
 
-import type { AddressType, CustomAddressID, MonitorAddress } from '@proton/pass/lib/monitor/types';
-import type { MaybeNull, UniqueItem } from '@proton/pass/types';
+import type { AddressType, CustomAddressID, MonitorAddress } from '../../lib/monitor/types';
+import type { MaybeNull, UniqueItem } from '../../types';
 
 export type AsyncMonitorState = {
     data: UniqueItem[];

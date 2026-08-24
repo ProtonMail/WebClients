@@ -1,10 +1,9 @@
-import { decryptData } from '@proton/pass/lib/crypto/utils/crypto-helpers';
-import type { OpenedShare, ShareGetResponse, ShareRole, VaultShareKey } from '@proton/pass/types';
-import { PassEncryptionTag, ShareType } from '@proton/pass/types';
+import type { OpenedShare, ShareGetResponse, ShareRole, VaultShareKey } from '../../../../types';
+import { PassEncryptionTag, ShareType } from '../../../../types';
+import { decryptData } from '../../utils/crypto-helpers';
 
 type OpenShareProcessParams = { encryptedShare: ShareGetResponse } & (
-    | { type: ShareType.Vault; vaultKey: VaultShareKey }
-    | { type: ShareType.Item }
+    { type: ShareType.Vault; vaultKey: VaultShareKey } | { type: ShareType.Item }
 );
 
 export const openShare = async ({ encryptedShare, ...options }: OpenShareProcessParams): Promise<OpenedShare> => {

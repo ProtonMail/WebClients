@@ -1,5 +1,4 @@
-import type { MaybeNull } from '@proton/pass/types/utils';
-
+import type { MaybeNull } from '../../types/utils';
 import type { SyncResultV1 } from './v1/sync';
 import type { SyncResultV2 } from './v2/user-events.sync';
 

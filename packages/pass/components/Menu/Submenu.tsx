@@ -8,13 +8,11 @@ import CollapsibleHeader from '@proton/components/components/collapsible/Collaps
 import CollapsibleHeaderIconButton from '@proton/components/components/collapsible/CollapsibleHeaderIconButton';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import type { IconName } from '@proton/icons/types';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import {
-    DropdownMenuButton,
-    DropdownMenuButtonLabel,
-} from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
-import type { MenuItem } from '@proton/pass/hooks/useMenuItems';
 import clsx from '@proton/utils/clsx';
+
+import type { MenuItem } from '../../hooks/useMenuItems';
+import { usePassCore } from '../Core/PassCoreProvider';
+import { DropdownMenuButton, DropdownMenuButtonLabel } from '../Layout/Dropdown/DropdownMenuButton';
 
 import './Submenu.scss';
 

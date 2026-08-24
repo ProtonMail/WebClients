@@ -6,18 +6,19 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import { IcChevronLeft } from '@proton/icons/icons/IcChevronLeft';
-import { Field } from '@proton/pass/components/Form/Field/Field';
-import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
-import { TextField } from '@proton/pass/components/Form/Field/TextField';
-import { useAliasContacts } from '@proton/pass/components/Item/Alias/Contact/AliasContactsContext';
-import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';
-import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
-import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
-import { useRequest } from '@proton/pass/hooks/useRequest';
-import { validateEmailForm } from '@proton/pass/lib/validation/email';
-import { aliasCreateContact } from '@proton/pass/store/actions';
-import type { AliasCreateContactValues } from '@proton/pass/types';
-import { pipe } from '@proton/pass/utils/fp/pipe';
+
+import { useRequest } from '../../../../hooks/useRequest';
+import { validateEmailForm } from '../../../../lib/validation/email';
+import { aliasCreateContact } from '../../../../store/actions';
+import type { AliasCreateContactValues } from '../../../../types';
+import { pipe } from '../../../../utils/fp/pipe';
+import { Field } from '../../../Form/Field/Field';
+import { FieldsetCluster } from '../../../Form/Field/Layout/FieldsetCluster';
+import { TextField } from '../../../Form/Field/TextField';
+import { SidebarModal } from '../../../Layout/Modal/SidebarModal';
+import { Panel } from '../../../Layout/Panel/Panel';
+import { PanelHeader } from '../../../Layout/Panel/PanelHeader';
+import { useAliasContacts } from './AliasContactsContext';
 
 const FORM_ID = 'create-contact-form';
 

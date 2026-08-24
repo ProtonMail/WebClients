@@ -4,8 +4,9 @@ import { c } from 'ttag';
 
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
-import { InlineFieldBox } from '@proton/pass/components/Form/Field/Layout/InlineFieldBox';
-import { UNIX_DAY, UNIX_HOUR, UNIX_WEEK } from '@proton/pass/utils/time/constants';
+
+import { UNIX_DAY, UNIX_HOUR, UNIX_WEEK } from '../../../../utils/time/constants';
+import { InlineFieldBox } from '../Layout/InlineFieldBox';
 
 export enum ExpireTime {
     OneHour = UNIX_HOUR,

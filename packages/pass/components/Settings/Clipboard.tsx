@@ -5,8 +5,8 @@ import { c } from 'ttag';
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { IcArrowOutSquare } from '@proton/icons/icons/IcArrowOutSquare';
-import { ClipboardSettings } from '@proton/pass/components/Settings/Clipboard/ClipboardSettings';
 
+import { ClipboardSettings } from './Clipboard/ClipboardSettings';
 import { SettingsPanel } from './SettingsPanel';
 
 type Props = { disabled?: boolean; activate?: () => Promise<boolean> };

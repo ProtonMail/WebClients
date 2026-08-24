@@ -1,7 +1,6 @@
 import { CompressionStream, DecompressionStream } from 'node:stream/web';
 
-import { releaseCryptoProxy, setupCryptoProxyForTesting } from '@proton/pass/lib/crypto/utils/testing';
-
+import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../crypto/utils/testing';
 import {
     checkPasswordCompromised,
     fetchCompromisedBucket,

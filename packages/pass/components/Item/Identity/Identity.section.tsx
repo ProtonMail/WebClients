@@ -6,32 +6,30 @@ import { FieldArray, type FormikContextType } from 'formik';
 import { c } from 'ttag';
 
 import { IcPlus } from '@proton/icons/icons/IcPlus';
-import { ExtraFieldComponent } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraField';
-import {
-    createExtraField,
-    getExtraFieldOptions,
-} from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraField.utils';
-import { Field } from '@proton/pass/components/Form/Field/Field';
-import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
-import { TextField } from '@proton/pass/components/Form/Field/TextField';
-import { CollapsibleSection } from '@proton/pass/components/Layout/Collapsible/CollapsibleSection';
-import type { DropdownMenuOption } from '@proton/pass/components/Layout/Dropdown/DropdownMenuBase';
-import { DROPDOWN_SEPARATOR, DropdownMenuBase } from '@proton/pass/components/Layout/Dropdown/DropdownMenuBase';
-import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
-import { UpsellRef } from '@proton/pass/constants';
-import type { IdentityFormSection } from '@proton/pass/hooks/identity/useIdentityForm';
-import { usePortal } from '@proton/pass/hooks/usePortal';
-import type { ExtraFieldErrors } from '@proton/pass/lib/validation/extra-field';
-import { selectPassPlan } from '@proton/pass/store/selectors';
+
+import { UpsellRef } from '../../../constants';
+import type { IdentityFormSection } from '../../../hooks/identity/useIdentityForm';
+import { usePortal } from '../../../hooks/usePortal';
+import type { ExtraFieldErrors } from '../../../lib/validation/extra-field';
+import { selectPassPlan } from '../../../store/selectors';
 import type {
     DeobfuscatedItemExtraField,
     ExtraFieldType,
     IdentityFieldName,
     IdentityItemFormValues,
     Maybe,
-} from '@proton/pass/types';
-import { UserPassPlan } from '@proton/pass/types/api/plan';
-import { autofocusInput } from '@proton/pass/utils/dom/input';
+} from '../../../types';
+import { UserPassPlan } from '../../../types/api/plan';
+import { autofocusInput } from '../../../utils/dom/input';
+import { ExtraFieldComponent } from '../../Form/Field/ExtraFieldGroup/ExtraField';
+import { createExtraField, getExtraFieldOptions } from '../../Form/Field/ExtraFieldGroup/ExtraField.utils';
+import { Field } from '../../Form/Field/Field';
+import { FieldsetCluster } from '../../Form/Field/Layout/FieldsetCluster';
+import { TextField } from '../../Form/Field/TextField';
+import { CollapsibleSection } from '../../Layout/Collapsible/CollapsibleSection';
+import type { DropdownMenuOption } from '../../Layout/Dropdown/DropdownMenuBase';
+import { DROPDOWN_SEPARATOR, DropdownMenuBase } from '../../Layout/Dropdown/DropdownMenuBase';
+import { useUpselling } from '../../Upsell/UpsellingProvider';
 
 type IdentityCollapsibleSectionProps = IdentityFormSection & {
     form: FormikContextType<IdentityItemFormValues>;

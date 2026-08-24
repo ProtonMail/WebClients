@@ -1,4 +1,4 @@
-import type { MaybeNull } from '@proton/pass/types/utils';
+import type { MaybeNull } from '../utils';
 
 export enum PassFeature {
     LoginAutofillTelemetry = 'LoginAutofillTelemetry',

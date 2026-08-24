@@ -8,21 +8,22 @@ import { Button } from '@proton/atoms/Button/Button';
 import type { ButtonLikeShape } from '@proton/atoms/Button/ButtonLike';
 import Icon from '@proton/components/components/icon/Icon';
 import type { IconName } from '@proton/icons/types';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { itemTypeToIconName } from '@proton/pass/components/Layout/Icon/ItemIcon';
-import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
-import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
-import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
-import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
-import { getNewItemRoute } from '@proton/pass/components/Navigation/routing';
-import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
-import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
-import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
-import { selectAllVaults, selectCanCreateItems, selectShare } from '@proton/pass/store/selectors';
-import type { ItemType } from '@proton/pass/types';
-import { OrganizationAliasCreateMode } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
 import clsx from '@proton/utils/clsx';
+
+import { useFeatureFlag } from '../../../../hooks/useFeatureFlag';
+import { isWritableVault } from '../../../../lib/vaults/vault.predicates';
+import { selectAllVaults, selectCanCreateItems, selectShare } from '../../../../store/selectors';
+import type { ItemType } from '../../../../types';
+import { OrganizationAliasCreateMode } from '../../../../types';
+import { PassFeature } from '../../../../types/api/features';
+import { usePassCore } from '../../../Core/PassCoreProvider';
+import { itemTypeToIconName } from '../../../Layout/Icon/ItemIcon';
+import { SubTheme } from '../../../Layout/Theme/types';
+import { useNavigate } from '../../../Navigation/NavigationActions';
+import { useNavigationFilters } from '../../../Navigation/NavigationFilters';
+import { useItemScope } from '../../../Navigation/NavigationMatches';
+import { getNewItemRoute } from '../../../Navigation/routing';
+import { useOrganization } from '../../../Organization/OrganizationProvider';
 
 type ItemQuickAction = {
     hidden?: boolean;

@@ -5,13 +5,14 @@ import { c } from 'ttag';
 
 import { AbstractAuthDevicesModal } from '@proton/account/sso/AbstractAuthDeviceModal';
 import { Button } from '@proton/atoms/Button/Button';
-import { TopBar } from '@proton/pass/components/Layout/Bar/TopBar';
-import { useRequest } from '@proton/pass/hooks/useRequest';
-import { confirmPendingAuthDevice, rejectPendingAuthDevice } from '@proton/pass/store/actions/creators/sso';
-import { selectPendingAuthDevices } from '@proton/pass/store/selectors';
-import type { MaybeNull } from '@proton/pass/types';
-import { first } from '@proton/pass/utils/array/first';
 import type { AuthDeviceOutput } from '@proton/shared/lib/keys/device';
+
+import { useRequest } from '../../hooks/useRequest';
+import { confirmPendingAuthDevice, rejectPendingAuthDevice } from '../../store/actions/creators/sso';
+import { selectPendingAuthDevices } from '../../store/selectors';
+import type { MaybeNull } from '../../types';
+import { first } from '../../utils/array/first';
+import { TopBar } from '../Layout/Bar/TopBar';
 
 type Props = { pendingAuthDevice: AuthDeviceOutput; onExit: () => void };
 

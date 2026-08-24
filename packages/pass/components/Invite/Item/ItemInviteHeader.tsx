@@ -1,13 +1,14 @@
 import type { FC } from 'react';
 import { useMemo } from 'react';
 
-import { presentListItem } from '@proton/pass/components/Item/List/utils';
-import { SafeItemIcon } from '@proton/pass/components/Layout/Icon/ItemIcon';
-import { itemTypeToSubThemeClassName } from '@proton/pass/components/Layout/Theme/types';
-import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
-import { selectItem } from '@proton/pass/store/selectors';
-import type { SelectedItem } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
+
+import { useMemoSelector } from '../../../hooks/useMemoSelector';
+import { selectItem } from '../../../store/selectors';
+import type { SelectedItem } from '../../../types';
+import { presentListItem } from '../../Item/List/utils';
+import { SafeItemIcon } from '../../Layout/Icon/ItemIcon';
+import { itemTypeToSubThemeClassName } from '../../Layout/Theme/types';
 
 export const ItemInviteHeader: FC<SelectedItem> = ({ shareId, itemId }) => {
     const item = useMemoSelector(selectItem, [shareId, itemId])!;

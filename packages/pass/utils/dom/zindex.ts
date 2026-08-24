@@ -1,4 +1,4 @@
-import type { MaybeNull } from '@proton/pass/types';
+import type { MaybeNull } from '../../types';
 
 export const getZIndex = (el: HTMLElement, styles?: CSSStyleDeclaration): number => {
     const { zIndex } = styles ?? getComputedStyle(el);

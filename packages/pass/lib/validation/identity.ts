@@ -1,11 +1,10 @@
 import type { FormikErrors } from 'formik';
 
-import type { ExtraSectionsError } from '@proton/pass/lib/validation/custom-item';
-import { validateCustomSectionName } from '@proton/pass/lib/validation/custom-item';
-import { validateItemErrors } from '@proton/pass/lib/validation/item';
-import type { IdentityItemFormValues } from '@proton/pass/types';
-
+import type { IdentityItemFormValues } from '../../types';
+import type { ExtraSectionsError } from './custom-item';
+import { validateCustomSectionName } from './custom-item';
 import { validateExtraFieldName } from './extra-field';
+import { validateItemErrors } from './item';
 
 const EXTRA_SECTION_KEYS = [
     'extraPersonalDetails',

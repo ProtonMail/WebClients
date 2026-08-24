@@ -1,12 +1,12 @@
-import { buildAccessTokenEnvVar, decodePatRecord } from '@proton/pass/lib/access-token/access-token.utils';
-import { exposePassCrypto } from '@proton/pass/lib/crypto';
-import { createPassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
-import { encryptData, generateKey, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
-import type { PatMonitorListEntryOutput } from '@proton/pass/types';
-import { EventType2, PassEncryptionTag } from '@proton/pass/types';
-import { ActionPayload } from '@proton/pass/types/protobuf/action-payload-v1';
-import { uniqueId } from '@proton/pass/utils/string/unique-id';
-import { getEpoch } from '@proton/pass/utils/time/epoch';
+import type { PatMonitorListEntryOutput } from '../../types';
+import { EventType2, PassEncryptionTag } from '../../types';
+import { ActionPayload } from '../../types/protobuf/action-payload-v1';
+import { uniqueId } from '../../utils/string/unique-id';
+import { getEpoch } from '../../utils/time/epoch';
+import { exposePassCrypto } from '../crypto';
+import { createPassCrypto } from '../crypto/pass-crypto';
+import { encryptData, generateKey, importSymmetricKey } from '../crypto/utils/crypto-helpers';
+import { buildAccessTokenEnvVar, decodePatRecord } from './access-token.utils';
 
 const createActionOutput = (encryptedPayload?: string): PatMonitorListEntryOutput => ({
     PatMonitorRecordID: uniqueId(),

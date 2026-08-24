@@ -1,18 +1,18 @@
 import { select } from 'redux-saga/effects';
 
-import { isVaultTarget } from '@proton/pass/lib/access/access.predicates';
-import { toShareAccessKey } from '@proton/pass/lib/access/access.utils';
-import type { InviteData } from '@proton/pass/lib/invites/invite.requests';
-import { loadInvites } from '@proton/pass/lib/invites/invite.requests';
-import { isItemInviteForItem } from '@proton/pass/lib/invites/invite.utils';
-import { isShareManageable } from '@proton/pass/lib/shares/share.predicates';
-import { loadItemMembers, loadVaultMembers } from '@proton/pass/lib/shares/share.requests';
-import { getShareAccessOptions } from '@proton/pass/store/actions';
-import type { ShareItem } from '@proton/pass/store/reducers';
-import { createRequestSaga } from '@proton/pass/store/request/sagas';
-import { selectShareOrThrow } from '@proton/pass/store/selectors';
-import type { ShareMember } from '@proton/pass/types/data/invites';
-import { or } from '@proton/pass/utils/fp/predicates';
+import { isVaultTarget } from '../../../lib/access/access.predicates';
+import { toShareAccessKey } from '../../../lib/access/access.utils';
+import type { InviteData } from '../../../lib/invites/invite.requests';
+import { loadInvites } from '../../../lib/invites/invite.requests';
+import { isItemInviteForItem } from '../../../lib/invites/invite.utils';
+import { isShareManageable } from '../../../lib/shares/share.predicates';
+import { loadItemMembers, loadVaultMembers } from '../../../lib/shares/share.requests';
+import type { ShareMember } from '../../../types/data/invites';
+import { or } from '../../../utils/fp/predicates';
+import { getShareAccessOptions } from '../../actions';
+import type { ShareItem } from '../../reducers';
+import { createRequestSaga } from '../../request/sagas';
+import { selectShareOrThrow } from '../../selectors';
 
 /** Access options resolution may duplicate member/invite data across
  * different `accessKeys` in the state tree. This is an accepted trade-off:

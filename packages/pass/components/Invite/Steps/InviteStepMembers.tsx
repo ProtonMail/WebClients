@@ -4,21 +4,21 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { Field } from '@proton/pass/components/Form/Field/Field';
-import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
-import { ListField } from '@proton/pass/components/Form/Field/ListField';
-import { InviteGroupField } from '@proton/pass/components/Invite/Steps/InviteGroupField';
-import { InviteRecommendations } from '@proton/pass/components/Invite/Steps/InviteRecommendations';
-import type { InviteAddressValidator } from '@proton/pass/hooks/invite/useAddressValidator';
-import { type AccessKeys, AccessTarget } from '@proton/pass/lib/access/types';
-import PassUI from '@proton/pass/lib/core/ui.proxy';
-import { getLimitReachedText } from '@proton/pass/lib/invites/invite.utils';
-import { InviteEmailsError } from '@proton/pass/lib/validation/invite';
-import { selectShareOrThrow } from '@proton/pass/store/selectors';
-import type { InviteFormMemberItem, InviteFormValues, MaybeNull } from '@proton/pass/types';
-import { ShareRole } from '@proton/pass/types';
-import { truthy } from '@proton/pass/utils/fp/predicates';
-import { uniqueId } from '@proton/pass/utils/string/unique-id';
+import type { InviteAddressValidator } from '../../../hooks/invite/useAddressValidator';
+import { type AccessKeys, AccessTarget } from '../../../lib/access/types';
+import PassUI from '../../../lib/core/ui.proxy';
+import { getLimitReachedText } from '../../../lib/invites/invite.utils';
+import { InviteEmailsError } from '../../../lib/validation/invite';
+import { selectShareOrThrow } from '../../../store/selectors';
+import type { InviteFormMemberItem, InviteFormValues, MaybeNull } from '../../../types';
+import { ShareRole } from '../../../types';
+import { truthy } from '../../../utils/fp/predicates';
+import { uniqueId } from '../../../utils/string/unique-id';
+import { Field } from '../../Form/Field/Field';
+import { FieldsetCluster } from '../../Form/Field/Layout/FieldsetCluster';
+import { ListField } from '../../Form/Field/ListField';
+import { InviteGroupField } from './InviteGroupField';
+import { InviteRecommendations } from './InviteRecommendations';
 
 const createMember = (email: string, isGroup: boolean): InviteFormMemberItem => ({
     value: { email, isGroup, role: ShareRole.READ },

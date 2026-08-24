@@ -9,15 +9,16 @@ import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
-import { useRequest } from '@proton/pass/hooks/useRequest';
-import type { PersonalAccessToken } from '@proton/pass/lib/access-token/access-token.types';
-import { getAccessTokenActions } from '@proton/pass/store/actions';
-import { selectAccessTokenActions } from '@proton/pass/store/selectors';
-import type { MaybeNull } from '@proton/pass/types';
-import { EventType2 as PassEventType } from '@proton/pass/types/api/pass';
-import { epochToDateTime } from '@proton/pass/utils/time/format';
 import clsx from '@proton/utils/clsx';
+
+import { useRequest } from '../../../hooks/useRequest';
+import type { PersonalAccessToken } from '../../../lib/access-token/access-token.types';
+import { getAccessTokenActions } from '../../../store/actions';
+import { selectAccessTokenActions } from '../../../store/selectors';
+import type { MaybeNull } from '../../../types';
+import { EventType2 as PassEventType } from '../../../types/api/pass';
+import { epochToDateTime } from '../../../utils/time/format';
+import { PassModal } from '../../Layout/Modal/PassModal';
 
 type Props = {
     token: PersonalAccessToken;

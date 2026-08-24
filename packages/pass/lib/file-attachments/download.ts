@@ -1,7 +1,10 @@
-import { PassCrypto } from '@proton/pass/lib/crypto';
-import type { Callback, FileID, Maybe, ShareId } from '@proton/pass/types';
+import type { Callback, FileID, Maybe, ShareId } from '../../types';
+import { PassCrypto } from '../crypto';
 
-export const consumeStream = async <T>(stream: ReadableStream<T>, signal: AbortSignal): Promise<Uint8Array<ArrayBuffer>> => {
+export const consumeStream = async <T>(
+    stream: ReadableStream<T>,
+    signal: AbortSignal
+): Promise<Uint8Array<ArrayBuffer>> => {
     const chunks: Uint8Array<ArrayBuffer>[] = [];
     let totalLength = 0;
 

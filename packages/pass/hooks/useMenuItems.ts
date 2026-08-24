@@ -4,13 +4,14 @@ import { useDispatch } from 'react-redux';
 import { c } from 'ttag';
 
 import type { IconName } from '@proton/icons/types';
-import { syncIntent } from '@proton/pass//store/actions';
-import { usePasswordHistoryActions } from '@proton/pass/components/Password/PasswordHistoryActions';
-import { PASS_ANDROID_URL, PASS_IOS_URL } from '@proton/pass/constants';
-import { withTap } from '@proton/pass/utils/fp/pipe';
 import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { Clients, clients } from '@proton/shared/lib/pass/constants';
 import noop from '@proton/utils/noop';
+
+import { usePasswordHistoryActions } from '../components/Password/PasswordHistoryActions';
+import { PASS_ANDROID_URL, PASS_IOS_URL } from '../constants';
+import { syncIntent } from '../store/actions';
+import { withTap } from '../utils/fp/pipe';
 
 export type MenuItem = {
     icon: IconName;
