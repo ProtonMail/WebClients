@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { getAppFromHostname, getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
-import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
 
 const getUrl = (backHref: string, defaultUrl: URL) => {
@@ -29,11 +29,15 @@ export interface SafetyReviewBackLink {
     href: string;
 }
 
-export const getSafetyReviewBackLink = (backHref: string): SafetyReviewBackLink => {
-    const defaultUrl = new URL('/mail/recovery', window.location.origin);
+/** @param app the app serving the review, used when the back link itself doesn't identify a product. */
+export const getSafetyReviewBackLink = (backHref: string, app: APP_NAMES): SafetyReviewBackLink => {
+    // Every settings app serves recovery at the same path: standalone apps at their root, Account as generic
+    // settings, i.e. without a product slug.
+    const defaultUrl = new URL('/recovery', window.location.origin);
     const backUrl = getUrl(backHref, defaultUrl);
-    const appName =
-        getAppFromPathnameSafe(backUrl.pathname) || getAppFromHostname(backUrl.hostname) || APPS.PROTONACCOUNT;
+    // Account hosts every product behind a slug (/u/0/vpn/recovery) and in-app links carry the product in the
+    // hostname. Standalone settings apps have neither, so the app serving the review is the product.
+    const appName = getAppFromPathnameSafe(backUrl.pathname) || getAppFromHostname(backUrl.hostname) || app;
     return {
         context: backUrl.origin === defaultUrl.origin ? 'settings' : 'app',
         appName,
