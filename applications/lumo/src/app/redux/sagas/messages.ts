@@ -222,10 +222,6 @@ export function* pushMessage({ payload }: { payload: PushMessageRequest }): Saga
     const type: ResourceType = 'message';
     const { id: localId } = payload;
     const priority = payload.priority || 'urgent';
-    const message: Message | undefined = yield select(selectMessageById(localId));
-    if (!message) {
-        throw new Error(`cannot find ${type} ${localId} in Redux`);
-    }
 
     // In ghost mode, skip remote persistence
     const isGhostMode: boolean = yield select((state: LumoState) => state.ghostChat?.isGhostChatMode || false);
@@ -235,11 +231,14 @@ export function* pushMessage({ payload }: { payload: PushMessageRequest }): Saga
         return;
     }
 
+    let message: Message | undefined;
+
     try {
         const dbApi: DbApi = yield getContext('dbApi');
         const idbMessage: SerializedMessage | undefined = yield call([dbApi, dbApi.getMessageById], localId);
 
-        // Deletion case
+        // Deletion case — must run before the Redux lookup so tombstones cleared on
+        // reload (e.g. space cascade soft-delete) do not require a hydrated message.
         if (idbMessage) {
             // If there is an object in IDB and it has deleted+dirty flags, we push the deletion and exit
             const { deleted, dirty } = idbMessage;
@@ -264,6 +263,11 @@ export function* pushMessage({ payload }: { payload: PushMessageRequest }): Saga
                     return;
                 }
             }
+        }
+
+        message = yield select(selectMessageById(localId));
+        if (!message) {
+            throw new Error(`cannot find ${type} ${localId} in Redux`);
         }
 
         if (message.placeholder) {
@@ -308,7 +312,7 @@ export function* pushMessage({ payload }: { payload: PushMessageRequest }): Saga
             // local-to-remote id mapping will stop this message from being POSTed again because, as we said above, we
             // only POST resources having no id mapping.
             // Recording that id mapping is done as part of the normal flow of processing the pullConversation response.
-            const conversationId = message.conversationId;
+            const conversationId = message?.conversationId;
             if (conversationId) {
                 yield put(pullConversationRequest({ id: conversationId }));
             }
@@ -318,7 +322,7 @@ export function* pushMessage({ payload }: { payload: PushMessageRequest }): Saga
                 addResourceLimitError({
                     resource: 'messages',
                     limit: MAX_MESSAGES_PER_CONVERSATION,
-                    conversationId: message.conversationId,
+                    conversationId: message?.conversationId,
                     serverMessage: e.serverMessage,
                 })
             );
