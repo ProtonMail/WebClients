@@ -5,12 +5,12 @@ import { c } from 'ttag';
 
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import { genAccentShades } from '@proton/colors';
-import Dropdown from '@proton/components/components/dropdown/Dropdown';
-import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
-import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import { IcCrossSmall } from '@proton/icons/icons/IcCrossSmall';
 import clsx from '@proton/utils/clsx';
 
+import Dropdown from '../dropdown/Dropdown';
+import DropdownMenu from '../dropdown/DropdownMenu';
+import DropdownMenuButton from '../dropdown/DropdownMenuButton';
 import type { LabelDescription } from './LabelStack';
 
 interface Props {

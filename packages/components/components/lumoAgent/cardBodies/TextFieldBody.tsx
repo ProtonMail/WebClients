@@ -1,5 +1,5 @@
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
+import InputFieldTwo from '../../v2/field/InputField';
+import TextAreaTwo from '../../v2/input/TextArea';
 
 interface Props {
     label: string;

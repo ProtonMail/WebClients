@@ -2,10 +2,9 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { TopBarReferralSpotlight } from '@proton/components/containers/referral/components/TopBarReferralSpotlight/TopBarReferralSpotlight';
-import { useReferralDiscover } from '@proton/components/containers/referral/hooks/useReferralDiscover';
-import { useReferralTelemetry } from '@proton/components/containers/referral/hooks/useReferralTelemetry';
-
+import { TopBarReferralSpotlight } from '../../containers/referral/components/TopBarReferralSpotlight/TopBarReferralSpotlight';
+import { useReferralDiscover } from '../../containers/referral/hooks/useReferralDiscover';
+import { useReferralTelemetry } from '../../containers/referral/hooks/useReferralTelemetry';
 import { PromotionButton } from '../button/PromotionButton';
 
 const TopNavReferralButton = () => {

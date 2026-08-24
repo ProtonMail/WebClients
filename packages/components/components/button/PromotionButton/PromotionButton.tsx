@@ -4,13 +4,14 @@ import { forwardRef } from 'react';
 import type { ButtonLikeProps } from '@proton/atoms/Button/ButtonLike';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import Icon from '@proton/components/components/icon/Icon';
-import type { Breakpoints } from '@proton/components/hooks/useActiveBreakpoint';
-import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import useUid from '@proton/components/hooks/useUid';
 import type { IconName, IconSize } from '@proton/icons/types';
 import type { PolymorphicForwardRefExoticComponent, PolymorphicPropsWithRef } from '@proton/react-polymorphic-types';
 import clsx from '@proton/utils/clsx';
+
+import type { Breakpoints } from '../../../hooks/useActiveBreakpoint';
+import useActiveBreakpoint from '../../../hooks/useActiveBreakpoint';
+import useUid from '../../../hooks/useUid';
+import Icon from '../../icon/Icon';
 
 import './PromotionButton.scss';
 

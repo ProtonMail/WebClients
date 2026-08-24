@@ -5,7 +5,6 @@ import data from '@emoji-mart/data';
 import { Picker } from 'emoji-mart';
 import { c } from 'ttag';
 
-import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import { IcEmoji } from '@proton/icons/icons/IcEmoji';
 import { COMPOSER_TOOLBAR_ICON_SIZE } from '@proton/shared/lib/constants';
 import { getClosestLocaleCode } from '@proton/shared/lib/i18n/helper';
@@ -15,6 +14,7 @@ import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import { useTheme } from '../../../containers/themes/ThemeProvider';
+import { DropdownSizeUnit } from '../../dropdown/utils';
 import type { ToolbarDropdownAction } from './ToolbarDropdown';
 import ToolbarDropdown from './ToolbarDropdown';
 

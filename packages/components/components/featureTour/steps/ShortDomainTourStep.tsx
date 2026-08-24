@@ -5,8 +5,6 @@ import { useAddresses } from '@proton/account/addresses/hooks';
 import { featureTourActions } from '@proton/account/featuresTour';
 import { subscriptionThunk } from '@proton/account/subscription';
 import { userThunk } from '@proton/account/user';
-import useShortDomainAddress from '@proton/components/hooks/mail/useShortDomainAddress';
-import useToggle from '@proton/components/hooks/useToggle';
 import { PLANS } from '@proton/payments/core/constants';
 import { isTrial } from '@proton/payments/core/subscription/helpers';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
@@ -14,6 +12,8 @@ import { getIsBYOEOnlyAccount } from '@proton/shared/lib/helpers/address';
 import { SentryMailInitiatives, traceError } from '@proton/shared/lib/helpers/sentry';
 import shortDomainImg from '@proton/styles/assets/img/illustrations/new-upsells-img/pm-me.svg';
 
+import useShortDomainAddress from '../../../hooks/mail/useShortDomainAddress';
+import useToggle from '../../../hooks/useToggle';
 import type { FeatureTourStepProps, ShouldDisplayTourStep } from '../interface';
 import FeatureTourStepCTA from './components/FeatureTourStepCTA';
 import FeatureTourStepsContent from './components/FeatureTourStepsContent';

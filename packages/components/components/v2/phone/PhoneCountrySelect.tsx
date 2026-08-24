@@ -5,13 +5,13 @@ import { AutoSizer, CellMeasurer, CellMeasurerCache, List } from 'react-virtuali
 import { c } from 'ttag';
 
 import { Input } from '@proton/atoms/Input/Input';
-import Dropdown from '@proton/components/components/dropdown/Dropdown';
-import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
 import { IcGlobe } from '@proton/icons/icons/IcGlobe';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import generateUID from '@proton/utils/generateUID';
 
+import Dropdown from '../../dropdown/Dropdown';
+import DropdownButton from '../../dropdown/DropdownButton';
 import CountrySelectRow from './PhoneCountrySelectRow';
 import type { CountryOptionData } from './helper';
 

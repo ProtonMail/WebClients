@@ -1,6 +1,6 @@
-import type { FeatureTourStep, FeatureTourStepId } from '@proton/components/components/featureTour/interface';
-import StepDot from '@proton/components/components/stepDot/StepDot';
-import StepDots from '@proton/components/components/stepDots/StepDots';
+import StepDot from '../../../stepDot/StepDot';
+import StepDots from '../../../stepDots/StepDots';
+import type { FeatureTourStep, FeatureTourStepId } from '../../interface';
 
 export interface FeatureTourStepBulletProps {
     steps: FeatureTourStep[];

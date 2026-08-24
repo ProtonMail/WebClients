@@ -2,13 +2,6 @@ import { useEffect, useRef, useState } from 'react';
 
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useWelcomeFlags } from '@proton/account/welcomeFlags';
-import Loader from '@proton/components/components/loader/Loader';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import OnboardingDiscoverFeaturesStep from '@proton/components/components/onboarding/b2b/steps/OnboardingDiscoverFeaturesStep';
-import OnboardingSetupOrgStep from '@proton/components/components/onboarding/b2b/steps/OnboardingSetupOrgStep';
-import OnboardingTrialStep from '@proton/components/components/onboarding/b2b/steps/OnboardingTrialStep';
-import useApi from '@proton/components/hooks/useApi';
-import useConfig from '@proton/components/hooks/useConfig';
 import { useTrialInfo } from '@proton/payments/ui/hooks/useTrialInfo';
 import { TelemetryB2BOnboardingEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
@@ -16,6 +9,14 @@ import { APPS } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import { useFlag } from '@proton/unleash/useFlag';
+
+import useApi from '../../../hooks/useApi';
+import useConfig from '../../../hooks/useConfig';
+import Loader from '../../loader/Loader';
+import ModalTwo from '../../modalTwo/Modal';
+import OnboardingDiscoverFeaturesStep from './steps/OnboardingDiscoverFeaturesStep';
+import OnboardingSetupOrgStep from './steps/OnboardingSetupOrgStep';
+import OnboardingTrialStep from './steps/OnboardingTrialStep';
 
 import './B2BOnboardingModal.scss';
 

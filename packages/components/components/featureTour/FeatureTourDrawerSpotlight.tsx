@@ -3,10 +3,11 @@ import { useMemo, useRef } from 'react';
 import { fromUnixTime, isAfter } from 'date-fns';
 import { c } from 'ttag';
 
-import Spotlight from '@proton/components/components/spotlight/Spotlight';
-import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
-import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
 import { FeatureCode, useFeature } from '@proton/features';
+
+import useSpotlightOnFeature from '../../hooks/useSpotlightOnFeature';
+import Spotlight from '../spotlight/Spotlight';
+import useSpotlightShow from '../spotlight/useSpotlightShow';
 
 interface Props {
     children: React.ReactNode;

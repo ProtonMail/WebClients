@@ -1,8 +1,6 @@
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import SettingsLink from '@proton/components/components/link/SettingsLink';
-import useConfig from '@proton/components/hooks/useConfig';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import {
     DRIVE_SHORT_APP_NAME,
@@ -23,6 +21,8 @@ import {
     getStorageFull,
 } from '@proton/shared/lib/user/storage';
 
+import useConfig from '../../../../hooks/useConfig';
+import SettingsLink from '../../../link/SettingsLink';
 import DrawerAppSection from '../shared/DrawerAppSection';
 
 const getTitle = (details: ReturnType<typeof getCompleteSpaceDetails>) => {

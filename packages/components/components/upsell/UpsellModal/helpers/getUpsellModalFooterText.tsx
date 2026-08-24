@@ -1,9 +1,10 @@
 import { c } from 'ttag';
 
-import Price from '@proton/components/components/price/Price';
 import { PLANS } from '@proton/payments/core/constants';
 import type { Currency, PlanIDs } from '@proton/payments/core/interface';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+
+import Price from '../../../price/Price';
 
 export const getUpsellModalFooterText = ({
     planIDs,

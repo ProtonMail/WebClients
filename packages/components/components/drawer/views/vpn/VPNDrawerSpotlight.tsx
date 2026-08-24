@@ -6,13 +6,6 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useWelcomeFlags } from '@proton/account/welcomeFlags';
 import { Button } from '@proton/atoms/Button/Button';
-import Logo from '@proton/components/components/logo/Logo';
-import Spotlight from '@proton/components/components/spotlight/Spotlight';
-import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
-import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
-import useDrawer from '@proton/components/hooks/drawer/useDrawer';
-import { useSilentApi } from '@proton/components/hooks/useSilentApi';
-import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
 import { FeatureCode } from '@proton/features/interface';
 import { PLANS } from '@proton/payments/core/constants';
 import { getPlan } from '@proton/payments/core/subscription/helpers';
@@ -25,6 +18,13 @@ import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 import { SentryMailInitiatives } from '@proton/shared/lib/helpers/sentry';
 import { isUserAccountOlderThanOrEqualToDays } from '@proton/shared/lib/user/helpers';
 
+import ErrorBoundary from '../../../../containers/app/ErrorBoundary';
+import useDrawer from '../../../../hooks/drawer/useDrawer';
+import { useSilentApi } from '../../../../hooks/useSilentApi';
+import useSpotlightOnFeature from '../../../../hooks/useSpotlightOnFeature';
+import Logo from '../../../logo/Logo';
+import Spotlight from '../../../spotlight/Spotlight';
+import useSpotlightShow from '../../../spotlight/useSpotlightShow';
 import useVPNDrawerTelemetry from './useVPNDrawerTelemetry';
 
 import './drawer-vpn-view-spotlight.scss';

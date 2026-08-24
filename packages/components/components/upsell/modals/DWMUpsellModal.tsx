@@ -1,6 +1,5 @@
 import { c } from 'ttag';
 
-import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import {
     type APP_UPSELL_REF_PATH,
     DARK_WEB_MONITORING_NAME,
@@ -10,6 +9,7 @@ import {
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import illustration from '@proton/styles/assets/img/illustrations/dwm-upsell-shield.svg';
 
+import type { ModalStateProps } from '../../modalTwo/useModalState';
 import UpsellFeatureList from '../UpsellFeatureList';
 import UpsellModal from '../UpsellModal/UpsellModal';
 

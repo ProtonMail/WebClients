@@ -1,14 +1,15 @@
 import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { getAppVersion } from '@proton/components/helpers/appVersion';
-import useConfig from '@proton/components/hooks/useConfig';
-import useEarlyAccess from '@proton/components/hooks/useEarlyAccess';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { APPS_CONFIGURATION } from '@proton/shared/lib/constants';
 import { addDesktopAppVersion } from '@proton/shared/lib/desktop/version';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
+
+import { getAppVersion } from '../../helpers/appVersion';
+import useConfig from '../../hooks/useConfig';
+import useEarlyAccess from '../../hooks/useEarlyAccess';
+import useNotifications from '../../hooks/useNotifications';
 
 interface Props {
     appVersion?: string;

@@ -2,11 +2,6 @@ import type { KeyboardEvent, RefObject } from 'react';
 import { forwardRef, useCallback, useMemo, useRef, useState } from 'react';
 
 import type { Input } from '@proton/atoms/Input/Input';
-import AutocompleteList from '@proton/components/components/autocomplete/AutocompleteList';
-import { useAutocomplete, useAutocompleteFilter } from '@proton/components/components/autocomplete/useAutocomplete';
-import Option from '@proton/components/components/option/Option';
-import Marks from '@proton/components/components/text/Marks';
-import { InputField } from '@proton/components/components/v2/field/InputField';
 import { useCombinedRefs } from '@proton/hooks';
 import { IcCircleFilled } from '@proton/icons/icons/IcCircleFilled';
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
@@ -25,6 +20,11 @@ import {
     getNumberOfMembersText,
     getRecipientFromAutocompleteItem,
 } from '../../addressesAutocomplete/helper';
+import AutocompleteList from '../../autocomplete/AutocompleteList';
+import { useAutocomplete, useAutocompleteFilter } from '../../autocomplete/useAutocomplete';
+import Option from '../../option/Option';
+import Marks from '../../text/Marks';
+import { InputField } from '../field/InputField';
 import type { InputFieldProps } from '../field/InputField';
 
 interface Props extends Omit<InputFieldProps<typeof Input>, 'value' | 'onChange'> {

@@ -4,8 +4,8 @@ import { useEffect, useState } from 'react';
 import { fireEvent, queryByTestId, render, screen } from '@testing-library/react';
 
 import { Button } from '@proton/atoms/Button/Button';
-import type { HotkeyTuple } from '@proton/components/hooks/useHotkeys';
 
+import type { HotkeyTuple } from '../../hooks/useHotkeys';
 import ModalTwo from './Modal';
 
 // Mocked so that the modal renders in the same container

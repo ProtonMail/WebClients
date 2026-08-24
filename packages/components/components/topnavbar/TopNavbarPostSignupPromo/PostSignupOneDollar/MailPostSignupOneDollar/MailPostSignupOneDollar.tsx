@@ -3,16 +3,16 @@ import { useEffect, useMemo, useState } from 'react';
 import { differenceInDays, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
-import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
-import useUpsellConfig from '@proton/components/components/upsell/config/useUpsellConfig';
-import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
-import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
-import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { FeatureCode, useFeature } from '@proton/features';
 import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, SECOND, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 
+import { useSubscriptionModal } from '../../../../../containers/payments/subscription/SubscriptionModalProvider';
+import { SUBSCRIPTION_STEPS } from '../../../../../containers/payments/subscription/constants';
+import useActiveBreakpoint from '../../../../../hooks/useActiveBreakpoint';
+import useSpotlightShow from '../../../../spotlight/useSpotlightShow';
+import useUpsellConfig from '../../../../upsell/config/useUpsellConfig';
 import { SpotlightWithPromo } from '../../common/SpotlightWithPromo';
 import { usePostSignupOneDollarPromotionPrice } from '../components/usePostSignupOneDollarPromotionPrice';
 import { EXTENDED_REMINDER_DAY, LAST_REMINDER_DAY, type PostSubscriptionOneDollarOfferState } from '../interface';

@@ -1,10 +1,11 @@
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
-import type { SelectedDrawerOption } from '@proton/components/components/drawer/views/DrawerView';
-import Dropdown from '@proton/components/components/dropdown/Dropdown';
-import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
-import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
-import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import clsx from '@proton/utils/clsx';
+
+import Dropdown from '../../dropdown/Dropdown';
+import DropdownButton from '../../dropdown/DropdownButton';
+import DropdownMenu from '../../dropdown/DropdownMenu';
+import DropdownMenuButton from '../../dropdown/DropdownMenuButton';
+import type { SelectedDrawerOption } from './DrawerView';
 
 interface Props {
     title: string;

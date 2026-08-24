@@ -1,12 +1,12 @@
 import type { Alignment, FormatState, IEditor } from 'roosterjs-editor-types';
 
-import { getRoosterDirection } from '@proton/components/components/editor/rooster/helpers/initRoosterEditor';
 import type { Optional } from '@proton/shared/lib/interfaces';
 import type { DIRECTION } from '@proton/shared/lib/mail/mailSettings';
 
 import { DEFAULT_BACKGROUND, DEFAULT_FONT_COLOR } from '../constants';
 import type { ModalDefaultFontProps, ModalImageProps, ModalLinkProps } from '../hooks/interface';
 import type { EditorMetadata } from '../interface';
+import { getRoosterDirection } from '../rooster/helpers/initRoosterEditor';
 import type { Emoji } from '../toolbar/ToolbarEmojiDropdown';
 import rgbToHex from './rgbToHex';
 

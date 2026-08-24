@@ -1,10 +1,11 @@
 import { c } from 'ttag';
 
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { getPlaceholderSrc } from '@proton/mail/helpers/getPlaceholderSrc';
 import imgSuccessDark from '@proton/styles/assets/img/placeholders/lock-cool-dark.svg';
 import imgSuccessLight from '@proton/styles/assets/img/placeholders/lock-cool-light.svg';
 import imgSuccessWarm from '@proton/styles/assets/img/placeholders/lock-warm-light.svg';
+
+import { useTheme } from '../../../../../containers/themes/ThemeProvider';
 
 interface Props {
     twoFactorAuthSet: boolean;

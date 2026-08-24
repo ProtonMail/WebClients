@@ -3,10 +3,11 @@ import { forwardRef } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { ButtonGroup, TopNavbarListItemButton, useActiveBreakpoint } from '@proton/components/index';
 import { IcBuildings } from '@proton/icons/icons/IcBuildings';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import clsx from '@proton/utils/clsx';
+
+import { ButtonGroup, TopNavbarListItemButton, useActiveBreakpoint } from '../../index';
 
 type Props = {
     onGetStarted: () => void;

@@ -1,7 +1,6 @@
 import { useContext } from 'react';
 
-import Loader from '@proton/components/components/loader/Loader';
-
+import Loader from '../loader/Loader';
 import { GlobalLoaderTasksContext } from './GlobalLoaderProvider';
 
 const GlobalLoader = () => {

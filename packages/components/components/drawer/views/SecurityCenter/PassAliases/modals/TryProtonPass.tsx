@@ -3,16 +3,16 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Href } from '@proton/atoms/Href/Href';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import useApi from '@proton/components/hooks/useApi';
 import { PASS_WEB_APP_URL } from '@proton/pass/constants';
 import { TelemetrySecurityCenterEvents } from '@proton/shared/lib/api/telemetry';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import aliasSampleSvg from '@proton/styles/assets/img/illustrations/pass-aliases-alias-sample.svg';
 
+import useApi from '../../../../../../hooks/useApi';
+import type { ModalProps } from '../../../../../modalTwo/Modal';
+import ModalTwo from '../../../../../modalTwo/Modal';
+import ModalTwoContent from '../../../../../modalTwo/ModalContent';
+import ModalTwoFooter from '../../../../../modalTwo/ModalFooter';
 import { sendSecurityCenterReport } from '../../securityCenterTelemetry';
 
 interface Props {

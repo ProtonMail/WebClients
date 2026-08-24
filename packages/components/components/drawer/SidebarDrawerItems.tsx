@@ -5,14 +5,14 @@ import { c } from 'ttag';
 import { selectHasAccountSecurityIssue } from '@proton/account';
 import { NotificationDot } from '@proton/atoms/NotificationDot/NotificationDot';
 import { ThemeColor } from '@proton/colors/types';
-import SidebarListItemContent from '@proton/components/components/sidebar/SidebarListItemContent';
-import SidebarListItemContentIcon from '@proton/components/components/sidebar/SidebarListItemContentIcon';
 import type { IconName } from '@proton/icons/types';
 import { baseUseSelector } from '@proton/react-redux-store';
 import type { OpenDrawerArgs } from '@proton/shared/lib/drawer/interfaces';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 
 import useDrawer from '../../hooks/drawer/useDrawer';
+import SidebarListItemContent from '../sidebar/SidebarListItemContent';
+import SidebarListItemContentIcon from '../sidebar/SidebarListItemContentIcon';
 import useSecurityCenter from './views/SecurityCenter/useSecurityCenter';
 
 interface SidebarDrawerItemProps {

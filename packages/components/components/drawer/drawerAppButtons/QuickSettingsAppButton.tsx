@@ -1,14 +1,14 @@
 import { c } from 'ttag';
 
 import { ThemeColor } from '@proton/colors/types';
-import type { Props } from '@proton/components/components/drawer/drawerAppButtons/DrawerAppButton';
-import DrawerAppButton from '@proton/components/components/drawer/drawerAppButtons/DrawerAppButton';
-import useQuickSettingsReminders from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 import { IcCogDrawer } from '@proton/icons/icons/IcCogDrawer';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 import type { Optional } from '@proton/shared/lib/interfaces';
 
 import useDrawer from '../../../hooks/drawer/useDrawer';
+import useQuickSettingsReminders from '../../../hooks/drawer/useQuickSettingsReminders';
+import type { Props } from './DrawerAppButton';
+import DrawerAppButton from './DrawerAppButton';
 
 const QuickSettingsAppButton = ({ onClick }: Optional<Omit<Props, 'tooltipText' | 'buttonContent'>, 'onClick'>) => {
     const { toggleDrawerApp } = useDrawer();

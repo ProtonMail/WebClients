@@ -1,7 +1,8 @@
 import type { ComponentPropsWithoutRef, ReactNode } from 'react';
 
-import Info from '@proton/components/components/link/Info';
 import clsx from '@proton/utils/clsx';
+
+import Info from '../link/Info';
 
 interface StripedItemProps extends ComponentPropsWithoutRef<'li'> {
     left: ReactNode;

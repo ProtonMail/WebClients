@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
-import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import { COUPON_CODES, CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
+import { SUBSCRIPTION_STEPS } from '../../../../../containers/payments/subscription/constants';
 import type { SupportedPlans } from './interface';
 
 export const defaultOfferUpsellConfig = {

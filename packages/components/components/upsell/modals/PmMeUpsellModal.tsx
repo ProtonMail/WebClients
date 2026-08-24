@@ -1,13 +1,14 @@
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
-import UpsellFeatureList from '@proton/components/components/upsell/UpsellFeatureList';
-import UpsellModal from '@proton/components/components/upsell/UpsellModal/UpsellModal';
 import { MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import type { Optional } from '@proton/shared/lib/interfaces';
 import pmMeImg from '@proton/styles/assets/img/illustrations/new-upsells-img/pm-me.svg';
+
+import type { ModalStateProps } from '../../modalTwo/useModalState';
+import UpsellFeatureList from '../UpsellFeatureList';
+import UpsellModal from '../UpsellModal/UpsellModal';
 
 interface Props {
     modalProps: ModalStateProps;

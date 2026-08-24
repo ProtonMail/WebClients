@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { Feature } from '@proton/components/containers/offers/interface';
+import type { Feature } from '../../../../../containers/offers/interface';
 
 const getUnlimitedOfferStorage = () => {
     return { name: c('Offer feature').t`500 GB secure storage` };

@@ -5,18 +5,18 @@ import { c, msgid } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Kbd } from '@proton/atoms/Kbd/Kbd';
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
-import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
-import Icon from '@proton/components/components/icon/Icon';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import Mark from '@proton/components/components/text/Mark';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import type { IconName } from '@proton/icons/types';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import clsx from '@proton/utils/clsx';
 
+import DropdownMenuButton from '../dropdown/DropdownMenuButton';
 import Form from '../form/Form';
+import Icon from '../icon/Icon';
+import type { ModalProps } from '../modalTwo/Modal';
+import ModalTwo from '../modalTwo/Modal';
+import Mark from '../text/Mark';
+import InputFieldTwo from '../v2/field/InputField';
 
 import './Commander.scss';
 

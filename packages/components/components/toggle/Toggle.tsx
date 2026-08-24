@@ -2,9 +2,10 @@ import type { ChangeEvent, DetailedHTMLProps, InputHTMLAttributes, Ref } from 'r
 import { forwardRef } from 'react';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import Icon from '@proton/components/components/icon/Icon';
 import type { IconName } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
+
+import Icon from '../icon/Icon';
 
 export interface ToggleProps extends DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
     loading?: boolean;

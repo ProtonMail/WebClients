@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 
 import { usePlans } from '@proton/account/plans/hooks';
-import { useAutomaticCurrency } from '@proton/components/payments/client-extensions';
-import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import useLoading from '@proton/hooks/useLoading';
 import { getCheckoutUi } from '@proton/payments/core/checkout';
 import { COUPON_CODES, CYCLE, type PLANS } from '@proton/payments/core/constants';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
 
+import { useAutomaticCurrency } from '../../../../../payments/client-extensions/index';
+import { usePaymentsApi } from '../../../../../payments/react-extensions/usePaymentsApi';
 import type { PriceData } from '../helpers/interface';
 import { roundToLower, roundToUpper } from '../helpers/paidUserNudgeHelper';
 

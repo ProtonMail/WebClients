@@ -3,14 +3,6 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
-import AppLink from '@proton/components/components/link/AppLink';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import { useKeyTransparencyContext } from '@proton/components/containers/keyTransparency/useKeyTransparencyContext';
-import useConfig from '@proton/components/hooks/useConfig';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
 import {
@@ -25,6 +17,15 @@ import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { dateLocale } from '@proton/shared/lib/i18n';
+
+import { useKeyTransparencyContext } from '../../containers/keyTransparency/useKeyTransparencyContext';
+import useConfig from '../../hooks/useConfig';
+import AppLink from '../link/AppLink';
+import type { ModalProps } from '../modalTwo/Modal';
+import ModalTwo from '../modalTwo/Modal';
+import ModalTwoContent from '../modalTwo/ModalContent';
+import ModalTwoFooter from '../modalTwo/ModalFooter';
+import ModalTwoHeader from '../modalTwo/ModalHeader';
 
 const uniqueByEmail = (failedAudits: LocalStorageAuditResult[]): LocalStorageAuditResult[] => {
     const seen = new Set<string>();

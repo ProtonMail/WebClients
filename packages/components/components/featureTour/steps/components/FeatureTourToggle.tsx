@@ -3,9 +3,10 @@ import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import Label from '@proton/components/components/label/Label';
-import Toggle from '@proton/components/components/toggle/Toggle';
 import generateUID from '@proton/utils/generateUID';
+
+import Label from '../../../label/Label';
+import Toggle from '../../../toggle/Toggle';
 
 /**
  * Allow to toggle a feature on/off
