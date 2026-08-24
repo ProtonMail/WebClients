@@ -40,8 +40,12 @@ import {
     getPersistedVirtualBackground,
     persistVirtualBackground,
 } from '../../../utils/virtualBackgrounds/virtualBackgroundPersistance';
-import type { BackgroundEffect, VirtualBackgroundId } from '../../../utils/virtualBackgrounds/virtualBackgrounds';
-import { getVirtualBackgroundColor } from '../../../utils/virtualBackgrounds/virtualBackgrounds';
+import type {
+    BackgroundEffect,
+    VirtualBackgroundId,
+    VirtualBackgroundSource,
+} from '../../../utils/virtualBackgrounds/virtualBackgrounds';
+import { getVirtualBackgroundSource } from '../../../utils/virtualBackgrounds/virtualBackgrounds';
 import type {
     BackgroundEffectInitializationState,
     InitializingBackgroundEffect,
@@ -172,9 +176,8 @@ export const useVideoToggle = ({
         }
     });
 
-    const ensureCustomBackgroundProcessor = useStableCallback(async (backgroundColor: string) => {
-        const creation =
-            customBackgroundProcessorCreationRef.current ?? createCustomBackgroundProcessor({ backgroundColor });
+    const ensureCustomBackgroundProcessor = useStableCallback(async (source: VirtualBackgroundSource) => {
+        const creation = customBackgroundProcessorCreationRef.current ?? createCustomBackgroundProcessor(source);
         customBackgroundProcessorCreationRef.current = creation;
 
         let processor: CustomBackgroundProcessor | null = null;
@@ -189,7 +192,7 @@ export const useVideoToggle = ({
 
         customBackgroundProcessorInstanceRef.current = processor;
 
-        await processor?.setBackground?.({ backgroundColor });
+        await processor?.setBackground?.(source);
 
         return processor;
     });
@@ -435,8 +438,8 @@ export const useVideoToggle = ({
                 return;
             }
 
-            const backgroundColor = getVirtualBackgroundColor(effect);
-            const customProcessor = backgroundColor ? await ensureCustomBackgroundProcessor(backgroundColor) : null;
+            const source = getVirtualBackgroundSource(effect);
+            const customProcessor = source ? await ensureCustomBackgroundProcessor(source) : null;
 
             if (!customProcessor) {
                 reportError('Failed to create the virtual background processor', { context: { effect } });
@@ -583,15 +586,13 @@ export const useVideoToggle = ({
 
     useEffect(() => {
         const persistedVirtualBackground = isVirtualBackgroundEnabled ? getPersistedVirtualBackground() : null;
-        const backgroundColor = persistedVirtualBackground
-            ? getVirtualBackgroundColor(persistedVirtualBackground)
-            : undefined;
+        const source = persistedVirtualBackground ? getVirtualBackgroundSource(persistedVirtualBackground) : undefined;
 
-        if (!backgroundColor) {
+        if (!source) {
             return;
         }
 
-        void ensureCustomBackgroundProcessor(backgroundColor);
+        void ensureCustomBackgroundProcessor(source);
     }, [ensureCustomBackgroundProcessor, isVirtualBackgroundEnabled]);
 
     useEffect(() => {

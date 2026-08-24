@@ -1,4 +1,5 @@
 import type { ConnectionAnnouncementState } from '../types';
+import { useBackgroundEffectAnnouncements } from './useBackgroundEffectAnnouncements';
 import { useChatAnnouncements } from './useChatAnnouncements';
 import { useConnectionAnnouncements } from './useConnectionAnnouncements';
 import { useHandRaiseAnnouncements } from './useHandRaiseAnnouncements';
@@ -27,4 +28,5 @@ export const useAnnouncementSources = ({ connectionState, isUsingTurnRelay }: An
     useScreenShareAnnouncements();
     useMeetingTimeoutAnnouncements();
     useTurnRelayAnnouncements(isUsingTurnRelay);
+    useBackgroundEffectAnnouncements();
 };

@@ -17,7 +17,7 @@ export const SideBarSection = ({ title, children, className }: SideBarSectionPro
             )}
             aria-label={title}
         >
-            <h3 className="text-rg color-norm m-0">{title}</h3>
+            <h3 className="text-rg color-norm m-0 text-semibold">{title}</h3>
 
             {children}
         </section>

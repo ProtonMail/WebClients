@@ -3,6 +3,7 @@ import { afterEach, describe, expect, it, vi } from 'vitest';
 
 import { selectSelectedCameraId } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
 
+import { getVirtualBackgroundSource } from '../../../utils/virtualBackgrounds/virtualBackgrounds';
 import { useVideoToggle } from './useVideoToggle';
 
 vi.mock('livekit-client', () => ({
@@ -243,7 +244,7 @@ describe('useVideoToggle — background effects', () => {
         expect(result.current.isBackgroundBlurSupported).toBe(false);
     });
 
-    it('applies the picked virtual background to the camera track', async () => {
+    it('applies the full-size image of the picked background to the camera track', async () => {
         const customProcessor = createCustomProcessor();
         processorMocks.createCustomBackgroundProcessor.mockResolvedValue(customProcessor);
         processorMocks.ensureBackgroundProcessor.mockImplementation((_track, processor) => processor);
@@ -251,12 +252,17 @@ describe('useVideoToggle — background effects', () => {
         const { result } = setup(false);
 
         await act(async () => {
-            await result.current.selectBackgroundEffect('green');
+            await result.current.selectBackgroundEffect('office');
         });
 
-        expect(processorMocks.createCustomBackgroundProcessor).toHaveBeenCalledWith({ backgroundColor: '#51cc52' });
+        const source = processorMocks.createCustomBackgroundProcessor.mock.calls[0][0] as { imageUrl?: string };
+
+        expect(source.imageUrl).toContain('01-modern-office');
+        // The full-size image and its thumbnail share a basename, so the directory is what
+        // tells them apart: the picker's thumbnail must never reach the processor.
+        expect(source.imageUrl).not.toContain('thumbnails');
         expect(customProcessor.enable).toHaveBeenCalled();
-        expect(result.current.virtualBackgroundId).toBe('green');
+        expect(result.current.virtualBackgroundId).toBe('office');
     });
 
     it('reports a virtual background, not blur, as the effect being initialized', async () => {
@@ -267,7 +273,7 @@ describe('useVideoToggle — background effects', () => {
         const { result, trackBackgroundEffectInitialization } = setup(false);
 
         await act(async () => {
-            await result.current.selectBackgroundEffect('blue');
+            await result.current.selectBackgroundEffect('office');
         });
 
         expect(trackBackgroundEffectInitialization).toHaveBeenCalledWith('virtualBackground', expect.any(Function));
@@ -281,18 +287,18 @@ describe('useVideoToggle — background effects', () => {
         const { result } = setup(false);
 
         await act(async () => {
-            const first = result.current.selectBackgroundEffect('purple');
-            const second = result.current.selectBackgroundEffect('blue');
+            const first = result.current.selectBackgroundEffect('proton');
+            const second = result.current.selectBackgroundEffect('office');
 
             await Promise.all([first, second]);
         });
 
-        expect(customProcessor.setBackground).toHaveBeenLastCalledWith({ backgroundColor: '#00bbff' });
-        expect(result.current.virtualBackgroundId).toBe('blue');
+        expect(customProcessor.setBackground).toHaveBeenLastCalledWith(getVirtualBackgroundSource('office'));
+        expect(result.current.virtualBackgroundId).toBe('office');
         expect(result.current.pendingBackgroundEffect).toBeNull();
     });
 
-    it('swaps the color on the running processor instead of building a new one', async () => {
+    it('swaps the image on the running processor instead of building a new one', async () => {
         const customProcessor = createCustomProcessor();
         processorMocks.createCustomBackgroundProcessor.mockResolvedValue(customProcessor);
         processorMocks.ensureBackgroundProcessor.mockImplementation((_track, processor) => processor);
@@ -303,22 +309,22 @@ describe('useVideoToggle — background effects', () => {
         track.getProcessor.mockReturnValue(undefined);
 
         await act(async () => {
-            await result.current.selectBackgroundEffect('purple');
+            await result.current.selectBackgroundEffect('proton');
         });
 
         expect(rawFrameToggles).toEqual([false, true]);
 
-        // The processor now stays on the track, so switching colors must reuse it.
+        // The processor now stays on the track, so switching images must reuse it.
         track.getProcessor.mockReturnValue(customProcessor);
 
         await act(async () => {
-            await result.current.selectBackgroundEffect('green');
+            await result.current.selectBackgroundEffect('mountain');
         });
 
         expect(processorMocks.createCustomBackgroundProcessor).toHaveBeenCalledTimes(1);
-        expect(customProcessor.setBackground).toHaveBeenLastCalledWith({ backgroundColor: '#51cc52' });
+        expect(customProcessor.setBackground).toHaveBeenLastCalledWith(getVirtualBackgroundSource('mountain'));
         expect(track.stopProcessor).not.toHaveBeenCalled();
-        // Blanking the camera is only needed while swapping, so a color change must not flicker.
+        // Blanking the camera is only needed while swapping, so an image change must not flicker.
         expect(rawFrameToggles).toEqual([false, true]);
     });
 
@@ -330,7 +336,7 @@ describe('useVideoToggle — background effects', () => {
         const { result } = setup(false);
 
         await act(async () => {
-            await result.current.selectBackgroundEffect('orange');
+            await result.current.selectBackgroundEffect('coffee');
         });
         await act(async () => {
             await result.current.selectBackgroundEffect('none');
@@ -373,7 +379,7 @@ describe('useVideoToggle — background effects', () => {
         await act(async () => {});
 
         await act(async () => {
-            await result.current.selectBackgroundEffect('purple');
+            await result.current.selectBackgroundEffect('proton');
         });
 
         expect(customProcessor.enable).toHaveBeenCalled();
@@ -440,7 +446,7 @@ describe('useVideoToggle — background effects', () => {
         const { result } = setup(false);
 
         await act(async () => {
-            await result.current.selectBackgroundEffect('purple');
+            await result.current.selectBackgroundEffect('proton');
         });
 
         expect(customProcessor.enable).not.toHaveBeenCalled();
@@ -448,7 +454,7 @@ describe('useVideoToggle — background effects', () => {
         processorMocks.ensureBackgroundProcessor.mockImplementation((_track, processor) => processor);
 
         await act(async () => {
-            await result.current.selectBackgroundEffect('purple');
+            await result.current.selectBackgroundEffect('proton');
         });
 
         expect(customProcessor.enable).toHaveBeenCalled();
@@ -476,7 +482,7 @@ describe('useVideoToggle — background effects', () => {
         processorMocks.ensureBackgroundProcessor.mockResolvedValueOnce(null);
 
         await act(async () => {
-            await result.current.selectBackgroundEffect('green');
+            await result.current.selectBackgroundEffect('mountain');
         });
 
         // Blur is gone from the track, so continuing to report it would show the camera as
@@ -529,7 +535,7 @@ describe('useVideoToggle — background effects', () => {
 
             await blurAttachStarted;
 
-            await result.current.selectBackgroundEffect('green');
+            await result.current.selectBackgroundEffect('mountain');
 
             releaseBlurAttach();
 
@@ -538,14 +544,14 @@ describe('useVideoToggle — background effects', () => {
 
         // The attach was only deferred, so treating it as a failure would drop the user's pick and
         // claim the effect could not be initialized.
-        expect(result.current.virtualBackgroundId).toBe('green');
+        expect(result.current.virtualBackgroundId).toBe('mountain');
         expect(result.current.backgroundBlur).toBe(false);
         expect(reportBackgroundEffectFailure).not.toHaveBeenCalled();
     });
 
     it('ignores a persisted virtual background once the feature is turned off', async () => {
         unleashMocks.useFlag.mockReturnValue(false);
-        virtualBackgroundPersistenceMocks.getPersistedVirtualBackground.mockReturnValue('purple');
+        virtualBackgroundPersistenceMocks.getPersistedVirtualBackground.mockReturnValue('proton');
 
         const customProcessor = createCustomProcessor();
         processorMocks.createCustomBackgroundProcessor.mockResolvedValue(customProcessor);
@@ -562,7 +568,7 @@ describe('useVideoToggle — background effects', () => {
         expect(result.current.appliedBackgroundEffect).toBe('none');
 
         await act(async () => {
-            await result.current.selectBackgroundEffect('blue');
+            await result.current.selectBackgroundEffect('office');
         });
 
         expect(processorMocks.createCustomBackgroundProcessor).not.toHaveBeenCalled();
