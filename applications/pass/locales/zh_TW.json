@@ -1028,9 +1028,6 @@
       "Domain could not be verified. Please make sure you added the correct DNS records": [
         "無法驗證網域。請確保您已新增正確的 DNS 記錄"
       ],
-      "Domain not available, try again later": [
-        "網域無法使用，請稍後再試"
-      ],
       "Editing item failed": [
         "修改項目失敗"
       ],
@@ -2063,9 +2060,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "移動全部於\"${ payload.content.name }\"的項目"
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "將項目移至另一個保管庫將會清除其安全連結。"
-      ],
       "Moving items": [
         "正在移動檔案"
       ],
@@ -2267,14 +2261,8 @@
       "Please follow the steps below to set up your domain.": [
         "請按照以下步驟來設定您的網域。"
       ],
-      "Please keep ${ PASS_APP_NAME } open so the clipboard can be automatically cleared.": [
-        "請保持 ${ PASS_APP_NAME } 開啟，以便系統自動清除剪貼簿。"
-      ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "您的資料正在匯入中，請保持此視窗開啟。此程序可能需要幾分鐘。"
-      ],
-      "Please keep your browser open so the clipboard can be automatically cleared.": [
-        "請保持瀏覽器開啟，以便系統自動清除剪貼簿。"
       ],
       "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
         "請確保先前作用中的視窗即為您要自動鍵入之處，且游標已聚焦於登入欄位。"

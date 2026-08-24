@@ -908,7 +908,7 @@
         "Nämä kohteet pysyvät vaarassa"
       ],
       "These vaults will not be accessible and their content won’t be available to Search or Autofill.": [
-        "Nämä holvit eivät ole käytettävissä, eikä niiden sisältö ole haun tai automaattitäytön käytettävissä."
+        "Nämä holvit eivät ole käytettävissä, eikä niiden sisältö ole tavoitettavissa haun tai automaattitäytön välityksellä."
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Tämä tili on vaarassa. Käy vaihtamassa salasanasi palvelun tiliasetuksista."
@@ -1050,9 +1050,6 @@
       ],
       "Domain could not be verified. Please make sure you added the correct DNS records": [
         "Verkkotunnusta ei voitu vahvistaa. Varmista, että olet lisännyt oikeat DNS-tietueet"
-      ],
-      "Domain not available, try again later": [
-        "Verkkotunnusta ei tavoiteta. Yritä myöhemmin uudelleen"
       ],
       "Editing item failed": [
         "Kohteen muokkaus epäonnistui"
@@ -2117,7 +2114,8 @@
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Kohteen siirtäminen toiseen holviin pyyhkii sen suojatut linkit."
+        "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
+        "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
       ],
       "Moving items": [
         "Siirretään kohteita"
@@ -2321,14 +2319,8 @@
       "Please follow the steps below to set up your domain.": [
         "Seuraa alla olevia ohjeita verkkotunnuksesi määrittämiseksi."
       ],
-      "Please keep ${ PASS_APP_NAME } open so the clipboard can be automatically cleared.": [
-        "Pitäkää ${ PASS_APP_NAME } auki, jotta leikepöytä voidaan tyhjentää automaattisesti."
-      ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Pidä tämä ikkuna auki, kun tietojasi tuodaan. Tämä prosessi voi kestää muutaman minuutin."
-      ],
-      "Please keep your browser open so the clipboard can be automatically cleared.": [
-        "Pitäkää selain auki, jotta leikepöytä voidaan tyhjentää automaattisesti."
       ],
       "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
         "Varmistakaa, että aiemmin aktiivinen ikkuna on se, johon haluatte automaattisen kirjoituksen tapahtuvan, ja että kohdistimenne oli asetettu kirjautumiskenttään."
@@ -5105,7 +5097,7 @@
         "Paljastuneet tietosi"
       ],
       "Your new access token": [
-        "Uusi käyttötunnisteenne"
+        "Uusi käyttötunnisteesi"
       ],
       "Your vault is empty": [
         "Holvisi on tyhjä"

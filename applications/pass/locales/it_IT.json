@@ -1051,9 +1051,6 @@
       "Domain could not be verified. Please make sure you added the correct DNS records": [
         "Impossibile verificare il dominio. Assicurati di aver aggiunto i record DNS corretti"
       ],
-      "Domain not available, try again later": [
-        "Dominio non disponibile, riprovare più tardi"
-      ],
       "Editing item failed": [
         "Modifica dell'elemento non riuscita"
       ],
@@ -2117,7 +2114,8 @@
         "Spostamento di tutti gli elementi da \"${ payload.content.name }\" in corso"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri."
+        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri.",
+        "Spostare degli elementi in un'altra cassaforte cancellerà i loro link sicuri."
       ],
       "Moving items": [
         "Spostamento degli elementi"
@@ -2321,14 +2319,8 @@
       "Please follow the steps below to set up your domain.": [
         "Segui i passaggi seguenti per configurare il tuo dominio."
       ],
-      "Please keep ${ PASS_APP_NAME } open so the clipboard can be automatically cleared.": [
-        "Per favore, tieni ${ PASS_APP_NAME } aperto così che gli appunti possano essere automaticamente puliti."
-      ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Tieni aperta questa finestra durante l'importazione dei dati. Questo processo potrebbe richiedere alcuni minuti."
-      ],
-      "Please keep your browser open so the clipboard can be automatically cleared.": [
-        "Per favore, tieni il tuo browser aperto così che gli appunti possano essere automaticamente puliti."
       ],
       "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
         "Assicurati che la finestra precedentemente attiva sia quella in cui desideri digitare automaticamente e che il tuo cursore fosse posizionato nel campo di login."

@@ -1043,9 +1043,6 @@
       "Domain could not be verified. Please make sure you added the correct DNS records": [
         "Домен не вдалося перевірити. Будь ласка, переконайтеся, що ви додали правильні DNS-записи"
       ],
-      "Domain not available, try again later": [
-        "Домен недоступний, повторіть спробу пізніше"
-      ],
       "Editing item failed": [
         "Помилка редагування елемента"
       ],
@@ -2141,9 +2138,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Переміщення всіх елементів із ${ payload.content.name }"
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Переміщення елемента до іншого сховища призведе до стирання його безпечних посилань."
-      ],
       "Moving items": [
         "Переміщення елементів"
       ],
@@ -2348,14 +2342,8 @@
       "Please follow the steps below to set up your domain.": [
         "Будь ласка, виконайте наведені нижче кроки, щоб налаштувати свій домен."
       ],
-      "Please keep ${ PASS_APP_NAME } open so the clipboard can be automatically cleared.": [
-        "Тримайте ${ PASS_APP_NAME } відкритим, щоб буфер обміну міг очиститися автоматично."
-      ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Будь ласка, тримайте це вікно відкритим, поки ваші дані імпортуються. Цей процес може тривати кілька хвилин."
-      ],
-      "Please keep your browser open so the clipboard can be automatically cleared.": [
-        "Тримайте браузер відкритим, щоб буфер обміну міг очиститися автоматично."
       ],
       "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
         "Переконайтеся, що раніше активне вікно є саме тим, де ви хочете використати автонабір, а курсор сфокусовано на полі входу."
