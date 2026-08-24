@@ -1104,6 +1104,9 @@
       "Report an issue": [
         "Signaler un problème"
       ],
+      "Retry": [
+        "Réessayez"
+      ],
       "Save": [
         "Enregistrer"
       ],
@@ -1599,6 +1602,9 @@
       ],
       "You've reached a usage limit. Please try again later.": [
         "Vous avez atteint une limite d'utilisation. Veuillez réessayer ultérieurement."
+      ],
+      "Your chats can't be saved right now. Anything you write will be lost if you reload the page.": [
+        "Pour l'instant, vos conversations ne peuvent pas être enregistrées. Tout ce que vous écrivez sera perdu si vous actualisez la page."
       ]
     },
     "collider_2025: Error (file processing)": {
@@ -2198,6 +2204,9 @@
       ],
       "This chat will be removed tomorrow unless you upgrade to ${ LUMO_SHORT_APP_NAME } Plus.": [
         "Cette conversation sera supprimée demain à moins que vous ne passiez à ${ LUMO_SHORT_APP_NAME } Plus."
+      ],
+      "This conversation contains many images. ${ LUMO_SHORT_APP_NAME } will only see the most recent ${ MAX_IMAGES_PER_REQUEST } images.": [
+        "Cette conversation contient de nombreuses images. ${ LUMO_SHORT_APP_NAME } ne verra que les ${ MAX_IMAGES_PER_REQUEST } images les plus récentes."
       ],
       "This folder is empty": [
         "Ce dossier est vide"
@@ -3733,6 +3742,9 @@
       "Link files from ${ DRIVE_APP_NAME } or upload from your computer.": [
         "Liez des fichiers depuis ${ DRIVE_APP_NAME } ou importez depuis votre ordinateur."
       ],
+      "Loading…": [
+        "Chargement en cours…"
+      ],
       "Lockdown Mode is enabled on your device": [
         "Le mode verrouillage est activé sur votre appareil."
       ],
@@ -3882,9 +3894,6 @@
       "Raw speed distilled into a single frame — the F1 car tearing across tarmac with motion blur streaking everything behind it, sparks flickering off the surface and carbon fiber catching the light at that visceral low angle right down on the asphalt.": [
         "La vitesse à l'état pur condensée en une seule image : la monoplace de F1 filant à toute allure sur le bitume, laissant derrière elle un sillage flou, des étincelles jaillissant de la surface et la fibre de carbone captant la lumière sous cet angle plongeant, au ras de l'asphalte, qui fait vibrer les sens."
       ],
-      "The word \"FLUORISH\" formed entirely from lush green grass and natural vegetation, each letter crafted from dense fresh blades of grass, realistic organic texture, vibrant green tones, intricate botanical details, photorealistic nature typography, soft natural sunlight, subtle shadows, highly detailed eco-friendly design, isolated on a clean background, premium 3D lettering, ultra-realistic, 8k, sharp focus, professional advertising quality.": [
-        "Le mot « FLUORISH » est entièrement composé d’herbe verte luxuriante et de végétation naturelle ; chaque lettre est façonnée à partir de brins d’herbe denses et frais, avec une texture organique réaliste, des tons verts éclatants, des détails botaniques complexes, une typographie naturelle photoréaliste, une lumière naturelle douce, des ombres subtiles, un design écologique très détaillé, isolé sur un fond épuré, un lettrage 3D haut de gamme, ultra-réaliste, en 8K, avec une mise au point nette, d’une qualité publicitaire professionnelle."
-      ],
       "Top-down minimalist aerial shot of a long orange surfboard floating on clear blue water. The water has rolling, curved wave contours and bright, shimmering caustic light patterns. A soft shadow is cast directly beneath the board, creating a clean, serene, and modern aesthetic.": [
         "Plan aérien minimaliste pris en plongée d'une longue planche de surf orange flottant sur une eau d'un bleu limpide. L'eau présente des contours ondulés et courbes, ainsi que des motifs lumineux brillants et chatoyants. Une ombre douce se projette juste sous la planche, créant une esthétique épurée, sereine et moderne."
       ]
@@ -3909,10 +3918,10 @@
         "Thème de la carte"
       ],
       "chat": [
-        "discussion"
+        "chat"
       ],
       "chats": [
-        "discussions"
+        "chats"
       ],
       "Conversation starters (optional)": [
         "Démarrages de conversation (facultatif)"
@@ -4108,7 +4117,7 @@
         "Planifiez des objectifs financiers avec des informations personnalisées"
       ],
       "Practice conversations, learn grammar, and build vocabulary in your target language": [
-        "Pratiquez des conversations, apprenez la grammaire et développez votre vocabulaire dans la langue de votre choix."
+        "Entraînez-vous aux conversations, apprenez la grammaire et développez votre vocabulaire dans la langue de votre choix."
       ],
       "Research & Analysis Partner": [
         "Partenaire de recherche et d'analyse"
@@ -6583,6 +6592,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si vous ne trouvez pas le message dans votre boite de réception, vérifiez votre dossier Indésirables/spam."
       ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Si vous avez perdu l'accès à votre application d'authentification, vous pouvez utiliser 1 des 16 codes de récupération de sauvegarde fournis lors de la configuration de l'authentification à deux facteurs. ${ learnMoreLink }"
+      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "En passant à un abonnement inférieur, vous perdrez l'accès aux fonctionnalités payantes de ${ MAIL_APP_NAME } et ${ VPN_APP_NAME }."
       ],
@@ -7365,6 +7377,9 @@
       "Export unsynced only (JSON)": [
         "Exporter uniquement les données non synchronisées (JSON)"
       ],
+      "Forces either unavailable state, without burning a real quota or waiting for a flag rollout. \"unavailable_limit_reached\" pins the Max pool to 0 remaining, exactly as the backend would after the weekly cap; \"unavailable_high_load\" switches off the availability flag. Both disable the Max row in the picker, fall the selection back to Lite, and push maxModelAvailability to native. Persists across reloads until switched off.": [
+        "Ces deux états « indisponible » ne nécessitent ni utilisation d’un quota réel ni attente d’un déploiement d’indicateur. « unavailable_limit_reached » fixe le pool Max à 0 élément restant, exactement comme le ferait le backend après le plafond hebdomadaire ; « unavailable_high_load » désactive l’indicateur de disponibilité. Les deux désactivent la ligne Max dans le sélecteur, ramènent la sélection à Lite et définissent maxModelAvailability sur native. Ces modifications persistent d’un rechargement à l’autre jusqu’à ce qu’elles soient désactivées."
+      ],
       "Forces the inline composer banner into \"approaching\" or \"at limit\" state so you can preview it in any context.": [
         "Ceci force la bannière du compositeur en ligne à passer à l'état « en approche » ou « à la limite » afin que vous puissiez la prévisualiser dans n'importe quel contexte."
       ],
@@ -7392,6 +7407,9 @@
       "max": [
         "max."
       ],
+      "Max model availability": [
+        "Disponibilité maximale des modèles"
+      ],
       "Memory": [
         "Mémoire"
       ],
@@ -7400,6 +7418,9 @@
       ],
       "Messages rejected by the backend (e.g. limits) remain locally in IndexedDB with a dirty flag. Exports decrypt content from the in-memory Redux state and tag unsynced messages with _dirty: true. Space encryption keys are stripped.": [
         "Les messages rejetés par le backend (par exemple, en raison de limites) restent stockés localement dans IndexedDB avec un indicateur « dirty ». Les exportations déchiffrent le contenu de l'état Redux en mémoire et marquent les messages non synchronisés avec _dirty: true. Les clés de chiffrement d'espace sont supprimées."
+      ],
+      "Model usage limits": [
+        "Limites d'utilisation du modèle"
       ],
       "Native bridge: onLimitReachedError": [
         "Native bridge: onLimitReachedError"
@@ -7436,6 +7457,9 @@
       ],
       "Refresh": [
         "Actualiser"
+      ],
+      "Remaining (Max)": [
+        "Restant (Maximum)"
       ],
       "Render time": [
         "Temps de rendu"
@@ -9237,6 +9261,79 @@
         "OFFRE ESTIVALE"
       ]
     },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "Profitez de l'offre"
+      ],
+      "Special Offer": [
+        "Offre spéciale"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "/month": [
+        "/mois"
+      ],
+      "2 individual accounts": [
+        "2 comptes individuels"
+      ],
+      "2 TB of secure storage": [
+        "2 To d'espace de stockage sécurisé"
+      ],
+      "3 TB of secure storage": [
+        "3 To d'espace de stockage sécurisé"
+      ],
+      "500 GB of secure storage": [
+        "500 Go d'espace de stockage sécurisé"
+      ],
+      "6 individual accounts": [
+        "6 comptes individuels"
+      ],
+      "Advanced protection against cyber threats": [
+        "Protection avancée contre les cybermenaces"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Les réductions sont calculées sur la base du tarif mensuel standard. Votre abonnement sera renouvelé au tarif annuel standard à la fin du cycle de facturation."
+      ]
+    },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, et ${ VPN_SHORT_APP_NAME } Premium"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, et ${ CALENDAR_SHORT_APP_NAME } Premium"
+      ]
+    },
+    "q3campaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } Premium"
+      ]
+    },
+    "q3campaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } Premium"
+      ]
+    },
+    "q3campaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, et ${ CALENDAR_SHORT_APP_NAME } Premium"
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "pour 12 mois"
+      ],
+      "One plan, full power": [
+        "Un abonnement, pleine puissance"
+      ],
+      "One plan, max savings": [
+        "Un abonnement, un maximum d'économies"
+      ],
+      "One plan, more power": [
+        "Un seul abonnement, plus de puissance"
+      ]
+    },
     "Role": {
       "Organization Admin": [
         "Administrateur de l'organisation"
@@ -9970,6 +10067,9 @@
       ],
       "Select a plan": [
         "Choisir un abonnement"
+      ],
+      "September Sale": [
+        "Soldes de septembre"
       ],
       "Set recovery methods": [
         "Définir les méthodes de récupération"

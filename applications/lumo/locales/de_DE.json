@@ -1107,6 +1107,9 @@
       "Report an issue": [
         "Ein Problem melden"
       ],
+      "Retry": [
+        "Wiederholen"
+      ],
       "Save": [
         "Speichern"
       ],
@@ -1602,6 +1605,9 @@
       ],
       "You've reached a usage limit. Please try again later.": [
         "Du hast ein Nutzungslimit erreicht. Bitte versuche es später noch einmal."
+      ],
+      "Your chats can't be saved right now. Anything you write will be lost if you reload the page.": [
+        "Deine Chats können derzeit nicht gespeichert werden. Alles, was du schreibst, geht verloren, wenn du die Seite neu lädst."
       ]
     },
     "collider_2025: Error (file processing)": {
@@ -2204,6 +2210,9 @@
       ],
       "This chat will be removed tomorrow unless you upgrade to ${ LUMO_SHORT_APP_NAME } Plus.": [
         "Dieser Chat wird morgen entfernt, es sei denn, du upgradest auf ${ LUMO_SHORT_APP_NAME } Plus."
+      ],
+      "This conversation contains many images. ${ LUMO_SHORT_APP_NAME } will only see the most recent ${ MAX_IMAGES_PER_REQUEST } images.": [
+        "Diese Unterhaltung enthält viele Bilder. ${ LUMO_SHORT_APP_NAME } zeigt nur die letzten ${ MAX_IMAGES_PER_REQUEST } Bilder an."
       ],
       "This file was removed from project knowledge.": [
         "Diese Datei wurde aus dem Projekt-Wissensbestand entfernt."
@@ -3622,7 +3631,7 @@
         "Unbegrenzte benutzerdefinierte ${ LUMO_SHORT_APP_NAME }s"
       ],
       "Unlimited projects": [
-        "Unbegrenzte Anzahl Projekte"
+        "Unbegrenzte Projekte"
       ]
     },
     "collider_2025:Filter": {
@@ -3859,6 +3868,9 @@
       "Link files from ${ DRIVE_APP_NAME } or upload from your computer.": [
         "Dateien von ${ DRIVE_APP_NAME } verknüpfen oder vom Computer hochladen."
       ],
+      "Loading…": [
+        "Wird geladen…"
+      ],
       "Lockdown Mode is enabled on your device": [
         "Der Sperrmodus ist auf deinem Gerät aktiviert"
       ],
@@ -3890,10 +3902,10 @@
         "Wird verarbeitet..."
       ],
       "Projects help you organize conversations with custom instructions and files.": [
-        "Mit Projekten kannst du Unterhaltungen mithilfe von benutzerdefinierten Anweisungen und Dateien organisieren."
+        "Projekten helfen dir, Unterhaltungen mit benutzerdefinierten Anweisungen und Dateien zu organisieren."
       ],
       "Projects help you organize conversations with custom instructions and files. Sign in or create a free account to get started.": [
-        "Mit Projekten können Unterhaltungen mithilfe von benutzerdefinierten Anweisungen und Dateien organisieren. Melde dich an oder erstelle ein kostenloses Konto, um loszulegen."
+        "Projekten helfen dir, Unterhaltungen mit benutzerdefinierten Anweisungen und Dateien zu organisieren. Melde dich an oder erstelle ein kostenloses Konto, um loszulegen."
       ],
       "red flags": [
         "Warnsignale"
@@ -3965,7 +3977,7 @@
         "Upgrade auf ${ LUMO_SHORT_APP_NAME } Plus, um unbegrenzt benutzerdefinierte ${ LUMO_SHORT_APP_NAME }s zu erstellen, fortschrittliche KI-Modelle freizuschalten und mehr."
       ],
       "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to create unlimited projects, unlock advanced AI models, and more.": [
-        "Wechsle zu ${ LUMO_SHORT_APP_NAME } Plus, um unbegrenzt viele Projekte zu erstellen, erweiterte KI-Modelle freizuschalten und vieles mehr."
+        "Auf ${ LUMO_SHORT_APP_NAME } Plus upgraden, um unbegrenzt Projekte zu erstellen, erweiterte KI-Modelle freizuschalten und vieles mehr."
       ],
       "Use the Max model for complex work or the Lite model for everyday tasks. Choose Fast mode for quick answers or Thinking mode for tougher questions.": [
         "Nutze das Max-Modell für komplexe Arbeiten oder das Lite-Modell für alltägliche Aufgaben. Wähle den schnellen Modus für kurze Antworten oder den Denk-Modus für schwierigere Fragen."
@@ -4061,9 +4073,6 @@
       ],
       "Raw speed distilled into a single frame — the F1 car tearing across tarmac with motion blur streaking everything behind it, sparks flickering off the surface and carbon fiber catching the light at that visceral low angle right down on the asphalt.": [
         "Pure Geschwindigkeit, eingefangen in einem einzigen Bild – der F1-Wagen rast über den Asphalt, während Bewegungsunschärfe alles hinter ihm verschwimmen lässt, Funken von der Oberfläche sprühen und die Carbonfaser, die das Licht in diesem eindringlichen niedrigen Winkel direkt über dem Asphalt einfängt."
-      ],
-      "The word \"FLUORISH\" formed entirely from lush green grass and natural vegetation, each letter crafted from dense fresh blades of grass, realistic organic texture, vibrant green tones, intricate botanical details, photorealistic nature typography, soft natural sunlight, subtle shadows, highly detailed eco-friendly design, isolated on a clean background, premium 3D lettering, ultra-realistic, 8k, sharp focus, professional advertising quality.": [
-        "Das Wort „FLUORISH“, vollständig aus üppigem grünem Gras und natürlicher Vegetation gebildet, wobei jeder Buchstabe aus dichten, frischen Grashalmen besteht, mit realistischer organischer Textur, leuchtenden Grüntönen, filigranen botanischen Details, fotorealistischer Naturtypografie, sanftem natürlichem Sonnenlicht, dezenten Schatten, hochdetailliertem, umweltfreundlichem Design, isoliert auf einem klaren Hintergrund, hochwertiger 3D-Schriftgestaltung, ultrarealistisch, 8k, scharf fokussiert, in professioneller Werbequalität."
       ],
       "Top-down minimalist aerial shot of a long orange surfboard floating on clear blue water. The water has rolling, curved wave contours and bright, shimmering caustic light patterns. A soft shadow is cast directly beneath the board, creating a clean, serene, and modern aesthetic.": [
         "Minimalistische Luftaufnahme aus der Vogelperspektive eines langen orangefarbenen Surfbretts, das auf klarem, blauem Wasser treibt. Das Wasser weist geschwungene, wellenförmige Konturen und helle, schimmernde Lichtmuster auf. Direkt unter dem Brett fällt ein sanfter Schatten, der eine klare, ruhige und moderne Ästhetik erzeugt."
@@ -4248,7 +4257,7 @@
         "Einen Unterhaltungsaufhänger hinzufügen"
       ],
       "Add instructions about the tone, style, and persona you want ${ LUMO_SHORT_APP_NAME } to adopt.": [
-        "Ergänze Anweisungen zum Tonfall, Stil und zur Persönlichkeit, die ${ LUMO_SHORT_APP_NAME } verwenden soll."
+        "Anweisungen zum Tonfall, Stil und zur Persönlichkeit hinzufügen, die ${ LUMO_SHORT_APP_NAME } annehmen soll."
       ],
       "Add instructions about the tone, style, and persona you want ${ LUMO_SHORT_APP_NAME } to adopt. These instructions will apply to all chats in this project.": [
         "Füge Anweisungen zum Ton, Stil und zur Persona hinzu, die ${ LUMO_SHORT_APP_NAME } annehmen soll. Diese Anweisungen gelten für alle Chats in diesem Projekt."
@@ -4300,7 +4309,7 @@
     },
     "collider_2025:Project": {
       "Develop stories, refine prose, and improve your writing craft": [
-        "Entwickle Geschichten, verfeinere deinen Schreibstil und verbessere deine schriftstellerischen Fähigkeiten"
+        "Geschichten entwickeln, deinen Schreibstil verfeinern und deine schriftstellerischen Fähigkeiten verbessern"
       ],
       "Financial assistant": [
         "Finanzassistent"
@@ -4309,13 +4318,13 @@
         "Hol dir Hilfe beim Verstehen von Aufgaben, beim Lösen von Problemen und beim Erlernen von Konzepten"
       ],
       "Learn a language": [
-        "Lerne eine Fremdsprache"
+        "Sprache lernen"
       ],
       "Plan financial goals with personalized insights": [
         "Finanzielle Ziele mit personalisierten Einblicken planen"
       ],
       "Practice conversations, learn grammar, and build vocabulary in your target language": [
-        "Übe Gesprächssituationen, lerne Grammatik und erweitere deinen Wortschatz in deiner Zielsprache"
+        "Übe Konversationen, lerne Grammatik und erweitere deinen Wortschatz in deiner Zielsprache"
       ],
       "Research & Analysis Partner": [
         "Forschungs- und Analysepartner"
@@ -4324,7 +4333,7 @@
         "Lernbegleiter"
       ],
       "Synthesize sources, analyze data, and develop insights for your research projects": [
-        "Fasse Quellen zusammen, analysiere Daten und gewinne Erkenntnisse für deine Forschungsprojekte"
+        "Quellen zusammenfassen, Daten analysieren und Erkenntnisse für deine Forschungsprojekte gewinnen"
       ],
       "Writing coach": [
         "Schreibassistent"
@@ -4644,7 +4653,7 @@
         "Benutzerdefinierte ${ LUMO_SHORT_APP_NAME }s verwandeln einen Chat in einen fokussierten Assistenten mit eigenen Anweisungen. Wähle eine Option aus dem Verfassen-Fenster, um eine Unterhaltung zu beginnen."
       ],
       "Projects help you keep related chats, files, and instructions in one place. They make it easy to stay organized and reuse context across chats.": [
-        "Mit Projekten kannst du zusammenhängende Chats, Dateien und Anleitungen an einem Ort zusammenfassen. So behältst du den Überblick und kannst Inhalte in verschiedenen Chats wiederverwenden."
+        "Mit Projekten kannst du zusammenhängende Chats, Dateien und Anleitungen an einem Ort zusammenhalten. So behältst du den Überblick und kannst gleiche Inhalte in verschiedenen Chats wiederverwenden."
       ]
     },
     "collider_2025:Success": {
@@ -4751,7 +4760,7 @@
         "Anweisungen bearbeiten"
       ],
       "Edit Project": [
-        "Projekt bearbeiten."
+        "Projekt bearbeiten"
       ],
       "Every clarification is a new data point": [
         "Jede Präzisierung ist ein neuer Datenpunkt"
@@ -4889,7 +4898,7 @@
         "Anmelden, um deine Galerie zu erstellen"
       ],
       "Sign in to create projects": [
-        "Anmelden, um Projekte erstellen"
+        "Anmelden, um Projekte zu erstellen"
       ],
       "Sort by": [
         "Sortieren nach"
@@ -7754,6 +7763,9 @@
       "Export unsynced only (JSON)": [
         "Nur nicht Synchronisiertes exportieren (JSON)"
       ],
+      "Forces either unavailable state, without burning a real quota or waiting for a flag rollout. \"unavailable_limit_reached\" pins the Max pool to 0 remaining, exactly as the backend would after the weekly cap; \"unavailable_high_load\" switches off the availability flag. Both disable the Max row in the picker, fall the selection back to Lite, and push maxModelAvailability to native. Persists across reloads until switched off.": [
+        "Erzwingt entweder einen Nicht verfügbar-Status, ohne echtes Kontingent zu verbrauchen oder auf ein Flag-Rollout zu warten. „unavailable_limit_reached“ setzt den Max-Pool auf 0 verbleibende Einheiten fest, genau wie das Backend nach Erreichen des wöchentlichen Limits; „unavailable_high_load“ schaltet das Verfügbarkeits-Flag aus. Beide deaktivieren die Maximal-Zeile im Picker, fallen auf „Lite“ zurück und übergeben maxModelAvailability an Native. Diese Einstellungen bleiben auch beim Neuladen bestehen, bis sie ausgeschaltet werden."
+      ],
       "Forces the inline composer banner into \"approaching\" or \"at limit\" state so you can preview it in any context.": [
         "Zwingt das Inline-Verfassen-Fenster-Banner in den Status „fast erreicht“ oder „erreicht“, damit du in jedem Kontext eine Vorschau davon anzeigen kannst."
       ],
@@ -7781,6 +7793,9 @@
       "max": [
         "max."
       ],
+      "Max model availability": [
+        "Maximale Modellverfügbarkeit"
+      ],
       "Memory": [
         "Arbeitsspeicher"
       ],
@@ -7789,6 +7804,9 @@
       ],
       "Messages rejected by the backend (e.g. limits) remain locally in IndexedDB with a dirty flag. Exports decrypt content from the in-memory Redux state and tag unsynced messages with _dirty: true. Space encryption keys are stripped.": [
         "Vom Backend abgelehnte Nachrichten (z. B. aufgrund von Limiten) verbleiben lokal in der indexierten Datenbank und werden mit „dirty“ gekennzeichnet. Exporte entschlüsseln Inhalte aus dem Arbeitsspeicher von Redux und kennzeichnen nicht synchronisierte Nachrichten mit „_dirty: true“. Die Verschlüsselungsschlüssel des Bereichs werden entfernt."
+      ],
+      "Model usage limits": [
+        "Nutzungsbeschränkungen für Modelle"
       ],
       "Native bridge: onLimitReachedError": [
         "Native Bridge: onLimitReachedError"
@@ -7825,6 +7843,9 @@
       ],
       "Refresh": [
         "Aktualisieren"
+      ],
+      "Remaining (Max)": [
+        "Verbleibend (maximal)"
       ],
       "Render time": [
         "Renderzeit"
@@ -9631,7 +9652,7 @@
     },
     "q3campaign2026: Action": {
       "Get the deal": [
-        "Hol dir das Angebot"
+        "Deal sichern"
       ],
       "Special Offer": [
         "Sonderangebot"
@@ -9642,7 +9663,7 @@
         "/Monat"
       ],
       "2 individual accounts": [
-        "2 Einzelkonten"
+        "2 individuelle Konten"
       ],
       "2 TB of secure storage": [
         "2 TB sicherer Speicher"
@@ -9651,10 +9672,10 @@
         "3 TB sicherer Speicher"
       ],
       "500 GB of secure storage": [
-        "500 GB sicherer Speicher"
+        "500 GB sicherer Speicherplatz"
       ],
       "6 individual accounts": [
-        "6 Einzelkonten"
+        "6 individuelle Konten"
       ],
       "Advanced protection against cyber threats": [
         "Erweiterter Schutz vor Cyber-Bedrohungen"
@@ -9696,7 +9717,7 @@
         "Ein Abonnement, volle Leistung"
       ],
       "One plan, max savings": [
-        "Ein Abonnement, maximale Ersparnisse"
+        "Ein Abonnement, maximal sparen"
       ],
       "One plan, more power": [
         "Ein Abonnement, mehr Leistung"

@@ -1107,6 +1107,9 @@
       "Report an issue": [
         "Sorun bildireceğim"
       ],
+      "Retry": [
+        "Yeniden dene"
+      ],
       "Save": [
         "Kaydet"
       ],
@@ -1602,6 +1605,9 @@
       ],
       "You've reached a usage limit. Please try again later.": [
         "Bir kullanım sınırına ulaştınız. Lütfen bir süre sonra yeniden deneyin."
+      ],
+      "Your chats can't be saved right now. Anything you write will be lost if you reload the page.": [
+        "Sohbetleriniz şu anda kaydedilemiyor. Sayfayı yeniden yüklediğinizde yazdığınız her şey kaybolacak."
       ]
     },
     "collider_2025: Error (file processing)": {
@@ -2204,6 +2210,9 @@
       ],
       "This chat will be removed tomorrow unless you upgrade to ${ LUMO_SHORT_APP_NAME } Plus.": [
         "${ LUMO_SHORT_APP_NAME } Plus tarifesine yükseltmezseniz bu sohbet yarın silinecek."
+      ],
+      "This conversation contains many images. ${ LUMO_SHORT_APP_NAME } will only see the most recent ${ MAX_IMAGES_PER_REQUEST } images.": [
+        "Bu yazışmada birçok görsel var. ${ LUMO_SHORT_APP_NAME } yalnızca son ${ MAX_IMAGES_PER_REQUEST } görseli görür."
       ],
       "This file was removed from project knowledge.": [
         "Bu dosya proje bilgilerinden kaldırıldı."
@@ -3859,6 +3868,9 @@
       "Link files from ${ DRIVE_APP_NAME } or upload from your computer.": [
         "Dosyaları ${ DRIVE_APP_NAME } uygulamasından bağlayın veya bilgisayarınızdan yükleyin."
       ],
+      "Loading…": [
+        "Yükleniyor…"
+      ],
       "Lockdown Mode is enabled on your device": [
         "Aygıtınızda kilitleme kipi açıldı"
       ],
@@ -4061,9 +4073,6 @@
       ],
       "Raw speed distilled into a single frame — the F1 car tearing across tarmac with motion blur streaking everything behind it, sparks flickering off the surface and carbon fiber catching the light at that visceral low angle right down on the asphalt.": [
         "Saf hızın tek bir karede yoğunlaşmış hâli. F1 aracı asfaltta hızla ilerlerken arkasındaki her şeyi hareket bulanıklığıyla geride bırakıyor. Yüzeyden kıvılcımlar sıçrıyor ve karbon fiber asfaltın hemen üstündeki o içgüdüsel düşük açıdan ışığı yansıtıyor."
-      ],
-      "The word \"FLUORISH\" formed entirely from lush green grass and natural vegetation, each letter crafted from dense fresh blades of grass, realistic organic texture, vibrant green tones, intricate botanical details, photorealistic nature typography, soft natural sunlight, subtle shadows, highly detailed eco-friendly design, isolated on a clean background, premium 3D lettering, ultra-realistic, 8k, sharp focus, professional advertising quality.": [
-        "\"FLUORISH\" sözcüğü tümüyle yemyeşil çim ve doğal bitki örtüsünden oluşmaktadır. Her bir harf yoğun ve taze çim yapraklarından, gerçekçi organik dokudan, canlı yeşil tonlardan, karmaşık botanik detaylardan, fotogerçekçi doğa tipografisinden, yumuşak doğal güneş ışığından, ince gölgelerden, son derece ayrıntılı çevre dostu tasarımdan oluşmaktadır. Temiz bir arka plan üzerinde vurgulanmıştır. Birinci sınıf 3B harf tasarımı, ultra gerçekçi, 8K çözünürlük, keskin odak, profesyonel reklam kalitesi."
       ],
       "Top-down minimalist aerial shot of a long orange surfboard floating on clear blue water. The water has rolling, curved wave contours and bright, shimmering caustic light patterns. A soft shadow is cast directly beneath the board, creating a clean, serene, and modern aesthetic.": [
         "Berrak mavi sularda yüzen uzun, turuncu bir sörf tahtasının yukarıdan aşağıya doğru çekilmiş minimalist bir havadan çekim görüntüsü. Suyun üzerinde dalgalı, kavisli dalga hatları ve parlak, ışıltılı, keskin ışık desenleri görülüyor. Tahtanın hemen altına düşen yumuşak bir gölge, sade, dingin ve modern bir estetik yaratıyor."
@@ -4300,7 +4309,7 @@
     },
     "collider_2025:Project": {
       "Develop stories, refine prose, and improve your writing craft": [
-        "Öyükler oluşturun, anlatımınızı güçlendirin ve yazma becerinizi geliştirin"
+        "Öyküler yazın, anlatımınızı güçlendirin ve yazma becerinizi geliştirin"
       ],
       "Financial assistant": [
         "Mali yardımcı"
@@ -4315,10 +4324,10 @@
         "Kişiselleştirilmiş içgörülerle finansal hedeflerinizi planlayın"
       ],
       "Practice conversations, learn grammar, and build vocabulary in your target language": [
-        "Hedef dilinizde konuşma alıştırmaları yapın, gramer öğrenin ve kelime dağarcığınızı genişletin"
+        "Hedef dilinizde konuşma pratiği yapın, grameri öğrenin ve sözcük dağarcığınızı geliştirin"
       ],
       "Research & Analysis Partner": [
-        "Araştırma ve inceleme ortağı"
+        "Araştırma ve inceleme yardımcısı"
       ],
       "Study companion": [
         "Çalışma arkadaşı"
@@ -4820,7 +4829,7 @@
         "Diğer seçenekler"
       ],
       "More Projects with ${ LUMO_SHORT_APP_NAME } Plus": [
-        "${ LUMO_SHORT_APP_NAME } Plus ile daha fazla Proje"
+        "${ LUMO_SHORT_APP_NAME } Plus ile daha çok proje"
       ],
       "Most revealing": [
         "En çok bilgi açığan çıkaran"
@@ -7754,6 +7763,9 @@
       "Export unsynced only (JSON)": [
         "Yalnızca eşitlenmemişleri dışa aktar (JSON)"
       ],
+      "Forces either unavailable state, without burning a real quota or waiting for a flag rollout. \"unavailable_limit_reached\" pins the Max pool to 0 remaining, exactly as the backend would after the weekly cap; \"unavailable_high_load\" switches off the availability flag. Both disable the Max row in the picker, fall the selection back to Lite, and push maxModelAvailability to native. Persists across reloads until switched off.": [
+        "Gerçek bir kota harcamadan veya bir işaretin kullanıma sunulmasını beklemeden kullanılamaz durumu dayatır. \"unavailable_limit_reached\", arka ucun haftalık sınırdan sonra yapacağı gibi, en fazla havuzu 0 kalana sabitler. \"unavailable_high_load\" kullanılabilirlik işaretini kapatır. Her ikisi de seçicideki En fazla satırını etkisizleştirir, seçimi Lite olarak değiştirir ve maxModelAvailability değerini yerel olarak iter. Kapatılana kadar yeniden yüklemeler boyunca sürer."
+      ],
       "Forces the inline composer banner into \"approaching\" or \"at limit\" state so you can preview it in any context.": [
         "Satır arası oluşturucu başlığını \"yaklaşıyor\" ya da \"sınırda\" durumuna getirir. Böylece herhangi bir bağlamda ön izleme yapabilirsiniz."
       ],
@@ -7779,7 +7791,10 @@
         "Yerel depolama alanı (IndexedDB)"
       ],
       "max": [
-        "en fazla"
+        "max"
+      ],
+      "Max model availability": [
+        "Max modelinin kullanılabilirliği"
       ],
       "Memory": [
         "Bellek"
@@ -7789,6 +7804,9 @@
       ],
       "Messages rejected by the backend (e.g. limits) remain locally in IndexedDB with a dirty flag. Exports decrypt content from the in-memory Redux state and tag unsynced messages with _dirty: true. Space encryption keys are stripped.": [
         "Arka uç tarafından reddedilen iletiler (sınırlamalar gibi), \"dirty\" işaretiyle yerel olarak IndexedDB içinde kalır. Dışa aktarımlar bellek içi Redux durumundaki içeriğin şifresini çözer ve eşitlenmemiş iletileri _dirty: true etiketiyle işaretler. Alan şifreleme anahtarları kaldırılır."
+      ],
+      "Model usage limits": [
+        "Model kullanım limitleri"
       ],
       "Native bridge: onLimitReachedError": [
         "Yerel köprü: onLimitReachedError"
@@ -7825,6 +7843,9 @@
       ],
       "Refresh": [
         "Yenile"
+      ],
+      "Remaining (Max)": [
+        "Kalan (Max)"
       ],
       "Render time": [
         "Görselleştirme süresi"
