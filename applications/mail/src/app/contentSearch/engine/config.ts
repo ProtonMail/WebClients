@@ -17,7 +17,7 @@ export const DEFAULT_TOKEN_BUCKET_SIZE = 50_000;
 export const TRIGRAM_CACHE_COMPACTION_DELTA_THRESHOLD = 30;
 
 /** Minimum similarity for local search (monorepo `LOCAL_SEARCH_MINIMUM_SIMILARITY`). */
-export const LOCAL_SEARCH_MINIMUM_SIMILARITY = 1.0;
+export const LOCAL_SEARCH_MINIMUM_SIMILARITY = 0.7;
 
 /** Foundation default max edit distance (Levenshtein fallback path only). */
 export const FOUNDATION_DEFAULT_MAXIMUM_DISTANCE = 3;
