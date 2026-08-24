@@ -133,6 +133,7 @@ enum PaymentsFlag {
     PaypalRegionalCurrenciesBatch3 = 'PaypalRegionalCurrenciesBatch3',
     PaypalKrw = 'PaypalKrw',
     PaymentsValidateBillingAddress = 'PaymentsValidateBillingAddress',
+    EmailForInvoices = 'EmailForInvoices',
     DomainVpnBiz2023 = 'DomainVpnBiz2023',
     Vpn2024AddonsExperiment = 'Vpn2024AddonsExperiment',
     Vpn2024SignupExperiment = 'Vpn2024SignupExperiment',

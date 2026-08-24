@@ -2,6 +2,7 @@ import {
     getOrganization as getOrganizationConfig,
     getOrganizationSettings as getOrganizationSettingsConfig,
 } from '@proton/shared/lib/api/organization';
+import { INVOICE_EMAIL_STATE } from '@proton/shared/lib/constants';
 import type { Api, Organization, OrganizationExtended, OrganizationSettings } from '@proton/shared/lib/interfaces';
 
 export const getOrganization = ({ api }: { api: Api }) => {
@@ -20,6 +21,8 @@ export const getDefaultOrganizationSettings = (): OrganizationSettings => {
         SSOBackupPasswordDisabled: false,
         PasswordReminderEnforced: false,
         AllowedProducts: ['All'],
+        InvoiceEmail: null,
+        InvoiceEmailState: INVOICE_EMAIL_STATE.DISABLED,
         PasswordPolicies: [],
         LogAuth: 0,
         HighSecurity: 0,
