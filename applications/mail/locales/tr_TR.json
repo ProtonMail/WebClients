@@ -630,6 +630,9 @@
       "Get in touch": [
         "Bizimle görüşün"
       ],
+      "Get index size on disk": [
+        "Diskteki dizin boyutunu al"
+      ],
       "Get started": [
         "Başlayalım"
       ],
@@ -1544,7 +1547,8 @@
         "Güven"
       ],
       "Trust key": [
-        "Anahtara güven"
+        "Anahtara güven",
+        "Anahtarlara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -7987,6 +7991,10 @@
       "Forgot password?": [
         "Parolamı unuttum"
       ],
+      "Found ${ count } contact": [
+        "${ count } kişi bulundu",
+        "${ count } kişi bulundu"
+      ],
       "Found a current encrypted search index with ${ oldIndexSize } message.": [
         "${ oldIndexSize } ileti içeren güncel bir şifrelenmiş arama dizini bulundu.",
         "${ oldIndexSize } ileti içeren güncel bir şifrelenmiş arama dizini bulundu."
@@ -8136,8 +8144,7 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle",
-        "Görseller ekle"
+        "Görsel ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -8351,6 +8358,9 @@
       ],
       "No contacts added yet": [
         "Henüz bir kişi eklenmemiş"
+      ],
+      "No contacts found": [
+        "Herhangi bir kişi bulunamadı"
       ],
       "No conversation to read": [
         "Okunabilecek bir yazışma yok"
@@ -9251,6 +9261,9 @@
       ],
       "Unsupported file": [
         "Dosya desteklenmiyor"
+      ],
+      "Update filter": [
+        "Süzgeci güncelle"
       ],
       "Updating message content search...": [
         "İleti içerikleri araması güncelleniyor..."
@@ -10439,6 +10452,9 @@
       "Filter": [
         "Süz"
       ],
+      "Filter name": [
+        "Süzgeç adı"
+      ],
       "Filter Name": [
         "Süzgeç adı"
       ],
@@ -10822,6 +10838,9 @@
       ],
       "Share your availability with booking pages in ${ CALENDAR_APP_NAME }, and host secure meetings with ${ MEET_APP_NAME }.": [
         "${ CALENDAR_APP_NAME } randevu sayfalarıyla uygunluk durumunuzu paylaşın ve ${ MEET_APP_NAME } ile güvenli görüşmeler yapın."
+      ],
+      "Sieve script": [
+        "Sieve betiği"
       ],
       "Sign emails": [
         "E-postaları imzala"
@@ -17133,6 +17152,9 @@
       ],
       "Unsubscribe request sent": [
         "Aboneliği sonlandırma isteği gönder"
+      ],
+      "Update filter": [
+        "Süzgeci güncelle"
       ],
       "Upgrade complete!": [
         "Yükseltme tamamlandı!"

@@ -1519,7 +1519,10 @@
         "Důvěřovat"
       ],
       "Trust key": [
-        "Důvěřovat klíči"
+        "Důvěřovat klíči",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům"
       ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
@@ -7964,10 +7967,7 @@
         "Inicializace..."
       ],
       "Insert image": [
-        "Vložit obrázek",
-        "Vložit obrázky",
-        "Vložit obrázky",
-        "Vložit obrázky"
+        "Vložit obrázek"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -9232,7 +9232,7 @@
       "You have **${ count } conversation** in your ${ categoryLabel } category": [
         "V kategorii ${ categoryLabel } máte **${ count } konverzaci**",
         "V kategorii ${ categoryLabel } máte **${ count } konverzace**",
-        "V kategorii ${ categoryLabel } máte **${ count } konverzace**",
+        "V kategorii ${ categoryLabel } máte **${ count } konverzací**",
         "V kategorii ${ categoryLabel } máte **${ count } konverzací**"
       ],
       "You have **${ count } conversation** stored in this folder": [
@@ -9250,7 +9250,7 @@
       "You have **${ count } message** in your ${ categoryLabel } category": [
         "V kategorii ${ categoryLabel } máte **${ count } zprávu**",
         "V kategorii ${ categoryLabel } máte **${ count } zprávy**",
-        "V kategorii ${ categoryLabel } máte **${ count } zprávy**",
+        "V kategorii ${ categoryLabel } máte **${ count } zpráv**",
         "V kategorii ${ categoryLabel } máte **${ count } zpráv**"
       ],
       "You have **${ count } message** stored in this folder": [
@@ -9295,13 +9295,13 @@
       "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
         "V kategorii ${ categoryLabel } jste vybrali **${ checked } konverzaci**",
         "V kategorii ${ categoryLabel } jste vybrali **${ checked } konverzace**",
-        "V kategorii ${ categoryLabel } jste vybrali **${ checked } konverzace**",
+        "V kategorii ${ categoryLabel } jste vybrali **${ checked } konverzací**",
         "V kategorii ${ categoryLabel } jste vybrali **${ checked } konverzací**"
       ],
       "You selected **${ checked } message** in your ${ categoryLabel } category": [
         "V kategorii ${ categoryLabel } jste vybrali **${ checked } zprávu**",
         "V kategorii ${ categoryLabel } jste vybrali **${ checked } zprávy**",
-        "V kategorii ${ categoryLabel } jste vybrali **${ checked } zprávy**",
+        "V kategorii ${ categoryLabel } jste vybrali **${ checked } zpráv**",
         "V kategorii ${ categoryLabel } jste vybrali **${ checked } zpráv**"
       ],
       "You selected **${ count } conversation** from this folder": [
@@ -13784,6 +13784,54 @@
       ],
       "SUMMER SALE": [
         "LETNÍ VÝPRODEJ"
+      ]
+    },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "Využít nabídku"
+      ],
+      "Special Offer": [
+        "Speciální nabídka"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "/month": [
+        "/ měsíc"
+      ],
+      "2 individual accounts": [
+        "2 samostatné účty"
+      ],
+      "2 TB of secure storage": [
+        "2 TB bezpečného úložiště"
+      ],
+      "3 TB of secure storage": [
+        "3 TB bezpečného úložiště"
+      ],
+      "500 GB of secure storage": [
+        "500 GB bezpečného úložiště"
+      ],
+      "6 individual accounts": [
+        "6 samostatných účtů"
+      ],
+      "Advanced protection against cyber threats": [
+        "Pokročilá ochrana proti kybernetickým hrozbám"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Slevy vycházejí ze standardních měsíčních cen. Po skončení fakturačního cyklu se vaše předplatné obnoví za standardní roční sazbu."
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "na 12 měsíců"
+      ],
+      "One plan, full power": [
+        "Jeden plán, plný výkon"
+      ],
+      "One plan, max savings": [
+        "Jeden plán, maximální úspory"
+      ],
+      "One plan, more power": [
+        "Jeden tarif, více výkonu"
       ]
     },
     "Received email icon": {

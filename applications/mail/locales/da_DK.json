@@ -340,6 +340,9 @@
       "Copy alias “${ name }”": [
         "Kopier alias \"${ name }\""
       ],
+      "Copy debug transcript": [
+        "Kopiér fejlfindingstranskibering"
+      ],
       "Copy email to clipboard": [
         "Kopiér e-mail til upklipsholder"
       ],
@@ -626,6 +629,9 @@
       ],
       "Get in touch": [
         "Kontakt os"
+      ],
+      "Get index size on disk": [
+        "Hent indeksstørrelsen på disk"
       ],
       "Get started": [
         "Kom godt i gang"
@@ -1087,6 +1093,9 @@
       "Preview contact": [
         "Forhåndsvis kontakt"
       ],
+      "Preview logs": [
+        "Preview logfiler"
+      ],
       "Previous": [
         "Forrige"
       ],
@@ -1538,7 +1547,8 @@
         "Hav tillid til"
       ],
       "Trust key": [
-        "Stol på nøgle"
+        "Betroet nøgle",
+        "Betroede nøgler"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -4881,6 +4891,9 @@
       "Could not find an available name": [
         "Kunne ikke finde et tilgængeligt navn"
       ],
+      "Could not grant access to the organization key": [
+        "Kunne ikke give adgang til organistationsnøglen"
+      ],
       "Could not load sharing details": [
         "Kunne ikke indlæse oplysninger om deling"
       ],
@@ -7035,8 +7048,8 @@
         "${ count } e-mails"
       ],
       "${ count } email · ${ names }": [
-        "${ count } e-mail → ${ names }",
-        "${ count } e-mails → ${ names }"
+        "${ count } e-mail · ${ names }",
+        "${ count } e-mails · ${ names }"
       ],
       "${ count } email → ${ dest }": [
         "${ count } e-mail → ${ dest }",
@@ -7571,6 +7584,9 @@
       "Change your password": [
         "Skift din adgangskode"
       ],
+      "Checked Proton support": [
+        "Ledte i Proton support"
+      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Tjekker kontakt ${ progress } af ${ max }..."
       ],
@@ -7657,8 +7673,14 @@
         "Opret en sikker sky til ${ memberCount } medlem",
         "Opret en sikker sky til ${ memberCount } medlemmer"
       ],
+      "Create folder": [
+        "Opret mappe"
+      ],
       "Create in": [
         "Opret i"
+      ],
+      "Create label": [
+        "Opret etiket"
       ],
       "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
         "Det er ikke tilladt at oprette flere gratis konti i henhold til vores ${ termsLink }."
@@ -7692,6 +7714,9 @@
       ],
       "Daily": [
         "Daglig"
+      ],
+      "Debug transcript copied": [
+        "Fejlfindingstranskibering kopieret"
       ],
       "Dedicated servers": [
         "Dedikerede servere"
@@ -7897,6 +7922,9 @@
       "Everything in ${ planOrAppName }, plus:": [
         "Alt fra ${ planOrAppName }, plus:"
       ],
+      "Expand logs": [
+        "Udvid logs"
+      ],
       "Expand selection": [
         "Udvid udvalget"
       ],
@@ -7962,6 +7990,10 @@
       ],
       "Forgot password?": [
         "Glemt din adgangskode?"
+      ],
+      "Found ${ count } contact": [
+        "Fandt ${ count } kontakt",
+        "Fandt ${ count } kontakter"
       ],
       "Found a current encrypted search index with ${ oldIndexSize } message.": [
         "Fandt et aktuelt krypteret søgeindeks med ${ oldIndexSize } besked.",
@@ -8038,6 +8070,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Hvis du ikke kan se mailen i din indbakke, bedes du tjekke din spammappe."
       ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Hvis du har mistet adgangen til din godkender-app kan du bruge 1 af de 16 gendannelseskoder, som du fik da du satte to-faktor-godkendelses op. ${ learnMoreLink }"
+      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Hvis du fortsætter med nedgraderingen, vil du miste adgang til betalte funktioner i ${ MAIL_APP_NAME } og ${ VPN_APP_NAME }."
       ],
@@ -8109,8 +8144,7 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede",
-        "Indsæt billeder"
+        "Indsæt billede"
       ],
       "Insert link": [
         "Indsæt link"
@@ -8199,6 +8233,9 @@
       "Loading...": [
         "Indlæser..."
       ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "Logfiler hjælper os med at forstå hvad der skete før problemer opstod. De inkluderer handlinger og appen og fejlmeddelelser, men intet beskedindhold."
+      ],
       "Low Priority": [
         "Lav prioritet"
       ],
@@ -8215,13 +8252,13 @@
         "Marker alle som læst"
       ],
       "Mark all as unread": [
-        "Markér alle som ikke-læst(e)"
+        "Markér alle som ulæst"
       ],
       "Mark as read": [
-        "Markér som læst(e)"
+        "Markér som læst"
       ],
       "Mark as unread": [
-        "Markér som ikke-læst(e)"
+        "Markér som ulæst"
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode-logo"
@@ -8321,6 +8358,9 @@
       ],
       "No contacts added yet": [
         "Ingen kontakter tilføjet endnu"
+      ],
+      "No contacts found": [
+        "Ikke kontakter fundet"
       ],
       "No conversation to read": [
         "Ingen samtale at læse"
@@ -8694,6 +8734,9 @@
       ],
       "Searched for “${ keyword }”": [
         "Søgte på \"${ keyword }\""
+      ],
+      "Searched the web": [
+        "Søgte på internettet"
       ],
       "Searched your mail": [
         "Søgte dine mails"
@@ -9218,6 +9261,9 @@
       ],
       "Unsupported file": [
         "Ikke-understøttet fil"
+      ],
+      "Update filter": [
+        "Opdater filter"
       ],
       "Updating message content search...": [
         "Opdaterer beskedindholdssøgning..."
@@ -10406,6 +10452,9 @@
       "Filter": [
         "Filtrér"
       ],
+      "Filter name": [
+        "Filternavn"
+      ],
       "Filter Name": [
         "Filternavn"
       ],
@@ -10519,6 +10568,9 @@
       ],
       "Label messages as": [
         "Giv beskeder etiketten"
+      ],
+      "Label name": [
+        "Etiketnavn"
       ],
       "Last 12 months only": [
         "Kun seneste 12 måneder"
@@ -10786,6 +10838,9 @@
       ],
       "Share your availability with booking pages in ${ CALENDAR_APP_NAME }, and host secure meetings with ${ MEET_APP_NAME }.": [
         "Del de tidspunkter hvor du er tilgængelig med bookingsider i ${ CALENDAR_APP_NAME }, og afhold sikre møder med ${ MEET_APP_NAME }."
+      ],
+      "Sieve script": [
+        "Sieve-script"
       ],
       "Sign emails": [
         "Signér e-mails"
@@ -13473,7 +13528,7 @@
         "Ugyldig sikkerhedskode"
       ],
       "Please enter the account holder name": [
-        "Anfør kontohavers navn"
+        "Indtast kontohavers navn"
       ],
       "Something went wrong. Please try again later.": [
         "Noget gik galt. Prøv igen senere."
@@ -14026,6 +14081,79 @@
       ],
       "SUMMER SALE": [
         "SOMMERUDSALG"
+      ]
+    },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "Få tilbuddet"
+      ],
+      "Special Offer": [
+        "Særtilbud"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "/month": [
+        "/måned"
+      ],
+      "2 individual accounts": [
+        "2 individuelle konti"
+      ],
+      "2 TB of secure storage": [
+        "2 TB sikker lagerplads"
+      ],
+      "3 TB of secure storage": [
+        "3 TB sikker lagerplads"
+      ],
+      "500 GB of secure storage": [
+        "500 GB sikker lagerplads"
+      ],
+      "6 individual accounts": [
+        "6 individuelle konti"
+      ],
+      "Advanced protection against cyber threats": [
+        "Avanceret beskyttelse mod cybertrusler"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Rabatter beregnes ud fra den normale månedspris. Dit abonnement fornyes til den årlige standardpris, når faktureringsperioden udløber."
+      ]
+    },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, og ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, og ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, og ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "i 12 måneder"
+      ],
+      "One plan, full power": [
+        "Ét abonnement, fuld power"
+      ],
+      "One plan, max savings": [
+        "Et abonnement, maksimal besparelse"
+      ],
+      "One plan, more power": [
+        "Ét abonnement, mere power"
       ]
     },
     "Received email icon": {
@@ -16234,8 +16362,14 @@
       "Create contact": [
         "Opret kontakt"
       ],
+      "Create folder": [
+        "Opret mappe"
+      ],
       "Create folder \"${ search }\"": [
         "Opret mappe \"${ search }\""
+      ],
+      "Create label": [
+        "Opret etiket"
       ],
       "Create label \"${ search }\"": [
         "Opret etiket \"${ search }\""
@@ -16548,10 +16682,10 @@
         "Gør indbakken til din egen"
       ],
       "Mark all as read": [
-        "Markér alle som læst(e)"
+        "Markér alle som læst"
       ],
       "Mark all as unread": [
-        "Markér alle som ikke-læst(e)"
+        "Markér alle som ulæst"
       ],
       "Mark all messages as read": [
         "Marker alle meddelelser som læste"
@@ -16892,6 +17026,9 @@
       "Sending original message": [
         "Sender oprindelig besked"
       ],
+      "September Sale": [
+        "Septemberudsalg"
+      ],
       "Set recovery methods": [
         "Indstil gendannelsesmetoder"
       ],
@@ -17015,6 +17152,9 @@
       ],
       "Unsubscribe request sent": [
         "Anmodning om afmelding afsendt"
+      ],
+      "Update filter": [
+        "Opdater filter"
       ],
       "Upgrade complete!": [
         "Opgradering udført!"

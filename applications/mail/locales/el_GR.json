@@ -630,6 +630,9 @@
       "Get in touch": [
         "Επικοινωνήστε"
       ],
+      "Get index size on disk": [
+        "Λήψη μεγέθους ευρετηρίου στον δίσκο"
+      ],
       "Get started": [
         "Ας ξεκινήσουμε"
       ],
@@ -1544,7 +1547,8 @@
         "Αξιόπιστο"
       ],
       "Trust key": [
-        "Εμπιστοσύνη στο κλειδί"
+        "Κλειδί Εμπιστοσύνης",
+        "Κλειδιά Εμπιστοσύνης"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -7987,6 +7991,10 @@
       "Forgot password?": [
         "Ξεχάσατε τον κωδικό πρόσβασης;"
       ],
+      "Found ${ count } contact": [
+        "Βρέθηκε ${ count } επαφή",
+        "Βρέθηκαν ${ count } επαφές"
+      ],
       "Found a current encrypted search index with ${ oldIndexSize } message.": [
         "Βρέθηκε ένα τρέχον κρυπτογραφημένο ευρετήριο αναζήτησης με ${ oldIndexSize } μήνυμα.",
         "Βρέθηκε ένα τρέχον κρυπτογραφημένο ευρετήριο αναζήτησης με ${ oldIndexSize } μηνύματα."
@@ -8062,6 +8070,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Αν δε βρείτε το μήνυμα στα Εισερχόμενα, παρακαλούμε ελέγξτε τον φάκελο Ενοχλητικά."
       ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Εάν χάσατε την πρόσβαση στην εφαρμογή ελέγχου ταυτότητας, μπορείτε να χρησιμοποιήσετε 1 από τους 16 εφεδρικούς κωδικούς ανάκτησης που παρέχονται κατά τη ρύθμιση της ταυτοποίησης δύο παραγόντων. ${ learnMoreLink }"
+      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Αν προχωρήσετε με την υποβάθμιση, θα χάσετε πρόσβαση στα χαρακτηριστικά επί πληρωμή των ${ MAIL_APP_NAME } και ${ VPN_APP_NAME }."
       ],
@@ -8133,8 +8144,7 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας",
-        "Εισαγωγή εικόνων"
+        "Εισαγωγή εικόνας"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -8348,6 +8358,9 @@
       ],
       "No contacts added yet": [
         "Δεν έχουν προστεθεί επαφές ακόμα"
+      ],
+      "No contacts found": [
+        "Δεν βρέθηκαν επαφές"
       ],
       "No conversation to read": [
         "Δεν υπάρχει συζήτηση για ανάγνωση"
@@ -9248,6 +9261,9 @@
       ],
       "Unsupported file": [
         "Μη υποστηριζόμενο αρχείο"
+      ],
+      "Update filter": [
+        "Ενημέρωση φίλτρου"
       ],
       "Updating message content search...": [
         "Γίνεται ενημέρωση αναζήτησης εντός περιεχομένου μηνυμάτων..."
@@ -10436,6 +10452,9 @@
       "Filter": [
         "Φίλτρο"
       ],
+      "Filter name": [
+        "Όνομα φίλτρου"
+      ],
       "Filter Name": [
         "Όνομα φίλτρου"
       ],
@@ -10819,6 +10838,9 @@
       ],
       "Share your availability with booking pages in ${ CALENDAR_APP_NAME }, and host secure meetings with ${ MEET_APP_NAME }.": [
         "Μοιραστείτε τη διαθεσιμότητά σας με σελίδες κράτησης στο ${ CALENDAR_APP_NAME }, και φιλοξενήστε ασφαλείς συσκέψεις με το ${ MEET_APP_NAME }."
+      ],
+      "Sieve script": [
+        "Σενάριο Sieve"
       ],
       "Sign emails": [
         "Υπογραφεί ηλεκτρονικών ταχυδρομείων"
@@ -14061,6 +14083,79 @@
         "ΚΑΛΟΚΑΙΡΙΝΕΣ ΕΚΠΤΩΣΕΙΣ"
       ]
     },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "Αποκτήστε την προσφορά"
+      ],
+      "Special Offer": [
+        "Ειδική Προσφορά"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "/month": [
+        "/μήνα"
+      ],
+      "2 individual accounts": [
+        "2 ατομικοί λογαριασμοί"
+      ],
+      "2 TB of secure storage": [
+        "2 TB ασφαλούς αποθήκευσης"
+      ],
+      "3 TB of secure storage": [
+        "3 TB ασφαλούς αποθήκευσης"
+      ],
+      "500 GB of secure storage": [
+        "500 GB ασφαλούς αποθήκευσης"
+      ],
+      "6 individual accounts": [
+        "6 ατομικοί λογαριασμοί"
+      ],
+      "Advanced protection against cyber threats": [
+        "Προηγμένη προστασία από τις απειλές στον κυβερνοχώρο"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Οι εκπτώσεις βασίζονται στην τυπική μηνιαία τιμολόγηση. Η συνδρομή σας θα ανανεωθεί με την τυπική ετήσια χρέωση όταν λήξει ο κύκλος χρέωσης."
+      ]
+    },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } και ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } και ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } και ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "για 12 μήνες"
+      ],
+      "One plan, full power": [
+        "Ένα πλάνο, πλήρη δύναμη"
+      ],
+      "One plan, max savings": [
+        "Ένα πρόγραμμα, μέγιστη εξοικονόμηση"
+      ],
+      "One plan, more power": [
+        "Ένα πλάνο, περισσότερη δύναμη"
+      ]
+    },
     "Received email icon": {
       "End-to-end encrypted and signed message": [
         "Διατερματικά κρυπτογραφημένο και υπογεγραμμένο μήνυμα"
@@ -16931,6 +17026,9 @@
       "Sending original message": [
         "Αποστολή αρχικού μηνύματος"
       ],
+      "September Sale": [
+        "Εκπτώσεις Σεπτεμβρίου"
+      ],
       "Set recovery methods": [
         "Ορισμός μεθόδων ανάκτησης"
       ],
@@ -17054,6 +17152,9 @@
       ],
       "Unsubscribe request sent": [
         "Απεστάλη το αίτημα κατάργησης εγγραφής"
+      ],
+      "Update filter": [
+        "Ενημέρωση φίλτρου"
       ],
       "Upgrade complete!": [
         "Η αναβάθμιση ολοκληρώθηκε!"

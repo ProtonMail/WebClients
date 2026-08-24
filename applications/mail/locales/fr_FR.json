@@ -630,6 +630,9 @@
       "Get in touch": [
         "Nous contacter"
       ],
+      "Get index size on disk": [
+        "Obtenir la taille de l'index sur le disque"
+      ],
       "Get started": [
         "Commencer"
       ],
@@ -1538,7 +1541,8 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Clé de confiance"
+        "Faire confiance à cette clé",
+        "Faire confiance à ces clés"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -7864,6 +7868,10 @@
       "Forgot password?": [
         "Mot de passe oublié ?"
       ],
+      "Found ${ count } contact": [
+        "${ count } contact trouvé",
+        "${ count } contacts trouvés"
+      ],
       "Found a current encrypted search index with ${ oldIndexSize } message.": [
         "Un index de recherche chiffré actuel a été détecté avec ${ oldIndexSize } message.",
         "Un index de recherche chiffré actuel a été détecté avec ${ oldIndexSize } messages."
@@ -7939,6 +7947,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si vous ne trouvez pas le message dans votre boite de réception, vérifiez votre dossier Indésirables/spam."
       ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Si vous avez perdu l'accès à votre application d'authentification, vous pouvez utiliser 1 des 16 codes de récupération de sauvegarde fournis lors de la configuration de l'authentification à deux facteurs. ${ learnMoreLink }"
+      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "En passant à un abonnement inférieur, vous perdrez l'accès aux fonctionnalités payantes de ${ MAIL_APP_NAME } et ${ VPN_APP_NAME }."
       ],
@@ -8010,8 +8021,7 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image",
-        "Insérer des images"
+        "Insérer une image"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -8222,6 +8232,9 @@
       ],
       "No contacts added yet": [
         "Aucun contact n'a encore été ajouté."
+      ],
+      "No contacts found": [
+        "Aucun contact trouvé"
       ],
       "No email address": [
         "Aucune adresse e-mail"
@@ -9069,6 +9082,9 @@
       ],
       "Unsupported file": [
         "Le fichier n'est pas pris en charge."
+      ],
+      "Update filter": [
+        "Mettre à jour le filtre"
       ],
       "Updating message content search...": [
         "Mise à jour de la recherche dans le contenu des messages en cours"
@@ -10239,6 +10255,9 @@
       "Filter": [
         "Filtre"
       ],
+      "Filter name": [
+        "Nom du filtre"
+      ],
       "Filter Name": [
         "Nom du filtre"
       ],
@@ -10607,6 +10626,9 @@
       ],
       "Share your availability with booking pages in ${ CALENDAR_APP_NAME }, and host secure meetings with ${ MEET_APP_NAME }.": [
         "Partagez vos disponibilités via les pages de réservation de ${ CALENDAR_APP_NAME } et organisez des réunions sécurisées avec ${ MEET_APP_NAME }."
+      ],
+      "Sieve script": [
+        "Script Sieve"
       ],
       "Sign emails": [
         "Signer les e-mails"
@@ -13837,6 +13859,79 @@
         "OFFRE ESTIVALE"
       ]
     },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "Profitez de l'offre"
+      ],
+      "Special Offer": [
+        "Offre spéciale"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "/month": [
+        "/mois"
+      ],
+      "2 individual accounts": [
+        "2 comptes individuels"
+      ],
+      "2 TB of secure storage": [
+        "2 To d'espace de stockage sécurisé"
+      ],
+      "3 TB of secure storage": [
+        "3 To d'espace de stockage sécurisé"
+      ],
+      "500 GB of secure storage": [
+        "500 Go d'espace de stockage sécurisé"
+      ],
+      "6 individual accounts": [
+        "6 comptes individuels"
+      ],
+      "Advanced protection against cyber threats": [
+        "Protection avancée contre les cybermenaces"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Les réductions sont calculées sur la base du tarif mensuel standard. Votre abonnement sera renouvelé au tarif annuel standard à la fin du cycle de facturation."
+      ]
+    },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, et ${ VPN_SHORT_APP_NAME } Premium"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, et ${ CALENDAR_SHORT_APP_NAME } Premium"
+      ]
+    },
+    "q3campaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } Premium"
+      ]
+    },
+    "q3campaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } Premium"
+      ]
+    },
+    "q3campaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, et ${ CALENDAR_SHORT_APP_NAME } Premium"
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "pour 12 mois"
+      ],
+      "One plan, full power": [
+        "Un abonnement, pleine puissance"
+      ],
+      "One plan, max savings": [
+        "Un abonnement, un maximum d'économies"
+      ],
+      "One plan, more power": [
+        "Un seul abonnement, plus de puissance"
+      ]
+    },
     "Received email icon": {
       "End-to-end encrypted and signed message": [
         "Message signé et chiffré de bout en bout"
@@ -16695,6 +16790,9 @@
       "Sending original message": [
         "Envoi du message original"
       ],
+      "September Sale": [
+        "Soldes de septembre"
+      ],
       "Set recovery methods": [
         "Définir les méthodes de récupération"
       ],
@@ -16818,6 +16916,9 @@
       ],
       "Unsubscribe request sent": [
         "La demande de désabonnement a été envoyée."
+      ],
+      "Update filter": [
+        "Mettre à jour le filtre"
       ],
       "Upgrade complete!": [
         "L'abonnement a été mis à jour."
