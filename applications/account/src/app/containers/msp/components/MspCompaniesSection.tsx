@@ -37,8 +37,7 @@ import SettingsSectionExtraWide from '@proton/components/containers/account/Sett
 import { IcArrowOutSquare } from '@proton/icons/icons/IcArrowOutSquare';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import type { MspDelegatedManager } from '@proton/shared/lib/api/msp';
-import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
-import { APPS, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
+import { ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import { MEMBER_STATE } from '@proton/shared/lib/interfaces/Member';
 import type { MspSubsidiary } from '@proton/shared/lib/interfaces/MspSubsidiary';
 import type { UserOrganization } from '@proton/shared/lib/interfaces/Organization';
@@ -106,7 +105,7 @@ const ManageButton = ({ className, ...props }: { className?: string } & ButtonPr
     </Button>
 );
 
-const MspCompaniesSection = () => {
+const MspCompaniesSection = ({ path }: { path: string }) => {
     const { createNotification } = useNotifications();
     const handleError = useErrorHandler();
     const dispatch = useMspDispatch();
@@ -197,8 +196,7 @@ const MspCompaniesSection = () => {
             const result = await dispatch(
                 manageCompanyAndOpenTabThunk({
                     id: company.id,
-                    // Workaround: hardcode the landing path to Pass settings, since org-level operations MSP managers need are only exposed there
-                    path: `/${getSlugFromApp(APPS.PROTONPASS)}/users-addresses`,
+                    path,
                     loadingPath: UNAUTHENTICATED_ROUTES.MSP_SETTING_UP_ACCESS,
                 })
             );
