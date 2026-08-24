@@ -1,7 +1,7 @@
 import type { Dispatch, DragEvent, RefObject, SetStateAction } from 'react';
 import { useEffect, useState } from 'react';
 
-import useCache from '@proton/components/hooks/useCache';
+import { useCache } from '@proton/app-context/useCache';
 import useDragOver from '@proton/components/hooks/useDragOver';
 import { useHandler } from '@proton/components/hooks/useHandler';
 import type { Recipient } from '@proton/shared/lib/interfaces';

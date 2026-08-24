@@ -1,4 +1,4 @@
-import useCache from '@proton/app-context/useCache';
+import { useCache } from '@proton/app-context/useCache';
 import type { Cache } from '@proton/shared/lib/helpers/cache';
 import createCache from '@proton/shared/lib/helpers/cache';
 
