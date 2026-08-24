@@ -1,13 +1,4 @@
-export interface UserTemplate {
-    id: string;
-    emailAddresses: string[];
-    invitationEmail?: string;
-    password: string;
-    displayName: string;
-    totalStorage: number;
-    vpnAccess: boolean;
-    privateSubUser: boolean;
-}
+export type { UserTemplate } from '@proton/account/members/importUsers';
 
 export interface ImportedCSVUser {
     Name: any;
