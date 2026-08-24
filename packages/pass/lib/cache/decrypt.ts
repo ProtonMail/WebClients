@@ -1,16 +1,17 @@
-import { decryptData } from '@proton/pass/lib/crypto/utils/crypto-helpers';
-import { PassCryptoError } from '@proton/pass/lib/crypto/utils/errors';
-import { deobfuscateItem, obfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
-import { unwrapOptimisticState } from '@proton/pass/store/optimistic/utils/transformers';
-import type { ItemsByShareId } from '@proton/pass/store/reducers';
-import type { State } from '@proton/pass/store/types';
-import type { Maybe, PassCryptoSnapshot, SerializedCryptoContext } from '@proton/pass/types';
-import { PassEncryptionTag } from '@proton/pass/types';
-import type { EncryptedPassCache, PassCache } from '@proton/pass/types/worker/cache';
-import { logger } from '@proton/pass/utils/logger';
-import { objectFilter } from '@proton/pass/utils/object/filter';
-import { deserialize } from '@proton/pass/utils/object/serialize';
 import { binaryStringToUint8Array, uint8ArrayToBinaryString } from '@proton/shared/lib/helpers/encoding';
+
+import { unwrapOptimisticState } from '../../store/optimistic/utils/transformers';
+import type { ItemsByShareId } from '../../store/reducers';
+import type { State } from '../../store/types';
+import type { Maybe, PassCryptoSnapshot, SerializedCryptoContext } from '../../types';
+import { PassEncryptionTag } from '../../types';
+import type { EncryptedPassCache, PassCache } from '../../types/worker/cache';
+import { logger } from '../../utils/logger';
+import { objectFilter } from '../../utils/object/filter';
+import { deserialize } from '../../utils/object/serialize';
+import { decryptData } from '../crypto/utils/crypto-helpers';
+import { PassCryptoError } from '../crypto/utils/errors';
+import { deobfuscateItem, obfuscateItem } from '../items/item.obfuscation';
 
 const decrypt = async <T extends object>(options: {
     data: string;

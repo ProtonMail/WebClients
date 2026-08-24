@@ -1,4 +1,4 @@
-import type { MaybeNull } from '@proton/pass/types';
+import type { MaybeNull } from '../../types';
 
 /** Gets the parent of an element, traversing through Shadow DOM boundaries.
  * Checks: slotted parent → regular parent → shadow host */

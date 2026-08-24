@@ -1,14 +1,13 @@
 import { type FC, type PropsWithChildren, createContext, useContext } from 'react';
 import { useSelector } from 'react-redux';
 
-import { useActivityProbe } from '@proton/pass/hooks/useActivityProbe';
-import { useVisibleEffect } from '@proton/pass/hooks/useVisibleEffect';
-import { offlineResume } from '@proton/pass/store/actions';
-import { selectLockTTL, selectRequestInFlight } from '@proton/pass/store/selectors';
-import type { Callback, MaybeNull } from '@proton/pass/types';
-import { epochToMs } from '@proton/pass/utils/time/epoch';
-import type { ActivityProbe } from '@proton/pass/utils/time/probe';
-
+import { useActivityProbe } from '../../hooks/useActivityProbe';
+import { useVisibleEffect } from '../../hooks/useVisibleEffect';
+import { offlineResume } from '../../store/actions';
+import { selectLockTTL, selectRequestInFlight } from '../../store/selectors';
+import type { Callback, MaybeNull } from '../../types';
+import { epochToMs } from '../../utils/time/epoch';
+import type { ActivityProbe } from '../../utils/time/probe';
 import { useOnline } from './ConnectivityProvider';
 
 const LockProbeContext = createContext<MaybeNull<ActivityProbe>>(null);

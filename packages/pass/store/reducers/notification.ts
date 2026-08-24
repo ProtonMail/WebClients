@@ -1,10 +1,10 @@
 import type { Reducer } from 'redux';
 
-import { getInAppNotifications, updateInAppNotificationState } from '@proton/pass/store/actions';
-import type { InAppNotifications } from '@proton/pass/types/data/notification';
-import { partialMerge } from '@proton/pass/utils/object/merge';
-import { UNIX_MINUTE } from '@proton/pass/utils/time/constants';
-import { getEpoch } from '@proton/pass/utils/time/epoch';
+import type { InAppNotifications } from '../../types/data/notification';
+import { partialMerge } from '../../utils/object/merge';
+import { UNIX_MINUTE } from '../../utils/time/constants';
+import { getEpoch } from '../../utils/time/epoch';
+import { getInAppNotifications, updateInAppNotificationState } from '../actions';
 
 export type NotificationReducerState = InAppNotifications & { nextDisplayTime: number };
 

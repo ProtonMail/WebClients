@@ -1,5 +1,3 @@
-import { type ApiAuth, type ApiCallFn, type ApiOptions, type ApiState, AuthMode, type Maybe } from '@proton/pass/types';
-import type { ObjectHandler } from '@proton/pass/utils/object/handler';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { AppVersionBadError, InactiveSessionError } from '@proton/shared/lib/api/helpers/errors';
 import { retryHandler } from '@proton/shared/lib/api/helpers/retryHandler';
@@ -8,6 +6,8 @@ import { API_CUSTOM_ERROR_CODES, HTTP_ERROR_CODES } from '@proton/shared/lib/err
 import { withAuthHeaders, withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
+import { type ApiAuth, type ApiCallFn, type ApiOptions, type ApiState, AuthMode, type Maybe } from '../../types';
+import type { ObjectHandler } from '../../utils/object/handler';
 import { LockedSessionError, PassErrorCode } from './errors';
 import type { RefreshHandler } from './refresh';
 

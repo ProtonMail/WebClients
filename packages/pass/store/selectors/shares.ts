@@ -1,6 +1,6 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import { isItemShare, isShareDeduped, isShareWritable, isVaultShare } from '@proton/pass/lib/shares/share.predicates';
+import { isItemShare, isShareDeduped, isShareWritable, isVaultShare } from '../../lib/shares/share.predicates';
 import {
     hasNewUserInvitesReady,
     isOwnReadonlyVault,
@@ -8,23 +8,22 @@ import {
     isOwnWritableVault,
     isWritableSharedVault,
     isWritableVault,
-} from '@proton/pass/lib/vaults/vault.predicates';
-import { sortVaults } from '@proton/pass/lib/vaults/vault.utils';
+} from '../../lib/vaults/vault.predicates';
+import { sortVaults } from '../../lib/vaults/vault.utils';
+import type { BulkSelectionDTO, Maybe, MaybeNull, ShareId, ShareType } from '../../types';
+import { prop } from '../../utils/fp/lens';
+import { not } from '../../utils/fp/predicates';
+import { logId } from '../../utils/logger';
 import {
     itemsBulkDeleteRequest,
     itemsBulkMoveRequest,
     itemsBulkRestoreRequest,
     itemsBulkTrashRequest,
     shareLockRequest,
-} from '@proton/pass/store/actions/requests';
-import type { ShareItem } from '@proton/pass/store/reducers';
-import { selectRequestInFlight, selectRequestInFlightData } from '@proton/pass/store/request/selectors';
-import type { State } from '@proton/pass/store/types';
-import type { BulkSelectionDTO, Maybe, MaybeNull, ShareId, ShareType } from '@proton/pass/types';
-import { prop } from '@proton/pass/utils/fp/lens';
-import { not } from '@proton/pass/utils/fp/predicates';
-import { logId } from '@proton/pass/utils/logger';
-
+} from '../actions/requests';
+import type { ShareItem } from '../reducers';
+import { selectRequestInFlight, selectRequestInFlightData } from '../request/selectors';
+import type { State } from '../types';
 import { SelectorError } from './errors';
 
 export const selectShareState = ({ shares }: State) => shares;

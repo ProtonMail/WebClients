@@ -1,9 +1,9 @@
 import type { FormEvent } from 'react';
 import { useState } from 'react';
 
-import type { Maybe, MaybePromise } from '@proton/pass/types';
-import type { TypedFormElement } from '@proton/pass/types/utils/dom';
-import { type XorObfuscation, obfuscate } from '@proton/pass/utils/obfuscate/xor';
+import type { Maybe, MaybePromise } from '../../types';
+import type { TypedFormElement } from '../../types/utils/dom';
+import { type XorObfuscation, obfuscate } from '../../utils/obfuscate/xor';
 
 /** Manages form state for password inputs with a focus on minimizing the
  * lifetime of plain-text password values in memory:

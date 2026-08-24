@@ -1,9 +1,9 @@
 import type { FC } from 'react';
 
-import { FileAttachment } from '@proton/pass/components/FileAttachments/FileAttachment';
-import { FileAttachmentsView } from '@proton/pass/components/FileAttachments/FileAttachmentsView';
-import { useFileDownload } from '@proton/pass/hooks/files/useFileDownload';
-import type { FileDescriptor } from '@proton/pass/types';
+import { useFileDownload } from '../../hooks/files/useFileDownload';
+import type { FileDescriptor } from '../../types';
+import { FileAttachment } from '../FileAttachments/FileAttachment';
+import { FileAttachmentsView } from '../FileAttachments/FileAttachmentsView';
 
 type Props = { files: FileDescriptor[]; filesToken: string };
 

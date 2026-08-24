@@ -1,8 +1,8 @@
-import { getInvalidPasswordString } from '@proton/pass/lib/auth/utils';
-import { generateOfflineComponents } from '@proton/pass/lib/cache/crypto';
-import { offlineSetup } from '@proton/pass/store/actions';
-import { createRequestSaga } from '@proton/pass/store/request/sagas';
-import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
+import { getInvalidPasswordString } from '../../../lib/auth/utils';
+import { generateOfflineComponents } from '../../../lib/cache/crypto';
+import { deobfuscate } from '../../../utils/obfuscate/xor';
+import { offlineSetup } from '../../actions';
+import { createRequestSaga } from '../../request/sagas';
 
 export default createRequestSaga({
     actions: offlineSetup,

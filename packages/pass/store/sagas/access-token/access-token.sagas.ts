@@ -9,7 +9,7 @@ import {
     listPersonalAccessTokenAccess,
     listPersonalAccessTokens,
     revokePersonalAccessTokenAccess,
-} from '@proton/pass/lib/access-token/access-token.requests';
+} from '../../../lib/access-token/access-token.requests';
 import type {
     AccessTokenActionsPage,
     CreateAccessTokenIntent,
@@ -17,9 +17,12 @@ import type {
     PersonalAccessToken,
     PersonalAccessTokenWithKey,
     UpdateAccessTokenAccessIntent,
-} from '@proton/pass/lib/access-token/access-token.types';
-import { buildAccessTokenEnvVar } from '@proton/pass/lib/access-token/access-token.utils';
-import { PassCrypto } from '@proton/pass/lib/crypto';
+} from '../../../lib/access-token/access-token.types';
+import { buildAccessTokenEnvVar } from '../../../lib/access-token/access-token.utils';
+import { PassCrypto } from '../../../lib/crypto';
+import type { Maybe, PersonalAccessTokenShareResponse } from '../../../types';
+import { prop } from '../../../utils/fp/lens';
+import { logger } from '../../../utils/logger';
 import {
     createAccessToken,
     deleteAccessToken,
@@ -28,12 +31,9 @@ import {
     getAccessTokens,
     getAgentInstructions,
     updateAccessTokenAccess,
-} from '@proton/pass/store/actions';
-import { createRequestSaga } from '@proton/pass/store/request/sagas';
-import { selectAccessTokenById, selectAccessTokenGrants } from '@proton/pass/store/selectors/access-token';
-import type { Maybe, PersonalAccessTokenShareResponse } from '@proton/pass/types';
-import { prop } from '@proton/pass/utils/fp/lens';
-import { logger } from '@proton/pass/utils/logger';
+} from '../../actions';
+import { createRequestSaga } from '../../request/sagas';
+import { selectAccessTokenById, selectAccessTokenGrants } from '../../selectors/access-token';
 
 const listSaga = createRequestSaga({
     actions: getAccessTokens,

@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 
-import { useItems } from '@proton/pass/components/Item/Context/ItemsProvider';
-import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
+import { useNavigationFilters } from '../../../Navigation/NavigationFilters';
+import { useItems } from '../../Context/ItemsProvider';
 
 type Props = {
     emptyListTitle: string;

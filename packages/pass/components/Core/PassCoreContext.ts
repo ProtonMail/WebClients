@@ -1,21 +1,21 @@
 import { createContext } from 'react';
 
-import type { PassThemeService } from '@proton/pass/components/Layout/Theme/ThemeService';
-import { createUseContext } from '@proton/pass/hooks/useContextFactory';
-import type { UsePeriodOtpCodeOptions } from '@proton/pass/hooks/useOTPCode';
-import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
-import type { AuthStore } from '@proton/pass/lib/auth/store';
-import type { PassCoreProxy } from '@proton/pass/lib/core/core.types';
-import type { I18nService } from '@proton/pass/lib/i18n/service';
-import type { MonitorService } from '@proton/pass/lib/monitor/service';
-import type { ConnectivityService } from '@proton/pass/lib/network/connectivity.service';
-import type { SettingsService } from '@proton/pass/lib/settings/service';
-import type { SpotlightProxy } from '@proton/pass/lib/spotlight/service';
-import type { ParsedUrl } from '@proton/pass/lib/urls/types';
-import type { ClientEndpoint, ContextBridgeApi, Maybe, MaybeNull, TabId } from '@proton/pass/types';
-import type { B2BEvent } from '@proton/pass/types/data/b2b';
-import type { OnTelemetryEvent } from '@proton/pass/types/data/telemetry';
-import type { EventDispatcher } from '@proton/pass/utils/event/dispatcher';
+import { createUseContext } from '../../hooks/useContextFactory';
+import type { UsePeriodOtpCodeOptions } from '../../hooks/useOTPCode';
+import type { PassConfig } from '../../hooks/usePassConfig';
+import type { AuthStore } from '../../lib/auth/store';
+import type { PassCoreProxy } from '../../lib/core/core.types';
+import type { I18nService } from '../../lib/i18n/service';
+import type { MonitorService } from '../../lib/monitor/service';
+import type { ConnectivityService } from '../../lib/network/connectivity.service';
+import type { SettingsService } from '../../lib/settings/service';
+import type { SpotlightProxy } from '../../lib/spotlight/service';
+import type { ParsedUrl } from '../../lib/urls/types';
+import type { ClientEndpoint, ContextBridgeApi, Maybe, MaybeNull, TabId } from '../../types';
+import type { B2BEvent } from '../../types/data/b2b';
+import type { OnTelemetryEvent } from '../../types/data/telemetry';
+import type { EventDispatcher } from '../../utils/event/dispatcher';
+import type { PassThemeService } from '../Layout/Theme/ThemeService';
 
 export interface PopupController {
     /** Opens popup in new window */

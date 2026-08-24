@@ -1,19 +1,18 @@
-import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
-import type { ExportData, ExportedVault } from '@proton/pass/lib/export/types';
-import { getExportFileName } from '@proton/pass/lib/file-attachments/helpers';
-import { deobfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
-import { isB2BAdmin } from '@proton/pass/lib/organization/helpers';
-import { isVaultShare } from '@proton/pass/lib/shares/share.predicates';
-import { getDefaultModeUrls } from '@proton/pass/lib/urls/utils/autofill';
-import { unwrapOptimisticState } from '@proton/pass/store/optimistic/utils/transformers';
-import { selectShare } from '@proton/pass/store/selectors/shares';
-import { selectPassPlan, selectUser } from '@proton/pass/store/selectors/user';
-import type { State } from '@proton/pass/store/types';
-import type { DeobfuscatedItem, FileDescriptor, IndexedByShareIdAndItemId } from '@proton/pass/types';
-import { OrganizationExportMode } from '@proton/pass/types';
-
+import type { PassConfig } from '../../hooks/usePassConfig';
+import type { ExportData, ExportedVault } from '../../lib/export/types';
+import { getExportFileName } from '../../lib/file-attachments/helpers';
+import { deobfuscateItem } from '../../lib/items/item.obfuscation';
+import { isB2BAdmin } from '../../lib/organization/helpers';
+import { isVaultShare } from '../../lib/shares/share.predicates';
+import { getDefaultModeUrls } from '../../lib/urls/utils/autofill';
+import type { DeobfuscatedItem, FileDescriptor, IndexedByShareIdAndItemId } from '../../types';
+import { OrganizationExportMode } from '../../types';
+import { unwrapOptimisticState } from '../optimistic/utils/transformers';
+import type { State } from '../types';
 import { SelectorError } from './errors';
 import { selectOrganizationSettings } from './organization';
+import { selectShare } from './shares';
+import { selectPassPlan, selectUser } from './user';
 
 export type ExportThunk = (files: IndexedByShareIdAndItemId<FileDescriptor[]>) => ExportData;
 

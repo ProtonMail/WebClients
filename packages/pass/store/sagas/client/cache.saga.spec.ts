@@ -1,13 +1,12 @@
 import { runSaga } from 'redux-saga';
 
-import * as generate from '@proton/pass/lib/cache/generate';
-import { exposePassCrypto } from '@proton/pass/lib/crypto';
-import { withCache } from '@proton/pass/store/actions/enhancers/cache';
-import { sagaSetup } from '@proton/pass/store/sagas/testing';
-import type { RootSagaOptions } from '@proton/pass/store/types';
-import type { PassCryptoWorker } from '@proton/pass/types/crypto/pass-crypto';
-import type { EncryptedPassCache } from '@proton/pass/types/worker/cache';
-
+import * as generate from '../../../lib/cache/generate';
+import { exposePassCrypto } from '../../../lib/crypto';
+import type { PassCryptoWorker } from '../../../types/crypto/pass-crypto';
+import type { EncryptedPassCache } from '../../../types/worker/cache';
+import { withCache } from '../../actions/enhancers/cache';
+import type { RootSagaOptions } from '../../types';
+import { sagaSetup } from '../testing';
 import { cacheWorker } from './cache.saga';
 
 const generateCache = jest.spyOn(generate, 'generateCache');

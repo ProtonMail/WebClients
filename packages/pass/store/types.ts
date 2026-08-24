@@ -1,12 +1,11 @@
 import type { Runtime } from 'webextension-polyfill';
 
-import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
-import type { ReauthActionPayload } from '@proton/pass/lib/auth/reauth';
-import type { AuthService } from '@proton/pass/lib/auth/service';
-import type { AuthStore } from '@proton/pass/lib/auth/store';
-import type { PassCoreProxy } from '@proton/pass/lib/core/core.types';
-import type { FilePortWriter } from '@proton/pass/lib/file-storage/types';
-import type { SagaEvent } from '@proton/pass/store/events';
+import type { PassConfig } from '../hooks/usePassConfig';
+import type { ReauthActionPayload } from '../lib/auth/reauth';
+import type { AuthService } from '../lib/auth/service';
+import type { AuthStore } from '../lib/auth/store';
+import type { PassCoreProxy } from '../lib/core/core.types';
+import type { FilePortWriter } from '../lib/file-storage/types';
 import type {
     AnyStorage,
     AppState,
@@ -17,11 +16,11 @@ import type {
     Maybe,
     MaybeNull,
     MaybePromise,
-} from '@proton/pass/types';
-import type { TelemetryEvent } from '@proton/pass/types/data/telemetry';
-import type { EncryptedPassCache } from '@proton/pass/types/worker/cache';
-
+} from '../types';
+import type { TelemetryEvent } from '../types/data/telemetry';
+import type { EncryptedPassCache } from '../types/worker/cache';
 import type { Notification } from './actions/enhancers/notification';
+import type { SagaEvent } from './events';
 import type { FeatureFlagAndVariantState, rootReducer } from './reducers';
 import type { ProxiedSettings } from './reducers/settings';
 

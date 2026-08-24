@@ -1,12 +1,12 @@
 import { useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
-import type { InviteListItem } from '@proton/pass/components/Invite/Access/AccessList';
-import { isMemberLimitReached } from '@proton/pass/lib/access/access.predicates';
-import type { AccessItem } from '@proton/pass/lib/access/types';
-import type { ShareItem } from '@proton/pass/store/reducers';
-import { selectAccess, selectShareOrThrow } from '@proton/pass/store/selectors';
-import { sortOn } from '@proton/pass/utils/fp/sort';
+import type { InviteListItem } from '../../components/Invite/Access/AccessList';
+import { isMemberLimitReached } from '../../lib/access/access.predicates';
+import type { AccessItem } from '../../lib/access/types';
+import type { ShareItem } from '../../store/reducers';
+import { selectAccess, selectShareOrThrow } from '../../store/selectors';
+import { sortOn } from '../../utils/fp/sort';
 
 const parseShareAccess = (access: AccessItem, share: ShareItem) => {
     const limitReached = isMemberLimitReached(share, access);

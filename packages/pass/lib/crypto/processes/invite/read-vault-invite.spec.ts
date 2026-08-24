@@ -1,13 +1,12 @@
-import { encryptData } from '@proton/pass/lib/crypto/utils/crypto-helpers';
+import { PassEncryptionTag } from '../../../../types';
+import { encryptData } from '../../utils/crypto-helpers';
 import {
     createRandomKey,
     createRandomVaultKey,
     randomContents,
     releaseCryptoProxy,
     setupCryptoProxyForTesting,
-} from '@proton/pass/lib/crypto/utils/testing';
-import { PassEncryptionTag } from '@proton/pass/types';
-
+} from '../../utils/testing';
 import { createInviteKeys } from './create-invite-keys';
 import { readVaultInviteContent } from './read-vault-invite';
 

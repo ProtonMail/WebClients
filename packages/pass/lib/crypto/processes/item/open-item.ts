@@ -1,7 +1,7 @@
-import { decryptData } from '@proton/pass/lib/crypto/utils/crypto-helpers';
-import { PassCryptoItemError } from '@proton/pass/lib/crypto/utils/errors';
-import type { ItemKey, ItemRevisionContentsResponse, OpenedItem } from '@proton/pass/types';
-import { PassEncryptionTag } from '@proton/pass/types';
+import type { ItemKey, ItemRevisionContentsResponse, OpenedItem } from '../../../../types';
+import { PassEncryptionTag } from '../../../../types';
+import { decryptData } from '../../utils/crypto-helpers';
+import { PassCryptoItemError } from '../../utils/errors';
 
 type OpenItemKeyProcessParams = {
     encryptedItem: ItemRevisionContentsResponse;

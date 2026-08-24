@@ -3,8 +3,9 @@ import { type FC, type ReactNode, useEffect } from 'react';
 import type { ContextMenuProps } from '@proton/components/components/contextMenu/ContextMenu';
 import DsContextMenu from '@proton/components/components/contextMenu/ContextMenu';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
-import { ContextMenuContent, type ContextMenuElement } from '@proton/pass/components/ContextMenu/ContextMenuItems';
-import { useContextMenu } from '@proton/pass/components/ContextMenu/ContextMenuProvider';
+
+import { ContextMenuContent, type ContextMenuElement } from './ContextMenuItems';
+import { useContextMenu } from './ContextMenuProvider';
 
 type Props = Omit<ContextMenuProps, 'size' | 'isOpen' | 'close' | 'position' | 'children'> & {
     id: string;

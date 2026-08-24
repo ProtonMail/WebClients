@@ -2,10 +2,10 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import notesImg from '@proton/pass/assets/file-attachments/notes.svg';
-import { SpotlightGradient } from '@proton/pass/components/Spotlight/SpotlightGradient';
-import { WithSpotlight } from '@proton/pass/components/Spotlight/WithSpotlight';
-import { SpotlightMessage } from '@proton/pass/types';
+import notesImg from '../../../../assets/file-attachments/notes.svg';
+import { SpotlightMessage } from '../../../../types';
+import { SpotlightGradient } from '../../../Spotlight/SpotlightGradient';
+import { WithSpotlight } from '../../../Spotlight/WithSpotlight';
 
 export const FileAttachmentsDiscovery: FC = () => (
     <WithSpotlight type={SpotlightMessage.FILE_ATTACHMENTS_DISCOVERY}>

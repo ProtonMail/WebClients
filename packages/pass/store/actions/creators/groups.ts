@@ -1,11 +1,12 @@
 import { c } from 'ttag';
 
-import type { Group, GroupMembersResponse, GroupsResponse } from '@proton/pass/lib/groups/groups.types';
-import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
-import { dataRequest, sessionRequest } from '@proton/pass/store/request/configs';
-import { requestActionsFactory } from '@proton/pass/store/request/flow';
-import { UNIX_MINUTE } from '@proton/pass/utils/time/constants';
 import identity from '@proton/utils/identity';
+
+import type { Group, GroupMembersResponse, GroupsResponse } from '../../../lib/groups/groups.types';
+import { UNIX_MINUTE } from '../../../utils/time/constants';
+import { dataRequest, sessionRequest } from '../../request/configs';
+import { requestActionsFactory } from '../../request/flow';
+import { withNotification } from '../enhancers/notification';
 
 export const getGroups = requestActionsFactory<void, GroupsResponse, void>('groups::get-all')({
     success: sessionRequest(15 * UNIX_MINUTE),

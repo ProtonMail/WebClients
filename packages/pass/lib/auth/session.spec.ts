@@ -1,6 +1,6 @@
-import { generateKey, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { getDecryptedBlob } from '@proton/shared/lib/authentication/sessionBlobCryptoHelper';
 
+import { generateKey, importSymmetricKey } from '../crypto/utils/crypto-helpers';
 import { SESSION_DIGEST_VERSION, digestSession } from './integrity';
 import { LockMode } from './lock/types';
 import { type AuthSession, encryptPersistedSessionWithKey, getSessionEncryptionTag } from './session';

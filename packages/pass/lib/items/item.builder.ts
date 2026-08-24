@@ -6,12 +6,11 @@ import type {
     ItemType,
     MaybeNull,
     Metadata,
-} from '@proton/pass/types';
-import { CardType, WifiSecurity } from '@proton/pass/types/protobuf';
-import type { PlatformSpecific } from '@proton/pass/types/protobuf/item-v1';
-import { type ObjectHandler, objectHandler } from '@proton/pass/utils/object/handler';
-import { uniqueId } from '@proton/pass/utils/string/unique-id';
-
+} from '../../types';
+import { CardType, WifiSecurity } from '../../types/protobuf';
+import type { PlatformSpecific } from '../../types/protobuf/item-v1';
+import { type ObjectHandler, objectHandler } from '../../utils/object/handler';
+import { uniqueId } from '../../utils/string/unique-id';
 import { deobfuscateItem, obfuscateItem } from './item.obfuscation';
 
 export const itemMetaFactory = (): ObjectHandler<Metadata> =>

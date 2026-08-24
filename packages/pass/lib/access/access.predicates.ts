@@ -1,6 +1,5 @@
-import type { ShareItem } from '@proton/pass/store/reducers/shares';
-import { ShareType } from '@proton/pass/types';
-
+import type { ShareItem } from '../../store/reducers/shares';
+import { ShareType } from '../../types';
 import type { AccessItem } from './types';
 
 export const isMemberLimitReached = (

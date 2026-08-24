@@ -1,10 +1,10 @@
 import type { Reducer } from 'redux';
 
-import { fileRestore, fileUpdateMetadata, filesResolve, itemDeleteRevisions } from '@proton/pass/store/actions';
-import type { FileDescriptor, ItemId, Maybe, ShareId } from '@proton/pass/types';
-import { objectDelete } from '@proton/pass/utils/object/delete';
-import { objectMap } from '@proton/pass/utils/object/map';
-import { merge } from '@proton/pass/utils/object/merge';
+import type { FileDescriptor, ItemId, Maybe, ShareId } from '../../types';
+import { objectDelete } from '../../utils/object/delete';
+import { objectMap } from '../../utils/object/map';
+import { merge } from '../../utils/object/merge';
+import { fileRestore, fileUpdateMetadata, filesResolve, itemDeleteRevisions } from '../actions';
 
 export type FilesState = Record<ShareId, Maybe<Record<ItemId, FileDescriptor[]>>>;
 

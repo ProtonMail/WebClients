@@ -2,14 +2,13 @@ import { type FC, useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import { Card } from '@proton/pass/components/Layout/Card/Card';
-import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
-import { useRequest } from '@proton/pass/hooks/useRequest';
-import { type AccessItem, AccessTarget } from '@proton/pass/lib/access/types';
-import { getShareAccessOptions } from '@proton/pass/store/actions';
-import type { VaultShareItem } from '@proton/pass/store/reducers';
-import { NewUserInviteState } from '@proton/pass/types';
-
+import { useRequest } from '../../../hooks/useRequest';
+import { type AccessItem, AccessTarget } from '../../../lib/access/types';
+import { getShareAccessOptions } from '../../../store/actions';
+import type { VaultShareItem } from '../../../store/reducers';
+import { NewUserInviteState } from '../../../types';
+import { Card } from '../../Layout/Card/Card';
+import { VaultIcon } from '../../Vault/VaultIcon';
 import { PendingNewUser } from './PendingNewUser';
 
 type Props = VaultShareItem & AccessItem & { onInvitesReady: () => void };

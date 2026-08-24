@@ -11,12 +11,12 @@ import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useCombinedRefs from '@proton/hooks/useCombinedRefs';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import type { IconName } from '@proton/icons/types';
-import { useStatefulRef } from '@proton/pass/hooks/useStatefulRef';
-import type { Unpack } from '@proton/pass/types';
-import { truthy } from '@proton/pass/utils/fp/predicates';
-import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import clsx from '@proton/utils/clsx';
 
+import { useStatefulRef } from '../../../hooks/useStatefulRef';
+import type { Unpack } from '../../../types';
+import { truthy } from '../../../utils/fp/predicates';
+import { isEmptyString } from '../../../utils/string/is-empty-string';
 import { FieldBox } from './Layout/FieldBox';
 import { ListFieldItem } from './ListFieldItem';
 

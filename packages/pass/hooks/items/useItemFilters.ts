@@ -3,11 +3,12 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import type { IconName } from '@proton/icons/types';
-import { itemTypeToIconName } from '@proton/pass/components/Layout/Icon/ItemIcon';
-import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
-import { compoundItemFilters } from '@proton/pass/lib/items/item.utils';
-import type { ItemType, ItemTypeFilter } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
+
+import { itemTypeToIconName } from '../../components/Layout/Icon/ItemIcon';
+import { compoundItemFilters } from '../../lib/items/item.utils';
+import type { ItemType, ItemTypeFilter } from '../../types';
+import { PassFeature } from '../../types/api/features';
+import { useFeatureFlag } from '../useFeatureFlag';
 
 type ItemFilterData = { label: string; icon: IconName; itemFilters?: ItemType[] };
 

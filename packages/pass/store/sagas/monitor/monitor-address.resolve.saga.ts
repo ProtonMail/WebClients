@@ -4,10 +4,10 @@ import {
     setBreachedAliasResolved,
     setBreachedCustomEmailResolved,
     setBreachedProtonAddressResolved,
-} from '@proton/pass/lib/monitor/monitor.request';
-import { AddressType } from '@proton/pass/lib/monitor/types';
-import { getAliasBreach, getCustomBreach, getProtonBreach, resolveAddressMonitor } from '@proton/pass/store/actions';
-import { createRequestSaga } from '@proton/pass/store/request/sagas';
+} from '../../../lib/monitor/monitor.request';
+import { AddressType } from '../../../lib/monitor/types';
+import { getAliasBreach, getCustomBreach, getProtonBreach, resolveAddressMonitor } from '../../actions';
+import { createRequestSaga } from '../../request/sagas';
 
 export default createRequestSaga({
     actions: resolveAddressMonitor,

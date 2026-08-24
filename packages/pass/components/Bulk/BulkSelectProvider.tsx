@@ -1,7 +1,7 @@
 import { type FC, type PropsWithChildren, useState } from 'react';
 
-import { BulkSelectActions } from '@proton/pass/components/Bulk/BulkSelectionActions';
-import { BulkSelectionState } from '@proton/pass/components/Bulk/BulkSelectionState';
+import { BulkSelectActions } from './BulkSelectionActions';
+import { BulkSelectionState } from './BulkSelectionState';
 
 export type BulkSelection = Map<string, Set<string>>;
 

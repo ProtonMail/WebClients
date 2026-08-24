@@ -3,9 +3,9 @@ import type { FC, KeyboardEventHandler } from 'react';
 import { c } from 'ttag';
 
 import Toggle from '@proton/components/components/toggle/Toggle';
-import { InlineFieldBox } from '@proton/pass/components/Form/Field/Layout/InlineFieldBox';
-import type { MaybeNull } from '@proton/pass/types';
 
+import type { MaybeNull } from '../../../../types';
+import { InlineFieldBox } from '../Layout/InlineFieldBox';
 import { IncrementableInput } from './IncrementableInput';
 
 type Props = {

@@ -1,7 +1,6 @@
 import type { Reducer } from 'redux';
 
-import { arrayRemove } from '@proton/pass/utils/array/remove';
-
+import { arrayRemove } from '../../../utils/array/remove';
 import type { OptimisticState, WithOptimisticHistory } from '../types';
 import { isOptimisticHistoryItemWithId } from '../utils/assertions';
 import { splitHistoryOnFirstOptimisticItem } from '../utils/split-history';

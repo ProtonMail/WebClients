@@ -1,7 +1,7 @@
-import { encryptData } from '@proton/pass/lib/crypto/utils/crypto-helpers';
-import { PassCryptoVaultError } from '@proton/pass/lib/crypto/utils/errors';
-import type { VaultShareKey, VaultUpdateRequest } from '@proton/pass/types';
-import { ContentFormatVersion, PassEncryptionTag } from '@proton/pass/types';
+import type { VaultShareKey, VaultUpdateRequest } from '../../../../types';
+import { ContentFormatVersion, PassEncryptionTag } from '../../../../types';
+import { encryptData } from '../../utils/crypto-helpers';
+import { PassCryptoVaultError } from '../../utils/errors';
 
 type UpdateVaultProcessParams = {
     vaultKey: VaultShareKey;

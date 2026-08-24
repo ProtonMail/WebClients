@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 
-import type { MaybeNull } from '@proton/pass/types';
 import type { PassInstalledMessage } from '@proton/shared/lib/browser/extension';
 import { sendExtensionMessage } from '@proton/shared/lib/browser/extension';
 import { APPS } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
+
+import type { MaybeNull } from '../types';
 
 /** Cache the detection result to avoid redundant extension
  * communication if the hook is used multiple times. Assumes

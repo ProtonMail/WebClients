@@ -1,14 +1,5 @@
-import browser from '@proton/pass/lib/globals/browser';
-import type {
-    GetItem,
-    GetItems,
-    RemoveItem,
-    RemoveItems,
-    SetItem,
-    SetItems,
-    StorageInterface,
-} from '@proton/pass/types';
-
+import type { GetItem, GetItems, RemoveItem, RemoveItems, SetItem, SetItems, StorageInterface } from '../../../types';
+import browser from '../../globals/browser';
 import { createMemoryStorage } from './memory';
 
 const getItems: GetItems = (keys) => browser.storage.session.get(keys);

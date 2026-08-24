@@ -1,21 +1,21 @@
 import { put, select, takeEvery } from 'redux-saga/effects';
 import { c } from 'ttag';
 
-import { AccessTarget } from '@proton/pass/lib/access/types';
-import { getPrimaryPublicKeyForEmail } from '@proton/pass/lib/auth/address';
-import { createNewUserInvites, createUserInvites } from '@proton/pass/lib/invites/invite.requests';
-import type { InviteBatchResult } from '@proton/pass/lib/invites/invite.utils';
-import { concatInviteResults } from '@proton/pass/lib/invites/invite.utils';
-import { createTelemetryEvent } from '@proton/pass/lib/telemetry/utils';
-import { inviteBatchCreateFailure, inviteBatchCreateIntent, inviteBatchCreateSuccess } from '@proton/pass/store/actions';
-import { syncAccess } from '@proton/pass/store/actions/creators/polling';
-import { selectAccessMembers, selectItem, selectPassPlan } from '@proton/pass/store/selectors';
-import type { RootSagaOptions } from '@proton/pass/store/types';
-import type { ItemRevision, Maybe } from '@proton/pass/types';
-import { UserPassPlan } from '@proton/pass/types/api/plan';
-import type { InviteMemberDTO, InviteUserDTO } from '@proton/pass/types/data/invites.dto';
-import { TelemetryEventName, TelemetryItemType, TelemetryTargetType } from '@proton/pass/types/data/telemetry';
-import { partition } from '@proton/pass/utils/array/partition';
+import { AccessTarget } from '../../../lib/access/types';
+import { getPrimaryPublicKeyForEmail } from '../../../lib/auth/address';
+import { createNewUserInvites, createUserInvites } from '../../../lib/invites/invite.requests';
+import type { InviteBatchResult } from '../../../lib/invites/invite.utils';
+import { concatInviteResults } from '../../../lib/invites/invite.utils';
+import { createTelemetryEvent } from '../../../lib/telemetry/utils';
+import type { ItemRevision, Maybe } from '../../../types';
+import { UserPassPlan } from '../../../types/api/plan';
+import type { InviteMemberDTO, InviteUserDTO } from '../../../types/data/invites.dto';
+import { TelemetryEventName, TelemetryItemType, TelemetryTargetType } from '../../../types/data/telemetry';
+import { partition } from '../../../utils/array/partition';
+import { inviteBatchCreateFailure, inviteBatchCreateIntent, inviteBatchCreateSuccess } from '../../actions';
+import { syncAccess } from '../../actions/creators/polling';
+import { selectAccessMembers, selectItem, selectPassPlan } from '../../selectors';
+import type { RootSagaOptions } from '../../types';
 
 function* createInviteWorker(
     { onNotification, getTelemetry }: RootSagaOptions,

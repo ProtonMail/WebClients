@@ -1,5 +1,8 @@
 import { c } from 'ttag';
 
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import identity from '@proton/utils/identity';
+
 import type {
     AccessTokenAccessGrants,
     AccessTokenActionsPage,
@@ -8,14 +11,12 @@ import type {
     GetAccessTokenActionsIntent,
     PersonalAccessToken,
     UpdateAccessTokenAccessIntent,
-} from '@proton/pass/lib/access-token/access-token.types';
-import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
-import { dataRequest, sessionRequest } from '@proton/pass/store/request/configs';
-import { requestActionsFactory } from '@proton/pass/store/request/flow';
-import { uniqueId } from '@proton/pass/utils/string/unique-id';
-import { UNIX_HOUR, UNIX_MINUTE } from '@proton/pass/utils/time/constants';
-import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import identity from '@proton/utils/identity';
+} from '../../../lib/access-token/access-token.types';
+import { uniqueId } from '../../../utils/string/unique-id';
+import { UNIX_HOUR, UNIX_MINUTE } from '../../../utils/time/constants';
+import { dataRequest, sessionRequest } from '../../request/configs';
+import { requestActionsFactory } from '../../request/flow';
+import { withNotification } from '../enhancers/notification';
 
 export const getAccessTokens = requestActionsFactory<void, PersonalAccessToken[]>('access-token::list')({
     success: sessionRequest(5 * UNIX_MINUTE),

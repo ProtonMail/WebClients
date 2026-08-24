@@ -1,12 +1,12 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import { createVisibilityFilterSelector } from '@proton/pass/store/selectors/shares';
-import type { State } from '@proton/pass/store/types';
-import type { SecureLink } from '@proton/pass/types';
-import { prop } from '@proton/pass/utils/fp/lens';
-import { not } from '@proton/pass/utils/fp/predicates';
-import { sortOn } from '@proton/pass/utils/fp/sort';
-import { objectEntries } from '@proton/pass/utils/object/generic';
+import type { SecureLink } from '../../types';
+import { prop } from '../../utils/fp/lens';
+import { not } from '../../utils/fp/predicates';
+import { sortOn } from '../../utils/fp/sort';
+import { objectEntries } from '../../utils/object/generic';
+import type { State } from '../types';
+import { createVisibilityFilterSelector } from './shares';
 
 export const selectSecureLinksState = (state: State) => state.items.secureLinks;
 

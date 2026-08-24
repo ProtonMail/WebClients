@@ -1,8 +1,8 @@
-import { WASM_PROCEDURE_TIMEOUT, WASM_WORKER_READY_EVENT } from '@proton/pass/lib/core/constants';
-import type { MaybeNull, Result } from '@proton/pass/types';
-import { throwError } from '@proton/pass/utils/fp/throw';
-import { waitUntil } from '@proton/pass/utils/fp/wait-until';
-import { logger } from '@proton/pass/utils/logger';
+import type { MaybeNull, Result } from '../../types';
+import { throwError } from '../../utils/fp/throw';
+import { waitUntil } from '../../utils/fp/wait-until';
+import { logger } from '../../utils/logger';
+import { WASM_PROCEDURE_TIMEOUT, WASM_WORKER_READY_EVENT } from './constants';
 
 export type WasmMethods = Record<string, { args: any[]; return: any }>;
 export type WasmWorkerOptions = { id: string; spawn: () => Worker };

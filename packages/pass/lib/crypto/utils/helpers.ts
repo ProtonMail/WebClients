@@ -1,7 +1,7 @@
-import { PassCrypto } from '@proton/pass/lib/crypto';
-import { getLatestItemKey } from '@proton/pass/lib/items/item.keys';
-import type { ItemKey } from '@proton/pass/types';
-import { ShareType } from '@proton/pass/types';
+import { PassCrypto } from '..';
+import type { ItemKey } from '../../../types';
+import { ShareType } from '../../../types';
+import { getLatestItemKey } from '../../items/item.keys';
 
 /** Since we do not currently cache the item keys on the PassCrypto context
  * for items belonging to vault shares : resolve the latest key back-end side.

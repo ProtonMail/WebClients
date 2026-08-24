@@ -2,15 +2,14 @@ import type { PropsWithChildren } from 'react';
 import { type FC, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 
-import { getExtraFieldOption } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraField.utils';
-import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
-import { TextAreaReadonly } from '@proton/pass/components/Form/legacy/TextAreaReadonly';
-import { UpsellRef } from '@proton/pass/constants';
-import { selectExtraFieldLimits } from '@proton/pass/store/selectors';
-import type { DeobfuscatedItemExtraField } from '@proton/pass/types';
-import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
-import { formatISOYYYYMMDD, formatYYYYMMDD } from '@proton/pass/utils/time/format';
-
+import { UpsellRef } from '../../../../constants';
+import { selectExtraFieldLimits } from '../../../../store/selectors';
+import type { DeobfuscatedItemExtraField } from '../../../../types';
+import { isEmptyString } from '../../../../utils/string/is-empty-string';
+import { formatISOYYYYMMDD, formatYYYYMMDD } from '../../../../utils/time/format';
+import { TextAreaReadonly } from '../../legacy/TextAreaReadonly';
+import { getExtraFieldOption } from '../ExtraFieldGroup/ExtraField.utils';
+import { FieldsetCluster } from '../Layout/FieldsetCluster';
 import { OTPValueControl } from './OTPValueControl';
 import { UpgradeControl } from './UpgradeControl';
 import { ValueControl } from './ValueControl';

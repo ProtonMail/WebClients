@@ -1,8 +1,8 @@
-import { decryptData, generateKey, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
-import { PassCryptoError } from '@proton/pass/lib/crypto/utils/errors';
-import { PassEncryptionTag } from '@proton/pass/types';
 import { blobToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
+import { PassEncryptionTag } from '../../../../types';
+import { decryptData, generateKey, importSymmetricKey } from '../../utils/crypto-helpers';
+import { PassCryptoError } from '../../utils/errors';
 import { createFileChunk, getFileChunkEncryptionTag } from './create-file-chunk';
 
 describe('`getFileChunkEncryptionTag`', () => {

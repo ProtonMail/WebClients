@@ -3,10 +3,10 @@ import { type FC, useEffect, useState } from 'react';
 import { Card } from '@proton/atoms/Card/Card';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
-import { useLockAutoSubmit } from '@proton/pass/hooks/auth/useLockAutoSubmit';
-import type { AsyncModalState } from '@proton/pass/hooks/useAsyncModalHandles';
 
+import { useLockAutoSubmit } from '../../hooks/auth/useLockAutoSubmit';
+import type { AsyncModalState } from '../../hooks/useAsyncModalHandles';
+import { PassModal } from '../Layout/Modal/PassModal';
 import { PinCodeInput } from './PinCodeInput';
 
 export type PinUnlockModalState = { title: string; assistiveText: string };

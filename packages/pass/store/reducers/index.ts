@@ -1,12 +1,11 @@
 import { type Reducer, combineReducers } from 'redux';
 
-import { PassCrypto } from '@proton/pass/lib/crypto';
-import { stateDestroy, stateHydrate } from '@proton/pass/store/actions';
-import request from '@proton/pass/store/request/reducer';
-import type { State } from '@proton/pass/store/types';
-import type { Maybe } from '@proton/pass/types';
-import { zeroize } from '@proton/pass/utils/object/zero';
-
+import { PassCrypto } from '../../lib/crypto';
+import type { Maybe } from '../../types';
+import { zeroize } from '../../utils/object/zero';
+import { stateDestroy, stateHydrate } from '../actions';
+import request from '../request/reducer';
+import type { State } from '../types';
 import { access } from './access';
 import accessTokens from './access-tokens';
 import alias from './alias';

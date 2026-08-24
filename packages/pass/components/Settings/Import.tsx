@@ -6,26 +6,26 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { IcInfoCircleFilled } from '@proton/icons/icons/IcInfoCircleFilled';
-import { useOffline } from '@proton/pass/components/Core/ConnectivityProvider';
-import { ProgressModal } from '@proton/pass/components/FileAttachments/ProgressModal';
-import { ImportForm } from '@proton/pass/components/Import/ImportForm';
-import { ImportVaultsPickerModal } from '@proton/pass/components/Import/ImportVaultsPickerModal';
-import { Card } from '@proton/pass/components/Layout/Card/Card';
-import { PasswordModal } from '@proton/pass/components/Lock/PasswordModal';
-import type { OnPassphraseImportResult } from '@proton/pass/hooks/import/useImportForm';
+import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+
+import type { OnPassphraseImportResult } from '../../hooks/import/useImportForm';
 import {
     type OnWillSubmitImport,
     type OnWillSubmitImportResult,
     useImportForm,
-} from '@proton/pass/hooks/import/useImportForm';
-import { useAsyncModalHandles } from '@proton/pass/hooks/useAsyncModalHandles';
-import type { ImportPayload } from '@proton/pass/lib/import/types';
-import { selectCanCreateItems } from '@proton/pass/store/selectors';
-import type { MaybeNull } from '@proton/pass/types';
-import { pipe, tap } from '@proton/pass/utils/fp/pipe';
-import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
-import { PASS_APP_NAME } from '@proton/shared/lib/constants';
-
+} from '../../hooks/import/useImportForm';
+import { useAsyncModalHandles } from '../../hooks/useAsyncModalHandles';
+import type { ImportPayload } from '../../lib/import/types';
+import { selectCanCreateItems } from '../../store/selectors';
+import type { MaybeNull } from '../../types';
+import { pipe, tap } from '../../utils/fp/pipe';
+import { deobfuscate } from '../../utils/obfuscate/xor';
+import { useOffline } from '../Core/ConnectivityProvider';
+import { ProgressModal } from '../FileAttachments/ProgressModal';
+import { ImportForm } from '../Import/ImportForm';
+import { ImportVaultsPickerModal } from '../Import/ImportVaultsPickerModal';
+import { Card } from '../Layout/Card/Card';
+import { PasswordModal } from '../Lock/PasswordModal';
 import { ImportReport } from './ImportReport';
 import { SettingsPanel } from './SettingsPanel';
 

@@ -1,12 +1,12 @@
 import { put } from 'redux-saga/effects';
 
-import { enableAliasSync, getAliasSyncStatus, toggleAliasStatus } from '@proton/pass/lib/alias/alias.requests';
-import { parseItemRevision } from '@proton/pass/lib/items/item.parser';
-import { syncPendingAliases } from '@proton/pass/lib/sync/common/alias';
-import { aliasPendingCreate, aliasSyncEnable, aliasSyncStatus, aliasSyncStatusToggle } from '@proton/pass/store/actions';
-import { userAccessRequest } from '@proton/pass/store/actions/requests';
-import { requestInvalidate } from '@proton/pass/store/request/actions';
-import { createRequestSaga } from '@proton/pass/store/request/sagas';
+import { enableAliasSync, getAliasSyncStatus, toggleAliasStatus } from '../../../lib/alias/alias.requests';
+import { parseItemRevision } from '../../../lib/items/item.parser';
+import { syncPendingAliases } from '../../../lib/sync/common/alias';
+import { aliasPendingCreate, aliasSyncEnable, aliasSyncStatus, aliasSyncStatusToggle } from '../../actions';
+import { userAccessRequest } from '../../actions/requests';
+import { requestInvalidate } from '../../request/actions';
+import { createRequestSaga } from '../../request/sagas';
 
 /* Will invalidate the `user-access` request as to re-request it
  * from the event channels soon as possible. */

@@ -1,7 +1,6 @@
 import type { WordSeparator } from '@protontech/pass-rust-core/worker';
 
-import type { PassCoreProxy } from '@proton/pass/lib/core/core.types';
-
+import type { PassCoreProxy } from '../core/core.types';
 import { type GeneratePasswordConfig, SeperatorOptions } from './types';
 
 const SEPERATOR_MAP: Record<SeperatorOptions, WordSeparator> = {

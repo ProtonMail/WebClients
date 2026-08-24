@@ -7,16 +7,17 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Input } from '@proton/atoms/Input/Input';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
-import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
-import { useItemFilters } from '@proton/pass/hooks/items/useItemFilters';
-import { useDebouncedValue } from '@proton/pass/hooks/useDebouncedValue';
-import { useSearchShortcut } from '@proton/pass/hooks/useSearchShortcut';
-import { selectShare } from '@proton/pass/store/selectors';
-import type { MaybeNull, ShareType } from '@proton/pass/types';
-import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
-import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
+
+import { useItemFilters } from '../../../hooks/items/useItemFilters';
+import { useDebouncedValue } from '../../../hooks/useDebouncedValue';
+import { useSearchShortcut } from '../../../hooks/useSearchShortcut';
+import { selectShare } from '../../../store/selectors';
+import type { MaybeNull, ShareType } from '../../../types';
+import { TelemetryEventName } from '../../../types/data/telemetry';
+import { isEmptyString } from '../../../utils/string/is-empty-string';
+import { usePassCore } from '../../Core/PassCoreProvider';
+import { useNavigationFilters } from '../../Navigation/NavigationFilters';
+import { useItemScope } from '../../Navigation/NavigationMatches';
 
 import './SearchBar.scss';
 

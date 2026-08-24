@@ -4,20 +4,19 @@ import { useSelector } from 'react-redux';
 import { Form, type FormikContextType, FormikProvider } from 'formik';
 import { c } from 'ttag';
 
-import { FileAttachmentsField } from '@proton/pass/components/FileAttachments/FileAttachmentsField';
-import { FileAttachmentsFieldEdit } from '@proton/pass/components/FileAttachments/FileAttachmentsFieldEdit';
-import { Field } from '@proton/pass/components/Form/Field/Field';
-import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
-import { TitleField } from '@proton/pass/components/Form/Field/TitleField';
-import { VaultPickerField } from '@proton/pass/components/Form/Field/VaultPickerField';
-import { ItemCreatePanel } from '@proton/pass/components/Layout/Panel/ItemCreatePanel';
-import { ItemEditPanel } from '@proton/pass/components/Layout/Panel/ItemEditPanel';
-import { MAX_ITEM_NAME_LENGTH } from '@proton/pass/constants';
-import { useIdentityForm } from '@proton/pass/hooks/identity/useIdentityForm';
-import { usePortal } from '@proton/pass/hooks/usePortal';
-import { selectVaultLimits } from '@proton/pass/store/selectors';
-import type { IdentityItemFormValues, ItemRevision } from '@proton/pass/types';
-
+import { MAX_ITEM_NAME_LENGTH } from '../../../constants';
+import { useIdentityForm } from '../../../hooks/identity/useIdentityForm';
+import { usePortal } from '../../../hooks/usePortal';
+import { selectVaultLimits } from '../../../store/selectors';
+import type { IdentityItemFormValues, ItemRevision } from '../../../types';
+import { FileAttachmentsField } from '../../FileAttachments/FileAttachmentsField';
+import { FileAttachmentsFieldEdit } from '../../FileAttachments/FileAttachmentsFieldEdit';
+import { Field } from '../../Form/Field/Field';
+import { FieldsetCluster } from '../../Form/Field/Layout/FieldsetCluster';
+import { TitleField } from '../../Form/Field/TitleField';
+import { VaultPickerField } from '../../Form/Field/VaultPickerField';
+import { ItemCreatePanel } from '../../Layout/Panel/ItemCreatePanel';
+import { ItemEditPanel } from '../../Layout/Panel/ItemEditPanel';
 import { IdentitySection } from './Identity.section';
 import { IdentityCustomSections } from './Identity.sections';
 

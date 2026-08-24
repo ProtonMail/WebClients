@@ -9,11 +9,12 @@ import Checkbox from '@proton/components/components/input/Checkbox';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import type { ConfirmationModalProps } from '@proton/pass/components/Confirmation/ConfirmationModal';
-import { AutotypeKeyboardShortcut } from '@proton/pass/components/Item/Autotype/AutotypeKeyboardShortcut';
-import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
-import type { WithSpotlightRenderProps } from '@proton/pass/components/Spotlight/WithSpotlight';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+
+import type { ConfirmationModalProps } from '../../Confirmation/ConfirmationModal';
+import { PassModal } from '../../Layout/Modal/PassModal';
+import type { WithSpotlightRenderProps } from '../../Spotlight/WithSpotlight';
+import { AutotypeKeyboardShortcut } from './AutotypeKeyboardShortcut';
 
 type ConfirmAutotypeValues = { dontShowAgain: boolean };
 type ConfirmAutotypeProps = { onConfirm: () => void; spotlightToClose: WithSpotlightRenderProps } & Pick<

@@ -3,15 +3,14 @@ import { forwardRef, useMemo } from 'react';
 import type { FormikContextType } from 'formik';
 import { c } from 'ttag';
 
-import { InviteStepMembers } from '@proton/pass/components/Invite/Steps/InviteStepMembers';
-import { InviteStepPermissions } from '@proton/pass/components/Invite/Steps/InviteStepPermissions';
-import { InviteStepReview } from '@proton/pass/components/Invite/Steps/InviteStepReview';
-import type { InviteAddressValidator } from '@proton/pass/hooks/invite/useAddressValidator';
-import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
-import { type AccessKeys, AccessTarget } from '@proton/pass/lib/access/types';
-import { selectAccessMembers } from '@proton/pass/store/selectors';
-import type { InviteFormMemberItem, InviteFormStep, ItemInviteFormValues, MaybeNull } from '@proton/pass/types';
-
+import type { InviteAddressValidator } from '../../../hooks/invite/useAddressValidator';
+import { useMemoSelector } from '../../../hooks/useMemoSelector';
+import { type AccessKeys, AccessTarget } from '../../../lib/access/types';
+import { selectAccessMembers } from '../../../store/selectors';
+import type { InviteFormMemberItem, InviteFormStep, ItemInviteFormValues, MaybeNull } from '../../../types';
+import { InviteStepMembers } from '../Steps/InviteStepMembers';
+import { InviteStepPermissions } from '../Steps/InviteStepPermissions';
+import { InviteStepReview } from '../Steps/InviteStepReview';
 import { ItemInviteHeader } from './ItemInviteHeader';
 
 export const FORM_ID = 'item-invite';

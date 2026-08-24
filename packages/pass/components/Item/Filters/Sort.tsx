@@ -9,11 +9,12 @@ import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import type { IconName } from '@proton/icons/types';
-import { FilterClearButton } from '@proton/pass/components/Item/Filters/FilterClearButton';
-import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
-import { intoDisplayedSortFilter } from '@proton/pass/lib/items/item.utils';
-import type { ItemSortFilter } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
+
+import { intoDisplayedSortFilter } from '../../../lib/items/item.utils';
+import type { ItemSortFilter } from '../../../types';
+import { DropdownMenuButton } from '../../Layout/Dropdown/DropdownMenuButton';
+import { FilterClearButton } from './FilterClearButton';
 
 import './FilterClearButton.scss';
 

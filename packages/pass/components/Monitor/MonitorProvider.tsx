@@ -5,16 +5,17 @@ import { useDispatch, useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import useNotifications from '@proton/components/hooks/useNotifications';
+
 import {
     useCompromisedPasswords,
     useInsecurePasswords,
     useMissing2FAs,
-} from '@proton/pass/hooks/monitor/useAsyncMonitorState';
-import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
-import { useRequest } from '@proton/pass/hooks/useRequest';
-import { intoAliasMonitorAddress } from '@proton/pass/lib/monitor/monitor.utils';
-import type { AddressType, MonitorAddress } from '@proton/pass/lib/monitor/types';
-import { deleteCustomAddress, getBreaches } from '@proton/pass/store/actions';
+} from '../../hooks/monitor/useAsyncMonitorState';
+import { useMemoSelector } from '../../hooks/useMemoSelector';
+import { useRequest } from '../../hooks/useRequest';
+import { intoAliasMonitorAddress } from '../../lib/monitor/monitor.utils';
+import type { AddressType, MonitorAddress } from '../../lib/monitor/types';
+import { deleteCustomAddress, getBreaches } from '../../store/actions';
 import {
     selectCustomBreaches,
     selectDuplicatePasswords,
@@ -23,9 +24,8 @@ import {
     selectProtonBreaches,
     selectTotalBreaches,
     selectVisibleAliasItems,
-} from '@proton/pass/store/selectors';
-import type { MaybeNull } from '@proton/pass/types';
-
+} from '../../store/selectors';
+import type { MaybeNull } from '../../types';
 import { CustomAddressAddModal } from './Address/CustomAddressAddModal';
 import { CustomAddressVerifyModal } from './Address/CustomAddressVerifyModal';
 import { MonitorContext, type MonitorContextValue } from './MonitorContext';

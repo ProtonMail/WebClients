@@ -10,14 +10,15 @@ import Checkbox from '@proton/components/components/input/Checkbox';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import type { ConfirmationPromptHandles } from '@proton/pass/components/Confirmation/ConfirmationPrompt';
-import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
-import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
-import { isAliasItem, isDisabledAlias } from '@proton/pass/lib/items/item.predicates';
-import { aliasSyncStatusToggle, settingsEditIntent } from '@proton/pass/store/actions';
-import { selectAliasTrashAcknowledged, selectItemsByEmail } from '@proton/pass/store/selectors';
-import type { ItemRevision } from '@proton/pass/types';
-import { pipe } from '@proton/pass/utils/fp/pipe';
+
+import { useMemoSelector } from '../../../hooks/useMemoSelector';
+import { isAliasItem, isDisabledAlias } from '../../../lib/items/item.predicates';
+import { aliasSyncStatusToggle, settingsEditIntent } from '../../../store/actions';
+import { selectAliasTrashAcknowledged, selectItemsByEmail } from '../../../store/selectors';
+import type { ItemRevision } from '../../../types';
+import { pipe } from '../../../utils/fp/pipe';
+import type { ConfirmationPromptHandles } from '../../Confirmation/ConfirmationPrompt';
+import { PassModal } from '../../Layout/Modal/PassModal';
 
 type Props = {
     actionText: string;

@@ -4,10 +4,11 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { IcPassLock } from '@proton/icons/icons/IcPassLock';
-import { Card } from '@proton/pass/components/Layout/Card/Card';
-import { LobbyLayout } from '@proton/pass/components/Layout/Lobby/LobbyLayout';
-import { LockSetup } from '@proton/pass/components/Settings/LockSetup';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+
+import { Card } from '../Layout/Card/Card';
+import { LobbyLayout } from '../Layout/Lobby/LobbyLayout';
+import { LockSetup } from '../Settings/LockSetup';
 
 type Props = { onCancel: () => void };
 

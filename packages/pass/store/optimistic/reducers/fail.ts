@@ -1,6 +1,5 @@
-import { arrayReplace } from '@proton/pass/utils/array/replace';
-import { merge } from '@proton/pass/utils/object/merge';
-
+import { arrayReplace } from '../../../utils/array/replace';
+import { merge } from '../../../utils/object/merge';
 import type { OptimisticFailedHistoryItem, OptimisticHistoryItem, OptimisticState } from '../types';
 import { isOptimisticHistoryItemWithId } from '../utils/assertions';
 

@@ -1,10 +1,9 @@
 import fs from 'fs';
 
-import type { ImportPayload } from '@proton/pass/lib/import/types';
-import { deobfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
-import type { ItemImportIntent, ItemType } from '@proton/pass/types';
-import { AutofillMode } from '@proton/pass/types/protobuf';
-
+import type { ItemImportIntent, ItemType } from '../../../../types';
+import { AutofillMode } from '../../../../types/protobuf';
+import { deobfuscateItem } from '../../../items/item.obfuscation';
+import type { ImportPayload } from '../../types';
 import { readBitwardenData } from './bitwarden.reader';
 
 const sourceFiles = {

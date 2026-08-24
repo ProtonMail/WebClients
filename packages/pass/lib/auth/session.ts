@@ -1,10 +1,6 @@
 /* Inspired from packages/shared/lib/authentication/persistedSessionHelper.ts */
 import { binaryStringToUint8Array, utf8StringToUint8Array } from '@protontech/crypto/utils';
 
-import { type OfflineConfig, getOfflineVerifier } from '@proton/pass/lib/cache/crypto';
-import type { Api, Maybe, MaybeNull } from '@proton/pass/types';
-import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
-import { prop } from '@proton/pass/utils/fp/lens';
 import { getLocalKey, getLocalSessions, setCookies } from '@proton/shared/lib/api/auth';
 import { InactiveSessionError } from '@proton/shared/lib/api/helpers/errors';
 import { getUser } from '@proton/shared/lib/api/user';
@@ -15,6 +11,10 @@ import { getDecryptedBlob, getEncryptedBlob } from '@proton/shared/lib/authentic
 import type { User as UserType } from '@proton/shared/lib/interfaces';
 import getRandomString from '@proton/utils/getRandomString';
 
+import type { Api, Maybe, MaybeNull } from '../../types';
+import { getErrorMessage } from '../../utils/errors/get-error-message';
+import { prop } from '../../utils/fp/lens';
+import { type OfflineConfig, getOfflineVerifier } from '../cache/crypto';
 import { SESSION_DIGEST_VERSION, digestSession, getSessionDigestVersion } from './integrity';
 import type { LockMode } from './lock/types';
 import type { AuthOptions, AuthServiceConfig } from './service';

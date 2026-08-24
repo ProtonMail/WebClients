@@ -1,9 +1,9 @@
 import { createAction } from '@reduxjs/toolkit';
 
-import type { AccessDTO } from '@proton/pass/lib/access/types';
-import { AccessTarget } from '@proton/pass/lib/access/types';
-import { SYNC_STRATEGY } from '@proton/pass/lib/sync/global';
-import { SyncStrategy } from '@proton/pass/lib/sync/types';
+import type { AccessDTO } from '../../../lib/access/types';
+import { AccessTarget } from '../../../lib/access/types';
+import { SYNC_STRATEGY } from '../../../lib/sync/global';
+import { SyncStrategy } from '../../../lib/sync/types';
 
 export const forcePollV1 = createAction<string>('channel::poll::v1');
 export const forcePollV2 = createAction('channel::poll::v2');

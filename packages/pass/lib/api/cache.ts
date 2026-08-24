@@ -1,8 +1,9 @@
-import type { Maybe, MaybeNull } from '@proton/pass/types';
-import { truthy } from '@proton/pass/utils/fp/predicates';
-import { logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
 import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
+
+import type { Maybe, MaybeNull } from '../../types';
+import { truthy } from '../../utils/fp/predicates';
+import { logger } from '../../utils/logger';
 
 export const CACHE_KEY = 'Pass::Http::Cache';
 export const CACHED_IMAGE_DEFAULT_MAX_AGE = 1_209_600; /* 14 days */

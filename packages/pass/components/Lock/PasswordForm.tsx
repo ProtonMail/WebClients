@@ -4,9 +4,10 @@ import { Button } from '@proton/atoms/Button/Button';
 import Form from '@proton/components/components/form/Form';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
-import { usePasswordForm } from '@proton/pass/hooks/auth/usePasswordForm';
-import type { Maybe, MaybePromise } from '@proton/pass/types';
-import type { XorObfuscation } from '@proton/pass/utils/obfuscate/xor';
+
+import { usePasswordForm } from '../../hooks/auth/usePasswordForm';
+import type { Maybe, MaybePromise } from '../../types';
+import type { XorObfuscation } from '../../utils/obfuscate/xor';
 
 type Props = {
     autosavable?: boolean;

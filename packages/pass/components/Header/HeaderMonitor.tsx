@@ -2,9 +2,10 @@ import type { FC } from 'react';
 import type { RouteChildrenProps } from 'react-router-dom';
 
 import CoreHeader from '@proton/components/components/header/Header';
-import type { HeaderProps } from '@proton/pass/components/Header/types';
-import { MenuDropdown } from '@proton/pass/components/Menu/Dropdown/MenuDropdown';
-import { MonitorHeader } from '@proton/pass/components/Monitor/MonitorHeader';
+
+import { MenuDropdown } from '../Menu/Dropdown/MenuDropdown';
+import { MonitorHeader } from '../Monitor/MonitorHeader';
+import type { HeaderProps } from './types';
 
 export const HeaderMonitor: FC<HeaderProps & RouteChildrenProps> = ({ onLock, onLogout, interactive, ...subRoute }) => {
     return (

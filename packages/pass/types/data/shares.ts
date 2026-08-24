@@ -1,8 +1,7 @@
-import type { ShareId } from '@proton/pass/types/crypto';
-import type { ItemRevision } from '@proton/pass/types/data/items';
-import type { Maybe, MaybeNull } from '@proton/pass/types/utils';
-
+import type { ShareId } from '../crypto';
 import type { VaultColor, VaultIcon } from '../protobuf/vault-v1.static';
+import type { Maybe, MaybeNull } from '../utils';
+import type { ItemRevision } from './items';
 
 export enum ShareType {
     Vault = 1,

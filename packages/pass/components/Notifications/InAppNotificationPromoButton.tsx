@@ -2,17 +2,18 @@ import { useMemo, useState } from 'react';
 
 import { PromotionButton } from '@proton/components/components/button/PromotionButton';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
-import { usePassThemeMode } from '@proton/pass/components/Layout/Theme/ThemeProvider';
-import { InAppNotificationPromoModal } from '@proton/pass/components/Notifications/InAppNotificationPromoModal';
-import { WithInAppNotification } from '@proton/pass/components/Notifications/WithInAppNotification';
-import { useOnboarding } from '@proton/pass/components/Onboarding/OnboardingProvider';
-import type { PrefetchResource } from '@proton/pass/hooks/utils/usePrefetchResources';
-import { usePrefetchResources } from '@proton/pass/hooks/utils/usePrefetchResources';
-import { isUnreadNotification } from '@proton/pass/lib/notifications/notifications.utils';
-import type { Callback } from '@proton/pass/types';
-import { InAppNotificationState } from '@proton/pass/types';
-import { pipe } from '@proton/pass/utils/fp/pipe';
+
+import type { PrefetchResource } from '../../hooks/utils/usePrefetchResources';
+import { usePrefetchResources } from '../../hooks/utils/usePrefetchResources';
+import { isUnreadNotification } from '../../lib/notifications/notifications.utils';
+import type { Callback } from '../../types';
+import { InAppNotificationState } from '../../types';
+import { pipe } from '../../utils/fp/pipe';
+import { useOnline } from '../Core/ConnectivityProvider';
+import { usePassThemeMode } from '../Layout/Theme/ThemeProvider';
+import { useOnboarding } from '../Onboarding/OnboardingProvider';
+import { InAppNotificationPromoModal } from './InAppNotificationPromoModal';
+import { WithInAppNotification } from './WithInAppNotification';
 
 export const InAppNotificationPromoButton = WithInAppNotification(
     ({ setNotificationState, notification, onAction }) => {

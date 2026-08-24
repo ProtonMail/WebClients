@@ -2,16 +2,16 @@ import type { FC, PropsWithChildren } from 'react';
 import { useEffect, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 
-import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
-import { UpsellRef } from '@proton/pass/constants';
-import { useRequest } from '@proton/pass/hooks/useRequest';
-import { getAliasDomains, getCustomDomains } from '@proton/pass/store/actions';
-import { selectCanManageAlias } from '@proton/pass/store/selectors';
-import type { CustomDomainOutput, MaybeNull, UserAliasDomainOutput } from '@proton/pass/types';
-import { objectDelete } from '@proton/pass/utils/object/delete';
-import { fullMerge, partialMerge } from '@proton/pass/utils/object/merge';
 import { toMap } from '@proton/shared/lib/helpers/object';
 
+import { UpsellRef } from '../../../../constants';
+import { useRequest } from '../../../../hooks/useRequest';
+import { getAliasDomains, getCustomDomains } from '../../../../store/actions';
+import { selectCanManageAlias } from '../../../../store/selectors';
+import type { CustomDomainOutput, MaybeNull, UserAliasDomainOutput } from '../../../../types';
+import { objectDelete } from '../../../../utils/object/delete';
+import { fullMerge, partialMerge } from '../../../../utils/object/merge';
+import { useUpselling } from '../../../Upsell/UpsellingProvider';
 import { AliasDomainsContext, type AliasDomainsContextValue, type DomainAction } from './AliasDomainsContext';
 import { CustomDomainCreateModal } from './CustomDomainCreateModal';
 import { CustomDomainDeleteModal } from './CustomDomainDeleteModal';

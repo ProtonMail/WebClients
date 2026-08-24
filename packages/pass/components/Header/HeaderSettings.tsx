@@ -5,10 +5,11 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import CoreHeader from '@proton/components/components/header/Header';
 import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
-import type { HeaderProps } from '@proton/pass/components/Header/types';
-import { MenuDropdown } from '@proton/pass/components/Menu/Dropdown/MenuDropdown';
-import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
-import { getLocalPath } from '@proton/pass/components/Navigation/routing';
+
+import { MenuDropdown } from '../Menu/Dropdown/MenuDropdown';
+import { useNavigate } from '../Navigation/NavigationActions';
+import { getLocalPath } from '../Navigation/routing';
+import type { HeaderProps } from './types';
 
 export const HeaderSettings = memo((props: HeaderProps) => {
     const navigate = useNavigate();

@@ -1,16 +1,16 @@
 import type { FC } from 'react';
 
-import { FileAttachmentsContentView } from '@proton/pass/components/FileAttachments/FileAttachmentsView';
-import { AutotypeDropdownLogin } from '@proton/pass/components/Item/Autotype/AutotypeDropdownLogin';
-import { ItemHistoryStats } from '@proton/pass/components/Item/History/ItemHistoryStats';
-import { LoginContent } from '@proton/pass/components/Item/Login/Login.content';
-import { MoreInfoDropdown } from '@proton/pass/components/Layout/Dropdown/MoreInfoDropdown';
-import { ItemViewPanel } from '@proton/pass/components/Layout/Panel/ItemViewPanel';
-import { ItemReport } from '@proton/pass/components/Monitor/Item/ItemReport';
-import { SecureLinkCardList } from '@proton/pass/components/SecureLink/SecureLinkCardList';
-import type { ItemViewProps } from '@proton/pass/components/Views/types';
-import { useAutotypeShortcut } from '@proton/pass/hooks/autotype/useAutotypeShortcut';
-import { isMonitored } from '@proton/pass/lib/items/item.predicates';
+import { useAutotypeShortcut } from '../../../hooks/autotype/useAutotypeShortcut';
+import { isMonitored } from '../../../lib/items/item.predicates';
+import { FileAttachmentsContentView } from '../../FileAttachments/FileAttachmentsView';
+import { MoreInfoDropdown } from '../../Layout/Dropdown/MoreInfoDropdown';
+import { ItemViewPanel } from '../../Layout/Panel/ItemViewPanel';
+import { ItemReport } from '../../Monitor/Item/ItemReport';
+import { SecureLinkCardList } from '../../SecureLink/SecureLinkCardList';
+import type { ItemViewProps } from '../../Views/types';
+import { AutotypeDropdownLogin } from '../Autotype/AutotypeDropdownLogin';
+import { ItemHistoryStats } from '../History/ItemHistoryStats';
+import { LoginContent } from './Login.content';
 
 export const LoginView: FC<ItemViewProps<'login'>> = (itemViewProps) => {
     const { revision, share } = itemViewProps;

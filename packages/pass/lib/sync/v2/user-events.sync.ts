@@ -1,28 +1,28 @@
 import { all, call, put, select } from 'redux-saga/effects';
 
-import { allInvites } from '@proton/pass/lib/invites/invite.requests';
-import { requestItemsForShareId } from '@proton/pass/lib/items/item.requests';
-import { getAllBreaches } from '@proton/pass/lib/monitor/monitor.request';
-import { getOrganizationForPlan } from '@proton/pass/lib/organization/organization.requests';
-import { dedupeShares } from '@proton/pass/lib/shares/share.dedupe';
-import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
-import { requestShares } from '@proton/pass/lib/shares/share.requests';
-import { createDefaultVault } from '@proton/pass/lib/sync/common/vaults';
-import { notifyInactiveShares } from '@proton/pass/lib/sync/notifications';
-import type { EventProcessor } from '@proton/pass/lib/sync/types';
-import { getUserAccess } from '@proton/pass/lib/user/user.requests';
-import { syncResult } from '@proton/pass/store/actions';
-import type { HydratedAccessState, ItemsByShareId, SharesState, VaultShareItem } from '@proton/pass/store/reducers';
-import type { OrganizationState } from '@proton/pass/store/reducers/organization';
-import type { ShareDedupeState } from '@proton/pass/store/reducers/shares-dedupe';
-import { selectLoadGroupInvites } from '@proton/pass/store/selectors/invites';
-import type { RootSagaOptions, State } from '@proton/pass/store/types';
-import type { BreachesGetResponse, Invite, Maybe, MaybeNull, Share, ShareGetResponse } from '@proton/pass/types';
-import { partition } from '@proton/pass/utils/array/partition';
-import { diadic } from '@proton/pass/utils/fp/variadics';
-import { merge } from '@proton/pass/utils/object/merge';
 import { toMap } from '@proton/shared/lib/helpers/object';
 
+import { syncResult } from '../../../store/actions';
+import type { HydratedAccessState, ItemsByShareId, SharesState, VaultShareItem } from '../../../store/reducers';
+import type { OrganizationState } from '../../../store/reducers/organization';
+import type { ShareDedupeState } from '../../../store/reducers/shares-dedupe';
+import { selectLoadGroupInvites } from '../../../store/selectors/invites';
+import type { RootSagaOptions, State } from '../../../store/types';
+import type { BreachesGetResponse, Invite, Maybe, MaybeNull, Share, ShareGetResponse } from '../../../types';
+import { partition } from '../../../utils/array/partition';
+import { diadic } from '../../../utils/fp/variadics';
+import { merge } from '../../../utils/object/merge';
+import { allInvites } from '../../invites/invite.requests';
+import { requestItemsForShareId } from '../../items/item.requests';
+import { getAllBreaches } from '../../monitor/monitor.request';
+import { getOrganizationForPlan } from '../../organization/organization.requests';
+import { dedupeShares } from '../../shares/share.dedupe';
+import { parseShareResponse } from '../../shares/share.parser';
+import { requestShares } from '../../shares/share.requests';
+import { getUserAccess } from '../../user/user.requests';
+import { createDefaultVault } from '../common/vaults';
+import { notifyInactiveShares } from '../notifications';
+import type { EventProcessor } from '../types';
 import { getUserEventLatestID } from './user-events.requests';
 
 export type SyncResultV2 = {

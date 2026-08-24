@@ -1,9 +1,8 @@
-import { MAX_MAX_BATCH_PER_REQUEST, MIN_MAX_BATCH_PER_REQUEST } from '@proton/pass/constants';
-import { api } from '@proton/pass/lib/api/api';
-import { isShareRemovedError } from '@proton/pass/lib/api/errors';
-import { createPageIterator } from '@proton/pass/lib/api/utils';
-import { PassCrypto } from '@proton/pass/lib/crypto';
-import { resolveItemKey } from '@proton/pass/lib/crypto/utils/helpers';
+import chunk from '@proton/utils/chunk';
+import identity from '@proton/utils/identity';
+import noop from '@proton/utils/noop';
+
+import { MAX_MAX_BATCH_PER_REQUEST, MIN_MAX_BATCH_PER_REQUEST } from '../../constants';
 import type {
     AliasAndItemCreateRequest,
     BatchItemRevisionIDs,
@@ -29,16 +28,17 @@ import type {
     SelectedRevision,
     ShareId,
     UniqueItem,
-} from '@proton/pass/types';
-import { groupByKey } from '@proton/pass/utils/array/group-by-key';
-import { truthy } from '@proton/pass/utils/fp/predicates';
-import { seq } from '@proton/pass/utils/fp/promises';
-import { logId, logger } from '@proton/pass/utils/logger';
-import { getEpoch } from '@proton/pass/utils/time/epoch';
-import chunk from '@proton/utils/chunk';
-import identity from '@proton/utils/identity';
-import noop from '@proton/utils/noop';
-
+} from '../../types';
+import { groupByKey } from '../../utils/array/group-by-key';
+import { truthy } from '../../utils/fp/predicates';
+import { seq } from '../../utils/fp/promises';
+import { logId, logger } from '../../utils/logger';
+import { getEpoch } from '../../utils/time/epoch';
+import { api } from '../api/api';
+import { isShareRemovedError } from '../api/errors';
+import { createPageIterator } from '../api/utils';
+import { PassCrypto } from '../crypto';
+import { resolveItemKey } from '../crypto/utils/helpers';
 import { serializeItemContent } from './item-proto.transformer';
 import { parseItemRevision } from './item.parser';
 

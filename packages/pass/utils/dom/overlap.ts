@@ -1,5 +1,5 @@
-import type { MaybeNull } from '@proton/pass/types';
-import type { Rect, RectOffset } from '@proton/pass/types/utils/dom';
+import type { MaybeNull } from '../../types';
+import type { Rect, RectOffset } from '../../types/utils/dom';
 
 const rectOffset = (rect: Rect, offset: RectOffset): Rect => ({
     top: rect.top - offset.y,

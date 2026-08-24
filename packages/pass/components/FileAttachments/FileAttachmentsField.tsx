@@ -11,30 +11,30 @@ import Dropzone from '@proton/components/components/dropzone/Dropzone';
 import FileInput from '@proton/components/components/input/FileInput';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcArrowWithinSquare } from '@proton/icons/icons/IcArrowWithinSquare';
-import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { FILE_ENCRYPTION_VERSION } from '@proton/pass/constants';
-import { resolveMimeTypeForFile, useFileUpload } from '@proton/pass/hooks/files/useFileUpload';
-import { useAsyncRequestDispatch } from '@proton/pass/hooks/useDispatchAsyncRequest';
-import { isAbortError } from '@proton/pass/lib/api/errors';
-import { validateFileName } from '@proton/pass/lib/file-attachments/helpers';
-import { fileUpdateMetadata } from '@proton/pass/store/actions';
+import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+import { isIos } from '@proton/shared/lib/helpers/browser';
+import humanSize from '@proton/shared/lib/helpers/humanSize';
+
+import { FILE_ENCRYPTION_VERSION } from '../../constants';
+import { resolveMimeTypeForFile, useFileUpload } from '../../hooks/files/useFileUpload';
+import { useAsyncRequestDispatch } from '../../hooks/useDispatchAsyncRequest';
+import { isAbortError } from '../../lib/api/errors';
+import { validateFileName } from '../../lib/file-attachments/helpers';
+import { fileUpdateMetadata } from '../../store/actions';
 import {
     selectUserStorageAllowed,
     selectUserStorageMaxFileSize,
     selectUserStorageQuota,
     selectUserStorageUsed,
-} from '@proton/pass/store/selectors';
-import type { BaseFileDescriptor, FileAttachmentValues, FileID, ShareId } from '@proton/pass/types';
-import { eq, not } from '@proton/pass/utils/fp/predicates';
-import { seq } from '@proton/pass/utils/fp/promises';
-import { updateMap } from '@proton/pass/utils/fp/state';
-import { partialMerge } from '@proton/pass/utils/object/merge';
-import { uniqueId } from '@proton/pass/utils/string/unique-id';
-import { PASS_APP_NAME } from '@proton/shared/lib/constants';
-import { isIos } from '@proton/shared/lib/helpers/browser';
-import humanSize from '@proton/shared/lib/helpers/humanSize';
-
+} from '../../store/selectors';
+import type { BaseFileDescriptor, FileAttachmentValues, FileID, ShareId } from '../../types';
+import { eq, not } from '../../utils/fp/predicates';
+import { seq } from '../../utils/fp/promises';
+import { updateMap } from '../../utils/fp/state';
+import { partialMerge } from '../../utils/object/merge';
+import { uniqueId } from '../../utils/string/unique-id';
+import { useOnline } from '../Core/ConnectivityProvider';
+import { usePassCore } from '../Core/PassCoreProvider';
 import { FileAttachment } from './FileAttachment';
 import { FileAttachmentsSummary } from './FileAttachmentsSummary';
 import { FileAttachmentsUpsell } from './FileAttachmentsUpsell';

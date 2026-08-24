@@ -1,7 +1,8 @@
 import { useCallback, useState } from 'react';
 
 import useIsMounted from '@proton/hooks/useIsMounted';
-import type { Callback, Maybe } from '@proton/pass/types';
+
+import type { Callback, Maybe } from '../types';
 
 export const useEnsureMounted = () => {
     const isMounted = useIsMounted();

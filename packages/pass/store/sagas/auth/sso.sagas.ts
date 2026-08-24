@@ -1,15 +1,5 @@
 import { select } from 'redux-saga/effects';
 
-import { api } from '@proton/pass/lib/api/api';
-import { PassCrypto } from '@proton/pass/lib/crypto';
-import {
-    confirmPendingAuthDevice,
-    getAuthDevices,
-    rejectPendingAuthDevice,
-} from '@proton/pass/store/actions/creators/sso';
-import { createRequestSaga } from '@proton/pass/store/request/sagas';
-import { selectAllAddresses, selectUser } from '@proton/pass/store/selectors';
-import type { MaybeNull } from '@proton/pass/types';
 import { rejectAuthDeviceConfig } from '@proton/shared/lib/api/authDevice';
 import type { Address, DecryptedAddressKey, User } from '@proton/shared/lib/interfaces';
 import type { AuthDeviceOutput, DeviceSecretData } from '@proton/shared/lib/keys/device';
@@ -21,6 +11,13 @@ import {
     validateAuthDevice,
 } from '@proton/shared/lib/keys/deviceConfirm';
 import noop from '@proton/utils/noop';
+
+import { api } from '../../../lib/api/api';
+import { PassCrypto } from '../../../lib/crypto';
+import type { MaybeNull } from '../../../types';
+import { confirmPendingAuthDevice, getAuthDevices, rejectPendingAuthDevice } from '../../actions/creators/sso';
+import { createRequestSaga } from '../../request/sagas';
+import { selectAllAddresses, selectUser } from '../../selectors';
 
 export const authDevices = createRequestSaga({
     actions: getAuthDevices,

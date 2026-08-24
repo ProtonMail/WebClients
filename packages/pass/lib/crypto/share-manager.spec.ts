@@ -1,6 +1,5 @@
-import type { VaultShareKey } from '@proton/pass/types';
-import { ShareType } from '@proton/pass/types';
-
+import type { VaultShareKey } from '../../types';
+import { ShareType } from '../../types';
 import { createShareManager } from './share-manager';
 import { generateKey, importSymmetricKey } from './utils/crypto-helpers';
 import { PassCryptoShareError, PassCryptoVaultError } from './utils/errors';

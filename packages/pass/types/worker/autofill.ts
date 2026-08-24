@@ -1,6 +1,5 @@
-import type { FrameId } from '@proton/pass/types/worker/runtime';
-
 import type { CCItemPreview, IdentityItemPreview, LoginItemPreview } from './data';
+import type { FrameId } from './runtime';
 
 export type AutofillLoginResult = { items: LoginItemPreview[]; needsUpgrade: boolean };
 export type AutofillIdentityResult = { items: IdentityItemPreview[]; needsUpgrade: boolean };

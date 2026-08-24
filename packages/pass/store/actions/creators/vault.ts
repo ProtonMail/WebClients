@@ -1,10 +1,15 @@
 import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import { withCache } from '@proton/pass/store/actions/enhancers/cache';
-import { withShareDedupe } from '@proton/pass/store/actions/enhancers/dedupe';
-import { withItems, withItemsBatch } from '@proton/pass/store/actions/enhancers/items';
-import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
+import type { BatchItemRevisions, ItemRevision, Share, ShareContent, ShareId, ShareType } from '../../../types';
+import type { VaultTransferOwnerIntent } from '../../../types/data/vault.dto';
+import { pipe } from '../../../utils/fp/pipe';
+import { uniqueId } from '../../../utils/string/unique-id';
+import { withRequest, withRequestFailure, withRequestProgress, withRequestSuccess } from '../../request/enhancers';
+import { withCache } from '../enhancers/cache';
+import { withShareDedupe } from '../enhancers/dedupe';
+import { withItems, withItemsBatch } from '../enhancers/items';
+import { withNotification } from '../enhancers/notification';
 import {
     shareLockRequest,
     vaultCreateRequest,
@@ -12,12 +17,7 @@ import {
     vaultEditRequest,
     vaultMoveAllItemsRequest,
     vaultTransferOwnerRequest,
-} from '@proton/pass/store/actions/requests';
-import { withRequest, withRequestFailure, withRequestProgress, withRequestSuccess } from '@proton/pass/store/request/enhancers';
-import type { BatchItemRevisions, ItemRevision, Share, ShareContent, ShareId, ShareType } from '@proton/pass/types';
-import type { VaultTransferOwnerIntent } from '@proton/pass/types/data/vault.dto';
-import { pipe } from '@proton/pass/utils/fp/pipe';
-import { uniqueId } from '@proton/pass/utils/string/unique-id';
+} from '../requests';
 
 export const vaultCreationIntent = createAction('vault::creation::intent', (payload: { content: ShareContent<ShareType.Vault> }) =>
     withRequest({ status: 'start', id: vaultCreateRequest(uniqueId()) })({ payload })

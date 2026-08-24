@@ -1,6 +1,5 @@
-import type { AuthSession } from '@proton/pass/lib/auth/session';
-import type { QA_STATE_KEY } from '@proton/pass/lib/qa/service';
-
+import type { AuthSession } from '../../lib/auth/session';
+import type { QA_STATE_KEY } from '../../lib/qa/service';
 import type { ItemFilters, SelectedItem } from '../data';
 import type { Maybe, MaybeNull } from '../utils';
 

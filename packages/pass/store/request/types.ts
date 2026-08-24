@@ -1,9 +1,9 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import type { Action } from 'redux';
 
-import type { WithMeta } from '@proton/pass/store/actions/enhancers/meta';
-import type { RequestFlow } from '@proton/pass/store/request/flow';
-import type { IsNever } from '@proton/pass/types';
+import type { IsNever } from '../../types';
+import type { WithMeta } from '../actions/enhancers/meta';
+import type { RequestFlow } from './flow';
 
 export type RequestState = Record<string, RequestEntry>;
 
@@ -57,9 +57,7 @@ export type RequestEntry<T extends RequestStatus = RequestStatus, D = any> = {
 
 /** Request progress union type when tracking progress events */
 export type RequestProgress<T, D = T> =
-    | { type: 'progress'; progress: number; data: D }
-    | { type: 'done'; result: T }
-    | { type: 'error'; error: unknown };
+    { type: 'progress'; progress: number; data: D } | { type: 'done'; result: T } | { type: 'error'; error: unknown };
 
 export type ActionRequestEntry<T extends Action> =
     T extends WithRequest<{ payload: infer P }, infer U, infer D>

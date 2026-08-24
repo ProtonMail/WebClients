@@ -1,11 +1,12 @@
 import type { FC } from 'react';
 
-import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
-import { AdminPanelLabel } from '@proton/pass/components/Menu/B2B/AdminPanelLabel';
-import { AccountPath } from '@proton/pass/constants';
-import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
 import type { Organization } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
+
+import { AccountPath } from '../../../constants';
+import { useNavigateToAccount } from '../../../hooks/useNavigateToAccount';
+import { DropdownMenuButton } from '../../Layout/Dropdown/DropdownMenuButton';
+import { AdminPanelLabel } from './AdminPanelLabel';
 
 export const AdminPanelButton: FC<Organization> = ({ Name, UsedMembers, MaxMembers }) => {
     const configured = Name && UsedMembers > 1;

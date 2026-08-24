@@ -4,22 +4,22 @@ import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
 
-import { SharedMenuItem } from '@proton/pass/components/Menu/Shared/SharedMenuItem';
-import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
-import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
-import { PassPlusPromotionButton } from '@proton/pass/components/Upsell/PassPlusPromotionButton';
-import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
-import { UpsellRef } from '@proton/pass/constants';
+import { UpsellRef } from '../../../constants';
 import {
     selectActiveSecureLinksCount,
     selectPassPlan,
     selectSharedByMeCount,
     selectSharedWithMeCount,
     selectVisibleSecureLinksCount,
-} from '@proton/pass/store/selectors';
-import { OrganizationPublicLinkMode } from '@proton/pass/types';
-import { UserPassPlan } from '@proton/pass/types/api/plan';
-import { truthy } from '@proton/pass/utils/fp/predicates';
+} from '../../../store/selectors';
+import { OrganizationPublicLinkMode } from '../../../types';
+import { UserPassPlan } from '../../../types/api/plan';
+import { truthy } from '../../../utils/fp/predicates';
+import { useItemScope } from '../../Navigation/NavigationMatches';
+import { useOrganization } from '../../Organization/OrganizationProvider';
+import { PassPlusPromotionButton } from '../../Upsell/PassPlusPromotionButton';
+import { useUpselling } from '../../Upsell/UpsellingProvider';
+import { SharedMenuItem } from './SharedMenuItem';
 
 type Props = {
     onAction?: () => void;

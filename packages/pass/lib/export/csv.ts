@@ -1,6 +1,5 @@
-import { getDefaultModeUrls } from '@proton/pass/lib/urls/utils/autofill';
-import { prop } from '@proton/pass/utils/fp/lens';
-
+import { prop } from '../../utils/fp/lens';
+import { getDefaultModeUrls } from '../urls/utils/autofill';
 import type { ExportCSVItem, ExportData } from './types';
 
 const EXPORT_AS_JSON_TYPES = ['creditCard', 'identity'];

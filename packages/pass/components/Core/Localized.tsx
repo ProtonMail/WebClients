@@ -1,8 +1,9 @@
 import type { PropsWithChildren } from 'react';
 import { type FC, Fragment, useEffect, useState } from 'react';
 
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import noop from '@proton/utils/noop';
+
+import { usePassCore } from './PassCoreProvider';
 
 /** Trigger localization change through the React "key" technique to induce a
  * re-render of the specific sub-tree, avoiding a full reload. Note that this

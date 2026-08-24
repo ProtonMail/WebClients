@@ -4,18 +4,17 @@ import { useSelector } from 'react-redux';
 import { Form, type FormikContextType, FormikProvider } from 'formik';
 import { c } from 'ttag';
 
-import { FileAttachmentsField } from '@proton/pass/components/FileAttachments/FileAttachmentsField';
-import { FileAttachmentsFieldEdit } from '@proton/pass/components/FileAttachments/FileAttachmentsFieldEdit';
-import { ExtraFieldGroup } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraFieldGroup';
-import { Field } from '@proton/pass/components/Form/Field/Field';
-import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
-import { TextAreaField } from '@proton/pass/components/Form/Field/TextareaField';
-import { TitleField } from '@proton/pass/components/Form/Field/TitleField';
-import { VaultPickerField } from '@proton/pass/components/Form/Field/VaultPickerField';
-import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '@proton/pass/constants';
-import { selectVaultLimits } from '@proton/pass/store/selectors/limits';
-import type { CustomItemFormValues, ItemRevision, ItemType, MaybeNull } from '@proton/pass/types';
-
+import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../../../constants';
+import { selectVaultLimits } from '../../../store/selectors/limits';
+import type { CustomItemFormValues, ItemRevision, ItemType, MaybeNull } from '../../../types';
+import { FileAttachmentsField } from '../../FileAttachments/FileAttachmentsField';
+import { FileAttachmentsFieldEdit } from '../../FileAttachments/FileAttachmentsFieldEdit';
+import { ExtraFieldGroup } from '../../Form/Field/ExtraFieldGroup/ExtraFieldGroup';
+import { Field } from '../../Form/Field/Field';
+import { FieldsetCluster } from '../../Form/Field/Layout/FieldsetCluster';
+import { TextAreaField } from '../../Form/Field/TextareaField';
+import { TitleField } from '../../Form/Field/TitleField';
+import { VaultPickerField } from '../../Form/Field/VaultPickerField';
 import { CustomTypeFields } from './Custom.fields';
 import { CustomFormSections } from './Custom.sections';
 

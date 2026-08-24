@@ -1,19 +1,19 @@
 import type { Action } from 'redux';
 import { all, put, select, takeEvery } from 'redux-saga/effects';
 
-import { hasAttachments } from '@proton/pass/lib/items/item.predicates';
-import type { ItemRevisionWithAlias } from '@proton/pass/lib/items/item.requests';
-import { createAlias, createItem, createItemWithAlias } from '@proton/pass/lib/items/item.requests';
-import { createTelemetryEvent } from '@proton/pass/lib/telemetry/utils';
-import { filesResolve, itemCreate, itemCreateDismiss } from '@proton/pass/store/actions';
-import { withRevalidate } from '@proton/pass/store/request/enhancers';
-import { itemLinkPendingFiles } from '@proton/pass/store/sagas/items/item-files.sagas';
-import { selectShareOrThrow } from '@proton/pass/store/selectors';
-import { SelectorError } from '@proton/pass/store/selectors/errors';
-import type { RootSagaOptions } from '@proton/pass/store/types';
-import type { ItemRevision } from '@proton/pass/types';
-import { TelemetryEventName, TelemetryItemType } from '@proton/pass/types/data/telemetry';
-import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
+import { hasAttachments } from '../../../lib/items/item.predicates';
+import type { ItemRevisionWithAlias } from '../../../lib/items/item.requests';
+import { createAlias, createItem, createItemWithAlias } from '../../../lib/items/item.requests';
+import { createTelemetryEvent } from '../../../lib/telemetry/utils';
+import type { ItemRevision } from '../../../types';
+import { TelemetryEventName, TelemetryItemType } from '../../../types/data/telemetry';
+import { deobfuscate } from '../../../utils/obfuscate/xor';
+import { filesResolve, itemCreate, itemCreateDismiss } from '../../actions';
+import { withRevalidate } from '../../request/enhancers';
+import { selectShareOrThrow } from '../../selectors';
+import { SelectorError } from '../../selectors/errors';
+import type { RootSagaOptions } from '../../types';
+import { itemLinkPendingFiles } from './item-files.sagas';
 
 type ItemCreationAction = ReturnType<typeof itemCreate.intent>;
 type ItemWithAliasCreationAction = ItemCreationAction & { payload: { type: 'login'; extraData: { withAlias: true } } };

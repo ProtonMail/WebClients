@@ -2,18 +2,19 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import debounce from 'lodash/debounce';
 
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
+import noop from '@proton/utils/noop';
+
+import { usePassCore } from '../components/Core/PassCoreProvider';
 import {
     DEFAULT_MEMORABLE_PW_OPTIONS,
     DEFAULT_RANDOM_PW_OPTIONS,
     alphabeticChars,
     digitChars,
-} from '@proton/pass/lib/password/constants';
-import { generatePassword } from '@proton/pass/lib/password/generator';
-import type { GeneratePasswordConfig, GeneratePasswordMode } from '@proton/pass/lib/password/types';
-import type { MaybeNull, OrganizationUpdatePasswordPolicyInput } from '@proton/pass/types';
-import { merge } from '@proton/pass/utils/object/merge';
-import noop from '@proton/utils/noop';
+} from '../lib/password/constants';
+import { generatePassword } from '../lib/password/generator';
+import type { GeneratePasswordConfig, GeneratePasswordMode } from '../lib/password/types';
+import type { MaybeNull, OrganizationUpdatePasswordPolicyInput } from '../types';
+import { merge } from '../utils/object/merge';
 
 export enum CharType {
     Alphabetic,

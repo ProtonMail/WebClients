@@ -1,6 +1,6 @@
-import { readProtonPassJSON } from '@proton/pass/lib/import/providers/protonpass/protonpass.json.reader';
-import type { ItemImportIntent } from '@proton/pass/types';
-import { AutofillMode } from '@proton/pass/types/protobuf';
+import type { ItemImportIntent } from '../../../../types';
+import { AutofillMode } from '../../../../types/protobuf';
+import { readProtonPassJSON } from './protonpass.json.reader';
 
 const makeLoginExport = (content: object, version = '1.20.0') =>
     JSON.stringify({

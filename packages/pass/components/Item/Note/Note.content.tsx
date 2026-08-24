@@ -1,14 +1,14 @@
 import type { FC } from 'react';
 
-import { ExtraFieldsControl } from '@proton/pass/components/Form/Field/Control/ExtraFieldsControl';
-import { FieldBox } from '@proton/pass/components/Form/Field/Layout/FieldBox';
-import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
-import { TextAreaReadonly } from '@proton/pass/components/Form/legacy/TextAreaReadonly';
-import { useItemFieldExpansion } from '@proton/pass/components/Item/Containers/ItemFieldExpansion';
-import type { ItemContentProps } from '@proton/pass/components/Views/types';
-import { useDeobfuscatedValue } from '@proton/pass/hooks/useDeobfuscatedValue';
-import { deobfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
-import { getItemKey } from '@proton/pass/lib/items/item.utils';
+import { useDeobfuscatedValue } from '../../../hooks/useDeobfuscatedValue';
+import { deobfuscateExtraFields } from '../../../lib/items/item.obfuscation';
+import { getItemKey } from '../../../lib/items/item.utils';
+import { ExtraFieldsControl } from '../../Form/Field/Control/ExtraFieldsControl';
+import { FieldBox } from '../../Form/Field/Layout/FieldBox';
+import { FieldsetCluster } from '../../Form/Field/Layout/FieldsetCluster';
+import { TextAreaReadonly } from '../../Form/legacy/TextAreaReadonly';
+import type { ItemContentProps } from '../../Views/types';
+import { useItemFieldExpansion } from '../Containers/ItemFieldExpansion';
 
 export const NoteContent: FC<ItemContentProps<'note'>> = ({
     revision: { data, itemId, shareId, revision },

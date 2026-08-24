@@ -1,5 +1,5 @@
-import { InAppNotificationDisplayType, InAppNotificationState } from '@proton/pass/types';
-import type { InAppNotification } from '@proton/pass/types/data/notification';
+import { InAppNotificationDisplayType, InAppNotificationState } from '../../types';
+import type { InAppNotification } from '../../types/data/notification';
 
 export const isPromoNotification = (notification: InAppNotification) =>
     notification.content.displayType === InAppNotificationDisplayType.PROMO;

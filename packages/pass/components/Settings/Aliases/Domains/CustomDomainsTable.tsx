@@ -9,10 +9,10 @@ import TableCell from '@proton/components/components/table/TableCell';
 import TableHeader from '@proton/components/components/table/TableHeader';
 import TableHeaderCell from '@proton/components/components/table/TableHeaderCell';
 import TableRow from '@proton/components/components/table/TableRow';
-import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
-import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
-import type { CustomDomainOutput } from '@proton/pass/types';
 
+import type { CustomDomainOutput } from '../../../../types';
+import { DropdownMenuButton } from '../../../Layout/Dropdown/DropdownMenuButton';
+import { QuickActionsDropdown } from '../../../Layout/Dropdown/QuickActionsDropdown';
 import { useAliasDomains } from './DomainsProvider';
 
 const getDomainStatusLabel = ({ OwnershipVerified, MxVerified }: CustomDomainOutput) => {

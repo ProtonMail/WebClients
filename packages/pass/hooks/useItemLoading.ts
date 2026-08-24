@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 
-import { isTrashed } from '@proton/pass/lib/items/item.predicates';
-import { itemDelete, itemMove, itemRestore, itemTrash } from '@proton/pass/store/actions';
+import { isTrashed } from '../lib/items/item.predicates';
+import { itemDelete, itemMove, itemRestore, itemTrash } from '../store/actions';
 import {
     itemsBulkDeleteRequest,
     itemsBulkMoveRequest,
@@ -10,9 +10,9 @@ import {
     trashEmptyRequest,
     trashRestoreRequest,
     vaultMoveAllItemsRequest,
-} from '@proton/pass/store/actions/requests';
-import { selectRequestInFlight, selectRequestInFlightData } from '@proton/pass/store/selectors';
-import type { BulkSelectionDTO, ItemRevision, MaybeNull, SelectedItem } from '@proton/pass/types';
+} from '../store/actions/requests';
+import { selectRequestInFlight, selectRequestInFlightData } from '../store/selectors';
+import type { BulkSelectionDTO, ItemRevision, MaybeNull, SelectedItem } from '../types';
 
 const bulkSelectionContains =
     ({ shareId, itemId }: SelectedItem) =>

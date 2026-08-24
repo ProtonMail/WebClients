@@ -1,7 +1,7 @@
 import { CryptoProxy } from '@protontech/crypto';
 import { utf8StringToUint8Array } from '@protontech/crypto/utils';
 
-import { PASS_CREDENTIAL_CHECK_URL } from '@proton/pass/constants';
+import { PASS_CREDENTIAL_CHECK_URL } from '../../constants';
 
 /** Only a truncated prefix of this hash (see `getBucketUrl`) is ever sent
  * anywhere — the password itself and the full hash never leave the device. */

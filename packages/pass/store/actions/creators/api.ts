@@ -1,14 +1,15 @@
 import { createAction } from '@reduxjs/toolkit';
 
-import { withCache } from '@proton/pass/store/actions/enhancers/cache';
-import { withBackgroundAction } from '@proton/pass/store/actions/enhancers/client';
-import { withSettings } from '@proton/pass/store/actions/enhancers/settings';
-import type { HydratedUserState } from '@proton/pass/store/reducers';
-import { withRequestSuccess } from '@proton/pass/store/request/enhancers';
-import type { ShareEventResponse } from '@proton/pass/store/sagas/events/v1/channel.share';
-import type { CoreEvent } from '@proton/pass/types/api';
-import { pipe } from '@proton/pass/utils/fp/pipe';
 import identity from '@proton/utils/identity';
+
+import type { CoreEvent } from '../../../types/api';
+import { pipe } from '../../../utils/fp/pipe';
+import type { HydratedUserState } from '../../reducers';
+import { withRequestSuccess } from '../../request/enhancers';
+import type { ShareEventResponse } from '../../sagas/events/v1/channel.share';
+import { withCache } from '../enhancers/cache';
+import { withBackgroundAction } from '../enhancers/client';
+import { withSettings } from '../enhancers/settings';
 
 type ShareEvent = ShareEventResponse & { shareId: string };
 

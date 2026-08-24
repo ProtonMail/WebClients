@@ -1,11 +1,10 @@
 import type { PropsWithChildren } from 'react';
 import { type FC, createContext } from 'react';
 
-import type { UseAsyncModalHandle } from '@proton/pass/hooks/useAsyncModalHandles';
-import { useAsyncModalHandles } from '@proton/pass/hooks/useAsyncModalHandles';
-import { createUseContext } from '@proton/pass/hooks/useContextFactory';
-import type { MaybeNull } from '@proton/pass/types';
-
+import type { UseAsyncModalHandle } from '../../hooks/useAsyncModalHandles';
+import { useAsyncModalHandles } from '../../hooks/useAsyncModalHandles';
+import { createUseContext } from '../../hooks/useContextFactory';
+import type { MaybeNull } from '../../types';
 import type { PasswordGeneratorModalState } from './PasswordGeneratorModal';
 import { PasswordGeneratorModal } from './PasswordGeneratorModal';
 

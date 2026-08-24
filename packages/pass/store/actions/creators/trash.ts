@@ -1,13 +1,13 @@
 import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import { withCache } from '@proton/pass/store/actions/enhancers/cache';
-import { withItems, withItemsBatch } from '@proton/pass/store/actions/enhancers/items';
-import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
-import { trashEmptyRequest, trashRestoreRequest } from '@proton/pass/store/actions/requests';
-import { withRequest, withRequestFailure, withRequestProgress, withRequestSuccess } from '@proton/pass/store/request/enhancers';
-import type { BatchItemRevisionIDs } from '@proton/pass/types';
-import { pipe } from '@proton/pass/utils/fp/pipe';
+import type { BatchItemRevisionIDs } from '../../../types';
+import { pipe } from '../../../utils/fp/pipe';
+import { withRequest, withRequestFailure, withRequestProgress, withRequestSuccess } from '../../request/enhancers';
+import { withCache } from '../enhancers/cache';
+import { withItems, withItemsBatch } from '../enhancers/items';
+import { withNotification } from '../enhancers/notification';
+import { trashEmptyRequest, trashRestoreRequest } from '../requests';
 
 export const emptyTrashIntent = createAction('trash::empty::intent', () =>
     pipe(

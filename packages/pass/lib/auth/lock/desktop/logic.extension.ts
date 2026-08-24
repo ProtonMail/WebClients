@@ -1,12 +1,8 @@
-import type { AuthStore } from '@proton/pass/lib/auth/store';
-import { NativeMessageError } from '@proton/pass/lib/native-messaging/errors';
-import type { NativeMessagingService } from '@proton/pass/lib/native-messaging/native-messaging.extension';
-import {
-    NativeMessageErrorType,
-    type NativeMessageSetupLockSecretRequest,
-    NativeMessageType,
-} from '@proton/pass/types';
-import { logger } from '@proton/pass/utils/logger';
+import { NativeMessageErrorType, type NativeMessageSetupLockSecretRequest, NativeMessageType } from '../../../../types';
+import { logger } from '../../../../utils/logger';
+import { NativeMessageError } from '../../../native-messaging/errors';
+import type { NativeMessagingService } from '../../../native-messaging/native-messaging.extension';
+import type { AuthStore } from '../../store';
 
 const info = (...content: any[]) => logger.info('[DesktopLock]', ...content);
 

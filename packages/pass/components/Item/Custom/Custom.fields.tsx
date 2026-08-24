@@ -3,12 +3,12 @@ import type { FC } from 'react';
 import { c } from 'ttag';
 
 import Option from '@proton/components/components/option/Option';
-import { Field } from '@proton/pass/components/Form/Field/Field';
-import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
-import { SelectField } from '@proton/pass/components/Form/Field/SelectField';
-import { TextField } from '@proton/pass/components/Form/Field/TextField';
-import { TextAreaField } from '@proton/pass/components/Form/Field/TextareaField';
 
+import { Field } from '../../Form/Field/Field';
+import { FieldsetCluster } from '../../Form/Field/Layout/FieldsetCluster';
+import { SelectField } from '../../Form/Field/SelectField';
+import { TextField } from '../../Form/Field/TextField';
+import { TextAreaField } from '../../Form/Field/TextareaField';
 import { WifiSecurities, wifiSecurityLabel } from './Custom.utils';
 
 export const CustomTypeFields: FC<{ type: 'sshKey' | 'wifi' | 'custom' }> = ({ type }) => {

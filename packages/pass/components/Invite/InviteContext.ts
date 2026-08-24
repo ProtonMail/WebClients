@@ -1,9 +1,9 @@
 import { createContext, useContext } from 'react';
 
-import { createUseContext } from '@proton/pass/hooks/useContextFactory';
-import type { AccessKeys } from '@proton/pass/lib/access/types';
-import type { MaybeNull, Result, SelectedItem, SelectedShare } from '@proton/pass/types';
-import type { Invite } from '@proton/pass/types/data/invites';
+import { createUseContext } from '../../hooks/useContextFactory';
+import type { AccessKeys } from '../../lib/access/types';
+import type { MaybeNull, Result, SelectedItem, SelectedShare } from '../../types';
+import type { Invite } from '../../types/data/invites';
 
 export type InviteContextState =
     | ({ view: 'invite-vault' } & SelectedShare)

@@ -1,8 +1,9 @@
-import { api } from '@proton/pass/lib/api/api';
-import type { MaybeNull } from '@proton/pass/types';
-import type { InAppNotifications, UpdateInAppNotificationDTO } from '@proton/pass/types/data/notification';
-import { chainSort, sortOn } from '@proton/pass/utils/fp/sort';
 import noop from '@proton/utils/noop';
+
+import type { MaybeNull } from '../../types';
+import type { InAppNotifications, UpdateInAppNotificationDTO } from '../../types/data/notification';
+import { chainSort, sortOn } from '../../utils/fp/sort';
+import { api } from '../api/api';
 
 export const getNotifications = async (): Promise<MaybeNull<InAppNotifications>> => {
     const { Notifications } = await api({ url: 'pass/v1/notification', method: 'get' });

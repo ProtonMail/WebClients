@@ -6,19 +6,20 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { IcInfoCircleFilled } from '@proton/icons/icons/IcInfoCircleFilled';
-import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
-import { RadioGroupField } from '@proton/pass/components/Form/Field/RadioGroupField';
-import { ToggleField } from '@proton/pass/components/Form/Field/ToggleField';
-import { PasswordField } from '@proton/pass/components/Form/legacy/PasswordField';
-import { Card } from '@proton/pass/components/Layout/Card/Card';
-import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
-import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
-import { UpsellRef } from '@proton/pass/constants';
-import { ExportFormat, type ExportRequestOptions } from '@proton/pass/lib/export/types';
-import { fileStorage } from '@proton/pass/lib/file-storage/fs';
-import { selectNonOwnedVaults, selectUserStorageAllowed, selectUserStorageUsed } from '@proton/pass/store/selectors';
-import { OrganizationExportMode } from '@proton/pass/types';
-import { truthy } from '@proton/pass/utils/fp/predicates';
+
+import { UpsellRef } from '../../constants';
+import { ExportFormat, type ExportRequestOptions } from '../../lib/export/types';
+import { fileStorage } from '../../lib/file-storage/fs';
+import { selectNonOwnedVaults, selectUserStorageAllowed, selectUserStorageUsed } from '../../store/selectors';
+import { OrganizationExportMode } from '../../types';
+import { truthy } from '../../utils/fp/predicates';
+import { useOnline } from '../Core/ConnectivityProvider';
+import { RadioGroupField } from '../Form/Field/RadioGroupField';
+import { ToggleField } from '../Form/Field/ToggleField';
+import { PasswordField } from '../Form/legacy/PasswordField';
+import { Card } from '../Layout/Card/Card';
+import { useOrganization } from '../Organization/OrganizationProvider';
+import { useUpselling } from '../Upsell/UpsellingProvider';
 
 export type ExporterProps = { form: FormikContextType<ExportRequestOptions>; loading: boolean };
 

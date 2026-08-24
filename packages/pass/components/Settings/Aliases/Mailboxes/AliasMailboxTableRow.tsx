@@ -7,14 +7,14 @@ import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import Badge from '@proton/components/components/badge/Badge';
 import TableCell from '@proton/components/components/table/TableCell';
 import TableRow from '@proton/components/components/table/TableRow';
-import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
-import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
-import { useAsyncRequestDispatch } from '@proton/pass/hooks/useDispatchAsyncRequest';
-import { deleteMailbox, setDefaultMailbox } from '@proton/pass/store/actions';
-import type { UserMailboxOutput } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
+import { useAsyncRequestDispatch } from '../../../../hooks/useDispatchAsyncRequest';
+import { deleteMailbox, setDefaultMailbox } from '../../../../store/actions';
+import type { UserMailboxOutput } from '../../../../types';
+import { DropdownMenuButton } from '../../../Layout/Dropdown/DropdownMenuButton';
+import { QuickActionsDropdown } from '../../../Layout/Dropdown/QuickActionsDropdown';
 import { AliasMailboxLoading } from './AliasMailboxLoading';
 import { useAliasMailboxes } from './AliasMailboxesProvider';
 

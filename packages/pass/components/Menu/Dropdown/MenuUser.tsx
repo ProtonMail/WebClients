@@ -2,11 +2,12 @@ import { memo } from 'react';
 import { useSelector } from 'react-redux';
 
 import { IcStar } from '@proton/icons/icons/IcStar';
-import { UpgradeButton } from '@proton/pass/components/Upsell/UpgradeButton';
-import { UpsellRef } from '@proton/pass/constants';
-import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
-import { selectPassPlan, selectPlanDisplayName, selectUser } from '@proton/pass/store/selectors/user';
 import clsx from '@proton/utils/clsx';
+
+import { UpsellRef } from '../../../constants';
+import { isPaidPlan } from '../../../lib/user/user.predicates';
+import { selectPassPlan, selectPlanDisplayName, selectUser } from '../../../store/selectors/user';
+import { UpgradeButton } from '../../Upsell/UpgradeButton';
 
 export const MenuUser = memo(() => {
     const passPlan = useSelector(selectPassPlan);

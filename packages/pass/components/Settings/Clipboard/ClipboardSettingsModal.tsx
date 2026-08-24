@@ -6,9 +6,10 @@ import { Button } from '@proton/atoms/Button/Button';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
-import { getDefaultClipboardTTLOption } from '@proton/pass/components/Settings/Clipboard/ClipboardSettings.utils';
-import { ClipboardTTL, DEFAULT_CLIPBOARD_TTL } from '@proton/pass/lib/clipboard/types';
+
+import { ClipboardTTL, DEFAULT_CLIPBOARD_TTL } from '../../../lib/clipboard/types';
+import { PassModal } from '../../Layout/Modal/PassModal';
+import { getDefaultClipboardTTLOption } from './ClipboardSettings.utils';
 
 type Props = {
     onSubmit: (ttl?: ClipboardTTL) => void;

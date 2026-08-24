@@ -6,27 +6,28 @@ import { c } from 'ttag';
 
 import type { CreateNotificationOptions } from '@proton/app-context/notifications/interfaces';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { ContextMenu } from '@proton/pass/components/ContextMenu/ContextMenu';
-import type { ContextMenuItemCopy } from '@proton/pass/components/ContextMenu/ContextMenuItems';
+
+import type { ItemActions } from '../../../hooks/items/useItemActions';
+import { useItemActions } from '../../../hooks/items/useItemActions';
+import type { ItemState } from '../../../hooks/items/useItemState';
+import { useItemState } from '../../../hooks/items/useItemState';
+import { otpGenerationErrorNotifcation } from '../../../hooks/useOTPCode';
+import { getItemKey } from '../../../lib/items/item.utils';
+import type { Item, ItemRevisionWithOptimistic, Share } from '../../../types';
+import type { ObfuscatedItemProperty } from '../../../types/data/obfuscation';
+import { deobfuscate } from '../../../utils/obfuscate/xor';
+import { formatExpirationDateMMYY } from '../../../utils/time/expiration-date';
+import { ContextMenu } from '../../ContextMenu/ContextMenu';
+import type { ContextMenuItemCopy } from '../../ContextMenu/ContextMenuItems';
 import {
     CONTEXT_MENU_SEPARATOR,
     type ContextMenuElement,
     type ContextMenuItem,
-} from '@proton/pass/components/ContextMenu/ContextMenuItems';
-import { useContextMenu } from '@proton/pass/components/ContextMenu/ContextMenuProvider';
-import type { PassCoreContextValue } from '@proton/pass/components/Core/PassCoreProvider';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { expDateMask } from '@proton/pass/components/Form/Field/masks/credit-card';
-import type { ItemActions } from '@proton/pass/hooks/items/useItemActions';
-import { useItemActions } from '@proton/pass/hooks/items/useItemActions';
-import type { ItemState } from '@proton/pass/hooks/items/useItemState';
-import { useItemState } from '@proton/pass/hooks/items/useItemState';
-import { otpGenerationErrorNotifcation } from '@proton/pass/hooks/useOTPCode';
-import { getItemKey } from '@proton/pass/lib/items/item.utils';
-import type { Item, ItemRevisionWithOptimistic, Share } from '@proton/pass/types';
-import type { ObfuscatedItemProperty } from '@proton/pass/types/data/obfuscation';
-import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
-import { formatExpirationDateMMYY } from '@proton/pass/utils/time/expiration-date';
+} from '../../ContextMenu/ContextMenuItems';
+import { useContextMenu } from '../../ContextMenu/ContextMenuProvider';
+import type { PassCoreContextValue } from '../../Core/PassCoreProvider';
+import { usePassCore } from '../../Core/PassCoreProvider';
+import { expDateMask } from '../../Form/Field/masks/credit-card';
 
 /** Get context menu copy function when value is not obfuscated */
 const fromPlainTextValue = (value: string): ContextMenuItemCopy => (value === '' ? undefined : () => value);

@@ -1,7 +1,7 @@
 import type { Selector } from '@reduxjs/toolkit';
 import type { Action, Reducer } from 'redux';
 
-import type { DefinedPropertiesOnly, MaybeArray } from '@proton/pass/types';
+import type { DefinedPropertiesOnly, MaybeArray } from '../../types';
 
 export type OptimisticMatcherResult = boolean | string;
 export type OptimisticMatcher = string | ((action: Action) => OptimisticMatcherResult);
@@ -62,9 +62,7 @@ export type CombinedOptimisticReducer<T = any> = Reducer<T, any, {}> & {
     innerCombinedReducers: { [K in keyof T]: Reducer<T[K]> };
 };
 
-export type OptimisticReducersMapValues<T = any> =
-    | (Reducer<T> | WithOptimisticReducer<T>)
-    | OptimisticReducersMapObject<T>;
+export type OptimisticReducersMapValues<T = any> = (Reducer<T> | WithOptimisticReducer<T>) | OptimisticReducersMapObject<T>;
 
 export type UnwrapOptimisticReducersMapValues<T> = Exclude<
     T extends WithOptimisticReducer<infer S>

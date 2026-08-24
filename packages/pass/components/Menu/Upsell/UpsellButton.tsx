@@ -1,12 +1,12 @@
 import { useMemo } from 'react';
 
-import { InAppNotificationPromoButton } from '@proton/pass/components/Notifications/InAppNotificationPromoButton';
-import { UpgradeButton } from '@proton/pass/components/Upsell/UpgradeButton';
-import { UpsellRef } from '@proton/pass/constants';
-import { useMatchUser } from '@proton/pass/hooks/useMatchUser';
-import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
-import { selectActivePromoNotification } from '@proton/pass/store/selectors';
-import { getEpoch } from '@proton/pass/utils/time/epoch';
+import { UpsellRef } from '../../../constants';
+import { useMatchUser } from '../../../hooks/useMatchUser';
+import { useMemoSelector } from '../../../hooks/useMemoSelector';
+import { selectActivePromoNotification } from '../../../store/selectors';
+import { getEpoch } from '../../../utils/time/epoch';
+import { InAppNotificationPromoButton } from '../../Notifications/InAppNotificationPromoButton';
+import { UpgradeButton } from '../../Upsell/UpgradeButton';
 
 export const UpsellButton = () => {
     const paidUser = useMatchUser({ paid: true });

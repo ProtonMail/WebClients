@@ -4,14 +4,15 @@ import { useSelector } from 'react-redux';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import type { BaseSpotlightMessage } from '@proton/pass/components/Spotlight/SpotlightContent';
-import { AliasSyncIcon } from '@proton/pass/components/Spotlight/SpotlightIcon';
-import { selectUserData } from '@proton/pass/store/selectors';
-import { pipe } from '@proton/pass/utils/fp/pipe';
 import { PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
+
+import { selectUserData } from '../../store/selectors';
+import { pipe } from '../../utils/fp/pipe';
+import { useOnline } from '../Core/ConnectivityProvider';
+import { usePassCore } from '../Core/PassCoreProvider';
+import type { BaseSpotlightMessage } from '../Spotlight/SpotlightContent';
+import { AliasSyncIcon } from '../Spotlight/SpotlightIcon';
 
 export const AliasSync: FC<BaseSpotlightMessage> = ({ onClose = noop }) => {
     const online = useOnline();

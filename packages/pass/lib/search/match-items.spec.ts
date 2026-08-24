@@ -1,7 +1,6 @@
-import type { ItemRevision } from '@proton/pass/types';
-import { AutofillMode, CardType } from '@proton/pass/types/protobuf';
-import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
-
+import type { ItemRevision } from '../../types';
+import { AutofillMode, CardType } from '../../types/protobuf';
+import { obfuscate } from '../../utils/obfuscate/xor';
 import { searchItems } from './match-items';
 
 const searchAndExpect = (items: ItemRevision[], expected: ItemRevision[]) => (search: string) => {

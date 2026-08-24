@@ -1,31 +1,32 @@
 import { createSelector } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import type { AuthStore } from '@proton/pass/lib/auth/store';
-import { getPassPlan } from '@proton/pass/lib/user/user.plan';
-import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
-import type { VaultShareItem } from '@proton/pass/store/reducers';
-import { selectExtraPasswordEnabled } from '@proton/pass/store/selectors/settings';
-import { selectShareState } from '@proton/pass/store/selectors/shares';
-import { createUncachedSelector } from '@proton/pass/store/selectors/utils';
-import { selectDefaultVault } from '@proton/pass/store/selectors/vaults';
-import type { State } from '@proton/pass/store/types';
-import type { Maybe, MaybeNull, Share } from '@proton/pass/types';
+import { hasBit } from '@proton/shared/lib/helpers/bitset';
+import { NEWSLETTER_SUBSCRIPTIONS_BITS } from '@proton/shared/lib/helpers/newsletter';
+import { type Address, SETTINGS_PASSWORD_MODE, UserType } from '@proton/shared/lib/interfaces';
+import { AuthDeviceState } from '@proton/shared/lib/keys/device';
+
+import type { AuthStore } from '../../lib/auth/store';
+import { getPassPlan } from '../../lib/user/user.plan';
+import { isWritableVault } from '../../lib/vaults/vault.predicates';
+import type { Maybe, MaybeNull, Share } from '../../types';
 import {
     type AutofillModelExperimentGroup,
     DEFAULT_AUTOFILL_MODEL_EXPERIMENT_GROUP,
     PassFeature,
     isAutofillModelExperimentGroup,
-} from '@proton/pass/types/api/features';
-import { UserPassPlan } from '@proton/pass/types/api/plan';
-import { oneOf } from '@proton/pass/utils/fp/predicates';
-import { sortOn } from '@proton/pass/utils/fp/sort';
-import { UNIX_DAY } from '@proton/pass/utils/time/constants';
-import { getEpoch } from '@proton/pass/utils/time/epoch';
-import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import { NEWSLETTER_SUBSCRIPTIONS_BITS } from '@proton/shared/lib/helpers/newsletter';
-import { type Address, SETTINGS_PASSWORD_MODE, UserType } from '@proton/shared/lib/interfaces';
-import { AuthDeviceState } from '@proton/shared/lib/keys/device';
+} from '../../types/api/features';
+import { UserPassPlan } from '../../types/api/plan';
+import { oneOf } from '../../utils/fp/predicates';
+import { sortOn } from '../../utils/fp/sort';
+import { UNIX_DAY } from '../../utils/time/constants';
+import { getEpoch } from '../../utils/time/epoch';
+import type { VaultShareItem } from '../reducers';
+import type { State } from '../types';
+import { selectExtraPasswordEnabled } from './settings';
+import { selectShareState } from './shares';
+import { createUncachedSelector } from './utils';
+import { selectDefaultVault } from './vaults';
 
 export const selectUserState = ({ user }: State) => user;
 export const selectUser = ({ user: { user } }: State) => user;

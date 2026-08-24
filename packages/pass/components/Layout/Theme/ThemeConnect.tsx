@@ -1,8 +1,8 @@
 import { useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
 
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { selectTheme } from '@proton/pass/store/selectors';
+import { selectTheme } from '../../../store/selectors';
+import { usePassCore } from '../../Core/PassCoreProvider';
 
 export const ThemeConnect = () => {
     const core = usePassCore();

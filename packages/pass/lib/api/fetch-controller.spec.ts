@@ -1,5 +1,4 @@
-import { uniqueId } from '@proton/pass/utils/string/unique-id';
-
+import { uniqueId } from '../../utils/string/unique-id';
 import { type FetchController, fetchControllerFactory, getRequestID, getUID } from './fetch-controller';
 
 class MockFetchEvent {

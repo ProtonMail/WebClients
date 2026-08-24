@@ -1,6 +1,6 @@
-import { encryptData, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
-import type { KeyRotationKeyPair, ShareKey } from '@proton/pass/types';
-import { PassEncryptionTag } from '@proton/pass/types';
+import type { KeyRotationKeyPair, ShareKey } from '../../../../types';
+import { PassEncryptionTag } from '../../../../types';
+import { encryptData, importSymmetricKey } from '../../utils/crypto-helpers';
 
 /** Wraps every rotation of a vault's share keys with the PAT's raw symmetric
  * key so the holder of the PAT can decrypt items in that vault. Mirrors the

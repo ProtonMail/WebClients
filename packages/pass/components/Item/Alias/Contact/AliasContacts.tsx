@@ -5,11 +5,11 @@ import { c } from 'ttag';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { IcFilingCabinet } from '@proton/icons/icons/IcFilingCabinet';
-import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
-import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
-import { AliasContactsProvider } from '@proton/pass/components/Item/Alias/Contact/AliasContactsProvider';
-import type { SelectedItem } from '@proton/pass/types';
 
+import type { SelectedItem } from '../../../../types';
+import { useOnline } from '../../../Core/ConnectivityProvider';
+import { ValueControl } from '../../../Form/Field/Control/ValueControl';
+import { AliasContactsProvider } from './AliasContactsProvider';
 import { AliasContactsView } from './AliasContactsView';
 
 export const AliasContacts: FC<SelectedItem> = ({ shareId, itemId }) => {

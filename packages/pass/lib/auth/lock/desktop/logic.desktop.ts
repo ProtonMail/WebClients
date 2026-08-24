@@ -1,7 +1,7 @@
-import { sendNativeMessageResponse } from '@proton/pass/lib/native-messaging/native-messaging.desktop';
-import type { NativeMessageSetupLockSecretRequest } from '@proton/pass/types';
-import { type NativeMessageSetupLockSecretResponse, NativeMessageType } from '@proton/pass/types';
-import { logger } from '@proton/pass/utils/logger';
+import type { NativeMessageSetupLockSecretRequest } from '../../../../types';
+import { type NativeMessageSetupLockSecretResponse, NativeMessageType } from '../../../../types';
+import { logger } from '../../../../utils/logger';
+import { sendNativeMessageResponse } from '../../../native-messaging/native-messaging.desktop';
 
 const log = (...content: any[]) => logger.debug('[DesktopLock]', ...content);
 

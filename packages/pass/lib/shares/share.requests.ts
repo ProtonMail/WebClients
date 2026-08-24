@@ -1,6 +1,4 @@
-import { api } from '@proton/pass/lib/api/api';
-import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
-import type { SharesState } from '@proton/pass/store/reducers';
+import type { SharesState } from '../../store/reducers';
 import type {
     ActiveShareGetResponse,
     PassEventListResponse,
@@ -10,12 +8,14 @@ import type {
     ShareId,
     ShareRole,
     ShareType,
-} from '@proton/pass/types';
-import type { ShareEditMemberAccessIntent, ShareRemoveMemberAccessIntent } from '@proton/pass/types/data/access.dto';
-import type { ShareMember } from '@proton/pass/types/data/invites';
-import { truthy } from '@proton/pass/utils/fp/predicates';
+} from '../../types';
+import type { ShareEditMemberAccessIntent, ShareRemoveMemberAccessIntent } from '../../types/data/access.dto';
+import type { ShareMember } from '../../types/data/invites';
+import { truthy } from '../../utils/fp/predicates';
+import { api } from '../api/api';
+import { parseShareResponse } from './share.parser';
 
-export { getAllShareKeys, getShareLatestEventId } from '@proton/pass/lib/shares/share.keys';
+export { getAllShareKeys, getShareLatestEventId } from './share.keys';
 
 export const getSharesQuery = () => ({ url: 'pass/v1/share', method: 'get' }) as const;
 export const getShares = async () => {

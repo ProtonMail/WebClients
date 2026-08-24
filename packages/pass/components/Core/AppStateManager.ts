@@ -1,9 +1,9 @@
-import type { Maybe } from '@proton/pass/types';
-import { type AppState, AppStatus } from '@proton/pass/types';
-import { logger } from '@proton/pass/utils/logger';
-import { withMerge } from '@proton/pass/utils/object/merge';
-import type { ObservableState } from '@proton/pass/utils/pubsub/state';
-import { createObservableState } from '@proton/pass/utils/pubsub/state';
+import type { Maybe } from '../../types';
+import { type AppState, AppStatus } from '../../types';
+import { logger } from '../../utils/logger';
+import { withMerge } from '../../utils/object/merge';
+import type { ObservableState } from '../../utils/pubsub/state';
+import { createObservableState } from '../../utils/pubsub/state';
 
 export const getInitialAppState = (): AppState => ({
     authorized: false,

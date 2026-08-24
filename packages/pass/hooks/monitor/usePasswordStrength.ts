@@ -2,9 +2,10 @@ import { useEffect, useState } from 'react';
 
 import type { PasswordScore } from '@protontech/pass-rust-core/worker';
 
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import type { MaybeNull } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
+
+import { usePassCore } from '../../components/Core/PassCoreProvider';
+import type { MaybeNull } from '../../types';
 
 export const usePasswordStrength = (password: string) => {
     const { core } = usePassCore();

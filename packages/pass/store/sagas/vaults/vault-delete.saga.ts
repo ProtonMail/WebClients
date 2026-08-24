@@ -1,19 +1,12 @@
 import { put, select, takeEvery } from 'redux-saga/effects';
 
-import { PassCrypto } from '@proton/pass/lib/crypto';
-import { deleteVault } from '@proton/pass/lib/vaults/vault.requests';
-import {
-    getUserAccessIntent,
-    lockShare,
-    unlockShare,
-    vaultDeleteFailure,
-    vaultDeleteIntent,
-    vaultDeleteSuccess,
-} from '@proton/pass/store/actions';
-import { withRevalidate } from '@proton/pass/store/request/enhancers';
-import { isShareLocked, selectUserDefaultShareID } from '@proton/pass/store/selectors';
-import type { RootSagaOptions } from '@proton/pass/store/types';
-import type { Maybe } from '@proton/pass/types';
+import { PassCrypto } from '../../../lib/crypto';
+import { deleteVault } from '../../../lib/vaults/vault.requests';
+import type { Maybe } from '../../../types';
+import { getUserAccessIntent, lockShare, unlockShare, vaultDeleteFailure, vaultDeleteIntent, vaultDeleteSuccess } from '../../actions';
+import { withRevalidate } from '../../request/enhancers';
+import { isShareLocked, selectUserDefaultShareID } from '../../selectors';
+import type { RootSagaOptions } from '../../types';
 
 function* deleteVaultWorker(
     { getAuthStore }: RootSagaOptions,

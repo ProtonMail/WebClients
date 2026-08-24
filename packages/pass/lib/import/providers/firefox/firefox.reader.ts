@@ -1,15 +1,10 @@
-import { readCSV } from '@proton/pass/lib/import/helpers/csv.reader';
-import { ImportProviderError } from '@proton/pass/lib/import/helpers/error';
-import {
-    getEmailOrUsername,
-    getImportedVaultName,
-    importLoginItem,
-} from '@proton/pass/lib/import/helpers/transformers';
-import type { ImportReaderResult } from '@proton/pass/lib/import/types';
-import type { ItemImportIntent } from '@proton/pass/types';
-import { logger } from '@proton/pass/utils/logger';
-import { msToEpoch } from '@proton/pass/utils/time/epoch';
-
+import type { ItemImportIntent } from '../../../../types';
+import { logger } from '../../../../utils/logger';
+import { msToEpoch } from '../../../../utils/time/epoch';
+import { readCSV } from '../../helpers/csv.reader';
+import { ImportProviderError } from '../../helpers/error';
+import { getEmailOrUsername, getImportedVaultName, importLoginItem } from '../../helpers/transformers';
+import type { ImportReaderResult } from '../../types';
 import type { FirefoxItem } from './firefox.types';
 
 const FIREFOX_EXPECTED_HEADERS: (keyof FirefoxItem)[] = [

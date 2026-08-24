@@ -1,8 +1,7 @@
-import { CRITERIA_MASKS } from '@proton/pass/lib/settings/pause-list';
-import type { SettingsState } from '@proton/pass/store/reducers/settings';
-import { getInitialSettings } from '@proton/pass/store/reducers/settings';
-import type { State } from '@proton/pass/store/types';
-
+import { CRITERIA_MASKS } from '../../lib/settings/pause-list';
+import type { SettingsState } from '../reducers/settings';
+import { getInitialSettings } from '../reducers/settings';
+import type { State } from '../types';
 import { selectPauseListEntries } from './settings';
 
 const mockState = (settings: Partial<SettingsState>): State =>

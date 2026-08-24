@@ -1,7 +1,6 @@
 import { createAction } from '@reduxjs/toolkit';
 
-import type { TagMatch, Tagged } from '@proton/pass/types';
-
+import type { TagMatch, Tagged } from '../../types';
 import { withRequest, withRequestFailure, withRequestSuccess } from './enhancers';
 import type { RequestConfig } from './types';
 
@@ -103,8 +102,7 @@ export const requestActionsFactory =
         const intentPA = (options.intent?.prepare ?? toPayload) as IntentPA;
         const successPA = (options.success?.prepare ?? toPayload) as SuccessPA;
         const failurePA = (options.failure?.prepare ?? toPayloadWithError) as FailurePA;
-        const requestID = (dto: IntentDTO) =>
-            'key' in options && options.key ? `${namespace}::${options.key(dto)}` : namespace;
+        const requestID = (dto: IntentDTO) => ('key' in options && options.key ? `${namespace}::${options.key(dto)}` : namespace);
 
         return {
             namespace,

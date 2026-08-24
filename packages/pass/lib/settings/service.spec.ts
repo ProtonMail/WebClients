@@ -1,5 +1,4 @@
-import { getInitialSettings } from '@proton/pass/store/reducers/settings';
-
+import { getInitialSettings } from '../../store/reducers/settings';
 import { createSettingsService } from './service';
 
 describe('createSettingsService', () => {

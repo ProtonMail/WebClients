@@ -1,14 +1,15 @@
 import { useCallback, useEffect } from 'react';
 import { useStore } from 'react-redux';
 
-import { useSelectedItem } from '@proton/pass/components/Navigation/NavigationItem';
-import { useAsyncRequestDispatch } from '@proton/pass/hooks/useDispatchAsyncRequest';
-import { hasAttachments } from '@proton/pass/lib/items/item.predicates';
-import { filesResolve } from '@proton/pass/store/actions';
-import { selectItem, selectOptimisticItemState } from '@proton/pass/store/selectors';
-import type { State } from '@proton/pass/store/types';
-import type { UniqueItem } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
+
+import { useSelectedItem } from '../../components/Navigation/NavigationItem';
+import { hasAttachments } from '../../lib/items/item.predicates';
+import { filesResolve } from '../../store/actions';
+import { selectItem, selectOptimisticItemState } from '../../store/selectors';
+import type { State } from '../../store/types';
+import type { UniqueItem } from '../../types';
+import { useAsyncRequestDispatch } from '../useDispatchAsyncRequest';
 
 export const useFileResolver = () => {
     const store = useStore<State>();

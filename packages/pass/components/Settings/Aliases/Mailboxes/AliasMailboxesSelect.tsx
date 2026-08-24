@@ -4,8 +4,8 @@ import { c } from 'ttag';
 
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
-import { mailboxVerificationRequired } from '@proton/pass/lib/alias/alias.utils';
 
+import { mailboxVerificationRequired } from '../../../../lib/alias/alias.utils';
 import { useAliasMailboxes } from './AliasMailboxesProvider';
 
 type Props = {

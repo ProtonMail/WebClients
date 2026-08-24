@@ -1,9 +1,9 @@
-import type { Api, Maybe } from '@proton/pass/types';
-import { logger } from '@proton/pass/utils/logger';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { ApiError } from '@proton/shared/lib/fetch/ApiError';
 import noop from '@proton/utils/noop';
 
+import type { Api, Maybe } from '../../types';
+import { logger } from '../../utils/logger';
 import {
     CACHED_IMAGE_DEFAULT_MAX_AGE,
     CACHED_IMAGE_FALLBACK_MAX_AGE,

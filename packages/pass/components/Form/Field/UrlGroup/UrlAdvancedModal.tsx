@@ -11,18 +11,19 @@ import Radio from '@proton/components/components/input/Radio';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import { InputField } from '@proton/components/components/v2/field/InputField';
 import { IcCross } from '@proton/icons/icons/IcCross';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { UrlAdvancedHelp } from '@proton/pass/components/Form/Field/UrlGroup/UrlAdvancedHelp';
-import { ButtonBar } from '@proton/pass/components/Layout/Button/ButtonBar';
-import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';
-import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
-import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
-import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
-import { getRegexError } from '@proton/pass/lib/urls/safe-regex/safe-regex';
-import { getModeLabel, getModeWarning, sortDefaultFirst } from '@proton/pass/lib/urls/utils/autofill';
-import type { MaybeNull, UrlGroupValues, UrlItem } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
-import { AutofillMode } from '@proton/pass/types/protobuf';
+
+import { useFeatureFlag } from '../../../../hooks/useFeatureFlag';
+import { getRegexError } from '../../../../lib/urls/safe-regex/safe-regex';
+import { getModeLabel, getModeWarning, sortDefaultFirst } from '../../../../lib/urls/utils/autofill';
+import type { MaybeNull, UrlGroupValues, UrlItem } from '../../../../types';
+import { PassFeature } from '../../../../types/api/features';
+import { AutofillMode } from '../../../../types/protobuf';
+import { usePassCore } from '../../../Core/PassCoreProvider';
+import { ButtonBar } from '../../../Layout/Button/ButtonBar';
+import { SidebarModal } from '../../../Layout/Modal/SidebarModal';
+import { Panel } from '../../../Layout/Panel/Panel';
+import { PanelHeader } from '../../../Layout/Panel/PanelHeader';
+import { UrlAdvancedHelp } from './UrlAdvancedHelp';
 
 const secondTabModes = [
     AutofillMode.StartWith,

@@ -1,8 +1,7 @@
-import type { MaybeNull } from '@proton/pass/types';
+import type { MaybeNull } from '../../types';
 
 export type InterpolationItem<Value, Cluster> =
-    | { type: 'entry'; entry: Value }
-    | { type: 'interpolation'; cluster: Cluster };
+    { type: 'entry'; entry: Value } | { type: 'interpolation'; cluster: Cluster };
 
 export type Interpolation<Value, Cluster> = {
     clusters: Cluster[];

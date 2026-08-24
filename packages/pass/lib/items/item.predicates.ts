@@ -1,9 +1,9 @@
-import { isAutofillTargetMode } from '@proton/pass/lib/urls/utils/autofill';
-import type { Draft, EditDraft, NewDraft } from '@proton/pass/store/reducers/drafts';
-import type { Item, ItemExtraField, ItemRevision, ItemType, LoginItem, UniqueItem } from '@proton/pass/types';
-import { ItemFlag, ItemState } from '@proton/pass/types';
-import { and, not, oneOf, or } from '@proton/pass/utils/fp/predicates';
-import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
+import type { Draft, EditDraft, NewDraft } from '../../store/reducers/drafts';
+import type { Item, ItemExtraField, ItemRevision, ItemType, LoginItem, UniqueItem } from '../../types';
+import { ItemFlag, ItemState } from '../../types';
+import { and, not, oneOf, or } from '../../utils/fp/predicates';
+import { deobfuscate } from '../../utils/obfuscate/xor';
+import { isAutofillTargetMode } from '../urls/utils/autofill';
 
 export const isAliasItem = (item: Item): item is Item<'alias'> => item.type === 'alias';
 export const isCCItem = (item: Item): item is Item<'creditCard'> => item.type === 'creditCard';

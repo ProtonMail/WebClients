@@ -1,8 +1,8 @@
 import type { FormikErrors } from 'formik';
 import { c } from 'ttag';
 
-import type { VaultFormValues } from '@proton/pass/types';
-import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
+import type { VaultFormValues } from '../../types';
+import { isEmptyString } from '../../utils/string/is-empty-string';
 
 export const validateVaultValues = ({ name }: VaultFormValues) => {
     const errors: FormikErrors<VaultFormValues> = {};

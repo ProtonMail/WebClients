@@ -1,7 +1,7 @@
 import type { Reducer } from 'redux';
 
-import type { Group, GroupId } from '@proton/pass/lib/groups/groups.types';
-import { getGroup, getGroups } from '@proton/pass/store/actions/creators/groups';
+import type { Group, GroupId } from '../../lib/groups/groups.types';
+import { getGroup, getGroups } from '../actions/creators/groups';
 
 export type GroupsState = Record<GroupId, Group>;
 

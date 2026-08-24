@@ -1,5 +1,4 @@
-import type { Callback, MaybeNull } from '@proton/pass/types';
-
+import type { Callback, MaybeNull } from '../../types';
 import { getEpoch } from '../time/epoch';
 
 type WithCallCount<F extends Callback> = F & {

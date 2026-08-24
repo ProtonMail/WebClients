@@ -1,7 +1,7 @@
-import { parseItemRevision } from '@proton/pass/lib/items/item.parser';
-import { updateItemFlags } from '@proton/pass/lib/items/item.requests';
-import { setItemFlags } from '@proton/pass/store/actions';
-import { createRequestSaga } from '@proton/pass/store/request/sagas';
+import { parseItemRevision } from '../../../lib/items/item.parser';
+import { updateItemFlags } from '../../../lib/items/item.requests';
+import { setItemFlags } from '../../actions';
+import { createRequestSaga } from '../../request/sagas';
 
 export default createRequestSaga({
     actions: setItemFlags,

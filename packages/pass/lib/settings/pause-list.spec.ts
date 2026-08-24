@@ -1,8 +1,8 @@
-import { CRITERIA_MASKS, hasPauseCriteria, intoPauseCriterias } from '@proton/pass/lib/settings/pause-list';
-import { parseUrl } from '@proton/pass/lib/urls/utils/parser';
-import type { OrganizationUrlPauseEntryDto, OrganizationUrlPauseEntryValues } from '@proton/pass/types';
-import { uniqueId } from '@proton/pass/utils/string/unique-id';
-import { getEpoch } from '@proton/pass/utils/time/epoch';
+import type { OrganizationUrlPauseEntryDto, OrganizationUrlPauseEntryValues } from '../../types';
+import { uniqueId } from '../../utils/string/unique-id';
+import { getEpoch } from '../../utils/time/epoch';
+import { parseUrl } from '../urls/utils/parser';
+import { CRITERIA_MASKS, hasPauseCriteria, intoPauseCriterias } from './pause-list';
 
 describe('hasPauseCriteria', () => {
     test('should return false for all criterias when domain pauselist is empty', () => {

@@ -1,7 +1,7 @@
-import { getItemRevisionKey } from '@proton/pass/lib/items/item.utils';
-import type { ContextBridgeApi, SSHKeyItem } from '@proton/pass/types';
-import { asyncLatest } from '@proton/pass/utils/fp/promises';
-import { logger } from '@proton/pass/utils/logger';
+import type { ContextBridgeApi, SSHKeyItem } from '../../types';
+import { asyncLatest } from '../../utils/fp/promises';
+import { logger } from '../../utils/logger';
+import { getItemRevisionKey } from '../items/item.utils';
 
 type SshAgentServiceOptions = {
     bridge: ContextBridgeApi;

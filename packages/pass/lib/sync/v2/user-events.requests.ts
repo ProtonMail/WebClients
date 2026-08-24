@@ -1,5 +1,5 @@
-import { api } from '@proton/pass/lib/api/api';
-import type { SyncEventListOutput } from '@proton/pass/types';
+import type { SyncEventListOutput } from '../../../types';
+import { api } from '../../api/api';
 
 /** Retrieves the latest user event ID */
 export const getUserEventLatestID = async (): Promise<string> => {

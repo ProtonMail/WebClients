@@ -1,4 +1,4 @@
-import { createPubSub } from '@proton/pass/utils/pubsub/factory';
+import { createPubSub } from '../utils/pubsub/factory';
 
 /**
  * Base interface for saga event definitions. This interface is designed to be
@@ -7,7 +7,7 @@ import { createPubSub } from '@proton/pass/utils/pubsub/factory';
  *
  * @example
  * ```typescript
- * declare module '@proton/pass/store/events' {
+ * declare module './events' {
  *   interface SagaEvents {
  *     'user::login': { userId: string; timestamp: number };
  *     'vault::created': { vaultId: string; name: string };

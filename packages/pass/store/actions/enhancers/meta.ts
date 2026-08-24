@@ -1,6 +1,6 @@
 import type { Action } from 'redux';
 
-import { merge } from '@proton/pass/utils/object/merge';
+import { merge } from '../../../utils/object/merge';
 
 export type WithMeta<T, A = Action> = A & { meta: T };
 

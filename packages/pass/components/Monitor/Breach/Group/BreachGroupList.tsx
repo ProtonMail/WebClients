@@ -9,9 +9,9 @@ import TableBody from '@proton/components/components/table/TableBody';
 import TableHeader from '@proton/components/components/table/TableHeader';
 import TableHeaderCell from '@proton/components/components/table/TableHeaderCell';
 import TableRow from '@proton/components/components/table/TableRow';
-import { TableRowLoading } from '@proton/pass/components/Layout/Table/TableRowLoading';
-import type { MonitorTableRow } from '@proton/pass/hooks/monitor/useBreachesTable';
 
+import type { MonitorTableRow } from '../../../../hooks/monitor/useBreachesTable';
+import { TableRowLoading } from '../../../Layout/Table/TableRowLoading';
 import { BreachGroupRow } from './BreachGroupRow';
 
 type Props = {

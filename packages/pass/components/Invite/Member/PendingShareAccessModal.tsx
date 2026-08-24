@@ -2,11 +2,11 @@ import { type FC, useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import accountImg from '@proton/pass/assets/protonpass-account.svg';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { AdaptiveModal } from '@proton/pass/components/Layout/Modal/AdaptiveModal';
-import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightContext';
-import { SpotlightMessage } from '@proton/pass/types';
+import accountImg from '../../../assets/protonpass-account.svg';
+import { SpotlightMessage } from '../../../types';
+import { usePassCore } from '../../Core/PassCoreProvider';
+import { AdaptiveModal } from '../../Layout/Modal/AdaptiveModal';
+import { useSpotlight } from '../../Spotlight/SpotlightContext';
 
 export const PendingShareAccessModal: FC = () => {
     const { spotlight } = usePassCore();

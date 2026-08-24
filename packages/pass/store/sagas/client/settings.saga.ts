@@ -1,16 +1,17 @@
 import { fork, put, select, takeEvery } from 'redux-saga/effects';
 
-import { api } from '@proton/pass/lib/api/api';
-import { getInAppNotifications, settingsEditFailure, settingsEditIntent, settingsEditSuccess } from '@proton/pass/store/actions';
-import type { WithSenderAction } from '@proton/pass/store/actions/enhancers/endpoint';
-import { isSettingsAction } from '@proton/pass/store/actions/enhancers/settings';
-import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
-import { withRevalidate } from '@proton/pass/store/request/enhancers';
-import { selectProxiedSettings } from '@proton/pass/store/selectors';
-import type { RootSagaOptions } from '@proton/pass/store/types';
-import { AppStatus } from '@proton/pass/types';
-import { merge } from '@proton/pass/utils/object/merge';
 import { updateLocale } from '@proton/shared/lib/api/settings';
+
+import { api } from '../../../lib/api/api';
+import { AppStatus } from '../../../types';
+import { merge } from '../../../utils/object/merge';
+import { getInAppNotifications, settingsEditFailure, settingsEditIntent, settingsEditSuccess } from '../../actions';
+import type { WithSenderAction } from '../../actions/enhancers/endpoint';
+import { isSettingsAction } from '../../actions/enhancers/settings';
+import type { ProxiedSettings } from '../../reducers/settings';
+import { withRevalidate } from '../../request/enhancers';
+import { selectProxiedSettings } from '../../selectors';
+import type { RootSagaOptions } from '../../types';
 
 /** NOTE: Update in-app notifications translations. Add timeout so BE can get
  * the updated language before returning translated notifications */

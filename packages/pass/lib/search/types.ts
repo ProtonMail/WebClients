@@ -1,5 +1,5 @@
-import type { ParsedUrl } from '@proton/pass/lib/urls/types';
-import type { FormSubmission, ItemRevision, ItemSortFilter, ItemType, MaybeNull } from '@proton/pass/types';
+import type { FormSubmission, ItemRevision, ItemSortFilter, ItemType, MaybeNull } from '../../types';
+import type { ParsedUrl } from '../urls/types';
 
 export type PrivateDomains = MaybeNull<Set<string>>;
 

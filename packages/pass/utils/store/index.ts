@@ -1,7 +1,8 @@
 import { uint8ArrayToUtf8String, utf8StringToUint8Array } from '@protontech/crypto/utils';
-import type { Maybe, Store } from '@proton/pass/types';
-import { coalesce } from '@proton/pass/utils/fp/control';
-import { createPubSub } from '@proton/pass/utils/pubsub/factory';
+
+import type { Maybe, Store } from '../../types';
+import { coalesce } from '../fp/control';
+import { createPubSub } from '../pubsub/factory';
 
 export const createMemoryStore = (): Store & { subscribe: (subscriber: () => void) => () => void } => {
     let state: Record<string, any> = {};

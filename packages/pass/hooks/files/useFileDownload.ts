@@ -1,28 +1,22 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { useCurrentPort, useCurrentTabID, usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { useAsyncRequestDispatch } from '@proton/pass/hooks/useDispatchAsyncRequest';
-import { intoFileParam, mimetypeForDownload } from '@proton/pass/lib/file-attachments/helpers';
-import { fileStorage } from '@proton/pass/lib/file-storage/fs';
-import { getSafeStorage } from '@proton/pass/lib/file-storage/utils';
-import browser from '@proton/pass/lib/globals/browser';
-import { fileDownload, fileDownloadPublic } from '@proton/pass/store/actions';
-import { requestCancel } from '@proton/pass/store/request/actions';
-import type {
-    FileDescriptor,
-    FileDownloadDTO,
-    FileForDownload,
-    FileID,
-    SelectedItem,
-    WithTabId,
-} from '@proton/pass/types';
-import { download } from '@proton/pass/utils/dom/download';
-import { prop } from '@proton/pass/utils/fp/lens';
-import { abortable } from '@proton/pass/utils/fp/promises';
-import { updateSet } from '@proton/pass/utils/fp/state';
-import { logId, logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
+
+import { useCurrentPort, useCurrentTabID, usePassCore } from '../../components/Core/PassCoreProvider';
+import { intoFileParam, mimetypeForDownload } from '../../lib/file-attachments/helpers';
+import { fileStorage } from '../../lib/file-storage/fs';
+import { getSafeStorage } from '../../lib/file-storage/utils';
+import browser from '../../lib/globals/browser';
+import { fileDownload, fileDownloadPublic } from '../../store/actions';
+import { requestCancel } from '../../store/request/actions';
+import type { FileDescriptor, FileDownloadDTO, FileForDownload, FileID, SelectedItem, WithTabId } from '../../types';
+import { download } from '../../utils/dom/download';
+import { prop } from '../../utils/fp/lens';
+import { abortable } from '../../utils/fp/promises';
+import { updateSet } from '../../utils/fp/state';
+import { logId, logger } from '../../utils/logger';
+import { useAsyncRequestDispatch } from '../useDispatchAsyncRequest';
 
 export const useFileDownload = () => {
     /** Extension specifics */

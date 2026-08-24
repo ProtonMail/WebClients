@@ -1,5 +1,4 @@
-import type { RecursivePartial } from '@proton/pass/types';
-
+import type { RecursivePartial } from '../../types';
 import { isObject } from './is-object';
 
 type MergeOptions = { excludeEmpty: boolean };

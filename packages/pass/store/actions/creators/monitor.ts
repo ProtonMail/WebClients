@@ -2,8 +2,12 @@ import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
 import type { FetchedBreaches } from '@proton/components/containers/credentialLeak/models';
-import { isMonitored } from '@proton/pass/lib/items/item.predicates';
-import { getAddressId } from '@proton/pass/lib/monitor/monitor.utils';
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { PROTON_SENTINEL_NAME, type SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/constants';
+import identity from '@proton/utils/identity';
+
+import { isMonitored } from '../../../lib/items/item.predicates';
+import { getAddressId } from '../../../lib/monitor/monitor.utils';
 import type {
     AddressBreachDTO,
     AddressType,
@@ -13,20 +17,17 @@ import type {
     MonitorToggleDTO,
     MonitorVerifyDTO,
     ProtonAddressID,
-} from '@proton/pass/lib/monitor/types';
-import { withCache } from '@proton/pass/store/actions/enhancers/cache';
-import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
-import { selectedItemKey } from '@proton/pass/store/actions/requests';
-import { dataRequest } from '@proton/pass/store/request/configs';
-import { requestActionsFactory } from '@proton/pass/store/request/flow';
-import type { ItemRevision, SelectedItem, UniqueItem } from '@proton/pass/types';
-import type { BreachCustomEmailGetResponse, BreachesGetResponse, UpdateUserMonitorStateRequest } from '@proton/pass/types/api/pass';
-import { prop } from '@proton/pass/utils/fp/lens';
-import { pipe } from '@proton/pass/utils/fp/pipe';
-import { UNIX_MINUTE } from '@proton/pass/utils/time/constants';
-import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { PROTON_SENTINEL_NAME, type SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/constants';
-import identity from '@proton/utils/identity';
+} from '../../../lib/monitor/types';
+import type { ItemRevision, SelectedItem, UniqueItem } from '../../../types';
+import type { BreachCustomEmailGetResponse, BreachesGetResponse, UpdateUserMonitorStateRequest } from '../../../types/api/pass';
+import { prop } from '../../../utils/fp/lens';
+import { pipe } from '../../../utils/fp/pipe';
+import { UNIX_MINUTE } from '../../../utils/time/constants';
+import { dataRequest } from '../../request/configs';
+import { requestActionsFactory } from '../../request/flow';
+import { withCache } from '../enhancers/cache';
+import { withNotification } from '../enhancers/notification';
+import { selectedItemKey } from '../requests';
 
 export type SentinelState = SETTINGS_PROTON_SENTINEL_STATE;
 

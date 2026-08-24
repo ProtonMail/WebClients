@@ -1,7 +1,7 @@
 import { Worker as NodeWorker } from 'worker_threads';
 
-import { RegexSafety, safeRegex } from '@proton/pass/lib/urls/safe-regex/safe-regex';
-import { EVASIONS } from '@proton/pass/lib/urls/safe-regex/safe-regex.redos';
+import { RegexSafety, safeRegex } from './safe-regex';
+import { EVASIONS } from './safe-regex.redos';
 
 /** Reuse real worker code would be better but it's technically complicated */
 const WORKER_CODE = `

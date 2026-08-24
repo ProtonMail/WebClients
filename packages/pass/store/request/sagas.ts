@@ -1,17 +1,15 @@
 import type { Action } from 'redux';
 import { call as callEffect, put, race, take, takeEvery } from 'redux-saga/effects';
 
-import { isActionWithSender, withSender } from '@proton/pass/store/actions/enhancers/endpoint';
-import { matchCancel } from '@proton/pass/store/request/actions';
-import type { RootSagaOptions } from '@proton/pass/store/types';
 import identity from '@proton/utils/identity';
 
+import { isActionWithSender, withSender } from '../actions/enhancers/endpoint';
+import type { RootSagaOptions } from '../types';
+import { matchCancel } from './actions';
 import type { RequestFailure, RequestFlow, RequestIntent, RequestSuccess } from './flow';
 
 type RequestFlowSaga<T extends RequestFlow<any, any, any>, P extends any[] = []> = {
-    actions: RequestFailure<T> extends RequestIntent<T>
-        ? T
-        : `RequestFlowSaga constraint violation: Failure type must extend Intent type`;
+    actions: RequestFailure<T> extends RequestIntent<T> ? T : `RequestFlowSaga constraint violation: Failure type must extend Intent type`;
     call: (
         payload: RequestIntent<T>,
         ...extraParams: P
@@ -27,9 +25,7 @@ export function* cancelRequest(requestId: string) {
 /** The generated saga does not directly affect the application state. Instead,
  * it embraces the event sourcing pattern of Redux to handle API requests
  * without altering the state. Request metadata holds the response data.*/
-const createParametrizedRequestSaga = <T extends RequestFlow<any, any, any>, P extends any[] = []>(
-    flow: RequestFlowSaga<T, P>
-) => {
+const createParametrizedRequestSaga = <T extends RequestFlow<any, any, any>, P extends any[] = []>(flow: RequestFlowSaga<T, P>) => {
     return function* (...extraParams: P) {
         const actions = flow.actions as T;
         const { enhance, call } = flow;
@@ -53,9 +49,7 @@ const createParametrizedRequestSaga = <T extends RequestFlow<any, any, any>, P e
     };
 };
 
-export const createRequestSaga = <T extends RequestFlow<any, any, any>>(
-    options: RequestFlowSaga<T, [RootSagaOptions]>
-) =>
+export const createRequestSaga = <T extends RequestFlow<any, any, any>>(options: RequestFlowSaga<T, [RootSagaOptions]>) =>
     createParametrizedRequestSaga<T, [RootSagaOptions]>({
         ...options,
         enhance: (action, intent) => {

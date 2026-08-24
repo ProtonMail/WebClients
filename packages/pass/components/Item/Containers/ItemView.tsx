@@ -2,21 +2,21 @@ import { type FC, memo, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
-import { AliasView } from '@proton/pass/components/Item/Alias/Alias.view';
-import { CreditCardView } from '@proton/pass/components/Item/CreditCard/CreditCard.view';
-import { CustomView } from '@proton/pass/components/Item/Custom/Custom.view';
-import { IdentityView } from '@proton/pass/components/Item/Identity/Identity.view';
-import { LoginView } from '@proton/pass/components/Item/Login/Login.view';
-import { NoteView } from '@proton/pass/components/Item/Note/Note.view';
-import { useNavigationActions } from '@proton/pass/components/Navigation/NavigationActions';
-import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
-import { getItemRoute, getLocalPath } from '@proton/pass/components/Navigation/routing';
-import { SecureLinkModal } from '@proton/pass/components/SecureLink/SecureLinkModal';
-import type { ItemViewProps } from '@proton/pass/components/Views/types';
-import { useOptimisticItem } from '@proton/pass/hooks/useItem';
-import { getItemKey } from '@proton/pass/lib/items/item.utils';
-import { selectIsOptimisticId, selectShare } from '@proton/pass/store/selectors';
-import type { ItemType, SelectedItem } from '@proton/pass/types';
+import { useOptimisticItem } from '../../../hooks/useItem';
+import { getItemKey } from '../../../lib/items/item.utils';
+import { selectIsOptimisticId, selectShare } from '../../../store/selectors';
+import type { ItemType, SelectedItem } from '../../../types';
+import { useNavigationActions } from '../../Navigation/NavigationActions';
+import { useItemScope } from '../../Navigation/NavigationMatches';
+import { getItemRoute, getLocalPath } from '../../Navigation/routing';
+import { SecureLinkModal } from '../../SecureLink/SecureLinkModal';
+import type { ItemViewProps } from '../../Views/types';
+import { AliasView } from '../Alias/Alias.view';
+import { CreditCardView } from '../CreditCard/CreditCard.view';
+import { CustomView } from '../Custom/Custom.view';
+import { IdentityView } from '../Identity/Identity.view';
+import { LoginView } from '../Login/Login.view';
+import { NoteView } from '../Note/Note.view';
 
 const itemTypeViewMap: { [T in ItemType]: FC<ItemViewProps<T>> } = {
     login: LoginView,

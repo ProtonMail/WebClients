@@ -1,4 +1,4 @@
-import { sendToE2eTests } from '@proton/pass/utils/tests/e2e';
+import { sendToE2eTests } from '../tests/e2e';
 
 declare global {
     interface ShadowRoot {

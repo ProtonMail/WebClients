@@ -1,6 +1,6 @@
-import type { MaybeNull, Result } from '@proton/pass/types';
-import type { AutofillModelExperimentGroup } from '@proton/pass/types/api/features';
-import { isObject } from '@proton/pass/utils/object/is-object';
+import type { MaybeNull, Result } from '../../../types';
+import type { AutofillModelExperimentGroup } from '../../../types/api/features';
+import { isObject } from '../../../utils/object/is-object';
 
 // maps experiment group to model ID
 export type ModelRegistry = Record<string, string>;

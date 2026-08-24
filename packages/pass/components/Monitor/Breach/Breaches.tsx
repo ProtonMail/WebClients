@@ -3,19 +3,19 @@ import type { FC } from 'react';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
-import { SubHeader } from '@proton/pass/components/Layout/Section/SubHeader';
-import { CustomAddressAddButton } from '@proton/pass/components/Monitor/Address/CustomAddressAddButton';
-import { useMonitor } from '@proton/pass/components/Monitor/MonitorContext';
-import { getLocalPath } from '@proton/pass/components/Navigation/routing';
-import { PASS_BLOG_MONITORING_URL } from '@proton/pass/constants';
-import { useBreachesTable } from '@proton/pass/hooks/monitor/useBreachesTable';
-import { useTelemetryEvent } from '@proton/pass/hooks/useTelemetryEvent';
-import { AddressType } from '@proton/pass/lib/monitor/types';
-import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { DARK_WEB_MONITORING_NAME } from '@proton/shared/lib/constants';
 import headerBreachImg from '@proton/styles/assets/img/breach-alert/img-breaches-found.svg';
 import headerNoBreachImg from '@proton/styles/assets/img/breach-alert/img-no-breaches-found.svg';
 
+import { PASS_BLOG_MONITORING_URL } from '../../../constants';
+import { useBreachesTable } from '../../../hooks/monitor/useBreachesTable';
+import { useTelemetryEvent } from '../../../hooks/useTelemetryEvent';
+import { AddressType } from '../../../lib/monitor/types';
+import { TelemetryEventName } from '../../../types/data/telemetry';
+import { SubHeader } from '../../Layout/Section/SubHeader';
+import { getLocalPath } from '../../Navigation/routing';
+import { CustomAddressAddButton } from '../Address/CustomAddressAddButton';
+import { useMonitor } from '../MonitorContext';
 import { BreachGroupList } from './Group/BreachGroupList';
 
 export const Breaches: FC = () => {

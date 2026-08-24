@@ -2,10 +2,10 @@ import { memo } from 'react';
 
 import { c } from 'ttag';
 
-import { SearchableListPlaceholder } from '@proton/pass/components/Item/List/Placeholder/SearchableListPlaceholder';
-import { VaultPlaceholder } from '@proton/pass/components/Item/List/Placeholder/VaultPlaceholder';
-import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
-import { SecureLinksLoading } from '@proton/pass/components/SecureLink/SecureLinksLoading';
+import { useItemScope } from '../../Navigation/NavigationMatches';
+import { SecureLinksLoading } from '../../SecureLink/SecureLinksLoading';
+import { SearchableListPlaceholder } from './Placeholder/SearchableListPlaceholder';
+import { VaultPlaceholder } from './Placeholder/VaultPlaceholder';
 
 export const ItemsListPlaceholder = memo(() => {
     const scope = useItemScope();

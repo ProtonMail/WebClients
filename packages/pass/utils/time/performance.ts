@@ -1,5 +1,5 @@
-import type { Callback } from '@proton/pass/types';
-import { logger } from '@proton/pass/utils/logger';
+import type { Callback } from '../../types';
+import { logger } from '../logger';
 
 type WithPerformanceOptions = {
     id: string;

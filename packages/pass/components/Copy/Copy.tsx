@@ -7,7 +7,8 @@ import type { ButtonProps } from '@proton/atoms/Button/Button';
 import type { ButtonLikeShape } from '@proton/atoms/Button/ButtonLike';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { IcSquares } from '@proton/icons/icons/IcSquares';
-import { useCopyToClipboard } from '@proton/pass/components/Settings/Clipboard/ClipboardProvider';
+
+import { useCopyToClipboard } from '../Settings/Clipboard/ClipboardProvider';
 
 type Props = ButtonProps & {
     value: string;

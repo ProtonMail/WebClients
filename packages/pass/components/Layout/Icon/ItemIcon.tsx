@@ -6,16 +6,16 @@ import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import Icon from '@proton/components/components/icon/Icon';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import type { IconName, IconSize } from '@proton/icons/types';
-import { isDisabledAliasItem } from '@proton/pass/lib/items/item.predicates';
-import { getFirstUrl } from '@proton/pass/lib/urls/utils/autofill';
-import { selectCanLoadDomainImages } from '@proton/pass/store/selectors';
-import type { ItemMap, ItemRevision, Maybe, MaybeNull } from '@proton/pass/types';
-import { CardType } from '@proton/pass/types/protobuf/item-v1.static';
 import amex from '@proton/styles/assets/img/credit-card-icons/cc-american-express.svg';
 import masterCard from '@proton/styles/assets/img/credit-card-icons/cc-mastercard.svg';
 import visa from '@proton/styles/assets/img/credit-card-icons/cc-visa.svg';
 import clsx from '@proton/utils/clsx';
 
+import { isDisabledAliasItem } from '../../../lib/items/item.predicates';
+import { getFirstUrl } from '../../../lib/urls/utils/autofill';
+import { selectCanLoadDomainImages } from '../../../store/selectors';
+import type { ItemMap, ItemRevision, Maybe, MaybeNull } from '../../../types';
+import { CardType } from '../../../types/protobuf/item-v1.static';
 import { DomainIcon, ImageStatus } from './DomainIcon';
 import { IconBox, getIconSizePx } from './IconBox';
 

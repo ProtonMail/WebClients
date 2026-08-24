@@ -1,11 +1,11 @@
-import { encryptData } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import type {
     EncodedItemKeyRotation,
     ItemKey,
     ItemMoveIndividualToShareRequest,
     VaultShareKey,
-} from '@proton/pass/types';
-import { PassEncryptionTag } from '@proton/pass/types';
+} from '../../../../types';
+import { PassEncryptionTag } from '../../../../types';
+import { encryptData } from '../../utils/crypto-helpers';
 
 type MoveItemProcessParams = {
     itemId: string;

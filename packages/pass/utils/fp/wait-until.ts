@@ -1,4 +1,4 @@
-import type { MaybePromise } from '@proton/pass/types';
+import type { MaybePromise } from '../../types';
 
 type WaitUntilCallback = (() => MaybePromise<boolean>) | { check: () => MaybePromise<boolean>; cancel: () => boolean };
 

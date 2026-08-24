@@ -1,9 +1,9 @@
-import type { NordPassExtraField, NordPassItem } from '@proton/pass/lib/import/providers/nordpass/nordpass.types';
-import { itemBuilder } from '@proton/pass/lib/items/item.builder';
-import { obfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
-import type { DeobfuscatedItemExtraField, IdentityFieldName, ItemContent, ItemExtraField } from '@proton/pass/types';
-import { safeCall } from '@proton/pass/utils/fp/safe-call';
-import { formatISODate } from '@proton/pass/utils/time/format';
+import type { DeobfuscatedItemExtraField, IdentityFieldName, ItemContent, ItemExtraField } from '../../../../types';
+import { safeCall } from '../../../../utils/fp/safe-call';
+import { formatISODate } from '../../../../utils/time/format';
+import { itemBuilder } from '../../../items/item.builder';
+import { obfuscateExtraFields } from '../../../items/item.obfuscation';
+import type { NordPassExtraField, NordPassItem } from './nordpass.types';
 
 export const NORDPASS_EXPECTED_HEADERS: (keyof NordPassItem)[] = [
     'name',

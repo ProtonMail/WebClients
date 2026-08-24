@@ -1,5 +1,12 @@
-import { api } from '@proton/pass/lib/api/api';
-import { parseGroup, parseGroupMember } from '@proton/pass/lib/groups/groups.parsers';
+import {
+    getGroup as coreGetGroup,
+    getGroupMembers as coreGetGroupMembers,
+    getGroups as coreGetGroups,
+} from '@proton/shared/lib/api/groups';
+import { GROUP_MEMBER_STATE } from '@proton/shared/lib/interfaces';
+
+import { api } from '../api/api';
+import { parseGroup, parseGroupMember } from './groups.parsers';
 import type {
     CoreGroupGetResponse,
     CoreGroupMembersGetResponse,
@@ -7,13 +14,7 @@ import type {
     Group,
     GroupMembersResponse,
     GroupsResponse,
-} from '@proton/pass/lib/groups/groups.types';
-import {
-    getGroup as coreGetGroup,
-    getGroupMembers as coreGetGroupMembers,
-    getGroups as coreGetGroups,
-} from '@proton/shared/lib/api/groups';
-import { GROUP_MEMBER_STATE } from '@proton/shared/lib/interfaces';
+} from './groups.types';
 
 export const getGroup = async (groupID: string): Promise<Group> => {
     const response = await api<CoreGroupGetResponse>(coreGetGroup(groupID));

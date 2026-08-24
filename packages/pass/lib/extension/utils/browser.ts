@@ -1,8 +1,9 @@
-import { PASS_CHROME_URL, PASS_EDGE_URL, PASS_FIREFOX_URL } from '@proton/pass/constants';
-import type { MaybeNull } from '@proton/pass/types';
-import type { Browser } from '@proton/pass/types/browser';
 import { isBrave, isChrome, isEdgeChromium } from '@proton/shared/lib/helpers/browser';
 import { Clients } from '@proton/shared/lib/pass/constants';
+
+import { PASS_CHROME_URL, PASS_EDGE_URL, PASS_FIREFOX_URL } from '../../../constants';
+import type { MaybeNull } from '../../../types';
+import type { Browser } from '../../../types/browser';
 
 const global = globalThis as any;
 

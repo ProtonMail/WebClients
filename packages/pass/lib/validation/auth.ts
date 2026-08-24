@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
-import type { Maybe } from '@proton/pass/types';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+
+import type { Maybe } from '../../types';
 
 const validatePassword =
     (errorMessage: string) =>

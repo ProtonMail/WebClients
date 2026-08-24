@@ -3,10 +3,10 @@ import type { List } from 'react-virtualized';
 
 import { c } from 'ttag';
 
-import { InviteMember } from '@proton/pass/components/Invite/Steps/InviteMember';
-import { VirtualList } from '@proton/pass/components/Layout/List/VirtualList';
-import type { AccessTarget } from '@proton/pass/lib/access/types';
-import type { InviteFormMemberItem } from '@proton/pass/types';
+import type { AccessTarget } from '../../../lib/access/types';
+import type { InviteFormMemberItem } from '../../../types';
+import { VirtualList } from '../../Layout/List/VirtualList';
+import { InviteMember } from './InviteMember';
 
 type Props = {
     heading?: ReactNode;

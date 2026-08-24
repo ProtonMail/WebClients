@@ -1,6 +1,5 @@
-import { createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
-import { createMemoryStore } from '@proton/pass/utils/store';
-
+import { createAuthStore, exposeAuthStore } from '../../lib/auth/store';
+import { createMemoryStore } from '../../utils/store';
 import { handleSelect } from './VaultActionsProvider';
 
 describe('VaultActionsProvider', () => {

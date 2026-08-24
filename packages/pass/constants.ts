@@ -1,5 +1,4 @@
-import { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
-
+import { PassThemeOption } from './components/Layout/Theme/types';
 import type { FeatureFlagState } from './store/reducers';
 import { PassFeature } from './types/api/features';
 

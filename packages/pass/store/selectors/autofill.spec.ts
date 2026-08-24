@@ -1,7 +1,6 @@
-import { getStateMock } from '@proton/pass/store/selectors/mock';
-import type { FormSubmission } from '@proton/pass/types';
-
+import type { FormSubmission } from '../../types';
 import { selectAutofillLoginCandidates, selectOTPCandidate } from './autofill';
+import { getStateMock } from './mock';
 
 const state = getStateMock();
 

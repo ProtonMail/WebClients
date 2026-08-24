@@ -1,26 +1,7 @@
 import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import { getItemEntityID, getItemKey } from '@proton/pass/lib/items/item.utils';
-import { withCache, withThrottledCache } from '@proton/pass/store/actions/enhancers/cache';
-import { withSynchronousAction } from '@proton/pass/store/actions/enhancers/client';
-import { withItems, withItemsBatch } from '@proton/pass/store/actions/enhancers/items';
-import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
-import {
-    itemPinRequest,
-    itemRevisionsRequest,
-    itemUnpinRequest,
-    itemsBulkDeleteRequest,
-    itemsBulkMoveRequest,
-    itemsBulkRestoreRequest,
-    itemsBulkTrashRequest,
-    selectedItemKey,
-} from '@proton/pass/store/actions/requests';
-import { createOptimisticAction } from '@proton/pass/store/optimistic/action/create-optimistic-action';
-import type { Draft, DraftBase } from '@proton/pass/store/reducers/drafts';
-import { sessionRequest } from '@proton/pass/store/request/configs';
-import { withRequest, withRequestFailure, withRequestProgress, withRequestSuccess } from '@proton/pass/store/request/enhancers';
-import { requestActionsFactory } from '@proton/pass/store/request/flow';
+import { getItemEntityID, getItemKey } from '../../../lib/items/item.utils';
 import type {
     BatchItemRevisionIDs,
     BatchItemRevisions,
@@ -42,11 +23,30 @@ import type {
     SelectedItem,
     SelectedRevision,
     UniqueItem,
-} from '@proton/pass/types';
-import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
-import { prop } from '@proton/pass/utils/fp/lens';
-import { pipe } from '@proton/pass/utils/fp/pipe';
-import { UNIX_MINUTE } from '@proton/pass/utils/time/constants';
+} from '../../../types';
+import { getErrorMessage } from '../../../utils/errors/get-error-message';
+import { prop } from '../../../utils/fp/lens';
+import { pipe } from '../../../utils/fp/pipe';
+import { UNIX_MINUTE } from '../../../utils/time/constants';
+import { createOptimisticAction } from '../../optimistic/action/create-optimistic-action';
+import type { Draft, DraftBase } from '../../reducers/drafts';
+import { sessionRequest } from '../../request/configs';
+import { withRequest, withRequestFailure, withRequestProgress, withRequestSuccess } from '../../request/enhancers';
+import { requestActionsFactory } from '../../request/flow';
+import { withCache, withThrottledCache } from '../enhancers/cache';
+import { withSynchronousAction } from '../enhancers/client';
+import { withItems, withItemsBatch } from '../enhancers/items';
+import { withNotification } from '../enhancers/notification';
+import {
+    itemPinRequest,
+    itemRevisionsRequest,
+    itemUnpinRequest,
+    itemsBulkDeleteRequest,
+    itemsBulkMoveRequest,
+    itemsBulkRestoreRequest,
+    itemsBulkTrashRequest,
+    selectedItemKey,
+} from '../requests';
 
 export const draftSave = createAction('draft::save', (payload: Draft) => withThrottledCache({ payload }));
 export const draftDiscard = createAction('draft::discard', (payload: DraftBase) => withThrottledCache({ payload }));
@@ -120,9 +120,7 @@ export const itemEditDismiss = createOptimisticAction(
     ({ payload }) => getItemEntityID(payload)
 );
 
-export const itemsUpdated = createAction('items::updated', (items: ItemRevision[]) =>
-    pipe(withItems, withCache)({ payload: { items } })
-);
+export const itemsUpdated = createAction('items::updated', (items: ItemRevision[]) => pipe(withItems, withCache)({ payload: { items } }));
 
 export const itemMove = requestActionsFactory<ItemMoveIntent, ItemMoveDTO>('item::move')({
     key: getItemKey<UniqueItem>,

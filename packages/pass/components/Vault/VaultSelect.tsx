@@ -8,24 +8,25 @@ import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
-import { RadioButtonGroup, RadioLabelledButton } from '@proton/pass/components/Form/Field/RadioButtonGroupField';
-import { Card } from '@proton/pass/components/Layout/Card/Card';
-import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';
-import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
-import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
-import { UpgradeButton } from '@proton/pass/components/Upsell/UpgradeButton';
-import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
-import { UpsellRef } from '@proton/pass/constants';
-import type { VaultShareItem, WithItemCount } from '@proton/pass/store/reducers';
+import clsx from '@proton/utils/clsx';
+import noop from '@proton/utils/noop';
+
+import { UpsellRef } from '../../constants';
+import type { VaultShareItem, WithItemCount } from '../../store/reducers';
 import {
     selectVaultLimits,
     selectWritableSharedVaultsWithCount,
     selectWritableVaultsWithCount,
-} from '@proton/pass/store/selectors';
-import { NOOP_LIST_SELECTOR } from '@proton/pass/store/selectors/utils';
-import type { MaybeNull } from '@proton/pass/types';
-import clsx from '@proton/utils/clsx';
-import noop from '@proton/utils/noop';
+} from '../../store/selectors';
+import { NOOP_LIST_SELECTOR } from '../../store/selectors/utils';
+import type { MaybeNull } from '../../types';
+import { RadioButtonGroup, RadioLabelledButton } from '../Form/Field/RadioButtonGroupField';
+import { Card } from '../Layout/Card/Card';
+import { SidebarModal } from '../Layout/Modal/SidebarModal';
+import { Panel } from '../Layout/Panel/Panel';
+import { PanelHeader } from '../Layout/Panel/PanelHeader';
+import { UpgradeButton } from '../Upsell/UpgradeButton';
+import { VaultIcon } from './VaultIcon';
 
 export enum VaultSelectMode {
     Writable = 1,

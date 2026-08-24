@@ -1,11 +1,11 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import type { AsyncMonitorState } from '@proton/pass/components/Monitor/MonitorContext';
-import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
-import { selectCompromisedPasswords, selectVisibleLoginItems } from '@proton/pass/store/selectors';
-import type { UniqueItem } from '@proton/pass/types';
+import { usePassCore } from '../../components/Core/PassCoreProvider';
+import type { AsyncMonitorState } from '../../components/Monitor/MonitorContext';
+import { selectCompromisedPasswords, selectVisibleLoginItems } from '../../store/selectors';
+import type { UniqueItem } from '../../types';
+import { useMemoSelector } from '../useMemoSelector';
 
 const useAsyncMonitorState = (datasource: () => Promise<UniqueItem[]>): AsyncMonitorState => {
     const logins = useSelector(selectVisibleLoginItems);

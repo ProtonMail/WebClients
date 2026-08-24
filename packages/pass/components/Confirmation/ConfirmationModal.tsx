@@ -8,7 +8,8 @@ import type { ModalSize } from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
+
+import { PassModal } from '../Layout/Modal/PassModal';
 
 export type ConfirmationModalProps = {
     onClose?: () => void;

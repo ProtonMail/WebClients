@@ -2,12 +2,12 @@ import type { Action } from 'redux';
 import { takeEvery } from 'redux-saga/effects';
 import { c } from 'ttag';
 
-import { clientOffline } from '@proton/pass/lib/client';
-import { isActionWithSender } from '@proton/pass/store/actions/enhancers/endpoint';
-import type { WithNotification } from '@proton/pass/store/actions/enhancers/notification';
-import { isActionWithNotification } from '@proton/pass/store/actions/enhancers/notification';
-import { isActionWithRequest } from '@proton/pass/store/request/utils';
-import type { RootSagaOptions } from '@proton/pass/store/types';
+import { clientOffline } from '../../../lib/client';
+import { isActionWithSender } from '../../actions/enhancers/endpoint';
+import type { WithNotification } from '../../actions/enhancers/notification';
+import { isActionWithNotification } from '../../actions/enhancers/notification';
+import { isActionWithRequest } from '../../request/utils';
+import type { RootSagaOptions } from '../../types';
 
 function* notificationWorker({ onNotification, getAppState }: RootSagaOptions, action: WithNotification<Action>) {
     const { notification } = action.meta;

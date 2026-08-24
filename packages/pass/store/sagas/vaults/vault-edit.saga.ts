@@ -1,9 +1,9 @@
 import { put, select, takeEvery } from 'redux-saga/effects';
 
-import { editVault } from '@proton/pass/lib/vaults/vault.requests';
-import { vaultEditFailure, vaultEditIntent, vaultEditSuccess } from '@proton/pass/store/actions';
-import { selectShareOrThrow } from '@proton/pass/store/selectors';
-import type { Share, ShareType } from '@proton/pass/types';
+import { editVault } from '../../../lib/vaults/vault.requests';
+import type { Share, ShareType } from '../../../types';
+import { vaultEditFailure, vaultEditIntent, vaultEditSuccess } from '../../actions';
+import { selectShareOrThrow } from '../../selectors';
 
 function* editVaultWorker({ payload, meta }: ReturnType<typeof vaultEditIntent>) {
     try {

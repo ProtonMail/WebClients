@@ -4,11 +4,9 @@ import { useSelector } from 'react-redux';
 import { c, msgid } from 'ttag';
 
 import Alert from '@proton/components/components/alert/Alert';
-import {
-    ConfirmationPrompt,
-    type ConfirmationPromptHandles,
-} from '@proton/pass/components/Confirmation/ConfirmationPrompt';
-import { selectHasTrashedSharedItems, selectTrashedAliasCount } from '@proton/pass/store/selectors';
+
+import { selectHasTrashedSharedItems, selectTrashedAliasCount } from '../../../store/selectors';
+import { ConfirmationPrompt, type ConfirmationPromptHandles } from '../../Confirmation/ConfirmationPrompt';
 
 export const ConfirmTrashEmpty: FC<ConfirmationPromptHandles> = ({ onCancel, onConfirm }) => {
     const aliasCount = useSelector(selectTrashedAliasCount);

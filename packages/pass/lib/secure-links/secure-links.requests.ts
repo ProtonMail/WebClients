@@ -1,9 +1,3 @@
-import { api } from '@proton/pass/lib/api/api';
-import { PassCrypto } from '@proton/pass/lib/crypto';
-import { resolveItemKey } from '@proton/pass/lib/crypto/utils/helpers';
-import { resolvePublicItemFiles } from '@proton/pass/lib/file-attachments/file-attachments.requests';
-import { decodeItemContent, protobufToItem } from '@proton/pass/lib/items/item-proto.transformer';
-import { obfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
 import type {
     ItemRevision,
     PublicLinkCreateRequest,
@@ -11,9 +5,14 @@ import type {
     SecureLinkItem,
     SecureLinkOptions,
     SecureLinkQuery,
-} from '@proton/pass/types';
-import { logger } from '@proton/pass/utils/logger';
-
+} from '../../types';
+import { logger } from '../../utils/logger';
+import { api } from '../api/api';
+import { PassCrypto } from '../crypto';
+import { resolveItemKey } from '../crypto/utils/helpers';
+import { resolvePublicItemFiles } from '../file-attachments/file-attachments.requests';
+import { decodeItemContent, protobufToItem } from '../items/item-proto.transformer';
+import { obfuscateItem } from '../items/item.obfuscation';
 import { buildSecureLink } from './secure-links.utils';
 
 export const createSecureLink = async (

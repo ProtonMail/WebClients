@@ -1,4 +1,3 @@
-import browser from '@proton/pass/lib/globals/browser';
 import type {
     ClearItems,
     GetItem,
@@ -8,8 +7,9 @@ import type {
     SetItem,
     SetItems,
     StorageInterface,
-} from '@proton/pass/types';
-import { notIn } from '@proton/pass/utils/fp/predicates';
+} from '../../../types';
+import { notIn } from '../../../utils/fp/predicates';
+import browser from '../../globals/browser';
 
 const getItems: GetItems = async (keys) => browser.storage.local.get(keys);
 const getItem: GetItem = async (key) => (await getItems([key]))?.[key] ?? null;

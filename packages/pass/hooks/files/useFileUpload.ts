@@ -3,19 +3,19 @@ import { useDispatch } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { useCurrentTabID, usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { FILE_CHUNK_SIZE, FILE_ENCRYPTION_VERSION, FILE_MIME_TYPE_DETECTION_CHUNK_SIZE } from '@proton/pass/constants';
-import { useAsyncRequestDispatch } from '@proton/pass/hooks/useDispatchAsyncRequest';
-import PassUI from '@proton/pass/lib/core/ui.proxy';
-import { sanitizeFileName } from '@proton/pass/lib/file-attachments/helpers';
-import { blobToBase64, getSafeStorage } from '@proton/pass/lib/file-storage/utils';
-import { fileUploadChunk, fileUploadInitiate } from '@proton/pass/store/actions';
-import { requestCancel } from '@proton/pass/store/request/actions';
-import type { FileChunkUploadDTO, FileID, Maybe, ShareId, TabId, WithTabId } from '@proton/pass/types';
-import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
-import { abortable, asyncQueue } from '@proton/pass/utils/fp/promises';
-import { logId, logger } from '@proton/pass/utils/logger';
-import { uniqueId } from '@proton/pass/utils/string/unique-id';
+import { useCurrentTabID, usePassCore } from '../../components/Core/PassCoreProvider';
+import { FILE_CHUNK_SIZE, FILE_ENCRYPTION_VERSION, FILE_MIME_TYPE_DETECTION_CHUNK_SIZE } from '../../constants';
+import PassUI from '../../lib/core/ui.proxy';
+import { sanitizeFileName } from '../../lib/file-attachments/helpers';
+import { blobToBase64, getSafeStorage } from '../../lib/file-storage/utils';
+import { fileUploadChunk, fileUploadInitiate } from '../../store/actions';
+import { requestCancel } from '../../store/request/actions';
+import type { FileChunkUploadDTO, FileID, Maybe, ShareId, TabId, WithTabId } from '../../types';
+import { TelemetryEventName } from '../../types/data/telemetry';
+import { abortable, asyncQueue } from '../../utils/fp/promises';
+import { logId, logger } from '../../utils/logger';
+import { uniqueId } from '../../utils/string/unique-id';
+import { useAsyncRequestDispatch } from '../useDispatchAsyncRequest';
 
 export type OnFileUploadProgress = (uploaded: number, total: number) => void;
 

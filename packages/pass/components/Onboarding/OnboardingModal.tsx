@@ -10,12 +10,13 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
-import { PassIconLogo } from '@proton/pass/components/Layout/Logo/PassIconLogo';
-import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
-import { useOnboarding } from '@proton/pass/components/Onboarding/Provider/OnboardingContext';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
+
+import { PassIconLogo } from '../Layout/Logo/PassIconLogo';
+import { PassModal } from '../Layout/Modal/PassModal';
+import { useOnboarding } from './Provider/OnboardingContext';
 
 import './OnboardingModal.scss';
 

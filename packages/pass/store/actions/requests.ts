@@ -1,4 +1,4 @@
-import type { SelectedItem } from '@proton/pass/types';
+import type { SelectedItem } from '../../types';
 
 export const withKey = (base: string) => (key: string | number) => `${base}::${key}`;
 export const selectedItemKey = ({ shareId, itemId }: SelectedItem) => `${shareId}::${itemId}`;

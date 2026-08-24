@@ -1,8 +1,7 @@
 import type { Action, Dispatch } from 'redux';
 
-import { withAsyncRequest } from '@proton/pass/store/request/enhancers';
-import type { RequestFlow } from '@proton/pass/store/request/flow';
-
+import { withAsyncRequest } from './enhancers';
+import type { RequestFlow } from './flow';
 import type { RequestAsyncResult, RequestType, WithRequest } from './types';
 
 export const isActionWithRequest = <T extends Action>(action?: T): action is WithRequest<T, RequestType, unknown> =>

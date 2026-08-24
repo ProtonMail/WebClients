@@ -1,14 +1,14 @@
-import { decryptData } from '@proton/pass/lib/crypto/utils/crypto-helpers';
+import lastItem from '@proton/utils/lastItem';
+
+import { PassEncryptionTag } from '../../../../types';
+import { decryptData } from '../../utils/crypto-helpers';
 import {
     createRandomKey,
     randomAddress,
     randomContents,
     releaseCryptoProxy,
     setupCryptoProxyForTesting,
-} from '@proton/pass/lib/crypto/utils/testing';
-import { PassEncryptionTag } from '@proton/pass/types';
-import lastItem from '@proton/utils/lastItem';
-
+} from '../../utils/testing';
 import { createVault } from '../vault/create-vault';
 import { openShareKey } from './open-share-key';
 

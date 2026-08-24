@@ -1,9 +1,9 @@
 import { useEffect, useMemo, useState } from 'react';
 
-import { useActionRequest } from '@proton/pass/hooks/useRequest';
-import type { itemHistoryFailure, itemHistorySuccess } from '@proton/pass/store/actions';
-import { itemHistoryIntent } from '@proton/pass/store/actions';
-import type { ItemRevisionsIntent, ItemRevisionsSuccess } from '@proton/pass/types';
+import type { itemHistoryFailure, itemHistorySuccess } from '../store/actions';
+import { itemHistoryIntent } from '../store/actions';
+import type { ItemRevisionsIntent, ItemRevisionsSuccess } from '../types';
+import { useActionRequest } from './useRequest';
 
 const initialState = { next: null, revisions: [], since: null, total: 0 };
 

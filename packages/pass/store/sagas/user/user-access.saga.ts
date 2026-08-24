@@ -1,9 +1,13 @@
 import { put, select, takeLeading } from 'redux-saga/effects';
 
-import { hasAttachments } from '@proton/pass/lib/items/item.predicates';
-import { SYNC_STRATEGY } from '@proton/pass/lib/sync/global';
-import { SyncStrategy } from '@proton/pass/lib/sync/types';
-import { getUserAccess } from '@proton/pass/lib/user/user.requests';
+import type { User } from '@proton/shared/lib/interfaces';
+
+import { hasAttachments } from '../../../lib/items/item.predicates';
+import { SYNC_STRATEGY } from '../../../lib/sync/global';
+import { SyncStrategy } from '../../../lib/sync/types';
+import { getUserAccess } from '../../../lib/user/user.requests';
+import type { MaybeNull } from '../../../types';
+import { or } from '../../../utils/fp/predicates';
 import {
     aliasPendingCreate,
     getUserAccessFailure,
@@ -15,14 +19,11 @@ import {
     itemDeleteRevisions,
     itemEdit,
     vaultDeleteSuccess,
-} from '@proton/pass/store/actions';
-import type { HydratedAccessState } from '@proton/pass/store/reducers';
-import { withRevalidate } from '@proton/pass/store/request/enhancers';
-import { selectUser } from '@proton/pass/store/selectors';
-import type { RootSagaOptions } from '@proton/pass/store/types';
-import type { MaybeNull } from '@proton/pass/types';
-import { or } from '@proton/pass/utils/fp/predicates';
-import type { User } from '@proton/shared/lib/interfaces';
+} from '../../actions';
+import type { HydratedAccessState } from '../../reducers';
+import { withRevalidate } from '../../request/enhancers';
+import { selectUser } from '../../selectors';
+import type { RootSagaOptions } from '../../types';
 
 function* userAccessWorker({ getAuthStore }: RootSagaOptions, { meta }: ReturnType<typeof getUserAccessIntent>) {
     try {
