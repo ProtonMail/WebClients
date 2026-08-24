@@ -1,3 +1,3 @@
-import type { DecryptedAddressKey } from '@proton/shared/lib/interfaces';
+import type { DecryptedAddressKey } from '..';
 
 export type GetAddressKeys = (id: string) => Promise<DecryptedAddressKey[]>;

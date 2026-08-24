@@ -1,9 +1,5 @@
-import { c } from 'ttag';
-
 import { CryptoProxy, VERIFICATION_STATUS, serverTime } from '@protontech/crypto';
-import { getSignatureContext } from '@proton/shared/lib/calendar/crypto/helpers';
-import { ShareCalendarSignatureVerificationError } from '@proton/shared/lib/calendar/sharing/shareProton/ShareCalendarSignatureVerificationError';
-import type { GetEncryptionPreferences } from '@proton/shared/lib/interfaces/hooks/GetEncryptionPreferences';
+import { c } from 'ttag';
 
 import { acceptInvitation, rejectInvitation } from '../../../api/calendars';
 import { SECOND } from '../../../constants';
@@ -14,12 +10,15 @@ import type { CalendarMemberInvitation, VisualCalendar } from '../../../interfac
 import { MEMBER_INVITATION_STATUS } from '../../../interfaces/calendar';
 import type { ContactEmail } from '../../../interfaces/contacts';
 import type { GetAddressKeys } from '../../../interfaces/hooks/GetAddressKeys';
+import type { GetEncryptionPreferences } from '../../../interfaces/hooks/GetEncryptionPreferences';
 import { getPrimaryKey } from '../../../keys';
 import { getIsSharedCalendar } from '../../calendar';
 import type { CALENDAR_PERMISSIONS } from '../../constants';
 import { CALENDAR_TYPE } from '../../constants';
+import { getSignatureContext } from '../../crypto/helpers';
 import { decryptPassphrase, decryptPassphraseSessionKey, signPassphrase } from '../../crypto/keys/calendarKeys';
 import { getCanWrite } from '../../permissions';
+import { ShareCalendarSignatureVerificationError } from './ShareCalendarSignatureVerificationError';
 
 export const getIsInvitationExpired = ({ ExpirationTime }: CalendarMemberInvitation) => {
     if (!ExpirationTime) {

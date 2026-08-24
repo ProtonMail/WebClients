@@ -1,5 +1,4 @@
 import { serverTime } from '@protontech/crypto';
-import { absoluteToRelativeTrigger, getIsAbsoluteTrigger } from '@proton/shared/lib/calendar/alarms/trigger';
 
 import { DAY } from '../constants';
 import { fromUTCDate, toUTCDate } from '../date/timezone';
@@ -13,6 +12,7 @@ import type {
     VcalVeventComponent,
 } from '../interfaces/calendar';
 import type { RequireOnly } from '../interfaces/utils';
+import { absoluteToRelativeTrigger, getIsAbsoluteTrigger } from './alarms/trigger';
 import { fromInternalAttendee } from './attendees';
 import {
     CALENDAR_CARD_TYPE,

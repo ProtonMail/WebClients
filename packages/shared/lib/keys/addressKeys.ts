@@ -1,5 +1,3 @@
-import { c } from 'ttag';
-
 import type {
     ContextSigningOptions,
     ContextVerificationOptions,
@@ -7,8 +5,8 @@ import type {
     PublicKeyReference,
 } from '@protontech/crypto';
 import { CryptoProxy, VERIFICATION_STATUS, canKeyEncryptAndDecrypt, serverTime } from '@protontech/crypto';
-import { getPrimaryKey } from '@proton/shared/lib/keys/getPrimaryKey';
-import { splitKeys } from '@proton/shared/lib/keys/keys';
+import { c } from 'ttag';
+
 import isTruthy from '@proton/utils/isTruthy';
 
 import { DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS } from '../constants';
@@ -24,7 +22,9 @@ import type {
     KeysPair,
     AddressKey as tsAddressKey,
 } from '../interfaces';
+import { getPrimaryKey } from './getPrimaryKey';
 import { decryptKeyPacket, encryptAndSignKeyPacket } from './keypacket';
+import { splitKeys } from './keys';
 import { decryptMemberToken } from './memberToken';
 
 interface EncryptAddressKeyTokenArguments {

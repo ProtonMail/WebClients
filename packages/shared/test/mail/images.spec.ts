@@ -1,6 +1,6 @@
-import { PROXY_IMG_URL } from '@proton/shared/lib/api/images';
-import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
-import { removeEmbeddedImagesFromContent, removeProxyUrlsFromContent } from '@proton/shared/lib/mail/images';
+import { PROXY_IMG_URL } from '../../lib/api/images';
+import { parseStringToDOM } from '../../lib/helpers/dom';
+import { removeEmbeddedImagesFromContent, removeProxyUrlsFromContent } from '../../lib/mail/images';
 
 describe('Images helpers', () => {
     describe('removeProxyUrlsFromContent', () => {

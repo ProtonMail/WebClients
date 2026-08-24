@@ -1,6 +1,5 @@
-import { isPaid } from '@proton/shared/lib/user/helpers';
-
 import type { Api, PasswordPolicies, User } from '../interfaces';
+import { isPaid } from '../user/helpers';
 
 // Only doing password policies for users in an org as of 25.04.2025
 export const getShouldUsePasswordPolicies = (user: User) => {

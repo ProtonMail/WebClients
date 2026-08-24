@@ -1,8 +1,9 @@
-import { ActionEventV6, type EventV6Response } from '@proton/shared/lib/api/events';
-import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import type { UpdateCollectionV6 } from '@proton/shared/lib/eventManager/updateCollectionV6';
 import isTruthy from '@proton/utils/isTruthy';
 import uniqueBy from '@proton/utils/uniqueBy';
+
+import { ActionEventV6, type EventV6Response } from '../api/events';
+import { getApiError } from '../api/helpers/apiErrorHelper';
+import type { UpdateCollectionV6 } from './updateCollectionV6';
 
 export type UpdateCollectionAsyncV6<T> =
     | {

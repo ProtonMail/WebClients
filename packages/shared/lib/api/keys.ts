@@ -1,6 +1,5 @@
-import type { ProductParam } from '@proton/shared/lib/apps/product';
-import { getProductHeaders } from '@proton/shared/lib/apps/product';
-
+import type { ProductParam } from '../apps/product';
+import { getProductHeaders } from '../apps/product';
 import type { AddressKeyPayload, AddressKeyPayloadV2, SignedKeyList } from '../interfaces';
 
 interface GetPublicKeysForInboxParams {

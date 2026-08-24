@@ -1,6 +1,6 @@
-import { urlRule } from '@proton/shared/lib/desktop/urls/builder';
-import { matchUrlRules } from '@proton/shared/lib/desktop/urls/matcher';
-import { URL_RULES } from '@proton/shared/lib/desktop/urls/rules';
+import { urlRule } from '../../lib/desktop/urls/builder';
+import { matchUrlRules } from '../../lib/desktop/urls/matcher';
+import { URL_RULES } from '../../lib/desktop/urls/rules';
 
 const match = (url: string): boolean => matchUrlRules(url, URL_RULES);
 

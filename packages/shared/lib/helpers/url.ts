@@ -1,9 +1,8 @@
-import { stripLeadingSlash, stripTrailingSlash } from '@proton/shared/lib/helpers/string';
-
 import { type ReturnUrlContext, type ReturnUrlTarget, appendReturnUrlParams } from '../authentication/returnUrl';
 import type { APP_NAMES } from '../constants';
 import { APPS, APPS_CONFIGURATION, DOH_DOMAINS, LINK_TYPES, VPN_HOSTNAME } from '../constants';
 import window from '../window';
+import { stripLeadingSlash, stripTrailingSlash } from './string';
 
 const PREFIX_TO_TYPE: { [prefix: string]: LINK_TYPES | undefined } = {
     'tel:': LINK_TYPES.PHONE,

@@ -1,4 +1,4 @@
-import { CATEGORY_LABEL_IDS_SET, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { CATEGORY_LABEL_IDS_SET, MAILBOX_LABEL_IDS } from '../constants';
 
 export const MESSAGE_FLAGS = {
     FLAG_RECEIVED: Math.pow(2, 0), // whether a message is received

@@ -1,8 +1,7 @@
-import { PACKAGE_TYPE } from '@proton/shared/lib/mail/mailSettings';
-
 import { MIME_TYPES, PGP_SCHEMES } from '../../constants';
 import type { Message } from '../../interfaces/mail/Message';
 import type { EncryptionPreferences } from '../encryptionPreferences';
+import { PACKAGE_TYPE } from '../mailSettings';
 import { isEO } from '../messages';
 
 const { SEND_PM, SEND_EO, SEND_CLEAR, SEND_PGP_INLINE, SEND_PGP_MIME } = PACKAGE_TYPE;

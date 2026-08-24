@@ -1,6 +1,5 @@
-import type { LinkState } from '@proton/shared/lib/interfaces/drive/link';
-
 import type { PhotoTag } from './file';
+import type { LinkState } from './link';
 
 export interface PhotoBasePayload {
     LinkID: string;

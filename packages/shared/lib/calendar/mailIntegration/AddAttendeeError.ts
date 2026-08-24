@@ -1,6 +1,6 @@
 import { c, msgid } from 'ttag';
 
-import { MAX_ATTENDEES } from '@proton/shared/lib/calendar/constants';
+import { MAX_ATTENDEES } from '../constants';
 
 export enum ADD_EVENT_ERROR_TYPE {
     TOO_MANY_PARTICIPANTS,

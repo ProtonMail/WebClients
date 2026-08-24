@@ -1,5 +1,4 @@
-import type { Nullable } from '@proton/shared/lib/interfaces';
-
+import type { Nullable } from '..';
 import type { ICAL_ATTENDEE_ROLE, ICAL_ATTENDEE_STATUS } from '../../calendar/constants';
 import type { DecryptedKey } from '../Key';
 import type { CalendarSettings, VisualCalendar } from './Calendar';

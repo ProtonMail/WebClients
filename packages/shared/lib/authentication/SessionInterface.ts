@@ -1,5 +1,5 @@
-import type { AccessType } from '@proton/shared/lib/authentication/accessType';
-import type { OfflineKey } from '@proton/shared/lib/authentication/offlineKey';
+import type { AccessType } from './accessType';
+import type { OfflineKey } from './offlineKey';
 
 export enum SessionSource {
     Proton,

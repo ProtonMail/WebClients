@@ -1,5 +1,5 @@
-import { CALENDAR_PERMISSIONS } from '@proton/shared/lib/calendar/constants';
-import { hasBit } from '@proton/shared/lib/helpers/bitset';
+import { hasBit } from '../helpers/bitset';
+import { CALENDAR_PERMISSIONS } from './constants';
 
 const { SUPER_OWNER, OWNER, ADMIN, READ_MEMBER_LIST, WRITE, READ, AVAILABILITY } = CALENDAR_PERMISSIONS;
 

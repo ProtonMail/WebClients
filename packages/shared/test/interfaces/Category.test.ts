@@ -1,7 +1,7 @@
-import { hasUnseenTracking } from '@proton/shared/lib/interfaces';
-import type { Folder } from '@proton/shared/lib/interfaces/Folder';
-import type { Label } from '@proton/shared/lib/interfaces/Label';
-import type { ContactGroup } from '@proton/shared/lib/interfaces/contacts';
+import { hasUnseenTracking } from '../../lib/interfaces';
+import type { Folder } from '../../lib/interfaces/Folder';
+import type { Label } from '../../lib/interfaces/Label';
+import type { ContactGroup } from '../../lib/interfaces/contacts';
 
 describe('hasUnseenTracking', () => {
     it('returns true for folders', () => {

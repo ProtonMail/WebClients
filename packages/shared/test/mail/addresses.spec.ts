@@ -1,5 +1,5 @@
-import { ADDRESS_RECEIVE, ADDRESS_SEND, ADDRESS_STATUS, ADDRESS_TYPE } from '@proton/shared/lib/constants';
-import type { Address } from '@proton/shared/lib/interfaces';
+import { ADDRESS_RECEIVE, ADDRESS_SEND, ADDRESS_STATUS, ADDRESS_TYPE } from '../../lib/constants';
+import type { Address } from '../../lib/interfaces';
 import {
     getAddressFromPlusAlias,
     getByEmail,
@@ -7,7 +7,7 @@ import {
     getSupportedPlusAlias,
     sortAddresses,
     splitExternalAddresses,
-} from '@proton/shared/lib/mail/addresses';
+} from '../../lib/mail/addresses';
 
 const emailAddress1 = 'email1@proton.me';
 const emailDisabled = 'disabled@proton.me';

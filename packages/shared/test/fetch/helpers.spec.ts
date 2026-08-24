@@ -1,4 +1,4 @@
-import { createUrl, getDateHeader } from '@proton/shared/lib/fetch/helpers';
+import { createUrl, getDateHeader } from '../../lib/fetch/helpers';
 
 describe('fetch helpers', () => {
     describe('createUrl', () => {

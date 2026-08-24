@@ -1,14 +1,13 @@
 import { addDays, fromUnixTime } from 'date-fns';
 
-import type { EventComponentIdentifiers } from '@proton/shared/lib/calendar/icsSurgery/interface';
-import { getClosestProtonColor } from '@proton/shared/lib/colors';
-import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import truncate from '@proton/utils/truncate';
 import unique from '@proton/utils/unique';
 
 import type { RequireOnly, RequireSome } from '../../../lib/interfaces';
+import { getClosestProtonColor } from '../../colors';
 import { DAY } from '../../constants';
 import { convertUTCDateTimeToZone, fromUTCDate, getSupportedTimezone } from '../../date/timezone';
+import { validateEmailAddress } from '../../helpers/email';
 import type {
     IcalJSDateOrDateTimeProperty,
     VcalAttendeeProperty,
@@ -39,6 +38,7 @@ import {
     IMPORT_EVENT_ERROR_TYPE,
     INVITATION_ERROR_TYPE,
 } from './errors/icsSurgeryErrorTypes';
+import type { EventComponentIdentifiers } from './interface';
 import { getSupportedAlarms } from './valarm';
 import { getSupportedStringValue } from './vcal';
 

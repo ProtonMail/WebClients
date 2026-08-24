@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import { encodeImageUri, forgeImageURL } from '@proton/shared/lib/helpers/image';
-import { isBase64Image } from '@proton/shared/lib/helpers/validators';
+import { encodeImageUri, forgeImageURL } from './image';
+import { isBase64Image } from './validators';
 
 export const getAllFields = () => [
     // translator: this field is used to specify the display name of the contact (e.g. Jane Appleseed)

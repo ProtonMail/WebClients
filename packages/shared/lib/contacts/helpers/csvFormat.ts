@@ -1,4 +1,3 @@
-import { guessDateFromText } from '@proton/shared/lib/contacts/property';
 import capitalize from '@proton/utils/capitalize';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -13,6 +12,7 @@ import type {
 } from '../../interfaces/contacts/Import';
 import type { VCardOrg } from '../../interfaces/contacts/VCard';
 import { getStringContactValue } from '../properties';
+import { guessDateFromText } from '../property';
 import { icalValueToInternalAddress, icalValueToNValue, icalValueToOrgValue } from '../vcard';
 
 // See './csv.ts' for the definition of pre-vCard and pre-vCards contact

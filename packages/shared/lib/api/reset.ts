@@ -1,7 +1,6 @@
-import type { DelegatedAccessStateEnum, DelegatedAccessTypeEnum } from '@proton/shared/lib/interfaces/DelegatedAccess';
-
 import type { PASSWORD_MODE } from '../constants';
 import type { Address, KeyWithRecoverySecret, PasswordPolicies } from '../interfaces';
+import type { DelegatedAccessStateEnum, DelegatedAccessTypeEnum } from '../interfaces/DelegatedAccess';
 
 type RequestUsernamePayload =
     | {

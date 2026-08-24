@@ -1,11 +1,10 @@
 import type { ThemeColor } from '@proton/colors/types';
 import type { IconName } from '@proton/icons/types';
-import type { PersistedSession } from '@proton/shared/lib/authentication/SessionInterface';
-import type { OfflineKey } from '@proton/shared/lib/authentication/offlineKey';
-import type { APPS } from '@proton/shared/lib/constants';
-import type { Environment } from '@proton/shared/lib/interfaces';
 
-import type { User as tsUser } from '../interfaces';
+import type { PersistedSession } from '../authentication/SessionInterface';
+import type { OfflineKey } from '../authentication/offlineKey';
+import type { APPS } from '../constants';
+import type { Environment, User as tsUser } from '../interfaces';
 import type { VCardContact } from '../interfaces/contacts/VCard';
 import type { ThemeSetting } from '../themes/themes';
 

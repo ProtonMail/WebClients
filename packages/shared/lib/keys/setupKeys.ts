@@ -1,7 +1,6 @@
-import type { ProductParam } from '@proton/shared/lib/apps/product';
-
 import { setupKeys } from '../api/keys';
 import { getUser } from '../api/user';
+import type { ProductParam } from '../apps/product';
 import type { Address, Api, PreAuthKTVerify, User } from '../interfaces';
 import { srpVerify } from '../srp';
 import { getDecryptedUserKeysHelper } from './getDecryptedUserKeys';

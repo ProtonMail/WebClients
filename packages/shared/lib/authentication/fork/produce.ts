@@ -1,17 +1,16 @@
 import { serverTime } from '@protontech/crypto';
 import { importKey } from '@protontech/crypto/subtle/aesGcm.ts';
 
-import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
-import { type ReturnUrlResult, getReturnUrl } from '@proton/shared/lib/authentication/returnUrl';
-import { isSelf } from '@proton/shared/lib/user/helpers';
-
 import { pushForkSession } from '../../api/auth';
 import { getAppHref, getClientID } from '../../apps/helper';
 import type { APP_NAMES } from '../../constants';
 import { SSO_PATHS } from '../../constants';
 import type { Api, User } from '../../interfaces';
+import { isSelf } from '../../user/helpers';
+import { SessionSource } from '../SessionInterface';
 import type { PushForkResponse } from '../interface';
 import type { ResumedSessionResult } from '../persistedSessionHelper';
+import { type ReturnUrlResult, getReturnUrl } from '../returnUrl';
 import { getForkEncryptedBlob } from './blob';
 import type { ForkPayloadVersion, ForkType } from './constants';
 import { ForkSearchParameters } from './constants';

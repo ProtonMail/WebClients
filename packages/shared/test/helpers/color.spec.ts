@@ -1,4 +1,4 @@
-import { ACCENT_COLORS_MAP, CSS3_COLORS, getClosestProtonColor } from '@proton/shared/lib/colors';
+import { ACCENT_COLORS_MAP, CSS3_COLORS, getClosestProtonColor } from '../../lib/colors';
 
 describe('color', () => {
     describe('getClosestProtonColor', () => {
