@@ -38,6 +38,7 @@ export function captureWrongPlanName(
     try {
         if (planName === PLANS.VPN) {
             capturePaymentMessage('Payments: wrong plan name', {
+                component: 'payments-helpers',
                 level: 'warning',
                 extra: { planName, ...context },
             });

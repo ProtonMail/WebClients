@@ -91,9 +91,8 @@ export const PaymentStep: FC<Props> = ({ onContinue, onBack }) => {
             await processor.processPaymentToken();
         } catch (error) {
             tracePaymentError(error, {
-                tags: {
-                    component: 'pass-ctx-PaymentStep',
-                },
+                component: 'pass-ctx-payment-step',
+                subscription: null,
                 extra: {
                     currency: payments.options.currency,
                     amount: payments.checkResult.AmountDue,
