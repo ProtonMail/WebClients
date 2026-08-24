@@ -863,9 +863,6 @@
       ]
     },
     "Error": {
-      "Domain not available, try again later": [
-        "ドメインが利用できません。再度お試しください。"
-      ],
       "Email is not valid": [
         "メールアドレスが無効です"
       ],
@@ -1033,6 +1030,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 執筆アシスタント"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }執筆アシスタント"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "電話番号は、1つの ${ BRAND_NAME } アカウントの認証にのみ使用できます。"
       ],
@@ -1192,6 +1192,9 @@
     "new_plans: feature": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 執筆アシスタント"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }執筆アシスタント"
       ],
       "${ n } custom email domain": [
         "${ n } 件の独自メールドメイン"
