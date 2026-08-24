@@ -5,8 +5,7 @@ import {
     createRandomVaultKey,
     releaseCryptoProxy,
     setupCryptoProxyForTesting,
-} from '@proton/pass/lib/crypto/utils/testing';
-
+} from '../../utils/testing';
 import { createInviteKeys } from './create-invite-keys';
 import { openInviteKey } from './open-invite-key';
 

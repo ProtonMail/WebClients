@@ -2,10 +2,9 @@ import type { PropsWithChildren } from 'react';
 import { type FC, createContext, useCallback, useMemo } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
-import { createUseContext } from '@proton/pass/hooks/useContextFactory';
-import { useStatefulRef } from '@proton/pass/hooks/useStatefulRef';
-import type { ItemFilters, MaybeNull } from '@proton/pass/types';
-
+import { createUseContext } from '../../hooks/useContextFactory';
+import { useStatefulRef } from '../../hooks/useStatefulRef';
+import type { ItemFilters, MaybeNull } from '../../types';
 import { useNavigate } from './NavigationActions';
 import { decodeFiltersFromSearch } from './routing';
 

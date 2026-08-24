@@ -1,16 +1,16 @@
 import type { FC, PropsWithChildren } from 'react';
 import { useMemo, useState } from 'react';
 
-import { useRequest } from '@proton/pass/hooks/useRequest';
-import { aliasGetContactsList } from '@proton/pass/store/actions';
-import type { AliasContactWithStatsGetResponse, SelectedItem } from '@proton/pass/types';
-import { partition } from '@proton/pass/utils/array/partition';
-import { prop } from '@proton/pass/utils/fp/lens';
-import { sortOn } from '@proton/pass/utils/fp/sort';
-import { objectDelete } from '@proton/pass/utils/object/delete';
-import { fullMerge, partialMerge } from '@proton/pass/utils/object/merge';
 import { toMap } from '@proton/shared/lib/helpers/object';
 
+import { useRequest } from '../../../../hooks/useRequest';
+import { aliasGetContactsList } from '../../../../store/actions';
+import type { AliasContactWithStatsGetResponse, SelectedItem } from '../../../../types';
+import { partition } from '../../../../utils/array/partition';
+import { prop } from '../../../../utils/fp/lens';
+import { sortOn } from '../../../../utils/fp/sort';
+import { objectDelete } from '../../../../utils/object/delete';
+import { fullMerge, partialMerge } from '../../../../utils/object/merge';
 import { AliasContactsContext, type AliasContactsContextValue } from './AliasContactsContext';
 
 export const AliasContactsProvider: FC<PropsWithChildren<SelectedItem>> = ({ children, shareId, itemId }) => {

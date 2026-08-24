@@ -1,9 +1,9 @@
 import type { Middleware } from 'redux';
 
-import { itemEdit } from '@proton/pass/store/actions';
-import { selectItem } from '@proton/pass/store/selectors';
-import type { State } from '@proton/pass/store/types';
-import type { ItemRevision } from '@proton/pass/types';
+import type { ItemRevision } from '../../types';
+import { itemEdit } from '../actions';
+import { selectItem } from '../selectors';
+import type { State } from '../types';
 
 export type ItemEditIntentAction = ReturnType<typeof itemEdit.intent> & {
     meta: ReturnType<typeof itemEdit.intent>['meta'] & { previousItem?: ItemRevision };

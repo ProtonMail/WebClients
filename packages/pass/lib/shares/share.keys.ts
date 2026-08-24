@@ -1,7 +1,7 @@
-import { api } from '@proton/pass/lib/api/api';
-import { isShareRemovedError } from '@proton/pass/lib/api/errors';
-import type { ShareKeyResponse } from '@proton/pass/types';
-import { logId, logger } from '@proton/pass/utils/logger';
+import type { ShareKeyResponse } from '../../types';
+import { logId, logger } from '../../utils/logger';
+import { api } from '../api/api';
+import { isShareRemovedError } from '../api/errors';
 
 /* ⚠️ This endpoint is not paginated yet back-end side. */
 export const getAllShareKeys = async (shareId: string): Promise<ShareKeyResponse[]> => {

@@ -6,29 +6,29 @@ import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
-import { PillBadge } from '@proton/pass/components/Layout/Badge/PillBadge';
-import { ButtonCard } from '@proton/pass/components/Layout/Card/ButtonCard';
-import { CardContent } from '@proton/pass/components/Layout/Card/CardContent';
-import { BreachSummaryCard } from '@proton/pass/components/Monitor/Breach/Card/BreachSummaryCard';
-import { BreachUpsellCard } from '@proton/pass/components/Monitor/Breach/Card/BreachUpsellCard';
-import { Sentinel } from '@proton/pass/components/Monitor/Sentinel/Sentinel';
-import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
-import { getLocalPath } from '@proton/pass/components/Navigation/routing';
-import { PassPlusPromotionButton } from '@proton/pass/components/Upsell/PassPlusPromotionButton';
-import { UpsellingModal } from '@proton/pass/components/Upsell/UpsellingModal';
-import { UpsellRef } from '@proton/pass/constants';
-import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
-import { useUpsellPlanFeatures } from '@proton/pass/hooks/usePlanFeatures';
-import { useTelemetryEvent } from '@proton/pass/hooks/useTelemetryEvent';
-import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
-import { selectMonitorPreview } from '@proton/pass/store/selectors';
-import { PassFeature } from '@proton/pass/types/api/features';
-import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { DARK_WEB_MONITORING_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
+import { UpsellRef } from '../../constants';
+import { useFeatureFlag } from '../../hooks/useFeatureFlag';
+import { useUpsellPlanFeatures } from '../../hooks/usePlanFeatures';
+import { useTelemetryEvent } from '../../hooks/useTelemetryEvent';
+import { isPaidPlan } from '../../lib/user/user.predicates';
+import { selectMonitorPreview } from '../../store/selectors';
+import { PassFeature } from '../../types/api/features';
+import { TelemetryEventName } from '../../types/data/telemetry';
+import { PillBadge } from '../Layout/Badge/PillBadge';
+import { ButtonCard } from '../Layout/Card/ButtonCard';
+import { CardContent } from '../Layout/Card/CardContent';
+import { useNavigate } from '../Navigation/NavigationActions';
+import { getLocalPath } from '../Navigation/routing';
+import { PassPlusPromotionButton } from '../Upsell/PassPlusPromotionButton';
+import { UpsellingModal } from '../Upsell/UpsellingModal';
 import { BreachPreviewCard } from './Breach/Card/BreachPreviewCard';
+import { BreachSummaryCard } from './Breach/Card/BreachSummaryCard';
+import { BreachUpsellCard } from './Breach/Card/BreachUpsellCard';
 import { useMonitor } from './MonitorContext';
 import { MonitorLearnMore } from './MonitorLearnMore';
+import { Sentinel } from './Sentinel/Sentinel';
 
 import './MonitorSummary.scss';
 

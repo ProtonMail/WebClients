@@ -1,5 +1,4 @@
-import type { FileAttachmentsDTO, FileDescriptor, MaybeNull, ShareId, UniqueItem } from '@proton/pass/types';
-
+import type { FileAttachmentsDTO, FileDescriptor, MaybeNull, ShareId, UniqueItem } from '..';
 import type { CustomAliasCreateRequest } from '../api';
 import type { ItemType } from '../protobuf';
 import type { IndexedByShareIdAndItemId, Item, ItemRevision, OptimisticItem, SelectedItem } from './items';
@@ -16,8 +15,7 @@ export type AliasCreateDTO = {
 export type AliasCreateRequest = { origin: string; alias: AliasCreateDTO };
 
 export type LoginWithAliasCreationDTO =
-    | { withAlias: true; alias: Omit<ItemCreateIntent<'alias'>, 'files'> }
-    | { withAlias: false };
+    { withAlias: true; alias: Omit<ItemCreateIntent<'alias'>, 'files'> } | { withAlias: false };
 /**
  * Item creation DTO indexed on ItemType keys
  * - alias specifics : extra parameters required for alias creation

@@ -1,27 +1,20 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import { hasEmail, isActive, isItemType, isPinned, isTrashed } from '@proton/pass/lib/items/item.predicates';
-import { filterItemsByUserIdentifier, flattenItemsByShareId, sortItems } from '@proton/pass/lib/items/item.utils';
-import selectFailedAction from '@proton/pass/store/optimistic/selectors/select-failed-action';
-import { unwrapOptimisticState } from '@proton/pass/store/optimistic/utils/transformers';
-import type { ItemsByShareId } from '@proton/pass/store/reducers/items';
-import { withOptimisticItemsByShareId } from '@proton/pass/store/reducers/items';
-import { SelectorError } from '@proton/pass/store/selectors/errors';
-import { createVisibilityFilterSelector } from '@proton/pass/store/selectors/shares';
-import { createUncachedSelector } from '@proton/pass/store/selectors/utils';
-import type { State } from '@proton/pass/store/types';
-import type {
-    ItemRevision,
-    ItemRevisionWithOptimistic,
-    ItemSortFilter,
-    ItemType,
-    Maybe,
-    MaybeNull,
-    SelectedItem,
-} from '@proton/pass/types';
-import { first } from '@proton/pass/utils/array/first';
-import { and, not } from '@proton/pass/utils/fp/predicates';
 import isTruthy from '@proton/utils/isTruthy';
+
+import { hasEmail, isActive, isItemType, isPinned, isTrashed } from '../../lib/items/item.predicates';
+import { filterItemsByUserIdentifier, flattenItemsByShareId, sortItems } from '../../lib/items/item.utils';
+import type { ItemRevision, ItemRevisionWithOptimistic, ItemSortFilter, ItemType, Maybe, MaybeNull, SelectedItem } from '../../types';
+import { first } from '../../utils/array/first';
+import { and, not } from '../../utils/fp/predicates';
+import selectFailedAction from '../optimistic/selectors/select-failed-action';
+import { unwrapOptimisticState } from '../optimistic/utils/transformers';
+import type { ItemsByShareId } from '../reducers/items';
+import { withOptimisticItemsByShareId } from '../reducers/items';
+import type { State } from '../types';
+import { SelectorError } from './errors';
+import { createVisibilityFilterSelector } from './shares';
+import { createUncachedSelector } from './utils';
 
 const { asIfNotFailed, asIfNotOptimistic } = withOptimisticItemsByShareId.selectors;
 

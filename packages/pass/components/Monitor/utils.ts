@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
-import type { PlanFeaturesType } from '@proton/pass/components/Upsell/types';
-import { MAX_VAULT_MEMBERS } from '@proton/pass/constants';
 import { DARK_WEB_MONITORING_NAME, PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
+
+import { MAX_VAULT_MEMBERS } from '../../constants';
+import type { PlanFeaturesType } from '../Upsell/types';
 
 export const getPlanFeatures = (): PlanFeaturesType => ({
     individuals: [

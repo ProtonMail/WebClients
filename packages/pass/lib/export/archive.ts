@@ -1,20 +1,21 @@
 import type { InputWithSizeMeta, InputWithoutMeta } from 'client-zip';
 
-import { encryptPassExport } from '@proton/pass/lib/crypto/utils/export';
-import { resolveItemKey } from '@proton/pass/lib/crypto/utils/helpers';
-import { createDownloadStream } from '@proton/pass/lib/file-attachments/download';
-import { downloadFileChunk, resolveItemFiles } from '@proton/pass/lib/file-attachments/file-attachments.requests';
+import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+
+import type { ExportThunk } from '../../store/selectors';
+import type { FileDescriptor, IndexedByShareIdAndItemId, ItemRevision } from '../../types';
+import { prop } from '../../utils/fp/lens';
+import { getEpoch } from '../../utils/time/epoch';
+import { encryptPassExport } from '../crypto/utils/export';
+import { resolveItemKey } from '../crypto/utils/helpers';
+import { createDownloadStream } from '../file-attachments/download';
+import { downloadFileChunk, resolveItemFiles } from '../file-attachments/file-attachments.requests';
 import {
     getExportFileName,
     intoFileDescriptors,
     isFileForRevision,
     sanitizeFileName,
-} from '@proton/pass/lib/file-attachments/helpers';
-import type { ExportThunk } from '@proton/pass/store/selectors';
-import type { FileDescriptor, IndexedByShareIdAndItemId, ItemRevision } from '@proton/pass/types';
-import { prop } from '@proton/pass/utils/fp/lens';
-import { getEpoch } from '@proton/pass/utils/time/epoch';
-import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+} from '../file-attachments/helpers';
 
 export type ExportFileStream = InputWithoutMeta | InputWithSizeMeta;
 export type ExportGenerator = AsyncGenerator<ExportFileStream>;

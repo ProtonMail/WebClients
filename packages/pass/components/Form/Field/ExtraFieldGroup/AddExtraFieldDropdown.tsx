@@ -8,9 +8,10 @@ import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
-import { getExtraFieldOptions } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraField.utils';
-import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
-import type { ExtraFieldType } from '@proton/pass/types';
+
+import type { ExtraFieldType } from '../../../../types';
+import { DropdownMenuButton } from '../../../Layout/Dropdown/DropdownMenuButton';
+import { getExtraFieldOptions } from './ExtraField.utils';
 
 export type CustomButtonProps = ButtonLikeOwnProps & { label?: string };
 type CustomFieldsDropdownProps = { onAdd: (type: ExtraFieldType) => void } & CustomButtonProps;

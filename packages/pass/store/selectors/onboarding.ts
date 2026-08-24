@@ -1,11 +1,12 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import { selectImportReport } from '@proton/pass/store/selectors/import';
-import { selectWritableSharedVaults, selectWritableVaults } from '@proton/pass/store/selectors/shares';
-import { selectPassPlan, selectUser } from '@proton/pass/store/selectors/user';
-import { UserPassPlan } from '@proton/pass/types/api/plan';
-import { truthy } from '@proton/pass/utils/fp/predicates';
 import { isAdmin } from '@proton/shared/lib/user/helpers';
+
+import { UserPassPlan } from '../../types/api/plan';
+import { truthy } from '../../utils/fp/predicates';
+import { selectImportReport } from './import';
+import { selectWritableSharedVaults, selectWritableVaults } from './shares';
+import { selectPassPlan, selectUser } from './user';
 
 type B2BOnboardingStatus = {
     vaultCreated: boolean;
@@ -23,10 +24,7 @@ export const selectB2BOnboardingState = createSelector(
 );
 
 export const selectB2BOnboardingComplete = (extensionInstalled: boolean) =>
-    createSelector(
-        selectB2BOnboardingState,
-        (state): boolean => extensionInstalled && Object.values(state).every(truthy)
-    );
+    createSelector(selectB2BOnboardingState, (state): boolean => extensionInstalled && Object.values(state).every(truthy));
 
 export const selectB2BOnboardingEnabled = (extensionInstalled: boolean) =>
     createSelector(

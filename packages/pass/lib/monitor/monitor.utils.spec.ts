@@ -1,10 +1,9 @@
 import uniqueId from 'lodash/uniqueId';
 
-import { itemBuilder } from '@proton/pass/lib/items/item.builder';
-import type { ItemRevision } from '@proton/pass/types';
-import { ContentFormatVersion, ItemState } from '@proton/pass/types';
-import { prop } from '@proton/pass/utils/fp/lens';
-
+import type { ItemRevision } from '../../types';
+import { ContentFormatVersion, ItemState } from '../../types';
+import { prop } from '../../utils/fp/lens';
+import { itemBuilder } from '../items/item.builder';
 import { getDuplicatePasswords } from './monitor.utils';
 
 const createMockItem = (password: string): ItemRevision<'login'> => ({

@@ -4,16 +4,16 @@ import { useStore } from 'react-redux';
 import type { FormikErrors } from 'formik';
 import { useFormik } from 'formik';
 
-import { useActionRequest } from '@proton/pass/hooks/useRequest';
-import { useStatefulRef } from '@proton/pass/hooks/useStatefulRef';
-import { validateInvite } from '@proton/pass/lib/validation/invite';
-import type { inviteBatchCreateFailure, inviteBatchCreateSuccess } from '@proton/pass/store/actions';
-import { inviteBatchCreateIntent } from '@proton/pass/store/actions';
-import type { State } from '@proton/pass/store/types';
-import type { InviteFormValues } from '@proton/pass/types';
-import type { InviteBatchCreateSuccess } from '@proton/pass/types/data/invites.dto';
 import noop from '@proton/utils/noop';
 
+import { validateInvite } from '../../lib/validation/invite';
+import type { inviteBatchCreateFailure, inviteBatchCreateSuccess } from '../../store/actions';
+import { inviteBatchCreateIntent } from '../../store/actions';
+import type { State } from '../../store/types';
+import type { InviteFormValues } from '../../types';
+import type { InviteBatchCreateSuccess } from '../../types/data/invites.dto';
+import { useActionRequest } from '../useRequest';
+import { useStatefulRef } from '../useStatefulRef';
 import { useAddressValidator } from './useAddressValidator';
 
 type InviteFormOptions<V extends InviteFormValues> = {

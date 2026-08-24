@@ -4,13 +4,14 @@ import { useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
-import type { BaseSpotlightMessage } from '@proton/pass/components/Spotlight/SpotlightContent';
-import { useOfflineSetup } from '@proton/pass/hooks/auth/useOfflineSetup';
-import { selectOfflineEnabled } from '@proton/pass/store/selectors';
-import { pipe } from '@proton/pass/utils/fp/pipe';
 import { BRAND_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
+
+import { useOfflineSetup } from '../../hooks/auth/useOfflineSetup';
+import { selectOfflineEnabled } from '../../store/selectors';
+import { pipe } from '../../utils/fp/pipe';
+import { useOnline } from '../Core/ConnectivityProvider';
+import type { BaseSpotlightMessage } from '../Spotlight/SpotlightContent';
 
 export const OfflineSetup: FC<BaseSpotlightMessage> = ({ onClose = noop }) => {
     const online = useOnline();

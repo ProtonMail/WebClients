@@ -1,7 +1,6 @@
-import { LockMode } from '@proton/pass/lib/auth/lock/types';
-import type { AuthStore } from '@proton/pass/lib/auth/store';
-import { AppStatus } from '@proton/pass/types';
-
+import { AppStatus } from '../../types';
+import { LockMode } from './lock/types';
+import type { AuthStore } from './store';
 import { getInitialLockedAppStatus } from './utils';
 
 type AuthStoreOverrides = {

@@ -2,11 +2,11 @@ import type { FC } from 'react';
 import { Redirect, type RouteChildrenProps } from 'react-router-dom';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import { useMonitor } from '@proton/pass/components/Monitor/MonitorContext';
-import { getLocalPath } from '@proton/pass/components/Navigation/routing';
-import { itemEq } from '@proton/pass/lib/items/item.predicates';
-import { AddressType } from '@proton/pass/lib/monitor/types';
 
+import { itemEq } from '../../../lib/items/item.predicates';
+import { AddressType } from '../../../lib/monitor/types';
+import { getLocalPath } from '../../Navigation/routing';
+import { useMonitor } from '../MonitorContext';
 import { BreachDetails } from './Item/BreachDetails';
 
 type Props = RouteChildrenProps<{ type: AddressType; addressId: string }>;

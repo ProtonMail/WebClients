@@ -1,6 +1,6 @@
-import { openItemKey } from '@proton/pass/lib/crypto/processes/item/open-item-key';
-import { decryptData, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
-import { PassEncryptionTag } from '@proton/pass/types';
+import { PassEncryptionTag } from '../../../../types';
+import { decryptData, importSymmetricKey } from '../../utils/crypto-helpers';
+import { openItemKey } from '../item/open-item-key';
 
 type OpenSecureLinkParams = { encryptedItemKey: string; content: string; linkKey: string };
 

@@ -8,8 +8,8 @@ import TableBody from '@proton/components/components/table/TableBody';
 import TableHeader from '@proton/components/components/table/TableHeader';
 import TableHeaderCell from '@proton/components/components/table/TableHeaderCell';
 import TableRow from '@proton/components/components/table/TableRow';
-import type { LoginItem } from '@proton/pass/types';
 
+import type { LoginItem } from '../../../../types';
 import { BreachUsageRow } from './BreachUsageRow';
 
 type Props = { data: LoginItem[] };

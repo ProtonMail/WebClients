@@ -1,7 +1,6 @@
 import type { Action } from 'redux';
 
-import type { ClientEndpoint, TabId } from '@proton/pass/types';
-
+import type { ClientEndpoint, TabId } from '../../../types';
 import { type WithMeta, withMetaFactory } from './meta';
 
 export type EndpointOptions = { endpoint?: ClientEndpoint; tabId?: TabId };

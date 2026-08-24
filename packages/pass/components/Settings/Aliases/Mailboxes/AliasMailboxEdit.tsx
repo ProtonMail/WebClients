@@ -7,15 +7,15 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Panel } from '@proton/atoms/Panel/Panel';
 import { PanelHeader } from '@proton/atoms/Panel/PanelHeader';
 import { IcCross } from '@proton/icons/icons/IcCross';
-import { Field } from '@proton/pass/components/Form/Field/Field';
-import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
-import { TextField } from '@proton/pass/components/Form/Field/TextField';
-import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';
-import { useRequest } from '@proton/pass/hooks/useRequest';
-import type { EmailFormValues } from '@proton/pass/lib/validation/email';
-import { validateEmailForm } from '@proton/pass/lib/validation/email';
-import { editMailbox } from '@proton/pass/store/actions';
 
+import { useRequest } from '../../../../hooks/useRequest';
+import type { EmailFormValues } from '../../../../lib/validation/email';
+import { validateEmailForm } from '../../../../lib/validation/email';
+import { editMailbox } from '../../../../store/actions';
+import { Field } from '../../../Form/Field/Field';
+import { FieldsetCluster } from '../../../Form/Field/Layout/FieldsetCluster';
+import { TextField } from '../../../Form/Field/TextField';
+import { SidebarModal } from '../../../Layout/Modal/SidebarModal';
 import { useAliasMailboxes } from './AliasMailboxesContext';
 
 type Props = { mailboxID: number };

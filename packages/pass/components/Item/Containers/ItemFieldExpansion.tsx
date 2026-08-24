@@ -1,6 +1,6 @@
 import { type FC, type PropsWithChildren, createContext, useCallback, useContext, useRef, useState } from 'react';
 
-import type { MaybeNull } from '@proton/pass/types';
+import type { MaybeNull } from '../../../types';
 
 type ItemFieldExpansionContextValue = {
     get: (key: string) => boolean | undefined;

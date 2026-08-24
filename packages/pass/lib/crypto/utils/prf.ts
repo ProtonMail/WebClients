@@ -1,9 +1,10 @@
 import { type AesGcmCryptoKey, deriveKey, exportKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import { uint8ArrayToBinaryString, utf8StringToUint8Array } from '@protontech/crypto/utils';
-import type { AuthStore } from '@proton/pass/lib/auth/store';
-import type { MaybeNull } from '@proton/pass/types/utils';
+
 import { isChromiumBased, isMinimumSafariVersion, isWindows } from '@proton/shared/lib/helpers/browser';
 
+import type { MaybeNull } from '../../../types/utils';
+import type { AuthStore } from '../../auth/store';
 import { PassCryptoError } from './errors';
 
 /** Dummy challenge as no server interaction here.

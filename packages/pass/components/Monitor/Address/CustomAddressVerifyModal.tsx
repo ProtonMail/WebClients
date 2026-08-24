@@ -3,16 +3,13 @@ import type { FC } from 'react';
 import { c } from 'ttag';
 
 import useNotifications from '@proton/components/hooks/useNotifications';
-import {
-    EmailVerifyModal,
-    SECONDS_BEFORE_RESEND,
-    getInitialCountdown,
-} from '@proton/pass/components/Layout/Modal/EmailVerifyModal';
-import { useCountdown } from '@proton/pass/hooks/useCountdown';
-import { useRequest } from '@proton/pass/hooks/useRequest';
-import { PassErrorCode } from '@proton/pass/lib/api/errors';
-import type { AddressType, MonitorAddress } from '@proton/pass/lib/monitor/types';
-import { resendVerificationCode, verifyCustomAddress } from '@proton/pass/store/actions';
+
+import { useCountdown } from '../../../hooks/useCountdown';
+import { useRequest } from '../../../hooks/useRequest';
+import { PassErrorCode } from '../../../lib/api/errors';
+import type { AddressType, MonitorAddress } from '../../../lib/monitor/types';
+import { resendVerificationCode, verifyCustomAddress } from '../../../store/actions';
+import { EmailVerifyModal, SECONDS_BEFORE_RESEND, getInitialCountdown } from '../../Layout/Modal/EmailVerifyModal';
 
 export const FORM_ID = 'custom-address-verify';
 

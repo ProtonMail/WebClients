@@ -1,7 +1,6 @@
-import { decryptData, generateKey, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
-import { createRandomVaultKey } from '@proton/pass/lib/crypto/utils/testing';
-import { PassEncryptionTag } from '@proton/pass/types';
-
+import { PassEncryptionTag } from '../../../../types';
+import { decryptData, generateKey, importSymmetricKey } from '../../utils/crypto-helpers';
+import { createRandomVaultKey } from '../../utils/testing';
 import { createAccessTokenShareKeys } from './create-access-token-share-keys';
 
 describe('createAccessTokenShareKeys crypto process', () => {

@@ -1,7 +1,9 @@
 import { CryptoProxy, type PrivateKeyReference, VERIFICATION_STATUS } from '@protontech/crypto';
-import type { NativeMessageData } from '@proton/pass/types';
-import { PassSignatureContext } from '@proton/pass/types';
+
 import type { DecryptedKey } from '@proton/shared/lib/interfaces';
+
+import type { NativeMessageData } from '../../../../types';
+import { PassSignatureContext } from '../../../../types';
 
 const getSignatureContextValue = (sender: 'extension' | 'desktop'): PassSignatureContext =>
     sender === 'extension'

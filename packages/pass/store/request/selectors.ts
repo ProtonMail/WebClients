@@ -1,7 +1,6 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import type { Maybe, MaybeNull } from '@proton/pass/types';
-
+import type { Maybe, MaybeNull } from '../../types';
 import type { RequestEntry, RequestState, RequestStatus } from './types';
 
 export const selectRequest =

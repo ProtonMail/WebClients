@@ -1,21 +1,21 @@
 import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import { toShareAccessKey } from '@proton/pass/lib/access/access.utils';
-import type { AccessKeys } from '@proton/pass/lib/access/types';
-import { withCache } from '@proton/pass/store/actions/enhancers/cache';
-import { withShareDedupe } from '@proton/pass/store/actions/enhancers/dedupe';
-import { withItems } from '@proton/pass/store/actions/enhancers/items';
-import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
-import { shareEditMemberRoleRequest, shareLeaveRequest, shareRemoveMemberRequest } from '@proton/pass/store/actions/requests';
-import type { AccessState } from '@proton/pass/store/reducers';
-import { sessionRequest } from '@proton/pass/store/request/configs';
-import { withRequest, withRequestFailure, withRequestSuccess } from '@proton/pass/store/request/enhancers';
-import { requestActionsFactory } from '@proton/pass/store/request/flow';
-import { ShareType } from '@proton/pass/types';
-import type { ShareEditMemberAccessIntent, ShareRemoveMemberAccessIntent } from '@proton/pass/types/data/access.dto';
-import { pipe } from '@proton/pass/utils/fp/pipe';
-import { UNIX_MINUTE } from '@proton/pass/utils/time/constants';
+import { toShareAccessKey } from '../../../lib/access/access.utils';
+import type { AccessKeys } from '../../../lib/access/types';
+import { ShareType } from '../../../types';
+import type { ShareEditMemberAccessIntent, ShareRemoveMemberAccessIntent } from '../../../types/data/access.dto';
+import { pipe } from '../../../utils/fp/pipe';
+import { UNIX_MINUTE } from '../../../utils/time/constants';
+import type { AccessState } from '../../reducers';
+import { sessionRequest } from '../../request/configs';
+import { withRequest, withRequestFailure, withRequestSuccess } from '../../request/enhancers';
+import { requestActionsFactory } from '../../request/flow';
+import { withCache } from '../enhancers/cache';
+import { withShareDedupe } from '../enhancers/dedupe';
+import { withItems } from '../enhancers/items';
+import { withNotification } from '../enhancers/notification';
+import { shareEditMemberRoleRequest, shareLeaveRequest, shareRemoveMemberRequest } from '../requests';
 
 export const shareRemoveMemberAccessIntent = createAction(
     'share::member::remove-access::intent',

@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { type ItemBuilder, itemBuilder } from '@proton/pass/lib/items/item.builder';
+import lastItem from '@proton/utils/lastItem';
+
 import type {
     DeobfuscatedItemExtraField,
     IdentityFieldName,
@@ -8,16 +9,15 @@ import type {
     ItemImportIntent,
     Maybe,
     MaybeNull,
-} from '@proton/pass/types';
-import { AutofillMode, WifiSecurity } from '@proton/pass/types/protobuf';
-import type { AutofillUrl } from '@proton/pass/types/protobuf/item-v1';
-import { prop } from '@proton/pass/utils/fp/lens';
-import { truthy } from '@proton/pass/utils/fp/predicates';
-import { objectKeys } from '@proton/pass/utils/object/generic';
-import { isObject } from '@proton/pass/utils/object/is-object';
-import { epochToDate } from '@proton/pass/utils/time/format';
-import lastItem from '@proton/utils/lastItem';
-
+} from '../../../../types';
+import { AutofillMode, WifiSecurity } from '../../../../types/protobuf';
+import type { AutofillUrl } from '../../../../types/protobuf/item-v1';
+import { prop } from '../../../../utils/fp/lens';
+import { truthy } from '../../../../utils/fp/predicates';
+import { objectKeys } from '../../../../utils/object/generic';
+import { isObject } from '../../../../utils/object/is-object';
+import { epochToDate } from '../../../../utils/time/format';
+import { type ItemBuilder, itemBuilder } from '../../../items/item.builder';
 import type { OnePassLegacyItem, OnePassLegacyURL, OnePasswordWifiFields } from './1pif.types';
 import { type OnePassLegacySection, type OnePassLegacySectionField, OnePassLegacySectionFieldKey } from './1pif.types';
 import type {

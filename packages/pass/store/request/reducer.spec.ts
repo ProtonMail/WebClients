@@ -1,5 +1,4 @@
-import * as time from '@proton/pass/utils/time/epoch';
-
+import * as time from '../../utils/time/epoch';
 import { requestInvalidate, requestProgress } from './actions';
 import { withRequest } from './enhancers';
 import reducer from './reducer';

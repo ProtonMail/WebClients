@@ -1,6 +1,6 @@
 import { c, msgid } from 'ttag';
 
-import type { MaybeNull } from '@proton/pass/types';
+import type { MaybeNull } from '../../types';
 
 export const getOccurrenceString = (count: number) => c('Info').ngettext(msgid`${count} time`, `${count} times`, count);
 export const getViewCountString = (count: number, maxReads: MaybeNull<number>) =>

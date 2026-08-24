@@ -1,9 +1,8 @@
-import { decryptData, generateKey, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
-import { PassCryptoItemError } from '@proton/pass/lib/crypto/utils/errors';
-import { randomContents } from '@proton/pass/lib/crypto/utils/testing';
-import type { ItemKey } from '@proton/pass/types';
-import { ContentFormatVersion, PassEncryptionTag } from '@proton/pass/types';
-
+import type { ItemKey } from '../../../../types';
+import { ContentFormatVersion, PassEncryptionTag } from '../../../../types';
+import { decryptData, generateKey, importSymmetricKey } from '../../utils/crypto-helpers';
+import { PassCryptoItemError } from '../../utils/errors';
+import { randomContents } from '../../utils/testing';
 import { updateItem } from './update-item';
 
 describe('updateItem crypto process', () => {

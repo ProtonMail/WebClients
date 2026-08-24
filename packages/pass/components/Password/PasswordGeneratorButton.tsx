@@ -5,8 +5,8 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import type { ButtonProps } from '@proton/atoms/Button/Button';
 import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
-import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
 
+import { SubTheme } from '../Layout/Theme/types';
 import { usePasswordGeneratorAction } from './PasswordGeneratorAction';
 
 type Props = Omit<ButtonProps, 'onSubmit'> & { onSubmit: (password: string) => void };

@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
-import { api } from '@proton/pass/lib/api/api';
-import { PassCrypto } from '@proton/pass/lib/crypto';
-import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
-import { encodeVaultContent } from '@proton/pass/lib/vaults/vault-proto.transformer';
-import type { Share, ShareContent, ShareType, VaultCreateRequest, VaultTransferOwnerIntent } from '@proton/pass/types';
+import type { Share, ShareContent, ShareType, VaultCreateRequest, VaultTransferOwnerIntent } from '../../types';
+import { api } from '../api/api';
+import { PassCrypto } from '../crypto';
+import { parseShareResponse } from '../shares/share.parser';
+import { encodeVaultContent } from './vault-proto.transformer';
 
 export const createVault = async (data: {
     content: ShareContent<ShareType.Vault>;

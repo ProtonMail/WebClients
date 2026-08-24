@@ -1,17 +1,17 @@
 import { runSaga } from 'redux-saga';
 
-import { exposePassCrypto } from '@proton/pass/lib/crypto';
-import * as itemRequests from '@proton/pass/lib/items/item.requests';
-import { createTestItem } from '@proton/pass/lib/items/item.test.utils';
-import * as shareParser from '@proton/pass/lib/shares/share.parser';
-import * as shareRequests from '@proton/pass/lib/shares/share.requests';
-import { createShareRemovedError, createTestShare } from '@proton/pass/lib/shares/share.test.utils';
-import type { EventProcessor } from '@proton/pass/lib/sync/types';
-import { shareCreated, shareDeleted, shareUpdated } from '@proton/pass/store/actions';
-import { sagaSetup } from '@proton/pass/store/sagas/testing';
-import type { PassCryptoWorker, ShareGetResponse, ShareId, SyncEventShareOutput } from '@proton/pass/types';
 import { ApiError } from '@proton/shared/lib/fetch/ApiError';
 
+import { shareCreated, shareDeleted, shareUpdated } from '../../../store/actions';
+import { sagaSetup } from '../../../store/sagas/testing';
+import type { PassCryptoWorker, ShareGetResponse, ShareId, SyncEventShareOutput } from '../../../types';
+import { exposePassCrypto } from '../../crypto';
+import * as itemRequests from '../../items/item.requests';
+import { createTestItem } from '../../items/item.test.utils';
+import * as shareParser from '../../shares/share.parser';
+import * as shareRequests from '../../shares/share.requests';
+import { createShareRemovedError, createTestShare } from '../../shares/share.test.utils';
+import type { EventProcessor } from '../types';
 import { processSharesCreated, processSharesDeleted, processSharesUpdated } from './user-events.shares';
 
 const requestShare = jest.spyOn(shareRequests, 'requestShare');

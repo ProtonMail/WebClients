@@ -1,4 +1,4 @@
-export * from '@proton/pass/store/request/selectors';
+export * from '../request/selectors';
 
 export * from './access';
 export * from './access-token';

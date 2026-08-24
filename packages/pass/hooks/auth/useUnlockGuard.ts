@@ -3,9 +3,10 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
-import { ConnectivityStatus } from '@proton/pass/lib/network/connectivity.utils';
 import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+
+import { useConnectivity } from '../../components/Core/ConnectivityProvider';
+import { ConnectivityStatus } from '../../lib/network/connectivity.utils';
 
 export const useUnlockGuard = (opts: { offlineEnabled?: boolean; onOffline?: () => void }) => {
     const { offlineEnabled, onOffline } = opts;

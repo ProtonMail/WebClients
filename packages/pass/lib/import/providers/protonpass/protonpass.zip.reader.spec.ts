@@ -1,10 +1,10 @@
 import fs from 'fs';
 
-import { readProtonPassZIP } from '@proton/pass/lib/import/providers/protonpass/protonpass.zip.reader';
-import type { ImportPayload } from '@proton/pass/lib/import/types';
-import type { ItemImportIntent } from '@proton/pass/types';
-import { AutofillMode } from '@proton/pass/types/protobuf';
-import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
+import type { ItemImportIntent } from '../../../../types';
+import { AutofillMode } from '../../../../types/protobuf';
+import { deobfuscate } from '../../../../utils/obfuscate/xor';
+import type { ImportPayload } from '../../types';
+import { readProtonPassZIP } from './protonpass.zip.reader';
 
 describe('Import Proton Pass ZIP', () => {
     let payload: ImportPayload;

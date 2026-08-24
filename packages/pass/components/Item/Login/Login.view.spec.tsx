@@ -1,11 +1,12 @@
-import { LoginView } from '@proton/pass/components/Item/Login/Login.view';
-import { itemBuilder } from '@proton/pass/lib/items/item.builder';
-import { createTestItem } from '@proton/pass/lib/items/item.test.utils';
-import type { ShareItem } from '@proton/pass/store/reducers';
-import { ShareRole, ShareType } from '@proton/pass/types';
-import { uniqueId } from '@proton/pass/utils/string/unique-id';
-import { render } from '@proton/pass/utils/tests/render';
 import noop from '@proton/utils/noop';
+
+import { itemBuilder } from '../../../lib/items/item.builder';
+import { createTestItem } from '../../../lib/items/item.test.utils';
+import type { ShareItem } from '../../../store/reducers';
+import { ShareRole, ShareType } from '../../../types';
+import { uniqueId } from '../../../utils/string/unique-id';
+import { render } from '../../../utils/tests/render';
+import { LoginView } from './Login.view';
 
 const itemActions = {
     handleCloneClick: noop,

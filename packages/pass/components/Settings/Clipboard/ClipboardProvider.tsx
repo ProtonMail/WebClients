@@ -5,16 +5,17 @@ import { useDispatch, useStore } from 'react-redux';
 import { c } from 'ttag';
 
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { getClipboardTTLOptions } from '@proton/pass/components/Settings/Clipboard/ClipboardSettings.utils';
-import { ClipboardSettingsModal } from '@proton/pass/components/Settings/Clipboard/ClipboardSettingsModal';
-import { createUseContext } from '@proton/pass/hooks/useContextFactory';
-import { ClipboardTTL } from '@proton/pass/lib/clipboard/types';
-import { settingsEditIntent } from '@proton/pass/store/actions';
-import { selectClipboardTTL } from '@proton/pass/store/selectors';
-import type { State } from '@proton/pass/store/types';
-import type { MaybeNull } from '@proton/pass/types';
-import { logger } from '@proton/pass/utils/logger';
+
+import { createUseContext } from '../../../hooks/useContextFactory';
+import { ClipboardTTL } from '../../../lib/clipboard/types';
+import { settingsEditIntent } from '../../../store/actions';
+import { selectClipboardTTL } from '../../../store/selectors';
+import type { State } from '../../../store/types';
+import type { MaybeNull } from '../../../types';
+import { logger } from '../../../utils/logger';
+import { usePassCore } from '../../Core/PassCoreProvider';
+import { getClipboardTTLOptions } from './ClipboardSettings.utils';
+import { ClipboardSettingsModal } from './ClipboardSettingsModal';
 
 export type ClipboardAction = 'settings';
 

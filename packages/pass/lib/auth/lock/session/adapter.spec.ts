@@ -1,17 +1,16 @@
-import { PassErrorCode } from '@proton/pass/lib/api/errors';
-import { sessionLockAdapterFactory } from '@proton/pass/lib/auth/lock/session/adapter';
-import { LockMode } from '@proton/pass/lib/auth/lock/types';
-import * as authSession from '@proton/pass/lib/auth/session';
-import { createAuthStore } from '@proton/pass/lib/auth/store';
-import { createMemoryStore } from '@proton/pass/utils/store';
-import { getEpoch } from '@proton/pass/utils/time/epoch';
-
+import { createMemoryStore } from '../../../../utils/store';
+import { getEpoch } from '../../../../utils/time/epoch';
+import { PassErrorCode } from '../../../api/errors';
+import * as authSession from '../../session';
+import { createAuthStore } from '../../store';
+import { LockMode } from '../types';
+import { sessionLockAdapterFactory } from './adapter';
 import * as lockRequests from './lock.requests';
 
 jest.mock('./lock.requests');
-jest.mock('@proton/pass/utils/time/epoch');
-jest.mock('@proton/pass/lib/auth/session', () => ({
-    ...jest.requireActual('@proton/pass/lib/auth/session'),
+jest.mock('../../../../utils/time/epoch');
+jest.mock('../../session', () => ({
+    ...jest.requireActual('../../session'),
     decryptSessionBlob: jest.fn(),
     getPersistedSessionKey: jest.fn(),
 }));

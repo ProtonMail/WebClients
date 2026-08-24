@@ -1,9 +1,8 @@
 import type { FormikErrors } from 'formik';
 import { c } from 'ttag';
 
-import type { CreditCardItemFormValues } from '@proton/pass/types';
-import { isValidExpirationDate } from '@proton/pass/utils/time/expiration-date';
-
+import type { CreditCardItemFormValues } from '../../types';
+import { isValidExpirationDate } from '../../utils/time/expiration-date';
 import { validateItemErrors } from './item';
 
 export const validateCreditCardForm = (values: CreditCardItemFormValues): FormikErrors<CreditCardItemFormValues> => {

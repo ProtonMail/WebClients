@@ -1,5 +1,5 @@
-import { AppStatus, type Maybe } from '@proton/pass/types';
-import type { XorObfuscation } from '@proton/pass/utils/obfuscate/xor';
+import { AppStatus, type Maybe } from '../../../types';
+import type { XorObfuscation } from '../../../utils/obfuscate/xor';
 
 export enum LockMode {
     /** Session API Lock with PIN code */

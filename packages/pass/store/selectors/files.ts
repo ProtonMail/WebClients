@@ -1,8 +1,8 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import { isFileForRevision } from '@proton/pass/lib/file-attachments/helpers';
-import type { State } from '@proton/pass/store/types';
-import type { FileDescriptor } from '@proton/pass/types';
+import { isFileForRevision } from '../../lib/file-attachments/helpers';
+import type { FileDescriptor } from '../../types';
+import type { State } from '../types';
 
 export const selectFiles = (state: State) => state.files;
 

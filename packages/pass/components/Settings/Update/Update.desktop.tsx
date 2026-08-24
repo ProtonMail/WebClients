@@ -4,14 +4,14 @@ import { c } from 'ttag';
 
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useStateRef from '@proton/hooks/useStateRef';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { getErrorLabel } from '@proton/pass/components/Settings/Update/Update.utils.desktop';
-import type { UpdateStore } from '@proton/pass/types/desktop';
-import { UpdateStatus as UpdateStatusEnum } from '@proton/pass/types/desktop';
-import { logger } from '@proton/pass/utils/logger';
 
+import type { UpdateStore } from '../../../types/desktop';
+import { UpdateStatus as UpdateStatusEnum } from '../../../types/desktop';
+import { logger } from '../../../utils/logger';
+import { usePassCore } from '../../Core/PassCoreProvider';
 import { SettingsPanel } from '../SettingsPanel';
 import { Beta } from './Beta.desktop';
+import { getErrorLabel } from './Update.utils.desktop';
 import { UpdateStatus } from './UpdateStatus.desktop';
 
 const DEFAULT_UPDATE_STORE = (currentVersion: string): UpdateStore => ({

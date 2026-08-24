@@ -1,4 +1,4 @@
-import type { MaybeNull, PatMonitorListEntryOutput, PersonalAccessTokenShareResponse } from '@proton/pass/types';
+import type { MaybeNull, PatMonitorListEntryOutput, PersonalAccessTokenShareResponse } from '../../types';
 
 /**
  * ======================================

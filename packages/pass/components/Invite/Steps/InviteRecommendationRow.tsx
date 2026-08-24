@@ -2,12 +2,13 @@ import type { CSSProperties, FC } from 'react';
 import type { ListRowProps } from 'react-virtualized';
 
 import Checkbox from '@proton/components/components/input/Checkbox';
-import { useMaybeGroup } from '@proton/pass/components/Groups/GroupsProvider';
-import { MaybeGroupName } from '@proton/pass/components/Groups/MaybeGroupName';
-import { ShareMemberAvatar } from '@proton/pass/components/Invite/Member/ShareMemberAvatar';
-import type { InviteRecommendationsProps } from '@proton/pass/components/Invite/Steps/InviteRecommendations';
-import type { MaybeNull } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
+
+import type { MaybeNull } from '../../../types';
+import { useMaybeGroup } from '../../Groups/GroupsProvider';
+import { MaybeGroupName } from '../../Groups/MaybeGroupName';
+import { ShareMemberAvatar } from '../Member/ShareMemberAvatar';
+import type { InviteRecommendationsProps } from './InviteRecommendations';
 
 const RowLoading: FC<{ style: CSSProperties }> = ({ style }) => (
     <div style={style} className="flex items-center anime-fade-in px-2 gap-3">

@@ -1,4 +1,4 @@
-import type { Maybe } from '@proton/pass/types';
+import type { Maybe } from '../../../../types';
 
 export enum LastPassNoteType {
     CREDIT_CARD = 'Credit Card',

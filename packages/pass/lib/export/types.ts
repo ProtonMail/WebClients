@@ -1,4 +1,4 @@
-import type { DeobfuscatedItemRevision, FileForDownload, ItemType, VaultShareContent } from '@proton/pass/types';
+import type { DeobfuscatedItemRevision, FileForDownload, ItemType, VaultShareContent } from '../../types';
 
 export type ExportedItem<T extends ItemType = ItemType> = Omit<
     DeobfuscatedItemRevision<T>,
@@ -38,8 +38,7 @@ export enum ExportFormat {
 }
 
 export type ExportOptions =
-    | { format: ExportFormat.PGP; passphrase: string }
-    | { format: Exclude<ExportFormat, ExportFormat.PGP> };
+    { format: ExportFormat.PGP; passphrase: string } | { format: Exclude<ExportFormat, ExportFormat.PGP> };
 
 export type ExportRequestOptions = {
     format: ExportFormat;

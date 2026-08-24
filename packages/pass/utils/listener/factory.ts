@@ -1,8 +1,9 @@
-import type { Callback, Maybe } from '@proton/pass/types';
-import { skipFirst } from '@proton/pass/utils/fp/control';
-import { pipe } from '@proton/pass/utils/fp/pipe';
-import type { PubSub, Subscriber } from '@proton/pass/utils/pubsub/factory';
 import noop from '@proton/utils/noop';
+
+import type { Callback, Maybe } from '../../types';
+import { skipFirst } from '../fp/control';
+import { pipe } from '../fp/pipe';
+import type { PubSub, Subscriber } from '../pubsub/factory';
 
 /**
  * Removing every listener from a DOM node

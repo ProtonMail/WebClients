@@ -7,9 +7,10 @@ import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
-import { type InviteLabels, useInviteLabels } from '@proton/pass/components/Invite/useInviteLabels';
-import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
-import { ShareRole } from '@proton/pass/types';
+
+import { ShareRole } from '../../../types';
+import { DropdownMenuButton } from '../../Layout/Dropdown/DropdownMenuButton';
+import { type InviteLabels, useInviteLabels } from '../useInviteLabels';
 
 type Props = { onRoleChange: (role: ShareRole) => void };
 

@@ -1,5 +1,4 @@
-import type { MaybeNull } from '@proton/pass/types';
-
+import type { MaybeNull } from '..';
 import type { UniqueItem } from './items';
 
 export type AliasMailbox = { email: string; id: number };

@@ -1,4 +1,7 @@
-import type { HydratedAccessState } from '@proton/pass/store/reducers';
+import type { AuthenticationStore } from '@proton/shared/lib/authentication/createAuthenticationStore';
+import type { Address, User } from '@proton/shared/lib/interfaces';
+
+import type { HydratedAccessState } from '../../store/reducers';
 import type {
     AliasMailbox,
     AliasOptions,
@@ -11,12 +14,9 @@ import type {
     ResponseCodeSuccess,
     Share,
     ShareType,
-} from '@proton/pass/types';
-import type { OrganizationSettings } from '@proton/pass/types/data/organization';
-import type { MaxAgeMemoizedFn } from '@proton/pass/utils/fp/memo';
-import type { AuthenticationStore } from '@proton/shared/lib/authentication/createAuthenticationStore';
-import type { Address, User } from '@proton/shared/lib/interfaces';
-
+} from '../../types';
+import type { OrganizationSettings } from '../../types/data/organization';
+import type { MaxAgeMemoizedFn } from '../../utils/fp/memo';
 import type { OrganizationReportDTO, PauseListEntryAddDTO, PauseListEntryUpdateDTO } from '../organization/types';
 
 export type PassBridgeInitOptions = {

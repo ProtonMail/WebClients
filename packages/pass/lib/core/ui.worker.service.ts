@@ -1,5 +1,5 @@
-import type { PassUIMethod, PassUIParams, PassUIResult } from '@proton/pass/lib/core/ui.types';
-import { wasmWorkerServiceFactory } from '@proton/pass/lib/core/wasm.worker.service';
+import type { PassUIMethod, PassUIParams, PassUIResult } from './ui.types';
+import { wasmWorkerServiceFactory } from './wasm.worker.service';
 
 export const PassUIWorkerService = wasmWorkerServiceFactory<{
     [K in PassUIMethod]: {
@@ -11,6 +11,6 @@ export const PassUIWorkerService = wasmWorkerServiceFactory<{
     spawn: () =>
         new Worker(
             /* webpackChunkName: "pass-ui.worker" */
-            new URL('@proton/pass/lib/core/ui.worker', import.meta.url)
+            new URL('./ui.worker', import.meta.url)
         ),
 });

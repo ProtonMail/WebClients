@@ -1,8 +1,8 @@
 import { type FC, type PropsWithChildren, createContext, useEffect, useState } from 'react';
 
-import { AppStateManager } from '@proton/pass/components/Core/AppStateManager';
-import { createUseContext } from '@proton/pass/hooks/useContextFactory';
-import type { AppState, ContextBridgeApi, MaybeNull } from '@proton/pass/types';
+import { createUseContext } from '../../hooks/useContextFactory';
+import type { AppState, ContextBridgeApi, MaybeNull } from '../../types';
+import { AppStateManager } from './AppStateManager';
 
 export const AppStateContext = createContext<MaybeNull<AppState>>(null);
 export const useAppState = createUseContext(AppStateContext);

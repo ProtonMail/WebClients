@@ -1,6 +1,6 @@
 import safeRegexLib from 'safe-regex2';
 
-import { RegexSafety, checkRegex, safeRegex } from '@proton/pass/lib/urls/safe-regex/safe-regex';
+import { RegexSafety, checkRegex, safeRegex } from './safe-regex';
 
 jest.mock('safe-regex2', () => jest.fn(() => true));
 

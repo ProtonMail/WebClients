@@ -1,11 +1,10 @@
 import { c } from 'ttag';
 
-import { itemBuilder } from '@proton/pass/lib/items/item.builder';
-import type { DeobfuscatedItemExtraField, IdentityFieldName, ItemContent, MaybeNull } from '@proton/pass/types';
-import { AutofillMode } from '@proton/pass/types/protobuf';
-import type { AutofillUrl } from '@proton/pass/types/protobuf/item-v1';
-import { truthy } from '@proton/pass/utils/fp/predicates';
-
+import type { DeobfuscatedItemExtraField, IdentityFieldName, ItemContent, MaybeNull } from '../../../../types';
+import { AutofillMode } from '../../../../types/protobuf';
+import type { AutofillUrl } from '../../../../types/protobuf/item-v1';
+import { truthy } from '../../../../utils/fp/predicates';
+import { itemBuilder } from '../../../items/item.builder';
 import type { BitwardenCCItem, BitwardenCustomField, BitwardenLoginItem, BitwardenSshKeyItem } from './bitwarden.types';
 import { BitwardenCustomFieldType, type BitwardenIdentityItem, BitwardenUriMatchType } from './bitwarden.types';
 

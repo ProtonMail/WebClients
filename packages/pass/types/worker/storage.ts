@@ -1,4 +1,4 @@
-import type { MaybeNull, MaybePromise } from '@proton/pass/types';
+import type { MaybeNull, MaybePromise } from '..';
 
 export type StorageQuery<T, K extends (keyof T)[]> = Partial<Pick<T, K[number]>>;
 export type StorageData = Record<string, any>;

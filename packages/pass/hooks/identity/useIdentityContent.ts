@@ -1,7 +1,6 @@
 import { useMemo } from 'react';
 
-import type { DeobfuscatedItemExtraField, IdentityValues } from '@proton/pass/types';
-
+import type { DeobfuscatedItemExtraField, IdentityValues } from '../../types';
 import type { IdentityFormField } from './useIdentityForm';
 import { getIdentityFields, getInitialSections } from './utils';
 

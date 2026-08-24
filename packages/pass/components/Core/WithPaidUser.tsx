@@ -1,6 +1,6 @@
 import type { ComponentType, FC } from 'react';
 
-import { useMatchUser } from '@proton/pass/hooks/useMatchUser';
+import { useMatchUser } from '../../hooks/useMatchUser';
 
 export const WithPaidUser = <P extends object>(Component: ComponentType<P>): FC<P> => {
     const WrappedComponent: FC<P> = (props) => {

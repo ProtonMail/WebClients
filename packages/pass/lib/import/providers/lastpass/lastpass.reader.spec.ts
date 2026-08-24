@@ -1,11 +1,10 @@
 import fs from 'fs';
 
-import type { ImportPayload } from '@proton/pass/lib/import/types';
-import { deobfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
-import type { ItemType } from '@proton/pass/types';
-import { AutofillMode, WifiSecurity } from '@proton/pass/types/protobuf';
-import * as epochUtils from '@proton/pass/utils/time/epoch';
-
+import type { ItemType } from '../../../../types';
+import { AutofillMode, WifiSecurity } from '../../../../types/protobuf';
+import * as epochUtils from '../../../../utils/time/epoch';
+import { deobfuscateItem } from '../../../items/item.obfuscation';
+import type { ImportPayload } from '../../types';
 import { readLastPassData } from './lastpass.reader';
 
 const sourceFiles = {

@@ -1,14 +1,10 @@
 import { type FC, useCallback, useRef } from 'react';
 
-import { PasswordGeneratorButton } from '@proton/pass/components/Password/PasswordGeneratorButton';
-import {
-    strenghtIconNames,
-    strengthClassNames,
-    translateStrengths,
-} from '@proton/pass/components/Password/PasswordStrength';
-import { usePasswordStrength } from '@proton/pass/hooks/monitor/usePasswordStrength';
 import clsx from '@proton/utils/clsx';
 
+import { usePasswordStrength } from '../../../hooks/monitor/usePasswordStrength';
+import { PasswordGeneratorButton } from '../../Password/PasswordGeneratorButton';
+import { strenghtIconNames, strengthClassNames, translateStrengths } from '../../Password/PasswordStrength';
 import { TextField, type TextFieldProps } from './TextField';
 
 import './PasswordField.scss';

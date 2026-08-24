@@ -1,12 +1,4 @@
-import type {
-    FileMetadata,
-    ItemFileChunkOutput,
-    ItemId,
-    MaybeNull,
-    SelectedItem,
-    SelectedRevision,
-    ShareId,
-} from '@proton/pass/types';
+import type { FileMetadata, ItemFileChunkOutput, ItemId, MaybeNull, SelectedItem, SelectedRevision, ShareId } from '..';
 
 export type FileID = string;
 
@@ -37,9 +29,7 @@ export type FileChunkUploadDTO = {
     shareId: ShareId;
     totalChunks: number;
 } & (
-    | { type: 'blob'; blob: Blob }
-    | { type: 'storage'; storageType: string; ref: string }
-    | { type: 'b64'; data: string }
+    { type: 'blob'; blob: Blob } | { type: 'storage'; storageType: string; ref: string } | { type: 'b64'; data: string }
 );
 
 export type FileAttachmentsDTO = { toAdd: FileID[]; toRemove: FileID[]; toRestore?: FileID[] };

@@ -1,5 +1,6 @@
 import { CryptoProxy } from '@protontech/crypto';
-import { loadCoreCryptoWorker } from '@proton/pass/lib/crypto/utils/worker';
+
+import { loadCoreCryptoWorker } from './worker';
 
 /** Encrypts an `Uint8Array` representation of a file/blob:
  * Once support for argon2 is released, then we should pass a config to use

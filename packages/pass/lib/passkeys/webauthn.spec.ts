@@ -3,8 +3,7 @@ import type {
     WasmPublicKeyCredentialAttestation,
 } from '@protontech/pass-rust-core/worker';
 
-import { uint8ArrayToB64URL } from '@proton/pass/utils/buffer/sanitization';
-
+import { uint8ArrayToB64URL } from '../../utils/buffer/sanitization';
 import {
     intoAuthenticatorAssertionResponse,
     intoAuthenticatorAttestationResponse,

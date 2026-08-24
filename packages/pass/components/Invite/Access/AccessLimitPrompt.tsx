@@ -6,8 +6,9 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import Alert from '@proton/components/components/alert/Alert';
 import Prompt from '@proton/components/components/prompt/Prompt';
-import { selectPassPlan } from '@proton/pass/store/selectors';
-import { UserPassPlan } from '@proton/pass/types/api/plan';
+
+import { selectPassPlan } from '../../../store/selectors';
+import { UserPassPlan } from '../../../types/api/plan';
 
 type Props = {
     open: boolean;

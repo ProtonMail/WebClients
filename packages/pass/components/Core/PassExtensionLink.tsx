@@ -1,11 +1,12 @@
 import type { FC, PropsWithChildren } from 'react';
 import { createContext, useContext, useMemo } from 'react';
 
-import { usePassExtensionInstalled } from '@proton/pass/hooks/usePassExtensionInstalled';
-import { type SupportedExtensionClient, getExtensionSupportedBrowser } from '@proton/pass/lib/extension/utils/browser';
-import type { MaybeNull } from '@proton/pass/types';
 import { isDesktop } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
+
+import { usePassExtensionInstalled } from '../../hooks/usePassExtensionInstalled';
+import { type SupportedExtensionClient, getExtensionSupportedBrowser } from '../../lib/extension/utils/browser';
+import type { MaybeNull } from '../../types';
 
 type PassExtensionLinkValue = { installed: boolean; supportedBrowser: MaybeNull<SupportedExtensionClient> };
 

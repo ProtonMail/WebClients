@@ -1,8 +1,7 @@
 import type { OpenAPIV3_1 } from 'openapi-types';
 
-import { generateObjectTypeBody } from '@proton/pass/utils/openapi/generator/object';
-
 import { generateTSEnum, parseEnumValue } from './enums';
+import { generateObjectTypeBody } from './object';
 import type { Schema, SchemaEntry, SchemaTypeParser } from './types';
 import { generateSumType, generateUnionType, refType } from './utils';
 

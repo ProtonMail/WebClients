@@ -1,5 +1,5 @@
-import type { Maybe } from '@proton/pass/types';
-import { safeCall } from '@proton/pass/utils/fp/safe-call';
+import type { Maybe } from '../../types';
+import { safeCall } from '../fp/safe-call';
 
 /** Traverses up the DOM to find the nearest slot element
  * that contains or is assigned to the given element. */

@@ -1,4 +1,4 @@
-import type { MaybeNull, SelectedItem } from '@proton/pass/types';
+import type { MaybeNull, SelectedItem } from '../../types';
 
 export type ProtonAddressID = string;
 export type CustomAddressID = string;

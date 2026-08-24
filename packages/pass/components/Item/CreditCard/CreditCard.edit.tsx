@@ -3,34 +3,30 @@ import type { FC } from 'react';
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
-import { FeatureFlag } from '@proton/pass/components/Core/WithFeatureFlag';
-import { FileAttachmentsFieldEdit } from '@proton/pass/components/FileAttachments/FileAttachmentsFieldEdit';
-import { ExtraFieldGroup } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraFieldGroup';
-import { Field } from '@proton/pass/components/Form/Field/Field';
-import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
-import { MaskedTextField } from '@proton/pass/components/Form/Field/MaskedTextField';
-import { TextField } from '@proton/pass/components/Form/Field/TextField';
-import { TextAreaField } from '@proton/pass/components/Form/Field/TextareaField';
-import { TitleField } from '@proton/pass/components/Form/Field/TitleField';
-import {
-    cardNumberHiddenValue,
-    cardNumberMask,
-    expDateMask,
-} from '@proton/pass/components/Form/Field/masks/credit-card';
-import { getCreditCardType } from '@proton/pass/components/Item/CreditCard/CreditCard.utils';
-import { ItemEditPanel } from '@proton/pass/components/Layout/Panel/ItemEditPanel';
-import type { ItemEditViewProps } from '@proton/pass/components/Views/types';
-import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '@proton/pass/constants';
-import { useDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
-import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
-import { filesFormInitializer } from '@proton/pass/lib/file-attachments/helpers';
-import { obfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
-import { bindOTPSanitizer, sanitizeExtraField } from '@proton/pass/lib/items/item.utils';
-import { validateCreditCardForm } from '@proton/pass/lib/validation/credit-card';
-import type { CreditCardItemFormValues } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
-import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
-import { formatExpirationDateMMYY } from '@proton/pass/utils/time/expiration-date';
+import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../../../constants';
+import { useDeobfuscatedItem } from '../../../hooks/useDeobfuscatedItem';
+import { useItemDraft } from '../../../hooks/useItemDraft';
+import { filesFormInitializer } from '../../../lib/file-attachments/helpers';
+import { obfuscateExtraFields } from '../../../lib/items/item.obfuscation';
+import { bindOTPSanitizer, sanitizeExtraField } from '../../../lib/items/item.utils';
+import { validateCreditCardForm } from '../../../lib/validation/credit-card';
+import type { CreditCardItemFormValues } from '../../../types';
+import { PassFeature } from '../../../types/api/features';
+import { obfuscate } from '../../../utils/obfuscate/xor';
+import { formatExpirationDateMMYY } from '../../../utils/time/expiration-date';
+import { FeatureFlag } from '../../Core/WithFeatureFlag';
+import { FileAttachmentsFieldEdit } from '../../FileAttachments/FileAttachmentsFieldEdit';
+import { ExtraFieldGroup } from '../../Form/Field/ExtraFieldGroup/ExtraFieldGroup';
+import { Field } from '../../Form/Field/Field';
+import { FieldsetCluster } from '../../Form/Field/Layout/FieldsetCluster';
+import { MaskedTextField } from '../../Form/Field/MaskedTextField';
+import { TextField } from '../../Form/Field/TextField';
+import { TextAreaField } from '../../Form/Field/TextareaField';
+import { TitleField } from '../../Form/Field/TitleField';
+import { cardNumberHiddenValue, cardNumberMask, expDateMask } from '../../Form/Field/masks/credit-card';
+import { ItemEditPanel } from '../../Layout/Panel/ItemEditPanel';
+import type { ItemEditViewProps } from '../../Views/types';
+import { getCreditCardType } from './CreditCard.utils';
 
 const FORM_ID = 'edit-creditCard';
 

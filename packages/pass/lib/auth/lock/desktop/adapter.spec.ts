@@ -1,15 +1,16 @@
-import { desktopLockAdapterFactory } from '@proton/pass/lib/auth/lock/desktop/adapter';
-import * as logicExtension from '@proton/pass/lib/auth/lock/desktop/logic.extension';
-import { LockMode } from '@proton/pass/lib/auth/lock/types';
-import { createAuthStore } from '@proton/pass/lib/auth/store';
-import { getMessageForNativeMessageError } from '@proton/pass/lib/native-messaging/errors';
-import { NativeMessageErrorType } from '@proton/pass/types';
-import { SilentError } from '@proton/pass/utils/errors/errors';
-import * as epoch from '@proton/pass/utils/time/epoch';
 import createStore from '@proton/shared/lib/helpers/store';
 
-jest.mock('@proton/pass/lib/auth/lock/desktop/logic.extension');
-jest.mock('@proton/pass/utils/time/epoch');
+import { NativeMessageErrorType } from '../../../../types';
+import { SilentError } from '../../../../utils/errors/errors';
+import * as epoch from '../../../../utils/time/epoch';
+import { getMessageForNativeMessageError } from '../../../native-messaging/errors';
+import { createAuthStore } from '../../store';
+import { LockMode } from '../types';
+import { desktopLockAdapterFactory } from './adapter';
+import * as logicExtension from './logic.extension';
+
+jest.mock('./logic.extension');
+jest.mock('../../../../utils/time/epoch');
 
 const setupLockSecretMessage = logicExtension.sendSetupLockSecretMessage as jest.Mock;
 const unlockMessage = logicExtension.sendUnlockMessage as jest.Mock;

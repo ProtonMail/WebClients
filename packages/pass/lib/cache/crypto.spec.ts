@@ -1,10 +1,10 @@
 import { ARGON2_PARAMS, CryptoProxy } from '@protontech/crypto';
 
-import { decryptData, generateKey, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
-import { releaseCryptoProxy, setupCryptoProxyForTesting } from '@proton/pass/lib/crypto/utils/testing';
-import { PassEncryptionTag } from '@proton/pass/types';
 import { binaryStringToUint8Array, uint8ArrayToBinaryString } from '@proton/shared/lib/helpers/encoding';
 
+import { PassEncryptionTag } from '../../types';
+import { decryptData, generateKey, importSymmetricKey } from '../crypto/utils/crypto-helpers';
+import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../crypto/utils/testing';
 import { generateOfflineComponents } from './crypto';
 
 describe('cache crypto operations', () => {

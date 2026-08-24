@@ -2,10 +2,10 @@ import type { FC } from 'react';
 import type { RouteChildrenProps } from 'react-router-dom';
 import { Route, Switch, useParams } from 'react-router-dom';
 
-import { ItemHistoryProvider } from '@proton/pass/components/Item/History/ItemHistoryProvider';
-import { RevisionDiff } from '@proton/pass/components/Item/History/RevisionsDiff';
-import { RevisionsTimeline } from '@proton/pass/components/Item/History/RevisionsTimeline';
-import type { SelectedItem } from '@proton/pass/types';
+import type { SelectedItem } from '../../../types';
+import { ItemHistoryProvider } from '../History/ItemHistoryProvider';
+import { RevisionDiff } from '../History/RevisionsDiff';
+import { RevisionsTimeline } from '../History/RevisionsTimeline';
 
 export const ItemHistory: FC<RouteChildrenProps> = ({ match }) => (
     <ItemHistoryProvider {...useParams<SelectedItem>()}>

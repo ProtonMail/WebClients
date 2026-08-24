@@ -1,10 +1,11 @@
 import { c } from 'ttag';
 
-import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
-import { requestActionsFactory } from '@proton/pass/store/request/flow';
-import { prop } from '@proton/pass/utils/fp/lens';
 import type { AuthDeviceOutput } from '@proton/shared/lib/keys/device';
 import { ConfirmAuthDeviceError } from '@proton/shared/lib/keys/deviceConfirm';
+
+import { prop } from '../../../utils/fp/lens';
+import { requestActionsFactory } from '../../request/flow';
+import { withNotification } from '../enhancers/notification';
 
 type ConfirmDeviceDTO = {
     pendingAuthDevice: AuthDeviceOutput;

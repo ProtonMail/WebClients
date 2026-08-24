@@ -2,13 +2,13 @@ import type { FC, MouseEvent, RefObject } from 'react';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 
-import { useBulkSelection } from '@proton/pass/components/Bulk/BulkSelectionState';
-import { useContextMenu } from '@proton/pass/components/ContextMenu/ContextMenuProvider';
-import { BulkItemsContextMenu } from '@proton/pass/components/Item/ContextMenu/BulkItemsContextMenu';
-import { ItemContextMenu } from '@proton/pass/components/Item/ContextMenu/ItemContextMenu';
-import { getItemKey } from '@proton/pass/lib/items/item.utils';
-import { selectItemWithOptimistic, selectShare } from '@proton/pass/store/selectors';
-import type { MaybeNull, UniqueItem } from '@proton/pass/types';
+import { getItemKey } from '../../../lib/items/item.utils';
+import { selectItemWithOptimistic, selectShare } from '../../../store/selectors';
+import type { MaybeNull, UniqueItem } from '../../../types';
+import { useBulkSelection } from '../../Bulk/BulkSelectionState';
+import { useContextMenu } from '../../ContextMenu/ContextMenuProvider';
+import { BulkItemsContextMenu } from './BulkItemsContextMenu';
+import { ItemContextMenu } from './ItemContextMenu';
 
 type Props = UniqueItem & { anchorRef: RefObject<HTMLElement> };
 

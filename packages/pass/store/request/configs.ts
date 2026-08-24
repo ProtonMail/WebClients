@@ -1,4 +1,4 @@
-import type { RequestConfig } from '@proton/pass/store/request/types';
+import type { RequestConfig } from './types';
 
 type SuccessOption<D> = { config: RequestConfig<'success', D> };
 

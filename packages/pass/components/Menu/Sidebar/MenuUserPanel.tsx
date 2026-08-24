@@ -1,8 +1,8 @@
 import React, { memo } from 'react';
 import { useSelector } from 'react-redux';
 
-import { UserPanel } from '@proton/pass/components/Account/UserPanel';
-import { selectPassPlan, selectPlanDisplayName, selectUser } from '@proton/pass/store/selectors';
+import { selectPassPlan, selectPlanDisplayName, selectUser } from '../../../store/selectors';
+import { UserPanel } from '../../Account/UserPanel';
 
 export const MenuUserPanel = memo(() => {
     const user = useSelector(selectUser);

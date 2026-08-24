@@ -1,9 +1,9 @@
-import { CONNECTIVITY_RETRY_TIMEOUT, ConnectivityStatus } from '@proton/pass/lib/network/connectivity.utils';
-import type { Api, ApiState, ApiSubscriptionEvent } from '@proton/pass/types';
-import { createPubSub } from '@proton/pass/utils/pubsub/factory';
 import { FIBONACCI_LIST } from '@proton/shared/lib/constants';
 
+import type { Api, ApiState, ApiSubscriptionEvent } from '../../types';
+import { createPubSub } from '../../utils/pubsub/factory';
 import { CONNECTIVITY_PROBE_DELAY, createConnectivityService } from './connectivity.service';
+import { CONNECTIVITY_RETRY_TIMEOUT, ConnectivityStatus } from './connectivity.utils';
 
 /** Mock API - all requests will resolve by default.
  * - `ConnectivityService::check` -> reads `api.getState` directly

@@ -4,14 +4,15 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import { useOffline } from '@proton/pass/components/Core/ConnectivityProvider';
-import { PinCodeInput } from '@proton/pass/components/Lock/PinCodeInput';
-import { useLockAutoSubmit } from '@proton/pass/hooks/auth/useLockAutoSubmit';
-import { useUnlockGuard } from '@proton/pass/hooks/auth/useUnlockGuard';
-import { useRequest } from '@proton/pass/hooks/useRequest';
-import { useRerender } from '@proton/pass/hooks/useRerender';
-import { LockMode } from '@proton/pass/lib/auth/lock/types';
-import { unlock } from '@proton/pass/store/actions';
+
+import { useLockAutoSubmit } from '../../hooks/auth/useLockAutoSubmit';
+import { useUnlockGuard } from '../../hooks/auth/useUnlockGuard';
+import { useRequest } from '../../hooks/useRequest';
+import { useRerender } from '../../hooks/useRerender';
+import { LockMode } from '../../lib/auth/lock/types';
+import { unlock } from '../../store/actions';
+import { useOffline } from '../Core/ConnectivityProvider';
+import { PinCodeInput } from './PinCodeInput';
 
 type Props = {
     offlineEnabled?: boolean;

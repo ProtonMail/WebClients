@@ -1,7 +1,7 @@
-import { getAliasBreaches } from '@proton/pass/lib/monitor/monitor.request';
-import { intoFetchedBreach } from '@proton/pass/lib/monitor/monitor.utils';
-import { getAliasBreach } from '@proton/pass/store/actions';
-import { createRequestSaga } from '@proton/pass/store/request/sagas';
+import { getAliasBreaches } from '../../../lib/monitor/monitor.request';
+import { intoFetchedBreach } from '../../../lib/monitor/monitor.utils';
+import { getAliasBreach } from '../../actions';
+import { createRequestSaga } from '../../request/sagas';
 
 export default createRequestSaga({
     actions: getAliasBreach,

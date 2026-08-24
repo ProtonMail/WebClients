@@ -2,10 +2,10 @@ import type { FC, PropsWithChildren } from 'react';
 
 import PassForBusinessLogo from '@proton/components/components/logo/PassForBusinessLogo';
 import PassLogo from '@proton/components/components/logo/PassLogo';
-import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 
+import { useOrganization } from '../../Organization/OrganizationProvider';
 import { TitlebarDragRegion } from './TitlebarDragRegion';
 
 import './Sidebar.scss';

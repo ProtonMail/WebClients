@@ -4,12 +4,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import Toggle from '@proton/components/components/toggle/Toggle';
-import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
-import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
-import { settingsEditIntent } from '@proton/pass/store/actions';
-import { selectBetaEnabled } from '@proton/pass/store/selectors';
-import { PassFeature } from '@proton/pass/types/api/features';
 import { BRAND_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+
+import { useFeatureFlag } from '../../../hooks/useFeatureFlag';
+import { settingsEditIntent } from '../../../store/actions';
+import { selectBetaEnabled } from '../../../store/selectors';
+import { PassFeature } from '../../../types/api/features';
+import { SettingsPanel } from '../SettingsPanel';
 
 /** Limit beta enabling to the cohort having the `PassWebInternalAlpha`
  * flag for now. FIXME: remove this when leveraging the user settings */

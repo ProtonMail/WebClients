@@ -1,18 +1,15 @@
-import {
-    ConnectivityStatus,
-    getConnectivityRetryTimeout,
-    intoConnectivityStatus,
-} from '@proton/pass/lib/network/connectivity.utils';
-import type { Api, ApiSubscriptionEvent, MaybeNull } from '@proton/pass/types';
-import { asyncLock, cancelable } from '@proton/pass/utils/fp/promises';
-import { safeAsyncCall } from '@proton/pass/utils/fp/safe-call';
-import { createListenerStore } from '@proton/pass/utils/listener/factory';
-import { logger } from '@proton/pass/utils/logger';
-import type { Subscriber } from '@proton/pass/utils/pubsub/factory';
-import { createPubSub } from '@proton/pass/utils/pubsub/factory';
 import { ping } from '@proton/shared/lib/api/tests';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
+
+import type { Api, ApiSubscriptionEvent, MaybeNull } from '../../types';
+import { asyncLock, cancelable } from '../../utils/fp/promises';
+import { safeAsyncCall } from '../../utils/fp/safe-call';
+import { createListenerStore } from '../../utils/listener/factory';
+import { logger } from '../../utils/logger';
+import type { Subscriber } from '../../utils/pubsub/factory';
+import { createPubSub } from '../../utils/pubsub/factory';
+import { ConnectivityStatus, getConnectivityRetryTimeout, intoConnectivityStatus } from './connectivity.utils';
 
 /**
  * Reconciles `navigator.onLine` and the API's connectivity state into a single

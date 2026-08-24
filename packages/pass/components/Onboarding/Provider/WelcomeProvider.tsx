@@ -4,29 +4,29 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import onboardingExtension from '@proton/pass/assets/desktop-onboarding/onboarding-extension.svg';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { OnboardingLockSetup } from '@proton/pass/components/Onboarding/OnboardingLockSetup';
-import { OnboardingModal } from '@proton/pass/components/Onboarding/OnboardingModal';
-import { OnboardingThemeSelect } from '@proton/pass/components/Onboarding/OnboardingThemeSelect';
-import type { AvailablePlans } from '@proton/pass/components/Onboarding/Provider/OnboardingContext';
-import { AspectRatioBox } from '@proton/pass/components/Utils/AspectRatioBox';
-import { PASS_DOWNLOAD_URL, UpsellRef } from '@proton/pass/constants';
-import { useFeatureFlagVariant } from '@proton/pass/hooks/useFeatureFlagVariant';
-import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
-import { usePassExtensionInstalled } from '@proton/pass/hooks/usePassExtensionInstalled';
-import { useSelectorOnce } from '@proton/pass/hooks/useSelectorOnce';
-import { selectAllItems, selectPassPlan, selectUserPlan } from '@proton/pass/store/selectors';
-import { SpotlightMessage } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
-import { UserPassPlan } from '@proton/pass/types/api/plan';
-import { prop } from '@proton/pass/utils/fp/lens';
-import { truthy } from '@proton/pass/utils/fp/predicates';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
+import onboardingExtension from '../../../assets/desktop-onboarding/onboarding-extension.svg';
+import { PASS_DOWNLOAD_URL, UpsellRef } from '../../../constants';
+import { useFeatureFlagVariant } from '../../../hooks/useFeatureFlagVariant';
+import { useNavigateToUpgrade } from '../../../hooks/useNavigateToUpgrade';
+import { usePassExtensionInstalled } from '../../../hooks/usePassExtensionInstalled';
+import { useSelectorOnce } from '../../../hooks/useSelectorOnce';
+import { selectAllItems, selectPassPlan, selectUserPlan } from '../../../store/selectors';
+import { SpotlightMessage } from '../../../types';
+import { PassFeature } from '../../../types/api/features';
+import { UserPassPlan } from '../../../types/api/plan';
+import { prop } from '../../../utils/fp/lens';
+import { truthy } from '../../../utils/fp/predicates';
+import { usePassCore } from '../../Core/PassCoreProvider';
+import { AspectRatioBox } from '../../Utils/AspectRatioBox';
+import { OnboardingLockSetup } from '../OnboardingLockSetup';
+import { OnboardingModal } from '../OnboardingModal';
+import { OnboardingThemeSelect } from '../OnboardingThemeSelect';
 import * as OnboardingUpgrade from '../OnboardingUpgrade';
+import type { AvailablePlans } from './OnboardingContext';
 import {
     OnboardingContext,
     type OnboardingContextValue,

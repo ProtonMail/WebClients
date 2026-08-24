@@ -1,7 +1,8 @@
-import { getFileParts } from '@proton/pass/lib/file-attachments/helpers';
-import { ImportProvider } from '@proton/pass/lib/import/types';
-import type { ItemImportIntent } from '@proton/pass/types';
 import lastItem from '@proton/utils/lastItem';
+
+import type { ItemImportIntent } from '../../../types';
+import { getFileParts } from '../../file-attachments/helpers';
+import { ImportProvider } from '../types';
 
 export const attachFilesToItem = (item: ItemImportIntent, files: string[]) => ({ ...item, files });
 

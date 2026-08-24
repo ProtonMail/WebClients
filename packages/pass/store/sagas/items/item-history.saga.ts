@@ -1,13 +1,13 @@
 import { cancelled, put, select, takeLatest } from 'redux-saga/effects';
 
-import { parseItemRevision } from '@proton/pass/lib/items/item.parser';
-import { hasHadAttachments } from '@proton/pass/lib/items/item.predicates';
-import { getItemRevisions } from '@proton/pass/lib/items/item.requests';
-import { filesResolve, itemHistoryFailure, itemHistoryIntent, itemHistorySuccess } from '@proton/pass/store/actions';
-import { requestInvalidate } from '@proton/pass/store/request/actions';
-import { withRevalidate } from '@proton/pass/store/request/enhancers';
-import { selectItem } from '@proton/pass/store/selectors';
-import type { ItemRevision, ItemRevisionListResponse } from '@proton/pass/types';
+import { parseItemRevision } from '../../../lib/items/item.parser';
+import { hasHadAttachments } from '../../../lib/items/item.predicates';
+import { getItemRevisions } from '../../../lib/items/item.requests';
+import type { ItemRevision, ItemRevisionListResponse } from '../../../types';
+import { filesResolve, itemHistoryFailure, itemHistoryIntent, itemHistorySuccess } from '../../actions';
+import { requestInvalidate } from '../../request/actions';
+import { withRevalidate } from '../../request/enhancers';
+import { selectItem } from '../../selectors';
 
 function* loadHistoryWorker({ payload, meta: { request } }: ReturnType<typeof itemHistoryIntent>): Generator {
     const ctrl = new AbortController();

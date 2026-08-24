@@ -8,12 +8,13 @@ import { Button } from '@proton/atoms/Button/Button';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import { Field } from '@proton/pass/components/Form/Field/Field';
-import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
-import { TextField } from '@proton/pass/components/Form/Field/TextField';
-import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
-import { useRequest } from '@proton/pass/hooks/useRequest';
-import { redeemCoupon } from '@proton/pass/store/actions';
+
+import { useRequest } from '../../hooks/useRequest';
+import { redeemCoupon } from '../../store/actions';
+import { Field } from '../Form/Field/Field';
+import { FieldsetCluster } from '../Form/Field/Layout/FieldsetCluster';
+import { TextField } from '../Form/Field/TextField';
+import { PassModal } from '../Layout/Modal/PassModal';
 
 const FORM_ID = 'coupon-redeem';
 type Props = { onClose: () => void };

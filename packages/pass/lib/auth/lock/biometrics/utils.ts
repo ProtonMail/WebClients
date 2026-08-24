@@ -1,5 +1,5 @@
-import { BIOMETRICS_KEY } from '@proton/pass/constants';
-import type { AuthStore } from '@proton/pass/lib/auth/store';
+import { BIOMETRICS_KEY } from '../../../../constants';
+import type { AuthStore } from '../../store';
 
 export const BIOMETRICS_KEY_VERSION = 2;
 export const BIOMETRICS_KEY_VERSION_PREFIX = `BIOMETRICS::V${BIOMETRICS_KEY_VERSION}::`;

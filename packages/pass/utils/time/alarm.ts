@@ -1,4 +1,4 @@
-import type { Maybe, MaybePromise } from '@proton/pass/types/utils';
+import type { Maybe, MaybePromise } from '../../types/utils';
 
 /** Alarm creation is abstracted away behind a simple interface
  * allowing both extension alarms and standard timeouts to be

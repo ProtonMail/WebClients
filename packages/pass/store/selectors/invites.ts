@@ -1,13 +1,13 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import { isBusinessPlan } from '@proton/pass/lib/organization/helpers';
-import type { InviteState } from '@proton/pass/store/reducers';
-import { selectFeatureFlag, selectPassPlan } from '@proton/pass/store/selectors/user';
-import type { State } from '@proton/pass/store/types';
-import type { Invite, Maybe, MaybeNull } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
-import { first } from '@proton/pass/utils/array/first';
-import { sortOn } from '@proton/pass/utils/fp/sort';
+import { isBusinessPlan } from '../../lib/organization/helpers';
+import type { Invite, Maybe, MaybeNull } from '../../types';
+import { PassFeature } from '../../types/api/features';
+import { first } from '../../utils/array/first';
+import { sortOn } from '../../utils/fp/sort';
+import type { InviteState } from '../reducers';
+import type { State } from '../types';
+import { selectFeatureFlag, selectPassPlan } from './user';
 
 export const selectInvites = (state: State): InviteState => state.invites;
 

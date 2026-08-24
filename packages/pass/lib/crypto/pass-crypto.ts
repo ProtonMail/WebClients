@@ -1,16 +1,18 @@
 import { CryptoProxy } from '@protontech/crypto';
 import type { Store } from 'redux';
 
-import { FILE_PENDING_SHARE, FILE_PUBLIC_SHARE } from '@proton/pass/constants';
-import { getPublicKeysForEmail } from '@proton/pass/lib/auth/address';
-import { authStore } from '@proton/pass/lib/auth/store';
-import type { PassCoreProxy } from '@proton/pass/lib/core/core.types';
-import { encryptData } from '@proton/pass/lib/crypto/utils/crypto-helpers';
-import { serializeShareManagers } from '@proton/pass/lib/crypto/utils/seralize';
-import type { Group } from '@proton/pass/lib/groups/groups.types';
-import { getGroup } from '@proton/pass/store/actions/creators/groups';
-import { asyncRequestDispatcherFactory } from '@proton/pass/store/request/utils';
-import type { State } from '@proton/pass/store/types';
+import type { DecryptedAddressKey, OrganizationKey } from '@proton/shared/lib/interfaces';
+import {
+    getDecryptedAddressKeysHelper,
+    getDecryptedOrganizationKeyHelper,
+    getDecryptedUserKeysHelper,
+} from '@proton/shared/lib/keys';
+import { getDecryptedGroupAddressKey } from '@proton/shared/lib/keys/groupKeys';
+
+import { FILE_PENDING_SHARE, FILE_PUBLIC_SHARE } from '../../constants';
+import { getGroup } from '../../store/actions/creators/groups';
+import { asyncRequestDispatcherFactory } from '../../store/request/utils';
+import type { State } from '../../store/types';
 import type {
     FileIdentifier,
     MaybeNull,
@@ -22,23 +24,20 @@ import type {
     ShareKeyResponse,
     ShareManager,
     TypedOpenedShare,
-} from '@proton/pass/types';
-import { PassEncryptionTag, ShareType } from '@proton/pass/types';
-import { first } from '@proton/pass/utils/array/first';
-import { unwrap } from '@proton/pass/utils/fp/promises';
-import { logId, logger } from '@proton/pass/utils/logger';
-import { entriesMap } from '@proton/pass/utils/object/map';
-import type { DecryptedAddressKey, OrganizationKey } from '@proton/shared/lib/interfaces';
-import {
-    getDecryptedAddressKeysHelper,
-    getDecryptedOrganizationKeyHelper,
-    getDecryptedUserKeysHelper,
-} from '@proton/shared/lib/keys';
-import { getDecryptedGroupAddressKey } from '@proton/shared/lib/keys/groupKeys';
-
+} from '../../types';
+import { PassEncryptionTag, ShareType } from '../../types';
+import { first } from '../../utils/array/first';
+import { unwrap } from '../../utils/fp/promises';
+import { logId, logger } from '../../utils/logger';
+import { entriesMap } from '../../utils/object/map';
+import { getPublicKeysForEmail } from '../auth/address';
+import { authStore } from '../auth/store';
+import type { PassCoreProxy } from '../core/core.types';
+import type { Group } from '../groups/groups.types';
 import * as processes from './processes';
 import { createShareManager } from './share-manager';
 import { getSupportedAddresses } from './utils/addresses';
+import { encryptData } from './utils/crypto-helpers';
 import {
     PassCryptoError,
     PassCryptoFileError,
@@ -48,6 +47,7 @@ import {
     isPassCryptoError,
 } from './utils/errors';
 import { resolveItemKey } from './utils/helpers';
+import { serializeShareManagers } from './utils/seralize';
 
 function assertHydrated(ctx: PassCryptoManagerContext): asserts ctx is Required<PassCryptoManagerContext> {
     if (

@@ -1,13 +1,14 @@
 import { useEffect, useMemo, useState } from 'react';
 
 import type { FetchedBreaches } from '@proton/components/containers/credentialLeak/models';
-import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
-import { useRequest } from '@proton/pass/hooks/useRequest';
-import { type AddressBreachDTO, AddressType } from '@proton/pass/lib/monitor/types';
-import { getAliasBreach, getCustomBreach, getProtonBreach } from '@proton/pass/store/actions';
-import { selectItemsByUserIdentifier } from '@proton/pass/store/selectors';
-import type { LoginItem } from '@proton/pass/types';
-import { partition } from '@proton/pass/utils/array/partition';
+
+import { type AddressBreachDTO, AddressType } from '../../lib/monitor/types';
+import { getAliasBreach, getCustomBreach, getProtonBreach } from '../../store/actions';
+import { selectItemsByUserIdentifier } from '../../store/selectors';
+import type { LoginItem } from '../../types';
+import { partition } from '../../utils/array/partition';
+import { useMemoSelector } from '../useMemoSelector';
+import { useRequest } from '../useRequest';
 
 const getRequest = (dto: AddressBreachDTO) => {
     switch (dto.type) {

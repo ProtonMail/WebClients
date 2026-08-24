@@ -1,15 +1,14 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import { belongsToShares, isActiveMonitored, isExcluded } from '@proton/pass/lib/items/item.predicates';
-import { getItemKey, intoSelectedItem } from '@proton/pass/lib/items/item.utils';
-import { getDuplicatePasswords } from '@proton/pass/lib/monitor/monitor.utils';
-import type { MonitorDomain } from '@proton/pass/lib/monitor/types';
-import { AddressType } from '@proton/pass/lib/monitor/types';
-import type { State } from '@proton/pass/store/types';
-import type { Maybe, ShareId } from '@proton/pass/types';
-import { first } from '@proton/pass/utils/array/first';
-import { and } from '@proton/pass/utils/fp/predicates';
-
+import { belongsToShares, isActiveMonitored, isExcluded } from '../../lib/items/item.predicates';
+import { getItemKey, intoSelectedItem } from '../../lib/items/item.utils';
+import { getDuplicatePasswords } from '../../lib/monitor/monitor.utils';
+import type { MonitorDomain } from '../../lib/monitor/types';
+import { AddressType } from '../../lib/monitor/types';
+import type { Maybe, ShareId } from '../../types';
+import { first } from '../../utils/array/first';
+import { and } from '../../utils/fp/predicates';
+import type { State } from '../types';
 import { selectVisibleLoginItems } from './items';
 
 export const selectMonitorState = (state: State) => state.monitor;

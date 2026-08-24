@@ -1,9 +1,8 @@
-import { AddressType } from '@proton/pass/lib/monitor/types';
-import { uniqueId } from '@proton/pass/utils/string/unique-id';
-
+import { AddressType } from '../../lib/monitor/types';
+import { uniqueId } from '../../utils/string/unique-id';
 import { type MonitorTableRow, sortMonitorTableRows } from './useBreachesTable';
 
-jest.mock('@proton/pass/components/Monitor/MonitorProvider', () => ({}));
+jest.mock('../../components/Monitor/MonitorProvider', () => ({}));
 
 describe('useBreachTables', () => {
     describe('sortMonitorTableRows', () => {

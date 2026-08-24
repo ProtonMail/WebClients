@@ -1,10 +1,10 @@
 import { decryptData, encryptData, importKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import { utf8StringToUint8Array } from '@protontech/crypto/utils';
 
-import { pipe } from '@proton/pass/utils/fp/pipe';
 import * as browser from '@proton/shared/lib/helpers/browser';
 import { binaryStringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
+import { pipe } from '../../../utils/fp/pipe';
 import { PassCryptoError } from './errors';
 import {
     assertPRFCredential,

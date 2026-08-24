@@ -4,21 +4,21 @@ import { useSelector } from 'react-redux';
 import type { Store } from 'redux';
 import { c } from 'ttag';
 
-import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
-import { ReauthModal } from '@proton/pass/components/Lock/ReauthModal';
-import { type UseAsyncModalHandle, useAsyncModalHandles } from '@proton/pass/hooks/useAsyncModalHandles';
-import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
-import type { RequestForkOptions } from '@proton/pass/lib/auth/fork';
-import type { ReauthActionPayload } from '@proton/pass/lib/auth/reauth';
-import type { PasswordTypeSwitch } from '@proton/pass/lib/auth/utils';
-import { passwordTypeSwitch } from '@proton/pass/lib/auth/utils';
-import { selectHasTwoPasswordMode, selectIsSSO, selectPasswordTypeConfig } from '@proton/pass/store/selectors';
-import type { State } from '@proton/pass/store/types';
-import type { XorObfuscation } from '@proton/pass/utils/obfuscate/xor';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
+import { type UseAsyncModalHandle, useAsyncModalHandles } from '../../hooks/useAsyncModalHandles';
+import { useMemoSelector } from '../../hooks/useMemoSelector';
+import type { RequestForkOptions } from '../../lib/auth/fork';
+import type { ReauthActionPayload } from '../../lib/auth/reauth';
+import type { PasswordTypeSwitch } from '../../lib/auth/utils';
+import { passwordTypeSwitch } from '../../lib/auth/utils';
+import { selectHasTwoPasswordMode, selectIsSSO, selectPasswordTypeConfig } from '../../store/selectors';
+import type { State } from '../../store/types';
+import type { XorObfuscation } from '../../utils/obfuscate/xor';
+import { useAuthStore } from '../Core/AuthStoreProvider';
 import type { PasswordModalState } from './PasswordModal';
 import { PasswordModal, type PasswordModalProps } from './PasswordModal';
+import { ReauthModal } from './ReauthModal';
 
 type PasswordUnlockContextValue = UseAsyncModalHandle<XorObfuscation, PasswordModalProps>;
 const PasswordUnlockContext = createContext<PasswordUnlockContextValue>(async () => {});

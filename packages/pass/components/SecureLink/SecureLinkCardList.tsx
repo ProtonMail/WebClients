@@ -1,13 +1,12 @@
 import { type FC, useMemo, useState } from 'react';
 
-import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
-import { SecureLinkModal } from '@proton/pass/components/SecureLink/SecureLinkModal';
-import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
-import { selectItemSecureLinks } from '@proton/pass/store/selectors';
-import type { MaybeNull, SelectedItem } from '@proton/pass/types';
-import { prop } from '@proton/pass/utils/fp/lens';
-
+import { useMemoSelector } from '../../hooks/useMemoSelector';
+import { selectItemSecureLinks } from '../../store/selectors';
+import type { MaybeNull, SelectedItem } from '../../types';
+import { prop } from '../../utils/fp/lens';
+import { useItemScope } from '../Navigation/NavigationMatches';
 import { SecureLinkCard } from './SecureLinkCard';
+import { SecureLinkModal } from './SecureLinkModal';
 
 export const SecureLinkCardList: FC<SelectedItem> = ({ shareId, itemId }) => {
     const scope = useItemScope();

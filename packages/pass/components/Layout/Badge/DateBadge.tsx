@@ -2,7 +2,7 @@ import { type FC, useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { epochToDateTime } from '@proton/pass/utils/time/format';
+import { epochToDateTime } from '../../../utils/time/format';
 
 type Props = { expirationTime: number };
 

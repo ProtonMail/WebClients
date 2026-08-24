@@ -1,5 +1,6 @@
 import { put, select, take, takeEvery } from 'redux-saga/effects';
 
+import type { ItemRevision } from '../../../types';
 import {
     lockShare,
     unlockShare,
@@ -7,10 +8,9 @@ import {
     vaultMoveAllItemsIntent,
     vaultMoveAllItemsProgress,
     vaultMoveAllItemsSuccess,
-} from '@proton/pass/store/actions';
-import { type BulkMoveItemsChannel, bulkMoveChannel } from '@proton/pass/store/sagas/items/item-bulk-move.saga';
-import { isShareLocked, selectItemsByShareId } from '@proton/pass/store/selectors';
-import type { ItemRevision } from '@proton/pass/types';
+} from '../../actions';
+import { isShareLocked, selectItemsByShareId } from '../../selectors';
+import { type BulkMoveItemsChannel, bulkMoveChannel } from '../items/item-bulk-move.saga';
 
 function* moveAllItemsWorker({ payload, meta }: ReturnType<typeof vaultMoveAllItemsIntent>) {
     const { shareId, content, targetShareId } = payload;

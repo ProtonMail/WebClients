@@ -1,6 +1,6 @@
-import { deleteCustomEmail } from '@proton/pass/lib/monitor/monitor.request';
-import { deleteCustomAddress } from '@proton/pass/store/actions';
-import { createRequestSaga } from '@proton/pass/store/request/sagas';
+import { deleteCustomEmail } from '../../../lib/monitor/monitor.request';
+import { deleteCustomAddress } from '../../actions';
+import { createRequestSaga } from '../../request/sagas';
 
 export default createRequestSaga({
     actions: deleteCustomAddress,

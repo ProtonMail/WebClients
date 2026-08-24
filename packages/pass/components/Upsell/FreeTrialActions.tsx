@@ -4,9 +4,10 @@ import { useSelector } from 'react-redux';
 import { c, msgid } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { PASS_BLOG_TRIAL_URL } from '@proton/pass/constants';
-import { selectTrialDaysRemaining } from '@proton/pass/store/selectors';
+
+import { PASS_BLOG_TRIAL_URL } from '../../constants';
+import { selectTrialDaysRemaining } from '../../store/selectors';
+import { usePassCore } from '../Core/PassCoreProvider';
 
 export const FreeTrialActions: FC = () => {
     const daysRemaining = useSelector(selectTrialDaysRemaining);

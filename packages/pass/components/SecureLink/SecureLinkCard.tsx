@@ -5,18 +5,19 @@ import { c } from 'ttag';
 import Alert from '@proton/components/components/alert/Alert';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import { IcLink } from '@proton/icons/icons/IcLink';
-import { ConfirmationModal } from '@proton/pass/components/Confirmation/ConfirmationModal';
-import { Copy } from '@proton/pass/components/Copy/Copy';
-import { Card } from '@proton/pass/components/Layout/Card/Card';
-import { DropdownMenuButtonLabel } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
-import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
-import { IconBox } from '@proton/pass/components/Layout/Icon/IconBox';
-import { useRequest } from '@proton/pass/hooks/useRequest';
-import { getViewCountString } from '@proton/pass/lib/i18n/helpers';
-import { secureLinkRemove } from '@proton/pass/store/actions';
-import type { SecureLink } from '@proton/pass/types';
-import { epochToRemainingDuration } from '@proton/pass/utils/time/format';
 import clsx from '@proton/utils/clsx';
+
+import { useRequest } from '../../hooks/useRequest';
+import { getViewCountString } from '../../lib/i18n/helpers';
+import { secureLinkRemove } from '../../store/actions';
+import type { SecureLink } from '../../types';
+import { epochToRemainingDuration } from '../../utils/time/format';
+import { ConfirmationModal } from '../Confirmation/ConfirmationModal';
+import { Copy } from '../Copy/Copy';
+import { Card } from '../Layout/Card/Card';
+import { DropdownMenuButtonLabel } from '../Layout/Dropdown/DropdownMenuButton';
+import { QuickActionsDropdown } from '../Layout/Dropdown/QuickActionsDropdown';
+import { IconBox } from '../Layout/Icon/IconBox';
 
 type Props = SecureLink & { onClick: () => void };
 

@@ -4,14 +4,15 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { IcSquares } from '@proton/icons/icons/IcSquares';
-import { FileAttachmentsContentView } from '@proton/pass/components/FileAttachments/FileAttachmentsView';
-import { ItemHistoryStats } from '@proton/pass/components/Item/History/ItemHistoryStats';
-import { NoteContent } from '@proton/pass/components/Item/Note/Note.content';
-import { ItemViewPanel } from '@proton/pass/components/Layout/Panel/ItemViewPanel';
-import { SecureLinkCardList } from '@proton/pass/components/SecureLink/SecureLinkCardList';
-import { useCopyToClipboard } from '@proton/pass/components/Settings/Clipboard/ClipboardProvider';
-import type { ItemViewProps } from '@proton/pass/components/Views/types';
-import { useDeobfuscatedValue } from '@proton/pass/hooks/useDeobfuscatedValue';
+
+import { useDeobfuscatedValue } from '../../../hooks/useDeobfuscatedValue';
+import { FileAttachmentsContentView } from '../../FileAttachments/FileAttachmentsView';
+import { ItemViewPanel } from '../../Layout/Panel/ItemViewPanel';
+import { SecureLinkCardList } from '../../SecureLink/SecureLinkCardList';
+import { useCopyToClipboard } from '../../Settings/Clipboard/ClipboardProvider';
+import type { ItemViewProps } from '../../Views/types';
+import { ItemHistoryStats } from '../History/ItemHistoryStats';
+import { NoteContent } from './Note.content';
 
 export const NoteView: FC<ItemViewProps<'note'>> = (itemViewProps) => {
     const { revision } = itemViewProps;

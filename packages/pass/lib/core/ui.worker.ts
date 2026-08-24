@@ -1,8 +1,8 @@
 import * as PassUIRustWorker from '@protontech/pass-rust-core/ui';
 
-import { WASM_WORKER_READY_EVENT } from '@proton/pass/lib/core/constants';
-import type { PassUIMessageEvent, PassUIMethod, PassUIRPC, PassUIResult } from '@proton/pass/lib/core/ui.types';
-import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
+import { getErrorMessage } from '../../utils/errors/get-error-message';
+import { WASM_WORKER_READY_EVENT } from './constants';
+import type { PassUIMessageEvent, PassUIMethod, PassUIRPC, PassUIResult } from './ui.types';
 
 self.postMessage({ type: WASM_WORKER_READY_EVENT });
 

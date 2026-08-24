@@ -7,12 +7,12 @@ import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import { IcArrowDownToSquare } from '@proton/icons/icons/IcArrowDownToSquare';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { IcWindowTerminal } from '@proton/icons/icons/IcWindowTerminal';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { mimetypeForDownload } from '@proton/pass/lib/file-attachments/helpers';
-import type { Maybe } from '@proton/pass/types';
-import { download } from '@proton/pass/utils/dom/download';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
+import { mimetypeForDownload } from '../../lib/file-attachments/helpers';
+import type { Maybe } from '../../types';
+import { download } from '../../utils/dom/download';
+import { usePassCore } from '../Core/PassCoreProvider';
 import { SettingsPanel } from './SettingsPanel';
 
 type Props = { opened?: true; style?: CSSProperties };

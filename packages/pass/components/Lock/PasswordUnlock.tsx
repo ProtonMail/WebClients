@@ -3,17 +3,17 @@ import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
-import { useOffline } from '@proton/pass/components/Core/ConnectivityProvider';
-import { useUnlockGuard } from '@proton/pass/hooks/auth/useUnlockGuard';
-import { useRequest } from '@proton/pass/hooks/useRequest';
-import { useRerender } from '@proton/pass/hooks/useRerender';
-import { LockMode } from '@proton/pass/lib/auth/lock/types';
-import { validateCurrentPassword, validateExtraPassword } from '@proton/pass/lib/validation/auth';
-import { unlock } from '@proton/pass/store/actions';
-import type { XorObfuscation } from '@proton/pass/utils/obfuscate/xor';
 import { getBasename } from '@proton/shared/lib/authentication/pathnameHelper';
 
+import { useUnlockGuard } from '../../hooks/auth/useUnlockGuard';
+import { useRequest } from '../../hooks/useRequest';
+import { useRerender } from '../../hooks/useRerender';
+import { LockMode } from '../../lib/auth/lock/types';
+import { validateCurrentPassword, validateExtraPassword } from '../../lib/validation/auth';
+import { unlock } from '../../store/actions';
+import type { XorObfuscation } from '../../utils/obfuscate/xor';
+import { useAuthStore } from '../Core/AuthStoreProvider';
+import { useOffline } from '../Core/ConnectivityProvider';
 import { PasswordForm } from './PasswordForm';
 
 type Props = { extraPassword: boolean; offlineEnabled?: boolean };

@@ -1,8 +1,9 @@
-import type { FileBuffer, FileStorage } from '@proton/pass/lib/file-storage/types';
-import type { AnyStorage, Maybe, StorageData } from '@proton/pass/types';
-import { safeCall } from '@proton/pass/utils/fp/safe-call';
-import { logId, logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
+
+import type { AnyStorage, Maybe, StorageData } from '../../types';
+import { safeCall } from '../../utils/fp/safe-call';
+import { logId, logger } from '../../utils/logger';
+import type { FileBuffer, FileStorage } from './types';
 
 export class FileStorageGarbageCollector {
     static STORAGE_KEY = 'fs::gc';

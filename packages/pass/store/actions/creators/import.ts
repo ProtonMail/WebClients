@@ -1,14 +1,14 @@
 import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import type { ImportReport } from '@proton/pass/lib/import/helpers/report';
-import type { ImportPayload, ImportProvider } from '@proton/pass/lib/import/types';
-import { withCache } from '@proton/pass/store/actions/enhancers/cache';
-import { withItems } from '@proton/pass/store/actions/enhancers/items';
-import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
-import { withRequestProgress } from '@proton/pass/store/request/enhancers';
-import { requestActionsFactory } from '@proton/pass/store/request/flow';
-import type { ClientEndpoint, IndexedByShareIdAndItemId, ItemRevision, UniqueItem, WithTabId } from '@proton/pass/types';
+import type { ImportReport } from '../../../lib/import/helpers/report';
+import type { ImportPayload, ImportProvider } from '../../../lib/import/types';
+import type { ClientEndpoint, IndexedByShareIdAndItemId, ItemRevision, UniqueItem, WithTabId } from '../../../types';
+import { withRequestProgress } from '../../request/enhancers';
+import { requestActionsFactory } from '../../request/flow';
+import { withCache } from '../enhancers/cache';
+import { withItems } from '../enhancers/items';
+import { withNotification } from '../enhancers/notification';
 
 export type ImportFile = UniqueItem & { filename: string };
 export type ImportFilesReport = { totalFiles: number; ignoredFiles: string[] };

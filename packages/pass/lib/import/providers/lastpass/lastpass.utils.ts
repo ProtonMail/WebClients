@@ -1,9 +1,8 @@
 import { c } from 'ttag';
 
-import { itemBuilder } from '@proton/pass/lib/items/item.builder';
-import type { DeobfuscatedItemExtraField, IdentityFieldName, ItemContent, Maybe } from '@proton/pass/types';
-import { truthy } from '@proton/pass/utils/fp/predicates';
-
+import type { DeobfuscatedItemExtraField, IdentityFieldName, ItemContent, Maybe } from '../../../../types';
+import { truthy } from '../../../../utils/fp/predicates';
+import { itemBuilder } from '../../../items/item.builder';
 import type { LastPassItem } from './lastpass.types';
 
 const KEY_SEPARATOR = ':';

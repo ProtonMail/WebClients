@@ -1,6 +1,5 @@
-import type { ItemRevision, LoginItem } from '@proton/pass/types';
-import { AutofillMode } from '@proton/pass/types/protobuf';
-
+import type { ItemRevision, LoginItem } from '../../types';
+import { AutofillMode } from '../../types/protobuf';
 import { hasDomain, isBreached, isDisabledAlias, isHealthCheckSkipped, isMonitored } from './item.predicates';
 
 describe('item predicates', () => {

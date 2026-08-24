@@ -1,10 +1,11 @@
 import { put } from 'redux-saga/effects';
 
-import { LockMode } from '@proton/pass/lib/auth/lock/types';
-import { lockSync } from '@proton/pass/store/actions';
-import type { RootSagaOptions } from '@proton/pass/store/types';
-import type { OrganizationGetResponse } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
+
+import { lockSync } from '../../../store/actions';
+import type { RootSagaOptions } from '../../../store/types';
+import type { OrganizationGetResponse } from '../../../types';
+import { LockMode } from '../../auth/lock/types';
 
 /** Applies org-level lock policy from `ForceLockSeconds`. When the org
  * enforces a lock TTL that differs from the user's current value, updates

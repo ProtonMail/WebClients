@@ -6,7 +6,7 @@
  * provided APIs, and not directly through the devtools console or other means */
 import browser, { type Browser } from 'webextension-polyfill';
 
-import { logger } from '@proton/pass/utils/logger';
+import { logger } from '../../utils/logger';
 
 const self = globalThis as any;
 const context = {

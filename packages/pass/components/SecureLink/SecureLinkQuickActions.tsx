@@ -3,11 +3,11 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
-import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
-import { useRequest } from '@proton/pass/hooks/useRequest';
-import { secureLinksRemoveInactive } from '@proton/pass/store/actions';
-import { selectInactiveSecureLinksCount } from '@proton/pass/store/selectors';
+import { useRequest } from '../../hooks/useRequest';
+import { secureLinksRemoveInactive } from '../../store/actions';
+import { selectInactiveSecureLinksCount } from '../../store/selectors';
+import { DropdownMenuButton } from '../Layout/Dropdown/DropdownMenuButton';
+import { QuickActionsDropdown } from '../Layout/Dropdown/QuickActionsDropdown';
 
 export const SecureLinkQuickActions: FC = () => {
     const inactiveLinkCount = useSelector(selectInactiveSecureLinksCount);

@@ -1,16 +1,16 @@
 import { CCFieldType } from '@protontech/autofill/types';
 
-import { MAX_ITEM_NAME_LENGTH } from '@proton/pass/constants';
-import { itemBuilder } from '@proton/pass/lib/items/item.builder';
-import { createTestItem } from '@proton/pass/lib/items/item.test.utils';
-import { parseUrl } from '@proton/pass/lib/urls/utils/parser';
-import type { Draft } from '@proton/pass/store/reducers/drafts';
-import type { CCItemData, IndexedByShareIdAndItemId, ItemRevision, LoginItem, SelectedItem } from '@proton/pass/types';
-import { AutofillMode, CardType } from '@proton/pass/types/protobuf';
-import { UNIX_DAY, UNIX_MONTH, UNIX_WEEK } from '@proton/pass/utils/time/constants';
-import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { omit } from '@proton/shared/lib/helpers/object';
 
+import { MAX_ITEM_NAME_LENGTH } from '../../constants';
+import type { Draft } from '../../store/reducers/drafts';
+import type { CCItemData, IndexedByShareIdAndItemId, ItemRevision, LoginItem, SelectedItem } from '../../types';
+import { AutofillMode, CardType } from '../../types/protobuf';
+import { UNIX_DAY, UNIX_MONTH, UNIX_WEEK } from '../../utils/time/constants';
+import { getEpoch } from '../../utils/time/epoch';
+import { parseUrl } from '../urls/utils/parser';
+import { itemBuilder } from './item.builder';
+import { createTestItem } from './item.test.utils';
 import {
     cloneItemName,
     filterItemsByShareId,
@@ -34,8 +34,8 @@ import {
     sortItems,
 } from './item.utils';
 
-jest.mock('@proton/pass/utils/time/epoch', () => ({
-    ...jest.requireActual('@proton/pass/utils/time/epoch'),
+jest.mock('../../utils/time/epoch', () => ({
+    ...jest.requireActual('../../utils/time/epoch'),
     getEpoch: jest.fn(),
 }));
 

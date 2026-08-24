@@ -1,11 +1,12 @@
-import type { AnyStorage, MaybeNull } from '@proton/pass/types';
-import { asyncLock, asyncQueue } from '@proton/pass/utils/fp/promises';
-import { logger } from '@proton/pass/utils/logger';
-import type { AbstractAlarm } from '@proton/pass/utils/time/alarm';
-import { UNIX_MINUTE } from '@proton/pass/utils/time/constants';
-import { getEpoch } from '@proton/pass/utils/time/epoch';
 import identity from '@proton/utils/identity';
 import noop from '@proton/utils/noop';
+
+import type { AnyStorage, MaybeNull } from '../../types';
+import { asyncLock, asyncQueue } from '../fp/promises';
+import { logger } from '../logger';
+import type { AbstractAlarm } from '../time/alarm';
+import { UNIX_MINUTE } from '../time/constants';
+import { getEpoch } from '../time/epoch';
 
 export type EventBundle<Event> = { sendTime: number; events: Event[]; retryCount: number };
 export type EventDispatcherState<Event> = { buffer: Event[]; job: MaybeNull<Promise<void>> };

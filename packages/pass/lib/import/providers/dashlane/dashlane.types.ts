@@ -1,4 +1,4 @@
-import type { ItemImportIntent, Maybe } from '@proton/pass/types';
+import type { ItemImportIntent, Maybe } from '../../../../types';
 
 export enum DashlaneFileKey {
     Login = 'Login',
@@ -82,11 +82,7 @@ export type DashlanePersonalInfoItem = {
 };
 
 export type DashlaneItem =
-    | DashlaneLoginItem
-    | DashlaneNoteItem
-    | DashlaneIdItem
-    | DashlanePaymentItem
-    | DashlanePersonalInfoItem;
+    DashlaneLoginItem | DashlaneNoteItem | DashlaneIdItem | DashlanePaymentItem | DashlanePersonalInfoItem;
 
 export type ValidDashlaneItemKeys =
     | keyof DashlaneLoginItem

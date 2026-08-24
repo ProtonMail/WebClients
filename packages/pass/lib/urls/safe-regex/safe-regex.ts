@@ -1,9 +1,8 @@
 import safeRegexLib from 'safe-regex2';
 import { c } from 'ttag';
 
-import { EVASIONS, LOCATION_HREFS } from '@proton/pass/lib/urls/safe-regex/safe-regex.redos';
-import { RegexURL } from '@proton/pass/lib/urls/utils/utils';
-
+import { RegexURL } from '../utils/utils';
+import { EVASIONS, LOCATION_HREFS } from './safe-regex.redos';
 import type { WorkerResponse } from './safe-regex.worker';
 
 export enum RegexSafety {

@@ -1,20 +1,11 @@
 import { c } from 'ttag';
 
-import { MIN_MAX_BATCH_PER_REQUEST } from '@proton/pass/constants';
-import { api } from '@proton/pass/lib/api/api';
-import { PassErrorCode } from '@proton/pass/lib/api/errors';
-import { getPublicKeysForEmail } from '@proton/pass/lib/auth/address';
-import { PassCrypto } from '@proton/pass/lib/crypto';
-import { getItemKeys } from '@proton/pass/lib/items/item.requests';
-import { getOrganizationKey } from '@proton/pass/lib/organization/organization.requests';
-import { type InviteTargetKey, type KeyRotationKeyPair, ShareType } from '@proton/pass/types';
-import type {
-    GroupInvite,
-    Invite,
-    NewUserPendingInvite,
-    PendingInvite,
-    UserInvite,
-} from '@proton/pass/types/data/invites';
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import chunk from '@proton/utils/chunk';
+
+import { MIN_MAX_BATCH_PER_REQUEST } from '../../constants';
+import { type InviteTargetKey, type KeyRotationKeyPair, ShareType } from '../../types';
+import type { GroupInvite, Invite, NewUserPendingInvite, PendingInvite, UserInvite } from '../../types/data/invites';
 import type {
     GroupInviteAcceptIntent,
     InviteAcceptIntent,
@@ -28,14 +19,17 @@ import type {
     InviteUserDTO,
     NewUserInvitePromoteIntent,
     NewUserInviteRemoveIntent,
-} from '@proton/pass/types/data/invites.dto';
-import type { Maybe } from '@proton/pass/types/utils';
-import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
-import { prop } from '@proton/pass/utils/fp/lens';
-import { truthy } from '@proton/pass/utils/fp/predicates';
-import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import chunk from '@proton/utils/chunk';
-
+} from '../../types/data/invites.dto';
+import type { Maybe } from '../../types/utils';
+import { getErrorMessage } from '../../utils/errors/get-error-message';
+import { prop } from '../../utils/fp/lens';
+import { truthy } from '../../utils/fp/predicates';
+import { api } from '../api/api';
+import { PassErrorCode } from '../api/errors';
+import { getPublicKeysForEmail } from '../auth/address';
+import { PassCrypto } from '../crypto';
+import { getItemKeys } from '../items/item.requests';
+import { getOrganizationKey } from '../organization/organization.requests';
 import { parseGroupInvite, parseUserInvite } from './invite.parser';
 import type { InviteBatchResult } from './invite.utils';
 
@@ -74,32 +68,28 @@ export const loadInvites = async (shareId: string): Promise<InviteData> => {
     });
 
     return {
-        invites: Invites.map(
-            (invite): PendingInvite => ({
-                inviteId: invite.InviteID,
-                targetId: invite.TargetID,
-                targetType: invite.TargetType,
-                invitedEmail: invite.InvitedEmail,
-                invitedGroupId: null,
-                inviterEmail: invite.InviterEmail,
-                remindersSent: invite.RemindersSent,
-                createTime: invite.CreateTime,
-                modifyTime: invite.ModifyTime,
-            })
-        ),
-        newUserInvites: NewUserInvites.map(
-            (invite): NewUserPendingInvite => ({
-                newUserInviteId: invite.NewUserInviteID!,
-                targetId: invite.TargetID!,
-                targetType: invite.TargetType!,
-                invitedEmail: invite.InvitedEmail!,
-                invitedGroupId: null,
-                inviterEmail: invite.InviterEmail!,
-                createTime: invite.CreateTime!,
-                signature: invite.Signature!,
-                state: invite.State!,
-            })
-        ),
+        invites: Invites.map((invite): PendingInvite => ({
+            inviteId: invite.InviteID,
+            targetId: invite.TargetID,
+            targetType: invite.TargetType,
+            invitedEmail: invite.InvitedEmail,
+            invitedGroupId: null,
+            inviterEmail: invite.InviterEmail,
+            remindersSent: invite.RemindersSent,
+            createTime: invite.CreateTime,
+            modifyTime: invite.ModifyTime,
+        })),
+        newUserInvites: NewUserInvites.map((invite): NewUserPendingInvite => ({
+            newUserInviteId: invite.NewUserInviteID!,
+            targetId: invite.TargetID!,
+            targetType: invite.TargetType!,
+            invitedEmail: invite.InvitedEmail!,
+            invitedGroupId: null,
+            inviterEmail: invite.InviterEmail!,
+            createTime: invite.CreateTime!,
+            signature: invite.Signature!,
+            state: invite.State!,
+        })),
     };
 };
 
@@ -143,34 +133,31 @@ export const createUserInvites = async (
     })();
 
     return Promise.all(
-        chunk(users, MIN_MAX_BATCH_PER_REQUEST).map(
-            async (batch): Promise<InviteBatchResult> =>
-                api({
-                    url: `pass/v1/share/${shareId}/invite/batch`,
-                    method: 'post',
-                    data: {
-                        Invites: await Promise.all(
-                            batch.map(({ email, role, publicKey }) =>
-                                PassCrypto.createInvite({
-                                    shareId,
-                                    email,
-                                    role,
-                                    invitedPublicKey: publicKey,
-                                    itemId,
-                                    targetKeys,
-                                })
-                            )
-                        ),
-                    },
-                })
-                    .then<InviteBatchResult>(() => ({ ok: true }))
-                    .catch(
-                        (err): InviteBatchResult => ({
-                            ok: false,
-                            failed: batch.map(prop('email')),
-                            error: getInviteErrorMessage(err, b2b),
-                        })
-                    )
+        chunk(users, MIN_MAX_BATCH_PER_REQUEST).map(async (batch): Promise<InviteBatchResult> =>
+            api({
+                url: `pass/v1/share/${shareId}/invite/batch`,
+                method: 'post',
+                data: {
+                    Invites: await Promise.all(
+                        batch.map(({ email, role, publicKey }) =>
+                            PassCrypto.createInvite({
+                                shareId,
+                                email,
+                                role,
+                                invitedPublicKey: publicKey,
+                                itemId,
+                                targetKeys,
+                            })
+                        )
+                    ),
+                },
+            })
+                .then<InviteBatchResult>(() => ({ ok: true }))
+                .catch((err): InviteBatchResult => ({
+                    ok: false,
+                    failed: batch.map(prop('email')),
+                    error: getInviteErrorMessage(err, b2b),
+                }))
         )
     );
 };
@@ -182,32 +169,29 @@ export const createNewUserInvites = async (
     b2b: boolean
 ): Promise<InviteBatchResult[]> =>
     Promise.all(
-        chunk(newUsers, MIN_MAX_BATCH_PER_REQUEST).map(
-            async (batch): Promise<InviteBatchResult> =>
-                api({
-                    url: `pass/v1/share/${shareId}/invite/new_user/batch`,
-                    method: 'post',
-                    data: {
-                        NewUserInvites: await Promise.all(
-                            batch.map(({ email, role }) =>
-                                PassCrypto.createNewUserInvite({
-                                    email,
-                                    role,
-                                    shareId,
-                                    itemId,
-                                })
-                            )
-                        ),
-                    },
-                })
-                    .then<InviteBatchResult>(() => ({ ok: true }))
-                    .catch(
-                        (err): InviteBatchResult => ({
-                            ok: false,
-                            failed: batch.map(prop('email')),
-                            error: getInviteErrorMessage(err, b2b),
-                        })
-                    )
+        chunk(newUsers, MIN_MAX_BATCH_PER_REQUEST).map(async (batch): Promise<InviteBatchResult> =>
+            api({
+                url: `pass/v1/share/${shareId}/invite/new_user/batch`,
+                method: 'post',
+                data: {
+                    NewUserInvites: await Promise.all(
+                        batch.map(({ email, role }) =>
+                            PassCrypto.createNewUserInvite({
+                                email,
+                                role,
+                                shareId,
+                                itemId,
+                            })
+                        )
+                    ),
+                },
+            })
+                .then<InviteBatchResult>(() => ({ ok: true }))
+                .catch((err): InviteBatchResult => ({
+                    ok: false,
+                    failed: batch.map(prop('email')),
+                    error: getInviteErrorMessage(err, b2b),
+                }))
         )
     );
 

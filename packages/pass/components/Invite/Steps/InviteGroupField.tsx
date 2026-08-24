@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 
-import { useMaybeGroup } from '@proton/pass/components/Groups/GroupsProvider';
-import { MaybeGroupName } from '@proton/pass/components/Groups/MaybeGroupName';
+import { useMaybeGroup } from '../../Groups/GroupsProvider';
+import { MaybeGroupName } from '../../Groups/MaybeGroupName';
 
 type Props = {
     email: string;

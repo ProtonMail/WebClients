@@ -1,8 +1,7 @@
-import { createTestItem } from '@proton/pass/lib/items/item.test.utils';
-import { AutofillMode } from '@proton/pass/types/protobuf';
-import type { EncryptedPassCache } from '@proton/pass/types/worker/cache';
-import { uniqueId } from '@proton/pass/utils/string/unique-id';
-
+import { createTestItem } from '../lib/items/item.test.utils';
+import { AutofillMode } from '../types/protobuf';
+import type { EncryptedPassCache } from '../types/worker/cache';
+import { uniqueId } from '../utils/string/unique-id';
 import { cacheGuard, migrate } from './migrate';
 import { INITIAL_HIGHSECURITY_SETTINGS, rootReducer } from './reducers';
 import { INITIAL_ORGANIZATION_SETTINGS } from './reducers/organization';

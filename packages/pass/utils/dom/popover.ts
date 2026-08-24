@@ -1,10 +1,11 @@
-import type { MaybeNull } from '@proton/pass/types';
-import { findAssignedSlot } from '@proton/pass/utils/dom/custom-elements';
-import { isHTMLElement } from '@proton/pass/utils/dom/predicates';
-import { eq } from '@proton/pass/utils/fp/predicates';
-import { safeCall } from '@proton/pass/utils/fp/safe-call';
-import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import lastItem from '@proton/utils/lastItem';
+
+import type { MaybeNull } from '../../types';
+import { eq } from '../fp/predicates';
+import { safeCall } from '../fp/safe-call';
+import { createListenerStore } from '../listener/factory';
+import { findAssignedSlot } from './custom-elements';
+import { isHTMLElement } from './predicates';
 
 export const POPOVER_SUPPORTED = 'popover' in HTMLElement.prototype || process.env.NODE_ENV === 'test';
 

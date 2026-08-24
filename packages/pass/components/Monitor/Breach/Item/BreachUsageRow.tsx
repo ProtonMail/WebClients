@@ -4,11 +4,12 @@ import { Button } from '@proton/atoms/Button/Button';
 import TableCell from '@proton/components/components/table/TableCell';
 import TableRow from '@proton/components/components/table/TableRow';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
-import { SafeItemIcon } from '@proton/pass/components/Layout/Icon/ItemIcon';
-import { useSelectItem } from '@proton/pass/components/Navigation/NavigationActions';
-import { isTrashed } from '@proton/pass/lib/items/item.predicates';
-import type { LoginItem } from '@proton/pass/types';
-import { epochToDate } from '@proton/pass/utils/time/format';
+
+import { isTrashed } from '../../../../lib/items/item.predicates';
+import type { LoginItem } from '../../../../types';
+import { epochToDate } from '../../../../utils/time/format';
+import { SafeItemIcon } from '../../../Layout/Icon/ItemIcon';
+import { useSelectItem } from '../../../Navigation/NavigationActions';
 
 type Props = { item: LoginItem };
 

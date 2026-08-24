@@ -2,10 +2,9 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import { ConfirmationPrompt } from '@proton/pass/components/Confirmation/ConfirmationPrompt';
-import { useRequest } from '@proton/pass/hooks/useRequest';
-import { cancelMailboxEdit } from '@proton/pass/store/actions';
-
+import { useRequest } from '../../../../hooks/useRequest';
+import { cancelMailboxEdit } from '../../../../store/actions';
+import { ConfirmationPrompt } from '../../../Confirmation/ConfirmationPrompt';
 import { useAliasMailboxes } from './AliasMailboxesContext';
 
 type Props = { mailboxID: number };

@@ -1,12 +1,12 @@
-import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
-import { readProtonPassJSON } from '@proton/pass/lib/import/providers/protonpass/protonpass.json.reader';
-import { itemBuilder } from '@proton/pass/lib/items/item.builder';
-import { selectExportData } from '@proton/pass/store/selectors/export';
-import type { State } from '@proton/pass/store/types';
-import { ContentFormatVersion, ItemState } from '@proton/pass/types';
-import type { ItemImportIntent } from '@proton/pass/types';
-import { ShareType } from '@proton/pass/types/data/shares';
-import { AutofillMode } from '@proton/pass/types/protobuf';
+import type { PassConfig } from '../../hooks/usePassConfig';
+import { readProtonPassJSON } from '../../lib/import/providers/protonpass/protonpass.json.reader';
+import { itemBuilder } from '../../lib/items/item.builder';
+import { ContentFormatVersion, ItemState } from '../../types';
+import type { ItemImportIntent } from '../../types';
+import { ShareType } from '../../types/data/shares';
+import { AutofillMode } from '../../types/protobuf';
+import type { State } from '../types';
+import { selectExportData } from './export';
 
 const SHARE_ID = 'testShare';
 

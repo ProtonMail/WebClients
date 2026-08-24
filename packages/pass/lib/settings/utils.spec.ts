@@ -1,9 +1,9 @@
-import { sanitizeSettings } from '@proton/pass/lib/settings/utils';
-import { getInitialSettings } from '@proton/pass/store/reducers/settings';
-import { selectCanCreateItems } from '@proton/pass/store/selectors/shares';
-import type { State } from '@proton/pass/store/types';
+import { getInitialSettings } from '../../store/reducers/settings';
+import { selectCanCreateItems } from '../../store/selectors/shares';
+import type { State } from '../../store/types';
+import { sanitizeSettings } from './utils';
 
-jest.mock('@proton/pass/store/selectors/shares', () => ({
+jest.mock('../../store/selectors/shares', () => ({
     selectCanCreateItems: jest.fn(),
 }));
 

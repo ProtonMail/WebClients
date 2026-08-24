@@ -1,5 +1,4 @@
-import type { StorageData, StorageInterface } from '@proton/pass/types';
-
+import type { StorageData, StorageInterface } from '../../../types';
 import { default as localStorage } from './local';
 import { default as sessionStorage } from './session';
 

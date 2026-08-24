@@ -4,13 +4,14 @@ import { useSelector } from 'react-redux';
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
-import { Field } from '@proton/pass/components/Form/Field/Field';
-import { VaultPickerField } from '@proton/pass/components/Form/Field/VaultPickerField';
-import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
-import { useRequest } from '@proton/pass/hooks/useRequest';
-import { aliasSyncEnable } from '@proton/pass/store/actions';
-import { selectUserDefaultShareID } from '@proton/pass/store/selectors';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+
+import { useRequest } from '../../../../hooks/useRequest';
+import { aliasSyncEnable } from '../../../../store/actions';
+import { selectUserDefaultShareID } from '../../../../store/selectors';
+import { Field } from '../../../Form/Field/Field';
+import { VaultPickerField } from '../../../Form/Field/VaultPickerField';
+import { SettingsPanel } from '../../SettingsPanel';
 
 type FormValues = { shareId: string };
 

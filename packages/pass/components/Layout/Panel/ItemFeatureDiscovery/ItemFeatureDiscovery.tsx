@@ -1,7 +1,7 @@
 import { type ComponentType, memo } from 'react';
 
-import { FileAttachmentsDiscovery } from '@proton/pass/components/Layout/Panel/ItemFeatureDiscovery/FileAttachmentsDiscovery';
-import type { ItemType } from '@proton/pass/types';
+import type { ItemType } from '../../../../types';
+import { FileAttachmentsDiscovery } from './FileAttachmentsDiscovery';
 
 type FeatureDiscovery = { component: ComponentType; types: ItemType[] };
 type Props = { type: ItemType };

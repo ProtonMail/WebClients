@@ -1,13 +1,12 @@
 import { runSaga } from 'redux-saga';
 
-import * as processor from '@proton/pass/lib/sync/v2/user-events.processor';
-import * as requests from '@proton/pass/lib/sync/v2/user-events.requests';
-import { setUserEventID } from '@proton/pass/store/actions';
-import { forcePollV2 } from '@proton/pass/store/actions/creators/polling';
-import { sagaReturn, sagaSetup } from '@proton/pass/store/sagas/testing';
-import type { RootSagaOptions } from '@proton/pass/store/types';
-import type { Api, MaybeNull, SyncEventListOutput } from '@proton/pass/types';
-
+import * as processor from '../../../../lib/sync/v2/user-events.processor';
+import * as requests from '../../../../lib/sync/v2/user-events.requests';
+import type { Api, MaybeNull, SyncEventListOutput } from '../../../../types';
+import { setUserEventID } from '../../../actions';
+import { forcePollV2 } from '../../../actions/creators/polling';
+import type { RootSagaOptions } from '../../../types';
+import { sagaReturn, sagaSetup } from '../../testing';
 import { userEventsChannel } from './channel.user-events';
 
 const getUserEventsSince = jest.spyOn(requests, 'getUserEventsSince');

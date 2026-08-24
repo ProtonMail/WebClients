@@ -4,12 +4,12 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { IcCross } from '@proton/icons/icons/IcCross';
-import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
-import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
-import { getCharsGroupedByColor } from '@proton/pass/hooks/usePasswordGenerator';
-import type { PasswordHistoryEntry } from '@proton/pass/store/reducers';
-import { epochToDateTime } from '@proton/pass/utils/time/format';
 
+import { getCharsGroupedByColor } from '../../hooks/usePasswordGenerator';
+import type { PasswordHistoryEntry } from '../../store/reducers';
+import { epochToDateTime } from '../../utils/time/format';
+import { ValueControl } from '../Form/Field/Control/ValueControl';
+import { FieldsetCluster } from '../Form/Field/Layout/FieldsetCluster';
 import { usePasswordHistoryActions } from './PasswordHistoryActionsContext';
 
 export const PasswordHistoryItem: FC<PasswordHistoryEntry> = ({ value, origin, id, createTime }) => {

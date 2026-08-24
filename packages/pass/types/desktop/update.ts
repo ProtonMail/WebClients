@@ -1,4 +1,4 @@
-import type { MaybeNull } from '@proton/pass/types/utils';
+import type { MaybeNull } from '../utils';
 
 export enum UpdateStatus {
     Idle = 0,

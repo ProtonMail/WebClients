@@ -6,16 +6,16 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
-import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';
-import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
-import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
-import { useActionRequest } from '@proton/pass/hooks/useRequest';
-import { validateVaultValues } from '@proton/pass/lib/validation/vault';
-import { vaultEditIntent } from '@proton/pass/store/actions';
-import type { VaultShareItem } from '@proton/pass/store/reducers';
-import { VaultColor, VaultIcon } from '@proton/pass/types/protobuf/vault-v1.static';
 import noop from '@proton/utils/noop';
 
+import { useActionRequest } from '../../hooks/useRequest';
+import { validateVaultValues } from '../../lib/validation/vault';
+import { vaultEditIntent } from '../../store/actions';
+import type { VaultShareItem } from '../../store/reducers';
+import { VaultColor, VaultIcon } from '../../types/protobuf/vault-v1.static';
+import { SidebarModal } from '../Layout/Modal/SidebarModal';
+import { Panel } from '../Layout/Panel/Panel';
+import { PanelHeader } from '../Layout/Panel/PanelHeader';
 import { VaultForm, type VaultFormValues } from './Vault.form';
 
 type Props = Omit<ModalProps, 'onSubmit'> & { vault: VaultShareItem; onSuccess: () => void };

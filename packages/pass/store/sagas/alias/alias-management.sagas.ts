@@ -7,7 +7,7 @@ import {
     resendVerifyMailboxApi,
     setDefaultMailboxApi,
     validateMailboxApi,
-} from '@proton/pass/lib/alias/alias.requests';
+} from '../../../lib/alias/alias.requests';
 import {
     cancelMailboxEdit,
     createMailbox,
@@ -17,8 +17,8 @@ import {
     resendVerifyMailbox,
     setDefaultMailbox,
     validateMailbox,
-} from '@proton/pass/store/actions';
-import { createRequestSaga } from '@proton/pass/store/request/sagas';
+} from '../../actions';
+import { createRequestSaga } from '../../request/sagas';
 
 const getMailboxesSaga = createRequestSaga({
     actions: getMailboxes,

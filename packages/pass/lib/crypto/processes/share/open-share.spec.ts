@@ -1,14 +1,8 @@
-import { openShareKey } from '@proton/pass/lib/crypto/processes/share/open-share-key';
-import { createVault } from '@proton/pass/lib/crypto/processes/vault/create-vault';
-import {
-    createRandomKey,
-    randomContents,
-    releaseCryptoProxy,
-    setupCryptoProxyForTesting,
-} from '@proton/pass/lib/crypto/utils/testing';
-import { ContentFormatVersion, type ShareGetResponse, ShareRole, ShareType } from '@proton/pass/types';
-
+import { ContentFormatVersion, type ShareGetResponse, ShareRole, ShareType } from '../../../../types';
+import { createRandomKey, randomContents, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../utils/testing';
+import { createVault } from '../vault/create-vault';
 import { openShare } from './open-share';
+import { openShareKey } from './open-share-key';
 
 describe('openShare crypto process', () => {
     beforeAll(async () => setupCryptoProxyForTesting());

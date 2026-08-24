@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 
-import { Feedback } from '@proton/pass/components/Settings/Feedback';
-import { ReportAProblem } from '@proton/pass/components/Settings/ReportAProblem';
+import { Feedback } from '../../Feedback';
+import { ReportAProblem } from '../../ReportAProblem';
 
 export const Support: FC = () => (
     <>

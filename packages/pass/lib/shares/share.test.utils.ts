@@ -1,7 +1,8 @@
-import { PassErrorCode } from '@proton/pass/lib/api/errors';
-import type { Share } from '@proton/pass/types';
-import { ShareRole, ShareType } from '@proton/pass/types';
 import { ApiError } from '@proton/shared/lib/fetch/ApiError';
+
+import type { Share } from '../../types';
+import { ShareRole, ShareType } from '../../types';
+import { PassErrorCode } from '../api/errors';
 
 export const createTestShare = (overrides: Partial<Share> = {}): Share => ({
     shareId: 'share',

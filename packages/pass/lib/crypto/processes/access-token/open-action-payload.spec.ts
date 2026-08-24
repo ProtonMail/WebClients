@@ -1,7 +1,6 @@
-import { encryptData, generateKey, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
-import { PassEncryptionTag } from '@proton/pass/types';
-import { ActionPayload } from '@proton/pass/types/protobuf/action-payload-v1';
-
+import { PassEncryptionTag } from '../../../../types';
+import { ActionPayload } from '../../../../types/protobuf/action-payload-v1';
+import { encryptData, generateKey, importSymmetricKey } from '../../utils/crypto-helpers';
 import { openActionPayload } from './open-action-payload';
 
 const encryptPayload = async (rawPatKey: Uint8Array<ArrayBuffer>, message: ActionPayload): Promise<string> => {

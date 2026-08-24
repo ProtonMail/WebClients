@@ -1,15 +1,16 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import type { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
-import { DEFAULT_LOCK_TTL } from '@proton/pass/constants';
-import { LockMode } from '@proton/pass/lib/auth/lock/types';
-import { type DomainCriterias, mergePauseCriterias } from '@proton/pass/lib/settings/pause-list';
-import { EXCLUDED_SETTINGS_KEYS } from '@proton/pass/store/reducers/settings';
-import { selectOrganizationSettings } from '@proton/pass/store/selectors/organization';
-import type { State } from '@proton/pass/store/types';
-import type { Maybe } from '@proton/pass/types';
-import { pipe } from '@proton/pass/utils/fp/pipe';
 import { omit } from '@proton/shared/lib/helpers/object';
+
+import type { PassThemeOption } from '../../components/Layout/Theme/types';
+import { DEFAULT_LOCK_TTL } from '../../constants';
+import { LockMode } from '../../lib/auth/lock/types';
+import { type DomainCriterias, mergePauseCriterias } from '../../lib/settings/pause-list';
+import type { Maybe } from '../../types';
+import { pipe } from '../../utils/fp/pipe';
+import { EXCLUDED_SETTINGS_KEYS } from '../reducers/settings';
+import type { State } from '../types';
+import { selectOrganizationSettings } from './organization';
 
 export const selectSettings = ({ settings }: State) => settings;
 export const selectProxiedSettings = createSelector(selectSettings, (settings) => omit(settings, EXCLUDED_SETTINGS_KEYS));

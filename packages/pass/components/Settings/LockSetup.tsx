@@ -3,13 +3,14 @@ import type { FC } from 'react';
 import { c } from 'ttag';
 
 import RadioGroup from '@proton/components/components/input/RadioGroup';
-import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
-import { LockTTLField } from '@proton/pass/components/Lock/LockTTLField';
-import { usePasswordTypeSwitch } from '@proton/pass/components/Lock/PasswordUnlockProvider';
-import { useLockSetup } from '@proton/pass/hooks/auth/useLockSetup';
-import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
+
+import { useLockSetup } from '../../hooks/auth/useLockSetup';
+import { LockMode } from '../../lib/auth/lock/types';
+import { useOnline } from '../Core/ConnectivityProvider';
+import { LockTTLField } from '../Lock/LockTTLField';
+import { usePasswordTypeSwitch } from '../Lock/PasswordUnlockProvider';
 
 type Props = { noTTL?: boolean };
 

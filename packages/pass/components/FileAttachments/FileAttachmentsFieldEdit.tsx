@@ -2,13 +2,12 @@ import { type FC, useMemo } from 'react';
 
 import type { FieldProps } from 'formik';
 
-import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
-import { selectItemFilesForRevision } from '@proton/pass/store/selectors/files';
-import type { FileAttachmentValues, FileID, SelectedRevision } from '@proton/pass/types';
-import { prop } from '@proton/pass/utils/fp/lens';
-import { pipe } from '@proton/pass/utils/fp/pipe';
-import { notIn } from '@proton/pass/utils/fp/predicates';
-
+import { useMemoSelector } from '../../hooks/useMemoSelector';
+import { selectItemFilesForRevision } from '../../store/selectors/files';
+import type { FileAttachmentValues, FileID, SelectedRevision } from '../../types';
+import { prop } from '../../utils/fp/lens';
+import { pipe } from '../../utils/fp/pipe';
+import { notIn } from '../../utils/fp/predicates';
 import { FileAttachmentsField } from './FileAttachmentsField';
 import { FileAttachmentsList } from './FileAttachmentsList';
 

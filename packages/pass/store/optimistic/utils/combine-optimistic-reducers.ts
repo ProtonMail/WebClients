@@ -1,14 +1,11 @@
 import type { ReducersMapObject, StateFromReducersMapObject } from 'redux';
 import { combineReducers } from 'redux';
 
-import { or } from '@proton/pass/utils/fp/predicates';
-
+import { or } from '../../../utils/fp/predicates';
 import type { CombinedOptimisticReducer, OptimisticReducersMapObject, OptimisticReducersMapValues } from '../types';
 import { isCombinedOptimisticReducer, isOptimisticReducer } from './assertions';
 
-export const getReducerMapEntries = (
-    reducersMap: OptimisticReducersMapObject
-): [PropertyKey, OptimisticReducersMapValues][] => {
+export const getReducerMapEntries = (reducersMap: OptimisticReducersMapObject): [PropertyKey, OptimisticReducersMapValues][] => {
     return Object.entries(reducersMap);
 };
 

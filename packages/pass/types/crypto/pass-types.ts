@@ -1,4 +1,4 @@
-import type { ItemState, Maybe, MaybeNull, ShareRole, ShareType } from '@proton/pass/types';
+import type { ItemState, Maybe, MaybeNull, ShareRole, ShareType } from '..';
 
 export enum PassEncryptionTag {
     Cache = 'cache' /* Local cache */,

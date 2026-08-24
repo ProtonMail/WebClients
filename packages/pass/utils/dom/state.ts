@@ -1,4 +1,4 @@
-import { createListenerStore } from '@proton/pass/utils/listener/factory';
+import { createListenerStore } from '../listener/factory';
 
 export const waitForPageReady = (): Promise<void> =>
     new Promise<void>((resolve) => {

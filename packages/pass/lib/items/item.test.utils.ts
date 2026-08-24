@@ -1,8 +1,7 @@
-import type { ItemRevision, ItemType } from '@proton/pass/types';
-import { ContentFormatVersion, ItemState } from '@proton/pass/types';
-import { uniqueId } from '@proton/pass/utils/string/unique-id';
-import { getEpoch } from '@proton/pass/utils/time/epoch';
-
+import type { ItemRevision, ItemType } from '../../types';
+import { ContentFormatVersion, ItemState } from '../../types';
+import { uniqueId } from '../../utils/string/unique-id';
+import { getEpoch } from '../../utils/time/epoch';
 import { itemBuilder } from './item.builder';
 
 export const createTestItem = <T extends ItemType>(type: T, init: Partial<ItemRevision<T>> = {}): ItemRevision<T> => ({

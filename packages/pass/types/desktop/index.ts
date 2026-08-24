@@ -6,11 +6,10 @@ import type {
     NativeMessageRequest,
     NativeMessageResponse,
     SSHKeyItem,
-} from '@proton/pass/types';
-import type { ContextMenuItemSerializable } from '@proton/pass/types/desktop/context-menu';
-import type { UpdateStore } from '@proton/pass/types/desktop/update';
-
+} from '..';
 import type { AutotypeProperties } from './autotype';
+import type { ContextMenuItemSerializable } from './context-menu';
+import type { UpdateStore } from './update';
 
 export * from './autotype';
 export * from './extension-unlock-with-desktop';

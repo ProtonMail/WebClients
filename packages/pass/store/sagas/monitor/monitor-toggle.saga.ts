@@ -1,10 +1,10 @@
 import { put } from 'redux-saga/effects';
 
-import { setMonitorSettings } from '@proton/pass/lib/monitor/monitor.request';
-import { getBreaches, monitorToggle } from '@proton/pass/store/actions';
-import { withRevalidate } from '@proton/pass/store/request/enhancers';
-import { createRequestSaga } from '@proton/pass/store/request/sagas';
-import type { UpdateUserMonitorStateRequest } from '@proton/pass/types';
+import { setMonitorSettings } from '../../../lib/monitor/monitor.request';
+import type { UpdateUserMonitorStateRequest } from '../../../types';
+import { getBreaches, monitorToggle } from '../../actions';
+import { withRevalidate } from '../../request/enhancers';
+import { createRequestSaga } from '../../request/sagas';
 
 export default createRequestSaga({
     actions: monitorToggle,

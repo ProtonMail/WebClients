@@ -1,13 +1,12 @@
 import type { Task } from 'redux-saga';
 import { runSaga } from 'redux-saga';
 
-import type { Group } from '@proton/pass/lib/groups/groups.types';
-import { shareDeleted, sharesEventNew } from '@proton/pass/store/actions';
-import { sagaSetup } from '@proton/pass/store/sagas/testing';
-import type { RootSagaOptions, State } from '@proton/pass/store/types';
-import type { ItemRevision, Share } from '@proton/pass/types';
-import { ShareType } from '@proton/pass/types';
-
+import type { Group } from '../../../lib/groups/groups.types';
+import type { ItemRevision, Share } from '../../../types';
+import { ShareType } from '../../../types';
+import { shareDeleted, sharesEventNew } from '../../actions';
+import type { RootSagaOptions, State } from '../../types';
+import { sagaSetup } from '../testing';
 import notificationForShares from './shares-notification.saga';
 
 describe('notif-shares saga', () => {

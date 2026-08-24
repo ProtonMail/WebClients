@@ -1,19 +1,19 @@
 import type { FC, PropsWithChildren } from 'react';
 
-import { AliasContent } from '@proton/pass/components/Item/Alias/Alias.content';
-import { CreditCardContent } from '@proton/pass/components/Item/CreditCard/CreditCard.content';
-import { IdentityContent } from '@proton/pass/components/Item/Identity/Identity.content';
-import { presentListItem } from '@proton/pass/components/Item/List/utils';
-import { LoginContent } from '@proton/pass/components/Item/Login/Login.content';
-import { NoteContent } from '@proton/pass/components/Item/Note/Note.content';
-import { Card } from '@proton/pass/components/Layout/Card/Card';
-import { itemTypeToSubThemeClassName } from '@proton/pass/components/Layout/Theme/types';
-import type { ItemContentProps } from '@proton/pass/components/Views/types';
-import type { Item, ItemType } from '@proton/pass/types';
 import capitalize from '@proton/utils/capitalize';
 import clsx from '@proton/utils/clsx';
 
+import type { Item, ItemType } from '../../../types';
+import { Card } from '../../Layout/Card/Card';
+import { itemTypeToSubThemeClassName } from '../../Layout/Theme/types';
+import type { ItemContentProps } from '../../Views/types';
+import { AliasContent } from '../Alias/Alias.content';
+import { CreditCardContent } from '../CreditCard/CreditCard.content';
 import { CustomContent } from '../Custom/Custom.content';
+import { IdentityContent } from '../Identity/Identity.content';
+import { presentListItem } from '../List/utils';
+import { LoginContent } from '../Login/Login.content';
+import { NoteContent } from '../Note/Note.content';
 
 const itemContentViewMap: { [T in ItemType]: FC<ItemContentProps<T>> } = {
     alias: AliasContent,

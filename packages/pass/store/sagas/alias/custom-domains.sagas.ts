@@ -11,7 +11,7 @@ import {
     updateCustomDomainMailboxesApi,
     updateRandomPrefixApi,
     verifyCustomDomainApi,
-} from '@proton/pass/lib/alias/alias.requests';
+} from '../../../lib/alias/alias.requests';
 import {
     createCustomDomain,
     deleteCustomDomain,
@@ -25,8 +25,8 @@ import {
     updateCustomDomainMailboxes,
     updateRandomPrefix,
     verifyCustomDomain,
-} from '@proton/pass/store/actions';
-import { createRequestSaga } from '@proton/pass/store/request/sagas';
+} from '../../actions';
+import { createRequestSaga } from '../../request/sagas';
 
 const getAliasDomainsSaga = createRequestSaga({
     actions: getAliasDomains,

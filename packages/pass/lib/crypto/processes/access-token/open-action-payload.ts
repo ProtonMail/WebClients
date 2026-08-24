@@ -1,7 +1,7 @@
-import { decryptData, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
-import { PassEncryptionTag } from '@proton/pass/types';
-import { ActionPayload, type AgentAction } from '@proton/pass/types/protobuf/action-payload-v1';
-import type { MaybeNull } from '@proton/pass/types/utils';
+import { PassEncryptionTag } from '../../../../types';
+import { ActionPayload, type AgentAction } from '../../../../types/protobuf/action-payload-v1';
+import type { MaybeNull } from '../../../../types/utils';
+import { decryptData, importSymmetricKey } from '../../utils/crypto-helpers';
 
 export type DecryptedActionPayload = { kind: 'agent-action'; agentAction: AgentAction } | { kind: 'unknown' };
 

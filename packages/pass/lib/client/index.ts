@@ -5,9 +5,9 @@
  * of them are also used in the UI code to trigger
  * certain effects.
  */
-import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
-import { AppStatus } from '@proton/pass/types';
-import { eq, oneOf, or } from '@proton/pass/utils/fp/predicates';
+import type { PassConfig } from '../../hooks/usePassConfig';
+import { AppStatus } from '../../types';
+import { eq, oneOf, or } from '../../utils/fp/predicates';
 
 export const clientAuthorized = eq(AppStatus.AUTHORIZED);
 export const clientErrored = eq(AppStatus.ERROR);

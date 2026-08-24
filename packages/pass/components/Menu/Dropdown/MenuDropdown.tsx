@@ -9,22 +9,23 @@ import type { DropdownProps } from '@proton/components/components/dropdown/Dropd
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
-import { AdminPanelLabel } from '@proton/pass/components/Menu/B2B/AdminPanelLabel';
-import { AppMenuButton } from '@proton/pass/components/Menu/Dropdown/MenuButtons';
-import { MenuUser } from '@proton/pass/components/Menu/Dropdown/MenuUser';
-import { Submenu } from '@proton/pass/components/Menu/Submenu';
-import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
-import { getLocalPath } from '@proton/pass/components/Navigation/routing';
-import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
-import { AccountPath } from '@proton/pass/constants';
-import { useUserInitiatedLock } from '@proton/pass/hooks/auth/useUserInitiatedLock';
-import { type MenuItem, useMenuItems } from '@proton/pass/hooks/useMenuItems';
-import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
-import { selectLockEnabled } from '@proton/pass/store/selectors/settings';
-import { withTap } from '@proton/pass/utils/fp/pipe';
 import { PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+
+import { AccountPath } from '../../../constants';
+import { useUserInitiatedLock } from '../../../hooks/auth/useUserInitiatedLock';
+import { type MenuItem, useMenuItems } from '../../../hooks/useMenuItems';
+import { useNavigateToAccount } from '../../../hooks/useNavigateToAccount';
+import { selectLockEnabled } from '../../../store/selectors/settings';
+import { withTap } from '../../../utils/fp/pipe';
+import { usePassCore } from '../../Core/PassCoreProvider';
+import { DropdownMenuButton } from '../../Layout/Dropdown/DropdownMenuButton';
+import { useNavigate } from '../../Navigation/NavigationActions';
+import { getLocalPath } from '../../Navigation/routing';
+import { useOrganization } from '../../Organization/OrganizationProvider';
+import { AdminPanelLabel } from '../B2B/AdminPanelLabel';
+import { Submenu } from '../Submenu';
+import { AppMenuButton } from './MenuButtons';
+import { MenuUser } from './MenuUser';
 
 import './MenuDropdown.scss';
 

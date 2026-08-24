@@ -1,13 +1,13 @@
 import { select } from 'redux-saga/effects';
 
-import { rejectInvite } from '@proton/pass/lib/invites/invite.requests';
-import { createTelemetryEvent } from '@proton/pass/lib/telemetry/utils';
-import { inviteReject } from '@proton/pass/store/actions';
-import { createRequestSaga } from '@proton/pass/store/request/sagas';
-import { selectInviteByToken } from '@proton/pass/store/selectors/invites';
-import type { RootSagaOptions } from '@proton/pass/store/types';
-import { type Invite, type Maybe, ShareType } from '@proton/pass/types';
-import { TelemetryEventName, TelemetryTargetType } from '@proton/pass/types/data/telemetry';
+import { rejectInvite } from '../../../lib/invites/invite.requests';
+import { createTelemetryEvent } from '../../../lib/telemetry/utils';
+import { type Invite, type Maybe, ShareType } from '../../../types';
+import { TelemetryEventName, TelemetryTargetType } from '../../../types/data/telemetry';
+import { inviteReject } from '../../actions';
+import { createRequestSaga } from '../../request/sagas';
+import { selectInviteByToken } from '../../selectors/invites';
+import type { RootSagaOptions } from '../../types';
 
 export default createRequestSaga({
     actions: inviteReject,

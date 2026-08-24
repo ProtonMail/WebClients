@@ -4,10 +4,11 @@ import { c } from 'ttag';
 
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
-import type { PasswordGeneratorResult } from '@proton/pass/hooks/usePasswordGenerator';
-import type { GeneratePasswordConfig } from '@proton/pass/lib/password/types';
-import type { MaybeNull, OrganizationUpdatePasswordPolicyInput } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
+
+import type { PasswordGeneratorResult } from '../../hooks/usePasswordGenerator';
+import type { GeneratePasswordConfig } from '../../lib/password/types';
+import type { MaybeNull, OrganizationUpdatePasswordPolicyInput } from '../../types';
 
 import './PasswordTypeSelect.scss';
 

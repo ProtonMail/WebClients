@@ -1,11 +1,10 @@
 import { runSaga } from 'redux-saga';
 
-import * as API from '@proton/pass/lib/api/api';
-import { bootFailure, bootIntent, cacheConflict, itemsUpdated, stateDestroy } from '@proton/pass/store/actions';
-import { sagaSetup } from '@proton/pass/store/sagas/testing';
-import type { RootSagaOptions } from '@proton/pass/store/types';
-import { AppStatus } from '@proton/pass/types';
-
+import * as API from '../../../lib/api/api';
+import { AppStatus } from '../../../types';
+import { bootFailure, bootIntent, cacheConflict, itemsUpdated, stateDestroy } from '../../actions';
+import type { RootSagaOptions } from '../../types';
+import { sagaSetup } from '../testing';
 import watcher from './boot.saga';
 import * as hydrateSaga from './hydrate.saga';
 

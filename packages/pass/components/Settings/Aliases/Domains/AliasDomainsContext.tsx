@@ -1,13 +1,13 @@
 import { createContext, useMemo } from 'react';
 
-import { createUseContext } from '@proton/pass/hooks/useContextFactory';
+import { createUseContext } from '../../../../hooks/useContextFactory';
 import type {
     CustomDomainOutput,
     CustomDomainValidationOutput,
     MaybeNull,
     UserAliasDomainOutput,
     UserAliasSettingsGetOutput,
-} from '@proton/pass/types';
+} from '../../../../types';
 
 export type DomainAction =
     | { type: 'create' }

@@ -5,11 +5,12 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import Time from '@proton/components/components/time/Time';
 import { getBreachIcon } from '@proton/components/containers/credentialLeak/helpers';
-import { Card } from '@proton/pass/components/Layout/Card/Card';
-import { CardContent } from '@proton/pass/components/Layout/Card/CardContent';
-import { PassPlusPromotionButton } from '@proton/pass/components/Upsell/PassPlusPromotionButton';
-import type { MonitorDomain } from '@proton/pass/lib/monitor/types';
 import clsx from '@proton/utils/clsx';
+
+import type { MonitorDomain } from '../../../../lib/monitor/types';
+import { Card } from '../../../Layout/Card/Card';
+import { CardContent } from '../../../Layout/Card/CardContent';
+import { PassPlusPromotionButton } from '../../../Upsell/PassPlusPromotionButton';
 
 import './BreachPreviewCard.scss';
 

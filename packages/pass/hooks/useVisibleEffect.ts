@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 
-import { useStatefulRef } from '@proton/pass/hooks/useStatefulRef';
-import type { Maybe } from '@proton/pass/types/utils';
+import type { Maybe } from '../types/utils';
+import { useStatefulRef } from './useStatefulRef';
 
 const FOCUS_CHECK_DELAY = 10;
 

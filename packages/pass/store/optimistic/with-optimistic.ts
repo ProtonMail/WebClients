@@ -1,21 +1,14 @@
 import type { Selector } from '@reduxjs/toolkit';
 import type { Action, Reducer } from 'redux';
 
-import type { MaybeArray } from '@proton/pass/types';
-
+import type { MaybeArray } from '../../types';
 import { commitReducer } from './reducers/commit';
 import { failReducer } from './reducers/fail';
 import { initiateReducer } from './reducers/initiate';
 import { revertReducer } from './reducers/revert';
 import { asIfNotFailedSubSelector } from './selectors/select-is-failed';
 import { asIfNotOptimisticSubSelector } from './selectors/select-is-optimistic';
-import type {
-    OptimisticMatcher,
-    OptimisticMatchers,
-    OptimisticState,
-    WithOptimisticReducer,
-    WrappedOptimisticState,
-} from './types';
+import type { OptimisticMatcher, OptimisticMatchers, OptimisticState, WithOptimisticReducer, WrappedOptimisticState } from './types';
 import { HistoryFlag } from './types';
 import { getActionFromHistoryItem, unwrapOptimisticState } from './utils/transformers';
 import { withHistoryAction } from './utils/with-history-action';
@@ -71,9 +64,7 @@ const withOptimistic = <T extends object>(
                         case 'initiate': {
                             const nextOptimistic = initiateReducer(inner, reducer, action, optimistic, id);
                             return {
-                                ...nextOptimistic.history
-                                    .map(getActionFromHistoryItem)
-                                    .reduce(reducer, nextOptimistic.checkpoint!),
+                                ...nextOptimistic.history.map(getActionFromHistoryItem).reduce(reducer, nextOptimistic.checkpoint!),
                                 optimistic: nextOptimistic,
                             };
                         }
@@ -103,10 +94,7 @@ const withOptimistic = <T extends object>(
 
                             return {
                                 ...reducer(revertedInner, action),
-                                optimistic: withHistoryAction(
-                                    { id, action, type: HistoryFlag.OPTIMISTIC_EFFECT },
-                                    nextOptimistic
-                                ),
+                                optimistic: withHistoryAction({ id, action, type: HistoryFlag.OPTIMISTIC_EFFECT }, nextOptimistic),
                             };
                         }
                     }

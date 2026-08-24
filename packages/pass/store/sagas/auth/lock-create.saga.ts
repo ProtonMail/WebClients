@@ -1,10 +1,10 @@
 import type { Action } from 'redux';
 import { call, put, race, take, takeLeading } from 'redux-saga/effects';
 
-import { type Lock, LockMode } from '@proton/pass/lib/auth/lock/types';
-import { lockCreateFailure, lockCreateIntent, lockCreateSuccess, stateDestroy } from '@proton/pass/store/actions';
-import { type WithSenderAction, isActionWithSender } from '@proton/pass/store/actions/enhancers/endpoint';
-import type { RootSagaOptions } from '@proton/pass/store/types';
+import { type Lock, LockMode } from '../../../lib/auth/lock/types';
+import { lockCreateFailure, lockCreateIntent, lockCreateSuccess, stateDestroy } from '../../actions';
+import { type WithSenderAction, isActionWithSender } from '../../actions/enhancers/endpoint';
+import type { RootSagaOptions } from '../../types';
 
 function* lockCreateWorker({ getAuthService }: RootSagaOptions, { meta, payload }: WithSenderAction<ReturnType<typeof lockCreateIntent>>) {
     const { id: requestId } = meta.request;

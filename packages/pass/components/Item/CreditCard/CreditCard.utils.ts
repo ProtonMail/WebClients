@@ -1,5 +1,5 @@
-import PassUI from '@proton/pass/lib/core/ui.proxy';
-import { CardType } from '@proton/pass/types/protobuf';
+import PassUI from '../../../lib/core/ui.proxy';
+import { CardType } from '../../../types/protobuf';
 
 export const getCreditCardType = async (number: string): Promise<CardType> => {
     try {

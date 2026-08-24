@@ -3,14 +3,13 @@ import { type FC, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
-import { useNavigationActions } from '@proton/pass/components/Navigation/NavigationActions';
-import { getLocalPath } from '@proton/pass/components/Navigation/routing';
-import { useItem } from '@proton/pass/hooks/useItem';
-import { useItemRevisions } from '@proton/pass/hooks/useItemRevisions';
-import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
-import { selectPassPlan } from '@proton/pass/store/selectors';
-import type { MaybeNull, SelectedItem } from '@proton/pass/types';
-
+import { useItem } from '../../../hooks/useItem';
+import { useItemRevisions } from '../../../hooks/useItemRevisions';
+import { isPaidPlan } from '../../../lib/user/user.predicates';
+import { selectPassPlan } from '../../../store/selectors';
+import type { MaybeNull, SelectedItem } from '../../../types';
+import { useNavigationActions } from '../../Navigation/NavigationActions';
+import { getLocalPath } from '../../Navigation/routing';
 import { ItemHistoryContext, type ItemHistoryContextValue } from './ItemHistoryContext';
 
 export const ItemHistoryProvider: FC<PropsWithChildren<SelectedItem>> = ({ itemId, shareId, children }) => {

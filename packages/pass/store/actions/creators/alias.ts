@@ -1,14 +1,11 @@
 import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import { PassErrorCode, UnverifiedUserError } from '@proton/pass/lib/api/errors';
-import { isDisabledAlias } from '@proton/pass/lib/items/item.predicates';
-import { withCache } from '@proton/pass/store/actions/enhancers/cache';
-import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
-import { aliasDetailsRequest, intKey, selectedItemKey, withKey } from '@proton/pass/store/actions/requests';
-import { sessionRequest } from '@proton/pass/store/request/configs';
-import { withRequest, withRequestFailure, withRequestSuccess } from '@proton/pass/store/request/enhancers';
-import { requestActionsFactory } from '@proton/pass/store/request/flow';
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import identity from '@proton/utils/identity';
+
+import { PassErrorCode, UnverifiedUserError } from '../../../lib/api/errors';
+import { isDisabledAlias } from '../../../lib/items/item.predicates';
 import type {
     AliasContactBlockDTO,
     AliasContactGetResponse,
@@ -38,11 +35,15 @@ import type {
     UserAliasDomainOutput,
     UserAliasSettingsGetOutput,
     UserMailboxOutput,
-} from '@proton/pass/types';
-import { pipe } from '@proton/pass/utils/fp/pipe';
-import { UNIX_MINUTE } from '@proton/pass/utils/time/constants';
-import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import identity from '@proton/utils/identity';
+} from '../../../types';
+import { pipe } from '../../../utils/fp/pipe';
+import { UNIX_MINUTE } from '../../../utils/time/constants';
+import { sessionRequest } from '../../request/configs';
+import { withRequest, withRequestFailure, withRequestSuccess } from '../../request/enhancers';
+import { requestActionsFactory } from '../../request/flow';
+import { withCache } from '../enhancers/cache';
+import { withNotification } from '../enhancers/notification';
+import { aliasDetailsRequest, intKey, selectedItemKey, withKey } from '../requests';
 
 export const requestAliasOptions = requestActionsFactory<ShareId, AliasOptions>('alias::options::get')({
     key: identity,

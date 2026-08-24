@@ -1,8 +1,7 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import type { Action, Reducer } from 'redux';
 
-import type { Maybe } from '@proton/pass/types';
-
+import type { Maybe } from '../../../types';
 import type { DeterministicHistoryItem, OptimisticHistoryItem } from '../types';
 import { HistoryFlag } from '../types';
 
@@ -16,11 +15,7 @@ export const createTestDeterministicAction = <T = any>(type?: string, payload?: 
     action: createTestAction<T>(type, payload),
 });
 
-export const createTestOptimisticHistoryItem = (
-    type?: string,
-    payload?: any,
-    failed?: boolean
-): OptimisticHistoryItem => {
+export const createTestOptimisticHistoryItem = (type?: string, payload?: any, failed?: boolean): OptimisticHistoryItem => {
     return {
         type: HistoryFlag.OPTIMISTIC,
         id: `id-${Math.random()}`,

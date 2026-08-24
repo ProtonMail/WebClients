@@ -1,9 +1,9 @@
 import { memo } from 'react';
 
-import { OnboardingButton } from '@proton/pass/components/Menu/B2B/OnboardingButton';
-import { useOnboarding } from '@proton/pass/components/Onboarding/OnboardingProvider';
-import { OnboardingState } from '@proton/pass/components/Onboarding/OnboardingState';
-import { OnboardingType } from '@proton/pass/components/Onboarding/Provider/OnboardingContext';
+import { useOnboarding } from '../../Onboarding/OnboardingProvider';
+import { OnboardingState } from '../../Onboarding/OnboardingState';
+import { OnboardingType } from '../../Onboarding/Provider/OnboardingContext';
+import { OnboardingButton } from '../B2B/OnboardingButton';
 
 export const OnboardingActions = memo(() => {
     const { enabled, type } = useOnboarding();

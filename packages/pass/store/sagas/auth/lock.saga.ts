@@ -1,9 +1,10 @@
 import { fork, takeLeading } from 'redux-saga/effects';
 
-import { LockMode } from '@proton/pass/lib/auth/lock/types';
-import { lock } from '@proton/pass/store/actions';
-import type { RootSagaOptions } from '@proton/pass/store/types';
 import noop from '@proton/utils/noop';
+
+import { LockMode } from '../../../lib/auth/lock/types';
+import { lock } from '../../actions';
+import type { RootSagaOptions } from '../../types';
 
 /* If we the user has not registered a lock yet (ie: has
  * a sessionLockToken saved) then this saga should have

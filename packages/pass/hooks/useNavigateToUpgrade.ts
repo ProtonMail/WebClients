@@ -1,13 +1,12 @@
 import { useSelector } from 'react-redux';
 
-import { useAuthStore } from '@proton/pass//components/Core/AuthStoreProvider';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { SAFARI_URL_SCHEME, type UpsellRef, UpsellRefPrefix } from '@proton/pass/constants';
-import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
-import type { AuthStore } from '@proton/pass/lib/auth/store';
-import type { ClientEndpoint, MaybeNull, PassPlanResponse } from '@proton/pass/types';
-
+import { useAuthStore } from '../components/Core/AuthStoreProvider';
+import { usePassCore } from '../components/Core/PassCoreProvider';
+import { SAFARI_URL_SCHEME, type UpsellRef, UpsellRefPrefix } from '../constants';
+import type { AuthStore } from '../lib/auth/store';
 import { selectUserPlan } from '../store/selectors';
+import type { ClientEndpoint, MaybeNull, PassPlanResponse } from '../types';
+import type { PassConfig } from './usePassConfig';
 
 /** Prefer navigating to signup from extension/desktop
  * as we cannot guarantee the session exists */

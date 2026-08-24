@@ -1,5 +1,5 @@
-import { api } from '@proton/pass/lib/api/api';
-import { type Lock, LockMode } from '@proton/pass/lib/auth/lock/types';
+import { api } from '../../../api/api';
+import { type Lock, LockMode } from '../types';
 
 export const checkSessionLock = async (): Promise<Lock> => {
     try {

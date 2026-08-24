@@ -1,11 +1,10 @@
 import fs from 'fs';
 
-import type { ImportPayload } from '@proton/pass/lib/import/types';
-import { deobfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
-import type { ItemImportIntent } from '@proton/pass/types';
-import { AutofillMode } from '@proton/pass/types/protobuf';
-import * as epochUtils from '@proton/pass/utils/time/epoch';
-
+import type { ItemImportIntent } from '../../../../types';
+import { AutofillMode } from '../../../../types/protobuf';
+import * as epochUtils from '../../../../utils/time/epoch';
+import { deobfuscateItem } from '../../../items/item.obfuscation';
+import type { ImportPayload } from '../../types';
 import { readRoboformData } from './roboform.reader';
 
 describe('Import Roboform csv', () => {

@@ -1,7 +1,6 @@
-import { CRITERIA_MASKS } from '@proton/pass/lib/settings/pause-list';
-import { getOrganizationPauseList } from '@proton/pass/store/actions/creators/organization';
-import { uniqueId } from '@proton/pass/utils/string/unique-id';
-
+import { CRITERIA_MASKS } from '../../lib/settings/pause-list';
+import { uniqueId } from '../../utils/string/unique-id';
+import { getOrganizationPauseList } from '../actions/creators/organization';
 import reducer from './settings';
 
 const initialState = () => reducer(undefined, { type: '@@INIT' });

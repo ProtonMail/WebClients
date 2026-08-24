@@ -1,10 +1,10 @@
 import { put, select, takeEvery } from 'redux-saga/effects';
 import { c } from 'ttag';
 
-import { acceptGroupInvite } from '@proton/pass/lib/invites/invite.requests';
-import { groupInviteAccept, startEventPolling, stopEventPolling } from '@proton/pass/store/actions';
-import { selectInviteByToken } from '@proton/pass/store/selectors/invites';
-import { type Invite, InviteType, type Maybe } from '@proton/pass/types';
+import { acceptGroupInvite } from '../../../lib/invites/invite.requests';
+import { type Invite, InviteType, type Maybe } from '../../../types';
+import { groupInviteAccept, startEventPolling, stopEventPolling } from '../../actions';
+import { selectInviteByToken } from '../../selectors/invites';
 
 function* acceptGroupInviteWorker({ payload, meta: { request } }: ReturnType<typeof groupInviteAccept.intent>) {
     const requestId = request.id;

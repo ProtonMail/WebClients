@@ -1,8 +1,7 @@
 import type { FC } from 'react';
 import { Route } from 'react-router-dom';
 
-import { subPath } from '@proton/pass/components/Navigation/routing';
-
+import { subPath } from '../../Navigation/routing';
 import { Breadcrumb } from './Breadcrumb';
 
 export type BreadcrumbRoute = {

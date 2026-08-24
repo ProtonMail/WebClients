@@ -1,36 +1,33 @@
 import { all, call, put, select } from 'redux-saga/effects';
 
-import { isShareRemovedError } from '@proton/pass/lib/api/errors';
-import { getGroupInvites, getUserInvites } from '@proton/pass/lib/invites/invite.requests';
-import { getOrganizationForPlan } from '@proton/pass/lib/organization/organization.requests';
-import { getShareEvents, getShareLatestEventId, getShares } from '@proton/pass/lib/shares/share.requests';
-import { setSyncStrategy } from '@proton/pass/lib/sync/global';
-import { type SyncResult, SyncStrategy } from '@proton/pass/lib/sync/types';
-import type { GroupInvitesGetResponse } from '@proton/pass/lib/sync/v1/invite-polling.processor';
-import {
-    processGroupInvitePollingEvent,
-    processUserInvitePollingEvent,
-} from '@proton/pass/lib/sync/v1/invite-polling.processor';
+import { setUserAccess, syncMigration } from '../../store/actions';
+import { setOrganization } from '../../store/actions/creators/organization';
+import type { HydratedAccessState } from '../../store/reducers';
+import type { OrganizationState } from '../../store/reducers/organization';
+import type { SharesState } from '../../store/reducers/shares';
+import { selectAllShares, selectShareState } from '../../store/selectors';
+import { selectLoadGroupInvites } from '../../store/selectors/invites';
+import type { RootSagaOptions } from '../../store/types';
+import type { InvitesGetResponse, Maybe, MaybeNull, PassEventListResponse, ShareGetResponse } from '../../types';
+import type { Share } from '../../types/data/shares';
+import { logger } from '../../utils/logger';
+import { isShareRemovedError } from '../api/errors';
+import { getGroupInvites, getUserInvites } from '../invites/invite.requests';
+import { getOrganizationForPlan } from '../organization/organization.requests';
+import { getShareEvents, getShareLatestEventId, getShares } from '../shares/share.requests';
+import { getUserAccess } from '../user/user.requests';
+import { setSyncStrategy } from './global';
+import { type SyncResult, SyncStrategy } from './types';
+import type { GroupInvitesGetResponse } from './v1/invite-polling.processor';
+import { processGroupInvitePollingEvent, processUserInvitePollingEvent } from './v1/invite-polling.processor';
 import {
     processSharePollingError,
     processSharePollingEvent,
     processSharesIncomingEvent,
     processSharesPollingEvent,
-} from '@proton/pass/lib/sync/v1/share-polling.processor';
-import { type SyncResultV1, syncV1 } from '@proton/pass/lib/sync/v1/sync';
-import { getUserEventLatestID } from '@proton/pass/lib/sync/v2/user-events.requests';
-import { getUserAccess } from '@proton/pass/lib/user/user.requests';
-import { setUserAccess, syncMigration } from '@proton/pass/store/actions';
-import { setOrganization } from '@proton/pass/store/actions/creators/organization';
-import type { HydratedAccessState } from '@proton/pass/store/reducers';
-import type { OrganizationState } from '@proton/pass/store/reducers/organization';
-import type { SharesState } from '@proton/pass/store/reducers/shares';
-import { selectAllShares, selectShareState } from '@proton/pass/store/selectors';
-import { selectLoadGroupInvites } from '@proton/pass/store/selectors/invites';
-import type { RootSagaOptions } from '@proton/pass/store/types';
-import type { InvitesGetResponse, Maybe, MaybeNull, PassEventListResponse, ShareGetResponse } from '@proton/pass/types';
-import type { Share } from '@proton/pass/types/data/shares';
-import { logger } from '@proton/pass/utils/logger';
+} from './v1/share-polling.processor';
+import { type SyncResultV1, syncV1 } from './v1/sync';
+import { getUserEventLatestID } from './v2/user-events.requests';
 
 export function* drainShareEvents(share: Share, options: RootSagaOptions, nextEventID?: string): Generator {
     const { shareId } = share;

@@ -12,18 +12,13 @@ import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import { UpsellRef } from '@proton/pass/constants';
-import { useVaultCreationPolicy } from '@proton/pass/hooks/organization/useVaultCreationPolicy';
-import type { ImportPayload, ImportVault } from '@proton/pass/lib/import/types';
-import {
-    selectDefaultVault,
-    selectPassPlan,
-    selectVaultLimits,
-    selectWritableVaults,
-} from '@proton/pass/store/selectors';
-import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { omit } from '@proton/shared/lib/helpers/object';
 
+import { UpsellRef } from '../../constants';
+import { useVaultCreationPolicy } from '../../hooks/organization/useVaultCreationPolicy';
+import type { ImportPayload, ImportVault } from '../../lib/import/types';
+import { selectDefaultVault, selectPassPlan, selectVaultLimits, selectWritableVaults } from '../../store/selectors';
+import { UserPassPlan } from '../../types/api/plan';
 import { UpgradeButton } from '../Upsell/UpgradeButton';
 import { ImportVaultPickerOption } from './ImportVaultsPickerOption';
 

@@ -1,13 +1,8 @@
 import { call, put, select } from 'redux-saga/effects';
 
-import { PassCrypto } from '@proton/pass/lib/crypto';
-import { parseItemRevision } from '@proton/pass/lib/items/item.parser';
-import { requestItemsForShareId } from '@proton/pass/lib/items/item.requests';
-import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
-import { hasShareChanged } from '@proton/pass/lib/shares/share.predicates';
-import { requestShare } from '@proton/pass/lib/shares/share.requests';
-import { discardDrafts } from '@proton/pass/lib/sync/common/drafts';
-import type { EventProcessor } from '@proton/pass/lib/sync/types';
+import { toMap } from '@proton/shared/lib/helpers/object';
+import noop from '@proton/utils/noop';
+
 import {
     itemsDeleteEvent,
     itemsUpdated,
@@ -17,18 +12,24 @@ import {
     shareEventUpdate,
     sharesEventNew,
     sharesEventSync,
-} from '@proton/pass/store/actions';
-import type { ItemsByShareId, ShareItem, SharesState } from '@proton/pass/store/reducers';
-import { refreshUserData } from '@proton/pass/store/sagas/events/core/channel.core';
-import { selectShare } from '@proton/pass/store/selectors';
-import type { RootSagaOptions } from '@proton/pass/store/types';
-import type { ItemRevision, Maybe, PassEventListResponse, Share, ShareGetResponse, ShareId } from '@proton/pass/types';
-import { truthy } from '@proton/pass/utils/fp/predicates';
-import { diadic } from '@proton/pass/utils/fp/variadics';
-import { logId, logger } from '@proton/pass/utils/logger';
-import { merge } from '@proton/pass/utils/object/merge';
-import { toMap } from '@proton/shared/lib/helpers/object';
-import noop from '@proton/utils/noop';
+} from '../../../store/actions';
+import type { ItemsByShareId, ShareItem, SharesState } from '../../../store/reducers';
+import { refreshUserData } from '../../../store/sagas/events/core/channel.core';
+import { selectShare } from '../../../store/selectors';
+import type { RootSagaOptions } from '../../../store/types';
+import type { ItemRevision, Maybe, PassEventListResponse, Share, ShareGetResponse, ShareId } from '../../../types';
+import { truthy } from '../../../utils/fp/predicates';
+import { diadic } from '../../../utils/fp/variadics';
+import { logId, logger } from '../../../utils/logger';
+import { merge } from '../../../utils/object/merge';
+import { PassCrypto } from '../../crypto';
+import { parseItemRevision } from '../../items/item.parser';
+import { requestItemsForShareId } from '../../items/item.requests';
+import { parseShareResponse } from '../../shares/share.parser';
+import { hasShareChanged } from '../../shares/share.predicates';
+import { requestShare } from '../../shares/share.requests';
+import { discardDrafts } from '../common/drafts';
+import type { EventProcessor } from '../types';
 
 export type SharePollingEvent = { Events: PassEventListResponse };
 
