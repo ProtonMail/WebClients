@@ -1,4 +1,4 @@
-import type { CountryOption } from '@proton/components/components/country/helpers';
+import type { CountryOption } from './helpers';
 import {
     PRESELECTED_COUNTRY_OPTION_SUFFIX,
     divideSortedCountries,
@@ -6,7 +6,7 @@ import {
     getCleanCountryCode,
     groupCountriesByStartingLetter,
     optionToPreselectedOption,
-} from '@proton/components/components/country/helpers';
+} from './helpers';
 
 const countryOptions: CountryOption[] = [
     { countryName: 'France', countryCode: 'fr' },

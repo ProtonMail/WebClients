@@ -10,12 +10,12 @@ jest.mock('@proton/account/organization/hooks', () => ({
     useOrganization: jest.fn(),
 }));
 
-jest.mock('@proton/components/containers/organization/accessControl/useAllowedProducts', () => ({
+jest.mock('../../../../containers/organization/accessControl/useAllowedProducts', () => ({
     __esModule: true,
     default: jest.fn(),
 }));
 
-jest.mock('@proton/components/hooks/useConfig', () => ({
+jest.mock('../../../../hooks/useConfig', () => ({
     __esModule: true,
     default: jest.fn(),
 }));
@@ -37,9 +37,9 @@ describe('useVPNDrawer', () => {
 
     beforeAll(() => {
         mockUseOrganization = require('@proton/account/organization/hooks').useOrganization as jest.Mock;
-        mockUseAllowedProducts = require('@proton/components/containers/organization/accessControl/useAllowedProducts')
+        mockUseAllowedProducts = require('../../../../containers/organization/accessControl/useAllowedProducts')
             .default as jest.Mock;
-        mockUseConfig = require('@proton/components/hooks/useConfig').default as jest.Mock;
+        mockUseConfig = require('../../../../hooks/useConfig').default as jest.Mock;
         mockUseFlag = require('@proton/unleash/useFlag').useFlag as jest.Mock;
         mockGetIsB2BAudienceFromPlan = require('@proton/payments/core/plan/helpers')
             .getIsB2BAudienceFromPlan as jest.Mock;

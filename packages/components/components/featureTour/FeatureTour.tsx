@@ -2,14 +2,14 @@ import { Suspense, lazy, useEffect } from 'react';
 
 import { type FeatureTourTelemetryFeature, featureTourActions, selectFeatureTour } from '@proton/account/featuresTour';
 import { remindMeLaterAboutFeatureTourAction } from '@proton/account/featuresTour/actions';
-import Modal from '@proton/components/components/modalTwo/Modal';
-import { usePostSubscriptionTourTelemetry } from '@proton/components/hooks/mail/usePostSubscriptionTourTelemetry';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import { useDispatch, useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { TelemetryPostSubscriptionTourEvents } from '@proton/shared/lib/api/telemetry';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import { usePostSubscriptionTourTelemetry } from '../../hooks/mail/usePostSubscriptionTourTelemetry';
+import Modal from '../modalTwo/Modal';
 import { useModalStateObject } from '../modalTwo/useModalState';
 import FeatureTourLoader from './FeatureTourLoader';
 

@@ -1,9 +1,10 @@
 import { Suspense, lazy } from 'react';
 
-import type { SelectedDrawerOption } from '@proton/components/components/drawer/views/DrawerView';
-import DrawerView from '@proton/components/components/drawer/views/DrawerView';
-import Loader from '@proton/components/components/loader/Loader';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
+
+import Loader from '../../../loader/Loader';
+import type { SelectedDrawerOption } from '../DrawerView';
+import DrawerView from '../DrawerView';
 
 import './DrawerVPNView.scss';
 

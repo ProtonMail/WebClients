@@ -1,9 +1,10 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { getBreachIcon } from '@proton/components/containers/credentialLeak/helpers';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import clsx from '@proton/utils/clsx';
+
+import { getBreachIcon } from '../../../../../containers/credentialLeak/helpers';
 
 import './BreachCard.scss';
 

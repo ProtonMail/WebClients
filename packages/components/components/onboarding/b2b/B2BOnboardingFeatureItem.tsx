@@ -1,7 +1,8 @@
 import { Href } from '@proton/atoms/Href/Href';
-import type { B2BOnboardingFeature } from '@proton/components/components/onboarding/b2b/interface';
 import { IcArrowOutSquare } from '@proton/icons/icons/IcArrowOutSquare';
 import clsx from '@proton/utils/clsx';
+
+import type { B2BOnboardingFeature } from './interface';
 
 interface Props {
     feature: B2BOnboardingFeature;

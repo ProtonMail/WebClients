@@ -1,7 +1,6 @@
 import { fireEvent } from '@testing-library/react';
 
-import { renderWithProviders } from '@proton/components/containers/contacts/tests/render';
-
+import { renderWithProviders } from '../../containers/contacts/tests/render';
 import CheckListItem from './CheckListItem';
 
 const checklistItemProps = {

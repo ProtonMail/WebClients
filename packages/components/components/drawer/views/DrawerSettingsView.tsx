@@ -2,9 +2,9 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import type { SelectedDrawerOption } from '@proton/components/components/drawer/views/DrawerView';
-import DrawerView from '@proton/components/components/drawer/views/DrawerView';
-import DefaultQuickSettings from '@proton/components/components/drawer/views/quickSettings/DefaultQuickSettings';
+import type { SelectedDrawerOption } from './DrawerView';
+import DrawerView from './DrawerView';
+import DefaultQuickSettings from './quickSettings/DefaultQuickSettings';
 
 import './quickSettings/QuickSettings.scss';
 

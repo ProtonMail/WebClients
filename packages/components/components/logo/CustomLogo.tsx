@@ -1,8 +1,9 @@
 import type { CSSProperties } from 'react';
 
-import Logo from '@proton/components/components/logo/Logo';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
+
+import Logo from './Logo';
 
 import './CustomLogo.scss';
 

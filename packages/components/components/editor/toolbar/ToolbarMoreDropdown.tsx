@@ -1,8 +1,6 @@
 import { Alignment } from 'roosterjs-editor-types';
 import { c } from 'ttag';
 
-import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
-import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcEraser } from '@proton/icons/icons/IcEraser';
 import { IcFileImage } from '@proton/icons/icons/IcFileImage';
@@ -17,6 +15,8 @@ import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal
 import { COMPOSER_TOOLBAR_ICON_SIZE } from '@proton/shared/lib/constants';
 import { DIRECTION } from '@proton/shared/lib/mail/mailSettings';
 
+import DropdownMenu from '../../dropdown/DropdownMenu';
+import DropdownMenuButton from '../../dropdown/DropdownMenuButton';
 import type { ToolbarConfig } from '../helpers/getToolbarConfig';
 import type { EditorMetadata } from '../interface';
 import ToolbarDropdown from './ToolbarDropdown';

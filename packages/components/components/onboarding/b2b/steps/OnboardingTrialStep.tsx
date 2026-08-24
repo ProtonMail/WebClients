@@ -5,17 +5,18 @@ import { c } from 'ttag';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import Time from '@proton/components/components/time/Time';
-import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { getPlanTitle } from '@proton/payments/core/subscription/helpers';
 import { useTrialInfo } from '@proton/payments/ui/hooks/useTrialInfo';
 import chronometerSvg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-chronometer.svg';
 import helpSvg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-help.svg';
 import hourglassSvg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-hourglass.svg';
 import clsx from '@proton/utils/clsx';
+
+import useActiveBreakpoint from '../../../../hooks/useActiveBreakpoint';
+import ModalTwoContent from '../../../modalTwo/ModalContent';
+import ModalTwoFooter from '../../../modalTwo/ModalFooter';
+import ModalTwoHeader from '../../../modalTwo/ModalHeader';
+import Time from '../../../time/Time';
 
 interface Props {
     onNext: () => void;

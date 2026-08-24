@@ -1,15 +1,15 @@
 import { isArray } from 'card-validator/dist/lib/is-array';
 import { c } from 'ttag';
 
-import { getStorageFeature } from '@proton/components/containers/payments/features/drive';
-import type { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
-import { getNAddressesFeature } from '@proton/components/containers/payments/features/mail';
-import { getScribeWritingAssistantText } from '@proton/components/containers/payments/subscription/assistant/helpers';
 import { PLANS } from '@proton/payments/core/constants';
 import type { Plan } from '@proton/payments/core/plan/interface';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import { BRAND_NAME, CALENDAR_APP_NAME, DRIVE_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
+import { getStorageFeature } from '../../containers/payments/features/drive';
+import type { PlanCardFeatureDefinition } from '../../containers/payments/features/interface';
+import { getNAddressesFeature } from '../../containers/payments/features/mail';
+import { getScribeWritingAssistantText } from '../../containers/payments/subscription/assistant/helpers';
 import type { UpsellFeature, UpsellFeatureGetter } from './interface';
 
 export type UpsellFeatureName =

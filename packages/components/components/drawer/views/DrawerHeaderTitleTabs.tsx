@@ -1,5 +1,6 @@
-import type { SelectedDrawerOption } from '@proton/components/components/drawer/views/DrawerView';
 import clsx from '@proton/utils/clsx';
+
+import type { SelectedDrawerOption } from './DrawerView';
 
 import './DrawerHeaderTitleTabs.scss';
 

@@ -3,11 +3,11 @@ import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import Price from '@proton/components/components/price/Price';
-import { useAutomaticCurrency } from '@proton/components/payments/client-extensions';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import clsx from '@proton/utils/clsx';
 
+import { useAutomaticCurrency } from '../../../../../../payments/client-extensions/index';
+import Price from '../../../../../price/Price';
 import type { PriceData } from '../../helpers/interface';
 import { getSubscriptionAge } from '../../helpers/paidUserNudgeHelper';
 import { getWindowEndDate } from '../../helpers/paidUserNudgeHelper';

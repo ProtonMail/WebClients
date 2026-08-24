@@ -1,9 +1,9 @@
 import { Button } from '@proton/atoms/Button/Button';
-import { getNormalizedPlanTitleToPlus } from '@proton/components/containers/payments/subscription/plusToPlusHelper';
 import { PLANS } from '@proton/payments/core/constants';
 import { getPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
 import clsx from '@proton/utils/clsx';
 
+import { getNormalizedPlanTitleToPlus } from '../../../../../containers/payments/subscription/plusToPlusHelper';
 import type { SUPPORTED_PRODUCTS } from '../interface';
 
 interface Props {

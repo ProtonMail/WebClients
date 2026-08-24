@@ -1,15 +1,16 @@
 import { type ComponentProps, useRef } from 'react';
 
-import { PasswordPolicySpotlight } from '@proton/components/components/passwordPolicy/index';
-import type { PasswordPolicyValidationHookResult } from '@proton/components/components/passwordPolicy/usePasswordPolicyValidation';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
-import type { FormErrorsHook } from '@proton/components/components/v2/useFormErrors';
 import {
     confirmPasswordValidator,
     passwordLengthValidator,
     requiredValidator,
 } from '@proton/shared/lib/helpers/formValidators';
+
+import InputFieldTwo from '../v2/field/InputField';
+import PasswordInputTwo from '../v2/input/PasswordInput';
+import type { FormErrorsHook } from '../v2/useFormErrors';
+import { PasswordPolicySpotlight } from './index';
+import type { PasswordPolicyValidationHookResult } from './usePasswordPolicyValidation';
 
 interface Props {
     loading?: boolean;

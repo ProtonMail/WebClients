@@ -3,10 +3,10 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Tabs from '@proton/components/components/tabs/Tabs';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { isMac, isWindows } from '@proton/shared/lib/helpers/browser';
 
+import Tabs from '../../../tabs/Tabs';
 import DrawerAppSection from '../shared/DrawerAppSection';
 import linuxDesktopImage from './proton-vpn-desktop-linux.png';
 import macDesktopImage from './proton-vpn-desktop-mac.png';

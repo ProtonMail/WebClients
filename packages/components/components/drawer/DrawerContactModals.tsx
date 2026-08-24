@@ -1,10 +1,10 @@
 import { useEffect, useRef } from 'react';
 
-import { useContactModals } from '@proton/components/containers/contacts/hooks/useContactModals';
 import { getIsDrawerPostMessage, postMessageToIframe } from '@proton/shared/lib/drawer/helpers';
 import type { DrawerApp } from '@proton/shared/lib/drawer/interfaces';
 import { DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
 
+import { useContactModals } from '../../containers/contacts/hooks/useContactModals';
 import useDrawer from '../../hooks/drawer/useDrawer';
 
 const DrawerContactModals = () => {

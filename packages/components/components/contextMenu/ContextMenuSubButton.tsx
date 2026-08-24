@@ -1,11 +1,12 @@
 import type { KeyboardEvent, ReactNode } from 'react';
 import { useEffect, useRef, useState } from 'react';
 
-import Dropdown from '@proton/components/components/dropdown/Dropdown';
-import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
-import Icon from '@proton/components/components/icon/Icon';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import type { IconName } from '@proton/icons/types';
+
+import Dropdown from '../dropdown/Dropdown';
+import DropdownMenuButton from '../dropdown/DropdownMenuButton';
+import Icon from '../icon/Icon';
 
 type Props = {
     name: string;

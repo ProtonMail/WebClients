@@ -4,9 +4,10 @@ import { forwardRef } from 'react';
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import type { AppLinkProps } from '@proton/components/components/link/AppLink';
-import AppLink from '@proton/components/components/link/AppLink';
 import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
+
+import type { AppLinkProps } from '../link/AppLink';
+import AppLink from '../link/AppLink';
 
 const SidebarBackButton = ({ children, ...rest }: AppLinkProps, ref: Ref<HTMLAnchorElement>) => {
     return (

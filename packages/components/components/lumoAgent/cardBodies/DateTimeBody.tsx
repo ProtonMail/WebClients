@@ -3,11 +3,11 @@ import { useEffect, useState } from 'react';
 import { getHours, getMinutes, isValid, parseISO, set } from 'date-fns';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import TimeInput from '@proton/components/components/input/TimeInput';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import DateInputTwo from '@proton/components/components/v2/input/DateInputTwo';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 
+import TimeInput from '../../input/TimeInput';
+import InputFieldTwo from '../../v2/field/InputField';
+import DateInputTwo from '../../v2/input/DateInputTwo';
 import type { CardBodyProps } from '../types';
 
 export interface DateTimeFieldSpec {

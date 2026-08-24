@@ -1,12 +1,12 @@
 import type { ReactNode } from 'react';
 
-import Loader from '@proton/components/components/loader/Loader';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import { ModalHeaderCloseButton } from '@proton/components/components/modalTwo/ModalHeader';
-import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import clsx from '@proton/utils/clsx';
 
+import Loader from '../../loader/Loader';
+import ModalTwo from '../../modalTwo/Modal';
+import ModalTwoContent from '../../modalTwo/ModalContent';
+import { ModalHeaderCloseButton } from '../../modalTwo/ModalHeader';
+import type { ModalStateProps } from '../../modalTwo/useModalState';
 import UpsellModalDescription from './components/UpsellModalDescription';
 import UpsellModalUpgradeButton from './components/UpsellModalUpgradeButton';
 import useUpsellModalConfig from './hooks/useUpsellModalConfig';

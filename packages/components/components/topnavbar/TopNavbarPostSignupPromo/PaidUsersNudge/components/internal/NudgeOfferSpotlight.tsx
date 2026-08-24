@@ -2,11 +2,11 @@ import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import Price from '@proton/components/components/price/Price';
-import { useAutomaticCurrency } from '@proton/components/payments/client-extensions';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 
+import { useAutomaticCurrency } from '../../../../../../payments/client-extensions/index';
+import Price from '../../../../../price/Price';
 import type { PriceData } from '../../helpers/interface';
 
 interface Props {

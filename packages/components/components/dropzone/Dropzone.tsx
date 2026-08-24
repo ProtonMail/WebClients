@@ -1,9 +1,9 @@
 import type { ComponentPropsWithoutRef, DragEvent as ReactDragEvent, ReactNode } from 'react';
 import { cloneElement } from 'react';
 
-import DropzoneContent from '@proton/components/components/dropzone/DropzoneContent';
-import { isDragFile } from '@proton/components/components/dropzone/helpers';
-import useDragOver from '@proton/components/hooks/useDragOver';
+import useDragOver from '../../hooks/useDragOver';
+import DropzoneContent from './DropzoneContent';
+import { isDragFile } from './helpers';
 
 import './Dropzone.scss';
 

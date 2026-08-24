@@ -1,8 +1,9 @@
 import type { ButtonProps } from '@proton/atoms/Button/Button';
 import { Button } from '@proton/atoms/Button/Button';
-import type { IconProps } from '@proton/components/components/icon/Icon';
-import Icon from '@proton/components/components/icon/Icon';
 import clsx from '@proton/utils/clsx';
+
+import type { IconProps } from '../icon/Icon';
+import Icon from '../icon/Icon';
 
 interface Props {
     title: string;
