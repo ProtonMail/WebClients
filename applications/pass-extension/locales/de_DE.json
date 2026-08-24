@@ -954,6 +954,15 @@
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
         "Deine persönlichen Daten wurden durch ein Datenleck bei einem Drittanbieterdienst bekannt."
+      ],
+      "Change these passwords immediately": [
+        "Ändern diese Passwörter umgehend"
+      ],
+      "Check if your passwords have been exposed": [
+        "Prüfe, ob deine Passwörter offengelegt wurden"
+      ],
+      "This login password appears in a data breach. Please visit the service and change the password.": [
+        "Dieses Anmeldepasswort ist von einem Datenleck betroffen. Bitte rufe den Dienst auf und ändere das Passwort."
       ]
     },
     "Email": {
@@ -2993,6 +3002,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Deine Organisation verlangt, dass du deinen Zugang zu ${ PASS_APP_NAME } absicherst."
+      ],
+      "None of your saved passwords have appeared in a known data breach.": [
+        "Keines deiner gespeicherten Passwörter ist im Zusammenhang mit einem bekannten Datenleck aufgetaucht."
       ]
     },
     "Keyboard key": {
@@ -5290,6 +5302,18 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Du bist dabei, ${ aliasCount } Alias dauerhaft zu löschen.",
         "Du bist dabei, ${ aliasCount } Aliasse dauerhaft zu löschen."
+      ],
+      "Compromised password": [
+        "Kompromittiertes Passwort"
+      ],
+      "Compromised passwords": [
+        "Kompromittierte Passwörter"
+      ],
+      "No compromised passwords": [
+        "Keine kompromittierte Passwörter"
+      ],
+      "Upgrade to check for compromised passwords": [
+        "Führe ein Upgrade durch, um nach kompromittierten Passwörtern zu suchen"
       ]
     },
     "Title_cloned_item": {
