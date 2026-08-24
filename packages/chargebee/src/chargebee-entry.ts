@@ -1,3 +1,12 @@
+import {
+    type ChargebeeCssVariable,
+    type ChargebeeCssVariables,
+    sanitizeChargebeeCssVariables,
+} from '../lib/css-variables';
+import { getApplePayCapabilities } from '../lib/getApplePayCapabilities';
+import { getCanMakePaymentsWithActiveCard } from '../lib/getCanMakePaymentsWithActiveCard';
+import { loadApplePaySdk } from '../lib/loadApplePaySdk';
+import { isCheckoutComPaymentIntent } from '../lib/payment-intent';
 import type {
     AuthorizedPaymentIntent,
     CbCardConfig,
@@ -7,14 +16,6 @@ import type {
     MessageBusResponse,
     PaymentIntent,
 } from '../lib/types';
-import {
-    type ChargebeeCssVariable,
-    type ChargebeeCssVariables,
-    sanitizeChargebeeCssVariables,
-} from '../lib/css-variables';
-import { getApplePayCapabilities } from '../lib/getApplePayCapabilities';
-import { getCanMakePaymentsWithActiveCard } from '../lib/getCanMakePaymentsWithActiveCard';
-import { loadApplePaySdk } from '../lib/loadApplePaySdk';
 import { createChargebee, getChargebeeInstance, pollUntilLoaded } from './chargebee';
 import { addCheckpoint } from './checkpoints';
 import { getConfiguration, setConfiguration } from './configuration';
@@ -606,8 +607,13 @@ async function renderSavedCard() {
         delete (paymentIntent as any).gateway_account_id;
 
         threeDSHandler.setPaymentIntent(paymentIntent);
+
+        const paymentInfo = isCheckoutComPaymentIntent(paymentIntent)
+            ? { additionalData: { paymentType: undefined } }
+            : undefined;
+
         threeDSHandler
-            .handleCardPayment(undefined, {
+            .handleCardPayment(paymentInfo, {
                 challenge: (url: string) => {
                     addCheckpoint('saved_card_3ds_challenge');
                     messageBus.send3dsRequiredForSavedCardMessage({ url }, correlationId);
