@@ -1,7 +1,7 @@
 import type { PropsWithChildren } from 'react';
 import { Component } from 'react';
 
-import type { MaybeNull } from '@proton/pass/types';
+import type { MaybeNull } from '../../types';
 
 type Props = { onError: () => void };
 type State = { hasError: boolean };

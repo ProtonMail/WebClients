@@ -1,8 +1,3 @@
-import type { AuthSession } from '@proton/pass/lib/auth/session';
-import type { ApiAuth, ApiCallFn, ApiOptions, Maybe, MaybePromise } from '@proton/pass/types';
-import { AuthMode } from '@proton/pass/types';
-import { asyncLock } from '@proton/pass/utils/fp/promises';
-import { logger } from '@proton/pass/utils/logger';
 import { setRefreshCookies as refreshTokens, setRefreshCookies } from '@proton/shared/lib/api/auth';
 import { InactiveSessionError } from '@proton/shared/lib/api/helpers/errors';
 import { retryHandler } from '@proton/shared/lib/api/helpers/retryHandler';
@@ -13,6 +8,12 @@ import { withAuthHeaders, withUIDHeaders } from '@proton/shared/lib/fetch/header
 import { getDateHeader } from '@proton/shared/lib/fetch/helpers';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
+
+import type { ApiAuth, ApiCallFn, ApiOptions, Maybe, MaybePromise } from '../../types';
+import { AuthMode } from '../../types';
+import { asyncLock } from '../../utils/fp/promises';
+import { logger } from '../../utils/logger';
+import type { AuthSession } from '../auth/session';
 
 type RefreshCookieResponse = { LocalID?: number; RefreshCounter: number; RefreshTime: number; UID: string };
 

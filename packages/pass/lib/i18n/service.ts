@@ -1,7 +1,3 @@
-import type { Maybe, MaybePromise } from '@proton/pass/types';
-import { logger } from '@proton/pass/utils/logger';
-import type { Subscriber } from '@proton/pass/utils/pubsub/factory';
-import { createPubSub } from '@proton/pass/utils/pubsub/factory';
 import { DEFAULT_LOCALE } from '@proton/shared/lib/constants';
 import { localeCode } from '@proton/shared/lib/i18n';
 import dateFnLocales from '@proton/shared/lib/i18n/dateFnLocales';
@@ -10,6 +6,11 @@ import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
 import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
 import type { DateFormatOptions, TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import noop from '@proton/utils/noop';
+
+import type { Maybe, MaybePromise } from '../../types';
+import { logger } from '../../utils/logger';
+import type { Subscriber } from '../../utils/pubsub/factory';
+import { createPubSub } from '../../utils/pubsub/factory';
 
 type I18nServiceOptions = {
     locales: TtagLocaleMap;

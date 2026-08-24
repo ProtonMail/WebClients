@@ -1,6 +1,5 @@
-import type { Maybe, MaybeNull } from '@proton/pass/types';
-import { uniqueId } from '@proton/pass/utils/string/unique-id';
-
+import type { Maybe, MaybeNull } from '../../types';
+import { uniqueId } from '../../utils/string/unique-id';
 import { PassErrorCode } from './errors';
 
 export type AbortableFetchHandler = (event: FetchEvent, signal: AbortSignal) => Maybe<Promise<Response>>;

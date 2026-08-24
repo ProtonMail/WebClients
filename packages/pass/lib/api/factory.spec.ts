@@ -1,9 +1,9 @@
-import { type ApiAuth, AuthMode, type Maybe } from '@proton/pass/types';
 import { InactiveSessionError } from '@proton/shared/lib/api/helpers/errors';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { ApiError } from '@proton/shared/lib/fetch/ApiError';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 
+import { type ApiAuth, AuthMode, type Maybe } from '../../types';
 import { LockedSessionError, PassErrorCode } from './errors';
 import { createApi } from './factory';
 import * as refresh from './refresh';

@@ -1,7 +1,8 @@
-import type { PassPlanResponse } from '@proton/pass/types';
-import { PlanType } from '@proton/pass/types';
-import type { B2BEvent, B2BEventName } from '@proton/pass/types/data/b2b';
 import { PLANS } from '@proton/payments/core/constants';
+
+import type { PassPlanResponse } from '../../types';
+import { PlanType } from '../../types';
+import type { B2BEvent, B2BEventName } from '../../types/data/b2b';
 
 export const isB2BEvent =
     <T extends B2BEventName>(name: T) =>

@@ -1,7 +1,6 @@
-import { DEFAULT_MEMORABLE_PW_OPTIONS, DEFAULT_RANDOM_PW_OPTIONS } from '@proton/pass/lib/password/constants';
-import type { GeneratePasswordConfig } from '@proton/pass/lib/password/types';
-import type { OrganizationUpdatePasswordPolicyInput } from '@proton/pass/types';
-
+import { DEFAULT_MEMORABLE_PW_OPTIONS, DEFAULT_RANDOM_PW_OPTIONS } from '../lib/password/constants';
+import type { GeneratePasswordConfig } from '../lib/password/types';
+import type { OrganizationUpdatePasswordPolicyInput } from '../types';
 import { getPasswordConfig } from './usePasswordGenerator';
 
 const DEFAULT_POLICY: OrganizationUpdatePasswordPolicyInput = {

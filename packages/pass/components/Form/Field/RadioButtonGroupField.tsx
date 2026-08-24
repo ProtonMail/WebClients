@@ -8,10 +8,10 @@ import type { InputFieldProps } from '@proton/components/components/v2/field/Inp
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import type { IconName } from '@proton/icons/types';
-import type { MaybeArray } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
 
 import { useFieldControl } from '../../../hooks/useFieldControl';
+import type { MaybeArray } from '../../../types';
 import type { RadioValue } from './RadioGroupField';
 
 import './RadioButtonGroupField.scss';

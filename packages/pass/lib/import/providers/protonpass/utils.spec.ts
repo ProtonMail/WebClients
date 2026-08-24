@@ -1,7 +1,7 @@
 import fs from 'fs';
 
-import { ExportFormat } from '@proton/pass/lib/export/types';
-import { getProtonPassImportPGPType } from '@proton/pass/lib/import/providers/protonpass/utils';
+import { ExportFormat } from '../../../export/types';
+import { getProtonPassImportPGPType } from './utils';
 
 describe('Proton Pass import utils', () => {
     describe('`getProtonPassImportPGPType`', () => {

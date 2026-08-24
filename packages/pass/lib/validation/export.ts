@@ -1,8 +1,8 @@
 import type { FormikErrors } from 'formik';
 import { c } from 'ttag';
 
-import { ExportFormat, type ExportRequestOptions } from '@proton/pass/lib/export/types';
-import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
+import { isEmptyString } from '../../utils/string/is-empty-string';
+import { ExportFormat, type ExportRequestOptions } from '../export/types';
 
 export const validateExportForm = (values: ExportRequestOptions): FormikErrors<ExportRequestOptions> =>
     values.format === ExportFormat.PGP && isEmptyString(values.passphrase)

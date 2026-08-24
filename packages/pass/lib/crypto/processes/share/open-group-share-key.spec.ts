@@ -1,6 +1,5 @@
-import { openGroupShareKey } from '@proton/pass/lib/crypto/processes/share/open-group-share-key';
-import { createVault } from '@proton/pass/lib/crypto/processes/vault/create-vault';
-import { decryptData } from '@proton/pass/lib/crypto/utils/crypto-helpers';
+import { PassEncryptionTag } from '../../../../types';
+import { decryptData } from '../../utils/crypto-helpers';
 import {
     createRandomGroupKey,
     createRandomKey,
@@ -8,8 +7,9 @@ import {
     randomContents,
     releaseCryptoProxy,
     setupCryptoProxyForTesting,
-} from '@proton/pass/lib/crypto/utils/testing';
-import { PassEncryptionTag } from '@proton/pass/types';
+} from '../../utils/testing';
+import { createVault } from '../vault/create-vault';
+import { openGroupShareKey } from './open-group-share-key';
 
 const createGroupVault = async (content: Uint8Array<ArrayBuffer>) => {
     const addressKey = await createRandomKey();

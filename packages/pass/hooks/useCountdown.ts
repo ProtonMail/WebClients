@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 
-import type { Maybe } from '@proton/pass/types';
+import type { Maybe } from '../types';
 
 export const useCountdown = (initial?: number) => {
     const interval = useRef<Maybe<NodeJS.Timeout>>();

@@ -1,5 +1,5 @@
-import type { ShareContent, ShareType } from '@proton/pass/types';
-import { Vault } from '@proton/pass/types';
+import type { ShareContent, ShareType } from '../../types';
+import { Vault } from '../../types';
 
 export const encodeVaultContent = (content: ShareContent<ShareType.Vault>): Uint8Array<ArrayBuffer> => {
     const creation = Vault.create({

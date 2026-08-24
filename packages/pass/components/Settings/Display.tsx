@@ -4,10 +4,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import Checkbox from '@proton/components/components/input/Checkbox';
-import { settingsEditIntent } from '@proton/pass/store/actions';
-import { selectCanLoadDomainImages, selectShowUsernameField } from '@proton/pass/store/selectors';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 
+import { settingsEditIntent } from '../../store/actions';
+import { selectCanLoadDomainImages, selectShowUsernameField } from '../../store/selectors';
 import { SettingsPanel } from './SettingsPanel';
 
 export const Display: FC = () => {

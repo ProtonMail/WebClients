@@ -1,7 +1,4 @@
-import { getItemKey, getItemRevisionKey } from '@proton/pass/lib/items/item.utils';
-import { withAbortPayload } from '@proton/pass/store/actions/creators/utils';
-import { dataRequest } from '@proton/pass/store/request/configs';
-import { requestActionsFactory } from '@proton/pass/store/request/flow';
+import { getItemKey, getItemRevisionKey } from '../../../lib/items/item.utils';
 import type {
     FileChunkUploadDTO,
     FileDownloadDTO,
@@ -17,9 +14,12 @@ import type {
     ItemLinkFilesIntent,
     ItemLinkFilesSuccess,
     WithTabId,
-} from '@proton/pass/types';
-import { prop } from '@proton/pass/utils/fp/lens';
-import { UNIX_MINUTE } from '@proton/pass/utils/time/constants';
+} from '../../../types';
+import { prop } from '../../../utils/fp/lens';
+import { UNIX_MINUTE } from '../../../utils/time/constants';
+import { dataRequest } from '../../request/configs';
+import { requestActionsFactory } from '../../request/flow';
+import { withAbortPayload } from './utils';
 
 export const fileUploadInitiate = requestActionsFactory<FileInitiateUploadDTO, FileUploadInitiateDTO>('file::upload::initiate')({
     key: prop('uploadID'),

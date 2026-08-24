@@ -1,18 +1,18 @@
 import type { FC } from 'react';
 import { Route, type RouteChildrenProps, Switch } from 'react-router-dom';
 
-import { Content } from '@proton/pass/components/Layout/Section/Content';
-import { SubSidebar } from '@proton/pass/components/Layout/Section/SubSidebar';
-import { Missing2FAs } from '@proton/pass/components/Monitor/2FA/Missing2FAs';
-import { DarkWebMonitoring } from '@proton/pass/components/Monitor/Breach/DarkWebMonitoring';
-import { ExcludedItems } from '@proton/pass/components/Monitor/Item/ExcludedItems';
-import { MonitorProvider } from '@proton/pass/components/Monitor/MonitorProvider';
-import { MonitorSummary } from '@proton/pass/components/Monitor/MonitorSummary';
-import { CompromisedPasswords } from '@proton/pass/components/Monitor/Password/CompromisedPasswords';
-import { DuplicatePasswords } from '@proton/pass/components/Monitor/Password/DuplicatePasswords';
-import { WeakPasswords } from '@proton/pass/components/Monitor/Password/WeakPasswords';
-import { ItemSwitch } from '@proton/pass/components/Navigation/ItemSwitch';
-import { removeLocalPath } from '@proton/pass/components/Navigation/routing';
+import { Content } from '../Layout/Section/Content';
+import { SubSidebar } from '../Layout/Section/SubSidebar';
+import { ItemSwitch } from '../Navigation/ItemSwitch';
+import { removeLocalPath } from '../Navigation/routing';
+import { Missing2FAs } from './2FA/Missing2FAs';
+import { DarkWebMonitoring } from './Breach/DarkWebMonitoring';
+import { ExcludedItems } from './Item/ExcludedItems';
+import { MonitorProvider } from './MonitorProvider';
+import { MonitorSummary } from './MonitorSummary';
+import { CompromisedPasswords } from './Password/CompromisedPasswords';
+import { DuplicatePasswords } from './Password/DuplicatePasswords';
+import { WeakPasswords } from './Password/WeakPasswords';
 
 export const Monitor: FC<RouteChildrenProps> = ({ match }) => (
     <MonitorProvider>

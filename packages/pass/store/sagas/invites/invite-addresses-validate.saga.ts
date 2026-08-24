@@ -1,12 +1,9 @@
 import { put, takeEvery } from 'redux-saga/effects';
 
-import { checkInviteAddresses } from '@proton/pass/lib/invites/invite.requests';
-import {
-    inviteAddressesValidateFailure,
-    inviteAddressesValidateIntent,
-    inviteAddressesValidateSuccess,
-} from '@proton/pass/store/actions';
 import { wait } from '@proton/shared/lib/helpers/promise';
+
+import { checkInviteAddresses } from '../../../lib/invites/invite.requests';
+import { inviteAddressesValidateFailure, inviteAddressesValidateIntent, inviteAddressesValidateSuccess } from '../../actions';
 
 function* validateInviteAddressesWorker({
     payload: { shareId, emails },

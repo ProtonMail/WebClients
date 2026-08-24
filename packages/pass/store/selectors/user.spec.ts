@@ -1,7 +1,6 @@
-import type { FeatureFlagVariants } from '@proton/pass/store/reducers';
-import type { State } from '@proton/pass/store/types';
-import { PassFeature } from '@proton/pass/types/api/features';
-
+import { PassFeature } from '../../types/api/features';
+import type { FeatureFlagVariants } from '../reducers';
+import type { State } from '../types';
 import { selectAutofillModelExperimentGroup } from './user';
 
 const mockState = (featureVariants: FeatureFlagVariants | null): State => ({ user: { featureVariants } }) as State;

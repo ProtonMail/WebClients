@@ -1,11 +1,11 @@
 import type { WasmGeneratePasskeyResponse } from '@protontech/pass-rust-core/worker';
 
-import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
-import type { Passkey } from '@proton/pass/types/protobuf/item-v1';
-import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { getClientID } from '@proton/shared/lib/apps/helper';
 import { getBrowser, getDevice } from '@proton/shared/lib/helpers/browser';
 
+import type { PassConfig } from '../../hooks/usePassConfig';
+import type { Passkey } from '../../types/protobuf/item-v1';
+import { getEpoch } from '../../utils/time/epoch';
 import type { PasskeyCreateBridgePayload, SanitizedPasskey } from './types';
 
 export const parsePasskey = (passkey: SanitizedPasskey): Passkey => ({

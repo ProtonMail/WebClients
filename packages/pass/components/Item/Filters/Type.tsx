@@ -7,12 +7,13 @@ import type { DropdownProps } from '@proton/components/components/dropdown/Dropd
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
-import { FilterClearButton } from '@proton/pass/components/Item/Filters/FilterClearButton';
-import { CountLabel } from '@proton/pass/components/Layout/Dropdown/CountLabel';
-import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
-import { useItemFilters } from '@proton/pass/hooks/items/useItemFilters';
-import type { ItemRevision, ItemTypeFilter } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
+
+import { useItemFilters } from '../../../hooks/items/useItemFilters';
+import type { ItemRevision, ItemTypeFilter } from '../../../types';
+import { CountLabel } from '../../Layout/Dropdown/CountLabel';
+import { DropdownMenuButton } from '../../Layout/Dropdown/DropdownMenuButton';
+import { FilterClearButton } from './FilterClearButton';
 
 import './FilterClearButton.scss';
 

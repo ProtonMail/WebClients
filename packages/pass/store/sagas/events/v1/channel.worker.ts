@@ -2,20 +2,20 @@ import type { Action } from 'redux';
 import type { Task } from 'redux-saga';
 import { call, cancel, cancelled, fork, put, select, take, takeLeading } from 'redux-saga/effects';
 
-import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
-import type { EventManagerEvent } from '@proton/pass/lib/events/manager';
-import { channelAcknowledge, clientInit } from '@proton/pass/store/actions';
-import { forcePollV1 } from '@proton/pass/store/actions/creators/polling';
-import { channelRequest } from '@proton/pass/store/actions/requests';
-import type { RequestEntry } from '@proton/pass/store/request/types';
-import { selectRequest } from '@proton/pass/store/selectors';
-import type { RootSagaOptions } from '@proton/pass/store/types';
-import type { Maybe } from '@proton/pass/types';
-import { logger } from '@proton/pass/utils/logger';
-import { epochToMs, msToEpoch } from '@proton/pass/utils/time/epoch';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
 
+import { ACTIVE_POLLING_TIMEOUT } from '../../../../lib/events/constants';
+import type { EventManagerEvent } from '../../../../lib/events/manager';
+import type { Maybe } from '../../../../types';
+import { logger } from '../../../../utils/logger';
+import { epochToMs, msToEpoch } from '../../../../utils/time/epoch';
+import { channelAcknowledge, clientInit } from '../../../actions';
+import { forcePollV1 } from '../../../actions/creators/polling';
+import { channelRequest } from '../../../actions/requests';
+import type { RequestEntry } from '../../../request/types';
+import { selectRequest } from '../../../selectors';
+import type { RootSagaOptions } from '../../../types';
 import type { EventChannel } from './types';
 
 /** Processes events from an event channel with error handling.

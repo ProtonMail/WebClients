@@ -2,8 +2,10 @@ import groupBy from 'lodash/groupBy';
 import keyBy from 'lodash/keyBy';
 import { c } from 'ttag';
 
-import { ImportProviderError, ImportReaderError } from '@proton/pass/lib/import/helpers/error';
-import { attachFilesToItem } from '@proton/pass/lib/import/helpers/files';
+import type { ItemImportIntent, Maybe } from '../../../../types';
+import { logger } from '../../../../utils/logger';
+import { ImportProviderError, ImportReaderError } from '../../helpers/error';
+import { attachFilesToItem } from '../../helpers/files';
 import {
     getEmailOrUsername,
     getImportedVaultName,
@@ -12,11 +14,8 @@ import {
     importLoginItem,
     importNoteItem,
     importSshKeyItem,
-} from '@proton/pass/lib/import/helpers/transformers';
-import type { ImportReaderResult, ImportVault } from '@proton/pass/lib/import/types';
-import type { ItemImportIntent, Maybe } from '@proton/pass/types';
-import { logger } from '@proton/pass/utils/logger';
-
+} from '../../helpers/transformers';
+import type { ImportReaderResult, ImportVault } from '../../types';
 import { type BitwardenData, BitwardenType } from './bitwarden.types';
 import {
     extractBitwardenExtraFields,

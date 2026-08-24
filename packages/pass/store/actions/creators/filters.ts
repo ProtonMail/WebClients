@@ -1,8 +1,8 @@
 import { createAction } from '@reduxjs/toolkit';
 
-import { withCache } from '@proton/pass/store/actions/enhancers/cache';
-import type { TabState } from '@proton/pass/store/reducers';
-import type { ItemFilters, MaybeNull, TabId } from '@proton/pass/types';
+import type { ItemFilters, MaybeNull, TabId } from '../../../types';
+import type { TabState } from '../../reducers';
+import { withCache } from '../enhancers/cache';
 
 export const saveTabState = createAction(
     'filters::tab-state::save',

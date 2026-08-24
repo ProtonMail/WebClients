@@ -5,13 +5,13 @@ import type { FormikErrors } from 'formik';
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
-import type { ConfirmationModalProps } from '@proton/pass/components/Confirmation/ConfirmationModal';
-import { ConfirmationModal } from '@proton/pass/components/Confirmation/ConfirmationModal';
-import { Field } from '@proton/pass/components/Form/Field/Field';
-import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
-import { TextField } from '@proton/pass/components/Form/Field/TextField';
-import { vaultDeleteIntent } from '@proton/pass/store/actions';
-import type { VaultShareItem } from '@proton/pass/store/reducers';
+import { vaultDeleteIntent } from '../../store/actions';
+import type { VaultShareItem } from '../../store/reducers';
+import type { ConfirmationModalProps } from '../Confirmation/ConfirmationModal';
+import { ConfirmationModal } from '../Confirmation/ConfirmationModal';
+import { Field } from '../Form/Field/Field';
+import { FieldsetCluster } from '../Form/Field/Layout/FieldsetCluster';
+import { TextField } from '../Form/Field/TextField';
 
 type ConfirmDeleteValues = { name: string };
 type Props = {

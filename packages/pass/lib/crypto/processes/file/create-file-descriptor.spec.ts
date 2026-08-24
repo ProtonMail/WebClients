@@ -1,7 +1,6 @@
-import { decryptData, generateKey, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
-import { PassCryptoError, PassCryptoFileError } from '@proton/pass/lib/crypto/utils/errors';
-import { PassEncryptionTag } from '@proton/pass/types';
-
+import { PassEncryptionTag } from '../../../../types';
+import { decryptData, generateKey, importSymmetricKey } from '../../utils/crypto-helpers';
+import { PassCryptoError, PassCryptoFileError } from '../../utils/errors';
 import { createFileDescriptor, getFileMetadataEncryptionTag } from './create-file-descriptor';
 
 describe('`getFileMetadataEncryptionTag`', () => {

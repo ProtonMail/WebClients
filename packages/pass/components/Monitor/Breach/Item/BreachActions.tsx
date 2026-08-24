@@ -5,16 +5,17 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import Alert from '@proton/components/components/alert/Alert';
-import { ConfirmationModal } from '@proton/pass/components/Confirmation/ConfirmationModal';
-import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
-import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
-import { useMonitor } from '@proton/pass/components/Monitor/MonitorContext';
-import { useConfirm } from '@proton/pass/hooks/useConfirm';
-import { useRequest } from '@proton/pass/hooks/useRequest';
-import { getAddressId } from '@proton/pass/lib/monitor/monitor.utils';
-import { AddressType, type MonitorAddress } from '@proton/pass/lib/monitor/types';
-import { deleteCustomAddress, resolveAddressMonitor, toggleAddressMonitor } from '@proton/pass/store/actions';
-import { selectMonitorSettingByType, selectRequestInFlight } from '@proton/pass/store/selectors';
+
+import { useConfirm } from '../../../../hooks/useConfirm';
+import { useRequest } from '../../../../hooks/useRequest';
+import { getAddressId } from '../../../../lib/monitor/monitor.utils';
+import { AddressType, type MonitorAddress } from '../../../../lib/monitor/types';
+import { deleteCustomAddress, resolveAddressMonitor, toggleAddressMonitor } from '../../../../store/actions';
+import { selectMonitorSettingByType, selectRequestInFlight } from '../../../../store/selectors';
+import { ConfirmationModal } from '../../../Confirmation/ConfirmationModal';
+import { DropdownMenuButton } from '../../../Layout/Dropdown/DropdownMenuButton';
+import { QuickActionsDropdown } from '../../../Layout/Dropdown/QuickActionsDropdown';
+import { useMonitor } from '../../MonitorContext';
 
 type Props = { resolved: boolean; disabled: boolean } & MonitorAddress;
 

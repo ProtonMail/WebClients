@@ -1,16 +1,16 @@
 import { put, select } from 'redux-saga/effects';
 
-import { parseItemRevision } from '@proton/pass/lib/items/item.parser';
-import { updateItemFlags } from '@proton/pass/lib/items/item.requests';
-import { toggleCustomEmail, toggleProtonEmail } from '@proton/pass/lib/monitor/monitor.request';
-import { intoAliasMonitorAddress, intoCustomMonitorAddress } from '@proton/pass/lib/monitor/monitor.utils';
-import { AddressType, type MonitorAddress } from '@proton/pass/lib/monitor/types';
-import { getBreaches, itemsUpdated, toggleAddressMonitor } from '@proton/pass/store/actions';
-import { withRevalidate } from '@proton/pass/store/request/enhancers';
-import { createRequestSaga } from '@proton/pass/store/request/sagas';
-import { selectProtonBreaches } from '@proton/pass/store/selectors';
-import type { BreachCustomEmailGetResponse, ItemRevision, ItemRevisionContentsResponse } from '@proton/pass/types';
-import { partialMerge } from '@proton/pass/utils/object/merge';
+import { parseItemRevision } from '../../../lib/items/item.parser';
+import { updateItemFlags } from '../../../lib/items/item.requests';
+import { toggleCustomEmail, toggleProtonEmail } from '../../../lib/monitor/monitor.request';
+import { intoAliasMonitorAddress, intoCustomMonitorAddress } from '../../../lib/monitor/monitor.utils';
+import { AddressType, type MonitorAddress } from '../../../lib/monitor/types';
+import type { BreachCustomEmailGetResponse, ItemRevision, ItemRevisionContentsResponse } from '../../../types';
+import { partialMerge } from '../../../utils/object/merge';
+import { getBreaches, itemsUpdated, toggleAddressMonitor } from '../../actions';
+import { withRevalidate } from '../../request/enhancers';
+import { createRequestSaga } from '../../request/sagas';
+import { selectProtonBreaches } from '../../selectors';
 
 export default createRequestSaga({
     actions: toggleAddressMonitor,

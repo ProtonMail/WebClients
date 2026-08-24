@@ -3,8 +3,7 @@ import { type ElementType, useState } from 'react';
 import type { FactoryArg } from 'imask/esm/masked/factory';
 import { pipe } from 'imask/esm/masked/pipe';
 
-import type { ObfuscatedItemProperty } from '@proton/pass/types/data/obfuscation';
-
+import type { ObfuscatedItemProperty } from '../../../../types/data/obfuscation';
 import { ValueControl, type ValueControlProps } from './ValueControl';
 
 export type ObfuscatedValueControlProps<E extends ElementType> = Omit<

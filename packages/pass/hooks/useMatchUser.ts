@@ -1,8 +1,8 @@
 import { useSelector } from 'react-redux';
 
-import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
-import { selectPassPlan, selectUserPlan } from '@proton/pass/store/selectors';
-import { notIn } from '@proton/pass/utils/fp/predicates';
+import { isPaidPlan } from '../lib/user/user.predicates';
+import { selectPassPlan, selectUserPlan } from '../store/selectors';
+import { notIn } from '../utils/fp/predicates';
 
 type MatchUserOptions = {
     paid?: boolean;

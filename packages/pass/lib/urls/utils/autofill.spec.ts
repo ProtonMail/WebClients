@@ -1,5 +1,4 @@
-import { AutofillMode } from '@proton/pass/types/protobuf';
-
+import { AutofillMode } from '../../../types/protobuf';
 import { createNewUrlItem, fromItems, getFirstUrl } from './autofill';
 
 describe('`createNewUrlItem`', () => {

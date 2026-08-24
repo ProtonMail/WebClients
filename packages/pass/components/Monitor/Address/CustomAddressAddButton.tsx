@@ -2,8 +2,9 @@ import type { FC } from 'react';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
-import { useMonitor } from '@proton/pass/components/Monitor/MonitorContext';
-import { MAX_CUSTOM_ADDRESSES } from '@proton/pass/constants';
+
+import { MAX_CUSTOM_ADDRESSES } from '../../../constants';
+import { useMonitor } from '../MonitorContext';
 
 export const CustomAddressAddButton: FC = () => {
     const { breaches, addAddress } = useMonitor();

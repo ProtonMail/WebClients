@@ -5,10 +5,10 @@ import { c } from 'ttag';
 
 import type { CreateNotificationOptions } from '@proton/app-context/notifications/interfaces';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import type { IOtpRenderer } from '@proton/pass/components/Otp/types';
-import type { Maybe, MaybeNull, MaybePromise, OtpCode, OtpRequest } from '@proton/pass/types';
 
+import { usePassCore } from '../components/Core/PassCoreProvider';
+import type { IOtpRenderer } from '../components/Otp/types';
+import type { Maybe, MaybeNull, MaybePromise, OtpCode, OtpRequest } from '../types';
 import { useEnsureMounted } from './useEnsureMounted';
 
 export type UsePeriodOtpCodeOptions = {

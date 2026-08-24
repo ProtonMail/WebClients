@@ -1,16 +1,13 @@
 import type { FormikContextType } from 'formik';
 import { c } from 'ttag';
 
-import { Field } from '@proton/pass/components/Form/Field/Field';
-import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
-import { RadioButton, RadioButtonGroupField } from '@proton/pass/components/Form/Field/RadioButtonGroupField';
-import { TitleField } from '@proton/pass/components/Form/Field/TitleField';
-import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
-import { VAULT_COLORS, VAULT_ICONS } from '@proton/pass/components/Vault/constants';
-import type {
-    VaultColor as VaultColorEnum,
-    VaultIcon as VaultIconEnum,
-} from '@proton/pass/types/protobuf/vault-v1.static';
+import type { VaultColor as VaultColorEnum, VaultIcon as VaultIconEnum } from '../../types/protobuf/vault-v1.static';
+import { Field } from '../Form/Field/Field';
+import { FieldsetCluster } from '../Form/Field/Layout/FieldsetCluster';
+import { RadioButton, RadioButtonGroupField } from '../Form/Field/RadioButtonGroupField';
+import { TitleField } from '../Form/Field/TitleField';
+import { VaultIcon } from './VaultIcon';
+import { VAULT_COLORS, VAULT_ICONS } from './constants';
 
 import './VaultForm.scss';
 

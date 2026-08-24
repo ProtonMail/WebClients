@@ -7,10 +7,11 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Input } from '@proton/atoms/Input/Input';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcCross } from '@proton/icons/icons/IcCross';
-import { testUrl } from '@proton/pass/lib/urls/utils/autofill';
-import { autofillHelp } from '@proton/pass/lib/urls/utils/autofill.help';
-import { AutofillMode, type UrlItem } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
+
+import { testUrl } from '../../../../lib/urls/utils/autofill';
+import { autofillHelp } from '../../../../lib/urls/utils/autofill.help';
+import { AutofillMode, type UrlItem } from '../../../../types';
 
 type Props = { url: UrlItem; initialUrl?: string; regexEnabled: boolean };
 

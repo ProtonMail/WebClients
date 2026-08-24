@@ -1,20 +1,21 @@
 import { c } from 'ttag';
 
-import type { LockAdapterPassword } from '@proton/pass/lib/auth/lock/types';
-import { LockMode } from '@proton/pass/lib/auth/lock/types';
-import type { AuthService } from '@proton/pass/lib/auth/service';
-import { getInvalidPasswordString } from '@proton/pass/lib/auth/utils';
-import { generateOfflineComponents, getOfflineKeyDerivation } from '@proton/pass/lib/cache/crypto';
-import { decryptData, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
-import { PassCryptoError } from '@proton/pass/lib/crypto/utils/errors';
-import { loadCoreCryptoWorker } from '@proton/pass/lib/crypto/utils/worker';
-import { PassEncryptionTag } from '@proton/pass/types';
-import { logger } from '@proton/pass/utils/logger';
-import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
-import { zeroize } from '@proton/pass/utils/object/zero';
-import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { binaryStringToUint8Array, uint8ArrayToBinaryString } from '@proton/shared/lib/helpers/encoding';
 import noop from '@proton/utils/noop';
+
+import { PassEncryptionTag } from '../../../../types';
+import { logger } from '../../../../utils/logger';
+import { deobfuscate } from '../../../../utils/obfuscate/xor';
+import { zeroize } from '../../../../utils/object/zero';
+import { getEpoch } from '../../../../utils/time/epoch';
+import { generateOfflineComponents, getOfflineKeyDerivation } from '../../../cache/crypto';
+import { decryptData, importSymmetricKey } from '../../../crypto/utils/crypto-helpers';
+import { PassCryptoError } from '../../../crypto/utils/errors';
+import { loadCoreCryptoWorker } from '../../../crypto/utils/worker';
+import type { AuthService } from '../../service';
+import { getInvalidPasswordString } from '../../utils';
+import type { LockAdapterPassword } from '../types';
+import { LockMode } from '../types';
 
 /** Password locking involves the offline configuration. As such,
  * we can only password lock if we have a valid offline config in

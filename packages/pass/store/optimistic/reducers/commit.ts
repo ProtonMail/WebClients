@@ -1,17 +1,12 @@
 import type { Reducer } from 'redux';
 
-import { arrayReplace } from '@proton/pass/utils/array/replace';
-
+import { arrayReplace } from '../../../utils/array/replace';
 import { HistoryFlag, type OptimisticHistoryItem, type OptimisticState } from '../types';
 import { isOptimisticHistoryItem, isOptimisticHistoryItemWithId } from '../utils/assertions';
 import { splitHistoryOnFirstOptimisticItem } from '../utils/split-history';
 import { getActionFromHistoryItem } from '../utils/transformers';
 
-export const commitReducer = <T>(
-    reducer: Reducer<T>,
-    optimistic: OptimisticState<T>,
-    optimisticId: string
-): OptimisticState<T> => {
+export const commitReducer = <T>(reducer: Reducer<T>, optimistic: OptimisticState<T>, optimisticId: string): OptimisticState<T> => {
     const { history, checkpoint } = optimistic;
     const optimisticActionIndex = history.findIndex(isOptimisticHistoryItemWithId(optimisticId));
 

@@ -3,12 +3,12 @@ import { c, msgid } from 'ttag';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { Tabs } from '@proton/components/components/tabs/Tabs';
-import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
-import { CustomDomainDNS } from '@proton/pass/components/Settings/Aliases/Domains/CustomDomainDNS';
-import { DomainDetailsInfo } from '@proton/pass/components/Settings/Aliases/Domains/CustomDomainInfo';
-import { epochToRelativeDaysAgo } from '@proton/pass/utils/time/format';
 
+import { epochToRelativeDaysAgo } from '../../../../utils/time/format';
+import { PassModal } from '../../../Layout/Modal/PassModal';
 import { useAliasDomains, useCustomDomain } from './AliasDomainsContext';
+import { CustomDomainDNS } from './CustomDomainDNS';
+import { DomainDetailsInfo } from './CustomDomainInfo';
 
 type Props = {
     domainID: number;

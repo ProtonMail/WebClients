@@ -3,16 +3,17 @@ import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
 
-import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
-import { getVaultOptionInfo } from '@proton/pass/components/Menu/Vault/utils';
-import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
-import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
-import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
-import { selectAllVaults } from '@proton/pass/store/selectors';
-import { PassFeature } from '@proton/pass/types/api/features';
-import { pipe } from '@proton/pass/utils/fp/pipe';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
+
+import { useFeatureFlag } from '../../../hooks/useFeatureFlag';
+import { selectAllVaults } from '../../../store/selectors';
+import { PassFeature } from '../../../types/api/features';
+import { pipe } from '../../../utils/fp/pipe';
+import { DropdownMenuButton } from '../../Layout/Dropdown/DropdownMenuButton';
+import { useVaultActions } from '../../Vault/VaultActionsProvider';
+import { VaultIcon } from '../../Vault/VaultIcon';
+import { getVaultOptionInfo } from './utils';
 
 type Props = {
     count: number;

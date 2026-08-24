@@ -1,6 +1,6 @@
-import { generateKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { blobToUint8Array, uint8ArrayToBlob } from '@proton/shared/lib/helpers/encoding';
 
+import { generateKey } from '../../utils/crypto-helpers';
 import { createFileChunk } from './create-file-chunk';
 import { openFileChunk } from './open-file-chunk';
 

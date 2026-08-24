@@ -1,19 +1,14 @@
 import { c } from 'ttag';
 
-import { readCSV } from '@proton/pass/lib/import/helpers/csv.reader';
-import { ImportProviderError } from '@proton/pass/lib/import/helpers/error';
-import {
-    getEmailOrUsername,
-    getImportedVaultName,
-    importLoginItem,
-    importNoteItem,
-} from '@proton/pass/lib/import/helpers/transformers';
-import type { ImportReaderResult, ImportVault } from '@proton/pass/lib/import/types';
-import type { ItemImportIntent, Maybe } from '@proton/pass/types';
-import { groupByKey } from '@proton/pass/utils/array/group-by-key';
-import { logger } from '@proton/pass/utils/logger';
 import lastItem from '@proton/utils/lastItem';
 
+import type { ItemImportIntent, Maybe } from '../../../../types';
+import { groupByKey } from '../../../../utils/array/group-by-key';
+import { logger } from '../../../../utils/logger';
+import { readCSV } from '../../helpers/csv.reader';
+import { ImportProviderError } from '../../helpers/error';
+import { getEmailOrUsername, getImportedVaultName, importLoginItem, importNoteItem } from '../../helpers/transformers';
+import type { ImportReaderResult, ImportVault } from '../../types';
 import type { RoboformItem, RoboformVariadicItem } from './roboform.types';
 
 /** In Roboform exports, fields beginning with `@` or `'` have a single quote (`'`) prepended.

@@ -1,10 +1,10 @@
 import { put, takeEvery } from 'redux-saga/effects';
 
-import { QA_SERVICE } from '@proton/pass/lib/qa/service';
-import { getFeatureFlags } from '@proton/pass/lib/user/user.requests';
-import { getUserFeaturesFailure, getUserFeaturesIntent, getUserFeaturesSuccess } from '@proton/pass/store/actions';
-import type { FeatureFlagAndVariantState } from '@proton/pass/store/reducers';
-import type { RootSagaOptions } from '@proton/pass/store/types';
+import { QA_SERVICE } from '../../../lib/qa/service';
+import { getFeatureFlags } from '../../../lib/user/user.requests';
+import { getUserFeaturesFailure, getUserFeaturesIntent, getUserFeaturesSuccess } from '../../actions';
+import type { FeatureFlagAndVariantState } from '../../reducers';
+import type { RootSagaOptions } from '../../types';
 
 /* Try to sync the user feature flags on each wakeup success :
 /* `getUserFeatures` will only request pass feature flags from the api

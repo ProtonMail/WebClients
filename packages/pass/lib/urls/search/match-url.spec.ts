@@ -1,10 +1,9 @@
-import { getModeLabel } from '@proton/pass/lib/urls/utils/autofill';
-import { autofillHelp } from '@proton/pass/lib/urls/utils/autofill.help';
-import { parseUrl } from '@proton/pass/lib/urls/utils/parser';
-import type { ItemRevision } from '@proton/pass/types';
-import { AutofillMode } from '@proton/pass/types/protobuf';
-import type { AutofillUrl } from '@proton/pass/types/protobuf/item-v1';
-
+import type { ItemRevision } from '../../../types';
+import { AutofillMode } from '../../../types/protobuf';
+import type { AutofillUrl } from '../../../types/protobuf/item-v1';
+import { getModeLabel } from '../utils/autofill';
+import { autofillHelp } from '../utils/autofill.help';
+import { parseUrl } from '../utils/parser';
 import { ItemUrlMatch, getItemPriorityForUrl } from './match-url';
 
 const createMockItem = (urls: string[]) =>

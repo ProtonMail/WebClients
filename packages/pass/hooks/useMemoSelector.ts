@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { type Selector, useSelector } from 'react-redux';
 
-import type { State } from '@proton/pass/store/types';
+import type { State } from '../store/types';
 
 type SelectorCreator<TDeps extends any[], TResult> = (...args: TDeps) => Selector<State, TResult>;
 

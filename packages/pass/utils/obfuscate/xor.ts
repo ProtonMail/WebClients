@@ -1,5 +1,6 @@
 import { uint8ArrayToUtf8String, utf8StringToUint8Array } from '@protontech/crypto/utils';
-import { zeroize } from '@proton/pass/utils/object/zero';
+
+import { zeroize } from '../object/zero';
 
 const OBFS_SCHEME_VERSION = 2;
 const OBFS_MIN_MASK_SIZE = 128;

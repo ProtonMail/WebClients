@@ -1,8 +1,5 @@
-import type {
-    OrganizationSettingsGetResponse,
-    OrganizationUpdatePasswordPolicyInput,
-} from '@proton/pass/types/api/pass';
-import type { MaybeNull } from '@proton/pass/types/utils';
+import type { OrganizationSettingsGetResponse, OrganizationUpdatePasswordPolicyInput } from '../api/pass';
+import type { MaybeNull } from '../utils';
 
 export type OrganizationSettings = Omit<OrganizationSettingsGetResponse, 'PasswordPolicy'> & {
     PasswordPolicy: MaybeNull<OrganizationUpdatePasswordPolicyInput>;

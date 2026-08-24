@@ -1,8 +1,8 @@
-import { encryptData, generateKey, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
-import type { ItemKey, ShareKey, VaultShareKey } from '@proton/pass/types';
-import { PassEncryptionTag } from '@proton/pass/types';
 import { binaryStringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
+import type { ItemKey, ShareKey, VaultShareKey } from '../../../../types';
+import { PassEncryptionTag } from '../../../../types';
+import { encryptData, generateKey, importSymmetricKey } from '../../utils/crypto-helpers';
 import type { CreateSecureLinkData } from './create-secure-link';
 import { createSecureLink } from './create-secure-link';
 import { openSecureLink } from './open-secure-link';

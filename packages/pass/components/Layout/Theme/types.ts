@@ -1,4 +1,4 @@
-import type { DesktopTheme, ItemMap } from '@proton/pass/types';
+import type { DesktopTheme, ItemMap } from '../../../types';
 
 export enum SubTheme {
     LIME = 'ui-lime',

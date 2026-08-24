@@ -1,9 +1,6 @@
-import type { AuthStore } from '@proton/pass/lib/auth/store';
-import { createAuthStore } from '@proton/pass/lib/auth/store';
-import { ExportFormat } from '@proton/pass/lib/export/types';
-import { createMemoryStore } from '@proton/pass/utils/store';
-import { uniqueId } from '@proton/pass/utils/string/unique-id';
-
+import { createMemoryStore } from '../../utils/store';
+import { uniqueId } from '../../utils/string/unique-id';
+import { ExportFormat } from '../export/types';
 import type { ReauthActionPayload } from './reauth';
 import {
     ReauthAction,
@@ -13,6 +10,8 @@ import {
     isOfflinePasswordReauth,
     resolveReauthKey,
 } from './reauth';
+import type { AuthStore } from './store';
+import { createAuthStore } from './store';
 
 describe('reauth helpers', () => {
     let authStore: AuthStore;

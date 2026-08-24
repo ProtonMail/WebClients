@@ -1,7 +1,7 @@
 import type { ComponentType, FC, ReactNode } from 'react';
 
-import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
-import type { PassFeature } from '@proton/pass/types/api/features';
+import { useFeatureFlag } from '../../hooks/useFeatureFlag';
+import type { PassFeature } from '../../types/api/features';
 
 export const WithFeatureFlag = <P extends object>(Component: ComponentType<P>, feature: PassFeature): FC<P> => {
     const WrappedComponent: FC<P> = (props) => {

@@ -1,15 +1,15 @@
 import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import type { SyncResult } from '@proton/pass/lib/sync/types';
-import { withCache } from '@proton/pass/store/actions/enhancers/cache';
-import { withShareDedupe } from '@proton/pass/store/actions/enhancers/dedupe';
-import { withItems } from '@proton/pass/store/actions/enhancers/items';
-import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
-import type { ShareDedupeState } from '@proton/pass/store/reducers/shares-dedupe';
-import { requestActionsFactory } from '@proton/pass/store/request/flow';
-import type { Share, ShareCreatedDTO, ShareId, ShareType } from '@proton/pass/types';
-import { pipe } from '@proton/pass/utils/fp/pipe';
+import type { SyncResult } from '../../../lib/sync/types';
+import type { Share, ShareCreatedDTO, ShareId, ShareType } from '../../../types';
+import { pipe } from '../../../utils/fp/pipe';
+import type { ShareDedupeState } from '../../reducers/shares-dedupe';
+import { requestActionsFactory } from '../../request/flow';
+import { withCache } from '../enhancers/cache';
+import { withShareDedupe } from '../enhancers/dedupe';
+import { withItems } from '../enhancers/items';
+import { withNotification } from '../enhancers/notification';
 
 export const shareEventUpdate = createAction('share::event::update', (payload: Share) => pipe(withCache, withShareDedupe)({ payload }));
 

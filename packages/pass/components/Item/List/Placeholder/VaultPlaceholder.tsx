@@ -3,16 +3,15 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { useItems } from '@proton/pass/components/Item/Context/ItemsProvider';
-import { QuickActionsPlaceholder } from '@proton/pass/components/Item/List/Placeholder/QuickActionsPlaceholder';
-import { Card } from '@proton/pass/components/Layout/Card/Card';
-import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
-import { UpgradeButton } from '@proton/pass/components/Upsell/UpgradeButton';
-import { UpsellRef } from '@proton/pass/constants';
-import { selectAllVaults, selectOwnReadOnlyVaults, selectVaultLimits } from '@proton/pass/store/selectors';
-import { prop } from '@proton/pass/utils/fp/lens';
-
+import { UpsellRef } from '../../../../constants';
+import { selectAllVaults, selectOwnReadOnlyVaults, selectVaultLimits } from '../../../../store/selectors';
+import { prop } from '../../../../utils/fp/lens';
+import { Card } from '../../../Layout/Card/Card';
+import { useNavigationFilters } from '../../../Navigation/NavigationFilters';
+import { UpgradeButton } from '../../../Upsell/UpgradeButton';
+import { useItems } from '../../Context/ItemsProvider';
 import { NoVaultPlaceholder } from './NoVaultPlaceholder';
+import { QuickActionsPlaceholder } from './QuickActionsPlaceholder';
 
 export const VaultPlaceholder: FC = () => {
     const { filters } = useNavigationFilters();

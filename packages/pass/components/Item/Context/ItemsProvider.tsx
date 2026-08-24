@@ -2,22 +2,22 @@ import type { PropsWithChildren } from 'react';
 import { type FC, createContext, useContext, useEffect, useMemo } from 'react';
 import { useDispatch, useSelector, useStore } from 'react-redux';
 
-import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
-import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
-import { useSelectedItem } from '@proton/pass/components/Navigation/NavigationItem';
-import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
-import { getLocalPath } from '@proton/pass/components/Navigation/routing';
-import { itemAny } from '@proton/pass/lib/items/item.predicates';
-import { secureLinksGet } from '@proton/pass/store/actions';
+import { itemAny } from '../../../lib/items/item.predicates';
+import { secureLinksGet } from '../../../store/actions';
 import {
     createMatchItemsSelector,
     createMatchSecureLinksSelector,
     createMatchSharedByMeSelector,
     createMatchSharedWithMeSelector,
     selectOptimisticIds,
-} from '@proton/pass/store/selectors';
-import type { State } from '@proton/pass/store/types';
-import type { ItemRevision, UniqueItem } from '@proton/pass/types';
+} from '../../../store/selectors';
+import type { State } from '../../../store/types';
+import type { ItemRevision, UniqueItem } from '../../../types';
+import { useNavigate } from '../../Navigation/NavigationActions';
+import { useNavigationFilters } from '../../Navigation/NavigationFilters';
+import { useSelectedItem } from '../../Navigation/NavigationItem';
+import { useItemScope } from '../../Navigation/NavigationMatches';
+import { getLocalPath } from '../../Navigation/routing';
 
 type ItemsContextValue = {
     filtered: ItemRevision[];

@@ -4,10 +4,11 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { IcCrossCircleFilled } from '@proton/icons/icons/IcCrossCircleFilled';
-import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
-import { SpotlightMessage } from '@proton/pass/types';
-import { pipe } from '@proton/pass/utils/fp/pipe';
 import clsx from '@proton/utils/clsx';
+
+import { SpotlightMessage } from '../../types';
+import { pipe } from '../../utils/fp/pipe';
+import { useSpotlight } from './SpotlightProvider';
 
 import './SpotlightContent.scss';
 

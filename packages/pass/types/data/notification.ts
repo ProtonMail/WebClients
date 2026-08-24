@@ -1,9 +1,4 @@
-import type {
-    InAppNotificationCtaType,
-    InAppNotificationDisplayType,
-    InAppNotificationState,
-    MaybeNull,
-} from '@proton/pass/types';
+import type { InAppNotificationCtaType, InAppNotificationDisplayType, InAppNotificationState, MaybeNull } from '..';
 
 type MessageCTA = {
     text: string;

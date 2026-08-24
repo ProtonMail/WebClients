@@ -1,10 +1,9 @@
 import { type FC, type PropsWithChildren, createContext, useContext, useMemo } from 'react';
 
-import { createUseContext } from '@proton/pass/hooks/useContextFactory';
-import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
-import { selectBulkSelectionAliasCount } from '@proton/pass/store/selectors';
-import type { MaybeNull } from '@proton/pass/types';
-
+import { createUseContext } from '../../hooks/useContextFactory';
+import { useMemoSelector } from '../../hooks/useMemoSelector';
+import { selectBulkSelectionAliasCount } from '../../store/selectors';
+import type { MaybeNull } from '../../types';
 import type { BulkSelection } from './types';
 import { bulkSelectionDTO } from './utils';
 

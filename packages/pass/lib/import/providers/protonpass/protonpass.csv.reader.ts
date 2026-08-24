@@ -1,19 +1,19 @@
-import { readCSV } from '@proton/pass/lib/import/helpers/csv.reader';
-import { ImportProviderError } from '@proton/pass/lib/import/helpers/error';
+import type { ItemImportIntent, Maybe } from '../../../../types';
+import type { AutofillUrl, ItemCreditCard } from '../../../../types/protobuf/item-v1';
+import { groupByKey } from '../../../../utils/array/group-by-key';
+import { truthy } from '../../../../utils/fp/predicates';
+import { logger } from '../../../../utils/logger';
+import { readCSV } from '../../helpers/csv.reader';
+import { ImportProviderError } from '../../helpers/error';
 import {
     getImportedVaultName,
     importCreditCardItem,
     importIdentityItem,
     importLoginItem,
     importNoteItem,
-} from '@proton/pass/lib/import/helpers/transformers';
-import type { ProtonPassCSVItem } from '@proton/pass/lib/import/providers/protonpass/protonpass.csv.types';
-import type { ImportReaderResult } from '@proton/pass/lib/import/types';
-import type { ItemImportIntent, Maybe } from '@proton/pass/types';
-import type { AutofillUrl, ItemCreditCard } from '@proton/pass/types/protobuf/item-v1';
-import { groupByKey } from '@proton/pass/utils/array/group-by-key';
-import { truthy } from '@proton/pass/utils/fp/predicates';
-import { logger } from '@proton/pass/utils/logger';
+} from '../../helpers/transformers';
+import type { ImportReaderResult } from '../../types';
+import type { ProtonPassCSVItem } from './protonpass.csv.types';
 
 type CreditCardCsvItem = ItemCreditCard & { note: string };
 

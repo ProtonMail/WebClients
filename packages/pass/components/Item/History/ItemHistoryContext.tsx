@@ -1,6 +1,6 @@
 import { createContext, useContext } from 'react';
 
-import type { ItemRevision, MaybeNull } from '@proton/pass/types';
+import type { ItemRevision, MaybeNull } from '../../../types';
 
 export type ItemHistoryContextValue = {
     item: ItemRevision;

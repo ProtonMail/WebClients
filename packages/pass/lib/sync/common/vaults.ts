@@ -1,13 +1,13 @@
 import { select } from 'redux-saga/effects';
 
-import { isActiveVault, isOwnVault, isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
-import { createVault } from '@proton/pass/lib/vaults/vault.requests';
-import type { VaultShareItem } from '@proton/pass/store/reducers';
-import { selectOrganizationVaultCreationPolicy } from '@proton/pass/store/selectors/organization';
-import type { Maybe, MaybeNull, Share, ShareType } from '@proton/pass/types';
-import { OrganizationVaultCreateMode } from '@proton/pass/types';
-import { and } from '@proton/pass/utils/fp/predicates';
-import { logger } from '@proton/pass/utils/logger';
+import type { VaultShareItem } from '../../../store/reducers';
+import { selectOrganizationVaultCreationPolicy } from '../../../store/selectors/organization';
+import type { Maybe, MaybeNull, Share, ShareType } from '../../../types';
+import { OrganizationVaultCreateMode } from '../../../types';
+import { and } from '../../../utils/fp/predicates';
+import { logger } from '../../../utils/logger';
+import { isActiveVault, isOwnVault, isWritableVault } from '../../vaults/vault.predicates';
+import { createVault } from '../../vaults/vault.requests';
 
 export function* createDefaultVault(shares: Share[]): Generator<any, Maybe<VaultShareItem>> {
     const hasDefaultVault = shares.some(and(isActiveVault, isWritableVault, isOwnVault));

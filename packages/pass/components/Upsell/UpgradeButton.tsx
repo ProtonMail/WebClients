@@ -9,14 +9,14 @@ import { PromotionButton } from '@proton/components/components/button/PromotionB
 import type { PromotionButtonProps } from '@proton/components/components/button/PromotionButton/PromotionButton';
 import { IcArrowOutSquare } from '@proton/icons/icons/IcArrowOutSquare';
 import type { IconSize } from '@proton/icons/types';
-import type { UpsellRef } from '@proton/pass/constants';
-import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
-import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
-import { PassFeature } from '@proton/pass/types/api/features';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
+import type { UpsellRef } from '../../constants';
+import { useFeatureFlag } from '../../hooks/useFeatureFlag';
+import { useNavigateToUpgrade } from '../../hooks/useNavigateToUpgrade';
+import { PassFeature } from '../../types/api/features';
 import './PassPlusPromotionButton';
 
 type UpgradeButtonProps = PromotionButtonProps<typeof ButtonLike> & {

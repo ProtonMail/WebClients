@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
-import { LockMode } from '@proton/pass/lib/auth/lock/types';
-import type { AuthStore } from '@proton/pass/lib/auth/store';
-import type { Maybe } from '@proton/pass/types';
-import { AppStatus } from '@proton/pass/types';
+import type { Maybe } from '../../types';
+import { AppStatus } from '../../types';
+import { LockMode } from './lock/types';
+import type { AuthStore } from './store';
 
 export type PasswordTypeSwitch<T> = { extra: T; sso: T; default: T; twoPwd: T };
 export type PasswordTypeConfig = Omit<PasswordTypeSwitch<boolean>, 'default'>;

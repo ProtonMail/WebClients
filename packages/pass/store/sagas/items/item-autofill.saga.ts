@@ -1,11 +1,11 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
 
-import { parseItemRevision } from '@proton/pass/lib/items/item.parser';
-import { updateItemLastUseTime } from '@proton/pass/lib/items/item.requests';
-import { itemAutofilled, itemsUpdated } from '@proton/pass/store/actions';
-import type { RootSagaOptions } from '@proton/pass/store/types';
-import type { ItemRevision, ItemRevisionContentsResponse } from '@proton/pass/types';
-import { logId, logger } from '@proton/pass/utils/logger';
+import { parseItemRevision } from '../../../lib/items/item.parser';
+import { updateItemLastUseTime } from '../../../lib/items/item.requests';
+import type { ItemRevision, ItemRevisionContentsResponse } from '../../../types';
+import { logId, logger } from '../../../utils/logger';
+import { itemAutofilled, itemsUpdated } from '../../actions';
+import type { RootSagaOptions } from '../../types';
 
 function* itemAutofilledWorker({ onItemsUpdated }: RootSagaOptions, { payload: { shareId, itemId } }: ReturnType<typeof itemAutofilled>) {
     try {

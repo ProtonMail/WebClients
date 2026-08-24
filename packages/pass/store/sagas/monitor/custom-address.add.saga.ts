@@ -1,6 +1,6 @@
-import { monitorCustomEmail } from '@proton/pass/lib/monitor/monitor.request';
-import { addCustomAddress } from '@proton/pass/store/actions';
-import { createRequestSaga } from '@proton/pass/store/request/sagas';
+import { monitorCustomEmail } from '../../../lib/monitor/monitor.request';
+import { addCustomAddress } from '../../actions';
+import { createRequestSaga } from '../../request/sagas';
 
 export default createRequestSaga({
     actions: addCustomAddress,

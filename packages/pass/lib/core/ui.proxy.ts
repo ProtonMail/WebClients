@@ -3,11 +3,11 @@
  * module is not executed in workers or content-scripts */
 import type * as PassRustUI from '@protontech/pass-rust-core/ui';
 
-import type { PassUIMethod, PassUIParams, PassUIProxy } from '@proton/pass/lib/core/ui.types';
-import { PassUIWorkerService } from '@proton/pass/lib/core/ui.worker.service';
-import { isNativeJSError } from '@proton/pass/lib/core/utils';
-import type { Maybe } from '@proton/pass/types';
-import { logger } from '@proton/pass/utils/logger';
+import type { Maybe } from '../../types';
+import { logger } from '../../utils/logger';
+import type { PassUIMethod, PassUIParams, PassUIProxy } from './ui.types';
+import { PassUIWorkerService } from './ui.worker.service';
+import { isNativeJSError } from './utils';
 
 let service: Maybe<typeof PassRustUI>;
 

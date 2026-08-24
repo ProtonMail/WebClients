@@ -2,17 +2,6 @@ import { ARGON2_PARAMS } from '@protontech/crypto';
 import { importKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import { c } from 'ttag';
 
-import type { ReauthActionPayload } from '@proton/pass/lib/auth/reauth';
-import { encodeUserData } from '@proton/pass/lib/auth/store.utils';
-import type { OfflineComponents } from '@proton/pass/lib/cache/crypto';
-import { getOfflineVerifier } from '@proton/pass/lib/cache/crypto';
-import { QA_SERVICE } from '@proton/pass/lib/qa/service';
-import type { Maybe, TabId } from '@proton/pass/types';
-import { type Api, AuthMode, type MaybeNull } from '@proton/pass/types';
-import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
-import { logger } from '@proton/pass/utils/logger';
-import { isObject } from '@proton/pass/utils/object/is-object';
-import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { pullForkSession, setRefreshCookies as refreshTokens, setCookies } from '@proton/shared/lib/api/auth';
 import { getUser } from '@proton/shared/lib/api/user';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
@@ -34,9 +23,20 @@ import { binaryStringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import type { User } from '@proton/shared/lib/interfaces';
 import getRandomString from '@proton/utils/getRandomString';
 
+import type { Maybe, TabId } from '../../types';
+import { type Api, AuthMode, type MaybeNull } from '../../types';
+import { getErrorMessage } from '../../utils/errors/get-error-message';
+import { logger } from '../../utils/logger';
+import { isObject } from '../../utils/object/is-object';
+import { getEpoch } from '../../utils/time/epoch';
+import type { OfflineComponents } from '../cache/crypto';
+import { getOfflineVerifier } from '../cache/crypto';
+import { QA_SERVICE } from '../qa/service';
 import { AUTH_MODE } from './flags';
 import { LockMode } from './lock/types';
+import type { ReauthActionPayload } from './reauth';
 import { type AuthSession, type AuthSessionVersion, SESSION_VERSION } from './session';
+import { encodeUserData } from './store.utils';
 
 export type RequestForkOptions = {
     app: APP_NAMES;

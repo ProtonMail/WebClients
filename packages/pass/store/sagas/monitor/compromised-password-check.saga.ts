@@ -1,19 +1,19 @@
 import { call, fork, put, race, select, take, takeEvery } from 'redux-saga/effects';
 
-import { getItemKey } from '@proton/pass/lib/items/item.utils';
-import { checkPasswordCompromised } from '@proton/pass/lib/monitor/compromised-password.request';
-import { hasPasswordChanged } from '@proton/pass/lib/monitor/monitor.utils';
-import type { CompromisedPasswordEntry } from '@proton/pass/lib/monitor/types';
-import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
-import { compromisedPasswordUpdate, importItemsProgress, itemCreate, itemEdit } from '@proton/pass/store/actions';
-import type { ItemEditIntentAction } from '@proton/pass/store/middleware/item-edit.middleware';
-import { selectCompromisedPasswordsCache, selectFeatureFlag, selectPassPlan } from '@proton/pass/store/selectors';
-import type { RootSagaOptions } from '@proton/pass/store/types';
-import type { ItemRevision } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
-import type { UserPassPlan } from '@proton/pass/types/api/plan';
-import { logger } from '@proton/pass/utils/logger';
-import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
+import { getItemKey } from '../../../lib/items/item.utils';
+import { checkPasswordCompromised } from '../../../lib/monitor/compromised-password.request';
+import { hasPasswordChanged } from '../../../lib/monitor/monitor.utils';
+import type { CompromisedPasswordEntry } from '../../../lib/monitor/types';
+import { isPaidPlan } from '../../../lib/user/user.predicates';
+import type { ItemRevision } from '../../../types';
+import { PassFeature } from '../../../types/api/features';
+import type { UserPassPlan } from '../../../types/api/plan';
+import { logger } from '../../../utils/logger';
+import { deobfuscate } from '../../../utils/obfuscate/xor';
+import { compromisedPasswordUpdate, importItemsProgress, itemCreate, itemEdit } from '../../actions';
+import type { ItemEditIntentAction } from '../../middleware/item-edit.middleware';
+import { selectCompromisedPasswordsCache, selectFeatureFlag, selectPassPlan } from '../../selectors';
+import type { RootSagaOptions } from '../../types';
 
 function* isEnabled(): Generator<any, boolean, any> {
     const enabled: boolean = yield select(selectFeatureFlag(PassFeature.Pass__V1_40__CompromisedPasswords));

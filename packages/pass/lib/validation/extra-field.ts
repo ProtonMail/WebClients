@@ -2,9 +2,9 @@ import type { FormikErrors } from 'formik';
 import isEmpty from 'lodash/isEmpty';
 import { c } from 'ttag';
 
-import { parseOTPValue } from '@proton/pass/lib/otp/otp';
-import type { DeobfuscatedItemExtraField, ExtraFieldGroupValues } from '@proton/pass/types';
-import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
+import type { DeobfuscatedItemExtraField, ExtraFieldGroupValues } from '../../types';
+import { isEmptyString } from '../../utils/string/is-empty-string';
+import { parseOTPValue } from '../otp/otp';
 
 export type ExtraFieldErrors = FormikErrors<DeobfuscatedItemExtraField>;
 

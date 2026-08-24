@@ -1,8 +1,8 @@
 import { createContext } from 'react';
 
-import type { SpotlightMessageDefinition } from '@proton/pass/components/Spotlight/SpotlightContent';
-import { createUseContext } from '@proton/pass/hooks/useContextFactory';
-import type { MaybeNull, SpotlightMessage } from '@proton/pass/types';
+import { createUseContext } from '../../hooks/useContextFactory';
+import type { MaybeNull, SpotlightMessage } from '../../types';
+import type { SpotlightMessageDefinition } from './SpotlightContent';
 
 type SpotlightState = {
     open: boolean;

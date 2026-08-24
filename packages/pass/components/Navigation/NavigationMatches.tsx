@@ -2,9 +2,8 @@ import type { PropsWithChildren } from 'react';
 import { type FC, createContext, useMemo } from 'react';
 import { matchPath, useLocation, useRouteMatch } from 'react-router-dom';
 
-import { createUseContext } from '@proton/pass/hooks/useContextFactory';
-import type { Maybe, MaybeNull } from '@proton/pass/types';
-
+import { createUseContext } from '../../hooks/useContextFactory';
+import type { Maybe, MaybeNull } from '../../types';
 import type { ItemScope } from './routing';
 import { ItemScopes, getLocalPath } from './routing';
 

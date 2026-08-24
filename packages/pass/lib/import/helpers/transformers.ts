@@ -1,12 +1,5 @@
 import { c } from 'ttag';
 
-import PassUI from '@proton/pass/lib/core/ui.proxy';
-import { obfuscateExtraFields, obfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
-import { parseOTPValue } from '@proton/pass/lib/otp/otp';
-import { isAutofillModeDataOfTypeUrl, uniqueAutofillUrls } from '@proton/pass/lib/urls/utils/autofill';
-import { parseUrl } from '@proton/pass/lib/urls/utils/parser';
-import { sanitizeURL } from '@proton/pass/lib/urls/utils/sanitize';
-import { safeRegExpFromPattern } from '@proton/pass/lib/urls/utils/utils';
 import type {
     CustomSectionValue,
     DeobfuscatedItemExtraField,
@@ -15,14 +8,21 @@ import type {
     ItemImportIntent,
     Maybe,
     MaybeNull,
-} from '@proton/pass/types';
-import { AutofillMode, CardType, WifiSecurity } from '@proton/pass/types/protobuf';
-import type { AutofillUrl } from '@proton/pass/types/protobuf/item-v1';
-import { truthy } from '@proton/pass/utils/fp/predicates';
-import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
-import { uniqueId } from '@proton/pass/utils/string/unique-id';
-import { getEpoch } from '@proton/pass/utils/time/epoch';
-import { epochToDate } from '@proton/pass/utils/time/format';
+} from '../../../types';
+import { AutofillMode, CardType, WifiSecurity } from '../../../types/protobuf';
+import type { AutofillUrl } from '../../../types/protobuf/item-v1';
+import { truthy } from '../../../utils/fp/predicates';
+import { obfuscate } from '../../../utils/obfuscate/xor';
+import { uniqueId } from '../../../utils/string/unique-id';
+import { getEpoch } from '../../../utils/time/epoch';
+import { epochToDate } from '../../../utils/time/format';
+import PassUI from '../../core/ui.proxy';
+import { obfuscateExtraFields, obfuscateItem } from '../../items/item.obfuscation';
+import { parseOTPValue } from '../../otp/otp';
+import { isAutofillModeDataOfTypeUrl, uniqueAutofillUrls } from '../../urls/utils/autofill';
+import { parseUrl } from '../../urls/utils/parser';
+import { sanitizeURL } from '../../urls/utils/sanitize';
+import { safeRegExpFromPattern } from '../../urls/utils/utils';
 
 export const getImportedVaultName = (vaultName?: string) => {
     if (!vaultName) {

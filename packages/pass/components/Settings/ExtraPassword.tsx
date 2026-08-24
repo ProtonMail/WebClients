@@ -4,20 +4,20 @@ import { useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import Checkbox from '@proton/components/components/input/Checkbox';
-import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
-import type { PasswordModalState } from '@proton/pass/components/Lock/PasswordModal';
-import { PasswordModal } from '@proton/pass/components/Lock/PasswordModal';
-import { usePasswordUnlock } from '@proton/pass/components/Lock/PasswordUnlockProvider';
-import { useAsyncModalHandles } from '@proton/pass/hooks/useAsyncModalHandles';
-import { useRequest } from '@proton/pass/hooks/useRequest';
-import { LockMode } from '@proton/pass/lib/auth/lock/types';
-import { validateNewExtraPassword } from '@proton/pass/lib/validation/auth';
-import { extraPasswordToggle } from '@proton/pass/store/actions';
-import { selectExtraPasswordEnabled, selectIsSSO, selectLockMode } from '@proton/pass/store/selectors';
-import { type XorObfuscation, deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
+import { useAsyncModalHandles } from '../../hooks/useAsyncModalHandles';
+import { useRequest } from '../../hooks/useRequest';
+import { LockMode } from '../../lib/auth/lock/types';
+import { validateNewExtraPassword } from '../../lib/validation/auth';
+import { extraPasswordToggle } from '../../store/actions';
+import { selectExtraPasswordEnabled, selectIsSSO, selectLockMode } from '../../store/selectors';
+import { type XorObfuscation, deobfuscate } from '../../utils/obfuscate/xor';
+import { useOnline } from '../Core/ConnectivityProvider';
+import type { PasswordModalState } from '../Lock/PasswordModal';
+import { PasswordModal } from '../Lock/PasswordModal';
+import { usePasswordUnlock } from '../Lock/PasswordUnlockProvider';
 import { SettingsPanel } from './SettingsPanel';
 
 export const ExtraPassword: FC = () => {

@@ -1,7 +1,5 @@
 import { c, msgid } from 'ttag';
 
-import { isItemTarget } from '@proton/pass/lib/access/access.predicates';
-import { AccessTarget } from '@proton/pass/lib/access/types';
 import type {
     AbstractInviteResponse,
     GroupInvite,
@@ -10,10 +8,12 @@ import type {
     MaybeNull,
     NewUserPendingInvite,
     Share,
-} from '@proton/pass/types';
-import { type InviteBase, InviteType, NewUserInviteState, type Result, ShareType } from '@proton/pass/types';
-import { partition } from '@proton/pass/utils/array/partition';
-import { and } from '@proton/pass/utils/fp/predicates';
+} from '../../types';
+import { type InviteBase, InviteType, NewUserInviteState, type Result, ShareType } from '../../types';
+import { partition } from '../../utils/array/partition';
+import { and } from '../../utils/fp/predicates';
+import { isItemTarget } from '../access/access.predicates';
+import { AccessTarget } from '../access/types';
 
 export type InviteBatchResult = Result<{}, { failed: string[] }>;
 

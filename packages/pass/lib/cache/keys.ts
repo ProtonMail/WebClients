@@ -1,11 +1,11 @@
-import type { AuthStore } from '@proton/pass/lib/auth/store';
-import { decryptData, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
-import { PassEncryptionTag } from '@proton/pass/types';
-import type { Maybe } from '@proton/pass/types/utils';
-import type { EncryptedPassCache } from '@proton/pass/types/worker/cache';
-import { logger } from '@proton/pass/utils/logger';
 import { binaryStringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
+import { PassEncryptionTag } from '../../types';
+import type { Maybe } from '../../types/utils';
+import type { EncryptedPassCache } from '../../types/worker/cache';
+import { logger } from '../../utils/logger';
+import type { AuthStore } from '../auth/store';
+import { decryptData, importSymmetricKey } from '../crypto/utils/crypto-helpers';
 import { getCacheEncryptionKey } from './crypto';
 
 /** Resolves the cache key using one of two methods based on provided parameters:

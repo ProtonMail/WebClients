@@ -2,9 +2,10 @@ import type { FC } from 'react';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
-import { Checkmark } from '@proton/pass/components/Onboarding/Panel/Checkmark';
-import { OnboardingIcon } from '@proton/pass/components/Onboarding/Panel/OnboardingIcon';
 import clsx from '@proton/utils/clsx';
+
+import { Checkmark } from './Checkmark';
+import { OnboardingIcon } from './OnboardingIcon';
 
 import './OnboardingCard.scss';
 

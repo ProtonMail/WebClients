@@ -2,16 +2,15 @@ import type { FC } from 'react';
 
 import { useFormik } from 'formik';
 
-import type { ItemNewViewProps } from '@proton/pass/components/Views/types';
-import { useInitialValues } from '@proton/pass/hooks/items/useInitialValues';
-import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
-import { filesFormInitializer } from '@proton/pass/lib/file-attachments/helpers';
-import { itemBuilder } from '@proton/pass/lib/items/item.builder';
-import { validateIdentityForm } from '@proton/pass/lib/validation/identity';
-import type { IdentityItemFormValues } from '@proton/pass/types';
-import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
-import { uniqueId } from '@proton/pass/utils/string/unique-id';
-
+import { useInitialValues } from '../../../hooks/items/useInitialValues';
+import { useItemDraft } from '../../../hooks/useItemDraft';
+import { filesFormInitializer } from '../../../lib/file-attachments/helpers';
+import { itemBuilder } from '../../../lib/items/item.builder';
+import { validateIdentityForm } from '../../../lib/validation/identity';
+import type { IdentityItemFormValues } from '../../../types';
+import { obfuscate } from '../../../utils/obfuscate/xor';
+import { uniqueId } from '../../../utils/string/unique-id';
+import type { ItemNewViewProps } from '../../Views/types';
 import { IdentityForm } from './Identity.form';
 
 export const IdentityNew: FC<ItemNewViewProps<'identity'>> = ({ shareId, onSubmit, onCancel }) => {

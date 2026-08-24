@@ -1,18 +1,19 @@
 import { useCallback, useEffect } from 'react';
 
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { MODEL_VERSION } from '@proton/pass/constants';
-import { isAutofillTargetMode } from '@proton/pass/lib/urls/utils/autofill';
-import type { Item } from '@proton/pass/types';
+import isTruthy from '@proton/utils/isTruthy';
+import noop from '@proton/utils/noop';
+
+import { usePassCore } from '../components/Core/PassCoreProvider';
+import { MODEL_VERSION } from '../constants';
+import { isAutofillTargetMode } from '../lib/urls/utils/autofill';
+import type { Item } from '../types';
 import type {
     ExtensionCopiedFromLoginDimensions,
     TelemetryEvent,
     TelemetryFieldType,
     TelemetryPlatform,
-} from '@proton/pass/types/data/telemetry';
-import { NO_PAGE_CONTEXT_TELEMETRY_DIMENSIONS, TelemetryEventName } from '@proton/pass/types/data/telemetry';
-import isTruthy from '@proton/utils/isTruthy';
-import noop from '@proton/utils/noop';
+} from '../types/data/telemetry';
+import { NO_PAGE_CONTEXT_TELEMETRY_DIMENSIONS, TelemetryEventName } from '../types/data/telemetry';
 
 /** Pushes the specified telemetry event when the provided
  * dependency array is truthy. Passing an empty dependency

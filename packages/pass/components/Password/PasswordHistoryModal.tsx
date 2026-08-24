@@ -6,13 +6,13 @@ import { c, msgid } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import { IcChevronLeft } from '@proton/icons/icons/IcChevronLeft';
-import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';
-import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
-import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
-import { MAX_PASSWORD_HISTORY_RETENTION_WEEKS } from '@proton/pass/constants';
-import { selectPasswordHistory } from '@proton/pass/store/selectors';
 import clsx from '@proton/utils/clsx';
 
+import { MAX_PASSWORD_HISTORY_RETENTION_WEEKS } from '../../constants';
+import { selectPasswordHistory } from '../../store/selectors';
+import { SidebarModal } from '../Layout/Modal/SidebarModal';
+import { Panel } from '../Layout/Panel/Panel';
+import { PanelHeader } from '../Layout/Panel/PanelHeader';
 import { usePasswordHistoryActions } from './PasswordHistoryActionsContext';
 import { PasswordHistoryItem } from './PasswordHistoryItem';
 

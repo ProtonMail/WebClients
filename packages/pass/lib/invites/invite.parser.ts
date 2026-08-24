@@ -1,7 +1,3 @@
-import { getPublicKeysForEmail } from '@proton/pass/lib/auth/address';
-import { PassCrypto } from '@proton/pass/lib/crypto';
-import { getOrganizationKey } from '@proton/pass/lib/organization/organization.requests';
-import { decodeVaultContent } from '@proton/pass/lib/vaults/vault-proto.transformer';
 import type {
     AbstractInviteResponse,
     GroupInvite,
@@ -10,10 +6,13 @@ import type {
     KeyRotationKeyPair,
     MaybeNull,
     UserInvite,
-} from '@proton/pass/types';
-import { type InviteDataForUser, InviteType, ShareType } from '@proton/pass/types';
-import { logger } from '@proton/pass/utils/logger';
-
+} from '../../types';
+import { type InviteDataForUser, InviteType, ShareType } from '../../types';
+import { logger } from '../../utils/logger';
+import { getPublicKeysForEmail } from '../auth/address';
+import { PassCrypto } from '../crypto';
+import { getOrganizationKey } from '../organization/organization.requests';
+import { decodeVaultContent } from '../vaults/vault-proto.transformer';
 import { isVaultInviteResponse } from './invite.utils';
 
 /** Resolves the encryption key for the invite based on its target

@@ -6,9 +6,9 @@ import type { FieldProps } from 'formik';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import type { InputFieldProps } from '@proton/components/components/v2/field/InputField';
-import { useFieldControl } from '@proton/pass/hooks/useFieldControl';
 import clsx from '@proton/utils/clsx';
 
+import { useFieldControl } from '../../../hooks/useFieldControl';
 import { FieldBox, type FieldBoxProps } from './Layout/FieldBox';
 
 export type SelectFieldProps = FieldProps &

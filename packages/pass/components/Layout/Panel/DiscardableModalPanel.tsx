@@ -2,10 +2,9 @@ import { type ReactNode, useCallback, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { ConfirmationModal } from '@proton/pass/components/Confirmation/ConfirmationModal';
-import type { Callback } from '@proton/pass/types';
-
 import { useEnsureMounted } from '../../../hooks/useEnsureMounted';
+import type { Callback } from '../../../types';
+import { ConfirmationModal } from '../../Confirmation/ConfirmationModal';
 import { SidebarModal } from '../Modal/SidebarModal';
 
 export type DiscardableModalRenderProps = { confirm: (effect?: Callback) => void; didEnter: boolean };

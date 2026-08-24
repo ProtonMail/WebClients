@@ -1,7 +1,8 @@
-import { MemoryStorage, fileStorage } from '@proton/pass/lib/file-storage/fs';
-import type { FileBuffer, FileStorage } from '@proton/pass/lib/file-storage/types';
-import type { RootSagaOptions } from '@proton/pass/store/types';
 import { blobToUint8Array, uint8ArrayToBlob } from '@proton/shared/lib/helpers/encoding';
+
+import type { RootSagaOptions } from '../../store/types';
+import { MemoryStorage, fileStorage } from './fs';
+import type { FileBuffer, FileStorage } from './types';
 
 export const blobToBase64 = async (blob: Blob): Promise<string> => {
     const buffer = await blobToUint8Array(blob);

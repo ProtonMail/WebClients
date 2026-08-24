@@ -3,17 +3,15 @@ import { type FC, useEffect } from 'react';
 import { c, msgid } from 'ttag';
 
 import Alert from '@proton/components/components/alert/Alert';
-import { useBulkSelectionAliasCount } from '@proton/pass/components/Bulk/BulkSelectionState';
-import {
-    ConfirmationPrompt,
-    type ConfirmationPromptHandles,
-} from '@proton/pass/components/Confirmation/ConfirmationPrompt';
-import { WithVault } from '@proton/pass/components/Vault/WithVault';
-import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
-import { getBulkSelectionCount } from '@proton/pass/lib/items/item.utils';
-import { selectBulkHasSecureLinks, selectBulkHasSharedItems } from '@proton/pass/store/selectors';
-import type { BulkSelectionDTO } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
+
+import { useMemoSelector } from '../../../hooks/useMemoSelector';
+import { getBulkSelectionCount } from '../../../lib/items/item.utils';
+import { selectBulkHasSecureLinks, selectBulkHasSharedItems } from '../../../store/selectors';
+import type { BulkSelectionDTO } from '../../../types';
+import { useBulkSelectionAliasCount } from '../../Bulk/BulkSelectionState';
+import { ConfirmationPrompt, type ConfirmationPromptHandles } from '../../Confirmation/ConfirmationPrompt';
+import { WithVault } from '../../Vault/WithVault';
 
 export const ConfirmTrashManyItems: FC<ConfirmationPromptHandles & { selected: BulkSelectionDTO }> = ({
     selected,

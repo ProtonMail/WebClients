@@ -2,15 +2,14 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import { ExtraFieldsControl } from '@proton/pass/components/Form/Field/Control/ExtraFieldsControl';
-import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
-import { FieldBox } from '@proton/pass/components/Form/Field/Layout/FieldBox';
-import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
-import { TextAreaReadonly } from '@proton/pass/components/Form/legacy/TextAreaReadonly';
-import type { ItemContentProps } from '@proton/pass/components/Views/types';
-import { useDeobfuscatedItem, usePartialDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
-import type { ItemCustomType, ItemRevision } from '@proton/pass/types';
-
+import { useDeobfuscatedItem, usePartialDeobfuscatedItem } from '../../../hooks/useDeobfuscatedItem';
+import type { ItemCustomType, ItemRevision } from '../../../types';
+import { ExtraFieldsControl } from '../../Form/Field/Control/ExtraFieldsControl';
+import { ValueControl } from '../../Form/Field/Control/ValueControl';
+import { FieldBox } from '../../Form/Field/Layout/FieldBox';
+import { FieldsetCluster } from '../../Form/Field/Layout/FieldsetCluster';
+import { TextAreaReadonly } from '../../Form/legacy/TextAreaReadonly';
+import type { ItemContentProps } from '../../Views/types';
 import { wifiSecurityLabel } from './Custom.utils';
 
 const WifiContent: FC<{ revision: ItemRevision<'wifi'> }> = ({ revision }) => {

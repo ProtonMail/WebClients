@@ -1,4 +1,4 @@
-import { AutofillMode } from '@proton/pass/types/protobuf';
+import { AutofillMode } from '../../../types/protobuf';
 
 type AutofillHelp = {
     url: string;

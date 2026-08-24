@@ -1,8 +1,7 @@
 import * as PassRustWorker from '@protontech/pass-rust-core/worker';
 
-import { WASM_WORKER_READY_EVENT } from '@proton/pass/lib/core/constants';
-import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
-
+import { getErrorMessage } from '../../utils/errors/get-error-message';
+import { WASM_WORKER_READY_EVENT } from './constants';
 import type { PassCoreMessageEvent, PassCoreMethod, PassCoreRPC, PassCoreResult } from './core.types';
 
 self.postMessage({ type: WASM_WORKER_READY_EVENT });

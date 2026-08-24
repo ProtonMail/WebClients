@@ -1,6 +1,6 @@
-import { extraPasswordToggle } from '@proton/pass/store/actions';
-import { createRequestSaga } from '@proton/pass/store/request/sagas';
-import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
+import { deobfuscate } from '../../../utils/obfuscate/xor';
+import { extraPasswordToggle } from '../../actions';
+import { createRequestSaga } from '../../request/sagas';
 
 export default createRequestSaga({
     actions: extraPasswordToggle,

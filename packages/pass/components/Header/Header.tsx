@@ -1,8 +1,7 @@
 import type { FC } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import { getLocalPath } from '@proton/pass/components/Navigation/routing';
-
+import { getLocalPath } from '../Navigation/routing';
 import { HeaderMain } from './HeaderMain';
 import { HeaderMonitor } from './HeaderMonitor';
 import { HeaderSettings } from './HeaderSettings';

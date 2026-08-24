@@ -15,11 +15,12 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
-import { VAULT_ICON_MAP } from '@proton/pass/components/Vault/constants';
-import { useRequest } from '@proton/pass/hooks/useRequest';
-import { aliasSyncEnable } from '@proton/pass/store/actions';
-import { selectDefaultVault, selectWritableVaults } from '@proton/pass/store/selectors';
-import { truthy } from '@proton/pass/utils/fp/predicates';
+
+import { useRequest } from '../../../../hooks/useRequest';
+import { aliasSyncEnable } from '../../../../store/actions';
+import { selectDefaultVault, selectWritableVaults } from '../../../../store/selectors';
+import { truthy } from '../../../../utils/fp/predicates';
+import { VAULT_ICON_MAP } from '../../../Vault/constants';
 
 type AliasSyncFormValues = { shareId: string };
 type Props = Pick<ModalProps, 'onClose'> & { aliasCount: number };

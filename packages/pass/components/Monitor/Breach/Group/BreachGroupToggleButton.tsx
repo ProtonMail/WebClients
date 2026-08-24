@@ -5,12 +5,13 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import Alert from '@proton/components/components/alert/Alert';
-import { ConfirmationModal } from '@proton/pass/components/Confirmation/ConfirmationModal';
-import { useConfirm } from '@proton/pass/hooks/useConfirm';
-import { useRequest } from '@proton/pass/hooks/useRequest';
-import { AddressType } from '@proton/pass/lib/monitor/types';
-import { monitorToggle } from '@proton/pass/store/actions';
-import { selectMonitorSettings } from '@proton/pass/store/selectors';
+
+import { useConfirm } from '../../../../hooks/useConfirm';
+import { useRequest } from '../../../../hooks/useRequest';
+import { AddressType } from '../../../../lib/monitor/types';
+import { monitorToggle } from '../../../../store/actions';
+import { selectMonitorSettings } from '../../../../store/selectors';
+import { ConfirmationModal } from '../../../Confirmation/ConfirmationModal';
 
 type Props = { type: AddressType.ALIAS | AddressType.PROTON };
 

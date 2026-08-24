@@ -1,25 +1,23 @@
 import { c } from 'ttag';
 
-import type { PassCoreContextValue } from '@proton/pass/components/Core/PassCoreProvider';
-import {
-    fromBiometricsEncryptedOfflineKD,
-    intoBiometricsEncryptedOfflineKD,
-} from '@proton/pass/lib/auth/lock/biometrics/utils';
-import type { LockAdapterBiometrics } from '@proton/pass/lib/auth/lock/types';
-import { LockMode } from '@proton/pass/lib/auth/lock/types';
-import type { AuthService } from '@proton/pass/lib/auth/service';
-import { getInvalidPasswordString } from '@proton/pass/lib/auth/utils';
-import { generateOfflineComponents } from '@proton/pass/lib/cache/crypto';
-import { decryptData, encryptData, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
-import { PassCryptoError } from '@proton/pass/lib/crypto/utils/errors';
-import { loadCoreCryptoWorker } from '@proton/pass/lib/crypto/utils/worker';
-import { PassEncryptionTag } from '@proton/pass/types';
-import { SilentError } from '@proton/pass/utils/errors/errors';
-import { logger } from '@proton/pass/utils/logger';
-import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
-import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { binaryStringToUint8Array, uint8ArrayToBinaryString } from '@proton/shared/lib/helpers/encoding';
 import noop from '@proton/utils/noop';
+
+import type { PassCoreContextValue } from '../../../../components/Core/PassCoreProvider';
+import { PassEncryptionTag } from '../../../../types';
+import { SilentError } from '../../../../utils/errors/errors';
+import { logger } from '../../../../utils/logger';
+import { deobfuscate } from '../../../../utils/obfuscate/xor';
+import { getEpoch } from '../../../../utils/time/epoch';
+import { generateOfflineComponents } from '../../../cache/crypto';
+import { decryptData, encryptData, importSymmetricKey } from '../../../crypto/utils/crypto-helpers';
+import { PassCryptoError } from '../../../crypto/utils/errors';
+import { loadCoreCryptoWorker } from '../../../crypto/utils/worker';
+import type { AuthService } from '../../service';
+import { getInvalidPasswordString } from '../../utils';
+import type { LockAdapterBiometrics } from '../types';
+import { LockMode } from '../types';
+import { fromBiometricsEncryptedOfflineKD, intoBiometricsEncryptedOfflineKD } from './utils';
 
 export const generateBiometricsKey = async (core: PassCoreContextValue, offlineKD: string): Promise<string> => {
     const key = await core.generateBiometricsKey!();

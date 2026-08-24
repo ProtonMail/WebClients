@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import type { AuthRouteState } from '@proton/pass/components/Navigation/routing';
-import { useVisibleEffect } from '@proton/pass/hooks/useVisibleEffect';
-import type { MaybeNull } from '@proton/pass/types';
-import { isMainFrame } from '@proton/pass/utils/dom/is-main-frame';
+import type { AuthRouteState } from '../../components/Navigation/routing';
+import type { MaybeNull } from '../../types';
+import { isMainFrame } from '../../utils/dom/is-main-frame';
+import { useVisibleEffect } from '../useVisibleEffect';
 
 type Props = {
     loading: boolean;

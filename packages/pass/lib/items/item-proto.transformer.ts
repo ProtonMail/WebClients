@@ -1,5 +1,5 @@
-import { parsePasskey } from '@proton/pass/lib/passkeys/utils';
-import { getDefaultModeUrls } from '@proton/pass/lib/urls/utils/autofill';
+import { omit } from '@proton/shared/lib/helpers/object';
+
 import type {
     DeobfuscatedItem,
     DeobfuscatedItemExtraField,
@@ -9,10 +9,10 @@ import type {
     OpenedItem,
     SafeProtobufExtraField,
     SafeProtobufItem,
-} from '@proton/pass/types';
-import { ProtobufItem } from '@proton/pass/types';
-import { AutofillMode } from '@proton/pass/types/protobuf';
-import { Timestamp } from '@proton/pass/types/protobuf/google/protobuf/timestamp';
+} from '../../types';
+import { ProtobufItem } from '../../types';
+import { AutofillMode } from '../../types/protobuf';
+import { Timestamp } from '../../types/protobuf/google/protobuf/timestamp';
 import type {
     CustomSection,
     ItemCreditCard,
@@ -21,11 +21,11 @@ import type {
     ItemLogin,
     ItemSSHKey,
     ItemWifi,
-} from '@proton/pass/types/protobuf/item-v1';
-import { sanitizeBuffersB64 } from '@proton/pass/utils/buffer/sanitization';
-import { formatExpirationDateYYYYMM } from '@proton/pass/utils/time/expiration-date';
-import { omit } from '@proton/shared/lib/helpers/object';
-
+} from '../../types/protobuf/item-v1';
+import { sanitizeBuffersB64 } from '../../utils/buffer/sanitization';
+import { formatExpirationDateYYYYMM } from '../../utils/time/expiration-date';
+import { parsePasskey } from '../passkeys/utils';
+import { getDefaultModeUrls } from '../urls/utils/autofill';
 import { deobfuscateItem, obfuscateItem } from './item.obfuscation';
 
 const protobufSafeToExtraField = ({ fieldName, ...field }: SafeProtobufExtraField): DeobfuscatedItemExtraField => {

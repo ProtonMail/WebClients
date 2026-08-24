@@ -9,19 +9,20 @@ import { verticalPopperPlacements } from '@proton/atoms/Popper/utils';
 import type { DropdownProps } from '@proton/components/components/dropdown/Dropdown';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
-import { SharedMenuContent } from '@proton/pass/components/Menu/Shared/SharedMenu';
-import { VaultMenu } from '@proton/pass/components/Menu/Vault/VaultMenu';
-import { getVaultOptionInfo } from '@proton/pass/components/Menu/Vault/utils';
-import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
-import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
-import { OrganizationPolicyTooltip } from '@proton/pass/components/Organization/OrganizationPolicyTooltip';
-import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
-import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
-import { useVaultCreationPolicy } from '@proton/pass/hooks/organization/useVaultCreationPolicy';
-import { selectShare } from '@proton/pass/store/selectors/shares';
-import type { ShareType } from '@proton/pass/types/data/shares';
-import { VaultColor } from '@proton/pass/types/protobuf/vault-v1.static';
-import { withTap } from '@proton/pass/utils/fp/pipe';
+
+import { useVaultCreationPolicy } from '../../hooks/organization/useVaultCreationPolicy';
+import { selectShare } from '../../store/selectors/shares';
+import type { ShareType } from '../../types/data/shares';
+import { VaultColor } from '../../types/protobuf/vault-v1.static';
+import { withTap } from '../../utils/fp/pipe';
+import { SharedMenuContent } from '../Menu/Shared/SharedMenu';
+import { VaultMenu } from '../Menu/Vault/VaultMenu';
+import { getVaultOptionInfo } from '../Menu/Vault/utils';
+import { useNavigationFilters } from '../Navigation/NavigationFilters';
+import { useItemScope } from '../Navigation/NavigationMatches';
+import { OrganizationPolicyTooltip } from '../Organization/OrganizationPolicyTooltip';
+import { useVaultActions } from '../Vault/VaultActionsProvider';
+import { VaultIcon } from '../Vault/VaultIcon';
 
 import './HeaderVaultSelector.scss';
 

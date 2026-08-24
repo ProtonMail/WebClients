@@ -1,9 +1,8 @@
 import { useEffect } from 'react';
 
-import { useStatefulRef } from '@proton/pass/hooks/useStatefulRef';
-
 import { SESSION_LOCK_PIN_LENGTH } from '../../components/Lock/constants';
 import { useDebouncedValue } from '../useDebouncedValue';
+import { useStatefulRef } from '../useStatefulRef';
 
 type UseSessionLockPinOptions = {
     onSubmit: (pin: string) => void;

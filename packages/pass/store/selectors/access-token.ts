@@ -1,10 +1,10 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import type { PersonalAccessToken } from '@proton/pass/lib/access-token/access-token.types';
-import type { AccessTokenState } from '@proton/pass/store/reducers/access-tokens';
-import type { State } from '@proton/pass/store/types';
-import type { Maybe } from '@proton/pass/types';
-import { sortOn } from '@proton/pass/utils/fp/sort';
+import type { PersonalAccessToken } from '../../lib/access-token/access-token.types';
+import type { Maybe } from '../../types';
+import { sortOn } from '../../utils/fp/sort';
+import type { AccessTokenState } from '../reducers/access-tokens';
+import type { State } from '../types';
 
 export const selectAccessTokenState = ({ accessTokens }: State): AccessTokenState => accessTokens;
 
@@ -13,9 +13,8 @@ export const selectAccessTokens = createSelector(selectAccessTokenState, (state)
 );
 
 export const selectAccessTokenById = (tokenId: string) =>
-    createSelector(
-        selectAccessTokenState,
-        (state): Maybe<PersonalAccessToken> => state.tokens.find((t) => t.PersonalAccessTokenID === tokenId)
+    createSelector(selectAccessTokenState, (state): Maybe<PersonalAccessToken> =>
+        state.tokens.find((t) => t.PersonalAccessTokenID === tokenId)
     );
 
 export const selectAccessTokenGrants = (tokenId: string) => createSelector(selectAccessTokenState, (state) => state.grants[tokenId] ?? []);

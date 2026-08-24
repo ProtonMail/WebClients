@@ -3,7 +3,7 @@ import type {
     WasmPublicKeyCredentialAttestation,
 } from '@protontech/pass-rust-core/worker';
 
-import { SafeUint8Array, sanitizeBuffersB64URL } from '@proton/pass/utils/buffer/sanitization';
+import { SafeUint8Array, sanitizeBuffersB64URL } from '../../utils/buffer/sanitization';
 
 export const intoAuthenticatorAttestationResponse = ({
     response,

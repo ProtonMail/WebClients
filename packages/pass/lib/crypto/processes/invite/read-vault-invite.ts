@@ -1,7 +1,7 @@
 import type { PrivateKeyReference, PublicKeyReference } from '@protontech/crypto';
-import { decryptData, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
-import { type KeyRotationKeyPair, PassEncryptionTag } from '@proton/pass/types';
 
+import { type KeyRotationKeyPair, PassEncryptionTag } from '../../../../types';
+import { decryptData, importSymmetricKey } from '../../utils/crypto-helpers';
 import { openInviteKey } from './open-invite-key';
 
 type ReadVaultInviteContentProcessParams = {

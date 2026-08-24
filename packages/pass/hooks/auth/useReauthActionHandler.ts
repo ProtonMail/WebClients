@@ -4,19 +4,20 @@ import type { Store } from 'redux';
 import { c } from 'ttag';
 
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
-import { useCurrentPort, useCurrentTabID } from '@proton/pass/components/Core/PassCoreProvider';
-import { useStablePasswordTypeSwitch } from '@proton/pass/components/Lock/PasswordUnlockProvider';
-import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
-import type { ReauthActionPayload } from '@proton/pass/lib/auth/reauth';
-import { ReauthAction } from '@proton/pass/lib/auth/reauth';
-import { mimetypeForDownload } from '@proton/pass/lib/file-attachments/helpers';
-import { getSafeStorage } from '@proton/pass/lib/file-storage/utils';
-import { exportData } from '@proton/pass/store/actions/creators/export';
-import { asyncRequestDispatcherFactory } from '@proton/pass/store/request/utils';
-import type { State } from '@proton/pass/store/types';
-import { download } from '@proton/pass/utils/dom/download';
 import { BRAND_NAME, PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+
+import { useAuthStore } from '../../components/Core/AuthStoreProvider';
+import { useCurrentPort, useCurrentTabID } from '../../components/Core/PassCoreProvider';
+import { useStablePasswordTypeSwitch } from '../../components/Lock/PasswordUnlockProvider';
+import type { ReauthActionPayload } from '../../lib/auth/reauth';
+import { ReauthAction } from '../../lib/auth/reauth';
+import { mimetypeForDownload } from '../../lib/file-attachments/helpers';
+import { getSafeStorage } from '../../lib/file-storage/utils';
+import { exportData } from '../../store/actions/creators/export';
+import { asyncRequestDispatcherFactory } from '../../store/request/utils';
+import type { State } from '../../store/types';
+import { download } from '../../utils/dom/download';
+import { useNotificationEnhancer } from '../useNotificationEnhancer';
 
 const REAUTH_KEY = 'notification:reauth';
 

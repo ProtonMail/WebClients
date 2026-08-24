@@ -5,15 +5,16 @@ import { Button } from '@proton/atoms/Button/Button';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import { Field } from '@proton/pass/components/Form/Field/Field';
-import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
-import { TextField } from '@proton/pass/components/Form/Field/TextField';
-import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
-import { useAliasDomains } from '@proton/pass/components/Settings/Aliases/Domains/AliasDomainsContext';
-import { useRequest } from '@proton/pass/hooks/useRequest';
-import { validateAliasDomain } from '@proton/pass/lib/validation/domain';
-import { createCustomDomain } from '@proton/pass/store/actions';
-import type { DomainFormValues } from '@proton/pass/types';
+
+import { useRequest } from '../../../../hooks/useRequest';
+import { validateAliasDomain } from '../../../../lib/validation/domain';
+import { createCustomDomain } from '../../../../store/actions';
+import type { DomainFormValues } from '../../../../types';
+import { Field } from '../../../Form/Field/Field';
+import { FieldsetCluster } from '../../../Form/Field/Layout/FieldsetCluster';
+import { TextField } from '../../../Form/Field/TextField';
+import { PassModal } from '../../../Layout/Modal/PassModal';
+import { useAliasDomains } from './AliasDomainsContext';
 
 export const FORM_ID = 'custom-domain-add';
 

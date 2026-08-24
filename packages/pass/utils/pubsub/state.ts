@@ -1,5 +1,5 @@
-import type { Subscriber } from '@proton/pass/utils/pubsub/factory';
-import { createPubSub } from '@proton/pass/utils/pubsub/factory';
+import type { Subscriber } from './factory';
+import { createPubSub } from './factory';
 
 export interface ObservableState<T> {
     getState: () => T;

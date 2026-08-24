@@ -1,20 +1,21 @@
 import { generateKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import { c } from 'ttag';
 
-import { sendSetupLockSecretMessage } from '@proton/pass/lib/auth/lock/desktop/logic.extension';
-import type { LockAdapterDesktop } from '@proton/pass/lib/auth/lock/types';
-import { LockMode } from '@proton/pass/lib/auth/lock/types';
-import type { AuthService } from '@proton/pass/lib/auth/service';
-import { decryptData, encryptData, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
-import { NativeMessageError } from '@proton/pass/lib/native-messaging/errors';
-import type { NativeMessagingService } from '@proton/pass/lib/native-messaging/native-messaging.extension';
-import { NativeMessageErrorType, PassEncryptionTag } from '@proton/pass/types';
-import { SilentError } from '@proton/pass/utils/errors/errors';
-import { asyncLock } from '@proton/pass/utils/fp/promises';
-import { logger } from '@proton/pass/utils/logger';
-import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { binaryStringToUint8Array, uint8ArrayToBinaryString } from '@proton/shared/lib/helpers/encoding';
 import noop from '@proton/utils/noop';
+
+import { NativeMessageErrorType, PassEncryptionTag } from '../../../../types';
+import { SilentError } from '../../../../utils/errors/errors';
+import { asyncLock } from '../../../../utils/fp/promises';
+import { logger } from '../../../../utils/logger';
+import { getEpoch } from '../../../../utils/time/epoch';
+import { decryptData, encryptData, importSymmetricKey } from '../../../crypto/utils/crypto-helpers';
+import { NativeMessageError } from '../../../native-messaging/errors';
+import type { NativeMessagingService } from '../../../native-messaging/native-messaging.extension';
+import type { AuthService } from '../../service';
+import type { LockAdapterDesktop } from '../types';
+import { LockMode } from '../types';
+import { sendSetupLockSecretMessage } from './logic.extension';
 
 const encryptVerifier = async (lockSecret: Uint8Array<ArrayBuffer>) => {
     const key = await importSymmetricKey(lockSecret);

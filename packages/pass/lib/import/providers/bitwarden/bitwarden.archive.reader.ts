@@ -1,9 +1,9 @@
-import { ImportProviderError } from '@proton/pass/lib/import/helpers/error';
-import { readZIP } from '@proton/pass/lib/import/helpers/zip.reader';
-import { readBitwardenData } from '@proton/pass/lib/import/providers/bitwarden/bitwarden.reader';
-import type { ImportReaderResult } from '@proton/pass/lib/import/types';
-import { truthy } from '@proton/pass/utils/fp/predicates';
-import { logger } from '@proton/pass/utils/logger';
+import { truthy } from '../../../../utils/fp/predicates';
+import { logger } from '../../../../utils/logger';
+import { ImportProviderError } from '../../helpers/error';
+import { readZIP } from '../../helpers/zip.reader';
+import type { ImportReaderResult } from '../../types';
+import { readBitwardenData } from './bitwarden.reader';
 
 /** Process a Bitwarden archive (.zip). Required structure:
  * - /data.json

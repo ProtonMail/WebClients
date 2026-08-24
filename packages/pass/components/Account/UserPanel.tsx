@@ -2,9 +2,10 @@ import type { FC, ReactNode } from 'react';
 
 import { Avatar } from '@proton/atoms/Avatar/Avatar';
 import { IcStar } from '@proton/icons/icons/IcStar';
-import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
-import type { UserPassPlan } from '@proton/pass/types/api/plan';
 import clsx from '@proton/utils/clsx';
+
+import { isPaidPlan } from '../../lib/user/user.predicates';
+import type { UserPassPlan } from '../../types/api/plan';
 
 type Props = {
     actions?: ReactNode;

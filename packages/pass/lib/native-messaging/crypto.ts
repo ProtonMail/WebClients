@@ -1,7 +1,8 @@
 import { serverTime as getServerTime, updateServerTime } from '@protontech/crypto';
-import { PassCrypto } from '@proton/pass/lib/crypto';
-import { NativeMessageError } from '@proton/pass/lib/native-messaging/errors';
-import { type NativeMessage, NativeMessageErrorType, type NativeMessagePayload } from '@proton/pass/types';
+
+import { type NativeMessage, NativeMessageErrorType, type NativeMessagePayload } from '../../types';
+import { PassCrypto } from '../crypto';
+import { NativeMessageError } from './errors';
 
 export const payloadToMessage = async <Mes extends NativeMessage>(
     payload: NativeMessagePayload<Mes>,

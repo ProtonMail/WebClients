@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
-import { PassErrorCode } from '@proton/pass/lib/api/errors';
 import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+
+import { PassErrorCode } from '../../lib/api/errors';
 
 export const getErrorMessage = (error: any, fallback?: string): string => {
     const { code } = getApiError(error);

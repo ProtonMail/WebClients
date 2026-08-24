@@ -1,10 +1,10 @@
-import { hasUserIdentifier } from '@proton/pass/lib/items/item.predicates';
-import type { SelectAutosaveCandidatesOptions } from '@proton/pass/lib/search/types';
-import { searchItemsByDomain } from '@proton/pass/lib/urls/search/match';
-import { selectAllItems } from '@proton/pass/store/selectors/items';
-import { selectFeatureFlag } from '@proton/pass/store/selectors/user';
-import { createUncachedSelector } from '@proton/pass/store/selectors/utils';
-import { PassFeature } from '@proton/pass/types/api/features';
+import { hasUserIdentifier } from '../../lib/items/item.predicates';
+import type { SelectAutosaveCandidatesOptions } from '../../lib/search/types';
+import { searchItemsByDomain } from '../../lib/urls/search/match';
+import { PassFeature } from '../../types/api/features';
+import { selectAllItems } from './items';
+import { selectFeatureFlag } from './user';
+import { createUncachedSelector } from './utils';
 
 export const selectAutosaveCandidate = (options: SelectAutosaveCandidatesOptions) =>
     createUncachedSelector(

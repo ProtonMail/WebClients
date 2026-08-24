@@ -1,6 +1,14 @@
 import type { Reducer } from 'redux';
 
-import { PassErrorCode } from '@proton/pass/lib/api/errors';
+import { toMap } from '@proton/shared/lib/helpers/object';
+
+import { PassErrorCode } from '../../lib/api/errors';
+import type { AliasDetails, Maybe, MaybeNull, UserMailboxOutput } from '../../types';
+import type { AliasOptions } from '../../types/data/alias';
+import { or } from '../../utils/fp/predicates';
+import { objectDelete } from '../../utils/object/delete';
+import { objectMap } from '../../utils/object/map';
+import { partialMerge } from '../../utils/object/merge';
 import {
     aliasDetailsSync,
     cancelMailboxEdit,
@@ -14,14 +22,7 @@ import {
     requestAliasOptions,
     setDefaultMailbox,
     validateMailbox,
-} from '@proton/pass/store/actions';
-import type { AliasDetails, Maybe, MaybeNull, UserMailboxOutput } from '@proton/pass/types';
-import type { AliasOptions } from '@proton/pass/types/data/alias';
-import { or } from '@proton/pass/utils/fp/predicates';
-import { objectDelete } from '@proton/pass/utils/object/delete';
-import { objectMap } from '@proton/pass/utils/object/map';
-import { partialMerge } from '@proton/pass/utils/object/merge';
-import { toMap } from '@proton/shared/lib/helpers/object';
+} from '../actions';
 
 export type AliasDetailsState = Maybe<Omit<AliasDetails, 'aliasEmail'>>;
 
@@ -87,8 +88,7 @@ const reducer: Reducer<AliasState> = (state = getInitialState(), action) => {
 
     if (
         (deleteMailbox.success.match(action) ||
-            (or(validateMailbox.failure.match, deleteMailbox.failure.match)(action) &&
-                action.error.code === PassErrorCode.NOT_ALLOWED)) &&
+            (or(validateMailbox.failure.match, deleteMailbox.failure.match)(action) && action.error.code === PassErrorCode.NOT_ALLOWED)) &&
         state.mailboxes
     ) {
         return { ...state, mailboxes: objectDelete(state.mailboxes, action.payload.mailboxID) };

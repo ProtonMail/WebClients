@@ -1,9 +1,10 @@
-import type { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
-import { PASS_DEFAULT_THEME } from '@proton/pass/constants';
-import type { Maybe } from '@proton/pass/types';
-import type { ObservableState } from '@proton/pass/utils/pubsub/state';
-import { createObservableState } from '@proton/pass/utils/pubsub/state';
 import noop from '@proton/utils/noop';
+
+import { PASS_DEFAULT_THEME } from '../../../constants';
+import type { Maybe } from '../../../types';
+import type { ObservableState } from '../../../utils/pubsub/state';
+import { createObservableState } from '../../../utils/pubsub/state';
+import type { PassThemeOption } from './types';
 
 type PassThemeServiceConfig = {
     /** Resolves the initial theme. This is required in order to resolve

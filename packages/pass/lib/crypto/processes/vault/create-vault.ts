@@ -1,9 +1,11 @@
 import { CryptoProxy } from '@protontech/crypto';
-import { encryptData, generateKey, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
-import { PassCryptoVaultError } from '@proton/pass/lib/crypto/utils/errors';
-import type { VaultCreateRequest } from '@proton/pass/types';
-import { ContentFormatVersion, PassEncryptionTag } from '@proton/pass/types';
+
 import type { DecryptedKey } from '@proton/shared/lib/interfaces';
+
+import type { VaultCreateRequest } from '../../../../types';
+import { ContentFormatVersion, PassEncryptionTag } from '../../../../types';
+import { encryptData, generateKey, importSymmetricKey } from '../../utils/crypto-helpers';
+import { PassCryptoVaultError } from '../../utils/errors';
 
 type CreateVaultProcessParams = {
     content: Uint8Array<ArrayBuffer>;

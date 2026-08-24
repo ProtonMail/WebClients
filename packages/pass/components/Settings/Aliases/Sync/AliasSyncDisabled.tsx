@@ -5,13 +5,14 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import { Card } from '@proton/pass/components/Layout/Card/Card';
-import { AliasSyncModal } from '@proton/pass/components/Settings/Aliases/Sync/AliasSyncModal';
-import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
-import { useRequest } from '@proton/pass/hooks/useRequest';
-import { aliasSyncStatus } from '@proton/pass/store/actions';
-import { selectUserData } from '@proton/pass/store/selectors';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+
+import { useRequest } from '../../../../hooks/useRequest';
+import { aliasSyncStatus } from '../../../../store/actions';
+import { selectUserData } from '../../../../store/selectors';
+import { Card } from '../../../Layout/Card/Card';
+import { SettingsPanel } from '../../SettingsPanel';
+import { AliasSyncModal } from './AliasSyncModal';
 
 export const AliasSyncDisabled: FC = () => {
     const aliasSyncId = useId();

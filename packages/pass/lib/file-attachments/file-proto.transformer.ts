@@ -1,5 +1,5 @@
-import type { FileMetadata as Metadata } from '@proton/pass/types';
-import { FileMetadata } from '@proton/pass/types/protobuf/file-v1';
+import type { FileMetadata as Metadata } from '../../types';
+import { FileMetadata } from '../../types/protobuf/file-v1';
 
 export const encodeFileMetadata = (metadata: Metadata): Uint8Array<ArrayBuffer> => {
     const creation = FileMetadata.create(metadata);

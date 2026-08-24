@@ -1,9 +1,10 @@
 import { forwardRef, useCallback, useEffect, useImperativeHandle, useRef } from 'react';
 
-import { matchDarkTheme } from '@proton/pass/components/Layout/Theme/utils';
-import type { IOtpRenderer } from '@proton/pass/components/Otp/types';
-import type { MaybeNull } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
+
+import type { MaybeNull } from '../../types';
+import { matchDarkTheme } from '../Layout/Theme/utils';
+import type { IOtpRenderer } from './types';
 
 import './OTPDonut.scss';
 

@@ -1,5 +1,5 @@
-import type { EventProcessor } from '@proton/pass/lib/sync/types';
-import type { SyncEventShareFolderOutput } from '@proton/pass/types';
+import type { SyncEventShareFolderOutput } from '../../../types';
+import type { EventProcessor } from '../types';
 
 /** FIXME: when adding folder support */
 export function* processFoldersUpdated(updated: SyncEventShareFolderOutput[]): EventProcessor {

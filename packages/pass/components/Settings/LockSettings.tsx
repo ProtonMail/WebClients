@@ -2,8 +2,7 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import { LockSetup } from '@proton/pass/components/Settings/LockSetup';
-
+import { LockSetup } from './LockSetup';
 import { SettingsPanel } from './SettingsPanel';
 
 export const LockSettings: FC = () => (

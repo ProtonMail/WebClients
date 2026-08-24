@@ -1,9 +1,9 @@
 import type { Action, Reducer } from 'redux';
 
-import { garbageCollectTabState, saveFilters, saveTabState } from '@proton/pass/store/actions/creators/filters';
-import type { ItemFilters, MaybeNull, SelectedItem, TabId } from '@proton/pass/types';
-import { objectDelete } from '@proton/pass/utils/object/delete';
-import { merge, partialMerge } from '@proton/pass/utils/object/merge';
+import type { ItemFilters, MaybeNull, SelectedItem, TabId } from '../../types';
+import { objectDelete } from '../../utils/object/delete';
+import { merge, partialMerge } from '../../utils/object/merge';
+import { garbageCollectTabState, saveFilters, saveTabState } from '../actions/creators/filters';
 
 export type TabState = {
     tabId: TabId;
@@ -34,10 +34,7 @@ const filtersReducer: Reducer<FiltersState> = (state = getInitialState(), action
     if (garbageCollectTabState.match(action)) {
         return {
             ...state,
-            tabs: action.payload.tabIds.reduce<FiltersState['tabs']>(
-                (acc, tabId) => objectDelete(acc, tabId),
-                state.tabs
-            ),
+            tabs: action.payload.tabIds.reduce<FiltersState['tabs']>((acc, tabId) => objectDelete(acc, tabId), state.tabs),
         };
     }
 

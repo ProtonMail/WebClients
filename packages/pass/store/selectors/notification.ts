@@ -1,11 +1,11 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import { isActiveNotification, isPromoNotification, isUnreadNotification } from '@proton/pass/lib/notifications/notifications.utils';
-import type { NotificationReducerState } from '@proton/pass/store/reducers/notification';
-import type { State } from '@proton/pass/store/types';
-import type { Maybe } from '@proton/pass/types';
-import type { InAppNotification } from '@proton/pass/types/data/notification';
-import { and, not } from '@proton/pass/utils/fp/predicates';
+import { isActiveNotification, isPromoNotification, isUnreadNotification } from '../../lib/notifications/notifications.utils';
+import type { Maybe } from '../../types';
+import type { InAppNotification } from '../../types/data/notification';
+import { and, not } from '../../utils/fp/predicates';
+import type { NotificationReducerState } from '../reducers/notification';
+import type { State } from '../types';
 
 export const selectNotificationState = ({ notification }: State): NotificationReducerState => notification;
 export const selectNotificationNextDisplayTime = ({ notification }: State) => notification.nextDisplayTime;

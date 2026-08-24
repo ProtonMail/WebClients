@@ -4,25 +4,26 @@ import { useSelector, useStore } from 'react-redux';
 import { c } from 'ttag';
 
 import { IcPinAngled } from '@proton/icons/icons/IcPinAngled';
-import { PINNED_ITEM_MAX_WIDTH_PX, PinnedItem } from '@proton/pass/components/Item/Pinned/PinnedItem';
-import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
-import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
-import { SafeItemIcon } from '@proton/pass/components/Layout/Icon/ItemIcon';
-import { itemTypeToSubThemeClassName } from '@proton/pass/components/Layout/Theme/types';
-import { useSelectItem } from '@proton/pass/components/Navigation/NavigationActions';
-import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
-import { useSelectedItem } from '@proton/pass/components/Navigation/NavigationItem';
-import type { ItemScope } from '@proton/pass/components/Navigation/routing';
-import { getInitialFilters } from '@proton/pass/components/Navigation/routing';
-import { useResponsiveHorizontalList } from '@proton/pass/hooks/useResponsiveHorizontalList';
-import { useStatefulRef } from '@proton/pass/hooks/useStatefulRef';
-import { isTrashed, itemEq } from '@proton/pass/lib/items/item.predicates';
-import { sortItems } from '@proton/pass/lib/items/item.utils';
-import { isItemShare } from '@proton/pass/lib/shares/share.predicates';
-import { selectPinnedItems, selectShare } from '@proton/pass/store/selectors';
-import type { State } from '@proton/pass/store/types';
-import type { ItemRevision, ItemSortFilter } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
+
+import { useResponsiveHorizontalList } from '../../../hooks/useResponsiveHorizontalList';
+import { useStatefulRef } from '../../../hooks/useStatefulRef';
+import { isTrashed, itemEq } from '../../../lib/items/item.predicates';
+import { sortItems } from '../../../lib/items/item.utils';
+import { isItemShare } from '../../../lib/shares/share.predicates';
+import { selectPinnedItems, selectShare } from '../../../store/selectors';
+import type { State } from '../../../store/types';
+import type { ItemRevision, ItemSortFilter } from '../../../types';
+import { DropdownMenuButton } from '../../Layout/Dropdown/DropdownMenuButton';
+import { QuickActionsDropdown } from '../../Layout/Dropdown/QuickActionsDropdown';
+import { SafeItemIcon } from '../../Layout/Icon/ItemIcon';
+import { itemTypeToSubThemeClassName } from '../../Layout/Theme/types';
+import { useSelectItem } from '../../Navigation/NavigationActions';
+import { useNavigationFilters } from '../../Navigation/NavigationFilters';
+import { useSelectedItem } from '../../Navigation/NavigationItem';
+import type { ItemScope } from '../../Navigation/routing';
+import { getInitialFilters } from '../../Navigation/routing';
+import { PINNED_ITEM_MAX_WIDTH_PX, PinnedItem } from './PinnedItem';
 
 import './PinnedItemsBar.scss';
 

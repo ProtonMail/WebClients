@@ -1,6 +1,5 @@
-import type { GroupInviteListItemResponse, InviteDataForUser, KeyRotationKeyPair } from '@proton/pass/types/api';
-import type { MaybeNull } from '@proton/pass/types/utils';
-
+import type { GroupInviteListItemResponse, InviteDataForUser, KeyRotationKeyPair } from '../api';
+import type { MaybeNull } from '../utils';
 import type { ShareRole, ShareType, VaultShareContent } from './shares';
 
 export type AbstractInviteResponse = InviteDataForUser | GroupInviteListItemResponse;
@@ -44,8 +43,7 @@ export type InviteVaultData = {
 };
 
 export type InviteContent =
-    | { targetType: ShareType.Vault; vault: InviteVaultData }
-    | { targetType: ShareType.Item; vault: null };
+    { targetType: ShareType.Vault; vault: InviteVaultData } | { targetType: ShareType.Item; vault: null };
 
 export type Invite<T extends InviteType = InviteType> = InviteBase & {
     type: T;

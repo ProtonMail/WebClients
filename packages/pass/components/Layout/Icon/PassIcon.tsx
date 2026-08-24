@@ -1,10 +1,10 @@
 import type { FC } from 'react';
 
 import type { IconSize } from '@proton/icons/types';
-import { usePassTheme } from '@proton/pass/components/Layout/Theme/ThemeProvider';
-import { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
-import { PassIconStatus } from '@proton/pass/types/data/pass-icon';
 
+import { PassIconStatus } from '../../../types/data/pass-icon';
+import { usePassTheme } from '../Theme/ThemeProvider';
+import { PassThemeOption } from '../Theme/types';
 import { getIconSizePx } from './IconBox';
 
 type Props = { status: PassIconStatus; size: IconSize; className?: string };

@@ -2,9 +2,10 @@ import { type FC, useEffect, useState } from 'react';
 
 import Icon from '@proton/components/components/icon/Icon';
 import type { IconName, IconSize } from '@proton/icons/types';
-import PassUI from '@proton/pass/lib/core/ui.proxy';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
+
+import PassUI from '../../lib/core/ui.proxy';
 
 type Props = { mimeType: string; className?: string; size?: IconSize };
 

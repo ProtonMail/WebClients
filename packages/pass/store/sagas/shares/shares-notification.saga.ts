@@ -1,15 +1,15 @@
 import { select, takeEvery } from 'redux-saga/effects';
 import { c } from 'ttag';
 
-import { isGroupShare, isVaultShare } from '@proton/pass/lib/shares/share.predicates';
-import { shareDeleted, sharesEventNew } from '@proton/pass/store/actions';
-import type { Notification } from '@proton/pass/store/actions/enhancers/notification';
-import type { GroupsState } from '@proton/pass/store/reducers/groups';
-import { selectItem, selectShare } from '@proton/pass/store/selectors';
-import { selectGroups } from '@proton/pass/store/selectors/groups';
-import type { RootSagaOptions } from '@proton/pass/store/types';
-import type { ItemRevision, Maybe } from '@proton/pass/types';
-import { type Share, ShareType } from '@proton/pass/types';
+import { isGroupShare, isVaultShare } from '../../../lib/shares/share.predicates';
+import type { ItemRevision, Maybe } from '../../../types';
+import { type Share, ShareType } from '../../../types';
+import { shareDeleted, sharesEventNew } from '../../actions';
+import type { Notification } from '../../actions/enhancers/notification';
+import type { GroupsState } from '../../reducers/groups';
+import { selectItem, selectShare } from '../../selectors';
+import { selectGroups } from '../../selectors/groups';
+import type { RootSagaOptions } from '../../types';
 
 function* notificationForNewShare(share: Share, onNotification: (notification: Notification) => void) {
     // No notification except for group shares

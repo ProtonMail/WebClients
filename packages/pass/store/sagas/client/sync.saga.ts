@@ -1,7 +1,12 @@
 import { call, put, race, select, take } from 'redux-saga/effects';
 
-import { sync } from '@proton/pass/lib/sync/sync';
-import { SyncStrategy } from '@proton/pass/lib/sync/types';
+import { wait } from '@proton/shared/lib/helpers/promise';
+import type { User } from '@proton/shared/lib/interfaces';
+
+import { sync } from '../../../lib/sync/sync';
+import { SyncStrategy } from '../../../lib/sync/types';
+import type { MaybeNull } from '../../../types';
+import { logger } from '../../../utils/logger';
 import {
     getInAppNotifications,
     getUserAccessIntent,
@@ -13,20 +18,16 @@ import {
     syncFailure,
     syncIntent,
     syncSuccess,
-} from '@proton/pass/store/actions';
-import { resolveModelRegistry } from '@proton/pass/store/actions/creators/model-registry';
-import { getOrganizationPauseList, getOrganizationSettings } from '@proton/pass/store/actions/creators/organization';
-import { resolvePrivateDomains } from '@proton/pass/store/actions/creators/private-domains';
-import { resolveWebsiteRules } from '@proton/pass/store/actions/creators/rules';
-import { getAuthDevices } from '@proton/pass/store/actions/creators/sso';
-import { withRevalidate } from '@proton/pass/store/request/enhancers';
-import { refreshUserData } from '@proton/pass/store/sagas/events/core/channel.core';
-import { selectSyncStrategy, selectUser } from '@proton/pass/store/selectors';
-import type { RootSagaOptions, State } from '@proton/pass/store/types';
-import type { MaybeNull } from '@proton/pass/types';
-import { logger } from '@proton/pass/utils/logger';
-import { wait } from '@proton/shared/lib/helpers/promise';
-import type { User } from '@proton/shared/lib/interfaces';
+} from '../../actions';
+import { resolveModelRegistry } from '../../actions/creators/model-registry';
+import { getOrganizationPauseList, getOrganizationSettings } from '../../actions/creators/organization';
+import { resolvePrivateDomains } from '../../actions/creators/private-domains';
+import { resolveWebsiteRules } from '../../actions/creators/rules';
+import { getAuthDevices } from '../../actions/creators/sso';
+import { withRevalidate } from '../../request/enhancers';
+import { selectSyncStrategy, selectUser } from '../../selectors';
+import type { RootSagaOptions, State } from '../../types';
+import { refreshUserData } from '../events/core/channel.core';
 
 function* syncWorker(options: RootSagaOptions) {
     yield put(stopEventPolling());

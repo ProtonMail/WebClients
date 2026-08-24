@@ -4,29 +4,30 @@ import { useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { usePermissionsProvider } from '@proton/pass/components/Core/PermissionsProvider';
-import { usePasswordTypeSwitch, usePasswordUnlock } from '@proton/pass/components/Lock/PasswordUnlockProvider';
-import { usePinUnlock } from '@proton/pass/components/Lock/PinUnlockProvider';
-import { useUnlock } from '@proton/pass/components/Lock/UnlockProvider';
-import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
-import { DEFAULT_LOCK_TTL } from '@proton/pass/constants';
-import { useDesktopUnlock } from '@proton/pass/hooks/auth/useDesktopUnlock';
-import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
-import { useActionRequest } from '@proton/pass/hooks/useRequest';
-import type { UnlockDTO } from '@proton/pass/lib/auth/lock/types';
-import { LockMode } from '@proton/pass/lib/auth/lock/types';
-import { ReauthAction } from '@proton/pass/lib/auth/reauth';
-import { lockCreateIntent } from '@proton/pass/store/actions';
-import { lockCreateRequest } from '@proton/pass/store/actions/requests';
-import { selectLockMode, selectLockTTL } from '@proton/pass/store/selectors';
-import type { Maybe, MaybeNull, Result } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
-import { cloneObfuscation } from '@proton/pass/utils/obfuscate/xor';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { isMac } from '@proton/shared/lib/helpers/browser';
 import noop from '@proton/utils/noop';
+
+import { useAuthStore } from '../../components/Core/AuthStoreProvider';
+import { usePassCore } from '../../components/Core/PassCoreProvider';
+import { usePermissionsProvider } from '../../components/Core/PermissionsProvider';
+import { usePasswordTypeSwitch, usePasswordUnlock } from '../../components/Lock/PasswordUnlockProvider';
+import { usePinUnlock } from '../../components/Lock/PinUnlockProvider';
+import { useUnlock } from '../../components/Lock/UnlockProvider';
+import { useOrganization } from '../../components/Organization/OrganizationProvider';
+import { DEFAULT_LOCK_TTL } from '../../constants';
+import type { UnlockDTO } from '../../lib/auth/lock/types';
+import { LockMode } from '../../lib/auth/lock/types';
+import { ReauthAction } from '../../lib/auth/reauth';
+import { lockCreateIntent } from '../../store/actions';
+import { lockCreateRequest } from '../../store/actions/requests';
+import { selectLockMode, selectLockTTL } from '../../store/selectors';
+import type { Maybe, MaybeNull, Result } from '../../types';
+import { PassFeature } from '../../types/api/features';
+import { cloneObfuscation } from '../../utils/obfuscate/xor';
+import { useFeatureFlag } from '../useFeatureFlag';
+import { useActionRequest } from '../useRequest';
+import { useDesktopUnlock } from './useDesktopUnlock';
 
 type LockState = {
     /** If `true`, user should not be able to toggle the TTL */

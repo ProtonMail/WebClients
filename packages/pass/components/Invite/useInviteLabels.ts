@@ -2,8 +2,8 @@ import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
-import { PassFeature } from '@proton/pass/types/api/features';
+import { useFeatureFlag } from '../../hooks/useFeatureFlag';
+import { PassFeature } from '../../types/api/features';
 
 export type InviteLabels = {
     title: string;

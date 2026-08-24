@@ -1,11 +1,11 @@
 import { call, select } from 'redux-saga/effects';
 
-import { moveItems } from '@proton/pass/lib/items/item.requests';
-import { itemMove } from '@proton/pass/store/actions';
-import { createRequestSaga } from '@proton/pass/store/request/sagas';
-import { selectItem } from '@proton/pass/store/selectors';
-import type { ItemRevision, Maybe } from '@proton/pass/types';
-import { first } from '@proton/pass/utils/array/first';
+import { moveItems } from '../../../lib/items/item.requests';
+import type { ItemRevision, Maybe } from '../../../types';
+import { first } from '../../../utils/array/first';
+import { itemMove } from '../../actions';
+import { createRequestSaga } from '../../request/sagas';
+import { selectItem } from '../../selectors';
 
 export default createRequestSaga({
     actions: itemMove,

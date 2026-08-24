@@ -1,4 +1,4 @@
-import type { Maybe } from '@proton/pass/types';
+import type { Maybe } from '../../types';
 
 export const safeCall =
     <T extends (...args: any[]) => any>(fn?: T) =>

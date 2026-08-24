@@ -1,5 +1,4 @@
-import type { RectOffset } from '@proton/pass/types/utils/dom';
-
+import type { RectOffset } from '../../types/utils/dom';
 import { createStyleParser, getComputedHeight, pixelParser } from './computed-styles';
 import { allChildrenOverlap } from './overlap';
 

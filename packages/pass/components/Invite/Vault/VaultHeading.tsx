@@ -1,10 +1,10 @@
 import type { FC } from 'react';
 import { useSelector } from 'react-redux';
 
-import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
-import { formatItemsCount } from '@proton/pass/lib/items/item.utils';
-import { selectShareOrThrow, selectVaultItemsCount } from '@proton/pass/store/selectors';
-import type { SelectedShare, ShareType } from '@proton/pass/types';
+import { formatItemsCount } from '../../../lib/items/item.utils';
+import { selectShareOrThrow, selectVaultItemsCount } from '../../../store/selectors';
+import type { SelectedShare, ShareType } from '../../../types';
+import { VaultIcon } from '../../Vault/VaultIcon';
 
 export const VaultHeading: FC<SelectedShare> = ({ shareId }) => {
     const vault = useSelector(selectShareOrThrow<ShareType.Vault>(shareId));

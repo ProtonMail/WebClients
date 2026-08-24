@@ -1,21 +1,23 @@
 import { all, call, fork, put, select } from 'redux-saga/effects';
 
-import { PassCrypto } from '@proton/pass/lib/crypto';
-import type { EventCursor, EventManagerEvent } from '@proton/pass/lib/events/manager';
-import { SyncStrategy } from '@proton/pass/lib/sync/types';
-import { getUserData } from '@proton/pass/lib/user/user.requests';
-import {
-    coreEvent,
-    getInAppNotifications,
-    getUserAccessIntent,
-    getUserFeaturesIntent,
-    syncIntent,
-    userRefresh,
-} from '@proton/pass/store/actions';
-import { getGroup } from '@proton/pass/store/actions/creators/groups';
-import { getOrganizationPauseList, getOrganizationSettings } from '@proton/pass/store/actions/creators/organization';
-import type { HydratedUserState } from '@proton/pass/store/reducers';
-import { withRevalidate } from '@proton/pass/store/request/enhancers';
+import { getEvents, getLatestID } from '@proton/shared/lib/api/events';
+import type { Address, User, UserSettings } from '@proton/shared/lib/interfaces';
+import identity from '@proton/utils/identity';
+
+import { PassCrypto } from '../../../../lib/crypto';
+import type { EventCursor, EventManagerEvent } from '../../../../lib/events/manager';
+import { SyncStrategy } from '../../../../lib/sync/types';
+import { getUserData } from '../../../../lib/user/user.requests';
+import type { Api, CoreEvent, Maybe, MaybeNull, PassPlanResponse } from '../../../../types';
+import { EventActions } from '../../../../types';
+import { prop } from '../../../../utils/fp/lens';
+import { notIn } from '../../../../utils/fp/predicates';
+import { logId, logger } from '../../../../utils/logger';
+import { coreEvent, getInAppNotifications, getUserAccessIntent, getUserFeaturesIntent, syncIntent, userRefresh } from '../../../actions';
+import { getGroup } from '../../../actions/creators/groups';
+import { getOrganizationPauseList, getOrganizationSettings } from '../../../actions/creators/organization';
+import type { HydratedUserState } from '../../../reducers';
+import { withRevalidate } from '../../../request/enhancers';
 import {
     selectAllAddresses,
     selectLatestEventId,
@@ -23,17 +25,8 @@ import {
     selectUser,
     selectUserPlan,
     selectUserSettings,
-} from '@proton/pass/store/selectors';
-import type { RootSagaOptions } from '@proton/pass/store/types';
-import type { Api, CoreEvent, Maybe, MaybeNull, PassPlanResponse } from '@proton/pass/types';
-import { EventActions } from '@proton/pass/types';
-import { prop } from '@proton/pass/utils/fp/lens';
-import { notIn } from '@proton/pass/utils/fp/predicates';
-import { logId, logger } from '@proton/pass/utils/logger';
-import { getEvents, getLatestID } from '@proton/shared/lib/api/events';
-import type { Address, User, UserSettings } from '@proton/shared/lib/interfaces';
-import identity from '@proton/utils/identity';
-
+} from '../../../selectors';
+import type { RootSagaOptions } from '../../../types';
 import { eventChannelFactory } from '../v1/channel.factory';
 import { channelEvents, channelInitalize } from '../v1/channel.worker';
 import type { EventChannel } from '../v1/types';

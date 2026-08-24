@@ -1,9 +1,8 @@
 import type { Action, Reducer } from 'redux';
 
-import { objectDelete } from '@proton/pass/utils/object/delete';
-import { partialMerge } from '@proton/pass/utils/object/merge';
-import { getEpoch } from '@proton/pass/utils/time/epoch';
-
+import { objectDelete } from '../../utils/object/delete';
+import { partialMerge } from '../../utils/object/merge';
+import { getEpoch } from '../../utils/time/epoch';
 import { requestInvalidate, requestProgress } from './actions';
 import type { RequestState } from './types';
 import { isActionWithRequest } from './utils';

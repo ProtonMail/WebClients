@@ -1,8 +1,8 @@
 import type { Action, Reducer } from 'redux';
 
-import type { ImportReport } from '@proton/pass/lib/import/helpers/report';
-import { importReport } from '@proton/pass/store/actions';
-import type { MaybeNull } from '@proton/pass/types';
+import type { ImportReport } from '../../lib/import/helpers/report';
+import type { MaybeNull } from '../../types';
+import { importReport } from '../actions';
 
 export type ImportState = MaybeNull<ImportReport>;
 

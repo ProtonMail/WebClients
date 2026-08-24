@@ -1,8 +1,8 @@
 import type { Reducer } from 'redux';
 
-import { isPassB2BPlan } from '@proton/pass/lib/b2b/b2b.utils';
-import { coreEvent, getUserAccessSuccess, matchSyncAction } from '@proton/pass/store/actions';
-import { getOrganizationSettings, setOrganization, setOrganizationSettings } from '@proton/pass/store/actions/creators/organization';
+import type { Organization } from '@proton/shared/lib/interfaces';
+
+import { isPassB2BPlan } from '../../lib/b2b/b2b.utils';
 import {
     type MaybeNull,
     OrganizationAliasCreateMode,
@@ -11,10 +11,11 @@ import {
     OrganizationPublicLinkMode,
     OrganizationShareMode,
     OrganizationVaultCreateMode,
-} from '@proton/pass/types';
-import type { OrganizationSettings } from '@proton/pass/types/data/organization';
-import { or } from '@proton/pass/utils/fp/predicates';
-import type { Organization } from '@proton/shared/lib/interfaces';
+} from '../../types';
+import type { OrganizationSettings } from '../../types/data/organization';
+import { or } from '../../utils/fp/predicates';
+import { coreEvent, getUserAccessSuccess, matchSyncAction } from '../actions';
+import { getOrganizationSettings, setOrganization, setOrganizationSettings } from '../actions/creators/organization';
 
 export const INITIAL_ORGANIZATION_SETTINGS: OrganizationSettings = {
     ExportMode: OrganizationExportMode.UNRESTRICTED,

@@ -8,15 +8,16 @@ import Collapsible from '@proton/components/components/collapsible/Collapsible';
 import CollapsibleContent from '@proton/components/components/collapsible/CollapsibleContent';
 import CollapsibleHeader from '@proton/components/components/collapsible/CollapsibleHeader';
 import { IcCross } from '@proton/icons/icons/IcCross';
-import { Field } from '@proton/pass/components/Form/Field/Field';
-import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
-import { TextField } from '@proton/pass/components/Form/Field/TextField';
-import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';
-import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
-import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
-import type { Maybe } from '@proton/pass/types';
-import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { isNumber } from '@proton/shared/lib/helpers/validators';
+
+import type { Maybe } from '../../../types';
+import { getEpoch } from '../../../utils/time/epoch';
+import { Field } from '../../Form/Field/Field';
+import { FieldsetCluster } from '../../Form/Field/Layout/FieldsetCluster';
+import { TextField } from '../../Form/Field/TextField';
+import { Panel } from '../Panel/Panel';
+import { PanelHeader } from '../Panel/PanelHeader';
+import { SidebarModal } from './SidebarModal';
 
 const FORM_ID = 'email-verify';
 

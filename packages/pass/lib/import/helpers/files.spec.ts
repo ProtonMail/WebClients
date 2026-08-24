@@ -1,6 +1,6 @@
-import { getImportFilename } from '@proton/pass/lib/import/helpers/files';
-import { ImportProvider } from '@proton/pass/lib/import/types';
-import { uniqueId } from '@proton/pass/utils/string/unique-id';
+import { uniqueId } from '../../../utils/string/unique-id';
+import { ImportProvider } from '../types';
+import { getImportFilename } from './files';
 
 const fileID = uniqueId(16);
 

@@ -1,8 +1,7 @@
-import { createFileDescriptor } from '@proton/pass/lib/crypto/processes/file/create-file-descriptor';
-import { encryptData } from '@proton/pass/lib/crypto/utils/crypto-helpers';
-import { createRandomItemKey } from '@proton/pass/lib/crypto/utils/testing';
-import { PassEncryptionTag } from '@proton/pass/types';
-
+import { PassEncryptionTag } from '../../../../types';
+import { encryptData } from '../../utils/crypto-helpers';
+import { createRandomItemKey } from '../../utils/testing';
+import { createFileDescriptor } from '../file/create-file-descriptor';
 import { createSecureLink } from './create-secure-link';
 import { openSecureLinkFileDescriptor } from './open-secure-link-file-descriptor';
 

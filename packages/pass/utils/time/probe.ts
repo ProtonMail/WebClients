@@ -1,4 +1,4 @@
-import { logger } from '@proton/pass/utils/logger';
+import { logger } from '../logger';
 
 export type ActivityProbe = ReturnType<typeof createActivityProbe>;
 

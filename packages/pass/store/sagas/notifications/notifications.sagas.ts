@@ -1,6 +1,6 @@
-import { getNotifications, updateNotificationState } from '@proton/pass/lib/notifications/notifications.requests';
-import { getInAppNotifications, updateInAppNotificationState } from '@proton/pass/store/actions';
-import { createRequestSaga } from '@proton/pass/store/request/sagas';
+import { getNotifications, updateNotificationState } from '../../../lib/notifications/notifications.requests';
+import { getInAppNotifications, updateInAppNotificationState } from '../../actions';
+import { createRequestSaga } from '../../request/sagas';
 
 const get = createRequestSaga({
     actions: getInAppNotifications,

@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
-import type { ExtractKeysOfType, IdentityValues } from '@proton/pass/types';
-
+import type { ExtractKeysOfType, IdentityValues } from '../../types';
 import type { IdentityFormField, IdentityFormSection } from './useIdentityForm';
 
 type FieldType = ExtractKeysOfType<IdentityValues, string>;

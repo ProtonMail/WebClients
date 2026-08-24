@@ -1,5 +1,4 @@
-import { isObject } from '@proton/pass/utils/object/is-object';
-
+import { isObject } from '../../../../utils/object/is-object';
 import type { DetectionRulesV1 } from './types';
 
 export const validateRulesV1 = (data: object & { rules: unknown; version: unknown }): data is DetectionRulesV1 => {

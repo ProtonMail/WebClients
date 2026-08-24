@@ -1,8 +1,13 @@
 import type { Reducer } from 'redux';
 
-import { PassErrorCode } from '@proton/pass/lib/api/errors';
-import { intoCustomMonitorAddress, intoMonitorDomain, intoProtonMonitorAddress } from '@proton/pass/lib/monitor/monitor.utils';
-import { AddressType, type MonitorAddress, type MonitorDomain } from '@proton/pass/lib/monitor/types';
+import lastItem from '@proton/utils/lastItem';
+
+import { PassErrorCode } from '../../lib/api/errors';
+import { intoCustomMonitorAddress, intoMonitorDomain, intoProtonMonitorAddress } from '../../lib/monitor/monitor.utils';
+import { AddressType, type MonitorAddress, type MonitorDomain } from '../../lib/monitor/types';
+import type { BreachesGetResponse, MaybeNull } from '../../types';
+import { or } from '../../utils/fp/predicates';
+import { partialMerge } from '../../utils/object/merge';
 import {
     addCustomAddress,
     deleteCustomAddress,
@@ -12,11 +17,7 @@ import {
     setBreaches,
     toggleAddressMonitor,
     verifyCustomAddress,
-} from '@proton/pass/store/actions';
-import type { BreachesGetResponse, MaybeNull } from '@proton/pass/types';
-import { or } from '@proton/pass/utils/fp/predicates';
-import { partialMerge } from '@proton/pass/utils/object/merge';
-import lastItem from '@proton/utils/lastItem';
+} from '../actions';
 
 export type MonitorState = MaybeNull<{
     custom: MonitorAddress<AddressType.CUSTOM>[];

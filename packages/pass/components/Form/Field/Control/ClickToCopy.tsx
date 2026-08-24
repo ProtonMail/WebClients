@@ -3,9 +3,10 @@ import { type FC, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { useCopyToClipboard } from '@proton/pass/components/Settings/Clipboard/ClipboardProvider';
-import { SelectionManager } from '@proton/pass/utils/dom/selection';
 import clsx from '@proton/utils/clsx';
+
+import { SelectionManager } from '../../../../utils/dom/selection';
+import { useCopyToClipboard } from '../../../Settings/Clipboard/ClipboardProvider';
 
 export type ClickToCopyProps = {
     className?: string;

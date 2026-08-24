@@ -1,4 +1,4 @@
-import type { Callback } from '@proton/pass/types';
+import type { Callback } from '../../types';
 
 export const DOM_SETTLE_MS = 1_000 / 24;
 

@@ -1,5 +1,4 @@
-import type { State } from '@proton/pass/store/types';
-
+import type { State } from '../../store/types';
 import type { PassCryptoSnapshot, SerializedCryptoContext } from '../crypto';
 
 export type PassCache = { state: State; snapshot: SerializedCryptoContext<PassCryptoSnapshot> };

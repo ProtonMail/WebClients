@@ -1,4 +1,4 @@
-import type { MaybeNull } from '@proton/pass/types/utils';
+import type { MaybeNull } from '../../types/utils';
 
 export const getActiveElement = (start: Document | ShadowRoot = document): MaybeNull<Element> => {
     const traverse = (root: Document | ShadowRoot): MaybeNull<Element> => {

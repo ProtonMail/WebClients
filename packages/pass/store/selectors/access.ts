@@ -1,11 +1,10 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import { toShareAccessKey } from '@proton/pass/lib/access/access.utils';
-import type { AccessItem, AccessKeys } from '@proton/pass/lib/access/types';
-import type { AccessState } from '@proton/pass/store/reducers';
-import type { State } from '@proton/pass/store/types';
-import { prop } from '@proton/pass/utils/fp/lens';
-
+import { toShareAccessKey } from '../../lib/access/access.utils';
+import type { AccessItem, AccessKeys } from '../../lib/access/types';
+import { prop } from '../../utils/fp/lens';
+import type { AccessState } from '../reducers';
+import type { State } from '../types';
 import { SelectorError } from './errors';
 
 const DEFAULT_ACCESS: AccessItem = {

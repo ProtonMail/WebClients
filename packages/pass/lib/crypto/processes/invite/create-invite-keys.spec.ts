@@ -1,12 +1,12 @@
 import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
+
+import { PassSignatureContext } from '../../../../types';
 import {
     createRandomKey,
     createRandomVaultKey,
     releaseCryptoProxy,
     setupCryptoProxyForTesting,
-} from '@proton/pass/lib/crypto/utils/testing';
-import { PassSignatureContext } from '@proton/pass/types';
-
+} from '../../utils/testing';
 import { createInviteKeys } from './create-invite-keys';
 
 describe('create invite keys crypto process', () => {
@@ -44,7 +44,9 @@ describe('create invite keys crypto process', () => {
             })
         );
 
-        decryptedKeys.forEach(({ verificationStatus }) => expect(verificationStatus).toEqual(VERIFICATION_STATUS.SIGNED_AND_VALID));
+        decryptedKeys.forEach(({ verificationStatus }) =>
+            expect(verificationStatus).toEqual(VERIFICATION_STATUS.SIGNED_AND_VALID)
+        );
         decryptedKeys.forEach(({ data }, i) => expect(data).toStrictEqual(vaultKeys[i].raw));
     });
 });

@@ -1,4 +1,5 @@
-import { api } from '@proton/pass/lib/api/api';
+import type { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/constants';
+
 import type {
     BreachCustomEmailGetResponse,
     BreachEmailCreateRequest,
@@ -8,8 +9,8 @@ import type {
     BreachesGetResponse,
     BreachesResponse,
     UpdateUserMonitorStateRequest,
-} from '@proton/pass/types/api/pass';
-import type { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/constants';
+} from '../../types/api/pass';
+import { api } from '../api/api';
 
 /** Toggle the ProtonSentinel setting */
 export const toggleSentinel = (value: SETTINGS_PROTON_SENTINEL_STATE) =>

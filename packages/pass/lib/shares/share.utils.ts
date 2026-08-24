@@ -1,6 +1,6 @@
-import { isShareVisible } from '@proton/pass/lib/shares/share.predicates';
-import type { Share, ShareVisibilityMap, VaultShareContent } from '@proton/pass/types';
-import { ShareType } from '@proton/pass/types';
+import type { Share, ShareVisibilityMap, VaultShareContent } from '../../types';
+import { ShareType } from '../../types';
+import { isShareVisible } from './share.predicates';
 
 export const getShareName = (share: Share): string => {
     switch (share.targetType) {

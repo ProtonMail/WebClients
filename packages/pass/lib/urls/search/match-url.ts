@@ -1,14 +1,9 @@
-import type { ParsedUrl } from '@proton/pass/lib/urls/types';
-import { parseUrl } from '@proton/pass/lib/urls/utils/parser';
-import {
-    domainEndsWith,
-    resolveSubdomain,
-    safeRegExpFromPattern,
-    urlGlobToRegExp,
-} from '@proton/pass/lib/urls/utils/utils';
-import type { ItemRevision } from '@proton/pass/types';
-import { AutofillMode } from '@proton/pass/types/protobuf';
-import type { AutofillUrl } from '@proton/pass/types/protobuf/item-v1';
+import type { ItemRevision } from '../../../types';
+import { AutofillMode } from '../../../types/protobuf';
+import type { AutofillUrl } from '../../../types/protobuf/item-v1';
+import type { ParsedUrl } from '../types';
+import { parseUrl } from '../utils/parser';
+import { domainEndsWith, resolveSubdomain, safeRegExpFromPattern, urlGlobToRegExp } from '../utils/utils';
 
 export enum ItemUrlMatch {
     /** Exact match

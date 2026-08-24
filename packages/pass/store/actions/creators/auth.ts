@@ -1,21 +1,22 @@
 import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import type { Lock, LockCreateDTO, UnlockDTO } from '@proton/pass/lib/auth/lock/types';
-import { LockMode } from '@proton/pass/lib/auth/lock/types';
-import type { ExtraPasswordDTO, PasswordConfirmDTO } from '@proton/pass/lib/auth/password';
-import { withCache } from '@proton/pass/store/actions/enhancers/cache';
-import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
-import { withSettings } from '@proton/pass/store/actions/enhancers/settings';
-import { lockCreateRequest } from '@proton/pass/store/actions/requests';
-import { withRequest, withRequestFailure, withRequestSuccess } from '@proton/pass/store/request/enhancers';
-import { requestActionsFactory } from '@proton/pass/store/request/flow';
-import type { ClientEndpoint } from '@proton/pass/types';
-import { NotificationKey } from '@proton/pass/types/worker/notification';
-import { SilentError } from '@proton/pass/utils/errors/errors';
-import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
-import { pipe } from '@proton/pass/utils/fp/pipe';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+
+import type { Lock, LockCreateDTO, UnlockDTO } from '../../../lib/auth/lock/types';
+import { LockMode } from '../../../lib/auth/lock/types';
+import type { ExtraPasswordDTO, PasswordConfirmDTO } from '../../../lib/auth/password';
+import type { ClientEndpoint } from '../../../types';
+import { NotificationKey } from '../../../types/worker/notification';
+import { SilentError } from '../../../utils/errors/errors';
+import { getErrorMessage } from '../../../utils/errors/get-error-message';
+import { pipe } from '../../../utils/fp/pipe';
+import { withRequest, withRequestFailure, withRequestSuccess } from '../../request/enhancers';
+import { requestActionsFactory } from '../../request/flow';
+import { withCache } from '../enhancers/cache';
+import { withNotification } from '../enhancers/notification';
+import { withSettings } from '../enhancers/settings';
+import { lockCreateRequest } from '../requests';
 
 export const signoutIntent = createAction('auth::signout::intent', (payload: { soft: boolean }) => ({ payload }));
 export const signoutSuccess = createAction('auth::signout::success', (payload: { soft: boolean }) => ({ payload }));

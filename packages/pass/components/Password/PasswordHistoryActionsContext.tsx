@@ -1,8 +1,8 @@
 import { createContext } from 'react';
 
-import { createUseContext } from '@proton/pass/hooks/useContextFactory';
-import type { PasswordItem } from '@proton/pass/store/reducers/pw-history';
-import type { MaybeNull } from '@proton/pass/types';
+import { createUseContext } from '../../hooks/useContextFactory';
+import type { PasswordItem } from '../../store/reducers/pw-history';
+import type { MaybeNull } from '../../types';
 
 export type PasswordHistoryActionsContextValue = {
     /** Pushes a password to the history */

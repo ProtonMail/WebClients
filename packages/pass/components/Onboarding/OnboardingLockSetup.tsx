@@ -7,13 +7,14 @@ import Icon from '@proton/components/components/icon/Icon';
 import RadioGroup from '@proton/components/components/input/RadioGroup';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 import type { IconName } from '@proton/icons/types';
-import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
-import { LockTTLField } from '@proton/pass/components/Lock/LockTTLField';
-import { useLockSetup } from '@proton/pass/hooks/auth/useLockSetup';
-import { LockMode } from '@proton/pass/lib/auth/lock/types';
-import { prop } from '@proton/pass/utils/fp/lens';
 import { isMac } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
+
+import { useLockSetup } from '../../hooks/auth/useLockSetup';
+import { LockMode } from '../../lib/auth/lock/types';
+import { prop } from '../../utils/fp/lens';
+import { useOnline } from '../Core/ConnectivityProvider';
+import { LockTTLField } from '../Lock/LockTTLField';
 
 type LockModeOption = {
     value: LockMode;

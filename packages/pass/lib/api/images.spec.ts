@@ -1,6 +1,6 @@
-import type { Api } from '@proton/pass/types';
 import { ApiError } from '@proton/shared/lib/fetch/ApiError';
 
+import type { Api } from '../../types';
 import * as cache from './cache';
 import { createAbortResponse, createNetworkError } from './fetch-controller';
 import { createImageProxyHandler } from './images';

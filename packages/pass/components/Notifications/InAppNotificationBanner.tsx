@@ -4,9 +4,9 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { IcCross } from '@proton/icons/icons/IcCross';
-import { InAppNotificationState } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
 
+import { InAppNotificationState } from '../../types';
 import { useInAppNotificationContainer } from './InAppNotificationPortal';
 import { WithInAppNotification } from './WithInAppNotification';
 

@@ -4,20 +4,21 @@ import { useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import useNotifications from '@proton/components/hooks/useNotifications';
-import type { OnFileUploadProgress } from '@proton/pass/hooks/files/useFileUpload';
-import { resolveMimeTypeForFile, useFileUpload } from '@proton/pass/hooks/files/useFileUpload';
-import { useAsyncRequestDispatch } from '@proton/pass/hooks/useDispatchAsyncRequest';
-import { isAbortError } from '@proton/pass/lib/api/errors';
-import { getImportFilename } from '@proton/pass/lib/import/helpers/files';
-import type { ImportReport } from '@proton/pass/lib/import/helpers/report';
-import type { ImportFileReader } from '@proton/pass/lib/import/types';
-import { fileLinkPending } from '@proton/pass/store/actions';
-import { selectUserStorageMaxFileSize } from '@proton/pass/store/selectors';
-import type { IndexedByShareIdAndItemId, MaybeNull } from '@proton/pass/types';
-import { eq, not } from '@proton/pass/utils/fp/predicates';
-import { abortableSequence } from '@proton/pass/utils/fp/promises';
-import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
+
+import { isAbortError } from '../../lib/api/errors';
+import { getImportFilename } from '../../lib/import/helpers/files';
+import type { ImportReport } from '../../lib/import/helpers/report';
+import type { ImportFileReader } from '../../lib/import/types';
+import { fileLinkPending } from '../../store/actions';
+import { selectUserStorageMaxFileSize } from '../../store/selectors';
+import type { IndexedByShareIdAndItemId, MaybeNull } from '../../types';
+import { eq, not } from '../../utils/fp/predicates';
+import { abortableSequence } from '../../utils/fp/promises';
+import { uniqueId } from '../../utils/string/unique-id';
+import type { OnFileUploadProgress } from '../files/useFileUpload';
+import { resolveMimeTypeForFile, useFileUpload } from '../files/useFileUpload';
+import { useAsyncRequestDispatch } from '../useDispatchAsyncRequest';
 
 export const useFileImporter = () => {
     const dispatch = useAsyncRequestDispatch();

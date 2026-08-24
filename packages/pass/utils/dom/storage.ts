@@ -1,4 +1,4 @@
-import { MAX_LOCAL_STORAGE_SIZE } from '@proton/pass/constants';
+import { MAX_LOCAL_STORAGE_SIZE } from '../../constants';
 
 export const getLocalStorageQuota = async (): Promise<number> => {
     try {

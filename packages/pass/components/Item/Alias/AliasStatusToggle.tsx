@@ -4,11 +4,12 @@ import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Toggle from '@proton/components/components/toggle/Toggle';
-import { useRequest } from '@proton/pass/hooks/useRequest';
-import { isDisabledAlias } from '@proton/pass/lib/items/item.predicates';
-import { aliasSyncStatusToggle } from '@proton/pass/store/actions';
-import type { ItemRevision } from '@proton/pass/types';
-import { not } from '@proton/pass/utils/fp/predicates';
+
+import { useRequest } from '../../../hooks/useRequest';
+import { isDisabledAlias } from '../../../lib/items/item.predicates';
+import { aliasSyncStatusToggle } from '../../../store/actions';
+import type { ItemRevision } from '../../../types';
+import { not } from '../../../utils/fp/predicates';
 
 type Props = { disabled?: boolean; revision: ItemRevision };
 

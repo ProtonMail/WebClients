@@ -2,13 +2,12 @@ import { useMemo } from 'react';
 
 import { useFormik } from 'formik';
 
-import { ItemEditPanel } from '@proton/pass/components/Layout/Panel/ItemEditPanel';
-import type { ItemEditViewProps } from '@proton/pass/components/Views/types';
-import { useDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
-import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
-import { validateCustomItemForm } from '@proton/pass/lib/validation/custom-item';
-import type { CustomItemFormValues, ItemCustomType, ItemRevision } from '@proton/pass/types';
-
+import { useDeobfuscatedItem } from '../../../hooks/useDeobfuscatedItem';
+import { useItemDraft } from '../../../hooks/useItemDraft';
+import { validateCustomItemForm } from '../../../lib/validation/custom-item';
+import type { CustomItemFormValues, ItemCustomType, ItemRevision } from '../../../types';
+import { ItemEditPanel } from '../../Layout/Panel/ItemEditPanel';
+import type { ItemEditViewProps } from '../../Views/types';
 import { CustomForm } from './Custom.form';
 import { getEditCustomInitialValues, getEditIntent } from './Custom.utils';
 

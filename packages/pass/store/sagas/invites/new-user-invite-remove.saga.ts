@@ -1,12 +1,8 @@
 import { put, takeEvery } from 'redux-saga/effects';
 
-import { removeNewUserInvite } from '@proton/pass/lib/invites/invite.requests';
-import {
-    newUserInviteRemoveFailure,
-    newUserInviteRemoveIntent,
-    newUserInviteRemoveSuccess,
-} from '@proton/pass/store/actions';
-import { syncAccess } from '@proton/pass/store/actions/creators/polling';
+import { removeNewUserInvite } from '../../../lib/invites/invite.requests';
+import { newUserInviteRemoveFailure, newUserInviteRemoveIntent, newUserInviteRemoveSuccess } from '../../actions';
+import { syncAccess } from '../../actions/creators/polling';
 
 function* removeInviteWorker({ payload, meta: { request } }: ReturnType<typeof newUserInviteRemoveIntent>) {
     try {

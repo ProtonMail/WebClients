@@ -1,5 +1,5 @@
-import type { ItemUrlMatch } from '@proton/pass/lib/urls/search/match-url';
-import type { ItemRevision, MaybeNull } from '@proton/pass/types';
+import type { ItemRevision, MaybeNull } from '../../types';
+import type { ItemUrlMatch } from './search/match-url';
 
 export type ParsedUrl = {
     /* domain without suffix */

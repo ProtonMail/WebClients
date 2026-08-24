@@ -2,16 +2,15 @@ import type { Channel } from 'redux-saga';
 import { channel } from 'redux-saga';
 import { all, call, cancelled, fork, select, take, takeEvery } from 'redux-saga/effects';
 
-import { NOOP_EVENT } from '@proton/pass/lib/events/manager';
-import { getSharesQuery } from '@proton/pass/lib/shares/share.requests';
-import { processSharesIncomingEvent, processSharesPollingEvent } from '@proton/pass/lib/sync/v1/share-polling.processor';
-import { vaultCreationSuccess } from '@proton/pass/store/actions';
-import type { SharesState } from '@proton/pass/store/reducers';
-import { selectShareState } from '@proton/pass/store/selectors';
-import type { RootSagaOptions } from '@proton/pass/store/types';
-import type { Api, Share, ShareGetResponse, SharesGetResponse } from '@proton/pass/types';
-import { logger } from '@proton/pass/utils/logger';
-
+import { NOOP_EVENT } from '../../../../lib/events/manager';
+import { getSharesQuery } from '../../../../lib/shares/share.requests';
+import { processSharesIncomingEvent, processSharesPollingEvent } from '../../../../lib/sync/v1/share-polling.processor';
+import type { Api, Share, ShareGetResponse, SharesGetResponse } from '../../../../types';
+import { logger } from '../../../../utils/logger';
+import { vaultCreationSuccess } from '../../../actions';
+import type { SharesState } from '../../../reducers';
+import { selectShareState } from '../../../selectors';
+import type { RootSagaOptions } from '../../../types';
 import { eventChannelFactory } from './channel.factory';
 import { getShareChannelForks } from './channel.share';
 import { channelEvents, channelInitalize } from './channel.worker';

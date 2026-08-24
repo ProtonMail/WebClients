@@ -2,10 +2,9 @@ import type { PropsWithChildren } from 'react';
 import { type FC, useMemo, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { passwordDelete, passwordHistoryClear, passwordSave } from '@proton/pass/store/actions';
-import { uniqueId } from '@proton/pass/utils/string/unique-id';
-import { getEpoch } from '@proton/pass/utils/time/epoch';
-
+import { passwordDelete, passwordHistoryClear, passwordSave } from '../../store/actions';
+import { uniqueId } from '../../utils/string/unique-id';
+import { getEpoch } from '../../utils/time/epoch';
 import {
     PasswordHistoryActionsContext,
     type PasswordHistoryActionsContextValue,

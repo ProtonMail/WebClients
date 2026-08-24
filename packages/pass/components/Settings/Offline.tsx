@@ -6,13 +6,13 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 import { IcCrossCircleFilled } from '@proton/icons/icons/IcCrossCircleFilled';
-import { WithFeatureFlag } from '@proton/pass/components/Core/WithFeatureFlag';
-import { useOfflineSetup } from '@proton/pass/hooks/auth/useOfflineSetup';
-import { selectOfflineEnabled } from '@proton/pass/store/selectors';
-import { PassFeature } from '@proton/pass/types/api/features';
 import { BRAND_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
+import { useOfflineSetup } from '../../hooks/auth/useOfflineSetup';
+import { selectOfflineEnabled } from '../../store/selectors';
+import { PassFeature } from '../../types/api/features';
+import { WithFeatureFlag } from '../Core/WithFeatureFlag';
 import { SettingsPanel } from './SettingsPanel';
 
 const OfflineSection: FC = () => {

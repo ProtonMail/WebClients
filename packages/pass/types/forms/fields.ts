@@ -1,5 +1,5 @@
-import type { DeobfuscatedItemExtraField, MaybeNull } from '@proton/pass/types';
-import type { AutofillMode } from '@proton/pass/types/protobuf';
+import type { DeobfuscatedItemExtraField, MaybeNull } from '..';
+import type { AutofillMode } from '../protobuf';
 
 export type UrlItem = { url: string; id: string; mode: AutofillMode };
 export type UrlGroupValues = { url: string; urls: UrlItem[]; editingUrlIndex: MaybeNull<number> };

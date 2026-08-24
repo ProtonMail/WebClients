@@ -1,8 +1,6 @@
 import { all } from 'redux-saga/effects';
 
-import { exportUserData } from '@proton/pass/store/sagas/export/export.saga';
-import type { PassSaga, RootSagaOptions } from '@proton/pass/store/types';
-
+import type { PassSaga, RootSagaOptions } from '../types';
 import accessTokenSagas from './access-token/access-token.sagas';
 import accessEditRole from './access/access-edit-role.saga';
 import accessLeave from './access/access-leave.saga';
@@ -30,6 +28,7 @@ import reportProblem from './client/report-problem.saga';
 import settings from './client/settings.saga';
 import sync from './client/sync.saga';
 import events from './events/events.saga';
+import { exportUserData } from './export/export.saga';
 import fileAttachmentsSagas from './file-attachments/file-attachments.sagas';
 import groupsGetAll from './groups/groups.get-all.saga';
 import groupsGet from './groups/groups.get.saga';
