@@ -190,6 +190,3 @@ export const GRID_THEME_PROPS: Partial<CanvasGridProps> = {
   frozenShadowColor: '#d9d9d9',
   frozenShadowThickness: 4,
 }
-
-export const OPEN_LINK_EVENT = 'open-link' as const
-export type OpenLinkEventData = { link: string }
