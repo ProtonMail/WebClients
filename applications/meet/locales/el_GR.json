@@ -184,7 +184,7 @@
       "Back": [
         "Πίσω"
       ],
-      "Background blur": [
+      "Blur background": [
         "Θόλωμα παρασκηνίου"
       ],
       "Cancel": [
@@ -340,6 +340,9 @@
       "Get verification code": [
         "Απόκτηση κωδικού επαλήθευσης"
       ],
+      "Getting ready...": [
+        "Ετοιμαζόμαστε..."
+      ],
       "Help and feedback": [
         "Βοήθεια και σχόλια"
       ],
@@ -406,6 +409,9 @@
       "Next page": [
         "Επόμενη σελίδα"
       ],
+      "No effect": [
+        "Χωρίς εφέ"
+      ],
       "Noise cancellation": [
         "Απαλειφή θορύβου"
       ],
@@ -426,6 +432,12 @@
       ],
       "Pause": [
         "Παύση"
+      ],
+      "Playing back...": [
+        "Αναπαραγωγή..."
+      ],
+      "Playing sound...": [
+        "Αναπαραγωγή ήχου..."
       ],
       "Preview logs": [
         "Προεπισκόπηση αρχείων καταγραφής"
@@ -451,6 +463,9 @@
       ],
       "Record": [
         "Ηχογράφηση"
+      ],
+      "Recording your microphone...": [
+        "Ηχογράφηση του μικροφώνου σας..."
       ],
       "Refer a friend": [
         "Συστήστε ένα φίλο"
@@ -612,6 +627,12 @@
       "Tap to unblock audio playback": [
         "Πατήστε για να ξεμπλοκάρετε την αναπαραγωγή ήχου"
       ],
+      "Test microphone": [
+        "Δοκιμή μικροφώνου"
+      ],
+      "Test speakers": [
+        "Δοκιμή ηχείων"
+      ],
       "The current link will stop working.": [
         "Ο τρέχων σύνδεσμος θα σταματήσει να λειτουργεί."
       ],
@@ -675,6 +696,9 @@
       "View invoice": [
         "Προβολή τιμολογίου"
       ],
+      "Virtual backgrounds": [
+        "Εικονικά φόντα"
+      ],
       "Waiting room": [
         "Αίθουσα αναμονής"
       ],
@@ -688,6 +712,9 @@
     "Alt": {
       "Audio settings": [
         "Ρυθμίσεις ήχου"
+      ],
+      "Backgrounds": [
+        "Φόντα"
       ],
       "Blur background": [
         "Θόλωμα παρασκηνίου"
@@ -707,8 +734,14 @@
       "Copy meeting link": [
         "Αντιγραφή συνδέσμου σύσκεψης"
       ],
+      "Debug devices": [
+        "Συσκευές εντοπισμού σφαλμάτων"
+      ],
       "Debug overlay": [
         "Επικάλυψη εντοπισμού σφαλμάτων"
+      ],
+      "Device Debugger": [
+        "Πρόγραμμα εντοπισμού σφαλμάτων συσκευής"
       ],
       "Go to dashboard": [
         "Μετάβαση στον αρχικό πίνακα"
@@ -810,6 +843,12 @@
       "Audio settings": [
         "Ρυθμίσεις ήχου"
       ],
+      "Background effects": [
+        "Εφέ φόντου"
+      ],
+      "Backgrounds": [
+        "Φόντα"
+      ],
       "Chat": [
         "Συνομιλία"
       ],
@@ -825,6 +864,9 @@
       "Meeting rooms": [
         "Αίθουσες συσκέψεων"
       ],
+      "Microphone input level": [
+        "Επίπεδο εισόδου μικροφώνου"
+      ],
       "Participants": [
         "Συμμετέχοντες"
       ],
@@ -839,6 +881,9 @@
       ],
       "Video settings": [
         "Ρυθμίσεις βίντεο"
+      ],
+      "Virtual backgrounds": [
+        "Εικονικά φόντα"
       ]
     },
     "Badge": {
@@ -1815,6 +1860,15 @@
       "Background blur initialization failed. Please toggle your camera or background blur again": [
         "Η αρχικοποίηση του θολώματος φόντου απέτυχε. Παρακαλούμε ενεργοποιήστε ξανά την κάμερα ή το θάμπωμα φόντου."
       ],
+      "Couldn’t play the recording on this speaker.": [
+        "Δεν ήταν δυνατή η αναπαραγωγή της ηχογράφησης σε αυτό το ηχείο."
+      ],
+      "Couldn’t play the test sound on this speaker.": [
+        "Δεν ήταν δυνατή η αναπαραγωγή του δοκιμαστικού ήχου σε αυτό το ηχείο."
+      ],
+      "Couldn’t start the microphone test.": [
+        "Δεν ήταν δυνατή η έναρξη της δοκιμής μικροφώνου."
+      ],
       "Domain not available, try again later": [
         "Ο τομέας δεν είναι διαθέσιμος, δικομάστε ξανά αργότερα"
       ],
@@ -1914,6 +1968,9 @@
       "Invalid verification code": [
         "Μη έγκυρος κωδικός επαλήθευσης"
       ],
+      "Microphone access is blocked. Allow it in your browser settings.": [
+        "Η πρόσβαση στο μικρόφωνο είναι αποκλεισμένη. Επιτρέψτε την στις ρυθμίσεις του προγράμματος περιήγησής σας."
+      ],
       "Not a valid number": [
         "Μη έγκυρος αριθμός"
       ],
@@ -1947,6 +2004,9 @@
       "The meeting password is invalid": [
         "Ο κωδικός πρόσβασης της σύσκεψης δεν είναι έγκυρος"
       ],
+      "The selected microphone is no longer available.": [
+        "Το επιλεγμένο μικρόφωνο δεν είναι πλέον διαθέσιμο."
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Αυτό το πεδίο υπερβαίνει το μέγιστο των χαρακτήρων ${ maximumLength }."
       ],
@@ -1971,6 +2031,9 @@
       "Username must end with a letter or digit": [
         "Το όνομα χρήστη πρέπει να τελειώνει με γράμμα ή ψηφίο"
       ],
+      "Virtual background initialization failed. Please toggle your camera or pick a background again": [
+        "Η αρχικοποίηση εικονικού φόντου απέτυχε. Παρακαλούμε ενεργοποιήστε την κάμερά σας ή επιλέξτε ξανά ένα φόντο."
+      ],
       "We couldn’t send a verification code using this method.": [
         "Δεν μπορέσαμε να αποστείλουμε κωδικό επιβεβαίωσης με αυτήν τη μέθοδο."
       ],
@@ -1979,6 +2042,9 @@
       ],
       "Your device's clock appears to be out of sync. Please check your system time and try again.": [
         "Το ρολόι της συσκευής σας φαίνεται να μην είναι συγχρονισμένο. Παρακαλούμε ελέγξτε την ώρα του συστήματός σας και προσπαθήστε ξανά."
+      ],
+      "Your microphone is busy. Close other apps or tabs using it, then try again.": [
+        "Το μικρόφωνό σας είναι απασχολημένο. Κλείστε άλλες εφαρμογές ή καρτέλες που το χρησιμοποιούν και δοκιμάστε ξανά."
       ]
     },
     "Error message": {
@@ -2241,6 +2307,9 @@
       "Background blur initializing": [
         "Αρχικοποίηση θολώματος φόντου"
       ],
+      "Background effects are not supported on your browser": [
+        "Τα εφέ φόντου δεν υποστηρίζονται στο πρόγραμμα περιήγησής σας"
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Πριν αιτηθείτε νέο κωδικό επαλήθευσης, ελέγξτε τον φάκελό σας Ενοχλητικά και ότι η ${ strong } είναι η σωστή διεύθυνση."
       ],
@@ -2252,6 +2321,9 @@
       ],
       "camera": [
         "κάμερα"
+      ],
+      "Camera effects": [
+        "Εφέ κάμερας"
       ],
       "Camera permission denied": [
         "Η άδεια χρήσης κάμερας απορρίφθηκε"
@@ -2420,6 +2492,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Αν δε βρείτε το μήνυμα στα Εισερχόμενα, παρακαλούμε ελέγξτε τον φάκελο Ενοχλητικά."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Εάν χάσατε την πρόσβαση στην εφαρμογή ελέγχου ταυτότητας, μπορείτε να χρησιμοποιήσετε 1 από τους 16 εφεδρικούς κωδικούς ανάκτησης που παρέχονται κατά τη ρύθμιση της ταυτοποίησης δύο παραγόντων. ${ learnMoreLink }"
       ],
       "If you’re using Firefox, make sure PeerConnection is enabled.": [
         "Εάν χρησιμοποιείτε τον Firefox, βεβαιωθείτε ότι η λειτουργία PeerConnection είναι ενεργοποιημένη."
@@ -2631,6 +2706,9 @@
       "Presenting": [
         "Παρουσιάζοντας"
       ],
+      "Preview unavailable": [
+        "Η προεπισκόπηση δεν είναι διαθέσιμη"
+      ],
       "privacy": [
         "ιδιωτικότητα"
       ],
@@ -2826,11 +2904,11 @@
       "Upload an image to preview it as the background.": [
         "Μεταφορτώστε μια εικόνα για προεπισκόπηση ως φόντο"
       ],
-      "Video effects": [
-        "Εφέ βίντεο"
-      ],
       "View ": [
         "Προβολή "
+      ],
+      "Virtual background initializing": [
+        "Αρχικοποίηση εικονικού φόντου"
       ],
       "Waiting for the host to admit you. The host has been notified that you're waiting.": [
         "Αναμονή αποδοχής οικοδεσπότη. Ο οικοδεσπότης έχει ειδοποιηθεί ότι περιμένετε."
@@ -2925,6 +3003,9 @@
       "Your phone number will only be used for this one-time verification.": [
         "Ο αριθμός τηλεφώνου σας θα χρησιμοποιηθεί μόνο για αυτή την εφάπαξ επαλήθευση."
       ],
+      "Your preview": [
+        "Η προεπισκόπησή σας"
+      ],
       "You’re about to open a link in a new tab. Make sure you trust the website before continuing.": [
         "Είστε έτοιμοι να ανοίξετε έναν σύνδεσμο σε νέα καρτέλα. Βεβαιωθείτε ότι εμπιστεύεστε τον ιστότοπο πριν συνεχίσετε."
       ]
@@ -2958,8 +3039,14 @@
       "Authenticator app": [
         "Εφαρμογή επαλήθευσης"
       ],
+      "Auto-detect": [
+        "Αυτόματος εντοπισμός"
+      ],
       "Background color": [
         "Χρώμα φόντου"
+      ],
+      "Blue background": [
+        "Μπλέ φόντο"
       ],
       "Blurred (next)": [
         "Θολό (επόμενο)"
@@ -3051,6 +3138,9 @@
       "Google Calendar": [
         "Ημερολόγιο Google"
       ],
+      "Green background": [
+        "Πράσινο φόντο"
+      ],
       "Hide password": [
         "Απόκρυψη κωδικού πρόσβασης"
       ],
@@ -3105,6 +3195,9 @@
       "Operating system version": [
         "Έκδοση λειτουργικού συστήματος"
       ],
+      "Orange background": [
+        "Πορτοκαλί φόντο"
+      ],
       "Outlook Calendar": [
         "Ημερολόγιο Outlook"
       ],
@@ -3119,6 +3212,9 @@
       ],
       "Phone number": [
         "Αριθμός τηλεφώνου"
+      ],
+      "Purple background": [
+        "Μωβ φόντο"
       ],
       "Raw": [
         "Ακατέργαστη"
@@ -3523,6 +3619,9 @@
       ]
     },
     "Title": {
+      "Accessibility": [
+        "Προσβασιμότητα"
+      ],
       "Account restricted": [
         "Ο λογαριασμός περιορίστηκε"
       ],
@@ -3564,6 +3663,12 @@
       ],
       "Background blur comparison": [
         "Σύγκριση θολώματος φόντου"
+      ],
+      "Background effects": [
+        "Εφέ φόντου"
+      ],
+      "Backgrounds": [
+        "Φόντα"
       ],
       "Camera and microphone are blocked": [
         "Η κάμερα και το μικρόφωνο είναι αποκλεισμένα"
@@ -3686,6 +3791,9 @@
       "Participants (${ filteredParticipants.length })": [
         "Συμμετέχοντες (${ filteredParticipants.length })"
       ],
+      "People": [
+        "Πρόσωπα"
+      ],
       "Personal meeting room": [
         "Προσωπική αίθουσα σύσκεψης"
       ],
@@ -3743,6 +3851,9 @@
       "Stop recording": [
         "Διακοπή καταγραφής"
       ],
+      "System": [
+        "Σύστημα"
+      ],
       "Talk confidentially": [
         "Μιλήστε εμπιστευτικά"
       ],
@@ -3763,6 +3874,9 @@
       ],
       "Video": [
         "Βίντεο"
+      ],
+      "Virtual backgrounds": [
+        "Εικονικά φόντα"
       ],
       "Waiting for the host": [
         "Περιμένουμε τον οικοδεσπότη"
