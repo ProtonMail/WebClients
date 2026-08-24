@@ -6,10 +6,9 @@ import type { ToolDefinition, ToolHandler } from '@proton/llm/lib/lumoAgent/cont
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { APPLY_LOCATION_TYPES } from '../../../hooks/actions/applyLocation/interface';
-
 import { resolveElements } from '../../helpers/references';
 import type { MailToolDeps, MailToolModule } from '../../toolModule';
-import { emailIds, hasEmailSelection, referenceName, renderEmailSelectionBody } from './emailSelection';
+import { emailCountDetail, hasEmailSelection, renderEmailSelectionBody } from './emailSelection';
 
 export interface SetStarredParams {
     ids: string[];
@@ -70,13 +69,7 @@ export const setStarredCardRenderer: CardRenderer = {
     title: (action) => (action.starred ? c('Title').t`Star emails` : c('Title').t`Unstar emails`),
     renderBody: renderEmailSelectionBody,
     canApply: hasEmailSelection,
-    detail: (action, labels) => {
-        const ids = emailIds(action);
-        if (!ids.length) {
-            return undefined;
-        }
-        return ids.map((id) => referenceName(id, labels)).join(', ');
-    },
+    detail: emailCountDetail,
 };
 
 export const setStarredModule: MailToolModule = {
