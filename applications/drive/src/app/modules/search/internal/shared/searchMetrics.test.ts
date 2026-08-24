@@ -6,6 +6,7 @@ import {
     SearchLibraryError,
     sendErrorReportForSearch,
 } from './errors';
+import type { SearchDiagnostics } from './searchMetrics';
 import { resetTransientReportBurstsForTests, searchMetrics } from './searchMetrics';
 import type { IndexerTaskKind } from './types';
 
@@ -20,6 +21,7 @@ jest.mock('@proton/metrics', () => ({
         drive_search_other_error_total: { increment: jest.fn() },
         drive_search_permanent_errors_total: { increment: jest.fn() },
         drive_search_transient_errors_total: { increment: jest.fn() },
+        drive_search_query_total: { increment: jest.fn() },
     },
 }));
 
@@ -34,12 +36,23 @@ const permanentCounter = metrics.drive_search_permanent_errors_total.increment a
 
 const TASK_KIND: IndexerTaskKind = 'index-populator-task';
 
+const FAKE_DIAGNOSTICS: SearchDiagnostics = {
+    blobCount: 0,
+    blobSizeMb: 0,
+    quarantinedNodeCount: 0,
+    storageUsageMb: 0,
+    storageQuotaMb: 0,
+    documentCount: undefined,
+};
+
 const triggerTransient = (taskUid: string) =>
     searchMetrics.markIndexerError({
         decision: { kind: 'transient', reason: 'unknown' },
         error: new Error('boom'),
         taskUid,
         taskKind: TASK_KIND,
+        taskAttemptCount: 0,
+        diagnostics: FAKE_DIAGNOSTICS,
     });
 
 describe('searchMetrics transient Sentry throttling', () => {
@@ -138,6 +151,8 @@ describe('searchMetrics transient Sentry throttling', () => {
                 error: quotaError,
                 taskUid: 'task-1',
                 taskKind: TASK_KIND,
+                taskAttemptCount: 0,
+                diagnostics: FAKE_DIAGNOSTICS,
             });
         }
 
@@ -266,6 +281,8 @@ describe('searchMetrics markIndexerError decision handling', () => {
             error: degraded,
             taskUid: 'task-1',
             taskKind: TASK_KIND,
+            taskAttemptCount: 0,
+            diagnostics: FAKE_DIAGNOSTICS,
         });
 
         expect(permanentCounter).toHaveBeenCalledWith({ errorKind: 'search_library_error' });
@@ -289,9 +306,77 @@ describe('searchMetrics markIndexerError decision handling', () => {
             error: degraded,
             taskUid: 'task-1',
             taskKind: TASK_KIND,
+            taskAttemptCount: 0,
+            diagnostics: FAKE_DIAGNOSTICS,
         });
 
         expect(transientCounter).toHaveBeenCalledWith({ kind: 'offline' });
         expect(permanentCounter).not.toHaveBeenCalled();
+    });
+
+    it('attaches the diagnostics snapshot as extra on a permanent-error report', () => {
+        searchMetrics.markIndexerError({
+            decision: { kind: 'permanent', reason: 'corrupted_db' },
+            error: new Error('boom'),
+            taskUid: 'task-1',
+            taskKind: TASK_KIND,
+            taskAttemptCount: 3,
+            diagnostics: FAKE_DIAGNOSTICS,
+        });
+
+        expect(sendErrorReportMock).toHaveBeenCalledWith(
+            expect.any(String),
+            expect.any(Error),
+            expect.objectContaining({
+                extra: expect.objectContaining({ ...FAKE_DIAGNOSTICS, taskAttemptCount: 3 }),
+            })
+        );
+    });
+
+    it('omits extra when the caller could not gather diagnostics', () => {
+        searchMetrics.markIndexerError({
+            decision: { kind: 'permanent', reason: 'corrupted_db' },
+            error: new Error('boom'),
+            taskUid: 'task-1',
+            taskKind: TASK_KIND,
+            taskAttemptCount: 0,
+            diagnostics: undefined,
+        });
+
+        expect(sendErrorReportMock).toHaveBeenCalledTimes(1);
+        expect(sendErrorReportMock).toHaveBeenCalledWith(
+            expect.any(String),
+            expect.any(Error),
+            expect.objectContaining({ extra: undefined })
+        );
+    });
+});
+
+describe('searchMetrics.markSearchQueryFailed', () => {
+    beforeEach(() => {
+        sendErrorReportMock.mockClear();
+    });
+
+    it('attaches the diagnostics snapshot as extra, without a taskAttemptCount', () => {
+        searchMetrics.markSearchQueryFailed({ error: new Error('boom'), diagnostics: FAKE_DIAGNOSTICS });
+
+        expect(sendErrorReportMock).toHaveBeenCalledWith(
+            'Search query failed',
+            expect.any(Error),
+            expect.objectContaining({
+                tags: expect.objectContaining({ label: 'search-query-error' }),
+                extra: FAKE_DIAGNOSTICS,
+            })
+        );
+    });
+
+    it('omits extra when the caller could not gather diagnostics', () => {
+        searchMetrics.markSearchQueryFailed({ error: new Error('boom'), diagnostics: undefined });
+
+        expect(sendErrorReportMock).toHaveBeenCalledWith(
+            'Search query failed',
+            expect.any(Error),
+            expect.objectContaining({ extra: undefined })
+        );
     });
 });
