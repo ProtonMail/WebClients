@@ -17,6 +17,10 @@
 	}
 }
 
+.apple-pay-button-logo {
+	margin-block-start: 3px;
+}
+
 // Color scheme variants
 .apple-pay-button-white {
 	--button-default-background-color: white;
@@ -44,6 +48,11 @@
 	.apple-pay-button-white-with-line {
 		-apple-pay-button-style: white-outline;
 	}
+
+	// The native button paints its own logo; the img is only there for the browsers below
+	.apple-pay-button-logo {
+		display: none;
+	}
 }
 
 // Fallback for browsers without native Apple Pay button support
@@ -56,7 +65,7 @@
 		padding: 0;
 		box-sizing: border-box;
 		min-inline-size: 200px;
-		min-block-size: 32px;
+		min-block-size: 44px;
 		max-block-size: 64px;
 	}
 
