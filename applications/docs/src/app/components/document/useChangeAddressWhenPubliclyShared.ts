@@ -2,6 +2,7 @@ import useAuthentication from '@proton/components/hooks/useAuthentication'
 import type { DocumentState, PublicDocumentState } from '@proton/docs-core'
 import { CacheService } from '@proton/docs-core/lib/Services/CacheService'
 import { generateNodeUid, getDrive } from '@proton/drive'
+import type { ShareResult } from '@proton/drive'
 import { isPrivateNodeMeta, type NodeMeta, type PublicNodeMeta } from '@proton/drive-store/lib/NodeMeta'
 import { useEffect, useRef } from 'react'
 import { useApplication } from '~/utils/application-context'
@@ -13,7 +14,7 @@ export function useChangeAddressWhenPubliclyShared(
   nodeMeta: NodeMeta | PublicNodeMeta,
   documentState: DocumentState | PublicDocumentState | null,
 ) {
-  const { logger, isPublicMode } = useApplication()
+  const { isPublicMode } = useApplication()
   const drive = getDrive()
   const { getLocalID } = useAuthentication()
 
@@ -43,52 +44,77 @@ export function useChangeAddressWhenPubliclyShared(
         .getSharingInfo(generateNodeUid(volumeId, nodeId))
         .then((result) => {
           if (result) {
-            const newAddress = result.urlAccess ? getPublicURL(result.urlAccess.url) : getPrivateURL(volumeId, nodeId)
-
-            const localID = getLocalID()
-            if (result.urlAccess && localID) {
-              const { pathname } = new URL(result.urlAccess.url)
-              const token = getToken(pathname)
-              CacheService.setLocalIDForDocumentInCache({ token }, localID)
-            }
-
-            void OpenTracer.trace('boot_use_change_address_when_publicly_shared_replace_state', {
-              newAddress: newAddress.pathname,
-              localID,
-            })
-            history.replaceState(null, '', newAddress)
-
+            replaceAddress({ getLocalID, urlAccess: result.urlAccess, volumeId, nodeId, traceEnabled: true })
             changedAddress.current = true
           }
         })
-        .catch((error) => {
-          const errorMessage = 'Failed to change URL in address bar after changing public sharing'
-          logger.warn(errorMessage, error)
-
-          const errorWithCurrentStack = new Error(errorMessage)
-          errorWithCurrentStack.cause = error
-
-          addSentryBreadcrumb({
-            category: 'docs',
-            level: 'warning',
-            message: 'Failure in useChangeAddressWhenPubliclyShared',
-            data: {
-              volumeId,
-              nodeId,
-              userRole: documentState.getProperty('userRole').roleType,
-              isPublicMode,
-            },
-          })
-          traceError(errorWithCurrentStack, {
-            tags: {
-              initiative: SentryRealtimeInitiatives.SDK_SWITCH,
-              feature: 'DocsSharingModalDriveSDK',
-            },
-          })
-        })
+        .catch((error) =>
+          reportChangeAddressError(error, {
+            volumeId,
+            nodeId,
+            userRole: documentState.getProperty('userRole').roleType,
+            isPublicMode,
+          }),
+        )
     },
-    [logger, documentState, sharingModalDriveSdkEnabled, nodeMetaNotPrivate, drive, getLocalID, isPublicMode],
+    [documentState, sharingModalDriveSdkEnabled, nodeMetaNotPrivate, drive, getLocalID, isPublicMode],
   )
+}
+
+export function replaceAddress({
+  getLocalID,
+  urlAccess,
+  volumeId,
+  nodeId,
+  traceEnabled = false,
+}: {
+  getLocalID: ReturnType<typeof useAuthentication>['getLocalID']
+  urlAccess: ShareResult['urlAccess']
+  volumeId: string
+  nodeId: string
+  traceEnabled?: boolean
+}) {
+  const newAddress = urlAccess ? getPublicURL(urlAccess.url) : getPrivateURL(volumeId, nodeId)
+
+  const localID = getLocalID()
+  if (urlAccess && localID) {
+    const { pathname } = new URL(urlAccess.url)
+    const token = getToken(pathname)
+    CacheService.setLocalIDForDocumentInCache({ token }, localID)
+  }
+
+  if (traceEnabled) {
+    void OpenTracer.trace('boot_use_change_address_when_publicly_shared_replace_state', {
+      newAddress: newAddress.pathname,
+      localID,
+    })
+  }
+
+  history.replaceState(null, '', newAddress)
+}
+
+export function reportChangeAddressError(error: any, breadcrumb: Record<string, any>) {
+  if (error instanceof Error && error.name === 'AbortError') {
+    return
+  }
+
+  const errorMessage = 'Failed to change URL in address bar after changing public sharing'
+
+  const errorWithCurrentStack = new Error(errorMessage)
+  errorWithCurrentStack.cause = error
+
+  addSentryBreadcrumb({
+    category: 'docs',
+    level: 'warning',
+    message: 'Failure in useChangeAddressWhenPubliclyShared',
+    data: breadcrumb,
+  })
+  traceError(errorWithCurrentStack, {
+    tags: {
+      initiative: SentryRealtimeInitiatives.SDK_SWITCH,
+      feature: 'DocsSharingModalDriveSDK',
+    },
+  })
 }
 
 // We are transitioning from toggle OFF to ON
