@@ -1,8 +1,8 @@
 import { fireEvent, render } from '@testing-library/react';
 
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import { SubscriptionPlatform } from '@proton/payments/core/subscription/constants';
 
+import ModalTwo from '../../../../../../components/modalTwo/Modal';
 import { ManagedExternallyContent } from '../ManagedExternallyContent';
 
 jest.mock('@proton/atoms/Portal/Portal');

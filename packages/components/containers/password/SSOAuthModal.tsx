@@ -3,11 +3,6 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Prompt, { type PromptProps } from '@proton/components/components/prompt/Prompt';
-import { ExternalSSOError, handleExternalSSOLogin } from '@proton/components/containers/login/ssoExternalLogin';
-import useApi from '@proton/components/hooks/useApi';
-import useConfig from '@proton/components/hooks/useConfig';
-import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { SCOPE_REAUTH_SSO, getInfo } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -17,6 +12,11 @@ import { getVpnAccountUrl } from '@proton/shared/lib/helpers/url';
 import type { Api } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
+import Prompt, { type PromptProps } from '../../components/prompt/Prompt';
+import useApi from '../../hooks/useApi';
+import useConfig from '../../hooks/useConfig';
+import useErrorHandler from '../../hooks/useErrorHandler';
+import { ExternalSSOError, handleExternalSSOLogin } from '../login/ssoExternalLogin';
 import type { OwnAuthModalProps, SSOAuthModalResult } from './interface';
 
 type State =
@@ -35,8 +35,7 @@ type State =
 const initialState = { type: 'init' } as const;
 
 export interface SSOAuthModalProps
-    extends Omit<OwnAuthModalProps, 'onSuccess'>,
-        Omit<PromptProps, 'title' | 'buttons' | 'children' | 'onError'> {
+    extends Omit<OwnAuthModalProps, 'onSuccess'>, Omit<PromptProps, 'title' | 'buttons' | 'children' | 'onError'> {
     onSuccess?: (data: SSOAuthModalResult) => Promise<void> | void;
     api?: Api;
     info?: SSOInfoResponse;

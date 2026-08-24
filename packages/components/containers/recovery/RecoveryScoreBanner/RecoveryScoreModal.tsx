@@ -3,12 +3,6 @@ import { c } from 'ttag';
 import type { RecoveryItemIds } from '@proton/account/safetyReview/recoveryState/recoveryState';
 import { useRecoveryState } from '@proton/account/safetyReview/recoveryState/useRecoveryState';
 import { Button } from '@proton/atoms/Button/Button';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import Modal from '@proton/components/components/modalTwo/Modal';
-import ModalContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
-import useConfig from '@proton/components/hooks/useConfig';
 import { IcCheckmarkCircle } from '@proton/icons/icons/IcCheckmarkCircle';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 import { IcCircleRadioEmpty } from '@proton/icons/icons/IcCircleRadioEmpty';
@@ -16,6 +10,12 @@ import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCirc
 import { APPS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
+import type { ModalProps } from '../../../components/modalTwo/Modal';
+import Modal from '../../../components/modalTwo/Modal';
+import ModalContent from '../../../components/modalTwo/ModalContent';
+import ModalFooter from '../../../components/modalTwo/ModalFooter';
+import ModalHeader from '../../../components/modalTwo/ModalHeader';
+import useConfig from '../../../hooks/useConfig';
 import SecureAccountButton from './SecureAccountButton';
 import { getRecoveryScoreItemCopy } from './recoveryScoreCopy';
 import { SCORE_TONE_CLASS, getRecoveryScoreCta, getRecoveryScoreTone } from './recoveryScoreState';

@@ -21,12 +21,6 @@ import { isOrgKeyRequired, isOwnerRole } from '@proton/account/organizationRoles
 import { useOrganizationRoles } from '@proton/account/organizationRoles/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { AdminRolesUIState, useAdminRolesUI } from '@proton/account/userPermissions/hooks';
-import Loader from '@proton/components/components/loader/Loader';
-import { useResumeRoleAssignment } from '@proton/components/containers/members/rolesAndPermissions/useResumeRoleAssignment';
-import useGroupKeys from '@proton/components/containers/organization/groups/useGroupKeys';
-import useApi from '@proton/components/hooks/useApi';
-import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { checkMemberAddressAvailability } from '@proton/shared/lib/api/members';
@@ -37,11 +31,17 @@ import { GROUP_MEMBER_PERMISSIONS } from '@proton/shared/lib/interfaces/GroupMem
 import { useFlag } from '@proton/unleash/useFlag';
 import setsContainSameElements from '@proton/utils/setsContainSameElements';
 
+import Loader from '../../../../components/loader/Loader';
+import useApi from '../../../../hooks/useApi';
+import useErrorHandler from '../../../../hooks/useErrorHandler';
+import useNotifications from '../../../../hooks/useNotifications';
+import { useResumeRoleAssignment } from '../../../members/rolesAndPermissions/useResumeRoleAssignment';
 import canUseGroups from '../canUseGroups';
 import useGroupAvailableAddressDomains from '../hooks/useGroupAvailableAddressDomains';
 import shouldShowMail from '../shouldShowMail';
 import { GROUPS_RESTRICTION_REASON, GROUPS_STATE } from '../types';
 import type { GroupFormData, GroupsManagementReturn, GroupsRestriction } from '../types';
+import useGroupKeys from '../useGroupKeys';
 import useGroupsProtonMeDomain from '../useGroupsProtonMeDomain';
 
 const INITIAL_FORM_VALUES = (organization?: Organization): GroupFormData => ({

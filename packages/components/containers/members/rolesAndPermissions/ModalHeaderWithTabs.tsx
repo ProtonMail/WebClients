@@ -1,8 +1,8 @@
 import type { CSSProperties, ReactNode } from 'react';
 
-import ModalContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
-import { Tabs } from '@proton/components/components/tabs/Tabs';
+import ModalContent from '../../../components/modalTwo/ModalContent';
+import ModalHeader from '../../../components/modalTwo/ModalHeader';
+import { Tabs } from '../../../components/tabs/Tabs';
 
 interface Tab {
     title: string;

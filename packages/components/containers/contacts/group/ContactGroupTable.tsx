@@ -1,13 +1,14 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Table from '@proton/components/components/table/Table';
-import TableBody from '@proton/components/components/table/TableBody';
-import TableCell from '@proton/components/components/table/TableCell';
-import TableHeader from '@proton/components/components/table/TableHeader';
-import TableRow from '@proton/components/components/table/TableRow';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import isTruthy from '@proton/utils/isTruthy';
+
+import Table from '../../../components/table/Table';
+import TableBody from '../../../components/table/TableBody';
+import TableCell from '../../../components/table/TableCell';
+import TableHeader from '../../../components/table/TableHeader';
+import TableRow from '../../../components/table/TableRow';
 
 interface Props {
     contactEmails: ContactEmail[];

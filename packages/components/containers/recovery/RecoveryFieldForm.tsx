@@ -4,10 +4,11 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { StatusBadge, StatusBadgeStatus } from '@proton/components/containers/layout/StatusBadge';
 import { IcPen } from '@proton/icons/icons/IcPen';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
+
+import { StatusBadge, StatusBadgeStatus } from '../layout/StatusBadge';
 
 interface InputRowProps {
     input: ReactNode;

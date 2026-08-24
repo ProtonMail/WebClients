@@ -1,10 +1,11 @@
 import { useContext, useEffect } from 'react';
 
-import useConfig from '@proton/components/hooks/useConfig';
 import { isNewVersionAvailable } from '@proton/shared/lib/busy/busy';
 import { CommonFeatureFlag } from '@proton/unleash/Flags';
 import { unleashStorageProvider } from '@proton/unleash/UnleashFlagProvider';
 import { FlagContext, useUnleashClient } from '@proton/unleash/proxy';
+
+import useConfig from '../../hooks/useConfig';
 
 /**
  * Component that handles force reload functionality.

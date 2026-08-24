@@ -1,12 +1,13 @@
 import { c } from 'ttag';
 
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
-import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
-import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
-import ShortcutsToggle from '@proton/components/containers/general/ShortcutsToggle';
-import MailShortcutsModal from '@proton/components/containers/mail/MailShortcutsModal';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
+
+import useModalState from '../../components/modalTwo/useModalState';
+import SettingsLayout from '../account/SettingsLayout';
+import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
+import SettingsLayoutRight from '../account/SettingsLayoutRight';
+import ShortcutsToggle from '../general/ShortcutsToggle';
+import MailShortcutsModal from '../mail/MailShortcutsModal';
 
 export const KeyboardShortcut = () => {
     const [mailShortcutsProps, setMailShortcutsModalOpen] = useModalState();

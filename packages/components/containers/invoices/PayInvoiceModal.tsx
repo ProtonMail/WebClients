@@ -2,16 +2,6 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import Field from '@proton/components/components/container/Field';
-import Row from '@proton/components/components/container/Row';
-import Input from '@proton/components/components/input/Input';
-import Label from '@proton/components/components/label/Label';
-import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader';
-import Price from '@proton/components/components/price/Price';
-import { getSimplePriceString } from '@proton/components/components/price/helper';
-import useEventManager from '@proton/components/hooks/useEventManager';
-import useNotifications from '@proton/components/hooks/useNotifications';
-import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useLoading } from '@proton/hooks';
 import { checkInvoice } from '@proton/payments/core/api/api';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
@@ -22,12 +12,22 @@ import { ChargebeeIdealButton } from '@proton/payments/ui/components/ChargebeeId
 import { ChargebeePaypalButton } from '@proton/payments/ui/components/ChargebeePaypalButton';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
+import Field from '../../components/container/Field';
+import Row from '../../components/container/Row';
 import Form from '../../components/form/Form';
+import Input from '../../components/input/Input';
+import Label from '../../components/label/Label';
+import EllipsisLoader from '../../components/loader/EllipsisLoader';
 import ModalTwo from '../../components/modalTwo/Modal';
 import ModalTwoContent from '../../components/modalTwo/ModalContent';
 import ModalTwoFooter from '../../components/modalTwo/ModalFooter';
 import ModalTwoHeader from '../../components/modalTwo/ModalHeader';
+import Price from '../../components/price/Price';
+import { getSimplePriceString } from '../../components/price/helper';
 import useApiResult from '../../hooks/useApiResult';
+import useEventManager from '../../hooks/useEventManager';
+import useNotifications from '../../hooks/useNotifications';
+import { usePaymentFacade } from '../../payments/client-extensions/index';
 import PaymentWrapper from '../payments/PaymentWrapper';
 import { getInvoicePaymentsVersion } from './helpers';
 

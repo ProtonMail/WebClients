@@ -2,13 +2,12 @@ import { useRef } from 'react';
 
 import { c } from 'ttag';
 
-import Toggle from '@proton/components/components/toggle/Toggle';
-import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
-import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
-import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
-import { EnforcedByOrganization } from '@proton/components/containers/organization/EnforcedByOrganization';
-
+import Toggle from '../../components/toggle/Toggle';
 import useSearchParamsEffect from '../../hooks/useSearchParamsEffect';
+import SettingsLayout from '../account/SettingsLayout';
+import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
+import SettingsLayoutRight from '../account/SettingsLayoutRight';
+import { EnforcedByOrganization } from '../organization/EnforcedByOrganization';
 
 interface Props {
     checked: boolean;

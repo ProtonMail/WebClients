@@ -3,9 +3,10 @@ import { c } from 'ttag';
 import type { MemberEditPayload, MemberKeyPayload, PromoteGlobalSSOPayload } from '@proton/account';
 import { Button } from '@proton/atoms/Button/Button';
 import { Card } from '@proton/atoms/Card/Card';
-import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
-import Prompt from '@proton/components/components/prompt/Prompt';
 import { BRAND_NAME, MEMBER_SUBSCRIBER } from '@proton/shared/lib/constants';
+
+import type { ModalStateProps } from '../../components/modalTwo/useModalState';
+import Prompt from '../../components/prompt/Prompt';
 
 const ConfirmPromotePrompt = ({
     payload,

@@ -1,7 +1,8 @@
-import CustomLogo from '@proton/components/components/logo/CustomLogo';
-import Logo from '@proton/components/components/logo/Logo';
 import { IcAppSwitch } from '@proton/icons/icons/IcAppSwitch';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
+
+import CustomLogo from '../../../components/logo/CustomLogo';
+import Logo from '../../../components/logo/Logo';
 
 import './SidebarPreview.scss';
 

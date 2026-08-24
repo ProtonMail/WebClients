@@ -4,11 +4,6 @@ import { EasySwitchOauthImportButton, EasySwitchProvider } from '@proton/activat
 import { EASY_SWITCH_SOURCES, ImportProvider, ImportType } from '@proton/activation/src/interface';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
-import Alert from '@proton/components/components/alert/Alert';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
-import SettingsSection from '@proton/components/containers/account/SettingsSection';
-import ImportModal from '@proton/components/containers/calendar/importModal/ImportModal';
 import { getProbablyActiveCalendars, getWritableCalendars } from '@proton/shared/lib/calendar/calendar';
 import { IMPORT_CALENDAR_FAQ_URL } from '@proton/shared/lib/calendar/constants';
 import { CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
@@ -16,6 +11,12 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { useFlag } from '@proton/unleash/useFlag';
+
+import Alert from '../../../components/alert/Alert';
+import useModalState from '../../../components/modalTwo/useModalState';
+import SettingsParagraph from '../../account/SettingsParagraph';
+import SettingsSection from '../../account/SettingsSection';
+import ImportModal from '../importModal/ImportModal';
 
 interface Props {
     calendars: VisualCalendar[];

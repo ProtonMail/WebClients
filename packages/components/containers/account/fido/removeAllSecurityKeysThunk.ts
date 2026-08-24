@@ -1,12 +1,13 @@
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 
 import { type UserSettingsState, userSettingsThunk } from '@proton/account/userSettings';
-import { setSecurityKeyRequirePinFlag } from '@proton/components/containers/account/fido/setSecurityKeyRequirePinFlag';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { removeSecurityKey } from '@proton/shared/lib/api/settings';
 import { lockSensitiveSettings } from '@proton/shared/lib/api/user';
 import noop from '@proton/utils/noop';
+
+import { setSecurityKeyRequirePinFlag } from './setSecurityKeyRequirePinFlag';
 
 interface Key {
     id: string;

@@ -10,15 +10,15 @@ import {
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { BannerVariants } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-import Prompt, { type PromptProps } from '@proton/components/components/prompt/Prompt';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch, useSelector } from '@proton/redux-shared-store/sharedProvider';
 import type { Member } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
+import useModalState from '../../components/modalTwo/useModalState';
+import Prompt, { type PromptProps } from '../../components/prompt/Prompt';
+import useNotifications from '../../hooks/useNotifications';
 import { MemberListBanner, MembersList } from './MemberListBanner';
 
 interface Props extends Omit<PromptProps, 'children' | 'buttons'> {

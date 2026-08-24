@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-import type { Condition, FilterStatement } from '@proton/components/containers/filters/interfaces';
+import type { Condition, FilterStatement } from '../filters/interfaces';
 
 export enum ForwardModalStep {
     Setup,

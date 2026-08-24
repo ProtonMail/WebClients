@@ -4,31 +4,6 @@ import { useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Form from '@proton/components/components/form/Form';
-import ColorPicker from '@proton/components/components/input/ColorPicker';
-import TextArea from '@proton/components/components/input/TextArea';
-import Loader from '@proton/components/components/loader/Loader';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import Option from '@proton/components/components/option/Option';
-import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
-import TruncatedText from '@proton/components/components/truncatedText/TruncatedText';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import BusySlotsCheckbox from '@proton/components/containers/calendar/calendarModal/BusySlotsCheckbox';
-import { getCalendarModalSize } from '@proton/components/containers/calendar/calendarModal/helpers';
-import { CALENDAR_MODAL_TYPE } from '@proton/components/containers/calendar/calendarModal/interface';
-import {
-    getCalendarPayload,
-    getCalendarSettingsPayload,
-    getDefaultModel,
-    validate,
-} from '@proton/components/containers/calendar/calendarModal/personalCalendarModal/calendarModalState';
-import useGetCalendarActions from '@proton/components/containers/calendar/hooks/useGetCalendarActions';
-import useGetCalendarSetup from '@proton/components/containers/calendar/hooks/useGetCalendarSetup';
-import Notifications from '@proton/components/containers/calendar/notifications/Notifications';
-import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { useLoading } from '@proton/hooks';
 import { dedupeNotifications, sortNotificationsByAscendingTrigger } from '@proton/shared/lib/calendar/alarms';
 import { getIsCalendarWritable, getIsSubscribedCalendar, getShowDuration } from '@proton/shared/lib/calendar/calendar';
@@ -38,7 +13,27 @@ import { getSharedCalendarSubHeaderText } from '@proton/shared/lib/calendar/shar
 import type { Nullable } from '@proton/shared/lib/interfaces';
 import type { NotificationModel, SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
+import Form from '../../../../components/form/Form';
+import ColorPicker from '../../../../components/input/ColorPicker';
+import TextArea from '../../../../components/input/TextArea';
+import Loader from '../../../../components/loader/Loader';
+import ModalTwo from '../../../../components/modalTwo/Modal';
+import ModalTwoContent from '../../../../components/modalTwo/ModalContent';
+import ModalTwoFooter from '../../../../components/modalTwo/ModalFooter';
+import ModalTwoHeader from '../../../../components/modalTwo/ModalHeader';
+import Option from '../../../../components/option/Option';
+import SelectTwo from '../../../../components/selectTwo/SelectTwo';
+import TruncatedText from '../../../../components/truncatedText/TruncatedText';
+import InputFieldTwo from '../../../../components/v2/field/InputField';
+import { useContactEmailsCache } from '../../../contacts/ContactEmailsProvider';
 import GenericError from '../../../error/GenericError';
+import useGetCalendarActions from '../../hooks/useGetCalendarActions';
+import useGetCalendarSetup from '../../hooks/useGetCalendarSetup';
+import Notifications from '../../notifications/Notifications';
+import BusySlotsCheckbox from '../BusySlotsCheckbox';
+import { getCalendarModalSize } from '../helpers';
+import { CALENDAR_MODAL_TYPE } from '../interface';
+import { getCalendarPayload, getCalendarSettingsPayload, getDefaultModel, validate } from './calendarModalState';
 
 import './PersonalCalendarModal.scss';
 

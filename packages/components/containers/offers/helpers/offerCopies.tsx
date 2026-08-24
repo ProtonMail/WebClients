@@ -2,7 +2,6 @@ import { Fragment, type ReactElement } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { getOwnDomainText } from '@proton/components/containers/payments/features/mail';
 import type { IconName } from '@proton/icons/types';
 import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import type { PlanIDs } from '@proton/payments/core/interface';
@@ -26,6 +25,7 @@ import { getPremium } from '@proton/shared/lib/helpers/premium';
 import { MailFeatureFlag } from '@proton/unleash/Flags';
 import { getStandaloneUnleashClient } from '@proton/unleash/standaloneClient';
 
+import { getOwnDomainText } from '../../payments/features/mail';
 import {
     get2FAAuthenticatorText,
     getProtonPassFeatureTooltipText,

@@ -1,6 +1,5 @@
-import useApi from '@proton/components/hooks/useApi';
-import { useFetchData } from '@proton/components/hooks/useFetchData';
-
+import useApi from '../../../hooks/useApi';
+import { useFetchData } from '../../../hooks/useFetchData';
 import {
     type CitiesTranslationsApiResponse,
     type SharedServerLocation,

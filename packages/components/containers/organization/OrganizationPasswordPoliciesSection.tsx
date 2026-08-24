@@ -6,13 +6,6 @@ import { c } from 'ttag';
 import { organizationActions } from '@proton/account/organization';
 import { useUserPermissions } from '@proton/account/userPermissions/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import RadioGroup from '@proton/components/components/input/RadioGroup';
-import Info from '@proton/components/components/link/Info';
-import { PermissionBanner, PermissionTooltip } from '@proton/components/components/orgPermissions';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import useApi from '@proton/components/hooks/useApi';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateOrganizationSettings } from '@proton/shared/lib/api/organization';
@@ -30,6 +23,13 @@ import {
 } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
+import RadioGroup from '../../components/input/RadioGroup';
+import Info from '../../components/link/Info';
+import { PermissionBanner, PermissionTooltip } from '../../components/orgPermissions/index';
+import InputFieldTwo from '../../components/v2/field/InputField';
+import getBoldFormattedText from '../../helpers/getBoldFormattedText';
+import useApi from '../../hooks/useApi';
+import useNotifications from '../../hooks/useNotifications';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';

@@ -4,11 +4,6 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-import Option from '@proton/components/components/option/Option';
-import SearchableSelect from '@proton/components/components/selectTwo/SearchableSelect';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { IcFolder } from '@proton/icons/icons/IcFolder';
 import type { IconName } from '@proton/icons/types';
@@ -16,6 +11,11 @@ import { buildTreeview, formatFolderName, hasReachedFolderLimit } from '@proton/
 import type { Folder, FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 import clsx from '@proton/utils/clsx';
 
+import Icon from '../../../components/icon/Icon';
+import useModalState from '../../../components/modalTwo/useModalState';
+import Option from '../../../components/option/Option';
+import SearchableSelect from '../../../components/selectTwo/SearchableSelect';
+import InputFieldTwo from '../../../components/v2/field/InputField';
 import type { LabelModel } from '../../labels/modals/EditLabelModal';
 import EditLabelModal from '../../labels/modals/EditLabelModal';
 import { getDefaultFolderOptions, noFolderOption, noFolderValue } from '../constants';

@@ -7,27 +7,26 @@ import { buildSubscription } from '@proton/testing/builders/subscription';
 
 import { useHideBanner } from './SubscriptionEndsBannerHelpers';
 
-jest.mock('@proton/components/hooks/useConfig', () => ({
+jest.mock('../../hooks/useConfig', () => ({
     __esModule: true,
     default: jest.fn(),
 }));
 
-jest.mock('@proton/components/hooks/useShowVPNDashboard', () => ({
+jest.mock('../../hooks/useShowVPNDashboard', () => ({
     __esModule: true,
     default: jest.fn(),
 }));
 
-jest.mock('@proton/components/hooks/accounts/useShowDashboard', () => ({
+jest.mock('../../hooks/accounts/useShowDashboard', () => ({
     __esModule: true,
     default: jest.fn(),
     useShowDriveDashboard: jest.fn(),
 }));
 
-const mockUseConfig = require('@proton/components/hooks/useConfig').default as jest.Mock;
-const mockUseShowVPNDashboard = require('@proton/components/hooks/useShowVPNDashboard').default as jest.Mock;
-const mockUseShowDashboard = require('@proton/components/hooks/accounts/useShowDashboard').default as jest.Mock;
-const mockUseShowDriveDashboard = require('@proton/components/hooks/accounts/useShowDashboard')
-    .useShowDriveDashboard as jest.Mock;
+const mockUseConfig = require('../../hooks/useConfig').default as jest.Mock;
+const mockUseShowVPNDashboard = require('../../hooks/useShowVPNDashboard').default as jest.Mock;
+const mockUseShowDashboard = require('../../hooks/accounts/useShowDashboard').default as jest.Mock;
+const mockUseShowDriveDashboard = require('../../hooks/accounts/useShowDashboard').useShowDriveDashboard as jest.Mock;
 
 const defaultSubscription = buildSubscription();
 

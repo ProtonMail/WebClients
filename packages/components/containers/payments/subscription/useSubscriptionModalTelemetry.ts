@@ -1,7 +1,7 @@
-import useApi from '@proton/components/hooks/useApi';
 import { TelemetryMeasurementGroups, TelemetrySubscriptionModalEvents } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 
+import useApi from '../../../hooks/useApi';
 import { SUBSCRIPTION_STEPS } from './constants';
 
 export const getInitialStep = (step?: SUBSCRIPTION_STEPS) => {

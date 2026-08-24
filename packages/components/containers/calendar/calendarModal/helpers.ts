@@ -1,4 +1,4 @@
-import { CALENDAR_MODAL_TYPE } from '@proton/components/containers/calendar/calendarModal/interface';
+import { CALENDAR_MODAL_TYPE } from './interface';
 
 export const getCalendarModalSize = (type: CALENDAR_MODAL_TYPE) => {
     if (type === CALENDAR_MODAL_TYPE.VISUAL) {

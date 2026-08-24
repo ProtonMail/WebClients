@@ -3,10 +3,10 @@ import { type ReactNode, useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import useDocumentTitle from '@proton/components/hooks/useDocumentTitle';
 import metrics from '@proton/metrics';
 import clsx from '@proton/utils/clsx';
 
+import useDocumentTitle from '../../hooks/useDocumentTitle';
 import GenericError, { type GenericErrorProps } from '../error/GenericError';
 
 interface Props {

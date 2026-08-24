@@ -2,14 +2,14 @@ import type { MutableRefObject } from 'react';
 
 import { useOrganization } from '@proton/account/organization/hooks';
 import { AdminRolesUIState, useAdminRolesUI } from '@proton/account/userPermissions/hooks';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
-import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
-import DomainModal from '@proton/components/containers/domains/DomainModal';
 import { FeatureCode, useFeature } from '@proton/features';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import useModalState from '../../../components/modalTwo/useModalState';
+import SettingsParagraph from '../../account/SettingsParagraph';
+import SettingsSectionWide from '../../account/SettingsSectionWide';
+import DomainModal from '../../domains/DomainModal';
 import ScimSetupBannerAndModal from '../../organization/ScimSetupBannerAndModal';
 import useOrganizationModals from '../../organization/useOrganizationModals';
 import useOrganizationUnprivatizationModals from '../../organization/useOrganizationUnprivatizationModals';

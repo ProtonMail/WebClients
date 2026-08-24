@@ -1,11 +1,11 @@
 import { c } from 'ttag';
 
 import { selectRecoveryFileData } from '@proton/account/recovery/recoveryFile';
-import SettingsNavItem from '@proton/components/containers/layout/SettingsNavItem';
-import { StatusBadge, StatusBadgeStatus } from '@proton/components/containers/layout/StatusBadge';
 import { IcDeviceDataBackup } from '@proton/icons/icons/IcDeviceDataBackup';
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 
+import SettingsNavItem from '../../layout/SettingsNavItem';
+import { StatusBadge, StatusBadgeStatus } from '../../layout/StatusBadge';
 import { NavItemStatus } from './NavItemStatus';
 
 const RecoveryDeviceBadge = ({ recoveryFileData }: { recoveryFileData: ReturnType<typeof selectRecoveryFileData> }) => {

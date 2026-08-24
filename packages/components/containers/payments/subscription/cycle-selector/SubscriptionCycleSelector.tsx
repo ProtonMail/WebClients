@@ -1,10 +1,5 @@
 import { c } from 'ttag';
 
-import Radio from '@proton/components/components/input/Radio';
-import Option from '@proton/components/components/option/Option';
-import Price from '@proton/components/components/price/Price';
-import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
-import { InputField } from '@proton/components/components/v2/field/InputField';
 import { type PaymentsCheckoutUI, getCheckoutUi, getOptimisticCheckResult } from '@proton/payments/core/checkout';
 import type { CYCLE } from '@proton/payments/core/constants';
 import type { Currency, PlanIDs } from '@proton/payments/core/interface';
@@ -14,6 +9,11 @@ import { useCouponConfig } from '@proton/payments/ui/coupon-config/useCouponConf
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
+import Radio from '../../../../components/input/Radio';
+import Option from '../../../../components/option/Option';
+import Price from '../../../../components/price/Price';
+import SelectTwo from '../../../../components/selectTwo/SelectTwo';
+import { InputField } from '../../../../components/v2/field/InputField';
 import { getDiscountPrice, getShortBillingText } from '../helpers';
 import CycleItemView from './CycleItemView';
 

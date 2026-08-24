@@ -1,10 +1,11 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Prompt from '@proton/components/components/prompt/Prompt';
-import type { PromptProps } from '@proton/components/components/prompt/Prompt';
 import { useLoading } from '@proton/hooks';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+
+import Prompt from '../../components/prompt/Prompt';
+import type { PromptProps } from '../../components/prompt/Prompt';
 
 interface Props extends Omit<PromptProps, 'title' | 'children' | 'buttons'> {
     email: string;

@@ -1,6 +1,7 @@
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Badge from '@proton/components/components/badge/Badge';
 import type { CalendarStatusBadge } from '@proton/shared/lib/calendar/badges';
+
+import Badge from '../../../components/badge/Badge';
 
 const CalendarBadge = ({ badgeType, text, tooltipText, className }: Omit<CalendarStatusBadge, 'statusType'>) => {
     return tooltipText ? (

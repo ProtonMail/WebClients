@@ -9,17 +9,17 @@ import {
 } from '@proton/account';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useNotifications from '@proton/components/hooks/useNotifications';
-import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 
+import type { ModalProps } from '../../components/modalTwo/Modal';
+import ModalTwo from '../../components/modalTwo/Modal';
+import ModalTwoContent from '../../components/modalTwo/ModalContent';
+import ModalTwoFooter from '../../components/modalTwo/ModalFooter';
+import ModalTwoHeader from '../../components/modalTwo/ModalHeader';
+import useErrorHandler from '../../hooks/useErrorHandler';
+import useNotifications from '../../hooks/useNotifications';
+import { useSilentApi } from '../../hooks/useSilentApi';
 import AdministratorList from './AdministratorList';
 
 interface ChangeProps extends Omit<ModalProps, 'children' | 'title' | 'buttons'> {

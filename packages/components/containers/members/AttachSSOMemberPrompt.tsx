@@ -1,11 +1,12 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import type { PromptProps } from '@proton/components/components/prompt/Prompt';
-import Prompt from '@proton/components/components/prompt/Prompt';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { Member } from '@proton/shared/lib/interfaces/Member';
 import { getMemberEmailOrName } from '@proton/shared/lib/keys/memberHelper';
+
+import type { PromptProps } from '../../components/prompt/Prompt';
+import Prompt from '../../components/prompt/Prompt';
 
 interface Props extends Omit<PromptProps, 'title' | 'children' | 'buttons'> {
     member: Member;

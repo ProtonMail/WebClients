@@ -1,12 +1,13 @@
 import type { ReactNode } from 'react';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Modal from '@proton/components/components/modalTwo/Modal';
-import ModalContent from '@proton/components/components/modalTwo/ModalContent';
-import { ModalHeaderCloseButton } from '@proton/components/components/modalTwo/ModalHeader';
-import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import checkoutLoader from '@proton/styles/assets/img/post-subscription/checkout-loader.svg';
 import clsx from '@proton/utils/clsx';
+
+import Modal from '../../../../../components/modalTwo/Modal';
+import ModalContent from '../../../../../components/modalTwo/ModalContent';
+import { ModalHeaderCloseButton } from '../../../../../components/modalTwo/ModalHeader';
+import type { ModalStateProps } from '../../../../../components/modalTwo/useModalState';
 
 export const PostSubscriptionModalWrapper = ({
     children,

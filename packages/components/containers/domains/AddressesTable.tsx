@@ -2,15 +2,15 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import withPermissionGuard from '@proton/components/components/orgPermissions/withPermissionGuard';
-import Table from '@proton/components/components/table/Table';
-import TableBody from '@proton/components/components/table/TableBody';
-import TableHeader from '@proton/components/components/table/TableHeader';
-import TableRow from '@proton/components/components/table/TableRow';
 import { ADDRESS_RECEIVE, ADDRESS_STATUS } from '@proton/shared/lib/constants';
 import type { Domain, DomainAddress } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
+import withPermissionGuard from '../../components/orgPermissions/withPermissionGuard';
+import Table from '../../components/table/Table';
+import TableBody from '../../components/table/TableBody';
+import TableHeader from '../../components/table/TableHeader';
+import TableRow from '../../components/table/TableRow';
 import AddressCatchAll from './AddressCatchAll';
 import DomainAddressStatus from './DomainAddressStatus';
 

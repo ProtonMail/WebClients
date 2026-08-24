@@ -23,21 +23,6 @@ import { useSamlSSO } from '@proton/account/samlSSO/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserPermissions } from '@proton/account/userPermissions/hooks';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-import { useAccountSpotlights } from '@proton/components/containers/account/spotlights/AccountSpotlightsProvider';
-import AddressModal from '@proton/components/containers/addresses/AddressModal';
-import CreateMissingKeysAddressModal from '@proton/components/containers/addresses/missingKeys/CreateMissingKeysAddressModal';
-import AttachSSOMemberPrompt from '@proton/components/containers/members/AttachSSOMemberPrompt';
-import InviteUserCreateSubUserModal from '@proton/components/containers/members/InviteUserCreateSubUserModal';
-import LoginMemberModal from '@proton/components/containers/members/LoginMemberModal';
-import SubUserCreateModal from '@proton/components/containers/members/SubUserCreateModal';
-import SubUserDeleteModal from '@proton/components/containers/members/SubUserDeleteModal';
-import UserRemoveModal from '@proton/components/containers/members/UserRemoveModal';
-import { isB2bPlanSupportingScribe } from '@proton/components/helpers/assistant';
-import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
-import { useErrorWrapper } from '@proton/components/hooks/useErrorHandler';
-import useNotifications from '@proton/components/hooks/useNotifications';
-import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { EntitlementName } from '@proton/payments/core/entitlements/entitlement-names';
 import { useEntitlementChecks } from '@proton/payments/core/entitlements/hooks';
 import {
@@ -65,10 +50,25 @@ import {
 } from '@proton/shared/lib/organization/helper';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import useModalState from '../../../components/modalTwo/useModalState';
+import { isB2bPlanSupportingScribe } from '../../../helpers/assistant';
+import useAssistantFeatureEnabled from '../../../hooks/assistant/useAssistantFeatureEnabled';
+import { useErrorWrapper } from '../../../hooks/useErrorHandler';
+import useNotifications from '../../../hooks/useNotifications';
+import { useSilentApi } from '../../../hooks/useSilentApi';
+import { useAccountSpotlights } from '../../account/spotlights/AccountSpotlightsProvider';
+import AddressModal from '../../addresses/AddressModal';
+import CreateMissingKeysAddressModal from '../../addresses/missingKeys/CreateMissingKeysAddressModal';
+import AttachSSOMemberPrompt from '../AttachSSOMemberPrompt';
 import ChangeMemberPasswordModal from '../ChangeMemberPasswordModal';
+import InviteUserCreateSubUserModal from '../InviteUserCreateSubUserModal';
+import LoginMemberModal from '../LoginMemberModal';
 import ResendInvitePrompt from '../ResendInvitePrompt';
+import SubUserCreateModal from '../SubUserCreateModal';
+import SubUserDeleteModal from '../SubUserDeleteModal';
 import SubUserEditModal from '../SubUserEditModal';
 import UserInviteOrEditModal from '../UserInviteOrEditModal';
+import UserRemoveModal from '../UserRemoveModal';
 import { useMemberRoleAssignmentRetry } from './useMemberRoleAssignmentRetry';
 
 export const useMemberActions = ({

@@ -2,12 +2,13 @@ import type { ReactNode } from 'react';
 import { useContext } from 'react';
 
 import type { ThemeColor } from '@proton/colors/types';
-import { QuickSettingsRemindersContext } from '@proton/components/containers/drawer/MailQuickSettingsReminderContext';
-import MailQuickSettingsReminderContextProvider from '@proton/components/containers/drawer/MailQuickSettingsReminderContextProvider';
-import useConfig from '@proton/components/hooks/useConfig';
-import useRecoveryNotification from '@proton/components/hooks/useRecoveryNotification';
 import { APPS } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
+
+import { QuickSettingsRemindersContext } from '../../containers/drawer/MailQuickSettingsReminderContext';
+import MailQuickSettingsReminderContextProvider from '../../containers/drawer/MailQuickSettingsReminderContextProvider';
+import useConfig from '../useConfig';
+import useRecoveryNotification from '../useRecoveryNotification';
 
 /**
  * Quick settings are now part of the drawer.

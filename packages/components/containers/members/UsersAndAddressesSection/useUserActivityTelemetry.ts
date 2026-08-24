@@ -2,12 +2,13 @@ import { useCallback } from 'react';
 
 import { organizationThunk } from '@proton/account/organization';
 import { subscriptionThunk } from '@proton/account/subscription';
-import useApi from '@proton/components/hooks/useApi';
 import { getPlanName } from '@proton/payments/core/subscription/helpers';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { TelemetryMeasurementGroups, TelemetryVpnB2bUserActivityEvents } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import noop from '@proton/utils/noop';
+
+import useApi from '../../../hooks/useApi';
 
 const ORGANIZATION_SIZE_BUCKETS = [
     { max: 9, label: '1-9' },

@@ -2,9 +2,9 @@ import { c } from 'ttag';
 
 import { useReferrals } from '@proton/account/referrals/hooks';
 import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
-import Loader from '@proton/components/components/loader/Loader';
-import { RewardsCreditDisclaimer } from '@proton/components/containers/referral/rewards/RewardsCreditDisclaimer';
 
+import Loader from '../../../components/loader/Loader';
+import { RewardsCreditDisclaimer } from './RewardsCreditDisclaimer';
 import ReferralsProgress from './RewardsProgress';
 import RewardsTable from './table/RewardsTable';
 

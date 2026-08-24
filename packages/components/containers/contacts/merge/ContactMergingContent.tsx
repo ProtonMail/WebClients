@@ -4,12 +4,6 @@ import { c, msgid } from 'ttag';
 
 import { useUserKeys } from '@proton/account/userKeys/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import Alert from '@proton/components/components/alert/Alert';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import DynamicProgress from '@proton/components/components/progress/DynamicProgress';
-import useApi from '@proton/components/hooks/useApi';
 import { useLoading } from '@proton/hooks';
 import { addContacts, deleteContacts, getContact } from '@proton/shared/lib/api/contacts';
 import { getApiWithAbort } from '@proton/shared/lib/api/helpers/customConfig';
@@ -26,6 +20,13 @@ import type { Contact as ContactType, SimpleEncryptedContact } from '@proton/sha
 import type { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 import chunk from '@proton/utils/chunk';
+
+import Alert from '../../../components/alert/Alert';
+import ModalTwoContent from '../../../components/modalTwo/ModalContent';
+import ModalTwoFooter from '../../../components/modalTwo/ModalFooter';
+import ModalTwoHeader from '../../../components/modalTwo/ModalHeader';
+import DynamicProgress from '../../../components/progress/DynamicProgress';
+import useApi from '../../../hooks/useApi';
 
 const { OVERWRITE_CONTACT } = OVERWRITE;
 const { INCLUDE, IGNORE } = CATEGORIES;

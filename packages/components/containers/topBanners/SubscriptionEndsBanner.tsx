@@ -2,14 +2,14 @@ import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { Href } from '@proton/atoms/Href/Href';
-import SettingsLink from '@proton/components/components/link/SettingsLink';
-import Time from '@proton/components/components/time/Time';
-import { REACTIVATE_SOURCE } from '@proton/components/containers/payments/subscription/cancellationFlow/useCancellationTelemetry';
-import { getReactivateSubscriptionAction } from '@proton/components/containers/payments/subscription/helpers/subscriptionExpires';
 import { SubscriptionPlatform } from '@proton/payments/core/subscription/constants';
 import { isFreeSubscriptionResult, subscriptionExpires } from '@proton/payments/core/subscription/helpers';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
+import SettingsLink from '../../components/link/SettingsLink';
+import Time from '../../components/time/Time';
+import { REACTIVATE_SOURCE } from '../payments/subscription/cancellationFlow/useCancellationTelemetry';
+import { getReactivateSubscriptionAction } from '../payments/subscription/helpers/subscriptionExpires';
 import { useHideBanner } from './SubscriptionEndsBannerHelpers';
 import TopBanner from './TopBanner';
 

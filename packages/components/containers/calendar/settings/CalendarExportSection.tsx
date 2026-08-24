@@ -4,15 +4,16 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
-import Alert from '@proton/components/components/alert/Alert';
-import CalendarSelect from '@proton/components/components/calendarSelect/CalendarSelect';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
-import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
-import SettingsSection from '@proton/components/containers/account/SettingsSection';
-import ExportModal from '@proton/components/containers/calendar/exportModal/ExportModal';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+
+import Alert from '../../../components/alert/Alert';
+import CalendarSelect from '../../../components/calendarSelect/CalendarSelect';
+import useModalState from '../../../components/modalTwo/useModalState';
+import type { SelectChangeEvent } from '../../../components/selectTwo/select';
+import SettingsParagraph from '../../account/SettingsParagraph';
+import SettingsSection from '../../account/SettingsSection';
+import ExportModal from '../exportModal/ExportModal';
 
 interface Props {
     fallbackCalendar?: VisualCalendar;

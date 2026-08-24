@@ -1,9 +1,10 @@
 import { createContext, useContext } from 'react';
 import type { ReactNode } from 'react';
 
-import Toggle from '@proton/components/components/toggle/Toggle';
-import type { ToggleProps } from '@proton/components/components/toggle/Toggle';
 import clsx from '@proton/utils/clsx';
+
+import Toggle from '../../components/toggle/Toggle';
+import type { ToggleProps } from '../../components/toggle/Toggle';
 
 const SettingsToggleRowContext = createContext<{ id: string }>({ id: '' });
 

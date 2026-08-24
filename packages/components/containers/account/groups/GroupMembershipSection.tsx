@@ -2,17 +2,17 @@ import { c } from 'ttag';
 
 import { useGroupMemberships } from '@proton/account/groupMemberships/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
-import Loader from '@proton/components/components/loader/Loader';
-import Table from '@proton/components/components/table/Table';
-import TableBody from '@proton/components/components/table/TableBody';
-import TableCell from '@proton/components/components/table/TableCell';
-import TableHeader from '@proton/components/components/table/TableHeader';
-import TableRow from '@proton/components/components/table/TableRow';
-import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
-import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import type { GroupMembership } from '@proton/shared/lib/interfaces';
 
+import Loader from '../../../components/loader/Loader';
+import Table from '../../../components/table/Table';
+import TableBody from '../../../components/table/TableBody';
+import TableCell from '../../../components/table/TableCell';
+import TableHeader from '../../../components/table/TableHeader';
+import TableRow from '../../../components/table/TableRow';
 import shouldShowMail from '../../organization/groups/shouldShowMail';
+import SettingsParagraph from '../SettingsParagraph';
+import SettingsSectionWide from '../SettingsSectionWide';
 import GroupActions from './GroupActions';
 import GroupState from './GroupState';
 

@@ -6,24 +6,25 @@ import { deserializeQrCodePayload } from '@proton/account/signInWithAnotherDevic
 import { signInWithAnotherDevicePush } from '@proton/account/signInWithAnotherDevice/signInWithAnotherDevicePush';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import Form from '@proton/components/components/form/Form';
-import Modal, { type ModalProps } from '@proton/components/components/modalTwo/Modal';
-import ModalContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
-import { InputField } from '@proton/components/components/v2/field/InputField';
-import useFormErrors from '@proton/components/components/v2/useFormErrors';
-import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import useAuthentication from '@proton/components/hooks/useAuthentication';
-import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useNotifications from '@proton/components/hooks/useNotifications';
-import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import useLoading from '@proton/hooks/useLoading';
 import { IcLightbulb } from '@proton/icons/icons/IcLightbulb';
 import metrics from '@proton/metrics';
 import observeApiError from '@proton/metrics/lib/observeApiError';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+
+import Form from '../../components/form/Form';
+import Modal, { type ModalProps } from '../../components/modalTwo/Modal';
+import ModalContent from '../../components/modalTwo/ModalContent';
+import ModalFooter from '../../components/modalTwo/ModalFooter';
+import ModalHeader from '../../components/modalTwo/ModalHeader';
+import { InputField } from '../../components/v2/field/InputField';
+import useFormErrors from '../../components/v2/useFormErrors';
+import getBoldFormattedText from '../../helpers/getBoldFormattedText';
+import useAuthentication from '../../hooks/useAuthentication';
+import useErrorHandler from '../../hooks/useErrorHandler';
+import useNotifications from '../../hooks/useNotifications';
+import { useSilentApi } from '../../hooks/useSilentApi';
 
 interface Props extends ModalProps<'form'> {}
 

@@ -1,9 +1,10 @@
 import { c } from 'ttag';
 
-import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import { useLoading } from '@proton/hooks';
 import type { Transaction } from '@proton/payments/core/interface';
 import isTruthy from '@proton/utils/isTruthy';
+
+import DropdownActions from '../../components/dropdown/DropdownActions';
 
 interface Props {
     transaction: Transaction;

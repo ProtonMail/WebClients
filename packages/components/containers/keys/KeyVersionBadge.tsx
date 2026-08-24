@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Badge } from '@proton/components/components/badge/Badge';
+import { Badge } from '../../components/badge/Badge';
 
 interface Props {
     version: number;

@@ -3,17 +3,17 @@ import type { FC } from 'react';
 import { Field } from 'formik';
 import { c } from 'ttag';
 
-import Option from '@proton/components/components/option/Option';
-import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
-import Toggle from '@proton/components/components/toggle/Toggle';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
-import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
-import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
 import type { OrganizationUpdatePasswordPolicyInput } from '@proton/pass/types';
 import { oneOf } from '@proton/pass/utils/fp/predicates';
 import clsx from '@proton/utils/clsx';
 
+import Option from '../../components/option/Option';
+import SelectTwo from '../../components/selectTwo/SelectTwo';
+import Toggle from '../../components/toggle/Toggle';
+import InputFieldTwo from '../../components/v2/field/InputField';
+import SettingsLayout from '../account/SettingsLayout';
+import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
+import SettingsLayoutRight from '../account/SettingsLayoutRight';
 import type { PasswordGeneratorOptionValue, PasswordLength } from './PasswordGeneratorPolicyForm';
 
 type Props = {

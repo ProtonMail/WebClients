@@ -1,5 +1,6 @@
-import Toggle from '@proton/components/components/toggle/Toggle';
 import { AUTO_DELETE_SPAM_AND_TRASH_DAYS } from '@proton/shared/lib/mail/mailSettings';
+
+import Toggle from '../../components/toggle/Toggle';
 
 interface Props {
     id?: string;

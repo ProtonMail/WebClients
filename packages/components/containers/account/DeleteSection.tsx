@@ -7,13 +7,13 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import { Href } from '@proton/atoms/Href/Href';
-import Loader from '@proton/components/components/loader/Loader';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-import useConfig from '@proton/components/hooks/useConfig';
 import { IcTrashCross } from '@proton/icons/icons/IcTrashCross';
 import { hasMigrationDiscount, hasVisionary } from '@proton/payments/core/subscription/helpers';
 import { ADDRESS_TYPE, APPS, MAIL_APP_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 
+import Loader from '../../components/loader/Loader';
+import useModalState from '../../components/modalTwo/useModalState';
+import useConfig from '../../hooks/useConfig';
 import { DiscountWarningModal, VisionaryWarningModal } from '../payments/subscription/PlanLossWarningModal';
 import DeleteAccountModal from './DeleteAccountModal';
 import SettingsParagraph from './SettingsParagraph';

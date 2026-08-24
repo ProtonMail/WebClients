@@ -8,7 +8,7 @@ jest.mock('../../payments/subscription/SubscriptionModalProvider', () => ({
 }));
 
 const apiMock = jest.fn().mockResolvedValue({});
-jest.mock('@proton/components/hooks/useApi', () => ({
+jest.mock('../../../hooks/useApi', () => ({
     __esModule: true,
     default: () => apiMock,
 }));
@@ -24,7 +24,7 @@ jest.mock('../../b2bDashboard/VPN/TogglingMonitoringModal', () => ({
 
 // The upsell modal reads add-on prices from the plans catalogue; give it yearly totals whose
 // monthly-equivalent is €9.99 / €39.99 so we don't need the redux store the real hook depends on.
-jest.mock('@proton/components/hooks/usePreferredPlansMap', () => ({
+jest.mock('../../../hooks/usePreferredPlansMap', () => ({
     usePreferredPlansMap: () => ({
         plansMapLoading: false,
         preferredCurrency: 'EUR',

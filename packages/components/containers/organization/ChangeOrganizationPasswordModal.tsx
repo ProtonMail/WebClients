@@ -1,23 +1,10 @@
 import { useState } from 'react';
 
+import type { PrivateKeyReference } from '@protontech/crypto';
 import { c } from 'ttag';
 
 import { organizationKeyThunk } from '@proton/account/organizationKey';
 import { Button } from '@proton/atoms/Button/Button';
-import Alert from '@proton/components/components/alert/Alert';
-import Form from '@proton/components/components/form/Form';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import Modal from '@proton/components/components/modalTwo/Modal';
-import ModalContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
-import useFormErrors from '@proton/components/components/v2/useFormErrors';
-import AuthModal from '@proton/components/containers/password/AuthModal';
-import useNotifications from '@proton/components/hooks/useNotifications';
-import type { PrivateKeyReference } from '@protontech/crypto';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { CacheType } from '@proton/redux-utilities/interface';
@@ -29,6 +16,20 @@ import {
 } from '@proton/shared/lib/helpers/formValidators';
 import { getBackupKeyData } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
+
+import Alert from '../../components/alert/Alert';
+import Form from '../../components/form/Form';
+import type { ModalProps } from '../../components/modalTwo/Modal';
+import Modal from '../../components/modalTwo/Modal';
+import ModalContent from '../../components/modalTwo/ModalContent';
+import ModalFooter from '../../components/modalTwo/ModalFooter';
+import ModalHeader from '../../components/modalTwo/ModalHeader';
+import useModalState from '../../components/modalTwo/useModalState';
+import InputFieldTwo from '../../components/v2/field/InputField';
+import PasswordInputTwo from '../../components/v2/input/PasswordInput';
+import useFormErrors from '../../components/v2/useFormErrors';
+import useNotifications from '../../hooks/useNotifications';
+import AuthModal from '../password/AuthModal';
 
 interface Props extends ModalProps {
     hasOtherAdmins: boolean;

@@ -1,5 +1,6 @@
-import Toggle from '@proton/components/components/toggle/Toggle';
 import { useLoading } from '@proton/hooks';
+
+import Toggle from '../../components/toggle/Toggle';
 
 interface DailyEmailNotificationToggleProps {
     id: string;

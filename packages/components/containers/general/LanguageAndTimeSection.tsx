@@ -2,11 +2,11 @@ import { c } from 'ttag';
 
 import { DashboardCard, DashboardCardContent, DashboardCardDivider } from '@proton/atoms/DashboardCard/DashboardCard';
 import { DashboardGrid } from '@proton/atoms/DashboardGrid/DashboardGrid';
-import SettingsDescription from '@proton/components/containers/account/SettingsDescription';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { IS_DATE_FORMAT_ENABLED } from '@proton/shared/lib/i18n/dateFnLocale';
 import { locales } from '@proton/shared/lib/i18n/locales';
 
+import SettingsDescription from '../account/SettingsDescription';
 import DateFormatSection from './DateFormatSection';
 import LanguageSection, { LanguageTranslationHelp } from './LanguageSection';
 import TimeFormatSection from './TimeFormatSection';

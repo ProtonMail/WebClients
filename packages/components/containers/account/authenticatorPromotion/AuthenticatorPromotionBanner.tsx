@@ -3,9 +3,9 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { AUTHENTICATOR_APP_NAME } from '@proton/shared/lib/constants';
 
+import useModalState from '../../../components/modalTwo/useModalState';
 import { PromotionBanner } from '../../banner/PromotionBanner';
 import AuthenticatorPromotionModal from './AuthenticatorPromotionModal';
 import authenticatorLogo from './assets/authenticator-logo.svg';

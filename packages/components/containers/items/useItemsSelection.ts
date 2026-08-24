@@ -1,8 +1,9 @@
 import type { ChangeEvent, DependencyList } from 'react';
 import { useEffect, useMemo, useState } from 'react';
 
-import { useHandler } from '@proton/components/hooks/useHandler';
 import unique from '@proton/utils/unique';
+
+import { useHandler } from '../../hooks/useHandler';
 
 // Stable reference for the empty-selection case so that consumers memoizing on
 // `checkedIDs` are not invalidated every time the selection is reset to empty.

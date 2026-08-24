@@ -14,13 +14,14 @@ import {
     getCanOutgoingDelegatedAccessRecoverStep2,
 } from '@proton/account/delegatedAccess/shared/outgoing/helper';
 import type { EnrichedOutgoingDelegatedAccess } from '@proton/account/delegatedAccess/shared/outgoing/interface';
-import Radio from '@proton/components/components/input/Radio';
-import type { ReactivateKeysContentProps } from '@proton/components/containers/keys/reactivateKeys/interface';
-import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useNotifications from '@proton/components/hooks/useNotifications';
-import { useSettingsLink } from '@proton/components/index';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import clsx from '@proton/utils/clsx';
+
+import Radio from '../../../components/input/Radio';
+import useErrorHandler from '../../../hooks/useErrorHandler';
+import useNotifications from '../../../hooks/useNotifications';
+import { useSettingsLink } from '../../../index';
+import type { ReactivateKeysContentProps } from './interface';
 
 const ContactSelector = ({
     item,

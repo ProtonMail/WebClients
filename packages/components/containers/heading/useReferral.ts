@@ -5,14 +5,15 @@ import { fromUnixTime } from 'date-fns';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
-import useConfig from '@proton/components/hooks/useConfig';
-import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import { isPaidSubscription } from '@proton/payments/core/type-guards';
 import { APPS, SECOND } from '@proton/shared/lib/constants';
 import { addDays } from '@proton/shared/lib/date-fns-utc';
+
+import useSpotlightShow from '../../components/spotlight/useSpotlightShow';
+import useConfig from '../../hooks/useConfig';
+import useSpotlightOnFeature from '../../hooks/useSpotlightOnFeature';
 
 export const useReferral = (location: ReturnType<typeof useLocation>) => {
     const { APP_NAME } = useConfig();

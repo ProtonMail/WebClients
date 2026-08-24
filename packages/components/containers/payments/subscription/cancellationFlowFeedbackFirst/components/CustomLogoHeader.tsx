@@ -1,6 +1,4 @@
-import CustomLogo, {
-    type CustomLogoPlanName,
-} from '@proton/components/containers/payments/subscription/YourPlanSectionV2/CustomLogo';
+import CustomLogo, { type CustomLogoPlanName } from '../../YourPlanSectionV2/CustomLogo';
 
 interface Props {
     planName: CustomLogoPlanName;

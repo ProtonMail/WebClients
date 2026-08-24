@@ -1,13 +1,13 @@
 import { c } from 'ttag';
 
-import DriveLogo from '@proton/components/components/logo/DriveLogo';
-import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
-import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
-import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { type MaybeFreeSubscription, hasFree } from '@proton/payments/core/subscription/helpers';
 import { APPS, DOCS_APP_NAME, DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 
+import DriveLogo from '../../../../../../components/logo/DriveLogo';
+import useDashboardPaymentFlow from '../../../../../../hooks/useDashboardPaymentFlow';
+import { useSubscriptionModal } from '../../../../../payments/subscription/SubscriptionModalProvider';
+import { SUBSCRIPTION_STEPS } from '../../../../../payments/subscription/constants';
 import type { DashboardMoreInfoSection } from '../../../shared/DashboardMoreInfoSection/DashboardMoreInfoSection';
 import {
     DashboardMoreInfoSectionTag,

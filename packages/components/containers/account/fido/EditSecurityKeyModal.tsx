@@ -5,23 +5,23 @@ import { c } from 'ttag';
 
 import { userSettingsThunk } from '@proton/account/userSettings';
 import { Button } from '@proton/atoms/Button/Button';
-import Form from '@proton/components/components/form/Form';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import Modal from '@proton/components/components/modalTwo/Modal';
-import ModalContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import useFormErrors from '@proton/components/components/v2/useFormErrors';
-import useApi from '@proton/components/hooks/useApi';
-import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { renameSecurityKey } from '@proton/shared/lib/api/settings';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
+import Form from '../../../components/form/Form';
+import type { ModalProps } from '../../../components/modalTwo/Modal';
+import Modal from '../../../components/modalTwo/Modal';
+import ModalContent from '../../../components/modalTwo/ModalContent';
+import ModalFooter from '../../../components/modalTwo/ModalFooter';
+import ModalHeader from '../../../components/modalTwo/ModalHeader';
+import InputFieldTwo from '../../../components/v2/field/InputField';
+import useFormErrors from '../../../components/v2/useFormErrors';
+import useApi from '../../../hooks/useApi';
+import useErrorHandler from '../../../hooks/useErrorHandler';
+import useNotifications from '../../../hooks/useNotifications';
 import { maxSecurityKeyNameLength } from './constants';
 
 interface Props extends ModalProps {

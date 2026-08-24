@@ -14,7 +14,7 @@ import { useFlag } from '@proton/unleash/useFlag';
 
 import { type AccessiblePlansHookProps, getMaximumCycle, useAccessiblePlans } from './PlanSelection';
 
-jest.mock('@proton/components/hooks/useConfig', () => ({
+jest.mock('../../../hooks/useConfig', () => ({
     __esModule: true,
     default: jest.fn().mockReturnValue({
         APP_NAME: 'proton-account',

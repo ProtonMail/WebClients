@@ -4,16 +4,17 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import useFormErrors from '@proton/components/components/v2/useFormErrors';
-import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
-import SettingsSection from '@proton/components/containers/account/SettingsSection';
-import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { buyCredit, validateCredit } from '@proton/payments/core/api/api';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+
+import InputFieldTwo from '../../components/v2/field/InputField';
+import useFormErrors from '../../components/v2/useFormErrors';
+import useApi from '../../hooks/useApi';
+import useEventManager from '../../hooks/useEventManager';
+import useNotifications from '../../hooks/useNotifications';
+import SettingsParagraph from '../account/SettingsParagraph';
+import SettingsSection from '../account/SettingsSection';
 
 const GiftCodeSection = () => {
     const [value, setValue] = useState('');

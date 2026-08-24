@@ -2,14 +2,15 @@ import { c } from 'ttag';
 
 import { userThunk } from '@proton/account/user';
 import { Button } from '@proton/atoms/Button/Button';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-import Prompt from '@proton/components/components/prompt/Prompt';
-import AuthModal from '@proton/components/containers/password/AuthModal';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { disableMnemonicPhrase } from '@proton/shared/lib/api/settingsMnemonic';
+
+import type { ModalProps } from '../../components/modalTwo/Modal';
+import useModalState from '../../components/modalTwo/useModalState';
+import Prompt from '../../components/prompt/Prompt';
+import useNotifications from '../../hooks/useNotifications';
+import AuthModal from '../password/AuthModal';
 
 interface DisableMnemonicModalProps {
     onClose: ModalProps['onClose'];

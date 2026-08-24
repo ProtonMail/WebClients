@@ -2,11 +2,11 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import Info from '@proton/components/components/link/Info';
 import { IcMinus } from '@proton/icons/icons/IcMinus';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import clsx from '@proton/utils/clsx';
 
+import Info from '../../../components/link/Info';
 import { IncreaseBlockedTooltip } from './IncreaseBlockedTooltip';
 import type { DecreaseBlockedReason, IncreaseBlockedReason } from './helpers';
 

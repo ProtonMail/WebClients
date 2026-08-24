@@ -2,10 +2,10 @@ import { c, msgid } from 'ttag';
 
 import { useMembers } from '@proton/account/members/hooks';
 import { Card } from '@proton/atoms/Card/Card';
-import Loader from '@proton/components/components/loader/Loader';
 import type { Organization } from '@proton/shared/lib/interfaces';
 import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
 
+import Loader from '../../components/loader/Loader';
 import { getTwoFAMemberStatistics } from './organizationTwoFAHelper';
 
 interface Props {

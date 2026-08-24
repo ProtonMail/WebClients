@@ -1,14 +1,15 @@
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import Logo from '@proton/components/components/logo/Logo';
-import ProductLink from '@proton/components/containers/app/ProductLink';
-import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import useConfig from '@proton/components/hooks/useConfig';
 import { getAvailableApps } from '@proton/shared/lib/apps/apps';
 import { getAppShortName } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
+
+import Logo from '../../components/logo/Logo';
+import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
+import useConfig from '../../hooks/useConfig';
+import ProductLink from '../app/ProductLink';
 
 export const AppSwitcher = ({ hasBorder, app }: { hasBorder?: boolean; app: APP_NAMES }) => {
     const { APP_NAME } = useConfig();

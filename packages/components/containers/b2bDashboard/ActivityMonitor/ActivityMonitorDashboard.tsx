@@ -2,7 +2,6 @@ import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Tabs } from '@proton/components/components/tabs/Tabs';
 import type { EntitlementChecks } from '@proton/payments/core/entitlements/resolver';
 import { getIsB2BAudienceFromPlan } from '@proton/payments/core/plan/helpers';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
@@ -10,6 +9,7 @@ import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shar
 import type { OrganizationExtended } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
+import { Tabs } from '../../../components/tabs/Tabs';
 import SettingsSectionExtraWide from '../../account/SettingsSectionExtraWide';
 import { OrganizationEvents } from '../Organization/OrganizationEvents';
 import { PassEvents } from '../Pass/PassEvents';

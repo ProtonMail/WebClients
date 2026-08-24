@@ -4,16 +4,16 @@ import { c } from 'ttag';
 
 import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import Copy from '@proton/components/components/button/Copy';
-import Icon from '@proton/components/components/icon/Icon';
-import SettingsLink from '@proton/components/components/link/SettingsLink';
-import useShortDomainAddress from '@proton/components/hooks/mail/useShortDomainAddress';
-import useConfig from '@proton/components/hooks/useConfig';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { APPS } from '@proton/shared/lib/constants';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import illustration from '@proton/styles/assets/img/illustrations/check.svg';
 
+import Copy from '../../../../../components/button/Copy';
+import Icon from '../../../../../components/icon/Icon';
+import SettingsLink from '../../../../../components/link/SettingsLink';
+import useShortDomainAddress from '../../../../../hooks/mail/useShortDomainAddress';
+import useConfig from '../../../../../hooks/useConfig';
+import useNotifications from '../../../../../hooks/useNotifications';
 import { SUBSCRIPTION_STEPS } from '../../constants';
 import type { PostSubscriptionModalComponentProps } from '../interface';
 import {

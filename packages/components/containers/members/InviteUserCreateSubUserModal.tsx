@@ -3,10 +3,6 @@ import { c } from 'ttag';
 import { useCustomDomains } from '@proton/account/domains/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-import Prompt from '@proton/components/components/prompt/Prompt';
-import { getInviteLimit } from '@proton/components/containers/members/UsersAndAddressesSection/helper';
 import { PLAN_NAMES } from '@proton/payments/core/constants';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
@@ -17,7 +13,11 @@ import {
     isOrganizationPassFamily,
 } from '@proton/shared/lib/organization/helper';
 
+import type { ModalStateProps } from '../../components/modalTwo/useModalState';
+import useModalState from '../../components/modalTwo/useModalState';
+import Prompt from '../../components/prompt/Prompt';
 import SubUserCreateModal from './SubUserCreateModal';
+import { getInviteLimit } from './UsersAndAddressesSection/helper';
 
 interface Props extends ModalStateProps {
     members: EnhancedMember[] | undefined;

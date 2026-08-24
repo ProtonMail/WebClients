@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
-import Row from '@proton/components/components/container/Row';
-import Label from '@proton/components/components/label/Label';
-import Info from '@proton/components/components/link/Info';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
+import Row from '../../components/container/Row';
+import Label from '../../components/label/Label';
+import Info from '../../components/link/Info';
 import DesktopNotificationPanel from './DesktopNotificationPanel';
 
 export interface Props {

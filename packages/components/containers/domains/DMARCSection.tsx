@@ -3,16 +3,17 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
-import Alert from '@proton/components/components/alert/Alert';
-import Copy from '@proton/components/components/button/Copy';
-import Input from '@proton/components/components/input/Input';
-import Label from '@proton/components/components/label/Label';
-import Table from '@proton/components/components/table/Table';
-import TableBody from '@proton/components/components/table/TableBody';
-import TableHeader from '@proton/components/components/table/TableHeader';
-import TableRow from '@proton/components/components/table/TableRow';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { getBlogURL } from '@proton/shared/lib/helpers/url';
+
+import Alert from '../../components/alert/Alert';
+import Copy from '../../components/button/Copy';
+import Input from '../../components/input/Input';
+import Label from '../../components/label/Label';
+import Table from '../../components/table/Table';
+import TableBody from '../../components/table/TableBody';
+import TableHeader from '../../components/table/TableHeader';
+import TableRow from '../../components/table/TableRow';
+import useNotifications from '../../hooks/useNotifications';
 
 const DMARCSection = () => {
     const none = <strong key="none">p=none</strong>;

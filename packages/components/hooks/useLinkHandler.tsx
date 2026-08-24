@@ -3,8 +3,6 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { PROTON_DOMAINS, SSO_PATHS } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { getSecondLevelDomain, isSubDomain } from '@proton/shared/lib/helpers/url';
@@ -12,10 +10,12 @@ import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { CONFIRM_LINK } from '@proton/shared/lib/mail/mailSettings';
 import isTruthy from '@proton/utils/isTruthy';
 
+import useModalState from '../components/modalTwo/useModalState';
 import LinkConfirmationModal from '../components/notifications/LinkConfirmationModal/LinkConfirmationModal';
 import { openLinkInBrowser } from '../containers/desktop/openExternalLink';
 import { getHostname, isExternal, punycodeUrl } from '../helpers/url';
 import { useHandler } from './useHandler';
+import useNotifications from './useNotifications';
 
 // Reference : Angular/src/app/utils/directives/linkHandler.js
 

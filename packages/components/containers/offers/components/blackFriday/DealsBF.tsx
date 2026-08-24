@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 
-import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import clsx from '@proton/utils/clsx';
 
+import useActiveBreakpoint from '../../../../hooks/useActiveBreakpoint';
 import { getDiscountWithCoupon } from '../../helpers/dealPrices';
 import type { OfferProps } from '../../interface';
 import DealFeatures from '../shared/deal/DealFeatures';

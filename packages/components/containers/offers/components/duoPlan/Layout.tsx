@@ -4,8 +4,6 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import Price from '@proton/components/components/price/Price';
-import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
 import { IcAppSwitch } from '@proton/icons/icons/IcAppSwitch';
 import { IcStorage } from '@proton/icons/icons/IcStorage';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
@@ -16,6 +14,8 @@ import { APPS } from '@proton/shared/lib/constants';
 import { getAppSpace, getSpace } from '@proton/shared/lib/user/storage';
 import percentage from '@proton/utils/percentage';
 
+import Price from '../../../../components/price/Price';
+import { usePreferredPlansMap } from '../../../../hooks/usePreferredPlansMap';
 import OfferDisableButton from '../../components/shared/OfferDisableButton';
 import OfferLoader from '../../components/shared/OfferLoader';
 import hasOffer from '../../helpers/hasOffer';

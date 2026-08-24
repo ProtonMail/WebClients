@@ -3,16 +3,17 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import StepDot from '@proton/components/components/stepDot/StepDot';
-import StepDots from '@proton/components/components/stepDots/StepDots';
 import adminRolesImg from '@proton/styles/assets/img/onboarding/admin-roles/admin-roles.svg';
 import groupAdminRolesImg from '@proton/styles/assets/img/onboarding/admin-roles/group-roles.svg';
 import organizationAdminRoleImg from '@proton/styles/assets/img/onboarding/admin-roles/organization-admin-role.svg';
 import securityAdminRoleImg from '@proton/styles/assets/img/onboarding/admin-roles/security-admin-role.svg';
 import userAdminRoleImg from '@proton/styles/assets/img/onboarding/admin-roles/user-admin-role.svg';
 import range from '@proton/utils/range';
+
+import ModalTwo from '../../../components/modalTwo/Modal';
+import ModalTwoContent from '../../../components/modalTwo/ModalContent';
+import StepDot from '../../../components/stepDot/StepDot';
+import StepDots from '../../../components/stepDots/StepDots';
 
 interface Props {
     variant: 'member' | 'group';

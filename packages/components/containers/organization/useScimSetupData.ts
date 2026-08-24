@@ -11,13 +11,13 @@ import {
     selectPendingScimUsers,
 } from '@proton/account/scimSetup';
 import { type ScimProgress, approveScimChanges } from '@proton/account/scimSetup/actions';
-import useApi from '@proton/components/hooks/useApi';
-import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { useDispatch, useSelector } from '@proton/redux-shared-store/sharedProvider';
 import type { Group, MemberReadyForManualUnprivatization } from '@proton/shared/lib/interfaces';
 import type { GroupMember } from '@proton/shared/lib/interfaces/GroupMember';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import useApi from '../../hooks/useApi';
+import useErrorHandler from '../../hooks/useErrorHandler';
 import useGroupKeys from './groups/useGroupKeys';
 
 export { ItemStatus, Phase };

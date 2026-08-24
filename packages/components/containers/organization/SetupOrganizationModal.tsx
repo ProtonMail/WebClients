@@ -14,18 +14,6 @@ import { useOrganization } from '@proton/account/organization/hooks';
 import { getInitialStorage, getStorageRange, getTotalStorage } from '@proton/account/organization/storage';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import Form from '@proton/components/components/form/Form';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import Modal from '@proton/components/components/modalTwo/Modal';
-import ModalContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import useFormErrors from '@proton/components/components/v2/useFormErrors';
-import { disableStorageSelection } from '@proton/components/containers/members/helper';
-import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useNotifications from '@proton/components/hooks/useNotifications';
-import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { useLoading } from '@proton/hooks';
 import { getHasExternalMemberCapableB2BPlan, hasPassFamily } from '@proton/payments/core/subscription/helpers';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
@@ -35,7 +23,19 @@ import { getOrganizationDenomination } from '@proton/shared/lib/organization/hel
 import clamp from '@proton/utils/clamp';
 import noop from '@proton/utils/noop';
 
+import Form from '../../components/form/Form';
+import type { ModalProps } from '../../components/modalTwo/Modal';
+import Modal from '../../components/modalTwo/Modal';
+import ModalContent from '../../components/modalTwo/ModalContent';
+import ModalFooter from '../../components/modalTwo/ModalFooter';
+import ModalHeader from '../../components/modalTwo/ModalHeader';
+import InputFieldTwo from '../../components/v2/field/InputField';
+import useFormErrors from '../../components/v2/useFormErrors';
+import useErrorHandler from '../../hooks/useErrorHandler';
+import useNotifications from '../../hooks/useNotifications';
+import { useSilentApi } from '../../hooks/useSilentApi';
 import MemberStorageSelector from '../members/MemberStorageSelector';
+import { disableStorageSelection } from '../members/helper';
 import AdministratorList from './AdministratorList';
 
 enum STEPS {

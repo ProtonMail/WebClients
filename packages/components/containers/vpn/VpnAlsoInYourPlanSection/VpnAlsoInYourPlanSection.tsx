@@ -13,17 +13,6 @@ import {
     DashboardGridSection,
     DashboardGridSectionHeader,
 } from '@proton/atoms/DashboardGrid/DashboardGrid';
-import Loader from '@proton/components/components/loader/Loader';
-import DriveLogo from '@proton/components/components/logo/DriveLogo';
-import MailLogo from '@proton/components/components/logo/MailLogo';
-import PassLogo from '@proton/components/components/logo/PassLogo';
-import { getSimplePriceString } from '@proton/components/components/price/helper';
-import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import { getTelemetryUserTier } from '@proton/components/helpers/getTelemetryUserTier';
-import useApi from '@proton/components/hooks/useApi';
-import useConfig from '@proton/components/hooks/useConfig';
-import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
-import useLoad from '@proton/components/hooks/useLoad';
 import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
 import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import type { FreePlanDefault, Plan } from '@proton/payments/core/plan/interface';
@@ -47,6 +36,17 @@ import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { goToPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
 import { getSpace } from '@proton/shared/lib/user/storage';
 
+import Loader from '../../../components/loader/Loader';
+import DriveLogo from '../../../components/logo/DriveLogo';
+import MailLogo from '../../../components/logo/MailLogo';
+import PassLogo from '../../../components/logo/PassLogo';
+import { getSimplePriceString } from '../../../components/price/helper';
+import getBoldFormattedText from '../../../helpers/getBoldFormattedText';
+import { getTelemetryUserTier } from '../../../helpers/getTelemetryUserTier';
+import useApi from '../../../hooks/useApi';
+import useConfig from '../../../hooks/useConfig';
+import useDashboardPaymentFlow from '../../../hooks/useDashboardPaymentFlow';
+import useLoad from '../../../hooks/useLoad';
 import ProductLink from '../../app/ProductLink';
 import { PromotionBanner } from '../../banner/PromotionBanner';
 import { getDocumentEditor, getStorageFeature, getVersionHistory } from '../../payments/features/drive';

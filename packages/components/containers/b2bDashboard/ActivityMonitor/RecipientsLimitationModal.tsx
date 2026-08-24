@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import Prompt from '@proton/components/components/prompt/Prompt';
+
+import type { ModalProps } from '../../../components/modalTwo/Modal';
+import Prompt from '../../../components/prompt/Prompt';
 
 interface Props extends ModalProps {
     onChange?: () => void;

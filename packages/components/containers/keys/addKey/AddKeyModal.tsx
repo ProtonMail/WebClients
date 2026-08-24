@@ -1,20 +1,12 @@
 import { useState } from 'react';
 
+import type { AlgorithmInfo } from '@protontech/crypto';
 import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account';
 import { addAddressKeyAction } from '@proton/account/addressKeys/addAddressKeyAction';
 import { addUserKeyAction } from '@proton/account/userKeys/addUserKeyAction';
 import { Button } from '@proton/atoms/Button/Button';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useNotifications from '@proton/components/hooks/useNotifications';
-import type { AlgorithmInfo } from '@protontech/crypto';
 import useLoading from '@proton/hooks/useLoading';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
@@ -23,6 +15,14 @@ import type { Address } from '@proton/shared/lib/interfaces/Address';
 import { getAlgorithmExists } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
+import type { ModalProps } from '../../../components/modalTwo/Modal';
+import ModalTwo from '../../../components/modalTwo/Modal';
+import ModalTwoContent from '../../../components/modalTwo/ModalContent';
+import ModalTwoFooter from '../../../components/modalTwo/ModalFooter';
+import ModalTwoHeader from '../../../components/modalTwo/ModalHeader';
+import getBoldFormattedText from '../../../helpers/getBoldFormattedText';
+import useErrorHandler from '../../../hooks/useErrorHandler';
+import useNotifications from '../../../hooks/useNotifications';
 import getPausedForwardingNotice from '../changePrimaryKeyForwardingNotice/getPausedForwardingNotice';
 import SelectKeyGenType from './SelectKeyGenType';
 

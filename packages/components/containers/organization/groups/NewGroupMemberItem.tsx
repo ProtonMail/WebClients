@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Badge } from '@proton/components/components/badge/Badge';
 import { IcCross } from '@proton/icons/icons/IcCross';
 
+import { Badge } from '../../../components/badge/Badge';
 import type { NewGroupMember } from './AddUsersToGroupModal';
 import { GroupMemberItemWrapper } from './components/GroupMemberItemWrapper';
 

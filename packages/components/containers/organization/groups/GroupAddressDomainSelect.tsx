@@ -1,12 +1,12 @@
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
-import Dropdown from '@proton/components/components/dropdown/Dropdown';
-import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
-import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
-import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
-import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 
+import Dropdown from '../../../components/dropdown/Dropdown';
+import DropdownButton from '../../../components/dropdown/DropdownButton';
+import DropdownMenu from '../../../components/dropdown/DropdownMenu';
+import DropdownMenuButton from '../../../components/dropdown/DropdownMenuButton';
+import { DropdownSizeUnit } from '../../../components/dropdown/utils';
+import useModalState from '../../../components/modalTwo/useModalState';
 import AddSubdomainModal from './AddSubdomainModal';
 import useGroupAvailableAddressDomains from './hooks/useGroupAvailableAddressDomains';
 import type { DomainSuggestion } from './types';

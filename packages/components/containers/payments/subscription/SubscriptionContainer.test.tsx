@@ -1,10 +1,5 @@
 import { fireEvent, screen, waitFor } from '@testing-library/react';
 
-import {
-    defaultSubscriptionCache,
-    organizationDefaultResponse,
-    plansDefaultResponse,
-} from '@proton/components/hooks/helpers/test';
 import type { CheckSubscriptionData } from '@proton/payments/core/api/api';
 import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/payments/core/billing-address/billing-address';
 import { getOptimisticCheckResult } from '@proton/payments/core/checkout';
@@ -28,6 +23,11 @@ import { withReduxStore } from '@proton/testing/lib/context/hocs/with-redux-stor
 import { renderWithProviders } from '@proton/testing/lib/context/renderWithProviders';
 import type { FeatureFlag } from '@proton/unleash/Flags';
 
+import {
+    defaultSubscriptionCache,
+    organizationDefaultResponse,
+    plansDefaultResponse,
+} from '../../../hooks/helpers/test/index';
 import type { SubscriptionContainerProps } from './SubscriptionContainer';
 import SubscriptionContainer from './SubscriptionContainer';
 import { SUBSCRIPTION_STEPS } from './constants';
@@ -37,7 +37,7 @@ jest.mock('@proton/atoms/Portal/Portal', () => ({
     Portal: jest.fn(({ children }) => <>{children}</>),
 }));
 
-jest.mock('@proton/components/hooks/assistant/useAssistantFeatureEnabled', () => ({
+jest.mock('../../../hooks/assistant/useAssistantFeatureEnabled', () => ({
     __esModule: true,
     default: jest.fn(() => ({ paymentsEnabled: false, enabled: false })),
 }));

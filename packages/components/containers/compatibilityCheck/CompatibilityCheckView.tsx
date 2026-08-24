@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 
-import { Href } from '@proton/atoms/Href/Href';
-import type { CompatibilityItem } from '@proton/components/containers/compatibilityCheck/compatibilityCheckHelper';
 import { isWebCryptoAvailable, isWebCryptoRsaSigningSupported } from '@protontech/crypto/compatibilityChecks';
+
+import { Href } from '@proton/atoms/Href/Href';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
@@ -13,6 +13,7 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import unsupportedBrowserSettings from '@proton/styles/assets/img/errors/unsupported-browser.svg';
 
 import useAppTitle from '../../hooks/useAppTitle';
+import type { CompatibilityItem } from './compatibilityCheckHelper';
 
 interface Props {
     appName: APP_NAMES;

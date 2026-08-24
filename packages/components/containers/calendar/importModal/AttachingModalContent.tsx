@@ -3,12 +3,6 @@ import type { ChangeEvent } from 'react';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
-import Alert from '@proton/components/components/alert/Alert';
-import AttachedFile from '@proton/components/components/attachedFile/AttachedFile';
-import Row from '@proton/components/components/container/Row';
-import Dropzone from '@proton/components/components/dropzone/Dropzone';
-import FileInput from '@proton/components/components/input/FileInput';
-import Label from '@proton/components/components/label/Label';
 import {
     IMPORT_CALENDAR_FAQ_URL,
     MAX_IMPORT_EVENTS_STRING,
@@ -18,7 +12,13 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import type { ImportCalendarModel } from '@proton/shared/lib/interfaces/calendar/Import';
 
+import Alert from '../../../components/alert/Alert';
+import AttachedFile from '../../../components/attachedFile/AttachedFile';
 import CalendarSelect from '../../../components/calendarSelect/CalendarSelect';
+import Row from '../../../components/container/Row';
+import Dropzone from '../../../components/dropzone/Dropzone';
+import FileInput from '../../../components/input/FileInput';
+import Label from '../../../components/label/Label';
 
 interface Props {
     model: ImportCalendarModel;

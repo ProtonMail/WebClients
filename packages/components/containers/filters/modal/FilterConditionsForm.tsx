@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Radio from '@proton/components/components/input/Radio';
 import clsx from '@proton/utils/clsx';
 
+import Radio from '../../../components/input/Radio';
 import type { SimpleFilterModalModel } from '../interfaces';
 import { FilterStatement } from '../interfaces';
 import FilterConditionsFormRow from './FilterConditionsFormRow';

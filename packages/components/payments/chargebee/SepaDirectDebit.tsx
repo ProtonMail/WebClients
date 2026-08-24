@@ -3,12 +3,12 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Label from '@proton/components/components/label/Label';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import { CountriesDropdown } from '@proton/payments/ui/billing-address/components/CountriesDropdown';
 import { ChargebeeIframe } from '@proton/payments/ui/components/ChargebeeIframe';
 import type { ChargebeeWrapperProps } from '@proton/payments/ui/components/ChargebeeWrapper';
 
+import Label from '../../components/label/Label';
+import InputFieldTwo from '../../components/v2/field/InputField';
 import type { ChargebeeDirectDebitProcessorHook } from '../react-extensions/useSepaDirectDebit';
 import { SepaAuthorizationText } from './SepaAuthorizationText';
 

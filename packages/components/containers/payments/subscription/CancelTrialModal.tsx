@@ -7,17 +7,6 @@ import { useGetPlans } from '@proton/account/plans/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
-import StripedItem from '@proton/components/components/stripedList/StripedItem';
-import { StripedList } from '@proton/components/components/stripedList/StripedList';
-import Time from '@proton/components/components/time/Time';
-import { getShortPlan } from '@proton/components/containers/payments/features/plan';
-import { useSilentApi } from '@proton/components/hooks/useSilentApi';
-import { useAutomaticCurrency } from '@proton/components/payments/client-extensions';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import type { PLANS } from '@proton/payments/core/constants';
 import type { FreePlanDefault, Plan } from '@proton/payments/core/plan/interface';
@@ -25,6 +14,18 @@ import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import { getPlanName, getPlanTitle } from '@proton/payments/core/subscription/helpers';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+
+import ModalTwo from '../../../components/modalTwo/Modal';
+import ModalTwoContent from '../../../components/modalTwo/ModalContent';
+import ModalTwoFooter from '../../../components/modalTwo/ModalFooter';
+import ModalTwoHeader from '../../../components/modalTwo/ModalHeader';
+import type { ModalStateProps } from '../../../components/modalTwo/useModalState';
+import StripedItem from '../../../components/stripedList/StripedItem';
+import { StripedList } from '../../../components/stripedList/StripedList';
+import Time from '../../../components/time/Time';
+import { useSilentApi } from '../../../hooks/useSilentApi';
+import { useAutomaticCurrency } from '../../../payments/client-extensions/index';
+import { getShortPlan } from '../features/plan';
 
 const FeatureList = () => {
     const [subscription] = useSubscription();

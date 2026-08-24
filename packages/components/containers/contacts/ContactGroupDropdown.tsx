@@ -9,11 +9,6 @@ import type { ButtonProps } from '@proton/atoms/Button/Button';
 import { Button } from '@proton/atoms/Button/Button';
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Dropdown from '@proton/components/components/dropdown/Dropdown';
-import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
-import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
-import Checkbox from '@proton/components/components/input/Checkbox';
-import SearchInput from '@proton/components/components/input/SearchInput';
 import { IcCircleFilled } from '@proton/icons/icons/IcCircleFilled';
 import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
@@ -30,6 +25,11 @@ import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/c
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
+import Dropdown from '../../components/dropdown/Dropdown';
+import DropdownButton from '../../components/dropdown/DropdownButton';
+import { DropdownSizeUnit } from '../../components/dropdown/utils';
+import Checkbox from '../../components/input/Checkbox';
+import SearchInput from '../../components/input/SearchInput';
 import Mark from '../../components/text/Mark';
 import type { ContactGroupEditProps } from './group/ContactGroupEditModal';
 import useApplyGroups from './hooks/useApplyGroups';

@@ -7,20 +7,20 @@ import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
-import Time from '@proton/components/components/time/Time';
-import TimeRemaining from '@proton/components/components/timeRemaining/TimeRemaining';
-import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import useConfig from '@proton/components/hooks/useConfig';
 import { getPlanTitle } from '@proton/payments/core/subscription/helpers';
 import chronometerSvg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-chronometer.svg';
 import hourglassSvg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-hourglass.svg';
 import clsx from '@proton/utils/clsx';
 
+import ModalTwo from '../../components/modalTwo/Modal';
+import ModalTwoContent from '../../components/modalTwo/ModalContent';
+import ModalTwoFooter from '../../components/modalTwo/ModalFooter';
+import ModalTwoHeader from '../../components/modalTwo/ModalHeader';
+import type { ModalStateProps } from '../../components/modalTwo/useModalState';
+import Time from '../../components/time/Time';
+import TimeRemaining from '../../components/timeRemaining/TimeRemaining';
+import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
+import useConfig from '../../hooks/useConfig';
 import { useCancelSubscriptionFlow } from '../payments/subscription/cancelSubscription/useCancelSubscriptionFlow';
 
 const getTrialInfo = (planTitle: string | undefined) => {

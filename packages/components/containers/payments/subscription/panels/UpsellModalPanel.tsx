@@ -2,13 +2,14 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Pill } from '@proton/atoms/Pill/Pill';
-import Icon from '@proton/components/components/icon/Icon';
-import Price from '@proton/components/components/price/Price';
-import StripedItem from '@proton/components/components/stripedList/StripedItem';
-import { StripedList } from '@proton/components/components/stripedList/StripedList';
 import type { IconName } from '@proton/icons/types';
 import type { Currency } from '@proton/payments/core/interface';
 import clsx from '@proton/utils/clsx';
+
+import Icon from '../../../../components/icon/Icon';
+import Price from '../../../../components/price/Price';
+import StripedItem from '../../../../components/stripedList/StripedItem';
+import { StripedList } from '../../../../components/stripedList/StripedList';
 
 type ConditionalProps =
     | {

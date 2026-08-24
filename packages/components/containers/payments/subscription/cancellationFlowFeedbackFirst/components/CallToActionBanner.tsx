@@ -1,7 +1,8 @@
 import { Href } from '@proton/atoms/Href/Href';
-import SettingsLink from '@proton/components/components/link/SettingsLink';
 import { APPS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
+
+import SettingsLink from '../../../../../components/link/SettingsLink';
 
 const ctaClassName = 'shrink-0 text-no-decoration hover:text-underline text-no-wrap text-lg w-full md:w-auto';
 

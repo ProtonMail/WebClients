@@ -1,11 +1,11 @@
 import { c } from 'ttag';
 
-import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import { IcArrowDown } from '@proton/icons/icons/IcArrowDown';
 import { IcArrowUp } from '@proton/icons/icons/IcArrowUp';
 import clsx from '@proton/utils/clsx';
 
 import type { PlanCardFeatureDefinition } from '../features/interface';
+import { PlanCardFeatureList } from './PlanCardFeatures';
 
 import './SubscriptionCancelPlan.scss';
 

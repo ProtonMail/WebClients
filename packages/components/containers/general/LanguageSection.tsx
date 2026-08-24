@@ -3,13 +3,6 @@ import { c } from 'ttag';
 import { userSettingsActions } from '@proton/account/userSettings';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Href } from '@proton/atoms/Href/Href';
-import Option from '@proton/components/components/option/Option';
-import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
-import { SettingsSelectRow } from '@proton/components/containers/account/SettingsSelectRow';
-import useApi from '@proton/components/hooks/useApi';
-import useConfig from '@proton/components/hooks/useConfig';
-import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcLanguage } from '@proton/icons/icons/IcLanguage';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateLocale as updateLocaleConfig } from '@proton/shared/lib/api/settings';
@@ -20,7 +13,14 @@ import { loadLocales } from '@proton/shared/lib/i18n/loadLocale';
 import type { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import noop from '@proton/utils/noop';
 
+import Option from '../../components/option/Option';
+import useApi from '../../hooks/useApi';
+import useConfig from '../../hooks/useConfig';
+import useErrorHandler from '../../hooks/useErrorHandler';
+import useNotifications from '../../hooks/useNotifications';
 import { SettingsIconRow } from '../account/SettingsIconRow';
+import SettingsParagraph from '../account/SettingsParagraph';
+import { SettingsSelectRow } from '../account/SettingsSelectRow';
 
 interface Props {
     locales: TtagLocaleMap;

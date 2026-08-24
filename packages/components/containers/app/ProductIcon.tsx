@@ -1,8 +1,9 @@
-import Logo from '@proton/components/components/logo/Logo';
-import NewBadge from '@proton/components/components/newBadge/NewBadge';
 import { getAppShortName } from '@proton/shared/lib/apps/helper';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
+
+import Logo from '../../components/logo/Logo';
+import NewBadge from '../../components/newBadge/NewBadge';
 
 const NEW_BADGE_APPS: APP_NAMES[] = [APPS.PROTONLUMO, APPS.PROTONMEET, APPS.PROTONSHEETS, APPS.PROTONAUTHENTICATOR];
 

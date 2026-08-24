@@ -9,11 +9,6 @@ import ReachedLimitForwardingModal from '@proton/activation/src/components/Modal
 import UpsellForwardingModal from '@proton/activation/src/components/Modals/UpsellForwardingModal/UpsellForwardingModal';
 import useBYOEFeatureStatus from '@proton/activation/src/hooks/useBYOEFeatureStatus';
 import useReconnectSync from '@proton/activation/src/hooks/useReconnectSync';
-import type { DropdownActionProps } from '@proton/components/components/dropdown/DropdownActions';
-import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-import { useErrorWrapper } from '@proton/components/hooks/useErrorHandler';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import type { WithLoading } from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
@@ -22,9 +17,14 @@ import { getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
 import type { Address, Member, UserModel } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
+import type { DropdownActionProps } from '../../components/dropdown/DropdownActions';
+import DropdownActions from '../../components/dropdown/DropdownActions';
+import useModalState from '../../components/modalTwo/useModalState';
 import EditExternalAddressModal from '../../containers/account/EditExternalAddressModal';
 import EditInternalAddressModal from '../../containers/addresses/EditInternalAddressModal';
 import useAddressFlags from '../../hooks/useAddressFlags';
+import { useErrorWrapper } from '../../hooks/useErrorHandler';
+import useNotifications from '../../hooks/useNotifications';
 import DeleteAddressPrompt from './DeleteAddressPrompt';
 import DisableAddressModal from './DisableAddressModal';
 import type { AddressPermissions } from './helper';

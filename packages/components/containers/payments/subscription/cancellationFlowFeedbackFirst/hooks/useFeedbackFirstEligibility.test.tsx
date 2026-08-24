@@ -1,8 +1,8 @@
 import { useSubscription } from '@proton/account/subscription/hooks';
-import { componentsHookRenderer } from '@proton/components/containers/contacts/tests/render';
 import { PLANS, PLAN_TYPES } from '@proton/payments/core/constants';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import { componentsHookRenderer } from '../../../../contacts/tests/render';
 import { useFeedbackFirstEligibility } from './useFeedbackFirstEligibility';
 
 jest.mock('@proton/account/subscription/hooks');
