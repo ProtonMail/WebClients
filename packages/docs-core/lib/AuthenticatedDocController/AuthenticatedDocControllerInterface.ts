@@ -18,12 +18,10 @@ export interface AuthenticatedDocControllerInterface {
   openMoveToFolderModal(): void
   restoreRevisionAsCopy(yjsContent: YjsState): Promise<void>
   renameDocument(newName: string): Promise<TranslatedResult<void>>
-  restoreDocument(): Promise<void>
+  restoreDocument(useSDK?: boolean): Promise<void>
   squashDocument(): Promise<void>
   squashEverythingInBaseCommit(): Promise<Result<boolean>>
-  trashDocument(): Promise<void>
-  markAsTrashed(): void
-  markAsRestored(): void
+  trashDocument(useSDK?: boolean): Promise<void>
   getAllUpdatesAsZip(): Promise<Blob>
   downloadAllUpdatesAsZip(): Promise<void>
   downloadUpdatesInformation(ydoc?: unknown): Promise<void>

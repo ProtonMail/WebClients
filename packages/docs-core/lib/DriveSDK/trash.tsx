@@ -1,22 +1,18 @@
 import NotificationButton from '@proton/components/containers/notifications/NotificationButton'
 import type { NotificationType } from '@proton/app-context/notifications/interfaces'
 import { SentryRealtimeInitiatives, traceError } from '@proton/shared/lib/helpers/sentry'
-import type { ProtonDriveClient } from '@proton/drive'
+import { getDrive } from '@proton/drive'
 import { c } from 'ttag'
 import type { ReactNode } from 'react'
 
 type CreateNotification = ({ type, text }: { type: NotificationType; text: ReactNode }) => void
 
-export async function trashAndNotify(
-  drive: ProtonDriveClient,
-  createNotification: CreateNotification,
-  nodeUid: string,
-) {
-  await trashDocument(drive, nodeUid)
+export async function trashAndNotify(createNotification: CreateNotification, nodeUid: string) {
+  await trashDocument(nodeUid)
 
   async function undo() {
     try {
-      await restoreDocument(drive, nodeUid)
+      await restoreDocument(nodeUid)
       createNotification({ type: 'success', text: c('Notification').t`Document restored from trash` })
     } catch (error: any) {
       handleRestoreError(createNotification, error)
@@ -34,16 +30,12 @@ export async function trashAndNotify(
   })
 }
 
-export async function restoreAndNotify(
-  drive: ProtonDriveClient,
-  createNotification: CreateNotification,
-  nodeUid: string,
-) {
-  await restoreDocument(drive, nodeUid)
+export async function restoreAndNotify(createNotification: CreateNotification, nodeUid: string) {
+  await restoreDocument(nodeUid)
 
   async function undo() {
     try {
-      await trashDocument(drive, nodeUid)
+      await trashDocument(nodeUid)
       createNotification({ type: 'success', text: c('Notification').t`Document moved to trash` })
     } catch (error) {
       reportTrashError(error)
@@ -62,7 +54,8 @@ export async function restoreAndNotify(
   })
 }
 
-export async function trashDocument(drive: ProtonDriveClient, nodeUid: string) {
+export async function trashDocument(nodeUid: string) {
+  const drive = getDrive()
   for await (const result of drive.trashNodes([nodeUid])) {
     if (!result.ok) {
       throw new Error(`${result.error.name}: ${result.error.message}; UID=${result.uid}`)
@@ -70,7 +63,8 @@ export async function trashDocument(drive: ProtonDriveClient, nodeUid: string) {
   }
 }
 
-export async function restoreDocument(drive: ProtonDriveClient, nodeUid: string) {
+export async function restoreDocument(nodeUid: string) {
+  const drive = getDrive()
   for await (const result of drive.restoreNodes([nodeUid])) {
     if (!result.ok) {
       throw new Error(`${result.error.name}: ${result.error.message}; UID=${result.uid}`)
@@ -78,7 +72,8 @@ export async function restoreDocument(drive: ProtonDriveClient, nodeUid: string)
   }
 }
 
-export async function deleteDocument(drive: ProtonDriveClient, nodeUid: string) {
+export async function deleteDocument(nodeUid: string) {
+  const drive = getDrive()
   for await (const result of drive.deleteNodes([nodeUid])) {
     if (!result.ok) {
       throw new Error(`${result.error.name}: ${result.error.message}; UID=${result.uid}`)
