@@ -22,7 +22,7 @@ import type { PaymentProcessorHook } from '@proton/payments/core/payment-process
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import type { Api } from '@proton/shared/lib/interfaces';
 
-const ACCOUNT_HOLDER_NAME_DEBOUNCE_MS = 500;
+const ACCOUNT_HOLDER_NAME_DEBOUNCE_MS = 250;
 
 export interface Props {
     amountAndCurrency: AmountAndCurrency;
@@ -229,10 +229,11 @@ export const useChargebeeIdeal = (
             return;
         }
 
+        // The payment intent is handed to the iframe by the debounced effect, together with the account holder
+        // name. Sending it here too would arm the iframe button before we know the name.
         return withInitializing(async () => {
             await Promise.all([handles.initializeIdeal(), fetchPaymentToken(abortSignal)]);
             subscribeToIdealEvents(abortSignal);
-            await sendIdealPaymentIntent(accountHolderName, abortSignal);
         }).catch(() => {
             if (!abortSignal.aborted) {
                 setInitializationError(true);
