@@ -10,6 +10,8 @@ export type SheetsDependencies = {
     version: string
   }
   showNotification: (notification: { text: string; type?: 'error' | 'warning' | 'info' | 'success' }) => void
+  // Dependencies that use the clientInvoker
+  openLink: (url: string) => void
 }
 
 const SheetsDependenciesContext = createContext<SheetsDependencies | undefined>(undefined)
