@@ -94,6 +94,7 @@ interface Props extends ModalProps {
     disableStorageValidation?: boolean;
     disableDomainValidation?: boolean;
     disableAddressValidation?: boolean;
+    useEmail?: boolean;
 }
 
 const CreateUserAccountsModal = ({
@@ -107,6 +108,7 @@ const CreateUserAccountsModal = ({
     disableStorageValidation,
     disableDomainValidation,
     disableAddressValidation,
+    useEmail,
     ...rest
 }: Props) => {
     const dispatch = useDispatch();
@@ -235,6 +237,7 @@ const CreateUserAccountsModal = ({
                     disableAddressValidation,
                 },
                 skipCapacityValidation,
+                useEmail,
                 signal: abortControllerRef.current.signal,
                 onImportStart: setImportUsersStep,
                 onImportProgress: setCurrentProgress,

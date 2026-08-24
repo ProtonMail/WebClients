@@ -62,6 +62,7 @@ export const importUsers = ({
     verifiedDomains,
     validationOptions,
     skipCapacityValidation = false,
+    useEmail,
     signal,
     onImportStart,
     onImportProgress,
@@ -71,6 +72,8 @@ export const importUsers = ({
     verifiedDomains: Domain[];
     validationOptions: ValidationOptions;
     skipCapacityValidation?: boolean;
+    /** Members are created with external email addresses rather than organization addresses */
+    useEmail?: boolean;
     signal: AbortSignal;
     /** Called once validation has passed and the users are about to be created */
     onImportStart: () => void;
@@ -102,7 +105,7 @@ export const importUsers = ({
 
         if (!skipCapacityValidation) {
             try {
-                validateOrganizationCapacity(selectedUsers, organization);
+                validateOrganizationCapacity(selectedUsers, organization, { useEmail });
             } catch (error: any) {
                 if (error instanceof OrganizationCapacityError) {
                     return { type: 'capacity-error', error };
