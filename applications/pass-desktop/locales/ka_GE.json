@@ -1086,9 +1086,6 @@
       "Domain could not be verified. Please make sure you added the correct DNS records": [
         "დომენის გადამოწმება შეუძლებელია. დარწმუნდით, რომ დაამატეთ სწორი DNS ჩანაწერები"
       ],
-      "Domain not available, try again later": [
-        "დომენი ხელმიუწვდომელია. თავიდან სცადეთ"
-      ],
       "Editing item failed": [
         "ელემენტის ჩასწორების შეცდომა"
       ],
@@ -2180,8 +2177,7 @@
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის.",
-        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის."
+        "ელემენტის გადატანა სხვა სეიფში წაშლის მის უსაფრთხო ბმულებს."
       ],
       "Moving items": [
         "მიმდინარეობს ელემენტების გადატანა"

@@ -1104,9 +1104,6 @@
       "Domain could not be verified. Please make sure you added the correct DNS records": [
         "Impossibile verificare il dominio. Assicurati di aver aggiunto i record DNS corretti"
       ],
-      "Domain not available, try again later": [
-        "Dominio non disponibile, riprovare più tardi"
-      ],
       "Editing item failed": [
         "Modifica dell'elemento non riuscita"
       ],
@@ -2210,8 +2207,7 @@
         "Spostamento di tutti gli elementi da \"${ payload.content.name }\" in corso"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri.",
-        "Spostare degli elementi in un'altra cassaforte cancellerà i loro link sicuri."
+        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri."
       ],
       "Moving items": [
         "Spostamento degli elementi"
