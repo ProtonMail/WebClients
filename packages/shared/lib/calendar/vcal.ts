@@ -3,8 +3,6 @@
  */
 import ICAL from 'ical.js';
 
-import { parseWithRecovery } from '@proton/shared/lib/calendar/vcalRecovery';
-
 import { DAY, HOUR, MINUTE, SECOND, WEEK } from '../constants';
 import type {
     VcalCalendarComponentWithMaybeErrors,
@@ -18,6 +16,7 @@ import type {
 } from '../interfaces/calendar';
 import { getIsVcalErrorComponent } from './vcalHelper';
 import { fromIcalProperties, getInternalDurationValue, getInternalRecur } from './vcalParse';
+import { parseWithRecovery } from './vcalRecovery';
 
 export { fromIcalComponent, getInternalDateTimeValue, icalValueToInternalValue, parse } from './vcalParse';
 

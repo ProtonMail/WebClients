@@ -1,13 +1,13 @@
 import type { PrivateKeyReference } from '@protontech/crypto';
 import { CryptoProxy } from '@protontech/crypto';
 
-import type { AuthenticationStore } from '@proton/shared/lib/authentication/createAuthenticationStore';
 import arraysContainSameElements from '@proton/utils/arraysContainSameElements';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 import uniqueBy from '@proton/utils/uniqueBy';
 
 import { setNewRecoverySecret } from '../api/settingsRecovery';
+import type { AuthenticationStore } from '../authentication/createAuthenticationStore';
 import type {
     Address,
     Api,

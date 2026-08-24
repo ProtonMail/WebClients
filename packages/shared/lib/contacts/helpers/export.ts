@@ -1,9 +1,9 @@
 import { format } from 'date-fns';
 
-import { getApiWithAbort } from '@proton/shared/lib/api/helpers/customConfig';
 import uniqueBy from '@proton/utils/uniqueBy';
 
 import { getContact, queryContactExport } from '../../api/contacts';
+import { getApiWithAbort } from '../../api/helpers/customConfig';
 import downloadFile from '../../helpers/downloadFile';
 import { wait } from '../../helpers/promise';
 import type { Api, DecryptedKey } from '../../interfaces';
@@ -22,6 +22,7 @@ export const getFileName = (contact: VCardContact) => {
     const contactEmail = contact.email?.[0]?.value || '';
     const name = contactName || contactEmail;
 
+    // eslint-disable-next-line custom-rules/date-formatting-locale
     return `${name}-${format(Date.now(), 'yyyy-MM-dd')}.vcf`;
 };
 

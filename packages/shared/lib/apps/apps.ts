@@ -1,6 +1,5 @@
-import { AccessType } from '@proton/shared/lib/authentication/accessType';
-import { getAccessType } from '@proton/shared/lib/authentication/getAccessType';
-
+import { AccessType } from '../authentication/accessType';
+import { getAccessType } from '../authentication/getAccessType';
 import { APPS, type APP_NAMES, USER_ROLES } from '../constants';
 import { isElectronMail } from '../helpers/desktop';
 import type { OrganizationExtended, User } from '../interfaces';

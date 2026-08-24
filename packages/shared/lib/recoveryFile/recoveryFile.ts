@@ -1,17 +1,17 @@
 import type { PrivateKeyReference, PublicKeyReference } from '@protontech/crypto';
 import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
 
-import { isIos } from '@proton/shared/lib/helpers/browser';
-import { isSelf } from '@proton/shared/lib/user/helpers';
 import isTruthy from '@proton/utils/isTruthy';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
 import { RECOVERY_FILE_FILE_NAME } from '../constants';
+import { isIos } from '../helpers/browser';
 import downloadFile from '../helpers/downloadFile';
 import type { Address, DecryptedKey, Key, KeyWithRecoverySecret, User } from '../interfaces';
 import { getPrimaryKey } from '../keys/getPrimaryKey';
 import type { ArmoredKeyWithInfo } from '../keys/keyImport';
 import { getHasMigratedAddressKeys } from '../keys/keyMigration';
+import { isSelf } from '../user/helpers';
 
 const decryptRecoveryFile = (recoverySecrets: KeyWithRecoverySecret[]) => async (file: string) => {
     try {

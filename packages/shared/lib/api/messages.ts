@@ -1,9 +1,8 @@
-import type { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
-
 import type { SimpleMap } from '../interfaces';
 import type { Message } from '../interfaces/mail/Message';
 import type { PackageDirect } from '../interfaces/mail/crypto';
 import type { CREATE_DRAFT_MESSAGE_ACTION, SEND_MESSAGE_DIRECT_ACTION } from '../interfaces/message';
+import type { SPAM_ACTION } from '../mail/mailSettings';
 import type { CountParams } from './interface';
 import type { MailboxItemsQueryParams } from './mailbox';
 

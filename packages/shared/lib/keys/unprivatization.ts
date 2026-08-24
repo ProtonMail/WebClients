@@ -3,12 +3,9 @@ import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
 import { c } from 'ttag';
 
 import { fetchSignedKeyLists } from '@proton/key-transparency/helpers/apiHelpers';
-import { getAndVerifyApiKeys } from '@proton/shared/lib/api/helpers/getAndVerifyApiKeys';
-import { decryptKeyPacket, encryptAndSignKeyPacket } from '@proton/shared/lib/keys/keypacket';
-import { encryptMemberToken } from '@proton/shared/lib/keys/memberToken';
-import type { OrganizationKeyActivation } from '@proton/shared/lib/keys/organizationKeyDto';
 import noop from '@proton/utils/noop';
 
+import { getAndVerifyApiKeys } from '../api/helpers/getAndVerifyApiKeys';
 import { setupKeys } from '../api/keys';
 import type {
     Address,
@@ -31,6 +28,9 @@ import type {
 } from '../interfaces';
 import { MemberUnprivatizationState } from '../interfaces';
 import { srpVerify } from '../srp';
+import { decryptKeyPacket, encryptAndSignKeyPacket } from './keypacket';
+import { encryptMemberToken } from './memberToken';
+import type { OrganizationKeyActivation } from './organizationKeyDto';
 import {
     generatePublicMemberActivation,
     getDecryptedOrganizationKeyTokenData,

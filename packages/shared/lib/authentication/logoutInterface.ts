@@ -1,5 +1,5 @@
-import type { PersistedSession } from '@proton/shared/lib/authentication/SessionInterface';
-import type { AccessType } from '@proton/shared/lib/authentication/accessType';
+import type { PersistedSession } from './SessionInterface';
+import type { AccessType } from './accessType';
 
 export interface LegacySerializedSignoutUserData {
     id: string;

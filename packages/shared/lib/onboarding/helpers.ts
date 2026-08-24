@@ -2,8 +2,8 @@ import { fromUnixTime, isBefore } from 'date-fns';
 
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import { isPaidSubscription } from '@proton/payments/core/type-guards';
-import { addDays } from '@proton/shared/lib/date-fns-utc';
 
+import { addDays } from '../date-fns-utc';
 import { B2B_ONBOARDING_SHOW_BUTTON_INTERVAL } from './constants';
 
 export const canShowB2BOnboardingButton = (subscription: MaybeFreeSubscription) => {

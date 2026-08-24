@@ -1,9 +1,8 @@
-import { PRODUCT_BIT } from '@proton/shared/lib/constants';
-import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import { isAdmin, isPrivate, isSelf } from '@proton/shared/lib/user/helpers';
-
+import { PRODUCT_BIT } from '../constants';
+import { hasBit } from '../helpers/bitset';
 import type { User as tsUser } from '../interfaces';
 import { UserType } from '../interfaces';
+import { isAdmin, isPrivate, isSelf } from '../user/helpers';
 
 export const getRequiresMailKeySetup = (user: tsUser | undefined) => {
     if (!user) {

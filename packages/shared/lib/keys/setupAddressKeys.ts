@@ -1,8 +1,7 @@
-import type { ProductParam } from '@proton/shared/lib/apps/product';
-import type { DeviceSecretData } from '@proton/shared/lib/keys/device';
-
 import { setupAddress as setupAddressRoute } from '../api/addresses';
+import type { ProductParam } from '../apps/product';
 import type { Api, PreAuthKTVerify, Address as tsAddress } from '../interfaces';
+import type { DeviceSecretData } from './device';
 import { handleSetupKeys } from './setupKeys';
 
 interface SetupAddressArgs {

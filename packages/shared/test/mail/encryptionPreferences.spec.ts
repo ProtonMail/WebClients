@@ -1,11 +1,11 @@
 import type { PublicKeyReference } from '@protontech/crypto';
-import { PACKAGE_TYPE, SIGN } from '@proton/shared/lib/mail/mailSettings';
 
 import type { CONTACT_MIME_TYPES } from '../../lib/constants';
 import { MIME_TYPES, MIME_TYPES_MORE, PGP_SCHEMES, PGP_SCHEMES_MORE } from '../../lib/constants';
 import type { MailSettings, SelfSend } from '../../lib/interfaces';
 import { KT_VERIFICATION_STATUS } from '../../lib/interfaces';
 import extractEncryptionPreferences, { ENCRYPTION_PREFERENCES_ERROR_TYPES } from '../../lib/mail/encryptionPreferences';
+import { PACKAGE_TYPE, SIGN } from '../../lib/mail/mailSettings';
 
 const getMockedPublicKey = (fingerprint: string, userID: string, version: 4 | 6 = 4): PublicKeyReference =>
     ({

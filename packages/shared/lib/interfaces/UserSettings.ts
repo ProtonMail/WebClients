@@ -1,6 +1,5 @@
-import type { ThemeSetting } from '@proton/shared/lib/themes/themes';
-
 import type { DENSITY, ORGANIZATION_POLICY_ENFORCED, SETTINGS_PROTON_SENTINEL_STATE } from '../constants';
+import type { ThemeSetting } from '../themes/themes';
 import type { RegisteredKey } from '../webauthn/interface';
 import type { ChecklistId } from './Checklist';
 

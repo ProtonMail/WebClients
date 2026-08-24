@@ -1,5 +1,5 @@
-import { readableTime, readableTimeIntl } from '@proton/shared/lib/helpers/time';
-import { enUSLocale } from '@proton/shared/lib/i18n/dateFnLocales';
+import { readableTime, readableTimeIntl } from '../../lib/helpers/time';
+import { enUSLocale } from '../../lib/i18n/dateFnLocales';
 
 describe('readableTime()', () => {
     const unixTime = 1666438769; // Sat Oct 22 2022 13:39:29 GMT+0200 (Central European Summer Time)

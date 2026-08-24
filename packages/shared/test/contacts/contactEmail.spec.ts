@@ -1,4 +1,4 @@
-import { getContactDisplayNameEmail } from '@proton/shared/lib/contacts/contactEmail';
+import { getContactDisplayNameEmail } from '../../lib/contacts/contactEmail';
 
 describe('getContactDisplayNameEmail', () => {
     it('displays the email when no name is passed', () => {

@@ -1,7 +1,6 @@
-import { TelemetryInboxDestkopEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
-import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
-import type { Api } from '@proton/shared/lib/interfaces';
-
+import { TelemetryInboxDestkopEvents, TelemetryMeasurementGroups } from '../api/telemetry';
+import { sendTelemetryReport } from '../helpers/metrics';
+import type { Api } from '../interfaces';
 import type { DailyStatsReport } from './DailyStats';
 import type { DefaultProtocol } from './DefaultProtocol';
 import { getInboxDesktopInfo, invokeInboxDesktopIPC } from './ipcHelpers';

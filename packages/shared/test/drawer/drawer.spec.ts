@@ -1,8 +1,5 @@
-import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { APPS, APPS_CONFIGURATION } from '@proton/shared/lib/constants';
-import type { DRAWER_ACTION } from '@proton/shared/lib/drawer/interfaces';
-import { DRAWER_EVENTS, DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
-
+import type { APP_NAMES } from '../../lib/constants';
+import { APPS, APPS_CONFIGURATION } from '../../lib/constants';
 import {
     addParentAppToUrl,
     authorizedApps,
@@ -19,6 +16,8 @@ import {
     isAuthorizedDrawerUrl,
     postMessageFromIframe,
 } from '../../lib/drawer/helpers';
+import type { DRAWER_ACTION } from '../../lib/drawer/interfaces';
+import { DRAWER_EVENTS, DRAWER_NATIVE_APPS } from '../../lib/drawer/interfaces';
 import window from '../../lib/window';
 import { getMockedWindowLocation } from '../helpers/url.helper';
 

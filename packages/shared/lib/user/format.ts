@@ -1,5 +1,4 @@
-import type { User } from '@proton/shared/lib/interfaces';
-
+import type { User } from '../interfaces';
 import { canPay, isAdmin, isFree, isMember, isPaid } from './helpers';
 
 const format = (user: User) => {

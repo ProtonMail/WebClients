@@ -1,8 +1,7 @@
+import { CryptoProxy } from '@protontech/crypto';
 import { fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
-import { CryptoProxy } from '@protontech/crypto';
-import { withSupportedSequence } from '@proton/shared/lib/calendar/icsSurgery/vevent';
 import isTruthy from '@proton/utils/isTruthy';
 import partition from '@proton/utils/partition';
 import unique from '@proton/utils/unique';
@@ -37,6 +36,7 @@ import { withNormalizedAuthors } from '../author';
 import { getIsOwnedCalendar } from '../calendar';
 import { getCalendarEventDecryptionKeys } from '../crypto/keys/helpers';
 import { readCalendarEvent, readSessionKeys } from '../deserialize';
+import { withSupportedSequence } from '../icsSurgery/vevent';
 import { getTimezonedFrequencyString } from '../recurrence/getFrequencyString';
 import { fromRruleString } from '../vcal';
 import { getDateProperty } from '../vcalConverter';

@@ -1,4 +1,4 @@
-import { getIsUnreachableError, isNotExistError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { getIsUnreachableError, isNotExistError } from '../../lib/api/helpers/apiErrorHelper';
 
 describe('isNotExistError', () => {
     it('should be a not exist error', () => {

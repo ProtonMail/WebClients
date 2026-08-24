@@ -2,11 +2,11 @@ import { c } from 'ttag';
 
 import { PLANS } from '@proton/payments/core/constants';
 import { getIsB2BAudienceFromPlan } from '@proton/payments/core/plan/helpers';
-import { getIsPasswordless } from '@proton/shared/lib/keys/organizationKeys';
 
 import { MEMBER_ROLE, MEMBER_SUBSCRIBER } from '../constants';
 import type { Address, CachedOrganizationKey, EnhancedMember, Member, Organization } from '../interfaces';
 import { MEMBER_ORG_KEY_STATE } from '../interfaces';
+import { getIsPasswordless } from '../keys/organizationKeys';
 
 export { getIsDomainActive } from './domain';
 

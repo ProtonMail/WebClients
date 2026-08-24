@@ -1,7 +1,7 @@
 import { TidyURL } from '@protontech/tidy-url';
 
-import { SentryMailInitiatives, traceError } from '@proton/shared/lib/helpers/sentry';
-import type { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
+import { SentryMailInitiatives, traceError } from '../helpers/sentry';
+import type { MessageUTMTracker } from '../models/mailUtmTrackers';
 
 export const getUTMTrackersFromURL = (originalURL: string) => {
     // originalURL can be an mailto: link

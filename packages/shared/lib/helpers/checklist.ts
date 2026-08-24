@@ -1,5 +1,5 @@
-import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
-import { type ChecklistId, ChecklistType, type UserSettings } from '@proton/shared/lib/interfaces';
+import { APPS, type APP_NAMES } from '../constants';
+import { type ChecklistId, ChecklistType, type UserSettings } from '../interfaces';
 
 export const getChecklistTypeFromID = (app: APP_NAMES, id?: ChecklistId) => {
     if (app === APPS.PROTONDRIVE) {
