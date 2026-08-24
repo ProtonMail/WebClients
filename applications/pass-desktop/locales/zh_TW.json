@@ -1081,9 +1081,6 @@
       "Domain could not be verified. Please make sure you added the correct DNS records": [
         "無法驗證網域。請確保您已新增正確的 DNS 記錄"
       ],
-      "Domain not available, try again later": [
-        "網域無法使用，請稍後再試"
-      ],
       "Editing item failed": [
         "修改項目失敗"
       ],
@@ -2154,7 +2151,7 @@
         "移動全部於\"${ payload.content.name }\"的項目"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "將項目移動到另一個保管庫會消除其安全連結。"
+        "將項目移至另一個保管庫將會清除其安全連結。"
       ],
       "Moving items": [
         "正在移動檔案"

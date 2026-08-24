@@ -1108,9 +1108,6 @@
       "Domain could not be verified. Please make sure you added the correct DNS records": [
         "无法验证域名。请确保您添加了正确的 DNS 记录"
       ],
-      "Domain not available, try again later": [
-        "域名不可用，请稍后再试"
-      ],
       "Editing item failed": [
         "编辑项目失败"
       ],
@@ -2196,7 +2193,7 @@
         "正在从 \"${ payload.content.name }\" 移动所有项目"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "将项目移动到另一个保险库会删除其安全链接。"
+        "将项目移至其他保险库会清除其安全链接！"
       ],
       "Moving items": [
         "正在移动"
