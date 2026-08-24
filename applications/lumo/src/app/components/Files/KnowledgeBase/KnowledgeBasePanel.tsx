@@ -16,8 +16,8 @@ import { selectContextFilters, selectSpaceByIdOptional } from '../../../redux/se
 import { addContextFilter, removeContextFilter } from '../../../redux/slices/contextFilters';
 import { locallyDeleteAttachmentFromLocalRequest } from '../../../redux/slices/core/attachments';
 import { type Attachment, type Message, getProjectInfo } from '../../../types';
-import { getAttachmentDocumentKey } from '../../../util/resolveProjectFiles';
 import { getMimeTypeFromExtension } from '../../../util/filetypes';
+import { getAttachmentDocumentKey } from '../../../util/resolveProjectFiles';
 import { useExcelSheetSelection } from '../../Composer/ExcelSheetSelectionModal';
 import { useFileHandling } from '../../Composer/hooks/useFileHandling';
 import { useNativeComposerVisibilityApi } from '../../Composer/hooks/useNativeComposerVisibilityApi';
@@ -77,9 +77,7 @@ const FilteredFilesContent = ({
 }: FilteredFilesContentProps) => {
     const autoRetrievedFiles = allFiles.filter((f) => f.autoRetrieved);
     const autoRetrievedKeys = new Set(autoRetrievedFiles.map((f) => getAttachmentDocumentKey(f)));
-    const manualFiles = allFiles.filter(
-        (f) => !f.autoRetrieved && !autoRetrievedKeys.has(getAttachmentDocumentKey(f))
-    );
+    const manualFiles = allFiles.filter((f) => !f.autoRetrieved && !autoRetrievedKeys.has(getAttachmentDocumentKey(f)));
 
     const isExcluded = (f: any) => {
         const filter = contextFilters.find((cf: any) => cf.messageId === f.messageId);
@@ -371,7 +369,7 @@ export const KnowledgeBasePanel = ({
     const dispatch = useLumoDispatch();
     const { createNotification } = useNotifications();
     const contextFilters = useLumoSelector(selectContextFilters);
-    useNativeComposerVisibilityApi({ isBlocking: true });
+    useNativeComposerVisibilityApi({ hideComposer: true });
 
     const [showDriveBrowser, setShowDriveBrowser] = useState(initialShowDriveBrowser);
     const [showKnowledgeExplanation, setShowKnowledgeExplanation] = useState(false);
