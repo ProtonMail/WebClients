@@ -28,6 +28,16 @@ const SEARCH_VERSION_LEGACY = 'legacy';
 
 export type SearchPermanentErrorKind = PermanentErrorKind;
 
+/** Storage/index snapshot attached to an error report for debugging context. */
+export type SearchDiagnostics = {
+    blobCount: number;
+    blobSizeMb: number;
+    quarantinedNodeCount: number;
+    storageUsageMb: number;
+    storageQuotaMb: number;
+    documentCount: number | undefined;
+};
+
 const PERMANENT_ERROR_METRIC_KIND: Record<
     PermanentErrorKind,
     HttpsProtonMeWebDriveSearchPermanentErrorsTotalV1SchemaJson['Labels']['errorKind']
@@ -77,6 +87,30 @@ function shouldReportQuarantineToSentry(populatorUid: string): boolean {
     return shouldReportToSentry(quarantineReportBursts, populatorUid);
 }
 
+/**
+ * Logs the storage/index snapshot as a breadcrumb and returns it for use as `extra` on the Sentry
+ * report - so it's guaranteed to land on that exact event, not just rely on breadcrumb-channel
+ * ordering. `diagnostics` is `undefined` when gathering it failed on the caller's side (see
+ * `gatherSearchDiagnostics`) - that must not block reporting of the real error, so this just
+ * omits the extra context rather than throwing. `taskAttemptCount` only applies to indexer task
+ * errors, not search query errors.
+ */
+function reportSearchDiagnosticsBreadcrumb(
+    diagnostics: SearchDiagnostics | undefined,
+    taskAttemptCount?: number
+): Record<string, unknown> | undefined {
+    if (!diagnostics) {
+        return undefined;
+    }
+    Logger.debug(
+        `Search diagnostics: blobs=${diagnostics.blobCount} (${diagnostics.blobSizeMb.toFixed(1)}MB), ` +
+            `documents=${diagnostics.documentCount ?? 'unknown'}, quarantined=${diagnostics.quarantinedNodeCount}, ` +
+            `storage=${diagnostics.storageUsageMb.toFixed(1)}/${diagnostics.storageQuotaMb.toFixed(1)}MB` +
+            (taskAttemptCount !== undefined ? `, attempt=${taskAttemptCount}` : '')
+    );
+    return taskAttemptCount !== undefined ? { ...diagnostics, taskAttemptCount } : { ...diagnostics };
+}
+
 export const searchMetrics = {
     /**
      * Indexer task failed. Increments severity counter (permanent / transient), increments
@@ -100,6 +134,8 @@ export const searchMetrics = {
         isInitialIndexing,
         isIncrementalUpdate,
         isInitialAttempt,
+        taskAttemptCount,
+        diagnostics,
     }: {
         decision: ErrorDecision;
         error: unknown;
@@ -109,6 +145,11 @@ export const searchMetrics = {
         isIncrementalUpdate?: boolean;
         /** Required when `isInitialIndexing` is set: false when this failure follows a prior retry. */
         isInitialAttempt?: boolean;
+        /** Number of prior failed attempts for this task, before this one. */
+        taskAttemptCount: number;
+        /** Storage/index snapshot gathered by the caller, `undefined` if gathering it failed. Must
+         * be plain, structured-clone-safe data - this method may run across the worker bridge. */
+        diagnostics: SearchDiagnostics | undefined;
     }): void {
         if (isInitialIndexing) {
             metrics.drive_search_initial_indexing_total.increment({
@@ -126,6 +167,7 @@ export const searchMetrics = {
             });
             sendErrorReportForSearch(`Search permanent error (${decision.reason})`, error, {
                 tags: { label: 'search-permanent-error', taskKind, errorKind: decision.reason },
+                extra: reportSearchDiagnosticsBreadcrumb(diagnostics, taskAttemptCount),
             });
         } else {
             metrics.drive_search_transient_errors_total.increment({ kind: decision.reason });
@@ -137,6 +179,7 @@ export const searchMetrics = {
             } else if (shouldReportTransientToSentry(taskUid)) {
                 sendErrorReportForSearch(`Search transient error (${decision.reason})`, error, {
                     tags: { label: 'search-transient-error', taskKind, kind: decision.reason },
+                    extra: reportSearchDiagnosticsBreadcrumb(diagnostics, taskAttemptCount),
                 });
             } else {
                 Logger.error(`Search transient error (${decision.reason}) [Sentry-throttled]`, error);
@@ -211,10 +254,17 @@ export const searchMetrics = {
      * Search query failed. Increments lifecycle counter and sends to Sentry
      * with `label: 'search-query-error'`
      */
-    markSearchQueryFailed({ error }: { error: unknown }): void {
+    markSearchQueryFailed({
+        error,
+        diagnostics,
+    }: {
+        error: unknown;
+        diagnostics: SearchDiagnostics | undefined;
+    }): void {
         metrics.drive_search_query_total.increment({ outcome: 'failure' });
         sendErrorReportForSearch('Search query failed', error, {
             tags: { label: 'search-query-error' },
+            extra: reportSearchDiagnosticsBreadcrumb(diagnostics),
         });
     },
 

@@ -15,6 +15,7 @@ import type { SearchMetrics } from '../../shared/searchMetrics';
 import type { IndexPopulatorStatus, UserId } from '../../shared/types';
 import { brandTreeEventScopeId } from '../../shared/types';
 import type { IndexRegistry } from '../index/IndexRegistry';
+import { gatherSearchDiagnostics } from '../searchDiagnostics';
 import { OnlineMonitor } from './OnlineMonitor';
 import type { TreeSubscriptionRegistry } from './TreeSubscriptionRegistry';
 import type { IndexPopulator } from './indexPopulators/IndexPopulator';
@@ -336,6 +337,14 @@ export class IndexerTaskQueue {
             const hadFailedBefore =
                 task instanceof IndexPopulatorTask ? await task.populator.hasInitialIndexingFailed(this.db) : false;
 
+            // Gathered here, in the worker, and passed as plain data: `markIndexerError` may run
+            // across the Comlink worker bridge, which can only structured-clone plain values, not
+            // live callbacks back into this class. Skipped for `offline` - that path never opens a
+            // Sentry issue, so gathering it would just be wasted IndexedDB reads on every flaky
+            // network hiccup.
+            const isOffline = decision.kind === 'transient' && decision.reason === 'offline';
+            const diagnostics = isOffline ? undefined : await gatherSearchDiagnostics(this.db);
+
             this.searchMetrics.markIndexerError({
                 decision,
                 error: e,
@@ -344,6 +353,8 @@ export class IndexerTaskQueue {
                 isInitialIndexing: task instanceof IndexPopulatorTask,
                 isIncrementalUpdate: task instanceof IncrementalUpdateTask,
                 isInitialAttempt: !hadFailedBefore,
+                taskAttemptCount: this.taskAttempts.get(uid) ?? 0,
+                diagnostics,
             });
 
             // Only written on the false -> true transition, so at most one write per index flow.
