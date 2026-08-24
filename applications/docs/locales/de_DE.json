@@ -5728,6 +5728,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Bitte beweise, dass du ein Mensch bist, um Spam und Missbrauch zu vermeiden."
       ],
+      "To help troubleshoot the issue, debug information will be uploaded to your Drive and shared securely with the ${ BRAND_NAME } support team. It may include file contents. You can stop sharing at any time, and the shared data is deleted after the review is complete.": [
+        "Um die Problembehebung zu erleichtern, werden Fehlerbehebungsinformationen auf deinen Drive hochgeladen und auf sichere Weise mit dem Support-Team von ${ BRAND_NAME } geteilt. Diese können auch Dateiinhalte umfassen. Du kannst die Freigabe jederzeit beenden, und die freigegebenen Daten werden nach Abschluss der Überprüfung gelöscht."
+      ],
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "Damit du dir dein Passwort besser merken kannst, bitten wir dich, es in regelmäßigen Abständen einzugeben. Mit der Zeit wirst du immer seltener dazu aufgefordert."
       ],
@@ -6363,6 +6366,9 @@
       ],
       "Include application logs in bug report": [
         "Anwendungsprotokolle im Fehlerbericht einschließen"
+      ],
+      "Include debug information": [
+        "Debug-Informationen einbeziehen"
       ],
       "Include document name in notification": [
         "Dokumentname in der Benachrichtigung einbeziehen"
@@ -8340,6 +8346,9 @@
       "Failed to restore document": [
         "Dokument konnte nicht wiederhergestellt werden"
       ],
+      "Failed to submit report": [
+        "Bericht konnte nicht gesendet werden"
+      ],
       "Failed to trash document": [
         "Dokument konnte nicht in den Papierkorb verschoben werden"
       ],
@@ -8376,6 +8385,9 @@
       ],
       "Recent documents updated": [
         "Kürzlich aktualisierte Dokumente"
+      ],
+      "Report submitted successfully": [
+        "Bericht erfolgreich gesendet"
       ],
       "Root folder failed to be loaded": [
         "Stammordner konnte nicht geladen werden"
@@ -9110,7 +9122,7 @@
     },
     "q3campaign2026: Action": {
       "Get the deal": [
-        "Hol dir das Angebot"
+        "Deal sichern"
       ],
       "Special Offer": [
         "Sonderangebot"
@@ -9121,7 +9133,7 @@
         "/Monat"
       ],
       "2 individual accounts": [
-        "2 Einzelkonten"
+        "2 individuelle Konten"
       ],
       "2 TB of secure storage": [
         "2 TB sicherer Speicher"
@@ -9130,10 +9142,10 @@
         "3 TB sicherer Speicher"
       ],
       "500 GB of secure storage": [
-        "500 GB sicherer Speicher"
+        "500 GB sicherer Speicherplatz"
       ],
       "6 individual accounts": [
-        "6 Einzelkonten"
+        "6 individuelle Konten"
       ],
       "Advanced protection against cyber threats": [
         "Erweiterter Schutz vor Cyber-Bedrohungen"
@@ -9175,7 +9187,7 @@
         "Ein Abonnement, volle Leistung"
       ],
       "One plan, max savings": [
-        "Ein Abonnement, maximale Ersparnisse"
+        "Ein Abonnement, maximal sparen"
       ],
       "One plan, more power": [
         "Ein Abonnement, mehr Leistung"
@@ -10816,6 +10828,9 @@
       ],
       "Report a problem": [
         "Ein Problem melden"
+      ],
+      "Report issue": [
+        "Problem melden"
       ],
       "Request new code": [
         "Neuen Code anfordern"
