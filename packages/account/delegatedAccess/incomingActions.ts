@@ -11,7 +11,6 @@ import { getAndVerifyApiKeys } from '@proton/shared/lib/api/helpers/getAndVerify
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import { getUser } from '@proton/shared/lib/authentication/getUser';
 import { maybeResumeSessionByUser, persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import { APPS } from '@proton/shared/lib/constants';
 import { updateCollectionAsyncV6 } from '@proton/shared/lib/eventManager/updateCollectionAsyncV6';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import type { Api } from '@proton/shared/lib/interfaces';
@@ -26,7 +25,12 @@ import { getOrganizationTokenThunk } from '../organizationKey/actions';
 import { userThunk } from '../user';
 import { getIsIncomingDelegatedAccessAvailable } from './available';
 import { getDecryptedDelegatedAccessToken, getReEncryptedRecoveryToken } from './crypto';
-import { type DelegatedAccessState, delegatedAccessActions, selectIncomingDelegatedAccess } from './index';
+import {
+    type DelegatedAccessState,
+    delegatedAccessActions,
+    selectIncomingDelegatedAccess,
+    selectIsDelegatedAccessSupported,
+} from './index';
 import type { IncomingDelegatedAccessOutput } from './interface';
 
 const queryListIncomingDelegatedAccess = () => ({
@@ -52,10 +56,7 @@ export const listIncomingDelegatedAccess = (options?: {
         };
         const getPayload = async () => {
             const user = await dispatch(userThunk());
-            // Only enabled on Account because:
-            // 1 emergency contacts requires switch account
-            // 2 recovery contacts requires routes which don't exist in the VPN API bundle, e.g. account/v1/access/${outgoingDelegatedAccess.DelegatedAccessID}/recove
-            if (extraArgument.config?.APP_NAME !== APPS.PROTONACCOUNT || !getIsIncomingDelegatedAccessAvailable(user)) {
+            if (!selectIsDelegatedAccessSupported(getState()) || !getIsIncomingDelegatedAccessAvailable(user)) {
                 return [];
             }
             const result = await extraArgument.api<{

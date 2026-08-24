@@ -104,5 +104,23 @@ describe('getSource', () => {
 
             expect(result).toBe('recovery_settings');
         });
+
+        test(`returns 'recovery_settings_vpn_settings' source if source query param is 'recovery_settings' and appname is 'proton-vpn-settings'`, () => {
+            const pathname = '/safety-review';
+            const search = new URLSearchParams({ source: 'recovery_settings', appname: APPS.PROTONVPN_SETTINGS });
+
+            const result = getSource({ pathname, search });
+
+            expect(result).toBe('recovery_settings_vpn_settings');
+        });
+
+        test(`returns 'recovery_settings_account' source if source query param is 'recovery_settings' and appname is 'proton-account'`, () => {
+            const pathname = '/u/0/safety-review';
+            const search = new URLSearchParams({ source: 'recovery_settings', appname: APPS.PROTONACCOUNT });
+
+            const result = getSource({ pathname, search });
+
+            expect(result).toBe('recovery_settings_account');
+        });
     });
 });
