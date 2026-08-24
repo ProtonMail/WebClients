@@ -52,6 +52,7 @@ import { formatSpreadsheetYjsDriftLogDetails } from './yjs-drift-log'
 import { minutesToMs, secondsToMs } from './time-utils'
 import { getAccentColorForUsername } from './getAccentColorForUsername'
 import { useSheetsDependencies } from './SheetsDependenciesProvider'
+import { SheetsActions, type SheetsActionType } from '@proton/docs-shared/lib/SheetsActionType'
 
 // local state
 // -----------
@@ -253,11 +254,18 @@ type YjsStateDependencies = {
   // Fires (via the y-spreadsheet onAfterBroadcastPatch hook) inside the broadcast
   // transaction once local patches are applied to the doc; used to detect drift.
   onAfterBroadcastPatch?: (patches: unknown, doc: YDoc) => void
+  storeAction: (type: SheetsActionType, content: unknown) => void
 }
 
 let shouldObserveLocalTransactions = false
 
-function useYjsState({ localState, spreadsheetState, docState, onAfterBroadcastPatch }: YjsStateDependencies) {
+function useYjsState({
+  localState,
+  spreadsheetState,
+  docState,
+  onAfterBroadcastPatch,
+  storeAction,
+}: YjsStateDependencies) {
   const { userName, receivedEverythingFromRTS } = useSyncedState()
   const provider = useMemo(() => {
     const provider = new DocProvider(docState)
@@ -269,7 +277,9 @@ function useYjsState({ localState, spreadsheetState, docState, onAfterBroadcastP
   }, [docState])
   const yDoc = useMemo(() => docState.getDoc(), [docState])
 
-  const logger = useApplication().application.logger
+  const { application } = useApplication()
+  const logger = application.logger
+  const version = application.appVersion
   const ySheets = useMemo(() => yDoc.getArray<Sheet>('sheets'), [yDoc])
   const handledInitialLoad = useRef(false)
   const { onChangeActiveSheet, calculateNow } = spreadsheetState
@@ -298,8 +308,9 @@ function useYjsState({ localState, spreadsheetState, docState, onAfterBroadcastP
         })
       })
       handledInitialLoad.current = true
+      storeAction(SheetsActions.InitialLoadComplete, version)
     },
-    [calculateNow, logger, onChangeActiveSheet, receivedEverythingFromRTS, ySheets],
+    [calculateNow, logger, onChangeActiveSheet, receivedEverythingFromRTS, ySheets, storeAction, version],
   )
 
   const yjsState = useYSpreadsheetV2({
@@ -374,6 +385,7 @@ type ProtonSheetsStateDependencies = Omit<SpreadsheetStateDependencies, OmitDeps
       result: SpreadsheetLocalYjsUpdateAuditResult,
       driftLogDetails: Record<string, unknown>,
     ) => void
+    storeAction: (type: SheetsActionType, content: unknown) => void
   }
 
 export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
@@ -632,6 +644,7 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
     spreadsheetState,
     ...depsWithLocalState,
     onAfterBroadcastPatch: handleAfterBroadcastPatch,
+    storeAction: deps.storeAction,
   }
   const chartsState = useChartsState(depsWithBaseState)
   const searchState = useSearchState(depsWithBaseState)

@@ -229,15 +229,18 @@ export class SheetsStorageService {
           this.cacheConfig.namespace,
           encryptionKey,
         )
-        if (decryptedContent.isFailed()) {
-          return Result.fail(decryptedContent.getError())
+        let content: unknown = {}
+        if (!decryptedContent.isFailed()) {
+          try {
+            const decryptedContentString = uint8ArrayToUtf8String(decryptedContent.getValue())
+            content = JSON.parse(decryptedContentString)
+          } catch (error) {
+            this.logger.error('[SheetsStorageService] Failed to parse content', error as Error)
+          }
+        } else {
+          this.logger.error('[SheetsStorageService] Failed to decrypt content', decryptedContent.getError())
         }
-        const decryptedContentString = uint8ArrayToUtf8String(decryptedContent.getValue())
-        decryptedActionsArray.push({
-          type: record.type,
-          content: JSON.parse(decryptedContentString),
-          timestamp: record.timestamp,
-        })
+        decryptedActionsArray.push({ type: record.type, content, timestamp: record.timestamp })
       }
       return Result.ok(decryptedActionsArray)
     } catch (error) {
