@@ -1,8 +1,9 @@
 import React, { useContext } from 'react';
 
+import { NotificationsContext } from '@proton/app-context/notifications/notificationsContext';
+
 import NotificationsContainer from './Container';
 import NotificationsChildrenContext from './childrenContext';
-import NotificationsContext from './notificationsContext';
 
 const NotificationsChildren = () => {
     const manager = useContext(NotificationsContext);

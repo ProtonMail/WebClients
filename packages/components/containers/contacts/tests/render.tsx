@@ -8,6 +8,7 @@ import { render as originalRender, renderHook } from '@testing-library/react';
 import { createMemoryHistory } from 'history';
 
 import { getModelState } from '@proton/account/test';
+import { NotificationsContext } from '@proton/app-context/notifications/notificationsContext';
 import { CacheProvider } from '@proton/components/containers/cache/Provider';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
@@ -35,7 +36,6 @@ import ApiContext from '../../api/apiContext';
 import AuthenticationProvider from '../../authentication/Provider';
 import ConfigProvider from '../../config/Provider';
 import EventManagerContext from '../../eventManager/context';
-import NotificationsContext from '../../notifications/notificationsContext';
 import { extendStore, setupStore } from './store';
 
 export const mockedCryptoApi = {

@@ -1,4 +1,4 @@
-import type { NotificationsManager } from '@proton/components/containers/notifications/manager';
+import type { NotificationsManager } from '@proton/app-context/notifications/manager';
 
 import { setNotificationsManager } from '../../modules/notifications';
 import { ValidationError } from './ValidationError';

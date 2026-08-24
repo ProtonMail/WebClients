@@ -4,7 +4,7 @@ import { useEffect, useMemo } from 'react';
 import { pipe } from 'imask/esm/masked/pipe';
 import { c } from 'ttag';
 
-import type { CreateNotificationOptions } from '@proton/components/containers/notifications/interfaces';
+import type { CreateNotificationOptions } from '@proton/app-context/notifications/interfaces';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { ContextMenu } from '@proton/pass/components/ContextMenu/ContextMenu';
 import type { ContextMenuItemCopy } from '@proton/pass/components/ContextMenu/ContextMenuItems';

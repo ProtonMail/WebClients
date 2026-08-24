@@ -1,7 +1,7 @@
 import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import type { CreateNotificationOptions } from '@proton/components';
+import type { CreateNotificationOptions } from '@proton/app-context/notifications/interfaces';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
 import { createImport, createSync, createToken, deleteSync, getSyncList, resumeSync, updateImport } from '../../api';

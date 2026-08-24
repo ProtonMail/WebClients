@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { CreateNotificationOptions } from '@proton/components';
+import type { CreateNotificationOptions } from '@proton/app-context/notifications/interfaces';
 import { EMAIL_PLACEHOLDER, USERNAME_PLACEHOLDER } from '@proton/shared/lib/constants';
 import googleLogo from '@proton/styles/assets/img/import/providers/google.svg';
 import imapLogo from '@proton/styles/assets/img/import/providers/imap.svg';

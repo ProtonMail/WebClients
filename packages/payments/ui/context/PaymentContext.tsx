@@ -7,7 +7,7 @@ import { paymentStatusThunk, selectPaymentStatus } from '@proton/account/payment
 import { plansThunk, selectPlans } from '@proton/account/plans';
 import { selectSubscription, subscriptionThunk } from '@proton/account/subscription';
 import { selectUser } from '@proton/account/user';
-import type { CreateNotificationOptions } from '@proton/components/containers/notifications/interfaces';
+import type { CreateNotificationOptions } from '@proton/app-context/notifications/interfaces';
 import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
 import { useHandler } from '@proton/components/hooks/useHandler';
