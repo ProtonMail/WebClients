@@ -4,7 +4,6 @@ import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import { getToApp } from '@proton/shared/lib/authentication/apps';
-import { getShouldReAuth } from '@proton/shared/lib/authentication/fork';
 import { getOAuthSettingsUrl } from '@proton/shared/lib/authentication/fork/oauth2SettingsUrl';
 import { getReturnUrl } from '@proton/shared/lib/authentication/returnUrl';
 import { APPS, type APP_NAMES, SETUP_ADDRESS_PATH } from '@proton/shared/lib/constants';
@@ -16,9 +15,7 @@ import noop from '@proton/utils/noop';
 
 import type { AppSwitcherState } from '../../public/AppSwitcherContainer';
 import { getOrganization } from '../../public/organization';
-import { getReAuthState } from '../../public/reauthContainerState';
 import type { Paths } from '../helper';
-import { hasInterruption } from '../interruptions';
 import type { LocalRedirect } from '../localRedirect';
 import { type ProduceForkData, SSOType } from './forkInterface';
 import { getProduceForkLoginResult } from './getProduceForkLoginResult';
@@ -199,23 +196,6 @@ export const getLoginResult = async ({
             };
         }
         return goToAppSwitcher({ session, api, paths });
-    }
-
-    const forkParameters = forkState?.type === SSOType.Proton ? forkState.payload.forkParameters : undefined;
-
-    if (
-        // Reauth is only triggered through the switch flow as in other scenarios the user always enters their password
-        session.flow === 'switch' &&
-        // The prompt comes from the fork url and does not change between passes, so without this the
-        // session would be sent back to reauth every time it comes back through here
-        !hasInterruption(session, 'reauth') &&
-        getShouldReAuth(forkParameters, session)
-    ) {
-        return {
-            type: 'reauth',
-            location: paths.reauth,
-            payload: getReAuthState(forkParameters, session),
-        };
     }
 
     const toApp = getToApp(maybeToApp, user);

@@ -9,18 +9,14 @@ export type ReAuthState = {
 
 // Different file for code-splitting purposes
 export const getReAuthState = (
-    forkParameters: Pick<ProduceForkParameters, 'prompt' | 'promptType' | 'promptBypass'> | undefined,
+    forkParameters: Pick<ProduceForkParameters, 'prompt' | 'promptType' | 'promptBypass'>,
     session: AuthSession
 ): ReAuthState => {
-    let reAuthType = forkParameters?.promptType ?? 'default';
+    let reAuthType = forkParameters.promptType;
 
     // Normalize the reauth type to 'default' (auth with IdP - instead of auth with backup password) for SSO accounts
     // ignoring if the offline key exists or not and 'sso' bypass is requested
-    if (
-        forkParameters?.promptBypass === 'sso' &&
-        getIsGlobalSSOAccount(session.data.User) &&
-        reAuthType !== 'default'
-    ) {
+    if (forkParameters.promptBypass === 'sso' && getIsGlobalSSOAccount(session.data.User) && reAuthType !== 'default') {
         reAuthType = 'default';
     }
 

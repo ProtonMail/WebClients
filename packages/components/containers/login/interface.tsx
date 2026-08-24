@@ -140,7 +140,7 @@ export interface AuthCacheResult {
     challengeResult: ChallengeResult;
 }
 
-export type AuthFlows = 'signup' | 'reset' | 'switch' | 'login' | undefined;
+export type AuthFlows = 'signup' | 'reset' | 'switch' | 'login' | 'auto-resume' | undefined;
 
 export type AuthInterruption = 'fork-redirect-consent' | 'oauth-consent' | 'reauth';
 
@@ -155,7 +155,6 @@ export interface AuthSession {
     flow?: AuthFlows;
     /** Interruptions this session has already been through, in the order they happened */
     interruptions?: AuthInterruption[];
-    prompt?: 'login' | null;
     appIntent?: AppIntent;
     data: ResumedSessionResult;
 }
