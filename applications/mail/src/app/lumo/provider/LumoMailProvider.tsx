@@ -2,10 +2,16 @@ import type { MutableRefObject, ReactNode } from 'react';
 import { useEffect, useMemo, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 
+import { useAddresses } from '@proton/account/addresses/hooks';
+import { updateAddressThunk } from '@proton/account/addresses/updateAddress';
+import { useUser } from '@proton/account/user/hooks';
+import { userSettingsActions } from '@proton/account/userSettings';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import LumoAgentDrawerContext from '@proton/components/components/drawer/views/lumoAgent/lumoAgentDrawerContext';
 import useLumoAgent from '@proton/components/components/lumoAgent/useLumoAgent';
 import { useSaveVCardContact } from '@proton/components/containers/contacts/hooks/useSaveVCardContact';
 import { FILTER_VERSION } from '@proton/components/containers/filters/constants';
+import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { defaultESStatus } from '@proton/encrypted-search/constants';
@@ -16,8 +22,12 @@ import { addFilter as addFilterAction, updateFilter as updateFilterAction } from
 import { useFilters } from '@proton/mail/store/filters/hooks';
 import { createLabel as createLabelAction, updateLabel as updateLabelAction } from '@proton/mail/store/labels/actions';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
+import { mailSettingsActions } from '@proton/mail/store/mailSettings';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { checkSieveFilter } from '@proton/shared/lib/api/filters';
+import { updateAutoresponder, updateViewLayout, updateViewMode } from '@proton/shared/lib/api/mailSettings';
+import { updateDensity } from '@proton/shared/lib/api/settings';
+import type { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { useApplyLocation } from '../../hooks/actions/applyLocation/useApplyLocation';
@@ -27,7 +37,6 @@ import { useInitializeMessage } from '../../hooks/message/useInitializeMessage';
 import { load as loadConversationAction } from '../../store/conversations/conversationsActions';
 import { backendActionStarted, markAll as markAllAction } from '../../store/elements/elementsActions';
 import { useMailDispatch, useMailStore } from '../../store/hooks';
-
 import type { SieveIssue } from '../helpers/sieve';
 import { assertSieveValid } from '../helpers/sieve';
 import { buildLumoMailConfig } from '../registry';
@@ -69,6 +78,7 @@ const LumoMailProvider = ({ children }: Props) => {
     const initializeMessage = useInitializeMessage();
     const saveVCardContact = useSaveVCardContact();
     const { call: refreshEvents } = useEventManager();
+    const { information: themeInformation, setTheme } = useTheme();
     const [folders = []] = useFolders();
     const [labels = []] = useLabels();
     const [filters = []] = useFilters();
@@ -77,6 +87,9 @@ const LumoMailProvider = ({ children }: Props) => {
     const { activeCategoriesTabs } = useCategoriesData();
     const [mailSettings] = useMailSettings();
     const [contactEmails = []] = useContactEmails();
+    const [userSettings] = useUserSettings();
+    const [user] = useUser();
+    const [addresses = []] = useAddresses();
     const esStatus = useRef<ESStatusBooleans>(defaultESStatus);
 
     // Latest values, refreshed every render, so the once-built handlers always read the current
@@ -93,12 +106,17 @@ const LumoMailProvider = ({ children }: Props) => {
         initializeMessage,
         saveVCardContact,
         refreshEvents,
+        themeInformation,
+        setTheme,
         folders,
         labels,
         filters,
         activeCategoriesTabs,
         mailSettings,
         contactEmails,
+        userSettings,
+        user,
+        addresses,
     };
     const latest = useRef(current);
     latest.current = current;
@@ -106,6 +124,11 @@ const LumoMailProvider = ({ children }: Props) => {
     // Built once: deps read through getters/methods off `latest`, so config identity never changes and
     // useLumoAgent keeps the same executor/session across renders.
     const config = useMemo(() => {
+        const writeMailSettings = async (request: object) => {
+            const { MailSettings } = await latest.current.api<{ MailSettings: MailSettings }>(request);
+            latest.current.dispatch(mailSettingsActions.updateMailSettings(MailSettings));
+        };
+
         const deps: MailToolDeps = {
             get store() {
                 return latest.current.store;
@@ -124,6 +147,21 @@ const LumoMailProvider = ({ children }: Props) => {
                 await latest.current.saveVCardContact(contactID, vCardContact);
                 await latest.current.refreshEvents();
             },
+            getUserSettings: () => latest.current.userSettings,
+            getUser: () => latest.current.user,
+            getAddresses: () => latest.current.addresses,
+            getThemeInformation: () => latest.current.themeInformation,
+            setTheme: (theme, mode) => latest.current.setTheme(theme, mode),
+            setViewLayout: (viewLayout) => writeMailSettings(updateViewLayout(viewLayout)),
+            setViewMode: (viewMode) => writeMailSettings(updateViewMode(viewMode)),
+            setDensity: async (density) => {
+                const { UserSettings } = await latest.current.api<{ UserSettings: UserSettings }>(
+                    updateDensity(density)
+                );
+                latest.current.dispatch(userSettingsActions.set({ UserSettings }));
+            },
+            setAutoResponder: (autoResponder) => writeMailSettings(updateAutoresponder(autoResponder)),
+            updateAddress: (params) => latest.current.dispatch(updateAddressThunk(params)),
             applyLocation: (params) => latest.current.applyLocation(params),
             // async so applyMultipleLocations' synchronous validation throws surface as a rejection.
             applyMultipleLocations: async (params) => discardResult(latest.current.applyMultipleLocations(params)),
