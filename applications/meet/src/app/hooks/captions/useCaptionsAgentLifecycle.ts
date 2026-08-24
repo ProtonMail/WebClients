@@ -1,14 +1,20 @@
 import { useEffect, useRef, useState } from 'react';
 
+import { c } from 'ttag';
+
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { useMeetErrorReporting } from '@proton/meet';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectJoinedRoom } from '@proton/meet/store/slices/connectionSlice';
 import { selectMeetingLinkName } from '@proton/meet/store/slices/currentMeeting';
 import { selectCaptionsAgentPresent } from '@proton/meet/store/slices/participants/agentParticipantsSlice';
 
-import { CAPTIONS_AGENT_DISABLE_GRACE_MS } from '../../constants';
+import { CAPTIONS_AGENT_DISABLE_GRACE_MS, PROVIDER_FAILED_ERROR_CODE } from '../../constants';
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
+import { useLatest } from '../useLatest';
 import { useStableCallback } from '../useStableCallback';
+import { useCaptionsAvailability } from './useCaptionsAvailability';
+import { useCaptionsPreference } from './useCaptionsPreference';
 import { useCaptionsWantersCount } from './useCaptionsWantersCount';
 
 // meet-core arbitrates which client actually asks meet-server, and a later-ranked client takes over
@@ -19,11 +25,17 @@ export const useCaptionsAgentLifecycle = () => {
     const meetCoreClient = useMeetCoreClient();
     const meetingLinkName = useMeetSelector(selectMeetingLinkName);
     const { reportMeetError } = useMeetErrorReporting();
+    const { createNotification } = useNotifications();
+    const { wantsCaptions, setWantsCaptions } = useCaptionsPreference();
+    const { isCaptionsDisabled } = useCaptionsAvailability();
     const joinedRoom = useMeetSelector(selectJoinedRoom);
     const wanters = useCaptionsWantersCount();
     const agentPresent = useMeetSelector(selectCaptionsAgentPresent);
 
-    const wanted = joinedRoom && wanters > 0;
+    // `wanters` is meeting-wide, so without the availability check every client would ask on behalf
+    // of someone whose toggle was still on when the host disabled captions, and every client would
+    // be refused. Feeding it into `wanted` also dismisses the agent when a host disables mid-meeting.
+    const wanted = joinedRoom && wanters > 0 && !isCaptionsDisabled;
 
     // Demand disappearing is held briefly so a quick toggle doesn't dismiss an agent we are about to
     // want again; demand appearing is acted on at once. `null` until the hold has elapsed even once,
@@ -39,6 +51,8 @@ export const useCaptionsAgentLifecycle = () => {
     const [revision, setRevision] = useState(0);
 
     const reportError = useStableCallback(reportMeetError);
+    // Read at failure time rather than as an effect dependency, which would rerun the effect.
+    const wantsCaptionsRef = useLatest(wantsCaptions);
 
     useEffect(() => {
         if (wanted) {
@@ -97,15 +111,38 @@ export const useCaptionsAgentLifecycle = () => {
                     await meetCoreClient.stopClosedCaptions(meetingLinkName);
                 }
             } catch (error) {
-                // eslint-disable-next-line no-console
-                console.error('Failed to settle the closed captions agent', error);
-                reportError(wantAgent ? 'Failed to request closed captions' : 'Failed to stop closed captions', {
-                    context: { error },
-                });
+                const code = (error as { code?: number } | null)?.code;
+                const isServerError = !!code && code >= 500 && code < 600;
+                if (code === PROVIDER_FAILED_ERROR_CODE || isServerError) {
+                    reportError(wantAgent ? 'Failed to request live captions' : 'Failed to stop live captions', {
+                        context: { error },
+                    });
+                }
+                if (wantAgent && wantsCaptionsRef.current && code !== undefined) {
+                    createNotification({
+                        type: 'error',
+                        text:
+                            isServerError || !(error instanceof Error) || !error.message
+                                ? c('Error').t`Failed to request live captions`
+                                : error.message,
+                    });
+                    void setWantsCaptions(false);
+                }
             } finally {
                 inFlight.current = false;
                 setRevision((count) => count + 1);
             }
         })();
-    }, [joinedRoom, settledWanted, agentPresent, revision, meetCoreClient, meetingLinkName, reportError]);
+    }, [
+        joinedRoom,
+        settledWanted,
+        agentPresent,
+        revision,
+        meetCoreClient,
+        meetingLinkName,
+        reportError,
+        createNotification,
+        setWantsCaptions,
+        wantsCaptionsRef,
+    ]);
 };

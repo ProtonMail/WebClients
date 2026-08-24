@@ -21,6 +21,7 @@ const createDefaultMocks = () =>
         admitAgent: vi.fn().mockResolvedValue(undefined),
         requestClosedCaptions: vi.fn().mockResolvedValue(undefined),
         stopClosedCaptions: vi.fn().mockResolvedValue(undefined),
+        setClosedCaptionsAvailabilityAsHost: vi.fn().mockResolvedValue(undefined),
         leaveMeeting: vi.fn().mockResolvedValue(undefined),
         triggerWebSocketReconnect: vi.fn().mockResolvedValue(undefined),
         getJoinType: vi.fn().mockResolvedValue(undefined),

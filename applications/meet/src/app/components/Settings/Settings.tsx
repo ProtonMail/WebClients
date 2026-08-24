@@ -32,6 +32,7 @@ import { useLiveCaptionsFeatureEnabled } from '../../hooks/captions/useLiveCapti
 import { supportsBackgroundEffects } from '../../processors/background-processor/createBackgroundProcessor';
 import { BackgroundBlurToggle } from './BackgroundBlurToggle';
 import { CaptionLanguageSelect } from './CaptionLanguageSelect';
+import { LiveCaptionsHostAvailabilityToggle } from './LiveCaptionsHostAvailabilityToggle';
 import { LiveCaptionsToggle } from './LiveCaptionsToggle';
 import { NoiseCancellingToggle } from './NoiseCancellingToggle';
 import { WaitingRoomToggle } from './WaitingRoomToggle';
@@ -109,6 +110,7 @@ export const Settings = () => {
                                 loading={loadingLock}
                             />
                             <WaitingRoomToggle />
+                            {liveCaptionsEnabled && <LiveCaptionsHostAvailabilityToggle />}
                         </SideBarSection>
                     )}
 

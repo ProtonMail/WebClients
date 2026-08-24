@@ -46,6 +46,12 @@ const toWorkerError = (error: MeetCoreWorkerError): Error | MeetCoreErrorEnum =>
     if (error.stack) {
         err.stack = error.stack;
     }
+    if (typeof error.code === 'number') {
+        (err as { code?: number }).code = error.code;
+    }
+    if (typeof error.meetCoreKind === 'number') {
+        (err as { kind?: number }).kind = error.meetCoreKind;
+    }
     return err;
 };
 
@@ -115,6 +121,12 @@ export class MeetCoreWorkerClient implements MeetCoreClient {
 
     public stopClosedCaptions(...args: Parameters<MeetCoreClient['stopClosedCaptions']>): Promise<void> {
         return this.request('stopClosedCaptions', args);
+    }
+
+    public setClosedCaptionsAvailabilityAsHost(
+        ...args: Parameters<MeetCoreClient['setClosedCaptionsAvailabilityAsHost']>
+    ): Promise<void> {
+        return this.request('setClosedCaptionsAvailabilityAsHost', args);
     }
 
     public leaveMeeting(): Promise<void> {

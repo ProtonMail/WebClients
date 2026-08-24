@@ -8,6 +8,10 @@ import NotificationsProvider from '@proton/components/containers/notifications/P
 import { backgroundReducer } from '@proton/meet/store/slices/backgroundSlice';
 import { connectionReducer, initialState as initialConnectionState } from '@proton/meet/store/slices/connectionSlice';
 import {
+    currentMeetingReducer,
+    initialState as initialCurrentMeetingState,
+} from '@proton/meet/store/slices/currentMeeting';
+import {
     initialState as initialParticipantsState,
     participantsReducer,
 } from '@proton/meet/store/slices/participants/participantsSlice';
@@ -43,10 +47,15 @@ vi.mock('@livekit/components-react', () => ({
         off: vi.fn(),
     }),
     useParticipantAttributes: () => ({ attributes: localAttributes.current }),
+    useRoomInfo: () => ({ name: 'room', metadata: undefined }),
 }));
 
 vi.mock('@proton/unleash/useFlag', () => ({
     useFlag: (flag: string) => enabledFlags.current.includes(flag),
+}));
+
+vi.mock('../../contexts/MeetCoreClientContext', () => ({
+    useMeetCoreClient: vi.fn(),
 }));
 
 const supportMocks = vi.hoisted(() => ({ supportsBackgroundEffects: vi.fn(() => true) }));
@@ -77,6 +86,7 @@ const createMockStore = (
             ...screenShareStatusReducer,
             ...sortedParticipantsReducer,
             ...connectionReducer,
+            ...currentMeetingReducer,
             ...meetUserReducer,
             ...backgroundReducer,
         },
@@ -127,6 +137,10 @@ const createMockStore = (
             connection: {
                 ...initialConnectionState,
                 joinedRoom: true,
+            },
+            currentMeeting: {
+                ...initialCurrentMeetingState,
+                meetingLinkName: 'meeting-link',
             },
             meetUser: {
                 isGuest: false,
@@ -321,8 +335,35 @@ describe('Settings', () => {
                 </Wrapper>
             );
 
-            expect(screen.getByText('Available with a paid plan')).toBeInTheDocument();
-            expect(screen.getByRole('checkbox', { name: 'Enable waiting room' })).toBeDisabled();
+            const waitingRoomCheckbox = screen.getByRole('checkbox', { name: 'Enable waiting room' });
+            expect(waitingRoomCheckbox).toHaveAccessibleDescription('Available with a paid plan');
+            expect(waitingRoomCheckbox).toBeDisabled();
+        });
+
+        it('should point free hosts at a paid plan for live captions', () => {
+            render(
+                <Wrapper participantsState={hostParticipantsState}>
+                    <Settings />
+                </Wrapper>
+            );
+
+            const liveCaptionsCheckbox = screen.getByRole('checkbox', { name: 'Allow live captions' });
+            expect(liveCaptionsCheckbox).toHaveAccessibleDescription('Available with a paid plan');
+            expect(liveCaptionsCheckbox).toBeDisabled();
+        });
+
+        // Otherwise the host controls availability of a feature no participant can reach.
+        it('should hide the live captions availability toggle when the feature is off', () => {
+            enabledFlags.current = enabledFlags.current.filter((flag) => flag !== 'MeetLiveCaptions');
+
+            render(
+                <Wrapper participantsState={hostParticipantsState}>
+                    <Settings />
+                </Wrapper>
+            );
+
+            expect(screen.getByRole('region', { name: 'Host settings' })).toBeInTheDocument();
+            expect(screen.queryByRole('checkbox', { name: 'Allow live captions' })).not.toBeInTheDocument();
         });
     });
 
