@@ -3,7 +3,8 @@ import { MemoryRouter } from 'react-router';
 import { render, screen } from '@testing-library/react';
 
 import { ThemeColor } from '@proton/colors/types';
-import SettingsListItem from '@proton/components/components/sidebar/SettingsListItem';
+
+import SettingsListItem from './SettingsListItem';
 
 const testId = 'test-id';
 const content = 'Content';

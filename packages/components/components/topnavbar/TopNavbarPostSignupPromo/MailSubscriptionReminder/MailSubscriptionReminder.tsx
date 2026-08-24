@@ -1,10 +1,5 @@
 import { useRef } from 'react';
 
-import useSettingsLink from '@proton/components/components/link/useSettingsLink';
-import Spotlight from '@proton/components/components/spotlight/Spotlight';
-import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
-import useUpsellConfig from '@proton/components/components/upsell/config/useUpsellConfig';
-import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import { FeatureCode, useFeature } from '@proton/features';
 import { useTrialInfo } from '@proton/payments/ui/hooks/useTrialInfo';
 import {
@@ -17,6 +12,11 @@ import {
 } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 
+import { SUBSCRIPTION_STEPS } from '../../../../containers/payments/subscription/constants';
+import useSettingsLink from '../../../link/useSettingsLink';
+import Spotlight from '../../../spotlight/Spotlight';
+import useSpotlightShow from '../../../spotlight/useSpotlightShow';
+import useUpsellConfig from '../../../upsell/config/useUpsellConfig';
 import TopNavbarUpgradeButton from '../../TopNavbarUpgradeButton';
 import LayoutPrivacy from './content/LayoutPrivacy';
 import LayoutProductivity from './content/LayoutProductivity';

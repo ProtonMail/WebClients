@@ -17,14 +17,15 @@ import { usePopper } from '@proton/atoms/Popper/usePopper';
 import { usePopperState } from '@proton/atoms/Popper/usePopperState';
 import { shouldShowSideRadius } from '@proton/atoms/Popper/utils';
 import { Portal } from '@proton/atoms/Portal/Portal';
-import Icon from '@proton/components/components/icon/Icon';
-import useIsClosing from '@proton/components/hooks/useIsClosing';
 import { useCombinedRefs } from '@proton/hooks';
 import type { IconName } from '@proton/icons/types';
 import discoverIllustration from '@proton/styles/assets/img/illustrations/spotlight-binoculars.svg';
 import newIllustration from '@proton/styles/assets/img/illustrations/spotlight-stars.svg';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
+
+import useIsClosing from '../../hooks/useIsClosing';
+import Icon from '../icon/Icon';
 
 type SpotlightType = 'discover' | 'new';
 

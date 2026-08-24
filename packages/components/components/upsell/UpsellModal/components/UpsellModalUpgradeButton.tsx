@@ -2,7 +2,8 @@ import type { ReactNode } from 'react';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import SettingsLink from '@proton/components/components/link/SettingsLink';
+
+import SettingsLink from '../../../link/SettingsLink';
 
 interface Props {
     closeModal: () => void;

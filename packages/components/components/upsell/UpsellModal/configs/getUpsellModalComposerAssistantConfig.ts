@@ -2,13 +2,13 @@ import { c } from 'ttag';
 
 import { memberThunk } from '@proton/account/member';
 import { organizationThunk } from '@proton/account/organization';
-import { getAssistantUpsellConfigPlanAndCycle } from '@proton/components/hooks/assistant/assistantUpsellConfig';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { getPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
 import { isOrganization, isSuperAdmin } from '@proton/shared/lib/organization/helper';
 
+import { getAssistantUpsellConfigPlanAndCycle } from '../../../../hooks/assistant/assistantUpsellConfig';
 import { getIsB2CUserAbleToRunScribe } from '../../modals/ComposerAssistantUpsellModal.helpers';
 import { UpsellModalComposerAssistantSubmitButton } from '../components/UpsellModalSubmitButtons';
 import { getUpsellModalFooterText } from '../helpers/getUpsellModalFooterText';

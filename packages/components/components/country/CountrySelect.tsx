@@ -3,7 +3,16 @@ import { useCallback, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import type { CountryOption } from '@proton/components/components/country/helpers';
+import generateUID from '@proton/utils/generateUID';
+
+import type { OptionProps } from '../option/Option';
+import Option from '../option/Option';
+import type { SearcheableSelectProps } from '../selectTwo/SearchableSelect';
+import SearchableSelect from '../selectTwo/SearchableSelect';
+import { defaultFilterFunction } from '../selectTwo/helpers';
+import InputFieldTwo from '../v2/field/InputField';
+import { getFlagSvg } from '../v2/phone/flagSvgs';
+import type { CountryOption } from './helpers';
 import {
     PRESELECTED_COUNTRY_OPTION_SUFFIX,
     getAllDropdownOptions,
@@ -11,16 +20,7 @@ import {
     getIsCountryOption,
     isPreselectedOption,
     optionToPreselectedOption,
-} from '@proton/components/components/country/helpers';
-import type { OptionProps } from '@proton/components/components/option/Option';
-import Option from '@proton/components/components/option/Option';
-import type { SearcheableSelectProps } from '@proton/components/components/selectTwo/SearchableSelect';
-import SearchableSelect from '@proton/components/components/selectTwo/SearchableSelect';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import { getFlagSvg } from '@proton/components/components/v2/phone/flagSvgs';
-import generateUID from '@proton/utils/generateUID';
-
-import { defaultFilterFunction } from '../selectTwo/helpers';
+} from './helpers';
 
 /**
  * Filter options based on the search string and their option disabled state.

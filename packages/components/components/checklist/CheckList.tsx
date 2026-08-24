@@ -3,7 +3,6 @@ import type { CSSProperties } from 'react';
 import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { useSettingsLink } from '@proton/components/index';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import appStoreSmall from '@proton/styles/assets/img/illustrations/checklist-app-store-small.svg';
 import byoeImg from '@proton/styles/assets/img/illustrations/checklist-byoe.svg';
@@ -11,6 +10,7 @@ import gmailForwardSmall from '@proton/styles/assets/img/illustrations/checklist
 import protectInboxSmall from '@proton/styles/assets/img/illustrations/checklist-protect-inbox-small.svg';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import useSettingsLink from '../link/useSettingsLink';
 import CheckListItem from './CheckListItem';
 
 interface CheckListItemProps {

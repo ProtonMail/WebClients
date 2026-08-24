@@ -1,6 +1,5 @@
 import type { ReactNode } from 'react';
 
-import type { OpenCallbackProps } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import type { COUPON_CODES, CYCLE } from '@proton/payments/core/constants';
 import type { Currency, FreeSubscription, PaymentsApi, PlanIDs } from '@proton/payments/core/interface';
 import type { Plan } from '@proton/payments/core/plan/interface';
@@ -8,6 +7,8 @@ import type { Subscription } from '@proton/payments/core/subscription/interface'
 import type { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import type { useGetFlag } from '@proton/unleash/useGetFlag';
+
+import type { OpenCallbackProps } from '../../../containers/payments/subscription/SubscriptionModalProvider';
 
 /**
  * Upsell config passed to the subscription modal

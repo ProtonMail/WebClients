@@ -1,6 +1,5 @@
 import { differenceInDays, fromUnixTime } from 'date-fns';
 
-import OfferSubscription from '@proton/components/containers/offers/helpers/offerSubscription';
 import type { PLANS } from '@proton/payments/core/constants';
 import type { Cycle, FreeSubscription } from '@proton/payments/core/interface';
 import { isManagedExternally } from '@proton/payments/core/subscription/helpers';
@@ -9,6 +8,8 @@ import { isFreeSubscription, isValidPlanName } from '@proton/payments/core/type-
 import { APPS } from '@proton/shared/lib/constants';
 import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
 import { hasPassLifetime } from '@proton/shared/lib/user/helpers';
+
+import OfferSubscription from '../../../../../containers/offers/helpers/offerSubscription';
 
 /**
  * Collection of generic eligibility checker helper functions for the TopNavbar Post-Signup Promo component.

@@ -1,7 +1,5 @@
 import { c } from 'ttag';
 
-import type { Props } from '@proton/components/components/drawer/drawerAppButtons/DrawerAppButton';
-import DrawerAppButton from '@proton/components/components/drawer/drawerAppButtons/DrawerAppButton';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 import type { Optional } from '@proton/shared/lib/interfaces';
@@ -10,6 +8,8 @@ import useDrawer from '../../../hooks/drawer/useDrawer';
 import VPNDrawerLogo from '../drawerIcons/VPNDrawerLogo';
 import VPNDrawerSpotlight from '../views/vpn/VPNDrawerSpotlight';
 import useVPNDrawer from '../views/vpn/useVPNDrawer';
+import type { Props } from './DrawerAppButton';
+import DrawerAppButton from './DrawerAppButton';
 
 const VPNDrawerAppButton = ({
     onClick,

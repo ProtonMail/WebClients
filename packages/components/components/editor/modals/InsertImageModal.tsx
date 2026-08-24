@@ -5,17 +5,17 @@ import debounce from 'lodash/debounce';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import FileButton from '@proton/components/components/button/FileButton';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { isValidHttpUrl } from '@proton/shared/lib/helpers/url';
 import generateUID from '@proton/utils/generateUID';
 
+import FileButton from '../../button/FileButton';
 import Form from '../../form/Form';
 import Input from '../../input/Input';
 import Label from '../../label/Label';
+import ModalTwo from '../../modalTwo/Modal';
+import ModalTwoContent from '../../modalTwo/ModalContent';
+import ModalTwoFooter from '../../modalTwo/ModalFooter';
+import ModalTwoHeader from '../../modalTwo/ModalHeader';
 
 enum ImageState {
     Initial,

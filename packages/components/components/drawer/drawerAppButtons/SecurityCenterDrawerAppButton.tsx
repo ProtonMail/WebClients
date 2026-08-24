@@ -8,8 +8,6 @@ import {
     selectUnreadBreachesCount,
 } from '@proton/account';
 import { ThemeColor } from '@proton/colors/types';
-import type { Props } from '@proton/components/components/drawer/drawerAppButtons/DrawerAppButton';
-import DrawerAppButton from '@proton/components/components/drawer/drawerAppButtons/DrawerAppButton';
 import { baseUseSelector } from '@proton/react-redux-store';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 import type { Optional } from '@proton/shared/lib/interfaces';
@@ -19,6 +17,8 @@ import useDrawer from '../../../hooks/drawer/useDrawer';
 import SecurityCenterDrawerLogo from '../drawerIcons/SecurityCenterDrawerLogo';
 import BreachAlertsSpotlight from '../views/SecurityCenter/BreachAlertsSpotlight';
 import useSecurityCenter from '../views/SecurityCenter/useSecurityCenter';
+import type { Props } from './DrawerAppButton';
+import DrawerAppButton from './DrawerAppButton';
 
 const SecurityCenterDrawerAppButton = ({
     onClick,

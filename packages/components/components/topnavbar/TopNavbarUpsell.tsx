@@ -1,12 +1,12 @@
 import { type ComponentPropsWithoutRef, Suspense, lazy } from 'react';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import { useTrialInfo } from '@proton/payments/ui/hooks/useTrialInfo';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { NEWSLETTER_SUBSCRIPTIONS_BITS } from '@proton/shared/lib/helpers/newsletter';
 
+import ErrorBoundary from '../../containers/app/ErrorBoundary';
 import type TopNavbarOffer from './TopNavbarOffer';
 import TopNavbarUpgradeButton from './TopNavbarUpgradeButton';
 

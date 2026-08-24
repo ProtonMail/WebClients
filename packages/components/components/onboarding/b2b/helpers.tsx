@@ -1,14 +1,6 @@
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import AppLink from '@proton/components/components/link/AppLink';
-import SettingsLink from '@proton/components/components/link/SettingsLink';
-import type {
-    B2BFeaturesID,
-    B2BFeaturesSection,
-    B2BOnboardingFeature,
-} from '@proton/components/components/onboarding/b2b/interface';
-import canUseGroups from '@proton/components/containers/organization/groups/canUseGroups';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { type MaybeFreeSubscription, getPlan } from '@proton/payments/core/subscription/helpers';
 import {
@@ -47,6 +39,11 @@ import securityImg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-shield
 import imapSmtpImg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-tools.svg';
 import vpnImg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-vpn.svg';
 import isTruthy from '@proton/utils/isTruthy';
+
+import canUseGroups from '../../../containers/organization/groups/canUseGroups';
+import AppLink from '../../link/AppLink';
+import SettingsLink from '../../link/SettingsLink';
+import type { B2BFeaturesID, B2BFeaturesSection, B2BOnboardingFeature } from './interface';
 
 export const getFeatures = (
     subscription: MaybeFreeSubscription,

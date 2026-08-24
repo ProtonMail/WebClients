@@ -1,7 +1,5 @@
 import { render, screen } from '@testing-library/react';
 
-import useUpsellConfig from '@proton/components/components/upsell/config/useUpsellConfig';
-import useConfig from '@proton/components/hooks/useConfig';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import {
     APPS,
@@ -12,6 +10,8 @@ import {
 } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 
+import useConfig from '../../../../hooks/useConfig';
+import useUpsellConfig from '../../../upsell/config/useUpsellConfig';
 import { MonthylPaidUsersNudge } from './MonthylPaidUsersNudge';
 import { usePaidUsersNudge } from './hooks/usePaidUsersNudge';
 
@@ -32,14 +32,14 @@ jest.mock('./hooks/useGetPlanPriceWithCoupon', () => ({
     })),
 }));
 
-jest.mock('@proton/components/hooks/useNotifications', () => ({
+jest.mock('../../../../hooks/useNotifications', () => ({
     __esModule: true,
     default: jest.fn().mockReturnValue({
         createNotification: jest.fn(),
     }),
 }));
 
-jest.mock('@proton/components/components/upsell/config/useUpsellConfig', () => ({
+jest.mock('../../../upsell/config/useUpsellConfig', () => ({
     __esModule: true,
     default: jest.fn(() => ({
         onUpgrade: jest.fn(),
@@ -48,7 +48,7 @@ jest.mock('@proton/components/components/upsell/config/useUpsellConfig', () => (
     appsWithInApp: new Set(['proton-mail', 'proton-account', 'proton-calendar']),
 }));
 
-jest.mock('@proton/components/components/link/useSettingsLink', () => ({
+jest.mock('../../../link/useSettingsLink', () => ({
     __esModule: true,
     default: jest.fn().mockReturnValue(jest.fn()),
 }));
@@ -68,7 +68,7 @@ jest.mock('@proton/features/useFeature', () => ({
     default: jest.fn(() => ({ update: jest.fn() })),
 }));
 
-jest.mock('@proton/components/payments/client-extensions', () => ({
+jest.mock('../../../../payments/client-extensions/index', () => ({
     __esModule: true,
     useAutomaticCurrency: jest.fn().mockReturnValue(['CHF', false]),
 }));
@@ -76,7 +76,7 @@ jest.mock('@proton/components/payments/client-extensions', () => ({
 jest.mock('./hooks/usePaidUsersNudge');
 const mockedPaidUserNudge = usePaidUsersNudge as jest.Mock;
 
-jest.mock('@proton/components/hooks/useConfig');
+jest.mock('../../../../hooks/useConfig');
 const mockUseConfig = useConfig as jest.Mock;
 
 const mockUseUpsellConfig = useUpsellConfig as jest.Mock;

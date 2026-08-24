@@ -1,12 +1,12 @@
 import { c } from 'ttag';
 
-import type { Props } from '@proton/components/components/drawer/drawerAppButtons/DrawerAppButton';
-import DrawerAppButton from '@proton/components/components/drawer/drawerAppButtons/DrawerAppButton';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 import type { Optional } from '@proton/shared/lib/interfaces';
 
 import useDrawer from '../../../hooks/drawer/useDrawer';
 import ContactsDrawerLogo from '../drawerIcons/ContactsDrawerLogo';
+import type { Props } from './DrawerAppButton';
+import DrawerAppButton from './DrawerAppButton';
 
 const ContactDrawerAppButton = ({
     onClick,

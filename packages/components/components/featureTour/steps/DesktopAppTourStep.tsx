@@ -2,10 +2,10 @@ import { c } from 'ttag';
 
 import { userSettingsThunk } from '@proton/account';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import useInboxDesktopVersion from '@proton/components/containers/desktop/useInboxDesktopVersion';
 import { isDesktopInboxUser } from '@proton/shared/lib/helpers/usedClientsFlags';
 import desktopAppBackground from '@proton/styles/assets/img/onboarding/feature_tour-desktop-app-background.svg';
 
+import useInboxDesktopVersion from '../../../containers/desktop/useInboxDesktopVersion';
 import type { FeatureTourStepProps, ShouldDisplayTourStep } from '../interface';
 import FeatureTourStepCTA from './components/FeatureTourStepCTA';
 import FeatureTourStepsContent from './components/FeatureTourStepsContent';

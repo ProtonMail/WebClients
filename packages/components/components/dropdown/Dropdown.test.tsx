@@ -4,10 +4,10 @@ import { useRef, useState } from 'react';
 import { fireEvent, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import type { DropdownProps } from '@proton/components/components/dropdown/Dropdown';
-import Dropdown from '@proton/components/components/dropdown/Dropdown';
-import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
-import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
+import type { DropdownProps } from './Dropdown';
+import Dropdown from './Dropdown';
+import DropdownButton from './DropdownButton';
+import { DropdownSizeUnit } from './utils';
 
 const Test = ({
     children,

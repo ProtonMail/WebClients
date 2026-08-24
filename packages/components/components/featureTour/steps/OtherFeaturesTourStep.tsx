@@ -1,12 +1,12 @@
 import { c } from 'ttag';
 
 import { organizationThunk } from '@proton/account/organization';
-import Icon from '@proton/components/components/icon/Icon';
 import type { IconName } from '@proton/icons/types';
 import { PLANS } from '@proton/payments/core/constants';
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
+import Icon from '../../icon/Icon';
 import type { FeatureTourStepProps, ShouldDisplayTourStep } from '../interface';
 import FeatureTourStepCTA from './components/FeatureTourStepCTA';
 import FeatureTourStepsContent from './components/FeatureTourStepsContent';

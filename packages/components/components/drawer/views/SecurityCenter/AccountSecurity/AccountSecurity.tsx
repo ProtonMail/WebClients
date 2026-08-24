@@ -1,20 +1,20 @@
 import { c } from 'ttag';
 
-import useApi from '@proton/components/hooks/useApi';
-import { FeatureCode, useFeature } from '@proton/features';
-import { baseUseSelector } from '@proton/react-redux-store';
-import { TelemetrySecurityCenterEvents } from '@proton/shared/lib/api/telemetry';
-import { useFlag } from '@proton/unleash/useFlag';
-
-import { sendSecurityCenterReport } from '../securityCenterTelemetry';
-import AccountSecurityCard from './AccountSecurityCard';
-import AccountSecuritySuccess from './AccountSecuritySuccess';
 import {
     selectAccountSecurityElements,
     selectAccountSecurityIssuesCount,
     selectHasAccountSecurityCardToDisplay,
     selectHasSentinelOrTFACardToDisplay,
 } from '@proton/account';
+import { FeatureCode, useFeature } from '@proton/features';
+import { baseUseSelector } from '@proton/react-redux-store';
+import { TelemetrySecurityCenterEvents } from '@proton/shared/lib/api/telemetry';
+import { useFlag } from '@proton/unleash/useFlag';
+
+import useApi from '../../../../../hooks/useApi';
+import { sendSecurityCenterReport } from '../securityCenterTelemetry';
+import AccountSecurityCard from './AccountSecurityCard';
+import AccountSecuritySuccess from './AccountSecuritySuccess';
 
 const AccountSecurity = () => {
     const api = useApi();

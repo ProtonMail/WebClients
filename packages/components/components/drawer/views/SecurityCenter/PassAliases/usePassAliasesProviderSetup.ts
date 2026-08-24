@@ -4,10 +4,6 @@ import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
-import { NOTIFICATION_DEFAULT_EXPIRATION_TIME } from '@proton/components/containers/notifications/constants';
-import useAuthentication from '@proton/components/hooks/useAuthentication';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import useAsyncError from '@proton/hooks/useAsyncError';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { deriveAliasPrefix } from '@proton/pass/lib/alias/alias.utils';
@@ -20,6 +16,10 @@ import { ApiError } from '@proton/shared/lib/fetch/ApiError';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 
+import { NOTIFICATION_DEFAULT_EXPIRATION_TIME } from '../../../../../containers/notifications/constants';
+import useAuthentication from '../../../../../hooks/useAuthentication';
+import useNotifications from '../../../../../hooks/useNotifications';
+import { useModalStateObject } from '../../../../modalTwo/useModalState';
 import { filterPassAliases } from './PassAliases.helpers';
 import { PASS_ALIASES_ERROR_STEP, PassAliasesError } from './PassAliasesError';
 import { fetchPassAliases } from './PassAliasesProvider.helpers';

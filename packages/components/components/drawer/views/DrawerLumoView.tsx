@@ -2,17 +2,17 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import type { SelectedDrawerOption } from '@proton/components/components/drawer/views/DrawerView';
-import DrawerView from '@proton/components/components/drawer/views/DrawerView';
-import LumoAgentPanel from '@proton/components/components/lumoAgent/LumoAgentPanel';
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcBroom } from '@proton/icons/icons/IcBroom';
 import { IcBug } from '@proton/icons/icons/IcBug';
 import LumoWordmark from '@proton/lumo-ui/LumoWordmark';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 
+import { useTheme } from '../../../containers/themes/ThemeProvider';
+import useNotifications from '../../../hooks/useNotifications';
+import LumoAgentPanel from '../../lumoAgent/LumoAgentPanel';
+import type { SelectedDrawerOption } from './DrawerView';
+import DrawerView from './DrawerView';
 import { useLumoAgentDrawer } from './lumoAgent/lumoAgentDrawerContext';
 
 import '@proton/lumo-ui/lumo-ui.scss';

@@ -1,13 +1,13 @@
 import { c } from 'ttag';
 
-import type { Props } from '@proton/components/components/drawer/drawerAppButtons/DrawerAppButton';
-import DrawerAppButton from '@proton/components/components/drawer/drawerAppButtons/DrawerAppButton';
-import { useReferralDiscover } from '@proton/components/containers/referral/hooks/useReferralDiscover';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 import type { Optional } from '@proton/shared/lib/interfaces';
 
+import { useReferralDiscover } from '../../../containers/referral/hooks/useReferralDiscover';
 import useDrawer from '../../../hooks/drawer/useDrawer';
 import ReferralDrawerLogo from '../drawerIcons/ReferralDrawerLogo';
+import type { Props } from './DrawerAppButton';
+import DrawerAppButton from './DrawerAppButton';
 
 const ReferralAppButton = ({ onClick, ...rest }: Optional<Omit<Props, 'tooltipText' | 'buttonContent'>, 'onClick'>) => {
     const { toggleDrawerApp } = useDrawer();

@@ -3,7 +3,6 @@ import React, { forwardRef, useContext, useRef, useState } from 'react';
 
 import { Input } from '@proton/atoms/Input/Input';
 import { Tooltip, TooltipTypeEnum } from '@proton/atoms/Tooltip/Tooltip';
-import { FormContext } from '@proton/components/components/form/Form';
 import useInstance from '@proton/hooks/useInstance';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import type { PolymorphicForwardRefExoticComponent, PolymorphicPropsWithRef } from '@proton/react-polymorphic-types';
@@ -11,6 +10,7 @@ import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
 import { isFocusable } from '../../focus/tabbableWrapper';
+import { FormContext } from '../../form/Form';
 
 export type NodeOrBoolean = ReactNode | boolean;
 
