@@ -320,7 +320,7 @@
         "Jatka Outlookilla"
       ],
       "Continue without categories": [
-        "Jatka ilman luokkia"
+        "Jatka kategorioitta"
       ],
       "Contract composer": [
         "Supista viestin kirjoitus"
@@ -788,7 +788,7 @@
         "Liity ${ MEET_APP_NAME }llä"
       ],
       "Keep inbox as before": [
-        "Säilytä saapuneet ennallaan"
+        "Säilytä postilaatikkosi ennallaan"
       ],
       "Keep my subscription": [
         "Pidä tilaukseni"
@@ -965,7 +965,7 @@
         "Siirrä arkistoon"
       ],
       "Move to category...": [
-        "Siirrä luokkaan..."
+        "Siirrä kategoriaan..."
       ],
       "Move to folder": [
         "Siirrä kansioon"
@@ -1523,7 +1523,8 @@
         "Luota"
       ],
       "Trust key": [
-        "Luota avaimeen"
+        "Luota avaimeen",
+        "Luota avaimiin"
       ],
       "Trust public key": [
         "Luota julkiseen avaimeen"
@@ -1535,7 +1536,7 @@
         "Kokeile toista tapaa"
       ],
       "Try categories": [
-        "Kokeile luokkia"
+        "Kokeile kategorioita"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Yritä tallennusta uudelleen. Tallennus epäonnistui: ${ saveError }"
@@ -1710,7 +1711,7 @@
         "Ilmainen työpöytäsovelluksen kokeilujaksosi päättyy ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Your email writing assistant": [
-        "Sähköpostin kirjoitusavustajasi"
+        "Sähköpostisi kirjoitusavustaja"
       ],
       "Zoom in": [
         "Lähennä"
@@ -1740,7 +1741,7 @@
         "Ei nyt"
       ],
       "Set up categories": [
-        "Määritä luokat"
+        "Määritä kategoriat"
       ],
       "Skip": [
         "Ohita"
@@ -1857,7 +1858,7 @@
         "Kirjoitusavustaja"
       ],
       "Writing assistant seats": [
-        "Kirjoitusavustajan käyttöpaikat"
+        "Kirjoitusavustajan käyttäjäpaikat"
       ]
     },
     "Alert": {
@@ -2224,13 +2225,13 @@
     },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
-        "${ LUMO_SHORT_APP_NAME } -ongelma"
+        "${ LUMO_SHORT_APP_NAME }-ongelma"
       ],
       "Application problem": [
         "Sovellusongelma"
       ],
       "Authenticator problem": [
-        "Todennusvirhe"
+        "Todentajan virhe"
       ],
       "Bridge problem": [
         "Bridge-ongelma"
@@ -2963,7 +2964,7 @@
         "Avaa luonnokset"
       ],
       "Go to Inbox": [
-        "Siirry saapuneisiin"
+        "Avaa Saapuneet"
       ],
       "Go to Sent": [
         "Siirry lähetettyihin"
@@ -4111,16 +4112,16 @@
         "2FA lisää ylimääräisen turvakerroksen, joka estää luvattoman pääsyn tilillesi."
       ],
       "A blue dot appears when a category has unread messages since your last visit.": [
-        "Sininen piste tulee näkyviin, kun luokassa on lukemattomia viestejä edellisen vierailunne jälkeen."
+        "Edellisen käyntisi jälkeen lukemattomia viestejä sisältävissä kategoriat korostetaan sinisellä pisteellä."
       ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Lisää kansioita ja tiedostoja ${ DRIVE_APP_NAME }en ja kutsu tiimin jäseniä tarkastelemaan tai muokkaamaan."
       ],
       "Add or remove categories, manage notifications, and adjust your setup anytime in settings.": [
-        "Voitte lisätä tai poistaa luokkia, hallita ilmoituksia ja muokata asetuksianne milloin tahansa asetuksissa."
+        "Asetuksissa voit milloin tahansa lisätä tai poistaa kategorioita, hallita ilmoituksia ja muokata ympäristöäsi."
       ],
       "Add or remove categories, manage notifications, or turn them off entirely - anytime in Settings.": [
-        "Voitte lisätä tai poistaa luokkia, hallita ilmoituksia tai poistaa ne kokonaan käytöstä milloin tahansa Asetuksissa."
+        "Asetuksissa voit milloin tahansa lisätä tai poistaa kategorioita, hallita ilmoituksia tai poistaa ne käytöstä kokonaan."
       ],
       "Also included": [
         "Sisältää myös:"
@@ -4229,10 +4230,10 @@
         "Lue, vastaa ja pysy ajan tasalla Gmailista suoraan ${ MAIL_APP_NAME } -sovelluksessa"
       ],
       "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
-        "Napsauta sähköpostia hiiren oikealla painikkeella ja valitse ”Siirrä kohteeseen” tai vedä ja pudota se toiseen luokkaan. Vastaavat sähköpostit siirretään jatkossa sinne automaattisesti."
+        "Napsauta viestiä hiiren kakkospainikkeella ja valitse \"Siirrä kohteeseen\", tai vedä ja pudota se eri kategoriaan. Jatkossa samankaltaiset viestit luokitellaan automaattisesti."
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
-        "Lähetä ja vastaanota Gmail-viestejä suoraan palvelussa ${ MAIL_APP_NAME }. Yhdistä osoitteenne kohdassa ${ addressesSettingsLink }."
+        "Lähetä ja vastaanota Gmail-viestejä suoraan ${ MAIL_APP_NAME }issa. Yhdistä osoitteesi asetusten ${ addressesSettingsLink } -osiossa."
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Erota elämäsi eri alueet useilla sähköpostiosoitteilla ja avaa myös muita premium-ominaisuuksia päivittämällä tilauksesi."
@@ -5562,7 +5563,7 @@
         "Aliaksia ei voida käyttää, kun lisäsalasana on käytössä ${ PASS_APP_NAME }issa."
       ],
       "An error occurred with the categories": [
-        "Virhe luokissa"
+        "Virhe kategorioissa"
       ],
       "App currently unavailable": [
         "Sovellus ei ole tällä hetkellä käytettävissä"
@@ -6248,7 +6249,7 @@
         "Verkko"
       ],
       "Other category": [
-        "Muut aiheet"
+        "Muut kategoriat"
       ],
       "Services": [
         "Palvelut"
@@ -6286,7 +6287,7 @@
         "Määritä ${ LUMO_SHORT_APP_NAME } -kirjoitusavustaja"
       ],
       "Set up the writing assistant": [
-        "Kirjoitusavustajan määrittäminen"
+        "Määritä kirjoitusavustaja"
       ],
       "Tell us more": [
         "Kerro meille lisää"
@@ -6679,7 +6680,7 @@
         "${ BRAND_NAME } Scribe auttaa sinua laatimaan parempia sähköposteja nopeasti ja vaivattomasti."
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe kirjoitusavustaja"
+        "${ BRAND_NAME } Scribe -kirjoitusavustaja"
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }in salaustekniikan ansioista kukaan ei voi päästä käsiksi salasanaasi - emme edes me."
@@ -6723,6 +6724,14 @@
       "${ contactsLength } contact": [
         "${ contactsLength } yhteystieto",
         "${ contactsLength } yhteystietoa"
+      ],
+      "${ count } email": [
+        "${ count } viesti",
+        "${ count } viestiä"
+      ],
+      "${ count } email · ${ names }": [
+        "${ count } viesti · ${ names }",
+        "${ count } viestiä · ${ names }"
       ],
       "${ count } email → ${ dest }": [
         "${ count } sähköposti → ${ dest }",
@@ -6787,7 +6796,7 @@
         "${ groupCounts } ryhmää löytyi"
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
-        "${ LUMO_APP_NAME } sisältää ${ BRAND_NAME } Scribe-kirjoitusavustajan"
+        "${ LUMO_APP_NAME } sisältää ${ BRAND_NAME } Scribe -kirjoitusavustajan"
       ],
       "${ LUMO_SHORT_APP_NAME } helps you craft better emails quickly and effortlessly.": [
         "${ LUMO_SHORT_APP_NAME } auttaa teitä laatimaan parempia sähköposteja nopeasti ja vaivattomasti."
@@ -6799,7 +6808,7 @@
         "${ MAIL_APP_NAME } voi suojata myös yritystoimintaasi."
       ],
       "${ MAIL_APP_NAME } now automatically sorts your emails into categories like Primary, Social, Promotions, and more, helping you find and manage messages more easily.": [
-        "${ MAIL_APP_NAME } lajittelee nyt sähköpostinne automaattisesti luokkiin, kuten ensisijainen, sosiaalinen, tarjoukset ja muut, auttaen teitä löytämään ja hallitsemaan viestejä helpommin."
+        "${ MAIL_APP_NAME } luokittelee viestisi nyt automaattisesti kategorioihin, kuten Ensisijaiset, Some ja Markkinointi, helpottaen niiden lukemista ja hallintaa."
       ],
       "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
         "${ MEET_APP_NAME } on päästä päähän -salattu videoneuvotteluratkaisu. Lisää se tilaukseesi järjestääksesi suojattuja kokouksia."
@@ -6927,7 +6936,7 @@
         "${ VPN_APP_NAME } naamioi IP-osoitteesi, jotta verkkosivustot eivät voi tunnistaa sinua."
       ],
       "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
-        "${ VPN_SHORT_APP_NAME } piilottaa tietoliikenteenne. ${ PASS_SHORT_APP_NAME } piilottaa henkilöllisyytenne\n— rajoittamattomat **hide-my-email-aliakset** ja **pimeän verkon hälytykset**, jos tietonne vuotavat."
+        "${ VPN_SHORT_APP_NAME } piilottaa tietoliikenteesi, ${ PASS_SHORT_APP_NAME } henkilöllisyytesi\n— Rajattomasti **hide-my-email-aliaksia** ja **pimeän verkon hälytykset**, jos tietosi vuotavat."
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } jäsen)",
@@ -7097,6 +7106,9 @@
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Myös kaikki alikansiot poistetaan. Kansiossa ${ nameDeleted } olevia sähköposteja ei kuitenkaan poisteta, vaan ne löytyvät \"Kaikki viestit\" -kansiosta."
       ],
+      "Apply labels": [
+        "Merkitse tunnisteilla"
+      ],
       "Apply to future messages": [
         "Käytä tuleville viesteille"
       ],
@@ -7173,7 +7185,7 @@
         "Poista roskakorissa ja roskapostissa yli 30 päivää olleet viestit automaattisesti."
       ],
       "Automatically sort incoming emails into categories": [
-        "Lajittele saapuvat sähköpostit automaattisesti luokkiin"
+        "Luokittele saapuvat viestin automaattisesti kategorioihin"
       ],
       "Awaiting transaction": [
         "Odotetaan siirtoa"
@@ -7224,7 +7236,7 @@
         "Etkö muista salasanaasi? Voimme auttaa kaikkien tällä avaimella salattujen yhteystietojen salattujen tietojen tyhjennyksessä, jolloin myös hälytys kuittaantuu."
       ],
       "Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
-        "Luokat toimivat roskapostisuodattimien tapaan. ${ MAIL_APP_NAME } ei koskaan lue sähköpostejasi tai jaa tietojasi."
+        "Kategoriat toimivat roskapostisuodattimien tavoin, eikä ${ MAIL_APP_NAME } koskaan lue viestejäsi tai jaa tietojasi."
       ],
       "Center": [
         "Keskitä"
@@ -7558,6 +7570,9 @@
       "Everything in ${ planOrAppName }, plus:": [
         "Kaikki ${ planOrAppName } -tilaukseen kuuluva, sekä:"
       ],
+      "Expand logs": [
+        "Laajenna lokitiedot"
+      ],
       "Expand selection": [
         "Laajenna valintaa"
       ],
@@ -7680,6 +7695,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Jos et löydä viestiä saapuneista viesteistäsi, tarkista roskapostikansiosi."
       ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Jos et voi käyttää tunnistautumissovellustasi, voit käyttää yhtä kuudestatoista varakoodistasi, jotka sait määrittäessäsi kaksivaiheisen tunnistautumisen. ${ learnMoreLink }"
+      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Jos jatkat alennusta, menetät maksullisten ${ MAIL_APP_NAME } ja ${ VPN_APP_NAME } -ominaisuuksien käyttöoikeuden."
       ],
@@ -7748,8 +7766,7 @@
         "Valmistellaan…"
       ],
       "Insert image": [
-        "Lisää kuva",
-        "Lisää kuvia"
+        "Lisää kuva"
       ],
       "Insert link": [
         "Lisää linkki"
@@ -7841,6 +7858,9 @@
       "Low Priority": [
         "Alhainen tärkeys"
       ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Aseta ${ MAIL_APP_NAME } oletusarvoiseksi sähköpostisovellukseksi"
+      ],
       "Manage your folders": [
         "Hallitse kansioitasi"
       ],
@@ -7849,6 +7869,15 @@
       ],
       "Mark all as read": [
         "Merkitse kaikki luetuiksi"
+      ],
+      "Mark all as unread": [
+        "Merkitse kaikki lukemattomiksi"
+      ],
+      "Mark as read": [
+        "Merkitse luetuksi"
+      ],
+      "Mark as unread": [
+        "Merkitse lukemattomaksi"
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode -logo"
@@ -8923,7 +8952,7 @@
         "Kun matkustat tai käytät julkista Wi-Fiä, voit käyttää ilmaista ${ VPN_APP_NAME } -palvelua, jotta kukaan ei voi seurata verkkotoimintaasi tai varastaa tietojasi."
       ],
       "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
-        "Uusilla sähköpostiluokilla vain tärkeät viestit päätyvät pääasialliseen postilaatikkoosi. Kaikki muu lajitellaan luokkiin."
+        "Uusien viestikategorioiden ansiosta vain tärkeät viestit päätyvät ensisijaiseen postilaatikkoosi ja kaikki muu luokitellaan kategorioihin."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Haluatko uuden vahvistuskoodin vai käyttää vaihtoehtoista tunnistautumistapaa?"
@@ -8950,7 +8979,7 @@
         "Olet avaamassa uutta selaimen välilehteä sivustolle:"
       ],
       "You are about to open your default browser and visit:": [
-        "Olet avaamassa oletusselaintasi sivustolle:"
+        "Olet avaamassa oletusselaimeesi osoitetta:"
       ],
       "You are currently signed in as ${ username } for ${ organizationName }.": [
         "Olette tällä hetkellä kirjautuneena käyttäjänä ${ username } organisaatiossa ${ organizationName }."
@@ -9015,8 +9044,8 @@
         "Teillä on ${ totalLabel } saapuneissa."
       ],
       "You have **${ count } conversation** in your ${ categoryLabel } category": [
-        "Sinulla on **${ count } keskustelu** luokassa ${ categoryLabel }",
-        "Sinulla on **${ count } keskustelua** luokassa ${ categoryLabel }"
+        "Kategoriassa ${ categoryLabel } on **${ count } keskustelu**",
+        "Kategoriassa ${ categoryLabel } on **${ count } keskustelua**"
       ],
       "You have **${ count } conversation** stored in this folder": [
         "Kansio sisältää **${ count } keskustelun**",
@@ -9027,8 +9056,8 @@
         "Olet merkinnyt **${ count } keskustelua** tällä tunnisteella"
       ],
       "You have **${ count } message** in your ${ categoryLabel } category": [
-        "Sinulla on **${ count } viesti** luokassa ${ categoryLabel }",
-        "Sinulla on **${ count } viestiä** luokassa ${ categoryLabel }"
+        "Kategoriassa ${ categoryLabel } on **${ count } viesti**",
+        "Kategoriassa ${ categoryLabel } on **${ count } viestiä**"
       ],
       "You have **${ count } message** stored in this folder": [
         "Kansio sisältää **${ count } viestin**",
@@ -9045,10 +9074,10 @@
         "Sinulla on ${ planTitle } -kokeilutilaus. Maksua ei vaadita tällä hetkellä. Tilauksesi uusitaan automaattisesti kokeilujakson päätyttyä."
       ],
       "You have no conversations in this category": [
-        "Teillä ei ole keskusteluja tässä luokassa"
+        "Kategoriassa ei ole keskusteluja"
       ],
       "You have no messages in this category": [
-        "Teillä ei ole viestejä tässä luokassa"
+        "Kategoriassa ei ole viestejä"
       ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "Et ole täyttänyt viestin aihetta. Haluatko silti lähettää sen?"
@@ -9066,12 +9095,12 @@
         "Kaikki laajemmat ${ MAIL_APP_NAME } -määritykset, kuten käyttäjät, osoitteet ja omat verkkotunnukset on poistettava käytöstä tai poistettava ennen tilauksen alennusta."
       ],
       "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
-        "Valitsit **${ checked } keskustelun** luokassa ${ categoryLabel }",
-        "Valitsit **${ checked } keskustelua** luokassa ${ categoryLabel }"
+        "Valitsit **${ checked } keskustelun** kategoriasta ${ categoryLabel }",
+        "Valitsit **${ checked } keskustelua** kategoriasta ${ categoryLabel }"
       ],
       "You selected **${ checked } message** in your ${ categoryLabel } category": [
-        "Valitsit **${ checked } viestin** luokassa ${ categoryLabel }",
-        "Valitsit **${ checked } viestiä** luokassa ${ categoryLabel }"
+        "Valitsit **${ checked } viestin** kategoriasta ${ categoryLabel }",
+        "Valitsit **${ checked } viestiä** kategoriasta ${ categoryLabel }"
       ],
       "You selected **${ count } conversation** from this folder": [
         "Valitsit kansiosta **${ count } keskustelun**",
@@ -9086,8 +9115,8 @@
         "Valitsit kansiosta **${ count } viestiä**"
       ],
       "You selected **${ count } message** with this label": [
-        "Valitsit **${ count } viestin** tällä tunnisteella",
-        "Valitsit **${ count } viestiä** tällä tunnisteella"
+        "Valitsit **${ count }** tällä tunnisteella merkityn viestin",
+        "Valitsit **${ count }** tällä tunnisteella merkittyä viestiä"
       ],
       "You selected **${ elementsCount } conversation** in ${ location }": [
         "Valitsit **${ elementsCount } keskustelun** sijainnista ${ location }",
@@ -9557,7 +9586,7 @@
         "${ count } lukematonta viestiä"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
-        "${ LUMO_SHORT_APP_NAME } -kirjoitusavustaja"
+        "${ LUMO_SHORT_APP_NAME }-kirjoitusavustaja"
       ],
       "${ n } month": [
         "${ n } kuukausi",
@@ -9577,6 +9606,9 @@
       ],
       "Account holder": [
         "Tilinhaltija"
+      ],
+      "Account holder name": [
+        "Tilinhaltijan nimi"
       ],
       "Actions": [
         "Toiminnot"
@@ -9627,13 +9659,13 @@
         "Ja"
       ],
       "Anderson": [
-        "Andersson"
+        "Virtanen"
       ],
       "ANY": [
         "JOKIN"
       ],
       "Anything that needs your attention, plus emails from disabled categories": [
-        "Kaikki, mikä vaatii huomiotasi, sekä sähköpostit poistetuista luokista"
+        "Kaikki huomiotasi vaativat sekä käytöstä poistettujen kategorioiden viestit"
       ],
       "App password": [
         "Sovellussalasana"
@@ -9654,7 +9686,7 @@
         "Todennussovellus"
       ],
       "Automated confirmations and alerts": [
-        "Automaattiset vahvistukset ja hälytykset"
+        "Automaattivahvistukset ja -ilmoitukset"
       ],
       "BCC": [
         "Piilokopio"
@@ -9669,7 +9701,7 @@
         "Piilokopio"
       ],
       "Bookings, billings, and orders": [
-        "Varaukset, laskutukset ja tilaukset"
+        "Varaukset, laskut ja tilaukset"
       ],
       "Browser": [
         "Selain"
@@ -9840,7 +9872,7 @@
         "Sähköpostiosoite"
       ],
       "Email categories": [
-        "Sähköpostiluokat"
+        "Viestikategoriat"
       ],
       "Email format": [
         "Viestien muoto"
@@ -9927,22 +9959,22 @@
         "Hyödynnä tarjous"
       ],
       "Go to Newsletters": [
-        "Siirry uutiskirjeisiin"
+        "Avaa Uutiskirjeet"
       ],
       "Go to Primary": [
-        "Siirry Ensisijaisiin"
+        "Avaa Ensisijaiset"
       ],
       "Go to Promotions": [
-        "Siirry Kampanjoihin"
+        "Avaa Markkinointi"
       ],
       "Go to Social": [
-        "Mene sosiaaliseen mediaan"
+        "Avaa Some"
       ],
       "Go to Transactions": [
-        "Siirry Maksutapahtumiin"
+        "Avaa Asioinnit"
       ],
       "Go to Updates": [
-        "Siirry päivityksiin"
+        "Avaa Päivitykset"
       ],
       "Has attachments": [
         "Sisältää liitteitä"
@@ -10101,13 +10133,13 @@
         "Uutiskirjeet"
       ],
       "Newsletters - News, editorial emails, and non-promotional content": [
-        "Uutiskirjeet - uutiset, pääkirjoitussähköpostit ja ei-kaupallinen sisältö"
+        "Uutiskirjeet – Uutiset, artikkelit ja ei-kaupallinen sisältö"
       ],
       "No label found": [
         "Tunnistetta ei löytynyt"
       ],
       "Non-promotional content and news": [
-        "Ei-mainoksellinen sisältö ja uutiset"
+        "Ei‑kaupallinen sisältö ja uutiset"
       ],
       "Not factually correct": [
         "Ei pidä paikkaansa"
@@ -10188,13 +10220,13 @@
         "Ensisijainen"
       ],
       "Primary - Anything that needs your attention, plus emails from disabled categories": [
-        "Ensisijainen – kaikki, mikä vaatii huomiotasi, sekä sähköpostit poistetuista luokista"
+        "Ensisijaiset – Kaikki huomiotasi vaativat ja luokittelemattomat viestit"
       ],
       "Promotions": [
-        "Kampanjat"
+        "Markkinointi"
       ],
       "Promotions - Deals, offers, and marketing emails": [
-        "Tarjoukset - edut, tarjoukset ja markkinointisähköpostit"
+        "Markkinointi – Edut, tarjoukset ja muut markkinointiviestit"
       ],
       "Proration": [
         "Hyvitys"
@@ -10263,13 +10295,13 @@
         "Ohita palaute"
       ],
       "Social": [
-        "Sosiaalinen"
+        "Some"
       ],
       "Social - Social media updates, activity, and messages": [
-        "Sosiaaliset - sosiaalisen median päivitykset, toiminta ja viestit"
+        "Some – Sosiaalisen median päivitykset, tapahtumat ja viestit"
       ],
       "Social media updates and activity": [
-        "Sosiaalisen median päivitykset ja toiminta"
+        "Sosiaalisen median päivitykset ja tapahtumat"
       ],
       "Sort": [
         "Järjestä"
@@ -10332,7 +10364,7 @@
         "Niin"
       ],
       "Thomas": [
-        "Tuomas"
+        "Ville"
       ],
       "Time": [
         "Aika"
@@ -10347,10 +10379,10 @@
         "Työkalupalkki"
       ],
       "Transactions": [
-        "Siirrot"
+        "Asioinnit"
       ],
       "Transactions - Receipts, bookings, bills, and orders": [
-        "Tapahtumat - kuitit, varaukset, laskut ja tilaukset"
+        "Asioinnit – Kuitit, varaukset, laskut ja tilaukset"
       ],
       "Trash": [
         "Roskakori"
@@ -10368,7 +10400,7 @@
         "Päivitykset"
       ],
       "Updates - Automated confirmations, alerts, and account updates": [
-        "Päivitykset - automaattiset vahvistukset, hälytykset ja tilipäivitykset"
+        "Päivitykset - Automaattivahvistukset ja -ilmoitukset, sekä tilipäivitykset"
       ],
       "Upload picture": [
         "Lataa kuva"
@@ -10881,10 +10913,10 @@
     },
     "mail_signup_2024: Info": {
       "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe kirjoitusavustaja"
+        "${ BRAND_NAME } Scribe -kirjoitusavustaja"
       ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
-        "Lisää ${ BRAND_NAME } Scribe kirjoitusavustaja"
+        "Lisää ${ BRAND_NAME } Scribe -kirjoitusavustaja"
       ],
       "Add-on with free trial": [
         "Lisäosa ilmaisella kokeilujaksolla"
@@ -11275,7 +11307,7 @@
     },
     "new_plans: feature": {
       "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe kirjoitusavustaja"
+        "${ BRAND_NAME } Scribe -kirjoitusavustaja"
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } ja ${ PROTON_SENTINEL_NAME }"
@@ -11560,7 +11592,7 @@
         "Selaimella käytettävä dokumenttieditori"
       ],
       "Organize items with multiple vaults": [
-        "Järjestele kohteita useilla holveilla"
+        "Järjestele kohteita useisiin holveihin"
       ],
       "Passkeys supported": [
         "Tuki pääsyavaimille"
@@ -12209,7 +12241,7 @@
         "Lähettäjät estettiin"
       ],
       "The writing assistant is ready to use": [
-        "Kirjoitusavustaja on valmis käytettäväksi"
+        "Kirjoitusavustaja on valmis käyttöön"
       ],
       "Trial started": [
         "Kokeilujakso on alkanut"
@@ -12603,6 +12635,12 @@
       ],
       "No parent folder": [
         "Ei yläkansiota"
+      ],
+      "Remind me later": [
+        "Muistuta myöhemmin"
+      ],
+      "Yes, don't show again": [
+        "Kyllä, äläkä näytä uudelleen"
       ]
     },
     "Option group": {
@@ -12896,6 +12934,9 @@
       "Invalid security code": [
         "Virheellinen turvakoodi"
       ],
+      "Please enter the account holder name": [
+        "Syötä tilinhaltijan nimi"
+      ],
       "Something went wrong. Please try again later.": [
         "Jotain meni pieleen. Yritä myöhemmin uudelleen."
       ],
@@ -13044,7 +13085,7 @@
         "Tapa, jolla tavoitamme sinut"
       ],
       "Anderson": [
-        "Andersson"
+        "Virtanen"
       ],
       "Anything you'd like us to know": [
         "Haluatteko kertoa meille jotain muuta"
@@ -13071,7 +13112,7 @@
         "Sähköpostiosoite"
       ],
       "End date": [
-        "Lopetuspäivä"
+        "Päättymispäivä"
       ],
       "Enter a name": [
         "Syötä nimi"
@@ -13188,7 +13229,7 @@
         "Valitse osavaltio"
       ],
       "Start date": [
-        "Alkupäivä"
+        "Aloituspäivä"
       ],
       "Start typing an email address": [
         "Aloita sähköpostiosoitteen kirjoitus"
@@ -13215,13 +13256,13 @@
         "Kerro kohteelle ${ subject }, mitä kirjoittaa. Esimerkki: \"Kirjoita asiakkaalle jatkosähköposti\""
       ],
       "Text": [
-        "Tekstitiedosto"
+        "Teksti"
       ],
       "the writing assistant": [
         "kirjoitusavustaja"
       ],
       "Thomas": [
-        "Tuomas"
+        "Ville"
       ],
       "To": [
         "Osoitteeseen"
@@ -13430,6 +13471,54 @@
       ],
       "SUMMER SALE": [
         "KESÄALE"
+      ]
+    },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "Hanki tarjous"
+      ],
+      "Special Offer": [
+        "Erikoistarjous"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "/month": [
+        "/kk"
+      ],
+      "2 individual accounts": [
+        "Kaksi erillistä tiliä"
+      ],
+      "2 TB of secure storage": [
+        "2 Tt suojattua tallennustilaa"
+      ],
+      "3 TB of secure storage": [
+        "3 Tt suojattua tallennustilaa"
+      ],
+      "500 GB of secure storage": [
+        "500 Gt suojattua tallennustilaa"
+      ],
+      "6 individual accounts": [
+        "Kuusi erillistä tiliä"
+      ],
+      "Advanced protection against cyber threats": [
+        "Edistynyt suoja kyberuhkia vastaan"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Alennukset perustuvat kuukausittaiseen vakiohinnoitteluun. Tilauksesi uusiutuu normaaliin vuosihintaan, kun laskutusjakso päättyy."
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "12 kuukaudeksi"
+      ],
+      "One plan, full power": [
+        "Yksi tilaus, täysi teho"
+      ],
+      "One plan, max savings": [
+        "Yksi tilaus, mehevämmät säästöt"
+      ],
+      "One plan, more power": [
+        "Yksi tilaus, enemmän tehoa"
       ]
     },
     "Received email icon": {
@@ -14247,7 +14336,7 @@
         "Hanki rajattomasti aliaksia suojellaksesi henkilöllisyyttäsi ja vähentääksesi roskapostia."
       ],
       "Keep your passwords safe and organized in multiple vaults": [
-        "Pidä salasanasi turvassa ja järjestettynä useissa holveissa"
+        "Pidä salasanasi turvassa ja järjestyksessä useissa holveissa"
       ],
       "Protect your account from threats with Sentinel": [
         "Suojatkaa tilinne uhilta Sentinelin avulla"
@@ -15129,7 +15218,7 @@
         "Siirrä ${ selectionCount } viestiä"
       ],
       "Moved to ${ label }. Similar messages will be categorized there in the future.": [
-        "Siirretty kohteeseen ${ label }. Vastaavat viestit luokitellaan jatkossa sinne."
+        "Siirrettiin kategoriaan ${ label }. Jatkossa samankaltaiset viestit luokitellaan sinne."
       ],
       "Password copied to clipboard": [
         "Salasana kopioitiin leikepöydälle"
@@ -15183,7 +15272,7 @@
         "Kirjoitusavustaja on käytössä"
       ],
       "Writing assistant setting updated": [
-        "Kirjoitusavustajan asetukset päivitettiin"
+        "Kirjoitusavustajan asetukset muutettiin"
       ],
       "You have successfully canceled your subscription.": [
         "Olet perunut tilauksesi."
@@ -15413,7 +15502,7 @@
         "${ appName }-pikanäppäimet"
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe kirjoitusavustaja"
+        "${ BRAND_NAME } Scribe -kirjoitusavustaja"
       ],
       "${ emailsCount } email address": [
         "${ emailsCount } sähköpostiosoite",
@@ -15423,7 +15512,7 @@
         "${ feature } on nyt käytössä"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
-        "Kirjoitusavustaja ${ LUMO_SHORT_APP_NAME }"
+        "${ LUMO_SHORT_APP_NAME }-kirjoitusavustaja"
       ],
       "${ numMessages } message": [
         "${ numMessages } viesti",
@@ -15496,6 +15585,9 @@
       ],
       "Apply gift code": [
         "Käytä lahjakoodia"
+      ],
+      "Apply labels": [
+        "Merkitse tunnisteilla"
       ],
       "Archive all messages?": [
         "Arkistoidaanko kaikki viestit?"
@@ -15791,7 +15883,7 @@
         "Ulkoinen salaus"
       ],
       "Fewer distractions, more focus": [
-        "Vähemmän häiriötekijöitä, enemmän keskittymistä"
+        "Vähemmän häiröitä, keskittyneempää työskentelyä"
       ],
       "Filter for more focus": [
         "Suodattimet parantamaan keskittymistäsi"
@@ -15899,6 +15991,9 @@
       "Invalid verification code": [
         "Virheellinen vahvistuskoodi"
       ],
+      "Keep this banner hidden?": [
+        "Pidetäänkö tämä ilmoitus piilotettuna?"
+      ],
       "Label as": [
         "Lisää tunniste"
       ],
@@ -15926,6 +16021,12 @@
       ],
       "Make a secure connection your default": [
         "Aseta suojattu yhteys oletukseksesi"
+      ],
+      "Mark all as read": [
+        "Merkitse kaikki luetuksi"
+      ],
+      "Mark all as unread": [
+        "Merkitse kaikki lukemattomiksi"
       ],
       "Mark all messages as read": [
         "Merkitse kaikki viestit luetuiksi"
@@ -16039,7 +16140,7 @@
         "Uusi viesti"
       ],
       "New messages": [
-        "Uusia viestejä"
+        "Uudet viestit"
       ],
       "Newsletters": [
         "Uutiskirjeet"
@@ -16177,7 +16278,7 @@
         "Suosittelu"
       ],
       "Refine your Categories": [
-        "Tarkenna luokkiasi"
+        "Tarkenna kategorioitasi"
       ],
       "Remove forwarding address": [
         "Poista välitysosoite"
@@ -16479,7 +16580,7 @@
         "Ilmainen kokeilujaksosi on päättynyt"
       ],
       "Your inbox, automatically organized": [
-        "Saapuneet-kansio, joka on järjestetty automaattisesti"
+        "Postilaatikkosi, automaattisesti lajilteltuna"
       ],
       "Your newsletters in one place": [
         "Uutiskirjeesi yhdessä paikalla"
@@ -16551,7 +16652,7 @@
         "Tiedot on salattu vahvistetulla sähköisellä allekirjoituksella"
       ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
-        "Gmail lajittelee joitakin viestejä automaattisesti kategorioihin kuten Sosiaaliset verkostot ja Tarjoukset. Voit valita minne nämä viestit tuodaan."
+        "Gmail lajittelee joitakin viestejä automaattisesti kategorioihin kuten \"Sosiaaliset verkostot\" ja \"Tarjoukset\". Voit valita minne nämä viestit tuodaan."
       ],
       "Hide side panel": [
         "Piilota sivupaneeli"
