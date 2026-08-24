@@ -283,14 +283,10 @@ const getCanUserReAuth = (user: User) => {
 
 const BYPASS_SESSION_MIN_AGE = 30_000; // 30 seconds
 export const getShouldReAuth = (
-    forkParameters: Pick<ProduceForkParameters, 'prompt' | 'promptType' | 'promptBypass'> | undefined,
-    authSession: {
-        data: ResumedSessionResult;
-        prompt?: 'login' | null;
-    }
+    forkParameters: Pick<ProduceForkParameters, 'prompt' | 'promptType' | 'promptBypass'>,
+    authSession: { data: ResumedSessionResult }
 ) => {
-    const shouldReauth = forkParameters?.prompt === 'login' || authSession.prompt === 'login';
-    if (!shouldReauth) {
+    if (forkParameters.prompt !== 'login') {
         return false;
     }
     // OAuth sessions are only allowed for the VPN browser extension at the moment. They cannot reauth.
@@ -300,7 +296,7 @@ export const getShouldReAuth = (
     if (!getCanUserReAuth(authSession.data.User)) {
         return false;
     }
-    if (forkParameters?.promptType === 'offline-bypass' && authSession.data.offlineKey) {
+    if (forkParameters.promptType === 'offline-bypass' && authSession.data.offlineKey) {
         /** `offline-bypass` is valid only if session was just persisted (<30seconds).
          * This avoids triggering re-auth during a sign-up flow to pass. In any other
          * scenario, we should avoid processing the by-pass and ask for password. */

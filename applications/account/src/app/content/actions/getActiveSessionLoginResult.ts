@@ -2,7 +2,7 @@ import { matchPath } from 'react-router-dom';
 
 import type { AuthSession } from '@proton/components/containers/login/interface';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
-import { ForkType, getShouldReAuth } from '@proton/shared/lib/authentication/fork';
+import { ForkType } from '@proton/shared/lib/authentication/fork';
 import {
     GetActiveSessionType,
     type GetActiveSessionsResult,
@@ -11,7 +11,6 @@ import { type APP_NAMES, SSO_PATHS, VPN_TV_PATH_WITH_CODE } from '@proton/shared
 import type { Api } from '@proton/shared/lib/interfaces';
 
 import type { OAuthPartnersInitiateState } from '../../public/OAuthPartnersContainer';
-import { getReAuthState } from '../../public/reauthContainerState';
 import type { Paths } from '../helper';
 import type { LocalRedirect } from '../localRedirect';
 import { type ProduceForkData, SSOType } from './forkInterface';
@@ -86,15 +85,7 @@ export const getActiveSessionLoginResult = async ({
         }
 
         if (autoSignIn && forkParameters.forkType === undefined) {
-            const session: AuthSession = { data: sessionsResult.session };
-            if (getShouldReAuth(forkParameters, session)) {
-                return {
-                    type: 'reauth',
-                    location: paths.reauth,
-                    payload: getReAuthState(forkParameters, session),
-                };
-            }
-
+            const session: AuthSession = { data: sessionsResult.session, flow: 'auto-resume' };
             return getProduceForkLoginResult({
                 api,
                 data: {

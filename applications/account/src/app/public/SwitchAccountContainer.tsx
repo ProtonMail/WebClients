@@ -16,7 +16,6 @@ import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { AccessType } from '@proton/shared/lib/authentication/accessType';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
-import { ForkSearchParameters } from '@proton/shared/lib/authentication/fork';
 import {
     type ActiveSession,
     type GetActiveSessionsResult,
@@ -244,13 +243,11 @@ const SwitchAccountContainer = ({
                 return;
             }
             validRef.current = true;
-            const params = new URLSearchParams(location.search);
             setLoadingMap((old) => ({ ...old, [localID]: true }));
             const resumedSessionResult = await resumeSession({ api: silentApi, localID });
             await onLogin({
                 data: resumedSessionResult,
                 flow: 'switch',
-                prompt: params.get(ForkSearchParameters.Prompt) === 'login' ? 'login' : undefined,
             });
         } catch (e: any) {
             setLoadingMap((old) => ({ ...old, [localID]: false }));
