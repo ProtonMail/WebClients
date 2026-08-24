@@ -9,16 +9,14 @@ import { FONT_SIZE_DEFAULT, FONT_SIZE_SUGGESTIONS } from '../../../constants'
 import { useUI } from '../../../ui-store'
 import { getWrappingIcon } from '../../utils'
 import { MergeMenuItems } from '../../shared/MergeMenuItems'
-import type { EditorRequiresClientMethods } from '@proton/docs-shared'
 
 const { s } = createStringifier(strings)
 
 export interface FormatMenuProps extends Ariakit.MenuProviderProps {
   renderMenuButton: ReactElement
-  clientInvoker: EditorRequiresClientMethods
 }
 
-export function FormatMenu({ renderMenuButton, clientInvoker, ...props }: FormatMenuProps) {
+export function FormatMenu({ renderMenuButton, ...props }: FormatMenuProps) {
   return (
     <Ariakit.MenuProvider {...props}>
       <Ariakit.MenuButton render={renderMenuButton} />
@@ -27,7 +25,7 @@ export function FormatMenu({ renderMenuButton, clientInvoker, ...props }: Format
         <TableFormattingSubmenu />
         <CellStylesSubmenu />
         {/* <UI.MenuSeparator /> */}
-        <NumberSubmenu clientInvoker={clientInvoker} />
+        <NumberSubmenu />
         <TextSubmenu />
         <AlignmentSubmenu />
         <WrappingSubmenu />
@@ -95,9 +93,9 @@ function CellStylesSubmenu() {
   )
 }
 
-function NumberSubmenu({ clientInvoker }: { clientInvoker: EditorRequiresClientMethods }) {
+function NumberSubmenu() {
   return (
-    <NumberFormatsMenu asSubmenu clientInvoker={clientInvoker}>
+    <NumberFormatsMenu asSubmenu>
       <UI.SubMenuButton leadingIconSlot={<UI.Icon data={Icons.numbers} />} disabled={useUI((ui) => ui.info.isReadonly)}>
         {s('Number')}
       </UI.SubMenuButton>
