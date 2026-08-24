@@ -6,6 +6,7 @@ import { type ChargebeeCssVariables, chargebeeCssVariablesSet } from '@proton/ch
 import type { IdealAuthorizedPayload, SetIdealPaymentIntentPayload } from '@proton/chargebee/lib/types';
 import {
     type ApplePayAuthorizedPayload,
+    type ApplePayAvailabilityResponse,
     type CardFormRenderMode,
     type CbCardConfig,
     type CbIframeConfig,
@@ -13,7 +14,6 @@ import {
     type ChargebeeSubmitDirectDebitEventPayload,
     type ChargebeeSubmitEventPayload,
     type ChargebeeVerifySavedCardEventPayload,
-    type GetCanMakePaymentsWithActiveCardResponse,
     type GooglePayAuthorizedPayload,
     type PaymentIntent,
     type PaypalAuthorizedPayload,
@@ -61,6 +61,7 @@ import { getApiSubdomainUrl } from '@proton/shared/lib/helpers/url';
 import { ColorScheme } from '@proton/shared/lib/themes/constants';
 
 import { type GetChargebeeConfigurationResponse, getChargebeeConfiguration } from '../../core/api/api';
+import { getChargebeeErrorCode, isApplePayUnsupportedError } from '../../core/chargebee-errors';
 import type {
     ChargebeeIframeEvents,
     ChargebeeIframeHandles,
@@ -214,11 +215,7 @@ function iframeAction<T>(
     return result;
 }
 
-function getChargebeeErrorCode(error: any) {
-    return error?.error?.code;
-}
-
-function getErrorMessageByCode(errorCode: string): string | undefined {
+function getErrorMessageByCode(errorCode: string | undefined): string | undefined {
     switch (errorCode) {
         case 'card_declined':
             return c('Payments.Error')
@@ -537,11 +534,27 @@ function useChargebeeHandles(
             } catch (error: any) {
                 // make sure that only the latest error is handled, and all others are ignored
                 if (error.correlationId === getLatestCorrelationIdByType(setApplePayPaymentIntentActionType)) {
-                    const errorMessage = getChargebeeErrorMessage(error);
-                    createNotification({
-                        type: 'error',
-                        text: errorMessage,
-                    });
+                    // We offer Apple Pay optimistically on a UA check, so this is the expected outcome for anyone
+                    // without an Apple device rather than a failure worth reporting to the user.
+                    if (isApplePayUnsupportedError(error)) {
+                        capturePaymentMessage(
+                            'Payments: Apple Pay unsupported by the browser',
+                            { level: 'info', extra: { error } },
+                            error
+                        );
+                    } else {
+                        const errorMessage = getChargebeeErrorMessage(error);
+                        createNotification({
+                            type: 'error',
+                            text: errorMessage,
+                        });
+
+                        capturePaymentMessage(
+                            'Payments: Apple Pay button failed to mount',
+                            { level: 'error', extra: { error } },
+                            error
+                        );
+                    }
                 }
                 throw error;
             }
@@ -557,21 +570,21 @@ function useChargebeeHandles(
 
             return iframeAction('set-configuration', config, iframeRef, targetOrigin, signal);
         },
-        getCanMakePaymentsWithActiveCard: async () => {
+        getApplePayCapabilities: async (payload) => {
             try {
                 await waitForIframeLoaded();
             } catch {
-                return false;
+                return { canMakePaymentsWithActiveCard: false, applePayCapabilities: false };
             }
-            // internally it calls getCanMakePaymentsWithActiveCard(), but from Chargebee's iframe domain
-            const result = await iframeAction<GetCanMakePaymentsWithActiveCardResponse>(
+            // internally it runs the same checks, but from Chargebee's iframe domain
+            const result = await iframeAction<ApplePayAvailabilityResponse>(
                 'get-can-make-payments-with-active-card',
-                {},
+                payload,
                 iframeRef,
                 targetOrigin,
                 signal
             );
-            return result.data.canMakePaymentsWithActiveCard;
+            return result.data;
         },
         setGooglePayPaymentIntent: async (payload: SetGooglePayPaymentIntentPayload, abortSignal?: AbortSignal) => {
             const setGooglePayPaymentIntentActionType = 'set-google-pay-payment-intent';
@@ -933,7 +946,7 @@ function getInitialStyles(type: ChargebeeIframeProps['type']): {
         paypal: { initialHeight: 52, initialWidth: getPaypalIframeWidth() },
         'saved-card': { initialHeight: 0, initialWidth: '100%' },
         card: { initialHeight: 300, initialWidth: '100%' },
-        'apple-pay': { initialHeight: 52, initialWidth: '100%' },
+        'apple-pay': { initialHeight: 58, initialWidth: '100%' },
         'direct-debit': { initialHeight: 0, initialWidth: '100%' },
         'google-pay': { initialHeight: 56, initialWidth: '100%' },
         ideal: { initialHeight: 56, initialWidth: '100%' },
