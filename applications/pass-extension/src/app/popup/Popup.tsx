@@ -9,8 +9,8 @@ import { useExtensionNotificationEnhancer } from 'proton-pass-extension/lib/hook
 import { hasClipboardPermissions } from 'proton-pass-extension/lib/utils/permissions';
 import { WorkerMessageType, type WorkerMessageWithSender } from 'proton-pass-extension/types/messages';
 
+import { NotificationsContext } from '@proton/app-context/notifications/notificationsContext';
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
-import NotificationsContext from '@proton/components/containers/notifications/notificationsContext';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { Localized } from '@proton/pass/components/Core/Localized';
 import { NavigationProvider } from '@proton/pass/components/Navigation/NavigationProvider';
