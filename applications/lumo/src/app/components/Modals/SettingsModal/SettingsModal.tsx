@@ -451,7 +451,7 @@ const SettingsModal = ({ initialPanel = 'account', ...modalProps }: SettingsModa
         [isMemoryFeatureEnabled]
     );
 
-    useNativeComposerVisibilityApi({ isBlocking: true });
+    useNativeComposerVisibilityApi({ hideComposer: true });
 
     return (
         <ModalTwo size="xlarge" enableCloseWhenClickOutside className="lumo-settings-modal" {...modalProps}>

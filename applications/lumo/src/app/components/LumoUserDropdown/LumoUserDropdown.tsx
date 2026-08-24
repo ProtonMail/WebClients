@@ -13,6 +13,7 @@ import type { ForkType } from '@proton/shared/lib/authentication/fork';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
 import { useLumoAuthAction } from '../../hooks/useLumoAuthAction';
+import { useNativeComposerVisibilityApi } from '../Composer/hooks/useNativeComposerVisibilityApi';
 import LumoUserDropdownContent from './LumoUserDropdownContent';
 
 interface LumoUserDropdownProps extends Omit<UserDropdownButtonProps, 'user' | 'isOpen' | 'onClick'> {
@@ -39,6 +40,9 @@ const LumoUserDropdown = ({
 
     const [bugReportModal, setBugReportModal, renderBugReportModal] = useModalState();
     const [helpModal, setHelpModal, renderHelpModal] = useModalState();
+
+    // One flag for both: the composer stays hidden until every modal here is closed.
+    useNativeComposerVisibilityApi({ hideComposer: renderBugReportModal || renderHelpModal });
 
     const handleSignOutClick = () => {
         closeUserDropdown();

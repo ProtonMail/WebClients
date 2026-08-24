@@ -43,7 +43,7 @@ export const SketchCanvas = ({
     const [strokeWidth, setStrokeWidth] = useState(DEFAULT_STROKE_WIDTH);
     const [description, setDescription] = useState('');
     const containerRef = useRef<HTMLDivElement>(null);
-    useNativeComposerVisibilityApi({ isBlocking: true });
+    useNativeComposerVisibilityApi({ hideComposer: true });
 
     const { strokes, addStroke, undo, redo, clear, canUndo, canRedo } = useHistory();
 

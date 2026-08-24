@@ -12,9 +12,9 @@ import type { Attachment, SpaceId } from '../../../types';
 import { Role } from '../../../types';
 import { isAttachmentRemovedFromProjectKnowledge, storeAttachmentInRedux } from '../../../util/attachmentHelpers';
 import { isFileTypeSupported, mimeToHuman } from '../../../util/filetypes';
-import { extractSpreadsheetTableSections, parseCSVContent } from '../../../util/spreadsheetTableContent';
 import { isPastedContentAttachment, updatePastedContentAttachment } from '../../../util/pastedContentHelper';
 import { fillAttachmentFromSearchIndex } from '../../../util/resolveProjectFiles';
+import { extractSpreadsheetTableSections, parseCSVContent } from '../../../util/spreadsheetTableContent';
 import { useNativeComposerVisibilityApi } from '../../Composer/hooks/useNativeComposerVisibilityApi';
 import { LumoIcon } from '../../LumoIcon/LumoIcon';
 import { LazyProgressiveMarkdownRenderer } from '../../LumoMarkdown/LazyMarkdownComponents';
@@ -35,7 +35,7 @@ const getFileSize = (sizeBytes: number) => {
 };
 
 export const FilePreviewPanel = ({ attachment: attachmentProp, onBack, onClose, spaceId }: FilePreviewPanelProps) => {
-    useNativeComposerVisibilityApi({ isBlocking: true });
+    useNativeComposerVisibilityApi({ hideComposer: true });
     const dispatch = useLumoDispatch();
     const userId = useLumoSelector((state) => state.user?.value?.ID);
     // Always read the latest version from Redux so the panel reflects edits made via Save.
@@ -73,11 +73,7 @@ export const FilePreviewPanel = ({ attachment: attachmentProp, onBack, onClose, 
         void (async () => {
             const searchService = SearchService.get(userId);
             await searchService.ensureManifestReady();
-            const filled = fillAttachmentFromSearchIndex(
-                attachmentFromStore,
-                searchService,
-                spaceId
-            );
+            const filled = fillAttachmentFromSearchIndex(attachmentFromStore, searchService, spaceId);
             if (cancelled || !filled.markdown?.trim()) {
                 return;
             }

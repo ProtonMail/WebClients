@@ -133,7 +133,7 @@ export const ApiDocsPage = () => {
         }
     };
 
-    useNativeComposerVisibilityApi({ isBlocking: true });
+    useNativeComposerVisibilityApi({ hideComposer: true });
 
     const docsTabsHeader = (
         <div className="api-docs-page-tabs-row flex flex-row justify-center w-full">
