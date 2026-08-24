@@ -1055,9 +1055,6 @@
       "Domain could not be verified. Please make sure you added the correct DNS records": [
         "ドメインが認証できませんでした。正しいDSNレコードが追加されていることを確認してください。"
       ],
-      "Domain not available, try again later": [
-        "ドメインが利用できません。再度お試しください。"
-      ],
       "Editing item failed": [
         "アイテムの編集に失敗しました"
       ],
@@ -2176,6 +2173,9 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "「${ payload.content.name }」からすべてのアイテムを移動します"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "アイテムを別の保管庫に移動すると、そのアイテムのセキュアリンクはすべて消去されます。"
       ],
       "Moving items": [
         "アイテムの移動"
