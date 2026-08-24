@@ -15,7 +15,7 @@ import { selectUser } from '../../../user';
 import { selectUserSettings } from '../../../userSettings';
 import { getIsOutgoingDelegatedAccessAvailable } from '../../available';
 import { maxOutgoingEmergencyContacts, maxOutgoingRecoveryContacts } from '../../constants';
-import { selectOutgoingDelegatedAccess } from '../../index';
+import { selectIsDelegatedAccessSupported, selectOutgoingDelegatedAccess } from '../../index';
 import { getEnrichedOutgoingDelegatedAccess } from './helper';
 import type { EnrichedOutgoingDelegatedAccess } from './interface';
 
@@ -42,12 +42,19 @@ export interface EnrichedOutgoingDelegatedAccessReturnValue {
 }
 
 export const selectEnrichedOutgoingDelegatedAccess = createSelector(
-    [selectUser, selectOutgoingDelegatedAccess, selectContactEmailsMap, selectUserSettings],
+    [
+        selectUser,
+        selectOutgoingDelegatedAccess,
+        selectContactEmailsMap,
+        selectUserSettings,
+        selectIsDelegatedAccessSupported,
+    ],
     (
         { value: user },
         delegatedAccess,
         contactEmailsMap,
-        { value: userSettings }
+        { value: userSettings },
+        isDelegatedAccessSupported
     ): EnrichedOutgoingDelegatedAccessReturnValue => {
         const items = delegatedAccess.value ?? [];
         const ephemeral = delegatedAccess.ephemeral ?? {};
@@ -55,7 +62,9 @@ export const selectEnrichedOutgoingDelegatedAccess = createSelector(
         const hasEmergencyContactsAccess = !!user && (user.isPaid || hasPaidPass(user));
         const hasEmergencyContactsUpsell = !!user && user.canPay && !hasEmergencyContactsAccess;
 
-        const isAvailable = getIsOutgoingDelegatedAccessAvailable(user);
+        // Apps that don't wire up delegated access at all can't offer it to anyone, see
+        // `getIsDelegatedAccessSupportedInApp`.
+        const isAvailable = isDelegatedAccessSupported && getIsOutgoingDelegatedAccessAvailable(user);
 
         const hasKeysToReactivate = Boolean(getLikelyHasKeysToReactivate(user));
 
