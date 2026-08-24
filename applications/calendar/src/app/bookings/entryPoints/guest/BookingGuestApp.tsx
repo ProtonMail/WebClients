@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { Router } from 'react-router-dom';
 
+import { ApiContext } from '@proton/app-context/apiContext';
 import ApiProvider from '@proton/components/containers/api/ApiProvider';
-import ApiContext from '@proton/components/containers/api/apiContext';
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import LoaderPage from '@proton/components/containers/app/LoaderPage';
 import ProtonApp from '@proton/components/containers/app/ProtonApp';

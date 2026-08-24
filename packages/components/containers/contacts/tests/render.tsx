@@ -8,6 +8,7 @@ import { render as originalRender, renderHook } from '@testing-library/react';
 import { createMemoryHistory } from 'history';
 
 import { getModelState } from '@proton/account/test';
+import { ApiContext } from '@proton/app-context/apiContext';
 import { NotificationsContext } from '@proton/app-context/notifications/notificationsContext';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
@@ -31,7 +32,6 @@ import {
     getSubscriptionState,
 } from '@proton/testing/lib/initialReduxState';
 
-import ApiContext from '../../api/apiContext';
 import AuthenticationProvider from '../../authentication/Provider';
 import { CacheProvider } from '../../cache/Provider';
 import ConfigProvider from '../../config/Provider';
