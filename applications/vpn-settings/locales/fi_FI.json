@@ -1438,7 +1438,7 @@
         "Kirjoitusavustaja"
       ],
       "Writing assistant seats": [
-        "Kirjoitusavustajan käyttöpaikat"
+        "Kirjoitusavustajan käyttäjäpaikat"
       ]
     },
     "Address action": {
@@ -2047,13 +2047,13 @@
     },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
-        "${ LUMO_SHORT_APP_NAME } -ongelma"
+        "${ LUMO_SHORT_APP_NAME }-ongelma"
       ],
       "Application problem": [
         "Sovellusongelma"
       ],
       "Authenticator problem": [
-        "Todennusvirhe"
+        "Todentajan virhe"
       ],
       "Bridge problem": [
         "Bridge-ongelma"
@@ -6180,7 +6180,7 @@
         "Verkko"
       ],
       "Other category": [
-        "Muut aiheet"
+        "Muut kategoriat"
       ],
       "Services": [
         "Palvelut"
@@ -6340,6 +6340,9 @@
       ],
       "Enjoying ${ planName }?": [
         "Nautitko ${ planName }ista?"
+      ],
+      "Invited friends": [
+        "Kutsutut kaverit"
       ],
       "Unlock 4 premium privacy services for just **${ priceString }** more each month": [
         "Saat käyttöösi 4 premium yksityisyyspalvelua vain **${ priceString }** enemmän kuukaudesa."
@@ -6718,7 +6721,7 @@
         "${ BRAND_NAME } ei koskaan jaa tietojasi ulkopuolisille tahoille. Tiedot ovat peräisin ${ BRAND_NAME }in omista analyyseistä ja Constella Intelligenceltä."
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe kirjoitusavustaja"
+        "${ BRAND_NAME } Scribe -kirjoitusavustaja"
       ],
       "${ BRAND_NAME } will send a verification code to ${ phoneNumber }. Standard message rates may apply.": [
         "${ BRAND_NAME } lähettää vahvistuskoodin numeroon ${ phoneNumber }. Viesteistä saatetaan veloittaa tavanomaiset viestimaksut."
@@ -6775,12 +6778,15 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } ei-SSO-jäsenistäsi käyttää kaksivaiheista tunnistautumista organisaatioosi kirjautumiseen.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } ei-SSO-jäsenistäsi käyttää kaksivaiheista tunnistautumista organisaatioosi kirjautumiseen."
       ],
+      "${ helpTranslateLink } by joining our localization community.": [
+        "${ helpTranslateLink } liittymällä käännösyhteisöömme."
+      ],
       "${ invitedMemberCount } user needs to accept their invite to start receiving group emails.": [
         "${ invitedMemberCount } käyttäjän on hyväksyttävä kutsunsa, jotta hän voi alkaa vastaanottaa ryhmäsähköposteja.",
         "${ invitedMemberCount } käyttäjän on hyväksyttävä kutsunsa, jotta he voi alkaa vastaanottaa ryhmäsähköposteja."
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
-        "${ LUMO_APP_NAME } sisältää ${ BRAND_NAME } Scribe-kirjoitusavustajan"
+        "${ LUMO_APP_NAME } sisältää ${ BRAND_NAME } Scribe -kirjoitusavustajan"
       ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } ja ${ CALENDAR_APP_NAME }"
@@ -6823,9 +6829,9 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "Elinikäisellä ${ PASS_SHORT_APP_NAME }-sopimuksella ei ole uudistushintaa, vaan se on kertaluonteinen maksu ${ PASS_SHORT_APP_NAME }in elinikäisestä käyttöoikeudesta. ${ planTitle }-tilauksesi uudistushinta ja -päivä pysyvät ennallaan."
       ],
-      "${ pendingAdminApprovalCount } new member added via your identity provider and pending review.": [
-        "${ pendingAdminApprovalCount } uusi jäsen on lisätty identiteetin tarjoajan kautta, ja heidän hyväksyntänsä on vielä vireillä.",
-        "${ pendingAdminApprovalCount } uutta jäsenta on lisätty identiteetin tarjoajan kautta, ja heidän hyväksyntänsä on vielä vireillä."
+      "${ pendingKeysMemberCount } new member added via your identity provider and pending review.": [
+        "${ pendingKeysMemberCount } uusi jäsen on lisätty identiteetintarjoajasi kautta ja odottaa vielä vahvistusta.",
+        "${ pendingKeysMemberCount } uusi jäsentä on lisätty identiteetintarjoajasi kautta ja odottaa vielä vahvistusta."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vaatii ainakin yhden oman palvelimen ${ serverPricePerMonth }"
@@ -6912,7 +6918,7 @@
         "${ vaultLink } päivitettiin"
       ],
       "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
-        "${ VPN_SHORT_APP_NAME } piilottaa tietoliikenteenne. ${ PASS_SHORT_APP_NAME } piilottaa henkilöllisyytenne\n— rajoittamattomat **hide-my-email-aliakset** ja **pimeän verkon hälytykset**, jos tietonne vuotavat."
+        "${ VPN_SHORT_APP_NAME } piilottaa tietoliikenteesi, ${ PASS_SHORT_APP_NAME } henkilöllisyytesi\n— Rajattomasti **hide-my-email-aliaksia** ja **pimeän verkon hälytykset**, jos tietosi vuotavat."
       ],
       "${ vpnPlus } required for Country level connection.": [
         "Maakohtaiset yhteydet edellyttävät ${ vpnPlus } -tilausta."
@@ -7292,6 +7298,9 @@
       ],
       "Choose a plan that works best for you.": [
         "Valitse tilaus, joka sopii sinulle parhaiten."
+      ],
+      "Choose a strong ${ BRAND_NAME } password and don’t reuse it for other accounts.": [
+        "Valitse vahva ${ BRAND_NAME }-salasana äläkä käytä sitä muille tunnuksille."
       ],
       "Choose an Entity ID to continue.": [
         "Valitse entiteetti-ID jatkaaksesi."
@@ -7844,6 +7853,9 @@
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Jos menetät todennuslaitteesi, voit kirjautua tilillesi käyttäen näitä koodeja 6-numeroisen vahvistuskoodin sijaan. Koodit ovat kertakäyttöisiä."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Jos et voi käyttää tunnistautumissovellustasi, voit käyttää yhtä kuudestatoista varakoodistasi, jotka sait määrittäessäsi kaksivaiheisen tunnistautumisen. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Jos jatkat alennusta, menetät maksullisten ${ MAIL_APP_NAME } ja ${ VPN_APP_NAME } -ominaisuuksien käyttöoikeuden."
@@ -8694,7 +8706,7 @@
         "Symbolit (#$&)"
       ],
       "Synced from identity provider": [
-        "Synkronoitu identiteetin tarjoajalta"
+        "Synkronoitu identiteetintarjoajalta"
       ],
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "TechRadar Pro -suositus arvosanalla 4,2/5 tähteä"
@@ -9063,7 +9075,7 @@
         "Poista kaksivaiheinen tunnistautuminen käytöstä palautustapaa käyttämällä."
       ],
       "Use multiple email addresses with ${ MAIL_APP_NAME }. Add a new ${ BRAND_NAME } address or connect another email account to manage everything from one inbox.": [
-        "Käyttäkää useita sähköpostiosoitteita ${ MAIL_APP_NAME }-sovelluksessa. Lisätkää uusi ${ BRAND_NAME }-osoite tai yhdistäkää toinen sähköpostitili hallinnoidaksenne kaikkea yhdestä saapuneet-kansiosta."
+        "Käytä useita sähköpostiosoitteita ${ MAIL_APP_NAME }in kautta. Lisää uusi ${ BRAND_NAME }-osoite tai yhdistä toinen sähköpostitili hallinnoidaksesi kaikkea yhdestä postilaatikosta."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Käytä nykyisen kuormituksen ja sijainnin perusteella parasta palvelinta: ${ formattedBestServerName }"
@@ -9249,7 +9261,7 @@
         "Salatulla ${ BRAND_NAME }-osoitteella voit käyttää kaikkia ${ BRAND_NAME }-palveluita"
       ],
       "With email categories, important messages land in a primary inbox. Everything else is organized into categories.": [
-        "Sähköpostiluokkien avulla tärkeät viestit saapuvat ensisijaiseen saapuneet-kansioon. Kaikki muu lajitellaan luokkiin."
+        "Viestikategorioiden avulla tärkeät viestit saapuvat ensisijaiseen Saapuneet-kansioon ja kaikki muut luokitellaan kategorioihin."
       ],
       "With groups, you can implement the company security policies for access control and reduce the risk of accessing unauthorised data.": [
         "Ryhmien avulla voit ottaa käyttöön yrityksen tietoturvakäytännöt käyttöoikeuksien hallintaan ja vähentää luvattoman tiedon käytön riskiä."
@@ -9547,6 +9559,9 @@
       "Your phone number will only be used for this one-time verification.": [
         "Puhelinnumeroasi käytetään vain tähän kertaluontoiseen vahvistukseen."
       ],
+      "Your profile and changes to it will be visible to other ${ BRAND_NAME } users.": [
+        "Profiilisi ja sen muutokset näkyvät muille ${ BRAND_NAME }-käyttäjille."
+      ],
       "Your recent changes have been published. They will be visible to users in the next few hours.": [
         "Viimeisimmät muutoksesi on julkaistu. Ne näkyvät käyttäjille muutaman tunnin kuluessa."
       ],
@@ -9757,7 +9772,7 @@
     },
     "label": {
       "Notification phone number": [
-        "Ilmoituspuhelinnumero"
+        "Ilmoitusnumero"
       ],
       "Recovery phone number": [
         "Palautusnumero"
@@ -9822,6 +9837,9 @@
       "Account holder": [
         "Tilinhaltija"
       ],
+      "Account holder name": [
+        "Tilinhaltijan nimi"
+      ],
       "Account storage": [
         "Tilin tallennustila"
       ],
@@ -9877,7 +9895,7 @@
         "Erääntyvä summa"
       ],
       "Anderson": [
-        "Andersson"
+        "Virtanen"
       ],
       "App password": [
         "Sovellussalasana"
@@ -10641,7 +10659,7 @@
         "Kolmansien osapuolten mainokset"
       ],
       "Thomas": [
-        "Tuomas"
+        "Ville"
       ],
       "Time format": [
         "Ajan muoto"
@@ -10937,7 +10955,7 @@
         "Tuki"
       ],
       "Help translate": [
-        "Osallistu käännökseen"
+        "Auta kääntämisessä"
       ],
       "here": [
         "täältä"
@@ -11231,10 +11249,10 @@
     },
     "mail_signup_2024: Info": {
       "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe kirjoitusavustaja"
+        "${ BRAND_NAME } Scribe -kirjoitusavustaja"
       ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
-        "Lisää ${ BRAND_NAME } Scribe kirjoitusavustaja"
+        "Lisää ${ BRAND_NAME } Scribe -kirjoitusavustaja"
       ],
       "Add-on with free trial": [
         "Lisäosa ilmaisella kokeilujaksolla"
@@ -11652,7 +11670,7 @@
     },
     "new_plans: feature": {
       "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe kirjoitusavustaja"
+        "${ BRAND_NAME } Scribe -kirjoitusavustaja"
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } ja ${ PROTON_SENTINEL_NAME }"
@@ -11961,7 +11979,7 @@
         "Selaimella käytettävä dokumenttieditori"
       ],
       "Organize items with multiple vaults": [
-        "Järjestele kohteita useilla holveilla"
+        "Järjestele kohteita useisiin holveihin"
       ],
       "Passkeys supported": [
         "Tuki pääsyavaimille"
@@ -13388,6 +13406,11 @@
         "Sinulla on oltava oikeus käyttää organisaatioavainta suorittaaksesi tämä toiminnon."
       ]
     },
+    "Payment Method": {
+      "Bank Account": [
+        "Pankkitili"
+      ]
+    },
     "Payment method option": {
       "Apple Pay": [
         "Apple Pay"
@@ -13584,6 +13607,9 @@
       "Invalid security code": [
         "Virheellinen turvakoodi"
       ],
+      "Please enter the account holder name": [
+        "Syötä tilinhaltijan nimi"
+      ],
       "Something went wrong. Please try again later.": [
         "Jotain meni pieleen. Yritä myöhemmin uudelleen."
       ],
@@ -13729,7 +13755,7 @@
         "Osoite"
       ],
       "Anderson": [
-        "Andersson"
+        "Virtanen"
       ],
       "Anything you'd like us to know": [
         "Haluatteko kertoa meille jotain muuta"
@@ -13768,10 +13794,10 @@
         "Esim. "
       ],
       "e.g., AT#62": [
-        "esim. AT#62"
+        "esim. FI#54"
       ],
       "End date": [
-        "Lopetuspäivä"
+        "Päättymispäivä"
       ],
       "Enter a name": [
         "Syötä nimi"
@@ -13822,7 +13848,7 @@
         "Etsi käyttäjää tai osoitetta"
       ],
       "Search for an email or IP address": [
-        "Etsi käyttäjää tai IP-osoitetta"
+        "Etsi sähköposti- tai IP-osoitetta"
       ],
       "Search for users or addresses": [
         "Etsi käyttäjiä tai osoitteita"
@@ -13852,10 +13878,10 @@
         "Valitse osavaltio"
       ],
       "Start date": [
-        "Alkupäivä"
+        "Aloituspäivä"
       ],
       "Thomas": [
-        "Tuomas"
+        "Ville"
       ],
       "VAT number": [
         "ALV-numero"
@@ -14088,6 +14114,54 @@
         "KESÄALE"
       ]
     },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "Hanki tarjous"
+      ],
+      "Special Offer": [
+        "Erikoistarjous"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "/month": [
+        "/kk"
+      ],
+      "2 individual accounts": [
+        "Kaksi erillistä tiliä"
+      ],
+      "2 TB of secure storage": [
+        "2 Tt suojattua tallennustilaa"
+      ],
+      "3 TB of secure storage": [
+        "3 Tt suojattua tallennustilaa"
+      ],
+      "500 GB of secure storage": [
+        "500 Gt suojattua tallennustilaa"
+      ],
+      "6 individual accounts": [
+        "Kuusi erillistä tiliä"
+      ],
+      "Advanced protection against cyber threats": [
+        "Edistynyt suoja kyberuhkia vastaan"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Alennukset perustuvat kuukausittaiseen vakiohinnoitteluun. Tilauksesi uusiutuu normaaliin vuosihintaan, kun laskutusjakso päättyy."
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "12 kuukaudeksi"
+      ],
+      "One plan, full power": [
+        "Yksi tilaus, täysi teho"
+      ],
+      "One plan, max savings": [
+        "Yksi tilaus, mehevämmät säästöt"
+      ],
+      "One plan, more power": [
+        "Yksi tilaus, enemmän tehoa"
+      ]
+    },
     "Recovery Email": {
       "Cancel": [
         "Peruuta"
@@ -14315,7 +14389,7 @@
     },
     "RecoveryPhrase: Info": {
       "**Make sure you keep your recovery phrase accessible after creating it.** For security reasons, we do not store the phrase after saving your changes, and you won’t be able to see it again in the ${ BRAND_NAME } app.": [
-        "**Varmistakaa, että pidätte palautuslauseenne saatavilla sen luomisen jälkeen.** Turvallisuussyistä emme tallenna lausetta muutosten tallentamisen jälkeen, ettekä voi nähdä sitä uudelleen ${ BRAND_NAME }-sovelluksessa."
+        "**Tallenna palautuslauseesi varmaan paikkaan, kun se on luotu.** Turvallisuussyistä sitä ei tallenneta muutosten yhteydessä, etkä voi nähdä sitä uudelleen ${ BRAND_NAME }-sovelluksessa."
       ],
       "copy recovery phrase": [
         "kopioi palautuslause"
@@ -14592,7 +14666,7 @@
         "Etsi sääntöä, käyttäjiä, ajanjaksoa, toimintoa"
       ],
       "Search policies": [
-        "Hae käytäntöjä"
+        "Hakukäytännöt"
       ]
     },
     "retention_policy_2025_TableHeader": {
@@ -14908,7 +14982,7 @@
         "Varmistaaksesi tilisi mahdollisimman korkean turvallisuustason, poista käytöstä palautus sähköpostin ja tekstiviestin kautta."
       ],
       "To make sure that you can always access your ${ BRAND_NAME } Account, download your recovery phrase.": [
-        "Varmistaaksenne, että voitte aina käyttää ${ BRAND_NAME }-tiliänne, ladatkaa palautuslauseenne."
+        "Varmistaaksesi pääsysi ${ BRAND_NAME }-tilillesi, lataa palautuslauseesi."
       ],
       "You have recommended actions from ${ PROTON_SENTINEL_NAME }": [
         "Teillä on suositeltuja toimenpiteitä palvelulta ${ PROTON_SENTINEL_NAME }"
@@ -15488,7 +15562,7 @@
         "Hanki rajattomasti aliaksia suojellaksesi henkilöllisyyttäsi ja vähentääksesi roskapostia."
       ],
       "Keep your passwords safe and organized in multiple vaults": [
-        "Pidä salasanasi turvassa ja järjestettynä useissa holveissa"
+        "Pidä salasanasi turvassa ja järjestyksessä useissa holveissa"
       ],
       "Protect your account from threats with Sentinel": [
         "Suojatkaa tilinne uhilta Sentinelin avulla"
@@ -15760,7 +15834,7 @@
         "Käyttäjä ${ user } on nyt kertakirjautumistili. Heidän aiemmasta salasanastaan tuli heidän varasalasanansa."
       ],
       "They will have to sign in again with your identity provider to access ${ BRAND_NAME } services. For this user to be able to sign in, make sure that they exist in your identity provider.": [
-        "Heidän täytyy kirjautua sisään uudelleen tunnistuksentarjoajasi kautta päästäkseen käyttämään ${ BRAND_NAME } -palveluita. Jotta tämä käyttäjä voi kirjautua sisään, varmista, että hänet on luotu tunnistuksentarjoajallesi."
+        "Käyttääkseen ${ BRAND_NAME }in palveluita heidän on kirjauduttava uudelleen identiteetintarjoajasi kautta. Jotta käyttäjä voi kirjautua, varmista että hänet on luotu identiteetintarjoajallesi."
       ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Tämä kirjaa käyttäjän ulos muilta laitteiltaan, ja hänen on luotava uusi varasalasana."
@@ -16964,7 +17038,7 @@
         "${ BRAND_NAME }-tilin salasanasäännöt"
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe kirjoitusavustaja"
+        "${ BRAND_NAME } Scribe -kirjoitusavustaja"
       ],
       "${ feature } is now active": [
         "${ feature } on nyt käytössä"
@@ -16978,7 +17052,7 @@
         "${ friendsSubscribed } ystävää tilannut"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
-        "Kirjoitusavustaja ${ LUMO_SHORT_APP_NAME }"
+        "${ LUMO_SHORT_APP_NAME }-kirjoitusavustaja"
       ],
       "${ PROTON_SENTINEL_NAME } for organizations": [
         "${ PROTON_SENTINEL_NAME } organisaatioille"
@@ -17485,7 +17559,7 @@
         "Lataa sovellukset"
       ],
       "Download your recovery phrase": [
-        "Lataa palautuslauseenne"
+        "Lataa palautuslauseesi"
       ],
       "Downloads": [
         "Lataukset"
@@ -17539,7 +17613,7 @@
         "Sähköposti"
       ],
       "Email categories": [
-        "Sähköpostiluokat"
+        "Viestikategoriat"
       ],
       "Email subscriptions": [
         "Sähköpostitilaukset"
@@ -18231,6 +18305,9 @@
       "User converted to SSO": [
         "Käyttäjä muunnettu SSO:ksi"
       ],
+      "User profile": [
+        "Käyttäjäprofiili"
+      ],
       "Users": [
         "Käyttäjät"
       ],
@@ -18325,7 +18402,7 @@
         "Palautustiedostosi"
       ],
       "Your recovery phrase": [
-        "Palautuslauseenne"
+        "Palautuslauseesi"
       ],
       "Your recovery setup": [
         "Palautusasetuksenne"
@@ -18416,7 +18493,7 @@
         "Gmailin muutos estää ${ BRAND_NAME }:a yhdistämästä. Salli yhteys sähköpostitoiminnon palauttamiseksi"
       ],
       "Added to your plan: ${ mergedAddonTitles }": [
-        "Lisätty tilaukseenne: ${ mergedAddonTitles }"
+        "Lisätty tilaukseesi: ${ mergedAddonTitles }"
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Ylläpitäjät voivat hallita käyttäjätilejä ja antaa ylläpito-oikeuksia muille käyttäjille. Vain ensisijainen ylläpitäjä voi muokata organisaation tilausta."
@@ -18494,10 +18571,10 @@
         "Esimerkiksi **salasana, qwerty**, jne."
       ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
-        "Gmail lajittelee joitakin viestejä automaattisesti kategorioihin kuten Sosiaaliset verkostot ja Tarjoukset. Voit valita minne nämä viestit tuodaan."
+        "Gmail lajittelee joitakin viestejä automaattisesti kategorioihin kuten \"Sosiaaliset verkostot\" ja \"Tarjoukset\". Voit valita minne nämä viestit tuodaan."
       ],
       "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
-        "Identiteetintarjoajan julkinen avain, jota käytetään todentamisvaltuutusten allekirjoittamiseksi. Hae varmenteen tiiviste identiteetintarjoajaltasi."
+        "Identiteetintarjoajan julkinen avain, jota käytetään autentikointiväitteiden allekirjoitukseen. Hae varmenteen hajautusarvo identiteetintarjoajaltasi."
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Mikäli ostit lahjakoodin tai sait sellaisen tueltamme, voit syöttää sen tähän."
@@ -18999,7 +19076,7 @@
         "Pyydetty"
       ],
       "SSO user provided by your identity provider": [
-        "Identiteetintarjoajasi SSO-käyttäjä"
+        "Identiteetintarjoajaltasi peritty SSO-käyttäjä"
       ],
       "User has enabled two-factor authentication with a security key.": [
         "Käyttäjä on ottanut käyttöön kaksivaiheisen tunnistautumisen suojausavaimella."

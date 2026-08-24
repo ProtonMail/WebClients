@@ -189,6 +189,9 @@
       "Protection from cyber attacks": [
         "사이버 공격으로부터 보호"
       ],
+      "Receive misaddressed emails": [
+        "잘못 발송된 메시지 수신"
+      ],
       "Recovery email address": [
         "복구 이메일 주소"
       ],
@@ -1047,6 +1050,9 @@
       ],
       "Pay ${ price } now": [
         "${ price } 결제"
+      ],
+      "Preview logs": [
+        "로그 미리보기"
       ],
       "Previous": [
         "이전"
@@ -6837,6 +6843,9 @@
       "Enjoying ${ planName }?": [
         "${ planName }을(를) 잘 사용하고 계신가요?"
       ],
+      "Invited friends": [
+        "초대된 친구"
+      ],
       "Unlock 4 premium privacy services for just **${ priceString }** more each month": [
         "매달 **${ priceString }**만 더 결제하여 4가지 이상의 프리미엄 개인정보 보호 서비스를 잠금 해제하세요."
       ],
@@ -7261,6 +7270,9 @@
       "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your non-SSO members use two-factor authentication to sign in to your organization.": [
         "SSO를 사용하지 않는 ${ canHaveTwoFAMembersLength }명 중 ${ hasTwoFAMembersLength }명이 조직에 로그인하기 위해 2단계 인증을 사용합니다."
       ],
+      "${ helpTranslateLink } by joining our localization community.": [
+        "Proton 언어 현지화 커뮤니티에 참가하어 ${ helpTranslateLink }."
+      ],
       "${ IDEAL_BRAND_NAME } mark": [
         "${ IDEAL_BRAND_NAME } 마크"
       ],
@@ -7312,8 +7324,8 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "${ PASS_SHORT_APP_NAME } 평생 딜은 갱신 가격이 존재하지 않으며, ${ PASS_SHORT_APP_NAME }의 평생 접근에 대한 일회성 지불입니다. 사용자의 ${ planTitle } 구독 갱신 가격과 날짜는 변경되지 않습니다."
       ],
-      "${ pendingAdminApprovalCount } new member added via your identity provider and pending review.": [
-        "${ pendingAdminApprovalCount }명의 새로운 구성원이 사용자의 신원 공급자에 의거해 추가되었으며 검토 대기 중입니다."
+      "${ pendingKeysMemberCount } new member added via your identity provider and pending review.": [
+        "${ pendingKeysMemberCount }명의 새로운 구성원이 사용자의 신원 공급자에 의거해 추가되었으며 검토 대기 중입니다."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title }은 최소 1개 이상 전용 서버가 필요합니다 ${ serverPricePerMonth }"
@@ -7782,6 +7794,9 @@
       ],
       "Choose a plan that works best for you.": [
         "당신에게 가장 적합한 플랜을 선택하세요."
+      ],
+      "Choose a strong ${ BRAND_NAME } password and don’t reuse it for other accounts.": [
+        "강력한 ${ BRAND_NAME } 비밀번호를 사용하여 다른 계정과 중복된 비밀번호의 사용을 방지하세요."
       ],
       "Choose an Entity ID to continue.": [
         "계속하려면 Entity ID를 선택하세요."
@@ -8389,6 +8404,9 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "2단계 인증 기기를 분실한 경우, 6자리 인증코드 대신 이 코드들을 사용하여 계정에 로그인 할 수 있습니다. 각 코드는 한번씩만 사용이 가능합니다."
       ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "인증 앱에 접근할 수 없는 경우, 2단계 인증을 설정할 때 제공된 16개의 백업 복구 코드 중 1개를 사용할 수 있습니다. ${ learnMoreLink }"
+      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "다운그레이드를 진행하면 ${ MAIL_APP_NAME } 과 ${ VPN_APP_NAME } 의 유료 기능을 사용할 수 없습니다."
       ],
@@ -8631,6 +8649,9 @@
       ],
       "Loading...": [
         "불러오는 중..."
+      ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "로그는 개발자가 문제가 발생하기 전에 앱에 어떤 문제가 발생했는지 이해할 수 있는데 도움을 줍니다. 로그에는 앱 동작 및 오류 메시지가 포함되오나, 메시지 내용은 포함되지 않습니다."
       ],
       "Low Priority": [
         "중요도 낮음"
@@ -10171,6 +10192,9 @@
       "Your phone number will only be used for this one-time verification.": [
         "회원님의 전화번호는 이번 인증에만 사용됩니다."
       ],
+      "Your profile and changes to it will be visible to other ${ BRAND_NAME } users.": [
+        "사용자의 프로필 및 변경 사항이 다른 ${ BRAND_NAME } 사용자에게 보여집니다."
+      ],
       "Your recent changes have been published. They will be visible to users in the next few hours.": [
         "최근 변경 사항이 게시되었습니다. 몇 시간 내로 다른 사용자에게 반영되어 표시됩니다."
       ],
@@ -11569,7 +11593,7 @@
         "지원"
       ],
       "Help translate": [
-        "번역 돕기"
+        "번역을 도와주세요"
       ],
       "here": [
         "지원 문서 보기"
@@ -14739,6 +14763,79 @@
       ],
       "SUMMER SALE": [
         "여름 세일"
+      ]
+    },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "특가로 구매"
+      ],
+      "Special Offer": [
+        "특가 할인"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "/month": [
+        "/월"
+      ],
+      "2 individual accounts": [
+        "개별 계정 2개"
+      ],
+      "2 TB of secure storage": [
+        "2TB 보안 스토리지"
+      ],
+      "3 TB of secure storage": [
+        "3TB 보안 스토리지"
+      ],
+      "500 GB of secure storage": [
+        "500GB 보안 스토리지"
+      ],
+      "6 individual accounts": [
+        "개별 계정 6개"
+      ],
+      "Advanced protection against cyber threats": [
+        "사이버 위협에 대한 고급 보호"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "할인은 표준 월간 요금을 기준으로 합니다. 결제일이 종료되면 구독은 표준 연간 요금으로 갱신됩니다."
+      ]
+    },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "프리미엄 ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, 및 ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "프리미엄 ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, 및 ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "프리미엄 ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "프리미엄 ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "프리미엄 ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, 및 ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "12개월 플랜"
+      ],
+      "One plan, full power": [
+        "하나의 플랜에서 더 많은 가능성을"
+      ],
+      "One plan, max savings": [
+        "단 하나의 요금제, 압도적인 비용 절감"
+      ],
+      "One plan, more power": [
+        "하나의 플랜에서 더 많은 가능성을"
       ]
     },
     "Recovery Email": {
@@ -18676,6 +18773,9 @@
       "Send new invite?": [
         "새로운 초대 보내기?"
       ],
+      "September Sale": [
+        "9월 할인"
+      ],
       "Service": [
         "서비스"
       ],
@@ -18912,6 +19012,9 @@
       ],
       "User converted to SSO": [
         "사용자가 SSO로 전환됨"
+      ],
+      "User profile": [
+        "사용자 프로필"
       ],
       "Users": [
         "사용자"
@@ -19346,6 +19449,9 @@
     "Tooltip for members table": {
       "Last time this user connected to one of your organization's Gateways.": [
         "해당 사용자는 조직 게이트웨이에 마지막으로 접근했습니다."
+      ],
+      "Last time this user signed in or used the ${ VPN_APP_NAME } app on their device.": [
+        "이 사용자가 다른 기기에서 마지막으로 ${ VPN_APP_NAME } 앱에 로그인했거나 사용한 시간입니다."
       ]
     },
     "Tor out of date": {
