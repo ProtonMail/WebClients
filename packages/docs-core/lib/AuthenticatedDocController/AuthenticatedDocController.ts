@@ -33,6 +33,12 @@ import type { WebsocketConnectionEventPayloads } from '../Realtime/WebsocketEven
 import { obfuscateUpdate } from 'yjs'
 import { downloadUpdateTimeline, getUpdateTimeline } from '../utils/create-update-timeline'
 import { getBufferHash } from '../utils/hash'
+import {
+  reportTrashError,
+  restoreDocument as restoreDocumentSDK,
+  trashDocument as trashDocumentSDK,
+} from '../DriveSDK/trash'
+import { generateNodeUid } from '@proton/drive'
 
 // This is part of a hack to make sure the name in the document sharing modal is updated when the document name changes.
 // While having these module-scoped variable here looks a bit stinky, it's completely fine because the purpose is to prevent a
@@ -427,13 +433,23 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
     }
   }
 
-  public async trashDocument(): Promise<void> {
+  public async trashDocument(useSDK = false): Promise<void> {
     this.documentState.setProperty('documentTrashState', 'trashing')
 
     try {
       const decryptedNode = this.documentState.getProperty('decryptedNode')
-      const parentLinkId = decryptedNode.parentNodeId || (await this.driveCompat.getMyFilesNodeMeta()).linkId
-      await this.driveCompat.trashDocument(this.documentState.getProperty('entitlements').nodeMeta, parentLinkId)
+
+      if (useSDK) {
+        try {
+          await trashDocumentSDK(generateNodeUid(decryptedNode.volumeId, decryptedNode.nodeId))
+        } catch (error) {
+          reportTrashError(error)
+          throw error
+        }
+      } else {
+        const parentLinkId = decryptedNode.parentNodeId || (await this.driveCompat.getMyFilesNodeMeta()).linkId
+        await this.driveCompat.trashDocument(this.documentState.getProperty('entitlements').nodeMeta, parentLinkId)
+      }
 
       await this.refreshNodeAndDocMeta({ imposeTrashState: 'trashed' })
 
@@ -448,25 +464,33 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
     }
   }
 
-  public markAsTrashed() {
-    this.documentState.setProperty('documentTrashState', 'trashed')
-    this.didTrashDocInCurrentSession = true
-  }
-
-  public markAsRestored() {
-    this.documentState.setProperty('documentTrashState', 'not_trashed')
-  }
-
-  public async restoreDocument(): Promise<void> {
+  public async restoreDocument(useSDK = false): Promise<void> {
     this.documentState.setProperty('documentTrashState', 'restoring')
 
     try {
       const decryptedNode = this.documentState.getProperty('decryptedNode')
-      const parentLinkId = decryptedNode.parentNodeId || (await this.driveCompat.getMyFilesNodeMeta()).linkId
-      await this.driveCompat.restoreDocument(this.documentState.getProperty('entitlements').nodeMeta, parentLinkId)
+
+      if (useSDK) {
+        await restoreDocumentSDK(generateNodeUid(decryptedNode.volumeId, decryptedNode.nodeId))
+      } else {
+        const parentLinkId = decryptedNode.parentNodeId || (await this.driveCompat.getMyFilesNodeMeta()).linkId
+        await this.driveCompat.restoreDocument(this.documentState.getProperty('entitlements').nodeMeta, parentLinkId)
+      }
 
       await this.refreshNodeAndDocMeta({ imposeTrashState: 'not_trashed' })
-    } catch (error) {
+    } catch (error: any) {
+      if (useSDK) {
+        if (error.message.includes('Insufficient permissions')) {
+          PostApplicationError(this.eventBus, {
+            translatedError: c('Error')
+              .t`Because this document was in a shared folder, only the folder owner can restore it`,
+          })
+          this.documentState.setProperty('documentTrashState', 'trashed')
+          return
+        }
+        reportTrashError(error)
+      }
+
       this.logger.error(getErrorString(error) ?? 'Failed to restore document')
 
       PostApplicationError(this.eventBus, {
