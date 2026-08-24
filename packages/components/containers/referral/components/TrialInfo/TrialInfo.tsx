@@ -14,6 +14,7 @@ import { getDifferenceInDays } from '@proton/shared/lib/date/date';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
+import SettingsLink from '../../../../components/link/SettingsLink';
 import useSettingsLink from '../../../../components/link/useSettingsLink';
 import Loader from '../../../../components/loader/Loader';
 import ModalTwo from '../../../../components/modalTwo/Modal';
@@ -22,8 +23,8 @@ import ModalTwoFooter from '../../../../components/modalTwo/ModalFooter';
 import ModalTwoHeader from '../../../../components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '../../../../components/modalTwo/useModalState';
 import getBoldFormattedText from '../../../../helpers/getBoldFormattedText';
+import useConfig from '../../../../hooks/useConfig';
 import useDashboardPaymentFlow from '../../../../hooks/useDashboardPaymentFlow';
-import { SettingsLink, useConfig } from '../../../../index';
 import { useSubscriptionModal } from '../../../payments/subscription/SubscriptionModalProvider';
 import { REACTIVATE_SOURCE } from '../../../payments/subscription/cancellationFlow/useCancellationTelemetry';
 import { SUBSCRIPTION_STEPS } from '../../../payments/subscription/constants';
