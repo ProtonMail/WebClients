@@ -130,9 +130,8 @@ const SubscriptionCheckoutPaymentSection = ({
             }
 
             tracePaymentError(e, {
-                tags: {
-                    component: 'account-lite-subscription-checkout-payment-section',
-                },
+                component: 'account-lite-subscription-checkout-payment-section',
+                subscription,
                 extra: {
                     app: appName,
                     step: SUBSCRIPTION_STEPS.CHECKOUT,
