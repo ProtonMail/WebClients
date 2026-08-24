@@ -7,10 +7,10 @@ import { useModalStateObject } from '@proton/components';
 
 import { getMessageBlocks } from '../../../../../messageHelpers';
 import type { Message } from '../../../../../types';
+import { isTrustedProtonLink, openTrustedLink } from '../../../../../util/trustedLinks';
 import { useNativeComposerVisibilityApi } from '../../../../Composer/hooks/useNativeComposerVisibilityApi';
 import { LumoIcon } from '../../../../LumoIcon/LumoIcon';
 import LinkWarningModal from '../../../../Modals/LinkWarningModal';
-import { isTrustedProtonLink, openTrustedLink } from '../../../../../util/trustedLinks';
 import { ToolCallInfo } from './ToolCallInfo';
 import { extractSearchResults } from './toolCallUtils';
 
@@ -21,7 +21,7 @@ interface WebSearchSourcesViewProps {
 }
 
 export const WebSearchSourcesView = ({ message, sourcesContainerRef, onClose }: WebSearchSourcesViewProps) => {
-    useNativeComposerVisibilityApi({ isBlocking: true });
+    useNativeComposerVisibilityApi({ hideComposer: true });
     const [currentLink, setCurrentLink] = useState<string>('');
     const linkWarningModal = useModalStateObject();
     const searchResults = useMemo(
