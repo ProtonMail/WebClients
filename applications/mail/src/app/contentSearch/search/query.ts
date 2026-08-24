@@ -8,7 +8,7 @@ function createBasicQuery(query: string): Expression {
 }
 
 function createExtentedQuery(params: {
-    keywords: string;
+    keywords?: string;
     sender?: string;
     recipient?: string;
     addressId?: string;
@@ -17,27 +17,33 @@ function createExtentedQuery(params: {
     labelIds?: string[];
     hasAttachments?: boolean;
 }): Expression {
-    let exp = undefined;
-    try {
-        exp = Expression.parse(params.keywords);
-    } catch {
-        exp = createBasicQuery(params.keywords);
+    let exp: Expression | undefined = undefined;
+    const and = (partialExp: Expression): Expression => {
+        return exp ? exp.and(partialExp) : partialExp;
+    };
+
+    if (params.keywords !== undefined) {
+        try {
+            exp = and(Expression.parse(params.keywords));
+        } catch {
+            exp = and(createBasicQuery(params.keywords));
+        }
     }
 
     if (params.sender !== undefined) {
-        exp = exp.and(Expression.attr('sender', Func.Equals, TermValue.text(params.sender)));
+        exp = and(Expression.attr('sender', Func.Equals, TermValue.text(params.sender)));
     }
     if (params.recipient !== undefined) {
-        exp = exp.and(Expression.attr('recipient', Func.Equals, TermValue.text(params.recipient)));
+        exp = and(Expression.attr('recipient', Func.Equals, TermValue.text(params.recipient)));
     }
     if (params.addressId !== undefined) {
-        exp = exp.and(Expression.attr('addressId', Func.Equals, TermValue.text(params.addressId)));
+        exp = and(Expression.attr('addressId', Func.Equals, TermValue.text(params.addressId)));
     }
     if (params.afterDate !== undefined) {
-        exp = exp.and(Expression.attr('time', Func.GreaterThanOrEqual, TermValue.int(BigInt(params.afterDate))));
+        exp = and(Expression.attr('time', Func.GreaterThanOrEqual, TermValue.int(BigInt(params.afterDate))));
     }
     if (params.beforeDate !== undefined) {
-        exp = exp.and(Expression.attr('time', Func.LessThanOrEqual, TermValue.int(BigInt(params.beforeDate))));
+        exp = and(Expression.attr('time', Func.LessThanOrEqual, TermValue.int(BigInt(params.beforeDate))));
     }
     if (params.labelIds !== undefined) {
         const labelsExp = params.labelIds.reduce(
@@ -48,18 +54,23 @@ function createExtentedQuery(params: {
             undefined as Expression | undefined
         );
         if (labelsExp) {
-            exp = exp.and(labelsExp);
+            exp = and(labelsExp);
         }
     }
     if (params.hasAttachments !== undefined) {
-        exp = exp.and(Expression.attr('hasAttachments', Func.Equals, TermValue.bool(params.hasAttachments)));
+        exp = and(Expression.attr('hasAttachments', Func.Equals, TermValue.bool(params.hasAttachments)));
     }
-    return exp;
+    if (exp) {
+        return exp;
+    } else {
+        // this won't match anything
+        return Expression.parse('');
+    }
 }
 
-export const buildQuery = (params: NormalizedSearchParams) =>
-    createExtentedQuery({
-        keywords: params.search.keyword ?? params.normalizedKeywords?.join(' ') ?? '',
+export const buildQuery = (params: NormalizedSearchParams) => {
+    return createExtentedQuery({
+        keywords: params.search.keyword,
         sender: params.search.from,
         recipient: params.search.to,
         afterDate: params.search.begin,
@@ -68,3 +79,4 @@ export const buildQuery = (params: NormalizedSearchParams) =>
         addressId: params.search.address,
         hasAttachments: params.filter.Attachments === 1 ? true : undefined,
     });
+};

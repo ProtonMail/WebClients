@@ -31,6 +31,7 @@ export const normaliseSearchParams = ({ searchParams, labelID, categoryIDs, filt
     const normalisedSearchParams: NormalizedSearchParams = {
         labelIDs,
         search: {
+            keyword,
             from: from ? from.toLocaleLowerCase() : undefined,
             to: to ? to.toLocaleLowerCase() : undefined,
             ...otherParams,
