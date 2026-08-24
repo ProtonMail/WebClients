@@ -20,6 +20,7 @@ describe('IndexWriter integration', () => {
     let engine: ReturnType<typeof Engine.builder.prototype.build>;
     let blobStore: IndexBlobStore;
     let writer: IndexWriter;
+    let onDocumentCountUpdate: jest.Mock<Promise<void>, [number]>;
 
     beforeEach(async () => {
         indexedDB = new IDBFactory();
@@ -27,7 +28,8 @@ describe('IndexWriter integration', () => {
         engine = Engine.builder().build();
         const cryptoKey = await generateAndImportKey();
         blobStore = new IndexBlobStore(IndexKind.MAIN, db, cryptoKey);
-        writer = new IndexWriter(engine, blobStore);
+        onDocumentCountUpdate = jest.fn().mockResolvedValue(undefined);
+        writer = new IndexWriter(engine, blobStore, onDocumentCountUpdate);
     });
 
     afterEach(() => {
@@ -254,7 +256,7 @@ describe('IndexWriter integration', () => {
             expect(freeSpy).toHaveBeenCalledTimes(1);
         });
 
-        it('commit only calls WriteEvent.free() for Stats events, not Load/Save', async () => {
+        it('commit never calls WriteEvent.free() — every event kind is consumed', async () => {
             const writeEventFreeSpy = jest.spyOn(WriteEvent.prototype, 'free');
             const saveSpy = jest.spyOn(blobStore, 'saveEvent');
 
@@ -262,12 +264,10 @@ describe('IndexWriter integration', () => {
             session.insert(makeTestIndexEntry('doc-1'));
             await session.commit();
 
-            // Load/Save events are consumed via __destroy_into_raw (send/recv).
-            // Only Stats events use explicit .free(). Verify free() is called fewer
-            // times than there are total events (save + load + stats).
-            const saveCallCount = saveSpy.mock.calls.length;
-            expect(saveCallCount).toBeGreaterThan(0);
-            expect(writeEventFreeSpy.mock.calls.length).toBeLessThan(saveCallCount);
+            // Load/Save events are consumed via __destroy_into_raw (send/recv), and Stats events
+            // are consumed via .stats() (reading the document count). None call .free() directly.
+            expect(saveSpy.mock.calls.length).toBeGreaterThan(0);
+            expect(writeEventFreeSpy).not.toHaveBeenCalled();
         });
 
         it('dispose calls Write.free()', () => {
@@ -323,6 +323,27 @@ describe('IndexWriter integration', () => {
 
             // No Execution was created, so its free() should not be called
             expect(executionFreeSpy).not.toHaveBeenCalled();
+        });
+    });
+
+    describe('document count', () => {
+        it('calls onDocumentCountUpdate with the document count after a commit', async () => {
+            const session = writer.startWriteSession();
+            session.insert(makeTestIndexEntry('doc-1'));
+            session.insert(makeTestIndexEntry('doc-2'));
+            await session.commit();
+
+            expect(onDocumentCountUpdate).toHaveBeenCalledWith(2);
+        });
+
+        it('an onDocumentCountUpdate rejection does not fail the commit', async () => {
+            onDocumentCountUpdate.mockRejectedValueOnce(new Error('quota exceeded'));
+
+            const session = writer.startWriteSession();
+            session.insert(makeTestIndexEntry('doc-1'));
+
+            await expect(session.commit()).resolves.toBeUndefined();
+            expect(onDocumentCountUpdate).toHaveBeenCalledWith(1);
         });
     });
 
