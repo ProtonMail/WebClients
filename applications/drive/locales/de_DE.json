@@ -462,7 +462,7 @@
         "Verschlüsselt"
       ],
       "Expand folder": [
-        "Ordner ausklappen"
+        "Ordner aufklappen"
       ],
       "Explore more": [
         "Mehr entdecken"
@@ -1338,6 +1338,12 @@
       ],
       "Preview logs": [
         "Protokollvorschau"
+      ],
+      "Windows 11 (ARM64)": [
+        "Windows 11/ (ARM64)"
+      ],
+      "Windows 11/10 (x64)": [
+        "Windows 11/10 (x64)"
       ]
     },
     "Action: Docs": {
@@ -4079,7 +4085,7 @@
         "Überprüfungsfehler"
       ],
       "We cannot retrieve this item": [
-        "Dieses Element konnte nicht abgerufen werden"
+        "Dieser Eintrag konnte nicht abgerufen werden"
       ],
       "We were not able to load some invitations": [
         "Wir konnten einige deiner Einladungen nicht laden."
@@ -5002,7 +5008,7 @@
         "Kontakte"
       ],
       "Create new album": [
-        "Neues Album erstellen"
+        "Erstelle neues Album"
       ],
       "Create new shared album": [
         "Neues geteiltes Album erstellen"
@@ -5028,8 +5034,8 @@
     },
     "Heading": {
       "Add ${ photoCount } photo to": [
-        "Füge ${ photoCount } Foto zu",
-        "Füge ${ photoCount } Fotos zu"
+        "${ photoCount } Foto hinzufügen zu",
+        "${ photoCount } Fotos hinzufügen zu"
       ],
       "Add to shared album": [
         "Zu geteiltem Album hinzufügen"
@@ -5041,8 +5047,8 @@
         "Kürzlich"
       ],
       "Share ${ photoCount } photo via": [
-        "Teile ${ photoCount } Foto mit",
-        "Teile ${ photoCount } Fotos mit"
+        "Teile ${ photoCount } Foto über",
+        "Teile ${ photoCount } Fotos über"
       ]
     },
     "Hint": {
@@ -5511,8 +5517,8 @@
         "${ pausedCount } pausiert"
       ],
       "${ photoCount } item": [
-        "${ photoCount } Eintrag",
-        "${ photoCount } Einträge"
+        "${ photoCount } Element",
+        "${ photoCount } Elemente"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } erfordert mindestens einen dedizierten Server ${ serverPricePerMonth }"
@@ -5978,7 +5984,7 @@
         "Das Downgraden beendet alle Verbindungen zu kostenpflichtigen ${ VPN_APP_NAME }-Servern."
       ],
       "Download ${ name } app": [
-        "${ name } herunterladen"
+        "${ name }-App herunterladen"
       ],
       "Download current logs": [
         "Aktuelle Protokolle herunterladen"
@@ -6005,7 +6011,7 @@
         "Ziehe Dateien hierher, um sie hochzuladen"
       ],
       "Drop files here": [
-        "Lege Dateien hier ab"
+        "Dateien hier hinziehen"
       ],
       "Drop files here to upload or click on the upload button": [
         "Lege Dateien zum Hochladen hier ab oder klicke auf den Upload-Button"
@@ -6135,7 +6141,7 @@
         "Ordner wird nicht hochgeladen"
       ],
       "Folders you sync from your computer will appear here.": [
-        "Hier werden die Ordner angezeigt, die du von deinem Computer aus synchronisierst."
+        "Ordner, die du von deinem Computer synchronisierst, werden hier angezeigt."
       ],
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Die besten Ergebnisse können erzielt werden, indem du Streaming und speicherintensive Aktivitäten vermeidest oder Uploads in kleinere Stapel aufteilst."
@@ -6144,7 +6150,7 @@
         "Kostenlose 5 GB verschlüsselter Speicherplatz für den Anfang"
       ],
       "from the version history?": [
-        "dauerhaft aus dem Versionsverlauf löschen möchtest?"
+        "Aus dem Versionsverlauf?"
       ],
       "Geoblocking": [
         "Geoblockierung"
@@ -6298,7 +6304,7 @@
         "Jul"
       ],
       "Jun": [
-        "Juni"
+        "Jun"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Bestätige einfach deine Auswahl und wir übernehmen den Rest."
@@ -6370,7 +6376,7 @@
         "Malware erkannt"
       ],
       "Mar": [
-        "März"
+        "Mrz"
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode Logo"
@@ -6536,7 +6542,7 @@
         "Foto ist nicht in deiner Bibliothek gespeichert"
       ],
       "Photo is set as album cover": [
-        "Foto ist als Album-Titelbild gesetzt"
+        "Foto ist als Album-Titelbild eingerichtet"
       ],
       "Photo was copied to stream and marked favorite there.": [
         "Foto wurde in den Stream kopiert und dort als Favorit markiert."
@@ -6693,7 +6699,7 @@
         "Fotos werden wiederhergestellt... bitte behalte den Tab offen."
       ],
       "Running diagnostics...": [
-        "Diagnose wird ausgeführt ..."
+        "Diagnose wird ausgeführt..."
       ],
       "Saving...": [
         "Wird gespeichert..."
@@ -6726,13 +6732,13 @@
         "Wähle ein Zielverzeichnis für das Verschieben aus."
       ],
       "Select all items for": [
-        "Wähle alle Elemente aus für"
+        "Alle Einträge auswählen für"
       ],
       "Select an uploaded file or folder and create a link to it.": [
         "Wähle eine hochgeladene Datei oder einen Ordner aus und erstelle einen Link dazu."
       ],
       "Select item": [
-        "Element auswählen"
+        "Eintrag auswählen"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Wähle das Nachrichtenformat, das standardmäßig verwendet werden soll, wenn eine Nachricht an diese E-Mail-Adresse gesendet wird."
@@ -7157,7 +7163,7 @@
         "Version gelöscht"
       ],
       "Version is restored": [
-        "Version wiederhergestellt."
+        "Version wiederhergestellt"
       ],
       "Version number successfully copied to clipboard": [
         "Versionsnummer erfolgreich in die Zwischenablage kopiert"
@@ -8562,7 +8568,7 @@
         "Bild hochladen"
       ],
       "Upload your first file": [
-        "Lade deine erste Datei hoch"
+        "Deine erste Datei hochladen"
       ],
       "Uploaded by": [
         "Hochgeladen von"
@@ -8649,7 +8655,7 @@
         "Durchsuchbar"
       ],
       "User opted in": [
-        "Nutzer hat zugestimmt"
+        "Benutzer hat zugestimmt"
       ],
       "Visible columns:": [
         "Sichtbare Spalten:"
@@ -8658,10 +8664,10 @@
         "${ downloads } Downloads"
       ],
       "Created ${ created }": [
-        "Erstellt ${ created }"
+        "${ created } erstellt"
       ],
       "Deleted ${ deleted }": [
-        "Gelöscht ${ deleted }"
+        "${ deleted } gelöscht"
       ],
       "Device #${ position }": [
         "Gerätenummer ${ position }"
@@ -8673,7 +8679,7 @@
         "Am ${ formatted } abgelaufen"
       ],
       "Expires ${ formatted }": [
-        "Läuft ab ${ formatted }"
+        "Läuft ab am ${ formatted }"
       ],
       "Item #${ position }": [
         "Eintragsnummer ${ position }"
@@ -8682,7 +8688,7 @@
         "Standort: ${ item.location }"
       ],
       "Modified ${ modified }": [
-        "Bearbeitet ${ modified }"
+        "Bearbeitet am ${ modified }"
       ],
       "Never expires": [
         "Läuft nie ab"
@@ -10496,8 +10502,8 @@
         "${ numberOfItems } Einträge erfolgreich kopiert"
       ],
       "${ numberOfItems } item successfully moved": [
-        "${ numberOfItems } Element erfolgreich verschoben",
-        "${ numberOfItems } Elemente erfolgreich verschoben"
+        "${ numberOfItems } Eintrag erfolgreich verschoben",
+        "${ numberOfItems } Einträge erfolgreich verschoben"
       ],
       "${ reason } has been disabled": [
         "${ reason } wurde deaktiviert."
@@ -10587,7 +10593,7 @@
         "Ablehnung der Einladung zur gemeinsamen Nutzung fehlgeschlagen"
       ],
       "Failed to remove device": [
-        "Fehler beim Entfernen des Geräts"
+        "Entfernen des Geräts fehlgeschlagen"
       ],
       "Failed to remove the file": [
         "Fehler beim Entfernen der Datei"
@@ -10640,11 +10646,11 @@
       ],
       "Selected item was not removed from your list": [
         "Ausgewählter Eintrag konnte nicht aus deiner Liste entfernt werden.",
-        "Ausgewählte Einträge konnten nicht aus deiner Liste entfernt werden."
+        "Ausgewählte Einträge konnten nicht aus deiner Liste entfernt werden"
       ],
       "Selected item was successfully removed from your list": [
-        "Ausgewählter Eintrag wurde erfolgreich aus deiner Liste entfernt.",
-        "Ausgewählte Einträge wurden erfolgreich aus deiner Liste entfernt."
+        "Ausgewählter Eintrag wurde erfolgreich aus deiner Liste entfernt",
+        "Ausgewählte Einträge wurden erfolgreich aus deiner Liste entfernt"
       ],
       "Selected items were successfully removed from your list": [
         "Ausgewählter Eintrag wurden erfolgreich aus deiner Liste entfernt.",
@@ -10749,8 +10755,8 @@
         "${ errors.length } Einträge konnten nicht gelöscht werden"
       ],
       "${ numberOfItems } item copied": [
-        "${ numberOfItems } Eintrag kopiert",
-        "${ numberOfItems } Einträge kopiert"
+        "${ numberOfItems } Element kopiert",
+        "${ numberOfItems } Elemente kopiert"
       ],
       "${ numberOfItems } item moved": [
         "${ numberOfItems } Eintrag verschoben",
@@ -10930,7 +10936,7 @@
         "Erste Schritte"
       ],
       "Install and continue": [
-        "Installiere und fahre fort"
+        "Installieren und fortfahren"
       ],
       "Install later": [
         "Später installieren"
@@ -10992,7 +10998,7 @@
         "Ziehen und legen Sie Ihre Dateien hier ab"
       ],
       "Edit documents online": [
-        "Bearbeite Dokumente online"
+        "Dokumente online bearbeiten"
       ],
       "End-to-end encrypted storage for your files": [
         "Ende-zu-Ende verschlüsselter Speicher für deine Dateien"
@@ -11058,7 +11064,7 @@
         "Schütze deine Dateien"
       ],
       "Securely share files and folders": [
-        "Teile sicher Dateien und Ordner"
+        "Dateien und Ordner sicher teilen"
       ],
       "Share files & folders": [
         "Dateien & Ordner teilen"
@@ -13499,8 +13505,8 @@
         "Möchtest du die Vorschau wirklich schließen?"
       ],
       "Are you sure you want to remove this item from your list?": [
-        "Bist du dir sicher, dass du diesen Eintrag aus deiner Liste entfernen möchtest?",
-        "Bist du dir sicher, dass du diese Einträge aus deiner Liste entfernen möchtest?"
+        "Bist du dir sicher, dass du dieses Element aus deiner Liste entfernen möchtest?",
+        "Bist du dir sicher, dass du diese Elemente aus deiner Liste entfernen möchtest?"
       ],
       "Are you sure?": [
         "Bist du sicher?"
@@ -14024,7 +14030,7 @@
         "Anzahl Downloads"
       ],
       "Number of items": [
-        "Anzahl der Elemente"
+        "Anzahl Einträge"
       ],
       "One email, many recipients": [
         "Eine E-Mail, viele Empfänger"
@@ -14136,7 +14142,7 @@
         "Ordner umbenennen"
       ],
       "Rename device": [
-        "Gerät umbenennen"
+        "重命名设备"
       ],
       "Report a problem": [
         "Ein Problem melden"
@@ -14157,7 +14163,7 @@
         "Suchergebnisse"
       ],
       "Searching…": [
-        "Suche läuft…"
+        "Suchen..."
       ],
       "Security center": [
         "Sicherheitszentrum"
@@ -14463,7 +14469,7 @@
         "Aktionen"
       ],
       "Global": [
-        "Systemweit"
+        "Global"
       ],
       "Search": [
         "Suchen"
@@ -15268,7 +15274,7 @@
     },
     "q3campaign2026: Action": {
       "Get the deal": [
-        "Hol dir das Angebot"
+        "Deal sichern"
       ],
       "Special Offer": [
         "Sonderangebot"
@@ -15279,7 +15285,7 @@
         "/Monat"
       ],
       "2 individual accounts": [
-        "2 Einzelkonten"
+        "2 individuelle Konten"
       ],
       "2 TB of secure storage": [
         "2 TB sicherer Speicher"
@@ -15288,10 +15294,10 @@
         "3 TB sicherer Speicher"
       ],
       "500 GB of secure storage": [
-        "500 GB sicherer Speicher"
+        "500 GB sicherer Speicherplatz"
       ],
       "6 individual accounts": [
-        "6 Einzelkonten"
+        "6 individuelle Konten"
       ],
       "Advanced protection against cyber threats": [
         "Erweiterter Schutz vor Cyber-Bedrohungen"
@@ -15333,7 +15339,7 @@
         "Ein Abonnement, volle Leistung"
       ],
       "One plan, max savings": [
-        "Ein Abonnement, maximale Ersparnisse"
+        "Ein Abonnement, maximal sparen"
       ],
       "One plan, more power": [
         "Ein Abonnement, mehr Leistung"

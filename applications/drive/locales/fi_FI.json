@@ -6920,7 +6920,7 @@
         "Olet avaamassa uutta selaimen välilehteä sivustolle:"
       ],
       "You are about to open your default browser and visit:": [
-        "Olet avaamassa oletusselaintasi sivustolle:"
+        "Olet avaamassa oletusselaimeesi osoitetta:"
       ],
       "You are currently signed in as ${ username }.": [
         "Olet nyt kirjautuneena ${ username } tilille."
@@ -7457,6 +7457,9 @@
       ],
       "You": [
         "Sinä"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Jos et voi käyttää tunnistautumissovellustasi, voit käyttää yhtä kuudestatoista varakoodistasi, jotka sait määrittäessäsi kaksivaiheisen tunnistautumisen. ${ learnMoreLink }"
       ]
     },
     "info": {
@@ -7615,7 +7618,7 @@
         "Salli muokkaajien muuttaa käyttöoikeuksia ja jakaa sisältöä"
       ],
       "Anderson": [
-        "Andersson"
+        "Virtanen"
       ],
       "Anonymous": [
         "Anonyymi"
@@ -8129,7 +8132,7 @@
         "Tämä poistaa kaikki lukitun levysi tiedostot pysyvästi."
       ],
       "Thomas": [
-        "Tuomas"
+        "Ville"
       ],
       "To: ${ toEmail }": [
         "Vastaanottaja: ${ toEmail }"
@@ -8361,6 +8364,9 @@
       ],
       "Allow editors to change permissions and share.": [
         "Salli muokkaajien muuttaa käyttöoikeuksia ja jakaa sisältöä."
+      ],
+      "Account holder name": [
+        "Tilinhaltijan nimi"
       ]
     },
     "Label for contact group color": {
@@ -10961,6 +10967,9 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Korttiasi ei hyväksytty. Kokeile eri korttia tai ole veloituksen hyväksymisestä yhteydessä pankkiisi."
+      ],
+      "Please enter the account holder name": [
+        "Syötä tilinhaltijan nimi"
       ]
     },
     "Payments.error": {
@@ -11101,7 +11110,7 @@
         "Tapa, jolla tavoitamme sinut"
       ],
       "Anderson": [
-        "Andersson"
+        "Virtanen"
       ],
       "Anytown": [
         "Jokukaupunki"
@@ -11209,7 +11218,7 @@
         "Aloita sähköpostiosoitteen kirjoitus"
       ],
       "Thomas": [
-        "Tuomas"
+        "Ville"
       ],
       "Your organization name": [
         "Organisaatiosi nimi"
@@ -14703,6 +14712,54 @@
       ],
       "name": [
         "nimi"
+      ]
+    },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "Hanki tarjous"
+      ],
+      "Special Offer": [
+        "Erikoistarjous"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "/month": [
+        "/kk"
+      ],
+      "2 individual accounts": [
+        "Kaksi erillistä tiliä"
+      ],
+      "2 TB of secure storage": [
+        "2 Tt suojattua tallennustilaa"
+      ],
+      "3 TB of secure storage": [
+        "3 Tt suojattua tallennustilaa"
+      ],
+      "500 GB of secure storage": [
+        "500 Gt suojattua tallennustilaa"
+      ],
+      "6 individual accounts": [
+        "Kuusi erillistä tiliä"
+      ],
+      "Advanced protection against cyber threats": [
+        "Edistynyt suoja kyberuhkia vastaan"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Alennukset perustuvat kuukausittaiseen vakiohinnoitteluun. Tilauksesi uusiutuu normaaliin vuosihintaan, kun laskutusjakso päättyy."
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "12 kuukaudeksi"
+      ],
+      "One plan, full power": [
+        "Yksi tilaus, täysi teho"
+      ],
+      "One plan, max savings": [
+        "Yksi tilaus, mehevämmät säästöt"
+      ],
+      "One plan, more power": [
+        "Yksi tilaus, enemmän tehoa"
       ]
     }
   }
