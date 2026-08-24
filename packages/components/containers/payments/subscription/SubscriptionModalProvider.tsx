@@ -123,9 +123,8 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
             await withLoadingData(preloadSubscriptionModalData());
         } catch (error) {
             tracePaymentError(error, {
-                tags: {
-                    component: 'SubscriptionModalProvider',
-                },
+                component: 'subscription-modal-provider',
+                subscription,
                 extra: {
                     ...subscriptionModalProps,
                 },

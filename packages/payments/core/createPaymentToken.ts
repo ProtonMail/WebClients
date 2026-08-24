@@ -177,6 +177,7 @@ async function getBin(handles: ChargebeeIframeHandles): Promise<string> {
             capturePaymentMessage(
                 'Payments: BIN response failure',
                 {
+                    component: 'create-payment-token',
                     level: 'error' as const,
                     extra: {
                         error,
@@ -194,6 +195,7 @@ async function getBin(handles: ChargebeeIframeHandles): Promise<string> {
         capturePaymentMessage(
             'Payments: BIN response error',
             {
+                component: 'create-payment-token',
                 level: 'error' as const,
                 extra: {
                     host: window.location.host,
@@ -220,6 +222,7 @@ async function getBin(handles: ChargebeeIframeHandles): Promise<string> {
         const message = `Payments: BIN problem. FallbackEnabled: ${allowBinFallback}`;
 
         capturePaymentMessage(message, {
+            component: 'create-payment-token',
             level: allowBinFallback ? 'error' : 'warning',
             extra: {
                 Bin,
@@ -232,6 +235,7 @@ async function getBin(handles: ChargebeeIframeHandles): Promise<string> {
     if (!Bin) {
         // If this happens, then it most likely means that the current domain name isn't whitelisted in Chargebee.
         capturePaymentMessage('Payments: BIN is not found.', {
+            component: 'create-payment-token',
             level: 'error',
             extra: {
                 host: window.location.host,

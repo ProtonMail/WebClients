@@ -948,9 +948,8 @@ const SubscriptionContainerInner = ({
                 }
 
                 tracePaymentError(e, {
-                    tags: {
-                        component: 'subscription-container',
-                    },
+                    component: 'subscription-container',
+                    subscription,
                     extra: {
                         app,
                         step: model.step,
