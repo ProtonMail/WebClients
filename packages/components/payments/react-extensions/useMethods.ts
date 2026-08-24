@@ -307,6 +307,25 @@ export const useMethods = (
         void run();
     }, []);
 
+    const selectMethod = (id?: PaymentMethodType, methods = getComputedMethods().allMethods) => {
+        if (!id) {
+            setSelectedMethod(undefined);
+            return;
+        }
+
+        const method = methods.find((method) => {
+            return method.value === id;
+        });
+
+        if (method) {
+            if (selectedMethod?.value !== method.value) {
+                onMethodChanged?.(method);
+            }
+            setSelectedMethod(method);
+            return method;
+        }
+    };
+
     useEffect(() => {
         if (!paymentMethodsRef.current) {
             pendingDataRef.current = {
@@ -353,7 +372,12 @@ export const useMethods = (
             paymentMethodsRef.current.paymentStatus = paymentStatus;
             setStatus(paymentStatus);
         }
-        updateMethods();
+
+        // canUseApplePay & co can drop the method the user is sitting on
+        const { allMethods: offeredMethods } = getComputedMethods(updateMethods());
+        if (selectedMethod && !offeredMethods.some(({ value }) => value === selectedMethod.value)) {
+            selectMethod(offeredMethods[0]?.value, offeredMethods);
+        }
     }, [
         amount,
         currency,
@@ -377,25 +401,6 @@ export const useMethods = (
         }
 
         return paymentMethodsRef.current.getSavedMethodById(paymentMethodID);
-    };
-
-    const selectMethod = (id?: PaymentMethodType) => {
-        if (!id) {
-            setSelectedMethod(undefined);
-            return;
-        }
-
-        const method = allMethods.find((method) => {
-            return method.value === id;
-        });
-
-        if (method) {
-            if (selectedMethod?.value !== method.value) {
-                onMethodChanged?.(method);
-            }
-            setSelectedMethod(method);
-            return method;
-        }
     };
 
     const isMethodTypeEnabled = (methodType: PlainPaymentMethodType) => {
