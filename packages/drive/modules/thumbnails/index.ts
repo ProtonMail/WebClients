@@ -19,12 +19,24 @@ export const loadThumbnail = (drive: DriveClient, params: ThumbnailRequest) => {
     return useThumbnailsStore.getState().loadThumbnail(drive, params);
 };
 
-// `thumbnailKey` is the key the thumbnail is stored under: the revisionUid for
-// generic multi-revision nodes, or the nodeUid for single-revision ones (photos).
-export const getThumbnail = (thumbnailKey: string) => {
-    return thumbnailKey ? useThumbnailsStore.getState().getThumbnail(thumbnailKey) : undefined;
+export const useThumbnail = (thumbnailKey: string | undefined) => {
+    return useThumbnailsStore((state) => (thumbnailKey ? state.getThumbnailFromCache(thumbnailKey) : undefined));
 };
 
-export const useThumbnail = (thumbnailKey: string | undefined) => {
-    return useThumbnailsStore((state) => (thumbnailKey ? state.getThumbnail(thumbnailKey) : undefined));
+// Cache-or-fetch: waits for the thumbnail to be loaded (successfully or not) instead of
+// returning a snapshot.
+export const getThumbnail = (drive: DriveClient, params: ThumbnailRequest) => {
+    return useThumbnailsStore.getState().getThumbnail(drive, params);
+};
+
+/**
+ * Gets the raw bytes of a node's thumbnail, checking the cache first and fetching if needed.
+ *
+ * How it works:
+ * 1. Tries each type in `params.thumbnailTypes` in order (e.g. `['hd', 'sd']`) to find the best available look.
+ * 2. Returns a single `Uint8Array` on success (a thumbnail is always one blob).
+ * 3. Resolves to `undefined` only if none of the requested types are available.
+ */
+export const getThumbnailBytes = (drive: DriveClient, params: ThumbnailRequest) => {
+    return useThumbnailsStore.getState().getThumbnailBytes(drive, params);
 };
