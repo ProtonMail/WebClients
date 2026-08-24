@@ -58,6 +58,7 @@ export const SettingToggle = ({
                         onChange={onChange}
                         className={clsx('setting-toggle', checked ? '' : 'setting-toggle-inactive')}
                         aria-label={ariaLabel}
+                        aria-describedby={description ? `${id}-description` : undefined}
                         disabled={disabled}
                         loading={loading}
                     />
