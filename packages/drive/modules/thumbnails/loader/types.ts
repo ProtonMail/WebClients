@@ -1,4 +1,4 @@
-import type { ProtonDriveClient } from '@protontech/drive-sdk';
+import { type ProtonDriveClient, ThumbnailType } from '@protontech/drive-sdk';
 
 export type ThumbnailStatus = 'loading' | 'loaded';
 
@@ -44,3 +44,16 @@ export interface ThumbnailRequest {
 }
 
 export type DriveClient = Pick<ProtonDriveClient, 'iterateThumbnails'>;
+
+export const THUMBNAIL_KEY_MAP: Record<
+    ThumbnailType,
+    { cacheKey: 'sd' | 'hd'; statusKey: 'sdStatus' | 'hdStatus'; urlKey: 'sdUrl' | 'hdUrl' }
+> = {
+    [ThumbnailType.Type1]: { cacheKey: 'sd', statusKey: 'sdStatus', urlKey: 'sdUrl' },
+    [ThumbnailType.Type2]: { cacheKey: 'hd', statusKey: 'hdStatus', urlKey: 'hdUrl' },
+};
+
+export const THUMBNAIL_TYPE_MAP: Record<'sd' | 'hd', ThumbnailType> = {
+    sd: ThumbnailType.Type1,
+    hd: ThumbnailType.Type2,
+};
