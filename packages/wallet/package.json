@@ -38,6 +38,7 @@
     "dependencies": {
         "@proton/account": "workspace:^",
         "@proton/andromeda": "workspace:packages/wasm/andromeda",
+        "@proton/app-context": "workspace:^",
         "@proton/redux-shared-store": "workspace:^",
         "@reduxjs/toolkit": "^2.12.0",
         "cross-env": "^10.1.0",

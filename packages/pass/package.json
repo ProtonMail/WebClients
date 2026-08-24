@@ -24,6 +24,7 @@
         "version:update": "scripts/version.sh"
     },
     "dependencies": {
+        "@proton/app-context": "workspace:^",
         "@proton/atoms": "workspace:^",
         "@proton/components": "workspace:^",
         "@proton/cross-storage": "workspace:^",

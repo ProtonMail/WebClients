@@ -6,6 +6,7 @@ import { renderHook } from '@testing-library/react-hooks';
 import { createMemoryHistory } from 'history';
 
 import { getModelState } from '@proton/account/test';
+import { NotificationsContext } from '@proton/app-context/notifications/notificationsContext';
 import {
     ApiProvider,
     CacheProvider,
@@ -13,7 +14,6 @@ import {
     EventManagerProvider,
     ModalsChildren,
     ModalsProvider,
-    NotificationsContext,
 } from '@proton/components';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import createApi from '@proton/shared/lib/api/createApi';

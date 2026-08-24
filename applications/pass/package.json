@@ -20,6 +20,7 @@
         "test:watch": "jest --watch"
     },
     "dependencies": {
+        "@proton/app-context": "workspace:^",
         "@proton/atoms": "workspace:^",
         "@proton/components": "workspace:^",
         "@proton/icons": "workspace:^",

@@ -1,7 +1,7 @@
 import type { TypedStartListening } from '@reduxjs/toolkit';
 import { configureStore, createListenerMiddleware } from '@reduxjs/toolkit';
 
-import type { NotificationsManager } from '@proton/components/containers/notifications/manager';
+import type { NotificationsManager } from '@proton/app-context/notifications/manager';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import type { EventManager } from '@proton/shared/lib/eventManager/eventManager';
 import type { MeetEventResponse } from '@proton/shared/lib/interfaces/Meet';
