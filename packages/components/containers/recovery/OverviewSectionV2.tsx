@@ -1,11 +1,11 @@
 import { useInactiveKeys } from '@proton/account';
 import { useIsSentinelUser } from '@proton/account/recovery/sentinelHooks';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-import { SettingsLayoutVariant } from '@proton/components/containers/layout/interface';
 import { FeatureCode, useFeature } from '@proton/features';
 
+import useModalState from '../../components/modalTwo/useModalState';
 import useSearchParamsEffect from '../../hooks/useSearchParamsEffect';
 import ReactivateKeysModal from '../keys/reactivateKeys/ReactivateKeysModal';
+import { SettingsLayoutVariant } from '../layout/interface';
 import RecoverDataBanner from './RecoverDataBanner';
 import RecoverDataConfirmModal from './RecoverDataConfirmModal';
 import RecoveryScoreBanner from './RecoveryScoreBanner/RecoveryScoreBanner';

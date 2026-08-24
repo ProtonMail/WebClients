@@ -4,21 +4,21 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import Alert from '@proton/components/components/alert/Alert';
-import Copy from '@proton/components/components/button/Copy';
-import useSettingsLink from '@proton/components/components/link/useSettingsLink';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useContact } from '@proton/mail/store/contacts/contactHooks';
 import { APPS } from '@proton/shared/lib/constants';
 import { getKeyUsedForContact } from '@proton/shared/lib/contacts/keyVerifications';
 import type { Key } from '@proton/shared/lib/interfaces';
 import type { Contact } from '@proton/shared/lib/interfaces/contacts';
 
+import Alert from '../../../components/alert/Alert';
+import Copy from '../../../components/button/Copy';
+import useSettingsLink from '../../../components/link/useSettingsLink';
+import type { ModalProps } from '../../../components/modalTwo/Modal';
+import ModalTwo from '../../../components/modalTwo/Modal';
+import ModalTwoContent from '../../../components/modalTwo/ModalContent';
+import ModalTwoFooter from '../../../components/modalTwo/ModalFooter';
+import ModalTwoHeader from '../../../components/modalTwo/ModalHeader';
+import useNotifications from '../../../hooks/useNotifications';
 import type { ContactClearDataConfirmProps } from './ContactClearDataConfirmModal';
 
 export interface ContactDecryptionErrorProps {

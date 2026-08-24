@@ -6,9 +6,6 @@ import { useAddresses } from '@proton/account/addresses/hooks';
 import { Avatar } from '@proton/atoms/Avatar/Avatar';
 import { Donut } from '@proton/atoms/Donut/Donut';
 import type { ThemeColor } from '@proton/colors/types';
-import AppsLogos from '@proton/components/components/appsLogos/AppsLogos';
-import Info from '@proton/components/components/link/Info';
-import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import type { FreeSubscription } from '@proton/payments/core/interface';
 import {
     hasAllProductsB2CPlan,
@@ -45,6 +42,9 @@ import {
 import { MailFeatureFlag } from '@proton/unleash/Flags';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import AppsLogos from '../../../../../components/appsLogos/AppsLogos';
+import Info from '../../../../../components/link/Info';
+import getBoldFormattedText from '../../../../../helpers/getBoldFormattedText';
 import { getSubscriptionPanelText } from '../../helpers/subscriptionPanelHelpers';
 
 function getStorageText(maxSpace: number, usedSpace: number) {

@@ -1,20 +1,20 @@
 import { c } from 'ttag';
 
 import { Avatar } from '@proton/atoms/Avatar/Avatar';
-import Alert from '@proton/components/components/alert/Alert';
-import Info from '@proton/components/components/link/Info';
-import Table from '@proton/components/components/table/Table';
-import TableBody from '@proton/components/components/table/TableBody';
-import TableCell from '@proton/components/components/table/TableCell';
-import TableHeader from '@proton/components/components/table/TableHeader';
-import TableRow from '@proton/components/components/table/TableRow';
-import Time from '@proton/components/components/time/Time';
-import ProtectionCell from '@proton/components/containers/logs/ProtectionCell';
 import type { B2BAuthLog } from '@proton/shared/lib/authlog';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 
+import Alert from '../../components/alert/Alert';
+import Info from '../../components/link/Info';
+import Table from '../../components/table/Table';
+import TableBody from '../../components/table/TableBody';
+import TableCell from '../../components/table/TableCell';
+import TableHeader from '../../components/table/TableHeader';
+import TableRow from '../../components/table/TableRow';
+import Time from '../../components/time/Time';
 import { NoEventsInfo } from '../b2bDashboard/NoEventsInfo';
 import EventCell from './EventCell';
+import ProtectionCell from './ProtectionCell';
 
 interface Props {
     logs: B2BAuthLog[];

@@ -5,20 +5,21 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { useGetCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
 import { useGetHolidaysDirectory } from '@proton/calendar/holidaysDirectory/hooks';
-import Form from '@proton/components/components/form/Form';
-import Loader from '@proton/components/components/loader/Loader';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import HolidaysCalendarModalWithDirectory from '@proton/components/containers/calendar/calendarModal/holidaysCalendarModal/HolidaysCalendarModalWithDirectory';
-import { CALENDAR_MODAL_TYPE } from '@proton/components/containers/calendar/calendarModal/interface';
-import GenericError from '@proton/components/containers/error/GenericError';
 import type {
     CalendarBootstrap,
     HolidaysDirectoryCalendar,
     VisualCalendar,
 } from '@proton/shared/lib/interfaces/calendar';
+
+import Form from '../../../../components/form/Form';
+import Loader from '../../../../components/loader/Loader';
+import type { ModalProps } from '../../../../components/modalTwo/Modal';
+import ModalTwo from '../../../../components/modalTwo/Modal';
+import ModalTwoContent from '../../../../components/modalTwo/ModalContent';
+import ModalTwoFooter from '../../../../components/modalTwo/ModalFooter';
+import GenericError from '../../../error/GenericError';
+import { CALENDAR_MODAL_TYPE } from '../interface';
+import HolidaysCalendarModalWithDirectory from './HolidaysCalendarModalWithDirectory';
 
 interface Props extends ModalProps {
     /**

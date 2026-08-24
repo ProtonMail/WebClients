@@ -1,9 +1,10 @@
 import { c } from 'ttag';
 
-import LayoutCards from '@proton/components/components/input/LayoutCards';
 import { DENSITY } from '@proton/shared/lib/constants';
 import comfortableDensitySvg from '@proton/styles/assets/img/layout/layout-thumb-density-comfortable.svg';
 import compactDensitySvg from '@proton/styles/assets/img/layout/layout-thumb-density-compact.svg';
+
+import LayoutCards from '../../components/input/LayoutCards';
 
 const { COMFORTABLE, COMPACT } = DENSITY;
 

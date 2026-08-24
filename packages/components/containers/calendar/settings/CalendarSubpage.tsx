@@ -4,19 +4,6 @@ import { useHistory, useParams } from 'react-router';
 import { c } from 'ttag';
 
 import { useGetCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
-import SettingsPageTitle from '@proton/components/containers/account/SettingsPageTitle';
-import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
-import SettingsSection from '@proton/components/containers/account/SettingsSection';
-import SettingsSectionTitle from '@proton/components/containers/account/SettingsSectionTitle';
-import CalendarDeleteSection from '@proton/components/containers/calendar/settings/CalendarDeleteSection';
-import CalendarEventDefaultsSection from '@proton/components/containers/calendar/settings/CalendarEventDefaultsSection';
-import CalendarSettingsBreadcrumbs from '@proton/components/containers/calendar/settings/CalendarSettingsBreadcrumbs';
-import CalendarShareSection from '@proton/components/containers/calendar/settings/CalendarShareSection';
-import CalendarSubpageHeaderSection from '@proton/components/containers/calendar/settings/CalendarSubpageHeaderSection';
-import PrivateMainArea from '@proton/components/containers/layout/PrivateMainArea';
-import { PrivateMainSettingsAreaBase } from '@proton/components/containers/layout/PrivateMainSettingsArea';
-import useApi from '@proton/components/hooks/useApi';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import { getAllMembers, getCalendarInvitations } from '@proton/shared/lib/api/calendars';
 import { getIsOwnedCalendar, getIsPersonalCalendar } from '@proton/shared/lib/calendar/calendar';
@@ -33,6 +20,20 @@ import type {
     VisualCalendar,
 } from '@proton/shared/lib/interfaces/calendar';
 import { MEMBER_INVITATION_STATUS } from '@proton/shared/lib/interfaces/calendar';
+
+import useApi from '../../../hooks/useApi';
+import useNotifications from '../../../hooks/useNotifications';
+import SettingsPageTitle from '../../account/SettingsPageTitle';
+import SettingsParagraph from '../../account/SettingsParagraph';
+import SettingsSection from '../../account/SettingsSection';
+import SettingsSectionTitle from '../../account/SettingsSectionTitle';
+import PrivateMainArea from '../../layout/PrivateMainArea';
+import { PrivateMainSettingsAreaBase } from '../../layout/PrivateMainSettingsArea';
+import CalendarDeleteSection from './CalendarDeleteSection';
+import CalendarEventDefaultsSection from './CalendarEventDefaultsSection';
+import CalendarSettingsBreadcrumbs from './CalendarSettingsBreadcrumbs';
+import CalendarShareSection from './CalendarShareSection';
+import CalendarSubpageHeaderSection from './CalendarSubpageHeaderSection';
 
 interface Props {
     calendars: VisualCalendar[];

@@ -2,9 +2,10 @@ import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import SettingsLink from '@proton/components/components/link/SettingsLink';
 import { APPS, APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { addUpsellPath, getUpgradePath, getUpsellRef } from '@proton/shared/lib/helpers/upsell';
+
+import SettingsLink from '../../../../components/link/SettingsLink';
 
 const AssistantUpdateSubscriptionButton = () => {
     const [user] = useUser();

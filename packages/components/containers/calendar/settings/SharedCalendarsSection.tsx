@@ -5,23 +5,6 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import ButtonGroup from '@proton/components/components/button/ButtonGroup';
-import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
-import Info from '@proton/components/components/link/Info';
-import SettingsLink from '@proton/components/components/link/SettingsLink';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-import Table from '@proton/components/components/table/Table';
-import TableBody from '@proton/components/components/table/TableBody';
-import TableCell from '@proton/components/components/table/TableCell';
-import TableHeader from '@proton/components/components/table/TableHeader';
-import TableHeaderCell from '@proton/components/components/table/TableHeaderCell';
-import TableRow from '@proton/components/components/table/TableRow';
-import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
-import CalendarBadge from '@proton/components/containers/calendar/settings/CalendarBadge';
-import ShareCalendarWithSignatureVerificationErrorModal from '@proton/components/containers/calendar/shareProton/ShareCalendarWithSignatureVerificationErrorModal';
-import useCalendarShareInvitationActions from '@proton/components/hooks/useCalendarShareInvitationActions';
-import useEventManager from '@proton/components/hooks/useEventManager';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { IcCogWheel } from '@proton/icons/icons/IcCogWheel';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -44,6 +27,24 @@ import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Address } from '@proton/shared/lib/interfaces';
 import type { CalendarMemberInvitation, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+
+import ButtonGroup from '../../../components/button/ButtonGroup';
+import CalendarSelectIcon from '../../../components/calendarSelect/CalendarSelectIcon';
+import Info from '../../../components/link/Info';
+import SettingsLink from '../../../components/link/SettingsLink';
+import useModalState from '../../../components/modalTwo/useModalState';
+import Table from '../../../components/table/Table';
+import TableBody from '../../../components/table/TableBody';
+import TableCell from '../../../components/table/TableCell';
+import TableHeader from '../../../components/table/TableHeader';
+import TableHeaderCell from '../../../components/table/TableHeaderCell';
+import TableRow from '../../../components/table/TableRow';
+import useCalendarShareInvitationActions from '../../../hooks/useCalendarShareInvitationActions';
+import useEventManager from '../../../hooks/useEventManager';
+import useNotifications from '../../../hooks/useNotifications';
+import SettingsSectionWide from '../../account/SettingsSectionWide';
+import ShareCalendarWithSignatureVerificationErrorModal from '../shareProton/ShareCalendarWithSignatureVerificationErrorModal';
+import CalendarBadge from './CalendarBadge';
 
 const SharedCalendarRow = ({ calendar, displayEmail }: { calendar: VisualCalendar; displayEmail: boolean }) => {
     const {

@@ -4,15 +4,15 @@ import { c, msgid } from 'ttag';
 
 import { useMembersRemote } from '@proton/account/members/useMembersRemote';
 import { useMembersUsage } from '@proton/account/members/useMembersUsage';
-import SearchInput from '@proton/components/components/input/SearchInput';
-import Pagination from '@proton/components/components/pagination/Pagination';
-import { MembersTable } from '@proton/components/containers/members/UsersAndAddressesSection/MembersTable';
-import { MembersTableHeader } from '@proton/components/containers/members/UsersAndAddressesSection/MembersTableHeader';
-import { useMemberActions } from '@proton/components/containers/members/UsersAndAddressesSection/useMemberActions';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { type EnhancedMember, ROLE_SOURCE } from '@proton/shared/lib/interfaces';
 
+import SearchInput from '../../../components/input/SearchInput';
+import Pagination from '../../../components/pagination/Pagination';
 import RoleAssignmentPausedBanner from '../rolesAndPermissions/RoleAssignmentPausedBanner';
+import { MembersTable } from './MembersTable';
+import { MembersTableHeader } from './MembersTableHeader';
+import { useMemberActions } from './useMemberActions';
 
 export const MembersRemote = ({ app, showUsage = false }: { app: APP_NAMES; showUsage?: boolean }) => {
     const [page, setPage] = useState(1);

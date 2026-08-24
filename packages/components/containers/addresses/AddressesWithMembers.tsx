@@ -16,19 +16,19 @@ import useBYOEAddressesCounts from '@proton/activation/src/hooks/useBYOEAddresse
 import { EASY_SWITCH_SOURCES } from '@proton/activation/src/interface';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
-import Alert from '@proton/components/components/alert/Alert';
-import SettingsLink from '@proton/components/components/link/SettingsLink';
-import Loader from '@proton/components/components/loader/Loader';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
-import GenericError from '@proton/components/containers/error/GenericError';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { ALL_MEMBERS_ID, APPS, BRAND_NAME, MAIL_APP_NAME, MEMBER_PRIVATE } from '@proton/shared/lib/constants';
 import { getAvailableAddressDomains, getIsBYOEOnlyAccount } from '@proton/shared/lib/helpers/address';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Member, Organization, UserModel } from '@proton/shared/lib/interfaces';
 import { getOrganizationKeyInfo, isSuperAdmin, validateOrganizationKey } from '@proton/shared/lib/organization/helper';
 
+import Alert from '../../components/alert/Alert';
+import SettingsLink from '../../components/link/SettingsLink';
+import Loader from '../../components/loader/Loader';
+import useModalState from '../../components/modalTwo/useModalState';
+import useNotifications from '../../hooks/useNotifications';
+import SettingsParagraph from '../account/SettingsParagraph';
+import GenericError from '../error/GenericError';
 import AddressModal from './AddressModal';
 import AddressesTable from './AddressesTable';
 import AddressesWithUser from './AddressesWithUser';

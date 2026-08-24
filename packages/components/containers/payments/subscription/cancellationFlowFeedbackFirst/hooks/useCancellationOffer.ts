@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 
 import { usePlans } from '@proton/account/plans/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
-import { usePaymentsApiWithCheckFallback } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import useLoading from '@proton/hooks/useLoading';
@@ -10,9 +9,11 @@ import type { PaymentsCheckoutUI } from '@proton/payments/core/checkout';
 import { getCheckoutUi } from '@proton/payments/core/checkout';
 import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { Currency } from '@proton/payments/core/interface';
+import { getPrice } from '@proton/payments/core/price-helpers';
 import { getPlanName, isDangerouslyAllowedSubscriptionEstimation } from '@proton/payments/core/subscription/helpers';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
-import { getPrice } from '@proton/payments/core/price-helpers';
+
+import { usePaymentsApiWithCheckFallback } from '../../../../../payments/react-extensions/usePaymentsApi';
 
 const SUPPORTED_PLANS = new Set([PLANS.MAIL, PLANS.BUNDLE]);
 

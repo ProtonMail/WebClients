@@ -2,12 +2,6 @@ import type { ReactNode } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import AppsLogos from '@proton/components/components/appsLogos/AppsLogos';
-import DriveLogo from '@proton/components/components/logo/DriveLogo';
-import MailLogo from '@proton/components/components/logo/MailLogo';
-import ProtonLogo from '@proton/components/components/logo/ProtonLogo';
-import FreeLogo from '@proton/components/containers/payments/subscription/FreeLogo/FreeLogo';
-import type { CustomLogoPlanName } from '@proton/components/containers/payments/subscription/YourPlanSectionV2/CustomLogo';
 import { IcAt } from '@proton/icons/icons/IcAt';
 import { IcCalendarCheckmark } from '@proton/icons/icons/IcCalendarCheckmark';
 import { IcClockRotateLeft } from '@proton/icons/icons/IcClockRotateLeft';
@@ -44,6 +38,12 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { SizeUnits } from '@proton/shared/lib/helpers/humanSize';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
+import AppsLogos from '../../../../../components/appsLogos/AppsLogos';
+import DriveLogo from '../../../../../components/logo/DriveLogo';
+import MailLogo from '../../../../../components/logo/MailLogo';
+import ProtonLogo from '../../../../../components/logo/ProtonLogo';
+import FreeLogo from '../../FreeLogo/FreeLogo';
+import type { CustomLogoPlanName } from '../../YourPlanSectionV2/CustomLogo';
 import type { ComparisonFeatureRow } from '../components/ComparisonTable';
 import { CustomLogoHeader } from '../components/CustomLogoHeader';
 import { getPlanDisplayName } from '../helpers/getPlanDisplayName';

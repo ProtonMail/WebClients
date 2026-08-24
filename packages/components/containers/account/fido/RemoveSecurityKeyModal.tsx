@@ -1,16 +1,17 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-import Prompt from '@proton/components/components/prompt/Prompt';
-import { removeAllSecurityKeysThunk } from '@proton/components/containers/account/fido/removeAllSecurityKeysThunk';
-import AuthModal from '@proton/components/containers/password/AuthModal';
-import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
+
+import type { ModalProps } from '../../../components/modalTwo/Modal';
+import useModalState from '../../../components/modalTwo/useModalState';
+import Prompt from '../../../components/prompt/Prompt';
+import useErrorHandler from '../../../hooks/useErrorHandler';
+import useNotifications from '../../../hooks/useNotifications';
+import AuthModal from '../../password/AuthModal';
+import { removeAllSecurityKeysThunk } from './removeAllSecurityKeysThunk';
 
 interface Key {
     id: string;

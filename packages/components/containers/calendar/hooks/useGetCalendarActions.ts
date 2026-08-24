@@ -5,10 +5,6 @@ import { c } from 'ttag';
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { useGetCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
-import { CALENDAR_MODAL_TYPE } from '@proton/components/containers/calendar/calendarModal/interface';
-import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { createCalendar, updateCalendarSettings, updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import {
     getOwnedPersonalCalendars,
@@ -21,7 +17,11 @@ import type { CalendarSettings, CalendarWithOwnMembers, VisualCalendar } from '@
 import type { CalendarCreateData } from '@proton/shared/lib/interfaces/calendar/Api';
 import { getPrimaryKey } from '@proton/shared/lib/keys';
 
+import useApi from '../../../hooks/useApi';
+import useEventManager from '../../../hooks/useEventManager';
+import useNotifications from '../../../hooks/useNotifications';
 import { useCalendarModelEventManager } from '../../eventManager/calendar/CalendarModelEventManagerProvider';
+import { CALENDAR_MODAL_TYPE } from '../calendarModal/interface';
 
 interface Props {
     type?: CALENDAR_MODAL_TYPE;

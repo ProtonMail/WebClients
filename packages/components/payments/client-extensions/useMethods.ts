@@ -1,7 +1,5 @@
 import { c } from 'ttag';
 
-import useApi from '@proton/components/hooks/useApi';
-import useAuthentication from '@proton/components/hooks/useAuthentication';
 import type { IconName } from '@proton/icons/types';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import { isSignupFlow } from '@proton/payments/core/helpers';
@@ -15,6 +13,8 @@ import { IDEAL_BRAND_NAME } from '@proton/shared/lib/constants';
 import { isAndroid, isIos } from '@proton/shared/lib/helpers/browser';
 import isTruthy from '@proton/utils/isTruthy';
 
+import useApi from '../../hooks/useApi';
+import useAuthentication from '../../hooks/useAuthentication';
 import type { MethodsHook, Props } from '../react-extensions/useMethods';
 import { useMethods as _useMethods } from '../react-extensions/useMethods';
 

@@ -5,16 +5,17 @@ import { c } from 'ttag';
 import { Avatar } from '@proton/atoms/Avatar/Avatar';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { IcTrash } from '@proton/icons/icons/IcTrash';
-import Option from '@proton/components/components/option/Option';
-import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
-import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
-import TableCell from '@proton/components/components/table/TableCell';
-import TableRow from '@proton/components/components/table/TableRow';
 import { useLoading } from '@proton/hooks';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { MEMBER_PERMISSIONS } from '@proton/shared/lib/calendar/permissions';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import { MEMBER_INVITATION_STATUS } from '@proton/shared/lib/interfaces/calendar';
+
+import Option from '../../../components/option/Option';
+import SelectTwo from '../../../components/selectTwo/SelectTwo';
+import type { SelectChangeEvent } from '../../../components/selectTwo/select';
+import TableCell from '../../../components/table/TableCell';
+import TableRow from '../../../components/table/TableRow';
 
 import './CalendarMemberGrid.scss';
 

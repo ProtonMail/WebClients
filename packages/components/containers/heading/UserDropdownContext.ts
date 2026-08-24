@@ -1,10 +1,11 @@
 import { type MouseEvent, type RefObject, createContext } from 'react';
 
 import type { useAccountSessions } from '@proton/account/accountSessions';
-import type AccountSessionsSwitcher from '@proton/components/containers/heading/AccountSessionsSwitcher';
-import type { useReferral } from '@proton/components/containers/heading/useReferral';
 import type { ForkType } from '@proton/shared/lib/authentication/fork';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
+
+import type AccountSessionsSwitcher from './AccountSessionsSwitcher';
+import type { useReferral } from './useReferral';
 
 export interface UserDropdownValue {
     referral: ReturnType<typeof useReferral>;

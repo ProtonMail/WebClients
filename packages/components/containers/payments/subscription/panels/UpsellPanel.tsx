@@ -5,12 +5,6 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
-import Icon from '@proton/components/components/icon/Icon';
-import StripedItem from '@proton/components/components/stripedList/StripedItem';
-import { StripedList } from '@proton/components/components/stripedList/StripedList';
-import { upgradeButtonClick } from '@proton/components/containers/desktop/openExternalLink';
-import { useHasInboxDesktopInAppPayments } from '@proton/components/containers/desktop/useHasInboxDesktopInAppPayments';
-import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { IcChevronUp } from '@proton/icons/icons/IcChevronUp';
 import { IcStar } from '@proton/icons/icons/IcStar';
@@ -18,6 +12,12 @@ import { CYCLE, type PLANS } from '@proton/payments/core/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import clsx from '@proton/utils/clsx';
 
+import Icon from '../../../../components/icon/Icon';
+import StripedItem from '../../../../components/stripedList/StripedItem';
+import { StripedList } from '../../../../components/stripedList/StripedList';
+import useActiveBreakpoint from '../../../../hooks/useActiveBreakpoint';
+import { upgradeButtonClick } from '../../../desktop/openExternalLink';
+import { useHasInboxDesktopInAppPayments } from '../../../desktop/useHasInboxDesktopInAppPayments';
 import type { ButtonColor, ButtonShape, UpsellCta, UpsellFeature } from '../helpers';
 import { isUpsellCta } from '../helpers';
 import Panel from './Panel';

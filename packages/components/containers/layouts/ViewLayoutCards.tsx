@@ -1,9 +1,10 @@
 import { c } from 'ttag';
 
-import LayoutCards from '@proton/components/components/input/LayoutCards';
 import { VIEW_LAYOUT } from '@proton/shared/lib/mail/mailSettings';
 import inboxColumnSvg from '@proton/styles/assets/img/layout/layout-thumb-inbox-column.svg';
 import inboxRowSvg from '@proton/styles/assets/img/layout/layout-thumb-inbox-row.svg';
+
+import LayoutCards from '../../components/input/LayoutCards';
 
 const { COLUMN, ROW } = VIEW_LAYOUT;
 

@@ -2,16 +2,17 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import Info from '@proton/components/components/link/Info';
-import Table from '@proton/components/components/table/Table';
-import TableBody from '@proton/components/components/table/TableBody';
-import TableCell from '@proton/components/components/table/TableCell';
-import TableHeader from '@proton/components/components/table/TableHeader';
-import TableHeaderCell from '@proton/components/components/table/TableHeaderCell';
-import TableRow from '@proton/components/components/table/TableRow';
-import Time from '@proton/components/components/time/Time';
 import { TableRowLoading } from '@proton/pass/components/Layout/Table/TableRowLoading';
 import type { UsageReport } from '@proton/pass/lib/organization/types';
+
+import Info from '../../../components/link/Info';
+import Table from '../../../components/table/Table';
+import TableBody from '../../../components/table/TableBody';
+import TableCell from '../../../components/table/TableCell';
+import TableHeader from '../../../components/table/TableHeader';
+import TableHeaderCell from '../../../components/table/TableHeaderCell';
+import TableRow from '../../../components/table/TableRow';
+import Time from '../../../components/time/Time';
 
 type Props = {
     reports: UsageReport[];

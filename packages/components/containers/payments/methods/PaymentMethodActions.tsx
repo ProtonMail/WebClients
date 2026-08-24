@@ -1,11 +1,6 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import type { DropdownActionProps } from '@proton/components/components/dropdown/DropdownActions';
-import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
-import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { deletePaymentMethod, markPaymentMethodAsDefault } from '@proton/payments/core/api/api';
 import { isCardExpired } from '@proton/payments/core/cardDetails';
@@ -15,8 +10,13 @@ import EditCardModal from '@proton/payments/ui/containers/EditCardModal';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
+import type { DropdownActionProps } from '../../../components/dropdown/DropdownActions';
+import DropdownActions from '../../../components/dropdown/DropdownActions';
 import useModalState, { useModalStateWithData } from '../../../components/modalTwo/useModalState';
 import Prompt from '../../../components/prompt/Prompt';
+import useApi from '../../../hooks/useApi';
+import useEventManager from '../../../hooks/useEventManager';
+import useNotifications from '../../../hooks/useNotifications';
 
 export interface Props {
     method: SavedPaymentMethod;

@@ -3,19 +3,20 @@ import type { MouseEvent } from 'react';
 import { format, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
-import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import { IcLink } from '@proton/icons/icons/IcLink';
-import Info from '@proton/components/components/link/Info';
-import Table from '@proton/components/components/table/Table';
-import TableBody from '@proton/components/components/table/TableBody';
-import TableHeader from '@proton/components/components/table/TableHeader';
-import TableRow from '@proton/components/components/table/TableRow';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import type { CalendarLink } from '@proton/shared/lib/interfaces/calendar';
 import { ACCESS_LEVEL } from '@proton/shared/lib/interfaces/calendar';
 import type { Nullable, SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
+
+import DropdownActions from '../../../components/dropdown/DropdownActions';
+import Info from '../../../components/link/Info';
+import Table from '../../../components/table/Table';
+import TableBody from '../../../components/table/TableBody';
+import TableHeader from '../../../components/table/TableHeader';
+import TableRow from '../../../components/table/TableRow';
 
 interface Props {
     links: CalendarLink[];

@@ -5,8 +5,6 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Copy from '@proton/components/components/button/Copy';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcPenSquare } from '@proton/icons/icons/IcPenSquare';
 import { addPlus } from '@proton/shared/lib/helpers/string';
 import type { Recipient } from '@proton/shared/lib/interfaces';
@@ -14,6 +12,8 @@ import type { ContactFormatted, ContactGroup } from '@proton/shared/lib/interfac
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import clsx from '@proton/utils/clsx';
 
+import Copy from '../../../components/button/Copy';
+import useNotifications from '../../../hooks/useNotifications';
 import ItemCheckbox from '../../items/ItemCheckbox';
 import ContactGroupLabels from '../group/ContactGroupLabels';
 import { ContactRowItemFirstLine, ContactRowItemSecondLine } from './ContactRowItem';

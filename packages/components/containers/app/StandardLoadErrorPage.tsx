@@ -3,11 +3,11 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import useDocumentTitle from '@proton/components/hooks/useDocumentTitle';
 import { IcArrowRotateRight } from '@proton/icons/icons/IcArrowRotateRight';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import clsx from '@proton/utils/clsx';
 
+import useDocumentTitle from '../../hooks/useDocumentTitle';
 import GenericError from '../error/GenericError';
 
 interface Props {

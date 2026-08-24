@@ -1,6 +1,5 @@
 import { fireEvent, render } from '@testing-library/react';
 
-import useEventManager from '@proton/components/hooks/useEventManager';
 import { APPS } from '@proton/shared/lib/constants';
 import { applyHOCs } from '@proton/testing/lib/context/hocs/helpers';
 import { withConfig } from '@proton/testing/lib/context/hocs/with-config';
@@ -8,6 +7,7 @@ import { withNotifications } from '@proton/testing/lib/context/hocs/with-notific
 import { withReduxStore } from '@proton/testing/lib/context/hocs/with-redux-store';
 
 import useApiResult from '../../hooks/useApiResult';
+import useEventManager from '../../hooks/useEventManager';
 import InvoicesSection from './InvoicesSection';
 
 jest.mock('../../hooks/useHandler', () => {
@@ -52,7 +52,7 @@ jest.mock('../../hooks/useModals', () => {
     };
 });
 
-jest.mock('@proton/components/hooks/useEventManager', () => ({
+jest.mock('../../hooks/useEventManager', () => ({
     __esModule: true,
     default: jest.fn(),
 }));

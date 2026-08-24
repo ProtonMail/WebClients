@@ -2,18 +2,18 @@ import { useRef } from 'react';
 
 import { c } from 'ttag';
 
-import Table from '@proton/components/components/table/Table';
-import TableBody from '@proton/components/components/table/TableBody';
-import TableCell from '@proton/components/components/table/TableCell';
-import TableHeader from '@proton/components/components/table/TableHeader';
-import TableRow from '@proton/components/components/table/TableRow';
-import Time from '@proton/components/components/time/Time';
-import useApi from '@proton/components/hooks/useApi';
 import { getInvoicePDF } from '@proton/payments/core/api/api';
 import type { Invoice } from '@proton/payments/core/interface';
 import { type APP_NAMES, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 
+import Table from '../../components/table/Table';
+import TableBody from '../../components/table/TableBody';
+import TableCell from '../../components/table/TableCell';
+import TableHeader from '../../components/table/TableHeader';
+import TableRow from '../../components/table/TableRow';
+import Time from '../../components/time/Time';
+import useApi from '../../hooks/useApi';
 import InvoiceActions from './InvoiceActions';
 import InvoiceAmount from './InvoiceAmount';
 import InvoiceStateBadge from './InvoiceStateBadge';

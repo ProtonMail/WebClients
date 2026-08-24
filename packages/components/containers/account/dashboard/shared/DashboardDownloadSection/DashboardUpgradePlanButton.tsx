@@ -1,11 +1,12 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
-import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
-import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import type { PLANS } from '@proton/payments/core/constants';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
+
+import useDashboardPaymentFlow from '../../../../../hooks/useDashboardPaymentFlow';
+import { useSubscriptionModal } from '../../../../payments/subscription/SubscriptionModalProvider';
+import { SUBSCRIPTION_STEPS } from '../../../../payments/subscription/constants';
 
 interface Props {
     app: APP_NAMES;

@@ -3,15 +3,6 @@ import type { ReactElement } from 'react';
 import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Time from '@proton/components/components/time/Time';
-import {
-    FREE_PASS_ALIASES,
-    FREE_VAULTS,
-    FREE_VAULT_SHARING,
-    getNHideMyEmailAliasesText,
-    getNVaultsText,
-    getVaultSharingWithNPeopleText,
-} from '@proton/components/containers/payments/features/pass';
 import { IcAlias } from '@proton/icons/icons/IcAlias';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcClock } from '@proton/icons/icons/IcClock';
@@ -33,6 +24,7 @@ import { hasPassLifetime } from '@proton/shared/lib/user/helpers';
 import { getAutoSelectFromCountries, getCountriesWithoutPlus, getVpnDevices } from '@proton/shared/lib/vpn/features';
 import { VPN_SERVERS } from '@proton/vpn/constants/vpnServers';
 
+import Time from '../../../../components/time/Time';
 import {
     FREE_MAX_ACTIVE_MEETINGS,
     FREE_MAX_PARTICIPANTS,
@@ -40,6 +32,14 @@ import {
     getMaxParticipantsShortText,
     getMeetingMaxLengthText,
 } from '../../features/meet';
+import {
+    FREE_PASS_ALIASES,
+    FREE_VAULTS,
+    FREE_VAULT_SHARING,
+    getNHideMyEmailAliasesText,
+    getNVaultsText,
+    getVaultSharingWithNPeopleText,
+} from '../../features/pass';
 
 const FeatureElement = ({
     icon,

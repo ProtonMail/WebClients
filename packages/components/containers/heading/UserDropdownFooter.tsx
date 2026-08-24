@@ -5,13 +5,13 @@ import { c } from 'ttag';
 import { NotificationDot } from '@proton/atoms/NotificationDot/NotificationDot';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { ThemeColor } from '@proton/colors/types';
-import SettingsLink from '@proton/components/components/link/SettingsLink';
-import { SchedulePhoneCall } from '@proton/components/containers/heading/SchedulePhoneCall';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getShopURL } from '@proton/shared/lib/helpers/url';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import SettingsLink from '../../components/link/SettingsLink';
+import { SchedulePhoneCall } from './SchedulePhoneCall';
 import { UserDropdownContext } from './UserDropdownContext';
 
 export const UserDropdownFooter = () => {

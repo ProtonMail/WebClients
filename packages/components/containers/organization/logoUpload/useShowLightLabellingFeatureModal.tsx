@@ -1,12 +1,12 @@
 import { useWelcomeFlags } from '@proton/account';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import useConfig from '@proton/components/hooks/useConfig';
 import { FeatureCode, useFeature } from '@proton/features';
 import { APPS } from '@proton/shared/lib/constants';
 import { hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
 
+import useConfig from '../../../hooks/useConfig';
 import { useOrganizationTheme } from './useOrganizationTheme';
 
 export const useShowLightLabellingFeatureModal = () => {

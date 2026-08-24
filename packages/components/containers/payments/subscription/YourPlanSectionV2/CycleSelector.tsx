@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
-import { type CycleSelectorProps, getRestrictedCycle } from '@proton/components/containers/payments/CycleSelector';
 import { CYCLE } from '@proton/payments/core/constants';
 import clsx from '@proton/utils/clsx';
+
+import { type CycleSelectorProps, getRestrictedCycle } from '../../CycleSelector';
 
 export const CycleSelector = (props: Omit<CycleSelectorProps, 'mode'> & { userCanHave24MonthPlan?: boolean }) => {
     const { onSelect, disabled, userCanHave24MonthPlan = false } = props;

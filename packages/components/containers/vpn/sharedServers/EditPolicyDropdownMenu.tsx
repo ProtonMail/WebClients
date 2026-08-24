@@ -2,14 +2,14 @@ import React from 'react';
 
 import { c } from 'ttag';
 
-import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
-import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
-import withPermissionGuard from '@proton/components/components/orgPermissions/withPermissionGuard';
 import { IcEarth } from '@proton/icons/icons/IcEarth';
 import { IcPen } from '@proton/icons/icons/IcPen';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
 
+import DropdownMenu from '../../../components/dropdown/DropdownMenu';
+import DropdownMenuButton from '../../../components/dropdown/DropdownMenuButton';
+import withPermissionGuard from '../../../components/orgPermissions/withPermissionGuard';
 import { POLICY_STEP } from './PolicyModal/modalPolicyStepEnum';
 import type { VpnLocationFilterPolicy } from './useSharedServers';
 

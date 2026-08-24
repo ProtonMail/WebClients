@@ -2,12 +2,12 @@ import { useState } from 'react';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import { PLANS } from '@proton/payments/core/constants';
 import { getAvailableSubscriptionActions, getPlanName } from '@proton/payments/core/subscription/helpers';
 import { isPaidSubscription } from '@proton/payments/core/type-guards';
 
+import type { ModalProps } from '../../../../components/modalTwo/Modal';
+import ModalTwo from '../../../../components/modalTwo/Modal';
 import { useCancelRenewal } from '../cancelSubscription/useCancelRenewal';
 import FeedbackDowngradeContent, {
     SUBSCRIPTION_CANCELLATION_REASONS,

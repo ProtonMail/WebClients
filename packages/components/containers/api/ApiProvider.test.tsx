@@ -9,12 +9,12 @@ import { mockUseNotifications } from '@proton/testing/lib/mockUseNotifications';
 import ApiProvider from './ApiProvider';
 
 const dispatchMock = jest.fn();
-jest.mock('@proton/components/hooks/useConfig', () => () => ({ APP_NAME: 'proton-mail', APP_VERSION: 'test' }));
+jest.mock('../../hooks/useConfig', () => () => ({ APP_NAME: 'proton-mail', APP_VERSION: 'test' }));
 jest.mock('./ApiModals', () => ({
     __esModule: true,
     default: () => null,
 }));
-jest.mock('@proton/components/hooks/useAuthentication', jest.fn);
+jest.mock('../../hooks/useAuthentication', jest.fn);
 jest.mock('@proton/redux-shared-store/sharedProvider', () => {
     return {
         ...jest.requireActual('@proton/redux-shared-store/sharedProvider'),

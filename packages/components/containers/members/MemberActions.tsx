@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
 import type { getSSODomainsSet } from '@proton/account/samlSSO/helper';
-import DropdownActionsIcon from '@proton/components/components/dropdown/DropdownActionsIcon';
 import { useLoading } from '@proton/hooks';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -22,6 +21,8 @@ import { getIsMemberDisabled, getIsMemberEnabled, getIsMemberSetup } from '@prot
 import { getCanGenerateMemberKeysPermissions, getShouldSetupMemberKeys } from '@proton/shared/lib/keys/memberKeys';
 import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
+
+import DropdownActionsIcon from '../../components/dropdown/DropdownActionsIcon';
 
 export const MagicLinkMemberActions = ({
     state,

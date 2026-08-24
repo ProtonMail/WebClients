@@ -3,15 +3,6 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Form from '@proton/components/components/form/Form';
-import type { BasicModalProps } from '@proton/components/components/modalTwo/BasicModal';
-import BasicModal from '@proton/components/components/modalTwo/BasicModal';
-import Option from '@proton/components/components/option/Option';
-import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import useApi from '@proton/components/hooks/useApi';
-import useGetCalendarInfo from '@proton/components/hooks/useGetCalendarInfo';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { createPublicLink } from '@proton/shared/lib/api/calendars';
 import { MAX_CHARS_CLEARTEXT } from '@proton/shared/lib/calendar/constants';
 import { getPrimaryCalendarKey } from '@proton/shared/lib/calendar/crypto/keys/helpers';
@@ -24,6 +15,16 @@ import {
 import type { CalendarLink, CalendarUrlResponse } from '@proton/shared/lib/interfaces/calendar';
 import { ACCESS_LEVEL } from '@proton/shared/lib/interfaces/calendar';
 import { splitKeys } from '@proton/shared/lib/keys';
+
+import Form from '../../../components/form/Form';
+import type { BasicModalProps } from '../../../components/modalTwo/BasicModal';
+import BasicModal from '../../../components/modalTwo/BasicModal';
+import Option from '../../../components/option/Option';
+import SelectTwo from '../../../components/selectTwo/SelectTwo';
+import InputFieldTwo from '../../../components/v2/field/InputField';
+import useApi from '../../../hooks/useApi';
+import useGetCalendarInfo from '../../../hooks/useGetCalendarInfo';
+import useNotifications from '../../../hooks/useNotifications';
 
 interface Props extends Omit<BasicModalProps, 'children' | 'footer'> {
     calendarID: string;

@@ -2,10 +2,10 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import CycleSelector from '@proton/components/containers/payments/CycleSelector';
 import { CYCLE } from '@proton/payments/core/constants';
 import type { Cycle } from '@proton/payments/core/interface';
 
+import CycleSelector from '../../../../payments/CycleSelector';
 import type { OfferProps } from '../../../interface';
 import Deal from './Deal';
 import DealCTA from './DealCTA';

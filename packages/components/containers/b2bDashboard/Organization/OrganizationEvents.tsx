@@ -4,11 +4,7 @@ import { endOfDay, isAfter, isBefore, startOfDay } from 'date-fns';
 import { c } from 'ttag';
 
 import { useOrganization } from '@proton/account/organization/hooks';
-import { Pagination, usePaginationAsync } from '@proton/components/components/pagination';
-import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
-import useApi from '@proton/components/hooks/useApi';
-import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useNotifications from '@proton/components/hooks/useNotifications';
+import { Href } from '@proton/atoms/Href/Href';
 import { useLoading } from '@proton/hooks';
 import {
     getOrganizationEventTypes,
@@ -16,9 +12,15 @@ import {
     getOrganizationLogsDownload,
 } from '@proton/shared/lib/api/b2bevents';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { B2BLogsQuery } from '@proton/shared/lib/interfaces/B2BLogs';
 import noop from '@proton/utils/noop';
 
+import { Pagination, usePaginationAsync } from '../../../components/pagination/index';
+import useApi from '../../../hooks/useApi';
+import useErrorHandler from '../../../hooks/useErrorHandler';
+import useNotifications from '../../../hooks/useNotifications';
+import SettingsSectionWide from '../../account/SettingsSectionWide';
 import { toCamelCase } from '../../credentialLeak/helpers';
 import GenericError from '../../error/GenericError';
 import B2BOrganizationUpsellBanner from '../ActivityMonitor/B2BOrganizationUpsellBanner';
@@ -33,8 +35,6 @@ import {
 import { downloadEvents, getConnectionEvents } from '../VPN/helpers';
 import OrganizationEventsTable from './OrganizationEventsTable';
 import type { OrganizationEvent } from './interface';
-import { getKnowledgeBaseUrl } from "@proton/shared/lib/helpers/url";
-import { Href } from "@proton/atoms/Href/Href";
 
 export interface FilterModel {
     eventType: string;
@@ -232,11 +232,8 @@ export const OrganizationEvents = () => {
                     <div className="flex flex-column flex-nowrap gap-1 px-4 py-4 rounded-lg border border-solid border-weak">
                         <span className="text-bold">{c('Info').t`Organization monitor`}</span>
                         <span className="color-weak">
-                            {c('Message').t`View changes to your organization and other administrator activities.`}
-                            {' '}
-                            <Href href={getKnowledgeBaseUrl('/organization-monitor')}>
-                                {c('Link').t`Learn more`}
-                            </Href>
+                            {c('Message').t`View changes to your organization and other administrator activities.`}{' '}
+                            <Href href={getKnowledgeBaseUrl('/organization-monitor')}>{c('Link').t`Learn more`}</Href>
                         </span>
                     </div>
                 </div>

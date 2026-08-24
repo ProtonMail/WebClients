@@ -3,9 +3,10 @@ import type { MouseEvent } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import BasicModal from '@proton/components/components/modalTwo/BasicModal';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { ACCESS_LEVEL } from '@proton/shared/lib/interfaces/calendar';
+
+import BasicModal from '../../../components/modalTwo/BasicModal';
 
 interface Props {
     link: string;

@@ -1,6 +1,6 @@
-import Info from '@proton/components/components/link/Info';
 import type { Plan } from '@proton/payments/core/plan/interface';
 
+import Info from '../../../components/link/Info';
 import { ButtonNumberInput } from './ButtonNumberInput';
 import type { DecreaseBlockedReason, IncreaseBlockedReason } from './helpers';
 

@@ -4,16 +4,16 @@ import { c, msgid } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import Alert from '@proton/components/components/alert/Alert';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import DynamicProgress from '@proton/components/components/progress/DynamicProgress';
 import { useGetContactGroups } from '@proton/mail/store/labels/hooks';
 import { getImportCategoriesModel, haveCategories } from '@proton/shared/lib/contacts/helpers/import';
 import type { ImportContactsModel } from '@proton/shared/lib/interfaces/contacts/Import';
 import { IMPORT_STEPS } from '@proton/shared/lib/interfaces/contacts/Import';
 
+import Alert from '../../../../components/alert/Alert';
+import ModalTwoContent from '../../../../components/modalTwo/ModalContent';
+import ModalTwoFooter from '../../../../components/modalTwo/ModalFooter';
+import ModalTwoHeader from '../../../../components/modalTwo/ModalHeader';
+import DynamicProgress from '../../../../components/progress/DynamicProgress';
 import { extractTotals } from '../encryptAndSubmit';
 import ContactImportWarningErrorDetails from './ContactImportWarningErrorDetails';
 

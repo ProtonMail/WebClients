@@ -5,30 +5,26 @@ import { c } from 'ttag';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import Form from '@proton/components/components/form/Form';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
-import CountriesStep from '@proton/components/containers/vpn/sharedServers/PolicyModal/CountriesStep';
-import MembersStep from '@proton/components/containers/vpn/sharedServers/PolicyModal/MembersStep';
-import NameStep from '@proton/components/containers/vpn/sharedServers/PolicyModal/NameStep';
-import { buildSelectedCitiesFromLocations } from '@proton/components/containers/vpn/sharedServers/buildSelectedCitiesFromLocations';
-import { PolicyState, PolicyType } from '@proton/components/containers/vpn/sharedServers/constants';
-import { useSharedServers } from '@proton/components/containers/vpn/sharedServers/useSharedServers';
-import type {
-    SharedServerGroup,
-    SharedServerUser,
-    VpnLocationFilterPolicy,
-} from '@proton/components/containers/vpn/sharedServers/useSharedServers';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { getCountryOptions } from '@proton/payments/core/countries';
 import { MINUTE } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
+import Form from '../../../../components/form/Form';
+import type { ModalProps } from '../../../../components/modalTwo/Modal';
+import ModalTwo from '../../../../components/modalTwo/Modal';
+import ModalTwoContent from '../../../../components/modalTwo/ModalContent';
+import ModalTwoFooter from '../../../../components/modalTwo/ModalFooter';
+import ModalTwoHeader from '../../../../components/modalTwo/ModalHeader';
+import { useModalTwoStatic } from '../../../../components/modalTwo/useModalTwo';
+import useNotifications from '../../../../hooks/useNotifications';
+import { buildSelectedCitiesFromLocations } from '../buildSelectedCitiesFromLocations';
+import { PolicyState, PolicyType } from '../constants';
+import { useSharedServers } from '../useSharedServers';
+import type { SharedServerGroup, SharedServerUser, VpnLocationFilterPolicy } from '../useSharedServers';
+import CountriesStep from './CountriesStep';
 import DiscardModal from './DiscardModal';
+import MembersStep from './MembersStep';
+import NameStep from './NameStep';
 import { getGroupedLocations } from './getGroupedLocations';
 import { POLICY_STEP } from './modalPolicyStepEnum';
 

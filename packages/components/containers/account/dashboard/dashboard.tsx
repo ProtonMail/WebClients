@@ -2,15 +2,16 @@ import type { PropsWithChildren } from 'react';
 
 import { c } from 'ttag';
 
-import PendingInvitations from '@proton/components/containers/payments/subscription/YourPlanSectionV2/PendingInvitations';
-import BundleUpsellBanner from '@proton/components/containers/payments/subscription/YourPlanSectionV2/Upsells/BundleUpsellBanner';
-import WorkspaceFromFreeBanner2 from '@proton/components/containers/payments/subscription/YourPlanSectionV2/Upsells/meet/WorkspaceFromFreeBanner2';
-import { PrivateMainSettingsArea, type SettingsAreaConfig } from '@proton/components/index';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 
+import PrivateMainSettingsArea from '../../layout/PrivateMainSettingsArea';
+import type { SettingsAreaConfig } from '../../layout/interface';
 import { SettingsCardMaxWidth } from '../../layout/interface';
 import { UpsellModalTelemetryProvider } from '../../payments/subscription/SubscriptionModalProvider';
+import PendingInvitations from '../../payments/subscription/YourPlanSectionV2/PendingInvitations';
+import BundleUpsellBanner from '../../payments/subscription/YourPlanSectionV2/Upsells/BundleUpsellBanner';
+import WorkspaceFromFreeBanner2 from '../../payments/subscription/YourPlanSectionV2/Upsells/meet/WorkspaceFromFreeBanner2';
 import YourPlanSectionV2 from '../../payments/subscription/YourPlanSectionV2/YourPlanSectionV2';
 import { YourPlanUpsellsSectionV2 } from '../../payments/subscription/YourPlanSectionV2/YourPlanUpsellsSectionV2';
 import DriveBlogSection from './drive/DriveBlogSection/DriveBlogSection';

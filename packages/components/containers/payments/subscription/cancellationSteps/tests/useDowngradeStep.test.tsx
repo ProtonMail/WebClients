@@ -1,12 +1,12 @@
 import { useUser } from '@proton/account/user/hooks';
-import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
-import { componentsHookRenderer } from '@proton/components/containers/contacts/tests/render';
 import { PRODUCT_BIT } from '@proton/shared/lib/constants';
 
+import { useModalTwoPromise } from '../../../../../components/modalTwo/useModalTwo';
+import { componentsHookRenderer } from '../../../../contacts/tests/render';
 import { useDowngradeStep } from '../useDowngradeStep';
 
 jest.mock('@proton/account/user/hooks');
-jest.mock('@proton/components/components/modalTwo/useModalTwo');
+jest.mock('../../../../../components/modalTwo/useModalTwo');
 
 const mockShowModal = jest.fn();
 

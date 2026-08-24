@@ -2,8 +2,7 @@ import type { ChangeEvent } from 'react';
 
 import { c } from 'ttag';
 
-import Select from '@proton/components/components/select/Select';
-
+import Select from '../../../../components/select/Select';
 import SettingsLayout from '../../../account/SettingsLayout';
 import SettingsLayoutLeft from '../../../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../../../account/SettingsLayoutRight';

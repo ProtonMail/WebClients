@@ -3,7 +3,8 @@ import { c } from 'ttag';
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import SettingsLink from '@proton/components/components/link/SettingsLink';
+
+import SettingsLink from '../../../components/link/SettingsLink';
 
 export const OrganizationIdentityWarningBanner = () => {
     const [organizationKey] = useOrganizationKey();

@@ -2,7 +2,6 @@ import type { ComponentPropsWithoutRef, ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import Price from '@proton/components/components/price/Price';
 import { getAddonConfigByName } from '@proton/payments/core/addon/addons';
 import type { AddonFlags, CustomizerCopyContext } from '@proton/payments/core/addon/interfaces';
 import { type ADDON_NAMES, ADDON_PREFIXES, FREE_SUBSCRIPTION } from '@proton/payments/core/constants';
@@ -20,6 +19,7 @@ import { MailFeatureFlag } from '@proton/unleash/Flags';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
+import Price from '../../../components/price/Price';
 import ScribeAddon from '../ScribeAddon';
 import { IPsNumberCustomiser } from './IPsNumberCustomiser';
 import LumoAddon from './LumoAddon';

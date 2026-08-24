@@ -5,15 +5,16 @@ import { c } from 'ttag';
 import { createPremiumAddress } from '@proton/account/addresses/actions';
 import { useProtonDomains } from '@proton/account/protonDomains/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
-import AuthModal from '@proton/components/containers/password/AuthModal';
-import type { AuthModalResult } from '@proton/components/containers/password/interface';
-import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { queryUnlock } from '@proton/shared/lib/api/user';
 import type { User } from '@proton/shared/lib/interfaces';
+
+import { useModalTwoPromise } from '../../components/modalTwo/useModalTwo';
+import useErrorHandler from '../../hooks/useErrorHandler';
+import useNotifications from '../../hooks/useNotifications';
+import AuthModal from '../password/AuthModal';
+import type { AuthModalResult } from '../password/interface';
 
 export const getActivateString = (user: User) => {
     return c('Action').t`Activate ${user.Name}@pm.me`;

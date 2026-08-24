@@ -3,7 +3,6 @@ import { createContext, useCallback, useContext, useEffect, useLayoutEffect, use
 
 import isDeepEqual from 'lodash/isEqual';
 
-import { getStoredThemeString, setStoredThemeString } from '@proton/components/containers/themes/themeCookieStorage';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import {
@@ -43,6 +42,7 @@ import {
 import noop from '@proton/utils/noop';
 
 import { classNames, styles } from './properties';
+import { getStoredThemeString, setStoredThemeString } from './themeCookieStorage';
 
 export interface ThemeContextInterface {
     setTheme: (theme: ThemeTypes, mode?: ThemeModeSetting) => void;

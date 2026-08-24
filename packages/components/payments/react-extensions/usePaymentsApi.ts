@@ -5,9 +5,6 @@ import { addMonths } from 'date-fns';
 
 import { selectPlans } from '@proton/account/plans';
 import { useSubscription } from '@proton/account/subscription/hooks';
-import useApi from '@proton/components/hooks/useApi';
-import useConfig from '@proton/components/hooks/useConfig';
-import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
 import { PAYMENTS_API_ERROR_CODES } from '@proton/payments/core/api-error-codes';
 import { type CheckSubscriptionData, getPaymentMethodStatus } from '@proton/payments/core/api/api';
 import {
@@ -46,6 +43,10 @@ import { useStore } from '@proton/redux-shared-store/sharedProvider';
 import { APPS } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
+
+import useApi from '../../hooks/useApi';
+import useConfig from '../../hooks/useConfig';
+import { usePreferredPlansMap } from '../../hooks/usePreferredPlansMap';
 
 const checkSubscriptionQuery = (data: CheckSubscriptionData) => {
     const normalizedData: CheckSubscriptionData = {

@@ -4,16 +4,16 @@ import { c, msgid } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import SearchInput from '@proton/components/components/input/SearchInput';
-import useNotifications from '@proton/components/hooks/useNotifications';
-import { useContactGroups } from '@proton/mail/store/labels/hooks';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
+import { useContactGroups } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { orderContactGroups } from '@proton/shared/lib/helpers/contactGroups';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
+import SearchInput from '../../../components/input/SearchInput';
+import useNotifications from '../../../hooks/useNotifications';
 import useItemsSelection from '../../items/useItemsSelection';
 import type { ContactGroupDeleteProps } from '../group/ContactGroupDeleteModal';
 import type { ContactGroupEditProps } from '../group/ContactGroupEditModal';

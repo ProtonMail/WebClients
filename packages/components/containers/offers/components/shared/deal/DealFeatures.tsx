@@ -4,16 +4,16 @@ import { useLocation } from 'react-router';
 import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
-import { Badge } from '@proton/components/components/badge/Badge';
-import Icon from '@proton/components/components/icon/Icon';
-import Info from '@proton/components/components/link/Info';
-import StripedItem from '@proton/components/components/stripedList/StripedItem';
-import { StripedList } from '@proton/components/components/stripedList/StripedList';
-import useConfig from '@proton/components/hooks/useConfig';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import clsx from '@proton/utils/clsx';
 
+import { Badge } from '../../../../../components/badge/Badge';
+import Icon from '../../../../../components/icon/Icon';
+import Info from '../../../../../components/link/Info';
+import StripedItem from '../../../../../components/stripedList/StripedItem';
+import { StripedList } from '../../../../../components/stripedList/StripedList';
+import useConfig from '../../../../../hooks/useConfig';
 import { getOfferProduct } from '../../../helpers/getOfferProduct';
 import { useDealContext } from './DealContext';
 

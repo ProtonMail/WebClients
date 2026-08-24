@@ -4,10 +4,6 @@ import { c } from 'ttag';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
-import SettingsLink from '@proton/components/components/link/SettingsLink';
-import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
-import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
-import useConfig from '@proton/components/hooks/useConfig';
 import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import {
     getPlanIDs,
@@ -28,6 +24,10 @@ import {
 import { addUpsellPath, getUpgradePath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
+import SettingsLink from '../../../components/link/SettingsLink';
+import useConfig from '../../../hooks/useConfig';
+import { useSubscriptionModal } from '../../payments/subscription/SubscriptionModalProvider';
+import { SUBSCRIPTION_STEPS } from '../../payments/subscription/constants';
 import TopBanner from '../TopBanner';
 
 const ModalAction = ({ textAction, upsellRef }: { textAction: string; upsellRef: string | undefined }) => {

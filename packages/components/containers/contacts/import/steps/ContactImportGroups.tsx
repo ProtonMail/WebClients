@@ -4,14 +4,6 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Input } from '@proton/atoms/Input/Input';
-import Alert from '@proton/components/components/alert/Alert';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import Option from '@proton/components/components/option/Option';
-import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
-import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import { FORBIDDEN_LABEL_NAMES } from '@proton/shared/lib/constants';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { normalize } from '@proton/shared/lib/helpers/string';
@@ -19,6 +11,14 @@ import type { ContactGroup, ImportContactsModel } from '@proton/shared/lib/inter
 import { IMPORT_GROUPS_ACTION } from '@proton/shared/lib/interfaces/contacts';
 import isTruthy from '@proton/utils/isTruthy';
 
+import Alert from '../../../../components/alert/Alert';
+import ModalTwoContent from '../../../../components/modalTwo/ModalContent';
+import ModalTwoFooter from '../../../../components/modalTwo/ModalFooter';
+import ModalTwoHeader from '../../../../components/modalTwo/ModalHeader';
+import Option from '../../../../components/option/Option';
+import SelectTwo from '../../../../components/selectTwo/SelectTwo';
+import useApi from '../../../../hooks/useApi';
+import useEventManager from '../../../../hooks/useEventManager';
 import { submitCategories } from '../encryptAndSubmit';
 
 interface SelectGroupActionProps {

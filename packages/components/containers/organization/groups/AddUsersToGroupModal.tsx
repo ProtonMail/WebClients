@@ -3,17 +3,17 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
 import type { EnhancedMember, Group, GroupMember } from '@proton/shared/lib/interfaces';
 import { GROUP_MEMBER_TYPE } from '@proton/shared/lib/interfaces';
 
+import ModalTwo from '../../../components/modalTwo/Modal';
+import ModalTwoContent from '../../../components/modalTwo/ModalContent';
+import ModalTwoFooter from '../../../components/modalTwo/ModalFooter';
+import ModalTwoHeader from '../../../components/modalTwo/ModalHeader';
+import type { ModalStateProps } from '../../../components/modalTwo/useModalState';
+import useModalState from '../../../components/modalTwo/useModalState';
+import useNotifications from '../../../hooks/useNotifications';
 import { NewGroupMemberInput } from './NewGroupMemberInput';
 import { NewGroupMemberItem } from './NewGroupMemberItem';
 import WillDisableE2eePrompt from './WillDisableE2eePrompt';

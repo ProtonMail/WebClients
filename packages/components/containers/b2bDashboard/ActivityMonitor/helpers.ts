@@ -1,10 +1,10 @@
 import { fromUnixTime } from 'date-fns';
 
-import { escapeCsvValue } from '@proton/components/helpers/escapeCsvValue';
 import type { B2BAuthLog } from '@proton/shared/lib/authlog';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import type { EnhancedMember, OrganizationExtended, Recipient } from '@proton/shared/lib/interfaces';
 
+import { escapeCsvValue } from '../../../helpers/escapeCsvValue';
 import {
     convertEnhancedMembersToContactEmails,
     convertGroupMemberToRecipient,

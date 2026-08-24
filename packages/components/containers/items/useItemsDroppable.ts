@@ -1,7 +1,6 @@
 import type { DragEvent } from 'react';
 
-import useDragOver from '@proton/components/hooks/useDragOver';
-
+import useDragOver from '../../hooks/useDragOver';
 import { DRAG_ITEM_ID_KEY, DRAG_ITEM_KEY } from './constants';
 
 /**

@@ -1,5 +1,4 @@
-import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
-
+import { useModalTwoStatic } from '../../../components/modalTwo/useModalTwo';
 import ContactMergeDetailsModal from '../merge/ContactMergeDetailsModal';
 import type { ContactMergeProps } from '../merge/ContactMergeModal';
 import ContactMergeModal from '../merge/ContactMergeModal';

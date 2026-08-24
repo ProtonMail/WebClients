@@ -4,15 +4,15 @@ import {
     disableGroupAddressEncryption,
     enableGroupAddressEncryption,
 } from '@proton/account/groups/setGroupAddressFlags';
-import Toggle from '@proton/components/components/toggle/Toggle';
-import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { KEY_FLAG } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import type { Address, Group } from '@proton/shared/lib/interfaces';
 
+import Toggle from '../../../../components/toggle/Toggle';
+import useErrorHandler from '../../../../hooks/useErrorHandler';
+import useNotifications from '../../../../hooks/useNotifications';
 import { useGroupsManagement } from '../context/GroupsManagementContext';
 
 interface Props {

@@ -1,10 +1,10 @@
 import { useSubscription } from '@proton/account/subscription/hooks';
-import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
 import { COUPON_CODES, CYCLE } from '@proton/payments/core/constants';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { isPaidSubscription } from '@proton/payments/core/type-guards';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import { useModalTwoPromise } from '../../../../components/modalTwo/useModalTwo';
 import { CancelSubscriptionModal } from '../cancelSubscription/CancelSubscriptionModal';
 import { CancelSubscriptionModalForWorldCup } from '../cancelSubscription/CancelSubscriptionModalForWorldCup/CancelSubscriptionModalForWorldCup';
 import type { CancelSubscriptionResult } from '../cancelSubscription/types';

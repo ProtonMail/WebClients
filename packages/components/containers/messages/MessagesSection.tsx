@@ -1,8 +1,5 @@
 import { c } from 'ttag';
 
-import Info from '@proton/components/components/link/Info';
-import useApi from '@proton/components/hooks/useApi';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { FeatureCode, useFeature } from '@proton/features';
 import { useLoading } from '@proton/hooks';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
@@ -14,6 +11,9 @@ import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
 import { STICKY_LABELS, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
+import Info from '../../components/link/Info';
+import useApi from '../../hooks/useApi';
+import useNotifications from '../../hooks/useNotifications';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';

@@ -2,15 +2,15 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import { getTelemetryUserTier } from '@proton/components/helpers/getTelemetryUserTier';
-import useApi from '@proton/components/hooks/useApi';
-import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import { PLANS } from '@proton/payments/core/constants';
 import { TelemetryAccountDashboardEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { Audience } from '@proton/shared/lib/interfaces';
 
+import { getTelemetryUserTier } from '../../../../../helpers/getTelemetryUserTier';
+import useApi from '../../../../../hooks/useApi';
+import useDashboardPaymentFlow from '../../../../../hooks/useDashboardPaymentFlow';
 import { useSubscriptionModal } from '../../SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '../../constants';
 import { PlanIcon } from '../PlanIcon';

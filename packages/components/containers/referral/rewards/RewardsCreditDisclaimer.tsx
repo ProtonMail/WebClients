@@ -2,9 +2,10 @@ import { c } from 'ttag';
 
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { Href } from '@proton/atoms/Href/Href';
-import { getHasCompletedReferral } from '@proton/components/containers/referral/rewards/helpers';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Referral } from '@proton/shared/lib/interfaces';
+
+import { getHasCompletedReferral } from './helpers';
 
 interface Props {
     referrals: Referral[];

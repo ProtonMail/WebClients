@@ -2,11 +2,6 @@ import { c } from 'ttag';
 
 import { userSettingsActions } from '@proton/account/userSettings';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import Info from '@proton/components/components/link/Info';
-import Loader from '@proton/components/components/loader/Loader';
-import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
-import useApi from '@proton/components/hooks/useApi';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
@@ -18,6 +13,11 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import type { COMPOSER_MODE, VIEW_LAYOUT } from '@proton/shared/lib/mail/mailSettings';
 
+import Info from '../../components/link/Info';
+import Loader from '../../components/loader/Loader';
+import useApi from '../../hooks/useApi';
+import useNotifications from '../../hooks/useNotifications';
+import SettingsSectionWide from '../account/SettingsSectionWide';
 import ComposerModeCards from './ComposerModeCards';
 import DensityRadiosCards from './DensityRadiosCards';
 import ViewLayoutCards from './ViewLayoutCards';

@@ -1,13 +1,9 @@
 import type { Dispatch, ReactNode, SetStateAction } from 'react';
 import { createContext, useCallback, useContext, useEffect, useRef, useState } from 'react';
 
-import { useGetUser } from '@proton/account/user/hooks';
-import { versionCookieAtLoad } from '@proton/components/helpers/versionCookie';
-import useDrawerLocalStorage from '@proton/components/hooks/drawer/useDrawerLocalStorage';
-import useToggleDrawerApp from '@proton/components/hooks/drawer/useToggleDrawerApp';
-import useApi from '@proton/components/hooks/useApi';
-import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { serverTime } from '@protontech/crypto';
+
+import { useGetUser } from '@proton/account/user/hooks';
 import { getClientID } from '@proton/shared/lib/apps/helper';
 import { getAppFromHostname } from '@proton/shared/lib/apps/slugHelper';
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
@@ -26,6 +22,12 @@ import { ApiError, serializeApiErrorData } from '@proton/shared/lib/fetch/ApiErr
 import { getAppVersionHeaders } from '@proton/shared/lib/fetch/headers';
 import { getIsIframe } from '@proton/shared/lib/helpers/browser';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
+
+import { versionCookieAtLoad } from '../../helpers/versionCookie';
+import useApi from '../useApi';
+import useAuthentication from '../useAuthentication';
+import useDrawerLocalStorage from './useDrawerLocalStorage';
+import useToggleDrawerApp from './useToggleDrawerApp';
 
 export const DrawerContext = createContext<{
     /**

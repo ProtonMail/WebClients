@@ -1,11 +1,11 @@
 import { c } from 'ttag';
 
-import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
-import Logo from '@proton/components/components/logo/Logo';
-import Option from '@proton/components/components/option/Option';
-import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import type { RetentionRuleProduct } from '@proton/shared/lib/interfaces/RetentionRule';
 
+import { DropdownSizeUnit } from '../../../components/dropdown/utils';
+import Logo from '../../../components/logo/Logo';
+import Option from '../../../components/option/Option';
+import SelectTwo from '../../../components/selectTwo/SelectTwo';
 import { SUPPORTED_PRODUCTS } from './constants';
 import { getLogoProductLabel, getProductLabel } from './helpers';
 

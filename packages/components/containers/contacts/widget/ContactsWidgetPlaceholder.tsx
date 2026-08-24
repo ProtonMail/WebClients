@@ -3,7 +3,6 @@ import type { MouseEvent, ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { getPlaceholderSrc } from '@proton/mail/helpers/getPlaceholderSrc';
 import noContactsImgDark from '@proton/styles/assets/img/placeholders/contacts-empty-cool-dark.svg';
 import noContactsImgLight from '@proton/styles/assets/img/placeholders/contacts-empty-cool-light.svg';
@@ -13,6 +12,7 @@ import noResultsImgLight from '@proton/styles/assets/img/placeholders/search-emp
 import noResultsImgWarm from '@proton/styles/assets/img/placeholders/search-empty-warm-light.svg';
 
 import IllustrationPlaceholder from '../../illustration/IllustrationPlaceholder';
+import { useTheme } from '../../themes/ThemeProvider';
 
 export enum EmptyType {
     All,

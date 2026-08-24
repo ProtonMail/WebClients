@@ -1,7 +1,8 @@
 import React from 'react';
 
-import Radio from '@proton/components/components/input/Radio';
 import clsx from '@proton/utils/clsx';
+
+import Radio from '../../../components/input/Radio';
 
 type ApplyPolicyButtonProps = {
     onClick: () => void;

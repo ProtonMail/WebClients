@@ -2,16 +2,12 @@ import { type ReactNode, createElement } from 'react';
 
 import { renderHook, waitFor } from '@testing-library/react';
 
-import {
-    componentsHookRenderer,
-    componentsHookWrapper,
-    getStoreWrapper,
-} from '@proton/components/containers/contacts/tests/render';
 import { Autopay, DEFAULT_PAYMENT_VENDOR_STATES, PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { PaymentStatus, PaymentsApi, SavedPaymentMethod } from '@proton/payments/core/interface';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { addApiMock, apiMock } from '@proton/testing/lib/api';
 
+import { componentsHookRenderer, componentsHookWrapper, getStoreWrapper } from '../../containers/contacts/tests/render';
 import { useMethods } from './useMethods';
 
 let paymentStatus: PaymentStatus;

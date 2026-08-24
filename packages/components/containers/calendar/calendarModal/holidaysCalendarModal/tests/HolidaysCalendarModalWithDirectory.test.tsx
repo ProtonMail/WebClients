@@ -2,14 +2,14 @@ import { fireEvent, render, screen, waitFor, within } from '@testing-library/rea
 import { mocked } from 'jest-mock';
 
 import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
-import { CALENDAR_MODAL_TYPE } from '@proton/components/containers/calendar/calendarModal/interface';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { ACCENT_COLORS_MAP } from '@proton/shared/lib/colors';
 import { localeCode, setLocales } from '@proton/shared/lib/i18n';
 import type { HolidaysDirectoryCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { generateHolidaysCalendars } from '@proton/testing/lib/builders';
 import { mockNotifications } from '@proton/testing/lib/mockNotifications';
 
+import useNotifications from '../../../../../hooks/useNotifications';
+import { CALENDAR_MODAL_TYPE } from '../../interface';
 import HolidaysCalendarModalWithDirectory from '../HolidaysCalendarModalWithDirectory';
 
 jest.mock('@proton/account/addresses/hooks', () => ({
@@ -22,8 +22,8 @@ jest.mock('@proton/calendar/calendarBootstrap/hooks', () => ({
     default: jest.fn(() => () => Promise.resolve({ CalendarSettings: { DefaultFullDayNotifications: [] } })),
     useGetCalendarBootstrap: jest.fn(),
 }));
-jest.mock('@proton/components/hooks/useEventManager', () => () => ({}));
-jest.mock('@proton/components/containers/eventManager/calendar/CalendarModelEventManagerProvider', () => ({
+jest.mock('../../../../../hooks/useEventManager', () => () => ({}));
+jest.mock('../../../../eventManager/calendar/CalendarModelEventManagerProvider', () => ({
     useCalendarModelEventManager: jest.fn(() => ({})),
 }));
 jest.mock('@proton/account/addressKeys/hooks', () => ({
@@ -32,14 +32,14 @@ jest.mock('@proton/account/addressKeys/hooks', () => ({
     useGetAddressKeys: jest.fn(() => []),
 }));
 
-jest.mock('@proton/components/hooks/useConfig', () => ({
+jest.mock('../../../../../hooks/useConfig', () => ({
     __esModule: true,
     default: () => {
         return { APP_NAME: 'proton-calendar' };
     },
 }));
 
-jest.mock('@proton/components/hooks/useNotifications');
+jest.mock('../../../../../hooks/useNotifications');
 jest.mock('@proton/calendar/calendarUserSettings/hooks', () => ({
     ...jest.requireActual('@proton/calendar/calendarUserSettings/hooks'),
     useCalendarUserSettings: jest.fn(),
@@ -51,7 +51,7 @@ jest.mock('@proton/shared/lib/colors', () => ({
     getRandomAccentColor: jest.fn(() => mockedColor), // return cobalt
 }));
 
-jest.mock('@proton/components/containers/calendar/hooks/useBusySlotsAvailable', () => ({
+jest.mock('../../../hooks/useBusySlotsAvailable', () => ({
     __esModule: true,
     default: jest.fn(() => false),
 }));

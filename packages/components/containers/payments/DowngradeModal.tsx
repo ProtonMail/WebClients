@@ -2,9 +2,10 @@ import { c } from 'ttag';
 
 import { Banner, BannerVariants } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import Prompt from '@proton/components/components/prompt/Prompt';
 import { MAIL_APP_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
+
+import type { ModalProps } from '../../components/modalTwo/Modal';
+import Prompt from '../../components/prompt/Prompt';
 
 export interface DowngradeModalProps extends ModalProps {
     hasMail: boolean;

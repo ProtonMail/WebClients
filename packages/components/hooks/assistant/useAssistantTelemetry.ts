@@ -1,4 +1,3 @@
-import useApi from '@proton/components/hooks/useApi';
 import { TelemetryMailComposerAssistantEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import type {
     ASSISTANT_TYPE,
@@ -10,6 +9,8 @@ import type {
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 
 import type { ASSISTANT_INSERT_TYPE } from 'proton-mail/hooks/assistant/useComposerAssistantGenerate';
+
+import useApi from '../useApi';
 
 const useAssistantTelemetry = () => {
     const api = useApi();

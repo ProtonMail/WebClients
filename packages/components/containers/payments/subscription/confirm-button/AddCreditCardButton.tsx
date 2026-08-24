@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
 import EditCardModal from '@proton/payments/ui/containers/EditCardModal';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 
+import useModalState from '../../../../components/modalTwo/useModalState';
 import { InfoBanner } from './InfoBanner';
 
 export type PublicProps = {

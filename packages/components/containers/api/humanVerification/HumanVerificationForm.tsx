@@ -3,11 +3,11 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
-import Alert from '@proton/components/components/alert/Alert';
-import Tabs from '@proton/components/components/tabs/Tabs';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 import type { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 
+import Alert from '../../../components/alert/Alert';
+import Tabs from '../../../components/tabs/Tabs';
 import useApi from '../../../hooks/useApi';
 import Captcha from './Captcha';
 import CodeMethod from './CodeMethod';
@@ -59,8 +59,7 @@ const HumanVerificationForm = ({
     const availableMethods = getAvailableMethods(methods);
     const [selectedMethod, setSelectedMethod] = useState<SupportedHumanVerificationMethodType>(() => {
         const firstAvailableMethod = Object.entries(availableMethods).find(([, available]) => available)?.[0] as
-            | SupportedHumanVerificationMethodType
-            | undefined;
+            SupportedHumanVerificationMethodType | undefined;
         return firstAvailableMethod || 'captcha';
     });
 

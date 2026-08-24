@@ -2,10 +2,6 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import DriveLogo from '@proton/components/components/logo/DriveLogo';
-import MailLogo from '@proton/components/components/logo/MailLogo';
-import PassLogo from '@proton/components/components/logo/PassLogo';
-import VpnLogo from '@proton/components/components/logo/VpnLogo';
 import type { IconSize } from '@proton/icons/types';
 import { PLANS, PLAN_SERVICES } from '@proton/payments/core/constants';
 import type { Plan, PlansMap, SubscriptionPlan } from '@proton/payments/core/plan/interface';
@@ -22,6 +18,10 @@ import { CSS_BASE_UNIT_SIZE } from '@proton/styles';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
+import DriveLogo from '../../../components/logo/DriveLogo';
+import MailLogo from '../../../components/logo/MailLogo';
+import PassLogo from '../../../components/logo/PassLogo';
+import VpnLogo from '../../../components/logo/VpnLogo';
 import FreeLogo from './FreeLogo/FreeLogo';
 import { getNormalizedPlanTitleToPlus } from './plusToPlusHelper';
 

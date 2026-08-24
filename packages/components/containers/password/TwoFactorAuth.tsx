@@ -3,11 +3,6 @@ import { type MutableRefObject, useCallback, useEffect, useImperativeHandle, use
 import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
-import Form from '@proton/components/components/form/Form';
-import { Tabs } from '@proton/components/components/tabs/Tabs';
-import useFormErrors from '@proton/components/components/v2/useFormErrors';
-import AuthSecurityKeyContent from '@proton/components/containers/account/fido/AuthSecurityKeyContent';
-import { TotpInputField, TotpRecoveryCodeInputField } from '@proton/components/containers/account/totp/TotpInputs';
 import type { TwoFactorCredentials } from '@proton/shared/lib/api/auth';
 import type { Fido2Response } from '@proton/shared/lib/authentication/interface';
 import type { TwoFactorAuthTypes } from '@proton/shared/lib/authentication/twoFactor';
@@ -15,6 +10,12 @@ import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { type AuthenticationCredentialsPayload, getAuthentication } from '@proton/shared/lib/webauthn/get';
 import isTruthy from '@proton/utils/isTruthy';
+
+import Form from '../../components/form/Form';
+import { Tabs } from '../../components/tabs/Tabs';
+import useFormErrors from '../../components/v2/useFormErrors';
+import AuthSecurityKeyContent from '../account/fido/AuthSecurityKeyContent';
+import { TotpInputField, TotpRecoveryCodeInputField } from '../account/totp/TotpInputs';
 
 interface TOTPFormProps {
     formId?: string;

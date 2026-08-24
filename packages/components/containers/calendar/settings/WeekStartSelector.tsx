@@ -2,12 +2,6 @@ import { c } from 'ttag';
 
 import { userSettingsActions } from '@proton/account/userSettings';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
-import Option from '@proton/components/components/option/Option';
-import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
-import { getAutomaticText } from '@proton/components/containers/general/helper';
-import useApi from '@proton/components/hooks/useApi';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateWeekStart } from '@proton/shared/lib/api/settings';
@@ -16,6 +10,13 @@ import { getBrowserLocale } from '@proton/shared/lib/i18n/helper';
 import { loadDateLocale } from '@proton/shared/lib/i18n/loadLocale';
 import { SETTINGS_WEEK_START, type UserSettings } from '@proton/shared/lib/interfaces';
 import { getDefaultWeekStartsOn } from '@proton/shared/lib/settings/helper';
+
+import { DropdownSizeUnit } from '../../../components/dropdown/utils';
+import Option from '../../../components/option/Option';
+import SelectTwo from '../../../components/selectTwo/SelectTwo';
+import useApi from '../../../hooks/useApi';
+import useNotifications from '../../../hooks/useNotifications';
+import { getAutomaticText } from '../../general/helper';
 
 interface Props {
     className?: string;

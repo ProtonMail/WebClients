@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
-import Price from '@proton/components/components/price/Price';
 import clsx from '@proton/utils/clsx';
 
+import Price from '../../../../../components/price/Price';
 import { useDealContext } from '../deal/DealContext';
 
 const DealPrice = () => {

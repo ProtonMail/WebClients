@@ -3,13 +3,14 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Collapsible from '@proton/components/components/collapsible/Collapsible';
-import CollapsibleContent from '@proton/components/components/collapsible/CollapsibleContent';
-import CollapsibleHeader from '@proton/components/components/collapsible/CollapsibleHeader';
-import CollapsibleHeaderIconButton from '@proton/components/components/collapsible/CollapsibleHeaderIconButton';
-import Checkbox from '@proton/components/components/input/Checkbox';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { logger } from '@proton/logger';
+
+import Collapsible from '../../components/collapsible/Collapsible';
+import CollapsibleContent from '../../components/collapsible/CollapsibleContent';
+import CollapsibleHeader from '../../components/collapsible/CollapsibleHeader';
+import CollapsibleHeaderIconButton from '../../components/collapsible/CollapsibleHeaderIconButton';
+import Checkbox from '../../components/input/Checkbox';
 
 const PREVIEW_LINE_COUNT = 10;
 

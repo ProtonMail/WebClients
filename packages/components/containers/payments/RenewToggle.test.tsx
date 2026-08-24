@@ -7,7 +7,7 @@ import { getStoreWrapper } from '../contacts/tests/render';
 import RenewToggle, { useRenewToggle } from './RenewToggle';
 
 jest.mock('@proton/atoms/Portal/Portal');
-jest.mock('@proton/components/components/toggle/Toggle');
+jest.mock('../../components/toggle/Toggle');
 
 beforeEach(() => {
     jest.clearAllMocks();

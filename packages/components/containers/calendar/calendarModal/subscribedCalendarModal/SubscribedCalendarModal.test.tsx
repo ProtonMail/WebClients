@@ -8,7 +8,7 @@ import SubscribedCalendarModal from './SubscribedCalendarModal';
 
 jest.mock('../../hooks/useGetCalendarSetup', () => () => ({}));
 
-jest.mock('@proton/components/hooks/useNotifications', () => () => ({}));
+jest.mock('../../../../hooks/useNotifications', () => () => ({}));
 
 jest.mock('../personalCalendarModal/calendarModalState', () => ({
     ...jest.requireActual('../personalCalendarModal/calendarModalState'),
@@ -35,7 +35,7 @@ jest.mock('@proton/account/organization/hooks', () => ({
 }));
 
 const mockApi = jest.fn();
-jest.mock('@proton/components/hooks/useApi', () => ({
+jest.mock('../../../../hooks/useApi', () => ({
     __esModule: true,
     default: jest.fn(() => mockApi),
 }));
@@ -48,7 +48,7 @@ jest.mock('../../hooks/useGetCalendarActions', () => ({
     })),
 }));
 
-jest.mock('@proton/components/hooks/useEventManager', () => ({
+jest.mock('../../../../hooks/useEventManager', () => ({
     __esModule: true,
     default: jest.fn(() => ({
         call: jest.fn(),
@@ -56,7 +56,7 @@ jest.mock('@proton/components/hooks/useEventManager', () => ({
     })),
 }));
 
-jest.mock('@proton/components/containers/eventManager/calendar/CalendarModelEventManagerProvider', () => ({
+jest.mock('../../../eventManager/calendar/CalendarModelEventManagerProvider', () => ({
     useCalendarModelEventManager: jest.fn(() => ({
         subscribe: jest.fn(),
     })),

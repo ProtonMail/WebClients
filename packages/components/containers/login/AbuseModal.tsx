@@ -3,9 +3,10 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
-import Prompt from '@proton/components/components/prompt/Prompt';
 import { isElement } from '@proton/shared/lib/helpers/dom';
 import { getAbuseURL } from '@proton/shared/lib/helpers/url';
+
+import Prompt from '../../components/prompt/Prompt';
 
 interface Props {
     message?: string;

@@ -8,12 +8,12 @@ import { Donut } from '@proton/atoms/Donut/Donut';
 import { Slider } from '@proton/atoms/Slider/Slider';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { ThemeColor, getVariableFromThemeColor } from '@proton/colors';
-import useElementRect from '@proton/components/hooks/useElementRect';
 import humanSize, { getLongSizeFormat, getSizeFormat, getUnit } from '@proton/shared/lib/helpers/humanSize';
 import { sizeUnits } from '@proton/shared/lib/helpers/size';
 import generateUID from '@proton/utils/generateUID';
 
 import { InputField } from '../../components/v2/field/InputField';
+import useElementRect from '../../hooks/useElementRect';
 
 interface Props {
     range: ReturnType<typeof getStorageRange>;

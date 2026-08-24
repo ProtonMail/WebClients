@@ -3,14 +3,15 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Form from '@proton/components/components/form/Form';
-import type { BasicModalProps } from '@proton/components/components/modalTwo/BasicModal';
-import BasicModal from '@proton/components/components/modalTwo/BasicModal';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { MAX_CHARS_CLEARTEXT } from '@proton/shared/lib/calendar/constants';
 import type { Nullable } from '@proton/shared/lib/interfaces/utils';
+
+import Form from '../../../components/form/Form';
+import type { BasicModalProps } from '../../../components/modalTwo/BasicModal';
+import BasicModal from '../../../components/modalTwo/BasicModal';
+import InputFieldTwo from '../../../components/v2/field/InputField';
+import useNotifications from '../../../hooks/useNotifications';
 
 interface EditLinkModalProps extends Omit<BasicModalProps, 'children' | 'footer'> {
     decryptedPurpose: Nullable<string>;

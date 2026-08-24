@@ -2,16 +2,16 @@ import { render, screen } from '@testing-library/react';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import useConfig from '@proton/components/hooks/useConfig';
 import { UserLockedFlags, type UserModel } from '@proton/shared/lib/interfaces';
 
+import useConfig from '../../hooks/useConfig';
 import StorageLimitTopBanner from './StorageLimitTopBanner';
 
 jest.mock('react-router-dom', () => ({
     useLocation: jest.fn().mockReturnValue({ pathname: '' }),
 }));
 
-jest.mock('@proton/components/components/link/AppLink');
+jest.mock('../../components/link/AppLink');
 
 jest.mock('@proton/account/user/hooks');
 const mockedUser = useUser as jest.Mock;
@@ -19,7 +19,7 @@ const mockedUser = useUser as jest.Mock;
 jest.mock('@proton/account/subscription/hooks');
 const mockedSub = useSubscription as jest.Mock;
 
-jest.mock('@proton/components/hooks/useConfig');
+jest.mock('../../hooks/useConfig');
 const mockConfig = useConfig as jest.Mock;
 
 // LockedStateTopBanner (rendered for lock-state banners) resolves its upgrade path through

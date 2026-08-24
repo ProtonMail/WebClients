@@ -2,14 +2,14 @@ import { c } from 'ttag';
 
 import { useRecoveryState } from '@proton/account/safetyReview/recoveryState/useRecoveryState';
 import { Button } from '@proton/atoms/Button/Button';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-import { SettingsLayoutVariant } from '@proton/components/containers/layout/interface';
-import useConfig from '@proton/components/hooks/useConfig';
-import { SkeletonLoader } from '@proton/components/index';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { APPS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
+import useModalState from '../../../components/modalTwo/useModalState';
+import useConfig from '../../../hooks/useConfig';
+import { SkeletonLoader } from '../../../index';
+import { SettingsLayoutVariant } from '../../layout/interface';
 import { RecoveryScoreBar } from './RecoveryScoreBar';
 import RecoveryScoreModal from './RecoveryScoreModal';
 import { RecoveryScoreShield } from './RecoveryScoreShield';

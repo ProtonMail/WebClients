@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
+import { useTheme } from '../themes/ThemeProvider';
 
 // Extract CSS variables from computed styles
 const extractCssVariable = (variableName: string) => {

@@ -2,10 +2,11 @@ import type { ChangeEvent } from 'react';
 
 import { c } from 'ttag';
 
-import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
-import Select from '@proton/components/components/select/Select';
 import type { Address } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
+
+import DropdownActions from '../../components/dropdown/DropdownActions';
+import Select from '../../components/select/Select';
 
 interface Props {
     addresses: Address[];

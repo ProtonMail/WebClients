@@ -3,16 +3,17 @@ import type { FC } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Checkbox from '@proton/components/components/input/Checkbox';
-import TableCell from '@proton/components/components/table/TableCell';
-import TableRow from '@proton/components/components/table/TableRow';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import type { PauseListEntryDeleteDTO } from '@proton/pass/lib/organization/types';
 import { intoCleanHostname } from '@proton/pass/lib/urls/utils/utils';
 import type { OrganizationUrlPauseEntryDto, OrganizationUrlPauseEntryValues } from '@proton/pass/types';
 import isTruthy from '@proton/utils/isTruthy';
+
+import Checkbox from '../../../components/input/Checkbox';
+import TableCell from '../../../components/table/TableCell';
+import TableRow from '../../../components/table/TableRow';
+import InputFieldTwo from '../../../components/v2/field/InputField';
+import useFormErrors from '../../../components/v2/useFormErrors';
 
 type NewEntry = Pick<OrganizationUrlPauseEntryDto, 'Url' | 'Values'>;
 

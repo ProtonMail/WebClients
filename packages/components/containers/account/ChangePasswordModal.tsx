@@ -7,22 +7,6 @@ import { usePasswordPolicies } from '@proton/account/passwordPolicies/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
-import Form from '@proton/components/components/form/Form';
-import SettingsLink from '@proton/components/components/link/SettingsLink';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import Modal from '@proton/components/components/modalTwo/Modal';
-import ModalContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
-import { PasswordPolicy, usePasswordPolicyValidation } from '@proton/components/components/passwordPolicy';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
-import useFormErrors from '@proton/components/components/v2/useFormErrors';
-import AuthModal from '@proton/components/containers/password/AuthModal';
-import useBeforeUnload from '@proton/components/hooks/useBeforeUnload';
-import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useNotifications from '@proton/components/hooks/useNotifications';
-import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { lockSensitiveSettings, unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
@@ -35,10 +19,26 @@ import { getIsAccountRecoveryAvailable } from '@proton/shared/lib/helpers/recove
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
+import Form from '../../components/form/Form';
+import SettingsLink from '../../components/link/SettingsLink';
+import type { ModalProps } from '../../components/modalTwo/Modal';
+import Modal from '../../components/modalTwo/Modal';
+import ModalContent from '../../components/modalTwo/ModalContent';
+import ModalFooter from '../../components/modalTwo/ModalFooter';
+import ModalHeader from '../../components/modalTwo/ModalHeader';
+import { PasswordPolicy, usePasswordPolicyValidation } from '../../components/passwordPolicy/index';
 import PasswordStrengthIndicator, {
     useLoadPasswordStrengthIndicatorWasm,
 } from '../../components/passwordStrengthIndicator/PasswordStrengthIndicator';
+import InputFieldTwo from '../../components/v2/field/InputField';
+import PasswordInputTwo from '../../components/v2/input/PasswordInput';
+import useFormErrors from '../../components/v2/useFormErrors';
+import useBeforeUnload from '../../hooks/useBeforeUnload';
+import useErrorHandler from '../../hooks/useErrorHandler';
+import useNotifications from '../../hooks/useNotifications';
+import { useSilentApi } from '../../hooks/useSilentApi';
 import GenericError from '../error/GenericError';
+import AuthModal from '../password/AuthModal';
 
 export enum MODES {
     CHANGE_ONE_PASSWORD_MODE = 1,

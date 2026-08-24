@@ -1,4 +1,4 @@
-import Toggle from '@proton/components/components/toggle/Toggle';
+import Toggle from '../../components/toggle/Toggle';
 
 interface Props {
     id?: string;

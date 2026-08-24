@@ -1,19 +1,20 @@
 import { c } from 'ttag';
 
-import Info from '@proton/components/components/link/Info';
-import Toggle from '@proton/components/components/toggle/Toggle';
-import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
-import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
-import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
-import SettingsSection from '@proton/components/containers/account/SettingsSection';
-import ViewPreferenceSelector from '@proton/components/containers/calendar/settings/ViewPreferenceSelector';
-import WeekStartSelector from '@proton/components/containers/calendar/settings/WeekStartSelector';
-import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import type { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
+
+import Info from '../../../components/link/Info';
+import Toggle from '../../../components/toggle/Toggle';
+import useApi from '../../../hooks/useApi';
+import useEventManager from '../../../hooks/useEventManager';
+import useNotifications from '../../../hooks/useNotifications';
+import SettingsLayout from '../../account/SettingsLayout';
+import SettingsLayoutLeft from '../../account/SettingsLayoutLeft';
+import SettingsLayoutRight from '../../account/SettingsLayoutRight';
+import SettingsSection from '../../account/SettingsSection';
+import ViewPreferenceSelector from './ViewPreferenceSelector';
+import WeekStartSelector from './WeekStartSelector';
 
 interface Props {
     calendarUserSettings: CalendarUserSettings;

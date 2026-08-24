@@ -1,5 +1,4 @@
-import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
-
+import { useModalTwo } from '../../../../components/modalTwo/useModalTwo';
 import UpsellModal from '../UpsellModal';
 
 export const useUpsellStep = () => {

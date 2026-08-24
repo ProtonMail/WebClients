@@ -2,8 +2,6 @@ import { c } from 'ttag';
 
 import { BannerVariants } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
-import { getSimplePriceString } from '@proton/components/components/price/helper';
-import type { PaymentFacade } from '@proton/components/payments/client-extensions';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { Currency, FreeSubscription } from '@proton/payments/core/interface';
 import { SubscriptionMode, SubscriptionPlatform } from '@proton/payments/core/subscription/constants';
@@ -20,6 +18,8 @@ import { PayButton } from '@proton/payments/ui/components/PayButton';
 import type { CouponConfigRendered } from '@proton/payments/ui/coupon-config/useCouponConfig';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 
+import { getSimplePriceString } from '../../../../components/price/helper';
+import type { PaymentFacade } from '../../../../payments/client-extensions/index';
 import { getSubscriptionManagerName } from '../InAppPurchaseModal';
 import { getVisionaryDowngradeWarningTextElement } from '../VisionaryDowngradeWarningModal';
 import { InfoBanner } from './InfoBanner';
