@@ -15,8 +15,14 @@ export interface DateTimeFieldSpec {
     param: string;
     dateLabel: string;
     timeLabel: string;
-    /** Used when the param holds no ISO datetime — the model may have supplied neither. Must be stable. */
+    /** Used when the param holds no usable datetime — the model may have supplied neither. Must be stable. */
     fallback: () => Date;
+    /**
+     * The registering tool's range rule (future-only, after the start field, …). Applied to the PROPOSAL
+     * only — one it rejects is replaced by {@link fallback}, so the user never meets a disabled Confirm with
+     * no cause, while a date the user goes on to pick is displayed exactly as picked.
+     */
+    accepts?: (date: Date) => boolean;
 }
 
 interface Props extends Pick<CardBodyProps, 'params' | 'onChange'> {
@@ -33,25 +39,34 @@ const parseIso = (raw: unknown) => {
     return isValid(parsed) ? parsed : undefined;
 };
 
+const usableProposal = (raw: unknown, accepts?: (date: Date) => boolean) => {
+    const parsed = parseIso(raw);
+    return parsed && (!accepts || accepts(parsed)) ? parsed : undefined;
+};
+
 /**
  * Editable date + time pairs for a Lumo confirm card, one pair per {@link DateTimeFieldSpec}. Product-blind:
  * the params it edits and the labels it shows arrive as props, so it never learns what a "wake time" is.
- * Both inputs read and write through `dateLocale`. Range rules (future-only, end after start) belong to the
- * tool that registered the card, not here.
+ * Both inputs read and write through `dateLocale`. Range rules (future-only, end after start) stay the
+ * registering tool's to define — this only applies the one it passes as {@link DateTimeFieldSpec.accepts},
+ * and only to the incoming proposal.
  */
 const DateTimeBody = ({ params, onChange, fields }: Props) => {
     const [userSettings] = useUserSettings();
 
     const [resolved] = useState(() =>
         Object.fromEntries(
-            fields.map(({ param, fallback }) => [param, (parseIso(params[param]) ?? fallback()).toISOString()])
+            fields.map(({ param, fallback, accepts }) => [
+                param,
+                (usableProposal(params[param], accepts) ?? fallback()).toISOString(),
+            ])
         )
     );
 
     // The card shell captured `params` before this mounted, so a fallback that is only rendered would let
     // the user confirm a datetime the tool never receives. Report it once instead of waiting for an edit.
     useEffect(() => {
-        if (fields.some(({ param }) => !parseIso(params[param]))) {
+        if (fields.some(({ param, accepts }) => !usableProposal(params[param], accepts))) {
             onChange({ ...params, ...resolved });
         }
     }, []);
