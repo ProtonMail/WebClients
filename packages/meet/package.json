@@ -15,9 +15,18 @@
         "test:watch": "yarn test --watch"
     },
     "dependencies": {
+        "@proton/account": "workspace:^",
         "@proton/app-context": "workspace:packages/app-context",
+        "@proton/payments": "workspace:^",
+        "@proton/react-redux-store": "workspace:^",
+        "@proton/redux-shared-store-types": "workspace:^",
+        "@proton/redux-utilities": "workspace:^",
         "@proton/shared": "workspace:packages/shared",
+        "@proton/unleash": "workspace:^",
+        "@proton/utils": "workspace:^",
         "@protontech/crypto": "*",
+        "@reduxjs/toolkit": "^2.12.0",
+        "@sentry/browser": "^7.120.4",
         "@types/react": "^18.3.31",
         "cross-env": "^10.1.0",
         "livekit-client": "2.22.0",
@@ -27,6 +36,7 @@
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
         "@proton/i18n": "workspace:packages/i18n",
+        "@proton/polyfill": "workspace:^",
         "@proton/testing": "workspace:packages/testing",
         "@testing-library/jest-dom": "^6.9.1",
         "@testing-library/react": "^15.0.7",
@@ -37,6 +47,7 @@
         "happy-dom": "^20.11.2",
         "prettier": "^3.9.6",
         "typescript": "^6.0.3",
+        "vite-plugin-wasm": "^3.6.0",
         "vitest": "^4.1.10"
     }
 }
