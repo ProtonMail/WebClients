@@ -3,9 +3,9 @@ import { useMemo, useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 import { c } from 'ttag';
 
+import { ConfigContext } from '@proton/app-context/configContext';
 import type { DisplayItem } from '@proton/components/components/topnavbar/SpotlightMenuButton';
 import { SpotlightMenuButton } from '@proton/components/components/topnavbar/SpotlightMenuButton';
-import ConfigContext from '@proton/components/containers/config/configContext';
 import { APPS, APPS_CONFIGURATION } from '@proton/shared/lib/constants';
 import globeVpnImg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-globe-vpn.svg';
 import networkConfigurationImg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-network-configuration.svg';
