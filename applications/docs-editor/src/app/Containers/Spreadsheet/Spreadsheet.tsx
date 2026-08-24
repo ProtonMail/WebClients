@@ -42,6 +42,7 @@ import { useActiveBreakpoint } from './useActiveBreakpoint'
 import type { SpreadsheetLocalYjsUpdateAuditResult } from './yjs-local-update-audit'
 import { reportErrorToSentry } from '../../Utils/errorMessage'
 import type { SheetsActionType } from '@proton/docs-shared/lib/SheetsActionType'
+import { useFeatureFlag } from './feature-flags'
 import { useSheetsDependencies } from './SheetsDependenciesProvider'
 
 export type SpreadsheetRef = {
@@ -87,7 +88,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
   ref: ForwardedRef<SpreadsheetRef>,
 ) {
   const { application } = useApplication()
-  const { canEdit, isDevOrBlack } = useSheetsDependencies()
+  const { canEdit } = useSheetsDependencies()
   const { viewportWidth } = useActiveBreakpoint()
 
   const didConvertFromFile = useRef(false)
@@ -123,21 +124,9 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
 
   const pushPatches = useMemo(() => clientInvoker.storeSpreadsheetPatches.bind(clientInvoker), [clientInvoker])
   const hasBasePatchesStored = useMemo(() => clientInvoker.hasBasePatchesStored.bind(clientInvoker), [clientInvoker])
-  const [isPatchesStorageEnabled, setIsPatchesStorageEnabled] = useState(false)
-  useEffect(() => {
-    void clientInvoker
-      .checkIfFeatureFlagIsEnabled('SheetsPatchesStorageEnabled')
-      .then((enabled) => setIsPatchesStorageEnabled(enabled))
-      .catch(console.error)
-  }, [clientInvoker])
-
-  const [isActionsStorageEnabled, setIsActionsStorageEnabled] = useState(false)
-  useEffect(() => {
-    void clientInvoker
-      .checkIfFeatureFlagIsEnabled('SheetsActionsStorageEnabled')
-      .then((enabled) => setIsActionsStorageEnabled(enabled))
-      .catch(console.error)
-  }, [clientInvoker])
+  const isPatchesStorageEnabled = useFeatureFlag('SheetsPatchesStorageEnabled')
+  const isActionsStorageEnabled = useFeatureFlag('SheetsActionsStorageEnabled')
+  const isDriftDetectionEnabled = useFeatureFlag('SheetsDriftDetectionEnabled')
   const storeAction = useMemo(
     () =>
       isActionsStorageEnabled
@@ -147,16 +136,6 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
         : () => {},
     [clientInvoker, isActionsStorageEnabled],
   )
-
-  // On dev/black the detector is always on (like other Sheets features); in prod it is gated by
-  // the SheetsDriftDetectionEnabled flag.
-  const [isDriftDetectionEnabled, setIsDriftDetectionEnabled] = useState(isDevOrBlack())
-  useEffect(() => {
-    void clientInvoker
-      .checkIfFeatureFlagIsEnabled('SheetsDriftDetectionEnabled')
-      .then((enabled) => setIsDriftDetectionEnabled(enabled || isDevOrBlack()))
-      .catch(console.error)
-  }, [clientInvoker, isDevOrBlack])
 
   const state = useProtonSheetsState({
     docState,
@@ -460,7 +439,7 @@ function UI({ hidden, isRevisionMode, clientInvoker, isPublicMode }: UIProps) {
           <div className="isolate z-10 flex h-full min-h-0 grow flex-col">
             {!isRevisionMode && <Toolbar className="m-2 max-sm:m-0" clientInvoker={clientInvoker} />}
             <LegacyGrid />
-            <BottomBar clientInvoker={clientInvoker} />
+            <BottomBar />
             <Dialogs />
             <EditingDisabledDialog clientInvoker={clientInvoker} />
           </div>
