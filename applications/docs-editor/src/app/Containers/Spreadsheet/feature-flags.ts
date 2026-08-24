@@ -1,17 +1,16 @@
-import { useEffect, useState } from 'react'
-import type { EditorRequiresClientMethods } from '@proton/docs-shared'
 import type { FeatureFlag } from '@proton/unleash/Flags'
+import { useEffect, useState } from 'react'
+
 import { useSheetsDependencies } from './SheetsDependenciesProvider'
 
-function useFeatureFlag(clientInvoker: EditorRequiresClientMethods, featureFlag: FeatureFlag) {
-  const { isDevOrBlack } = useSheetsDependencies()
+export function useFeatureFlag(featureFlag: FeatureFlag) {
+  const { isDevOrBlack, isFeatureFlagEnabled } = useSheetsDependencies()
   const [enabled, setEnabled] = useState(isDevOrBlack())
 
   useEffect(() => {
     let cancelled = false
 
-    void clientInvoker
-      .checkIfFeatureFlagIsEnabled(featureFlag)
+    void isFeatureFlagEnabled(featureFlag)
       .then((isEnabled) => {
         if (!cancelled) {
           setEnabled(isEnabled || isDevOrBlack())
@@ -22,19 +21,7 @@ function useFeatureFlag(clientInvoker: EditorRequiresClientMethods, featureFlag:
     return () => {
       cancelled = true
     }
-  }, [clientInvoker, featureFlag, isDevOrBlack])
+  }, [featureFlag, isDevOrBlack, isFeatureFlagEnabled])
 
   return enabled
-}
-
-export function useIsSheetsStatusBarEnabled(clientInvoker: EditorRequiresClientMethods) {
-  return useFeatureFlag(clientInvoker, 'SheetsStatusBarEnabled')
-}
-
-export function useIsSheetsCustomNumberFormatEnabled(clientInvoker: EditorRequiresClientMethods) {
-  return useFeatureFlag(clientInvoker, 'SheetsCustomNumberFormatEnabled')
-}
-
-export function useIsSheetsCustomDateTimeFormatEnabled(clientInvoker: EditorRequiresClientMethods) {
-  return useFeatureFlag(clientInvoker, 'SheetsCustomDateTimeFormatEnabled')
 }

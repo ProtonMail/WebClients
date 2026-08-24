@@ -29,6 +29,7 @@ export function SheetsAdapter({ children, clientInvoker }: SheetsAdapterProps) {
       isDevOrBlack,
       canEdit,
       canTrash,
+      isFeatureFlagEnabled: (featureFlag) => clientInvoker.checkIfFeatureFlagIsEnabled(featureFlag),
       versionInfo: {
         environment: application.environment,
         version: application.appVersion,
