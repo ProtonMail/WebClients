@@ -1,4 +1,4 @@
-import clsx from 'clsx'
+import { clsx } from 'clsx'
 import * as Ariakit from '@ariakit/react'
 import { createStringifier } from '../../stringifier'
 import { c } from 'ttag'
@@ -30,7 +30,7 @@ export const Menubar = createComponent(function Menubar({ clientInvoker, isPubli
       <EditMenu renderMenuButton={<MenubarItem>{s('Edit')}</MenubarItem>} />
       <ViewMenu renderMenuButton={<MenubarItem>{s('View')}</MenubarItem>} />
       <InsertMenu renderMenuButton={<MenubarItem>{s('Insert')}</MenubarItem>} />
-      <FormatMenu renderMenuButton={<MenubarItem>{s('Format')}</MenubarItem>} clientInvoker={clientInvoker} />
+      <FormatMenu renderMenuButton={<MenubarItem>{s('Format')}</MenubarItem>} />
       <DataMenu renderMenuButton={<MenubarItem>{s('Data')}</MenubarItem>} />
     </Ariakit.Menubar>
   )
