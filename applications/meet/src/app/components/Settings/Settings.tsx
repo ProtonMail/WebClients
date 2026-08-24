@@ -20,6 +20,7 @@ import { selectSubscriptionStatus } from '@proton/meet/store/slices/userSlice';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import { ConditionalTooltip } from '../../atoms/ConditionalTooltip/ConditionalTooltip';
 import { SettingToggle } from '../../atoms/SettingToggle/SettingToggle';
 import { SideBar } from '../../atoms/SideBar/SideBar';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
@@ -113,19 +114,30 @@ export const Settings = () => {
                             />
                         )}
                         {isVirtualBackgroundEnabled && !isMobile() && (
-                            <Button
-                                shape="ghost"
-                                className="virtual-backgrounds-button w-full flex items-center justify-space-between flex-nowrap gap-2 px-0 py-2 text-left"
-                                disabled={!isBackgroundBlurSupported}
-                                onClick={() => dispatch(toggleSideBarStateAction(MeetingSideBars.Backgrounds))}
+                            <ConditionalTooltip
+                                title={
+                                    isBackgroundBlurSupported
+                                        ? undefined
+                                        : c('Tooltip').t`Background effects are not supported on your browser`
+                                }
                             >
-                                <span className="meet-font-weight">{c('Action').t`Virtual backgrounds`}</span>
-                                <IcChevronRight
-                                    size={4}
-                                    className="shrink-0 mr-custom"
-                                    style={{ '--mr-custom': 'calc(var(--space-1) * -1)' }}
-                                />
-                            </Button>
+                                <span className="inline-block w-full">
+                                    <Button
+                                        shape="ghost"
+                                        className="virtual-backgrounds-button w-full flex items-center justify-space-between flex-nowrap gap-2 px-0 py-2 text-left"
+                                        disabled={!isBackgroundBlurSupported}
+                                        onClick={() => dispatch(toggleSideBarStateAction(MeetingSideBars.Backgrounds))}
+                                    >
+                                        <span className="meet-font-weight">{c('Action')
+                                            .t`Backgrounds and effects`}</span>
+                                        <IcChevronRight
+                                            size={4}
+                                            className="shrink-0 mr-custom"
+                                            style={{ '--mr-custom': 'calc(var(--space-1) * -1)' }}
+                                        />
+                                    </Button>
+                                </span>
+                            </ConditionalTooltip>
                         )}
                         <SettingToggle
                             id="disable-videos"

@@ -16,6 +16,7 @@ import type { SerializableDeviceInfo } from '@proton/meet/utils/deviceUtils';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import { ConditionalTooltip } from '../../atoms/ConditionalTooltip/ConditionalTooltip';
 import { OptionButton } from '../../atoms/OptionButton/OptionButton';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import { DeviceSettingsDropdown } from '../DeviceSettingsDropdown';
@@ -123,23 +124,33 @@ const VideoSettingsDropdownComponent = ({
                         <>
                             <hr className="w-full m-0 border-weak" />
 
-                            <OptionButton
-                                showIcon
-                                Icon={IcImage}
-                                label={c('Action').t`Virtual backgrounds`}
-                                disabled={!isBackgroundBlurSupported}
-                                onClick={() => {
-                                    onClose();
-                                    dispatch(toggleSideBarState(MeetingSideBars.Backgrounds));
-                                }}
-                                rightContent={
-                                    <IcChevronRight
-                                        size={4}
-                                        className="ml-auto shrink-0"
-                                        style={{ color: 'var(--text-weak)' }}
-                                    />
+                            <ConditionalTooltip
+                                title={
+                                    isBackgroundBlurSupported
+                                        ? undefined
+                                        : c('Tooltip').t`Background effects are not supported on your browser`
                                 }
-                            />
+                            >
+                                <span className="inline-block w-full">
+                                    <OptionButton
+                                        showIcon
+                                        Icon={IcImage}
+                                        label={c('Action').t`Backgrounds and effects`}
+                                        disabled={!isBackgroundBlurSupported}
+                                        onClick={() => {
+                                            onClose();
+                                            dispatch(toggleSideBarState(MeetingSideBars.Backgrounds));
+                                        }}
+                                        rightContent={
+                                            <IcChevronRight
+                                                size={4}
+                                                className="ml-auto shrink-0"
+                                                style={{ color: 'var(--text-weak)' }}
+                                            />
+                                        }
+                                    />
+                                </span>
+                            </ConditionalTooltip>
                         </>
                     )}
                 </div>
