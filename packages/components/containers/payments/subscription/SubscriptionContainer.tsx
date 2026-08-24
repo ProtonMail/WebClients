@@ -119,6 +119,7 @@ import SubscriptionCheckout from './modal-components/SubscriptionCheckout';
 import SubscriptionThanks from './modal-components/SubscriptionThanks';
 import { canShowGiftCodeInput } from './modal-components/helpers/canShowGiftCodeInput';
 import { PostSubscriptionModalLoadingContent } from './postSubscription/modals/PostSubscriptionModalsComponents';
+import type { OpenCallbackProps } from './subscriptionModalTypes';
 import { getCodes, useSubscriptionContainerInnerCheck } from './useSubscriptionContainerInnerCheck';
 import useSubscriptionModalTelemetry from './useSubscriptionModalTelemetry';
 
@@ -249,6 +250,41 @@ export interface SubscriptionContainerProps {
     skipPlanTransitionChecks?: boolean;
     initialBillingAddress: BillingAddress;
 }
+
+type SubscriptionContainerOpenCallbackPropKeys =
+    | 'step'
+    | 'cycle'
+    | 'currency'
+    | 'plan'
+    | 'planIDs'
+    | 'coupon'
+    | 'disablePlanSelection'
+    | 'disableThanksStep'
+    | 'defaultAudience'
+    | 'disableCycleSelector'
+    | 'defaultSelectedProductPlans'
+    | 'telemetryFlow'
+    | 'upsellRef'
+    | 'maximumCycle'
+    | 'minimumCycle'
+    | 'onSubscribed'
+    | 'onUnsubscribed'
+    | 'mode'
+    | 'allowedAddonTypes';
+
+type OpenCallbackPropsModalOnlyKeys =
+    'hasClose' | 'onClose' | 'onMount' | 'disableCloseOnEscape' | 'fullscreen' | 'upsellTelemetryContext';
+
+type AssertExact<T, U> = [T] extends [U] ? ([U] extends [T] ? true : never) : never;
+
+/** Keeps {@link OpenCallbackProps} in sync with the container fields it forwards. */
+type AssertOpenCallbackPropsMatch = AssertExact<
+    Pick<SubscriptionContainerProps, SubscriptionContainerOpenCallbackPropKeys>,
+    Omit<OpenCallbackProps, OpenCallbackPropsModalOnlyKeys>
+>;
+
+const assertOpenCallbackPropsMatch: AssertOpenCallbackPropsMatch = true;
+void assertOpenCallbackPropsMatch;
 
 const SubscriptionContainerInner = ({
     topRef: customTopRef,

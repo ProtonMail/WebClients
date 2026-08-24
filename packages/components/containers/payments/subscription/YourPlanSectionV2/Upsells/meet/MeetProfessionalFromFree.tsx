@@ -15,7 +15,6 @@ import Icon from '../../../../../../components/icon/Icon';
 import Info from '../../../../../../components/link/Info';
 import { Tabs } from '../../../../../../components/tabs/Tabs';
 import useDashboardPaymentFlow from '../../../../../../hooks/useDashboardPaymentFlow';
-import { SUBSCRIPTION_STEPS, useSubscriptionModal } from '../../../../../../index';
 import CycleSelector from '../../../../CycleSelector';
 import { getShortStorageFeatureB2B } from '../../../../features/drive';
 import type { PlanCardFeatureDefinition } from '../../../../features/interface';
@@ -33,8 +32,10 @@ import {
     getMeetingMaxLength,
     getVideoMeetingsFeature,
 } from '../../../../features/meet';
-import type { GetPlanUpsellArgs } from '../../../helpers/index';
-import { type Upsell, type UpsellFeature, getUpsell } from '../../../helpers/index';
+import { useSubscriptionModal } from '../../../SubscriptionModalProvider';
+import { SUBSCRIPTION_STEPS } from '../../../constants';
+import type { GetPlanUpsellArgs } from '../../../helpers/dashboard-upsells';
+import { type Upsell, type UpsellFeature, getUpsell } from '../../../helpers/dashboard-upsells';
 import UpsellPanelsV2 from '../../../panels/UpsellPanelsV2';
 import { PlanIcon } from '../../PlanIcon';
 import type { UpsellSectionProps, UpsellsHook } from '../../YourPlanUpsellsSectionV2';

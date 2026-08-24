@@ -7,8 +7,8 @@ import { APPS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 import useModalState from '../../../components/modalTwo/useModalState';
+import SkeletonLoader from '../../../components/skeletonLoader/SkeletonLoader';
 import useConfig from '../../../hooks/useConfig';
-import { SkeletonLoader } from '../../../index';
 import { SettingsLayoutVariant } from '../../layout/interface';
 import { RecoveryScoreBar } from './RecoveryScoreBar';
 import RecoveryScoreModal from './RecoveryScoreModal';
