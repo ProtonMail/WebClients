@@ -81,10 +81,14 @@ export const usePreJoinWaitingRoom = () => {
                     return;
                 }
 
-                reportMeetError('Failed to wait for waiting room welcome', {
-                    context: { error },
-                    tags: { meetingLinkName: meetLinkName },
-                });
+                // Don't report when join request times out
+                if (error !== MeetCoreErrorEnum.RoomJoinRequestTimeout) {
+                    reportMeetError('Failed to wait for waiting room welcome', {
+                        context: { error },
+                        tags: { meetingLinkName: meetLinkName },
+                    });
+                }
+
                 dispatch(settleAdmission(WaitingRoomAdmissionStatus.EXPIRED));
             }
         },
