@@ -6,6 +6,7 @@ import { DriveEventType } from '@proton/drive';
 import { createMockNodeEntity } from '@proton/drive/modules/testing';
 
 import { SearchDB } from '../shared/SearchDB';
+import { SearchLibraryError } from '../shared/errors';
 import type {
     ClientId,
     SearchModuleState,
@@ -21,6 +22,7 @@ import { FakeBroadcastChannel } from '../testing/FakeBroadcastChannel';
 import { FakeMainThreadBridge } from '../testing/FakeMainThreadBridge';
 import { setupRealSearchLibraryWasm } from '../testing/setupRealSearchLibraryWasm';
 import { SharedWorkerAPI } from './SharedWorkerAPI';
+import { IndexReader } from './index/IndexReader';
 
 setupRealSearchLibraryWasm();
 
@@ -873,6 +875,26 @@ describe('SharedWorkerAPI integration', () => {
             expectState(errorState, { permanentError: 'quota_exceeded', isSearchable: false });
             expect(await search(api, 'report')).toHaveLength(0);
             state.expectNeverSearchableSinceCheckpoint();
+        });
+    });
+
+    describe('Scenario: permanent error during a search query', () => {
+        it('surfaces the rebuild banner even though search bypasses the task queue', async () => {
+            await api.registerClient(USER_ID, CLIENT_A, bridge.asBridge());
+            await state.waitForSearchable();
+
+            // Indexing already succeeded; simulate a permanent WASM failure specific to the query
+            // path, which - per SearchQueryExecutor's own doc comment - bypasses the task queue
+            // entirely, so the indexer's own permanent-error handling never runs for it.
+            jest.spyOn(IndexReader.prototype, 'execute').mockImplementation(async function* () {
+                throw new SearchLibraryError('Search library WASM failed: query execute', new Error('boom'));
+            });
+
+            state.checkpoint();
+            await expect(search(api, 'report')).rejects.toThrow(SearchLibraryError);
+
+            const errorState = await state.waitForPermanentError();
+            expectState(errorState, { permanentError: 'search_library_error' });
         });
     });
 
