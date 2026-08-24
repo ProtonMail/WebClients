@@ -1,8 +1,10 @@
 import { useEffect } from 'react';
 
+import { contactEmailsThunk } from '@proton/mail/store/contactEmails';
 import { useDispatch, useSelector } from '@proton/redux-shared-store/sharedProvider';
 import noop from '@proton/utils/noop';
 
+import { selectIsDelegatedAccessSupported } from '../../delegatedAccess';
 import { listOutgoingDelegatedAccess } from '../../delegatedAccess/outgoingActions';
 import { type RecoveryStateResult, selectRecoveryState } from './recoveryState';
 
@@ -15,9 +17,14 @@ import { type RecoveryStateResult, selectRecoveryState } from './recoveryState';
  */
 export const useLoadRecoveryState = () => {
     const dispatch = useDispatch();
+    const isDelegatedAccessSupported = useSelector(selectIsDelegatedAccessSupported);
 
     useEffect(() => {
         dispatch(listOutgoingDelegatedAccess()).catch(noop);
+        // Contact emails back the recovery and emergency contact steps, so they're only needed where those exist.
+        if (isDelegatedAccessSupported) {
+            dispatch(contactEmailsThunk()).catch(noop);
+        }
     }, []);
 };
 

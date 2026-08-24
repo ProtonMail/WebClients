@@ -19,6 +19,7 @@ import { useOrganization } from '@proton/account/organization/hooks';
 import { useIsDataRecoveryAvailable } from '@proton/account/recovery/dataRecovery';
 import { useIsSessionRecoveryAvailable } from '@proton/account/recovery/sessionRecoveryHooks';
 import { useReferralInfo } from '@proton/account/referralInfo/hooks';
+import { SafetyReviewRoute } from '@proton/account/safetyReview/components/SafetyReviewRoute';
 import AuthDevicesSettings from '@proton/account/sso/AuthDevicesSettings';
 import MembersAuthDevicesTopBanner from '@proton/account/sso/MembersAuthDevicesTopBanner';
 import { useSubscription } from '@proton/account/subscription/hooks';
@@ -87,7 +88,7 @@ import useRecoveryNotification from '@proton/components/hooks/useRecoveryNotific
 import useShowVPNDashboard from '@proton/components/hooks/useShowVPNDashboard';
 import useToggle from '@proton/components/hooks/useToggle';
 import { useEntitlementChecks } from '@proton/payments/core/entitlements/hooks';
-import { APPS, VPN_TV_PATHS } from '@proton/shared/lib/constants';
+import { APPS, SECURITY_CHECKUP_PATHS, VPN_TV_PATHS } from '@proton/shared/lib/constants';
 import { getIsAccountRecoveryAvailable } from '@proton/shared/lib/helpers/recovery';
 import { localeCode } from '@proton/shared/lib/i18n';
 import { locales } from '@proton/shared/lib/i18n/locales';
@@ -98,6 +99,7 @@ import { TVContainer } from '@proton/vpn/components/tv';
 import { NavigationProvider, useB2BAdminNavigation } from '@proton/vpn/contexts/navigation';
 
 import { DownloadsRoute } from '../routes/downloads';
+import AccountLoaderPage from './AccountLoaderPage';
 import { VPNSidebar } from './VPNSidebar';
 import { getRoutes } from './routes';
 
@@ -164,8 +166,7 @@ const MainContainer: FunctionComponent = () => {
         // Delegated access disabled on VPN because 1) it doesn't support the account switcher, and 2) it doesn't get pass scope.
         isDelegatedAccessAvailable: false,
         isNonPrivateDelegatedAccessAvailable: false,
-        // Disabled on VPN because it can't use delegated access, so we don't display the recovery score either.
-        isRecoveryScoreBannerAvailable: false,
+        isRecoveryScoreBannerAvailable: true,
     };
 
     const flags: Flags = {
@@ -287,6 +288,10 @@ const MainContainer: FunctionComponent = () => {
                     <UnAuthenticated>
                         <TVContainer />
                     </UnAuthenticated>
+                </Route>
+                {/* Mounted outside of the settings layout so that the safety review gets the full page. */}
+                <Route path={SECURITY_CHECKUP_PATHS.ROOT}>
+                    <SafetyReviewRoute loader={<AccountLoaderPage />} />
                 </Route>
                 <Route path="*">
                     <NavigationProvider>
