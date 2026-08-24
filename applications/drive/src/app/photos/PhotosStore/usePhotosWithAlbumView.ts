@@ -58,7 +58,7 @@ export const usePhotosWithAlbumsView = () => {
             void getDriveForPhotos()
                 .getNodeUid(albumShareId, albumLinkId)
                 .then((currentAlbumNodeUid) => {
-                    void loadCurrentAlbum(currentAlbumNodeUid, abortController.signal);
+                    void loadCurrentAlbum(currentAlbumNodeUid, usePhotosStore.getState, abortController.signal);
                 });
             if (AlbumsPageTypes.ALBUMSADDPHOTOS === currentPageType) {
                 void loadTimelinePhotos(abortController.signal);

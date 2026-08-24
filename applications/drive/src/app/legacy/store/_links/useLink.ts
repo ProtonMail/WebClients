@@ -29,16 +29,12 @@ import { tokenIsValid } from '../../../utils/url/token';
 import { linkMetaToEncryptedLink, revisionPayloadToRevision, useDebouncedRequest } from '../_api';
 import type { IntegrityMetrics, VerificationKey } from '../_crypto';
 import { integrityMetrics, useDriveCrypto } from '../_crypto';
-import {
-    type Share,
-    ShareType,
-    type ShareTypeStringWithPublic,
-    type ShareWithKey,
-    getShareTypeString,
-    useDefaultShare,
-    useShare,
-} from '../_shares';
+import type { Share, ShareTypeStringWithPublic, ShareWithKey } from '../_shares/interface';
+import { ShareType } from '../_shares/interface';
+import { getShareTypeString } from '../_shares/shareType';
+import { useDefaultShare } from '../_shares/useDefaultShare';
 import { useDirectSharingInfo } from '../_shares/useDirectSharingInfo';
+import useShare from '../_shares/useShare';
 import { useGetMetricsUserPlan } from '../_user/useGetMetricsUserPlan';
 import { useDebouncedFunction } from '../_utils';
 import { decryptExtendedAttributes } from './extendedAttributes';

@@ -38,7 +38,7 @@ export const DevicesSidebarItem = ({ device, toggleExpand }: Props) => {
                 <DriveSidebarSubfolders
                     key={device.nodeUid}
                     shareId={shareId}
-                    children={Object.values(device.children)}
+                    items={device.children}
                     toggleExpand={toggleExpand}
                     level={1}
                 />
