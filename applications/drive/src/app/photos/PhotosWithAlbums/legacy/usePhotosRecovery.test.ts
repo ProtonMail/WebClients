@@ -1,6 +1,6 @@
 import { act, renderHook, waitFor } from '@testing-library/react';
 
-import { useApi } from '@proton/components';
+import { useApi } from '@proton/app-context/useApi';
 import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
@@ -54,7 +54,7 @@ jest.mock('../../../legacy/store/_links', () => {
     return { useLinksActions, useLinksListing };
 });
 
-jest.mock('@proton/components', () => ({
+jest.mock('@proton/app-context/useApi', () => ({
     useApi: jest.fn(),
 }));
 

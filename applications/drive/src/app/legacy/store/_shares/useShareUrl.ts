@@ -3,7 +3,8 @@ import { CryptoProxy } from '@protontech/crypto';
 import { computeKeyPassword } from '@protontech/crypto/srp';
 import { utf8StringToUint8Array } from '@protontech/crypto/utils';
 
-import { useApi, usePreventLeave } from '@proton/components';
+import { useApi } from '@proton/app-context/useApi';
+import { usePreventLeave } from '@proton/components';
 import { EnrichedError, sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import {
     queryCreateSharedLink,

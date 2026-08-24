@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
@@ -9,7 +10,6 @@ import { updateHideSenderImages } from '@proton/shared/lib/api/mailSettings';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 
 import Toggle from '../../components/toggle/Toggle';
-import useApi from '../../hooks/useApi';
 import useToggle from '../../hooks/useToggle';
 
 interface Props {

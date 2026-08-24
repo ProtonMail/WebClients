@@ -4,13 +4,13 @@ import type { PublicKeyReference } from '@protontech/crypto';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import useApi from '@proton/components/hooks/useApi';
 import { useLoading } from '@proton/hooks';
 import { IcInfoCircleFilled } from '@proton/icons/icons/IcInfoCircleFilled';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';

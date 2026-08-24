@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { userSettingsActions } from '@proton/account/userSettings';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { useConfig } from '@proton/app-context/useConfig';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Href } from '@proton/atoms/Href/Href';
@@ -16,7 +17,6 @@ import type { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import noop from '@proton/utils/noop';
 
 import Option from '../../components/option/Option';
-import useApi from '../../hooks/useApi';
 import useErrorHandler from '../../hooks/useErrorHandler';
 import { SettingsIconRow } from '../account/SettingsIconRow';
 import SettingsParagraph from '../account/SettingsParagraph';

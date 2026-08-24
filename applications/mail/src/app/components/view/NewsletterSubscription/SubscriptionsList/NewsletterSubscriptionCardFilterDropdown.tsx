@@ -3,6 +3,7 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
@@ -13,7 +14,6 @@ import DropdownMenuButton from '@proton/components/components/dropdown/DropdownM
 import Icon from '@proton/components/components/icon/Icon';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import FiltersUpsellModal from '@proton/components/components/upsell/modals/FiltersUpsellModal';
-import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { IcCrossCircle } from '@proton/icons/icons/IcCrossCircle';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';

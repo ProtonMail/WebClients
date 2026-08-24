@@ -1,6 +1,6 @@
+import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
-import useApi from '@proton/components/hooks/useApi';
 import { useFolders } from '@proton/mail/store/labels/hooks';
 import { TelemetryMailSelectAllEvents } from '@proton/shared/lib/api/telemetry';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';

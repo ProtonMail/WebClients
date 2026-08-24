@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
-import useApi from '@proton/components/hooks/useApi';
+import { useApi } from '@proton/app-context/useApi';
 
 import type { PersonalAccessTokenUsageDay } from '../remote/personalAccessToken';
 import { getPersonalAccessTokenUsageRequest } from '../remote/personalAccessToken';

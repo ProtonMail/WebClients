@@ -4,7 +4,7 @@ import { useLocalParticipant, useRoomContext } from '@livekit/components-react';
 import type { Participant } from 'livekit-client';
 import { c } from 'ttag';
 
-import useApi from '@proton/components/hooks/useApi';
+import { useApi } from '@proton/app-context/useApi';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { selectJoinedRoom } from '@proton/meet/store/slices/connectionSlice';
 import {

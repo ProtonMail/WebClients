@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-import useApi from '@proton/components/hooks/useApi';
+import { useApi } from '@proton/app-context/useApi';
 import { useSystemFolders } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { orderSystemFolders, updateSystemFolders } from '@proton/shared/lib/api/labels';

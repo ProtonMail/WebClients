@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
-import { useApi } from '@proton/components';
 import { useMeetDispatch } from '@proton/meet/store/hooks';
 import { MeetingSideBars, toggleSideBarState } from '@proton/meet/store/slices/uiStateSlice';
 import { ParticipantCapabilityPermission } from '@proton/meet/types/types';

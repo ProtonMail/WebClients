@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { useApi } from '@proton/components';
+import { useApi } from '@proton/app-context/useApi';
 import { queryFileRevision, queryFileRevisionThumbnail } from '@proton/shared/lib/api/drive/files';
 import { querySharedURLFileRevision, querySharedURLSecurity } from '@proton/shared/lib/api/drive/sharing';
 import type {

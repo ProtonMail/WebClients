@@ -2,6 +2,7 @@ import { useRef } from 'react';
 
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
 import { getInvoicePDF } from '@proton/payments/core/api/api';
 import type { Invoice } from '@proton/payments/core/interface';
 import { type APP_NAMES, MAIL_APP_NAME } from '@proton/shared/lib/constants';
@@ -13,7 +14,6 @@ import TableCell from '../../components/table/TableCell';
 import TableHeader from '../../components/table/TableHeader';
 import TableRow from '../../components/table/TableRow';
 import Time from '../../components/time/Time';
-import useApi from '../../hooks/useApi';
 import InvoiceActions from './InvoiceActions';
 import InvoiceAmount from './InvoiceAmount';
 import InvoiceStateBadge from './InvoiceStateBadge';

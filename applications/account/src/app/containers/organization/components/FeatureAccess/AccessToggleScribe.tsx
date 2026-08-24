@@ -2,9 +2,10 @@ import { c } from 'ttag';
 
 import { organizationActions } from '@proton/account/organization';
 import { useOrganization } from '@proton/account/organization/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import { SUBSCRIPTION_STEPS, SettingsLink, useApi, useSubscriptionModal } from '@proton/components';
+import { SUBSCRIPTION_STEPS, SettingsLink, useSubscriptionModal } from '@proton/components';
 import { getWritingAssistantTitle } from '@proton/components/helpers/assistant';
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import useLoading from '@proton/hooks/useLoading';

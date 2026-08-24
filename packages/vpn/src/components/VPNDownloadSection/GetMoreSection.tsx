@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import VpnLogo from '@proton/components/components/logo/VpnLogo';
 import type { DashboardMoreInfoSection } from '@proton/components/containers/account/dashboard/shared/DashboardMoreInfoSection/DashboardMoreInfoSection';
 import {
@@ -13,7 +14,6 @@ import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subsc
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { getTelemetryUserTier } from '@proton/components/helpers/getTelemetryUserTier';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
-import { useApi } from '@proton/components/index';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { hasAnyPlusWithoutVPN } from '@proton/payments/core/subscription/helpers';
 import { TelemetryAccountDashboardEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';

@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
-import { Prompt, useApi, useEventManager, useModalState } from '@proton/components';
+import { Prompt, useEventManager, useModalState } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 

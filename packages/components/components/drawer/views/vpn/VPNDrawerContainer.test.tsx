@@ -12,7 +12,7 @@ import useVPNDrawerTelemetry from './useVPNDrawerTelemetry';
 jest.mock('@proton/shared/lib/api/core/connection-information');
 jest.mock('@proton/shared/lib/api/helpers/customConfig');
 jest.mock('@proton/account/index');
-jest.mock('../../../../hooks/useApi');
+jest.mock('@proton/app-context/useApi');
 jest.mock('@proton/hooks/useLoading');
 jest.mock('./useVPNDrawerTelemetry');
 

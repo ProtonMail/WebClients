@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { userSettingsActions } from '@proton/account';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { patchNews } from '@proton/shared/lib/api/settings';
@@ -11,7 +12,6 @@ import type { UserSettings } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import useApi from '../../hooks/useApi';
 import { EmailSubscriptionToggleWithHeader } from './EmailSubscriptionToggles';
 import {
     type EmailSubscription,

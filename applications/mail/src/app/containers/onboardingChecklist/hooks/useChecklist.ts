@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import useApi from '@proton/components/hooks/useApi';
+import { useApi } from '@proton/app-context/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { useLoading } from '@proton/hooks';
 import { getChecklist } from '@proton/shared/lib/api/checklist';

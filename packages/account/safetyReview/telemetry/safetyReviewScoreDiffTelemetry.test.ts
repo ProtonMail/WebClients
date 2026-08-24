@@ -7,7 +7,7 @@ import { useSafetyReviewScoreDiffTelemetry } from './useSafetyReviewScoreDiffTel
 
 const mockApi = jest.fn();
 
-jest.mock('@proton/components/hooks/useApi', () => () => mockApi);
+jest.mock('@proton/app-context/useApi', () => ({ useApi: () => mockApi }));
 jest.mock('@proton/shared/lib/helpers/metrics', () => ({
     sendTelemetryReport: jest.fn(),
     telemetryReportsBatchQueue: { flush: jest.fn() },

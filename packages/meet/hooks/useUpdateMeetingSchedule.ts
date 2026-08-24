@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { useApi } from '@proton/components';
+import { useApi } from '@proton/app-context/useApi';
 import { updateMeetingScheduleCall } from '@proton/shared/lib/api/meet';
 import type { CreateMeetingResponse } from '@proton/shared/lib/interfaces/Meet';
 

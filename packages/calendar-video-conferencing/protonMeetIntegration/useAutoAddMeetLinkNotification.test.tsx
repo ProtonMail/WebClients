@@ -1,16 +1,20 @@
 import { act, renderHook } from '@testing-library/react';
 
+import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
-import { useApi, useEventManager } from '@proton/components';
+import { useEventManager } from '@proton/components';
 import { useHasMeetProductAccess } from '@proton/meet/hooks/useHasMeetProductAccess';
 import { AutoAddVideoConferenceLinkProvider } from '@proton/shared/lib/calendar/constants';
 
 import { useAutoAddMeetLinkNotification } from './useAutoAddMeetLinkNotification';
 
 jest.mock('@proton/components', () => ({
-    useApi: jest.fn(),
     useEventManager: jest.fn(),
+}));
+
+jest.mock('@proton/app-context/useApi', () => ({
+    useApi: jest.fn(),
 }));
 
 jest.mock('@proton/app-context/useNotifications', () => ({

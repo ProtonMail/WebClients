@@ -6,8 +6,9 @@ import { configureStore, createListenerMiddleware } from '@reduxjs/toolkit';
 
 import type { EventLoop } from '@proton/account/eventLoop';
 import type { NotificationsManager } from '@proton/app-context/notifications/manager';
+import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
-import { useApi, useEventManager } from '@proton/components';
+import { useEventManager } from '@proton/components';
 import type { EventManager } from '@proton/shared/lib/eventManager/eventManager';
 import type { Api } from '@proton/shared/lib/interfaces';
 

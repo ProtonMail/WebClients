@@ -2,9 +2,9 @@ import { useCallback } from 'react';
 
 import { serverTime } from '@protontech/crypto';
 
+import { useApi } from '@proton/app-context/useApi';
 import { useConfig } from '@proton/app-context/useConfig';
 import { useGetCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
-import useApi from '@proton/components/hooks/useApi';
 import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonicalEmailsMap';
 import { useGetVtimezonesMap } from '@proton/components/hooks/useGetVtimezonesMap';
 import useRelocalizeText from '@proton/components/hooks/useRelocalizeText';

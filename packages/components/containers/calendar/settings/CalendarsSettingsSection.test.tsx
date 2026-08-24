@@ -55,7 +55,9 @@ jest.mock('@proton/app-context/useConfig', () => ({
     }),
 }));
 jest.mock('../../../hooks/useAppTitle', () => jest.fn().mockReturnValue(undefined));
-jest.mock('../../../hooks/useApi', () => jest.fn(() => jest.fn().mockResolvedValue({})));
+jest.mock('@proton/app-context/useApi', () => ({
+    useApi: jest.fn(() => jest.fn().mockResolvedValue({})),
+}));
 
 jest.mock('../../../hooks/useEventManager', () => () => ({}));
 jest.mock('../../eventManager/calendar/useCalendarsInfoListener', () => () => ({}));

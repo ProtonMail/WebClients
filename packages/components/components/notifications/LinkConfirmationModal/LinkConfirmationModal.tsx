@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
 import { Button } from '@proton/atoms/Button/Button';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
@@ -11,7 +12,6 @@ import { rtlSanitize } from '@proton/shared/lib/helpers/string';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { CONFIRM_LINK } from '@proton/shared/lib/mail/mailSettings';
 
-import useApi from '../../../hooks/useApi';
 import Checkbox from '../../input/Checkbox';
 import Label from '../../label/Label';
 import type { ModalProps } from '../../modalTwo/Modal';

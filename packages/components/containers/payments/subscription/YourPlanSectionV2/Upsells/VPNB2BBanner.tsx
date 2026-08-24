@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { Button } from '@proton/atoms/Button/Button';
 import { PLANS } from '@proton/payments/core/constants';
 import { TelemetryAccountDashboardEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
@@ -9,7 +10,6 @@ import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { Audience } from '@proton/shared/lib/interfaces';
 
 import { getTelemetryUserTier } from '../../../../../helpers/getTelemetryUserTier';
-import useApi from '../../../../../hooks/useApi';
 import useDashboardPaymentFlow from '../../../../../hooks/useDashboardPaymentFlow';
 import { useSubscriptionModal } from '../../SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '../../constants';

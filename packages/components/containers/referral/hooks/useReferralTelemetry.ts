@@ -1,11 +1,10 @@
 import { useCallback } from 'react';
 
+import { useApi } from '@proton/app-context/useApi';
 import { useConfig } from '@proton/app-context/useConfig';
 import { TelemetryMeasurementGroups, TelemetryReferralDiscoverEvents } from '@proton/shared/lib/api/telemetry';
 import { normalizeProduct } from '@proton/shared/lib/apps/product';
 import { sendTelemetryReport, telemetryReportsBatchQueue } from '@proton/shared/lib/helpers/metrics';
-
-import useApi from '../../../hooks/useApi';
 
 export type SharePlatform = 'linkedin' | 'x' | 'reddit' | 'facebook' | 'whatsapp';
 

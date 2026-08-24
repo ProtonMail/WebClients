@@ -1,4 +1,5 @@
-import useApi from '../../../hooks/useApi';
+import { useApi } from '@proton/app-context/useApi';
+
 import { useFetchData } from '../../../hooks/useFetchData';
 import {
     type CitiesTranslationsApiResponse,

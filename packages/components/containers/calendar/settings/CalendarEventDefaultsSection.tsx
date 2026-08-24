@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { useLoading } from '@proton/hooks';
@@ -23,7 +24,6 @@ import SelectTwo from '../../../components/selectTwo/SelectTwo';
 import type { SelectChangeEvent } from '../../../components/selectTwo/select';
 import Toggle from '../../../components/toggle/Toggle';
 import InputFieldTwo from '../../../components/v2/field/InputField';
-import useApi from '../../../hooks/useApi';
 import SettingsLayout from '../../account/SettingsLayout';
 import SettingsLayoutLeft from '../../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../../account/SettingsLayoutRight';

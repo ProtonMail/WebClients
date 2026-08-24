@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 
-import useApi from '@proton/components/hooks/useApi';
+import { useApi } from '@proton/app-context/useApi';
 import { TelemetryMeasurementGroups, TelemetryVpnAlwaysOnPolicyEvents } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 

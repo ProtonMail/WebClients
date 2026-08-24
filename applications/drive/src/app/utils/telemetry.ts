@@ -2,7 +2,7 @@ import { useEffect, useMemo } from 'react';
 
 import { CryptoProxy } from '@protontech/crypto';
 
-import { useApi } from '@proton/components';
+import { useApi } from '@proton/app-context/useApi';
 import { EnrichedError, sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import createApi from '@proton/shared/lib/api/createApi';
 import localStorageWithExpiry from '@proton/shared/lib/api/helpers/localStorageWithExpiry';

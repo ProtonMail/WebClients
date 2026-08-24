@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { userSettingsActions } from '@proton/account/userSettings';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { useLoading } from '@proton/hooks';
@@ -15,7 +16,6 @@ import ModalTwo from '../../components/modalTwo/Modal';
 import ModalTwoContent from '../../components/modalTwo/ModalContent';
 import ModalTwoFooter from '../../components/modalTwo/ModalFooter';
 import ModalTwoHeader from '../../components/modalTwo/ModalHeader';
-import useApi from '../../hooks/useApi';
 import DensityRadiosCards from '../layouts/DensityRadiosCards';
 
 import './ModalSettingsLayoutCards.scss';

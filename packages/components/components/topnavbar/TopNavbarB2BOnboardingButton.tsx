@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { useConfig } from '@proton/app-context/useConfig';
 import { useFeature } from '@proton/features/index';
 import { FeatureCode } from '@proton/features/interface';
@@ -22,7 +23,6 @@ import clsx from '@proton/utils/clsx';
 
 import ErrorBoundary from '../../containers/app/ErrorBoundary';
 import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
-import useApi from '../../hooks/useApi';
 import useSpotlightOnFeature from '../../hooks/useSpotlightOnFeature';
 import ContextMenu from '../contextMenu/ContextMenu';
 import DropdownMenuButton from '../dropdown/DropdownMenuButton';

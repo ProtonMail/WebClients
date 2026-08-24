@@ -739,7 +739,6 @@ export { default as useShortDomainAddress } from './hooks/mail/useShortDomainAdd
 export { default as useActiveBreakpoint } from './hooks/useActiveBreakpoint';
 export type { Breakpoints } from './hooks/useActiveBreakpoint';
 export { default as useAddressFlags } from './hooks/useAddressFlags';
-export { default as useApi } from './hooks/useApi';
 export { default as useApiResult } from './hooks/useApiResult';
 export { default as useApiWithoutResult } from './hooks/useApiWithoutResult';
 export { default as useAppTitle } from './hooks/useAppTitle';

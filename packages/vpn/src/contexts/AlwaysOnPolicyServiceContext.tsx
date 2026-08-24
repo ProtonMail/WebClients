@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { createContext, useContext, useMemo } from 'react';
 
-import useApi from '@proton/components/hooks/useApi';
+import { useApi } from '@proton/app-context/useApi';
 
 import { type AlwaysOnPolicyService, getAlwaysOnPolicyService } from '../services/alwaysOnPolicyService';
 

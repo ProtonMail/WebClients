@@ -1,4 +1,4 @@
-import { useApi } from '@proton/components';
+import { useApi } from '@proton/app-context/useApi';
 import { TelemetryDriveWebFeature, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport, setMetricsEnabled } from '@proton/shared/lib/helpers/metrics';
 
@@ -14,7 +14,7 @@ import {
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from './test/crypto';
 
 jest.mock('@proton/shared/lib/api/telemetry');
-jest.mock('@proton/components/hooks/useApi');
+jest.mock('@proton/app-context/useApi');
 jest.mock('@proton/shared/lib/helpers/metrics');
 
 describe('Performance Telemetry', () => {

@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import {
     DropdownActions,
     IllustrationPlaceholder,
@@ -14,7 +15,6 @@ import {
     TableHeader,
     TableHeaderCell,
     TableRow,
-    useApi,
     usePagination,
 } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';

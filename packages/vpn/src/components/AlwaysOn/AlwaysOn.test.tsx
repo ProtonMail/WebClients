@@ -14,7 +14,7 @@ const fetchPolicy = vi.fn();
 const updatePolicy = vi.fn();
 const service = { fetchPolicy, updatePolicy };
 
-vi.mock('@proton/components/hooks/useApi', () => ({ default: vi.fn() }));
+vi.mock('@proton/app-context/useApi', () => ({ useApi: vi.fn() }));
 vi.mock('@proton/shared/lib/helpers/metrics', () => ({ sendTelemetryReport: vi.fn() }));
 vi.mock('../../services/alwaysOnPolicyService', () => ({
     getAlwaysOnPolicyService: () => service,

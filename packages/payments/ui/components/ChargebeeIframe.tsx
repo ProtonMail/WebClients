@@ -2,6 +2,7 @@ import { type MutableRefObject, type RefObject, useEffect, useRef, useState } fr
 
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { type ChargebeeCssVariables, chargebeeCssVariablesSet } from '@proton/chargebee/lib/css-variables';
 import type { IdealAuthorizedPayload, SetIdealPaymentIntentPayload } from '@proton/chargebee/lib/types';
@@ -50,7 +51,6 @@ import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
-import useApi from '@proton/components/hooks/useApi';
 import type { ThemeCode } from '@proton/components/payments/client-extensions';
 import type { ChargebeeCardProcessorHook } from '@proton/components/payments/react-extensions/useChargebeeCard';
 import type { ChargebeeIdealProcessorHook } from '@proton/components/payments/react-extensions/useChargebeeIdeal';

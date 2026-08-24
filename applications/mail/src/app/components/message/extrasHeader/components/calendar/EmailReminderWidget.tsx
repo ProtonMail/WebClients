@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useAddresses, useGetAddresses } from '@proton/account/addresses/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
@@ -14,7 +15,6 @@ import { useGetCalendars } from '@proton/calendar/calendars/hooks';
 import CalendarEventDateHeader from '@proton/components/components/calendarEventDateHeader/CalendarEventDateHeader';
 import IconRow from '@proton/components/components/iconRow/IconRow';
 import AppLink from '@proton/components/components/link/AppLink';
-import useApi from '@proton/components/hooks/useApi';
 import useGetCalendarEventRaw from '@proton/components/hooks/useGetCalendarEventRaw';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import useIsMounted from '@proton/hooks/useIsMounted';

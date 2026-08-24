@@ -13,10 +13,10 @@ import type { ViewPaymentMethod } from '../../payments/client-extensions/index';
 import { PaymentsNoApi } from './Payment';
 
 const apiMock = jest.fn();
-jest.mock('../../hooks/useApi', () => {
+jest.mock('@proton/app-context/useApi', () => {
     return {
         __esModule: true,
-        default: () => apiMock,
+        useApi: () => apiMock,
     };
 });
 

@@ -4,8 +4,8 @@ import type { PublicKeyReference } from '@protontech/crypto';
 import { CryptoProxy } from '@protontech/crypto';
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
-import useApi from '@proton/components/hooks/useApi';
 import type { MessageKeys, MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { EOReply } from '@proton/shared/lib/api/eo';
 import { blobURLtoBlob } from '@proton/shared/lib/helpers/file';

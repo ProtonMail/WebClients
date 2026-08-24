@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import { useConfirmActionModal } from '@proton/components/components/confirmActionModal/ConfirmActionModal';
@@ -23,7 +24,6 @@ import ViewPreferenceSelector from '@proton/components/containers/calendar/setti
 import WeekStartSelector from '@proton/components/containers/calendar/settings/WeekStartSelector';
 import CalendarShortcutsModal from '@proton/components/containers/calendar/shortcutsModal/CalendarShortcutsModal';
 import ShortcutsToggle from '@proton/components/containers/general/ShortcutsToggle';
-import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { useLoading } from '@proton/hooks';
 import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';

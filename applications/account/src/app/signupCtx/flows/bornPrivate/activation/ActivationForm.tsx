@@ -3,9 +3,10 @@ import { Link, useHistory, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
-import { InputFieldTwo, Option, PasswordInputTwo, SelectTwo, useApi } from '@proton/components';
+import { InputFieldTwo, Option, PasswordInputTwo, SelectTwo } from '@proton/components';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import type { OnLoginCallback } from '@proton/components/containers/app/interface';
 import useLoading from '@proton/hooks/useLoading';

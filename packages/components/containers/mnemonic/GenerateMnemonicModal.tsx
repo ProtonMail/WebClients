@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { userThunk } from '@proton/account/user';
 import { useUser } from '@proton/account/user/hooks';
 import { userKeysThunk } from '@proton/account/userKeys';
+import { useApi } from '@proton/app-context/useApi';
 import { Button } from '@proton/atoms/Button/Button';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
@@ -23,7 +24,6 @@ import ModalFooter from '../../components/modalTwo/ModalFooter';
 import ModalHeader from '../../components/modalTwo/ModalHeader';
 import useModalState from '../../components/modalTwo/useModalState';
 import Prompt from '../../components/prompt/Prompt';
-import useApi from '../../hooks/useApi';
 import AuthModal from '../password/AuthModal';
 import { MnemonicPhraseStepButtons, MnemonicPhraseStepContent } from './MnemonicPhraseStep';
 

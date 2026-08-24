@@ -1,4 +1,4 @@
-import useApi from '@proton/components/hooks/useApi';
+import { useApi } from '@proton/app-context/useApi';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { TelemetryMailListEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
@@ -6,7 +6,6 @@ import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { useMailSelector } from '../../../store/hooks';
-
 import { folderLocation } from './listTelemetryHelper';
 
 export const enum ACTION_TYPE {

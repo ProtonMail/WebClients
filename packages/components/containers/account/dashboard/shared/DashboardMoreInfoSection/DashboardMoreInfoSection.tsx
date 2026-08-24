@@ -1,6 +1,7 @@
 import type { ReactElement, ReactNode } from 'react';
 
 import { useUser } from '@proton/account/user/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { DashboardCard, DashboardCardContent } from '@proton/atoms/DashboardCard/DashboardCard';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { TelemetryAccountDashboardEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
@@ -9,7 +10,6 @@ import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import clsx from '@proton/utils/clsx';
 
 import { getTelemetryUserTier } from '../../../../../helpers/getTelemetryUserTier';
-import useApi from '../../../../../hooks/useApi';
 
 /**
  * CardAction values:

@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 
-import { useApi } from '@proton/components';
+import { useApi } from '@proton/app-context/useApi';
 import { getLogo } from '@proton/shared/lib/api/images';
 
 import type { SearchItem } from '../../../../../lib/toolCall/types';

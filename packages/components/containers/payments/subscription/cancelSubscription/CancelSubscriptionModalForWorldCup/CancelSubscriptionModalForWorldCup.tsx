@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
 import { Button } from '@proton/atoms/Button/Button';
 import { COUPON_CODES, CYCLE } from '@proton/payments/core/constants';
 import { getPlanTitle, getRenewalTime } from '@proton/payments/core/subscription/helpers';
@@ -16,7 +17,6 @@ import ModalTwoContent from '../../../../../components/modalTwo/ModalContent';
 import ModalTwoFooter from '../../../../../components/modalTwo/ModalFooter';
 import ModalTwoHeader from '../../../../../components/modalTwo/ModalHeader';
 import Time from '../../../../../components/time/Time';
-import useApi from '../../../../../hooks/useApi';
 import useDashboardPaymentFlow from '../../../../../hooks/useDashboardPaymentFlow';
 import { SUBSCRIPTION_STEPS } from '../../constants';
 import { useSubscriptionModal } from '../../subscriptionModalContext';

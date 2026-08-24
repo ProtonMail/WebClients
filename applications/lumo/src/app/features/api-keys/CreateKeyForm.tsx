@@ -4,9 +4,10 @@ import type { ChangeEvent } from 'react';
 import { c } from 'ttag';
 
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
-import { InputFieldTwo, Select, useApi } from '@proton/components/index';
+import { InputFieldTwo, Select } from '@proton/components/index';
 import { getPrimaryKey } from '@proton/shared/lib/keys';
 
 import {

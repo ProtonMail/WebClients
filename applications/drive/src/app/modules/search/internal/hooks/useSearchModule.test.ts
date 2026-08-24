@@ -50,7 +50,7 @@ jest.mock('@proton/app-context/useConfig', () => ({
     useConfig: () => ({ APP_VERSION: '1.0.0' }),
 }));
 
-jest.mock('@proton/components', () => ({
+jest.mock('@proton/app-context/useApi', () => ({
     useApi: () => jest.fn(),
 }));
 

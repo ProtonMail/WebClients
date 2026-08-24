@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 
-import useApi from '@proton/components/hooks/useApi';
+import { useApi } from '@proton/app-context/useApi';
 import type { User } from '@proton/shared/lib/interfaces';
 
 import {

@@ -5,13 +5,13 @@ import { Navigate, Route, Routes, useLocation } from 'react-router-dom-v5-compat
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserKeys } from '@proton/account/userKeys/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import {
     GlobalLoader,
     GlobalLoaderProvider,
     LoaderPage,
     ModalsChildren,
     SubscriptionModalProvider,
-    useApi,
     useDrawerWidth,
     useEventManager,
 } from '@proton/components';

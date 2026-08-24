@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import AutoDeleteUpsellModal from '@proton/components/components/upsell/modals/AutoDeleteUpsellModal';
@@ -10,7 +11,6 @@ import LabelsUpsellModal from '@proton/components/components/upsell/modals/Label
 import PmMeUpsellModal from '@proton/components/components/upsell/modals/PmMeUpsellModal';
 import EditLabelModal from '@proton/components/containers/labels/modals/EditLabelModal';
 import useShortDomainAddress from '@proton/components/hooks/mail/useShortDomainAddress';
-import useApi from '@proton/components/hooks/useApi';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';

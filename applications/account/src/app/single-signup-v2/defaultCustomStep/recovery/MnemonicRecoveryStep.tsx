@@ -3,8 +3,8 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import type { DeferredMnemonicData } from '@proton/account/recovery/recoveryKit/generateDeferredMnemonicData';
+import { useApi } from '@proton/app-context/useApi';
 import { Button } from '@proton/atoms/Button/Button';
-import { useApi } from '@proton/components';
 
 import RecoveryStepUnderstoodCheckbox from '../../../containers/recoveryPhrase/RecoveryStepUnderstoodCheckbox';
 import SetRecoveryPhraseOnSignupContainer from '../../../containers/recoveryPhrase/SetRecoveryPhraseOnSignupContainer';
