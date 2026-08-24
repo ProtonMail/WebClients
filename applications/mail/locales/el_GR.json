@@ -1526,7 +1526,8 @@
         "Αξιόπιστο"
       ],
       "Trust key": [
-        "Εμπιστοσύνη στο κλειδί"
+        "Κλειδί Εμπιστοσύνης",
+        "Κλειδιά Εμπιστοσύνης"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -8113,8 +8114,7 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας",
-        "Εισαγωγή εικόνων"
+        "Εισαγωγή εικόνας"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -9768,6 +9768,16 @@
       ],
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
         "Εάν χάσατε την πρόσβαση στην εφαρμογή ελέγχου ταυτότητας, μπορείτε να χρησιμοποιήσετε 1 από τους 16 εφεδρικούς κωδικούς ανάκτησης που παρέχονται κατά τη ρύθμιση της ταυτοποίησης δύο παραγόντων. ${ learnMoreLink }"
+      ],
+      "Found ${ count } contact": [
+        "Βρέθηκε ${ count } επαφή",
+        "Βρέθηκαν ${ count } επαφές"
+      ],
+      "No contacts found": [
+        "Δεν βρέθηκαν επαφές"
+      ],
+      "Update filter": [
+        "Ενημέρωση φίλτρου"
       ]
     },
     "info": {
@@ -11044,6 +11054,12 @@
       ],
       "Label name": [
         "Όνομα ετικέτας"
+      ],
+      "Filter name": [
+        "Όνομα φίλτρου"
+      ],
+      "Sieve script": [
+        "Σενάριο Sieve"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -17199,6 +17215,9 @@
       ],
       "September Sale": [
         "Εκπτώσεις Σεπτεμβρίου"
+      ],
+      "Update filter": [
+        "Ενημέρωση φίλτρου"
       ]
     },
     "Title header for keys table": {
