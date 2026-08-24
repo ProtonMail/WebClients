@@ -25,15 +25,12 @@ describe('buildQuery', () => {
             expect(q({ search: { keyword: 'hello' } })).toBe('hello');
         });
 
-        it('falls back to space-joined normalizedKeywords when there is no keyword', () => {
-            expect(q({ normalizedKeywords: ['foo', 'bar'] })).toBe('(foo AND bar)');
+        // the query is parsed as typed, so the normalized (lowercased, tokenized) keywords are never used
+        it('ignores normalizedKeywords and only uses the keyword as typed', () => {
+            expect(q({ search: { keyword: 'Hello' }, normalizedKeywords: ['ignored'] })).toBe('Hello');
         });
 
-        it('prefers the keyword over normalizedKeywords when both are present', () => {
-            expect(q({ search: { keyword: 'hello' }, normalizedKeywords: ['ignored'] })).toBe('hello');
-        });
-
-        it('produces an empty match when neither keyword nor normalizedKeywords are set', () => {
+        it('produces an empty match when there is no keyword', () => {
             expect(q({})).toBe('()');
         });
     });
