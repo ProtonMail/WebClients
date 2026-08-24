@@ -1,6 +1,6 @@
-import { APPS } from '@proton/shared/lib/constants';
-import { getChecklistTypeFromID, getMailChecklistType } from '@proton/shared/lib/helpers/checklist';
-import { ChecklistType, type UserSettings } from '@proton/shared/lib/interfaces';
+import { APPS } from '../../lib/constants';
+import { getChecklistTypeFromID, getMailChecklistType } from '../../lib/helpers/checklist';
+import { ChecklistType, type UserSettings } from '../../lib/interfaces';
 
 describe('Checklist helpers', () => {
     describe('getChecklistTypeFromID', () => {

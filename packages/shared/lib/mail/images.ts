@@ -1,6 +1,6 @@
-import { PROXY_IMG_URL } from '@proton/shared/lib/api/images';
-import type { MailSettings } from '@proton/shared/lib/interfaces';
-import { SHOW_IMAGES } from '@proton/shared/lib/mail/mailSettings';
+import { PROXY_IMG_URL } from '../api/images';
+import type { MailSettings } from '../interfaces';
+import { SHOW_IMAGES } from './mailSettings';
 
 export const hasShowEmbedded = ({ HideEmbeddedImages }: Partial<MailSettings> = {}) =>
     HideEmbeddedImages === SHOW_IMAGES.SHOW;

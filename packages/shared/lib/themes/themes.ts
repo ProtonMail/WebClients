@@ -1,6 +1,8 @@
 import { c } from 'ttag';
 
-import { binaryStringToUint8Array, uint8ArrayToBinaryString } from '@proton/shared/lib/helpers/encoding';
+import { canGetInboxDesktopInfo, getInboxDesktopInfo, hasInboxDesktopFeature } from '../desktop/ipcHelpers';
+import { isElectronApp } from '../helpers/desktop';
+import { binaryStringToUint8Array, uint8ArrayToBinaryString } from '../helpers/encoding';
 import {
     ColorScheme,
     MotionModeSetting,
@@ -9,10 +11,7 @@ import {
     ThemeFontSizeSetting,
     ThemeModeSetting,
     ThemeTypes,
-} from '@proton/shared/lib/themes/constants';
-
-import { canGetInboxDesktopInfo, getInboxDesktopInfo, hasInboxDesktopFeature } from '../desktop/ipcHelpers';
-import { isElectronApp } from '../helpers/desktop';
+} from './constants';
 
 // @ts-ignore
 import carbonTheme from '@proton/colors/themes/dist/carbon.theme.css';

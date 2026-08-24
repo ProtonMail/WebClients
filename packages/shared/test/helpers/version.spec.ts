@@ -1,4 +1,4 @@
-import { Version } from '@proton/shared/lib/helpers/version';
+import { Version } from '../../lib/helpers/version';
 
 describe('Version', () => {
     it('isEqualTo', () => {

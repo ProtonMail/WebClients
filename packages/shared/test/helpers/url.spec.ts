@@ -1,6 +1,4 @@
-import { APPS } from '@proton/shared/lib/constants';
-import { getMockedWindowLocation } from '@proton/shared/test/helpers/url.helper';
-
+import { APPS } from '../../lib/constants';
 import {
     appendUrlSearchParams,
     formatURLForAjaxRequest,
@@ -16,6 +14,7 @@ import {
     isValidHttpUrl,
     stringifySearchParams,
 } from '../../lib/helpers/url';
+import { getMockedWindowLocation } from './url.helper';
 
 const mailUrl = 'https://mail.proton.me';
 const windowHostname = 'mail.proton.me';

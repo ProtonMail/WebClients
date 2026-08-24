@@ -1,6 +1,6 @@
-import { hasReachedFolderLimit, hasReachedLabelLimit } from '@proton/shared/lib/helpers/folder';
-import type { Label, UserModel } from '@proton/shared/lib/interfaces';
-import type { Folder } from '@proton/shared/lib/interfaces/Folder';
+import { hasReachedFolderLimit, hasReachedLabelLimit } from '../../lib/helpers/folder';
+import type { Label, UserModel } from '../../lib/interfaces';
+import type { Folder } from '../../lib/interfaces/Folder';
 
 describe('folders helpers', () => {
     describe('hasReachedFolderLimit', () => {

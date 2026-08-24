@@ -1,4 +1,4 @@
-import { isGlobalFeatureNewsEnabled } from '@proton/shared/lib/helpers/newsletter';
+import { isGlobalFeatureNewsEnabled } from '../../lib/helpers/newsletter';
 
 describe('newsletter', () => {
     describe('isGlobalFeatureNewsEnabled', () => {

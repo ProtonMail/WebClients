@@ -1,6 +1,6 @@
-import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
-import type { SimpleMap } from '@proton/shared/lib/interfaces';
-import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import { canonicalizeEmail } from '../helpers/email';
+import type { SimpleMap } from '../interfaces';
+import type { ContactEmail } from '../interfaces/contacts';
 
 export const getContactEmailKey = (value: string) => {
     return canonicalizeEmail(value);

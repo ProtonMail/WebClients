@@ -1,7 +1,8 @@
 import type { PublicKeyReference } from '@protontech/crypto';
-import type { Epoch, SelfAuditResult } from '@proton/key-transparency/interfaces';
-import type { APP_NAMES } from '@proton/shared/lib/constants';
 
+import type { Epoch, SelfAuditResult } from '@proton/key-transparency/interfaces';
+
+import type { APP_NAMES } from '../constants';
 import type { PrimaryAddressKeysForSigning } from '../keys';
 import type { Address } from './Address';
 import type { Api } from './Api';

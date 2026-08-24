@@ -1,11 +1,11 @@
-import type { Recipient } from '@proton/shared/lib/interfaces';
+import type { Recipient } from '../../lib/interfaces';
 import {
     clearValue,
     findRecipientsWithSpaceSeparator,
     inputToRecipient,
     recipientToInput,
     splitBySeparator,
-} from '@proton/shared/lib/mail/recipient';
+} from '../../lib/mail/recipient';
 
 const address1 = 'address1@pm.me';
 const address2 = 'address2@pm.me';

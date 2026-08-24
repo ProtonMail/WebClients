@@ -1,9 +1,8 @@
-import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
-
 import { CALENDAR_CARD_TYPE } from '../../lib/calendar/constants';
 import { parse } from '../../lib/calendar/vcal';
 import { getVeventParts, withMandatoryPublishFields, withoutRedundantDtEnd } from '../../lib/calendar/veventHelper';
 import { toCRLF } from '../../lib/helpers/string';
+import type { VcalVeventComponent } from '../../lib/interfaces/calendar';
 
 const { ENCRYPTED_AND_SIGNED, SIGNED, CLEAR_TEXT } = CALENDAR_CARD_TYPE;
 

@@ -1,12 +1,11 @@
-import { LOCALSTORAGE_DRAWER_KEY } from '@proton/shared/lib/drawer/constants';
-import { getMessageEventType } from '@proton/shared/lib/helpers/messageEvent';
-import { isURLProtonInternal } from '@proton/shared/lib/helpers/url';
-
 import { getAppHref } from '../apps/helper';
 import { getLocalIDFromPathname } from '../authentication/pathnameHelper';
 import type { APP_NAMES } from '../constants';
 import { APPS, APPS_CONFIGURATION } from '../constants';
+import { getMessageEventType } from '../helpers/messageEvent';
+import { isURLProtonInternal } from '../helpers/url';
 import window from '../window';
+import { LOCALSTORAGE_DRAWER_KEY } from './constants';
 import type { DRAWER_ACTION, DrawerApp } from './interfaces';
 import { DRAWER_EVENTS, DRAWER_NATIVE_APPS } from './interfaces';
 

@@ -1,6 +1,7 @@
 import { VERIFICATION_STATUS as CRYPTO_VERIFICATION_STATUS } from '@protontech/crypto/constants';
-import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
-import { getMailVerificationStatus, getProtonMailSignature } from '@proton/shared/lib/mail/signature';
+
+import { MAIL_VERIFICATION_STATUS } from '../../lib/mail/constants';
+import { getMailVerificationStatus, getProtonMailSignature } from '../../lib/mail/signature';
 
 describe('getMailVerificationStatus', () => {
     it('conversion is correct', () => {

@@ -1,11 +1,10 @@
-import { hasInboxDesktopFeature, invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
-
 import type createApi from '../api/createApi';
 import { getApiError } from '../api/helpers/apiErrorHelper';
 import type { AuthenticationStore } from '../authentication/createAuthenticationStore';
 import { getSelfLogoutOptions, handleLogout } from '../authentication/logout';
 import type { APP_NAMES } from '../constants';
 import { API_CUSTOM_ERROR_CODES } from '../errors';
+import { hasInboxDesktopFeature, invokeInboxDesktopIPC } from './ipcHelpers';
 
 export const endOfTrialIPCCall = () => {
     if (hasInboxDesktopFeature('MultiAccount')) {

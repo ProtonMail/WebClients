@@ -1,7 +1,6 @@
-import { getStaticURL } from '@proton/shared/lib/helpers/url';
-
 import { getAppHref } from '../apps/helper';
 import { APPS } from '../constants';
+import { getStaticURL } from '../helpers/url';
 
 export const DRIVE_LANDING_PAGE = getStaticURL('/drive');
 export const DRIVE_PRICING_PAGE = getStaticURL('/drive/pricing?product=drive');

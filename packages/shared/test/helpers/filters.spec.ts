@@ -1,7 +1,8 @@
 import type { Filter } from '@proton/components/containers/filters/interfaces';
-import { FILTER_STATUS } from '@proton/shared/lib/constants';
-import { hasReachedFiltersLimit } from '@proton/shared/lib/helpers/filters';
-import type { UserModel } from '@proton/shared/lib/interfaces';
+
+import { FILTER_STATUS } from '../../lib/constants';
+import { hasReachedFiltersLimit } from '../../lib/helpers/filters';
+import type { UserModel } from '../../lib/interfaces';
 
 describe('filters helpers', () => {
     it('should have reached filters limit on free user', () => {

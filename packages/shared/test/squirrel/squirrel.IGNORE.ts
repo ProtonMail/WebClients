@@ -1,6 +1,6 @@
 import * as electronModule from 'electron';
 
-import { parseInstallArguments } from '@proton/shared/lib/squirrel/squirrel';
+import { parseInstallArguments } from '../../lib/squirrel/squirrel';
 
 describe('squirrel', () => {
     beforeEach(() => {

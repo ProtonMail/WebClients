@@ -1,6 +1,5 @@
-import type { Address } from '@proton/shared/lib/interfaces/Address';
-
 import type { ADDRESS_STATUS, ADDRESS_TYPE, MEMBER_PRIVATE, MEMBER_ROLE, MEMBER_TYPE } from '../constants';
+import type { Address } from './Address';
 import type { Key } from './Key';
 import type { RoleAssignment } from './OrganizationRole';
 

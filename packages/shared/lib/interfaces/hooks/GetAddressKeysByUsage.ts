@@ -1,6 +1,6 @@
 import type { PrivateKeyReference } from '@protontech/crypto';
 
-import type { PrimaryAddressKeyForEncryption, PrimaryAddressKeysForSigning } from '@proton/shared/lib/keys';
+import type { PrimaryAddressKeyForEncryption, PrimaryAddressKeysForSigning } from '../../keys';
 
 export interface GetAddressKeysByUsageOptions {
     AddressID: string;

@@ -1,6 +1,6 @@
 import { CryptoProxy } from '@protontech/crypto';
-import { MAX_CHARS_CLEARTEXT } from '@proton/shared/lib/calendar/constants';
 
+import { MAX_CHARS_CLEARTEXT } from '../../../lib/calendar/constants';
 import { generateEncryptedPurpose } from '../../../lib/calendar/sharing/shareUrl/shareUrl';
 import { DecryptableKey } from '../../keys/keys.data';
 

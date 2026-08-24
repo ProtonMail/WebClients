@@ -1,6 +1,5 @@
-import type { VcalCalendarComponent } from '@proton/shared/lib/interfaces/calendar';
-
 import { captureMessage } from '../helpers/sentry';
+import type { VcalCalendarComponent } from '../interfaces/calendar';
 import {
     getTriggerValue,
     isValidTriggerDuration,

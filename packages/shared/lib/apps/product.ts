@@ -1,5 +1,4 @@
-import type { APP_NAMES } from '@proton/shared/lib/constants';
-
+import type { APP_NAMES } from '../constants';
 import { captureMessage } from '../helpers/sentry';
 
 export const otherProductParamValues = ['generic', 'business'] as const;

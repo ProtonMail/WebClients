@@ -1,6 +1,5 @@
-import { ColorScheme, ThemeModeSetting } from '@proton/shared/lib/themes/constants';
-
 import { canGetInboxDesktopInfo, getInboxDesktopInfo, hasInboxDesktopFeature } from '../desktop/ipcHelpers';
+import { ColorScheme, ThemeModeSetting } from '../themes/constants';
 import type { ThemeSetting } from '../themes/themes';
 import { electronAppTheme, getDarkThemes } from '../themes/themes';
 import { isElectronApp, isElectronOnMac, isElectronOnWindows } from './desktop';

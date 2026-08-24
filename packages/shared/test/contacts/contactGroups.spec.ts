@@ -1,7 +1,7 @@
-import { getContactGroupsDelayedSaveChanges } from '@proton/shared/lib/contacts/helpers/contactGroup';
-import type { MailSettings } from '@proton/shared/lib/interfaces';
-import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
-import { MAX_RECIPIENTS } from '@proton/shared/lib/mail/mailSettings';
+import { getContactGroupsDelayedSaveChanges } from '../../lib/contacts/helpers/contactGroup';
+import type { MailSettings } from '../../lib/interfaces';
+import type { ContactEmail } from '../../lib/interfaces/contacts';
+import { MAX_RECIPIENTS } from '../../lib/mail/mailSettings';
 
 const group1 = 'group1';
 

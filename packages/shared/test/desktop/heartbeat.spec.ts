@@ -1,4 +1,4 @@
-import { getUnixTimeNowTestOnly, isAtLeastDayAgoTestOnly } from '@proton/shared/lib/desktop/heartbeat';
+import { getUnixTimeNowTestOnly, isAtLeastDayAgoTestOnly } from '../../lib/desktop/heartbeat';
 
 describe('at least one day ago', () => {
     const now = getUnixTimeNowTestOnly();

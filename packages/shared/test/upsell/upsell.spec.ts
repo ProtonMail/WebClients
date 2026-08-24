@@ -1,5 +1,5 @@
-import { APPS, APP_UPSELL_REF_PATH, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
-import { addUpsellPath, getUpsellRef, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
+import { APPS, APP_UPSELL_REF_PATH, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '../../lib/constants';
+import { addUpsellPath, getUpsellRef, getUpsellRefFromApp } from '../../lib/helpers/upsell';
 
 const feature = SHARED_UPSELL_PATHS.STORAGE;
 

@@ -1,7 +1,6 @@
 import type { ContextVerificationOptions, PublicKeyReference, SessionKey } from '@protontech/crypto';
 import { CryptoProxy, type PrivateKeyReference, toPublicKeyReference } from '@protontech/crypto';
 
-import { getDefaultKeyFlags } from '@proton/shared/lib/keys/keyFlags';
 import noop from '@proton/utils/noop';
 
 import { createGroupAddressKeyRoute, getAllPublicKeys } from '../api/keys';
@@ -26,6 +25,7 @@ import {
     getNewAddressKeyTokenFromOrgKey,
 } from './addressKeys';
 import { getActiveKeyObject, getNormalizedActiveAddressKeys } from './getActiveKeys';
+import { getDefaultKeyFlags } from './keyFlags';
 import { getSignedKeyListWithDeferredPublish } from './signedKeyList';
 
 type AddressKey = RequireSome<Key, 'Flags' | 'Signature' | 'AddressForwardingID'>;

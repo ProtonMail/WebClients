@@ -1,6 +1,6 @@
-import { ADDRESS_FLAGS } from '@proton/shared/lib/constants';
-import { getIsBYOEOnlyAccount } from '@proton/shared/lib/helpers/address';
-import type { Address } from '@proton/shared/lib/interfaces';
+import { ADDRESS_FLAGS } from '../../lib/constants';
+import { getIsBYOEOnlyAccount } from '../../lib/helpers/address';
+import type { Address } from '../../lib/interfaces';
 
 const BYOEAddress = {
     ID: 'byoe-address',
