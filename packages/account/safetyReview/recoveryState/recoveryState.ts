@@ -1,5 +1,6 @@
 import { createSelector } from '@reduxjs/toolkit';
 
+import { selectIsDelegatedAccessSupported } from '../../delegatedAccess';
 import { selectEnrichedOutgoingDelegatedAccess } from '../../delegatedAccess/shared/outgoing/selector';
 import { selectPasswordReminder } from '../../passwordReminder';
 import { selectAccountRecovery } from '../../recovery/accountRecovery';
@@ -84,6 +85,7 @@ export const selectRecoveryState = createSelector(
         selectPasswordReminder,
         selectSessionRecoveryData,
         selectEnrichedOutgoingDelegatedAccess,
+        selectIsDelegatedAccessSupported,
     ],
     (
         { value: user },
@@ -93,8 +95,10 @@ export const selectRecoveryState = createSelector(
         recoveryFileData,
         passwordReminder,
         sessionRecoveryData,
-        outgoingDelegatedAccess
+        outgoingDelegatedAccess,
+        isDelegatedAccessSupported
     ): RecoveryStateResult => {
+        // `isAvailable` already accounts for app support, see `selectEnrichedOutgoingDelegatedAccess`.
         const isEmergencyAccessAvailable = outgoingDelegatedAccess.isAvailable;
         const isRecoveryContactsAvailable = outgoingDelegatedAccess.isAvailable;
 
@@ -259,22 +263,33 @@ export const selectRecoveryState = createSelector(
         });
 
         const recoveryScore = calculateRecoveryScore(
-            // If password reminder is available, use the recovery items as is. Remove after FF is enabled.
-            passwordReminder.isAvailable
-                ? recoveryItems
-                : recoveryItems.map((item) => {
-                      if (item.id === 'passwordVerification') {
-                          return {
-                              ...item,
-                              // Pretend that passwordVerification is available for the recovery score computation
-                              // to have the baseline be at 1.
-                              // This ensures it's not available as an action item because that's not supported in either the FE or BE.
-                              isAvailable: true,
-                              isEnabled: true,
-                          };
-                      }
-                      return item;
-                  })
+            recoveryItems.map((item): RecoveryItem => {
+                // If password reminder is available, use the recovery item as is. Remove after FF is enabled.
+                if (item.id === 'passwordVerification' && !passwordReminder.isAvailable) {
+                    return {
+                        ...item,
+                        // Pretend that passwordVerification is available for the recovery score computation
+                        // to have the baseline be at 1.
+                        // This ensures it's not available as an action item because that's not supported in either the FE or BE.
+                        isAvailable: true,
+                        isEnabled: true,
+                    };
+                }
+                if (
+                    !isDelegatedAccessSupported &&
+                    (item.id === 'recoveryContacts' || item.id === 'emergencyContacts')
+                ) {
+                    return {
+                        ...item,
+                        // Same idea for delegated access: the app can't offer it at all, so pretend both options are
+                        // set up to keep the maximum score reachable, while staying unavailable as action items.
+                        isAvailable: true,
+                        isEnabled: true,
+                        countsTowardScore: true,
+                    };
+                }
+                return item;
+            })
         );
 
         const loading =

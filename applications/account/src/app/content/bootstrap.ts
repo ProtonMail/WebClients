@@ -9,6 +9,8 @@ import {
 import * as bootstrap from '@proton/account/bootstrap';
 import { bootstrapEvent } from '@proton/account/bootstrap/action';
 import { coreEventLoopV6 } from '@proton/account/coreEventLoop';
+import { delegatedAccessActions } from '@proton/account/delegatedAccess';
+import { getIsDelegatedAccessSupportedInApp } from '@proton/account/delegatedAccess/available';
 import { serverEvent } from '@proton/account/eventLoop';
 import { getDecryptedPersistedState } from '@proton/account/persist/helper';
 import { calendarEventLoopV6 } from '@proton/calendar/calendarEventLoop';
@@ -85,6 +87,9 @@ export const bootstrapApp = async ({ config }: { config: ProtonConfig }) => {
 
         const store = setupStore({ preloadedState: persistedState?.state, mode: 'default' });
         const dispatch = store.dispatch;
+
+        // Account is the only app where delegated access is wired up, see `getIsDelegatedAccessSupportedInApp`
+        dispatch(delegatedAccessActions.setSupportedInApp(getIsDelegatedAccessSupportedInApp(config.APP_NAME)));
 
         if (user) {
             dispatch(initEvent({ User: user }));

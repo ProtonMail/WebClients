@@ -5,10 +5,11 @@ import { c } from 'ttag';
 import type { ButtonLikeProps } from '@proton/atoms/Button/ButtonLike';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
-import { APPS, SECURITY_CHECKUP_PATHS } from '@proton/shared/lib/constants';
+import { SECURITY_CHECKUP_PATHS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 import AppLink from '../../../components/link/AppLink';
+import useConfig from '../../../hooks/useConfig';
 import { useRecoverySettingsTelemetry } from '../recoverySettingsTelemetry';
 import { type RecoveryScoreTone, SCORE_TONE_CLASS } from './recoveryScoreState';
 
@@ -18,12 +19,15 @@ interface Props extends Omit<ButtonLikeProps<typeof AppLink>, 'as' | 'to'> {
 }
 
 const SecureAccountButton = ({ scoreTone, label, className, ...restButtonProps }: Props) => {
-    const app = getAppFromPathnameSafe(window.location.pathname) ?? APPS.PROTONACCOUNT;
+    const { APP_NAME } = useConfig();
+    // Account hosts every product behind a slug (/u/0/vpn/recovery), so the product comes from the path there.
+    // Standalone settings apps and generic account settings have no slug, so the app itself is the product.
+    const app = getAppFromPathnameSafe(window.location.pathname) ?? APP_NAME;
     const { sendAccountSafetyReviewClick } = useRecoverySettingsTelemetry();
     const securityCheckupParams = new URLSearchParams({
         back: encodeURIComponent(window.location.href),
         source: 'recovery_settings',
-        ...(app && { appname: app }),
+        appname: app,
         v: 'new',
     });
 
