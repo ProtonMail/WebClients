@@ -11,9 +11,9 @@ import type { History } from 'history';
 import { createMemoryHistory } from 'history';
 
 import { getModelState } from '@proton/account/test';
+import { ApiContext } from '@proton/app-context/apiContext';
 import { createCalendarModelEventManager } from '@proton/calendar/calendarModelEventManager';
 import SpotlightProvider from '@proton/components/components/spotlight/Provider';
-import ApiContext from '@proton/components/containers/api/apiContext';
 import type { PrivateAuthenticationStore } from '@proton/components/containers/app/interface';
 import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
 import { CacheProvider } from '@proton/components/containers/cache/Provider';
@@ -40,8 +40,15 @@ import { registerFeatureFlagsApiMock } from '@proton/testing/lib/features';
 import { getOrganizationState, getSubscriptionState } from '@proton/testing/lib/initialReduxState';
 
 import { ComposerAssistantProvider } from '../../components/assistant/provider/ComposerAssistantProvider';
+import { LabelActionsContextProvider } from '../../components/sidebar/EditLabelContext';
+import { MAIN_ROUTE_PATH } from '../../constants';
+import { CheckAllRefProvider } from '../../containers/CheckAllRefProvider';
+import { ComposeProvider } from '../../containers/ComposeProvider';
+import EncryptedSearchProvider from '../../containers/EncryptedSearchProvider';
 import { GlobalModalProvider } from '../../containers/globalModals/GlobalModalProvider';
-import QuickSettingsTestProvider from './quick-settings';
+import { MailboxContainerContextProvider } from '../../containers/mailbox/MailboxContainerProvider';
+import ChecklistsProvider from '../../containers/onboardingChecklist/provider/ChecklistsProvider';
+import { MailContentRefProvider } from '../../hooks/useClickMailContent';
 import { MailboxLayoutProvider } from '../../router/components/MailboxLayoutContext';
 import type { AttachmentsState } from '../../store/attachments/attachmentsTypes';
 import { composersInitialState } from '../../store/composers/composersSlice';
@@ -51,20 +58,12 @@ import { newElementsState } from '../../store/elements/elementsSlice';
 import { incomingDefaultsInitialState } from '../../store/incomingDefaults/incomingDefaultsSlice';
 import { layoutInitialState } from '../../store/layout/layoutSlice';
 import { snoozeInitialState } from '../../store/snooze/snoozeSlice';
-
-import { LabelActionsContextProvider } from '../../components/sidebar/EditLabelContext';
-import { MAIN_ROUTE_PATH } from '../../constants';
-import { CheckAllRefProvider } from '../../containers/CheckAllRefProvider';
-import { ComposeProvider } from '../../containers/ComposeProvider';
-import EncryptedSearchProvider from '../../containers/EncryptedSearchProvider';
-import { MailboxContainerContextProvider } from '../../containers/mailbox/MailboxContainerProvider';
-import ChecklistsProvider from '../../containers/onboardingChecklist/provider/ChecklistsProvider';
-import { MailContentRefProvider } from '../../hooks/useClickMailContent';
 import type { MailState, MailStore } from '../../store/store';
 import { extendStore, setupStore } from '../../store/store';
 import { api, mockDomApi } from './api';
 import { mockCache } from './cache';
 import NotificationsTestProvider from './notifications';
+import QuickSettingsTestProvider from './quick-settings';
 
 interface RenderResult extends OriginalRenderResult {
     rerender: (ui: ReactNode) => Promise<void>;

@@ -355,7 +355,6 @@ export { default as AddressesWithUser } from './containers/addresses/AddressesWi
 export { default as AddressModal } from './containers/addresses/AddressModal';
 export { default as AliasPromotionSection } from './containers/addresses/AliasPromotionSection';
 export { default as IdentitySection } from './containers/addresses/IdentitySection';
-export { default as ApiContext } from './containers/api/apiContext';
 export { default as ApiModalsHVUpsell } from './containers/api/ApiModalsHVUpsell';
 export { default as ApiProvider } from './containers/api/ApiProvider';
 export { default as DelinquentModal } from './containers/api/DelinquentModal';
