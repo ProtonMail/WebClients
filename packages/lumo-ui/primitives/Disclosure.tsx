@@ -3,27 +3,26 @@ import type { ReactNode } from 'react';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import clsx from '@proton/utils/clsx';
 
-import type { IconComponent } from '../types';
-
 interface Props {
     /** The always-visible trigger text. */
     label: string;
-    /** Optional leading glyph shown before the label. */
-    icon?: IconComponent;
+    /** Optional glyphs shown before the label; each caller sizes its own. */
+    leading?: ReactNode;
     /** Revealed in normal flow beneath the trigger when expanded. */
     children: ReactNode;
     className?: string;
 }
 
 /**
- * A compact expandable row: a one-line trigger (optional icon + label + chevron) whose payload is
- * revealed in-flow below it. It can only grow the column height, never overlay or widen its host.
- * Shared by {@link Chip} and {@link ServerToolChip}; the native `<details>` marker is stripped in SCSS.
+ * A compact expandable row: a one-line trigger (optional leading glyphs + label + chevron) whose payload
+ * is revealed in-flow below it. Everything in the trigger stays on the trigger's line when the payload
+ * opens. It can only grow the column height, never overlay or widen its host; the native `<details>`
+ * marker is stripped in SCSS.
  */
-const Disclosure = ({ label, icon: Icon, children, className }: Props) => (
+const Disclosure = ({ label, leading, children, className }: Props) => (
     <details className={clsx('lumo-disclosure', className)}>
         <summary className="lumo-disclosure__summary text-sm">
-            {Icon && <Icon className="shrink-0" size={3} />}
+            {leading}
             <span className="lumo-disclosure__label text-ellipsis flex-1" title={label}>
                 {label}
             </span>

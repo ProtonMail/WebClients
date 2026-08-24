@@ -9,6 +9,7 @@
     "type": "module",
     "exports": {
         ".": "./index.ts",
+        "./types": "./types.ts",
         "./LumoLogo": "./LumoLogo.tsx",
         "./LumoWordmark": "./LumoWordmark.tsx",
         "./LumoThinking": "./LumoThinking.tsx",
