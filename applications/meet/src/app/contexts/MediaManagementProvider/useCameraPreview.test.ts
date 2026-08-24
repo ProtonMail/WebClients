@@ -18,7 +18,7 @@ vi.mock('../../processors/background-processor/createBackgroundProcessor', () =>
     ensureBackgroundProcessor: vi.fn(),
 }));
 
-vi.mock('../../utils/virtualBackgrounds/virtualBackgrounds', () => ({ getVirtualBackgroundColor: vi.fn() }));
+vi.mock('../../utils/virtualBackgrounds/virtualBackgrounds', () => ({ getVirtualBackgroundSource: vi.fn() }));
 
 const createTrack = () => ({
     attach: vi.fn(),

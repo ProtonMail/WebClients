@@ -16,8 +16,8 @@ import type {
     BackgroundProcessorVersion,
     CustomBackgroundProcessor,
 } from '../../processors/background-processor/types';
-import type { BackgroundEffect } from '../../utils/virtualBackgrounds/virtualBackgrounds';
-import { getVirtualBackgroundColor } from '../../utils/virtualBackgrounds/virtualBackgrounds';
+import type { BackgroundEffect, VirtualBackgroundSource } from '../../utils/virtualBackgrounds/virtualBackgrounds';
+import { getVirtualBackgroundSource } from '../../utils/virtualBackgrounds/virtualBackgrounds';
 import type { BackgroundEffectInitializationState } from './useBackgroundEffectInitializationState';
 
 interface UseCameraPreviewParams {
@@ -118,9 +118,8 @@ export const useCameraPreview = ({
         return processor;
     }, [backgroundProcessorVersion]);
 
-    const ensurePreviewCustomBackgroundProcessor = useCallback(async (backgroundColor: string) => {
-        const creation =
-            customBackgroundProcessorCreationRef.current ?? createCustomBackgroundProcessor({ backgroundColor });
+    const ensurePreviewCustomBackgroundProcessor = useCallback(async (source: VirtualBackgroundSource) => {
+        const creation = customBackgroundProcessorCreationRef.current ?? createCustomBackgroundProcessor(source);
         customBackgroundProcessorCreationRef.current = creation;
 
         let processor: CustomBackgroundProcessor | null = null;
@@ -135,7 +134,7 @@ export const useCameraPreview = ({
 
         customBackgroundProcessorInstanceRef.current = processor;
 
-        await processor?.setBackground?.({ backgroundColor });
+        await processor?.setBackground?.(source);
 
         return processor;
     }, []);
@@ -178,10 +177,8 @@ export const useCameraPreview = ({
                 return;
             }
 
-            const backgroundColor = getVirtualBackgroundColor(effect);
-            const customProcessor = backgroundColor
-                ? await ensurePreviewCustomBackgroundProcessor(backgroundColor)
-                : null;
+            const source = getVirtualBackgroundSource(effect);
+            const customProcessor = source ? await ensurePreviewCustomBackgroundProcessor(source) : null;
 
             if (!customProcessor || previewTrackRef.current !== videoTrack) {
                 return;

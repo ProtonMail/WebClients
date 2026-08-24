@@ -4,7 +4,18 @@
 	box-shadow: 0 0.25rem 0.25rem 0 rgb(0 0 0 / 0.25);
 }
 
+.prejoin-backgrounds-options {
+	overflow-x: auto;
+	scroll-snap-type: x proximity;
+
+	// Vertical breathing room so the focus ring is not clipped by the scroll container.
+	padding-block: 0.125rem;
+	margin-block: -0.125rem;
+}
+
 .prejoin-backgrounds-option {
-	flex: 1 1 0;
+	// Six tiles fill the row, the remaining ones are reached by scrolling.
+	flex: 0 0 calc((100% - 5 * var(--space-2)) / 6);
 	min-inline-size: 0;
+	scroll-snap-align: start;
 }
