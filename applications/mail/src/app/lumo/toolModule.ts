@@ -1,7 +1,9 @@
 import type { History } from 'history';
 
+import type { updateAddressThunk } from '@proton/account/addresses/updateAddress';
 import type { CardRenderer } from '@proton/components/components/lumoAgent/types';
 import type { CreateFilter, Filter } from '@proton/components/containers/filters/interfaces';
+import type { ThemeContextInterface } from '@proton/components/containers/themes/ThemeProvider';
 import type { ESStatusBooleans } from '@proton/encrypted-search/models';
 import type { ToolDefinition, ToolHandler } from '@proton/llm/lib/lumoAgent/contracts/types';
 import type { CategoryTab } from '@proton/mail/features/categoriesView/categoriesConstants';
@@ -9,9 +11,13 @@ import type {
     createLabel as createLabelAction,
     updateLabel as updateLabelAction,
 } from '@proton/mail/store/labels/actions';
-import type { Folder, Label, MailSettings } from '@proton/shared/lib/interfaces';
+import type { updateAutoresponder } from '@proton/shared/lib/api/mailSettings';
+import type { DENSITY } from '@proton/shared/lib/constants';
+import type { Address, Folder, Label, MailSettings, UserModel, UserSettings } from '@proton/shared/lib/interfaces';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 import type { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
+import type { VIEW_LAYOUT, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
+import type { ThemeInformation } from '@proton/shared/lib/themes/themes';
 
 import type { SOURCE_ACTION } from '../components/list/list-telemetry/useListTelemetry';
 import type {
@@ -54,6 +60,17 @@ export interface MailToolDeps {
     getMailSettings: () => MailSettings;
     getContactEmails: () => ContactEmail[];
     saveVCardContact: (contactID: string | undefined, vCardContact: VCardContact) => Promise<void>;
+    getUserSettings: () => UserSettings;
+    getUser: () => UserModel;
+    getAddresses: () => Address[];
+    getThemeInformation: () => ThemeInformation;
+    /** Void, not a promise: the write is persisted by `ThemeInjector`'s own debounced listener. */
+    setTheme: ThemeContextInterface['setTheme'];
+    setViewLayout: (viewLayout: VIEW_LAYOUT) => Promise<void>;
+    setViewMode: (viewMode: VIEW_MODE) => Promise<void>;
+    setDensity: (density: DENSITY) => Promise<void>;
+    setAutoResponder: (autoResponder: Parameters<typeof updateAutoresponder>[0]) => Promise<void>;
+    updateAddress: (params: Parameters<typeof updateAddressThunk>[0]) => Promise<void>;
     applyLocation: ApplyLocation;
     applyMultipleLocations: (params: ApplyMultipleLocationsParams) => Promise<void>;
     /**
