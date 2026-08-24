@@ -7,6 +7,7 @@ import ErrorBoundary from '../app/ErrorBoundary';
 import AccessTypeTopBanner from './AccessTypeTopBanner';
 import BadAppVersionBanner from './BadAppVersionBanner';
 import DesktopNotificationTopBanner from './DesktopNotificationTopBanner';
+import NGCAccessTopBanner from './NGCAccessTopBanner';
 import OnlineTopBanner from './OnlineTopBanner';
 import PendingInvitationTopBanner from './PendingInvitationTopBanner';
 import SessionRecoveryBanners from './SessionRecoveryBanners';
@@ -36,6 +37,7 @@ const TopBanners = ({ children, app }: Props) => {
             <SubscriptionEndsBanner app={app} />
             <SessionRecoveryBanners />
             <PasswordReminderTopBanner />
+            <NGCAccessTopBanner />
             {children}
         </ErrorBoundary>
     );

@@ -147,6 +147,7 @@ export enum CalendarFeatureFlag {
     CalendarMetrics = 'CalendarMetrics',
     RsvpCommentWeb = 'RsvpCommentWeb',
     AutoAddDisabledE2EEAttendees = 'AutoAddDisabledE2EEAttendees',
+    NGCWebAccess = 'NGCWebAccess',
 }
 
 export enum CalendarKillSwitchFlag {
