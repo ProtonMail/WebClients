@@ -1,6 +1,5 @@
-import type { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
-
 import type { CategoryLabelID, MIME_TYPES } from '../../constants';
+import type { ATTACHMENT_DISPOSITION } from '../../mail/constants';
 import type { Recipient } from '../Address';
 
 export interface AttachmentInfo {

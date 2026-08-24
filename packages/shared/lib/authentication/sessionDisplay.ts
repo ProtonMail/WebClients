@@ -1,5 +1,4 @@
-import { getInitials } from '@proton/shared/lib/helpers/string';
-
+import { getInitials } from '../helpers/string';
 import type { ActiveSessionLite } from './persistedSessionHelper';
 
 export const getSessionDisplayData = ({

@@ -1,9 +1,8 @@
 import isDeepEqual from 'lodash/isEqual';
 import { addLocale as ttagAddLocale, useLocale as ttagUseLocale } from 'ttag';
 
-import { pick } from '@proton/shared/lib/helpers/object';
-
 import { DEFAULT_LOCALE } from '../constants';
+import { pick } from '../helpers/object';
 import type { DateFormatOptions, TtagLocaleMap } from '../interfaces/Locale';
 import { getDateFnLocaleWithLongFormat, getDateFnLocaleWithSettings } from './dateFnLocale';
 import dateFnLocales, { getDateFnLocale } from './dateFnLocales';

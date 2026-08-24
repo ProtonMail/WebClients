@@ -1,10 +1,5 @@
-import {
-    CALENDAR_SHORT_APP_NAME,
-    DRIVE_SHORT_APP_NAME,
-    MAIL_SHORT_APP_NAME,
-    VPN_APP_NAME,
-} from '@proton/shared/lib/constants';
-import { getPremium } from '@proton/shared/lib/helpers/premium';
+import { CALENDAR_SHORT_APP_NAME, DRIVE_SHORT_APP_NAME, MAIL_SHORT_APP_NAME, VPN_APP_NAME } from '../../lib/constants';
+import { getPremium } from '../../lib/helpers/premium';
 
 describe('getPremium', () => {
     it('returns expected string when passed one app', () => {

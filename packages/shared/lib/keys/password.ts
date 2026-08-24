@@ -1,10 +1,10 @@
-import { updatePrivateKeyRoute } from '@proton/shared/lib/api/keys';
-import type { Api, DecryptedKey, User } from '@proton/shared/lib/interfaces';
-import { getUpdateKeysPayload } from '@proton/shared/lib/keys/changePassword';
-import type { DeviceSecretData } from '@proton/shared/lib/keys/device';
-import { encryptAuthDeviceSecret } from '@proton/shared/lib/keys/device';
-import { generateKeySaltAndPassphrase } from '@proton/shared/lib/keys/keys';
-import { srpVerify } from '@proton/shared/lib/srp';
+import { updatePrivateKeyRoute } from '../api/keys';
+import type { Api, DecryptedKey, User } from '../interfaces';
+import { srpVerify } from '../srp';
+import { getUpdateKeysPayload } from './changePassword';
+import type { DeviceSecretData } from './device';
+import { encryptAuthDeviceSecret } from './device';
+import { generateKeySaltAndPassphrase } from './keys';
 
 export const changeSSOUserKeysPasswordHelper = async ({
     newBackupPassword,

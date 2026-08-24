@@ -1,8 +1,8 @@
-import { DAY } from '@proton/shared/lib/constants';
+import { uint8ArrayToUtf8String, utf8StringToUint8Array } from '@protontech/crypto/utils';
 
+import { DAY } from '../../constants';
 import { removeItem } from '../../helpers/storage';
 import { isNumber } from '../../helpers/validators';
-import { uint8ArrayToUtf8String, utf8StringToUint8Array } from '@protontech/crypto/utils';
 
 const prefix = 'r-';
 

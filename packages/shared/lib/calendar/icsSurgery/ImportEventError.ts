@@ -1,7 +1,6 @@
-import type { EventComponentIdentifiers } from '@proton/shared/lib/calendar/icsSurgery/interface';
-
 import { getICSErrorMessage } from './errors/icsErrorMessageHelpers';
 import type { IMPORT_EVENT_ERROR_TYPE } from './errors/icsSurgeryErrorTypes';
+import type { EventComponentIdentifiers } from './interface';
 
 export class ImportEventError extends Error {
     componentIdentifiers: EventComponentIdentifiers;

@@ -1,4 +1,4 @@
-import humanSize, { shortHumanSize } from '@proton/shared/lib/helpers/humanSize';
+import humanSize, { shortHumanSize } from '../../lib/helpers/humanSize';
 
 describe('humanSize', () => {
     it('should 0 bytes correctly', () => {

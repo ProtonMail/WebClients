@@ -1,13 +1,14 @@
 import { create as createMutex } from '@protontech/mutex-browser';
 
-import { retryHandler } from '@proton/shared/lib/api/helpers/retryHandler';
-import { createOnceHandler } from '@proton/shared/lib/apiHandlers';
-import { OFFLINE_RETRY_ATTEMPTS_MAX, OFFLINE_RETRY_DELAY, RETRY_ATTEMPTS_MAX } from '@proton/shared/lib/constants';
-import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
-import type { ApiError } from '@proton/shared/lib/fetch/ApiError';
-import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
 import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
+
+import { createOnceHandler } from '../../apiHandlers';
+import { OFFLINE_RETRY_ATTEMPTS_MAX, OFFLINE_RETRY_DELAY, RETRY_ATTEMPTS_MAX } from '../../constants';
+import { HTTP_ERROR_CODES } from '../../errors';
+import type { ApiError } from '../../fetch/ApiError';
+import { wait } from '../../helpers/promise';
+import { retryHandler } from './retryHandler';
 
 export const createRefreshHandlers = (refresh: (UID: string) => Promise<Response>) => {
     const refreshHandlers: { [key: string]: () => Promise<void> } = {};

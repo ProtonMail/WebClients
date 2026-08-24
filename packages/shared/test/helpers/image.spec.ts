@@ -1,5 +1,4 @@
-import { PROXY_IMG_URL } from '@proton/shared/lib/api/images';
-
+import { PROXY_IMG_URL } from '../../lib/api/images';
 import { encodeImageUri, forgeImageURL, formatImage, resizeImage, toBlob, toFile } from '../../lib/helpers/image';
 import { img } from './file.data';
 

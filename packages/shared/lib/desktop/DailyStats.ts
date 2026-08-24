@@ -1,7 +1,6 @@
 import { z } from 'zod';
 
-import { RELEASE_CATEGORIES } from '@proton/shared/lib/constants';
-
+import { RELEASE_CATEGORIES } from '../constants';
 import { zDefaultProtocolChanged, zIsDefaultProtocol } from './DefaultProtocol';
 
 const zReleaseCategory = z.nativeEnum(RELEASE_CATEGORIES);

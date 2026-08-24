@@ -1,5 +1,4 @@
-import { getUIDHeaderValue, withAuthHeaders, withUIDHeaders } from '@proton/shared/lib/fetch/headers';
-
+import { getUIDHeaderValue, withAuthHeaders, withUIDHeaders } from '../../fetch/headers';
 import type { Api } from '../../interfaces';
 
 /**

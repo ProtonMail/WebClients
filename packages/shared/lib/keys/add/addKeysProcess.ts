@@ -1,9 +1,9 @@
 import { CryptoProxy } from '@protontech/crypto';
 
-import { activatePasswordlessKey } from '@proton/shared/lib/api/members';
 import noop from '@proton/utils/noop';
 
 import { createUserKeyRoute, replaceAddressTokens } from '../../api/keys';
+import { activatePasswordlessKey } from '../../api/members';
 import { DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS } from '../../constants';
 import type {
     Address,

@@ -1,12 +1,12 @@
 import { utf8StringToUint8Array } from '@protontech/crypto/utils';
-import { AccessType } from '@proton/shared/lib/authentication/accessType';
-import { omit } from '@proton/shared/lib/helpers/object';
+
 import isEnumValue from '@proton/utils/isEnumValue';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import { removeLastRefreshDate } from '../api/helpers/refreshStorage';
 import createListeners from '../helpers/listeners';
+import { omit } from '../helpers/object';
 import { getItem, getKeys, removeItem, setItem } from '../helpers/storage';
 import {
     type DefaultPersistedSession,
@@ -16,6 +16,7 @@ import {
     type PersistedSessionLite,
     SessionSource,
 } from './SessionInterface';
+import { AccessType } from './accessType';
 import { InvalidPersistentSessionError } from './error';
 import { getValidatedLocalID } from './fork/validation';
 import type { OfflineKey } from './offlineKey';

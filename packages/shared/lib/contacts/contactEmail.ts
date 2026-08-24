@@ -1,4 +1,4 @@
-import { normalize } from '@proton/shared/lib/helpers/string';
+import { normalize } from '../helpers/string';
 
 export const getContactDisplayNameEmail = ({
     name,

@@ -1,9 +1,9 @@
-import { Product } from '@proton/shared/lib/ProductEnum';
-import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
+import { Product } from '../../ProductEnum';
+import { APPS, type APP_NAMES } from '../../constants';
 import type {
     OrganizationSettingsAllowedProduct,
     SerializedOrganizationSettingsAllowedProduct,
-} from '@proton/shared/lib/interfaces';
+} from '../../interfaces';
 
 // A mapping of what the API returns in OrganizationSettingsAllowedProduct to app names
 const productsToApps: Record<OrganizationSettingsAllowedProduct, APP_NAMES[]> = {

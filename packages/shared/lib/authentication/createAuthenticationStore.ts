@@ -1,10 +1,9 @@
 import { uint8ArrayToUtf8String, utf8StringToUint8Array } from '@protontech/crypto/utils';
 
-import type { OfflineKey } from '@proton/shared/lib/authentication/offlineKey';
-import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
-
 import { appMode } from '../webpack.constants';
+import type { OfflineKey } from './offlineKey';
 import { getBasename, getLocalIDFromPathname } from './pathnameHelper';
+import type { ResumedSessionResult } from './persistedSessionHelper';
 import { getPersistedSession } from './persistedSessionStorage';
 
 const MAILBOX_PASSWORD_KEY = 'proton:mailbox_pwd';

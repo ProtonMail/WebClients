@@ -3,10 +3,10 @@ import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
 import { computeKeyPassword, generateKeySalt } from '@protontech/crypto/srp';
 import { c } from 'ttag';
 
-import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { getAndVerifyApiKeys } from '@proton/shared/lib/api/helpers/getAndVerifyApiKeys';
 import isTruthy from '@proton/utils/isTruthy';
 
+import { getSilentApi } from '../api/helpers/customConfig';
+import { getAndVerifyApiKeys } from '../api/helpers/getAndVerifyApiKeys';
 import type { UpdateOrganizationKeysPayloadLegacy, UpdateOrganizationKeysPayloadV2 } from '../api/organization';
 import type {
     Address,

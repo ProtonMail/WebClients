@@ -1,9 +1,8 @@
 import mimemessage from '@protontech/mimemessage';
 
-import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
-
-import type { AttachmentDirect } from '../../interfaces/mail/crypto';
 import { utf8StringToBinaryString } from '../../helpers/encoding';
+import type { AttachmentDirect } from '../../interfaces/mail/crypto';
+import { ATTACHMENT_DISPOSITION } from '../constants';
 
 /**
  * Remove '; name=' and '; filename=' values

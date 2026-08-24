@@ -1,4 +1,4 @@
-import { isBrave, isFirefox, isSafari } from '@proton/shared/lib/helpers/browser';
+import { isBrave, isFirefox, isSafari } from '../helpers/browser';
 
 type HardwareSpecs = {
     deviceMemory: any;

@@ -1,4 +1,4 @@
-import { toValidHtmlId } from '@proton/shared/lib/dom/toValidHtmlId';
+import { toValidHtmlId } from '../../lib/dom/toValidHtmlId';
 
 describe('toValidHtmlId', () => {
     it('converts uppercase to lowercase', () => {

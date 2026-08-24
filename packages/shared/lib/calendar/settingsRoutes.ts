@@ -1,7 +1,7 @@
-import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
-import { CALENDAR_SETTINGS_ROUTE } from '@proton/shared/lib/calendar/constants';
-import { APPS } from '@proton/shared/lib/constants';
-import { validateBase64string } from '@proton/shared/lib/helpers/encoding';
+import { getSlugFromApp } from '../apps/slugHelper';
+import { APPS } from '../constants';
+import { validateBase64string } from '../helpers/encoding';
+import { CALENDAR_SETTINGS_ROUTE } from './constants';
 
 interface GetPathOptions {
     fullPath?: boolean;

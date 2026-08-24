@@ -1,6 +1,5 @@
 import { enUS } from 'date-fns/locale';
 
-import { ACCENT_COLORS_MAP } from '@proton/shared/lib/colors';
 import truncate from '@proton/utils/truncate';
 
 import { ICAL_CALSCALE, ICAL_METHOD, MAX_CHARS_API } from '../../lib/calendar/constants';
@@ -13,6 +12,7 @@ import {
 } from '../../lib/calendar/import/import';
 import { parse } from '../../lib/calendar/vcal';
 import { getIcalMethod } from '../../lib/calendar/vcalHelper';
+import { ACCENT_COLORS_MAP } from '../../lib/colors';
 import { omit } from '../../lib/helpers/object';
 import type {
     VcalDateTimeProperty,

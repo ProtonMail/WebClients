@@ -1,7 +1,6 @@
-import type { Address, ProcessedApiKey } from '@proton/shared/lib/interfaces';
-
 import { ADDRESS_FLAGS, KEY_FLAG } from '../constants';
 import { clearBit, hasBit, setBit } from '../helpers/bitset';
+import type { Address, ProcessedApiKey } from '../interfaces';
 
 export const clearKeyFlagsToEnableEmailE2EE = (flags: number) => {
     flags = clearBit(flags, KEY_FLAG.FLAG_EMAIL_NO_ENCRYPT);

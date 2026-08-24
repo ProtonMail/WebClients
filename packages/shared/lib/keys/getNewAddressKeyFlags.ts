@@ -1,5 +1,5 @@
-import { KEY_FLAG } from '@proton/shared/lib/constants';
-import { clearBit, setBit } from '@proton/shared/lib/helpers/bitset';
+import { KEY_FLAG } from '../constants';
+import { clearBit, setBit } from '../helpers/bitset';
 
 export enum FlagAction {
     MARK_OBSOLETE,

@@ -1,7 +1,8 @@
 import { updateServerTime } from '@protontech/crypto';
-import type { ApiWithListener } from '@proton/shared/lib/api/createApi';
+
 import noop from '@proton/utils/noop';
 
+import type { ApiWithListener } from '../api/createApi';
 import type { APP_NAMES } from '../constants';
 import { DEFAULT_TIMEOUT } from '../constants';
 import { createTimeoutError, deserializeApiErrorData } from '../fetch/ApiError';

@@ -1,4 +1,4 @@
-import createListeners from '@proton/shared/lib/helpers/listeners';
+import createListeners from '../helpers/listeners';
 
 export const isVisible = (): boolean => {
     return document.visibilityState === 'visible';

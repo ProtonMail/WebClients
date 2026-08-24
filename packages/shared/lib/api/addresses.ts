@@ -1,5 +1,4 @@
-import type { ADDRESS_PERMISSIONS } from '@proton/shared/lib/constants';
-
+import type { ADDRESS_PERMISSIONS } from '../constants';
 import type { Address, Api, SignedKeyList } from '../interfaces';
 import queryPages from './helpers/queryPages';
 import type { PaginationParams } from './interface';

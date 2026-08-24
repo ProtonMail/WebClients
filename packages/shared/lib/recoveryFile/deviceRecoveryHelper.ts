@@ -1,12 +1,13 @@
-import { getAllAddresses } from '@proton/shared/lib/api/addresses';
-import { getSettings } from '@proton/shared/lib/api/settings';
-import { getUser } from '@proton/shared/lib/authentication/getUser';
-import type { Address, Api, PreAuthKTVerifier, User, UserSettings } from '@proton/shared/lib/interfaces';
-import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys';
-import { attemptDeviceRecovery, storeDeviceRecovery } from '@proton/shared/lib/recoveryFile/deviceRecovery';
-import { getIsRecoveryFileAvailable } from '@proton/shared/lib/recoveryFile/recoveryFile';
-import { removeDeviceRecovery } from '@proton/shared/lib/recoveryFile/storage';
 import noop from '@proton/utils/noop';
+
+import { getAllAddresses } from '../api/addresses';
+import { getSettings } from '../api/settings';
+import { getUser } from '../authentication/getUser';
+import type { Address, Api, PreAuthKTVerifier, User, UserSettings } from '../interfaces';
+import { getDecryptedUserKeysHelper } from '../keys';
+import { attemptDeviceRecovery, storeDeviceRecovery } from './deviceRecovery';
+import { getIsRecoveryFileAvailable } from './recoveryFile';
+import { removeDeviceRecovery } from './storage';
 
 const getUserSettings = (api: Api) => {
     return api<{ UserSettings: UserSettings }>(getSettings()).then(({ UserSettings }) => UserSettings);

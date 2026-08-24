@@ -3,8 +3,8 @@ import {
     getHolidaysCalendarsFromCountryCode,
     getHolidaysCalendarsFromTimeZone,
     getSuggestedHolidaysCalendar,
-} from '@proton/shared/lib/calendar/holidaysCalendar/holidaysCalendar';
-import type { HolidaysDirectoryCalendar } from '@proton/shared/lib/interfaces/calendar';
+} from '../../../lib/calendar/holidaysCalendar/holidaysCalendar';
+import type { HolidaysDirectoryCalendar } from '../../../lib/interfaces/calendar';
 
 const frCalendar = {
     CalendarID: 'calendarID1',

@@ -1,13 +1,13 @@
 /**
  * Currently this is basically a copy of sendSubPackages from the mail repo. TO BE IMPROVED
  */
-import { PACKAGE_TYPE } from '@proton/shared/lib/mail/mailSettings';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { MIME_TYPES } from '../../constants';
 import type { Message } from '../../interfaces/mail/Message';
 import type { AttachmentDirect, PackageDirect, PackageStatus, SendPreferences } from '../../interfaces/mail/crypto';
 import type { RequireOnly, SimpleMap } from '../../interfaces/utils';
+import { PACKAGE_TYPE } from '../mailSettings';
 import { constructMime } from './helpers';
 
 const { PLAINTEXT, DEFAULT, MIME } = MIME_TYPES;
@@ -74,6 +74,7 @@ export const generateTopPackages = ({
 
     const packages: SimpleMap<PackageDirect> = {};
 
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     demandedPackages.map(async (type) => {
         switch (type) {
             case MIME:

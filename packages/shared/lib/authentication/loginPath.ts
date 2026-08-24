@@ -1,4 +1,4 @@
-import { getParsedPathWithoutLocalIDBasename } from '@proton/shared/lib/authentication/pathnameHelper';
+import { getParsedPathWithoutLocalIDBasename } from './pathnameHelper';
 
 export const getLoginPath = (basename: string | undefined, oldUrl: string, requestedPath?: string) => {
     return [

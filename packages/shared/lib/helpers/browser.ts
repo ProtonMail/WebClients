@@ -1,7 +1,8 @@
 import UAParser from 'ua-parser-js';
 
-import { Version } from '@proton/shared/lib/helpers/version';
 import noop from '@proton/utils/noop';
+
+import { Version } from './version';
 
 const uaParser = new UAParser();
 const ua = uaParser.getResult();
@@ -234,7 +235,10 @@ export async function detectStorageCapabilities(): Promise<{ isAccessible: boole
     // Probe availability with databases() rather than opening a throwaway database: it exercises the
     // IndexedDB backend without creating anything, and rejects when storage is blocked.
     const isAccessible = await Promise.race([
-        indexedDB.databases().then(() => true, () => false),
+        indexedDB.databases().then(
+            () => true,
+            () => false
+        ),
         // Older Firefox versions (at least 140) are a bit
         // fussy with this call in case of blocked connections,
         // so this is to ensure we never get an unresolved Promise

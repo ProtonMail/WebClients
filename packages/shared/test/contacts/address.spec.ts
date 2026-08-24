@@ -1,5 +1,5 @@
-import { cleanAddressFromCommas } from '@proton/shared/lib/contacts/helpers/address';
-import type { VCardAddress } from '@proton/shared/lib/interfaces/contacts/VCard';
+import { cleanAddressFromCommas } from '../../lib/contacts/helpers/address';
+import type { VCardAddress } from '../../lib/interfaces/contacts/VCard';
 
 describe('contact address helpers', () => {
     describe('cleanAddressFromCommas', () => {
