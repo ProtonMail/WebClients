@@ -1,17 +1,9 @@
+import { CryptoProxy, type PrivateKeyReference } from '@protontech/crypto';
+import { decryptData, encryptData, importKey } from '@protontech/crypto/subtle/aesGcm.ts';
+import { uint8ArrayToUtf8String, utf8StringToUint8Array } from '@protontech/crypto/utils';
 import { base32crockford } from '@scure/base';
 import { c } from 'ttag';
 
-import { CryptoProxy, type PrivateKeyReference } from '@protontech/crypto';
-import { decryptData, encryptData, importKey } from '@protontech/crypto/subtle/aesGcm.ts';
-import { utf8StringToUint8Array, uint8ArrayToUtf8String } from '@protontech/crypto/utils';
-import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { getUser } from '@proton/shared/lib/api/user';
-import { API_CODES } from '@proton/shared/lib/constants';
-import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
-import { getBrowser, getOs } from '@proton/shared/lib/helpers/browser';
-import { getSHA256String } from '@proton/shared/lib/helpers/crypto';
-import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
-import { getIsGlobalSSOAccount } from '@proton/shared/lib/keys/setupAddress';
 import noop from '@proton/utils/noop';
 
 import {
@@ -22,7 +14,15 @@ import {
     getAuthDevicesConfig,
     getPendingMemberAuthDevicesConfig,
 } from '../api/authDevice';
+import { getApiError } from '../api/helpers/apiErrorHelper';
+import { getUser } from '../api/user';
+import { API_CODES } from '../constants';
+import { HTTP_ERROR_CODES } from '../errors';
+import { getBrowser, getOs } from '../helpers/browser';
+import { getSHA256String } from '../helpers/crypto';
+import { getItem, removeItem, setItem } from '../helpers/storage';
 import type { Address, AddressKey, Api, User, User as tsUser } from '../interfaces';
+import { getIsGlobalSSOAccount } from './setupAddress';
 
 const AesContext = {
     deviceSecret: 'account.device-secret',

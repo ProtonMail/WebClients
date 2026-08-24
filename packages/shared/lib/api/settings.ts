@@ -1,5 +1,5 @@
-import type { DENSITY } from '@proton/shared/lib/constants';
-import type { NewsletterSubscriptionUpdateData } from '@proton/shared/lib/helpers/newsletter';
+import type { DENSITY } from '../constants';
+import type { NewsletterSubscriptionUpdateData } from '../helpers/newsletter';
 import type {
     AI_ASSISTANT_ACCESS,
     DRAWER_VISIBILITY,
@@ -8,11 +8,10 @@ import type {
     SETTINGS_LOG_AUTH_STATE,
     SETTINGS_TIME_FORMAT,
     SETTINGS_WEEK_START,
-} from '@proton/shared/lib/interfaces';
-import type { ThemeTypes } from '@proton/shared/lib/themes/constants';
-import type { ThemeSetting } from '@proton/shared/lib/themes/themes';
-
-import type { RegistrationOptions } from '../../lib/webauthn/interface';
+} from '../interfaces';
+import type { ThemeTypes } from '../themes/constants';
+import type { ThemeSetting } from '../themes/themes';
+import type { RegistrationOptions } from '../webauthn/interface';
 
 export const TOTP_WRONG_ERROR = 12060;
 

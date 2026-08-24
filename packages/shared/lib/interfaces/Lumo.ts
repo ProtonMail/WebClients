@@ -1,4 +1,4 @@
-import type { EventV6Response } from '@proton/shared/lib/api/events';
+import type { EventV6Response } from '../api/events';
 
 interface EventV6Defaults {
     More: boolean;

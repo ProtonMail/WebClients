@@ -9,7 +9,7 @@ export interface DetectionResult {
  *
  * ### Example Usage:
  * ```typescript
- * import PasswordResetDetector from '@proton/shared/lib/mail/PasswordResetDetector';
+ * import PasswordResetDetector from './PasswordResetDetector';
  * const result = PasswordResetDetector.isPasswordResetEmail('Reset your password');
  * console.log(result);
  * // Output: { isReset: true, confidence: 1.0 }

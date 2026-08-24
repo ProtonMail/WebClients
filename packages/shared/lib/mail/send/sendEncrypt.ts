@@ -3,7 +3,7 @@
  */
 import type { PrivateKeyReference, PublicKeyReference, SessionKey } from '@protontech/crypto';
 import { CryptoProxy } from '@protontech/crypto';
-import { PACKAGE_TYPE } from '@proton/shared/lib/mail/mailSettings';
+
 import isTruthy from '@proton/utils/isTruthy';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
@@ -13,6 +13,7 @@ import type { AddressKeysByUsage } from '../../interfaces/hooks/GetAddressKeysBy
 import type { Attachment, Message } from '../../interfaces/mail/Message';
 import type { PackageDirect } from '../../interfaces/mail/crypto';
 import type { RequireOnly, SimpleMap } from '../../interfaces/utils';
+import { PACKAGE_TYPE } from '../mailSettings';
 import { getSessionKey } from './attachments';
 
 interface AttachmentKeys {

@@ -1,8 +1,7 @@
-import { getPasswordPolicies } from '@proton/shared/lib/api/passwordPolicies';
-
 import { getAllAddresses } from '../../api/addresses';
 import { queryMemberUnprivatizationInfo } from '../../api/members';
 import { getOrganizationIdentity, getOrganizationLogo } from '../../api/organization';
+import { getPasswordPolicies } from '../../api/passwordPolicies';
 import type {
     Address,
     Api,

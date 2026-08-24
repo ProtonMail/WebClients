@@ -1,6 +1,6 @@
-import { createContactPropertyUid } from '@proton/shared/lib/contacts/properties';
-import { parseToVCard, serialize } from '@proton/shared/lib/contacts/vcard';
-import type { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
+import { createContactPropertyUid } from '../../lib/contacts/properties';
+import { parseToVCard, serialize } from '../../lib/contacts/vcard';
+import type { VCardContact } from '../../lib/interfaces/contacts/VCard';
 
 describe('serialize', () => {
     describe('produces the expected vcf', () => {

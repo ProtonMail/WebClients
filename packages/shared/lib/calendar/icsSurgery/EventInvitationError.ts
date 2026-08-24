@@ -1,8 +1,7 @@
-import type { EventComponentIdentifiers } from '@proton/shared/lib/calendar/icsSurgery/interface';
-
 import type { ICAL_ATTENDEE_STATUS, ICAL_METHOD } from '../constants';
 import { getICSErrorMessage } from './errors/icsErrorMessageHelpers';
 import type { EVENT_INVITATION_ERROR_TYPE, INVITATION_ERROR_TYPE } from './errors/icsSurgeryErrorTypes';
+import type { EventComponentIdentifiers } from './interface';
 
 export interface EventInvitationErrorConfig {
     hashedIcs?: string;

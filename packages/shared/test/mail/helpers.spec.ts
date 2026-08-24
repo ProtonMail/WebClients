@@ -1,6 +1,6 @@
-import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
-import { clearFlag, hasFlag, setFlag, toggleFlag } from '@proton/shared/lib/mail/messages';
+import type { Message } from '../../lib/interfaces/mail/Message';
+import { MESSAGE_FLAGS } from '../../lib/mail/constants';
+import { clearFlag, hasFlag, setFlag, toggleFlag } from '../../lib/mail/messages';
 
 describe('hasFlag', () => {
     it('should detect correctly that the message has a flag', () => {

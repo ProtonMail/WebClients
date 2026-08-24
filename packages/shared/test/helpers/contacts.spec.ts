@@ -1,5 +1,4 @@
-import { PROXY_IMG_URL } from '@proton/shared/lib/api/images';
-
+import { PROXY_IMG_URL } from '../../lib/api/images';
 import { getContactImageSource } from '../../lib/helpers/contacts';
 
 const uid = 'uid';

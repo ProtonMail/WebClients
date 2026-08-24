@@ -1,8 +1,7 @@
-import { getPaginatedAttendeesInfo } from '@proton/shared/lib/api/calendars';
-import { ATTENDEE_MORE_ATTENDEES } from '@proton/shared/lib/calendar/constants';
-import type { CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
-
+import { getPaginatedAttendeesInfo } from '../api/calendars';
 import type { Api } from '../interfaces';
+import type { CalendarEvent } from '../interfaces/calendar';
+import { ATTENDEE_MORE_ATTENDEES } from './constants';
 
 /**
  * Fetch paginated attendees

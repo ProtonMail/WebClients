@@ -1,8 +1,8 @@
 import type { PublicKeyReference } from '@protontech/crypto';
-import type { PACKAGE_TYPE } from '@proton/shared/lib/mail/mailSettings';
 
 import type { MIME_TYPES } from '../../constants';
 import type { EncryptionPreferencesError } from '../../mail/encryptionPreferences';
+import type { PACKAGE_TYPE } from '../../mail/mailSettings';
 import type { KeyTransparencyVerificationResult } from '../KeyTransparency';
 import type { SimpleMap } from '../utils';
 

@@ -1,15 +1,13 @@
-import { revoke } from '@proton/shared/lib/api/auth';
-import { getSilentApi, getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { type PersistedSession, SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
-import { parseLogoutURL } from '@proton/shared/lib/authentication/logoutUrl';
-import { findPersistedSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import {
-    getPersistedSessions,
-    removePersistedSession,
-} from '@proton/shared/lib/authentication/persistedSessionStorage';
-import type { Api } from '@proton/shared/lib/interfaces';
-import { removeDeviceRecovery } from '@proton/shared/lib/recoveryFile/storage';
 import noop from '@proton/utils/noop';
+
+import { revoke } from '../api/auth';
+import { getSilentApi, getUIDApi } from '../api/helpers/customConfig';
+import type { Api } from '../interfaces';
+import { removeDeviceRecovery } from '../recoveryFile/storage';
+import { type PersistedSession, SessionSource } from './SessionInterface';
+import { parseLogoutURL } from './logoutUrl';
+import { findPersistedSession } from './persistedSessionHelper';
+import { getPersistedSessions, removePersistedSession } from './persistedSessionStorage';
 
 export const clearSession = ({
     session,

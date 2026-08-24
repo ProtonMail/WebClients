@@ -1,9 +1,9 @@
-import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
-import type { AuthenticationStore } from '@proton/shared/lib/authentication/createAuthenticationStore';
-import { sendPasswordChangeMessageToTabs } from '@proton/shared/lib/authentication/passwordChangeMessage';
-import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import type { Api, User } from '@proton/shared/lib/interfaces';
-import { isSelf } from '@proton/shared/lib/user/helpers';
+import type { Api, User } from '../interfaces';
+import { isSelf } from '../user/helpers';
+import { SessionSource } from './SessionInterface';
+import type { AuthenticationStore } from './createAuthenticationStore';
+import { sendPasswordChangeMessageToTabs } from './passwordChangeMessage';
+import { persistSession } from './persistedSessionHelper';
 
 const mutatePassword = async ({
     authentication,

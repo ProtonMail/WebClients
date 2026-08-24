@@ -1,12 +1,13 @@
 import type { SessionKey } from '@protontech/crypto';
-import { encryptPassphraseSessionKey, signPassphrase } from '@proton/shared/lib/calendar/crypto/keys/calendarKeys';
-import type { Address } from '@proton/shared/lib/interfaces';
-import type { CalendarNotificationSettings, HolidaysDirectoryCalendar } from '@proton/shared/lib/interfaces/calendar';
+
 import unique from '@proton/utils/unique';
 
 import { getPrimaryAddress } from '../../helpers/address';
 import { getLanguageCode, getNaiveCountryCode } from '../../i18n/helper';
+import type { Address } from '../../interfaces';
+import type { CalendarNotificationSettings, HolidaysDirectoryCalendar } from '../../interfaces/calendar';
 import type { GetAddressKeys } from '../../interfaces/hooks/GetAddressKeys';
+import { encryptPassphraseSessionKey, signPassphrase } from '../crypto/keys/calendarKeys';
 
 /**
  * Get all holidays calendars corresponding to a certain time zone

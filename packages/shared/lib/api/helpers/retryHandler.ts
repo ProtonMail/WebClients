@@ -1,6 +1,6 @@
-import { RETRY_DELAY_MAX } from '@proton/shared/lib/constants';
-import type { ApiError } from '@proton/shared/lib/fetch/ApiError';
-import { wait } from '@proton/shared/lib/helpers/promise';
+import { RETRY_DELAY_MAX } from '../../constants';
+import type { ApiError } from '../../fetch/ApiError';
+import { wait } from '../../helpers/promise';
 
 export const retryHandler = (e: ApiError, maxDelay = RETRY_DELAY_MAX) => {
     const headers = e?.response?.headers;

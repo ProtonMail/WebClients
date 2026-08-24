@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
 import { unescape } from '@proton/sanitize/escape';
-import { getIsAddressExternal, getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
 import isTruthy from '@proton/utils/isTruthy';
 import unary from '@proton/utils/unary';
 
@@ -9,6 +8,7 @@ import { MIME_TYPES } from '../../constants';
 import { addDays, format as formatUTC } from '../../date-fns-utc';
 import type { Options } from '../../date-fns-utc/format';
 import { formatTimezoneOffset, getTimezoneOffset, toUTCDate } from '../../date/timezone';
+import { getIsAddressExternal, getIsBYOEAddress } from '../../helpers/address';
 import {
     buildMailTo,
     canonicalizeEmail,
@@ -685,13 +685,11 @@ export const isCommentUpdated = (vevent?: VcalVeventComponent, oldVevent?: VcalV
 
     return !!(
         // Case 1: Both have comments but values are different
-        (
-            (newComment?.[0]?.value && oldComment?.[0]?.value && newComment[0].value !== oldComment[0].value) ||
-            // Case 2: Old comment exists but new comment doesn't (comment was removed)
-            (oldComment?.[0]?.value && (!newComment || !newComment[0]?.value)) ||
-            // Case 3: New comment exists but old comment doesn't (comment was added)
-            (newComment?.[0]?.value && (!oldComment || !oldComment[0]?.value))
-        )
+        (newComment?.[0]?.value && oldComment?.[0]?.value && newComment[0].value !== oldComment[0].value) ||
+        // Case 2: Old comment exists but new comment doesn't (comment was removed)
+        (oldComment?.[0]?.value && (!newComment || !newComment[0]?.value)) ||
+        // Case 3: New comment exists but old comment doesn't (comment was added)
+        (newComment?.[0]?.value && (!oldComment || !oldComment[0]?.value))
     );
 };
 

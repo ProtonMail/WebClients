@@ -1,4 +1,4 @@
-import type { SimpleMap } from '@proton/shared/lib/interfaces';
+import type { SimpleMap } from '../interfaces';
 
 // Reminder: both auth & un-auth measurement groups need to be whitelisted by the back-end. Make sure to specify it to the back-end or your measurement will be silently ignored.
 export enum TelemetryMeasurementGroups {

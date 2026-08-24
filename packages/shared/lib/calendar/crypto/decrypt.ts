@@ -1,9 +1,9 @@
 import type { PrivateKeyReference, PublicKeyReference, SessionKey } from '@protontech/crypto';
 import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
-import { utf8StringToUint8Array, uint8ArrayToUtf8String } from '@protontech/crypto/utils';
-import { captureMessage } from '@proton/shared/lib/helpers/sentry';
+import { uint8ArrayToUtf8String, utf8StringToUint8Array } from '@protontech/crypto/utils';
 
 import { isElectronMail } from '../../helpers/desktop';
+import { captureMessage } from '../../helpers/sentry';
 import type { CalendarEventData } from '../../interfaces/calendar';
 import type { SimpleMap } from '../../interfaces/utils';
 import { CALENDAR_CARD_TYPE, EVENT_VERIFICATION_STATUS } from '../constants';

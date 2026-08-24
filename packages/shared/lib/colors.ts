@@ -2,8 +2,9 @@ import type { ColorFormats } from 'tinycolor2';
 import tinycolor from 'tinycolor2';
 import { c } from 'ttag';
 
-import type { SimpleMap } from '@proton/shared/lib/interfaces';
 import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
+
+import type { SimpleMap } from './interfaces';
 
 export const ACCENT_COLORS_MAP = {
     purple: { color: '#8080FF', getName: () => c('color').t`purple` },

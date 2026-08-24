@@ -1,5 +1,3 @@
-import { binaryStringToUint8Array } from '@proton/shared/lib/helpers/encoding';
-
 import { MAX_CHARS_API } from '../../lib/calendar/constants';
 import {
     generateVeventHashUID,
@@ -8,6 +6,7 @@ import {
     getOriginalUID,
     getSupportedUID,
 } from '../../lib/calendar/helper';
+import { binaryStringToUint8Array } from '../../lib/helpers/encoding';
 
 describe('getSupportedUID', () => {
     it('should retain short UIDs', () => {

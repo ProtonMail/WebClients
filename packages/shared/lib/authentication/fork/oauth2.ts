@@ -1,5 +1,5 @@
-import type { ProduceForkParametersFull } from '@proton/shared/lib/authentication/fork/produce';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '../../interfaces';
+import type { ProduceForkParametersFull } from './produce';
 
 export interface OauthAuthorizeResponse {
     RedirectURL: string;

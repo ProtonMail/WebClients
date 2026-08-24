@@ -1,5 +1,4 @@
-import type { KeyWithRecoverySecret } from '@proton/shared/lib/interfaces';
-
+import type { KeyWithRecoverySecret } from '../../lib/interfaces';
 import { parseRecoveryFiles } from '../../lib/recoveryFile/recoveryFile';
 
 describe('recoveryFile', () => {

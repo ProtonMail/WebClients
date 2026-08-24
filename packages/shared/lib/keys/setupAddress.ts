@@ -2,20 +2,20 @@ import { utf8StringToUint8Array } from '@protontech/crypto/utils';
 import { c } from 'ttag';
 
 import type { AddressGeneration } from '@proton/components/containers/login/interface';
-import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
-import type { ProductParam } from '@proton/shared/lib/apps/product';
-import { getRequiresAddress, getRequiresProtonAddress } from '@proton/shared/lib/authentication/apps';
-import { getClientKey } from '@proton/shared/lib/authentication/clientKey';
-import { getDecryptedBlob, getEncryptedBlob } from '@proton/shared/lib/authentication/sessionBlobCryptoHelper';
-import { ADDRESS_TYPE, APPS, type APP_NAMES, KEYGEN_CONFIGS, KEYGEN_TYPES } from '@proton/shared/lib/constants';
-import { getEmailParts, removePlusAliasLocalPart } from '@proton/shared/lib/helpers/email';
-import { isPrivate } from '@proton/shared/lib/user/helpers';
 import noop from '@proton/utils/noop';
 
 import { getAllAddresses } from '../api/addresses';
+import { queryAvailableDomains } from '../api/domains';
 import { updateUsername } from '../api/settings';
 import { queryCheckUsernameAvailability } from '../api/user';
+import type { ProductParam } from '../apps/product';
+import { getRequiresAddress, getRequiresProtonAddress } from '../authentication/apps';
+import { getClientKey } from '../authentication/clientKey';
+import { getDecryptedBlob, getEncryptedBlob } from '../authentication/sessionBlobCryptoHelper';
+import { ADDRESS_TYPE, APPS, type APP_NAMES, KEYGEN_CONFIGS, KEYGEN_TYPES } from '../constants';
+import { getEmailParts, removePlusAliasLocalPart } from '../helpers/email';
 import type { Address, Api, PreAuthKTVerify, User, User as tsUser } from '../interfaces';
+import { isPrivate } from '../user/helpers';
 import { getIsBYOEAccount, getIsExternalAccount, getIsVPNOnlyAccount, getRequiresMailKeySetup } from './accountType';
 import { createAddressKeyLegacy, createAddressKeyV2 } from './add';
 import { getDecryptedUserKeysHelper } from './getDecryptedUserKeys';

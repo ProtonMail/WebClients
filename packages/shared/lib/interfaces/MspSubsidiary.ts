@@ -1,6 +1,5 @@
-import type { ORGANIZATION_STATE } from '@proton/shared/lib/constants';
-
 import type { MspDelegatedManager } from '../api/msp';
+import type { ORGANIZATION_STATE } from '../constants';
 
 export interface MspSubsidiary {
     ID: string;

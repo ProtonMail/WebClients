@@ -1,5 +1,5 @@
-import { getEnvironmentDate } from '@proton/shared/lib/spotlight/helpers';
-import type { SpotlightDate } from '@proton/shared/lib/spotlight/interface';
+import { getEnvironmentDate } from '../../lib/spotlight/helpers';
+import type { SpotlightDate } from '../../lib/spotlight/interface';
 
 describe('Spotlight', () => {
     describe('getEnvironmentDate', () => {

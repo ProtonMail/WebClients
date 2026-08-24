@@ -1,9 +1,9 @@
 import {
     getOrganization as getOrganizationConfig,
     getOrganizationSettings as getOrganizationSettingsConfig,
-} from '@proton/shared/lib/api/organization';
-import { INVOICE_EMAIL_STATE } from '@proton/shared/lib/constants';
-import type { Api, Organization, OrganizationExtended, OrganizationSettings } from '@proton/shared/lib/interfaces';
+} from '../api/organization';
+import { INVOICE_EMAIL_STATE } from '../constants';
+import type { Api, Organization, OrganizationExtended, OrganizationSettings } from '../interfaces';
 
 export const getOrganization = ({ api }: { api: Api }) => {
     return api<{

@@ -1,9 +1,6 @@
 import type { PrivateKeyReference } from '@protontech/crypto';
 import { CryptoProxy, toPublicKeyReference } from '@protontech/crypto';
-import { getDecryptedAddressKeys } from '@proton/shared/lib/keys/getDecryptedAddressKeys';
-import { getDecryptedUserKeys } from '@proton/shared/lib/keys/getDecryptedUserKeys';
-import { getPrimaryKey } from '@proton/shared/lib/keys/getPrimaryKey';
-import { getDefaultKeyFlags } from '@proton/shared/lib/keys/keyFlags';
+
 import isTruthy from '@proton/utils/isTruthy';
 
 import { createMemberKeyRoute, setupMemberKeyRoute } from '../api/memberKeys';
@@ -28,6 +25,10 @@ import {
     getNormalizedActiveAddressKeys,
     getPrimaryFlag,
 } from './getActiveKeys';
+import { getDecryptedAddressKeys } from './getDecryptedAddressKeys';
+import { getDecryptedUserKeys } from './getDecryptedUserKeys';
+import { getPrimaryKey } from './getPrimaryKey';
+import { getDefaultKeyFlags } from './keyFlags';
 import { generateKeySaltAndPassphrase } from './keys';
 import { decryptMemberToken, encryptMemberToken, generateMemberToken } from './memberToken';
 import { generateMemberAddressKey } from './organizationKeys';
