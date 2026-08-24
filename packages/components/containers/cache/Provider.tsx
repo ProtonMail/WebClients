@@ -1,10 +1,9 @@
 import type { ReactNode } from 'react';
 import { useEffect, useRef } from 'react';
 
+import { CacheContext } from '@proton/app-context/cacheContext';
 import type { Cache } from '@proton/shared/lib/helpers/cache';
 import createCache from '@proton/shared/lib/helpers/cache';
-
-import CacheContext from './cacheContext';
 
 interface Props<K, V> {
     cache?: Cache<K, V>;
