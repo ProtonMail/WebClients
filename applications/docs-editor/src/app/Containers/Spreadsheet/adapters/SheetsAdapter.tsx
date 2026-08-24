@@ -1,16 +1,22 @@
 import useNotifications from '@proton/components/hooks/useNotifications'
+import type { EditorRequiresClientMethods } from '@proton/docs-shared'
 import { isDevOrBlack } from '@proton/utils/env'
 import type { PropsWithChildren } from 'react'
 import { useMemo } from 'react'
 
+import { reportErrorToSentry } from '../../../Utils/errorMessage'
 import { useApplication } from '../../ApplicationProvider'
 import { SheetsDependenciesProvider, type SheetsDependencies } from '../SheetsDependenciesProvider'
+
+type SheetsAdapterProps = PropsWithChildren<{
+  clientInvoker: EditorRequiresClientMethods
+}>
 
 /**
  * The glue layer that collects all the SheetsDependencies required by the sheets editor and
  * provides them to the standalone sheets editor.
  */
-export function SheetsAdapter({ children }: PropsWithChildren) {
+export function SheetsAdapter({ children, clientInvoker }: SheetsAdapterProps) {
   const { createNotification } = useNotifications()
   const { application } = useApplication()
 
@@ -28,8 +34,12 @@ export function SheetsAdapter({ children }: PropsWithChildren) {
         version: application.appVersion,
       },
       showNotification: createNotification,
+      // Dependencies that use the clientInvoker
+      openLink: (url) => {
+        void clientInvoker.openLink(url).catch(reportErrorToSentry)
+      },
     }),
-    [application.appVersion, application.environment, canEdit, canTrash, createNotification],
+    [application.appVersion, application.environment, canEdit, canTrash, clientInvoker, createNotification],
   )
 
   return <SheetsDependenciesProvider dependencies={dependencies}>{children}</SheetsDependenciesProvider>

@@ -6,8 +6,6 @@ import { clsx } from 'clsx'
 import type { ComponentPropsWithoutRef } from 'react'
 import { type Ref, useCallback, useLayoutEffect, useRef, useState } from 'react'
 import { c } from 'ttag'
-import { useApplication } from '../../../ApplicationProvider'
-import { OPEN_LINK_EVENT } from '../../constants'
 import { useSheetsDependencies } from '../../SheetsDependenciesProvider'
 import { createStringifier } from '../../stringifier'
 import { useUI } from '../../ui-store'
@@ -221,12 +219,11 @@ function LinkInfo({
   sheetId: number
   onRemoveLink: NonNullable<CellTooltipProps['onRemoveLink']>
 }) {
-  const { application } = useApplication()
   const link = getLink(hyperlink)
   const url = link.startsWith('http') ? link : 'https://' + link
   const isReadonly = useUI((state) => state.info.isReadonly)
 
-  const { showNotification } = useSheetsDependencies()
+  const { openLink, showNotification } = useSheetsDependencies()
   const copyLink = useCallback(() => {
     copyTextToClipboard(url)
     showNotification({ text: s('Copied') })
@@ -253,12 +250,7 @@ function LinkInfo({
           className="max-w-[20ch] text-ellipsis text-xs font-semibold leading-5 underline focus-visible:shadow-none focus-visible:outline-none"
           onClick={(e) => {
             e.preventDefault()
-            application.eventBus.publish({
-              type: OPEN_LINK_EVENT,
-              payload: {
-                link: url,
-              },
-            })
+            openLink(url)
           }}
         >
           {link}

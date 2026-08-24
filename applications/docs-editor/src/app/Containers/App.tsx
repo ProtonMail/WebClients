@@ -51,8 +51,6 @@ import type { SpreadsheetRef } from './Spreadsheet/Spreadsheet'
 import { $generateJSONFromSelectedNodes } from '@lexical/clipboard'
 import { getEditorStateFromSerializedNodes } from '../Conversion/get-editor-state-from-nodes'
 import { uint8ArrayToUtf8String } from '@protontech/crypto/utils'
-import type { OpenLinkEventData } from './Spreadsheet/constants'
-import { OPEN_LINK_EVENT } from './Spreadsheet/constants'
 import { useStore } from 'zustand'
 import DocsLayout from './DocsLayout'
 import { getDocsLayoutScrollContainer } from './docsLayoutUtils'
@@ -517,15 +515,6 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
     setUserMode,
   ])
 
-  useEffect(() => {
-    if (!bridge) {
-      return
-    }
-    return application.eventBus.addEventCallback((data: OpenLinkEventData) => {
-      bridge.getClientInvoker().openLink(data.link).catch(console.error)
-    }, OPEN_LINK_EVENT)
-  }, [application.eventBus, bridge])
-
   const onUserModeChange = useCallback(
     (mode: EditorUserMode) => {
       const canSwitchToSuggestionMode = suggestionsEnabled
@@ -714,7 +703,7 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
             reportErrorToSentry(error)
           }}
         >
-          <SheetsAdapter>
+          <SheetsAdapter clientInvoker={bridge.getClientInvoker()}>
             <StandaloneSheetsEditor
               ref={spreadsheetRef}
               docState={docState}
