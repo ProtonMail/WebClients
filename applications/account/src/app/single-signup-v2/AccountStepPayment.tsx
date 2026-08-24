@@ -298,9 +298,8 @@ const AccountStepPayment = ({
                 measurePayError(telemetryType);
 
                 tracePaymentError(error, {
-                    tags: {
-                        component: 'single-signup-v2-AccountStepPayment',
-                    },
+                    component: 'single-signup-v2-account-step-payment',
+                    subscription: model.session?.subscription,
                     extra: {
                         currency: model.subscriptionData.currency,
                         amount: model.subscriptionData.checkResult.AmountDue,

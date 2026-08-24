@@ -914,9 +914,8 @@ const Step1 = ({
                 });
 
                 tracePaymentError(e, {
-                    tags: {
-                        component: 'single-signup-v1-Step1',
-                    },
+                    component: 'single-signup-v1-step1',
+                    subscription: null,
                     extra: {
                         mode,
                         selectedPlan,

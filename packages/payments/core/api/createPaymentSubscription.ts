@@ -212,6 +212,7 @@ function reportWrongBillingAddress(data: SubscribeData) {
 
         if (!data?.BillingAddress?.CountryCode) {
             capturePaymentMessage('Payments: missing CountryCode in billing address', {
+                component: 'create-payment-subscription',
                 level: 'warning',
                 extra,
             });
@@ -219,6 +220,7 @@ function reportWrongBillingAddress(data: SubscribeData) {
 
         if (isCountryWithStates(data?.BillingAddress?.CountryCode) && !data?.BillingAddress?.State) {
             capturePaymentMessage('Payments: missing State in billing address', {
+                component: 'create-payment-subscription',
                 level: 'warning',
                 extra,
             });
@@ -226,6 +228,7 @@ function reportWrongBillingAddress(data: SubscribeData) {
 
         if (isCountryWithRequiredPostalCode(data?.BillingAddress?.CountryCode) && !data?.BillingAddress?.ZipCode) {
             capturePaymentMessage('Payments: missing ZipCode in billing address', {
+                component: 'create-payment-subscription',
                 level: 'warning',
                 extra,
             });
