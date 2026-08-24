@@ -13,7 +13,7 @@ import ModalTwoContent from '../../../components/modalTwo/ModalContent';
 import ModalTwoFooter from '../../../components/modalTwo/ModalFooter';
 import ModalTwoHeader from '../../../components/modalTwo/ModalHeader';
 import { Tabs } from '../../../components/tabs/Tabs';
-import { TextAreaTwo } from '../../../index';
+import TextAreaTwo from '../../../components/v2/input/TextArea';
 
 export interface WireGuardCreationModalProps extends ModalProps {
     text?: string;

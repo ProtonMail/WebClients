@@ -14,7 +14,7 @@ jest.mock('@proton/atoms/Portal/Portal');
 jest.mock('../../../../../hooks/useDashboardPaymentFlow');
 
 const mockOpenSubscriptionModal = jest.fn();
-jest.mock('../../SubscriptionModalProvider', () => ({
+jest.mock('../../subscriptionModalContext', () => ({
     useSubscriptionModal: () => [mockOpenSubscriptionModal, false],
 }));
 
@@ -140,7 +140,7 @@ describe('CancelSubscriptionModalForWorldCup', () => {
 
     it('should render loading state on get 50% offer button', () => {
         const mockLoadingOpenSubscriptionModal = jest.fn();
-        jest.mock('../../SubscriptionModalProvider', () => ({
+        jest.mock('../../subscriptionModalContext', () => ({
             useSubscriptionModal: () => [mockLoadingOpenSubscriptionModal, true],
         }));
 
