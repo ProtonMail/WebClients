@@ -328,8 +328,12 @@ export const DeviceSettings = ({
                             ariaPressed={isBackgroundsOpen}
                             ariaExpanded={isBackgroundsOpen}
                             disabled={!isBackgroundBlurSupported}
-                            tooltipTitle={backgroundsButtonLabel}
-                            tooltipClassName="meet-tooltip--nowrap"
+                            tooltipTitle={
+                                isBackgroundBlurSupported
+                                    ? backgroundsButtonLabel
+                                    : c('Tooltip').t`Background effects are not supported on your browser`
+                            }
+                            tooltipClassName={isBackgroundBlurSupported ? 'meet-tooltip--nowrap' : undefined}
                             tooltipPlacement="top"
                         />
                     </div>

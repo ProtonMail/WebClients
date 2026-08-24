@@ -5,10 +5,9 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { deviceManagementReducer } from '@proton/meet/store/slices/deviceManagementSlice';
-import { screenShareStatusReducer } from '@proton/meet/store/slices/screenShareStatusSlice';
-import { settingsReducer } from '@proton/meet/store/slices/settings';
 import { MeetingSideBars, uiStateReducer } from '@proton/meet/store/slices/uiStateSlice';
 import { ProtonStoreContext } from '@proton/react-redux-store';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import type { MediaManagementContextType } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import { MediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
@@ -24,26 +23,16 @@ vi.mock('@proton/unleash/useFlag', () => unleashMocks);
 
 interface MockStoreOptions {
     isSideBarOpen?: boolean;
-    isSelfViewEnabled?: boolean;
-    isScreenShare?: boolean;
 }
 
-const createMockStore = ({ isSideBarOpen = true, isSelfViewEnabled = true, isScreenShare = false }: MockStoreOptions) =>
+const createMockStore = ({ isSideBarOpen = true }: MockStoreOptions) =>
     configureStore({
         // @ts-expect-error - mock data
         reducer: {
             ...uiStateReducer,
-            ...settingsReducer,
-            ...screenShareStatusReducer,
             ...deviceManagementReducer,
         },
         preloadedState: {
-            meetSettings: {
-                selfView: isSelfViewEnabled,
-            },
-            screenShareStatus: {
-                participantScreenSharingIdentity: isScreenShare ? 'someone-sharing' : null,
-            },
             deviceManagement: {
                 activeCameraId: 'camera-1',
             },
@@ -88,13 +77,16 @@ describe('Backgrounds', () => {
     });
 
     it('should not render when the side bar is closed', () => {
-        render(
+        const { container } = render(
             <Wrapper isSideBarOpen={false}>
                 <Backgrounds />
             </Wrapper>
         );
 
         expect(screen.queryByRole('heading', { name: 'Backgrounds' })).not.toBeInTheDocument();
+        // Mounting a thumbnail is what triggers its download, so a closed side bar must not put
+        // any of them in the document.
+        expect(container.querySelectorAll('img')).toHaveLength(0);
     });
 
     it('should not render when the feature is turned off', () => {
@@ -117,12 +109,12 @@ describe('Backgrounds', () => {
         );
 
         expect(screen.getByRole('heading', { name: 'Backgrounds' })).toBeInTheDocument();
-        expect(screen.getByRole('heading', { name: 'Background effects' })).toBeInTheDocument();
+        expect(screen.getByRole('heading', { name: 'Blur and personal' })).toBeInTheDocument();
         expect(screen.getByRole('heading', { name: 'Virtual backgrounds' })).toBeInTheDocument();
 
-        expect(screen.getByRole('option', { name: 'No effect' })).toBeInTheDocument();
-        expect(screen.getByRole('option', { name: 'Blur background' })).toBeInTheDocument();
-        expect(screen.getByRole('option', { name: 'Purple background' })).toBeInTheDocument();
+        expect(screen.getByRole('radio', { name: 'No effect' })).toBeInTheDocument();
+        expect(screen.getByRole('radio', { name: 'Blur background' })).toBeInTheDocument();
+        expect(screen.getByRole('radio', { name: 'Office background' })).toBeInTheDocument();
     });
 
     it('should mark the no effect option as selected when nothing is applied', () => {
@@ -132,19 +124,19 @@ describe('Backgrounds', () => {
             </Wrapper>
         );
 
-        expect(screen.getByRole('option', { name: 'No effect' })).toHaveAttribute('aria-selected', 'true');
-        expect(screen.getByRole('option', { name: 'Blur background' })).toHaveAttribute('aria-selected', 'false');
+        expect(screen.getByRole('radio', { name: 'No effect' })).toHaveAttribute('aria-checked', 'true');
+        expect(screen.getByRole('radio', { name: 'Blur background' })).toHaveAttribute('aria-checked', 'false');
     });
 
     it('should mark the applied virtual background as selected', () => {
         render(
-            <Wrapper contextValue={{ appliedBackgroundEffect: 'blue' }}>
+            <Wrapper contextValue={{ appliedBackgroundEffect: 'office' }}>
                 <Backgrounds />
             </Wrapper>
         );
 
-        expect(screen.getByRole('option', { name: 'Blue background' })).toHaveAttribute('aria-selected', 'true');
-        expect(screen.getByRole('option', { name: 'No effect' })).toHaveAttribute('aria-selected', 'false');
+        expect(screen.getByRole('radio', { name: 'Office background' })).toHaveAttribute('aria-checked', 'true');
+        expect(screen.getByRole('radio', { name: 'No effect' })).toHaveAttribute('aria-checked', 'false');
     });
 
     it('should enable blur when picking the blur effect', async () => {
@@ -156,9 +148,12 @@ describe('Backgrounds', () => {
             </Wrapper>
         );
 
-        await userEvent.setup().click(screen.getByRole('option', { name: 'Blur background' }));
+        await userEvent.setup().click(screen.getByRole('radio', { name: 'Blur background' }));
 
         expect(selectBackgroundEffect).toHaveBeenCalledWith('blur');
+        // A click both focuses and activates the tile, and reinitialising the processor twice
+        // over is expensive enough to be worth pinning down.
+        expect(selectBackgroundEffect).toHaveBeenCalledTimes(1);
     });
 
     it('should apply the picked virtual background', async () => {
@@ -170,21 +165,51 @@ describe('Backgrounds', () => {
             </Wrapper>
         );
 
-        await userEvent.setup().click(screen.getByRole('option', { name: 'Green background' }));
+        await userEvent.setup().click(screen.getByRole('radio', { name: 'Mountain background' }));
 
-        expect(selectBackgroundEffect).toHaveBeenCalledWith('green');
+        expect(selectBackgroundEffect).toHaveBeenCalledWith('mountain');
+        expect(selectBackgroundEffect).toHaveBeenCalledTimes(1);
+    });
+
+    it('should ignore a click on the background already in use', async () => {
+        const selectBackgroundEffect = vi.fn().mockResolvedValue(undefined);
+
+        render(
+            <Wrapper contextValue={{ appliedBackgroundEffect: 'office', selectBackgroundEffect }}>
+                <Backgrounds />
+            </Wrapper>
+        );
+
+        await userEvent.setup().click(screen.getByRole('radio', { name: 'Office background' }));
+
+        expect(selectBackgroundEffect).not.toHaveBeenCalled();
+    });
+
+    it('should show the image backgrounds with a lazily loaded thumbnail', () => {
+        render(
+            <Wrapper>
+                <Backgrounds />
+            </Wrapper>
+        );
+
+        const thumbnail = screen.getByRole('radio', { name: 'Office background' }).querySelector('img');
+
+        expect(thumbnail).toBeInTheDocument();
+        // The full-size image is only fetched once the background is picked, so the picker
+        // must not pull every thumbnail in either.
+        expect(thumbnail).toHaveAttribute('loading', 'lazy');
     });
 
     it('should clear the virtual background when picking no effect', async () => {
         const selectBackgroundEffect = vi.fn().mockResolvedValue(undefined);
 
         render(
-            <Wrapper contextValue={{ appliedBackgroundEffect: 'purple', selectBackgroundEffect }}>
+            <Wrapper contextValue={{ appliedBackgroundEffect: 'proton', selectBackgroundEffect }}>
                 <Backgrounds />
             </Wrapper>
         );
 
-        await userEvent.setup().click(screen.getByRole('option', { name: 'No effect' }));
+        await userEvent.setup().click(screen.getByRole('radio', { name: 'No effect' }));
 
         expect(selectBackgroundEffect).toHaveBeenCalledWith('none');
     });
@@ -193,52 +218,200 @@ describe('Backgrounds', () => {
         const selectBackgroundEffect = vi.fn().mockResolvedValue(undefined);
 
         render(
-            <Wrapper contextValue={{ pendingBackgroundEffect: 'purple', selectBackgroundEffect }}>
+            <Wrapper contextValue={{ pendingBackgroundEffect: 'proton', selectBackgroundEffect }}>
                 <Backgrounds />
             </Wrapper>
         );
 
         const user = userEvent.setup();
-        await user.click(screen.getByRole('option', { name: 'Blue background' }));
-        await user.click(screen.getByRole('option', { name: 'Green background' }));
+        await user.click(screen.getByRole('radio', { name: 'Office background' }));
+        await user.click(screen.getByRole('radio', { name: 'Mountain background' }));
 
-        expect(selectBackgroundEffect).toHaveBeenNthCalledWith(1, 'blue');
-        expect(selectBackgroundEffect).toHaveBeenNthCalledWith(2, 'green');
+        expect(selectBackgroundEffect.mock.calls).toEqual([['office'], ['mountain']]);
     });
 
     it('should highlight the effect being applied before it lands on the track', () => {
         render(
-            <Wrapper contextValue={{ appliedBackgroundEffect: 'none', pendingBackgroundEffect: 'blue' }}>
+            <Wrapper contextValue={{ appliedBackgroundEffect: 'none', pendingBackgroundEffect: 'office' }}>
                 <Backgrounds />
             </Wrapper>
         );
 
-        const blueOption = screen.getByRole('option', { name: 'Blue background' });
-        expect(blueOption).toHaveAttribute('aria-selected', 'true');
-        expect(blueOption).toHaveAttribute('aria-busy', 'true');
-        expect(screen.getByRole('option', { name: 'No effect' })).toHaveAttribute('aria-selected', 'false');
+        const officeOption = screen.getByRole('radio', { name: 'Office background' });
+        expect(officeOption).toHaveAttribute('aria-checked', 'true');
+        expect(officeOption).toHaveAttribute('aria-busy', 'true');
+        expect(screen.getByRole('radio', { name: 'No effect' })).toHaveAttribute('aria-checked', 'false');
     });
 
-    it('should disable the options when background effects are not supported', () => {
+    it('should keep showing the background being applied instead of a spinner', () => {
+        render(
+            <Wrapper contextValue={{ appliedBackgroundEffect: 'none', pendingBackgroundEffect: 'blur' }}>
+                <Backgrounds />
+            </Wrapper>
+        );
+
+        // Arrowing through the options applies each one in turn, so a per-tile spinner would flash
+        // over the icons as focus moves. The preview carries the initializing state instead.
+        const blurOption = screen.getByRole('radio', { name: 'Blur background' });
+        expect(blurOption.querySelector('[data-testid="circle-loader"]')).not.toBeInTheDocument();
+        expect(blurOption.querySelector('svg')).toBeInTheDocument();
+    });
+
+    it('should disable the options when background effects are not supported', async () => {
+        const selectBackgroundEffect = vi.fn().mockResolvedValue(undefined);
+
+        render(
+            <Wrapper contextValue={{ isBackgroundBlurSupported: false, selectBackgroundEffect }}>
+                <Backgrounds />
+            </Wrapper>
+        );
+
+        const blurOption = screen.getByRole('radio', { name: 'Blur background' });
+
+        // aria-disabled rather than the disabled attribute, so the tiles stay reachable and the
+        // explanation below them can be announced.
+        expect(blurOption).toHaveAttribute('aria-disabled', 'true');
+        expect(screen.getByText('Background effects are not supported on your browser')).toBeInTheDocument();
+
+        await userEvent.setup().click(blurOption);
+
+        expect(selectBackgroundEffect).not.toHaveBeenCalled();
+    });
+
+    it('should describe the disabled options with the unsupported notice', () => {
         render(
             <Wrapper contextValue={{ isBackgroundBlurSupported: false }}>
                 <Backgrounds />
             </Wrapper>
         );
 
-        expect(screen.getByRole('option', { name: 'Blur background' })).toBeDisabled();
-        expect(screen.getByText('Background effects are not supported on your browser')).toBeInTheDocument();
+        const notice = screen.getByText('Background effects are not supported on your browser');
+
+        expect(screen.getByRole('radiogroup', { name: 'Blur and personal' })).toHaveAttribute(
+            'aria-describedby',
+            notice.id
+        );
+    });
+
+    describe('keyboard navigation', () => {
+        it('should expose each section as a single tab stop landing on the current choice', () => {
+            render(
+                <Wrapper contextValue={{ appliedBackgroundEffect: 'blur' }}>
+                    <Backgrounds />
+                </Wrapper>
+            );
+
+            expect(screen.getByRole('radio', { name: 'Blur background' })).toHaveAttribute('tabindex', '0');
+            expect(screen.getByRole('radio', { name: 'No effect' })).toHaveAttribute('tabindex', '-1');
+
+            // The selection lives in the effects group, so the virtual backgrounds are entered at
+            // their first option instead.
+            expect(screen.getByRole('radio', { name: `${BRAND_NAME} background` })).toHaveAttribute('tabindex', '0');
+            expect(screen.getByRole('radio', { name: 'Office background' })).toHaveAttribute('tabindex', '-1');
+        });
+
+        it('should not apply the background that tabbing lands on', async () => {
+            const selectBackgroundEffect = vi.fn().mockResolvedValue(undefined);
+
+            render(
+                <Wrapper contextValue={{ appliedBackgroundEffect: 'none', selectBackgroundEffect }}>
+                    <Backgrounds />
+                </Wrapper>
+            );
+
+            screen.getByRole('radio', { name: 'No effect' }).focus();
+            await userEvent.setup().tab();
+
+            // Moving between sections is not a choice yet, so entering the virtual backgrounds
+            // must not swap the first one in behind the user's back.
+            expect(screen.getByRole('radio', { name: `${BRAND_NAME} background` })).toHaveFocus();
+            expect(selectBackgroundEffect).not.toHaveBeenCalled();
+        });
+
+        it('should apply the background the arrow keys move to', async () => {
+            const selectBackgroundEffect = vi.fn().mockResolvedValue(undefined);
+
+            render(
+                <Wrapper contextValue={{ appliedBackgroundEffect: 'none', selectBackgroundEffect }}>
+                    <Backgrounds />
+                </Wrapper>
+            );
+
+            const user = userEvent.setup();
+
+            screen.getByRole('radio', { name: 'No effect' }).focus();
+            await user.keyboard('{ArrowRight}');
+
+            expect(screen.getByRole('radio', { name: 'Blur background' })).toHaveFocus();
+            expect(selectBackgroundEffect).toHaveBeenCalledWith('blur');
+        });
+
+        it('should wrap around the ends of a section', async () => {
+            const selectBackgroundEffect = vi.fn().mockResolvedValue(undefined);
+
+            render(
+                <Wrapper contextValue={{ appliedBackgroundEffect: 'none', selectBackgroundEffect }}>
+                    <Backgrounds />
+                </Wrapper>
+            );
+
+            const user = userEvent.setup();
+
+            screen.getByRole('radio', { name: 'No effect' }).focus();
+            await user.keyboard('{ArrowLeft}');
+
+            expect(screen.getByRole('radio', { name: 'Blur background' })).toHaveFocus();
+            expect(selectBackgroundEffect).toHaveBeenCalledWith('blur');
+        });
+
+        it('should jump to the first and last background of a section', async () => {
+            const selectBackgroundEffect = vi.fn().mockResolvedValue(undefined);
+
+            render(
+                <Wrapper contextValue={{ selectBackgroundEffect }}>
+                    <Backgrounds />
+                </Wrapper>
+            );
+
+            const user = userEvent.setup();
+
+            screen.getByRole('radio', { name: `${BRAND_NAME} background` }).focus();
+            await user.keyboard('{End}');
+
+            expect(screen.getByRole('radio', { name: 'Coffee place background' })).toHaveFocus();
+
+            await user.keyboard('{Home}');
+
+            expect(screen.getByRole('radio', { name: `${BRAND_NAME} background` })).toHaveFocus();
+            expect(selectBackgroundEffect.mock.calls).toEqual([['coffee'], ['proton']]);
+        });
+
+        it('should not apply anything while the effects are unsupported', async () => {
+            const selectBackgroundEffect = vi.fn().mockResolvedValue(undefined);
+
+            render(
+                <Wrapper contextValue={{ isBackgroundBlurSupported: false, selectBackgroundEffect }}>
+                    <Backgrounds />
+                </Wrapper>
+            );
+
+            screen.getByRole('radio', { name: 'No effect' }).focus();
+            await userEvent.setup().keyboard('{ArrowRight}');
+
+            expect(screen.getByRole('radio', { name: 'Blur background' })).toHaveFocus();
+            expect(selectBackgroundEffect).not.toHaveBeenCalled();
+        });
     });
 
     describe('preview', () => {
-        it('should not show a preview while the local tile is visible in the meeting', () => {
+        it('should show a preview while the local tile is visible in the meeting', () => {
             render(
                 <Wrapper contextValue={{ isVideoEnabled: true }}>
                     <Backgrounds />
                 </Wrapper>
             );
 
-            expect(screen.queryByTestId('background-preview')).not.toBeInTheDocument();
+            expect(screen.getByTestId('background-preview')).toBeInTheDocument();
         });
 
         it('should show a preview when the camera is off in the meeting', () => {
@@ -251,34 +424,14 @@ describe('Backgrounds', () => {
             expect(screen.getByTestId('background-preview')).toBeInTheDocument();
         });
 
-        it('should show a preview when the self view is hidden', () => {
-            render(
-                <Wrapper isSelfViewEnabled={false} contextValue={{ isVideoEnabled: true }}>
-                    <Backgrounds />
-                </Wrapper>
-            );
-
-            expect(screen.getByTestId('background-preview')).toBeInTheDocument();
-        });
-
-        it('should show a preview while a screen share takes over the meeting', () => {
-            render(
-                <Wrapper isScreenShare={true} contextValue={{ isVideoEnabled: true }}>
-                    <Backgrounds />
-                </Wrapper>
-            );
-
-            expect(screen.getByTestId('background-preview')).toBeInTheDocument();
-        });
-
-        it('should not show a preview when background effects are not supported', () => {
+        it('should show a preview when background effects are not supported', () => {
             render(
                 <Wrapper contextValue={{ isVideoEnabled: false, isBackgroundBlurSupported: false }}>
                     <Backgrounds />
                 </Wrapper>
             );
 
-            expect(screen.queryByTestId('background-preview')).not.toBeInTheDocument();
+            expect(screen.getByTestId('background-preview')).toBeInTheDocument();
         });
     });
 });
