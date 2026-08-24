@@ -45,7 +45,7 @@ const ServerToolChip = ({ label, icon: Icon, sources = [], className }: Props) =
     }
 
     return (
-        <Disclosure label={label} icon={Icon} className={className}>
+        <Disclosure label={label} leading={<Icon className="shrink-0" size={3} />} className={className}>
             <ul className="lumo-server-tool__sources unstyled m-0 mt-2 flex flex-column flex-nowrap gap-2">
                 {sources.map((source) => (
                     <li key={source.url}>

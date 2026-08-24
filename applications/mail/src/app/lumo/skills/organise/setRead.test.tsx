@@ -1,11 +1,9 @@
-import type { ActionRequest } from '@proton/llm/lib/lumoAgent/contracts/types';
 import { createReferenceRegistry } from '@proton/llm/lib/lumoAgent/engine/referenceRegistry';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
 import { SOURCE_ACTION } from '../../../components/list/list-telemetry/useListTelemetry';
-
 import type { MailToolDeps } from '../../toolModule';
-import { hasEmailSelection, renderEmailSelectionBody } from './emailSelection';
+import { emailCountDetail, hasEmailSelection, renderEmailSelectionBody } from './emailSelection';
 import { createSetReadHandler, setReadCardRenderer, setReadDefinition } from './setRead';
 
 describe('setReadDefinition', () => {
@@ -17,23 +15,10 @@ describe('setReadDefinition', () => {
 });
 
 describe('setReadCardRenderer', () => {
-    const readAction: ActionRequest = {
-        type: 'set_read',
-        ids: ['email-a1b2c3', 'email-d4e5f6'],
-        read: true,
-    };
-    const labels = { 'email-a1b2c3': 'Booking confirmation', 'email-d4e5f6': 'Receipt' };
-
-    it('takes the shared selection body and its empty-apply rule', () => {
+    it('takes the shared selection body, its empty-apply rule and the shared count detail', () => {
         expect(setReadCardRenderer.renderBody).toBe(renderEmailSelectionBody);
         expect(setReadCardRenderer.canApply).toBe(hasEmailSelection);
-    });
-
-    it('counts the emails on the result tile rather than joining every subject', () => {
-        expect(setReadCardRenderer.detail?.(readAction, labels)).toBe('2 emails');
-        expect(setReadCardRenderer.detail?.({ ...readAction, ids: ['email-a1b2c3'] } as ActionRequest, labels)).toBe(
-            '1 email'
-        );
+        expect(setReadCardRenderer.detail).toBe(emailCountDetail);
     });
 });
 
