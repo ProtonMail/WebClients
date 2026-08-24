@@ -27,6 +27,7 @@ import { exportEntries, removeDocumentIds } from './index/indexEntriesUtils';
 import type { IndexerState } from './indexer/IndexerTaskQueue';
 import { DEFAULT_INDEXER_STATE, IndexerTaskQueue } from './indexer/IndexerTaskQueue';
 import { TreeSubscriptionRegistry } from './indexer/TreeSubscriptionRegistry';
+import { gatherSearchDiagnostics } from './searchDiagnostics';
 import { SearchQueryExecutor } from './searcher/SearchQueryExecutor';
 import { createBridgedSearchMetrics } from './workerSearchMetrics';
 
@@ -147,6 +148,7 @@ export class SharedWorkerAPI {
         if (!this.searcher) {
             this.searchMetrics?.markSearchQueryFailed({
                 error: new Error('No searcher available'),
+                diagnostics: this.db ? await gatherSearchDiagnostics(this.db) : undefined,
             });
             onEvent?.({ type: 'done' });
             return;
@@ -157,7 +159,10 @@ export class SharedWorkerAPI {
             }
             this.searchMetrics?.markSearchQuerySucceeded({ durationInSeconds: stopTimer() });
         } catch (error) {
-            this.searchMetrics?.markSearchQueryFailed({ error });
+            this.searchMetrics?.markSearchQueryFailed({
+                error,
+                diagnostics: this.db ? await gatherSearchDiagnostics(this.db) : undefined,
+            });
             // Search bypasses the task queue entirely (see SearchQueryExecutor), so nothing else
             // would ever surface a permanent error from this path - without this, the rebuild
             // banner (driven by `permanentError`) would never appear for a failure hit mid-query.

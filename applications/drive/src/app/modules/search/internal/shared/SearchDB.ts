@@ -33,6 +33,9 @@ export interface IndexPopulatorState {
     // Must NOT be reset by markAsNotDone, which re-fires on every retry while the persisted version
     // is stale - see the regression test in MyFilesIndexPopulator.test.ts.
     initialIndexingFailed?: boolean;
+    // Last-known total document count for this populator's index kind, persisted so it survives
+    // worker restarts. Diagnostics only - not used for indexing logic.
+    documentCount?: number;
 }
 
 /** The index operation a repair entry must replay when its node is reprocessed:
@@ -219,6 +222,25 @@ export class SearchDB {
         return this.db.delete('indexPopulatorStates', uid);
     }
 
+    /**
+     * Last-known total document count for `indexKind`, persisted so it survives worker restarts.
+     * Stored on the populator state row for that index kind - assumes one populator per index
+     * kind today (true for every `IndexKind`); the first match is used if that ever changes.
+     */
+    async getDocumentCount(indexKind: IndexKind): Promise<number | undefined> {
+        const states = await this.getAllPopulatorStates();
+        return states.find((state) => state.indexKind === indexKind)?.documentCount;
+    }
+
+    async setDocumentCount(indexKind: IndexKind, count: number): Promise<void> {
+        const states = await this.getAllPopulatorStates();
+        const state = states.find((s) => s.indexKind === indexKind);
+        if (!state) {
+            return;
+        }
+        await this.putPopulatorState({ ...state, documentCount: count });
+    }
+
     // --- User preferences & config ---
 
     async getSearchCryptoKey(decrypt: (ciphertext: string) => Promise<string>): Promise<string | undefined> {
@@ -314,6 +336,11 @@ export class SearchDB {
 
     getAllRepairEntries(): Promise<RepairNodeEntry[]> {
         return this.db.getAll('repairEntries');
+    }
+
+    /** Count of quarantined (repairable) nodes across all populators. */
+    countRepairEntries(): Promise<number> {
+        return this.db.count('repairEntries');
     }
 
     deleteRepairEntry(key: [string, string]): Promise<void> {

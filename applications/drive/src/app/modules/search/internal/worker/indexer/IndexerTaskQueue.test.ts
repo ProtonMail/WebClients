@@ -155,6 +155,12 @@ describe('IndexerTaskQueue', () => {
         resetTransientReportBurstsForTests();
 
         indexedDB = new IDBFactory();
+        // gatherSearchDiagnostics reads this on every permanent/transient error; jsdom has no
+        // built-in StorageManager.
+        Object.defineProperty(navigator, 'storage', {
+            value: { estimate: jest.fn().mockResolvedValue({ usage: 0, quota: 0 }) },
+            configurable: true,
+        });
         db = await SearchDB.open('test-user');
         bridge = new FakeMainThreadBridge();
         const cryptoKey = await generateAndImportKey();

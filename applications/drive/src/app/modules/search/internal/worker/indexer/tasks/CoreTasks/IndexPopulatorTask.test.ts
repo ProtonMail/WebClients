@@ -173,6 +173,7 @@ describe('IndexPopulatorTask', () => {
             generation: 2,
             version: 2,
             progress: { files: 2, folders: 0, albums: 0, photos: 0 },
+            documentCount: 2,
         });
     });
 
@@ -205,6 +206,7 @@ describe('IndexPopulatorTask', () => {
             generation: 1,
             version: 1,
             progress: { files: 2, folders: 0, albums: 0, photos: 0 },
+            documentCount: 2,
         });
     });
 

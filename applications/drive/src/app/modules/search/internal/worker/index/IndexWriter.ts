@@ -1,6 +1,7 @@
 import type { Engine, Execution, Write, WriteEvent } from '@proton/proton-foundation-search';
 import { Document, Value, WriteEventKind } from '@proton/proton-foundation-search';
 
+import { Logger } from '../../shared/Logger';
 import { InvalidIndexerState, sendErrorReportForSearch } from '../../shared/errors';
 import type { AttributeValue, IndexEntry } from '../indexer/indexEntry';
 import type { IndexBlobStore } from './IndexBlobStore';
@@ -18,7 +19,8 @@ export class WriteSession {
     constructor(
         writer: Write,
         private readonly blobStore: IndexBlobStore,
-        private readonly release: () => void
+        private readonly release: () => void,
+        private readonly onStats: (documentCount: number) => Promise<void>
     ) {
         this.writer = writer;
     }
@@ -105,9 +107,16 @@ export class WriteSession {
                     case WriteEventKind.Save:
                         await this.blobStore.saveEvent(event);
                         break;
-                    case WriteEventKind.Stats:
-                        engineCall('commit: free event', () => event.free());
+                    case WriteEventKind.Stats: {
+                        const documentCount = engineCall('commit: read stats', () => {
+                            const stats = event.stats();
+                            const count = stats.documents;
+                            stats.free();
+                            return count;
+                        });
+                        await this.onStats(documentCount);
                         break;
+                    }
                     default:
                         const error = new Error(`WriteSession: unexpected Write event kind <${kind}>`);
                         sendErrorReportForSearch(error.message, error);
@@ -142,7 +151,8 @@ export class IndexWriter {
 
     constructor(
         private readonly searchFoundationEngine: Engine,
-        private readonly blobStore: IndexBlobStore
+        private readonly blobStore: IndexBlobStore,
+        private readonly onDocumentCountUpdate: (documentCount: number) => Promise<void>
     ) {}
 
     startWriteSession(): WriteSession {
@@ -157,9 +167,20 @@ export class IndexWriter {
             throw new InvalidIndexerState('IndexWriter: Unable to get a write handle from an unactive write session');
         }
         this.active = true;
-        return new WriteSession(writer, this.blobStore, () => {
-            this.active = false;
-        });
+        return new WriteSession(
+            writer,
+            this.blobStore,
+            () => {
+                this.active = false;
+            },
+            async (documentCount) => {
+                try {
+                    await this.onDocumentCountUpdate(documentCount);
+                } catch (error) {
+                    Logger.warn(`IndexWriter: failed to persist document count: ${String(error)}`);
+                }
+            }
+        );
     }
 }
 
