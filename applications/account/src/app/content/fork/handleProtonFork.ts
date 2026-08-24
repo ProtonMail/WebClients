@@ -2,15 +2,14 @@ import type { AuthSession } from '@proton/components/containers/login/interface'
 import { getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
 import {
+    ForkType,
     type ProduceForkParametersFull,
     getProduceForkParameters,
     getRequiredForkParameters,
-    getShouldReAuth,
 } from '@proton/shared/lib/authentication/fork';
 import {
     type GetActiveSessionsResult,
     getActiveSessions,
-    getActiveSessionsResult,
     resumeSession,
 } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import type { Api } from '@proton/shared/lib/interfaces';
@@ -45,24 +44,18 @@ export const handleProtonFork = async ({ api, paths }: { api: Api; paths: Paths 
     }
 
     const localID = forkParameters.localID;
-    if (localID === undefined) {
-        const activeSessionsResult = await getActiveSessions({ api, email: forkParameters.email });
+    // A switch fork type is an explicit request for the account switcher, so it takes priority over
+    // silently resuming the requested session. getActiveSessionLoginResult owns that routing, and it
+    // applies the same fork type condition before auto-signing in.
+    if (localID === undefined || forkParameters.forkType === ForkType.SWITCH) {
+        const activeSessionsResult = await getActiveSessions({ api, email: forkParameters.email, localID });
         return handleActiveSessions(activeSessionsResult, forkParameters);
     }
 
     try {
         // Resume session and produce the fork
         const resumedSessionResult = await resumeSession({ api, localID });
-        const session: AuthSession = { data: resumedSessionResult };
-
-        if (getShouldReAuth(forkParameters, session)) {
-            const activeSessionsResult = await getActiveSessionsResult({
-                api,
-                localID: resumedSessionResult.localID,
-                session: resumedSessionResult,
-            });
-            return await handleActiveSessions(activeSessionsResult, forkParameters);
-        }
+        const session: AuthSession = { data: resumedSessionResult, flow: 'auto-resume' };
 
         const fork: ProtonForkData = { type: SSOType.Proton, payload: { forkParameters } };
         const loginResult = await getProduceForkLoginResult({

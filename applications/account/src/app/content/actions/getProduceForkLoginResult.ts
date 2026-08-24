@@ -10,6 +10,7 @@ import { getClientID, getProduct, isExtension } from '@proton/shared/lib/apps/he
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import {
     getProduceForkUrl,
+    getShouldReAuth,
     produceExtensionFork,
     produceFork,
     produceOAuthFork,
@@ -24,6 +25,7 @@ import { getRequiresAddressSetup } from '@proton/shared/lib/keys/setupAddress';
 
 import type { AuthDesktopState } from '../../public/AuthDesktop';
 import type { AuthExtensionState } from '../../public/AuthExtension';
+import { getReAuthState } from '../../public/reauthContainerState';
 import type { Paths } from '../helper';
 import { hasInterruption } from '../interruptions';
 import { type ProduceForkData, SSOType } from './forkInterface';
@@ -79,6 +81,21 @@ export const getProduceForkLoginResult = async ({
     if (data.type === SSOType.Proton) {
         const { forkParameters, desktopForkParameters, searchParameters } = data.payload;
         const { app, redirectUrl } = forkParameters;
+
+        if (
+            // Reauth is only triggered through the switch or auto flow as in other scenarios the user enters their password
+            (session.flow === 'switch' || session.flow === 'auto-resume') &&
+            // The prompt comes from the fork url and does not change between passes, so without this the
+            // session would be sent back to reauth every time it comes back through here
+            !hasInterruption(session, 'reauth') &&
+            getShouldReAuth(forkParameters, session)
+        ) {
+            return {
+                type: 'reauth',
+                location: paths.reauth,
+                payload: getReAuthState(forkParameters, session),
+            };
+        }
 
         // OAuth sessions are only allowed for the VPN browser extension at the moment. Throw a disallowed product error if a fork is attempted.
         if (session.data.persistedSession.source === SessionSource.Oauth && app !== APPS.PROTONVPNBROWSEREXTENSION) {
