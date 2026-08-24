@@ -117,6 +117,7 @@ const LumoAgentPanel = ({
                         action={item.action}
                         labels={item.labels}
                         status={item.status}
+                        className="lumo-agent-tool-row"
                     />
                 );
             case 'error':

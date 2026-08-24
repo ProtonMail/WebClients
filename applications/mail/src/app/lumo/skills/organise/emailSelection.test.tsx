@@ -2,7 +2,7 @@ import { fireEvent, render, screen } from '@testing-library/react';
 
 import type { ActionRequest } from '@proton/llm/lib/lumoAgent/contracts/types';
 
-import { hasEmailSelection, referenceName, renderEmailSelectionBody } from './emailSelection';
+import { emailCountDetail, hasEmailSelection, referenceName, renderEmailSelectionBody } from './emailSelection';
 
 const action: ActionRequest = {
     type: 'move_emails',
@@ -32,6 +32,17 @@ describe('referenceName', () => {
     it('falls back to the raw reference when nothing recorded a name for it', () => {
         expect(referenceName('email-a1b2c3', labels)).toBe('Booking confirmation');
         expect(referenceName('email-unknown', labels)).toBe('email-unknown');
+    });
+});
+
+describe('emailCountDetail', () => {
+    it('counts the emails rather than joining every subject, and takes the singular at one', () => {
+        expect(emailCountDetail(action)).toBe('2 emails');
+        expect(emailCountDetail({ ...action, ids: ['email-a1b2c3'] })).toBe('1 email');
+    });
+
+    it('has nothing to disclose for an empty selection', () => {
+        expect(emailCountDetail({ ...action, ids: [] })).toBeUndefined();
     });
 });
 

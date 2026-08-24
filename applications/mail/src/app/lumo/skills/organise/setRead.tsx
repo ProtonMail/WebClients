@@ -1,4 +1,4 @@
-import { c, msgid } from 'ttag';
+import { c } from 'ttag';
 
 import type { CardRenderer } from '@proton/components/components/lumoAgent/types';
 import { IcEnvelope } from '@proton/icons/icons/IcEnvelope';
@@ -7,10 +7,9 @@ import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
 import { SOURCE_ACTION } from '../../../components/list/list-telemetry/useListTelemetry';
 import { selectParams } from '../../../store/elements/elementsSelectors';
-
 import { resolveElements } from '../../helpers/references';
 import type { MailToolDeps, MailToolModule } from '../../toolModule';
-import { emailIds, hasEmailSelection, renderEmailSelectionBody } from './emailSelection';
+import { emailCountDetail, hasEmailSelection, renderEmailSelectionBody } from './emailSelection';
 
 export interface SetReadParams {
     ids: string[];
@@ -72,12 +71,7 @@ export const setReadCardRenderer: CardRenderer = {
     title: (action) => (action.read ? c('Title').t`Mark as read` : c('Title').t`Mark as unread`),
     renderBody: renderEmailSelectionBody,
     canApply: hasEmailSelection,
-    // A count rather than the joined subjects, which is unbounded on a large selection; the card body
-    // already lists them by name.
-    detail: (action) => {
-        const count = emailIds(action).length;
-        return c('Info').ngettext(msgid`${count} email`, `${count} emails`, count);
-    },
+    detail: emailCountDetail,
 };
 
 export const setReadModule: MailToolModule = {
