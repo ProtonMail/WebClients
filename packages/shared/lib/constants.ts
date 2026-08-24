@@ -709,6 +709,12 @@ export enum ORGANIZATION_POLICY_ENFORCED {
     YES = 1,
 }
 
+export enum INVOICE_EMAIL_STATE {
+    DISABLED = 0,
+    ENABLED = 1,
+    BOUNCED = 2,
+}
+
 export enum APP_UPSELL_REF_PATH {
     MAIL_UPSELL_REF_PATH = 'upsell_mail-',
     CALENDAR_UPSELL_REF_PATH = 'upsell_calendar-',
