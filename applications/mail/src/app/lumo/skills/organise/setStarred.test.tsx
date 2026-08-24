@@ -3,9 +3,8 @@ import { createReferenceRegistry } from '@proton/llm/lib/lumoAgent/engine/refere
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { APPLY_LOCATION_TYPES } from '../../../hooks/actions/applyLocation/interface';
-
 import type { MailToolDeps } from '../../toolModule';
-import { hasEmailSelection, renderEmailSelectionBody } from './emailSelection';
+import { emailCountDetail, hasEmailSelection, renderEmailSelectionBody } from './emailSelection';
 import { createSetStarredHandler, setStarredCardRenderer, setStarredDefinition } from './setStarred';
 
 describe('setStarredDefinition', () => {
@@ -60,13 +59,10 @@ describe('setStarredCardRenderer', () => {
         expect(setStarredCardRenderer.subtitle).toBeUndefined();
     });
 
-    it('takes the shared selection body and its empty-apply rule', () => {
+    it('takes the shared selection body, its empty-apply rule and the shared count detail', () => {
         expect(setStarredCardRenderer.renderBody).toBe(renderEmailSelectionBody);
         expect(setStarredCardRenderer.canApply).toBe(hasEmailSelection);
-    });
-
-    it('names the affected emails on the result tile', () => {
-        expect(setStarredCardRenderer.detail?.(starAction, labels)).toBe('Booking confirmation, Receipt');
+        expect(setStarredCardRenderer.detail).toBe(emailCountDetail);
     });
 });
 

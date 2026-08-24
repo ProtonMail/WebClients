@@ -77,7 +77,8 @@
 }
 
 .lumo-agent-error {
-	align-self: stretch;
+	align-self: flex-start;
+	inline-size: var(--lumo-agent-column);
 	padding-block: 0.5rem;
 	padding-inline: 0.75rem;
 	border-radius: 0.5rem;
@@ -85,21 +86,26 @@
 	background: var(--signal-danger-minor-1, rgb(204 45 45 / 0.08));
 }
 
+// A settled action reports an outcome, so it is outlined on the panel surface rather than filled like a
+// reply bubble — it must never read as something Lumo said. It carries the column's shared inset itself
+// rather than relying on `.lumo-agent-tool-row` for it, so the border never sits flush to the title.
 .lumo-agent-result-tile {
 	display: flex;
 	align-items: center;
 	gap: 0.5rem;
-	padding-block: 0.5rem;
-	padding-inline: 0.75rem;
-	border-radius: 0.5rem;
-	background: var(--background-weak, rgb(0 0 0 / 0.03));
+	padding-block: 0.375rem;
+	padding-inline: var(--lumo-agent-inset);
+	border: 1px solid var(--border-weak);
+	border-radius: var(--border-radius-lg, 0.75rem);
+	background: var(--background-norm);
 
 	&.is-cancelled {
 		opacity: 0.6;
 	}
 
-	.lumo-agent-result-tile-title {
-		flex: 1 1 auto;
-		min-inline-size: 0;
+	// A settled action is the row's own message, not a footnote on a reply, so it drops the weak grey the
+	// disclosure gives the transparency chips.
+	.lumo-disclosure__summary {
+		color: var(--text-norm);
 	}
 }
