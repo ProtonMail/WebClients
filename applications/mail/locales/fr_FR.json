@@ -1526,7 +1526,8 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Clé de confiance"
+        "Faire confiance à cette clé",
+        "Faire confiance à ces clés"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -1738,6 +1739,9 @@
       ],
       "Get the deal": [
         "J'en profite"
+      ],
+      "Get index size on disk": [
+        "Obtenir la taille de l'index sur le disque"
       ]
     },
     "action": {
@@ -7987,8 +7991,7 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image",
-        "Insérer des images"
+        "Insérer une image"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -9580,6 +9583,16 @@
       ],
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
         "Si vous avez perdu l'accès à votre application d'authentification, vous pouvez utiliser 1 des 16 codes de récupération de sauvegarde fournis lors de la configuration de l'authentification à deux facteurs. ${ learnMoreLink }"
+      ],
+      "Found ${ count } contact": [
+        "${ count } contact trouvé",
+        "${ count } contacts trouvés"
+      ],
+      "No contacts found": [
+        "Aucun contact trouvé"
+      ],
+      "Update filter": [
+        "Mettre à jour le filtre"
       ]
     },
     "info": {
@@ -10811,6 +10824,12 @@
       ],
       "Label name": [
         "Nom du label"
+      ],
+      "Filter name": [
+        "Nom du filtre"
+      ],
+      "Sieve script": [
+        "Script Sieve"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -16951,6 +16970,9 @@
       ],
       "September Sale": [
         "Soldes de septembre"
+      ],
+      "Update filter": [
+        "Mettre à jour le filtre"
       ]
     },
     "Title header for keys table": {
@@ -17604,7 +17626,7 @@
         "6 comptes individuels"
       ],
       "Advanced protection against cyber threats": [
-        "Une protection avancée contre les cybermenaces"
+        "Protection avancée contre les cybermenaces"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
         "Les réductions sont calculées sur la base du tarif mensuel standard. Votre abonnement sera renouvelé au tarif annuel standard à la fin du cycle de facturation."
@@ -17637,7 +17659,7 @@
     },
     "q3campaign2026: Title": {
       "for 12 months": [
-        "pendant 12 mois"
+        "pour 12 mois"
       ],
       "One plan, full power": [
         "Un abonnement, pleine puissance"

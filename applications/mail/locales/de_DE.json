@@ -785,7 +785,7 @@
         "Tritt ${ MEET_APP_NAME } bei"
       ],
       "Keep inbox as before": [
-        "Posteingang wie zuvor beibehalten"
+        "Posteingang unverändert lassen"
       ],
       "Keep my subscription": [
         "Behalte mein Abonnement"
@@ -1526,7 +1526,8 @@
         "Vertrauen"
       ],
       "Trust key": [
-        "Schlüssel vertrauen"
+        "Schlüssel vertrauen",
+        "Schlüsseln vertrauen"
       ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
@@ -1703,7 +1704,7 @@
         "Ja, ich nehme teil"
       ],
       "Yes, organize it": [
-        "Ja, ordne es"
+        "Ja, sortieren"
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kannst nur vCard-Dateien versenden, die höchstens ${ maxAttachments } Kontakte enthalten.",
@@ -7124,7 +7125,7 @@
         "${ MAIL_APP_NAME } kann auch dein Unternehmen schützen."
       ],
       "${ MAIL_APP_NAME } now automatically sorts your emails into categories like Primary, Social, Promotions, and more, helping you find and manage messages more easily.": [
-        "${ MAIL_APP_NAME } sortiert deine E-Mails jetzt automatisch in Kategorien wie Haupt, Sozial, Werbeaktionen und mehr, damit du Nachrichten leichter finden und verwalten kannst."
+        "${ MAIL_APP_NAME } sortiert deine E-Mails jetzt automatisch in Kategorien wie „Allgemein\", „Soziale Medien\" und „Werbung\", damit du Nachrichten leichter finden und verwalten kannst."
       ],
       "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
         "${ MEET_APP_NAME } ist eine Ende-zu-Ende-verschlüsselte Videokonferenzlösung. Deinem Abonnement hinzufügen, um sichere Meetings abzuhalten."
@@ -8104,8 +8105,7 @@
         "Wird initialisiert…"
       ],
       "Insert image": [
-        "Bild einfügen",
-        "Bilder einfügen"
+        "Bild einfügen"
       ],
       "Insert link": [
         "Link einfügen"
@@ -8547,7 +8547,7 @@
         "Der Modus „Privates Surfen“ (oder „Inkognito“-Modus) ist nur nützlich, um deine Aktivitäten auf deinem Gerät verborgen zu halten. Er verhindert, dass dein Browser den Verlauf und die Cookies speichert, aber er macht dich nicht unsichtbar. Dein Internetdienstanbieter, dein Netzwerkadministrator und die von dir besuchten Websites können immer noch sehen, was du online tust."
       ],
       "Private by design.": [
-        "Von Haus aus privat."
+        "Privat durch Design"
       ],
       "Proofread selection": [
         "Auswahl gegenlesen"
@@ -9766,6 +9766,9 @@
       ],
       "No contacts found": [
         "Keine Kontakte gefunden"
+      ],
+      "Update filter": [
+        "Filter aktualisieren"
       ]
     },
     "info": {
@@ -11036,6 +11039,12 @@
       ],
       "Label name": [
         "Name der Kategorie"
+      ],
+      "Filter name": [
+        "Filtername"
+      ],
+      "Sieve script": [
+        "Sieve Script"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -17183,6 +17192,9 @@
       ],
       "September Sale": [
         "September-Sonderverkauf"
+      ],
+      "Update filter": [
+        "Filter aktualisieren"
       ]
     },
     "Title header for keys table": {
@@ -17821,7 +17833,7 @@
     },
     "q3campaign2026: Action": {
       "Get the deal": [
-        "Hol dir das Angebot"
+        "Deal sichern"
       ],
       "Special Offer": [
         "Sonderangebot"
@@ -17832,7 +17844,7 @@
         "/Monat"
       ],
       "2 individual accounts": [
-        "2 Einzelkonten"
+        "2 individuelle Konten"
       ],
       "2 TB of secure storage": [
         "2 TB sicherer Speicher"
@@ -17841,10 +17853,10 @@
         "3 TB sicherer Speicher"
       ],
       "500 GB of secure storage": [
-        "500 GB sicherer Speicher"
+        "500 GB sicherer Speicherplatz"
       ],
       "6 individual accounts": [
-        "6 Einzelkonten"
+        "6 individuelle Konten"
       ],
       "Advanced protection against cyber threats": [
         "Erweiterter Schutz vor Cyber-Bedrohungen"
@@ -17886,7 +17898,7 @@
         "Ein Abonnement, volle Leistung"
       ],
       "One plan, max savings": [
-        "Ein Abonnement, maximale Ersparnisse"
+        "Ein Abonnement, maximal sparen"
       ],
       "One plan, more power": [
         "Ein Abonnement, mehr Leistung"
