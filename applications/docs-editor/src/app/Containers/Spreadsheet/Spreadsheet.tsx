@@ -168,6 +168,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     isPatchesStorageEnabled,
     isDriftDetectionEnabled,
     onYjsDriftDetected: handleYjsDriftDetected,
+    storeAction,
   })
   const didSetInitialVersion = useRef(false)
   const { setInitialVersion } = useVersioning(

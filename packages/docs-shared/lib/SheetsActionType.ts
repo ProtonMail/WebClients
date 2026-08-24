@@ -48,6 +48,7 @@ export const SheetsActions = {
   ProtectRange: 46,
   UnprotectRange: 47,
   RequestDataValidation: 48,
+  InitialLoadComplete: 49,
 } as const
 
 export type SheetsActionType = (typeof SheetsActions)[keyof typeof SheetsActions]
