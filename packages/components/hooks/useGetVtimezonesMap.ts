@@ -1,5 +1,6 @@
 import { useCallback } from 'react';
 
+import { useCache } from '@proton/app-context/useCache';
 import { getVtimezones } from '@proton/shared/lib/api/calendars';
 import { parse } from '@proton/shared/lib/calendar/vcal';
 import { GET_VTIMEZONES_API_LIMIT } from '@proton/shared/lib/constants';
@@ -11,7 +12,6 @@ import chunk from '@proton/utils/chunk';
 import unique from '@proton/utils/unique';
 
 import useApi from './useApi';
-import useCache from './useCache';
 
 const CACHE_KEY = 'VTIMEZONES';
 
