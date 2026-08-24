@@ -15,13 +15,9 @@ import { formatUser } from '@proton/shared/lib/user/helpers';
 
 import { getLastActivePersistedUserSession } from '../../../utils/lastActivePersistedUserSession';
 import retryOnError from '../../../utils/retryOnError';
-import {
-    hasCustomPassword,
-    hasGeneratedPasswordIncluded,
-    isLegacySharedUrl,
-    useDefaultShare,
-    useShare,
-} from '../_shares';
+import { hasCustomPassword, hasGeneratedPasswordIncluded, isLegacySharedUrl } from '../_shares/shareUrl';
+import { useDefaultShare } from '../_shares/useDefaultShare';
+import useShare from '../_shares/useShare';
 import useDebouncedRequest from './useDebouncedRequest';
 
 export const ERROR_CODE_INVALID_SRP_PARAMS = 2026;

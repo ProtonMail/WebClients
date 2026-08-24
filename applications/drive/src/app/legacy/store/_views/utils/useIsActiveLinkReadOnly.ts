@@ -2,10 +2,10 @@ import { useEffect, useRef, useState } from 'react';
 
 import { isIgnoredError, sendErrorReport } from '@proton/drive/legacy/errorHandling';
 
-import { ShareType } from '../..';
 import { useActiveShare } from '../../../../legacy/hooks/drive/useActiveShare';
-import type { DecryptedLink } from '../../_links';
-import { useLink } from '../../_links';
+import type { DecryptedLink } from '../../_links/interface';
+import useLink from '../../_links/useLink';
+import { ShareType } from '../../_shares/interface';
 import { useShareType } from './useShareType';
 
 export const isLinkRoot = (link: DecryptedLink) => {

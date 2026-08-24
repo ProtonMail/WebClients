@@ -31,7 +31,9 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { useDebouncedRequest } from '../_api';
 import { useDriveEventManager } from '../_events';
-import { ShareType, useDefaultShare, useShare } from '../_shares';
+import { ShareType } from '../_shares/interface';
+import { useDefaultShare } from '../_shares/useDefaultShare';
+import useShare from '../_shares/useShare';
 import { useBatchHelper } from '../_utils/useBatchHelper';
 import { useVolumesState } from '../_volumes';
 import type { DecryptedLink } from './interface';

@@ -2,20 +2,20 @@ import { useMemo } from 'react';
 
 import type { TreeItemWithChildren } from '@proton/drive/modules/directoryTree';
 
-import { stringComparator } from '../../../modules/sorting';
+import { sortChildrenByName } from '../utils';
 import { DriveSidebarSubfolder } from './DriveSidebarSubfolder';
 
 type Props = {
     shareId: string;
-    children: TreeItemWithChildren[];
+    items: TreeItemWithChildren['children'];
     toggleExpand: (treeItemId: string) => Promise<void>;
     level: number;
 };
 
-export const DriveSidebarSubfolders = ({ shareId, children, toggleExpand, level }: Props) => {
-    const sortedFolders = useMemo(() => children.sort((a, b) => stringComparator(a.name, b.name)), [children]);
+export const DriveSidebarSubfolders = ({ shareId, items, toggleExpand, level }: Props) => {
+    const sortedFolders = useMemo(() => sortChildrenByName(items), [items]);
 
-    if (!children?.length) {
+    if (!sortedFolders.length) {
         return null;
     }
 
