@@ -22,6 +22,8 @@ import { meetUserReducer } from '@proton/meet/store/slices/userSlice';
 import { ParticipantCapabilityPermission } from '@proton/meet/types/types';
 import { ProtonStoreContext } from '@proton/react-redux-store';
 
+import type { MediaManagementContextType } from '../../contexts/MediaManagementProvider/MediaManagementContext';
+import { MediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import type { MeetContextValues } from '../../contexts/MeetContext';
 import { MeetContext } from '../../contexts/MeetContext';
 import { WANTS_CAPTIONS_ATTR } from '../../hooks/captions/useCaptionsPreference';
@@ -40,7 +42,7 @@ vi.mock('@livekit/components-react', () => ({
 }));
 
 vi.mock('@proton/unleash/useFlag', () => ({
-    useFlag: (flag: string) => flag === 'MeetLiveCaptions',
+    useFlag: (flag: string) => flag === 'MeetLiveCaptions' || flag === 'MeetVirtualBackground',
 }));
 
 const createMockStore = (
@@ -117,11 +119,13 @@ const mockContextValues = {
 const Wrapper = ({
     children,
     contextValue = {},
+    mediaContextValue = {},
     settingsState = {},
     participantsState = {},
 }: {
     children: React.ReactNode;
     contextValue?: Partial<MeetContextValues>;
+    mediaContextValue?: Partial<MediaManagementContextType>;
     settingsState?: Partial<MeetSettingsState>;
     participantsState?: Partial<typeof initialParticipantsState>;
 }) => {
@@ -132,7 +136,17 @@ const Wrapper = ({
             <NotificationsProvider>
                 {/* @ts-expect-error - contextValue is a partial MeetContextValues */}
                 <MeetContext.Provider value={{ ...mockContextValues, ...contextValue }}>
-                    {children}
+                    <MediaManagementContext.Provider
+                        value={
+                            {
+                                isBackgroundBlurSupported: true,
+                                backgroundBlur: false,
+                                ...mediaContextValue,
+                            } as MediaManagementContextType
+                        }
+                    >
+                        {children}
+                    </MediaManagementContext.Provider>
                 </MeetContext.Provider>
             </NotificationsProvider>
         </Provider>
@@ -266,5 +280,41 @@ describe('Settings', () => {
 
         expect(scrollIntoView).not.toHaveBeenCalled();
         scrollIntoView.mockRestore();
+    });
+
+    describe('virtual backgrounds button', () => {
+        it('should be enabled when background effects are supported', () => {
+            render(
+                <Wrapper mediaContextValue={{ isBackgroundBlurSupported: true }}>
+                    <Settings />
+                </Wrapper>
+            );
+
+            expect(screen.getByRole('button', { name: 'Backgrounds and effects' })).toBeEnabled();
+        });
+
+        it('should stay visible but disabled when background effects are not supported', () => {
+            render(
+                <Wrapper mediaContextValue={{ isBackgroundBlurSupported: false }}>
+                    <Settings />
+                </Wrapper>
+            );
+
+            expect(screen.getByRole('button', { name: 'Backgrounds and effects' })).toBeDisabled();
+        });
+
+        it('should explain on hover why it is disabled', async () => {
+            render(
+                <Wrapper mediaContextValue={{ isBackgroundBlurSupported: false }}>
+                    <Settings />
+                </Wrapper>
+            );
+
+            const user = userEvent.setup();
+
+            await user.hover(screen.getByRole('button', { name: 'Backgrounds and effects' }));
+
+            expect(await screen.findByText('Background effects are not supported on your browser')).toBeInTheDocument();
+        });
     });
 });

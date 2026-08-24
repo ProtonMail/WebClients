@@ -15,7 +15,7 @@ interface BackgroundEffectOption {
 interface VirtualBackgroundOption {
     effect: VirtualBackgroundId;
     label: string;
-    color: string;
+    thumbnailUrl: string;
 }
 
 // Labels are built on call rather than at module scope so they follow the active locale.
@@ -25,4 +25,8 @@ export const getBackgroundEffectOptions = (): BackgroundEffectOption[] => [
 ];
 
 export const getVirtualBackgroundOptions = (): VirtualBackgroundOption[] =>
-    VIRTUAL_BACKGROUNDS.map(({ id, color }) => ({ effect: id, label: getVirtualBackgroundLabel(id), color }));
+    VIRTUAL_BACKGROUNDS.map(({ id, thumbnailUrl }) => ({
+        effect: id,
+        label: getVirtualBackgroundLabel(id),
+        thumbnailUrl,
+    }));
