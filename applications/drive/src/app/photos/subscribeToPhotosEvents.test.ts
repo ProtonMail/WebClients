@@ -129,7 +129,7 @@ beforeEach(async () => {
     jest.useFakeTimers();
     resetStores();
     (getDriveForPhotos as jest.Mock).mockReturnValue(makeDrive(KNOWN_NODES));
-    unsubscribe = await subscribeToPhotosEvents();
+    unsubscribe = await subscribeToPhotosEvents(usePhotosStore.getState);
 });
 
 afterEach(() => {

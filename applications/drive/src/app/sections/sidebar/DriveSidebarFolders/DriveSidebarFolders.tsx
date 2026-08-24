@@ -20,7 +20,6 @@ export const DriveSidebarFolders = ({
     isExpanded,
     isCollapsed,
 }: DriveSidebarFoldersProps) => {
-    const children = rootFolder.children ? Object.values(rootFolder.children) : [];
     const [shareId, setShareId] = useState<string | undefined>();
     const rootFolderNodeUid = rootFolder.nodeUid;
     useEffect(() => {
@@ -46,7 +45,7 @@ export const DriveSidebarFolders = ({
                 <DriveSidebarSubfolders
                     key={rootFolder.nodeUid}
                     shareId={shareId}
-                    children={children}
+                    items={rootFolder.children}
                     toggleExpand={toggleExpand}
                     level={0}
                 />

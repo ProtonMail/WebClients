@@ -5,8 +5,8 @@ import { queryMigrateLegacyShares } from '@proton/shared/lib/api/drive/share';
 import { getEncryptedSessionKey } from '@proton/shared/lib/calendar/crypto/encrypt';
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 
-import { useDebouncedRequest } from '../_api';
-import { useLink } from '../_links';
+import useDebouncedRequest from '../_api/useDebouncedRequest';
+import useLink from '../_links/useLink';
 import useLinksState from '../_links/useLinksState';
 import useVolumesState from '../_volumes/useVolumesState';
 import { useDefaultShare } from './useDefaultShare';
@@ -17,7 +17,7 @@ jest.mock('@proton/components', () => ({
     usePreventLeave: jest.fn().mockReturnValue({ preventLeave: jest.fn() }),
 }));
 
-jest.mock('../_api');
+jest.mock('../_api/useDebouncedRequest');
 const mockedDebounceRequest = jest.fn().mockResolvedValue(true);
 jest.mocked(useDebouncedRequest).mockReturnValue(mockedDebounceRequest);
 
@@ -47,7 +47,7 @@ jest.mocked(useVolumesState).mockReturnValue({
     setVolumeShareIds: mockSetVolumeShareIds,
 } as any);
 
-jest.mock('../_links');
+jest.mock('../_links/useLink');
 const mockedGetLink = jest.fn().mockImplementation(() => ({
     parentLinkId: 'parentLinkId',
     encryptedName: 'encryptedName',

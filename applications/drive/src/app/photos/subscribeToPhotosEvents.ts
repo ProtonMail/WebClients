@@ -9,9 +9,9 @@ import { logging } from '@proton/drive/modules/logging';
 import { getSignatureIssues } from '../utils/sdk/getSignatureIssues';
 import { mapNodeToPhotoItem } from './PhotosWithAlbums/loaders/mapNodeToAdditionalInfo';
 import { loadCurrentAlbum } from './loaders/loadAlbum';
+import type { GetPhotosStoreState } from './photos.types';
 import type { AlbumItem } from './useAlbums.store';
 import { useAlbumsStore } from './useAlbums.store';
-import { usePhotosStore } from './usePhotos.store';
 
 const logger = logging.getLogger('subscribe-to-photos-events');
 
@@ -43,7 +43,7 @@ const nodeToAlbumItem = (nodeEntity: NodeEntity, item: { isShared?: boolean }): 
 };
 
 const onCreatedOrRestoredNodes =
-    (photosRootNodeUid: string | undefined) =>
+    (photosRootNodeUid: string | undefined, getPhotosStoreState: GetPhotosStoreState) =>
     async (
         event: { items: { uid: string; parentUid?: string; isTrashed?: boolean; isShared?: boolean }[] },
         driveClient: BusDriverClient
@@ -69,12 +69,10 @@ const onCreatedOrRestoredNodes =
                 if (node.type === NodeType.Photo && photoAttributes) {
                     if (isMyPhotos) {
                         if (photoAttributes.mainPhotoNodeUid) {
-                            usePhotosStore
-                                .getState()
-                                .addRelatedPhotoNodeUid(photoAttributes.mainPhotoNodeUid, node.uid);
+                            getPhotosStoreState().addRelatedPhotoNodeUid(photoAttributes.mainPhotoNodeUid, node.uid);
                         } else {
                             const mapped = mapNodeToPhotoItem(node);
-                            usePhotosStore.getState().setPhotoItem({
+                            getPhotosStoreState().setPhotoItem({
                                 nodeUid: node.uid,
                                 captureTime: photoAttributes.captureTime,
                                 tags: photoAttributes.tags,
@@ -100,7 +98,7 @@ const onCreatedOrRestoredNodes =
     };
 
 const onUpdatedNodes =
-    (photosRootNodeUid: string | undefined) =>
+    (photosRootNodeUid: string | undefined, getPhotosStoreState: GetPhotosStoreState) =>
     async (
         event: { items: { uid: string; parentUid?: string; isTrashed?: boolean; isShared?: boolean }[] },
         driveClient: BusDriverClient
@@ -116,7 +114,7 @@ const onUpdatedNodes =
             try {
                 if (item.isTrashed) {
                     if (isMyPhotos) {
-                        usePhotosStore.getState().removePhotoItem(item.uid);
+                        getPhotosStoreState().removePhotoItem(item.uid);
                     }
                     // Remove from all albums that contain this photo
                     for (const [albumUid, album] of useAlbumsStore.getState().albums) {
@@ -137,13 +135,11 @@ const onUpdatedNodes =
                 if (node.type === NodeType.Photo && photoAttributes) {
                     if (isMyPhotos) {
                         if (photoAttributes.mainPhotoNodeUid) {
-                            usePhotosStore
-                                .getState()
-                                .addRelatedPhotoNodeUid(photoAttributes.mainPhotoNodeUid, node.uid);
+                            getPhotosStoreState().addRelatedPhotoNodeUid(photoAttributes.mainPhotoNodeUid, node.uid);
                         } else {
-                            const existing = usePhotosStore.getState().getPhotoItem(node.uid);
+                            const existing = getPhotosStoreState().getPhotoItem(node.uid);
                             const mapped = mapNodeToPhotoItem(node);
-                            usePhotosStore.getState().setPhotoItem({
+                            getPhotosStoreState().setPhotoItem({
                                 nodeUid: node.uid,
                                 captureTime: photoAttributes.captureTime,
                                 tags: photoAttributes.tags,
@@ -164,7 +160,7 @@ const onUpdatedNodes =
                 } else if (node.type === NodeType.Album && albumAttributes) {
                     useAlbumsStore.getState().upsertAlbum(nodeToAlbumItem(node, item));
                     if (!isMyPhotos || isCurrentAlbum) {
-                        await loadCurrentAlbum(item.uid);
+                        await loadCurrentAlbum(item.uid, getPhotosStoreState);
                     }
                 }
             } catch (e) {
@@ -173,8 +169,8 @@ const onUpdatedNodes =
         }
     };
 
-const onDeletedOrTrashedNodes = async (event: { uids: string[] }) => {
-    const photosStore = usePhotosStore.getState();
+const onDeletedOrTrashedNodes = (getPhotosStoreState: GetPhotosStoreState) => async (event: { uids: string[] }) => {
+    const photosStore = getPhotosStoreState();
     const albumStore = useAlbumsStore.getState();
     for (const uid of event.uids) {
         photosStore.removePhotoItem(uid);
@@ -201,16 +197,20 @@ const onInvitationAccepted = async (event: { uids: string[] }, driveClient: BusD
     }
 };
 
-export const subscribeToPhotosEvents = async () => {
+export const subscribeToPhotosEvents = async (getPhotosStoreState: GetPhotosStoreState) => {
     const rootFolder = await getDriveForPhotos().getMyPhotosRootFolder();
     const photosRootNodeUid = rootFolder.uid;
 
-    const createdOrRestoredHandler = onCreatedOrRestoredNodes(photosRootNodeUid);
+    const createdOrRestoredHandler = onCreatedOrRestoredNodes(photosRootNodeUid, getPhotosStoreState);
+    const deletedOrTrashedHandler = onDeletedOrTrashedNodes(getPhotosStoreState);
     const unsubCreated = getBusDriver().subscribe(BusDriverEventName.CREATED_NODES, createdOrRestoredHandler);
     const unsubRestored = getBusDriver().subscribe(BusDriverEventName.RESTORED_NODES, createdOrRestoredHandler);
-    const unsubUpdated = getBusDriver().subscribe(BusDriverEventName.UPDATED_NODES, onUpdatedNodes(photosRootNodeUid));
-    const unsubDeleted = getBusDriver().subscribe(BusDriverEventName.DELETED_NODES, onDeletedOrTrashedNodes);
-    const unsubTrashed = getBusDriver().subscribe(BusDriverEventName.TRASHED_NODES, onDeletedOrTrashedNodes);
+    const unsubUpdated = getBusDriver().subscribe(
+        BusDriverEventName.UPDATED_NODES,
+        onUpdatedNodes(photosRootNodeUid, getPhotosStoreState)
+    );
+    const unsubDeleted = getBusDriver().subscribe(BusDriverEventName.DELETED_NODES, deletedOrTrashedHandler);
+    const unsubTrashed = getBusDriver().subscribe(BusDriverEventName.TRASHED_NODES, deletedOrTrashedHandler);
     const unsubInvitation = getBusDriver().subscribe(BusDriverEventName.ACCEPT_INVITATIONS, onInvitationAccepted);
 
     return () => {

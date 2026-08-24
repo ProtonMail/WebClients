@@ -20,10 +20,10 @@ import type { DriveVolume as DriveVolumePayload } from '@proton/shared/lib/inter
 
 import type { Device } from '../_devices';
 import type { DriveEvents } from '../_events';
-import type { DecryptedLink, EncryptedLink } from '../_links';
+import type { DecryptedLink, EncryptedLink } from '../_links/interface';
 import type { LegacyPhoto } from '../_photos';
 import type { DriveFileRevision } from '../_revisions';
-import { ShareType, hasCustomPassword, hasGeneratedPasswordIncluded } from '../_shares';
+import { ShareType } from '../_shares/interface';
 import type {
     Share,
     ShareExternalInvitation,
@@ -35,7 +35,8 @@ import type {
     ShareURLLEGACY,
     ShareWithKey,
     SharedUrlInfo,
-} from '../_shares';
+} from '../_shares/interface';
+import { hasCustomPassword, hasGeneratedPasswordIncluded } from '../_shares/shareUrl';
 import type { DriveVolume } from '../_volumes';
 
 enum ThumbnailType {

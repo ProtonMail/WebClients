@@ -14,9 +14,9 @@ import { generateShareKeys } from '@proton/shared/lib/keys/driveKeys';
 import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
 import chunk from '@proton/utils/chunk';
 
-import { useDebouncedRequest } from '../_api';
+import useDebouncedRequest from '../_api/useDebouncedRequest';
 import { useDriveEventManager } from '../_events';
-import { useLink } from '../_links';
+import useLink from '../_links/useLink';
 import useLinksState from '../_links/useLinksState';
 import useShare from './useShare';
 

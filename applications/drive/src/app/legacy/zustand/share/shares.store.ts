@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 
-import type { LockedVolumeForRestore, Share, ShareWithKey } from '../../../legacy/store/_shares';
-import { ShareState, ShareType } from '../../../legacy/store/_shares';
+import type { LockedVolumeForRestore, Share, ShareWithKey } from '../../../legacy/store/_shares/interface';
+import { ShareState, ShareType } from '../../../legacy/store/_shares/interface';
 
 interface SharesState {
     shares: Record<string, Share | ShareWithKey>;

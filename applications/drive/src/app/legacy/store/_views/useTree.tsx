@@ -4,9 +4,11 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
 
-import type { DecryptedLink } from '../_links';
-import { useLink, useLinksListing } from '../_links';
-import { ShareType, useShare } from '../_shares';
+import type { DecryptedLink } from '../_links/interface';
+import useLink from '../_links/useLink';
+import { useLinksListing } from '../_links/useLinksListing';
+import { ShareType } from '../_shares/interface';
+import useShare from '../_shares/useShare';
 import { useErrorHandler } from '../_utils';
 import { useAbortSignal } from './utils';
 import { useShareType } from './utils/useShareType';
@@ -135,14 +137,12 @@ export function useTree(shareId: string, { rootLinkId, rootExpanded, foldersOnly
                 const currentIds = item.children.map(({ link }) => link.linkId);
                 const newItems = children
                     .filter((item) => !currentIds.includes(item.linkId) && !item.trashed)
-                    .map(
-                        (item): TreeItem => ({
-                            link: item,
-                            isExpanded: false,
-                            isLoaded: false,
-                            children: [],
-                        })
-                    );
+                    .map((item): TreeItem => ({
+                        link: item,
+                        isExpanded: false,
+                        isLoaded: false,
+                        children: [],
+                    }));
 
                 item.children = [...prevItems, ...newItems].map(syncTreeWithCache);
                 item.children.sort((a, b) => {
