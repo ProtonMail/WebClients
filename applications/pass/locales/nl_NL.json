@@ -1060,9 +1060,6 @@
       "Domain could not be verified. Please make sure you added the correct DNS records": [
         "Domein kon niet worden geverifieerd. Controleer of u de juiste DNS-records hebt toegevoegd"
       ],
-      "Domain not available, try again later": [
-        "Domein niet beschikbaar, probeer het later opnieuw"
-      ],
       "Editing item failed": [
         "Item bewerken mislukt"
       ],
@@ -2126,7 +2123,8 @@
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Het verplaatsen van een item naar een andere kluis verwijdert zijn beveiligde links."
+        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
+        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
       ],
       "Moving items": [
         "Items verplaatsen"
@@ -2333,14 +2331,8 @@
       "Please follow the steps below to set up your domain.": [
         "Volg onderstaande stappen om uw domein in te stellen."
       ],
-      "Please keep ${ PASS_APP_NAME } open so the clipboard can be automatically cleared.": [
-        "Houd ${ PASS_APP_NAME } open, zodat het klembord automatisch gewist kan worden."
-      ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Houd dit venster open terwijl uw gegevens worden geïmporteerd. Dit proces kan enkele minuten duren."
-      ],
-      "Please keep your browser open so the clipboard can be automatically cleared.": [
-        "Houd uw browser open, zodat het klembord automatisch gewist kan worden."
       ],
       "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
         "Zorg ervoor dat het eerder actieve venster de plek is waar u automatisch wilt typen en dat uw cursor op het inlogveld was gericht."

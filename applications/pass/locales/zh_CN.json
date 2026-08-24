@@ -1055,9 +1055,6 @@
       "Domain could not be verified. Please make sure you added the correct DNS records": [
         "无法验证域名。请确保您添加了正确的 DNS 记录"
       ],
-      "Domain not available, try again later": [
-        "域名不可用，请稍后再试"
-      ],
       "Editing item failed": [
         "编辑项目失败"
       ],
@@ -2103,7 +2100,7 @@
         "正在从 \"${ payload.content.name }\" 移动所有项目"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "将项目移至其他保险库会清除其安全链接！"
+        "将项目移动到另一个保险库会删除其安全链接。"
       ],
       "Moving items": [
         "正在移动"
@@ -2306,14 +2303,8 @@
       "Please follow the steps below to set up your domain.": [
         "请按照下面的步骤设置您的域。"
       ],
-      "Please keep ${ PASS_APP_NAME } open so the clipboard can be automatically cleared.": [
-        "请保持 ${ PASS_APP_NAME } 开启，以便自动清除剪贴板"
-      ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "在导入数据时，请不要关闭此窗口。这个过程可能需要几分钟。"
-      ],
-      "Please keep your browser open so the clipboard can be automatically cleared.": [
-        "请保持浏览器开启，以便自动清除剪贴板"
       ],
       "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
         "请确保之前活跃的窗口是您想要执行自动输入的位置，并且您的光标已聚焦在登录字段上"

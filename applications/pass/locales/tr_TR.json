@@ -1060,9 +1060,6 @@
       "Domain could not be verified. Please make sure you added the correct DNS records": [
         "Etki alanı doğrulanamadı. Lütfen doğru DNS kayıtlarını eklediğinizden emin olun"
       ],
-      "Domain not available, try again later": [
-        "Etki alanı kullanılamıyor. Bir süre sonra yeniden deneyin"
-      ],
       "Editing item failed": [
         "Öge düzenlenemedi"
       ],
@@ -2129,7 +2126,8 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Bir ögeyi başka bir kasaya taşımak güvenli bağlantılarını siler."
+        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
+        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -2336,14 +2334,8 @@
       "Please follow the steps below to set up your domain.": [
         "Etki alanınızı kurmak için lütfen aşağıdaki adımları izleyin."
       ],
-      "Please keep ${ PASS_APP_NAME } open so the clipboard can be automatically cleared.": [
-        "Lütfen panonun otomatik olarak temizlenebilmesi için ${ PASS_APP_NAME } uygulamasını açık tutun."
-      ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Verileriniz içe aktarılırken lütfen bu pencereyi açık tutun. Bu işlem birkaç dakika sürebilir."
-      ],
-      "Please keep your browser open so the clipboard can be automatically cleared.": [
-        "Lütfen tarayıcınızı açık tutun. Böylece pano otomatik olarak temizlenebilir."
       ],
       "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
         "Lütfen daha önce etkin olan pencerenin otomatik doldurmak istediğiniz yer olduğundan ve imlecin oturum açma alanında buılunduğundan emin olun."

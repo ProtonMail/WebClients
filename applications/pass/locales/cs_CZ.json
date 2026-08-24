@@ -1043,9 +1043,6 @@
       "Domain could not be verified. Please make sure you added the correct DNS records": [
         "Doménu nebylo možné ověřit. Ujistěte se, že jste přidali správné záznamy DNS"
       ],
-      "Domain not available, try again later": [
-        "Doména není dostupná, zkuste to znovu později"
-      ],
       "Editing item failed": [
         "Úprava položky se nezdařila"
       ],
@@ -2142,7 +2139,10 @@
         "Přesouvání všech položek z \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy."
+        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy."
       ],
       "Moving items": [
         "Přesouvání položek"
@@ -2348,14 +2348,8 @@
       "Please follow the steps below to set up your domain.": [
         "Při nastavování domény postupujte podle níže uvedených kroků."
       ],
-      "Please keep ${ PASS_APP_NAME } open so the clipboard can be automatically cleared.": [
-        "Ponechte prosím otevřený ${ PASS_APP_NAME }, aby se schránka mohla automaticky vyprázdnit."
-      ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Během importu dat ponechte toto okno otevřené. Tento proces může trvat několik minut."
-      ],
-      "Please keep your browser open so the clipboard can be automatically cleared.": [
-        "Ponechte prosím otevřený prohlížeč, aby se schránka mohla automaticky vyprázdnit."
       ],
       "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
         "Ujistěte se, že předchozí aktivní okno je tam, kde chcete provést automatické vyplnění, a že kurzor je umístěn v poli pro přihlášení."

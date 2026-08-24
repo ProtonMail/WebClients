@@ -1033,9 +1033,6 @@
       "Domain could not be verified. Please make sure you added the correct DNS records": [
         "O domínio não pôde ser verificado. Certifique-se de ter adicionado os registos DNS corretos"
       ],
-      "Domain not available, try again later": [
-        "Domínio indisponível, tente novamente mais tarde"
-      ],
       "Editing item failed": [
         "A edição do item falhou"
       ],
@@ -2090,7 +2087,8 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover um item para outro cofre apagará as suas ligações seguras."
+        "Mover um item para outro cofre apagará as suas ligações seguras.",
+        "Mover itens para outro cofre apagará as suas ligações seguras."
       ],
       "Moving items": [
         "A mover itens"
@@ -2294,14 +2292,8 @@
       "Please follow the steps below to set up your domain.": [
         "Siga os passos abaixo para configurar o seu domínio."
       ],
-      "Please keep ${ PASS_APP_NAME } open so the clipboard can be automatically cleared.": [
-        "Mantenha o ${ PASS_APP_NAME } aberto para que a área de transferência possa ser limpa automaticamente."
-      ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Mantenha esta janela aberta enquanto os seus dados são importados. Esse processo pode levar alguns minutos."
-      ],
-      "Please keep your browser open so the clipboard can be automatically cleared.": [
-        "Mantenha o seu navegador aberto para que a área de transferência possa ser limpa automaticamente."
       ],
       "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
         "Certifique-se de que a janela anteriormente ativa é aquela onde deseja efetuar o preenchimento automático e de que o cursor estava focado no campo de início de sessão."

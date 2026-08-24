@@ -1060,9 +1060,6 @@
       "Domain could not be verified. Please make sure you added the correct DNS records": [
         "Die Domain konnte nicht verifiziert werden. Bitte stelle sicher, dass du die richtigen DNS-Einträge hinzugefügt hast."
       ],
-      "Domain not available, try again later": [
-        "Domain nicht verfügbar. Bitte versuche es später noch einmal."
-      ],
       "Editing item failed": [
         "Fehler beim Bearbeiten des Eintrags."
       ],
@@ -2129,7 +2126,8 @@
         "Verschiebe alle Einträge von \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Wenn du einen Eintrag in einen anderen Tresor verschiebst, werden seine sicheren Links gelöscht."
+        "Beim Verschieben eines Eintrags in einen anderen Tresor, werden seine sicheren Verknüpfungen gelöscht.",
+        "Beim Verschieben von Einträgen in einen anderen Tresor, werden ihre sicheren Verknüpfungen gelöscht."
       ],
       "Moving items": [
         "Einträge verschieben"
@@ -2336,14 +2334,8 @@
       "Please follow the steps below to set up your domain.": [
         "Bitte befolge die Schritte unten, um deine Domain einzurichten."
       ],
-      "Please keep ${ PASS_APP_NAME } open so the clipboard can be automatically cleared.": [
-        "Bitte lass ${ PASS_APP_NAME } geöffnet, damit die Zwischenablage automatisch gelöscht werden kann."
-      ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Bitte lass dieses Fenster geöffnet, solange deine Daten importiert werden. Dieser Vorgang dauert einige Minuten."
-      ],
-      "Please keep your browser open so the clipboard can be automatically cleared.": [
-        "Bitte lass deinen Browser geöffnet, damit die Zwischenablage automatisch gelöscht werden kann."
       ],
       "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
         "Stelle bitte sicher, dass das zuvor aktive Fenster der Ort ist, an dem du automatisch eingeben möchtest, und dein Cursor auf dem Login-Feld fokussiert war."
