@@ -34,6 +34,8 @@ export * from './member';
 export * from './members';
 export * from './members/actions';
 export * from './members/validateAddUser';
+export * from './members/importUsers';
+export * from './members/validateOrganizationCapacity';
 export * from './members/useMemberAddresses';
 export * from './members/unprivatizeMembersListener';
 export * from './members/membersListener';

@@ -3,7 +3,7 @@ import { c, msgid } from 'ttag';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import type { Organization } from '@proton/shared/lib/interfaces';
 
-import type { UserTemplate } from '../types';
+import type { UserTemplate } from './importUsers';
 
 export enum ORGANIZATION_CAPACITY_ERROR_TYPE {
     MEMBER,
