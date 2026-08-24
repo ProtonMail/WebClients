@@ -28,7 +28,7 @@ describe('IndexReader integration', () => {
         engine = Engine.builder().build();
         const cryptoKey = await generateAndImportKey();
         blobStore = new IndexBlobStore(IndexKind.MAIN, db, cryptoKey);
-        writer = new IndexWriter(engine, blobStore);
+        writer = new IndexWriter(engine, blobStore, async () => {});
         reader = new IndexReader(engine, blobStore);
     });
 
