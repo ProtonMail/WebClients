@@ -1060,9 +1060,6 @@
       "Domain could not be verified. Please make sure you added the correct DNS records": [
         "Domænet kunne ikke verificeres. Sørg for, at du har tilføjet de korrekte DNS-poster"
       ],
-      "Domain not available, try again later": [
-        "Domæne er ikke tilgængeligt, prøv igen senere"
-      ],
       "Editing item failed": [
         "Redigering af element mislykkedes"
       ],
@@ -2129,7 +2126,8 @@
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Hvis du flytter et element til en anden boks, slettes dets sikre links."
+        "Flyttes et element til en anden boks, slettes dets sikre links.",
+        "Flyttes elementer til en anden boks, slettes deres sikre links."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -2336,14 +2334,8 @@
       "Please follow the steps below to set up your domain.": [
         "Følg nedenstående trin for at oprette dit domæne."
       ],
-      "Please keep ${ PASS_APP_NAME } open so the clipboard can be automatically cleared.": [
-        "Hold ${ PASS_APP_NAME } åben, så udklipsholderen automatisk kan ryddes."
-      ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Hold dette vindue åbent, mens dine data importeres. Denne proces kan tage et par minutter."
-      ],
-      "Please keep your browser open so the clipboard can be automatically cleared.": [
-        "Hold din browser åben, så udklipsholderen automatisk kan ryddes."
       ],
       "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
         "Sørg for at det tidligere aktive vindue er hvor du ønsker at autoindtaste, og at din markør var fokuseret på login-feltet."
