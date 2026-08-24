@@ -9,25 +9,23 @@ import { render as originalRender } from '@testing-library/react';
 import type { MemoryHistory } from 'history';
 import { createMemoryHistory } from 'history';
 
-import ApiContext from '@proton/components/containers/api/apiContext';
+import { ApiContext } from '@proton/app-context/apiContext';
 import { CacheProvider } from '@proton/components/containers/cache/Provider';
 import ConfigProvider from '@proton/components/containers/config/Provider';
 import ModalsChildren from '@proton/components/containers/modals/Children';
 import ModalsProvider from '@proton/components/containers/modals/Provider';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { registerFeatureFlagsApiMock } from '@proton/testing/lib/features';
 
-import type { EOOriginalMessageOptions } from './helpers';
-import { EOInitStore, validID } from './helpers';
-import { init } from '../../../store/eo/eoActions';
-
 import { EO_REDIRECT_PATH } from '../../../constants';
+import { init } from '../../../store/eo/eoActions';
 import { setupStore } from '../../../store/eo/eoStore';
 import { api, mockDomApi } from '../api';
 import { mockCache } from '../cache';
 import NotificationsTestProvider from '../notifications';
 import { config, tick } from '../render';
+import type { EOOriginalMessageOptions } from './helpers';
+import { EOInitStore, validID } from './helpers';
 
 interface RenderResult extends OriginalRenderResult {
     rerender: (ui: ReactNode) => Promise<void>;
