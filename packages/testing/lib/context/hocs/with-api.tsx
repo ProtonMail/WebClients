@@ -1,6 +1,6 @@
 import type { ComponentType } from 'react';
 
-import ApiContext from '@proton/components/containers/api/apiContext';
+import { ApiContext } from '@proton/app-context/apiContext';
 
 import { apiMock } from '../../api';
 

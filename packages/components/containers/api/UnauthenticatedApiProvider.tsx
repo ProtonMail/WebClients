@@ -1,9 +1,9 @@
 import type { ReactNode } from 'react';
 
+import { ApiContext } from '@proton/app-context/apiContext';
 import type { UnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';
 
 import UnauthenticatedApiChallenge from './UnauthenticatedApiChallenge';
-import ApiContext from './apiContext';
 
 interface Props {
     children: ReactNode;
