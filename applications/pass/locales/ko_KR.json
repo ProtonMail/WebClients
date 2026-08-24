@@ -924,6 +924,15 @@
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
         "사용자의 개인 정보가 제3자 서비스의 데이터 유출 사고로 인해 유출되었습니다."
+      ],
+      "Change these passwords immediately": [
+        "아래 비밀번호는 즉시 변경되어야 합니다."
+      ],
+      "Check if your passwords have been exposed": [
+        "비밀번호 유출 여부를 확인하세요"
+      ],
+      "This login password appears in a data breach. Please visit the service and change the password.": [
+        "해당 로그인 비밀번호가 데이터 보안 사고로 인해 유출되었을 가능성이 있습니다. 해당 서비스에 접속하여 비밀번호를 변경하는 것을 강력히 권장합니다."
       ]
     },
     "Email": {
@@ -2776,6 +2785,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "조직에서 ${ PASS_APP_NAME }에 대한 액세스 권한을 보호해야 합니다"
+      ],
+      "None of your saved passwords have appeared in a known data breach.": [
+        "알려진 데이터 보안 사고에 누출된 사용자의 저장된 비밀번호가 없습니다."
       ]
     },
     "Keyboard key": {
@@ -5059,6 +5071,18 @@
       ],
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "별칭 ${ aliasCount }개를 영구적으로 삭제하게 됩니다."
+      ],
+      "Compromised password": [
+        "유출된 비밀번호"
+      ],
+      "Compromised passwords": [
+        "유출된 비밀번호"
+      ],
+      "No compromised passwords": [
+        "유출된 비밀번호 없음"
+      ],
+      "Upgrade to check for compromised passwords": [
+        "유출된 비밀번호를 점검하려면 업그레이드하세요."
       ]
     },
     "Title_cloned_item": {
