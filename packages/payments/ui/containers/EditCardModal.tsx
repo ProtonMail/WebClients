@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { useGetPaymentMethods } from '@proton/account/paymentMethods/hooks';
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
@@ -48,6 +49,7 @@ const EditCardModal = ({
 }: Props) => {
     const api = useApi();
     const [user] = useUser();
+    const [subscription] = useSubscription();
     const { createPaymentMethodsPoller } = usePaymentPollers();
     const getPaymentMethods = useGetPaymentMethods();
 
@@ -108,9 +110,8 @@ const EditCardModal = ({
             await paymentFacade.selectedProcessor?.processPaymentToken();
         } catch (e) {
             tracePaymentError(e, {
-                tags: {
-                    component: 'edit-card-modal',
-                },
+                component: 'edit-card-modal',
+                subscription,
                 extra: {
                     hasExistingCard: editExistingCard,
                     renewState,

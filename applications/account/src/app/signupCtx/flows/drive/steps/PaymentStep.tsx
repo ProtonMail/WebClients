@@ -96,9 +96,8 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
                 await processor.processPaymentToken();
             } catch (error) {
                 tracePaymentError(error, {
-                    tags: {
-                        component: 'drive-ctx-PaymentStep',
-                    },
+                    component: 'drive-ctx-payment-step',
+                    subscription: null,
                     extra: {
                         currency: payments.options.currency,
                         amount: payments.checkResult.AmountDue,

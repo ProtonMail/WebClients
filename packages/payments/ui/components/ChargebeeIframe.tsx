@@ -539,7 +539,7 @@ function useChargebeeHandles(
                     if (isApplePayUnsupportedError(error)) {
                         capturePaymentMessage(
                             'Payments: Apple Pay unsupported by the browser',
-                            { level: 'info', extra: { error } },
+                            { level: 'info', component: 'chargebee-iframe', extra: { error } },
                             error
                         );
                     } else {
@@ -551,7 +551,7 @@ function useChargebeeHandles(
 
                         capturePaymentMessage(
                             'Payments: Apple Pay button failed to mount',
-                            { level: 'error', extra: { error } },
+                            { level: 'error', component: 'chargebee-iframe', extra: { error } },
                             error
                         );
                     }
@@ -859,6 +859,7 @@ export const useCbIframe = (): CbIframeHandles => {
             capturePaymentMessage(
                 'Payments: Unhandled Chargebee error',
                 {
+                    component: 'chargebee-iframe',
                     level: 'error',
                     extra: { error, context, rawError, messagePayload, checkpoints },
                 },
@@ -1121,6 +1122,7 @@ export const ChargebeeIframe = ({
         loadingTimeoutRef.current = setTimeout(() => {
             if (!initialized) {
                 capturePaymentMessage('Payments: Chargebee iframe not loaded', {
+                    component: 'chargebee-iframe',
                     level: 'error',
                     extra: { type },
                 });

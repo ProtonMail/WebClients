@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { useLoading } from '@proton/hooks';
@@ -58,6 +59,7 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, app, ...rest }: Props) => {
         []
     );
     const [user] = useUser();
+    const [subscription] = useSubscription();
 
     const { AmountDue, Amount, Currency, Credit } = result ?? {};
 
@@ -115,9 +117,8 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, app, ...rest }: Props) => {
                 await selectedProcessor.processPaymentToken();
             } catch (e) {
                 tracePaymentError(e, {
-                    tags: {
-                        component: 'pay-invoice-modal',
-                    },
+                    component: 'pay-invoice-modal',
+                    subscription,
                     extra: {
                         invoiceId: invoice.ID,
                         currency,
