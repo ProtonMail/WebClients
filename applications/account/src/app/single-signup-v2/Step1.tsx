@@ -612,7 +612,18 @@ const Step1 = ({
         return getStartUsingAppNameText(appName);
     })();
 
-    const hasSelectedFree = selectedPlan.Name === PLANS.FREE || mode === SignupMode.MailReferral;
+    const isNoCreditCardTrial =
+        signupParameters.cardless &&
+        checkTrial &&
+        audience === Audience.B2B &&
+        (selectedPlan.Name === PLANS.PASS_BUSINESS || selectedPlan.Name === PLANS.PASS_PRO);
+
+    const hasSelectedFree = selectedPlan.Name === PLANS.FREE || mode === SignupMode.MailReferral || isNoCreditCardTrial;
+
+    const getNoPaymentSubscriptionData = () =>
+        isNoCreditCardTrial
+            ? { ...model.subscriptionData, payment: undefined }
+            : getFreeSubscriptionData(model.subscriptionData);
 
     const termsAndConditionsLink = (
         <Href className="color-weak" key="terms" href={getLocaleTermsURL(app)}>
@@ -1068,9 +1079,7 @@ const Step1 = ({
                                                             size="large"
                                                             className="mt-6 block mx-auto"
                                                             onClick={async () => {
-                                                                await handleCompletion(
-                                                                    getFreeSubscriptionData(model.subscriptionData)
-                                                                );
+                                                                await handleCompletion(getNoPaymentSubscriptionData());
                                                             }}
                                                         >
                                                             {cta}
@@ -1241,9 +1250,8 @@ const Step1 = ({
                                                                           }
                                                                       }
 
-                                                                      let subscriptionData = getFreeSubscriptionData(
-                                                                          model.subscriptionData
-                                                                      );
+                                                                      let subscriptionData =
+                                                                          getNoPaymentSubscriptionData();
                                                                       if (
                                                                           mode === SignupMode.MailReferral &&
                                                                           selectedPlan.Name !== PLANS.FREE
