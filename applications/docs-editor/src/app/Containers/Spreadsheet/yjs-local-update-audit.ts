@@ -63,12 +63,32 @@ type SpreadsheetLocalYjsUpdateAuditPatchContext = {
 const pendingLocalChangedKeys = new Set<SpreadsheetLocalYjsAuditKey>()
 let pendingLocalChangedKeysClearTimer: ReturnType<typeof setTimeout> | undefined
 
+const batchToStringifiedStateMap = new Map<number, Record<string, string>>()
+let currentStateBatchNumber: number | undefined = undefined
+export function setCurrentStateBatchNumber(batchNumber: number): void {
+  currentStateBatchNumber = batchNumber
+}
+
 export function recordSpreadsheetLocalStateChange(
   key: SpreadsheetLocalYjsAuditKey,
   previousValue: unknown,
   nextValue: unknown,
+  currentBatchNumber?: number,
 ): void {
-  if (areComparableValuesEqual(previousValue, nextValue)) {
+  const normalizedPreviousValue = normalizeValue(previousValue)
+  const normalizedNextValue = normalizeValue(nextValue)
+
+  if (currentBatchNumber !== undefined) {
+    const stringifiedState = JSON.stringify(normalizedNextValue)
+    const existing = batchToStringifiedStateMap.get(currentBatchNumber)
+    if (existing) {
+      existing[key] = stringifiedState
+    } else {
+      batchToStringifiedStateMap.set(currentBatchNumber, { [key]: stringifiedState })
+    }
+  }
+
+  if (stringifyCompare(normalizedPreviousValue, normalizedNextValue)) {
     return
   }
 
@@ -109,7 +129,19 @@ export function detectLocalYjsUpdateDrift(options: {
 
   for (const key of touchedKeys) {
     const touchedPaths = patchContext?.touchedPathsByKey.get(key)
-    const localComparableValue = getScopedComparableValue(key, getComparableLocalValue(key, localState), touchedPaths)
+    let nonScopedLocalValue = getComparableLocalValue(key, localState)
+    if (currentStateBatchNumber !== undefined) {
+      const stringifiedState = batchToStringifiedStateMap.get(currentStateBatchNumber)
+      if (!stringifiedState) {
+        throw new Error(`Stringified state for batch ${currentStateBatchNumber} is undefined`)
+      }
+      if (stringifiedState[key]) {
+        nonScopedLocalValue = getComparableLocalValue(key, {
+          [key]: JSON.parse(stringifiedState[key]),
+        } as SpreadsheetLocalYjsUpdateAuditState)
+      }
+    }
+    const localComparableValue = getScopedComparableValue(key, nonScopedLocalValue, touchedPaths)
     const yjsComparableValue = getScopedComparableValue(key, getComparableYjsValue(key, doc), touchedPaths)
 
     if (!areComparableValuesEqual(localComparableValue, yjsComparableValue)) {
@@ -143,6 +175,15 @@ export function detectLocalYjsUpdateDrift(options: {
         yjsValue,
       })
     }
+  }
+
+  if (currentStateBatchNumber !== undefined) {
+    for (const [key] of batchToStringifiedStateMap) {
+      if (key <= currentStateBatchNumber) {
+        batchToStringifiedStateMap.delete(key)
+      }
+    }
+    currentStateBatchNumber = undefined
   }
 
   requeueUncheckedLocalChangedKeys(uncheckedLocalChangedKeys)
@@ -415,7 +456,11 @@ function getMergedSharedStringsFromYDoc(doc: YDoc): Record<string, unknown> {
 }
 
 function areComparableValuesEqual(a: unknown, b: unknown): boolean {
-  return JSON.stringify(normalizeValue(a)) === JSON.stringify(normalizeValue(b))
+  return stringifyCompare(normalizeValue(a), normalizeValue(b))
+}
+
+function stringifyCompare(a: unknown, b: unknown): boolean {
+  return JSON.stringify(a) === JSON.stringify(b)
 }
 
 function normalizeMapLike(value: unknown): unknown {
