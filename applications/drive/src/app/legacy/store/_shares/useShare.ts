@@ -7,8 +7,10 @@ import type { ShareMeta } from '@proton/shared/lib/interfaces/drive/share';
 
 import { useSharesStore } from '../../../legacy/zustand/share/shares.store';
 import { getIsPublicContext } from '../../../utils/getIsPublicContext';
-import { shareMetaToShareWithKey, useDebouncedRequest } from '../_api';
-import { integrityMetrics, useDriveCrypto } from '../_crypto';
+import { shareMetaToShareWithKey } from '../_api/transformers';
+import useDebouncedRequest from '../_api/useDebouncedRequest';
+import integrityMetrics from '../_crypto/integrityMetrics';
+import useDriveCrypto from '../_crypto/useDriveCrypto';
 import { useGetMetricsUserPlan } from '../_user/useGetMetricsUserPlan';
 import { useDebouncedFunction } from '../_utils';
 import type { Share, ShareWithKey } from './interface';

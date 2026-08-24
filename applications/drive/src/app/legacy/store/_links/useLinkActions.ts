@@ -20,7 +20,7 @@ import getRandomString from '@proton/utils/getRandomString';
 
 import { useDebouncedRequest } from '../_api';
 import { useDriveEventManager } from '../_events';
-import { useShare } from '../_shares';
+import useShare from '../_shares/useShare';
 import { useBatchHelper } from '../_utils/useBatchHelper';
 import { useVolumesState } from '../_volumes';
 import { encryptFolderExtendedAttributes } from './extendedAttributes';
