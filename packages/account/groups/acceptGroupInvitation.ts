@@ -1,8 +1,9 @@
+import { CryptoProxy, type PrivateKeyReferenceV4 } from '@protontech/crypto';
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 
-import { CryptoProxy, type PrivateKeyReferenceV4 } from '@protontech/crypto';
 import { createKTVerifier } from '@proton/key-transparency/helpers';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import { CacheType } from '@proton/redux-utilities/interface';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getAndVerifyApiKeys } from '@proton/shared/lib/api/helpers/getAndVerifyApiKeys';
 import type { GroupMembership } from '@proton/shared/lib/interfaces';
@@ -14,18 +15,20 @@ import {
     splitKeys,
 } from '@proton/shared/lib/keys';
 import { generateForwardingAddressKey as generateGroupMemberAddressKey } from '@proton/shared/lib/keys/forward/keyHelpers';
+import noop from '@proton/utils/noop';
 
 import { addressKeysThunk } from '../addressKeys';
 import { type AddressesState, addressesThunk } from '../addresses';
 import { replaceSelfAddressTokensIfNeeded } from '../addresses/replaceAddressToken';
 import { acceptMembership } from '../groupMemberships';
+import { type GroupsState, groupThunk } from '../groups';
 import type { KtState } from '../kt';
 import { getKTActivation, getKTUserContext } from '../kt/actions';
 import type { OrganizationKeyState } from '../organizationKey';
 import { userThunk } from '../user';
 import { type UserKeysState, userKeysThunk } from '../userKeys';
 
-type RequiredState = AddressesState & UserKeysState & OrganizationKeyState & KtState;
+type RequiredState = AddressesState & UserKeysState & OrganizationKeyState & KtState & GroupsState;
 
 export const acceptGroupInvitation = ({
     membership,
@@ -126,5 +129,12 @@ export const acceptGroupInvitation = ({
         });
         await keyTransparencyCommit(user, userKeys);
         dispatch(acceptMembership(membership));
+
+        // The group's role assignment isn't carried in an event loop event yet.
+        await Promise.all([
+            // NOTE: Refetching the user implicitly retriggers a user permissions staleness
+            dispatch(userThunk({ cache: CacheType.None })),
+            dispatch(groupThunk({ cache: CacheType.None })),
+        ]).catch(noop);
     };
 };
