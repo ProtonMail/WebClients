@@ -515,6 +515,9 @@
       "Approve": [
         "Aprobar"
       ],
+      "Assign manager(s)": [
+        "Asignar gestionador(es)"
+      ],
       "Attach screenshot(s)": [
         "Adjuntar una o varias capturas de pantalla"
       ],
@@ -1576,6 +1579,9 @@
       ],
       "Preview": [
         "Vista previa"
+      ],
+      "Preview logs": [
+        "Previsualizar registros"
       ],
       "Previous": [
         "Anterior"
@@ -6120,6 +6126,9 @@
       "QR code sign-in enabled": [
         "Inicio de sesión con código QR activado"
       ],
+      "Scan QR code on your mobile device to sign in.": [
+        "Escanee el código QR en su dispositivo móvil para iniciar sesión."
+      ],
       "Scan the code to sign in": [
         "Escanee el código para iniciar sesión"
       ],
@@ -9654,8 +9663,14 @@
       "Contact us": [
         "Contáctenos"
       ],
+      "Downloads": [
+        "Descargas"
+      ],
       "Enjoying ${ planName }?": [
         "¿Disfrutando ${ planName }?"
+      ],
+      "Invited friends": [
+        "Amistades invitadas"
       ],
       "Unlock 4 premium privacy services for just **${ priceString }** more each month": [
         "Desbloquee cuatro servicios de privacidad premium por solo **${ priceString }** más cada mes"
@@ -10198,6 +10213,9 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } de sus miembros que no son de SSO usa autenticación de dos factores para iniciar sesión en su organización.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } de sus miembros que no son de SSO usan autenticación de dos factores para iniciar sesión en su organización."
       ],
+      "${ helpTranslateLink } by joining our localization community.": [
+        "${ helpTranslateLink } uniéndose a nuestra comunidad de localización."
+      ],
       "${ IDEAL_BRAND_NAME } mark": [
         "Marca de ${ IDEAL_BRAND_NAME }"
       ],
@@ -10285,9 +10303,9 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "La oferta de por vida de ${ PASS_SHORT_APP_NAME } no tiene precio de renovación. Es un pago único para acceso de por vida a ${ PASS_SHORT_APP_NAME }. El precio y la fecha de renovación de su suscripción ${ planTitle } se mantienen sin cambios."
       ],
-      "${ pendingAdminApprovalCount } new member added via your identity provider and pending review.": [
-        "Se añadió ${ pendingAdminApprovalCount } miembro nuevo a través de su proveedor de identidad y está pendiente de revisión.",
-        "Se añadieron ${ pendingAdminApprovalCount } miembros nuevos a través de su proveedor de identidad y están pendientes de revisión."
+      "${ pendingKeysMemberCount } new member added via your identity provider and pending review.": [
+        "Se añadió ${ pendingKeysMemberCount } miembro nuevo a través de su proveedor de identidad y está pendiente de revisión.",
+        "Se añadieron ${ pendingKeysMemberCount } miembros nuevos a través de su proveedor de identidad y están pendientes de revisión."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requiere al menos 1 servidor dedicado ${ serverPricePerMonth }"
@@ -10552,6 +10570,9 @@
       ],
       "add a recovery method": [
         "agregar un método de recuperación"
+      ],
+      "Add additional users to **${ company.name }** from your organization to manage this company.": [
+        "Añada usuarios adicionales a **${ company.name }** desde su organización para gestionar esta empresa."
       ],
       "Add an email address in case we need to contact you": [
         "Añada una dirección de correo en caso de que necesitemos contactarle"
@@ -10972,6 +10993,9 @@
       "Change your password": [
         "Cambie la contraseña"
       ],
+      "Changes to your default language and time are reflected on the web. To change the default for mobile apps, go to the settings on your device.": [
+        "Los cambios a su idioma y fecha por defecto se reflejan en la web. Para cambiarlos en las aplicaciones móviles, vaya a los ajustes de su dispositivo."
+      ],
       "Check if your recovery phrase can be used to fully recover your account.": [
         "Compruebe si su frase de recuperación puede usarse para recuperar su cuenta por completo."
       ],
@@ -10980,6 +11004,9 @@
       ],
       "Choose a plan that works best for you.": [
         "Elija un plan que funcione mejor para usted."
+      ],
+      "Choose a strong ${ BRAND_NAME } password and don’t reuse it for other accounts.": [
+        "Elija una contraseña de ${ BRAND_NAME } robusta y no la reuse en otras cuentas."
       ],
       "Choose an Entity ID to continue.": [
         "Seleccione una ID de entidad para continuar."
@@ -11827,6 +11854,9 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Si pierde el dispositivo activado para dos factores, estos códigos pueden usarse en lugar del código de autenticación de dos factores de 6 dígitos para iniciar sesión en la cuenta. Cada código solo se puede usar una vez."
       ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Si perdió el acceso a su aplicación de autenticación, puede usar 1 de los 16 códigos de recuperación de copia de seguridad proporcionados cuando configuró la autenticación de dos factores. ${ learnMoreLink }"
+      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Si procede con darse de baja, perderá el acceso a las funciones de pago de ${ MAIL_APP_NAME } y ${ VPN_APP_NAME }."
       ],
@@ -12144,6 +12174,9 @@
       ],
       "Loading...": [
         "Cargando..."
+      ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "Los registros nos ayudan a comprender qué sucedió antes de que ocurriera el problema. Incluyen las acciones de la aplicación y los mensajes de error, pero no el contenido de los mensajes."
       ],
       "Low Priority": [
         "Prioridad baja"
@@ -14183,6 +14216,9 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Sus datos están listos para importarse desde ${ importedEmailAddressStrong } a la cuenta de ${ BRAND_NAME }."
       ],
+      "Your default language and time for ${ BRAND_NAME } services.": [
+        "Su idioma y fecha por defecto para los servicios de ${ BRAND_NAME }."
+      ],
       "Your email will only be used for this one-time verification.": [
         "El correo electrónico sólo se usará para esta verificación única."
       ],
@@ -14236,6 +14272,9 @@
       ],
       "Your plan is limited to 10 versions for up to 7 days": [
         "El plan está limitado a 10 versiones por hasta 7 días"
+      ],
+      "Your profile and changes to it will be visible to other ${ BRAND_NAME } users.": [
+        "Su perfil y los cambios a él serán visibles a otros usuarios de ${ BRAND_NAME }."
       ],
       "Your recent changes have been published. They will be visible to users in the next few hours.": [
         "Sus cambios recientes se han publicado. Serán visibles para los usuarios en las próximas horas."
@@ -15844,6 +15883,9 @@
       ],
       "Mail Server (IMAP)": [
         "Servidor de correo (IMAP)"
+      ],
+      "Mailbox settings": [
+        "Ajustes del buzón"
       ],
       "Main": [
         "Principal"
@@ -19707,6 +19749,9 @@
       "Move to...": [
         "Mover a..."
       ],
+      "Mute notifications": [
+        "Silenciar notificaciones"
+      ],
       "My reason isn't listed": [
         "Mi motivo no está listado"
       ],
@@ -21402,6 +21447,79 @@
       ],
       "SUMMER SALE": [
         "OFERTAS DE VERANO"
+      ]
+    },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "Aproveche la oferta"
+      ],
+      "Special Offer": [
+        "Oferta especial"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "/month": [
+        "mensuales"
+      ],
+      "2 individual accounts": [
+        "2 cuentas individuales"
+      ],
+      "2 TB of secure storage": [
+        "2 TB de almacenamiento seguro"
+      ],
+      "3 TB of secure storage": [
+        "3 TB de almacenamiento seguro"
+      ],
+      "500 GB of secure storage": [
+        "500 GB de almacenamiento seguro"
+      ],
+      "6 individual accounts": [
+        "6 cuentas individuales"
+      ],
+      "Advanced protection against cyber threats": [
+        "Protección avanzada contra ciberamenazas"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Los descuentos se basan en los precios mensuales estándar. Su suscripción se renovará a la tarifa anual estándar cuando finalice el ciclo de facturación."
+      ]
+    },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } y ${ VPN_SHORT_APP_NAME } todos premium"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME } todos premium"
+      ]
+    },
+    "q3campaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } y ${ VPN_SHORT_APP_NAME } todos premium"
+      ]
+    },
+    "q3campaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } y ${ VPN_SHORT_APP_NAME } todos premium"
+      ]
+    },
+    "q3campaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME } todos premium"
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "durante 12 meses"
+      ],
+      "One plan, full power": [
+        "Un solo plan: Máximo poder"
+      ],
+      "One plan, max savings": [
+        "Un solo plan: máximo ahorro"
+      ],
+      "One plan, more power": [
+        "Un solo plan: Más poder"
       ]
     },
     "Recovery Email": {
@@ -26181,6 +26299,9 @@
       "Dashboard": [
         "Panel de control"
       ],
+      "Data collection": [
+        "Recopilación de datos"
+      ],
       "Data recovery": [
         "Recuperación de datos"
       ],
@@ -26793,6 +26914,9 @@
       "Manage files across devices on Windows, Mac, Android, and iOS.": [
         "Gestione archivos en dispositivos Windows, Mac, Android e iOS."
       ],
+      "Manage managers": [
+        "Administrar gestionadores"
+      ],
       "Messages": [
         "Mensajes"
       ],
@@ -27009,6 +27133,9 @@
       "Priority support:": [
         "Soporte prioritario:"
       ],
+      "Privacy": [
+        "Privacidad"
+      ],
       "Privacy and data collection": [
         "Privacidad y recolección de datos"
       ],
@@ -27200,6 +27327,9 @@
       ],
       "Send new invite?": [
         "¿Enviar invitación nueva?"
+      ],
+      "September Sale": [
+        "Oferta de septiembre"
       ],
       "Service": [
         "Servicio"
@@ -27516,6 +27646,9 @@
       ],
       "User converted to SSO": [
         "El usuario pasó a la autenticación única (SSO)."
+      ],
+      "User profile": [
+        "Perfil del usuario"
       ],
       "Users": [
         "Usuarios"

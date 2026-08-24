@@ -10300,9 +10300,9 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "L'oferta de per vida de ${ PASS_SHORT_APP_NAME } no té preu de renovació, és un pagament únic per a accedir durant tota la vida a ${ PASS_SHORT_APP_NAME }. El preu i la data de renovació de la subscripció de ${ planTitle } es mantindran sense canvis."
       ],
-      "${ pendingAdminApprovalCount } new member added via your identity provider and pending review.": [
-        "S'ha afegit ${ pendingAdminApprovalCount } membre nou a través del vostre proveïdor d'identitat i està pendent de revisió.",
-        "S'han afegit ${ pendingAdminApprovalCount } membres nous mitjançant el vostre proveïdor d'identitat i estan pendents de revisió."
+      "${ pendingKeysMemberCount } new member added via your identity provider and pending review.": [
+        "S'ha afegit ${ pendingKeysMemberCount } membre nou a través del vostre proveïdor d'identitat i està pendent de revisió.",
+        "S'han afegit ${ pendingKeysMemberCount } membres nous mitjançant el vostre proveïdor d'identitat i estan pendents de revisió."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requereix almenys un servidor dedicat ${ serverPricePerMonth }"

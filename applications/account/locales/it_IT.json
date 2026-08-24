@@ -9489,10 +9489,6 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "L'offerta a vita di ${ PASS_SHORT_APP_NAME } non ha prezzo di rinnovo, è un pagamento una tantum per l'accesso illimitato a ${ PASS_SHORT_APP_NAME }. Il prezzo e la data di rinnovo dell'abbonamento ${ planTitle } rimangono invariati."
       ],
-      "${ pendingAdminApprovalCount } new member added via your identity provider and pending review.": [
-        "${ pendingAdminApprovalCount } nuovo membro aggiunto tramite il tuo provider di identità e in attesa di revisione.",
-        "${ pendingAdminApprovalCount } nuovi membri aggiunti tramite il tuo provider di identità e in attesa di revisione."
-      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } richiede almeno 1 server dedicato ${ serverPricePerMonth }"
       ],
@@ -20201,6 +20197,54 @@
       ],
       "SUMMER SALE": [
         "SALDI ESTIVI"
+      ]
+    },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "Ottieni l'offerta"
+      ],
+      "Special Offer": [
+        "Offerta speciale"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "/month": [
+        "/mese"
+      ],
+      "2 individual accounts": [
+        "2 account individuali"
+      ],
+      "2 TB of secure storage": [
+        "2 TB di archiviazione sicura"
+      ],
+      "3 TB of secure storage": [
+        "3 TB di archiviazione sicura"
+      ],
+      "500 GB of secure storage": [
+        "500 GB di archiviazione sicura"
+      ],
+      "6 individual accounts": [
+        "6 account individuali"
+      ],
+      "Advanced protection against cyber threats": [
+        "Protezione avanzata dalle minacce informatiche"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Gli sconti sono calcolati sul prezzo mensile standard. Il tuo abbonamento si rinnoverà alla tariffa annuale standard al termine del ciclo di fatturazione."
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "per 12 mesi"
+      ],
+      "One plan, full power": [
+        "Un unico piano, massima potenza"
+      ],
+      "One plan, max savings": [
+        "Un solo piano, il massimo del risparmio"
+      ],
+      "One plan, more power": [
+        "Un unico piano, più potenza"
       ]
     },
     "Recovery Email": {
