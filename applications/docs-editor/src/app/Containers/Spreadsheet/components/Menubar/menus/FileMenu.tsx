@@ -7,6 +7,7 @@ import * as UI from '../../ui'
 import type { EditorRequiresClientMethods, FileMenuAction } from '@proton/docs-shared'
 import { reportErrorToSentry } from '../../../../../Utils/errorMessage'
 import { CircleLoader } from '../../CircleLoader/CircleLoader'
+import { useFeatureFlag } from '../../../feature-flags'
 import { useSheetsDependencies } from '../../../SheetsDependenciesProvider'
 import { useUI } from '../../../ui-store'
 import { VersionNumber } from '../../VersionNumber/VersionNumber'
@@ -187,7 +188,7 @@ export function FileMenu({ renderMenuButton, clientInvoker, isPublicMode, ...pro
         >
           {s('Print')}
         </UI.MenuItem>
-        <DownloadSubmenu triggerMenuAction={triggerMenuAction} clientInvoker={clientInvoker} />
+        <DownloadSubmenu triggerMenuAction={triggerMenuAction} />
         <UI.MenuSeparator />
         <SpreadsheetSettings />
         <UI.MenuItem
@@ -335,20 +336,8 @@ function MoveToTrashOption({ triggerMenuAction }: { triggerMenuAction: (action: 
   )
 }
 
-function DownloadSubmenu({
-  triggerMenuAction,
-  clientInvoker,
-}: {
-  triggerMenuAction: (action: FileMenuAction) => Promise<void>
-  clientInvoker: EditorRequiresClientMethods
-}) {
-  const [isODSExportEnabled, setIsODSExportEnabled] = useState(false)
-  useEffect(() => {
-    void clientInvoker
-      .checkIfFeatureFlagIsEnabled('SheetsODSExportEnabled')
-      .then(setIsODSExportEnabled)
-      .catch(console.error)
-  }, [clientInvoker])
+function DownloadSubmenu({ triggerMenuAction }: { triggerMenuAction: (action: FileMenuAction) => Promise<void> }) {
+  const isSheetsODSExportEnabled = useFeatureFlag('SheetsODSExportEnabled')
 
   return (
     <Ariakit.MenuProvider>
@@ -366,7 +355,7 @@ function DownloadSubmenu({
         >
           {s('Microsoft Excel (.xlsx)')}
         </UI.MenuItem>
-        {isODSExportEnabled && (
+        {isSheetsODSExportEnabled && (
           <UI.MenuItem
             onClick={() => {
               void triggerMenuAction({
