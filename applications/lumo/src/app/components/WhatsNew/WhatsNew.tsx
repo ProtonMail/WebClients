@@ -16,9 +16,7 @@ import './WhatsNew.scss';
 const WhatsNew = () => {
     const { whatsNew } = useLumoFlags();
     const masterKeyState = useLumoSelector(selectMasterKeyState);
-    const lumoUserSettingsBootstrapped = useLumoSelector(
-        (state) => state.initialization.lumoUserSettingsBootstrapped
-    );
+    const lumoUserSettingsBootstrapped = useLumoSelector((state) => state.initialization.lumoUserSettingsBootstrapped);
     const isWhatsNewReady = masterKeyState.status === 'ready' && lumoUserSettingsBootstrapped;
 
     const features: WhatsNewFeature[] = useMemo(
@@ -67,7 +65,7 @@ const WhatsNew = () => {
     modalOpenRef.current = modalProps.open;
 
     useNativeComposerVisibilityApi({
-        showNewModal: render && modalProps.open,
+        hideComposer: render && modalProps.open,
     });
 
     useEffect(() => {

@@ -199,7 +199,7 @@ interface SearchModalInnerProps {
 const SearchModalInner = ({ onClose }: SearchModalInnerProps) => {
     // The search overlay covers the whole viewport, including the area the native
     // composer is drawn over on large screens. Hide it while the modal is mounted.
-    useNativeComposerVisibilityApi({ isBlocking: true });
+    useNativeComposerVisibilityApi({ hideComposer: true });
 
     const history = useHistory();
     const [user] = useUser();

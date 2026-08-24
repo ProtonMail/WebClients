@@ -244,9 +244,9 @@ export const GalleryView = ({ isProcessingAttachment, prefillQuery: externalPref
     const pendingEditPromptRef = useRef<string>('');
     const [composerPrefill, setComposerPrefill] = useState<string | undefined>(externalPrefill);
     const [gallerySketchTrigger] = useState(false);
-    // Guests see only the sign-in state (no composer), so block the native
+    // Guests see only the sign-in state (no composer), so hide the native
     // composer while mounted as a guest. Visibility is restored on unmount.
-    const nativeComposerVisibilityApi = useNativeComposerVisibilityApi({ isBlocking: isGuest });
+    const nativeComposerVisibilityApi = useNativeComposerVisibilityApi({ hideComposer: isGuest });
 
     const galleryImages = useGeneratedGalleryImages();
     const hasImages = useMemo(
