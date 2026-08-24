@@ -1,9 +1,10 @@
 import { useEffect, useRef } from 'react';
 
-import Challenge from '@proton/components/containers/challenge/Challenge';
-import type { ChallengeRef } from '@proton/components/containers/challenge/interface';
 import type { UnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';
 import noop from '@proton/utils/noop';
+
+import Challenge from '../challenge/Challenge';
+import type { ChallengeRef } from '../challenge/interface';
 
 interface Props {
     unauthenticatedApi: UnauthenticatedApi;

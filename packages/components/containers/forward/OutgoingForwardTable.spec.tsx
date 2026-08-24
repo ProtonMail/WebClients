@@ -1,6 +1,5 @@
 import { useAddressesKeys } from '@proton/account/addressKeys/hooks';
 import { useAddresses } from '@proton/account/addresses/hooks';
-import { renderWithProviders } from '@proton/components/containers/contacts/tests/render';
 import type { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { ForwardingState, ForwardingType } from '@proton/shared/lib/interfaces';
 import { applyHOCs } from '@proton/testing/lib/context/hocs/helpers';
@@ -12,6 +11,7 @@ import { withEventManager } from '@proton/testing/lib/context/hocs/with-event-ma
 import { withNotifications } from '@proton/testing/lib/context/hocs/with-notifications';
 import { mockUseUser } from '@proton/testing/lib/mockUseUser';
 
+import { renderWithProviders } from '../contacts/tests/render';
 import OutgoingForwardTable from './OutgoingForwardTable';
 
 const OutgoingForwardTableContext = applyHOCs(

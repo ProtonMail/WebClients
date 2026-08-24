@@ -1,8 +1,8 @@
 import type { ReactNode } from 'react';
 
-import UnauthenticatedApiChallenge from '@proton/components/containers/api/UnauthenticatedApiChallenge';
 import type { UnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';
 
+import UnauthenticatedApiChallenge from './UnauthenticatedApiChallenge';
 import ApiContext from './apiContext';
 
 interface Props {

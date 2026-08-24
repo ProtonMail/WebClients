@@ -2,13 +2,6 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Card } from '@proton/atoms/Card/Card';
-import Form from '@proton/components/components/form/Form';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import Modal from '@proton/components/components/modalTwo/Modal';
-import ModalContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
-import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import { IcHourglass } from '@proton/icons/icons/IcHourglass';
 import { PLANS } from '@proton/payments/core/constants';
@@ -22,6 +15,13 @@ import humanSize from '@proton/shared/lib/helpers/humanSize';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import { getSpace } from '@proton/shared/lib/user/storage';
 
+import Form from '../../../components/form/Form';
+import type { ModalProps } from '../../../components/modalTwo/Modal';
+import Modal from '../../../components/modalTwo/Modal';
+import ModalContent from '../../../components/modalTwo/ModalContent';
+import ModalFooter from '../../../components/modalTwo/ModalFooter';
+import ModalHeader from '../../../components/modalTwo/ModalHeader';
+import getBoldFormattedText from '../../../helpers/getBoldFormattedText';
 import type { ShortPlan } from '../features/interface';
 import { getFreePassPlan, getFreePlan } from '../features/plan';
 import SubscriptionCancelPlan from './SubscriptionCancelPlan';

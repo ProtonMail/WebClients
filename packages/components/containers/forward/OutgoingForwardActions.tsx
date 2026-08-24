@@ -1,11 +1,5 @@
 import { c } from 'ttag';
 
-import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
-import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import {
     deleteForwarding,
     requestConfirmation,
@@ -17,6 +11,12 @@ import type { Address, OutgoingAddressForwarding, UserModel } from '@proton/shar
 import { ForwardingState, ForwardingType } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
+import DropdownActions from '../../components/dropdown/DropdownActions';
+import useModalState from '../../components/modalTwo/useModalState';
+import { useModalTwoStatic } from '../../components/modalTwo/useModalTwo';
+import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
+import useErrorHandler from '../../hooks/useErrorHandler';
+import useNotifications from '../../hooks/useNotifications';
 import ConfirmDeleteForwarding from './ConfirmDeleteForwarding';
 import ForwardModal from './ForwardModal';
 

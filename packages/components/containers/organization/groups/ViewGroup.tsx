@@ -8,13 +8,6 @@ import { AdminRolesUIState, useAdminRolesUI } from '@proton/account/userPermissi
 import { Button } from '@proton/atoms/Button/Button';
 import { PanelHeader } from '@proton/atoms/Panel/PanelHeader';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Copy from '@proton/components/components/button/Copy';
-import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
-import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
-import AdminRolesSpotlight from '@proton/components/containers/members/rolesAndPermissions/AdminRolesSpotlight';
-import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import useNotifications from '@proton/components/hooks/useNotifications';
-import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
 import { FeatureCode, useFeature } from '@proton/features';
 import { useLoading } from '@proton/hooks';
 import { IcCogWheel } from '@proton/icons/icons/IcCogWheel';
@@ -28,6 +21,13 @@ import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { GROUP_MEMBER_STATE, type Group } from '@proton/shared/lib/interfaces';
 
+import Copy from '../../../components/button/Copy';
+import { useModalStateObject } from '../../../components/modalTwo/useModalState';
+import useSpotlightShow from '../../../components/spotlight/useSpotlightShow';
+import useActiveBreakpoint from '../../../hooks/useActiveBreakpoint';
+import useNotifications from '../../../hooks/useNotifications';
+import useSpotlightOnFeature from '../../../hooks/useSpotlightOnFeature';
+import AdminRolesSpotlight from '../../members/rolesAndPermissions/AdminRolesSpotlight';
 import AddUsersToGroupModal from './AddUsersToGroupModal';
 import DeleteGroupPrompt from './DeleteGroupPrompt';
 import E2EEDisabledWarning from './E2EEDisabledWarning';

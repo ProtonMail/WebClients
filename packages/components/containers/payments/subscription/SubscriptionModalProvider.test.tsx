@@ -22,9 +22,9 @@ import SubscriptionContainer from './SubscriptionContainer';
 import type { OpenSubscriptionModalCallback } from './SubscriptionModalProvider';
 import SubscriptionModalProvider, { useSubscriptionModal } from './SubscriptionModalProvider';
 
-jest.mock('@proton/components/hooks/useModals');
+jest.mock('../../../hooks/useModals');
 jest.mock('@proton/atoms/Portal/Portal');
-jest.mock('@proton/components/containers/payments/subscription/SubscriptionContainer');
+jest.mock('./SubscriptionContainer');
 jest.mock('@proton/features/useFeature', () => () => ({}));
 
 // userSettings has no default in the shared preloaded state; without it the model auto-fetches

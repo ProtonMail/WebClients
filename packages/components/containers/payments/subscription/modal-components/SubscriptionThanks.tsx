@@ -2,9 +2,6 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
-import ModalContent from '@proton/components/components/modalTwo/ModalContent';
-import { ModalHeaderCloseButton } from '@proton/components/components/modalTwo/ModalHeader';
-import useConfig from '@proton/components/hooks/useConfig';
 import type { PlanIDs } from '@proton/payments/core/interface';
 import { getIsVpnB2BPlan, getPlanNameFromIDs } from '@proton/payments/core/plan/helpers';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
@@ -16,6 +13,10 @@ import playStoreSvg from '@proton/styles/assets/img/illustrations/play-store.svg
 import mailThanksSvg from '@proton/styles/assets/img/illustrations/thank-you-mail.svg';
 import vpnThanksSvg from '@proton/styles/assets/img/illustrations/thank-you-vpn.svg';
 import clsx from '@proton/utils/clsx';
+
+import ModalContent from '../../../../components/modalTwo/ModalContent';
+import { ModalHeaderCloseButton } from '../../../../components/modalTwo/ModalHeader';
+import useConfig from '../../../../hooks/useConfig';
 
 interface Props {
     onClose?: () => void;

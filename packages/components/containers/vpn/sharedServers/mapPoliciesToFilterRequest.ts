@@ -1,6 +1,6 @@
-import type { FilterPolicyRequest } from '@proton/components/containers/vpn/sharedServers/api';
-import { PolicyState, PolicyType } from '@proton/components/containers/vpn/sharedServers/constants';
-import type { VpnLocationFilterPolicy } from '@proton/components/containers/vpn/sharedServers/useSharedServers';
+import type { FilterPolicyRequest } from './api';
+import { PolicyState, PolicyType } from './constants';
+import type { VpnLocationFilterPolicy } from './useSharedServers';
 
 export const mapPoliciesToFilterRequest = (policies: VpnLocationFilterPolicy[]): FilterPolicyRequest[] => {
     const isRemovingLastCustomPolicy = policies.filter((policy) => policy.Type === PolicyType.Custom).length === 0;

@@ -1,7 +1,7 @@
 import { useUser } from '@proton/account/user/hooks';
-import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
 import { hasPaidMail, hasPaidVpn } from '@proton/shared/lib/user/helpers';
 
+import { useModalTwoPromise } from '../../../../components/modalTwo/useModalTwo';
 import DowngradeModal from '../../DowngradeModal';
 import type { CancellationStep, CancellationStepConfig } from './types';
 

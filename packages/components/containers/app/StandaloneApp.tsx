@@ -6,12 +6,6 @@ import { configureStore } from '@reduxjs/toolkit';
 import { apiStatusReducer } from '@proton/account';
 import { createAuthentication, createUnleash } from '@proton/account/bootstrap';
 import { initStandaloneSession } from '@proton/account/bootstrap/standaloneSession';
-import ApiProvider from '@proton/components/containers/api/ApiProvider';
-import UnauthenticatedApiProvider from '@proton/components/containers/api/UnauthenticatedApiProvider';
-import LoaderPage from '@proton/components/containers/app/LoaderPage';
-import ProtonApp from '@proton/components/containers/app/ProtonApp';
-import StandardPublicApp from '@proton/components/containers/app/StandardPublicApp';
-import MinimalLoginContainer from '@proton/components/containers/login/MinimalLoginContainer';
 import useInstance from '@proton/hooks/useInstance';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import { ignoredActions, ignoredPaths } from '@proton/redux-shared-store/sharedSerializable';
@@ -22,6 +16,13 @@ import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 import { createUnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';
 import { FlagProvider } from '@proton/unleash/proxy';
 import noop from '@proton/utils/noop';
+
+import ApiProvider from '../api/ApiProvider';
+import UnauthenticatedApiProvider from '../api/UnauthenticatedApiProvider';
+import MinimalLoginContainer from '../login/MinimalLoginContainer';
+import LoaderPage from './LoaderPage';
+import ProtonApp from './ProtonApp';
+import StandardPublicApp from './StandardPublicApp';
 
 import '@proton/styles/scss/_proton-account.scss';
 

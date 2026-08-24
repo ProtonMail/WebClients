@@ -3,12 +3,12 @@ import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import * as bootstrap from '@proton/account/bootstrap';
-import NotificationsChildren from '@proton/components/containers/notifications/Children';
-import useConfig from '@proton/components/hooks/useConfig';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import type { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 
+import useConfig from '../../hooks/useConfig';
 import ModalsChildren from '../modals/Children';
+import NotificationsChildren from '../notifications/Children';
 import ForceReload from './ForceReload';
 import StandardLoadErrorPage from './StandardLoadErrorPage';
 import { wrapUnloadError } from './errorRefresh';

@@ -5,23 +5,8 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Input } from '@proton/atoms/Input/Input';
-import {
-    type AddressesAutocompleteItem,
-    getContactsAutocompleteItems,
-} from '@proton/components/components/addressesAutocomplete/helper';
-import Alert from '@proton/components/components/alert/Alert';
-import Autocomplete from '@proton/components/components/autocomplete/Autocomplete';
-import Field from '@proton/components/components/container/Field';
-import Row from '@proton/components/components/container/Row';
-import ColorPicker from '@proton/components/components/input/ColorPicker';
-import Label from '@proton/components/components/label/Label';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import { useContactGroups } from '@proton/mail/store/labels/hooks';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
+import { useContactGroups } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { getRandomAccentColor } from '@proton/shared/lib/colors';
 import { hasReachedContactGroupMembersLimit } from '@proton/shared/lib/contacts/helpers/contactGroup';
@@ -30,6 +15,21 @@ import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contac
 import diff from '@proton/utils/diff';
 import isTruthy from '@proton/utils/isTruthy';
 
+import {
+    type AddressesAutocompleteItem,
+    getContactsAutocompleteItems,
+} from '../../../components/addressesAutocomplete/helper';
+import Alert from '../../../components/alert/Alert';
+import Autocomplete from '../../../components/autocomplete/Autocomplete';
+import Field from '../../../components/container/Field';
+import Row from '../../../components/container/Row';
+import ColorPicker from '../../../components/input/ColorPicker';
+import Label from '../../../components/label/Label';
+import type { ModalProps } from '../../../components/modalTwo/Modal';
+import ModalTwo from '../../../components/modalTwo/Modal';
+import ModalTwoContent from '../../../components/modalTwo/ModalContent';
+import ModalTwoFooter from '../../../components/modalTwo/ModalFooter';
+import ModalTwoHeader from '../../../components/modalTwo/ModalHeader';
 import useUpdateGroup from '../hooks/useUpdateGroup';
 import ContactGroupTable from './ContactGroupTable';
 

@@ -4,11 +4,8 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import AddressesAutocomplete from '@proton/components/components/addressesAutocomplete/AddressesAutocomplete';
-import { IcPaperPlane } from '@proton/icons/icons/IcPaperPlane';
-import useApi from '@proton/components/hooks/useApi';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
+import { IcPaperPlane } from '@proton/icons/icons/IcPaperPlane';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import { sendEmailInvitation } from '@proton/shared/lib/api/core/referrals';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -16,8 +13,11 @@ import { PROTONMAIL_DOMAINS, getEmailParts } from '@proton/shared/lib/helpers/em
 import type { Recipient, Referral } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
-import { useReferralTelemetry } from '../hooks/useReferralTelemetry';
+import AddressesAutocomplete from '../../../components/addressesAutocomplete/AddressesAutocomplete';
+import useApi from '../../../hooks/useApi';
+import useNotifications from '../../../hooks/useNotifications';
 import { useReferralInvitesContext } from '../ReferralInvitesContext';
+import { useReferralTelemetry } from '../hooks/useReferralTelemetry';
 import InviteSendEmailRecipient from './InviteSendEmailRecipient';
 import { deduplicateRecipients, filterContactEmails, isValidEmailAdressToRefer } from './helpers';
 

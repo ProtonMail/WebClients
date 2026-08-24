@@ -5,12 +5,6 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
-import Pagination from '@proton/components/components/pagination/Pagination';
-import usePaginationAsync from '@proton/components/components/pagination/usePaginationAsync';
-import PassEventsTable from '@proton/components/containers/b2bDashboard/Pass/PassEventsTable';
-import useApi from '@proton/components/hooks/useApi';
-import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { getPassEventTypes, getPassLogs, getPassLogsDownload } from '@proton/shared/lib/api/b2bevents';
 import { PASS_APP_NAME, SORT_DIRECTION } from '@proton/shared/lib/constants';
@@ -19,13 +13,19 @@ import type { B2BLogsQuery } from '@proton/shared/lib/interfaces/B2BLogs';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
+import Pagination from '../../../components/pagination/Pagination';
+import usePaginationAsync from '../../../components/pagination/usePaginationAsync';
 import SettingsSectionWide from '../../../containers/account/SettingsSectionWide';
 import GenericError from '../../../containers/error/GenericError';
+import useApi from '../../../hooks/useApi';
+import useErrorHandler from '../../../hooks/useErrorHandler';
+import useNotifications from '../../../hooks/useNotifications';
 import { PromotionBanner } from '../../banner/PromotionBanner';
 import { toCamelCase } from '../../credentialLeak/helpers';
 import { useSubscriptionModal } from '../../payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '../../payments/subscription/constants';
 import { FilterAndSortEventsBlock } from '../FilterAndSortEventBlock';
+import PassEventsTable from './PassEventsTable';
 import type { EventObject } from './helpers';
 import {
     ALL_EVENTS_DEFAULT,

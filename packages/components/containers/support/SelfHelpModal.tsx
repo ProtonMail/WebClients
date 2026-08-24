@@ -3,15 +3,15 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import Modal from '@proton/components/components/modalTwo/Modal';
-import ModalContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
-import { openLinkInBrowser } from '@proton/components/containers/desktop/openExternalLink';
 import { APPS, type APP_NAMES, OPEN_COMPOSER_WITH_MAILTO_EVENT } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { getKnowledgeBaseUrl, getProductForSupport, getStaticURL } from '@proton/shared/lib/helpers/url';
 
+import type { ModalProps } from '../../components/modalTwo/Modal';
+import Modal from '../../components/modalTwo/Modal';
+import ModalContent from '../../components/modalTwo/ModalContent';
+import ModalHeader from '../../components/modalTwo/ModalHeader';
+import { openLinkInBrowser } from '../desktop/openExternalLink';
 import { useHelpCenterIframeStyles } from './useIframeCssOverrides';
 
 import './SelfHelpModal.scss';

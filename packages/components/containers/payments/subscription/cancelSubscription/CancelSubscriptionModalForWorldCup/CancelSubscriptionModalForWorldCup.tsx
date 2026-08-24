@@ -3,16 +3,6 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import Time from '@proton/components/components/time/Time';
-import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
-import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
-import useApi from '@proton/components/hooks/useApi';
-import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import { COUPON_CODES, CYCLE } from '@proton/payments/core/constants';
 import { getPlanTitle, getRenewalTime } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
@@ -20,6 +10,16 @@ import { TelemetryAccountCancellationEvents, TelemetryMeasurementGroups } from '
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 
+import type { ModalProps } from '../../../../../components/modalTwo/Modal';
+import ModalTwo from '../../../../../components/modalTwo/Modal';
+import ModalTwoContent from '../../../../../components/modalTwo/ModalContent';
+import ModalTwoFooter from '../../../../../components/modalTwo/ModalFooter';
+import ModalTwoHeader from '../../../../../components/modalTwo/ModalHeader';
+import Time from '../../../../../components/time/Time';
+import useApi from '../../../../../hooks/useApi';
+import useDashboardPaymentFlow from '../../../../../hooks/useDashboardPaymentFlow';
+import { useSubscriptionModal } from '../../SubscriptionModalProvider';
+import { SUBSCRIPTION_STEPS } from '../../constants';
 import type { CancelSubscriptionResult } from '../types';
 import stayVpnPlus from './assets/stayVpnPlus.svg';
 import { features } from './feature';

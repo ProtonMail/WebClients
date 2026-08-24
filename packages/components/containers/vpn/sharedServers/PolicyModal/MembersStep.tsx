@@ -6,12 +6,6 @@ import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Href } from '@proton/atoms/Href/Href';
 import { Input } from '@proton/atoms/Input/Input';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Checkbox from '@proton/components/components/input/Checkbox';
-import Table from '@proton/components/components/table/Table';
-import TableBody from '@proton/components/components/table/TableBody';
-import TableCell from '@proton/components/components/table/TableCell';
-import TableRow from '@proton/components/components/table/TableRow';
-import canUseGroups from '@proton/components/containers/organization/groups/canUseGroups';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import { IcUsersFilled } from '@proton/icons/icons/IcUsersFilled';
@@ -21,6 +15,12 @@ import { getInitials } from '@proton/shared/lib/helpers/string';
 import type { Organization } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import Checkbox from '../../../../components/input/Checkbox';
+import Table from '../../../../components/table/Table';
+import TableBody from '../../../../components/table/TableBody';
+import TableCell from '../../../../components/table/TableCell';
+import TableRow from '../../../../components/table/TableRow';
+import canUseGroups from '../../../organization/groups/canUseGroups';
 import ApplyPolicyButton from '../ApplyPolicyButton';
 import type { SharedServerGroup, SharedServerUser } from '../useSharedServers';
 

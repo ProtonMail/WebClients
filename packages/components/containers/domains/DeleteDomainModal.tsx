@@ -2,13 +2,14 @@ import { c } from 'ttag';
 
 import { deleteDomain } from '@proton/account/domains/actions';
 import { Button } from '@proton/atoms/Button/Button';
-import type { PromptProps } from '@proton/components/components/prompt/Prompt';
-import Prompt from '@proton/components/components/prompt/Prompt';
-import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import type { Domain } from '@proton/shared/lib/interfaces';
+
+import type { PromptProps } from '../../components/prompt/Prompt';
+import Prompt from '../../components/prompt/Prompt';
+import useErrorHandler from '../../hooks/useErrorHandler';
+import useNotifications from '../../hooks/useNotifications';
 
 interface Props extends Omit<PromptProps, 'title' | 'buttons' | 'children'> {
     domain: Domain;

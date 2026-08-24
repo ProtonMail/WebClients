@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
-import Alert from '@proton/components/components/alert/Alert';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
 
+import Alert from '../../components/alert/Alert';
+import useModalState from '../../components/modalTwo/useModalState';
 import BugModal from '../support/BugModal';
 
 const ChallengeError = () => {

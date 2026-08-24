@@ -3,10 +3,10 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 import clsx from '@proton/utils/clsx';
 
+import useActiveBreakpoint from '../../../../hooks/useActiveBreakpoint';
 import EditGroupModal from '../EditGroupModal';
 import GroupEmptyView from '../GroupEmptyView';
 import GroupList from '../GroupList';

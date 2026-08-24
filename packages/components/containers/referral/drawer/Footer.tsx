@@ -1,9 +1,8 @@
 import { c } from 'ttag';
 
-import QuickSettingsButton from '@proton/components/components/drawer/views/quickSettings/QuickSettingsButton';
-import QuickSettingsButtonSection from '@proton/components/components/drawer/views/quickSettings/QuickSettingsButtonSection';
-import useDrawer from '@proton/components/hooks/drawer/useDrawer';
-
+import QuickSettingsButton from '../../../components/drawer/views/quickSettings/QuickSettingsButton';
+import QuickSettingsButtonSection from '../../../components/drawer/views/quickSettings/QuickSettingsButtonSection';
+import useDrawer from '../../../hooks/drawer/useDrawer';
 import { useReferralDiscover } from '../hooks/useReferralDiscover';
 
 const Footer = () => {

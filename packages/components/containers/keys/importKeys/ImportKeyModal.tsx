@@ -4,24 +4,24 @@ import { c } from 'ttag';
 
 import { importKeysThunk } from '@proton/account/addressKeys/importKeysActions';
 import { Button } from '@proton/atoms/Button/Button';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import GenericError from '@proton/components/containers/error/GenericError';
-import getPausedForwardingNotice from '@proton/components/containers/keys/changePrimaryKeyForwardingNotice/getPausedForwardingNotice';
-import { type ProcessedKey, useProcessKey } from '@proton/components/containers/keys/importKeys/useProcessKey';
-import SelectKeyFiles from '@proton/components/containers/keys/shared/SelectKeyFiles';
-import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 import getRandomString from '@proton/utils/getRandomString';
 
+import type { ModalProps } from '../../../components/modalTwo/Modal';
+import ModalTwo from '../../../components/modalTwo/Modal';
+import ModalTwoContent from '../../../components/modalTwo/ModalContent';
+import ModalTwoFooter from '../../../components/modalTwo/ModalFooter';
+import ModalTwoHeader from '../../../components/modalTwo/ModalHeader';
+import useErrorHandler from '../../../hooks/useErrorHandler';
+import GenericError from '../../error/GenericError';
+import getPausedForwardingNotice from '../changePrimaryKeyForwardingNotice/getPausedForwardingNotice';
+import SelectKeyFiles from '../shared/SelectKeyFiles';
 import ImportKeysList from './ImportKeysList';
 import { type ImportKeyState, Status } from './interface';
+import { type ProcessedKey, useProcessKey } from './useProcessKey';
 
 const getState = ({ armoredKeyWithInfo, privateKey }: ProcessedKey): ImportKeyState => {
     return {

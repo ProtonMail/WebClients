@@ -3,7 +3,6 @@ import { type ReactNode, useEffect } from 'react';
 import { c } from 'ttag';
 
 import type { ButtonLikeProps } from '@proton/atoms/Button/ButtonLike';
-import type { TelemetryPaymentFlow } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
 import useLoading from '@proton/hooks/useLoading';
 import { ADDON_PREFIXES, CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { Currency, Cycle, PlanIDs } from '@proton/payments/core/interface';
@@ -64,6 +63,7 @@ import { getStandaloneUnleashClient } from '@proton/unleash/standaloneClient';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
+import type { TelemetryPaymentFlow } from '../../../../payments/client-extensions/usePaymentsTelemetry';
 import { getPhoneSupport } from '../../features/b2b';
 import { getNCalendarsFeature, getNCalendarsPerUserFeature } from '../../features/calendar';
 import {

@@ -5,13 +5,13 @@ import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import Prompt from '@proton/components/components/prompt/Prompt';
-import Toggle from '@proton/components/components/toggle/Toggle';
 import { Autopay } from '@proton/payments/core/constants';
 import { getHasConsumerVpnPlan } from '@proton/payments/core/subscription/helpers';
 
+import type { ModalProps } from '../../components/modalTwo/Modal';
 import { useModalTwo } from '../../components/modalTwo/useModalTwo';
+import Prompt from '../../components/prompt/Prompt';
+import Toggle from '../../components/toggle/Toggle';
 
 type DisableRenewModalOwnProps = { isVPNPlan: boolean };
 type DisableRenewModalPromiseProps = { onResolve: (result: boolean) => void; onReject: () => void };

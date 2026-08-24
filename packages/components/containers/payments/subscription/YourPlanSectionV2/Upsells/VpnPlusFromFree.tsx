@@ -2,10 +2,6 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
-import Info from '@proton/components/components/link/Info';
-import { getTelemetryUserTier } from '@proton/components/helpers/getTelemetryUserTier';
-import useApi from '@proton/components/hooks/useApi';
-import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
@@ -17,6 +13,10 @@ import { getSelectFromNCountries, getVpnServers } from '@proton/shared/lib/vpn/f
 import isTruthy from '@proton/utils/isTruthy';
 import { VPN_SERVERS } from '@proton/vpn/constants/vpnServers';
 
+import Info from '../../../../../components/link/Info';
+import { getTelemetryUserTier } from '../../../../../helpers/getTelemetryUserTier';
+import useApi from '../../../../../hooks/useApi';
+import useDashboardPaymentFlow from '../../../../../hooks/useDashboardPaymentFlow';
 import type { PlanCardFeatureDefinition } from '../../../features/interface';
 import { useSubscriptionModal } from '../../SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '../../constants';

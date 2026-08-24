@@ -1,13 +1,13 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 
-import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 
+import useActiveBreakpoint from '../../../../hooks/useActiveBreakpoint';
 import type { UpsellPanelProps } from './UpsellPanel';
 import UpsellPanel from './UpsellPanel';
 
-jest.mock('@proton/components/hooks/useActiveBreakpoint');
+jest.mock('../../../../hooks/useActiveBreakpoint');
 const mockUseActiveBreakpoint = useActiveBreakpoint as jest.MockedFn<typeof useActiveBreakpoint>;
 
 describe('UpsellBox', () => {

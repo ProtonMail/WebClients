@@ -10,20 +10,6 @@ import { useProtonDomains } from '@proton/account/protonDomains/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import Modal from '@proton/components/components/modalTwo/Modal';
-import ModalContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
-import Option from '@proton/components/components/option/Option';
-import { usePasswordPolicyValidation } from '@proton/components/components/passwordPolicy';
-import PasswordWithPolicyInputs from '@proton/components/components/passwordPolicy/PasswordWithPolicyInputs';
-import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import useFormErrors from '@proton/components/components/v2/useFormErrors';
-import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { getAvailableAddressDomains } from '@proton/shared/lib/helpers/address';
@@ -32,6 +18,21 @@ import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/fo
 import type { Member } from '@proton/shared/lib/interfaces';
 import { getCanGenerateMemberKeys, getShouldSetupMemberKeys } from '@proton/shared/lib/keys';
 import { getIsMemberDisabled, getIsMemberInvited } from '@proton/shared/lib/keys/memberHelper';
+
+import { DropdownSizeUnit } from '../../components/dropdown/utils';
+import type { ModalProps } from '../../components/modalTwo/Modal';
+import Modal from '../../components/modalTwo/Modal';
+import ModalContent from '../../components/modalTwo/ModalContent';
+import ModalFooter from '../../components/modalTwo/ModalFooter';
+import ModalHeader from '../../components/modalTwo/ModalHeader';
+import Option from '../../components/option/Option';
+import PasswordWithPolicyInputs from '../../components/passwordPolicy/PasswordWithPolicyInputs';
+import { usePasswordPolicyValidation } from '../../components/passwordPolicy/index';
+import SelectTwo from '../../components/selectTwo/SelectTwo';
+import InputFieldTwo from '../../components/v2/field/InputField';
+import useFormErrors from '../../components/v2/useFormErrors';
+import useErrorHandler from '../../hooks/useErrorHandler';
+import useNotifications from '../../hooks/useNotifications';
 
 interface Props extends ModalProps<'form'> {
     member?: Member;

@@ -1,18 +1,19 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import { ModalHeaderCloseButton } from '@proton/components/components/modalTwo/ModalHeader';
-import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
-import { getSimplePriceString } from '@proton/components/components/price/helper';
-import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 import { IcServers } from '@proton/icons/icons/IcServers';
 import { IcUser } from '@proton/icons/icons/IcUser';
 import { ADDON_NAMES, CYCLE } from '@proton/payments/core/constants';
 import { getPricePerCycle } from '@proton/payments/core/price-helpers';
 import gatewayMonitorUpsellHero from '@proton/styles/assets/img/vpn/users/users-upsell-hero.jpg';
+
+import ModalTwo from '../../../components/modalTwo/Modal';
+import ModalTwoContent from '../../../components/modalTwo/ModalContent';
+import { ModalHeaderCloseButton } from '../../../components/modalTwo/ModalHeader';
+import type { ModalStateProps } from '../../../components/modalTwo/useModalState';
+import { getSimplePriceString } from '../../../components/price/helper';
+import { usePreferredPlansMap } from '../../../hooks/usePreferredPlansMap';
 
 interface Props {
     modalProps: ModalStateProps;

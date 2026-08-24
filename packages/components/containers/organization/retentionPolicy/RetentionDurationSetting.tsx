@@ -3,10 +3,10 @@ import type { SetStateAction } from 'react';
 import type { FormikErrors } from 'formik';
 import { c, msgid } from 'ttag';
 
-import RadioGroup from '@proton/components/components/input/RadioGroup';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import { RetentionRuleAction, RetentionRuleProduct } from '@proton/shared/lib/interfaces/RetentionRule';
 
+import RadioGroup from '../../../components/input/RadioGroup';
+import InputFieldTwo from '../../../components/v2/field/InputField';
 import type { RetentionRuleFormData } from './types';
 
 import './RetentionDurationSetting.scss';

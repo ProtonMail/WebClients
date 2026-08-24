@@ -4,17 +4,17 @@ import { c } from 'ttag';
 
 import { useUserPermissions } from '@proton/account/userPermissions/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import SearchInput from '@proton/components/components/input/SearchInput';
-import withPermissionGuard from '@proton/components/components/orgPermissions/withPermissionGuard';
-import Table from '@proton/components/components/table/Table';
-import TableBody from '@proton/components/components/table/TableBody';
-import TableHeader from '@proton/components/components/table/TableHeader';
-import TableHeaderCell from '@proton/components/components/table/TableHeaderCell';
-import TableRow from '@proton/components/components/table/TableRow';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import type { RetentionRule } from '@proton/shared/lib/interfaces/RetentionRule';
 import clsx from '@proton/utils/clsx';
 
+import SearchInput from '../../../components/input/SearchInput';
+import withPermissionGuard from '../../../components/orgPermissions/withPermissionGuard';
+import Table from '../../../components/table/Table';
+import TableBody from '../../../components/table/TableBody';
+import TableHeader from '../../../components/table/TableHeader';
+import TableHeaderCell from '../../../components/table/TableHeaderCell';
+import TableRow from '../../../components/table/TableRow';
 import RetentionPolicyTableRow from './RetentionPolicyTableRow';
 import { getActionLabel, getDaysStringFromLifetime } from './helpers';
 import { useRetentionRuleScopeSuggestion } from './useRetentionRuleScopeSuggestion';

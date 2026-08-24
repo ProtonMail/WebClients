@@ -1,5 +1,4 @@
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-
+import useModalState from '../../../../components/modalTwo/useModalState';
 import CancelSubscriptionLoadingModal from '../cancelSubscription/CancelSubscriptionLoadingModal';
 
 export const useCancellationLoadingStep = () => {

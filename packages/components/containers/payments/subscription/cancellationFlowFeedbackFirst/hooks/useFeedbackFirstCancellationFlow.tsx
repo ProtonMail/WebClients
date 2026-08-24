@@ -1,8 +1,8 @@
 import { useSubscription } from '@proton/account/subscription/hooks';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { PLAN_NAMES } from '@proton/payments/core/constants';
 import { getPlanName, getPlanTitle } from '@proton/payments/core/subscription/helpers';
 
+import useModalState from '../../../../../components/modalTwo/useModalState';
 import { CancelRedirectionModal } from '../../cancellationFlow/CancelRedirectionModal';
 import { FeedbackFirstCancellation } from '../FeedbackFirstCancellation';
 

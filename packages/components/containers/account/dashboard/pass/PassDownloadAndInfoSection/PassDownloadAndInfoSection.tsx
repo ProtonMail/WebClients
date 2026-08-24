@@ -7,11 +7,11 @@ import {
     DashboardGridSection,
     DashboardGridSectionHeader,
 } from '@proton/atoms/DashboardGrid/DashboardGrid';
-import Loader from '@proton/components/components/loader/Loader';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
+import Loader from '../../../../../components/loader/Loader';
 import DashboardUpgradePlanButton from '../../shared/DashboardDownloadSection/DashboardUpgradePlanButton';
 import { getDownloadAppText } from '../../shared/DashboardMoreInfoSection/helpers';
 import PassDownloadSection from './PassDownloadSection/PassDownloadSection';

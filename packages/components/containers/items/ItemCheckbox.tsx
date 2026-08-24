@@ -1,15 +1,16 @@
 import type { ChangeEvent, FocusEventHandler, MouseEventHandler } from 'react';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import Icon from '@proton/components/components/icon/Icon';
-import Checkbox from '@proton/components/components/input/Checkbox';
-import ContactImage from '@proton/components/containers/contacts/ContactImage';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import type { IconName } from '@proton/icons/types';
 import { DENSITY } from '@proton/shared/lib/constants';
 import { toValidHtmlId } from '@proton/shared/lib/dom/toValidHtmlId';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
+
+import Icon from '../../components/icon/Icon';
+import Checkbox from '../../components/input/Checkbox';
+import ContactImage from '../contacts/ContactImage';
 
 import './ItemCheckbox.scss';
 

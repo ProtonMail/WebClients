@@ -2,17 +2,17 @@ import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import ModalTwo, { type ModalProps } from '@proton/components/components/modalTwo/Modal';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import PlusUnlimitedComparison from '@proton/components/containers/payments/subscription/PlusUnlimitedComparison';
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
-import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { PLANS } from '@proton/payments/core/constants';
 import type { Plan, PlansMap } from '@proton/payments/core/plan/interface';
 import { getPlan } from '@proton/payments/core/subscription/helpers';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
+import ModalTwo, { type ModalProps } from '../../../components/modalTwo/Modal';
+import ModalTwoContent from '../../../components/modalTwo/ModalContent';
+import ModalTwoHeader from '../../../components/modalTwo/ModalHeader';
+import getBoldFormattedText from '../../../helpers/getBoldFormattedText';
+import { useTheme } from '../../themes/ThemeProvider';
+import PlusUnlimitedComparison from './PlusUnlimitedComparison';
 import { getNormalizedPlanTitles } from './plusToPlusHelper';
 
 interface Props extends Omit<ModalProps, 'title' | 'onClose'> {

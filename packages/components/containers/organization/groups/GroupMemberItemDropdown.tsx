@@ -9,13 +9,6 @@ import { deleteGroupMemberThunk } from '@proton/account/groups/deleteGroupMember
 import { getIsScimGroup } from '@proton/account/groups/groupFlags';
 import { Button } from '@proton/atoms/Button/Button';
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
-import Dropdown from '@proton/components/components/dropdown/Dropdown';
-import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
-import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
-import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
-import useApi from '@proton/components/hooks/useApi';
-import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
@@ -31,6 +24,13 @@ import { GROUP_MEMBER_PERMISSIONS, GROUP_MEMBER_STATE } from '@proton/shared/lib
 import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 
+import Dropdown from '../../../components/dropdown/Dropdown';
+import DropdownMenu from '../../../components/dropdown/DropdownMenu';
+import DropdownMenuButton from '../../../components/dropdown/DropdownMenuButton';
+import { DropdownSizeUnit } from '../../../components/dropdown/utils';
+import useApi from '../../../hooks/useApi';
+import useErrorHandler from '../../../hooks/useErrorHandler';
+import useNotifications from '../../../hooks/useNotifications';
 import useGroupKeys from './useGroupKeys';
 
 import './GroupMemberItemDropdown.scss';

@@ -1,9 +1,10 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
-import Prompt from '@proton/components/components/prompt/Prompt';
 import useLoading from '@proton/hooks/useLoading';
+
+import type { ModalStateProps } from '../../../components/modalTwo/useModalState';
+import Prompt from '../../../components/prompt/Prompt';
 
 interface Props {
     title: string;

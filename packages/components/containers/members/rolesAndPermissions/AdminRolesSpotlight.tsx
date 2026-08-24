@@ -3,8 +3,9 @@ import type { PropsWithChildren } from 'react';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
-import type { SpotlightProps } from '@proton/components/components/spotlight/Spotlight';
-import Spotlight from '@proton/components/components/spotlight/Spotlight';
+
+import type { SpotlightProps } from '../../../components/spotlight/Spotlight';
+import Spotlight from '../../../components/spotlight/Spotlight';
 
 interface Props extends Omit<SpotlightProps, 'content' | 'type'> {
     title: string;

@@ -1,7 +1,8 @@
 import type { ChangeEvent } from 'react';
 
-import Select from '@proton/components/components/select/Select';
 import { PACKAGE_TYPE } from '@proton/shared/lib/mail/mailSettings';
+
+import Select from '../../components/select/Select';
 
 interface Props {
     pgpScheme: number;

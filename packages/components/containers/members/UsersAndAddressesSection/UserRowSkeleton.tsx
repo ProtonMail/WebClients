@@ -1,6 +1,6 @@
-import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
-import TableCell from '@proton/components/components/table/TableCell';
-import TableRow from '@proton/components/components/table/TableRow';
+import SkeletonLoader from '../../../components/skeletonLoader/SkeletonLoader';
+import TableCell from '../../../components/table/TableCell';
+import TableRow from '../../../components/table/TableRow';
 
 const UserRowSkeleton = () => (
     <TableRow>

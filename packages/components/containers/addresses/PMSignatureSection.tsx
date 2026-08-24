@@ -1,14 +1,14 @@
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import Info from '@proton/components/components/link/Info';
-import UpsellIcon from '@proton/components/components/upsell/UpsellIcon';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { PM_SIGNATURE } from '@proton/shared/lib/mail/mailSettings';
 import clsx from '@proton/utils/clsx';
 
+import Info from '../../components/link/Info';
+import UpsellIcon from '../../components/upsell/UpsellIcon';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';

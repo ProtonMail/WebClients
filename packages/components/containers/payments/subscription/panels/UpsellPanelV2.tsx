@@ -5,17 +5,17 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
-import Icon from '@proton/components/components/icon/Icon';
-import Info from '@proton/components/components/link/Info';
-import { upgradeButtonClick } from '@proton/components/containers/desktop/openExternalLink';
-import { useHasInboxDesktopInAppPayments } from '@proton/components/containers/desktop/useHasInboxDesktopInAppPayments';
-import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { IcChevronUp } from '@proton/icons/icons/IcChevronUp';
 import { CYCLE, type PLANS } from '@proton/payments/core/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import clsx from '@proton/utils/clsx';
 
+import Icon from '../../../../components/icon/Icon';
+import Info from '../../../../components/link/Info';
+import useActiveBreakpoint from '../../../../hooks/useActiveBreakpoint';
+import { upgradeButtonClick } from '../../../desktop/openExternalLink';
+import { useHasInboxDesktopInAppPayments } from '../../../desktop/useHasInboxDesktopInAppPayments';
 import type { ButtonColor, ButtonShape, UpsellCta, UpsellFeature } from '../helpers';
 import { isUpsellCta } from '../helpers';
 

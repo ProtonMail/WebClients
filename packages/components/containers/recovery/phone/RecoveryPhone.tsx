@@ -3,14 +3,14 @@ import { type FormEvent, type ReactNode, useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import PhoneInput from '@proton/components/components/v2/phone/LazyPhoneInput';
-import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import clsx from '@proton/utils/clsx';
 
+import InputFieldTwo from '../../../components/v2/field/InputField';
 import type { InputFieldProps } from '../../../components/v2/field/InputField';
+import PhoneInput from '../../../components/v2/phone/LazyPhoneInput';
+import useFormErrors from '../../../components/v2/useFormErrors';
 
 interface RenderFormProps {
     className?: string;

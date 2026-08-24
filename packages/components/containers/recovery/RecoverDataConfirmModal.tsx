@@ -3,10 +3,11 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import SettingsLink from '@proton/components/components/link/SettingsLink';
-import type { PromptProps } from '@proton/components/components/prompt/Prompt';
-import Prompt from '@proton/components/components/prompt/Prompt';
 import { FeatureCode, useFeature } from '@proton/features';
+
+import SettingsLink from '../../components/link/SettingsLink';
+import type { PromptProps } from '../../components/prompt/Prompt';
+import Prompt from '../../components/prompt/Prompt';
 
 const RecoverDataConfirmModal = (props: Omit<PromptProps, 'open' | 'title' | 'buttons' | 'children'>) => {
     const [dismissing, setDismissing] = useState(false);

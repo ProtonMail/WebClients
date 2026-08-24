@@ -2,11 +2,11 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
 import { validateMnemonic } from '@proton/shared/lib/mnemonic';
 
+import InputFieldTwo from '../../components/v2/field/InputField';
 import type { InputFieldProps } from '../../components/v2/field/InputField';
+import TextAreaTwo from '../../components/v2/input/TextArea';
 
 export const useMnemonicInputValidation = (
     mnemonic: string,

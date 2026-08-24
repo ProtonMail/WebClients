@@ -1,9 +1,8 @@
 import { useRef } from 'react';
 
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
-import useAuthentication from '@proton/components/hooks/useAuthentication';
-import useConfig from '@proton/components/hooks/useConfig';
-
+import useAuthentication from '../../../hooks/useAuthentication';
+import useConfig from '../../../hooks/useConfig';
+import { useTheme } from '../../themes/ThemeProvider';
 import { getImageSize, getSenderImageUrl } from '../helpers/senderImage';
 
 interface Props {

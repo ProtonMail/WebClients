@@ -1,7 +1,7 @@
 import { useSubscription } from '@proton/account/subscription/hooks';
-import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
 import { isPaidSubscription } from '@proton/payments/core/type-guards';
 
+import { useModalTwoPromise } from '../../../../components/modalTwo/useModalTwo';
 import PassLaunchOfferDowngradeModal from '../../PassLaunchOfferDowngradeModal';
 import type { CancellationStep, CancellationStepConfig } from './types';
 

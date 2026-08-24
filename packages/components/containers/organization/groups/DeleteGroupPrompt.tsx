@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
-import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import type { Group } from '@proton/shared/lib/interfaces';
 
+import type { ModalStateProps } from '../../../components/modalTwo/useModalState';
 import GroupItemActionPrompt from './GroupItemActionPrompt';
 
 interface Props {

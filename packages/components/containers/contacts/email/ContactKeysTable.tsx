@@ -6,13 +6,6 @@ import { CryptoProxy } from '@protontech/crypto';
 import { format, isValid } from 'date-fns';
 import { c } from 'ttag';
 
-import { Badge } from '@proton/components/components/badge/Badge';
-import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
-import ContactKeyWarningIcon from '@proton/components/components/icon/ContactKeyWarningIcon';
-import Table from '@proton/components/components/table/Table';
-import TableBody from '@proton/components/components/table/TableBody';
-import TableRow from '@proton/components/components/table/TableRow';
-import KeyVersionBadge from '@proton/components/containers/keys/KeyVersionBadge';
 import { API_KEY_SOURCE } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -23,6 +16,14 @@ import { getVerifyingKeys } from '@proton/shared/lib/keys/publicKeys';
 import clsx from '@proton/utils/clsx';
 import move from '@proton/utils/move';
 import uniqueBy from '@proton/utils/uniqueBy';
+
+import { Badge } from '../../../components/badge/Badge';
+import DropdownActions from '../../../components/dropdown/DropdownActions';
+import ContactKeyWarningIcon from '../../../components/icon/ContactKeyWarningIcon';
+import Table from '../../../components/table/Table';
+import TableBody from '../../../components/table/TableBody';
+import TableRow from '../../../components/table/TableRow';
+import KeyVersionBadge from '../../keys/KeyVersionBadge';
 
 interface Props {
     model: ContactPublicKeyModelWithApiKeySource;

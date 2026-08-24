@@ -1,14 +1,14 @@
 import { c, msgid } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
-import Alert from '@proton/components/components/alert/Alert';
-import AttachedFile from '@proton/components/components/attachedFile/AttachedFile';
 import { IMPORT_CALENDAR_UNSUPPORTED_FAQ_URL } from '@proton/shared/lib/calendar/constants';
 import { extractTotals } from '@proton/shared/lib/calendar/import/import';
 import { CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { ImportCalendarModel } from '@proton/shared/lib/interfaces/calendar/Import';
 
+import Alert from '../../../components/alert/Alert';
+import AttachedFile from '../../../components/attachedFile/AttachedFile';
 import ErrorDetails from './ErrorDetails';
 
 interface Props {

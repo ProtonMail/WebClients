@@ -1,9 +1,8 @@
-import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
-import { componentsHookRenderer } from '@proton/components/containers/contacts/tests/render';
-
+import { useModalTwoPromise } from '../../../../../components/modalTwo/useModalTwo';
+import { componentsHookRenderer } from '../../../../contacts/tests/render';
 import { useCalendarDowngradeStep } from '../useCalendarDowngradeStep';
 
-jest.mock('@proton/components/components/modalTwo/useModalTwo');
+jest.mock('../../../../../components/modalTwo/useModalTwo');
 
 const mockShowModal = jest.fn();
 

@@ -1,10 +1,11 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Prompt from '@proton/components/components/prompt/Prompt';
-import type { PromptProps } from '@proton/components/components/prompt/Prompt';
 import useLoading from '@proton/hooks/useLoading';
 import noop from '@proton/utils/noop';
+
+import Prompt from '../../../../components/prompt/Prompt';
+import type { PromptProps } from '../../../../components/prompt/Prompt';
 
 interface Props extends Omit<PromptProps, 'title' | 'buttons' | 'children'> {
     onConfirm: () => Promise<void>;

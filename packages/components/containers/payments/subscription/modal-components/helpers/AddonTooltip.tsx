@@ -1,8 +1,9 @@
-import Info from '@proton/components/components/link/Info';
-import Price from '@proton/components/components/price/Price';
 import { getAddonConfigByName } from '@proton/payments/core/addon/addons';
 import type { ADDON_NAMES } from '@proton/payments/core/constants';
 import type { Currency } from '@proton/payments/core/interface';
+
+import Info from '../../../../../components/link/Info';
+import Price from '../../../../../components/price/Price';
 
 export const AddonTooltip = ({
     addonName,

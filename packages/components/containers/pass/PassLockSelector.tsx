@@ -2,10 +2,11 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import Option from '@proton/components/components/option/Option';
-import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import { TTL_LABELS, TTL_OPTIONS } from '@proton/pass/components/Lock/LockTTLField';
+
+import Option from '../../components/option/Option';
+import SelectTwo from '../../components/selectTwo/SelectTwo';
+import InputFieldTwo from '../../components/v2/field/InputField';
 
 type Props = {
     value?: number;

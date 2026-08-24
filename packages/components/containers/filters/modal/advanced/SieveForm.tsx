@@ -1,8 +1,7 @@
 import { Suspense, lazy, useMemo } from 'react';
 
-import Loader from '@proton/components/components/loader/Loader';
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
-
+import Loader from '../../../../components/loader/Loader';
+import { useTheme } from '../../../themes/ThemeProvider';
 import type { AdvancedSimpleFilterModalModel } from '../../interfaces';
 
 const LazySieveEditor = lazy(() => import(/* webpackChunkName: "SieveEditor" */ './SieveEditor'));

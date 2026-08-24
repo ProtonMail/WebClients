@@ -4,12 +4,12 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Autocomplete from '@proton/components/components/autocomplete/Autocomplete';
-import Option from '@proton/components/components/option/Option';
-import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 import type { RetentionRuleProduct, RetentionRuleScopeType } from '@proton/shared/lib/interfaces/RetentionRule';
 
+import Autocomplete from '../../../components/autocomplete/Autocomplete';
+import Option from '../../../components/option/Option';
+import SelectTwo from '../../../components/selectTwo/SelectTwo';
 import { PRODUCT_FILTER_OPTIONS } from './constants';
 import type { RetentionRuleScopeFormData } from './types';
 import { type AutocompleteOption, useRetentionRuleScopeSuggestion } from './useRetentionRuleScopeSuggestion';

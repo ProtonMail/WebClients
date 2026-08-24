@@ -2,24 +2,25 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import Modal from '@proton/components/components/modalTwo/Modal';
-import ModalContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import type { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
+import type { ModalProps } from '../../../components/modalTwo/Modal';
+import Modal from '../../../components/modalTwo/Modal';
+import ModalContent from '../../../components/modalTwo/ModalContent';
+import ModalHeader from '../../../components/modalTwo/ModalHeader';
+import useNotifications from '../../../hooks/useNotifications';
+import { useTheme } from '../../themes/ThemeProvider';
 import HumanVerificationForm from './HumanVerificationForm';
 import { isVerifyAddressOwnership } from './helper';
 import { type HumanVerificationResult, HumanVerificationSteps, type VerificationModel } from './interface';
 
-export interface HumanVerificationModalProps<T extends { humanVerificationResult?: HumanVerificationResult }>
-    extends ModalProps {
+export interface HumanVerificationModalProps<
+    T extends { humanVerificationResult?: HumanVerificationResult },
+> extends ModalProps {
     title?: string;
     token: string;
     methods: HumanVerificationMethodType[];

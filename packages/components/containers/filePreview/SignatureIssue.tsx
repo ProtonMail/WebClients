@@ -3,8 +3,9 @@ import type { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { IcLockExclamationFilled } from '@proton/icons/icons/IcLockExclamationFilled';
+
+import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
 
 const SignatureIssue = ({
     signatureConfirmation,

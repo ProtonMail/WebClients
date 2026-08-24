@@ -5,16 +5,16 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Input from '@proton/components/components/input/Input';
-import Radio from '@proton/components/components/input/Radio';
-import Option from '@proton/components/components/option/Option';
-import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 import clsx from '@proton/utils/clsx';
 
+import Input from '../../../components/input/Input';
+import Radio from '../../../components/input/Radio';
+import Option from '../../../components/option/Option';
+import SelectTwo from '../../../components/selectTwo/SelectTwo';
+import useNotifications from '../../../hooks/useNotifications';
 import { COMPARATORS, TYPES, getComparatorLabels, getConditionTypeLabels } from '../constants';
 import type { Condition } from '../interfaces';
 import { ConditionComparator, ConditionType, FilterStatement } from '../interfaces';

@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-import Prompt from '@proton/components/components/prompt/Prompt';
+
+import useModalState from '../../components/modalTwo/useModalState';
+import Prompt from '../../components/prompt/Prompt';
 
 interface Props {
     onWipe: () => Promise<void>;

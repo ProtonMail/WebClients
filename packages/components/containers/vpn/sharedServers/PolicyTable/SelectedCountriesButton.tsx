@@ -3,15 +3,15 @@ import React, { useMemo, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
-import Dropdown from '@proton/components/components/dropdown/Dropdown';
-import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
-import Table from '@proton/components/components/table/Table';
-import TableBody from '@proton/components/components/table/TableBody';
-import TableCell from '@proton/components/components/table/TableCell';
-import TableRow from '@proton/components/components/table/TableRow';
-import Tabs from '@proton/components/components/tabs/Tabs';
 import { IcEarth } from '@proton/icons/icons/IcEarth';
 
+import Dropdown from '../../../../components/dropdown/Dropdown';
+import DropdownButton from '../../../../components/dropdown/DropdownButton';
+import Table from '../../../../components/table/Table';
+import TableBody from '../../../../components/table/TableBody';
+import TableCell from '../../../../components/table/TableCell';
+import TableRow from '../../../../components/table/TableRow';
+import Tabs from '../../../../components/tabs/Tabs';
 import { CountryFlagAndName } from '../../gateways/CountryFlagAndName';
 import type { Location, VpnLocationFilterPolicyLocal } from '../constants';
 

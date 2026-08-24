@@ -1,5 +1,4 @@
 import { useUser } from '@proton/account/user/hooks';
-import { renderWithProviders } from '@proton/components/containers/contacts/tests/render';
 import type { Address } from '@proton/shared/lib/interfaces';
 import { ForwardingState, ForwardingType } from '@proton/shared/lib/interfaces';
 import { applyHOCs } from '@proton/testing/lib/context/hocs/helpers';
@@ -10,6 +9,7 @@ import { withConfig } from '@proton/testing/lib/context/hocs/with-config';
 import { withEventManager } from '@proton/testing/lib/context/hocs/with-event-manager';
 import { withNotifications } from '@proton/testing/lib/context/hocs/with-notifications';
 
+import { renderWithProviders } from '../contacts/tests/render';
 import IncomingForwardTable from './IncomingForwardTable';
 
 jest.mock('@proton/account/user/hooks');

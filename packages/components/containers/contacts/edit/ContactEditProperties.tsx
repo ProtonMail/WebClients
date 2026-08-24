@@ -4,8 +4,6 @@ import { useSortable } from '@dnd-kit/react/sortable';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { SortableList } from '@proton/components/components/dnd/SortableList';
-import Icon from '@proton/components/components/icon/Icon';
 import { IcTextAlignJustify } from '@proton/icons/icons/IcTextAlignJustify';
 import type { IconName } from '@proton/icons/types';
 import { OTHER_INFORMATION_FIELDS } from '@proton/shared/lib/contacts/constants';
@@ -22,6 +20,8 @@ import type { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/
 import isTruthy from '@proton/utils/isTruthy';
 import move from '@proton/utils/move';
 
+import { SortableList } from '../../../components/dnd/SortableList';
+import Icon from '../../../components/icon/Icon';
 import type { ContactGroupEditProps } from '../group/ContactGroupEditModal';
 import type { ContactGroupLimitReachedProps } from '../modals/ContactGroupLimitReachedModal';
 import type { ContactImageProps } from '../modals/ContactImageModal';

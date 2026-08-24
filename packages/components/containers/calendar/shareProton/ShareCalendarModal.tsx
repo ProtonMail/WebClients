@@ -8,21 +8,6 @@ import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import { useGetDecryptedPassphraseAndCalendarKeys } from '@proton/calendar/calendarBootstrap/keys';
-import AddressesInput, { AddressesInputItem } from '@proton/components/components/addressesInput/AddressesInput';
-import RadioGroup from '@proton/components/components/input/RadioGroup';
-import Loader from '@proton/components/components/loader/Loader';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import Modal from '@proton/components/components/modalTwo/Modal';
-import ModalContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
-import AddressesAutocompleteTwo from '@proton/components/components/v2/addressesAutocomplete/AddressesAutocomplete';
-import { InputField } from '@proton/components/components/v2/field/InputField';
-import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
-import { useKeyTransparencyContext } from '@proton/components/containers/keyTransparency/useKeyTransparencyContext';
-import useApi from '@proton/components/hooks/useApi';
-import useGetEncryptionPreferences from '@proton/components/hooks/useGetEncryptionPreferences';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
 import { IcLockCheckFilled } from '@proton/icons/icons/IcLockCheckFilled';
@@ -47,6 +32,22 @@ import { EncryptionPreferencesError } from '@proton/shared/lib/mail/encryptionPr
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
+
+import AddressesInput, { AddressesInputItem } from '../../../components/addressesInput/AddressesInput';
+import RadioGroup from '../../../components/input/RadioGroup';
+import Loader from '../../../components/loader/Loader';
+import type { ModalProps } from '../../../components/modalTwo/Modal';
+import Modal from '../../../components/modalTwo/Modal';
+import ModalContent from '../../../components/modalTwo/ModalContent';
+import ModalFooter from '../../../components/modalTwo/ModalFooter';
+import ModalHeader from '../../../components/modalTwo/ModalHeader';
+import AddressesAutocompleteTwo from '../../../components/v2/addressesAutocomplete/AddressesAutocomplete';
+import { InputField } from '../../../components/v2/field/InputField';
+import useApi from '../../../hooks/useApi';
+import useGetEncryptionPreferences from '../../../hooks/useGetEncryptionPreferences';
+import useNotifications from '../../../hooks/useNotifications';
+import { useContactEmailsCache } from '../../contacts/ContactEmailsProvider';
+import { useKeyTransparencyContext } from '../../keyTransparency/useKeyTransparencyContext';
 
 export enum VALIDATION_ERROR_TYPES {
     INVALID_EMAIL,

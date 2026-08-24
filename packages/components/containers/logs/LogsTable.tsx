@@ -1,19 +1,19 @@
 import { c } from 'ttag';
 
-import Alert from '@proton/components/components/alert/Alert';
-import Info from '@proton/components/components/link/Info';
-import Table from '@proton/components/components/table/Table';
-import TableBody from '@proton/components/components/table/TableBody';
-import TableCell from '@proton/components/components/table/TableCell';
-import TableHeader from '@proton/components/components/table/TableHeader';
-import TableRow from '@proton/components/components/table/TableRow';
-import Time from '@proton/components/components/time/Time';
 import type { AuthLog } from '@proton/shared/lib/authlog';
 import { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/constants';
 import { SETTINGS_LOG_AUTH_STATE } from '@proton/shared/lib/interfaces';
 import emptySearchSvg from '@proton/styles/assets/img/illustrations/empty-search.svg';
 import isTruthy from '@proton/utils/isTruthy';
 
+import Alert from '../../components/alert/Alert';
+import Info from '../../components/link/Info';
+import Table from '../../components/table/Table';
+import TableBody from '../../components/table/TableBody';
+import TableCell from '../../components/table/TableCell';
+import TableHeader from '../../components/table/TableHeader';
+import TableRow from '../../components/table/TableRow';
+import Time from '../../components/time/Time';
 import { GenericErrorDisplay } from '../error/GenericError';
 import AppVersionCell from './AppVersionCell';
 import EventCell from './EventCell';

@@ -1,10 +1,11 @@
 import { c } from 'ttag';
 
 import { selectRecoveryFileData } from '@proton/account/recovery/recoveryFile';
-import SettingsNavItem from '@proton/components/containers/layout/SettingsNavItem';
-import { StatusBadge, StatusBadgeStatus } from '@proton/components/containers/layout/StatusBadge';
 import { IcRecoveryFile } from '@proton/icons/icons/IcRecoveryFile';
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
+
+import SettingsNavItem from '../../layout/SettingsNavItem';
+import { StatusBadge, StatusBadgeStatus } from '../../layout/StatusBadge';
 
 interface Props {
     to: string;

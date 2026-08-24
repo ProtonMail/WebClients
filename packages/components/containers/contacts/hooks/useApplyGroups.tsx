@@ -2,18 +2,18 @@ import { useCallback } from 'react';
 
 import { c } from 'ttag';
 
-import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
-import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
-import useNotifications from '@proton/components/hooks/useNotifications';
-import { useContactGroups } from '@proton/mail/store/labels/hooks';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import { useContacts } from '@proton/mail/store/contacts/hooks';
+import { useContactGroups } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { labelContactEmails, unLabelContactEmails } from '@proton/shared/lib/api/contacts';
 import { hasReachedContactGroupMembersLimit } from '@proton/shared/lib/contacts/helpers/contactGroup';
 import type { Contact, ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
+import { useModalTwoStatic } from '../../../components/modalTwo/useModalTwo';
+import useApi from '../../../hooks/useApi';
+import useEventManager from '../../../hooks/useEventManager';
+import useNotifications from '../../../hooks/useNotifications';
 import ContactGroupLimitReachedModal from '../modals/ContactGroupLimitReachedModal';
 import type { SelectEmailsProps } from '../modals/SelectEmailsModal';
 

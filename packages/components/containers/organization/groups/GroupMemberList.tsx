@@ -2,9 +2,9 @@ import { useMemo } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import Loader from '@proton/components/components/loader/Loader';
 import type { Group, GroupMember } from '@proton/shared/lib/interfaces';
 
+import Loader from '../../../components/loader/Loader';
 import { GroupMemberItem } from './GroupMemberItem';
 import type { GroupsManagementReturn } from './types';
 

@@ -4,9 +4,6 @@ import { format } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Pagination } from '@proton/components/components/pagination';
-import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
-import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLoading from '@proton/hooks/useLoading';
 import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import { usePassBridge } from '@proton/pass/lib/bridge/PassBridgeProvider';
@@ -16,6 +13,9 @@ import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
+import { Pagination } from '../../../components/pagination/index';
+import useErrorHandler from '../../../hooks/useErrorHandler';
+import SettingsSectionWide from '../../account/SettingsSectionWide';
 import { PromotionBanner } from '../../banner/PromotionBanner';
 import SubSettingsSection from '../../layout/SubSettingsSection';
 import { useSubscriptionModal } from '../../payments/subscription/SubscriptionModalProvider';

@@ -1,11 +1,12 @@
 import { c } from 'ttag';
 
 import type { Input } from '@proton/atoms/Input/Input';
-import Copy from '@proton/components/components/button/Copy';
-import type { InputFieldProps } from '@proton/components/components/v2/field/InputField';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import clsx from '@proton/utils/clsx';
+
+import Copy from '../../../components/button/Copy';
+import type { InputFieldProps } from '../../../components/v2/field/InputField';
+import InputFieldTwo from '../../../components/v2/field/InputField';
+import useNotifications from '../../../hooks/useNotifications';
 
 interface Props extends Omit<InputFieldProps<typeof Input>, 'readonly' | 'unstyled'> {}
 

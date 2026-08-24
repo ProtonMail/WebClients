@@ -3,10 +3,11 @@ import { c, msgid } from 'ttag';
 import { resumeMemberRoleAssignment } from '@proton/account/members/actions';
 import { useMembers } from '@proton/account/members/hooks';
 import { selectMembersWithPausedRoleAssignment } from '@proton/account/members/selectors';
-import { useResumeRoleAssignment } from '@proton/components/containers/members/rolesAndPermissions/useResumeRoleAssignment';
-import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { useDispatch, useSelector } from '@proton/redux-shared-store/sharedProvider';
 import type { EnhancedMember } from '@proton/shared/lib/interfaces';
+
+import { useSilentApi } from '../../../hooks/useSilentApi';
+import { useResumeRoleAssignment } from '../rolesAndPermissions/useResumeRoleAssignment';
 
 export const useMemberRoleAssignmentRetry = () => {
     const dispatch = useDispatch();

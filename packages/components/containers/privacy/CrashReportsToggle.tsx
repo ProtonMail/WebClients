@@ -2,15 +2,16 @@ import { c } from 'ttag';
 
 import { userSettingsActions } from '@proton/account/userSettings';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import Toggle from '@proton/components/components/toggle/Toggle';
-import useApi from '@proton/components/hooks/useApi';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateCrashReports } from '@proton/shared/lib/api/settings';
 import { setSentryEnabled } from '@proton/shared/lib/helpers/sentry';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
+
+import Toggle from '../../components/toggle/Toggle';
+import useApi from '../../hooks/useApi';
+import useNotifications from '../../hooks/useNotifications';
 
 interface Props {
     id?: string;

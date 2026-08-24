@@ -1,4 +1,3 @@
-import useApi from '@proton/components/hooks/useApi';
 import type { ADDON_NAMES, PLANS } from '@proton/payments/core/constants';
 import type { Cycle, PaymentMethodFlow } from '@proton/payments/core/interface';
 import { type PaymentProcessorType, getSystemByHookType } from '@proton/payments/core/payment-processors/interface';
@@ -6,6 +5,8 @@ import { TelemetryMeasurementGroups, TelemetryPaymentsEvents } from '@proton/sha
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import type { Api } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
+
+import useApi from '../../hooks/useApi';
 
 interface Overrides {
     plan?: PLANS | undefined;

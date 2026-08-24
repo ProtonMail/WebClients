@@ -4,12 +4,6 @@ import { setupUser } from '@proton/account/addresses/actions';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import Loader from '@proton/components/components/loader/Loader';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
-import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
-import AuthModal, { type AuthModalResult } from '@proton/components/containers/password/AuthModal';
-import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLoading from '@proton/hooks/useLoading';
 import { getHasMemberCapablePlan, hasDuo, hasPassFamily } from '@proton/payments/core/subscription/helpers';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
@@ -19,6 +13,12 @@ import { DRIVE_APP_NAME, MAIL_APP_NAME, ORGANIZATION_STATE } from '@proton/share
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Organization } from '@proton/shared/lib/interfaces';
 
+import Loader from '../../components/loader/Loader';
+import useModalState from '../../components/modalTwo/useModalState';
+import { useModalTwoPromise } from '../../components/modalTwo/useModalTwo';
+import useErrorHandler from '../../hooks/useErrorHandler';
+import SettingsParagraph from '../account/SettingsParagraph';
+import AuthModal, { type AuthModalResult } from '../password/AuthModal';
 import OrganizationSectionUpsell from './OrganizationSectionUpsell';
 import SetupOrganizationModal from './SetupOrganizationModal';
 

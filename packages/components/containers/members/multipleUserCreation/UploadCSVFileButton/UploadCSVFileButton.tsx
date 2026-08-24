@@ -7,11 +7,11 @@ import { useUserPermissions } from '@proton/account/userPermissions/hooks';
 import type { ButtonProps } from '@proton/atoms/Button/Button';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import FileInput from '@proton/components/components/input/FileInput';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { MIN_PASSWORD_LENGTH } from '@proton/shared/lib/constants';
 
+import FileInput from '../../../../components/input/FileInput';
+import useModalState from '../../../../components/modalTwo/useModalState';
+import useNotifications from '../../../../hooks/useNotifications';
 import type { CsvConfig } from '../csv';
 import { downloadSampleCSV, parseMultiUserCsv } from '../csv';
 import CsvConversionError, { CSV_CONVERSION_ERROR_TYPE } from '../errors/CsvConversionError';

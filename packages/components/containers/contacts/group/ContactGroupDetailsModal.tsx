@@ -3,8 +3,6 @@ import { c, msgid } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import { IcArrowUpFromSquare } from '@proton/icons/icons/IcArrowUpFromSquare';
 import { IcPen } from '@proton/icons/icons/IcPen';
 import { IcPenSquare } from '@proton/icons/icons/IcPenSquare';
@@ -15,6 +13,8 @@ import { useContactGroups } from '@proton/mail/store/labels/hooks';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
+import type { ModalProps } from '../../../components/modalTwo/Modal';
+import ModalTwo from '../../../components/modalTwo/Modal';
 import ModalContent from '../../../components/modalTwo/ModalContent';
 import ModalFooter from '../../../components/modalTwo/ModalFooter';
 import ModalHeader from '../../../components/modalTwo/ModalHeader';

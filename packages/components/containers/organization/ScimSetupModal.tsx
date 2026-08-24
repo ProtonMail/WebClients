@@ -4,11 +4,6 @@ import { c, msgid } from 'ttag';
 
 import { Avatar } from '@proton/atoms/Avatar/Avatar';
 import { Button } from '@proton/atoms/Button/Button';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
@@ -21,6 +16,11 @@ import type { Group, MemberReadyForManualUnprivatization } from '@proton/shared/
 import type { GroupMember } from '@proton/shared/lib/interfaces/GroupMember';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import type { ModalProps } from '../../components/modalTwo/Modal';
+import ModalTwo from '../../components/modalTwo/Modal';
+import ModalTwoContent from '../../components/modalTwo/ModalContent';
+import ModalTwoFooter from '../../components/modalTwo/ModalFooter';
+import ModalTwoHeader from '../../components/modalTwo/ModalHeader';
 import GroupIcon from './groups/GroupIcon';
 
 import './ScimSetupModal.scss';

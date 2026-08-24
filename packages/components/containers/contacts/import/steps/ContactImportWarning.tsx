@@ -3,14 +3,14 @@ import type { Dispatch, FormEvent, SetStateAction } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Alert from '@proton/components/components/alert/Alert';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { CONTACTS_APP_NAME } from '@proton/shared/lib/constants';
 import type { ImportContactsModel } from '@proton/shared/lib/interfaces/contacts/Import';
 import { IMPORT_STEPS } from '@proton/shared/lib/interfaces/contacts/Import';
 
+import Alert from '../../../../components/alert/Alert';
+import ModalTwoContent from '../../../../components/modalTwo/ModalContent';
+import ModalTwoFooter from '../../../../components/modalTwo/ModalFooter';
+import ModalTwoHeader from '../../../../components/modalTwo/ModalHeader';
 import ErrorDetails from './ContactImportWarningErrorDetails';
 
 interface Props {

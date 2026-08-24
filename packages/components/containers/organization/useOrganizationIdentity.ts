@@ -4,12 +4,13 @@ import { c } from 'ttag';
 
 import { getKTUserContext } from '@proton/account/kt/actions';
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
-import useApi from '@proton/components/hooks/useApi';
 import type { IconName } from '@proton/icons/types';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import type { Unwrap } from '@proton/shared/lib/interfaces';
 import { OrganizationSignatureState, validateOrganizationSignatureHelper } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
+
+import useApi from '../../hooks/useApi';
 
 export interface OrganizationIdentityState {
     state: 'loading' | 'complete';

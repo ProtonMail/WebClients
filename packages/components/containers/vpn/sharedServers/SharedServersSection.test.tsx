@@ -13,11 +13,9 @@ import SharedServersSection from './SharedServersSection';
 import { SharedServersBuilder } from './SharedServersSection.test.builder';
 import useSharedServersHook from './useSharedServers';
 
-jest.mock('@proton/components/hooks/useNotifications', () =>
-    jest.fn().mockReturnValue({ createNotification: jest.fn() })
-);
+jest.mock('../../../hooks/useNotifications', () => jest.fn().mockReturnValue({ createNotification: jest.fn() }));
 
-jest.mock('@proton/components/containers/vpn/sharedServers/useSharedServers');
+jest.mock('./useSharedServers');
 
 const useSharedServersMock = useSharedServersHook as jest.Mock;
 const vpnSubscription = buildSubscription();

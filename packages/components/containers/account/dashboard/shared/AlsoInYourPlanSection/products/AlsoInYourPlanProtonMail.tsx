@@ -2,15 +2,15 @@ import { useContext } from 'react';
 
 import { c } from 'ttag';
 
-import MailLogo from '@proton/components/components/logo/MailLogo';
+import { APPS, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { goToPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
+
+import MailLogo from '../../../../../../components/logo/MailLogo';
 import {
     getDarkWebMonitoringFeature,
     getNAddressesFeature,
     getNDomainsFeature,
-} from '@proton/components/containers/payments/features/mail';
-import { APPS, MAIL_APP_NAME } from '@proton/shared/lib/constants';
-import { goToPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
-
+} from '../../../../../payments/features/mail';
 import { AlsoInYourPlanSectionContext } from '../AlsoInYourPlanSection';
 import AlsoInYourPlanSectionCard from '../AlsoInYourPlanSectionCard';
 import mail from '../illustrations/mail.jpg';

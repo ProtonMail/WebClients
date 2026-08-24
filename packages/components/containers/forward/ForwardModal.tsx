@@ -5,22 +5,8 @@ import { c } from 'ttag';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
-import Form from '@proton/components/components/form/Form';
-import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
-import LoadingTextStepper from '@proton/components/components/loader/LoadingTextStepper';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import Option from '@proton/components/components/option/Option';
-import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import useFormErrors from '@proton/components/components/v2/useFormErrors';
-import { FilterStatement } from '@proton/components/containers/filters/interfaces';
-import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
+import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import {
     type ForwardModalKeyState,
@@ -38,6 +24,20 @@ import forwardingSetupIllustration from '@proton/styles/assets/img/illustrations
 import forwardingSuccessIllustration from '@proton/styles/assets/img/illustrations/forward-success-confirmation.svg';
 import uniqueBy from '@proton/utils/uniqueBy';
 
+import Form from '../../components/form/Form';
+import LoadingTextStepper from '../../components/loader/LoadingTextStepper';
+import type { ModalProps } from '../../components/modalTwo/Modal';
+import ModalTwo from '../../components/modalTwo/Modal';
+import ModalTwoContent from '../../components/modalTwo/ModalContent';
+import ModalTwoFooter from '../../components/modalTwo/ModalFooter';
+import ModalTwoHeader from '../../components/modalTwo/ModalHeader';
+import Option from '../../components/option/Option';
+import SelectTwo from '../../components/selectTwo/SelectTwo';
+import InputFieldTwo from '../../components/v2/field/InputField';
+import useFormErrors from '../../components/v2/useFormErrors';
+import useErrorHandler from '../../hooks/useErrorHandler';
+import useNotifications from '../../hooks/useNotifications';
+import { FilterStatement } from '../filters/interfaces';
 import ForwardConditions from './ForwardConditions';
 import { fixupPrimaryKeyV6, fixupUnsupportedPrimaryKeyV4, initForwardingSetup } from './ForwardModalActions';
 import { type ForwardModalState, ForwardModalStep } from './ForwardModalInterface';

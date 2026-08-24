@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
-import useModalState from '@proton/components/components/modalTwo/useModalState';
 import type { Group, MemberReadyForManualUnprivatization } from '@proton/shared/lib/interfaces';
 import type { GroupMember } from '@proton/shared/lib/interfaces/GroupMember';
 
+import useModalState from '../../components/modalTwo/useModalState';
 import ScimSetupBanner from './ScimSetupBanner';
 import ScimSetupModal from './ScimSetupModal';
 import type { PendingGroupItem, PendingUserItem } from './useScimSetupData';

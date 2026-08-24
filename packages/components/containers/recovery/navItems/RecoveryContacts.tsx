@@ -1,11 +1,11 @@
 import { c, msgid } from 'ttag';
 
 import { useOutgoingItems } from '@proton/account/delegatedAccess/shared/outgoing/useOutgoingItems';
-import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
-import SettingsNavItem from '@proton/components/containers/layout/SettingsNavItem';
-import { StatusBadge, StatusBadgeStatus } from '@proton/components/containers/layout/StatusBadge';
 import { IcContactAssistedRecovery } from '@proton/icons/icons/IcContactAssistedRecovery';
 
+import SkeletonLoader from '../../../components/skeletonLoader/SkeletonLoader';
+import SettingsNavItem from '../../layout/SettingsNavItem';
+import { StatusBadge, StatusBadgeStatus } from '../../layout/StatusBadge';
 import { LastChanged } from '../LastChanged';
 import { NavItemStatus } from './NavItemStatus';
 

@@ -1,11 +1,8 @@
 import { differenceInDays, startOfDay } from 'date-fns';
 
-import {
-    FIRST_REMINDER_DAYS,
-    SECOND_REMINDER_DAYS,
-    THIRD_REMINDER_DAYS,
-} from '@proton/components/containers/desktop/freeTrial/constants';
 import type { InboxDesktopFreeTrialReminders } from '@proton/shared/lib/desktop/desktopTypes';
+
+import { FIRST_REMINDER_DAYS, SECOND_REMINDER_DAYS, THIRD_REMINDER_DAYS } from './constants';
 
 export const shouldDisplay = (
     today: Date,

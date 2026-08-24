@@ -5,27 +5,27 @@ import { useSortable } from '@dnd-kit/react/sortable';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import type { DropdownActionProps } from '@proton/components/components/dropdown/DropdownActions';
-import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-import { Handle } from '@proton/components/components/table/Handle';
-import TableCell from '@proton/components/components/table/TableCell';
-import TableRow from '@proton/components/components/table/TableRow';
-import Toggle from '@proton/components/components/toggle/Toggle';
-import FiltersUpsellModal from '@proton/components/components/upsell/modals/FiltersUpsellModal';
-import { useFilterDispatch } from '@proton/components/containers/filters/useFilterDispatch';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { deleteFilter, enableFilter } from '@proton/mail/store/filters/actions';
 import { FILTER_STATUS } from '@proton/shared/lib/constants';
 import { hasReachedFiltersLimit } from '@proton/shared/lib/helpers/filters';
 import noop from '@proton/utils/noop';
 
+import type { DropdownActionProps } from '../../components/dropdown/DropdownActions';
+import DropdownActions from '../../components/dropdown/DropdownActions';
+import useModalState from '../../components/modalTwo/useModalState';
+import { Handle } from '../../components/table/Handle';
+import TableCell from '../../components/table/TableCell';
+import TableRow from '../../components/table/TableRow';
+import Toggle from '../../components/toggle/Toggle';
+import FiltersUpsellModal from '../../components/upsell/modals/FiltersUpsellModal';
+import useNotifications from '../../hooks/useNotifications';
 import FilterWarningModal from './FilterWarningModal';
 import type { Filter } from './interfaces';
 import DeleteFilterModal from './modal/DeleteFilterModal';
 import FilterModal from './modal/FilterModal';
 import AdvancedFilterModal from './modal/advanced/AdvancedFilterModal';
+import { useFilterDispatch } from './useFilterDispatch';
 import { isSieve } from './utils';
 
 interface Props {
