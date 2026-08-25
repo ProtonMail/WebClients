@@ -3025,6 +3025,9 @@
       "Authentication error.": [
         "Erreur d'authentification"
       ],
+      "Because this document was in a shared folder, only the folder owner can restore it": [
+        "Ce document se trouvant dans un dossier partagé, seul le propriétaire du dossier peut le restaurer."
+      ],
       "Calendar limit reached": [
         "Le nombre maximum de calendriers a été atteint."
       ],
@@ -3164,9 +3167,6 @@
       ],
       "Failed to load recent documents": [
         "Les documents récents n'ont pas pu être chargés"
-      ],
-      "Failed to load subscription data. Please try again later.": [
-        "Les données d'abonnement n'ont pas pu être chargées. Veuillez réessayer plus tard."
       ],
       "Failed to open to contact": [
         "Le contact n'a pas pu être ouvert."
@@ -4883,9 +4883,6 @@
       ],
       "Decrypting your document": [
         "Déchiffrement de votre document en cours"
-      ],
-      "Details": [
-        "Informations"
       ],
       "Display word count": [
         "Afficher le nombre de mots"

@@ -6936,6 +6936,9 @@
         "${ currentProgress } sur ${ totalProgress }",
         "${ currentProgress } sur ${ totalProgress }"
       ],
+      "${ dateString } at ${ formattedTime }": [
+        "${ dateString } à ${ formattedTime }"
+      ],
       "${ elementsCount } conversation will be labelled as:": [
         "${ elementsCount } conversation sera labellisée",
         "${ elementsCount } conversations seront labellisées"
@@ -7606,9 +7609,6 @@
       ],
       "Default email application": [
         "Application de messagerie par défaut"
-      ],
-      "Details": [
-        "Informations"
       ],
       "Detection takes place on your device, so no data from your emails is sent to our servers.": [
         "La détection se passe sur votre appareil : aucune donnée de vos e-mails n'est envoyée à nos serveurs."
@@ -8661,6 +8661,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Votre compte bénéficie de fonctionnalités supplémentaires parce que vous êtes un utilisateur fidèle."
+      ],
+      "Snooze emails": [
+        "Mettre en attente les e-mails"
       ],
       "Snooze messages for later so they are top of your inbox when you want": [
         "Mettez vos messages en attente pour les retrouver en tête de votre boîte de réception au moment voulu."
@@ -9997,6 +10000,9 @@
       "Archive": [
         "Archive"
       ],
+      "At": [
+        "À"
+      ],
       "Attach screenshot(s)": [
         "Joindre une ou plusieurs captures d’écran"
       ],
@@ -10605,6 +10611,9 @@
       ],
       "Remove Zoom video conference": [
         "Retirer la vidéoconférence Zoom"
+      ],
+      "Return on": [
+        "Retour le"
       ],
       "Reveal password": [
         "Afficher le mot de passe"
@@ -14527,6 +14536,12 @@
         "Privé, rapide et organisé"
       ]
     },
+    "Snooze info": {
+      "${ count } email → ${ wakeTime }": [
+        "${ count } message → ${ wakeTime }",
+        "${ count } messages → ${ wakeTime }"
+      ]
+    },
     "Snooze message": {
       "Snooze Message": [
         "Mise en attente du message"
@@ -16834,6 +16849,9 @@
       ],
       "Snooze": [
         "Mise en attente"
+      ],
+      "Snooze emails": [
+        "Mettre en attente les e-mails"
       ],
       "Snooze message": [
         "Mise en attente d'un message"

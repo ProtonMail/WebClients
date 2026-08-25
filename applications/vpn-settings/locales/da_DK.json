@@ -4562,6 +4562,9 @@
       "Add": [
         "Tilføj"
       ],
+      "Add 1 more": [
+        "Tilføj 1 mere"
+      ],
       "Add emergency contact": [
         "Tilføj nødkontakt"
       ],
@@ -4660,6 +4663,9 @@
       ],
       "Enable auto-renew": [
         "Aktivér automatisk fornyelse"
+      ],
+      "Explore plans": [
+        "Udforsk abonnementer"
       ],
       "For ${ email }": [
         "Til ${ email }"
@@ -10954,6 +10960,9 @@
       "Enter code": [
         "Indtast kode"
       ],
+      "Enter current password": [
+        "Indtast nuværende adgangskode"
+      ],
       "Enter name or email address": [
         "Tilføj navn eller e-mailadresse"
       ],
@@ -11577,6 +11586,9 @@
       ],
       "Recovery phone number": [
         "Telefonnummer til gendannelse"
+      ],
+      "Set recovery phone number": [
+        "Angiv telefonnummer til gendannelse"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13559,6 +13571,16 @@
         "Gendannelsestjekliste"
       ]
     },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Prøv den nu"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Du har nu adgang til den nye ${ CALENDAR_APP_NAME }. ${ link }"
+      ]
+    },
     "Notification": {
       "${ reason } has been disabled": [
         "${ reason } er blevet deaktiveret"
@@ -15143,6 +15165,9 @@
       "Recoverability": [
         "Gendannelighed"
       ],
+      "Recovery score: ${ score }": [
+        "Gendannelses-score: ${ score }"
+      ],
       "Require verified password reset option (email or SMS)": [
         "Kræv bekræftet metode til nulstilling af adgangskode (e-mail eller SMS)"
       ],
@@ -15609,8 +15634,289 @@
       ]
     },
     "Safety review": {
+      "Code sent to ${ boldValue }": [
+        "Kode sendt til ${ boldValue }"
+      ],
+      "Invalid code": [
+        "Ugyldig kode"
+      ],
       "Review account safety": [
         "Gennemgå kontoens sikkerhed"
+      ],
+      "Safety review": [
+        "Sikkerhedsgennemgang"
+      ],
+      "Send a new code": [
+        "Send ny kode"
+      ],
+      "update it now": [
+        "opdatér det nu"
+      ]
+    },
+    "safety_review": {
+      "${ BRAND_NAME } Account email": [
+        "${ BRAND_NAME }-konto e-mail"
+      ],
+      "Account protection": [
+        "Kontobeskyttelse"
+      ],
+      "Add": [
+        "Tilføj"
+      ],
+      "Add an emergency contact": [
+        "Tilføj en nødkontakt"
+      ],
+      "Add emergency contacts": [
+        "Tilføj nødkontakter"
+      ],
+      "Add options": [
+        "Tilføj muligheder"
+      ],
+      "Add people who you trust and can contact easily. Your emergency contact will be able to access your account and reset your password for you if needed.": [
+        "Tilføj personer du stoler på og nemt kan kontakte. Din nødkontakt vil kunne tilgå din konto og nulstille din adgangskode for dig, hvis det bliver nødvendigt."
+      ],
+      "Add people you trust and can contact easily. They will be able to help you unlock your data after you reset your password.": [
+        "Tilføj personer du stoler på og nemt kan kontakte. De vil kunne hjælpe dig med at låse op for din data efter du har nulstillet din adgangskode."
+      ],
+      "Add phone number": [
+        "Tilføj telefonnummer"
+      ],
+      "Add recovery contacts": [
+        "Tilføj gendannelseskontakter"
+      ],
+      "Add recovery email": [
+        "Tilføj e-mail til gendannelse"
+      ],
+      "Add recovery phone": [
+        "Tilføj gendannelsestelefon"
+      ],
+      "Added emergency contacts": [
+        "Tilføjede nødkontakter"
+      ],
+      "Added recovery contacts": [
+        "Tilføjede gendannelseskontakter"
+      ],
+      "Added recovery email": [
+        "Tilføjede e-mail til gendannelse"
+      ],
+      "Added recovery phone": [
+        "Tilføjede gendannelsestelefon"
+      ],
+      "Allow": [
+        "Tillad"
+      ],
+      "Allow data recovery from this device": [
+        "Tillad gendannelse af data fra denne enhed"
+      ],
+      "Allow password reset from the settings": [
+        "Tillad nulstilling af adgangskode fra indstillingerne"
+      ],
+      "Allow recovery by email": [
+        "Tillad gendannelse via e-mail"
+      ],
+      "Allow recovery by phone": [
+        "Tillad gendannelse via telefon"
+      ],
+      "Allow scanning a QR code to sign in": [
+        "Tillad skanning af en QR-kode for at logge ind"
+      ],
+      "Allow trusted friends to unlock your data": [
+        "Tillad at betroede venner låser op for dine data"
+      ],
+      "Back to ${ backLink.appNameString }": [
+        "Tilbage til ${ backLink.appNameString }"
+      ],
+      "Congratulations": [
+        "Tillykke"
+      ],
+      "Didn’t receive it? ${ sendANewCode }": [
+        "Modtog du den ikke? ${ sendANewCode }"
+      ],
+      "Done": [
+        "Færdig"
+      ],
+      "Download": [
+        "Download"
+      ],
+      "Download recovery file": [
+        "Download gendannelsesfil"
+      ],
+      "Downloaded recovery file": [
+        "Downloadede gendannelsesfil"
+      ],
+      "Emergency contacts enabled": [
+        "Nødkontakter aktiveret"
+      ],
+      "Enable device recovery": [
+        "Aktivér gendannelse via enhed"
+      ],
+      "Enable email recovery": [
+        "Aktivér e-mailgendannelse"
+      ],
+      "Enable emergency contacts": [
+        "Aktivér nødkontakter"
+      ],
+      "Enable password reset from settings": [
+        "Aktivér nulstilling af adgangskode fra indstillinger"
+      ],
+      "Enable phone recovery": [
+        "Aktivér telefongendannelse"
+      ],
+      "Enable QR code sign-in": [
+        "Aktivér login med QR-kode"
+      ],
+      "Enabled device recovery": [
+        "Aktiverede gendannelse via enhed"
+      ],
+      "Enabled email recovery": [
+        "Aktiverede e-mailgendannelse"
+      ],
+      "Enabled password reset from settings": [
+        "Aktiverede nulstilling af adgangskode fra indstillinger"
+      ],
+      "Enabled phone recovery": [
+        "Aktiverede telefongendannelse"
+      ],
+      "Enabled QR code sign-in": [
+        "Aktiverede login med QR-kode"
+      ],
+      "Got it": [
+        "Forstået"
+      ],
+      "Here's how you increased your account protection:": [
+        "Sådan forbedrede du din kontobeskyttelse:"
+      ],
+      "If you forget your password, you can sign in using a QR code. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
+        "Hvis du glemmer din adgangskode kan du logge ind med en QR-kode. Du skal blot være logget ind på en ${ BRAND_NAME }-tjeneste på en anden enhed."
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, it will allow you to sign in and recover your data. It’s the only way to instantly restore everything, so make sure you keep it somewhere safe.": [
+        "Hvis du bliver låst ude af din ${ BRAND_NAME }-konto, vil den kunne logge dig ind og gendanne dine data. Det er den eneste måde at øjeblikkeligt gendanne din konto på, så sørg for at opbevare den et sikkert sted."
+      ],
+      "If your recovery email has changed, ${ updateEmailLink }.": [
+        "Hvis din gendannelses e-mail er ændret, ${ updateEmailLink }"
+      ],
+      "If your recovery phone has changed, ${ updatePhoneLink }.": [
+        "Hvis dit gendannelsestelefonnummer er ændret, ${ updatePhoneLink }"
+      ],
+      "Later": [
+        "Senere"
+      ],
+      "Protect your legacy with Emergency Access": [
+        "Beskyt din arv med nødadgang"
+      ],
+      "Save recovery phrase": [
+        "Gem gendannelsessætning"
+      ],
+      "Saved recovery phrase": [
+        "Gemt gendannelsessætning"
+      ],
+      "Send verification code": [
+        "Send bekræftelseskode"
+      ],
+      "They must already have a ${ BRAND_NAME } Account.": [
+        "De skal allerede have en ${ BRAND_NAME }-konto."
+      ],
+      "They will not be able to see or access your data.": [
+        "De vil ikke kunne se eller tilgå dine data."
+      ],
+      "This will let you quickly access your ${ BRAND_NAME } Account so you can change your password.": [
+        "Dette giver dig mulighed for hurtigt at tilgå din ${ BRAND_NAME }-konto, så du kan ændre din adgangskode."
+      ],
+      "This will let you reset your account password if you’ve lost it, but are still signed in to ${ BRAND_NAME }. It’s often the easiest way to recover your account if you’re signed in.": [
+        "Dette lader dig nulstille din adgangskode til din konto hvis du mister den, men stadig er logget ind på ${ BRAND_NAME }. Det er oftest den nemmeste måde at gendanne din konto hvis du er logget ind."
+      ],
+      "This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
+        "Dette genopretter adgangen til e-mails, kontakter, filer, adgangskoder, og alt andet krypteret data på din konto efter adgangskoden er blevet nulstillet."
+      ],
+      "To help you remember your password, we’ll periodically ask you to enter it.": [
+        "For at hjælpe dig med at huske din adgangskode vil vi med jævne mellemrum bede dig om at indtaste den."
+      ],
+      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
+        "Indtast bekræftelseskoden sendt til ${ boldEmail } for at bekræfte at e-mailadressen er din."
+      ],
+      "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
+        "Indtast bekræftelseskoden sendt til ${ boldPhoneNumber } for at bekræfte at telefonnummeret er dit."
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification code.": [
+        "Vi sender dig en e-mail med et bekræftelseslink for at bekræfte at denne adresse virkelig er din."
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification link.": [
+        "Vi sender dig en e-mail med et bekræftelseslink for at bekræfte at denne adresse virkelig er din."
+      ],
+      "To make sure this number is really yours, we’ll send an SMS with a verification code.": [
+        "Vi sender dig en SMS med et bekræftelseslink for at få bekræftet at dette nummer virkelig er dit."
+      ],
+      "Update": [
+        "Opdatér"
+      ],
+      "Update recovery email": [
+        "Opdatér gendannelses-e-mail"
+      ],
+      "Update recovery phone": [
+        "Opdatér gendannelsestelefon"
+      ],
+      "Upgrade your plan to enable Emergency Access to your account. This will allow you to designate 1 to 5 people who will be able to reset your password for you.": [
+        "Opgrader dit abonnement for at aktivere nødadgang til din konto. Dette giver dig mulighed for at angive 1 til 5 personer, som vil kunne nulstille din adgangskode for dig."
+      ],
+      "Verified password": [
+        "Bekræftet adgangskode"
+      ],
+      "Verified recovery email": [
+        "Bekræftede e-mail til gendannelse"
+      ],
+      "Verified recovery phone": [
+        "Bekræftet telefon til gendannelse"
+      ],
+      "Verify": [
+        "Bekræft"
+      ],
+      "Verify password": [
+        "Bekræft adgangskode"
+      ],
+      "Verify recovery email": [
+        "Bekræft e-mail til gendannelse"
+      ],
+      "Verify recovery phone": [
+        "Bekræft telefon til gendannelse"
+      ],
+      "Verify your password": [
+        "Bekræft din adgangskode"
+      ],
+      "Verify your recovery email": [
+        "Bekræft din e-mail til gendannelse"
+      ],
+      "Verify your recovery phone": [
+        "Bekræft din gendannelsestelefon"
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        "Ved at bekræfte din e-mailadresse øger du din kontosikkerhed og giver dig flere muligheder for at gendanne din konto."
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "Ved at bekræfte dit telefonnummer øger du din kontos sikkerhed og giver flere muligheder for gendannelse."
+      ],
+      "You can save a data backup on this device. This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset, simply by signing in on this device.": [
+        "Du kan gemme en sikkerhedskopiering på denne enhed. Den vil kunne gendanne adgangen til e-mails, kontakter, filer, adgangskoder, og andet krypteret data på din konto efter adgangskoden er blevet nulstillet, bare ved at logge ind på enheden."
+      ],
+      "You can use email verification to regain access to your account if you forget your password.": [
+        "Du kan bruge e-mail-bekræftelse til at tilgå din konto igen, hvis du glemmer din adgangskode."
+      ],
+      "You can use SMS verification to regain access to your account if you forget your password.": [
+        "Du kan bruge SMS-bekræftelse til at tilgå din konto igen, hvis du glemmer din adgangskode."
+      ],
+      "You can use your recovery email to regain access to your account if you forget your password.": [
+        "Du kan bruge din e-mail til gendannelse til at tilgå din konto igen, hvis du har glemt din adgangskode."
+      ],
+      "You can use your recovery phone to regain access to your account if you forget your password.": [
+        "Du kan bruge din gendannelsestelefon til at få adgang til din konto igen, hvis du har glemt din adgangskode."
+      ],
+      "You don’t need to open or read the file—just download it and store it somewhere safe.": [
+        "Du behøver ikke at åbne eller læse filen – bare download den og opbevar den sikkert."
+      ],
+      "Your recovery checklist": [
+        "Din gendannelsestjekliste"
+      ],
+      "Your security setup": [
+        "Din sikkerhedskonfiguration"
       ]
     },
     "saml: Action": {
