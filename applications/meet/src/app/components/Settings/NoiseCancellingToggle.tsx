@@ -1,17 +1,15 @@
 import { c } from 'ttag';
 
-import { SettingToggle, type SettingToggleSize } from '../../atoms/SettingToggle/SettingToggle';
+import { SettingToggle } from '../../atoms/SettingToggle/SettingToggle';
 
 export const NoiseCancellingToggle = ({
     idBase,
     noiseFilter,
     toggleNoiseFilter,
-    size = 'large',
 }: {
     idBase: string;
     noiseFilter: boolean;
     toggleNoiseFilter: () => void;
-    size?: SettingToggleSize;
 }) => {
     return (
         <SettingToggle
@@ -20,7 +18,6 @@ export const NoiseCancellingToggle = ({
             ariaLabel={c('Alt').t`Noise cancellation`}
             onChange={() => toggleNoiseFilter()}
             checked={noiseFilter}
-            size={size}
         />
     );
 };

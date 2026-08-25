@@ -41,7 +41,7 @@ export const ParticipantListHeader = ({
             ) : (
                 <div className="text-semibold flex items-center flex-nowrap">
                     <div className="flex items-baseline gap-1 flex-nowrap">
-                        <h2 className="text-semibold text-2xl text-ellipsis m-0">{c('Title').t`Participants`}</h2>
+                        <h2 className="text-semibold text-3xl text-ellipsis m-0">{c('Title').t`Participants`}</h2>
                         {!isWaitingRoomHost && (
                             <span className="text-semibold text-sm color-hint text-tabular-nums">
                                 {maxParticipants
