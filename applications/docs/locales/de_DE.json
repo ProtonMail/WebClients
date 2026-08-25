@@ -3031,6 +3031,9 @@
       "Authentication error.": [
         "Authentifizierungsfehler."
       ],
+      "Because this document was in a shared folder, only the folder owner can restore it": [
+        "Da sich dieses Dokument in einem freigegebenen Ordner befand, kann es nur der Ordnerbesitzer wiederherstellen."
+      ],
       "Bookmark password is not available": [
         "Lesezeichen-Passwort nicht verfügbar"
       ],
@@ -3212,9 +3215,6 @@
       ],
       "Failed to load recent documents": [
         "Neuste Dokumente konnten nicht geladen werden"
-      ],
-      "Failed to load subscription data. Please try again later.": [
-        "Abonnementsdaten konnten nicht geladen werden. Bitte versuche es später nochmals."
       ],
       "Failed to open to contact": [
         "Fehler beim Öffnen des Kontakts"
@@ -5003,9 +5003,6 @@
       ],
       "Decrypting your document": [
         "Dein Dokument wird entschlüsselt"
-      ],
-      "Details": [
-        "Details"
       ],
       "Display word count": [
         "Zeige Anzahl Wörter"
@@ -8161,6 +8158,16 @@
       "Support for ${ n } custom email domain": [
         "Support für ${ n } benutzerdefinierte E-Mail-Domain",
         "Support für ${ n } benutzerdefinierte E-Mail-Domains"
+      ]
+    },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Jetzt ausprobieren"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Du hast nun Zugriff auf die neue ${ CALENDAR_APP_NAME }. ${ link }"
       ]
     },
     "Notification": {
