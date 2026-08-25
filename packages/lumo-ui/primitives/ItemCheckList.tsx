@@ -25,7 +25,7 @@ interface Props {
  * cannot import — `@proton/components` already depends on it.
  */
 const ItemCheckList = ({ items, selectedIds, onToggle, disabled, className }: Props) => (
-    <div className={clsx('lumo-check-list flex flex-column flex-nowrap gap-1', className)}>
+    <div className={clsx('lumo-check-list flex flex-column flex-nowrap', className)}>
         {items.map(({ id, label }) => (
             <label key={id} className="lumo-check-list__item flex flex-row flex-nowrap items-start gap-2">
                 <span className="checkbox-container relative mt-0.5 shrink-0">
