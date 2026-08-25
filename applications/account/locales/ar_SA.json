@@ -9850,14 +9850,6 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "لا يوجد سعر تجديد لصفقة ${ PASS_SHORT_APP_NAME } مدى الحياة، فهي دفعة لمرة واحدة للحصول على وصول مدى الحياة إلى ${ PASS_SHORT_APP_NAME }. سيظل سعر وتاريخ تجديد اشتراكك في ${ planTitle } دون تغيير."
       ],
-      "${ pendingAdminApprovalCount } new members added via your identity provider and pending review.": [
-        "تمت إضافة ${ pendingAdminApprovalCount } عضو جديد عبر موفر الهوية وهم في انتظار المراجعة.",
-        "تمت إضافة عضو جديد واحد ${ pendingAdminApprovalCount } عبر موفر الهوية وهو في انتظار المراجعة.",
-        "تمت إضافة عضوين جديدين ${ pendingAdminApprovalCount } عبر موفر الهوية وهما في انتظار المراجعة.",
-        "تمت إضافة ${ pendingAdminApprovalCount } أعضاء جدد عبر موفر الهوية وهم في انتظار المراجعة.",
-        "تمت إضافة ${ pendingAdminApprovalCount } عضوًا جديدًا عبر موفر الهوية وهم في انتظار المراجعة.",
-        "تمت إضافة ${ pendingAdminApprovalCount } عضو جديد عبر موفر الهوية وهم في انتظار المراجعة."
-      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "تتطلب خطة ${ plan.Title } خادمًا مخصصًا واحدًا على الأقل ${ serverPricePerMonth }"
       ],

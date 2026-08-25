@@ -1070,9 +1070,6 @@
       "Domain could not be verified. Please make sure you added the correct DNS records": [
         "Nie można zweryfikować domeny. Upewnij się, że dodano prawidłowe rekordy DNS"
       ],
-      "Domain not available, try again later": [
-        "Domena nie jest dostępna. Spróbuj ponownie później"
-      ],
       "Editing item failed": [
         "Edytowanie elementu nie powiodło się"
       ],
@@ -2259,10 +2256,7 @@
         "Przenoszenie wszystkich elementów z sejfu \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków.",
-        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
-        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
-        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków."
+        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków."
       ],
       "Moving items": [
         "Przenoszenie elementów"

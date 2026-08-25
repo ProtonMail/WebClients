@@ -6833,10 +6833,6 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "A oferta vitalícia do ${ PASS_SHORT_APP_NAME } não tem preço de renovação. É um pagamento único para acesso vitalício ao ${ PASS_SHORT_APP_NAME }. O preço de renovação e a data da sua subscrição ao ${ planTitle } permanecem inalterados."
       ],
-      "${ pendingAdminApprovalCount } new member added via your identity provider and pending review.": [
-        "${ pendingAdminApprovalCount } novo membro adicionado através do seu fornecedor de identidade e com revisão pendente.",
-        "${ pendingAdminApprovalCount } novos membros adicionados através do seu fornecedor de identidade e com revisão pendente."
-      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requer no mínimo 1 servidor dedicado ${ serverPricePerMonth }"
       ],

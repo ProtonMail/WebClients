@@ -961,7 +961,7 @@
         "Nämä kohteet pysyvät vaarassa"
       ],
       "These vaults will not be accessible and their content won’t be available to Search or Autofill.": [
-        "Nämä holvit eivät ole käytettävissä, eikä niiden sisältö ole haun tai automaattitäytön käytettävissä."
+        "Nämä holvit eivät ole käytettävissä, eikä niiden sisältö ole tavoitettavissa haun tai automaattitäytön välityksellä."
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Tämä tili on vaarassa. Käy vaihtamassa salasanasi palvelun tiliasetuksista."
@@ -1103,9 +1103,6 @@
       ],
       "Domain could not be verified. Please make sure you added the correct DNS records": [
         "Verkkotunnusta ei voitu vahvistaa. Varmista, että olet lisännyt oikeat DNS-tietueet"
-      ],
-      "Domain not available, try again later": [
-        "Verkkotunnusta ei tavoiteta. Yritä myöhemmin uudelleen"
       ],
       "Editing item failed": [
         "Kohteen muokkaus epäonnistui"
@@ -2210,8 +2207,7 @@
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
-        "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
+        "Kohteen siirtäminen toiseen holviin pyyhkii sen suojatut linkit."
       ],
       "Moving items": [
         "Siirretään kohteita"
@@ -5297,7 +5293,7 @@
         "Paljastuneet tietosi"
       ],
       "Your new access token": [
-        "Uusi käyttötunnisteenne"
+        "Uusi käyttötunnisteesi"
       ],
       "Your vault is empty": [
         "Holvisi on tyhjä"

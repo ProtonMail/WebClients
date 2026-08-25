@@ -1055,9 +1055,6 @@
       "Domain could not be verified. Please make sure you added the correct DNS records": [
         "Không thể xác minh miền. Vui lòng đảm bảo bạn đã thêm đúng các bản ghi DNS"
       ],
-      "Domain not available, try again later": [
-        "Miền không khả dụng, vui lòng thử lại sau"
-      ],
       "Editing item failed": [
         "Không chỉnh sửa được mục"
       ],
@@ -2176,6 +2173,9 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Đang chuyển tất cả mục từ \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Việc chuyển một mục sang kho khác sẽ xóa các liên kết bảo mật của mục đó."
       ],
       "Moving items": [
         "Đang chuyển mục"

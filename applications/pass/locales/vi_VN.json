@@ -1028,9 +1028,6 @@
       "Domain could not be verified. Please make sure you added the correct DNS records": [
         "Không thể xác minh miền. Vui lòng đảm bảo bạn đã thêm đúng các bản ghi DNS"
       ],
-      "Domain not available, try again later": [
-        "Miền không khả dụng, vui lòng thử lại sau"
-      ],
       "Editing item failed": [
         "Không chỉnh sửa được mục"
       ],
@@ -2064,7 +2061,7 @@
         "Đang chuyển tất cả mục từ \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Di chuyển một mục sang kho khác sẽ xóa các liên kết bảo mật của mục đó."
+        "Việc chuyển các mục sang kho khác sẽ xóa các liên kết bảo mật của chúng."
       ],
       "Moving items": [
         "Đang chuyển mục"
@@ -2267,14 +2264,8 @@
       "Please follow the steps below to set up your domain.": [
         "Vui lòng làm theo các bước bên dưới để thiết lập miền."
       ],
-      "Please keep ${ PASS_APP_NAME } open so the clipboard can be automatically cleared.": [
-        "Vui lòng giữ ${ PASS_APP_NAME } mở để có thể xóa tự động bảng tạm."
-      ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Vui lòng giữ cửa sổ này mở trong khi dữ liệu đang được nhập. Quá trình này có thể mất vài phút."
-      ],
-      "Please keep your browser open so the clipboard can be automatically cleared.": [
-        "Vui lòng giữ trình duyệt mở để có thể xóa tự động bảng tạm."
       ],
       "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
         "Vui lòng đảm bảo cửa sổ đang hoạt động trước đó là nơi muốn tự động nhập và con trỏ đã được đặt vào trường đăng nhập."

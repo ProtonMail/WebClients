@@ -342,6 +342,9 @@
       "Copy alias “${ name }”": [
         "Капіяваць псеўданім “${ name }”"
       ],
+      "Copy debug transcript": [
+        "Скапіяваць расшыфроўку адладкі"
+      ],
       "Copy email to clipboard": [
         "Скапіяваць ліст у буфер абмену"
       ],
@@ -632,6 +635,9 @@
       ],
       "Get in touch": [
         "Звязацца з намі"
+      ],
+      "Get index size on disk": [
+        "Атрымаць памер індэксу на дыску"
       ],
       "Get started": [
         "Пачаць працу"
@@ -1546,7 +1552,10 @@
         "Давяраць"
       ],
       "Trust key": [
-        "Давяраць ключу"
+        "Давяраць ключу",
+        "Давяраць ключам",
+        "Давяраць ключам",
+        "Давяраць ключам"
       ],
       "Trust public key": [
         "Давяраць адкрытаму ключу"
@@ -2422,7 +2431,7 @@
         "Зразумела"
       ],
       "Maybe later": [
-        "Магчыма пазней"
+        "Магчыма, пазней"
       ],
       "Next": [
         "Далей"
@@ -7191,6 +7200,18 @@
         "${ contactsLength } кантактаў",
         "${ contactsLength } кантактаў"
       ],
+      "${ count } email": [
+        "${ count } ліст",
+        "${ count } лісты",
+        "${ count } лістоў",
+        "${ count } лістоў"
+      ],
+      "${ count } email · ${ names }": [
+        "${ count } ліст · ${ names }",
+        "${ count } лісты · ${ names }",
+        "${ count } лістоў · ${ names }",
+        "${ count } лістоў · ${ names }"
+      ],
       "${ count } email → ${ dest }": [
         "${ count } ліст→ ${ dest }",
         "${ count } лісты → ${ dest }",
@@ -7671,6 +7692,9 @@
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Любыя падпапкі будуць выдалены таксама. Аднак лісты, якія захаваны ў папцы ${ nameDeleted }, не будуць выдалены і іх можна будзе знайсці ў папцы \"Уся пошта\"."
       ],
+      "Apply labels": [
+        "Прымяніць меткі"
+      ],
       "Apply to future messages": [
         "Прымяніць да будучых паведамленняў"
       ],
@@ -7815,6 +7839,9 @@
       "Change your password": [
         "Змяніць свой пароль"
       ],
+      "Checked Proton support": [
+        "Праверана падтрымкай Proton"
+      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Праверка кантакту ${ progress } з ${ max }..."
       ],
@@ -7905,8 +7932,14 @@
         "Стварыць бяспечнае воблака для ${ memberCount } удзельнікаў",
         "Стварыць бяспечнае воблака для ${ memberCount } удзельнікаў"
       ],
+      "Create folder": [
+        "Стварыць папку"
+      ],
       "Create in": [
         "Стварыць у"
+      ],
+      "Create label": [
+        "Стварыць метку"
       ],
       "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
         "Стварэнне некалькіх бясплатных уліковых запісаў забаронена нашымі ${ termsLink }."
@@ -7940,6 +7973,9 @@
       ],
       "Daily": [
         "Штодзень"
+      ],
+      "Debug transcript copied": [
+        "Расшыфроўка адладкі скапіявана"
       ],
       "Dedicated servers": [
         "Вылучаныя серверы"
@@ -8151,6 +8187,9 @@
       "Everything in ${ planOrAppName }, plus:": [
         "Усе функцыі тарыфнага плана ${ planOrAppName }, а яшчэ:"
       ],
+      "Expand logs": [
+        "Разгарнуць журналы"
+      ],
       "Expand selection": [
         "Пашырыць выбар"
       ],
@@ -8222,6 +8261,12 @@
       ],
       "Forgot password?": [
         "Забылі пароль?"
+      ],
+      "Found ${ count } contact": [
+        "Знойдзены ${ count } кантакт",
+        "Знойдзены ${ count } кантакты",
+        "Знойдзены ${ count } кантактаў",
+        "Знойдзены ${ count } кантактаў"
       ],
       "Found a current encrypted search index with ${ oldIndexSize } message.": [
         "Знойдзены бягучы зашыфраваны індэкс пошуку з ${ oldIndexSize } паведамленнем.",
@@ -8304,6 +8349,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Калі паведамлення няма ў папцы з уваходнымі лістамі, то магчыма, што яно трапіла ў папку са спамам."
       ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Вы можаце выкарыстаць 1 з 16 рэзервовых кодаў аднаўлення, якія вы атрымалі пры наладжванні двухфактарнай аўтэнтыфікацыі, калі вы страцілі доступ да вашай праграмы аўтэнтыфікацыі. ${ learnMoreLink }"
+      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Калі вы працягніце паніжэнне свайго тарыфнага плана, то страціце доступ да платных функцый ${ MAIL_APP_NAME } і ${ VPN_APP_NAME }."
       ],
@@ -8377,10 +8425,7 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс",
-        "Уставіць відарысы",
-        "Уставіць відарысы",
-        "Уставіць відарысы"
+        "Уставіць відарыс"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -8472,6 +8517,9 @@
       "Low Priority": [
         "Нізкі прыярытэт"
       ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Зрабіце ${ MAIL_APP_NAME } вашай прадвызначанай праграмай электроннай пошты."
+      ],
       "Manage your folders": [
         "Кіруйце сваімі папкамі"
       ],
@@ -8480,6 +8528,15 @@
       ],
       "Mark all as read": [
         "Пазначыць усе як прачытаныя"
+      ],
+      "Mark all as unread": [
+        "Пазначыць усе як непрачытаныя"
+      ],
+      "Mark as read": [
+        "Пазначыць як прачытанае"
+      ],
+      "Mark as unread": [
+        "Пазначыць як непрачытанае"
       ],
       "Mastercard SecureCode logo": [
         "Лагатып Mastercard SecureCode"
@@ -8579,6 +8636,9 @@
       ],
       "No contacts added yet": [
         "Кантакты пакуль не дададзены"
+      ],
+      "No contacts found": [
+        "Кантакты не знойдзеныя"
       ],
       "No conversation to read": [
         "Няма размоў для чытання"
@@ -8966,6 +9026,9 @@
       ],
       "Searched for “${ keyword }”": [
         "Пошук \"${ keyword }\""
+      ],
+      "Searched the web": [
+        "Пошук у інтэрнэце"
       ],
       "Searched your mail": [
         "Пошук у вашай пошце завяршыўся"
@@ -9500,6 +9563,9 @@
       ],
       "Unsupported file": [
         "Файл не падтрымліваецца"
+      ],
+      "Update filter": [
+        "Абнавіць фільтр"
       ],
       "Updating message content search...": [
         "Абнаўленне пошуку па змесціве паведамлення..."
@@ -10742,6 +10808,9 @@
       "Filter": [
         "Фільтр"
       ],
+      "Filter name": [
+        "Назва фільтра"
+      ],
       "Filter Name": [
         "Назва фільтра"
       ],
@@ -10855,6 +10924,9 @@
       ],
       "Label messages as": [
         "Пазначыць паведамленні як"
+      ],
+      "Label name": [
+        "Назва меткі"
       ],
       "Last 12 months only": [
         "Толькі за апошнія 12 месяцаў"
@@ -11123,6 +11195,9 @@
       "Share your availability with booking pages in ${ CALENDAR_APP_NAME }, and host secure meetings with ${ MEET_APP_NAME }.": [
         "Абагуляйце сваю даступнасць з дапамогай старонак браніравання ў ${ CALENDAR_APP_NAME } і праводзьце бяспечныя сустрэчы з ${ MEET_APP_NAME }."
       ],
+      "Sieve script": [
+        "Сцэнарый Sieve"
+      ],
       "Sign emails": [
         "Падпісваць лісты"
       ],
@@ -11296,6 +11371,9 @@
       ],
       "Write (whole session)": [
         "Запіс (усяго сеанса)"
+      ],
+      "Write-chain drain after last line": [
+        "Скінуць ланцужок запісу пасля апошняга радка"
       ],
       "Writing assistant": [
         "Памочнік у напісанні"
@@ -13263,7 +13341,7 @@
         "Прапанова абмежавана па часе і дзейнічае за ваш першы месяц"
       ],
       "Maybe later": [
-        "Магчыма пазней"
+        "Магчыма, пазней"
       ],
       "Offer expires ${ formattedDate }.": [
         "Прапанова міне ${ formattedDate }"
@@ -13356,7 +13434,7 @@
         "Выберыце пастаўшчыка"
       ],
       "Maybe later": [
-        "Магчыма пазней"
+        "Магчыма, пазней"
       ],
       "Protect your accounts": [
         "Абараніце свае ўліковыя запісы"
@@ -13454,7 +13532,7 @@
         "Атрымлівайце максімум ад свайго платнага тарыфнага плана."
       ],
       "Maybe later": [
-        "Магчыма пазней"
+        "Магчыма, пазней"
       ],
       "Next": [
         "Далей"
@@ -13587,6 +13665,12 @@
       ],
       "No parent folder": [
         "Адсутнічае бацькоўская папка"
+      ],
+      "Remind me later": [
+        "Нагадаць мне пазней"
+      ],
+      "Yes, don't show again": [
+        "Так, больш не паказваць"
       ]
     },
     "Option group": {
@@ -14465,6 +14549,79 @@
       ],
       "SUMMER SALE": [
         "ЛЕТНІ РАСПРОДАЖ"
+      ]
+    },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "Скарыстацца прапановай"
+      ],
+      "Special Offer": [
+        "Спецыяльная прапанова"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "/month": [
+        "/месяц"
+      ],
+      "2 individual accounts": [
+        "2 асабістых уліковых запісы"
+      ],
+      "2 TB of secure storage": [
+        "2 ТБ бяспечнага сховішча"
+      ],
+      "3 TB of secure storage": [
+        "3 ТБ бяспечнага сховішча"
+      ],
+      "500 GB of secure storage": [
+        "500 ГБ бяспечнага сховішча"
+      ],
+      "6 individual accounts": [
+        "6 асабістых уліковых запісаў"
+      ],
+      "Advanced protection against cyber threats": [
+        "Пашыраная абарона супраць кіберпагроз"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Скідкі разлічваюцца на падставе стандартнай платы за месяц. Ваша падпіска будзе аўтаматычна падаўжацца па стандартнай гадавой стаўцы пасля заканчэння перыяду аплаты."
+      ]
+    },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Прэміяльныя ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } і ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Прэміяльныя ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Прэміяльныя ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Прэміяльныя ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Прэміяльныя ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "за 12 месяцаў"
+      ],
+      "One plan, full power": [
+        "Адзін тарыфны план, максімум магчымасцяў"
+      ],
+      "One plan, max savings": [
+        "Адзін тарыфны план, максімальная эканомія"
+      ],
+      "One plan, more power": [
+        "Адзін тарыфны план, больш магчымасцяў"
       ]
     },
     "Received email icon": {
@@ -16700,6 +16857,9 @@
       "Apply gift code": [
         "Прымяніць падарункавы код"
       ],
+      "Apply labels": [
+        "Прымяніць меткі"
+      ],
       "Archive all messages?": [
         "Архіваваць усе паведамленні?"
       ],
@@ -16829,8 +16989,14 @@
       "Create contact": [
         "Стварэнне кантакту"
       ],
+      "Create folder": [
+        "Стварыць папку"
+      ],
       "Create folder \"${ search }\"": [
         "Стварыць папку \"${ search }\""
+      ],
+      "Create label": [
+        "Стварыць метку"
       ],
       "Create label \"${ search }\"": [
         "Стварэнне меткі \"${ search }\""
@@ -17120,6 +17286,9 @@
       "Invalid verification code": [
         "Памылковы код спраўджання"
       ],
+      "Keep this banner hidden?": [
+        "Пакінуць гэты банер схаваным?"
+      ],
       "Label as": [
         "Пазначыць як"
       ],
@@ -17152,6 +17321,12 @@
       ],
       "Make your inbox your own": [
         "Зрабіце паштовую скрыню сваёй уласнасцю"
+      ],
+      "Mark all as read": [
+        "Пазначыць усе як прачытаныя"
+      ],
+      "Mark all as unread": [
+        "Пазначыць усе як непрачытаныя"
       ],
       "Mark all messages as read": [
         "Пазначыць усе паведамленні як прачытаныя"
@@ -17492,6 +17667,9 @@
       "Sending original message": [
         "Адпраўка арыгінальнага паведамлення"
       ],
+      "September Sale": [
+        "Вераснёўскі распродаж"
+      ],
       "Set recovery methods": [
         "Прызначэнне спосабаў аднаўлення"
       ],
@@ -17617,6 +17795,9 @@
       ],
       "Unsubscribe request sent": [
         "Запыт на скасаванне падпіскі адпраўлены"
+      ],
+      "Update filter": [
+        "Абнавіць фільтр"
       ],
       "Upgrade complete!": [
         "Абнаўленне завершана!"

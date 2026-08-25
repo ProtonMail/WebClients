@@ -1043,9 +1043,6 @@
       "Domain could not be verified. Please make sure you added the correct DNS records": [
         "Nie można zweryfikować domeny. Upewnij się, że dodano prawidłowe rekordy DNS"
       ],
-      "Domain not available, try again later": [
-        "Domena nie jest dostępna. Spróbuj ponownie później"
-      ],
       "Editing item failed": [
         "Edytowanie elementu nie powiodło się"
       ],
@@ -2142,7 +2139,10 @@
         "Przenoszenie wszystkich elementów z sejfu \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków."
+        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków."
       ],
       "Moving items": [
         "Przenoszenie elementów"
@@ -2348,14 +2348,8 @@
       "Please follow the steps below to set up your domain.": [
         "Wykonaj poniższe kroki, aby skonfigurować domenę."
       ],
-      "Please keep ${ PASS_APP_NAME } open so the clipboard can be automatically cleared.": [
-        "Nie zamykaj aplikacji ${ PASS_APP_NAME }, aby schowek mógł zostać automatycznie wyczyszczony."
-      ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Pozostaw okno otwarte podczas importowania danych. Proces może potrwać kilka minut."
-      ],
-      "Please keep your browser open so the clipboard can be automatically cleared.": [
-        "Nie zamykaj przeglądarki, aby schowek mógł zostać automatycznie wyczyszczony."
       ],
       "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
         "Upewnij się, że poprzednio aktywne okno to miejsce, w którym chcesz zastosować autouzupełnianie, a kursor znajduje się w polu logowania."

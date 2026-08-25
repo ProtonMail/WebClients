@@ -1054,6 +1054,9 @@
       "Pay ${ price } now": [
         "Betal ${ price } nu"
       ],
+      "Preview logs": [
+        "Preview logfiler"
+      ],
       "Previous": [
         "Forrige"
       ],
@@ -5002,6 +5005,9 @@
       "Could not generate the device profile. Please try again.": [
         "Kunne ikke generere enhedsprofilen. Prøv igen."
       ],
+      "Could not grant access to the organization key": [
+        "Kunne ikke give adgang til organistationsnøglen"
+      ],
       "Could not load sharing details": [
         "Kunne ikke indlæse oplysninger om deling"
       ],
@@ -5469,6 +5475,14 @@
       "Role assignment could not be completed for ${ errors.length } member": [
         "Det var ikke muligt at gennemføre rolletildelingen for ${ errors.length } medlem",
         "Det var ikke muligt at gennemføre rolletildelingen for ${ errors.length } medlemmer"
+      ],
+      "Role assignment could not be completed for ${ failedCount } group": [
+        "Det var ikke muligt at gennemføre rolletildelingen for ${ failedCount } gruppe",
+        "Det var ikke muligt at gennemføre rolletildelingen for ${ failedCount } grupper"
+      ],
+      "Role assignment could not be completed for ${ failedCount } user": [
+        "Det var ikke muligt at gennemføre rolletildelingen for ${ failedCount } bruger",
+        "Det var ikke muligt at gennemføre rolletildelingen for ${ failedCount } brugere"
       ],
       "Server not found": [
         "Server ikke fundet"
@@ -6898,6 +6912,9 @@
       "Enjoying ${ planName }?": [
         "Glad for ${ planName }?"
       ],
+      "Invited friends": [
+        "Inviterede venner"
+      ],
       "Unlock 4 premium privacy services for just **${ priceString }** more each month": [
         "Lås op for 4 premium privatlivstjenester for kun **${ priceString }** mere om måneden"
       ],
@@ -7338,6 +7355,9 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } af dine ikke-SSO-medlemmer bruger to-faktor-godkendelse til at logge ind på din organisation.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } af dine ikke-SSO-medlemmer bruger to-faktor-godkendelse til at logge ind på din organisation."
       ],
+      "${ helpTranslateLink } by joining our localization community.": [
+        "${ helpTranslateLink } ved at tilmelde dig til vores lokaliseringsfællesskab."
+      ],
       "${ IDEAL_BRAND_NAME } mark": [
         "${ IDEAL_BRAND_NAME } mærkat"
       ],
@@ -7395,9 +7415,9 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "${ PASS_SHORT_APP_NAME } livstidsaftalen har ingen fornyelsespris, det er en engangsbetaling for livstidsadgang til ${ PASS_SHORT_APP_NAME }. Prisen og datoen for fornyelse af dit ${ planTitle }-abonnement forbliver uændret."
       ],
-      "${ pendingAdminApprovalCount } new member added via your identity provider and pending review.": [
-        "${ pendingAdminApprovalCount } nyt medlem tilføjet via din identitetsudbyder og afventer gennemgang.",
-        "${ pendingAdminApprovalCount } nye medlemmer tilføjet via din identitetsudbyder og afventer gennemgang."
+      "${ pendingKeysMemberCount } new member added via your identity provider and pending review.": [
+        "${ pendingKeysMemberCount } nyt medlem tilføjet via din identitetsudbyder og afventer gennemgang.",
+        "${ pendingKeysMemberCount } nye medlemmer tilføjet via din identitetsudbyder og afventer gennemgang."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } kræver mindst 1 dedikeret server ${ serverPricePerMonth }"
@@ -7888,6 +7908,9 @@
       ],
       "Choose a plan that works best for you.": [
         "Vælg et abonnement, der passer bedst til dig."
+      ],
+      "Choose a strong ${ BRAND_NAME } password and don’t reuse it for other accounts.": [
+        "Vælg en stærk adgangskode til ${ BRAND_NAME } og brug den ikke til andre konti."
       ],
       "Choose an Entity ID to continue.": [
         "Vælg et entitets-ID for at fortsætte."
@@ -8501,6 +8524,9 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Mister du din tofaktoraktiverede enhed, kan disse koder benyttes i stedet for den 6-cifrede tofaktorgodkendelseskode til at logge ind på din konto. Hver kode kan kun benyttes én gang."
       ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Hvis du har mistet adgangen til din godkender-app kan du bruge 1 af de 16 gendannelseskoder, som du fik da du satte to-faktor-godkendelses op. ${ learnMoreLink }"
+      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Hvis du fortsætter med nedgraderingen, vil du miste adgang til betalte funktioner i ${ MAIL_APP_NAME } og ${ VPN_APP_NAME }."
       ],
@@ -8745,6 +8771,9 @@
       ],
       "Loading...": [
         "Indlæser..."
+      ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "Logfiler hjælper os med at forstå hvad der skete før problemer opstod. De inkluderer handlinger og appen og fejlmeddelelser, men intet beskedindhold."
       ],
       "Low Priority": [
         "Lav prioritet"
@@ -9457,6 +9486,10 @@
       "The name will be visible to your users while they are signed in.": [
         "Navnet vil være synligt for dine brugere, mens de er logget ind."
       ],
+      "The process was interrupted for ${ pausedCount } ${ roleAssignmentSource }. Click Continue to resume assigning roles.": [
+        "Processen blev afbrudt for ${ pausedCount } ${ roleAssignmentSource }. Klik på Fortsæt for at genoptage tildelingen af roller.",
+        "Processen blev afbrudt for ${ pausedCount } ${ roleAssignmentSource }r. Klik på Fortsæt for at genoptage tildelingen af roller."
+      ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
         "Kreditten for en henvisning kan tildeles op til 2 måneder efter din vens prøveperiode udløb, og kun hvis din ven tegnede et abonnement."
       ],
@@ -9813,6 +9846,9 @@
       ],
       "User activated": [
         "Bruger aktiveret"
+      ],
+      "User roles assigned": [
+        "Brugerroller tildelt"
       ],
       "Username": [
         "Brugernavn"
@@ -10301,6 +10337,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Dit telefonnummer vil kun blive anvendt til denne engangsbekræftelse."
+      ],
+      "Your profile and changes to it will be visible to other ${ BRAND_NAME } users.": [
+        "Din profil og ændringer af den vil være synlige for andre ${ BRAND_NAME }-brugere."
       ],
       "Your recent changes have been published. They will be visible to users in the next few hours.": [
         "Dine seneste ændringer er blevet publiceret. De vil være synlige for brugerne i løbet af de næste par timer."
@@ -12196,6 +12235,9 @@
       ],
       "Resend invite link": [
         "Send invitationslink igen"
+      ],
+      "Resume role assignment": [
+        "Genoptag rolletildeling"
       ],
       "Revoke sessions": [
         "Tilbagekald sessioner"
@@ -14411,7 +14453,7 @@
         "Ugyldig sikkerhedskode"
       ],
       "Please enter the account holder name": [
-        "Anfør kontohavers navn"
+        "Indtast kontohavers navn"
       ],
       "Something went wrong. Please try again later.": [
         "Noget gik galt. Prøv igen senere."
@@ -14932,6 +14974,79 @@
       ],
       "SUMMER SALE": [
         "SOMMERUDSALG"
+      ]
+    },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "Få tilbuddet"
+      ],
+      "Special Offer": [
+        "Særtilbud"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "/month": [
+        "/måned"
+      ],
+      "2 individual accounts": [
+        "2 individuelle konti"
+      ],
+      "2 TB of secure storage": [
+        "2 TB sikker lagerplads"
+      ],
+      "3 TB of secure storage": [
+        "3 TB sikker lagerplads"
+      ],
+      "500 GB of secure storage": [
+        "500 GB sikker lagerplads"
+      ],
+      "6 individual accounts": [
+        "6 individuelle konti"
+      ],
+      "Advanced protection against cyber threats": [
+        "Avanceret beskyttelse mod cybertrusler"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Rabatter beregnes ud fra den normale månedspris. Dit abonnement fornyes til den årlige standardpris, når faktureringsperioden udløber."
+      ]
+    },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, og ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, og ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, og ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "i 12 måneder"
+      ],
+      "One plan, full power": [
+        "Ét abonnement, fuld power"
+      ],
+      "One plan, max savings": [
+        "Et abonnement, maksimal besparelse"
+      ],
+      "One plan, more power": [
+        "Ét abonnement, mere power"
       ]
     },
     "Recovery Email": {
@@ -17867,6 +17982,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe-skriveassistent"
       ],
+      "${ capitalizedSource } role assignment paused": [
+        "${ capitalizedSource } rolletildeling sat på pause"
+      ],
       "${ feature } is now active": [
         "${ feature } er nu aktiv"
       ],
@@ -18942,6 +19060,9 @@
       "Send new invite?": [
         "Send ny invitation?"
       ],
+      "September Sale": [
+        "Septemberudsalg"
+      ],
       "Service": [
         "Tjeneste"
       ],
@@ -19010,6 +19131,9 @@
       ],
       "Single sign-on": [
         "Enkeltlogon"
+      ],
+      "Single sign-on (SSO)": [
+        "Single Sign-On (SSO)"
       ],
       "SMS verification": [
         "Bekræftelse via SMS"
@@ -19176,6 +19300,9 @@
       ],
       "User converted to SSO": [
         "Bruger konverteret til SSO"
+      ],
+      "User profile": [
+        "Brugerprofil"
       ],
       "Users": [
         "Brugere"

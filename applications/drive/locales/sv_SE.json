@@ -770,6 +770,9 @@
       "Preview contact": [
         "Förhandsgranska kontakt"
       ],
+      "Preview logs": [
+        "Förhandsgranska loggar"
+      ],
       "Previous": [
         "Föregående"
       ],
@@ -3592,6 +3595,9 @@
       "Expected structure attached": [
         "Förväntad struktur bifogad"
       ],
+      "Expiration date cannot be in the past": [
+        "Utgångsdatum kan inte vara i det förflutna"
+      ],
       "External accounts are not supported yet": [
         "Externa konton stöds inte ännu"
       ],
@@ -3782,6 +3788,9 @@
       "Moving item to a non-folder is not allowed": [
         "Flytt av objekt till utanför en mapp är inte tillåtet"
       ],
+      "Moving root item is not allowed": [
+        "Att flytta rotobjekt är inte tillåtet"
+      ],
       "Name is required": [
         "Namn är obligatoriskt"
       ],
@@ -3949,6 +3958,9 @@
       "Report failed to be sent": [
         "Rapport kunde inte skickas"
       ],
+      "Request aborted": [
+        "Åtgärd avbruten"
+      ],
       "Request timed out": [
         "Förfrågan gjorde timeout"
       ],
@@ -3981,6 +3993,9 @@
       ],
       "Some file data failed to upload. Please try again.": [
         "Viss fildata kunde inte laddas upp. Vänligen pröva igen."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "Några fildelar misslyckades att laddas upp. Försök igen."
       ],
       "Some groups could not be deleted": [
         "Några grupper kunde inte tas bort"
@@ -4096,6 +4111,9 @@
       "This folder name is not available. Please choose a different name.": [
         "Detta mappnamn är inte tillgängligt. Välj ett annat namn."
       ],
+      "This item has no image preview": [
+        "Detta objekt har ingen bild förhandsgranskning"
+      ],
       "This item is no longer shared": [
         "Detta objekt är inte delat längre"
       ],
@@ -4203,6 +4221,9 @@
       ],
       "You can create public links for your own files only": [
         "Du kan endast skapa offentliga länkar för dina egna filer"
+      ],
+      "You can only leave items that are shared with you": [
+        "Du kan endast lämna objekt som är delade med dig."
       ],
       "You can only upload a new version to a file": [
         "Du kan bara ladda upp en ny version till en fil"
@@ -6126,6 +6147,9 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Läser in kalender, vänta. Du kommer att omdirigeras till vår schemaläggningsplattform Calendly i en ny flik."
       ],
+      "Loading folder": [
+        "Laddar mapp"
+      ],
       "Loading links": [
         "Laddar länkar"
       ],
@@ -6243,6 +6267,9 @@
       ],
       "Not enough storage space": [
         "Inte tillräckligt med lagringsutrymme"
+      ],
+      "Not in My files": [
+        "Inte i mina filer"
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Obs! Data kan fortfarande vara tillgänglig lokalt på enheter där du har installerat ${ DRIVE_APP_NAME }."
@@ -7531,6 +7558,10 @@
       ],
       "Delete": [
         "Ta bort"
+      ],
+      "Delete drive?": [
+        "Ta bort hårddisk?",
+        "Ta bort hårddiskar?"
       ],
       "Delete link and remove access for everyone": [
         "Ta bort länk och ta bort åtkomst för alla"
@@ -9852,6 +9883,9 @@
       "Contact group updated": [
         "Kontaktgrupp uppdaterad"
       ],
+      "Copy of \"${ ellipsedName }\" moved to trash": [
+        "Kopia av “${ ellipsedName }“ flyttades till papperskorg"
+      ],
       "Device failed to be removed": [
         "Enhet kunde inte tas bort"
       ],
@@ -11130,6 +11164,76 @@
       ],
       "SUMMER SALE": [
         "SOMMARREA"
+      ]
+    },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "Ta del av erbjudandet"
+      ],
+      "Special Offer": [
+        "Specialerbjudande"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "/month": [
+        "/månad"
+      ],
+      "2 individual accounts": [
+        "2 individuella konton"
+      ],
+      "2 TB of secure storage": [
+        "2 TB säkert lagringsutrymme"
+      ],
+      "3 TB of secure storage": [
+        "3 TB säkert lagringsutrymme"
+      ],
+      "500 GB of secure storage": [
+        "500 GB säkert lagringsutrymme"
+      ],
+      "6 individual accounts": [
+        "6 individuella konton"
+      ],
+      "Advanced protection against cyber threats": [
+        "Avancerat skydd mot cyberhot"
+      ]
+    },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } och ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "för 12 månader"
+      ],
+      "One plan, full power": [
+        "Ett paket, full kraft"
+      ],
+      "One plan, max savings": [
+        "Ett paket, maximal besparing"
+      ],
+      "One plan, more power": [
+        "Ett paket, mer kraft"
       ]
     },
     "Referral": {
@@ -13331,6 +13435,9 @@
       ],
       "Select users to migrate": [
         "Välj användare att migrera"
+      ],
+      "September Sale": [
+        "Septemberrea"
       ],
       "Set recovery methods": [
         "Ställ in återställningsmetoder"

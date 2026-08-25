@@ -1057,9 +1057,6 @@
       "Domain could not be verified. Please make sure you added the correct DNS records": [
         "Le domaine n'a pas été vérifié. Assurez-vous d'avoir ajouté les enregistrements DNS adéquats."
       ],
-      "Domain not available, try again later": [
-        "Le domaine n'est pas disponible, réessayez plus tard."
-      ],
       "Editing item failed": [
         "La modification de l'élément n'a pas abouti."
       ],
@@ -2126,7 +2123,8 @@
         "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Déplacer un élément vers un autre coffre-fort supprimera ses liens sécurisés."
+        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés.",
+        "Déplacer des éléments vers un autre coffre-fort effacera leurs liens sécurisés."
       ],
       "Moving items": [
         "Déplacement des éléments"
@@ -2333,14 +2331,8 @@
       "Please follow the steps below to set up your domain.": [
         "Veuillez suivre les étapes ci-dessous pour configurer votre domaine."
       ],
-      "Please keep ${ PASS_APP_NAME } open so the clipboard can be automatically cleared.": [
-        "Veuillez garder ${ PASS_APP_NAME } ouvert afin que le presse-papiers puisse être effacé automatiquement."
-      ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Veuillez garder cette fenêtre ouverte pendant l'importation de vos données. Ce processus peut prendre quelques minutes."
-      ],
-      "Please keep your browser open so the clipboard can be automatically cleared.": [
-        "Veuillez garder votre navigateur ouvert afin que le presse-papiers puisse être effacé automatiquement."
       ],
       "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
         "Veuillez vous assurer que la fenêtre précédemment active est celle où vous souhaitez effectuer la saisie automatique et que votre curseur était positionné sur le champ identifiant."

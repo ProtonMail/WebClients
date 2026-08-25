@@ -55,6 +55,9 @@
       ]
     },
     "account_search_index": {
+      "12-word phrase": [
+        "12-ordsfras"
+      ],
       "Account events": [
         "Kontohändelser"
       ],
@@ -127,6 +130,9 @@
       "Downgrade plan": [
         "Nedgradera paket"
       ],
+      "Downgrade to Free": [
+        "Nedgradera till Free"
+      ],
       "Download apps": [
         "Ladda ner appar"
       ],
@@ -150,6 +156,9 @@
       ],
       "Group members": [
         "Gruppmedlemmar"
+      ],
+      "High-security mode": [
+        "Högsäkerhetsläge"
       ],
       "IMAP and SMTP": [
         "IMAP och SMTP"
@@ -192,6 +201,9 @@
       ],
       "One-time code": [
         "Engångskod"
+      ],
+      "Out of office": [
+        "Frånvarande"
       ],
       "Outlook, Apple Mail, and Thunderbird": [
         "Outlook, Apple Mail och Thunderbird"
@@ -1507,6 +1519,9 @@
       ],
       "Preview": [
         "Förhandsgranska"
+      ],
+      "Preview logs": [
+        "Förhandsgranska loggar"
       ],
       "Previous": [
         "Föregående"
@@ -6029,6 +6044,9 @@
       "QR code sign-in enabled": [
         "Inloggning med QR-kod aktiverad"
       ],
+      "Scan QR code on your mobile device to sign in.": [
+        "Skanna QR-kod på din mobila enhet för att logga in."
+      ],
       "Scan the code to sign in": [
         "Skanna koden för att logga in"
       ],
@@ -7192,6 +7210,9 @@
       "Error publishing changes": [
         "Fel vid publicering av ändringar"
       ],
+      "Expiration date cannot be in the past": [
+        "Utgångsdatum kan inte vara i det förflutna"
+      ],
       "Expired": [
         "Löpt ut"
       ],
@@ -7396,6 +7417,9 @@
       ],
       "Moving item to a non-folder is not allowed": [
         "Flytt av objekt till utanför en mapp är inte tillåtet"
+      ],
+      "Moving root item is not allowed": [
+        "Att flytta rotobjekt är inte tillåtet"
       ],
       "Name already exists": [
         "Namn finns redan"
@@ -7619,6 +7643,9 @@
       "Renaming root item is not allowed": [
         "Byta namn på root objekt är inte tillåtet"
       ],
+      "Request aborted": [
+        "Åtgärd avbruten"
+      ],
       "Request timed out": [
         "Förfrågan gjorde timeout"
       ],
@@ -7655,6 +7682,9 @@
       ],
       "Some file data failed to upload. Please try again.": [
         "Viss fildata kunde inte laddas upp. Vänligen pröva igen."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "Några fildelar misslyckades att laddas upp. Försök igen."
       ],
       "Some items could not be loaded": [
         "Några objekt kunde inte laddas"
@@ -7779,6 +7809,9 @@
       "This folder name is not available. Please choose a different name.": [
         "Detta mappnamn är inte tillgängligt. Välj ett annat namn."
       ],
+      "This item has no image preview": [
+        "Detta objekt har ingen bild förhandsgranskning"
+      ],
       "This item is no longer shared": [
         "Detta objekt är inte delat längre"
       ],
@@ -7883,6 +7916,9 @@
       ],
       "You can create public links for your own files only": [
         "Du kan endast skapa offentliga länkar för dina egna filer"
+      ],
+      "You can only leave items that are shared with you": [
+        "Du kan endast lämna objekt som är delade med dig."
       ],
       "You can only upload a new version to a file": [
         "Du kan bara ladda upp en ny version till en fil"
@@ -9483,8 +9519,14 @@
       "Contact us": [
         "Kontakta oss"
       ],
+      "Downloads": [
+        "Nedladdningar"
+      ],
       "Enjoying ${ planName }?": [
         "Gillar du ${ planName }?"
+      ],
+      "Invited friends": [
+        "Inbjudna vänner"
       ],
       "Unlock 4 premium privacy services for just **${ priceString }** more each month": [
         "Lås upp 4 premiumtjänster för integritet för bara **${ priceString }** mer varje månad"
@@ -9878,6 +9920,10 @@
       "Pending": [
         "Väntar"
       ],
+      "Skipped ${ count } event due to incompatibilities": [
+        "Hoppade över ${ count } händelse på grund av inkompatibiliteter",
+        "Hoppade över ${ count } händelser på grund av inkompatibiliteter"
+      ],
       "Undo finished": [
         "Ångra klar"
       ],
@@ -10098,10 +10144,6 @@
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "${ PASS_SHORT_APP_NAME } livstidserbjudande har inget förnyelsepris, det är en engångsbetalning för livstidsåtkomst till ${ PASS_SHORT_APP_NAME }. Priset och datumet för förnyelse av din prenumeration på ${ planTitle } förblir oförändrade."
-      ],
-      "${ pendingAdminApprovalCount } new member added via your identity provider and pending review.": [
-        "${ pendingAdminApprovalCount } ny medlem har lagts till via din identitetsleverantör och väntar på granskning.",
-        "${ pendingAdminApprovalCount } nya medlemmar har lagts till via din identitetsleverantör och väntar på granskning."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } kräver minst 1 dedikerad server ${ serverPricePerMonth }"
@@ -13743,6 +13785,9 @@
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Du behöver en ${ BRAND_NAME }-adress för att använda ${ MAIL_APP_NAME } och ${ CALENDAR_APP_NAME }"
+      ],
+      "You will not be able to copy these users' data later.": [
+        "Du kommer inte att kunna kopiera dessa användares data senare."
       ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key. All data signed with this key will no longer be verified by ${ BRAND_NAME } applications.": [
         "Du kommer INTE att kunna dekryptera några meddelanden, filer och annan data krypterad med denna nyckel. All data signerad med denna nyckel kommer inte längre att verifieras av ${ BRAND_NAME }-applikationer."
@@ -21002,6 +21047,76 @@
         "SOMMARREA"
       ]
     },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "Ta del av erbjudandet"
+      ],
+      "Special Offer": [
+        "Specialerbjudande"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "/month": [
+        "/månad"
+      ],
+      "2 individual accounts": [
+        "2 individuella konton"
+      ],
+      "2 TB of secure storage": [
+        "2 TB säkert lagringsutrymme"
+      ],
+      "3 TB of secure storage": [
+        "3 TB säkert lagringsutrymme"
+      ],
+      "500 GB of secure storage": [
+        "500 GB säkert lagringsutrymme"
+      ],
+      "6 individual accounts": [
+        "6 individuella konton"
+      ],
+      "Advanced protection against cyber threats": [
+        "Avancerat skydd mot cyberhot"
+      ]
+    },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } och ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "för 12 månader"
+      ],
+      "One plan, full power": [
+        "Ett paket, full kraft"
+      ],
+      "One plan, max savings": [
+        "Ett paket, maximal besparing"
+      ],
+      "One plan, more power": [
+        "Ett paket, mer kraft"
+      ]
+    },
     "Recovery Email": {
       "Back to ${ signIn }.": [
         "Tillbaka till ${ signIn }."
@@ -25734,6 +25849,9 @@
       "Dashboard": [
         "Adminpanel"
       ],
+      "Data collection": [
+        "Datainsamling"
+      ],
       "Data recovery": [
         "Dataåterställning"
       ],
@@ -26748,6 +26866,9 @@
       "Send new invite?": [
         "Skicka ny inbjudan?"
       ],
+      "September Sale": [
+        "Septemberrea"
+      ],
       "Service": [
         "Tjänst"
       ],
@@ -27055,6 +27176,9 @@
       "User converted to SSO": [
         "Användare konverterad till SSO"
       ],
+      "User profile": [
+        "Användarprofil"
+      ],
       "Users": [
         "Användare"
       ],
@@ -27302,6 +27426,9 @@
       ],
       "Features": [
         "Funktioner"
+      ],
+      "Last app activity": [
+        "Senaste aktivitet"
       ],
       "Last connection": [
         "Senaste anslutning"

@@ -54,6 +54,59 @@
         "Вашы звесткі былі знойдзены прынамсі ў адной уцечцы даных. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
       ]
     },
+    "account_search_index": {
+      "12-word phrase": [
+        "Фраза з 12 слоў"
+      ],
+      "Account events": [
+        "Падзеі ўліковага запісу"
+      ],
+      "Add address": [
+        "Дадаць адрас"
+      ],
+      "Advanced account protection": [
+        "Пашыраная абарона ўліковага запісу"
+      ],
+      "AI assistant": [
+        "Памочнік ШІ"
+      ],
+      "App Store": [
+        "App Store"
+      ],
+      "Downgrade to Free": [
+        "Панізіць да Free"
+      ],
+      "Import events": [
+        "Імпартаваць падзеі"
+      ],
+      "iOS and Android apps": [
+        "Праграмы для iOS і Android"
+      ],
+      "Join organization": [
+        "Далучыцца да арганізацыі"
+      ],
+      "Leave group": [
+        "Выйсці з групы"
+      ],
+      "Out of office": [
+        "Па-за межамі офіса"
+      ],
+      "Password reset request": [
+        "Запыт скідання пароля"
+      ],
+      "Recovery phone number": [
+        "Нумар тэлефона для аднаўлення"
+      ],
+      "Referral link": [
+        "Рэферальная спасылка"
+      ],
+      "Telemetry": [
+        "Тэлеметрыя"
+      ],
+      "Trusted contact": [
+        "Давераны кантакт"
+      ]
+    },
     "Accounts": {
       "Accounts": [
         "Уліковыя запісы"
@@ -492,6 +545,9 @@
       "Decrease": [
         "Паменшыць"
       ],
+      "Decrease licenses": [
+        "Паменшыць колькасць ліцэнзій"
+      ],
       "Decrypt": [
         "Расшыфраваць"
       ],
@@ -635,6 +691,9 @@
       ],
       "Download CSV sample": [
         "Спампаваць узор CSV"
+      ],
+      "Download daily breakdown (CSV)": [
+        "Спампаваць дзённую справаздачу (CSV)"
       ],
       "Download for macOS": [
         "Спампаваць для macOS"
@@ -1120,7 +1179,7 @@
         "пазначыць лісты як"
       ],
       "Maybe later": [
-        "Магчыма пазней"
+        "Магчыма, пазней"
       ],
       "Migrate": [
         "Перанесці"
@@ -3115,7 +3174,7 @@
         "Зразумела"
       ],
       "Maybe later": [
-        "Магчыма пазней"
+        "Магчыма, пазней"
       ],
       "Next": [
         "Далей"
@@ -5629,6 +5688,11 @@
         "Windows 10/11 (x64)"
       ]
     },
+    "Download link": {
+      ".deb for Debian / Ubuntu": [
+        ".deb для Debian/Ubuntu"
+      ]
+    },
     "drive_signup_2023: Title": {
       "Create a free ${ DRIVE_APP_NAME } account to securely access the file": [
         "Стварыць бясплатны ўліковы запіс ${ DRIVE_APP_NAME } для бяспечнага доступу да файла"
@@ -5797,6 +5861,9 @@
       ],
       "QR code sign-in enabled": [
         "Уваход з дапамогай QR-кода ўключаны"
+      ],
+      "Scan QR code on your mobile device to sign in.": [
+        "Адсканіруйце QR-код на сваёй мабільнай прыладзе для ўваходу."
       ],
       "Scan the code to sign in": [
         "Сканіруйце код для ўваходу"
@@ -7023,6 +7090,9 @@
       "Failed to get inviter keys": [
         "Не ўдалося атрымаць ключы запрашэння"
       ],
+      "Failed to load OAuth": [
+        "Не ўдалося загрузіць OAuth"
+      ],
       "Failed to load OAuth modal.": [
         "Не ўдалося загрузіць акно OAuth."
       ],
@@ -7616,6 +7686,9 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Гэта паведамленне можа змяшчаць некаторыя спасылкі на URL-адрасы, якія ваш бягучы браўзер не зможа правільна адкрыць."
+      ],
+      "This phrase cannot recover your account. You can generate a new one to ensure your account can be recovered in the future.": [
+        "Гэта фраза не зможа аднавіць ваш уліковы запіс. Вы зможаце згенерыраваць новую фразу для ўпэўненасці ў тым, што ваш уліковы запіс можна будзе аднавіць у будучыні."
       ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Вам неабходна аднавіць правы адміністратара, каб ствараць уліковыя запісы непрыватных карыстальнікаў і атрымліваць доступ да іх."
@@ -8641,6 +8714,9 @@
       "Insert your security key into your device.": [
         "Устаўце ключ бяспекі ў сваю прыладу."
       ],
+      "PIN requirement for security keys enabled": [
+        "Патрабаванне PIN для ключоў бяспекі ўключана"
+      ],
       "Security key": [
         "Ключ бяспекі"
       ],
@@ -8971,6 +9047,17 @@
       ],
       "Your desktop app free trial has ended": [
         "Ваш бясплатны пробны перыяд праграмы для камп'ютара завяршыўся"
+      ]
+    },
+    "Gateway monitor upsell": {
+      "Advanced security controls": [
+        "Пашыраныя функцыі бяспекі"
+      ],
+      "Unlock Single-Sign-on (SSO), admin policies, monitoring, enforced two-factor authentication and more.": [
+        "Разблакіраваць аднаразовы ўваход (SSO), палітыкі адміністратара, маніторынг, прымусова ўжыць двухфактарную аўтэнтыфікацыю і зрабіць іншыя рэчы."
+      ],
+      "User - ${ userPrice }": [
+        "Карыстальнік - ${ userPrice }"
       ]
     },
     "Get help": {
@@ -9965,12 +10052,6 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "Пажыццёвая прапанова ${ PASS_SHORT_APP_NAME } не прадугледжвае кошту падаўжэння. Робіцца аднаразовая плата за пажыццёвы доступ да ${ PASS_SHORT_APP_NAME }. Кошт і дата падаўжэння вашай падпіскі ${ planTitle } застануцца нязменнымі."
       ],
-      "${ pendingAdminApprovalCount } new member added via your identity provider and pending review.": [
-        "${ pendingAdminApprovalCount } новы ўдзельнік дададзены праз вашага пастаўшчыка пасведчанняў і чакае разгляду.",
-        "${ pendingAdminApprovalCount } новыя ўдзельнікі дададзены праз вашага пастаўшчыка пасведчанняў і чакаюць разгляду.",
-        "${ pendingAdminApprovalCount } новых удзельнікаў дададзены праз вашага пастаўшчыка пасведчанняў і чакаюць разгляду.",
-        "${ pendingAdminApprovalCount } новых удзельнікаў дададзены праз вашага пастаўшчыка пасведчанняў і чакаюць разгляду."
-      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } патрабуе прынамсі 1 вылучаны сервер ${ serverPricePerMonth }"
       ],
@@ -10168,6 +10249,9 @@
       ],
       "**Your recovery phone alone doesn’t allow you to recover your encrypted data** after you reset your password.": [
         "**Адзін толькі нумар тэлефона для аднаўлення не дазволіць аднавіць зашыфраваныя даныя** пасля скідання пароля."
+      ],
+      "**Your recovery phrase and recovery file will be invalidated:** you can generate new recovery data later on.": [
+        "**Ваш фраза аднаўлення і файл аднаўлення будуць ануляваны:** вы зможаце згенерыраваць новыя даныя для аднаўлення пазней."
       ],
       "+ ${ invisibleCount } More": [
         "+ яшчэ ${ invisibleCount }",
@@ -10661,6 +10745,9 @@
       "Choose a plan that works best for you.": [
         "Выберыце тарыфны план, які найлепш вам пасуе."
       ],
+      "Choose a strong ${ BRAND_NAME } password and don’t reuse it for other accounts.": [
+        "Выберыце надзейны пароль для ${ BRAND_NAME } і не выкарыстоўвайце яго паўторна для іншых уліковых запісаў."
+      ],
       "Choose an Entity ID to continue.": [
         "Выберыце Entity ID для працягу."
       ],
@@ -11075,6 +11162,9 @@
       "Enable email notifications": [
         "Уключыць апавяшчэнні па электроннай пошце"
       ],
+      "Enable groups to streamline access control": [
+        "Дазвольце групам аптымізаваць кантроль доступу"
+      ],
       "Enable single sign-on to keep your organization safe": [
         "Уключыць адзіны ўваход, каб абараніць вашу арганізацыю"
       ],
@@ -11224,6 +11314,9 @@
       ],
       "Failed to fetch logs.": [
         "Не ўдалося атрымаць журналы."
+      ],
+      "Fast and focused. Email and calendar, right on your desktop.": [
+        "Хуткасць і канцэнтрацыя. Пошта і каляндар на вашым працоўным стале."
       ],
       "Fastest VPN speeds of up to 10Gbps": [
         "Найвышэйшая хуткасць VPN, якая дасягае 10 Гбіт/с"
@@ -11473,6 +11566,9 @@
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Калі вы згубіце сваю прыладу двухфактарнай аўтэнтыфікацыі, то гэтыя коды могуць быць выкарыстаны замест 6-значнага кода двухфактарнай аўтэнтыфікацыі, каб увайсці ў ваш уліковы запіс. Кожны код можна выкарыстаць толькі адзін раз."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Вы можаце выкарыстаць 1 з 16 рэзервовых кодаў аднаўлення, якія вы атрымалі пры наладжванні двухфактарнай аўтэнтыфікацыі, калі вы страцілі доступ да вашай праграмы аўтэнтыфікацыі. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Калі вы працягніце паніжэнне свайго тарыфнага плана, то страціце доступ да платных функцый ${ MAIL_APP_NAME } і ${ VPN_APP_NAME }."
@@ -11826,7 +11922,7 @@
         "Лагатып Mastercard SecureCode"
       ],
       "Maybe later": [
-        "Магчыма пазней"
+        "Магчыма, пазней"
       ],
       "Medium Priority": [
         "Сярэдні прыярытэт"
@@ -12523,6 +12619,9 @@
       ],
       "Smart Routed through: ${ joinedCountries }.": [
         "Разумна маршрутызуецца праз: ${ joinedCountries }."
+      ],
+      "Smart Routing": [
+        "Smart Routing"
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses.": [
         "Адпраўка па SMTP дазваляе староннім сэрвісам або прыладам адпраўляць лісты праз ${ MAIL_APP_NAME } для вашых карыстальніцкіх адрасоў дамена."
@@ -13747,6 +13846,9 @@
       ],
       "Your Always-on VPN device profile is ready to deploy.": [
         "Ваш профіль прылады пастаяннай VPN гатовы для разгортвання."
+      ],
+      "Your browser blocked the new tab.": [
+        "Ваш браўзер заблакіраваў новую ўкладку."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Вашы даныя гатовы да імпартавання з ${ importedEmailAddressStrong } у ваш уліковы запіс ${ BRAND_NAME }."
@@ -15311,6 +15413,9 @@
       ],
       "Interval": [
         "Інтэрвал"
+      ],
+      "Invitation message": [
+        "Запрашальнае паведамленне"
       ],
       "Invite people": [
         "Запрасіць людзей"
@@ -17106,6 +17211,11 @@
       ],
       "Sign in": [
         "Увайсці"
+      ]
+    },
+    "Members table usage": {
+      "Setup your own private gateways to monitor VPN connection activity within your organization.": [
+        "Наладзьце свае прыватныя шлюзы, каб назіраць за актыўнасцю падключэння па VPN у вашай арганізацыі."
       ]
     },
     "Message": {
@@ -18971,7 +19081,7 @@
         "Прапанова абмежавана па часе і дзейнічае за ваш першы месяц"
       ],
       "Maybe later": [
-        "Магчыма пазней"
+        "Магчыма, пазней"
       ],
       "Offer expires ${ formattedDate }.": [
         "Прапанова міне ${ formattedDate }"
@@ -21000,6 +21110,79 @@
         "ЛЕТНІ РАСПРОДАЖ"
       ]
     },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "Скарыстацца прапановай"
+      ],
+      "Special Offer": [
+        "Спецыяльная прапанова"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "/month": [
+        "/месяц"
+      ],
+      "2 individual accounts": [
+        "2 асабістых уліковых запісы"
+      ],
+      "2 TB of secure storage": [
+        "2 ТБ бяспечнага сховішча"
+      ],
+      "3 TB of secure storage": [
+        "3 ТБ бяспечнага сховішча"
+      ],
+      "500 GB of secure storage": [
+        "500 ГБ бяспечнага сховішча"
+      ],
+      "6 individual accounts": [
+        "6 асабістых уліковых запісаў"
+      ],
+      "Advanced protection against cyber threats": [
+        "Пашыраная абарона супраць кіберпагроз"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Скідкі разлічваюцца на падставе стандартнай платы за месяц. Ваша падпіска будзе аўтаматычна падаўжацца па стандартнай гадавой стаўцы пасля заканчэння перыяду аплаты."
+      ]
+    },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Прэміяльныя ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } і ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Прэміяльныя ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Прэміяльныя ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Прэміяльныя ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Прэміяльныя ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "за 12 месяцаў"
+      ],
+      "One plan, full power": [
+        "Адзін тарыфны план, максімум магчымасцяў"
+      ],
+      "One plan, max savings": [
+        "Адзін тарыфны план, максімальная эканомія"
+      ],
+      "One plan, more power": [
+        "Адзін тарыфны план, больш магчымасцяў"
+      ]
+    },
     "Recovery Email": {
       "Back to ${ signIn }.": [
         "Вярнуцца да ${ signIn }."
@@ -22048,6 +22231,9 @@
       ],
       "Users set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
         "Карыстальнікі зададзеныя ў якасці прыватных, павінны прыняць запрашэнне для завяршэння наладжвання. Ім будзе адпраўлена запрашэнне пасля таго, як вы ўхваліце іх."
+      ],
+      "What to expect now that group sync is enabled": [
+        "Чаго цяпер чакаць, калі сінхранізацыя групы ўключана"
       ]
     },
     "scim: Action": {
@@ -22097,6 +22283,9 @@
       ],
       "Make sure you copy the above SCIM token now.": [
         "Пераканайцеся, што вы цяпер скапіявалі токен SCIM вышэй."
+      ],
+      "Re-enabling syncing will duplicate existing groups. They can't be merged back into SCIM.": [
+        "Паўторнае ўключэнне сінхранізацыі прывядзе да дубліравання існуючых груп. Іх нельга будзе зноў аб'яднаць у SCIM."
       ],
       "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
         "Спрашчае кіраванне карыстальнікамі паміж рознымі сэрвісамі. Дадаванне, рэдагаванне і выдаленне карыстальнікаў у вашым пастаўшчыку пасведчанняў. Усе пералічаныя змены будуць аўтаматычна ўжывацца для вашай арганізацыі ${ appName }."
@@ -22224,6 +22413,9 @@
       ]
     },
     "Service provider": {
+      "Add to ${ CALENDAR_APP_NAME }": [
+        "Дадаць у ${ CALENDAR_APP_NAME }"
+      ],
       "Allows you to add a Zoom video conference to any of your calendar events": [
         "Дазваляе дадаваць відэаканферэнцыю Zoom у любыя падзеі вашага календара"
       ]
@@ -23876,6 +24068,17 @@
       ],
       "Verify ${ value }": [
         "Спраўджанне ${ value }"
+      ]
+    },
+    "Step": {
+      "Authenticate": [
+        "Аўтэнтыфікацыя"
+      ],
+      "Install migration app": [
+        "Усталяваць праграму пераносу"
+      ],
+      "Set up secure sending (DMARC)": [
+        "Наладзьце бяспечную адпраўку (DMARC)"
       ]
     },
     "Step in filter modal": {
@@ -25822,6 +26025,9 @@
       "Dashboard": [
         "Панэль кіравання"
       ],
+      "Data collection": [
+        "Збор даных"
+      ],
       "Data recovery": [
         "Аднаўленне даных"
       ],
@@ -26320,6 +26526,9 @@
       "Import contacts": [
         "Імпартаваць кантакты"
       ],
+      "Import details": [
+        "Імпартаванне падрабязнасцяў"
+      ],
       "Import emails, calendars, contacts": [
         "Імпартаванне лістоў, календароў, кантактаў"
       ],
@@ -26803,6 +27012,9 @@
       "Send new invite?": [
         "Адправіць новае запрашэнне?"
       ],
+      "September Sale": [
+        "Вераснёўскі распродаж"
+      ],
       "Service": [
         "Сэрвіс"
       ],
@@ -27201,6 +27413,9 @@
       ],
       "You have no resolved alerts": [
         "У вас няма вырашаных папярэджанняў"
+      ],
+      "You're all set!": [
+        "Усё гатова!"
       ],
       "You've successfully signed in!": [
         "Вы паспяхова ўвайшлі!"
@@ -27621,6 +27836,9 @@
       ],
       "This key is used for email forwarding": [
         "Гэты ключ выкарыстоўваецца для перасылкі лістоў"
+      ],
+      "This setting is managed by your organization": [
+        "Гэта налада кіруецца вашай арганізацыяй"
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Зашыфраваныя паролі (нават скампраметаваныя) застануцца ў бяспецы, пакуль не будуць расшыфраваны."
@@ -28564,6 +28782,9 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "На жаль, у дадзены момант наша каманда падтрымкі знаходзіцца па-за сеткай. Запоўніце форму ніжэй з апісаннем вашай праблемы і мы абавязкова разгледзім яе пасля таго, як станем зноў даступнымі."
+      ],
+      "Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
+        "Карыстальнікі, якія не запыталі свой уліковы запіс да завяршэння пераносу, неабходна будзе скінуць пароль праз адміністратара арганізацыі ${ BRAND_NAME }."
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "Немагчыма спраўдзіць паштовы сервер. Калі вы давяраеце яму, то можаце прапусціць гэта спраўджанне."

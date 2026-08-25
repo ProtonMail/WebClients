@@ -273,6 +273,9 @@
       "Copy alias “${ name }”": [
         "Copiar el alias «${ name }»"
       ],
+      "Copy debug transcript": [
+        "Copiar transcripción de depuración"
+      ],
       "Copy email to clipboard": [
         "Copiar correo al portapapeles"
       ],
@@ -775,6 +778,9 @@
       ],
       "Preview contact": [
         "Vista previa de contacto"
+      ],
+      "Preview logs": [
+        "Previsualizar registros"
       ],
       "Previous": [
         "Anterior"
@@ -5776,6 +5782,9 @@
       "Data integrity check failed": [
         "Error en la comprobación de integridad de los datos"
       ],
+      "Debug transcript copied": [
+        "Transcripción de depuración copiada"
+      ],
       "Dec": [
         "Dic."
       ],
@@ -6052,6 +6061,9 @@
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
         "Si tiene una de las siguientes opciones, continúe con la configuración de la cuenta de ${ BRAND_NAME } para comenzar con el proceso de desbloqueo."
       ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Si perdió el acceso a su aplicación de autenticación, puede usar 1 de los 16 códigos de recuperación de copia de seguridad proporcionados cuando configuró la autenticación de dos factores. ${ learnMoreLink }"
+      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Si procede con darse de baja, perderá el acceso a las funciones de pago de ${ MAIL_APP_NAME } y ${ VPN_APP_NAME }."
       ],
@@ -6224,6 +6236,9 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Cargando el calendario, espere. Se le redirigirá a nuestra plataforma de programación Calendly en una pestaña nueva."
       ],
+      "Loading folder": [
+        "Cargando la carpeta"
+      ],
       "Loading links": [
         "Cargando enlaces"
       ],
@@ -6232,6 +6247,9 @@
       ],
       "Loading...": [
         "Cargando..."
+      ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "Los registros nos ayudan a comprender qué sucedió antes de que ocurriera el problema. Incluyen las acciones de la aplicación y los mensajes de error, pero no el contenido de los mensajes."
       ],
       "Low Priority": [
         "Prioridad baja"
@@ -6344,6 +6362,9 @@
       ],
       "Not enough storage space": [
         "No hay suficiente espacio de almacenamiento"
+      ],
+      "Not in My files": [
+        "No en Mis archivos"
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Nota: Los datos pueden seguir estando disponibles localmente en los dispositivos en los que haya instalado ${ DRIVE_APP_NAME }."
@@ -6550,6 +6571,9 @@
       ],
       "Re-indexing in progress": [
         "Reindexación en curso"
+      ],
+      "Read folder context": [
+        "Leer contexto de la carpeta"
       ],
       "Ready to add some photos?": [
         "¿Listo para añadir algunas fotos?"
@@ -11356,6 +11380,79 @@
         "OFERTAS DE VERANO"
       ]
     },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "Aproveche la oferta"
+      ],
+      "Special Offer": [
+        "Oferta especial"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "/month": [
+        "mensuales"
+      ],
+      "2 individual accounts": [
+        "2 cuentas individuales"
+      ],
+      "2 TB of secure storage": [
+        "2 TB de almacenamiento seguro"
+      ],
+      "3 TB of secure storage": [
+        "3 TB de almacenamiento seguro"
+      ],
+      "500 GB of secure storage": [
+        "500 GB de almacenamiento seguro"
+      ],
+      "6 individual accounts": [
+        "6 cuentas individuales"
+      ],
+      "Advanced protection against cyber threats": [
+        "Protección avanzada contra ciberamenazas"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Los descuentos se basan en los precios mensuales estándar. Su suscripción se renovará a la tarifa anual estándar cuando finalice el ciclo de facturación."
+      ]
+    },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } y ${ VPN_SHORT_APP_NAME } todos premium"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME } todos premium"
+      ]
+    },
+    "q3campaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } y ${ VPN_SHORT_APP_NAME } todos premium"
+      ]
+    },
+    "q3campaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } y ${ VPN_SHORT_APP_NAME } todos premium"
+      ]
+    },
+    "q3campaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME } todos premium"
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "durante 12 meses"
+      ],
+      "One plan, full power": [
+        "Un solo plan: Máximo poder"
+      ],
+      "One plan, max savings": [
+        "Un solo plan: máximo ahorro"
+      ],
+      "One plan, more power": [
+        "Un solo plan: Más poder"
+      ]
+    },
     "Referral": {
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } por referido"
@@ -13579,6 +13676,9 @@
       ],
       "Select users to migrate": [
         "Seleccione los usuarios para migrar"
+      ],
+      "September Sale": [
+        "Oferta de septiembre"
       ],
       "Set recovery methods": [
         "Establecer métodos de recuperación"

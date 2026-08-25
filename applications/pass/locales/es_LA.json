@@ -1060,9 +1060,6 @@
       "Domain could not be verified. Please make sure you added the correct DNS records": [
         "No se pudo verificar el dominio. Asegúree de haber agregado los registros DNS correctos."
       ],
-      "Domain not available, try again later": [
-        "Dominio no disponible, inténtelo más tarde"
-      ],
       "Editing item failed": [
         "Error al editar el elemento"
       ],
@@ -2129,7 +2126,8 @@
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra bóveda eliminará sus enlaces seguros."
+        "Mover un elemento a otra bóveda eliminará sus enlaces seguros.",
+        "Mover elementos a otra bóveda eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo los elementos"
@@ -2336,14 +2334,8 @@
       "Please follow the steps below to set up your domain.": [
         "Siga los pasos a continuación para configurar su dominio."
       ],
-      "Please keep ${ PASS_APP_NAME } open so the clipboard can be automatically cleared.": [
-        "Mantenga ${ PASS_APP_NAME } abierto para que el portapapeles se pueda borrar automáticamente."
-      ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Mantenga esta ventana abierta mientras sus datos son importados. Este proceso puede tomar unos minutos."
-      ],
-      "Please keep your browser open so the clipboard can be automatically cleared.": [
-        "Mantenga el navegador abierto para que el portapapeles se pueda borrar automáticamente."
       ],
       "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
         "Asegúrese de que la ventana activa anterior sea donde desea escribir automáticamente y que el cursor esté enfocado en el campo de inicio de sesión."

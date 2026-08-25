@@ -1057,9 +1057,6 @@
       "Domain could not be verified. Please make sure you added the correct DNS records": [
         "Domän kunde inte verifieras. Se till att du har lagt till rätt DNS-poster"
       ],
-      "Domain not available, try again later": [
-        "Domän inte tillgänglig, försök igen senare"
-      ],
       "Editing item failed": [
         "Misslyckades att redigera objekt"
       ],
@@ -2126,7 +2123,8 @@
         "Flyttar alla objekt från “${ payload.content.name }“"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Att flytta ett objekt till ett annat valv kommer att radera dess säkra länkar."
+        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
+        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
       ],
       "Moving items": [
         "Flyttar objekt"
@@ -2333,14 +2331,8 @@
       "Please follow the steps below to set up your domain.": [
         "Följ stegen nedan för att ställa in din domän."
       ],
-      "Please keep ${ PASS_APP_NAME } open so the clipboard can be automatically cleared.": [
-        "Håll ${ PASS_APP_NAME } öppen så urklippet kan rensas automatiskt."
-      ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Håll det här fönstret öppet medan dina data importeras. Denna process kan ta några minuter."
-      ],
-      "Please keep your browser open so the clipboard can be automatically cleared.": [
-        "Håll din webbläsare öppen så urklippet kan rensas automatiskt."
       ],
       "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
         "Se till att det tidigare aktiva fönstret är där du vill skriva automatiskt och att din markör var fokuserad på inloggningsfältet."

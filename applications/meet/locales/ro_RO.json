@@ -185,7 +185,7 @@
       "Back": [
         "Înapoi"
       ],
-      "Background blur": [
+      "Blur background": [
         "Estompare fundal"
       ],
       "Cancel": [
@@ -317,6 +317,9 @@
       "Enable camera": [
         "Activare cameră"
       ],
+      "Enable captions": [
+        "Activare subtitrări"
+      ],
       "Enable waiting room": [
         "Activare sală de așteptare"
       ],
@@ -340,6 +343,9 @@
       ],
       "Get verification code": [
         "Obținere cod de verificare"
+      ],
+      "Getting ready...": [
+        "Mă pregătesc..."
       ],
       "Help and feedback": [
         "Ajutor și feedback"
@@ -383,6 +389,9 @@
       "Leave meeting": [
         "Părăsire întâlnire"
       ],
+      "Live captions": [
+        "Subtitrări live"
+      ],
       "Lock meeting": [
         "Blocare întâlnire"
       ],
@@ -407,6 +416,9 @@
       "Next page": [
         "Pagina următoare"
       ],
+      "No effect": [
+        "Fără efect"
+      ],
       "Noise cancellation": [
         "Anulare zgomot"
       ],
@@ -427,6 +439,12 @@
       ],
       "Pause": [
         "Suspendare"
+      ],
+      "Playing back...": [
+        "Se redă..."
+      ],
+      "Playing sound...": [
+        "Se redă sunetul..."
       ],
       "Preview logs": [
         "Examinare jurnale"
@@ -453,6 +471,9 @@
       ],
       "Record": [
         "Înregistrare"
+      ],
+      "Recording your microphone...": [
+        "Se înregistrează microfonul..."
       ],
       "Refer a friend": [
         "Recomandați persoane"
@@ -615,6 +636,12 @@
       "Tap to unblock audio playback": [
         "Atingeți pentru a debloca redarea audio"
       ],
+      "Test microphone": [
+        "Testare microfon"
+      ],
+      "Test speakers": [
+        "Difuzoare de test"
+      ],
       "The current link will stop working.": [
         "Legătura web curentă nu va mai funcționa."
       ],
@@ -678,6 +705,9 @@
       "View invoice": [
         "Afișare factură"
       ],
+      "Virtual backgrounds": [
+        "Fundaluri virtuale"
+      ],
       "Waiting room": [
         "Sală de așteptare"
       ],
@@ -691,6 +721,9 @@
     "Alt": {
       "Audio settings": [
         "Setări audio"
+      ],
+      "Backgrounds": [
+        "Fundaluri"
       ],
       "Blur background": [
         "Estompare fundal"
@@ -710,8 +743,14 @@
       "Copy meeting link": [
         "Copiere legătură web întâlnire"
       ],
+      "Debug devices": [
+        "Depanare dispozitive"
+      ],
       "Debug overlay": [
         "Panou de depanare"
+      ],
+      "Device Debugger": [
+        "Depanator de dispozitive"
       ],
       "Go to dashboard": [
         "Spre panoul de control"
@@ -721,6 +760,9 @@
       ],
       "Leave Meeting": [
         "Părăsire întâlnire"
+      ],
+      "Live captions": [
+        "Subtitrări live"
       ],
       "Lock meeting": [
         "Blocare întâlnire"
@@ -813,6 +855,12 @@
       "Audio settings": [
         "Setări audio"
       ],
+      "Background effects": [
+        "Efecte fundal"
+      ],
+      "Backgrounds": [
+        "Fundaluri"
+      ],
       "Chat": [
         "Conversație"
       ],
@@ -828,6 +876,9 @@
       "Meeting rooms": [
         "Săli de conferințe"
       ],
+      "Microphone input level": [
+        "Nivel de intrare microfon"
+      ],
       "Participants": [
         "Participanți"
       ],
@@ -835,13 +886,16 @@
         "Listă de participanți"
       ],
       "Primary navigation": [
-        "Navigare primară"
+        "Navigare principală"
       ],
       "Settings": [
         "Setări"
       ],
       "Video settings": [
         "Setări video"
+      ],
+      "Virtual backgrounds": [
+        "Fundaluri virtuale"
       ]
     },
     "Badge": {
@@ -1818,6 +1872,15 @@
       "Background blur initialization failed. Please toggle your camera or background blur again": [
         "Inițializarea estompării fundalului a eșuat. Comutați din nou la cameră sau la estomparea fundalului."
       ],
+      "Couldn’t play the recording on this speaker.": [
+        "Nu s-a putut reda înregistrarea pe această boxă."
+      ],
+      "Couldn’t play the test sound on this speaker.": [
+        "Nu s-a putut reda sunetul de test pe această boxă."
+      ],
+      "Couldn’t start the microphone test.": [
+        "Nu s-a putut porni testul microfonului."
+      ],
       "Domain not available, try again later": [
         "Domeniul nu este disponibil. Reîncercați mai târziu."
       ],
@@ -1905,6 +1968,12 @@
       "Failed to unlock meeting": [
         "Deblocarea conferinței a eșuat."
       ],
+      "Failed to update caption language. Please try again.": [
+        "Limba subtitrării nu a putut fi actualizată. Reîncercați."
+      ],
+      "Failed to update live captions. Please try again.": [
+        "Subtitrările live nu au putut fi actualizate. Reîncercați."
+      ],
       "Failed to update waiting room setting. Please try again.": [
         "Nu s-a putut actualiza setările pentru sala de așteptare. Reîncercați."
       ],
@@ -1916,6 +1985,18 @@
       ],
       "Invalid verification code": [
         "Cod de verificare nevalid"
+      ],
+      "Live captions aren't working. Try turning them off and on again.": [
+        "Subtitrările live nu funcționează. Încercați să le dezactivați și să le reactivați."
+      ],
+      "Live captions couldn't be started.": [
+        "Subtitrările live nu au putut fi pornite."
+      ],
+      "Live captions have stopped.": [
+        "Subtitrările live s-au oprit."
+      ],
+      "Microphone access is blocked. Allow it in your browser settings.": [
+        "Accesul la microfon este blocat. Permiteți-l în setările navigatorului web."
       ],
       "Not a valid number": [
         "Nu este un număr valid"
@@ -1950,6 +2031,9 @@
       "The meeting password is invalid": [
         "Parola conferinței nu este validă."
       ],
+      "The selected microphone is no longer available.": [
+        "Microfonul selectat nu mai este disponibil."
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Acest câmp depășește maximul de ${ maximumLength } de caractere."
       ],
@@ -1974,6 +2058,9 @@
       "Username must end with a letter or digit": [
         "Numele de utilizator trebuie să se termine cu o literă sau cifră."
       ],
+      "Virtual background initialization failed. Please toggle your camera or pick a background again": [
+        "Inițializarea fundalului virtual a eșuat. Activați/Dezactivați camera sau realegeți un fundal."
+      ],
       "We couldn’t send a verification code using this method.": [
         "Nu s-a putut trimite un cod de verificare folosind această metodă."
       ],
@@ -1982,6 +2069,9 @@
       ],
       "Your device's clock appears to be out of sync. Please check your system time and try again.": [
         "Se pare că ceasul dispozitivului nu este sincronizat. Verificați ora sistemului și reîncercați."
+      ],
+      "Your microphone is busy. Close other apps or tabs using it, then try again.": [
+        "Microfonul este ocupat. Închideți celelalte aplicații sau file web care îl folosesc, apoi reîncercați."
       ]
     },
     "Error message": {
@@ -2253,6 +2343,9 @@
       "Background blur initializing": [
         "Se inițializează estomparea fundalului"
       ],
+      "Background effects are not supported on your browser": [
+        "Efectele pentru fundal nu sunt suportate în acest navigator web."
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Înainte de a solicita un cod nou de verificare, verificați-vă folderul de mesaje nedorite și verificați dacă ${ strong } este adresa corectă."
       ],
@@ -2265,8 +2358,14 @@
       "camera": [
         "camera"
       ],
+      "Camera effects": [
+        "Efecte de cameră"
+      ],
       "Camera permission denied": [
         "Accesul la cameră a fost respins"
+      ],
+      "Captions are on": [
+        "Subtitrările sunt activate"
       ],
       "Changes are staged. Apply to rebuild the preview with the new constants.": [
         "Modificările sunt implementate în etape. Aplicați pentru a reconstrui examinarea cu noile constante."
@@ -2646,6 +2745,9 @@
       "Presenting": [
         "Prezentare"
       ],
+      "Preview unavailable": [
+        "Examinare indisponibilă"
+      ],
       "privacy": [
         "confidențialitate"
       ],
@@ -2799,6 +2901,9 @@
       "To create a room, you'll need **a free ${ BRAND_NAME } Account** so we can save the room. This only takes a few seconds.": [
         "Pentru a crea o cameră, veți avea nevoie de **un cont gratuit ${ BRAND_NAME }** pentru a o putea salva. Acest lucru durează doar câteva secunde."
       ],
+      "To create live captions, the captioning service needs access to the meeting audio. Captions are only visible to you and are not saved.": [
+        "Pentru a crea subtitrări live, serviciul de subtitrări are nevoie de acces la sunetul întâlnirii. Subtitrările sunt vizibile doar pentru dvs. și nu sunt salvate."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "Pentru a combate abuzurile, dovediți că sunteți o persoană."
       ],
@@ -2819,6 +2924,9 @@
       ],
       "Turn on camera": [
         "Activare cameră"
+      ],
+      "Turn on live captions?": [
+        "Activați subtitrările live?"
       ],
       "Unable to reconnect to the meeting. Please rejoin or leave.": [
         "Nu se poate reconecta conferința. Realăturați-vă sau părăsiți-o."
@@ -2841,11 +2949,11 @@
       "Upload an image to preview it as the background.": [
         "Încărcați o imagine pentru a o examina ca fundal."
       ],
-      "Video effects": [
-        "Efecte video"
-      ],
       "View ": [
         "Afișare "
+      ],
+      "Virtual background initializing": [
+        "Se inițializează fundalul virtual"
       ],
       "Waiting for the host to admit you. The host has been notified that you're waiting.": [
         "Se așteaptă ca gazda să vă admită. Gazda a fost anunțată că așteptați."
@@ -2940,6 +3048,9 @@
       "Your phone number will only be used for this one-time verification.": [
         "Numărul de telefon va fi folosit doar pentru această verificare unică."
       ],
+      "Your preview": [
+        "Examinarea proprie"
+      ],
       "You’re about to open a link in a new tab. Make sure you trust the website before continuing.": [
         "Urmează să deschideți o legătură web într-o filă nouă. Asigurați-vă că aprobați site-ul web înainte de a continua."
       ]
@@ -2962,6 +3073,9 @@
       "Advanced mode": [
         "Mod avansat"
       ],
+      "Agent": [
+        "Agent"
+      ],
       "Anyone with the link can join": [
         "Oricine are legătura web poate participa"
       ],
@@ -2974,8 +3088,14 @@
       "Authenticator app": [
         "Aplicația Authenticator"
       ],
+      "Auto-detect": [
+        "Autodetectare"
+      ],
       "Background color": [
         "Culoare fundal"
+      ],
+      "Blue background": [
+        "Fundal albastru"
       ],
       "Blurred (next)": [
         "Estompat (următorul)"
@@ -3067,6 +3187,9 @@
       "Google Calendar": [
         "Calendar Google"
       ],
+      "Green background": [
+        "Fundal verde"
+      ],
       "Hide password": [
         "Ascundere parolă"
       ],
@@ -3087,6 +3210,9 @@
       ],
       "Leave meeting options": [
         "Opțiuni părăsire conferință"
+      ],
+      "Live caption agent": [
+        "Agent subtitrări live"
       ],
       "Manage recordings": [
         "Gestionare înregistrări"
@@ -3121,6 +3247,9 @@
       "Operating system version": [
         "Versiune sistem de operare"
       ],
+      "Orange background": [
+        "Fundal portocaliu"
+      ],
       "Outlook Calendar": [
         "Calendar Outlook"
       ],
@@ -3135,6 +3264,9 @@
       ],
       "Phone number": [
         "Număr de telefon"
+      ],
+      "Purple background": [
+        "Fundal violet"
       ],
       "Raw": [
         "Brut"
@@ -3174,6 +3306,9 @@
       ],
       "Solid color": [
         "Culoare uniformă"
+      ],
+      "Spoken language": [
+        "Limba vorbită"
       ],
       "Subscribed": [
         "Abonat"
@@ -3504,8 +3639,16 @@
       "No": [
         "Nu"
       ],
+      "Transcribing...": [
+        "Se transcrie..."
+      ],
       "Yes": [
         "Da"
+      ]
+    },
+    "Subtitle": {
+      "This system agent creates live captions. It is not a participant and cannot send messages.": [
+        "Acest agent de sistem creează subtitrări live. Nu este un participant și nu poate trimite mesaje."
       ]
     },
     "Success": {
@@ -3540,6 +3683,9 @@
       ]
     },
     "Title": {
+      "Accessibility": [
+        "Accesibilitate"
+      ],
       "Account restricted": [
         "Cont restricționat"
       ],
@@ -3581,6 +3727,12 @@
       ],
       "Background blur comparison": [
         "Comparare estompare fundal"
+      ],
+      "Background effects": [
+        "Efecte fundal"
+      ],
+      "Backgrounds": [
+        "Fundaluri"
       ],
       "Camera and microphone are blocked": [
         "Camera și microfonul sunt blocate"
@@ -3704,6 +3856,9 @@
       "Participants (${ filteredParticipants.length })": [
         "Participanți (${ filteredParticipants.length })"
       ],
+      "People": [
+        "Persoane"
+      ],
       "Personal meeting room": [
         "Cameră de întâlnire personală"
       ],
@@ -3761,6 +3916,9 @@
       "Stop recording": [
         "Oprire înregistrare"
       ],
+      "System": [
+        "Sistem"
+      ],
       "Talk confidentially": [
         "Discuție confidențială"
       ],
@@ -3781,6 +3939,9 @@
       ],
       "Video": [
         "Videoclip"
+      ],
+      "Virtual backgrounds": [
+        "Fundaluri virtuale"
       ],
       "Waiting for the host": [
         "Se așteaptă gazda"
