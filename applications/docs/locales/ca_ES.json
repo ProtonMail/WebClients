@@ -3040,6 +3040,9 @@
       "Authentication error.": [
         "Error d'autenticació."
       ],
+      "Because this document was in a shared folder, only the folder owner can restore it": [
+        "Aquest document es trobava en una carpeta compartida i només el propietari de la carpeta el pot restaurar"
+      ],
       "Bookmark password is not available": [
         "La contrasenya del marcador de pàgina no està disponible"
       ],
@@ -3221,9 +3224,6 @@
       ],
       "Failed to load recent documents": [
         "No s'han pogut carregar els documents recents"
-      ],
-      "Failed to load subscription data. Please try again later.": [
-        "No s'han pogut carregar les dades de la subscripció. Torneu-ho a provar més tard."
       ],
       "Failed to open to contact": [
         "No s'ha pogut obrir el contacte"
@@ -5012,9 +5012,6 @@
       ],
       "Decrypting your document": [
         "S'està desxifrant el document"
-      ],
-      "Details": [
-        "Detalls"
       ],
       "Display word count": [
         "Mostra el nombre de paraules"
@@ -8173,6 +8170,16 @@
       "Support for ${ n } custom email domain": [
         "Suport per a ${ n } domini de correu electrònic personalitzat",
         "Suport per a ${ n } dominis de correu electrònic personalitzats"
+      ]
+    },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Proveu-ho ara"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Ara teniu accés a la nova ${ CALENDAR_APP_NAME }. ${ link }"
       ]
     },
     "Notification": {

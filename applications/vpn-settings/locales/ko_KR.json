@@ -4525,6 +4525,9 @@
       "Add": [
         "추가"
       ],
+      "Add 1 more": [
+        "한 명 더 추가하기"
+      ],
       "Add emergency contact": [
         "비상 연락처 추가"
       ],
@@ -4623,6 +4626,9 @@
       ],
       "Enable auto-renew": [
         "자동 갱신 활성화"
+      ],
+      "Explore plans": [
+        "플랜 살펴보기"
       ],
       "For ${ email }": [
         "${ email }"
@@ -10800,6 +10806,9 @@
       "Enter code": [
         "코드 입력"
       ],
+      "Enter current password": [
+        "현재 비밀번호 입력"
+      ],
       "Enter name or email address": [
         "이름 또는 이메일 주소 입력"
       ],
@@ -11422,6 +11431,9 @@
       ],
       "Recovery phone number": [
         "복구 전화번호"
+      ],
+      "Set recovery phone number": [
+        "복구 휴대폰 번호 설정"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13360,6 +13372,16 @@
         "복구 방법 체크리스트"
       ]
     },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "지금 사용해보세요"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "${ CALENDAR_APP_NAME }를 사용할 수 있습니다. ${ link }"
+      ]
+    },
     "Notification": {
       "${ reason } has been disabled": [
         "${ reason }이(가) 비활성화 되었습니다."
@@ -14932,6 +14954,9 @@
       "Recoverability": [
         "복구 가능성"
       ],
+      "Recovery score: ${ score }": [
+        "복구 점수: ${ score }"
+      ],
       "Require verified password reset option (email or SMS)": [
         "인증된 비밀번호 재설정 방법 필요 (이메일 또는 SMS)"
       ],
@@ -15392,8 +15417,289 @@
       ]
     },
     "Safety review": {
+      "Code sent to ${ boldValue }": [
+        "${ boldValue }(으)로 코드를 전송했습니다."
+      ],
+      "Invalid code": [
+        "잘못된 코드입니다"
+      ],
       "Review account safety": [
         "내 계정 보안 검토하기"
+      ],
+      "Safety review": [
+        "안전 검토"
+      ],
+      "Send a new code": [
+        "새 코드 보내기"
+      ],
+      "update it now": [
+        "지금 업데이트"
+      ]
+    },
+    "safety_review": {
+      "${ BRAND_NAME } Account email": [
+        "${ BRAND_NAME } 계정 이메일"
+      ],
+      "Account protection": [
+        "계정 보호"
+      ],
+      "Add": [
+        "추가"
+      ],
+      "Add an emergency contact": [
+        "비상 연락처 추가"
+      ],
+      "Add emergency contacts": [
+        "비상 연락처 추가"
+      ],
+      "Add options": [
+        "복구 방법 추가"
+      ],
+      "Add people who you trust and can contact easily. Your emergency contact will be able to access your account and reset your password for you if needed.": [
+        "신뢰하고 쉽게 연락할 수 있는 사람들을 추가하세요. 비상 연락처에 추가된 사용자들이 필요시 내 계정에 직접 접근하여 비밀번호를 재설정할 수 있습니다."
+      ],
+      "Add people you trust and can contact easily. They will be able to help you unlock your data after you reset your password.": [
+        "신뢰하고 쉽게 연락할 수 있는 사람을 추가하세요. 비밀번호 재설정 이후 암호화된 데이터를 잠금 해제하는데 복구 연락처에 추가된 사람들이 도움을 줄 수 있습니다."
+      ],
+      "Add phone number": [
+        "휴대폰 번호 추가"
+      ],
+      "Add recovery contacts": [
+        "복구 연락처 추가"
+      ],
+      "Add recovery email": [
+        "복구 이메일 추가"
+      ],
+      "Add recovery phone": [
+        "복구 휴대폰 추가"
+      ],
+      "Added emergency contacts": [
+        "비상 연락처 추가"
+      ],
+      "Added recovery contacts": [
+        "복구 연락처가 추가됨"
+      ],
+      "Added recovery email": [
+        "복구 이메일이 추가됨"
+      ],
+      "Added recovery phone": [
+        "복구 휴대폰 추가"
+      ],
+      "Allow": [
+        "허용"
+      ],
+      "Allow data recovery from this device": [
+        "이 기기에서 데이터 복구 허용"
+      ],
+      "Allow password reset from the settings": [
+        "설정에서 비밀번호 재설정 허용"
+      ],
+      "Allow recovery by email": [
+        "이메일을 통한 복구 허용"
+      ],
+      "Allow recovery by phone": [
+        "휴대폰을 통한 복구 허용"
+      ],
+      "Allow scanning a QR code to sign in": [
+        "QR코드로 로그인 허용"
+      ],
+      "Allow trusted friends to unlock your data": [
+        "신뢰하는 친구가 내 데이터를 잠금 해제하도록 허용"
+      ],
+      "Back to ${ backLink.appNameString }": [
+        "${ backLink.appNameString }(으)로 돌아가기"
+      ],
+      "Congratulations": [
+        "축하해요!"
+      ],
+      "Didn’t receive it? ${ sendANewCode }": [
+        "받지 못하셨나요? ${ sendANewCode }"
+      ],
+      "Done": [
+        "완료"
+      ],
+      "Download": [
+        "다운로드"
+      ],
+      "Download recovery file": [
+        "복구 파일 다운로드"
+      ],
+      "Downloaded recovery file": [
+        "복구 파일 다운로드됨"
+      ],
+      "Emergency contacts enabled": [
+        "비상 연락처 활성화됨"
+      ],
+      "Enable device recovery": [
+        "기기 기반 복구 활성화"
+      ],
+      "Enable email recovery": [
+        "이메일로 복구 활성화"
+      ],
+      "Enable emergency contacts": [
+        "비상 연락처 활성화"
+      ],
+      "Enable password reset from settings": [
+        "설정에서 비밀번호 재설정 활성화"
+      ],
+      "Enable phone recovery": [
+        "휴대폰으로 복구 활성화"
+      ],
+      "Enable QR code sign-in": [
+        "QR코드로 로그인 활성화"
+      ],
+      "Enabled device recovery": [
+        "기기 기반 복구 활성화됨"
+      ],
+      "Enabled email recovery": [
+        "이메일로 복구 활성화됨"
+      ],
+      "Enabled password reset from settings": [
+        "설정에서 비밀번호 재설정 허용됨"
+      ],
+      "Enabled phone recovery": [
+        "휴대폰으로 복구 활성화됨"
+      ],
+      "Enabled QR code sign-in": [
+        "QR코드로 로그인이 활성화됨"
+      ],
+      "Got it": [
+        "확인"
+      ],
+      "Here's how you increased your account protection:": [
+        "회원님의 계정을 보호하기 위해 추가된 복구 방법들입니다:"
+      ],
+      "If you forget your password, you can sign in using a QR code. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
+        "만약 비밀번호를 분실한 경우, QR코드를 사용하여 로그인할 수 있습니다. ${ BRAND_NAME } 서비스에 로그인된 다른 기기만 있으면 됩니다."
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, it will allow you to sign in and recover your data. It’s the only way to instantly restore everything, so make sure you keep it somewhere safe.": [
+        "만약 ${ BRAND_NAME } 계정이 잠긴 경우, 복구 키가 데이터 복구와 다시 로그인하는 데 도움이 됩니다. 이 방법은 즉시 모든 정보를 복구할 수 있는 유일한 방법이므로, 반드시 접근 가능하고 안전한 곳에 보관해야 합니다."
+      ],
+      "If your recovery email has changed, ${ updateEmailLink }.": [
+        "복구 이메일이 변경된 경우, ${ updateEmailLink }."
+      ],
+      "If your recovery phone has changed, ${ updatePhoneLink }.": [
+        "복구 전화번호가 변경된 경우, ${ updatePhoneLink }를 이용하세요."
+      ],
+      "Later": [
+        "나중에"
+      ],
+      "Protect your legacy with Emergency Access": [
+        "비상 접근으로 나의 유산을 보호하기"
+      ],
+      "Save recovery phrase": [
+        "복구 키 저장"
+      ],
+      "Saved recovery phrase": [
+        "저장된 복구 키"
+      ],
+      "Send verification code": [
+        "인증 코드 보내기"
+      ],
+      "They must already have a ${ BRAND_NAME } Account.": [
+        "이미 ${ BRAND_NAME } 계정을 가지고 있어야 합니다."
+      ],
+      "They will not be able to see or access your data.": [
+        "해당 사용자들이 회원님의 데이터를 보거나 접근할 수 없습니다."
+      ],
+      "This will let you quickly access your ${ BRAND_NAME } Account so you can change your password.": [
+        "QR코드로 로그인은 비밀번호를 변경할 수 있도록 ${ BRAND_NAME } 계정에 가장 빠르고 안전하게 접근할 수 있는 방법입니다."
+      ],
+      "This will let you reset your account password if you’ve lost it, but are still signed in to ${ BRAND_NAME }. It’s often the easiest way to recover your account if you’re signed in.": [
+        "만약 비밀번호를 분실한 경우 여전히 ${ BRAND_NAME }에 로그인되어 있기 때문에 계정의 비밀번호를 재설정할 수 있습니다. 만약 로그인 상태라면 계정 복구가 가능한 가장 쉬운 방법입니다."
+      ],
+      "This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
+        "복구 파일은 비밀번호 재설정 이후 이메일, 연락처, 파일, 비밀번호 등의 암호화된 데이터의 접근 권한을 복구하는데 사용됩니다."
+      ],
+      "To help you remember your password, we’ll periodically ask you to enter it.": [
+        "비밀번호를 기억할 수 있도록 주기적으로 입력을 요청해 드립니다."
+      ],
+      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
+        "이메일 주소가 본인의 것인지 여부를 확인하기 위해, ${ boldEmail }(으)로 전송된 인증 코드를 입력하세요."
+      ],
+      "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
+        "해당 휴대폰 번호가 본인의 것인지 확인하기 위해, ${ boldPhoneNumber }(으)로 전송된 인증 코드를 입력해 주세요."
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification code.": [
+        "본인 여부를 확인하기 위해, 인증 링크가 포함된 이메일을 보내드립니다."
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification link.": [
+        "본인 여부를 확인하기 위해, 인증 링크가 포함된 이메일을 보내드립니다."
+      ],
+      "To make sure this number is really yours, we’ll send an SMS with a verification code.": [
+        "해당 번호가 정말 본인 소유인지 확인하기 위해 인증 코드가 포함된 SMS를 보내드립니다."
+      ],
+      "Update": [
+        "업데이트"
+      ],
+      "Update recovery email": [
+        "복구 이메일 업데이트"
+      ],
+      "Update recovery phone": [
+        "복구 휴대폰 업데이트"
+      ],
+      "Upgrade your plan to enable Emergency Access to your account. This will allow you to designate 1 to 5 people who will be able to reset your password for you.": [
+        "계정에 비상 접근을 활성화하려면 플랜을 업그레이드하세요. 지정된 1~5명의 사용자가 회원님의 비밀번호를 재설정하는데 도움을 줄 수 있습니다."
+      ],
+      "Verified password": [
+        "비밀번호 인증됨"
+      ],
+      "Verified recovery email": [
+        "복구 이메일 인증됨"
+      ],
+      "Verified recovery phone": [
+        "복구 휴대폰 인증됨"
+      ],
+      "Verify": [
+        "인증"
+      ],
+      "Verify password": [
+        "비밀번호 확인"
+      ],
+      "Verify recovery email": [
+        "복구 이메일 인증"
+      ],
+      "Verify recovery phone": [
+        "복구 휴대폰 인증"
+      ],
+      "Verify your password": [
+        "비밀번호 확인"
+      ],
+      "Verify your recovery email": [
+        "복구 이메일 인증"
+      ],
+      "Verify your recovery phone": [
+        "복구 휴대폰 인증"
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        "이메일 주소를 인증하면 계정 보안이 강화되고 복구를 위한 추가 옵션을 이용할 수 있습니다."
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "휴대폰 번호를 통한 인증은 계정 보호성이 증가하고 추가적인 복구 옵션을 제공합니다."
+      ],
+      "You can save a data backup on this device. This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset, simply by signing in on this device.": [
+        "이 기기에서 데이터 백업을 활성화할 수 있으며 계정의 비밀번호를 재설정한 다음 이 기기로 다시 로그인하여 이메일과 연락처, 파일, 비밀번호 및 다른 모든 암호화된 데이터에 대한 접근 권한을 복구할 수 있게 됩니다."
+      ],
+      "You can use email verification to regain access to your account if you forget your password.": [
+        "비밀번호를 잊어버린 경우 이메일 인증을 사용하여 계정에 다시 접근할 수 있습니다."
+      ],
+      "You can use SMS verification to regain access to your account if you forget your password.": [
+        "비밀번호를 잊어버린 경우 SMS 인증을 사용하여 계정에 다시 접근할 수 있습니다."
+      ],
+      "You can use your recovery email to regain access to your account if you forget your password.": [
+        "비밀번호를 잊어버린 경우 복구 이메일을 사용하여 계정에 다시 접근할 수 있습니다."
+      ],
+      "You can use your recovery phone to regain access to your account if you forget your password.": [
+        "비밀번호를 잊어버린 경우 복구 휴대폰을 사용하여 계정에 다시 접근할 수 있습니다."
+      ],
+      "You don’t need to open or read the file—just download it and store it somewhere safe.": [
+        "복구 파일을 열거나 읽을 필요가 없습니다. 다운로드 후 안전한 곳에 저장하세요."
+      ],
+      "Your recovery checklist": [
+        "복구 방법 체크리스트"
+      ],
+      "Your security setup": [
+        "복구 방법 설정 상태"
       ]
     },
     "saml: Action": {
