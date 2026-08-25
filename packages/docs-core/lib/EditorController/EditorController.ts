@@ -6,6 +6,7 @@ import type {
   SheetImportData,
 } from '@proton/docs-shared'
 import {
+  BroadcastSource,
   DocUpdateOrigin,
   FileMenuActionEvent,
   InternalEventPublishStrategy,
@@ -53,7 +54,7 @@ export interface EditorControllerInterface {
   importDataIntoSheet(data: SheetImportData): Promise<void>
   handleFileMenuAction(action: FileMenuAction): Promise<void>
   focusSpreadsheet(): void
-  applyUpdate(update: Uint8Array<ArrayBuffer>): Promise<void>
+  applyUpdate(update: Uint8Array<ArrayBuffer>, persist?: boolean): Promise<void>
   storeSpreadsheetPatches(patches: unknown, updateHash: string, type?: SheetsPatchesType): Promise<void>
   storeSpreadsheetAction(type: SheetsActionType, content: unknown): Promise<void>
   hasBasePatches(): Promise<boolean>
@@ -514,7 +515,7 @@ export class EditorController implements EditorControllerInterface {
     )
   }
 
-  async applyUpdate(update: Uint8Array<ArrayBuffer>): Promise<void> {
+  async applyUpdate(update: Uint8Array<ArrayBuffer>, persist = false): Promise<void> {
     if (!this.editorInvoker) {
       throw new Error('Attempting to apply update before editor invoker is initialized')
     }
@@ -523,6 +524,19 @@ export class EditorController implements EditorControllerInterface {
       type: { wrapper: 'du' },
       content: update,
     })
+
+    if (persist) {
+      this.documentState.emitEvent({
+        name: 'EditorRequestsPropagationOfUpdate',
+        payload: {
+          message: {
+            type: { wrapper: 'du' },
+            content: update,
+          },
+          debugSource: BroadcastSource.UpdateReplayTool,
+        },
+      })
+    }
   }
 
   async storeSpreadsheetPatches(patches: object, updateHash: string, type = SheetsPatchesType.Delta): Promise<void> {
