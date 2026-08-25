@@ -111,6 +111,7 @@ function bundle_extension_from_sources {
         -x "test/*" \
         -x "packages/config/*" \
         -x "packages/activation/*" \
+        -x "packages/calendar-video-conferencing/*" \
         -x "packages/drive/*" \
         -x "packages/drive-store/*" \
         -x "packages/docs-proto/*" \
