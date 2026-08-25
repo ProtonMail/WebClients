@@ -21,7 +21,7 @@ import useAuthentication from '@proton/components/hooks/useAuthentication'
 import { useConfig } from '@proton/app-context/useConfig'
 import { useNotifications } from '@proton/app-context/useNotifications'
 import UserDropdown from '@proton/components/containers/heading/UserDropdown'
-import useToggle from '@proton/components/hooks/useToggle'
+import useToggle from '@proton/hooks/useToggle'
 import { useMemo, useState, type ReactNode } from 'react'
 
 import { IcArrowRotateRight } from '@proton/icons/icons/IcArrowRotateRight'

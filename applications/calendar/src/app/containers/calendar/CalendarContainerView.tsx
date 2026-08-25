@@ -35,7 +35,7 @@ import TopBanners from '@proton/components/containers/topBanners/TopBanners';
 import useDrawer from '@proton/components/hooks/drawer/useDrawer';
 import useOpenDrawerOnLoad from '@proton/components/hooks/drawer/useOpenDrawerOnLoad';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import useToggle from '@proton/components/hooks/useToggle';
+import useToggle from '@proton/hooks/useToggle'
 import { FeatureCode, useFeature } from '@proton/features';
 import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';

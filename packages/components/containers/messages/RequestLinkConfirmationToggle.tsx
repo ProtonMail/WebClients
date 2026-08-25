@@ -9,7 +9,7 @@ import { updateConfirmLink } from '@proton/shared/lib/api/mailSettings';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 
 import Toggle from '../../components/toggle/Toggle';
-import useToggle from '../../hooks/useToggle';
+import useToggle from '@proton/hooks/useToggle'
 
 interface Props {
     id: string;

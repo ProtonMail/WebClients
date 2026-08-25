@@ -3,7 +3,7 @@ import type { ChangeEvent } from 'react';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
 import Toggle from '../../components/toggle/Toggle';
-import useToggle from '../../hooks/useToggle';
+import useToggle from '@proton/hooks/useToggle'
 
 const { GROUP, SINGLE } = VIEW_MODE;
 

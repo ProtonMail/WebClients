@@ -10,7 +10,7 @@ import { TelemetryMeasurementGroups, TelemetryProtonTipsEvents } from '@proton/s
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 
 import Toggle from '../../components/toggle/Toggle';
-import useToggle from '../../hooks/useToggle';
+import useToggle from '@proton/hooks/useToggle'
 
 const TIP_HIDDEN = -1 as const;
 
