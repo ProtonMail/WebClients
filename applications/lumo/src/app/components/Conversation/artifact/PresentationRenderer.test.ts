@@ -1,5 +1,5 @@
 import { buildRevealTemplate, injectSlides } from './PresentationRenderer';
-import { buildSandboxedDoc } from './WebpageRenderer';
+import { buildArtifactDocument } from './WebpageRenderer';
 
 // `vega-embed` ships ESM-only and isn't wired into this repo's Jest transform allowlist — mocked
 // here purely so importing PresentationRenderer.tsx (which now pulls in presentationCharts.ts,
@@ -48,32 +48,35 @@ describe('buildRevealTemplate + injectSlides', () => {
         expect(doc.querySelector('.reveal .slides')?.textContent).toBe('Price is $1 per unit, save $$5');
     });
 
-    it('still gets the CSP injected as the first head child once passed through buildSandboxedDoc', () => {
+    it('still gets the resize/error bridge script injected into <head> once passed through buildArtifactDocument', () => {
         const template = buildRevealTemplate(revealJs, revealCss, themeCss);
         const combined = injectSlides(template, '<section>Slide 1</section>');
 
-        const doc = parse(buildSandboxedDoc(combined));
+        const doc = parse(buildArtifactDocument(combined));
 
-        const cspMeta = doc.head.querySelector('meta[http-equiv="Content-Security-Policy" i]');
-        expect(cspMeta).not.toBeNull();
-        expect(doc.head.firstElementChild?.getAttribute('http-equiv')?.toLowerCase()).toBe('content-security-policy');
+        const bridgeScript = Array.from(doc.head.querySelectorAll('script')).find((el) =>
+            el.textContent?.includes('lumo-resize')
+        );
+        expect(bridgeScript).toBeDefined();
 
         // The html/body sizing <style>, plus the reveal.js library/theme <style> tags, and
-        // <script> tags must still be present alongside the injected CSP/bridge script —
-        // buildSandboxedDoc must not clobber them.
+        // <script> tags must still be present alongside the injected bridge script —
+        // buildArtifactDocument must not clobber them.
         expect(doc.querySelectorAll('style')).toHaveLength(3);
         expect(Array.from(doc.querySelectorAll('script')).some((s) => s.textContent?.includes('window.Reveal'))).toBe(
             true
         );
     });
 
-    it('a decoy "<head>"-shaped comment in slide content does not defeat the CSP (same protection as webpage artifacts)', () => {
+    it('a decoy "<head>"-shaped comment in slide content is left untouched (same head-parsing safety as webpage artifacts)', () => {
         const template = buildRevealTemplate(revealJs, revealCss, themeCss);
         const combined = injectSlides(template, '<section><!-- <head> --> Slide with a decoy comment</section>');
 
-        const doc = parse(buildSandboxedDoc(combined));
+        const doc = parse(buildArtifactDocument(combined));
 
-        expect(doc.head.querySelector('meta[http-equiv="Content-Security-Policy" i]')).not.toBeNull();
+        expect(
+            Array.from(doc.head.querySelectorAll('script')).some((el) => el.textContent?.includes('lumo-resize'))
+        ).toBe(true);
         expect(doc.querySelector('.slides')?.textContent).toContain('Slide with a decoy comment');
     });
 });
