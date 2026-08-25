@@ -14,9 +14,24 @@ import { createShareRemovedError, createTestShare } from '../../shares/share.tes
 import type { EventProcessor } from '../types';
 import { processSharesCreated, processSharesDeleted, processSharesUpdated } from './user-events.shares';
 
-const requestShare = jest.spyOn(shareRequests, 'requestShare');
-const parseShareResponse = jest.spyOn(shareParser, 'parseShareResponse');
-const requestItemsForShareId = jest.spyOn(itemRequests, 'requestItemsForShareId');
+jest.mock('@proton/pass/lib/items/item.requests', () => ({
+    ...jest.requireActual('@proton/pass/lib/items/item.requests'),
+    requestItemsForShareId: jest.fn(),
+}));
+
+jest.mock('@proton/pass/lib/shares/share.parser', () => ({
+    ...jest.requireActual('@proton/pass/lib/shares/share.parser'),
+    parseShareResponse: jest.fn(),
+}));
+
+jest.mock('@proton/pass/lib/shares/share.requests', () => ({
+    ...jest.requireActual('@proton/pass/lib/shares/share.requests'),
+    requestShare: jest.fn(),
+}));
+
+const requestShare = jest.mocked(shareRequests.requestShare);
+const parseShareResponse = jest.mocked(shareParser.parseShareResponse);
+const requestItemsForShareId = jest.mocked(itemRequests.requestItemsForShareId);
 
 const createEvent = (ShareID: ShareId) => ({ ShareID }) as SyncEventShareOutput;
 const removeShare = jest.fn();

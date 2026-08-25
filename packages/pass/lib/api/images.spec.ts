@@ -5,6 +5,11 @@ import * as cache from './cache';
 import { createAbortResponse, createNetworkError } from './fetch-controller';
 import { createImageProxyHandler } from './images';
 
+jest.mock('./cache', () => ({
+    ...jest.requireActual('./cache'),
+    getCache: jest.fn(),
+}));
+
 const { withMaxAgeHeaders } = cache;
 
 describe('createImageProxyHandler', () => {
@@ -15,7 +20,7 @@ describe('createImageProxyHandler', () => {
     const apiParams = { url: mockUrl, output: 'raw', sideEffects: false };
 
     beforeEach(() => {
-        jest.spyOn(cache, 'getCache').mockImplementation(() => Promise.resolve(mockCache as unknown as Cache));
+        jest.mocked(cache.getCache).mockImplementation(() => Promise.resolve(mockCache as unknown as Cache));
         mockApi.mockClear();
         mockCache.match.mockClear();
         mockCache.put.mockClear();

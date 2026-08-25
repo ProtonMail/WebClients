@@ -31,6 +31,12 @@ const mockedUserSettings = useUserSettings as jest.MockedFunction<any>;
 jest.mock('@proton/account/retentionPolicies/hooks');
 const mockedUseRetentionPolicies = useRetentionPolicies as jest.MockedFunction<any>;
 
+jest.mock('../../containers/onboardingChecklist/provider/GetStartedChecklistProvider', () => ({
+    __esModule: true,
+    ...jest.requireActual('../../containers/onboardingChecklist/provider/GetStartedChecklistProvider'),
+    useGetStartedChecklist: jest.fn(),
+}));
+
 loudRejection();
 
 const mockUseFlag = useFlag as jest.MockedFunction<typeof useFlag>;
@@ -95,10 +101,12 @@ const folderMessages = { LabelID: folder.ID, Unread: 1, Total: 2 };
 const labelMessages = { LabelID: label.ID, Unread: 2, Total: 3 };
 
 describe('MailSidebar', () => {
-    let mockedUseGetStartedChecklist: jest.SpyInstance<OnboardingChecklistContext, [], any>;
+    let mockedUseGetStartedChecklist: jest.MockedFunction<
+        typeof GetStartedChecklistProviderModule.useGetStartedChecklist
+    >;
 
     beforeEach(() => {
-        mockedUseGetStartedChecklist = jest.spyOn(GetStartedChecklistProviderModule, 'useGetStartedChecklist');
+        mockedUseGetStartedChecklist = jest.mocked(GetStartedChecklistProviderModule.useGetStartedChecklist);
         mockedUserSettings.mockReturnValue([{}]);
         mockedUseRetentionPolicies.mockReturnValue([[], false]);
     });
@@ -538,11 +546,13 @@ describe('MailSidebar', () => {
 });
 
 describe('Sidebar checklist display', () => {
-    let mockedUseGetStartedChecklist: jest.SpyInstance<OnboardingChecklistContext, [], any>;
+    let mockedUseGetStartedChecklist: jest.MockedFunction<
+        typeof GetStartedChecklistProviderModule.useGetStartedChecklist
+    >;
 
     beforeEach(() => {
         minimalCache();
-        mockedUseGetStartedChecklist = jest.spyOn(GetStartedChecklistProviderModule, 'useGetStartedChecklist');
+        mockedUseGetStartedChecklist = jest.mocked(GetStartedChecklistProviderModule.useGetStartedChecklist);
         mockedUserSettings.mockReturnValue([{ Checklists: ['get-started-checklist'] }]);
         mockedUseRetentionPolicies.mockReturnValue([[], false]);
     });

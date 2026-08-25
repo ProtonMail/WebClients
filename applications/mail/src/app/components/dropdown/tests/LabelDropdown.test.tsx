@@ -8,15 +8,23 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Label } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
-import type { Element } from '../../../models/element';
-import * as mailboxActions from '../../../store/mailbox/mailboxActions';
-
 import { addApiMock } from '../../../helpers/test/api';
 import { minimalCache } from '../../../helpers/test/cache';
 import { mailTestRender } from '../../../helpers/test/render';
+import type { Element } from '../../../models/element';
+import * as mailboxActions from '../../../store/mailbox/mailboxActions';
 import { initialize } from '../../../store/messages/read/messagesReadActions';
 import { messageID } from '../../message/tests/Message.test.helpers';
 import LabelDropdown, { getInitialState } from '../LabelDropdown';
+
+jest.mock('../../../store/mailbox/mailboxActions', () => {
+    const actual = jest.requireActual('../../../store/mailbox/mailboxActions');
+    return {
+        ...actual,
+        labelMessages: Object.assign(jest.fn(actual.labelMessages), actual.labelMessages),
+        unlabelMessages: Object.assign(jest.fn(actual.unlabelMessages), actual.unlabelMessages),
+    };
+});
 
 const label1Name = 'Label1';
 const label1ID = 'label-1-id';
@@ -108,7 +116,7 @@ describe('LabelDropdown', () => {
     });
 
     it('should label a message', async () => {
-        const labelMessagesSpy = jest.spyOn(mailboxActions, 'labelMessages');
+        const labelMessagesSpy = jest.mocked(mailboxActions.labelMessages);
 
         await setup();
 
@@ -136,11 +144,11 @@ describe('LabelDropdown', () => {
             })
         );
 
-        labelMessagesSpy.mockRestore();
+        labelMessagesSpy.mockClear();
     });
 
     it('should unlabel a message', async () => {
-        const unLabelMessagesSpy = jest.spyOn(mailboxActions, 'unlabelMessages');
+        const unLabelMessagesSpy = jest.mocked(mailboxActions.unlabelMessages);
 
         await setup([label1ID]);
 
@@ -168,11 +176,11 @@ describe('LabelDropdown', () => {
             })
         );
 
-        unLabelMessagesSpy.mockRestore();
+        unLabelMessagesSpy.mockClear();
     });
 
     it('should add the "also archive" option', async () => {
-        const labelMessagesSpy = jest.spyOn(mailboxActions, 'labelMessages');
+        const labelMessagesSpy = jest.mocked(mailboxActions.labelMessages);
         await setup();
 
         const checkbox1 = screen.getByTestId(`label-dropdown:label-checkbox-${label1Name}`) as HTMLInputElement;
@@ -215,12 +223,12 @@ describe('LabelDropdown', () => {
             })
         );
 
-        labelMessagesSpy.mockRestore();
+        labelMessagesSpy.mockClear();
     });
 
     // Something is not right with the "always label sender email" (filterApiMock not called). Will be fixed separately
     it('should add the "always label sender email" option', async () => {
-        const labelMessagesSpy = jest.spyOn(mailboxActions, 'labelMessages');
+        const labelMessagesSpy = jest.mocked(mailboxActions.labelMessages);
 
         const filterApiMock = jest.fn(() => ({ Filter: {} }));
         addApiMock('mail/v4/filters', filterApiMock);
@@ -368,7 +376,7 @@ describe('LabelDropdown', () => {
 
     describe('one-click label application', () => {
         it('should apply a label immediately when clicking the label name without pressing Apply', async () => {
-            const labelMessagesSpy = jest.spyOn(mailboxActions, 'labelMessages');
+            const labelMessagesSpy = jest.mocked(mailboxActions.labelMessages);
             await setup();
 
             const labelName = screen.getByTestId(`label-dropdown:label-${label1Name}`);
@@ -383,7 +391,7 @@ describe('LabelDropdown', () => {
                 })
             );
 
-            labelMessagesSpy.mockRestore();
+            labelMessagesSpy.mockClear();
         });
 
         it('should close the dropdown immediately when clicking the label name', async () => {
@@ -399,7 +407,7 @@ describe('LabelDropdown', () => {
         });
 
         it('should remove a label immediately when clicking an active label name', async () => {
-            const unlabelMessagesSpy = jest.spyOn(mailboxActions, 'unlabelMessages');
+            const unlabelMessagesSpy = jest.mocked(mailboxActions.unlabelMessages);
             await setup([label1ID]);
 
             const labelName = screen.getByTestId(`label-dropdown:label-${label1Name}`);
@@ -414,7 +422,7 @@ describe('LabelDropdown', () => {
                 })
             );
 
-            unlabelMessagesSpy.mockRestore();
+            unlabelMessagesSpy.mockClear();
         });
     });
 

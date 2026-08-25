@@ -1,8 +1,13 @@
-import * as useSpotlightOnFeatureModule from '@proton/components/hooks/useSpotlightOnFeature';
+import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
 
-type HookReturnType = ReturnType<typeof useSpotlightOnFeatureModule.default>;
+jest.mock('@proton/components/hooks/useSpotlightOnFeature', () => ({
+    __esModule: true,
+    default: jest.fn(),
+}));
+
+type HookReturnType = ReturnType<typeof useSpotlightOnFeature>;
 export const mockUseSpotlightOnFeature = (values: Partial<HookReturnType>) => {
-    const mockedUseSpotlightOnFeature = jest.spyOn(useSpotlightOnFeatureModule, 'default');
+    const mockedUseSpotlightOnFeature = useSpotlightOnFeature as jest.Mock;
 
     mockedUseSpotlightOnFeature.mockReturnValue({
         onDisplayed: () => {},

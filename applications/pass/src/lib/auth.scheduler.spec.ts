@@ -3,8 +3,13 @@ import * as epoch from '@proton/pass/utils/time/epoch';
 
 import { createAuthScheduler } from './auth.scheduler';
 
+jest.mock('@proton/pass/utils/time/epoch', () => ({
+    ...jest.requireActual('@proton/pass/utils/time/epoch'),
+    getEpoch: jest.fn(),
+}));
+
 describe('createAuthScheduler', () => {
-    const getEpoch = jest.spyOn(epoch, 'getEpoch');
+    const getEpoch = epoch.getEpoch as jest.Mock;
 
     beforeEach(() => {
         getEpoch.mockReturnValue(0);
