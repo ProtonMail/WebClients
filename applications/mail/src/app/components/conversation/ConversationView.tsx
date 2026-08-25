@@ -2,7 +2,7 @@ import type { RefObject } from 'react';
 import { memo, useEffect, useRef } from 'react';
 
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
-import useToggle from '@proton/components/hooks/useToggle';
+import useToggle from '@proton/hooks/useToggle'
 import { useLabels } from '@proton/mail/store/labels/hooks';
 import { isEditing } from '@proton/shared/lib/busy';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';

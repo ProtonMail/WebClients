@@ -7,7 +7,7 @@ import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 import type { IconName } from '@proton/icons/types';
 
-import useToggle from '../../hooks/useToggle';
+import useToggle from '@proton/hooks/useToggle'
 import Dropdown from '../dropdown/Dropdown';
 import DropdownMenu from '../dropdown/DropdownMenu';
 import DropdownMenuButton from '../dropdown/DropdownMenuButton';

@@ -9,7 +9,7 @@ import { IcGift } from '@proton/icons/icons/IcGift';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 
 import Info from '../../components/link/Info';
-import useToggle from '../../hooks/useToggle';
+import useToggle from '@proton/hooks/useToggle'
 
 interface Props {
     loading?: boolean;

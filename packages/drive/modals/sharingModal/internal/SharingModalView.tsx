@@ -14,8 +14,8 @@ import {
     ModalTwo,
     Spotlight,
     useConfirmActionModal,
-    useToggle,
 } from '@proton/components';
+import useToggle from '@proton/hooks/useToggle'
 import { ModalHeaderCloseButton } from '@proton/components/components/modalTwo/ModalHeader';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import useLoading from '@proton/hooks/useLoading';
