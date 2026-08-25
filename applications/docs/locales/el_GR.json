@@ -3037,6 +3037,9 @@
       "Authentication error.": [
         "Σφάλμα ταυτοποίησης."
       ],
+      "Because this document was in a shared folder, only the folder owner can restore it": [
+        "Επειδή αυτό το έγγραφο βρισκόταν σε έναν κοινόχρηστο φάκελο, μόνο ο κάτοχος του φακέλου μπορεί να το επαναφέρει"
+      ],
       "Bookmark password is not available": [
         "Ο κωδικός πρόσβασης σελιδοδείκτη δεν είναι διαθέσιμος"
       ],
@@ -3218,9 +3221,6 @@
       ],
       "Failed to load recent documents": [
         "Αποτυχία φόρτωσης πρόσφατων εγγράφων"
-      ],
-      "Failed to load subscription data. Please try again later.": [
-        "Αποτυχία φόρτωσης δεδομένων συνδρομής. Παρακαλούμε δοκιμάστε ξανά αργότερα."
       ],
       "Failed to open to contact": [
         "Αποτυχία ανοίγματος επαφής"
@@ -5009,9 +5009,6 @@
       ],
       "Decrypting your document": [
         "Γίνεται αποκρυπτογράφηση του εγγράφου σας"
-      ],
-      "Details": [
-        "Λεπτομέρειες"
       ],
       "Display word count": [
         "Εμφάνιση καταμέτρησης λέξεων"
@@ -8113,6 +8110,16 @@
       "Support for ${ n } custom email domain": [
         "Υποστήριξη για ${ n } παραμετροποιημένο τομέα ηλεκτρονικού ταχυδρομείου",
         "Υποστήριξη για ${ n } παραμετροποιημένους τομείς ηλεκτρονικού ταχυδρομείου"
+      ]
+    },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Δοκιμάστε το τώρα"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Τώρα έχετε πρόσβαση στη νέα εφαρμογή ${ CALENDAR_APP_NAME }. ${ link }"
       ]
     },
     "Notification": {
