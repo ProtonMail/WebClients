@@ -2,7 +2,7 @@ import { generateAndImportKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import { IDBFactory } from 'fake-indexeddb';
 import 'fake-indexeddb/auto';
 
-import { Engine } from '@proton/proton-foundation-search';
+import { Cached, Engine } from '@proton/proton-foundation-search';
 
 import { SearchDB } from '../../shared/SearchDB';
 import { findDocuments, indexDocuments, makeTestIndexEntry } from '../../testing/indexHelpers';
@@ -46,6 +46,16 @@ describe('IndexRegistry integration', () => {
         expect([...registry.getAll()]).toHaveLength(1);
     });
 
+    it('peek() returns undefined without building an instance', async () => {
+        expect(registry.peek(IndexKind.MAIN)).toBeUndefined();
+        expect([...registry.getAll()]).toHaveLength(0);
+    });
+
+    it('peek() returns the same instance get() built', async () => {
+        const built = await registry.get(IndexKind.MAIN, db);
+        expect(registry.peek(IndexKind.MAIN)).toBe(built);
+    });
+
     it('getAll() iterates created instances', async () => {
         await registry.get(IndexKind.MAIN, db);
         await registry.get('TEST' as IndexKind, db);
@@ -60,6 +70,16 @@ describe('IndexRegistry integration', () => {
         // Should create a fresh instance
         const second = await registry.get(IndexKind.MAIN, db);
         expect(second).not.toBe(first);
+    });
+
+    it('dispose() frees any blobs still resident in the blob store cache', async () => {
+        const instance = await registry.get(IndexKind.MAIN, db);
+        await indexDocuments(instance.indexWriter, [makeTestIndexEntry('doc-1')]);
+
+        const freeSpy = jest.spyOn(Cached.prototype, 'free');
+        registry.dispose(IndexKind.MAIN);
+
+        expect(freeSpy).toHaveBeenCalled();
     });
 
     it('disposeAll() survives a throwing engine.free() and still drops the instance', async () => {

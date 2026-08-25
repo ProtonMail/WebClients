@@ -343,7 +343,7 @@ export class IndexerTaskQueue {
             // Sentry issue, so gathering it would just be wasted IndexedDB reads on every flaky
             // network hiccup.
             const isOffline = decision.kind === 'transient' && decision.reason === 'offline';
-            const diagnostics = isOffline ? undefined : await gatherSearchDiagnostics(this.db);
+            const diagnostics = isOffline ? undefined : await gatherSearchDiagnostics(this.db, this.indexRegistry);
 
             this.searchMetrics.markIndexerError({
                 decision,

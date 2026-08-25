@@ -34,3 +34,14 @@ export const SEARCH_ENGINE_MAX_SEARCHABLE_FILENAME_LENGTH = 255;
  * instead of writing one tiny blob per commit.
  */
 export const SEARCH_ENGINE_MAX_TOKEN_BUCKET_SIZE = 10_000;
+
+/**
+ * Maximum number of decoded WASM blobs (Cached objects) IndexBlobStore keeps resident per index.
+ * A backstop against unbounded WASM memory growth on write paths that can save many blobs before
+ * an interleaved cleanup gets a chance to run (see the incremental-update OOM investigation).
+ * This is a count-based proxy, not a byte budget - blob size is not uniform and was observed to
+ * grow with accumulated write history, so this does not translate to a fixed memory ceiling.
+ * Kept close to normal steady-state (~7-13 blobs) and well below the size that preceded a real
+ * production WASM allocator-abort crash (~417 blobs / ~500MB).
+ */
+export const SEARCH_BLOB_CACHE_MAX_ENTRIES = 20;

@@ -16,6 +16,7 @@ import {
     isAbortError,
     isRepairableError,
     maybeWrapAsRepairableNodeError,
+    sendErrorReportForSearch,
 } from './errors';
 
 describe('classifyError', () => {
@@ -239,5 +240,39 @@ describe('maybeWrapAsRepairableNodeError', () => {
 
         expect(maybeWrapAsRepairableNodeError('string', 'msg')).toBeInstanceOf(RepairableNodeError);
         expect(maybeWrapAsRepairableNodeError({ random: 'object' }, 'msg')).toBeInstanceOf(RepairableNodeError);
+    });
+});
+
+describe('sendErrorReportForSearch never throws', () => {
+    afterEach(() => {
+        jest.restoreAllMocks();
+    });
+
+    // Callers are catch/finally blocks (WriteSession.commit, IndexRegistry.dispose,
+    // IndexBlobStore.freeCached, CleanUpStaleBlobsTask). A throw here masks the original error or
+    // skips cleanup, so the reporter has to absorb its own failures.
+    it('swallows a failing reporting backend', () => {
+        jest.spyOn(console, 'warn').mockImplementation(() => {
+            throw new Error('reporting backend is down');
+        });
+
+        expect(() => sendErrorReportForSearch('msg', new Error('original'))).not.toThrow();
+    });
+
+    it('swallows a throw value that cannot be stringified', () => {
+        const unstringifiable = Object.create(null) as unknown;
+
+        expect(() => sendErrorReportForSearch('msg', unstringifiable)).not.toThrow();
+    });
+
+    it('swallows an error whose own property access throws', () => {
+        const hostile = new Error('hostile');
+        Object.defineProperty(hostile, 'name', {
+            get() {
+                throw new Error('exploding getter');
+            },
+        });
+
+        expect(() => sendErrorReportForSearch('msg', hostile)).not.toThrow();
     });
 });

@@ -1215,6 +1215,52 @@ describe('SharedWorkerAPI integration', () => {
         }, 15_000);
     });
 
+    describe('Scenario: search stays correct under concurrent write/cleanup traffic', () => {
+        const BURST_SIZE = 15;
+        const burstNodeUid = (i: number) => `burst-${i}`;
+
+        it('a burst of incremental writes with cleanup after every event does not corrupt concurrent search', async () => {
+            await api.registerClient(USER_ID, CLIENT_A, bridge.asBridge());
+            await state.waitForSearchable();
+            await verifyThatUserCanSearchIndexProperly(api); // baseline sanity
+
+            bridge.setNode('root-uid', folderWithParent('root-uid', 'My Files'));
+            bridge.setNode('folder-projects', folderWithParent('folder-projects', 'Projects', 'root-uid'));
+
+            // Fire all events back-to-back, no awaits in between, so they land inside the same
+            // 5s cold-scope debounce window and batch into one IncrementalUpdateTask run - which
+            // then runs CleanUpStaleBlobsTask after every one of these events, serially. That
+            // alone drives many real beginWrite/endWrite brackets through the real task queue.
+            for (let i = 0; i < BURST_SIZE; i++) {
+                const uid = burstNodeUid(i);
+                bridge.setNode(uid, fileWithParent(uid, `burst-${i}.txt`, 'folder-projects'));
+                bridge.emitEvent(SCOPE_ID, nodeEvent(DriveEventType.NodeCreated, uid, 'folder-projects'));
+            }
+
+            // Poll search *while* the batch is being processed, not just once at the end - this is
+            // what layers real beginRead/hasActiveReads() concurrency on top of the in-flight
+            // writes/cleanups. Reuses the exact busy-tolerance idiom already established by
+            // advanceUntilSearch/retryWhileWriterBusy elsewhere in this file.
+            let found = 0;
+            for (let i = 0; i < 1000 && found < BURST_SIZE; i++) {
+                try {
+                    found = (await search(api, 'burst')).length;
+                } catch (e) {
+                    if (!(e instanceof Error) || !/write session|write handle/i.test(e.message)) {
+                        throw e;
+                    }
+                }
+                await jest.advanceTimersByTimeAsync(200);
+            }
+
+            const burstResults = (await search(api, 'burst')).map((r) => r.nodeUid).sort();
+            expect(burstResults).toEqual(Array.from({ length: BURST_SIZE }, (_, i) => burstNodeUid(i)).sort());
+
+            // The concurrent traffic didn't corrupt or evict anything from the pre-existing index.
+            await verifyThatUserCanSearchIndexProperly(api);
+        }, 30_000);
+    });
+
     describe('Scenario: repair table heals a quarantined node on next startup', () => {
         it('re-indexes a node that failed during an incremental update, once it can be fetched again', async () => {
             await api.registerClient(USER_ID, CLIENT_A, bridge.asBridge());

@@ -129,6 +129,11 @@ export class IndexRegistry {
         return this.instances.values();
     }
 
+    /** Returns the existing instance for `kind`, if one has already been built - never builds one. */
+    peek(kind: IndexKind): IndexInstance | undefined {
+        return this.instances.get(kind);
+    }
+
     dispose(kind: IndexKind): void {
         const instance = this.instances.get(kind);
         if (!instance) {
@@ -147,6 +152,9 @@ export class IndexRegistry {
                 maybeWrapAsSearchLibraryError('engine free', e)
             );
         }
+        // After the engine, so nothing can still be holding these, and outside the try above so a
+        // wedged engine never strands the cached blobs. disposeAll() never throws by contract.
+        instance.blobStore.disposeAll();
     }
 
     disposeAll(): void {
