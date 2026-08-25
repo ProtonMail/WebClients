@@ -302,8 +302,7 @@ describe('createClientToolExecutor', () => {
 
             expect(handled).toEqual([{ target: 'editedTarget' }]);
             expect(result.is_error).toBeUndefined();
-            expect(result.content).toContain('Applied move_items successfully');
-            expect(result.content).toContain('You MUST now respond');
+            expect(result.content).toBe('Applied move_items successfully.');
         });
 
         it('surfaces reference labels to the confirm card', async () => {
@@ -339,7 +338,7 @@ describe('createClientToolExecutor', () => {
             const [result] = await executor.execute([call('move_items', { target: 'x' })]);
             expect(handlerCalls).toEqual([]);
             expect(result.is_error).toBeUndefined();
-            expect(result.content).toContain('declined');
+            expect(result.content).toBe('The user declined that change.');
         });
 
         it('serialises a created entity reference into the success line for chaining', async () => {
