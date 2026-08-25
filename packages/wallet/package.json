@@ -39,16 +39,30 @@
         "@proton/account": "workspace:^",
         "@proton/andromeda": "workspace:packages/wasm/andromeda",
         "@proton/app-context": "workspace:^",
+        "@proton/components": "workspace:^",
+        "@proton/hooks": "workspace:^",
+        "@proton/react-redux-store": "workspace:^",
         "@proton/redux-shared-store": "workspace:^",
+        "@proton/redux-utilities": "workspace:^",
+        "@proton/shared": "workspace:^",
+        "@proton/utils": "workspace:^",
+        "@protontech/crypto": "*",
         "@reduxjs/toolkit": "^2.12.0",
         "cross-env": "^10.1.0",
+        "lodash": "^4.18.1",
         "react": "^18.3.1",
-        "react-redux": "^9.3.0"
+        "react-redux": "^9.3.0",
+        "ttag": "^1.8.12"
     },
     "devDependencies": {
+        "@proton/mail": "workspace:^",
+        "@proton/polyfill": "workspace:^",
         "@proton/testing": "workspace:^",
+        "@proton/unleash": "workspace:^",
         "@testing-library/jest-dom": "^6.9.1",
         "@testing-library/react": "^15.0.7",
+        "@testing-library/react-hooks": "^8.0.1",
+        "@vitejs/plugin-react": "^6.0.5",
         "@vitest/coverage-v8": "^4.1.10",
         "@vitest/ui": "3.2.7",
         "eslint": "^10.8.1",
@@ -58,6 +72,7 @@
         "react-dom": "^18.3.1",
         "ts-jest": "^29.4.12",
         "typescript": "^6.0.3",
+        "vite-plugin-wasm": "^3.6.0",
         "vitest": "^4.1.10"
     }
 }
