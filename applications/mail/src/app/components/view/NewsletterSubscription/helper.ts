@@ -1,6 +1,5 @@
 import { c } from 'ttag';
 
-import type { Filter } from '@proton/components/containers/filters/interfaces';
 import { FILTER_STATUS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { hasReachedFiltersLimit } from '@proton/shared/lib/helpers/filters';
 import type { Folder, UserModel } from '@proton/shared/lib/interfaces';
@@ -8,6 +7,7 @@ import type {
     ApplyNewsletterSubscriptionsFilter,
     NewsletterSubscription,
 } from '@proton/shared/lib/interfaces/NewsletterSubscription';
+import type { Filter } from '@proton/sieve/filterModel';
 
 import { getStandardFolders } from '../../../helpers/labels';
 import type {

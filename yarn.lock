@@ -9702,6 +9702,7 @@ __metadata:
     "@proton/redux-shared-store-types": "workspace:^"
     "@proton/redux-utilities": "workspace:^"
     "@proton/shared": "workspace:^"
+    "@proton/sieve": "workspace:^"
     "@proton/styles": "workspace:^"
     "@proton/unleash": "workspace:^"
     "@proton/utils": "workspace:^"
@@ -10826,6 +10827,7 @@ __metadata:
     "@proton/redux-shared-store-types": "workspace:^"
     "@proton/redux-utilities": "workspace:^"
     "@proton/shared": "workspace:^"
+    "@proton/sieve": "workspace:^"
     "@proton/styles": "workspace:^"
     "@proton/unleash": "workspace:^"
     "@proton/utils": "workspace:^"
@@ -11264,6 +11266,7 @@ __metadata:
     "@proton/polyfill": "workspace:^"
     "@proton/redux-utilities": "workspace:^"
     "@proton/sanitize": "workspace:^"
+    "@proton/sieve": "workspace:^"
     "@proton/styles": "workspace:^"
     "@proton/testing": "workspace:^"
     "@proton/types": "workspace:^"
@@ -11338,8 +11341,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/sieve@workspace:packages/sieve"
   dependencies:
+    "@proton/eslint-config-proton": "workspace:^"
+    "@proton/utils": "workspace:^"
     eslint: "npm:^10.8.1"
     jest: "npm:^30.4.2"
+    lodash: "npm:^4.18.1"
     prettier: "npm:^3.9.6"
     typescript: "npm:^6.0.3"
   languageName: unknown
@@ -11394,6 +11400,7 @@ __metadata:
   resolution: "@proton/testing@workspace:packages/testing"
   dependencies:
     "@jackfranklin/test-data-bot": "npm:^2.1.0"
+    "@proton/sieve": "workspace:^"
     cross-fetch: "npm:^4.1.0"
     eslint: "npm:^10.8.1"
     msw: "npm:2.12.14"
@@ -41705,6 +41712,7 @@ __metadata:
     "@proton/redux-utilities": "workspace:^"
     "@proton/sanitize": "workspace:^"
     "@proton/shared": "workspace:^"
+    "@proton/sieve": "workspace:^"
     "@proton/styles": "workspace:^"
     "@proton/testing": "workspace:^"
     "@proton/types": "workspace:^"

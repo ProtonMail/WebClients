@@ -1,7 +1,6 @@
 import { type PayloadAction, type ThunkAction, type UnknownAction, createSlice } from '@reduxjs/toolkit';
 
 import { serverEvent } from '@proton/account';
-import type { Filter } from '@proton/components/containers/filters/interfaces';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
 import { getInitialModelState } from '@proton/redux-utilities/initialModelState';
@@ -13,6 +12,7 @@ import { updateCollectionAsyncV6 } from '@proton/shared/lib/eventManager/updateC
 import { type UpdateCollectionV6, updateCollectionV6 } from '@proton/shared/lib/eventManager/updateCollectionV6';
 import updateCollection, { sortCollection } from '@proton/shared/lib/helpers/updateCollection';
 import type { Api } from '@proton/shared/lib/interfaces';
+import type { Filter } from '@proton/sieve/filterModel';
 import { removeById } from '@proton/utils/removeById';
 import { upsertById } from '@proton/utils/upsertById';
 
