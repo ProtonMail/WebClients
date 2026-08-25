@@ -88,7 +88,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
   ref: ForwardedRef<SpreadsheetRef>,
 ) {
   const { application } = useApplication()
-  const { canEdit } = useSheetsDependencies()
+  const { canEdit, logger } = useSheetsDependencies()
   const { viewportWidth } = useActiveBreakpoint()
 
   const didConvertFromFile = useRef(false)
@@ -176,7 +176,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     const sheetIDs = state.sheets.map((sheet) => sheet.sheetId.toString())
     for (const sheetID of Object.keys(state.sheetData)) {
       if (!sheetIDs.includes(sheetID)) {
-        application.logger.warn('Spreadsheet: object for sheet ID', sheetID, 'not found in sheets list')
+        logger.warn('Spreadsheet: object for sheet ID', sheetID, 'not found in sheets list')
         state.sheets.push({
           sheetId: parseInt(sheetID),
           title: `Sheet ${sheetID}`,
