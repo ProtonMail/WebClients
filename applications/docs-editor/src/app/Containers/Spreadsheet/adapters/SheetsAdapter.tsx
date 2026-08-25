@@ -34,13 +34,22 @@ export function SheetsAdapter({ children, clientInvoker }: SheetsAdapterProps) {
         environment: application.environment,
         version: application.appVersion,
       },
+      logger: application.logger,
       showNotification: createNotification,
       // Dependencies that use the clientInvoker
       openLink: (url) => {
         void clientInvoker.openLink(url).catch(reportErrorToSentry)
       },
     }),
-    [application.appVersion, application.environment, canEdit, canTrash, clientInvoker, createNotification],
+    [
+      application.appVersion,
+      application.environment,
+      application.logger,
+      canEdit,
+      canTrash,
+      clientInvoker,
+      createNotification,
+    ],
   )
 
   return <SheetsDependenciesProvider dependencies={dependencies}>{children}</SheetsDependenciesProvider>
