@@ -1,12 +1,17 @@
 import { runSaga } from 'redux-saga';
 
-import * as API from '../../../lib/api/api';
+import { exposeApi } from '../../../lib/api/api';
 import { AppStatus } from '../../../types';
 import { bootFailure, bootIntent, cacheConflict, itemsUpdated, stateDestroy } from '../../actions';
 import type { RootSagaOptions } from '../../types';
 import { sagaSetup } from '../testing';
 import watcher from './boot.saga';
 import * as hydrateSaga from './hydrate.saga';
+
+jest.mock('./hydrate.saga', () => ({
+    ...jest.requireActual('./hydrate.saga'),
+    hydrate: jest.fn(),
+}));
 
 const setResumeLock = jest.fn();
 const setAppStatus = jest.fn();
@@ -19,7 +24,7 @@ const options = {
     onBoot,
 } as unknown as RootSagaOptions;
 
-(API as any).api = { setResumeLock };
+exposeApi({ setResumeLock } as any);
 
 describe('Boot saga', () => {
     describe('Resume lock', () => {
@@ -64,7 +69,7 @@ describe('Boot saga', () => {
             setAppStatus.mockClear();
             onBoot.mockClear();
 
-            jest.spyOn(hydrateSaga, 'hydrate').mockImplementation(function* () {
+            jest.mocked(hydrateSaga.hydrate).mockImplementation(function* () {
                 /** Stall `hydrate` so the boot is suspended mid-hydration:
                  * the exact window a cross-tab `cacheConflict` targets, leaving
                  * only the watcher's race able to resolve the boot. */

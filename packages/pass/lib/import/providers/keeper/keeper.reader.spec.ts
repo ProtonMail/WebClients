@@ -7,7 +7,12 @@ import { deobfuscateItem } from '../../../items/item.obfuscation';
 import type { ImportPayload } from '../../types';
 import { readKeeperData } from './keeper.reader';
 
-const dateMock = jest.spyOn(epochUtils, 'getEpoch').mockImplementation(() => 1682585156);
+jest.mock('@proton/pass/utils/time/epoch', () => ({
+    ...jest.requireActual('@proton/pass/utils/time/epoch'),
+    getEpoch: jest.fn(),
+}));
+
+const dateMock = jest.mocked(epochUtils.getEpoch).mockImplementation(() => 1682585156);
 let data: ImportPayload;
 
 const getKeeperItem = <T extends ItemType>(vaultIndex: number = 0, itemIndex: number = 0) =>

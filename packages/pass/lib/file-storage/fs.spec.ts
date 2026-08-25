@@ -6,9 +6,19 @@ import * as MEMORY from './fs.memory';
 import * as OPFS from './fs.opfs';
 import type { FileStorage } from './types';
 
+jest.mock('@proton/shared/lib/helpers/browser', () => ({
+    ...jest.requireActual('@proton/shared/lib/helpers/browser'),
+    isSafari: jest.fn(),
+}));
+
+jest.mock('./fs.idb', () => ({
+    ...jest.requireActual('./fs.idb'),
+    openPassFileDB: jest.fn(),
+}));
+
 describe('file-storage/fs', () => {
-    const isSafari = jest.spyOn(browserUtils, 'isSafari').mockImplementation(() => false);
-    const openPassFileDB = jest.spyOn(IDB, 'openPassFileDB').mockResolvedValue({} as any);
+    const isSafari = jest.mocked(browserUtils.isSafari).mockImplementation(() => false);
+    const openPassFileDB = jest.mocked(IDB.openPassFileDB).mockResolvedValue({} as any);
     const self = global as any;
 
     beforeEach(() => {

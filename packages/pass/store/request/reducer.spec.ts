@@ -3,8 +3,13 @@ import { requestInvalidate, requestProgress } from './actions';
 import { withRequest } from './enhancers';
 import reducer from './reducer';
 
+jest.mock('@proton/pass/utils/time/epoch', () => ({
+    ...jest.requireActual('@proton/pass/utils/time/epoch'),
+    getEpoch: jest.fn(),
+}));
+
 describe('reducer', () => {
-    jest.spyOn(time, 'getEpoch').mockImplementation(() => 0);
+    jest.mocked(time.getEpoch).mockImplementation(() => 0);
     const requestID = 'test-request';
     const data = { value: 'test' };
     const action = { type: 'TEST_ACTION', payload: data };

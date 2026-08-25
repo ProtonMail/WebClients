@@ -1,7 +1,12 @@
-import * as useScheduleSendFeature from '../../components/composer/actions/scheduleSend/useScheduleSendFeature';
+import useScheduleSendFeature from '../../components/composer/actions/scheduleSend/useScheduleSendFeature';
 
-export const mockUseScheduleSendFeature = (value?: Partial<ReturnType<typeof useScheduleSendFeature.default>>) => {
-    const mockedUseScheduleSendFeature = jest.spyOn(useScheduleSendFeature, 'default');
+jest.mock('../../components/composer/actions/scheduleSend/useScheduleSendFeature', () => ({
+    __esModule: true,
+    default: jest.fn(),
+}));
+
+export const mockUseScheduleSendFeature = (value?: Partial<ReturnType<typeof useScheduleSendFeature>>) => {
+    const mockedUseScheduleSendFeature = jest.mocked(useScheduleSendFeature);
 
     mockedUseScheduleSendFeature.mockReturnValue({
         canScheduleSend: false,

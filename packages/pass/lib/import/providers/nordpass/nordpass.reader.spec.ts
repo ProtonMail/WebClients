@@ -7,13 +7,18 @@ import { deobfuscateItem } from '../../../items/item.obfuscation';
 import type { ImportPayload } from '../../types';
 import { readNordPassData } from './nordpass.reader';
 
+jest.mock('@proton/pass/utils/time/epoch', () => ({
+    ...jest.requireActual('@proton/pass/utils/time/epoch'),
+    getEpoch: jest.fn(),
+}));
+
 const sourceFiles = {
     'nordpass-legacy.csv': `${__dirname}/mocks/nordpass-legacy.csv`,
     'nordpass.csv': `${__dirname}/mocks/nordpass.csv`,
 };
 
 const data: Record<string, ImportPayload> = {};
-const dateMock = jest.spyOn(epochUtils, 'getEpoch').mockImplementation(() => 1682585156);
+const dateMock = jest.mocked(epochUtils.getEpoch).mockImplementation(() => 1682585156);
 
 const getNordPassData = (sourceKey: string) => data[sourceKey];
 const getNordPassItem = <T extends ItemType>(sourceKey: string, vaultIndex: number = 0, itemIndex: number = 0) =>

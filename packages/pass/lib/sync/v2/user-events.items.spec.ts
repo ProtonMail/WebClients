@@ -10,7 +10,12 @@ import { createTestItem } from '../../items/item.test.utils';
 import type { EventProcessor } from '../types';
 import { processItemsDeleted, processItemsUpdated } from './user-events.items';
 
-const requestItem = jest.spyOn(itemRequests, 'requestItem');
+jest.mock('@proton/pass/lib/items/item.requests', () => ({
+    ...jest.requireActual('@proton/pass/lib/items/item.requests'),
+    requestItem: jest.fn(),
+}));
+
+const requestItem = jest.mocked(itemRequests.requestItem);
 const createEvent = (ShareID: ShareId, ItemID: ItemId) => ({ ShareID, ItemID }) as SyncEventShareItemOutput;
 const item = createTestItem('login', { itemId: 'i1', shareId: 's1' });
 

@@ -15,8 +15,14 @@ import {
     processSharesWithInvitesToCreate,
 } from './user-events.invites';
 
-const resolveUserInvites = jest.spyOn(inviteRequests, 'resolveUserInvites');
-const resolveGroupInvites = jest.spyOn(inviteRequests, 'resolveGroupInvites');
+jest.mock('@proton/pass/lib/invites/invite.requests', () => ({
+    ...jest.requireActual('@proton/pass/lib/invites/invite.requests'),
+    resolveUserInvites: jest.fn(),
+    resolveGroupInvites: jest.fn(),
+}));
+
+const resolveUserInvites = jest.mocked(inviteRequests.resolveUserInvites);
+const resolveGroupInvites = jest.mocked(inviteRequests.resolveGroupInvites);
 const event: SyncEventChangedWithTokenOutput = { EventToken: uniqueId() };
 
 const run = async <A>(saga: (arg: A) => EventProcessor, arg: A, state?: any) => {
