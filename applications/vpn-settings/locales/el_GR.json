@@ -4562,6 +4562,9 @@
       "Add": [
         "Προσθήκη"
       ],
+      "Add 1 more": [
+        "Προσθέστε 1 ακόμα"
+      ],
       "Add emergency contact": [
         "Προσθήκη επαφής έκτακτης ανάγκης"
       ],
@@ -4660,6 +4663,9 @@
       ],
       "Enable auto-renew": [
         "Ενεργοποίηση αυτόματης ανανέωσης"
+      ],
+      "Explore plans": [
+        "Εξερευνήστε τα πλάνα"
       ],
       "For ${ email }": [
         "Για ${ email }"
@@ -7411,6 +7417,10 @@
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "Η προσφορά ${ PASS_SHORT_APP_NAME } διάρκειας ζωής δεν έχει τιμή ανανέωσης, είναι μια εφάπαξ πληρωμή για πρόσβαση εφ' όρου ζωής στο ${ PASS_SHORT_APP_NAME }. Η τιμή και η ημερομηνία ανανέωσης της συνδρομής ${ planTitle } σας παραμένουν αμετάβλητες."
+      ],
+      "${ pendingKeysMemberCount } new member added via your identity provider and pending review.": [
+        "${ pendingKeysMemberCount } νέο μέλος προστέθηκε μέσω του παρόχου ταυτότητάς σας και εκκρεμεί έλεγχος.",
+        "${ pendingKeysMemberCount } νέα μέλη προστέθηκαν μέσω του παρόχου ταυτότητάς σας και εκκρεμεί έλεγχος."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } απαιτεί τουλάχιστον 1 αποκλειστικό διακομιστή ${ serverPricePerMonth }"
@@ -10947,6 +10957,9 @@
       "Enter code": [
         "Εισαγωγή κωδικού"
       ],
+      "Enter current password": [
+        "Εισαγάγετε τον τρέχοντα κωδικό πρόσβασής σας"
+      ],
       "Enter name or email address": [
         "Εισαγάγετε όνομα ή διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ],
@@ -11570,6 +11583,9 @@
       ],
       "Recovery phone number": [
         "Τηλεφωνικός αριθμός ανάκτησης"
+      ],
+      "Set recovery phone number": [
+        "Ορίστε αριθμό τηλεφώνου ανάκτησης"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13552,6 +13568,16 @@
         "Λίστα ελέγχου ανάκτησης"
       ]
     },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Δοκιμάστε το τώρα"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Τώρα έχετε πρόσβαση στη νέα εφαρμογή ${ CALENDAR_APP_NAME }. ${ link }"
+      ]
+    },
     "Notification": {
       "${ reason } has been disabled": [
         "${ reason } έχει απενεργοποιηθεί"
@@ -15136,6 +15162,9 @@
       "Recoverability": [
         "Ανακτησιμότητα"
       ],
+      "Recovery score: ${ score }": [
+        "Βαθμολογία ανάκτησης: ${ score }"
+      ],
       "Require verified password reset option (email or SMS)": [
         "Απαιτείται η επιλογή επαληθευμένης επαναφοράς κωδικού πρόσβασης (email ή SMS)"
       ],
@@ -15602,8 +15631,289 @@
       ]
     },
     "Safety review": {
+      "Code sent to ${ boldValue }": [
+        "Ο κωδικός στάλθηκε στο ${ boldValue }"
+      ],
+      "Invalid code": [
+        "Μη έγκυρος κωδικός"
+      ],
       "Review account safety": [
         "Έλεγχος ασφάλειας λογαριασμού"
+      ],
+      "Safety review": [
+        "Ανασκόπηση ασφάλειας"
+      ],
+      "Send a new code": [
+        "Να στείλετε ένα νέο κωδικό"
+      ],
+      "update it now": [
+        "ενημερώστε το τώρα"
+      ]
+    },
+    "safety_review": {
+      "${ BRAND_NAME } Account email": [
+        "${ BRAND_NAME } ηλεκτρονική διεύθυνση Λογαριασμού"
+      ],
+      "Account protection": [
+        "Προστασία λογαριασμού"
+      ],
+      "Add": [
+        "Προσθήκη"
+      ],
+      "Add an emergency contact": [
+        "Προσθήκη επαφής έκτακτης ανάγκης"
+      ],
+      "Add emergency contacts": [
+        "Προσθήκη επαφών έκτακτης ανάγκης"
+      ],
+      "Add options": [
+        "Προσθήκη επιλογών"
+      ],
+      "Add people who you trust and can contact easily. Your emergency contact will be able to access your account and reset your password for you if needed.": [
+        "Προσθέστε άτομα που εμπιστεύεστε και μπορείτε να επικοινωνήσετε εύκολα. Το άτομο επαφής έκτακτης ανάγκης θα μπορεί να έχει πρόσβαση στον λογαριασμό σας και να επαναφέρει τον κωδικό πρόσβασής σας εάν χρειαστεί."
+      ],
+      "Add people you trust and can contact easily. They will be able to help you unlock your data after you reset your password.": [
+        "Προσθέστε άτομα που εμπιστεύεστε και μπορείτε να επικοινωνήσετε εύκολα. Θα μπορούν να σας βοηθήσουν να ξεκλειδώσετε τα δεδομένα σας αφού επαναφέρετε τον κωδικό πρόσβασής σας."
+      ],
+      "Add phone number": [
+        "Προσθήκη αριθμού τηλεφώνου"
+      ],
+      "Add recovery contacts": [
+        "Προσθήκη επαφών ανάκτησης"
+      ],
+      "Add recovery email": [
+        "Προσθήκη διεύθυνσης ηλεκτρονικού ταχυδρομείου ανάκτησης"
+      ],
+      "Add recovery phone": [
+        "Προσθήκη τηλεφώνου ανάκτησης"
+      ],
+      "Added emergency contacts": [
+        "Προστέθηκαν επαφές έκτακτης ανάγκης"
+      ],
+      "Added recovery contacts": [
+        "Προστέθηκαν επαφές ανάκτησης"
+      ],
+      "Added recovery email": [
+        "Προστέθηκε διεύθυνση ηλεκτρονικού ταχυδρομείου ανάκτησης"
+      ],
+      "Added recovery phone": [
+        "Προστέθηκε τηλεφωνικός αριθμός ανάκτησης"
+      ],
+      "Allow": [
+        "Να επιτρέπεται"
+      ],
+      "Allow data recovery from this device": [
+        "Επιτρέψτε την ανάκτηση δεδομένων από αυτήν τη συσκευή"
+      ],
+      "Allow password reset from the settings": [
+        "Να επιτρέπεται η επαναφορά κωδικού πρόσβασης από τις ρυθμίσεις"
+      ],
+      "Allow recovery by email": [
+        "Άδεια ανάκτησης μέσω ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Allow recovery by phone": [
+        "Άδεια ανάκτησης μέσω τηλεφώνου"
+      ],
+      "Allow scanning a QR code to sign in": [
+        "Να επιτρέπεται η σάρωση ενός QR κωδικού για σύνδεση"
+      ],
+      "Allow trusted friends to unlock your data": [
+        "Επιτρέψτε σε έμπιστους φίλους να ξεκλειδώσουν τα δεδομένα σας"
+      ],
+      "Back to ${ backLink.appNameString }": [
+        "Πίσω στη ${ backLink.appNameString }"
+      ],
+      "Congratulations": [
+        "Συγχαρητήρια"
+      ],
+      "Didn’t receive it? ${ sendANewCode }": [
+        "Δεν το λάβατε; ${ sendANewCode }"
+      ],
+      "Done": [
+        "Ολοκληρώθηκε"
+      ],
+      "Download": [
+        "Λήψη"
+      ],
+      "Download recovery file": [
+        "Κατέβασμα αρχείου ανάκτησης"
+      ],
+      "Downloaded recovery file": [
+        "Λήψη αρχείου ανάκτησης"
+      ],
+      "Emergency contacts enabled": [
+        "Ενεργοποιήθηκαν οι επαφές έκτακτης ανάγκης"
+      ],
+      "Enable device recovery": [
+        "Ενεργοποίηση ανάκτησης συσκευής"
+      ],
+      "Enable email recovery": [
+        "Ενεργοποίηση ανάκτησης email"
+      ],
+      "Enable emergency contacts": [
+        "Ενεργοποίηση επαφών έκτακτης ανάγκης"
+      ],
+      "Enable password reset from settings": [
+        "Ενεργοποίηση επαναφοράς κωδικού πρόσβασης από τις ρυθμίσεις"
+      ],
+      "Enable phone recovery": [
+        "Ενεργοποίηση η ανάκτηση τηλεφώνου"
+      ],
+      "Enable QR code sign-in": [
+        "Ενεργοποίηση σύνδεσης με κωδικό QR"
+      ],
+      "Enabled device recovery": [
+        "Ενεργοποιήθηκε η ανάκτηση συσκευής"
+      ],
+      "Enabled email recovery": [
+        "Ενεργοποιημένη ανάκτηση email"
+      ],
+      "Enabled password reset from settings": [
+        "Ενεργοποιήθηκε η επαναφορά κωδικού πρόσβασης από τις ρυθμίσεις"
+      ],
+      "Enabled phone recovery": [
+        "Ενεργοποιήθηκε η ανάκτηση τηλεφώνου"
+      ],
+      "Enabled QR code sign-in": [
+        "Ενεργοποίηση σύνδεσης με κωδικό QR"
+      ],
+      "Got it": [
+        "Το κατάλαβα"
+      ],
+      "Here's how you increased your account protection:": [
+        "Δείτε πώς αυξήσατε την προστασία του λογαριασμού σας:"
+      ],
+      "If you forget your password, you can sign in using a QR code. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
+        "Εάν ξεχάσετε τον κωδικό πρόσβασής σας, μπορείτε να συνδεθείτε χρησιμοποιώντας έναν κωδικό QR. Το μόνο που χρειάζεστε είναι να είστε συνδεδεμένοι σε μια υπηρεσία ${ BRAND_NAME } σε άλλη συσκευή."
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, it will allow you to sign in and recover your data. It’s the only way to instantly restore everything, so make sure you keep it somewhere safe.": [
+        "Εάν κλειδωθείτε έξω από τον λογαριασμό σας ${ BRAND_NAME }, θα σας επιτρέψει να συνδεθείτε και να ανακτήσετε τα δεδομένα σας. Είναι ο μόνος τρόπος για να επαναφέρετε άμεσα τα πάντα, γι' αυτό φροντίστε να τα φυλάξετε σε ασφαλές μέρος."
+      ],
+      "If your recovery email has changed, ${ updateEmailLink }.": [
+        "Εάν η ηλεκτρονική διεύθυνση ανάκτησής σας έχει αλλάξει, ${ updateEmailLink }."
+      ],
+      "If your recovery phone has changed, ${ updatePhoneLink }.": [
+        "Εάν το τηλέφωνο ανάκτησής σας έχει αλλάξει, ${ updatePhoneLink }."
+      ],
+      "Later": [
+        "Αργότερα"
+      ],
+      "Protect your legacy with Emergency Access": [
+        "Προστατέψτε την κληρονομιά σας με Πρόσβαση Έκτακτης Ανάγκης"
+      ],
+      "Save recovery phrase": [
+        "Αποθήκευση φράσης ανάκτησης"
+      ],
+      "Saved recovery phrase": [
+        "Αποθηκευμένη φράση ανάκτησης"
+      ],
+      "Send verification code": [
+        "Αποστολή κωδικού επαλήθευσης"
+      ],
+      "They must already have a ${ BRAND_NAME } Account.": [
+        "Πρέπει να έχουν ήδη έναν λογαριασμό ${ BRAND_NAME }."
+      ],
+      "They will not be able to see or access your data.": [
+        "Δε θα μπορούν να δουν ή να έχουν πρόσβαση στα δεδομένα σας."
+      ],
+      "This will let you quickly access your ${ BRAND_NAME } Account so you can change your password.": [
+        "Αυτό θα σας επιτρέψει να αποκτήσετε γρήγορη πρόσβαση στον λογαριασμό σας ${ BRAND_NAME }, ώστε να μπορείτε να αλλάξετε τον κωδικό πρόσβασής σας."
+      ],
+      "This will let you reset your account password if you’ve lost it, but are still signed in to ${ BRAND_NAME }. It’s often the easiest way to recover your account if you’re signed in.": [
+        "Αυτό θα σας επιτρέψει να επαναφέρετε τον κωδικό πρόσβασης του λογαριασμού σας, εάν τον έχετε χάσει, αλλά εξακολουθείτε να είστε συνδεδεμένοι στο ${ BRAND_NAME }. Είναι συχνά ο ευκολότερος τρόπος για να ανακτήσετε τον λογαριασμό σας, εάν είστε συνδεδεμένοι."
+      ],
+      "This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
+        "Αυτό θα επαναφέρει την πρόσβαση σε ηλεκτρονικά μηνύματα, επαφές, αρχεία, κωδικούς πρόσβασης και οποιαδήποτε άλλα κρυπτογραφημένα δεδομένα στον λογαριασμό σας μετά από επαναφορά κωδικού πρόσβασης."
+      ],
+      "To help you remember your password, we’ll periodically ask you to enter it.": [
+        "Για να σας βοηθήσουμε να θυμάστε τον κωδικό πρόσβασής σας, θα σας ζητάμε περιοδικά να τον εισάγετε."
+      ],
+      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
+        "Για να βεβαιωθούμε ότι η διεύθυνση ηλεκτρονικού ταχυδρομείου είναι δική σας, εισαγάγετε τον κωδικό επαλήθευσης που στάλθηκε στο ${ boldEmail }."
+      ],
+      "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
+        "Για να βεβαιωθούμε ότι το τηλέφωνο είναι δικό σας, εισαγάγετε τον κωδικό επαλήθευσης που στάλθηκε στο ${ boldPhoneNumber }."
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification code.": [
+        "Για να βεβαιωθούμε ότι αυτή η διεύθυνση είναι όντως δική σας, θα σας στείλουμε ένα μήνυμα ηλεκτρονικού ταχυδρομείου με έναν κωδικό επαλήθευσης."
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification link.": [
+        "Για να βεβαιωθούμε ότι αυτή η διεύθυνση είναι όντως δική σας, θα σας στείλουμε ένα μήνυμα ηλεκτρονικού ταχυδρομείου με έναν σύνδεσμο επαλήθευσης."
+      ],
+      "To make sure this number is really yours, we’ll send an SMS with a verification code.": [
+        "Για να βεβαιωθούμε ότι αυτός ο αριθμός είναι όντως δικός σας, θα σας στείλουμε ένα SMS με έναν κωδικό επαλήθευσης."
+      ],
+      "Update": [
+        "Ενημέρωση"
+      ],
+      "Update recovery email": [
+        "Ενημέρωση ηλεκτρονικής διεύθυνσης ανάκτησης"
+      ],
+      "Update recovery phone": [
+        "Ενημέρωση τηλεφώνου ανάκτησης"
+      ],
+      "Upgrade your plan to enable Emergency Access to your account. This will allow you to designate 1 to 5 people who will be able to reset your password for you.": [
+        "Αναβαθμίστε το πλάνο σας για να ενεργοποιήσετε την Πρόσβαση Έκτακτης Ανάγκης στον λογαριασμό σας. Αυτό θα σας επιτρέψει να ορίσετε από 1 έως 5 άτομα που θα μπορούν να επαναφέρουν τον κωδικό πρόσβασής σας για εσάς."
+      ],
+      "Verified password": [
+        "Επαληθευμένος κωδικός πρόσβασης"
+      ],
+      "Verified recovery email": [
+        "Επαληθευμένη ηλεκτρονική διεύθυνση ανάκτησης"
+      ],
+      "Verified recovery phone": [
+        "Επαληθευμένο τηλέφωνο ανάκτησης"
+      ],
+      "Verify": [
+        "Επαλήθευση"
+      ],
+      "Verify password": [
+        "Επαλήθευση κωδικού πρόσβασης"
+      ],
+      "Verify recovery email": [
+        "Επαλήθευση ηλεκτρονικής διεύθυνσης ανάκτησης"
+      ],
+      "Verify recovery phone": [
+        "Επαλήθευση τηλέφωνου ανάκτησης"
+      ],
+      "Verify your password": [
+        "Επαληθεύστε τον κωδικό πρόσβασής σας"
+      ],
+      "Verify your recovery email": [
+        "Επαληθεύστε την ηλεκτρονικής διεύθυνσης ανάκτησης σας"
+      ],
+      "Verify your recovery phone": [
+        "Επαλήθευση τηλεφώνου ανάκτησης σας"
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        "Η επαλήθευση της ηλ. διεύθυνσής σας αυξάνει τη διασφάλιση του λογαριασμού σας και επιτρέπει πρόσθετες επιλογές ανάκτησης."
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "Η επαλήθευση του αριθμού τηλεφώνου σας αυξάνει την ασφάλεια του λογαριασμού σας και επιτρέπει πρόσθετες επιλογές ανάκτησης."
+      ],
+      "You can save a data backup on this device. This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset, simply by signing in on this device.": [
+        "Μπορείτε να αποθηκεύσετε ένα αντίγραφο ασφαλείας δεδομένων σε αυτήν τη συσκευή. Αυτό θα επαναφέρει την πρόσβαση σε μηνύματα ηλεκτρονικού ταχυδρομείου, επαφές, αρχεία, κωδικούς πρόσβασης και οποιοδήποτε άλλο κρυπτογραφημένο δεδομένο στον λογαριασμό σας μετά από επαναφορά κωδικού πρόσβασης, απλώς με την είσοδο σε αυτή τη συσκευή."
+      ],
+      "You can use email verification to regain access to your account if you forget your password.": [
+        "Μπορείτε να χρησιμοποιήσετε την επαλήθευση διεύθυνσης ηλεκτρονικού ταχυδρομείου για να αποκτήσετε ξανά πρόσβαση στον λογαριασμό σας, αν ξεχάσετε τον κωδικό πρόσβασής σας."
+      ],
+      "You can use SMS verification to regain access to your account if you forget your password.": [
+        "Μπορείτε να χρησιμοποιήσετε την επαλήθευση μέσω SMS για να ανακτήσετε την πρόσβαση στον λογαριασμό σας σε περίπτωση που ξεχάσετε τον κωδικό πρόσβασής σας."
+      ],
+      "You can use your recovery email to regain access to your account if you forget your password.": [
+        "Μπορείτε να χρησιμοποιήσετε τη διεύθυνση ηλεκτρονικού ταχυδρομείου ανάκτησης για να αποκτήσετε ξανά πρόσβαση στον λογαριασμό σας, αν ξεχάσετε τον κωδικό πρόσβασής σας."
+      ],
+      "You can use your recovery phone to regain access to your account if you forget your password.": [
+        "Μπορείτε να χρησιμοποιήσετε το τηλέφωνο ανάκτησης για να αποκτήσετε ξανά πρόσβαση στον λογαριασμό σας, αν ξεχάσετε τον κωδικό πρόσβασής σας."
+      ],
+      "You don’t need to open or read the file—just download it and store it somewhere safe.": [
+        "Δεν χρειάζεται να ανοίξετε ή να διαβάσετε το αρχείο—απλώς κατεβάστε το και αποθηκεύστε το σε ένα ασφαλές μέρος."
+      ],
+      "Your recovery checklist": [
+        "Η λίστα ελέγχου για ανάκτηση σας"
+      ],
+      "Your security setup": [
+        "Η ρύθμιση ασφαλείας σας"
       ]
     },
     "saml: Action": {

@@ -4627,6 +4627,9 @@
       "Add": [
         "Pridať"
       ],
+      "Add 1 more": [
+        "Pridať 1 ďalšiu"
+      ],
       "Add emergency contact": [
         "Pridať núdzový kontakt"
       ],
@@ -4725,6 +4728,9 @@
       ],
       "Enable auto-renew": [
         "Zapnúť automatickú obnovu"
+      ],
+      "Explore plans": [
+        "Preskúmať plány"
       ],
       "For ${ email }": [
         "Pre ${ email }"
@@ -11214,6 +11220,9 @@
       "Enter code": [
         "Zadajte kód"
       ],
+      "Enter current password": [
+        "Zadajte aktuálne heslo"
+      ],
       "Enter name or email address": [
         "Zadajte meno alebo emailovú adresu"
       ],
@@ -11839,6 +11848,9 @@
       ],
       "Recovery phone number": [
         "Telefónne číslo pre obnovenie"
+      ],
+      "Set recovery phone number": [
+        "Nastavte telefónne číslo na obnovenie"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15444,6 +15456,9 @@
       "Recoverability": [
         "Obnoviteľnosť"
       ],
+      "Recovery score: ${ score }": [
+        "Skóre obnovy: ${ score }"
+      ],
       "Require verified password reset option (email or SMS)": [
         "Vyžadovať overenie pri zmene hesla (emailom alebo SMS)"
       ],
@@ -15922,8 +15937,289 @@
       ]
     },
     "Safety review": {
+      "Code sent to ${ boldValue }": [
+        "Kód zaslaný na ${ boldValue }"
+      ],
+      "Invalid code": [
+        "Neplatný kód"
+      ],
       "Review account safety": [
         "Skontrolovať bezpečnosť účtu"
+      ],
+      "Safety review": [
+        "Kontrola bezpečnosti"
+      ],
+      "Send a new code": [
+        "Poslať nový kód"
+      ],
+      "update it now": [
+        "aktualizujte údaje."
+      ]
+    },
+    "safety_review": {
+      "${ BRAND_NAME } Account email": [
+        "Emailová adresa ${ BRAND_NAME } účtu"
+      ],
+      "Account protection": [
+        "Ochrana účtu"
+      ],
+      "Add": [
+        "Pridať"
+      ],
+      "Add an emergency contact": [
+        "Pridať núdzový kontakt"
+      ],
+      "Add emergency contacts": [
+        "Pridať núdzové kontakty"
+      ],
+      "Add options": [
+        "Pridať možnosti"
+      ],
+      "Add people who you trust and can contact easily. Your emergency contact will be able to access your account and reset your password for you if needed.": [
+        "Pridajte osoby, ktorým dôverujete a s ktorými sa môžete ľahko skontaktovať. Vaša kontaktná osoba pre núdzové situácie bude mať prístup k vášmu účtu a v prípade potreby vám môže obnoviť heslo."
+      ],
+      "Add people you trust and can contact easily. They will be able to help you unlock your data after you reset your password.": [
+        "Pridajte ľudí, ktorým dôverujete a ktorých môžete ľahko kontaktovať. Tí vám pomôžu odomknúť vaše údaje po tom, čo si resetujete heslo."
+      ],
+      "Add phone number": [
+        "Pridať telefónne číslo"
+      ],
+      "Add recovery contacts": [
+        "Pridať kontaktné osoby na obnovenie"
+      ],
+      "Add recovery email": [
+        "Pridať email pre obnovenie"
+      ],
+      "Add recovery phone": [
+        "Pridať telefón na obnovu"
+      ],
+      "Added emergency contacts": [
+        "Pridané núdzové kontakty"
+      ],
+      "Added recovery contacts": [
+        "Pridané kontaktné osoby na obnovenie"
+      ],
+      "Added recovery email": [
+        "Pridaný email pre obnovenie"
+      ],
+      "Added recovery phone": [
+        "Pridaný telefón pre obnovenie"
+      ],
+      "Allow": [
+        "Povoliť"
+      ],
+      "Allow data recovery from this device": [
+        "Povoliť obnovu dát z tohto zariadenia"
+      ],
+      "Allow password reset from the settings": [
+        "Povoliť obnovenie hesla z nastavení"
+      ],
+      "Allow recovery by email": [
+        "Povoliť obnovenie emailom"
+      ],
+      "Allow recovery by phone": [
+        "Povoliť obnovenie telefónom"
+      ],
+      "Allow scanning a QR code to sign in": [
+        "Povoľte skenovanie QR kódu pre prihlásenie"
+      ],
+      "Allow trusted friends to unlock your data": [
+        "Povoľte dôveryhodným priateľom odomknúť vaše dáta"
+      ],
+      "Back to ${ backLink.appNameString }": [
+        "Späť do ${ backLink.appNameString }"
+      ],
+      "Congratulations": [
+        "Blahoželáme"
+      ],
+      "Didn’t receive it? ${ sendANewCode }": [
+        "Nedostali ste ho? ${ sendANewCode }"
+      ],
+      "Done": [
+        "Hotovo"
+      ],
+      "Download": [
+        "Stiahnuť"
+      ],
+      "Download recovery file": [
+        "Stiahnuť súbor pre obnovenie"
+      ],
+      "Downloaded recovery file": [
+        "Súbor pre obnovenie stiahnutý"
+      ],
+      "Emergency contacts enabled": [
+        "Núdzové kontakty povolené"
+      ],
+      "Enable device recovery": [
+        "Povoliť obnovu zariadením"
+      ],
+      "Enable email recovery": [
+        "Povoliť obnovu emailom"
+      ],
+      "Enable emergency contacts": [
+        "Povoliť núdzové kontakty"
+      ],
+      "Enable password reset from settings": [
+        "Povoliť resetovanie hesla z nastavení"
+      ],
+      "Enable phone recovery": [
+        "Povoliť obnovu telefónom"
+      ],
+      "Enable QR code sign-in": [
+        "Povoliť prihlásenie QR kódom"
+      ],
+      "Enabled device recovery": [
+        "Obnova zariadením povolená"
+      ],
+      "Enabled email recovery": [
+        "Povolená obnova emailom"
+      ],
+      "Enabled password reset from settings": [
+        "V nastaveniach je povolené resetovanie hesla"
+      ],
+      "Enabled phone recovery": [
+        "Obnova telefónom povolená"
+      ],
+      "Enabled QR code sign-in": [
+        "Povoliť prihlásenie QR kódom"
+      ],
+      "Got it": [
+        "Rozumiem"
+      ],
+      "Here's how you increased your account protection:": [
+        "Takto ste zvýšili ochranu vášho účtu:"
+      ],
+      "If you forget your password, you can sign in using a QR code. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
+        "Ak ste zabudli heslo, môžete sa prihlásiť pomocou QR kódu. Stačí, ak máte aktívny účet v službe ${ BRAND_NAME } na inom zariadení."
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, it will allow you to sign in and recover your data. It’s the only way to instantly restore everything, so make sure you keep it somewhere safe.": [
+        "Ak sa vám stane, že sa nebudete môcť prihlásiť do svojho ${ BRAND_NAME } účtu, tento kód vám umožní prihlásiť sa a obnoviť vaše údaje. Je to jediný spôsob, ako okamžite obnoviť všetko, čo ste mali uložené, preto si ho určite uložte na bezpečné miesto."
+      ],
+      "If your recovery email has changed, ${ updateEmailLink }.": [
+        "Ak sa zmenila vaša emailová adresa pre obnovenie hesla, ${ updateEmailLink }."
+      ],
+      "If your recovery phone has changed, ${ updatePhoneLink }.": [
+        "Ak sa zmenil váš telefón na obnovenie, ${ updatePhoneLink }."
+      ],
+      "Later": [
+        "Neskôr"
+      ],
+      "Protect your legacy with Emergency Access": [
+        "Chráňte svoje dedičstvo pomocou funkcie núdzového prístupu"
+      ],
+      "Save recovery phrase": [
+        "Uložiť obnovovaciu frázu"
+      ],
+      "Saved recovery phrase": [
+        "Uložená obnovovacia fráza"
+      ],
+      "Send verification code": [
+        "Odoslať overovací kód"
+      ],
+      "They must already have a ${ BRAND_NAME } Account.": [
+        "Musia už mať ${ BRAND_NAME } účet."
+      ],
+      "They will not be able to see or access your data.": [
+        "Nebudú môcť vidieť vaše údaje ani k nim získať prístup."
+      ],
+      "This will let you quickly access your ${ BRAND_NAME } Account so you can change your password.": [
+        "Takto budete mať rýchly prístup k svojmu ${ BRAND_NAME } účtu a budete si môcť zmeniť heslo."
+      ],
+      "This will let you reset your account password if you’ve lost it, but are still signed in to ${ BRAND_NAME }. It’s often the easiest way to recover your account if you’re signed in.": [
+        "Týmto spôsobom si môžete obnoviť heslo k účtu, ak ste ho zabudli, ale ste stále prihlásení na stránke ${ BRAND_NAME }. Ak ste prihlásení, je to často najjednoduchší spôsob, ako obnoviť prístup k účtu."
+      ],
+      "This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
+        "Týmto krokom obnovíte prístup k emailom, kontaktom, súborom, heslám a všetkým ostatným šifrovaným údajom vo vašom účte po zresetovaní hesla."
+      ],
+      "To help you remember your password, we’ll periodically ask you to enter it.": [
+        "Aby sme vám pomohli zapamätať si heslo, budeme vás pravidelne žiadať o jeho zadanie."
+      ],
+      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
+        "Ak chcete mať istotu, že emailová adresa je vaša, zadajte overovací kód zaslaný na ${ boldEmail }."
+      ],
+      "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
+        "Ak chcete mať istotu, že telefónne číslo je vaše, zadajte overovací kód zaslaný na ${ boldPhoneNumber }."
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification code.": [
+        "Aby sme sa uistili, že táto adresa skutočne patrí vám, pošleme vám email s overovacím kódom."
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification link.": [
+        "Aby sme sa uistili, že táto adresa skutočne patrí vám, pošleme vám email s overovacím odkazom."
+      ],
+      "To make sure this number is really yours, we’ll send an SMS with a verification code.": [
+        "Aby sme sa uistili, že toto číslo skutočne patrí vám, pošleme vám SMS s overovacím kódom."
+      ],
+      "Update": [
+        "Aktualizovať"
+      ],
+      "Update recovery email": [
+        "Aktualizovať záložný email"
+      ],
+      "Update recovery phone": [
+        "Aktualizovať telefón na obnovenie"
+      ],
+      "Upgrade your plan to enable Emergency Access to your account. This will allow you to designate 1 to 5 people who will be able to reset your password for you.": [
+        "Navýšte úroveň svojho plán, aby ste si aktivovali funkciu núdzového prístupu k vášmu účtu. Týmto spôsobom budete môcť určiť 1 až 5 osôb, ktoré vám budú môcť obnoviť heslo."
+      ],
+      "Verified password": [
+        "Overené heslo"
+      ],
+      "Verified recovery email": [
+        "Overený email pre obnovenie"
+      ],
+      "Verified recovery phone": [
+        "Overené telefónne číslo pre obnovenie"
+      ],
+      "Verify": [
+        "Overiť"
+      ],
+      "Verify password": [
+        "Potvrďte heslo"
+      ],
+      "Verify recovery email": [
+        "Overiť email pre obnovenie"
+      ],
+      "Verify recovery phone": [
+        "Overiť číslo na obnovenie"
+      ],
+      "Verify your password": [
+        "Overte svoje heslo"
+      ],
+      "Verify your recovery email": [
+        "Overte váš email na obnovenie"
+      ],
+      "Verify your recovery phone": [
+        "Overte váš telefón na obnovenie"
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        "Overenie vašej emailovej adresy zvyšuje bezpečnosť vášho účtu a umožňuje ďalšie možnosti obnovenia."
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "Overenie vášho telefónneho čísla zvyšuje bezpečnosť vášho účtu a umožňuje ďalšie možnosti obnovenia."
+      ],
+      "You can save a data backup on this device. This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset, simply by signing in on this device.": [
+        "Na tomto zariadení si môžete uložiť zálohu údajov. Vďaka tomu si po obnovení hesla obnovíte prístup k emailom, kontaktom, súborom, heslám a všetkým ostatným šifrovaným údajom vo vašom účte jednoduchým prihlásením sa na tomto zariadení."
+      ],
+      "You can use email verification to regain access to your account if you forget your password.": [
+        "Ak ste zabudli heslo, môžete využiť overenie prostredníctvom emailu a získať tak opäť prístup k svojmu účtu."
+      ],
+      "You can use SMS verification to regain access to your account if you forget your password.": [
+        "Ak ste zabudli heslo, môžete využiť overenie prostredníctvom SMS a získať tak opäť prístup k svojmu účtu."
+      ],
+      "You can use your recovery email to regain access to your account if you forget your password.": [
+        "Ak zabudnete heslo, môžete na obnovenie prístupu k svojmu kontu použiť svoj obnovovací email."
+      ],
+      "You can use your recovery phone to regain access to your account if you forget your password.": [
+        "Ak zabudnete heslo, môžete na obnovenie prístupu k svojmu kontu použiť svoj obnovovací telefón."
+      ],
+      "You don’t need to open or read the file—just download it and store it somewhere safe.": [
+        "Súbor nemusíte otvárať ani čítať – stačí si ho stiahnuť a uložiť na bezpečné miesto."
+      ],
+      "Your recovery checklist": [
+        "Váš kontrolný zoznam pre obnovu"
+      ],
+      "Your security setup": [
+        "Vaše nastavenia zabezpečenia"
       ]
     },
     "saml: Action": {
