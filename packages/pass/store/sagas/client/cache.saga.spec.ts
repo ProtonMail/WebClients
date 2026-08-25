@@ -9,7 +9,12 @@ import type { RootSagaOptions } from '../../types';
 import { sagaSetup } from '../testing';
 import { cacheWorker } from './cache.saga';
 
-const generateCache = jest.spyOn(generate, 'generateCache');
+jest.mock('@proton/pass/lib/cache/generate', () => ({
+    ...jest.requireActual('@proton/pass/lib/cache/generate'),
+    generateCache: jest.fn(),
+}));
+
+const generateCache = jest.mocked(generate.generateCache);
 
 const makeOptions = (appState: { booted: boolean; authorized: boolean }) => {
     const authStore = {

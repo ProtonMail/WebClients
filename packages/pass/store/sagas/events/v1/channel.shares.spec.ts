@@ -19,11 +19,23 @@ jest.mock('./channel.worker', () => ({
     ...jest.requireActual('./channel.worker'),
     channelInitalize: jest.fn(),
 }));
+jest.mock('@proton/pass/lib/shares/share.parser', () => ({
+    ...jest.requireActual('@proton/pass/lib/shares/share.parser'),
+    parseShareResponse: jest.fn(),
+}));
+jest.mock('@proton/pass/lib/items/item.requests', () => ({
+    ...jest.requireActual('@proton/pass/lib/items/item.requests'),
+    requestItemsForShareId: jest.fn(),
+}));
+jest.mock('./channel.shares', () => ({
+    ...jest.requireActual('./channel.shares'),
+    createSharesChannel: jest.fn(jest.requireActual('./channel.shares').createSharesChannel),
+}));
 
-const parseShareResponse = jest.spyOn(shareParser, 'parseShareResponse').mockImplementation();
-const requestItemsForShareId = jest.spyOn(itemRequests, 'requestItemsForShareId').mockImplementation();
-const getShareChannelForks = jest.spyOn(channelShare, 'getShareChannelForks');
-const createSharesChannel = jest.spyOn(SharesChannel, 'createSharesChannel');
+const parseShareResponse = jest.mocked(shareParser.parseShareResponse).mockImplementation();
+const requestItemsForShareId = jest.mocked(itemRequests.requestItemsForShareId).mockImplementation();
+const getShareChannelForks = jest.mocked(channelShare.getShareChannelForks);
+const createSharesChannel = jest.mocked(SharesChannel.createSharesChannel);
 
 describe('channel.shares saga', () => {
     const api = {} as unknown as Api;
@@ -103,7 +115,7 @@ describe('channel.shares saga', () => {
                 expect(incoming.close).toHaveBeenCalled();
                 expect(events.channel.close).toHaveBeenCalled();
             } finally {
-                createSharesChannel.mockRestore();
+                createSharesChannel.mockImplementation(jest.requireActual('./channel.shares').createSharesChannel);
             }
         });
     });

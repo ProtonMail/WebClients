@@ -3,12 +3,19 @@ import { act, fireEvent, waitFor } from '@testing-library/react';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import * as mailboxActions from '../../../store/mailbox/mailboxActions';
-
 import { addApiMock, assertCheck, assertFocus, clearAll, tick } from '../../../helpers/test/helper';
 import { RouterMailboxContainer } from '../../../router/RouterMailboxContainer';
+import * as mailboxActions from '../../../store/mailbox/mailboxActions';
 import type { SetupArgs } from './Mailbox.test.helpers';
 import { setup as generalSetup, getElements, props } from './Mailbox.test.helpers';
+
+jest.mock('../../../store/mailbox/mailboxActions', () => {
+    const actual = jest.requireActual('../../../store/mailbox/mailboxActions');
+    return {
+        ...actual,
+        labelConversations: Object.assign(jest.fn(actual.labelConversations), actual.labelConversations),
+    };
+});
 
 jest.mock('../../../metrics/useMailELDTMetric', () => ({
     useMailELDTMetric: () => {
@@ -196,7 +203,7 @@ describe('Mailbox hotkeys', () => {
     });
 
     it('should allow to move elements with keyboard', async () => {
-        const labelConversationsSpy = jest.spyOn(mailboxActions, 'labelConversations');
+        const labelConversationsSpy = jest.mocked(mailboxActions.labelConversations);
 
         const deleteSpy = jest.fn();
         addApiMock('mail/v4/conversations/delete', deleteSpy, 'put');

@@ -72,7 +72,6 @@
         "xlsx": "0.18.5"
     },
     "devDependencies": {
-        "@babel/core": "^7.29.7",
         "@peculiar/webcrypto": "^1.7.1",
         "@proton/i18n": "workspace:^",
         "@proton/pack": "workspace:^",
@@ -83,7 +82,6 @@
         "@types/react-syntax-highlighter": "^15.5.13",
         "@vitejs/plugin-react-swc": "^3.11.0",
         "autoprefixer": "^10.5.4",
-        "babel-plugin-transform-import-meta": "^2.3.3",
         "core-js": "^3.50.0",
         "cross-env": "^10.1.0",
         "eslint": "^10.8.1",

@@ -7,6 +7,11 @@ import { AuthMode } from '../../types';
 import { refreshHandlerFactory } from './refresh';
 import { TEST_SERVER_TIME, mockAPIResponse } from './testing';
 
+jest.mock('@proton/shared/lib/helpers/promise', () => ({
+    ...jest.requireActual('@proton/shared/lib/helpers/promise'),
+    wait: jest.fn(),
+}));
+
 const { TOO_MANY_REQUESTS } = HTTP_ERROR_CODES;
 
 describe('Refresh handlers', () => {
@@ -15,7 +20,7 @@ describe('Refresh handlers', () => {
     const call = jest.fn();
     const onRefresh = jest.fn();
     const getAuth = jest.fn();
-    const wait = jest.spyOn(time, 'wait').mockImplementation(() => Promise.resolve());
+    const wait = jest.mocked(time.wait).mockImplementation(() => Promise.resolve());
 
     const getMockResponse = (date: Date = new Date()) =>
         ({ headers: { get: () => date.toString() } }) as unknown as Response;

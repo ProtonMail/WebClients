@@ -4,10 +4,16 @@ import { MOCK_FIELDS, MOCK_SECTIONS } from './identity.mocks';
 import { addFormSectionOptionalField, buildFormSections } from './useIdentityForm';
 import * as utils from './utils';
 
+jest.mock('./utils', () => ({
+    ...jest.requireActual('./utils'),
+    getIdentityFields: jest.fn(),
+    getInitialSections: jest.fn(),
+}));
+
 describe('`buildFormSections`', () => {
     beforeEach(() => {
-        jest.spyOn(utils, 'getIdentityFields').mockReturnValue(MOCK_FIELDS);
-        jest.spyOn(utils, 'getInitialSections').mockReturnValue(MOCK_SECTIONS);
+        jest.mocked(utils.getIdentityFields).mockReturnValue(MOCK_FIELDS);
+        jest.mocked(utils.getInitialSections).mockReturnValue(MOCK_SECTIONS);
     });
 
     afterEach(() => jest.resetAllMocks());

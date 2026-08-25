@@ -4,11 +4,18 @@ import { queryConversations } from '@proton/shared/lib/api/conversations';
 import { DEFAULT_MAIL_PAGE_SIZE } from '@proton/shared/lib/constants';
 import type { Sort } from '@proton/shared/lib/mail/search';
 
-import * as mailboxActions from '../../../store/mailbox/mailboxActions';
-
 import { addApiMock, api, clearAll } from '../../../helpers/test/helper';
 import type { Element } from '../../../models/element';
+import * as mailboxActions from '../../../store/mailbox/mailboxActions';
 import { getElements, props, sendEvent, setup } from './Mailbox.test.helpers';
+
+jest.mock('../../../store/mailbox/mailboxActions', () => {
+    const actual = jest.requireActual('../../../store/mailbox/mailboxActions');
+    return {
+        ...actual,
+        labelConversations: Object.assign(jest.fn(actual.labelConversations), actual.labelConversations),
+    };
+});
 
 jest.setTimeout(20000);
 
@@ -267,7 +274,7 @@ describe('Mailbox element list', () => {
         });
 
         it('should navigate on the previous one when the current one is emptied', async () => {
-            const labelConversationsSpy = jest.spyOn(mailboxActions, 'labelConversations');
+            const labelConversationsSpy = jest.mocked(mailboxActions.labelConversations);
 
             const conversations = getElements(DEFAULT_MAIL_PAGE_SIZE * 1.5);
             addApiMock(
@@ -323,7 +330,7 @@ describe('Mailbox element list', () => {
 
             expect(history.location.hash).toBe('');
 
-            labelConversationsSpy.mockRestore();
+            labelConversationsSpy.mockClear();
         });
 
         it('should show correct number of placeholder navigating on last page', async () => {

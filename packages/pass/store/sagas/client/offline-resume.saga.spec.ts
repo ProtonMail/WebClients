@@ -1,16 +1,21 @@
 import { runSaga } from 'redux-saga';
 
-import * as API from '../../../lib/api/api';
+import { exposeApi } from '../../../lib/api/api';
 import { offlineResume } from '../../actions';
 import type { State } from '../../types';
 import { sagaSetup } from '../testing';
 import * as hydrateSaga from './hydrate.saga';
 import watcher from './offline-resume.saga';
 
-const setResumeLock = jest.fn();
-(API as any).api = { setResumeLock };
+jest.mock('./hydrate.saga', () => ({
+    ...jest.requireActual('./hydrate.saga'),
+    hydrate: jest.fn(),
+}));
 
-jest.spyOn(hydrateSaga, 'hydrate').mockImplementation(function* () {
+const setResumeLock = jest.fn();
+exposeApi({ setResumeLock } as any);
+
+jest.mocked(hydrateSaga.hydrate).mockImplementation(function* () {
     return { fromCache: false, version: '0', state: {} as State };
 });
 

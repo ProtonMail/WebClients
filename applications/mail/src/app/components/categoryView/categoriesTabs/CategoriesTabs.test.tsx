@@ -8,7 +8,6 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { mailTestRender } from '../../../helpers/test/helper';
 import { newElementsState } from '../../../store/elements/elementsSlice';
-
 import { mockActiveCategoriesData } from '../testUtils/helpers';
 import { CategoriesTabs } from './CategoriesTabs';
 
@@ -35,6 +34,13 @@ jest.mock('../categoriesOnboarding/CategoriesOnboardingContext', () => ({
         activeStep: 6, // OnboardingStep.DONE
         userIsInB2COnboardingFlow: false,
     })),
+}));
+
+jest.mock('@proton/mail/features/categoriesView/categoriesStringHelpers', () => ({
+    ...jest.requireActual('@proton/mail/features/categoriesView/categoriesStringHelpers'),
+    getLabelFromCategoryId: jest.fn(
+        jest.requireActual('@proton/mail/features/categoriesView/categoriesStringHelpers').getLabelFromCategoryId
+    ),
 }));
 
 describe('CategoriesTabs', () => {
@@ -143,7 +149,7 @@ describe('CategoriesTabs', () => {
         });
 
         it('shows error on the tab when it crashes', async () => {
-            jest.spyOn(helpers, 'getLabelFromCategoryId').mockImplementation((id: any) => {
+            jest.mocked(helpers.getLabelFromCategoryId).mockImplementation((id: any) => {
                 if (id === MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS) {
                     throw new Error('forced crash');
                 }

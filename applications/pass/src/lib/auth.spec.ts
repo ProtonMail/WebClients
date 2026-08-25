@@ -24,6 +24,17 @@ jest.mock('proton-pass-web/lib/telemetry', () => ({ telemetry: { stop: jest.fn()
 jest.mock('proton-pass-web/lib/settings', () => ({ settings: { clear: jest.fn() } }));
 jest.mock('proton-pass-web/lib/theme', () => ({ getThemeForLocalID: jest.fn(() => Promise.resolve()) }));
 
+jest.mock('./sessions', () => ({
+    ...jest.requireActual('./sessions'),
+    getDefaultLocalID: jest.fn(),
+    getPersistedLocalIDsForUserID: jest.fn(),
+}));
+jest.mock('./storage', () => ({
+    ...jest.requireActual('./storage'),
+    clearUserLocalData: jest.fn(),
+    localGarbageCollect: jest.fn(),
+}));
+
 const MOCK_PERSISTED_SESSION = {
     AccessToken: '',
     LocalID: 42,
@@ -109,10 +120,10 @@ const clear = jest.spyOn(authStore, 'clear');
 const validSession = jest.spyOn(authStore, 'validSession');
 const hasSession = jest.spyOn(authStore, 'hasSession');
 
-jest.spyOn(sessions, 'getDefaultLocalID').mockImplementation(() => undefined);
-jest.spyOn(sessions, 'getPersistedLocalIDsForUserID').mockImplementation(() => []);
-jest.spyOn(storage, 'clearUserLocalData').mockImplementation(() => []);
-jest.spyOn(storage, 'localGarbageCollect').mockImplementation(() => Promise.resolve([]));
+(sessions.getDefaultLocalID as jest.Mock).mockImplementation(() => undefined);
+(sessions.getPersistedLocalIDsForUserID as jest.Mock).mockImplementation(() => []);
+(storage.clearUserLocalData as jest.Mock).mockImplementation(() => []);
+(storage.localGarbageCollect as jest.Mock).mockImplementation(() => Promise.resolve([]));
 
 jest.useFakeTimers();
 

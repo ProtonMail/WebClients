@@ -11,6 +11,12 @@ import { mockUseFolders } from '@proton/testing/lib/mockUseFolders';
 import LocationField from './LocationField';
 import { mockUseLocationFieldOptions } from './LocationField.test.utils';
 
+jest.mock('./useLocationFieldOptions', () => ({
+    __esModule: true,
+    ...jest.requireActual('./useLocationFieldOptions'),
+    useLocationFieldOptions: jest.fn(),
+}));
+
 describe('LocationField', () => {
     beforeEach(() => {
         mockUseLocationFieldOptions();

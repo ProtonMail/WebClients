@@ -8,7 +8,29 @@ module.exports = {
         'node_modules/(?!(@proton/shared|@proton/components|@protontech/telemetry|@protontech/mutex-browser|@protontech/crypto|openpgp|@openpgp/web-stream-tools|@protontech/bip39|emoji-mart|@preact/signals-core|@scure/base)/|client-zip|otpauth|@protontech/pass-rust-core/ui|@protontech/autofill|@protontech/fathom|@protontech/ml-inference)',
     ],
     transform: {
-        '^.+\\.(m?js|tsx?)$': '<rootDir>/jest.transform.js',
+        '^.+\\.(ts|js|mjs)x?$': [
+            '@swc/jest',
+            {
+                jsc: {
+                    transform: {
+                        react: {
+                            runtime: 'automatic',
+                        },
+                    },
+                    parser: {
+                        jsx: true,
+                        syntax: 'typescript',
+                        tsx: true,
+                    },
+                },
+                env: {
+                    /* polyfill needed for typed-array base64 and hex functions */
+                    mode: 'usage',
+                    shippedProposals: true,
+                    coreJs: require('core-js/package.json').version,
+                },
+            },
+        ],
     },
     moduleNameMapper: {
         '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm)$': '@proton/components/__mocks__/fileMock.js',
