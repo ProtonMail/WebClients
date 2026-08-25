@@ -3,7 +3,7 @@ import { IDBFactory } from 'fake-indexeddb';
 import 'fake-indexeddb/auto';
 
 import type { Engine } from '@proton/proton-foundation-search';
-import { CleanupEventKind } from '@proton/proton-foundation-search';
+import { Cached, Cleanup, CleanupEventKind } from '@proton/proton-foundation-search';
 
 import { SearchDB } from '../../../../shared/SearchDB';
 import { SearchLibraryError } from '../../../../shared/errors';
@@ -65,6 +65,10 @@ describe('CleanUpStaleBlobsTask', () => {
         db = await SearchDB.open('test-user');
         const cryptoKey = await generateAndImportKey();
         indexRegistry = new IndexRegistry(cryptoKey);
+    });
+
+    afterEach(() => {
+        jest.restoreAllMocks();
     });
 
     it('completes without errors when no engines are registered', async () => {
@@ -195,6 +199,110 @@ describe('CleanUpStaleBlobsTask', () => {
 
         // Blobs in IndexedDB should exactly match what the engine tracks.
         expect(await getTrackedBlobCount(engine, blobStore)).toBe(keysAfterCleanup.length);
+    });
+
+    it('frees the Cached object for a blob the engine releases, not just its DB row', async () => {
+        const instance = await indexRegistry.get(IndexKind.MAIN, db);
+        await indexDocuments(instance.indexWriter, [makeTestIndexEntry('doc-1')]);
+
+        // Delete the entry - the old segment blob becomes stale and gets Released on cleanup.
+        const session = instance.indexWriter.startWriteSession();
+        session.remove('doc-1');
+        await session.commit();
+
+        const freeSpy = jest.spyOn(Cached.prototype, 'free');
+        const ctx = makeTaskContext({ indexRegistry, db });
+        await new CleanUpStaleBlobsTask().execute(ctx);
+
+        expect(freeSpy).toHaveBeenCalled();
+    });
+
+    it('does not throw and still deletes the DB row when freeing a released blob fails', async () => {
+        const instance = await indexRegistry.get(IndexKind.MAIN, db);
+        await indexDocuments(instance.indexWriter, [makeTestIndexEntry('doc-1')]);
+
+        const session = instance.indexWriter.startWriteSession();
+        session.remove('doc-1');
+        await session.commit();
+
+        const keysBeforeCleanup = await db.getAllIndexBlobKeys();
+
+        // Call through to the real free() then throw, mirroring
+        // bug_wasm_writer_free_masks_error_and_leaks_lock's "attempted to take ownership of Rust
+        // value while it was borrowed" failure shape.
+        const originalFree = Cached.prototype.free;
+        jest.spyOn(Cached.prototype, 'free').mockImplementation(function (this: Cached) {
+            originalFree.call(this);
+            throw new Error('attempted to take ownership of Rust value while it was borrowed');
+        });
+
+        const ctx = makeTaskContext({ indexRegistry, db });
+        await expect(new CleanUpStaleBlobsTask().execute(ctx)).resolves.toBeUndefined();
+
+        // The DB deletion (the actual cleanup goal) still happens even though freeing the
+        // in-memory Cached failed.
+        const keysAfterCleanup = await db.getAllIndexBlobKeys();
+        expect(keysAfterCleanup.length).toBeLessThan(keysBeforeCleanup.length);
+    });
+
+    it('never frees a released blob mid-iterator - only after its own cleanup handle is freed', async () => {
+        // This is the bug the beginWrite/endWrite bracket around driveCleanupIterator fixes:
+        // without it, releaseEvent frees immediately as it fires INSIDE the loop, i.e. before
+        // `cleanup.free()` - freeing a blob while the Cleanup Execution driving the same loop is
+        // still live, the exact use-after-free shape freeOrDefer's own comment describes. Spy on
+        // Cleanup.prototype.free (the iterator handle itself, not the released blobs) to get a
+        // timestamp for "iteration is over"; no Cached.free() should have fired before that point.
+        const instance = await indexRegistry.get(IndexKind.MAIN, db);
+        await indexDocuments(instance.indexWriter, [makeTestIndexEntry('doc-1')]);
+
+        const session = instance.indexWriter.startWriteSession();
+        session.remove('doc-1');
+        await session.commit();
+
+        const callOrder: string[] = [];
+        const originalCachedFree = Cached.prototype.free;
+        jest.spyOn(Cached.prototype, 'free').mockImplementation(function (this: Cached) {
+            callOrder.push('cached.free');
+            originalCachedFree.call(this);
+        });
+        const originalCleanupFree = Cleanup.prototype.free;
+        jest.spyOn(Cleanup.prototype, 'free').mockImplementation(function (this: Cleanup) {
+            callOrder.push('cleanup.free');
+            originalCleanupFree.call(this);
+        });
+
+        const ctx = makeTaskContext({ indexRegistry, db });
+        await new CleanUpStaleBlobsTask().execute(ctx);
+
+        expect(callOrder).toContain('cached.free');
+        expect(callOrder).toContain('cleanup.free');
+        expect(callOrder.indexOf('cleanup.free')).toBeLessThan(callOrder.indexOf('cached.free'));
+    });
+
+    it('defers releasing a blob while an indexing write is already in flight on the same store, then drains once it ends', async () => {
+        // Composability check at the real task boundary: CleanUpStaleBlobsTask's own bracket must
+        // nest inside an externally-held one rather than clearing it early. (This models an
+        // indexing write already in flight via the shared coarse counter - the task queue itself
+        // serializes tasks, but reads and this counter don't know that.)
+        const instance = await indexRegistry.get(IndexKind.MAIN, db);
+        const { blobStore } = instance;
+        await indexDocuments(instance.indexWriter, [makeTestIndexEntry('doc-1')]);
+
+        const session = instance.indexWriter.startWriteSession();
+        session.remove('doc-1');
+        await session.commit();
+
+        const freeSpy = jest.spyOn(Cached.prototype, 'free');
+        blobStore.beginWrite(); // stands in for the still-in-flight indexing write
+        const ctx = makeTaskContext({ indexRegistry, db });
+        await new CleanUpStaleBlobsTask().execute(ctx);
+
+        // Cleanup's own beginWrite/endWrite already ran to completion inside execute(), but the
+        // outer one is still open, so nothing should have been freed yet.
+        expect(freeSpy).not.toHaveBeenCalled();
+
+        blobStore.endWrite(); // the indexing write finishes
+        expect(freeSpy).toHaveBeenCalled();
     });
 
     it('skips engine gracefully when cleanup() returns null (write lock busy)', async () => {

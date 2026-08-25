@@ -2,13 +2,19 @@ import { Logger } from '../shared/Logger';
 import type { SearchDB } from '../shared/SearchDB';
 import type { SearchDiagnostics } from '../shared/searchMetrics';
 import { IndexKind } from './index/IndexRegistry';
+import type { IndexRegistry } from './index/IndexRegistry';
+
+const roundMb = (mb: number): number => Math.round(mb * 1000) / 1000;
 
 /**
  * Storage/index snapshot used as Sentry breadcrumb/extra context on search errors (indexer
  * failures and query failures alike). Never throws: a diagnostics failure must not block or mask
  * reporting of the real error.
  */
-export async function gatherSearchDiagnostics(db: SearchDB): Promise<SearchDiagnostics | undefined> {
+export async function gatherSearchDiagnostics(
+    db: SearchDB,
+    indexRegistry: IndexRegistry | null
+): Promise<SearchDiagnostics | undefined> {
     try {
         // We have only one index for now (IndexKind.MAIN) and will most likely never add another
         // one for this implementation.
@@ -20,13 +26,21 @@ export async function gatherSearchDiagnostics(db: SearchDB): Promise<SearchDiagn
             navigator.storage.estimate(),
         ]);
 
+        // peek(), not get(): a diagnostics read must never build an engine that doesn't exist yet.
+        // Undefined here just means no in-memory cache state to report, e.g. when the failure
+        // happened before an engine was ever built.
+        const cacheStats = indexRegistry?.peek(IndexKind.MAIN)?.blobStore.getCacheStats();
+
         return {
             blobCount,
-            blobSizeMb: blobSizeBytes / 1024 / 1024,
+            blobsTotalSizeMb: roundMb(blobSizeBytes / 1024 / 1024),
             quarantinedNodeCount,
-            storageUsageMb: (usage ?? 0) / 1024 / 1024,
-            storageQuotaMb: (quota ?? 0) / 1024 / 1024,
+            storageUsageMb: roundMb((usage ?? 0) / 1024 / 1024),
+            storageQuotaMb: roundMb((quota ?? 0) / 1024 / 1024),
             documentCount,
+            blobCacheEntryCount: cacheStats?.blobsCount,
+            blobCachePendingFreeCount: cacheStats?.pendingFreeBlobsCount,
+            blobCacheSizesMb: cacheStats?.blobSizesInMb.map((mb) => mb.toFixed(3)).join('/'),
         };
     } catch (error) {
         Logger.warn(`gatherSearchDiagnostics: failed to gather search diagnostics: ${String(error)}`);
