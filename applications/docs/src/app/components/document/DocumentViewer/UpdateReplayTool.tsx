@@ -17,11 +17,15 @@ const createUpdateReplayToolStore = (editorController: EditorControllerInterface
     isConnected: boolean
     applyMultiple: number
     setApplyMultiple: (applyMultiple: number) => void
+    shouldMergeBeforeApplying: boolean
+    setShouldMergeBeforeApplying: (shouldMergeBeforeApplying: boolean) => void
+    shouldPersistAppliedUpdates: boolean
+    setShouldPersistAppliedUpdates: (shouldPersistAppliedUpdates: boolean) => void
     ws: WebSocket | null
     snapshots: unknown[]
     isTimeTravelEnabled: boolean
 
-    loadZipFile: (file: File, broadcastToWS: boolean) => Promise<void>
+    loadUpdatesFile: (file: File, broadcastToWS: boolean) => Promise<void>
     applyNextUpdate: () => Promise<void>
     applyMultipleUpdates: (count: number) => Promise<number>
     mergeApplyMultipleUpdates: (count: number) => Promise<number>
@@ -41,23 +45,32 @@ const createUpdateReplayToolStore = (editorController: EditorControllerInterface
     setApplyMultiple: (applyMultiple: number) => set({ applyMultiple }),
     ws: null,
     snapshots: [],
+    shouldMergeBeforeApplying: false,
+    setShouldMergeBeforeApplying: (shouldMergeBeforeApplying: boolean) => set({ shouldMergeBeforeApplying }),
+    shouldPersistAppliedUpdates: false,
+    setShouldPersistAppliedUpdates: (shouldPersistAppliedUpdates: boolean) => set({ shouldPersistAppliedUpdates }),
     isTimeTravelEnabled: true,
 
-    loadZipFile: async (file: File, broadcastToWS = false) => {
+    loadUpdatesFile: async (file: File, broadcastToWS = false) => {
       const hash = await getBufferHash(await file.arrayBuffer())
-      const JSZip = (await import('jszip')).default
-      const zip = new JSZip()
-      const content = await zip.loadAsync(file)
-      const filenames = Object.keys(content.files)
-      filenames.sort((a, b) => parseInt(a) - parseInt(b))
       const updates: Uint8Array<ArrayBuffer>[] = []
-      for (const filename of filenames) {
-        const file = content.files[filename]
-        if (!file) {
-          continue
+      if (file.type === 'application/zip' || file.type === 'application/x-zip-compressed' || file.name.endsWith('.zip')) {
+        const JSZip = (await import('jszip')).default
+        const zip = new JSZip()
+        const content = await zip.loadAsync(file)
+        const filenames = Object.keys(content.files)
+        filenames.sort((a, b) => parseInt(a) - parseInt(b))
+        for (const filename of filenames) {
+          const file = content.files[filename]
+          if (!file) {
+            continue
+          }
+          const update = await file.async('uint8array')
+          updates.push(update as Uint8Array<ArrayBuffer>)
         }
-        const update = await file.async('uint8array')
-        updates.push(update as Uint8Array<ArrayBuffer>)
+      } else {
+        const update = await file.arrayBuffer()
+        updates.push(new Uint8Array(update))
       }
       set({ fileHash: hash, updatesToApply: updates, appliedUpdates: 0, timeTravelIndex: 0 })
       const initialState = await editorController.getLocalSpreadsheetStateJSON()
@@ -88,7 +101,7 @@ const createUpdateReplayToolStore = (editorController: EditorControllerInterface
       if (!update) {
         return
       }
-      await editorController.applyUpdate(update)
+      await editorController.applyUpdate(update, store.shouldPersistAppliedUpdates)
       const snapshot = await editorController.getLocalSpreadsheetStateJSON()
       set((state) => ({
         snapshots: get().isTimeTravelEnabled ? [...state.snapshots, snapshot] : state.snapshots,
@@ -103,7 +116,7 @@ const createUpdateReplayToolStore = (editorController: EditorControllerInterface
         if (!update) {
           continue
         }
-        await editorController.applyUpdate(update)
+        await editorController.applyUpdate(update, store.shouldPersistAppliedUpdates)
         const snapshot = await editorController.getLocalSpreadsheetStateJSON()
         set((state) => ({ snapshots: get().isTimeTravelEnabled ? [...state.snapshots, snapshot] : state.snapshots }))
       }
@@ -115,7 +128,7 @@ const createUpdateReplayToolStore = (editorController: EditorControllerInterface
       const store = get()
       const updates = store.updatesToApply.slice(store.appliedUpdates, store.appliedUpdates + count)
       const mergedUpdate = mergeUpdates(updates) as Uint8Array<ArrayBuffer>
-      await editorController.applyUpdate(mergedUpdate)
+      await editorController.applyUpdate(mergedUpdate, store.shouldPersistAppliedUpdates)
       const snapshot = await editorController.getLocalSpreadsheetStateJSON()
       set((state) => ({ snapshots: get().isTimeTravelEnabled ? [...state.snapshots, snapshot] : state.snapshots }))
       const newAppliedUpdates = store.appliedUpdates + count
@@ -188,7 +201,7 @@ const createUpdateReplayToolStore = (editorController: EditorControllerInterface
             const file = new File([data], parsed.hash, {
               type: parsed.mimeType,
             })
-            await store.loadZipFile(file, true)
+            await store.loadUpdatesFile(file, true)
             if (parsed.state) {
               await store.handleStateChangeMessage(parsed.state)
             }
@@ -242,7 +255,7 @@ export default function UpdateReplayTool({
     snapshots,
     timeTravelIndex,
     isConnected,
-    loadZipFile,
+    loadUpdatesFile,
     applyNextUpdate,
     applyMultipleUpdates,
     mergeApplyMultipleUpdates,
@@ -252,6 +265,10 @@ export default function UpdateReplayTool({
     goToSnapshot,
     isTimeTravelEnabled,
     setIsTimeTravelEnabled,
+    shouldMergeBeforeApplying,
+    setShouldMergeBeforeApplying,
+    shouldPersistAppliedUpdates,
+    setShouldPersistAppliedUpdates,
   } = useStore(store)
 
   const didSetupInitialConnection = useRef(false)
@@ -297,7 +314,6 @@ export default function UpdateReplayTool({
           <div className="mb-1.5 text-sm leading-none">Updates to apply:</div>
           <input
             type="file"
-            accept="application/zip"
             onChange={async (event) => {
               if (!event.target.files) {
                 return
@@ -306,7 +322,7 @@ export default function UpdateReplayTool({
               if (!file) {
                 return
               }
-              await loadZipFile(file, true)
+              await loadUpdatesFile(file, true)
             }}
             disabled={updatesToApply.length > 0}
           />
@@ -326,10 +342,34 @@ export default function UpdateReplayTool({
             disabled={updatesToApply.length === 0}
           />
         </label>
+        <label className="flex items-center gap-2">
+          <input
+            className="bg-norm !opacity-100"
+            id="merge-before-applying-input"
+            type="checkbox"
+            checked={shouldMergeBeforeApplying}
+            onChange={(event) => setShouldMergeBeforeApplying(event.target.checked)}
+          />
+          <div className="text-sm leading-none">Merge before applying</div>
+        </label>
+        <label className="flex items-center gap-2">
+          <input
+            className="bg-norm !opacity-100"
+            id="persist-applied-updates-input"
+            type="checkbox"
+            checked={shouldPersistAppliedUpdates}
+            onChange={(event) => setShouldPersistAppliedUpdates(event.target.checked)}
+          />
+          <div className="text-sm leading-none">Persist applied updates</div>
+        </label>
         <Button
           size="small"
           onClick={async () => {
-            await applyMultipleUpdates(applyMultiple)
+            if (shouldMergeBeforeApplying) {
+              await mergeApplyMultipleUpdates(applyMultiple)
+            } else {
+              await applyMultipleUpdates(applyMultiple)
+            }
             sendStateChangeMessage()
           }}
           disabled={
@@ -338,21 +378,7 @@ export default function UpdateReplayTool({
             timeTravelIndex !== appliedUpdates
           }
         >
-          Apply {applyMultiple} updates
-        </Button>
-        <Button
-          size="small"
-          onClick={async () => {
-            await mergeApplyMultipleUpdates(applyMultiple)
-            sendStateChangeMessage()
-          }}
-          disabled={
-            updatesToApply.length === 0 ||
-            appliedUpdates + applyMultiple > updatesToApply.length ||
-            timeTravelIndex !== appliedUpdates
-          }
-        >
-          Merge apply {applyMultiple} updates
+          {shouldMergeBeforeApplying ? 'Merge apply' : 'Apply'} {applyMultiple} updates
         </Button>
         <Button
           size="small"
