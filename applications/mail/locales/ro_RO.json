@@ -7143,6 +7143,9 @@
         "${ currentProgress } din ${ totalProgress }",
         "${ currentProgress } din ${ totalProgress }"
       ],
+      "${ dateString } at ${ formattedTime }": [
+        "${ dateString } la ${ formattedTime }"
+      ],
       "${ elementsCount } conversation will be labelled as:": [
         "${ elementsCount } conversație va fi etichetată cu:",
         "${ elementsCount } conversații vor fi etichetate cu:",
@@ -7860,9 +7863,6 @@
       ],
       "Default email application": [
         "Aplicația de e-mail implicită"
-      ],
-      "Details": [
-        "Detalii"
       ],
       "Detection takes place on your device, so no data from your emails is sent to our servers.": [
         "Detectarea se execută pe dispozitiv, astfel că nu se trimit nici un fel de date spre servere."
@@ -8972,6 +8972,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Deoarece sunteți un utilizator loial, contul are funcții adiționale activate."
+      ],
+      "Snooze emails": [
+        "Amânare mesaje"
       ],
       "Snooze messages for later so they are top of your inbox when you want": [
         "Amânați mesajele pentru mai târziu, astfel încât să apară în mesajele primite când doriți."
@@ -10366,6 +10369,9 @@
       "Archive": [
         "Arhivă"
       ],
+      "At": [
+        "La"
+      ],
       "Attach screenshot(s)": [
         "Atașare capturi de ecran"
       ],
@@ -11001,6 +11007,9 @@
       ],
       "Remove Zoom video conference": [
         "Eliminare conferință video Zoom"
+      ],
+      "Return on": [
+        "Returnare la"
       ],
       "Reveal password": [
         "Afișare parolă"
@@ -13013,6 +13022,16 @@
         "Domenii de e-mail personal acceptate: ${ n }"
       ]
     },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Încercați acum"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Acum aveți acces la noua aplicație ${ CALENDAR_APP_NAME }. ${ link }"
+      ]
+    },
     "Notification": {
       "${ Filter.Name } created": [
         "S-a creat filtrul ${ Filter.Name }."
@@ -15009,6 +15028,13 @@
       ],
       "Private, fast, and organized": [
         "Privat, rapid și organizat"
+      ]
+    },
+    "Snooze info": {
+      "${ count } email → ${ wakeTime }": [
+        "${ count } e-mail → ${ wakeTime }",
+        "${ count } e-mailuri → ${ wakeTime }",
+        "${ count } de e-mailuri → ${ wakeTime }"
       ]
     },
     "Snooze message": {
@@ -17398,6 +17424,9 @@
       ],
       "Snooze": [
         "Amânare"
+      ],
+      "Snooze emails": [
+        "Amânare mesaje"
       ],
       "Snooze message": [
         "Amânare mesaj"
