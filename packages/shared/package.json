@@ -18,8 +18,10 @@
         "@mattiasbuelens/web-streams-adapter": "0.1.0",
         "@proton/colors": "workspace:^",
         "@proton/logger": "workspace:^",
+        "@proton/redux-utilities": "workspace:^",
         "@proton/sanitize": "workspace:^",
         "@proton/styles": "workspace:^",
+        "@proton/utils": "workspace:^",
         "@protontech/bip39": "^1.1.0",
         "@protontech/crypto": "*",
         "@protontech/mimemessage": "~v1.1.4",
@@ -29,17 +31,25 @@
         "@protontech/timezone-support": "^2.1.0",
         "@scure/base": "^2.3.0",
         "@sentry/browser": "^7.120.4",
+        "@sentry/core": "^7.120.4",
         "@types/node": "^24.13.3",
         "@types/papaparse": "^5.5.2",
         "@types/ua-parser-js": "^0.7.39",
         "@types/webpack-env": "^1.18.8",
         "date-fns": "^2.30.0",
         "dompurify": "^3.4.13",
+        "electron-log": "^5.4.4",
         "file-saver": "^2.0.5",
         "ical.js": "^1.5.0",
         "idb": "^8.0.3",
         "is-valid-domain": "0.1.6",
+        "linkify-it": "^5.0.2",
+        "lodash": "^4.18.1",
+        "minimist": "^1.2.8",
         "papaparse": "^5.6.0",
+        "react": "^18.3.1",
+        "tinycolor2": "^1.6.0",
+        "ttag": "^1.8.12",
         "ua-parser-js": "^1.0.41",
         "web-streams-polyfill": "^3.3.3",
         "web-vitals": "^4.2.4",
@@ -48,6 +58,8 @@
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:^",
         "@proton/i18n": "workspace:^",
+        "@proton/polyfill": "workspace:^",
+        "@proton/testing": "workspace:^",
         "@proton/types": "workspace:^",
         "@types/file-saver": "^2.0.7",
         "@vitest/browser-playwright": "^4.1.10",
@@ -55,8 +67,39 @@
         "eslint": "^10.8.1",
         "playwright": "^1.61.1",
         "prettier": "^3.9.6",
-        "ttag": "^1.8.12",
         "typescript": "^6.0.3",
         "vitest": "^4.1.10"
+    },
+    "peerDependencies": {
+        "@proton/app-context": "workspace:^",
+        "@proton/key-transparency": "workspace:^",
+        "@proton/metrics": "workspace:^",
+        "@proton/pass": "workspace:^",
+        "@proton/payments": "workspace:^",
+        "@proton/unleash": "workspace:^",
+        "electron": "*"
+    },
+    "peerDependenciesMeta": {
+        "@proton/app-context": {
+            "optional": true
+        },
+        "@proton/key-transparency": {
+            "optional": true
+        },
+        "@proton/metrics": {
+            "optional": true
+        },
+        "@proton/pass": {
+            "optional": true
+        },
+        "@proton/payments": {
+            "optional": true
+        },
+        "@proton/unleash": {
+            "optional": true
+        },
+        "electron": {
+            "optional": true
+        }
     }
 }
