@@ -5,17 +5,12 @@ import { useModalStateObject } from '@proton/components';
 import PaperTrailPanel from '../../features/aiPaperTrail/PaperTrailPanel';
 import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
 import { useLumoFlags } from '../../hooks/useLumoFlags';
-import { useLumoPlan } from '../../hooks/useLumoPlan';
 import { LumoLayoutWithDrawer } from '../../layouts/LumoLayout';
 import { useConversationActions } from '../../providers/ConversationActionsProvider';
 import { useGhostChat } from '../../providers/GhostChatProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
-import { useLumoSelector } from '../../redux/hooks';
-import { selectTierErrors } from '../../redux/slices/meta/errors';
-import { shouldShowWeeklyLimitUpsell, useRemainingLimits } from '../../services/usageLimitsStore';
 import type { Attachment } from '../../types';
 import { ComposerMode, type Message } from '../../types';
-import UpsellCard from '../../upsells/components/UpsellCard';
 import { ComposerComponent } from '../Composer/ComposerComponent';
 import { FilesManagementView } from '../Files';
 import { FilePreviewModal } from '../Files/Common/FilePreviewModal';
@@ -59,10 +54,6 @@ const MainContainer = ({ isProcessingAttachment, initialQuery, prefillQuery }: M
     const { isGhostChatMode } = useGhostChat();
     const filePreviewModal = useModalStateObject();
     const [previewAttachment, setPreviewAttachment] = useState<Attachment | null>(null);
-    const tierErrors = useLumoSelector((state) => selectTierErrors({ errors: state.errors }));
-    const { hasLumoPlus } = useLumoPlan();
-    const remainingLimits = useRemainingLimits();
-    const showWeeklyLimitUpsell = shouldShowWeeklyLimitUpsell(remainingLimits, tierErrors.length > 0, hasLumoPlus);
     const { exceedsLimit: imageLimitExceeded } = useImageLimitInfo(EMPTY_MESSAGE_CHAIN);
     const handleOpenFilePreview = useCallback(
         (attachment: Attachment) => {
@@ -115,7 +106,6 @@ const MainContainer = ({ isProcessingAttachment, initialQuery, prefillQuery }: M
                         {aiPaperTrailRoute && aiPaperTrailPopup && <PaperTrailPanel />}
 
                         <div className="composer-container md:px-4 w-full relative">
-                            {showWeeklyLimitUpsell && <UpsellCard showSadCat={false} error={tierErrors[0]} />}
                             <ImageLimitNotice exceedsLimit={imageLimitExceeded} />
                             <ComposerComponent
                                 composerMode={ComposerMode.NEW_CONVERSATION}

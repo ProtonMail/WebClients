@@ -37,6 +37,7 @@ import { ComposerEditorArea } from './ComposerEditorArea';
 import { ComposerExpirationBanner } from './ComposerExpirationBanner';
 import { ComposerLimitBanner } from './ComposerLimitBanner';
 import { ComposerToolbar } from './ComposerToolbar';
+import { ComposerWeeklyLimitUpsell } from './ComposerWeeklyLimitUpsell';
 import { useExcelSheetSelection } from './ExcelSheetSelectionModal';
 import { useAllRelevantAttachments } from './hooks/useAllRelevantAttachments';
 import { useComposerWithImageGeneration } from './hooks/useComposerWithImageGeneration';
@@ -354,6 +355,40 @@ const ComposerComponentInner = ({
 
     useNativeComposerLumoStateApi(isGenerating);
 
+    const composerPreInputContent = (
+        <>
+            {showLegalDisclaimer && <GuestDisclaimer />}
+
+            {isGuest && canShowGuestNotificationCard && (
+                <GuestNotificationCard
+                    messageChain={messageChain}
+                    conversationId={messageChain?.[0]?.conversationId}
+                    isGenerating={isGenerating}
+                />
+            )}
+
+            <ComposerWeeklyLimitUpsell composerMode={composerMode} />
+
+            <ComposerLimitBanner
+                conversationId={messageChain?.[0]?.conversationId}
+                spaceId={spaceId}
+                onOpenFiles={handleOpenFiles}
+            />
+
+            <ComposerExpirationBanner conversationId={messageChain?.[0]?.conversationId} />
+
+            {composerMode === ComposerMode.NEW_CONVERSATION && isEmpty && agentStarters.length > 0 && (
+                <ConversationStarters
+                    starters={agentStarters}
+                    onSelect={(text) => {
+                        void sendGenerateMessage(text);
+                    }}
+                    className="justify-center mb-1"
+                />
+            )}
+        </>
+    );
+
     return (
         <>
             <div className="flex flex-column w-full gap-2">
@@ -372,6 +407,16 @@ const ComposerComponentInner = ({
                     isGenerating={isGenerating}
                 />
 
+                {/*
+                 * Banners stay outside the fixed input section so they remain in document
+                 * flow on mobile home/gallery (className may include fixed bottom-0).
+                 * Also kept outside the native-composer visibility wrapper so limit cards
+                 * stay visible and dismissible when the native composer is active.
+                 */}
+                <div className="composer-pre-input flex flex-column flex-nowrap items-center gap-2 w-full">
+                    {composerPreInputContent}
+                </div>
+
                 <div
                     style={{ visibility: nativeComposerVisibilityApi.showWebComposer() ? 'visible' : 'hidden' }}
                     className="w-full"
@@ -389,34 +434,6 @@ const ComposerComponentInner = ({
                     >
                         <h2 className="sr-only">{c('collider_2025: Info')
                             .t`Ask anything to ${LUMO_SHORT_APP_NAME}`}</h2>
-
-                        {showLegalDisclaimer && <GuestDisclaimer />}
-
-                        {isGuest && canShowGuestNotificationCard && (
-                            <GuestNotificationCard
-                                messageChain={messageChain}
-                                conversationId={messageChain?.[0]?.conversationId}
-                                isGenerating={isGenerating}
-                            />
-                        )}
-
-                        <ComposerLimitBanner
-                            conversationId={messageChain?.[0]?.conversationId}
-                            spaceId={spaceId}
-                            onOpenFiles={handleOpenFiles}
-                        />
-
-                        <ComposerExpirationBanner conversationId={messageChain?.[0]?.conversationId} />
-
-                        {composerMode === ComposerMode.NEW_CONVERSATION && isEmpty && agentStarters.length > 0 && (
-                            <ConversationStarters
-                                starters={agentStarters}
-                                onSelect={(text) => {
-                                    void sendGenerateMessage(text);
-                                }}
-                                className="justify-center mb-1"
-                            />
-                        )}
 
                         <div className="composer-input-glow-wrapper w-full">
                             <div
