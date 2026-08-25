@@ -29035,6 +29035,16 @@
       "Yearly, ${ untilString }": [
         "연간, ${ untilString }"
       ]
+    },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "지금 사용해보세요"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "${ CALENDAR_APP_NAME }를 사용할 수 있습니다. ${ link }"
+      ]
     }
   }
 }
