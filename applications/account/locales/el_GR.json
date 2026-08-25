@@ -14326,6 +14326,10 @@
       ],
       "Zoom meeting": [
         "Σύσκεψη Zoom"
+      ],
+      "${ pendingKeysMemberCount } new member added via your identity provider and pending review.": [
+        "${ pendingKeysMemberCount } νέο μέλος προστέθηκε μέσω του παρόχου ταυτότητάς σας και εκκρεμεί έλεγχος.",
+        "${ pendingKeysMemberCount } νέα μέλη προστέθηκαν μέσω του παρόχου ταυτότητάς σας και εκκρεμεί έλεγχος."
       ]
     },
     "info": {
@@ -29421,6 +29425,16 @@
       ],
       "Yearly, ${ untilString }": [
         "Ετησίως, ${ untilString }"
+      ]
+    },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Δοκιμάστε το τώρα"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Τώρα έχετε πρόσβαση στη νέα εφαρμογή ${ CALENDAR_APP_NAME }. ${ link }"
       ]
     }
   }
