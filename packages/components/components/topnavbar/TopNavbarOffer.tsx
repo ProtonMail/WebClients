@@ -59,7 +59,7 @@ const TopNavbarOffer = ({ app, offerConfig, ignoreVisited, ignoreOnboarding, sho
     // This component only renders for an offer that is already eligible, so mounting is the signal
     // that the artwork will very likely be needed. Preload it now rather than when the modal mounts.
     usePreloadOfferImage(hasEstimationError ? undefined : offerConfig.images?.modalImage);
-    const shouldWarmArizona = offerConfig.layout === Q3Sale2026Layout && !hasEstimationError;
+    const shouldDownloadArizona = offerConfig.layout === Q3Sale2026Layout && !hasEstimationError;
 
     // Listen custom event to open offer modal
     useEffect(() => {
@@ -170,7 +170,7 @@ const TopNavbarOffer = ({ app, offerConfig, ignoreVisited, ignoreOnboarding, sho
                     {CTAText}
                 </PromotionButton>
             </TopNavbarListItem>
-            {shouldWarmArizona && (
+            {shouldDownloadArizona && (
                 <span className="font-arizona sr-only" aria-hidden="true">
                     &nbsp;
                 </span>
