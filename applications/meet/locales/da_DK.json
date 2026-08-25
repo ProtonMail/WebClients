@@ -25,6 +25,9 @@
       ]
     },
     "Accessibility announcement": {
+      "${ BRAND_NAME } background applied": [
+        "${ BRAND_NAME }-baggrund anvendt"
+      ],
       "${ name } joined the meeting": [
         "${ name } deltager i mødet"
       ],
@@ -61,17 +64,38 @@
       "A participant reacted with ${ emoji }": [
         "En deltager reagerede med ${ emoji }"
       ],
+      "Abstract background applied": [
+        "Abstrakt baggrund anvendt"
+      ],
+      "Background effect turned off": [
+        "Baggrundseffekter slået fra"
+      ],
+      "Beach background applied": [
+        "Strand-baggrund anvendt"
+      ],
+      "Blurred background applied": [
+        "Sløret baggrund anvendt"
+      ],
+      "Coffee place background applied": [
+        "Café-baggrund anvendt"
+      ],
       "Connected via TURN relay mode due to network restrictions. This may increase latency and affect call quality.": [
         "Forbundet via TURN-relætilstand på grund af dine netværksbegrænsninger. Dette kan øge latenstiden og påvirke opkaldskvaliteten."
       ],
       "Connection lost. Reconnecting…": [
         "Forbindelsen blev afbrudt. Genopretter forbindelse..."
       ],
+      "Mountain background applied": [
+        "Bjerg-baggrund"
+      ],
       "New chat message: ${ message }": [
         "Ny chat-besked:${ message }"
       ],
       "Now starting recording": [
         "Begynder optagelse nu"
+      ],
+      "Office background applied": [
+        "Kontor-baggrund anvendt"
       ],
       "Reconnected to the meeting": [
         "Genoprettede forbindelsen til mødet"
@@ -183,6 +207,9 @@
       ],
       "Back": [
         "Tilbage"
+      ],
+      "Backgrounds and effects": [
+        "Baggrunde og effekter"
       ],
       "Blur background": [
         "Slør baggrund"
@@ -702,9 +729,6 @@
       "View invoice": [
         "Vis faktura"
       ],
-      "Virtual backgrounds": [
-        "Virtuelle baggrunde"
-      ],
       "Waiting room": [
         "Venteværelse"
       ],
@@ -852,11 +876,11 @@
       "Audio settings": [
         "Lydindstillinger"
       ],
-      "Background effects": [
-        "Baggrundseffekter"
-      ],
       "Backgrounds": [
         "Baggrunde"
+      ],
+      "Blur and personal": [
+        "Sløret og personlig"
       ],
       "Chat": [
         "Samtale"
@@ -2316,6 +2340,9 @@
       "Advanced mode: tune every blur constant for the next version, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
         "Avanceret tilstand: Indstil hver sløringskonstant til den næste version, og tryk derefter på Anvend for at oprette forhåndsvisningen igen. Overrides prioriteres højere end fil- og Unleash-værdier."
       ],
+      "Allow camera access to preview your background": [
+        "Tillad adgang til kameraet for at forhåndsvise din baggrund"
+      ],
       "Anonymous ${ particle } ${ participantNumber }": [
         "Anonym ${ particle } ${ participantNumber }"
       ],
@@ -3036,20 +3063,23 @@
       "Your phone number will only be used for this one-time verification.": [
         "Dit telefonnummer vil kun blive anvendt til denne engangsbekræftelse."
       ],
-      "Your preview": [
-        "Din forhåndsvisning"
-      ],
       "You’re about to open a link in a new tab. Make sure you trust the website before continuing.": [
         "Du er ved at åbne et link i en ny fane. Vær sikker på, at webstedet er troværdigt, før du fortsætter."
       ]
     },
     "Label": {
+      "${ BRAND_NAME } background": [
+        "${ BRAND_NAME }-baggrunde"
+      ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } brugernavn"
       ],
       "${ numberOfStars } star": [
         "${ numberOfStars } stjerne",
         "${ numberOfStars } stjerner"
+      ],
+      "Abstract background": [
+        "Abstrakt baggrund"
       ],
       "Add optional details": [
         "Tilføj valgfrie detaljer"
@@ -3081,8 +3111,8 @@
       "Background color": [
         "Baggrundsfarve"
       ],
-      "Blue background": [
-        "Blå baggrund"
+      "Beach background": [
+        "Strand-baggrund"
       ],
       "Blurred (next)": [
         "Sløret (næste)"
@@ -3107,6 +3137,9 @@
       ],
       "Code is 6 digits without spaces": [
         "Koden er på 6 cifre uden mellemrum"
+      ],
+      "Coffee place background": [
+        "Café-baggrund"
       ],
       "Connection Quality": [
         "Forbindelseskvalitet"
@@ -3174,9 +3207,6 @@
       "Google Calendar": [
         "Google Kalender"
       ],
-      "Green background": [
-        "Grøn baggrund"
-      ],
       "Hide password": [
         "Skjul adgangskode"
       ],
@@ -3219,6 +3249,9 @@
       "Monday to Friday": [
         "Mandag til fredag"
       ],
+      "Mountain background": [
+        "Bjerg-baggrund"
+      ],
       "Muted": [
         "Lydløs"
       ],
@@ -3228,14 +3261,14 @@
       "Next": [
         "Næste"
       ],
+      "Office background": [
+        "Kontor-baggrund"
+      ],
       "Operating system": [
         "Operativsystem"
       ],
       "Operating system version": [
         "Operativsystemversion"
-      ],
-      "Orange background": [
-        "Orange baggrund"
       ],
       "Outlook Calendar": [
         "Outlook-kalender"
@@ -3251,9 +3284,6 @@
       ],
       "Phone number": [
         "Telefonnummer"
-      ],
-      "Purple background": [
-        "Lilla baggrund"
       ],
       "Raw": [
         "Raw"
@@ -3714,11 +3744,11 @@
       "Background blur comparison": [
         "Sammenligning af baggrundssløring"
       ],
-      "Background effects": [
-        "Baggrundseffekter"
-      ],
       "Backgrounds": [
         "Baggrunde"
+      ],
+      "Blur and personal": [
+        "Sløret og personlig"
       ],
       "Camera and microphone are blocked": [
         "Kamera og mikrofon er blokeret"
@@ -3952,6 +3982,9 @@
     "Tooltip": {
       "Background blur is not supported on your browser": [
         "Baggrundssløring understøttes ikke i din browser"
+      ],
+      "Background effects are not supported on your browser": [
+        "Baggrundseffekter understøttes ikke i din browser"
       ],
       "Generate a new meeting link. The current link will stop working.": [
         "Generér et nyt mødelink. Det nuværende link vil ophøre med at fungere."
