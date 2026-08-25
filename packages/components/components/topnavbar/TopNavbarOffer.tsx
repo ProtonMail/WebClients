@@ -6,7 +6,6 @@ import { c } from 'ttag';
 import { useWelcomeFlags } from '@proton/account';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import useOfferFlags from '@proton/components/containers/offers/hooks/useOfferFlags';
 import usePreloadOfferImage from '@proton/components/containers/offers/hooks/usePreloadOfferImage';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useConfig from '@proton/components/hooks/useConfig';
@@ -16,6 +15,8 @@ import { APPS, OPEN_OFFER_MODAL_EVENT } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 import OfferModal from '../../containers/offers/components/OfferModal';
+import { Q3Sale2026Layout } from '../../containers/offers/components/q3Sale2026/Q3Sale2026Layout';
+import useOfferFlags from '../../containers/offers/hooks/useOfferFlags';
 import useOfferModal from '../../containers/offers/hooks/useOfferModal';
 import type { OfferConfig } from '../../containers/offers/interface';
 import { subscriptionModalClassName } from '../../containers/payments/subscription/constants';
@@ -58,6 +59,7 @@ const TopNavbarOffer = ({ app, offerConfig, ignoreVisited, ignoreOnboarding, sho
     // This component only renders for an offer that is already eligible, so mounting is the signal
     // that the artwork will very likely be needed. Preload it now rather than when the modal mounts.
     usePreloadOfferImage(hasEstimationError ? undefined : offerConfig.images?.modalImage);
+    const shouldDownloadArizona = offerConfig.layout === Q3Sale2026Layout && !hasEstimationError;
 
     // Listen custom event to open offer modal
     useEffect(() => {
@@ -168,6 +170,11 @@ const TopNavbarOffer = ({ app, offerConfig, ignoreVisited, ignoreOnboarding, sho
                     {CTAText}
                 </PromotionButton>
             </TopNavbarListItem>
+            {shouldDownloadArizona && (
+                <span className="font-arizona sr-only" aria-hidden="true">
+                    &nbsp;
+                </span>
+            )}
             {renderOfferModal && offer && (
                 <OfferModal
                     currency={currency}
