@@ -9778,6 +9778,12 @@
       ],
       "Update filter": [
         "Opdater filter"
+      ],
+      "${ dateString } at ${ formattedTime }": [
+        "${ dateString } til ${ formattedTime }"
+      ],
+      "Snooze emails": [
+        "Udsæt e-mails"
       ]
     },
     "info": {
@@ -11054,6 +11060,12 @@
       ],
       "Sieve script": [
         "Sieve-script"
+      ],
+      "At": [
+        "Til"
+      ],
+      "Return on": [
+        "Vend tilbage den"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -17212,6 +17224,9 @@
       ],
       "Update filter": [
         "Opdater filter"
+      ],
+      "Snooze emails": [
+        "Udsæt e-mails"
       ]
     },
     "Title header for keys table": {
@@ -17914,6 +17929,22 @@
       ],
       "One plan, more power": [
         "Ét abonnement, mere power"
+      ]
+    },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Prøv den nu"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Du har nu adgang til den nye ${ CALENDAR_APP_NAME }. ${ link }"
+      ]
+    },
+    "Snooze info": {
+      "${ count } email → ${ wakeTime }": [
+        "${ count } e-mail → ${ wakeTime }",
+        "${ count } e-mails → ${ wakeTime }"
       ]
     }
   }

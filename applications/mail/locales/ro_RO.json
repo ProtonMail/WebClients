@@ -9954,6 +9954,12 @@
       ],
       "Update filter": [
         "Actualizare filtru"
+      ],
+      "${ dateString } at ${ formattedTime }": [
+        "${ dateString } la ${ formattedTime }"
+      ],
+      "Snooze emails": [
+        "Amânare mesaje"
       ]
     },
     "info": {
@@ -11244,6 +11250,12 @@
       ],
       "Sieve script": [
         "Script Sieve"
+      ],
+      "At": [
+        "La"
+      ],
+      "Return on": [
+        "Returnare la"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -17548,6 +17560,9 @@
       ],
       "Update filter": [
         "Actualizare filtru"
+      ],
+      "Snooze emails": [
+        "Amânare mesaje"
       ]
     },
     "Title header for keys table": {
@@ -18295,6 +18310,23 @@
       ],
       "One plan, more power": [
         "Un singur plan, mai multă putere"
+      ]
+    },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Încercați acum"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Acum aveți acces la noua aplicație ${ CALENDAR_APP_NAME }. ${ link }"
+      ]
+    },
+    "Snooze info": {
+      "${ count } email → ${ wakeTime }": [
+        "${ count } e-mail → ${ wakeTime }",
+        "${ count } e-mailuri → ${ wakeTime }",
+        "${ count } de e-mailuri → ${ wakeTime }"
       ]
     }
   }

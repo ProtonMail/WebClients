@@ -9593,6 +9593,12 @@
       ],
       "Update filter": [
         "Mettre à jour le filtre"
+      ],
+      "${ dateString } at ${ formattedTime }": [
+        "${ dateString } à ${ formattedTime }"
+      ],
+      "Snooze emails": [
+        "Mettre en attente les e-mails"
       ]
     },
     "info": {
@@ -10830,6 +10836,12 @@
       ],
       "Sieve script": [
         "Script Sieve"
+      ],
+      "At": [
+        "À"
+      ],
+      "Return on": [
+        "Retour le"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -16973,6 +16985,9 @@
       ],
       "Update filter": [
         "Mettre à jour le filtre"
+      ],
+      "Snooze emails": [
+        "Mettre en attente les e-mails"
       ]
     },
     "Title header for keys table": {
@@ -17669,6 +17684,12 @@
       ],
       "One plan, more power": [
         "Un seul abonnement, plus de puissance"
+      ]
+    },
+    "Snooze info": {
+      "${ count } email → ${ wakeTime }": [
+        "${ count } message → ${ wakeTime }",
+        "${ count } messages → ${ wakeTime }"
       ]
     }
   }
