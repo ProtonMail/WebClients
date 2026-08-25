@@ -1,9 +1,11 @@
-import { useCallback } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import Toggle from '@proton/components/components/toggle/Toggle';
+import { isDesktopEnvironment } from '@proton/lumo-api-client/core/desktop-tools';
 import { LUMO_SHORT_APP_NAME, LUMO_UPSELL_PATHS } from '@proton/shared/lib/constants';
 
 import { useLumoFlags } from '../../hooks/useLumoFlags';
@@ -17,6 +19,7 @@ import BasicUpgradeButton from '../../upsells/primitives/BasicUpgradeButton';
 import useLumoPlusUpsellButtonConfig from '../../upsells/useLumoPlusUpsellButtonConfig';
 import { sendUpgradeButtonClickedEvent } from '../../util/telemetry';
 import { LumoIcon } from '../LumoIcon/LumoIcon';
+import { ConnectorList } from './ConnectorList';
 import { MenuDropdown, type MenuDropdownProps, MenuItem } from './components/MenuDropdown';
 
 import './ToolMenuDropdown.scss';
@@ -41,6 +44,14 @@ export const ToolMenuDropdown = ({
     const imageLimitExhausted = isLimitExhausted(remainingLimits?.images);
     const imageUpsellConfig = useLumoPlusUpsellButtonConfig(LUMO_UPSELL_PATHS.COMPOSER_IMAGE_SELECTOR);
     const dispatch = useLumoDispatch();
+    const [view, setView] = useState<'main' | 'connectors'>('main');
+    const showConnectors = isDesktopEnvironment();
+
+    useEffect(() => {
+        if (!isOpen) {
+            setView('main');
+        }
+    }, [isOpen]);
 
     const handleWebSearchToggleChange = useCallback(
         (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -112,51 +123,72 @@ export const ToolMenuDropdown = ({
             onClose={onClose}
             className="tool-menu-dropdown"
             width="200px"
+            autoClose={false}
         >
-            {visibleToolMenuItems.map((item, index) => (
-                <div
-                    key={index}
-                    className={clsx(
-                        item.isSignInRequired && 'tool-menu-item--sign-in-required',
-                        item.isDisabled &&
-                            !item.isSignInRequired &&
-                            'tool-menu-item--disabled pointer-events-none opacity-55'
+            {view === 'connectors' ? (
+                <ConnectorList onBack={() => setView('main')} />
+            ) : (
+                <>
+                    {visibleToolMenuItems.map((item, index) => (
+                        <div
+                            key={index}
+                            className={clsx(
+                                item.isSignInRequired && 'tool-menu-item--sign-in-required',
+                                item.isDisabled &&
+                                    !item.isSignInRequired &&
+                                    'tool-menu-item--disabled pointer-events-none opacity-55'
+                            )}
+                        >
+                            <MenuItem {...item} />
+                        </div>
+                    ))}
+
+                    {visibleToolMenuItems.length > 1 && (
+                        <hr className="my-1 w-custom mx-auto" style={{ '--w-custom': '90%' }} />
                     )}
-                >
-                    <MenuItem {...item} />
-                </div>
-            ))}
 
-            {visibleToolMenuItems.length > 1 && (
-                <hr className="my-1 w-custom mx-auto" style={{ '--w-custom': '90%' }} />
-            )}
+                    {showImageUpsellFooter && (
+                        <div className="tool-menu-upsell flex flex-column gap-3 p-3 border-top border-weak">
+                            <p className="m-0 text-sm color-norm">
+                                {c('collider_2025: Info')
+                                    .t`Upgrade for more image generations and access to advanced models.`}
+                            </p>
+                            <BasicUpgradeButton
+                                className="shrink-0"
+                                path={imageUpsellConfig?.path}
+                                onClick={imageUpsellOnClick}
+                            />
+                        </div>
+                    )}
 
-            {showImageUpsellFooter && (
-                <div className="tool-menu-upsell flex flex-column gap-3 p-3 border-top border-weak">
-                    <p className="m-0 text-sm color-norm">
-                        {c('collider_2025: Info').t`Upgrade for more image generations and access to advanced models.`}
-                    </p>
-                    <BasicUpgradeButton
-                        className="shrink-0"
-                        path={imageUpsellConfig?.path}
-                        onClick={imageUpsellOnClick}
-                    />
-                </div>
-            )}
-
-            {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
-            <div
-                className="flex flex-row flex-nowrap items-center justify-space-between px-4 py-2 w-full gap-4"
-                onClick={(e) => e.stopPropagation()}
-            >
-                <div className="flex items-center gap-3">
-                    <LumoIcon name="Globe" size={16} />
-                    <div className="flex flex-column">
-                        <span className="text-sm font-medium">{c('collider_2025: Action').t`Web search`}</span>
+                    {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
+                    <div
+                        className="flex flex-row flex-nowrap items-center justify-space-between px-4 py-2 w-full gap-4"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <div className="flex items-center gap-3">
+                            <LumoIcon name="Globe" size={16} />
+                            <div className="flex flex-column">
+                                <span className="text-sm font-medium">{c('collider_2025: Action').t`Web search`}</span>
+                            </div>
+                        </div>
+                        <Toggle checked={isWebSearchButtonToggled} onChange={handleWebSearchToggleChange} />
                     </div>
-                </div>
-                <Toggle checked={isWebSearchButtonToggled} onChange={handleWebSearchToggleChange} />
-            </div>
+
+                    {showConnectors && (
+                        <DropdownMenuButton className="justify-start" onClick={() => setView('connectors')}>
+                            <div className="flex items-center gap-3 w-full">
+                                <span className="shrink-0 flex">
+                                    <LumoIcon name="Blocks" size={16} />
+                                </span>
+                                <span className="text-sm font-medium flex-1 text-left">{c('collider_2025: Action')
+                                    .t`Connectors`}</span>
+                                <LumoIcon name="ChevronRight" size={16} />
+                            </div>
+                        </DropdownMenuButton>
+                    )}
+                </>
+            )}
         </MenuDropdown>
     );
 };
