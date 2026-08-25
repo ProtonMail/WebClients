@@ -70,7 +70,6 @@ describe('useLiveKitConnection', () => {
             () =>
                 useLiveKitConnection({
                     reportMeetError: vi.fn(),
-                    withMeetingLinkNameTag: (options?: unknown) => options,
                 }),
             { wrapper: createWrapper(store) }
         );
