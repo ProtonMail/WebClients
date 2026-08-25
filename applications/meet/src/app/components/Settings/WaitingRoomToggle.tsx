@@ -33,14 +33,14 @@ export const WaitingRoomToggle = () => {
 
     const getWaitingRoomDescription = () => {
         if (!isPaidUser) {
-            return c('Action').t`Upgrade your plan to use waiting room in your next meeting.`;
+            return c('Info').t`Available with a paid plan`;
         }
 
         if (waitingRoomSetting) {
-            return c('Action').t`Approve participants before they can join`;
+            return c('Info').t`Approve participants before they can join`;
         }
 
-        return c('Action').t`Participants join the call directly`;
+        return c('Info').t`Anyone with the link can join immediately`;
     };
 
     const getWaitingRoomToggleAriaLabel = () => {
@@ -53,7 +53,7 @@ export const WaitingRoomToggle = () => {
     return (
         <SettingToggle
             id="waiting-room"
-            label={c('Action').t`Waiting room`}
+            label={c('Action').t`Enable waiting room`}
             description={getWaitingRoomDescription()}
             onChange={handleWaitingRoomToggle}
             checked={waitingRoomSetting}
