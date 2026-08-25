@@ -187,10 +187,8 @@ const CTAContainer = ({ children }: { children: React.ReactNode }) => {
 export const MeetingName = ({ classNames }: MeetingNameProps) => {
     const isGuestAdmin = useMeetSelector(selectIsGuestAdmin);
     const isLocalParticipantAdminOrHost = useMeetSelector(selectIsLocalParticipantAdminOrHost);
-    const { isPaidUser } = useMeetSelector(selectSubscriptionStatus);
     const roomName = useMeetSelector(selectRoomName);
-    const forceShowDuration = !isPaidUser;
-    const showDuration = useMeetSelector(selectShowDuration) || forceShowDuration;
+    const showDuration = useMeetSelector(selectShowDuration);
 
     const Container = useMemo(
         () => (isLocalParticipantAdminOrHost || isGuestAdmin ? CTAContainer : React.Fragment),
