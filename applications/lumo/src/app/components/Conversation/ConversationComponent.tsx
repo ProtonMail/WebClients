@@ -6,16 +6,13 @@ import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { HtmlPreviewContext } from '../../contexts/HtmlPreviewContext';
 import { useConversationPanelState } from '../../hooks/useConversationPanelState';
-import { useLumoPlan } from '../../hooks/useLumoPlan';
 import { useRetryPanel } from '../../hooks/useRetryPanel';
 import { LumoLayoutWithDrawer } from '../../layouts/LumoLayout';
 import { useConversationActions } from '../../providers/ConversationActionsProvider';
 import { useWebSearch } from '../../providers/WebSearchProvider';
 import { useLumoSelector } from '../../redux/hooks';
-import { selectConversationErrors, selectTierErrors } from '../../redux/slices/meta/errors';
-import { shouldShowWeeklyLimitUpsell, useRemainingLimits } from '../../services/usageLimitsStore';
+import { selectConversationErrors } from '../../redux/slices/meta/errors';
 import { ComposerMode, type Conversation } from '../../types';
-import UpsellCard from '../../upsells/components/UpsellCard';
 import { ComposerComponent } from '../Composer/ComposerComponent';
 import { FilesManagementView } from '../Files';
 import { FilePreviewPanel } from '../Files/Common/FilePreviewPanel';
@@ -89,10 +86,6 @@ const ConversationComponent = ({
     const conversationErrors = useLumoSelector((state) =>
         conversationId ? selectConversationErrors(state, conversationId) : []
     );
-    const tierErrors = useLumoSelector(selectTierErrors);
-    const { hasLumoPlus } = useLumoPlan();
-    const remainingLimits = useRemainingLimits();
-    const showWeeklyLimitUpsell = shouldShowWeeklyLimitUpsell(remainingLimits, tierErrors.length > 0, hasLumoPlus);
 
     return (
         <HtmlPreviewContext.Provider value={{ onPreviewHtml: handleOpenHtmlPreview }}>
@@ -166,7 +159,6 @@ const ConversationComponent = ({
                                 className="lumo-chat-item flex flex-column no-print w-full md:w-2/3 mx-auto max-w-custom"
                                 style={{ '--max-w-custom': '51.25rem' } as React.CSSProperties}
                             >
-                                {showWeeklyLimitUpsell && <UpsellCard error={tierErrors[0]} />}
                                 <ImageLimitNotice exceedsLimit={imageLimitExceeded} />
                                 <ComposerComponent
                                     composerMode={ComposerMode.CONVERSATION}
