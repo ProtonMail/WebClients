@@ -3492,6 +3492,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nimen salausta ei pysty purkamaan"
+      ],
+      "Failed to fetch sharing information": [
+        "Jakotietojen nouto epäonnistui"
       ]
     },
     "error": {
@@ -5498,7 +5501,7 @@
         "Olet avaamassa uutta selaimen välilehteä sivustolle:"
       ],
       "You are about to open your default browser and visit:": [
-        "Olet avaamassa oletusselaintasi sivustolle:"
+        "Olet avaamassa oletusselaimeesi osoitetta:"
       ],
       "You are currently signed in as ${ username } for ${ organizationName }.": [
         "Olette tällä hetkellä kirjautuneena käyttäjänä ${ username } organisaatiossa ${ organizationName }."
@@ -5671,6 +5674,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Voit silti tarkastella omia tilitietojasi, mutta kaikki käyttäjätilit poistetaan organisaatiostasi."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Jos et voi käyttää tunnistautumissovellustasi, voit käyttää yhtä kuudestatoista varakoodistasi, jotka sait määrittäessäsi kaksivaiheisen tunnistautumisen. ${ learnMoreLink }"
       ]
     },
     "info": {
@@ -10744,6 +10750,54 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Kokeilujaksosi päättyy ${ textDate }. Sinua ei veloiteta, jos peruutat tilauksesi ennen ${ textDate }. ${ action }"
+      ]
+    },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "Hanki tarjous"
+      ],
+      "Special Offer": [
+        "Erikoistarjous"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "/month": [
+        "/kk"
+      ],
+      "2 individual accounts": [
+        "Kaksi erillistä tiliä"
+      ],
+      "2 TB of secure storage": [
+        "2 Tt suojattua tallennustilaa"
+      ],
+      "3 TB of secure storage": [
+        "3 Tt suojattua tallennustilaa"
+      ],
+      "500 GB of secure storage": [
+        "500 Gt suojattua tallennustilaa"
+      ],
+      "6 individual accounts": [
+        "Kuusi erillistä tiliä"
+      ],
+      "Advanced protection against cyber threats": [
+        "Edistynyt suoja kyberuhkia vastaan"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Alennukset perustuvat kuukausittaiseen vakiohinnoitteluun. Tilauksesi uusiutuu normaaliin vuosihintaan, kun laskutusjakso päättyy."
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "12 kuukaudeksi"
+      ],
+      "One plan, full power": [
+        "Yksi tilaus, täysi teho"
+      ],
+      "One plan, max savings": [
+        "Yksi tilaus, mehevämmät säästöt"
+      ],
+      "One plan, more power": [
+        "Yksi tilaus, enemmän tehoa"
       ]
     }
   }
