@@ -10,9 +10,18 @@ import { mockUseUser } from '@proton/testing/lib/mockUseUser';
 import { mockUseEncryptedSearchContext } from '../../helpers/test/mockUseEncryptedSearchContext';
 import { mailTestRender } from '../../helpers/test/render';
 import { useMailSelector } from '../../store/hooks';
-
 import MailboxListBanners from './MailboxListBanners';
 import { mockUseAutoDeleteBanner, mockUseShowUpsellBanner } from './MailboxListBanners.test.utils';
+
+jest.mock('../../hooks/useShowUpsellBanner', () => ({
+    __esModule: true,
+    default: jest.fn(),
+}));
+
+jest.mock('./banners/auto-delete/useAutodeleteBanner', () => ({
+    __esModule: true,
+    default: jest.fn(),
+}));
 
 const baseProps = {
     labelID: MAILBOX_LABEL_IDS.INBOX,

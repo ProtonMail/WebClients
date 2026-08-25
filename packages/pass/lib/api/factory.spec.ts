@@ -7,7 +7,13 @@ import { type ApiAuth, AuthMode, type Maybe } from '../../types';
 import { LockedSessionError, PassErrorCode } from './errors';
 import { createApi } from './factory';
 import * as refresh from './refresh';
+import type { RefreshSessionData } from './refresh';
 import { TEST_SERVER_TIME, mockAPIResponse } from './testing';
+
+jest.mock('./refresh', () => ({
+    ...jest.requireActual('./refresh'),
+    refreshHandlerFactory: jest.fn(),
+}));
 
 const { APP_VERSION_BAD } = API_CUSTOM_ERROR_CODES;
 
@@ -15,9 +21,8 @@ const asyncNextTick = () => new Promise(process.nextTick);
 
 describe('API factory', () => {
     const config = { APP_NAME: 'proton-pass', APP_VERSION: '0.0.1-test', API_URL: 'https://test.api' } as ProtonConfig;
-    const refreshMock = jest.fn(() => Promise.resolve({}));
-    jest.spyOn(refresh, 'refreshHandlerFactory');
-    const refreshHandleFactorySpy = refresh.refreshHandlerFactory as unknown as jest.SpyInstance;
+    const refreshMock = jest.fn<Promise<Partial<RefreshSessionData>>, []>(() => Promise.resolve({}));
+    const refreshHandleFactorySpy = jest.mocked(refresh.refreshHandlerFactory);
 
     const fetchMock = jest.fn<Promise<Response>, [url: string, options: any], any>(() =>
         Promise.resolve(mockAPIResponse())
@@ -26,7 +31,7 @@ describe('API factory', () => {
     refreshHandleFactorySpy.mockImplementation(
         ({ onRefresh }) =>
             async () =>
-                onRefresh(await refreshMock())
+                onRefresh((await refreshMock()) as RefreshSessionData)
     );
 
     let auth: Maybe<ApiAuth> = undefined;

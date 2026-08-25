@@ -23,7 +23,6 @@
         "test:watch": "jest --watch"
     },
     "dependencies": {
-        "@babel/plugin-transform-runtime": "^7.29.7",
         "@proton/account": "workspace:^",
         "@proton/activation": "workspace:^",
         "@proton/app-context": "workspace:^",
@@ -103,8 +102,6 @@
         "@types/lodash": "^4.17.25",
         "@types/turndown": "^5.0.6",
         "@webgpu/types": "^0.1.71",
-        "babel-jest": "^30.4.1",
-        "babel-plugin-transform-require-context": "^0.1.1",
         "eslint": "^10.8.1",
         "eslint-config-prettier": "^10.1.8",
         "fake-indexeddb": "^6.2.5",

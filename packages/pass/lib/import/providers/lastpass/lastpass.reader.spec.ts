@@ -7,6 +7,11 @@ import { deobfuscateItem } from '../../../items/item.obfuscation';
 import type { ImportPayload } from '../../types';
 import { readLastPassData } from './lastpass.reader';
 
+jest.mock('@proton/pass/utils/time/epoch', () => ({
+    ...jest.requireActual('@proton/pass/utils/time/epoch'),
+    getEpoch: jest.fn(),
+}));
+
 const sourceFiles = {
     'lastpass.csv': `${__dirname}/mocks/lastpass.csv`,
     'lastpass.crcrlf.terminated.csv': `${__dirname}/mocks/lastpass.crcrlf.terminated.csv`,
@@ -15,7 +20,7 @@ const sourceFiles = {
 };
 
 const data: Record<string, ImportPayload> = {};
-const dateMock = jest.spyOn(epochUtils, 'getEpoch').mockImplementation(() => 1682585156);
+const dateMock = jest.mocked(epochUtils.getEpoch).mockImplementation(() => 1682585156);
 
 const getLastPassData = (sourceKey: string) => data[sourceKey];
 const getLastPassItem = <T extends ItemType>(sourceKey: string, vaultIndex: number = 0, itemIndex: number = 0) =>

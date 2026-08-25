@@ -9,8 +9,17 @@ import type { RootSagaOptions } from '../../../types';
 import { sagaReturn, sagaSetup } from '../../testing';
 import { userEventsChannel } from './channel.user-events';
 
-const getUserEventsSince = jest.spyOn(requests, 'getUserEventsSince');
-const processUserEvents = jest.spyOn(processor, 'processUserEvents');
+jest.mock('@proton/pass/lib/sync/v2/user-events.requests', () => ({
+    ...jest.requireActual('@proton/pass/lib/sync/v2/user-events.requests'),
+    getUserEventsSince: jest.fn(),
+}));
+jest.mock('@proton/pass/lib/sync/v2/user-events.processor', () => ({
+    ...jest.requireActual('@proton/pass/lib/sync/v2/user-events.processor'),
+    processUserEvents: jest.fn(),
+}));
+
+const getUserEventsSince = jest.mocked(requests.getUserEventsSince);
+const processUserEvents = jest.mocked(processor.processUserEvents);
 
 const createEvents = (data: Partial<SyncEventListOutput> = {}) =>
     ({

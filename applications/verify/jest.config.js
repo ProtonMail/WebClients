@@ -7,7 +7,23 @@ module.exports = {
         'node_modules/(?!(@proton/shared|@proton/components|@protontech/telemetry|@protontech/mutex-browser|@protontech/crypto|@protontech/bip39|@preact/signals-core|@scure/base)/)',
     ],
     transform: {
-        '^.+\\.(js|tsx?)$': '<rootDir>/jest.transform.js',
+        '^.+\\.(ts|js|mjs)x?$': [
+            '@swc/jest',
+            {
+                jsc: {
+                    transform: {
+                        react: {
+                            runtime: 'automatic',
+                        },
+                    },
+                    parser: {
+                        jsx: true,
+                        syntax: 'typescript',
+                        tsx: true,
+                    },
+                },
+            },
+        ],
     },
     moduleNameMapper: {
         '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm)$': '@proton/components/__mocks__/fileMock.js',

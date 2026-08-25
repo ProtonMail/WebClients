@@ -53,6 +53,13 @@ jest.mock('@proton/components/hooks/useSendIcs', () => {
 });
 jest.mock('@proton/components/hooks/useGetVtimezonesMap');
 
+jest.mock('../../../../helpers/calendar/inviteApi', () => ({
+    ...jest.requireActual('../../../../helpers/calendar/inviteApi'),
+    createCalendarEventFromInvitation: jest.fn(
+        jest.requireActual('../../../../helpers/calendar/inviteApi').createCalendarEventFromInvitation
+    ),
+}));
+
 const nextYear = new Date().getFullYear() + 1;
 
 const dummyUserName = 'test';
@@ -335,7 +342,7 @@ describe('ICS widget', () => {
     });
 
     beforeEach(() => {
-        jest.spyOn(inviteApi, 'createCalendarEventFromInvitation');
+        jest.mocked(inviteApi.createCalendarEventFromInvitation);
     });
 
     afterEach(clearAll);
@@ -1034,9 +1041,9 @@ END:VCALENDAR`;
                 calendarID: dummyCalendarID,
             });
 
-            // @ts-ignore
-            inviteApi.createCalendarEventFromInvitation.mockReturnValueOnce(
-                Promise.resolve({ savedEvent, savedVevent, savedAttendee })
+            jest.mocked(inviteApi.createCalendarEventFromInvitation).mockReturnValueOnce(
+                // @ts-ignore test fixture uses a looser VcalVeventComponent shape than VcalPmVeventComponent
+                Promise.resolve({ savedEvent, savedVevent, savedVcalAttendee: savedAttendee })
             );
             // @ts-ignore
             useGetVtimezonesMap.mockReturnValueOnce(() =>
