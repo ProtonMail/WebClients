@@ -1,4 +1,4 @@
-import useNotifications from '@proton/components/hooks/useNotifications'
+import { useNotifications } from '@proton/app-context/useNotifications'
 import type { EditorRequiresClientMethods } from '@proton/docs-shared'
 import { isDevOrBlack } from '@proton/utils/env'
 import type { PropsWithChildren } from 'react'

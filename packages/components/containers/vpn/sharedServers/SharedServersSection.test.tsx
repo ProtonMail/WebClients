@@ -13,7 +13,9 @@ import SharedServersSection from './SharedServersSection';
 import { SharedServersBuilder } from './SharedServersSection.test.builder';
 import useSharedServersHook from './useSharedServers';
 
-jest.mock('../../../hooks/useNotifications', () => jest.fn().mockReturnValue({ createNotification: jest.fn() }));
+jest.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: jest.fn().mockReturnValue({ createNotification: jest.fn() }),
+}));
 
 jest.mock('./useSharedServers');
 

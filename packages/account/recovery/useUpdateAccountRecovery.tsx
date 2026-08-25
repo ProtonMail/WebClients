@@ -2,6 +2,7 @@ import { type ChangeEvent, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
 import AuthModal, { type AuthModalResult } from '@proton/components/containers/password/AuthModal';
@@ -10,7 +11,6 @@ import VerifyRecoveryEmailModal from '@proton/components/containers/recovery/ema
 import ConfirmRemovePhoneModal from '@proton/components/containers/recovery/phone/ConfirmRemovePhoneModal';
 import VerifyRecoveryPhoneModal from '@proton/components/containers/recovery/phone/VerifyRecoveryPhoneModal';
 import { useRecoverySettingsTelemetry } from '@proton/components/containers/recovery/recoverySettingsTelemetry';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch, useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { unlockPasswordChanges } from '@proton/shared/lib/api/user';

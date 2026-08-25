@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Avatar } from '@proton/atoms/Avatar/Avatar';
 import { Button } from '@proton/atoms/Button/Button';
 import type { ModalProps } from '@proton/components';
@@ -16,7 +17,6 @@ import {
     PasswordInputTwo,
     useFormErrors,
     useModalState,
-    useNotifications,
 } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';

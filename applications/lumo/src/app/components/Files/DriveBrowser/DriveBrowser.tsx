@@ -4,21 +4,21 @@ import React, { forwardRef, useCallback, useEffect, useImperativeHandle, useRef,
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { InputFieldTwo, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 import Loader from '@proton/components/components/loader/Loader';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { NodeType } from '@proton/drive';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
 import { MAX_ASSET_SIZE } from '../../../constants';
+import { useFileProcessing } from '../../../hooks';
 import { useDriveFolderIndexing } from '../../../hooks/useDriveFolderIndexing';
 import type { DriveNode } from '../../../hooks/useDriveSDK';
 import { useDriveSDK } from '../../../hooks/useDriveSDK';
-import { useFileProcessing } from '../../../hooks';
 import { useDriveIndexing } from '../../../providers/DriveIndexingProvider';
-import { SearchService } from '../../../services/search/searchService';
 import { isFolderIndexingCancelled } from '../../../services/driveFolderIndexingState';
+import { SearchService } from '../../../services/search/searchService';
 import type { DriveDocument } from '../../../types/documents';
 import { getAcceptAttributeString, getMimeTypeFromExtension } from '../../../util/filetypes';
 import type { BreadcrumbItem } from './DriveBreadcrumbs';
@@ -117,8 +117,7 @@ export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(
         // Whether the current folder is the real "My Files" root (not a scoped initialFolderId).
         // Shared-with-me items are only surfaced at this level, since they live outside the
         // user's own volume and have no meaningful parent-child relationship with My Files.
-        const isAtMyFilesRoot =
-            !initialFolderId && !!rootFolderId && currentFolder?.nodeUid === rootFolderId;
+        const isAtMyFilesRoot = !initialFolderId && !!rootFolderId && currentFolder?.nodeUid === rootFolderId;
 
         const handleRefresh = useCallback(async () => {
             if (!currentFolder) {

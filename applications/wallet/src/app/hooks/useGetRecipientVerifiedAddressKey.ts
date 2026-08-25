@@ -1,8 +1,9 @@
 import { useCallback } from 'react';
 
-import { getKTUserContext } from '@proton/account/kt/actions';
-import useApi from '@proton/components/hooks/useApi';
 import { CryptoProxy, type PublicKeyReference } from '@protontech/crypto';
+
+import { getKTUserContext } from '@proton/account/kt/actions';
+import { useApi } from '@proton/app-context/useApi';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { getAndVerifyApiKeys } from '@proton/shared/lib/api/helpers/getAndVerifyApiKeys';
 import type { ProcessedApiKey } from '@proton/shared/lib/interfaces';

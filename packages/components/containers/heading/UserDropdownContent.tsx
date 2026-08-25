@@ -3,6 +3,8 @@ import { useContext, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useConfig } from '@proton/app-context/useConfig';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
@@ -20,8 +22,6 @@ import { DropdownSizeUnit } from '../../components/dropdown/utils';
 import AppLink from '../../components/link/AppLink';
 import SettingsLink from '../../components/link/SettingsLink';
 import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
-import useConfig from '../../hooks/useConfig';
-import useNotifications from '../../hooks/useNotifications';
 import { useTheme } from '../themes/ThemeProvider';
 import AccountSessionsSwitcher from './AccountSessionsSwitcher';
 import { AppSwitcher } from './AppSwitcher';

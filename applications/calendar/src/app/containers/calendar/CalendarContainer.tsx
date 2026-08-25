@@ -4,13 +4,13 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { useCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import useObserveDrawerIframeAppLocation from '@proton/components/hooks/drawer/useObserveDrawerIframeAppLocation';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import useApi from '@proton/components/hooks/useApi';
 import useAppTitle from '@proton/components/hooks/useAppTitle';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import { getInvitation } from '@proton/shared/lib/api/calendars';
 import { getIsCalendarWritable } from '@proton/shared/lib/calendar/calendar';

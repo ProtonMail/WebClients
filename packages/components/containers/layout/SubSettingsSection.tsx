@@ -4,6 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { DashboardCard, DashboardCardContent } from '@proton/atoms/DashboardCard/DashboardCard';
 import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import useScrollIntoView from '@proton/hooks/useScrollIntoView';
@@ -12,7 +13,6 @@ import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 
 import ProtonBadge from '../../components/protonBadge/ProtonBadge';
-import useNotifications from '../../hooks/useNotifications';
 import SettingsSectionTitle from '../account/SettingsSectionTitle';
 import { SettingsLayoutVariant } from './interface';
 

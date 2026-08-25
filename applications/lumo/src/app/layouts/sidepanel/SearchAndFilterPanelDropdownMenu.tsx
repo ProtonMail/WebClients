@@ -3,7 +3,7 @@
 // import { c } from 'ttag';
 
 // import { useModalState } from '@proton/components/index';
-// import { useNotifications } from '@proton/components/index';
+// import { useNotifications } from '@proton/app-context/useNotifications';
 
 // import { useLumoNavigate } from '../../hooks/useLumoNavigate';
 // // import { Icon } from '@proton/components/components';
@@ -26,13 +26,13 @@
 //         setIsDropdownOpen((prev) => !prev);
 //     };
 
-    // const openConfirmationModal = (e?: React.MouseEvent) => {
-    //     e?.stopPropagation();
-    //     setOpen(true);
-    // };
-    // const onDeleteAllConvos = async (e?: React.MouseEvent) => {
-    //     e?.stopPropagation();
-    //     setIsDropdownOpen(false);
+// const openConfirmationModal = (e?: React.MouseEvent) => {
+//     e?.stopPropagation();
+//     setOpen(true);
+// };
+// const onDeleteAllConvos = async (e?: React.MouseEvent) => {
+//     e?.stopPropagation();
+//     setIsDropdownOpen(false);
 //     const openConfirmationModal = () => {
 //         setOpen(true);
 //     };

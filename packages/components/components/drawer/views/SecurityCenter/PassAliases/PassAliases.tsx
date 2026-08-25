@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { IcArrowWithinSquare } from '@proton/icons/icons/IcArrowWithinSquare';
@@ -16,7 +17,6 @@ import clsx from '@proton/utils/clsx';
 
 import ErrorBoundary from '../../../../../containers/app/ErrorBoundary';
 import { GenericErrorDisplay } from '../../../../../containers/error/GenericError';
-import useApi from '../../../../../hooks/useApi';
 import useAuthentication from '../../../../../hooks/useAuthentication';
 import Loader from '../../../../loader/Loader';
 import { useModalStateObject } from '../../../../modalTwo/useModalState';

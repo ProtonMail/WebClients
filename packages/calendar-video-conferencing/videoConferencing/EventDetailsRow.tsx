@@ -1,5 +1,5 @@
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
-import { useNotifications } from '@proton/components';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 
 export const EventDetailsRow = ({

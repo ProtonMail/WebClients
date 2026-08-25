@@ -1,1 +1,1 @@
-export { default } from '@proton/app-context/useConfig';
+export { useConfig } from '@proton/app-context/useConfig';

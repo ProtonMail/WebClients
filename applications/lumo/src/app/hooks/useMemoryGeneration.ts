@@ -1,6 +1,6 @@
 import { useCallback, useMemo, useRef, useState } from 'react';
 
-import useApi from '@proton/components/hooks/useApi';
+import { useApi } from '@proton/app-context/useApi';
 import { quickChat } from '@proton/lumo-api-client';
 
 import { useLumoPlan } from '../hooks/useLumoPlan';
@@ -30,9 +30,7 @@ export function useMemoryGeneration() {
     const conversations = useLumoSelector((state) => state.conversations);
     const spaces = useLumoSelector((state) => state.spaces);
     const memories = useLumoSelector((state) => state.lumoUserSettings.memories);
-    const lastProcessedMessageAt = useLumoSelector(
-        (state) => state.lumoUserSettings.memoryLastProcessedMessageAt
-    );
+    const lastProcessedMessageAt = useLumoSelector((state) => state.lumoUserSettings.memoryLastProcessedMessageAt);
     const [isBootstrapping, setIsBootstrapping] = useState(false);
     const [isOptimizing, setIsOptimizing] = useState(false);
     const abortRef = useRef<AbortController | null>(null);
@@ -58,9 +56,7 @@ export function useMemoryGeneration() {
     const canGenerateFromChats = canGenerateMemoriesFromChats(promptSamples.length);
 
     const generateFromChats = useCallback(
-        async (
-            existingMemories: Memory[] = []
-        ): Promise<{ generated: Memory[]; processedThrough: string }> => {
+        async (existingMemories: Memory[] = []): Promise<{ generated: Memory[]; processedThrough: string }> => {
             if (!canGenerateFromChats) {
                 throw new Error('Not enough chat history to generate memories');
             }

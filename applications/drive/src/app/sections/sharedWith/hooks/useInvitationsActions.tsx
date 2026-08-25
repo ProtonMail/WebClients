@@ -2,7 +2,7 @@ import { type ReactNode, useCallback } from 'react';
 
 import { c } from 'ttag';
 
-import { useNotifications } from '@proton/components';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import type { useConfirmActionModal } from '@proton/components';
 import { NodeType, getDrivePerNodeType } from '@proton/drive';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';

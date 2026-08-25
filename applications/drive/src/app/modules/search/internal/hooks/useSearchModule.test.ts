@@ -46,9 +46,12 @@ jest.mock('@proton/account/userKeys/hooks', () => ({
     useGetUserKeys: () => jest.fn().mockResolvedValue([]),
 }));
 
-jest.mock('@proton/components', () => ({
-    useApi: () => jest.fn(),
+jest.mock('@proton/app-context/useConfig', () => ({
     useConfig: () => ({ APP_VERSION: '1.0.0' }),
+}));
+
+jest.mock('@proton/app-context/useApi', () => ({
+    useApi: () => jest.fn(),
 }));
 
 jest.mock('@proton/drive', () => ({

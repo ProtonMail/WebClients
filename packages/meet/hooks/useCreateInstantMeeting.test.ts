@@ -4,7 +4,7 @@ import type { Mock } from 'vitest';
 
 import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
-import { useApi } from '@proton/components';
+import { useApi } from '@proton/app-context/useApi';
 import { ADDRESS_RECEIVE, ADDRESS_SEND, ADDRESS_STATUS } from '@proton/shared/lib/constants';
 import { CustomPasswordState, MeetingType } from '@proton/shared/lib/interfaces/Meet';
 
@@ -26,7 +26,7 @@ vi.mock('@proton/utils/getRandomString', () => ({
     default: vi.fn().mockReturnValue('mockpassword'),
 }));
 
-vi.mock('@proton/components', () => ({
+vi.mock('@proton/app-context/useApi', () => ({
     useApi: vi.fn(),
 }));
 

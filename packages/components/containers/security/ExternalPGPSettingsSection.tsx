@@ -1,5 +1,7 @@
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { useLoading } from '@proton/hooks';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
@@ -16,8 +18,6 @@ import useModalState from '../../components/modalTwo/useModalState';
 import type { PromptProps } from '../../components/prompt/Prompt';
 import Prompt from '../../components/prompt/Prompt';
 import Toggle from '../../components/toggle/Toggle';
-import useApi from '../../hooks/useApi';
-import useNotifications from '../../hooks/useNotifications';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';

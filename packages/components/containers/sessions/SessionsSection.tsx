@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { useLoading } from '@proton/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
@@ -18,9 +20,7 @@ import TableBody from '../../components/table/TableBody';
 import TableHeader from '../../components/table/TableHeader';
 import TableRow from '../../components/table/TableRow';
 import Time from '../../components/time/Time';
-import useApi from '../../hooks/useApi';
 import useAuthentication from '../../hooks/useAuthentication';
-import useNotifications from '../../hooks/useNotifications';
 import SettingsParagraph from '../account/SettingsParagraph';
 import SettingsSectionWide from '../account/SettingsSectionWide';
 import SessionAction from './SessionAction';

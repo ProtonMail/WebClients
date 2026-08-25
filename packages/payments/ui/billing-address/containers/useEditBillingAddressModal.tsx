@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoadingByKey } from '@proton/hooks/useLoading';
 

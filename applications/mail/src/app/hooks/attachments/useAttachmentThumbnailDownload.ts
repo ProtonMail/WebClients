@@ -1,5 +1,5 @@
+import { useApi } from '@proton/app-context/useApi';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
-import useApi from '@proton/components/hooks/useApi';
 import useGetVerificationPreferences from '@proton/components/hooks/useGetVerificationPreferences';
 import { getAttachment as getAttachmentRequest, getAttachmentsMetadata } from '@proton/shared/lib/api/attachments';
 import type { AttachmentFullMetadata, AttachmentsMetadata } from '@proton/shared/lib/interfaces/mail/Message';
@@ -10,12 +10,12 @@ import ConfirmDownloadAttachments from '../../components/message/extrasFooter/at
 import type { Download } from '../../helpers/attachment/attachmentDownloader';
 import { generateDownload } from '../../helpers/attachment/attachmentDownloader';
 import { decryptAndVerify, getVerificationStatusFromKeys } from '../../helpers/attachment/attachmentLoader';
-import { useGetAttachment } from './useAttachment';
-import { useContactsMap } from '../contact/useContacts';
-import { useGetMessageKeys } from '../message/useGetMessageKeys';
 import { updateAttachment } from '../../store/attachments/attachmentsActions';
 import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
 import { useMailDispatch } from '../../store/hooks';
+import { useContactsMap } from '../contact/useContacts';
+import { useGetMessageKeys } from '../message/useGetMessageKeys';
+import { useGetAttachment } from './useAttachment';
 
 /**
  * Get this value as an exact Number (max 53 bits)

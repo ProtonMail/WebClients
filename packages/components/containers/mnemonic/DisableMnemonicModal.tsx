@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { userThunk } from '@proton/account/user';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { CacheType } from '@proton/redux-utilities/interface';
@@ -9,7 +10,6 @@ import { disableMnemonicPhrase } from '@proton/shared/lib/api/settingsMnemonic';
 import type { ModalProps } from '../../components/modalTwo/Modal';
 import useModalState from '../../components/modalTwo/useModalState';
 import Prompt from '../../components/prompt/Prompt';
-import useNotifications from '../../hooks/useNotifications';
 import AuthModal from '../password/AuthModal';
 
 interface DisableMnemonicModalProps {

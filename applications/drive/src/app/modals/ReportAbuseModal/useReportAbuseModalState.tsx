@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { type ModalStateProps, useNotifications } from '@proton/components';
+import { useNotifications } from '@proton/app-context/useNotifications';
+import type { ModalStateProps } from '@proton/components';
 import {
     AbuseCategory,
     type NodeType,

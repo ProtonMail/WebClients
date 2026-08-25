@@ -16,6 +16,7 @@ import {
 } from 'chart.js';
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import {
     ApiProvider,
     AuthenticationProvider,
@@ -26,7 +27,6 @@ import {
     StandardErrorPage,
     StandardLoadErrorPage,
     StandardPrivateApp,
-    useNotifications,
 } from '@proton/components';
 import useEffectOnce from '@proton/hooks/useEffectOnce';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';

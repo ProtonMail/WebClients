@@ -1,12 +1,12 @@
-import * as useApiModule from '@proton/components/hooks/useApi';
+import * as useApiModule from '@proton/app-context/useApi';
 
-jest.mock('@proton/components/hooks/useApi', () => ({
+jest.mock('@proton/app-context/useApi', () => ({
     __esModule: true,
-    ...jest.requireActual('@proton/components/hooks/useApi'),
+    ...jest.requireActual('@proton/app-context/useApi'),
 }));
 
-export const mockUseApi = (value?: ReturnType<typeof useApiModule.default>) => {
-    const mockedUseApi = jest.spyOn(useApiModule, 'default');
+export const mockUseApi = (value?: ReturnType<typeof useApiModule.useApi>) => {
+    const mockedUseApi = jest.spyOn(useApiModule, 'useApi');
 
     mockedUseApi.mockReturnValue(value ?? jest.fn());
 

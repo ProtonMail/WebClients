@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useConfig } from '@proton/app-context/useConfig';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import type { PlanIDs } from '@proton/payments/core/interface';
@@ -16,7 +17,6 @@ import clsx from '@proton/utils/clsx';
 
 import ModalContent from '../../../../components/modalTwo/ModalContent';
 import { ModalHeaderCloseButton } from '../../../../components/modalTwo/ModalHeader';
-import useConfig from '../../../../hooks/useConfig';
 
 interface Props {
     onClose?: () => void;

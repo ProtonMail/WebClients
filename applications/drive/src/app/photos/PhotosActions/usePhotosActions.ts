@@ -2,7 +2,8 @@ import { useCallback, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { useConfirmActionModal, useModalStateObject, useNotifications } from '@proton/components';
+import { useNotifications } from '@proton/app-context/useNotifications';
+import { useConfirmActionModal, useModalStateObject } from '@proton/components';
 import { ServerError, getDriveForPhotos } from '@proton/drive';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';

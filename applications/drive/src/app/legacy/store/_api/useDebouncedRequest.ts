@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 
-import { useApi } from '@proton/components';
+import { useApi } from '@proton/app-context/useApi';
 
 import { useDebouncedFunction } from '../_utils';
 

@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { useConfig } from '@proton/app-context/useConfig';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { useTrialInfo } from '@proton/payments/ui/hooks/useTrialInfo';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -17,7 +18,6 @@ import { useHasInboxDesktopInAppPayments } from '../../containers/desktop/useHas
 import { useRedirectToAccountApp } from '../../containers/desktop/useRedirectToAccountApp';
 import { SUBSCRIPTION_STEPS } from '../../containers/payments/subscription/constants';
 import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
-import useConfig from '../../hooks/useConfig';
 import PromotionButton from '../button/PromotionButton/PromotionButton';
 import useSettingsLink from '../link/useSettingsLink';
 import useUpsellConfig from '../upsell/config/useUpsellConfig';

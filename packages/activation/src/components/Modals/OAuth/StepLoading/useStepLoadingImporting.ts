@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
-import { useApi, useErrorHandler, useEventManager } from '@proton/components';
+import { useErrorHandler, useEventManager } from '@proton/components';
 
 import useAvailableAddresses from '../../../../hooks/useAvailableAddresses';
 import { ImportProvider } from '../../../../interface';

@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { usePlans } from '@proton/account/plans/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useConfig } from '@proton/app-context/useConfig';
 import useLoading from '@proton/hooks/useLoading';
 import { CYCLE, DEFAULT_CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { FreeSubscription } from '@proton/payments/core/interface';
@@ -44,7 +45,6 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import Loader from '../../../../components/loader/Loader';
-import useConfig from '../../../../hooks/useConfig';
 import useLoad from '../../../../hooks/useLoad';
 import { usePreferredPlansMap } from '../../../../hooks/usePreferredPlansMap';
 import { useAutomaticCurrency } from '../../../../payments/client-extensions/index';

@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-import { useNotifications } from '@proton/components';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import {
     isIgnoredError,
     isIgnoredErrorForReporting,

@@ -4,7 +4,8 @@ import { useEffect, useState } from 'react';
 import { decryptData, encryptData, importKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import { utf8StringToUint8Array } from '@protontech/crypto/utils';
 
-import useConfig from '../../hooks/useConfig';
+import { useConfig } from '@proton/app-context/useConfig';
+
 import CompatibilityCheckView from './CompatibilityCheckView';
 import { type CompatibilityItem, getCompatibilityList } from './compatibilityCheckHelper';
 

@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import { createInvite, editInvite } from '@proton/account/members/actions';
 import { getInitialStorage, getStorageRange, getTotalStorage } from '@proton/account/organization/storage';
 import { useSubscription } from '@proton/account/subscription/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { useLoading } from '@proton/hooks';
 import {
@@ -30,7 +31,6 @@ import type { ModalStateProps } from '../../components/modalTwo/useModalState';
 import Toggle from '../../components/toggle/Toggle';
 import InputFieldTwo from '../../components/v2/field/InputField';
 import useFormErrors from '../../components/v2/useFormErrors';
-import useNotifications from '../../hooks/useNotifications';
 import AssistantUpdateSubscriptionButton from '../payments/subscription/assistant/AssistantUpdateSubscriptionButton';
 import LumoUpdateSubscriptionButton from '../payments/subscription/lumo/LumoUpdateSubscriptionButton';
 import MemberStorageSelector from './MemberStorageSelector';

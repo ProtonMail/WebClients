@@ -4,7 +4,7 @@ import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import useNotifications from '@proton/components/hooks/useNotifications';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { AgentPickerModal } from '../../features/agents/AgentPickerModal';

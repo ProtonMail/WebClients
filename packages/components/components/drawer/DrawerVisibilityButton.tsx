@@ -2,6 +2,7 @@ import type { MutableRefObject } from 'react';
 
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { IcChevronsLeft } from '@proton/icons/icons/IcChevronsLeft';
@@ -11,7 +12,6 @@ import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import useDrawer from '../../hooks/drawer/useDrawer';
-import useApi from '../../hooks/useApi';
 
 import './DrawerVisibilityButton.scss';
 

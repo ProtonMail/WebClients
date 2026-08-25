@@ -739,7 +739,6 @@ export { default as useShortDomainAddress } from './hooks/mail/useShortDomainAdd
 export { default as useActiveBreakpoint } from './hooks/useActiveBreakpoint';
 export type { Breakpoints } from './hooks/useActiveBreakpoint';
 export { default as useAddressFlags } from './hooks/useAddressFlags';
-export { default as useApi } from './hooks/useApi';
 export { default as useApiResult } from './hooks/useApiResult';
 export { default as useApiWithoutResult } from './hooks/useApiWithoutResult';
 export { default as useAppTitle } from './hooks/useAppTitle';
@@ -748,7 +747,6 @@ export { default as useAutocompleteAriaProps } from './hooks/useAutocompleteAria
 export { default as useBeforeUnload } from './hooks/useBeforeUnload';
 export { default as useCalendarShareInvitationActions } from './hooks/useCalendarShareInvitationActions';
 export { default as useCalendarShareInvitations } from './hooks/useCalendarShareInvitations';
-export { default as useConfig } from './hooks/useConfig';
 export { default as useDragMove } from './hooks/useDragMove';
 export { default as useDragOver } from './hooks/useDragOver';
 export { default as useDropdownArrowNavigation } from './hooks/useDropdownArrowNavigation';
@@ -776,7 +774,6 @@ export { useDeclarativeLocalState } from './hooks/useDeclarativeLocalState';
 export { default as useModals } from './hooks/useModals';
 export { default as useMyCountry } from './hooks/useMyCountry';
 export { default as useNewFeatureOnboarding } from './hooks/useNewFeatureOnboarding';
-export { default as useNotifications } from './hooks/useNotifications';
 export { getOnlineStatus, default as useOnline } from './hooks/useOnline';
 export { default as usePreventCloseTab } from './hooks/usePreventCloseTab';
 export { PreventLeaveProvider, default as usePreventLeave } from './hooks/usePreventLeave';

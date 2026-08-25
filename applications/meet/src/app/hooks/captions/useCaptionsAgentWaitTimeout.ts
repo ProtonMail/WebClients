@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import useNotifications from '@proton/components/hooks/useNotifications';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectCaptionsAgentPresent } from '@proton/meet/store/slices/participants/agentParticipantsSlice';
 

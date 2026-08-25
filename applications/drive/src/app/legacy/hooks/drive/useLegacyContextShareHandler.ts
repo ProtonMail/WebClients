@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 
-import { useApi } from '@proton/components';
+import { useApi } from '@proton/app-context/useApi';
 import { NodeType, generateInvitationUid, generateNodeUid } from '@proton/drive';
 import { queryUserLinkAccess } from '@proton/shared/lib/api/drive/link';
 

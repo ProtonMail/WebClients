@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import useNotifications from '@proton/components/hooks/useNotifications';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { hasInboxDesktopFeature, invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import { generateProtonWebUID } from '@proton/shared/lib/helpers/uid';
 

@@ -5,6 +5,7 @@ import { Link, useHistory } from 'react-router-dom';
 import isDeepEqual from 'lodash/isEqual';
 import { c } from 'ttag';
 
+import { useConfig } from '@proton/app-context/useConfig';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
@@ -14,7 +15,6 @@ import {
     CycleSelector,
     SkeletonLoader,
     useActiveBreakpoint,
-    useConfig,
     useErrorHandler,
     useHandler,
     useModalState,

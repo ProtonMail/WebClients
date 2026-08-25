@@ -2,11 +2,11 @@ import type { KeyboardEvent } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Input } from '@proton/atoms/Input/Input';
 import clsx from '@proton/utils/clsx';
 
 import Field from '../../../components/container/Field';
-import useNotifications from '../../../hooks/useNotifications';
 import type { AdvancedSimpleFilterModalModel, SimpleFilterModalModel } from '../interfaces';
 import { Step } from '../interfaces';
 

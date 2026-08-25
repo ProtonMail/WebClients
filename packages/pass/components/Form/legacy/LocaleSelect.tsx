@@ -2,9 +2,9 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
+import { useConfig } from '@proton/app-context/useConfig';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
-import useConfig from '@proton/components/hooks/useConfig';
 
 type Props = {
     value?: string;

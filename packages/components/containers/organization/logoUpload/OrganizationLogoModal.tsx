@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { organizationThunk } from '@proton/account/organization';
+import { useApi } from '@proton/app-context/useApi';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { useLoading } from '@proton/hooks';
@@ -33,8 +35,6 @@ import ModalContent from '../../../components/modalTwo/ModalContent';
 import ModalFooter from '../../../components/modalTwo/ModalFooter';
 import ModalHeader from '../../../components/modalTwo/ModalHeader';
 import useFormErrors from '../../../components/v2/useFormErrors';
-import useApi from '../../../hooks/useApi';
-import useNotifications from '../../../hooks/useNotifications';
 import SidebarPreview from './SidebarPreview';
 import useOrgLogoUploadTelemetry from './useOrgLogoUploadTelemetry';
 

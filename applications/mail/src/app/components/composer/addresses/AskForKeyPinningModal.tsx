@@ -1,8 +1,11 @@
 import type { FormEvent } from 'react';
 
+import type { PrivateKeyReference, PublicKeyReference } from '@protontech/crypto';
 import { c, msgid } from 'ttag';
 
 import { useUserKeys } from '@proton/account/userKeys/hooks';
+import { useApi } from '@proton/app-context/useApi';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
@@ -10,9 +13,6 @@ import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import useApi from '@proton/components/hooks/useApi';
-import useNotifications from '@proton/components/hooks/useNotifications';
-import type { PrivateKeyReference, PublicKeyReference } from '@protontech/crypto';
 import { useLoading } from '@proton/hooks';
 import { getContact, updateContact } from '@proton/shared/lib/api/contacts';
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';

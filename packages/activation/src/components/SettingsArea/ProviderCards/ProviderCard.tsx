@@ -4,12 +4,12 @@ import { useLocation } from 'react-router-dom';
 import type { Location } from 'history';
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
 import useSettingsLink from '@proton/components/components/link/useSettingsLink';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import B2BOnboardingFeatureItem from '@proton/components/components/onboarding/b2b/B2BOnboardingFeatureItem';
-import { useNotifications } from '@proton/components/index';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 

@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
+import { useConfig } from '@proton/app-context/useConfig';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 
-import useConfig from '../../../../hooks/useConfig';
 import SettingsLink from '../../../link/SettingsLink';
 
 const DrawerAllSettingsView = () => {

@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import useApi from '@proton/app-context/useApi';
-import useNotifications from '@proton/app-context/useNotifications';
+import { useApi } from '@proton/app-context/useApi';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import useToggle from '@proton/hooks/useToggle';
 import { baseUseDispatch } from '@proton/react-redux-store';

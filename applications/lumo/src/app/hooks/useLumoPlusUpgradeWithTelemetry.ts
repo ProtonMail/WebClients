@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 
+import { useConfig } from '@proton/app-context/useConfig';
 import { useModalStateObject } from '@proton/components';
-import useConfig from '@proton/components/hooks/useConfig';
 import type { UPSELL_FEATURE } from '@proton/shared/lib/constants';
 import { UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';

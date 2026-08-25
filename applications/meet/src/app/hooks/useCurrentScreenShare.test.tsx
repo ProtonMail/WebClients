@@ -7,7 +7,7 @@ import { renderHook } from '@testing-library/react';
 import { Track } from 'livekit-client';
 import type { Mock } from 'vitest';
 
-import useNotifications from '@proton/components/hooks/useNotifications';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { deviceManagementReducer } from '@proton/meet/store/slices/deviceManagementSlice';
 import { ProtonStoreContext } from '@proton/react-redux-store';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
@@ -51,8 +51,8 @@ vi.mock('@proton/shared/lib/helpers/browser', () => {
     };
 });
 
-vi.mock('@proton/components/hooks/useNotifications', () => ({
-    default: vi.fn().mockReturnValue({
+vi.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: vi.fn().mockReturnValue({
         createNotification: vi.fn(),
     }),
 }));

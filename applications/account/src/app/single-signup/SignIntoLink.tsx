@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import useConfig from '@proton/components/hooks/useConfig';
+import { useConfig } from '@proton/app-context/useConfig';
 import type { Plan } from '@proton/payments/core/plan/interface';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { APPS } from '@proton/shared/lib/constants';

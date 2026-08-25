@@ -1,6 +1,8 @@
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import { useApi } from '@proton/app-context/useApi';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import {
     AlmostAllMailToggle,
     AutoDeleteSpamAndTrashDaysToggle,
@@ -8,8 +10,6 @@ import {
     NextMessageOnMoveToggle,
     ShowMovedToggle,
     SwipeActionSelect,
-    useApi,
-    useNotifications,
 } from '@proton/components';
 import ViewModeToggle from '@proton/components/containers/layouts/ViewModeToggle';
 import useLoading from '@proton/hooks/useLoading';

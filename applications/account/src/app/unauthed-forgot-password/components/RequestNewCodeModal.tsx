@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import Prompt from '@proton/components/components/prompt/Prompt';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import noop from '@proton/utils/noop';
 

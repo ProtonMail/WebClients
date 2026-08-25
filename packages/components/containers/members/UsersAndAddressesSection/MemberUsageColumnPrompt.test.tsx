@@ -8,9 +8,9 @@ jest.mock('../../payments/subscription/SubscriptionModalProvider', () => ({
 }));
 
 const apiMock = jest.fn().mockResolvedValue({});
-jest.mock('../../../hooks/useApi', () => ({
+jest.mock('@proton/app-context/useApi', () => ({
     __esModule: true,
-    default: () => apiMock,
+    useApi: () => apiMock,
 }));
 
 jest.mock('../../b2bDashboard/VPN/api', () => ({

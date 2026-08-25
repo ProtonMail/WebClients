@@ -3,6 +3,8 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import { useApi } from '@proton/app-context/useApi';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import useDebounceInput from '@proton/components/components/input/useDebounceInput';
@@ -10,9 +12,7 @@ import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import FolderIcon from '@proton/components/containers/labels/FolderIcon';
-import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
@@ -31,7 +31,6 @@ import { useMailDispatch, useMailSelector } from '../../../../../store/hooks';
 import { MAX_FOLDER_NAME_LENGTH } from '../../../../../store/newsletterSubscriptions/constants';
 import { filterSubscriptionList } from '../../../../../store/newsletterSubscriptions/newsletterSubscriptionsActions';
 import { getFilteredSubscriptionIndex } from '../../../../../store/newsletterSubscriptions/newsletterSubscriptionsSelector';
-
 import { NewsletterSubscriptionAction } from '../../interface';
 import { useNewsletterSubscriptionTelemetry } from '../../useNewsletterSubscriptionTelemetry';
 

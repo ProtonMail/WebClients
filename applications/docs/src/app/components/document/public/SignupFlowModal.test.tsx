@@ -3,7 +3,7 @@ import React, { act } from 'react'
 import { fireEvent, render, screen, waitFor } from '@testing-library/react'
 import { verifyAllWhenMocksCalled, when } from 'jest-when'
 
-import useApi from '@proton/components/hooks/useApi'
+import { useApi } from '@proton/app-context/useApi'
 import { DRIVE_SIGNIN, DRIVE_SIGNUP } from '@proton/shared/lib/drive/urls'
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors'
 import { replaceUrl } from '@proton/shared/lib/helpers/browser'
@@ -12,7 +12,7 @@ import { useDocsUrlPublicToken } from '@proton/drive-store'
 import { SignupFlowModal } from './SignupFlowModal'
 import { RedirectAction } from '@proton/drive-store/store/_documents'
 
-jest.mock('@proton/components/hooks/useApi')
+jest.mock('@proton/app-context/useApi')
 const mockedUseApi = jest.mocked(useApi)
 
 jest.mock('@proton/shared/lib/helpers/browser')

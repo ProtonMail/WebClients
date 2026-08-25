@@ -1,6 +1,7 @@
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import {
     TelemetryAccountCancellationFlowFeedbackEvents,
@@ -10,7 +11,6 @@ import {
 } from '@proton/shared/lib/api/telemetry';
 import { getBaseTelemetryDimensions } from '@proton/shared/lib/helpers/metrics';
 
-import useApi from '../../../../../hooks/useApi';
 import { SUBSCRIPTION_CANCELLATION_REASONS } from '../../content/FeedbackDowngradeContent';
 import type { FeedbackDowngradeFormData } from '../../content/interface';
 

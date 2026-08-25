@@ -6,6 +6,8 @@ import { addressKeysThunk } from '@proton/account/addressKeys';
 import { addressesThunk } from '@proton/account/addresses';
 import { getKTUserContext } from '@proton/account/kt/actions';
 import { userKeysThunk } from '@proton/account/userKeys';
+import { useApi } from '@proton/app-context/useApi';
+import { useConfig } from '@proton/app-context/useConfig';
 import {
     KT_ERROR_TYPE,
     StaleEpochError,
@@ -23,9 +25,6 @@ import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { MINUTE } from '@proton/shared/lib/constants';
 import { KEY_TRANSPARENCY_REMINDER_UPDATE } from '@proton/shared/lib/drawer/interfaces';
 import type { DecryptedAddressKey, KeyPair, SelfAuditState } from '@proton/shared/lib/interfaces';
-
-import useApi from '../../hooks/useApi';
-import useConfig from '../../hooks/useConfig';
 
 const SELF_AUDIT_MAX_TRIALS = 6;
 

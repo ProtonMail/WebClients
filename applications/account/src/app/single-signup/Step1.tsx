@@ -4,6 +4,7 @@ import { Fragment, useEffect, useRef, useState } from 'react';
 import isDeepEqual from 'lodash/isEqual';
 import { c } from 'ttag';
 
+import { useConfig } from '@proton/app-context/useConfig';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
@@ -15,7 +16,6 @@ import {
     Price,
     SkeletonLoader,
     Toggle,
-    useConfig,
     useHandler,
     useModalState,
 } from '@proton/components';

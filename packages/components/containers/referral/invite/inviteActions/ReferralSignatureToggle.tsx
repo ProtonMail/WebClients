@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { useLoading } from '@proton/hooks';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
@@ -19,7 +20,6 @@ import { useFlag } from '@proton/unleash/useFlag';
 import Info from '../../../../components/link/Info';
 import SkeletonLoader from '../../../../components/skeletonLoader/SkeletonLoader';
 import Toggle from '../../../../components/toggle/Toggle';
-import useApi from '../../../../hooks/useApi';
 
 const useAvailableApps = () => {
     const [user] = useUser();

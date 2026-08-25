@@ -2,14 +2,14 @@ import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { FeatureCode, useFeature } from '@proton/features';
 import { useLoading } from '@proton/hooks';
 import { TelemetryMeasurementGroups, TelemetryProtonTipsEvents } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 
 import Toggle from '../../components/toggle/Toggle';
-import useApi from '../../hooks/useApi';
-import useNotifications from '../../hooks/useNotifications';
 import useToggle from '../../hooks/useToggle';
 
 const TIP_HIDDEN = -1 as const;

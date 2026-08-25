@@ -4,9 +4,9 @@ import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import useAppLink from '@proton/components/components/link/useAppLink';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { getMeetingLink } from '@proton/meet';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import {

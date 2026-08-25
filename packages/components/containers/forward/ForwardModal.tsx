@@ -3,6 +3,7 @@ import { type ReactNode, useMemo, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import useLoading from '@proton/hooks/useLoading';
@@ -36,7 +37,6 @@ import SelectTwo from '../../components/selectTwo/SelectTwo';
 import InputFieldTwo from '../../components/v2/field/InputField';
 import useFormErrors from '../../components/v2/useFormErrors';
 import useErrorHandler from '../../hooks/useErrorHandler';
-import useNotifications from '../../hooks/useNotifications';
 import { FilterStatement } from '../filters/interfaces';
 import ForwardConditions from './ForwardConditions';
 import { fixupPrimaryKeyV6, fixupUnsupportedPrimaryKeyV4, initForwardingSetup } from './ForwardModalActions';

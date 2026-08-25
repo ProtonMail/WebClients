@@ -7,7 +7,7 @@ import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { WINDOWS_DOWNLOAD_PAGE } from '../../../../hooks/useWindowsDownloadLinks';
 import { MinimumClientVersion } from './MinimumClientVersion';
 
-vi.mock('@proton/components/hooks/useApi', () => ({ default: vi.fn() }));
+vi.mock('@proton/app-context/useApi', () => ({ useApi: vi.fn() }));
 vi.mock('@proton/shared/lib/helpers/metrics', () => ({ sendTelemetryReport: vi.fn() }));
 
 const links = [

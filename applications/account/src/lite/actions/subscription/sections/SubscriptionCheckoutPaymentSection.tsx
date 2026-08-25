@@ -4,11 +4,11 @@ import { c } from 'ttag';
 
 import { useAppName } from '@proton/account/appName';
 import { useUser } from '@proton/account/user/hooks';
+import { useConfig } from '@proton/app-context/useConfig';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { SubscriptionConfirmButton } from '@proton/components/containers/payments/subscription/confirm-button/SubscriptionConfirmButton';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import { getPaymentMethodRequired } from '@proton/components/containers/payments/subscription/helpers/getPaymentMethodRequired';
-import useConfig from '@proton/components/hooks/useConfig';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import type { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import useLoading from '@proton/hooks/useLoading';
 import { IcLock } from '@proton/icons/icons/IcLock';

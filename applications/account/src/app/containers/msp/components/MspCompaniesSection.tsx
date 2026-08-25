@@ -10,6 +10,7 @@ import { isOwnerRole } from '@proton/account/organizationRoles/helpers';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserOrganizations } from '@proton/account/userOrganizations/hooks';
 import { useUserPermissions } from '@proton/account/userPermissions/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import type { ButtonProps } from '@proton/atoms/Button/Button';
 import { Button } from '@proton/atoms/Button/Button';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
@@ -28,7 +29,6 @@ import {
     TableRow,
     useActiveBreakpoint,
     useErrorHandler,
-    useNotifications,
     usePagination,
 } from '@proton/components';
 import SettingsPageTitle from '@proton/components/containers/account/SettingsPageTitle';

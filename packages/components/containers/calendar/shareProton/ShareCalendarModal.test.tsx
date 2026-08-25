@@ -4,6 +4,8 @@ import userEvent from '@testing-library/user-event';
 import { mocked } from 'jest-mock';
 import { setupServer } from 'msw/node';
 
+import { useApi } from '@proton/app-context/useApi';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { MIME_TYPES, PGP_SCHEMES } from '@proton/shared/lib/constants';
 import createCache from '@proton/shared/lib/helpers/cache';
 import type { EncryptionPreferences } from '@proton/shared/lib/mail/encryptionPreferences';
@@ -12,17 +14,15 @@ import { getHandlers } from '@proton/testing/lib/handlers';
 import { mockApiWithServer } from '@proton/testing/lib/mockApiWithServer';
 import { mockNotifications } from '@proton/testing/lib/mockNotifications';
 
-import useApi from '../../../hooks/useApi';
 import useGetEncryptionPreferences from '../../../hooks/useGetEncryptionPreferences';
-import useNotifications from '../../../hooks/useNotifications';
 import { CacheProvider } from '../../cache/Provider';
 import ShareCalendarModal from './ShareCalendarModal';
 
 const server = setupServer(...getHandlers());
 
 jest.mock('../../../hooks/useGetEncryptionPreferences');
-jest.mock('../../../hooks/useNotifications');
-jest.mock('../../../hooks/useApi');
+jest.mock('@proton/app-context/useNotifications');
+jest.mock('@proton/app-context/useApi');
 jest.mock('@proton/account/addresses/hooks');
 jest.mock('../../contacts/ContactEmailsProvider', () => ({
     useContactEmailsCache: () => ({

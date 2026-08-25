@@ -3,6 +3,7 @@ import { Fragment, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
@@ -14,7 +15,6 @@ import Input from '../../../components/input/Input';
 import Radio from '../../../components/input/Radio';
 import Option from '../../../components/option/Option';
 import SelectTwo from '../../../components/selectTwo/SelectTwo';
-import useNotifications from '../../../hooks/useNotifications';
 import { COMPARATORS, TYPES, getComparatorLabels, getConditionTypeLabels } from '../constants';
 import type { Condition } from '../interfaces';
 import { ConditionComparator, ConditionType, FilterStatement } from '../interfaces';

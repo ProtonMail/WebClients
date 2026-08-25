@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useConfig } from '@proton/app-context/useConfig';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
@@ -16,7 +17,6 @@ import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import SimpleDropdown from '../../components/dropdown/SimpleDropdown';
-import useConfig from '../../hooks/useConfig';
 import ProductIcon from '../app/ProductIcon';
 
 const showShortcutTooltips = hasInboxDesktopFeature('SwitchViewShortcuts');

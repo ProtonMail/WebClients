@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
 import { Button } from '@proton/atoms/Button/Button';
 import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
@@ -17,7 +18,6 @@ import isTruthy from '@proton/utils/isTruthy';
 import { getSimplePriceString } from '../../../../../components/price/helper';
 import getBoldFormattedText from '../../../../../helpers/getBoldFormattedText';
 import { getTelemetryUserTier } from '../../../../../helpers/getTelemetryUserTier';
-import useApi from '../../../../../hooks/useApi';
 import useDashboardPaymentFlow from '../../../../../hooks/useDashboardPaymentFlow';
 import { useSubscriptionModalRaw } from '../../SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '../../constants';

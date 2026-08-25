@@ -2,9 +2,10 @@ import { useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
-import { Alert3ds, useApi } from '@proton/components';
+import { Alert3ds } from '@proton/components';
 import Price from '@proton/components/components/price/Price';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
@@ -37,8 +38,6 @@ import BornPrivateFormContainer from '../../components/form/BornPrivateFormConta
 import BornPrivateFormFooter from '../../components/form/BornPrivateFormFooter';
 import BornPrivateFormHeading from '../../components/form/BornPrivateFormHeading';
 import BornPrivateFormParagraph from '../../components/form/BornPrivateFormParagraph';
-import type { FormData, ReservedAccount } from '../interface';
-import { Steps, TOTAL_STEPS } from '../interface';
 import DonationAmountSelect from '../components/DonationAmountSelect';
 import ReservationErrorModal from '../components/ReservationErrorModal';
 import { ErrorTypes, generateReadableActivationCode, getDonationCurrency } from '../helpers/emailReservationHelpers';
@@ -49,6 +48,8 @@ import {
     createDonationUser,
     setBornPrivateDetails,
 } from '../helpers/emailReservationRequests';
+import type { FormData, ReservedAccount } from '../interface';
+import { Steps, TOTAL_STEPS } from '../interface';
 
 const DEFAULT_DONATION_AMOUNT = 500;
 

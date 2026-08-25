@@ -2,13 +2,13 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import {
     BorderedContainer,
     BorderedContainerItem,
 } from '@proton/components/components/BorderedStackedGroup/BorderedContainer';
 import Copy from '@proton/components/components/button/Copy';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { IcCheckmarkCircle } from '@proton/icons/icons/IcCheckmarkCircle';
 import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';

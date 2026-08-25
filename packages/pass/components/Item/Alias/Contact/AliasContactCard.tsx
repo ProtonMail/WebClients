@@ -2,8 +2,8 @@ import type { FC } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcPaperPlane } from '@proton/icons/icons/IcPaperPlane';
 import clsx from '@proton/utils/clsx';
 

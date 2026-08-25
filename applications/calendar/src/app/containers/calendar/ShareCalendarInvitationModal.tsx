@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import useSettingsLink from '@proton/components/components/link/useSettingsLink';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
@@ -11,7 +12,6 @@ import CalendarLimitReachedModal from '@proton/components/containers/calendar/Ca
 import ShareCalendarWithSignatureVerificationErrorModal from '@proton/components/containers/calendar/shareProton/ShareCalendarWithSignatureVerificationErrorModal';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import useCalendarShareInvitationActions from '@proton/components/hooks/useCalendarShareInvitationActions';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';

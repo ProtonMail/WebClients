@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import QRCode from '@proton/components/components/image/QRCode';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 
 import protonQRLogo from './proton-qr-logo.svg';

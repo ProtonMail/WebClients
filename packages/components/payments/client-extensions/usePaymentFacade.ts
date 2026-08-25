@@ -1,5 +1,7 @@
 import { useEffect, useRef } from 'react';
 
+import { useApi } from '@proton/app-context/useApi';
+import { useConfig } from '@proton/app-context/useConfig';
 import useLoading from '@proton/hooks/useLoading';
 import type { BillingAddress } from '@proton/payments/core/billing-address/billing-address';
 import { type ADDON_NAMES, PAYMENT_METHOD_TYPES, type PLANS } from '@proton/payments/core/constants';
@@ -28,9 +30,7 @@ import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { Api, User } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import useApi from '../../hooks/useApi';
 import useAuthentication from '../../hooks/useAuthentication';
-import useConfig from '../../hooks/useConfig';
 import type { OnMethodChangedHandler, Operations, OperationsData } from '../react-extensions';
 import { usePaymentFacade as useInnerPaymentFacade } from '../react-extensions';
 import type { ThemeCode, ThemeLike } from './helpers';

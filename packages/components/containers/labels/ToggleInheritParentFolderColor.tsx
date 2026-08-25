@@ -2,6 +2,8 @@ import type { ChangeEvent } from 'react';
 
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
@@ -10,8 +12,6 @@ import { updateInheritParentFolderColor } from '@proton/shared/lib/api/mailSetti
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 
 import Toggle from '../../components/toggle/Toggle';
-import useApi from '../../hooks/useApi';
-import useNotifications from '../../hooks/useNotifications';
 
 interface Props {
     id?: string;

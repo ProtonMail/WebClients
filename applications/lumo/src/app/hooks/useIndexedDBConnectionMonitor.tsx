@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { useNotifications } from '@proton/components/index';
+import { useNotifications } from '@proton/app-context/useNotifications';
 
 /**
  * Hook that monitors IndexedDB connection status and shows notifications
@@ -20,15 +20,13 @@ export const useIndexedDBConnectionMonitor = () => {
                 connectionFailedNotificationShown.current = true;
 
                 createNotification({
-                    text: c('collider_2025:Error')
-                        .t`Database connection lost. Please refresh the page to continue.`,
+                    text: c('collider_2025:Error').t`Database connection lost. Please refresh the page to continue.`,
                     type: 'error',
                 });
             }
         };
 
         const handleReconnected = (event: Event) => {
-
             // Only show reconnection notification if we previously showed a failure
             if (reconnectionNotificationShown.current || connectionFailedNotificationShown.current) {
                 createNotification({

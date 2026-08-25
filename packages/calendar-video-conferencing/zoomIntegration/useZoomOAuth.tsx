@@ -5,7 +5,7 @@ import useOAuthPopup from '@proton/activation/src/hooks/useOAuthPopup';
 import type { OAuthProps } from '@proton/activation/src/interface';
 import { EASY_SWITCH_FEATURES, EASY_SWITCH_SOURCES, OAUTH_PROVIDER } from '@proton/activation/src/interface';
 import { oauthTokenActions } from '@proton/activation/src/logic/oauthToken';
-import useApi from '@proton/components/hooks/useApi';
+import { useApi } from '@proton/app-context/useApi';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 
 export const useZoomOAuth = () => {

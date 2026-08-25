@@ -5,7 +5,7 @@ import type { LocalTrack } from 'livekit-client';
 import { ConnectionState, RoomEvent, Track } from 'livekit-client';
 import { c } from 'ttag';
 
-import useNotifications from '@proton/components/hooks/useNotifications';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { useMeetErrorReporting } from '@proton/meet';
 import { useMeetDispatch, useMeetSelector, useMeetStore } from '@proton/meet/store/hooks';
 import {

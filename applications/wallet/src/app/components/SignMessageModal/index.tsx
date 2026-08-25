@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { c } from 'ttag';
 
 import { type WasmAccount, WasmSigningType } from '@proton/andromeda';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import {
     Collapsible,
@@ -10,7 +11,6 @@ import {
     CollapsibleHeader,
     CollapsibleHeaderIconButton,
     TextAreaTwo,
-    useNotifications,
 } from '@proton/components';
 import type { ModalOwnProps } from '@proton/components/components/modalTwo/Modal';
 import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';

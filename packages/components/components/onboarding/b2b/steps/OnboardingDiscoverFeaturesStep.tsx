@@ -3,6 +3,8 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
+import { useApi } from '@proton/app-context/useApi';
+import { useConfig } from '@proton/app-context/useConfig';
 import { Button } from '@proton/atoms/Button/Button';
 import { IcArrowDown } from '@proton/icons/icons/IcArrowDown';
 import { TelemetryB2BOnboardingEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
@@ -10,8 +12,6 @@ import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 
-import useApi from '../../../../hooks/useApi';
-import useConfig from '../../../../hooks/useConfig';
 import ModalTwoContent from '../../../modalTwo/ModalContent';
 import ModalTwoHeader from '../../../modalTwo/ModalHeader';
 import B2BOnboardingFeatureItem from '../B2BOnboardingFeatureItem';

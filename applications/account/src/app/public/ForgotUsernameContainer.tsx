@@ -3,17 +3,10 @@ import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
-import {
-    InputFieldTwo,
-    PhoneInput,
-    Tabs,
-    useApi,
-    useErrorHandler,
-    useFormErrors,
-    useMyCountry,
-    useNotifications,
-} from '@proton/components';
+import { InputFieldTwo, PhoneInput, Tabs, useErrorHandler, useFormErrors, useMyCountry } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { requestUsername } from '@proton/shared/lib/api/reset';
 import type { APP_NAMES } from '@proton/shared/lib/constants';

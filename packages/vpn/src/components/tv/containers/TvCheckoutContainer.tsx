@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { useGetPlans } from '@proton/account/plans/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { Button } from '@proton/atoms/Button/Button';
 import { Card } from '@proton/atoms/Card/Card';
 import { Badge } from '@proton/components/components/badge/Badge';
 import Logo from '@proton/components/components/logo/Logo';
 import Price from '@proton/components/components/price/Price';
-import useApi from '@proton/components/hooks/useApi';
 import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled';
 import { IcChevronUpFilled } from '@proton/icons/icons/IcChevronUpFilled';
 import { IcShield } from '@proton/icons/icons/IcShield';

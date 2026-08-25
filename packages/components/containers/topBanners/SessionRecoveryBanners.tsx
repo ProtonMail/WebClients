@@ -8,13 +8,13 @@ import {
 } from '@proton/account/recovery/sessionRecoveryHooks';
 import { selectSessionRecoveryData } from '@proton/account/recovery/sessionRecoverySelectors';
 import { useUser } from '@proton/account/user/hooks';
+import { useConfig } from '@proton/app-context/useConfig';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { APPS } from '@proton/shared/lib/constants';
 
 import SettingsLink from '../../components/link/SettingsLink';
 import useModalState from '../../components/modalTwo/useModalState';
-import useConfig from '../../hooks/useConfig';
 import PasswordResetAvailableAccountModal from '../account/sessionRecovery/PasswordResetAvailableAccountModal';
 import SessionRecoveryInProgressModal from '../account/sessionRecovery/SessionRecoveryInProgressModal';
 import TopBanner from './TopBanner';

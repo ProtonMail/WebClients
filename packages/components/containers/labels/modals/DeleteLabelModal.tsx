@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import useLoading from '@proton/hooks/useLoading';
 import { deleteLabel } from '@proton/mail/store/labels/actions';
@@ -9,7 +10,6 @@ import type { Label } from '@proton/shared/lib/interfaces';
 
 import type { ModalProps } from '../../../components/modalTwo/Modal';
 import Prompt from '../../../components/prompt/Prompt';
-import useNotifications from '../../../hooks/useNotifications';
 
 interface Props extends ModalProps {
     label: Label;

@@ -4,6 +4,8 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { useApi } from '@proton/app-context/useApi';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Href } from '@proton/atoms/Href/Href';
 import { useLoading } from '@proton/hooks';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
@@ -33,9 +35,7 @@ import { useModalStateObject } from '../../components/modalTwo/useModalState';
 import Toggle from '../../components/toggle/Toggle';
 import DWMUpsellModal from '../../components/upsell/modals/DWMUpsellModal';
 import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
-import useApi from '../../hooks/useApi';
 import useErrorHandler from '../../hooks/useErrorHandler';
-import useNotifications from '../../hooks/useNotifications';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';

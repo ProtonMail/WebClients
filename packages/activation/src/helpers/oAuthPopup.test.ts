@@ -18,11 +18,11 @@ jest.mock('../hooks/useOAuthPopup.helpers', () => ({
 }));
 
 const mockCreateNotification = jest.fn();
-jest.mock('@proton/components/hooks/useNotifications', () => {
-    return () => ({
+jest.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: () => ({
         createNotification: mockCreateNotification,
-    });
-});
+    }),
+}));
 
 const mockCallback = jest.fn();
 

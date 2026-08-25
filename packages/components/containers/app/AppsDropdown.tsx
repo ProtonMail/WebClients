@@ -6,6 +6,8 @@ import { c } from 'ttag';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { useApi } from '@proton/app-context/useApi';
+import { useConfig } from '@proton/app-context/useConfig';
 import { IcAppSwitch } from '@proton/icons/icons/IcAppSwitch';
 import { TelemetryAppSwitcher, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { getAvailableApps } from '@proton/shared/lib/apps/apps';
@@ -19,8 +21,6 @@ import { useFlag } from '@proton/unleash/useFlag';
 
 import SimpleDropdown from '../../components/dropdown/SimpleDropdown';
 import type { AppLinkProps } from '../../components/link/AppLink';
-import useApi from '../../hooks/useApi';
-import useConfig from '../../hooks/useConfig';
 import { InboxDesktopAppSwitcher } from '../desktop/InboxDesktopAppSwitcher';
 import ProductIcon from './ProductIcon';
 import ProductLink from './ProductLink';

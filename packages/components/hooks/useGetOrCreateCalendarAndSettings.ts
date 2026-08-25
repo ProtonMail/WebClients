@@ -1,6 +1,7 @@
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { useGetCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import { useGetCalendars } from '@proton/calendar/calendars/hooks';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -9,7 +10,6 @@ import { getHasUserReachedCalendarsLimit } from '@proton/shared/lib/calendar/cal
 import setupCalendarHelper from '@proton/shared/lib/calendar/crypto/keys/setupCalendarHelper';
 import noop from '@proton/utils/noop';
 
-import useApi from './useApi';
 import useEventManager from './useEventManager';
 
 const useGetOrCreateCalendarAndSettings = () => {

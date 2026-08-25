@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
@@ -41,7 +42,6 @@ import TableHeaderCell from '../../../components/table/TableHeaderCell';
 import TableRow from '../../../components/table/TableRow';
 import useCalendarShareInvitationActions from '../../../hooks/useCalendarShareInvitationActions';
 import useEventManager from '../../../hooks/useEventManager';
-import useNotifications from '../../../hooks/useNotifications';
 import SettingsSectionWide from '../../account/SettingsSectionWide';
 import ShareCalendarWithSignatureVerificationErrorModal from '../shareProton/ShareCalendarWithSignatureVerificationErrorModal';
 import CalendarBadge from './CalendarBadge';

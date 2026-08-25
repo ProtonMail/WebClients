@@ -7,9 +7,9 @@ import { buildSubscription } from '@proton/testing/builders/subscription';
 
 import { useHideBanner } from './SubscriptionEndsBannerHelpers';
 
-jest.mock('../../hooks/useConfig', () => ({
+jest.mock('@proton/app-context/useConfig', () => ({
     __esModule: true,
-    default: jest.fn(),
+    useConfig: jest.fn(),
 }));
 
 jest.mock('../../hooks/useShowVPNDashboard', () => ({
@@ -23,7 +23,7 @@ jest.mock('../../hooks/accounts/useShowDashboard', () => ({
     useShowDriveDashboard: jest.fn(),
 }));
 
-const mockUseConfig = require('../../hooks/useConfig').default as jest.Mock;
+const mockUseConfig = require('@proton/app-context/useConfig').useConfig as jest.Mock;
 const mockUseShowVPNDashboard = require('../../hooks/useShowVPNDashboard').default as jest.Mock;
 const mockUseShowDashboard = require('../../hooks/accounts/useShowDashboard').default as jest.Mock;
 const mockUseShowDriveDashboard = require('../../hooks/accounts/useShowDashboard').useShowDriveDashboard as jest.Mock;

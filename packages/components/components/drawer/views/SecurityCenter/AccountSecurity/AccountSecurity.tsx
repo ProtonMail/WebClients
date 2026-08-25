@@ -6,12 +6,12 @@ import {
     selectHasAccountSecurityCardToDisplay,
     selectHasSentinelOrTFACardToDisplay,
 } from '@proton/account';
+import { useApi } from '@proton/app-context/useApi';
 import { FeatureCode, useFeature } from '@proton/features';
 import { baseUseSelector } from '@proton/react-redux-store';
 import { TelemetrySecurityCenterEvents } from '@proton/shared/lib/api/telemetry';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import useApi from '../../../../../hooks/useApi';
 import { sendSecurityCenterReport } from '../securityCenterTelemetry';
 import AccountSecurityCard from './AccountSecurityCard';
 import AccountSecuritySuccess from './AccountSecuritySuccess';

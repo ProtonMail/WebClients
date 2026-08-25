@@ -2,11 +2,11 @@ import type { HTMLAttributes } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import clsx from '@proton/utils/clsx';
 
 import Copy from '../../../components/button/Copy';
 import SkeletonLoader from '../../../components/skeletonLoader/SkeletonLoader';
-import useNotifications from '../../../hooks/useNotifications';
 
 export interface Props {
     amount: number;

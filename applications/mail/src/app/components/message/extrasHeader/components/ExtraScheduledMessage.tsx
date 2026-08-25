@@ -4,13 +4,13 @@ import { useHistory, useLocation } from 'react-router-dom';
 import { isToday, isTomorrow } from 'date-fns';
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
-import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcPaperPlaneClock } from '@proton/icons/icons/IcPaperPlaneClock';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
@@ -21,12 +21,11 @@ import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 import { SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
 import { isScheduled } from '@proton/shared/lib/mail/messages';
 
-import { useMailDispatch } from '../../../../store/hooks';
-
 import { PREVENT_CANCEL_SEND_INTERVAL } from '../../../../constants';
 import { useOnCompose } from '../../../../containers/ComposeProvider';
 import { formatDateToHuman } from '../../../../helpers/date';
 import { ComposeTypes } from '../../../../hooks/composer/useCompose';
+import { useMailDispatch } from '../../../../store/hooks';
 import { cancelScheduled } from '../../../../store/messages/scheduled/scheduledActions';
 import { isScheduledSendTodayMorning } from '../../../composer/actions/scheduleSend/helpers';
 

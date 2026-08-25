@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { DashboardCard, DashboardCardContent } from '@proton/atoms/DashboardCard/DashboardCard';
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
@@ -15,7 +16,6 @@ import type { Tab } from '@proton/components/components/tabs/Tabs';
 import { Tabs } from '@proton/components/components/tabs/Tabs';
 import { getTelemetryUserTier } from '@proton/components/helpers/getTelemetryUserTier';
 import { mapTelemetryOsVersionWithStore } from '@proton/components/helpers/mapTelemetryOsVersionWithStore';
-import { useApi } from '@proton/components/index';
 import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import { IcArrowOutSquare } from '@proton/icons/icons/IcArrowOutSquare';
 import type { IconName } from '@proton/icons/types';

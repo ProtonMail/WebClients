@@ -6,12 +6,12 @@ import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account/index';
 import { useUser } from '@proton/account/user/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import type { BookingPageEditData } from '@proton/calendar/bookings/types';
 import { useReadCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
 import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import { useWriteableCalendars } from '@proton/calendar/calendars/hooks';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useHasMeetProductAccess } from '@proton/meet/hooks/useHasMeetProductAccess';
 import { getPreferredActiveWritableCalendar } from '@proton/shared/lib/calendar/calendar';
 import { useFlag } from '@proton/unleash/useFlag';

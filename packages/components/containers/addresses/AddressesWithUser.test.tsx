@@ -7,6 +7,7 @@ import { orderAddresses } from '@proton/account/addresses/actions';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { ADDRESS_FLAGS, ADDRESS_TYPE } from '@proton/shared/lib/constants';
 import type { Address, UserModel } from '@proton/shared/lib/interfaces';
@@ -15,7 +16,6 @@ import { useFlag } from '@proton/unleash/useFlag';
 
 import { SortableList } from '../../components/dnd/SortableList';
 import useAddressFlags from '../../hooks/useAddressFlags';
-import useNotifications from '../../hooks/useNotifications';
 import useKTVerifier from '../keyTransparency/useKTVerifier';
 import AddressesWithUser from './AddressesWithUser';
 
@@ -51,7 +51,7 @@ const mockedUseAddresses = useAddresses as jest.MockedFunction<typeof useAddress
 jest.mock('../../hooks/useAddressFlags');
 const mockedUseAddressFlags = useAddressFlags as jest.MockedFunction<typeof useAddressFlags>;
 
-jest.mock('../../hooks/useNotifications');
+jest.mock('@proton/app-context/useNotifications');
 const mockedUseNotifications = useNotifications as jest.MockedFunction<typeof useNotifications>;
 
 jest.mock('@proton/account/user/hooks');

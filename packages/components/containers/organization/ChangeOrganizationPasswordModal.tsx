@@ -4,6 +4,7 @@ import type { PrivateKeyReference } from '@protontech/crypto';
 import { c } from 'ttag';
 
 import { organizationKeyThunk } from '@proton/account/organizationKey';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
@@ -28,7 +29,6 @@ import useModalState from '../../components/modalTwo/useModalState';
 import InputFieldTwo from '../../components/v2/field/InputField';
 import PasswordInputTwo from '../../components/v2/input/PasswordInput';
 import useFormErrors from '../../components/v2/useFormErrors';
-import useNotifications from '../../hooks/useNotifications';
 import AuthModal from '../password/AuthModal';
 
 interface Props extends ModalProps {

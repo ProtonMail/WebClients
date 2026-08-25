@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { featureTourActions } from '@proton/account/featuresTour';
+import { useApi } from '@proton/app-context/useApi';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
@@ -10,7 +11,6 @@ import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { AUTO_DELETE_SPAM_AND_TRASH_DAYS } from '@proton/shared/lib/mail/mailSettings';
 import autoDeleteIllustration from '@proton/styles/assets/img/illustrations/new-upsells-img/auto-delete.svg';
 
-import useApi from '../../../hooks/useApi';
 import useToggle from '../../../hooks/useToggle';
 import type { FeatureTourStepProps, ShouldDisplayTourStep } from '../interface';
 import FeatureTourStepCTA from './components/FeatureTourStepCTA';

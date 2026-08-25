@@ -2,10 +2,11 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Input } from '@proton/atoms/Input/Input';
-import { Info, Price, useNotifications } from '@proton/components';
+import { Info, Price } from '@proton/components';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import type { Currency, PlanIDs } from '@proton/payments/core/interface';
 import type { PlansMap } from '@proton/payments/core/plan/interface';

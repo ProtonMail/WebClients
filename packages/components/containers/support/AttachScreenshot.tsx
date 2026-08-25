@@ -2,6 +2,7 @@ import type { ChangeEvent, Dispatch, SetStateAction } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { MAX_SIZE_SCREENSHOT } from '@proton/shared/lib/constants';
@@ -15,7 +16,6 @@ import Table from '../../components/table/Table';
 import TableBody from '../../components/table/TableBody';
 import TableCell from '../../components/table/TableCell';
 import TableRow from '../../components/table/TableRow';
-import useNotifications from '../../hooks/useNotifications';
 
 export interface Screenshot {
     name: string;

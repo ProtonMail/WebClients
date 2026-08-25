@@ -14,7 +14,6 @@ import { SUCCESS_NOTIFICATION_EXPIRATION } from '../../../constants';
 import { GlobalModalContext } from '../../../containers/globalModals/globalModalContext';
 import { ModalType } from '../../../containers/globalModals/inteface';
 import { labelConversations, labelMessages, unlabelMessages } from '../../../store/mailbox/mailboxActions';
-
 import { APPLY_LOCATION_TYPES } from './interface';
 import { useApplyLocation } from './useApplyLocation';
 
@@ -84,17 +83,17 @@ jest.mock('../useCreateFilters', () => ({
 const mockedCreateNotification = jest.fn();
 const mockedRemoveNotification = jest.fn();
 
-jest.mock('@proton/components/hooks/useNotifications', () => ({
+jest.mock('@proton/app-context/useNotifications', () => ({
     __esModule: true,
-    default: jest.fn(() => ({
+    useNotifications: jest.fn(() => ({
         createNotification: mockedCreateNotification,
         removeNotification: mockedRemoveNotification,
     })),
 }));
 
-jest.mock('@proton/components/hooks/useApi', () => ({
+jest.mock('@proton/app-context/useApi', () => ({
     __esModule: true,
-    default: jest.fn(() => jest.fn()),
+    useApi: jest.fn(() => jest.fn()),
 }));
 
 jest.mock('@proton/components/hooks/useEventManager', () => ({

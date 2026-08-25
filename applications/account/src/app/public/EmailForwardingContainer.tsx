@@ -3,8 +3,9 @@ import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import { GenericError, useApi, useErrorHandler } from '@proton/components';
+import { GenericError, useErrorHandler } from '@proton/components';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { useLoading } from '@proton/hooks';
 import type { ExternalForwardingResult } from '@proton/shared/lib/api/forwardings';

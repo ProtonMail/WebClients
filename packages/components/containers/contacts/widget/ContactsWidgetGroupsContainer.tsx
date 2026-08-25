@@ -3,6 +3,7 @@ import { useMemo, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import { useContactGroups } from '@proton/mail/store/labels/hooks';
@@ -13,7 +14,6 @@ import type { Recipient } from '@proton/shared/lib/interfaces';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
 import SearchInput from '../../../components/input/SearchInput';
-import useNotifications from '../../../hooks/useNotifications';
 import useItemsSelection from '../../items/useItemsSelection';
 import type { ContactGroupDeleteProps } from '../group/ContactGroupDeleteModal';
 import type { ContactGroupEditProps } from '../group/ContactGroupEditModal';

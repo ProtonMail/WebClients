@@ -2,7 +2,7 @@ import { useContext } from 'react';
 
 import { NotificationsContext } from './notifications/notificationsContext';
 
-const useNotifications = () => {
+export const useNotifications = () => {
     const manager = useContext(NotificationsContext);
 
     if (!manager) {
@@ -11,5 +11,3 @@ const useNotifications = () => {
 
     return manager;
 };
-
-export default useNotifications;
