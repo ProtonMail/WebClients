@@ -1,15 +1,15 @@
-import { buildSandboxedDoc } from './WebpageRenderer';
+import { buildArtifactDocument } from './WebpageRenderer';
 
 function parse(srcDoc: string): Document {
     return new DOMParser().parseFromString(srcDoc, 'text/html');
 }
 
-function getCspMeta(doc: Document): HTMLMetaElement | null {
-    return doc.head.querySelector('meta[http-equiv="Content-Security-Policy" i]');
+function getBridgeScript(doc: Document): HTMLScriptElement | undefined {
+    return Array.from(doc.head.querySelectorAll('script')).find((el) => el.textContent?.includes('lumo-resize'));
 }
 
-describe('buildSandboxedDoc', () => {
-    it('injects the CSP into the real <head>, not a decoy comment that merely looks like one', () => {
+describe('buildArtifactDocument', () => {
+    it('injects the resize/error bridge script into the real <head>, not a decoy comment that merely looks like one', () => {
         const html = `
 <html>
 <!-- <head> -->
@@ -19,40 +19,29 @@ describe('buildSandboxedDoc', () => {
 </body>
 </html>`;
 
-        const doc = parse(buildSandboxedDoc(html));
+        const doc = parse(buildArtifactDocument(html));
 
-        const cspMeta = getCspMeta(doc);
-        expect(cspMeta).not.toBeNull();
-        expect(cspMeta!.getAttribute('content')).toContain("connect-src 'none'");
+        expect(getBridgeScript(doc)).toBeDefined();
 
         // The decoy comment's literal text must be untouched — the fix should never treat it as markup.
         expect(doc.documentElement.outerHTML).toContain('<!-- <head> -->');
     });
 
-    it('still injects the CSP into a real (implied) head when the input has no <head> tag at all', () => {
+    it('still injects the bridge script into a real (implied) head when the input has no <head> tag at all', () => {
         const html = '<body><p>hi</p></body>';
 
-        const doc = parse(buildSandboxedDoc(html));
+        const doc = parse(buildArtifactDocument(html));
 
-        expect(getCspMeta(doc)).not.toBeNull();
-        expect(doc.querySelector('script')).not.toBeNull();
+        expect(getBridgeScript(doc)).toBeDefined();
     });
 
     it('does not mistake a <header> element for <head>', () => {
         const html = '<html><header>site header</header><head></head><body>content</body></html>';
 
-        const doc = parse(buildSandboxedDoc(html));
+        const doc = parse(buildArtifactDocument(html));
 
-        expect(getCspMeta(doc)).not.toBeNull();
+        expect(getBridgeScript(doc)).toBeDefined();
         expect(doc.querySelector('header')?.textContent).toBe('site header');
-    });
-
-    it('keeps the CSP meta as the first child of <head> even when the artifact head has its own content', () => {
-        const html = '<html><head><link rel="stylesheet" href="theme.css"></head><body>hi</body></html>';
-
-        const doc = parse(buildSandboxedDoc(html));
-
-        expect(doc.head.firstElementChild?.getAttribute('http-equiv')?.toLowerCase()).toBe('content-security-policy');
     });
 
     it('does not mistake head-like text inside a <script>/<style> block for a real head tag', () => {
@@ -63,17 +52,17 @@ describe('buildSandboxedDoc', () => {
 <body>content</body>
 </html>`;
 
-        const doc = parse(buildSandboxedDoc(html));
+        const doc = parse(buildArtifactDocument(html));
 
-        expect(getCspMeta(doc)).not.toBeNull();
+        expect(getBridgeScript(doc)).toBeDefined();
         const decoyScript = Array.from(doc.querySelectorAll('script')).find((el) => el.textContent?.includes('oops'));
         expect(decoyScript?.textContent).toBe('var s = "<head>oops</head>";');
     });
 
-    it('preserves the artifact content end-to-end aside from the two injected elements', () => {
+    it('preserves the artifact content end-to-end aside from the injected bridge script', () => {
         const html = `<html><head><style>body { color: red; }</style></head><body><h1>Hello</h1><script>console.log('hi')</script></body></html>`;
 
-        const doc = parse(buildSandboxedDoc(html));
+        const doc = parse(buildArtifactDocument(html));
 
         expect(doc.querySelector('style')?.textContent).toBe('body { color: red; }');
         expect(doc.querySelector('h1')?.textContent).toBe('Hello');
@@ -85,17 +74,24 @@ describe('buildSandboxedDoc', () => {
     it('preserves the doctype', () => {
         const html = '<!DOCTYPE html><html><head></head><body>hi</body></html>';
 
-        const srcDoc = buildSandboxedDoc(html);
+        const result = buildArtifactDocument(html);
 
-        expect(srcDoc.toLowerCase().startsWith('<!doctype html>')).toBe(true);
+        expect(result.toLowerCase().startsWith('<!doctype html>')).toBe(true);
     });
 
-    it('places the injected bridge script in <head>, ahead of body content', () => {
+    it('no longer injects a CSP <meta> tag — the shell route now sets its own CSP response header', () => {
+        const html = '<html><head></head><body>hi</body></html>';
+
+        const doc = parse(buildArtifactDocument(html));
+
+        expect(doc.head.querySelector('meta[http-equiv="Content-Security-Policy" i]')).toBeNull();
+    });
+
+    it('places the bridge script in <head>, ahead of body content', () => {
         const html = '<html><head></head><body><script>console.log("artifact script")</script></body></html>';
 
-        const doc = parse(buildSandboxedDoc(html));
+        const doc = parse(buildArtifactDocument(html));
 
-        const headScripts = Array.from(doc.head.querySelectorAll('script'));
-        expect(headScripts.some((el) => el.textContent?.includes('lumo-resize'))).toBe(true);
+        expect(getBridgeScript(doc)).toBeDefined();
     });
 });
