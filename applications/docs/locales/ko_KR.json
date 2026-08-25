@@ -3014,6 +3014,9 @@
       "Authentication error.": [
         "인증 오류"
       ],
+      "Because this document was in a shared folder, only the folder owner can restore it": [
+        "현재 문서가 공유된 폴더에 있으므로 폴더의 소유자만 복원할 수 있습니다."
+      ],
       "Bookmark password is not available": [
         "북마크 비밀번호를 사용할 수 없습니다"
       ],
@@ -3193,9 +3196,6 @@
       ],
       "Failed to load recent documents": [
         "최근 문서를 불러오지 못했습니다"
-      ],
-      "Failed to load subscription data. Please try again later.": [
-        "구독 데이터를 불러올 수 없습니다. 나중에 다시 시도하세요."
       ],
       "Failed to open to contact": [
         "연락처 열기 실패"
@@ -4937,9 +4937,6 @@
       ],
       "Decrypting your document": [
         "문서를 복호화하는 중"
-      ],
-      "Details": [
-        "세부 사항"
       ],
       "Display word count": [
         "단어수 표시"
@@ -7990,6 +7987,16 @@
       ],
       "Support for ${ n } custom email domain": [
         "${ n }개 커스텀 이메일 도메인 지원"
+      ]
+    },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "지금 사용해보세요"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "${ CALENDAR_APP_NAME }를 사용할 수 있습니다. ${ link }"
       ]
     },
     "Notification": {

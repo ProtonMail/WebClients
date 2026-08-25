@@ -3037,6 +3037,9 @@
       "Authentication error.": [
         "Kimlik doğrulama sorunu."
       ],
+      "Because this document was in a shared folder, only the folder owner can restore it": [
+        "Bu belge paylaşımlı klasörde bulunduğu için yalnızca klasör sahibi onu geri yükleyebilir"
+      ],
       "Bookmark password is not available": [
         "Yer imi parolası kullanılamıyor"
       ],
@@ -3218,9 +3221,6 @@
       ],
       "Failed to load recent documents": [
         "Son çalışılan belgeler yüklenemedi"
-      ],
-      "Failed to load subscription data. Please try again later.": [
-        "Abonelik verileri yüklenemedi. Lütfen bir süre sonra yeniden deneyin."
       ],
       "Failed to open to contact": [
         "Kişiye açılamadı"
@@ -5009,9 +5009,6 @@
       ],
       "Decrypting your document": [
         "Belgenizin şifresi çözülüyor"
-      ],
-      "Details": [
-        "Ayrıntılar"
       ],
       "Display word count": [
         "Sözcük sayısı görüntülensin"
@@ -8113,6 +8110,16 @@
       "Support for ${ n } custom email domain": [
         "${ n } özel e-posta etki alanı desteği",
         "${ n } özel e-posta etki alanı desteği"
+      ]
+    },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Hemen deneyin"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Artık yeni ${ CALENDAR_APP_NAME } uygulamasına erişebilirsiniz. ${ link }"
       ]
     },
     "Notification": {
