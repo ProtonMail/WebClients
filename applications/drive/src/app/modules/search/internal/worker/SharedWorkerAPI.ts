@@ -148,7 +148,7 @@ export class SharedWorkerAPI {
         if (!this.searcher) {
             this.searchMetrics?.markSearchQueryFailed({
                 error: new Error('No searcher available'),
-                diagnostics: this.db ? await gatherSearchDiagnostics(this.db) : undefined,
+                diagnostics: this.db ? await gatherSearchDiagnostics(this.db, this.indexRegistry) : undefined,
             });
             onEvent?.({ type: 'done' });
             return;
@@ -161,7 +161,7 @@ export class SharedWorkerAPI {
         } catch (error) {
             this.searchMetrics?.markSearchQueryFailed({
                 error,
-                diagnostics: this.db ? await gatherSearchDiagnostics(this.db) : undefined,
+                diagnostics: this.db ? await gatherSearchDiagnostics(this.db, this.indexRegistry) : undefined,
             });
             // Search bypasses the task queue entirely (see SearchQueryExecutor), so nothing else
             // would ever surface a permanent error from this path - without this, the rebuild
