@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import useNotifications from '@proton/components/hooks/useNotifications';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
 import { isAbortError } from '../../lib/api/errors';
