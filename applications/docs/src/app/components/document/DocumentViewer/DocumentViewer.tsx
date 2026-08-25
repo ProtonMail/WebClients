@@ -1,5 +1,5 @@
 import useAuthentication from '@proton/components/hooks/useAuthentication'
-import useConfig from '@proton/components/hooks/useConfig'
+import { useConfig } from '@proton/app-context/useConfig'
 import MimeIcon from '@proton/components/components/icon/MimeIcon'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import type {

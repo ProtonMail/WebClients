@@ -76,9 +76,9 @@ jest.mock('@proton/components/helpers/appVersion', () => ({
     getAppVersion: () => 'appVersion',
 }));
 
-jest.mock('@proton/components/hooks/useConfig', () => ({
+jest.mock('@proton/app-context/useConfig', () => ({
     __esModule: true,
-    default: jest.fn(() => ({ APP_NAME: 'proton-calendar' })),
+    useConfig: jest.fn(() => ({ APP_NAME: 'proton-calendar' })),
 }));
 
 jest.mock('@proton/calendar/holidaysDirectory/hooks', () => ({

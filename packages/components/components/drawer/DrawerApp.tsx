@@ -4,6 +4,7 @@ import { Suspense, lazy, useEffect, useLayoutEffect } from 'react';
 import { c } from 'ttag';
 
 import { useGetBreachesCounts } from '@proton/account';
+import { useConfig } from '@proton/app-context/useConfig';
 import { APPS } from '@proton/shared/lib/constants';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 import type { Recipient } from '@proton/shared/lib/interfaces';
@@ -16,7 +17,6 @@ import StandardErrorPage from '../../containers/app/StandardErrorPage';
 import type { CustomAction } from '../../containers/contacts/widget/types';
 import { useReferralDiscover } from '../../containers/referral/hooks/useReferralDiscover';
 import useDrawer from '../../hooks/drawer/useDrawer';
-import useConfig from '../../hooks/useConfig';
 import Loader from '../loader/Loader';
 import DrawerBugModal from './DrawerBugModal';
 import DrawerContactModals from './DrawerContactModals';

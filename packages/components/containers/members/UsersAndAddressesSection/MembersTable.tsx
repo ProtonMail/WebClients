@@ -6,6 +6,7 @@ import { selectUnprivatizationState } from '@proton/account/members/unprivatizeM
 import type { UseMembersUsageResult } from '@proton/account/members/useMembersUsage';
 import { isOwnerRole } from '@proton/account/organizationRoles/helpers';
 import { AdminRolesUIState, useAdminRolesUI, useUserPermissions } from '@proton/account/userPermissions/hooks';
+import { useConfig } from '@proton/app-context/useConfig';
 import { Avatar } from '@proton/atoms/Avatar/Avatar';
 import { Button } from '@proton/atoms/Button/Button';
 import { Pill } from '@proton/atoms/Pill/Pill';
@@ -36,7 +37,6 @@ import Table from '../../../components/table/Table';
 import TableBody from '../../../components/table/TableBody';
 import TableCell from '../../../components/table/TableCell';
 import TableRow from '../../../components/table/TableRow';
-import useConfig from '../../../hooks/useConfig';
 import MemberActions, { MagicLinkMemberActions, getMemberPermissions } from '../MemberActions';
 import MemberAddresses from '../MemberAddresses';
 import MemberFeatures from '../MemberFeatures';

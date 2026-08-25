@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useConfig } from '@proton/app-context/useConfig';
 import { Button } from '@proton/atoms/Button/Button';
 import { getCanMakePaymentsWithActiveCard } from '@proton/chargebee/lib/getCanMakePaymentsWithActiveCard';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
@@ -22,7 +23,6 @@ import type { Api, User } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 
-import useConfig from '../../..//hooks/useConfig';
 import useModals from '../../..//hooks/useModals';
 import useNotifications from '../../..//hooks/useNotifications';
 import Loader from '../../../components/loader/Loader';

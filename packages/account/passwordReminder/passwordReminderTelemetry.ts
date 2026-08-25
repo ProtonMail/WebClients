@@ -1,8 +1,8 @@
 import { useCallback } from 'react';
 import { useLocation } from 'react-router-dom';
 
+import { useConfig } from '@proton/app-context/useConfig';
 import useApi from '@proton/components/hooks/useApi';
-import useConfig from '@proton/components/hooks/useConfig';
 import { TelemetryMeasurementGroups, TelemetryPasswordReminderEvents } from '@proton/shared/lib/api/telemetry';
 import { getClientID } from '@proton/shared/lib/apps/helper';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';

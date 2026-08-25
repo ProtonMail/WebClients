@@ -1,8 +1,8 @@
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useConfig } from '@proton/app-context/useConfig';
 
 import { useOptionalSubscriptionModal } from '../../../containers/payments/subscription/SubscriptionModalProvider';
-import useConfig from '../../../hooks/useConfig';
 import { type GetUpsellConfigProps, getUpsellConfig } from './getUpsellConfig';
 
 /**

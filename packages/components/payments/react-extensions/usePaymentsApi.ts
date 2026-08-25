@@ -5,6 +5,7 @@ import { addMonths } from 'date-fns';
 
 import { selectPlans } from '@proton/account/plans';
 import { useSubscription } from '@proton/account/subscription/hooks';
+import { useConfig } from '@proton/app-context/useConfig';
 import { PAYMENTS_API_ERROR_CODES } from '@proton/payments/core/api-error-codes';
 import { type CheckSubscriptionData, getPaymentMethodStatus } from '@proton/payments/core/api/api';
 import {
@@ -45,7 +46,6 @@ import type { Api } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
 import useApi from '../../hooks/useApi';
-import useConfig from '../../hooks/useConfig';
 import { usePreferredPlansMap } from '../../hooks/usePreferredPlansMap';
 
 const checkSubscriptionQuery = (data: CheckSubscriptionData) => {

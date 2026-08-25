@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
+import { useConfig } from '@proton/app-context/useConfig';
 import { Button } from '@proton/atoms/Button/Button';
 import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import { Href } from '@proton/atoms/Href/Href';
@@ -13,7 +14,6 @@ import { ADDRESS_TYPE, APPS, MAIL_APP_NAME, VPN_APP_NAME } from '@proton/shared/
 
 import Loader from '../../components/loader/Loader';
 import useModalState from '../../components/modalTwo/useModalState';
-import useConfig from '../../hooks/useConfig';
 import { DiscountWarningModal, VisionaryWarningModal } from '../payments/subscription/PlanLossWarningModal';
 import DeleteAccountModal from './DeleteAccountModal';
 import SettingsParagraph from './SettingsParagraph';

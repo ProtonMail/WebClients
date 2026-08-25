@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
+import { useConfig } from '@proton/app-context/useConfig';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { APPS_CONFIGURATION } from '@proton/shared/lib/constants';
 
 import useApiStatus from '../../hooks/useApiStatus';
-import useConfig from '../../hooks/useConfig';
 import TopBanner from './TopBanner';
 
 const BadAppVersionBanner = () => {

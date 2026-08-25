@@ -1,11 +1,11 @@
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useConfig } from '@proton/app-context/useConfig';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import useConfig from '../../../../../hooks/useConfig';
 import type { OfferHookReturnValue } from '../../common/helpers/interface';
 import { getIsEligible } from '../helpers/eligibility';
 

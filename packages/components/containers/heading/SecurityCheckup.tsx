@@ -1,12 +1,12 @@
 import type { ReactNode } from 'react';
 
 import { selectMnemonicData } from '@proton/account/recovery/mnemonic';
+import { useConfig } from '@proton/app-context/useConfig';
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, SECURITY_CHECKUP_PATHS } from '@proton/shared/lib/constants';
 
 import useIsSafetyReviewAvailable from '../../hooks/accounts/useIsSafetyReviewAvailable';
-import useConfig from '../../hooks/useConfig';
 
 export const SecurityCheckup = ({
     children,

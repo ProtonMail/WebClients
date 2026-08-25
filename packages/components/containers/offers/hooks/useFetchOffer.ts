@@ -2,12 +2,12 @@ import { useEffect, useState } from 'react';
 
 import { usePlans } from '@proton/account/plans/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
+import { useConfig } from '@proton/app-context/useConfig';
 import { useLoading } from '@proton/hooks';
 import type { Currency } from '@proton/payments/core/interface';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
 import { getCheckoutRenewNoticeTextFromCheckResult } from '@proton/payments/ui/components/RenewalNotice';
 
-import useConfig from '../../../hooks/useConfig';
 import { usePaymentsApiWithCheckFallback } from '../../../payments/react-extensions/usePaymentsApi';
 import { fetchDealPrices } from '../helpers/dealPrices';
 import type { Offer, OfferConfig } from '../interface';

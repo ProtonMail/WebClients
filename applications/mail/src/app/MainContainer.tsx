@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 
 import EasySwitchStoreInitializer from '@proton/activation/src/logic/EasySwitchStoreInitializer';
 import EasySwitchStoreProvider from '@proton/activation/src/logic/StoreProvider';
+import { useConfig } from '@proton/app-context/useConfig';
 import ApiModalsHVUpsell from '@proton/components/containers/api/ApiModalsHVUpsell';
 import KeyTransparencyManager from '@proton/components/containers/keyTransparency/KeyTransparencyManager';
 import ModalsChildren from '@proton/components/containers/modals/Children';
@@ -11,7 +12,6 @@ import SubscriptionModalProvider from '@proton/components/containers/payments/su
 import { DrawerThemeInjector } from '@proton/components/containers/themes/ThemeInjector';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 import useApiStatus from '@proton/components/hooks/useApiStatus';
-import useConfig from '@proton/components/hooks/useConfig';
 import { useInboxDesktopEventLoopRefresh } from '@proton/components/hooks/useInboxDesktopEventLoopRefresh';
 import { useInboxDesktopMetrics } from '@proton/components/hooks/useInboxDesktopMetrics';
 import useOnline from '@proton/components/hooks/useOnline';
@@ -20,9 +20,8 @@ import AssistantProvider from '@proton/llm/lib/providers/AssistantProvider';
 import { logger } from '@proton/logger';
 import { useInboxDesktopHeartbeat } from '@proton/shared/lib/desktop/heartbeat';
 
-import { CheckAllRefProvider } from './containers/CheckAllRefProvider';
-
 import { ROUTE_MAIN } from './constants';
+import { CheckAllRefProvider } from './containers/CheckAllRefProvider';
 import ComposerContainer from './containers/ComposerContainer';
 import EncryptedSearchProvider from './containers/EncryptedSearchProvider';
 import { GlobalModalProvider } from './containers/globalModals/GlobalModalProvider';

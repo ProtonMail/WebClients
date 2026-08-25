@@ -1,5 +1,6 @@
 import { fromUnixTime, isFuture, subDays } from 'date-fns';
 
+import { useConfig } from '@proton/app-context/useConfig';
 import { type ADDON_NAMES, PLANS } from '@proton/payments/core/constants';
 import type { SubscriptionPlan } from '@proton/payments/core/plan/interface';
 import { type MaybeFreeSubscription, isTrial } from '@proton/payments/core/subscription/helpers';
@@ -7,7 +8,6 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 
 import useShowDashboard, { useShowDriveDashboard } from '../../hooks/accounts/useShowDashboard';
-import useConfig from '../../hooks/useConfig';
 import useShowVPNDashboard from '../../hooks/useShowVPNDashboard';
 
 export const targetedPlans: (PLANS | ADDON_NAMES)[] = [PLANS.MAIL_PRO, PLANS.MAIL_BUSINESS];

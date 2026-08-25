@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useGetAddresses } from '@proton/account/addresses/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import {
     acceptCalendarShareInvitation,
@@ -15,7 +16,6 @@ import type { CalendarMemberInvitation } from '@proton/shared/lib/interfaces/cal
 import useApi from './useApi';
 import useEventManager from './useEventManager';
 import useGetEncryptionPreferences from './useGetEncryptionPreferences';
-import useNotifications from './useNotifications';
 
 const useCalendarShareInvitationActions = () => {
     const getAddresses = useGetAddresses();

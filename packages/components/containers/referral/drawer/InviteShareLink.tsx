@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { useReferrals } from '@proton/account/referrals/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { useConfig } from '@proton/app-context/useConfig';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { IcSquares } from '@proton/icons/icons/IcSquares';
@@ -14,7 +15,6 @@ import DrawerAppHeadline from '../../../components/drawer/views/shared/DrawerApp
 import DrawerAppSection from '../../../components/drawer/views/shared/DrawerAppSection';
 import SettingsLink from '../../../components/link/SettingsLink';
 import Loader from '../../../components/loader/Loader';
-import useConfig from '../../../hooks/useConfig';
 import useNotifications from '../../../hooks/useNotifications';
 import { useReferralTelemetry } from '../hooks/useReferralTelemetry';
 

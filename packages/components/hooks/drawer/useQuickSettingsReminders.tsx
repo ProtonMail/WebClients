@@ -1,13 +1,13 @@
 import type { ReactNode } from 'react';
 import { useContext } from 'react';
 
+import { useConfig } from '@proton/app-context/useConfig';
 import type { ThemeColor } from '@proton/colors/types';
 import { APPS } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { QuickSettingsRemindersContext } from '../../containers/drawer/MailQuickSettingsReminderContext';
 import MailQuickSettingsReminderContextProvider from '../../containers/drawer/MailQuickSettingsReminderContextProvider';
-import useConfig from '../useConfig';
 import useRecoveryNotification from '../useRecoveryNotification';
 
 /**

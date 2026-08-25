@@ -7,6 +7,7 @@ import { usePlans } from '@proton/account/plans/hooks';
 import { useReferralInfo } from '@proton/account/referralInfo/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useConfig } from '@proton/app-context/useConfig';
 import { Button, type ButtonProps } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
@@ -42,7 +43,6 @@ import useModalState from '../../../components/modalTwo/useModalState';
 import StripedItem from '../../../components/stripedList/StripedItem';
 import { StripedList } from '../../../components/stripedList/StripedList';
 import getBoldFormattedText from '../../../helpers/getBoldFormattedText';
-import useConfig from '../../../hooks/useConfig';
 import { getDocumentEditor, getStorageFeature, getVersionHistory } from '../../payments/features/drive';
 import { getNAddressesFeature, getNDomainsFeature } from '../../payments/features/mail';
 import {

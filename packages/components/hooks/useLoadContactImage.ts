@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 
+import { useConfig } from '@proton/app-context/useConfig';
 import { useLoading } from '@proton/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { CONTACT_IMG_SIZE } from '@proton/shared/lib/contacts/constants';
@@ -10,7 +11,6 @@ import { hasShowEmbedded, hasShowRemote } from '@proton/shared/lib/mail/images';
 import noop from '@proton/utils/noop';
 
 import useAuthentication from './useAuthentication';
-import useConfig from './useConfig';
 
 type ImageModel = {
     src: string;

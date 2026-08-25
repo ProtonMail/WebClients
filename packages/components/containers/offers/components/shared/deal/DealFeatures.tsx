@@ -3,6 +3,7 @@ import { useLocation } from 'react-router';
 
 import { c } from 'ttag';
 
+import { useConfig } from '@proton/app-context/useConfig';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
@@ -13,7 +14,6 @@ import Icon from '../../../../../components/icon/Icon';
 import Info from '../../../../../components/link/Info';
 import StripedItem from '../../../../../components/stripedList/StripedItem';
 import { StripedList } from '../../../../../components/stripedList/StripedList';
-import useConfig from '../../../../../hooks/useConfig';
 import { getOfferProduct } from '../../../helpers/getOfferProduct';
 import { useDealContext } from './DealContext';
 

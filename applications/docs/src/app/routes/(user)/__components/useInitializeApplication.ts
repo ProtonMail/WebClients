@@ -1,6 +1,6 @@
 import useApi from '@proton/components/hooks/useApi'
 import useAuthentication from '@proton/components/hooks/useAuthentication'
-import useConfig from '@proton/components/hooks/useConfig'
+import { useConfig } from '@proton/app-context/useConfig'
 import type { DriveCompat } from '@proton/drive-store'
 import { useEffect, useMemo } from 'react'
 import { Application } from '@proton/docs-core'

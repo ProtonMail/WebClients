@@ -1,5 +1,6 @@
 import type { Dispatch, SetStateAction } from 'react';
 
+import { useConfig } from '@proton/app-context/useConfig';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getLocalIDFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
 import { addParentAppToUrl, getIsIframedDrawerApp, postMessageToIframe } from '@proton/shared/lib/drawer/helpers';
@@ -7,7 +8,6 @@ import type { DrawerApp, IframeSrcMap, OpenDrawerArgs } from '@proton/shared/lib
 import { DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
 
 import useApiStatus from '../useApiStatus';
-import useConfig from '../useConfig';
 import useOnline from '../useOnline';
 
 interface Props {

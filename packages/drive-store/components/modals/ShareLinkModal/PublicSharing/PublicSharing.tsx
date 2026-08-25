@@ -3,18 +3,12 @@ import { useMemo, useRef } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import { useConfig } from '@proton/app-context/useConfig';
 import { Avatar } from '@proton/atoms/Avatar/Avatar';
 import { Button } from '@proton/atoms/Button/Button';
 import { Input } from '@proton/atoms/Input/Input';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import {
-    SUBSCRIPTION_STEPS,
-    Toggle,
-    useConfig,
-    useNotifications,
-    useSettingsLink,
-    useUpsellConfig,
-} from '@proton/components';
+import { SUBSCRIPTION_STEPS, Toggle, useNotifications, useSettingsLink, useUpsellConfig } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import { IcGlobe } from '@proton/icons/icons/IcGlobe';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';

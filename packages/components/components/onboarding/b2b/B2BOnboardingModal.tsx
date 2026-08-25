@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useWelcomeFlags } from '@proton/account/welcomeFlags';
+import { useConfig } from '@proton/app-context/useConfig';
 import { useTrialInfo } from '@proton/payments/ui/hooks/useTrialInfo';
 import { TelemetryB2BOnboardingEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
@@ -11,7 +12,6 @@ import { hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organiz
 import { useFlag } from '@proton/unleash/useFlag';
 
 import useApi from '../../../hooks/useApi';
-import useConfig from '../../../hooks/useConfig';
 import Loader from '../../loader/Loader';
 import ModalTwo from '../../modalTwo/Modal';
 import OnboardingDiscoverFeaturesStep from './steps/OnboardingDiscoverFeaturesStep';
