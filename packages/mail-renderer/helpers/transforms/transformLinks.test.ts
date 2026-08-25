@@ -44,16 +44,42 @@ describe('transformLinks service', () => {
             expect(querySelectorAll('[rel="noreferrer nofollow noopener"]').length).toEqual(TOTAL);
         });
 
-        it('should add target for real link', () => {
-            const { querySelectorAll } = setup();
-            expect(querySelectorAll('[target="_blank"]').length).toEqual(4);
-            expect(querySelectorAll('[href^="http"][target="_blank"]').length).toEqual(4);
-        });
-
         it('should strip tracking parameters (utm)', () => {
             const { querySelector } = setup(ADD_REF);
             expect(querySelector('[href="https://ads.com/"]')).toBeTruthy();
             expect(querySelector('[href*="utm_content=toto"]')).toBeFalsy();
+        });
+    });
+
+    describe('Keep the message in its frame', () => {
+        it('should add target for real link', () => {
+            const { querySelectorAll } = setup();
+            expect(querySelectorAll('[target="_blank"]').length).toEqual(8);
+            expect(querySelectorAll('[href^="http"][target="_blank"]').length).toEqual(4);
+            expect(querySelectorAll('[href^="mailto"][target="_blank"]').length).toEqual(0);
+        });
+
+        it('should add target to schemes that would otherwise navigate the containing frame', () => {
+            const { querySelectorAll } = setup(`
+                <a id="tel" href="tel:+15551234567">tel</a>
+                <a id="callto" href="callto:+15551234567">callto</a>
+                <a id="xmpp" href="xmpp:someone@example.com">xmpp</a>
+                <a id="ftp" href="ftp://example.com/file">ftp</a>
+                <a id="cid" href="cid:part1@example.com">cid</a>
+                <a id="data" href="data:text/html,hello">data</a>
+                <a id="blob" href="blob:https://example.com/uuid">blob</a>
+                <a href="mailto://lol.jpg">mailto</a>
+            `);
+            expect(querySelectorAll('[target="_blank"]').length).toEqual(7);
+        });
+
+        it('should not add target to fragments or mailto', () => {
+            const { querySelector } = setup(`
+                <a id="fragment" href="#section">anchor</a>
+                <a id="mail" href="mailto:someone@example.com">mailto</a>
+            `);
+            expect(querySelector('#fragment')?.hasAttribute('target')).toBe(false);
+            expect(querySelector('#mail')?.hasAttribute('target')).toBe(false);
         });
     });
 

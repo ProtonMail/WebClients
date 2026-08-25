@@ -13,6 +13,7 @@ import clsx from '@proton/utils/clsx';
 
 import type { OnMessageImageLoadError } from 'proton-mail/components/message/interface';
 
+import { getIframeDocument } from '../helpers/getIframeDocument';
 import getIframeSandboxAttributes from '../helpers/getIframeSandboxAttributes';
 import useIframeAfterBlockquote from '../hooks/useIframeAfterBlockquote';
 import useIframeDispatchEvents from '../hooks/useIframeDispatchEvents';
@@ -62,7 +63,7 @@ const MessageBodyIframe = ({
     iframeCSSStyles,
     iframeSVG,
 }: Props) => {
-    useSyncIframeStyles(iframeRef.current?.contentWindow?.document.documentElement, document.documentElement);
+    useSyncIframeStyles(getIframeDocument(iframeRef.current)?.documentElement, document.documentElement);
 
     const { initStatus, iframeRootDivRef } = useInitIframeContent({
         messageID: message.data?.ID,

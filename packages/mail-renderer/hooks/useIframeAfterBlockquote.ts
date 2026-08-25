@@ -2,6 +2,7 @@ import type { RefObject } from 'react';
 import { useEffect } from 'react';
 
 import { MESSAGE_IFRAME_AFTER_BLOCKQUOTE_ID } from '../constants';
+import { getIframeDocument } from '../helpers/getIframeDocument';
 
 interface Props {
     iframeRef: RefObject<HTMLIFrameElement>;
@@ -19,7 +20,7 @@ const useIframeAfterBlockquote = ({ iframeRef, initStatus, afterBlockquoteConten
         if (initStatus === 'start') {
             return;
         }
-        const iframeAfterBlockquoteDiv = iframeRef.current?.contentWindow?.document.getElementById(
+        const iframeAfterBlockquoteDiv = getIframeDocument(iframeRef.current)?.getElementById(
             MESSAGE_IFRAME_AFTER_BLOCKQUOTE_ID
         );
         if (!iframeAfterBlockquoteDiv) {
