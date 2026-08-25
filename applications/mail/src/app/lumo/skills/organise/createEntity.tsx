@@ -4,9 +4,11 @@ import TextFieldBody from '@proton/components/components/lumoAgent/cardBodies/Te
 import type { CardBodyProps, CardRenderer } from '@proton/components/components/lumoAgent/types';
 import { IcFolderPlus } from '@proton/icons/icons/IcFolderPlus';
 import { IcTagPlus } from '@proton/icons/icons/IcTagPlus';
+import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
 import type { ActionRequest, ToolDefinition, ToolHandler } from '@proton/llm/lib/lumoAgent/contracts/types';
 import { getRandomAccentColor } from '@proton/shared/lib/colors';
-import { LABEL_TYPE } from '@proton/shared/lib/constants';
+import { LABEL_TYPE, MAX_FOLDER_NESTING_LEVEL } from '@proton/shared/lib/constants';
+import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 
 import { resolveTypedId } from '../../helpers/references';
 import type { MailToolDeps, MailToolModule } from '../../toolModule';
@@ -29,9 +31,9 @@ export interface CreatedEntityResult {
 
 type EntityKind = 'folder' | 'label';
 
-const ENTITY_LABEL_TYPES: Record<EntityKind, LABEL_TYPE> = {
-    folder: LABEL_TYPE.MESSAGE_FOLDER,
-    label: LABEL_TYPE.MESSAGE_LABEL,
+const ENTITY_DEFAULTS: Record<EntityKind, { Type: LABEL_TYPE; Notify: number }> = {
+    folder: { Type: LABEL_TYPE.MESSAGE_FOLDER, Notify: 1 },
+    label: { Type: LABEL_TYPE.MESSAGE_LABEL, Notify: 0 },
 };
 
 /**
@@ -41,18 +43,43 @@ const ENTITY_LABEL_TYPES: Record<EntityKind, LABEL_TYPE> = {
  */
 const FREE_TEXT_PARAMS = ['name'] as const;
 
-/** A folder is created through the same `createLabel` endpoint as a label, differing only in `Type`. */
+/**
+ * The app's own parent picker never offers a folder this deep — ParentFolderSelector drops options at
+ * `level >= MAX_FOLDER_NESTING_LEVEL` — so the API rejects the nesting the model proposed. Without this the
+ * user confirms a folder that is then never created, and the model is told only "the tool failed".
+ */
+const assertParentCanNest = (parentFolderID: string, folders: Folder[]) => {
+    const parentIdOf = new Map(folders.map((folder) => [folder.ID, folder.ParentID]));
+    let ancestors = 0;
+    let ancestorId = parentIdOf.get(parentFolderID);
+    // Bounded by the folder count rather than trusting the chain to terminate.
+    while (ancestorId && ancestors < folders.length) {
+        ancestors += 1;
+        ancestorId = parentIdOf.get(String(ancestorId));
+    }
+    if (ancestors < MAX_FOLDER_NESTING_LEVEL) {
+        return;
+    }
+    const parentName = folders.find((folder) => folder.ID === parentFolderID)?.Name ?? parentFolderID;
+    throw new ToolInputError(
+        `Folders nest at most ${MAX_FOLDER_NESTING_LEVEL} levels deep, and "${parentName}" is already at that depth, so nothing can be created inside it. Nest under one of its ancestors instead, or pass \`parentId\`: null for a top-level folder.`
+    );
+};
+
+/** Both entities are created through the same `createLabel` endpoint; {@link ENTITY_DEFAULTS} is what differs. */
 const createEntityHandler =
     (kind: EntityKind) =>
     (mail: MailToolDeps): ToolHandler<CreateEntityParams, CreatedEntityResult> =>
     async ({ name, parentId }, { references }) => {
         const parentFolderID = parentId ? resolveTypedId(parentId, ['folder'], references) : undefined;
+        if (parentFolderID) {
+            assertParentCanNest(parentFolderID, mail.getFolders());
+        }
         const created = await mail.createLabel({
             label: {
                 Name: name,
                 Color: getRandomAccentColor(),
-                Type: ENTITY_LABEL_TYPES[kind],
-                ...(kind === 'folder' ? { Notify: 1 } : {}),
+                ...ENTITY_DEFAULTS[kind],
                 ...(parentFolderID ? { ParentID: parentFolderID } : {}),
             },
         });
@@ -115,10 +142,27 @@ export const createLabelDefinition: ToolDefinition<CreateEntityParams, CreatedEn
 
 const entityName = (source: Record<string, any>): string => String(source.name ?? '');
 
-const proposedName = (action: ActionRequest) => entityName(action) || undefined;
-
 /** An emptied field would create an unnamed entity the backend rejects, reaching the model only as a failure. */
 const hasName = (params: Record<string, any>): boolean => entityName(params).trim().length > 0;
+
+/**
+ * The parent's name is read straight out of `labels`, not through `referenceName`: `list_folders` mints a
+ * parent reference without a name, so a parent outside its own results has none recorded — and showing
+ * "Hotels in folder-x7b2q1" is worse than dropping the clause.
+ */
+const describeEntity = (action: ActionRequest, labels: Record<string, string>): string | undefined => {
+    const name = entityName(action);
+    if (!name) {
+        return undefined;
+    }
+    const parentName = labels[String(action.parentId)];
+    if (!parentName) {
+        return name;
+    }
+
+    // translator: a new folder's name followed by the folder it will be nested inside, e.g. "Hotels in Travel"
+    return c('Info').t`${name} in ${parentName}`;
+};
 
 /** `title` and `fieldLabel` are thunks because their `ttag` strings must resolve at render time, not here. */
 const entityCardRenderer = (
@@ -128,7 +172,7 @@ const entityCardRenderer = (
 ): CardRenderer => ({
     icon,
     title,
-    subtitle: proposedName,
+    subtitle: describeEntity,
     renderBody: ({ params, onChange }: CardBodyProps) => (
         <TextFieldBody
             label={fieldLabel()}
@@ -137,7 +181,7 @@ const entityCardRenderer = (
         />
     ),
     canApply: hasName,
-    detail: proposedName,
+    detail: describeEntity,
 });
 
 export const createFolderCardRenderer = entityCardRenderer(
