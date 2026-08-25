@@ -262,7 +262,7 @@ export const createClientToolExecutor = (config: ClientToolExecutorConfig): Lumo
             const action: ActionRequest = { type: definition.name, ...args };
             const decision = await confirm.requestConfirmation(action, collectLabels(action, references));
             if (decision.action === 'cancel') {
-                return okResult('The user declined that change. Suggest an alternative or ask what they want instead.');
+                return okResult('The user declined that change.');
             }
             const editedParams = decision.params;
             const editedError = guardReferences(definition, editedParams);
@@ -276,9 +276,7 @@ export const createClientToolExecutor = (config: ClientToolExecutorConfig): Lumo
             // A create_* tool serialises the new entity's reference here so the model can chain a
             // follow-up without a re-read; other mutations serialise to ''.
             const detail = applied.payload;
-            return okResult(
-                `Applied ${definition.name} successfully.${detail ? ` ${detail}` : ''} You MUST now respond — either call the next tool to continue, or, if the request is complete, reply with a brief confirmation of what you did. Do not stop without responding.`
-            );
+            return okResult(`Applied ${definition.name} successfully.${detail ? ` ${detail}` : ''}`);
         }
 
         const read = await runHandler(definition, args, options);
