@@ -10,4 +10,5 @@ export enum BroadcastSource {
   RetryingMessagesAfterReconnect = 'RetryingMessagesAfterReconnect',
   AwarenessInterval = 'AwarenessInterval',
   SheetsImport = 'SheetsImport',
+  UpdateReplayTool = 'UpdateReplayTool',
 }
