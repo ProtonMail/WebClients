@@ -43,7 +43,6 @@ const createParams = (overrides: Record<string, any> = {}) => ({
     meetingLinkNameRef: { current: 'meeting-abc' },
     triggerFullReconnectionRef: { current: vi.fn() },
     reportMeetError: vi.fn(),
-    withMeetingLinkNameTag: (options?: unknown) => options,
     ...overrides,
 });
 

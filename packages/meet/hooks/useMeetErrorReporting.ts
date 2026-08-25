@@ -5,6 +5,8 @@ import type { SeverityLevel } from '@sentry/browser';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import { useGetAnalyticsAttributes } from '../contexts/AnalyticsContext';
+
 const MAX_SAME_ERROR = 10;
 
 interface ReportMeetErrorOptions {
@@ -16,9 +18,15 @@ interface ReportMeetErrorOptions {
 
 export type ReportMeetError = (label: string, options?: ReportMeetErrorOptions | unknown) => void;
 
+const isReportMeetErrorOptions = (options: unknown): options is ReportMeetErrorOptions =>
+    !!options &&
+    typeof options === 'object' &&
+    ('context' in options || 'level' in options || 'fingerprint' in options || 'tags' in options);
+
 export const useMeetErrorReporting = () => {
     const shouldReportError = useFlag('MeetErrorReporting');
     const errorCountMapRef = useRef<Map<string, number>>(new Map());
+    const getAnalyticsAttributes = useGetAnalyticsAttributes();
 
     const reportMeetError = useCallback<ReportMeetError>(
         (label, options) => {
@@ -32,25 +40,26 @@ export const useMeetErrorReporting = () => {
 
                 errorCountMapRef.current.set(label, currentCount + 1);
 
-                const isReportMeetErrorOptions =
-                    !!options &&
-                    typeof options === 'object' &&
-                    ('context' in options || 'level' in options || 'fingerprint' in options || 'tags' in options);
+                const analyticsAttributes = getAnalyticsAttributes();
 
-                if (isReportMeetErrorOptions) {
-                    const { level = 'error', context, fingerprint, tags } = options as ReportMeetErrorOptions;
+                if (isReportMeetErrorOptions(options)) {
+                    const { level = 'error', context, fingerprint, tags } = options;
                     captureMessage(label, {
                         level,
                         extra: context,
                         fingerprint,
-                        tags,
+                        tags: { ...analyticsAttributes, ...tags },
                     });
                 } else {
-                    captureMessage(label, { level: 'error', extra: { error: options } });
+                    captureMessage(label, {
+                        level: 'error',
+                        extra: { error: options },
+                        tags: analyticsAttributes,
+                    });
                 }
             }
         },
-        [shouldReportError]
+        [shouldReportError, getAnalyticsAttributes]
     );
 
     const clearSentryReportErrorCounts = useCallback(() => {

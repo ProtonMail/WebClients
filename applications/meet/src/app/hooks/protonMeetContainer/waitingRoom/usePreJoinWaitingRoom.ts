@@ -85,7 +85,6 @@ export const usePreJoinWaitingRoom = () => {
                 if (error !== MeetCoreErrorEnum.RoomJoinRequestTimeout) {
                     reportMeetError('Failed to wait for waiting room welcome', {
                         context: { error },
-                        tags: { meetingLinkName: meetLinkName },
                     });
                 }
 
@@ -110,7 +109,6 @@ export const usePreJoinWaitingRoom = () => {
             notifyError(c('Error').t`Failed to join meeting. Please try again.`);
             reportMeetError('Failed to create waiting room join request prejoin', {
                 context: { error },
-                tags: { meetingLinkName: meetLinkName },
             });
             dispatch(cancelAdmission());
             return;
@@ -167,7 +165,6 @@ export const usePreJoinWaitingRoom = () => {
             } catch (error) {
                 reportMeetError('Failed to set waiting room join decision handler', {
                     context: { error },
-                    tags: { meetingLinkName: meetLinkName },
                 });
             }
 
@@ -207,7 +204,6 @@ export const usePreJoinWaitingRoom = () => {
                 } catch (error) {
                     reportMeetError('Failed to cancel waiting room join request', {
                         context: { error },
-                        tags: { meetingLinkName: linkToCancel },
                     });
                 }
             }
