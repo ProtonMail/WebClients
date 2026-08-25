@@ -12,6 +12,8 @@ import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { removeImagesFromContent } from '@proton/sanitize/purify';
 import { applyFilters } from '@proton/shared/lib/api/filters';
 import { AUTO_REPLY_CHARACTER_COUNT_LIMIT } from '@proton/shared/lib/mail/constants';
+import type { CreateFilter, Filter, FilterActions, FilterCondition, FilterOperator } from '@proton/sieve/filterModel';
+import { FilterStatement } from '@proton/sieve/filterModel';
 import generateUID from '@proton/utils/generateUID';
 
 import Form from '../../../components/form/Form';
@@ -24,18 +26,8 @@ import ModalTwoFooter from '../../../components/modalTwo/ModalFooter';
 import ModalTwoHeader from '../../../components/modalTwo/ModalHeader';
 import useModalState from '../../../components/modalTwo/useModalState';
 import { getDefaultFolders, noFolderValue } from '../constants';
-import type {
-    Actions,
-    Condition,
-    CreateFilter,
-    Errors,
-    Filter,
-    FilterActions,
-    FilterCondition,
-    FilterOperator,
-    SimpleFilterModalModel,
-} from '../interfaces';
-import { FilterStatement, Step } from '../interfaces';
+import type { Actions, Condition, Errors, SimpleFilterModalModel } from '../interfaces';
+import { Step } from '../interfaces';
 import { useFilterDispatch } from '../useFilterDispatch';
 import { computeFromTree, convertModel } from '../utils';
 import CloseFilterModal from './CloseFilterModal';

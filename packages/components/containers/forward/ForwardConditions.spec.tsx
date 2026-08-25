@@ -1,8 +1,8 @@
 import { render } from '@testing-library/react';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
+import { ConditionComparator, ConditionType, FilterStatement } from '@proton/sieve/filterModel';
 
-import { ConditionComparator, ConditionType, FilterStatement } from '../filters/interfaces';
 import ForwardConditions from './ForwardConditions';
 
 jest.mock('@proton/app-context/useNotifications');

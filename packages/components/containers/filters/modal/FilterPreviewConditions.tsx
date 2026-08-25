@@ -3,11 +3,11 @@ import { Fragment, useMemo } from 'react';
 import { c } from 'ttag';
 
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
+import { ConditionType, FilterStatement } from '@proton/sieve/filterModel';
 import clsx from '@proton/utils/clsx';
 
 import { getComparatorLabels, getConditionTypeLabels } from '../constants';
 import type { SimpleFilterModalModel } from '../interfaces';
-import { ConditionType, FilterStatement } from '../interfaces';
 import { getConditionLabel, getEmailSentLabel, getEmailSentLabelJt } from './helper';
 
 interface Props {

@@ -1,17 +1,6 @@
-import type {
-    FilterActions,
-    FilterCondition,
-    FilterRedirect,
-    FilterStatement,
-    SimpleObject,
-} from '@proton/components/containers/filters/interfaces';
-import {
-    ConditionComparator,
-    ConditionComparatorInvertedMap,
-    ConditionType,
-} from '@proton/components/containers/filters/interfaces';
-
 import { TEST_NODES, V1, V2 } from '../constants';
+import type { FilterActions, FilterCondition, FilterRedirect, FilterStatement, SimpleObject } from '../filterModel';
+import { ConditionComparator, ConditionComparatorInvertedMap, ConditionType } from '../filterModel';
 import { escapeCharacters, escapeVariables, unique } from '../helpers';
 import type {
     BuildFileIntoType,

@@ -1,6 +1,5 @@
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 
-import type { CreateFilter, Filter } from '@proton/components/containers/filters/interfaces';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import {
     addTreeFilter,
@@ -8,6 +7,7 @@ import {
     toggleEnable,
     updateFilter as updateFilterConfig,
 } from '@proton/shared/lib/api/filters';
+import type { CreateFilter, Filter } from '@proton/sieve/filterModel';
 
 import { type MailFiltersState, filtersActions } from './index';
 

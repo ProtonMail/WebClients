@@ -1,19 +1,12 @@
 import isDeepEqual from 'lodash/isEqual';
 
 import { toMap } from '@proton/shared/lib/helpers/object';
+import type { CreateFilter, Filter, FilterActions, FilterCondition, FilterOperator } from '@proton/sieve/filterModel';
 import { fromSieveTree } from '@proton/sieve/fromSieveTree';
 import { toSieveTree } from '@proton/sieve/toSieveTree';
 
 import { COMPARATORS, FILTER_VERSION, OPERATORS, TYPES, getDefaultFolders } from './constants';
-import type {
-    CreateFilter,
-    Filter,
-    FilterActions,
-    FilterCondition,
-    FilterModalModelBase,
-    FilterOperator,
-    SimpleFilterModalModel,
-} from './interfaces';
+import type { FilterModalModelBase, SimpleFilterModalModel } from './interfaces';
 
 export const computeFromTree = (filter: CreateFilter) => {
     const ignoreComment = ({ Type }: any) => Type !== 'Comment';
