@@ -1,5 +1,9 @@
-import { DAY, MINUTE } from '@proton/shared/lib/constants';
 import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
+
+// @proton/shared depends on this package, so keep time constants local.
+const SECOND = 1000;
+const MINUTE = 60 * SECOND;
+const DAY = 24 * 60 * MINUTE;
 
 // By default, the client re-fetches models after this expiry date. If the cache type is `stale` or `stale-refetch`
 // and this expiration date is passed, it won't use the stale value.
