@@ -17,7 +17,7 @@ const data: MailImportState = {
 
 jest.mock('react-redux', () => ({
     ...jest.requireActual('react-redux'),
-    useSelector: jest.fn().mockReturnValue({ mailImport: data }),
+    useSelector: jest.fn(() => ({ mailImport: data })),
 }));
 
 const addresses = generateMockAddressArray(3, true);
