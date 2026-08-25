@@ -3739,6 +3739,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ 복호화할 수 없는 이름"
+      ],
+      "Because this document was in a shared folder, only the folder owner can restore it": [
+        "현재 문서가 공유된 폴더에 있으므로 폴더의 소유자만 복원할 수 있습니다."
       ]
     },
     "error": {
@@ -11030,33 +11033,33 @@
     },
     "q3campaign2026: Action": {
       "Get the deal": [
-        "할인 받기"
+        "특가로 구매"
       ],
       "Special Offer": [
-        "특별 제안"
+        "특가 할인"
       ]
     },
     "q3campaign2026: Info": {
       "/month": [
-        "/월간"
+        "/월"
       ],
       "2 individual accounts": [
-        "2개 개별 계정"
+        "개별 계정 2개"
       ],
       "2 TB of secure storage": [
-        "2 TB 보안 스토리지"
+        "2TB 보안 스토리지"
       ],
       "3 TB of secure storage": [
-        "3 TB 보안 스토리지"
+        "3TB 보안 스토리지"
       ],
       "500 GB of secure storage": [
-        "500 GB 보안 스토리지"
+        "500GB 보안 스토리지"
       ],
       "6 individual accounts": [
-        "6개 개별 계정"
+        "개별 계정 6개"
       ],
       "Advanced protection against cyber threats": [
-        "사이버 위협에 대한 더욱 향상된 보호 기능"
+        "사이버 위협에 대한 고급 보호"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
         "할인은 표준 월간 요금을 기준으로 합니다. 결제일이 종료되면 구독은 표준 연간 요금으로 갱신됩니다."
@@ -11089,16 +11092,26 @@
     },
     "q3campaign2026: Title": {
       "for 12 months": [
-        "12개월간"
+        "12개월 플랜"
       ],
       "One plan, full power": [
         "하나의 플랜에서 더 많은 가능성을"
       ],
       "One plan, max savings": [
-        "하나의 플랜으로 더욱 알뜰하게"
+        "단 하나의 요금제, 압도적인 비용 절감"
       ],
       "One plan, more power": [
         "하나의 플랜에서 더 많은 가능성을"
+      ]
+    },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "지금 사용해보세요"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "${ CALENDAR_APP_NAME }를 사용할 수 있습니다. ${ link }"
       ]
     }
   }
