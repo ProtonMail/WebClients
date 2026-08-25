@@ -25,6 +25,9 @@
       ]
     },
     "Accessibility announcement": {
+      "${ BRAND_NAME } background applied": [
+        "Εφαρμόστηκε φόντο ${ BRAND_NAME }"
+      ],
       "${ name } joined the meeting": [
         "Ο χρήστης ${ name } συμμετείχε στη συνάντηση"
       ],
@@ -61,17 +64,38 @@
       "A participant reacted with ${ emoji }": [
         "Ένας συμμετέχων αντέδρασε με ${ emoji }"
       ],
+      "Abstract background applied": [
+        "Εφαρμόστηκε αφηρημένο φόντο"
+      ],
+      "Background effect turned off": [
+        "Το εφέ φόντου απενεργοποιήθηκε"
+      ],
+      "Beach background applied": [
+        "Εφαρμόστηκε φόντο παραλίας"
+      ],
+      "Blurred background applied": [
+        "Εφαρμόστηκε θολό φόντο"
+      ],
+      "Coffee place background applied": [
+        "Εφαρμόστηκε φόντο καφετέριας"
+      ],
       "Connected via TURN relay mode due to network restrictions. This may increase latency and affect call quality.": [
         "Συνδεδεμένος μέσω της λειτουργίας αναμετάδοσης TURN λόγω περιορισμών του δικτύου. Αυτό μπορεί να αυξήσει την καθυστέρηση και να επηρεάσει την ποιότητα της κλήσης."
       ],
       "Connection lost. Reconnecting…": [
         "Χάθηκε η σύνδεση. Επανασύνδεση…"
       ],
+      "Mountain background applied": [
+        "Εφαρμόστηκε φόντο βουνού"
+      ],
       "New chat message: ${ message }": [
         "Νέο μήνυμα συνομιλίας: ${ message }"
       ],
       "Now starting recording": [
         "Ξεκινά η ηχογράφηση τώρα"
+      ],
+      "Office background applied": [
+        "Εφαρμόστηκε φόντο γραφείου"
       ],
       "Reconnected to the meeting": [
         "Επανασυνδέθηκε στη σύσκεψη"
@@ -183,6 +207,9 @@
       ],
       "Back": [
         "Πίσω"
+      ],
+      "Backgrounds and effects": [
+        "Φόντα και εφέ"
       ],
       "Blur background": [
         "Θόλωμα παρασκηνίου"
@@ -316,6 +343,9 @@
       "Enable camera": [
         "Ενεργοποίηση κάμερας"
       ],
+      "Enable captions": [
+        "Ενεργοποίηση υποτίτλων"
+      ],
       "Enable waiting room": [
         "Ενεργοποίηση αίθουσας αναμονής"
       ],
@@ -384,6 +414,9 @@
       ],
       "Leave meeting": [
         "Αποχώρηση από τη σύσκεψη"
+      ],
+      "Live captions": [
+        "Ζωντανοί υπότιτλοι"
       ],
       "Lock meeting": [
         "Κλείδωμα σύσκεψης"
@@ -696,9 +729,6 @@
       "View invoice": [
         "Προβολή τιμολογίου"
       ],
-      "Virtual backgrounds": [
-        "Εικονικά φόντα"
-      ],
       "Waiting room": [
         "Αίθουσα αναμονής"
       ],
@@ -751,6 +781,9 @@
       ],
       "Leave Meeting": [
         "Αποχώρηση από τη Σύσκεψη"
+      ],
+      "Live captions": [
+        "Ζωντανοί υπότιτλοι"
       ],
       "Lock meeting": [
         "Κλείδωμα σύσκεψης"
@@ -843,11 +876,11 @@
       "Audio settings": [
         "Ρυθμίσεις ήχου"
       ],
-      "Background effects": [
-        "Εφέ φόντου"
-      ],
       "Backgrounds": [
         "Φόντα"
+      ],
+      "Blur and personal": [
+        "Θάμπωμα και προσωπικό"
       ],
       "Chat": [
         "Συνομιλία"
@@ -1956,6 +1989,12 @@
       "Failed to unlock meeting": [
         "Αποτυχία ξεκλειδώματος σύσκεψης"
       ],
+      "Failed to update caption language. Please try again.": [
+        "Η ενημέρωση της γλώσσας των υπότιτλων απέτυχε. Παρακαλούμε δοκιμάστε ξανά."
+      ],
+      "Failed to update live captions. Please try again.": [
+        "Η ενημέρωση των ζωντανών υπότιτλων απέτυχε. Παρακαλούμε δοκιμάστε ξανά."
+      ],
       "Failed to update waiting room setting. Please try again.": [
         "Η ενημέρωση της ρύθμισης της αίθουσας αναμονής απέτυχε. Παρακαλούμε δοκιμάστε ξανά."
       ],
@@ -1967,6 +2006,15 @@
       ],
       "Invalid verification code": [
         "Μη έγκυρος κωδικός επαλήθευσης"
+      ],
+      "Live captions aren't working. Try turning them off and on again.": [
+        "Οι ζωντανοί υπότιτλοι δε λειτουργούν. Δοκιμάστε να τους απενεργοποιήσετε και να τους ενεργοποιήσετε ξανά."
+      ],
+      "Live captions couldn't be started.": [
+        "Δεν ήταν δυνατή η εκκίνηση των ζωντανών υπότιτλων."
+      ],
+      "Live captions have stopped.": [
+        "Οι ζωντανοί υπότιτλοι έχουν σταματήσει."
       ],
       "Microphone access is blocked. Allow it in your browser settings.": [
         "Η πρόσβαση στο μικρόφωνο είναι αποκλεισμένη. Επιτρέψτε την στις ρυθμίσεις του προγράμματος περιήγησής σας."
@@ -2292,6 +2340,9 @@
       "Advanced mode: tune every blur constant for the next version, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
         "Λειτουργία για προχωρημένους: ρυθμίστε κάθε σταθερά θολώματος για την επόμενη έκδοση και, στη συνέχεια, εφαρμόστε για να δημιουργήσετε ξανά την προεπισκόπηση. Οι παρακάμψεις έχουν προτεραιότητα έναντι των τιμών αρχείου και Unleash."
       ],
+      "Allow camera access to preview your background": [
+        "Επιτρέψτε την πρόσβαση στην κάμερα για προεπισκόπηση του φόντου σας"
+      ],
       "Anonymous ${ particle } ${ participantNumber }": [
         "Ανώνυμος ${ particle } ${ participantNumber }"
       ],
@@ -2327,6 +2378,9 @@
       ],
       "Camera permission denied": [
         "Η άδεια χρήσης κάμερας απορρίφθηκε"
+      ],
+      "Captions are on": [
+        "Οι υπότιτλοι είναι ενεργοποιημένοι"
       ],
       "Changes are staged. Apply to rebuild the preview with the new constants.": [
         "Οι αλλαγές προετοιμάζονται. Εφαρμόστε για να αναδημιουργήσετε την προεπισκόπηση με τις νέες σταθερές."
@@ -2862,6 +2916,9 @@
       "To create a room, you'll need **a free ${ BRAND_NAME } Account** so we can save the room. This only takes a few seconds.": [
         "Για να δημιουργήσετε μία αίθουσα, θα χρειαστείτε **έναν δωρεάν λογαριασμό ${ BRAND_NAME }** ώστε να μπορέσουμε να αποθηκεύσουμε την αίθουσα. Αυτό διαρκεί μόνο λίγα δευτερόλεπτα."
       ],
+      "To create live captions, the captioning service needs access to the meeting audio. Captions are only visible to you and are not saved.": [
+        "Για να δημιουργήσετε ζωντανούς υπότιτλους, η υπηρεσία υποτίτλων χρειάζεται πρόσβαση στον ήχο της σύσκεψης. Οι υπότιτλοι είναι ορατές μόνο σε εσάς και δεν αποθηκεύονται."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "Για την καταπολέμηση ενοχλήσεων και καταχρήσεων, παρακαλούμε επαληθεύστε ότι είστε άνθρωπος."
       ],
@@ -2882,6 +2939,9 @@
       ],
       "Turn on camera": [
         "Ενεργοποίηση κάμερας"
+      ],
+      "Turn on live captions?": [
+        "Ενεργοποίηση ζωντανών υπότιτλων;"
       ],
       "Unable to reconnect to the meeting. Please rejoin or leave.": [
         "Δεν είναι δυνατή η επανασύνδεση στη σύσκεψη. Παρακαλούμε συμμετάσχετε ξανά ή αποχωρήστε."
@@ -3003,20 +3063,23 @@
       "Your phone number will only be used for this one-time verification.": [
         "Ο αριθμός τηλεφώνου σας θα χρησιμοποιηθεί μόνο για αυτή την εφάπαξ επαλήθευση."
       ],
-      "Your preview": [
-        "Η προεπισκόπησή σας"
-      ],
       "You’re about to open a link in a new tab. Make sure you trust the website before continuing.": [
         "Είστε έτοιμοι να ανοίξετε έναν σύνδεσμο σε νέα καρτέλα. Βεβαιωθείτε ότι εμπιστεύεστε τον ιστότοπο πριν συνεχίσετε."
       ]
     },
     "Label": {
+      "${ BRAND_NAME } background": [
+        "${ BRAND_NAME } φόντο"
+      ],
       "${ BRAND_NAME } username": [
         "όνομα χρήστη ${ BRAND_NAME }"
       ],
       "${ numberOfStars } star": [
         "${ numberOfStars } αστέρι",
         "${ numberOfStars } αστέρια"
+      ],
+      "Abstract background": [
+        "Αφηρημένο φόντο"
       ],
       "Add optional details": [
         "Προσθέστε προαιρετικές λεπτομέρειες"
@@ -3026,6 +3089,9 @@
       ],
       "Advanced mode": [
         "Λειτουργία για προχωρημένους"
+      ],
+      "Agent": [
+        "Πράκτορας"
       ],
       "Anyone with the link can join": [
         "Οποιοσδήποτε έχει τον σύνδεσμο μπορεί να συμμετάσχει"
@@ -3045,8 +3111,8 @@
       "Background color": [
         "Χρώμα φόντου"
       ],
-      "Blue background": [
-        "Μπλέ φόντο"
+      "Beach background": [
+        "Φόντο παραλίας"
       ],
       "Blurred (next)": [
         "Θολό (επόμενο)"
@@ -3071,6 +3137,9 @@
       ],
       "Code is 6 digits without spaces": [
         "Ο κωδικός είναι 6 ψηφία χωρίς κενά"
+      ],
+      "Coffee place background": [
+        "Φόντο καφετέριας"
       ],
       "Connection Quality": [
         "Ποιότητα σύνδεσης"
@@ -3138,9 +3207,6 @@
       "Google Calendar": [
         "Ημερολόγιο Google"
       ],
-      "Green background": [
-        "Πράσινο φόντο"
-      ],
       "Hide password": [
         "Απόκρυψη κωδικού πρόσβασης"
       ],
@@ -3162,6 +3228,9 @@
       "Leave meeting options": [
         "Επιλογές αποχώρησης από τη σύσκεψη"
       ],
+      "Live caption agent": [
+        "Πράκτορας ζωντανών υποτίτλων"
+      ],
       "Manage recordings": [
         "Διαχείριση ηχογραφήσεων"
       ],
@@ -3180,6 +3249,9 @@
       "Monday to Friday": [
         "Δευτέρα έως Παρασκευή"
       ],
+      "Mountain background": [
+        "Φόντο βουνού"
+      ],
       "Muted": [
         "Σιγασμένο"
       ],
@@ -3189,14 +3261,14 @@
       "Next": [
         "Επόμενο"
       ],
+      "Office background": [
+        "Φόντο γραφείου"
+      ],
       "Operating system": [
         "Λειτουργικό σύστημα (OS)"
       ],
       "Operating system version": [
         "Έκδοση λειτουργικού συστήματος"
-      ],
-      "Orange background": [
-        "Πορτοκαλί φόντο"
       ],
       "Outlook Calendar": [
         "Ημερολόγιο Outlook"
@@ -3212,9 +3284,6 @@
       ],
       "Phone number": [
         "Αριθμός τηλεφώνου"
-      ],
-      "Purple background": [
-        "Μωβ φόντο"
       ],
       "Raw": [
         "Ακατέργαστη"
@@ -3254,6 +3323,9 @@
       ],
       "Solid color": [
         "Συμπαγές χρώμα"
+      ],
+      "Spoken language": [
+        "Γλώσσα ομιλίας"
       ],
       "Subscribed": [
         "Εγγραφήκατε"
@@ -3583,8 +3655,16 @@
       "No": [
         "Όχι"
       ],
+      "Transcribing...": [
+        "Μεταγραφή..."
+      ],
       "Yes": [
         "Ναι"
+      ]
+    },
+    "Subtitle": {
+      "This system agent creates live captions. It is not a participant and cannot send messages.": [
+        "Αυτός ο παράγοντας συστήματος δημιουργεί ζωντανούς υπότιτλους. Δε συμμετέχει και δεν μπορεί να στείλει μηνύματα."
       ]
     },
     "Success": {
@@ -3664,11 +3744,11 @@
       "Background blur comparison": [
         "Σύγκριση θολώματος φόντου"
       ],
-      "Background effects": [
-        "Εφέ φόντου"
-      ],
       "Backgrounds": [
         "Φόντα"
+      ],
+      "Blur and personal": [
+        "Θάμπωμα και προσωπικό"
       ],
       "Camera and microphone are blocked": [
         "Η κάμερα και το μικρόφωνο είναι αποκλεισμένα"
@@ -3902,6 +3982,9 @@
     "Tooltip": {
       "Background blur is not supported on your browser": [
         "Το θάμπωμα παρασκηνίου δεν υποστηρίζεται στο πρόγραμμα περιήγησής σας."
+      ],
+      "Background effects are not supported on your browser": [
+        "Τα εφέ φόντου δεν υποστηρίζονται στο πρόγραμμα περιήγησής σας"
       ],
       "Generate a new meeting link. The current link will stop working.": [
         "Δημιουργήστε έναν νέο σύνδεσμο για τη συνάντηση. Ο τρέχων σύνδεσμος θα σταματήσει να λειτουργεί."

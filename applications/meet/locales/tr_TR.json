@@ -25,6 +25,9 @@
       ]
     },
     "Accessibility announcement": {
+      "${ BRAND_NAME } background applied": [
+        "${ BRAND_NAME } arka planı uygulandı"
+      ],
       "${ name } joined the meeting": [
         "${ name } görüşmeye katıldı"
       ],
@@ -61,17 +64,38 @@
       "A participant reacted with ${ emoji }": [
         "Bir katılımcı ${ emoji } tepkisi verdi"
       ],
+      "Abstract background applied": [
+        "Soyut arka plan uygulandı"
+      ],
+      "Background effect turned off": [
+        "Arka plan efekti devre dışı bırakıldı"
+      ],
+      "Beach background applied": [
+        "Plaj arka planı uygulandı"
+      ],
+      "Blurred background applied": [
+        "Bulanık arka plan uygulandı"
+      ],
+      "Coffee place background applied": [
+        "Kahve dükkanı arka planı uygulandı"
+      ],
       "Connected via TURN relay mode due to network restrictions. This may increase latency and affect call quality.": [
         "Bağlantı, ağ kısıtlamaları nedeniyle TURN aktarım kipi ile kuruldu. Gecikme ve arama kalitesi sorunları yaşanabilir."
       ],
       "Connection lost. Reconnecting…": [
         "Bağlantı kesildi. Yeniden bağlanıyor…"
       ],
+      "Mountain background applied": [
+        "Dağ manzarası arka planı uygulandı"
+      ],
       "New chat message: ${ message }": [
         "Yeni sohbet iletisi: ${ message }"
       ],
       "Now starting recording": [
         "Kayıt şimdi başlatılıyor"
+      ],
+      "Office background applied": [
+        "Ofis arka planı uygulandı"
       ],
       "Reconnected to the meeting": [
         "Görüşme ile yeniden bağlantı kuruldu"
@@ -183,6 +207,9 @@
       ],
       "Back": [
         "Geri"
+      ],
+      "Backgrounds and effects": [
+        "Arka planlar ve efektler"
       ],
       "Blur background": [
         "Bulanık arka plan"
@@ -702,9 +729,6 @@
       "View invoice": [
         "Faturayı görüntüle"
       ],
-      "Virtual backgrounds": [
-        "Sanal arka planlar"
-      ],
       "Waiting room": [
         "Bekleme odası"
       ],
@@ -852,11 +876,11 @@
       "Audio settings": [
         "Ses ayarları"
       ],
-      "Background effects": [
-        "Arka plan efektleri"
-      ],
       "Backgrounds": [
         "Arka planlar"
+      ],
+      "Blur and personal": [
+        "Bulanık ve kişisel"
       ],
       "Chat": [
         "Sohbet"
@@ -2316,6 +2340,9 @@
       "Advanced mode: tune every blur constant for the next version, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
         "Gelişmiş kip: Sonraki sürümün bulanıklık sabitlerini ayarlayın ardından ön izlemeyi yeniden oluşturmak için uygulayın. Bu ayarlar dosyaya ve belirtilmemiş değerlere göre önceliklidir."
       ],
+      "Allow camera access to preview your background": [
+        "Arka planınızı önizlemek için kameraya erişim izni verin"
+      ],
       "Anonymous ${ particle } ${ participantNumber }": [
         "${ particle } ${ participantNumber } anonim"
       ],
@@ -3036,20 +3063,23 @@
       "Your phone number will only be used for this one-time verification.": [
         "Telefon numaranız yalnızca bu tek seferlik doğrulama için kullanılacak."
       ],
-      "Your preview": [
-        "Ön izlemeniz"
-      ],
       "You’re about to open a link in a new tab. Make sure you trust the website before continuing.": [
         "Bir bağlantıyı yeni bir sekmede açmak üzeresiniz. İlerlemeden önce siteye güvendiğinizden emin olun."
       ]
     },
     "Label": {
+      "${ BRAND_NAME } background": [
+        "${ BRAND_NAME } arka plan"
+      ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } kullanıcı adı"
       ],
       "${ numberOfStars } star": [
         "${ numberOfStars } yıldız",
         "${ numberOfStars } yıldız"
+      ],
+      "Abstract background": [
+        "Soyut arka plan"
       ],
       "Add optional details": [
         "İsteğe bağlı bilgiler ekleyin"
@@ -3081,8 +3111,8 @@
       "Background color": [
         "Arka plan rengi"
       ],
-      "Blue background": [
-        "Mavi arka plan"
+      "Beach background": [
+        "Plaj arka planı"
       ],
       "Blurred (next)": [
         "Bulanık (sonraki)"
@@ -3107,6 +3137,9 @@
       ],
       "Code is 6 digits without spaces": [
         "Doğrulama kodu boşluk içermeyen 6 rakamdan oluşur"
+      ],
+      "Coffee place background": [
+        "Kahve dükkanı arka planı"
       ],
       "Connection Quality": [
         "Bağlantı kalitesi"
@@ -3174,9 +3207,6 @@
       "Google Calendar": [
         "Google Takvim"
       ],
-      "Green background": [
-        "Yeşil arka plan"
-      ],
       "Hide password": [
         "Parolayı gizle"
       ],
@@ -3219,6 +3249,9 @@
       "Monday to Friday": [
         "Pazartesi ile Cuma arasında"
       ],
+      "Mountain background": [
+        "Dağ manzarası arka planı"
+      ],
       "Muted": [
         "Sesi kapatılmış"
       ],
@@ -3228,14 +3261,14 @@
       "Next": [
         "İlerle"
       ],
+      "Office background": [
+        "Ofis arka planı"
+      ],
       "Operating system": [
         "İşletim sistemi"
       ],
       "Operating system version": [
         "İşletim sistemi sürümü"
-      ],
-      "Orange background": [
-        "Turuncu arka plan"
       ],
       "Outlook Calendar": [
         "Outlook Takvim"
@@ -3251,9 +3284,6 @@
       ],
       "Phone number": [
         "Telefon numarası"
-      ],
-      "Purple background": [
-        "Mor arka plan"
       ],
       "Raw": [
         "Ham"
@@ -3714,11 +3744,11 @@
       "Background blur comparison": [
         "Arka plan bulanıklığı karşılaştırması"
       ],
-      "Background effects": [
-        "Arka plan etkileri"
-      ],
       "Backgrounds": [
         "Arka planlar"
+      ],
+      "Blur and personal": [
+        "Bulanık ve kişisel"
       ],
       "Camera and microphone are blocked": [
         "Kamera ve mikrofon engellendi"
@@ -3952,6 +3982,9 @@
     "Tooltip": {
       "Background blur is not supported on your browser": [
         "Tarayıcınız arka planın bulanıklaştırılmasını desteklemiyor"
+      ],
+      "Background effects are not supported on your browser": [
+        "Tarayıcınızda arka plan efektleri desteklenmemektedir"
       ],
       "Generate a new meeting link. The current link will stop working.": [
         "Yeni bir görüşme bağlantısı oluşturun. Var olan bağlantı artık çalışmayacak."
