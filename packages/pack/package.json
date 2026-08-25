@@ -23,7 +23,7 @@
         "@babel/runtime": "^7.29.7",
         "@pmmmwh/react-refresh-webpack-plugin": "^0.6.2",
         "@sentry/webpack-plugin": "^1.21.0",
-        "@swc/core": "^1.16.0",
+        "@swc/core": "^1.16.1",
         "autoprefixer": "^10.5.4",
         "babel-loader": "^10.1.1",
         "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
@@ -62,7 +62,7 @@
         "webpack-subresource-integrity": "^5.1.0"
     },
     "devDependencies": {
-        "eslint": "^10.8.1",
+        "eslint": "^10.9.0",
         "prettier": "^3.9.6",
         "typescript": "^6.0.3"
     },

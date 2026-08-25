@@ -13,13 +13,13 @@
         "@pdfme/common": "^5.5.10",
         "@pdfme/schemas": "^5.5.10",
         "@pdfme/ui": "^5.5.10",
-        "eslint": "^10.8.1",
+        "eslint": "^10.9.0",
         "toastify-js": "^1.12.0"
     },
     "devDependencies": {
         "@types/toastify-js": "^1.12.4",
         "typescript": "^6.0.3",
-        "vite": "^8.2.1"
+        "vite": "^8.2.2"
     },
     "installConfig": {
         "hoistingLimits": "workspaces"
