@@ -13,7 +13,7 @@ import { reportBug } from '@proton/shared/lib/api/reports';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, BRAND_NAME, CLIENT_TYPES, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
-import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+import { maxLengthValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -40,6 +40,7 @@ import { getClientName, getReportInfo } from '../../helpers/report';
 import type { Screenshot } from './AttachScreenshot';
 import AttachScreenshot from './AttachScreenshot';
 import BugModalLogs from './BugModalLogs';
+import { REPORT_MAX_CHARS } from './constants';
 import { useBugModalLogs } from './useBugModalLogs';
 
 export type BugModalMode = 'chat-no-agents';
@@ -434,7 +435,22 @@ const BugModal = ({
                     placeholder={c('Placeholder').t`Please describe the problem and include any error messages`}
                     value={model.Description}
                     onValue={handleChange('Description')}
-                    error={validator([requiredValidator(model.Description)])}
+                    error={validator([
+                        requiredValidator(model.Description),
+                        maxLengthValidator(model.Description, REPORT_MAX_CHARS),
+                    ])}
+                    assistiveText={
+                        <span
+                            className={`mb-2 ${
+                                model.Description.length > REPORT_MAX_CHARS ? 'color-danger' : undefined
+                            }`}
+                        >
+                            {
+                                // translator: character count under the bug report description. Example: '120/4000 characters'
+                                c('Label').t`${model.Description.length}/${REPORT_MAX_CHARS} characters`
+                            }
+                        </span>
+                    }
                     rows={5}
                     disabled={loading}
                 />
