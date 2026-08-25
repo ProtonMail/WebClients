@@ -4,11 +4,19 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { DEFAULT_MAIL_SETTINGS, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
-import * as mailboxActions from '../../../store/mailbox/mailboxActions';
-
 import { addApiMock, clearAll, waitForSpyCall } from '../../../helpers/test/helper';
 import type { Element } from '../../../models/element';
+import * as mailboxActions from '../../../store/mailbox/mailboxActions';
 import { folders, labels, sendEvent, setup } from './Mailbox.test.helpers';
+
+jest.mock('../../../store/mailbox/mailboxActions', () => {
+    const actual = jest.requireActual('../../../store/mailbox/mailboxActions');
+    return {
+        ...actual,
+        labelConversations: Object.assign(jest.fn(actual.labelConversations), actual.labelConversations),
+        unlabelConversations: Object.assign(jest.fn(actual.unlabelConversations), actual.unlabelConversations),
+    };
+});
 
 const [label1, label2, label3, label4] = labels;
 const [folder1, folder2] = folders;
@@ -93,7 +101,7 @@ describe('Mailbox labels actions', () => {
         };
 
         it('should add a label to two conversations', async () => {
-            const labelConversationsSpy = jest.spyOn(mailboxActions, 'labelConversations');
+            const labelConversationsSpy = jest.mocked(mailboxActions.labelConversations);
 
             const { getItems } = await setup({ conversations, labelID: label1.ID });
 
@@ -119,11 +127,11 @@ describe('Mailbox labels actions', () => {
                 })
             );
 
-            labelConversationsSpy.mockRestore();
+            labelConversationsSpy.mockClear();
         });
 
         it('should remove a label to two conversations', async () => {
-            const unlabelConversationsSpy = jest.spyOn(mailboxActions, 'unlabelConversations');
+            const unlabelConversationsSpy = jest.mocked(mailboxActions.unlabelConversations);
 
             const { getItems } = await setup({ conversations, labelID: label1.ID });
 
@@ -149,12 +157,12 @@ describe('Mailbox labels actions', () => {
                 })
             );
 
-            unlabelConversationsSpy.mockRestore();
+            unlabelConversationsSpy.mockClear();
         });
 
         it('should add and remove a label of a conversation', async () => {
-            const labelConversationsSpy = jest.spyOn(mailboxActions, 'labelConversations');
-            const unlabelConversationsSpy = jest.spyOn(mailboxActions, 'unlabelConversations');
+            const labelConversationsSpy = jest.mocked(mailboxActions.labelConversations);
+            const unlabelConversationsSpy = jest.mocked(mailboxActions.unlabelConversations);
 
             const { getItems } = await setup({ conversations, labelID: label1.ID });
 
@@ -183,8 +191,8 @@ describe('Mailbox labels actions', () => {
                 },
             });
 
-            labelConversationsSpy.mockRestore();
-            unlabelConversationsSpy.mockRestore();
+            labelConversationsSpy.mockClear();
+            unlabelConversationsSpy.mockClear();
         });
     });
 
@@ -205,7 +213,7 @@ describe('Mailbox labels actions', () => {
         };
 
         it('should move two conversations in a another folder', async () => {
-            const labelConversationsSpy = jest.spyOn(mailboxActions, 'labelConversations');
+            const labelConversationsSpy = jest.mocked(mailboxActions.labelConversations);
 
             const { getItems, store } = await setup({
                 conversations,
@@ -233,7 +241,7 @@ describe('Mailbox labels actions', () => {
             const items = getItems();
             expect(items.length).toBe(1);
 
-            labelConversationsSpy.mockRestore();
+            labelConversationsSpy.mockClear();
         });
     });
 

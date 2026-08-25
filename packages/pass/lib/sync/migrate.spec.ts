@@ -17,14 +17,41 @@ import { SyncStrategy } from './types';
 import * as v1Sync from './v1/sync';
 import * as userEventRequests from './v2/user-events.requests';
 
-const getUserEventLatestID = jest.spyOn(userEventRequests, 'getUserEventLatestID');
-const getUserAccess = jest.spyOn(userRequests, 'getUserAccess');
-const getOrganizationForPlan = jest.spyOn(organizationRequests, 'getOrganizationForPlan');
-const getShares = jest.spyOn(shareRequests, 'getShares');
-const getUserInvites = jest.spyOn(inviteRequests, 'getUserInvites');
-const syncV1 = jest.spyOn(v1Sync, 'syncV1');
-const getShareEvents = jest.spyOn(shareRequests, 'getShareEvents');
-const getGroupInvites = jest.spyOn(inviteRequests, 'getGroupInvites');
+jest.mock('@proton/pass/lib/invites/invite.requests', () => ({
+    ...jest.requireActual('@proton/pass/lib/invites/invite.requests'),
+    getUserInvites: jest.fn(),
+    getGroupInvites: jest.fn(),
+}));
+jest.mock('@proton/pass/lib/organization/organization.requests', () => ({
+    ...jest.requireActual('@proton/pass/lib/organization/organization.requests'),
+    getOrganizationForPlan: jest.fn(),
+}));
+jest.mock('@proton/pass/lib/shares/share.requests', () => ({
+    ...jest.requireActual('@proton/pass/lib/shares/share.requests'),
+    getShares: jest.fn(),
+    getShareEvents: jest.fn(),
+}));
+jest.mock('@proton/pass/lib/sync/v1/sync', () => ({
+    ...jest.requireActual('@proton/pass/lib/sync/v1/sync'),
+    syncV1: jest.fn(),
+}));
+jest.mock('@proton/pass/lib/sync/v2/user-events.requests', () => ({
+    ...jest.requireActual('@proton/pass/lib/sync/v2/user-events.requests'),
+    getUserEventLatestID: jest.fn(),
+}));
+jest.mock('@proton/pass/lib/user/user.requests', () => ({
+    ...jest.requireActual('@proton/pass/lib/user/user.requests'),
+    getUserAccess: jest.fn(),
+}));
+
+const getUserEventLatestID = jest.mocked(userEventRequests.getUserEventLatestID);
+const getUserAccess = jest.mocked(userRequests.getUserAccess);
+const getOrganizationForPlan = jest.mocked(organizationRequests.getOrganizationForPlan);
+const getShares = jest.mocked(shareRequests.getShares);
+const getUserInvites = jest.mocked(inviteRequests.getUserInvites);
+const syncV1 = jest.mocked(v1Sync.syncV1);
+const getShareEvents = jest.mocked(shareRequests.getShareEvents);
+const getGroupInvites = jest.mocked(inviteRequests.getGroupInvites);
 
 const access = { plan: { Type: PlanType.FREE } } as HydratedAccessState;
 const v1Result = { v: 1 } as v1Sync.SyncResultV1;

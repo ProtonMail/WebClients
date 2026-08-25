@@ -13,6 +13,44 @@ import * as shares from './user-events.shares';
 import * as sync from './user-events.sync';
 import * as user from './user-events.user';
 
+jest.mock('./user-events.items', () => ({
+    ...jest.requireActual('./user-events.items'),
+    processItemsUpdated: jest.fn(),
+    processItemsDeleted: jest.fn(),
+}));
+jest.mock('./user-events.alias', () => ({
+    ...jest.requireActual('./user-events.alias'),
+    processAliasNoteChanged: jest.fn(),
+    processPendingAliasToCreate: jest.fn(),
+}));
+jest.mock('./user-events.user', () => ({
+    ...jest.requireActual('./user-events.user'),
+    processBreachUpdate: jest.fn(),
+    processUserRefresh: jest.fn(),
+    processOrganizationInfoChanged: jest.fn(),
+}));
+jest.mock('./user-events.shares', () => ({
+    ...jest.requireActual('./user-events.shares'),
+    processSharesCreated: jest.fn(),
+    processSharesUpdated: jest.fn(),
+    processSharesDeleted: jest.fn(),
+}));
+jest.mock('./user-events.folders', () => ({
+    ...jest.requireActual('./user-events.folders'),
+    processFoldersUpdated: jest.fn(),
+    processFoldersDeleted: jest.fn(),
+}));
+jest.mock('./user-events.invites', () => ({
+    ...jest.requireActual('./user-events.invites'),
+    processInvitesChanged: jest.fn(),
+    processGroupInvitesChanged: jest.fn(),
+    processSharesWithInvitesToCreate: jest.fn(),
+}));
+jest.mock('./user-events.sync', () => ({
+    ...jest.requireActual('./user-events.sync'),
+    processFullRefresh: jest.fn(),
+}));
+
 const event = (overrides?: Partial<SyncEventListOutput>) =>
     ({ ItemsUpdated: [], FullRefresh: false, ...overrides }) as SyncEventListOutput;
 
@@ -39,11 +77,14 @@ const processors = [
 
 describe('processUserEvents', () => {
     beforeEach(() => {
-        processors.forEach(([mod, name]) => jest.spyOn(mod as any, name).mockImplementation(sagaReturn(true)));
-        jest.spyOn(sync, 'processFullRefresh').mockImplementation(sagaReturn(true));
+        processors.forEach(([mod, name]) => (mod as any)[name].mockImplementation(sagaReturn(true)));
+        jest.mocked(sync.processFullRefresh).mockImplementation(sagaReturn(true));
     });
 
-    afterEach(() => jest.restoreAllMocks());
+    afterEach(() => {
+        jest.clearAllMocks();
+        jest.restoreAllMocks();
+    });
 
     test('resolves `true` when every processor succeeds', async () => {
         await expect(run(event())).resolves.toBe(true);
@@ -51,7 +92,7 @@ describe('processUserEvents', () => {
     });
 
     test('resolves `false` when any processor fails', async () => {
-        jest.spyOn(shares, 'processSharesUpdated').mockImplementation(sagaReturn(false));
+        jest.mocked(shares.processSharesUpdated).mockImplementation(sagaReturn(false));
         await expect(run(event())).resolves.toBe(false);
     });
 
