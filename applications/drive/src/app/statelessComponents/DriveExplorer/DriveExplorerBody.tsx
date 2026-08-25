@@ -118,6 +118,7 @@ export const DriveExplorerBody = ({
                                         selection={selection}
                                         events={events}
                                         onObserve={observeElement}
+                                        measureElement={virtualizer.measureElement}
                                         getDragMoveControls={getDragMoveControls}
                                         isMultiSelectionDisabled={isMultiSelectionDisabled}
                                         showCheckboxColumn={showCheckboxColumn}
