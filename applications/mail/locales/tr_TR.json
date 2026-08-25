@@ -9778,6 +9778,12 @@
       ],
       "Update filter": [
         "Süzgeci güncelle"
+      ],
+      "${ dateString } at ${ formattedTime }": [
+        "${ dateString } saat ${ formattedTime }"
+      ],
+      "Snooze emails": [
+        "E-postaları ertele"
       ]
     },
     "info": {
@@ -11060,6 +11066,12 @@
       ],
       "Sieve script": [
         "Sieve betiği"
+      ],
+      "At": [
+        "Saat"
+      ],
+      "Return on": [
+        "Geri dön"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -17218,6 +17230,9 @@
       ],
       "Update filter": [
         "Süzgeci güncelle"
+      ],
+      "Snooze emails": [
+        "E-postaları ertele"
       ]
     },
     "Title header for keys table": {
@@ -17920,6 +17935,22 @@
       ],
       "One plan, more power": [
         "Tek tarife, daha fazla güç"
+      ]
+    },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Hemen deneyin"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Artık yeni ${ CALENDAR_APP_NAME } uygulamasına erişebilirsiniz. ${ link }"
+      ]
+    },
+    "Snooze info": {
+      "${ count } email → ${ wakeTime }": [
+        "${ count } e-posta → ${ wakeTime }",
+        "${ count } e-posta → ${ wakeTime }"
       ]
     }
   }

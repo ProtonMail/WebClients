@@ -9778,6 +9778,12 @@
       ],
       "Update filter": [
         "Actualitzar el filtre"
+      ],
+      "${ dateString } at ${ formattedTime }": [
+        "${ dateString } a ${ formattedTime }"
+      ],
+      "Snooze emails": [
+        "Ajorna els correus electrònics"
       ]
     },
     "info": {
@@ -11060,6 +11066,12 @@
       ],
       "Sieve script": [
         "Script Sieve"
+      ],
+      "At": [
+        "A les"
+      ],
+      "Return on": [
+        "Retorna el"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -17218,6 +17230,9 @@
       ],
       "Update filter": [
         "Actualitzar el filtre"
+      ],
+      "Snooze emails": [
+        "Ajorna els correus electrònics"
       ]
     },
     "Title header for keys table": {
@@ -17920,6 +17935,22 @@
       ],
       "One plan, more power": [
         "Un pla, més potència"
+      ]
+    },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Proveu-ho ara"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Ara teniu accés a la nova ${ CALENDAR_APP_NAME }. ${ link }"
+      ]
+    },
+    "Snooze info": {
+      "${ count } email → ${ wakeTime }": [
+        "${ count } correu electrònic → ${ wakeTime }",
+        "${ count } correus electrònics → ${ wakeTime }"
       ]
     }
   }
