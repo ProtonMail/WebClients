@@ -5,11 +5,11 @@ import { c } from 'ttag';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 
-import { SettingToggle, type SettingToggleSize } from '../../atoms/SettingToggle/SettingToggle';
+import { SettingToggle } from '../../atoms/SettingToggle/SettingToggle';
 import { useCaptionsPreference } from '../../hooks/captions/useCaptionsPreference';
 import { CaptionsModal } from '../CaptionsModal/CaptionsModal';
 
-export const LiveCaptionsToggle = ({ size = 'large' }: { size?: SettingToggleSize }) => {
+export const LiveCaptionsToggle = () => {
     const { createNotification } = useNotifications();
     const [loadingLiveCaptions, withLoadingLiveCaptions] = useLoading();
     const { wantsCaptions: enableLiveCaptions, setWantsCaptions } = useCaptionsPreference();
@@ -44,7 +44,6 @@ export const LiveCaptionsToggle = ({ size = 'large' }: { size?: SettingToggleSiz
                 ariaLabel={c('Alt').t`Live captions`}
                 onChange={handleChange}
                 checked={enableLiveCaptions}
-                size={size}
                 loading={loadingLiveCaptions}
             />
             {isCaptionsModalOpen && (

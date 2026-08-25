@@ -16,13 +16,13 @@ import {
     toggleShowDuration,
     toggleSideBarState as toggleSideBarStateAction,
 } from '@proton/meet/store/slices/uiStateSlice';
-import { selectSubscriptionStatus } from '@proton/meet/store/slices/userSlice';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { ConditionalTooltip } from '../../atoms/ConditionalTooltip/ConditionalTooltip';
 import { SettingToggle } from '../../atoms/SettingToggle/SettingToggle';
 import { SideBar } from '../../atoms/SideBar/SideBar';
+import { SideBarSection } from '../../atoms/SideBarSection/SideBarSection';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import { useMeetContext } from '../../contexts/MeetContext';
 import { useCaptionsPreference } from '../../hooks/captions/useCaptionsPreference';
@@ -32,7 +32,6 @@ import { CaptionLanguageSelect } from './CaptionLanguageSelect';
 import { LiveCaptionsToggle } from './LiveCaptionsToggle';
 import { NoiseCancellingToggle } from './NoiseCancellingToggle';
 import { WaitingRoomToggle } from './WaitingRoomToggle';
-import { SettingsArea } from './shared/SettingsArea';
 
 import './Settings.scss';
 
@@ -46,7 +45,6 @@ export const Settings = () => {
     const isLocalScreenShare = useMeetSelector(selectIsLocalScreenShare);
 
     const sideBarState = useMeetSelector(selectSideBarState);
-    const { isPaidUser } = useMeetSelector(selectSubscriptionStatus);
     const showDuration = useMeetSelector(selectShowDuration);
     const isLocalParticipantAdminOrHost = useMeetSelector(selectIsLocalParticipantAdminOrHost);
     const liveCaptionsEnabled = useLiveCaptionsFeatureEnabled();
@@ -57,7 +55,7 @@ export const Settings = () => {
     const [loadingLock, withLoadingLock] = useLoading();
     const [loadingBackgroundBlur, withLoadingBackgroundBlur] = useLoading();
 
-    const accessibilityRef = useRef<HTMLDivElement>(null);
+    const displayRef = useRef<HTMLDivElement>(null);
     const captionsWereOn = useRef(wantsCaptions);
 
     // The captions bar takes its height from the panel, which can push this section out of view.
@@ -66,7 +64,7 @@ export const Settings = () => {
         captionsWereOn.current = wantsCaptions;
 
         if (justTurnedOn) {
-            accessibilityRef.current?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+            displayRef.current?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
         }
     }, [wantsCaptions]);
 
@@ -78,17 +76,23 @@ export const Settings = () => {
         <SideBar
             onClose={() => dispatch(toggleSideBarStateAction(MeetingSideBars.Settings))}
             aria-label={c('Aria').t`Settings`}
+            absoluteHeader={true}
+            paddingClassName="px-4 py-4"
             header={
                 <div className="flex items-center">
-                    <h2 className="text-3xl text-semibold">{c('Title').t`Settings`}</h2>
+                    <h2 className="text-xl text-semibold">{c('Title').t`Settings`}</h2>
                 </div>
             }
         >
-            <div className="overflow-y-auto flex-1 min-h-0">
-                <div className="flex flex-column flex-nowrap w-full gap-4 pr-4">
+            {/* The header floats over the scroll region so the settings blur behind it, leaving the
+                measured header height to keep the first section clear of it. */}
+            <div
+                className="overflow-y-auto flex-1 min-h-0 pt-custom"
+                style={{ '--pt-custom': 'var(--side-bar-header-height)' }}
+            >
+                <div className="flex flex-column flex-nowrap w-full gap-2">
                     {isLocalParticipantAdminOrHost && (
-                        <SettingsArea title={c('Title').t`Security`}>
-                            <WaitingRoomToggle />
+                        <SideBarSection title={c('Title').t`Host settings`}>
                             <SettingToggle
                                 id="lock-meeting"
                                 label={c('Action').t`Lock meeting`}
@@ -99,10 +103,47 @@ export const Settings = () => {
                                 checked={isMeetingLocked}
                                 loading={loadingLock}
                             />
-                        </SettingsArea>
+                            <WaitingRoomToggle />
+                        </SideBarSection>
                     )}
-                    <SettingsArea title={c('Title').t`Video`}>
-                        {!isMobile() && (
+
+                    <SideBarSection title={c('Title').t`Video and audio`}>
+                        <SettingToggle
+                            id="disable-videos"
+                            label={c('Action').t`Incoming video`}
+                            ariaLabel={c('Alt').t`Incoming video`}
+                            onChange={() => dispatch(setDisableVideos(!disableVideos))}
+                            checked={!disableVideos}
+                        />
+                        <SettingToggle
+                            id="self-view"
+                            label={c('Action').t`Self view`}
+                            ariaLabel={c('Alt').t`Self view`}
+                            onChange={() => dispatch(setSelfView(!selfView))}
+                            checked={selfView}
+                        />
+                        <SettingToggle
+                            id="pip-enabled"
+                            label={c('Action').t`Picture-in-picture while sharing`}
+                            ariaLabel={c('Alt').t`Picture-in-picture while sharing`}
+                            onChange={() => dispatch(setPipEnabled(!pipEnabled))}
+                            checked={pipEnabled}
+                            disabled={isLocalScreenShare}
+                            tooltip={
+                                isLocalScreenShare
+                                    ? c('Tooltip').t`Stop sharing your screen to change this setting`
+                                    : undefined
+                            }
+                        />
+                        <NoiseCancellingToggle
+                            idBase="settings"
+                            noiseFilter={noiseFilter}
+                            toggleNoiseFilter={toggleNoiseFilter}
+                        />
+                    </SideBarSection>
+
+                    {!isMobile() && (
+                        <SideBarSection title={c('Title').t`Background`}>
                             <BackgroundBlurToggle
                                 backgroundBlur={backgroundBlur}
                                 loadingBackgroundBlur={loadingBackgroundBlur}
@@ -112,84 +153,54 @@ export const Settings = () => {
                                 }}
                                 withTooltip={true}
                             />
-                        )}
-                        {isVirtualBackgroundEnabled && !isMobile() && (
-                            <ConditionalTooltip
-                                title={
-                                    isBackgroundBlurSupported
-                                        ? undefined
-                                        : c('Tooltip').t`Background effects are not supported on your browser`
-                                }
-                            >
-                                <span className="inline-block w-full">
-                                    <Button
-                                        shape="ghost"
-                                        className="virtual-backgrounds-button w-full flex items-center justify-space-between flex-nowrap gap-2 px-0 py-2 text-left"
-                                        disabled={!isBackgroundBlurSupported}
-                                        onClick={() => dispatch(toggleSideBarStateAction(MeetingSideBars.Backgrounds))}
-                                    >
-                                        <span className="meet-font-weight">{c('Action')
-                                            .t`Backgrounds and effects`}</span>
-                                        <IcChevronRight
-                                            size={4}
-                                            className="shrink-0 mr-custom"
-                                            style={{ '--mr-custom': 'calc(var(--space-1) * -1)' }}
-                                        />
-                                    </Button>
-                                </span>
-                            </ConditionalTooltip>
-                        )}
-                        <SettingToggle
-                            id="disable-videos"
-                            label={c('Action').t`Turn off incoming video`}
-                            ariaLabel={c('Alt').t`Turn off incoming video`}
-                            onChange={() => dispatch(setDisableVideos(!disableVideos))}
-                            checked={disableVideos}
-                        />
-                        <SettingToggle
-                            id="self-view"
-                            label={c('Action').t`Hide self view`}
-                            ariaLabel={c('Alt').t`Hide self view`}
-                            onChange={() => dispatch(setSelfView(!selfView))}
-                            checked={!selfView}
-                        />
-                        <SettingToggle
-                            id="pip-enabled"
-                            label={c('Action').t`Show floating thumbnail during screensharing`}
-                            ariaLabel={c('Alt').t`Show floating thumbnail during screensharing`}
-                            onChange={() => dispatch(setPipEnabled(!pipEnabled))}
-                            checked={pipEnabled}
-                            disabled={isLocalScreenShare}
-                        />
-                    </SettingsArea>
-                    <SettingsArea title={c('Title').t`Audio`}>
-                        <div className="flex flex-column w-full gap-4 shrink-0">
-                            <NoiseCancellingToggle
-                                idBase="settings"
-                                noiseFilter={noiseFilter}
-                                toggleNoiseFilter={toggleNoiseFilter}
-                            />
-                        </div>
-                    </SettingsArea>
-                    {isPaidUser && (
-                        <SettingsArea title={c('Title').t`Meeting settings`}>
+                            {isVirtualBackgroundEnabled && (
+                                <ConditionalTooltip
+                                    title={
+                                        isBackgroundBlurSupported
+                                            ? undefined
+                                            : c('Tooltip').t`Background effects are not supported on your browser`
+                                    }
+                                >
+                                    <span className="inline-block w-full">
+                                        <Button
+                                            shape="ghost"
+                                            className="virtual-backgrounds-button w-full flex items-center justify-space-between flex-nowrap gap-2 px-0 py-0 text-left"
+                                            disabled={!isBackgroundBlurSupported}
+                                            onClick={() =>
+                                                dispatch(toggleSideBarStateAction(MeetingSideBars.Backgrounds))
+                                            }
+                                        >
+                                            <span className="meet-font-weight">{c('Action')
+                                                .t`Virtual backgrounds`}</span>
+                                            <IcChevronRight
+                                                size={4}
+                                                className="shrink-0 mr-custom"
+                                                style={{ '--mr-custom': 'calc(var(--space-1) * -1)' }}
+                                            />
+                                        </Button>
+                                    </span>
+                                </ConditionalTooltip>
+                            )}
+                        </SideBarSection>
+                    )}
+
+                    <div ref={displayRef} className="shrink-0">
+                        <SideBarSection title={c('Title').t`Display`}>
+                            {liveCaptionsEnabled && (
+                                <>
+                                    <LiveCaptionsToggle />
+                                    {wantsCaptions && <CaptionLanguageSelect />}
+                                </>
+                            )}
                             <SettingToggle
                                 id="show-duration"
-                                label={c('Action').t`Show duration`}
-                                ariaLabel={c('Alt').t`Show duration`}
+                                label={c('Action').t`Meeting timer`}
+                                ariaLabel={c('Alt').t`Meeting timer`}
                                 onChange={() => dispatch(toggleShowDuration())}
                                 checked={showDuration}
                             />
-                        </SettingsArea>
-                    )}
-                    {liveCaptionsEnabled && (
-                        <div ref={accessibilityRef} className="shrink-0">
-                            <SettingsArea title={c('Title').t`Accessibility`}>
-                                <LiveCaptionsToggle />
-                                {wantsCaptions && <CaptionLanguageSelect />}
-                            </SettingsArea>
-                        </div>
-                    )}
+                        </SideBarSection>
+                    </div>
                 </div>
             </div>
         </SideBar>
