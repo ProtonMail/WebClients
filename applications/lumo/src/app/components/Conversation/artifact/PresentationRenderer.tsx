@@ -1,19 +1,22 @@
-import { Suspense, lazy, useEffect, useMemo, useRef, useState } from 'react';
+import { Suspense, lazy, useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { buildSandboxedDoc } from './WebpageRenderer';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+
+import { buildArtifactDocument } from './WebpageRenderer';
 import type { ArtifactRendererProps } from './artifactRenderers';
 import type { ParsedArtifact } from './parseArtifacts';
 import { renderChartsInSlideContent, slideContentHasChartPlaceholder } from './presentationCharts';
+import { useArtifactShellIframe } from './useArtifactShellIframe';
 
 const SLIDES_PLACEHOLDER = '<!--SLIDES-->';
 
 // Static shell around the model's slide markup: the library, its base stylesheet, and the theme
 // are all app-bundled (see the reveal.js raw-source imports below), never model-supplied — the
 // model only ever contributes inert content for the SLIDES_PLACEHOLDER slot. The combined result
-// still goes through buildSandboxedDoc (same CSP/sandboxed-iframe treatment as `webpage`
-// artifacts), so this adds no new network-egress surface.
+// still goes through buildArtifactDocument (same bridge-script/sandboxed-iframe treatment as
+// `webpage` artifacts), so this adds no new network-egress surface.
 //
 // html/body get an explicit height: reveal.js's `embedded: true` mode (see setViewport() in
 // reveal.js) deliberately skips adding its own `reveal-full-page` class to <html> — that class is
@@ -54,9 +57,6 @@ interface PresentationIframeContentProps {
 }
 
 function PresentationIframeContent({ artifact, revealJs, revealCss, themeCss }: PresentationIframeContentProps) {
-    const iframeRef = useRef<HTMLIFrameElement>(null);
-    const containerRef = useRef<HTMLDivElement>(null);
-
     // Chart placeholders (see presentationCharts.ts) need an async pre-render pass to swap them
     // for inert SVG before the deck is templated into the sandboxed iframe. Most decks have no
     // charts, so that pass is skipped entirely (synchronous passthrough) rather than always paying
@@ -82,52 +82,16 @@ function PresentationIframeContent({ artifact, revealJs, revealCss, themeCss }: 
     }, [artifact.content]);
 
     const template = useMemo(() => buildRevealTemplate(revealJs, revealCss, themeCss), [revealJs, revealCss, themeCss]);
-    const srcDoc = useMemo(() => {
+    const document = useMemo(() => {
         if (processedContent === null) {
             return null;
         }
-        return buildSandboxedDoc(injectSlides(template, processedContent));
+        return buildArtifactDocument(injectSlides(template, processedContent));
     }, [template, processedContent]);
 
-    // Same origin-validation reasoning as WebpageRenderer: the sandboxed srcDoc has an opaque
-    // origin, so event.source (tied to this specific iframe) is the only meaningful check.
-    useEffect(() => {
-        const handleMessage = (e: MessageEvent) => {
-            if (e.source !== iframeRef.current?.contentWindow) {
-                return;
-            }
-        };
-        window.addEventListener('message', handleMessage);
-        return () => window.removeEventListener('message', handleMessage);
-    }, []);
+    const { iframeRef, containerRef, shellSrc, onIframeLoad, ready } = useArtifactShellIframe(document);
 
-    useEffect(() => {
-        const container = containerRef.current;
-        if (!container) {
-            return;
-        }
-
-        let debounceTimer: ReturnType<typeof setTimeout> | null = null;
-
-        const observer = new ResizeObserver(() => {
-            if (debounceTimer !== null) {
-                clearTimeout(debounceTimer);
-            }
-            debounceTimer = setTimeout(() => {
-                iframeRef.current?.contentWindow?.postMessage({ type: 'lumo-resize' }, '*');
-            }, 200);
-        });
-
-        observer.observe(container);
-        return () => {
-            observer.disconnect();
-            if (debounceTimer !== null) {
-                clearTimeout(debounceTimer);
-            }
-        };
-    }, []);
-
-    if (srcDoc === null) {
+    if (document === null) {
         return (
             <pre className="text-monospace text-sm m-0 p-4 overflow-auto color-norm whitespace-pre-wrap flex-1 w-full h-full">
                 {artifact.content}
@@ -136,13 +100,22 @@ function PresentationIframeContent({ artifact, revealJs, revealCss, themeCss }: 
     }
 
     return (
-        <div ref={containerRef} className="artifact-presentation-content flex-1 w-full h-full overflow-hidden">
+        <div ref={containerRef} className="artifact-presentation-content relative flex-1 w-full h-full overflow-hidden">
+            {!ready && (
+                <div className="absolute inset-center">
+                    <CircleLoader size="medium" />
+                </div>
+            )}
+            {/* allow-same-origin: see the comment on WebpageRenderer's iframe — required for the
+                postMessage handshake's origin check to work against a real (non-opaque) origin,
+                and safe because the shell is a genuinely different origin than the Lumo app. */}
             <iframe
                 ref={iframeRef}
                 title={artifact.title}
                 className="w-full h-full border-none"
-                sandbox="allow-scripts"
-                srcDoc={srcDoc}
+                sandbox="allow-scripts allow-same-origin"
+                src={shellSrc}
+                onLoad={onIframeLoad}
             />
         </div>
     );
