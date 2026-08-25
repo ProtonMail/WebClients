@@ -4567,6 +4567,12 @@
       ],
       "Your recovery contacts should be people you know and can contact easily.": [
         "ผู้ติดต่อกู้คืนควรเป็นคนที่รู้จักและสามารถติดต่อได้ง่าย"
+      ],
+      "Add 1 more": [
+        "เพิ่มอีก 1 คน"
+      ],
+      "Explore plans": [
+        "สำรวจแผนการใช้งาน"
       ]
     },
     "Empty group name": {
@@ -9530,6 +9536,9 @@
       ],
       "Recovery phone number": [
         "หมายเลขโทรศัพท์สำรอง"
+      ],
+      "Set recovery phone number": [
+        "ตั้งค่าหมายเลขโทรศัพท์กู้คืน"
       ]
     },
     "Label": {
@@ -10519,6 +10528,9 @@
       ],
       "ZIP code": [
         "รหัสไปรษณีย์"
+      ],
+      "Enter current password": [
+        "ป้อนรหัสผ่านปัจจุบัน"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13908,6 +13920,9 @@
       ],
       "Your recovery setup is solid, with a few gaps left to close. Each option you add makes your safety net stronger.": [
         "การตั้งค่าการกู้คืนมีความปลอดภัยดีแล้ว แต่ยังมีช่องว่างอีกเล็กน้อยที่ต้องปิดปรับปรุง ทุกตัวเลือกที่เพิ่มจะทำให้ตาข่ายนิรภัยแข็งแกร่งยิ่งขึ้น"
+      ],
+      "Recovery score: ${ score }": [
+        "คะแนนการกู้คืน: ${ score }"
       ]
     },
     "Recovery score item": {
@@ -14320,6 +14335,21 @@
     "Safety review": {
       "Review account safety": [
         "ตรวจสอบความปลอดภัยบัญชี"
+      ],
+      "Code sent to ${ boldValue }": [
+        "ได้ส่งรหัสไปที่ ${ boldValue }"
+      ],
+      "Invalid code": [
+        "รหัสไม่ถูกต้อง"
+      ],
+      "Safety review": [
+        "การตรวจสอบความปลอดภัย"
+      ],
+      "Send a new code": [
+        "ส่งรหัสใหม่"
+      ],
+      "update it now": [
+        "อัปเดตตอนนี้เลย"
       ]
     },
     "saml: Action": {
@@ -18838,6 +18868,272 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "โปรดอย่าลบบันทึก TXT หลังจากยืนยันตัวตนเสร็จแล้ว เพราะจำเป็นต้องแสดงว่าคุณยังจะเป็นเจ้าของโดเมนนี้อยู่อีก"
+      ]
+    },
+    "safety_review": {
+      "${ BRAND_NAME } Account email": [
+        "อีเมลบัญชี ${ BRAND_NAME }"
+      ],
+      "Account protection": [
+        "การปกป้องบัญชี"
+      ],
+      "Add": [
+        "เพิ่ม"
+      ],
+      "Add an emergency contact": [
+        "เพิ่มผู้ติดต่อฉุกเฉิน"
+      ],
+      "Add emergency contacts": [
+        "เพิ่มผู้ติดต่อฉุกเฉิน"
+      ],
+      "Add options": [
+        "เพิ่มตัวเลือก"
+      ],
+      "Add people who you trust and can contact easily. Your emergency contact will be able to access your account and reset your password for you if needed.": [
+        "เพิ่มบุคคลที่เชื่อถือได้และสามารถติดต่อได้ง่าย ผู้ติดต่อฉุกเฉินจะสามารถเข้าถึงบัญชีและรีเซ็ตรหัสผ่านให้ได้หากจำเป็น"
+      ],
+      "Add people you trust and can contact easily. They will be able to help you unlock your data after you reset your password.": [
+        "เพิ่มบุคคลที่เชื่อถือได้และสามารถติดต่อได้ง่าย บุคคลเหล่านี้จะสามารถช่วยปลดล็อกข้อมูลได้หลังจากรีเซ็ตรหัสผ่าน"
+      ],
+      "Add phone number": [
+        "เพิ่มหมายเลขโทรศัพท์"
+      ],
+      "Add recovery contacts": [
+        "เพิ่มผู้ติดต่อกู้คืนข้อมูล"
+      ],
+      "Add recovery email": [
+        "เพิ่มอีเมลการกู้คืน"
+      ],
+      "Add recovery phone": [
+        "เพิ่มโทรศัพท์การกู้คืน"
+      ],
+      "Added emergency contacts": [
+        "เพิ่มผู้ติดต่อฉุกเฉินแล้ว"
+      ],
+      "Added recovery contacts": [
+        "เพิ่มผู้ติดต่อกู้คืนข้อมูลแล้ว"
+      ],
+      "Added recovery email": [
+        "เพิ่มอีเมลการกู้คืนแล้ว"
+      ],
+      "Added recovery phone": [
+        "เพิ่มโทรศัพท์การกู้คืนแล้ว"
+      ],
+      "Allow": [
+        "อนุญาต"
+      ],
+      "Allow data recovery from this device": [
+        "อนุญาตให้กู้คืนข้อมูลจากอุปกรณ์นี้"
+      ],
+      "Allow password reset from the settings": [
+        "อนุญาตให้รีเซ็ตรหัสผ่านจากการตั้งค่า"
+      ],
+      "Allow recovery by email": [
+        "อนุญาตให้กู้คืนทางอีเมล"
+      ],
+      "Allow recovery by phone": [
+        "อนุญาตให้กู้คืนทางโทรศัพท์"
+      ],
+      "Allow scanning a QR code to sign in": [
+        "อนุญาตให้สแกนคิวอาร์โค้ดเพื่อเข้าสู่ระบบ"
+      ],
+      "Allow trusted friends to unlock your data": [
+        "อนุญาตให้เพื่อนที่เชื่อถือได้ปลดล็อกข้อมูล"
+      ],
+      "Back to ${ backLink.appNameString }": [
+        "กลับไปที่ ${ backLink.appNameString }"
+      ],
+      "Congratulations": [
+        "ขอแสดงความยินดี"
+      ],
+      "Didn’t receive it? ${ sendANewCode }": [
+        "ไม่ได้รับรหัสใช่หรือไม่? ${ sendANewCode }"
+      ],
+      "Done": [
+        "เสร็จสิ้น"
+      ],
+      "Download": [
+        "ดาวน์โหลด"
+      ],
+      "Download recovery file": [
+        "ดาวน์โหลดไฟล์กู้คืน"
+      ],
+      "Downloaded recovery file": [
+        "ดาวน์โหลดไฟล์กู้คืนแล้ว"
+      ],
+      "Emergency contacts enabled": [
+        "เปิดใช้งานผู้ติดต่อฉุกเฉินแล้ว"
+      ],
+      "Enable device recovery": [
+        "เปิดใช้งานการกู้คืนด้วยอุปกรณ์"
+      ],
+      "Enable email recovery": [
+        "เปิดใช้งานการกู้คืนด้วยอีเมล"
+      ],
+      "Enable emergency contacts": [
+        "เปิดใช้งานผู้ติดต่อฉุกเฉิน"
+      ],
+      "Enable password reset from settings": [
+        "เปิดใช้งานการรีเซ็ตรหัสผ่านจากการตั้งค่า"
+      ],
+      "Enable phone recovery": [
+        "เปิดใช้งานการกู้คืนด้วยโทรศัพท์"
+      ],
+      "Enable QR code sign-in": [
+        "เปิดใช้งานการเข้าสู่ระบบด้วยคิวอาร์โค้ด"
+      ],
+      "Enabled device recovery": [
+        "เปิดใช้งานการกู้คืนด้วยอุปกรณ์แล้ว"
+      ],
+      "Enabled email recovery": [
+        "เปิดใช้งานการกู้คืนด้วยอีเมลแล้ว"
+      ],
+      "Enabled password reset from settings": [
+        "เปิดใช้งานการรีเซ็ตรหัสผ่านจากการตั้งค่าแล้ว"
+      ],
+      "Enabled phone recovery": [
+        "เปิดใช้งานการกู้คืนด้วยโทรศัพท์แล้ว"
+      ],
+      "Enabled QR code sign-in": [
+        "เปิดใช้งานการเข้าสู่ระบบด้วยคิวอาร์โค้ดแล้ว"
+      ],
+      "Got it": [
+        "รับทราบ"
+      ],
+      "Here's how you increased your account protection:": [
+        "วิธีเพิ่มการปกป้องบัญชีมีดังนี้:"
+      ],
+      "If you forget your password, you can sign in using a QR code. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
+        "หากลืมรหัสผ่าน สามารถเข้าสู่ระบบโดยใช้คิวอาร์โค้ด เพียงเข้าสู่ระบบบริการ ${ BRAND_NAME } บนอุปกรณ์อื่นอยู่ก่อนแล้ว"
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, it will allow you to sign in and recover your data. It’s the only way to instantly restore everything, so make sure you keep it somewhere safe.": [
+        "หากถูกล็อกออกจากบัญชี ${ BRAND_NAME } ฟีเจอร์นี้จะช่วยให้สามารถเข้าสู่ระบบและกู้คืนข้อมูลได้ ซึ่งเป็นวิธีเดียวที่จะกู้คืนทุกอย่างกลับมาได้ทันที โปรดตรวจสอบให้แน่ใจว่าเก็บรักษาไว้ในที่ปลอดภัย"
+      ],
+      "If your recovery email has changed, ${ updateEmailLink }.": [
+        "หากอีเมลการกู้คืนมีการเปลี่ยนแปลง ให้ ${ updateEmailLink }"
+      ],
+      "If your recovery phone has changed, ${ updatePhoneLink }.": [
+        "หากโทรศัพท์สำหรับกู้คืนมีการเปลี่ยนแปลง ให้ ${ updatePhoneLink }"
+      ],
+      "Later": [
+        "ไว้ทีหลัง"
+      ],
+      "Protect your legacy with Emergency Access": [
+        "ปกป้องสิ่งตกทอดด้วยการเข้าถึงฉุกเฉิน"
+      ],
+      "Save recovery phrase": [
+        "บันทึกวลีกู้คืน"
+      ],
+      "Saved recovery phrase": [
+        "บันทึกวลีกู้คืนแล้ว"
+      ],
+      "Send verification code": [
+        "ส่งรหัสยืนยัน"
+      ],
+      "They must already have a ${ BRAND_NAME } Account.": [
+        "บุคคลเหล่านี้ต้องมีบัญชี ${ BRAND_NAME } อยู่แล้ว"
+      ],
+      "They will not be able to see or access your data.": [
+        "บุคคลเหล่านี้จะไม่สามารถมองเห็นหรือเข้าถึงข้อมูลได้"
+      ],
+      "This will let you quickly access your ${ BRAND_NAME } Account so you can change your password.": [
+        "วิธีนี้จะช่วยให้เข้าถึงบัญชี ${ BRAND_NAME } ได้อย่างรวดเร็วเพื่อเปลี่ยนรหัสผ่าน"
+      ],
+      "This will let you reset your account password if you’ve lost it, but are still signed in to ${ BRAND_NAME }. It’s often the easiest way to recover your account if you’re signed in.": [
+        "การดำเนินการนี้จะช่วยให้รีเซ็ตรหัสผ่านบัญชีได้หากสูญหาย แต่ยังคงเข้าสู่ระบบ ${ BRAND_NAME } อยู่ ซึ่งมักเป็นวิธีที่ง่ายที่สุดในการกู้คืนบัญชีหากเข้าสู่ระบบอยู่"
+      ],
+      "This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
+        "การดำเนินการนี้จะกู้คืนการเข้าถึงอีเมล รายชื่อผู้ติดต่อ ไฟล์ รหัสผ่าน และข้อมูลที่เข้ารหัสอื่นๆ ในบัญชีหลังจากรีเซ็ตรหัสผ่าน"
+      ],
+      "To help you remember your password, we’ll periodically ask you to enter it.": [
+        "เพื่อช่วยให้จำรหัสผ่านได้ จะมีการขอให้ป้อนรหัสผ่านเป็นระยะๆ"
+      ],
+      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
+        "เพื่อให้แน่ใจว่าที่อยู่อีเมลเป็นของคุณ โปรดป้อนรหัสยืนยันที่ส่งไปยัง ${ boldEmail }"
+      ],
+      "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
+        "เพื่อให้แน่ใจว่าหมายเลขโทรศัพท์เป็นของคุณ โปรดป้อนรหัสยืนยันที่ส่งไปยัง ${ boldPhoneNumber }"
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification code.": [
+        "เพื่อให้แน่ใจว่าที่อยู่นี้เป็นของจริง จะมีการส่งอีเมลพร้อมรหัสยืนยัน"
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification link.": [
+        "เพื่อให้แน่ใจว่าที่อยู่นี้เป็นของคุณจริงๆ จะมีการส่งอีเมลพร้อมลิงก์ยืนยัน"
+      ],
+      "To make sure this number is really yours, we’ll send an SMS with a verification code.": [
+        "เพื่อให้แน่ใจว่าหมายเลขนี้เป็นของจริง จะมีการส่ง SMS พร้อมรหัสยืนยัน"
+      ],
+      "Update": [
+        "อัปเดต"
+      ],
+      "Update recovery email": [
+        "อัปเดตอีเมลการกู้คืน"
+      ],
+      "Update recovery phone": [
+        "อัปเดตโทรศัพท์สำหรับกู้คืน"
+      ],
+      "Upgrade your plan to enable Emergency Access to your account. This will allow you to designate 1 to 5 people who will be able to reset your password for you.": [
+        "อัปเกรดแผนเพื่อเปิดใช้งานการเข้าถึงฉุกเฉินสำหรับบัญชี ซึ่งจะช่วยให้สามารถกำหนดบุคคลที่จะรีเซ็ตรหัสผ่านให้ได้ตั้งแต่ 1 ถึง 5 คน"
+      ],
+      "Verified password": [
+        "ยืนยันรหัสผ่านแล้ว"
+      ],
+      "Verified recovery email": [
+        "ยืนยันอีเมลการกู้คืนแล้ว"
+      ],
+      "Verified recovery phone": [
+        "ยืนยันโทรศัพท์การกู้คืนแล้ว"
+      ],
+      "Verify": [
+        "ยืนยัน"
+      ],
+      "Verify password": [
+        "ยืนยันรหัสผ่าน"
+      ],
+      "Verify recovery email": [
+        "ยืนยันอีเมลการกู้คืน"
+      ],
+      "Verify recovery phone": [
+        "ยืนยันโทรศัพท์การกู้คืน"
+      ],
+      "Verify your password": [
+        "ยืนยันรหัสผ่าน"
+      ],
+      "Verify your recovery email": [
+        "ยืนยันอีเมลการกู้คืน"
+      ],
+      "Verify your recovery phone": [
+        "ยืนยันโทรศัพท์การกู้คืน"
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        "การยืนยันที่อยู่อีเมลจะเพิ่มความปลอดภัยให้กับบัญชีและช่วยให้มีตัวเลือกเพิ่มเติมสำหรับการกู้คืน"
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "การยืนยันหมายเลขโทรศัพท์จะเพิ่มความปลอดภัยให้กับบัญชีและช่วยให้มีตัวเลือกเพิ่มเติมสำหรับการกู้คืน"
+      ],
+      "You can save a data backup on this device. This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset, simply by signing in on this device.": [
+        "สามารถบันทึกข้อมูลสำรองไว้บนอุปกรณ์นี้ การดำเนินการนี้จะกู้คืนสิทธิ์การเข้าถึงอีเมล รายชื่อติดต่อ ไฟล์ รหัสผ่าน และข้อมูลที่เข้ารหัสอื่นๆ ในบัญชีหลังจากรีเซ็ตรหัสผ่าน เพียงแค่เข้าสู่ระบบบนอุปกรณ์นี้"
+      ],
+      "You can use email verification to regain access to your account if you forget your password.": [
+        "สามารถใช้การยืนยันทางอีเมลเพื่อกลับเข้าถึงบัญชีได้หากลืมรหัสผ่าน"
+      ],
+      "You can use SMS verification to regain access to your account if you forget your password.": [
+        "สามารถใช้การยืนยันทาง SMS เพื่อกลับเข้าถึงบัญชีได้หากลืมรหัสผ่าน"
+      ],
+      "You can use your recovery email to regain access to your account if you forget your password.": [
+        "สามารถใช้อีเมลการกู้คืนเพื่อกลับเข้าถึงบัญชีได้หากลืมรหัสผ่าน"
+      ],
+      "You can use your recovery phone to regain access to your account if you forget your password.": [
+        "สามารถใช้โทรศัพท์การกู้คืนเพื่อกลับเข้าถึงบัญชีได้หากลืมรหัสผ่าน"
+      ],
+      "You don’t need to open or read the file—just download it and store it somewhere safe.": [
+        "ไม่จำเป็นต้องเปิดหรืออ่านไฟล์ เพียงแค่ดาวน์โหลดและจัดเก็บไว้ในที่ปลอดภัย"
+      ],
+      "Your recovery checklist": [
+        "รายการตรวจสอบการกู้คืนข้อมูล"
+      ],
+      "Your security setup": [
+        "การตั้งค่าความปลอดภัย"
       ]
     }
   }

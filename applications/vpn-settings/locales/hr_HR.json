@@ -4639,6 +4639,12 @@
       ],
       "Your recovery contacts should be people you know and can contact easily.": [
         "Vaši kontakti za oporavak trebale bi biti osobe koje poznajete i s kojima možete lako stupiti u kontakt."
+      ],
+      "Add 1 more": [
+        "Dodaj još 1"
+      ],
+      "Explore plans": [
+        "Istražite planove"
       ]
     },
     "Empty group name": {
@@ -9796,6 +9802,9 @@
       ],
       "Recovery phone number": [
         "Broj mobitela za oporavak"
+      ],
+      "Set recovery phone number": [
+        "Postavi telefonski broj za oporavak"
       ]
     },
     "Label": {
@@ -10797,6 +10806,9 @@
       ],
       "ZIP code": [
         "Poštanski broj"
+      ],
+      "Enter current password": [
+        "Unesite trenutačnu lozinku"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14298,6 +14310,9 @@
       ],
       "Your recovery setup is solid, with a few gaps left to close. Each option you add makes your safety net stronger.": [
         "Vaše postavljanje oporavka je čvrsto, s nekoliko preostalih praznina koje treba zatvoriti. Svaka opcija koju dodate jača vašu sigurnosnu mrežu."
+      ],
+      "Recovery score: ${ score }": [
+        "Rezultat oporavka: ${ score }"
       ]
     },
     "Recovery score item": {
@@ -14722,6 +14737,21 @@
     "Safety review": {
       "Review account safety": [
         "Pregledaj sigurnost korisničkog računa"
+      ],
+      "Code sent to ${ boldValue }": [
+        "Kôd je poslan na ${ boldValue }"
+      ],
+      "Invalid code": [
+        "Nevažeći kôd"
+      ],
+      "Safety review": [
+        "Sigurnosni pregled"
+      ],
+      "Send a new code": [
+        "Pošalji novi kôd"
+      ],
+      "update it now": [
+        "ažuriraj ga sada"
       ]
     },
     "saml: Action": {
@@ -19412,6 +19442,272 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Nakon uspješne provjere, ne uklanjajte ovaj TXT zapis jer je potreban za potvrdu da i dalje posjedujete domenu."
+      ]
+    },
+    "safety_review": {
+      "${ BRAND_NAME } Account email": [
+        "Adresa e-pošte za ${ BRAND_NAME } korisnički račun"
+      ],
+      "Account protection": [
+        "Zaštita korisničkog računa"
+      ],
+      "Add": [
+        "Dodaj"
+      ],
+      "Add an emergency contact": [
+        "Dodajte kontakt za hitne slučajeve"
+      ],
+      "Add emergency contacts": [
+        "Dodaj kontakte za hitne slučajeve"
+      ],
+      "Add options": [
+        "Dodaj opcije"
+      ],
+      "Add people who you trust and can contact easily. Your emergency contact will be able to access your account and reset your password for you if needed.": [
+        "Dodajte ljude kojima vjerujete i koje možete lako kontaktirati. Vaš kontakt za hitne slučajeve moći će pristupiti vašem korisničkom računu i po potrebi ponovno pokrenuti vašu lozinku."
+      ],
+      "Add people you trust and can contact easily. They will be able to help you unlock your data after you reset your password.": [
+        "Dodajte osobe kojima vjerujete i koje možete lako kontaktirati. Oni će vam moći pomoći otključati podatke nakon što ponovno pokrenete lozinku."
+      ],
+      "Add phone number": [
+        "Dodaj telefonski broj"
+      ],
+      "Add recovery contacts": [
+        "Dodaj kontakte za oporavak"
+      ],
+      "Add recovery email": [
+        "Dodaj adresu e-pošte za oporavak"
+      ],
+      "Add recovery phone": [
+        "Dodaj telefon za oporavak"
+      ],
+      "Added emergency contacts": [
+        "Dodani kontakti za hitne slučajeve"
+      ],
+      "Added recovery contacts": [
+        "Dodani kontakti za oporavak"
+      ],
+      "Added recovery email": [
+        "Dodana adresa e-pošte za oporavak"
+      ],
+      "Added recovery phone": [
+        "Dodan telefon za oporavak"
+      ],
+      "Allow": [
+        "Dopusti"
+      ],
+      "Allow data recovery from this device": [
+        "Dopusti oporavak podataka s ovog uređaja"
+      ],
+      "Allow password reset from the settings": [
+        "Dopusti ponovno pokretanje lozinke iz postavki"
+      ],
+      "Allow recovery by email": [
+        "Dopusti oporavak putem e-pošte"
+      ],
+      "Allow recovery by phone": [
+        "Dopusti oporavak putem telefona"
+      ],
+      "Allow scanning a QR code to sign in": [
+        "Dopusti skeniranje QR kôda za prijavu"
+      ],
+      "Allow trusted friends to unlock your data": [
+        "Dopustite pouzdanim prijateljima da otključaju vaše podatke"
+      ],
+      "Back to ${ backLink.appNameString }": [
+        "Natrag na ${ backLink.appNameString }"
+      ],
+      "Congratulations": [
+        "Čestitamo"
+      ],
+      "Didn’t receive it? ${ sendANewCode }": [
+        "Niste ga primili? ${ sendANewCode }"
+      ],
+      "Done": [
+        "Gotovo"
+      ],
+      "Download": [
+        "Učitaj"
+      ],
+      "Download recovery file": [
+        "Učitaj datoteku za oporavak"
+      ],
+      "Downloaded recovery file": [
+        "Učitana datoteka za oporavak"
+      ],
+      "Emergency contacts enabled": [
+        "Omogućeni kontakti za hitne slučajeve"
+      ],
+      "Enable device recovery": [
+        "Omogući oporavak uređaja"
+      ],
+      "Enable email recovery": [
+        "Omogući oporavak putem e-pošte"
+      ],
+      "Enable emergency contacts": [
+        "Omogući kontakte za hitne slučajeve"
+      ],
+      "Enable password reset from settings": [
+        "Omogući ponovno pokretanje lozinke iz postavki"
+      ],
+      "Enable phone recovery": [
+        "Omogući oporavak telefona"
+      ],
+      "Enable QR code sign-in": [
+        "Omogući prijavu QR kôdom"
+      ],
+      "Enabled device recovery": [
+        "Omogućen oporavak uređaja"
+      ],
+      "Enabled email recovery": [
+        "Omogućen oporavak putem e-pošte"
+      ],
+      "Enabled password reset from settings": [
+        "Omogućeno ponovno pokretanje lozinke iz postavki"
+      ],
+      "Enabled phone recovery": [
+        "Omogućen oporavak telefona"
+      ],
+      "Enabled QR code sign-in": [
+        "Omogućena prijava QR kôdom"
+      ],
+      "Got it": [
+        "Razumijem"
+      ],
+      "Here's how you increased your account protection:": [
+        "Evo kako ste povećali zaštitu svog korisničkog računa:"
+      ],
+      "If you forget your password, you can sign in using a QR code. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
+        "Ako zaboravite lozinku, možete se prijaviti pomoću QR kôda. Sve što trebate je biti prijavljeni na ${ BRAND_NAME } uslugu na drugom uređaju."
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, it will allow you to sign in and recover your data. It’s the only way to instantly restore everything, so make sure you keep it somewhere safe.": [
+        "Ako izgubite pristup svom ${ BRAND_NAME } korisničkom računu, to će vam omogućiti da se prijavite i oporavite svoje podatke. To je jedini način da odmah sve vratite, pa ga svakako čuvajte na sigurnom mjestu."
+      ],
+      "If your recovery email has changed, ${ updateEmailLink }.": [
+        "Ako se vaša adresa e-pošte za oporavak promijenila, ${ updateEmailLink }."
+      ],
+      "If your recovery phone has changed, ${ updatePhoneLink }.": [
+        "Ako se vaš telefon za oporavak promijenio, ${ updatePhoneLink }."
+      ],
+      "Later": [
+        "Kasnije"
+      ],
+      "Protect your legacy with Emergency Access": [
+        "Zaštitite svoju ostavštinu pomoću pristupa za hitne slučajeve"
+      ],
+      "Save recovery phrase": [
+        "Spremi frazu za oporavak"
+      ],
+      "Saved recovery phrase": [
+        "Spremljena fraza za oporavak"
+      ],
+      "Send verification code": [
+        "Pošalji kôd za potvrdu"
+      ],
+      "They must already have a ${ BRAND_NAME } Account.": [
+        "Već moraju imati ${ BRAND_NAME } korisnički račun."
+      ],
+      "They will not be able to see or access your data.": [
+        "Oni neće moći vidjeti niti pristupiti vašim podacima."
+      ],
+      "This will let you quickly access your ${ BRAND_NAME } Account so you can change your password.": [
+        "To će vam omogućiti brz pristup vašem ${ BRAND_NAME } korisničkom računu kako biste mogli promijeniti lozinku."
+      ],
+      "This will let you reset your account password if you’ve lost it, but are still signed in to ${ BRAND_NAME }. It’s often the easiest way to recover your account if you’re signed in.": [
+        "To će vam omogućiti ponovno pokretanje lozinke korisničkog računa ako ste je izgubili, ali ste još uvijek prijavljeni na ${ BRAND_NAME }. To je često najlakši način da oporavite svoj korisnički račun ako ste prijavljeni."
+      ],
+      "This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
+        "Ovo će vratiti pristup e-pošti, kontaktima, datotekama, lozinkama i svim drugim šifriranim podacima na vašem korisničkom računu nakon ponovnog pokretanja lozinke."
+      ],
+      "To help you remember your password, we’ll periodically ask you to enter it.": [
+        "Kako bismo vam pomogli zapamtiti lozinku, povremeno ćemo od vas tražiti da je unesete."
+      ],
+      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
+        "Kako biste bili sigurni da je ova adresa e-pošte vaša, unesite kôd za potvrdu poslan na ${ boldEmail }."
+      ],
+      "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
+        "Kako biste bili sigurni da je telefonski broj vaš, unesite kôd za potvrdu poslan na ${ boldPhoneNumber }."
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification code.": [
+        "Kako bismo se uvjerili da je ova adresa zaista vaša, poslat ćemo e-poštu s kôdom za potvrdu."
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification link.": [
+        "Kako bismo bili sigurni da je ova adresa stvarno vaša, poslat ćemo e-poštu s poveznicom za potvrdu."
+      ],
+      "To make sure this number is really yours, we’ll send an SMS with a verification code.": [
+        "Kako bismo se uvjerili da je ovaj broj zaista vaš, poslat ćemo SMS s kôdom za potvrdu."
+      ],
+      "Update": [
+        "Ažuriraj"
+      ],
+      "Update recovery email": [
+        "Ažuriraj adresu e-pošte za oporavak"
+      ],
+      "Update recovery phone": [
+        "Ažuriraj telefon za oporavak"
+      ],
+      "Upgrade your plan to enable Emergency Access to your account. This will allow you to designate 1 to 5 people who will be able to reset your password for you.": [
+        "Nadogradite svoj plan kako biste omogućili pristup za hitne slučajeve svom korisničkom računu. To će vam omogućiti da odredite 1 do 5 osoba koje će moći ponovno pokrenuti vašu lozinku umjesto vas."
+      ],
+      "Verified password": [
+        "Lozinka je potvrđena"
+      ],
+      "Verified recovery email": [
+        "Potvrđena adresa e-pošte za oporavak"
+      ],
+      "Verified recovery phone": [
+        "Potvrđen telefon za oporavak"
+      ],
+      "Verify": [
+        "Potvrdi"
+      ],
+      "Verify password": [
+        "Potvrdi lozinku"
+      ],
+      "Verify recovery email": [
+        "Potvrdi adresu e-pošte za oporavak"
+      ],
+      "Verify recovery phone": [
+        "Potvrdi telefon za oporavak"
+      ],
+      "Verify your password": [
+        "Potvrdite svoju lozinku"
+      ],
+      "Verify your recovery email": [
+        "Potvrdite svoju adresu e-pošte za oporavak"
+      ],
+      "Verify your recovery phone": [
+        "Potvrdite svoj telefon za oporavak"
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        "Potvrđivanje vaše adrese e-pošte povećava sigurnost vašeg korisničkog računa i omogućuje dodatne opcije za oporavak."
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "Potvrđivanje vašeg telefonskog broja povećava sigurnost vašeg korisničkog računa i omogućuje dodatne opcije za oporavak."
+      ],
+      "You can save a data backup on this device. This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset, simply by signing in on this device.": [
+        "Možete spremiti sigurnosnu kopiju podataka na ovom uređaju. Ovo će vratiti pristup e-pošti, kontaktima, datotekama, lozinkama i svim drugim šifriranim podacima na vašem korisničkom računu nakon ponovnog pokretanja lozinke, jednostavnim prijavljivanjem na ovom uređaju."
+      ],
+      "You can use email verification to regain access to your account if you forget your password.": [
+        "Možete koristiti potvrdu e-pošte za ponovni pristup svom korisničkom računu ako zaboravite lozinku."
+      ],
+      "You can use SMS verification to regain access to your account if you forget your password.": [
+        "Možete koristiti SMS potvrdu za ponovni pristup svom korisničkom računu ako zaboravite lozinku."
+      ],
+      "You can use your recovery email to regain access to your account if you forget your password.": [
+        "Možete koristiti svoju adresu e-pošte za oporavak kako biste ponovno pristupili svom korisničkom računu ako zaboravite lozinku."
+      ],
+      "You can use your recovery phone to regain access to your account if you forget your password.": [
+        "Možete koristiti svoj telefon za oporavak kako biste ponovno pristupili svom korisničkom računu ako zaboravite lozinku."
+      ],
+      "You don’t need to open or read the file—just download it and store it somewhere safe.": [
+        "Ne morate otvarati ni čitati datoteku — samo je učitajte i spremite na sigurno mjesto."
+      ],
+      "Your recovery checklist": [
+        "Vaš kontrolni popis za oporavak"
+      ],
+      "Your security setup": [
+        "Vaše postavljanje sigurnosti"
       ]
     }
   }

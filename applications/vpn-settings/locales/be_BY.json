@@ -4758,6 +4758,12 @@
       ],
       "Your recovery contacts should be people you know and can contact easily.": [
         "Вашы кантакты для аднаўлення павінны быць людзьмі, якіх вы ведаеце і з якімі вы зможаце лёгка звязацца."
+      ],
+      "Add 1 more": [
+        "Дадаць яшчэ 1"
+      ],
+      "Explore plans": [
+        "Пазнаёміцца з тарыфнымі планамі"
       ]
     },
     "Empty group name": {
@@ -11498,6 +11504,9 @@
       ],
       "ZIP code": [
         "Паштовы індэкс"
+      ],
+      "Enter current password": [
+        "Увядзіце бягучы пароль"
       ]
     },
     "label": {
@@ -11506,6 +11515,9 @@
       ],
       "Recovery phone number": [
         "Нумар тэлефона для аднаўлення"
+      ],
+      "Set recovery phone number": [
+        "Задаць нумар тэлефона для аднаўлення доступу"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15196,6 +15208,9 @@
       ],
       "Your recovery setup is solid, with a few gaps left to close. Each option you add makes your safety net stronger.": [
         "Ваша сістэма аднаўлення з'яўляецца надзейнай, але ёсць некаторыя недахопы, якія варта выправіць. Кожны дададзены вамі параметр дапамагае ўзмацніць вашу сеткавую бяспеку."
+      ],
+      "Recovery score: ${ score }": [
+        "Ацэнка аднаўлення: ${ score }"
       ]
     },
     "Recovery score item": {
@@ -15626,6 +15641,21 @@
     "Safety review": {
       "Review account safety": [
         "Агляд бяспекі ўліковага запісу"
+      ],
+      "Code sent to ${ boldValue }": [
+        "Код адпраўлены на ${ boldValue }"
+      ],
+      "Invalid code": [
+        "Памылковы код"
+      ],
+      "Safety review": [
+        "Бяспечны агляд"
+      ],
+      "Send a new code": [
+        "Адправіць новы код"
+      ],
+      "update it now": [
+        "абнавіце яго"
       ]
     },
     "saml: Action": {
@@ -20525,6 +20555,272 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Пасля паспяховага спраўджання не выдаляйце гэты запіс TXT, бо ён неабходны для пацвярджэння таго, што вы з'яўляецеся ўладальнікам дамена."
+      ]
+    },
+    "safety_review": {
+      "${ BRAND_NAME } Account email": [
+        "Уліковы запіс электроннай пошты ${ BRAND_NAME }"
+      ],
+      "Account protection": [
+        "Абарона ўліковага запісу"
+      ],
+      "Add": [
+        "Дадаць"
+      ],
+      "Add an emergency contact": [
+        "Дадаць экстранны кантакт"
+      ],
+      "Add emergency contacts": [
+        "Дадаць экстранныя кантакты"
+      ],
+      "Add options": [
+        "Дадаць параметры"
+      ],
+      "Add people who you trust and can contact easily. Your emergency contact will be able to access your account and reset your password for you if needed.": [
+        "Дадайце людзей, якім вы давяраеце і з якімі можаце лёгка звязацца. Вашы экстранныя кантакты змогуць атрымаць доступ да вашага ўліковага запісу і скінуць пароль для вас, калі вам гэта будзе неабходна."
+      ],
+      "Add people you trust and can contact easily. They will be able to help you unlock your data after you reset your password.": [
+        "Дадайце людзей, якім вы давяраеце і з якімі можаце лёгка звязацца. Яны змогуць дапамагчы разблакіраваць вашы даныя пасля скідання пароля."
+      ],
+      "Add phone number": [
+        "Дадаць нумар тэлефона"
+      ],
+      "Add recovery contacts": [
+        "Дадаць кантакты для аднаўлення"
+      ],
+      "Add recovery email": [
+        "Дадаць электронную пошту для аднаўлення"
+      ],
+      "Add recovery phone": [
+        "Дадаць тэлефон для аднаўлення"
+      ],
+      "Added emergency contacts": [
+        "Даданыя экстранныя кантакты"
+      ],
+      "Added recovery contacts": [
+        "Кантакты для аднаўлення дадзены"
+      ],
+      "Added recovery email": [
+        "Электронная пошта для аднаўлення доступу дададзена"
+      ],
+      "Added recovery phone": [
+        "Тэлефон для аднаўлення дададзены"
+      ],
+      "Allow": [
+        "Дазволіць"
+      ],
+      "Allow data recovery from this device": [
+        "Дазволіць аднаўленне даных з гэтай прылады"
+      ],
+      "Allow password reset from the settings": [
+        "Дазволіць скіданне пароля з налад"
+      ],
+      "Allow recovery by email": [
+        "Дазволіць аднаўленне доступу па электроннай пошце"
+      ],
+      "Allow recovery by phone": [
+        "Дазволіць аднаўленне па нумары тэлефона"
+      ],
+      "Allow scanning a QR code to sign in": [
+        "Дазволіць сканіраванне QR-кода для ўваходу"
+      ],
+      "Allow trusted friends to unlock your data": [
+        "Дазволіць давераным сябрам разблакіроўку вашых даных"
+      ],
+      "Back to ${ backLink.appNameString }": [
+        "Вярнуцца ў ${ backLink.appNameString }"
+      ],
+      "Congratulations": [
+        "Віншуем"
+      ],
+      "Didn’t receive it? ${ sendANewCode }": [
+        "Не атрымалі яго? ${ sendANewCode }"
+      ],
+      "Done": [
+        "Гатова"
+      ],
+      "Download": [
+        "Спампаваць"
+      ],
+      "Download recovery file": [
+        "Спампаваць файл аднаўлення"
+      ],
+      "Downloaded recovery file": [
+        "Спампаваны файл аднаўлення"
+      ],
+      "Emergency contacts enabled": [
+        "Экстранныя кантакты ўключаны"
+      ],
+      "Enable device recovery": [
+        "Уключыць аднаўленне па прыладзе"
+      ],
+      "Enable email recovery": [
+        "Уключыць электронную пошту для аднаўлення"
+      ],
+      "Enable emergency contacts": [
+        "Уключыць экстранныя кантакты"
+      ],
+      "Enable password reset from settings": [
+        "Уключыць скідання пароля з налад"
+      ],
+      "Enable phone recovery": [
+        "Уключыць аднаўленне па тэлефону"
+      ],
+      "Enable QR code sign-in": [
+        "Уключыць уваход па QR-кодзе"
+      ],
+      "Enabled device recovery": [
+        "Аднаўленне па прыладзе ўключана"
+      ],
+      "Enabled email recovery": [
+        "Аднаўленне доступу па электроннай пошце ўключана"
+      ],
+      "Enabled password reset from settings": [
+        "Скіданне пароля з налад уключана"
+      ],
+      "Enabled phone recovery": [
+        "Аднаўленне па нумары тэлефона ўключана"
+      ],
+      "Enabled QR code sign-in": [
+        "Уваход па QR-кодзе ўключаны"
+      ],
+      "Got it": [
+        "Зразумела"
+      ],
+      "Here's how you increased your account protection:": [
+        "Як павялічыць абарону вашага ўліковага запісу:"
+      ],
+      "If you forget your password, you can sign in using a QR code. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
+        "Вы можаце ўвайсці з дапамогай QR-кода, калі забылі свой пароль. Усё, што вам неабходна, гэта ўвайсці ў сэрвіс ${ BRAND_NAME } на іншай прыладзе."
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, it will allow you to sign in and recover your data. It’s the only way to instantly restore everything, so make sure you keep it somewhere safe.": [
+        "Гэта дазволіць вам увайсці і аднавіць свае даныя, калі вы заблакіруеце свой уліковы запіс ${ BRAND_NAME }. Гэта адзіны спосаб імгненна аднавіць усе вашы даныя ў сэрвісе. Захавайце яе ў надзейным месцы і каб яна была даступна толькі вам."
+      ],
+      "If your recovery email has changed, ${ updateEmailLink }.": [
+        "${ updateEmailLink }, калі ваша электронная пошта для аднаўлення доступу змянілася."
+      ],
+      "If your recovery phone has changed, ${ updatePhoneLink }.": [
+        "${ updatePhoneLink }, калі ваш нумар тэлефона для аднаўлення доступу змяніўся."
+      ],
+      "Later": [
+        "Пазней"
+      ],
+      "Protect your legacy with Emergency Access": [
+        "Абараніце сваю спадчыну з дапамогай экстраннага доступу"
+      ],
+      "Save recovery phrase": [
+        "Захаваць фразу аднаўлення"
+      ],
+      "Saved recovery phrase": [
+        "Фраза аднаўлення захавана"
+      ],
+      "Send verification code": [
+        "Адправіць код спраўджання"
+      ],
+      "They must already have a ${ BRAND_NAME } Account.": [
+        "У іх ужо павінен быць уліковы запіс ${ BRAND_NAME }."
+      ],
+      "They will not be able to see or access your data.": [
+        "У іх не будзе магчымасці ўбачыць або атрымаць доступ да вашых даных."
+      ],
+      "This will let you quickly access your ${ BRAND_NAME } Account so you can change your password.": [
+        "Гэта функцыя дазволіць вам хутка атрымаць доступ да свайго ўліковага запісу ${ BRAND_NAME }, каб вы маглі змяніць пароль."
+      ],
+      "This will let you reset your account password if you’ve lost it, but are still signed in to ${ BRAND_NAME }. It’s often the easiest way to recover your account if you’re signed in.": [
+        "Гэта дазволіць скінуць ваш пароль ад уліковага запісу, калі вы згубіце яго. Адзінай умовай з'яўляецца актыўны сеанс у ${ BRAND_NAME }. Гэта самы просты спосаб аднавіць ваш уліковы запіс пры ўмове, што ў вас ёсць актыўны сеанс у сістэме."
+      ],
+      "This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
+        "Гэта дзеянне адновіць доступ да лістоў, кантактаў, файлаў, пароляў і іншых зашыфраваных даных у вашым уліковым запісе пасля скідання пароля."
+      ],
+      "To help you remember your password, we’ll periodically ask you to enter it.": [
+        "Сістэма будзе перыядычна прасіць увесці ваш пароль, каб вы яго не забылі."
+      ],
+      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
+        "Увядзіце код спраўджання адпраўлены на электронную пошту ${ boldEmail } для спраўджання таго, што яна належыць менавіта вам."
+      ],
+      "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
+        "Увядзіце код спраўджання адпраўлены на ваш нумар тэлефона ${ boldPhoneNumber } для пацвярджэння таго, што ён належыць менавіта вам."
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification code.": [
+        "Сістэма адправіць вам ліст з кодам спраўджання. Гэта дазволіць пацвердзіць, што гэта сапраўды ваш адрас."
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification link.": [
+        "Сістэма адправіць вам ліст са спасылкай для спраўджання. Гэта дазволіць пацвердзіць, што гэта сапраўды ваш адрас."
+      ],
+      "To make sure this number is really yours, we’ll send an SMS with a verification code.": [
+        "Сістэма адправіць вам SMS з кодам спраўджання. Гэта дазволіць пацвердзіць, што гэта сапраўды ваш нумар."
+      ],
+      "Update": [
+        "Абнавіць"
+      ],
+      "Update recovery email": [
+        "Абнавіць электронную пошту для аднаўлення доступу"
+      ],
+      "Update recovery phone": [
+        "Абнавіць нумар тэлефона для аднаўлення доступу"
+      ],
+      "Upgrade your plan to enable Emergency Access to your account. This will allow you to designate 1 to 5 people who will be able to reset your password for you.": [
+        "Палепшыце свой тарыфны план, каб уключыць экстранны доступ да свайго ўліковага запісу. Гэта дазволіць вам прызначыць ад 1 да 5 карыстальнікаў, якія змогуць скінуць ваш пароль."
+      ],
+      "Verified password": [
+        "Спраўджаны пароль"
+      ],
+      "Verified recovery email": [
+        "Электронная пошта для аднаўлення доступу спраўджана"
+      ],
+      "Verified recovery phone": [
+        "Нумар тэлефона для аднаўлення доступу спраўджаны"
+      ],
+      "Verify": [
+        "Спраўдзіць"
+      ],
+      "Verify password": [
+        "Спраўджанне пароля"
+      ],
+      "Verify recovery email": [
+        "Спраўдзіць электронную пошту для аднаўлення доступу"
+      ],
+      "Verify recovery phone": [
+        "Спраўдзіць нумар тэлефона для аднаўлення доступу"
+      ],
+      "Verify your password": [
+        "Спраўджанне вашага пароля"
+      ],
+      "Verify your recovery email": [
+        "Спраўдзіце сваю электронную пошту для аднаўлення доступу"
+      ],
+      "Verify your recovery phone": [
+        "Спраўдзіце свой нумар тэлефона для аднаўлення доступу"
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        "Спраўджанне вашага адрасу электроннай пошты павялічыць бяспеку вашага ўліковага запісу і дазволіць пашырыць параметры для аднаўлення."
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "Спраўджанне вашага нумару тэлефона павялічыць бяспеку вашага ўліковага запісу і дазволіць пашырыць параметры для аднаўлення."
+      ],
+      "You can save a data backup on this device. This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset, simply by signing in on this device.": [
+        "Вы можаце захаваць рэзервовыя копіі даных на гэтай прыладзе. Гэта дзеянне дазволіць аднавіць доступ да лістоў, кантактаў, файлаў, пароляў і іншых зашыфраваных даных у вашым уліковым запісе пасля скідання пароля. Вам неабходна будзе толькі ўвайсці ў сістэму на гэтай прыладзе."
+      ],
+      "You can use email verification to regain access to your account if you forget your password.": [
+        "Вы можаце выкарыстоўваць спраўджанне па электроннай пошце для аднаўлення доступу да ўліковага запісу, калі забудзеце пароль."
+      ],
+      "You can use SMS verification to regain access to your account if you forget your password.": [
+        "Вы можаце выкарыстоўваць спраўджанне па SMS для аднаўлення доступу да ўліковага запісу, калі забудзеце пароль."
+      ],
+      "You can use your recovery email to regain access to your account if you forget your password.": [
+        "Вы можаце выкарыстоўваць сваю электронную пошту для вяртання доступу да ўліковага запісу, калі забудзеце пароль."
+      ],
+      "You can use your recovery phone to regain access to your account if you forget your password.": [
+        "Вы можаце выкарыстоўваць свой нумар тэлефона для вяртання доступу да ўліковага запісу, калі вы забудзеце свой пароль."
+      ],
+      "You don’t need to open or read the file—just download it and store it somewhere safe.": [
+        "Няма неабходнасці адкрываць або чытаць файл. Проста спампуйце яго і захавайце дзе-небудзь у надзейным месцы."
+      ],
+      "Your recovery checklist": [
+        "Ваш кантрольны спіс аднаўлення"
+      ],
+      "Your security setup": [
+        "Ваша бяспечная наладка"
       ]
     }
   }
