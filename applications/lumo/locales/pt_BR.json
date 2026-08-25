@@ -3187,6 +3187,9 @@
       "Add to favorites": [
         "Adicionar aos favoritos"
       ],
+      "Analyze another export": [
+        "Analisar outra exportação"
+      ],
       "Ask the model to be more careful and thorough": [
         "Peça ao modelo para ser mais cauteloso e detalhista"
       ],
@@ -3273,6 +3276,9 @@
       ],
       "Edit instructions": [
         "Editar instruções"
+      ],
+      "Edit project": [
+        "Editar projeto"
       ],
       "Expand": [
         "Expandir"
@@ -3518,6 +3524,9 @@
       "New chat": [
         "Novo bate-papo"
       ],
+      "New project": [
+        "Novo projeto"
+      ],
       "Projects": [
         "Projetos"
       ],
@@ -3599,6 +3608,9 @@
       ],
       "Unlimited custom ${ LUMO_SHORT_APP_NAME }s": [
         "Personalizações de ${ LUMO_SHORT_APP_NAME }s ilimitadas"
+      ],
+      "Unlimited projects": [
+        "Projetos ilimitados"
       ]
     },
     "collider_2025:Filter": {
@@ -3709,6 +3721,9 @@
       "Browse to the ${ DRIVE_SHORT_APP_NAME } folder you want to link to this project, then click \"Link this folder\".": [
         "Navegue até a pasta do ${ DRIVE_SHORT_APP_NAME } que você deseja vincular a este projeto e clique em \"Vincular esta pasta\"."
       ],
+      "Built by ${ BRAND_NAME }, the privacy brand trusted by over 100 million people and the team behind ${ MAIL_APP_NAME }, ${ VPN_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }.": [
+        "Desenvolvido pela ${ BRAND_NAME }, a marca de privacidade em que mais de 100 milhões de pessoas confiam e a equipe por trás da ${ MAIL_APP_NAME }, ${ VPN_APP_NAME }, ${ DRIVE_APP_NAME } e ${ PASS_APP_NAME }."
+      ],
       "Built-in ${ BRAND_NAME } agent": [
         "Agente integrado da ${ BRAND_NAME }"
       ],
@@ -3808,6 +3823,9 @@
       "Link files from ${ DRIVE_APP_NAME } or upload from your computer.": [
         "Vincule arquivos do ${ DRIVE_APP_NAME } ou envie do seu computador."
       ],
+      "Loading…": [
+        "Carregando…"
+      ],
       "Lockdown Mode is enabled on your device": [
         "Modo de isolamento está ativado no seu dispositivo"
       ],
@@ -3837,6 +3855,12 @@
       ],
       "Processing...": [
         "Processando..."
+      ],
+      "Projects help you organize conversations with custom instructions and files.": [
+        "Os projetos ajudam você a organizar conversas com instruções e arquivos personalizados."
+      ],
+      "Projects help you organize conversations with custom instructions and files. Sign in or create a free account to get started.": [
+        "Os projetos ajudam você a organizar conversas com instruções e arquivos personalizados. Inicie sessão ou crie uma conta gratuita para começar.iniciar sessão"
       ],
       "red flags": [
         "sinais de alerta"
@@ -3888,6 +3912,9 @@
       ],
       "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to create unlimited custom ${ LUMO_SHORT_APP_NAME }s, unlock advanced AI models, and more.": [
         "Faça upgrade para o ${ LUMO_SHORT_APP_NAME } Plus para criar ${ LUMO_SHORT_APP_NAME }s personalizados ilimitados, desbloquear modelos de IA avançados e muito mais."
+      ],
+      "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to create unlimited projects, unlock advanced AI models, and more.": [
+        "Faça upgrade para o ${ LUMO_SHORT_APP_NAME } Plus para criar projetos ilimitados, desbloquear modelos avançados de IA e muito mais."
       ],
       "Use the Max model for complex work or the Lite model for everyday tasks. Choose Fast mode for quick answers or Thinking mode for tougher questions.": [
         "Use o modelo Max para trabalhos complexos ou o modelo Lite para tarefas cotidianas. Escolha o modo Rápido para respostas rápidas ou o modo Pensamento para perguntas mais difíceis."
@@ -4004,8 +4031,17 @@
       "Card theme": [
         "Tema do cartão"
       ],
+      "chat": [
+        "bate-papo"
+      ],
+      "chats": [
+        "bate-papos"
+      ],
       "Conversation starters (optional)": [
         "Iniciadores de conversa (opcional)"
+      ],
+      "Created": [
+        "Criado"
       ],
       "Created on": [
         "Criada em"
@@ -4073,6 +4109,9 @@
       "My privacy type": [
         "Meu tipo privado"
       ],
+      "Name": [
+        "Nome"
+      ],
       "Personalized pricing": [
         "Preços personalizados"
       ],
@@ -4084,6 +4123,9 @@
       ],
       "Progress": [
         "Progresso"
+      ],
+      "Project Instructions (optional)": [
+        "Instruções do projeto (opcional)"
       ],
       "Save report on this device to view it later": [
         "Salve o relatório neste dispositivo para visualizá-la mais tarde"
@@ -4142,6 +4184,9 @@
       "Add a conversation starter": [
         "Adicionar um iniciador de conversa"
       ],
+      "Add instructions about the tone, style, and persona you want ${ LUMO_SHORT_APP_NAME } to adopt.": [
+        "Adicione instruções sobre o tom, estilo e personalidade que você deseja que o ${ LUMO_SHORT_APP_NAME } adote."
+      ],
       "Add instructions about the tone, style, and persona you want ${ LUMO_SHORT_APP_NAME } to adopt. These instructions will apply to all chats in this project.": [
         "Adicione instruções sobre o tom, estilo e persona que você deseja que o ${ LUMO_SHORT_APP_NAME } adote. Estas instruções se aplicarão a todos os bate-papos neste projeto."
       ],
@@ -4163,11 +4208,17 @@
       "Enter folder name": [
         "Insira o nome da pasta"
       ],
+      "Enter project name": [
+        "Insira o nome do projeto"
+      ],
       "Fluffy McFluff Face": [
         "Fluffy McFluff Face"
       ],
       "Help with login, password and recovery issues.": [
         "Ajuda com problemas de início de sessão, senha e recuperação."
+      ],
+      "Holiday planner": [
+        "Planejador de feriados"
       ],
       "Search chats": [
         "Pesquisar bate-papos"
@@ -4182,6 +4233,32 @@
     "collider_2025:Prefill": {
       "Edit this image:": [
         "Editar imagem:"
+      ]
+    },
+    "collider_2025:Project": {
+      "Financial assistant": [
+        "Assistente financeiro"
+      ],
+      "Get help understanding assignments, solving problems, and learning concepts": [
+        "Obtenha ajuda para compreender tarefas, resolver problemas e aprender conceitos"
+      ],
+      "Learn a language": [
+        "Aprender um idioma"
+      ],
+      "Plan financial goals with personalized insights": [
+        "Planeje metas financeiras com insights personalizados"
+      ],
+      "Research & Analysis Partner": [
+        "Parceiro de pesquisa e análise"
+      ],
+      "Study companion": [
+        "Companheiro de estudo"
+      ],
+      "Synthesize sources, analyze data, and develop insights for your research projects": [
+        "Sintetize fontes, analise dados e desenvolva insights para seus projetos de pesquisa."
+      ],
+      "Writing coach": [
+        "Assistente de escrita"
       ]
     },
     "collider_2025:Prompt": {
@@ -4310,6 +4387,9 @@
       "Checking the weather": [
         "Verificando o tempo"
       ],
+      "Complete": [
+        "Concluído"
+      ],
       "Created an image": [
         "Criou uma imagem"
       ],
@@ -4345,6 +4425,9 @@
       ],
       "Extracting page content": [
         "Extraindo o conteúdo da página"
+      ],
+      "Failed": [
+        "Erro"
       ],
       "Generated image": [
         "A imagem foi gerada"
@@ -4487,6 +4570,9 @@
     "collider_2025:Subline": {
       "Custom ${ LUMO_SHORT_APP_NAME }s turn a chat into a focused assistant with its own instructions. Pick one from the composer to start a conversation with it.": [
         "${ LUMO_SHORT_APP_NAME }s personalizados transformam um chat em um assistente focado com suas próprias instruções. Escolha um no compositor para iniciar uma conversa."
+      ],
+      "Projects help you keep related chats, files, and instructions in one place. They make it easy to stay organized and reuse context across chats.": [
+        "Os projetos ajudam você a manter bate-papos, arquivos e instruções relacionados em um só lugar. Eles facilitam a organização e a reutilização do contexto entre os bate-papos."
       ]
     },
     "collider_2025:Success": {
@@ -4571,6 +4657,9 @@
       "Create folder": [
         "Criar pasta"
       ],
+      "Create new project": [
+        "Criar novo projeto"
+      ],
       "Custom ${ LUMO_SHORT_APP_NAME }s": [
         "${ LUMO_SHORT_APP_NAME } personalizados"
       ],
@@ -4589,6 +4678,9 @@
       "Edit Instructions": [
         "Editar instruções"
       ],
+      "Edit Project": [
+        "Editar projeto"
+      ],
       "Every clarification is a new data point": [
         "Cada esclarecimento é um novo ponto de dados"
       ],
@@ -4603,6 +4695,9 @@
       ],
       "Filters": [
         "Filtros"
+      ],
+      "Get started by creating a new project": [
+        "Comece criando um projeto"
       ],
       "Ghost mode": [
         "Modo fantasma"
@@ -4621,6 +4716,9 @@
       ],
       "Image generation and editing": [
         "Geração e edição de imagens"
+      ],
+      "Inspiration": [
+        "Inspiração"
       ],
       "Instructions": [
         "Instruções"
@@ -4646,11 +4744,17 @@
       "More options": [
         "Mais opções"
       ],
+      "More Projects with ${ LUMO_SHORT_APP_NAME } Plus": [
+        "Mais Projetos no ${ LUMO_SHORT_APP_NAME } Plus"
+      ],
       "Most revealing": [
         "Mais revelador"
       ],
       "My AI paper trail": [
         "Meu rastro digital de IA"
+      ],
+      "My Projects": [
+        "Meus projetos"
       ],
       "No chat history yet. Let's start chatting!": [
         "Nenhum histórico de bate-papo ainda. Vamos começar a conversar!"
@@ -7509,6 +7613,9 @@
       "max": [
         "máx."
       ],
+      "Max model availability": [
+        "Disponibilidade do modelo Max"
+      ],
       "Memory": [
         "Memória"
       ],
@@ -7517,6 +7624,9 @@
       ],
       "Messages rejected by the backend (e.g. limits) remain locally in IndexedDB with a dirty flag. Exports decrypt content from the in-memory Redux state and tag unsynced messages with _dirty: true. Space encryption keys are stripped.": [
         "As mensagens rejeitadas pelo backend (por exemplo, limites) permanecem localmente no IndexedDB com uma flag indicando alteração (dirty flag). As exportações descriptografam o conteúdo do estado do Redux na memória e marcam as mensagens não sincronizadas com _dirty: true. As chaves de criptografia de espaço são removidas."
+      ],
+      "Model usage limits": [
+        "Limite de uso do modelo"
       ],
       "Native bridge: onLimitReachedError": [
         "Ponte nativa: onLimitReachedError"
@@ -7553,6 +7663,9 @@
       ],
       "Refresh": [
         "Atualizar"
+      ],
+      "Remaining (Max)": [
+        "Restante (Max)"
       ],
       "Render time": [
         "Tempo de renderização"
