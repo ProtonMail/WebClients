@@ -18,6 +18,8 @@ import { useFlag } from '@proton/unleash/useFlag';
  * - lumoSurveyFreeUsers: Survey flag for free users
  * - lumoSurveyPaidUsers: Survey flag for paid users
  * - lumoSurveyGuestUsers: Survey flag for guest users
+ * - lumoNativeAuthAndroid: Enable native auth on the Android app
+ * - lumoNativeAuthIOS: Enable native auth on the iOS app
  * - memory: Enable the memory feature (saved memories used to personalize general chats)
  * - visualizationInstructions: Enable chart and KPI card formatting instructions in the system prompt
  * - customAgents: Enable the custom agents option in the composer tools dropdown
@@ -43,7 +45,8 @@ export const useLumoFlags = () => {
     const lumoSurveyGuestUsers = useFlag('LumoSurveyGuestUsers');
     const memory = useFlag('LumoMeowmory');
     const visualizationInstructions = useFlag('LumoVisualizationInstructions');
-    const lumoNativeAuth = useFlag('LumoNativeAuth');
+    const lumoNativeAuthAndroid = useFlag('LumoNativeAuthAndroid');
+    const lumoNativeAuthIOS = useFlag('LumoNativeAuthIOS');
     const customAgents = useFlag('LumoCustomAgents');
     const aiPaperTrailRoute = useFlag('LumoAiPaperTrailRoute');
     const aiPaperTrailPopup = useFlag('LumoAiPaperTrailPopup');
@@ -70,7 +73,8 @@ export const useLumoFlags = () => {
         lumoSurveyFreeUsers,
         lumoSurveyPaidUsers,
         lumoSurveyGuestUsers,
-        lumoNativeAuth,
+        lumoNativeAuthAndroid,
+        lumoNativeAuthIOS,
         maxAvailableFree,
         maxAvailableGuest,
     };
