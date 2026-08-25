@@ -90,8 +90,8 @@ jest.mock('@proton/components/containers/eventManager/calendar/CalendarModelEven
     })),
 }));
 jest.mock('@proton/calendar/calendars/hooks', () => ({
-    useCalendars: jest.fn().mockReturnValue([calendars, false]),
-    useWriteableCalendars: jest.fn().mockReturnValue([calendars, false]),
+    useCalendars: jest.fn(() => [calendars, false]),
+    useWriteableCalendars: jest.fn(() => [calendars, false]),
     useGetCalendars: jest.fn(),
 }));
 
