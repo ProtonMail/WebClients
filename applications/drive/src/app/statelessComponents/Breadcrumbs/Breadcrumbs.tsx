@@ -14,9 +14,10 @@ export interface BreadcrumbsProps {
     crumbs: CrumbDefinition[];
     events: BreadcrumbsEvents;
     createHandleItemDrop?: (newParentNodeUid: string) => (e: React.DragEvent<Element>) => void;
+    className?: string;
 }
 
-export const Breadcrumbs = ({ crumbs, loading, events, createHandleItemDrop }: BreadcrumbsProps) => {
+export const Breadcrumbs = ({ crumbs, loading, events, createHandleItemDrop, className }: BreadcrumbsProps) => {
     const [dropTarget, setDropTarget] = useState<string>();
     const { createNotification } = useNotifications();
 
@@ -77,5 +78,5 @@ export const Breadcrumbs = ({ crumbs, loading, events, createHandleItemDrop }: B
         };
     });
 
-    return <CollapsingBreadcrumbs breadcrumbs={breadcrumbs} />;
+    return <CollapsingBreadcrumbs breadcrumbs={breadcrumbs} className={className} />;
 };
