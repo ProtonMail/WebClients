@@ -52,7 +52,7 @@ export const CaptionLanguageSelect = () => {
 
     return (
         <div ref={rowRef} className="flex items-center justify-space-between flex-nowrap gap-2 w-full">
-            <span id={LABEL_ID} className="text-lg color-norm">
+            <span id={LABEL_ID} className="text-rg color-norm">
                 {c('Label').t`Spoken language`}
             </span>
             <button

@@ -127,7 +127,6 @@ export const PreJoinDetails = ({
                             ariaLabel={c('Alt').t`Save my name on this device`}
                             checked={keepDisplayNameOnDevice}
                             onChange={(e) => setKeepDisplayNameOnDevice(e.target.checked)}
-                            size="medium"
                             className="remember-my-name-on-this-device"
                         />
                     </InputFieldStacked>
