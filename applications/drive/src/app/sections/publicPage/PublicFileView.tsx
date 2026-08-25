@@ -60,7 +60,7 @@ export const PublicFileView = ({ rootNode, customPassword, isPartialView }: Publ
         <div className="h-full flex flex-column">
             <PublicHeader
                 breadcrumbOrName={
-                    <div className="file-preview-filename flex items-center flex-nowrap">
+                    <div className="file-preview-filename flex items-center flex-nowrap min-w-full p-1 xl:min-w-0">
                         <FileNameDisplay text={getNodeName(rootNode)} className="user-select w-100" />
                     </div>
                 }

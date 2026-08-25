@@ -311,6 +311,7 @@ export const PublicFolderView = ({ rootNode, customPassword, isPartialView }: Pu
             <PublicHeader
                 breadcrumbOrName={
                     <Breadcrumbs
+                        className="py-0"
                         loading={breadcrumbLoading}
                         crumbs={crumbs}
                         events={{
