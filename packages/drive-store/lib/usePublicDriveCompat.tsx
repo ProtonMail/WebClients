@@ -108,7 +108,7 @@ export interface PublicDriveCompat {
      */
     getPublicKeysForEmail: (email: string, abortSignal?: AbortSignal) => Promise<string[] | undefined>;
 
-    renamePublicDocument: (nodeMeta: PublicNodeMeta, parentLinkId: string, newName: string) => Promise<void>;
+    renamePublicDocument: (nodeMeta: PublicNodeMeta, newName: string) => Promise<void>;
 
     linkId: string | undefined;
 }
@@ -147,8 +147,8 @@ const usePublicDriveCompatValue = (session?: ResumedSessionResult): PublicDriveC
     const { renameLink } = usePublicActions();
 
     const renamePublicDocument: PublicDriveCompat['renamePublicDocument'] = useCallback(
-        async (nodeMeta, parentLinkId, newName) => {
-            await renameLink(abortSignal, { ...nodeMeta, parentLinkId, newName });
+        async (nodeMeta, newName) => {
+            await renameLink(abortSignal, { ...nodeMeta, newName });
         },
         [abortSignal, renameLink]
     );
