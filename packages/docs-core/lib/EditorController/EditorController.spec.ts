@@ -1,6 +1,6 @@
 import { EditorController } from './EditorController'
 import type { Logger } from '@proton/utils/logs'
-import { DocumentRole, DocUpdateOrigin } from '@proton/docs-shared'
+import { BroadcastSource, DocumentRole, DocUpdateOrigin } from '@proton/docs-shared'
 import type { ConnectionCloseReason } from '@proton/docs-proto'
 import { EventType, EventTypeEnum } from '@proton/docs-proto'
 import metrics from '@proton/metrics'
@@ -300,6 +300,45 @@ describe('EditorController', () => {
       })
 
       expect(editorInvoker.performClosingCeremony).toHaveBeenCalled()
+    })
+  })
+
+  describe('applyUpdate', () => {
+    beforeEach(() => {
+      controller.receiveEditor(editorInvoker)
+    })
+
+    it('should apply an update locally by default', async () => {
+      const update = new Uint8Array([1, 2, 3])
+
+      await controller.applyUpdate(update)
+
+      expect(editorInvoker.receiveMessage).toHaveBeenCalledWith({
+        type: { wrapper: 'du' },
+        content: update,
+      })
+    })
+
+    it('should request realtime propagation when persistence is requested', async () => {
+      const update = new Uint8Array([1, 2, 3])
+      const emitEvent = jest.spyOn(sharedState, 'emitEvent')
+
+      await controller.applyUpdate(update, true)
+
+      expect(editorInvoker.receiveMessage).toHaveBeenCalledWith({
+        type: { wrapper: 'du' },
+        content: update,
+      })
+      expect(emitEvent).toHaveBeenCalledWith({
+        name: 'EditorRequestsPropagationOfUpdate',
+        payload: {
+          message: {
+            type: { wrapper: 'du' },
+            content: update,
+          },
+          debugSource: BroadcastSource.UpdateReplayTool,
+        },
+      })
     })
   })
 
