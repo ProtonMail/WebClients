@@ -91,8 +91,7 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
 
     const { initializeDevices } = useMediaManagementContext();
 
-    const { meetingLinkNameRef, withMeetingLinkNameTag, reportMeetError, clearSentryReportErrorCounts } =
-        useMeetingErrorContext();
+    const { meetingLinkNameRef, reportMeetError, clearSentryReportErrorCounts } = useMeetingErrorContext();
 
     const {
         connectWithStunFallbackToTurnRelay,
@@ -100,7 +99,7 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
         joiningLoaderHeader,
         joiningLoaderSubtitle,
         clearLoaderState,
-    } = useLiveKitConnection({ reportMeetError, withMeetingLinkNameTag });
+    } = useLiveKitConnection({ reportMeetError });
 
     const history = useHistory();
 
@@ -179,7 +178,6 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
         reportMLSRelatedError,
     } = useKeyManagement({
         keyProvider,
-        withMeetingLinkNameTag,
     });
 
     const { allowHealthCheck, disallowHealthCheck } = useConnectionHealthCheck({
@@ -242,7 +240,6 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
         getParticipants,
         getQueryParticipantsCount,
         reportMeetError,
-        withMeetingLinkNameTag,
         triggerFullReconnectionRef,
     });
 
@@ -261,7 +258,6 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
             meetingLinkNameRef,
             triggerFullReconnectionRef,
             reportMeetError,
-            withMeetingLinkNameTag,
         });
 
     const { joinMeeting, joinInstantMeeting, waitingRoomProviderProps } = useJoinFlow({
@@ -282,7 +278,6 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
         setIsConnectionFailedModalOpen,
         isUsingTurnRelay,
         reportMeetError,
-        withMeetingLinkNameTag,
         displayName,
         cleanupMlsState,
         disallowHealthCheck,
@@ -347,8 +342,8 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
     const handleEndMeeting = async () => {
         try {
             await meetCoreClient.endMeeting();
-        } catch (err) {
-            reportMeetError('Unable to end meeting for all', withMeetingLinkNameTag(err));
+        } catch (error) {
+            reportMeetError('Unable to end meeting for all', { context: { error } });
         }
 
         cleanupMeeting();
@@ -405,7 +400,7 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
                     void room.disconnect();
                     void meetCoreClient.leaveMeeting();
                 } catch (error) {
-                    reportMeetError('Error leaving meeting', withMeetingLinkNameTag(error));
+                    reportMeetError('Error leaving meeting', { context: { error } });
                 }
             }
         };
@@ -414,7 +409,7 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
         return () => {
             window.removeEventListener('unload', handleUnload);
         };
-    }, [joinedRoom, room, meetCoreClient, reportMeetError, withMeetingLinkNameTag]);
+    }, [joinedRoom, room, meetCoreClient, reportMeetError]);
 
     const handleInstantJoin = async () => {
         if (isInstantJoin) {

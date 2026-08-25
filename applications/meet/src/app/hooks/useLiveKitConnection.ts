@@ -33,7 +33,6 @@ export type ConnectionInfo = { stunFailed: boolean; connectionAttempts: number }
 
 interface UseLiveKitConnectionParams {
     reportMeetError: (msg: string, options?: unknown) => void;
-    withMeetingLinkNameTag: (options?: unknown) => unknown;
 }
 
 export interface UseLiveKitConnectionResult {
@@ -44,10 +43,7 @@ export interface UseLiveKitConnectionResult {
     clearLoaderState: () => void;
 }
 
-export const useLiveKitConnection = ({
-    reportMeetError,
-    withMeetingLinkNameTag,
-}: UseLiveKitConnectionParams): UseLiveKitConnectionResult => {
+export const useLiveKitConnection = ({ reportMeetError }: UseLiveKitConnectionParams): UseLiveKitConnectionResult => {
     const room = useRoomContext();
 
     const [isUsingTurnRelay, setIsUsingTurnRelay] = useState(false);
@@ -79,26 +75,24 @@ export const useLiveKitConnection = ({
                 if (warningSubtitle) {
                     setJoiningLoaderSubtitle(warningSubtitle);
                 }
-                reportMeetError(
-                    `Livekit room connection time abnormal (${warningTime}ms)`,
-                    withMeetingLinkNameTag({
+                reportMeetError(`Livekit room connection time abnormal (${warningTime}ms)`, {
+                    context: {
                         timeout: `${warningTime}ms`,
                         stage: 'warning',
-                    })
-                );
+                    },
+                });
             }
         }, warningTime);
 
         let timeoutTimer: NodeJS.Timeout | undefined;
         const timeoutPromise = new Promise<never>((_, reject) => {
             timeoutTimer = setTimeout(async () => {
-                reportMeetError(
-                    `Livekit room connection timeout (${timeout}ms)`,
-                    withMeetingLinkNameTag({
+                reportMeetError(`Livekit room connection timeout (${timeout}ms)`, {
+                    context: {
                         timeout: `${timeout}ms`,
                         stage: 'failed',
-                    })
-                );
+                    },
+                });
                 reject(new Error(`Connection timeout after ${timeout}ms`));
             }, timeout);
         });
@@ -160,7 +154,7 @@ export const useLiveKitConnection = ({
 
                 reportMeetError(
                     'Forced TURN relay failed on Firefox without media permission, trying direct connection',
-                    withMeetingLinkNameTag(relayError)
+                    { context: { error: relayError } }
                 );
                 setJoiningLoaderHeader(c('Warning').t`Connection is taking longer than expected`);
                 setJoiningLoaderSubtitle(c('Warning').t`Trying another route…`);
@@ -181,10 +175,9 @@ export const useLiveKitConnection = ({
             }
 
             const isTimeout = isConnectionTimeoutError(roomConnectionError);
-            reportMeetError(
-                `STUN UDP connection ${isTimeout ? 'timeout' : 'failed'}, trying with TURN relay`,
-                withMeetingLinkNameTag(roomConnectionError)
-            );
+            reportMeetError(`STUN UDP connection ${isTimeout ? 'timeout' : 'failed'}, trying with TURN relay`, {
+                context: { error: roomConnectionError },
+            });
             setJoiningLoaderHeader(c('Warning').t`Connection is taking longer than expected`);
             setJoiningLoaderSubtitle(
                 isTimeout

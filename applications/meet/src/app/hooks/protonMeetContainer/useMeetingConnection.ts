@@ -71,7 +71,6 @@ interface UseMeetingConnectionParams {
     getParticipants: (token: string) => Promise<void>;
     getQueryParticipantsCount: (meetingLinkName: string) => Promise<number | undefined>;
     reportMeetError: (msg: string, options?: unknown) => void;
-    withMeetingLinkNameTag: (options?: unknown) => unknown;
     triggerFullReconnectionRef: MutableRefObject<(reason: RejoinReasonInfo) => void>;
 }
 
@@ -101,7 +100,6 @@ export const useMeetingConnection = ({
     getParticipants,
     getQueryParticipantsCount,
     reportMeetError,
-    withMeetingLinkNameTag,
     triggerFullReconnectionRef,
 }: UseMeetingConnectionParams): UseMeetingConnectionResult => {
     const isMeetSeamlessKeyRotationEnabled = useFlag('MeetSeamlessKeyRotationEnabled');
@@ -201,10 +199,9 @@ export const useMeetingConnection = ({
                 try {
                     await meetCoreClient.leaveMeeting();
                 } catch (leaveError) {
-                    reportMeetError(
-                        'Failed to leave MLS group after LiveKit connection failure',
-                        withMeetingLinkNameTag(leaveError)
-                    );
+                    reportMeetError('Failed to leave MLS group after LiveKit connection failure', {
+                        context: { error: leaveError },
+                    });
                 }
                 disallowHealthCheck();
                 cleanupMlsState();
@@ -290,12 +287,12 @@ export const useMeetingConnection = ({
                 const rejoinTimeMs = BigInt(Date.now()) - reconnectionStartTimeMs;
                 await meetCoreClient
                     .logUserRejoin(rejoinTimeMs, 1, reason, true)
-                    .catch((err: unknown) =>
-                        reportMeetError('Failed to log reconnection success', withMeetingLinkNameTag(err))
+                    .catch((error: unknown) =>
+                        reportMeetError('Failed to log reconnection success', { context: { error } })
                     );
             }
         } catch (error) {
-            reportMeetError('Full reconnection failed', withMeetingLinkNameTag(error));
+            reportMeetError('Full reconnection failed', { context: { error } });
 
             // Best-effort MLS leave in case handleMlsSetup succeeded but a later step failed
             if (mlsSetupDone.current) {
@@ -318,8 +315,8 @@ export const useMeetingConnection = ({
                 const rejoinTimeMs = BigInt(Date.now()) - reconnectionStartTimeMs;
                 await meetCoreClient
                     ?.logUserRejoin(rejoinTimeMs, 1, reason, false)
-                    .catch((err: unknown) =>
-                        reportMeetError('Failed to log reconnection failure', withMeetingLinkNameTag(err))
+                    .catch((error: unknown) =>
+                        reportMeetError('Failed to log reconnection failure', { context: { error } })
                     );
             }
         }
