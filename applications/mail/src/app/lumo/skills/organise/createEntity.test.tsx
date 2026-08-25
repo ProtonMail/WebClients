@@ -1,18 +1,35 @@
-import type { ReferenceRegistry } from '@proton/llm/lib/lumoAgent/contracts/types';
+import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
+import type { ActionRequest, ReferenceRegistry } from '@proton/llm/lib/lumoAgent/contracts/types';
 import { createReferenceRegistry } from '@proton/llm/lib/lumoAgent/engine/referenceRegistry';
 import { LABEL_TYPE } from '@proton/shared/lib/constants';
 import type { Label } from '@proton/shared/lib/interfaces';
+import type { Folder } from '@proton/shared/lib/interfaces/Folder';
+import { buildFolder } from '@proton/testing/builders/folder';
 import { buildLabel } from '@proton/testing/builders/label';
 
 import type { MailToolDeps } from '../../toolModule';
 import type { CreatedEntityResult } from './createEntity';
-import { createFolderDefinition, createFolderModule, createLabelDefinition, createLabelModule } from './createEntity';
+import {
+    createFolderCardRenderer,
+    createFolderDefinition,
+    createFolderModule,
+    createLabelDefinition,
+    createLabelModule,
+} from './createEntity';
 
-const setUp = (created: Label) => {
+/** Travel > Europe > France: Europe is a legal parent, France already sits at the nesting limit. */
+const NESTED_FOLDERS = [
+    buildFolder({ ID: 'TRAVEL', Name: 'Travel', Path: 'Travel' }),
+    buildFolder({ ID: 'EUROPE', Name: 'Europe', Path: 'Travel/Europe', ParentID: 'TRAVEL' }),
+    buildFolder({ ID: 'FRANCE', Name: 'France', Path: 'Travel/Europe/France', ParentID: 'EUROPE' }),
+];
+
+const setUp = (created: Label, folders: Folder[] = []) => {
     const references = createReferenceRegistry();
     const createLabel = jest.fn().mockResolvedValue(created);
+    const getFolders = jest.fn().mockReturnValue(folders);
 
-    return { references, createLabel, deps: { createLabel } as unknown as MailToolDeps };
+    return { references, createLabel, deps: { createLabel, getFolders } as unknown as MailToolDeps };
 };
 
 describe('createFolderModule', () => {
@@ -51,6 +68,46 @@ describe('createFolderModule', () => {
             },
         });
     });
+
+    // The app's own parent picker cannot offer a folder this deep, so without the guard the user confirms a
+    // nesting the API then rejects.
+    it('refuses a parent already at the nesting limit, before anything is created', async () => {
+        const { references, createLabel, deps } = setUp(
+            buildLabel({ ID: 'FOLDER_ID_3', Name: 'Hotels', Type: LABEL_TYPE.MESSAGE_FOLDER }),
+            NESTED_FOLDERS
+        );
+        const france = references.referenceFor('folder', 'FRANCE', 'France');
+
+        await expect(
+            createFolderModule.createHandler(deps)({ name: 'Hotels', parentId: france }, { references })
+        ).rejects.toThrow(ToolInputError);
+        expect(createLabel).not.toHaveBeenCalled();
+    });
+
+    it('still nests under a parent one level short of the limit', async () => {
+        const { references, createLabel, deps } = setUp(
+            buildLabel({ ID: 'FOLDER_ID_4', Name: 'Hotels', Type: LABEL_TYPE.MESSAGE_FOLDER }),
+            NESTED_FOLDERS
+        );
+        const europe = references.referenceFor('folder', 'EUROPE', 'Europe');
+
+        await createFolderModule.createHandler(deps)({ name: 'Hotels', parentId: europe }, { references });
+
+        expect(createLabel).toHaveBeenCalledWith({
+            label: expect.objectContaining({ ParentID: 'EUROPE' }),
+        });
+    });
+});
+
+describe('createFolderCardRenderer', () => {
+    // list_folders mints the parent reference without a name, so an unrecorded parent must lose the clause
+    // rather than show the user a raw reference.
+    it('names the parent the folder nests under, and says nothing when that name was never recorded', () => {
+        const action: ActionRequest = { type: 'create_folder', name: 'Hotels', parentId: 'folder-x7b2q1' };
+
+        expect(createFolderCardRenderer.subtitle?.(action, { 'folder-x7b2q1': 'Travel' })).toBe('Hotels in Travel');
+        expect(createFolderCardRenderer.subtitle?.(action, {})).toBe('Hotels');
+    });
 });
 
 describe('createLabelModule', () => {
@@ -60,7 +117,7 @@ describe('createLabelModule', () => {
         await createLabelModule.createHandler(deps)({ name: 'Receipts' }, { references });
 
         expect(createLabel).toHaveBeenCalledWith({
-            label: { Name: 'Receipts', Color: expect.any(String), Type: LABEL_TYPE.MESSAGE_LABEL },
+            label: { Name: 'Receipts', Color: expect.any(String), Type: LABEL_TYPE.MESSAGE_LABEL, Notify: 0 },
         });
     });
 });
