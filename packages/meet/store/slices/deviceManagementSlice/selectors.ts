@@ -5,7 +5,9 @@ import { isLinux } from '@proton/shared/lib/helpers/browser';
 
 import {
     type SerializableDeviceInfo,
+    filterDevices,
     getDefaultDevice,
+    getDevicesHash,
     isDefaultDevice,
     toSerializableDevice,
 } from '../../../utils/deviceUtils';
@@ -22,6 +24,27 @@ export const selectPermissions = (state: MeetState) => state.deviceManagement.pe
 export const selectCameras = (state: MeetState) => state.deviceManagement.cameras;
 export const selectMicrophones = (state: MeetState) => state.deviceManagement.microphones;
 export const selectSpeakers = (state: MeetState) => state.deviceManagement.speakers;
+
+const sortDevices = (devices: SerializableDeviceInfo[]) =>
+    [...devices].sort((a, b) => {
+        return a.label.localeCompare(b.label);
+    });
+
+const checkDeviceListEquality = {
+    memoizeOptions: {
+        resultEqualityCheck: (a: SerializableDeviceInfo[], b: SerializableDeviceInfo[]) =>
+            getDevicesHash(a) === getDevicesHash(b),
+    },
+};
+
+export const selectFilteredCameras = createSelector([selectCameras], filterDevices, checkDeviceListEquality);
+export const selectSortedFilteredCameras = createSelector([selectFilteredCameras], sortDevices);
+
+export const selectFilteredMicrophones = createSelector([selectMicrophones], filterDevices, checkDeviceListEquality);
+export const selectSortedFilteredMicrophones = createSelector([selectFilteredMicrophones], sortDevices);
+
+export const selectFilteredSpeakers = createSelector([selectSpeakers], filterDevices, checkDeviceListEquality);
+export const selectSortedFilteredSpeakers = createSelector([selectFilteredSpeakers], sortDevices);
 
 // Get the devices from the media devices API, fallback to the store if the API is not supported
 // Prevent us to use stale devices when plugging/unplugging them, array is not memoized
