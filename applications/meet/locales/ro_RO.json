@@ -25,6 +25,9 @@
       ]
     },
     "Accessibility announcement": {
+      "${ BRAND_NAME } background applied": [
+        "Fundal ${ BRAND_NAME } aplicat"
+      ],
       "${ name } joined the meeting": [
         "${ name } s-a alăturat conferinței"
       ],
@@ -61,17 +64,38 @@
       "A participant reacted with ${ emoji }": [
         "Un participant a reacționat cu ${ emoji }"
       ],
+      "Abstract background applied": [
+        "Fundal abstract aplicat"
+      ],
+      "Background effect turned off": [
+        "Efect fundal oprit"
+      ],
+      "Beach background applied": [
+        "Fundal de plajă aplicat"
+      ],
+      "Blurred background applied": [
+        "Fundal estompat aplicat"
+      ],
+      "Coffee place background applied": [
+        "Fundal de cafenea aplicat"
+      ],
       "Connected via TURN relay mode due to network restrictions. This may increase latency and affect call quality.": [
         "Conectat prin modul releu TURN din cauza restricțiilor de rețea. Acest lucru poate crește latența și afecta calitatea apelurilor."
       ],
       "Connection lost. Reconnecting…": [
         "Conexiune pierdută. Se reconectează…"
       ],
+      "Mountain background applied": [
+        "Fundal montan aplicat"
+      ],
       "New chat message: ${ message }": [
         "Mesaj nou: ${ message }"
       ],
       "Now starting recording": [
         "Acum începe înregistrarea"
+      ],
+      "Office background applied": [
+        "Fundal de birou aplicat"
       ],
       "Reconnected to the meeting": [
         "V-ați reconectat la conferință"
@@ -184,6 +208,9 @@
       ],
       "Back": [
         "Înapoi"
+      ],
+      "Backgrounds and effects": [
+        "Fundaluri și efecte"
       ],
       "Blur background": [
         "Estompare fundal"
@@ -705,9 +732,6 @@
       "View invoice": [
         "Afișare factură"
       ],
-      "Virtual backgrounds": [
-        "Fundaluri virtuale"
-      ],
       "Waiting room": [
         "Sală de așteptare"
       ],
@@ -855,11 +879,11 @@
       "Audio settings": [
         "Setări audio"
       ],
-      "Background effects": [
-        "Efecte fundal"
-      ],
       "Backgrounds": [
         "Fundaluri"
+      ],
+      "Blur and personal": [
+        "Estompare și personale"
       ],
       "Chat": [
         "Conversație"
@@ -2328,6 +2352,9 @@
       "Advanced mode: tune every blur constant for the next version, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
         "Mod avansat: ajustați fiecare constantă de estompare pentru următoarea versiune, apoi aplicați pentru a reconstrui examinarea. Suprascrierile au prioritate față de valorile fișierului și Unleash."
       ],
+      "Allow camera access to preview your background": [
+        "Permiteți accesul camerei pentru examinarea fundalului"
+      ],
       "Anonymous ${ particle } ${ participantNumber }": [
         "Anonim ${ particle } ${ participantNumber }"
       ],
@@ -3048,14 +3075,14 @@
       "Your phone number will only be used for this one-time verification.": [
         "Numărul de telefon va fi folosit doar pentru această verificare unică."
       ],
-      "Your preview": [
-        "Examinarea proprie"
-      ],
       "You’re about to open a link in a new tab. Make sure you trust the website before continuing.": [
         "Urmează să deschideți o legătură web într-o filă nouă. Asigurați-vă că aprobați site-ul web înainte de a continua."
       ]
     },
     "Label": {
+      "${ BRAND_NAME } background": [
+        "Fundal ${ BRAND_NAME }"
+      ],
       "${ BRAND_NAME } username": [
         "Nnume de utilizator ${ BRAND_NAME }"
       ],
@@ -3063,6 +3090,9 @@
         "${ numberOfStars } stea",
         "${ numberOfStars } stele",
         "${ numberOfStars } de stele"
+      ],
+      "Abstract background": [
+        "Fundal abstract"
       ],
       "Add optional details": [
         "Adăugare detalii opționale"
@@ -3094,8 +3124,8 @@
       "Background color": [
         "Culoare fundal"
       ],
-      "Blue background": [
-        "Fundal albastru"
+      "Beach background": [
+        "Fundal de plajă"
       ],
       "Blurred (next)": [
         "Estompat (următorul)"
@@ -3120,6 +3150,9 @@
       ],
       "Code is 6 digits without spaces": [
         "Codul este format din 6 cifre fără spații"
+      ],
+      "Coffee place background": [
+        "Fundal de cafenea"
       ],
       "Connection Quality": [
         "Calitate conexiune"
@@ -3187,9 +3220,6 @@
       "Google Calendar": [
         "Calendar Google"
       ],
-      "Green background": [
-        "Fundal verde"
-      ],
       "Hide password": [
         "Ascundere parolă"
       ],
@@ -3232,6 +3262,9 @@
       "Monday to Friday": [
         "De luni până vineri"
       ],
+      "Mountain background": [
+        "Fundal montan"
+      ],
       "Muted": [
         "Dezactivat"
       ],
@@ -3241,14 +3274,14 @@
       "Next": [
         "Următor"
       ],
+      "Office background": [
+        "Fundal de birou"
+      ],
       "Operating system": [
         "Sistem de operare"
       ],
       "Operating system version": [
         "Versiune sistem de operare"
-      ],
-      "Orange background": [
-        "Fundal portocaliu"
       ],
       "Outlook Calendar": [
         "Calendar Outlook"
@@ -3264,9 +3297,6 @@
       ],
       "Phone number": [
         "Număr de telefon"
-      ],
-      "Purple background": [
-        "Fundal violet"
       ],
       "Raw": [
         "Brut"
@@ -3728,11 +3758,11 @@
       "Background blur comparison": [
         "Comparare estompare fundal"
       ],
-      "Background effects": [
-        "Efecte fundal"
-      ],
       "Backgrounds": [
         "Fundaluri"
+      ],
+      "Blur and personal": [
+        "Estompare și personale"
       ],
       "Camera and microphone are blocked": [
         "Camera și microfonul sunt blocate"
@@ -3967,6 +3997,9 @@
     "Tooltip": {
       "Background blur is not supported on your browser": [
         "Estomparea fundalului nu este acceptată în navigatorul web."
+      ],
+      "Background effects are not supported on your browser": [
+        "Efectele pentru fundal nu sunt suportate în acest navigator web."
       ],
       "Generate a new meeting link. The current link will stop working.": [
         "Generați o legătură web pentru conferință. Legătura web actuală nu va mai funcționa."

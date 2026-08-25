@@ -6123,7 +6123,7 @@
         "Indekserede ${ first }, ${ second }, ${ third } og ${ fourth }"
       ],
       "Indexing hit an unexpected state and cannot continue. Rebuild the index to recover.": [
-        "Indekseringen endte i en uventet tilstand og kan ikke fortsætte. Opret indekset igen for gendannelse."
+        "Indekseringen ramte en uventet status og kan ikke fortsætte. Opret indekset igen for at gendanne søgning."
       ],
       "Indexing in progress": [
         "Indeksering er i gang"
@@ -6361,7 +6361,7 @@
         "Ikke forbundet"
       ],
       "Not enough storage space": [
-        "Utilstrækkelig lagerplads"
+        "Ikke nok lagerplads"
       ],
       "Not in My files": [
         "Ikke i Mine filer"
@@ -7172,7 +7172,7 @@
         "Når du forbinder til VPN, bruges krypteringsteknologi til at skjule din IP-adresse (en unik kode tildelt din enhed)."
       ],
       "When you remove ${ deviceName } as a synced device, all folders added to My Computers from this device will be permanently deleted from ${ DRIVE_APP_NAME }.": [
-        "Når du fjerner ${ deviceName } som en synkroniseret enhed, slettes alle mapper tilføjet til Mine Computere fra denne enhed permanent fra ${ DRIVE_APP_NAME }."
+        "Når du fjerner ${ deviceName } som en synkroniseret enhed, vil alle mapper tilføjet til Mine Computere fra denne enhed blive permanent slettet fra ${ DRIVE_APP_NAME }."
       ],
       "who": [
         "hvem"
@@ -9856,6 +9856,16 @@
         "Mulighed for ${ n } brugerdefinerede e-mail-domæner"
       ]
     },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Prøv den nu"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Du har nu adgang til den nye ${ CALENDAR_APP_NAME }. ${ link }"
+      ]
+    },
     "Notification": {
       "\"${ ellipsedName }\" copied": [
         "\"${ ellipsedName }\" kopieret"
@@ -10360,7 +10370,7 @@
         "Træk og slip dine filer her"
       ],
       "Edit documents online": [
-        "Redigér dokumenter online"
+        "Rediger dokumenter online"
       ],
       "End-to-end encrypted storage for your files": [
         "End-to-end krypteret lagring for dine filer"

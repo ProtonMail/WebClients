@@ -25,6 +25,9 @@
       ]
     },
     "Accessibility announcement": {
+      "${ BRAND_NAME } background applied": [
+        "S'ha aplicat el fons de ${ BRAND_NAME }"
+      ],
       "${ name } joined the meeting": [
         "${ name } s'ha unit a la reunió"
       ],
@@ -61,17 +64,38 @@
       "A participant reacted with ${ emoji }": [
         "Un participant ha reaccionat amb ${ emoji }"
       ],
+      "Abstract background applied": [
+        "S'ha aplicat el fons abstracte"
+      ],
+      "Background effect turned off": [
+        "S'ha desactivat l'efecte de fons"
+      ],
+      "Beach background applied": [
+        "S'ha aplicat el fons de platja"
+      ],
+      "Blurred background applied": [
+        "S'ha aplicat el fons difuminat"
+      ],
+      "Coffee place background applied": [
+        "S'ha aplicat el fons de cafeteria"
+      ],
       "Connected via TURN relay mode due to network restrictions. This may increase latency and affect call quality.": [
         "S'ha connectat a través del mode de relleu TURN a causa de restriccions de xarxa. Això pot augmentar la latència i afectar la qualitat de la trucada."
       ],
       "Connection lost. Reconnecting…": [
         "S'ha perdut la connexió. S'està tornant a connectar…"
       ],
+      "Mountain background applied": [
+        "S'ha aplicat el fons de muntanya"
+      ],
       "New chat message: ${ message }": [
         "Nou missatge de xat: ${ message }"
       ],
       "Now starting recording": [
         "Ara comença l'enregistrament"
+      ],
+      "Office background applied": [
+        "S'ha aplicat el fons d'oficina"
       ],
       "Reconnected to the meeting": [
         "Se us ha tornat a connectar amb la reunió."
@@ -183,6 +207,9 @@
       ],
       "Back": [
         "Torna"
+      ],
+      "Backgrounds and effects": [
+        "Fons i efectes"
       ],
       "Blur background": [
         "Fons difuminat"
@@ -702,9 +729,6 @@
       "View invoice": [
         "Mostra la factura"
       ],
-      "Virtual backgrounds": [
-        "Fons virtuals"
-      ],
       "Waiting room": [
         "Sala d'espera"
       ],
@@ -852,11 +876,11 @@
       "Audio settings": [
         "Preferències d'àudio"
       ],
-      "Background effects": [
-        "Efectes de fons"
-      ],
       "Backgrounds": [
         "Fons"
+      ],
+      "Blur and personal": [
+        "Difuminat i personal"
       ],
       "Chat": [
         "Xat"
@@ -2316,6 +2340,9 @@
       "Advanced mode: tune every blur constant for the next version, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
         "Mode avançat: ajusteu cada constant de difuminat per a la versió següent i després apliqueu-ho per tornar a generar la previsualització. Les sobreescriptures tenen prioritat sobre els valors del fitxer i d'Unleash."
       ],
+      "Allow camera access to preview your background": [
+        "Permeteu l'accés a la càmera per veure la vista prèvia del vostre fons"
+      ],
       "Anonymous ${ particle } ${ participantNumber }": [
         "Anònim ${ particle } ${ participantNumber }"
       ],
@@ -3036,20 +3063,23 @@
       "Your phone number will only be used for this one-time verification.": [
         "El vostre número de telèfon només s’utilitzarà per a aquesta única verificació."
       ],
-      "Your preview": [
-        "La vostra previsualització"
-      ],
       "You’re about to open a link in a new tab. Make sure you trust the website before continuing.": [
         "Esteu a punt d'obrir un enllaç en una pestanya nova. Assegureu-vos que confieu en el lloc web abans de continuar."
       ]
     },
     "Label": {
+      "${ BRAND_NAME } background": [
+        "Fons de ${ BRAND_NAME }"
+      ],
       "${ BRAND_NAME } username": [
         "Nom d'usuari de ${ BRAND_NAME }"
       ],
       "${ numberOfStars } star": [
         "${ numberOfStars } estrella",
         "${ numberOfStars } estrelles"
+      ],
+      "Abstract background": [
+        "Fons abstracte"
       ],
       "Add optional details": [
         "Afegiu detalls opcionals"
@@ -3081,8 +3111,8 @@
       "Background color": [
         "Color de fons"
       ],
-      "Blue background": [
-        "Fons blau"
+      "Beach background": [
+        "Fons de platja"
       ],
       "Blurred (next)": [
         "Difuminat (següent)"
@@ -3107,6 +3137,9 @@
       ],
       "Code is 6 digits without spaces": [
         "El codi consta de 6 dígits sense espais"
+      ],
+      "Coffee place background": [
+        "Fons de cafeteria"
       ],
       "Connection Quality": [
         "Qualitat de la connexió"
@@ -3174,9 +3207,6 @@
       "Google Calendar": [
         "Calendari de Google"
       ],
-      "Green background": [
-        "Fons verd"
-      ],
       "Hide password": [
         "Amaga la contrasenya"
       ],
@@ -3219,6 +3249,9 @@
       "Monday to Friday": [
         "De dilluns a divendres"
       ],
+      "Mountain background": [
+        "Fons de muntanya"
+      ],
       "Muted": [
         "Silenciat"
       ],
@@ -3228,14 +3261,14 @@
       "Next": [
         "Següent"
       ],
+      "Office background": [
+        "Fons d'oficina"
+      ],
       "Operating system": [
         "Sistema operatiu"
       ],
       "Operating system version": [
         "Versió del sistema operatiu"
-      ],
-      "Orange background": [
-        "Fons taronja"
       ],
       "Outlook Calendar": [
         "Calendari d'Outlook"
@@ -3251,9 +3284,6 @@
       ],
       "Phone number": [
         "Número de telèfon"
-      ],
-      "Purple background": [
-        "Fons morat"
       ],
       "Raw": [
         "En brut"
@@ -3714,11 +3744,11 @@
       "Background blur comparison": [
         "Comparació del difuminat de fons"
       ],
-      "Background effects": [
-        "Efectes de fons"
-      ],
       "Backgrounds": [
         "Fons"
+      ],
+      "Blur and personal": [
+        "Difuminat i personal"
       ],
       "Camera and microphone are blocked": [
         "La càmera i el micròfon estan bloquejats"
@@ -3952,6 +3982,9 @@
     "Tooltip": {
       "Background blur is not supported on your browser": [
         "El desenfocament de fons no és compatible amb el vostre navegador"
+      ],
+      "Background effects are not supported on your browser": [
+        "El vostre navegador no admet els efectes de fons"
       ],
       "Generate a new meeting link. The current link will stop working.": [
         "Genereu un enllaç de reunió nou. L'enllaç actual deixarà de funcionar."

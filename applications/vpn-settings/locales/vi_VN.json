@@ -4232,6 +4232,9 @@
       "Add": [
         "Thêm"
       ],
+      "Add 1 more": [
+        "Thêm 1 người nữa"
+      ],
       "Add emergency contact": [
         "Thêm liên hệ khẩn cấp"
       ],
@@ -4330,6 +4333,9 @@
       ],
       "Enable auto-renew": [
         "Kích hoạt tự động gia hạn"
+      ],
+      "Explore plans": [
+        "Khám phá các gói"
       ],
       "For ${ email }": [
         "Dành cho ${ email }"
@@ -9530,6 +9536,9 @@
       ],
       "Recovery phone number": [
         "Số điện thoại khôi phục"
+      ],
+      "Set recovery phone number": [
+        "Đặt số điện thoại khôi phục"
       ]
     },
     "Label": {
@@ -9913,6 +9922,9 @@
       ],
       "Enter code": [
         "Nhập mã"
+      ],
+      "Enter current password": [
+        "Nhập mật khẩu hiện tại"
       ],
       "Enter name or email address": [
         "Nhập tên hoặc địa chỉ email"
@@ -13861,6 +13873,9 @@
       "Recoverability": [
         "Khả năng khôi phục"
       ],
+      "Recovery score: ${ score }": [
+        "Điểm khôi phục: ${ score }"
+      ],
       "Require verified password reset option (email or SMS)": [
         "Yêu cầu tùy chọn đặt lại mật khẩu đã xác minh (email hoặc SMS)"
       ],
@@ -14318,8 +14333,289 @@
       ]
     },
     "Safety review": {
+      "Code sent to ${ boldValue }": [
+        "Mã đã được gửi tới ${ boldValue }"
+      ],
+      "Invalid code": [
+        "Mã không hợp lệ"
+      ],
       "Review account safety": [
         "Xem lại an toàn tài khoản"
+      ],
+      "Safety review": [
+        "Xem lại an toàn"
+      ],
+      "Send a new code": [
+        "Gửi mã mới"
+      ],
+      "update it now": [
+        "cập nhật ngay"
+      ]
+    },
+    "safety_review": {
+      "${ BRAND_NAME } Account email": [
+        "Email Tài khoản ${ BRAND_NAME }"
+      ],
+      "Account protection": [
+        "Bảo vệ tài khoản"
+      ],
+      "Add": [
+        "Thêm"
+      ],
+      "Add an emergency contact": [
+        "Thêm liên hệ khẩn cấp"
+      ],
+      "Add emergency contacts": [
+        "Thêm liên hệ khẩn cấp"
+      ],
+      "Add options": [
+        "Thêm tùy chọn"
+      ],
+      "Add people who you trust and can contact easily. Your emergency contact will be able to access your account and reset your password for you if needed.": [
+        "Thêm những người tin cậy và có thể liên hệ dễ dàng. Liên hệ khẩn cấp sẽ có thể truy cập tài khoản và đặt lại mật khẩu thay bạn nếu cần."
+      ],
+      "Add people you trust and can contact easily. They will be able to help you unlock your data after you reset your password.": [
+        "Thêm những người tin cậy và có thể liên hệ dễ dàng. Họ sẽ có thể giúp mở khóa dữ liệu sau khi đặt lại mật khẩu."
+      ],
+      "Add phone number": [
+        "Thêm số điện thoại"
+      ],
+      "Add recovery contacts": [
+        "Thêm liên hệ khôi phục"
+      ],
+      "Add recovery email": [
+        "Thêm email khôi phục"
+      ],
+      "Add recovery phone": [
+        "Thêm điện thoại khôi phục"
+      ],
+      "Added emergency contacts": [
+        "Đã thêm các liên hệ khẩn cấp"
+      ],
+      "Added recovery contacts": [
+        "Đã thêm các liên hệ khôi phục"
+      ],
+      "Added recovery email": [
+        "Đã thêm email khôi phục"
+      ],
+      "Added recovery phone": [
+        "Đã thêm điện thoại khôi phục"
+      ],
+      "Allow": [
+        "Cho phép"
+      ],
+      "Allow data recovery from this device": [
+        "Cho phép khôi phục dữ liệu từ thiết bị này"
+      ],
+      "Allow password reset from the settings": [
+        "Cho phép đặt lại mật khẩu từ cài đặt"
+      ],
+      "Allow recovery by email": [
+        "Cho phép khôi phục bằng email"
+      ],
+      "Allow recovery by phone": [
+        "Cho phép khôi phục bằng điện thoại"
+      ],
+      "Allow scanning a QR code to sign in": [
+        "Cho phép quét mã QR để đăng nhập"
+      ],
+      "Allow trusted friends to unlock your data": [
+        "Cho phép bạn bè tin cậy mở khóa dữ liệu"
+      ],
+      "Back to ${ backLink.appNameString }": [
+        "Quay lại ${ backLink.appNameString }"
+      ],
+      "Congratulations": [
+        "Xin chúc mừng"
+      ],
+      "Didn’t receive it? ${ sendANewCode }": [
+        "Chưa nhận được? ${ sendANewCode }"
+      ],
+      "Done": [
+        "Xong"
+      ],
+      "Download": [
+        "Tải xuống"
+      ],
+      "Download recovery file": [
+        "Tải xuống tệp khôi phục"
+      ],
+      "Downloaded recovery file": [
+        "Đã tải xuống tệp khôi phục"
+      ],
+      "Emergency contacts enabled": [
+        "Đã kích hoạt liên hệ khẩn cấp"
+      ],
+      "Enable device recovery": [
+        "Kích hoạt khôi phục bằng thiết bị"
+      ],
+      "Enable email recovery": [
+        "Kích hoạt khôi phục bằng email"
+      ],
+      "Enable emergency contacts": [
+        "Kích hoạt liên hệ khẩn cấp"
+      ],
+      "Enable password reset from settings": [
+        "Kích hoạt đặt lại mật khẩu từ cài đặt"
+      ],
+      "Enable phone recovery": [
+        "Kích hoạt khôi phục bằng điện thoại"
+      ],
+      "Enable QR code sign-in": [
+        "Kích hoạt đăng nhập bằng mã QR"
+      ],
+      "Enabled device recovery": [
+        "Đã kích hoạt khôi phục bằng thiết bị"
+      ],
+      "Enabled email recovery": [
+        "Đã kích hoạt khôi phục bằng email"
+      ],
+      "Enabled password reset from settings": [
+        "Đã kích hoạt đặt lại mật khẩu từ cài đặt"
+      ],
+      "Enabled phone recovery": [
+        "Đã kích hoạt khôi phục bằng điện thoại"
+      ],
+      "Enabled QR code sign-in": [
+        "Đã kích hoạt đăng nhập bằng mã QR"
+      ],
+      "Got it": [
+        "Đã hiểu"
+      ],
+      "Here's how you increased your account protection:": [
+        "Dưới đây là cách đã tăng cường bảo vệ tài khoản:"
+      ],
+      "If you forget your password, you can sign in using a QR code. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
+        "Nếu quên mật khẩu, có thể đăng nhập bằng mã QR. Tất cả những gì cần thiết là đăng nhập vào dịch vụ ${ BRAND_NAME } trên một thiết bị khác."
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, it will allow you to sign in and recover your data. It’s the only way to instantly restore everything, so make sure you keep it somewhere safe.": [
+        "Nếu bị khóa khỏi Tài khoản ${ BRAND_NAME }, tính năng này sẽ cho phép đăng nhập và khôi phục dữ liệu. Đó là cách duy nhất để khôi phục lại mọi thứ ngay lập tức, vì vậy hãy đảm bảo giữ tính năng đó ở nơi an toàn."
+      ],
+      "If your recovery email has changed, ${ updateEmailLink }.": [
+        "Nếu email khôi phục đã thay đổi, ${ updateEmailLink }."
+      ],
+      "If your recovery phone has changed, ${ updatePhoneLink }.": [
+        "Nếu số điện thoại khôi phục đã thay đổi, ${ updatePhoneLink }."
+      ],
+      "Later": [
+        "Để sau"
+      ],
+      "Protect your legacy with Emergency Access": [
+        "Bảo vệ di sản bằng Quyền truy cập khẩn cấp"
+      ],
+      "Save recovery phrase": [
+        "Lưu cụm từ khôi phục"
+      ],
+      "Saved recovery phrase": [
+        "Đã lưu cụm từ khôi phục"
+      ],
+      "Send verification code": [
+        "Gửi mã xác minh"
+      ],
+      "They must already have a ${ BRAND_NAME } Account.": [
+        "Họ phải có sẵn Tài khoản ${ BRAND_NAME }."
+      ],
+      "They will not be able to see or access your data.": [
+        "Họ sẽ không thể xem hoặc truy cập dữ liệu."
+      ],
+      "This will let you quickly access your ${ BRAND_NAME } Account so you can change your password.": [
+        "Thao tác này sẽ cho phép nhanh chóng truy cập vào Tài khoản ${ BRAND_NAME } để có thể thay đổi mật khẩu."
+      ],
+      "This will let you reset your account password if you’ve lost it, but are still signed in to ${ BRAND_NAME }. It’s often the easiest way to recover your account if you’re signed in.": [
+        "Thao tác này sẽ cho phép đặt lại mật khẩu tài khoản nếu bị mất, nhưng vẫn đang đăng nhập vào ${ BRAND_NAME }. Đây thường là cách dễ nhất để khôi phục tài khoản nếu đang đăng nhập."
+      ],
+      "This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
+        "Thao tác này sẽ khôi phục quyền truy cập vào email, liên hệ, tệp, mật khẩu và bất kỳ dữ liệu đã mã hóa nào khác trên tài khoản sau khi đặt lại mật khẩu."
+      ],
+      "To help you remember your password, we’ll periodically ask you to enter it.": [
+        "Để giúp ghi nhớ mật khẩu, chúng tôi sẽ định kỳ yêu cầu nhập mật khẩu."
+      ],
+      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
+        "Để đảm bảo địa chỉ email là của bạn, hãy nhập mã xác minh được gửi đến ${ boldEmail }."
+      ],
+      "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
+        "Để đảm bảo số điện thoại là của bạn, hãy nhập mã xác minh được gửi đến ${ boldPhoneNumber }."
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification code.": [
+        "Để đảm bảo địa chỉ này thực sự là của bạn, chúng tôi sẽ gửi một email kèm theo mã xác minh."
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification link.": [
+        "Để đảm bảo địa chỉ này thực sự là của bạn, chúng tôi sẽ gửi email có liên kết xác minh."
+      ],
+      "To make sure this number is really yours, we’ll send an SMS with a verification code.": [
+        "Để đảm bảo số điện thoại này thực sự là của bạn, chúng tôi sẽ gửi một SMS kèm theo mã xác minh."
+      ],
+      "Update": [
+        "Cập nhật"
+      ],
+      "Update recovery email": [
+        "Cập nhật email khôi phục"
+      ],
+      "Update recovery phone": [
+        "Cập nhật số điện thoại khôi phục"
+      ],
+      "Upgrade your plan to enable Emergency Access to your account. This will allow you to designate 1 to 5 people who will be able to reset your password for you.": [
+        "Nâng cấp gói để kích hoạt Quyền truy cập khẩn cấp vào tài khoản. Thao tác này sẽ cho phép chỉ định từ 1 đến 5 người có thể đặt lại mật khẩu thay bạn."
+      ],
+      "Verified password": [
+        "Mật khẩu đã xác minh"
+      ],
+      "Verified recovery email": [
+        "Đã xác minh email khôi phục"
+      ],
+      "Verified recovery phone": [
+        "Đã xác minh điện thoại khôi phục"
+      ],
+      "Verify": [
+        "Xác minh"
+      ],
+      "Verify password": [
+        "Xác minh mật khẩu"
+      ],
+      "Verify recovery email": [
+        "Xác minh email khôi phục"
+      ],
+      "Verify recovery phone": [
+        "Xác minh điện thoại khôi phục"
+      ],
+      "Verify your password": [
+        "Xác minh mật khẩu"
+      ],
+      "Verify your recovery email": [
+        "Xác minh email khôi phục"
+      ],
+      "Verify your recovery phone": [
+        "Xác minh điện thoại khôi phục"
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        "Xác minh địa chỉ email giúp tăng cường bảo mật tài khoản và cho phép thêm các tùy chọn khôi phục."
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "Xác minh số điện thoại giúp tăng cường bảo mật tài khoản và cho phép thêm các tùy chọn khôi phục."
+      ],
+      "You can save a data backup on this device. This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset, simply by signing in on this device.": [
+        "Có thể lưu bản sao lưu dữ liệu trên thiết bị này. Thao tác này sẽ khôi phục quyền truy cập vào email, liên hệ, tệp, mật khẩu và bất kỳ dữ liệu đã mã hóa nào khác trên tài khoản sau khi đặt lại mật khẩu, chỉ bằng cách đăng nhập trên thiết bị này."
+      ],
+      "You can use email verification to regain access to your account if you forget your password.": [
+        "Có thể sử dụng xác minh qua email để lấy lại quyền truy cập vào tài khoản nếu quên mật khẩu."
+      ],
+      "You can use SMS verification to regain access to your account if you forget your password.": [
+        "Có thể sử dụng xác minh qua SMS để lấy lại quyền truy cập vào tài khoản nếu quên mật khẩu."
+      ],
+      "You can use your recovery email to regain access to your account if you forget your password.": [
+        "Có thể sử dụng email khôi phục để lấy lại quyền truy cập vào tài khoản nếu quên mật khẩu."
+      ],
+      "You can use your recovery phone to regain access to your account if you forget your password.": [
+        "Có thể sử dụng điện thoại khôi phục để lấy lại quyền truy cập vào tài khoản nếu quên mật khẩu."
+      ],
+      "You don’t need to open or read the file—just download it and store it somewhere safe.": [
+        "Không cần mở hoặc đọc tệp — chỉ cần tải xuống và lưu trữ ở nơi an toàn."
+      ],
+      "Your recovery checklist": [
+        "Danh sách kiểm tra khôi phục của bạn"
+      ],
+      "Your security setup": [
+        "Thiết lập bảo mật của bạn"
       ]
     },
     "saml: Action": {

@@ -6975,6 +6975,9 @@
       "${ currentProgress } out of ${ totalProgress }": [
         "${ currentProgress } / ${ totalProgress }"
       ],
+      "${ dateString } at ${ formattedTime }": [
+        "${ dateString } ${ formattedTime }"
+      ],
       "${ elementsCount } conversation will be labelled as:": [
         "${ elementsCount }개 대화가 다음으로 라벨됩니다:"
       ],
@@ -7598,9 +7601,6 @@
       ],
       "Default email application": [
         "기본 이메일 애플리케이션"
-      ],
-      "Details": [
-        "세부 사항"
       ],
       "Detection takes place on your device, so no data from your emails is sent to our servers.": [
         "이 감지는 회원님의 기기에서 이루어지므로 이메일 내부의 데이터는 당사 서버로 전송되지 않습니다."
@@ -8672,6 +8672,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "로얄 사용자시기에, 계정에 추가적인 기능이 활성화 되었습니다."
+      ],
+      "Snooze emails": [
+        "이메일 방해금지"
       ],
       "Snooze messages for later so they are top of your inbox when you want": [
         "나중에 메시지를 방해 금지 모드를 적용해 원하는 시간에 받은 편지함 상단에 표시하세요"
@@ -12555,6 +12558,16 @@
         "${ n }개 커스텀 이메일 도메인 지원"
       ]
     },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "지금 사용해보세요"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "${ CALENDAR_APP_NAME }를 사용할 수 있습니다. ${ link }"
+      ]
+    },
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } 생성됨"
@@ -14489,6 +14502,11 @@
       ],
       "Private, fast, and organized": [
         "비공개이면서 빠르고 정돈되게."
+      ]
+    },
+    "Snooze info": {
+      "${ count } email → ${ wakeTime }": [
+        "${ count }개 이메일 → ${ wakeTime }"
       ]
     },
     "Snooze message": {
@@ -16742,6 +16760,9 @@
       ],
       "Snooze": [
         "방해금지"
+      ],
+      "Snooze emails": [
+        "이메일 방해금지"
       ],
       "Snooze message": [
         "방해 금지 메시지"
