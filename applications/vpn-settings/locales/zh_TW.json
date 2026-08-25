@@ -4241,6 +4241,9 @@
       "Add": [
         "新增"
       ],
+      "Add 1 more": [
+        "再新增 1 個"
+      ],
       "Add emergency contact": [
         "新增緊急聯絡人"
       ],
@@ -4339,6 +4342,9 @@
       ],
       "Enable auto-renew": [
         "啟用自動續訂"
+      ],
+      "Explore plans": [
+        "探索方案"
       ],
       "For ${ email }": [
         "為 ${ email }"
@@ -10067,6 +10073,9 @@
       "Enter code": [
         "輸入代碼"
       ],
+      "Enter current password": [
+        "輸入目前密碼"
+      ],
       "Enter name or email address": [
         "輸入名稱或電子郵件地址"
       ],
@@ -10683,6 +10692,9 @@
       ],
       "Recovery phone number": [
         "復原手機號碼"
+      ],
+      "Set recovery phone number": [
+        "設定復原電話號碼"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12583,6 +12595,11 @@
         "復原檢查清單"
       ]
     },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "立刻體驗"
+      ]
+    },
     "Notification": {
       "${ reason } has been disabled": [
         "${ reason } 已停用。"
@@ -14045,6 +14062,9 @@
       "Recoverability": [
         "可復原性"
       ],
+      "Recovery score: ${ score }": [
+        "復原評分：${ score }"
+      ],
       "Require verified password reset option (email or SMS)": [
         "需要經驗證的密碼重設選項（電子郵件或簡訊）"
       ],
@@ -14502,8 +14522,289 @@
       ]
     },
     "Safety review": {
+      "Code sent to ${ boldValue }": [
+        "驗證碼已發送至 ${ boldValue }"
+      ],
+      "Invalid code": [
+        "代碼無效"
+      ],
       "Review account safety": [
         "查看帳號安全"
+      ],
+      "Safety review": [
+        "安全檢核"
+      ],
+      "Send a new code": [
+        "傳送新的代碼"
+      ],
+      "update it now": [
+        "立即更新"
+      ]
+    },
+    "safety_review": {
+      "${ BRAND_NAME } Account email": [
+        "${ BRAND_NAME } 帳號電子郵件"
+      ],
+      "Account protection": [
+        "帳號保護"
+      ],
+      "Add": [
+        "新增"
+      ],
+      "Add an emergency contact": [
+        "新增緊急聯絡人"
+      ],
+      "Add emergency contacts": [
+        "新增緊急聯絡人"
+      ],
+      "Add options": [
+        "新增選項"
+      ],
+      "Add people who you trust and can contact easily. Your emergency contact will be able to access your account and reset your password for you if needed.": [
+        "新增您信任且能輕鬆聯絡的人。您的緊急聯絡人將能存取您的帳號，並在需要時為您重設密碼。"
+      ],
+      "Add people you trust and can contact easily. They will be able to help you unlock your data after you reset your password.": [
+        "新增您信任且能輕鬆聯絡的人。他們將能夠在您重設密碼後，協助您解鎖您的資料。"
+      ],
+      "Add phone number": [
+        "新增手機號碼"
+      ],
+      "Add recovery contacts": [
+        "新增復原聯絡人"
+      ],
+      "Add recovery email": [
+        "新增復原用電子郵件"
+      ],
+      "Add recovery phone": [
+        "新增復原電話"
+      ],
+      "Added emergency contacts": [
+        "已新增緊急聯絡人"
+      ],
+      "Added recovery contacts": [
+        "已新增復原聯絡人"
+      ],
+      "Added recovery email": [
+        "已新增復原用電子郵件"
+      ],
+      "Added recovery phone": [
+        "已新增復原電話"
+      ],
+      "Allow": [
+        "允許"
+      ],
+      "Allow data recovery from this device": [
+        "允許從此裝置進行資料復原"
+      ],
+      "Allow password reset from the settings": [
+        "允許從設定重設密碼"
+      ],
+      "Allow recovery by email": [
+        "允許透過電子郵件復原"
+      ],
+      "Allow recovery by phone": [
+        "允許透過電話復原"
+      ],
+      "Allow scanning a QR code to sign in": [
+        "允許掃描 QR Code 來登入"
+      ],
+      "Allow trusted friends to unlock your data": [
+        "允許信任的朋友解鎖您的資料"
+      ],
+      "Back to ${ backLink.appNameString }": [
+        "返回至 ${ backLink.appNameString }"
+      ],
+      "Congratulations": [
+        "恭喜"
+      ],
+      "Didn’t receive it? ${ sendANewCode }": [
+        "沒有收到嗎？${ sendANewCode }"
+      ],
+      "Done": [
+        "完成"
+      ],
+      "Download": [
+        "下載"
+      ],
+      "Download recovery file": [
+        "下載帳號復原檔案"
+      ],
+      "Downloaded recovery file": [
+        "已下載復原檔案"
+      ],
+      "Emergency contacts enabled": [
+        "已啟用緊急聯絡人"
+      ],
+      "Enable device recovery": [
+        "啟用裝置復原"
+      ],
+      "Enable email recovery": [
+        "啟用電子郵件復原"
+      ],
+      "Enable emergency contacts": [
+        "啟用緊急聯絡人"
+      ],
+      "Enable password reset from settings": [
+        "啟用從設定重設密碼"
+      ],
+      "Enable phone recovery": [
+        "啟用電話復原"
+      ],
+      "Enable QR code sign-in": [
+        "啟用 QR Code 登入"
+      ],
+      "Enabled device recovery": [
+        "已啟用裝置復原"
+      ],
+      "Enabled email recovery": [
+        "已啟用電子郵件復原"
+      ],
+      "Enabled password reset from settings": [
+        "已啟用從設定重設密碼"
+      ],
+      "Enabled phone recovery": [
+        "已啟用電話復原"
+      ],
+      "Enabled QR code sign-in": [
+        "已啟用 QR Code 登入"
+      ],
+      "Got it": [
+        "瞭解"
+      ],
+      "Here's how you increased your account protection:": [
+        "以下是您提高帳號保護強度的方式："
+      ],
+      "If you forget your password, you can sign in using a QR code. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
+        "如果您忘記密碼，您可以使用 QR Code 登入。您只需要在另一台裝置上登入 ${ BRAND_NAME } 服務即可。"
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, it will allow you to sign in and recover your data. It’s the only way to instantly restore everything, so make sure you keep it somewhere safe.": [
+        "如果您無法登入您的 ${ BRAND_NAME } 帳號，它將允許您登入並復原您的資料。這是立即可還原所有內容的唯一方法，因此請務必將其妥善保存在安全的地方。"
+      ],
+      "If your recovery email has changed, ${ updateEmailLink }.": [
+        "如果您的復原用電子郵件已變更，請 ${ updateEmailLink }。"
+      ],
+      "If your recovery phone has changed, ${ updatePhoneLink }.": [
+        "如果您的復原電話已變更，請 ${ updatePhoneLink }。"
+      ],
+      "Later": [
+        "稍後"
+      ],
+      "Protect your legacy with Emergency Access": [
+        "使用緊急存取保護您的數位資產"
+      ],
+      "Save recovery phrase": [
+        "儲存復原短語"
+      ],
+      "Saved recovery phrase": [
+        "已儲存復原短語"
+      ],
+      "Send verification code": [
+        "傳送驗證碼"
+      ],
+      "They must already have a ${ BRAND_NAME } Account.": [
+        "他們必須已擁有 ${ BRAND_NAME } 帳號。"
+      ],
+      "They will not be able to see or access your data.": [
+        "他們將無法查看或存取您的資料。"
+      ],
+      "This will let you quickly access your ${ BRAND_NAME } Account so you can change your password.": [
+        "這將能讓您快速存取您的 ${ BRAND_NAME } 帳號，以便您可以變更密碼。"
+      ],
+      "This will let you reset your account password if you’ve lost it, but are still signed in to ${ BRAND_NAME }. It’s often the easiest way to recover your account if you’re signed in.": [
+        "這將可讓您在遺失帳號密碼但仍登入 ${ BRAND_NAME } 的情況下重設密碼。如果您已登入，這通常是復原帳號最簡單的方法。"
+      ],
+      "This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
+        "在重設密碼後，這將能還原對您帳號中電子郵件、聯絡人、檔案、密碼以及任何其他已加密資料的存取權限。"
+      ],
+      "To help you remember your password, we’ll periodically ask you to enter it.": [
+        "為了幫助您記住密碼，我們會定期要求您輸入密碼。"
+      ],
+      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
+        "為了確認該電子郵件地址確實為您所有，請輸入傳送至 ${ boldEmail } 的驗證碼。"
+      ],
+      "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
+        "為了確認該電話號碼確實為您所有，請輸入傳送至 ${ boldPhoneNumber } 的驗證碼。"
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification code.": [
+        "為了確保此地址確實屬於您，我們將傳送一封包含驗證碼的電子郵件。"
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification link.": [
+        "為了確保此位址確實為您所有，我們將傳送一封包含驗證連結的電子郵件。"
+      ],
+      "To make sure this number is really yours, we’ll send an SMS with a verification code.": [
+        "為了確保此號碼確實屬於您，我們將傳送一則包含驗證碼的簡訊。"
+      ],
+      "Update": [
+        "更新"
+      ],
+      "Update recovery email": [
+        "更新復原用電子郵件"
+      ],
+      "Update recovery phone": [
+        "更新復原電話"
+      ],
+      "Upgrade your plan to enable Emergency Access to your account. This will allow you to designate 1 to 5 people who will be able to reset your password for you.": [
+        "升級您的方案以啟用對您帳號的緊急存取。這將能讓您指定 1 至 5 個人來為您重設密碼。"
+      ],
+      "Verified password": [
+        "已驗證密碼"
+      ],
+      "Verified recovery email": [
+        "已驗證復原用電子郵件"
+      ],
+      "Verified recovery phone": [
+        "已驗證復原電話"
+      ],
+      "Verify": [
+        "驗證"
+      ],
+      "Verify password": [
+        "驗證密碼"
+      ],
+      "Verify recovery email": [
+        "驗證復原用電子郵件"
+      ],
+      "Verify recovery phone": [
+        "驗證復原電話"
+      ],
+      "Verify your password": [
+        "驗證您的密碼"
+      ],
+      "Verify your recovery email": [
+        "驗證您的復原用電子郵件"
+      ],
+      "Verify your recovery phone": [
+        "驗證您的復原電話"
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        "驗證您的電子郵件地址可提高您的帳號安全性，並提供額外的復原選項。"
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "驗證您的電話號碼可提高您的帳號安全性，並提供額外的復原選項。"
+      ],
+      "You can save a data backup on this device. This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset, simply by signing in on this device.": [
+        "您可以在此裝置上儲存資料備份。這將允許您在密碼重設後，只需在此裝置上登入，即可還原對帳號中電子郵件、聯絡人、檔案、密碼以及任何其他已加密資料的存取權限。"
+      ],
+      "You can use email verification to regain access to your account if you forget your password.": [
+        "如果您忘記密碼，您可以使用電子郵件驗證來重新獲得帳號的存取權限。"
+      ],
+      "You can use SMS verification to regain access to your account if you forget your password.": [
+        "如果您忘記密碼，您可以使用簡訊驗證來重新獲得帳號的存取權限。"
+      ],
+      "You can use your recovery email to regain access to your account if you forget your password.": [
+        "如果您忘記密碼，您可以使用復原用電子郵件重新取得您帳號的存取權。"
+      ],
+      "You can use your recovery phone to regain access to your account if you forget your password.": [
+        "如果您忘記密碼，您可以使用您的復原電話來重新獲得帳號的存取權限。"
+      ],
+      "You don’t need to open or read the file—just download it and store it somewhere safe.": [
+        "您不需要開啟或閱讀此檔案，只需下載並將其儲存在安全的地方即可。"
+      ],
+      "Your recovery checklist": [
+        "您的復原檢查清單"
+      ],
+      "Your security setup": [
+        "您的安全設定"
       ]
     },
     "saml: Action": {

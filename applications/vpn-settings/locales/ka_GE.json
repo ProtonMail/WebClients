@@ -4270,6 +4270,9 @@
       "Add": [
         "დამატება"
       ],
+      "Add 1 more": [
+        "კიდევ ერთის დამატება"
+      ],
       "Add emergency contact": [
         "სასწრაფო კონტაქტის დამატება"
       ],
@@ -4368,6 +4371,9 @@
       ],
       "Enable auto-renew": [
         "ავტოგანახლების ჩართვა"
+      ],
+      "Explore plans": [
+        "გაეცანით პაკეტებს"
       ],
       "For ${ email }": [
         "${ email }-ისთვის"
@@ -9672,6 +9678,9 @@
       ],
       "Recovery phone number": [
         "აღდგენის ტელეფონის ნომერი"
+      ],
+      "Set recovery phone number": [
+        "აღდგენის ტელეფონის ნომრის დაყენება"
       ]
     },
     "Label": {
@@ -10063,6 +10072,9 @@
       ],
       "Enter code": [
         "შეიყვანეთ კოდი"
+      ],
+      "Enter current password": [
+        "შეიყვანეთ მიმდინარე პაროლი"
       ],
       "Enter name or email address": [
         "შეიყვანეთ სახელი ან ელფოსტის მისამართი"
@@ -14068,6 +14080,9 @@
       "Recoverability": [
         "აღდგენის შესაძლებლობა"
       ],
+      "Recovery score: ${ score }": [
+        "აღდგენის ქულა: ${ score }"
+      ],
       "Require verified password reset option (email or SMS)": [
         "საჭიროა პაროლის გადატვირთვის შემოწმებული ვარიანტი (ელფოსტა ან SMS შეტყობინება)"
       ],
@@ -14531,8 +14546,289 @@
       ]
     },
     "Safety review": {
+      "Code sent to ${ boldValue }": [
+        "კოდი გაგზავნილია ${ boldValue }-სთან"
+      ],
+      "Invalid code": [
+        "არასწორი კოდი"
+      ],
       "Review account safety": [
         "ანგარიშის უსაფრთხოების გადახედვა"
+      ],
+      "Safety review": [
+        "უსაფრთხოების მიმოხილვა"
+      ],
+      "Send a new code": [
+        "ახალი კოდის გაგზავნა"
+      ],
+      "update it now": [
+        "განაახლეთ ახლავე"
+      ]
+    },
+    "safety_review": {
+      "${ BRAND_NAME } Account email": [
+        "${ BRAND_NAME } ანგარიშის ელფოსტა"
+      ],
+      "Account protection": [
+        "ანგარიშის დაცვა"
+      ],
+      "Add": [
+        "დამატება"
+      ],
+      "Add an emergency contact": [
+        "სასწრაფო კონტაქტის დამატება"
+      ],
+      "Add emergency contacts": [
+        "სასწრაფო კონტაქტების დამატება"
+      ],
+      "Add options": [
+        "პარამეტრების დამატება"
+      ],
+      "Add people who you trust and can contact easily. Your emergency contact will be able to access your account and reset your password for you if needed.": [
+        "დაამატეთ ადამიანები, რომლებსაც ენდობით და მარტივად დაუკავშირდებით. თქვენს სასწრაფო კონტაქტს შეეძლება მიიღოს წვდომა თქვენს ანგარიშზე და საჭიროების შემთხვევაში გადატვირთოს თქვენი პაროლი."
+      ],
+      "Add people you trust and can contact easily. They will be able to help you unlock your data after you reset your password.": [
+        "დაამატეთ სანდო ადამიანები, რომლებსაც მარტივად დაუკავშირდებით. ისინი დაგეხმარებიან თქვენი მონაცემების განბლოკვაში პაროლის გადატვირთვის შემდეგ."
+      ],
+      "Add phone number": [
+        "ტელეფონის ნომრის დამატება"
+      ],
+      "Add recovery contacts": [
+        "აღდგენის კონტაქტების დამატება"
+      ],
+      "Add recovery email": [
+        "აღდგენის ელფოსტის დამატება"
+      ],
+      "Add recovery phone": [
+        "აღდგენის ტელეფონის დამატება"
+      ],
+      "Added emergency contacts": [
+        "სასწრაფო კონტაქტები დაემატა"
+      ],
+      "Added recovery contacts": [
+        "აღდგენის კონტაქტები დაემატა"
+      ],
+      "Added recovery email": [
+        "აღდგენის ელფოსტა დაემატა"
+      ],
+      "Added recovery phone": [
+        "აღდგენის ტელეფონი დაემატა"
+      ],
+      "Allow": [
+        "დაშვება"
+      ],
+      "Allow data recovery from this device": [
+        "მონაცემთა აღდგენის დაშვება ამ მოწყობილობიდან"
+      ],
+      "Allow password reset from the settings": [
+        "პარამეტრებიდან პაროლის გადატვირთვის დაშვება"
+      ],
+      "Allow recovery by email": [
+        "ელფოსტით აღდგენის დაშვება"
+      ],
+      "Allow recovery by phone": [
+        "ტელეფონით აღდგენის დაშვება"
+      ],
+      "Allow scanning a QR code to sign in": [
+        "შესასვლელად QR კოდის სკანირების დაშვება"
+      ],
+      "Allow trusted friends to unlock your data": [
+        "ნება დართეთ სანდო მეგობრებს, განბლოკონ თქვენი მონაცემები"
+      ],
+      "Back to ${ backLink.appNameString }": [
+        "უკან დაბრუნება ${ backLink.appNameString }-ზე"
+      ],
+      "Congratulations": [
+        "გილოცავთ"
+      ],
+      "Didn’t receive it? ${ sendANewCode }": [
+        "არ მიგიღიათ? ${ sendANewCode }"
+      ],
+      "Done": [
+        "მზადაა"
+      ],
+      "Download": [
+        "გადმოწერა"
+      ],
+      "Download recovery file": [
+        "აღდგენის ფაილის ჩამოტვირთვა"
+      ],
+      "Downloaded recovery file": [
+        "აღდგენის ფაილი ჩამოტვირთულია"
+      ],
+      "Emergency contacts enabled": [
+        "სასწრაფო კონტაქტები ჩართულია"
+      ],
+      "Enable device recovery": [
+        "მოწყობილობით აღდგენის ჩართვა"
+      ],
+      "Enable email recovery": [
+        "აღდგენის ელფოსტის ჩართვა"
+      ],
+      "Enable emergency contacts": [
+        "სასწრაფო კონტაქტების ჩართვა"
+      ],
+      "Enable password reset from settings": [
+        "პარამეტრებიდან პაროლის გადატვირთვის ჩართვა"
+      ],
+      "Enable phone recovery": [
+        "ტელეფონით აღდგენის ჩართვა"
+      ],
+      "Enable QR code sign-in": [
+        "QR კოდით შესვლის ჩართვა"
+      ],
+      "Enabled device recovery": [
+        "მოწყობილობით აღდგენა ჩართულია"
+      ],
+      "Enabled email recovery": [
+        "ელფოსტით აღდგენა ჩართულია"
+      ],
+      "Enabled password reset from settings": [
+        "პარამეტრებიდან პაროლის გადატვირთვა ჩართულია"
+      ],
+      "Enabled phone recovery": [
+        "ტელეფონით აღდგენა ჩართულია"
+      ],
+      "Enabled QR code sign-in": [
+        "QR კოდით შესვლა ჩართულია"
+      ],
+      "Got it": [
+        "გავიგე"
+      ],
+      "Here's how you increased your account protection:": [
+        "აი, როგორ გაზარდეთ თქვენი ანგარიშის დაცვა:"
+      ],
+      "If you forget your password, you can sign in using a QR code. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
+        "თუ პაროლი დაგავიწყდებათ, შეგიძლიათ შეხვიდეთ QR კოდის გამოყენებით. ყველაფერი, რაც გჭირდებათ, არის შესული იყოთ ${ BRAND_NAME } სერვისში სხვა მოწყობილობაზე."
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, it will allow you to sign in and recover your data. It’s the only way to instantly restore everything, so make sure you keep it somewhere safe.": [
+        "თუ ${ BRAND_NAME } ანგარიშიდან გამოგკეტავენ, ეს საშუალებას მოგცემთ შეხვიდეთ და აღადგინოთ თქვენი მონაცემები. ეს ყველაფრის მყისიერად აღდგენის ერთადერთი გზაა, ამიტომ დარწმუნდით, რომ მას უსაფრთხო ადგილას ინახავთ."
+      ],
+      "If your recovery email has changed, ${ updateEmailLink }.": [
+        "თუ თქვენი აღდგენის ელფოსტა შეიცვალა, ${ updateEmailLink }."
+      ],
+      "If your recovery phone has changed, ${ updatePhoneLink }.": [
+        "თუ თქვენი აღდგენის ტელეფონი შეიცვალა, ${ updatePhoneLink }."
+      ],
+      "Later": [
+        "მოგვიანებით"
+      ],
+      "Protect your legacy with Emergency Access": [
+        "დაიცავით თქვენი მონაცემები სასწრაფო წვდომის მეშვეობით"
+      ],
+      "Save recovery phrase": [
+        "აღდგენის ფრაზის შენახვა"
+      ],
+      "Saved recovery phrase": [
+        "აღდგენის ფრაზა შენახულია"
+      ],
+      "Send verification code": [
+        "დამოწმების კოდის გაგზავნა"
+      ],
+      "They must already have a ${ BRAND_NAME } Account.": [
+        "მათ უკვე უნდა ჰქონდეთ ${ BRAND_NAME } ანგარიში."
+      ],
+      "They will not be able to see or access your data.": [
+        "ისინი ვერ შეძლებენ თქვენი მონაცემების ნახვას ან მათზე წვდომას."
+      ],
+      "This will let you quickly access your ${ BRAND_NAME } Account so you can change your password.": [
+        "ეს საშუალებას მოგცემთ სწრაფად მიიღოთ წვდომა თქვენს ${ BRAND_NAME } ანგარიშზე, რათა შეცვალოთ პაროლი."
+      ],
+      "This will let you reset your account password if you’ve lost it, but are still signed in to ${ BRAND_NAME }. It’s often the easiest way to recover your account if you’re signed in.": [
+        "ეს საშუალებას მოგცემთ გადატვირთოთ თქვენი ანგარიშის პაროლი, თუ ის დაკარგეთ, მაგრამ მაინც შესული ხართ ${ BRAND_NAME }-ში. ეს ხშირად თქვენი ანგარიშის აღდგენის ყველაზე მარტივი გზაა, თუ შესული ხართ."
+      ],
+      "This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
+        "ეს აღადგენს წვდომას ელფოსტაზე, კონტაქტებზე, ფაილებზე, პაროლებზე და თქვენს ანგარიშში არსებულ ნებისმიერ სხვა დაშიფრულ მონაცემზე პაროლის გადატვირთვის შემდეგ."
+      ],
+      "To help you remember your password, we’ll periodically ask you to enter it.": [
+        "რათა დაგეხმაროთ თქვენი პაროლის დამახსოვრებაში, ჩვენ პერიოდულად გთხოვთ მის შეყვანას."
+      ],
+      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
+        "იმისათვის, რომ დარწმუნდეთ, რომ ელფოსტის მისამართი თქვენია, შეიყვანეთ დამოწმების კოდი, რომელიც გაიგზავნა მისამართზე: ${ boldEmail }."
+      ],
+      "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
+        "იმისათვის, რომ დარწმუნდეთ, რომ ტელეფონის ნომერი თქვენია, შეიყვანეთ დამოწმების კოდი, რომელიც გაიგზავნა ნომერზე: ${ boldPhoneNumber }."
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification code.": [
+        "იმის დასადასტურებლად, რომ ეს მისამართი ნამდვილად თქვენია, ჩვენ გამოვაგზავნით ელფოსტას დამოწმების კოდით."
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification link.": [
+        "იმისათვის, რომ დარწმუნდეთ, რომ ეს მისამართი ნამდვილად თქვენია, ჩვენ გამოვაგზავნით ელფოსტას დამოწმების ბმულით."
+      ],
+      "To make sure this number is really yours, we’ll send an SMS with a verification code.": [
+        "იმის დასადასტურებლად, რომ ეს ნომერი ნამდვილად თქვენია, ჩვენ გამოვაგზავნით SMS შეტყობინებას დამოწმების კოდით."
+      ],
+      "Update": [
+        "განახლება"
+      ],
+      "Update recovery email": [
+        "აღდგენის ელფოსტის განახლება"
+      ],
+      "Update recovery phone": [
+        "აღდგენის ტელეფონის განახლება"
+      ],
+      "Upgrade your plan to enable Emergency Access to your account. This will allow you to designate 1 to 5 people who will be able to reset your password for you.": [
+        "განაახლეთ თქვენი პაკეტი, რათა ჩართოთ სასწრაფო წვდომა თქვენს ანგარიშზე. ეს საშუალებას მოგცემთ მიუთითოთ 1-დან 5-მდე ადამიანი, რომელიც შეძლებს თქვენთვის პაროლის გადატვირთვას."
+      ],
+      "Verified password": [
+        "პაროლი შემოწმებულია"
+      ],
+      "Verified recovery email": [
+        "აღდგენის ელფოსტა შემოწმებულია"
+      ],
+      "Verified recovery phone": [
+        "აღდგენის ტელეფონი შემოწმებულია"
+      ],
+      "Verify": [
+        "გადამოწმება"
+      ],
+      "Verify password": [
+        "პაროლის შემოწმება"
+      ],
+      "Verify recovery email": [
+        "აღდგენის ელფოსტის შემოწმება"
+      ],
+      "Verify recovery phone": [
+        "აღდგენის ტელეფონის შემოწმება"
+      ],
+      "Verify your password": [
+        "დაადასტურეთ თქვენი პაროლი"
+      ],
+      "Verify your recovery email": [
+        "აღდგენის ელფოსტის შემოწმება"
+      ],
+      "Verify your recovery phone": [
+        "აღდგენის ტელეფონის ნომრის შემოწმება"
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        "ელფოსტის მისამართის შემოწმება ზრდის თქვენი ანგარიშის უსაფრთხოებას და საშუალებას გაძლევთ გამოიყენოთ აღდგენის დამატებითი ვარიანტები."
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "ტელეფონის ნომრის შემოწმება ზრდის თქვენი ანგარიშის უსაფრთხოებას და საშუალებას გაძლევთ გამოიყენოთ აღდგენის დამატებითი ვარიანტები."
+      ],
+      "You can save a data backup on this device. This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset, simply by signing in on this device.": [
+        "შეგიძლიათ შეინახოთ მონაცემთა სარეზერვო ასლი ამ მოწყობილობაზე. ეს აღადგენს წვდომას ელფოსტაზე, კონტაქტებზე, ფაილებზე, პაროლებზე და თქვენს ანგარიშში არსებულ ნებისმიერ სხვა დაშიფრულ მონაცემზე პაროლის გადატვირთვის შემდეგ, უბრალოდ ამ მოწყობილობაზე შესვლით."
+      ],
+      "You can use email verification to regain access to your account if you forget your password.": [
+        "თუ პაროლი დაგავიწყდებათ, შეგიძლიათ გამოიყენოთ ელფოსტის შემოწმება თქვენს ანგარიშზე წვდომის აღსადგენად."
+      ],
+      "You can use SMS verification to regain access to your account if you forget your password.": [
+        "თუ პაროლი დაგავიწყდებათ, შეგიძლიათ გამოიყენოთ SMS შემოწმება თქვენს ანგარიშზე წვდომის აღსადგენად."
+      ],
+      "You can use your recovery email to regain access to your account if you forget your password.": [
+        "თუ პაროლი დაგავიწყდებათ, შეგიძლიათ გამოიყენოთ აღდგენის ელფოსტა თქვენს ანგარიშზე წვდომის აღსადგენად."
+      ],
+      "You can use your recovery phone to regain access to your account if you forget your password.": [
+        "თუ პაროლი დაგავიწყდებათ, შეგიძლიათ გამოიყენოთ აღდგენის ტელეფონი თქვენს ანგარიშზე წვდომის აღსადგენად."
+      ],
+      "You don’t need to open or read the file—just download it and store it somewhere safe.": [
+        "თქვენ არ გჭირდებათ ფაილის გახსნა ან წაკითხვა — უბრალოდ ჩამოტვირთეთ იგი და შეინახეთ სადმე უსაფრთხო ადგილას."
+      ],
+      "Your recovery checklist": [
+        "თქვენი აღდგენის საკონტროლო სია"
+      ],
+      "Your security setup": [
+        "თქვენი უსაფრთხოების დაყენება"
       ]
     },
     "saml: Action": {
