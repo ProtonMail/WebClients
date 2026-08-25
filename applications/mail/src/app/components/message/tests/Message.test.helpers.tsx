@@ -1,6 +1,5 @@
 import type { MutableRefObject } from 'react';
 
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { act, findByTestId, fireEvent, waitFor } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
 
@@ -10,14 +9,18 @@ import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import noop from '@proton/utils/noop';
 
-import type { MailStore } from '../../../store/store';
-
 import * as messageDecrypt from '../../../helpers/message/messageDecrypt';
 import { mergeMessages } from '../../../helpers/message/messages';
 import { mailTestRender, tick } from '../../../helpers/test/render';
 import { initialize } from '../../../store/messages/read/messagesReadActions';
+import type { MailStore } from '../../../store/store';
 import type { MessageViewRef } from '../MessageView';
 import MessageView from '../MessageView';
+
+jest.mock('../../../helpers/message/messageDecrypt', () => ({
+    ...jest.requireActual('../../../helpers/message/messageDecrypt'),
+    decryptMessage: jest.fn(jest.requireActual('../../../helpers/message/messageDecrypt').decryptMessage),
+}));
 
 loudRejection();
 
@@ -85,7 +88,7 @@ export const setup = async (
     });
 
     const open = async () => {
-        jest.spyOn(messageDecrypt, 'decryptMessage');
+        jest.mocked(messageDecrypt.decryptMessage);
 
         await act(async () => {
             ref.current?.expand();

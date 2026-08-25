@@ -1,5 +1,11 @@
 import * as useCategoriesDataModule from '@proton/mail/features/categoriesView/useCategoriesData';
 
+jest.mock('@proton/mail/features/categoriesView/useCategoriesData', () => ({
+    __esModule: true,
+    ...jest.requireActual('@proton/mail/features/categoriesView/useCategoriesData'),
+    useCategoriesData: jest.fn(),
+}));
+
 type UseCategoriesDataReturnType = ReturnType<typeof useCategoriesDataModule.useCategoriesData>;
 
 export const mockUseCategoriesData = (params?: Partial<UseCategoriesDataReturnType>) => {
@@ -13,7 +19,7 @@ export const mockUseCategoriesData = (params?: Partial<UseCategoriesDataReturnTy
         ...params,
     };
 
-    const mockedUseCategoriesData = jest.spyOn(useCategoriesDataModule, 'useCategoriesData');
+    const mockedUseCategoriesData = jest.mocked(useCategoriesDataModule.useCategoriesData);
     mockedUseCategoriesData.mockReturnValue(value);
 
     return mockedUseCategoriesData;

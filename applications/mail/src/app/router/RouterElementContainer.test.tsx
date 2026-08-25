@@ -17,11 +17,19 @@ import { useMailboxLayoutProvider } from './components/MailboxLayoutContext';
 jest.mock('@proton/unleash/useFlag');
 const mockUseFlag = useFlag as jest.MockedFunction<typeof useFlag>;
 
+jest.mock('../containers/onboardingChecklist/provider/GetStartedChecklistProvider', () => ({
+    __esModule: true,
+    ...jest.requireActual('../containers/onboardingChecklist/provider/GetStartedChecklistProvider'),
+    useGetStartedChecklist: jest.fn(),
+}));
+
 describe('RouterElementContainer - Conversation View Mode', () => {
-    let mockedUseGetStartedChecklist: jest.SpyInstance<OnboardingChecklistContext, [], any>;
+    let mockedUseGetStartedChecklist: jest.MockedFunction<
+        typeof GetStartedChecklistProviderModule.useGetStartedChecklist
+    >;
 
     beforeEach(() => {
-        mockedUseGetStartedChecklist = jest.spyOn(GetStartedChecklistProviderModule, 'useGetStartedChecklist');
+        mockedUseGetStartedChecklist = jest.mocked(GetStartedChecklistProviderModule.useGetStartedChecklist);
         mockedUseGetStartedChecklist.mockReturnValue({
             displayState: CHECKLIST_DISPLAY_TYPE.FULL,
             items: new Set(),

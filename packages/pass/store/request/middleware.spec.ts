@@ -5,6 +5,11 @@ import * as time from '../../utils/time/epoch';
 import { withRequest } from './enhancers';
 import { type RequestTracker, requestMiddlewareFactory, requestTrackerFactory } from './middleware';
 
+jest.mock('@proton/pass/utils/time/epoch', () => ({
+    ...jest.requireActual('@proton/pass/utils/time/epoch'),
+    getEpoch: jest.fn(),
+}));
+
 describe('requestMiddleware', () => {
     let next: jest.Mock;
     let getState: jest.Mock;
@@ -12,7 +17,7 @@ describe('requestMiddleware', () => {
     let apply: (action: unknown) => unknown;
     let acceptAsync: jest.Mock;
 
-    const getEpoch = jest.spyOn(time, 'getEpoch').mockImplementation(() => 1);
+    const getEpoch = jest.mocked(time.getEpoch).mockImplementation(() => 1);
 
     const requestID = `test-request-${uniqueId()}`;
     const payload = { value: Math.random() };

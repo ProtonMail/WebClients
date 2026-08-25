@@ -1,4 +1,5 @@
 import { utf8StringToUint8Array } from '@protontech/crypto/utils';
+
 import type { MessageKeys, MessageVerification } from '@proton/mail/store/messages/messagesTypes';
 import * as browser from '@proton/shared/lib/helpers/browser';
 import * as downloadFile from '@proton/shared/lib/helpers/downloadFile';
@@ -21,6 +22,16 @@ import {
     generateDownloadAll,
     getZipAttachmentName,
 } from '../attachmentDownloader';
+
+jest.mock('@proton/shared/lib/helpers/downloadFile', () => ({
+    __esModule: true,
+    default: jest.fn(),
+}));
+
+jest.mock('@proton/shared/lib/helpers/browser', () => ({
+    ...jest.requireActual('@proton/shared/lib/helpers/browser'),
+    isFirefox: jest.fn(),
+}));
 
 const subject = 'Message subject';
 const message = { Subject: subject };
@@ -100,7 +111,7 @@ describe('generateDownload', () => {
     });
 
     it('should generate a download', async () => {
-        const downloadFileSpy = jest.spyOn(downloadFile, 'default').mockReturnValue();
+        const downloadFileSpy = jest.mocked(downloadFile.default).mockReturnValue(undefined);
 
         const download = {
             attachment: {
@@ -119,8 +130,8 @@ describe('generateDownload', () => {
     });
 
     it('should generate a download with the correct mimeType for firefox', async () => {
-        const downloadFileSpy = jest.spyOn(downloadFile, 'default').mockReturnValue();
-        jest.spyOn(browser, 'isFirefox').mockReturnValue(true);
+        const downloadFileSpy = jest.mocked(downloadFile.default).mockReturnValue(undefined);
+        jest.mocked(browser.isFirefox).mockReturnValue(true);
 
         const download = {
             attachment: {
@@ -184,7 +195,7 @@ describe('generateDownloadAll', () => {
     });
 
     it('should generate a download all', async () => {
-        const downloadFileSpy = jest.spyOn(downloadFile, 'default').mockReturnValue();
+        const downloadFileSpy = jest.mocked(downloadFile.default).mockReturnValue(undefined);
 
         const downloads = [
             {

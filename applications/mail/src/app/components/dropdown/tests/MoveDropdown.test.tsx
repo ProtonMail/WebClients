@@ -8,15 +8,22 @@ import { LABEL_TYPE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Label } from '@proton/shared/lib/interfaces';
 
-import * as mailboxActions from '../../../store/mailbox/mailboxActions';
-
 import { addApiMock } from '../../../helpers/test/api';
 import { minimalCache } from '../../../helpers/test/cache';
 import { mailTestRender } from '../../../helpers/test/render';
+import * as mailboxActions from '../../../store/mailbox/mailboxActions';
 import { initialize } from '../../../store/messages/read/messagesReadActions';
 import { mockActiveCategoriesData } from '../../categoryView/testUtils/helpers';
 import { messageID } from '../../message/tests/Message.test.helpers';
 import MoveDropdown from '../MoveDropdown';
+
+jest.mock('../../../store/mailbox/mailboxActions', () => {
+    const actual = jest.requireActual('../../../store/mailbox/mailboxActions');
+    return {
+        ...actual,
+        labelMessages: Object.assign(jest.fn(actual.labelMessages), actual.labelMessages),
+    };
+});
 
 jest.mock('../../categoryView/useCategoriesView', () => ({
     useCategoriesView: jest.fn(() => ({
@@ -104,7 +111,7 @@ describe('MoveDropdown', () => {
     });
 
     it('should move to a folder', async () => {
-        const labelMessagesSpy = jest.spyOn(mailboxActions, 'labelMessages');
+        const labelMessagesSpy = jest.mocked(mailboxActions.labelMessages);
 
         await setup();
 
@@ -133,12 +140,12 @@ describe('MoveDropdown', () => {
             })
         );
 
-        labelMessagesSpy.mockRestore();
+        labelMessagesSpy.mockClear();
     });
 
     describe('one-click folder move', () => {
         it('should move to a folder immediately when clicking the folder name without pressing Apply', async () => {
-            const labelMessagesSpy = jest.spyOn(mailboxActions, 'labelMessages');
+            const labelMessagesSpy = jest.mocked(mailboxActions.labelMessages);
 
             await setup();
 
@@ -154,7 +161,7 @@ describe('MoveDropdown', () => {
                 })
             );
 
-            labelMessagesSpy.mockRestore();
+            labelMessagesSpy.mockClear();
         });
 
         it('should close the dropdown immediately when clicking the folder name', async () => {

@@ -13,10 +13,16 @@ import type { EncryptedAuthSession } from '@proton/pass/lib/auth/session';
 
 import { clearUserLocalData } from './storage';
 
+jest.mock('proton-pass-web/lib/database', () => ({
+    ...jest.requireActual('proton-pass-web/lib/database'),
+    deletePassDB: jest.fn(),
+    getPassDBs: jest.fn(),
+}));
+
 describe('storage', () => {
     const removeItem = jest.spyOn(Storage.prototype, 'removeItem').mockImplementation();
-    const deletePassDB = jest.spyOn(db, 'deletePassDB').mockImplementation(async () => {});
-    const getPassDBs = jest.spyOn(db, 'getPassDBs').mockImplementation(async () => []);
+    const deletePassDB = (db.deletePassDB as jest.Mock).mockImplementation(async () => {});
+    const getPassDBs = (db.getPassDBs as jest.Mock).mockImplementation(async () => []);
 
     beforeEach(() => {
         removeItem.mockClear();
