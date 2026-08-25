@@ -40,14 +40,14 @@
         "@proton/testing": "workspace:packages/testing",
         "@testing-library/jest-dom": "^6.9.1",
         "@testing-library/react": "^15.0.7",
-        "@vitejs/plugin-react": "^6.0.5",
-        "@vitest/coverage-v8": "^4.1.10",
+        "@vitejs/plugin-react": "^6.1.0",
+        "@vitest/coverage-v8": "^4.1.11",
         "@vitest/ui": "3.2.7",
-        "eslint": "^10.8.1",
-        "happy-dom": "^20.11.2",
+        "eslint": "^10.9.0",
+        "happy-dom": "^20.11.6",
         "prettier": "^3.9.6",
         "typescript": "^6.0.3",
         "vite-plugin-wasm": "^3.6.0",
-        "vitest": "^4.1.10"
+        "vitest": "^4.1.11"
     }
 }

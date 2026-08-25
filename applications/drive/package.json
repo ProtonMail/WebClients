@@ -23,7 +23,7 @@
         "test:watch": "jest --watch --coverage=false"
     },
     "resolutions": {
-        "@xmldom/xmldom": "0.9.11"
+        "@xmldom/xmldom": "0.9.12"
     },
     "dependencies": {
         "@mattiasbuelens/web-streams-adapter": "0.1.0",
@@ -57,13 +57,13 @@
         "@proton/utils": "workspace:^",
         "@protontech/crypto": "*",
         "@reduxjs/toolkit": "^2.12.0",
-        "@tanstack/react-virtual": "^3.14.9",
+        "@tanstack/react-virtual": "^3.14.10",
         "@xmldom/xmldom": "^0.9.12",
         "client-zip": "^2.5.0",
         "comlink": "^4.4.2",
         "core-js": "^3.50.0",
         "date-fns": "^2.30.0",
-        "exifreader": "^4.43.0",
+        "exifreader": "^4.44.0",
         "heic-to": "^1.5.2",
         "history": "^4.10.1",
         "idb": "^8.0.3",
@@ -74,10 +74,10 @@
         "react-dom": "^18.3.1",
         "react-router": "^5.3.4",
         "react-router-dom": "^5.3.4",
-        "react-router-dom-v5-compat": "^6.30.4",
+        "react-router-dom-v5-compat": "^6.30.6",
         "react-window": "^1.8.11",
         "ttag": "^1.8.12",
-        "uuid": "^14.0.1",
+        "uuid": "^14.0.2",
         "web-streams-polyfill": "^4.3.0",
         "zustand": "^4.5.7"
     },
@@ -90,7 +90,7 @@
         "@testing-library/jest-dom": "^6.9.1",
         "@testing-library/react": "^15.0.7",
         "@testing-library/react-hooks": "^8.0.1",
-        "@testing-library/user-event": "^14.6.5",
+        "@testing-library/user-event": "^14.6.6",
         "@types/lodash": "^4.17.25",
         "@types/mime-types": "^2.1.4",
         "@types/react": "^18.3.31",
@@ -102,7 +102,7 @@
         "cross-env": "^10.1.0",
         "cross-var": "^1.1.0",
         "ejs-webpack-loader": "^2.2.2",
-        "eslint": "^10.8.1",
+        "eslint": "^10.9.0",
         "fake-indexeddb": "^6.2.5",
         "html-webpack-plugin": "^5.6.8",
         "jest": "^30.4.2",
