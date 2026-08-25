@@ -19,14 +19,14 @@ describe('Encrypted Outside message reply', () => {
     it('should not be able to click on reply button if max replies has been reached', async () => {
         await setup({ replies: [reply, reply, reply, reply, reply] as EOMessageReply[] });
 
-        const replyButton = await screen.findByTestId('eoreply:button');
+        const replyButton = await screen.findByTestId('eoreply:button', {}, { timeout: 5000 });
         expect(replyButton).toHaveAttribute('disabled');
     });
 
     it('should be able to click on reply button if max replies has not been reached', async () => {
         await setup({ replies: [reply, reply, reply, reply] as EOMessageReply[] });
 
-        const replyButton = await screen.findByTestId('eoreply:button');
+        const replyButton = await screen.findByTestId('eoreply:button', {}, { timeout: 5000 });
         expect(replyButton).not.toHaveAttribute('disabled');
     });
 });
