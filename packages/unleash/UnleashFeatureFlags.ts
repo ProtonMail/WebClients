@@ -327,6 +327,7 @@ enum MeetFeatureFlag {
     MeetRecordingShowAllRecordings = 'MeetRecordingShowAllRecordings',
     MeetEnableAudioMixing = 'MeetEnableAudioMixing',
     MeetEnableSpatialAudio = 'MeetEnableSpatialAudio',
+    MeetFixedAudioContextSampleRate = 'MeetFixedAudioContextSampleRate',
     MeetAdminLowerHand = 'MeetAdminLowerHand',
     MeetJoinTelemetry = 'MeetJoinTelemetry',
     MeetAdaptiveStream = 'MeetAdaptiveStream',

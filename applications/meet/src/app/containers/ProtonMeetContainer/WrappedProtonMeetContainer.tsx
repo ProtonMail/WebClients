@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { RoomContext } from '@livekit/components-react';
 import { LogLevel, Room, setLogLevel } from 'livekit-client';
 
+import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectActiveAudioOutputId } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -30,15 +31,24 @@ export const WrappedProtonMeetContainer = () => {
     const isMeetEnableSpatialAudio = useFlag('MeetEnableSpatialAudio');
     const isAudioMixingEnabled = isMeetEnableAudioMixing && !isMeetEnableSpatialAudio;
 
+    const isMeetFixedAudioContextSampleRate = useFlag('MeetFixedAudioContextSampleRate');
+
     const isMeetAdaptiveStream = useFlag('MeetAdaptiveStream');
     const isMeetDynacast = useFlag('MeetDynacast');
     const isMeetSimulcast = useFlag('MeetSimulcast');
+
+    const { reportMeetError } = useMeetErrorReporting();
 
     const primaryCodec = isMeetH264 ? 'h264' : 'vp8';
 
     const [keyProvider] = useState(() => new ProtonMeetKeyProvider());
     const [worker] = useState(() => new Worker(new URL('livekit-client/e2ee-worker', import.meta.url)));
-    const [meetAudioContext] = useState(() => createMeetAudioContext());
+    const [meetAudioContext] = useState(() =>
+        createMeetAudioContext({
+            reportMeetError,
+            sampleRate: isMeetFixedAudioContextSampleRate ? 48000 : undefined,
+        })
+    );
 
     const getWebAudioMix = () => {
         if (isAudioMixingEnabled) {

@@ -3,13 +3,11 @@ import { useEffect, useRef } from 'react';
 import { useMeetStore } from '@proton/meet/store/hooks';
 import { setDeviceList } from '@proton/meet/store/slices/deviceManagementSlice';
 import type { DeviceKind } from '@proton/meet/store/slices/deviceManagementSlice/types';
-import { toSerializableDevice } from '@proton/meet/utils/deviceUtils';
+import { getDevicesHash, toSerializableDevice } from '@proton/meet/utils/deviceUtils';
 
 const KINDS: DeviceKind[] = ['audioinput', 'audiooutput', 'videoinput'];
 
 const RECHECK_DELAY_MS = 150;
-
-const getFingerprint = (devices: MediaDeviceInfo[]) => devices.map((d) => `${d.deviceId}:${d.groupId}`).join(',');
 
 /**
  * Syncs the available device list to Redux by subscribing to
@@ -44,7 +42,7 @@ export const useDeviceListSync = () => {
 
             for (const kind of KINDS) {
                 const list = devices.filter((d) => d.kind === kind && d.deviceId !== '');
-                const fingerprint = getFingerprint(list);
+                const fingerprint = getDevicesHash(list);
 
                 if (fingerprint === lastFingerprint.get(kind)) {
                     continue;
