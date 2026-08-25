@@ -17,20 +17,23 @@ import Prompt from '@proton/components/components/prompt/Prompt';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { useHandler } from '@proton/components/hooks/useHandler';
 import type { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
+import { useGetMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { MessageState, PartialMessageState } from '@proton/mail/store/messages/messagesTypes';
 import { forceSend } from '@proton/shared/lib/api/messages';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { pick } from '@proton/shared/lib/helpers/object';
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { addUpsellPath, getUpgradePath, getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { isOutbox, isScheduledSend } from '@proton/shared/lib/mail/messages';
 
 import SendingOriginalMessageModal from '../../components/composer/modals/SendingOriginalMessageModal';
 import { isDirtyAddress } from '../../helpers/addresses';
+import { insertBodyIntoNewDraft } from '../../helpers/composer/contentFromComposerMessage';
 import { addComposerAction } from '../../store/composers/composerActions';
 import { composerActions } from '../../store/composers/composersSlice';
 import { useMailDispatch, useMailStore } from '../../store/hooks';
-import { openDraft } from '../../store/messages/draft/messagesDraftActions';
+import { openDraft, updateDraftContent } from '../../store/messages/draft/messagesDraftActions';
 import { useGetLocalID, useGetMessage } from '../message/useMessage';
 import { useDraft } from '../useDraft';
 
@@ -51,6 +54,7 @@ export interface ComposeNew {
     action: MESSAGE_ACTIONS;
     referenceMessage?: PartialMessageState;
     forceOpenScheduleSend?: boolean;
+    bodyBeforeQuote?: string;
 }
 
 export interface ComposeModelMessage {
@@ -95,6 +99,7 @@ export const useCompose = ({
     const goToSettings = useSettingsLink();
     const api = useApi();
     const { call } = useEventManager();
+    const getMailSettings = useGetMailSettings();
     const getLocalID = useGetLocalID();
     const getMessage = useGetMessage();
 
@@ -265,7 +270,7 @@ export const useCompose = ({
         }
 
         if (compose.type === ComposeTypes.newMessage) {
-            const { action, referenceMessage, returnFocusTo, forceOpenScheduleSend } = compose;
+            const { action, referenceMessage, returnFocusTo, forceOpenScheduleSend, bodyBeforeQuote } = compose;
             const message = referenceMessage?.data;
 
             if (isOutbox(message) && message?.ID) {
@@ -280,6 +285,25 @@ export const useCompose = ({
             }
 
             const newMessageID = await createDraft(action, referenceMessage);
+
+            if (bodyBeforeQuote?.trim()) {
+                const mailSettings = await getMailSettings();
+                const newDraft = getMessage(newMessageID);
+
+                if (newDraft) {
+                    dispatch(
+                        updateDraftContent({
+                            ID: newMessageID,
+                            content: insertBodyIntoNewDraft(newDraft, bodyBeforeQuote, mailSettings),
+                        })
+                    );
+                } else {
+                    captureMessage('Draft missing from the store right after creation', {
+                        level: 'error',
+                        extra: { action },
+                    });
+                }
+            }
 
             openComposer({ messageID: newMessageID, returnFocusTo, type: compose.type, forceOpenScheduleSend });
             const composer = Object.values(store.getState().composers.composers).find(

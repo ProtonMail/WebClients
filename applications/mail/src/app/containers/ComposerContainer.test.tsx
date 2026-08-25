@@ -8,6 +8,7 @@ import { getAppName } from '@proton/shared/lib/apps/helper';
 import type { MIME_TYPES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import type { Recipient } from '@proton/shared/lib/interfaces';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { FORWARDED_MESSAGE } from '@proton/shared/lib/mail/messages';
 
 import { formatFullDate } from '../helpers/date';
@@ -27,50 +28,62 @@ const Sender = {
 
 const protonmailAppName = getAppName(APPS.PROTONMAIL);
 
+const buildPlaintextMessage = async (content: string, data: Partial<Message>) =>
+    ({
+        localID: ID,
+        data: {
+            ID,
+            MIMEType: 'text/plain' as MIME_TYPES,
+            Subject: '',
+            Sender,
+            ToList: [] as Recipient[],
+            ...data,
+        },
+        decryption: {
+            decryptedBody: content,
+        },
+        messageDocument: {
+            initialized: true,
+        },
+        ...(await preparePlainText(content, false)),
+    }) as MessageState;
+
+const renderComposerContainer = async () => {
+    let onCompose: OnCompose;
+
+    const Inside = () => {
+        onCompose = useOnCompose();
+        return null;
+    };
+
+    const { unmount } = await mailTestRender(
+        <ComposerContainer>
+            <Inside />
+        </ComposerContainer>,
+        {
+            preloadedState: {
+                addresses: getModelState([getCompleteAddress({ Email, Signature })]),
+            },
+        }
+    );
+
+    return { onCompose: onCompose!, unmount };
+};
+
 describe('ComposerContainer', () => {
     afterEach(clearAll);
 
-    it('should reply to a plaintext message with the right content', async () => {
-        let onCompose: OnCompose;
-
-        const content = `mail content
+    const content = `mail content
 with a link -> https://protonmail.com/`;
 
+    const quotedContent = `> mail content
+> with a link -> https://protonmail.com/`;
+
+    it('should reply to a plaintext message with the right content', async () => {
         minimalCache();
 
-        const message = {
-            localID: ID,
-            data: {
-                ID,
-                MIMEType: 'text/plain' as MIME_TYPES,
-                Subject: '',
-                Sender,
-                ToList: [] as Recipient[],
-            },
-            decryption: {
-                decryptedBody: content,
-            },
-            messageDocument: {
-                initialized: true,
-            },
-            ...(await preparePlainText(content, false)),
-        } as MessageState;
-
-        const Inside = () => {
-            onCompose = useOnCompose();
-            return null;
-        };
-
-        const { unmount } = await mailTestRender(
-            <ComposerContainer>
-                <Inside />
-            </ComposerContainer>,
-            {
-                preloadedState: {
-                    addresses: getModelState([getCompleteAddress({ Email, Signature })]),
-                },
-            }
-        );
+        const message = await buildPlaintextMessage(content, {});
+        const { onCompose, unmount } = await renderComposerContainer();
 
         await act(async () => {
             await onCompose({
@@ -92,8 +105,7 @@ Sent with ${protonmailAppName} secure email.
 
 On ${formatFullDate(new Date(0))}, ${Sender.Name} <${Sender.Address}> wrote:
 
-> mail content
-> with a link -> https://protonmail.com/`);
+${quotedContent}`);
 
         // Wait for Address focus action
         await tick();
@@ -102,12 +114,74 @@ On ${formatFullDate(new Date(0))}, ${Sender.Name} <${Sender.Address}> wrote:
         unmount();
     });
 
+    it('should reply with the supplied bodyBeforeQuote above the signature and the quote', async () => {
+        minimalCache();
+
+        const message = await buildPlaintextMessage(content, {});
+        const { onCompose, unmount } = await renderComposerContainer();
+
+        await act(async () => {
+            await onCompose({
+                type: ComposeTypes.newMessage,
+                action: MESSAGE_ACTIONS.REPLY,
+                referenceMessage: message,
+                bodyBeforeQuote: 'Sounds good, see you then.',
+            });
+        });
+
+        const textarea = (await screen.findByTestId('editor-textarea')) as HTMLTextAreaElement;
+
+        expect(textarea.value).toBe(`Sounds good, see you then.
+
+
+
+
+${Signature}
+
+Sent with ${protonmailAppName} secure email.
+
+On ${formatFullDate(new Date(0))}, ${Sender.Name} <${Sender.Address}> wrote:
+
+${quotedContent}`);
+
+        await tick();
+        unmount();
+    });
+
+    it('should leave the draft untouched when bodyBeforeQuote is only whitespace', async () => {
+        minimalCache();
+
+        const message = await buildPlaintextMessage(content, {});
+        const { onCompose, unmount } = await renderComposerContainer();
+
+        await act(async () => {
+            await onCompose({
+                type: ComposeTypes.newMessage,
+                action: MESSAGE_ACTIONS.REPLY,
+                referenceMessage: message,
+                bodyBeforeQuote: '  \n\t ',
+            });
+        });
+
+        const textarea = (await screen.findByTestId('editor-textarea')) as HTMLTextAreaElement;
+
+        expect(textarea.value).toBe(`
+
+
+
+${Signature}
+
+Sent with ${protonmailAppName} secure email.
+
+On ${formatFullDate(new Date(0))}, ${Sender.Name} <${Sender.Address}> wrote:
+
+${quotedContent}`);
+
+        await tick();
+        unmount();
+    });
+
     it('should forward to a plaintext message with the right content', async () => {
-        let onCompose: OnCompose;
-
-        const content = `mail content
-with a link -> https://protonmail.com/`;
-
         minimalCache();
 
         const me = { Name: 'me', Address: 'me@protonmail.com' };
@@ -116,40 +190,12 @@ with a link -> https://protonmail.com/`;
         const ccRecipient2 = { Name: '', Address: 'ccRecipient2@protonmail.com' };
         const messageSubject = 'Message subject';
 
-        const message = {
-            localID: ID,
-            data: {
-                ID,
-                MIMEType: 'text/plain' as MIME_TYPES,
-                Subject: messageSubject,
-                Sender,
-                ToList: [me, toRecipient] as Recipient[],
-                CCList: [ccRecipient, ccRecipient2] as Recipient[],
-            },
-            decryption: {
-                decryptedBody: content,
-            },
-            messageDocument: {
-                initialized: true,
-            },
-            ...(await preparePlainText(content, false)),
-        } as MessageState;
-
-        const Inside = () => {
-            onCompose = useOnCompose();
-            return null;
-        };
-
-        const { unmount } = await mailTestRender(
-            <ComposerContainer>
-                <Inside />
-            </ComposerContainer>,
-            {
-                preloadedState: {
-                    addresses: getModelState([getCompleteAddress({ Email, Signature })]),
-                },
-            }
-        );
+        const message = await buildPlaintextMessage(content, {
+            Subject: messageSubject,
+            ToList: [me, toRecipient] as Recipient[],
+            CCList: [ccRecipient, ccRecipient2] as Recipient[],
+        });
+        const { onCompose, unmount } = await renderComposerContainer();
 
         await act(async () => {
             await onCompose({
@@ -177,8 +223,7 @@ To: ${me.Name} <${me.Address}>, ${toRecipient.Name} <${toRecipient.Address}>
 CC: ${ccRecipient.Name} <${ccRecipient.Address}>, ${ccRecipient2.Address} <${ccRecipient2.Address}>
 
 
-> mail content
-> with a link -> https://protonmail.com/`);
+${quotedContent}`);
 
         // Wait for Address focus action
         await tick();
