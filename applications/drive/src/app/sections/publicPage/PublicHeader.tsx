@@ -101,10 +101,10 @@ export const PublicHeader = ({
                                 '--min-w-custom': '2.25rem',
                             }}
                         />
-                        <div className="flex flex-column text-lg">
+                        <div className="flex flex-column text-lg flex-1 justify-center pt-1.5 xl:justify-start xl:pt-0">
                             {breadcrumbOrName}
                             {sharedBy && (
-                                <span className="text-sm pl-1.5 color-weak text-ellipsis max-w-full">{c('Subtitle')
+                                <span className="text-sm pl-1 color-weak text-ellipsis max-w-full">{c('Subtitle')
                                     .t`Shared by ${sharedBy}`}</span>
                             )}
                         </div>

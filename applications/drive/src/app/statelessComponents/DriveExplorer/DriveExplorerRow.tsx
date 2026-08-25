@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useRef } from 'react';
 
 import { DragMoveContainer, TableCell, TableRow, useDragMove } from '@proton/components';
 import { CUSTOM_DATA_FORMAT } from '@proton/shared/lib/drive/constants';
@@ -30,6 +30,7 @@ interface DriveExplorerRowProps {
     selection: DriveExplorerSelection;
     events?: DriveExplorerEvents;
     onObserve?: (element: HTMLElement | null, uid: string) => void;
+    measureElement?: (element: HTMLElement | null) => void;
     dragMoveControls?: DragMoveControls;
     isMultiSelectionDisabled?: boolean;
     className?: string;
@@ -49,6 +50,7 @@ export const DriveExplorerRow = ({
     events,
     conditions,
     onObserve,
+    measureElement,
     dragMoveControls,
     isMultiSelectionDisabled,
     showCheckboxColumn = true,
@@ -97,6 +99,13 @@ export const DriveExplorerRow = ({
         }
     }, [onObserve, itemId]);
 
+    // Registers the row with the virtualizer's ResizeObserver so its real
+    // rendered height (which grows with content, e.g. larger fonts) drives
+    // row spacing, instead of the fixed estimateSize placeholder.
+    useLayoutEffect(() => {
+        measureElement?.(rowRef.current);
+    }, [measureElement, itemId]);
+
     const canBeDropTarget = dragMoveControls?.canDropIntoItem?.(itemId) ?? false;
 
     const handleDragStart = useCallback(
@@ -144,6 +153,7 @@ export const DriveExplorerRow = ({
                 draggable={isDraggable}
                 data-testid="drive-explorer-row"
                 data-drive-explorer-item-uid={itemId}
+                data-index={index}
             >
                 <ItemA11yActivatorCell
                     ariaLabel={a11y.getItemAriaLabel({ uid: itemId, isSelected, index })}
@@ -158,7 +168,11 @@ export const DriveExplorerRow = ({
                     onKeyDown={handleKeyDown}
                 />
                 {showCheckboxColumn ? (
-                    <TableCell className="m-0 flex items-center relative z-up" data-testid="checkbox">
+                    <TableCell
+                        className="m-0 flex items-center relative z-up w-custom"
+                        style={{ '--w-custom': '2.75rem' }}
+                        data-testid="checkbox"
+                    >
                         <CheckboxCell className="ml-2" uid={itemId} selectionMethods={selection.selectionMethods} />
                     </TableCell>
                 ) : (
