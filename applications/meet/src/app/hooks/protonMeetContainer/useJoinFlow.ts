@@ -58,7 +58,6 @@ interface UseJoinFlowParams {
     setIsConnectionFailedModalOpen: Dispatch<SetStateAction<boolean>>;
     isUsingTurnRelay: boolean;
     reportMeetError: ReportMeetError;
-    withMeetingLinkNameTag: (options?: unknown) => unknown;
     displayName: string;
     cleanupMlsState: () => void;
     disallowHealthCheck: () => void;
@@ -157,7 +156,6 @@ export const useJoinFlow = ({
     setIsConnectionFailedModalOpen,
     isUsingTurnRelay,
     reportMeetError,
-    withMeetingLinkNameTag,
     displayName,
     cleanupMlsState,
     disallowHealthCheck,
@@ -265,7 +263,7 @@ export const useJoinFlow = ({
                 try {
                     await meetCoreClient.logJoinedRoom();
                 } catch (error) {
-                    reportMeetError('Failed to log joined room', withMeetingLinkNameTag(error));
+                    reportMeetError('Failed to log joined room', { context: { error } });
                 }
             }
         } catch (error: any) {
@@ -285,7 +283,7 @@ export const useJoinFlow = ({
             const errorKind = classifyMeetingError(error);
 
             if (errorKind !== MeetingErrorKind.MeetingGone) {
-                reportMeetError('Failed to join meeting', withMeetingLinkNameTag(error));
+                reportMeetError('Failed to join meeting', { context: { error } });
             }
 
             dispatch(setJoiningInProgress(false));
@@ -298,7 +296,7 @@ export const useJoinFlow = ({
                 try {
                     await meetCoreClient.logJoinedRoomFailed(code ? String(code) : undefined);
                 } catch (logError) {
-                    reportMeetError('Failed to log joined room failed', withMeetingLinkNameTag(logError));
+                    reportMeetError('Failed to log joined room failed', { context: { error: logError } });
                 }
             }
 
@@ -335,7 +333,7 @@ export const useJoinFlow = ({
         try {
             await meetCoreClient.logStartToJoinRoom();
         } catch (error) {
-            reportMeetError('Failed to log start to join room', withMeetingLinkNameTag(error));
+            reportMeetError('Failed to log start to join room', { context: { error } });
         }
 
         try {
@@ -375,7 +373,7 @@ export const useJoinFlow = ({
             const errorKind = classifyMeetingError(error);
 
             if (errorKind !== MeetingErrorKind.MeetingGone) {
-                reportMeetError('Failed to create instant meeting', withMeetingLinkNameTag(error));
+                reportMeetError('Failed to create instant meeting', { context: { error } });
             }
 
             dispatch(setJoiningInProgress(false));
@@ -431,7 +429,7 @@ export const useJoinFlow = ({
             );
             return true;
         } catch (error: any) {
-            reportMeetError('Failed to prepare MLS session for waiting room', withMeetingLinkNameTag(error));
+            reportMeetError('Failed to prepare MLS session for waiting room', { context: { error } });
             if (!error?.userNotified) {
                 notifyJoinError(c('Error').t`Failed to join meeting. Please try again.`);
             }
@@ -450,7 +448,7 @@ export const useJoinFlow = ({
             );
             return true;
         } catch (error: any) {
-            reportMeetError('Failed to refresh guest session for waiting room', withMeetingLinkNameTag(error));
+            reportMeetError('Failed to refresh guest session for waiting room', { context: { error } });
             if (!error?.userNotified) {
                 notifyJoinError(c('Error').t`Failed to join meeting. Please try again.`);
             }
@@ -490,7 +488,7 @@ export const useJoinFlow = ({
         try {
             await meetCoreClient.logStartToJoinRoom();
         } catch (error) {
-            reportMeetError('Failed to log start to join room', withMeetingLinkNameTag(error));
+            reportMeetError('Failed to log start to join room', { context: { error } });
         }
 
         try {
@@ -546,7 +544,7 @@ export const useJoinFlow = ({
             const errorKind = classifyMeetingError(error);
 
             if (errorKind !== MeetingErrorKind.MeetingGone) {
-                reportMeetError('Failed to join meeting', withMeetingLinkNameTag(error));
+                reportMeetError('Failed to join meeting', { context: { error } });
             }
 
             dispatch(setJoiningInProgress(false));

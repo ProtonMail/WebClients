@@ -99,7 +99,6 @@ export const useHostWaitingRoom = ({
                 notifyError(c('Error').t`Failed to admit the participant. Please try again.`);
                 reportMeetError('Failed to admit waiting room join request', {
                     context: { error, requestId },
-                    tags: { meetingLinkName },
                 });
             }
         },
@@ -115,7 +114,6 @@ export const useHostWaitingRoom = ({
                 notifyError(c('Error').t`Failed to deny the participant. Please try again.`);
                 reportMeetError('Failed to reject waiting room join request', {
                     context: { error, requestId },
-                    tags: { meetingLinkName },
                 });
             }
         },
@@ -139,7 +137,6 @@ export const useHostWaitingRoom = ({
             notifyError(c('Error').t`Failed to admit the participants. Please try again.`);
             reportMeetError('Failed to admit all waiting room join requests', {
                 context: { error },
-                tags: { meetingLinkName },
             });
         }
     });
@@ -163,7 +160,6 @@ export const useHostWaitingRoom = ({
                 notifyError(c('Error').t`Failed to update waiting room setting. Please try again.`);
                 reportMeetError('Failed to update waiting room setting in-call', {
                     context: { error, value: newValue },
-                    tags: { meetingLinkName },
                 });
             }
         },

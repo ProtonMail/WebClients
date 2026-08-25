@@ -179,6 +179,7 @@ export const selectMeetingDurationMs = (state: MeetState) => state.currentMeetin
 export const selectTimeLeftMs = (state: MeetState) => state.currentMeeting.timeLeftMs;
 export const selectIsExpiringSoon = (state: MeetState) => state.currentMeeting.isExpiringSoon;
 export const selectIsMeetingLoading = (state: MeetState) => state.currentMeeting.isMeetingLoading;
+export const selectMeetingNavigationSeed = (state: MeetState) => state.currentMeeting.navigationSeed;
 
 export { selectMaxParticipants } from './meetingInfoModel';
 export { selectExpirationTime, selectMaxDuration };

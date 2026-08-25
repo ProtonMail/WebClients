@@ -19,7 +19,6 @@ export const useMeetingAuthentication = () => {
                 if (!isExpectedApiFailure(error)) {
                     reportMeetError('Error initializing handshake', {
                         context: { error },
-                        tags: { meetingLinkName: token },
                     });
                 }
                 throw error;
@@ -53,7 +52,6 @@ export const useMeetingAuthentication = () => {
                 if (!isExpectedApiFailure(error)) {
                     reportMeetError('Failed to get access details', {
                         context: { error },
-                        tags: { meetingLinkName: token },
                     });
                 }
                 throw error;
