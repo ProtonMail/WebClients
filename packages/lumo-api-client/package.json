@@ -50,12 +50,12 @@
     "dependencies": {
         "@proton/shared": "workspace:^",
         "@protontech/crypto": "*",
-        "uuid": "^14.0.1"
+        "uuid": "^14.0.2"
     },
     "devDependencies": {
         "@jest/globals": "^30.4.1",
         "@types/jest": "^30.0.0",
-        "eslint": "^10.8.1",
+        "eslint": "^10.9.0",
         "jest": "^30.4.2",
         "ts-jest": "^29.4.12",
         "typescript": "^6.0.3"
