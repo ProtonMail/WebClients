@@ -184,8 +184,8 @@
       "Back": [
         "Atrás"
       ],
-      "Background blur": [
-        "Desenfoque de fondo"
+      "Blur background": [
+        "Difuminar fondo"
       ],
       "Cancel": [
         "Cancelar"
@@ -316,6 +316,9 @@
       "Enable camera": [
         "Activar la cámara"
       ],
+      "Enable captions": [
+        "Activar subtítulos"
+      ],
       "Enable waiting room": [
         "Activar sala de espera"
       ],
@@ -339,6 +342,9 @@
       ],
       "Get verification code": [
         "Obtener código de verificación"
+      ],
+      "Getting ready...": [
+        "Preparándose..."
       ],
       "Help and feedback": [
         "Ayuda y comentarios"
@@ -382,6 +388,9 @@
       "Leave meeting": [
         "Salir de la reunión"
       ],
+      "Live captions": [
+        "Subtítulos en directo"
+      ],
       "Lock meeting": [
         "Bloquear reunión"
       ],
@@ -406,6 +415,9 @@
       "Next page": [
         "Página siguiente"
       ],
+      "No effect": [
+        "Sin efecto"
+      ],
       "Noise cancellation": [
         "Cancelación de ruido"
       ],
@@ -426,6 +438,15 @@
       ],
       "Pause": [
         "Pausar"
+      ],
+      "Playing back...": [
+        "Reproduciendo..."
+      ],
+      "Playing sound...": [
+        "Reproduciendo sonido..."
+      ],
+      "Preview logs": [
+        "Previsualizar registros"
       ],
       "Previous month": [
         "Mes anterior"
@@ -448,6 +469,9 @@
       ],
       "Record": [
         "Grabar"
+      ],
+      "Recording your microphone...": [
+        "Grabando su micrófono..."
       ],
       "Refer a friend": [
         "Referir una amistad"
@@ -609,6 +633,12 @@
       "Tap to unblock audio playback": [
         "Pulsar para reproducir audio"
       ],
+      "Test microphone": [
+        "Probar micrófono"
+      ],
+      "Test speakers": [
+        "Probar altavoces"
+      ],
       "The current link will stop working.": [
         "El enlace actual dejará de funcionar."
       ],
@@ -672,6 +702,9 @@
       "View invoice": [
         "Ver la factura"
       ],
+      "Virtual backgrounds": [
+        "Fondos virtuales"
+      ],
       "Waiting room": [
         "Sala de espera"
       ],
@@ -685,6 +718,9 @@
     "Alt": {
       "Audio settings": [
         "Ajustes de audio"
+      ],
+      "Backgrounds": [
+        "Fondos"
       ],
       "Blur background": [
         "Difuminar fondo"
@@ -704,8 +740,14 @@
       "Copy meeting link": [
         "Copiar enlace de la reunión"
       ],
+      "Debug devices": [
+        "Dispositivos de depuración"
+      ],
       "Debug overlay": [
         "Superposición de depuración"
+      ],
+      "Device Debugger": [
+        "Depurador del dispositivo"
       ],
       "Go to dashboard": [
         "Ir al panel de control"
@@ -715,6 +757,9 @@
       ],
       "Leave Meeting": [
         "Salir de la reunión"
+      ],
+      "Live captions": [
+        "Subtítulos en directo"
       ],
       "Lock meeting": [
         "Bloquear reunión"
@@ -807,6 +852,12 @@
       "Audio settings": [
         "Ajustes de audio"
       ],
+      "Background effects": [
+        "Efectos de fondo"
+      ],
+      "Backgrounds": [
+        "Fondos"
+      ],
       "Chat": [
         "Chat"
       ],
@@ -822,6 +873,9 @@
       "Meeting rooms": [
         "Salas de reunión"
       ],
+      "Microphone input level": [
+        "Nivel de entrada del micrófono"
+      ],
       "Participants": [
         "Participantes"
       ],
@@ -836,6 +890,9 @@
       ],
       "Video settings": [
         "Ajustes de video"
+      ],
+      "Virtual backgrounds": [
+        "Fondos virtuales"
       ]
     },
     "Badge": {
@@ -1812,6 +1869,15 @@
       "Background blur initialization failed. Please toggle your camera or background blur again": [
         "Error al inicializar el desenfoque de fondo. Vuelva a activar o desactivar la cámara o el difuminado de fondo"
       ],
+      "Couldn’t play the recording on this speaker.": [
+        "No se pudo reproducir la grabación en este altavoz."
+      ],
+      "Couldn’t play the test sound on this speaker.": [
+        "No se pudo reproducir el sonido de prueba en este altavoz."
+      ],
+      "Couldn’t start the microphone test.": [
+        "No se pudo iniciar la prueba del micrófono."
+      ],
       "Domain not available, try again later": [
         "Dominio no disponible, inténtelo más tarde"
       ],
@@ -1899,6 +1965,12 @@
       "Failed to unlock meeting": [
         "Error al desbloquear la reunión"
       ],
+      "Failed to update caption language. Please try again.": [
+        "Error al actualizar el idioma de los subtítulos. Intente de nuevo."
+      ],
+      "Failed to update live captions. Please try again.": [
+        "Error al actualizar los subtítulos en directo. Intente de nuevo."
+      ],
       "Failed to update waiting room setting. Please try again.": [
         "Error al actualizar los ajustes de la sala de espera. Intente de nuevo."
       ],
@@ -1910,6 +1982,18 @@
       ],
       "Invalid verification code": [
         "Código de verificación inválido"
+      ],
+      "Live captions aren't working. Try turning them off and on again.": [
+        "No funcionan los subtítulos en directo. Pruebe desactivarlos y activarlos de nuevo."
+      ],
+      "Live captions couldn't be started.": [
+        "No se pudieron iniciar los subtítulos en directo."
+      ],
+      "Live captions have stopped.": [
+        "Se detuvieron los subtítulos en directo."
+      ],
+      "Microphone access is blocked. Allow it in your browser settings.": [
+        "El acceso al micrófono está bloqueado. Permítalo en los ajustes del navegador."
       ],
       "Not a valid number": [
         "Número no válido"
@@ -1944,6 +2028,9 @@
       "The meeting password is invalid": [
         "La contraseña de la reunión no es válida"
       ],
+      "The selected microphone is no longer available.": [
+        "El micrófono seleccionado ya no está disponible."
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Este campo excede el máximo de ${ maximumLength } caracteres."
       ],
@@ -1968,6 +2055,9 @@
       "Username must end with a letter or digit": [
         "El nombre de usuario debe terminar con una letra o dígito"
       ],
+      "Virtual background initialization failed. Please toggle your camera or pick a background again": [
+        "Error al inicializar el fondo virtual. Vuelva a activar o desactivar la cámara o seleccione un fondo de nuevo."
+      ],
       "We couldn’t send a verification code using this method.": [
         "No pudimos enviar un código de verificación usando este método."
       ],
@@ -1976,6 +2066,9 @@
       ],
       "Your device's clock appears to be out of sync. Please check your system time and try again.": [
         "Parece que la hora de su dispositivo está desincronizada. Revísela e intente de nuevo."
+      ],
+      "Your microphone is busy. Close other apps or tabs using it, then try again.": [
+        "El micrófono está ocupado. Cierre otras aplicaciones o pestañas que lo estén usando e intente de nuevo."
       ]
     },
     "Error message": {
@@ -2238,6 +2331,9 @@
       "Background blur initializing": [
         "Inicializando el difuminado del fondo"
       ],
+      "Background effects are not supported on your browser": [
+        "Los efectos de fondo no están soportados por su navegador"
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Antes de solicitar un código de verificación nuevo, revise la carpeta de spam y verifique que ${ strong } sea la dirección correcta."
       ],
@@ -2250,8 +2346,14 @@
       "camera": [
         "cámara"
       ],
+      "Camera effects": [
+        "Efectos de cámara"
+      ],
       "Camera permission denied": [
         "Permiso de cámara denegado"
+      ],
+      "Captions are on": [
+        "Los subtítulos están activos"
       ],
       "Changes are staged. Apply to rebuild the preview with the new constants.": [
         "Los cambios se realizan por fases. Aplique para reconstruir la vista previa con las constantes nuevas."
@@ -2418,6 +2520,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si no encuentra el correo electrónico en el buzón, revise en la carpeta de spam."
       ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Si perdió el acceso a su aplicación de autenticación, puede usar 1 de los 16 códigos de recuperación de copia de seguridad proporcionados cuando configuró la autenticación de dos factores. ${ learnMoreLink }"
+      ],
       "If you’re using Firefox, make sure PeerConnection is enabled.": [
         "Si está usando Firefox, asegúrese de que PeerConnection está activado."
       ],
@@ -2471,6 +2576,9 @@
       ],
       "Loading…": [
         "Cargando…"
+      ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "Los registros nos ayudan a comprender qué sucedió antes de que ocurriera el problema. Incluyen las acciones de la aplicación y los mensajes de error, pero no el contenido de los mensajes."
       ],
       "Loop an uploaded video or your live camera through both background blur versions side by side.": [
         "Reproduzca en bucle un video cargado o su cámara en directo a través de ambas versiones con fondo difuminado, una al lado de la otra."
@@ -2625,6 +2733,9 @@
       "Presenting": [
         "Presentando"
       ],
+      "Preview unavailable": [
+        "Vista previa no disponible"
+      ],
       "privacy": [
         "privacidad"
       ],
@@ -2778,6 +2889,9 @@
       "To create a room, you'll need **a free ${ BRAND_NAME } Account** so we can save the room. This only takes a few seconds.": [
         "Para crear una sala, necesitará **una Cuenta ${ BRAND_NAME } gratuita** para que podamos guardar la sala. Esto solo toma unos segundos."
       ],
+      "To create live captions, the captioning service needs access to the meeting audio. Captions are only visible to you and are not saved.": [
+        "Para crear subtítulos en directo, el servicio necesita acceder al audio de la reunión. Los subtítulos solo son visibles a usted y no se guardan."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "Para luchar contra el spam y el abuso, verifique que es humano."
       ],
@@ -2798,6 +2912,9 @@
       ],
       "Turn on camera": [
         "Encender la cámara"
+      ],
+      "Turn on live captions?": [
+        "¿Activar subtítulos en directo?"
       ],
       "Unable to reconnect to the meeting. Please rejoin or leave.": [
         "No se puede reconectar a la reunión. Vuelva a unirse o abandone."
@@ -2820,11 +2937,11 @@
       "Upload an image to preview it as the background.": [
         "Cargue una imagen para previsualizarla como el fondo."
       ],
-      "Video effects": [
-        "Efectos de video"
-      ],
       "View ": [
         "Vista "
+      ],
+      "Virtual background initializing": [
+        "Inicializando fondo virtual"
       ],
       "Waiting for the host to admit you. The host has been notified that you're waiting.": [
         "Esperando al anfitrión para admitirle. Se notificó al anfitrión de que usted está esperando."
@@ -2919,6 +3036,9 @@
       "Your phone number will only be used for this one-time verification.": [
         "El número de teléfono sólo se usará para esta verificación única."
       ],
+      "Your preview": [
+        "Su vista previa"
+      ],
       "You’re about to open a link in a new tab. Make sure you trust the website before continuing.": [
         "Está por abrir un enlace en una pestaña nueva. Asegúrese de que el sitio web sea de confianza antes de continuar."
       ]
@@ -2940,6 +3060,9 @@
       "Advanced mode": [
         "Modo avanzado"
       ],
+      "Agent": [
+        "Agente"
+      ],
       "Anyone with the link can join": [
         "Cualquier persona con el enlace puede unirse"
       ],
@@ -2952,8 +3075,14 @@
       "Authenticator app": [
         "Aplicación de autenticación"
       ],
+      "Auto-detect": [
+        "Autodetectar"
+      ],
       "Background color": [
         "Color de fondo"
+      ],
+      "Blue background": [
+        "Fondo azul"
       ],
       "Blurred (next)": [
         "Difuminado (siguiente)"
@@ -3045,6 +3174,9 @@
       "Google Calendar": [
         "Calendario de Google"
       ],
+      "Green background": [
+        "Fondo verde"
+      ],
       "Hide password": [
         "Ocultar contraseña"
       ],
@@ -3065,6 +3197,9 @@
       ],
       "Leave meeting options": [
         "Abandonar opciones de la reunión"
+      ],
+      "Live caption agent": [
+        "Agente de subtítulos en directo"
       ],
       "Manage recordings": [
         "Gestionar grabaciones"
@@ -3099,6 +3234,9 @@
       "Operating system version": [
         "Versión del sistema operativo"
       ],
+      "Orange background": [
+        "Fondo naranja"
+      ],
       "Outlook Calendar": [
         "Calendario de Outlook"
       ],
@@ -3113,6 +3251,9 @@
       ],
       "Phone number": [
         "Número telefónico"
+      ],
+      "Purple background": [
+        "Fondo púrpura"
       ],
       "Raw": [
         "En bruto"
@@ -3152,6 +3293,9 @@
       ],
       "Solid color": [
         "Color sólido"
+      ],
+      "Spoken language": [
+        "Idioma hablado"
       ],
       "Subscribed": [
         "Suscrito"
@@ -3481,8 +3625,16 @@
       "No": [
         "No"
       ],
+      "Transcribing...": [
+        "Transcribiendo..."
+      ],
       "Yes": [
         "Sí"
+      ]
+    },
+    "Subtitle": {
+      "This system agent creates live captions. It is not a participant and cannot send messages.": [
+        "Este agente del sistema crea subtítulos en directo. No es un participante y no puede enviar mensajes."
       ]
     },
     "Success": {
@@ -3517,6 +3669,9 @@
       ]
     },
     "Title": {
+      "Accessibility": [
+        "Accesibilidad"
+      ],
       "Account restricted": [
         "Cuenta restringida"
       ],
@@ -3558,6 +3713,12 @@
       ],
       "Background blur comparison": [
         "Comparación de fondo difuminado"
+      ],
+      "Background effects": [
+        "Efectos de fondo"
+      ],
+      "Backgrounds": [
+        "Fondos"
       ],
       "Camera and microphone are blocked": [
         "El acceso a la cámara y el micrófono está bloqueado"
@@ -3680,6 +3841,9 @@
       "Participants (${ filteredParticipants.length })": [
         "Participantes (${ filteredParticipants.length })"
       ],
+      "People": [
+        "Personas"
+      ],
       "Personal meeting room": [
         "Sala de reuniones personal"
       ],
@@ -3737,6 +3901,9 @@
       "Stop recording": [
         "Detener grabación"
       ],
+      "System": [
+        "Sistema"
+      ],
       "Talk confidentially": [
         "Hable con confidencialidad"
       ],
@@ -3757,6 +3924,9 @@
       ],
       "Video": [
         "Video"
+      ],
+      "Virtual backgrounds": [
+        "Fondos virtuales"
       ],
       "Waiting for the host": [
         "Esperando al anfitrión"

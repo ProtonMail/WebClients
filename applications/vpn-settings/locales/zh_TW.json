@@ -6798,9 +6798,6 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "${ PASS_SHORT_APP_NAME }終身方案無續約費,他是單次付款終身存取${ PASS_SHORT_APP_NAME }。您${ planTitle }訂閱價格及日期保持不便。"
       ],
-      "${ pendingAdminApprovalCount } new member added via your identity provider and pending review.": [
-        "已透過您的身分提供者新增 ${ pendingAdminApprovalCount } 個新成員，目前正在等待審查。"
-      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title }要求至少1個獨立伺服器${ serverPricePerMonth }"
       ],

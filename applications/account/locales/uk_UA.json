@@ -9893,12 +9893,6 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "Довічна угода ${ PASS_SHORT_APP_NAME } не має ціни поновлення, це одноразовий платіж за довічний доступ до ${ PASS_SHORT_APP_NAME }. Ціна та дата поновлення підписки ${ planTitle } залишаються незмінними."
       ],
-      "${ pendingAdminApprovalCount } new member added via your identity provider and pending review.": [
-        "${ pendingAdminApprovalCount } новий учасник доданий через вашого постачальника особистих даних і очікує на перевірку.",
-        "${ pendingAdminApprovalCount } нові учасники додані через вашого постачальника особистих даних і очікують на перевірку.",
-        "${ pendingAdminApprovalCount } нових учасників додано через вашого постачальника особистих даних і очікують на перевірку.",
-        "${ pendingAdminApprovalCount } нових учасників додано через вашого постачальника особистих даних і очікують на перевірку."
-      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } вимагає щонайменше 1 виділений сервер вартістю ${ serverPricePerMonth }"
       ],

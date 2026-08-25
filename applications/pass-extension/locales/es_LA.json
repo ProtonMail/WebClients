@@ -1087,9 +1087,6 @@
       "Domain could not be verified. Please make sure you added the correct DNS records": [
         "No se pudo verificar el dominio. Asegúree de haber agregado los registros DNS correctos."
       ],
-      "Domain not available, try again later": [
-        "Dominio no disponible, inténtelo más tarde"
-      ],
       "Editing item failed": [
         "Error al editar el elemento"
       ],
@@ -2244,8 +2241,7 @@
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra bóveda eliminará sus enlaces seguros.",
-        "Mover elementos a otra bóveda eliminará sus enlaces seguros."
+        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo los elementos"

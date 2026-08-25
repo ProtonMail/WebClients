@@ -866,9 +866,6 @@
       ]
     },
     "Error": {
-      "Domain not available, try again later": [
-        "도메인을 사용할 수 없습니다. 나중에 다시 시도해주세요."
-      ],
       "Email is not valid": [
         "유효하지 않은 이메일"
       ],
@@ -1089,6 +1086,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "받은 편지함에서 이메일을 찾지 못하셨다면 스팸 폴더를 확인하세요."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "인증 앱에 접근할 수 없는 경우, 2단계 인증을 설정할 때 제공된 16개의 백업 복구 코드 중 1개를 사용할 수 있습니다. ${ learnMoreLink }"
       ],
       "Internet connection lost": [
         "인터넷 연결 없음"

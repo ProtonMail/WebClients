@@ -1087,9 +1087,6 @@
       "Domain could not be verified. Please make sure you added the correct DNS records": [
         "No s'ha pogut verificar el domini. Assegureu-vos que heu afegit els registres DNS correctes."
       ],
-      "Domain not available, try again later": [
-        "El domini no està disponible, torneu-ho a provar més tard"
-      ],
       "Editing item failed": [
         "No s'ha pogut editar l'element"
       ],
@@ -2244,8 +2241,7 @@
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
-        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
+        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs."
       ],
       "Moving items": [
         "S'estan movent elements"

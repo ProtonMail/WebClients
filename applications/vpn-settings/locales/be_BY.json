@@ -32,6 +32,44 @@
         "Вашы звесткі былі знойдзены прынамсі ў адной уцечцы даных. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
       ]
     },
+    "account_search_index": {
+      "12-word phrase": [
+        "Фраза з 12 слоў"
+      ],
+      "Account events": [
+        "Падзеі ўліковага запісу"
+      ],
+      "Advanced account protection": [
+        "Пашыраная абарона ўліковага запісу"
+      ],
+      "AI assistant": [
+        "Памочнік ШІ"
+      ],
+      "Downgrade to Free": [
+        "Панізіць да Free"
+      ],
+      "Join organization": [
+        "Далучыцца да арганізацыі"
+      ],
+      "Leave group": [
+        "Выйсці з групы"
+      ],
+      "Password reset request": [
+        "Запыт скідання пароля"
+      ],
+      "Recovery phone number": [
+        "Нумар тэлефона для аднаўлення"
+      ],
+      "Referral link": [
+        "Рэферальная спасылка"
+      ],
+      "Telemetry": [
+        "Тэлеметрыя"
+      ],
+      "Trusted contact": [
+        "Давераны кантакт"
+      ]
+    },
     "Accounts": {
       "Accounts": [
         "Уліковыя запісы"
@@ -2218,7 +2256,7 @@
         "Скарыстайцеся скідкай у памеры 50%"
       ],
       "Maybe later": [
-        "Магчыма пазней"
+        "Магчыма, пазней"
       ],
       "Remind me later": [
         "Нагадаць мне пазней"
@@ -5451,6 +5489,9 @@
       "This label name is not available. Please choose a different name.": [
         "Гэта назва для меткі недаступна. Выберыце іншую назву."
       ],
+      "This phrase cannot recover your account. You can generate a new one to ensure your account can be recovered in the future.": [
+        "Гэта фраза не зможа аднавіць ваш уліковы запіс. Вы зможаце згенерыраваць новую фразу для ўпэўненасці ў тым, што ваш уліковы запіс можна будзе аднавіць у будучыні."
+      ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Вам неабходна аднавіць правы адміністратара, каб ствараць уліковыя запісы непрыватных карыстальнікаў і атрымліваць доступ да іх."
       ],
@@ -6315,6 +6356,9 @@
       "Insert your security key into your device.": [
         "Устаўце ключ бяспекі ў сваю прыладу."
       ],
+      "PIN requirement for security keys enabled": [
+        "Патрабаванне PIN для ключоў бяспекі ўключана"
+      ],
       "Security key": [
         "Ключ бяспекі"
       ],
@@ -6508,6 +6552,17 @@
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
         "${ BRAND_NAME }. Privacy by default."
+      ]
+    },
+    "Gateway monitor upsell": {
+      "Advanced security controls": [
+        "Пашыраныя функцыі бяспекі"
+      ],
+      "Unlock Single-Sign-on (SSO), admin policies, monitoring, enforced two-factor authentication and more.": [
+        "Разблакіраваць аднаразовы ўваход (SSO), палітыкі адміністратара, маніторынг, прымусова ўжыць двухфактарную аўтэнтыфікацыю і зрабіць іншыя рэчы."
+      ],
+      "User - ${ userPrice }": [
+        "Карыстальнік - ${ userPrice }"
       ]
     },
     "Get help": {
@@ -7257,12 +7312,6 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "Пажыццёвая прапанова ${ PASS_SHORT_APP_NAME } не прадугледжвае кошту падаўжэння. Робіцца аднаразовая плата за пажыццёвы доступ да ${ PASS_SHORT_APP_NAME }. Кошт і дата падаўжэння вашай падпіскі ${ planTitle } застануцца нязменнымі."
       ],
-      "${ pendingAdminApprovalCount } new member added via your identity provider and pending review.": [
-        "${ pendingAdminApprovalCount } новы ўдзельнік дададзены праз вашага пастаўшчыка пасведчанняў і чакае разгляду.",
-        "${ pendingAdminApprovalCount } новыя ўдзельнікі дададзены праз вашага пастаўшчыка пасведчанняў і чакаюць разгляду.",
-        "${ pendingAdminApprovalCount } новых удзельнікаў дададзены праз вашага пастаўшчыка пасведчанняў і чакаюць разгляду.",
-        "${ pendingAdminApprovalCount } новых удзельнікаў дададзены праз вашага пастаўшчыка пасведчанняў і чакаюць разгляду."
-      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } патрабуе прынамсі 1 вылучаны сервер ${ serverPricePerMonth }"
       ],
@@ -7782,6 +7831,9 @@
       "Choose a plan that works best for you.": [
         "Выберыце тарыфны план, які найлепш вам пасуе."
       ],
+      "Choose a strong ${ BRAND_NAME } password and don’t reuse it for other accounts.": [
+        "Выберыце надзейны пароль для ${ BRAND_NAME } і не выкарыстоўвайце яго паўторна для іншых уліковых запісаў."
+      ],
       "Choose an Entity ID to continue.": [
         "Выберыце Entity ID для працягу."
       ],
@@ -8118,6 +8170,9 @@
       "Enable email notifications": [
         "Уключыць апавяшчэнні па электроннай пошце"
       ],
+      "Enable groups to streamline access control": [
+        "Дазвольце групам аптымізаваць кантроль доступу"
+      ],
       "Enable single sign-on to keep your organization safe": [
         "Уключыць адзіны ўваход, каб абараніць вашу арганізацыю"
       ],
@@ -8393,6 +8448,9 @@
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Калі вы згубіце сваю прыладу двухфактарнай аўтэнтыфікацыі, то гэтыя коды могуць быць выкарыстаны замест 6-значнага кода двухфактарнай аўтэнтыфікацыі, каб увайсці ў ваш уліковы запіс. Кожны код можна выкарыстаць толькі адзін раз."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Вы можаце выкарыстаць 1 з 16 рэзервовых кодаў аднаўлення, якія вы атрымалі пры наладжванні двухфактарнай аўтэнтыфікацыі, калі вы страцілі доступ да вашай праграмы аўтэнтыфікацыі. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Калі вы працягніце паніжэнне свайго тарыфнага плана, то страціце доступ да платных функцый ${ MAIL_APP_NAME } і ${ VPN_APP_NAME }."
@@ -8671,7 +8729,7 @@
         "Лагатып Mastercard SecureCode"
       ],
       "Maybe later": [
-        "Магчыма пазней"
+        "Магчыма, пазней"
       ],
       "Medium Priority": [
         "Сярэдні прыярытэт"
@@ -9200,6 +9258,9 @@
       ],
       "Smart Routed through: ${ joinedCountries }.": [
         "Разумна маршрутызуецца праз: ${ joinedCountries }."
+      ],
+      "Smart Routing": [
+        "Smart Routing"
       ],
       "Some ${ BRAND_NAME } apps may not support security keys yet. If you turn off authenticator app 2FA, you may not be able to sign in to those apps.": [
         "Некаторыя праграмы ${ BRAND_NAME } яшчэ могуць не падтрымліваць ключы бяспекі. У вас можа адсутнічаць магчымасць увайсці ў такія праграмы, калі вы адключыце 2ФА у праграме аўтэнтыфікацыі."
@@ -12139,6 +12200,11 @@
         "Увайсці"
       ]
     },
+    "Members table usage": {
+      "Setup your own private gateways to monitor VPN connection activity within your organization.": [
+        "Наладзьце свае прыватныя шлюзы, каб назіраць за актыўнасцю падключэння па VPN у вашай арганізацыі."
+      ]
+    },
     "Message": {
       "Connect your custom domain (e.g. yourcompany.com) to create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group.": [
         "Падключыце свой карыстальніцкі дамен (напрыклад, vashakampaniya.com), каб ствараць адрасы электроннай пошты для іншых людзей, кіраваць ${ MAIL_APP_NAME } для бізнесу, школай або групай."
@@ -13621,7 +13687,7 @@
         "Прапанова абмежавана па часе і дзейнічае за ваш першы месяц"
       ],
       "Maybe later": [
-        "Магчыма пазней"
+        "Магчыма, пазней"
       ],
       "Offer expires ${ formattedDate }.": [
         "Прапанова міне ${ formattedDate }"
@@ -14916,6 +14982,79 @@
         "ЛЕТНІ РАСПРОДАЖ"
       ]
     },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "Скарыстацца прапановай"
+      ],
+      "Special Offer": [
+        "Спецыяльная прапанова"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "/month": [
+        "/месяц"
+      ],
+      "2 individual accounts": [
+        "2 асабістых уліковых запісы"
+      ],
+      "2 TB of secure storage": [
+        "2 ТБ бяспечнага сховішча"
+      ],
+      "3 TB of secure storage": [
+        "3 ТБ бяспечнага сховішча"
+      ],
+      "500 GB of secure storage": [
+        "500 ГБ бяспечнага сховішча"
+      ],
+      "6 individual accounts": [
+        "6 асабістых уліковых запісаў"
+      ],
+      "Advanced protection against cyber threats": [
+        "Пашыраная абарона супраць кіберпагроз"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Скідкі разлічваюцца на падставе стандартнай платы за месяц. Ваша падпіска будзе аўтаматычна падаўжацца па стандартнай гадавой стаўцы пасля заканчэння перыяду аплаты."
+      ]
+    },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Прэміяльныя ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } і ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Прэміяльныя ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Прэміяльныя ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Прэміяльныя ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Прэміяльныя ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "за 12 месяцаў"
+      ],
+      "One plan, full power": [
+        "Адзін тарыфны план, максімум магчымасцяў"
+      ],
+      "One plan, max savings": [
+        "Адзін тарыфны план, максімальная эканомія"
+      ],
+      "One plan, more power": [
+        "Адзін тарыфны план, больш магчымасцяў"
+      ]
+    },
     "Recovery Email": {
       "Cancel": [
         "Скасаваць"
@@ -15662,6 +15801,9 @@
       ],
       "Make sure you copy the above SCIM token now.": [
         "Пераканайцеся, што вы цяпер скапіявалі токен SCIM вышэй."
+      ],
+      "Re-enabling syncing will duplicate existing groups. They can't be merged back into SCIM.": [
+        "Паўторнае ўключэнне сінхранізацыі прывядзе да дубліравання існуючых груп. Іх нельга будзе зноў аб'яднаць у SCIM."
       ],
       "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
         "Спрашчае кіраванне карыстальнікамі паміж рознымі сэрвісамі. Дадаванне, рэдагаванне і выдаленне карыстальнікаў у вашым пастаўшчыку пасведчанняў. Усе пералічаныя змены будуць аўтаматычна ўжывацца для вашай арганізацыі ${ appName }."
@@ -19034,6 +19176,9 @@
       "Send new invite?": [
         "Адправіць новае запрашэнне?"
       ],
+      "September Sale": [
+        "Вераснёўскі распродаж"
+      ],
       "Service": [
         "Сэрвіс"
       ],
@@ -19613,6 +19758,9 @@
       ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Гэты адрас электроннай пошты будзе паказаны ўсім удзельнікам арганізацыі пры выкананні аперацый па кіраванні ўліковым запісам."
+      ],
+      "This setting is managed by your organization": [
+        "Гэта налада кіруецца вашай арганізацыяй"
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Зашыфраваныя паролі (нават скампраметаваныя) застануцца ў бяспецы, пакуль не будуць расшыфраваны."

@@ -9443,10 +9443,6 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "${ PASS_SHORT_APP_NAME } लाइफटाइम डील की कोई नवीनीकरण कीमत नहीं है, यह ${ PASS_SHORT_APP_NAME } के लिए लाइफटाइम एक्सेस प्राप्त करने हेतु एक बार का भुगतान है। आपकी ${ planTitle } सदस्यता की नवीनीकरण कीमत और तारीख में कोई बदलाव नहीं हुआ है।"
       ],
-      "${ pendingAdminApprovalCount } new member added via your identity provider and pending review.": [
-        "आपकी पहचान प्रदाता के माध्यम से ${ pendingAdminApprovalCount } नया सदस्य जोड़ा गया है और समीक्षा लंबित है।",
-        "आपके पहचान प्रदाता के माध्यम से ${ pendingAdminApprovalCount } नए सदस्य जोड़े गए हैं और समीक्षा लंबित है।"
-      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } को कम से कम 1 विशेष सर्वर ${ serverPricePerMonth } की आवश्यकता है"
       ],

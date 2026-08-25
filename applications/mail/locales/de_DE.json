@@ -630,6 +630,9 @@
       "Get in touch": [
         "Kontakt aufnehmen"
       ],
+      "Get index size on disk": [
+        "Indexgröße auf der Festplatte abrufen"
+      ],
       "Get started": [
         "Erste Schritte"
       ],
@@ -791,7 +794,7 @@
         "Tritt ${ MEET_APP_NAME } bei"
       ],
       "Keep inbox as before": [
-        "Posteingang wie zuvor beibehalten"
+        "Posteingang unverändert lassen"
       ],
       "Keep my subscription": [
         "Behalte mein Abonnement"
@@ -1538,7 +1541,8 @@
         "Vertrauen"
       ],
       "Trust key": [
-        "Schlüssel vertrauen"
+        "Schlüssel vertrauen",
+        "Schlüsseln vertrauen"
       ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
@@ -1718,7 +1722,7 @@
         "Ja, ich nehme teil"
       ],
       "Yes, organize it": [
-        "Ja, ordne es"
+        "Ja, sortieren"
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kannst nur vCard-Dateien versenden, die höchstens ${ maxAttachments } Kontakte enthalten.",
@@ -7129,7 +7133,7 @@
         "${ MAIL_APP_NAME } kann auch dein Unternehmen schützen."
       ],
       "${ MAIL_APP_NAME } now automatically sorts your emails into categories like Primary, Social, Promotions, and more, helping you find and manage messages more easily.": [
-        "${ MAIL_APP_NAME } sortiert deine E-Mails jetzt automatisch in Kategorien wie Haupt, Sozial, Werbeaktionen und mehr, damit du Nachrichten leichter finden und verwalten kannst."
+        "${ MAIL_APP_NAME } sortiert deine E-Mails jetzt automatisch in Kategorien wie „Allgemein\", „Soziale Medien\" und „Werbung\", damit du Nachrichten leichter finden und verwalten kannst."
       ],
       "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
         "${ MEET_APP_NAME } ist eine Ende-zu-Ende-verschlüsselte Videokonferenzlösung. Deinem Abonnement hinzufügen, um sichere Meetings abzuhalten."
@@ -7981,6 +7985,10 @@
       "Forgot password?": [
         "Passwort vergessen?"
       ],
+      "Found ${ count } contact": [
+        "${ count } Kontakt gefunden",
+        "${ count } Kontakte gefunden"
+      ],
       "Found a current encrypted search index with ${ oldIndexSize } message.": [
         "Es wurde ein aktueller verschlüsselter Suchindex mit ${ oldIndexSize } Nachricht gefunden.",
         "Es wurde ein aktueller verschlüsselter Suchindex mit ${ oldIndexSize } Nachrichten gefunden."
@@ -8130,8 +8138,7 @@
         "Wird initialisiert…"
       ],
       "Insert image": [
-        "Bild einfügen",
-        "Bilder einfügen"
+        "Bild einfügen"
       ],
       "Insert link": [
         "Link einfügen"
@@ -8345,6 +8352,9 @@
       ],
       "No contacts added yet": [
         "Noch keine Kontakte hinzugefügt"
+      ],
+      "No contacts found": [
+        "Keine Kontakte gefunden"
       ],
       "No conversation to read": [
         "Keine Unterhaltung zum Lesen"
@@ -8588,7 +8598,7 @@
         "Der Modus „Privates Surfen“ (oder „Inkognito“-Modus) ist nur nützlich, um deine Aktivitäten auf deinem Gerät verborgen zu halten. Er verhindert, dass dein Browser den Verlauf und die Cookies speichert, aber er macht dich nicht unsichtbar. Dein Internetdienstanbieter, dein Netzwerkadministrator und die von dir besuchten Websites können immer noch sehen, was du online tust."
       ],
       "Private by design.": [
-        "Von Haus aus privat."
+        "Privat durch Design"
       ],
       "Proofread selection": [
         "Auswahl gegenlesen"
@@ -9242,6 +9252,9 @@
       ],
       "Unsupported file": [
         "Nicht unterstützte Datei"
+      ],
+      "Update filter": [
+        "Filter aktualisieren"
       ],
       "Updating message content search...": [
         "Suche nach Nachrichteninhalten wird aktualisiert..."
@@ -10430,6 +10443,9 @@
       "Filter": [
         "Filter"
       ],
+      "Filter name": [
+        "Filtername"
+      ],
       "Filter Name": [
         "Filtername"
       ],
@@ -10813,6 +10829,9 @@
       ],
       "Share your availability with booking pages in ${ CALENDAR_APP_NAME }, and host secure meetings with ${ MEET_APP_NAME }.": [
         "Teile deine Verfügbarkeit mit Buchungsseiten in ${ CALENDAR_APP_NAME } und veranstalte sichere Meetings mit ${ MEET_APP_NAME }."
+      ],
+      "Sieve script": [
+        "Sieve Script"
       ],
       "Sign emails": [
         "E-Mails signieren"
@@ -14057,7 +14076,7 @@
     },
     "q3campaign2026: Action": {
       "Get the deal": [
-        "Hol dir das Angebot"
+        "Deal sichern"
       ],
       "Special Offer": [
         "Sonderangebot"
@@ -14068,7 +14087,7 @@
         "/Monat"
       ],
       "2 individual accounts": [
-        "2 Einzelkonten"
+        "2 individuelle Konten"
       ],
       "2 TB of secure storage": [
         "2 TB sicherer Speicher"
@@ -14077,10 +14096,10 @@
         "3 TB sicherer Speicher"
       ],
       "500 GB of secure storage": [
-        "500 GB sicherer Speicher"
+        "500 GB sicherer Speicherplatz"
       ],
       "6 individual accounts": [
-        "6 Einzelkonten"
+        "6 individuelle Konten"
       ],
       "Advanced protection against cyber threats": [
         "Erweiterter Schutz vor Cyber-Bedrohungen"
@@ -14122,7 +14141,7 @@
         "Ein Abonnement, volle Leistung"
       ],
       "One plan, max savings": [
-        "Ein Abonnement, maximale Ersparnisse"
+        "Ein Abonnement, maximal sparen"
       ],
       "One plan, more power": [
         "Ein Abonnement, mehr Leistung"
@@ -17121,6 +17140,9 @@
       ],
       "Unsubscribe request sent": [
         "Abmeldeanfrage gesendet"
+      ],
+      "Update filter": [
+        "Filter aktualisieren"
       ],
       "Upgrade complete!": [
         "Upgrade abgeschlossen!"

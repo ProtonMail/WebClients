@@ -1060,9 +1060,6 @@
       "Domain could not be verified. Please make sure you added the correct DNS records": [
         "Δεν ήταν δυνατή η επαλήθευση του τομέα. Βεβαιωθείτε ότι έχετε προσθέσει τις σωστές εγγραφές DNS"
       ],
-      "Domain not available, try again later": [
-        "Ο τομέας δεν είναι διαθέσιμος, δικομάστε ξανά αργότερα"
-      ],
       "Editing item failed": [
         "Η επεξεργασία του στοιχείου απέτυχε"
       ],
@@ -2129,7 +2126,8 @@
         "Μετακίνηση όλων των στοιχείων από το \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους του."
+        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους του.",
+        "Η μετακίνηση στοιχείων σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους των."
       ],
       "Moving items": [
         "Μετακίνηση στοιχείων"
@@ -2336,14 +2334,8 @@
       "Please follow the steps below to set up your domain.": [
         "Ακολουθήστε τα παρακάτω βήματα για να ρυθμίσετε τον τομέα σας."
       ],
-      "Please keep ${ PASS_APP_NAME } open so the clipboard can be automatically cleared.": [
-        "Παρακαλούμε κρατήστε το ${ PASS_APP_NAME } ανοιχτό, ώστε το πρόχειρο να μπορεί να καθαριστεί αυτόματα."
-      ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Παρακαλούμε διατηρήστε αυτό το παράθυρο ανοιχτό κατά την εισαγωγή των δεδομένων σας. Αυτή η διαδικασία μπορεί να διαρκέσει μερικά λεπτά."
-      ],
-      "Please keep your browser open so the clipboard can be automatically cleared.": [
-        "Παρακαλούμε κρατήστε το πρόγραμμα περιήγησής σας ανοιχτό, ώστε το πρόχειρο να μπορεί να καθαριστεί αυτόματα."
       ],
       "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
         "Βεβαιωθείτε ότι το παράθυρο που ήταν ενεργό προηγουμένως είναι αυτό στο οποίο θέλετε να εκτελέσετε την αυτόματη πληκτρολόγηση και ότι ο δρομέας σας βρίσκεται στο πεδίο σύνδεσης."

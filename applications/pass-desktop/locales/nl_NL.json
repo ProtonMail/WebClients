@@ -1113,9 +1113,6 @@
       "Domain could not be verified. Please make sure you added the correct DNS records": [
         "Domein kon niet worden geverifieerd. Controleer of u de juiste DNS-records hebt toegevoegd"
       ],
-      "Domain not available, try again later": [
-        "Domein niet beschikbaar, probeer het later opnieuw"
-      ],
       "Editing item failed": [
         "Item bewerken mislukt"
       ],
@@ -2219,8 +2216,7 @@
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
-        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
+        "Het verplaatsen van een item naar een andere kluis verwijdert zijn beveiligde links."
       ],
       "Moving items": [
         "Items verplaatsen"

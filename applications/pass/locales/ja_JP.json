@@ -1028,9 +1028,6 @@
       "Domain could not be verified. Please make sure you added the correct DNS records": [
         "ドメインが認証できませんでした。正しいDSNレコードが追加されていることを確認してください。"
       ],
-      "Domain not available, try again later": [
-        "ドメインが利用できません。再度お試しください。"
-      ],
       "Editing item failed": [
         "アイテムの編集に失敗しました"
       ],
@@ -2064,7 +2061,7 @@
         "「${ payload.content.name }」からすべてのアイテムを移動します"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "アイテムを別の保管庫に移動すると、そのセキュアリンクは消去されます。"
+        "アイテムを別の保管庫に移動すると、すべてのセキュアリンクが消去されます。"
       ],
       "Moving items": [
         "アイテムの移動"
@@ -2267,14 +2264,8 @@
       "Please follow the steps below to set up your domain.": [
         "以下の手順に従って、ドメインを設定してください。"
       ],
-      "Please keep ${ PASS_APP_NAME } open so the clipboard can be automatically cleared.": [
-        "クリップボードが自動的にクリアされるよう、${ PASS_APP_NAME }を開いたままにしてください。"
-      ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "データのインポート中は、このウィンドウを開いたままにしてください。この処理には数分かかる場合があります。"
-      ],
-      "Please keep your browser open so the clipboard can be automatically cleared.": [
-        "クリップボードが自動的にクリアされるよう、ブラウザを開いたままにしてください。"
       ],
       "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
         "以前にアクティブだったウィンドウがオートタイプを実行したい場所であり、お客様のカーソルがログインフィールドにフォーカスされていることをご確認ください。"

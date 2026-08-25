@@ -184,8 +184,8 @@
       "Back": [
         "Voltar"
       ],
-      "Background blur": [
-        "Desfoque de fundo"
+      "Blur background": [
+        "Desfocar fundo"
       ],
       "Cancel": [
         "Cancelar"
@@ -316,6 +316,9 @@
       "Enable camera": [
         "Ativar câmera"
       ],
+      "Enable captions": [
+        "Ativar legendas"
+      ],
       "Enable waiting room": [
         "Ativar sala de espera"
       ],
@@ -339,6 +342,9 @@
       ],
       "Get verification code": [
         "Obter código de verificação"
+      ],
+      "Getting ready...": [
+        "Preparando..."
       ],
       "Help and feedback": [
         "Ajuda e comentários"
@@ -382,6 +388,9 @@
       "Leave meeting": [
         "Sair da reunião"
       ],
+      "Live captions": [
+        "Legendas ao vivo"
+      ],
       "Lock meeting": [
         "Bloquear reunião"
       ],
@@ -405,6 +414,9 @@
       ],
       "Next page": [
         "Próxima página"
+      ],
+      "No effect": [
+        "Nenhum efeito"
       ],
       "Noise cancellation": [
         "Cancelamento de ruído"
@@ -451,6 +463,9 @@
       ],
       "Record": [
         "Gravar vídeo"
+      ],
+      "Recording your microphone...": [
+        "Gravando seu microfone..."
       ],
       "Refer a friend": [
         "Indicar um amigo"
@@ -612,6 +627,12 @@
       "Tap to unblock audio playback": [
         "Toque para desbloquear a reprodução de áudio"
       ],
+      "Test microphone": [
+        "Testar microfone"
+      ],
+      "Test speakers": [
+        "Testar altos-falantes"
+      ],
       "The current link will stop working.": [
         "O link atual deixará de funcionar."
       ],
@@ -675,6 +696,9 @@
       "View invoice": [
         "Visualizar fatura"
       ],
+      "Virtual backgrounds": [
+        "Planos de fundo virtuais"
+      ],
       "Waiting room": [
         "Sala de espera"
       ],
@@ -688,6 +712,9 @@
     "Alt": {
       "Audio settings": [
         "Configurações de áudio"
+      ],
+      "Backgrounds": [
+        "Planos de fundo"
       ],
       "Blur background": [
         "Desfocar fundo"
@@ -707,8 +734,14 @@
       "Copy meeting link": [
         "Copiar link da reunião"
       ],
+      "Debug devices": [
+        "Dispositivos de depuração"
+      ],
       "Debug overlay": [
         "Sobreposição de depuração"
+      ],
+      "Device Debugger": [
+        "Deputador do dispositivo"
       ],
       "Go to dashboard": [
         "Ir para painel de controle"
@@ -718,6 +751,9 @@
       ],
       "Leave Meeting": [
         "Sair da reunião"
+      ],
+      "Live captions": [
+        "Legendas ao vivo"
       ],
       "Lock meeting": [
         "Bloquear reunião"
@@ -810,6 +846,12 @@
       "Audio settings": [
         "Configurações de áudio"
       ],
+      "Background effects": [
+        "Efeitos de plano de fundo azul"
+      ],
+      "Backgrounds": [
+        "Planos de fundo"
+      ],
       "Chat": [
         "Bate-papo"
       ],
@@ -839,6 +881,9 @@
       ],
       "Video settings": [
         "Configurações de vídeo"
+      ],
+      "Virtual backgrounds": [
+        "Planos de fundo virtuais"
       ]
     },
     "Badge": {
@@ -1914,6 +1959,9 @@
       "Invalid verification code": [
         "O código de verificação não é válido."
       ],
+      "Live captions have stopped.": [
+        "As legendas ao vivo pararam."
+      ],
       "Not a valid number": [
         "Não é um número válido"
       ],
@@ -1946,6 +1994,9 @@
       ],
       "The meeting password is invalid": [
         "A senha da reunião está inválida"
+      ],
+      "The selected microphone is no longer available.": [
+        "O microfone selecionado não está mais disponível."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Este campo excede o máximo de ${ maximumLength } caracteres."
@@ -2252,6 +2303,9 @@
       ],
       "camera": [
         "câmera"
+      ],
+      "Camera effects": [
+        "Efeitos de câmera"
       ],
       "Camera permission denied": [
         "Permissão da câmera negada"
@@ -2628,6 +2682,9 @@
       "Presenting": [
         "Apresentando"
       ],
+      "Preview unavailable": [
+        "Pré-visualização indisponível"
+      ],
       "privacy": [
         "privacidade"
       ],
@@ -2802,6 +2859,9 @@
       "Turn on camera": [
         "Ativar câmera"
       ],
+      "Turn on live captions?": [
+        "Ativar legendas ao vivo?"
+      ],
       "Unable to reconnect to the meeting. Please rejoin or leave.": [
         "Não foi possível reconectar-se à reunião. Participe novamente ou saia."
       ],
@@ -2823,11 +2883,11 @@
       "Upload an image to preview it as the background.": [
         "Envie uma imagem para pré-visualizá-la como plano de fundo."
       ],
-      "Video effects": [
-        "Efeitos de vídeo"
-      ],
       "View ": [
         "Ver "
+      ],
+      "Virtual background initializing": [
+        "Inicializando plano de fundo virtual"
       ],
       "Waiting for the host to admit you. The host has been notified that you're waiting.": [
         "Aguardando o organizador permitir sua entrada. O organizador foi notificado de que você está aguardando."
@@ -2922,6 +2982,9 @@
       "Your phone number will only be used for this one-time verification.": [
         "Seu número de telefone somente será usado nessa verificação única."
       ],
+      "Your preview": [
+        "Sua pré-visualização"
+      ],
       "You’re about to open a link in a new tab. Make sure you trust the website before continuing.": [
         "Você está prestes a abrir um link em uma nova guia. Certifique-se de que o site seja confiável antes de continuar."
       ]
@@ -2943,6 +3006,9 @@
       "Advanced mode": [
         "Modo avançado"
       ],
+      "Agent": [
+        "Agente"
+      ],
       "Anyone with the link can join": [
         "Qualquer pessoa com o link pode participar"
       ],
@@ -2955,8 +3021,14 @@
       "Authenticator app": [
         "Aplicativo de autenticação"
       ],
+      "Auto-detect": [
+        "Detectar automaticamente"
+      ],
       "Background color": [
         "Cor de fundo"
+      ],
+      "Blue background": [
+        "Plano de fundo azul"
       ],
       "Blurred (next)": [
         "Desfocado (próximo)"
@@ -3048,6 +3120,9 @@
       "Google Calendar": [
         "Google Agenda"
       ],
+      "Green background": [
+        "Plano de fundo verde"
+      ],
       "Hide password": [
         "Ocultar senha"
       ],
@@ -3068,6 +3143,9 @@
       ],
       "Leave meeting options": [
         "Opções de saída de reunião"
+      ],
+      "Live caption agent": [
+        "Agente de legenda ao vivo"
       ],
       "Manage recordings": [
         "Gerenciar gravações"
@@ -3102,6 +3180,9 @@
       "Operating system version": [
         "Versão do sistema operacional"
       ],
+      "Orange background": [
+        "Plano de fundo laranja"
+      ],
       "Outlook Calendar": [
         "Calendário do Outlook"
       ],
@@ -3116,6 +3197,9 @@
       ],
       "Phone number": [
         "Número do telefone"
+      ],
+      "Purple background": [
+        "Plano de fundo roxo"
       ],
       "Raw": [
         "Em bruto"
@@ -3155,6 +3239,9 @@
       ],
       "Solid color": [
         "Cor sólida"
+      ],
+      "Spoken language": [
+        "Idioma falado"
       ],
       "Subscribed": [
         "Inscrito"
@@ -3484,6 +3571,9 @@
       "No": [
         "Não"
       ],
+      "Transcribing...": [
+        "Transcrevendo..."
+      ],
       "Yes": [
         "Sim"
       ]
@@ -3520,6 +3610,9 @@
       ]
     },
     "Title": {
+      "Accessibility": [
+        "Acessibilidade"
+      ],
       "Account restricted": [
         "Conta restrita"
       ],
@@ -3561,6 +3654,12 @@
       ],
       "Background blur comparison": [
         "Comparação de desfoque de fundo"
+      ],
+      "Background effects": [
+        "Efeitos de plano de fundo azul"
+      ],
+      "Backgrounds": [
+        "Planos de fundo"
       ],
       "Camera and microphone are blocked": [
         "A câmera e o microfone estão bloqueados"
@@ -3683,6 +3782,9 @@
       "Participants (${ filteredParticipants.length })": [
         "Participantes (${ filteredParticipants.length })"
       ],
+      "People": [
+        "Pessoas"
+      ],
       "Personal meeting room": [
         "Sala de reunião pessoal"
       ],
@@ -3740,6 +3842,9 @@
       "Stop recording": [
         "Parar a gravação"
       ],
+      "System": [
+        "Sistema"
+      ],
       "Talk confidentially": [
         "Converse confidencialmente"
       ],
@@ -3760,6 +3865,9 @@
       ],
       "Video": [
         "Vídeo"
+      ],
+      "Virtual backgrounds": [
+        "Planos de fundo virtuais"
       ],
       "Waiting for the host": [
         "Aguardando o anfitrião"
