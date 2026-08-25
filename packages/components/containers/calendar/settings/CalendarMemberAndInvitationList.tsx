@@ -1,5 +1,7 @@
 import { c, msgid } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { updateInvitation, updateMemberPermission } from '@proton/shared/lib/api/calendars';
 import { MAX_CALENDAR_MEMBERS } from '@proton/shared/lib/calendar/constants';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
@@ -12,8 +14,6 @@ import TableBody from '../../../components/table/TableBody';
 import TableHeader from '../../../components/table/TableHeader';
 import TableHeaderCell from '../../../components/table/TableHeaderCell';
 import TableRow from '../../../components/table/TableRow';
-import useApi from '../../../hooks/useApi';
-import useNotifications from '../../../hooks/useNotifications';
 import { useContactEmailsCache } from '../../contacts/ContactEmailsProvider';
 import CalendarMemberRow from './CalendarMemberRow';
 

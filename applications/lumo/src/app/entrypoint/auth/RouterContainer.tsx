@@ -1,15 +1,16 @@
 // import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 
-import { SubscriptionModalProvider, useConfig } from '@proton/components';
+import { useConfig } from '@proton/app-context/useConfig';
+import { SubscriptionModalProvider } from '@proton/components';
 
+import { ChatRetentionEnforcer } from '../../components/ChatRetentionEnforcer';
 import { SafeUserProvider } from '../../contexts/SafeUserContext';
 import { ConversationProvider } from '../../providers/ConversationProvider';
 import { IsGuestProvider } from '../../providers/IsGuestProvider';
 import { LumoPlanProvider } from '../../providers/LumoPlanProvider';
 import { OnboardingProvider } from '../../providers/OnboardingProvider';
 import { UsageLimitsTierSync } from '../../providers/UsageLimitsTierSync';
-import { ChatRetentionEnforcer } from '../../components/ChatRetentionEnforcer';
 import { LumoUpsellModalProvider } from '../../upsells/providers/LumoUpsellModalProvider';
 import { InnerApp } from '../InnerApp';
 

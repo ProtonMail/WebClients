@@ -1,9 +1,7 @@
 import { useCallback, useEffect, useMemo } from 'react';
 
-import useApi from '@proton/components/hooks/useApi';
+import { useApi } from '@proton/app-context/useApi';
 import type { OutsideKey } from '@proton/mail/store/messages/messagesTypes';
-
-import { useEOMailDispatch, useEOMailSelector, useEOMailStore } from '../../store/eo/hooks';
 
 import { initEncryptedToken, loadEOToken } from '../../store/eo/eoActions';
 import {
@@ -15,6 +13,7 @@ import {
     isStoreInitializedSelector,
     passwordSelector,
 } from '../../store/eo/eoSelectors';
+import { useEOMailDispatch, useEOMailSelector, useEOMailStore } from '../../store/eo/hooks';
 
 export const useGetEOMessage = () => {
     const store = useEOMailStore();

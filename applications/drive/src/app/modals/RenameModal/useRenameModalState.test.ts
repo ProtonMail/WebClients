@@ -9,7 +9,7 @@ import { PROTON_DOCS_DOCUMENT_MIMETYPE, PROTON_DOCS_SPREADSHEET_MIMETYPE } from 
 import type { RenameModalViewProps } from './RenameModalView';
 import { useRenameModalState } from './useRenameModalState';
 
-jest.mock('@proton/components', () => ({
+jest.mock('@proton/app-context/useNotifications', () => ({
     useNotifications: jest.fn(() => ({
         createNotification: jest.fn(),
     })),

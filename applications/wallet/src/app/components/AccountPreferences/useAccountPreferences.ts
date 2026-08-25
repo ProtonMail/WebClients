@@ -5,13 +5,13 @@ import { c } from 'ttag';
 
 import { useUserKeys } from '@proton/account/userKeys/hooks';
 import type { WasmApiWalletAccount, WasmFiatCurrencySymbol } from '@proton/andromeda';
-import useNotifications from '@proton/components/hooks/useNotifications';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
-import type { IWasmApiWalletData } from '@proton/wallet/types';
-import { encryptWalletDataWithWalletKey } from '@proton/wallet/utils/crypto';
 import { useWalletApiClients } from '@proton/wallet/contexts';
 import { useFiatCurrencies, useWalletDispatch } from '@proton/wallet/store/hooks';
 import { walletAccountDeletion, walletAccountUpdate } from '@proton/wallet/store/slices';
+import type { IWasmApiWalletData } from '@proton/wallet/types';
+import { encryptWalletDataWithWalletKey } from '@proton/wallet/utils/crypto';
 
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { useEmailIntegration } from '../../hooks/useEmailIntegration';

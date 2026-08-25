@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { useNotifications } from '@proton/components/index';
+import { useNotifications } from '@proton/app-context/useNotifications';
 
 import { GUEST_MIGRATION_STORAGE_KEYS } from '../constants/guestMigration';
 

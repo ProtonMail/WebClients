@@ -1,6 +1,7 @@
+import React from 'react';
+
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import React from 'react';
 
 import { Breadcrumbs } from './Breadcrumbs';
 
@@ -16,9 +17,12 @@ jest.mock('@proton/components/index', () => {
                 )
             ),
         Loader: () => ReactMock.createElement('div', null, 'Loading'),
-        useNotifications: () => ({ createNotification: jest.fn() }),
     };
 });
+
+jest.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: () => ({ createNotification: jest.fn() }),
+}));
 
 jest.mock('../../legacy/components/SignatureIcon', () => ({
     SignatureIcon: () => null,

@@ -1,9 +1,9 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 
+import { CryptoProxy } from '@protontech/crypto';
 import { c, msgid } from 'ttag';
 
-import { useNotifications } from '@proton/components';
-import { CryptoProxy } from '@protontech/crypto';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { canonicalizeInternalEmail, validateEmailAddress } from '@proton/shared/lib/helpers/email';
 
 import type { ShareInvitee } from '../../../../store';

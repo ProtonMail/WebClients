@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import { useWelcomeFlags } from '@proton/account';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useConfig } from '@proton/app-context/useConfig';
 import { CYCLE } from '@proton/payments/core/constants';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, OPEN_OFFER_MODAL_EVENT } from '@proton/shared/lib/constants';
@@ -18,7 +19,6 @@ import usePreloadOfferImage from '../../containers/offers/hooks/usePreloadOfferI
 import type { OfferConfig } from '../../containers/offers/interface';
 import { subscriptionModalClassName } from '../../containers/payments/subscription/constants';
 import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
-import useConfig from '../../hooks/useConfig';
 import { PromotionButton } from '../button/PromotionButton';
 import TopNavbarListItem from './TopNavbarListItem';
 

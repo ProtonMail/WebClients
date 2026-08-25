@@ -7,11 +7,11 @@ import { setupStore } from 'proton-authenticator/store';
 import { init } from 'proton-authenticator/store/app';
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { BannerVariants } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
 import Prompt from '@proton/components/components/prompt/Prompt';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import useEffectOnce from '@proton/hooks/useEffectOnce';
 import useInstance from '@proton/hooks/useInstance';
 import { useAsyncModalHandles } from '@proton/pass/hooks/useAsyncModalHandles';

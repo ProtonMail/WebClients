@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
 import { Button } from '@proton/atoms/Button/Button';
 import { useLoadingByKey } from '@proton/hooks/useLoading';
 import { dismissNps, submitNps } from '@proton/shared/lib/api/netPromoterScore';
@@ -13,7 +14,6 @@ import ModalFooter from '../../components/modalTwo/ModalFooter';
 import ModalHeader from '../../components/modalTwo/ModalHeader';
 import InputFieldTwo from '../../components/v2/field/InputField';
 import TextAreaTwo from '../../components/v2/input/TextArea';
-import useApi from '../../hooks/useApi';
 import useErrorHandler from '../../hooks/useErrorHandler';
 import type { NetPromoterScoreModalProps } from './interface';
 

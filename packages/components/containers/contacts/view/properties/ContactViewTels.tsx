@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { getSortedProperties } from '@proton/shared/lib/contacts/properties';
 import type { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 
 import Copy from '../../../../components/button/Copy';
-import useNotifications from '../../../../hooks/useNotifications';
 import { ContactViewProperties } from './ContactViewProperties';
 import ContactViewProperty from './ContactViewProperty';
 

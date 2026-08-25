@@ -1,7 +1,7 @@
 import { useUser } from '@proton/account/user/hooks';
+import { useConfig } from '@proton/app-context/useConfig';
 import { FeatureCode, useFeature } from '@proton/features';
 
-import useConfig from '../../../../hooks/useConfig';
 import type { PostSubscriptionOneDollarOfferState } from '../PostSignupOneDollar/interface';
 import type { OfferHookReturnValue } from '../common/helpers/interface';
 import { getIsUserEligibleForSubscriptionReminder } from './mailSubscriptionReminderHelper';

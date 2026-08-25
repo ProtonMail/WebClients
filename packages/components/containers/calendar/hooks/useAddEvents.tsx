@@ -1,9 +1,9 @@
 import { useCallback } from 'react';
 
+import { useApi } from '@proton/app-context/useApi';
 import { processInBatches } from '@proton/shared/lib/calendar/import/encryptAndSubmit';
 import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 
-import useApi from '../../../hooks/useApi';
 import { useGetCalendarInfo } from '../../../hooks/useGetCalendarInfo';
 
 const useAddEvents = () => {

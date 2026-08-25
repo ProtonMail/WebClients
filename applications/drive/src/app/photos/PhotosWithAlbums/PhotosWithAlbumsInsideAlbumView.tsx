@@ -5,7 +5,8 @@ import { useOutletContext, useParams, useSearchParams } from 'react-router-dom-v
 import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
-import { Loader, useAppTitle, useConfig } from '@proton/components';
+import { useConfig } from '@proton/app-context/useConfig';
+import { Loader, useAppTitle } from '@proton/components';
 import { getDriveForPhotos } from '@proton/drive/index';
 import { loadThumbnail } from '@proton/drive/modules/thumbnails';
 import { getAppName } from '@proton/shared/lib/apps/helper';

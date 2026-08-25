@@ -1,6 +1,6 @@
 import type { PrivateKeyReference } from '@protontech/crypto';
 
-import { useApi } from '@proton/components';
+import { useApi } from '@proton/app-context/useApi';
 import { createMeetingCall } from '@proton/shared/lib/api/meet';
 import {
     CustomPasswordState,

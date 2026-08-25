@@ -6,6 +6,8 @@ import { organizationActions } from '@proton/account/organization';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSamlSSO } from '@proton/account/samlSSO/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
+import { useApi } from '@proton/app-context/useApi';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { useLoadingByKey } from '@proton/hooks/useLoading';
 import { hasMeet, hasMeetBusiness } from '@proton/payments/core/subscription/helpers';
@@ -38,8 +40,6 @@ import { useFlag } from '@proton/unleash/useFlag';
 
 import Logo from '../../../components/logo/Logo';
 import Toggle from '../../../components/toggle/Toggle';
-import useApi from '../../../hooks/useApi';
-import useNotifications from '../../../hooks/useNotifications';
 import SettingsParagraph from '../../account/SettingsParagraph';
 import SettingsSection from '../../account/SettingsSection';
 import SettingsSectionWide from '../../account/SettingsSectionWide';

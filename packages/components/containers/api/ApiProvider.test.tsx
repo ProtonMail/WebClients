@@ -9,7 +9,9 @@ import { mockUseNotifications } from '@proton/testing/lib/mockUseNotifications';
 import ApiProvider from './ApiProvider';
 
 const dispatchMock = jest.fn();
-jest.mock('../../hooks/useConfig', () => () => ({ APP_NAME: 'proton-mail', APP_VERSION: 'test' }));
+jest.mock('@proton/app-context/useConfig', () => ({
+    useConfig: () => ({ APP_NAME: 'proton-mail', APP_VERSION: 'test' }),
+}));
 jest.mock('./ApiModals', () => ({
     __esModule: true,
     default: () => null,

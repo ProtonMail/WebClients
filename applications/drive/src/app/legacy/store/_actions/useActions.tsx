@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { useConfirmActionModal, useNotifications } from '@proton/components';
+import { useNotifications } from '@proton/app-context/useNotifications';
+import { useConfirmActionModal } from '@proton/components';
 import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { getEllipsedName } from '@proton/drive/modules/intl';
 import { isSafari, textToClipboard } from '@proton/shared/lib/helpers/browser';

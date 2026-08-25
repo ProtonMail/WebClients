@@ -3,8 +3,9 @@ import { useLocation, useParams } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import { GenericError, useErrorHandler, useNotifications } from '@proton/components';
+import { GenericError, useErrorHandler } from '@proton/components';
 import { getUpdateNotification } from '@proton/components/containers/account/constants/email-subscriptions';
 import { getEmailSubscriptionCategories } from '@proton/components/containers/account/getEmailSubscriptionCategories';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';

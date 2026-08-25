@@ -2,13 +2,13 @@ import { useEffect, useLayoutEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
 import { LittleShield } from '@proton/components/containers/recovery/RecoveryScoreBanner/LittleShield';
 import { RecoveryScoreBar } from '@proton/components/containers/recovery/RecoveryScoreBanner/RecoveryScoreBar';
 import {
     SCORE_TONE_CLASS,
     getRecoveryScoreState,
 } from '@proton/components/containers/recovery/RecoveryScoreBanner/recoveryScoreState';
-import useApi from '@proton/components/hooks/useApi';
 import useAppTitle from '@proton/components/hooks/useAppTitle';
 import { useStore } from '@proton/redux-shared-store/sharedProvider';
 import { lockSensitiveSettings } from '@proton/shared/lib/api/user';

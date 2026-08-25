@@ -1,5 +1,7 @@
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { calendarSettingsActions } from '@proton/calendar/calendarUserSettings';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
@@ -8,8 +10,6 @@ import type { CalendarUserSettings } from '@proton/shared/lib/interfaces/calenda
 
 import Info from '../../../components/link/Info';
 import Toggle from '../../../components/toggle/Toggle';
-import useApi from '../../../hooks/useApi';
-import useNotifications from '../../../hooks/useNotifications';
 import SettingsLayout from '../../account/SettingsLayout';
 import SettingsLayoutLeft from '../../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../../account/SettingsLayoutRight';

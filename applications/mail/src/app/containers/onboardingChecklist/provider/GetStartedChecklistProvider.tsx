@@ -4,7 +4,7 @@ import { createContext, useContext, useEffect, useState } from 'react';
 import { fromUnixTime } from 'date-fns';
 
 import { useUser } from '@proton/account/user/hooks';
-import useApi from '@proton/components/hooks/useApi';
+import { useApi } from '@proton/app-context/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import useLoading from '@proton/hooks/useLoading';

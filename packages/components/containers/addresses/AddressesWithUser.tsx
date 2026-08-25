@@ -11,6 +11,7 @@ import ConnectGmailButton from '@proton/activation/src/components/SettingsArea/C
 import { BYOE_CLAIM_PROTON_ADDRESS_SOURCE } from '@proton/activation/src/constants';
 import useBYOEAddressesCounts from '@proton/activation/src/hooks/useBYOEAddressesCounts';
 import { EASY_SWITCH_SOURCES } from '@proton/activation/src/interface';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
@@ -47,7 +48,6 @@ import TableRow from '../../components/table/TableRow';
 import MailUpsellButton from '../../components/upsell/MailUpsellButton';
 import UpsellModal from '../../components/upsell/UpsellModal/UpsellModal';
 import { usePostSubscriptionTourTelemetry } from '../../hooks/mail/usePostSubscriptionTourTelemetry';
-import useNotifications from '../../hooks/useNotifications';
 import SettingsParagraph from '../account/SettingsParagraph';
 import AddressActions from './AddressActions';
 import AddressStatus from './AddressStatus';

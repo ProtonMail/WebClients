@@ -1,7 +1,9 @@
 import { type ReactNode, createContext, useContext, useEffect, useRef, useState } from 'react';
 
 import type { DeferredMnemonicData } from '@proton/account/recovery/recoveryKit/generateDeferredMnemonicData';
-import { type OnLoginCallback, StandardErrorPage, useApi, useConfig } from '@proton/components';
+import { useApi } from '@proton/app-context/useApi';
+import { useConfig } from '@proton/app-context/useConfig';
+import { type OnLoginCallback, StandardErrorPage } from '@proton/components';
 import { shouldTraceError, useNotifyErrorHandler } from '@proton/components/hooks/useErrorHandler';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import type { OnChargeable } from '@proton/components/payments/client-extensions';

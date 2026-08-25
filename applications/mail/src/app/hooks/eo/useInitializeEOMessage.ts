@@ -3,7 +3,7 @@ import { useCallback } from 'react';
 import type { PrivateKeyReference } from '@protontech/crypto';
 import type { PayloadAction } from '@reduxjs/toolkit';
 
-import useApi from '@proton/components/hooks/useApi';
+import { useApi } from '@proton/app-context/useApi';
 import type { Preparation } from '@proton/mail-renderer/helpers/transforms/transforms';
 import { prepareHtml, preparePlainText } from '@proton/mail-renderer/helpers/transforms/transforms';
 import { useBase64Cache } from '@proton/mail/hooks/useBase64Cache';
@@ -21,13 +21,11 @@ import { EO_DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/eo/constants';
 import { isPlainText } from '@proton/shared/lib/mail/messages';
 import noop from '@proton/utils/noop';
 
-import { transformEmbedded } from '../../helpers/transforms/transformEmbedded';
-import { transformRemote } from '../../helpers/transforms/transformRemote';
-import { useMailDispatch } from '../../store/hooks';
-
 import { LOAD_RETRY_COUNT, LOAD_RETRY_DELAY } from '../../constants';
 import { isNetworkError } from '../../helpers/errors';
 import { decryptMessage } from '../../helpers/message/messageDecrypt';
+import { transformEmbedded } from '../../helpers/transforms/transformEmbedded';
+import { transformRemote } from '../../helpers/transforms/transformRemote';
 import {
     EODocumentInitializeFulfilled,
     EODocumentInitializePending,
@@ -35,6 +33,7 @@ import {
     EOLoadRemote,
 } from '../../store/eo/eoActions';
 import type { EOLoadEmbeddedParams, EOLoadRemoteResults } from '../../store/eo/eoType';
+import { useMailDispatch } from '../../store/hooks';
 import { useGetEODecryptedToken, useGetEOMessageState, useGetEOPassword } from './useLoadEOMessage';
 
 export const useInitializeEOMessage = () => {

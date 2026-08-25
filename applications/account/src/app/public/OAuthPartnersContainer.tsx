@@ -3,10 +3,10 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import type { OnLoginCallback } from '@proton/components';
 import StandardErrorPage from '@proton/components/containers/app/StandardErrorPage';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { auth, revoke } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 // eslint-disable-next-line no-restricted-imports

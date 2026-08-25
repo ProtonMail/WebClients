@@ -4,6 +4,8 @@ import { useEffect, useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { useGetSamlSSO } from '@proton/account/samlSSO/hooks';
+import { useApi } from '@proton/app-context/useApi';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import useLoading from '@proton/hooks/useLoading';
 import { CacheType } from '@proton/redux-utilities/interface';
@@ -25,8 +27,6 @@ import Option from '../../../components/option/Option';
 import SelectTwo from '../../../components/selectTwo/SelectTwo';
 import useFormErrors from '../../../components/v2/useFormErrors';
 import getBoldFormattedText from '../../../helpers/getBoldFormattedText';
-import useApi from '../../../hooks/useApi';
-import useNotifications from '../../../hooks/useNotifications';
 import EduGainAutocomplete from './EduGainAutocomplete';
 import { EdugainAffiliationLabels } from './constants';
 

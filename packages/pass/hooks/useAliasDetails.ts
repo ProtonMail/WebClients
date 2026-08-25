@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import useNotifications from '@proton/components/hooks/useNotifications';
+import { useNotifications } from '@proton/app-context/useNotifications';
 
 import type { getAliasDetailsFailure, getAliasDetailsSuccess } from '../store/actions';
 import { getAliasDetailsIntent } from '../store/actions';

@@ -10,9 +10,9 @@ jest.mock('react', () => ({
     useRef: jest.fn((value) => ({ current: value })),
 }));
 
-jest.mock('@proton/components/hooks/useApi', () => ({
+jest.mock('@proton/app-context/useApi', () => ({
     __esModule: true,
-    default: () => mockApiRequest,
+    useApi: () => mockApiRequest,
 }));
 
 jest.mock('@proton/metrics', () => ({

@@ -1,5 +1,6 @@
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useConfig } from '@proton/app-context/useConfig';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import {
@@ -21,7 +22,6 @@ import {
     getStorageFull,
 } from '@proton/shared/lib/user/storage';
 
-import useConfig from '../../../../hooks/useConfig';
 import SettingsLink from '../../../link/SettingsLink';
 import DrawerAppSection from '../shared/DrawerAppSection';
 

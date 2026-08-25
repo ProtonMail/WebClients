@@ -1,19 +1,18 @@
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcExclamationTriangleFilled } from '@proton/icons/icons/IcExclamationTriangleFilled';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { getBlockedIncomingDefaultByAddress } from '@proton/shared/lib/helpers/incomingDefaults';
 import { getSender } from '@proton/shared/lib/mail/messages';
 
-import { useMailDispatch } from '../../../../store/hooks';
-
 import {
     useIncomingDefaultsAddresses,
     useIncomingDefaultsStatus,
 } from '../../../../hooks/incomingDefaults/useIncomingDefaults';
+import { useMailDispatch } from '../../../../store/hooks';
 import { remove } from '../../../../store/incomingDefaults/incomingDefaultsActions';
 
 interface Props {

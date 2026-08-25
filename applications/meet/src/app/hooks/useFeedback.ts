@@ -1,4 +1,4 @@
-import useApi from '@proton/components/hooks/useApi';
+import { useApi } from '@proton/app-context/useApi';
 import { sendFeedback } from '@proton/shared/lib/api/meet';
 
 export const useFeedback = () => {

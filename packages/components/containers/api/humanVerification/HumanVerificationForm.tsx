@@ -2,13 +2,13 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
 import { Href } from '@proton/atoms/Href/Href';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 import type { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 
 import Alert from '../../../components/alert/Alert';
 import Tabs from '../../../components/tabs/Tabs';
-import useApi from '../../../hooks/useApi';
 import Captcha from './Captcha';
 import CodeMethod from './CodeMethod';
 import OwnershipMethod from './OwnershipMethod';

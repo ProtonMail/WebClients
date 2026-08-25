@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Href } from '@proton/atoms/Href/Href';
 import { filtersThunk } from '@proton/mail/store/filters';
 import { useFilters } from '@proton/mail/store/filters/hooks';
@@ -11,8 +13,6 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import move from '@proton/utils/move';
 
 import Loader from '../../components/loader/Loader';
-import useApi from '../../hooks/useApi';
-import useNotifications from '../../hooks/useNotifications';
 import SettingsParagraph from '../account/SettingsParagraph';
 import SettingsSection from '../account/SettingsSection';
 import ActionsFilterToolbar from './ActionsFilterToolbar';

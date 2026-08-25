@@ -4,6 +4,8 @@ import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useConfig } from '@proton/app-context/useConfig';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
@@ -14,8 +16,6 @@ import { getUpgradePath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/
 
 import { useSubscriptionModal } from '../../../../containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '../../../../containers/payments/subscription/constants';
-import useConfig from '../../../../hooks/useConfig';
-import useNotifications from '../../../../hooks/useNotifications';
 import useSettingsLink from '../../../link/useSettingsLink';
 import { SpotlightWithPromo } from '../common/SpotlightWithPromo';
 import { UnlimitedToDuoOfferContent } from './components/UnlimitedToDuoOfferContent';

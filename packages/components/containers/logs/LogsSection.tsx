@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { Button } from '@proton/atoms/Button/Button';
 import { useLoading } from '@proton/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
@@ -26,7 +27,6 @@ import usePaginationAsync from '../../components/pagination/usePaginationAsync';
 import Prompt from '../../components/prompt/Prompt';
 import Toggle from '../../components/toggle/Toggle';
 import { escapeCsvValue } from '../../helpers/escapeCsvValue';
-import useApi from '../../hooks/useApi';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';

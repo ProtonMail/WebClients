@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import useApi from '@proton/components/hooks/useApi';
+import { useApi } from '@proton/app-context/useApi';
 import {
     type CreateMeetingParams,
     getMeetingLink,

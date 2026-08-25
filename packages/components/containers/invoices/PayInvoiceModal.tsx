@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { useLoading } from '@proton/hooks';
 import { checkInvoice } from '@proton/payments/core/api/api';
@@ -27,7 +28,6 @@ import Price from '../../components/price/Price';
 import { getSimplePriceString } from '../../components/price/helper';
 import useApiResult from '../../hooks/useApiResult';
 import useEventManager from '../../hooks/useEventManager';
-import useNotifications from '../../hooks/useNotifications';
 import { usePaymentFacade } from '../../payments/client-extensions/index';
 import PaymentWrapper from '../payments/PaymentWrapper';
 import { getInvoicePaymentsVersion } from './helpers';

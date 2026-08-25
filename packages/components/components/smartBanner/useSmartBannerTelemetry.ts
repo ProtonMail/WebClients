@@ -1,7 +1,7 @@
+import { useApi } from '@proton/app-context/useApi';
 import { TelemetryMeasurementGroups, TelemetrySmartBannerEvents } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 
-import useApi from '../../hooks/useApi';
 import type { SmartBannerApp } from './types';
 
 export const useSmartBannerTelemetry = (application: SmartBannerApp) => {

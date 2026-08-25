@@ -1,5 +1,6 @@
 import { useCallback } from 'react';
 
+import { useApi } from '@proton/app-context/useApi';
 import { useGetMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { sendMessageDirect } from '@proton/shared/lib/api/messages';
 import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
@@ -18,7 +19,6 @@ import getSendPreferences from '@proton/shared/lib/mail/send/getSendPreferences'
 import isTruthy from '@proton/utils/isTruthy';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
-import useApi from './useApi';
 import { useGetAddressKeysByUsage } from './useGetAddressKeysByUsage';
 import useGetEncryptionPreferences from './useGetEncryptionPreferences';
 

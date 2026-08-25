@@ -1,5 +1,6 @@
+import { useNotifications } from '@proton/app-context/useNotifications';
+
 import useGetPublicKeysForInbox from '../../../hooks/useGetPublicKeysForInbox';
-import useNotifications from '../../../hooks/useNotifications';
 
 const useGroupKeys = () => {
     const getPublicKeysForInbox = useGetPublicKeysForInbox();

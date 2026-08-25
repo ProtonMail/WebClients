@@ -3,6 +3,7 @@ import { useMemo, useState } from 'react';
 import { clsx } from 'clsx';
 import { c, msgid } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
@@ -14,7 +15,6 @@ import {
     SimpleDropdown,
     Toggle,
     useModalStateObject,
-    useNotifications,
 } from '@proton/components';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 

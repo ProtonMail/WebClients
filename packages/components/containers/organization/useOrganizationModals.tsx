@@ -9,6 +9,7 @@ import { useOrganization } from '@proton/account/organization/hooks';
 import { getPrivatizeError } from '@proton/account/organizationKey/actions';
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import { MEMBER_ROLE } from '@proton/shared/lib/constants';
@@ -24,7 +25,6 @@ import {
 } from '@proton/shared/lib/organization/helper';
 
 import useModalState from '../../components/modalTwo/useModalState';
-import useNotifications from '../../hooks/useNotifications';
 import ActivatePasswordlessOrganizationKey from './ActivatePasswordlessOrganizationKey';
 import ChangeOrganizationKeysModal from './ChangeOrganizationKeysModal';
 import ChangeOrganizationKeysPasswordlessModal from './ChangeOrganizationKeysPasswordlessModal';

@@ -1,6 +1,7 @@
 import { formatDistanceToNow } from 'date-fns';
 import { c } from 'ttag';
 
+import { useConfig } from '@proton/app-context/useConfig';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
@@ -19,7 +20,6 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
 import { useKeyTransparencyContext } from '../../containers/keyTransparency/useKeyTransparencyContext';
-import useConfig from '../../hooks/useConfig';
 import AppLink from '../link/AppLink';
 import type { ModalProps } from '../modalTwo/Modal';
 import ModalTwo from '../modalTwo/Modal';

@@ -1,6 +1,8 @@
 import { c } from 'ttag';
 
 import { organizationThunk } from '@proton/account/organization';
+import { useApi } from '@proton/app-context/useApi';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
@@ -18,8 +20,6 @@ import ModalContent from '../../../components/modalTwo/ModalContent';
 import ModalFooter from '../../../components/modalTwo/ModalFooter';
 import ModalHeader from '../../../components/modalTwo/ModalHeader';
 import useFormErrors from '../../../components/v2/useFormErrors';
-import useApi from '../../../hooks/useApi';
-import useNotifications from '../../../hooks/useNotifications';
 import SidebarPreview from './SidebarPreview';
 
 interface Props extends ModalProps {

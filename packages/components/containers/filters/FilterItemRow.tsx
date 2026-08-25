@@ -5,6 +5,7 @@ import { useSortable } from '@dnd-kit/react/sortable';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { deleteFilter, enableFilter } from '@proton/mail/store/filters/actions';
 import { FILTER_STATUS } from '@proton/shared/lib/constants';
@@ -19,7 +20,6 @@ import TableCell from '../../components/table/TableCell';
 import TableRow from '../../components/table/TableRow';
 import Toggle from '../../components/toggle/Toggle';
 import FiltersUpsellModal from '../../components/upsell/modals/FiltersUpsellModal';
-import useNotifications from '../../hooks/useNotifications';
 import FilterWarningModal from './FilterWarningModal';
 import type { Filter } from './interfaces';
 import DeleteFilterModal from './modal/DeleteFilterModal';

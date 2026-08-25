@@ -2,8 +2,8 @@ import type { Ref } from 'react';
 import { forwardRef } from 'react';
 import { useLocation } from 'react-router-dom-v5-compat';
 
+import { useConfig } from '@proton/app-context/useConfig';
 import { AppLink, type AppLinkProps } from '@proton/components';
-import useConfig from '@proton/components/hooks/useConfig';
 import { DEFAULT_APP, getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';

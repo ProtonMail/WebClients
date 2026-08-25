@@ -1,11 +1,11 @@
 import { useUser } from '@proton/account/user/hooks';
+import { useConfig } from '@proton/app-context/useConfig';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 import { hasPassLifetime } from '@proton/shared/lib/user/helpers';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import useConfig from '../../../../hooks/useConfig';
 import type { OfferHookReturnValue } from '../common/helpers/interface';
 
 type EligibilityProps = {

@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
 import { useLoading } from '@proton/hooks';
 import { IcArrowsCross } from '@proton/icons/icons/IcArrowsCross';
 import { IcDots } from '@proton/icons/icons/IcDots';
@@ -16,7 +17,6 @@ import Info from '../../components/link/Info';
 import TreeViewContainer from '../../components/treeview/TreeViewContainer';
 import TreeViewItem from '../../components/treeview/TreeViewItem';
 import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
-import useApi from '../../hooks/useApi';
 import useEventManager from '../../hooks/useEventManager';
 import ActionsLabel from './ActionsLabel';
 import FolderIcon from './FolderIcon';

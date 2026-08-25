@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { ImportFatalError } from '@proton/shared/lib/contacts/errors/ImportFatalError';
 import { toVCardContacts } from '@proton/shared/lib/contacts/helpers/csv';
@@ -20,7 +21,6 @@ import ModalTwoContent from '../../../../components/modalTwo/ModalContent';
 import ModalTwoFooter from '../../../../components/modalTwo/ModalFooter';
 import ModalTwoHeader from '../../../../components/modalTwo/ModalHeader';
 import Table from '../../../../components/table/Table';
-import useNotifications from '../../../../hooks/useNotifications';
 import ContactImportCsvTableBody from './ContactImportCsvTableBody';
 import ContactImportCsvTableHeader from './ContactImportCsvTableHeader';
 

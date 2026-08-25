@@ -1,10 +1,9 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
+import { useApi } from '@proton/app-context/useApi';
 import { useCache } from '@proton/app-context/useCache';
 import type { Currency } from '@proton/payments/core/interface';
 import { getClientVPNInfo } from '@proton/shared/lib/api/vpn';
-
-import useApi from './useApi';
 
 export interface VPNUserInfo {
     VPN: {

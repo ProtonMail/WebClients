@@ -19,7 +19,9 @@ jest.mock(
     '@proton/components/hooks/useApi',
     () => () => jest.fn().mockResolvedValue({ Contact: { Cards: [], ContactEmails: [] } })
 );
-jest.mock('@proton/components/hooks/useNotifications', () => () => ({ createNotification: jest.fn() }));
+jest.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: () => ({ createNotification: jest.fn() }),
+}));
 jest.mock('@proton/account/userKeys/hooks', () => ({ useGetUserKeys: () => jest.fn() }));
 
 jest.mock('../../../../hooks/contact/useContacts');

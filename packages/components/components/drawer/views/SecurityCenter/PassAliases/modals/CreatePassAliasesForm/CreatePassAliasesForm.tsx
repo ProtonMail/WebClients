@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Href } from '@proton/atoms/Href/Href';
@@ -13,7 +14,6 @@ import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import passAliasesLogo from '@proton/styles/assets/img/illustrations/pass-aliases-logo.svg';
 
-import useNotifications from '../../../../../../../hooks/useNotifications';
 import Form from '../../../../../../form/Form';
 import InputFieldStacked from '../../../../../../inputFieldStacked/InputFieldStacked';
 import InputFieldStackedGroup from '../../../../../../inputFieldStacked/InputFieldStackedGroup';

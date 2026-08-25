@@ -3,6 +3,8 @@ import { type FormEvent, useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { setupExternalUserForProton } from '@proton/account/addresses/actions';
+import { useApi } from '@proton/app-context/useApi';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import {
     Form,
@@ -13,12 +15,10 @@ import {
     ModalTwoContent,
     ModalTwoFooter,
     ModalTwoHeader,
-    useApi,
     useAuthentication,
     useErrorHandler,
     useEventManager,
     useFormErrors,
-    useNotifications,
 } from '@proton/components';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { useLoading } from '@proton/hooks/index';

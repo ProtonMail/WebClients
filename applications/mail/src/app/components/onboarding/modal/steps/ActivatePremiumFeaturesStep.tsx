@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { memberThunk, organizationThunk, subscriptionThunk, useUserSettings, userThunk } from '@proton/account';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { Button } from '@proton/atoms/Button/Button';
 import LabelStack from '@proton/components/components/labelStack/LabelStack';
 import Loader from '@proton/components/components/loader/Loader';
@@ -13,7 +14,6 @@ import OnboardingStep from '@proton/components/containers/onboarding/OnboardingS
 import type { OnboardingStepRenderCallback } from '@proton/components/containers/onboarding/interface';
 import useShortDomainAddress from '@proton/components/hooks/mail/useShortDomainAddress';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { PLANS } from '@proton/payments/core/constants';
@@ -34,7 +34,6 @@ import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useMailOnboardingTelemetry } from '../../useMailOnboardingTelemetry';
-
 import type { OnboardingStepEligibleCallback } from '../interface';
 import OnboardingContent from '../layout/OnboardingContent';
 

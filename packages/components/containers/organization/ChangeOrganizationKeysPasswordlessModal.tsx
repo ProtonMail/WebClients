@@ -7,6 +7,7 @@ import {
     getKeyRotationPayload,
     rotatePasswordlessOrganizationKeys,
 } from '@proton/account';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { useLoading } from '@proton/hooks';
@@ -18,7 +19,6 @@ import ModalTwoContent from '../../components/modalTwo/ModalContent';
 import ModalTwoFooter from '../../components/modalTwo/ModalFooter';
 import ModalTwoHeader from '../../components/modalTwo/ModalHeader';
 import useErrorHandler from '../../hooks/useErrorHandler';
-import useNotifications from '../../hooks/useNotifications';
 import { useSilentApi } from '../../hooks/useSilentApi';
 import AdministratorList from './AdministratorList';
 

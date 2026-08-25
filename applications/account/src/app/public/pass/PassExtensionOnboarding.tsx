@@ -3,10 +3,12 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Href } from '@proton/atoms/Href/Href';
-import { PassLogo, useApi, useNotifications } from '@proton/components';
+import { PassLogo } from '@proton/components';
 import { TelemetryMeasurementGroups, TelemetryPassExtensionEvents } from '@proton/shared/lib/api/telemetry';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { sendExtensionMessage } from '@proton/shared/lib/browser/extension';

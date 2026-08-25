@@ -1,7 +1,7 @@
 import { type ReactNode, useEffect } from 'react';
 
 import { useUser } from '@proton/account/user/hooks';
-import useConfig from '@proton/components/hooks/useConfig';
+import { useConfig } from '@proton/app-context/useConfig';
 import { isPaid } from '@proton/shared/lib/user/helpers';
 
 import type { ProtonDriveClient } from './index';

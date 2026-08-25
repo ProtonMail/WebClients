@@ -2,12 +2,11 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { useEffectOnce, useLoading } from '@proton/hooks';
 import { queryUpdateUserSettings, queryUserSettings } from '@proton/shared/lib/api/docs/user';
 import type { UserSettingsResponse } from '@proton/shared/lib/interfaces/docs/userSettings';
-
-import useApi from '../useApi';
-import useNotifications from '../useNotifications';
 
 export const useDocsNotificationsSettings = () => {
     const api = useApi();

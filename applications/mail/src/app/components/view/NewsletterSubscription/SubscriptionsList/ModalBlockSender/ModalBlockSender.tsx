@@ -2,10 +2,10 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Prompt from '@proton/components/components/prompt/Prompt';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 
 import { useMailDispatch, useMailSelector } from '../../../../../store/hooks';
@@ -15,7 +15,6 @@ import {
     updateSubscription,
 } from '../../../../../store/newsletterSubscriptions/newsletterSubscriptionsActions';
 import { getFilteredSubscriptionIndex } from '../../../../../store/newsletterSubscriptions/newsletterSubscriptionsSelector';
-
 import { getUnsubscribeData } from '../../helper';
 import { NewsletterSubscriptionAction, type PropsWithNewsletterSubscription } from '../../interface';
 import { useNewsletterSubscriptionTelemetry } from '../../useNewsletterSubscriptionTelemetry';

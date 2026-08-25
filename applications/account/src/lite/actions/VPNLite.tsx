@@ -3,8 +3,8 @@ import { type ComponentProps, type ReactElement, useEffect, useState } from 'rea
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import useApi from '@proton/components/hooks/useApi';
 import { COUPON_CODES, PLANS } from '@proton/payments/core/constants';
 import { queryScopes } from '@proton/shared/lib/api/auth';
 import { getAppHref } from '@proton/shared/lib/apps/helper';

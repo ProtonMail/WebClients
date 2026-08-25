@@ -1,6 +1,6 @@
 import { createContext, useCallback, useContext, useRef } from 'react';
 
-import useApi from '@proton/components/hooks/useApi';
+import { useApi } from '@proton/app-context/useApi';
 import { TelemetryMeasurementGroups, TelemetryUnauthLost2FAEvents } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport, telemetryReportsBatchQueue } from '@proton/shared/lib/helpers/metrics';
 

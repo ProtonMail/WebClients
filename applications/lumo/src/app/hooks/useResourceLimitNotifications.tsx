@@ -3,7 +3,7 @@ import { useRouteMatch } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { useNotifications } from '@proton/components/index';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useLumoDispatch, useLumoSelector } from '../redux/hooks';

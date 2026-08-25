@@ -1,13 +1,13 @@
 import { useUserSettings } from '@proton/account';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import type { TelemetryUnlimitedOffer2025 } from '@proton/shared/lib/api/telemetry';
 import { type TelemetryEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { sendTelemetryReportWithBaseDimensions } from '@proton/shared/lib/helpers/metrics';
 import type { SimpleMap } from '@proton/shared/lib/interfaces';
 
-import useApi from '../../../../../hooks/useApi';
 import type { UnlimitedMessageType } from '../helpers/interface';
 
 export const useGoUnlimitedOfferTelemetry = (app: APP_NAMES) => {

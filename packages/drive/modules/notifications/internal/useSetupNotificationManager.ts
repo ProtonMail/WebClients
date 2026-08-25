@@ -1,6 +1,6 @@
 import { useLayoutEffect } from 'react';
 
-import useNotifications from '@proton/components/hooks/useNotifications';
+import { useNotifications } from '@proton/app-context/useNotifications';
 
 import { setNotificationsManager } from './notifications.singleton';
 

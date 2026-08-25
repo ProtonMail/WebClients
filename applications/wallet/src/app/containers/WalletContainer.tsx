@@ -3,7 +3,8 @@ import { Redirect, useParams } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { useModalState, useNotifications } from '@proton/components';
+import { useNotifications } from '@proton/app-context/useNotifications';
+import { useModalState } from '@proton/components';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { IcCogDrawer } from '@proton/icons/icons/IcCogDrawer';
 import { MINUTE } from '@proton/shared/lib/constants';

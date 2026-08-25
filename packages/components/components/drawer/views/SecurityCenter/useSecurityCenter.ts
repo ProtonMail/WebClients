@@ -1,4 +1,4 @@
-import useConfig from '../../../../hooks/useConfig';
+import { useConfig } from '@proton/app-context/useConfig';
 
 /**
  * Is security center enabled

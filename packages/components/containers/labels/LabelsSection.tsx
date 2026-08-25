@@ -4,6 +4,8 @@ import isDeepEqual from 'lodash/isEqual';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import { useApi } from '@proton/app-context/useApi';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { useLoading } from '@proton/hooks';
 import { categoriesThunk } from '@proton/mail/store/labels';
@@ -22,8 +24,6 @@ import useModalState from '../../components/modalTwo/useModalState';
 import { useModalTwoPromise } from '../../components/modalTwo/useModalTwo';
 import MailUpsellButton from '../../components/upsell/MailUpsellButton';
 import LabelsUpsellModal from '../../components/upsell/modals/LabelsUpsellModal';
-import useApi from '../../hooks/useApi';
-import useNotifications from '../../hooks/useNotifications';
 import SettingsSection from '../account/SettingsSection';
 import LabelSortableList from './LabelSortableList';
 import ConfirmSortModal from './modals/ConfirmSortModal';

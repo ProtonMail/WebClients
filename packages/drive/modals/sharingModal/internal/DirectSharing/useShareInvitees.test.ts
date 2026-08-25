@@ -3,7 +3,7 @@ import { CryptoProxy } from '@protontech/crypto';
 import { act, renderHook } from '@testing-library/react-hooks';
 import { verifyAllWhenMocksCalled, when } from 'jest-when';
 
-import { useNotifications } from '@proton/components';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import noop from '@proton/utils/noop';
 
 import { ShareInviteeValidationError, VALIDATION_ERROR_TYPES } from './helpers/ShareInviteeValidationError';
@@ -37,8 +37,14 @@ const inviteeExternalNonProton = {
 const mockedCreateNotification = jest.fn();
 jest.mock('@proton/components', () => ({
     useGetEncryptionPreferences: jest.fn(),
-    useNotifications: jest.fn(),
+}));
+
+jest.mock('@proton/app-context/useApi', () => ({
     useApi: jest.fn().mockReturnValue(() => new Promise((resolve) => resolve(undefined))),
+}));
+
+jest.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: jest.fn(),
 }));
 
 jest.mocked(useNotifications).mockReturnValue({

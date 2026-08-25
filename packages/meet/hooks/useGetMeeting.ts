@@ -1,4 +1,4 @@
-import { useApi } from '@proton/components';
+import { useApi } from '@proton/app-context/useApi';
 import { getMeetingCall } from '@proton/shared/lib/api/meet';
 import type { Meeting } from '@proton/shared/lib/interfaces/Meet';
 

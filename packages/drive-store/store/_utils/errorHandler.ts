@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-import { useNotifications } from '@proton/components';
+import { useNotifications } from '@proton/app-context/useNotifications';
 
 import { isIgnoredError, isIgnoredErrorForReporting, sendErrorReport } from '../../utils/errorHandling';
 import type { ValidationError } from '../../utils/errorHandling/ValidationError';

@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
+import { useConfig } from '@proton/app-context/useConfig';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircledNumber } from '@proton/atoms/CircledNumber/CircledNumber';
 import { getTrialInfoForSingleSubscription } from '@proton/payments/core/trials';
@@ -25,7 +26,6 @@ import SelectTwo from '../../../../components/selectTwo/SelectTwo';
 import InputFieldTwo from '../../../../components/v2/field/InputField';
 import TextAreaTwo from '../../../../components/v2/input/TextArea';
 import useFormErrors from '../../../../components/v2/useFormErrors';
-import useConfig from '../../../../hooks/useConfig';
 import { useFeedbackFirstEligibility } from '../cancellationFlowFeedbackFirst/hooks/useFeedbackFirstEligibility';
 import type { FeedbackDowngradeFormData, FeedbackDowngradeResult, KeepSubscription } from './interface';
 

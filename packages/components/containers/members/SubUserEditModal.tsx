@@ -19,6 +19,7 @@ import { getStorageRange, getTotalStorage } from '@proton/account/organization/s
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { AdminRolesUIState, useAdminRolesUI } from '@proton/account/userPermissions/hooks';
 import useBYOEFeatureStatus from '@proton/activation/src/hooks/useBYOEFeatureStatus';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { FeatureCode, useFeature } from '@proton/features';
@@ -46,7 +47,6 @@ import InputFieldTwo from '../../components/v2/field/InputField';
 import useFormErrors from '../../components/v2/useFormErrors';
 import getBoldFormattedText from '../../helpers/getBoldFormattedText';
 import useErrorHandler from '../../hooks/useErrorHandler';
-import useNotifications from '../../hooks/useNotifications';
 import { useSilentApi } from '../../hooks/useSilentApi';
 import useSpotlightOnFeature from '../../hooks/useSpotlightOnFeature';
 import Addresses from '../addresses/Addresses';

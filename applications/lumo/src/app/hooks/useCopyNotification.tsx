@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 
 import { c } from 'ttag';
 
-import { useNotifications } from '@proton/components/index';
+import { useNotifications } from '@proton/app-context/useNotifications';
 
 export const useCopyNotification = (notificationText?: string) => {
     const { createNotification } = useNotifications();

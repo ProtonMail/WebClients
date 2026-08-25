@@ -1,11 +1,11 @@
 import { c } from 'ttag';
 
-import { useNotifications } from '@proton/components';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
-import type { IWasmApiWalletData } from '@proton/wallet/types';
 import { useWalletApiClients } from '@proton/wallet/contexts';
 import { useWalletDispatch } from '@proton/wallet/store/hooks';
 import { walletDeletion } from '@proton/wallet/store/slices';
+import type { IWasmApiWalletData } from '@proton/wallet/types';
 
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { WalletSetupModalKind, useWalletSetupModalContext } from '../../contexts/WalletSetupModalContext';

@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
 import { getApiWithAbort } from '@proton/shared/lib/api/helpers/customConfig';
 import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import type { ImportEventError } from '@proton/shared/lib/calendar/icsSurgery/ImportEventError';
@@ -25,7 +26,6 @@ import type {
 import { IMPORT_STEPS } from '@proton/shared/lib/interfaces/calendar';
 
 import DynamicProgress from '../../../components/progress/DynamicProgress';
-import useApi from '../../../hooks/useApi';
 import useBeforeUnload from '../../../hooks/useBeforeUnload';
 import useGetCalendarInfo from '../../../hooks/useGetCalendarInfo';
 

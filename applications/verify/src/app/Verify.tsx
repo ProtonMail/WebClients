@@ -4,12 +4,12 @@ import { useLocation } from 'react-router';
 
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import {
     HumanVerificationForm,
     HumanVerificationSteps,
     StandardLoadErrorPage,
-    useApi,
-    useNotifications,
     useThemeQueryParameter,
 } from '@proton/components';
 import AccountLockedUpsellForm from '@proton/components/components/upsell/modals/AccountLockedUpsellForm';

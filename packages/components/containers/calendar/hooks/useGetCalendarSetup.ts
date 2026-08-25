@@ -4,12 +4,12 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { useGetAddresses } from '@proton/account/addresses/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { useGetCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
 import { useLoading } from '@proton/hooks';
 import { getActiveAddresses, getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
 import type { CalendarViewModelFull, SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
-import useNotifications from '../../../hooks/useNotifications';
 import { getCalendarModel } from '../calendarModal/personalCalendarModal/calendarModalState';
 
 interface Props {

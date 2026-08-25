@@ -3,10 +3,11 @@ import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import type { ModalStateProps } from '@proton/components';
-import { GenericError, Prompt, useApi, useErrorHandler, useModalState } from '@proton/components';
+import { GenericError, Prompt, useErrorHandler, useModalState } from '@proton/components';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { useLoading } from '@proton/hooks';
 import {

@@ -3,6 +3,9 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
+import { useConfig } from '@proton/app-context/useConfig';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { useLoading } from '@proton/hooks';
@@ -22,11 +25,8 @@ import { Tabs } from '../../components/tabs/Tabs';
 import InputFieldTwo from '../../components/v2/field/InputField';
 import PasswordInputTwo from '../../components/v2/input/PasswordInput';
 import useFormErrors from '../../components/v2/useFormErrors';
-import useApi from '../../hooks/useApi';
-import useConfig from '../../hooks/useConfig';
 import useErrorHandler from '../../hooks/useErrorHandler';
 import useLocalState from '../../hooks/useLocalState';
-import useNotifications from '../../hooks/useNotifications';
 import AuthSecurityKeyContent from '../account/fido/AuthSecurityKeyContent';
 import { TotpInputField, TotpRecoveryCodeInputField } from '../account/totp/TotpInputs';
 import type { OnLoginCallback } from '../app/interface';

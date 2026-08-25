@@ -7,8 +7,8 @@ import {
 import { getMinimalHostPermissions } from 'proton-pass-extension/lib/utils/permissions';
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { NotificationKey } from '@proton/pass/types/worker/notification';

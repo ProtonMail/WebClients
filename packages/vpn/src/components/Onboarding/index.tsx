@@ -2,10 +2,10 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import useSettingsLink from '@proton/components/components/link/useSettingsLink';
 import { GetStartedButton } from '@proton/components/components/topnavbar/GetStartedButton';
 import { SetupOrganizationNameModal } from '@proton/components/containers/organization/SetupOrganizationNameModal';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import type { OrganizationExtended } from '@proton/shared/lib/interfaces';
 
 import { useOnOrganizationNameSetup } from '../../hooks/useOnOrganizationNameSetup';

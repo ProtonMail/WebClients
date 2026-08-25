@@ -2,12 +2,13 @@ import { type Dispatch, Fragment, type SetStateAction, useCallback, useEffect, u
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import type { OnLoginCallback } from '@proton/components';
-import { SkeletonLoader, useErrorHandler, useModalState, useNotifications } from '@proton/components';
+import { SkeletonLoader, useErrorHandler, useModalState } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
 import { revoke } from '@proton/shared/lib/api/auth';

@@ -3,6 +3,7 @@ import { type ChangeEvent, type Dispatch, type SetStateAction, useState } from '
 import { CryptoProxy, KeyCompatibilityLevel } from '@protontech/crypto';
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Href } from '@proton/atoms/Href/Href';
 import type { CONTACT_PGP_SCHEMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
@@ -17,7 +18,6 @@ import Row from '../../../components/container/Row';
 import Label from '../../../components/label/Label';
 import Info from '../../../components/link/Info';
 import Toggle from '../../../components/toggle/Toggle';
-import useNotifications from '../../../hooks/useNotifications';
 import SelectKeyFiles from '../../keys/shared/SelectKeyFiles';
 import ContactKeysTable, { activeSignerText } from './ContactKeysTable';
 import ContactSchemeSelect from './ContactSchemeSelect';

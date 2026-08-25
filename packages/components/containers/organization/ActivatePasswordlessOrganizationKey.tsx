@@ -7,6 +7,7 @@ import type { AcceptOrganizationKeyInvitePayload } from '@proton/account';
 import { acceptOrganizationKeyInvite, prepareAcceptOrganizationKeyInvite } from '@proton/account';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Card } from '@proton/atoms/Card/Card';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
@@ -24,7 +25,6 @@ import ModalTwoFooter from '../../components/modalTwo/ModalFooter';
 import ModalTwoHeader from '../../components/modalTwo/ModalHeader';
 import getBoldFormattedText from '../../helpers/getBoldFormattedText';
 import useErrorHandler from '../../hooks/useErrorHandler';
-import useNotifications from '../../hooks/useNotifications';
 import { useSilentApi } from '../../hooks/useSilentApi';
 
 interface Props extends Omit<ModalProps, 'buttons' | 'title' | 'children'> {

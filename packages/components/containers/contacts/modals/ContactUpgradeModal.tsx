@@ -1,12 +1,12 @@
 import { c } from 'ttag';
 
+import { useConfig } from '@proton/app-context/useConfig';
 import { SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 import contactGroupsImg from '@proton/styles/assets/img/illustrations/new-upsells-img/book-contact-groups.svg';
 
 import type { ModalStateProps } from '../../../components/modalTwo/useModalState';
 import UpsellModal from '../../../components/upsell/UpsellModal/UpsellModal';
-import useConfig from '../../../hooks/useConfig';
 
 const ContactUpgradeModal = (modalProps: ModalStateProps) => {
     const { APP_NAME } = useConfig();
