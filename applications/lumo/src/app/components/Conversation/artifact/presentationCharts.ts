@@ -8,7 +8,7 @@ import { createSecureVegaLoader } from '../../LumoMarkdown/vega/secureVegaLoader
 // The model embeds a chart as a non-executing <script> block inside a <section> — browsers never
 // execute a <script> whose `type` isn't a recognized JS MIME type (the same mechanism sites use
 // for e.g. `application/ld+json`), so this is inert wherever it lands, including the DOMParser
-// pass in buildSandboxedDoc. It also avoids HTML-attribute quote-escaping entirely: the spec's own
+// pass in buildArtifactDocument. It also avoids HTML-attribute quote-escaping entirely: the spec's own
 // quotes/braces sit safely as text content instead of needing entity-escaping inside an attribute
 // value, which matters given models already struggle with nested-quote content elsewhere in this
 // tool (see DESIGN.md's duplicate-tool-call finding).
