@@ -13,6 +13,8 @@ import clsx from '@proton/utils/clsx';
 
 import type { OnMessageImageLoadError } from 'proton-mail/components/message/interface';
 
+import { getIframeDocument } from '../helpers/getIframeDocument';
+
 const sizeProps: ['width', 'height'] = ['width', 'height'];
 /** Styles we should not clone on the anchor */
 const forbiddenStyles = ['border', 'outline', 'background', 'padding'];
@@ -135,7 +137,7 @@ const MessageBodyImage = ({
 
     const icon = error ? 'file-slash' : 'file-image';
 
-    const style = extractStyle(original, iframeRef.current?.contentWindow?.innerWidth);
+    const style = extractStyle(original, getIframeDocument(iframeRef.current)?.defaultView?.innerWidth);
 
     const placeholder = (
         <span
@@ -168,7 +170,7 @@ const MessageBodyImage = ({
 };
 
 const MessageBodyImagePortal = ({ iframeRef, ...props }: Omit<Props, 'anchor'>) => {
-    const iframeBody = iframeRef.current?.contentWindow?.document.body;
+    const iframeBody = getIframeDocument(iframeRef.current)?.body;
     const anchor = getAnchor(iframeBody, props.image);
 
     if (!anchor) {
