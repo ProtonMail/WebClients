@@ -15,10 +15,10 @@ jest.mock('@proton/components/hooks/useGetEncryptionPreferences', () => ({
     __esModule: true,
     default: () => async () => ({ pinnedKeys: [] }),
 }));
-jest.mock(
-    '@proton/components/hooks/useApi',
-    () => () => jest.fn().mockResolvedValue({ Contact: { Cards: [], ContactEmails: [] } })
-);
+jest.mock('@proton/app-context/useApi', () => ({
+    useApi: jest.fn().mockReturnValue(jest.fn().mockResolvedValue({ Contact: { Cards: [], ContactEmails: [] } })),
+}));
+
 jest.mock('@proton/app-context/useNotifications', () => ({
     useNotifications: () => ({ createNotification: jest.fn() }),
 }));
