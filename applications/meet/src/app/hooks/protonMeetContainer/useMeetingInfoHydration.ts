@@ -85,7 +85,6 @@ export const useMeetingInfoHydration = ({
 
                     reportMeetError(`Failed to resolve meeting info: ${code} - ${message}`, {
                         context: { error },
-                        tags: { meetingLinkName },
                     });
                 }
 
