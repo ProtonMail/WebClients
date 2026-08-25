@@ -952,6 +952,9 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kan inte skicka vCard-filer med fler än ${ maxAttachments } kontakter",
         "Du kan inte skicka vCard-filer med fler än ${ maxAttachments } kontakter"
+      ],
+      "Preview logs": [
+        "Förhandsgranska loggar"
       ]
     },
     "Actions message": {
@@ -3707,6 +3710,21 @@
       ],
       "Expiration date cannot be in the past": [
         "Utgångsdatum kan inte vara i det förflutna"
+      ],
+      "Moving root item is not allowed": [
+        "Att flytta rotobjekt är inte tillåtet"
+      ],
+      "Request aborted": [
+        "Åtgärd avbruten"
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "Några fildelar misslyckades att laddas upp. Försök igen."
+      ],
+      "This item has no image preview": [
+        "Detta objekt har ingen bild förhandsgranskning"
+      ],
+      "You can only leave items that are shared with you": [
+        "Du kan endast lämna objekt som är delade med dig."
       ]
     },
     "error": {
@@ -11260,6 +11278,11 @@
       ],
       "One plan, more power": [
         "Ett paket, mer kraft"
+      ]
+    },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Prova det nu"
       ]
     }
   }
