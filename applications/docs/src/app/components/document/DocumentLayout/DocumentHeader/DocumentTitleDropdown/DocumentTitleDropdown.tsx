@@ -77,6 +77,7 @@ import { versionCookieAtLoad } from '@proton/components/helpers/versionCookie'
 import { useMoveItemsModal } from '@proton/drive/public/moveItemsModal'
 import { generateNodeUid } from '@proton/drive'
 import { IcListBullets } from '@proton/icons/icons/IcListBullets'
+import type { UserModel } from '@proton/shared/lib/interfaces'
 
 export type DocumentTitleDropdownProps = {
   authenticatedController: AuthenticatedDocControllerInterface | undefined
@@ -184,7 +185,8 @@ export function DocumentTitleDropdown({
           if (result.isFailed()) {
             PostApplicationError(application.eventBus, { translatedError: result.getTranslatedError() })
             setTitle(oldName)
-          } else if (renameWithSDK) {
+          } else if (renameWithSDK && privateContext) {
+            // Public rename uses legacy - already has the notification
             const successNotificationText = c('Notification').jt`"${newName}" renamed successfully`
             createNotification({
               text: <span className="text-pre-wrap">{successNotificationText}</span>,
@@ -443,8 +445,6 @@ export function DocumentTitleDropdown({
     toggleDebugMode,
   ])
 
-  const canRename = documentState.getProperty('userRole').canRename()
-
   if (isSpreadsheet) {
     const input = (
       <Ariakit.TooltipProvider>
@@ -500,7 +500,7 @@ export function DocumentTitleDropdown({
               ref={renameInputRef}
               data-testid="sheet-name-input"
               size={SupportsFieldSizing ? undefined : 1} // required to make sure the input will shrink to fit the content when `field-sizing` is not supported
-              disabled={!canRename}
+              disabled={!canRename(documentState, user)}
             />
           }
         ></Ariakit.TooltipAnchor>
@@ -595,7 +595,7 @@ export function DocumentTitleDropdown({
         }}
       >
         <DropdownMenu>
-          {user && canRename && (
+          {canRename(documentState, user) && (
             <DropdownMenuButton
               className="flex items-center text-left"
               onClick={() => setIsRenaming((renaming) => !renaming)}
@@ -995,4 +995,21 @@ export function DocumentTitleDropdown({
       )}
     </>
   )
+}
+
+// We should also check if document created in a public shared folder was created by the current user
+// Unfortunately, we don't have that information neither from legacy nor SDK path (needs to be investigated how to fetch it)
+function canRename(documentState: DocumentState | PublicDocumentState, user: UserModel | undefined) {
+  // Theoretically you should be able to rename document anymously, but currently BE throws "This value should not be blank." error
+  const hasPermission = !!user && documentState.getProperty('userRole').canRename()
+
+  if (documentState.getProperty('userRole').isPublicEditor()) {
+    return hasPermission && publicDocumentCanBeRenamed(documentState)
+  }
+  return hasPermission
+}
+
+// Public documents can be renamed in first hour after creation
+function publicDocumentCanBeRenamed(documentState: DocumentState | PublicDocumentState) {
+  return Date.now() / 1000 - documentState.getProperty('documentMeta').createTime <= 59 * 60 // 59 minutes
 }
