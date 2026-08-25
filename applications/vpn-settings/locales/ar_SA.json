@@ -4750,6 +4750,12 @@
       ],
       "Your recovery contacts should be people you know and can contact easily.": [
         "يجب أن تكون جهات اتصال الاسترداد الخاصة بك أشخاصا تعرفهم ويمكنك الاتصال بهم بسهولة."
+      ],
+      "Add 1 more": [
+        "إضافة 1 آخر"
+      ],
+      "Explore plans": [
+        "استكشاف الخطط"
       ]
     },
     "Empty group name": {
@@ -10269,6 +10275,9 @@
       ],
       "Recovery phone number": [
         "رقم الهاتف الخاص بالاسترداد"
+      ],
+      "Set recovery phone number": [
+        "إعداد رقم هاتف للاسترداد"
       ]
     },
     "Label": {
@@ -11288,6 +11297,9 @@
       ],
       "ZIP code": [
         "الرمز البريدي"
+      ],
+      "Enter current password": [
+        "إدخال كلمة المرور الحالية"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14957,6 +14969,9 @@
       ],
       "Your recovery setup is solid, with a few gaps left to close. Each option you add makes your safety net stronger.": [
         "إعدادات الاسترداد لديك قوية، لكن لا تزال هناك بعض الخطوات المتبقية لإكمالها. وكل خيار تضيفه يعزز حماية حسابك ويقوّي شبكة الأمان الخاصة به."
+      ],
+      "Recovery score: ${ score }": [
+        "درجة الاسترداد: ${ score }"
       ]
     },
     "Recovery score item": {
@@ -15399,6 +15414,21 @@
     "Safety review": {
       "Review account safety": [
         "مراجعة أمان الحساب"
+      ],
+      "Code sent to ${ boldValue }": [
+        "تم إرسال الرمز إلى ${ boldValue }"
+      ],
+      "Invalid code": [
+        "رمز غير صالح"
+      ],
+      "Safety review": [
+        "مراجعة الأمان"
+      ],
+      "Send a new code": [
+        "إرسال رمز جديد"
+      ],
+      "update it now": [
+        "قم بتحديثه الآن"
       ]
     },
     "saml: Action": {
@@ -20392,6 +20422,272 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "بعد التحقق بنجاح، لا تقم بإزالة سجل TXT هذا لأنه ضروري لتأكيد استمرار امتلاكك للنطاق."
+      ]
+    },
+    "safety_review": {
+      "${ BRAND_NAME } Account email": [
+        "البريد الإلكتروني لحساب ${ BRAND_NAME }"
+      ],
+      "Account protection": [
+        "حماية الحساب"
+      ],
+      "Add": [
+        "إضافة"
+      ],
+      "Add an emergency contact": [
+        "إضافة جهة اتصال للطوارئ"
+      ],
+      "Add emergency contacts": [
+        "إضافة جهات اتصال الطوارئ"
+      ],
+      "Add options": [
+        "إضافة خيارات"
+      ],
+      "Add people who you trust and can contact easily. Your emergency contact will be able to access your account and reset your password for you if needed.": [
+        "إضافة أشخاص موثوق بهم ويمكن الاتصال بهم بسهولة. ستتمكن جهة اتصال الطوارئ من الوصول إلى الحساب وإعادة تعيين كلمة المرور نيابة عنك عند الحاجة."
+      ],
+      "Add people you trust and can contact easily. They will be able to help you unlock your data after you reset your password.": [
+        "إضافة أشخاص موثوق بهم ويمكن الاتصال بهم بسهولة. سيكون بإمكانهم المساعدة في فتح البيانات بعد إعادة تعيين كلمة المرور."
+      ],
+      "Add phone number": [
+        "إضافة رقم هاتف"
+      ],
+      "Add recovery contacts": [
+        "إضافة جهات اتصال الاسترداد"
+      ],
+      "Add recovery email": [
+        "إضافة بريد إلكتروني للاسترداد"
+      ],
+      "Add recovery phone": [
+        "إضافة هاتف الاسترداد"
+      ],
+      "Added emergency contacts": [
+        "تمت إضافة جهات اتصال الطوارئ"
+      ],
+      "Added recovery contacts": [
+        "تمت إضافة جهات اتصال الاسترداد"
+      ],
+      "Added recovery email": [
+        "تمت إضافة البريد الإلكتروني للاسترداد"
+      ],
+      "Added recovery phone": [
+        "تمت إضافة هاتف الاسترداد"
+      ],
+      "Allow": [
+        "السماح"
+      ],
+      "Allow data recovery from this device": [
+        "السماح باسترداد البيانات من هذا الجهاز"
+      ],
+      "Allow password reset from the settings": [
+        "السماح بإعادة تعيين كلمة المرور من الإعدادات"
+      ],
+      "Allow recovery by email": [
+        "السماح بالاسترداد بواسطة البريد الإلكتروني"
+      ],
+      "Allow recovery by phone": [
+        "السماح بالاسترداد بواسطة الهاتف"
+      ],
+      "Allow scanning a QR code to sign in": [
+        "السماح بمسح رمز QR لتسجيل الدخول"
+      ],
+      "Allow trusted friends to unlock your data": [
+        "السماح للأصدقاء الموثوق بهم بفتح البيانات"
+      ],
+      "Back to ${ backLink.appNameString }": [
+        "العودة إلى ${ backLink.appNameString }"
+      ],
+      "Congratulations": [
+        "تهانينا"
+      ],
+      "Didn’t receive it? ${ sendANewCode }": [
+        "ألم يتم استلامه؟ ${ sendANewCode }"
+      ],
+      "Done": [
+        "تم"
+      ],
+      "Download": [
+        "تنزيل"
+      ],
+      "Download recovery file": [
+        "تنزيل ملف الاسترداد"
+      ],
+      "Downloaded recovery file": [
+        "تم تنزيل ملف الاسترداد"
+      ],
+      "Emergency contacts enabled": [
+        "تم تفعيل جهات اتصال الطوارئ"
+      ],
+      "Enable device recovery": [
+        "تفعيل استرداد الجهاز"
+      ],
+      "Enable email recovery": [
+        "تفعيل البريد الإلكتروني للاسترداد"
+      ],
+      "Enable emergency contacts": [
+        "تفعيل جهات اتصال الطوارئ"
+      ],
+      "Enable password reset from settings": [
+        "تفعيل إعادة تعيين كلمة المرور من الإعدادات"
+      ],
+      "Enable phone recovery": [
+        "تفعيل هاتف الاسترداد"
+      ],
+      "Enable QR code sign-in": [
+        "تفعيل تسجيل الدخول برمز QR"
+      ],
+      "Enabled device recovery": [
+        "تم تفعيل استرداد الجهاز"
+      ],
+      "Enabled email recovery": [
+        "تم تفعيل البريد الإلكتروني للاسترداد"
+      ],
+      "Enabled password reset from settings": [
+        "تم تفعيل إعادة تعيين كلمة المرور من الإعدادات"
+      ],
+      "Enabled phone recovery": [
+        "تم تفعيل هاتف الاسترداد"
+      ],
+      "Enabled QR code sign-in": [
+        "تم تفعيل تسجيل الدخول برمز QR"
+      ],
+      "Got it": [
+        "مفهوم"
+      ],
+      "Here's how you increased your account protection:": [
+        "إليك كيف تمت زيادة حماية الحساب:"
+      ],
+      "If you forget your password, you can sign in using a QR code. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
+        "في حال نسيان كلمة المرور، يمكن تسجيل الدخول باستخدام رمز QR. كل ما يلزم هو تسجيل الدخول إلى خدمة ${ BRAND_NAME } على جهاز آخر."
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, it will allow you to sign in and recover your data. It’s the only way to instantly restore everything, so make sure you keep it somewhere safe.": [
+        "في حال تعذر الوصول إلى حساب ${ BRAND_NAME }، ستتيح هذه العبارة تسجيل الدخول واسترداد البيانات. إنها الطريقة الوحيدة لاستعادة كل شيء فورًا، لذا يُرجى الاحتفاظ بها في مكان آمن."
+      ],
+      "If your recovery email has changed, ${ updateEmailLink }.": [
+        "إذا تغيّر عنوان بريدك الإلكتروني المخصّص للاسترداد، ${ updateEmailLink }."
+      ],
+      "If your recovery phone has changed, ${ updatePhoneLink }.": [
+        "إذا تغيّر رقم هاتفك المخصّص للاسترداد، ${ updatePhoneLink }."
+      ],
+      "Later": [
+        "لاحقًا"
+      ],
+      "Protect your legacy with Emergency Access": [
+        "حماية الإرث مع وصول الطوارئ"
+      ],
+      "Save recovery phrase": [
+        "حفظ عبارة الاسترداد"
+      ],
+      "Saved recovery phrase": [
+        "تم حفظ عبارة الاسترداد"
+      ],
+      "Send verification code": [
+        "أرسل رمز التحقق"
+      ],
+      "They must already have a ${ BRAND_NAME } Account.": [
+        "يجب أن يكون لديهم حساب ${ BRAND_NAME } بالفعل."
+      ],
+      "They will not be able to see or access your data.": [
+        "لن يتمكنوا من رؤية البيانات أو الوصول إليها."
+      ],
+      "This will let you quickly access your ${ BRAND_NAME } Account so you can change your password.": [
+        "سيتيح هذا الوصول بسرعة إلى حساب ${ BRAND_NAME } لتغيير كلمة المرور."
+      ],
+      "This will let you reset your account password if you’ve lost it, but are still signed in to ${ BRAND_NAME }. It’s often the easiest way to recover your account if you’re signed in.": [
+        "سيتيح هذا إعادة تعيين كلمة مرور الحساب في حال فقدانها، مع البقاء قيد تسجيل الدخول في ${ BRAND_NAME }. وغالبًا ما تكون هذه أسهل طريقة لاسترداد الحساب في حال تسجيل الدخول."
+      ],
+      "This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
+        "سيؤدي هذا إلى استعادة الوصول إلى رسائل البريد الإلكتروني وجهات الاتصال والملفات وكلمات المرور وأي بيانات مشفرة أخرى في الحساب بعد إعادة تعيين كلمة المرور."
+      ],
+      "To help you remember your password, we’ll periodically ask you to enter it.": [
+        "للمساعدة في تذكر كلمة المرور، سيُطلب إدخالها بشكل دوري."
+      ],
+      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
+        "للتأكد من ملكية عنوان البريد الإلكتروني، يُرجى إدخال رمز التحقق المرسل إلى ${ boldEmail }."
+      ],
+      "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
+        "للتأكد من ملكية رقم الهاتف، يُرجى إدخال رمز التحقق المرسل إلى ${ boldPhoneNumber }."
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification code.": [
+        "للتأكد من أن هذا العنوان يخصك بالفعل، سنرسل إليك رسالة بريد إلكتروني تحتوي على رمز تحقق."
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification link.": [
+        "للتأكد من ملكية هذا العنوان، سنرسل بريدًا إلكترونيًا يحتوي على رابط تحقق."
+      ],
+      "To make sure this number is really yours, we’ll send an SMS with a verification code.": [
+        "للتأكد من أن هذا الرقم يخصك بالفعل، سنرسل إليك رسالة نصية (SMS) تحتوي على رمز تحقق."
+      ],
+      "Update": [
+        "تحديث"
+      ],
+      "Update recovery email": [
+        "تحديث البريد الإلكتروني للاسترداد"
+      ],
+      "Update recovery phone": [
+        "تحديث رقم هاتف الاسترداد"
+      ],
+      "Upgrade your plan to enable Emergency Access to your account. This will allow you to designate 1 to 5 people who will be able to reset your password for you.": [
+        "ترقية الخطة لتفعيل وصول الطوارئ إلى الحساب. سيتيح هذا تحديد من 1 إلى 5 أشخاص ليكون بإمكانهم إعادة تعيين كلمة المرور نيابة عنك."
+      ],
+      "Verified password": [
+        "تم التحقق من كلمة المرور"
+      ],
+      "Verified recovery email": [
+        "تم التحقق من البريد الإلكتروني للاسترداد"
+      ],
+      "Verified recovery phone": [
+        "تم التحقق من هاتف الاسترداد"
+      ],
+      "Verify": [
+        "التحقق"
+      ],
+      "Verify password": [
+        "التحقق من كلمة المرور"
+      ],
+      "Verify recovery email": [
+        "التحقق من البريد الإلكتروني للاسترداد"
+      ],
+      "Verify recovery phone": [
+        "التحقق من هاتف الاسترداد"
+      ],
+      "Verify your password": [
+        "التحقق من كلمة المرور"
+      ],
+      "Verify your recovery email": [
+        "التحقق من البريد الإلكتروني للاسترداد"
+      ],
+      "Verify your recovery phone": [
+        "التحقق من هاتف الاسترداد"
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        "يؤدي التحقق من عنوان بريدك الإلكتروني إلى زيادة أمان حسابك، ويمنحك خيارات إضافية لاسترداد الحساب."
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "يؤدي التحقق من رقم هاتفك إلى تعزيز أمان حسابك، ويمنحك خيارات إضافية لاسترداد الحساب."
+      ],
+      "You can save a data backup on this device. This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset, simply by signing in on this device.": [
+        "يمكن حفظ نسخة احتياطية من البيانات على هذا الجهاز. سيؤدي هذا إلى استعادة الوصول إلى رسائل البريد الإلكتروني وجهات الاتصال والملفات وكلمات المرور وأي بيانات مشفرة أخرى في الحساب بعد إعادة تعيين كلمة المرور، ببساطة عن طريق تسجيل الدخول على هذا الجهاز."
+      ],
+      "You can use email verification to regain access to your account if you forget your password.": [
+        "يمكن استخدام التحقق من البريد الإلكتروني لاستعادة الوصول إلى الحساب في حال نسيان كلمة المرور."
+      ],
+      "You can use SMS verification to regain access to your account if you forget your password.": [
+        "يمكن استخدام التحقق عبر الرسائل النصية القصيرة (SMS) لاستعادة الوصول إلى الحساب في حال نسيان كلمة المرور."
+      ],
+      "You can use your recovery email to regain access to your account if you forget your password.": [
+        "يمكن استخدام البريد الإلكتروني للاسترداد لاستعادة الوصول إلى الحساب في حال نسيان كلمة المرور."
+      ],
+      "You can use your recovery phone to regain access to your account if you forget your password.": [
+        "يمكن استخدام هاتف الاسترداد لاستعادة الوصول إلى الحساب في حال نسيان كلمة المرور."
+      ],
+      "You don’t need to open or read the file—just download it and store it somewhere safe.": [
+        "لا داعي لفتح الملف أو قراءته—يكفي تنزيله وحفظه في مكان آمن."
+      ],
+      "Your recovery checklist": [
+        "قائمة التحقق من الاسترداد الخاصة بك"
+      ],
+      "Your security setup": [
+        "إعداد الأمان الخاص بك"
       ]
     }
   }

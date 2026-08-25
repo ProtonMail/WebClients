@@ -4675,6 +4675,12 @@
       ],
       "Your recovery contacts should be people you know and can contact easily.": [
         "Vaše kontakty pro obnovení by měli být lidé, které znáte a které můžete snadno kontaktovat."
+      ],
+      "Add 1 more": [
+        "Přidat ještě 1"
+      ],
+      "Explore plans": [
+        "Prozkoumat tarify"
       ]
     },
     "Empty group name": {
@@ -9929,6 +9935,9 @@
       ],
       "Recovery phone number": [
         "Telefonní číslo pro obnovení"
+      ],
+      "Set recovery phone number": [
+        "Nastavit telefonní číslo pro obnovení"
       ]
     },
     "Label": {
@@ -10936,6 +10945,9 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Enter current password": [
+        "Zadejte současné heslo"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14541,6 +14553,9 @@
       ],
       "Your recovery setup is solid, with a few gaps left to close. Each option you add makes your safety net stronger.": [
         "Vaše nastavení obnovení účtu je spolehlivé, zbývá však vyřešit několik posledních nedostatků. Každá přidaná možnost vaši záchrannou síť ještě více posílí."
+      ],
+      "Recovery score: ${ score }": [
+        "Skóre obnovení: ${ score }"
       ]
     },
     "Recovery score item": {
@@ -14971,6 +14986,21 @@
     "Safety review": {
       "Review account safety": [
         "Zkontrolujte bezpečnost účtu"
+      ],
+      "Code sent to ${ boldValue }": [
+        "Kód zaslán na ${ boldValue }"
+      ],
+      "Invalid code": [
+        "Neplatný kód"
+      ],
+      "Safety review": [
+        "Kontrola bezpečnosti"
+      ],
+      "Send a new code": [
+        "Poslat nový kód"
+      ],
+      "update it now": [
+        "aktualizovat nyní"
       ]
     },
     "saml: Action": {
@@ -19747,6 +19777,272 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Po úspěšném ověření, neodstraňujte TXT záznam, je potřebný k ověření, že doménu stále vlastníte."
+      ]
+    },
+    "safety_review": {
+      "${ BRAND_NAME } Account email": [
+        "E-mail účtu ${ BRAND_NAME }"
+      ],
+      "Account protection": [
+        "Ochrana účtu"
+      ],
+      "Add": [
+        "Přidat"
+      ],
+      "Add an emergency contact": [
+        "Přidat nouzový kontakt"
+      ],
+      "Add emergency contacts": [
+        "Přidat nouzové kontakty"
+      ],
+      "Add options": [
+        "Přidat možnosti"
+      ],
+      "Add people who you trust and can contact easily. Your emergency contact will be able to access your account and reset your password for you if needed.": [
+        "Přidejte lidi, kterým důvěřujete a které můžete snadno kontaktovat. Váš nouzový kontakt bude moci přistupovat k vašemu účtu a v případě potřeby pro vás resetovat heslo."
+      ],
+      "Add people you trust and can contact easily. They will be able to help you unlock your data after you reset your password.": [
+        "Přidejte lidi, kterým důvěřujete a které můžete snadno kontaktovat. Pomohou vám odemknout vaše data po resetování hesla."
+      ],
+      "Add phone number": [
+        "Přidat telefonní číslo"
+      ],
+      "Add recovery contacts": [
+        "Přidat kontakty pro obnovení"
+      ],
+      "Add recovery email": [
+        "Přidat e-mail pro obnovení"
+      ],
+      "Add recovery phone": [
+        "Přidat telefon pro obnovení"
+      ],
+      "Added emergency contacts": [
+        "Přidány nouzové kontakty"
+      ],
+      "Added recovery contacts": [
+        "Přidány kontakty pro obnovení"
+      ],
+      "Added recovery email": [
+        "Přidán e-mail pro obnovení"
+      ],
+      "Added recovery phone": [
+        "Přidán telefon pro obnovení"
+      ],
+      "Allow": [
+        "Povolit"
+      ],
+      "Allow data recovery from this device": [
+        "Povolit obnovu dat z tohoto zařízení"
+      ],
+      "Allow password reset from the settings": [
+        "Povolit resetování hesla z nastavení"
+      ],
+      "Allow recovery by email": [
+        "Povolit obnovení e-mailem"
+      ],
+      "Allow recovery by phone": [
+        "Povolit obnovení telefonem"
+      ],
+      "Allow scanning a QR code to sign in": [
+        "Povolit skenování QR kódu pro přihlášení"
+      ],
+      "Allow trusted friends to unlock your data": [
+        "Povolit důvěryhodným přátelům odemknout vaše data"
+      ],
+      "Back to ${ backLink.appNameString }": [
+        "Zpět na ${ backLink.appNameString }"
+      ],
+      "Congratulations": [
+        "Gratulujeme"
+      ],
+      "Didn’t receive it? ${ sendANewCode }": [
+        "Nedostali jste ho? ${ sendANewCode }"
+      ],
+      "Done": [
+        "Hotovo"
+      ],
+      "Download": [
+        "Stáhnout"
+      ],
+      "Download recovery file": [
+        "Stáhnout soubor pro obnovení"
+      ],
+      "Downloaded recovery file": [
+        "Stažený soubor pro obnovení"
+      ],
+      "Emergency contacts enabled": [
+        "Nouzové kontakty aktivovány"
+      ],
+      "Enable device recovery": [
+        "Aktivovat obnovení zařízení"
+      ],
+      "Enable email recovery": [
+        "Aktivovat obnovení e-mailem"
+      ],
+      "Enable emergency contacts": [
+        "Aktivovat nouzové kontakty"
+      ],
+      "Enable password reset from settings": [
+        "Aktivovat resetování hesla z nastavení"
+      ],
+      "Enable phone recovery": [
+        "Aktivovat obnovení telefonem"
+      ],
+      "Enable QR code sign-in": [
+        "Povolit přihlášení pomocí QR kódu"
+      ],
+      "Enabled device recovery": [
+        "Obnovení zařízení aktivováno"
+      ],
+      "Enabled email recovery": [
+        "Obnovení pomocí e-mailu aktivováno"
+      ],
+      "Enabled password reset from settings": [
+        "Resetování hesla z nastavení aktivováno"
+      ],
+      "Enabled phone recovery": [
+        "Obnovení pomocí telefonu aktivováno"
+      ],
+      "Enabled QR code sign-in": [
+        "Přihlášení pomocí QR kódu aktivováno"
+      ],
+      "Got it": [
+        "Rozumím"
+      ],
+      "Here's how you increased your account protection:": [
+        "Zde je přehled toho, jak jste zvýšili ochranu svého účtu:"
+      ],
+      "If you forget your password, you can sign in using a QR code. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
+        "Pokud zapomenete své heslo, můžete se přihlásit pomocí QR kódu. Stačí, abyste byli přihlášeni ke službě ${ BRAND_NAME } na jiném zařízení."
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, it will allow you to sign in and recover your data. It’s the only way to instantly restore everything, so make sure you keep it somewhere safe.": [
+        "Pokud ztratíte přístup ke svému účtu ${ BRAND_NAME }, umožní vám to se přihlásit a obnovit vaše data. Je to jediný způsob, jak okamžitě vše obnovit, proto si jej uložte na bezpečné místo."
+      ],
+      "If your recovery email has changed, ${ updateEmailLink }.": [
+        "Pokud se váš e-mail pro obnovení změnil, ${ updateEmailLink }."
+      ],
+      "If your recovery phone has changed, ${ updatePhoneLink }.": [
+        "Pokud se váš telefon pro obnovení změnil, ${ updatePhoneLink }."
+      ],
+      "Later": [
+        "Později"
+      ],
+      "Protect your legacy with Emergency Access": [
+        "Chraňte své digitální dědictví pomocí nouzového přístupu"
+      ],
+      "Save recovery phrase": [
+        "Uložit obnovovací frázi"
+      ],
+      "Saved recovery phrase": [
+        "Uložená obnovovací fráze"
+      ],
+      "Send verification code": [
+        "Odeslat ověřovací kód"
+      ],
+      "They must already have a ${ BRAND_NAME } Account.": [
+        "Již musí mít účet ${ BRAND_NAME }."
+      ],
+      "They will not be able to see or access your data.": [
+        "Nebudou moci vidět vaše data ani k nim přistupovat."
+      ],
+      "This will let you quickly access your ${ BRAND_NAME } Account so you can change your password.": [
+        "To vám umožní rychle přistupovat k vašemu účtu ${ BRAND_NAME }, abyste si mohli změnit heslo."
+      ],
+      "This will let you reset your account password if you’ve lost it, but are still signed in to ${ BRAND_NAME }. It’s often the easiest way to recover your account if you’re signed in.": [
+        "To vám umožní resetovat heslo k účtu, pokud jste ho ztratili, ale stále jste přihlášeni ke službě ${ BRAND_NAME }. Často je to nejjednodušší způsob, jak obnovit svůj účet, pokud jste přihlášeni."
+      ],
+      "This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
+        "Tím po resetování hesla obnovíte přístup k e-mailům, kontaktům, souborům, heslům a všem ostatním šifrovaným datům ve vašem účtu."
+      ],
+      "To help you remember your password, we’ll periodically ask you to enter it.": [
+        "Abychom vám pomohli zapamatovat si vaše heslo, budeme vás pravidelně žádat o jeho zadání."
+      ],
+      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
+        "Chcete-li se ujistit, že je e-mailová adresa vaše, zadejte ověřovací kód zaslaný na adresu ${ boldEmail }."
+      ],
+      "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
+        "Chcete-li se ujistit, že je telefonní číslo vaše, zadejte ověřovací kód zaslaný na číslo ${ boldPhoneNumber }."
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification code.": [
+        "Abychom se ujistili, že je tato adresa opravdu vaše, zašleme vám e-mail s ověřovacím kódem."
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification link.": [
+        "Abychom se ujistili, že tato adresa skutečně patří vám, zašleme vám e-mail s ověřovacím odkazem."
+      ],
+      "To make sure this number is really yours, we’ll send an SMS with a verification code.": [
+        "Abychom se ujistili, že je toto číslo opravdu vaše, zašleme vám SMS s ověřovacím kódem."
+      ],
+      "Update": [
+        "Aktualizovat"
+      ],
+      "Update recovery email": [
+        "Aktualizovat e-mail pro obnovení"
+      ],
+      "Update recovery phone": [
+        "Aktualizovat telefon pro obnovení"
+      ],
+      "Upgrade your plan to enable Emergency Access to your account. This will allow you to designate 1 to 5 people who will be able to reset your password for you.": [
+        "Upgradujte svůj plán pro aktivaci nouzového přístupu k vašemu účtu. To vám umožní určit 1 až 5 lidí, kteří pro vás budou moci resetovat vaše heslo."
+      ],
+      "Verified password": [
+        "Heslo ověřeno"
+      ],
+      "Verified recovery email": [
+        "Ověřený e-mail pro obnovení"
+      ],
+      "Verified recovery phone": [
+        "Ověřený telefon pro obnovení"
+      ],
+      "Verify": [
+        "Ověřit"
+      ],
+      "Verify password": [
+        "Ověřit heslo"
+      ],
+      "Verify recovery email": [
+        "Ověřit e-mail pro obnovení"
+      ],
+      "Verify recovery phone": [
+        "Ověřit telefon pro obnovení"
+      ],
+      "Verify your password": [
+        "Ověřte své heslo"
+      ],
+      "Verify your recovery email": [
+        "Ověřte svůj e-mail pro obnovení"
+      ],
+      "Verify your recovery phone": [
+        "Ověřte svůj telefon pro obnovení"
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        "Ověření e-mailové adresy zvyšuje bezpečnost vašeho účtu a umožňuje další možnosti jeho obnovení."
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "Ověření telefonního čísla zvyšuje bezpečnost vašeho účtu a umožňuje další možnosti jeho obnovení."
+      ],
+      "You can save a data backup on this device. This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset, simply by signing in on this device.": [
+        "Na tomto zařízení si můžete uložit zálohu dat. Tím po resetování hesla obnovíte přístup k e-mailům, kontaktům, souborům, heslům a jakýmkoli dalším šifrovaným datům ve vašem účtu, a to pouhým přihlášením na tomto zařízení."
+      ],
+      "You can use email verification to regain access to your account if you forget your password.": [
+        "Pokud zapomenete své heslo, můžete k opětovnému získání přístupu ke svému účtu použít ověření e-mailem."
+      ],
+      "You can use SMS verification to regain access to your account if you forget your password.": [
+        "Pokud zapomenete své heslo, můžete k opětovnému získání přístupu ke svému účtu použít ověření přes SMS."
+      ],
+      "You can use your recovery email to regain access to your account if you forget your password.": [
+        "Pokud zapomenete své heslo, můžete k opětovnému získání přístupu ke svému účtu použít svůj e-mail pro obnovení."
+      ],
+      "You can use your recovery phone to regain access to your account if you forget your password.": [
+        "Pokud zapomenete své heslo, můžete k opětovnému získání přístupu ke svému účtu použít svůj telefon pro obnovení."
+      ],
+      "You don’t need to open or read the file—just download it and store it somewhere safe.": [
+        "Soubor nemusíte otevírat ani číst – stačí jej stáhnout a uložit na bezpečné místo."
+      ],
+      "Your recovery checklist": [
+        "Váš kontrolní seznam pro obnovení"
+      ],
+      "Your security setup": [
+        "Vaše bezpečnostní nastavení"
       ]
     }
   }

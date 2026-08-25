@@ -4675,6 +4675,12 @@
       ],
       "Your recovery contacts should be people you know and can contact easily.": [
         "Контактами для восстановления должны быть люди, которых вы знаете и с которыми можете легко связаться."
+      ],
+      "Add 1 more": [
+        "Добавить еще 1"
+      ],
+      "Explore plans": [
+        "Ознакомиться с тарифами"
       ]
     },
     "Empty group name": {
@@ -9947,6 +9953,9 @@
       ],
       "Recovery phone number": [
         "Номер телефона для восстановления"
+      ],
+      "Set recovery phone number": [
+        "Установить резервный номер телефона"
       ]
     },
     "Label": {
@@ -10951,6 +10960,9 @@
       ],
       "ZIP code": [
         "Почтовый индекс"
+      ],
+      "Enter current password": [
+        "Введите текущий пароль"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14553,6 +14565,9 @@
       ],
       "Your recovery setup is solid, with a few gaps left to close. Each option you add makes your safety net stronger.": [
         "Ваша система восстановления надежна, осталось закрыть лишь несколько пробелов. Каждая добавленная опция делает вашу защиту прочнее."
+      ],
+      "Recovery score: ${ score }": [
+        "Рейтинг восстановления: ${ score }"
       ]
     },
     "Recovery score item": {
@@ -14983,6 +14998,21 @@
     "Safety review": {
       "Review account safety": [
         "Проверьте безопасность аккаунта"
+      ],
+      "Code sent to ${ boldValue }": [
+        "Код отправлен на ${ boldValue }"
+      ],
+      "Invalid code": [
+        "Недействительный код"
+      ],
+      "Safety review": [
+        "Обзор безопасности"
+      ],
+      "Send a new code": [
+        "Отправить новый код"
+      ],
+      "update it now": [
+        "обновить его сейчас"
       ]
     },
     "saml: Action": {
@@ -19762,6 +19792,272 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "После успешной проверки не удаляйте эту TXT-запись, так как она необходима для подтверждения того, что вы остаётесь владельцем домена."
+      ]
+    },
+    "safety_review": {
+      "${ BRAND_NAME } Account email": [
+        "Адрес электронной почты аккаунта ${ BRAND_NAME }"
+      ],
+      "Account protection": [
+        "Защита аккаунта"
+      ],
+      "Add": [
+        "Добавить"
+      ],
+      "Add an emergency contact": [
+        "Добавить экстренный контакт"
+      ],
+      "Add emergency contacts": [
+        "Добавить экстренные контакты"
+      ],
+      "Add options": [
+        "Добавить варианты"
+      ],
+      "Add people who you trust and can contact easily. Your emergency contact will be able to access your account and reset your password for you if needed.": [
+        "Добавьте людей, которым вы доверяете и с которыми легко связаться. Ваш экстренный контакт сможет получить доступ к вашему аккаунту и сбросить для вас пароль при необходимости."
+      ],
+      "Add people you trust and can contact easily. They will be able to help you unlock your data after you reset your password.": [
+        "Добавьте людей, которым вы доверяете и с которыми легко связаться. Они смогут помочь вам разблокировать ваши данные после сброса пароля."
+      ],
+      "Add phone number": [
+        "Добавить номер телефона"
+      ],
+      "Add recovery contacts": [
+        "Добавить контакты восстановления"
+      ],
+      "Add recovery email": [
+        "Добавить резервный адрес электронной почты"
+      ],
+      "Add recovery phone": [
+        "Добавить резервный телефон"
+      ],
+      "Added emergency contacts": [
+        "Экстренные контакты добавлены"
+      ],
+      "Added recovery contacts": [
+        "Контакты восстановления добавлены"
+      ],
+      "Added recovery email": [
+        "Резервный адрес электронной почты добавлен"
+      ],
+      "Added recovery phone": [
+        "Резервный телефон добавлен"
+      ],
+      "Allow": [
+        "Разрешить"
+      ],
+      "Allow data recovery from this device": [
+        "Разрешить восстановление данных с этого устройства"
+      ],
+      "Allow password reset from the settings": [
+        "Разрешить сброс пароля в настройках"
+      ],
+      "Allow recovery by email": [
+        "Разрешить восстановление по электронной почте"
+      ],
+      "Allow recovery by phone": [
+        "Разрешить восстановление по телефону"
+      ],
+      "Allow scanning a QR code to sign in": [
+        "Разрешить сканирование QR-кода для входа"
+      ],
+      "Allow trusted friends to unlock your data": [
+        "Разрешить доверенным друзьям разблокировать ваши данные"
+      ],
+      "Back to ${ backLink.appNameString }": [
+        "Назад к ${ backLink.appNameString }"
+      ],
+      "Congratulations": [
+        "Поздравляем"
+      ],
+      "Didn’t receive it? ${ sendANewCode }": [
+        "Не получили? ${ sendANewCode }"
+      ],
+      "Done": [
+        "Готово"
+      ],
+      "Download": [
+        "Скачать"
+      ],
+      "Download recovery file": [
+        "Скачать файл восстановления"
+      ],
+      "Downloaded recovery file": [
+        "Файл восстановления скачан"
+      ],
+      "Emergency contacts enabled": [
+        "Экстренные контакты включены"
+      ],
+      "Enable device recovery": [
+        "Включить восстановление на устройстве"
+      ],
+      "Enable email recovery": [
+        "Включить восстановление по эл. почте"
+      ],
+      "Enable emergency contacts": [
+        "Включить экстренные контакты"
+      ],
+      "Enable password reset from settings": [
+        "Включить сброс пароля в настройках"
+      ],
+      "Enable phone recovery": [
+        "Включить восстановление по телефону"
+      ],
+      "Enable QR code sign-in": [
+        "Включить вход по QR-коду"
+      ],
+      "Enabled device recovery": [
+        "Восстановление на устройстве включено"
+      ],
+      "Enabled email recovery": [
+        "Восстановление по электронной почте включено"
+      ],
+      "Enabled password reset from settings": [
+        "Сброс пароля из настроек включен"
+      ],
+      "Enabled phone recovery": [
+        "Восстановление по телефону включено"
+      ],
+      "Enabled QR code sign-in": [
+        "Вход по QR-коду включен"
+      ],
+      "Got it": [
+        "Понятно"
+      ],
+      "Here's how you increased your account protection:": [
+        "Вот как вы повысили уровень защиты своего аккаунта:"
+      ],
+      "If you forget your password, you can sign in using a QR code. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
+        "Если вы забудете пароль, то сможете войти с помощью QR-кода. Для этого вам нужно войти в любой сервис ${ BRAND_NAME } на другом устройстве."
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, it will allow you to sign in and recover your data. It’s the only way to instantly restore everything, so make sure you keep it somewhere safe.": [
+        "Если вы потеряете доступ к своему аккаунту ${ BRAND_NAME }, это позволит вам войти и восстановить свои данные. Это единственный способ мгновенно восстановить все данные, поэтому обязательно сохраните фразу в надежном месте."
+      ],
+      "If your recovery email has changed, ${ updateEmailLink }.": [
+        "Если ваш резервный адрес электронной почты изменился, вы можете ${ updateEmailLink }."
+      ],
+      "If your recovery phone has changed, ${ updatePhoneLink }.": [
+        "Если ваш резервный телефон изменился, вы можете ${ updatePhoneLink }."
+      ],
+      "Later": [
+        "Позже"
+      ],
+      "Protect your legacy with Emergency Access": [
+        "Защитите свое наследие с помощью экстренного доступа"
+      ],
+      "Save recovery phrase": [
+        "Сохранить фразу восстановления"
+      ],
+      "Saved recovery phrase": [
+        "Фраза восстановления сохранена"
+      ],
+      "Send verification code": [
+        "Отправить код подтверждения"
+      ],
+      "They must already have a ${ BRAND_NAME } Account.": [
+        "У них уже должен быть аккаунт ${ BRAND_NAME }."
+      ],
+      "They will not be able to see or access your data.": [
+        "Этот человек не сможет просматривать ваши данные или иметь к ним доступ."
+      ],
+      "This will let you quickly access your ${ BRAND_NAME } Account so you can change your password.": [
+        "Это позволит вам быстро войти в аккаунт ${ BRAND_NAME }, чтобы вы могли изменить пароль."
+      ],
+      "This will let you reset your account password if you’ve lost it, but are still signed in to ${ BRAND_NAME }. It’s often the easiest way to recover your account if you’re signed in.": [
+        "Это позволит сбросить пароль аккаунта, если вы его забыли, но все еще вошли в ${ BRAND_NAME }. Часто это самый простой способ восстановить аккаунт, если вы выполнили вход."
+      ],
+      "This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
+        "Это восстановит доступ к электронным письмам, контактам, файлам, паролям и любым другим зашифрованным данным в вашем аккаунте после сброса пароля."
+      ],
+      "To help you remember your password, we’ll periodically ask you to enter it.": [
+        "Чтобы помочь вам запомнить пароль, мы будем периодически просить вас ввести его."
+      ],
+      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
+        "Чтобы убедиться, что адрес электронной почты принадлежит вам, введите код подтверждения, отправленный на ${ boldEmail }."
+      ],
+      "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
+        "Чтобы подтвердить, что это ваш номер телефона, введите код подтверждения, отправленный на ${ boldPhoneNumber }."
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification code.": [
+        "Чтобы убедиться, что этот адрес действительно принадлежит вам, мы отправим электронное письмо с кодом подтверждения."
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification link.": [
+        "Чтобы убедиться, что этот адрес действительно принадлежит вам, мы отправим письмо со ссылкой для подтверждения."
+      ],
+      "To make sure this number is really yours, we’ll send an SMS with a verification code.": [
+        "Чтобы убедиться, что этот номер действительно принадлежит вам, мы отправим смс с кодом подтверждения."
+      ],
+      "Update": [
+        "Обновить"
+      ],
+      "Update recovery email": [
+        "Обновить резервный адрес электронной почты"
+      ],
+      "Update recovery phone": [
+        "Обновить резервный телефон"
+      ],
+      "Upgrade your plan to enable Emergency Access to your account. This will allow you to designate 1 to 5 people who will be able to reset your password for you.": [
+        "Улучшите свой тариф, чтобы включить экстренный доступ к аккаунту. Это позволит назначить от 1 до 5 человек, которые смогут сбросить пароль для вас."
+      ],
+      "Verified password": [
+        "Пароль подтвержден"
+      ],
+      "Verified recovery email": [
+        "Резервный адрес электронной почты подтвержден"
+      ],
+      "Verified recovery phone": [
+        "Резервный телефон подтвержден"
+      ],
+      "Verify": [
+        "Подтвердить"
+      ],
+      "Verify password": [
+        "Подтвердить пароль"
+      ],
+      "Verify recovery email": [
+        "Подтвердить резервный адрес электронной почты"
+      ],
+      "Verify recovery phone": [
+        "Подтвердить резервный телефон"
+      ],
+      "Verify your password": [
+        "Подтвердите свой пароль"
+      ],
+      "Verify your recovery email": [
+        "Подтвердите свой резервный адрес электронной почты"
+      ],
+      "Verify your recovery phone": [
+        "Подтвердите свой резервный телефон"
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        "Подтверждение адреса электронной почты повышает безопасность вашего аккаунта и дает дополнительные возможности для восстановления."
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "Подтверждение номера телефона повышает безопасность вашего аккаунта и дает дополнительные возможности для восстановления."
+      ],
+      "You can save a data backup on this device. This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset, simply by signing in on this device.": [
+        "Вы можете сохранить резервную копию данных на этом устройстве. Это позволит восстановить доступ к электронным письмам, контактам, файлам, паролям и любым другим зашифрованным данным в вашем аккаунте после сброса пароля, просто выполнив вход на этом устройстве."
+      ],
+      "You can use email verification to regain access to your account if you forget your password.": [
+        "Вы можете использовать подтверждение адреса электронной почты, чтобы вернуть доступ к аккаунту, если вы забудете пароль."
+      ],
+      "You can use SMS verification to regain access to your account if you forget your password.": [
+        "Вы можете использовать подтверждение по SMS, чтобы вернуть доступ к аккаунту, если вы забудете пароль."
+      ],
+      "You can use your recovery email to regain access to your account if you forget your password.": [
+        "Вы можете использовать резервный адрес электронной почты, чтобы вернуть доступ к аккаунту, если вы забудете пароль."
+      ],
+      "You can use your recovery phone to regain access to your account if you forget your password.": [
+        "Вы можете использовать резервный номер телефона, чтобы вернуть доступ к аккаунту, если вы забудете пароль."
+      ],
+      "You don’t need to open or read the file—just download it and store it somewhere safe.": [
+        "Вам не нужно открывать или читать этот файл — просто скачайте его и храните в надежном месте."
+      ],
+      "Your recovery checklist": [
+        "Ваш контрольный список восстановления"
+      ],
+      "Your security setup": [
+        "Ваша настройка безопасности"
       ]
     }
   }

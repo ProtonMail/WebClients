@@ -4624,6 +4624,12 @@
       ],
       "Your recovery contacts should be people you know and can contact easily.": [
         "Palautusyhteyshenkilöidenne tulisi olla ihmisiä, jotka tunnette ja joihin voitte ottaa helposti yhteyttä."
+      ],
+      "Add 1 more": [
+        "Lisää vielä 1"
+      ],
+      "Explore plans": [
+        "Tutustu tilauksiin"
       ]
     },
     "Empty group name": {
@@ -9776,6 +9782,9 @@
       ],
       "Recovery phone number": [
         "Palautusnumero"
+      ],
+      "Set recovery phone number": [
+        "Aseta palautuspuhelinnumero"
       ]
     },
     "Label": {
@@ -10783,6 +10792,9 @@
       ],
       "ZIP code": [
         "Postinumero"
+      ],
+      "Enter current password": [
+        "Syötä nykyinen salasana"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14303,6 +14315,9 @@
       ],
       "Your recovery setup is solid, with a few gaps left to close. Each option you add makes your safety net stronger.": [
         "Palautusasetuksesi ovat vakaat, ja vain muutamia puutteita on jäljellä täytettäväksi. Jokainen lisäämäsi vaihtoehto vahvistaa turvaverkkoasi."
+      ],
+      "Recovery score: ${ score }": [
+        "Palautuspisteet: ${ score }"
       ]
     },
     "Recovery score item": {
@@ -14721,6 +14736,21 @@
     "Safety review": {
       "Review account safety": [
         "Tarkista tiliturvallisuus"
+      ],
+      "Code sent to ${ boldValue }": [
+        "Koodi lähetettiin kohteeseen ${ boldValue }"
+      ],
+      "Invalid code": [
+        "Virheellinen koodi"
+      ],
+      "Safety review": [
+        "Turvallisuuskatsaus"
+      ],
+      "Send a new code": [
+        "Lähetä uusi koodi"
+      ],
+      "update it now": [
+        "päivitä se nyt"
       ]
     },
     "saml: Action": {
@@ -19379,6 +19409,272 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Älä poista tätä TXT-tietuetta onnistuneen vahvistuksen jälkeen, koska sen avulla varmistetaan verkkotunnuksen kuuluvan sinulle myös jatkossa."
+      ]
+    },
+    "safety_review": {
+      "${ BRAND_NAME } Account email": [
+        "${ BRAND_NAME }-tilin sähköposti"
+      ],
+      "Account protection": [
+        "Tilin suojaus"
+      ],
+      "Add": [
+        "Lisää"
+      ],
+      "Add an emergency contact": [
+        "Lisää hätäyhteyshenkilö"
+      ],
+      "Add emergency contacts": [
+        "Lisää hätäyhteyshenkilöitä"
+      ],
+      "Add options": [
+        "Lisää vaihtoehtoja"
+      ],
+      "Add people who you trust and can contact easily. Your emergency contact will be able to access your account and reset your password for you if needed.": [
+        "Lisätkää ihmisiä, joihin luotatte ja joihin voitte helposti ottaa yhteyttä. Hätäyhteyshenkilönne voi käyttää tiliänne ja nollata salasananne puolestanne tarvittaessa."
+      ],
+      "Add people you trust and can contact easily. They will be able to help you unlock your data after you reset your password.": [
+        "Lisää ihmisiä, joihin luotatte ja joihin voitte helposti ottaa yhteyttä. He voivat auttaa teitä avaamaan tietojenne lukituksen, kun olette nollanneet salasananne."
+      ],
+      "Add phone number": [
+        "Lisää puhelinnumero"
+      ],
+      "Add recovery contacts": [
+        "Lisää palautusyhteystietoja"
+      ],
+      "Add recovery email": [
+        "Lisää palautussähköposti"
+      ],
+      "Add recovery phone": [
+        "Lisää palautuspuhelin"
+      ],
+      "Added emergency contacts": [
+        "Hätäyhteyshenkilöt lisätty"
+      ],
+      "Added recovery contacts": [
+        "Palautusyhteystiedot lisätty"
+      ],
+      "Added recovery email": [
+        "Palautussähköposti lisätty"
+      ],
+      "Added recovery phone": [
+        "Palautuspuhelin lisätty"
+      ],
+      "Allow": [
+        "Salli"
+      ],
+      "Allow data recovery from this device": [
+        "Salli tietojen palauttaminen tältä laitteelta"
+      ],
+      "Allow password reset from the settings": [
+        "Salli salasanan nollaus asetuksista"
+      ],
+      "Allow recovery by email": [
+        "Salli palautus sähköpostitse"
+      ],
+      "Allow recovery by phone": [
+        "Salli palautus puhelimitse"
+      ],
+      "Allow scanning a QR code to sign in": [
+        "Salli kirjautuminen QR-koodin skannaamalla"
+      ],
+      "Allow trusted friends to unlock your data": [
+        "Salli luotettujen ystävien avata tietojenne lukitus"
+      ],
+      "Back to ${ backLink.appNameString }": [
+        "Takaisin sovellukseen ${ backLink.appNameString }"
+      ],
+      "Congratulations": [
+        "Onnittelut"
+      ],
+      "Didn’t receive it? ${ sendANewCode }": [
+        "Ettekö saaneet sitä? ${ sendANewCode }"
+      ],
+      "Done": [
+        "Valmis"
+      ],
+      "Download": [
+        "Lataa"
+      ],
+      "Download recovery file": [
+        "Lataa palautustiedosto"
+      ],
+      "Downloaded recovery file": [
+        "Palautustiedosto ladattu"
+      ],
+      "Emergency contacts enabled": [
+        "Hätäyhteyshenkilöt otettu käyttöön"
+      ],
+      "Enable device recovery": [
+        "Ota laitteen palautus käyttöön"
+      ],
+      "Enable email recovery": [
+        "Ota sähköpostipalautus käyttöön"
+      ],
+      "Enable emergency contacts": [
+        "Ota hätäyhteyshenkilöt käyttöön"
+      ],
+      "Enable password reset from settings": [
+        "Ota salasanan nollaus asetuksista käyttöön"
+      ],
+      "Enable phone recovery": [
+        "Ota puhelinpalautus käyttöön"
+      ],
+      "Enable QR code sign-in": [
+        "Ota QR-koodilla kirjautuminen käyttöön"
+      ],
+      "Enabled device recovery": [
+        "Laitteen palautus otettu käyttöön"
+      ],
+      "Enabled email recovery": [
+        "Sähköpostipalautus otettu käyttöön"
+      ],
+      "Enabled password reset from settings": [
+        "Salasanan nollaus asetuksista otettu käyttöön"
+      ],
+      "Enabled phone recovery": [
+        "Puhelinpalautus otettu käyttöön"
+      ],
+      "Enabled QR code sign-in": [
+        "QR-koodilla kirjautuminen otettu käyttöön"
+      ],
+      "Got it": [
+        "Selvä"
+      ],
+      "Here's how you increased your account protection:": [
+        "Näin paransitte tilinne suojausta:"
+      ],
+      "If you forget your password, you can sign in using a QR code. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
+        "Jos unohdatte salasananne, voitte kirjautua sisään QR-koodilla. Teidän tarvitsee vain olla kirjautuneena sisään johonkin ${ BRAND_NAME }-palveluun toisella laitteella."
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, it will allow you to sign in and recover your data. It’s the only way to instantly restore everything, so make sure you keep it somewhere safe.": [
+        "Jos menetät pääsyn ${ BRAND_NAME }-tiliisi, sen avulla voit kirjautua sisään ja palauttaa tietosi. Se on ainoa tapa palauttaa kaikki välittömästi, joten varmista, että säilytät sitä turvallisessa paikassa."
+      ],
+      "If your recovery email has changed, ${ updateEmailLink }.": [
+        "Jos palautussähköpostiosoitteesi on muuttunut, ${ updateEmailLink }."
+      ],
+      "If your recovery phone has changed, ${ updatePhoneLink }.": [
+        "Jos palautuspuhelimesi on muuttunut, ${ updatePhoneLink }."
+      ],
+      "Later": [
+        "Myöhemmin"
+      ],
+      "Protect your legacy with Emergency Access": [
+        "Suojatkaa perintönne hätäpääsyllä"
+      ],
+      "Save recovery phrase": [
+        "Tallenna palautuslause"
+      ],
+      "Saved recovery phrase": [
+        "Palautuslause tallennettu"
+      ],
+      "Send verification code": [
+        "Lähetä vahvistuskoodi"
+      ],
+      "They must already have a ${ BRAND_NAME } Account.": [
+        "Heillä on oltava valmiiksi ${ BRAND_NAME }-tili."
+      ],
+      "They will not be able to see or access your data.": [
+        "He eivät voi nähdä tai käyttää tietojanne."
+      ],
+      "This will let you quickly access your ${ BRAND_NAME } Account so you can change your password.": [
+        "Tämän avulla voitte käyttää ${ BRAND_NAME }-tiliänne nopeasti, jotta voitte vaihtaa salasananne."
+      ],
+      "This will let you reset your account password if you’ve lost it, but are still signed in to ${ BRAND_NAME }. It’s often the easiest way to recover your account if you’re signed in.": [
+        "Tämän avulla voitte nollata tilinne salasanan, jos olette kadottaneet sen mutta olette yhä kirjautuneena sisään ${ BRAND_NAME }-palveluun. Se on usein helpoin tapa palauttaa tilinne, jos olette kirjautuneena sisään."
+      ],
+      "This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
+        "Tämä palauttaa pääsyn sähköposteihin, yhteystietoihin, tiedostoihin, salasanoihin ja kaikkiin muihin salattuihin tietoihin tilillänne salasanan nollauksen jälkeen."
+      ],
+      "To help you remember your password, we’ll periodically ask you to enter it.": [
+        "Jotta muistat salasanasi, pyydämme sinua syöttämään sen säännöllisin väliajoin."
+      ],
+      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
+        "Varmistaaksenne, että sähköpostiosoite on teidän, syöttäkää osoitteeseen ${ boldEmail } lähetetty vahvistuskoodi."
+      ],
+      "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
+        "Varmistaaksenne, että puhelinnumero on teidän, syöttäkää numeroon ${ boldPhoneNumber } lähetetty vahvistuskoodi."
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification code.": [
+        "Varmistaaksemme, että tämä osoite on todella Teidän, lähetämme sähköpostiviestin, jossa on vahvistuskoodi."
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification link.": [
+        "Varmistaaksemme, että tämä osoite on todella teidän, lähetämme sähköpostin, jossa on vahvistuslinkki."
+      ],
+      "To make sure this number is really yours, we’ll send an SMS with a verification code.": [
+        "Varmistaaksemme, että tämä numero on todella Teidän, lähetämme tekstiviestin, jossa on vahvistuskoodi."
+      ],
+      "Update": [
+        "Päivitä"
+      ],
+      "Update recovery email": [
+        "Päivitä palautussähköposti"
+      ],
+      "Update recovery phone": [
+        "Päivitä palautuspuhelin"
+      ],
+      "Upgrade your plan to enable Emergency Access to your account. This will allow you to designate 1 to 5 people who will be able to reset your password for you.": [
+        "Päivittäkää tilauksenne ottaaksenne hätäpääsyn käyttöön tilillänne. Tämän avulla voitte nimetä 1–5 henkilöä, jotka voivat nollata salasananne puolestanne."
+      ],
+      "Verified password": [
+        "Vahvistettu salasana"
+      ],
+      "Verified recovery email": [
+        "Vahvistettu palautussähköposti"
+      ],
+      "Verified recovery phone": [
+        "Vahvistettu palautuspuhelin"
+      ],
+      "Verify": [
+        "Vahvista"
+      ],
+      "Verify password": [
+        "Vahvista salasana"
+      ],
+      "Verify recovery email": [
+        "Vahvista palautussähköposti"
+      ],
+      "Verify recovery phone": [
+        "Vahvista palautuspuhelin"
+      ],
+      "Verify your password": [
+        "Vahvista salasanasi"
+      ],
+      "Verify your recovery email": [
+        "Vahvista palautussähköpostinne"
+      ],
+      "Verify your recovery phone": [
+        "Vahvista palautuspuhelimesi"
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        "Sähköpostiosoitteesi vahvistaminen parantaa tilisi turvallisuutta ja mahdollistaa lisävaihtoehtoja palautusta varten."
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "Puhelinnumerosi vahvistaminen parantaa tilisi turvallisuutta ja mahdollistaa lisävaihtoehtoja palautusta varten."
+      ],
+      "You can save a data backup on this device. This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset, simply by signing in on this device.": [
+        "Voitte tallentaa tietojen varmuuskopion tälle laitteelle. Tämä palauttaa pääsyn sähköposteihin, yhteystietoihin, tiedostoihin, salasanoihin ja muihin salattuihin tietoihin tilillänne salasanan nollauksen jälkeen yksinkertaisesti kirjautumalla sisään tällä laitteella."
+      ],
+      "You can use email verification to regain access to your account if you forget your password.": [
+        "Voitte käyttää sähköpostivahvistusta päästäksenne takaisin tilillenne, jos unohdatte salasananne."
+      ],
+      "You can use SMS verification to regain access to your account if you forget your password.": [
+        "Voitte käyttää SMS-vahvistusta päästäksenne takaisin tilillenne, jos unohdatte salasananne."
+      ],
+      "You can use your recovery email to regain access to your account if you forget your password.": [
+        "Voitte käyttää palautussähköpostianne päästäksenne takaisin tilillenne, jos unohdatte salasananne."
+      ],
+      "You can use your recovery phone to regain access to your account if you forget your password.": [
+        "Voitte käyttää palautuspuhelintanne päästäksenne takaisin tilillenne, jos unohdatte salasananne."
+      ],
+      "You don’t need to open or read the file—just download it and store it somewhere safe.": [
+        "Teidän ei tarvitse avata tai lukea tiedostoa – ladatkaa se vain ja tallentakaa se turvalliseen paikkaan."
+      ],
+      "Your recovery checklist": [
+        "Palautuksen tarkistuslistanne"
+      ],
+      "Your security setup": [
+        "Turvallisuusasetuksenne"
       ]
     }
   }

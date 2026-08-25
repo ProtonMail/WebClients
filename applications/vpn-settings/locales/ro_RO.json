@@ -4945,6 +4945,12 @@
       ],
       "Your recovery contacts should be people you know and can contact easily.": [
         "Contactele de recuperare ar trebui să fie persoane pe care le cunoașteți și le puteți contacta cu ușurință."
+      ],
+      "Add 1 more": [
+        "Adăugare încă unul"
+      ],
+      "Explore plans": [
+        "Explorare planuri"
       ]
     },
     "Empty group name": {
@@ -11707,6 +11713,9 @@
       ],
       "ZIP code": [
         "Cod poștal"
+      ],
+      "Enter current password": [
+        "Introduceți parola curentă"
       ]
     },
     "label": {
@@ -11715,6 +11724,9 @@
       ],
       "Recovery phone number": [
         "Număr de telefon de recuperare"
+      ],
+      "Set recovery phone number": [
+        "Setare număr de telefon de recuperare"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15384,6 +15396,9 @@
       ],
       "Your recovery setup is solid, with a few gaps left to close. Each option you add makes your safety net stronger.": [
         "Configurația de recuperare este solidă, cu câteva lacune rămase de acoperit. Fiecare opțiune pe care o adaugi vă consolidează marja de siguranță."
+      ],
+      "Recovery score: ${ score }": [
+        "Scor de recuperare: ${ score }"
       ]
     },
     "Recovery score item": {
@@ -15811,6 +15826,21 @@
     "Safety review": {
       "Review account safety": [
         "Revizuire securitate cont"
+      ],
+      "Code sent to ${ boldValue }": [
+        "Cod trimis către ${ boldValue }"
+      ],
+      "Invalid code": [
+        "Codul nu este valid."
+      ],
+      "Safety review": [
+        "Revizuire securitate"
+      ],
+      "Send a new code": [
+        "Trimitere cod nou"
+      ],
+      "update it now": [
+        "actualizați acum"
       ]
     },
     "saml: Action": {
@@ -20691,6 +20721,282 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "După reușirea verificării, nu eliminați această înregistrare TXT deoarece este necesară pentru a confirma că dețineți domeniul în continuare."
+      ]
+    },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Încercați acum"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Acum aveți acces la noua aplicație ${ CALENDAR_APP_NAME }. ${ link }"
+      ]
+    },
+    "safety_review": {
+      "${ BRAND_NAME } Account email": [
+        "E-mail cont ${ BRAND_NAME }"
+      ],
+      "Account protection": [
+        "Protecție cont"
+      ],
+      "Add": [
+        "Adăugare"
+      ],
+      "Add an emergency contact": [
+        "Adăugați un contact de urgență"
+      ],
+      "Add emergency contacts": [
+        "Adăugați contacte de urgență"
+      ],
+      "Add options": [
+        "Adăugare opțiuni"
+      ],
+      "Add people who you trust and can contact easily. Your emergency contact will be able to access your account and reset your password for you if needed.": [
+        "Adăugați persoane în care aveți încredere și pe care le puteți contacta cu ușurință. Persoana de contact în caz de urgență vă va putea accesa contul și reseta parola, dacă este necesar."
+      ],
+      "Add people you trust and can contact easily. They will be able to help you unlock your data after you reset your password.": [
+        "Adăugați persoane în care aveți încredere și pe care le puteți contacta cu ușurință. Acestea vă vor putea ajuta să vă deblocați datele după ce vă resetați parola."
+      ],
+      "Add phone number": [
+        "Adăugare număr de telefon"
+      ],
+      "Add recovery contacts": [
+        "Adăugare contacte de recuperare"
+      ],
+      "Add recovery email": [
+        "Adăugare adresă de e-mail pentru recuperare"
+      ],
+      "Add recovery phone": [
+        "Adăugare număr de telefon de recuperare"
+      ],
+      "Added emergency contacts": [
+        "Contacte de urgență adăugate."
+      ],
+      "Added recovery contacts": [
+        "Contacte de recuperare adăugate."
+      ],
+      "Added recovery email": [
+        "Adresa de e-mail pentru recuperare a fost adăugată."
+      ],
+      "Added recovery phone": [
+        "S-a adăugat numărul de telefon de recuperare."
+      ],
+      "Allow": [
+        "Permitere"
+      ],
+      "Allow data recovery from this device": [
+        "Permitere recuperare date de pe acest dispozitiv"
+      ],
+      "Allow password reset from the settings": [
+        "Permitere resetare parolă din setări"
+      ],
+      "Allow recovery by email": [
+        "Permitere recuperare prin e-mail"
+      ],
+      "Allow recovery by phone": [
+        "Permitere recuperare prin telefon"
+      ],
+      "Allow scanning a QR code to sign in": [
+        "Permitere scanare cod QR pentru conectare"
+      ],
+      "Allow trusted friends to unlock your data": [
+        "Permiteți persoanelor de încredere să vă deblocheze datele"
+      ],
+      "Back to ${ backLink.appNameString }": [
+        "Înapoi la ${ backLink.appNameString }"
+      ],
+      "Congratulations": [
+        "Felicitări"
+      ],
+      "Didn’t receive it? ${ sendANewCode }": [
+        "Nu l-ați primit? ${ sendANewCode }"
+      ],
+      "Done": [
+        "Gata"
+      ],
+      "Download": [
+        "Descărcare"
+      ],
+      "Download recovery file": [
+        "Descărcare fișier de recuperare"
+      ],
+      "Downloaded recovery file": [
+        "Fișier de recuperare descărcat"
+      ],
+      "Emergency contacts enabled": [
+        "Contactele de urgență sunt activate."
+      ],
+      "Enable device recovery": [
+        "Activare recuperare cu un dispozitiv"
+      ],
+      "Enable email recovery": [
+        "Activare recuperare prin e-mail"
+      ],
+      "Enable emergency contacts": [
+        "Activare contacte de urgență"
+      ],
+      "Enable password reset from settings": [
+        "Activați resetarea parolei din setări."
+      ],
+      "Enable phone recovery": [
+        "Activare recuperare cu număr de telefon"
+      ],
+      "Enable QR code sign-in": [
+        "Activare conectare cu cod QR"
+      ],
+      "Enabled device recovery": [
+        "Recuperarea cu un dispozitiv a fost activată."
+      ],
+      "Enabled email recovery": [
+        "Recuperare prin e-mail activată."
+      ],
+      "Enabled password reset from settings": [
+        "Resetare parolă din setări activată."
+      ],
+      "Enabled phone recovery": [
+        "Recuperare cu număr de telefon a fost activată."
+      ],
+      "Enabled QR code sign-in": [
+        "Conectarea cu cod QR activată."
+      ],
+      "Got it": [
+        "Am înțeles"
+      ],
+      "Here's how you increased your account protection:": [
+        "Iată cum v-ați sporit protecția contului:"
+      ],
+      "If you forget your password, you can sign in using a QR code. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
+        "Dacă vă uitați parola, vă puteți conecta folosind un cod QR. Tot ce trebuie să faceți este să fiți conectat la un serviciu ${ BRAND_NAME } pe un alt dispozitiv."
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, it will allow you to sign in and recover your data. It’s the only way to instantly restore everything, so make sure you keep it somewhere safe.": [
+        "Dacă accesul la contul ${ BRAND_NAME } vi se blochează, aceasta vă va permite să vă conectați și să vă recuperați datele. Este singura modalitate de a restaura instantaneu totul, așa că asigurați-vă că o păstrați într-un loc sigur."
+      ],
+      "If your recovery email has changed, ${ updateEmailLink }.": [
+        "Dacă adresa de e-mail de recuperare s-a schimbat, trebuie să o ${ updateEmailLink }."
+      ],
+      "If your recovery phone has changed, ${ updatePhoneLink }.": [
+        "Dacă numărul de telefon de recuperare s-a schimbat, trebuie să-l ${ updatePhoneLink }."
+      ],
+      "Later": [
+        "Mai târziu"
+      ],
+      "Protect your legacy with Emergency Access": [
+        "Protejați-vă moștenirea cu accesul de urgență"
+      ],
+      "Save recovery phrase": [
+        "Salvare frază de recuperare"
+      ],
+      "Saved recovery phrase": [
+        "Frază de recuperare salvată."
+      ],
+      "Send verification code": [
+        "Trimitere cod de verificare"
+      ],
+      "They must already have a ${ BRAND_NAME } Account.": [
+        "Trebuie să aibă deja un cont ${ BRAND_NAME }."
+      ],
+      "They will not be able to see or access your data.": [
+        "Nu vă vor putea vedea sau accesa datele."
+      ],
+      "This will let you quickly access your ${ BRAND_NAME } Account so you can change your password.": [
+        "Acest lucru vă va permite să vă accesați rapid contul ${ BRAND_NAME }, astfel încât să vă puteți schimba parola."
+      ],
+      "This will let you reset your account password if you’ve lost it, but are still signed in to ${ BRAND_NAME }. It’s often the easiest way to recover your account if you’re signed in.": [
+        "Acest lucru vă va permite să resetați parola contului dacă ați pierdut-o, dar încă aveți un dispozitiv conectat la ${ BRAND_NAME }. Adesea, este cea mai ușoară modalitate de a vă recupera contul dacă aveți acces la cont."
+      ],
+      "This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
+        "Acesta va restabili accesul la e-mailuri, contacte, fișiere, parole și orice alte date criptate din cont după resetarea parolei."
+      ],
+      "To help you remember your password, we’ll periodically ask you to enter it.": [
+        "Pentru a vă ajuta să vă amintiți parola, vi se va solicita periodic să o introduceți."
+      ],
+      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
+        "Pentru a ne asigura că adresa de e-mail vă aparține, introduceți codul de verificare trimis la ${ boldEmail }."
+      ],
+      "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
+        "Pentru a ne asigura că numărul de telefon vă aparține, introduceți codul de verificare trimis la ${ boldPhoneNumber }."
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification code.": [
+        "Pentru a ne asigura că această adresă vă aparține, vă vom trimite un e-mail cu un cod de verificare."
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification link.": [
+        "Pentru a ne asigura că această adresă vă aparține, vă vom trimite un e-mail cu o legătură web de verificare."
+      ],
+      "To make sure this number is really yours, we’ll send an SMS with a verification code.": [
+        "Pentru a ne asigura că acest număr vă aparține, vă vom trimite un SMS cu un cod de verificare."
+      ],
+      "Update": [
+        "Actualizare"
+      ],
+      "Update recovery email": [
+        "Actualizare e-mail de recuperare"
+      ],
+      "Update recovery phone": [
+        "Actualizare telefon de recuperare"
+      ],
+      "Upgrade your plan to enable Emergency Access to your account. This will allow you to designate 1 to 5 people who will be able to reset your password for you.": [
+        "Modificați-vă abonamentul pentru a activa accesul de urgență la cont. Acest lucru vă va permite să desemnați între 1 și 5 persoane care vor putea să vă reseteze parola."
+      ],
+      "Verified password": [
+        "Parola a fost verificată."
+      ],
+      "Verified recovery email": [
+        "E-mail de recuperare verificat."
+      ],
+      "Verified recovery phone": [
+        "Număr de telefon de recuperare verificat."
+      ],
+      "Verify": [
+        "Verificare"
+      ],
+      "Verify password": [
+        "Verificați parola"
+      ],
+      "Verify recovery email": [
+        "Verificare e-mail de recuperare"
+      ],
+      "Verify recovery phone": [
+        "Verificare număr de telefon de recuperare"
+      ],
+      "Verify your password": [
+        "Verificați-vă parola"
+      ],
+      "Verify your recovery email": [
+        "Verificați adresa de e-mail de recuperare"
+      ],
+      "Verify your recovery phone": [
+        "Verificați numărul de telefon de recuperare"
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        "Verificarea adresei de e-mail vă mărește securitatea contului și permite opțiuni suplimentare de recuperare."
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "Verificarea numărului de telefon vă mărește securitatea contului și permite opțiuni suplimentare de recuperare."
+      ],
+      "You can save a data backup on this device. This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset, simply by signing in on this device.": [
+        "Poți salva o copie de rezervă a datelor pe acest dispozitiv. Aceasta va restabili accesul la e-mailuri, contacte, fișiere, parole și orice alte date criptate din cont după resetarea parolei, pur și simplu conectându-vă pe acest dispozitiv."
+      ],
+      "You can use email verification to regain access to your account if you forget your password.": [
+        "Poți folosi verificarea prin e-mail pentru a recâștiga accesul la cont dacă v-ați uitat parola."
+      ],
+      "You can use SMS verification to regain access to your account if you forget your password.": [
+        "Poți folosi verificarea prin SMS pentru a recâștiga accesul la cont dacă v-ați uitat parola."
+      ],
+      "You can use your recovery email to regain access to your account if you forget your password.": [
+        "Vă puteți folosi adresa de e-mail de recuperare pentru a vă recâștiga accesul la cont dacă vă uitați parola."
+      ],
+      "You can use your recovery phone to regain access to your account if you forget your password.": [
+        "Vă puteți folosi recuperarea prin telefon pentru a vă recâștiga accesul la cont dacă vă uitați parola."
+      ],
+      "You don’t need to open or read the file—just download it and store it somewhere safe.": [
+        "Nu trebuie să deschideți sau să citiți fișierul - trebuie doar să îl descărcați și să îl stocați într-un loc sigur."
+      ],
+      "Your recovery checklist": [
+        "Lista de setări pentru recuperare"
+      ],
+      "Your security setup": [
+        "Configurația de securitate"
       ]
     }
   }

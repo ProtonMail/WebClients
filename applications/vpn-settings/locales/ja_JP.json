@@ -4570,6 +4570,12 @@
       ],
       "Your recovery contacts should be people you know and can contact easily.": [
         "復旧連絡先には、あなたが容易に連絡できる知人が望ましいです。"
+      ],
+      "Add 1 more": [
+        "さらに1人追加"
+      ],
+      "Explore plans": [
+        "プランを見る"
       ]
     },
     "Empty group name": {
@@ -9625,6 +9631,9 @@
       ],
       "Recovery phone number": [
         "回復用電話番号"
+      ],
+      "Set recovery phone number": [
+        "回復用電話番号を設定"
       ]
     },
     "Label": {
@@ -10614,6 +10623,9 @@
       ],
       "ZIP code": [
         "郵便番号"
+      ],
+      "Enter current password": [
+        "現在のパスワードを入力"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14070,6 +14082,9 @@
       ],
       "Your recovery setup is solid, with a few gaps left to close. Each option you add makes your safety net stronger.": [
         "お客様の復旧用のセットアップは堅実ですが、まだいくつかの不足している部分があります。オプションを追加するたびに、セーフティネットがさらに強固になります。"
+      ],
+      "Recovery score: ${ score }": [
+        "回復スコア：${ score }"
       ]
     },
     "Recovery score item": {
@@ -14482,6 +14497,21 @@
     "Safety review": {
       "Review account safety": [
         "アカウントの安全性を確認してください"
+      ],
+      "Code sent to ${ boldValue }": [
+        "${ boldValue } にコードを送信しました"
+      ],
+      "Invalid code": [
+        "無効なコード"
+      ],
+      "Safety review": [
+        "安全性レビュー"
+      ],
+      "Send a new code": [
+        "新しいコードを送信"
+      ],
+      "update it now": [
+        "今すぐ更新"
       ]
     },
     "saml: Action": {
@@ -19003,6 +19033,272 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "検証に成功しても、この TXT レコードを削除しないでください。ドメインを引き続き所有していることを確認するためにこの TXT レコードが必要です。"
+      ]
+    },
+    "safety_review": {
+      "${ BRAND_NAME } Account email": [
+        "${ BRAND_NAME }アカウントのメール"
+      ],
+      "Account protection": [
+        "アカウントの保護"
+      ],
+      "Add": [
+        "追加"
+      ],
+      "Add an emergency contact": [
+        "緊急連絡先を追加"
+      ],
+      "Add emergency contacts": [
+        "緊急連絡先を追加"
+      ],
+      "Add options": [
+        "オプションを追加"
+      ],
+      "Add people who you trust and can contact easily. Your emergency contact will be able to access your account and reset your password for you if needed.": [
+        "信頼できて簡単に連絡が取れる人を追加してください。必要に応じて、緊急連絡先の人がお客様のアカウントにアクセスし、代わりにパスワードをリセットできるようになります。"
+      ],
+      "Add people you trust and can contact easily. They will be able to help you unlock your data after you reset your password.": [
+        "信頼できて簡単に連絡が取れる人を追加してください。パスワードをリセットした後、それらの人々がデータのロック解除をサポートできるようになります。"
+      ],
+      "Add phone number": [
+        "電話番号を追加"
+      ],
+      "Add recovery contacts": [
+        "回復用連絡先を追加"
+      ],
+      "Add recovery email": [
+        "回復用メールアドレスを追加"
+      ],
+      "Add recovery phone": [
+        "回復用電話を追加"
+      ],
+      "Added emergency contacts": [
+        "緊急連絡先を追加しました"
+      ],
+      "Added recovery contacts": [
+        "回復用連絡先を追加しました"
+      ],
+      "Added recovery email": [
+        "回復用メールアドレスを追加しました"
+      ],
+      "Added recovery phone": [
+        "回復用電話を追加しました"
+      ],
+      "Allow": [
+        "許可"
+      ],
+      "Allow data recovery from this device": [
+        "このデバイスからのデータ回復を許可"
+      ],
+      "Allow password reset from the settings": [
+        "設定からのパスワードリセットを許可する"
+      ],
+      "Allow recovery by email": [
+        "メールによる回復を許可"
+      ],
+      "Allow recovery by phone": [
+        "電話による回復を許可"
+      ],
+      "Allow scanning a QR code to sign in": [
+        "QRコードのスキャンによるサインインを許可"
+      ],
+      "Allow trusted friends to unlock your data": [
+        "信頼できる友人にデータのロック解除を許可する"
+      ],
+      "Back to ${ backLink.appNameString }": [
+        "${ backLink.appNameString }に戻る"
+      ],
+      "Congratulations": [
+        "おめでとうございます"
+      ],
+      "Didn’t receive it? ${ sendANewCode }": [
+        "届きませんでしたか？${ sendANewCode }"
+      ],
+      "Done": [
+        "完了"
+      ],
+      "Download": [
+        "ダウンロード"
+      ],
+      "Download recovery file": [
+        "回復用ファイルをダウンロード"
+      ],
+      "Downloaded recovery file": [
+        "ダウンロードした回復ファイル"
+      ],
+      "Emergency contacts enabled": [
+        "緊急連絡先が有効になりました"
+      ],
+      "Enable device recovery": [
+        "デバイス回復を有効化"
+      ],
+      "Enable email recovery": [
+        "メールでの回復を有効化"
+      ],
+      "Enable emergency contacts": [
+        "緊急連絡先を有効化"
+      ],
+      "Enable password reset from settings": [
+        "設定からのパスワードリセットを有効化"
+      ],
+      "Enable phone recovery": [
+        "電話での回復を有効化"
+      ],
+      "Enable QR code sign-in": [
+        "QRコードでのサインインを有効化"
+      ],
+      "Enabled device recovery": [
+        "デバイス回復を有効化しました"
+      ],
+      "Enabled email recovery": [
+        "メールでの回復を有効化しました"
+      ],
+      "Enabled password reset from settings": [
+        "設定からのパスワードリセットを有効化しました"
+      ],
+      "Enabled phone recovery": [
+        "電話での回復を有効化しました"
+      ],
+      "Enabled QR code sign-in": [
+        "QRコードでのサインインを有効化しました"
+      ],
+      "Got it": [
+        "了解しました"
+      ],
+      "Here's how you increased your account protection:": [
+        "お客様のアカウント保護は以下のように強化されました："
+      ],
+      "If you forget your password, you can sign in using a QR code. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
+        "パスワードを忘れた場合、QRコードを使用してサインインできます。別のデバイスで${ BRAND_NAME }サービスにサインインしている必要があります。"
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, it will allow you to sign in and recover your data. It’s the only way to instantly restore everything, so make sure you keep it somewhere safe.": [
+        "${ BRAND_NAME }アカウントからロックアウトされた場合、サインインしてデータを回復できるようになります。すべてを瞬時に復元できる唯一の方法ですので、必ず安全な場所に保管してください。"
+      ],
+      "If your recovery email has changed, ${ updateEmailLink }.": [
+        "回復用メールアドレスが変更された場合は、${ updateEmailLink }。"
+      ],
+      "If your recovery phone has changed, ${ updatePhoneLink }.": [
+        "回復用電話番号が変更された場合は、${ updatePhoneLink }。"
+      ],
+      "Later": [
+        "後で"
+      ],
+      "Protect your legacy with Emergency Access": [
+        "緊急アクセスで大切なデータを保護"
+      ],
+      "Save recovery phrase": [
+        "回復フレーズを保存"
+      ],
+      "Saved recovery phrase": [
+        "保存された回復フレーズ"
+      ],
+      "Send verification code": [
+        "検証コードを送信"
+      ],
+      "They must already have a ${ BRAND_NAME } Account.": [
+        "それらの人々はすでに${ BRAND_NAME }アカウントを所有している必要があります。"
+      ],
+      "They will not be able to see or access your data.": [
+        "それらの人々がお客様のデータを見たりアクセスしたりすることはできません。"
+      ],
+      "This will let you quickly access your ${ BRAND_NAME } Account so you can change your password.": [
+        "これにより${ BRAND_NAME }アカウントにすばやくアクセスして、パスワードを変更できます。"
+      ],
+      "This will let you reset your account password if you’ve lost it, but are still signed in to ${ BRAND_NAME }. It’s often the easiest way to recover your account if you’re signed in.": [
+        "これにより、パスワードを忘れた場合でも${ BRAND_NAME }にサインインした状態であれば、アカウントパスワードをリセットできます。サインインしている場合、これが最も簡単なアカウント回復方法になることがよくあります。"
+      ],
+      "This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
+        "これにより、パスワードリセット後にお客様のアカウントのメール、連絡先、ファイル、パスワード、その他すべての暗号化されたデータへのアクセスが復元されます。"
+      ],
+      "To help you remember your password, we’ll periodically ask you to enter it.": [
+        "パスワードを忘れないよう、定期的にパスワードの入力を求める画面が表示されます。"
+      ],
+      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
+        "メールアドレスがお客様のものであることを確認するため、${ boldEmail }に送信された検証コードを入力してください。"
+      ],
+      "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
+        "電話番号がお客様のものであることを確認するため、${ boldPhoneNumber }に送信された検証コードを入力してください。"
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification code.": [
+        "このアドレスが本当にご自身のものであるか確認するため、検証コードを記載したメールを送信します。"
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification link.": [
+        "このアドレスが本当に確認されたものであることを確認するため、検証リンクが含まれるメールを送信します。"
+      ],
+      "To make sure this number is really yours, we’ll send an SMS with a verification code.": [
+        "この番号が本当にご自身のものであるか確認するため、検証コードを記載したSMSを送信します。"
+      ],
+      "Update": [
+        "更新"
+      ],
+      "Update recovery email": [
+        "回復用メールアドレスを更新"
+      ],
+      "Update recovery phone": [
+        "回復用電話番号を更新"
+      ],
+      "Upgrade your plan to enable Emergency Access to your account. This will allow you to designate 1 to 5 people who will be able to reset your password for you.": [
+        "アカウントへの緊急アクセスを有効にするには、プランをアップグレードしてください。これにより、パスワードを代わりにリセットできる人を1〜5人指定できるようになります。"
+      ],
+      "Verified password": [
+        "検証済みのパスワード"
+      ],
+      "Verified recovery email": [
+        "検証済みの回復用メールアドレス"
+      ],
+      "Verified recovery phone": [
+        "検証済みの回復用電話"
+      ],
+      "Verify": [
+        "検証"
+      ],
+      "Verify password": [
+        "パスワードを検証"
+      ],
+      "Verify recovery email": [
+        "回復用メールアドレスを検証"
+      ],
+      "Verify recovery phone": [
+        "回復用電話を検証"
+      ],
+      "Verify your password": [
+        "パスワードを確認"
+      ],
+      "Verify your recovery email": [
+        "回復用メールアドレスの検証"
+      ],
+      "Verify your recovery phone": [
+        "回復用電話を検証しましょう"
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        "メールアドレスを確認することでアカウントのセキュリティが向上し、復旧の追加オプションが利用可能になります。"
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "電話番号を確認することでアカウントのセキュリティが向上し、復旧の追加オプションが利用可能になります。"
+      ],
+      "You can save a data backup on this device. This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset, simply by signing in on this device.": [
+        "このデバイスにデータのバックアップを保存できます。このデバイスでサインインするだけで、パスワードリセット後にお客様のアカウントのメール、連絡先、ファイル、パスワード、その他すべての暗号化されたデータへのアクセスが復元されます。"
+      ],
+      "You can use email verification to regain access to your account if you forget your password.": [
+        "パスワードを忘れた場合、メール検証を使用してアカウントへのアクセスを回復できます。"
+      ],
+      "You can use SMS verification to regain access to your account if you forget your password.": [
+        "パスワードを忘れた場合、SMS検証を使用してアカウントへのアクセスを回復できます。"
+      ],
+      "You can use your recovery email to regain access to your account if you forget your password.": [
+        "パスワードを忘れた場合、回復用メールアドレスを使用してアカウントへのアクセスを回復できます。"
+      ],
+      "You can use your recovery phone to regain access to your account if you forget your password.": [
+        "パスワードを忘れた場合、回復用電話を使用してアカウントへのアクセスを回復できます。"
+      ],
+      "You don’t need to open or read the file—just download it and store it somewhere safe.": [
+        "ファイルを開いたり読んだりする必要はありません。ダウンロードして安全な場所に保管してください。"
+      ],
+      "Your recovery checklist": [
+        "お客様の回復チェックリスト"
+      ],
+      "Your security setup": [
+        "お客様のセキュリティ設定"
       ]
     }
   }
