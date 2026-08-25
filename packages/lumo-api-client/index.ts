@@ -59,11 +59,13 @@ export {
     isDesktopNativeTool,
     createDesktopClientToolExecutor,
     getDesktopConnectors,
+    openDesktopSettings,
     respondDesktopToolApproval,
     subscribeToolApprovals,
     getPendingToolApprovals,
     resolveToolApproval,
     type DesktopConnector,
+    type DesktopSettingsTab,
     type DesktopToolApprovalRequest,
 } from './core/desktop-tools';
 
