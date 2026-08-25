@@ -1,4 +1,12 @@
-import { prepareContentToInsert } from '../message/messageContent';
+import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
+import { isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
+
+import {
+    getComposerDefaultFontStyles,
+    insertTextBeforeContent,
+    prepareContentToInsert,
+} from '../message/messageContent';
 import { CLASSNAME_SIGNATURE_CONTAINER } from '../message/messageSignature';
 
 export type ComposerReturnType = 'html' | 'plaintext';
@@ -150,4 +158,21 @@ export const setMessageContentBeforeBlockquote = (args: SetContentBeforeBlockquo
     }
 
     throw new Error('Unsupported editor type');
+};
+
+export const insertBodyIntoNewDraft = (message: MessageState, bodyBeforeQuote: string, mailSettings: MailSettings) => {
+    if (testIsPlainText(message.data)) {
+        // Not setMessageContentBeforeBlockquote: its plaintext branch drops the quote when the address has no signature.
+        const content = prepareContentToInsert(bodyBeforeQuote, true, message.localID);
+
+        return insertTextBeforeContent(message, content, mailSettings, false);
+    }
+
+    return setMessageContentBeforeBlockquote({
+        editorType: 'html',
+        editorContent: message.messageDocument?.document?.innerHTML ?? '',
+        content: bodyBeforeQuote,
+        wrapperDivStyles: getComposerDefaultFontStyles(mailSettings),
+        messageID: message.localID,
+    });
 };
