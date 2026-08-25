@@ -1,11 +1,11 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { FilterStatement } from '@proton/sieve/filterModel';
 import clsx from '@proton/utils/clsx';
 
 import Radio from '../../../components/input/Radio';
 import type { SimpleFilterModalModel } from '../interfaces';
-import { FilterStatement } from '../interfaces';
 import FilterConditionsFormRow from './FilterConditionsFormRow';
 import useFilterConditions from './useFilterConditions';
 

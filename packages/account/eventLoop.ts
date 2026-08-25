@@ -1,6 +1,5 @@
 import { createAction } from '@reduxjs/toolkit';
 
-import type { Filter } from '@proton/components/containers/filters/interfaces';
 import type { Entitlement } from '@proton/payments/core/entitlements/interface';
 import type { Invoice, SavedPaymentMethod } from '@proton/payments/core/interface';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
@@ -37,6 +36,7 @@ import type {
 } from '@proton/shared/lib/interfaces/calendar/EventManager';
 import type { Contact, ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import type { AuthDeviceOutput, MemberAuthDeviceOutput } from '@proton/shared/lib/keys/device';
+import type { Filter } from '@proton/sieve/filterModel';
 
 import type { IncomingDelegatedAccessOutput, OutgoingDelegatedAccessOutput } from './delegatedAccess/interface';
 
