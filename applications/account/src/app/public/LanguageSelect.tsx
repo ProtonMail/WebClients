@@ -1,10 +1,11 @@
 import type { CSSProperties } from 'react';
 import { useHistory } from 'react-router-dom';
 
+import { useConfig } from '@proton/app-context/useConfig';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import type { ThemeColorUnion } from '@proton/colors/types';
-import { DropdownMenu, DropdownMenuButton, SimpleDropdown, useConfig, useForceRefresh } from '@proton/components';
+import { DropdownMenu, DropdownMenuButton, SimpleDropdown, useForceRefresh } from '@proton/components';
 import { IcGlobe } from '@proton/icons/icons/IcGlobe';
 import { localeCode } from '@proton/shared/lib/i18n';
 import { getLanguageCode } from '@proton/shared/lib/i18n/helper';
@@ -34,7 +35,8 @@ const LanguageSelect = ({ className, style, locales = {}, outlined, globe, color
         const { localeCode } = await loadLocales({ locale, locales, userSettings: undefined });
         forceRefresh();
         history.push(
-            `${getLocalePathPrefix(getLocaleMapping(localeCode) || '')}${location.pathname}${location.search}${location.hash
+            `${getLocalePathPrefix(getLocaleMapping(localeCode) || '')}${location.pathname}${location.search}${
+                location.hash
             }`
         );
     };

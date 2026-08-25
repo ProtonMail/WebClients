@@ -1,9 +1,9 @@
 import { addDays } from 'date-fns';
 
+import { useConfig } from '@proton/app-context/useConfig';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
-import useConfig from '@proton/components/hooks/useConfig';
 import useForceRefresh from '@proton/components/hooks/useForceRefresh';
 import { setCookie } from '@proton/shared/lib/helpers/cookies';
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';

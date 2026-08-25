@@ -1,13 +1,13 @@
 import type { ReactNode } from 'react';
 
 import { useUser } from '@proton/account/user/hooks';
+import { useConfig } from '@proton/app-context/useConfig';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { DashboardCard, DashboardCardContent, DashboardCardImage } from '@proton/atoms/DashboardCard/DashboardCard';
 import { DashboardGridSection } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
-import useConfig from '../../../../../hooks/useConfig';
 import ProductLink from '../../../../app/ProductLink';
 import type { PlanCardFeatureDefinition } from '../../../../payments/features/interface';
 import { PlanCardFeatureList } from '../../../../payments/subscription/PlanCardFeatures';

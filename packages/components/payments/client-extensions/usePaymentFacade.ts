@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 
+import { useConfig } from '@proton/app-context/useConfig';
 import useLoading from '@proton/hooks/useLoading';
 import type { BillingAddress } from '@proton/payments/core/billing-address/billing-address';
 import { type ADDON_NAMES, PAYMENT_METHOD_TYPES, type PLANS } from '@proton/payments/core/constants';
@@ -30,7 +31,6 @@ import { useFlag } from '@proton/unleash/useFlag';
 
 import useApi from '../../hooks/useApi';
 import useAuthentication from '../../hooks/useAuthentication';
-import useConfig from '../../hooks/useConfig';
 import type { OnMethodChangedHandler, Operations, OperationsData } from '../react-extensions';
 import { usePaymentFacade as useInnerPaymentFacade } from '../react-extensions';
 import type { ThemeCode, ThemeLike } from './helpers';

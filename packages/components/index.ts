@@ -748,7 +748,6 @@ export { default as useAutocompleteAriaProps } from './hooks/useAutocompleteAria
 export { default as useBeforeUnload } from './hooks/useBeforeUnload';
 export { default as useCalendarShareInvitationActions } from './hooks/useCalendarShareInvitationActions';
 export { default as useCalendarShareInvitations } from './hooks/useCalendarShareInvitations';
-export { default as useConfig } from './hooks/useConfig';
 export { default as useDragMove } from './hooks/useDragMove';
 export { default as useDragOver } from './hooks/useDragOver';
 export { default as useDropdownArrowNavigation } from './hooks/useDropdownArrowNavigation';

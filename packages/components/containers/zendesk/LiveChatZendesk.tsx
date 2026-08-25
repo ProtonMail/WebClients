@@ -3,13 +3,13 @@ import { useEffect, useImperativeHandle, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useConfig } from '@proton/app-context/useConfig';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import * as sessionStorageWrapper from '@proton/shared/lib/helpers/sessionStorage';
 import * as localStorageWrapper from '@proton/shared/lib/helpers/storage';
 import type { Api } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
-import useConfig from '../../hooks/useConfig';
 import useNotifications from '../../hooks/useNotifications';
 import { useSilentApi } from '../../hooks/useSilentApi';
 import type { ZendeskRef } from './helper';

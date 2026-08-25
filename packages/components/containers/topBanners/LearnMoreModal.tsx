@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useConfig } from '@proton/app-context/useConfig';
 import { Button } from '@proton/atoms/Button/Button';
 import { getPlanTitle } from '@proton/payments/core/subscription/helpers';
 import chronometerSvg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-chronometer.svg';
@@ -20,7 +21,6 @@ import type { ModalStateProps } from '../../components/modalTwo/useModalState';
 import Time from '../../components/time/Time';
 import TimeRemaining from '../../components/timeRemaining/TimeRemaining';
 import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
-import useConfig from '../../hooks/useConfig';
 import { useCancelSubscriptionFlow } from '../payments/subscription/cancelSubscription/useCancelSubscriptionFlow';
 
 const getTrialInfo = (planTitle: string | undefined) => {

@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { userSettingsActions } from '@proton/account/userSettings';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { useConfig } from '@proton/app-context/useConfig';
 import { Href } from '@proton/atoms/Href/Href';
 import { IcLanguage } from '@proton/icons/icons/IcLanguage';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
@@ -15,7 +16,6 @@ import noop from '@proton/utils/noop';
 
 import Option from '../../components/option/Option';
 import useApi from '../../hooks/useApi';
-import useConfig from '../../hooks/useConfig';
 import useErrorHandler from '../../hooks/useErrorHandler';
 import useNotifications from '../../hooks/useNotifications';
 import { SettingsIconRow } from '../account/SettingsIconRow';

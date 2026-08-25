@@ -2,6 +2,7 @@ import type { SyntheticEvent } from 'react';
 
 import { c } from 'ttag';
 
+import { useConfig } from '@proton/app-context/useConfig';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { ProtonLoader } from '@proton/atoms/ProtonLoader/ProtonLoader';
@@ -14,7 +15,6 @@ import { getIsIframe } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 
 import TextLoader from '../../components/loader/TextLoader';
-import useConfig from '../../hooks/useConfig';
 import useDocumentTitle from '../../hooks/useDocumentTitle';
 
 interface Props {

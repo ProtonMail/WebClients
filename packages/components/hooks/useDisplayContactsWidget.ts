@@ -1,7 +1,7 @@
+import { useConfig } from '@proton/app-context/useConfig';
 import { getDisplayContactsInDrawer } from '@proton/shared/lib/drawer/helpers';
 
 import useActiveBreakpoint from './useActiveBreakpoint';
-import useConfig from './useConfig';
 
 const useDisplayContactsWidget = () => {
     const { viewportWidth } = useActiveBreakpoint();

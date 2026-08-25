@@ -2,17 +2,11 @@ import { Fragment, useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useConfig } from '@proton/app-context/useConfig';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Href } from '@proton/atoms/Href/Href';
 import type { OnLoginCallback } from '@proton/components';
-import {
-    GenericError,
-    InputFieldTwo,
-    NotificationButton,
-    useConfig,
-    useErrorHandler,
-    useNotifications,
-} from '@proton/components';
+import { GenericError, InputFieldTwo, NotificationButton, useErrorHandler, useNotifications } from '@proton/components';
 import { AuthStep, AuthType } from '@proton/components/containers/login/interface';
 import { handleLogin, handleNextLogin } from '@proton/components/containers/login/loginActions';
 import { createPreAuthKTVerifier } from '@proton/key-transparency/shared';

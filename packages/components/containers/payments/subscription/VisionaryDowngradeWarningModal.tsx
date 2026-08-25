@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useConfig } from '@proton/app-context/useConfig';
 import { Button } from '@proton/atoms/Button/Button';
 import type { FreeSubscription } from '@proton/payments/core/interface';
 import { getPlanTitle } from '@proton/payments/core/subscription/helpers';
@@ -14,7 +15,6 @@ import ModalTwoFooter from '../../../components/modalTwo/ModalFooter';
 import ModalTwoHeader from '../../../components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '../../../components/modalTwo/useModalState';
 import { useModalTwoPromise } from '../../../components/modalTwo/useModalTwo';
-import useConfig from '../../../hooks/useConfig';
 
 const getVisionaryWarningTitle = () => {
     return c('Payments.ModificationWarning').t`Your plan includes this feature already.`;

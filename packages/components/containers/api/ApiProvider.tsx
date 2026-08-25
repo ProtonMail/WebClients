@@ -5,6 +5,7 @@ import isDeepEqual from 'lodash/isEqual';
 import { type ApiStatusState, apiStatusActions, defaultApiStatus } from '@proton/account/apiStatus';
 import { selectUser } from '@proton/account/user';
 import { ApiContext } from '@proton/app-context/apiContext';
+import { useConfig } from '@proton/app-context/useConfig';
 import { useDispatch, useStore } from '@proton/redux-shared-store/sharedProvider';
 import type { ApiListenerCallback, ApiWithListener } from '@proton/shared/lib/api/createApi';
 import { handleInvalidSession } from '@proton/shared/lib/authentication/logout';
@@ -12,7 +13,6 @@ import { APPS } from '@proton/shared/lib/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 
 import useAuthentication from '../../hooks/useAuthentication';
-import useConfig from '../../hooks/useConfig';
 import useNotifications from '../../hooks/useNotifications';
 import ApiModals from './ApiModals';
 import ApiServerTimeContext, { type ApiServerTimeWithTimestamp } from './apiServerTimeContext';

@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import { useConfig } from '@proton/app-context/useConfig';
 import { Button } from '@proton/atoms/Button/Button';
 import { reportCancelPlan } from '@proton/shared/lib/api/reports';
 import { getBrowser, getOS } from '@proton/shared/lib/helpers/browser';
@@ -23,7 +24,6 @@ import TextAreaTwo from '../../../../components/v2/input/TextArea';
 import useFormErrors from '../../../../components/v2/useFormErrors';
 import { getClientName } from '../../../../helpers/report';
 import useApi from '../../../../hooks/useApi';
-import useConfig from '../../../../hooks/useConfig';
 import useErrorHandler from '../../../../hooks/useErrorHandler';
 
 enum STEP {

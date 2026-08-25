@@ -5,6 +5,7 @@ import { c, msgid } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useConfig } from '@proton/app-context/useConfig';
 import { Button } from '@proton/atoms/Button/Button';
 import { useGetCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import { updateMember } from '@proton/shared/lib/api/calendars';
@@ -33,7 +34,6 @@ import noop from '@proton/utils/noop';
 
 import BasicModal from '../../../components/modalTwo/BasicModal';
 import useApi from '../../../hooks/useApi';
-import useConfig from '../../../hooks/useConfig';
 import useEventManager from '../../../hooks/useEventManager';
 import { useCalendarModelEventManager } from '../../eventManager/calendar/CalendarModelEventManagerProvider';
 import AttachingModalContent from './AttachingModalContent';

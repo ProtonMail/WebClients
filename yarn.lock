@@ -11440,6 +11440,7 @@ __metadata:
   resolution: "@proton/vpn@workspace:packages/vpn"
   dependencies:
     "@proton/account": "workspace:^"
+    "@proton/app-context": "workspace:^"
     "@proton/atoms": "workspace:^"
     "@proton/components": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"

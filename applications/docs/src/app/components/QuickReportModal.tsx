@@ -2,7 +2,7 @@ import type { ModalStateProps } from '@proton/components/components/modalTwo/use
 import BasicModal from '@proton/components/components/modalTwo/BasicModal'
 import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo'
 import useApi from '@proton/components/hooks/useApi'
-import useConfig from '@proton/components/hooks/useConfig'
+import { useConfig } from '@proton/app-context/useConfig'
 import TextAreaTwo from '@proton/components/components/v2/input/TextArea'
 import InputFieldTwo from '@proton/components/components/v2/field/InputField'
 import Checkbox from '@proton/components/components/input/Checkbox'

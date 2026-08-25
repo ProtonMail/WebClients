@@ -2,11 +2,10 @@ import { useCallback } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { AUTH_ACCOUNT_FAILED_GENERIC } from '@proton/shared/lib/constants';
 import { traceError as traceSentryError } from '@proton/shared/lib/helpers/sentry';
-
-import useNotifications from './useNotifications';
 
 const ignoreErrorNames = ['InactiveSession', 'AppVersionBadError', 'AbortError'];
 const ignoreErrorCodes = [AUTH_ACCOUNT_FAILED_GENERIC];
@@ -41,7 +40,8 @@ const useErrorHandler = () => {
             const shouldNotify =
                 notify &&
                 !error.cancel &&
-                (!ignoreErrorNames.includes(error.name) && !ignoreErrorCodes.includes(error.code));
+                !ignoreErrorNames.includes(error.name) &&
+                !ignoreErrorCodes.includes(error.code);
             if (shouldNotify) {
                 createNotification({ type: 'error', text: apiErrorMessage || errorMessage });
             }

@@ -1,6 +1,6 @@
 import { fireEvent, screen } from '@testing-library/react';
 
-import useConfig from '@proton/components/hooks/useConfig';
+import { useConfig } from '@proton/app-context/useConfig';
 import type { PaymentFacade } from '@proton/components/payments/client-extensions';
 import { APPS } from '@proton/shared/lib/constants';
 import { renderWithProviders } from '@proton/testing/lib/context/renderWithProviders';
@@ -20,7 +20,7 @@ jest.mock('@proton/unleash/useGetFlag', () => ({
 }));
 
 // Mock useConfig to provide APP_NAME
-jest.mock('@proton/components/hooks/useConfig');
+jest.mock('@proton/app-context/useConfig');
 
 const mockUseFlag = useFlag as jest.MockedFunction<typeof useFlag>;
 

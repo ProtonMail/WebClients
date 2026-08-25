@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { useConfig } from '@proton/app-context/useConfig';
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
 import { DashboardCard, DashboardCardContent } from '@proton/atoms/DashboardCard/DashboardCard';
@@ -19,7 +20,6 @@ import TableHeaderCell from '@proton/components/components/table/TableHeaderCell
 import TableRow from '@proton/components/components/table/TableRow';
 import { LastChanged } from '@proton/components/containers/recovery/LastChanged';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import useConfig from '@proton/components/hooks/useConfig';
 import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
 import { IcHourglass } from '@proton/icons/icons/IcHourglass';
 import { IcPlus } from '@proton/icons/icons/IcPlus';

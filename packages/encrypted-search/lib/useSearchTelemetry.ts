@@ -1,5 +1,5 @@
+import { useConfig } from '@proton/app-context/useConfig';
 import useApi from '@proton/components/hooks/useApi';
-import useConfig from '@proton/components/hooks/useConfig';
 import { getLabelNameAnonymised } from '@proton/mail/helpers/location';
 import { TelemetryEncryptedSearchEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import type { APP_NAMES } from '@proton/shared/lib/constants';

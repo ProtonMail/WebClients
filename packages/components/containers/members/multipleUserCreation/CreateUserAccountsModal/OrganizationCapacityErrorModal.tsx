@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import type { OrganizationCapacityError } from '@proton/account/members/validateOrganizationCapacity';
 import { ORGANIZATION_CAPACITY_ERROR_TYPE } from '@proton/account/members/validateOrganizationCapacity';
+import { useConfig } from '@proton/app-context/useConfig';
 import { Button } from '@proton/atoms/Button/Button';
 import { useLoading } from '@proton/hooks';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -11,7 +12,6 @@ import { addUpsellPath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/u
 import SettingsLink from '../../../../components/link/SettingsLink';
 import type { ModalProps } from '../../../../components/modalTwo/Modal';
 import Prompt from '../../../../components/prompt/Prompt';
-import useConfig from '../../../../hooks/useConfig';
 
 interface Props extends ModalProps {
     error: OrganizationCapacityError;

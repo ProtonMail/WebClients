@@ -23,7 +23,9 @@ jest.mock('../../../hooks/useAuthentication', () => ({
     })),
 }));
 
-jest.mock('../../../hooks/useConfig', () => () => ({ API_URL: 'api' }));
+jest.mock('@proton/app-context/useConfig', () => ({
+    useConfig: () => ({ API_URL: 'api' }),
+}));
 
 jest.mock('@proton/mail/store/contactEmails/hooks', () => ({
     __esModule: true,

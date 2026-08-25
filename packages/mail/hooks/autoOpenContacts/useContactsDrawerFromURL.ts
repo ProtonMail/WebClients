@@ -5,7 +5,7 @@ import type { PrivateKeyReference } from '@protontech/crypto';
 import { c } from 'ttag';
 
 import { useUserKeys } from '@proton/account/userKeys/hooks';
-import useConfig from '@proton/app-context/useConfig';
+import { useConfig } from '@proton/app-context/useConfig';
 import useNotifications from '@proton/app-context/useNotifications';
 import type { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
 import type { ContactGroupEditProps } from '@proton/components/containers/contacts/group/ContactGroupEditModal';

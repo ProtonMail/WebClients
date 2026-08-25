@@ -32,9 +32,9 @@ jest.mock('@proton/account/addressKeys/hooks', () => ({
     useGetAddressKeys: jest.fn(() => []),
 }));
 
-jest.mock('../../../../../hooks/useConfig', () => ({
+jest.mock('@proton/app-context/useConfig', () => ({
     __esModule: true,
-    default: () => {
+    useConfig: () => {
         return { APP_NAME: 'proton-calendar' };
     },
 }));

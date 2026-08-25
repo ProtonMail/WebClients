@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { useConfig } from '@proton/app-context/useConfig';
 import { Button } from '@proton/atoms/Button/Button';
 import { useLoading } from '@proton/hooks';
 import { PASSWORD_WRONG_ERROR, type TwoFactorCredentials, getInfo } from '@proton/shared/lib/api/auth';
@@ -27,7 +28,6 @@ import InputFieldTwo from '../../components/v2/field/InputField';
 import PasswordInputTwo from '../../components/v2/input/PasswordInput';
 import useFormErrors from '../../components/v2/useFormErrors';
 import useApi from '../../hooks/useApi';
-import useConfig from '../../hooks/useConfig';
 import useErrorHandler from '../../hooks/useErrorHandler';
 import { TwoFactorAuth, type TwoFactorAuthRef } from './TwoFactorAuth';
 import { getReAuthTwoFactorTypes } from './getReAuthTwoFactorTypes';

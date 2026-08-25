@@ -3,13 +3,13 @@ import { useEffect, useState } from 'react';
 
 import { useGetPaymentStatus } from '@proton/account/paymentStatus/hooks';
 import { useGetPlans } from '@proton/account/plans/hooks';
+import { useConfig } from '@proton/app-context/useConfig';
 import type { OnLoginCallback } from '@proton/components';
 import {
     StandardLoadErrorPage,
     UnAuthenticated,
     useActiveBreakpoint,
     useApi,
-    useConfig,
     useErrorHandler,
 } from '@proton/components';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';

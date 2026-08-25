@@ -1,5 +1,6 @@
 import type { Ref } from 'react';
 
+import { useConfig } from '@proton/app-context/useConfig';
 import type { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { AvailablePaymentMethod, Currency, FreeSubscription } from '@proton/payments/core/interface';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
@@ -8,7 +9,6 @@ import type { TaxCountryHook } from '@proton/payments/ui/billing-address/hooks/u
 import type { VatNumberHook } from '@proton/payments/ui/billing-address/hooks/useVatNumber';
 
 import useAuthentication from '../../hooks/useAuthentication';
-import useConfig from '../../hooks/useConfig';
 import type { ThemeCode, usePaymentFacade } from '../../payments/client-extensions/index';
 import { PaymentsNoApi } from './Payment';
 

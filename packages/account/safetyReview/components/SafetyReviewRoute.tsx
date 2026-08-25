@@ -1,7 +1,7 @@
 import { type ReactNode, useState } from 'react';
 import { Redirect, useLocation } from 'react-router-dom';
 
-import useConfig from '@proton/components/hooks/useConfig';
+import { useConfig } from '@proton/app-context/useConfig';
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 
 import { useLoadRecoveryState } from '../recoveryState/useRecoveryState';

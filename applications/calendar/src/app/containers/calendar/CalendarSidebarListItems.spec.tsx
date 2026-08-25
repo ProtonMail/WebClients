@@ -70,9 +70,9 @@ jest.mock('@proton/account/user/hooks', () => ({
     useGetUser: jest.fn(() => [{ hasPaidMail: true }, false]),
 }));
 
-jest.mock('@proton/components/hooks/useConfig', () => ({
+jest.mock('@proton/app-context/useConfig', () => ({
     __esModule: true,
-    default: jest.fn(() => ({ APP_NAME: 'proton-calendar' })),
+    useConfig: jest.fn(() => ({ APP_NAME: 'proton-calendar' })),
 }));
 
 jest.mock('@proton/components/hooks/useGetEncryptionPreferences', () => ({

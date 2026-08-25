@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useConfig } from '@proton/app-context/useConfig';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { getHasVpnB2BPlan } from '@proton/payments/core/subscription/helpers';
@@ -12,7 +13,6 @@ import { UserType } from '@proton/shared/lib/interfaces';
 
 import AppLink from '../../../components/link/AppLink';
 import SettingsLink from '../../../components/link/SettingsLink';
-import useConfig from '../../../hooks/useConfig';
 
 const InternalAppLink = () => {
     return (

@@ -1,6 +1,7 @@
 import { subDays } from 'date-fns';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
+import { useConfig } from '@proton/app-context/useConfig';
 import useFeature from '@proton/features/useFeature';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import { SubscriptionPlatform } from '@proton/payments/core/subscription/constants';
@@ -8,7 +9,6 @@ import type { Subscription } from '@proton/payments/core/subscription/interface'
 import { APPS } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import useConfig from '../../../../../hooks/useConfig';
 import { HIDE_OFFER } from '../helpers/interface';
 import { paidConfig } from '../monthlyPaidUserNudgeConfig';
 import { useMonthlyUpsellEligibility } from './useMonthlyUpsellEligibility';
@@ -19,7 +19,7 @@ const mockUseSubscription = useSubscription as jest.Mock;
 jest.mock('@proton/features/useFeature');
 const mockUseFeature = useFeature as jest.Mock;
 
-jest.mock('../../../../../hooks/useConfig');
+jest.mock('@proton/app-context/useConfig');
 const mockUseConfig = useConfig as jest.Mock;
 
 jest.mock('@proton/unleash/useFlag');

@@ -7,13 +7,13 @@ import { useGetPaymentStatus } from '@proton/account/paymentStatus/hooks';
 import { useGetPlans } from '@proton/account/plans/hooks';
 import { generateDeferredMnemonicData } from '@proton/account/recovery/recoveryKit/generateDeferredMnemonicData';
 import { usePrefetchGenerateRecoveryKit } from '@proton/account/recovery/recoveryKit/usePrefetchGenerateRecoveryKit';
+import { useConfig } from '@proton/app-context/useConfig';
 import type { OnLoginCallback } from '@proton/components';
 import {
     StandardLoadErrorPage,
     UnAuthenticated,
     useActiveBreakpoint,
     useApi,
-    useConfig,
     useErrorHandler,
     useModalState,
 } from '@proton/components';

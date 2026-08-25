@@ -1,11 +1,11 @@
 import { useOrganization } from '@proton/account/organization/hooks';
+import { useConfig } from '@proton/app-context/useConfig';
 import { getIsB2BAudienceFromPlan } from '@proton/payments/core/plan/helpers';
 import { Product } from '@proton/shared/lib/ProductEnum';
 import { APPS } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import useAllowedProducts from '../../../../containers/organization/accessControl/useAllowedProducts';
-import useConfig from '../../../../hooks/useConfig';
 
 // This hook returns if the VPN dashboard is available in the drawer or not
 const useVPNDrawer = () => {

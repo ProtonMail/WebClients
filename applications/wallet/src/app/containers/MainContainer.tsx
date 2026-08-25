@@ -2,7 +2,8 @@ import { useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import { setPanicHook } from '@proton/andromeda';
-import { ContactEmailsProvider, SubscriptionModalProvider, useActiveBreakpoint, useConfig } from '@proton/components';
+import { useConfig } from '@proton/app-context/useConfig';
+import { ContactEmailsProvider, SubscriptionModalProvider, useActiveBreakpoint } from '@proton/components';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 
 import { PrivateWalletLayout } from '../components';
