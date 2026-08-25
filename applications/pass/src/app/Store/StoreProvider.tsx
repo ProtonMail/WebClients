@@ -13,7 +13,7 @@ import { spotlight } from 'proton-pass-web/lib/spotlight';
 import { sshAgent } from 'proton-pass-web/lib/ssh-agent';
 import { telemetry } from 'proton-pass-web/lib/telemetry';
 
-import useNotifications from '@proton/components/hooks/useNotifications';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { AppStateManager } from '@proton/pass/components/Core/AppStateManager';
 import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';

@@ -14,6 +14,7 @@ import ConnectGmailButton from '@proton/activation/src/components/SettingsArea/C
 import { BYOE_CLAIM_PROTON_ADDRESS_SOURCE } from '@proton/activation/src/constants';
 import useBYOEAddressesCounts from '@proton/activation/src/hooks/useBYOEAddressesCounts';
 import { EASY_SWITCH_SOURCES } from '@proton/activation/src/interface';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import { ALL_MEMBERS_ID, APPS, BRAND_NAME, MAIL_APP_NAME, MEMBER_PRIVATE } from '@proton/shared/lib/constants';
@@ -26,7 +27,6 @@ import Alert from '../../components/alert/Alert';
 import SettingsLink from '../../components/link/SettingsLink';
 import Loader from '../../components/loader/Loader';
 import useModalState from '../../components/modalTwo/useModalState';
-import useNotifications from '../../hooks/useNotifications';
 import SettingsParagraph from '../account/SettingsParagraph';
 import GenericError from '../error/GenericError';
 import AddressModal from './AddressModal';

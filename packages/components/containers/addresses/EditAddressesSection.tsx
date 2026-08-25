@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { updateAddressThunk } from '@proton/account/addresses/updateAddress';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Input } from '@proton/atoms/Input/Input';
 import { useLoading } from '@proton/hooks';
@@ -20,7 +21,6 @@ import Info from '../../components/link/Info';
 import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
 import useErrorHandler from '../../hooks/useErrorHandler';
 import { useHotkeys } from '../../hooks/useHotkeys';
-import useNotifications from '../../hooks/useNotifications';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';

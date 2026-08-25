@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import {
     deleteForwarding,
     requestConfirmation,
@@ -16,7 +17,6 @@ import useModalState from '../../components/modalTwo/useModalState';
 import { useModalTwoStatic } from '../../components/modalTwo/useModalTwo';
 import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
 import useErrorHandler from '../../hooks/useErrorHandler';
-import useNotifications from '../../hooks/useNotifications';
 import ConfirmDeleteForwarding from './ConfirmDeleteForwarding';
 import ForwardModal from './ForwardModal';
 

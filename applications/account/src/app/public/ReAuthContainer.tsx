@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
 import { Button } from '@proton/atoms/Button/Button';
 import {
     DropdownMenu,
@@ -18,7 +19,6 @@ import {
 } from '@proton/components';
 import { handleReAuthKeyPassword } from '@proton/components/containers/login/loginActions';
 import SSOAuthModal from '@proton/components/containers/password/SSOAuthModal';
-import useApi from '@proton/components/hooks/useApi';
 import useLoading from '@proton/hooks/useLoading';
 import { IcKey } from '@proton/icons/icons/IcKey';
 import { IcPlus } from '@proton/icons/icons/IcPlus';

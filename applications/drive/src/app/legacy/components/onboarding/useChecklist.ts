@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { differenceInDays, fromUnixTime } from 'date-fns';
 
 import { useUser } from '@proton/account/user/hooks';
-import { useApi } from '@proton/components';
+import { useApi } from '@proton/app-context/useApi';
 import { useLoading } from '@proton/hooks';
 import { getDriveChecklist, seenCompletedDriveChecklist } from '@proton/shared/lib/api/checklist';
 import type { ChecklistApiResponse } from '@proton/shared/lib/interfaces';

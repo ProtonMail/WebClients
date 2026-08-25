@@ -2,6 +2,8 @@ import { c } from 'ttag';
 
 import { userSettingsActions } from '@proton/account/userSettings';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { useApi } from '@proton/app-context/useApi';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateWeekStart } from '@proton/shared/lib/api/settings';
@@ -14,8 +16,6 @@ import { getDefaultWeekStartsOn } from '@proton/shared/lib/settings/helper';
 import { DropdownSizeUnit } from '../../../components/dropdown/utils';
 import Option from '../../../components/option/Option';
 import SelectTwo from '../../../components/selectTwo/SelectTwo';
-import useApi from '../../../hooks/useApi';
-import useNotifications from '../../../hooks/useNotifications';
 import { getAutomaticText } from '../../general/helper';
 
 interface Props {

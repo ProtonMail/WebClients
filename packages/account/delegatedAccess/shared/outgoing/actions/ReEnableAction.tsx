@@ -2,9 +2,9 @@ import { useCallback, useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import useApi from '@proton/components/hooks/useApi';
+import { useApi } from '@proton/app-context/useApi';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import noop from '@proton/utils/noop';

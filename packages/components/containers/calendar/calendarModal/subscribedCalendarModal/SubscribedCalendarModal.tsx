@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import { useLoading } from '@proton/hooks';
@@ -19,7 +20,6 @@ import Form from '../../../../components/form/Form';
 import Loader from '../../../../components/loader/Loader';
 import BasicModal from '../../../../components/modalTwo/BasicModal';
 import InputFieldTwo from '../../../../components/v2/field/InputField';
-import useApi from '../../../../hooks/useApi';
 import GenericError from '../../../error/GenericError';
 import useGetCalendarActions from '../../hooks/useGetCalendarActions';
 import useGetCalendarSetup from '../../hooks/useGetCalendarSetup';

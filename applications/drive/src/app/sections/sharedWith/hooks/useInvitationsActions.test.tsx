@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react';
 
-import { useNotifications } from '@proton/components';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { MemberRole, type NodeEntity, NodeType, getDrivePerNodeType } from '@proton/drive/index';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
@@ -8,7 +8,7 @@ import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDrive
 
 import { useInvitationsActions } from './useInvitationsActions';
 
-jest.mock('@proton/components', () => ({
+jest.mock('@proton/app-context/useNotifications', () => ({
     useNotifications: jest.fn(),
 }));
 

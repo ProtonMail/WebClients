@@ -4,6 +4,7 @@ import {
     disableGroupAddressEncryption,
     enableGroupAddressEncryption,
 } from '@proton/account/groups/setGroupAddressFlags';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { KEY_FLAG } from '@proton/shared/lib/constants';
@@ -12,7 +13,6 @@ import type { Address, Group } from '@proton/shared/lib/interfaces';
 
 import Toggle from '../../../../components/toggle/Toggle';
 import useErrorHandler from '../../../../hooks/useErrorHandler';
-import useNotifications from '../../../../hooks/useNotifications';
 import { useGroupsManagement } from '../context/GroupsManagementContext';
 
 interface Props {

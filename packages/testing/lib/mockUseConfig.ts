@@ -1,13 +1,13 @@
-import * as useConfigModule from '@proton/components/hooks/useConfig';
+import * as useConfigModule from '@proton/app-context/useConfig';
 import { APPS, CLIENT_TYPES } from '@proton/shared/lib/constants';
 
-jest.mock('@proton/components/hooks/useConfig', () => ({
+jest.mock('@proton/app-context/useConfig', () => ({
     __esModule: true,
-    ...jest.requireActual('@proton/components/hooks/useConfig'),
+    ...jest.requireActual('@proton/app-context/useConfig'),
 }));
 
-export const mockUseConfig = (value?: Partial<ReturnType<typeof useConfigModule.default>>) => {
-    const mockedUseConfig = jest.spyOn(useConfigModule, 'default');
+export const mockUseConfig = (value?: Partial<ReturnType<typeof useConfigModule.useConfig>>) => {
+    const mockedUseConfig = jest.spyOn(useConfigModule, 'useConfig');
 
     mockedUseConfig.mockReturnValue({
         CLIENT_TYPE: CLIENT_TYPES.MAIL,

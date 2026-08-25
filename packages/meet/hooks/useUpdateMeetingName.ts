@@ -1,7 +1,7 @@
+import type { SessionKey } from '@protontech/crypto';
 import { c } from 'ttag';
 
-import { useApi } from '@proton/components';
-import type { SessionKey } from '@protontech/crypto';
+import { useApi } from '@proton/app-context/useApi';
 import { updateMeetingNameCall } from '@proton/shared/lib/api/meet';
 import type { CreateMeetingResponse } from '@proton/shared/lib/interfaces/Meet';
 

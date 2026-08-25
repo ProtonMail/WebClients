@@ -4,11 +4,11 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import type { CustomNotificationProps } from '@proton/app-context/notifications/interfaces';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 // eslint-disable-next-line @typescript-eslint/no-restricted-imports
 import Icon from '@proton/components/components/icon/Icon';
 import NotificationButton from '@proton/components/containers/notifications/NotificationButton';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { FeatureCode, useFeature } from '@proton/features';
 import { IcCross } from '@proton/icons/icons/IcCross';
 

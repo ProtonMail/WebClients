@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useGetAddresses } from '@proton/account/addresses/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { useGetCalendarKeys } from '@proton/calendar/calendarBootstrap/keys';
 import { useGetCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import { getEventsCount } from '@proton/shared/lib/api/calendars';
@@ -14,7 +15,6 @@ import type { ExportCalendarModel, ExportError, VcalVeventComponent } from '@pro
 import { EXPORT_ERRORS, EXPORT_STEPS } from '@proton/shared/lib/interfaces/calendar';
 
 import DynamicProgress from '../../../components/progress/DynamicProgress';
-import useApi from '../../../hooks/useApi';
 import useGetCalendarInfo from '../../../hooks/useGetCalendarInfo';
 import useGetVerificationPreferences from '../../../hooks/useGetVerificationPreferences';
 import { useContactEmailsCache } from '../../contacts/ContactEmailsProvider';

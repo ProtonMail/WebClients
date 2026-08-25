@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { useRecoveryState } from '@proton/account/safetyReview/recoveryState/useRecoveryState';
+import { useConfig } from '@proton/app-context/useConfig';
 import { Button } from '@proton/atoms/Button/Button';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { APPS } from '@proton/shared/lib/constants';
@@ -8,7 +9,6 @@ import clsx from '@proton/utils/clsx';
 
 import useModalState from '../../../components/modalTwo/useModalState';
 import SkeletonLoader from '../../../components/skeletonLoader/SkeletonLoader';
-import useConfig from '../../../hooks/useConfig';
 import { SettingsLayoutVariant } from '../../layout/interface';
 import { RecoveryScoreBar } from './RecoveryScoreBar';
 import RecoveryScoreModal from './RecoveryScoreModal';

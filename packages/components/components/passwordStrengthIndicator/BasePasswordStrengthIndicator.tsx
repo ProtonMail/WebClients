@@ -2,6 +2,7 @@ import type { ComponentPropsWithoutRef } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
@@ -14,7 +15,6 @@ import { MIN_PASSWORD_LENGTH } from '@proton/shared/lib/constants';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 
-import useNotifications from '../../hooks/useNotifications';
 import InputFieldTwo from '../v2/field/InputField';
 import empty from './illustrations/empty.svg';
 import strong from './illustrations/strong.svg';

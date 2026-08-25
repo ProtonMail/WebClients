@@ -12,7 +12,8 @@ import type {
     WasmPaymentMethod,
     WasmQuote,
 } from '@proton/andromeda';
-import { DropdownSizeUnit, Icon, useModalState, useNotifications, useSubscriptionModal } from '@proton/components';
+import { useNotifications } from '@proton/app-context/useNotifications';
+import { DropdownSizeUnit, Icon, useModalState, useSubscriptionModal } from '@proton/components';
 import CountrySelect from '@proton/components/components/country/CountrySelect';
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
 import useLoading from '@proton/hooks/useLoading';

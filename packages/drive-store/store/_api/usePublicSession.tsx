@@ -1,6 +1,7 @@
 import { createContext, useContext, useRef, useState } from 'react';
 
-import { useApi, useAuthentication } from '@proton/components';
+import { useApi } from '@proton/app-context/useApi';
+import { useAuthentication } from '@proton/components';
 import metrics from '@proton/metrics';
 import { queryInitSRPHandshake, queryShareURLAuth } from '@proton/shared/lib/api/drive/sharing';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';

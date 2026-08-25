@@ -4,6 +4,8 @@ import { useHistory } from 'react-router';
 import { c, msgid } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { useApi } from '@proton/app-context/useApi';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
@@ -21,9 +23,7 @@ import TableBody from '../../../components/table/TableBody';
 import TableCell from '../../../components/table/TableCell';
 import TableRow from '../../../components/table/TableRow';
 import getBoldFormattedText from '../../../helpers/getBoldFormattedText';
-import useApi from '../../../hooks/useApi';
 import useLocalState from '../../../hooks/useLocalState';
-import useNotifications from '../../../hooks/useNotifications';
 import SettingsSectionWide from '../../account/SettingsSectionWide';
 import NotificationButton from '../../notifications/NotificationButton';
 import { CountryFlagAndName } from '../gateways/CountryFlagAndName';

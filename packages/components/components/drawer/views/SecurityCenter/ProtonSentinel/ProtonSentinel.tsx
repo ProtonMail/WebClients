@@ -4,6 +4,8 @@ import { c } from 'ttag';
 
 import { userSettingsThunk } from '@proton/account/userSettings';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { useApi } from '@proton/app-context/useApi';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
@@ -18,8 +20,6 @@ import ProtonSentinelLogo from '@proton/styles/assets/img/illustrations/proton-s
 
 import { getDisabledString, getEnabledString } from '../../../../../containers/credentialLeak/helpers';
 import getBoldFormattedText from '../../../../../helpers/getBoldFormattedText';
-import useApi from '../../../../../hooks/useApi';
-import useNotifications from '../../../../../hooks/useNotifications';
 import useSettingsLink from '../../../../link/useSettingsLink';
 import { useModalStateObject } from '../../../../modalTwo/useModalState';
 import Toggle from '../../../../toggle/Toggle';

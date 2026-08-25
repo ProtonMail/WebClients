@@ -4,6 +4,8 @@ import { c, msgid } from 'ttag';
 
 import { selectAvailableRecoveryMethods } from '@proton/account/recovery/sessionRecoverySelectors';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { useConfig } from '@proton/app-context/useConfig';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Banner, BannerVariants } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
 import { DashboardCard, DashboardCardContent, DashboardCardDivider } from '@proton/atoms/DashboardCard/DashboardCard';
@@ -31,9 +33,7 @@ import { Fido2CredentialFlags } from '@proton/shared/lib/webauthn/interface';
 
 import { ButtonGroup } from '../../components/button/ButtonGroup';
 import useModalState from '../../components/modalTwo/useModalState';
-import useConfig from '../../hooks/useConfig';
 import useErrorHandler from '../../hooks/useErrorHandler';
-import useNotifications from '../../hooks/useNotifications';
 import LostTwoFAModal from './LostTwoFAModal';
 import { SettingsIconRow } from './SettingsIconRow';
 import { SettingsToggleRow } from './SettingsToggleRow';

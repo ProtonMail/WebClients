@@ -3,13 +3,12 @@ import { useLocation } from 'react-router-dom';
 
 import { selectRecoveryState } from '@proton/account/safetyReview/recoveryState/recoveryState';
 import { useRecoveryState } from '@proton/account/safetyReview/recoveryState/useRecoveryState';
+import { useApi } from '@proton/app-context/useApi';
+import { useConfig } from '@proton/app-context/useConfig';
 import { useStore } from '@proton/redux-shared-store/sharedProvider';
 import { TelemetryMeasurementGroups, TelemetryRecoverySettingsEvents } from '@proton/shared/lib/api/telemetry';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { sendTelemetryReport, telemetryReportsBatchQueue } from '@proton/shared/lib/helpers/metrics';
-
-import useApi from '../../hooks/useApi';
-import useConfig from '../../hooks/useConfig';
 
 export type RecoverySettingsTelemetryVariant = 'A' | 'B';
 

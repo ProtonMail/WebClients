@@ -18,9 +18,9 @@ jest.mock('@proton/redux-shared-store/sharedProvider', () => ({
     useDispatch: () => jest.fn(),
 }));
 
-jest.mock('@proton/components/hooks/useNotifications', () => ({
+jest.mock('@proton/app-context/useNotifications', () => ({
     __esModule: true,
-    default: () => ({ createNotification: jest.fn() }),
+    useNotifications: () => ({ createNotification: jest.fn() }),
 }));
 
 jest.mock('@proton/account/addresses/hooks');

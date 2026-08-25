@@ -1,12 +1,12 @@
-import * as useNotificationsModule from '@proton/components/hooks/useNotifications';
+import * as useNotificationsModule from '@proton/app-context/useNotifications';
 
-jest.mock('@proton/components/hooks/useNotifications', () => ({
+jest.mock('@proton/app-context/useNotifications', () => ({
     __esModule: true,
-    ...jest.requireActual('@proton/components/hooks/useNotifications'),
+    ...jest.requireActual('@proton/app-context/useNotifications'),
 }));
 
-export const mockUseNotifications = (value?: Partial<ReturnType<typeof useNotificationsModule.default>>) => {
-    const mockedUseNotifications = jest.spyOn(useNotificationsModule, 'default');
+export const mockUseNotifications = (value?: Partial<ReturnType<typeof useNotificationsModule.useNotifications>>) => {
+    const mockedUseNotifications = jest.spyOn(useNotificationsModule, 'useNotifications');
 
     mockedUseNotifications.mockReturnValue({
         setOffset: jest.fn(),

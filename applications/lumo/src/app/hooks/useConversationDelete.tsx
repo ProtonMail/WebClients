@@ -2,7 +2,8 @@ import { useCallback } from 'react';
 
 import { c } from 'ttag';
 
-import { useModalStateObject, useNotifications } from '@proton/components';
+import { useNotifications } from '@proton/app-context/useNotifications';
+import { useModalStateObject } from '@proton/components';
 
 import { useLumoDispatch, useLumoMemoSelector } from '../redux/hooks';
 import { selectConversationHasGeneratedImages, selectSpaceById } from '../redux/selectors';

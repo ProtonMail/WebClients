@@ -3,6 +3,7 @@ import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { TelemetryCalendarEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import type { AbbreviatedTimezone } from '@proton/shared/lib/date/timezone';
@@ -10,7 +11,6 @@ import { getAbbreviatedTimezoneName, getTimeZoneOptions, getTimezoneAndOffset } 
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import type { SimpleMap } from '@proton/shared/lib/interfaces';
 
-import useApi from '../../hooks/useApi';
 import type { Unit } from '../dropdown/utils';
 import { DropdownSizeUnit } from '../dropdown/utils';
 import Option from '../option/Option';

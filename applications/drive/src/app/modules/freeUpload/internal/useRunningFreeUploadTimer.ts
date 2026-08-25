@@ -2,8 +2,8 @@ import { useEffect, useRef } from 'react';
 
 import { useShallow } from 'zustand/react/shallow';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
 
 import { useFreeUploadOverModal } from '../../../modals/FreeUploadOverModal/useFreeUploadOverModal';

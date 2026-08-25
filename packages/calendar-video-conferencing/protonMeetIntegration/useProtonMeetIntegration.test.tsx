@@ -3,7 +3,7 @@ import { Router } from 'react-router-dom';
 import { act, renderHook } from '@testing-library/react';
 import { createBrowserHistory } from 'history';
 
-import { useApi } from '@proton/components';
+import { useApi } from '@proton/app-context/useApi';
 import { useCreateMeeting } from '@proton/meet/hooks/useCreateMeeting';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
@@ -12,8 +12,11 @@ import type { EventModel } from '@proton/shared/lib/interfaces/calendar/Event';
 
 import { useProtonMeetIntegration } from './useProtonMeetIntegration';
 
-jest.mock('@proton/components', () => ({
+jest.mock('@proton/app-context/useApi', () => ({
     useApi: jest.fn().mockReturnValue(jest.fn()),
+}));
+
+jest.mock('@proton/app-context/useNotifications', () => ({
     useNotifications: jest.fn().mockReturnValue({
         createNotification: jest.fn(),
     }),

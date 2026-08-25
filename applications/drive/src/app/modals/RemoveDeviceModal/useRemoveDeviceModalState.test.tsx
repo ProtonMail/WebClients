@@ -1,7 +1,8 @@
 import { waitFor } from '@testing-library/react';
 import { act, renderHook } from '@testing-library/react-hooks';
 
-import { useFormErrors, useNotifications } from '@proton/components';
+import { useNotifications } from '@proton/app-context/useNotifications';
+import { useFormErrors } from '@proton/components';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDriver';
 import { getDeviceName } from '@proton/drive/modules/nodes';
 import { useLoading } from '@proton/hooks';
@@ -11,6 +12,9 @@ import { type UseRemoveDeviceModalProps, useRemoveDeviceModalState } from './use
 
 jest.mock('@proton/components', () => ({
     useFormErrors: jest.fn(),
+}));
+
+jest.mock('@proton/app-context/useNotifications', () => ({
     useNotifications: jest.fn(),
 }));
 

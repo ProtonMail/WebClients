@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
 
+import { useConfig } from '@proton/app-context/useConfig';
 import { getIsDrawerPostMessage } from '@proton/shared/lib/drawer/helpers';
 import type { BugModalPrefill } from '@proton/shared/lib/drawer/interfaces';
 import { DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
 
 import AuthenticatedBugModal from '../../containers/support/AuthenticatedBugModal';
-import useConfig from '../../hooks/useConfig';
 import { useModalStateWithData } from '../modalTwo/useModalState';
 
 /**

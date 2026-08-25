@@ -1,6 +1,7 @@
 import { c, msgid } from 'ttag';
 
-import { useConfirmActionModal, useNotifications } from '@proton/components';
+import { useNotifications } from '@proton/app-context/useNotifications';
+import { useConfirmActionModal } from '@proton/components';
 import { MemberRole, NodeType } from '@proton/drive';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';

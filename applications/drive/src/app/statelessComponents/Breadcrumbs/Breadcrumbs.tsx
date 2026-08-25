@@ -2,8 +2,9 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import type { BreadcrumbInfo } from '@proton/components/index';
-import { CollapsingBreadcrumbs, Loader, useNotifications } from '@proton/components/index';
+import { CollapsingBreadcrumbs, Loader } from '@proton/components/index';
 import truncate from '@proton/utils/truncate';
 
 import { SignatureIcon } from '../../legacy/components/SignatureIcon';

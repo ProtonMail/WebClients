@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { createPremiumAddress } from '@proton/account/addresses/actions';
 import { useProtonDomains } from '@proton/account/protonDomains/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
@@ -12,7 +13,6 @@ import type { User } from '@proton/shared/lib/interfaces';
 
 import { useModalTwoPromise } from '../../components/modalTwo/useModalTwo';
 import useErrorHandler from '../../hooks/useErrorHandler';
-import useNotifications from '../../hooks/useNotifications';
 import AuthModal from '../password/AuthModal';
 import type { AuthModalResult } from '../password/interface';
 

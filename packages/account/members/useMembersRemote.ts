@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
+import { useApi } from '@proton/app-context/useApi';
 import useDebounceInput from '@proton/components/components/input/useDebounceInput';
-import useApi from '@proton/components/hooks/useApi';
 import usePreviousDistinct from '@proton/hooks/usePreviousDistinct';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { queryMembers, searchMembers as searchMembersAPI } from '@proton/shared/lib/api/members';

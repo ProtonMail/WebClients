@@ -6,6 +6,7 @@ import {
     selectSessionRecoveryData,
 } from '@proton/account/recovery/sessionRecoverySelectors';
 import { toggleSignedInReset } from '@proton/account/recovery/userSettingsActions';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { DashboardCard, DashboardCardContent, DashboardCardDivider } from '@proton/atoms/DashboardCard/DashboardCard';
 import { DashboardGrid } from '@proton/atoms/DashboardGrid/DashboardGrid';
@@ -21,7 +22,6 @@ import ConfirmDisableSessionRecoveryModal from '@proton/components/containers/re
 import { LastChanged } from '@proton/components/containers/recovery/LastChanged';
 import { useRecoverySettingsTelemetry } from '@proton/components/containers/recovery/recoverySettingsTelemetry';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { IcHourglass } from '@proton/icons/icons/IcHourglass';
 import { IcShieldExclamationFilled } from '@proton/icons/icons/IcShieldExclamationFilled';

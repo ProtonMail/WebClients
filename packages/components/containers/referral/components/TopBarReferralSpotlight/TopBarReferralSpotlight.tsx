@@ -3,6 +3,7 @@ import type { ReactElement } from 'react';
 import { c } from 'ttag';
 
 import { useReferralInfo } from '@proton/account/referralInfo/hooks';
+import { useConfig } from '@proton/app-context/useConfig';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Href } from '@proton/atoms/Href/Href';
@@ -11,7 +12,6 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import SettingsLink from '../../../../components/link/SettingsLink';
 import Spotlight from '../../../../components/spotlight/Spotlight';
-import useConfig from '../../../../hooks/useConfig';
 import { useReferralTelemetry } from '../../hooks/useReferralTelemetry';
 import {
     getReferralMaxRewardCopy,

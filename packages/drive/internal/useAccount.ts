@@ -6,7 +6,7 @@ import type { PublicKey } from '@protontech/drive-sdk/dist/crypto';
 
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useGetAddresses } from '@proton/account/addresses/hooks';
-import useApi from '@proton/components/hooks/useApi';
+import { useApi } from '@proton/app-context/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { getAllPublicKeys } from '@proton/shared/lib/api/keys';
 import { ADDRESS_STATUS } from '@proton/shared/lib/constants';

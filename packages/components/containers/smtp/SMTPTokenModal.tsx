@@ -2,6 +2,8 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import { useLoading } from '@proton/hooks';
@@ -24,8 +26,6 @@ import Option from '../../components/option/Option';
 import SelectTwo from '../../components/selectTwo/SelectTwo';
 import InputFieldTwo from '../../components/v2/field/InputField';
 import useFormErrors from '../../components/v2/useFormErrors';
-import useApi from '../../hooks/useApi';
-import useNotifications from '../../hooks/useNotifications';
 
 import './SMTPTokenModal.scss';
 

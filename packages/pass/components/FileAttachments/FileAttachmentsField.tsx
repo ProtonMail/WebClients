@@ -5,11 +5,11 @@ import { useLocation } from 'react-router-dom';
 import type { FieldProps } from 'formik';
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Dropzone from '@proton/components/components/dropzone/Dropzone';
 import FileInput from '@proton/components/components/input/FileInput';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcArrowWithinSquare } from '@proton/icons/icons/IcArrowWithinSquare';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { isIos } from '@proton/shared/lib/helpers/browser';

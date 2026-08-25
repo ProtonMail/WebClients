@@ -3,11 +3,11 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import Copy from '@proton/components/components/button/Copy';
 import Info from '@proton/components/components/link/Info';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { minLengthValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import generateUID from '@proton/utils/generateUID';
 

@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import useNotifications from '@proton/components/hooks/useNotifications';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useConnectivity } from '../../components/Core/ConnectivityProvider';

@@ -8,9 +8,9 @@ import { mockUseSpotlightOnFeature } from '@proton/testing/lib/mockUseSpotlightO
 
 import CalendarSearchInput from './CalendarSearchInput';
 
-jest.mock('@proton/components/hooks/useConfig', () => ({
+jest.mock('@proton/app-context/useConfig', () => ({
     __esModule: true,
-    default: jest.fn().mockReturnValue({
+    useConfig: jest.fn().mockReturnValue({
         APP_NAME: 'proton-calendar',
     }),
 }));

@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
+import { useConfig } from '@proton/app-context/useConfig';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Href } from '@proton/atoms/Href/Href';
 import AppLink from '@proton/components/components/link/AppLink';
@@ -14,7 +15,6 @@ import VpnLogo from '@proton/components/components/logo/VpnLogo';
 import WalletLogo from '@proton/components/components/logo/WalletLogo';
 import PublicTopBanners from '@proton/components/containers/topBanners/PublicTopBanners';
 import { getAppVersion } from '@proton/components/helpers/appVersion';
-import useConfig from '@proton/components/hooks/useConfig';
 import {
     APPS,
     type APP_NAMES,

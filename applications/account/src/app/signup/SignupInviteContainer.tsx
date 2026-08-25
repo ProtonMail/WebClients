@@ -4,7 +4,8 @@ import { useParams } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { StandardLoadErrorPage, useErrorHandler, useNotifications } from '@proton/components';
+import { useNotifications } from '@proton/app-context/useNotifications';
+import { StandardLoadErrorPage, useErrorHandler } from '@proton/components';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { checkInvitation } from '@proton/shared/lib/api/invites';

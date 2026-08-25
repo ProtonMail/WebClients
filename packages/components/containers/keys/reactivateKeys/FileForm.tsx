@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { reactivateKeysThunk } from '@proton/account/addressKeys/reactivateKeysActions';
 import { selectRecoveryFileData } from '@proton/account/recovery/recoveryFile';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { useDispatch, useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import type { KeyReactivationRequestStateData } from '@proton/shared/lib/keys';
@@ -11,7 +12,6 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import useFormErrors from '../../../components/v2/useFormErrors';
 import useErrorHandler from '../../../hooks/useErrorHandler';
-import useNotifications from '../../../hooks/useNotifications';
 import type { ProcessedKey } from '../importKeys/useProcessKey';
 import { FileContent } from './FileContent';
 import type { ReactivateKeysContentProps } from './interface';

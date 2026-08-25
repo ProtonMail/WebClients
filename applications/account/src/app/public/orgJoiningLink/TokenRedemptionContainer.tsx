@@ -6,6 +6,7 @@ import { computeKeyPassword } from '@protontech/crypto/srp';
 import { c } from 'ttag';
 
 import { parseJoiningLinkConfig } from '@proton/account/orgJoiningLink/helpers';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import {
     InputFieldTwo,
@@ -14,7 +15,6 @@ import {
     TotpInput,
     useErrorHandler,
     useFormErrors,
-    useNotifications,
 } from '@proton/components';
 import { PasswordPolicySpotlight, usePasswordPolicyValidation } from '@proton/components/components/passwordPolicy';
 import PasswordStrengthIndicator from '@proton/components/components/passwordStrengthIndicator/PasswordStrengthIndicator';

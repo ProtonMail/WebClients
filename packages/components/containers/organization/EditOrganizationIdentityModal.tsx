@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import { changeOrganizationSignature } from '@proton/account';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { getIsEligibleOrganizationIdentityAddress } from '@proton/account/organizationKey/actions';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import useLoading from '@proton/hooks/useLoading';
@@ -24,7 +25,6 @@ import SelectTwo from '../../components/selectTwo/SelectTwo';
 import InputFieldTwo from '../../components/v2/field/InputField';
 import useFormErrors from '../../components/v2/useFormErrors';
 import useErrorHandler from '../../hooks/useErrorHandler';
-import useNotifications from '../../hooks/useNotifications';
 
 interface Props extends ModalProps<'div'> {
     signatureAddress?: string;

@@ -3,10 +3,10 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import useApi from '@proton/components/hooks/useApi';
+import { useApi } from '@proton/app-context/useApi';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { useHandler } from '@proton/components/hooks/useHandler';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import type { MessageState, MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import { removeAttachment } from '@proton/shared/lib/api/attachments';
 import removeExifMetadata from '@proton/shared/lib/helpers/exif';
@@ -18,8 +18,6 @@ import {
     MAIL_VERIFICATION_STATUS,
 } from '@proton/shared/lib/mail/constants';
 import { getAttachments, isPlainText } from '@proton/shared/lib/mail/messages';
-
-import { useMailDispatch } from '../../../store/hooks';
 
 import type { MessageChange } from '../../../components/composer/Composer';
 import type { ExternalEditorActions } from '../../../components/composer/editor/EditorWrapper';
@@ -33,6 +31,7 @@ import {
 } from '../../../helpers/message/messageEmbeddeds';
 import { getEmbeddedImages, updateImages } from '../../../helpers/message/messageImages';
 import { addAttachment, addImageIdentifierAction } from '../../../store/attachments/attachmentsActions';
+import { useMailDispatch } from '../../../store/hooks';
 import { useGetMessageKeys } from '../../message/useGetMessageKeys';
 import { useGetMessage } from '../../message/useMessage';
 import { useLongLivingState } from '../../useLongLivingState';

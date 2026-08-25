@@ -2,9 +2,10 @@ import { type FC, useEffect, useMemo } from 'react';
 
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import { Icon, useApi } from '@proton/components';
+import { Icon } from '@proton/components';
 import { getExtensionSupportedBrowser } from '@proton/pass/lib/extension/utils/browser';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';

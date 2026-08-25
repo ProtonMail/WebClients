@@ -4,6 +4,7 @@ import { flushSync } from 'react-dom';
 
 import { type EventLoop, serverEvent, userThunk } from '@proton/account';
 import { unleashReady } from '@proton/account/bootstrap';
+import { useConfig } from '@proton/app-context/useConfig';
 import {
     ApiProvider,
     EventManagerProvider,
@@ -13,7 +14,6 @@ import {
     useErrorHandler,
     useThemeQueryParameter,
 } from '@proton/components';
-import useConfig from '@proton/components/hooks/useConfig';
 import metrics from '@proton/metrics';
 import { authJwt, pullForkSession, setCookies, setRefreshCookies } from '@proton/shared/lib/api/auth';
 import type { ApiWithListener } from '@proton/shared/lib/api/createApi';

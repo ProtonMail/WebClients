@@ -2,12 +2,11 @@ import { useLocation } from 'react-router-dom';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { useConfig } from '@proton/app-context/useConfig';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
-
-import useConfig from '../../../hooks/useConfig';
 
 export const getIsReferralUserEligible = (
     userSettings: UserSettings | undefined,

@@ -1,12 +1,12 @@
 import { renderHook } from '@testing-library/react';
 import type { Mock } from 'vitest';
 
-import { useApi } from '@proton/components';
+import { useApi } from '@proton/app-context/useApi';
 
 import { encryptMeetingName } from '../utils/cryptoUtils';
 import { useUpdateMeetingName } from './useUpdateMeetingName';
 
-vi.mock('@proton/components', () => ({
+vi.mock('@proton/app-context/useApi', () => ({
     useApi: vi.fn(),
 }));
 

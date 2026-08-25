@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
+import { useConfig } from '@proton/app-context/useConfig';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Href } from '@proton/atoms/Href/Href';
 import type { Plan } from '@proton/payments/core/plan/interface';
@@ -11,7 +12,6 @@ import accountLockedImage from '@proton/styles/assets/img/illustrations/account-
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
-import useConfig from '../../../hooks/useConfig';
 import SettingsLink from '../../link/SettingsLink';
 import UpsellFeatureList from '../UpsellFeatureList';
 import type useUpsellConfig from '../config/useUpsellConfig';

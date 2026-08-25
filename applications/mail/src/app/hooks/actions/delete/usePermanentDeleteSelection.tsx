@@ -2,12 +2,12 @@ import { useMemo, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
-import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { FeatureCode, useFeature } from '@proton/features';
 import { logger } from '@proton/logger';
 import { deleteConversations } from '@proton/shared/lib/api/conversations';
@@ -22,16 +22,15 @@ import useListTelemetry, {
     numberSelectionElements,
 } from '../../../components/list/list-telemetry/useListTelemetry';
 import { runParallelChunkedActions } from '../../../helpers/chunk';
-import useIsEncryptedSearch from '../../useIsEncryptedSearch';
-import { useMailDispatch } from '../../../store/hooks';
-
 import { isElementConversation } from '../../../helpers/elements';
 import type { LabelChanges } from '../../../helpers/labels';
 import type { Element } from '../../../models/element';
 import { backendActionFinished, backendActionStarted } from '../../../store/elements/elementsActions';
+import { useMailDispatch } from '../../../store/hooks';
 import { useGetElementsFromIDs } from '../../mailbox/useElements';
 import { useOptimisticApplyLabels } from '../../optimistic/useOptimisticApplyLabels';
 import useOptimisticDelete from '../../optimistic/useOptimisticDelete';
+import useIsEncryptedSearch from '../../useIsEncryptedSearch';
 import { MOVE_BACK_ACTION_TYPES } from '../moveBackAction/interfaces';
 import { useMoveBackAction } from '../moveBackAction/useMoveBackAction';
 

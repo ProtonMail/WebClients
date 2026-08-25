@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useNotifications } from '@proton/components/index';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { useAlwaysOnPolicyService } from '../contexts/AlwaysOnPolicyServiceContext';

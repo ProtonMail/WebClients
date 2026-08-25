@@ -11,10 +11,14 @@ import { mockUseUserSettings } from '@proton/testing/lib/mockUseUserSettings';
 
 import PMSignatureField from './PMSignatureField';
 
-jest.mock('../../hooks/useNotifications', () => () => mockNotifications);
+jest.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: () => mockNotifications,
+}));
 
-jest.mock('../../hooks/useConfig', () => () => ({
-    APP_NAME: APPS.PROTONACCOUNT,
+jest.mock('@proton/app-context/useConfig', () => ({
+    useConfig: () => ({
+        APP_NAME: APPS.PROTONACCOUNT,
+    }),
 }));
 
 jest.mock('../../components/upsell/UpsellModal/UpsellModal', () => {
@@ -28,7 +32,7 @@ jest.mock('@proton/account');
 jest.mock('@proton/account/user/hooks');
 jest.mock('@proton/mail/store/mailSettings/hooks');
 jest.mock('@proton/account/organization/hooks');
-jest.mock('../../hooks/useApi');
+jest.mock('@proton/app-context/useApi');
 jest.mock('@proton/redux-shared-store/sharedProvider', () => ({ useDispatch: () => jest.fn() }));
 jest.mock('../../hooks/useToggle', () => () => ({ state: false, toggle: jest.fn() }));
 jest.mock('@proton/hooks', () => ({ useLoading: () => [false, (fn: any) => fn] }));

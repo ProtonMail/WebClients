@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
-import { useNotifications } from '@proton/components/index';
 import type { DesktopConnector } from '@proton/lumo-api-client/core/desktop-tools';
 import {
     getDesktopConnectors,

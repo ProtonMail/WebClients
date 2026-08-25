@@ -4,10 +4,10 @@ import { CryptoProxy } from '@protontech/crypto';
 import { utf8StringToUint8Array } from '@protontech/crypto/utils';
 
 import { useUser } from '@proton/account/user/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 
 import useEventManager from '../../hooks/useEventManager';
-import useNotifications from '../../hooks/useNotifications';
 
 const getID = async (text: string) => {
     const id = (

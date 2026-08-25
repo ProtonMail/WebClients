@@ -4,6 +4,7 @@ import { getPrivateAdminError, setMemberOwnerRole } from '@proton/account';
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { canManageOwnerRole, hasUserSourcedOwnerRole } from '@proton/account/organizationRoles/helpers';
 import { useUserPermissions } from '@proton/account/userPermissions/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { useLoading } from '@proton/hooks';
 import { IcInfoCircleFilled } from '@proton/icons/icons/IcInfoCircleFilled';
@@ -15,7 +16,6 @@ import { MemberUnprivatizationMode, getMemberUnprivatizationMode } from '@proton
 import { useModalTwo } from '../../../components/modalTwo/useModalTwo';
 import Toggle from '../../../components/toggle/Toggle';
 import useErrorHandler from '../../../hooks/useErrorHandler';
-import useNotifications from '../../../hooks/useNotifications';
 import { useSilentApi } from '../../../hooks/useSilentApi';
 import MemberRoleChangePrompt from '../MemberRoleChangePrompt';
 import MemberToggleContainer from '../MemberToggleContainer';

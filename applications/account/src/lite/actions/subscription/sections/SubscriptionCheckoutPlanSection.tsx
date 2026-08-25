@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useConfig } from '@proton/app-context/useConfig';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Badge } from '@proton/components/components/badge/Badge';
@@ -7,7 +8,6 @@ import Info from '@proton/components/components/link/Info';
 import Price from '@proton/components/components/price/Price';
 import CurrencySelector from '@proton/components/containers/payments/CurrencySelector';
 import { AddonTooltip } from '@proton/components/containers/payments/subscription/modal-components/helpers/AddonTooltip';
-import useConfig from '@proton/components/hooks/useConfig';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { IcMoneyBills } from '@proton/icons/icons/IcMoneyBills';
 import { IcTagFilled } from '@proton/icons/icons/IcTagFilled';

@@ -2,8 +2,9 @@ import type { HTMLAttributeAnchorTarget, ReactNode } from 'react';
 
 import { c } from 'ttag';
 
+import { useConfig } from '@proton/app-context/useConfig';
 import { Href } from '@proton/atoms/Href/Href';
-import { Logo, ProtonLogo, PublicTopBanners, getAppVersion, useConfig, useTheme } from '@proton/components';
+import { Logo, ProtonLogo, PublicTopBanners, getAppVersion, useTheme } from '@proton/components';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';

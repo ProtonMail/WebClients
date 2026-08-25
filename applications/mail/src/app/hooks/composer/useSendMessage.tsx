@@ -3,9 +3,9 @@ import { useHistory } from 'react-router';
 
 import { c } from 'ttag';
 
-import useApi from '@proton/components/hooks/useApi';
+import { useApi } from '@proton/app-context/useApi';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import useEventManager from '@proton/components/hooks/useEventManager';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { logger } from '@proton/logger';
 import type { MessageStateWithData, MessageStateWithDataFull } from '@proton/mail/store/messages/messagesTypes';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
@@ -16,8 +16,6 @@ import type { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto'
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { getRecipientsAddresses } from '@proton/shared/lib/mail/messages';
 import unique from '@proton/utils/unique';
-
-import { useMailDispatch } from '../../store/hooks';
 
 import LoadingNotificationContent from '../../components/notifications/LoadingNotificationContent';
 import type { SendingMessageNotificationManager } from '../../components/notifications/SendingMessageNotification';
@@ -30,6 +28,7 @@ import { attachSubPackages } from '../../helpers/send/sendSubPackages';
 import { generateTopPackages } from '../../helpers/send/sendTopPackages';
 import { updateAttachment } from '../../store/attachments/attachmentsActions';
 import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
+import { useMailDispatch } from '../../store/hooks';
 import { cancelSendMessage, endUndo, sent, updateExpires } from '../../store/messages/draft/messagesDraftActions';
 import { cancelScheduled } from '../../store/messages/scheduled/scheduledActions';
 import { useGetAttachment } from '../attachments/useAttachment';

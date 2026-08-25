@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { usePasswordReminderTelemetry } from '@proton/account/passwordReminder/passwordReminderTelemetry';
 import { setPasswordReminderFlag } from '@proton/account/passwordReminder/setPasswordReminderFlag';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
@@ -9,7 +10,6 @@ import { PASSWORD_REMINDERS_VALUE } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import Prompt from '../../../components/prompt/Prompt';
-import useNotifications from '../../../hooks/useNotifications';
 
 interface Props {
     onClose: () => void;

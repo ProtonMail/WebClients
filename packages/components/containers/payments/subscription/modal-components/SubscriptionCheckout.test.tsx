@@ -15,9 +15,9 @@ import { renderWithProviders } from '@proton/testing/lib/context/renderWithProvi
 
 import SubscriptionCheckout, { type SubscriptionCheckoutProps } from './SubscriptionCheckout';
 
-jest.mock('../../../../hooks/useConfig', () => ({
+jest.mock('@proton/app-context/useConfig', () => ({
     __esModule: true,
-    default: jest.fn().mockReturnValue({
+    useConfig: jest.fn().mockReturnValue({
         APP_NAME: 'proton-account',
     }),
 }));

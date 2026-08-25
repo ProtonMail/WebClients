@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 
 import { deleteDomain } from '@proton/account/domains/actions';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
@@ -12,7 +13,6 @@ import type { Domain } from '@proton/shared/lib/interfaces';
 import type { PromptProps } from '../../../components/prompt/Prompt';
 import Prompt from '../../../components/prompt/Prompt';
 import useErrorHandler from '../../../hooks/useErrorHandler';
-import useNotifications from '../../../hooks/useNotifications';
 
 interface Props extends Omit<PromptProps, 'title' | 'buttons' | 'children'> {
     domain: Domain;

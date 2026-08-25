@@ -5,8 +5,8 @@ import { getMinimalHostPermissions } from 'proton-pass-extension/lib/utils/permi
 import { assertTabsAPIAvailable } from 'proton-pass-extension/lib/utils/tabs';
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import type { RequestForkData, RequestForkOptions } from '@proton/pass/lib/auth/fork';

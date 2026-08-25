@@ -1,13 +1,12 @@
 import { useUserSettings } from '@proton/account';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useApi } from '@proton/app-context/useApi';
+import { useConfig } from '@proton/app-context/useConfig';
 import type { PLANS } from '@proton/payments/core/constants';
 import { type TelemetryAlwaysOnUpsellEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { normalizeProduct } from '@proton/shared/lib/apps/product';
 import { sendTelemetryReportWithBaseDimensions } from '@proton/shared/lib/helpers/metrics';
-
-import useApi from '../../../../hooks/useApi';
-import useConfig from '../../../../hooks/useConfig';
 
 type TelemetryDimensions<T extends TelemetryAlwaysOnUpsellEvents> =
     T extends TelemetryAlwaysOnUpsellEvents.userSubscribed ? { plan: PLANS } : {};

@@ -6,6 +6,8 @@ import { c } from 'ttag';
 
 import { useGetOrganization } from '@proton/account/organization/hooks';
 import { useGetOrganizationKey } from '@proton/account/organizationKey/hooks';
+import { useApi } from '@proton/app-context/useApi';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import { useLoading } from '@proton/hooks';
@@ -26,9 +28,7 @@ import ModalHeader from '../../components/modalTwo/ModalHeader';
 import InputFieldTwo from '../../components/v2/field/InputField';
 import PasswordInputTwo from '../../components/v2/input/PasswordInput';
 import useFormErrors from '../../components/v2/useFormErrors';
-import useApi from '../../hooks/useApi';
 import useAuthentication from '../../hooks/useAuthentication';
-import useNotifications from '../../hooks/useNotifications';
 
 interface Props extends ModalProps {
     mode: 'reactivate' | 'activate';

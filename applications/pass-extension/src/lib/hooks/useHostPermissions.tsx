@@ -7,7 +7,7 @@ import { hasHostPermissions, requestHostPermissions } from 'proton-pass-extensio
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { c } from 'ttag';
 
-import useNotifications from '@proton/components/hooks/useNotifications';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';

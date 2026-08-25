@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
+import { useConfig } from '@proton/app-context/useConfig';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { APPS, CALENDAR_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 
-import useConfig from '../../../../hooks/useConfig';
 import SettingsLink from '../../../link/SettingsLink';
 
 const appName = {

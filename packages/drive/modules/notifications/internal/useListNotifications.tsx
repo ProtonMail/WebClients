@@ -3,8 +3,8 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import NotificationButton from '@proton/components/containers/notifications/NotificationButton';
-import useNotifications from '@proton/components/hooks/useNotifications';
 
 import type { ValidationError } from '../../../legacy/errorHandling/ValidationError';
 import { isValidationError } from '../../../legacy/errorHandling/ValidationError';

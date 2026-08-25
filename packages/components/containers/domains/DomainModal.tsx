@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { createDomain, syncDomain } from '@proton/account/domains/actions';
 import { useCustomDomains } from '@proton/account/domains/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { useLoading } from '@proton/hooks';
@@ -31,7 +32,6 @@ import ModalTwoFooter from '../../components/modalTwo/ModalFooter';
 import ModalTwoHeader from '../../components/modalTwo/ModalHeader';
 import useFormErrors from '../../components/v2/useFormErrors';
 import useErrorHandler from '../../hooks/useErrorHandler';
-import useNotifications from '../../hooks/useNotifications';
 import useStep from '../../hooks/useStep';
 import AddressesSection from './AddressesSection';
 import DKIMSection from './DKIMSection';

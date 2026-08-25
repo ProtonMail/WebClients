@@ -2,12 +2,12 @@ import { useEffect } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
 import { Href } from '@proton/atoms/Href/Href';
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import PreventTrackingToggle from '@proton/components/containers/emailPrivacy/PreventTrackingToggle';
-import useApi from '@proton/components/hooks/useApi';
 import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
 import { FeatureCode } from '@proton/features';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';

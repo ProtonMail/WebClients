@@ -1,8 +1,7 @@
 import { useUser } from '@proton/account/user/hooks';
+import { useConfig } from '@proton/app-context/useConfig';
 import { APPS } from '@proton/shared/lib/constants';
 import { getIsSSOVPNOnlyAccount } from '@proton/shared/lib/keys';
-
-import useConfig from '../useConfig';
 
 const useIsSafetyReviewAvailable = () => {
     const [user] = useUser();

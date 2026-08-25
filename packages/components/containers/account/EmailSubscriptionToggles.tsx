@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 
+import { useConfig } from '@proton/app-context/useConfig';
 import { APPS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import {
@@ -12,7 +13,6 @@ import InputFieldStacked from '../../components/inputFieldStacked/InputFieldStac
 import InputFieldStackedGroup from '../../components/inputFieldStacked/InputFieldStackedGroup';
 import Info from '../../components/link/Info';
 import Toggle from '../../components/toggle/Toggle';
-import useConfig from '../../hooks/useConfig';
 import type { EmailSubscription } from './constants/email-subscriptions';
 
 export interface EmailSubscriptionCheckboxesProps {

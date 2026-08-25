@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
+import { useConfig } from '@proton/app-context/useConfig';
 import { type ModalStateProps, UpsellModal } from '@proton/components';
-import useConfig from '@proton/components/hooks/useConfig';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { MAIL_APP_NAME, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';

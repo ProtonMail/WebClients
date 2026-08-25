@@ -3,6 +3,8 @@ import { useHistory, useParams } from 'react-router';
 
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { useGetCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import { getAllMembers, getCalendarInvitations } from '@proton/shared/lib/api/calendars';
@@ -21,8 +23,6 @@ import type {
 } from '@proton/shared/lib/interfaces/calendar';
 import { MEMBER_INVITATION_STATUS } from '@proton/shared/lib/interfaces/calendar';
 
-import useApi from '../../../hooks/useApi';
-import useNotifications from '../../../hooks/useNotifications';
 import SettingsPageTitle from '../../account/SettingsPageTitle';
 import SettingsParagraph from '../../account/SettingsParagraph';
 import SettingsSection from '../../account/SettingsSection';

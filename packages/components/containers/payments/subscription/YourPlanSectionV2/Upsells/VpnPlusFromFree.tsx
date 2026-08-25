@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
 import { Button } from '@proton/atoms/Button/Button';
 import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
@@ -15,7 +16,6 @@ import { VPN_SERVERS } from '@proton/vpn/constants/vpnServers';
 
 import Info from '../../../../../components/link/Info';
 import { getTelemetryUserTier } from '../../../../../helpers/getTelemetryUserTier';
-import useApi from '../../../../../hooks/useApi';
 import useDashboardPaymentFlow from '../../../../../hooks/useDashboardPaymentFlow';
 import type { PlanCardFeatureDefinition } from '../../../features/interface';
 import { useSubscriptionModal } from '../../SubscriptionModalProvider';

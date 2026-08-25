@@ -6,6 +6,7 @@ import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useGetUserInvitations, useUserInvitations } from '@proton/account/userInvitations/hooks';
 import { useCache } from '@proton/app-context/useCache';
+import { useConfig } from '@proton/app-context/useConfig';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
 import { useFeature } from '@proton/features';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
@@ -18,12 +19,11 @@ import { renderWithProviders } from '@proton/testing/lib/context/renderWithProvi
 import { mockUseFlag } from '@proton/testing/lib/mockUseFlag';
 
 import useActiveBreakpoint from '../../../hooks/useActiveBreakpoint';
-import useConfig from '../../../hooks/useConfig';
 import YourPlanSection from './YourPlanSection';
 import { addresses, calendars, organization, pendingInvite, subscriptionBundle, user } from './__mocks__/data';
 import { SUBSCRIPTION_STEPS } from './constants';
 
-jest.mock('../../../hooks/useConfig');
+jest.mock('@proton/app-context/useConfig');
 const mockUseConfig = useConfig as jest.MockedFunction<any>;
 mockUseConfig.mockReturnValue({ APP_NAME: APPS.PROTONMAIL });
 

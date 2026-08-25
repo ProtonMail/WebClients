@@ -1,3 +1,4 @@
+import { useConfig } from '@proton/app-context/useConfig';
 import {
     SUPPORTED_ELECTRON_APP,
     isElectronApp,
@@ -6,8 +7,6 @@ import {
 } from '@proton/shared/lib/helpers/desktop';
 import type { FeatureFlag } from '@proton/unleash/Flags';
 import { useFlag } from '@proton/unleash/useFlag';
-
-import useConfig from './useConfig';
 
 const useIsElectronApp = (flag: FeatureFlag) => {
     const { APP_NAME } = useConfig();

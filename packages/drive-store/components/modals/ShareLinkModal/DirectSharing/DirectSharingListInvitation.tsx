@@ -2,8 +2,8 @@ import { useCallback } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { UserAvatar } from '@proton/atoms/UserAvatar/UserAvatar';
-import { useNotifications } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';

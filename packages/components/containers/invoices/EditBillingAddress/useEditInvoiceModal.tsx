@@ -1,11 +1,11 @@
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import type { FullBillingAddress } from '@proton/payments/core/billing-address/billing-address';
 import type { Invoice } from '@proton/payments/core/interface';
 
 import { useModalTwoPromise } from '../../../components/modalTwo/useModalTwo';
-import useNotifications from '../../../hooks/useNotifications';
 import { usePaymentsApi } from '../../../payments/react-extensions/usePaymentsApi';
 import type { EditInvoiceModalInputs } from './EditInvoiceModal';
 import { EditInvoiceModal } from './EditInvoiceModal';

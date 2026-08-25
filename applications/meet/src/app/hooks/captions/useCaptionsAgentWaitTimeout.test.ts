@@ -14,8 +14,8 @@ const consoleError = vi.fn();
 
 const state = vi.hoisted(() => ({ joinedRoom: true, agentIdentities: [] as string[] }));
 
-vi.mock('@proton/components/hooks/useNotifications', () => ({
-    default: () => ({ createNotification }),
+vi.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: () => ({ createNotification }),
 }));
 
 // Runs the real selectors against a minimal state, rather than stubbing their results.

@@ -1,18 +1,16 @@
 import { useHistory } from 'react-router';
 
-import { c } from 'ttag';
-
-import useApi from '@proton/components/hooks/useApi';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import type { PublicKeyReference } from '@protontech/crypto';
 import { CryptoProxy } from '@protontech/crypto';
+import { c } from 'ttag';
+
+import { useApi } from '@proton/app-context/useApi';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import type { MessageKeys, MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { EOReply } from '@proton/shared/lib/api/eo';
 import { blobURLtoBlob } from '@proton/shared/lib/helpers/file';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
-
-import { useMailDispatch } from '../../store/hooks';
 
 import SendingMessageNotification, {
     createSendingMessageNotificationManager,
@@ -24,6 +22,7 @@ import { createBlob, readContentIDandLocation } from '../../helpers/message/mess
 import { prepareExport } from '../../helpers/message/messageExport';
 import { EOAddReply } from '../../store/eo/eoActions';
 import type { EOMessageReply } from '../../store/eo/eoType';
+import { useMailDispatch } from '../../store/hooks';
 
 interface EOAttachment {
     Filename: string[];

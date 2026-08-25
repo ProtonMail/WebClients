@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { IcPenSquare } from '@proton/icons/icons/IcPenSquare';
@@ -13,7 +14,6 @@ import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import clsx from '@proton/utils/clsx';
 
 import Copy from '../../../components/button/Copy';
-import useNotifications from '../../../hooks/useNotifications';
 import ItemCheckbox from '../../items/ItemCheckbox';
 import ContactGroupLabels from '../group/ContactGroupLabels';
 import { ContactRowItemFirstLine, ContactRowItemSecondLine } from './ContactRowItem';

@@ -2,6 +2,7 @@ import type { AnchorHTMLAttributes, Ref } from 'react';
 import { forwardRef } from 'react';
 import { Link as ReactRouterLink } from 'react-router-dom';
 
+import { useConfig } from '@proton/app-context/useConfig';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { getAppHref, getAppHrefBundle } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -9,7 +10,6 @@ import { APPS, VPN_HOSTNAME } from '@proton/shared/lib/constants';
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
 
 import useAuthentication from '../../hooks/useAuthentication';
-import useConfig from '../../hooks/useConfig';
 
 export interface AppLinkProps extends Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'color'> {
     to: string;

@@ -3,11 +3,12 @@ import { Link, useHistory, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
-import { InputFieldTwo, Option, PasswordInputTwo, SelectTwo, useApi } from '@proton/components';
+import { InputFieldTwo, Option, PasswordInputTwo, SelectTwo } from '@proton/components';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import type { OnLoginCallback } from '@proton/components/containers/app/interface';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { PASSWORD_WRONG_ERROR } from '@proton/shared/lib/api/auth';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
@@ -77,7 +78,6 @@ const ActivationForm = ({ prefilledParams, onLogin }: ActivationFormProps) => {
         setFormState((prev) => ({ ...prev, activationCode: limitToMaxLength }));
     };
 
-
     const [passwordBlurred, setPasswordBlurred] = useState(false);
     const [confirmPasswordBlurred, setConfirmPasswordBlurred] = useState(false);
 
@@ -123,7 +123,7 @@ const ActivationForm = ({ prefilledParams, onLogin }: ActivationFormProps) => {
                 const errorMessage =
                     error?.data?.Code === PASSWORD_WRONG_ERROR
                         ? c('Error')
-                            .t`Activation failed. The details may be incorrect, or the email is already active. Please check your input or sign in.`
+                              .t`Activation failed. The details may be incorrect, or the email is already active. Please check your input or sign in.`
                         : error?.data?.Error || c('Error').t`Failed to activate your address. Please try again.`;
                 createNotification({ type: 'error', text: errorMessage });
                 throw error;
@@ -213,7 +213,7 @@ const ActivationForm = ({ prefilledParams, onLogin }: ActivationFormProps) => {
                                 ]) ||
                                 (confirmPasswordBlurred
                                     ? requiredValidator(confirmPassword) ||
-                                    confirmPasswordValidator(newPassword, confirmPassword)
+                                      confirmPasswordValidator(newPassword, confirmPassword)
                                     : '')
                             }
                             disabled={submitting}

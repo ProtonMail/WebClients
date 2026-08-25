@@ -3,10 +3,10 @@ import { useRef } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import type { HotkeyTuple } from '@proton/components/hooks/useHotkeys';
 import { useHotkeys } from '@proton/components/hooks/useHotkeys';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -23,7 +23,6 @@ import {
     MESSAGE_FOLDER_DROPDOWN_ID,
     MESSAGE_LABEL_DROPDOWN_ID,
 } from '../../components/message/extrasHeader/constants';
-
 import { useOnCompose } from '../../containers/ComposeProvider';
 import { hasLabel, isStarred } from '../../helpers/elements';
 import type { Element } from '../../models/element';

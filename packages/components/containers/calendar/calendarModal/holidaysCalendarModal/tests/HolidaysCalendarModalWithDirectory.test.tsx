@@ -1,6 +1,7 @@
 import { fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 import { mocked } from 'jest-mock';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import { ACCENT_COLORS_MAP } from '@proton/shared/lib/colors';
 import { localeCode, setLocales } from '@proton/shared/lib/i18n';
@@ -8,7 +9,6 @@ import type { HolidaysDirectoryCalendar, VisualCalendar } from '@proton/shared/l
 import { generateHolidaysCalendars } from '@proton/testing/lib/builders';
 import { mockNotifications } from '@proton/testing/lib/mockNotifications';
 
-import useNotifications from '../../../../../hooks/useNotifications';
 import { CALENDAR_MODAL_TYPE } from '../../interface';
 import HolidaysCalendarModalWithDirectory from '../HolidaysCalendarModalWithDirectory';
 
@@ -32,14 +32,14 @@ jest.mock('@proton/account/addressKeys/hooks', () => ({
     useGetAddressKeys: jest.fn(() => []),
 }));
 
-jest.mock('../../../../../hooks/useConfig', () => ({
+jest.mock('@proton/app-context/useConfig', () => ({
     __esModule: true,
-    default: () => {
+    useConfig: () => {
         return { APP_NAME: 'proton-calendar' };
     },
 }));
 
-jest.mock('../../../../../hooks/useNotifications');
+jest.mock('@proton/app-context/useNotifications');
 jest.mock('@proton/calendar/calendarUserSettings/hooks', () => ({
     ...jest.requireActual('@proton/calendar/calendarUserSettings/hooks'),
     useCalendarUserSettings: jest.fn(),

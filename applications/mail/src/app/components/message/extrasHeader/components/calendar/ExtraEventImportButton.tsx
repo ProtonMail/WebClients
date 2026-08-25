@@ -3,10 +3,10 @@ import { useCallback } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import useAddEvents from '@proton/components/containers/calendar/hooks/useAddEvents';
 import useDrawer from '@proton/components/hooks/drawer/useDrawer';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { getVeventWithDefaultCalendarAlarms } from '@proton/shared/lib/calendar/mailIntegration/invite';
 import { APPS, CALENDAR_APP_NAME } from '@proton/shared/lib/constants';

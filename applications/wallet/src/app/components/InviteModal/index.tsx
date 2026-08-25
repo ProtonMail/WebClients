@@ -3,17 +3,17 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { ModalOwnProps } from '@proton/components/components/modalTwo/Modal';
 import Prompt from '@proton/components/components/prompt/Prompt';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import walletUserDark from '@proton/styles/assets/img/wallet/wallet-user-dark.jpg';
 import walletUser from '@proton/styles/assets/img/wallet/wallet-user.jpg';
-import { WalletThemeOption } from '@proton/wallet/utils/theme';
 import { useWalletApiClients } from '@proton/wallet/contexts';
+import { WalletThemeOption } from '@proton/wallet/utils/theme';
 
 import { Button, Input } from '../../atoms';
 import { ModalParagraph } from '../../atoms/ModalParagraph';

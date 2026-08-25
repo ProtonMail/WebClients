@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import type { RecoveryItemIds } from '@proton/account/safetyReview/recoveryState/recoveryState';
 import { useRecoveryState } from '@proton/account/safetyReview/recoveryState/useRecoveryState';
+import { useConfig } from '@proton/app-context/useConfig';
 import { Button } from '@proton/atoms/Button/Button';
 import { IcCheckmarkCircle } from '@proton/icons/icons/IcCheckmarkCircle';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
@@ -15,7 +16,6 @@ import Modal from '../../../components/modalTwo/Modal';
 import ModalContent from '../../../components/modalTwo/ModalContent';
 import ModalFooter from '../../../components/modalTwo/ModalFooter';
 import ModalHeader from '../../../components/modalTwo/ModalHeader';
-import useConfig from '../../../hooks/useConfig';
 import SecureAccountButton from './SecureAccountButton';
 import { getRecoveryScoreItemCopy } from './recoveryScoreCopy';
 import { SCORE_TONE_CLASS, getRecoveryScoreCta, getRecoveryScoreTone } from './recoveryScoreState';

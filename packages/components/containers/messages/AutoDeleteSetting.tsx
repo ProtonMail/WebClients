@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { FeatureCode, useFeature } from '@proton/features';
 import { useLoading } from '@proton/hooks';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
@@ -13,7 +14,6 @@ import Info from '../../components/link/Info';
 import useModalState from '../../components/modalTwo/useModalState';
 import UpsellIcon from '../../components/upsell/UpsellIcon';
 import AutoDeleteUpsellModal from '../../components/upsell/modals/AutoDeleteUpsellModal';
-import useApi from '../../hooks/useApi';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';

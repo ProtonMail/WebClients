@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
@@ -9,7 +10,6 @@ import type { ModalProps } from '../../../components/modalTwo/Modal';
 import useModalState from '../../../components/modalTwo/useModalState';
 import Prompt from '../../../components/prompt/Prompt';
 import useErrorHandler from '../../../hooks/useErrorHandler';
-import useNotifications from '../../../hooks/useNotifications';
 import AuthModal from '../../password/AuthModal';
 import { removeAllSecurityKeysThunk } from './removeAllSecurityKeysThunk';
 

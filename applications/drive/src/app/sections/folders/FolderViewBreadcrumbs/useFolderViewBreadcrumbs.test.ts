@@ -22,7 +22,7 @@ const mockGetNodeHierarchy = jest.fn();
 jest.mock('@proton/drive/legacy/errorHandling');
 const mockedSendErrorReport = jest.mocked(sendErrorReport);
 
-jest.mock('@proton/components', () => ({
+jest.mock('@proton/app-context/useNotifications', () => ({
     useNotifications: jest.fn(() => ({
         createNotification: jest.fn(),
     })),

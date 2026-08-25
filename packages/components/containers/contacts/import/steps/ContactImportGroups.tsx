@@ -2,6 +2,7 @@ import type { ChangeEvent, Dispatch, FormEvent, SetStateAction } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
 import { Button } from '@proton/atoms/Button/Button';
 import { Input } from '@proton/atoms/Input/Input';
 import { FORBIDDEN_LABEL_NAMES } from '@proton/shared/lib/constants';
@@ -17,7 +18,6 @@ import ModalTwoFooter from '../../../../components/modalTwo/ModalFooter';
 import ModalTwoHeader from '../../../../components/modalTwo/ModalHeader';
 import Option from '../../../../components/option/Option';
 import SelectTwo from '../../../../components/selectTwo/SelectTwo';
-import useApi from '../../../../hooks/useApi';
 import useEventManager from '../../../../hooks/useEventManager';
 import { submitCategories } from '../encryptAndSubmit';
 

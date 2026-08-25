@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import { useConfig } from '@proton/app-context/useConfig';
 import {
     type APP_NAMES,
     PROTON_SENTINEL_NAME,
@@ -11,7 +12,6 @@ import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 
 import { PromotionButton } from '../../components/button/PromotionButton/index';
-import useConfig from '../../hooks/useConfig';
 import SettingsParagraph from '../account/SettingsParagraph';
 import { useSubscriptionModal } from '../payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '../payments/subscription/constants';

@@ -1,7 +1,7 @@
 import { c, msgid } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import type { useConfirmActionModal } from '@proton/components';
-import { useNotifications } from '@proton/components';
 import { getDrive, useDrive } from '@proton/drive/index';
 import { handleSdkError, sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDriver';

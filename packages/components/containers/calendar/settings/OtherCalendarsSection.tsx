@@ -3,6 +3,8 @@ import { useRef } from 'react';
 
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Card } from '@proton/atoms/Card/Card';
@@ -26,10 +28,8 @@ import Alert from '../../../components/alert/Alert';
 import SettingsLink from '../../../components/link/SettingsLink';
 import useModalState from '../../../components/modalTwo/useModalState';
 import Prompt from '../../../components/prompt/Prompt';
-import useApi from '../../../hooks/useApi';
 import useEventManager from '../../../hooks/useEventManager';
 import { useModalsMap } from '../../../hooks/useModalsMap';
-import useNotifications from '../../../hooks/useNotifications';
 import SettingsParagraph from '../../account/SettingsParagraph';
 import HolidaysCalendarModal from '../calendarModal/holidaysCalendarModal/HolidaysCalendarModal';
 import { PersonalCalendarModal } from '../calendarModal/personalCalendarModal/PersonalCalendarModal';

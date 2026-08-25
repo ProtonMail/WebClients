@@ -13,7 +13,7 @@ import { act, renderHook } from '@testing-library/react-hooks';
 import { when } from 'jest-when';
 
 import { useUser } from '@proton/account/user/hooks';
-import { useNotifications } from '@proton/components';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
@@ -111,6 +111,7 @@ const mockedResultError = jest.mocked(resultError);
 
 jest.mock('@proton/account/user/hooks');
 jest.mock('@proton/components');
+jest.mock('@proton/app-context/useNotifications');
 jest.mock('@proton/hooks/useLoading');
 jest.mock('@proton/shared/lib/apps/helper');
 jest.mock('@proton/shared/lib/helpers/browser');

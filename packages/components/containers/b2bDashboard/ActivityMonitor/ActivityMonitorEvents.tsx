@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { organizationActions } from '@proton/account/organization';
 import { useOrganization } from '@proton/account/organization/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import { Href } from '@proton/atoms/Href/Href';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { deleteOrgUsersAuthLogs } from '@proton/shared/lib/api/b2bevents';
@@ -12,7 +13,6 @@ import type { OrganizationSettings } from '@proton/shared/lib/interfaces';
 
 import useModalState from '../../../components/modalTwo/useModalState';
 import Toggle from '../../../components/toggle/Toggle';
-import useApi from '../../../hooks/useApi';
 import SettingsSectionWide from '../../account/SettingsSectionWide';
 import AuthenticationLogs from '../../organization/AuthenticationLogs';
 import B2BOrganizationUpsellBanner from './B2BOrganizationUpsellBanner';

@@ -5,10 +5,10 @@ import { c } from 'ttag';
 
 import { useUserKeys } from '@proton/account/userKeys/hooks';
 import { WasmAccountSweeper, type WasmApiWalletAccount, type WasmBitcoinUnit, type WasmPsbt } from '@proton/andromeda';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { MiddleEllipsis, type ModalStateProps, Prompt, useModalState, useModalStateWithData } from '@proton/components';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { IcQrCode } from '@proton/icons/icons/IcQrCode';

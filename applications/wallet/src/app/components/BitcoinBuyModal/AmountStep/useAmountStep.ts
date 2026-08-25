@@ -13,7 +13,7 @@ import type {
     WasmPaymentMethod,
     WasmQuote,
 } from '@proton/andromeda';
-import { useNotifications } from '@proton/components';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import {
     useCountriesByProvider,

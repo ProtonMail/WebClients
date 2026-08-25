@@ -1,13 +1,14 @@
 import { useCallback } from 'react';
 
+import { serverTime } from '@protontech/crypto';
+
+import { useApi } from '@proton/app-context/useApi';
+import { useConfig } from '@proton/app-context/useConfig';
 import { useGetCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
-import useApi from '@proton/components/hooks/useApi';
-import useConfig from '@proton/components/hooks/useConfig';
 import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonicalEmailsMap';
 import { useGetVtimezonesMap } from '@proton/components/hooks/useGetVtimezonesMap';
 import useRelocalizeText from '@proton/components/hooks/useRelocalizeText';
 import useSendIcs from '@proton/components/hooks/useSendIcs';
-import { serverTime } from '@protontech/crypto';
 import { fetchPaginatedAttendeesInfo } from '@proton/shared/lib/calendar/attendeeInfos';
 import { withPartstat } from '@proton/shared/lib/calendar/attendees';
 import { ATTENDEE_MORE_ATTENDEES, ICAL_ATTENDEE_STATUS, ICAL_METHOD } from '@proton/shared/lib/calendar/constants';

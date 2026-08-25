@@ -4,7 +4,8 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
-import { useApi, useConfig } from '@proton/components';
+import { useApi } from '@proton/app-context/useApi';
+import { useConfig } from '@proton/app-context/useConfig';
 import { useDrive } from '@proton/drive';
 import { useFlagsDriveFoundationSearch } from '@proton/drive/modules/flags';
 import { getNotificationsManager } from '@proton/drive/modules/notifications';

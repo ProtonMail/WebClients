@@ -3,6 +3,8 @@ import { c } from 'ttag';
 import { organizationActions } from '@proton/account/organization';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useUserPermissions } from '@proton/account/userPermissions/hooks';
+import { useApi } from '@proton/app-context/useApi';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateOrganizationSettings } from '@proton/shared/lib/api/organization';
@@ -11,9 +13,7 @@ import type { OrganizationSettings } from '@proton/shared/lib/interfaces';
 
 import { PermissionTooltip } from '../../../components/orgPermissions/index';
 import Toggle from '../../../components/toggle/Toggle';
-import useApi from '../../../hooks/useApi';
 import useErrorHandler from '../../../hooks/useErrorHandler';
-import useNotifications from '../../../hooks/useNotifications';
 import SettingsLayout from '../../account/SettingsLayout';
 import SettingsLayoutLeft from '../../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../../account/SettingsLayoutRight';

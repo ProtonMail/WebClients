@@ -2,9 +2,9 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { InputFieldTwo, TextAreaTwo } from '@proton/components/index';
 import useLoading from '@proton/hooks/useLoading';
 import { IcMinus } from '@proton/icons/icons/IcMinus';

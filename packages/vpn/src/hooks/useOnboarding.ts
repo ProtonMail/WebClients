@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import useApi from '@proton/components/hooks/useApi';
+import { useApi } from '@proton/app-context/useApi';
 import { useDeclarativeLocalState } from '@proton/components/hooks/useDeclarativeLocalState.ts';
 import { getIsVpnB2BPlan } from '@proton/payments/core/plan/helpers';
 import { removeItem } from '@proton/shared/lib/helpers/storage';

@@ -1,7 +1,7 @@
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useConfig } from '@proton/app-context/useConfig';
 
-import useConfig from '../../../../hooks/useConfig';
 import useOfferFlags from '../../hooks/useOfferFlags';
 import type { Operation } from '../../interface';
 import { passFamilyPlan2024YearlyConfig } from './configuration';

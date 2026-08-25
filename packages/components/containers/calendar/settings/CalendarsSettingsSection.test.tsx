@@ -39,28 +39,34 @@ jest.mock('../../../hooks/useCalendarShareInvitationActions', () =>
         reject: () => {},
     })
 );
-jest.mock('../../../hooks/useConfig', () => () => ({
-    CLIENT_TYPE: 1,
-    CLIENT_SECRET: 'not_so_secret',
-    APP_VERSION: 'test',
-    APP_NAME: 'proton-calendar',
-    API_URL: 'api',
-    LOCALES: {},
-    DATE_VERSION: 'test',
-    COMMIT: 'test',
-    BRANCH: 'test',
-    SENTRY_DSN: 'test',
-    VERSION_PATH: 'test',
+jest.mock('@proton/app-context/useConfig', () => ({
+    useConfig: () => ({
+        CLIENT_TYPE: 1,
+        CLIENT_SECRET: 'not_so_secret',
+        APP_VERSION: 'test',
+        APP_NAME: 'proton-calendar',
+        API_URL: 'api',
+        LOCALES: {},
+        DATE_VERSION: 'test',
+        COMMIT: 'test',
+        BRANCH: 'test',
+        SENTRY_DSN: 'test',
+        VERSION_PATH: 'test',
+    }),
 }));
 jest.mock('../../../hooks/useAppTitle', () => jest.fn().mockReturnValue(undefined));
-jest.mock('../../../hooks/useApi', () => jest.fn(() => jest.fn().mockResolvedValue({})));
+jest.mock('@proton/app-context/useApi', () => ({
+    useApi: jest.fn(() => jest.fn().mockResolvedValue({})),
+}));
 
 jest.mock('../../../hooks/useEventManager', () => () => ({}));
 jest.mock('../../eventManager/calendar/useCalendarsInfoListener', () => () => ({}));
 jest.mock('../../eventManager/calendar/CalendarModelEventManagerProvider', () => ({
     useCalendarModelEventManager: jest.fn(() => ({ call: jest.fn() })),
 }));
-jest.mock('../../../hooks/useNotifications', () => () => ({}));
+jest.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: () => ({}),
+}));
 jest.mock('@proton/features/useFeature', () => jest.fn(() => ({ feature: { Value: true } })));
 jest.mock('../../../hooks/useEarlyAccess', () => () => ({}));
 

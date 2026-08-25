@@ -1,5 +1,7 @@
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
@@ -19,8 +21,6 @@ import { DEFAULT_FONT_FACE, DEFAULT_FONT_SIZE } from '../../components/editor/co
 import { getFontFaceIdFromValue, getFontFaceValueFromId } from '../../components/editor/helpers/fontFace';
 import Label from '../../components/label/Label';
 import Info from '../../components/link/Info';
-import useApi from '../../hooks/useApi';
-import useNotifications from '../../hooks/useNotifications';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';

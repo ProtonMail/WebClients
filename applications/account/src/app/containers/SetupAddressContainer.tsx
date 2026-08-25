@@ -5,11 +5,11 @@ import { c } from 'ttag';
 
 import { setupExternalUserForProton } from '@proton/account/addresses/actions';
 import { useGetUser } from '@proton/account/user/hooks';
+import { useApi } from '@proton/app-context/useApi';
 import {
     AuthenticatedBugModal,
     DropdownMenuButton,
     StandardLoadErrorPage,
-    useApi,
     useAuthentication,
     useErrorHandler,
     useEventManager,

@@ -4,14 +4,14 @@ import { c } from 'ttag';
 
 import { useUserKeys } from '@proton/account/userKeys/hooks';
 import type { WasmBitcoinUnit } from '@proton/andromeda';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
-import type { IWasmApiWalletData } from '@proton/wallet/types';
-import { encryptWalletDataWithWalletKey } from '@proton/wallet/utils/crypto';
 import { useWalletApiClients } from '@proton/wallet/contexts';
 import { useUserWalletSettings, useWalletDispatch } from '@proton/wallet/store/hooks';
 import { bitcoinUnitChange, walletUpdate } from '@proton/wallet/store/slices';
+import type { IWasmApiWalletData } from '@proton/wallet/types';
+import { encryptWalletDataWithWalletKey } from '@proton/wallet/utils/crypto';
 
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { WalletSetupModalKind, useWalletSetupModalContext } from '../../contexts/WalletSetupModalContext';
