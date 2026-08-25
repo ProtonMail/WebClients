@@ -2,24 +2,14 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import {
-    OutgoingDelegatedAccessProvider,
-    useOutgoingController,
-} from '@proton/account/delegatedAccess/shared/OutgoingDelegatedAccessProvider';
-import {
-    getCanOutgoingDelegatedAccessRecoverStep1,
-    getCanOutgoingDelegatedAccessRecoverStep2,
-} from '@proton/account/delegatedAccess/shared/outgoing/helper';
-import { selectMnemonicData } from '@proton/account/recovery/mnemonic';
+import { OutgoingDelegatedAccessProvider } from '@proton/account/delegatedAccess/shared/OutgoingDelegatedAccessProvider';
 import { Button } from '@proton/atoms/Button/Button';
-import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { pick } from '@proton/shared/lib/helpers/object';
 import { getInitialStates } from '@proton/shared/lib/keys/getInactiveKeys';
 import type {
     KeyReactivationRequest,
     KeyReactivationRequestState,
 } from '@proton/shared/lib/keys/reactivation/interface';
-import isTruthy from '@proton/utils/isTruthy';
 
 import type { ModalProps } from '../../../components/modalTwo/Modal';
 import ModalTwo from '../../../components/modalTwo/Modal';
@@ -27,11 +17,8 @@ import ModalTwoContent from '../../../components/modalTwo/ModalContent';
 import ModalTwoFooter from '../../../components/modalTwo/ModalFooter';
 import ModalTwoHeader from '../../../components/modalTwo/ModalHeader';
 import { Tabs } from '../../../components/tabs/Tabs';
-import { FileForm, FileFormId } from './FileForm';
-import { MnemonicForm, MnemonicFormId } from './MnemonicForm';
-import { PasswordForm, PasswordFormId } from './PasswordForm';
-import { RecoveryContactForm, RecoveryContactFormId } from './RecoveryContactForm';
 import type { ReactivateKeysContentProps } from './interface';
+import { useReactivateKeysForms } from './useReactivateKeysForms';
 
 interface Props extends ModalProps {
     keyReactivationRequests: KeyReactivationRequest[];
@@ -42,31 +29,6 @@ const InnerReactivateKeysModal = ({ keyReactivationRequests, ...rest }: Props) =
         getInitialStates(keyReactivationRequests)
     );
     const [loading, setLoading] = useState(false);
-    const { mnemonicCanBeRegenerated, isMnemonicAvailable } = useSelector(selectMnemonicData);
-    const delegatedAccessController = useOutgoingController();
-
-    const [maybeId, setId] = useState<string | null>(null);
-
-    const showMnemonicTab = isMnemonicAvailable && mnemonicCanBeRegenerated;
-
-    const { showRecoveryContactsTab, canSomeContactRecoverStep2 } = (() => {
-        const canSomeContactRecoverStep1 =
-            delegatedAccessController.outgoingDelegatedAccess.recoveryContacts.hasAccess &&
-            delegatedAccessController.outgoingDelegatedAccess.recoveryContacts.items.some(
-                getCanOutgoingDelegatedAccessRecoverStep1
-            );
-
-        const canSomeContactRecoverStep2 =
-            delegatedAccessController.outgoingDelegatedAccess.recoveryContacts.hasAccess &&
-            delegatedAccessController.outgoingDelegatedAccess.recoveryContacts.items.some(
-                getCanOutgoingDelegatedAccessRecoverStep2
-            );
-
-        return {
-            showRecoveryContactsTab: canSomeContactRecoverStep1 || canSomeContactRecoverStep2,
-            canSomeContactRecoverStep2,
-        };
-    })();
 
     const sharedProps: ReactivateKeysContentProps = {
         keyReactivationStates,
@@ -75,44 +37,7 @@ const InnerReactivateKeysModal = ({ keyReactivationRequests, ...rest }: Props) =
         onClose: rest.onClose,
     };
 
-    const forms = [
-        showRecoveryContactsTab
-            ? {
-                  id: RecoveryContactFormId,
-                  // translator: 'Contacts' here refers to 'Recovery contacts'
-                  title: c('emergency_access').t`Contacts`,
-                  content: <RecoveryContactForm {...sharedProps} />,
-                  cta: canSomeContactRecoverStep2
-                      ? c('Action').t`Recover data`
-                      : c('emergency_access').t`Start recovery`,
-              }
-            : undefined,
-        showMnemonicTab
-            ? {
-                  id: MnemonicFormId,
-                  // translator: 'Phrase' here refers to the 'Recovery phrase'
-                  title: c('Label').t`Phrase`,
-                  content: <MnemonicForm {...sharedProps} />,
-              }
-            : undefined,
-        {
-            id: PasswordFormId,
-            title: c('Label').t`Password`,
-            content: <PasswordForm {...sharedProps} />,
-        },
-        {
-            id: FileFormId,
-            title: c('Label').t`File`,
-            content: <FileForm {...sharedProps} />,
-        },
-    ].filter(isTruthy);
-
-    const formIdx = forms.findIndex(({ id }) => id === maybeId);
-    const form = forms[formIdx === -1 ? 0 : formIdx];
-
-    if (!form) {
-        throw new Error('Unknown form');
-    }
+    const { forms, form, formIdx, onFormIdxChange } = useReactivateKeysForms(sharedProps);
 
     return (
         <ModalTwo size="medium" {...rest}>
@@ -130,7 +55,7 @@ const InnerReactivateKeysModal = ({ keyReactivationRequests, ...rest }: Props) =
                         if (loading) {
                             return;
                         }
-                        setId(forms[value]?.id ?? null);
+                        onFormIdxChange(value);
                     }}
                 />
             </ModalTwoContent>
