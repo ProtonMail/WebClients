@@ -54,14 +54,23 @@ export class Logger {
     }
 
     private static dispatch(payload: LogPayload) {
-        if (isWorker) {
-            this.channel.postMessage(payload);
-            return;
-        }
-        if (payload.level === 'error') {
-            mainThreadLogger.error(payload.msg, payload.error);
-        } else {
-            mainThreadLogger[payload.level](payload.msg);
+        // Logging must never break its caller. In the worker this posts to a BroadcastChannel that
+        // throws once the worker is shutting down - and callers include `catch`/`finally` cleanup
+        // paths (and sendErrorReportForSearch's own fallback), where a throw would mask the real
+        // error or skip teardown. There is nowhere left to report a failure to log, so it is
+        // dropped.
+        try {
+            if (isWorker) {
+                this.channel.postMessage(payload);
+                return;
+            }
+            if (payload.level === 'error') {
+                mainThreadLogger.error(payload.msg, payload.error);
+            } else {
+                mainThreadLogger[payload.level](payload.msg);
+            }
+        } catch {
+            // Ignored on purpose - see above.
         }
     }
 }

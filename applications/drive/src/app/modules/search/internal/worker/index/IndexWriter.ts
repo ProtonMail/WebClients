@@ -91,53 +91,66 @@ export class WriteSession {
             throw maybeWrapAsSearchLibraryError('commit', e);
         }
 
+        // Signal the write as in flight so IndexBlobStore doesn't free a Cached the engine might
+        // still hold a cross-step reference into, the same way IndexReader guards its reads.
+        // Signal the write as in flight so IndexBlobStore doesn't free a Cached the engine might
+        // still hold a cross-step reference into, the same way IndexReader guards its reads.
+        this.blobStore.beginWrite();
         try {
-            // `execution.next()`, `event.kind()` and `event.free()` are all WASM calls: they used
-            // to throw raw (the "unreachable" panic surfaces here, from the Save branch), so this
-            // block had a `finally` but no `catch`.
-            let next: WriteEvent | undefined;
-            while ((next = engineCall('commit: next event', () => execution.next())) !== undefined) {
-                // Bound to a const so the closures below keep the non-undefined narrowing.
-                const event = next;
-                const kind = engineCall('commit: event kind', () => event.kind());
-                switch (kind) {
-                    case WriteEventKind.Load:
-                        await this.blobStore.loadEvent(event);
-                        break;
-                    case WriteEventKind.Save:
-                        await this.blobStore.saveEvent(event);
-                        break;
-                    case WriteEventKind.Stats: {
-                        const documentCount = engineCall('commit: read stats', () => {
-                            const stats = event.stats();
-                            const count = stats.documents;
-                            stats.free();
-                            return count;
-                        });
-                        await this.onStats(documentCount);
-                        break;
-                    }
-                    default:
-                        const error = new Error(`WriteSession: unexpected Write event kind <${kind}>`);
-                        sendErrorReportForSearch(error.message, error);
+            try {
+                // `execution.next()`, `event.kind()` and `event.free()` are all WASM calls: they
+                // used to throw raw (the "unreachable" panic surfaces here, from the Save branch),
+                // so this block had a `finally` but no `catch`.
+                let next: WriteEvent | undefined;
+                while ((next = engineCall('commit: next event', () => execution.next())) !== undefined) {
+                    // Bound to a const so the closures below keep the non-undefined narrowing.
+                    const event = next;
+                    const kind = engineCall('commit: event kind', () => event.kind());
+                    switch (kind) {
+                        case WriteEventKind.Load:
+                            await this.blobStore.loadEvent(event);
+                            break;
+                        case WriteEventKind.Save:
+                            await this.blobStore.saveEvent(event);
+                            break;
+                        case WriteEventKind.Stats: {
+                            const documentCount = engineCall('commit: read stats', () => {
+                                const stats = event.stats();
+                                const count = stats.documents;
+                                stats.free();
+                                return count;
+                            });
+                            await this.onStats(documentCount);
+                            break;
+                        }
+                        default:
+                            const error = new Error(`WriteSession: unexpected Write event kind <${kind}>`);
+                            sendErrorReportForSearch(error.message, error);
 
-                        engineCall('commit: free event', () => event.free());
-                        break;
+                            engineCall('commit: free event', () => event.free());
+                            break;
+                    }
+                }
+            } finally {
+                // Release the write lock first, and never let a throwing free() escape: raised
+                // from a `finally` it would both mask the in-flight error and skip the release,
+                // wedging the writer for the rest of the session.
+                this.release();
+                try {
+                    execution?.free();
+                } catch (e) {
+                    sendErrorReportForSearch(
+                        'WriteSession: failed to free execution handle',
+                        maybeWrapAsSearchLibraryError('free', e)
+                    );
                 }
             }
         } finally {
-            // Release the write lock first, and never let a throwing free() escape: raised from a
-            // `finally` it would both mask the in-flight error and skip the release, wedging the
-            // writer for the rest of the session.
-            this.release();
-            try {
-                execution?.free();
-            } catch (e) {
-                sendErrorReportForSearch(
-                    'WriteSession: failed to free execution handle',
-                    maybeWrapAsSearchLibraryError('free', e)
-                );
-            }
+            // Must run after the Execution above is freed (it drains deferred blob frees), but
+            // must never be skipped: sendErrorReportForSearch can itself throw while the worker is
+            // shutting down, and a missed endWrite() pins the store "busy" forever, so nothing
+            // would ever be freed again.
+            this.blobStore.endWrite();
         }
     }
 }
