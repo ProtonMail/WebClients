@@ -22,14 +22,7 @@ const RawArgs = ({ args }: { args: unknown }) => {
     if (!text) {
         return null;
     }
-    return (
-        <pre
-            className="lumo-tool-call__raw m-0 p-2 rounded bg-weak text-xs text-pre-wrap text-break overflow-auto"
-            style={{ maxHeight: '40vh' }}
-        >
-            {text}
-        </pre>
-    );
+    return <pre className="lumo-tool-call__raw m-0 p-2 rounded bg-weak text-xs text-pre-wrap text-break">{text}</pre>;
 };
 
 interface Props {
@@ -61,10 +54,7 @@ const ToolCallCard = ({ args }: Props) => {
     }
 
     return (
-        <dl
-            className="lumo-tool-call__args m-0 p-2 rounded bg-weak text-sm overflow-auto"
-            style={{ maxHeight: '40vh' }}
-        >
+        <dl className="lumo-tool-call__args m-0 p-2 rounded bg-weak text-sm">
             {entries.map(([key, value]) => (
                 <div key={key} className="mb-2">
                     <dt className="m-0 color-weak text-xs text-break">{key}</dt>
