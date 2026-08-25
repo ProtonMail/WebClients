@@ -3,6 +3,7 @@ import { useCallback, useMemo, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { useApi } from '@proton/app-context/useApi';
+import type { ToolDefinition } from '@proton/llm/lib/lumoAgent/contracts/types';
 import type { ConfirmDecision, ToolChip } from '@proton/llm/lib/lumoAgent/engine/engine';
 import { createClientToolExecutor } from '@proton/llm/lib/lumoAgent/engine/engine';
 import { LOAD_GUIDE_TOOL_NAME } from '@proton/llm/lib/lumoAgent/engine/loadGuide';
@@ -23,6 +24,80 @@ import type { LumoAgentConfig, LumoAgentItem } from './types';
 const SYSTEM = 'system' as Role;
 const USER = 'user' as Role;
 const ASSISTANT = 'assistant' as Role;
+const TOOL_CALL = 'tool_call' as Role;
+const TOOL_RESULT = 'tool_result' as Role;
+
+/** Stands in for an elided read payload; the values it held are stale by the time it would be replayed. */
+const ELIDED_READ = '[earlier read - re-run the tool for current values]';
+
+const parseToolCallName = (content: string | undefined): string => {
+    try {
+        return String(JSON.parse(content || '{}')?.name ?? '');
+    } catch {
+        return '';
+    }
+};
+
+/**
+ * The chain as history should remember it: the narration and every tool call verbatim, so the model can
+ * see that it works by calling tools, but a read's payload replaced by {@link ELIDED_READ} so a replay
+ * never answers from values that have since moved on. A mutation's result is the durable fact the next
+ * turn reasons from ("was off"), so it stays. A call naming a tool this session does not define is read
+ * as a read — eliding is the safe side.
+ */
+const projectChainForHistory = (chainWork: Turn[], definitions: ToolDefinition[]): Turn[] => {
+    const kindByName = new Map(definitions.map((definition) => [definition.name, definition.kind]));
+    const projected: Turn[] = [];
+    let calledName = '';
+
+    for (const turn of chainWork) {
+        if (turn.role === ASSISTANT) {
+            if (turn.content) {
+                projected.push(turn);
+            }
+            continue;
+        }
+        if (turn.role === TOOL_CALL) {
+            calledName = parseToolCallName(turn.content);
+            projected.push(turn);
+            continue;
+        }
+        if (turn.role === TOOL_RESULT) {
+            const isMutation = kindByName.get(calledName) === 'mutation';
+            projected.push(isMutation ? turn : { role: TOOL_RESULT, content: ELIDED_READ });
+            continue;
+        }
+        projected.push(turn);
+    }
+
+    return projected;
+};
+
+/**
+ * The transport pads a tool round with a blank assistant turn and drops that padding again before the
+ * next one, so a resumed chain comes back one turn shorter at the front than it was sent. Measuring both
+ * ends without the padding keeps them aligned, and keeps a blank turn from reading as narration.
+ */
+const withoutBlankAssistantTurns = (turns: Turn[]): Turn[] =>
+    turns.filter((turn) => turn.role !== ASSISTANT || !!turn.content?.trim());
+
+/** Banked history replays as question-then-answer, so a trailing tool call or result is not banked. */
+const untilLastSpokenTurn = (turns: Turn[]): Turn[] => {
+    const fromEnd = [...turns].reverse().findIndex((turn) => turn.role === ASSISTANT && !!turn.content);
+    return fromEnd === -1 ? [] : turns.slice(0, turns.length - fromEnd);
+};
+
+/**
+ * Prose the projection does not already carry, merged into a trailing assistant turn rather than added
+ * beside it: a resumed exchange writes its answer in two halves, and the history it replays is one turn.
+ */
+const appendProse = (turns: Turn[], prose: string): Turn[] => {
+    const last = turns[turns.length - 1];
+    if (last?.role === ASSISTANT && last.content) {
+        return [...turns.slice(0, -1), { role: ASSISTANT, content: `${last.content}\n\n${prose}` }];
+    }
+    return [...turns, { role: ASSISTANT, content: prose }];
+};
 
 /**
  * Lazily instantiate the Lumo client on first send so `@proton/lumo-api-client` stays out of the
@@ -75,9 +150,11 @@ const useLumoAgent = (config: LumoAgentConfig) => {
     const controllerRef = useRef<AbortController | null>(null);
     const confirmResolveRef = useRef<((decision: ConfirmDecision) => void) | null>(null);
     const historyRef = useRef<Turn[]>([]);
-    // What the debug transcript copies. Separate from `historyRef`, which banks prose alone so a
-    // replayed chain never re-reads stale tool results — the tool exchanges only survive here.
+    // What the debug transcript copies: every turn verbatim, including read payloads history elides.
     const transcriptRef = useRef<Turn[]>([]);
+    // The exchange's projected turns, waiting to be banked. Per exchange, not per chain: a chain that
+    // stops on the round budget banks nothing, and the resumed chain only sees its own new turns.
+    const projectedChainRef = useRef<Turn[]>([]);
     const pendingResumeRef = useRef<{ turns: Turn[]; userText: string; reply: string } | null>(null);
     const replyIdRef = useRef<number | null>(null);
     const replyTextRef = useRef('');
@@ -95,17 +172,16 @@ const useLumoAgent = (config: LumoAgentConfig) => {
         pushItem({ id: nextId(), kind: 'error', message: c('Error').t`Something went wrong. Please try again.` });
     }, [finalizeReply, nextId, pushItem]);
 
-    const commitHistory = useCallback((userText: string, reply: string) => {
-        // A chain that ended without prose has nothing worth remembering, and an empty assistant turn is
-        // a shape the transport strips anyway — bank neither side rather than an unanswered question.
-        if (!reply) {
+    /** Banks the exchange the projection has accumulated, and empties it either way. */
+    const commitHistory = useCallback((userText: string) => {
+        const projected = untilLastSpokenTurn(projectedChainRef.current);
+        projectedChainRef.current = [];
+        // An exchange that ended without prose has nothing worth remembering — bank neither side rather
+        // than an unanswered question.
+        if (!projected.length) {
             return;
         }
-        historyRef.current = [
-            ...historyRef.current,
-            { role: USER, content: userText },
-            { role: ASSISTANT, content: reply },
-        ];
+        historyRef.current = [...historyRef.current, { role: USER, content: userText }, ...projected];
     }, []);
 
     const clearPendingResume = useCallback(() => {
@@ -119,7 +195,7 @@ const useLumoAgent = (config: LumoAgentConfig) => {
             return;
         }
         clearPendingResume();
-        commitHistory(pending.userText, pending.reply);
+        commitHistory(pending.userText);
     }, [clearPendingResume, commitHistory]);
 
     const appendReplyDelta = useCallback(
@@ -238,22 +314,30 @@ const useLumoAgent = (config: LumoAgentConfig) => {
      * `chainWork` supplies it: nothing when the last round called a tool rather than speaking. A resumed
      * chain carries the prose the user already read, and the chain that wrote it banked it, so that
      * prefix is dropped first. The live bubble is the fallback for a chain whose prose a chip or an
-     * error split mid-round, where the subtraction no longer lines up.
+     * error split mid-round, where the subtraction no longer lines up. The same walk projects the chain
+     * into the exchange history is waiting to bank (see {@link projectChainForHistory}).
      */
-    const recordChainWork = useCallback((chainWork: Turn[], carriedReply: string) => {
-        const produced = chainReplyRef.current.slice(carriedReply.length);
-        const narrated = chainWork
-            .filter((turn) => turn.role === ASSISTANT)
-            .map((turn) => turn.content)
-            .join('\n\n');
-        const closing = produced.startsWith(narrated)
-            ? produced.slice(narrated.length).trimStart()
-            : replyTextRef.current;
-        transcriptRef.current.push(...chainWork);
-        if (closing) {
-            transcriptRef.current.push({ role: ASSISTANT, content: closing });
-        }
-    }, []);
+    const recordChainWork = useCallback(
+        (chainWork: Turn[], carriedReply: string) => {
+            // A resumed chain's first bubble is joined onto the prose it carries; the subtraction only
+            // lines up once that join is off the front.
+            const produced = chainReplyRef.current.slice(carriedReply.length).trimStart();
+            const narrated = chainWork
+                .filter((turn) => turn.role === ASSISTANT)
+                .map((turn) => turn.content)
+                .join('\n\n');
+            const closing = produced.startsWith(narrated)
+                ? produced.slice(narrated.length).trimStart()
+                : replyTextRef.current;
+            transcriptRef.current.push(...chainWork);
+            projectedChainRef.current.push(...projectChainForHistory(chainWork, config.definitions));
+            if (closing) {
+                transcriptRef.current.push({ role: ASSISTANT, content: closing });
+                projectedChainRef.current = appendProse(projectedChainRef.current, closing);
+            }
+        },
+        [config]
+    );
 
     const runChain = useCallback(
         async (turns: Turn[], userText: string, carriedReply = '') => {
@@ -314,24 +398,31 @@ const useLumoAgent = (config: LumoAgentConfig) => {
                     signal: controller.signal,
                     chunkCallback,
                 });
-                // An abandoned chain's work must not land on the turn that replaced it.
-                if (controllerRef.current === controller) {
-                    recordChainWork(chainTurns.slice(turns.length), carriedReply);
+                // An abandoned chain can return normally rather than throw — the transport reports an
+                // aborted budget stop as a plain finish — so nothing past this point may land on the turn
+                // that replaced it.
+                if (controllerRef.current !== controller) {
+                    return;
                 }
+                const sentCount = withoutBlankAssistantTurns(turns).length;
+                recordChainWork(withoutBlankAssistantTurns(chainTurns).slice(sentCount), carriedReply);
                 if (stoppedOnBudget) {
                     finalizeReply();
                     if (!chainReplyRef.current) {
                         // The budget can run out on a tool-only round, leaving the user nothing to read
                         // and nothing to bank if they decline. Say so instead of stopping in silence.
-                        appendReplyDelta(c('Info').t`I have not finished this one yet.`);
+                        const unfinished = c('Info').t`I have not finished this one yet.`;
+                        appendReplyDelta(unfinished);
                         finalizeReply();
+                        // `recordChainWork` has already run, so this one has to be projected by hand.
+                        projectedChainRef.current = appendProse(projectedChainRef.current, unfinished);
                     }
                     pendingResumeRef.current = { turns: chainTurns, userText, reply: chainReplyRef.current };
                     setIsAtToolLimit(true);
                     return;
                 }
                 clearPendingResume();
-                commitHistory(userText, chainReplyRef.current);
+                commitHistory(userText);
             } catch (error: any) {
                 if (error?.name !== 'AbortError') {
                     pushError();
@@ -391,6 +482,8 @@ const useLumoAgent = (config: LumoAgentConfig) => {
             }
 
             discardPendingResume();
+            // Anything the last exchange left unbanked (an abandoned or failed chain) is not this one's.
+            projectedChainRef.current = [];
             finalizeReply();
             pushItem({ id: nextId(), kind: 'user', text });
             transcriptRef.current.push({ role: USER, content: text });
@@ -432,6 +525,7 @@ const useLumoAgent = (config: LumoAgentConfig) => {
         confirmResolveRef.current = null;
         historyRef.current = [];
         transcriptRef.current = [];
+        projectedChainRef.current = [];
         replyIdRef.current = null;
         replyTextRef.current = '';
         chainReplyRef.current = '';
