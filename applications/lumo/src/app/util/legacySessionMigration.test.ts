@@ -12,11 +12,15 @@ import {
     maybeMigrateLegacySessionToNative,
     registerNativeMigrationOutcomeHandler,
 } from './legacySessionMigration';
-import { canUseNativeAuth, isNativeMobileApp } from './userAgent';
+import { canUseNativeAuth, isNativeAuthFlagEnabled, isNativeMobileApp } from './userAgent';
 
 jest.mock('../remote/externalSession', () => ({ buildExternalSessionsViaFork: jest.fn() }));
 jest.mock('../remote/nativeAuthBridge', () => ({ sendSessionMigrationToNative: jest.fn() }));
-jest.mock('./userAgent', () => ({ isNativeMobileApp: jest.fn(), canUseNativeAuth: jest.fn() }));
+jest.mock('./userAgent', () => ({
+    isNativeMobileApp: jest.fn(),
+    canUseNativeAuth: jest.fn(),
+    isNativeAuthFlagEnabled: jest.fn(),
+}));
 jest.mock('@proton/shared/lib/authentication/persistedSessionStorage', () => ({ getPersistedSessions: jest.fn() }));
 jest.mock('@proton/shared/lib/authentication/handleLogoutFromURL', () => ({ clearSession: jest.fn() }));
 jest.mock('@proton/shared/lib/helpers/browser', () => ({ replaceUrl: jest.fn() }));
@@ -111,18 +115,28 @@ describe('registerNativeMigrationOutcomeHandler', () => {
 
 describe('maybeMigrateLegacySessionToNative (per-account push)', () => {
     let authentication: AuthenticationStore;
+    // Only the object identity matters here: which of the two flags applies is decided by
+    // isNativeAuthFlagEnabled, which is unit-tested against the user agent in userAgent.test.ts.
+    const nativeAuthFlags = { android: true, ios: true };
 
     beforeEach(() => {
         localStorage.clear();
         jest.clearAllMocks();
         (isNativeMobileApp as jest.Mock).mockReturnValue(true);
         (canUseNativeAuth as jest.Mock).mockReturnValue(true);
+        (isNativeAuthFlagEnabled as jest.Mock).mockReturnValue(true);
         authentication = { hasSession: () => true } as unknown as AuthenticationStore;
     });
 
     it.each([
         ['not running inside the native app', () => (isNativeMobileApp as jest.Mock).mockReturnValue(false)],
         ['the native app is too old for native auth', () => (canUseNativeAuth as jest.Mock).mockReturnValue(false)],
+        [
+            // Pushing to a platform whose rollout is still off would strand the account: marked
+            // migrated on our side, never adopted on theirs.
+            'the native-auth flag is off for this platform',
+            () => (isNativeAuthFlagEnabled as jest.Mock).mockReturnValue(false),
+        ],
         [
             'there is no logged-in web session',
             () => {
@@ -133,11 +147,45 @@ describe('maybeMigrateLegacySessionToNative (per-account push)', () => {
         (getPersistedSessions as jest.Mock).mockReturnValue([{ localID: 1, UserID: 'user-a', UID: 'uid-a' }]);
         disableGuard();
 
-        await maybeMigrateLegacySessionToNative({ api: {} as Api, authentication, pathname: '/' });
+        await maybeMigrateLegacySessionToNative({ api: {} as Api, authentication, nativeAuthFlags, pathname: '/' });
 
         expect(buildExternalSessionsViaFork).not.toHaveBeenCalled();
         expect(sendSessionMigrationToNative).not.toHaveBeenCalled();
         expect(localStorage.getItem(migratedKey('user-a'))).toBeNull();
+    });
+
+    it('resolves the platform gate from the flags it is given', async () => {
+        (getPersistedSessions as jest.Mock).mockReturnValue([{ localID: 1, UserID: 'user-a', UID: 'uid-a' }]);
+        (buildExternalSessionsViaFork as jest.Mock).mockResolvedValue([{ userId: 'user-a' }]);
+        (sendSessionMigrationToNative as jest.Mock).mockReturnValue(true);
+
+        await maybeMigrateLegacySessionToNative({
+            api: {} as Api,
+            authentication,
+            nativeAuthFlags: { android: false, ios: true },
+            pathname: '/',
+        });
+
+        // Both flags are handed over untouched; the platform is picked inside the resolver.
+        expect(isNativeAuthFlagEnabled).toHaveBeenCalledWith({ android: false, ios: true });
+    });
+
+    it('re-pushes once the flag is turned on for the platform', async () => {
+        (getPersistedSessions as jest.Mock).mockReturnValue([{ localID: 1, UserID: 'user-a', UID: 'uid-a' }]);
+        (buildExternalSessionsViaFork as jest.Mock).mockResolvedValue([{ userId: 'user-a' }]);
+        (sendSessionMigrationToNative as jest.Mock).mockReturnValue(true);
+
+        // Flag off: nothing goes out and, crucially, nothing is marked...
+        (isNativeAuthFlagEnabled as jest.Mock).mockReturnValue(false);
+        await maybeMigrateLegacySessionToNative({ api: {} as Api, authentication, nativeAuthFlags, pathname: '/' });
+        expect(localStorage.getItem(migratedKey('user-a'))).toBeNull();
+
+        // ...so the account is still eligible on the boot after the rollout reaches it.
+        (isNativeAuthFlagEnabled as jest.Mock).mockReturnValue(true);
+        await maybeMigrateLegacySessionToNative({ api: {} as Api, authentication, nativeAuthFlags, pathname: '/' });
+
+        expect(sendSessionMigrationToNative).toHaveBeenCalledTimes(1);
+        expect(localStorage.getItem(migratedKey('user-a'))).toBe('1');
     });
 
     it('forks and marks only accounts not already migrated', async () => {
@@ -149,7 +197,7 @@ describe('maybeMigrateLegacySessionToNative (per-account push)', () => {
         (buildExternalSessionsViaFork as jest.Mock).mockResolvedValue([{ userId: 'user-b' }]);
         (sendSessionMigrationToNative as jest.Mock).mockReturnValue(true);
 
-        await maybeMigrateLegacySessionToNative({ api: {} as Api, authentication, pathname: '/' });
+        await maybeMigrateLegacySessionToNative({ api: {} as Api, authentication, nativeAuthFlags, pathname: '/' });
 
         // only the un-migrated account's localID is forked and pushed
         expect(buildExternalSessionsViaFork).toHaveBeenCalledWith(expect.objectContaining({ localIDs: [2] }));
@@ -163,7 +211,7 @@ describe('maybeMigrateLegacySessionToNative (per-account push)', () => {
         (getPersistedSessions as jest.Mock).mockReturnValue([{ localID: 1, UserID: 'user-a', UID: 'uid-a' }]);
         localStorage.setItem(migratedKey('user-a'), '1');
 
-        await maybeMigrateLegacySessionToNative({ api: {} as Api, authentication, pathname: '/' });
+        await maybeMigrateLegacySessionToNative({ api: {} as Api, authentication, nativeAuthFlags, pathname: '/' });
 
         expect(buildExternalSessionsViaFork).not.toHaveBeenCalled();
         expect(sendSessionMigrationToNative).not.toHaveBeenCalled();
@@ -175,7 +223,7 @@ describe('maybeMigrateLegacySessionToNative (per-account push)', () => {
         // Bridge not detected / posting failed -> not delivered.
         (sendSessionMigrationToNative as jest.Mock).mockReturnValue(false);
 
-        await maybeMigrateLegacySessionToNative({ api: {} as Api, authentication, pathname: '/' });
+        await maybeMigrateLegacySessionToNative({ api: {} as Api, authentication, nativeAuthFlags, pathname: '/' });
 
         expect(sendSessionMigrationToNative).toHaveBeenCalledWith([{ userId: 'user-a' }]);
         // Left unmarked so the account is re-pushed on the next bootstrap.
@@ -185,7 +233,12 @@ describe('maybeMigrateLegacySessionToNative (per-account push)', () => {
     it('reports nothing on the fork path and leaves the account unmarked', async () => {
         (getPersistedSessions as jest.Mock).mockReturnValue([{ localID: 2, UserID: 'user-b', UID: 'uid-b' }]);
 
-        await maybeMigrateLegacySessionToNative({ api: {} as Api, authentication, pathname: '/login' });
+        await maybeMigrateLegacySessionToNative({
+            api: {} as Api,
+            authentication,
+            nativeAuthFlags,
+            pathname: '/login',
+        });
 
         expect(buildExternalSessionsViaFork).not.toHaveBeenCalled();
         expect(sendSessionMigrationToNative).not.toHaveBeenCalled();
@@ -200,11 +253,16 @@ describe('maybeMigrateLegacySessionToNative (per-account push)', () => {
         (sendSessionMigrationToNative as jest.Mock).mockReturnValue(true);
 
         // Fork-consume bootstrap: pushes nothing.
-        await maybeMigrateLegacySessionToNative({ api: {} as Api, authentication, pathname: '/login' });
+        await maybeMigrateLegacySessionToNative({
+            api: {} as Api,
+            authentication,
+            nativeAuthFlags,
+            pathname: '/login',
+        });
         // Next app launch: still unmarked, so it goes out now. That push is what registers it
         // natively (LumoAccountRepository.migrate marks it forked), which is what lets native emit
         // a switch for it.
-        await maybeMigrateLegacySessionToNative({ api: {} as Api, authentication, pathname: '/' });
+        await maybeMigrateLegacySessionToNative({ api: {} as Api, authentication, nativeAuthFlags, pathname: '/' });
 
         expect(buildExternalSessionsViaFork).toHaveBeenCalledTimes(1);
         expect(buildExternalSessionsViaFork).toHaveBeenCalledWith(expect.objectContaining({ localIDs: [2] }));

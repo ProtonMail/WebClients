@@ -4,6 +4,11 @@ export const canShowWebComposer = (nativeComposerEnabled: boolean): boolean => {
         return true;
     }
 
+    const userAgent = navigator.userAgent;
+    if (userAgent.includes('iPadOS')) {
+        return true;
+    }
+
     // Flag ON: hide the web composer if the native app meets the version criteria
     const appInfo = getNativeAppInfo();
     if (appInfo) {
@@ -33,6 +38,7 @@ export const canUseNativeAuth = (): boolean => {
         // On iOS the native sign in / sign up flow is not ready in 2.0.0, so it
         // ships from 2.1.0 and 2.0.0 falls back to the web sign in / sign up flow.
         // Android has native auth ready from 2.0.0.
+        // iPad runs the same binary as iPhone, so it shares the iOS target version.
         if (platform === 'ios') {
             targetVersion = '2.1.0';
         } else if (platform === 'android') {
@@ -40,6 +46,37 @@ export const canUseNativeAuth = (): boolean => {
         }
 
         return targetVersion !== null && !isNativeVersionOlderThan(version, targetVersion);
+    }
+
+    return false;
+};
+
+/**
+ * The native-auth feature flags, one per platform, so Android and iOS can be rolled out
+ * independently. Read from `useLumoFlags()` in components, or off the Unleash client in bootstrap.
+ */
+export interface NativeAuthFlags {
+    android: boolean;
+    ios: boolean;
+}
+
+/**
+ * Picks the native-auth flag that applies to the platform we are actually running on.
+ *
+ * Off outside the native app, and off on an unrecognised platform: neither flag covers it, and
+ * native auth cannot work there anyway.
+ */
+export const isNativeAuthFlagEnabled = ({ android, ios }: NativeAuthFlags): boolean => {
+    const appInfo = getNativeAppInfo();
+    if (appInfo) {
+        const { platform } = appInfo;
+        if (platform === 'ios') {
+            return ios;
+        } else if (platform === 'android') {
+            return android;
+        } else {
+            return false;
+        }
     }
 
     return false;
@@ -115,7 +152,7 @@ export const getNativeAppInfo = (): {
 
     let platform: 'ios' | 'android' | 'unknown';
 
-    if (userAgent.includes('iOS/')) {
+    if (userAgent.includes('iOS/') || userAgent.includes('iPadOS')) {
         platform = 'ios';
     } else if (userAgent.includes('Android')) {
         platform = 'android';
