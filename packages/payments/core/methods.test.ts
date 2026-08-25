@@ -1266,7 +1266,32 @@ describe('Chargebee Bitcoin', () => {
     });
 });
 
+// Mock browser helper functions
+jest.mock('@proton/shared/lib/helpers/browser', () => ({
+    isSafari: jest.fn(),
+    isMobile: jest.fn().mockReturnValue(false),
+    getBrowser: jest.fn().mockReturnValue({ name: 'Chrome', version: '90.0.0' }),
+    getOS: jest.fn().mockReturnValue({ name: 'macOS', version: '10.15' }),
+    isAndroid: jest.fn().mockReturnValue(false),
+    isIos: jest.fn().mockReturnValue(false),
+    isDesktop: jest.fn().mockReturnValue(true),
+    isChromiumBased: jest.fn().mockReturnValue(true),
+    isFirefox: jest.fn().mockReturnValue(false),
+}));
+
 describe('Apple Pay', () => {
+    let mockIsSafari: jest.MockedFunction<() => boolean>;
+
+    beforeEach(() => {
+        const { isSafari } = require('@proton/shared/lib/helpers/browser');
+        mockIsSafari = isSafari as jest.MockedFunction<() => boolean>;
+        mockIsSafari.mockReturnValue(true); // Default to Safari
+    });
+
+    afterEach(() => {
+        mockIsSafari.mockRestore();
+    });
+
     it('should display Apple Pay when all conditions are met', () => {
         const flow: PaymentMethodFlow = 'subscription';
 
@@ -1770,6 +1795,10 @@ describe('Trial mode payment method restrictions', () => {
         });
 
         it('should not display Apple Pay when isTrial is true', () => {
+            const { isSafari } = require('@proton/shared/lib/helpers/browser');
+            const mockIsSafari = isSafari as jest.MockedFunction<() => boolean>;
+            mockIsSafari.mockReturnValue(true);
+
             const methods = new PaymentMethods({
                 paymentStatus: status,
                 paymentMethods: [],

@@ -355,13 +355,12 @@ export function isApplePayCancelledMessage(obj: any): obj is ApplePayCancelledMe
     return obj && obj.type === applePayCancelledMessageType;
 }
 
-export type ApplePayAvailability = {
-    // To remove when ApplePayCapabilities is no more in use
+export type GetCanMakePaymentsWithActiveCardResponsePayload = {
     canMakePaymentsWithActiveCard: boolean;
-    applePayCapabilities?: boolean;
 };
 
-export type ApplePayAvailabilityResponse = MessageBusResponseSuccess<ApplePayAvailability>;
+export type GetCanMakePaymentsWithActiveCardResponse =
+    MessageBusResponseSuccess<GetCanMakePaymentsWithActiveCardResponsePayload>;
 
 export const googlePayAuthorizedMessageType = 'google-pay-authorized';
 export type GooglePayAuthorizedPayload = {
