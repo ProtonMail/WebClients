@@ -20,16 +20,11 @@ export class PublicRenameController implements RenameControllerInterface {
 
   public async renameDocument(newName: string): Promise<TranslatedResult<void>> {
     try {
-      const decryptedNode = this.documentState.getProperty('decryptedNode')
-      if (!decryptedNode.parentNodeId) {
-        throw new Error('Cannot rename document')
-      }
-
       const nodeMeta = this.documentState.getProperty('entitlements').nodeMeta
-      await this.compat.renamePublicDocument(nodeMeta, decryptedNode.parentNodeId, newName)
+
+      await this.compat.renamePublicDocument(nodeMeta, newName)
 
       this.documentState.setProperty('documentName', newName)
-
       void this._getNode.updateNodeNameInCache(nodeMeta, newName)
 
       return TranslatedResult.ok()
