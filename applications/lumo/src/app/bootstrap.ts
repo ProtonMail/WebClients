@@ -186,7 +186,6 @@ export const bootstrapApp = async ({ config }: { config: ProtonConfig }) => {
         extendStore({ config, api, authentication, unleashClient, history });
 
         registerNativeMigrationOutcomeHandler({ api, authentication });
-        void maybeMigrateLegacySessionToNative({ api, authentication, pathname });
 
         const persistedSession = sessionResult.session?.persistedSession || getPersistedSession(authentication.localID);
         const persistedState = await getDecryptedPersistedState<Partial<LumoState>>({
@@ -280,7 +279,26 @@ export const bootstrapApp = async ({ config }: { config: ProtonConfig }) => {
         const cryptoPromise = bootstrap.loadCrypto({ appName, unleashClient });
         const eventManager = bootstrap.eventManager({ api: silentApi });
         const lumoEventManager = bootstrap.lumoEventManager({ api: silentApi });
-        bootstrap.unleashReady({ unleashClient }).catch(noop);
+        const unleashPromise = bootstrap.unleashReady({ unleashClient });
+        unleashPromise.catch(noop);
+
+        // Deliberately behind the toggles: the migration is gated per platform on
+        // LumoNativeAuthAndroid / LumoNativeAuthIOS, and reading those before they resolve would
+        // push sessions to a native app whose auth is still off. A warm load answers this from
+        // storage without a round trip. Fire-and-forget, exactly as before.
+        void unleashPromise
+            .then(() =>
+                maybeMigrateLegacySessionToNative({
+                    api,
+                    authentication,
+                    pathname,
+                    nativeAuthFlags: {
+                        android: unleashClient.isEnabled('LumoNativeAuthAndroid'),
+                        ios: unleashClient.isEnabled('LumoNativeAuthIOS'),
+                    },
+                })
+            )
+            .catch(noop);
 
         // ── Launched, never awaited before the render gate ──────────────────────────────────
         //
