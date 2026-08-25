@@ -2,11 +2,9 @@ import Toggle from '@proton/components/components/toggle/Toggle';
 import clsx from '@proton/utils/clsx';
 
 import { ConditionalTooltip } from '../ConditionalTooltip/ConditionalTooltip';
-import { LabelAndDescription, type LabelAndDescriptionSize } from '../LabelAndDescription/LabelAndDescription';
+import { LabelAndDescription } from '../LabelAndDescription/LabelAndDescription';
 
 import './SettingToggle.scss';
-
-export type SettingToggleSize = LabelAndDescriptionSize;
 
 type Props = {
     id: string;
@@ -19,7 +17,6 @@ type Props = {
     loading?: boolean;
     changeLabelColor?: boolean;
     tooltip?: string;
-    size?: LabelAndDescriptionSize;
     className?: string;
 };
 
@@ -34,7 +31,6 @@ export const SettingToggle = ({
     loading = false,
     changeLabelColor = true,
     tooltip,
-    size = 'large',
     className,
 }: Props) => {
     return (
@@ -48,7 +44,7 @@ export const SettingToggle = ({
                 <LabelAndDescription
                     label={label}
                     description={description}
-                    size={size}
+                    size="medium"
                     id={id}
                     labelColor={checked || !changeLabelColor ? 'color-norm' : 'color-hint'}
                     descriptionColor="color-hint"

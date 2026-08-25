@@ -165,7 +165,6 @@ const AudioSettingsDropdownComponent = ({
                                 idBase="audio-settings"
                                 noiseFilter={noiseFilter}
                                 toggleNoiseFilter={toggleNoiseFilter}
-                                size="medium"
                             />
                         </div>
                     </div>

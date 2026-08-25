@@ -88,7 +88,7 @@ export const AssignHostSidebar = () => {
                             />
                         ) : (
                             <div className="text-semibold flex items-center">
-                                <div className="text-xl text-semibold">{c('Title')
+                                <div className="text-3xl text-semibold">{c('Title')
                                     .t`Participants (${filteredParticipants.length})`}</div>
                                 <Button
                                     className="search-open-button p-0 ml-4 flex items-center justify-center"

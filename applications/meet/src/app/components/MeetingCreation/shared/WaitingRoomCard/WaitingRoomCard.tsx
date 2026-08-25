@@ -66,7 +66,6 @@ export const WaitingRoomCard = ({
                     label={c('Action').t`Waiting room`}
                     description={getDescription()}
                     checked={isWaitingRoomEnabled}
-                    size="medium"
                     changeLabelColor={false}
                     disabled={!isPaidUser}
                     onChange={() => {
