@@ -34,6 +34,9 @@ export interface UseMlsSessionResult {
     ) => Promise<{ key: string; epoch: bigint } | undefined>;
 }
 
+const getMeetCoreErrorName = (error: unknown) =>
+    typeof error === 'number' ? MeetCoreErrorEnum[error] || `MeetCoreError(${error})` : String(error);
+
 export const useMlsSession = ({
     getGroupKeyInfo,
     onNewGroupKeyInfo,
@@ -100,7 +103,6 @@ export const useMlsSession = ({
                 } catch (error) {
                     reportMeetError('Failed to set waiting room join request handler', {
                         context: { error },
-                        tags: { meetingLinkName },
                     });
                 }
             }
@@ -139,8 +141,8 @@ export const useMlsSession = ({
                     message = c('Error').t`Failed to join meeting. Please try again later.`;
             }
             notifyError(message);
-            const err = new Error(message);
-            Object.assign(err, { userNotified: true });
+            const err = new Error(`MLS setup failed: ${getMeetCoreErrorName(error)}`);
+            Object.assign(err, { userNotified: true, coreError: error });
             throw err;
         }
     };
