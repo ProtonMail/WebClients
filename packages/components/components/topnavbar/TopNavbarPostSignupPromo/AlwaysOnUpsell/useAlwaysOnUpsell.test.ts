@@ -1,16 +1,16 @@
 import { renderHook } from '@testing-library/react';
 
 import { useUser } from '@proton/account/user/hooks';
+import { useConfig } from '@proton/app-context/useConfig';
 import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import useConfig from '../../../../hooks/useConfig';
 import { getIsUserEligible, useAlwaysOnUpsell } from './useAlwaysOnUpsell';
 
 const today = new Date();
 const protonConfig = { APP_NAME: 'proton-mail' } as unknown as ProtonConfig;
 
-jest.mock('../../../../hooks/useConfig');
+jest.mock('@proton/app-context/useConfig');
 const mockUseConfig = jest.mocked(useConfig);
 
 jest.mock('@proton/account/user/hooks');

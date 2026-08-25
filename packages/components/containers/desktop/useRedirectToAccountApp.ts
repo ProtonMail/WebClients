@@ -2,6 +2,7 @@ import { useCallback } from 'react';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useConfig } from '@proton/app-context/useConfig';
 import type { COUPON_CODES } from '@proton/payments/core/constants';
 import { getPlanNameFromIDs } from '@proton/payments/core/plan/helpers';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
@@ -11,7 +12,6 @@ import { APPS } from '@proton/shared/lib/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { addUpsellPath, getUpgradePath } from '@proton/shared/lib/helpers/upsell';
 
-import useConfig from '../../hooks/useConfig';
 import type { SubscriptionContainerProps } from '../payments/subscription/SubscriptionContainer';
 import { SUBSCRIPTION_STEPS } from '../payments/subscription/constants';
 import { openLinkInBrowser } from './openExternalLink';

@@ -13,8 +13,10 @@ import PMSignatureField from './PMSignatureField';
 
 jest.mock('../../hooks/useNotifications', () => () => mockNotifications);
 
-jest.mock('../../hooks/useConfig', () => () => ({
-    APP_NAME: APPS.PROTONACCOUNT,
+jest.mock('@proton/app-context/useConfig', () => ({
+    useConfig: () => ({
+        APP_NAME: APPS.PROTONACCOUNT,
+    }),
 }));
 
 jest.mock('../../components/upsell/UpsellModal/UpsellModal', () => {

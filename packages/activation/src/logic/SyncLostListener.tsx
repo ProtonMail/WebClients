@@ -1,8 +1,8 @@
 import { useEffect, useRef } from 'react';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { useConfig } from '@proton/app-context/useConfig';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
-import useConfig from '@proton/components/hooks/useConfig';
 import { APPS } from '@proton/shared/lib/constants';
 
 import { ApiSyncState } from '../api/api.interface';

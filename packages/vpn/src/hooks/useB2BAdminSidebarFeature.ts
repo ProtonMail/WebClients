@@ -4,8 +4,8 @@ import { useIsSessionRecoveryAvailable } from '@proton/account/recovery/sessionR
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserPermissions } from '@proton/account/userPermissions/hooks';
+import { useConfig } from '@proton/app-context/useConfig';
 import useRecoveryNotification from '@proton/components/hooks/useRecoveryNotification';
-import { useConfig } from '@proton/components/index';
 import useEffectOnce from '@proton/hooks/useEffectOnce';
 import { applyPrefix } from '@proton/nav/api/applyPrefix';
 import { defineSearchOptions } from '@proton/nav/api/defineSearchOptions';

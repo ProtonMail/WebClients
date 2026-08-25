@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useGetAddresses } from '@proton/account/addresses/hooks';
+import { useConfig } from '@proton/app-context/useConfig';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { useGetCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
@@ -18,7 +19,6 @@ import Prompt from '@proton/components/components/prompt/Prompt';
 import GenericError from '@proton/components/containers/error/GenericError';
 import useDrawer from '@proton/components/hooks/drawer/useDrawer';
 import useApi from '@proton/components/hooks/useApi';
-import useConfig from '@proton/components/hooks/useConfig';
 import { useLoading } from '@proton/hooks';
 import { getPersonalCalendars } from '@proton/shared/lib/calendar/calendar';
 import { process } from '@proton/shared/lib/calendar/crypto/keys/resetHelper';

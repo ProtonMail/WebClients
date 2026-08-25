@@ -8,6 +8,7 @@ import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
 import { usePlans } from '@proton/account/plans/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useConfig } from '@proton/app-context/useConfig';
 import { Button } from '@proton/atoms/Button/Button';
 import { useLoading } from '@proton/hooks';
 import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
@@ -29,7 +30,6 @@ import { Audience } from '@proton/shared/lib/interfaces';
 
 import Loader from '../../components/loader/Loader';
 import useApi from '../../hooks/useApi';
-import useConfig from '../../hooks/useConfig';
 import useLoad from '../../hooks/useLoad';
 import { useAutomaticCurrency } from '../../payments/client-extensions/index';
 import { usePaymentsApi } from '../../payments/react-extensions/usePaymentsApi';

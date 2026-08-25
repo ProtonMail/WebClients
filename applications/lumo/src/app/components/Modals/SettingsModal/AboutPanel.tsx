@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { useConfig } from '@proton/components/index';
+import { useConfig } from '@proton/app-context/useConfig';
 import { IcArrowWithinSquare } from '@proton/icons/icons/IcArrowWithinSquare';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { format } from '@proton/shared/lib/date-fns-utc';

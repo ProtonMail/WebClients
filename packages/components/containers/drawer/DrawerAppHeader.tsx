@@ -3,6 +3,7 @@ import { useCallback, useEffect, useRef } from 'react';
 
 import { c } from 'ttag';
 
+import { useConfig } from '@proton/app-context/useConfig';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
@@ -18,7 +19,6 @@ import clsx from '@proton/utils/clsx';
 
 import Header from '../../components/header/Header';
 import useDrawer from '../../hooks/drawer/useDrawer';
-import useConfig from '../../hooks/useConfig';
 import useEventManager from '../../hooks/useEventManager';
 import { useHotkeys } from '../../hooks/useHotkeys';
 import { useTheme } from '../themes/ThemeProvider';

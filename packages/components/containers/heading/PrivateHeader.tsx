@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 
+import { useConfig } from '@proton/app-context/useConfig';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
@@ -14,7 +15,6 @@ import TopNavbarList from '../../components/topnavbar/TopNavbarList';
 import TopNavbarListItem from '../../components/topnavbar/TopNavbarListItem';
 import TopNavbarUpsell from '../../components/topnavbar/TopNavbarUpsell';
 import useSubscriptionStateCookie from '../../hooks/subscriptionStateCookie/useSubscriptionStateCookie';
-import useConfig from '../../hooks/useConfig';
 import useIsPaidUserCookie from '../../hooks/useIsPaidUserCookie';
 import { useTheme } from '../themes/ThemeProvider';
 

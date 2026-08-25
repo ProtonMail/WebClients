@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useConfig } from '@proton/app-context/useConfig';
 import { PLANS } from '@proton/payments/core/constants';
 import type { PlanIDs } from '@proton/payments/core/interface';
 import { getIsB2BAudienceFromPlan, getPlanNameFromIDs } from '@proton/payments/core/plan/helpers';
@@ -14,7 +15,6 @@ import { isAdmin } from '@proton/shared/lib/user/helpers';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import type { ModalStateProps } from '../../../../components/modalTwo/useModalState';
-import useConfig from '../../../../hooks/useConfig';
 import type { SubscriptionOverridableStep } from '../SubscriptionModalProvider';
 import type { PostSubscriptionFlowName } from './interface';
 import {

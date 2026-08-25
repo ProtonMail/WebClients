@@ -3,10 +3,10 @@ import React from 'react';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useConfig } from '@proton/app-context/useConfig';
 import { hasVisionary } from '@proton/payments/core/subscription/helpers';
 import { isElectronOnSupportedApps } from '@proton/shared/lib/helpers/desktop';
 
-import useConfig from '../../hooks/useConfig';
 import OnboardingDiscoverApps from './OnboardingDiscoverApps';
 import type OnboardingModal from './OnboardingModal';
 import OnboardingSetupOrganization from './OnboardingSetupOrganization';

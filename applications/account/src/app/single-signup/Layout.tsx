@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
+import { useConfig } from '@proton/app-context/useConfig';
 import { Href } from '@proton/atoms/Href/Href';
 import {
     ProtonForBusinessLogo,
@@ -9,7 +10,6 @@ import {
     VpnForBusinessLogo,
     VpnLogo,
     useActiveBreakpoint,
-    useConfig,
 } from '@proton/components';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';

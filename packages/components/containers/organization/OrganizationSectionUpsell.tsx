@@ -1,11 +1,11 @@
 import { c } from 'ttag';
 
+import { useConfig } from '@proton/app-context/useConfig';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 import { Audience } from '@proton/shared/lib/interfaces';
 
-import useConfig from '../../hooks/useConfig';
 import SettingsParagraph from '../account/SettingsParagraph';
 import SettingsSectionWide from '../account/SettingsSectionWide';
 import UpgradeBanner from '../account/UpgradeBanner';

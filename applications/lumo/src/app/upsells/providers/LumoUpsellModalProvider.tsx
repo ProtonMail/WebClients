@@ -1,7 +1,7 @@
 import React, { Suspense, createContext, lazy, useContext, useEffect, useMemo, useRef, useState } from 'react';
 
+import { useConfig } from '@proton/app-context/useConfig';
 import { useModalStateWithData } from '@proton/components/components/modalTwo/useModalState';
-import useConfig from '@proton/components/hooks/useConfig';
 import type { UPSELL_FEATURE } from '@proton/shared/lib/constants';
 import { UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';

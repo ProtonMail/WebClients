@@ -1,5 +1,6 @@
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useConfig } from '@proton/app-context/useConfig';
 import { getAvailableApps } from '@proton/shared/lib/apps/apps';
 import { getAppShortName } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -8,7 +9,6 @@ import clsx from '@proton/utils/clsx';
 
 import Logo from '../../components/logo/Logo';
 import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
-import useConfig from '../../hooks/useConfig';
 import ProductLink from '../app/ProductLink';
 
 export const AppSwitcher = ({ hasBorder, app }: { hasBorder?: boolean; app: APP_NAMES }) => {

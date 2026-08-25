@@ -3,8 +3,8 @@ import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
+import { useConfig } from '@proton/app-context/useConfig';
 import TextLoader from '@proton/components/components/loader/TextLoader';
-import useConfig from '@proton/components/hooks/useConfig';
 import useDocumentTitle from '@proton/components/hooks/useDocumentTitle';
 import { getAppShortName } from '@proton/shared/lib/apps/helper';
 import { ThemeTypes } from '@proton/shared/lib/themes/constants';

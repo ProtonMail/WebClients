@@ -4,8 +4,9 @@ import { MemberRole } from '@protontech/drive-sdk';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import { useConfig } from '@proton/app-context/useConfig';
 import { Button } from '@proton/atoms/Button/Button';
-import { SUBSCRIPTION_STEPS, Toggle, useConfig, useSettingsLink, useUpsellConfig } from '@proton/components';
+import { SUBSCRIPTION_STEPS, Toggle, useSettingsLink, useUpsellConfig } from '@proton/components';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { IcFormTextboxPassword } from '@proton/icons/icons/IcFormTextboxPassword';
 import { IcGlobe } from '@proton/icons/icons/IcGlobe';

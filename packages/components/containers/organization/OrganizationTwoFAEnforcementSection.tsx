@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { useUserPermissions } from '@proton/account/userPermissions/hooks';
+import { useConfig } from '@proton/app-context/useConfig';
 import { queryEnforceTwoFA, queryRemoveTwoFA } from '@proton/shared/lib/api/organization';
 import { APPS, ORGANIZATION_TWOFA_SETTING } from '@proton/shared/lib/constants';
 import { hasTwoFARequiredForAdminOnly, hasTwoFARequiredForAll } from '@proton/shared/lib/helpers/organization';
@@ -15,7 +16,6 @@ import Loader from '../../components/loader/Loader';
 import { PermissionBanner, PermissionTooltip } from '../../components/orgPermissions/index';
 import Toggle from '../../components/toggle/Toggle';
 import useApi from '../../hooks/useApi';
-import useConfig from '../../hooks/useConfig';
 import useNotifications from '../../hooks/useNotifications';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';

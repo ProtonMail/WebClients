@@ -3,6 +3,7 @@ import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useConfig } from '@proton/app-context/useConfig';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import {
@@ -25,7 +26,6 @@ import { addUpsellPath, getUpgradePath, getUpsellRefFromApp } from '@proton/shar
 import { dateLocale } from '@proton/shared/lib/i18n';
 
 import SettingsLink from '../../../components/link/SettingsLink';
-import useConfig from '../../../hooks/useConfig';
 import { useSubscriptionModal } from '../../payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '../../payments/subscription/constants';
 import TopBanner from '../TopBanner';

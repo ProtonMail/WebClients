@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
+import { useConfig } from '@proton/app-context/useConfig';
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Href } from '@proton/atoms/Href/Href';
@@ -11,7 +12,6 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 
 import SettingsLink from '../../components/link/SettingsLink';
-import useConfig from '../../hooks/useConfig';
 import { REACTIVATE_SOURCE } from '../payments/subscription/cancellationFlow/useCancellationTelemetry';
 import {
     getReactivateSubscriptionAction,

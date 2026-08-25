@@ -1,4 +1,5 @@
 import { useUser } from '@proton/account/user/hooks';
+import { useConfig } from '@proton/app-context/useConfig';
 import type { BillingAddressExtended } from '@proton/payments/core/billing-address/billing-address';
 import { COUPON_CODES, PLANS } from '@proton/payments/core/constants';
 import type { FreeSubscription, PaymentStatus } from '@proton/payments/core/interface';
@@ -19,7 +20,6 @@ import ModalTwoHeader from '../../../components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '../../../components/modalTwo/useModalState';
 import { usePaidUsersNudgeTelemetry } from '../../../components/topnavbar/TopNavbarPostSignupPromo/PaidUsersNudge/hooks/usePaidUsersNudgeTelemetry';
 import { useDrivePostSignupOneDollarTelemetry } from '../../../components/topnavbar/TopNavbarPostSignupPromo/PostSignupOneDollar/DrivePostSignupOneDollar/useDrivePostSignupOneDollarTelemetry';
-import useConfig from '../../../hooks/useConfig';
 import { BilledUserModal } from '../../../payments/client-extensions/billed-user/index';
 import { useHasInboxDesktopInAppPayments } from '../../desktop/useHasInboxDesktopInAppPayments';
 import InAppPurchaseModal from './InAppPurchaseModal';

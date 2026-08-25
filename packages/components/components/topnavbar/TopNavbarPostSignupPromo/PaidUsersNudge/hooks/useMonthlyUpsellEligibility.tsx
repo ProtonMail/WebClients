@@ -1,6 +1,7 @@
 import { differenceInDays, fromUnixTime } from 'date-fns';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
+import { useConfig } from '@proton/app-context/useConfig';
 import type { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import { CYCLE, type PLANS } from '@proton/payments/core/constants';
@@ -11,7 +12,6 @@ import { APPS } from '@proton/shared/lib/constants';
 import type { FeatureFlag } from '@proton/unleash/Flags';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import useConfig from '../../../../../hooks/useConfig';
 import { HIDE_OFFER } from '../helpers/interface';
 import { isInWindow } from '../helpers/paidUserNudgeHelper';
 

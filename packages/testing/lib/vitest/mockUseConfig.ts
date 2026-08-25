@@ -1,9 +1,9 @@
-import * as useConfigModule from '@proton/components/hooks/useConfig';
+import * as useConfigModule from '@proton/app-context/useConfig';
 import { APPS, CLIENT_TYPES } from '@proton/shared/lib/constants';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 
 export const mockUseConfig = (value?: Partial<ProtonConfig>) => {
-    const spy = vi.spyOn(useConfigModule, 'default');
+    const spy = vi.spyOn(useConfigModule, 'useConfig');
     spy.mockReturnValue({
         CLIENT_TYPE: CLIENT_TYPES.MAIL,
         CLIENT_SECRET: 'string',

@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 
 import { fireEvent, screen } from '@testing-library/react';
 
-import useConfig from '@proton/components/hooks/useConfig';
+import { useConfig } from '@proton/app-context/useConfig';
 import { APPS } from '@proton/shared/lib/constants';
 import { buildSubscription } from '@proton/testing/builders/subscription';
 import { renderWithProviders } from '@proton/testing/lib/context/renderWithProviders';
@@ -16,7 +16,7 @@ import type { TaxCountryHook } from '../billing-address/hooks/useTaxCountry';
 import type { VatNumberHook } from '../billing-address/hooks/useVatNumber';
 import { PayButton } from './PayButton';
 
-jest.mock('@proton/components/hooks/useConfig');
+jest.mock('@proton/app-context/useConfig');
 jest.mock('../billing-address/containers/useEditBillingAddressModal');
 jest.mock('../../telemetry/telemetry', () => ({
     checkoutTelemetry: {

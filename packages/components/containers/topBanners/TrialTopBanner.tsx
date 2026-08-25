@@ -5,6 +5,7 @@ import { fromUnixTime, isBefore } from 'date-fns';
 import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
+import { useConfig } from '@proton/app-context/useConfig';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { Renew } from '@proton/payments/core/subscription/constants';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
@@ -16,7 +17,6 @@ import { APPS } from '@proton/shared/lib/constants';
 import useModalState from '../../components/modalTwo/useModalState';
 import Time from '../../components/time/Time';
 import TimeRemaining from '../../components/timeRemaining/TimeRemaining';
-import useConfig from '../../hooks/useConfig';
 import LearnMoreModal from './LearnMoreModal';
 import TopBanner from './TopBanner';
 import TrialCanceledModal from './TrialCanceledModal';

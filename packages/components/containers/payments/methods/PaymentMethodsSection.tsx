@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { usePaymentMethods } from '@proton/account/paymentMethods/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
+import { useConfig } from '@proton/app-context/useConfig';
 import type { ButtonProps } from '@proton/atoms/Button/Button';
 import { Button } from '@proton/atoms/Button/Button';
 import { IcBrandPaypal } from '@proton/icons/icons/IcBrandPaypal';
@@ -14,7 +15,6 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import Loader from '../../../components/loader/Loader';
 import useModalState from '../../../components/modalTwo/useModalState';
-import useConfig from '../../../hooks/useConfig';
 import SettingsParagraph from '../../account/SettingsParagraph';
 import SettingsSection from '../../account/SettingsSection';
 import { useRedirectToAccountApp } from '../../desktop/useRedirectToAccountApp';

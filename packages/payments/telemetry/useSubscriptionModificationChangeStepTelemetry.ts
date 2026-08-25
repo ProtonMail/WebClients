@@ -22,7 +22,7 @@
  */
 import { useEffect, useRef } from 'react';
 
-import useConfig from '@proton/components/hooks/useConfig';
+import { useConfig } from '@proton/app-context/useConfig';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 
 import type { SubscriptionModificationStepTelemetry } from './helpers';

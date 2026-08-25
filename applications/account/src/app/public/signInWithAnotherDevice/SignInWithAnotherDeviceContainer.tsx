@@ -9,13 +9,13 @@ import {
     type SignInWithAnotherDeviceResult,
     signInWithAnotherDevicePull,
 } from '@proton/account/signInWithAnotherDevice/signInWithAnotherDevicePull';
+import { useConfig } from '@proton/app-context/useConfig';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Href } from '@proton/atoms/Href/Href';
 import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import type { OnLoginCallback } from '@proton/components/containers/app/interface';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import useConfig from '@proton/components/hooks/useConfig';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import metrics from '@proton/metrics/index';
 import observeApiError from '@proton/metrics/lib/observeApiError';
@@ -49,10 +49,7 @@ interface Props {
 }
 
 type State =
-    | { type: 'init'; qrCode: string }
-    | { type: 'error'; errorMessage: string; error: any }
-    | { type: 'done' }
-    | null;
+    { type: 'init'; qrCode: string } | { type: 'error'; errorMessage: string; error: any } | { type: 'done' } | null;
 
 const SignInWithAnotherDeviceContainer = ({ api, toApp, paths, onLogin, onStartAuth }: Props) => {
     const [result, setResult] = useState<State>(null);

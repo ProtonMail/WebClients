@@ -13,8 +13,10 @@ import { EASY_SWITCH_SOURCES } from '../../interface';
 import type { Sync } from '../../logic/sync/sync.interface';
 import ConnectGmailButton from './ConnectGmailButton';
 
-jest.mock('@proton/components/hooks/useConfig', () => () => ({
-    APP_NAME: 'proton-mail',
+jest.mock('@proton/app-context/useConfig', () => ({
+    useConfig: () => ({
+        APP_NAME: 'proton-mail',
+    }),
 }));
 
 jest.mock('@proton/account/user/hooks');

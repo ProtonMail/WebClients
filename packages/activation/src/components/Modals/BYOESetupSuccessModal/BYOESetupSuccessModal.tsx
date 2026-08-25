@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
+import { useConfig } from '@proton/app-context/useConfig';
 import { Button } from '@proton/atoms/Button/Button';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, useSettingsLink } from '@proton/components';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import useConfig from '@proton/components/hooks/useConfig';
 import { APPS, BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import byoeSetupSuccess from '@proton/styles/assets/img/illustrations/byoe-setup-success.svg';
 

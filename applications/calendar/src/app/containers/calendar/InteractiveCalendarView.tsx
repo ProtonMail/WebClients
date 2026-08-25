@@ -9,6 +9,7 @@ import { c, msgid } from 'ttag';
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { useConfig } from '@proton/app-context/useConfig';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { VIDEO_CONF_API_ERROR_CODES } from '@proton/calendar-video-conferencing/videoConferencing/constants';
 import {
@@ -26,7 +27,6 @@ import { useCalendarModelEventManager } from '@proton/components/containers/even
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useApi from '@proton/components/hooks/useApi';
 import useBeforeUnload from '@proton/components/hooks/useBeforeUnload';
-import useConfig from '@proton/components/hooks/useConfig';
 import useGetCalendarEventRaw from '@proton/components/hooks/useGetCalendarEventRaw';
 import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonicalEmailsMap';
 import useGetEncryptionPreferences from '@proton/components/hooks/useGetEncryptionPreferences';

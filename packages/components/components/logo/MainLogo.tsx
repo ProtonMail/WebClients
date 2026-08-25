@@ -1,6 +1,6 @@
+import { useConfig } from '@proton/app-context/useConfig';
 import clsx from '@proton/utils/clsx';
 
-import useConfig from '../../hooks/useConfig';
 import type { AppLinkProps } from '../link/AppLink';
 import AppLink from '../link/AppLink';
 import Logo from './Logo';

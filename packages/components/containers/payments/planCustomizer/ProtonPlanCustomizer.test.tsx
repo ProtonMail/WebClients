@@ -22,9 +22,9 @@ jest.mock('@proton/unleash/standaloneClient', () => ({
     getStandaloneUnleashClient: () => ({ isEnabled: (...args: any[]) => mockIsEnabled(...args) }),
 }));
 
-jest.mock('../../../hooks/useConfig', () => ({
+jest.mock('@proton/app-context/useConfig', () => ({
     __esModule: true,
-    default: jest.fn().mockReturnValue({
+    useConfig: jest.fn().mockReturnValue({
         APP_NAME: 'proton-account',
     }),
 }));

@@ -4,6 +4,7 @@ import { format } from 'date-fns';
 import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { useConfig } from '@proton/app-context/useConfig';
 import { Button } from '@proton/atoms/Button/Button';
 import { useGetCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import { createExportIcs } from '@proton/shared/lib/calendar/export/createExportIcs';
@@ -21,7 +22,6 @@ import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 
 import BasicModal from '../../../components/modalTwo/BasicModal';
 import { getAppVersion } from '../../../helpers/appVersion';
-import useConfig from '../../../hooks/useConfig';
 import { useGetVtimezonesMap } from '../../../hooks/useGetVtimezonesMap';
 import ExportSummaryModalContent from './ExportSummaryModalContent';
 import ExportingModalContent from './ExportingModalContent';
