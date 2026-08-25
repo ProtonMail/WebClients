@@ -27,8 +27,14 @@ import { getKTActivation, getKTUserContext } from '../kt/actions';
 import type { OrganizationKeyState } from '../organizationKey';
 import { userThunk } from '../user';
 import { type UserKeysState, userKeysThunk } from '../userKeys';
+import { type UserPermissionsState, userPermissionsThunk } from '../userPermissions';
 
-type RequiredState = AddressesState & UserKeysState & OrganizationKeyState & KtState & GroupsState;
+type RequiredState = AddressesState &
+    UserKeysState &
+    OrganizationKeyState &
+    KtState &
+    GroupsState &
+    UserPermissionsState;
 
 export const acceptGroupInvitation = ({
     membership,
@@ -132,9 +138,9 @@ export const acceptGroupInvitation = ({
 
         // The group's role assignment isn't carried in an event loop event yet.
         await Promise.all([
-            // NOTE: Refetching the user implicitly retriggers a user permissions staleness
             dispatch(userThunk({ cache: CacheType.None })),
             dispatch(groupThunk({ cache: CacheType.None })),
+            dispatch(userPermissionsThunk({ cache: CacheType.None })),
         ]).catch(noop);
     };
 };
