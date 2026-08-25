@@ -1,4 +1,4 @@
-import type { Filter } from '@proton/components/containers/filters/interfaces';
+import type { Filter } from '@proton/sieve/filterModel';
 
 import { FILTER_STATUS } from '../../lib/constants';
 import { hasReachedFiltersLimit } from '../../lib/helpers/filters';

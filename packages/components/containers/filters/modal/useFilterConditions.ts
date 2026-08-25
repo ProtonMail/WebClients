@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 
+import { ConditionComparator, ConditionType } from '@proton/sieve/filterModel';
 import generateUID from '@proton/utils/generateUID';
 
 import type { Condition } from '../interfaces';
-import { ConditionComparator, ConditionType } from '../interfaces';
 
 const generateNewCondition = () => ({
     type: ConditionType.SUBJECT,

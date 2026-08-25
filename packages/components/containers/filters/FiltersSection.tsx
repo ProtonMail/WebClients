@@ -10,6 +10,7 @@ import { useFilters } from '@proton/mail/store/filters/hooks';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { applyFilters, updateFilterOrder } from '@proton/shared/lib/api/filters';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import type { Filter } from '@proton/sieve/filterModel';
 import move from '@proton/utils/move';
 
 import Loader from '../../components/loader/Loader';
@@ -17,7 +18,6 @@ import SettingsParagraph from '../account/SettingsParagraph';
 import SettingsSection from '../account/SettingsSection';
 import ActionsFilterToolbar from './ActionsFilterToolbar';
 import FilterSortableList from './FilterSortableList';
-import type { Filter } from './interfaces';
 import { useFilterDispatch } from './useFilterDispatch';
 
 function FiltersSection() {

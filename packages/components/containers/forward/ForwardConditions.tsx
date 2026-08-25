@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import type { FilterStatement } from '@proton/sieve/filterModel';
 
-import type { Condition, FilterStatement } from '../filters/interfaces';
+import type { Condition } from '../filters/interfaces';
 import useFilterConditions from '../filters/modal/useFilterConditions';
 import ForwardCondition from './ForwardCondition';
 

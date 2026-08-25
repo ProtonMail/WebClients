@@ -1,12 +1,13 @@
 import { toMap } from '@proton/shared/lib/helpers/object';
+import type { FilterCondition, FilterOperator } from '@proton/sieve/filterModel';
+import { FilterStatement } from '@proton/sieve/filterModel';
 import { fromSieveTree } from '@proton/sieve/fromSieveTree';
 import { toSieveTree } from '@proton/sieve/toSieveTree';
 import type { SIEVE_VERSION, SieveBranch } from '@proton/sieve/types';
 import generateUID from '@proton/utils/generateUID';
 
 import { COMPARATORS, OPERATORS, TYPES } from '../filters/constants';
-import type { Condition, FilterCondition, FilterOperator } from '../filters/interfaces';
-import { FilterStatement } from '../filters/interfaces';
+import type { Condition } from '../filters/interfaces';
 
 const toSieveOperator = (statement: FilterStatement): FilterOperator => {
     const operatorsMap = toMap(OPERATORS, 'value');
