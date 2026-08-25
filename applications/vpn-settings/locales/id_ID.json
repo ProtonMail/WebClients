@@ -4232,6 +4232,9 @@
       "Add": [
         "Tambahkan"
       ],
+      "Add 1 more": [
+        "Tambah 1 lagi"
+      ],
       "Add emergency contact": [
         "Tambahkan kontak darurat"
       ],
@@ -4330,6 +4333,9 @@
       ],
       "Enable auto-renew": [
         "Aktifkan pembaruan otomatis"
+      ],
+      "Explore plans": [
+        "Jelajahi paket"
       ],
       "For ${ email }": [
         "Untuk ${ email }"
@@ -9530,6 +9536,9 @@
       ],
       "Recovery phone number": [
         "Nomor telepon pemulihan"
+      ],
+      "Set recovery phone number": [
+        "Atur nomor telepon pemulihan"
       ]
     },
     "Label": {
@@ -9913,6 +9922,9 @@
       ],
       "Enter code": [
         "Masukkan kode"
+      ],
+      "Enter current password": [
+        "Masukkan kata sandi saat ini"
       ],
       "Enter name or email address": [
         "Masukkan nama atau alamat email"
@@ -13861,6 +13873,9 @@
       "Recoverability": [
         "Kemampuan Pemulihan"
       ],
+      "Recovery score: ${ score }": [
+        "Skor pemulihan: ${ score }"
+      ],
       "Require verified password reset option (email or SMS)": [
         "Wajibkan opsi atur ulang kata sandi terverifikasi (email atau SMS)"
       ],
@@ -14318,8 +14333,289 @@
       ]
     },
     "Safety review": {
+      "Code sent to ${ boldValue }": [
+        "Kode dikirim ke ${ boldValue }"
+      ],
+      "Invalid code": [
+        "Kode tidak valid"
+      ],
       "Review account safety": [
         "Tinjau keamanan akun"
+      ],
+      "Safety review": [
+        "Peninjauan keamanan"
+      ],
+      "Send a new code": [
+        "Kirim kode baru"
+      ],
+      "update it now": [
+        "perbarui sekarang"
+      ]
+    },
+    "safety_review": {
+      "${ BRAND_NAME } Account email": [
+        "Email Akun ${ BRAND_NAME }"
+      ],
+      "Account protection": [
+        "Perlindungan akun"
+      ],
+      "Add": [
+        "Tambah"
+      ],
+      "Add an emergency contact": [
+        "Tambah kontak darurat"
+      ],
+      "Add emergency contacts": [
+        "Tambah kontak darurat"
+      ],
+      "Add options": [
+        "Tambah opsi"
+      ],
+      "Add people who you trust and can contact easily. Your emergency contact will be able to access your account and reset your password for you if needed.": [
+        "Tambahkan orang yang dipercayai dan dapat dihubungi dengan mudah. Kontak darurat akan dapat mengakses akun dan mengatur ulang kata sandi jika diperlukan."
+      ],
+      "Add people you trust and can contact easily. They will be able to help you unlock your data after you reset your password.": [
+        "Tambahkan orang yang dipercayai dan dapat dihubungi dengan mudah. Mereka akan dapat membantu membuka kunci data setelah mengatur ulang kata sandi."
+      ],
+      "Add phone number": [
+        "Tambah nomor telepon"
+      ],
+      "Add recovery contacts": [
+        "Tambah kontak pemulihan"
+      ],
+      "Add recovery email": [
+        "Tambah email pemulihan"
+      ],
+      "Add recovery phone": [
+        "Tambah telepon pemulihan"
+      ],
+      "Added emergency contacts": [
+        "Menambahkan kontak darurat"
+      ],
+      "Added recovery contacts": [
+        "Menambahkan kontak pemulihan"
+      ],
+      "Added recovery email": [
+        "Menambahkan email pemulihan"
+      ],
+      "Added recovery phone": [
+        "Menambahkan telepon pemulihan"
+      ],
+      "Allow": [
+        "Izinkan"
+      ],
+      "Allow data recovery from this device": [
+        "Izinkan pemulihan data dari perangkat ini"
+      ],
+      "Allow password reset from the settings": [
+        "Izinkan atur ulang kata sandi dari pengaturan"
+      ],
+      "Allow recovery by email": [
+        "Izinkan pemulihan melalui email"
+      ],
+      "Allow recovery by phone": [
+        "Izinkan pemulihan melalui telepon"
+      ],
+      "Allow scanning a QR code to sign in": [
+        "Izinkan memindai kode QR untuk masuk"
+      ],
+      "Allow trusted friends to unlock your data": [
+        "Izinkan teman tepercaya membuka kunci data"
+      ],
+      "Back to ${ backLink.appNameString }": [
+        "Kembali ke ${ backLink.appNameString }"
+      ],
+      "Congratulations": [
+        "Selamat"
+      ],
+      "Didn’t receive it? ${ sendANewCode }": [
+        "Tidak menerimanya? ${ sendANewCode }"
+      ],
+      "Done": [
+        "Selesai"
+      ],
+      "Download": [
+        "Unduh"
+      ],
+      "Download recovery file": [
+        "Unduh file pemulihan"
+      ],
+      "Downloaded recovery file": [
+        "File pemulihan diunduh"
+      ],
+      "Emergency contacts enabled": [
+        "Kontak darurat diaktifkan"
+      ],
+      "Enable device recovery": [
+        "Aktifkan pemulihan perangkat"
+      ],
+      "Enable email recovery": [
+        "Aktifkan pemulihan email"
+      ],
+      "Enable emergency contacts": [
+        "Aktifkan kontak darurat"
+      ],
+      "Enable password reset from settings": [
+        "Aktifkan atur ulang kata sandi dari pengaturan"
+      ],
+      "Enable phone recovery": [
+        "Aktifkan pemulihan telepon"
+      ],
+      "Enable QR code sign-in": [
+        "Aktifkan masuk kode QR"
+      ],
+      "Enabled device recovery": [
+        "Pemulihan perangkat diaktifkan"
+      ],
+      "Enabled email recovery": [
+        "Pemulihan email diaktifkan"
+      ],
+      "Enabled password reset from settings": [
+        "Atur ulang kata sandi dari pengaturan diaktifkan"
+      ],
+      "Enabled phone recovery": [
+        "Pemulihan telepon diaktifkan"
+      ],
+      "Enabled QR code sign-in": [
+        "Masuk kode QR diaktifkan"
+      ],
+      "Got it": [
+        "Mengerti"
+      ],
+      "Here's how you increased your account protection:": [
+        "Berikut adalah cara meningkatkan perlindungan akun:"
+      ],
+      "If you forget your password, you can sign in using a QR code. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
+        "Jika lupa kata sandi, masuk dapat dilakukan menggunakan kode QR. Cukup dengan tetap masuk ke layanan ${ BRAND_NAME } di perangkat lain."
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, it will allow you to sign in and recover your data. It’s the only way to instantly restore everything, so make sure you keep it somewhere safe.": [
+        "Jika terkunci dari Akun ${ BRAND_NAME }, ini akan memungkinkan masuk dan memulihkan data. Ini satu-satunya cara untuk segera memulihkan semuanya, jadi pastikan untuk menyimpannya di tempat yang aman."
+      ],
+      "If your recovery email has changed, ${ updateEmailLink }.": [
+        "Jika email pemulihan telah berubah, ${ updateEmailLink }."
+      ],
+      "If your recovery phone has changed, ${ updatePhoneLink }.": [
+        "Jika telepon pemulihan telah berubah, ${ updatePhoneLink }."
+      ],
+      "Later": [
+        "Nanti"
+      ],
+      "Protect your legacy with Emergency Access": [
+        "Lindungi sistem lama dengan Akses Darurat"
+      ],
+      "Save recovery phrase": [
+        "Simpan frasa pemulihan"
+      ],
+      "Saved recovery phrase": [
+        "Menyimpan frasa pemulihan"
+      ],
+      "Send verification code": [
+        "Kirim kode verifikasi"
+      ],
+      "They must already have a ${ BRAND_NAME } Account.": [
+        "Mereka harus sudah memiliki Akun ${ BRAND_NAME }."
+      ],
+      "They will not be able to see or access your data.": [
+        "Mereka tidak akan dapat melihat atau mengakses data Anda."
+      ],
+      "This will let you quickly access your ${ BRAND_NAME } Account so you can change your password.": [
+        "Ini akan mempermudah akses cepat ke Akun ${ BRAND_NAME } sehingga kata sandi dapat diubah."
+      ],
+      "This will let you reset your account password if you’ve lost it, but are still signed in to ${ BRAND_NAME }. It’s often the easiest way to recover your account if you’re signed in.": [
+        "Ini akan memungkinkan atur ulang kata sandi akun jika lupa, tetapi masih dalam keadaan masuk ke ${ BRAND_NAME }. Ini sering kali merupakan cara termudah untuk memulihkan akun jika masih dalam keadaan masuk."
+      ],
+      "This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
+        "Ini akan memulihkan akses ke email, kontak, file, kata sandi, dan data terenkripsi lainnya di akun setelah atur ulang kata sandi."
+      ],
+      "To help you remember your password, we’ll periodically ask you to enter it.": [
+        "Untuk membantu mengingat kata sandi, kami akan meminta Anda memasukkannya secara berkala."
+      ],
+      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
+        "Untuk memastikan alamat email milik Anda, masukkan kode verifikasi yang dikirim ke ${ boldEmail }."
+      ],
+      "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
+        "Untuk memastikan nomor telepon milik Anda, masukkan kode verifikasi yang dikirim ke ${ boldPhoneNumber }."
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification code.": [
+        "Untuk memastikan alamat ini benar-benar milik Anda, kami akan mengirimkan email berisi kode verifikasi."
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification link.": [
+        "Untuk memastikan alamat ini benar-benar milik Anda, email berisi tautan verifikasi akan dikirimkan."
+      ],
+      "To make sure this number is really yours, we’ll send an SMS with a verification code.": [
+        "Untuk memastikan nomor ini benar-benar milik Anda, kami akan mengirimkan SMS berisi kode verifikasi."
+      ],
+      "Update": [
+        "Perbarui"
+      ],
+      "Update recovery email": [
+        "Perbarui email pemulihan"
+      ],
+      "Update recovery phone": [
+        "Perbarui telepon pemulihan"
+      ],
+      "Upgrade your plan to enable Emergency Access to your account. This will allow you to designate 1 to 5 people who will be able to reset your password for you.": [
+        "Tingkatkan paket untuk mengaktifkan Akses Darurat ke akun. Ini akan memungkinkan untuk menunjuk 1 hingga 5 orang yang dapat mengatur ulang kata sandi."
+      ],
+      "Verified password": [
+        "Kata sandi terverifikasi"
+      ],
+      "Verified recovery email": [
+        "Email pemulihan terverifikasi"
+      ],
+      "Verified recovery phone": [
+        "Telepon pemulihan terverifikasi"
+      ],
+      "Verify": [
+        "Verifikasi"
+      ],
+      "Verify password": [
+        "Verifikasi kata sandi"
+      ],
+      "Verify recovery email": [
+        "Verifikasi email pemulihan"
+      ],
+      "Verify recovery phone": [
+        "Verifikasi telepon pemulihan"
+      ],
+      "Verify your password": [
+        "Verifikasi kata sandi"
+      ],
+      "Verify your recovery email": [
+        "Verifikasi email pemulihan"
+      ],
+      "Verify your recovery phone": [
+        "Verifikasi telepon pemulihan"
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        "Memverifikasi alamat email meningkatkan keamanan akun dan memungkinkan opsi tambahan untuk pemulihan."
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "Memverifikasi nomor telepon meningkatkan keamanan akun dan memungkinkan opsi tambahan untuk pemulihan."
+      ],
+      "You can save a data backup on this device. This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset, simply by signing in on this device.": [
+        "Cadangan data dapat disimpan di perangkat ini. Ini akan memulihkan akses ke email, kontak, file, kata sandi, dan data terenkripsi lainnya di akun setelah atur ulang kata sandi, cukup dengan masuk di perangkat ini."
+      ],
+      "You can use email verification to regain access to your account if you forget your password.": [
+        "Verifikasi email dapat digunakan untuk memperoleh kembali akses ke akun jika lupa kata sandi."
+      ],
+      "You can use SMS verification to regain access to your account if you forget your password.": [
+        "Verifikasi SMS dapat digunakan untuk memperoleh kembali akses ke akun jika lupa kata sandi."
+      ],
+      "You can use your recovery email to regain access to your account if you forget your password.": [
+        "Email pemulihan dapat digunakan untuk memperoleh kembali akses ke akun jika lupa kata sandi."
+      ],
+      "You can use your recovery phone to regain access to your account if you forget your password.": [
+        "Telepon pemulihan dapat digunakan untuk memperoleh kembali akses ke akun jika lupa kata sandi."
+      ],
+      "You don’t need to open or read the file—just download it and store it somewhere safe.": [
+        "Tidak perlu membuka atau membaca file ini—cukup unduh dan simpan di tempat yang aman."
+      ],
+      "Your recovery checklist": [
+        "Daftar periksa pemulihan"
+      ],
+      "Your security setup": [
+        "Pengaturan keamanan Anda"
       ]
     },
     "saml: Action": {

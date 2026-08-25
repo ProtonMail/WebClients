@@ -4562,6 +4562,9 @@
       "Add": [
         "Afegeix"
       ],
+      "Add 1 more": [
+        "Afegiu-ne 1 més"
+      ],
       "Add emergency contact": [
         "Afegeix un contacte d'emergència"
       ],
@@ -4660,6 +4663,9 @@
       ],
       "Enable auto-renew": [
         "Habilita la renovació automàtica"
+      ],
+      "Explore plans": [
+        "Exploreu els plans"
       ],
       "For ${ email }": [
         "Per a ${ email }"
@@ -10948,6 +10954,9 @@
       "Enter code": [
         "Introduïu el codi"
       ],
+      "Enter current password": [
+        "Introduïu la contrasenya actual"
+      ],
       "Enter name or email address": [
         "Introduïu un nom o una adreça electrònica"
       ],
@@ -11571,6 +11580,9 @@
       ],
       "Recovery phone number": [
         "Número de telèfon de recuperació"
+      ],
+      "Set recovery phone number": [
+        "Configureu el número de telèfon de recuperació"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13553,6 +13565,16 @@
         "Llista de verificació de recuperació"
       ]
     },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Proveu-ho ara"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Ara teniu accés a la nova ${ CALENDAR_APP_NAME }. ${ link }"
+      ]
+    },
     "Notification": {
       "${ reason } has been disabled": [
         "${ reason } s'ha desactivat"
@@ -15137,6 +15159,9 @@
       "Recoverability": [
         "Recuperabilitat"
       ],
+      "Recovery score: ${ score }": [
+        "Puntuació de recuperació: ${ score }"
+      ],
       "Require verified password reset option (email or SMS)": [
         "Cal una opció de restabliment de contrasenya verificada (correu electrònic o SMS)"
       ],
@@ -15603,8 +15628,289 @@
       ]
     },
     "Safety review": {
+      "Code sent to ${ boldValue }": [
+        "S'ha enviat el codi a ${ boldValue }."
+      ],
+      "Invalid code": [
+        "El codi no és vàlid."
+      ],
       "Review account safety": [
         "Reviseu la seguretat del compte"
+      ],
+      "Safety review": [
+        "Revisió de seguretat"
+      ],
+      "Send a new code": [
+        "Envia un altre codi"
+      ],
+      "update it now": [
+        "actualitzeu-ho ara"
+      ]
+    },
+    "safety_review": {
+      "${ BRAND_NAME } Account email": [
+        "Correu electrònic del compte de ${ BRAND_NAME }"
+      ],
+      "Account protection": [
+        "Protecció del compte"
+      ],
+      "Add": [
+        "Afegiu"
+      ],
+      "Add an emergency contact": [
+        "Afegir un contacte d'emergència"
+      ],
+      "Add emergency contacts": [
+        "Afegiu contactes d'emergència"
+      ],
+      "Add options": [
+        "Afegir opcions"
+      ],
+      "Add people who you trust and can contact easily. Your emergency contact will be able to access your account and reset your password for you if needed.": [
+        "Afegiu persones en qui confieu i que hi pugueu contactar fàcilment. El vostre contacte d'emergència podrà accedir al compte i restablir-vos la contrasenya si cal."
+      ],
+      "Add people you trust and can contact easily. They will be able to help you unlock your data after you reset your password.": [
+        "Afegiu persones de confiança amb qui pugueu contactar fàcilment. Us podran ajudar a desbloquejar les vostres dades després de restablir la contrasenya."
+      ],
+      "Add phone number": [
+        "Afegiu un número de telèfon"
+      ],
+      "Add recovery contacts": [
+        "Afegiu contactes de recuperació"
+      ],
+      "Add recovery email": [
+        "Afegiu un correu electrònic de recuperació"
+      ],
+      "Add recovery phone": [
+        "Afegiu un telèfon de recuperació"
+      ],
+      "Added emergency contacts": [
+        "S'han afegit els contactes d'emergència"
+      ],
+      "Added recovery contacts": [
+        "S'han afegit els contactes de recuperació"
+      ],
+      "Added recovery email": [
+        "S'ha afegit el correu electrònic de recuperació"
+      ],
+      "Added recovery phone": [
+        "S'ha afegit el telèfon de recuperació"
+      ],
+      "Allow": [
+        "Permetre-ho"
+      ],
+      "Allow data recovery from this device": [
+        "Permeteu la recuperació de dades des d'aquest dispositiu"
+      ],
+      "Allow password reset from the settings": [
+        "Permeteu el restabliment de la contrasenya des de les preferències"
+      ],
+      "Allow recovery by email": [
+        "Permeteu la recuperació per correu electrònic"
+      ],
+      "Allow recovery by phone": [
+        "Permetre la recuperació per telèfon"
+      ],
+      "Allow scanning a QR code to sign in": [
+        "Permetre l'escaneig d'un codi QR per iniciar sessió"
+      ],
+      "Allow trusted friends to unlock your data": [
+        "Permeteu que amistats de confiança desbloquegin les vostres dades"
+      ],
+      "Back to ${ backLink.appNameString }": [
+        "Torneu a ${ backLink.appNameString }"
+      ],
+      "Congratulations": [
+        "Enhorabona"
+      ],
+      "Didn’t receive it? ${ sendANewCode }": [
+        "No l'heu rebut? ${ sendANewCode }"
+      ],
+      "Done": [
+        "Fet"
+      ],
+      "Download": [
+        "Descarregar"
+      ],
+      "Download recovery file": [
+        "Descarregueu el fitxer de recuperació"
+      ],
+      "Downloaded recovery file": [
+        "S'ha descarregat el fitxer de recuperació"
+      ],
+      "Emergency contacts enabled": [
+        "S'han activat els contactes d'emergència"
+      ],
+      "Enable device recovery": [
+        "Habiliteu la recuperació del dispositiu"
+      ],
+      "Enable email recovery": [
+        "Habiliteu la recuperació per correu electrònic"
+      ],
+      "Enable emergency contacts": [
+        "Habiliteu els contactes d'emergència"
+      ],
+      "Enable password reset from settings": [
+        "Habiliteu el restabliment de contrasenya des de les preferències"
+      ],
+      "Enable phone recovery": [
+        "Habiliteu la recuperació per telèfon"
+      ],
+      "Enable QR code sign-in": [
+        "Activeu l'inici de sessió amb codi QR"
+      ],
+      "Enabled device recovery": [
+        "S'ha activat la recuperació del dispositiu"
+      ],
+      "Enabled email recovery": [
+        "S'ha activat la recuperació per correu electrònic"
+      ],
+      "Enabled password reset from settings": [
+        "S'ha activat el restabliment de contrasenya des de les preferències"
+      ],
+      "Enabled phone recovery": [
+        "S'ha habilitat la recuperació per telèfon"
+      ],
+      "Enabled QR code sign-in": [
+        "S'ha activat l'inici de sessió amb codi QR"
+      ],
+      "Got it": [
+        "Entesos"
+      ],
+      "Here's how you increased your account protection:": [
+        "Aquí teniu com heu augmentat la protecció del vostre compte:"
+      ],
+      "If you forget your password, you can sign in using a QR code. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
+        "Si oblideu la contrasenya, podeu iniciar sessió mitjançant un codi QR. Només cal que hàgiu iniciat sessió en un servei de ${ BRAND_NAME } en un altre dispositiu."
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, it will allow you to sign in and recover your data. It’s the only way to instantly restore everything, so make sure you keep it somewhere safe.": [
+        "Si perdeu l'accés al vostre compte de ${ BRAND_NAME }, això us permetrà iniciar sessió i recuperar les dades. És l'única manera de restaurar-ho tot a l'instant, així que assegureu-vos de desar-ho en un lloc segur."
+      ],
+      "If your recovery email has changed, ${ updateEmailLink }.": [
+        "Si el vostre correu electrònic de recuperació ha canviat, ${ updateEmailLink }."
+      ],
+      "If your recovery phone has changed, ${ updatePhoneLink }.": [
+        "Si el vostre telèfon de recuperació ha canviat, ${ updatePhoneLink }."
+      ],
+      "Later": [
+        "Més tard"
+      ],
+      "Protect your legacy with Emergency Access": [
+        "Protegiu el vostre llegat amb l'accés d'emergència"
+      ],
+      "Save recovery phrase": [
+        "Deseu la frase de recuperació"
+      ],
+      "Saved recovery phrase": [
+        "S'ha desat la frase de recuperació"
+      ],
+      "Send verification code": [
+        "Enviar el codi de verificació"
+      ],
+      "They must already have a ${ BRAND_NAME } Account.": [
+        "Cal que tinguin un compte de ${ BRAND_NAME }."
+      ],
+      "They will not be able to see or access your data.": [
+        "No podran veure les vostres dades ni accedir-hi."
+      ],
+      "This will let you quickly access your ${ BRAND_NAME } Account so you can change your password.": [
+        "Això us permetrà accedir ràpidament al vostre compte de ${ BRAND_NAME } perquè pugueu canviar la contrasenya."
+      ],
+      "This will let you reset your account password if you’ve lost it, but are still signed in to ${ BRAND_NAME }. It’s often the easiest way to recover your account if you’re signed in.": [
+        "Això us permetrà restablir la contrasenya del vostre compte si l'heu perduda, però manteniu la sessió iniciada a ${ BRAND_NAME }. Sovint és la manera més fàcil de recuperar el vostre compte si teniu la sessió iniciada."
+      ],
+      "This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
+        "Això restaurarà l'accés a correus electrònics, contactes, fitxers, contrasenyes i qualsevol altra dada xifrada del vostre compte després d'un restabliment de contrasenya."
+      ],
+      "To help you remember your password, we’ll periodically ask you to enter it.": [
+        "Per ajudar-vos a recordar la vostra contrasenya, us demanarem periòdicament que la introduïu."
+      ],
+      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
+        "Per assegurar-nos que l'adreça de correu electrònic és vostra, introduïu el codi de verificació enviat a ${ boldEmail }."
+      ],
+      "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
+        "Per assegurar-vos que el número de telèfon és el vostre, introduïu el codi de verificació enviat a ${ boldPhoneNumber }."
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification code.": [
+        "Per a assegurar-nos que aquesta adreça és realment vostra, us enviarem un correu electrònic amb un codi de verificació."
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification link.": [
+        "Per assegurar-nos que aquesta adreça és realment vostra, us enviarem un correu electrònic amb un enllaç de verificació."
+      ],
+      "To make sure this number is really yours, we’ll send an SMS with a verification code.": [
+        "Per a assegurar-nos que aquest número és realment vostre, us enviarem un SMS amb un codi de verificació."
+      ],
+      "Update": [
+        "Actualitzeu-ho"
+      ],
+      "Update recovery email": [
+        "Actualitzeu el correu electrònic de recuperació"
+      ],
+      "Update recovery phone": [
+        "Actualitzeu el telèfon de recuperació"
+      ],
+      "Upgrade your plan to enable Emergency Access to your account. This will allow you to designate 1 to 5 people who will be able to reset your password for you.": [
+        "Milloreu de pla per habilitar l'accés d'emergència al vostre compte. Això us permetrà designar d'1 a 5 persones que us podran restablir la contrasenya."
+      ],
+      "Verified password": [
+        "S'ha verificat la contrasenya"
+      ],
+      "Verified recovery email": [
+        "S'ha verificat el correu electrònic de recuperació"
+      ],
+      "Verified recovery phone": [
+        "S'ha verificat el telèfon de recuperació"
+      ],
+      "Verify": [
+        "Verifiqueu"
+      ],
+      "Verify password": [
+        "Verifiqueu la contrasenya"
+      ],
+      "Verify recovery email": [
+        "Verifiqueu el correu electrònic de recuperació"
+      ],
+      "Verify recovery phone": [
+        "Verifiqueu el telèfon de recuperació"
+      ],
+      "Verify your password": [
+        "Verifiqueu la vostra contrasenya"
+      ],
+      "Verify your recovery email": [
+        "Verifiqueu el vostre correu electrònic de recuperació"
+      ],
+      "Verify your recovery phone": [
+        "Verifiqueu el vostre telèfon de recuperació"
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        "La verificació de l'adreça de correu electrònic augmenta la seguretat del vostre compte i permet opcions addicionals de recuperació."
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "Verificar el número de telèfon augmenta la seguretat del vostre compte i permet opcions addicionals de recuperació."
+      ],
+      "You can save a data backup on this device. This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset, simply by signing in on this device.": [
+        "Podeu desar una còpia de seguretat de les dades en aquest dispositiu. Això restaurarà l'accés a correus electrònics, contactes, fitxers, contrasenyes i qualsevol altra dada xifrada del vostre compte després d'un restabliment de contrasenya, simplement iniciant sessió en aquest dispositiu."
+      ],
+      "You can use email verification to regain access to your account if you forget your password.": [
+        "Podeu utilitzar la verificació per correu electrònic per tornar a accedir al vostre compte si n'oblideu la contrasenya."
+      ],
+      "You can use SMS verification to regain access to your account if you forget your password.": [
+        "Podeu utilitzar la verificació per SMS per tornar a accedir al vostre compte si n'oblideu la contrasenya."
+      ],
+      "You can use your recovery email to regain access to your account if you forget your password.": [
+        "Podeu utilitzar el correu electrònic de recuperació per accedir al vostre compte si n'oblideu la contrasenya."
+      ],
+      "You can use your recovery phone to regain access to your account if you forget your password.": [
+        "Podeu utilitzar el vostre telèfon de recuperació per recuperar l'accés al vostre compte si n'oblideu la contrasenya."
+      ],
+      "You don’t need to open or read the file—just download it and store it somewhere safe.": [
+        "No cal que obriu ni llegiu el fitxer; només heu de descarregar-lo i desar-lo en un lloc segur."
+      ],
+      "Your recovery checklist": [
+        "La vostra llista de verificació de recuperació"
+      ],
+      "Your security setup": [
+        "La vostra configuració de seguretat"
       ]
     },
     "saml: Action": {

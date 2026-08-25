@@ -4274,6 +4274,9 @@
       "Add": [
         "添加"
       ],
+      "Add 1 more": [
+        "再添加 1 个"
+      ],
       "Add emergency contact": [
         "添加紧急联系人"
       ],
@@ -4372,6 +4375,9 @@
       ],
       "Enable auto-renew": [
         "启用自动续订"
+      ],
+      "Explore plans": [
+        "查看套餐"
       ],
       "For ${ email }": [
         "对于 ${ email }"
@@ -10439,6 +10445,9 @@
       "Enter code": [
         "输入代码"
       ],
+      "Enter current password": [
+        "请输入当前密码"
+      ],
       "Enter name or email address": [
         "请输入用户名或邮箱地址"
       ],
@@ -11058,6 +11067,9 @@
       ],
       "Recovery phone number": [
         "密保手机"
+      ],
+      "Set recovery phone number": [
+        "设置密保手机"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14446,6 +14458,9 @@
       "Recoverability": [
         "可恢复性"
       ],
+      "Recovery score: ${ score }": [
+        "恢复评分：${ score }"
+      ],
       "Require verified password reset option (email or SMS)": [
         "需要已验证的密码重置选项 (邮箱或短信)"
       ],
@@ -14903,8 +14918,289 @@
       ]
     },
     "Safety review": {
+      "Code sent to ${ boldValue }": [
+        "验证码已发送到 ${ boldValue }"
+      ],
+      "Invalid code": [
+        "无效的验证码"
+      ],
       "Review account safety": [
         "审查账户安全"
+      ],
+      "Safety review": [
+        "安全审查"
+      ],
+      "Send a new code": [
+        "发送新代码"
+      ],
+      "update it now": [
+        "立即更新"
+      ]
+    },
+    "safety_review": {
+      "${ BRAND_NAME } Account email": [
+        "${ BRAND_NAME } 账户邮箱"
+      ],
+      "Account protection": [
+        "账户保护"
+      ],
+      "Add": [
+        "添加"
+      ],
+      "Add an emergency contact": [
+        "添加紧急联系人"
+      ],
+      "Add emergency contacts": [
+        "添加紧急联系人"
+      ],
+      "Add options": [
+        "添加选项"
+      ],
+      "Add people who you trust and can contact easily. Your emergency contact will be able to access your account and reset your password for you if needed.": [
+        "请添加您信任且容易联系的朋友，他们将能够在需要时访问您的账户并为您重置密码。"
+      ],
+      "Add people you trust and can contact easily. They will be able to help you unlock your data after you reset your password.": [
+        "添加您信任且容易联系的朋友。重置密码后，他们将能够帮助您解锁数据。"
+      ],
+      "Add phone number": [
+        "添加手机号码"
+      ],
+      "Add recovery contacts": [
+        "添加恢复联系人"
+      ],
+      "Add recovery email": [
+        "添加密保邮箱"
+      ],
+      "Add recovery phone": [
+        "添加密保手机"
+      ],
+      "Added emergency contacts": [
+        "已添加紧急联系人"
+      ],
+      "Added recovery contacts": [
+        "已添加恢复联系人"
+      ],
+      "Added recovery email": [
+        "已添加密保邮箱"
+      ],
+      "Added recovery phone": [
+        "添加密保手机"
+      ],
+      "Allow": [
+        "允许"
+      ],
+      "Allow data recovery from this device": [
+        "允许在此设备上恢复数据"
+      ],
+      "Allow password reset from the settings": [
+        "允许通过设置重置密码"
+      ],
+      "Allow recovery by email": [
+        "允许通过密保邮箱恢复"
+      ],
+      "Allow recovery by phone": [
+        "允许通过密保手机恢复"
+      ],
+      "Allow scanning a QR code to sign in": [
+        "允许扫描二维码登录"
+      ],
+      "Allow trusted friends to unlock your data": [
+        "允许受信任的朋友解锁您的数据"
+      ],
+      "Back to ${ backLink.appNameString }": [
+        "返回 ${ backLink.appNameString }"
+      ],
+      "Congratulations": [
+        "恭喜"
+      ],
+      "Didn’t receive it? ${ sendANewCode }": [
+        "没有收到？${ sendANewCode }"
+      ],
+      "Done": [
+        "完成"
+      ],
+      "Download": [
+        "下载"
+      ],
+      "Download recovery file": [
+        "下载恢复文件"
+      ],
+      "Downloaded recovery file": [
+        "已下载恢复文件"
+      ],
+      "Emergency contacts enabled": [
+        "已启用紧急联系人"
+      ],
+      "Enable device recovery": [
+        "启用通过设备恢复"
+      ],
+      "Enable email recovery": [
+        "启用通过密保邮箱恢复"
+      ],
+      "Enable emergency contacts": [
+        "启用紧急联系人"
+      ],
+      "Enable password reset from settings": [
+        "启用通过设置重置密码"
+      ],
+      "Enable phone recovery": [
+        "启用通过密保手机恢复"
+      ],
+      "Enable QR code sign-in": [
+        "启用扫码登录"
+      ],
+      "Enabled device recovery": [
+        "已启用通过设备恢复"
+      ],
+      "Enabled email recovery": [
+        "已启用通过密保邮箱恢复"
+      ],
+      "Enabled password reset from settings": [
+        "已启用通过设置重置密码"
+      ],
+      "Enabled phone recovery": [
+        "已启用通过密保手机恢复"
+      ],
+      "Enabled QR code sign-in": [
+        "已启用扫码登录"
+      ],
+      "Got it": [
+        "知道了"
+      ],
+      "Here's how you increased your account protection:": [
+        "以下是增强账户保护的方式："
+      ],
+      "If you forget your password, you can sign in using a QR code. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
+        "如果您忘记密码，可以使用二维码登录。只需在另一台设备上登录 ${ BRAND_NAME } 服务即可。"
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, it will allow you to sign in and recover your data. It’s the only way to instantly restore everything, so make sure you keep it somewhere safe.": [
+        "如果您无法登录 ${ BRAND_NAME } 账户，该短语将允许您登录并恢复数据。这是即时恢复所有内容的唯一方法，请务必将其保存在安全的地方！"
+      ],
+      "If your recovery email has changed, ${ updateEmailLink }.": [
+        "如果您的密保邮箱已更改，请 ${ updateEmailLink }。"
+      ],
+      "If your recovery phone has changed, ${ updatePhoneLink }.": [
+        "如果您的密保手机号码已更改，请 ${ updatePhoneLink }。"
+      ],
+      "Later": [
+        "稍后"
+      ],
+      "Protect your legacy with Emergency Access": [
+        "通过紧急访问功能保护您的数字资产"
+      ],
+      "Save recovery phrase": [
+        "保存恢复短语"
+      ],
+      "Saved recovery phrase": [
+        "已保存恢复短语"
+      ],
+      "Send verification code": [
+        "发送验证码"
+      ],
+      "They must already have a ${ BRAND_NAME } Account.": [
+        "他们必须已拥有 ${ BRAND_NAME } 账户！"
+      ],
+      "They will not be able to see or access your data.": [
+        "他们将无法查看或访问您的数据！"
+      ],
+      "This will let you quickly access your ${ BRAND_NAME } Account so you can change your password.": [
+        "这将让您快速访问 ${ BRAND_NAME } 账户，以便更改密码。"
+      ],
+      "This will let you reset your account password if you’ve lost it, but are still signed in to ${ BRAND_NAME }. It’s often the easiest way to recover your account if you’re signed in.": [
+        "如果您丢失了密码但仍在 ${ BRAND_NAME } 中保持登录状态，这将允许您重置账户密码。如果您已登录，这通常是恢复账户的最简单方式。"
+      ],
+      "This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
+        "重置密码后，这将能够恢复账户中的邮件、联系人、文件、密码以及任何其他加密数据的访问权限。"
+      ],
+      "To help you remember your password, we’ll periodically ask you to enter it.": [
+        "为帮助您记住密码，我们会定期要求您输入！"
+      ],
+      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
+        "为确保邮箱地址是您的，请输入发送至 ${ boldEmail } 的验证码。"
+      ],
+      "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
+        "为确保电话号码是您的，请输入发送至 ${ boldPhoneNumber } 的验证码。"
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification code.": [
+        "为确保邮箱地址是您的，我们将发送一封带有验证码的邮件。"
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification link.": [
+        "为确保邮箱地址是您的，我们将发送一封带有验证链接的邮件。"
+      ],
+      "To make sure this number is really yours, we’ll send an SMS with a verification code.": [
+        "为确保手机号码是您的，我们将发送一条带有验证码的短信。"
+      ],
+      "Update": [
+        "更新"
+      ],
+      "Update recovery email": [
+        "更新密保邮箱"
+      ],
+      "Update recovery phone": [
+        "更新密保手机"
+      ],
+      "Upgrade your plan to enable Emergency Access to your account. This will allow you to designate 1 to 5 people who will be able to reset your password for you.": [
+        "升级您的套餐以启用账户的紧急访问功能，这将允许您指定 1 到 5 位能够为您重置密码的朋友。"
+      ],
+      "Verified password": [
+        "已验证密码"
+      ],
+      "Verified recovery email": [
+        "已验证密保邮箱"
+      ],
+      "Verified recovery phone": [
+        "已验证密保手机"
+      ],
+      "Verify": [
+        "验证"
+      ],
+      "Verify password": [
+        "验证密码"
+      ],
+      "Verify recovery email": [
+        "验证密保邮箱"
+      ],
+      "Verify recovery phone": [
+        "验证密保手机"
+      ],
+      "Verify your password": [
+        "请验证您的密码"
+      ],
+      "Verify your recovery email": [
+        "验证密保邮箱"
+      ],
+      "Verify your recovery phone": [
+        "验证密保手机"
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        "验证邮箱地址可提高账户安全性，并提供更多的恢复选项。"
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "验证手机号码可提高账户安全性，并提供更多的恢复选项。"
+      ],
+      "You can save a data backup on this device. This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset, simply by signing in on this device.": [
+        "您可以在此设备上保存数据备份。重置密码后，只需在此设备上登录，即可恢复您账户中的邮件、联系人、文件、密码以及任何其他加密数据。"
+      ],
+      "You can use email verification to regain access to your account if you forget your password.": [
+        "如果忘记密码，可以使用邮箱验证重新访问账户。"
+      ],
+      "You can use SMS verification to regain access to your account if you forget your password.": [
+        "如果忘记密码，可以使用短信验证重新访问账户。"
+      ],
+      "You can use your recovery email to regain access to your account if you forget your password.": [
+        "如果忘记密码，可以使用密保邮箱重新访问账户。"
+      ],
+      "You can use your recovery phone to regain access to your account if you forget your password.": [
+        "如果忘记密码，可以使用密保手机重新访问账户。"
+      ],
+      "You don’t need to open or read the file—just download it and store it somewhere safe.": [
+        "您无需打开或读取该文件，只需下载并将其保存在安全的地方即可。"
+      ],
+      "Your recovery checklist": [
+        "您的恢复清单"
+      ],
+      "Your security setup": [
+        "您的安全设置"
       ]
     },
     "saml: Action": {
