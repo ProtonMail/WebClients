@@ -18,8 +18,8 @@ import {
     Toggle,
     useConfirmActionModal,
     useModalTwoStatic,
-    useToggle,
 } from '@proton/components';
+import useToggle from '@proton/hooks/useToggle'
 import { useLoading } from '@proton/hooks';
 import { MAX_SHARED_URL_PASSWORD_LENGTH } from '@proton/shared/lib/drive/constants';
 import clsx from '@proton/utils/clsx';

@@ -11,7 +11,7 @@ import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
 
 import Toggle from '../../components/toggle/Toggle';
-import useToggle from '../../hooks/useToggle';
+import useToggle from '@proton/hooks/useToggle'
 
 const { DRAFTS_AND_SENT, NONE } = SHOW_MOVED;
 

@@ -2,7 +2,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import type { ModalStateProps } from '@proton/components';
-import { Form, ModalTwo, ModalTwoFooter, ModalTwoHeader, useModalState, useToggle } from '@proton/components';
+import { Form, ModalTwo, ModalTwoFooter, ModalTwoHeader, useModalState } from '@proton/components';
+import useToggle from '@proton/hooks/useToggle'
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 
 import type { MailImportFields } from './CustomizeMailImportModal.interface';

@@ -14,8 +14,8 @@ import {
     TopBanners,
     useDrawer,
     useOpenDrawerOnLoad,
-    useToggle,
 } from '@proton/components';
+import useToggle from '@proton/hooks/useToggle'
 import DrawerApp from '@proton/components/components/drawer/DrawerApp';
 import LumoDrawerAppButton from '@proton/components/components/drawer/drawerAppButtons/LumoDrawerAppButton';
 import useAllowedProducts from '@proton/components/containers/organization/accessControl/useAllowedProducts';

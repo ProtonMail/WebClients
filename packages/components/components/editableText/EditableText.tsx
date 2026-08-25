@@ -9,7 +9,7 @@ import type { IconName } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import useToggle from '../../hooks/useToggle';
+import useToggle from '@proton/hooks/useToggle'
 import Icon from '../icon/Icon';
 import Input, { type Props as InputProps } from '../input/Input';
 

@@ -17,8 +17,8 @@ import {
     SidebarListItemLink,
     SubSidebarListItem,
     useModalState,
-    useToggle,
 } from '@proton/components';
+import useToggle from '@proton/hooks/useToggle'
 import { IcCogDrawer } from '@proton/icons/icons/IcCogDrawer';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 import clsx from '@proton/utils/clsx';

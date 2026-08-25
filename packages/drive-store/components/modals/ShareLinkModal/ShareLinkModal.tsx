@@ -13,8 +13,8 @@ import {
     ModalTwoFooter,
     ModalTwoHeader,
     useModalTwoStatic,
-    useToggle,
 } from '@proton/components';
+import useToggle from '@proton/hooks/useToggle'
 import { IcCogWheel } from '@proton/icons/icons/IcCogWheel';
 import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 

@@ -3,7 +3,7 @@ import type { MouseEvent } from 'react';
 import { c } from 'ttag';
 
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import useToggle from '@proton/components/hooks/useToggle';
+import useToggle from '@proton/hooks/useToggle'
 import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
