@@ -5,6 +5,8 @@ import { cleanProblematicImagesFromClipboardContent } from '@proton/mail/helpers
 import { cloneEvent, isKeyboardEvent } from '@proton/shared/lib/helpers/events';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import { getIframeDocument } from '../helpers/getIframeDocument';
+
 const IFRAME_EVENTS_LIST: Event['type'][] = ['focus', 'keydown', 'click', 'copy', 'dragstart'];
 
 const useIframeDispatchEvents = (
@@ -52,18 +54,18 @@ const useIframeDispatchEvents = (
          */
         if (event.type === 'copy' && !isPlainText) {
             // Get user selection in iframe
-            const selection = iframeRef.current?.contentWindow?.getSelection();
+            const selection = getIframeDocument(iframeRef.current)?.defaultView?.getSelection();
             cleanProblematicImagesFromClipboardContent('copy', event, selection, isInlineImageReuploadDisabled);
         }
 
         if (event.type === 'dragstart') {
-            const selection = iframeRef.current?.contentWindow?.getSelection();
+            const selection = getIframeDocument(iframeRef.current)?.defaultView?.getSelection();
             cleanProblematicImagesFromClipboardContent('drag', event, selection, isInlineImageReuploadDisabled);
         }
     }, []);
 
     useEffect(() => {
-        const emailContentRoot = iframeRef.current?.contentWindow?.document.body;
+        const emailContentRoot = getIframeDocument(iframeRef.current)?.body;
 
         if (startListening === false || !emailContentRoot) {
             return;
