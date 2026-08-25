@@ -55,6 +55,9 @@ interface AgentAdmissionController {
     admitPendingAgents: () => Promise<void>;
 }
 
+const getMeetCoreErrorName = (error: unknown) =>
+    typeof error === 'number' ? MeetCoreErrorEnum[error] || `MeetCoreError(${error})` : String(error);
+
 export const useMlsSession = ({
     getGroupKeyInfo,
     onNewGroupKeyInfo,
@@ -119,7 +122,6 @@ export const useMlsSession = ({
                     admittedAt.delete(deviceId);
                     reportMeetError('Failed to admit agent after retries', {
                         context: { error },
-                        tags: { meetingLinkName },
                     });
                 },
             });
@@ -141,7 +143,6 @@ export const useMlsSession = ({
             } catch (error) {
                 reportMeetError('Failed to subscribe to captions agent events', {
                     context: { error },
-                    tags: { meetingLinkName },
                 });
             }
         };
@@ -162,7 +163,6 @@ export const useMlsSession = ({
             } catch (error) {
                 reportMeetError('Failed to list pending agents', {
                     context: { error },
-                    tags: { meetingLinkName },
                 });
                 return;
             }
@@ -180,7 +180,6 @@ export const useMlsSession = ({
                 reportMeetError('Captions agent was still unadmitted when reconciling', {
                     level: 'warning',
                     context: { unhandled: unhandled.length },
-                    tags: { meetingLinkName },
                 });
             }
 
@@ -237,7 +236,6 @@ export const useMlsSession = ({
                 } catch (error) {
                     reportMeetError('Failed to set waiting room join request handler', {
                         context: { error },
-                        tags: { meetingLinkName },
                     });
                 }
             }
@@ -280,8 +278,8 @@ export const useMlsSession = ({
                     message = c('Error').t`Failed to join meeting. Please try again later.`;
             }
             notifyError(message);
-            const err = new Error(message);
-            Object.assign(err, { userNotified: true });
+            const err = new Error(`MLS setup failed: ${getMeetCoreErrorName(error)}`);
+            Object.assign(err, { userNotified: true, coreError: error });
             throw err;
         }
     };

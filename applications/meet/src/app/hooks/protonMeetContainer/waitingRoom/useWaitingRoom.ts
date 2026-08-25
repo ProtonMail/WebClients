@@ -104,9 +104,7 @@ export const useWaitingRoom = ({
             const sessionKey = await getSessionKeyBase64(meetingToken);
             if (!sessionKey) {
                 notifyError(c('Error').t`Failed to join meeting. Please try again.`);
-                reportMeetError('Missing session key for waiting room admission', {
-                    tags: { meetingLinkName: meetingToken },
-                });
+                reportMeetError('Missing session key for waiting room admission', {});
                 return;
             }
 

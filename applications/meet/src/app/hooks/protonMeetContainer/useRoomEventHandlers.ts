@@ -31,7 +31,6 @@ interface UseRoomEventHandlersParams {
     meetingLinkNameRef: MutableRefObject<string>;
     triggerFullReconnectionRef: MutableRefObject<(reason: RejoinReasonInfo) => void>;
     reportMeetError: ReportMeetError;
-    withMeetingLinkNameTag: (options?: unknown) => unknown;
 }
 
 export interface UseRoomEventHandlersResult {
@@ -55,7 +54,6 @@ export const useRoomEventHandlers = ({
     meetingLinkNameRef,
     triggerFullReconnectionRef,
     reportMeetError,
-    withMeetingLinkNameTag,
 }: UseRoomEventHandlersParams): UseRoomEventHandlersResult => {
     const room = useRoomContext();
     const dispatch = useMeetDispatch();
@@ -140,7 +138,7 @@ export const useRoomEventHandlers = ({
             dispatch(setPreviousMeetingLink(meetingLinkRef.current));
             dispatch(setUpsellModalType(UpsellModalTypes.RemovedFromMeeting));
         } else if (reason !== undefined && reason !== DisconnectReason.CLIENT_INITIATED) {
-            reportMeetError('Room disconnected unexpectedly', withMeetingLinkNameTag(DisconnectReason[reason]));
+            reportMeetError('Room disconnected unexpectedly', { context: { error: DisconnectReason[reason] } });
         }
         meetingLinkNameRef.current = '';
 
