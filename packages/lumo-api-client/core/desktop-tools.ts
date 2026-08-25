@@ -52,7 +52,10 @@ type LumoConnectorsApi = DesktopExternalTools & {
     getManifests?: () => DesktopConnector[];
     setConnectorEnabled?: (connectorId: string, enabled: boolean) => Promise<void>;
     respondToolApproval?: (requestId: string, approved: boolean) => Promise<void>;
+    openSettings?: (tab?: DesktopSettingsTab) => Promise<void>;
 };
+
+export type DesktopSettingsTab = 'general' | 'connectors';
 
 export type DesktopToolApprovalRequest = {
     requestId: string;
@@ -93,6 +96,10 @@ export function getDesktopConnectorsApi(): LumoConnectorsApi | null {
 
 export async function respondDesktopToolApproval(requestId: string, approved: boolean): Promise<void> {
     await getDesktopConnectorsApi()?.respondToolApproval?.(requestId, approved);
+}
+
+export async function openDesktopSettings(tab?: DesktopSettingsTab): Promise<void> {
+    await getDesktopConnectorsApi()?.openSettings?.(tab);
 }
 
 export function isDesktopEnvironment(): boolean {
