@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import Table from '@proton/components/components/table/Table';
@@ -13,7 +14,6 @@ import TableHeader from '@proton/components/components/table/TableHeader';
 import TableHeaderCell from '@proton/components/components/table/TableHeaderCell';
 import TableRow from '@proton/components/components/table/TableRow';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { IcLock } from '@proton/icons/icons/IcLock';
 import { IcPassTrash } from '@proton/icons/icons/IcPassTrash';

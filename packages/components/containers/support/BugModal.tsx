@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { useConfig } from '@proton/app-context/useConfig';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
@@ -36,7 +37,6 @@ import TextAreaTwo from '../../components/v2/input/TextArea';
 import useFormErrors from '../../components/v2/useFormErrors';
 import { getClientName, getReportInfo } from '../../helpers/report';
 import useApi from '../../hooks/useApi';
-import useNotifications from '../../hooks/useNotifications';
 import type { Screenshot } from './AttachScreenshot';
 import AttachScreenshot from './AttachScreenshot';
 import BugModalLogs from './BugModalLogs';

@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { queryUpdateUserSettings, queryUserSettings } from '@proton/shared/lib/api/drive/user';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
@@ -14,7 +15,6 @@ import type {
 import type { useConfirmActionModal } from '../../components/confirmActionModal/ConfirmActionModal';
 import { getRetentionLabel } from '../../containers/drive/settings/retentionLabels';
 import useApi from '../useApi';
-import useNotifications from '../useNotifications';
 
 export const useRevisionRetentionDays = (
     hasPaidDrive: boolean,

@@ -8,9 +8,9 @@ jest.mock('../useApi', () => ({
     default: jest.fn(),
 }));
 
-jest.mock('../useNotifications', () => ({
+jest.mock('@proton/app-context/useNotifications', () => ({
     __esModule: true,
-    default: jest.fn(() => ({
+    useNotifications: jest.fn(() => ({
         createNotification: jest.fn(),
     })),
 }));
@@ -22,7 +22,7 @@ describe('useDocsNotificationsSettings', () => {
     beforeEach(() => {
         jest.resetAllMocks();
         require('../useApi').default.mockReturnValue(mockApi);
-        require('../useNotifications').default.mockReturnValue({
+        require('@proton/app-context/useNotifications').useNotifications.mockReturnValue({
             createNotification: mockCreateNotification,
         });
         mockApi.mockImplementation(() =>

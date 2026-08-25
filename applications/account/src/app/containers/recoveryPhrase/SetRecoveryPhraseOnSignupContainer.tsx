@@ -4,9 +4,9 @@ import { c } from 'ttag';
 
 import { RecoveryKitAction, type RecoveryKitActionProps } from '@proton/account/recovery/recoveryKit/RecoveryKitAction';
 import type { DeferredMnemonicData } from '@proton/account/recovery/recoveryKit/generateDeferredMnemonicData';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';

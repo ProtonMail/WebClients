@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { deleteInactiveUserKeyAction } from '@proton/account/userKeys/deleteUserKeyAction';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
@@ -11,7 +12,6 @@ import noop from '@proton/utils/noop';
 import type { PromptProps } from '../../../components/prompt/Prompt';
 import Prompt from '../../../components/prompt/Prompt';
 import useErrorHandler from '../../../hooks/useErrorHandler';
-import useNotifications from '../../../hooks/useNotifications';
 
 interface Props extends Omit<PromptProps, 'title' | 'buttons' | 'children'> {
     userKey: Key;

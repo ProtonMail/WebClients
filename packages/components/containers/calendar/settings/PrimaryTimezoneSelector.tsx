@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import type { AbbreviatedTimezone } from '@proton/shared/lib/date/timezone';
@@ -9,7 +10,6 @@ import type { DropdownSizeUnit, Unit } from '../../../components/dropdown/utils'
 import TimeZoneSelector from '../../../components/timezoneSelector/TimeZoneSelector';
 import useApi from '../../../hooks/useApi';
 import useEventManager from '../../../hooks/useEventManager';
-import useNotifications from '../../../hooks/useNotifications';
 
 interface Props {
     id: string;

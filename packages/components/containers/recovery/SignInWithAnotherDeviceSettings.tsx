@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { toggleQrCodeSignIn } from '@proton/account/recovery/userSettingsActions';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Href } from '@proton/atoms/Href/Href';
 import { useLoading } from '@proton/hooks/index';
 import { IcQrCode } from '@proton/icons/icons/IcQrCode';
@@ -10,7 +11,6 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import noop from '@proton/utils/noop';
 
 import useModalState from '../../components/modalTwo/useModalState';
-import useNotifications from '../../hooks/useNotifications';
 import { SettingsIconRow } from '../account/SettingsIconRow';
 import { SettingsToggleRow } from '../account/SettingsToggleRow';
 import SignInWithAnotherDeviceModal from './SignInWithAnotherDeviceModal';

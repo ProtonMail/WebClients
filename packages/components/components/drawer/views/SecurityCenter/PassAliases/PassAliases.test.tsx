@@ -3,9 +3,9 @@ import type { ReactNode } from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { mockNotifications } from '@proton/testing/lib/mockNotifications';
 
-import useNotifications from '../../../../../hooks/useNotifications';
 import PassAliases from './PassAliases';
 import * as passAliasesProvider from './PassAliasesProvider';
 
@@ -23,7 +23,7 @@ jest.mock('./usePassAliasesProviderSetup', () => ({
     usePassAliasesSetup: () => {},
 }));
 
-jest.mock('../../../../../hooks/useNotifications');
+jest.mock('@proton/app-context/useNotifications');
 jest.mock('@proton/account/addresses/hooks', () => jest.fn().mockImplementation(() => [[], false]));
 jest.mock('../../../../../hooks/useAuthentication', () => jest.fn().mockImplementation(() => [{}, false]));
 jest.mock('@proton/account/user/hooks', () => jest.fn().mockImplementation(() => [{}, false]));

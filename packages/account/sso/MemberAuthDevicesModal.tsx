@@ -3,6 +3,7 @@ import { useState } from 'react';
 import type { Action, ThunkDispatch } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Card } from '@proton/atoms/Card/Card';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
@@ -12,7 +13,6 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import Time from '@proton/components/components/time/Time';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useEffectOnce, useLoading } from '@proton/hooks';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { baseUseDispatch } from '@proton/react-redux-store';

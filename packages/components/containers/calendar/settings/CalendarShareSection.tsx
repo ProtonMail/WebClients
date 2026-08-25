@@ -2,6 +2,7 @@ import type { Dispatch, SetStateAction } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Card } from '@proton/atoms/Card/Card';
@@ -24,7 +25,6 @@ import type { CalendarMember, CalendarMemberInvitation, VisualCalendar } from '@
 import SettingsLink from '../../../components/link/SettingsLink';
 import useModalState from '../../../components/modalTwo/useModalState';
 import useApi from '../../../hooks/useApi';
-import useNotifications from '../../../hooks/useNotifications';
 import SettingsParagraph from '../../account/SettingsParagraph';
 import SettingsSectionWide from '../../account/SettingsSectionWide';
 import SubSettingsSection from '../../layout/SubSettingsSection';

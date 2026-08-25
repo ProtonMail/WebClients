@@ -4,13 +4,13 @@ import { useHistory, useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import Copy from '@proton/components/components/button/Copy';
 import DownloadClientCard from '@proton/components/components/downloadClientCard/DownloadClientCard';
 import DropdownMenuLink from '@proton/components/components/dropdown/DropdownMenuLink';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import { getTelemetryUserTier } from '@proton/components/helpers/getTelemetryUserTier';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useApi } from '@proton/components/index';
 import { TelemetryAccountDashboardEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { APPS, VPN_APP_NAME } from '@proton/shared/lib/constants';

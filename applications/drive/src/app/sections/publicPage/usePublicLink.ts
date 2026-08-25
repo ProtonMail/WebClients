@@ -2,7 +2,8 @@ import { useCallback, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useAuthentication, useNotifications } from '@proton/components';
+import { useNotifications } from '@proton/app-context/useNotifications';
+import { useAuthentication } from '@proton/components';
 import {
     DecryptionError,
     type NodeEntity,

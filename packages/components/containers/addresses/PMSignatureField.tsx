@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account';
 import { useUser } from '@proton/account/user/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
@@ -17,7 +18,6 @@ import useModalState from '../../components/modalTwo/useModalState';
 import Toggle from '../../components/toggle/Toggle';
 import UpsellModal from '../../components/upsell/UpsellModal/UpsellModal';
 import useApi from '../../hooks/useApi';
-import useNotifications from '../../hooks/useNotifications';
 import useToggle from '../../hooks/useToggle';
 
 interface Props {

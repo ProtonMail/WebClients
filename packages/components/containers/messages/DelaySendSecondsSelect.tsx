@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
@@ -11,7 +12,6 @@ import { DELAY_IN_SECONDS } from '@proton/shared/lib/mail/mailSettings';
 
 import Select from '../../components/select/Select';
 import useApi from '../../hooks/useApi';
-import useNotifications from '../../hooks/useNotifications';
 
 interface Props {
     id: string;

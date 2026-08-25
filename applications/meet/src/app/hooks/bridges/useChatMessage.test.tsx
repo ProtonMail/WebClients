@@ -32,8 +32,8 @@ vi.mock('@proton/meet/hooks/useMeetErrorReporting', () => ({
     useMeetErrorReporting: vi.fn().mockReturnValue({ reportMeetError: vi.fn() }),
 }));
 
-vi.mock('@proton/components/hooks/useNotifications', () => ({
-    default: vi.fn().mockReturnValue({ createNotification: vi.fn() }),
+vi.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: vi.fn().mockReturnValue({ createNotification: vi.fn() }),
 }));
 
 // Resolve retry delays immediately so retry attempts don't incur real waits.

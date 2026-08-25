@@ -11,7 +11,9 @@ import { mockUseUserSettings } from '@proton/testing/lib/mockUseUserSettings';
 
 import PMSignatureField from './PMSignatureField';
 
-jest.mock('../../hooks/useNotifications', () => () => mockNotifications);
+jest.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: () => mockNotifications,
+}));
 
 jest.mock('@proton/app-context/useConfig', () => ({
     useConfig: () => ({

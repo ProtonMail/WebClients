@@ -1,4 +1,4 @@
-import useNotifications from '@proton/components/hooks/useNotifications'
+import { useNotifications } from '@proton/app-context/useNotifications'
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState'
 import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo'
 import BasicModal from '@proton/components/components/modalTwo/BasicModal'

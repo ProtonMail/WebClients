@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { useMembers } from '@proton/account/members/hooks';
 import { organizationActions } from '@proton/account/organization';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
 import useLoading from '@proton/hooks/useLoading';
@@ -31,7 +32,6 @@ import AddressesAutocompleteTwo from '../../components/v2/addressesAutocomplete/
 import InputField from '../../components/v2/field/InputField';
 import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
 import useApi from '../../hooks/useApi';
-import useNotifications from '../../hooks/useNotifications';
 import SettingsSectionWide from '../account/SettingsSectionWide';
 import RecipientsLimitationModal from '../b2bDashboard/ActivityMonitor/RecipientsLimitationModal';
 import { updateMonitoringSetting } from '../b2bDashboard/ActivityMonitor/api';

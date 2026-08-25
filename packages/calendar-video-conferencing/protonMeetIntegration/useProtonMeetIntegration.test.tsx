@@ -14,6 +14,9 @@ import { useProtonMeetIntegration } from './useProtonMeetIntegration';
 
 jest.mock('@proton/components', () => ({
     useApi: jest.fn().mockReturnValue(jest.fn()),
+}));
+
+jest.mock('@proton/app-context/useNotifications', () => ({
     useNotifications: jest.fn().mockReturnValue({
         createNotification: jest.fn(),
     }),

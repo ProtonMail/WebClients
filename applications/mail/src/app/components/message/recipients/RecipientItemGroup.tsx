@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
@@ -10,7 +11,6 @@ import DropdownMenuButton from '@proton/components/components/dropdown/DropdownM
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import RecipientDropdownItem from '@proton/components/containers/contacts/view/RecipientDropdownItem';
 import useModals from '@proton/components/hooks/useModals';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcPenSquare } from '@proton/icons/icons/IcPenSquare';
 import { IcSquares } from '@proton/icons/icons/IcSquares';
 import { IcUser } from '@proton/icons/icons/IcUser';

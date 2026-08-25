@@ -10,8 +10,8 @@ import { hasClipboardPermissions } from 'proton-pass-extension/lib/utils/permiss
 import { WorkerMessageType, type WorkerMessageWithSender } from 'proton-pass-extension/types/messages';
 
 import { NotificationsContext } from '@proton/app-context/notifications/notificationsContext';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { Localized } from '@proton/pass/components/Core/Localized';
 import { NavigationProvider } from '@proton/pass/components/Navigation/NavigationProvider';
 import { ClipboardProvider } from '@proton/pass/components/Settings/Clipboard/ClipboardProvider';

@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { getCountryOptions } from '@proton/payments/core/countries';
 import { MINUTE } from '@proton/shared/lib/constants';
@@ -16,7 +17,6 @@ import ModalTwoContent from '../../../../components/modalTwo/ModalContent';
 import ModalTwoFooter from '../../../../components/modalTwo/ModalFooter';
 import ModalTwoHeader from '../../../../components/modalTwo/ModalHeader';
 import { useModalTwoStatic } from '../../../../components/modalTwo/useModalTwo';
-import useNotifications from '../../../../hooks/useNotifications';
 import { buildSelectedCitiesFromLocations } from '../buildSelectedCitiesFromLocations';
 import { PolicyState, PolicyType } from '../constants';
 import { useSharedServers } from '../useSharedServers';

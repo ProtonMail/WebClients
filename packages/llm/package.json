@@ -11,6 +11,7 @@
     "dependencies": {
         "@mlc-ai/web-llm": "patch:@mlc-ai/web-llm@npm%3A0.2.32#~/.yarn/patches/@mlc-ai-web-llm-npm-0.2.32-df249f5180.patch",
         "@proton/account": "workspace:^",
+        "@proton/app-context": "workspace:^",
         "@proton/components": "workspace:^",
         "@proton/hooks": "workspace:^",
         "@proton/lumo-api-client": "workspace:^",

@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 import { useEffect, useRef, useState } from 'react';
 import { Router } from 'react-router-dom';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import ApiProvider from '@proton/components/containers/api/ApiProvider';
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import LoaderPage from '@proton/components/containers/app/LoaderPage';
@@ -10,7 +11,6 @@ import StandardLoadErrorPage from '@proton/components/containers/app/StandardLoa
 import StandardPrivateApp from '@proton/components/containers/app/StandardPrivateApp';
 import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
 import EventManagerProvider from '@proton/components/containers/eventManager/EventManagerProvider';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import type { MeetExtraThunkArguments, MeetStore } from '@proton/meet/store/store';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';

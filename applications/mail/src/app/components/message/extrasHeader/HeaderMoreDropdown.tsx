@@ -5,6 +5,7 @@ import { addDays, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Kbd } from '@proton/atoms/Kbd/Kbd';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
@@ -16,7 +17,6 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import type { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useApi from '@proton/components/hooks/useApi';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { FeatureCode, useFeature } from '@proton/features';
 import { useLoading } from '@proton/hooks';
 import { IcArchiveBox } from '@proton/icons/icons/IcArchiveBox';
@@ -57,28 +57,27 @@ import { CUSTOM_VIEWS, CUSTOM_VIEWS_LABELS, MARK_AS_STATUS } from '@proton/share
 import { isExpiringByRetentionRule } from '@proton/shared/lib/mail/messages';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { SOURCE_ACTION } from '../../list/list-telemetry/useListTelemetry';
-import { APPLY_LOCATION_TYPES } from '../../../hooks/actions/applyLocation/interface';
-import { useApplyLocation } from '../../../hooks/actions/applyLocation/useApplyLocation';
-import { useMailDispatch } from '../../../store/hooks';
-import { newsletterSubscriptionsActions } from '../../../store/newsletterSubscriptions/newsletterSubscriptionsSlice';
-
 import { formatFileNameDate } from '../../../helpers/date';
 import { isStarred as IsMessageStarred, getDate } from '../../../helpers/elements';
 import { canSetExpiration, getExpirationTime } from '../../../helpers/expiration';
 import { isConversationMode } from '../../../helpers/mailSettings';
 import type { MessageViewIcons } from '../../../helpers/message/icon';
 import { exportBlob } from '../../../helpers/message/messageExport';
+import { APPLY_LOCATION_TYPES } from '../../../hooks/actions/applyLocation/interface';
+import { useApplyLocation } from '../../../hooks/actions/applyLocation/useApplyLocation';
 import { useMarkAs } from '../../../hooks/actions/markAs/useMarkAs';
 import { useGetAttachment } from '../../../hooks/attachments/useAttachment';
 import { useGetMessageKeys } from '../../../hooks/message/useGetMessageKeys';
 import type { Element } from '../../../models/element';
 import { updateAttachment } from '../../../store/attachments/attachmentsActions';
 import type { DecryptedAttachment } from '../../../store/attachments/attachmentsTypes';
+import { useMailDispatch } from '../../../store/hooks';
 import { expireMessages } from '../../../store/messages/expire/messagesExpireActions';
+import { newsletterSubscriptionsActions } from '../../../store/newsletterSubscriptions/newsletterSubscriptionsSlice';
 import CustomFilterDropdown from '../../dropdown/CustomFilterDropdown';
 import LabelDropdown, { labelDropdownContentProps } from '../../dropdown/LabelDropdown';
 import MoveDropdown, { moveDropdownContentProps } from '../../dropdown/MoveDropdown';
+import { SOURCE_ACTION } from '../../list/list-telemetry/useListTelemetry';
 import CustomExpirationModal from '../modals/CustomExpirationModal';
 import MessageDetailsModal from '../modals/MessageDetailsModal';
 import MessageHeadersModal from '../modals/MessageHeadersModal';

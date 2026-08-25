@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Card } from '@proton/atoms/Card/Card';
 import type { PassBridgeAliasItem } from '@proton/pass/lib/bridge/types';
 
-import useNotifications from '../../../../../hooks/useNotifications';
 import Copy from '../../../../button/Copy';
 import Info from '../../../../link/Info';
 import DrawerAppHeadline from '../../shared/DrawerAppHeadline';

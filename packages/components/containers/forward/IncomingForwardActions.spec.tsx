@@ -2,6 +2,7 @@ import { fireEvent } from '@testing-library/react';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { useGetMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { Address, IncomingAddressForwarding } from '@proton/shared/lib/interfaces';
 import { ForwardingState } from '@proton/shared/lib/interfaces';
@@ -14,7 +15,6 @@ import { withEventManager } from '@proton/testing/lib/context/hocs/with-event-ma
 import { mockUseAddresses } from '@proton/testing/lib/mockUseAddresses';
 
 import useApi from '../../hooks/useApi';
-import useNotifications from '../../hooks/useNotifications';
 import { renderWithProviders } from '../contacts/tests/render';
 import IncomingForwardActions from './IncomingForwardActions';
 
@@ -31,7 +31,7 @@ mockedUseUser.mockReturnValue([{}] as any);
 
 mockUseAddresses();
 
-jest.mock('../../hooks/useNotifications');
+jest.mock('@proton/app-context/useNotifications');
 const mockUseNotifications = useNotifications as jest.MockedFunction<any>;
 mockUseNotifications.mockReturnValue({
     createNotification: jest.fn(),

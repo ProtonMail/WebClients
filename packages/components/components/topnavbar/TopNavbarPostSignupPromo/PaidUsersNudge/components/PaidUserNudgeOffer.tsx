@@ -5,13 +5,13 @@ import { c } from 'ttag';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import useFeature from '@proton/features/useFeature';
 import { TelemetryPaidUsersNudge } from '@proton/shared/lib/api/telemetry';
 import { APPS, APPS_WITH_IN_APP_PAYMENTS } from '@proton/shared/lib/constants';
 import { addUpsellPath, getUpgradePath } from '@proton/shared/lib/helpers/upsell';
 
 import { useSubscriptionModal } from '../../../../../containers/payments/subscription/SubscriptionModalProvider';
-import useNotifications from '../../../../../hooks/useNotifications';
 import useSettingsLink from '../../../../link/useSettingsLink';
 import useUpsellConfig from '../../../../upsell/config/useUpsellConfig';
 import { SpotlightWithPromo } from '../../common/SpotlightWithPromo';

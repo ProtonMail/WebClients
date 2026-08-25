@@ -2,8 +2,8 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
-import { useNotifications } from '@proton/components/index';
 
 import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 

@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import { useConfirmActionModal } from '@proton/components/components/confirmActionModal/ConfirmActionModal';
 import DefaultQuickSettings from '@proton/components/components/drawer/views/quickSettings/DefaultQuickSettings';
@@ -24,7 +25,6 @@ import CalendarShortcutsModal from '@proton/components/containers/calendar/short
 import ShortcutsToggle from '@proton/components/containers/general/ShortcutsToggle';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import { DEFAULT_CALENDAR_USER_SETTINGS } from '@proton/shared/lib/calendar/calendar';

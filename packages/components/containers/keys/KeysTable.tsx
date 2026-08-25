@@ -1,6 +1,7 @@
 import { format } from 'date-fns';
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
@@ -10,7 +11,6 @@ import Table from '../../components/table/Table';
 import TableBody from '../../components/table/TableBody';
 import TableCell from '../../components/table/TableCell';
 import TableRow from '../../components/table/TableRow';
-import useNotifications from '../../hooks/useNotifications';
 import KeyVersionBadge from './KeyVersionBadge';
 import KeysActions from './KeysActions';
 import KeysStatus, { getKeyFunction } from './KeysStatus';

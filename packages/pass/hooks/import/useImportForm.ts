@@ -5,9 +5,9 @@ import type { FormikContextType, FormikErrors, FormikHelpers } from 'formik';
 import { useFormik } from 'formik';
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import type Dropzone from '@proton/components/components/dropzone/Dropzone';
 import type FileInput from '@proton/components/components/input/FileInput';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import identity from '@proton/utils/identity';

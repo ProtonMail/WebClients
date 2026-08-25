@@ -1,6 +1,7 @@
-import { useGetAddresses } from '@proton/account/addresses/hooks';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import type { KeyID } from '@protontech/crypto';
+
+import { useGetAddresses } from '@proton/account/addresses/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';

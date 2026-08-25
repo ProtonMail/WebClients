@@ -4,6 +4,7 @@ import { endOfDay, isAfter, isBefore, startOfDay } from 'date-fns';
 import { c } from 'ttag';
 
 import { useOrganization } from '@proton/account/organization/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Href } from '@proton/atoms/Href/Href';
 import { useLoading } from '@proton/hooks';
 import {
@@ -19,7 +20,6 @@ import noop from '@proton/utils/noop';
 import { Pagination, usePaginationAsync } from '../../../components/pagination/index';
 import useApi from '../../../hooks/useApi';
 import useErrorHandler from '../../../hooks/useErrorHandler';
-import useNotifications from '../../../hooks/useNotifications';
 import SettingsSectionWide from '../../account/SettingsSectionWide';
 import { toCamelCase } from '../../credentialLeak/helpers';
 import GenericError from '../../error/GenericError';

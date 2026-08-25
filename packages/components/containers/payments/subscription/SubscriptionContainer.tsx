@@ -8,6 +8,7 @@ import { useGetOrganization } from '@proton/account/organization/hooks';
 import { useGetPaymentMethods } from '@proton/account/paymentMethods/hooks';
 import { useGetUser, useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { useGetCalendars } from '@proton/calendar/calendars/hooks';
@@ -89,7 +90,6 @@ import useAssistantFeatureEnabled from '../../../hooks/assistant/useAssistantFea
 import useApi from '../../../hooks/useApi';
 import useEventManager from '../../../hooks/useEventManager';
 import { useHandler } from '../../../hooks/useHandler';
-import useNotifications from '../../../hooks/useNotifications';
 import { useCurrencies } from '../../../payments/client-extensions/useCurrencies';
 import type { TelemetryPaymentFlow } from '../../../payments/client-extensions/usePaymentsTelemetry';
 import GenericError from '../../error/GenericError';

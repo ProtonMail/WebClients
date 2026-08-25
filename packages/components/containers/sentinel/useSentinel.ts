@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { organizationThunk } from '@proton/account/organization';
 import { selectOrganizationSentinel, selectUserSentinel } from '@proton/account/recovery/sentinelSelectors';
 import { userSettingsThunk } from '@proton/account/userSettings';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch, useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { CacheType } from '@proton/redux-utilities/interface';
@@ -16,7 +17,6 @@ import { PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
 import useApi from '../../hooks/useApi';
-import useNotifications from '../../hooks/useNotifications';
 import { disableHighSecurityOrganization, enableHighSecurityOrganization } from '../b2bDashboard/ActivityMonitor/api';
 import { getDisabledString, getEnabledString } from '../credentialLeak/helpers';
 

@@ -3,6 +3,7 @@ import { Link, useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { useLoading } from '@proton/hooks';
 import { requestUsername } from '@proton/shared/lib/api/reset';
@@ -10,7 +11,6 @@ import { requestUsername } from '@proton/shared/lib/api/reset';
 import Alert from '../../components/alert/Alert';
 import EmailInput from '../../components/input/EmailInput';
 import useApi from '../../hooks/useApi';
-import useNotifications from '../../hooks/useNotifications';
 
 const MinimalForgotUsernameContainer = () => {
     const api = useApi();

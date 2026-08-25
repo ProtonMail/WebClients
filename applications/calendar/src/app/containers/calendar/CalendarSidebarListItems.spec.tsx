@@ -40,7 +40,9 @@ jest.mock('@proton/components/hooks/useApi', () => ({
 
 jest.mock('@proton/features/useFeature', () => () => ({ feature: { Value: true } }));
 
-jest.mock('@proton/components/hooks/useNotifications', () => () => ({ createNotification: jest.fn() }));
+jest.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: () => ({ createNotification: jest.fn() }),
+}));
 
 jest.mock('@proton/components/containers/contacts/ContactEmailsProvider', () => ({
     __esModule: true,

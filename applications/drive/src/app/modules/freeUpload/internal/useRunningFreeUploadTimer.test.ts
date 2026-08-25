@@ -21,9 +21,9 @@ jest.mock('@proton/components/hooks/useErrorHandler', () => ({
 }));
 
 const mockCreateNotification = jest.fn();
-jest.mock('@proton/components/hooks/useNotifications', () => ({
+jest.mock('@proton/app-context/useNotifications', () => ({
     __esModule: true,
-    default: jest.fn(() => ({ createNotification: mockCreateNotification })),
+    useNotifications: jest.fn(() => ({ createNotification: mockCreateNotification })),
 }));
 
 const mockUseFreeUploadFeature = jest.mocked(useFreeUploadFeature);

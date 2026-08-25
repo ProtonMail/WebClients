@@ -9,6 +9,7 @@ import ReachedLimitForwardingModal from '@proton/activation/src/components/Modal
 import UpsellForwardingModal from '@proton/activation/src/components/Modals/UpsellForwardingModal/UpsellForwardingModal';
 import useBYOEFeatureStatus from '@proton/activation/src/hooks/useBYOEFeatureStatus';
 import useReconnectSync from '@proton/activation/src/hooks/useReconnectSync';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { useLoading } from '@proton/hooks';
 import type { WithLoading } from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
@@ -24,7 +25,6 @@ import EditExternalAddressModal from '../../containers/account/EditExternalAddre
 import EditInternalAddressModal from '../../containers/addresses/EditInternalAddressModal';
 import useAddressFlags from '../../hooks/useAddressFlags';
 import { useErrorWrapper } from '../../hooks/useErrorHandler';
-import useNotifications from '../../hooks/useNotifications';
 import DeleteAddressPrompt from './DeleteAddressPrompt';
 import DisableAddressModal from './DisableAddressModal';
 import type { AddressPermissions } from './helper';

@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { initOrganization } from '@proton/account/organization/actions';
-import { useNotifications } from '@proton/components/index';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 
 export const useOnOrganizationNameSetup = () => {

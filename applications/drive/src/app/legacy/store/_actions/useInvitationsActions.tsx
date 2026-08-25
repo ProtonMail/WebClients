@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { useNotifications } from '@proton/components';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import type { useConfirmActionModal } from '@proton/components';
 import { EnrichedError, sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';

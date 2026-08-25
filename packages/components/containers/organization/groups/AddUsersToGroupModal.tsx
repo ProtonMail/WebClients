@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
 import type { EnhancedMember, Group, GroupMember } from '@proton/shared/lib/interfaces';
@@ -13,7 +14,6 @@ import ModalTwoFooter from '../../../components/modalTwo/ModalFooter';
 import ModalTwoHeader from '../../../components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '../../../components/modalTwo/useModalState';
 import useModalState from '../../../components/modalTwo/useModalState';
-import useNotifications from '../../../hooks/useNotifications';
 import { NewGroupMemberInput } from './NewGroupMemberInput';
 import { NewGroupMemberItem } from './NewGroupMemberItem';
 import WillDisableE2eePrompt from './WillDisableE2eePrompt';

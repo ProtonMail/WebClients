@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { snoozeConversations, unsnoozeConversations } from '@proton/shared/lib/api/conversations';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
@@ -12,12 +12,11 @@ import useListTelemetry, {
     numberSelectionElements,
 } from '../../components/list/list-telemetry/useListTelemetry';
 import type { SNOOZE_DURATION, SnoozeState } from '../../components/list/snooze/constant';
-import { useMailDispatch, useMailSelector } from '../../store/hooks';
-
 import { getSnoozeNotificationText, getSnoozeUnixTime } from '../../helpers/snooze';
 import type { Element } from '../../models/element';
 import { backendActionFinished, backendActionStarted } from '../../store/elements/elementsActions';
 import { selectConversationMode, selectLabelID } from '../../store/elements/elementsSelectors';
+import { useMailDispatch, useMailSelector } from '../../store/hooks';
 import { useOptimisticApplyLabels } from '../optimistic/useOptimisticApplyLabels';
 import { MOVE_BACK_ACTION_TYPES } from './moveBackAction/interfaces';
 import { useMoveBackAction } from './moveBackAction/useMoveBackAction';

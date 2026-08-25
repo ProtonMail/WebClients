@@ -22,7 +22,9 @@ const mockedUseDispatch = useDispatch as jest.MockedFunction<typeof useDispatch>
 
 jest.mock('@proton/hooks/useLoading', () => () => [false, jest.fn((fn) => fn())]);
 
-jest.mock('../../hooks/useNotifications', () => () => ({ createNotification: jest.fn() }));
+jest.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: () => ({ createNotification: jest.fn() }),
+}));
 
 jest.mock('@proton/account/user/hooks');
 const mockedUseUser = useUser as jest.MockedFunction<any>;

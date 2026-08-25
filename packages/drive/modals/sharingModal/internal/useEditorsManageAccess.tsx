@@ -3,7 +3,7 @@ import { createContext, useContext, useEffect, useState } from 'react';
 import type { ProtonDriveClient, ShareResult } from '@protontech/drive-sdk';
 import { c } from 'ttag';
 
-import useNotifications from '@proton/components/hooks/useNotifications';
+import { useNotifications } from '@proton/app-context/useNotifications';
 
 import { handleSdkError } from '../../../legacy/errorHandling';
 

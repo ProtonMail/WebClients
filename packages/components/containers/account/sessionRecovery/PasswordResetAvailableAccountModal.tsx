@@ -10,6 +10,7 @@ import {
     useSessionRecoveryInsecureTimeRemaining,
 } from '@proton/account/recovery/sessionRecoveryHooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import metrics, { observeApiError } from '@proton/metrics';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
@@ -26,7 +27,6 @@ import PasswordWithPolicyInputs from '../../../components/passwordPolicy/Passwor
 import { usePasswordPolicyValidation } from '../../../components/passwordPolicy/index';
 import useFormErrors from '../../../components/v2/useFormErrors';
 import useErrorHandler from '../../../hooks/useErrorHandler';
-import useNotifications from '../../../hooks/useNotifications';
 import ConfirmSessionRecoveryCancellationModal from './ConfirmSessionRecoveryCancellationModal';
 import passwordResetIllustration from './password-reset-illustration.svg';
 

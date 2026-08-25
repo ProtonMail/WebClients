@@ -2,9 +2,9 @@ import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { selectMeetingReadyPopupOpen, setMeetingReadyPopupOpen } from '@proton/meet/store/slices/uiStateSlice';
 import { isMobile } from '@proton/shared/lib/helpers/browser';

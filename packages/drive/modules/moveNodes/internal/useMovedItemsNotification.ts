@@ -1,6 +1,6 @@
 import { c, msgid } from 'ttag';
 
-import { useNotifications } from '@proton/components';
+import { useNotifications } from '@proton/app-context/useNotifications';
 
 import { handleSdkError } from '../../../legacy/errorHandling';
 import { getEllipsedName } from '../../intl';

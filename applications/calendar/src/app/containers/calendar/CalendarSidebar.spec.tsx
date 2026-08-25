@@ -57,7 +57,9 @@ jest.mock('@proton/components/hooks/useEventManager', () => ({
     })),
 }));
 
-jest.mock('@proton/components/hooks/useNotifications', () => () => ({}));
+jest.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: () => ({}),
+}));
 
 jest.mock('@proton/components/hooks/useAuthentication', () => () => ({}));
 

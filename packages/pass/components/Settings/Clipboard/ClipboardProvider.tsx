@@ -4,7 +4,7 @@ import { useDispatch, useStore } from 'react-redux';
 
 import { c } from 'ttag';
 
-import useNotifications from '@proton/components/hooks/useNotifications';
+import { useNotifications } from '@proton/app-context/useNotifications';
 
 import { createUseContext } from '../../../hooks/useContextFactory';
 import { ClipboardTTL } from '../../../lib/clipboard/types';

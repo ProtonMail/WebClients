@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import type { ModalOwnProps } from '@proton/components';
-import { Prompt, useNotifications } from '@proton/components';
+import { Prompt } from '@proton/components';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';

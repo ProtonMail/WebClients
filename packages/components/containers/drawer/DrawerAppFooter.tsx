@@ -3,11 +3,11 @@ import { cloneElement, useEffect, useRef } from 'react';
 
 import throttle from 'lodash/throttle';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { modalTwoBackdropRootClassName } from '@proton/shared/lib/busy';
 
 import Footer from '../../components/footer/Footer';
 import useElementRect from '../../hooks/useElementRect';
-import useNotifications from '../../hooks/useNotifications';
 
 interface Props {
     buttons: ReactElement[];

@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { useLoading } from '@proton/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
@@ -24,7 +25,6 @@ import Loader from '../../../components/loader/Loader';
 import useApi from '../../../hooks/useApi';
 import { useGetCalendarInfo } from '../../../hooks/useGetCalendarInfo';
 import { useModalsMap } from '../../../hooks/useModalsMap';
-import useNotifications from '../../../hooks/useNotifications';
 import SettingsParagraph from '../../account/SettingsParagraph';
 import DeleteLinkConfirmationModal from './DeleteLinkConfirmationModal';
 import EditLinkModal from './EditLinkModal';

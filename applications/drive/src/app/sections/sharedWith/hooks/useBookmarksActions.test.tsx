@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react';
 
-import { useNotifications } from '@proton/components';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { getDrive, useDrive } from '@proton/drive/index';
 import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDriver';
@@ -8,7 +8,7 @@ import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDrive
 import { Actions, countActionWithTelemetry } from '../../../utils/telemetry';
 import { useBookmarksActions } from './useBookmarksActions';
 
-jest.mock('@proton/components', () => ({
+jest.mock('@proton/app-context/useNotifications', () => ({
     useNotifications: jest.fn(),
 }));
 

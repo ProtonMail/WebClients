@@ -2,7 +2,8 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { type ModalStateProps, useNotifications } from '@proton/components';
+import { useNotifications } from '@proton/app-context/useNotifications';
+import type { ModalStateProps } from '@proton/components';
 import shallowEqual from '@proton/utils/shallowEqual';
 
 import type { DirectoryTreeItem } from '../../../components/DirectoryTree/DirectoryTree';

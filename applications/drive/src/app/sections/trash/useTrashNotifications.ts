@@ -1,6 +1,7 @@
 import { c, msgid } from 'ttag';
 
-import { useConfirmActionModal, useNotifications } from '@proton/components';
+import { useNotifications } from '@proton/app-context/useNotifications';
+import { useConfirmActionModal } from '@proton/components';
 import { showAggregatedErrorNotification } from '@proton/drive/legacy/errorHandling';
 import { getEllipsedName } from '@proton/drive/modules/intl';
 import { useListNotifications } from '@proton/drive/modules/notifications';
