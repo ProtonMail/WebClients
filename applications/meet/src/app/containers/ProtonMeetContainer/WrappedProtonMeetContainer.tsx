@@ -17,6 +17,7 @@ import { audioQuality, legacyQualityConstants, qualityConstants, screenShareQual
 import { QualityScenarios } from '../../types';
 import { ProtonMeetKeyProvider } from '../../utils/ProtonMeetKeyProvider';
 import { createMeetAudioContext } from '../../utils/meet-audio-context';
+import { MeetingAnalyticsProvider } from './MeetingAnalyticsProvider';
 import { ProtonMeetContainer } from './ProtonMeetContainer';
 
 export const WrappedProtonMeetContainer = () => {
@@ -119,16 +120,18 @@ export const WrappedProtonMeetContainer = () => {
     }, [activeAudioOutputDeviceId, meetAudioContext]);
 
     return (
-        <RoomContext.Provider value={room}>
-            <SubscriptionManagementProvider>
-                <MeetingAnnouncerProvider>
-                    <MediaManagementProvider>
-                        <SortedParticipantsProvider>
-                            <ProtonMeetContainer keyProvider={keyProvider} />
-                        </SortedParticipantsProvider>
-                    </MediaManagementProvider>
-                </MeetingAnnouncerProvider>
-            </SubscriptionManagementProvider>
-        </RoomContext.Provider>
+        <MeetingAnalyticsProvider sampleRate={meetAudioContext.audioContext.sampleRate}>
+            <RoomContext.Provider value={room}>
+                <SubscriptionManagementProvider>
+                    <MeetingAnnouncerProvider>
+                        <MediaManagementProvider>
+                            <SortedParticipantsProvider>
+                                <ProtonMeetContainer keyProvider={keyProvider} />
+                            </SortedParticipantsProvider>
+                        </MediaManagementProvider>
+                    </MeetingAnnouncerProvider>
+                </SubscriptionManagementProvider>
+            </RoomContext.Provider>
+        </MeetingAnalyticsProvider>
     );
 };
