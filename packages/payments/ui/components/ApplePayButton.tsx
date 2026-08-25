@@ -1,7 +1,6 @@
 import { type ReactNode, useMemo } from 'react';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import applePayIcon from '@proton/styles/assets/img/bank-icons/dark-apay.svg';
 import clsx from '@proton/utils/clsx';
 
 import type { ApplePayProcessorHook } from '../../core/payment-processors/useApplePay';
@@ -33,9 +32,7 @@ const FakeApplePayButton = ({
             style={{ borderRadius: '4px' }}
             loading={loading}
             disabled={disabled}
-        >
-            <img className="apple-pay-button-logo" src={applePayIcon} alt="Apple Pay" width="52" />
-        </ButtonLike>
+        />
     );
 };
 
