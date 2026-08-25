@@ -1,5 +1,5 @@
-import type { Filter } from '@proton/components/containers/filters/interfaces';
 import { FILTER_STATUS } from '@proton/shared/lib/constants';
+import type { Filter } from '@proton/sieve/filterModel';
 
 export const buildFilter = (value?: Partial<Filter>): Filter => {
     return {

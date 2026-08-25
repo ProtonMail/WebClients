@@ -1,7 +1,8 @@
 import { render } from '@testing-library/react';
 
+import { ConditionComparator } from '@proton/sieve/filterModel';
+
 import type { Condition } from '../filters/interfaces';
-import { ConditionComparator } from '../filters/interfaces';
 import AttachmentsCondition from './AttachmentsCondition';
 
 describe('AttachmentsCondition', () => {

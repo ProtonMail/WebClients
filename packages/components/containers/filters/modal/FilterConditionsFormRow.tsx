@@ -9,6 +9,7 @@ import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
+import { ConditionComparator, ConditionType, FilterStatement } from '@proton/sieve/filterModel';
 import clsx from '@proton/utils/clsx';
 
 import Input from '../../../components/input/Input';
@@ -17,7 +18,6 @@ import Option from '../../../components/option/Option';
 import SelectTwo from '../../../components/selectTwo/SelectTwo';
 import { COMPARATORS, TYPES, getComparatorLabels, getConditionTypeLabels } from '../constants';
 import type { Condition } from '../interfaces';
-import { ConditionComparator, ConditionType, FilterStatement } from '../interfaces';
 import { getConditionLabel, getEmailSentLabel, getEmailSentLabelJt } from './helper';
 
 import './FilterConditionsFormRow.scss';

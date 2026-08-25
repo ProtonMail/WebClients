@@ -10,6 +10,7 @@ import { useLoading } from '@proton/hooks';
 import { deleteFilter, enableFilter } from '@proton/mail/store/filters/actions';
 import { FILTER_STATUS } from '@proton/shared/lib/constants';
 import { hasReachedFiltersLimit } from '@proton/shared/lib/helpers/filters';
+import type { Filter } from '@proton/sieve/filterModel';
 import noop from '@proton/utils/noop';
 
 import type { DropdownActionProps } from '../../components/dropdown/DropdownActions';
@@ -21,7 +22,6 @@ import TableRow from '../../components/table/TableRow';
 import Toggle from '../../components/toggle/Toggle';
 import FiltersUpsellModal from '../../components/upsell/modals/FiltersUpsellModal';
 import FilterWarningModal from './FilterWarningModal';
-import type { Filter } from './interfaces';
 import DeleteFilterModal from './modal/DeleteFilterModal';
 import FilterModal from './modal/FilterModal';
 import AdvancedFilterModal from './modal/advanced/AdvancedFilterModal';
