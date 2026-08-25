@@ -3,10 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { getApplePayCapabilities } from '@proton/chargebee/lib/getApplePayCapabilities';
 import { getCanMakePaymentsWithActiveCard } from '@proton/chargebee/lib/getCanMakePaymentsWithActiveCard';
-import type { ApplePayAvailability } from '@proton/chargebee/lib/types';
-import { isApplePayQRFlowSupported } from '@proton/payments/core/apple-pay-support';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { PaymentVerificatorV5, PaymentVerificatorV5Params } from '@proton/payments/core/createPaymentToken';
 import { ensureTokenChargeableV5 } from '@proton/payments/core/ensureTokenChargeable';
@@ -21,19 +18,18 @@ import type { PaymentStage } from '@proton/payments/telemetry/shared-checkout-te
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { getChargebeeErrorMessage } from '@proton/payments/ui/components/ChargebeeIframe';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
-import { isSafari } from '@proton/shared/lib/helpers/browser';
 import type { Api, User } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 
+import useConfig from '../../..//hooks/useConfig';
+import useModals from '../../..//hooks/useModals';
+import useNotifications from '../../..//hooks/useNotifications';
 import Loader from '../../../components/loader/Loader';
 import ModalTwo, { type ModalOwnProps } from '../../../components/modalTwo/Modal';
 import ModalTwoContent from '../../../components/modalTwo/ModalContent';
 import ModalTwoFooter from '../../../components/modalTwo/ModalFooter';
 import ModalTwoHeader from '../../../components/modalTwo/ModalHeader';
-import useConfig from '../../../hooks/useConfig';
-import useModals from '../../../hooks/useModals';
-import useNotifications from '../../../hooks/useNotifications';
 import { defaultTranslations } from '../ensureTokenChargeable';
 import { abortSignalAny } from './AbortSignalAny';
 import PaymentVerificationModal from './PaymentVerificationModal';
@@ -338,54 +334,30 @@ export const useApplePayDependencies = (
         onVerificationSuccess: () => void;
     }
 ) => {
-    const [isApplePayAvailable, setIsApplePayAvailable] = useState(false);
-    const [hasApplePayFailedToMount, setHasApplePayFailedToMount] = useState(false);
+    const [canUseApplePay, setCanUseApplePay] = useState(false);
     const { createNotification } = useNotifications();
-    const applePayCapabilitiesEnabled = useFlag('ApplePayCapabilities');
-
-    const getIframeAvailability = ({
-        canMakePaymentsWithActiveCard,
-        applePayCapabilities,
-    }: ApplePayAvailability): boolean => {
-        if (!applePayCapabilitiesEnabled) {
-            return canMakePaymentsWithActiveCard;
-        }
-        // undefined when the Chargebee iframe wrapper is an older deploy that doesn't report it yet
-        return applePayCapabilities ?? canMakePaymentsWithActiveCard;
-    };
-
-    /** Outside Safari, Apple Pay is the cross-device QR flow, which Stripe only offers on desktop */
-    const isSupportedContext = () => isSafari() || isApplePayQRFlowSupported();
-
-    /** Apple answers per document origin, so the app and the Chargebee iframe both have to agree */
-    const isAvailableInBothOrigins = async (): Promise<boolean> => {
-        const [currentDomain, chargebeeIframe] = await Promise.all([
-            applePayCapabilitiesEnabled ? getApplePayCapabilities() : getCanMakePaymentsWithActiveCard(),
-            chargebeeHandles.getApplePayCapabilities({ applePayCapabilitiesEnabled }),
-        ]);
-
-        return currentDomain && getIframeAvailability(chargebeeIframe);
-    };
 
     const checkApplePay = async (): Promise<boolean> => {
         try {
-            return isSupportedContext() && (await isAvailableInBothOrigins());
+            const [canUseApplePayFromCurrentDomain, canUseApplePayFromChargebeeIframe] = await Promise.all([
+                getCanMakePaymentsWithActiveCard(),
+                chargebeeHandles.getCanMakePaymentsWithActiveCard(),
+            ]);
+
+            return canUseApplePayFromCurrentDomain && canUseApplePayFromChargebeeIframe;
         } catch {
             return false;
         }
     };
 
     useEffect(() => {
-        const flagChanged = new AbortController();
+        async function run() {
+            const result = await checkApplePay();
+            setCanUseApplePay(result);
+        }
 
-        void checkApplePay().then((result) => {
-            if (!flagChanged.signal.aborted) {
-                setIsApplePayAvailable(result);
-            }
-        });
-
-        return () => flagChanged.abort();
-    }, [applePayCapabilitiesEnabled]);
+        void run();
+    }, []);
 
     const applePayModalHandles: ApplePayModalHandles = {
         onAuthorize: () => {
@@ -401,12 +373,9 @@ export const useApplePayDependencies = (
         onCancel: () => {
             onVerificationCancelled();
         },
-        onMountFailure: () => {
-            setHasApplePayFailedToMount(true);
-        },
     };
 
-    return { canUseApplePay: isApplePayAvailable && !hasApplePayFailedToMount, applePayModalHandles };
+    return { canUseApplePay, applePayModalHandles };
 };
 
 export const useGooglePayDependencies = (

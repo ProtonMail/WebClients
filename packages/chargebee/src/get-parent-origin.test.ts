@@ -22,11 +22,6 @@ describe('getParentOrigin', () => {
         it('ignores any path, search, or hash and returns only the origin', () => {
             expect(getParentOrigin('https://mail-api.proton.me/api/foo?bar=1#baz')).toBe('https://mail.proton.me');
         });
-
-        // getApplePayCapabilities relies on this: it runs in the main app too, where the origin is already the parent.
-        it('is idempotent, returning an origin with no -api label unchanged', () => {
-            expect(getParentOrigin('https://account.proton.me')).toBe('https://account.proton.me');
-        });
     });
 
     describe('only the first label is modified', () => {
