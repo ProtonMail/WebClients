@@ -36,41 +36,48 @@ type WorkerErrorMessage = {
  * In the SharedWorker, errors are forwarded to the main thread via BroadcastChannel
  * because Sentry is only initialized on the main thread.
  * Call `listenForWorkerErrors()` once on the main thread to subscribe.
+ *
+ * Never throws: most callers are `catch`/`finally` blocks, where a throw would mask the error
+ * being reported or skip the cleanup that follows.
  */
 export function sendErrorReportForSearch(
     message: string,
     error: Error | unknown,
     additionalContext?: Partial<ScopeContext>
 ) {
-    // Defense in depth: never forward offline errors to Sentry. The indexer queue
-    // also filters these structurally, but a stray callsite shouldn't flood telemetry
-    // when the user briefly drops connectivity.
-    if (getIsOfflineError(error)) {
-        return;
-    }
-
-    // Normalize into a proper Error and build a shared Sentry context
-    // so both the worker (BroadcastChannel) and main-thread paths report identical metadata.
-    const normalizedError = error instanceof Error ? error : new Error(String(error));
-    const context: Partial<ScopeContext> = {
-        ...additionalContext,
-        extra: { message, ...additionalContext?.extra },
-        tags: { component: 'search', ...additionalContext?.tags },
-    };
-
-    if (isWorker) {
-        try {
-            const channel = new BroadcastChannel(ERROR_CHANNEL);
-            channel.postMessage({ error: normalizedError, context } satisfies WorkerErrorMessage);
-            channel.close();
-        } catch (e) {
-            // BroadcastChannel can fail if the worker is shutting down.
-            Logger.error('Failed to forward error report via BroadcastChannel', e);
+    try {
+        // Defense in depth: never forward offline errors to Sentry. The indexer queue
+        // also filters these structurally, but a stray callsite shouldn't flood telemetry
+        // when the user briefly drops connectivity.
+        if (getIsOfflineError(error)) {
+            return;
         }
-        return;
-    }
 
-    sendErrorReport(normalizedError, context);
+        // Normalize into a proper Error and build a shared Sentry context
+        // so both the worker (BroadcastChannel) and main-thread paths report identical metadata.
+        const normalizedError = error instanceof Error ? error : new Error(String(error));
+        const context: Partial<ScopeContext> = {
+            ...additionalContext,
+            extra: { message, ...additionalContext?.extra },
+            tags: { component: 'search', ...additionalContext?.tags },
+        };
+
+        if (isWorker) {
+            try {
+                const channel = new BroadcastChannel(ERROR_CHANNEL);
+                channel.postMessage({ error: normalizedError, context } satisfies WorkerErrorMessage);
+                channel.close();
+            } catch (e) {
+                // BroadcastChannel can fail if the worker is shutting down.
+                Logger.error('Failed to forward error report via BroadcastChannel', e);
+            }
+            return;
+        }
+
+        sendErrorReport(normalizedError, context);
+    } catch (e) {
+        Logger.error('Failed to sendErrorReportForSearch', e);
+    }
 }
 
 /**

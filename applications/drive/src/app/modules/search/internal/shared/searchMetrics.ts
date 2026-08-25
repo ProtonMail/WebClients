@@ -31,11 +31,19 @@ export type SearchPermanentErrorKind = PermanentErrorKind;
 /** Storage/index snapshot attached to an error report for debugging context. */
 export type SearchDiagnostics = {
     blobCount: number;
-    blobSizeMb: number;
+    blobsTotalSizeMb: number;
     quarantinedNodeCount: number;
     storageUsageMb: number;
     storageQuotaMb: number;
     documentCount: number | undefined;
+    // In-memory IndexBlobStore number of blobs in cache.
+    blobCacheEntryCount: number | undefined;
+    // "/"-joined MB size per cached blob, ordered from highest priority (evicted last) to lowest
+    // (evicted first) - see Cached.priority(). Undefined under the same conditions as the other
+    // blobCache* fields.
+    blobCacheSizesMb: string | undefined;
+    // Number of blob cache being pending release.
+    blobCachePendingFreeCount: number | undefined;
 };
 
 const PERMANENT_ERROR_METRIC_KIND: Record<
@@ -103,9 +111,12 @@ function reportSearchDiagnosticsBreadcrumb(
         return undefined;
     }
     Logger.debug(
-        `Search diagnostics: blobs=${diagnostics.blobCount} (${diagnostics.blobSizeMb.toFixed(1)}MB), ` +
+        `Search diagnostics: blobs=${diagnostics.blobCount} (${diagnostics.blobsTotalSizeMb.toFixed(1)}MB), ` +
             `documents=${diagnostics.documentCount ?? 'unknown'}, quarantined=${diagnostics.quarantinedNodeCount}, ` +
-            `storage=${diagnostics.storageUsageMb.toFixed(1)}/${diagnostics.storageQuotaMb.toFixed(1)}MB` +
+            `storage=${diagnostics.storageUsageMb.toFixed(1)}/${diagnostics.storageQuotaMb.toFixed(1)}MB, ` +
+            `blobCache=${diagnostics.blobCacheEntryCount ?? 'unknown'}` +
+            (diagnostics.blobCachePendingFreeCount ? ` (+${diagnostics.blobCachePendingFreeCount} pending free)` : '') +
+            (diagnostics.blobCacheSizesMb ? `, blobSizesMb=${diagnostics.blobCacheSizesMb}` : '') +
             (taskAttemptCount !== undefined ? `, attempt=${taskAttemptCount}` : '')
     );
     return taskAttemptCount !== undefined ? { ...diagnostics, taskAttemptCount } : { ...diagnostics };

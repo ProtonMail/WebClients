@@ -74,21 +74,30 @@ export class CleanUpStaleBlobsTask extends BaseTask {
 
         let releasedCount = 0;
         let orphanCount = 0;
+        // Release events below free blobs from the in-memory cache, and this loop drives a live
+        // Cleanup execution - the same cross-step-reference hazard IndexReader/IndexWriter guard
+        // against. Marking the store busy defers those frees until the execution is freed.
+        blobStore.beginWrite();
         try {
-            const result = await this.driveCleanupIterator(cleanup, blobStore);
-            releasedCount = result.releasedCount;
-            orphanCount = await this.deleteOrphanBlobs(indexKind, result.trackedBlobNames, ctx);
-        } finally {
-            // Swallowed rather than wrapped: raised from a `finally` a throwing free() would mask
-            // whatever error is already in flight, which is the one worth diagnosing.
             try {
-                cleanup.free();
-            } catch (e) {
-                sendErrorReportForSearch(
-                    `CleanUpStaleBlobsTask: failed to free cleanup handle <${indexKind}>`,
-                    maybeWrapAsSearchLibraryError('cleanup: free', e)
-                );
+                const result = await this.driveCleanupIterator(cleanup, blobStore);
+                releasedCount = result.releasedCount;
+                orphanCount = await this.deleteOrphanBlobs(indexKind, result.trackedBlobNames, ctx);
+            } finally {
+                // Swallowed rather than wrapped: raised from a `finally` a throwing free() would
+                // mask whatever error is already in flight, which is the one worth diagnosing.
+                try {
+                    cleanup.free();
+                } catch (e) {
+                    sendErrorReportForSearch(
+                        `CleanUpStaleBlobsTask: failed to free cleanup handle <${indexKind}>`,
+                        maybeWrapAsSearchLibraryError('cleanup: free', e)
+                    );
+                }
             }
+        } finally {
+            // After cleanup.free(), and unskippable - see the same pattern in WriteSession.commit.
+            blobStore.endWrite();
         }
 
         ctx.searchMetrics.markBlobsCleanup({ removedBlobsCount: releasedCount + orphanCount });
