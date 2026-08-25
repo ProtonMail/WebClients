@@ -10,7 +10,7 @@ import { SentryMailInitiatives, traceError } from '@proton/shared/lib/helpers/se
 import { DARK_WEB_MONITORING_STATE } from '@proton/shared/lib/interfaces';
 import darkWebMonitoringIllustration from '@proton/styles/assets/img/illustrations/dwm-upsell-shield.svg';
 
-import useToggle from '../../../hooks/useToggle';
+import useToggle from '@proton/hooks/useToggle'
 import type { FeatureTourStepProps, ShouldDisplayTourStep } from '../interface';
 import FeatureTourStepCTA from './components/FeatureTourStepCTA';
 import FeatureTourStepsContent from './components/FeatureTourStepsContent';

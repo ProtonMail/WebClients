@@ -9,7 +9,7 @@ import { updateAIAssistant } from '@proton/shared/lib/api/settings';
 import { AI_ASSISTANT_ACCESS, type UserSettings } from '@proton/shared/lib/interfaces';
 
 import Toggle from '../../../components/toggle/Toggle';
-import useToggle from '../../../hooks/useToggle';
+import useToggle from '@proton/hooks/useToggle'
 
 interface Props {
     id: string;

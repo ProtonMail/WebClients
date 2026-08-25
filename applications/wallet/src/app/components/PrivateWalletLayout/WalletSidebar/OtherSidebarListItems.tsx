@@ -18,8 +18,8 @@ import {
     SidebarListItemLink,
     SidebarListItemSettingsLink,
     useModalState,
-    useToggle,
 } from '@proton/components';
+import useToggle from '@proton/hooks/useToggle'
 import { PLANS } from '@proton/payments/core/constants';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import clsx from '@proton/utils/clsx';

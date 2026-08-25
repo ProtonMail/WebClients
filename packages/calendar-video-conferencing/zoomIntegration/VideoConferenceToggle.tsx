@@ -3,7 +3,8 @@ import { c } from 'ttag';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { toggleOrganizationSetting } from '@proton/calendar/calendars/actions';
-import { Info, SettingsLayoutLeft, SettingsLayoutRight, useToggle } from '@proton/components';
+import { Info, SettingsLayoutLeft, SettingsLayoutRight } from '@proton/components';
+import useToggle from '@proton/hooks/useToggle'
 import Toggle from '@proton/components/components/toggle/Toggle';
 import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
 import useLoading from '@proton/hooks/useLoading';

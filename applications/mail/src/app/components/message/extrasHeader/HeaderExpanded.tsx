@@ -9,7 +9,7 @@ import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { ButtonGroup } from '@proton/components/components/button/ButtonGroup';
 import { useContactModals } from '@proton/components/containers/contacts/hooks/useContactModals';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import useToggle from '@proton/components/hooks/useToggle';
+import useToggle from '@proton/hooks/useToggle'
 import { IcArrowUpAndLeftBig } from '@proton/icons/icons/IcArrowUpAndLeftBig';
 import { IcArrowUpAndRightBig } from '@proton/icons/icons/IcArrowUpAndRightBig';
 import { IcArrowsUpAndLeftBig } from '@proton/icons/icons/IcArrowsUpAndLeftBig';
