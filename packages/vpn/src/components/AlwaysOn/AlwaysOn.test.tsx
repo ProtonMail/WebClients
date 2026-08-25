@@ -36,8 +36,8 @@ vi.mock('../../hooks/useFetchDownloadLinks', () => ({
     useFetchDownloadLinks: () => downloadLinksMock(),
 }));
 
-vi.mock('@proton/components/hooks/useNotifications', () => ({
-    default: () => ({ createNotification: vi.fn() }),
+vi.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: () => ({ createNotification: vi.fn() }),
 }));
 
 const subscriptionMock = vi.fn<() => [MaybeFreeSubscription, boolean]>();

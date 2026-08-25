@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import {
     Collapsible,
     CollapsibleContent,
@@ -9,7 +10,6 @@ import {
     CollapsibleHeaderIconButton,
     type ModalOwnProps,
     Prompt,
-    useNotifications,
 } from '@proton/components';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';

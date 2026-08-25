@@ -4,7 +4,7 @@ import { useRoomContext, useTracks } from '@livekit/components-react';
 import { RoomEvent, Track } from 'livekit-client';
 import { c } from 'ttag';
 
-import useNotifications from '@proton/components/hooks/useNotifications';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { selectParticipantDecryptedNameMap } from '@proton/meet/store/slices/participants/participantsSlice';

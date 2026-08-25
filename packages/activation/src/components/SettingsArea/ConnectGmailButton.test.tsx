@@ -57,8 +57,10 @@ jest.mock('@proton/unleash/useFlag', () => ({
     useFlag: jest.fn(),
 }));
 
-jest.mock('@proton/components/hooks/useNotifications', () => () => ({
-    createNotification: jest.fn(),
+jest.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: () => ({
+        createNotification: jest.fn(),
+    }),
 }));
 
 describe('ConnectGmailButton', () => {

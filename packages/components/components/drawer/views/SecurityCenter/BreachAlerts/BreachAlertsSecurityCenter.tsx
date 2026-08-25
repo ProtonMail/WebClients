@@ -11,6 +11,7 @@ import {
 import { useUser } from '@proton/account/user/hooks';
 import { userSettingsActions } from '@proton/account/userSettings';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Href } from '@proton/atoms/Href/Href';
 import { useLoading } from '@proton/hooks';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
@@ -40,7 +41,6 @@ import { useBreaches } from '../../../../../containers/credentialLeak/useBreache
 import GenericError from '../../../../../containers/error/GenericError';
 import useApi from '../../../../../hooks/useApi';
 import useErrorHandler from '../../../../../hooks/useErrorHandler';
-import useNotifications from '../../../../../hooks/useNotifications';
 import Loader from '../../../../loader/Loader';
 import { useModalStateObject } from '../../../../modalTwo/useModalState';
 import Toggle from '../../../../toggle/Toggle';

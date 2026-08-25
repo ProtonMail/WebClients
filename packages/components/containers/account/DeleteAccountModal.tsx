@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import { signoutAction } from '@proton/account/authenticationService';
 import { useGetOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import { useLoading } from '@proton/hooks';
@@ -36,7 +37,6 @@ import TextAreaTwo from '../../components/v2/input/TextArea';
 import useFormErrors from '../../components/v2/useFormErrors';
 import useApi from '../../hooks/useApi';
 import useEventManager from '../../hooks/useEventManager';
-import useNotifications from '../../hooks/useNotifications';
 import AuthModal from '../password/AuthModal';
 
 const { DIFFERENT_ACCOUNT, TOO_EXPENSIVE, MISSING_FEATURE, USE_OTHER_SERVICE, MERGE_ACCOUNT, OTHER } =

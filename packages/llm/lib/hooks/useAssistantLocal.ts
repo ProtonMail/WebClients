@@ -3,7 +3,8 @@ import { useCallback, useEffect, useRef } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { useApi, useNotifications } from '@proton/components';
+import { useNotifications } from '@proton/app-context/useNotifications';
+import { useApi } from '@proton/components';
 import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
 import useStateRef from '@proton/hooks/useStateRef';
 import { ASSISTANT_TYPE, ERROR_TYPE, GENERATION_SELECTION_TYPE } from '@proton/shared/lib/assistant';

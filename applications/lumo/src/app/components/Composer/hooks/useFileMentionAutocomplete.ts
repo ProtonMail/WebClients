@@ -2,19 +2,19 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useNotifications } from '@proton/components';
+import { useNotifications } from '@proton/app-context/useNotifications';
 
-import { useLumoDispatch, useLumoSelector } from '../../../redux/hooks';
 import { useDriveIndexing } from '../../../providers/DriveIndexingProvider';
+import { useLumoDispatch, useLumoSelector } from '../../../redux/hooks';
 import { selectProvisionalAttachments, selectSpaceByIdOptional } from '../../../redux/selectors';
 import { newAttachmentId, upsertAttachment } from '../../../redux/slices/core/attachments';
 import type { Message, ProjectSpace, SpaceId } from '../../../types';
 import { getMimeTypeFromExtension, getProcessingCategory } from '../../../util/filetypes';
+import { buildAlreadyMentionedNames, buildAttachedNames, filterFiles } from './fileMentionHelpers';
+import type { FileItem } from './fileMentionHelpers';
 import { useDriveFileAttachment } from './useDriveFileAttachment';
 import { useDriveFileLoader } from './useDriveFileLoader';
 import { EMPTY_FILES, useFileInventory } from './useFileInventory';
-import { buildAlreadyMentionedNames, buildAttachedNames, filterFiles } from './fileMentionHelpers';
-import type { FileItem } from './fileMentionHelpers';
 
 export type { FileItem } from './fileMentionHelpers';
 export { buildAlreadyMentionedNames, filterFiles } from './fileMentionHelpers';
@@ -176,9 +176,7 @@ export const useFileMentionAutocomplete = (
     const alreadyMentionedNames = buildAlreadyMentionedNames(allFiles, value);
 
     const filteredFiles = mentionState.isActive
-        ? filterFiles(allFiles, mentionState.query).filter(
-              (f) => !alreadyMentionedNames.has(f.name.toLowerCase())
-          )
+        ? filterFiles(allFiles, mentionState.query).filter((f) => !alreadyMentionedNames.has(f.name.toLowerCase()))
         : EMPTY_FILES;
 
     const closeMention = useCallback(() => {

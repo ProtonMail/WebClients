@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { userSettingsThunk } from '@proton/account/userSettings';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
@@ -12,7 +13,6 @@ import { getHasFIDO2SettingEnabled } from '@proton/shared/lib/settings/twoFactor
 import type { ModalProps } from '../../../components/modalTwo/Modal';
 import useModalState from '../../../components/modalTwo/useModalState';
 import Prompt from '../../../components/prompt/Prompt';
-import useNotifications from '../../../hooks/useNotifications';
 import AuthModal from '../../password/AuthModal';
 import { getSecurityKeySigningWarning } from './getSecurityKeySigningWarning';
 

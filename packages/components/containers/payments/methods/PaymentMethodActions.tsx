@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import useLoading from '@proton/hooks/useLoading';
 import { deletePaymentMethod, markPaymentMethodAsDefault } from '@proton/payments/core/api/api';
@@ -16,7 +17,6 @@ import useModalState, { useModalStateWithData } from '../../../components/modalT
 import Prompt from '../../../components/prompt/Prompt';
 import useApi from '../../../hooks/useApi';
 import useEventManager from '../../../hooks/useEventManager';
-import useNotifications from '../../../hooks/useNotifications';
 
 export interface Props {
     method: SavedPaymentMethod;

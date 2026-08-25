@@ -23,6 +23,7 @@ import { useSamlSSO } from '@proton/account/samlSSO/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserPermissions } from '@proton/account/userPermissions/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { EntitlementName } from '@proton/payments/core/entitlements/entitlement-names';
 import { useEntitlementChecks } from '@proton/payments/core/entitlements/hooks';
 import {
@@ -54,7 +55,6 @@ import useModalState from '../../../components/modalTwo/useModalState';
 import { isB2bPlanSupportingScribe } from '../../../helpers/assistant';
 import useAssistantFeatureEnabled from '../../../hooks/assistant/useAssistantFeatureEnabled';
 import { useErrorWrapper } from '../../../hooks/useErrorHandler';
-import useNotifications from '../../../hooks/useNotifications';
 import { useSilentApi } from '../../../hooks/useSilentApi';
 import { useAccountSpotlights } from '../../account/spotlights/AccountSpotlightsProvider';
 import AddressModal from '../../addresses/AddressModal';

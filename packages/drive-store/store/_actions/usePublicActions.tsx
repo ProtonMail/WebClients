@@ -1,6 +1,7 @@
 import { c, msgid } from 'ttag';
 
-import { type useConfirmActionModal, useNotifications } from '@proton/components';
+import { useNotifications } from '@proton/app-context/useNotifications';
+import type { useConfirmActionModal } from '@proton/components';
 import { getPlatformFriendlyDateForFileName } from '@proton/shared/lib/docs/utils/getPlatformFriendlyDateForFileName';
 
 import { useAnonymousUploadAuthStore } from '../../zustand/upload/anonymous-auth.store';

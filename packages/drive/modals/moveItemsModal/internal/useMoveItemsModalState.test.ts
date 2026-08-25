@@ -36,7 +36,7 @@ jest.mock('../../../legacy/errorHandling', () => ({
     handleSdkError: jest.fn(),
 }));
 
-jest.mock('@proton/components', () => ({
+jest.mock('@proton/app-context/useNotifications', () => ({
     useNotifications: jest.fn(() => ({ createNotification: mockCreateNotification })),
 }));
 

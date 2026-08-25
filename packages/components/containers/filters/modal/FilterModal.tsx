@@ -3,6 +3,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import isDeepEqual from 'lodash/isEqual';
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { addFilter, updateFilter } from '@proton/mail/store/filters/actions';
 import { useFilters } from '@proton/mail/store/filters/hooks';
@@ -22,7 +23,6 @@ import ModalTwoFooter from '../../../components/modalTwo/ModalFooter';
 import ModalTwoHeader from '../../../components/modalTwo/ModalHeader';
 import useModalState from '../../../components/modalTwo/useModalState';
 import useApi from '../../../hooks/useApi';
-import useNotifications from '../../../hooks/useNotifications';
 import { getDefaultFolders, noFolderValue } from '../constants';
 import type {
     Actions,

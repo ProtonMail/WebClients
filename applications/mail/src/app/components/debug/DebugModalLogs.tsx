@@ -3,12 +3,12 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import Collapsible from '@proton/components/components/collapsible/Collapsible';
 import CollapsibleContent from '@proton/components/components/collapsible/CollapsibleContent';
 import CollapsibleHeader from '@proton/components/components/collapsible/CollapsibleHeader';
 import CollapsibleHeaderIconButton from '@proton/components/components/collapsible/CollapsibleHeaderIconButton';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { logger } from '@proton/logger';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';

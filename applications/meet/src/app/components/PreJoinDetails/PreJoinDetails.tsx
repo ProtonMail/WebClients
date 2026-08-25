@@ -2,13 +2,13 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import InputFieldStacked from '@proton/components/components/inputFieldStacked/InputFieldStacked';
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcMeetCopy } from '@proton/icons/icons/IcMeetCopy';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import {

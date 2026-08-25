@@ -1,4 +1,4 @@
-import useNotifications from '@proton/components/hooks/useNotifications'
+import { useNotifications } from '@proton/app-context/useNotifications'
 import { mimeTypeToProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 import {
   type DriveEvent,

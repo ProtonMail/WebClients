@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { renameInternalAddressThunk } from '@proton/account/addresses/renameInternalAddress';
 import { useCustomDomains } from '@proton/account/domains/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
@@ -20,7 +21,6 @@ import ModalHeader from '../../components/modalTwo/ModalHeader';
 import InputFieldTwo from '../../components/v2/field/InputField';
 import useFormErrors from '../../components/v2/useFormErrors';
 import useErrorHandler from '../../hooks/useErrorHandler';
-import useNotifications from '../../hooks/useNotifications';
 
 interface Props extends ModalProps<'form'> {
     address: Address;

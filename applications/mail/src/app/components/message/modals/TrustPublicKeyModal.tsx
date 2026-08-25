@@ -1,6 +1,8 @@
+import type { PrivateKeyReference, PublicKeyReference } from '@protontech/crypto';
 import { c } from 'ttag';
 
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import Form from '@proton/components/components/form/Form';
@@ -11,8 +13,6 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
-import useNotifications from '@proton/components/hooks/useNotifications';
-import type { PrivateKeyReference, PublicKeyReference } from '@protontech/crypto';
 import { useLoading } from '@proton/hooks';
 import { addContacts, getContact, updateContact } from '@proton/shared/lib/api/contacts';
 import { API_CODES, CONTACT_CARD_TYPE } from '@proton/shared/lib/constants';

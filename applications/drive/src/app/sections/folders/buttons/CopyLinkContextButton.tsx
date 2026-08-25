@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import { useNotifications } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import { IcLink } from '@proton/icons/icons/IcLink';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';

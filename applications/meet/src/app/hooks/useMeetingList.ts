@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import useNotifications from '@proton/components/hooks/useNotifications';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { useCreateMeeting, useGetMeetingDependencies } from '@proton/meet';
 import { useGetMeetings, useMeetings } from '@proton/meet/store/hooks/useMeetings';

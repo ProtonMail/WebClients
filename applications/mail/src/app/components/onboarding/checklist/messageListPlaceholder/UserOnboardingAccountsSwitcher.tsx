@@ -1,11 +1,11 @@
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcSquares } from '@proton/icons/icons/IcSquares';
 import { TelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
@@ -14,10 +14,9 @@ import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 import { sortAddresses } from '@proton/shared/lib/mail/addresses';
 import checklistAccountsSwitcherImg from '@proton/styles/assets/img/illustrations/checklist-accounts-switcher.svg';
 
-import { ONLINE_SERVICES } from '../constants';
-import { useMailOnboardingTelemetry } from '../../useMailOnboardingTelemetry';
 import { useGetStartedChecklist } from '../../../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
-
+import { useMailOnboardingTelemetry } from '../../useMailOnboardingTelemetry';
+import { ONLINE_SERVICES } from '../constants';
 import UpdateMailAddressModal from './UpdateMailAddressModal';
 
 const UserOnboardingAccountsSwitcher = () => {

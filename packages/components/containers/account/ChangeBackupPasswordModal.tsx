@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { usePasswordPolicies } from '@proton/account/passwordPolicies/hooks';
 import { changeSSOUserBackupPassword } from '@proton/account/sso/passwordActions';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
@@ -20,7 +21,6 @@ import PasswordWithPolicyInputs from '../../components/passwordPolicy/PasswordWi
 import { usePasswordPolicyValidation } from '../../components/passwordPolicy/index';
 import useFormErrors from '../../components/v2/useFormErrors';
 import useErrorHandler from '../../hooks/useErrorHandler';
-import useNotifications from '../../hooks/useNotifications';
 
 interface Props extends ModalProps {}
 

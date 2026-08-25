@@ -2,6 +2,7 @@ import { useHistory } from 'react-router';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { useLoading } from '@proton/hooks';
 import {
@@ -27,7 +28,6 @@ import useModalState from '../../../components/modalTwo/useModalState';
 import Prompt from '../../../components/prompt/Prompt';
 import useApi from '../../../hooks/useApi';
 import useEventManager from '../../../hooks/useEventManager';
-import useNotifications from '../../../hooks/useNotifications';
 import SettingsParagraph from '../../account/SettingsParagraph';
 import SettingsSection from '../../account/SettingsSection';
 import { getNextDefaultCalendar } from './defaultCalendar';

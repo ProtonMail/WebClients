@@ -3,8 +3,8 @@ import React, { useEffect, useState } from 'react';
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
-import { useNotifications } from '@proton/components';
 import { IcBrandProtonDrive } from '@proton/icons/icons/IcBrandProtonDrive';
 import { DRIVE_SHORT_APP_NAME, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 

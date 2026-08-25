@@ -2,14 +2,13 @@ import { useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import type { PartialMemberAddress } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
-
-import useNotifications from '../../hooks/useNotifications';
 
 const amountOfDisplayedAddresses = 3;
 

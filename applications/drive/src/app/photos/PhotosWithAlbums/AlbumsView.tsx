@@ -4,7 +4,8 @@ import { useCallback, useState } from 'react';
 import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
-import { Loader, useAppTitle, useModalStateObject, useNotifications } from '@proton/components';
+import { useNotifications } from '@proton/app-context/useNotifications';
+import { Loader, useAppTitle, useModalStateObject } from '@proton/components';
 import { getDriveForPhotos } from '@proton/drive';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDriver';

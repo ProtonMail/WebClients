@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
@@ -10,7 +11,6 @@ import { SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
 
 import Toggle from '../../components/toggle/Toggle';
 import useApi from '../../hooks/useApi';
-import useNotifications from '../../hooks/useNotifications';
 import useToggle from '../../hooks/useToggle';
 
 const { DRAFTS_AND_SENT, NONE } = SHOW_MOVED;

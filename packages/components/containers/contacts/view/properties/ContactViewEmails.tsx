@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { IcCogWheel } from '@proton/icons/icons/IcCogWheel';
@@ -9,7 +10,6 @@ import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/c
 import type { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 
 import Copy from '../../../../components/button/Copy';
-import useNotifications from '../../../../hooks/useNotifications';
 import ContactGroupDropdown from '../../ContactGroupDropdown';
 import type { ContactEmailSettingsProps } from '../../email/ContactEmailSettingsModal';
 import type { ContactGroupEditProps } from '../../group/ContactGroupEditModal';

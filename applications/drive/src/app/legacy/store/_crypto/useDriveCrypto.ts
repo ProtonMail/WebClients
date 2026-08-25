@@ -6,7 +6,8 @@ import { c } from 'ttag';
 
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useGetAddresses } from '@proton/account/addresses/hooks';
-import { useAuthentication, useNotifications } from '@proton/components';
+import { useNotifications } from '@proton/app-context/useNotifications';
+import { useAuthentication } from '@proton/components';
 import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 import { sign as signMessage } from '@proton/shared/lib/keys/driveKeys';

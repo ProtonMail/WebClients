@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Card } from '@proton/atoms/Card/Card';
 import { Href } from '@proton/atoms/Href/Href';
@@ -14,7 +15,6 @@ import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Api, HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 
-import useNotifications from '../../../hooks/useNotifications';
 import EmailMethodForm from './EmailMethodForm';
 import PhoneMethodForm from './PhoneMethodForm';
 import RequestNewCodeModal from './RequestNewCodeModal';

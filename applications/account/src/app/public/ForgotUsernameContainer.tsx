@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import {
     InputFieldTwo,
@@ -12,7 +13,6 @@ import {
     useErrorHandler,
     useFormErrors,
     useMyCountry,
-    useNotifications,
 } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { requestUsername } from '@proton/shared/lib/api/reset';

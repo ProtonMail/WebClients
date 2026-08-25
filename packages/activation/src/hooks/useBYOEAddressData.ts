@@ -4,7 +4,8 @@ import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { useApi, useNotifications } from '@proton/components';
+import { useNotifications } from '@proton/app-context/useNotifications';
+import { useApi } from '@proton/components';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { ADDRESS_TYPE } from '@proton/shared/lib/constants';

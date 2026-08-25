@@ -21,9 +21,9 @@ jest.mock('@proton/unleash/useGetFlag', () => ({
     useGetFlag: jest.fn().mockReturnValue(() => true),
 }));
 
-jest.mock('@proton/components/hooks/useNotifications', () =>
-    jest.fn().mockReturnValue({ createNotification: jest.fn() })
-);
+jest.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: jest.fn().mockReturnValue({ createNotification: jest.fn() }),
+}));
 
 const mockUseFlag = useFlag as jest.MockedFunction<typeof useFlag>;
 

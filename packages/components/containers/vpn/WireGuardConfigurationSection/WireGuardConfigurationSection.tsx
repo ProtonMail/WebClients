@@ -7,6 +7,7 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Href } from '@proton/atoms/Href/Href';
@@ -32,7 +33,6 @@ import getBoldFormattedText from '../../../helpers/getBoldFormattedText';
 import { getObjectKeys } from '../../../helpers/getObjectKeys';
 import useApi from '../../../hooks/useApi';
 import useApiResult from '../../../hooks/useApiResult';
-import useNotifications from '../../../hooks/useNotifications';
 import useUserVPN from '../../../hooks/useUserVPN';
 import useVPNLogicals from '../../../hooks/useVPNLogicals';
 import SettingsParagraph from '../../account/SettingsParagraph';

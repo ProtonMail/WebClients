@@ -2,6 +2,7 @@ import type { Action, ThunkDispatch } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
 import { type DomainAddressesState, domainAddressesThunk } from '@proton/account/domainsAddresses';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { baseUseDispatch } from '@proton/react-redux-store';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
@@ -12,7 +13,6 @@ import noop from '@proton/utils/noop';
 
 import Checkbox from '../../components/input/Checkbox';
 import useApi from '../../hooks/useApi';
-import useNotifications from '../../hooks/useNotifications';
 
 interface Props {
     address: DomainAddress;

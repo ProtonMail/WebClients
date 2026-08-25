@@ -1,9 +1,9 @@
 import { vi } from 'vitest';
 
-import * as useNotificationsModule from '@proton/components/hooks/useNotifications';
+import * as useNotificationsModule from '@proton/app-context/useNotifications';
 
-export const mockUseNotifications = (value?: Partial<ReturnType<typeof useNotificationsModule.default>>) => {
-    const mockedUseNotifications = vi.spyOn(useNotificationsModule, 'default');
+export const mockUseNotifications = (value?: Partial<ReturnType<typeof useNotificationsModule.useNotifications>>) => {
+    const mockedUseNotifications = vi.spyOn(useNotificationsModule, 'useNotifications');
 
     mockedUseNotifications.mockReturnValue({
         setOffset: vi.fn(),

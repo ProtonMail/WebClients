@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { useConfig } from '@proton/app-context/useConfig';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { getCanMakePaymentsWithActiveCard } from '@proton/chargebee/lib/getCanMakePaymentsWithActiveCard';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
@@ -24,7 +25,6 @@ import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 
 import useModals from '../../..//hooks/useModals';
-import useNotifications from '../../..//hooks/useNotifications';
 import Loader from '../../../components/loader/Loader';
 import ModalTwo, { type ModalOwnProps } from '../../../components/modalTwo/Modal';
 import ModalTwoContent from '../../../components/modalTwo/ModalContent';

@@ -2,6 +2,7 @@ import type { ChangeEvent } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
@@ -11,7 +12,6 @@ import type { MailSettings } from '@proton/shared/lib/interfaces';
 
 import Toggle from '../../components/toggle/Toggle';
 import useApi from '../../hooks/useApi';
-import useNotifications from '../../hooks/useNotifications';
 
 interface Props {
     id?: string;

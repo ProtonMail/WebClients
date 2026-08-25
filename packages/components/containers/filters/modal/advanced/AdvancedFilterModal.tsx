@@ -3,6 +3,7 @@ import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Href } from '@proton/atoms/Href/Href';
 import { useLoading } from '@proton/hooks';
 import { addFilter, updateFilter } from '@proton/mail/store/filters/actions';
@@ -19,7 +20,6 @@ import ModalTwoFooter from '../../../../components/modalTwo/ModalFooter';
 import ModalTwoHeader from '../../../../components/modalTwo/ModalHeader';
 import useModalState from '../../../../components/modalTwo/useModalState';
 import useApi from '../../../../hooks/useApi';
-import useNotifications from '../../../../hooks/useNotifications';
 import { FILTER_VERSION } from '../../constants';
 import type { AdvancedSimpleFilterModalModel, CreateFilter, ErrorsSieve, Filter } from '../../interfaces';
 import { useFilterDispatch } from '../../useFilterDispatch';

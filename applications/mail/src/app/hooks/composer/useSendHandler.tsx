@@ -2,15 +2,13 @@ import type { Dispatch, SetStateAction } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import type { Cancellable } from '@proton/components/hooks/useHandler';
 import { useHandler } from '@proton/components/hooks/useHandler';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { getOnlineStatus } from '@proton/components/hooks/useOnline';
 import type { MessageState, MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import { useFlag } from '@proton/unleash/useFlag';
-
-import { useMailDispatch } from '../../store/hooks';
 
 import type { SendingMessageNotificationManager } from '../../components/notifications/SendingMessageNotification';
 import SendingMessageNotification, {
@@ -24,6 +22,7 @@ import {
 } from '../../constants';
 import { useOnCompose } from '../../containers/ComposeProvider';
 import type { MapSendInfo } from '../../models/crypto';
+import { useMailDispatch } from '../../store/hooks';
 import { endSending, startSending } from '../../store/messages/draft/messagesDraftActions';
 import { cancelScheduled } from '../../store/messages/scheduled/scheduledActions';
 import { useGetMessage } from '../message/useMessage';

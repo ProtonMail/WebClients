@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
@@ -17,7 +18,6 @@ import {
     useErrorHandler,
     useFormErrors,
     useLocalState,
-    useNotifications,
 } from '@proton/components';
 import { AuthType, type AuthTypeData, ExternalSSOFlow } from '@proton/components/containers/login/interface';
 import { handleLogin } from '@proton/components/containers/login/loginActions';

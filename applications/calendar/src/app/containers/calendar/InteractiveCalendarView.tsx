@@ -10,6 +10,7 @@ import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { VIDEO_CONF_API_ERROR_CODES } from '@proton/calendar-video-conferencing/videoConferencing/constants';
 import {
@@ -33,7 +34,6 @@ import useGetEncryptionPreferences from '@proton/components/hooks/useGetEncrypti
 import useGetVerificationPreferences from '@proton/components/hooks/useGetVerificationPreferences';
 import { useGetVtimezonesMap } from '@proton/components/hooks/useGetVtimezonesMap';
 import { useModalsMap } from '@proton/components/hooks/useModalsMap';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import usePreventCloseTab from '@proton/components/hooks/usePreventCloseTab';
 import useRelocalizeText from '@proton/components/hooks/useRelocalizeText';
 import useSendIcs from '@proton/components/hooks/useSendIcs';

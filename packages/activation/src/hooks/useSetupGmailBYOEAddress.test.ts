@@ -36,9 +36,9 @@ jest.mock('@proton/account/addresses/hooks');
 const mockUseAddresses = useAddresses as jest.MockedFunction<any>;
 
 const mockCreateNotification = jest.fn();
-jest.mock('@proton/components/hooks/useNotifications', () => ({
+jest.mock('@proton/app-context/useNotifications', () => ({
     __esModule: true,
-    default: () => ({ createNotification: mockCreateNotification }),
+    useNotifications: () => ({ createNotification: mockCreateNotification }),
 }));
 
 const mockErrorHandler = jest.fn();

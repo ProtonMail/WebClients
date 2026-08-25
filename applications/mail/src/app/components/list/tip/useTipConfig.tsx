@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import AutoDeleteUpsellModal from '@proton/components/components/upsell/modals/AutoDeleteUpsellModal';
 import DWMUpsellModal from '@proton/components/components/upsell/modals/DWMUpsellModal';
@@ -10,7 +11,6 @@ import PmMeUpsellModal from '@proton/components/components/upsell/modals/PmMeUps
 import EditLabelModal from '@proton/components/containers/labels/modals/EditLabelModal';
 import useShortDomainAddress from '@proton/components/hooks/mail/useShortDomainAddress';
 import useApi from '@proton/components/hooks/useApi';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
@@ -33,7 +33,6 @@ import { TipActionType } from '../../../models/tip';
 import { elements } from '../../../store/elements/elementsSelectors';
 import { useMailDispatch, useMailSelector } from '../../../store/hooks';
 import { snoozeActions } from '../../../store/snooze/snoozeSlice';
-
 import useProtonTipsTelemetry from './useProtonTipsTelemetry';
 
 const MAX_LABEL_COUNT_FOR_FREE_USER = 3;

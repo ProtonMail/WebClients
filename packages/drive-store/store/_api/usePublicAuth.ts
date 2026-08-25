@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useNotifications } from '@proton/components';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { API_CODES, HTTP_STATUS_CODE } from '@proton/shared/lib/constants';

@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { DashboardCard, DashboardCardContent, DashboardCardDivider } from '@proton/atoms/DashboardCard/DashboardCard';
 import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
@@ -18,7 +19,6 @@ import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import Option from '../../components/option/Option';
-import useNotifications from '../../hooks/useNotifications';
 import { useTheme } from '../themes/ThemeProvider';
 import { SettingsIconRow } from './SettingsIconRow';
 import { SettingsSelectRow } from './SettingsSelectRow';

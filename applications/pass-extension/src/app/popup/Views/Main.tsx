@@ -9,8 +9,8 @@ import { useExtensionContext } from 'proton-pass-extension/lib/components/Extens
 import { useSaveTabState } from 'proton-pass-extension/lib/hooks/useSaveTabState';
 import { useSpotlightListener } from 'proton-pass-extension/lib/hooks/useSpotlightListener';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { AuthDeviceTopBanner } from '@proton/pass/components/Auth/AuthDeviceTopBanner';
 import { BulkSelectProvider } from '@proton/pass/components/Bulk/BulkSelectProvider';
 import { ContextMenuProvider } from '@proton/pass/components/ContextMenu/ContextMenuProvider';

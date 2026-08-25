@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { syncDomain } from '@proton/account/domains/actions';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
@@ -13,7 +14,6 @@ import ModalContent from '../../../components/modalTwo/ModalContent';
 import ModalFooter from '../../../components/modalTwo/ModalFooter';
 import ModalHeader from '../../../components/modalTwo/ModalHeader';
 import useErrorHandler from '../../../hooks/useErrorHandler';
-import useNotifications from '../../../hooks/useNotifications';
 import { verifyDomain } from '../../domains/DomainModal';
 import TXTSection from './TXTSection';
 import type { SsoAppInfo } from './ssoAppInfo';

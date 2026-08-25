@@ -3,8 +3,8 @@ import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcFingerprint } from '@proton/icons/icons/IcFingerprint';
 import { IcPassLockmodeBiometrics } from '@proton/icons/icons/IcPassLockmodeBiometrics';
 import { getBasename } from '@proton/shared/lib/authentication/pathnameHelper';

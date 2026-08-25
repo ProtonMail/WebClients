@@ -5,6 +5,7 @@ import type { PublicKeyReference } from '@protontech/crypto';
 import { c, msgid } from 'ttag';
 
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import { useGetDecryptedPassphraseAndCalendarKeys } from '@proton/calendar/calendarBootstrap/keys';
@@ -45,7 +46,6 @@ import AddressesAutocompleteTwo from '../../../components/v2/addressesAutocomple
 import { InputField } from '../../../components/v2/field/InputField';
 import useApi from '../../../hooks/useApi';
 import useGetEncryptionPreferences from '../../../hooks/useGetEncryptionPreferences';
-import useNotifications from '../../../hooks/useNotifications';
 import { useContactEmailsCache } from '../../contacts/ContactEmailsProvider';
 import { useKeyTransparencyContext } from '../../keyTransparency/useKeyTransparencyContext';
 

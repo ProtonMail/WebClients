@@ -2,7 +2,8 @@ import { c } from 'ttag';
 
 import { updateBYOEAddressConnection } from '@proton/account/addressKeys/actions';
 import { useUser } from '@proton/account/user/hooks';
-import { useApi, useErrorHandler, useNotifications } from '@proton/components';
+import { useNotifications } from '@proton/app-context/useNotifications';
+import { useApi, useErrorHandler } from '@proton/components';
 import type { WithLoading } from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import type { Address } from '@proton/shared/lib/interfaces';

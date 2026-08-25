@@ -9689,6 +9689,7 @@ __metadata:
     "@babel/preset-react": "npm:^7.29.7"
     "@babel/preset-typescript": "npm:^7.29.7"
     "@jest/globals": "npm:^30.4.1"
+    "@proton/app-context": "workspace:^"
     "@proton/atoms": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/features": "workspace:^"
@@ -9910,6 +9911,7 @@ __metadata:
   dependencies:
     "@proton/account": "workspace:^"
     "@proton/activation": "workspace:^"
+    "@proton/app-context": "workspace:^"
     "@proton/atoms": "workspace:^"
     "@proton/calendar": "workspace:^"
     "@proton/components": "workspace:^"
@@ -10492,6 +10494,7 @@ __metadata:
   resolution: "@proton/encrypted-search@workspace:packages/encrypted-search"
   dependencies:
     "@proton/account": "workspace:^"
+    "@proton/app-context": "workspace:^"
     "@proton/components": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/i18n": "workspace:^"
@@ -10681,6 +10684,7 @@ __metadata:
     "@jest/globals": "npm:^30.4.1"
     "@mlc-ai/web-llm": "patch:@mlc-ai/web-llm@npm%3A0.2.32#~/.yarn/patches/@mlc-ai-web-llm-npm-0.2.32-df249f5180.patch"
     "@proton/account": "workspace:^"
+    "@proton/app-context": "workspace:^"
     "@proton/components": "workspace:^"
     "@proton/hooks": "workspace:^"
     "@proton/lumo-api-client": "workspace:^"

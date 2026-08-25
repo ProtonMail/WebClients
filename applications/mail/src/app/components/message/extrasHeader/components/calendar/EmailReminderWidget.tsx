@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useAddresses, useGetAddresses } from '@proton/account/addresses/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Href } from '@proton/atoms/Href/Href';
@@ -16,7 +17,6 @@ import AppLink from '@proton/components/components/link/AppLink';
 import useApi from '@proton/components/hooks/useApi';
 import useGetCalendarEventRaw from '@proton/components/hooks/useGetCalendarEventRaw';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { IcArrowWithinSquare } from '@proton/icons/icons/IcArrowWithinSquare';
 import { IcKey } from '@proton/icons/icons/IcKey';
@@ -44,10 +44,9 @@ import type { CalendarEvent, VcalVeventComponent, VisualCalendar } from '@proton
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { getParsedHeadersFirstValue } from '@proton/shared/lib/mail/messages';
 
-import { useContactsMap } from '../../../../../hooks/contact/useContacts';
-
 import { getEventLocalStartEndDates } from '../../../../../helpers/calendar/emailReminder';
 import { getParticipantsList } from '../../../../../helpers/calendar/invite';
+import { useContactsMap } from '../../../../../hooks/contact/useContacts';
 import { EmailReminderWidgetSkeleton } from './EmailReminderWidgetSkeleton';
 import EventReminderBanner from './EventReminderBanner';
 import ExtraEventParticipants from './ExtraEventParticipants';

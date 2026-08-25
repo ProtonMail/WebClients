@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { createAddressKeysThunk, getCreateAddressKeysPayload } from '@proton/account/addressKeys/createAddressKeys';
 import { usePasswordPolicies } from '@proton/account/passwordPolicies/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
@@ -24,7 +25,6 @@ import TableHeader from '../../../components/table/TableHeader';
 import TableRow from '../../../components/table/TableRow';
 import useFormErrors from '../../../components/v2/useFormErrors';
 import useErrorHandler from '../../../hooks/useErrorHandler';
-import useNotifications from '../../../hooks/useNotifications';
 
 interface Props extends ModalProps<'form'> {
     member?: Member;

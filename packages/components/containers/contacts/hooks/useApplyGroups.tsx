@@ -2,6 +2,7 @@ import { useCallback } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import { useContacts } from '@proton/mail/store/contacts/hooks';
 import { useContactGroups } from '@proton/mail/store/labels/hooks';
@@ -13,7 +14,6 @@ import type { Contact, ContactEmail } from '@proton/shared/lib/interfaces/contac
 import { useModalTwoStatic } from '../../../components/modalTwo/useModalTwo';
 import useApi from '../../../hooks/useApi';
 import useEventManager from '../../../hooks/useEventManager';
-import useNotifications from '../../../hooks/useNotifications';
 import ContactGroupLimitReachedModal from '../modals/ContactGroupLimitReachedModal';
 import type { SelectEmailsProps } from '../modals/SelectEmailsModal';
 

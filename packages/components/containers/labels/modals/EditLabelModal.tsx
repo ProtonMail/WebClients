@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { useLoading } from '@proton/hooks';
 import { checkLabelAvailable, createLabel, updateLabel } from '@proton/mail/store/labels/actions';
@@ -21,7 +22,6 @@ import ModalTwoContent from '../../../components/modalTwo/ModalContent';
 import ModalTwoFooter from '../../../components/modalTwo/ModalFooter';
 import ModalTwoHeader from '../../../components/modalTwo/ModalHeader';
 import useFormErrors from '../../../components/v2/useFormErrors';
-import useNotifications from '../../../hooks/useNotifications';
 import NewLabelForm from '../NewLabelForm';
 
 export interface LabelModel extends Pick<Folder | Label, 'Name' | 'Color' | 'Type'> {

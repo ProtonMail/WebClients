@@ -3,6 +3,7 @@ import { useCallback, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import {
@@ -16,7 +17,6 @@ import {
     useApi,
     useErrorHandler,
     useModalStateObject,
-    useNotifications,
 } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import type { AssistantFeedback } from '@proton/shared/lib/api/feedback';

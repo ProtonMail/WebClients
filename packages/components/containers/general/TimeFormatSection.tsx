@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { userSettingsActions } from '@proton/account/userSettings';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { IcClock } from '@proton/icons/icons/IcClock';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
@@ -14,7 +15,6 @@ import { getDefaultTimeFormat } from '@proton/shared/lib/settings/helper';
 
 import Option from '../../components/option/Option';
 import useApi from '../../hooks/useApi';
-import useNotifications from '../../hooks/useNotifications';
 import { SettingsIconRow } from '../account/SettingsIconRow';
 import { SettingsSelectRow } from '../account/SettingsSelectRow';
 import { getAutomaticText } from './helper';

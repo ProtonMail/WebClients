@@ -1,5 +1,5 @@
+import { useNotifications } from '@proton/app-context/useNotifications';
 import useApi from '@proton/components/hooks/useApi';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useFolders } from '@proton/mail/store/labels/hooks';
 import { TelemetryMailSelectAllEvents } from '@proton/shared/lib/api/telemetry';
 
@@ -11,10 +11,10 @@ import useListTelemetry, {
 import { isElementMessage } from '../../../helpers/elements';
 import { getCleanedFolderID, sendSelectAllTelemetryReport } from '../../../helpers/moveToFolder';
 import { getSelectAllNotificationText } from '../../../helpers/selectAll';
-import { useEmptyLabel } from '../useEmptyLabel';
-import { useGetElementsFromIDs } from '../../mailbox/useElements';
 import { useMailDispatch } from '../../../store/hooks';
 import { layoutActions } from '../../../store/layout/layoutSlice';
+import { useGetElementsFromIDs } from '../../mailbox/useElements';
+import { useEmptyLabel } from '../useEmptyLabel';
 
 /**
  * If you need to use permanent delete on a full location, prefer to use the hook "usePermanentDelete" with selectAll to true instead.

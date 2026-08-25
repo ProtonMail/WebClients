@@ -39,9 +39,9 @@ jest.mock('@proton/account/user/hooks', () => ({
     useUser: jest.fn().mockReturnValue([{ ID: 'userID' }, false]),
 }));
 
-jest.mock('@proton/components/hooks/useNotifications', () =>
-    jest.fn().mockReturnValue({ createNotification: jest.fn() })
-);
+jest.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: jest.fn().mockReturnValue({ createNotification: jest.fn() }),
+}));
 
 jest.mock('./useSearchTelemetry', () => ({
     useSearchTelemetry: jest.fn().mockReturnValue({

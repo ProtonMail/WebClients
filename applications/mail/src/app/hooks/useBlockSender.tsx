@@ -4,18 +4,17 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import useApi from '@proton/components/hooks/useApi';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { updateBlockSenderConfirmation } from '@proton/shared/lib/api/mailSettings';
 import { BLOCK_SENDER_CONFIRMATION } from '@proton/shared/lib/mail/constants';
 
-import { useMailDispatch } from '../store/hooks';
-
 import BlockSenderModal from '../components/message/modals/BlockSenderModal';
 import { getSendersToBlock } from '../helpers/message/messageRecipients';
 import type { Element } from '../models/element';
+import { useMailDispatch } from '../store/hooks';
 import { addBlockAddresses } from '../store/incomingDefaults/incomingDefaultsActions';
 import { useIncomingDefaultsAddresses, useIncomingDefaultsStatus } from './incomingDefaults/useIncomingDefaults';
 

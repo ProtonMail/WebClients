@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { type ModalStateProps, useNotifications } from '@proton/components';
+import { useNotifications } from '@proton/app-context/useNotifications';
+import type { ModalStateProps } from '@proton/components';
 import { NodeType, getDrive } from '@proton/drive';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { type NormalizedNode, getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';

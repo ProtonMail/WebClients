@@ -31,6 +31,9 @@ jest.mock('@proton/activation/index', () => ({
 jest.mock('@proton/components', () => ({
     useApi: jest.fn(() => ({})),
     useModalStateObject: jest.fn(() => ({})),
+}));
+
+jest.mock('@proton/app-context/useNotifications', () => ({
     useNotifications: jest.fn(() => ({})),
 }));
 

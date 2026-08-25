@@ -2,7 +2,7 @@ import { useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { useNotifications } from '@proton/components';
+import { useNotifications } from '@proton/app-context/useNotifications';
 
 import { useLockedVolume } from '../../../../legacy/store';
 import { useDeleteLockedVolumesConfirmModal } from '../../modals/DeleteLockedVolumesConfirmModal';

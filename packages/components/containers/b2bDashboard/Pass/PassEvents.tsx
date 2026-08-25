@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { endOfDay, isAfter, isBefore, startOfDay } from 'date-fns';
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import { useLoading } from '@proton/hooks';
@@ -19,7 +20,6 @@ import SettingsSectionWide from '../../../containers/account/SettingsSectionWide
 import GenericError from '../../../containers/error/GenericError';
 import useApi from '../../../hooks/useApi';
 import useErrorHandler from '../../../hooks/useErrorHandler';
-import useNotifications from '../../../hooks/useNotifications';
 import { PromotionBanner } from '../../banner/PromotionBanner';
 import { toCamelCase } from '../../credentialLeak/helpers';
 import { useSubscriptionModal } from '../../payments/subscription/SubscriptionModalProvider';

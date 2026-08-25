@@ -1,12 +1,12 @@
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import type { Input } from '@proton/atoms/Input/Input';
 import clsx from '@proton/utils/clsx';
 
 import Copy from '../../../components/button/Copy';
 import type { InputFieldProps } from '../../../components/v2/field/InputField';
 import InputFieldTwo from '../../../components/v2/field/InputField';
-import useNotifications from '../../../hooks/useNotifications';
 
 interface Props extends Omit<InputFieldProps<typeof Input>, 'readonly' | 'unstyled'> {}
 

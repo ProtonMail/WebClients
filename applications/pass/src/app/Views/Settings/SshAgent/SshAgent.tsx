@@ -5,8 +5,8 @@ import { useSelector } from 'react-redux';
 import { sshAgent } from 'proton-pass-web/lib/ssh-agent';
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import Checkbox from '@proton/components/components/input/Checkbox';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { InfoButton } from '@proton/pass/components/Layout/Button/InfoButton';
 import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
 import { useSpotlightFor } from '@proton/pass/components/Spotlight/WithSpotlight';

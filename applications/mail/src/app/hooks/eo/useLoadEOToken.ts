@@ -2,14 +2,13 @@ import { useHistory } from 'react-router';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import useApi from '@proton/components/hooks/useApi';
-import useNotifications from '@proton/components/hooks/useNotifications';
-
-import { useMailDispatch } from '../../store/hooks';
 
 import { EO_MESSAGE_REDIRECT_PATH } from '../../constants';
 import { eoDecrypt } from '../../helpers/eo/message';
 import { loadEOMessage } from '../../store/eo/eoActions';
+import { useMailDispatch } from '../../store/hooks';
 
 interface Props {
     id?: string;

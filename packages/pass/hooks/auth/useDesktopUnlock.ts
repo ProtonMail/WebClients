@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react';
 
-import useNotifications from '@proton/components/hooks/useNotifications';
+import { useNotifications } from '@proton/app-context/useNotifications';
 
 import { useOnlineRef } from '../../components/Core/ConnectivityProvider';
 import { usePassCore } from '../../components/Core/PassCoreProvider';

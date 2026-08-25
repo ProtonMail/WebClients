@@ -2,7 +2,7 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import useNotifications from '@proton/components/hooks/useNotifications';
+import { useNotifications } from '@proton/app-context/useNotifications';
 
 import { useCountdown } from '../../../hooks/useCountdown';
 import { useRequest } from '../../../hooks/useRequest';

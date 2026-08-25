@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import Loader from '@proton/components/components/loader/Loader';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
@@ -10,7 +11,6 @@ import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch, useSelector } from '@proton/redux-shared-store/sharedProvider';
 import noop from '@proton/utils/noop';

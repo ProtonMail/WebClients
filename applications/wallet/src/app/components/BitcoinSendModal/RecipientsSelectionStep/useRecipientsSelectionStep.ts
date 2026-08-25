@@ -4,8 +4,8 @@ import type { PublicKeyReference } from '@protontech/crypto';
 import { c } from 'ttag';
 
 import type { WasmInviteNotificationType } from '@proton/andromeda';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { useModalStateWithData } from '@proton/components/components/modalTwo/useModalState';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import { canonicalizeEmailByGuess, validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import type { Recipient } from '@proton/shared/lib/interfaces';

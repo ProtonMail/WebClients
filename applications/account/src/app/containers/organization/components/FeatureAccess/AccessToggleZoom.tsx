@@ -2,8 +2,9 @@ import { c } from 'ttag';
 
 import { organizationActions } from '@proton/account/organization';
 import { useOrganization } from '@proton/account/organization/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { useVideoConfTelemetry } from '@proton/calendar-video-conferencing/videoConferencing/telemetry';
-import { useApi, useNotifications } from '@proton/components';
+import { useApi } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateOrganizationSettings } from '@proton/shared/lib/api/organization';

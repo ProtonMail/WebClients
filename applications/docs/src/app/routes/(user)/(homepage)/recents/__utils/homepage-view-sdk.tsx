@@ -27,7 +27,7 @@ import {
 import { useRecents } from './use-recents'
 import { useTrashed } from './use-trashed'
 import { c } from 'ttag'
-import useNotifications from '@proton/components/hooks/useNotifications'
+import { useNotifications } from '@proton/app-context/useNotifications'
 import { getEventSubscriber } from '~/drive-sdk/event-subscriber'
 import { traceRecentsError } from './traceRecentsError'
 import { useAddresses } from '@proton/account/addresses/hooks'

@@ -3,8 +3,8 @@ import { useCallback, useEffect } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { useCalendarModelEventManager } from '@proton/components/containers/eventManager/calendar/CalendarModelEventManagerProvider';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { getIsDrawerPostMessage } from '@proton/shared/lib/drawer/helpers';
 import { DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
 import type { Address } from '@proton/shared/lib/interfaces';

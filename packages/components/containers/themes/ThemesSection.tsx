@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { DashboardCard, DashboardCardContent, DashboardCardDivider } from '@proton/atoms/DashboardCard/DashboardCard';
 import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import { IcCircleHalfFilled } from '@proton/icons/icons/IcCircleHalfFilled';
@@ -8,7 +9,6 @@ import { hasInboxDesktopFeature } from '@proton/shared/lib/desktop/ipcHelpers';
 import { ColorScheme, ThemeModeSetting } from '@proton/shared/lib/themes/constants';
 import { getThemes } from '@proton/shared/lib/themes/themes';
 
-import useNotifications from '../../hooks/useNotifications';
 import { SettingsIconRow } from '../account/SettingsIconRow';
 import { SettingsToggleRow } from '../account/SettingsToggleRow';
 import ThemeCards from './ThemeCards';

@@ -7,6 +7,7 @@ import { resumeGroupMember as resumeGroupMemberAction, updateOverridePermissions
 import { addGroupOwnerThunk } from '@proton/account/groups/addGroupOwner';
 import { deleteGroupMemberThunk } from '@proton/account/groups/deleteGroupMember';
 import { getIsScimGroup } from '@proton/account/groups/groupFlags';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import useLoading from '@proton/hooks/useLoading';
@@ -30,7 +31,6 @@ import DropdownMenuButton from '../../../components/dropdown/DropdownMenuButton'
 import { DropdownSizeUnit } from '../../../components/dropdown/utils';
 import useApi from '../../../hooks/useApi';
 import useErrorHandler from '../../../hooks/useErrorHandler';
-import useNotifications from '../../../hooks/useNotifications';
 import useGroupKeys from './useGroupKeys';
 
 import './GroupMemberItemDropdown.scss';
