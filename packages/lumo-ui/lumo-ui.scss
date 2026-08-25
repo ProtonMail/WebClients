@@ -228,42 +228,98 @@
 	}
 }
 
-// Confirm-card chrome: a calm soft surface, never a destructive alert.
+// A single-line check-list row, and the unit the confirm-card body's peek is measured in. Declared once
+// so the row and the peek that counts it can never drift apart.
+$lumo-row-padding: rem(4);
+$lumo-row-height: rem(20) + $lumo-row-padding * 2;
+
+// Confirm-card chrome: a calm surface ruled into band / body / footer, never a destructive alert.
 .lumo-confirm-card {
 	inline-size: 100%;
 	min-inline-size: 0;
-	padding: var(--space-4);
-	background-color: var(--lumo-surface-soft, var(--background-weak));
+	background-color: var(--lumo-surface, var(--background-norm));
 	border: 1px solid var(--lumo-border, var(--border-weak));
 	border-radius: var(--lumo-radius-card, var(--border-radius-lg));
 
-	// Action-type icon badge: a soft tint tile giving the pending action a clear identity.
-	&__icon {
+	&__band,
+	&__footer {
+		padding: var(--space-3);
+	}
+
+	&__band {
+		border-block-end: 1px solid var(--lumo-border, var(--border-weak));
+	}
+
+	&__footer {
+		border-block-start: 1px solid var(--lumo-border, var(--border-weak));
+	}
+
+	&__glyph {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		inline-size: 1.75rem;
-		block-size: 1.75rem;
-		border-radius: var(--border-radius-md);
-		background-color: var(--lumo-accent-tint, var(--interaction-norm-minor-2));
+		inline-size: rem(20);
+		block-size: rem(20);
 		color: var(--lumo-accent, var(--interaction-norm));
 	}
 
-	&__heading {
+	&__heading,
+	&__sentence {
 		min-inline-size: 0;
 	}
 
-	// The deselectable item list scrolls within itself past a handful of rows so the header and buttons
-	// stay in view.
+	// Chained to `Scroll`'s own class throughout: the atom styles these same elements at equal
+	// specificity, so an unchained override would be decided by stylesheet order alone.
+	&__body.scroll-outer-vertical {
+		padding-inline: var(--space-3);
+
+		// `Scroll`'s default fade is black-alpha, a smudge on a dark card.
+		--scrollshadow-size: #{rem(24)};
+
+		// `Scroll` sizes its inner box to the outer one, which is content-sized here, so the cap has to go
+		// on the scrolling box itself. It counts the lead padding below plus three and a half rows, so the
+		// fold cuts a row and reads as "there is more" — exact for single-line rows, approximate once a
+		// label wraps.
+		.scroll-inner {
+			block-size: auto;
+			max-block-size: calc(var(--space-3) + #{$lumo-row-height * 3.5});
+		}
+
+		// Block padding sits inside the scroll box so that a body too short to overflow still clears the
+		// rules, while the fade stays on the scroll box's own edge.
+		.scroll-child {
+			padding-block: var(--space-3);
+
+			// A body whose renderer returned nothing must not leave a padded gap between the rules.
+			&:empty {
+				display: none;
+			}
+		}
+
+		.scroll-start-shadow {
+			background: linear-gradient(180deg, var(--lumo-surface, var(--background-norm)), transparent);
+		}
+
+		.scroll-end-shadow {
+			background: linear-gradient(0deg, var(--lumo-surface, var(--background-norm)), transparent);
+		}
+	}
+
 	&__targets,
 	&__delete-list {
-		max-block-size: 9rem;
-		overflow-y: auto;
-
 		> * {
 			min-inline-size: 0;
 		}
 	}
+}
+
+// Every confirm-card body row, selectable or read-only, is one $lumo-row-height box. The peek counts
+// these, so the two bodies have to agree on the unit. Rows are separated by their own padding rather
+// than a flex gap, which keeps the box the unit and lets a label that wraps still clear its neighbours.
+.lumo-check-list__item,
+.lumo-confirm-card__delete-list > li {
+	min-block-size: $lumo-row-height;
+	padding-block: $lumo-row-padding;
 }
 
 .lumo-check-list__item {
