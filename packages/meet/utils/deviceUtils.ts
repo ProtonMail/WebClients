@@ -14,17 +14,16 @@ export const toSerializableDevice = (device: MediaDeviceInfo): SerializableDevic
     label: device.label,
 });
 
-export const filterDevices = <T extends SerializableDeviceInfo>(devices: T[]): T[] => {
-    return devices
-        .filter(
-            (d) =>
-                !d.label?.toLocaleLowerCase()?.includes('zoom') &&
-                d.deviceId !== DEFAULT_DEVICE_ID &&
-                !d.label?.toLocaleLowerCase()?.startsWith('monitor of')
-        )
-        .sort((a, b) => {
-            return a.label.localeCompare(b.label);
-        });
+/**
+ * Remove devices that are not useful for meet.
+ */
+export const filterDevices = (devices: SerializableDeviceInfo[]): SerializableDeviceInfo[] => {
+    return devices.filter(
+        (d) =>
+            !d.label?.toLocaleLowerCase()?.includes('zoom') &&
+            d.deviceId !== DEFAULT_DEVICE_ID &&
+            !d.label?.toLocaleLowerCase()?.startsWith('monitor of')
+    );
 };
 
 export interface CheckmarkDeviceState {
@@ -58,7 +57,7 @@ export const isDefaultDevice = (deviceId: string | null): boolean => {
     return deviceId === DEFAULT_DEVICE_ID;
 };
 
-export const getDefaultDevice = <T extends SerializableDeviceInfo>(devices: T[]): T | null => {
+export const getDefaultDevice = (devices: SerializableDeviceInfo[]): SerializableDeviceInfo | null => {
     const defaultDevice = devices.find((d) => isDefaultDevice(d.deviceId));
     if (defaultDevice) {
         const duplicated = devices.find((d) => d.groupId === defaultDevice.groupId && !isDefaultDevice(d.deviceId));
@@ -75,18 +74,16 @@ export const getDefaultDevice = <T extends SerializableDeviceInfo>(devices: T[])
         return null;
     }
 
-    // Firefox (and other browsers without a synthetic "default" entry) return devices
-    // from enumerateDevices() in system-preference order, so the first one is the actual
-    // OS default. Preserve that order here instead of using filterDevices, which sorts
-    // alphabetically and would make the "Default - <label>" UI show the wrong device.
+    // Firefox (and other browsers without a synthetic "default" entry) return devices from
+    // enumerateDevices() in system-preference order, so the first one is the actual OS default.
     return devices[0] ?? null;
 };
 
-export const resolveDevice = <T extends SerializableDeviceInfo>(
+export const resolveDevice = (
     deviceId: string,
-    devices: T[],
-    systemDefault: T
-): T => {
+    devices: SerializableDeviceInfo[],
+    systemDefault: SerializableDeviceInfo
+): SerializableDeviceInfo => {
     const userSelectedSystemDefault = isDefaultDevice(deviceId);
 
     if (userSelectedSystemDefault) {
@@ -97,3 +94,10 @@ export const resolveDevice = <T extends SerializableDeviceInfo>(
 
     return matchingDevice ?? systemDefault;
 };
+
+/**
+ * Get a hash of the devices based on deviceId and groupId.
+ * Used to shallow compare device lists.
+ */
+export const getDevicesHash = (devices: (MediaDeviceInfo | SerializableDeviceInfo)[]) =>
+    devices.map((d) => `${d.deviceId}:${d.groupId}`).join(',');
