@@ -3,12 +3,13 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
+import type { ConditionComparator } from '@proton/sieve/filterModel';
+import { ConditionType, FilterStatement } from '@proton/sieve/filterModel';
 
 import Option from '../../components/option/Option';
 import SelectTwo from '../../components/selectTwo/SelectTwo';
 import { COMPARATORS, TYPES, getComparatorLabels, getConditionTypeLabels } from '../filters/constants';
-import type { Condition, ConditionComparator } from '../filters/interfaces';
-import { ConditionType, FilterStatement } from '../filters/interfaces';
+import type { Condition } from '../filters/interfaces';
 import AttachmentsCondition from './AttachmentsCondition';
 import InputCondition from './InputCondition';
 

@@ -1,7 +1,7 @@
-import type { FilterActions } from '@proton/components/containers/filters/interfaces';
-import { ConditionComparator } from '@proton/components/containers/filters/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
+import type { FilterActions } from '../filterModel';
+import { ConditionComparator } from '../filterModel';
 import { buildLabelValueObject, findLatest, unescapeCharacters, unescapeVariables } from '../helpers';
 import type {
     IfTest,

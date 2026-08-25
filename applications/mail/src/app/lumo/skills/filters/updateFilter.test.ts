@@ -1,7 +1,7 @@
 import { FILTER_VERSION } from '@proton/components/containers/filters/constants';
-import type { Filter } from '@proton/components/containers/filters/interfaces';
 import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
 import { createReferenceRegistry } from '@proton/llm/lib/lumoAgent/engine/referenceRegistry';
+import type { Filter } from '@proton/sieve/filterModel';
 
 import type { MailToolDeps } from '../../toolModule';
 import { updateFilterCardRenderer, updateFilterDefinition, updateFilterModule } from './updateFilter';

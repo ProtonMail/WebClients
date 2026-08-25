@@ -11,6 +11,7 @@ import { addFilter, updateFilter } from '@proton/mail/store/filters/actions';
 import { useFilters } from '@proton/mail/store/filters/hooks';
 import { checkSieveFilter } from '@proton/shared/lib/api/filters';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import type { CreateFilter, Filter } from '@proton/sieve/filterModel';
 
 import Form from '../../../../components/form/Form';
 import useDebounceInput from '../../../../components/input/useDebounceInput';
@@ -21,7 +22,7 @@ import ModalTwoFooter from '../../../../components/modalTwo/ModalFooter';
 import ModalTwoHeader from '../../../../components/modalTwo/ModalHeader';
 import useModalState from '../../../../components/modalTwo/useModalState';
 import { FILTER_VERSION } from '../../constants';
-import type { AdvancedSimpleFilterModalModel, CreateFilter, ErrorsSieve, Filter } from '../../interfaces';
+import type { AdvancedSimpleFilterModalModel, ErrorsSieve } from '../../interfaces';
 import { useFilterDispatch } from '../../useFilterDispatch';
 import { convertModel, sieveTemplates } from '../../utils';
 import CloseFilterModal from '../CloseFilterModal';

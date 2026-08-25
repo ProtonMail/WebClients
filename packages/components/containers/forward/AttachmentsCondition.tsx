@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
+import { ConditionComparator } from '@proton/sieve/filterModel';
+
 import Radio from '../../components/input/Radio';
 import type { Condition } from '../filters/interfaces';
-import { ConditionComparator } from '../filters/interfaces';
 
 interface Props {
     index: number;

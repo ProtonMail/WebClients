@@ -1,7 +1,7 @@
 import { act, fireEvent, screen } from '@testing-library/react';
 
-import { ConditionType } from '@proton/components/containers/filters/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { ConditionType } from '@proton/sieve/filterModel';
 
 import { mailTestRender, tick } from '../../../helpers/test/render';
 import CustomFilterDropdown from '../CustomFilterDropdown';

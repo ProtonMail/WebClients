@@ -2,12 +2,13 @@ import { useRef } from 'react';
 
 import { c } from 'ttag';
 
+import type { Filter } from '@proton/sieve/filterModel';
+
 import { SortableList } from '../../components/dnd/SortableList';
 import Table from '../../components/table/Table';
 import TableBody from '../../components/table/TableBody';
 import TableHeader from '../../components/table/TableHeader';
 import FilterItemRow from './FilterItemRow';
-import type { Filter } from './interfaces';
 
 interface Props {
     items: Filter[];
