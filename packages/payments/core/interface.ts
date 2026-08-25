@@ -1,6 +1,5 @@
 import type {
     ApplePayAuthorizedPayload,
-    ApplePayAvailability,
     BinData,
     CardFormRenderMode,
     ChargebeeSavedCardAuthorizationSuccess,
@@ -384,7 +383,7 @@ export type ChargebeeIframeHandles = {
     submitDirectDebit: (payload: ChargebeeSubmitDirectDebitEventPayload) => Promise<MessageBusResponseSuccess<unknown>>;
     setApplePayPaymentIntent: (payload: SetApplePayPaymentIntentPayload, abortSignal: AbortSignal) => Promise<any>;
     initializeApplePay: () => Promise<any>;
-    getApplePayCapabilities: (payload: { applePayCapabilitiesEnabled: boolean }) => Promise<ApplePayAvailability>;
+    getCanMakePaymentsWithActiveCard: () => Promise<boolean>;
     setGooglePayPaymentIntent: (payload: SetGooglePayPaymentIntentPayload, abortSignal?: AbortSignal) => Promise<any>;
     initializeGooglePay: () => Promise<any>;
     initializeIdeal: () => Promise<any>;

@@ -138,7 +138,6 @@ enum PaymentsFlag {
     Vpn2024AddonsExperiment = 'Vpn2024AddonsExperiment',
     Vpn2024SignupExperiment = 'Vpn2024SignupExperiment',
     EnableIdeal = 'EnableIdeal',
-    ApplePayCapabilities = 'ApplePayCapabilities',
 }
 
 export enum CalendarFeatureFlag {
