@@ -5,6 +5,7 @@ import {
     resolveAvailableModelTier,
     resolveDefaultModelTier,
     setDebugMaxModelOverride,
+    setDebugWeeklyLimitExhausted,
     setRemainingLimits,
     shouldShowModelSwitchSuggestion,
 } from './usageLimitsStore';
@@ -115,6 +116,7 @@ describe('getMaxModelAvailability', () => {
 describe('setDebugMaxModelOverride', () => {
     afterEach(() => {
         setDebugMaxModelOverride(null);
+        setDebugWeeklyLimitExhausted(false);
     });
 
     it('pins max to zero for a forced limit while keeping the other pools intact', () => {
@@ -156,5 +158,45 @@ describe('setDebugMaxModelOverride', () => {
         setDebugMaxModelOverride(null);
 
         expect(getRemainingLimits()).toEqual({ lite: 10, max: 20 });
+    });
+});
+
+describe('setDebugWeeklyLimitExhausted', () => {
+    afterEach(() => {
+        setDebugWeeklyLimitExhausted(false);
+        setDebugMaxModelOverride(null);
+    });
+
+    it('pins lite and max to zero while keeping other pools intact', () => {
+        setRemainingLimits({ lite: 10, max: 20, images: 3 });
+        setDebugWeeklyLimitExhausted(true);
+
+        expect(getRemainingLimits()).toEqual({ lite: 0, max: 0, images: 3 });
+    });
+
+    it('reports both pools as exhausted even before the backend sends any limits', () => {
+        jest.isolateModules(() => {
+            const store = require('./usageLimitsStore');
+            store.setDebugWeeklyLimitExhausted(true);
+
+            expect(store.getRemainingLimits()).toEqual({ lite: 0, max: 0 });
+            store.setDebugWeeklyLimitExhausted(false);
+        });
+    });
+
+    it('restores backend limits when switched off', () => {
+        setRemainingLimits({ lite: 10, max: 20 });
+        setDebugWeeklyLimitExhausted(true);
+        setDebugWeeklyLimitExhausted(false);
+
+        expect(getRemainingLimits()).toEqual({ lite: 10, max: 20 });
+    });
+
+    it('takes precedence over the max-only debug override', () => {
+        setRemainingLimits({ lite: 10, max: 20 });
+        setDebugMaxModelOverride('unavailable_limit_reached');
+        setDebugWeeklyLimitExhausted(true);
+
+        expect(getRemainingLimits()).toEqual({ lite: 0, max: 0 });
     });
 });
