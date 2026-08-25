@@ -11,7 +11,7 @@ interface Props {
  * the full set before confirming in the shell. Reusable across products.
  */
 const DeleteItemsCard = ({ items }: Props) => (
-    <ul className="lumo-confirm-card__delete-list unstyled m-0 flex flex-column flex-nowrap gap-1">
+    <ul className="lumo-confirm-card__delete-list unstyled m-0 flex flex-column flex-nowrap">
         {items.map(({ id, label }) => (
             <li key={id} className="text-sm text-ellipsis" title={label}>
                 {label}

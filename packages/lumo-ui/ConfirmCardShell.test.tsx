@@ -42,4 +42,36 @@ describe('ConfirmCardShell', () => {
         );
         expect(screen.getByRole('button', { name: 'Apply' })).toBeDisabled();
     });
+
+    it('renders a sentence band in place of the title one', () => {
+        const { container } = render(
+            <ConfirmCardShell
+                icon={IcFolderArrowIn}
+                sentence="Move 4 emails to Archive"
+                onApply={jest.fn()}
+                onCancel={jest.fn()}
+            />
+        );
+
+        expect(screen.getByText('Move 4 emails to Archive')).toBeInTheDocument();
+        expect(container.querySelector('.lumo-confirm-card__heading')).toBeNull();
+    });
+
+    it('omits the scrolling body region when there is no body', () => {
+        const { container } = render(
+            <ConfirmCardShell icon={IcFolderArrowIn} title="Move" onApply={jest.fn()} onCancel={jest.fn()} />
+        );
+        expect(container.querySelector('.lumo-confirm-card__body')).toBeNull();
+    });
+
+    it('mounts the body inside a scrolling region', () => {
+        const { container } = render(
+            <ConfirmCardShell icon={IcFolderArrowIn} title="Move" onApply={jest.fn()} onCancel={jest.fn()}>
+                <p>body</p>
+            </ConfirmCardShell>
+        );
+        expect(container.querySelector('.lumo-confirm-card__body.scroll-outer-vertical')).toContainElement(
+            screen.getByText('body')
+        );
+    });
 });
