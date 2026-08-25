@@ -1,5 +1,5 @@
 import { LinksKeysProvider } from './useLinksKeys';
-import { LinksListingProvider, PublicLinksListingProvider } from './useLinksListing';
+import { LinksListingProvider } from './useLinksListing';
 import { LinksStateProvider } from './useLinksState';
 
 export * from './interface';
@@ -10,7 +10,7 @@ export { default as useLink } from './useLink';
 export { default as useLinks } from './useLinks';
 export { default as useLinkActions } from './useLinkActions';
 export { default as useLinksActions } from './useLinksActions';
-export { useLinksListing, usePublicLinksListing } from './useLinksListing';
+export { useLinksListing } from './useLinksListing';
 
 export function LinksProvider({ children }: { children: React.ReactNode }) {
     return (
@@ -25,9 +25,7 @@ export function LinksProvider({ children }: { children: React.ReactNode }) {
 export function PublicLinksProvider({ children }: { children: React.ReactNode }) {
     return (
         <LinksStateProvider>
-            <LinksKeysProvider>
-                <PublicLinksListingProvider>{children}</PublicLinksListingProvider>
-            </LinksKeysProvider>
+            <LinksKeysProvider>{children}</LinksKeysProvider>
         </LinksStateProvider>
     );
 }
