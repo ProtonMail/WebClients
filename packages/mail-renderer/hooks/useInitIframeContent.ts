@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import type { ThemeContextInterface } from '@proton/components/containers/themes/ThemeProvider';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 
 import {
     MESSAGE_IFRAME_AFTER_BLOCKQUOTE_ID,
@@ -11,6 +12,7 @@ import {
     MESSAGE_IFRAME_ROOT_ID,
     MESSAGE_IFRAME_TOGGLE_ID,
 } from '../constants';
+import { getIframeDocument } from '../helpers/getIframeDocument';
 import getIframeHtml from '../helpers/getIframeHtml';
 
 interface Props {
@@ -47,16 +49,32 @@ const useInitIframeContent = ({
     const themeCSSVariables = theme.information.style;
     const isMounted = useIsMounted();
     const themeRef = useRef(themeIndex);
+    const hasReportedUnreachableDocumentRef = useRef(false);
 
     useEffect(() => {
         if (initStatus === 'start') {
+            const doc = getIframeDocument(iframeRef.current);
+
+            if (!doc) {
+                if (!hasReportedUnreachableDocumentRef.current) {
+                    hasReportedUnreachableDocumentRef.current = true;
+                    captureMessage('Message iframe document is unreachable', {
+                        level: 'error',
+                        extra: { isPlainText, isPrint },
+                    });
+                }
+
+                iframeRootDivRef.current = undefined;
+                setInitStatus('done');
+                return;
+            }
+
             let emailContent = content;
 
             if (!isPlainText) {
                 emailContent += `<div id='${MESSAGE_IFRAME_TOGGLE_ID}'></div><div id='${MESSAGE_IFRAME_BLOCKQUOTE_ID}'></div><div id='${MESSAGE_IFRAME_AFTER_BLOCKQUOTE_ID}'></div>`;
             }
 
-            const doc = iframeRef.current?.contentDocument;
             const iframeContent = getIframeHtml({
                 emailContent,
                 messageDocument: message.messageDocument?.document,
@@ -66,11 +84,11 @@ const useInitIframeContent = ({
                 iframeCSSStyles,
                 iframeSVG,
             });
-            doc?.open();
-            doc?.write(iframeContent);
-            doc?.close();
+            doc.open();
+            doc.write(iframeContent);
+            doc.close();
 
-            const iframeRootDivElement = doc?.getElementById(MESSAGE_IFRAME_ROOT_ID) as HTMLDivElement;
+            const iframeRootDivElement = doc.getElementById(MESSAGE_IFRAME_ROOT_ID) as HTMLDivElement;
             iframeRootDivRef.current = iframeRootDivElement;
 
             setInitStatus('done');

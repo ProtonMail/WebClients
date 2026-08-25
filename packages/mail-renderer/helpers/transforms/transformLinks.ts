@@ -50,17 +50,13 @@ const transformLinksWithLongUnbreakableContent = (link: HTMLLinkElement) => {
 };
 
 /**
- * make links open in a new tab
+ * Open every link in a new tab.
+ *
+ * The message is written in an inframe
  */
-const httpInNewTab = (link: HTMLLinkElement) => {
-    if (matches(link, EXCLUDE_ANCHORS)) {
-        const href = link.getAttribute('href') || '';
-        const hasHTTP = href.indexOf('http') === 0;
-        const isRelative = href.indexOf('/') === 0;
-        // Prevent issue for Edge/IE A security problem cf https://jsfiddle.net/dpaoxoks/7/
-        if (hasHTTP || isRelative) {
-            link.setAttribute('target', '_blank');
-        }
+const openInNewTab = (link: HTMLLinkElement) => {
+    if (matches(link, EXCLUDE_ANCHORS) && !getNormalizedHref(link).startsWith('mailto:')) {
+        link.setAttribute('target', '_blank');
     }
 };
 
@@ -116,7 +112,7 @@ export const transformLinks = (
     links.forEach((link) => {
         transformLinksWithLongUnbreakableContent(link);
         sanitizeRelativeHttpLinks(link);
-        httpInNewTab(link);
+        openInNewTab(link);
         noReferrerInfo(link);
 
         if (canCleanUTMTrackers) {
