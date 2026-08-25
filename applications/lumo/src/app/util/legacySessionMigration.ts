@@ -8,7 +8,7 @@ import type { Api } from '@proton/shared/lib/interfaces';
 
 import { type ExternalSessionPayload, buildExternalSessionsViaFork } from '../remote/externalSession';
 import { sendSessionMigrationToNative } from '../remote/nativeAuthBridge';
-import { canUseNativeAuth, isNativeMobileApp } from './userAgent';
+import { type NativeAuthFlags, canUseNativeAuth, isNativeAuthFlagEnabled, isNativeMobileApp } from './userAgent';
 
 const MIGRATED_KEY_PREFIX = 'lumo:native-session-migrated:';
 
@@ -128,20 +128,32 @@ export const registerNativeMigrationOutcomeHandler = ({
  * refresh token and pushes the {@link ExternalSessionPayload} over the auth bridge.
  *
  * Only runs inside the native WebView (`ProtonLumo/` UA) on a version that supports native auth
- * (iOS >= 2.1.0, Android >= 2.1.0), with a logged-in web session. Best-effort: failures are logged
- * and swallowed so they never block bootstrap.
+ * (iOS >= 2.1.0, Android >= 2.1.0), with the native-auth flag on for that platform and a logged-in
+ * web session. Best-effort: failures are logged and swallowed so they never block bootstrap.
+ *
+ * The flag gate matters as much as the version gate: pushing a session to a native app whose auth
+ * is still switched off strands it — web marks the account migrated while native never adopts it.
+ * `nativeAuthFlags` is passed in rather than read here because this runs outside React; the caller
+ * is responsible for reading it once the Unleash toggles have resolved.
  */
 export const maybeMigrateLegacySessionToNative = async ({
     api,
     authentication,
     pathname,
+    nativeAuthFlags,
 }: {
     api: Api;
     authentication: AuthenticationStore;
     pathname: string;
+    nativeAuthFlags: NativeAuthFlags;
 }): Promise<void> => {
     console.log('maybeMigrateLegacySessionToNative', isNativeMobileApp(), canUseNativeAuth());
     if (!isNativeMobileApp() || !canUseNativeAuth()) {
+        return;
+    }
+
+    if (!isNativeAuthFlagEnabled(nativeAuthFlags)) {
+        console.log('maybeMigrateLegacySessionToNative: native auth flag off for this platform');
         return;
     }
 
