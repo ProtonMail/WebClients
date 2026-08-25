@@ -9621,12 +9621,6 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "У пожизненного предложения ${ PASS_SHORT_APP_NAME } нет платы за продление, это однократная оплата за пожизненный доступ к ${ PASS_SHORT_APP_NAME }. Ваша стоимость и дата продления подписки ${ planTitle } остаются неизменными."
       ],
-      "${ pendingAdminApprovalCount } new member added via your identity provider and pending review.": [
-        "${ pendingAdminApprovalCount } новый участник добавлен через вашего поставщика личных данных и ожидает проверки.",
-        "${ pendingAdminApprovalCount } новых участника добавлены через вашего поставщика личных данных и ожидают проверки.",
-        "${ pendingAdminApprovalCount } новых участников добавлены через вашего поставщика личных данных и ожидают проверки.",
-        "${ pendingAdminApprovalCount } новых участников добавлены через вашего поставщика личных данных и ожидают проверки."
-      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } требует минимум 1 выделенный сервер ${ serverPricePerMonth }"
       ],
@@ -20437,6 +20431,54 @@
       ],
       "SUMMER SALE": [
         "ЛЕТНИЕ СКИДКИ"
+      ]
+    },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "Воспользоваться предложением"
+      ],
+      "Special Offer": [
+        "Специальное предложение"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "/month": [
+        "/месяц"
+      ],
+      "2 individual accounts": [
+        "2 отдельных аккаунта"
+      ],
+      "2 TB of secure storage": [
+        "2 ТБ защищённого хранилища"
+      ],
+      "3 TB of secure storage": [
+        "3 ТБ защищённого хранилища"
+      ],
+      "500 GB of secure storage": [
+        "500 ГБ защищённого хранилища"
+      ],
+      "6 individual accounts": [
+        "6 отдельных аккаунтов"
+      ],
+      "Advanced protection against cyber threats": [
+        "Продвинутая защита от киберугроз"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Скидки рассчитываются исходя из стандартной платы за месяц. Ваша подписка будет продлена по стандартному годовому тарифу в конце платёжного цикла."
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "на 12 месяцев"
+      ],
+      "One plan, full power": [
+        "Один тариф, все возможности"
+      ],
+      "One plan, max savings": [
+        "Один тариф, максимальная экономия"
+      ],
+      "One plan, more power": [
+        "Один тариф, больше возможностей"
       ]
     },
     "Recovery Email": {

@@ -184,8 +184,8 @@
       "Back": [
         "Précédent"
       ],
-      "Background blur": [
-        "Flou d'arrière-plan"
+      "Blur background": [
+        "Flouter l'arrière-plan"
       ],
       "Cancel": [
         "Annuler"
@@ -316,6 +316,9 @@
       "Enable camera": [
         "Activer la caméra"
       ],
+      "Enable captions": [
+        "Activer les sous-titres"
+      ],
       "Enable waiting room": [
         "Activer la salle d'attente"
       ],
@@ -339,6 +342,9 @@
       ],
       "Get verification code": [
         "Obtenir un code de vérification"
+      ],
+      "Getting ready...": [
+        "En cours de préparation..."
       ],
       "Help and feedback": [
         "Aide et commentaires"
@@ -382,6 +388,9 @@
       "Leave meeting": [
         "Quitter la réunion"
       ],
+      "Live captions": [
+        "Sous-titres en temps réel"
+      ],
       "Lock meeting": [
         "Verrouiller la réunion"
       ],
@@ -405,6 +414,9 @@
       ],
       "Next page": [
         "Page suivante"
+      ],
+      "No effect": [
+        "Aucun effet"
       ],
       "Noise cancellation": [
         "Réduction du bruit"
@@ -609,6 +621,12 @@
       "Tap to unblock audio playback": [
         "Appuyez pour débloquer la lecture audio"
       ],
+      "Test microphone": [
+        "Tester le microphone"
+      ],
+      "Test speakers": [
+        "Tester les haut-parleurs"
+      ],
       "The current link will stop working.": [
         "Le lien actuel cessera de fonctionner."
       ],
@@ -672,6 +690,9 @@
       "View invoice": [
         "Voir la facture"
       ],
+      "Virtual backgrounds": [
+        "Arrière-plans virtuels"
+      ],
       "Waiting room": [
         "Salle d'attente"
       ],
@@ -685,6 +706,9 @@
     "Alt": {
       "Audio settings": [
         "Paramètres audio"
+      ],
+      "Backgrounds": [
+        "Arrière-plans"
       ],
       "Blur background": [
         "Flouter l'arrière-plan"
@@ -704,8 +728,14 @@
       "Copy meeting link": [
         "Copier le lien de la réunion"
       ],
+      "Debug devices": [
+        "Appareils de débogage"
+      ],
       "Debug overlay": [
         "Superposition de débogage"
+      ],
+      "Device Debugger": [
+        "Débogage d'appareil"
       ],
       "Go to dashboard": [
         "Aller au tableau de bord"
@@ -715,6 +745,9 @@
       ],
       "Leave Meeting": [
         "Quitter la réunion"
+      ],
+      "Live captions": [
+        "Sous-titres en temps réel"
       ],
       "Lock meeting": [
         "Verrouiller la réunion"
@@ -807,6 +840,12 @@
       "Audio settings": [
         "Paramètres audio"
       ],
+      "Background effects": [
+        "Effets d'arrière-plan"
+      ],
+      "Backgrounds": [
+        "Arrière-plans"
+      ],
       "Chat": [
         "Chat"
       ],
@@ -822,6 +861,9 @@
       "Meeting rooms": [
         "Salles de réunion"
       ],
+      "Microphone input level": [
+        "Niveau d'entrée du microphone"
+      ],
       "Participants": [
         "Participants"
       ],
@@ -836,6 +878,9 @@
       ],
       "Video settings": [
         "Paramètres vidéo"
+      ],
+      "Virtual backgrounds": [
+        "Arrière-plans virtuels"
       ]
     },
     "Badge": {
@@ -1929,6 +1974,9 @@
       "The meeting password is invalid": [
         "Le mot de passe de la réunion n'est pas valide"
       ],
+      "The selected microphone is no longer available.": [
+        "Le microphone sélectionné n'est plus disponible."
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Ce champ dépasse le maximum de ${ maximumLength } caractères."
       ],
@@ -1952,6 +2000,9 @@
       ],
       "Username must end with a letter or digit": [
         "Le nom d'utilisateur doit se terminer par une lettre ou un chiffre."
+      ],
+      "Virtual background initialization failed. Please toggle your camera or pick a background again": [
+        "L'initialisation de l'arrière-plan virtuel n'a pas abouti. Veuillez réactiver ou désactivé votre caméra ou choisir à nouveau un arrière-plan."
       ],
       "We couldn’t send a verification code using this method.": [
         "Nous n'avons pas pu envoyer le code de vérification en utilisant cette méthode."
@@ -2220,6 +2271,9 @@
       "Background blur initializing": [
         "Initialisation en cours du flou d'arrière-plan"
       ],
+      "Background effects are not supported on your browser": [
+        "Les effets d'arrière-plan ne sont pas pris en charge sur votre navigateur"
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Avant de demander un nouveau code de vérification, nous vous recommandons de vérifier votre dossier indésirables/spam et de vous assurer que l'adresse ${ strong } est correcte."
       ],
@@ -2232,8 +2286,14 @@
       "camera": [
         "Caméra"
       ],
+      "Camera effects": [
+        "Effets de caméra"
+      ],
       "Camera permission denied": [
         "L'autorisation d'accéder à la caméra a été refusée."
+      ],
+      "Captions are on": [
+        "Sous-titres activés"
       ],
       "Changes are staged. Apply to rebuild the preview with the new constants.": [
         "Les modifications sont mises en attente. Appliquez-les pour actualiser l'aperçu avec les nouvelles constantes."
@@ -2396,6 +2456,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si vous ne trouvez pas le message dans votre boite de réception, vérifiez votre dossier Indésirables/spam."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Si vous avez perdu l'accès à votre application d'authentification, vous pouvez utiliser 1 des 16 codes de récupération de sauvegarde fournis lors de la configuration de l'authentification à deux facteurs. ${ learnMoreLink }"
       ],
       "If you’re using Firefox, make sure PeerConnection is enabled.": [
         "Si vous utilisez Firefox, assurez-vous que PeerConnection est activé."
@@ -2601,6 +2664,9 @@
       "Presenting": [
         "Présente"
       ],
+      "Preview unavailable": [
+        "Aperçu non disponible"
+      ],
       "privacy": [
         "confidentialité"
       ],
@@ -2790,11 +2856,11 @@
       "Upload an image to preview it as the background.": [
         "Importez une image pour la prévisualiser en tant qu'arrière-plan."
       ],
-      "Video effects": [
-        "Effets vidéo"
-      ],
       "View ": [
         "Voir "
+      ],
+      "Virtual background initializing": [
+        "Initialisation de l'arrière-plan virtuel en cours"
       ],
       "Warning": [
         "Attention"
@@ -2877,6 +2943,9 @@
       "Your phone number will only be used for this one-time verification.": [
         "Votre numéro de téléphone ne sera utilisé que pour cette vérification."
       ],
+      "Your preview": [
+        "Votre aperçu"
+      ],
       "You’re about to open a link in a new tab. Make sure you trust the website before continuing.": [
         "Vous êtes sur le point d'ouvrir un lien dans un nouvel onglet. Assurez-vous de faire confiance au site internet avant de continuer."
       ]
@@ -2898,6 +2967,9 @@
       "Advanced mode": [
         "Mode avancé"
       ],
+      "Agent": [
+        "Agent"
+      ],
       "Anyone with the link can join": [
         "Toute personne disposant du lien peut rejoindre"
       ],
@@ -2910,8 +2982,14 @@
       "Authenticator app": [
         "Application d'authentification"
       ],
+      "Auto-detect": [
+        "Détection automatique"
+      ],
       "Background color": [
         "Couleur d'arrière-plan"
+      ],
+      "Blue background": [
+        "Arrière-plan bleu"
       ],
       "Blurred (next)": [
         "Flou (suivant)"
@@ -3003,6 +3081,9 @@
       "Google Calendar": [
         "Calendrier Google"
       ],
+      "Green background": [
+        "Arrière-plan vert"
+      ],
       "Hide password": [
         "Masquer le mot de passe"
       ],
@@ -3057,6 +3138,9 @@
       "Operating system version": [
         "Version du système d'exploitation"
       ],
+      "Orange background": [
+        "Arrière-plan orange"
+      ],
       "Outlook Calendar": [
         "Calendrier Outlook"
       ],
@@ -3071,6 +3155,9 @@
       ],
       "Phone number": [
         "Numéro de téléphone"
+      ],
+      "Purple background": [
+        "Arrière-plan violet"
       ],
       "Raw": [
         "Brut"
@@ -3110,6 +3197,9 @@
       ],
       "Solid color": [
         "Couleur unie"
+      ],
+      "Spoken language": [
+        "Langue parlée"
       ],
       "Subscribed": [
         "Abonné"
@@ -3439,6 +3529,9 @@
       "No": [
         "Non"
       ],
+      "Transcribing...": [
+        "Transcription en cours..."
+      ],
       "Yes": [
         "Oui"
       ]
@@ -3475,6 +3568,9 @@
       ]
     },
     "Title": {
+      "Accessibility": [
+        "Accessibilité"
+      ],
       "Account restricted": [
         "Compte restreint"
       ],
@@ -3516,6 +3612,12 @@
       ],
       "Background blur comparison": [
         "Comparaison du flou d'arrière-plan"
+      ],
+      "Background effects": [
+        "Effets d'arrière-plan"
+      ],
+      "Backgrounds": [
+        "Arrière-plans"
       ],
       "Camera and microphone are blocked": [
         "La caméra et le microphone sont bloqués."
@@ -3635,6 +3737,9 @@
       "Participants (${ filteredParticipants.length })": [
         "Participants (${ filteredParticipants.length })"
       ],
+      "People": [
+        "Personnes"
+      ],
       "Personal meeting room": [
         "Salle de réunion personnelle"
       ],
@@ -3692,6 +3797,9 @@
       "Stop recording": [
         "Arrêter l'enregistrement"
       ],
+      "System": [
+        "Système"
+      ],
       "Talk confidentially": [
         "Parler en toute confidentialité"
       ],
@@ -3709,6 +3817,9 @@
       ],
       "Video": [
         "Vidéo"
+      ],
+      "Virtual backgrounds": [
+        "Arrière-plans virtuels"
       ],
       "Waiting room": [
         "Salle d'attente"

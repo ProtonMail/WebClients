@@ -223,6 +223,9 @@
       "Copy as markdown": [
         "Kopier som markdown"
       ],
+      "Copy debug transcript": [
+        "Kopiér fejlfindingstranskibering"
+      ],
       "Copy email to clipboard": [
         "Kopiér e-mail til upklipsholder"
       ],
@@ -608,6 +611,9 @@
       ],
       "Preview contact": [
         "Forhåndsvis kontakt"
+      ],
+      "Preview logs": [
+        "Preview logfiler"
       ],
       "Previous month": [
         "Forrige måned"
@@ -3082,6 +3088,9 @@
       "Could not find an available name": [
         "Kunne ikke finde et tilgængeligt navn"
       ],
+      "Could not grant access to the organization key": [
+        "Kunne ikke give adgang til organistationsnøglen"
+      ],
       "Could not load sharing details": [
         "Kunne ikke indlæse oplysninger om deling"
       ],
@@ -4998,6 +5007,9 @@
       "Custom email domains": [
         "Brugerdefinerede e-maildomæner"
       ],
+      "Debug transcript copied": [
+        "Fejlfindingstranskibering kopieret"
+      ],
       "Decrypting your document": [
         "Dekrypterer dit dokument"
       ],
@@ -5190,6 +5202,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Hvis du ikke kan se mailen i din indbakke, bedes du tjekke din spammappe."
       ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Hvis du har mistet adgangen til din godkender-app kan du bruge 1 af de 16 gendannelseskoder, som du fik da du satte to-faktor-godkendelses op. ${ learnMoreLink }"
+      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Hvis du fortsætter med nedgraderingen, vil du miste adgang til betalte funktioner i ${ MAIL_APP_NAME } og ${ VPN_APP_NAME }."
       ],
@@ -5304,6 +5319,9 @@
       ],
       "Loading...": [
         "Indlæser..."
+      ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "Logfiler hjælper os med at forstå hvad der skete før problemer opstod. De inkluderer handlinger og appen og fejlmeddelelser, men intet beskedindhold."
       ],
       "Looks like you're offline. The document can not be edited while you are offline. Please check your device's connectivity.": [
         "Det ser ud til, at du er offline. Dokumentet kan ikke redigeres, mens du er offline. Tjek enhedens tilslutningsmuligheder."
@@ -9055,6 +9073,79 @@
       ],
       "SUMMER SALE": [
         "SOMMERUDSALG"
+      ]
+    },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "Få tilbuddet"
+      ],
+      "Special Offer": [
+        "Særtilbud"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "/month": [
+        "/måned"
+      ],
+      "2 individual accounts": [
+        "2 individuelle konti"
+      ],
+      "2 TB of secure storage": [
+        "2 TB sikker lagerplads"
+      ],
+      "3 TB of secure storage": [
+        "3 TB sikker lagerplads"
+      ],
+      "500 GB of secure storage": [
+        "500 GB sikker lagerplads"
+      ],
+      "6 individual accounts": [
+        "6 individuelle konti"
+      ],
+      "Advanced protection against cyber threats": [
+        "Avanceret beskyttelse mod cybertrusler"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Rabatter beregnes ud fra den normale månedspris. Dit abonnement fornyes til den årlige standardpris, når faktureringsperioden udløber."
+      ]
+    },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, og ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, og ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, og ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "i 12 måneder"
+      ],
+      "One plan, full power": [
+        "Ét abonnement, fuld power"
+      ],
+      "One plan, max savings": [
+        "Et abonnement, maksimal besparelse"
+      ],
+      "One plan, more power": [
+        "Ét abonnement, mere power"
       ]
     },
     "Recent documents table header": {

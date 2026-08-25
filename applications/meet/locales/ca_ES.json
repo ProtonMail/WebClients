@@ -184,8 +184,8 @@
       "Back": [
         "Torna"
       ],
-      "Background blur": [
-        "Desenfocament de fons"
+      "Blur background": [
+        "Fons difuminat"
       ],
       "Cancel": [
         "Cancel·la"
@@ -316,6 +316,9 @@
       "Enable camera": [
         "Habiliteu la càmera"
       ],
+      "Enable captions": [
+        "Activar els subtítols"
+      ],
       "Enable waiting room": [
         "Habilitar la sala d'espera"
       ],
@@ -339,6 +342,9 @@
       ],
       "Get verification code": [
         "Obtenir codi de verificació"
+      ],
+      "Getting ready...": [
+        "S'està preparant..."
       ],
       "Help and feedback": [
         "Ajuda i comentaris"
@@ -382,6 +388,9 @@
       "Leave meeting": [
         "Sortiu de la reunió"
       ],
+      "Live captions": [
+        "Subtítols en directe"
+      ],
       "Lock meeting": [
         "Bloquegeu la reunió"
       ],
@@ -406,6 +415,9 @@
       "Next page": [
         "Pàgina següent"
       ],
+      "No effect": [
+        "Sense efectes"
+      ],
       "Noise cancellation": [
         "Cancel·lació de soroll"
       ],
@@ -426,6 +438,12 @@
       ],
       "Pause": [
         "Pausa"
+      ],
+      "Playing back...": [
+        "S'està reproduint..."
+      ],
+      "Playing sound...": [
+        "S'està reproduint el so..."
       ],
       "Preview logs": [
         "Vista prèvia dels registres"
@@ -451,6 +469,9 @@
       ],
       "Record": [
         "Enregistrament"
+      ],
+      "Recording your microphone...": [
+        "S'està enregistrant el vostre micròfon..."
       ],
       "Refer a friend": [
         "Recomana una amistat"
@@ -612,6 +633,12 @@
       "Tap to unblock audio playback": [
         "Toqueu per desbloquejar la reproducció d'àudio"
       ],
+      "Test microphone": [
+        "Comprovar el micròfon"
+      ],
+      "Test speakers": [
+        "Comprovar els altaveus"
+      ],
       "The current link will stop working.": [
         "L'enllaç actual deixarà de funcionar."
       ],
@@ -675,6 +702,9 @@
       "View invoice": [
         "Mostra la factura"
       ],
+      "Virtual backgrounds": [
+        "Fons virtuals"
+      ],
       "Waiting room": [
         "Sala d'espera"
       ],
@@ -688,6 +718,9 @@
     "Alt": {
       "Audio settings": [
         "Preferències d'àudio"
+      ],
+      "Backgrounds": [
+        "Fons"
       ],
       "Blur background": [
         "Desenfocament de fons"
@@ -707,8 +740,14 @@
       "Copy meeting link": [
         "Copieu l'enllaç de la reunió"
       ],
+      "Debug devices": [
+        "Dispositius de depuració"
+      ],
       "Debug overlay": [
         "Superposició de depuració"
+      ],
+      "Device Debugger": [
+        "Depurador de dispositiu"
       ],
       "Go to dashboard": [
         "Aneu al tauler de control"
@@ -718,6 +757,9 @@
       ],
       "Leave Meeting": [
         "Sortiu de la reunió"
+      ],
+      "Live captions": [
+        "Subtítols en directe"
       ],
       "Lock meeting": [
         "Bloquegeu la reunió"
@@ -810,6 +852,12 @@
       "Audio settings": [
         "Preferències d'àudio"
       ],
+      "Background effects": [
+        "Efectes de fons"
+      ],
+      "Backgrounds": [
+        "Fons"
+      ],
       "Chat": [
         "Xat"
       ],
@@ -825,6 +873,9 @@
       "Meeting rooms": [
         "Sales de reunions"
       ],
+      "Microphone input level": [
+        "Nivell d'entrada del micròfon"
+      ],
       "Participants": [
         "Participants"
       ],
@@ -839,6 +890,9 @@
       ],
       "Video settings": [
         "Preferències de vídeo"
+      ],
+      "Virtual backgrounds": [
+        "Fons virtuals"
       ]
     },
     "Badge": {
@@ -1815,6 +1869,15 @@
       "Background blur initialization failed. Please toggle your camera or background blur again": [
         "Ha fallat la inicialització del desenfocament del fons. Torneu a activar la càmera o el desenfocament del fons"
       ],
+      "Couldn’t play the recording on this speaker.": [
+        "No s'ha pogut reproduir l'enregistrament en aquest altaveu."
+      ],
+      "Couldn’t play the test sound on this speaker.": [
+        "No s'ha pogut reproduir el so de prova en aquest altaveu."
+      ],
+      "Couldn’t start the microphone test.": [
+        "No s'ha pogut iniciar la prova del micròfon."
+      ],
       "Domain not available, try again later": [
         "El domini no està disponible, torneu-ho a provar més tard"
       ],
@@ -1902,6 +1965,12 @@
       "Failed to unlock meeting": [
         "No s'ha pogut desbloquejar la reunió"
       ],
+      "Failed to update caption language. Please try again.": [
+        "No s'ha pogut actualitzar l'idioma dels subtítols. Torneu-ho a provar."
+      ],
+      "Failed to update live captions. Please try again.": [
+        "No s'han pogut actualitzar els subtítols en directe. Torneu-ho a provar."
+      ],
       "Failed to update waiting room setting. Please try again.": [
         "No s'han pogut actualitzar les preferències de la sala d'espera. Torneu-ho a provar."
       ],
@@ -1913,6 +1982,18 @@
       ],
       "Invalid verification code": [
         "El codi de verificació no és vàlid."
+      ],
+      "Live captions aren't working. Try turning them off and on again.": [
+        "Els subtítols en directe no funcionen. Proveu de desactivar-los i tornar-los a activar."
+      ],
+      "Live captions couldn't be started.": [
+        "No s'han pogut iniciar els subtítols en directe."
+      ],
+      "Live captions have stopped.": [
+        "S'han aturat els subtítols en directe."
+      ],
+      "Microphone access is blocked. Allow it in your browser settings.": [
+        "L'accés al micròfon està bloquejat. Permeteu-ho a les preferències del navegador."
       ],
       "Not a valid number": [
         "Número no vàlid"
@@ -1947,6 +2028,9 @@
       "The meeting password is invalid": [
         "La contrasenya de la reunió no és vàlida"
       ],
+      "The selected microphone is no longer available.": [
+        "El micròfon seleccionat ja no està disponible."
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Aquest camp excedeix el màxim de ${ maximumLength } caràcters."
       ],
@@ -1971,6 +2055,9 @@
       "Username must end with a letter or digit": [
         "El nom d'usuari ha d'acabar amb una lletra o un dígit."
       ],
+      "Virtual background initialization failed. Please toggle your camera or pick a background again": [
+        "Ha fallat la inicialització del fons virtual. Canvieu la càmera o torneu a seleccionar un fons"
+      ],
       "We couldn’t send a verification code using this method.": [
         "No hem pogut enviar cap codi de verificació mitjançant aquest mètode."
       ],
@@ -1979,6 +2066,9 @@
       ],
       "Your device's clock appears to be out of sync. Please check your system time and try again.": [
         "Sembla que el rellotge del dispositiu no està sincronitzat. Comproveu l'hora del sistema i torneu-ho a intentar."
+      ],
+      "Your microphone is busy. Close other apps or tabs using it, then try again.": [
+        "El vostre micròfon està ocupat. Tanqueu altres aplicacions o pestanyes que l'estiguin utilitzant i torneu-ho a provar."
       ]
     },
     "Error message": {
@@ -2241,6 +2331,9 @@
       "Background blur initializing": [
         "S'està inicialitzant el desenfocament del fons"
       ],
+      "Background effects are not supported on your browser": [
+        "El vostre navegador no admet els efectes de fons"
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Abans de sol·licitar un nou codi de verificació, reviseu la carpeta de correu brossa i si ${ strong } és l'adreça correcta."
       ],
@@ -2253,8 +2346,14 @@
       "camera": [
         "càmera"
       ],
+      "Camera effects": [
+        "Efectes de càmera"
+      ],
       "Camera permission denied": [
         "S'ha denegat el permís de la càmera"
+      ],
+      "Captions are on": [
+        "Els subtítols estan activats"
       ],
       "Changes are staged. Apply to rebuild the preview with the new constants.": [
         "Els canvis estan a punt. Apliqueu-los per tornar a generar la previsualització amb les noves constants."
@@ -2634,6 +2733,9 @@
       "Presenting": [
         "Us presentem"
       ],
+      "Preview unavailable": [
+        "Previsualització no disponible"
+      ],
       "privacy": [
         "privacitat"
       ],
@@ -2787,6 +2889,9 @@
       "To create a room, you'll need **a free ${ BRAND_NAME } Account** so we can save the room. This only takes a few seconds.": [
         "Per crear una sala, necessitareu **un compte gratuït de ${ BRAND_NAME }** perquè puguem desar la sala. Només us portarà uns segons."
       ],
+      "To create live captions, the captioning service needs access to the meeting audio. Captions are only visible to you and are not saved.": [
+        "Per crear subtítols en directe, el servei de subtitulació necessita accedir a l'àudio de la reunió. Els subtítols només són visibles per a vós i no es desen."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "Per lluitar contra el correu brossa i l'abús, verifiqueu que sou humà."
       ],
@@ -2807,6 +2912,9 @@
       ],
       "Turn on camera": [
         "Activeu la càmera"
+      ],
+      "Turn on live captions?": [
+        "Voleu activar els subtítols en directe?"
       ],
       "Unable to reconnect to the meeting. Please rejoin or leave.": [
         "No s'ha pogut tornar a connectar a la reunió. Entreu-hi de nou o marxeu."
@@ -2829,11 +2937,11 @@
       "Upload an image to preview it as the background.": [
         "Carregar una imatge per previsualitzar-la com a fons."
       ],
-      "Video effects": [
-        "Efectes de vídeo"
-      ],
       "View ": [
         "Visualitzar "
+      ],
+      "Virtual background initializing": [
+        "S'està inicialitzant el fons virtual"
       ],
       "Waiting for the host to admit you. The host has been notified that you're waiting.": [
         "S'està esperant que l'amfitrió us admeti. Se l'ha notificat que esteu esperant."
@@ -2928,6 +3036,9 @@
       "Your phone number will only be used for this one-time verification.": [
         "El vostre número de telèfon només s’utilitzarà per a aquesta única verificació."
       ],
+      "Your preview": [
+        "La vostra previsualització"
+      ],
       "You’re about to open a link in a new tab. Make sure you trust the website before continuing.": [
         "Esteu a punt d'obrir un enllaç en una pestanya nova. Assegureu-vos que confieu en el lloc web abans de continuar."
       ]
@@ -2949,6 +3060,9 @@
       "Advanced mode": [
         "Mode avançat"
       ],
+      "Agent": [
+        "Agent"
+      ],
       "Anyone with the link can join": [
         "Qualsevol persona amb aquest enllaç podrà accedir-hi"
       ],
@@ -2961,8 +3075,14 @@
       "Authenticator app": [
         "Aplicació d'autenticació"
       ],
+      "Auto-detect": [
+        "Detecció automàtica"
+      ],
       "Background color": [
         "Color de fons"
+      ],
+      "Blue background": [
+        "Fons blau"
       ],
       "Blurred (next)": [
         "Difuminat (següent)"
@@ -3054,6 +3174,9 @@
       "Google Calendar": [
         "Calendari de Google"
       ],
+      "Green background": [
+        "Fons verd"
+      ],
       "Hide password": [
         "Amaga la contrasenya"
       ],
@@ -3074,6 +3197,9 @@
       ],
       "Leave meeting options": [
         "Opcions per abandonar la reunió"
+      ],
+      "Live caption agent": [
+        "Agent de subtítols en directe"
       ],
       "Manage recordings": [
         "Gestionar els enregistraments"
@@ -3108,6 +3234,9 @@
       "Operating system version": [
         "Versió del sistema operatiu"
       ],
+      "Orange background": [
+        "Fons taronja"
+      ],
       "Outlook Calendar": [
         "Calendari d'Outlook"
       ],
@@ -3122,6 +3251,9 @@
       ],
       "Phone number": [
         "Número de telèfon"
+      ],
+      "Purple background": [
+        "Fons morat"
       ],
       "Raw": [
         "En brut"
@@ -3161,6 +3293,9 @@
       ],
       "Solid color": [
         "Color sòlid"
+      ],
+      "Spoken language": [
+        "Idioma parlat"
       ],
       "Subscribed": [
         "Subscrits"
@@ -3490,8 +3625,16 @@
       "No": [
         "No"
       ],
+      "Transcribing...": [
+        "S'està transcrivint..."
+      ],
       "Yes": [
         "Sí"
+      ]
+    },
+    "Subtitle": {
+      "This system agent creates live captions. It is not a participant and cannot send messages.": [
+        "Aquest agent del sistema crea subtítols en directe. No és cap participant i no pot enviar missatges."
       ]
     },
     "Success": {
@@ -3526,6 +3669,9 @@
       ]
     },
     "Title": {
+      "Accessibility": [
+        "Accessibilitat"
+      ],
       "Account restricted": [
         "S'ha restringit el compte"
       ],
@@ -3567,6 +3713,12 @@
       ],
       "Background blur comparison": [
         "Comparació del difuminat de fons"
+      ],
+      "Background effects": [
+        "Efectes de fons"
+      ],
+      "Backgrounds": [
+        "Fons"
       ],
       "Camera and microphone are blocked": [
         "La càmera i el micròfon estan bloquejats"
@@ -3689,6 +3841,9 @@
       "Participants (${ filteredParticipants.length })": [
         "Participants ${ filteredParticipants.length }"
       ],
+      "People": [
+        "Gent"
+      ],
       "Personal meeting room": [
         "Sala de reunions personals"
       ],
@@ -3746,6 +3901,9 @@
       "Stop recording": [
         "Aturar l'enregistrament"
       ],
+      "System": [
+        "Sistema"
+      ],
       "Talk confidentially": [
         "Parleu amb confidencialitat"
       ],
@@ -3766,6 +3924,9 @@
       ],
       "Video": [
         "Vídeo"
+      ],
+      "Virtual backgrounds": [
+        "Fons virtuals"
       ],
       "Waiting for the host": [
         "S'està esperant l'amfitrió"

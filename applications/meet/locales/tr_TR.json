@@ -184,8 +184,8 @@
       "Back": [
         "Geri"
       ],
-      "Background blur": [
-        "Arka plan bulanıklığı"
+      "Blur background": [
+        "Bulanık arka plan"
       ],
       "Cancel": [
         "İptal"
@@ -316,6 +316,9 @@
       "Enable camera": [
         "Kamerayı aç"
       ],
+      "Enable captions": [
+        "Alt yazıyı aç"
+      ],
       "Enable waiting room": [
         "Bekleme odasını kullanıma al"
       ],
@@ -339,6 +342,9 @@
       ],
       "Get verification code": [
         "Doğrulama kodu alın"
+      ],
+      "Getting ready...": [
+        "Hazırlanıyor..."
       ],
       "Help and feedback": [
         "Yardım ve geri bildirim"
@@ -382,6 +388,9 @@
       "Leave meeting": [
         "Görüşmeden ayrıl"
       ],
+      "Live captions": [
+        "Canlı alt yazı"
+      ],
       "Lock meeting": [
         "Görüşmeyi kilitle"
       ],
@@ -406,6 +415,9 @@
       "Next page": [
         "Sonraki sayfa"
       ],
+      "No effect": [
+        "Etki yok"
+      ],
       "Noise cancellation": [
         "Gürültü engelleme"
       ],
@@ -426,6 +438,12 @@
       ],
       "Pause": [
         "Duraklat"
+      ],
+      "Playing back...": [
+        "Kayıt oynatılıyor..."
+      ],
+      "Playing sound...": [
+        "Ses oynatılıyor..."
       ],
       "Preview logs": [
         "Günlük ön izlemesi"
@@ -451,6 +469,9 @@
       ],
       "Record": [
         "Kayıt"
+      ],
+      "Recording your microphone...": [
+        "Mikrofonunuzdan kayıt yapılıyor..."
       ],
       "Refer a friend": [
         "Arkadaşınıza önerin"
@@ -612,6 +633,12 @@
       "Tap to unblock audio playback": [
         "Ses oynatma engellemesini kaldırmak için dokunun"
       ],
+      "Test microphone": [
+        "Mikrofonu dene"
+      ],
+      "Test speakers": [
+        "Hoparlörleri dene"
+      ],
       "The current link will stop working.": [
         "Geçerli bağlantı artık çalışmayacak."
       ],
@@ -675,6 +702,9 @@
       "View invoice": [
         "Faturayı görüntüle"
       ],
+      "Virtual backgrounds": [
+        "Sanal arka planlar"
+      ],
       "Waiting room": [
         "Bekleme odası"
       ],
@@ -688,6 +718,9 @@
     "Alt": {
       "Audio settings": [
         "Ses ayarları"
+      ],
+      "Backgrounds": [
+        "Arka planlar"
       ],
       "Blur background": [
         "Arka planı bulanıklaştır"
@@ -707,8 +740,14 @@
       "Copy meeting link": [
         "Görüşme bağlantısını kopyala"
       ],
+      "Debug devices": [
+        "Aygıt hatalarını ayıkla"
+      ],
       "Debug overlay": [
         "Hata ayıklama katmanı"
+      ],
+      "Device Debugger": [
+        "Aygıt hatası ayıklayıcı"
       ],
       "Go to dashboard": [
         "Panoya git"
@@ -718,6 +757,9 @@
       ],
       "Leave Meeting": [
         "Görüşmeden ayrıl"
+      ],
+      "Live captions": [
+        "Canlı alt yazı"
       ],
       "Lock meeting": [
         "Görüşmeyi kilitle"
@@ -810,6 +852,12 @@
       "Audio settings": [
         "Ses ayarları"
       ],
+      "Background effects": [
+        "Arka plan efektleri"
+      ],
+      "Backgrounds": [
+        "Arka planlar"
+      ],
       "Chat": [
         "Sohbet"
       ],
@@ -825,6 +873,9 @@
       "Meeting rooms": [
         "Görüşme odaları"
       ],
+      "Microphone input level": [
+        "Mikrofon giriş düzeyi"
+      ],
       "Participants": [
         "Katılımcılar"
       ],
@@ -839,6 +890,9 @@
       ],
       "Video settings": [
         "Görüntü ayarları"
+      ],
+      "Virtual backgrounds": [
+        "Sanal arka planlar"
       ]
     },
     "Badge": {
@@ -1815,6 +1869,15 @@
       "Background blur initialization failed. Please toggle your camera or background blur again": [
         "Arka plan bulanıklığı hazırlanamadı. Lütfen kameranızı veya arka plan bulanıklığını yeniden kapatıp açın"
       ],
+      "Couldn’t play the recording on this speaker.": [
+        "Kayıt bu hoparlörde oynatılamadı."
+      ],
+      "Couldn’t play the test sound on this speaker.": [
+        "Bu hoparlörde deneme sesi oynatılamadı."
+      ],
+      "Couldn’t start the microphone test.": [
+        "Mikrofon denemesi başlatılamadı."
+      ],
       "Domain not available, try again later": [
         "Etki alanı kullanılamıyor. Bir süre sonra yeniden deneyin"
       ],
@@ -1902,6 +1965,12 @@
       "Failed to unlock meeting": [
         "Görüşmenin kilidi açılamadı"
       ],
+      "Failed to update caption language. Please try again.": [
+        "Alt yazı dili güncellenemedi. Lütfen yeniden deneyin."
+      ],
+      "Failed to update live captions. Please try again.": [
+        "Canlı alt yazı güncellenemedi. Lütfen yeniden deneyin."
+      ],
       "Failed to update waiting room setting. Please try again.": [
         "Bekleme odası ayarı güncellenemedi. Lütfen yeniden deneyin."
       ],
@@ -1913,6 +1982,18 @@
       ],
       "Invalid verification code": [
         "Doğrulama kodu geçersiz"
+      ],
+      "Live captions aren't working. Try turning them off and on again.": [
+        "Canlı alt yazı çalışmıyor. Kapatıp yeniden açmayı deneyin."
+      ],
+      "Live captions couldn't be started.": [
+        "Canlı alt yazı başlatılamadı."
+      ],
+      "Live captions have stopped.": [
+        "Canlı alt yazı durdu."
+      ],
+      "Microphone access is blocked. Allow it in your browser settings.": [
+        "Mikrofona erişim engellendi. Tarayıcı ayarlarınızdan erişme izni verin."
       ],
       "Not a valid number": [
         "Numara geçerli değil"
@@ -1947,6 +2028,9 @@
       "The meeting password is invalid": [
         "Görüşme parolası geçersiz"
       ],
+      "The selected microphone is no longer available.": [
+        "Seçilmiş mikrofon artık yok."
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Bu alan için izin verilen en fazla ${ maximumLength } karakter uzunluğu aşıldı."
       ],
@@ -1971,6 +2055,9 @@
       "Username must end with a letter or digit": [
         "Kullanıcı adı bir harf ya da rakam ile bitmeli"
       ],
+      "Virtual background initialization failed. Please toggle your camera or pick a background again": [
+        "Sanal arka plan hazırlanamadı. Lütfen kameranızı değiştirin ya da yeniden bir arka plan seçin"
+      ],
       "We couldn’t send a verification code using this method.": [
         "Doğrulama kodu bu yöntemle gönderilemedi."
       ],
@@ -1979,6 +2066,9 @@
       ],
       "Your device's clock appears to be out of sync. Please check your system time and try again.": [
         "Aygıtınızın saati eşitlenmemiş gibi görünüyor. Lütfen sistem saatinizi denetleyip yeniden deneyin."
+      ],
+      "Your microphone is busy. Close other apps or tabs using it, then try again.": [
+        "Mikrofonunuz meşgul. Bunu kullanarak diğer uygulamaları veya sekmeleri kapatın ve yeniden deneyin."
       ]
     },
     "Error message": {
@@ -2241,6 +2331,9 @@
       "Background blur initializing": [
         "Arka plan bulanıklığı hazırlanıyor"
       ],
+      "Background effects are not supported on your browser": [
+        "Tarayıcınızda arka plan etkileri desteklenmiyor"
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Yeni bir doğrulama kodu istemeden önce İstenmeyen kutunuza bakın ve ${ strong } adresinin doğru olduğundan emin olun."
       ],
@@ -2253,8 +2346,14 @@
       "camera": [
         "kamera"
       ],
+      "Camera effects": [
+        "Kamera efektleri"
+      ],
       "Camera permission denied": [
         "Kameraya erişme izni verilmedi"
+      ],
+      "Captions are on": [
+        "Alt yazı açık"
       ],
       "Changes are staged. Apply to rebuild the preview with the new constants.": [
         "Değişiklikler aşamalı olarak uygulanır. Ön izlemeyi yeni sabitlerle oluşturmak için uygulayın."
@@ -2634,6 +2733,9 @@
       "Presenting": [
         "Sunum yapıyor"
       ],
+      "Preview unavailable": [
+        "Ön izleme kullanılamıyor"
+      ],
       "privacy": [
         "gizlilik"
       ],
@@ -2787,6 +2889,9 @@
       "To create a room, you'll need **a free ${ BRAND_NAME } Account** so we can save the room. This only takes a few seconds.": [
         "Bir oda oluştururken oda bilgilerini kaydedebilmemiz için **bir ücretsiz ${ BRAND_NAME } hesabı** açmalısınız. Bu işlem yalnızca birkaç saniye sürer."
       ],
+      "To create live captions, the captioning service needs access to the meeting audio. Captions are only visible to you and are not saved.": [
+        "Canlı alt yazı oluşturmak için alt yazı hizmetinin görüşmenin ses kaydını alma izni olması gerekir. Alt yazılar yalnızca sizin tarafınızdan görülebilir ve kaydedilmez."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "İstenmeyen iletilere ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
       ],
@@ -2807,6 +2912,9 @@
       ],
       "Turn on camera": [
         "Kamerayı aç"
+      ],
+      "Turn on live captions?": [
+        "Canlı alt yazıyı açmak ister misiniz?"
       ],
       "Unable to reconnect to the meeting. Please rejoin or leave.": [
         "Görüşme ile yeniden bağlantı kurulamadı. Lütfen yeniden katılın ya da görüşmeden ayrılın."
@@ -2829,11 +2937,11 @@
       "Upload an image to preview it as the background.": [
         "Ön izlemesini görmek için bir arka plan görseli yükleyin."
       ],
-      "Video effects": [
-        "Video etkileri"
-      ],
       "View ": [
         "Görüntüle "
+      ],
+      "Virtual background initializing": [
+        "Sanal arka plan hazırlanıyor"
       ],
       "Waiting for the host to admit you. The host has been notified that you're waiting.": [
         "Görüşme sahibinin sizi kabul etmesi bekleniyor. Görüşme sahibine beklediğiniz bildirildi."
@@ -2928,6 +3036,9 @@
       "Your phone number will only be used for this one-time verification.": [
         "Telefon numaranız yalnızca bu tek seferlik doğrulama için kullanılacak."
       ],
+      "Your preview": [
+        "Ön izlemeniz"
+      ],
       "You’re about to open a link in a new tab. Make sure you trust the website before continuing.": [
         "Bir bağlantıyı yeni bir sekmede açmak üzeresiniz. İlerlemeden önce siteye güvendiğinizden emin olun."
       ]
@@ -2949,6 +3060,9 @@
       "Advanced mode": [
         "Gelişmiş kip"
       ],
+      "Agent": [
+        "Aracı"
+      ],
       "Anyone with the link can join": [
         "Bağlantıyı bilen herkes katılabilir"
       ],
@@ -2961,8 +3075,14 @@
       "Authenticator app": [
         "Kimlik doğrulama uygulaması"
       ],
+      "Auto-detect": [
+        "Otomatik algılama"
+      ],
       "Background color": [
         "Arka plan rengi"
+      ],
+      "Blue background": [
+        "Mavi arka plan"
       ],
       "Blurred (next)": [
         "Bulanık (sonraki)"
@@ -3054,6 +3174,9 @@
       "Google Calendar": [
         "Google Takvim"
       ],
+      "Green background": [
+        "Yeşil arka plan"
+      ],
       "Hide password": [
         "Parolayı gizle"
       ],
@@ -3074,6 +3197,9 @@
       ],
       "Leave meeting options": [
         "Görüşmeden ayrılma seçenekleri"
+      ],
+      "Live caption agent": [
+        "Canlı alt yazı aracısı"
       ],
       "Manage recordings": [
         "Kayıt yönetimi"
@@ -3108,6 +3234,9 @@
       "Operating system version": [
         "İşletim sistemi sürümü"
       ],
+      "Orange background": [
+        "Turuncu arka plan"
+      ],
       "Outlook Calendar": [
         "Outlook Takvim"
       ],
@@ -3122,6 +3251,9 @@
       ],
       "Phone number": [
         "Telefon numarası"
+      ],
+      "Purple background": [
+        "Mor arka plan"
       ],
       "Raw": [
         "Ham"
@@ -3161,6 +3293,9 @@
       ],
       "Solid color": [
         "Düz renk"
+      ],
+      "Spoken language": [
+        "Konuşulan dil"
       ],
       "Subscribed": [
         "Abone olundu"
@@ -3490,8 +3625,16 @@
       "No": [
         "Hayır"
       ],
+      "Transcribing...": [
+        "Yazıya dönüştürülüyor..."
+      ],
       "Yes": [
         "Evet"
+      ]
+    },
+    "Subtitle": {
+      "This system agent creates live captions. It is not a participant and cannot send messages.": [
+        "Bu sistem aracısı canlı alt yazı oluşturur. Bir katılımcı değildir ve ileti gönderemez."
       ]
     },
     "Success": {
@@ -3526,6 +3669,9 @@
       ]
     },
     "Title": {
+      "Accessibility": [
+        "Erişilebilirlik"
+      ],
       "Account restricted": [
         "Hesap kısıtlandı"
       ],
@@ -3567,6 +3713,12 @@
       ],
       "Background blur comparison": [
         "Arka plan bulanıklığı karşılaştırması"
+      ],
+      "Background effects": [
+        "Arka plan etkileri"
+      ],
+      "Backgrounds": [
+        "Arka planlar"
       ],
       "Camera and microphone are blocked": [
         "Kamera ve mikrofon engellendi"
@@ -3689,6 +3841,9 @@
       "Participants (${ filteredParticipants.length })": [
         "Katılımcılar (${ filteredParticipants.length })"
       ],
+      "People": [
+        "Kişiler"
+      ],
       "Personal meeting room": [
         "Kişisel görüşme odası"
       ],
@@ -3746,6 +3901,9 @@
       "Stop recording": [
         "Kaydı durdur"
       ],
+      "System": [
+        "Sistem"
+      ],
       "Talk confidentially": [
         "Gizliliğinizi koruyarak konuşun"
       ],
@@ -3766,6 +3924,9 @@
       ],
       "Video": [
         "Görüntü"
+      ],
+      "Virtual backgrounds": [
+        "Sanal arka planlar"
       ],
       "Waiting for the host": [
         "Görüşme sahibi bekleniyor"

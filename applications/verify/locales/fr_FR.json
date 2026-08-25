@@ -866,9 +866,6 @@
       ]
     },
     "Error": {
-      "Domain not available, try again later": [
-        "Le domaine n'est pas disponible, réessayez plus tard."
-      ],
       "Email is not valid": [
         "L'adresse e-mail n'est pas valide."
       ],
@@ -1095,6 +1092,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si vous ne trouvez pas le message dans votre boite de réception, vérifiez votre dossier Indésirables/spam."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Si vous avez perdu l'accès à votre application d'authentification, vous pouvez utiliser 1 des 16 codes de récupération de sauvegarde fournis lors de la configuration de l'authentification à deux facteurs. ${ learnMoreLink }"
       ],
       "Internet connection lost": [
         "La connexion internet est perdue."

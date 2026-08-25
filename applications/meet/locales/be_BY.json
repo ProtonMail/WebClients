@@ -186,9 +186,6 @@
       "Back": [
         "Назад"
       ],
-      "Background blur": [
-        "Размыць фон"
-      ],
       "Cancel": [
         "Скасаваць"
       ],
@@ -2203,7 +2200,7 @@
         "Нумар тэлефона можа быць выкарыстаны для спраўджання аднаго ўліковага запісу ${ BRAND_NAME }"
       ],
       "Advanced mode: tune every blur constant for the next version, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
-        "Пашыраны рэжым: наладзьце кожную канстанту размыцця для наступнай версіі, а пасля націсніце «ужыць», каб перабудаваць папярэдні прагляд. Прымусовыя значэнні маюць прыярытэт над значэннямі з файла і Unleash."
+        "Пашыраны рэжым: наладзьце кожную канстанту размыцця для наступнай версіі, а потым прымяніце дзеянні для перабудовы папярэдняга прагляду. Перавызначэнні маюць прыярытэт над значэннямі з файла і Unleash."
       ],
       "Anonymous ${ particle } ${ participantNumber }": [
         "Ананімны ${ particle } ${ participantNumber }"
@@ -2233,7 +2230,7 @@
         "Доступ да камеры забаронены"
       ],
       "Changes are staged. Apply to rebuild the preview with the new constants.": [
-        "Змены падрыхтаваны. Націсніце «ужыць», каб перабудаваць папярэдні прагляд з новымі канстантамі."
+        "Змены падрыхтаваны. Прымяніце іх, каб перабудаваць папярэдні прагляд з новымі канстантамі."
       ],
       "Chat with everyone": [
         "Чат з усімі"
@@ -2387,6 +2384,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Калі паведамлення няма ў папцы з уваходнымі лістамі, то магчыма, што яно трапіла ў папку са спамам."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Вы можаце выкарыстаць 1 з 16 рэзервовых кодаў аднаўлення, якія вы атрымалі пры наладжванні двухфактарнай аўтэнтыфікацыі, калі вы страцілі доступ да вашай праграмы аўтэнтыфікацыі. ${ learnMoreLink }"
       ],
       "If you’re using Firefox, make sure PeerConnection is enabled.": [
         "Пераканайцеся, што PeerConnection уключаны пры выкарыстанні браўзера Firefox."
@@ -2768,9 +2768,6 @@
       ],
       "Upgrade to remove the 1-hour limit and skip the countdown. Enjoy meetings up to 24 hours.": [
         "Палепшыце, каб выдаліць абмежаванне ў 1 гадзіну і прапускайце адваротны адлік. Атрымлівайце асалоду ад сустрэч, якія доўжацца да 24 гадзін."
-      ],
-      "Video effects": [
-        "Відэаэфекты"
       ],
       "View ": [
         "Выгляд "
@@ -3440,6 +3437,9 @@
       ]
     },
     "Title": {
+      "Accessibility": [
+        "Спецыяльныя магчымасці"
+      ],
       "Account restricted": [
         "Уліковы запіс абмежаваны"
       ],

@@ -274,6 +274,9 @@
       "Pen thickness": [
         "Grosor del lápiz"
       ],
+      "Preview logs": [
+        "Previsualizar registros"
+      ],
       "Previous page": [
         "Página anterior"
       ],
@@ -1104,6 +1107,9 @@
       "Report an issue": [
         "Notificar un problema"
       ],
+      "Retry": [
+        "Reintentar"
+      ],
       "Save": [
         "Guardar"
       ],
@@ -1599,6 +1605,9 @@
       ],
       "You've reached a usage limit. Please try again later.": [
         "Ha alcanzado el límite de uso. Intente de nuevo más tarde."
+      ],
+      "Your chats can't be saved right now. Anything you write will be lost if you reload the page.": [
+        "No se pueden guardar sus chats por ahora. Cualquier cosa que escriba se perderá si actualiza la página."
       ]
     },
     "collider_2025: Error (file processing)": {
@@ -2201,6 +2210,9 @@
       ],
       "This chat will be removed tomorrow unless you upgrade to ${ LUMO_SHORT_APP_NAME } Plus.": [
         "Este chat se borrará mañana a menos que actualice a ${ LUMO_SHORT_APP_NAME } Plus."
+      ],
+      "This conversation contains many images. ${ LUMO_SHORT_APP_NAME } will only see the most recent ${ MAX_IMAGES_PER_REQUEST } images.": [
+        "Esta conversación contiene muchas imágenes. ${ LUMO_SHORT_APP_NAME } solo verá las ${ MAX_IMAGES_PER_REQUEST } imágenes más recientes."
       ],
       "This file was removed from project knowledge.": [
         "Se eliminó este archivo del conocimiento del proyecto."
@@ -3534,7 +3546,7 @@
         "Nuevo chat"
       ],
       "New project": [
-        "Nuevo proyecto"
+        "Proyecto nuevo"
       ],
       "Projects": [
         "Proyectos"
@@ -3856,6 +3868,9 @@
       "Link files from ${ DRIVE_APP_NAME } or upload from your computer.": [
         "Enlace archivos desde ${ DRIVE_APP_NAME } o cárguelos desde su computadora."
       ],
+      "Loading…": [
+        "Cargando…"
+      ],
       "Lockdown Mode is enabled on your device": [
         "El Modo hermético está activado en su dispositivo"
       ],
@@ -4059,9 +4074,6 @@
       "Raw speed distilled into a single frame — the F1 car tearing across tarmac with motion blur streaking everything behind it, sparks flickering off the surface and carbon fiber catching the light at that visceral low angle right down on the asphalt.": [
         "Velocidad pura destilada en un solo fotograma: el coche de F1 derrapando sobre el asfalto con un efecto de desenfoque de movimiento que deja una estela a su paso, chispas que rebotan en la superficie y la fibra de carbono que capta la luz en ese ángulo bajo y visceral justo sobre el asfalto."
       ],
-      "The word \"FLUORISH\" formed entirely from lush green grass and natural vegetation, each letter crafted from dense fresh blades of grass, realistic organic texture, vibrant green tones, intricate botanical details, photorealistic nature typography, soft natural sunlight, subtle shadows, highly detailed eco-friendly design, isolated on a clean background, premium 3D lettering, ultra-realistic, 8k, sharp focus, professional advertising quality.": [
-        "La palabra «FLORIDO» está formada completamente por hierba verde exuberante y vegetación natural; cada letra está elaborada con densas briznas de hierba fresca, textura orgánica realista, tonos verdes vibrantes, detalles botánicos intrincados, tipografía fotorrealista de la naturaleza, luz solar natural suave, sombras sutiles, diseño ecológico de gran detalle, aislado sobre un fondo limpio, letras 3D de primera calidad, ultrarrealista, 8k, enfoque nítido, calidad publicitaria profesional."
-      ],
       "Top-down minimalist aerial shot of a long orange surfboard floating on clear blue water. The water has rolling, curved wave contours and bright, shimmering caustic light patterns. A soft shadow is cast directly beneath the board, creating a clean, serene, and modern aesthetic.": [
         "Vista aérea minimalista desde arriba de una tabla de surf larga naranja flotando sobre agua azul cristalina. El agua presenta contornos ondulados y curvos y patrones de luz cáustica brillantes. Una sombra suave se proyecta directamente debajo de la tabla, creando una estética limpia, serena y moderna."
       ]
@@ -4101,7 +4113,7 @@
         "Iniciadores de conversación (opcional)"
       ],
       "Created": [
-        "Creada"
+        "Creado"
       ],
       "Created on": [
         "Creado el"
@@ -4453,6 +4465,9 @@
       "Checking the weather": [
         "Comprobando el clima"
       ],
+      "Complete": [
+        "Completado"
+      ],
       "Created an image": [
         "Creé una imagen"
       ],
@@ -4489,6 +4504,9 @@
       "Extracting page content": [
         "Extrayendo el contenido de la página"
       ],
+      "Failed": [
+        "Error"
+      ],
       "Generated image": [
         "Imagen generada"
       ],
@@ -4497,6 +4515,9 @@
       ],
       "Generating image...": [
         "Generando imagen..."
+      ],
+      "Hide details": [
+        "Ocultar detalles"
       ],
       "Last updated: ": [
         "Última actualización: "
@@ -4555,6 +4576,9 @@
       "Reading a web page": [
         "Leyendo una página web"
       ],
+      "Reasoning": [
+        "Razonamiento"
+      ],
       "Revenue TTM": [
         "Ingresos TTM"
       ],
@@ -4584,6 +4608,9 @@
       ],
       "Using a tool": [
         "Usando una herramienta"
+      ],
+      "View details": [
+        "Ver los detalles"
       ],
       "Worked on an image": [
         "Trabajé en una imagen"
@@ -4712,7 +4739,7 @@
         "Crear carpeta"
       ],
       "Create new project": [
-        "Crear nuevo proyecto"
+        "Crear un proyecto"
       ],
       "Custom ${ LUMO_SHORT_APP_NAME }s": [
         "${ LUMO_SHORT_APP_NAME } personalizados"
@@ -6948,6 +6975,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si no encuentra el correo electrónico en el buzón, revise en la carpeta de spam."
       ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Si perdió el acceso a su aplicación de autenticación, puede usar 1 de los 16 códigos de recuperación de copia de seguridad proporcionados cuando configuró la autenticación de dos factores. ${ learnMoreLink }"
+      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Si procede con darse de baja, perderá el acceso a las funciones de pago de ${ MAIL_APP_NAME } y ${ VPN_APP_NAME }."
       ],
@@ -6995,6 +7025,9 @@
       ],
       "Loading file preview...": [
         "Cargando vista previa del archivo..."
+      ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "Los registros nos ayudan a comprender qué sucedió antes de que ocurriera el problema. Incluyen las acciones de la aplicación y los mensajes de error, pero no el contenido de los mensajes."
       ],
       "Mastercard SecureCode logo": [
         "Logo de Mastercard SecureCode"
@@ -7730,6 +7763,9 @@
       "Export unsynced only (JSON)": [
         "Solo exportar no sincronizados (JSON)"
       ],
+      "Forces either unavailable state, without burning a real quota or waiting for a flag rollout. \"unavailable_limit_reached\" pins the Max pool to 0 remaining, exactly as the backend would after the weekly cap; \"unavailable_high_load\" switches off the availability flag. Both disable the Max row in the picker, fall the selection back to Lite, and push maxModelAvailability to native. Persists across reloads until switched off.": [
+        "Fuerza el estado de no disponible, sin consumir una cuota real ni esperar a que se implemente una bandera. «unavailable_limit_reached» fija el grupo máximo a 0 restantes, exactamente como lo haría el backend después del límite semanal; «unavailable_high_load» desactiva la bandera de disponibilidad. Ambas desactivan la fila Max en el selector, reducen la selección a Lite y envían maxModelAvailability a nativo. Persiste entre recargas hasta que se desactiva."
+      ],
       "Forces the inline composer banner into \"approaching\" or \"at limit\" state so you can preview it in any context.": [
         "Fuerza al banner del editor en línea a un estado de «aproximado» o «en límite» para que pueda previsualizarlo en cualquier contexto."
       ],
@@ -7757,6 +7793,9 @@
       "max": [
         "máx."
       ],
+      "Max model availability": [
+        "Disponibilidad del modelo Max"
+      ],
       "Memory": [
         "Memoria"
       ],
@@ -7765,6 +7804,9 @@
       ],
       "Messages rejected by the backend (e.g. limits) remain locally in IndexedDB with a dirty flag. Exports decrypt content from the in-memory Redux state and tag unsynced messages with _dirty: true. Space encryption keys are stripped.": [
         "Los mensajes rechazados por el backend (ej. límites) se mantinen localmente en IndexedDB con una bandera sucia. La exportación descifra el contenido del estado Redux en memoria y etiqueta los mensajes no sincronizados con _dirty:true. Los espacios de clave de cifrado se quitan."
+      ],
+      "Model usage limits": [
+        "Límites de uso del modelo"
       ],
       "Native bridge: onLimitReachedError": [
         "Native bridge: onLimitReachedError"
@@ -7801,6 +7843,9 @@
       ],
       "Refresh": [
         "Actualizar"
+      ],
+      "Remaining (Max)": [
+        "Restante (Max)"
       ],
       "Render time": [
         "Tiempo de renderizado"
@@ -9605,6 +9650,79 @@
         "OFERTAS DE VERANO"
       ]
     },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "Aproveche la oferta"
+      ],
+      "Special Offer": [
+        "Oferta especial"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "/month": [
+        "mensuales"
+      ],
+      "2 individual accounts": [
+        "2 cuentas individuales"
+      ],
+      "2 TB of secure storage": [
+        "2 TB de almacenamiento seguro"
+      ],
+      "3 TB of secure storage": [
+        "3 TB de almacenamiento seguro"
+      ],
+      "500 GB of secure storage": [
+        "500 GB de almacenamiento seguro"
+      ],
+      "6 individual accounts": [
+        "6 cuentas individuales"
+      ],
+      "Advanced protection against cyber threats": [
+        "Protección avanzada contra ciberamenazas"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Los descuentos se basan en los precios mensuales estándar. Su suscripción se renovará a la tarifa anual estándar cuando finalice el ciclo de facturación."
+      ]
+    },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } y ${ VPN_SHORT_APP_NAME } todos premium"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME } todos premium"
+      ]
+    },
+    "q3campaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } y ${ VPN_SHORT_APP_NAME } todos premium"
+      ]
+    },
+    "q3campaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } y ${ VPN_SHORT_APP_NAME } todos premium"
+      ]
+    },
+    "q3campaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME } todos premium"
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "durante 12 meses"
+      ],
+      "One plan, full power": [
+        "Un solo plan: Máximo poder"
+      ],
+      "One plan, max savings": [
+        "Un solo plan: máximo ahorro"
+      ],
+      "One plan, more power": [
+        "Un solo plan: Más poder"
+      ]
+    },
     "Role": {
       "Organization Admin": [
         "Administrador de la organización"
@@ -10344,6 +10462,9 @@
       ],
       "Select a plan": [
         "Seleccione un plan"
+      ],
+      "September Sale": [
+        "Oferta de septiembre"
       ],
       "Set recovery methods": [
         "Establecer métodos de recuperación"

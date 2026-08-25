@@ -825,6 +825,9 @@
       "Loading${ ellipsis }": [
         "読み込み中${ ellipsis }"
       ],
+      "Lookup document": [
+        "書類を参照"
+      ],
       "Make ${ MAIL_APP_NAME } your default email application": [
         "${ MAIL_APP_NAME } を規定のメールアプリに設定"
       ],
@@ -4360,6 +4363,11 @@
         "アップロードされたCSVファイルから以下のフィールドを検出しました。インポートしたいものを選択してください。"
       ]
     },
+    "Desktop notification body": {
+      "${ messageCount } new message": [
+        "${ messageCount }件の新着メッセージ"
+      ]
+    },
     "Desktop notification title": {
       "New email received": [
         "新しいメールを受信しました"
@@ -4704,6 +4712,9 @@
       "Cannot set expiration longer than retention policy allows.": [
         "保持ポリシーで許可されているよりも長い有効期限を設定することはできません。"
       ],
+      "Cannot verify the author of this file": [
+        "このファイルの作成者を確認できません"
+      ],
       "Checkout expired, please try again": [
         "チェックアウトの有効期限が切れました。もう一度やり直してください。"
       ],
@@ -4740,11 +4751,26 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "コンテンツ検索を有効にできません。アプリケーションを再起動するか、データを消去してください。"
       ],
+      "Copying item to a non-folder is not allowed": [
+        "フォルダではない場所へのアイテムのコピーはできません"
+      ],
+      "Could not load sharing details": [
+        "共有の詳細を読み込めませんでした"
+      ],
       "Could not open created vault": [
         "作成された保管庫を開けませんでした"
       ],
       "Could not open updated vault": [
         "更新された保管庫を開けませんでした"
+      ],
+      "Could not unlock the parent folder": [
+        "親フォルダをアンロックできませんでした"
+      ],
+      "Could not unlock this item": [
+        "このアイテムをアンロックできませんでした"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "フォルダではない場所にフォルダを作成することはできません"
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "復号エラー: 暗号化されたメッセージのコンテンツ復号に失敗しました。"
@@ -4818,6 +4844,9 @@
       "Failed to open to contact": [
         "連絡先を開けませんでした"
       ],
+      "File has no revision": [
+        "ファイルに修正はありません"
+      ],
       "Filter with this name already exists": [
         "この名前のフィルターが既に存在します"
       ],
@@ -4881,6 +4910,9 @@
       "Last name is too long": [
         "姓が長すぎます。"
       ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "レガシー公開リンクは変更できません。新しい公開リンクを再生成してください。"
+      ],
       "Maximum expiration time reached.": [
         "最大有効期限に達しています。"
       ],
@@ -4899,11 +4931,17 @@
       "Missing key packet": [
         "キーパケットが見つかりません"
       ],
+      "Missing organization public key": [
+        "組織の公開鍵が見つかりません"
+      ],
       "Missing signature": [
         "署名がありません"
       ],
       "Name is required": [
         "名前は必須です"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "名前は${ MAX_NODE_NAME_LENGTH }文字以内で入力してください"
       ],
       "Network error": [
         "ネットワークエラーが発生しました"
@@ -4932,6 +4970,9 @@
       "No external key retrieved for user is valid for sending": [
         "送信に有効なキーが取得されませんでした"
       ],
+      "No file data was received. Please try again.": [
+        "ファイルデータを受け取っていません。再度お試しください。"
+      ],
       "No valid address found": [
         "有効なアドレスが見つかりません"
       ],
@@ -4944,6 +4985,9 @@
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "次のグループには連絡先が追加されていません: ${ noContactGroupList } "
       ],
+      "Operation aborted": [
+        "操作は中断されました"
+      ],
       "Organization key is not decrypted": [
         "組織の鍵が復号されていません"
       ],
@@ -4952,6 +4996,9 @@
       ],
       "Organization key must be activated to create non-private users": [
         "非プライベートユーザーを作成するには、組織の鍵を有効にする必要があります"
+      ],
+      "Part of the file appears to be corrupted": [
+        "ファイルの一部が破損しているようです"
       ],
       "Password is required": [
         "パスワードは必須です"
@@ -5223,6 +5270,12 @@
       "This folder name is not available. Please choose a different name.": [
         "このフォルダー名は利用できません。別の名前を選択してください。"
       ],
+      "This item is no longer shared": [
+        "このアイテムはもう共有されません"
+      ],
+      "This item is not shared": [
+        "このアイテムは共有されていません"
+      ],
       "This label name is not available. Please choose a different name.": [
         "このラベル名は利用できません。別の名前を選択してください。"
       ],
@@ -5268,6 +5321,9 @@
       "VAT number must start with ${ prefixes }": [
         "VAT番号は ${ prefixes } で始まる必要があります"
       ],
+      "Verification keys are not available": [
+        "検証キーは利用できません"
+      ],
       "We couldn’t send a verification code using this method.": [
         "この方法を使用して認証コードを送信することはできません。"
       ],
@@ -5285,6 +5341,9 @@
       ],
       "You did not provide a file.": [
         "ファイルが選択されていません。"
+      ],
+      "You do not have access to this item": [
+        "このアイテムにはアクセスできません"
       ],
       "You have reached the maximum number of calendars.": [
         "カレンダーの上限数に達しました。"
@@ -5831,6 +5890,9 @@
       ],
       "Has attachments": [
         "添付ファイルあり"
+      ],
+      "Pending": [
+        "保留中"
       ],
       "Read": [
         "既読"
@@ -6610,6 +6672,15 @@
       "${ contactsLength } contact": [
         "${ contactsLength } 件の連絡先"
       ],
+      "${ count } email": [
+        "${ count }件のメール"
+      ],
+      "${ count } email · ${ names }": [
+        "${ count }件のメール · ${ names }"
+      ],
+      "${ count } email → ${ dest }": [
+        "${ count }件のメール→${ dest }"
+      ],
       "${ currentProgress } out of ${ totalProgress }": [
         "${ totalProgress } のうち ${ currentProgress }"
       ],
@@ -6655,6 +6726,9 @@
       "${ groupCounts } group found": [
         "${ groupCounts } 件のグループが見つかりました"
       ],
+      "${ issues.length } issue during import:": [
+        "インポート中の${ issues.length }件の問題:"
+      ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } には ${ BRAND_NAME } Scribe 執筆アシスタントが搭載されています"
       ],
@@ -6663,6 +6737,9 @@
       ],
       "${ LUMO_SHORT_APP_NAME } panel": [
         "${ LUMO_SHORT_APP_NAME } パネル"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }執筆アシスタント"
       ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } はあなたのビジネスも保護します。"
@@ -7453,6 +7530,9 @@
       "Forgot password?": [
         "パスワードを忘れましたか？"
       ],
+      "Found a current encrypted search index with ${ oldIndexSize } message.": [
+        "現在の暗号化された検索インデックスが見つかりました。メッセージ数: ${ oldIndexSize }。"
+      ],
       "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
         "無料で${ ASSISTANT_TRIAL_TIME_DAYS }日間お試しいただけます"
       ],
@@ -7586,7 +7666,7 @@
         "初期化中…"
       ],
       "Insert image": [
-        "画像を挿入"
+        "画像の挿入"
       ],
       "Insert link": [
         "リンクを挿入"
@@ -7687,6 +7767,9 @@
       "Mark all as read": [
         "すべて既読にする"
       ],
+      "Mark all as unread": [
+        "全てを未読にする"
+      ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode ロゴ"
       ],
@@ -7758,6 +7841,9 @@
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "ほとんどの公共のWiFiネットワークは安全ですが、一部はセキュリティ対策が不十分であり、あなたをサイバー攻撃の危険に晒してしまいます。VPNはトラフィックを暗号化することにより、あなたを保護します。"
+      ],
+      "Move emails": [
+        "メールを移動"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "新しいフォルダーの名前と、親フォルダーを選択してください。最上位のフォルダーを作成したい場合は、親フォルダーを選択しないでください。"
@@ -8023,6 +8109,24 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "何かお困りの際は、${ BRAND_NAME }までお問い合わせください。"
       ],
+      "Read ${ count } email": [
+        "${ count }件のメールを既読にする"
+      ],
+      "Read ${ count } email on screen": [
+        "画面上の${ count }件のメールを既読にする"
+      ],
+      "Read ${ count } message in this thread": [
+        "このスレッドの${ count }件のメッセージを既読にする"
+      ],
+      "Read your ${ count } filter": [
+        "${ count }件のフィルターを既読にする"
+      ],
+      "Read your ${ count } folder": [
+        "${ count }件のフォルダを既読にする"
+      ],
+      "Read your ${ count } label": [
+        "${ count }件のラベルを既読にする"
+      ],
       "Recipient: ": [
         "宛先: "
       ],
@@ -8095,6 +8199,9 @@
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "検索時間が長すぎますか? 検索セッションから ${ dropdownButton } か ${ toggleOffButton } してください。"
       ],
+      "Searched the web": [
+        "ウェブを検索しました"
+      ],
       "Secure your files with encrypted cloud storage for free, today.": [
         "今すぐ暗号化クラウドストレージでファイルを保護しましょう。"
       ],
@@ -8103,6 +8210,9 @@
       ],
       "Select all ${ elementsCount } in ${ location }": [
         "${ location } 内のすべての ${ elementsCount } を選択"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "移行したい内容を正確に選択してください。それはすべての組織ユーザーに適用されます。"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "このメールアドレスにメールを送信する際に既定で使用するメールの形式を選択できます。"
@@ -8196,6 +8306,9 @@
       ],
       "Sorry, this message does not exist or has already expired.": [
         "申し訳ありません、このメッセージは存在しないか有効期限切れです。"
+      ],
+      "Star emails": [
+        "スター付きのメール"
       ],
       "Start sharing it with contacts and use it for online services.": [
         "連絡先と共有し、オンラインサービスでご利用ください。"
@@ -8493,6 +8606,12 @@
       ],
       "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
         "このユーザーを移行するには、${ domainNamesLink } にメールドメインを追加して確認してください"
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "このユーザーを移行するには、${ provider.adminConsoleName }でアーカイブを解除してください。"
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "このユーザーを移行するには、${ provider.adminConsoleName }でアカウントの一時停止を解除してください。"
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "連絡先に再署名するには、すべての連絡先をあなたのアカウントで利用可能な暗号鍵のリストに照らして確認する必要があります。 一致するものが見つからない場合、連絡先はプライマリ暗号鍵で再署名されます。"
@@ -9438,6 +9557,9 @@
       "Apply to future messages": [
         "今後のメッセージに適用する"
       ],
+      "Archive": [
+        "アーカイブ"
+      ],
       "Attach screenshot(s)": [
         "スクリーンショットを添付"
       ],
@@ -9809,6 +9931,9 @@
       ],
       "Location": [
         "場所"
+      ],
+      "Long tasks (≥ 50 ms)": [
+        "長いタスク (≥ 50 ms)"
       ],
       "Mail debugging information": [
         "メールのデバッグ情報"
@@ -10657,6 +10782,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 執筆アシスタント"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }執筆アシスタント"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 執筆アシスタントを追加"
       ],
@@ -10690,6 +10818,9 @@
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME }シート"
+      ],
+      "${ price } per seat": [
+        "シートあたり ${ price }"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats }${ MEET_APP_NAME }シート"
@@ -11039,6 +11170,9 @@
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME }と${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME }執筆アシスタント"
       ],
       "${ n } calendar": [
         "${ n } 個のカレンダー"
@@ -13009,6 +13143,11 @@
         "進捗: ${ combinedProgress }%"
       ]
     },
+    "Property": {
+      "attributes": [
+        "属性"
+      ]
+    },
     "Property type": {
       "Address": [
         "住所"
@@ -13139,6 +13278,59 @@
       ],
       "SUMMER SALE": [
         "サマーセール"
+      ]
+    },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "お得な割引をゲット"
+      ],
+      "Special Offer": [
+        "特別オファー"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "/month": [
+        "/月"
+      ],
+      "2 individual accounts": [
+        "2つの独立アカウント"
+      ],
+      "2 TB of secure storage": [
+        "2 TBの安全なストレージ"
+      ],
+      "3 TB of secure storage": [
+        "3 TBの安全なストレージ"
+      ],
+      "500 GB of secure storage": [
+        "500 GBの安全なストレージ"
+      ],
+      "6 individual accounts": [
+        "6つの独立アカウント"
+      ],
+      "Advanced protection against cyber threats": [
+        "サイバー脅威に対する高度な保護"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "割引率は標準の月額料金を基準に算出されます。 今回の請求期間終了時に、サブスクリプションは通常の年間料金で更新されます。"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } ${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME }、 のすべてのプレミアム機能"
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "12か月プラン"
+      ],
+      "One plan, full power": [
+        "1つのプランで フルパワー"
+      ],
+      "One plan, max savings": [
+        "1つのプランで 最大限お得に"
+      ],
+      "One plan, more power": [
+        "1つのプランで、より多くのパワーを"
       ]
     },
     "Received email icon": {
@@ -15514,6 +15706,9 @@
       ],
       "Invalid verification code": [
         "無効な検証コードです"
+      ],
+      "Keep this banner hidden?": [
+        "このバナーを隠したままにしますか？"
       ],
       "Label as": [
         "ラベル付け"

@@ -33,11 +33,32 @@
       ]
     },
     "account_search_index": {
+      "12-word phrase": [
+        "12-Wort-Phrase"
+      ],
       "Account events": [
         "Kontoereignisse"
       ],
+      "Active sessions": [
+        "Aktive Sitzungen"
+      ],
+      "Advanced account protection": [
+        "Erweiterter Kontoschutz"
+      ],
+      "AI assistant": [
+        "KI-Assistent"
+      ],
+      "Allow list": [
+        "Freigabeliste"
+      ],
       "Audit log": [
         "Prüfprotokoll"
+      ],
+      "Authentication logs": [
+        "Authentifizierungsprotokolle"
+      ],
+      "Automatic renewal": [
+        "Automatische Verlängerung"
       ],
       "Automatically delete data": [
         "Daten automatisch löschen"
@@ -45,8 +66,23 @@
       "Block sender for the organization": [
         "Absender für die Organisation blockieren"
       ],
+      "Blog articles": [
+        "Blog-Artikel"
+      ],
       "Bulk user import": [
         "Massenimport von Benutzern"
+      ],
+      "Cancel plan": [
+        "Abonnement kündigen"
+      ],
+      "Close account": [
+        "Konto schließen"
+      ],
+      "Compare plans": [
+        "Abonnemente vergleichen"
+      ],
+      "Connected addresses": [
+        "Verbundene E-Mail-Adressen"
       ],
       "Connection events": [
         "Verbindungsereignisse"
@@ -54,23 +90,137 @@
       "Create organization": [
         "Erstellen Sie eine Organisation"
       ],
+      "Custom domain": [
+        "Eigene Domain"
+      ],
+      "Customer support": [
+        "Kundensupport"
+      ],
+      "Dark mode": [
+        "Dunkles Design"
+      ],
+      "Data breach alerts": [
+        "Benachrichtigungen bei Datenlecks"
+      ],
+      "Desktop and mobile apps": [
+        "Desktop- und Mobil-Apps"
+      ],
+      "Downgrade plan": [
+        "Abonnement zurückstufen"
+      ],
+      "Downgrade to Free": [
+        "Auf Free zurückstufen"
+      ],
+      "Download apps": [
+        "Apps herunterladen"
+      ],
+      "Download recovery file": [
+        "Wiederherstellungsdatei herunterladen"
+      ],
       "Enable or disable apps for members": [
         "Apps für Mitglieder aktivieren oder deaktivieren"
+      ],
+      "Encryption backup file": [
+        "Verschlüsselung der Sicherungsdatei"
+      ],
+      "Encryption backup in this browser": [
+        "Verschlüsselte Sicherung in diesem Browser"
+      ],
+      "External mailbox": [
+        "Externes Postfach"
       ],
       "Gateway logs": [
         "Gateway-Protokolle"
       ],
+      "Group invitations": [
+        "Gruppeneinladungen"
+      ],
       "Group members": [
         "Gruppenmitglieder"
+      ],
+      "Group plan invitation": [
+        "Einladung zum Gruppenabonnement"
+      ],
+      "High-security mode": [
+        "Hochsicherheitsmodus"
+      ],
+      "Import history": [
+        "Verlauf importieren"
+      ],
+      "Included apps": [
+        "Enthaltene Apps"
+      ],
+      "Join organization": [
+        "Organisation beitreten"
+      ],
+      "Leaked password": [
+        "Offengelegtes Passwort"
+      ],
+      "Leave group": [
+        "Gruppe verlassen"
+      ],
+      "Leave organization": [
+        "Organisation verlassen"
+      ],
+      "Light mode": [
+        "Helles Design"
+      ],
+      "Mnemonic": [
+        "Eselsbrücke"
+      ],
+      "One-time code": [
+        "Einmalcode"
+      ],
+      "Password reminder": [
+        "Passworterinnerung"
       ],
       "Password reminders": [
         "Passworterinnerungen"
       ],
+      "Password reset request": [
+        "Passwortzurücksetzung anfordern"
+      ],
+      "Permanently delete data": [
+        "Daten dauerhaft löschen"
+      ],
+      "Privacy guides": [
+        "Leitfäden zum Datenschutz"
+      ],
+      "Privacy services": [
+        "Datenschutzdienste"
+      ],
       "Protection from cyber attacks": [
         "Schutz vor Cyberangriffen"
       ],
+      "Receive misaddressed emails": [
+        "Falsch adressierte E-Mails erhalten"
+      ],
+      "Recovery email address": [
+        "Wiederherstellungs-E-Mail-Adresse"
+      ],
+      "Recovery phone number": [
+        "Telefonnummer zur Wiederherstellung"
+      ],
+      "Recovery score": [
+        "Wiederherstellungswertung"
+      ],
+      "Redeem discount code": [
+        "Rabattcode einlösen"
+      ],
+      "Referral credits": [
+        "Empfehlungsguthaben"
+      ],
+      "Referral link": [
+        "Empfehlungslink"
+      ],
+      "Referral rewards": [
+        "Empfehlungsprämien"
+      ],
       "Restrict app access": [
         "App-Zugriff beschränken"
+      ],
+      "Scan QR code": [
+        "QR-Code scannen"
       ],
       "Server access policy": [
         "Richtlinie für den Serverzugriff"
@@ -78,14 +228,50 @@
       "Shared server access": [
         "Gemeinsamer Serverzugriff"
       ],
+      "Sign out other devices": [
+        "Andere Geräte abmelden"
+      ],
+      "Sign-in history": [
+        "Anmeldeverlauf"
+      ],
+      "Stop subscription renewal": [
+        "Abonnementsverlängerung beenden"
+      ],
+      "Storage space": [
+        "Speicherplatz"
+      ],
+      "Storage usage": [
+        "Speicherauslastung"
+      ],
+      "Subscription end date": [
+        "Enddatum des Abonnements"
+      ],
+      "Subscription status": [
+        "Abonnementstatus"
+      ],
+      "Telemetry": [
+        "Telemetrie"
+      ],
+      "Trusted contact": [
+        "Vertrauenswürdiger Kontakt"
+      ],
+      "Upgrade plan": [
+        "Abonnement upgraden"
+      ],
       "Verify domain": [
         "Domain verifizieren"
       ],
       "Verify password": [
         "Passwort bestätigen"
       ],
+      "Video conferencing": [
+        "Videokonferenzen"
+      ],
       "VPN session details": [
         "Details zur VPN-Sitzung"
+      ],
+      "Writing assistant": [
+        "Schreibassistent"
       ]
     },
     "Accounts": {
@@ -7226,9 +7412,9 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "Das ${ PASS_SHORT_APP_NAME } Lifetime-Angebot hat keinen Verlängerungspreis, es ist eine einmalige Zahlung für lebenslangen Zugang zu ${ PASS_SHORT_APP_NAME }. Der Preis und das Datum für die Verlängerung deines Abonnements ${ planTitle } bleiben unverändert."
       ],
-      "${ pendingAdminApprovalCount } new member added via your identity provider and pending review.": [
-        "${ pendingAdminApprovalCount } neues Mitglied wurde über deinen Identitätsanbieter hinzugefügt und wartet auf Überprüfung.",
-        "${ pendingAdminApprovalCount } neue Mitglieder wurden über deinen Identitätsanbieter hinzugefügt und warten auf Überprüfung."
+      "${ pendingKeysMemberCount } new member added via your identity provider and pending review.": [
+        "${ pendingKeysMemberCount } neues Mitglied wurde über deinen Identitätsanbieter hinzugefügt und wartet auf Überprüfung.",
+        "${ pendingKeysMemberCount } neue Mitglieder wurden über deinen Identitätsanbieter hinzugefügt und warten auf Überprüfung."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } erfordert mindestens einen dedizierten Server ${ serverPricePerMonth }"
@@ -14785,7 +14971,7 @@
     },
     "q3campaign2026: Action": {
       "Get the deal": [
-        "Hol dir das Angebot"
+        "Deal sichern"
       ],
       "Special Offer": [
         "Sonderangebot"
@@ -14796,7 +14982,7 @@
         "/Monat"
       ],
       "2 individual accounts": [
-        "2 Einzelkonten"
+        "2 individuelle Konten"
       ],
       "2 TB of secure storage": [
         "2 TB sicherer Speicher"
@@ -14805,10 +14991,10 @@
         "3 TB sicherer Speicher"
       ],
       "500 GB of secure storage": [
-        "500 GB sicherer Speicher"
+        "500 GB sicherer Speicherplatz"
       ],
       "6 individual accounts": [
-        "6 Einzelkonten"
+        "6 individuelle Konten"
       ],
       "Advanced protection against cyber threats": [
         "Erweiterter Schutz vor Cyber-Bedrohungen"
@@ -14850,7 +15036,7 @@
         "Ein Abonnement, volle Leistung"
       ],
       "One plan, max savings": [
-        "Ein Abonnement, maximale Ersparnisse"
+        "Ein Abonnement, maximal sparen"
       ],
       "One plan, more power": [
         "Ein Abonnement, mehr Leistung"

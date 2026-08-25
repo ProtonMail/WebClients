@@ -1043,9 +1043,6 @@
       "Domain could not be verified. Please make sure you added the correct DNS records": [
         "Домен не может быть проверен. Пожалуйста, убедитесь, что вы добавили правильные записи DNS"
       ],
-      "Domain not available, try again later": [
-        "Домен недоступен, повторите попытку позже"
-      ],
       "Editing item failed": [
         "Ошибка при редактировании элемента"
       ],
@@ -2142,6 +2139,9 @@
         "Перемещение всех элементов из \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
+        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
+        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
+        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
         "Перемещение элемента в другое хранилище удалит его защищенные ссылки."
       ],
       "Moving items": [
@@ -2348,14 +2348,8 @@
       "Please follow the steps below to set up your domain.": [
         "Следуйте инструкциям ниже, чтобы настроить домен."
       ],
-      "Please keep ${ PASS_APP_NAME } open so the clipboard can be automatically cleared.": [
-        "Пожалуйста, держите приложение ${ PASS_APP_NAME } открытым, чтобы буфер обмена мог очищаться автоматически."
-      ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Не закрывайте это окно, пока импортируются ваши данные. Этот процесс может занять несколько минут."
-      ],
-      "Please keep your browser open so the clipboard can be automatically cleared.": [
-        "Пожалуйста, держите браузер открытым, чтобы буфер обмена мог очищаться автоматически."
       ],
       "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
         "Пожалуйста, убедитесь, что ранее активное окно — это то место, куда вы хотите применить автонабор, а курсор находится в поле ввода имени пользователя."

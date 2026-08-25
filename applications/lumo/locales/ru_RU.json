@@ -3180,9 +3180,6 @@
       "Edit instructions": [
         "Изменить инструкции"
       ],
-      "Edit project": [
-        "Редактировать проект"
-      ],
       "Expand": [
         "Развернуть"
       ],
@@ -3391,9 +3388,6 @@
       "New chat": [
         "Новый чат"
       ],
-      "New project": [
-        "Новый проект"
-      ],
       "Save": [
         "Сохранить"
       ],
@@ -3463,9 +3457,6 @@
       ],
       "Unlimited custom ${ LUMO_SHORT_APP_NAME }s": [
         "Неограниченное количество пользовательских ${ LUMO_SHORT_APP_NAME }"
-      ],
-      "Unlimited projects": [
-        "Безлимитные проекты"
       ]
     },
     "collider_2025:Filter": {
@@ -3635,12 +3626,6 @@
       "Processing...": [
         "Обработка…"
       ],
-      "Projects help you organize conversations with custom instructions and files.": [
-        "Проекты помогают упорядочивать беседы с помощью пользовательских инструкций и файлов."
-      ],
-      "Projects help you organize conversations with custom instructions and files. Sign in or create a free account to get started.": [
-        "Проекты помогают упорядочивать цепочки писем с помощью пользовательских инструкций и файлов. Войдите или создайте бесплатный аккаунт, чтобы начать."
-      ],
       "red flags": [
         "тревожные сигналы"
       ],
@@ -3670,9 +3655,6 @@
       ],
       "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to create unlimited custom ${ LUMO_SHORT_APP_NAME }s, unlock advanced AI models, and more.": [
         "Перейдите на ${ LUMO_SHORT_APP_NAME } Plus, чтобы создавать неограниченное количество пользовательских ${ LUMO_SHORT_APP_NAME }, открыть доступ к продвинутым моделям ИИ и многому другому."
-      ],
-      "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to create unlimited projects, unlock advanced AI models, and more.": [
-        "Перейдите на тариф ${ LUMO_SHORT_APP_NAME } Plus, чтобы создавать неограниченное количество проектов, открыть доступ к улучшенным моделям ИИ и многому другому."
       ],
       "Use the Max model for complex work or the Lite model for everyday tasks. Choose Fast mode for quick answers or Thinking mode for tougher questions.": [
         "Используйте модель Max для сложной работы или модель Lite для повседневных задач. Выберите режим Fast для быстрых ответов или режим Thinking для более сложных вопросов."
@@ -3712,17 +3694,8 @@
       "Card theme": [
         "Тема карточки"
       ],
-      "chat": [
-        "чат"
-      ],
-      "chats": [
-        "чаты"
-      ],
       "Conversation starters (optional)": [
         "Фразы для начала цепочки писем (необязательно)"
-      ],
-      "Created": [
-        "Создано"
       ],
       "Created on": [
         "Создано"
@@ -3778,14 +3751,8 @@
       "Minimal": [
         "Минимальный"
       ],
-      "Name": [
-        "Название"
-      ],
       "Politics": [
         "Политика"
-      ],
-      "Project Instructions (optional)": [
-        "Инструкции к проекту (необязательно)"
       ],
       "Scams": [
         "Мошенничество"
@@ -3823,9 +3790,6 @@
       "Add a conversation starter": [
         "Добавить тему для начала цепочки писем"
       ],
-      "Add instructions about the tone, style, and persona you want ${ LUMO_SHORT_APP_NAME } to adopt.": [
-        "Добавьте инструкции о тоне, стиле и образе, которые вы хотите задать для ${ LUMO_SHORT_APP_NAME }."
-      ],
       "Add instructions about the tone, style, and persona you want ${ LUMO_SHORT_APP_NAME } to adopt. These instructions will apply to all chats in this project.": [
         "Добавьте инструкции о тоне, стиле и характере, которые вы хотите задать для ${ LUMO_SHORT_APP_NAME }. Эти инструкции будут применяться ко всем чатам в этом проекте."
       ],
@@ -3844,17 +3808,11 @@
       "Enter folder name": [
         "Введите название папки"
       ],
-      "Enter project name": [
-        "Введите название проекта"
-      ],
       "Fluffy McFluff Face": [
         "Пушистик МакПух"
       ],
       "Help with login, password and recovery issues.": [
         "Помощь при проблемах с именем пользователя, паролем и восстановлением доступа."
-      ],
-      "Holiday planner": [
-        "Планировщик отпуска"
       ],
       "Search custom ${ LUMO_SHORT_APP_NAME }": [
         "Поиск пользовательских ${ LUMO_SHORT_APP_NAME }"
@@ -3866,38 +3824,6 @@
     "collider_2025:Prefill": {
       "Edit this image:": [
         "Изменить это изображение:"
-      ]
-    },
-    "collider_2025:Project": {
-      "Develop stories, refine prose, and improve your writing craft": [
-        "Создавайте истории, совершенствуйте прозу и развивайте писательское мастерство"
-      ],
-      "Financial assistant": [
-        "Финансовый ассистент"
-      ],
-      "Get help understanding assignments, solving problems, and learning concepts": [
-        "Получайте помощь в разборе заданий, решении задач и изучении концепций"
-      ],
-      "Learn a language": [
-        "Изучение языка"
-      ],
-      "Plan financial goals with personalized insights": [
-        "Планируйте финансовые цели с помощью персонализированных рекомендаций"
-      ],
-      "Practice conversations, learn grammar, and build vocabulary in your target language": [
-        "Практикуйте общение, изучайте грамматику и расширяйте словарный запас изучаемого языка"
-      ],
-      "Research & Analysis Partner": [
-        "Помощник по исследованиям и анализу"
-      ],
-      "Study companion": [
-        "Помощник в учебе"
-      ],
-      "Synthesize sources, analyze data, and develop insights for your research projects": [
-        "Синтезируйте источники, анализируйте данные и находите новые идеи для своих исследовательских проектов"
-      ],
-      "Writing coach": [
-        "Помощник по текстам"
       ]
     },
     "collider_2025:Prompt": {
@@ -4197,9 +4123,6 @@
     "collider_2025:Subline": {
       "Custom ${ LUMO_SHORT_APP_NAME }s turn a chat into a focused assistant with its own instructions. Pick one from the composer to start a conversation with it.": [
         "Пользовательские версии ${ LUMO_SHORT_APP_NAME } превращают чат в специализированного помощника с собственными инструкциями. Выберите одну из них в редакторе писем, чтобы начать цепочку писем."
-      ],
-      "Projects help you keep related chats, files, and instructions in one place. They make it easy to stay organized and reuse context across chats.": [
-        "Проекты помогают хранить связанные чаты, файлы и инструкции в одном месте. Благодаря им вам будет проще поддерживать порядок и повторно использовать контекст в разных чатах."
       ]
     },
     "collider_2025:Success": {
@@ -4250,9 +4173,6 @@
       "Create folder": [
         "Создать папку"
       ],
-      "Create new project": [
-        "Создать новый проект"
-      ],
       "Custom ${ LUMO_SHORT_APP_NAME }s": [
         "Пользовательские ${ LUMO_SHORT_APP_NAME }"
       ],
@@ -4268,9 +4188,6 @@
       "Edit Instructions": [
         "Изменить инструкции"
       ],
-      "Edit Project": [
-        "Изменить проект"
-      ],
       "Every clarification is a new data point": [
         "Каждое уточнение — это новая точка данных"
       ],
@@ -4279,9 +4196,6 @@
       ],
       "File preview": [
         "Предпросмотр файла"
-      ],
-      "Get started by creating a new project": [
-        "Начните с создания нового проекта"
       ],
       "Ghost mode": [
         "Режим невидимки"
@@ -4297,9 +4211,6 @@
       ],
       "Image generation and editing": [
         "Создание и редактирование изображений"
-      ],
-      "Inspiration": [
-        "Вдохновение"
       ],
       "Instructions": [
         "Инструкции"
@@ -4322,17 +4233,11 @@
       "More options": [
         "Дополнительные параметры"
       ],
-      "More Projects with ${ LUMO_SHORT_APP_NAME } Plus": [
-        "Больше проектов с ${ LUMO_SHORT_APP_NAME } Plus"
-      ],
       "Most revealing": [
         "Наиболее показательные"
       ],
       "My AI paper trail": [
         "Мой цифровой след в ИИ"
-      ],
-      "My Projects": [
-        "Мои проекты"
       ],
       "No chat history yet. Let's start chatting!": [
         "Истории чата пока нет. Давайте начнем общаться!"
@@ -4357,9 +4262,6 @@
       ],
       "See your AI paper trail": [
         "Посмотреть свой цифровой след в ИИ"
-      ],
-      "Sign in to create projects": [
-        "Войдите, чтобы создавать проекты"
       ],
       "Sort by": [
         "Сортировать по"
@@ -8838,6 +8740,54 @@
       ],
       "SUMMER SALE": [
         "ЛЕТНИЕ СКИДКИ"
+      ]
+    },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "Воспользоваться предложением"
+      ],
+      "Special Offer": [
+        "Специальное предложение"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "/month": [
+        "/месяц"
+      ],
+      "2 individual accounts": [
+        "2 отдельных аккаунта"
+      ],
+      "2 TB of secure storage": [
+        "2 ТБ защищённого хранилища"
+      ],
+      "3 TB of secure storage": [
+        "3 ТБ защищённого хранилища"
+      ],
+      "500 GB of secure storage": [
+        "500 ГБ защищённого хранилища"
+      ],
+      "6 individual accounts": [
+        "6 отдельных аккаунтов"
+      ],
+      "Advanced protection against cyber threats": [
+        "Продвинутая защита от киберугроз"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Скидки рассчитываются исходя из стандартной платы за месяц. Ваша подписка будет продлена по стандартному годовому тарифу в конце платёжного цикла."
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "на 12 месяцев"
+      ],
+      "One plan, full power": [
+        "Один тариф, все возможности"
+      ],
+      "One plan, max savings": [
+        "Один тариф, максимальная экономия"
+      ],
+      "One plan, more power": [
+        "Один тариф, больше возможностей"
       ]
     },
     "Role": {

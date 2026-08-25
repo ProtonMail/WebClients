@@ -1033,9 +1033,6 @@
       "Domain could not be verified. Please make sure you added the correct DNS records": [
         "დომენის გადამოწმება შეუძლებელია. დარწმუნდით, რომ დაამატეთ სწორი DNS ჩანაწერები"
       ],
-      "Domain not available, try again later": [
-        "დომენი ხელმიუწვდომელია. თავიდან სცადეთ"
-      ],
       "Editing item failed": [
         "ელემენტის ჩასწორების შეცდომა"
       ],
@@ -2090,7 +2087,8 @@
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "ელემენტის გადატანა სხვა სეიფში წაშლის მის უსაფრთხო ბმულებს."
+        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის.",
+        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის."
       ],
       "Moving items": [
         "მიმდინარეობს ელემენტების გადატანა"
@@ -2294,14 +2292,8 @@
       "Please follow the steps below to set up your domain.": [
         "მიჰყევით შემდეგ ნაბიჯებს ქვემოთ, რომ თქვენი დომენი მოირგოთ."
       ],
-      "Please keep ${ PASS_APP_NAME } open so the clipboard can be automatically cleared.": [
-        "დატოვეთ ${ PASS_APP_NAME } ღია, ღომ ბუფერი ავტომატურად გასუფთავდეს."
-      ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "დატოვეთ ეს ფანჯარა ღია, სანამ მონაცემების შემოტანა მიმდინარეობს. ამას რამდენიმე წუთი შეიძლება, დასჭირდეს."
-      ],
-      "Please keep your browser open so the clipboard can be automatically cleared.": [
-        "დატოვეთ ბრაუზერი ღია, ღომ ბუფერი ავტომატურად გასუფთავდეს."
       ],
       "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
         "გთხოვთ, დარწმუნდეთ, რომ მანამდე აქტიური ფანჯარა არის ის ადგილი, სადაც გსურთ ავტოაკრეფა და თქვენი კურსორი ფოკუსირებული იყო შესვლის ველზე."

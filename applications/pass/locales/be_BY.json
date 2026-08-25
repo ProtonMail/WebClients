@@ -1043,9 +1043,6 @@
       "Domain could not be verified. Please make sure you added the correct DNS records": [
         "Не ўдалося праверыць дамен. Пераканайцеся, што ў вас правільна дададзены запісы DNS"
       ],
-      "Domain not available, try again later": [
-        "Дамен недаступны. Паспрабуйце яшчэ раз"
-      ],
       "Editing item failed": [
         "Збой рэдагавання элемента"
       ],
@@ -2148,7 +2145,10 @@
         "Перамяшчэнне ўсіх элементаў з \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Перамяшчэнне элемента ў іншае сховішча прывядзе да выдалення яго бяспечных спасылак."
+        "Перамяшчэнне элемента ў іншае сховішча прывядзе да сцірання яго бяспечных спасылак",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак."
       ],
       "Moving items": [
         "Перамяшчэнне элементаў"
@@ -2354,14 +2354,8 @@
       "Please follow the steps below to set up your domain.": [
         "Прытрымлівайцеся крокаў ніжэй, каб наладзіць свой дамен."
       ],
-      "Please keep ${ PASS_APP_NAME } open so the clipboard can be automatically cleared.": [
-        "Пакіньце ${ PASS_APP_NAME } адкрытым, каб буфер абмену мог быць аўтаматычна ачышчаны."
-      ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Пакіньце гэта акно адкрытым падчас імпартавання даных. Гэты працэс можа заняць некалькі хвілін."
-      ],
-      "Please keep your browser open so the clipboard can be automatically cleared.": [
-        "Пакіньце браўзер адкрытым, каб буфер абмену мог быць аўтаматычна ачышчаны."
       ],
       "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
         "Пераканайцеся, што гэта менавіта тое раней актыўнае акно ў якое вы хочаце аўтаматычна ўвесці даныя, а ваш курсор сфакусіраваны на полі запісу ўваходу."

@@ -184,7 +184,7 @@
       "Back": [
         "Tillbaka"
       ],
-      "Background blur": [
+      "Blur background": [
         "Bakgrundsoskärpa"
       ],
       "Cancel": [
@@ -406,6 +406,9 @@
       "Next page": [
         "Nästa sida"
       ],
+      "No effect": [
+        "Ingen effekt"
+      ],
       "Noise cancellation": [
         "Brusreducering"
       ],
@@ -426,6 +429,12 @@
       ],
       "Pause": [
         "Pausa"
+      ],
+      "Playing sound...": [
+        "Spelar ljud …"
+      ],
+      "Preview logs": [
+        "Förhandsgranska loggar"
       ],
       "Previous month": [
         "Föregående månad"
@@ -609,6 +618,12 @@
       "Tap to unblock audio playback": [
         "Tryck för att avblockera ljuduppspelning"
       ],
+      "Test microphone": [
+        "Testa mikrofon"
+      ],
+      "Test speakers": [
+        "Testa högtalare"
+      ],
       "The current link will stop working.": [
         "Nuvarande länken kommer sluta fungera."
       ],
@@ -672,6 +687,9 @@
       "View invoice": [
         "Visa faktura"
       ],
+      "Virtual backgrounds": [
+        "Virtuella bakgrunder"
+      ],
       "Waiting room": [
         "Väntrum"
       ],
@@ -685,6 +703,9 @@
     "Alt": {
       "Audio settings": [
         "Ljudinställningar"
+      ],
+      "Backgrounds": [
+        "Bakgrunder"
       ],
       "Blur background": [
         "Bakgrundsoskärpa"
@@ -703,6 +724,9 @@
       ],
       "Copy meeting link": [
         "Kopiera möteslänk"
+      ],
+      "Debug devices": [
+        "Felsök enheter"
       ],
       "Debug overlay": [
         "Felsökningsöverlägg"
@@ -807,6 +831,12 @@
       "Audio settings": [
         "Ljudinställningar"
       ],
+      "Background effects": [
+        "Bakgrundseffekter"
+      ],
+      "Backgrounds": [
+        "Bakgrunder"
+      ],
       "Chat": [
         "Chatt"
       ],
@@ -836,6 +866,9 @@
       ],
       "Video settings": [
         "Videoinställningar"
+      ],
+      "Virtual backgrounds": [
+        "Virtuella bakgrunder"
       ]
     },
     "Badge": {
@@ -1809,6 +1842,9 @@
       ]
     },
     "Error": {
+      "Couldn’t start the microphone test.": [
+        "Kunde inte starta mikrofontestet."
+      ],
       "Domain not available, try again later": [
         "Domän inte tillgänglig, försök igen senare"
       ],
@@ -2235,6 +2271,9 @@
       "camera": [
         "kamera"
       ],
+      "Camera effects": [
+        "Kameraeffekter"
+      ],
       "Camera permission denied": [
         "Kamerabehörighet nekad"
       ],
@@ -2607,6 +2646,9 @@
       "Presenting": [
         "Presenterar"
       ],
+      "Preview unavailable": [
+        "Förhandsgranskning otillgänglig"
+      ],
       "privacy": [
         "integritet"
       ],
@@ -2799,9 +2841,6 @@
       "Upload an image to preview it as the background.": [
         "Ladda upp en bild för att förhandsgranska den som bakgrunden."
       ],
-      "Video effects": [
-        "Videoeffekter"
-      ],
       "View ": [
         "Visa "
       ],
@@ -2892,6 +2931,9 @@
       "Your phone number will only be used for this one-time verification.": [
         "Ditt telefonnummer kommer endast att användas för denna engångsverifiering."
       ],
+      "Your preview": [
+        "Din förhandsgranskning"
+      ],
       "You’re about to open a link in a new tab. Make sure you trust the website before continuing.": [
         "Du är på väg att öppna en länk i en ny flik. Se till att du litar på webbplatsen innan du fortsätter."
       ]
@@ -2913,6 +2955,9 @@
       "Advanced mode": [
         "Avancerat läge"
       ],
+      "Agent": [
+        "Agent"
+      ],
       "Anyone with the link can join": [
         "Alla med länken kan gå med"
       ],
@@ -2925,8 +2970,14 @@
       "Authenticator app": [
         "Autentiseringsapp"
       ],
+      "Auto-detect": [
+        "Automatisk upptäckt"
+      ],
       "Background color": [
         "Bakgrundsfärg"
+      ],
+      "Blue background": [
+        "Blå bakgrund"
       ],
       "Blurred (next)": [
         "Oskarp (nästa)"
@@ -3018,6 +3069,9 @@
       "Google Calendar": [
         "Google Kalender"
       ],
+      "Green background": [
+        "Grön bakgrund"
+      ],
       "Hide password": [
         "Dölj lösenord"
       ],
@@ -3072,6 +3126,9 @@
       "Operating system version": [
         "Operativsystemets version"
       ],
+      "Orange background": [
+        "Orange bakgrund"
+      ],
       "Outlook Calendar": [
         "Outlook-kalender"
       ],
@@ -3086,6 +3143,9 @@
       ],
       "Phone number": [
         "Telefonnummer"
+      ],
+      "Purple background": [
+        "Lila bakgrund"
       ],
       "Raw": [
         "Rå"
@@ -3125,6 +3185,9 @@
       ],
       "Solid color": [
         "Solid färg"
+      ],
+      "Spoken language": [
+        "Talat språk"
       ],
       "Subscribed": [
         "Prenumererad"
@@ -3490,6 +3553,9 @@
       ]
     },
     "Title": {
+      "Accessibility": [
+        "Tillgänglighet"
+      ],
       "Account restricted": [
         "Kontot begränsat"
       ],
@@ -3531,6 +3597,12 @@
       ],
       "Background blur comparison": [
         "Jämförelse av bakgrundsoskärpa"
+      ],
+      "Background effects": [
+        "Bakgrundseffekter"
+      ],
+      "Backgrounds": [
+        "Bakgrunder"
       ],
       "Camera and microphone are blocked": [
         "Kamera och mikrofon är blockerade"
@@ -3647,6 +3719,9 @@
       "Participants (${ filteredParticipants.length })": [
         "Deltagare (${ filteredParticipants.length })"
       ],
+      "People": [
+        "Personer"
+      ],
       "Personal meeting room": [
         "Personligt mötesrum"
       ],
@@ -3704,6 +3779,9 @@
       "Stop recording": [
         "Stoppa inspelning"
       ],
+      "System": [
+        "System"
+      ],
       "Talk confidentially": [
         "Prata konfidentiellt"
       ],
@@ -3721,6 +3799,9 @@
       ],
       "Video": [
         "Video"
+      ],
+      "Virtual backgrounds": [
+        "Virtuella bakgrunder"
       ],
       "Waiting for the host": [
         "Väntar på värden"

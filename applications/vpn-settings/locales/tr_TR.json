@@ -7412,9 +7412,9 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "${ PASS_SHORT_APP_NAME } Lifetime fırsatının yenileme ücreti yoktur, ${ PASS_SHORT_APP_NAME } hizmetine ömür boyu erişim için tek seferlik ödeme yapılır. ${ planTitle } aboneliğinizin yenileme ücreti ve tarihi değişmeden kalır."
       ],
-      "${ pendingAdminApprovalCount } new member added via your identity provider and pending review.": [
-        "${ pendingAdminApprovalCount } yeni üye kimlik hizmeti sağlayıcınız üzerinden eklendi ve değerlendirilmeyi bekliyor.",
-        "${ pendingAdminApprovalCount } yeni üye kimlik hizmeti sağlayıcınız üzerinden eklendi ve değerlendirilmeyi bekliyor."
+      "${ pendingKeysMemberCount } new member added via your identity provider and pending review.": [
+        "${ pendingKeysMemberCount } yeni üye kimlik hizmeti sağlayıcınız üzerinden eklendi ve değerlendirilmeyi bekliyor.",
+        "${ pendingKeysMemberCount } yeni üye kimlik hizmeti sağlayıcınız üzerinden eklendi ve değerlendirilmeyi bekliyor."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } için size ayrılmış en az 1 sunucu gereklidir ${ serverPricePerMonth }"
