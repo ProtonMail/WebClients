@@ -4603,6 +4603,12 @@
       ],
       "Your recovery contacts should be people you know and can contact easily.": [
         "Dapat na mga taong kilala mo at madaling makontak ang iyong mga recovery contact."
+      ],
+      "Add 1 more": [
+        "Magdagdag ng 1 pa"
+      ],
+      "Explore plans": [
+        "I-explore ang mga plano"
       ]
     },
     "Empty group name": {
@@ -9663,6 +9669,9 @@
       ],
       "Recovery phone number": [
         "Numero ng telepono para sa pag-recover"
+      ],
+      "Set recovery phone number": [
+        "I-set ang recovery phone number"
       ]
     },
     "Label": {
@@ -10658,6 +10667,9 @@
       ],
       "ZIP code": [
         "ZIP code"
+      ],
+      "Enter current password": [
+        "Ilagay ang kasalukuyang password"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14103,6 +14115,9 @@
       ],
       "Your recovery setup is solid, with a few gaps left to close. Each option you add makes your safety net stronger.": [
         "Ang iyong pag-recover setup ay matatag, na may kaunting mga puwang na kailangang isara. Ang bawat opsyon na idaragdag mo ay nagpapalakas sa iyong safety net."
+      ],
+      "Recovery score: ${ score }": [
+        "Recovery score: ${ score }"
       ]
     },
     "Recovery score item": {
@@ -14521,6 +14536,21 @@
     "Safety review": {
       "Review account safety": [
         "Suriin ang kaligtasan ng account"
+      ],
+      "Code sent to ${ boldValue }": [
+        "Ipinadala ang code sa ${ boldValue }"
+      ],
+      "Invalid code": [
+        "Hindi valid na code"
+      ],
+      "Safety review": [
+        "Safety review"
+      ],
+      "Send a new code": [
+        "Magpadala ng bagong code"
+      ],
+      "update it now": [
+        "i-update ito ngayon"
       ]
     },
     "saml: Action": {
@@ -19125,6 +19155,272 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Pagkatapos ng matagumpay na pag-verify, huwag alisin ang TXT record na ito dahil kailangan ito upang kumpirmahin na patuloy mong pagmamay-ari ang domain."
+      ]
+    },
+    "safety_review": {
+      "${ BRAND_NAME } Account email": [
+        "Email ng ${ BRAND_NAME } Account"
+      ],
+      "Account protection": [
+        "Proteksyon ng account"
+      ],
+      "Add": [
+        "Magdagdag"
+      ],
+      "Add an emergency contact": [
+        "Magdagdag ng emergency contact"
+      ],
+      "Add emergency contacts": [
+        "Magdagdag ng mga emergency contact"
+      ],
+      "Add options": [
+        "Magdagdag ng mga opsyon"
+      ],
+      "Add people who you trust and can contact easily. Your emergency contact will be able to access your account and reset your password for you if needed.": [
+        "Magdagdag ng mga tao na pinagkakatiwalaan at madaling makontak. Ang emergency contact ay makaka-access sa account at makakapag-reset ng password kung kinakailangan."
+      ],
+      "Add people you trust and can contact easily. They will be able to help you unlock your data after you reset your password.": [
+        "Magdagdag ng mga tao na pinagkakatiwalaan at madaling makontak. Makakatulong sila sa pag-unlock ng data pagkatapos mag-reset ng password."
+      ],
+      "Add phone number": [
+        "Magdagdag ng phone number"
+      ],
+      "Add recovery contacts": [
+        "Magdagdag ng mga recovery contact"
+      ],
+      "Add recovery email": [
+        "Magdagdag ng recovery email"
+      ],
+      "Add recovery phone": [
+        "Magdagdag ng recovery phone"
+      ],
+      "Added emergency contacts": [
+        "Naidagdag ang mga emergency contact"
+      ],
+      "Added recovery contacts": [
+        "Naidagdag ang mga recovery contact"
+      ],
+      "Added recovery email": [
+        "Naidagdag ang recovery email"
+      ],
+      "Added recovery phone": [
+        "Naidagdag ang recovery phone"
+      ],
+      "Allow": [
+        "Payagan"
+      ],
+      "Allow data recovery from this device": [
+        "Payagan ang pag-recover ng data mula sa device na ito"
+      ],
+      "Allow password reset from the settings": [
+        "Payagan ang pag-reset ng password mula sa mga setting"
+      ],
+      "Allow recovery by email": [
+        "Payagan ang recovery sa pamamagitan ng email"
+      ],
+      "Allow recovery by phone": [
+        "Payagan ang recovery sa pamamagitan ng phone"
+      ],
+      "Allow scanning a QR code to sign in": [
+        "Payagan ang pag-scan ng QR code upang mag-sign in"
+      ],
+      "Allow trusted friends to unlock your data": [
+        "Payagan ang mga pinagkakatiwalaang kaibigan na i-unlock ang data"
+      ],
+      "Back to ${ backLink.appNameString }": [
+        "Bumalik sa ${ backLink.appNameString }"
+      ],
+      "Congratulations": [
+        "Binabati kita"
+      ],
+      "Didn’t receive it? ${ sendANewCode }": [
+        "Hindi ba natanggap? ${ sendANewCode }"
+      ],
+      "Done": [
+        "Tapos na"
+      ],
+      "Download": [
+        "I-download"
+      ],
+      "Download recovery file": [
+        "I-download ang recovery file"
+      ],
+      "Downloaded recovery file": [
+        "Na-download na ang recovery file"
+      ],
+      "Emergency contacts enabled": [
+        "Pinagana ang mga emergency contact"
+      ],
+      "Enable device recovery": [
+        "Paganahin ang device recovery"
+      ],
+      "Enable email recovery": [
+        "Paganahin ang email recovery"
+      ],
+      "Enable emergency contacts": [
+        "Paganahin ang mga emergency contact"
+      ],
+      "Enable password reset from settings": [
+        "Paganahin ang pag-reset ng password mula sa mga setting"
+      ],
+      "Enable phone recovery": [
+        "Paganahin ang phone recovery"
+      ],
+      "Enable QR code sign-in": [
+        "Paganahin ang QR code sign-in"
+      ],
+      "Enabled device recovery": [
+        "Pinagana ang device recovery"
+      ],
+      "Enabled email recovery": [
+        "Pinagana ang email recovery"
+      ],
+      "Enabled password reset from settings": [
+        "Pinagana ang pag-reset ng password mula sa mga setting"
+      ],
+      "Enabled phone recovery": [
+        "Pinagana ang phone recovery"
+      ],
+      "Enabled QR code sign-in": [
+        "Pinagana ang QR code sign-in"
+      ],
+      "Got it": [
+        "Nakuha ko"
+      ],
+      "Here's how you increased your account protection:": [
+        "Narito kung paano pinataas ang proteksyon ng account:"
+      ],
+      "If you forget your password, you can sign in using a QR code. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
+        "Kung makalimutan ang password, maaaring mag-sign in gamit ang QR code. Kailangan lang na naka-sign in sa isang serbisyo ng ${ BRAND_NAME } sa ibang device."
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, it will allow you to sign in and recover your data. It’s the only way to instantly restore everything, so make sure you keep it somewhere safe.": [
+        "Kung ma-lock out sa ${ BRAND_NAME } Account, magbibigay-daan ito na mag-sign in at i-recover ang data. Ito lang ang tanging paraan upang maibalik agad ang lahat, kaya tiyaking itabi ito sa ligtas na lugar."
+      ],
+      "If your recovery email has changed, ${ updateEmailLink }.": [
+        "Kung nagbago ang iyong recovery email, ${ updateEmailLink }."
+      ],
+      "If your recovery phone has changed, ${ updatePhoneLink }.": [
+        "Kung nagbago ang iyong recovery phone, ${ updatePhoneLink }."
+      ],
+      "Later": [
+        "Mamaya"
+      ],
+      "Protect your legacy with Emergency Access": [
+        "Protektahan ang legacy gamit ang Emergency Access"
+      ],
+      "Save recovery phrase": [
+        "I-save ang parirala ng pag-recover"
+      ],
+      "Saved recovery phrase": [
+        "Nai-save na parirala ng pag-recover"
+      ],
+      "Send verification code": [
+        "Ipadala ang verification code"
+      ],
+      "They must already have a ${ BRAND_NAME } Account.": [
+        "Kailangan nilang mayroon nang ${ BRAND_NAME } Account."
+      ],
+      "They will not be able to see or access your data.": [
+        "Hindi nila makikita o maa-access ang data."
+      ],
+      "This will let you quickly access your ${ BRAND_NAME } Account so you can change your password.": [
+        "Magbibigay-daan ito na mabilis na ma-access ang ${ BRAND_NAME } Account upang mapalitan ang password."
+      ],
+      "This will let you reset your account password if you’ve lost it, but are still signed in to ${ BRAND_NAME }. It’s often the easiest way to recover your account if you’re signed in.": [
+        "Magbibigay-daan ito na mai-reset ang password ng account kung nawala ito, ngunit naka-sign in pa rin sa ${ BRAND_NAME }. Madalas na ito ang pinakamadaling paraan upang i-recover ang account kung naka-sign in."
+      ],
+      "This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
+        "Ito ay magbabalik ng access sa mga email, contact, file, password, at anumang iba pang naka-encrypt na data sa account pagkatapos ng pag-reset ng password."
+      ],
+      "To help you remember your password, we’ll periodically ask you to enter it.": [
+        "Upang matulungan kang matandaan ang iyong password, pana-panahon ka naming hihilingan na ilagay ito."
+      ],
+      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
+        "Upang matiyak na sa iyo ang email address, ilagay ang verification code na ipinadala sa ${ boldEmail }."
+      ],
+      "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
+        "Upang matiyak na sa iyo ang phone number, ilagay ang verification code na ipinadala sa ${ boldPhoneNumber }."
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification code.": [
+        "Upang matiyak na sa iyo talaga ang address na ito, magpapadala kami ng email na may verification code."
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification link.": [
+        "Upang matiyak na sa iyo talaga ang address na ito, magpapadala kami ng email na may verification link."
+      ],
+      "To make sure this number is really yours, we’ll send an SMS with a verification code.": [
+        "Upang matiyak na sa iyo talaga ang numerong ito, magpapadala kami ng SMS na may verification code."
+      ],
+      "Update": [
+        "I-update"
+      ],
+      "Update recovery email": [
+        "I-update ang recovery email"
+      ],
+      "Update recovery phone": [
+        "I-update ang recovery phone"
+      ],
+      "Upgrade your plan to enable Emergency Access to your account. This will allow you to designate 1 to 5 people who will be able to reset your password for you.": [
+        "I-upgrade ang plano upang paganahin ang Emergency Access sa account. Magbibigay-daan ito na magtalaga ng 1 hanggang 5 tao na makakatulong sa pag-reset ng password."
+      ],
+      "Verified password": [
+        "Na-verify na password"
+      ],
+      "Verified recovery email": [
+        "Na-verify na recovery email"
+      ],
+      "Verified recovery phone": [
+        "Na-verify na recovery phone"
+      ],
+      "Verify": [
+        "I-verify"
+      ],
+      "Verify password": [
+        "I-verify ang password"
+      ],
+      "Verify recovery email": [
+        "I-verify ang recovery email"
+      ],
+      "Verify recovery phone": [
+        "I-verify ang recovery phone"
+      ],
+      "Verify your password": [
+        "I-verify ang iyong password"
+      ],
+      "Verify your recovery email": [
+        "I-verify ang recovery email"
+      ],
+      "Verify your recovery phone": [
+        "I-verify ang recovery phone"
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        "Ang pag-verify ng iyong email address ay nagpapataas ng seguridad ng iyong account at nagbibigay-daan sa karagdagang mga opsyon para sa pag-recover."
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "Ang pag-verify ng iyong numero ng telepono ay nagpapataas ng seguridad ng iyong account at nagbibigay-daan sa karagdagang mga opsyon para sa pag-recover."
+      ],
+      "You can save a data backup on this device. This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset, simply by signing in on this device.": [
+        "Maaaring mag-save ng data backup sa device na ito. Ipo-restore nito ang access sa mga email, contact, file, password, at anumang iba pang naka-encrypt na data sa account pagkatapos ng pag-reset ng password, sa pamamagitan lang ng pag-sign in sa device na ito."
+      ],
+      "You can use email verification to regain access to your account if you forget your password.": [
+        "Maaaring gamitin ang email verification upang muling makuha ang access sa account kung makalimutan ang password."
+      ],
+      "You can use SMS verification to regain access to your account if you forget your password.": [
+        "Maaaring gamitin ang SMS verification upang muling makuha ang access sa account kung makalimutan ang password."
+      ],
+      "You can use your recovery email to regain access to your account if you forget your password.": [
+        "Maaaring gamitin ang recovery email upang muling makuha ang access sa account kung makalimutan ang password."
+      ],
+      "You can use your recovery phone to regain access to your account if you forget your password.": [
+        "Maaaring gamitin ang recovery phone upang muling makuha ang access sa account kung makalimutan ang password."
+      ],
+      "You don’t need to open or read the file—just download it and store it somewhere safe.": [
+        "Hindi kailangang buksan o basahin ang file—i-download lang ito at itabi sa ligtas na lugar."
+      ],
+      "Your recovery checklist": [
+        "Ang checklist sa pag-recover"
+      ],
+      "Your security setup": [
+        "Ang pag-setup ng seguridad"
       ]
     }
   }

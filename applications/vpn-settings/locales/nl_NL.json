@@ -4653,6 +4653,12 @@
       ],
       "Your recovery contacts should be people you know and can contact easily.": [
         "Uw herstelcontacten moeten personen zijn die u kent en gemakkelijk kunt bereiken."
+      ],
+      "Add 1 more": [
+        "Voeg er nog 1 toe"
+      ],
+      "Explore plans": [
+        "Verken abonnementen"
       ]
     },
     "Empty group name": {
@@ -11207,6 +11213,9 @@
       ],
       "ZIP code": [
         "Postcode"
+      ],
+      "Enter current password": [
+        "Voer huidig wachtwoord in"
       ]
     },
     "label": {
@@ -11215,6 +11224,9 @@
       ],
       "Recovery phone number": [
         "Herstel-telefoonnummer"
+      ],
+      "Set recovery phone number": [
+        "Hersteltelefoonnummer instellen"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14760,6 +14772,9 @@
       ],
       "Your recovery setup is solid, with a few gaps left to close. Each option you add makes your safety net stronger.": [
         "Uw herstelconfiguratie is solide, er moeten nog enkele hiaten worden gedicht. Elke optie die u toevoegt, maakt uw vangnet sterker."
+      ],
+      "Recovery score: ${ score }": [
+        "Herstelscore: ${ score }"
       ]
     },
     "Recovery score item": {
@@ -15178,6 +15193,21 @@
     "Safety review": {
       "Review account safety": [
         "Controleer de veiligheid van uw account"
+      ],
+      "Code sent to ${ boldValue }": [
+        "Code verzonden naar ${ boldValue }"
+      ],
+      "Invalid code": [
+        "Ongeldige code"
+      ],
+      "Safety review": [
+        "Overzicht van veiligheid"
+      ],
+      "Send a new code": [
+        "Stuur een nieuwe code"
+      ],
+      "update it now": [
+        "update deze nu"
       ]
     },
     "saml: Action": {
@@ -19918,6 +19948,272 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Na een succesvolle verificatie mag u dit TXT-record niet verwijderen, omdat het nodig is om te bevestigen dat u de eigenaar van het domein blijft."
+      ]
+    },
+    "safety_review": {
+      "${ BRAND_NAME } Account email": [
+        "${ BRAND_NAME }-account e-mailadres"
+      ],
+      "Account protection": [
+        "Account beveiliging"
+      ],
+      "Add": [
+        "Toevoegen"
+      ],
+      "Add an emergency contact": [
+        "Een contactpersoon voor noodgevallen toevoegen"
+      ],
+      "Add emergency contacts": [
+        "Contactpersonen voor noodgevallen toevoegen"
+      ],
+      "Add options": [
+        "Opties toevoegen"
+      ],
+      "Add people who you trust and can contact easily. Your emergency contact will be able to access your account and reset your password for you if needed.": [
+        "Voeg mensen toe die u vertrouwt en die u gemakkelijk kunt bereiken. Uw contactpersoon voor noodgevallen heeft toegang tot uw account en kan uw wachtwoord voor u opnieuw instellen als dat nodig is."
+      ],
+      "Add people you trust and can contact easily. They will be able to help you unlock your data after you reset your password.": [
+        "Voeg mensen toe die u vertrouwt en waarmee u gemakkelijk contact kunt opnemen. Zij kunnen u helpen uw gegevens te ontgrendelen nadat u uw wachtwoord opnieuw heeft ingesteld."
+      ],
+      "Add phone number": [
+        "Telefoonnummer toevoegen"
+      ],
+      "Add recovery contacts": [
+        "Herstelcontacten toevoegen"
+      ],
+      "Add recovery email": [
+        "Herstel e-mailadres toevoegen"
+      ],
+      "Add recovery phone": [
+        "Hersteltelefoon toevoegen"
+      ],
+      "Added emergency contacts": [
+        "Contactpersoon voor noodgevallen toegevoegd"
+      ],
+      "Added recovery contacts": [
+        "Herstelcontacten toegevoegd"
+      ],
+      "Added recovery email": [
+        "Herstel-e-mailadres toegevoegd"
+      ],
+      "Added recovery phone": [
+        "Hersteltelefoonnummer toegevoegd"
+      ],
+      "Allow": [
+        "Toestaan"
+      ],
+      "Allow data recovery from this device": [
+        "Sta gegevensherstel vanaf dit apparaat toe"
+      ],
+      "Allow password reset from the settings": [
+        "Sta wachtwoord reset toe vanuit instellingen"
+      ],
+      "Allow recovery by email": [
+        "Herstellen via e-mail toestaan"
+      ],
+      "Allow recovery by phone": [
+        "Herstellen via telefoon toestaan"
+      ],
+      "Allow scanning a QR code to sign in": [
+        "Sta het scannen van een QR-code toe om in te loggen"
+      ],
+      "Allow trusted friends to unlock your data": [
+        "Laat vertrouwde vrienden uw gegevens ontgrendelen"
+      ],
+      "Back to ${ backLink.appNameString }": [
+        "Terug naar ${ backLink.appNameString }"
+      ],
+      "Congratulations": [
+        "Gefeliciteerd"
+      ],
+      "Didn’t receive it? ${ sendANewCode }": [
+        "Niet ontvangen? ${ sendANewCode }"
+      ],
+      "Done": [
+        "Klaar"
+      ],
+      "Download": [
+        "Downloaden"
+      ],
+      "Download recovery file": [
+        "Herstelbestand downloaden"
+      ],
+      "Downloaded recovery file": [
+        "Herstelbestand downloaden"
+      ],
+      "Emergency contacts enabled": [
+        "Noodcontacten ingeschakeld"
+      ],
+      "Enable device recovery": [
+        "Apparaatherstel inschakelen"
+      ],
+      "Enable email recovery": [
+        "Schakel e-mailherstel in"
+      ],
+      "Enable emergency contacts": [
+        "Schakel noodcontacten in"
+      ],
+      "Enable password reset from settings": [
+        "Schakel het opnieuw instellen van het wachtwoord in vanuit de instellingen"
+      ],
+      "Enable phone recovery": [
+        "Schakel herstel via telefoon in"
+      ],
+      "Enable QR code sign-in": [
+        "QR-code aanmelding toestaan"
+      ],
+      "Enabled device recovery": [
+        "Apparaatherstel ingeschakeld"
+      ],
+      "Enabled email recovery": [
+        "E-mailherstel ingeschakeld"
+      ],
+      "Enabled password reset from settings": [
+        "Wachtwoord opnieuw instellen via instellingen ingeschakeld"
+      ],
+      "Enabled phone recovery": [
+        "Herstel via telefoon ingeschakeld"
+      ],
+      "Enabled QR code sign-in": [
+        "Aanmelden met QR-code ingeschakeld"
+      ],
+      "Got it": [
+        "Begrepen"
+      ],
+      "Here's how you increased your account protection:": [
+        "Hoe u de beveiliging van uw account hebt verbeterd:"
+      ],
+      "If you forget your password, you can sign in using a QR code. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
+        "Als u uw wachtwoord bent vergeten, kunt u inloggen met een QR-code. U hoeft alleen ingelogd te zijn op een ${ BRAND_NAME }-service op een ander apparaat."
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, it will allow you to sign in and recover your data. It’s the only way to instantly restore everything, so make sure you keep it somewhere safe.": [
+        "Als u geen toegang meer heeft tot uw ${ BRAND_NAME } account, kunt u zich aanmelden en uw gegevens herstellen. Het is de enige manier om alles onmiddellijk te herstellen, dus zorg ervoor dat u het op een veilige plek bewaart."
+      ],
+      "If your recovery email has changed, ${ updateEmailLink }.": [
+        "Als uw herstel-e-mailadres is gewijzigd, ${ updateEmailLink }."
+      ],
+      "If your recovery phone has changed, ${ updatePhoneLink }.": [
+        "Als uw hersteltelefoonnummer is gewijzigd, ${ updatePhoneLink }."
+      ],
+      "Later": [
+        "Later"
+      ],
+      "Protect your legacy with Emergency Access": [
+        "Bescherm uw legacy met noodtoegang"
+      ],
+      "Save recovery phrase": [
+        "Herstelzin bewaren"
+      ],
+      "Saved recovery phrase": [
+        "Opgeslagen herstelzin"
+      ],
+      "Send verification code": [
+        "Verificatiecode verzenden"
+      ],
+      "They must already have a ${ BRAND_NAME } Account.": [
+        "Ze moeten al een ${ BRAND_NAME }-account hebben."
+      ],
+      "They will not be able to see or access your data.": [
+        "Zij zullen uw gegevens niet kunnen zien of bekijken."
+      ],
+      "This will let you quickly access your ${ BRAND_NAME } Account so you can change your password.": [
+        "Hiermee krijgt u snel toegang tot uw ${ BRAND_NAME }-account, zodat u uw wachtwoord kunt wijzigen."
+      ],
+      "This will let you reset your account password if you’ve lost it, but are still signed in to ${ BRAND_NAME }. It’s often the easiest way to recover your account if you’re signed in.": [
+        "Hiermee kunt u uw accountwachtwoord opnieuw instellen als u het kwijt bent, maar nog steeds bent ingelogd bij ${ BRAND_NAME }. Het is vaak de makkelijkste manier om uw account te herstellen als u bent ingelogd."
+      ],
+      "This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
+        "Hiermee wordt de toegang tot e-mails, contacten, bestanden, wachtwoorden en andere gecodeerde gegevens in uw account hersteld nadat het wachtwoord opnieuw is ingesteld."
+      ],
+      "To help you remember your password, we’ll periodically ask you to enter it.": [
+        "Om u te helpen uw wachtwoord te onthouden, zullen we u er periodiek om vragen dit in te voeren."
+      ],
+      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
+        "Om zeker te zijn dat het e-mailadres van u is, moet u de verificatiecode invoeren die naar ${ boldEmail } is verzonden."
+      ],
+      "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
+        "Om zeker te zijn dat het uw telefoonnummer is, voer de verificatiecode in die naar ${ boldPhoneNumber } is verzonden."
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification code.": [
+        "Om er zeker van te zijn dat dit adres echt van u is, sturen we een e-mail met een verificatiecode."
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification link.": [
+        "Om er zeker van te zijn dat dit adres echt van u is, sturen we een e-mail met een verificatielink."
+      ],
+      "To make sure this number is really yours, we’ll send an SMS with a verification code.": [
+        "Om er zeker van te zijn dat dit nummer echt van u is, sturen we een sms met een verificatiecode."
+      ],
+      "Update": [
+        "Updaten"
+      ],
+      "Update recovery email": [
+        "Herstel-e-mailadres bijwerken"
+      ],
+      "Update recovery phone": [
+        "Hersteltelefoonnummer bijwerken"
+      ],
+      "Upgrade your plan to enable Emergency Access to your account. This will allow you to designate 1 to 5 people who will be able to reset your password for you.": [
+        "Upgrade uw abonnement om noodtoegang voor uw account in te schakelen. Hiermee kunt u 1 tot 5 personen aanwijzen die uw wachtwoord voor u kunnen resetten."
+      ],
+      "Verified password": [
+        "Geverifieerd wachtwoord"
+      ],
+      "Verified recovery email": [
+        "Geverifieerd herstel e-mailadres"
+      ],
+      "Verified recovery phone": [
+        "Geverifieerd hersteltelefoonnummer"
+      ],
+      "Verify": [
+        "Verifieer"
+      ],
+      "Verify password": [
+        "Wachtwoord verifiëren"
+      ],
+      "Verify recovery email": [
+        "Herstel-e-mailadres verifiëren"
+      ],
+      "Verify recovery phone": [
+        "Hersteltelefoon verifiëren"
+      ],
+      "Verify your password": [
+        "Controleer uw wachtwoord"
+      ],
+      "Verify your recovery email": [
+        "Herstel-e-mailadres verifiëren"
+      ],
+      "Verify your recovery phone": [
+        "Verifieer uw hersteltelefoonnummer"
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        "Het verifiëren van uw e-mailadres verhoogt uw accountbeveiliging en maakt extra opties voor herstel mogelijk."
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "Het verifiëren van uw telefoonnummer verhoogt uw accountbeveiliging en maakt extra opties voor herstel mogelijk."
+      ],
+      "You can save a data backup on this device. This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset, simply by signing in on this device.": [
+        "U kunt een gegevensback-up op dit apparaat opslaan. Hiermee wordt de toegang tot e-mails, contacten, bestanden, wachtwoorden en andere gecodeerde gegevens in uw account hersteld na een wachtwoordreset, eenvoudigweg door u aan te melden op dit apparaat."
+      ],
+      "You can use email verification to regain access to your account if you forget your password.": [
+        "U kunt e-mailverificatie gebruiken om weer toegang te krijgen tot uw account als u uw wachtwoord bent vergeten."
+      ],
+      "You can use SMS verification to regain access to your account if you forget your password.": [
+        "U kunt sms-verificatie gebruiken om weer toegang te krijgen tot uw account als u uw wachtwoord bent vergeten."
+      ],
+      "You can use your recovery email to regain access to your account if you forget your password.": [
+        "U kunt uw herstel-e-mailadres gebruiken om weer toegang te krijgen tot uw account als u uw wachtwoord bent vergeten."
+      ],
+      "You can use your recovery phone to regain access to your account if you forget your password.": [
+        "U kunt uw hersteltelefoonnummer gebruiken om weer toegang te krijgen tot uw account als u uw wachtwoord bent vergeten."
+      ],
+      "You don’t need to open or read the file—just download it and store it somewhere safe.": [
+        "U hoeft het bestand niet te openen of te lezen; download het gewoon en bewaar het op een veilige plek."
+      ],
+      "Your recovery checklist": [
+        "Uw herstelchecklist"
+      ],
+      "Your security setup": [
+        "Uw beveiligingsinstellingen"
       ]
     }
   }

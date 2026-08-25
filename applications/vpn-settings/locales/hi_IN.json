@@ -4603,6 +4603,12 @@
       ],
       "Your recovery contacts should be people you know and can contact easily.": [
         "आपके रिकवरी संपर्क ऐसे लोग होने चाहिए जिन्हें आप जानते हैं और जिनसे आसानी से संपर्क कर सकते हैं।"
+      ],
+      "Add 1 more": [
+        "1 और जोड़ें"
+      ],
+      "Explore plans": [
+        "प्लान देखें"
       ]
     },
     "Empty group name": {
@@ -9663,6 +9669,9 @@
       ],
       "Recovery phone number": [
         "पुनर्प्राप्ति फ़ोन नंबर"
+      ],
+      "Set recovery phone number": [
+        "रिकवरी फ़ोन नंबर सेट करें"
       ]
     },
     "Label": {
@@ -10658,6 +10667,9 @@
       ],
       "ZIP code": [
         "ज़िप कोड"
+      ],
+      "Enter current password": [
+        "वर्तमान पासवर्ड दर्ज करें"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14103,6 +14115,9 @@
       ],
       "Your recovery setup is solid, with a few gaps left to close. Each option you add makes your safety net stronger.": [
         "आपका रिकवरी सेटअप मजबूत है, केवल कुछ ही कमियां बची हैं। आपके द्वारा जोड़ा जाने वाला प्रत्येक विकल्प आपके सुरक्षा तंत्र को और मजबूत बनाता है।"
+      ],
+      "Recovery score: ${ score }": [
+        "रिकवरी स्कोर: ${ score }"
       ]
     },
     "Recovery score item": {
@@ -14521,6 +14536,21 @@
     "Safety review": {
       "Review account safety": [
         "खाता सुरक्षा की समीक्षा करें"
+      ],
+      "Code sent to ${ boldValue }": [
+        "${ boldValue } को कोड भेजा गया"
+      ],
+      "Invalid code": [
+        "अमान्य कोड"
+      ],
+      "Safety review": [
+        "सुरक्षा समीक्षा"
+      ],
+      "Send a new code": [
+        "नया कोड भेजें"
+      ],
+      "update it now": [
+        "इसे अभी अपडेट करें"
       ]
     },
     "saml: Action": {
@@ -19125,6 +19155,272 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "सफल सत्यापन के बाद, इस TXT रिकॉर्ड को न हटाएं क्योंकि यह पुष्टि करने के लिए आवश्यक है कि आप डोमेन के मालिक हैं।"
+      ]
+    },
+    "safety_review": {
+      "${ BRAND_NAME } Account email": [
+        "${ BRAND_NAME } खाता ईमेल"
+      ],
+      "Account protection": [
+        "खाता सुरक्षा"
+      ],
+      "Add": [
+        "जोड़ें"
+      ],
+      "Add an emergency contact": [
+        "एक आपातकालीन संपर्क जोड़ें"
+      ],
+      "Add emergency contacts": [
+        "आपातकालीन संपर्क जोड़ें"
+      ],
+      "Add options": [
+        "विकल्प जोड़ें"
+      ],
+      "Add people who you trust and can contact easily. Your emergency contact will be able to access your account and reset your password for you if needed.": [
+        "उन लोगों को जोड़ें जिन पर आप भरोसा करते हैं और जिनसे आसानी से संपर्क कर सकते हैं। आपातकालीन संपर्क होने पर आपका आपातकालीन संपर्क आपके खाते को एक्सेस करने और आपके लिए आपका पासवर्ड रीसेट करने में सक्षम होगा।"
+      ],
+      "Add people you trust and can contact easily. They will be able to help you unlock your data after you reset your password.": [
+        "उन लोगों को जोड़ें जिन पर आप भरोसा करते हैं और जिनसे आसानी से संपर्क कर सकते हैं। वे आपके पासवर्ड रीसेट करने के बाद आपके डेटा को अनलॉक करने में आपकी सहायता कर सकेंगे।"
+      ],
+      "Add phone number": [
+        "फ़ोन नंबर जोड़ें"
+      ],
+      "Add recovery contacts": [
+        "रिकवरी संपर्क जोड़ें"
+      ],
+      "Add recovery email": [
+        "रिकवर ईमेल जोड़ें"
+      ],
+      "Add recovery phone": [
+        "रिकवरी फ़ोन जोड़ें"
+      ],
+      "Added emergency contacts": [
+        "आपातकालीन संपर्क जोड़े गए"
+      ],
+      "Added recovery contacts": [
+        "रिकवरी संपर्क जोड़े गए"
+      ],
+      "Added recovery email": [
+        "जोड़ा गया रिकवर ईमेल"
+      ],
+      "Added recovery phone": [
+        "रिकवरी फोन जोड़ा गया"
+      ],
+      "Allow": [
+        "अनुमति दें"
+      ],
+      "Allow data recovery from this device": [
+        "इस डिवाइस से डेटा रिकवरी की अनुमति दें"
+      ],
+      "Allow password reset from the settings": [
+        "सेटिंग से पासवर्ड रीसेट की अनुमति दें"
+      ],
+      "Allow recovery by email": [
+        "ईमेल द्वारा रिकवरी की अनुमति दें"
+      ],
+      "Allow recovery by phone": [
+        "फ़ोन द्वारा पुनर्प्राप्ति की अनुमति दें"
+      ],
+      "Allow scanning a QR code to sign in": [
+        "साइनइन करने के लिए QR कोड को स्कैन करने की अनुमति दें"
+      ],
+      "Allow trusted friends to unlock your data": [
+        "विश्वसनीय मित्रों को अपना डेटा अनलॉक करने की अनुमति दें"
+      ],
+      "Back to ${ backLink.appNameString }": [
+        "${ backLink.appNameString } पर वापस जाएं"
+      ],
+      "Congratulations": [
+        "बधाई हो"
+      ],
+      "Didn’t receive it? ${ sendANewCode }": [
+        "प्राप्त नहीं हुआ? ${ sendANewCode }"
+      ],
+      "Done": [
+        "हो गया"
+      ],
+      "Download": [
+        "डाउनलोड करें"
+      ],
+      "Download recovery file": [
+        "पुनर्प्राप्ति फ़ाइल डाउनलोड करें"
+      ],
+      "Downloaded recovery file": [
+        "डाउनलोड की गई रिकवरी फ़ाइल"
+      ],
+      "Emergency contacts enabled": [
+        "आपातकालीन संपर्क सक्षम हैं"
+      ],
+      "Enable device recovery": [
+        "डिवाइस रिकवरी सक्षम करें"
+      ],
+      "Enable email recovery": [
+        "ईमेल रिकवरी सक्षम करें"
+      ],
+      "Enable emergency contacts": [
+        "आपातकालीन संपर्क सक्षम करें"
+      ],
+      "Enable password reset from settings": [
+        "सेटिंग्स से पासवर्ड रीसेट सक्षम करें"
+      ],
+      "Enable phone recovery": [
+        "फ़ोन रिकवरी सक्षम करें"
+      ],
+      "Enable QR code sign-in": [
+        "QR कोड साइन-इन सक्षम करें"
+      ],
+      "Enabled device recovery": [
+        "सक्षम डिवाइस रिकवरी"
+      ],
+      "Enabled email recovery": [
+        "सक्षम ईमेल रिकवरी"
+      ],
+      "Enabled password reset from settings": [
+        "सेटिंग्स से सक्षम पासवर्ड रीसेट"
+      ],
+      "Enabled phone recovery": [
+        "सक्षम फ़ोन रिकवरी"
+      ],
+      "Enabled QR code sign-in": [
+        "QR कोड साइन-इन सक्षम किया गया"
+      ],
+      "Got it": [
+        "समझ गए"
+      ],
+      "Here's how you increased your account protection:": [
+        "यहां बताया गया है कि आपने अपने खाते की सुरक्षा कैसे बढ़ाई:"
+      ],
+      "If you forget your password, you can sign in using a QR code. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
+        "यदि आप अपना पासवर्ड भूल जाते हैं, तो आप QR कोड का उपयोग करके साइनइन कर सकते हैं। आपको बस किसी अन्य डिवाइस पर ${ BRAND_NAME } सेवा में साइनइन होना होगा।"
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, it will allow you to sign in and recover your data. It’s the only way to instantly restore everything, so make sure you keep it somewhere safe.": [
+        "यदि आप अपने ${ BRAND_NAME } खाते से लॉक आउट हो जाते हैं, तो यह आपको साइनइन करने और अपना डेटा रिकवर करने की अनुमति देगा। यह तुरंत सब कुछ रीस्टोर करने का एकमात्र तरीका है, इसलिए इसे सुरक्षित स्थान पर रखना सुनिश्चित करें।"
+      ],
+      "If your recovery email has changed, ${ updateEmailLink }.": [
+        "यदि आपका रिकवर ईमेल बदल गया है, तो ${ updateEmailLink }।"
+      ],
+      "If your recovery phone has changed, ${ updatePhoneLink }.": [
+        "यदि आपका रिकवरी फ़ोन बदल गया है, तो ${ updatePhoneLink }।"
+      ],
+      "Later": [
+        "बाद में"
+      ],
+      "Protect your legacy with Emergency Access": [
+        "आपातकालीन एक्सेस के साथ अपनी विरासत की रक्षा करें"
+      ],
+      "Save recovery phrase": [
+        "रिकवरी फ्रेज़ सहेजें"
+      ],
+      "Saved recovery phrase": [
+        "सहेजा गया रिकवरी फ्रेज़"
+      ],
+      "Send verification code": [
+        "सत्यापन कोड भेजें"
+      ],
+      "They must already have a ${ BRAND_NAME } Account.": [
+        "उनके पास पहले से ही एक ${ BRAND_NAME } खाता होना चाहिए।"
+      ],
+      "They will not be able to see or access your data.": [
+        "वे आपके डेटा को देखने या एक्सेस करने में सक्षम नहीं होंगे।"
+      ],
+      "This will let you quickly access your ${ BRAND_NAME } Account so you can change your password.": [
+        "यह आपको अपने ${ BRAND_NAME } खाते तक तेज़ी से पहुंचने देगा ताकि आप अपना पासवर्ड बदल सकें।"
+      ],
+      "This will let you reset your account password if you’ve lost it, but are still signed in to ${ BRAND_NAME }. It’s often the easiest way to recover your account if you’re signed in.": [
+        "यदि आप अपना पासवर्ड भूल गए हैं, लेकिन फिर भी ${ BRAND_NAME } में साइनइन हैं, तो यह आपको अपने खाते का पासवर्ड रीसेट करने देगा। यदि आप साइनइन हैं तो अपने खाते को रिकवर करने का यह अक्सर सबसे आसान तरीका है।"
+      ],
+      "This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
+        "यह पासवर्ड रीसेट के बाद आपके खाते पर ईमेल, संपर्कों, फ़ाइलों, पासवर्ड और किसी भी अन्य एन्क्रिप्ट किए गए डेटा तक पहुंच रीस्टोर करेगा।"
+      ],
+      "To help you remember your password, we’ll periodically ask you to enter it.": [
+        "आपको अपना पासवर्ड याद रखने में मदद करने के लिए, हम समय-समय पर आपसे इसे दर्ज करने के लिए कहेंगे।"
+      ],
+      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
+        "यह सुनिश्चित करने के लिए कि यह ईमेल पता आपका ही है, ${ boldEmail } पर भेजा गया सत्यापन कोड दर्ज करें।"
+      ],
+      "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
+        "यह सुनिश्चित करने के लिए कि फ़ोन नंबर आपका है, ${ boldPhoneNumber } पर भेजा गया सत्यापन कोड दर्ज करें।"
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification code.": [
+        "यह सुनिश्चित करने के लिए कि यह पता वास्तव में आपका है, हम एक सत्यापन कोड के साथ एक ईमेल भेजेंगे।"
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification link.": [
+        "यह सुनिश्चित करने के लिए कि यह पता वास्तव में आपका है, हम एक सत्यापन लिंक के साथ एक ईमेल भेजेंगे।"
+      ],
+      "To make sure this number is really yours, we’ll send an SMS with a verification code.": [
+        "यह सुनिश्चित करने के लिए कि यह नंबर वास्तव में आपका है, हम एक सत्यापन कोड के साथ एक एसएमएस भेजेंगे।"
+      ],
+      "Update": [
+        "अपडेट करें"
+      ],
+      "Update recovery email": [
+        "रिकवर ईमेल अपडेट करें"
+      ],
+      "Update recovery phone": [
+        "रिकवरी फ़ोन अपडेट करें"
+      ],
+      "Upgrade your plan to enable Emergency Access to your account. This will allow you to designate 1 to 5 people who will be able to reset your password for you.": [
+        "अपने खाते में आपातकालीन एक्सेस सक्षम करने के लिए अपना प्लान अपग्रेड करें। यह आपको 1 से 5 लोगों को नामित करने की अनुमति देगा जो आपके लिए आपका पासवर्ड रीसेट करने में सक्षम होंगे।"
+      ],
+      "Verified password": [
+        "सत्यापित पासवर्ड"
+      ],
+      "Verified recovery email": [
+        "सत्यापित रिकवर ईमेल"
+      ],
+      "Verified recovery phone": [
+        "सत्यापित रिकवरी फ़ोन"
+      ],
+      "Verify": [
+        "सत्यापित करें"
+      ],
+      "Verify password": [
+        "पासवर्ड सत्यापित करें"
+      ],
+      "Verify recovery email": [
+        "रिकवर ईमेल सत्यापित करें"
+      ],
+      "Verify recovery phone": [
+        "रिकवरी फ़ोन सत्यापित करें"
+      ],
+      "Verify your password": [
+        "अपना पासवर्ड सत्यापित करें"
+      ],
+      "Verify your recovery email": [
+        "अपनी रिकवर ईमेल सत्यापित करें"
+      ],
+      "Verify your recovery phone": [
+        "अपनी रिकवरी फ़ोन सत्यापित करें"
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        "अपना ईमेल पता सत्यापित करने से आपके खाते की सुरक्षा बढ़ती है और रिकवरी के लिए अतिरिक्त विकल्प मिलते हैं।"
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "अपने फ़ोन नंबर को सत्यापित करने से आपके खाते की सुरक्षा बढ़ती है और रिकवरी के लिए अतिरिक्त विकल्प मिलते हैं।"
+      ],
+      "You can save a data backup on this device. This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset, simply by signing in on this device.": [
+        "आप इस डिवाइस पर डेटा बैकअप सहेज सकते हैं। यह केवल इस डिवाइस पर साइनइन करके, पासवर्ड रीसेट करने के बाद आपके खाते पर ईमेल, संपर्कों, फ़ाइलों, पासवर्ड और किसी भी अन्य एन्क्रिप्ट किए गए डेटा तक पहुंच रीस्टोर करेगा।"
+      ],
+      "You can use email verification to regain access to your account if you forget your password.": [
+        "यदि आप अपना पासवर्ड भूल जाते हैं तो आप अपने खाते तक पुनः पहुंच प्राप्त करने के लिए ईमेल सत्यापन का उपयोग कर सकते हैं।"
+      ],
+      "You can use SMS verification to regain access to your account if you forget your password.": [
+        "यदि आप अपना पासवर्ड भूल जाते हैं तो आप अपने खाते तक पुनः पहुंच प्राप्त करने के लिए एसएमएस सत्यापन का उपयोग कर सकते हैं।"
+      ],
+      "You can use your recovery email to regain access to your account if you forget your password.": [
+        "यदि आप अपना पासवर्ड भूल जाते हैं तो आप अपने खाते तक पुनः पहुंच प्राप्त करने के लिए अपने रिकवर ईमेल का उपयोग कर सकते हैं।"
+      ],
+      "You can use your recovery phone to regain access to your account if you forget your password.": [
+        "यदि आप अपना पासवर्ड भूल जाते हैं तो आप अपने खाते तक पुनः पहुंच प्राप्त करने के लिए अपने रिकवरी फ़ोन का उपयोग कर सकते हैं।"
+      ],
+      "You don’t need to open or read the file—just download it and store it somewhere safe.": [
+        "आपको फ़ाइल को खोलने या पढ़ने की आवश्यकता नहीं है—बस इसे डाउनलोड करें और कहीं सुरक्षित स्थान पर स्टोर करें।"
+      ],
+      "Your recovery checklist": [
+        "आपकी रिकवरी चेकलिस्ट"
+      ],
+      "Your security setup": [
+        "आपका सुरक्षा सेटअप"
       ]
     }
   }

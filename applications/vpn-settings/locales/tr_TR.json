@@ -4907,6 +4907,12 @@
       ],
       "Your recovery contacts should be people you know and can contact easily.": [
         "Kurtarma kişilerinizi tanıdığınız ve kolayca ulaşabileceğiniz kişilerden seçmelisiniz."
+      ],
+      "Add 1 more": [
+        "1 tane daha ekle"
+      ],
+      "Explore plans": [
+        "Tarifeleri keşfedin"
       ]
     },
     "Empty group name": {
@@ -11566,6 +11572,9 @@
       ],
       "ZIP code": [
         "Posta kodu"
+      ],
+      "Enter current password": [
+        "Geçerli parolayı yazın"
       ]
     },
     "label": {
@@ -11574,6 +11583,9 @@
       ],
       "Recovery phone number": [
         "Kurtarma telefon numarası"
+      ],
+      "Set recovery phone number": [
+        "Kurtarma telefon numarası ayarla"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15187,6 +15199,9 @@
       ],
       "Your recovery setup is solid, with a few gaps left to close. Each option you add makes your safety net stronger.": [
         "Kurtarma kurulumunuz sağlam. Ancak tamamlanması gereken birkaç eksik var. Eklediğiniz her seçenek güvenlik ağınızı daha da güçlendirir."
+      ],
+      "Recovery score: ${ score }": [
+        "Kurtarma puanı: ${ score }"
       ]
     },
     "Recovery score item": {
@@ -15608,6 +15623,21 @@
     "Safety review": {
       "Review account safety": [
         "Hesap güvenliğini gözden geçirin"
+      ],
+      "Code sent to ${ boldValue }": [
+        "Kod ${ boldValue } alıcısına gönderildi"
+      ],
+      "Invalid code": [
+        "Kod geçersiz"
+      ],
+      "Safety review": [
+        "Güvenlik değerlendirmesi"
+      ],
+      "Send a new code": [
+        "Yeni kod gönder"
+      ],
+      "update it now": [
+        "şimdi güncelleyin"
       ]
     },
     "saml: Action": {
@@ -20401,6 +20431,282 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Doğrulama tamamlandıktan sonra da bu etki alanının sahibi olduğunuzu doğrulamayı sürdürmemiz gerektiğinden bu TXT kaydını kaldırmayın."
+      ]
+    },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Hemen deneyin"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Artık yeni ${ CALENDAR_APP_NAME } uygulamasına erişebilirsiniz. ${ link }"
+      ]
+    },
+    "safety_review": {
+      "${ BRAND_NAME } Account email": [
+        "${ BRAND_NAME } hesabı e-posta adresi"
+      ],
+      "Account protection": [
+        "Hesap koruması"
+      ],
+      "Add": [
+        "Ekle"
+      ],
+      "Add an emergency contact": [
+        "Acil durum kişisi ekle"
+      ],
+      "Add emergency contacts": [
+        "Acil durum kişileri ekle"
+      ],
+      "Add options": [
+        "Seçenek ekle"
+      ],
+      "Add people who you trust and can contact easily. Your emergency contact will be able to access your account and reset your password for you if needed.": [
+        "Güvendiğiniz ve kolayca iletişim kurabileceğiniz kişileri ekleyin. Acil durum kişiniz gerektiğinde hesabınıza erişebilir ve parolanızı sizin yerinize sıfırlayabilir."
+      ],
+      "Add people you trust and can contact easily. They will be able to help you unlock your data after you reset your password.": [
+        "Güvendiğiniz ve kolayca ulaşabileceğiniz kişileri ekleyin. Parolanızı sıfırladıktan sonra bu kişiler verilerinize erişmenize yardımcı olabilir."
+      ],
+      "Add phone number": [
+        "Telefon numarası ekle"
+      ],
+      "Add recovery contacts": [
+        "Kurtarma kişileri ekle"
+      ],
+      "Add recovery email": [
+        "Kurtarma e-posta adresi ekle"
+      ],
+      "Add recovery phone": [
+        "Kurtarma telefon numarası ekle"
+      ],
+      "Added emergency contacts": [
+        "Acil durum kişileri eklendi"
+      ],
+      "Added recovery contacts": [
+        "Kurtarma kişileri eklendi"
+      ],
+      "Added recovery email": [
+        "Kurtarma e-posta adresi eklendi"
+      ],
+      "Added recovery phone": [
+        "Kurtarma telefon numarası eklendi"
+      ],
+      "Allow": [
+        "İzin ver"
+      ],
+      "Allow data recovery from this device": [
+        "Bu aygıttan veriler kurtarılabilsin"
+      ],
+      "Allow password reset from the settings": [
+        "Parola ayarlar bölümünden sıfırlanabilsin"
+      ],
+      "Allow recovery by email": [
+        "E-posta ile hesap kurtarılabilsin"
+      ],
+      "Allow recovery by phone": [
+        "Telefon numarası ile kurtarılabilsin"
+      ],
+      "Allow scanning a QR code to sign in": [
+        "Kare kod tarayarak oturum açılabilsin"
+      ],
+      "Allow trusted friends to unlock your data": [
+        "Güvendiğiniz arkadaşlarınızın verilerinize erişmesine izin verin"
+      ],
+      "Back to ${ backLink.appNameString }": [
+        "${ backLink.appNameString } uygulamasına dön"
+      ],
+      "Congratulations": [
+        "Tebrikler"
+      ],
+      "Didn’t receive it? ${ sendANewCode }": [
+        "Kodu almadınız mı? ${ sendANewCode }"
+      ],
+      "Done": [
+        "Tamam"
+      ],
+      "Download": [
+        "İndir"
+      ],
+      "Download recovery file": [
+        "Kurtarma dosyasını indir"
+      ],
+      "Downloaded recovery file": [
+        "Kurtarma dosyası indirildi"
+      ],
+      "Emergency contacts enabled": [
+        "Acil durum kişileri kullanıma alındı"
+      ],
+      "Enable device recovery": [
+        "Aygıt ile kurtarmayı aç"
+      ],
+      "Enable email recovery": [
+        "E-posta ile kurtarmayı aç"
+      ],
+      "Enable emergency contacts": [
+        "Acil durum kişileri özelliğini aç"
+      ],
+      "Enable password reset from settings": [
+        "Ayarlarda parola sıfırlama özelliğini açın"
+      ],
+      "Enable phone recovery": [
+        "Telefon numarası ile kurtarmayı aç"
+      ],
+      "Enable QR code sign-in": [
+        "Kare kod ile oturum açma özelliğini aç"
+      ],
+      "Enabled device recovery": [
+        "Aygıt ile kurtarma açıldı"
+      ],
+      "Enabled email recovery": [
+        "E-posta adresi ile kurtarma açıldı"
+      ],
+      "Enabled password reset from settings": [
+        "Ayarlarda parola sıfırlama özelliği açıldı"
+      ],
+      "Enabled phone recovery": [
+        "Telefon numarası ile kurtarma açıldı"
+      ],
+      "Enabled QR code sign-in": [
+        "Kare kod ile oturum açma özelliği açıldı"
+      ],
+      "Got it": [
+        "Anladım"
+      ],
+      "Here's how you increased your account protection:": [
+        "Hesap güvenliğinizi şu şekilde artırdınız:"
+      ],
+      "If you forget your password, you can sign in using a QR code. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
+        "Parolanızı unutursanız kare kod ile oturum açabilirsiniz. Bunun için başka bir aygıtta ${ BRAND_NAME } hizmetinde oturumunuzun açık olması yeterlidir."
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, it will allow you to sign in and recover your data. It’s the only way to instantly restore everything, so make sure you keep it somewhere safe.": [
+        "${ BRAND_NAME } hesabınıza erişemediğinizde bu kodla oturum açabilir ve verilerinizi kurtarabilirsiniz. Her şeyi anında geri yüklemenin tek yolu budur. Bu nedenle bu kodu güvenli bir yerde sakladığınızdan emin olun."
+      ],
+      "If your recovery email has changed, ${ updateEmailLink }.": [
+        "Kurtarma e-posta adresiniz değiştiyse, ${ updateEmailLink }."
+      ],
+      "If your recovery phone has changed, ${ updatePhoneLink }.": [
+        "Kurtarma telefon numaranız değiştiyse, ${ updatePhoneLink }."
+      ],
+      "Later": [
+        "Daha sonra"
+      ],
+      "Protect your legacy with Emergency Access": [
+        "Acil erişim ile mirasınızı koruyun"
+      ],
+      "Save recovery phrase": [
+        "Kurtarma ifadesini kaydet"
+      ],
+      "Saved recovery phrase": [
+        "Kaydedilmiş kurtarma ifadesi"
+      ],
+      "Send verification code": [
+        "Doğrulama kodunu gönder"
+      ],
+      "They must already have a ${ BRAND_NAME } Account.": [
+        "Bir ${ BRAND_NAME } hesabı olması gereklidir."
+      ],
+      "They will not be able to see or access your data.": [
+        "Verilerinizi göremeyecek ve erişemeyecekler."
+      ],
+      "This will let you quickly access your ${ BRAND_NAME } Account so you can change your password.": [
+        "Böylece ${ BRAND_NAME } hesabınıza hızlıca erişebilir ve parolanızı değiştirebilirsiniz."
+      ],
+      "This will let you reset your account password if you’ve lost it, but are still signed in to ${ BRAND_NAME }. It’s often the easiest way to recover your account if you’re signed in.": [
+        "Bu seçenek hesap parolanızı unuttuysanız ancak ${ BRAND_NAME } oturumunuz hâlâ açıksa parolanızı sıfırlamanızı sağlar. Oturumunuz açıkken hesabınızı kurtarmanın genellikle en kolay yolu budur."
+      ],
+      "This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
+        "Bununla parola sıfırlama işleminden sonra hesabınızdaki e-postalara, kişilere, dosyalara, parolalara ve diğer tüm şifrelenmiş verilere yeniden erişebileceksiniz."
+      ],
+      "To help you remember your password, we’ll periodically ask you to enter it.": [
+        "Parolanızı anımsamanıza yardımcı olmak için zaman zaman parolanızı yazmanızı isteyeceğiz."
+      ],
+      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
+        "E-posta adresinin size ait olduğundan emin olmak için ${ boldEmail } adresine gönderilen doğrulama kodunu yazın."
+      ],
+      "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
+        "Telefon numarasının size ait olduğundan emin olmak için ${ boldPhoneNumber } numarasına gönderilen doğrulama kodunu yazın."
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification code.": [
+        "Bu adresin gerçekten size ait olduğundan emin olmak için size doğrulama kodu bulunan bir e-posta göndereceğiz."
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification link.": [
+        "Bu adresin gerçekten size ait olduğundan emin olmak için size doğrulama bağlantısı bulunan bir e-posta göndereceğiz."
+      ],
+      "To make sure this number is really yours, we’ll send an SMS with a verification code.": [
+        "Bu numaranın gerçekten size ait olduğundan emin olmak için size doğrulama kodu bulunan bir SMS göndereceğiz."
+      ],
+      "Update": [
+        "Güncelle"
+      ],
+      "Update recovery email": [
+        "Kurtarma e-posta adresini güncelle"
+      ],
+      "Update recovery phone": [
+        "Kurtarma telefon numarasını güncelle"
+      ],
+      "Upgrade your plan to enable Emergency Access to your account. This will allow you to designate 1 to 5 people who will be able to reset your password for you.": [
+        "Hesabınızda acil erişim özelliğini açmak için tarifenizi yükseltin. Böylece parolanızı sizin adınıza sıfırlayabilecek 1 - 5 kişi belirleyebilirsiniz."
+      ],
+      "Verified password": [
+        "Parola doğrulanmış"
+      ],
+      "Verified recovery email": [
+        "Doğrulanmış kurtarma e-posta adresi"
+      ],
+      "Verified recovery phone": [
+        "Doğrulanmış kurtarma telefon numarası"
+      ],
+      "Verify": [
+        "Doğrula"
+      ],
+      "Verify password": [
+        "Parolayı doğrula"
+      ],
+      "Verify recovery email": [
+        "Kurtarma e-postasını doğrula"
+      ],
+      "Verify recovery phone": [
+        "Kurtarma telefon numarasını doğrula"
+      ],
+      "Verify your password": [
+        "Parola onayı"
+      ],
+      "Verify your recovery email": [
+        "Kurtarma e-postanızı doğrulayın"
+      ],
+      "Verify your recovery phone": [
+        "Kurtarma telefon numarasını doğrula"
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        "E-posta adresinizi doğrulamak hesabınızın güvenliğini arttırır ve yeni bir kurtarma seçeneği ekler."
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "Telefon numaranızı doğrulamak hesabınızın güvenliğini arttırır ve yeni bir kurtarma seçeneği ekler."
+      ],
+      "You can save a data backup on this device. This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset, simply by signing in on this device.": [
+        "Bu aygıta bir veri yedeği kaydedebilirsiniz. Böylece parolanızı sıfırladıktan sonra bu aygıtta oturum açarak hesabınızdaki e-postalara, kişilere, dosyalara, parolalara ve diğer tüm şifrelenmiş verilere yeniden erişebilirsiniz."
+      ],
+      "You can use email verification to regain access to your account if you forget your password.": [
+        "Parolanızı unutursanız e-posta adresi ile doğrulamayı kullanarak hesabınıza yeniden erişebilirsiniz."
+      ],
+      "You can use SMS verification to regain access to your account if you forget your password.": [
+        "Parolanızı unutursanız hesabınıza yeniden erişebilmek için SMS doğrulaması kullanabilirsiniz."
+      ],
+      "You can use your recovery email to regain access to your account if you forget your password.": [
+        "Parolanızı unutursanız kurtarma e-posta adresinizi kullanarak hesabınıza yeniden erişebilirsiniz."
+      ],
+      "You can use your recovery phone to regain access to your account if you forget your password.": [
+        "Parolanızı unutursanız hesabınıza yeniden erişebilmek için telefon numarası ile kurtarmayı kullanabilirsiniz."
+      ],
+      "You don’t need to open or read the file—just download it and store it somewhere safe.": [
+        "Dosyayı açmanız veya okumanız gerekmez. Yalnızca indirin ve güvenli bir yere kaydedin."
+      ],
+      "Your recovery checklist": [
+        "Kurtarma kontrol listeniz"
+      ],
+      "Your security setup": [
+        "Güvenlik kurulumunuz"
       ]
     }
   }

@@ -4629,6 +4629,12 @@
       ],
       "Your recovery contacts should be people you know and can contact easily.": [
         "I tuoi contatti di recupero dovrebbero essere persone che conosci e che puoi contattare facilmente."
+      ],
+      "Add 1 more": [
+        "Aggiungine ancora 1"
+      ],
+      "Explore plans": [
+        "Esplora i piani"
       ]
     },
     "Empty group name": {
@@ -10823,6 +10829,9 @@
       ],
       "ZIP code": [
         "Codice postale"
+      ],
+      "Enter current password": [
+        "Inserisci la password attuale"
       ]
     },
     "label": {
@@ -10831,6 +10840,9 @@
       ],
       "Recovery phone number": [
         "Numero di telefono di recupero"
+      ],
+      "Set recovery phone number": [
+        "Imposta il numero di telefono di recupero"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14338,6 +14350,9 @@
       ],
       "Your recovery setup is solid, with a few gaps left to close. Each option you add makes your safety net stronger.": [
         "La tua configurazione di recupero è solida, con poche lacune rimaste da chiudere. Ogni opzione che aggiungi rende la tua rete di sicurezza più forte."
+      ],
+      "Recovery score: ${ score }": [
+        "Punteggio di recupero: ${ score }"
       ]
     },
     "Recovery score item": {
@@ -14756,6 +14771,21 @@
     "Safety review": {
       "Review account safety": [
         "Controlla la sicurezza dell'account"
+      ],
+      "Code sent to ${ boldValue }": [
+        "Codice inviato a ${ boldValue }"
+      ],
+      "Invalid code": [
+        "Codice non valido"
+      ],
+      "Safety review": [
+        "Revisione della sicurezza"
+      ],
+      "Send a new code": [
+        "Inviare un nuovo codice"
+      ],
+      "update it now": [
+        "aggiornalo ora"
       ]
     },
     "saml: Action": {
@@ -19451,6 +19481,272 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Dopo la verifica, non rimuovere questo record TXT in quanto è necessario per confermare che tu continui a possedere il dominio."
+      ]
+    },
+    "safety_review": {
+      "${ BRAND_NAME } Account email": [
+        "Email dell'account ${ BRAND_NAME }"
+      ],
+      "Account protection": [
+        "Protezione dell'account"
+      ],
+      "Add": [
+        "Aggiungi"
+      ],
+      "Add an emergency contact": [
+        "Aggiungi un contatto di emergenza"
+      ],
+      "Add emergency contacts": [
+        "Aggiungi contatti di emergenza"
+      ],
+      "Add options": [
+        "Aggiungi opzioni"
+      ],
+      "Add people who you trust and can contact easily. Your emergency contact will be able to access your account and reset your password for you if needed.": [
+        "Aggiungi persone di cui ti fidi e che puoi contattare facilmente. Il tuo contatto di emergenza sarà in grado di accedere al tuo account e reimpostare la password per te se necessario."
+      ],
+      "Add people you trust and can contact easily. They will be able to help you unlock your data after you reset your password.": [
+        "Aggiungi persone di cui ti fidi e che puoi contattare facilmente. Saranno in grado di aiutarti a sbloccare i tuoi dati dopo aver reimpostato la password."
+      ],
+      "Add phone number": [
+        "Aggiungi numero di telefono"
+      ],
+      "Add recovery contacts": [
+        "Aggiungi contatti di recupero"
+      ],
+      "Add recovery email": [
+        "Aggiungi email di recupero"
+      ],
+      "Add recovery phone": [
+        "Aggiungi telefono di recupero"
+      ],
+      "Added emergency contacts": [
+        "Contatti di emergenza aggiunti"
+      ],
+      "Added recovery contacts": [
+        "Contatti di recupero aggiunti"
+      ],
+      "Added recovery email": [
+        "Email di recupero aggiunta"
+      ],
+      "Added recovery phone": [
+        "Telefono di recupero aggiunto"
+      ],
+      "Allow": [
+        "Consenti"
+      ],
+      "Allow data recovery from this device": [
+        "Consenti il recupero dei dati da questo dispositivo"
+      ],
+      "Allow password reset from the settings": [
+        "Consenti la reimpostazione della password dalle impostazioni"
+      ],
+      "Allow recovery by email": [
+        "Consenti il recupero via email"
+      ],
+      "Allow recovery by phone": [
+        "Consenti il recupero via telefono"
+      ],
+      "Allow scanning a QR code to sign in": [
+        "Consenti la scansione di un codice QR per accedere"
+      ],
+      "Allow trusted friends to unlock your data": [
+        "Consenti ad amici fidati di sbloccare i tuoi dati"
+      ],
+      "Back to ${ backLink.appNameString }": [
+        "Torna a ${ backLink.appNameString }"
+      ],
+      "Congratulations": [
+        "Congratulazioni"
+      ],
+      "Didn’t receive it? ${ sendANewCode }": [
+        "Non l'hai ricevuto? ${ sendANewCode }"
+      ],
+      "Done": [
+        "Fatto"
+      ],
+      "Download": [
+        "Scarica"
+      ],
+      "Download recovery file": [
+        "Scarica il file di recupero"
+      ],
+      "Downloaded recovery file": [
+        "File di recupero scaricato"
+      ],
+      "Emergency contacts enabled": [
+        "Contatti di emergenza attivati"
+      ],
+      "Enable device recovery": [
+        "Attiva il recupero tramite dispositivo"
+      ],
+      "Enable email recovery": [
+        "Attiva il recupero via email"
+      ],
+      "Enable emergency contacts": [
+        "Attiva i contatti di emergenza"
+      ],
+      "Enable password reset from settings": [
+        "Attiva la reimpostazione della password dalle impostazioni"
+      ],
+      "Enable phone recovery": [
+        "Attiva il recupero via telefono"
+      ],
+      "Enable QR code sign-in": [
+        "Attiva l'accesso con codice QR"
+      ],
+      "Enabled device recovery": [
+        "Recupero tramite dispositivo attivato"
+      ],
+      "Enabled email recovery": [
+        "Recupero via email attivato"
+      ],
+      "Enabled password reset from settings": [
+        "Reimpostazione della password dalle impostazioni attivata"
+      ],
+      "Enabled phone recovery": [
+        "Recupero via telefono attivato"
+      ],
+      "Enabled QR code sign-in": [
+        "Accesso con codice QR attivato"
+      ],
+      "Got it": [
+        "Capito"
+      ],
+      "Here's how you increased your account protection:": [
+        "Ecco come hai aumentato la protezione del tuo account:"
+      ],
+      "If you forget your password, you can sign in using a QR code. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
+        "Se dimentichi la tua password, puoi accedere utilizzando un codice QR. Tutto ciò di cui hai bisogno è aver effettuato l'accesso a un servizio ${ BRAND_NAME } su un altro dispositivo."
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, it will allow you to sign in and recover your data. It’s the only way to instantly restore everything, so make sure you keep it somewhere safe.": [
+        "Se rimani fuori dal tuo account ${ BRAND_NAME }, questo ti permetterà di accedere e recuperare i tuoi dati. È l'unico modo per ripristinare istantaneamente tutto, quindi assicurati di conservarla in un luogo sicuro."
+      ],
+      "If your recovery email has changed, ${ updateEmailLink }.": [
+        "Se la tua email di recupero è cambiata, ${ updateEmailLink }."
+      ],
+      "If your recovery phone has changed, ${ updatePhoneLink }.": [
+        "Se il tuo telefono di recupero è cambiato, ${ updatePhoneLink }."
+      ],
+      "Later": [
+        "Più tardi"
+      ],
+      "Protect your legacy with Emergency Access": [
+        "Proteggi la tua eredità con l'Accesso di Emergenza"
+      ],
+      "Save recovery phrase": [
+        "Salva la frase di recupero"
+      ],
+      "Saved recovery phrase": [
+        "Frase di recupero salvata"
+      ],
+      "Send verification code": [
+        "Invia il codice di verifica"
+      ],
+      "They must already have a ${ BRAND_NAME } Account.": [
+        "Devono già avere un account ${ BRAND_NAME }."
+      ],
+      "They will not be able to see or access your data.": [
+        "Non saranno in grado di vedere o accedere ai tuoi dati."
+      ],
+      "This will let you quickly access your ${ BRAND_NAME } Account so you can change your password.": [
+        "Questo ti permetterà di accedere rapidamente al tuo account ${ BRAND_NAME } in modo da poter modificare la tua password."
+      ],
+      "This will let you reset your account password if you’ve lost it, but are still signed in to ${ BRAND_NAME }. It’s often the easiest way to recover your account if you’re signed in.": [
+        "Questo ti consentirà di reimpostare la password del tuo account se l'hai persa, ma hai ancora effettuato l'accesso a ${ BRAND_NAME }. Spesso è il modo più semplice per recuperare il tuo account se hai effettuato l'accesso."
+      ],
+      "This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset.": [
+        "Questo ti permetterà di ripristinare l'accesso a email, contatti, file, password e qualsiasi altro dato crittografato sul tuo account dopo una reimpostazione della password."
+      ],
+      "To help you remember your password, we’ll periodically ask you to enter it.": [
+        "Per aiutarti a ricordare la tua password, ti chiederemo periodicamente di inserirla."
+      ],
+      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
+        "Per assicurarti che l'indirizzo email sia tuo, inserisci il codice di verifica inviato a ${ boldEmail }."
+      ],
+      "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
+        "Per assicurarti che il numero di telefono sia tuo, inserisci il codice di verifica inviato a ${ boldPhoneNumber }."
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification code.": [
+        "Per assicurarci che questo indirizzo sia davvero tuo, ti invieremo un'email con un codice di verifica."
+      ],
+      "To make sure this address is really yours, we’ll send an email with a verification link.": [
+        "Per assicurarti che questo indirizzo sia davvero tuo, ti invieremo un'email con un link di verifica."
+      ],
+      "To make sure this number is really yours, we’ll send an SMS with a verification code.": [
+        "Per assicurarci che questo numero sia davvero tuo, ti invieremo un SMS con un codice di verifica."
+      ],
+      "Update": [
+        "Aggiorna"
+      ],
+      "Update recovery email": [
+        "Aggiorna l'email di recupero"
+      ],
+      "Update recovery phone": [
+        "Aggiorna il telefono di recupero"
+      ],
+      "Upgrade your plan to enable Emergency Access to your account. This will allow you to designate 1 to 5 people who will be able to reset your password for you.": [
+        "Effettua l'upgrade del tuo piano per attivare l'Accesso di Emergenza al tuo account. Questo ti permetterà di designare da 1 a 5 persone che saranno in grado di reimpostare la password per te."
+      ],
+      "Verified password": [
+        "Password verificata"
+      ],
+      "Verified recovery email": [
+        "Email di recupero verificata"
+      ],
+      "Verified recovery phone": [
+        "Telefono di recupero verificato"
+      ],
+      "Verify": [
+        "Verifica"
+      ],
+      "Verify password": [
+        "Verifica password"
+      ],
+      "Verify recovery email": [
+        "Verifica l'email di recupero"
+      ],
+      "Verify recovery phone": [
+        "Verifica il telefono di recupero"
+      ],
+      "Verify your password": [
+        "Verifica la tua password"
+      ],
+      "Verify your recovery email": [
+        "Verifica la tua email di recupero"
+      ],
+      "Verify your recovery phone": [
+        "Verifica il tuo telefono di recupero"
+      ],
+      "Verifying your email address increases your account security and allows additional options for recovery.": [
+        "Verificare il tuo indirizzo email migliora la sicurezza del tuo account e consente opzioni di recupero aggiuntive."
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "Verificare il tuo numero di telefono migliora la sicurezza del tuo account e consente opzioni di recupero aggiuntive."
+      ],
+      "You can save a data backup on this device. This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset, simply by signing in on this device.": [
+        "Puoi salvare un backup dei dati su questo dispositivo. Questo ti permetterà di ripristinare l'accesso a email, contatti, file, password e qualsiasi altro dato crittografato sul tuo account dopo una reimpostazione della password, semplicemente accedendo su questo dispositivo."
+      ],
+      "You can use email verification to regain access to your account if you forget your password.": [
+        "Puoi utilizzare la verifica via email per riottenere l'accesso al tuo account se dimentichi la password."
+      ],
+      "You can use SMS verification to regain access to your account if you forget your password.": [
+        "Puoi utilizzare la verifica via SMS per riottenere l'accesso al tuo account se dimentichi la password."
+      ],
+      "You can use your recovery email to regain access to your account if you forget your password.": [
+        "Puoi utilizzare la tua email di recupero per riottenere l'accesso al tuo account se dimentichi la password."
+      ],
+      "You can use your recovery phone to regain access to your account if you forget your password.": [
+        "Puoi utilizzare il tuo telefono di recupero per riottenere l'accesso al tuo account se dimentichi la password."
+      ],
+      "You don’t need to open or read the file—just download it and store it somewhere safe.": [
+        "Non hai bisogno di aprire o leggere il file: scaricalo e basta e conservalo in un luogo sicuro."
+      ],
+      "Your recovery checklist": [
+        "La tua lista di controllo per il recupero"
+      ],
+      "Your security setup": [
+        "La tua configurazione di sicurezza"
       ]
     }
   }

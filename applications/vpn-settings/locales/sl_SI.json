@@ -12523,6 +12523,18 @@
     "Safety review": {
       "Review account safety": [
         "Preglejte varnost računa"
+      ],
+      "Code sent to ${ boldValue }": [
+        "Koda je poslana na ${ boldValue }"
+      ],
+      "Invalid code": [
+        "Neveljavna koda"
+      ],
+      "Safety review": [
+        "Varnostni pregled"
+      ],
+      "Send a new code": [
+        "Pošlji novo kodo"
       ]
     },
     "saml: Action": {
@@ -16225,6 +16237,11 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Po uspešni preveritvi ne odstranjujte tega zapisa TXT, saj je potreben za potrditev, da ste še vedno lastnik domene."
+      ]
+    },
+    "safety_review": {
+      "Later": [
+        "Kasneje"
       ]
     }
   }
