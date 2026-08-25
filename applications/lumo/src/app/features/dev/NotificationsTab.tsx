@@ -21,7 +21,9 @@ import type { DebugMaxModelOverride } from '../../services/usageLimitsStore';
 import {
     getRemainingForModelTier,
     setDebugMaxModelOverride,
+    setDebugWeeklyLimitExhausted,
     useDebugMaxModelOverride,
+    useDebugWeeklyLimitExhausted,
     useRemainingLimits,
 } from '../../services/usageLimitsStore';
 import type { ConversationId, SpaceId } from '../../types';
@@ -57,6 +59,7 @@ export const NotificationsTab = ({ currentConversationId, currentSpaceId }: Noti
     const debugOverrides = useLumoSelector(selectAllDebugLimitOverrides);
     const { lumoUserType } = useLumoPlan();
     const debugMaxOverride = useDebugMaxModelOverride();
+    const debugWeeklyLimitExhausted = useDebugWeeklyLimitExhausted();
     const remainingLimits = useRemainingLimits();
     const remainingMax = getRemainingForModelTier('lumo-max', remainingLimits);
 
@@ -218,6 +221,24 @@ export const NotificationsTab = ({ currentConversationId, currentSpaceId }: Noti
                 <div className="debug-view-hint">
                     {c('lumo: Debug View')
                         .t`Forces the inline composer banner into "approaching" or "at limit" state so you can preview it in any context.`}
+                </div>
+            </div>
+
+            <div className="debug-view-header" style={{ marginTop: '12px' }}>
+                <span className="debug-view-header-icon">📅</span>
+                {c('lumo: Debug View').t`Weekly chat limit upsell`}
+            </div>
+            <div className="debug-view-actions">
+                <button
+                    className="debug-view-btn debug-view-btn--secondary"
+                    onClick={() => setDebugWeeklyLimitExhausted(!debugWeeklyLimitExhausted)}
+                >
+                    🪫 {c('lumo: Debug View').t`Weekly limit upsell`}:{' '}
+                    {debugWeeklyLimitExhausted ? c('lumo: Debug View').t`on` : c('lumo: Debug View').t`off`}
+                </button>
+                <div className="debug-view-hint">
+                    {c('lumo: Debug View')
+                        .t`Forces Lite and Max pools to zero and lets UsageLimitsTierSync dispatch the tier error, so you can preview the weekly limit UpsellCard above the composer. Hidden for Plus accounts. Persists across reloads until switched off.`}
                 </div>
             </div>
 

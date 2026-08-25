@@ -11,6 +11,7 @@ type Listener = () => void;
 export type DebugMaxModelOverride = Exclude<MaxModelAvailability, 'available'>;
 
 const DEBUG_MAX_AVAILABILITY_KEY = 'lumo_debug_max_availability';
+const DEBUG_WEEKLY_LIMIT_EXHAUSTED_KEY = 'lumo_debug_weekly_limit_exhausted';
 
 const readPersistedMaxOverride = (): DebugMaxModelOverride | null => {
     try {
@@ -21,8 +22,17 @@ const readPersistedMaxOverride = (): DebugMaxModelOverride | null => {
     }
 };
 
+const readPersistedWeeklyLimitExhausted = (): boolean => {
+    try {
+        return localStorage.getItem(DEBUG_WEEKLY_LIMIT_EXHAUSTED_KEY) === 'true';
+    } catch {
+        return false;
+    }
+};
+
 let remainingLimits: LumoRemainingLimits | null = null;
 let debugMaxOverride = readPersistedMaxOverride();
+let debugWeeklyLimitExhausted = readPersistedWeeklyLimitExhausted();
 /**
  * What consumers actually observe: the backend limits with any debug override applied.
  * Cached so `useSyncExternalStore` keeps seeing a stable reference between updates.
@@ -32,12 +42,22 @@ const listeners = new Set<Listener>();
 
 export type UsageModelTier = Exclude<ModelTier, 'auto'>;
 
-function publish(): void {
+function computeEffectiveLimits(): LumoRemainingLimits | null {
+    if (debugWeeklyLimitExhausted) {
+        return { ...(remainingLimits ?? {}), lite: 0, max: 0 };
+    }
+
     // With no backend limits yet, an override still has to produce an object — a `null`
     // snapshot means "unknown", which every selectability check treats as "allowed".
-    effectiveLimits =
-        debugMaxOverride === 'unavailable_limit_reached' ? { ...(remainingLimits ?? {}), max: 0 } : remainingLimits;
+    if (debugMaxOverride === 'unavailable_limit_reached') {
+        return { ...(remainingLimits ?? {}), max: 0 };
+    }
 
+    return remainingLimits;
+}
+
+function publish(): void {
+    effectiveLimits = computeEffectiveLimits();
     listeners.forEach((listener) => listener());
 }
 
@@ -89,6 +109,32 @@ export function getDebugMaxModelOverride(): DebugMaxModelOverride | null {
 
 export function useDebugMaxModelOverride(): DebugMaxModelOverride | null {
     return useSyncExternalStore(subscribeRemainingLimits, getDebugMaxModelOverride, getDebugMaxModelOverride);
+}
+
+/**
+ * Debug View only: forces every chat model pool to zero so the weekly limit upsell
+ * can be previewed without waiting for a real quota exhaustion.
+ */
+export function setDebugWeeklyLimitExhausted(exhausted: boolean): void {
+    debugWeeklyLimitExhausted = exhausted;
+    try {
+        if (exhausted) {
+            localStorage.setItem(DEBUG_WEEKLY_LIMIT_EXHAUSTED_KEY, 'true');
+        } else {
+            localStorage.removeItem(DEBUG_WEEKLY_LIMIT_EXHAUSTED_KEY);
+        }
+    } catch {
+        // Storage unavailable — the override still applies for this session.
+    }
+    publish();
+}
+
+export function getDebugWeeklyLimitExhausted(): boolean {
+    return debugWeeklyLimitExhausted;
+}
+
+export function useDebugWeeklyLimitExhausted(): boolean {
+    return useSyncExternalStore(subscribeRemainingLimits, getDebugWeeklyLimitExhausted, getDebugWeeklyLimitExhausted);
 }
 
 export function isLimitExhausted(remaining: number | undefined): boolean {
