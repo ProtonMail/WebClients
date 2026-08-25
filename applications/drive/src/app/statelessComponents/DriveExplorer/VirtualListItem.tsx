@@ -23,6 +23,7 @@ interface VirtualListItemProps {
     selection: DriveExplorerSelection;
     events?: DriveExplorerEvents;
     onObserve: (element: HTMLElement | null, uid: string) => void;
+    measureElement?: (element: HTMLElement | null) => void;
     getDragMoveControls?: (uid: string) => DragMoveControls;
     isMultiSelectionDisabled?: boolean;
     showCheckboxColumn?: boolean;
@@ -41,6 +42,7 @@ export function VirtualListItem({
     selection,
     events,
     onObserve,
+    measureElement,
     getDragMoveControls,
     isMultiSelectionDisabled,
     showCheckboxColumn,
@@ -74,19 +76,20 @@ export function VirtualListItem({
 
     return (
         <DriveExplorerRow
-            className="absolute top-0 left-0 w-full h-custom"
+            className="absolute top-0 left-0 w-full min-h-custom"
             key={itemId}
             itemId={itemId}
             index={virtualItem.index}
             cells={cells}
             style={{
                 transform: `translateY(${virtualItem.start}px)`,
-                '--h-custom': `${virtualItem.size}px`,
+                '--min-h-custom': `${virtualItem.size}px`,
             }}
             conditions={conditions}
             selection={selection}
             events={events}
             onObserve={onObserve}
+            measureElement={measureElement}
             dragMoveControls={itemId ? getDragMoveControls?.(itemId) : undefined}
             isMultiSelectionDisabled={isMultiSelectionDisabled}
             showCheckboxColumn={showCheckboxColumn}
