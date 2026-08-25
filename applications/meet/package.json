@@ -48,7 +48,7 @@
         "cross-env": "^10.1.0",
         "date-fns-tz": "^2.0.1",
         "livekit-client": "2.22.0",
-        "mediabunny": "^1.55.1",
+        "mediabunny": "^1.55.2",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
         "react-redux": "^9.3.0",
@@ -61,13 +61,13 @@
         "@proton/i18n": "workspace:packages/i18n",
         "@testing-library/jest-dom": "^6.9.1",
         "@testing-library/react": "^15.0.7",
-        "@vitejs/plugin-react": "^6.0.5",
-        "@vitest/coverage-v8": "^4.1.10",
+        "@vitejs/plugin-react": "^6.1.0",
+        "@vitest/coverage-v8": "^4.1.11",
         "@vitest/ui": "3.2.7",
-        "eslint": "^10.8.1",
-        "happy-dom": "^20.11.2",
+        "eslint": "^10.9.0",
+        "happy-dom": "^20.11.6",
         "prettier": "^3.9.6",
         "typescript": "^6.0.3",
-        "vitest": "^4.1.10"
+        "vitest": "^4.1.11"
     }
 }
