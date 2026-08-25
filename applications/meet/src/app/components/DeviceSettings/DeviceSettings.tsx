@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -18,11 +18,14 @@ import {
     selectMicrophonePermission,
     selectMicrophoneState,
     selectMicrophones,
+    selectSortedFilteredCameras,
+    selectSortedFilteredMicrophones,
+    selectSortedFilteredSpeakers,
     selectSpeakerState,
     selectSpeakers,
 } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
 import type { SerializableDeviceInfo } from '@proton/meet/utils/deviceUtils';
-import { filterDevices, isDefaultDevice, resolveDevice } from '@proton/meet/utils/deviceUtils';
+import { isDefaultDevice, resolveDevice } from '@proton/meet/utils/deviceUtils';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
@@ -128,9 +131,9 @@ export const DeviceSettings = ({
         }
     }, [joiningInProgress]);
 
-    const filteredMicrophones = useMemo(() => filterDevices(microphones), [microphones]);
-    const filteredSpeakers = useMemo(() => filterDevices(speakers), [speakers]);
-    const filteredCameras = useMemo(() => filterDevices(cameras), [cameras]);
+    const filteredMicrophones = useMeetSelector(selectSortedFilteredMicrophones);
+    const filteredSpeakers = useMeetSelector(selectSortedFilteredSpeakers);
+    const filteredCameras = useMeetSelector(selectSortedFilteredCameras);
 
     const { viewportWidth } = useActiveBreakpoint();
 
@@ -363,35 +366,36 @@ export const DeviceSettings = ({
 
                                 if (newIsOpen) {
                                     setIsVideoSettingsOpen(false);
-                                    setIsBackgroundsOpen(false);}
-                        }}
-                        Content={AudioSettingsDropdown}
-                        contentProps={{
-                            microphones: filteredMicrophones,
-                            speakers: filteredSpeakers,
-                            handleInputDeviceChange: handleMicrophoneChange,
-                            handleOutputDeviceChange: handleOutputDeviceChange,
-                            audioDeviceId: selectedMicrophoneId,
-                            activeOutputDeviceId: selectedAudioOutputDeviceId,
-                            microphoneState,
-                            speakerState,
-                            isMicrophoneLoading: (deviceId: string) => isDeviceLoading('microphone', deviceId),
-                            isSpeakerLoading: (deviceId: string) => isDeviceLoading('speaker', deviceId),
-                            withMicrophoneLoading: (deviceId: string, operation: () => Promise<void>) =>
-                                withLoading('microphone', deviceId, operation),
-                            withSpeakerLoading: (deviceId: string, operation: () => Promise<void>) =>
-                                withLoading('speaker', deviceId, operation),
-                            showDeviceTests: true,
-                        }}
-                    />
-                    <DeviceSelect
-                        label={cameraLabel}
-                        icon="meet-camera"
-                        title={c('Label').t`Video`}
-                        disabled={cameraHasWarning}
-                        isOpen={isVideoSettingsOpen}
-                        setIsOpen={(newIsOpen) => {
-                            setIsVideoSettingsOpen(newIsOpen);
+                                    setIsBackgroundsOpen(false);
+                                }
+                            }}
+                            Content={AudioSettingsDropdown}
+                            contentProps={{
+                                microphones: filteredMicrophones,
+                                speakers: filteredSpeakers,
+                                handleInputDeviceChange: handleMicrophoneChange,
+                                handleOutputDeviceChange: handleOutputDeviceChange,
+                                audioDeviceId: selectedMicrophoneId,
+                                activeOutputDeviceId: selectedAudioOutputDeviceId,
+                                microphoneState,
+                                speakerState,
+                                isMicrophoneLoading: (deviceId: string) => isDeviceLoading('microphone', deviceId),
+                                isSpeakerLoading: (deviceId: string) => isDeviceLoading('speaker', deviceId),
+                                withMicrophoneLoading: (deviceId: string, operation: () => Promise<void>) =>
+                                    withLoading('microphone', deviceId, operation),
+                                withSpeakerLoading: (deviceId: string, operation: () => Promise<void>) =>
+                                    withLoading('speaker', deviceId, operation),
+                                showDeviceTests: true,
+                            }}
+                        />
+                        <DeviceSelect
+                            label={cameraLabel}
+                            icon="meet-camera"
+                            title={c('Label').t`Video`}
+                            disabled={cameraHasWarning}
+                            isOpen={isVideoSettingsOpen}
+                            setIsOpen={(newIsOpen) => {
+                                setIsVideoSettingsOpen(newIsOpen);
 
                                 if (newIsOpen) {
                                     setIsAudioSettingsOpen(false);

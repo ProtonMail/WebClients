@@ -1,26 +1,30 @@
 import { useEffect, useMemo, useRef } from 'react';
 
 import { useRoomContext } from '@livekit/components-react';
-import { ConnectionState, type LocalTrack, Room, RoomEvent, Track } from 'livekit-client';
+import { ConnectionState, type LocalTrack, MediaDeviceFailure, RoomEvent, Track } from 'livekit-client';
 import debounce from 'lodash/debounce';
-import isEqual from 'lodash/isEqual';
 
+import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import {
     selectActiveAudioOutputId,
     selectActiveCameraId,
     selectActiveMicrophoneId,
+    selectFilteredCameras,
+    selectFilteredMicrophones,
+    selectFilteredSpeakers,
     selectMicrophoneState,
     selectPreferredCameraId,
     selectSpeakerState,
 } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
 import type { DeviceKind } from '@proton/meet/store/slices/deviceManagementSlice/types';
-import { filterDevices, getDefaultDevice, isDefaultDevice } from '@proton/meet/utils/deviceUtils';
-import isTruthy from '@proton/utils/isTruthy';
+import { type SerializableDeviceInfo, isDefaultDevice } from '@proton/meet/utils/deviceUtils';
 
 import { useStableCallback } from '../../../hooks/useStableCallback';
 import type { SwitchActiveDevice, ToggleAudioType, ToggleVideoType } from '../../../types';
 import { supportsSetSinkId } from '../../../utils/browser';
+
+const DEVICE_CHANGE_DEBOUNCE_MS = 200;
 
 const dynamicDeviceUpdate = ({
     kind,
@@ -33,10 +37,10 @@ const dynamicDeviceUpdate = ({
     updateFunction,
 }: {
     kind: DeviceKind;
-    deviceList: MediaDeviceInfo[];
+    deviceList: SerializableDeviceInfo[];
     deviceId: string | null;
     preferredDeviceId: string | null;
-    systemDefaultDevice: MediaDeviceInfo | null;
+    systemDefaultDevice: SerializableDeviceInfo | null;
     previousSystemDefaultDeviceId: string | null;
     useSystemDefault: boolean;
     updateFunction: (newDeviceId: string) => void;
@@ -79,12 +83,6 @@ const dynamicDeviceUpdate = ({
     }
 };
 
-interface DeviceIdSets {
-    microphones: Set<string>;
-    cameras: Set<string>;
-    speakers: Set<string>;
-}
-
 interface UseDynamicDeviceHandlingParams {
     toggleVideo: ToggleVideoType;
     toggleAudio: ToggleAudioType;
@@ -97,6 +95,11 @@ export const useDynamicDeviceHandling = ({
     switchActiveDevice,
 }: UseDynamicDeviceHandlingParams) => {
     const room = useRoomContext();
+    const { reportMeetError } = useMeetErrorReporting();
+
+    const filteredMicrophones = useMeetSelector(selectFilteredMicrophones);
+    const filteredCameras = useMeetSelector(selectFilteredCameras);
+    const filteredSpeakers = useMeetSelector(selectFilteredSpeakers);
 
     const activeMicrophoneDeviceId = useMeetSelector(selectActiveMicrophoneId);
     const activeAudioOutputDeviceId = useMeetSelector(selectActiveAudioOutputId);
@@ -105,16 +108,6 @@ export const useDynamicDeviceHandling = ({
     const preferredCameraId = useMeetSelector(selectPreferredCameraId);
     const microphoneState = useMeetSelector(selectMicrophoneState);
     const speakerState = useMeetSelector(selectSpeakerState);
-
-    const previousDevices = useRef<{
-        microphones: MediaDeviceInfo[];
-        cameras: MediaDeviceInfo[];
-        speakers: MediaDeviceInfo[];
-    }>({
-        microphones: [],
-        cameras: [],
-        speakers: [],
-    });
 
     // Track previous system default device IDs to detect OS default device changes
     const previousSystemDefaultsRef = useRef<{
@@ -133,173 +126,152 @@ export const useDynamicDeviceHandling = ({
         previousSystemDefaultsRef.current.speaker = speakerState.systemDefault.deviceId;
     }
 
-    const handleDeviceChange = useStableCallback(async () => {
-        const getLocalDevicesWithErrorHandling = async (deviceType: DeviceKind) => {
-            try {
-                return await Room.getLocalDevices(deviceType, false);
-            } catch (error) {
-                return [];
-            }
-        };
+    const handleMicrophoneListChange = useStableCallback(() => {
+        dynamicDeviceUpdate({
+            kind: 'audioinput',
+            deviceList: filteredMicrophones,
+            deviceId: activeMicrophoneDeviceId,
+            preferredDeviceId: microphoneState.preferredDeviceId,
+            systemDefaultDevice: microphoneState.systemDefault,
+            previousSystemDefaultDeviceId: previousSystemDefaultsRef.current.microphone,
+            useSystemDefault: microphoneState.useSystemDefault,
+            updateFunction: (newDeviceId: string) => {
+                if (room.state === ConnectionState.Connected) {
+                    void toggleAudio({ audioDeviceId: newDeviceId, preserveCache: true });
+                } else {
+                    void switchActiveDevice({
+                        deviceType: 'audioinput',
+                        deviceId: newDeviceId,
+                        isSystemDefaultDevice: true,
+                        preserveDefaultDevice: true,
+                    });
+                }
+            },
+        });
 
-        try {
-            // Getting the devices using the static method on Room
-            const [microphones, cameras, speakers] = await Promise.all([
-                getLocalDevicesWithErrorHandling('audioinput'),
-                getLocalDevicesWithErrorHandling('videoinput'),
-                getLocalDevicesWithErrorHandling('audiooutput'),
-            ]);
-
-            const microphonesAfterDeviceChange = filterDevices(microphones);
-            const camerasAfterDeviceChange = filterDevices(cameras);
-            const speakersAfterDeviceChange = filterDevices(speakers);
-
-            const currentDeviceIdSets: DeviceIdSets = {
-                cameras: new Set(camerasAfterDeviceChange.map((device) => device.deviceId)),
-                microphones: new Set(microphonesAfterDeviceChange.map((device) => device.deviceId)),
-                speakers: new Set(speakersAfterDeviceChange.map((device) => device.deviceId)),
-            };
-
-            const previousDeviceIdSets: DeviceIdSets = {
-                microphones: new Set(previousDevices.current.microphones.map((device) => device.deviceId)),
-                cameras: new Set(previousDevices.current.cameras.map((device) => device.deviceId)),
-                speakers: new Set(previousDevices.current.speakers.map((device) => device.deviceId)),
-            };
-
-            const areDeviceIdSetsEqual = Object.fromEntries(
-                Object.entries(currentDeviceIdSets).map(([key, set]) => [
-                    key as keyof DeviceIdSets,
-                    isEqual(set, previousDeviceIdSets[key as keyof typeof previousDeviceIdSets]),
-                ])
-            ) as { [K in keyof DeviceIdSets]: boolean };
-
-            const currentMicrophoneSystemDefault = getDefaultDevice(microphones);
-            const currentSpeakerSystemDefault = getDefaultDevice(speakers);
-
-            // Special check for system default that always have the same 'default' label
-            const hasSystemDefaultChanged = {
-                microphones:
-                    previousSystemDefaultsRef.current.microphone !== null &&
-                    currentMicrophoneSystemDefault?.deviceId !== previousSystemDefaultsRef.current.microphone,
-                speakers:
-                    previousSystemDefaultsRef.current.speaker !== null &&
-                    currentSpeakerSystemDefault?.deviceId !== previousSystemDefaultsRef.current.speaker,
-            };
-
-            const anySystemDefaultChanged = Object.values(hasSystemDefaultChanged).some(Boolean);
-
-            // Return if no device changes and no system default changes
-            if (Object.values(areDeviceIdSetsEqual).every((equal) => equal) && !anySystemDefaultChanged) {
-                return;
-            }
-
-            previousDevices.current = {
-                microphones: microphonesAfterDeviceChange,
-                cameras: camerasAfterDeviceChange,
-                speakers: speakersAfterDeviceChange,
-            };
-
-            const deviceConfigs = [
-                (!areDeviceIdSetsEqual.microphones || hasSystemDefaultChanged.microphones) && {
-                    kind: 'audioinput' as const,
-                    deviceList: microphonesAfterDeviceChange,
-                    deviceId: activeMicrophoneDeviceId,
-                    preferredDeviceId: microphoneState.preferredDeviceId,
-                    systemDefaultDevice: currentMicrophoneSystemDefault,
-                    previousSystemDefaultDeviceId: previousSystemDefaultsRef.current.microphone,
-                    useSystemDefault: microphoneState.useSystemDefault,
-                    updateFunction: (newDeviceId: string) => {
-                        if (room.state === ConnectionState.Connected) {
-                            void toggleAudio({
-                                audioDeviceId: newDeviceId,
-                                preserveCache: true,
-                            });
-                        } else {
-                            void switchActiveDevice({
-                                deviceType: 'audioinput',
-                                deviceId: newDeviceId,
-                                isSystemDefaultDevice: true,
-                                preserveDefaultDevice: true,
-                            });
-                        }
-                    },
-                },
-                !areDeviceIdSetsEqual.cameras && {
-                    kind: 'videoinput' as const,
-                    deviceList: camerasAfterDeviceChange,
-                    deviceId: activeCameraDeviceId,
-                    preferredDeviceId: preferredCameraId,
-                    systemDefaultDevice: null,
-                    previousSystemDefaultDeviceId: null,
-                    useSystemDefault: false,
-                    updateFunction: async (newDeviceId: string) => {
-                        if (room.state === ConnectionState.Connected) {
-                            const cameraTrack = room.localParticipant.getTrackPublication(Track.Source.Camera)?.track;
-
-                            // In case of unplugging a device, we need this extra cleanup if there was a background blur processor
-                            if (cameraTrack?.getProcessor()) {
-                                await room.localParticipant.unpublishTrack(cameraTrack as LocalTrack);
-                            }
-
-                            void toggleVideo({
-                                videoDeviceId: newDeviceId,
-                                preserveCache: true,
-                                updateUserIntent: false,
-                            });
-                        } else {
-                            void switchActiveDevice({
-                                deviceType: 'videoinput',
-                                deviceId: newDeviceId,
-                                isSystemDefaultDevice: true,
-                                preserveDefaultDevice: true,
-                            });
-                        }
-                    },
-                },
-                (!areDeviceIdSetsEqual.speakers || hasSystemDefaultChanged.speakers) && {
-                    kind: 'audiooutput' as const,
-                    deviceList: speakersAfterDeviceChange,
-                    deviceId: activeAudioOutputDeviceId,
-                    preferredDeviceId: speakerState.preferredDeviceId,
-                    systemDefaultDevice: currentSpeakerSystemDefault,
-                    previousSystemDefaultDeviceId: previousSystemDefaultsRef.current.speaker,
-                    useSystemDefault: speakerState.useSystemDefault,
-                    updateFunction: (newDeviceId: string) => {
-                        if (supportsSetSinkId()) {
-                            void switchActiveDevice({
-                                deviceType: 'audiooutput',
-                                deviceId: newDeviceId,
-                                isSystemDefaultDevice: true,
-                                preserveDefaultDevice: true,
-                            });
-                        }
-                    },
-                },
-            ].filter(isTruthy);
-
-            deviceConfigs.forEach((config) => dynamicDeviceUpdate(config));
-
-            // Update the ref with current system default device IDs for next change detection
-            previousSystemDefaultsRef.current = {
-                microphone: currentMicrophoneSystemDefault?.deviceId ?? null,
-                speaker: currentSpeakerSystemDefault?.deviceId ?? null,
-            };
-        } catch (error) {
-            // eslint-disable-next-line no-console
-            console.error(error);
-        }
+        previousSystemDefaultsRef.current.microphone = microphoneState.systemDefault?.deviceId ?? null;
     });
 
-    const debouncedHandleDeviceChange = useMemo(
-        () => debounce(handleDeviceChange, 200, { leading: false, trailing: true }),
-        [handleDeviceChange]
+    const handleCameraListChange = useStableCallback(() => {
+        dynamicDeviceUpdate({
+            kind: 'videoinput',
+            deviceList: filteredCameras,
+            deviceId: activeCameraDeviceId,
+            preferredDeviceId: preferredCameraId,
+            systemDefaultDevice: null,
+            previousSystemDefaultDeviceId: null,
+            useSystemDefault: false,
+            updateFunction: async (newDeviceId: string) => {
+                if (room.state !== ConnectionState.Connected) {
+                    void switchActiveDevice({
+                        deviceType: 'videoinput',
+                        deviceId: newDeviceId,
+                        isSystemDefaultDevice: true,
+                        preserveDefaultDevice: true,
+                    });
+                    return;
+                }
+
+                const cameraTrack = room.localParticipant.getTrackPublication(Track.Source.Camera)?.track;
+
+                // In case of unplugging a device, we need this extra cleanup if there was a background blur processor
+                if (cameraTrack?.getProcessor()) {
+                    await room.localParticipant.unpublishTrack(cameraTrack as LocalTrack);
+                }
+
+                void toggleVideo({ videoDeviceId: newDeviceId, preserveCache: true, updateUserIntent: false });
+            },
+        });
+    });
+
+    const handleSpeakerListChange = useStableCallback(() => {
+        dynamicDeviceUpdate({
+            kind: 'audiooutput',
+            deviceList: filteredSpeakers,
+            deviceId: activeAudioOutputDeviceId,
+            preferredDeviceId: speakerState.preferredDeviceId,
+            systemDefaultDevice: speakerState.systemDefault,
+            previousSystemDefaultDeviceId: previousSystemDefaultsRef.current.speaker,
+            useSystemDefault: speakerState.useSystemDefault,
+            updateFunction: (newDeviceId: string) => {
+                if (supportsSetSinkId()) {
+                    void switchActiveDevice({
+                        deviceType: 'audiooutput',
+                        deviceId: newDeviceId,
+                        isSystemDefaultDevice: true,
+                        preserveDefaultDevice: true,
+                    });
+                }
+            },
+        });
+
+        previousSystemDefaultsRef.current.speaker = speakerState.systemDefault?.deviceId ?? null;
+    });
+
+    const debouncedMicrophoneListChange = useMemo(
+        () => debounce(handleMicrophoneListChange, DEVICE_CHANGE_DEBOUNCE_MS, { leading: false, trailing: true }),
+        [handleMicrophoneListChange]
+    );
+
+    const debouncedCameraListChange = useMemo(
+        () => debounce(handleCameraListChange, DEVICE_CHANGE_DEBOUNCE_MS, { leading: false, trailing: true }),
+        [handleCameraListChange]
+    );
+
+    const debouncedSpeakerListChange = useMemo(
+        () => debounce(handleSpeakerListChange, DEVICE_CHANGE_DEBOUNCE_MS, { leading: false, trailing: true }),
+        [handleSpeakerListChange]
     );
 
     useEffect(() => {
-        room.on(RoomEvent.MediaDevicesChanged, debouncedHandleDeviceChange);
+        if (!filteredMicrophones.length) {
+            return;
+        }
+
+        debouncedMicrophoneListChange();
+
+        return () => debouncedMicrophoneListChange.cancel();
+    }, [filteredMicrophones, microphoneState.systemDefault?.deviceId, debouncedMicrophoneListChange]);
+
+    useEffect(() => {
+        if (!filteredCameras.length) {
+            return;
+        }
+
+        debouncedCameraListChange();
+
+        return () => debouncedCameraListChange.cancel();
+    }, [filteredCameras, debouncedCameraListChange]);
+
+    useEffect(() => {
+        if (!filteredSpeakers.length) {
+            return;
+        }
+
+        debouncedSpeakerListChange();
+
+        return () => debouncedSpeakerListChange.cancel();
+    }, [filteredSpeakers, speakerState.systemDefault?.deviceId, debouncedSpeakerListChange]);
+
+    // Report to sentry when livekit has device errors
+    // https://docs.livekit.io/reference/client-sdk-js/enums/RoomEvent.html#mediadeviceserror
+    useEffect(() => {
+        const handleMediaDevicesError = (error: Error, kind: MediaDeviceKind | undefined) => {
+            const failure = MediaDeviceFailure.getFailure(error) ?? 'Unknown';
+
+            reportMeetError(`Livekit MediaDevicesError ${failure}`, {
+                error: error,
+                tags: {
+                    failure,
+                    mediaDeviceKind: kind,
+                },
+            });
+        };
+
+        room.on(RoomEvent.MediaDevicesError, handleMediaDevicesError);
 
         return () => {
-            room.off(RoomEvent.MediaDevicesChanged, debouncedHandleDeviceChange);
+            room.off(RoomEvent.MediaDevicesError, handleMediaDevicesError);
         };
-    }, [room, debouncedHandleDeviceChange]);
+    }, [reportMeetError, room]);
 };

@@ -1,3 +1,4 @@
+import type { ReportMeetError } from '@proton/meet/hooks/useMeetErrorReporting';
 import { isSafari } from '@proton/shared/lib/helpers/browser';
 
 /**
@@ -13,12 +14,22 @@ import { isSafari } from '@proton/shared/lib/helpers/browser';
  * throttling the AudioContext and the WebRTC pipeline in background/inactive tabs —
  * which would otherwise cause gradual audio loss after several minutes.
  */
-export const createMeetAudioContext = (): {
+export const createMeetAudioContext = ({
+    sampleRate = 48000,
+    reportMeetError,
+}: {
+    /**
+     * Set sample rate for the AudioContext.
+     * If not set, will use the default sample rate of the output device at the moment of creation.
+     */
+    sampleRate?: number;
+    reportMeetError: ReportMeetError;
+}): {
     audioContext: AudioContext;
     setSinkId: (deviceId: string) => void;
     cleanup: () => void;
 } => {
-    const audioContext = new AudioContext({ latencyHint: 'interactive' });
+    const audioContext = new AudioContext({ latencyHint: 'interactive', sampleRate });
 
     // setSinkId is supported in Chrome 110+ but not yet in the TypeScript lib types.
     const ctx = audioContext as AudioContext & { setSinkId?: (sinkId: string) => Promise<void> };
@@ -27,12 +38,16 @@ export const createMeetAudioContext = (): {
     // an 'error' event on the AudioContext. Reset the sinkId to the system default so
     // audio re-routes to the fallback device without requiring a page refresh.
     const onAudioContextError = () => {
-        ctx.setSinkId?.('').catch(() => {});
+        ctx.setSinkId?.('').catch((error) => {
+            reportMeetError('Error setting sink id after audio context error', error);
+        });
     };
     audioContext.addEventListener('error', onAudioContextError);
 
     const setSinkId = (deviceId: string) => {
-        ctx.setSinkId?.(deviceId).catch(() => {});
+        ctx.setSinkId?.(deviceId).catch((error) => {
+            reportMeetError('Error setting sink id', { context: { error, deviceId } });
+        });
     };
 
     if (!isSafari()) {
