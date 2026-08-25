@@ -1,17 +1,7 @@
-import { useEffect, useState } from 'react';
-
 import { c } from 'ttag';
 
-import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import { IcBrandProtonDrive } from '@proton/icons/icons/IcBrandProtonDrive';
 import { IcBrandProtonDriveFilled } from '@proton/icons/icons/IcBrandProtonDriveFilled';
-import type { DesktopConnector } from '@proton/lumo-api-client/core/desktop-tools';
-import {
-    getDesktopConnectors,
-    isDesktopEnvironment,
-    setDesktopConnectorEnabled,
-    subscribeDesktopConnectors,
-} from '@proton/lumo-api-client/core/desktop-tools';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useLumoFlags } from '../../hooks/useLumoFlags';
@@ -34,73 +24,6 @@ interface UploadMenuDropdownProps extends Pick<MenuDropdownProps, 'isOpen' | 'an
     isAgent?: boolean;
 }
 
-const useDesktopConnectors = (active: boolean) => {
-    const [connectors, setConnectors] = useState<DesktopConnector[]>([]);
-
-    useEffect(() => {
-        if (!active) {
-            return;
-        }
-        const load = () => {
-            void getDesktopConnectors().then(setConnectors);
-        };
-        load();
-        return subscribeDesktopConnectors(load);
-    }, [active]);
-
-    const toggle = (connector: DesktopConnector) => {
-        const next = !connector.enabled;
-        setConnectors((prev) => prev.map((c) => (c.id === connector.id ? { ...c, enabled: next } : c)));
-        void setDesktopConnectorEnabled(connector.id, next);
-    };
-
-    return { connectors, toggle };
-};
-
-const ConnectorList = ({ onBack }: { onBack: () => void }) => {
-    const { connectors, toggle } = useDesktopConnectors(true);
-    const available = connectors.filter((c) => c.connected);
-
-    return (
-        <>
-            <DropdownMenuButton className="justify-start" onClick={onBack}>
-                <div className="flex items-center gap-2 w-full">
-                    <LumoIcon name="ChevronLeft" size={16} />
-                    <span className="text-sm font-medium">{c('collider_2025: Action').t`Connectors`}</span>
-                </div>
-            </DropdownMenuButton>
-            {available.length === 0 && (
-                <div className="px-4 py-2 text-xs color-hint">{c('collider_2025: Info')
-                    .t`No connected connectors`}</div>
-            )}
-            {available.map((connector) => (
-                <DropdownMenuButton key={connector.id} className="justify-start" onClick={() => toggle(connector)}>
-                    <div
-                        className="flex flex-nowrap items-center gap-3 w-full"
-                        style={{ opacity: connector.enabled ? 1 : 0.4 }}
-                    >
-                        <span className="shrink-0 flex items-center">
-                            {connector.icon ? (
-                                <img src={connector.icon} alt="" width={20} height={20} />
-                            ) : (
-                                <LumoIcon name="Blocks" size={20} />
-                            )}
-                        </span>
-                        <span className="text-sm font-medium flex-1 min-w-0 text-ellipsis text-left">
-                            {connector.display_name}
-                        </span>
-                        <span className="text-xs color-hint shrink-0">
-                            {connector.enabled
-                                ? c('collider_2025: Info').t`Enabled`
-                                : c('collider_2025: Info').t`Disabled`}
-                        </span>
-                    </div>
-                </DropdownMenuButton>
-            ))}
-        </>
-    );
-};
-
 export const UploadMenuDropdown = ({
     isOpen,
     anchorRef,
@@ -112,14 +35,6 @@ export const UploadMenuDropdown = ({
     isAgent = false,
 }: UploadMenuDropdownProps) => {
     const { imageTools: ffImageToolsEnabled } = useLumoFlags();
-    const [view, setView] = useState<'main' | 'connectors'>('main');
-    const showConnectors = isDesktopEnvironment();
-
-    useEffect(() => {
-        if (!isOpen) {
-            setView('main');
-        }
-    }, [isOpen]);
 
     // Show "Add from Drive" browse option only for authenticated users without a linked folder and guest users (will trigger upsell)
     // The agent surface keeps the composer minimal, so Drive browsing is hidden there.
@@ -162,27 +77,9 @@ export const UploadMenuDropdown = ({
             autoClose={false}
             className="upload-menu-dropdown rounded-xl"
         >
-            {view === 'connectors' ? (
-                <ConnectorList onBack={() => setView('main')} />
-            ) : (
-                <>
-                    {uploadMenuItems.map((item, index) => (
-                        <MenuItem key={index} {...item} />
-                    ))}
-                    {showConnectors && (
-                        <DropdownMenuButton className="justify-start" onClick={() => setView('connectors')}>
-                            <div className="flex items-center gap-3 w-full">
-                                <span className="shrink-0 flex">
-                                    <LumoIcon name="Blocks" size={16} />
-                                </span>
-                                <span className="text-sm font-medium flex-1 text-left">{c('collider_2025: Action')
-                                    .t`Connectors`}</span>
-                                <LumoIcon name="ChevronRight" size={16} />
-                            </div>
-                        </DropdownMenuButton>
-                    )}
-                </>
-            )}
+            {uploadMenuItems.map((item, index) => (
+                <MenuItem key={index} {...item} />
+            ))}
         </MenuDropdown>
     );
 };
