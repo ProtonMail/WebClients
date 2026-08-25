@@ -63,7 +63,6 @@ const createParams = (overrides: Record<string, any> = {}): any => ({
     getParticipants: vi.fn().mockResolvedValue(undefined),
     getQueryParticipantsCount: vi.fn().mockResolvedValue(5),
     reportMeetError: vi.fn(),
-    withMeetingLinkNameTag: (options?: unknown) => options,
     triggerFullReconnectionRef: { current: vi.fn() },
     ...overrides,
 });

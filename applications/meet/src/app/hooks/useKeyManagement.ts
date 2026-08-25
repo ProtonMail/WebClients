@@ -12,7 +12,6 @@ import { KeyRotationScheduler } from '../utils/SeamlessKeyRotationScheduler';
 
 interface UseKeyManagementParams {
     keyProvider: ProtonMeetKeyProvider;
-    withMeetingLinkNameTag: (options?: unknown) => unknown;
 }
 
 export interface UseKeyManagementResult {
@@ -26,10 +25,7 @@ export interface UseKeyManagementResult {
     reportMLSRelatedError: (key: string | undefined, epoch: bigint | undefined) => void;
 }
 
-export const useKeyManagement = ({
-    keyProvider,
-    withMeetingLinkNameTag,
-}: UseKeyManagementParams): UseKeyManagementResult => {
+export const useKeyManagement = ({ keyProvider }: UseKeyManagementParams): UseKeyManagementResult => {
     const isMeetClientMetricsLogEnabled = useFlag('MeetClientMetricsLog');
     const isMeetSeamlessKeyRotationEnabled = useFlag('MeetSeamlessKeyRotationEnabled');
 
@@ -55,16 +51,16 @@ export const useKeyManagement = ({
 
     const reportMLSRelatedError = (key: string | undefined, epoch: bigint | undefined) => {
         if (epoch && lastEpochRef.current && lastEpochRef.current > epoch) {
-            reportMeetError('Lower epoch than last epoch', withMeetingLinkNameTag({ epoch }));
+            reportMeetError('Lower epoch than last epoch', { context: { epoch } });
         }
         if (epoch && lastEpochRef.current && lastEpochRef.current + 1n !== epoch) {
-            reportMeetError('Epoch is not the next epoch', withMeetingLinkNameTag({ epoch }));
+            reportMeetError('Epoch is not the next epoch', { context: { epoch } });
         }
         if (!key) {
-            reportMeetError('Key is undefined', withMeetingLinkNameTag({ epoch }));
+            reportMeetError('Key is undefined', { context: { epoch } });
         }
         if (!epoch) {
-            reportMeetError('Epoch is undefined', withMeetingLinkNameTag({}));
+            reportMeetError('Epoch is undefined');
         }
     };
 
@@ -83,9 +79,9 @@ export const useKeyManagement = ({
             dispatch(setMlsGroupState(nextMlsGroupState));
             mlsGroupStateRef.current = nextMlsGroupState;
             return { key: newGroupKeyInfo.key, epoch: newGroupKeyInfo.epoch };
-        } catch (err) {
-            reportMeetError('Error while calling getGroupKeyInfo', withMeetingLinkNameTag(err));
-            throw err;
+        } catch (error) {
+            reportMeetError('Error while calling getGroupKeyInfo', { context: { error } });
+            throw error;
         }
     };
 
@@ -110,7 +106,7 @@ export const useKeyManagement = ({
                 try {
                     await meetCoreClient.tryLogDesignatedCommitter(Number(epoch));
                 } catch (error) {
-                    reportMeetError('Failed to log designated committer rank', withMeetingLinkNameTag(error));
+                    reportMeetError('Failed to log designated committer rank', { context: { error } });
                 }
             }
 
@@ -124,7 +120,7 @@ export const useKeyManagement = ({
             dispatch(addKeyRotationLog(newLog as KeyRotationLog));
 
             lastEpochRef.current = epoch;
-        } catch (err) {
+        } catch (error) {
             dispatch(
                 addKeyRotationLog({
                     timestamp: Date.now(),
@@ -133,7 +129,7 @@ export const useKeyManagement = ({
                     message: 'Could not set new encryption key',
                 })
             );
-            reportMeetError('Could not set new encryption key', withMeetingLinkNameTag(err));
+            reportMeetError('Could not set new encryption key', { context: { error } });
         }
     };
 
