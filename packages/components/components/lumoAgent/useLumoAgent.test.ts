@@ -46,6 +46,14 @@ jest.mock('@proton/lumo-api-client', () => ({
 const message = (content: string): GenerationResponseMessage =>
     ({ type: 'token_data', target: 'message', count: 0, content }) as GenerationResponseMessage;
 
+// What the transport hands back after a tool round: it drops the blank assistant turn that padded the
+// previous round, appends the round's turns, then pads again for the generation that follows.
+const afterToolRound = (turns: Turn[], ...appended: unknown[]): Turn[] => {
+    const last = turns[turns.length - 1];
+    const stripped = last?.role === 'assistant' && !last.content ? turns.slice(0, -1) : turns;
+    return [...stripped, ...appended, { role: 'assistant', content: '' }] as Turn[];
+};
+
 const handlerCalls: { name: string; params: Record<string, any> }[] = [];
 const readCalls: string[] = [];
 
@@ -463,10 +471,61 @@ describe('useLumoAgent', () => {
             expect(readCalls).toEqual([]);
             expect(result.current.items.map((item) => item.kind)).toEqual(['user', 'confirm', 'user', 'reply']);
         });
+
+        it('takes nothing from the exchange that replaced it when it unwinds late', async () => {
+            let releaseAbandoned = () => {};
+            const abandonedMayFinish = new Promise<void>((resolve) => {
+                releaseAbandoned = resolve;
+            });
+            let sendPromise: Promise<void>;
+            script = async ({ executor, chunk }) => {
+                chunk(message('Moving them.'));
+                await executor.execute([{ id: '1', name: 'move_items', arguments: '{"target":"Archive"}' }]);
+                await abandonedMayFinish;
+            };
+
+            const { result } = renderHook(() => useLumoAgent(config));
+            act(() => {
+                sendPromise = result.current.send('archive them');
+            });
+            await pinConfirm(result);
+
+            script = async ({ chunk }) => {
+                chunk(message('Still looking.'));
+                return { stoppedOnBudget: true, turns: sentTurns[1] };
+            };
+            await act(async () => {
+                await result.current.send('actually where are my tickets');
+            });
+
+            // The abandoned chain returns normally, not by throwing: the transport reports an aborted
+            // budget stop as a plain finish.
+            await act(async () => {
+                releaseAbandoned();
+                await sendPromise;
+            });
+            expect(result.current.isAtToolLimit).toBe(true);
+
+            script = async ({ chunk }) => chunk(message('In Archive.'));
+            await act(async () => {
+                await result.current.resume();
+            });
+            script = async ({ chunk }) => chunk(message('Any time.'));
+            await act(async () => {
+                await result.current.send('thanks');
+            });
+
+            expect(sentTurns[3]).toEqual([
+                expect.objectContaining({ role: 'system' }),
+                { role: 'user', content: 'actually where are my tickets' },
+                { role: 'assistant', content: 'Still looking.\n\nIn Archive.' },
+                { role: 'user', content: 'thanks' },
+            ]);
+        });
     });
 
     describe('a chain that stops on its tool budget', () => {
-        const chain: Turn[] = [{ role: 'user' as any, content: 'the whole chain so far' }];
+        const chain: Turn[] = afterToolRound([{ role: 'user' as any, content: 'the whole chain so far' }]);
         const stopOnBudget: Script = async ({ chunk }) => {
             chunk(message('I found one order, but I have not checked Trash yet.'));
             return { stoppedOnBudget: true, turns: chain };
@@ -605,6 +664,217 @@ describe('useLumoAgent', () => {
                 { role: 'user', content: 'never mind, what time is it' },
             ]);
         });
+
+        it('banks its narration once, and not after the tool turns, when it stopped on a tool round', async () => {
+            script = async ({ chunk }) => {
+                chunk(message('Checking the Inbox.'));
+                return {
+                    stoppedOnBudget: true,
+                    turns: afterToolRound(
+                        sentTurns[0],
+                        { role: 'assistant', content: 'Checking the Inbox.' },
+                        { role: 'tool_call', content: '{"id":"1","name":"view_items","arguments":{}}' },
+                        { role: 'tool_result', content: '2 items' }
+                    ),
+                };
+            };
+
+            const { result } = renderHook(() => useLumoAgent(config));
+            await act(async () => {
+                await result.current.send('find my festival tickets');
+            });
+
+            script = async ({ chunk }) => chunk(message('Sure.'));
+            await act(async () => {
+                await result.current.send('never mind, what time is it');
+            });
+
+            expect(sentTurns[1]).toEqual([
+                expect.objectContaining({ role: 'system' }),
+                { role: 'user', content: 'find my festival tickets' },
+                { role: 'assistant', content: 'Checking the Inbox.' },
+                { role: 'user', content: 'never mind, what time is it' },
+            ]);
+        });
+    });
+
+    describe('the history a second message replays', () => {
+        const chainWith = (...turns: unknown[]): Turn[] => afterToolRound(sentTurns[0], ...turns);
+        const secondMessage = async (result: { current: ReturnType<typeof useLumoAgent> }, text: string) => {
+            script = async ({ chunk }) => chunk(message('Sure.'));
+            await act(async () => {
+                await result.current.send(text);
+            });
+        };
+
+        it('keeps a mutation call and its result, so the model can see that it changes things by calling', async () => {
+            const call = '{"id":"1","name":"move_items","arguments":{"target":"Archive"}}';
+            script = async ({ chunk }) => {
+                chunk(message('I will move them.'));
+                chunk(message(' Done.'));
+                return {
+                    turns: chainWith(
+                        { role: 'assistant', content: 'I will move them.' },
+                        { role: 'tool_call', content: call },
+                        { role: 'tool_result', content: 'Applied move_items successfully. 2 moved to Archive.' }
+                    ),
+                };
+            };
+
+            const { result } = renderHook(() => useLumoAgent(config));
+            await act(async () => {
+                await result.current.send('move them to Archive');
+            });
+            await secondMessage(result, 'undo that');
+
+            expect(sentTurns[1]).toEqual([
+                expect.objectContaining({ role: 'system' }),
+                { role: 'user', content: 'move them to Archive' },
+                { role: 'assistant', content: 'I will move them.' },
+                { role: 'tool_call', content: call },
+                { role: 'tool_result', content: 'Applied move_items successfully. 2 moved to Archive.' },
+                { role: 'assistant', content: 'Done.' },
+                { role: 'user', content: 'undo that' },
+            ]);
+        });
+
+        it("keeps a read's call but not its payload, which has had a whole turn to go stale", async () => {
+            const call = '{"id":"1","name":"view_items","arguments":{}}';
+            script = async ({ chunk }) => {
+                chunk(message('Let me look.'));
+                chunk(message(' Two items.'));
+                return {
+                    turns: chainWith(
+                        { role: 'assistant', content: 'Let me look.' },
+                        { role: 'tool_call', content: call },
+                        { role: 'tool_result', content: '2 items: Gas bill, Festival ticket' }
+                    ),
+                };
+            };
+
+            const { result } = renderHook(() => useLumoAgent(config));
+            await act(async () => {
+                await result.current.send('show me');
+            });
+            await secondMessage(result, 'and the second one?');
+
+            expect(sentTurns[1]).toContainEqual({ role: 'tool_call', content: call });
+            const results = sentTurns[1].filter((turn) => turn.role === 'tool_result');
+            expect(results).toHaveLength(1);
+            expect(results[0].content).not.toContain('Gas bill');
+        });
+
+        it('elides the result of a call naming a tool this session does not define', async () => {
+            const call = '{"id":"1","name":"archive_everything","arguments":{}}';
+            script = async ({ chunk }) => {
+                chunk(message('Done.'));
+                return {
+                    turns: chainWith(
+                        { role: 'tool_call', content: call },
+                        { role: 'tool_result', content: 'archived 400 emails' }
+                    ),
+                };
+            };
+
+            const { result } = renderHook(() => useLumoAgent(config));
+            await act(async () => {
+                await result.current.send('tidy up');
+            });
+            await secondMessage(result, 'what did you do?');
+
+            expect(sentTurns[1]).toContainEqual({ role: 'tool_call', content: call });
+            const results = sentTurns[1].filter((turn) => turn.role === 'tool_result');
+            expect(results).toHaveLength(1);
+            expect(results[0].content).not.toContain('archived 400 emails');
+        });
+
+        it('banks a resumed exchange once, carrying the tool turns of both of its chains', async () => {
+            const firstCall = '{"id":"1","name":"view_items","arguments":{}}';
+            const secondCall = '{"id":"2","name":"move_items","arguments":{"target":"Archive"}}';
+            script = async ({ chunk }) => {
+                chunk(message('Checking the Inbox.'));
+                return {
+                    stoppedOnBudget: true,
+                    turns: chainWith(
+                        { role: 'assistant', content: 'Checking the Inbox.' },
+                        { role: 'tool_call', content: firstCall },
+                        { role: 'tool_result', content: '2 items' }
+                    ),
+                };
+            };
+
+            const { result } = renderHook(() => useLumoAgent(config));
+            await act(async () => {
+                await result.current.send('archive my old tickets');
+            });
+
+            script = async ({ chunk }) => {
+                chunk(message('Archived them.'));
+                return {
+                    turns: afterToolRound(
+                        sentTurns[1],
+                        { role: 'tool_call', content: secondCall },
+                        { role: 'tool_result', content: 'Applied move_items successfully.' }
+                    ),
+                };
+            };
+            await act(async () => {
+                await result.current.resume();
+            });
+            await secondMessage(result, 'thanks');
+
+            expect(sentTurns[2]).toEqual([
+                expect.objectContaining({ role: 'system' }),
+                { role: 'user', content: 'archive my old tickets' },
+                { role: 'assistant', content: 'Checking the Inbox.' },
+                { role: 'tool_call', content: firstCall },
+                expect.objectContaining({ role: 'tool_result' }),
+                { role: 'tool_call', content: secondCall },
+                { role: 'tool_result', content: 'Applied move_items successfully.' },
+                { role: 'assistant', content: 'Archived them.' },
+                { role: 'user', content: 'thanks' },
+            ]);
+        });
+
+        it('banks a prose-only exchange as the question and the answer, and nothing else', async () => {
+            script = async ({ chunk }) => chunk(message('It is Tuesday.'));
+
+            const { result } = renderHook(() => useLumoAgent(config));
+            await act(async () => {
+                await result.current.send('what day is it');
+            });
+            await secondMessage(result, 'and the date?');
+
+            expect(sentTurns[1]).toEqual([
+                expect.objectContaining({ role: 'system' }),
+                { role: 'user', content: 'what day is it' },
+                { role: 'assistant', content: 'It is Tuesday.' },
+                { role: 'user', content: 'and the date?' },
+            ]);
+        });
+
+        it('banks neither side of an exchange that ran a tool but never answered', async () => {
+            script = async ({ executor }) => {
+                await executor.execute([{ id: '1', name: 'view_items', arguments: '{}' }]);
+                return {
+                    turns: chainWith(
+                        { role: 'tool_call', content: '{"id":"1","name":"view_items","arguments":{}}' },
+                        { role: 'tool_result', content: '2 items' }
+                    ),
+                };
+            };
+
+            const { result } = renderHook(() => useLumoAgent(config));
+            await act(async () => {
+                await result.current.send('show me');
+            });
+            await secondMessage(result, 'never mind');
+
+            expect(sentTurns[1]).toEqual([
+                expect.objectContaining({ role: 'system' }),
+                { role: 'user', content: 'never mind' },
+            ]);
+        });
     });
 
     it('clears the conversation', async () => {
@@ -646,12 +916,12 @@ describe('useLumoAgent', () => {
             // The transport banks the round's narration and its tool exchange in the chain it returns,
             // and breaks before banking the closing prose.
             return {
-                turns: [
-                    ...sentTurns[0],
+                turns: afterToolRound(
+                    sentTurns[0],
                     { role: 'assistant', content: 'Let me look.' },
                     { role: 'tool_call', content: '{"id":"1","name":"view_items","arguments":{}}' },
-                    { role: 'tool_result', content: '2 items' },
-                ] as unknown as Turn[],
+                    { role: 'tool_result', content: '2 items' }
+                ),
             };
         };
 
@@ -670,12 +940,12 @@ describe('useLumoAgent', () => {
             chunk(message('Let me look.'));
             await executor.execute([{ id: '1', name: 'view_items', arguments: '{}' }]);
             return {
-                turns: [
-                    ...sentTurns[0],
+                turns: afterToolRound(
+                    sentTurns[0],
                     { role: 'assistant', content: 'Let me look.' },
                     { role: 'tool_call', content: '{"id":"1","name":"view_items","arguments":{}}' },
-                    { role: 'tool_result', content: '2 items' },
-                ] as unknown as Turn[],
+                    { role: 'tool_result', content: '2 items' }
+                ),
             };
         };
 
@@ -706,5 +976,35 @@ describe('useLumoAgent', () => {
         const transcript = result.current.getDebugTranscript();
         expect(transcript.match(/I checked the Inbox\./g)).toHaveLength(1);
         expect(transcript).toContain('They were in Archive.');
+    });
+
+    it("does not repeat a resumed round's narration when that round ended on a tool call", async () => {
+        script = async ({ chunk }) => {
+            chunk(message('I checked the Inbox.'));
+            return { stoppedOnBudget: true, turns: sentTurns[0] };
+        };
+
+        const { result } = renderHook(() => useLumoAgent(config));
+        await act(async () => {
+            await result.current.send('find my tickets');
+        });
+
+        script = async ({ executor, chunk }) => {
+            chunk(message('Now Trash.'));
+            await executor.execute([{ id: '1', name: 'view_items', arguments: '{}' }]);
+            return {
+                turns: afterToolRound(
+                    sentTurns[1],
+                    { role: 'assistant', content: 'Now Trash.' },
+                    { role: 'tool_call', content: '{"id":"1","name":"view_items","arguments":{}}' },
+                    { role: 'tool_result', content: '2 items' }
+                ),
+            };
+        };
+        await act(async () => {
+            await result.current.resume();
+        });
+
+        expect(result.current.getDebugTranscript().match(/Now Trash\./g)).toHaveLength(1);
     });
 });
