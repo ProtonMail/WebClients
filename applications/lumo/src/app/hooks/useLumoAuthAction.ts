@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 
 import type { NativeAccountAction } from '../remote/nativeAuthBridge';
 import { isNativeAuthBridgeAvailable, triggerNativeAccountAction } from '../remote/nativeAuthBridgeHelpers';
-import { canUseNativeAuth, isNativeMobileApp } from '../util/userAgent';
+import { canUseNativeAuth, isNativeAuthFlagEnabled, isNativeMobileApp } from '../util/userAgent';
 import { useLumoFlags } from './useLumoFlags';
 
 export type AuthAction = 'signin' | 'signup' | 'signout' | 'addaccount' | 'webaccountsettings';
@@ -17,7 +17,9 @@ const ACTION_TO_NATIVE: Record<AuthAction, NativeAccountAction> = {
 
 export const useLumoAuthAction = () => {
     const isMobileApp = isNativeMobileApp();
-    const flagEnabled = useLumoFlags().lumoNativeAuth;
+    const { lumoNativeAuthAndroid, lumoNativeAuthIOS } = useLumoFlags();
+    // Gated per platform so Android and iOS can be rolled out independently.
+    const flagEnabled = isNativeAuthFlagEnabled({ android: lumoNativeAuthAndroid, ios: lumoNativeAuthIOS });
     const bridgeAvailable = isNativeAuthBridgeAvailable();
     const isNativeAuthEnabled = canUseNativeAuth();
     const isEnabled = isMobileApp && flagEnabled && bridgeAvailable && isNativeAuthEnabled;
