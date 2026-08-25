@@ -39,7 +39,6 @@ import type { Doc as YDoc, Transaction } from 'yjs'
 import { getCurrencyFromLocale, useAccountLocale, useLocaleAuto } from './locale'
 import { CURRENCY_SYMBOL } from './constants'
 import { useEditorState } from '../EditorStateProvider'
-import { useApplication } from '../ApplicationProvider'
 import { getBufferHash } from '@proton/docs-core/lib/utils/hash'
 import { SheetsPatchesType } from '@proton/docs-core/lib/Database/SheetsDBSchema'
 import type { SpreadsheetLocalYjsAuditKey, SpreadsheetLocalYjsUpdateAuditResult } from './yjs-local-update-audit'
@@ -277,9 +276,8 @@ function useYjsState({
   }, [docState])
   const yDoc = useMemo(() => docState.getDoc(), [docState])
 
-  const { application } = useApplication()
-  const logger = application.logger
-  const version = application.appVersion
+  const { logger, versionInfo } = useSheetsDependencies()
+
   const ySheets = useMemo(() => yDoc.getArray<Sheet>('sheets'), [yDoc])
   const handledInitialLoad = useRef(false)
   const { onChangeActiveSheet, calculateNow } = spreadsheetState
@@ -308,9 +306,9 @@ function useYjsState({
         })
       })
       handledInitialLoad.current = true
-      storeAction(SheetsActions.InitialLoadComplete, version)
+      storeAction(SheetsActions.InitialLoadComplete, versionInfo.version)
     },
-    [calculateNow, logger, onChangeActiveSheet, receivedEverythingFromRTS, ySheets, storeAction, version],
+    [calculateNow, logger, onChangeActiveSheet, receivedEverythingFromRTS, ySheets, storeAction, versionInfo.version],
   )
 
   const yjsState = useYSpreadsheetV2({
@@ -389,7 +387,7 @@ type ProtonSheetsStateDependencies = Omit<SpreadsheetStateDependencies, OmitDeps
   }
 
 export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
-  const { application } = useApplication()
+  const { logger } = useSheetsDependencies()
   const kv = useKeyValueState()
   const hasBlockedYjsDrift = useRef(false)
 
@@ -413,7 +411,7 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
     } catch (error) {
       pendingDriftResult.current = null
       console.error('[sheets-yjs-drift] failed to audit outgoing Yjs update', error)
-      application.logger.error('[sheets-yjs-drift] failed to audit outgoing Yjs update')
+      logger.error('[sheets-yjs-drift] failed to audit outgoing Yjs update')
     }
   })
 
@@ -526,7 +524,7 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
         },
       )
       hasBlockedYjsDrift.current = true
-      application.logger.error(
+      logger.error(
         '[sheets-yjs-drift] blocked outgoing Yjs update because local state and the broadcast Yjs doc drifted',
       )
       deps.onYjsDriftDetected?.(driftResult, driftLogDetails)
@@ -937,8 +935,7 @@ export function useVersioning(
   handleIncompatibleClientVersion: () => void,
   reloadClient: () => void,
 ) {
-  const { application } = useApplication()
-  const logger = application.logger
+  const { logger } = useSheetsDependencies()
   const editorState = useEditorState()
   const setEditingLocked = useStore(editorState, (state) => state.setEditingLocked)
   const setIsMigrating = useStore(editorState, (state) => state.setIsMigrating)

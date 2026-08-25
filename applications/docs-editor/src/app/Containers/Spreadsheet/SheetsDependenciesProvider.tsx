@@ -1,6 +1,9 @@
 import type { FeatureFlag } from '@proton/unleash/Flags'
+import type { LoggerInterface } from '@proton/utils/logs'
 import type { PropsWithChildren } from 'react'
 import { createContext, useContext } from 'react'
+
+export type SheetsLogger = Pick<LoggerInterface, 'info' | 'warn' | 'error'>
 
 export type SheetsDependencies = {
   isDevOrBlack: () => boolean
@@ -11,6 +14,7 @@ export type SheetsDependencies = {
     environment: 'alpha' | 'beta' | undefined
     version: string
   }
+  logger: SheetsLogger
   showNotification: (notification: { text: string; type?: 'error' | 'warning' | 'info' | 'success' }) => void
   // Dependencies that use the clientInvoker
   openLink: (url: string) => void
