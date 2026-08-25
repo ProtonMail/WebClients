@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import Form from '@proton/components/components/form/Form';
 import Loader from '@proton/components/components/loader/Loader';
@@ -13,7 +14,6 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useApiResult from '@proton/components/hooks/useApiResult';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import type { CountryOptions } from '@proton/payments/core/countries';
 import { SERVER_FEATURES } from '@proton/shared/lib/constants';
 

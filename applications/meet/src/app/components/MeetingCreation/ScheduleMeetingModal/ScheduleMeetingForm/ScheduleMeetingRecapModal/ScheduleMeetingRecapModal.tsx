@@ -4,12 +4,12 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Card } from '@proton/atoms/Card/Card';
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import useAppLink from '@proton/components/components/link/useAppLink';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { Dropdown, DropdownButton, DropdownMenu, DropdownMenuButton } from '@proton/components/index';
 import { IcPenSquare } from '@proton/icons/icons/IcPenSquare';
 import { IcPlus } from '@proton/icons/icons/IcPlus';

@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { useGetMailSettings, useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { CacheType } from '@proton/redux-utilities/interface';
@@ -10,7 +11,6 @@ import { updateFontFace, updateFontSize } from '@proton/shared/lib/api/mailSetti
 import FontFaceSelect from '../../../containers/layouts/FontFaceSelect';
 import FontSizeSelect from '../../../containers/layouts/FontSizeSelect';
 import useApi from '../../../hooks/useApi';
-import useNotifications from '../../../hooks/useNotifications';
 import Form from '../../form/Form';
 import ModalTwo from '../../modalTwo/Modal';
 import ModalTwoContent from '../../modalTwo/ModalContent';

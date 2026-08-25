@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from 'react';
 import debounce from 'lodash/debounce';
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Input } from '@proton/atoms/Input/Input';
 import { CONTACT_IMG_SIZE } from '@proton/shared/lib/contacts/constants';
@@ -21,7 +22,6 @@ import ModalTwoContent from '../../../components/modalTwo/ModalContent';
 import ModalTwoFooter from '../../../components/modalTwo/ModalFooter';
 import ModalTwoHeader from '../../../components/modalTwo/ModalHeader';
 import ErrorZone from '../../../components/text/ErrorZone';
-import useNotifications from '../../../hooks/useNotifications';
 
 export interface ContactImageProps extends Omit<ModalProps<typeof Form>, 'onSubmit'> {
     url?: string;

@@ -3,6 +3,7 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
@@ -17,7 +18,6 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import Prompt from '@proton/components/components/prompt/Prompt';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { IcEnvelope } from '@proton/icons/icons/IcEnvelope';
 import type {
@@ -36,15 +36,14 @@ import { getOriginalTo, hasProtonSender, hasSimpleLoginSender, isUnsubscribed } 
 import generateUID from '@proton/utils/generateUID';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { selectLabelID } from '../../../../store/elements/elementsSelectors';
-import { useMailSelector } from '../../../../store/hooks';
-
 import { useOnCompose } from '../../../../containers/ComposeProvider';
 import { findSender } from '../../../../helpers/message/messageRecipients';
 import { useSendMessage } from '../../../../hooks/composer/useSendMessage';
 import { useSendVerifications } from '../../../../hooks/composer/useSendVerifications';
 import { useGetMessage } from '../../../../hooks/message/useMessage';
 import { useSaveDraft } from '../../../../hooks/message/useSaveDraft';
+import { selectLabelID } from '../../../../store/elements/elementsSelectors';
+import { useMailSelector } from '../../../../store/hooks';
 import ProtonPassAliasesModal from '../../../protonPass/ProtonPassAliasesModal';
 
 interface Props {

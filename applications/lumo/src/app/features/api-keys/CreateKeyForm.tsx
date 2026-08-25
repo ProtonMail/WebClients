@@ -4,21 +4,24 @@ import type { ChangeEvent } from 'react';
 import { c } from 'ttag';
 
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
-import { InputFieldTwo, Select, useApi, useNotifications } from '@proton/components/index';
+import { InputFieldTwo, Select, useApi } from '@proton/components/index';
 import { getPrimaryKey } from '@proton/shared/lib/keys';
 
 import {
-    buildPersonalAccessTokenKey,
-    EXPIRATION_OPTIONS,
-    getExpirationTimestamp,
-} from './apiKeysHelpers';
-import {
-    createPersonalAccessTokenRequest,
     type CreatePersonalAccessTokenResponse,
+    createPersonalAccessTokenRequest,
 } from '../../remote/personalAccessToken';
+import { EXPIRATION_OPTIONS, buildPersonalAccessTokenKey, getExpirationTimestamp } from './apiKeysHelpers';
 
-export const CreateKeyForm = ({ onCancel, onCreated }: { onCancel: () => void; onCreated: (token: string) => void }) => {
+export const CreateKeyForm = ({
+    onCancel,
+    onCreated,
+}: {
+    onCancel: () => void;
+    onCreated: (token: string) => void;
+}) => {
     const api = useApi();
     const getUserKeys = useGetUserKeys();
     const { createNotification } = useNotifications();

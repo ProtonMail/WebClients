@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { type ModalStateProps, useFormErrors, useNotifications } from '@proton/components';
+import { useNotifications } from '@proton/app-context/useNotifications';
+import { type ModalStateProps, useFormErrors } from '@proton/components';
 import type { ProtonDriveClient } from '@proton/drive';
 import { getDrive } from '@proton/drive';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';

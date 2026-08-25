@@ -5,13 +5,14 @@ import { useVirtualizer } from '@tanstack/react-virtual';
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Input } from '@proton/atoms/Input/Input';
-import { Checkbox, useModalStateObject, useNotifications } from '@proton/components';
+import { Checkbox, useModalStateObject } from '@proton/components';
 
-import FavoritesUpsellPrompt from '../../components/Guest/FavoritesUpsellPrompt';
 import { ChatHistoryLoadingSkeleton } from '../../components/ChatHistoryLoadingSkeleton';
+import FavoritesUpsellPrompt from '../../components/Guest/FavoritesUpsellPrompt';
 import { LumoLink } from '../../components/Links/LumoLink';
 import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import ConfirmDeleteModal from '../../components/Modals/ConfirmDeleteModal';

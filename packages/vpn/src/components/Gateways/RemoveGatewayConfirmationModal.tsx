@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import Form from '@proton/components/components/form/Form';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
@@ -10,7 +11,6 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import { CountryFlagAndName } from '@proton/components/containers/vpn/gateways/CountryFlagAndName';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcExclamationTriangleFilled } from '@proton/icons/icons/IcExclamationTriangleFilled';
 import { type CountryOptions, getLocalizedCountryByAbbr } from '@proton/payments/core/countries';
 import type { Either } from '@proton/shared/lib/interfaces';

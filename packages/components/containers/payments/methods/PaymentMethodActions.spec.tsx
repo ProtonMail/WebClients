@@ -1,6 +1,7 @@
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { deletePaymentMethod, orderPaymentMethods } from '@proton/payments/core/api/api';
 import { Autopay, PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { SavedPaymentMethod } from '@proton/payments/core/interface';
@@ -11,14 +12,13 @@ import { mockUseUser } from '@proton/testing/lib/mockUseUser';
 import useApi from '../../../hooks/useApi';
 import useEventManager from '../../../hooks/useEventManager';
 import useModals from '../../../hooks/useModals';
-import useNotifications from '../../../hooks/useNotifications';
 import PaymentMethodActions from './PaymentMethodActions';
 
-jest.mock('../../../hooks/useNotifications', () =>
-    jest.fn().mockReturnValue({
+jest.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: jest.fn().mockReturnValue({
         createNotification: jest.fn(),
-    })
-);
+    }),
+}));
 
 jest.mock('../../../hooks/useModals', () =>
     jest.fn().mockReturnValue({

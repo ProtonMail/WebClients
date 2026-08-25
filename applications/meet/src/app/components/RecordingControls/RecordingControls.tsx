@@ -3,8 +3,9 @@ import { useState } from 'react';
 import { addSeconds, format, startOfDay } from 'date-fns';
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
-import { useNotifications, useSettingsLink } from '@proton/components';
+import { useSettingsLink } from '@proton/components';
 import { IcArrowDownCircle } from '@proton/icons/icons/IcArrowDownCircle';
 import { IcMeetRecord } from '@proton/icons/icons/IcMeetRecord';
 import { IcMeetRecordStop } from '@proton/icons/icons/IcMeetRecordStop';

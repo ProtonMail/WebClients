@@ -2,9 +2,10 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
-import { useApi, useEventManager, useNotifications } from '@proton/components';
+import { useApi, useEventManager } from '@proton/components';
 import { useHasMeetProductAccess } from '@proton/meet/hooks/useHasMeetProductAccess';
 import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import { DEFAULT_CALENDAR_USER_SETTINGS } from '@proton/shared/lib/calendar/calendar';

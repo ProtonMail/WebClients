@@ -1,10 +1,11 @@
 import { fireEvent, render } from '@testing-library/react';
 
-import useNotifications from '../../hooks/useNotifications';
+import { useNotifications } from '@proton/app-context/useNotifications';
+
 import type { Condition } from '../filters/interfaces';
 import InputCondition from './InputCondition';
 
-jest.mock('../../hooks/useNotifications');
+jest.mock('@proton/app-context/useNotifications');
 const mockCreateNotification = jest.fn();
 const mockUseNotifications = useNotifications as jest.MockedFunction<any>;
 mockUseNotifications.mockReturnValue({

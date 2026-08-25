@@ -775,7 +775,6 @@ export { useDeclarativeLocalState } from './hooks/useDeclarativeLocalState';
 export { default as useModals } from './hooks/useModals';
 export { default as useMyCountry } from './hooks/useMyCountry';
 export { default as useNewFeatureOnboarding } from './hooks/useNewFeatureOnboarding';
-export { default as useNotifications } from './hooks/useNotifications';
 export { getOnlineStatus, default as useOnline } from './hooks/useOnline';
 export { default as usePreventCloseTab } from './hooks/usePreventCloseTab';
 export { PreventLeaveProvider, default as usePreventLeave } from './hooks/usePreventLeave';

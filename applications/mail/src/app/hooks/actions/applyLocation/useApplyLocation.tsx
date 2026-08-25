@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { logger } from '@proton/logger';
 import { getHumanLabelID, isCategoryLabel, isCustomFolder, isSystemFolder } from '@proton/mail/helpers/location';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
@@ -25,10 +25,6 @@ import {
     shouldOpenConfirmationModalForConverversation,
     shouldOpenConfirmationModalForMessages,
 } from '../../../helpers/location/moveModal/shouldOpenModal';
-import { useMoveBackAction } from '../moveBackAction/useMoveBackAction';
-import { useCreateFilters } from '../useCreateFilters';
-import { useGetConversation, useGetConversationsByIDs } from '../../conversation/useConversation';
-import { useGetElementByID } from '../../mailbox/useElements';
 import { load } from '../../../store/conversations/conversationsActions';
 import { selectLabelID } from '../../../store/elements/elementsSelectors';
 import { useMailDispatch, useMailSelector } from '../../../store/hooks';
@@ -38,9 +34,12 @@ import {
     unlabelConversations,
     unlabelMessages,
 } from '../../../store/mailbox/mailboxActions';
-
+import { useGetConversation, useGetConversationsByIDs } from '../../conversation/useConversation';
+import { useGetElementByID } from '../../mailbox/useElements';
 import { getApplyLabelNotificationText } from '../label/helper';
 import { MOVE_BACK_ACTION_TYPES } from '../moveBackAction/interfaces';
+import { useMoveBackAction } from '../moveBackAction/useMoveBackAction';
+import { useCreateFilters } from '../useCreateFilters';
 import {
     APPLY_LOCATION_TYPES,
     type ApplyLocationLabelProps,

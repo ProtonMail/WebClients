@@ -3,8 +3,9 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
+
 import InputFieldTwo from '../../components/v2/field/InputField';
-import useNotifications from '../../hooks/useNotifications';
 import type { Condition } from '../filters/interfaces';
 import TokensCondition from './TokensCondition';
 

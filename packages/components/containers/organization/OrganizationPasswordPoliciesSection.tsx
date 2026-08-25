@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { organizationActions } from '@proton/account/organization';
 import { useUserPermissions } from '@proton/account/userPermissions/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
@@ -29,7 +30,6 @@ import { PermissionBanner, PermissionTooltip } from '../../components/orgPermiss
 import InputFieldTwo from '../../components/v2/field/InputField';
 import getBoldFormattedText from '../../helpers/getBoldFormattedText';
 import useApi from '../../hooks/useApi';
-import useNotifications from '../../hooks/useNotifications';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';

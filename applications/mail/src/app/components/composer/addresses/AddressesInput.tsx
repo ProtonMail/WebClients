@@ -4,10 +4,10 @@ import { Fragment, useEffect, useRef, useState } from 'react';
 import debounce from 'lodash/debounce';
 import { c, msgid } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import AddressesAutocomplete from '@proton/components/components/addressesAutocomplete/AddressesAutocomplete';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import { useContactGroups } from '@proton/mail/store/labels/hooks';

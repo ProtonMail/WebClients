@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 
 import { c } from 'ttag';
 
-import useNotifications from '@proton/components/hooks/useNotifications';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { logger } from '@proton/logger';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -15,10 +15,8 @@ import useListTelemetry, {
     ACTION_TYPE,
     numberSelectionElements,
 } from '../../../components/list/list-telemetry/useListTelemetry';
-import { useMarkAllAs } from './useMarkAllAs';
-import { MOVE_BACK_ACTION_TYPES } from '../moveBackAction/interfaces';
-import { useMoveBackAction } from '../moveBackAction/useMoveBackAction';
-import { useGetConversationsByIDs } from '../../conversation/useConversation';
+import { isElementMessage } from '../../../helpers/elements';
+import type { Element } from '../../../models/element';
 import { useMailDispatch } from '../../../store/hooks';
 import {
     markConversationsAsRead,
@@ -26,9 +24,10 @@ import {
     markMessagesAsRead,
     markMessagesAsUnread,
 } from '../../../store/mailbox/mailboxActions';
-
-import { isElementMessage } from '../../../helpers/elements';
-import type { Element } from '../../../models/element';
+import { useGetConversationsByIDs } from '../../conversation/useConversation';
+import { MOVE_BACK_ACTION_TYPES } from '../moveBackAction/interfaces';
+import { useMoveBackAction } from '../moveBackAction/useMoveBackAction';
+import { useMarkAllAs } from './useMarkAllAs';
 
 export interface MarkAsParams {
     elements: Element[];

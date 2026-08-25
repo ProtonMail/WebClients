@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { IcBroom } from '@proton/icons/icons/IcBroom';
@@ -9,7 +10,6 @@ import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 
 import { useTheme } from '../../../containers/themes/ThemeProvider';
-import useNotifications from '../../../hooks/useNotifications';
 import LumoAgentPanel from '../../lumoAgent/LumoAgentPanel';
 import type { SelectedDrawerOption } from './DrawerView';
 import DrawerView from './DrawerView';

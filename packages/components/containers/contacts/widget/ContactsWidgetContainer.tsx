@@ -5,6 +5,7 @@ import { c, msgid } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { exportContacts } from '@proton/shared/lib/contacts/helpers/export';
@@ -16,7 +17,6 @@ import clsx from '@proton/utils/clsx';
 
 import SearchInput from '../../../components/input/SearchInput';
 import useApi from '../../../hooks/useApi';
-import useNotifications from '../../../hooks/useNotifications';
 import type { ContactEditProps } from '../edit/ContactEditModal';
 import type { ContactGroupEditProps } from '../group/ContactGroupEditModal';
 import useContactList from '../hooks/useContactList';

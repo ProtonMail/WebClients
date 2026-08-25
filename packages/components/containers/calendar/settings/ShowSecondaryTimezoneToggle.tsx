@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import { getTimezone } from '@proton/shared/lib/date/timezone';
@@ -10,7 +11,6 @@ import type { CalendarUserSettings } from '@proton/shared/lib/interfaces/calenda
 import Toggle from '../../../components/toggle/Toggle';
 import useApi from '../../../hooks/useApi';
 import useEventManager from '../../../hooks/useEventManager';
-import useNotifications from '../../../hooks/useNotifications';
 
 interface Props {
     calendarUserSettings: CalendarUserSettings;

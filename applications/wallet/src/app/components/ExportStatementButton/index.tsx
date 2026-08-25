@@ -8,8 +8,9 @@ import {
     type WasmApiExchangeRate,
     type WasmApiWalletAccount,
 } from '@proton/andromeda';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import type { ButtonProps } from '@proton/atoms/Button/Button';
-import { useModalState, useNotifications } from '@proton/components';
+import { useModalState } from '@proton/components';
 import { useLoading } from '@proton/hooks/index';
 import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import { SECOND } from '@proton/shared/lib/constants';

@@ -7,9 +7,9 @@ import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { calendarUrlQueryParams } from '@proton/calendar/constants';
 import { validateDeepLinkParams } from '@proton/calendar/utils';
-import { useNotifications } from '@proton/components';
 import { getMeetingLink, useProtonMeet } from '@proton/meet';
 import { decryptSessionKey, encryptMeetingName } from '@proton/meet/utils/cryptoUtils';
 import { parseMeetingLink } from '@proton/meet/utils/parseMeetingLink';

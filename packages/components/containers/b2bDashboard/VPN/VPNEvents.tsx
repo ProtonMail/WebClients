@@ -5,6 +5,7 @@ import { endOfDay, isAfter, isBefore, startOfDay } from 'date-fns';
 import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Href } from '@proton/atoms/Href/Href';
 import { useLoading } from '@proton/hooks';
 import { IcEye } from '@proton/icons/icons/IcEye';
@@ -21,7 +22,6 @@ import TimeIntl from '../../../components/time/TimeIntl';
 import Toggle from '../../../components/toggle/Toggle';
 import useApi from '../../../hooks/useApi';
 import useErrorHandler from '../../../hooks/useErrorHandler';
-import useNotifications from '../../../hooks/useNotifications';
 import SettingsSectionWide from '../../account/SettingsSectionWide';
 import { toCamelCase } from '../../credentialLeak/helpers';
 import GenericError from '../../error/GenericError';

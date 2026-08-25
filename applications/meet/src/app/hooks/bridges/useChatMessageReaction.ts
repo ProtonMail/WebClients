@@ -1,7 +1,7 @@
 import { useRoomContext } from '@livekit/components-react';
 import { c } from 'ttag';
 
-import useNotifications from '@proton/components/hooks/useNotifications';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetDispatch, useMeetStore } from '@proton/meet/store/hooks';
 import {

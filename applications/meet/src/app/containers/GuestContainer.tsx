@@ -2,7 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 import { Router } from 'react-router-dom';
 
 import { ApiContext } from '@proton/app-context/apiContext';
-import { NotificationsChildren, useNotifications } from '@proton/components';
+import { useNotifications } from '@proton/app-context/useNotifications';
+import { NotificationsChildren } from '@proton/components';
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import LoaderPage from '@proton/components/containers/app/LoaderPage';
 import StandardErrorPage from '@proton/components/containers/app/StandardErrorPage';

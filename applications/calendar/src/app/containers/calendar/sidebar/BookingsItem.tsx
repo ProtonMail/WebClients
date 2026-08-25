@@ -2,6 +2,7 @@ import type { MouseEvent } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
@@ -16,7 +17,6 @@ import SidebarListItem from '@proton/components/components/sidebar/SidebarListIt
 import SidebarListItemContent from '@proton/components/components/sidebar/SidebarListItemContent';
 import SidebarListItemLabel from '@proton/components/components/sidebar/SidebarListItemLabel';
 import Spotlight from '@proton/components/components/spotlight/Spotlight';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcCalendarListFilled } from '@proton/icons/icons/IcCalendarListFilled';
 import { IcSquares } from '@proton/icons/icons/IcSquares';
 import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal';

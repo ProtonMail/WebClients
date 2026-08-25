@@ -9,7 +9,7 @@ import useAppTitle from '@proton/components/hooks/useAppTitle'
 import useAuthentication from '@proton/components/hooks/useAuthentication'
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor'
 import { useConfig } from '@proton/app-context/useConfig'
-import useNotifications from '@proton/components/hooks/useNotifications'
+import { useNotifications } from '@proton/app-context/useNotifications'
 import { getAppVersion } from '@proton/components/helpers/appVersion'
 import { useCallback, useEffect, useRef, useState } from 'react'
 

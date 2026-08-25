@@ -32,9 +32,9 @@ jest.mock('./hooks/useGetPlanPriceWithCoupon', () => ({
     })),
 }));
 
-jest.mock('../../../../hooks/useNotifications', () => ({
+jest.mock('@proton/app-context/useNotifications', () => ({
     __esModule: true,
-    default: jest.fn().mockReturnValue({
+    useNotifications: jest.fn().mockReturnValue({
         createNotification: jest.fn(),
     }),
 }));

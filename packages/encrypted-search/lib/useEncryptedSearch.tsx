@@ -7,7 +7,7 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
-import useNotifications from '@proton/components/hooks/useNotifications';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { SECOND } from '@proton/shared/lib/constants';
 import { storeESUserChoiceInboxDesktop } from '@proton/shared/lib/desktop/encryptedSearch';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';

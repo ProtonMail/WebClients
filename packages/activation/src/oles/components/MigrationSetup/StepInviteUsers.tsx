@@ -4,13 +4,13 @@ import { c } from 'ttag';
 
 import { getJoiningLinkHref } from '@proton/account/orgJoiningLink/helpers';
 import { useOrganization } from '@proton/account/organization/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Card } from '@proton/atoms/Card/Card';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Copy from '@proton/components/components/button/Copy';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import { openLinkInBrowser } from '@proton/components/containers/desktop/openExternalLink';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcArrowsFromCenter } from '@proton/icons/icons/IcArrowsFromCenter';
 import { IcArrowsToCenter } from '@proton/icons/icons/IcArrowsToCenter';
 import { BRAND_NAME } from '@proton/shared/lib/constants';

@@ -2,7 +2,7 @@ import { type FC, useCallback, useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import useNotifications from '@proton/components/hooks/useNotifications';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import useStateRef from '@proton/hooks/useStateRef';
 
 import type { UpdateStore } from '../../../types/desktop';

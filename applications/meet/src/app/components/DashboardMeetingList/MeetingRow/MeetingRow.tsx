@@ -5,10 +5,10 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import useAppLink from '@proton/components/components/link/useAppLink';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
 import { IcMeetUsers } from '@proton/icons/icons/IcMeetUsers';
 import { IcPenSquare } from '@proton/icons/icons/IcPenSquare';

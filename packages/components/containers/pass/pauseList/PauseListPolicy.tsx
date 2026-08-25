@@ -2,6 +2,7 @@ import { type FC, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { usePassBridge } from '@proton/pass/lib/bridge/PassBridgeProvider';
 import type {
@@ -12,7 +13,6 @@ import type {
 import type { OrganizationUrlPauseEntryDto } from '@proton/pass/types';
 
 import useErrorHandler from '../../../hooks/useErrorHandler';
-import useNotifications from '../../../hooks/useNotifications';
 import { PauseListTable } from './PauseListTable';
 
 export const PauseList: FC<{ upgradeRequired: boolean }> = ({ upgradeRequired }) => {

@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import { useUserSettings } from '@proton/account';
 import { addAddressKeyAction } from '@proton/account/addressKeys/addAddressKeyAction';
 import { addUserKeyAction } from '@proton/account/userKeys/addUserKeyAction';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import useLoading from '@proton/hooks/useLoading';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
@@ -22,7 +23,6 @@ import ModalTwoFooter from '../../../components/modalTwo/ModalFooter';
 import ModalTwoHeader from '../../../components/modalTwo/ModalHeader';
 import getBoldFormattedText from '../../../helpers/getBoldFormattedText';
 import useErrorHandler from '../../../hooks/useErrorHandler';
-import useNotifications from '../../../hooks/useNotifications';
 import getPausedForwardingNotice from '../changePrimaryKeyForwardingNotice/getPausedForwardingNotice';
 import SelectKeyGenType from './SelectKeyGenType';
 

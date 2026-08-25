@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 
-import useNotifications from '@proton/components/hooks/useNotifications';
+import { useNotifications } from '@proton/app-context/useNotifications';
 
 import { AnnouncementPriority } from '../components/MeetingAnnouncer/types';
 import { useAnnounce } from '../components/MeetingAnnouncer/useAnnounce';

@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react';
 import debounce from 'lodash/debounce';
 import { c, msgid } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import useIsMounted from '@proton/hooks/useIsMounted';
 
 import SearchInput from '../../../components/input/SearchInput';
@@ -16,7 +17,6 @@ import TableCell from '../../../components/table/TableCell';
 import TableHeader from '../../../components/table/TableHeader';
 import TableRow from '../../../components/table/TableRow';
 import useErrorHandler from '../../../hooks/useErrorHandler';
-import useNotifications from '../../../hooks/useNotifications';
 import type { HandleSpamListActionClick } from './Spams.helpers';
 import { getActionsByLocation, getLabelByLocation, getNotificationByAction } from './Spams.helpers';
 import type { SpamLocation } from './Spams.interfaces';

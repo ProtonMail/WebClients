@@ -14,7 +14,7 @@ import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/mes
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { c } from 'ttag';
 
-import useNotifications from '@proton/components/hooks/useNotifications';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import usePrevious from '@proton/hooks/usePrevious';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { MODEL_VERSION } from '@proton/pass/constants';

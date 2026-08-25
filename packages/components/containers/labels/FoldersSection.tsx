@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import { useLoading } from '@proton/hooks';
@@ -20,7 +21,6 @@ import { useModalTwoPromise } from '../../components/modalTwo/useModalTwo';
 import MailUpsellButton from '../../components/upsell/MailUpsellButton';
 import LabelsUpsellModal from '../../components/upsell/modals/LabelsUpsellModal';
 import useApi from '../../hooks/useApi';
-import useNotifications from '../../hooks/useNotifications';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';

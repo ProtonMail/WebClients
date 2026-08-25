@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { InvoiceState } from '@proton/payments/core/constants';
 import { isRegularInvoice } from '@proton/payments/core/helpers';
@@ -9,7 +10,6 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import DropdownActions from '../../components/dropdown/DropdownActions';
 import useModals from '../../hooks/useModals';
-import useNotifications from '../../hooks/useNotifications';
 import { usePaymentsApi } from '../../payments/react-extensions/usePaymentsApi';
 import { useRedirectToAccountApp } from '../desktop/useRedirectToAccountApp';
 import PayInvoiceModal from './PayInvoiceModal';

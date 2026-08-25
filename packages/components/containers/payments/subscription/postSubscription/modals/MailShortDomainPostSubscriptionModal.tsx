@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { APPS } from '@proton/shared/lib/constants';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
@@ -13,7 +14,6 @@ import Copy from '../../../../../components/button/Copy';
 import Icon from '../../../../../components/icon/Icon';
 import SettingsLink from '../../../../../components/link/SettingsLink';
 import useShortDomainAddress from '../../../../../hooks/mail/useShortDomainAddress';
-import useNotifications from '../../../../../hooks/useNotifications';
 import { SUBSCRIPTION_STEPS } from '../../constants';
 import type { PostSubscriptionModalComponentProps } from '../interface';
 import {

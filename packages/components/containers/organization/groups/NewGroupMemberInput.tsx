@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { RECIPIENT_TYPES } from '@proton/shared/lib/constants';
@@ -9,7 +10,6 @@ import { emailValidator } from '@proton/shared/lib/helpers/formValidators';
 import { GROUP_MEMBER_TYPE, type GroupMember, type Recipient } from '@proton/shared/lib/interfaces';
 
 import AddressesAutocompleteTwo from '../../../components/v2/addressesAutocomplete/AddressesAutocomplete';
-import useNotifications from '../../../hooks/useNotifications';
 import type { NewGroupMember } from './AddUsersToGroupModal';
 import { convertGroupMemberToRecipient } from './helpers';
 import useMemberContactEmailsRemote from './hooks/useMemberContactEmailsRemote';

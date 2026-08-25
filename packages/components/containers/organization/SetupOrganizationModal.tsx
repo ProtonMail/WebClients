@@ -13,6 +13,7 @@ import { resetSelfVpnConnections, setSelfQuota, updateOrganizationName } from '@
 import { useOrganization } from '@proton/account/organization/hooks';
 import { getInitialStorage, getStorageRange, getTotalStorage } from '@proton/account/organization/storage';
 import { useSubscription } from '@proton/account/subscription/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { useLoading } from '@proton/hooks';
 import { getHasExternalMemberCapableB2BPlan, hasPassFamily } from '@proton/payments/core/subscription/helpers';
@@ -32,7 +33,6 @@ import ModalHeader from '../../components/modalTwo/ModalHeader';
 import InputFieldTwo from '../../components/v2/field/InputField';
 import useFormErrors from '../../components/v2/useFormErrors';
 import useErrorHandler from '../../hooks/useErrorHandler';
-import useNotifications from '../../hooks/useNotifications';
 import { useSilentApi } from '../../hooks/useSilentApi';
 import MemberStorageSelector from '../members/MemberStorageSelector';
 import { disableStorageSelection } from '../members/helper';

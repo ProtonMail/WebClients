@@ -4,8 +4,8 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Badge } from '@proton/components/components/badge/Badge';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import type { IconName } from '@proton/icons/types';
 
 import { AccountPath } from '../../../constants';

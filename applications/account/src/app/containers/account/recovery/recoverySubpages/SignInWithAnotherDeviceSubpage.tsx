@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { getLastModifiedDate } from '@proton/account/recovery/lastModifiedTime';
 import { toggleQrCodeSignIn } from '@proton/account/recovery/userSettingsActions';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { DashboardCard, DashboardCardContent } from '@proton/atoms/DashboardCard/DashboardCard';
 import { DashboardGrid } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import { Href } from '@proton/atoms/Href/Href';
@@ -14,7 +15,6 @@ import { LastChanged } from '@proton/components/containers/recovery/LastChanged'
 import SignInWithAnotherDeviceModal from '@proton/components/containers/recovery/SignInWithAnotherDeviceModal';
 import { useRecoverySettingsTelemetry } from '@proton/components/containers/recovery/recoverySettingsTelemetry';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks/index';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME } from '@proton/shared/lib/constants';

@@ -6,7 +6,8 @@ import type { ProtonDriveClient } from '@protontech/drive-sdk';
 import { splitNodeUid } from '@protontech/drive-sdk/dist/internal/uids';
 import { c } from 'ttag';
 
-import { type ModalStateProps, useFormErrors, useNotifications } from '@proton/components';
+import { useNotifications } from '@proton/app-context/useNotifications';
+import { type ModalStateProps, useFormErrors } from '@proton/components';
 
 import { getDrive } from '../../../index';
 import { handleSdkError } from '../../../legacy/errorHandling';

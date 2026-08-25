@@ -17,7 +17,9 @@ const mockUseOrganization = useOrganization as jest.Mock;
 jest.mock('@proton/unleash/useFlag');
 jest.mocked(useFlag).mockReturnValue(true);
 
-jest.mock('@proton/app-context/useNotifications', () => jest.fn().mockReturnValue({ createNotification: jest.fn() }));
+jest.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: jest.fn().mockReturnValue({ createNotification: jest.fn() }),
+}));
 
 jest.mock('@proton/react-redux-store', () => ({
     ...jest.requireActual('@proton/react-redux-store'),

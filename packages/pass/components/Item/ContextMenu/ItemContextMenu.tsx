@@ -5,7 +5,7 @@ import { pipe } from 'imask/esm/masked/pipe';
 import { c } from 'ttag';
 
 import type { CreateNotificationOptions } from '@proton/app-context/notifications/interfaces';
-import useNotifications from '@proton/components/hooks/useNotifications';
+import { useNotifications } from '@proton/app-context/useNotifications';
 
 import type { ItemActions } from '../../../hooks/items/useItemActions';
 import { useItemActions } from '../../../hooks/items/useItemActions';

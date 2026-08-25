@@ -5,7 +5,7 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter'
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader'
 import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo'
-import useNotifications from '@proton/components/hooks/useNotifications'
+import { useNotifications } from '@proton/app-context/useNotifications'
 import NotificationButton from '@proton/components/containers/notifications/NotificationButton'
 import { NOTIFICATION_DEFAULT_EXPIRATION_TIME } from '@proton/app-context/notifications/constants'
 import { useConfirmActionModal } from '@proton/components/components/confirmActionModal/ConfirmActionModal'

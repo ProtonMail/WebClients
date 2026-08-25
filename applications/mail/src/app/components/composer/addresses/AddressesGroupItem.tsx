@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import ContextMenu from '@proton/components/components/contextMenu/ContextMenu';
@@ -10,7 +11,6 @@ import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import useDragOver from '@proton/components/hooks/useDragOver';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { IcCrossCircle } from '@proton/icons/icons/IcCrossCircle';
 import { IcSquares } from '@proton/icons/icons/IcSquares';

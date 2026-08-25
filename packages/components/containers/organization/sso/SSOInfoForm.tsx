@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { useGetSamlSSO } from '@proton/account/samlSSO/hooks';
 import { useUserPermissions } from '@proton/account/userPermissions/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import useLoading from '@proton/hooks/useLoading';
 import metrics, { observeApiError } from '@proton/metrics';
@@ -18,7 +19,6 @@ import InputFieldTwo from '../../../components/v2/field/InputField';
 import TextAreaTwo from '../../../components/v2/input/TextArea';
 import useFormErrors from '../../../components/v2/useFormErrors';
 import useApi from '../../../hooks/useApi';
-import useNotifications from '../../../hooks/useNotifications';
 import SettingsLayout from '../../account/SettingsLayout';
 import SettingsLayoutLeft from '../../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../../account/SettingsLayoutRight';

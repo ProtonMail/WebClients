@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { addRetentionRule, deleteRetentionRule, updateRetentionRule } from '@proton/account/retentionPolicies';
 import { useRetentionPolicies } from '@proton/account/retentionPolicies/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import {
     createRetentionRuleApi,
@@ -14,7 +15,6 @@ import type { RetentionRule } from '@proton/shared/lib/interfaces/RetentionRule'
 
 import useApi from '../../../hooks/useApi';
 import useErrorHandler from '../../../hooks/useErrorHandler';
-import useNotifications from '../../../hooks/useNotifications';
 import { isClientIDRuleScope } from './helpers';
 import type { RetentionRuleFormData } from './types';
 

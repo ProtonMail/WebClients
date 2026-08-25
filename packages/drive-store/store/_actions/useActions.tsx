@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { useConfirmActionModal, useNotifications } from '@proton/components';
+import { useNotifications } from '@proton/app-context/useNotifications';
+import { useConfirmActionModal } from '@proton/components';
 import { isSafari, textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { rtlSanitize } from '@proton/shared/lib/helpers/string';
 import isTruthy from '@proton/utils/isTruthy';

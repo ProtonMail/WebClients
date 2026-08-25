@@ -2,6 +2,7 @@ import type { ChangeEvent } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { hasInboxDesktopFeature } from '@proton/shared/lib/desktop/ipcHelpers';
@@ -14,7 +15,6 @@ import ThemeCards from '../../../../containers/themes/ThemeCards';
 import { useTheme } from '../../../../containers/themes/ThemeProvider';
 import ThemeSyncModeDropdown from '../../../../containers/themes/ThemeSyncModeDropdown';
 import useEarlyAccess from '../../../../hooks/useEarlyAccess';
-import useNotifications from '../../../../hooks/useNotifications';
 import useShowThemeSelection from '../../../../hooks/useShowThemeSelection';
 import Info from '../../../link/Info';
 import Toggle from '../../../toggle/Toggle';

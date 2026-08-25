@@ -4,6 +4,7 @@ import { flushSync } from 'react-dom';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { useLoading } from '@proton/hooks';
 import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -17,7 +18,6 @@ import type { Api, HumanVerificationMethodType } from '@proton/shared/lib/interf
 
 import SettingsLink from '../../../components/link/SettingsLink';
 import Loader from '../../../components/loader/Loader';
-import useNotifications from '../../../hooks/useNotifications';
 import RequestNewCodeModal from './RequestNewCodeModal';
 import Text from './Text';
 import VerifyCodeForm from './VerifyCodeForm';

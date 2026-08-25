@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Card } from '@proton/atoms/Card/Card';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
@@ -9,7 +10,6 @@ import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 
 import Copy from '../../components/button/Copy';
 import Loader from '../../components/loader/Loader';
-import useNotifications from '../../hooks/useNotifications';
 
 export const MnemonicPhraseStepContent = ({
     recoveryPhrase,

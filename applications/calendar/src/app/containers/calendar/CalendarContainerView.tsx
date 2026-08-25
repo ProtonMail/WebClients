@@ -4,6 +4,7 @@ import { Suspense, lazy, useCallback, useEffect, useMemo, useRef, useState } fro
 import { differenceInCalendarDays, format, isToday } from 'date-fns';
 import { c, msgid } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
@@ -34,7 +35,6 @@ import TopBanners from '@proton/components/containers/topBanners/TopBanners';
 import useDrawer from '@proton/components/hooks/drawer/useDrawer';
 import useOpenDrawerOnLoad from '@proton/components/hooks/drawer/useOpenDrawerOnLoad';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import useToggle from '@proton/components/hooks/useToggle';
 import { FeatureCode, useFeature } from '@proton/features';
 import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';

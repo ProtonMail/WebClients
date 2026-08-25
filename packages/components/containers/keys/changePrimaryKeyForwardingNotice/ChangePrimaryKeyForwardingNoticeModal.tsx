@@ -1,12 +1,12 @@
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { useLoading } from '@proton/hooks';
 import noop from '@proton/utils/noop';
 
 import type { PromptProps } from '../../../components/prompt/Prompt';
 import Prompt from '../../../components/prompt/Prompt';
-import useNotifications from '../../../hooks/useNotifications';
 import getPausedForwardingNotice from './getPausedForwardingNotice';
 
 interface Props extends Omit<PromptProps, 'title' | 'buttons' | 'children'> {

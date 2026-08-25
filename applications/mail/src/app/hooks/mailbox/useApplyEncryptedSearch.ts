@@ -3,11 +3,9 @@ import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import useNotifications from '@proton/components/hooks/useNotifications';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { SEARCH_TYPE, useSearchTelemetry } from '@proton/encrypted-search/useSearchTelemetry';
 import type { Filter, SearchParameters, Sort } from '@proton/shared/lib/mail/search';
-
-import { useMailDispatch, useMailSelector } from '../../store/hooks';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { isSearch } from '../../helpers/elements';
@@ -29,6 +27,7 @@ import {
     selectCategoryIDs,
     shouldLoadElements as shouldSendRequestSelector,
 } from '../../store/elements/elementsSelectors';
+import { useMailDispatch, useMailSelector } from '../../store/hooks';
 import type { MailState } from '../../store/store';
 
 export interface EncryptedSearchParams {

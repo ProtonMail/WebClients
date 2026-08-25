@@ -9,12 +9,12 @@ import { setupServer } from 'msw/node';
 import { useAddresses, useGetAddresses } from '@proton/account/addresses/hooks';
 import { getModelState } from '@proton/account/test';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
 import { CacheProvider } from '@proton/components/containers/cache/Provider';
 import { DrawerProvider } from '@proton/components/hooks/drawer/useDrawer';
 import useApi from '@proton/components/hooks/useApi';
 import useGetCalendarEventRaw from '@proton/components/hooks/useGetCalendarEventRaw';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { EVENT_VERIFICATION_STATUS } from '@proton/shared/lib/calendar/constants';
 import { CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 import { addDays } from '@proton/shared/lib/date-fns-utc';
@@ -43,7 +43,7 @@ import EmailReminderWidget from './EmailReminderWidget';
 
 const server = setupServer(...getHandlers());
 
-jest.mock('@proton/components/hooks/useNotifications');
+jest.mock('@proton/app-context/useNotifications');
 jest.mock('@proton/components/hooks/useModals');
 jest.mock('@proton/components/hooks/useApi');
 jest.mock('@proton/components/hooks/useGetCalendarEventRaw');

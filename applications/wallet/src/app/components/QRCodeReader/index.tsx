@@ -5,9 +5,9 @@ import type { QRCode } from 'jsqr';
 import jsQR from 'jsqr';
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import { useNotifications } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import { IcArrowsSwitch } from '@proton/icons/icons/IcArrowsSwitch';
 import { IcCamera } from '@proton/icons/icons/IcCamera';

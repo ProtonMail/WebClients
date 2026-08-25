@@ -193,7 +193,9 @@ jest.mock('@proton/mail/store/contactEmails/hooks', () => ({
     },
 }));
 jest.mock('@proton/features/useFeature', () => () => ({}));
-jest.mock('@proton/components/hooks/useNotifications', () => () => ({}));
+jest.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: () => ({}),
+}));
 jest.mock('@proton/account/welcomeFlags/index', () => ({
     __esModule: true,
     useWelcomeFlags: jest.fn(() => [{ isWelcomeFlow: false }]),

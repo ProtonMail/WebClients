@@ -19,8 +19,8 @@ vi.mock('@proton/components/containers/organization/SetupOrganizationNameModal',
         open ? <button onClick={() => onSubmit('My Org')}>setup-org-modal</button> : null,
 }));
 
-vi.mock('@proton/components/hooks/useNotifications', () => ({
-    default: vi.fn().mockReturnValue({
+vi.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: vi.fn().mockReturnValue({
         createNotification: vi.fn(),
     }),
 }));

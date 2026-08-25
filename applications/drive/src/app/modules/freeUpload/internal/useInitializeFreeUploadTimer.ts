@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import useNotifications from '@proton/components/hooks/useNotifications';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
 
 import { useFreeUploadStore } from './freeUpload.store';

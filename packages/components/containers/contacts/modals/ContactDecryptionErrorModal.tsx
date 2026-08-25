@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { useContact } from '@proton/mail/store/contacts/contactHooks';
 import { APPS } from '@proton/shared/lib/constants';
@@ -18,7 +19,6 @@ import ModalTwo from '../../../components/modalTwo/Modal';
 import ModalTwoContent from '../../../components/modalTwo/ModalContent';
 import ModalTwoFooter from '../../../components/modalTwo/ModalFooter';
 import ModalTwoHeader from '../../../components/modalTwo/ModalHeader';
-import useNotifications from '../../../hooks/useNotifications';
 import type { ContactClearDataConfirmProps } from './ContactClearDataConfirmModal';
 
 export interface ContactDecryptionErrorProps {

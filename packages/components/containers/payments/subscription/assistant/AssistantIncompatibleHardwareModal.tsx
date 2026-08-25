@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { userSettingsActions } from '@proton/account/userSettings';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import useLoading from '@proton/hooks/useLoading';
@@ -13,7 +14,6 @@ import { AI_ASSISTANT_ACCESS, type UserSettings } from '@proton/shared/lib/inter
 import type { ModalProps } from '../../../../components/modalTwo/Modal';
 import Prompt from '../../../../components/prompt/Prompt';
 import useApi from '../../../../hooks/useApi';
-import useNotifications from '../../../../hooks/useNotifications';
 
 interface Props {
     modalProps: ModalProps;

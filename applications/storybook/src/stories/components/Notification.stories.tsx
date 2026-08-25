@@ -4,13 +4,13 @@ import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
 import type { CreateNotificationOptions, CustomNotificationProps } from '@proton/app-context/notifications/interfaces';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import RadioGroup from '@proton/components/components/input/RadioGroup';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import NotificationButton from '@proton/components/containers/notifications/NotificationButton';
-import useNotifications from '@proton/components/hooks/useNotifications';
 
 const meta: Meta = {
     title: 'Components/Notification',

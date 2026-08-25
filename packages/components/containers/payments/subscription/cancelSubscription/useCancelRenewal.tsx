@@ -1,13 +1,13 @@
 import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { changeRenewState } from '@proton/payments/core/api/api';
 import { Renew } from '@proton/payments/core/subscription/constants';
 import { getTrialInfoForSingleSubscription } from '@proton/payments/core/trials';
 
 import useApi from '../../../../hooks/useApi';
 import useEventManager from '../../../../hooks/useEventManager';
-import useNotifications from '../../../../hooks/useNotifications';
 import { OPEN_TRIAL_CANCELED_MODAL } from '../../../topBanners/constants';
 import type { FeedbackDowngradeFormData } from '../content/interface';
 import type { CancelSubscriptionResult } from './types';

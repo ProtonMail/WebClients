@@ -9,9 +9,9 @@ import { selectSubscription, subscriptionThunk } from '@proton/account/subscript
 import { selectUser } from '@proton/account/user';
 import type { CreateNotificationOptions } from '@proton/app-context/notifications/interfaces';
 import { useConfig } from '@proton/app-context/useConfig';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import useApi from '@proton/components/hooks/useApi';
 import { useHandler } from '@proton/components/hooks/useHandler';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { getPreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
 import type { OnChargeable } from '@proton/components/payments/client-extensions';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';

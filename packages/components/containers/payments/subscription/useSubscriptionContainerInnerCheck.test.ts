@@ -18,9 +18,9 @@ import {
 } from './useSubscriptionContainerInnerCheck';
 
 const mockCreateNotification = jest.fn();
-jest.mock('../../../hooks/useNotifications', () => ({
+jest.mock('@proton/app-context/useNotifications', () => ({
     __esModule: true,
-    default: () => ({ createNotification: mockCreateNotification }),
+    useNotifications: () => ({ createNotification: mockCreateNotification }),
 }));
 
 jest.mock('@proton/payments/core/subscription/forbidden-plan-transition', () => ({

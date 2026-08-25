@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { ToolbarButton, useNotifications } from '@proton/components';
+import { useNotifications } from '@proton/app-context/useNotifications';
+import { ToolbarButton } from '@proton/components';
 import { IcGrid3 } from '@proton/icons/icons/IcGrid3';
 import { IcListBullets } from '@proton/icons/icons/IcListBullets';
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';

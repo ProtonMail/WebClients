@@ -6,6 +6,7 @@ import { c, msgid } from 'ttag';
 import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { useGetSubscription } from '@proton/account/subscription/hooks';
 import { useGetUser } from '@proton/account/user/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import useSettingsLink from '@proton/components/components/link/useSettingsLink';
@@ -15,7 +16,6 @@ import Prompt from '@proton/components/components/prompt/Prompt';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { useHandler } from '@proton/components/hooks/useHandler';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import type { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import type { MessageState, PartialMessageState } from '@proton/mail/store/messages/messagesTypes';
 import { forceSend } from '@proton/shared/lib/api/messages';
@@ -25,12 +25,11 @@ import { addUpsellPath, getUpgradePath, getUpsellRef } from '@proton/shared/lib/
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { isOutbox, isScheduledSend } from '@proton/shared/lib/mail/messages';
 
+import SendingOriginalMessageModal from '../../components/composer/modals/SendingOriginalMessageModal';
+import { isDirtyAddress } from '../../helpers/addresses';
 import { addComposerAction } from '../../store/composers/composerActions';
 import { composerActions } from '../../store/composers/composersSlice';
 import { useMailDispatch, useMailStore } from '../../store/hooks';
-
-import SendingOriginalMessageModal from '../../components/composer/modals/SendingOriginalMessageModal';
-import { isDirtyAddress } from '../../helpers/addresses';
 import { openDraft } from '../../store/messages/draft/messagesDraftActions';
 import { useGetLocalID, useGetMessage } from '../message/useMessage';
 import { useDraft } from '../useDraft';

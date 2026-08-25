@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { userSettingsThunk } from '@proton/account/userSettings';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
@@ -21,7 +22,6 @@ import InputFieldTwo from '../../../components/v2/field/InputField';
 import useFormErrors from '../../../components/v2/useFormErrors';
 import useApi from '../../../hooks/useApi';
 import useErrorHandler from '../../../hooks/useErrorHandler';
-import useNotifications from '../../../hooks/useNotifications';
 import { maxSecurityKeyNameLength } from './constants';
 
 interface Props extends ModalProps {

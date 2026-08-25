@@ -1,11 +1,10 @@
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { useHandler } from '@proton/components/hooks/useHandler';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import type { MessageState, MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 
 import { useMailDispatch } from '../../store/hooks';
-
 import { deleteDraft } from '../../store/messages/draft/messagesDraftActions';
 import { useGetMessage } from '../message/useMessage';
 import { useCreateDraft } from '../message/useSaveDraft';

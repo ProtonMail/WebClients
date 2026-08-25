@@ -3,10 +3,10 @@ import { useCallback } from 'react';
 
 import { c } from 'ttag';
 
-import { useNotifications } from '@proton/components';
+import { useNotifications } from '@proton/app-context/useNotifications';
 
-import { useIsGuest } from '../../../providers/IsGuestProvider';
 import { getApproximateTokenCount } from '../../../llm/tokenizer';
+import { useIsGuest } from '../../../providers/IsGuestProvider';
 import { useLumoDispatch } from '../../../redux/hooks';
 import { upsertAttachment } from '../../../redux/slices/core/attachments';
 import { SearchService } from '../../../services/search/searchService';

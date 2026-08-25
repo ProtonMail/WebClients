@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { NOTIFICATION_DEFAULT_EXPIRATION_TIME } from '@proton/app-context/notifications/constants';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import useAsyncError from '@proton/hooks/useAsyncError';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { deriveAliasPrefix } from '@proton/pass/lib/alias/alias.utils';
@@ -18,7 +19,6 @@ import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 
 import useAuthentication from '../../../../../hooks/useAuthentication';
-import useNotifications from '../../../../../hooks/useNotifications';
 import { useModalStateObject } from '../../../../modalTwo/useModalState';
 import { filterPassAliases } from './PassAliases.helpers';
 import { PASS_ALIASES_ERROR_STEP, PassAliasesError } from './PassAliasesError';

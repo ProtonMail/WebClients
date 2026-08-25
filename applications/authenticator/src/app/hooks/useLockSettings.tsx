@@ -8,7 +8,7 @@ import { updateLock } from 'proton-authenticator/store/settings';
 import { useAppDispatch, useAppSelector } from 'proton-authenticator/store/utils';
 import { c } from 'ttag';
 
-import useNotifications from '@proton/components/hooks/useNotifications';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
 import { AUTHENTICATOR_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';

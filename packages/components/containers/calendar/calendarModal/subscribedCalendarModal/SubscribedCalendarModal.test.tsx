@@ -8,7 +8,9 @@ import SubscribedCalendarModal from './SubscribedCalendarModal';
 
 jest.mock('../../hooks/useGetCalendarSetup', () => () => ({}));
 
-jest.mock('../../../../hooks/useNotifications', () => () => ({}));
+jest.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: () => ({}),
+}));
 
 jest.mock('../personalCalendarModal/calendarModalState', () => ({
     ...jest.requireActual('../personalCalendarModal/calendarModalState'),

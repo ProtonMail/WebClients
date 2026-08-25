@@ -1,18 +1,17 @@
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { FeatureCode, useFeature } from '@proton/features';
 import { IcHourglass } from '@proton/icons/icons/IcHourglass';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 
-import { useMailDispatch } from '../../../../../store/hooks';
-
 import { canSetExpiration } from '../../../../../helpers/expiration';
 import useExpiration from '../../../../../hooks/useExpiration';
+import { useMailDispatch } from '../../../../../store/hooks';
 import { expireMessages } from '../../../../../store/messages/expire/messagesExpireActions';
 
 interface Props {

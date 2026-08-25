@@ -9,7 +9,7 @@ import { hasClipboardPermissions } from 'proton-pass-extension/lib/utils/permiss
 import type { WorkerMessageWithSender } from 'proton-pass-extension/types/messages';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
-import useNotifications from '@proton/components/hooks/useNotifications';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Localized } from '@proton/pass/components/Core/Localized';
 import { ClipboardProvider } from '@proton/pass/components/Settings/Clipboard/ClipboardProvider';
 

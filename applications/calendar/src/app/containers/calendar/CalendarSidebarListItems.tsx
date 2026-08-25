@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import useSettingsLink from '@proton/components/components/link/useSettingsLink';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
@@ -16,7 +17,6 @@ import ShareLinkModal from '@proton/components/containers/calendar/shareURL/Shar
 import ShareLinkSuccessModal from '@proton/components/containers/calendar/shareURL/ShareLinkSuccessModal';
 import useApi from '@proton/components/hooks/useApi';
 import { useModalsMap } from '@proton/components/hooks/useModalsMap';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import type { LoadingByKey } from '@proton/hooks/useLoading';
 import { getAllMembers, getCalendarInvitations, getPublicLinks } from '@proton/shared/lib/api/calendars';

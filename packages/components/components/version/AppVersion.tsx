@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { useConfig } from '@proton/app-context/useConfig';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { APPS_CONFIGURATION } from '@proton/shared/lib/constants';
 import { addDesktopAppVersion } from '@proton/shared/lib/desktop/version';
@@ -9,7 +10,6 @@ import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 
 import { getAppVersion } from '../../helpers/appVersion';
 import useEarlyAccess from '../../hooks/useEarlyAccess';
-import useNotifications from '../../hooks/useNotifications';
 
 interface Props {
     appVersion?: string;

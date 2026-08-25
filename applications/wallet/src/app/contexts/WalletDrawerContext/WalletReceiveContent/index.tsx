@@ -3,12 +3,12 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import type { WasmApiWalletAccount } from '@proton/andromeda';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import QRCode from '@proton/components/components/image/QRCode';
 import InputFieldStacked from '@proton/components/components/inputFieldStacked/InputFieldStacked';
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
 import Info from '@proton/components/components/link/Info';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import type { IWasmApiWalletData } from '@proton/wallet/types';
 
 import { Button, Select } from '../../../atoms';

@@ -8,6 +8,7 @@ import {
     unprivatizeMembersManual,
 } from '@proton/account/members/unprivatizeMembers';
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { BannerVariants } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
 import useLoading from '@proton/hooks/useLoading';
@@ -18,7 +19,6 @@ import noop from '@proton/utils/noop';
 
 import useModalState from '../../components/modalTwo/useModalState';
 import Prompt, { type PromptProps } from '../../components/prompt/Prompt';
-import useNotifications from '../../hooks/useNotifications';
 import { MemberListBanner, MembersList } from './MemberListBanner';
 
 interface Props extends Omit<PromptProps, 'children' | 'buttons'> {

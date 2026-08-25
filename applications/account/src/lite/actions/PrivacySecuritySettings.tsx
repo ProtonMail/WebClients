@@ -1,11 +1,11 @@
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import {
     RemoveImageMetadataToggle,
     RequestLinkConfirmationToggle,
     SenderImagesToggle,
     useApi,
-    useNotifications,
 } from '@proton/components';
 import PreventTrackingToggle from '@proton/components/containers/emailPrivacy/PreventTrackingToggle';
 import RemoteToggle from '@proton/components/containers/emailPrivacy/RemoteToggle';

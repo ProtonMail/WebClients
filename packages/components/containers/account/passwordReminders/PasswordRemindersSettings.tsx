@@ -6,6 +6,7 @@ import { usePasswordReminder } from '@proton/account/passwordReminder/hooks';
 import { usePasswordReminderTelemetry } from '@proton/account/passwordReminder/passwordReminderTelemetry';
 import { setPasswordReminderFlag } from '@proton/account/passwordReminder/setPasswordReminderFlag';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { DashboardCard, DashboardCardContent } from '@proton/atoms/DashboardCard/DashboardCard';
 import { Href } from '@proton/atoms/Href/Href';
 import useLoading from '@proton/hooks/useLoading';
@@ -16,7 +17,6 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { PASSWORD_REMINDERS_VALUE } from '@proton/shared/lib/interfaces';
 
 import useModalState from '../../../components/modalTwo/useModalState';
-import useNotifications from '../../../hooks/useNotifications';
 import { EnforcedByOrganization } from '../../organization/EnforcedByOrganization';
 import { SettingsIconRow } from '../SettingsIconRow';
 import { SettingsToggleRow } from '../SettingsToggleRow';
