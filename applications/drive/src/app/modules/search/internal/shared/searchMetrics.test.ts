@@ -38,11 +38,14 @@ const TASK_KIND: IndexerTaskKind = 'index-populator-task';
 
 const FAKE_DIAGNOSTICS: SearchDiagnostics = {
     blobCount: 0,
-    blobSizeMb: 0,
+    blobsTotalSizeMb: 0,
     quarantinedNodeCount: 0,
     storageUsageMb: 0,
     storageQuotaMb: 0,
     documentCount: undefined,
+    blobCacheEntryCount: undefined,
+    blobCachePendingFreeCount: undefined,
+    blobCacheSizesMb: undefined,
 };
 
 const triggerTransient = (taskUid: string) =>
