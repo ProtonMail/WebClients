@@ -4,8 +4,10 @@ export type DocumentRoleType =
   | 'Editor'
   | 'Admin'
   | 'PublicViewer'
-  | 'PublicViewerWithAccess'
   | 'PublicEditor'
+  // Not used in canEdit/canRename/canComment because this kind of user is redirected to private app
+  // This means user has direct share access to the file besides the public link
+  | 'PublicViewerWithAccess'
   | 'PublicEditorWithAccess'
 
 export class DocumentRole {
@@ -23,14 +25,6 @@ export class DocumentRole {
     return this.isAdmin()
   }
 
-  /**
-   * Technically, editors should be able to always rename, but there is a limitation of the Drive/Docs architecture
-   * such that the parent key is required to successfully rename, and the Docs client, unlike the Drive client, may
-   * not have this access.
-   *
-   * Currently, there is no way to determine if the user is the creator of a doc. So for now we allow any editor to rename,
-   * even though the request may fail for them. The ideal goal is for "owner" to be accurate, but it is not.
-   */
   canRename(): boolean {
     return this.roleType === 'Editor' || this.roleType === 'Admin' || this.roleType === 'PublicEditor'
   }
