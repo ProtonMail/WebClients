@@ -15,8 +15,8 @@ import {
     Toggle,
     useConfirmActionModal,
     useModalTwoStatic,
-    useToggle,
 } from '@proton/components';
+import useToggle from '@proton/hooks/useToggle'
 import { ModalHeaderCloseButton } from '@proton/components/components/modalTwo/ModalHeader';
 import useLoading from '@proton/hooks/useLoading';
 import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';

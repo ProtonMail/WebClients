@@ -6,7 +6,7 @@ import { useAddresses } from '@proton/account/addresses/hooks';
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import TopNavbarListItemSearchButton from '@proton/components/components/topnavbar/TopNavbarListItemSearchButton';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import useToggle from '@proton/components/hooks/useToggle';
+import useToggle from '@proton/hooks/useToggle'
 import { useSearchTelemetry } from '@proton/encrypted-search/useSearchTelemetry';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { isMobile } from '@proton/shared/lib/helpers/browser';

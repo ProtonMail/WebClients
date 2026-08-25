@@ -13,7 +13,7 @@ import { SentryMailInitiatives, traceError } from '@proton/shared/lib/helpers/se
 import shortDomainImg from '@proton/styles/assets/img/illustrations/new-upsells-img/pm-me.svg';
 
 import useShortDomainAddress from '../../../hooks/mail/useShortDomainAddress';
-import useToggle from '../../../hooks/useToggle';
+import useToggle from '@proton/hooks/useToggle'
 import type { FeatureTourStepProps, ShouldDisplayTourStep } from '../interface';
 import FeatureTourStepCTA from './components/FeatureTourStepCTA';
 import FeatureTourStepsContent from './components/FeatureTourStepsContent';
