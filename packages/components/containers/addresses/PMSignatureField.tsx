@@ -18,7 +18,7 @@ import signatureImg from '@proton/styles/assets/img/illustrations/new-upsells-im
 import useModalState from '../../components/modalTwo/useModalState';
 import Toggle from '../../components/toggle/Toggle';
 import UpsellModal from '../../components/upsell/UpsellModal/UpsellModal';
-import useToggle from '../../hooks/useToggle';
+import useToggle from '@proton/hooks/useToggle'
 
 interface Props {
     id: string;

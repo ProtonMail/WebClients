@@ -45,7 +45,6 @@ import {
     useOrganizationTheme,
     useRecoveryNotification,
     useShowThemeSelection,
-    useToggle,
 } from '@proton/components';
 import FeatureTour from '@proton/components/components/featureTour/FeatureTour';
 import SSODomainUnverifiedBanner from '@proton/components/containers/account/sso/SSODomainUnverifiedBanner';
@@ -63,6 +62,7 @@ import useShowDashboard, {
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import { useIsGroupOwner } from '@proton/components/hooks/useIsGroupOwner';
 import useShowVPNDashboard from '@proton/components/hooks/useShowVPNDashboard';
+import useToggle from '@proton/hooks/useToggle';
 import { useCategoriesData } from '@proton/mail/features/categoriesView/useCategoriesData';
 import { useEntitlementChecks } from '@proton/payments/core/entitlements/hooks';
 import { getHasPassB2BPlan, hasAIAssistant, hasAllProductsB2CPlan } from '@proton/payments/core/subscription/helpers';
