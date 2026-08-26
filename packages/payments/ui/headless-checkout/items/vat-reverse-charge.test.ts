@@ -3,7 +3,7 @@ import { addMonths } from '@proton/shared/lib/date-fns-utc';
 import { CYCLE, PLANS } from '../../../core/constants';
 import type { Currency } from '../../../core/interface';
 import type { PlansMap } from '../../../core/plan/interface';
-import { SubscriptionMode, TaxInclusive, TaxMode } from '../../../core/subscription/constants';
+import { SubscriptionMode, TaxMode } from '../../../core/subscription/constants';
 import type { SubscriptionEstimation } from '../../../core/subscription/interface';
 import type { HeadlessCheckoutContextInner } from '../get-headless-checkout';
 import { getHeadlessCheckout } from '../get-headless-checkout';
@@ -79,48 +79,6 @@ describe('isVatReverseChargeApplicable', () => {
         });
 
         expect(isVatReverseChargeApplicable(checkResult)).toBe(false);
-    });
-
-    describe('TaxInclusive fallback (backend has not shipped TaxMode yet)', () => {
-        it('should apply the old heuristic when TaxInclusive is EXCLUSIVE and Taxes is empty', () => {
-            const checkResult = makeCheckResult({
-                TaxMode: undefined,
-                TaxInclusive: TaxInclusive.EXCLUSIVE,
-                Taxes: [],
-            });
-
-            expect(isVatReverseChargeApplicable(checkResult)).toBe(true);
-        });
-
-        it('should return false when TaxInclusive is EXCLUSIVE but Taxes has entries', () => {
-            const checkResult = makeCheckResult({
-                TaxMode: undefined,
-                TaxInclusive: TaxInclusive.EXCLUSIVE,
-                Taxes: [{ Name: 'VAT', Rate: 20, Amount: 200 }],
-            });
-
-            expect(isVatReverseChargeApplicable(checkResult)).toBe(false);
-        });
-
-        it('should return false when TaxInclusive is INCLUSIVE', () => {
-            const checkResult = makeCheckResult({
-                TaxMode: undefined,
-                TaxInclusive: TaxInclusive.INCLUSIVE,
-                Taxes: [],
-            });
-
-            expect(isVatReverseChargeApplicable(checkResult)).toBe(false);
-        });
-
-        it('should prefer TaxMode over TaxInclusive when both are present', () => {
-            const checkResult = makeCheckResult({
-                TaxMode: TaxMode.REVERSE_CHARGE,
-                TaxInclusive: TaxInclusive.INCLUSIVE,
-                Taxes: [],
-            });
-
-            expect(isVatReverseChargeApplicable(checkResult)).toBe(true);
-        });
     });
 });
 
