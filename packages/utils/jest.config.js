@@ -2,7 +2,7 @@ module.exports = {
     setupFilesAfterEnv: ['./jest.setup.js'],
     preset: 'ts-jest',
     testEnvironment: '@proton/jest-env',
-    collectCoverageFrom: ['*.ts'],
+    collectCoverageFrom: ['src/**/*.ts'],
     coverageReporters: ['text-summary', 'json'],
     reporters: ['default', ['jest-junit', { suiteNameTemplate: '{filepath}', outputName: 'test-report.xml' }]],
     coverageThreshold: {
