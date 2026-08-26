@@ -5,7 +5,7 @@ import type { ESItem, NormalizedSearchParams } from '@proton/encrypted-search/mo
 import createListeners from '@proton/shared/lib/helpers/listeners.ts';
 
 import type { ESBaseMessage, ESMessageContent } from '../../models/encryptedSearch.ts';
-
+import type { DatabaseLock } from '../db/DatabaseLock';
 import type { EncryptedSearchReader } from '../import/EncryptedSearchReader';
 import type SearchWorker from './SearchWorker';
 
@@ -24,6 +24,7 @@ export class Search {
 
     constructor(
         private params: NormalizedSearchParams,
+        private dbLock: DatabaseLock,
         private workerPromise: Promise<Comlink.Remote<SearchWorker> | undefined>,
         private openESReader: () => Promise<EncryptedSearchReader | undefined>
     ) {
@@ -107,13 +108,14 @@ export class Search {
 
         try {
             performance.mark('search-worker-start');
-            await worker.search(
-                this.params,
-                Comlink.proxy((ids) => {
-                    promises.push(fetchMessagesForIDs(ids));
-                })
+            await this.dbLock.runSearch(() =>
+                worker.search(
+                    this.params,
+                    Comlink.proxy((ids) => {
+                        promises.push(fetchMessagesForIDs(ids));
+                    })
+                )
             );
-
             await Promise.all(promises);
         } finally {
             oldStore.close();

@@ -2,6 +2,7 @@ import type * as Comlink from 'comlink';
 
 import type { NormalizedSearchParams } from '@proton/encrypted-search/models';
 
+import { DatabaseLock } from '../db/DatabaseLock';
 import type { EncryptedSearchReader } from '../import/EncryptedSearchReader';
 import { Search } from './Search';
 import type SearchWorker from './SearchWorker';
@@ -35,7 +36,7 @@ const startedSearch = async (initial: NormalizedSearchParams, messages: SearchRe
     const close = jest.fn();
     const openESReader = jest.fn(async () => ({ readMessages, close }) as unknown as EncryptedSearchReader);
 
-    const search = new Search(initial, Promise.resolve(worker), openESReader);
+    const search = new Search(initial, new DatabaseLock(), Promise.resolve(worker), openESReader);
     const onResults = jest.fn();
 
     search.onResults.subscribe(onResults);
@@ -97,6 +98,7 @@ describe('Search.update', () => {
         // worker/reader promises never resolve, so execute() never populates unfilteredResults
         const search = new Search(
             params({ filter: { Unread: 1 } }),
+            new DatabaseLock(),
             new Promise(() => {}),
             () => new Promise(() => {})
         );

@@ -4,6 +4,7 @@ import type { NormalizedSearchParams } from '@proton/encrypted-search/models';
 import type { DecryptedKey } from '@proton/shared/lib/interfaces';
 
 import { getIndexKey } from '../crypto/indexKey';
+import type { DatabaseLock } from '../db/DatabaseLock';
 import { openContentSearchDB } from '../db/open';
 import { EncryptedSearchReader } from '../import/EncryptedSearchReader';
 import { Search } from './Search';
@@ -14,8 +15,9 @@ export class SearchService {
     private workerReadyPromise: Promise<Comlink.Remote<SearchWorker> | undefined> | undefined;
 
     constructor(
-        private userId: string,
-        private getUserKeys: () => Promise<DecryptedKey[]>
+        private readonly userId: string,
+        private readonly getUserKeys: () => Promise<DecryptedKey[]>,
+        private readonly dbLock: DatabaseLock
     ) {}
 
     /**
@@ -28,7 +30,7 @@ export class SearchService {
     }
 
     search(params: NormalizedSearchParams): Search {
-        const search = new Search(params, this.getWorker(), async () =>
+        const search = new Search(params, this.dbLock, this.getWorker(), async () =>
             EncryptedSearchReader.open(this.userId, await this.getUserKeys())
         );
         search.start();
