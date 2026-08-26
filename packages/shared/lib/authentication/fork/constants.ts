@@ -50,6 +50,7 @@ export enum ForkSearchParameters {
     UnauthenticatedReturnUrl = 'uru',
     Token = 'token',
     ForkChallenge = 'forkChallenge',
+    ChildClientID = 'clientId',
 }
 
 export enum ExtraSessionForkSearchParameters {
