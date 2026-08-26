@@ -1,5 +1,6 @@
 import { Suspense, useCallback, useEffect, useRef, useState } from 'react'
-
+import { c } from 'ttag'
+import clsx from '@proton/utils/clsx'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { useLexicalNodeSelection } from '@lexical/react/useLexicalNodeSelection'
 import { mergeRegister } from '@lexical/utils'
@@ -21,6 +22,7 @@ import {
   createCommand,
 } from 'lexical'
 
+import { isAllowedImageSrc } from '../../Conversion/ImageSrcUtils'
 import { useCombinedRefs } from '@proton/hooks'
 import ImageResizer from './ImageResizer'
 import { getElementDimensionsWithoutPadding } from '../../Utils/getEditorWidthWithoutPadding'
@@ -31,7 +33,11 @@ const imageCache = new Set()
 
 export const RIGHT_CLICK_IMAGE_COMMAND: LexicalCommand<MouseEvent> = createCommand('RIGHT_CLICK_IMAGE_COMMAND')
 
-function useSuspenseImage(src: string) {
+function ensureImageLoaded(src: string) {
+  if (!isAllowedImageSrc(src)) {
+    return
+  }
+
   if (!imageCache.has(src)) {
     throw new Promise((resolve) => {
       const img = new Image()
@@ -44,7 +50,27 @@ function useSuspenseImage(src: string) {
   }
 }
 
-function LazyImage({
+function BlockedImagePlaceholder({
+  imageRef,
+  className,
+}: {
+  className: string | null
+  imageRef: { current: null | HTMLImageElement }
+}): JSX.Element {
+  return (
+    <span
+      ref={imageRef}
+      className={clsx(
+        'inline-block min-h-6 min-w-[120px] border border-dashed border-[--border-norm] px-2 py-1 text-[--text-weak]',
+        className,
+      )}
+    >
+      {c('Info').t`Remote image blocked`}
+    </span>
+  )
+}
+
+function LoadedLazyImage({
   altText,
   className,
   imageRef,
@@ -71,37 +97,76 @@ function LazyImage({
     setImgHeight(height)
   }, [width, height])
 
-  useSuspenseImage(src)
+  const combinedRef = useCombinedRefs(imageRef, (image) => {
+    const editorDimensions = getElementDimensionsWithoutPadding(editor.getRootElement())
+    if (image && editorDimensions) {
+      const naturalWidth = image.naturalWidth
+      if (image.style.width === 'inherit') {
+        if (naturalWidth > editorDimensions.width) {
+          setImgWidth(editorDimensions.width)
+        } else {
+          setImgWidth(naturalWidth)
+        }
+      }
+      if (image.style.height === 'inherit') {
+        if (naturalWidth < editorDimensions.width) {
+          setImgHeight(image.naturalHeight)
+        }
+      }
+    }
+  })
+
+  ensureImageLoaded(src)
 
   return (
     <img
       className={className || undefined}
       src={src}
       alt={altText}
-      ref={useCombinedRefs(imageRef, (image) => {
-        const editorDimensions = getElementDimensionsWithoutPadding(editor.getRootElement())
-        if (image && editorDimensions) {
-          const naturalWidth = image.naturalWidth
-          if (image.style.width === 'inherit') {
-            if (naturalWidth > editorDimensions.width) {
-              setImgWidth(editorDimensions.width)
-            } else {
-              setImgWidth(naturalWidth)
-            }
-          }
-          if (image.style.height === 'inherit') {
-            if (naturalWidth < editorDimensions.width) {
-              setImgHeight(image.naturalHeight)
-            }
-          }
-        }
-      })}
+      ref={combinedRef}
       style={{
         height: imgHeight === 'inherit' ? 'inherit' : `${imgHeight}px`,
         maxWidth: maxWidth ? `${maxWidth}px` : '100%',
         width: imgWidth === 'inherit' ? 'inherit' : `${imgWidth}px`,
       }}
       draggable="false"
+    />
+  )
+}
+
+function LazyImage({
+  altText,
+  className,
+  imageRef,
+  src,
+  width,
+  height,
+  maxWidth,
+  editor,
+}: {
+  altText: string
+  className: string | null
+  height: 'inherit' | number
+  imageRef: { current: null | HTMLImageElement }
+  maxWidth: number | null
+  src: string
+  width: 'inherit' | number
+  editor: LexicalEditor
+}): JSX.Element {
+  if (!isAllowedImageSrc(src)) {
+    return <BlockedImagePlaceholder imageRef={imageRef} className={className} />
+  }
+
+  return (
+    <LoadedLazyImage
+      altText={altText}
+      className={className}
+      imageRef={imageRef}
+      src={src}
+      width={width}
+      height={height}
+      maxWidth={maxWidth}
+      editor={editor}
     />
   )
 }
@@ -326,7 +391,7 @@ export default function ImageComponent({
           editor={editor}
         />
       </div>
-      {isFocused && (
+      {isFocused && isAllowedImageSrc(src) && (
         <ImageResizer editor={editor} imageRef={imageRef} onResizeStart={onResizeStart} onResizeEnd={onResizeEnd} />
       )}
     </Suspense>
