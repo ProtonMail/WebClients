@@ -8002,7 +8002,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@noble/hashes@npm:2.2.0, @noble/hashes@npm:^2.2.0":
+"@noble/hashes@npm:2.2.0":
   version: 2.2.0
   resolution: "@noble/hashes@npm:2.2.0"
   checksum: 10/b1b78bedc2a01394be047429f3d888905015fe8a09f1b7e43e0b5736b54133df62f73dcc73ede43af38e96e86156afb45b86973fdeaa95d9f0880333c3fc0907
@@ -8013,6 +8013,13 @@ __metadata:
   version: 1.8.0
   resolution: "@noble/hashes@npm:1.8.0"
   checksum: 10/474b7f56bc6fb2d5b3a42132561e221b0ea4f91e590f4655312ca13667840896b34195e2b53b7f097ec080a1fdd3b58d902c2a8d0fbdf51d2e238b53808a177e
+  languageName: node
+  linkType: hard
+
+"@noble/hashes@npm:^2.2.0, @noble/hashes@npm:^2.3.0":
+  version: 2.3.0
+  resolution: "@noble/hashes@npm:2.3.0"
+  checksum: 10/2a980fa3257269d0f2f0c65ad30033a395121a523cb207bd5e481054cabf21af3cce87a8d657a3d7409924ec28f7fcaaf3fb01150813ac3c9e16964a95ae0ab7
   languageName: node
   linkType: hard
 
@@ -11694,18 +11701,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@protontech/crypto@npm:^2.1.2":
-  version: 2.1.2
-  resolution: "@protontech/crypto@npm:2.1.2"
+"@protontech/crypto@npm:^2.1.3":
+  version: 2.1.3
+  resolution: "@protontech/crypto@npm:2.1.3"
   dependencies:
-    "@noble/hashes": "npm:^2.2.0"
+    "@noble/hashes": "npm:^2.3.0"
     "@openpgp/web-stream-tools": "npm:~0.3.1"
     bcryptjs: "npm:^3.0.3"
     comlink: "npm:^4.4.2"
-    core-js: "npm:^3.49.0"
-    jsmimeparser: "npm:@protontech/jsmimeparser@^3.0.2"
+    core-js: "npm:^3.50.0"
     openpgp: "npm:@protontech/openpgp@~6.3.1"
-  checksum: 10/35e2026bfb4e8d495f1d7e464626672bce25d28b9bac4e7ee12d7eb3ba1af8f12c38e49e1f7fe420c18c62deb3b92d93a66d7c7f87087488b5a6924bc678411c
+  checksum: 10/f92303fa624217d090962752fd5c73a595f0406b8759c58747848868131e22e1d4333e22bfb85f6517c5557a0c70094fe15c7a7fe27fc10e4ad5c0375edcaa11
   languageName: node
   linkType: hard
 
@@ -23575,7 +23581,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"core-js@npm:^3.49.0, core-js@npm:^3.50.0, core-js@npm:^3.8.2":
+"core-js@npm:^3.50.0, core-js@npm:^3.8.2":
   version: 3.50.0
   resolution: "core-js@npm:3.50.0"
   checksum: 10/9690bd111d8500437e65b365ec0dbe8d8899e99e877452d142c72bfbf272bd6edbf38ec9c2da8fa88d9186bba9246309bff68cedd2a6c43a3bf0748625e0e092
@@ -34259,13 +34265,6 @@ __metadata:
   bin:
     jsesc: bin/jsesc
   checksum: 10/fab949f585c71e169c5cbe00f049f20de74f067081bbd64a55443bad1c71e1b5a5b448f2359bf2fe06f5ed7c07e2e4a9101843b01c823c30b6afc11f5bfaf724
-  languageName: node
-  linkType: hard
-
-"jsmimeparser@npm:@protontech/jsmimeparser@^3.0.2":
-  version: 3.0.2
-  resolution: "@protontech/jsmimeparser@npm:3.0.2"
-  checksum: 10/a57108386bd65df02fbe4c1828e8f6e6e614ad3120698db2a57e7cf9a20de9a4417eba38dcfb93c8066540c86a35339a7c980a9fae5350de2688d0298985305b
   languageName: node
   linkType: hard
 
