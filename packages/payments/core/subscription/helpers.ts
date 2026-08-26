@@ -485,11 +485,11 @@ export function getIsVariableCycleOffer(subscription: Subscription | FreeSubscri
 export function hasIntentionalScheduledModification(
     subscription: Subscription | FreeSubscription | null | undefined
 ): boolean {
-    if (!subscription || isFreeSubscription(subscription) || !subscription.UpcomingSubscription) {
+    if (!subscription || isFreeSubscription(subscription)) {
         return false;
     }
 
-    return !getIsVariableCycleOffer(subscription);
+    return !!subscription.UpcomingSubscription;
 }
 
 type SubscriptionCheckForbiddenEstimationParameters = {
