@@ -1,5 +1,18 @@
 import { c } from 'ttag';
 
+import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
+import { IcArrowDownToSquare } from '@proton/icons/icons/IcArrowDownToSquare';
+import { IcBrandProtonVpnFilled } from '@proton/icons/icons/IcBrandProtonVpnFilled';
+import { IcBrandWireguard } from '@proton/icons/icons/IcBrandWireguard';
+import { IcHouse } from '@proton/icons/icons/IcHouse';
+import { IcKey } from '@proton/icons/icons/IcKey';
+import { IcLink } from '@proton/icons/icons/IcLink';
+import { IcMonitor } from '@proton/icons/icons/IcMonitor';
+import { IcPaintRoller } from '@proton/icons/icons/IcPaintRoller';
+import { IcShield } from '@proton/icons/icons/IcShield';
+import { IcShield2 } from '@proton/icons/icons/IcShield2';
+import { IcUser } from '@proton/icons/icons/IcUser';
+import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { applyPrefix } from '@proton/nav/api/applyPrefix';
 import { defineNavigation } from '@proton/nav/api/defineNavigation';
 import { findNavItemById } from '@proton/nav/api/findNavItem';
@@ -74,7 +87,7 @@ const routesDefinition = {
                     id: 'organization.home',
                     label: () => c('Title').t`Home`,
                     to: '/dashboard',
-                    icon: 'house',
+                    icon: IcHouse,
                     sections: [
                         {
                             id: 'organization.home.your-plan',
@@ -132,7 +145,7 @@ const routesDefinition = {
                 {
                     id: 'organization.org-and-people',
                     label: () => c('Title').t`Organization and people`,
-                    icon: 'users',
+                    icon: IcUsers,
                     meta: { defaultOpen: true },
                     children: [
                         {
@@ -228,7 +241,7 @@ const routesDefinition = {
                 {
                     id: 'organization.vpn',
                     label: () => c('Title').t`VPN`,
-                    icon: 'brand-proton-vpn-filled',
+                    icon: IcBrandProtonVpnFilled,
                     children: [
                         {
                             id: 'organization.vpn.gateways',
@@ -285,7 +298,7 @@ const routesDefinition = {
                 {
                     id: 'organization.security-and-compliance',
                     label: () => c('Title').t`Security and compliance`,
-                    icon: 'shield',
+                    icon: IcShield,
                     to: '/authentication-security',
                     isVisible: ({ context }) =>
                         context.permissions['account.security_policy.read'] &&
@@ -319,7 +332,7 @@ const routesDefinition = {
                 {
                     id: 'organization.sso',
                     label: () => c('Title').t`Single sign-on (SSO)`,
-                    icon: 'link',
+                    icon: IcLink,
                     to: '/single-sign-on',
                     isVisible: ({ context }) =>
                         !!(
@@ -332,7 +345,7 @@ const routesDefinition = {
                 {
                     id: 'organization.monitoring',
                     label: () => c('Title').t`Activity monitor`,
-                    icon: 'monitor',
+                    icon: IcMonitor,
                     to: '/activity-monitor',
                     isVisible: ({ context }) => context.permissions['account.activity_log.read'],
                 },
@@ -346,7 +359,7 @@ const routesDefinition = {
                     id: 'my-account.account-and-password',
                     label: () => c('Title').t`Account and password`,
                     to: '/account-password',
-                    icon: 'user',
+                    icon: IcUser,
                     sections: [
                         {
                             id: 'my-account.my-account-and-password.two-fa',
@@ -377,7 +390,7 @@ const routesDefinition = {
                     id: 'my-account.recovery',
                     label: () => c('Title').t`Recovery`,
                     to: '/recovery',
-                    icon: 'key',
+                    icon: IcKey,
                     meta: ({ context }) =>
                         context.notifications?.recovery ? { hasNotifications: context.notifications.recovery } : {},
                     sections: [
@@ -404,7 +417,7 @@ const routesDefinition = {
                     id: 'my-account.appearance',
                     label: () => c('Title').t`Appearance`,
                     to: '/appearance',
-                    icon: 'paint-roller',
+                    icon: IcPaintRoller,
                     sections: [
                         {
                             id: 'my-account.appearance.themes',
@@ -417,7 +430,7 @@ const routesDefinition = {
                     id: 'my-account.security-and-privacy',
                     label: () => c('Title').t`Security and privacy`,
                     to: '/security',
-                    icon: 'shield-2',
+                    icon: IcShield2,
                     sections: [
                         {
                             id: 'my-account.security-and-privacy.sentinel',
@@ -474,7 +487,7 @@ const routesDefinition = {
                     id: 'my-account.import-via-easy-switch',
                     label: () => c('Title').t`Import via ${PRODUCT_NAMES.EASY_SWITCH}`,
                     to: '/easy-switch',
-                    icon: 'arrow-down-to-square',
+                    icon: IcArrowDownToSquare,
                     isVisible: ({ context }) => {
                         if (context.appName !== APPS.PROTONACCOUNT) {
                             return false;
@@ -511,7 +524,7 @@ const routesDefinition = {
                     label: ({ context }) =>
                         context.appName === APPS.PROTONACCOUNT ? c('Title').t`VPN apps` : c('Title').t`Download apps`,
                     to: ({ context }) => (context.appName === APPS.PROTONACCOUNT ? '/vpn-apps' : '/downloads'),
-                    icon: 'arrow-down-line',
+                    icon: IcArrowDownLine,
                     sections: [
                         {
                             id: 'my-vpn.download-apps.protonvpn-clients',
@@ -536,7 +549,7 @@ const routesDefinition = {
                     id: 'my-vpn.wireguard',
                     label: () => c('Title').t`WireGuard`,
                     to: '/WireGuard',
-                    icon: 'brand-wireguard',
+                    icon: IcBrandWireguard,
                     isVisible: ({ context }) => context.appName === APPS.PROTONACCOUNT,
                     sections: [
                         {
@@ -548,7 +561,7 @@ const routesDefinition = {
                 },
                 {
                     id: 'my-vpn.openvpn',
-                    icon: 'key',
+                    icon: IcKey,
                     to: '/OpenVpn',
                     label: c('Title').t`OpenVpn`,
                     isVisible: ({ context }) => context.appName === APPS.PROTONACCOUNT,

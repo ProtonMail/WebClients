@@ -9,6 +9,14 @@ import { c } from 'ttag';
 import type { ThemeColor } from '@proton/colors/types';
 import type { SectionConfig } from '@proton/components/containers/layout/interface';
 import { SettingsLayoutVariant } from '@proton/components/containers/layout/interface';
+import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
+import { IcCreditCard } from '@proton/icons/icons/IcCreditCard';
+import { IcHouse } from '@proton/icons/icons/IcHouse';
+import { IcMoneyBills } from '@proton/icons/icons/IcMoneyBills';
+import { IcPaintRoller } from '@proton/icons/icons/IcPaintRoller';
+import { IcShield } from '@proton/icons/icons/IcShield';
+import { IcSquaresInSquare } from '@proton/icons/icons/IcSquaresInSquare';
+import { IcUserCircle } from '@proton/icons/icons/IcUserCircle';
 import {
     type MaybeFreeSubscription,
     getHasVpnB2BPlan,
@@ -74,7 +82,7 @@ export const getRoutes = ({
             text: c('Title').t`Home`,
             noTitle: true,
             to: '/dashboardV2',
-            icon: 'house',
+            icon: IcHouse,
             available:
                 showVPNDashboard && (user.isFree || user.canPay || !user.isMember || (user.isPaid && user.canPay)),
             subsections: [
@@ -112,7 +120,7 @@ export const getRoutes = ({
             text: c('Title').t`Subscription`,
             noTitle: true,
             to: '/subscription',
-            icon: 'credit-card',
+            icon: IcCreditCard,
             available:
                 showVPNDashboard && (user.isFree || user.canPay || !user.isMember || (user.isPaid && user.canPay)),
             subsections: [
@@ -185,7 +193,7 @@ export const getRoutes = ({
             id: 'dashboard',
             text: c('Title').t`Subscription`,
             to: '/dashboard',
-            icon: 'squares-in-square',
+            icon: IcSquaresInSquare,
             available: !showVPNDashboard && user.canPay,
             subsections: [
                 {
@@ -259,7 +267,7 @@ export const getRoutes = ({
             id: 'account',
             text: c('Title').t`Account`,
             to: '/account-password',
-            icon: 'user-circle',
+            icon: IcUserCircle,
             subsections: [
                 {
                     text: c('Title').t`User profile`,
@@ -305,7 +313,7 @@ export const getRoutes = ({
             id: 'appearance',
             text: c('Title').t`Appearance`,
             to: '/appearance',
-            icon: 'paint-roller',
+            icon: IcPaintRoller,
             subsections: [
                 {
                     text: c('Themes').t`Themes`,
@@ -318,7 +326,7 @@ export const getRoutes = ({
             id: 'security',
             text: c('Title').t`Security and privacy`,
             to: '/security',
-            icon: 'shield',
+            icon: IcShield,
             subsections: [
                 {
                     text: PROTON_SENTINEL_NAME,
@@ -367,7 +375,7 @@ export const getRoutes = ({
             id: 'downloads',
             text: c('Title').t`Downloads`,
             to: '/downloads',
-            icon: 'arrow-down-line',
+            icon: IcArrowDownLine,
             subsections: [
                 {
                     text: c('Title').t`${VPN_APP_NAME} clients`,
@@ -389,7 +397,7 @@ export const getRoutes = ({
             title: c('Title').t`Invite friends. Get credits.`,
             description: c('Description').t`Get up to ${credits} in credits by inviting friends to ${BRAND_NAME}.`,
             to: '/referral',
-            icon: 'money-bills',
+            icon: IcMoneyBills,
             available: flags.isReferralProgramEnabled,
             subsections: [
                 {

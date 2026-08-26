@@ -1,3 +1,5 @@
+import { IcBrandProtonVpnFilled } from '@proton/icons/icons/IcBrandProtonVpnFilled';
+import { IcHouse } from '@proton/icons/icons/IcHouse';
 import type { SidebarTree } from '@proton/nav/types/sidebar';
 
 import { getActiveBranches } from './traverse';
@@ -14,7 +16,7 @@ const routes: SidebarTree = {
                 {
                     id: 'organization.home',
                     label: 'Home',
-                    icon: 'house',
+                    icon: IcHouse,
                     to: '/vpn/dashboard',
                     meta: {},
                     children: undefined,
@@ -22,7 +24,7 @@ const routes: SidebarTree = {
                 {
                     id: 'organization.vpn',
                     label: 'VPN',
-                    icon: 'brand-proton-vpn-filled',
+                    icon: IcBrandProtonVpnFilled,
                     meta: {},
                     to: undefined,
                     children: [

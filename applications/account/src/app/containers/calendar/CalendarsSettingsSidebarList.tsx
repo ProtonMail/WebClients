@@ -13,6 +13,7 @@ import {
     SidebarListItemContent,
     SidebarListItemContentIcon,
     SidebarListItemLink,
+    navigationIconClassName,
 } from '@proton/components';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 import { getSectionPath } from '@proton/components/containers/layout/helper';
@@ -66,6 +67,7 @@ const CalendarsSettingsSidebarList = ({ prefix, calendarsSection }: Props) => {
     };
 
     const sectionPath = getSectionPath(prefix, calendarsSection);
+    const CalendarsSectionIcon = calendarsSection.icon;
 
     const calendarsSettingsHeaderProps = {
         to: sectionPath,
@@ -142,7 +144,7 @@ const CalendarsSettingsSidebarList = ({ prefix, calendarsSection }: Props) => {
                     id={headerId}
                 >
                     <SidebarListItemContent
-                        left={<SidebarListItemContentIcon name={calendarsSection.icon} />}
+                        left={<CalendarsSectionIcon className={navigationIconClassName} />}
                         right={
                             <Button
                                 onClick={(e) => {

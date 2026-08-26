@@ -1,10 +1,9 @@
-import type { SettingsLayoutVariant } from '@proton/components/containers/layout/interface.ts';
-import type { IconName } from '@proton/icons/types';
+import type { IconComponent, SettingsLayoutVariant } from '@proton/components/containers/layout/interface';
 
 export interface SearchOption {
     id: string;
     value: string;
-    icon: IconName | undefined;
+    icon: IconComponent | undefined;
     to: string;
     in: string[];
     beta: boolean;
