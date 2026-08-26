@@ -15,22 +15,35 @@ import {
     TableHeader,
     TableHeaderCell,
     TableRow,
-    usePagination,
+    useErrorHandler,
+    usePaginationAsync,
 } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import SettingsPageTitle from '@proton/components/containers/account/SettingsPageTitle';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionExtraWide from '@proton/components/containers/account/SettingsSectionExtraWide';
+import { downloadEvents } from '@proton/components/containers/b2bDashboard/VPN/helpers';
 import { IcFileLines } from '@proton/icons/icons/IcFileLines';
-import { getMspBillingSummary } from '@proton/shared/lib/api/msp';
+import {
+    type MspCsvReportType,
+    getMspBillingPeriods,
+    getMspBillingSummary,
+    getMspCsvReport,
+    getMspDailyUsage,
+} from '@proton/shared/lib/api/msp';
 import { getFormattedMonths } from '@proton/shared/lib/date/date';
-import type { MspBillingSummary } from '@proton/shared/lib/interfaces/MspBillingSummary';
+import type {
+    MspBillingPeriod,
+    MspBillingPeriodsResponse,
+    MspBillingSummary,
+    MspDailyUsage,
+} from '@proton/shared/lib/interfaces/Msp';
 import emptyRecordsImg from '@proton/styles/assets/img/illustrations/empty-records.svg';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
+import noop from '@proton/utils/noop';
 
-import { MOCK_MONTHLY_DATA, MOCK_SEATS_HISTORY } from '../mock/monthlyCosts';
-import type { MonthlyRow } from '../types';
+import type { MonthlyRow, SeatDay } from '../types';
 import LicensesUsageChart from './LicensesUsageChart';
 
 import './MspMonthlyCostsSection.scss';
@@ -42,14 +55,15 @@ const MONTHS_SHORT = getFormattedMonths('MMM');
 const billingPeriod = ({ month, year }: Pick<MonthlyRow, 'month' | 'year'>): string =>
     `${MONTHS_SHORT[month]}, ${year}`;
 
-// `BillingPeriod` from the API is formatted as "MM-YYYY".
+// `BillingPeriod`/`Period` from the API are formatted as "YYYY-MM".
 const formatApiBillingPeriod = (apiBillingPeriod: string): string => {
-    const [month, year] = apiBillingPeriod.split('-').map(Number);
+    const [year, month] = apiBillingPeriod.split('-').map(Number);
     return billingPeriod({ month: month - 1, year });
 };
 
 const MspMonthlyCostsSection = () => {
     const api = useApi();
+    const handleError = useErrorHandler();
     const [organization] = useOrganization();
     const mspId = organization?.ID;
     const [subscription] = useSubscription();
@@ -58,6 +72,13 @@ const MspMonthlyCostsSection = () => {
 
     const [billingSummary, setBillingSummary] = useState<MspBillingSummary>();
     const [billingSummaryLoading, setBillingSummaryLoading] = useState(true);
+
+    const [dailyUsage, setDailyUsage] = useState<MspDailyUsage>();
+    const [dailyUsageLoading, setDailyUsageLoading] = useState(true);
+
+    const [billingPeriods, setBillingPeriods] = useState<MspBillingPeriodsResponse>();
+    const [billingPeriodsLoading, setBillingPeriodsLoading] = useState(true);
+    const { page, onNext, onPrevious, onSelect } = usePaginationAsync();
 
     useEffect(() => {
         if (!mspId) {
@@ -68,27 +89,51 @@ const MspMonthlyCostsSection = () => {
             .finally(() => setBillingSummaryLoading(false));
     }, [mspId]);
 
-    const { page, list: pageRows, onNext, onPrevious, onSelect } = usePagination(MOCK_MONTHLY_DATA, 1, PAGE_SIZE);
-    if (!currency || billingSummaryLoading || !billingSummary) {
+    useEffect(() => {
+        if (!isMspCostsTableEnabled) {
+            setDailyUsageLoading(false);
+            return;
+        }
+        if (!mspId) {
+            return;
+        }
+        void api<MspDailyUsage>(getMspDailyUsage(mspId))
+            .then(setDailyUsage)
+            .catch(noop)
+            .finally(() => setDailyUsageLoading(false));
+    }, [mspId, isMspCostsTableEnabled]);
+
+    useEffect(() => {
+        if (!isMspCostsTableEnabled) {
+            setBillingPeriodsLoading(false);
+            return;
+        }
+        if (!mspId) {
+            return;
+        }
+        void api<MspBillingPeriodsResponse>(getMspBillingPeriods(mspId, { Page: page - 1, PageSize: PAGE_SIZE }))
+            .then(setBillingPeriods)
+            .catch(noop)
+            .finally(() => setBillingPeriodsLoading(false));
+    }, [mspId, isMspCostsTableEnabled, page]);
+
+    if (!currency || billingSummaryLoading || dailyUsageLoading || billingPeriodsLoading || !billingSummary) {
         return null;
     }
 
-    const rowActions = [
-        {
-            key: 'export-overview-as-csv',
-            text: c('Action').t`Download monthly summary (CSV)`,
-            className: 'text-left text-nowrap',
-            // @todo: implement export overview as CSV
-            onClick: () => {},
-        },
-        {
-            key: 'export-breakdown-by-company-as-zip',
-            text: c('Action').t`Download daily breakdown (CSV)`,
-            className: 'text-left text-nowrap',
-            // @todo: implement export breakdown by company as ZIP
-            onClick: () => {},
-        },
-    ];
+    const seatsHistory: SeatDay[] = dailyUsage?.Days.map((day) => ({ date: day.UsageDate, seats: day.Total })) ?? [];
+    const billingPeriodRows = billingPeriods?.BillingPeriods ?? [];
+    const billingPeriodsTotal = billingPeriods?.Total ?? 0;
+
+    const handleDownloadCsv = (row: MspBillingPeriod, type: MspCsvReportType) => {
+        if (!mspId) {
+            return;
+        }
+        const [year, month] = row.Period.split('-').map(Number);
+        void api(getMspCsvReport(mspId, type, month, year))
+            .then(downloadEvents)
+            .catch(handleError);
+    };
 
     const stats = [
         { label: c('Label').t`Billing period`, value: formatApiBillingPeriod(billingSummary.BillingPeriod) },
@@ -137,7 +182,7 @@ const MspMonthlyCostsSection = () => {
             </div>
 
             {/* ── Licenses usage chart ── */}
-            {isMspCostsTableEnabled && <LicensesUsageChart data={MOCK_SEATS_HISTORY} />}
+            {isMspCostsTableEnabled && <LicensesUsageChart data={seatsHistory} />}
 
             {/* ── Previous billing periods ── */}
             {isMspCostsTableEnabled && (
@@ -149,7 +194,7 @@ const MspMonthlyCostsSection = () => {
                         </p>
                     </div>
 
-                    {MOCK_MONTHLY_DATA.length === 0 ? (
+                    {billingPeriodRows.length === 0 ? (
                         <div className="flex items-center justify-center py-12">
                             <IllustrationPlaceholder url={emptyRecordsImg}>
                                 <p className="m-0 text-sm color-hint text-center">
@@ -174,43 +219,65 @@ const MspMonthlyCostsSection = () => {
                                     </TableRow>
                                 </TableHeader>
                                 <TableBody>
-                                    {pageRows.map((row) => (
-                                        <TableRow key={`${row.year}-${row.month}`}>
-                                            <TableCell label={c('Column header').t`Billing period`}>
-                                                <span className="text-nowrap">{billingPeriod(row)}</span>
-                                            </TableCell>
-                                            <TableCell
-                                                className="text-right"
-                                                label={c('Column header').t`Managed companies`}
-                                            >
-                                                {row.companies}
-                                            </TableCell>
-                                            <TableCell
-                                                className="text-right"
-                                                label={c('Column header').t`Billable licenses`}
-                                            >
-                                                {row.seats}
-                                            </TableCell>
-                                            <TableCell className="text-right" label={c('Column header').t`Total cost`}>
-                                                {getSimplePriceString(currency, row.cost)}
-                                            </TableCell>
-                                            <TableCell className="text-right action-cell">
-                                                <DropdownActions
-                                                    size="small"
-                                                    shape="ghost"
-                                                    iconName="three-dots-vertical"
-                                                    list={rowActions}
-                                                />
-                                            </TableCell>
-                                        </TableRow>
-                                    ))}
+                                    {billingPeriodRows.map((row) => {
+                                        const rowActions = [
+                                            {
+                                                key: 'export-overview-as-csv',
+                                                text: c('Action').t`Download monthly summary (CSV)`,
+                                                className: 'text-left text-nowrap',
+                                                onClick: () => handleDownloadCsv(row, 'billing-summary'),
+                                            },
+                                            {
+                                                key: 'export-daily-breakdown-as-csv',
+                                                text: c('Action').t`Download daily breakdown (CSV)`,
+                                                className: 'text-left text-nowrap',
+                                                onClick: () => handleDownloadCsv(row, 'daily-usage'),
+                                            },
+                                        ];
+
+                                        return (
+                                            <TableRow key={row.Period}>
+                                                <TableCell label={c('Column header').t`Billing period`}>
+                                                    <span className="text-nowrap">
+                                                        {formatApiBillingPeriod(row.Period)}
+                                                    </span>
+                                                </TableCell>
+                                                <TableCell
+                                                    className="text-right"
+                                                    label={c('Column header').t`Managed companies`}
+                                                >
+                                                    {row.ManagedCompanies}
+                                                </TableCell>
+                                                <TableCell
+                                                    className="text-right"
+                                                    label={c('Column header').t`Billable licenses`}
+                                                >
+                                                    {row.BillableLicenses}
+                                                </TableCell>
+                                                <TableCell
+                                                    className="text-right"
+                                                    label={c('Column header').t`Total cost`}
+                                                >
+                                                    {getSimplePriceString(row.Currency, row.TotalCost)}
+                                                </TableCell>
+                                                <TableCell className="text-right action-cell">
+                                                    <DropdownActions
+                                                        size="small"
+                                                        shape="ghost"
+                                                        iconName="three-dots-vertical"
+                                                        list={rowActions}
+                                                    />
+                                                </TableCell>
+                                            </TableRow>
+                                        );
+                                    })}
                                 </TableBody>
                             </Table>
 
-                            {MOCK_MONTHLY_DATA.length > PAGE_SIZE && (
+                            {billingPeriodsTotal > PAGE_SIZE && (
                                 <div className="flex justify-center">
                                     <Pagination
-                                        total={MOCK_MONTHLY_DATA.length}
+                                        total={billingPeriodsTotal}
                                         limit={PAGE_SIZE}
                                         page={page}
                                         onNext={onNext}
