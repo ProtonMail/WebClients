@@ -59,8 +59,6 @@ export const getOrganizationAppRoutes = ({
         isRetentionPoliciesEnabled = false,
         isPasswordRemindersOrgEnabled = false,
     } = flags;
-    const isAdmin = user.isAdmin && user.isSelf;
-
     const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
     const hasOrganization = hasOrganizationSetup(organization);
     const isOrgActive = organization?.State === ORGANIZATION_STATE.ACTIVE;
@@ -71,13 +69,16 @@ export const getOrganizationAppRoutes = ({
     const hasMemberCapablePlan = getHasMemberCapablePlan(organization, subscription);
     const hasSubUsers = (organization?.UsedMembers || 0) > 1;
 
-    const canHaveOrganization = !user.isMember && !!organization && isAdmin;
-    const canManageOrganization = canHaveOrganization && permissions['account.organization_identity.read'];
+    const canManageOrganization = !!organization && permissions['account.organization_identity.read'];
     const canSchedulePhoneCalls = canScheduleOrganizationPhoneCalls({ organization, user });
 
     const hasVpnB2BPlan = getHasVpnB2BPlan(subscription);
 
-    const hasExternalMemberCapableB2BPlan = getHasExternalMemberCapableB2BPlan(subscription);
+    // MSP subsidiary orgs don't own their subscription (it belongs to the MSP manager), so `subscription`
+    // resolves to the free/dummy value for them. Workaround: MSP currently only runs on Pass Pro, which is
+    // already an external-member-capable plan, so treat subsidiaries as such directly.
+    const hasExternalMemberCapableB2BPlan =
+        getHasExternalMemberCapableB2BPlan(subscription) || !!organization?.IsSubsidiary;
 
     const canShowB2BActivityMonitorEvents =
         (isOrgConfigured || getIsB2BAudienceFromPlan(organization?.PlanName)) &&
@@ -243,7 +244,7 @@ export const getOrganizationAppRoutes = ({
             text: c('Title').t`Domain names`,
             to: '/domain-names',
             icon: 'globe',
-            available: canHaveOrganization && canShowDomainNamesSection,
+            available: canShowDomainNamesSection,
             subsections: [
                 {
                     id: 'domains',
@@ -424,7 +425,6 @@ export const getOrganizationAppRoutes = ({
             to: '/organization-filters',
             icon: 'filter',
             available:
-                canHaveOrganization &&
                 permissions['account.organization_filter.read'] &&
                 app !== APPS.PROTONVPN_SETTINGS &&
                 !hasExternalMemberCapableB2BPlan &&
@@ -524,7 +524,7 @@ export const getOrganizationAppRoutes = ({
             text: c('Title').t`Access control`,
             to: '/access-control',
             icon: 'sliders',
-            available: canHaveOrganization && canShowAccessControl,
+            available: canShowAccessControl,
             subsections: [
                 {
                     id: 'application-access',
