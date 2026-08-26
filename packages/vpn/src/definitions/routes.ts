@@ -202,7 +202,8 @@ const routesDefinition = {
                             to: '/organization-keys',
                             isVisible: ({ context }) =>
                                 !context.needsOrgSetup &&
-                                context.canHaveOrganization &&
+                                !!context.organization &&
+                                context.permissions['account.organization_identity.read'] &&
                                 (getOrganizationDenomination(context.organization) === 'familyGroup' ||
                                     !!context.organization?.RequiresKey),
 
