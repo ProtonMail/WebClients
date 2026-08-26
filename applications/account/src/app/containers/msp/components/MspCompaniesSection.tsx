@@ -39,7 +39,7 @@ import { IcPlus } from '@proton/icons/icons/IcPlus';
 import type { MspDelegatedManager } from '@proton/shared/lib/api/msp';
 import { ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import { MEMBER_STATE } from '@proton/shared/lib/interfaces/Member';
-import type { MspSubsidiary } from '@proton/shared/lib/interfaces/MspSubsidiary';
+import type { MspSubsidiary } from '@proton/shared/lib/interfaces/Msp';
 import type { UserOrganization } from '@proton/shared/lib/interfaces/Organization';
 import emptyCompaniesImg from '@proton/styles/assets/img/illustrations/empty-companies.svg';
 import { useFlag } from '@proton/unleash/useFlag';
