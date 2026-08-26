@@ -7,12 +7,15 @@ import type { DropdownOptions } from '../../components/DropdownMenu';
 import FavoritesUpsellPrompt from '../../components/Guest/FavoritesUpsellPrompt';
 import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import { useConversationStar } from '../../hooks/useConversationStar';
+import { useIsGuest } from '../../providers/IsGuestProvider';
 import type { Conversation } from '../../types';
 import { ConversationDeleteFlow } from './ConversationDeleteFlow';
 
 interface Props {
     conversation: Conversation;
     onRename?: () => void;
+    onOpenChange?: (isOpen: boolean) => void;
+    onOverlayActiveChange?: (active: boolean) => void;
     visibleOnHover?: boolean;
     includeStarOption?: boolean;
 }
@@ -20,9 +23,12 @@ interface Props {
 export const ConversationSidebarActions = ({
     conversation,
     onRename,
+    onOpenChange,
+    onOverlayActiveChange,
     visibleOnHover,
     includeStarOption = true,
 }: Props) => {
+    const isGuest = useIsGuest();
     const [showDeleteFlow, setShowDeleteFlow] = useState(false);
     const { handleStarToggle, showFavoritesUpsellModal, favoritesUpsellModalProps, isStarred } = useConversationStar({
         conversation,
@@ -38,6 +44,9 @@ export const ConversationSidebarActions = ({
                           icon: <LumoIcon name="Star" size={16} />,
                           onClick: (e?: React.MouseEvent) => {
                               e?.stopPropagation();
+                              if (isGuest) {
+                                  onOverlayActiveChange?.(true);
+                              }
                               handleStarToggle();
                           },
                       },
@@ -60,20 +69,35 @@ export const ConversationSidebarActions = ({
                 icon: <LumoIcon name="Trash2" size={16} />,
                 onClick: (e) => {
                     e?.stopPropagation();
+                    onOverlayActiveChange?.(true);
                     setShowDeleteFlow(true);
                 },
             },
         ],
-        [handleStarToggle, includeStarOption, isStarred, onRename]
+        [handleStarToggle, includeStarOption, isGuest, isStarred, onOverlayActiveChange, onRename]
     );
 
     return (
         <>
-            <DropdownMenu options={options} onToggle={() => {}} visibleOnHover={visibleOnHover} />
+            <DropdownMenu options={options} onToggle={onOpenChange} visibleOnHover={visibleOnHover} />
             {showDeleteFlow && (
-                <ConversationDeleteFlow conversation={conversation} onClose={() => setShowDeleteFlow(false)} />
+                <ConversationDeleteFlow
+                    conversation={conversation}
+                    onClose={() => {
+                        setShowDeleteFlow(false);
+                        onOverlayActiveChange?.(false);
+                    }}
+                />
             )}
-            {showFavoritesUpsellModal && <FavoritesUpsellPrompt {...favoritesUpsellModalProps} />}
+            {showFavoritesUpsellModal && (
+                <FavoritesUpsellPrompt
+                    {...favoritesUpsellModalProps}
+                    onClose={() => {
+                        favoritesUpsellModalProps.onClose?.();
+                        onOverlayActiveChange?.(false);
+                    }}
+                />
+            )}
         </>
     );
 };
