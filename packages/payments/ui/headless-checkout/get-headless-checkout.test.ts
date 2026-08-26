@@ -3,7 +3,7 @@ import { APPS } from '@proton/shared/lib/constants';
 import { CYCLE, PLANS, PLAN_TYPES } from '../../core/constants';
 import type { Pricing } from '../../core/interface';
 import type { Plan, PlansMap } from '../../core/plan/interface';
-import { SubscriptionMode, TaxInclusive } from '../../core/subscription/constants';
+import { SubscriptionMode, TaxMode } from '../../core/subscription/constants';
 import { createHeadlessCheckoutContextInner, getHeadlessCheckout } from './get-headless-checkout';
 
 const makePricing = (monthly: number, yearly?: number, twoYears?: number): Pricing =>
@@ -80,7 +80,7 @@ describe('getHeadlessCheckout', () => {
                 CouponDiscount: -300,
                 Credit: -100,
                 Gift: -188,
-                TaxInclusive: 'EXCLUSIVE' as any,
+                TaxMode: TaxMode.EXCLUSIVE,
                 Taxes: [{ Name: 'VAT', Rate: 20, Amount: 100 }],
                 Coupon: { Code: 'TEST', Description: 'test', MaximumRedemptionsPerUser: null },
             });
@@ -264,7 +264,7 @@ describe('createHeadlessCheckoutContextInner', () => {
             planIDs: { [PLANS.MAIL]: 1 },
             plansMap,
             checkResult: makeCheckResult({
-                TaxInclusive: TaxInclusive.INCLUSIVE,
+                TaxMode: TaxMode.INCLUSIVE,
                 Taxes: [{ Name: 'VAT', Rate: 20, Amount: 958 }],
             }),
             app,
@@ -276,7 +276,7 @@ describe('createHeadlessCheckoutContextInner', () => {
             planIDs: { [PLANS.MAIL]: 1 },
             plansMap,
             checkResult: makeCheckResult({
-                TaxInclusive: TaxInclusive.EXCLUSIVE,
+                TaxMode: TaxMode.EXCLUSIVE,
                 Taxes: [{ Name: 'VAT', Rate: 20, Amount: 958 }],
             }),
             app,

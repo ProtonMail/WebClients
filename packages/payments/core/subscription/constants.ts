@@ -15,11 +15,6 @@ export enum SubscriptionPlatform {
     Android = 2,
 }
 
-export enum TaxInclusive {
-    EXCLUSIVE = 0,
-    INCLUSIVE = 1,
-}
-
 export enum TaxMode {
     EXCLUSIVE = 0,
     INCLUSIVE = 1,
