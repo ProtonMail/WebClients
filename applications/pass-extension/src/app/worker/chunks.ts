@@ -27,7 +27,7 @@ export const CRYPTO_DYNAMIC_IMPORTS_CHUNKS: Record<string, string> = Object.from
 /** These are unused by the Pass extension and don't need to be manually handled */
 export const IGNORED_DYNAMIC_IMPORTS_CHUNKS = new Set([
     'node_modules_x2js_x2js_js',
-    'node_modules_jsmimeparser_index_js',
+    'node_modules_protontech_crypto_src_jsmimeparser_index_js',
     'node_modules_openpgp_dist_lightweight_legacy_ciphers_min_mjs',
     'node_modules_openpgp_dist_lightweight_unbzip2-stream_min_mjs',
 ]);
