@@ -6,12 +6,12 @@ describe('Logger Iframe', () => {
     beforeEach(() => {
         Object.defineProperty(window, 'top', { value: {} });
         logger = new Logger('test-logger-iframe');
-        console.error = jest.fn();
-        console.log = jest.fn();
+        jest.spyOn(console, 'error').mockImplementation(() => {});
+        jest.spyOn(console, 'log').mockImplementation(() => {});
     });
 
     afterEach(() => {
-        jest.clearAllMocks();
+        jest.restoreAllMocks();
     });
 
     test('should post message to parent frame on Ctrl+Shift+H in child frame', () => {
