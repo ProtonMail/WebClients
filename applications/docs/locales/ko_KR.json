@@ -2643,7 +2643,7 @@
         "${ BRAND_NAME }에서 Gmail 메시지를 계속 송수신 하려면, 계정을 다시 연결해주세요."
       ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
-        "최상의 계정 보안 상태를 유지하려면, 복구 문구를 설정하세요."
+        "최상의 계정 보안 상태를 유지하려면, 복구 키를 설정하세요."
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "CSV 파일 및 VCF 파일을 통한 불러오기를 위해, 파일이 ${ MAX_IMPORT_FILE_SIZE_STRING } 또는 연락처 ${ maxContactString }개를 초과하지 않도록 않도록 해주세요. 파일이 더 크다면, 더 작은 파일로 나눠주세요. ${ learnMoreLink }."
@@ -3739,6 +3739,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ 복호화할 수 없는 이름"
+      ],
+      "Because this document was in a shared folder, only the folder owner can restore it": [
+        "현재 문서가 공유된 폴더에 있으므로 폴더의 소유자만 복원할 수 있습니다."
       ]
     },
     "error": {
@@ -11099,6 +11102,16 @@
       ],
       "One plan, more power": [
         "하나의 플랜에서 더 많은 가능성을"
+      ]
+    },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "지금 사용해보세요"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "${ CALENDAR_APP_NAME }를 사용할 수 있습니다. ${ link }"
       ]
     }
   }
