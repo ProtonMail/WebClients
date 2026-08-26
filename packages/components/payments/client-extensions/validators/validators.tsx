@@ -6,6 +6,7 @@ import { useConfig } from '@proton/app-context/useConfig';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { getCanMakePaymentsWithActiveCard } from '@proton/chargebee/lib/getCanMakePaymentsWithActiveCard';
+import { isApplePayQRFlowSupported } from '@proton/payments/core/apple-pay-support';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { PaymentVerificatorV5, PaymentVerificatorV5Params } from '@proton/payments/core/createPaymentToken';
 import { ensureTokenChargeableV5 } from '@proton/payments/core/ensureTokenChargeable';
@@ -20,6 +21,7 @@ import type { PaymentStage } from '@proton/payments/telemetry/shared-checkout-te
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { getChargebeeErrorMessage } from '@proton/payments/ui/components/ChargebeeIframe';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
+import { isSafari } from '@proton/shared/lib/helpers/browser';
 import type { Api, User } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
@@ -334,30 +336,57 @@ export const useApplePayDependencies = (
         onVerificationSuccess: () => void;
     }
 ) => {
-    const [canUseApplePay, setCanUseApplePay] = useState(false);
+    const [isApplePayAvailable, setIsApplePayAvailable] = useState(false);
+    const [hasApplePayFailedToMount, setHasApplePayFailedToMount] = useState(false);
     const { createNotification } = useNotifications();
+    const applePayCapabilitiesEnabled = useFlag('ApplePayCapabilities');
+
+    /** Outside Safari, Apple Pay is the cross-device QR flow, which Stripe only offers on desktop */
+    const isSupportedContext = () => isSafari() || isApplePayQRFlowSupported();
+
+    /** Iframe-only: the check needs Apple's SDK, which the app's `script-src 'self'` forbids */
+    const isAvailableInIframe = async (): Promise<boolean> => {
+        const { applePayCapabilities, canMakePaymentsWithActiveCard } = await chargebeeHandles.getApplePayCapabilities({
+            applePayCapabilitiesEnabled,
+        });
+
+        // undefined when the Chargebee iframe wrapper is an older deploy that doesn't report it yet
+        return applePayCapabilities ?? canMakePaymentsWithActiveCard;
+    };
+
+    /** Pre-flag check: needs no SDK, so both origins can answer */
+    const wasAvailableInBothOrigins = async (): Promise<boolean> => {
+        const [currentDomain, chargebeeIframe] = await Promise.all([
+            getCanMakePaymentsWithActiveCard(),
+            chargebeeHandles.getApplePayCapabilities({ applePayCapabilitiesEnabled }),
+        ]);
+
+        return currentDomain && chargebeeIframe.canMakePaymentsWithActiveCard;
+    };
 
     const checkApplePay = async (): Promise<boolean> => {
         try {
-            const [canUseApplePayFromCurrentDomain, canUseApplePayFromChargebeeIframe] = await Promise.all([
-                getCanMakePaymentsWithActiveCard(),
-                chargebeeHandles.getCanMakePaymentsWithActiveCard(),
-            ]);
+            if (!isSupportedContext()) {
+                return false;
+            }
 
-            return canUseApplePayFromCurrentDomain && canUseApplePayFromChargebeeIframe;
+            return applePayCapabilitiesEnabled ? await isAvailableInIframe() : await wasAvailableInBothOrigins();
         } catch {
             return false;
         }
     };
 
     useEffect(() => {
-        async function run() {
-            const result = await checkApplePay();
-            setCanUseApplePay(result);
-        }
+        const flagChanged = new AbortController();
 
-        void run();
-    }, []);
+        void checkApplePay().then((result) => {
+            if (!flagChanged.signal.aborted) {
+                setIsApplePayAvailable(result);
+            }
+        });
+
+        return () => flagChanged.abort();
+    }, [applePayCapabilitiesEnabled]);
 
     const applePayModalHandles: ApplePayModalHandles = {
         onAuthorize: () => {
@@ -373,9 +402,12 @@ export const useApplePayDependencies = (
         onCancel: () => {
             onVerificationCancelled();
         },
+        onMountFailure: () => {
+            setHasApplePayFailedToMount(true);
+        },
     };
 
-    return { canUseApplePay, applePayModalHandles };
+    return { canUseApplePay: isApplePayAvailable && !hasApplePayFailedToMount, applePayModalHandles };
 };
 
 export const useGooglePayDependencies = (

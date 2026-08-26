@@ -3,7 +3,9 @@ import {
     type ChargebeeCssVariables,
     sanitizeChargebeeCssVariables,
 } from '../lib/css-variables';
+import { getApplePayCapabilities } from '../lib/getApplePayCapabilities';
 import { getCanMakePaymentsWithActiveCard } from '../lib/getCanMakePaymentsWithActiveCard';
+import { loadApplePaySdk } from '../lib/loadApplePaySdk';
 import { isCheckoutComPaymentIntent } from '../lib/payment-intent';
 import type {
     AuthorizedPaymentIntent,
@@ -706,6 +708,8 @@ async function renderDirectDebit() {
 async function renderApplePay() {
     setTemplate(applePayTemplateString);
 
+    await loadApplePaySdk();
+
     const applePayHandler = await getChargebeeInstance().load('apple-pay');
     addCheckpoint('apple_pay_loaded');
 
@@ -762,6 +766,8 @@ async function renderApplePay() {
                 data: undefined,
             };
         } catch (error) {
+            addCheckpoint('apple_pay_mount_failed', { code: (error as any)?.code });
+
             return {
                 status: 'failure',
                 error,
@@ -939,11 +945,19 @@ export async function initialize() {
                     },
                 });
             },
-            onGetCanMakePaymentsWithActiveCard: async (_, sendResponseToParent) => {
+            onGetCanMakePaymentsWithActiveCard: async ({ applePayCapabilitiesEnabled }, sendResponseToParent) => {
                 const canMakePaymentsWithActiveCard = await getCanMakePaymentsWithActiveCard();
+
+                if (!applePayCapabilitiesEnabled) {
+                    sendResponseToParent({ status: 'success', data: { canMakePaymentsWithActiveCard } });
+                    return;
+                }
+
+                const applePayCapabilities = await getApplePayCapabilities();
+
                 sendResponseToParent({
                     status: 'success',
-                    data: { canMakePaymentsWithActiveCard },
+                    data: { canMakePaymentsWithActiveCard, applePayCapabilities },
                 });
             },
         });

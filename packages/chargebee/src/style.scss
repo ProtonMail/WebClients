@@ -227,20 +227,6 @@ $input-border-size: 1;
 	block-size: rem(16);
 }
 
-/* purgecss start ignore */
-.paypal-checkout-sandbox {
-	display: none !important;
-}
-
-#gpay-button-online-api-id {
-	inline-size: 100%;
-
-	// max-inline-size: 320px;
-	display: block;
-	margin-block: 0;
-	margin-inline: auto;
-}
-
 // Tries to mimic ButtonLike Style
 .ideal-button {
 	display: flex;
@@ -271,6 +257,27 @@ $input-border-size: 1;
 		cursor: default;
 		opacity: 0.5;
 	}
+}
+
+// The styles below won't be minified by purgecss because we want to override the default styles of some third-party
+// scripts and elements. Mostly we want to prevent them displaying their loading states.
+/* purgecss start ignore */
+.paypal-checkout-sandbox {
+	display: none !important;
+}
+
+// heuristic to hide the overalay that asks user to confi
+apple-pay-modal ~ div[data-testid='overlay'] {
+	display: none !important;
+}
+
+#gpay-button-online-api-id {
+	inline-size: 100%;
+
+	// max-inline-size: 320px;
+	display: block;
+	margin-block: 0;
+	margin-inline: auto;
 }
 
 /* purgecss end ignore */
