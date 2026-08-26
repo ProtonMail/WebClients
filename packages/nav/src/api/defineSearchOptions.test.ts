@@ -1,8 +1,14 @@
-import { SettingsLayoutVariant } from '@proton/components/containers/layout/interface.ts';
+import { SettingsLayoutVariant } from '@proton/components/containers/layout/interface';
 
 import type { NavContext } from '../types/models';
 import type { NavDefinition } from '../types/nav';
 import { defineSearchOptions } from './defineSearchOptions';
+
+// The icon is opaque to these functions — they only carry the component through, so stubs
+// keep the assertions about identity rather than about a particular icon.
+const ArchiveIcon = () => null;
+const HomeIcon = () => null;
+const UserIcon = () => null;
 
 const makeContext = (): NavContext => ({ user: { id: 'u1', email: 'user@example.com' } }) as unknown as NavContext;
 
@@ -189,10 +195,10 @@ describe('defineSearchOptions — sections', () => {
 describe('defineSearchOptions — icon inheritance', () => {
     it('carries the item icon onto its search option', () => {
         const definition: NavDefinition = {
-            items: [{ id: 'home', label: 'Home', to: '/', icon: 'house' }],
+            items: [{ id: 'home', label: 'Home', to: '/', icon: HomeIcon }],
         };
         const [result] = defineSearchOptions({ definition, context: baseContext });
-        expect(result.icon).toBe('house');
+        expect(result.icon).toBe(HomeIcon);
     });
 
     it('inherits the nearest ancestor icon when the item has none', () => {
@@ -201,13 +207,13 @@ describe('defineSearchOptions — icon inheritance', () => {
                 {
                     id: 'account',
                     label: 'Account',
-                    icon: 'user',
+                    icon: UserIcon,
                     children: [{ id: 'account.settings', label: 'Settings', to: '/settings' }],
                 },
             ],
         };
         const [result] = defineSearchOptions({ definition, context: baseContext });
-        expect(result.icon).toBe('user');
+        expect(result.icon).toBe(UserIcon);
     });
 
     it('sets icon to undefined when neither the item nor any ancestor has one', () => {
@@ -223,12 +229,12 @@ describe('defineSearchOptions — icon inheritance', () => {
                     id: 'settings',
                     label: 'Settings',
                     to: '/settings',
-                    icon: 'archive-box',
+                    icon: ArchiveIcon,
                     sections: [{ id: 'security', text: 'Security', to: 'security' }],
                 },
             ],
         };
         const results = defineSearchOptions({ definition, context: baseContext });
-        expect(results[1].icon).toBe('archive-box');
+        expect(results[1].icon).toBe(ArchiveIcon);
     });
 });

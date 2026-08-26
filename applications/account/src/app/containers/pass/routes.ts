@@ -1,6 +1,10 @@
 import { c } from 'ttag';
 
 import type { SectionConfig } from '@proton/components';
+import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
+import { IcChartLine } from '@proton/icons/icons/IcChartLine';
+import { IcCheckmarkTriple } from '@proton/icons/icons/IcCheckmarkTriple';
+import { IcTextTitle } from '@proton/icons/icons/IcTextTitle';
 import { PLANS } from '@proton/payments/core/constants';
 import {
     getPlanName,
@@ -40,7 +44,7 @@ export const getPassAppRoutes = ({
                 id: 'downloads',
                 text: c('Link').t`Apps and extensions`,
                 to: '/download',
-                icon: 'arrow-down-line',
+                icon: IcArrowDownLine,
                 subsections: [
                     {
                         id: 'download',
@@ -51,7 +55,7 @@ export const getPassAppRoutes = ({
                 id: 'activityLogs',
                 text: c('Link').t`Activity log`,
                 to: '/activity-log',
-                icon: 'text-title',
+                icon: IcTextTitle,
                 available:
                     (hasOrganizationKey || hasOrganization) &&
                     permissions['account.activity_log.read'] &&
@@ -67,7 +71,7 @@ export const getPassAppRoutes = ({
                 id: 'policies',
                 text: c('Title').t`Policies`,
                 to: '/policies',
-                icon: 'checkmark-triple',
+                icon: IcCheckmarkTriple,
                 available:
                     (hasOrganizationKey || hasOrganization) && isAdmin && (hasPassOrBundleB2B || isPassEssentials),
                 upgradeRequired: isPassEssentials,
@@ -81,7 +85,7 @@ export const getPassAppRoutes = ({
                 id: 'reports',
                 text: c('Title').t`Reports`,
                 to: '/reports',
-                icon: 'chart-line',
+                icon: IcChartLine,
                 available:
                     (hasOrganizationKey || hasOrganization) && isAdmin && (hasPassOrBundleB2B || isPassEssentials),
                 upgradeRequired: isPassEssentials,

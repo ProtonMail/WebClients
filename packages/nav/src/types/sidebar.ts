@@ -1,4 +1,4 @@
-import type { IconName } from '@proton/icons/types';
+import type { IconComponent } from '@proton/components/containers/layout/interface';
 
 /**
  * A node in the sidebar tree, as produced by `defineSidebar`.
@@ -18,7 +18,7 @@ export interface SidebarNode {
     id: string;
     label: string;
     to: string | undefined;
-    icon: IconName | undefined;
+    icon: IconComponent | undefined;
     meta: Record<string, unknown>;
     children: SidebarNode[] | undefined;
 }

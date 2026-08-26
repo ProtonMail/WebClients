@@ -4,6 +4,11 @@ import type { NavDefinition, NavItemDefinition } from '../types/nav';
 import type { TestUserModel } from '../types/test.models';
 import { defineNavigation } from './defineNavigation';
 
+// The icon is opaque to these functions — they only carry the component through, so stubs
+// keep the assertions about identity rather than about a particular icon.
+const GlobeIcon = () => null;
+const HomeIcon = () => null;
+
 const makeContext = (extras: Record<string, unknown> = {}): NavContext =>
     ({ user: { id: 'u1', email: 'u@example.com' } satisfies TestUserModel, ...extras }) as unknown as NavContext;
 
@@ -17,12 +22,12 @@ const resolve = <TContext extends NavContext = NavContext>(
 describe('defineNavigation', () => {
     describe('resolved item shape', () => {
         it('mirrors every static field from the definition onto the resolved item', () => {
-            const [item] = resolve([{ id: 'home', label: 'Home', to: '/', icon: 'house', meta: { badge: 'new' } }]);
+            const [item] = resolve([{ id: 'home', label: 'Home', to: '/', icon: HomeIcon, meta: { badge: 'new' } }]);
             expect(item).toEqual({
                 id: 'home',
                 label: 'Home',
                 to: '/',
-                icon: 'house',
+                icon: HomeIcon,
                 meta: { badge: 'new' },
                 children: undefined,
                 hideFromSidebar: false,
@@ -49,7 +54,6 @@ describe('defineNavigation', () => {
             field      | resolved
             ${'label'} | ${'Computed Label'}
             ${'to'}    | ${'/computed-to'}
-            ${'icon'}  | ${'compass'}
         `('runs $field as a function and uses its return value', ({ field, resolved }) => {
             const [item] = resolve([
                 {
@@ -60,6 +64,11 @@ describe('defineNavigation', () => {
                 } as NavItemDefinition,
             ]);
             expect(item).toMatchObject({ [field]: resolved });
+        });
+
+        it('passes the icon component through instead of calling it, since a component is a function', () => {
+            const [item] = resolve([{ id: 'leaf', label: 'Static', to: '/leaf', icon: GlobeIcon }]);
+            expect(item.icon).toBe(GlobeIcon);
         });
 
         it('runs meta as a function and uses its return value', () => {

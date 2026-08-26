@@ -3,6 +3,18 @@ import { c } from 'ttag';
 import type { ThemeColor } from '@proton/colors';
 import type { SectionConfig, SubrouteGroup } from '@proton/components';
 import { SettingsLayoutVariant } from '@proton/components/containers/layout/interface';
+import { IcArrowDownToSquare } from '@proton/icons/icons/IcArrowDownToSquare';
+import { IcArrowUpBigLine } from '@proton/icons/icons/IcArrowUpBigLine';
+import { IcCreditCard } from '@proton/icons/icons/IcCreditCard';
+import { IcHouse } from '@proton/icons/icons/IcHouse';
+import { IcKey } from '@proton/icons/icons/IcKey';
+import { IcLanguage } from '@proton/icons/icons/IcLanguage';
+import { IcMoneyBills } from '@proton/icons/icons/IcMoneyBills';
+import { IcPaintRoller } from '@proton/icons/icons/IcPaintRoller';
+import { IcPassGroup } from '@proton/icons/icons/IcPassGroup';
+import { IcShield } from '@proton/icons/icons/IcShield';
+import { IcSquaresInSquare } from '@proton/icons/icons/IcSquaresInSquare';
+import { IcUser } from '@proton/icons/icons/IcUser';
 import { getIsConsumerPassPlan } from '@proton/payments/core/plan/helpers';
 import {
     type MaybeFreeSubscription,
@@ -384,7 +396,7 @@ export const getRecoverySettings = ({
         description: c('Description')
             .t`${BRAND_NAME}'s end-to-end encryption means only you can unlock your data. Set up recovery options now to ensure you never lose access.`,
         to: '/recovery',
-        icon: 'key',
+        icon: IcKey,
         available: isAccountRecoveryAvailable,
         notification: recoveryNotification,
         subsections: [
@@ -529,7 +541,7 @@ export const getAccountAppRoutes = ({
                 text: c('Title').t`Home`,
                 noTitle: true,
                 to: '/dashboardV2',
-                icon: 'house',
+                icon: IcHouse,
                 available: isVPNDashboardEnabled && shouldShowDashboard,
                 subsections: [
                     {
@@ -587,7 +599,7 @@ export const getAccountAppRoutes = ({
             dashboard: {
                 text: shouldShowV2Dashboard ? c('Title').t`Home` : c('Title').t`Dashboard`,
                 noTitle: shouldShowV2Dashboard,
-                icon: shouldShowV2Dashboard ? 'house' : 'squares-in-square',
+                icon: shouldShowV2Dashboard ? IcHouse : IcSquaresInSquare,
                 available: !isVPNDashboardEnabled && shouldShowDashboard,
                 id: shouldShowV2Dashboard ? 'dashboardV2' : 'dashboard',
                 to: '/dashboard',
@@ -611,7 +623,7 @@ export const getAccountAppRoutes = ({
                 text: c('Title').t`Subscription`,
                 noTitle: true,
                 to: '/subscription',
-                icon: 'credit-card',
+                icon: IcCreditCard,
                 available: shouldShowV2Dashboard && shouldShowDashboard,
                 subsections: [
                     {
@@ -744,7 +756,7 @@ export const getAccountAppRoutes = ({
                 id: 'upgrade',
                 text: c('Title').t`Upgrade plan`,
                 to: '/upgrade',
-                icon: 'arrow-up-big-line',
+                icon: IcArrowUpBigLine,
                 available: canPay && isFree,
                 subsections: [
                     {
@@ -763,7 +775,7 @@ export const getAccountAppRoutes = ({
                 id: 'password',
                 text: c('Title').t`Account and password`,
                 to: '/account-password',
-                icon: 'user',
+                icon: IcUser,
                 available: !isSSOUser,
                 subsections: [
                     {
@@ -892,7 +904,7 @@ export const getAccountAppRoutes = ({
                 id: 'language',
                 text: c('Title').t`Language and time`,
                 to: '/language-time',
-                icon: 'language',
+                icon: IcLanguage,
                 subsections: [
                     {
                         id: 'language-time',
@@ -904,7 +916,7 @@ export const getAccountAppRoutes = ({
                 id: 'appearance',
                 text: c('Title').t`Appearance`,
                 to: '/appearance',
-                icon: 'paint-roller',
+                icon: IcPaintRoller,
                 available: app !== APPS.PROTONLUMO,
                 subsections: [
                     {
@@ -934,7 +946,7 @@ export const getAccountAppRoutes = ({
                 id: 'security',
                 text: c('Title').t`Security and privacy`,
                 to: '/security',
-                icon: 'shield',
+                icon: IcShield,
                 subsections: [
                     {
                         text: PROTON_SENTINEL_NAME,
@@ -1015,7 +1027,7 @@ export const getAccountAppRoutes = ({
                 title: c('Title').t`Invite friends. Get credits.`,
                 description: c('Description').t`Get up to ${credits} in credits by inviting friends to ${BRAND_NAME}.`,
                 to: '/referral',
-                icon: 'money-bills',
+                icon: IcMoneyBills,
                 available: flags.isReferralProgramEnabled,
                 subsections: [
                     {
@@ -1043,7 +1055,7 @@ export const getAccountAppRoutes = ({
                 description: c('Description')
                     .t`Bring over your email, calendar events, and contacts from another provider.`,
                 to: '/easy-switch',
-                icon: 'arrow-down-to-square',
+                icon: IcArrowDownToSquare,
                 available: showEasySwitchSection,
                 subsections: [
                     {
@@ -1076,7 +1088,7 @@ export const getAccountAppRoutes = ({
                 id: 'groupMembership',
                 text: c('Title').t`Group membership`,
                 to: '/group-membership',
-                icon: 'pass-group',
+                icon: IcPassGroup,
                 available: (memberships?.length ?? 0) > 0,
                 subsections: [
                     {
