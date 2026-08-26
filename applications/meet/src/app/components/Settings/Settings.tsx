@@ -6,6 +6,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { useLoading } from '@proton/hooks';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import { selectBackgroundBlur } from '@proton/meet/store/slices/backgroundSlice';
 import { selectIsLocalParticipantAdminOrHost } from '@proton/meet/store/slices/participants/participantsSlice';
 import { selectIsLocalScreenShare } from '@proton/meet/store/slices/screenShareStatusSlice';
 import { selectMeetSettings, setDisableVideos, setPipEnabled, setSelfView } from '@proton/meet/store/slices/settings';
@@ -23,10 +24,12 @@ import { ConditionalTooltip } from '../../atoms/ConditionalTooltip/ConditionalTo
 import { SettingToggle } from '../../atoms/SettingToggle/SettingToggle';
 import { SideBar } from '../../atoms/SideBar/SideBar';
 import { SideBarSection } from '../../atoms/SideBarSection/SideBarSection';
+import { useBackgroundEffectsContext } from '../../contexts/BackgroundEffects/BackgroundEffectsContext';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import { useMeetContext } from '../../contexts/MeetContext';
 import { useCaptionsPreference } from '../../hooks/captions/useCaptionsPreference';
 import { useLiveCaptionsFeatureEnabled } from '../../hooks/captions/useLiveCaptionsFeatureEnabled';
+import { supportsBackgroundEffects } from '../../processors/background-processor/createBackgroundProcessor';
 import { BackgroundBlurToggle } from './BackgroundBlurToggle';
 import { CaptionLanguageSelect } from './CaptionLanguageSelect';
 import { LiveCaptionsToggle } from './LiveCaptionsToggle';
@@ -39,8 +42,10 @@ export const Settings = () => {
     const dispatch = useMeetDispatch();
     const { disableVideos, selfView, pipEnabled, meetingLocked: isMeetingLocked } = useMeetSelector(selectMeetSettings);
 
-    const { backgroundBlur, toggleBackgroundBlur, isBackgroundBlurSupported, noiseFilter, toggleNoiseFilter } =
-        useMediaManagementContext();
+    const { noiseFilter, toggleNoiseFilter } = useMediaManagementContext();
+    const { toggleBackgroundBlur } = useBackgroundEffectsContext();
+    const isBackgroundBlurSupported = supportsBackgroundEffects();
+    const backgroundBlur = useMeetSelector(selectBackgroundBlur);
     const { handleMeetingLockToggle } = useMeetContext();
     const isLocalScreenShare = useMeetSelector(selectIsLocalScreenShare);
 

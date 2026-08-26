@@ -1,7 +1,12 @@
 import { c } from 'ttag';
 
+import { useMeetSelector } from '@proton/meet/store/hooks';
+import { selectPendingBackgroundEffect } from '@proton/meet/store/slices/backgroundSlice';
+
 import { CloseButton } from '../../atoms/CloseButton/CloseButton';
-import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
+import { useBackgroundEffectsContext } from '../../contexts/BackgroundEffects/BackgroundEffectsContext';
+import { useAppliedBackgroundEffect } from '../../contexts/BackgroundEffects/useAppliedBackgroundEffect';
+import { supportsBackgroundEffects } from '../../processors/background-processor/createBackgroundProcessor';
 import type { BackgroundOption } from '../Backgrounds/BackgroundOptionGroup';
 import { BackgroundOptionGroup } from '../Backgrounds/BackgroundOptionGroup';
 import { getBackgroundEffectOptions, getVirtualBackgroundOptions } from '../Backgrounds/backgroundOptions';
@@ -13,8 +18,11 @@ interface PrejoinBackgroundsProps {
 }
 
 export const PrejoinBackgrounds = ({ onClose }: PrejoinBackgroundsProps) => {
-    const { isBackgroundBlurSupported, appliedBackgroundEffect, pendingBackgroundEffect, selectBackgroundEffect } =
-        useMediaManagementContext();
+    const appliedBackgroundEffect = useAppliedBackgroundEffect();
+    const pendingBackgroundEffect = useMeetSelector(selectPendingBackgroundEffect);
+
+    const isBackgroundBlurSupported = supportsBackgroundEffects();
+    const { selectBackgroundEffect } = useBackgroundEffectsContext();
 
     const selectedEffect = pendingBackgroundEffect ?? appliedBackgroundEffect;
 

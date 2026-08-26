@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef } from 'react';
+import { useCallback, useEffect, useMemo, useRef } from 'react';
 
 import { useLocalParticipant, useRoomContext } from '@livekit/components-react';
 import type { LocalTrack } from 'livekit-client';
@@ -54,15 +54,18 @@ import { AnnouncementPriority } from '../../components/MeetingAnnouncer/types';
 import { useAnnounce } from '../../components/MeetingAnnouncer/useAnnounce';
 import { useMediaToggleShortcuts } from '../../hooks/useMediaToggleShortcuts';
 import { useStableCallback } from '../../hooks/useStableCallback';
+import { supportsBackgroundEffects } from '../../processors/background-processor/createBackgroundProcessor';
 import type { InitializeDevices, SwitchActiveDevice } from '../../types';
 import { supportsSetSinkId } from '../../utils/browser';
 import { createDummyVideoTrack } from '../../utils/dummyVideoTrack';
+import { BackgroundEffectsContext } from '../BackgroundEffects/BackgroundEffectsContext';
+import { useAppliedBackgroundEffect } from '../BackgroundEffects/useAppliedBackgroundEffect';
+import { useBackgroundEffects } from '../BackgroundEffects/useBackgroundEffects';
+import { useBackgroundProcessorPreload } from '../BackgroundEffects/useBackgroundProcessorPreload';
 import { MediaManagementContext } from './MediaManagementContext';
 import { PermissionsModal } from './PermissionsModal/PermissionsModal';
 import { useAudioToggle } from './mediaToggle/useAudioToggle';
 import { useVideoToggle } from './mediaToggle/useVideoToggle';
-import { useBackgroundEffectInitializationState } from './useBackgroundEffectInitializationState';
-import { useBackgroundProcessorPreload } from './useBackgroundProcessorPreload';
 import { useCameraPreview } from './useCameraPreview';
 import { useDeviceManagement } from './useDeviceManagement/useDeviceManagement';
 import { useMicrophoneVolumeAnalysis } from './useMicrophoneVolumeAnalysis';
@@ -189,36 +192,29 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
     );
 
     const {
-        initializingBackgroundEffect,
-        failedBackgroundEffect,
-        trackBackgroundEffectInitialization,
-        cancelBackgroundEffectInitialization,
-        reportBackgroundEffectFailure,
-    } = useBackgroundEffectInitializationState();
-
-    const {
-        toggleVideo,
-        handleRotateCamera,
-        backgroundBlur,
-        toggleBackgroundBlur,
-        virtualBackgroundId,
-        appliedBackgroundEffect,
-        pendingBackgroundEffect,
         selectBackgroundEffect,
-        isVideoEnabled,
-        facingMode,
-        isBackgroundBlurSupported,
-    } = useVideoToggle({
-        switchActiveDevice,
-        backgroundProcessorVersion,
+        toggleBackgroundBlur,
+        reapplyBackgroundEffect,
         trackBackgroundEffectInitialization,
         cancelBackgroundEffectInitialization,
-        reportBackgroundEffectFailure,
+    } = useBackgroundEffects({ backgroundProcessorVersion });
+
+    const { toggleVideo, handleRotateCamera, isVideoEnabled, facingMode } = useVideoToggle({
+        switchActiveDevice,
+        reapplyBackgroundEffect,
     });
 
     const { toggleAudio, noiseFilter, toggleNoiseFilter, isAudioEnabled } = useAudioToggle(switchActiveDevice);
 
     const { permissionsLoading } = useDeviceManagement({ toggleAudio, toggleVideo, switchActiveDevice });
+
+    const isBackgroundBlurSupported = supportsBackgroundEffects();
+    const appliedBackgroundEffect = useAppliedBackgroundEffect();
+
+    const backgroundEffects = useMemo(
+        () => ({ selectBackgroundEffect, toggleBackgroundBlur }),
+        [selectBackgroundEffect, toggleBackgroundBlur]
+    );
 
     const { handlePreviewCameraToggle, cleanupCameraPreview, cleanupPreviewTrack } = useCameraPreview({
         selectedCameraId: activeCameraDeviceId,
@@ -688,15 +684,6 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
                 toggleAudio,
                 handleMicrophoneToggle,
                 handleCameraToggle,
-                backgroundBlur,
-                toggleBackgroundBlur,
-                virtualBackgroundId,
-                appliedBackgroundEffect,
-                pendingBackgroundEffect,
-                selectBackgroundEffect,
-                isBackgroundBlurSupported,
-                initializingBackgroundEffect,
-                failedBackgroundEffect,
                 noiseFilter,
                 toggleNoiseFilter,
                 handleRotateCamera,
@@ -707,8 +694,10 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
                 cleanupMicrophoneVolumeAnalysis,
             }}
         >
-            {!permissionsLoading && <PermissionsModal />}
-            {children}
+            <BackgroundEffectsContext.Provider value={backgroundEffects}>
+                {!permissionsLoading && <PermissionsModal />}
+                {children}
+            </BackgroundEffectsContext.Provider>
         </MediaManagementContext.Provider>
     );
 };

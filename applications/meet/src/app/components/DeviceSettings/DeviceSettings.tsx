@@ -34,6 +34,7 @@ import { CircleButton } from '../../atoms/CircleButton/CircleButton';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import { useDeviceLoading } from '../../hooks/useDeviceLoading';
 import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
+import { supportsBackgroundEffects } from '../../processors/background-processor/createBackgroundProcessor';
 import { supportsSetSinkId } from '../../utils/browser';
 import { getCameraButtonAriaLabel, getMicrophoneButtonAriaLabel } from '../../utils/mediaButtonAriaLabels';
 import { cameraShortcutLabel, microphoneShortcutLabel } from '../../utils/mediaShortcuts';
@@ -85,8 +86,8 @@ export const DeviceSettings = ({
     const cameras = useMeetSelector(selectCameras);
     const microphones = useMeetSelector(selectMicrophones);
     const speakers = useMeetSelector(selectSpeakers);
-    const { handleRotateCamera, facingMode, handleMicrophoneToggle, handleCameraToggle, isBackgroundBlurSupported } =
-        useMediaManagementContext();
+    const { handleRotateCamera, facingMode, handleMicrophoneToggle, handleCameraToggle } = useMediaManagementContext();
+    const isBackgroundBlurSupported = supportsBackgroundEffects();
 
     const isVirtualBackgroundEnabled = useFlag('MeetVirtualBackground');
 

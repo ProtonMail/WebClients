@@ -2,9 +2,13 @@ import { c } from 'ttag';
 
 import { IcCircleSlash } from '@proton/icons/icons/IcCircleSlash';
 import { IcMeetBlur } from '@proton/icons/icons/IcMeetBlur';
-
-import type { BackgroundEffect, VirtualBackgroundId } from '../../utils/virtualBackgrounds/virtualBackgrounds';
-import { VIRTUAL_BACKGROUNDS, getVirtualBackgroundLabel } from '../../utils/virtualBackgrounds/virtualBackgrounds';
+import type { BackgroundEffect } from '@proton/meet/store/slices/backgroundSlice';
+import type { VirtualBackgroundId } from '@proton/meet/utils/virtualBackgrounds';
+import {
+    VIRTUAL_BACKGROUND_IDS,
+    getVirtualBackgroundLabel,
+    getVirtualBackgroundThumbnailUrl,
+} from '@proton/meet/utils/virtualBackgrounds';
 
 interface BackgroundEffectOption {
     effect: BackgroundEffect;
@@ -25,8 +29,8 @@ export const getBackgroundEffectOptions = (): BackgroundEffectOption[] => [
 ];
 
 export const getVirtualBackgroundOptions = (): VirtualBackgroundOption[] =>
-    VIRTUAL_BACKGROUNDS.map(({ id, thumbnailUrl }) => ({
+    VIRTUAL_BACKGROUND_IDS.map((id) => ({
         effect: id,
         label: getVirtualBackgroundLabel(id),
-        thumbnailUrl,
+        thumbnailUrl: getVirtualBackgroundThumbnailUrl(id),
     }));

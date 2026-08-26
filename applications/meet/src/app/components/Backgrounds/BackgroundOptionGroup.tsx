@@ -1,7 +1,8 @@
 import type { KeyboardEvent, ReactNode } from 'react';
 import { useRef } from 'react';
 
-import type { BackgroundEffect } from '../../utils/virtualBackgrounds/virtualBackgrounds';
+import type { BackgroundEffect } from '@proton/meet/store/slices/backgroundSlice';
+
 import { BackgroundTile } from './BackgroundTile';
 
 export interface BackgroundOption {

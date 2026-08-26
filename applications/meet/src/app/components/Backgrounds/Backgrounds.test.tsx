@@ -4,13 +4,14 @@ import { configureStore } from '@reduxjs/toolkit';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import type { BackgroundEffect } from '@proton/meet/store/slices/backgroundSlice';
+import { backgroundReducer, initialState as initialBackgroundState } from '@proton/meet/store/slices/backgroundSlice';
 import { deviceManagementReducer } from '@proton/meet/store/slices/deviceManagementSlice';
 import { MeetingSideBars, uiStateReducer } from '@proton/meet/store/slices/uiStateSlice';
 import { ProtonStoreContext } from '@proton/react-redux-store';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
-import type { MediaManagementContextType } from '../../contexts/MediaManagementProvider/MediaManagementContext';
-import { MediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
+import { BackgroundEffectsContext } from '../../contexts/BackgroundEffects/BackgroundEffectsContext';
 import { Backgrounds } from './Backgrounds';
 
 // The preview attaches real camera tracks, which is covered by BackgroundPreview's own tests.
@@ -21,16 +22,29 @@ vi.mock('./BackgroundPreview', () => ({
 const unleashMocks = vi.hoisted(() => ({ useFlag: vi.fn(() => true) }));
 vi.mock('@proton/unleash/useFlag', () => unleashMocks);
 
-interface MockStoreOptions {
+const supportMocks = vi.hoisted(() => ({ supportsBackgroundEffects: vi.fn(() => true) }));
+vi.mock('../../processors/background-processor/createBackgroundProcessor', () => supportMocks);
+
+interface WrapperOptions {
     isSideBarOpen?: boolean;
+    appliedBackgroundEffect?: BackgroundEffect;
+    pendingBackgroundEffect?: BackgroundEffect | null;
+    selectBackgroundEffect?: (effect: BackgroundEffect) => Promise<void>;
 }
 
-const createMockStore = ({ isSideBarOpen = true }: MockStoreOptions) =>
-    configureStore({
+const Wrapper = ({
+    children,
+    isSideBarOpen = true,
+    appliedBackgroundEffect = 'none',
+    pendingBackgroundEffect = null,
+    selectBackgroundEffect = () => Promise.resolve(),
+}: WrapperOptions & { children: React.ReactNode }) => {
+    const store = configureStore({
         // @ts-expect-error - mock data
         reducer: {
             ...uiStateReducer,
             ...deviceManagementReducer,
+            ...backgroundReducer,
         },
         preloadedState: {
             deviceManagement: {
@@ -41,32 +55,18 @@ const createMockStore = ({ isSideBarOpen = true }: MockStoreOptions) =>
                     [MeetingSideBars.Backgrounds]: isSideBarOpen,
                 },
             },
+            background: { ...initialBackgroundState, appliedBackgroundEffect, pendingBackgroundEffect },
         },
     });
 
-const Wrapper = ({
-    children,
-    contextValue = {},
-    ...storeOptions
-}: MockStoreOptions & {
-    children: React.ReactNode;
-    contextValue?: Partial<MediaManagementContextType>;
-}) => {
-    const store = createMockStore(storeOptions);
-
     return (
         <Provider context={ProtonStoreContext} store={store}>
-            <MediaManagementContext.Provider
-                // @ts-expect-error - contextValue is a partial MediaManagementContextType
-                value={{
-                    isBackgroundBlurSupported: true,
-                    appliedBackgroundEffect: 'none',
-                    isVideoEnabled: true,
-                    ...contextValue,
-                }}
+            <BackgroundEffectsContext.Provider
+                // @ts-expect-error - only the picker's entry point is needed
+                value={{ selectBackgroundEffect }}
             >
                 {children}
-            </MediaManagementContext.Provider>
+            </BackgroundEffectsContext.Provider>
         </Provider>
     );
 };
@@ -74,6 +74,7 @@ const Wrapper = ({
 describe('Backgrounds', () => {
     afterEach(() => {
         unleashMocks.useFlag.mockReturnValue(true);
+        supportMocks.supportsBackgroundEffects.mockReturnValue(true);
     });
 
     it('should not render when the side bar is closed', () => {
@@ -119,7 +120,7 @@ describe('Backgrounds', () => {
 
     it('should mark the no effect option as selected when nothing is applied', () => {
         render(
-            <Wrapper contextValue={{ appliedBackgroundEffect: 'none' }}>
+            <Wrapper appliedBackgroundEffect="none">
                 <Backgrounds />
             </Wrapper>
         );
@@ -130,7 +131,7 @@ describe('Backgrounds', () => {
 
     it('should mark the applied virtual background as selected', () => {
         render(
-            <Wrapper contextValue={{ appliedBackgroundEffect: 'office' }}>
+            <Wrapper appliedBackgroundEffect="office">
                 <Backgrounds />
             </Wrapper>
         );
@@ -143,7 +144,7 @@ describe('Backgrounds', () => {
         const selectBackgroundEffect = vi.fn().mockResolvedValue(undefined);
 
         render(
-            <Wrapper contextValue={{ appliedBackgroundEffect: 'none', selectBackgroundEffect }}>
+            <Wrapper appliedBackgroundEffect="none" selectBackgroundEffect={selectBackgroundEffect}>
                 <Backgrounds />
             </Wrapper>
         );
@@ -160,7 +161,7 @@ describe('Backgrounds', () => {
         const selectBackgroundEffect = vi.fn().mockResolvedValue(undefined);
 
         render(
-            <Wrapper contextValue={{ selectBackgroundEffect }}>
+            <Wrapper selectBackgroundEffect={selectBackgroundEffect}>
                 <Backgrounds />
             </Wrapper>
         );
@@ -175,7 +176,7 @@ describe('Backgrounds', () => {
         const selectBackgroundEffect = vi.fn().mockResolvedValue(undefined);
 
         render(
-            <Wrapper contextValue={{ appliedBackgroundEffect: 'office', selectBackgroundEffect }}>
+            <Wrapper appliedBackgroundEffect="office" selectBackgroundEffect={selectBackgroundEffect}>
                 <Backgrounds />
             </Wrapper>
         );
@@ -204,7 +205,7 @@ describe('Backgrounds', () => {
         const selectBackgroundEffect = vi.fn().mockResolvedValue(undefined);
 
         render(
-            <Wrapper contextValue={{ appliedBackgroundEffect: 'proton', selectBackgroundEffect }}>
+            <Wrapper appliedBackgroundEffect="proton" selectBackgroundEffect={selectBackgroundEffect}>
                 <Backgrounds />
             </Wrapper>
         );
@@ -218,7 +219,7 @@ describe('Backgrounds', () => {
         const selectBackgroundEffect = vi.fn().mockResolvedValue(undefined);
 
         render(
-            <Wrapper contextValue={{ pendingBackgroundEffect: 'proton', selectBackgroundEffect }}>
+            <Wrapper pendingBackgroundEffect="proton" selectBackgroundEffect={selectBackgroundEffect}>
                 <Backgrounds />
             </Wrapper>
         );
@@ -232,7 +233,7 @@ describe('Backgrounds', () => {
 
     it('should highlight the effect being applied before it lands on the track', () => {
         render(
-            <Wrapper contextValue={{ appliedBackgroundEffect: 'none', pendingBackgroundEffect: 'office' }}>
+            <Wrapper appliedBackgroundEffect="none" pendingBackgroundEffect="office">
                 <Backgrounds />
             </Wrapper>
         );
@@ -245,7 +246,7 @@ describe('Backgrounds', () => {
 
     it('should keep showing the background being applied instead of a spinner', () => {
         render(
-            <Wrapper contextValue={{ appliedBackgroundEffect: 'none', pendingBackgroundEffect: 'blur' }}>
+            <Wrapper appliedBackgroundEffect="none" pendingBackgroundEffect="blur">
                 <Backgrounds />
             </Wrapper>
         );
@@ -258,10 +259,11 @@ describe('Backgrounds', () => {
     });
 
     it('should disable the options when background effects are not supported', async () => {
+        supportMocks.supportsBackgroundEffects.mockReturnValue(false);
         const selectBackgroundEffect = vi.fn().mockResolvedValue(undefined);
 
         render(
-            <Wrapper contextValue={{ isBackgroundBlurSupported: false, selectBackgroundEffect }}>
+            <Wrapper selectBackgroundEffect={selectBackgroundEffect}>
                 <Backgrounds />
             </Wrapper>
         );
@@ -279,8 +281,10 @@ describe('Backgrounds', () => {
     });
 
     it('should describe the disabled options with the unsupported notice', () => {
+        supportMocks.supportsBackgroundEffects.mockReturnValue(false);
+
         render(
-            <Wrapper contextValue={{ isBackgroundBlurSupported: false }}>
+            <Wrapper>
                 <Backgrounds />
             </Wrapper>
         );
@@ -296,7 +300,7 @@ describe('Backgrounds', () => {
     describe('keyboard navigation', () => {
         it('should expose each section as a single tab stop landing on the current choice', () => {
             render(
-                <Wrapper contextValue={{ appliedBackgroundEffect: 'blur' }}>
+                <Wrapper appliedBackgroundEffect="blur">
                     <Backgrounds />
                 </Wrapper>
             );
@@ -314,7 +318,7 @@ describe('Backgrounds', () => {
             const selectBackgroundEffect = vi.fn().mockResolvedValue(undefined);
 
             render(
-                <Wrapper contextValue={{ appliedBackgroundEffect: 'none', selectBackgroundEffect }}>
+                <Wrapper appliedBackgroundEffect="none" selectBackgroundEffect={selectBackgroundEffect}>
                     <Backgrounds />
                 </Wrapper>
             );
@@ -332,7 +336,7 @@ describe('Backgrounds', () => {
             const selectBackgroundEffect = vi.fn().mockResolvedValue(undefined);
 
             render(
-                <Wrapper contextValue={{ appliedBackgroundEffect: 'none', selectBackgroundEffect }}>
+                <Wrapper appliedBackgroundEffect="none" selectBackgroundEffect={selectBackgroundEffect}>
                     <Backgrounds />
                 </Wrapper>
             );
@@ -350,7 +354,7 @@ describe('Backgrounds', () => {
             const selectBackgroundEffect = vi.fn().mockResolvedValue(undefined);
 
             render(
-                <Wrapper contextValue={{ appliedBackgroundEffect: 'none', selectBackgroundEffect }}>
+                <Wrapper appliedBackgroundEffect="none" selectBackgroundEffect={selectBackgroundEffect}>
                     <Backgrounds />
                 </Wrapper>
             );
@@ -368,7 +372,7 @@ describe('Backgrounds', () => {
             const selectBackgroundEffect = vi.fn().mockResolvedValue(undefined);
 
             render(
-                <Wrapper contextValue={{ selectBackgroundEffect }}>
+                <Wrapper selectBackgroundEffect={selectBackgroundEffect}>
                     <Backgrounds />
                 </Wrapper>
             );
@@ -387,10 +391,11 @@ describe('Backgrounds', () => {
         });
 
         it('should not apply anything while the effects are unsupported', async () => {
+            supportMocks.supportsBackgroundEffects.mockReturnValue(false);
             const selectBackgroundEffect = vi.fn().mockResolvedValue(undefined);
 
             render(
-                <Wrapper contextValue={{ isBackgroundBlurSupported: false, selectBackgroundEffect }}>
+                <Wrapper selectBackgroundEffect={selectBackgroundEffect}>
                     <Backgrounds />
                 </Wrapper>
             );
@@ -404,19 +409,9 @@ describe('Backgrounds', () => {
     });
 
     describe('preview', () => {
-        it('should show a preview while the local tile is visible in the meeting', () => {
+        it('should show a preview above the options', () => {
             render(
-                <Wrapper contextValue={{ isVideoEnabled: true }}>
-                    <Backgrounds />
-                </Wrapper>
-            );
-
-            expect(screen.getByTestId('background-preview')).toBeInTheDocument();
-        });
-
-        it('should show a preview when the camera is off in the meeting', () => {
-            render(
-                <Wrapper contextValue={{ isVideoEnabled: false }}>
+                <Wrapper>
                     <Backgrounds />
                 </Wrapper>
             );
@@ -425,8 +420,10 @@ describe('Backgrounds', () => {
         });
 
         it('should show a preview when background effects are not supported', () => {
+            supportMocks.supportsBackgroundEffects.mockReturnValue(false);
+
             render(
-                <Wrapper contextValue={{ isVideoEnabled: false, isBackgroundBlurSupported: false }}>
+                <Wrapper>
                     <Backgrounds />
                 </Wrapper>
             );
