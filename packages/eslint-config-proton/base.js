@@ -230,17 +230,17 @@ export default defineConfig(
                 },
                 {
                     selector:
-                        'TaggedTemplateExpression > TemplateLiteral > TemplateElement.quasis[value.raw=/\\Dark Web Monitoring\\b/i]',
+                        'TaggedTemplateExpression > TemplateLiteral > TemplateElement.quasis[value.raw=/\\bDark Web Monitoring\\b/i]',
                     message: 'Use `DARK_WEB_MONITORING_NAME` instead to avoid possible translation.',
                 },
                 {
                     selector:
-                        'TaggedTemplateExpression > TemplateLiteral > TemplateElement.quasis[value.raw=/\\Proton Sentinel\\b/i]',
+                        'TaggedTemplateExpression > TemplateLiteral > TemplateElement.quasis[value.raw=/\\bProton Sentinel\\b/i]',
                     message: 'Use `PROTON_SENTINEL_NAME` instead to avoid possible translation.',
                 },
                 {
                     selector:
-                        'TaggedTemplateExpression > TemplateLiteral > TemplateElement.quasis[value.raw=/\\Lumo\\b/i]',
+                        'TaggedTemplateExpression > TemplateLiteral > TemplateElement.quasis[value.raw=/\\bLumo\\b/i]',
                     message: 'Use `LUMO_SHORT_APP_NAME` instead to avoid possible translation.',
                 },
                 {
@@ -248,6 +248,11 @@ export default defineConfig(
                     selector:
                         'TaggedTemplateExpression > TemplateLiteral > TemplateElement.quasis[value.raw=/\\biDEAL\\b/]',
                     message: 'Use `IDEAL_BRAND_NAME` instead to avoid possible translation.',
+                },
+                {
+                    selector:
+                        'TaggedTemplateExpression > TemplateLiteral > TemplateElement.quasis[value.raw=/\\bWero\\b/i]',
+                    message: 'Use `WERO_BRAND_NAME` instead to avoid possible translation.',
                 },
             ],
 
