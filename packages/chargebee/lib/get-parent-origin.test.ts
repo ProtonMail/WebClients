@@ -22,6 +22,10 @@ describe('getParentOrigin', () => {
         it('ignores any path, search, or hash and returns only the origin', () => {
             expect(getParentOrigin('https://mail-api.proton.me/api/foo?bar=1#baz')).toBe('https://mail.proton.me');
         });
+
+        it('is idempotent, returning an origin with no -api label unchanged', () => {
+            expect(getParentOrigin('https://account.proton.me')).toBe('https://account.proton.me');
+        });
     });
 
     describe('only the first label is modified', () => {
