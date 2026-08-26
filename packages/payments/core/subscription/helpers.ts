@@ -377,21 +377,12 @@ export const getMaximumCycleForApp = (app: ProductParam, currency?: Currency) =>
     return currency && isRegionalCurrency(currency) ? CYCLE.YEARLY : CYCLE.TWO_YEARS;
 };
 
-/**
- * Prefers `TaxMode` and falls back to the deprecated `TaxInclusive` during the migration.
- */
-export function getTaxMode(
-    checkResponse?: Pick<SubscriptionEstimation, 'TaxMode' | 'TaxInclusive'>
-): TaxMode | undefined {
-    return checkResponse?.TaxMode ?? (checkResponse?.TaxInclusive as number | undefined);
+export function isTaxInclusive(checkResponse?: Pick<SubscriptionEstimation, 'TaxMode'>): boolean {
+    return checkResponse?.TaxMode === TaxMode.INCLUSIVE;
 }
 
-export function isTaxInclusive(checkResponse?: Pick<SubscriptionEstimation, 'TaxMode' | 'TaxInclusive'>): boolean {
-    return getTaxMode(checkResponse) === TaxMode.INCLUSIVE;
-}
-
-export function isTaxExclusive(checkResponse?: Pick<SubscriptionEstimation, 'TaxMode' | 'TaxInclusive'>): boolean {
-    return getTaxMode(checkResponse) === TaxMode.EXCLUSIVE;
+export function isTaxExclusive(checkResponse?: Pick<SubscriptionEstimation, 'TaxMode'>): boolean {
+    return checkResponse?.TaxMode === TaxMode.EXCLUSIVE;
 }
 
 export const PASS_LAUNCH_OFFER = 'passlaunch';

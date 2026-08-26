@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { TaxInclusive, TaxMode } from '../../../core/subscription/constants';
+import { TaxMode } from '../../../core/subscription/constants';
 import type { SubscriptionEstimation } from '../../../core/subscription/interface';
 import type { HeadlessCheckoutContextInner } from '../get-headless-checkout';
 import type { BaseLineItem } from './base-line-item';
@@ -11,10 +11,7 @@ export interface VatReverseChargeLineItem
     extends BaseLineItem<typeof VAT_REVERSE_CHARGE_LINE_ITEM_TYPE>, ReturnType<typeof formatVatReverseCharge> {}
 
 export function isVatReverseChargeApplicable(checkResult: SubscriptionEstimation) {
-    if (checkResult.TaxMode !== undefined) {
-        return checkResult.TaxMode === TaxMode.REVERSE_CHARGE;
-    }
-    return checkResult.TaxInclusive === TaxInclusive.EXCLUSIVE && (checkResult.Taxes?.length ?? 0) === 0;
+    return checkResult.TaxMode === TaxMode.REVERSE_CHARGE;
 }
 
 export function getVatReverseChargeText() {
