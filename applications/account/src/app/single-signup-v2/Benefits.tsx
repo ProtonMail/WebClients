@@ -1,13 +1,18 @@
-import type { CSSProperties, ComponentPropsWithoutRef, Key, ReactNode } from 'react';
+import type { CSSProperties, ComponentPropsWithoutRef, ComponentType, Key, ReactNode } from 'react';
 
-import { Icon } from '@proton/components';
-import type { IconName } from '@proton/icons/types';
+import type { IconSize } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
+
+interface IconProps {
+    className?: string;
+    size?: IconSize;
+    style?: CSSProperties;
+}
 
 export interface BenefitItem {
     text: ReactNode;
     key: Key;
-    icon: { name: IconName; style?: CSSProperties };
+    icon: { component: ComponentType<IconProps>; style?: CSSProperties };
 }
 
 interface Props extends ComponentPropsWithoutRef<'ul'> {
@@ -18,12 +23,12 @@ const Benefits = ({ className, features, ...rest }: Props) => {
     return (
         <ul className={clsx('unstyled', className)} {...rest}>
             {features.map((item) => {
+                const IconComponent = item.icon.component;
                 return (
                     <li key={item.key} className="flex gap-2 py-1">
                         <div className="shrink-0 color-primary">
-                            <Icon
+                            <IconComponent
                                 size={4}
-                                name={item.icon.name}
                                 style={item.icon.style ? item.icon.style : undefined}
                                 className="align-text-top"
                             />

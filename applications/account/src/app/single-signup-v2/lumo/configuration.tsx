@@ -14,6 +14,11 @@ import {
     getZeroAccessEncryption,
 } from '@proton/components/containers/payments/features/lumo';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
+import { IcAlias } from '@proton/icons/icons/IcAlias';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
+import { IcEyeSlash } from '@proton/icons/icons/IcEyeSlash';
+import { IcLock } from '@proton/icons/icons/IcLock';
+import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import { IcMapPin } from '@proton/icons/icons/IcMapPin';
 import { ADDON_NAMES, CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { FreePlanDefault, PlansMap } from '@proton/payments/core/plan/interface';
@@ -51,7 +56,7 @@ const getNoLogsBenefit = (): BenefitItem => {
         key: `no-logs`,
         text: getNoLogsPolicy().text,
         icon: {
-            name: 'eye-slash',
+            component: IcEyeSlash,
         },
     };
 };
@@ -61,7 +66,7 @@ const getNoModelTrainingBenefit = (): BenefitItem => {
         key: `no-model-training`,
         text: getNeverUsedForTraining().text,
         icon: {
-            name: 'alias',
+            component: IcAlias,
         },
     };
 };
@@ -71,7 +76,7 @@ const getOpenSourceBenefit = (): BenefitItem => {
         key: 'open-source',
         text: c('collider_2025: Info').t`Open source`,
         icon: {
-            name: 'magnifier',
+            component: IcMagnifier,
         },
     };
 };
@@ -107,56 +112,56 @@ const getLumoBusinessBenefits = (): BenefitItem[] => {
             key: 'zero-access-encryption',
             text: getZeroAccessEncryption().text,
             icon: {
-                name: 'lock',
+                component: IcLock,
             },
         },
         {
             key: 'unlimited-chats',
             text: getDailyChats('unlimited').text,
             icon: {
-                name: 'checkmark',
+                component: IcCheckmark,
             },
         },
         {
             key: 'web-search-access',
             text: getWebSearchAccess().text,
             icon: {
-                name: 'checkmark',
+                component: IcCheckmark,
             },
         },
         {
             key: 'full-chat-history',
             text: getChatHistory('full').text,
             icon: {
-                name: 'checkmark',
+                component: IcCheckmark,
             },
         },
         {
             key: 'file-analysis',
             text: getUploadAndQuery('large').text,
             icon: {
-                name: 'checkmark',
+                component: IcCheckmark,
             },
         },
         {
             key: 'advanced-models',
             text: getAccessToAdvancedAI(true).text,
             icon: {
-                name: 'checkmark',
+                component: IcCheckmark,
             },
         },
         {
             key: 'never-used-for-training',
             text: getNeverUsedForTraining().text,
             icon: {
-                name: 'checkmark',
+                component: IcCheckmark,
             },
         },
         {
             key: 'data-protection-compliance',
             text: getDataProtectionCompliance().text,
             icon: {
-                name: 'checkmark',
+                component: IcCheckmark,
             },
         },
     ];

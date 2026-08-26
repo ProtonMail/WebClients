@@ -5,7 +5,11 @@ import { c } from 'ttag';
 import { useApi } from '@proton/app-context/useApi';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import { Icon } from '@proton/components';
+import { IcBrandAndroid } from '@proton/icons/icons/IcBrandAndroid';
+import { IcBrandApple } from '@proton/icons/icons/IcBrandApple';
+import { IcBrandLinux } from '@proton/icons/icons/IcBrandLinux';
+import { IcBrandMac } from '@proton/icons/icons/IcBrandMac';
+import { IcBrandWindows } from '@proton/icons/icons/IcBrandWindows';
 import { getExtensionSupportedBrowser } from '@proton/pass/lib/extension/utils/browser';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
@@ -43,11 +47,11 @@ export const InstallExtensionStep: FC<Props> = ({ onContinue }) => {
     const browser = browserType ? clients[browserType] : null;
 
     const platforms = [
-        clients[Clients.iOS],
-        clients[Clients.Android],
-        clients[Clients.Windows],
-        clients[Clients.Linux],
-        clients[Clients.macOS],
+        { ...clients[Clients.iOS], Icon: IcBrandApple },
+        { ...clients[Clients.Android], Icon: IcBrandAndroid },
+        { ...clients[Clients.Windows], Icon: IcBrandWindows },
+        { ...clients[Clients.Linux], Icon: IcBrandLinux },
+        { ...clients[Clients.macOS], Icon: IcBrandMac },
     ];
 
     useEffect(() => {
@@ -98,7 +102,7 @@ export const InstallExtensionStep: FC<Props> = ({ onContinue }) => {
                         shape="ghost"
                         href={platform.link}
                     >
-                        <Icon name={platform.icon} size={11} color="var(--text-weak)" />
+                        <platform.Icon size={11} style={{ color: 'var(--text-weak)' }} />
                         <span className="text-lg mt-1">{platform.title}</span>
                     </ButtonLike>
                 ))}

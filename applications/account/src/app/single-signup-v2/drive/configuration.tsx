@@ -15,6 +15,14 @@ import { getUpToNUsers } from '@proton/components/containers/payments/features/p
 import { getB2BHighSpeedVPNConnectionsFeature } from '@proton/components/containers/payments/features/vpn';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
+import { IcArrowUpFromSquare } from '@proton/icons/icons/IcArrowUpFromSquare';
+import { IcCloud } from '@proton/icons/icons/IcCloud';
+import { IcGlobe } from '@proton/icons/icons/IcGlobe';
+import { IcGrid2 } from '@proton/icons/icons/IcGrid2';
+import { IcLock } from '@proton/icons/icons/IcLock';
+import { IcMobile } from '@proton/icons/icons/IcMobile';
+import { IcShield } from '@proton/icons/icons/IcShield';
+import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { FreePlanDefault, Plan, PlansMap } from '@proton/payments/core/plan/interface';
 import { APPS, BRAND_NAME, DRIVE_APP_NAME, DRIVE_SHORT_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
@@ -57,7 +65,7 @@ const getAppsDriveIncludedBenefit = (): BenefitItem => {
         key: `apps-drive-included`,
         text: c('Signup: Info').t`Email, calendar, password manager, and VPN included`,
         icon: {
-            name: 'grid-2',
+            component: IcGrid2,
         },
     };
 };
@@ -67,7 +75,7 @@ const getAppsForAllDevicesBenefit = (): BenefitItem => {
         key: `apps-for-all-devices`,
         text: c('Signup: Info').t`Apps for all devices`,
         icon: {
-            name: 'mobile',
+            component: IcMobile,
         },
     };
 };
@@ -77,7 +85,7 @@ const getAdvancedSharingSecurityBenefit = (): BenefitItem => {
         key: `advanced-sharing-security`,
         text: c('Signup: Info').t`Advanced sharing security`,
         icon: {
-            name: 'arrow-up-from-square',
+            component: IcArrowUpFromSquare,
         },
     };
 };
@@ -97,14 +105,14 @@ const getDriveBenefits = (plan: PLANS | undefined, audience: Audience | undefine
                 key: 1,
                 text: getBoldFormattedText(c('drive_signup_2024: Info').t`**Secure:** end-to-end encryption`),
                 icon: {
-                    name: 'lock',
+                    component: IcLock,
                 },
             },
             {
                 key: 2,
                 text: getBoldFormattedText(c('drive_signup_2024: Info').t`**Collaborative:** online document editor`),
                 icon: {
-                    name: 'users',
+                    component: IcUsers,
                 },
             },
             {
@@ -113,21 +121,21 @@ const getDriveBenefits = (plan: PLANS | undefined, audience: Audience | undefine
                     c('drive_signup_2024: Info').t`**Simple and user-friendly:** import your files and setup in minutes`
                 ),
                 icon: {
-                    name: 'cloud',
+                    component: IcCloud,
                 },
             },
             {
                 key: 4,
                 text: getBoldFormattedText(c('drive_signup_2024: Info').t`**GDPR** and **HIPAA** compliant`),
                 icon: {
-                    name: 'shield',
+                    component: IcShield,
                 },
             },
             {
                 key: 5,
                 text: getBoldFormattedText(c('drive_signup_2024: Info').t`**ISO 27001** certified`),
                 icon: {
-                    name: 'globe',
+                    component: IcGlobe,
                 },
             },
         ];
