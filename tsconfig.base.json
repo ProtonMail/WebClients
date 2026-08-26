@@ -61,7 +61,7 @@
             "@proton/styles/*": ["./packages/styles/*"],
             "@proton/testing/*": ["./packages/testing/*"],
             "@proton/unleash/*": ["./packages/unleash/*"],
-            "@proton/utils/*": ["./packages/utils/*"],
+            "@proton/utils/*": ["./packages/utils/src/*"],
             "@proton/wallet": ["./packages/wallet/*"],
             "proton-mail/*": ["./applications/mail/src/app/*"],
             "proton-pass-extension/*": ["./applications/pass-extension/src/*"],

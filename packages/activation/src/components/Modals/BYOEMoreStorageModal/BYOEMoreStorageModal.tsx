@@ -21,7 +21,7 @@ import humanSize from '@proton/shared/lib/helpers/humanSize.ts';
 import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell.ts';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import { getAppSpace, getSpace } from '@proton/shared/lib/user/storage.ts';
-import clsx from '@proton/utils/clsx.ts';
+import clsx from '@proton/utils/clsx';
 
 const BYTES_450MB = 450 * 1024 * 1024;
 const BYTES_500MB = 500 * 1024 * 1024;
