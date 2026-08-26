@@ -14,6 +14,7 @@ import type {
   Spread,
 } from 'lexical'
 import { $applyNodeReplacement, $getEditor, DecoratorNode, createEditor } from 'lexical'
+import { isAllowedImageSrc } from '../../Conversion/ImageSrcUtils'
 import { getElementDimensionsWithoutPadding } from '../../Utils/getEditorWidthWithoutPadding'
 
 const ImageComponent = React.lazy(() => import('./ImageComponent'))
@@ -32,10 +33,10 @@ export interface ImagePayload {
 
 function $convertImageElement(domNode: Node): null | DOMConversionOutput {
   const img = domNode as HTMLImageElement
-  if (img.src.startsWith('file:///')) {
+  const { alt: altText, src, width, height } = img
+  if (!isAllowedImageSrc(src)) {
     return null
   }
-  const { alt: altText, src, width, height } = img
   const aspectRatio = width && height ? width / height : 1
   let finalWidth = width
   let finalHeight = height
@@ -126,7 +127,9 @@ export class ImageNode extends DecoratorNode<JSX.Element> {
 
   exportDOM(): DOMExportOutput {
     const element = document.createElement('img')
-    element.setAttribute('src', this.__src)
+    if (isAllowedImageSrc(this.__src)) {
+      element.setAttribute('src', this.__src)
+    }
     element.setAttribute('alt', this.__altText)
     element.setAttribute('width', this.__width.toString())
     element.setAttribute('height', this.__height.toString())
