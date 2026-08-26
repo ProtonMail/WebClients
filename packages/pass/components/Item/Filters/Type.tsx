@@ -45,7 +45,7 @@ export const TypeFilter = memo(({ items, value, onChange }: Props) => {
         [items, itemTypeOptions]
     );
 
-    const selectedOption = options.find(({ type }) => type === value)!;
+    const selectedOption = options.find(({ type }) => type === value) ?? options.find(({ type }) => type === '*');
 
     const handleClear = (event: MouseEvent | KeyboardEvent) => {
         event.stopPropagation();
@@ -68,8 +68,10 @@ export const TypeFilter = memo(({ items, value, onChange }: Props) => {
                     title={c('Action').t`Filter vault items`}
                 >
                     <span className="text-ellipsis hidden sm:block">
-                        {selectedOption.label}
-                        {!isActive && <span className="hidden md:inline">{` (${selectedOption.count})`}</span>}
+                        {selectedOption?.label}
+                        {!isActive && selectedOption && (
+                            <span className="hidden md:inline">{` (${selectedOption.count})`}</span>
+                        )}
                     </span>
                 </DropdownButton>
                 {isActive && <FilterClearButton onClear={handleClear} title={c('Action').t`Clear item type filter`} />}
