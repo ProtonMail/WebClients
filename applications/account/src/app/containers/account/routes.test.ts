@@ -182,9 +182,19 @@ describe('getAccountAppRoutes', () => {
         });
 
         it('is not available for an admin without the dashboard permission', () => {
-            const permissions = getOrgPermissions([], false);
+            // A real admin role without dashboard access (e.g. User Admin) still holds some other
+            // permissions (member/group CRUD), unlike the transitional all-false state below.
+            const permissions = getOrgPermissions(['account.user.read'], false);
             expect(getDashboardAvailability({ user: orgAdmin, permissions })).toBe(false);
             expect(getDashboardAvailability({ user: orgAdmin, permissions, showDashboard: false })).toBe(false);
+        });
+
+        it('is available for an admin in the transitional state right after a free-to-paid upgrade', () => {
+            // Right after upgrading, isAdmin flips to true before the org permissions have been
+            // refetched, so every permission is still false. We treat that as eligible by default.
+            const permissions = getOrgPermissions([], false);
+            expect(getDashboardAvailability({ user: orgAdmin, permissions })).toBe(true);
+            expect(getDashboardAvailability({ user: orgAdmin, permissions, showDashboard: false })).toBe(true);
         });
 
         it('is available for a member of a free organization without any permission', () => {
