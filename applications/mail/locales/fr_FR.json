@@ -1526,8 +1526,7 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Faire confiance à cette clé",
-        "Faire confiance à ces clés"
+        "Clé de confiance"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -17690,6 +17689,16 @@
       "${ count } email → ${ wakeTime }": [
         "${ count } message → ${ wakeTime }",
         "${ count } messages → ${ wakeTime }"
+      ]
+    },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Essayez-la maintenant"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Vous avez désormais accès au nouveau ${ CALENDAR_APP_NAME }. ${ link }"
       ]
     }
   }
