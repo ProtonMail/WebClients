@@ -39,12 +39,25 @@ export class SearchService {
 
     private getWorker(): Promise<Comlink.Remote<SearchWorker> | undefined> {
         if (!this.workerReadyPromise) {
-            this.workerReadyPromise = this.createAndInitNewWorkerInstance().catch((error) => {
-                // Don't cache a failed init: clear the promise so the next call (search or warmup)
-                // retries from scratch instead of replaying the cached rejection forever.
-                this.workerReadyPromise = undefined;
-                throw error;
-            });
+            this.workerReadyPromise = this.createAndInitNewWorkerInstance()
+                .then((worker) => {
+                    // "There is no index yet" is a moment in time, not a result to cache. The v2
+                    // database and its key are created by the first import, and the warm-up usually
+                    // runs before that — the indexing progress is shown *inside* the search dropdown,
+                    // so the dropdown tends to be open while the index is still being built. Caching
+                    // that would leave every search for the rest of the session answering from no
+                    // index at all, long after the import has finished.
+                    if (!worker) {
+                        this.workerReadyPromise = undefined;
+                    }
+                    return worker;
+                })
+                .catch((error) => {
+                    // Don't cache a failed init: clear the promise so the next call (search or warmup)
+                    // retries from scratch instead of replaying the cached rejection forever.
+                    this.workerReadyPromise = undefined;
+                    throw error;
+                });
         }
         return this.workerReadyPromise;
     }
