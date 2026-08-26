@@ -25,6 +25,9 @@ import {
 } from '@proton/components/containers/payments/features/meet';
 import { getVPNWithNetShieldFeature } from '@proton/components/containers/payments/features/vpn';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
+import { IcAlias } from '@proton/icons/icons/IcAlias';
+import { IcEyeSlash } from '@proton/icons/icons/IcEyeSlash';
+import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { Plan, PlansMap } from '@proton/payments/core/plan/interface';
 import { APPS, MEET_APP_NAME, MEET_SHORT_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
@@ -49,7 +52,7 @@ const getNoLogsBenefit = (): BenefitItem => {
         key: `no-logs`,
         text: c('meet_2025: Info').t`Strict no-logs policy`,
         icon: {
-            name: 'eye-slash',
+            component: IcEyeSlash,
         },
     };
 };
@@ -63,7 +66,7 @@ const getNoModelTrainingBenefit = (): BenefitItem => {
         key: `no-model-training`,
         text: neverUsedForTrainingText(),
         icon: {
-            name: 'alias',
+            component: IcAlias,
         },
     };
 };
@@ -73,7 +76,7 @@ const getOpenSourceBenefit = (): BenefitItem => {
         key: 'open-source',
         text: c('meet_2025: Info').t`Open source`,
         icon: {
-            name: 'magnifier',
+            component: IcMagnifier,
         },
     };
 };
