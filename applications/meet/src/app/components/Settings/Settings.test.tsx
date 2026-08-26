@@ -5,6 +5,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import NotificationsProvider from '@proton/components/containers/notifications/Provider';
+import { backgroundReducer } from '@proton/meet/store/slices/backgroundSlice';
 import { connectionReducer, initialState as initialConnectionState } from '@proton/meet/store/slices/connectionSlice';
 import {
     initialState as initialParticipantsState,
@@ -23,6 +24,7 @@ import { meetUserReducer } from '@proton/meet/store/slices/userSlice';
 import { ParticipantCapabilityPermission } from '@proton/meet/types/types';
 import { ProtonStoreContext } from '@proton/react-redux-store';
 
+import { BackgroundEffectsContext } from '../../contexts/BackgroundEffects/BackgroundEffectsContext';
 import type { MediaManagementContextType } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import { MediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import type { MeetContextValues } from '../../contexts/MeetContext';
@@ -46,6 +48,9 @@ vi.mock('@livekit/components-react', () => ({
 vi.mock('@proton/unleash/useFlag', () => ({
     useFlag: (flag: string) => enabledFlags.current.includes(flag),
 }));
+
+const supportMocks = vi.hoisted(() => ({ supportsBackgroundEffects: vi.fn(() => true) }));
+vi.mock('../../processors/background-processor/createBackgroundProcessor', () => supportMocks);
 
 const hostParticipantsState = {
     localParticipantIdentity: 'local-participant',
@@ -72,6 +77,7 @@ const createMockStore = (
             ...sortedParticipantsReducer,
             ...connectionReducer,
             ...meetUserReducer,
+            ...backgroundReducer,
         },
         preloadedState: {
             meetSettings: {
@@ -124,6 +130,9 @@ const createMockStore = (
             meetUser: {
                 isGuest: false,
             },
+            background: {
+                appliedBackgroundEffect: 'none',
+            },
         },
     });
 };
@@ -154,16 +163,13 @@ const Wrapper = ({
             <NotificationsProvider>
                 {/* @ts-expect-error - contextValue is a partial MeetContextValues */}
                 <MeetContext.Provider value={{ ...mockContextValues, ...contextValue }}>
-                    <MediaManagementContext.Provider
-                        value={
-                            {
-                                isBackgroundBlurSupported: true,
-                                backgroundBlur: false,
-                                ...mediaContextValue,
-                            } as MediaManagementContextType
-                        }
-                    >
-                        {children}
+                    <MediaManagementContext.Provider value={mediaContextValue as MediaManagementContextType}>
+                        <BackgroundEffectsContext.Provider
+                            // @ts-expect-error - only the blur toggle is needed
+                            value={{ toggleBackgroundBlur: vi.fn() }}
+                        >
+                            {children}
+                        </BackgroundEffectsContext.Provider>
                     </MediaManagementContext.Provider>
                 </MeetContext.Provider>
             </NotificationsProvider>
@@ -386,9 +392,13 @@ describe('Settings', () => {
     });
 
     describe('virtual backgrounds button', () => {
+        afterEach(() => {
+            supportMocks.supportsBackgroundEffects.mockReturnValue(true);
+        });
+
         it('should be enabled when background effects are supported', () => {
             render(
-                <Wrapper mediaContextValue={{ isBackgroundBlurSupported: true }}>
+                <Wrapper>
                     <Settings />
                 </Wrapper>
             );
@@ -397,8 +407,10 @@ describe('Settings', () => {
         });
 
         it('should stay visible but disabled when background effects are not supported', () => {
+            supportMocks.supportsBackgroundEffects.mockReturnValue(false);
+
             render(
-                <Wrapper mediaContextValue={{ isBackgroundBlurSupported: false }}>
+                <Wrapper>
                     <Settings />
                 </Wrapper>
             );
@@ -407,8 +419,10 @@ describe('Settings', () => {
         });
 
         it('should explain on hover why it is disabled', async () => {
+            supportMocks.supportsBackgroundEffects.mockReturnValue(false);
+
             render(
-                <Wrapper mediaContextValue={{ isBackgroundBlurSupported: false }}>
+                <Wrapper>
                     <Settings />
                 </Wrapper>
             );

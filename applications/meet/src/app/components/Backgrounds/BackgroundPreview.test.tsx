@@ -3,6 +3,7 @@ import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
 import { render, screen, waitFor } from '@testing-library/react';
 
+import { backgroundReducer } from '@proton/meet/store/slices/backgroundSlice';
 import { deviceManagementReducer } from '@proton/meet/store/slices/deviceManagementSlice';
 import { ProtonStoreContext } from '@proton/react-redux-store';
 
@@ -28,10 +29,15 @@ const createMockStore = (cameraPermission: PermissionState) =>
         // @ts-expect-error - mock data
         reducer: {
             ...deviceManagementReducer,
+            ...backgroundReducer,
         },
         preloadedState: {
             deviceManagement: {
                 permissions: { camera: cameraPermission, microphone: cameraPermission },
+            },
+            background: {
+                initializingBackgroundEffect: null,
+                failedBackgroundEffect: null,
             },
         },
     });

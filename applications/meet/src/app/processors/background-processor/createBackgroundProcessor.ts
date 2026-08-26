@@ -43,7 +43,11 @@ const loadBackgroundProcessorImplementation = async (
     return import('./MulticlassBackgroundProcessor');
 };
 
-export const supportsBackgroundEffects = () => supportsBackgroundProcessors() && !isMobile();
+let isSupported: boolean | undefined;
+
+// Creating the WebGL2 context is slightly expensive, and neither the GL capability
+// nor the user agent can change for the lifetime of the page, so probe at most once.
+export const supportsBackgroundEffects = () => (isSupported ??= !isMobile() && supportsBackgroundProcessors());
 
 const getBackgroundProcessorOptions = (useSimpleSegmentation: boolean): BackgroundProcessorOptions => ({
     assetPaths: {
