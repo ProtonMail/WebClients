@@ -1,7 +1,8 @@
 import { useEffect, useRef } from 'react';
 
-import { useMediaManagementContext } from '../../../contexts/MediaManagementProvider/MediaManagementContext';
-import type { BackgroundEffect } from '../../../utils/virtualBackgrounds/virtualBackgrounds';
+import type { BackgroundEffect } from '@proton/meet/store/slices/backgroundSlice';
+
+import { useAppliedBackgroundEffect } from '../../../contexts/BackgroundEffects/useAppliedBackgroundEffect';
 import { announcementMessages } from '../messages';
 import { useAnnounce } from '../useAnnounce';
 
@@ -27,7 +28,7 @@ const getMessage = (effect: BackgroundEffect) => {
 };
 
 export const useBackgroundEffectAnnouncements = () => {
-    const { appliedBackgroundEffect } = useMediaManagementContext();
+    const appliedBackgroundEffect = useAppliedBackgroundEffect();
     const announce = useAnnounce();
 
     const previousEffectRef = useRef<BackgroundEffect | null>(null);

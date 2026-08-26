@@ -2,10 +2,13 @@ import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
+import { useMeetSelector } from '@proton/meet/store/hooks';
+import type { InitializingBackgroundEffect } from '@proton/meet/store/slices/backgroundSlice';
+import {
+    selectFailedBackgroundEffect,
+    selectInitializingBackgroundEffect,
+} from '@proton/meet/store/slices/backgroundSlice';
 import clsx from '@proton/utils/clsx';
-
-import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
-import type { InitializingBackgroundEffect } from '../../contexts/MediaManagementProvider/useBackgroundEffectInitializationState';
 
 interface BackgroundEffectInitializingOverlayProps {
     viewSize?: 'xsmall' | 'small' | 'medium' | 'large' | 'midLarge';
@@ -22,7 +25,8 @@ const getFailureText = (effect: InitializingBackgroundEffect) =>
 export const BackgroundEffectInitializingOverlay = ({
     viewSize = 'large',
 }: BackgroundEffectInitializingOverlayProps) => {
-    const { initializingBackgroundEffect, failedBackgroundEffect } = useMediaManagementContext();
+    const initializingBackgroundEffect = useMeetSelector(selectInitializingBackgroundEffect);
+    const failedBackgroundEffect = useMeetSelector(selectFailedBackgroundEffect);
 
     if (!initializingBackgroundEffect && !failedBackgroundEffect) {
         return null;

@@ -10,7 +10,8 @@ import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { IcImage } from '@proton/icons/icons/IcImage';
 import { IcMeetBlur } from '@proton/icons/icons/IcMeetBlur';
-import { useMeetDispatch } from '@proton/meet/store/hooks';
+import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import { selectBackgroundBlur } from '@proton/meet/store/slices/backgroundSlice';
 import { MeetingSideBars, toggleSideBarState } from '@proton/meet/store/slices/uiStateSlice';
 import type { SerializableDeviceInfo } from '@proton/meet/utils/deviceUtils';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
@@ -18,7 +19,8 @@ import { useFlag } from '@proton/unleash/useFlag';
 
 import { ConditionalTooltip } from '../../atoms/ConditionalTooltip/ConditionalTooltip';
 import { OptionButton } from '../../atoms/OptionButton/OptionButton';
-import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
+import { useBackgroundEffectsContext } from '../../contexts/BackgroundEffects/BackgroundEffectsContext';
+import { supportsBackgroundEffects } from '../../processors/background-processor/createBackgroundProcessor';
 import { DeviceSettingsDropdown } from '../DeviceSettingsDropdown';
 import { BackgroundBlurToggle } from '../Settings/BackgroundBlurToggle';
 
@@ -51,7 +53,9 @@ const VideoSettingsDropdownComponent = ({
 
     const { activeBreakpoint } = useActiveBreakpoint();
 
-    const { backgroundBlur, toggleBackgroundBlur, isBackgroundBlurSupported } = useMediaManagementContext();
+    const backgroundBlur = useMeetSelector(selectBackgroundBlur);
+    const { toggleBackgroundBlur } = useBackgroundEffectsContext();
+    const isBackgroundBlurSupported = supportsBackgroundEffects();
 
     const isVirtualBackgroundEnabled = useFlag('MeetVirtualBackground');
 
