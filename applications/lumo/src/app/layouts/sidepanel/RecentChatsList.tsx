@@ -1,4 +1,4 @@
-import { memo, useState } from 'react';
+import { memo, useEffect, useState } from 'react';
 
 import { clsx } from 'clsx';
 import { c } from 'ttag';
@@ -23,8 +23,20 @@ export const ConversationListItem = memo(
         const { isSmallScreen } = useIsLumoSmallScreen();
         const isTouchDevice = useIsTouchDevice();
         const [isHovered, setIsHovered] = useState(false);
+        const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+        const [hasActiveOverlay, setHasActiveOverlay] = useState(false);
         const alwaysShowActions = isSmallScreen || isTouchDevice;
-        const shouldMountActions = showDropdown && (alwaysShowActions || isHovered);
+        // Keep actions mounted while the dropdown or a follow-up modal is open so portaled
+        // UI does not unmount when the cursor leaves the list item to reach it.
+        const shouldMountActions =
+            showDropdown && (alwaysShowActions || isHovered || isDropdownOpen || hasActiveOverlay);
+
+        useEffect(() => {
+            if (!shouldMountActions) {
+                setIsDropdownOpen(false);
+                setHasActiveOverlay(false);
+            }
+        }, [shouldMountActions]);
 
         return (
             <li
@@ -52,7 +64,11 @@ export const ConversationListItem = memo(
                 </LumoLink>
                 {shouldMountActions && (
                     <div className="relative z-1 ml-auto pl-1 shrink-0">
-                        <ConversationSidebarActions conversation={conversation} />
+                        <ConversationSidebarActions
+                            conversation={conversation}
+                            onOpenChange={setIsDropdownOpen}
+                            onOverlayActiveChange={setHasActiveOverlay}
+                        />
                     </div>
                 )}
             </li>
