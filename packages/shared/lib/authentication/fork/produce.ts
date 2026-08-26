@@ -3,7 +3,7 @@ import { importKey } from '@protontech/crypto/subtle/aesGcm.ts';
 
 import { pushForkSession } from '../../api/auth';
 import { getAppHref, getClientID } from '../../apps/helper';
-import type { APP_NAMES } from '../../constants';
+import type { APP_CLIENT_IDS, APP_NAMES } from '../../constants';
 import { SSO_PATHS } from '../../constants';
 import type { Api, User } from '../../interfaces';
 import { isSelf } from '../../user/helpers';
@@ -19,6 +19,7 @@ import {
     getEmailSessionForkSearchParameter,
     getLocalIDForkSearchParameter,
     getValidatedApp,
+    getValidatedClientID,
     getValidatedForkType,
     getValidatedPayloadVersion,
 } from './validation';
@@ -45,7 +46,17 @@ interface ProduceForkArguments {
 export const produceFork = async ({
     api,
     session: { keyPassword, offlineKey, persistedSession },
-    forkParameters: { state, app, independent, forkType, forkVersion, payloadType, payloadVersion, forkChallenge },
+    forkParameters: {
+        state,
+        app,
+        independent,
+        forkType,
+        forkVersion,
+        payloadType,
+        payloadVersion,
+        forkChallenge,
+        childClientID: maybeChildClientID,
+    },
 }: ProduceForkArguments): Promise<ProduceForkPayload> => {
     const rawKey = crypto.getRandomValues(new Uint8Array(32));
     const base64StringKey = rawKey.toBase64({ alphabet: 'base64url', omitPadding: true });
@@ -68,7 +79,7 @@ export const produceFork = async ({
         };
     })();
 
-    const childClientID = getClientID(app);
+    const childClientID = maybeChildClientID || getClientID(app);
     const { Selector: selector } = await api<PushForkResponse>(
         pushForkSession({
             Payload: encryptedPayload.blob,
@@ -185,6 +196,10 @@ export interface ProduceForkParameters {
     redirectUrl: URL | null;
     email?: string;
     partnerId?: string;
+    /**
+     * Overrides the client ID the fork is pushed to. Defaults to the client ID of the requested app.
+     */
+    childClientID?: APP_CLIENT_IDS;
 }
 
 export interface ProduceForkParametersFull extends ProduceForkParameters {
@@ -246,8 +261,10 @@ export const getProduceForkParameters = (
         return 'sso';
     })();
     const email = getEmailSessionForkSearchParameter(searchParams);
+    const childClientID = getValidatedClientID(searchParams.get(ForkSearchParameters.ChildClientID) || '');
 
     return {
+        childClientID,
         state: state.slice(0, 100),
         localID,
         app: getValidatedApp(app),
