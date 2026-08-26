@@ -1538,8 +1538,7 @@
         "Vertrauen"
       ],
       "Trust key": [
-        "Schlüssel vertrauen",
-        "Schlüsseln vertrauen"
+        "Schlüssel vertrauen"
       ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
@@ -9760,6 +9759,15 @@
       ],
       "No contacts found": [
         "Keine Kontakte gefunden"
+      ],
+      "${ dateString } at ${ formattedTime }": [
+        "${ dateString } um ${ formattedTime }"
+      ],
+      "Snooze emails": [
+        "E-Mails zurückstellen"
+      ],
+      "Update filter": [
+        "Filter aktualisieren"
       ]
     },
     "info": {
@@ -11027,6 +11035,18 @@
       ],
       "ZIP code": [
         "Postleitzahl"
+      ],
+      "At": [
+        "Um"
+      ],
+      "Filter name": [
+        "Filtername"
+      ],
+      "Return on": [
+        "Zurückkehren am"
+      ],
+      "Sieve script": [
+        "Sieve Script"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14067,7 +14087,7 @@
     },
     "q3campaign2026: Action": {
       "Get the deal": [
-        "Hol dir das Angebot"
+        "Deal sichern"
       ],
       "Special Offer": [
         "Sonderangebot"
@@ -14078,7 +14098,7 @@
         "/Monat"
       ],
       "2 individual accounts": [
-        "2 Einzelkonten"
+        "2 individuelle Konten"
       ],
       "2 TB of secure storage": [
         "2 TB sicherer Speicher"
@@ -14087,10 +14107,10 @@
         "3 TB sicherer Speicher"
       ],
       "500 GB of secure storage": [
-        "500 GB sicherer Speicher"
+        "500 GB sicherer Speicherplatz"
       ],
       "6 individual accounts": [
-        "6 Einzelkonten"
+        "6 individuelle Konten"
       ],
       "Advanced protection against cyber threats": [
         "Erweiterter Schutz vor Cyber-Bedrohungen"
@@ -14132,7 +14152,7 @@
         "Ein Abonnement, volle Leistung"
       ],
       "One plan, max savings": [
-        "Ein Abonnement, maximale Ersparnisse"
+        "Ein Abonnement, maximal sparen"
       ],
       "One plan, more power": [
         "Ein Abonnement, mehr Leistung"
@@ -17249,6 +17269,12 @@
       ],
       "Your shorter address is now ready": [
         "Deine kürzere E-Mail-Adresse ist jetzt fertig"
+      ],
+      "Snooze emails": [
+        "E-Mails zurückstellen"
+      ],
+      "Update filter": [
+        "Filter aktualisieren"
       ]
     },
     "Title header for keys table": {
@@ -17878,6 +17904,22 @@
       ],
       "Passcode:": [
         "Passcode:"
+      ]
+    },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Jetzt ausprobieren"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Du hast nun Zugriff auf die neue ${ CALENDAR_APP_NAME }. ${ link }"
+      ]
+    },
+    "Snooze info": {
+      "${ count } email → ${ wakeTime }": [
+        "${ count } E-Mail → ${ wakeTime }",
+        "${ count } E-Mails → ${ wakeTime }"
       ]
     }
   }

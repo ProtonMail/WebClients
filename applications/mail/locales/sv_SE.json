@@ -1538,8 +1538,7 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel",
-        "Lita på nycklar"
+        "Lita på nyckel"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -1739,6 +1738,9 @@
       ],
       "Zoom out": [
         "Zooma ut"
+      ],
+      "Preview logs": [
+        "Förhandsgranska loggar"
       ]
     },
     "action": {
@@ -5629,6 +5631,21 @@
       ],
       "Expiration date cannot be in the past": [
         "Utgångsdatum kan inte vara i det förflutna"
+      ],
+      "Moving root item is not allowed": [
+        "Att flytta rotobjekt är inte tillåtet"
+      ],
+      "Request aborted": [
+        "Åtgärd avbruten"
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "Några fildelar misslyckades att laddas upp. Försök igen."
+      ],
+      "This item has no image preview": [
+        "Detta objekt har ingen bild förhandsgranskning"
+      ],
+      "You can only leave items that are shared with you": [
+        "Du kan endast lämna objekt som är delade med dig."
       ]
     },
     "error": {
@@ -9641,6 +9658,28 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du är bara några klick bort från en skräpfri inkorg"
+      ],
+      "${ name } in ${ parentName }": [
+        "${ name } i ${ parentName }"
+      ],
+      "Found ${ count } contact": [
+        "Hittade ${ count } kontakt",
+        "Hittade ${ count } kontakter"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Gör ${ MAIL_APP_NAME } som din standardapplikation för e-post."
+      ],
+      "No contacts found": [
+        "Inga kontakter hittades"
+      ],
+      "No email open": [
+        "Ingen e-post öppen"
+      ],
+      "Unstar emails": [
+        "Ta bort stjärnmarkering från e-post"
+      ],
+      "Update filter": [
+        "Uppdatera filter"
       ]
     },
     "info": {
@@ -10887,6 +10926,15 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Dropped frames": [
+        "Borttagna bilder"
+      ],
+      "Entries": [
+        "Poster"
+      ],
+      "Filter name": [
+        "Filternamn"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -17031,6 +17079,9 @@
       ],
       "September Sale": [
         "Septemberrea"
+      ],
+      "Update filter": [
+        "Uppdatera filter"
       ]
     },
     "Title header for keys table": {
@@ -17724,6 +17775,11 @@
       ],
       "One plan, more power": [
         "Ett paket, mer kraft"
+      ]
+    },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Prova det nu"
       ]
     }
   }
