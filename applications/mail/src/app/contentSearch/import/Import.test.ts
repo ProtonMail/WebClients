@@ -170,4 +170,52 @@ describe('Importer', () => {
         expect(await reader.getDocumentById('does-not-exist')).toBeUndefined();
         readDb.close();
     }, 30_000);
+
+    it('finishes even when a message can never be imported', async () => {
+        // A message that can't be written is still missing from the destination on the next pass, so
+        // without tracking what was skipped, `run`'s "is there more work" loop never runs out of work.
+        const userId = 'importer-user-2';
+        await seedOldIndex(userId, userKeys, [
+            makeDoc('m1', 'Invoice March', 'here is your invoice for march'),
+            // no sender address: `validateMetadata` drops this one on every attempt
+            makeDoc('m2', 'Broken', 'skipped message', { sender: '' }),
+        ]);
+
+        const srcReader = await EncryptedSearchReader.open(userId, userKeys);
+        if (!srcReader) {
+            throw new Error('expected the seeded v1 ES DB to open');
+        }
+        const db = await openContentSearchDB(userId);
+        const indexKey = await getOrGenerateIndexKey(db, userKeys);
+
+        const issues: ImportIssue[] = [];
+        let passes = 0;
+        const importer = new Import(
+            db,
+            indexKey,
+            srcReader,
+            {
+                onTotalAvailable: () => {
+                    passes += 1;
+                },
+                onCompleted: () => {},
+                onIssue: (issue) => {
+                    issues.push(issue);
+                },
+            },
+            1
+        );
+
+        // if this regresses it doesn't fail, it hangs until jest's timeout
+        await importer.run();
+        srcReader.close();
+
+        expect(passes).toBe(1);
+        expect(issues.map(({ id }) => id)).toEqual(['m2']);
+
+        const readDb = await openContentSearchDB(userId);
+        const reader = new IndexReader(readDb, indexKey);
+        expect(await reader.getAllIds()).toEqual(['m1']);
+        readDb.close();
+    }, 30_000);
 });
