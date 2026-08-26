@@ -1,6 +1,3 @@
-/* eslint-disable monorepo-cop/no-relative-import-outside-package */
-
-import type { EditorControllerInterface } from '@proton/docs-core'
 import type {
   DataTypesThatDocumentCanBeExportedAs,
   DocStateInterface,
@@ -15,21 +12,16 @@ import { functions } from '@rowsncolumns/functions'
 import { createCSVFromSheetData, createExcelFile, createODSFile } from '@rowsncolumns/toolkit'
 import type { ForwardedRef } from 'react'
 import { forwardRef, useCallback, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react'
-import { downloadLogsAsJSON } from '../../../../../docs/src/app/utils/downloadLogs'
 import type { EditorLoadResult } from '../../Lib/EditorLoadResult'
 import { useApplication } from '../ApplicationProvider'
-import { type ProtonSheetsState, useLocalState, useProtonSheetsState, useVersioning } from './state'
+import { useLocalState, useProtonSheetsState, useVersioning } from './state'
 
 import '@rowsncolumns/spreadsheet/dist/spreadsheet.min.css'
 import { Menubar } from './components/Menubar/Menubar'
 import { Toolbar } from './components/Toolbar/Toolbar'
 import { BottomBar } from './components/BottomBar/BottomBar'
-import { LegacyBottomBar } from './components/legacy/LegacyBottomBar'
-import { LegacyDialogs } from './components/legacy/LegacyDialogs'
-import { LegacyGrid } from './components/legacy/LegacyGrid'
-import { LegacyToolbar } from './components/legacy/LegacyToolbar'
+import { Grid } from './components/Grid/Grid'
 import { ProtonSheetsUIStoreProvider } from './ui-store'
-import { useNewUIEnabled } from './new-ui-enabled'
 import { Dialogs } from './components/Dialogs/Dialogs'
 import { Sidebar } from './components/Sidebar/Sidebar'
 import { useFocusSheet } from '@rowsncolumns/spreadsheet'
@@ -164,7 +156,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     },
     () => clientInvoker.reloadClient(),
   )
-  const { getLocalStateWithoutActions, replaceLocalSpreadsheetState } = useLocalState(state, updateLocalStateToLog)
+  const { replaceLocalSpreadsheetState } = useLocalState(state, updateLocalStateToLog)
   const focusSheet = useFocusSheet()
 
   const exportData = async (format: DataTypesThatDocumentCanBeExportedAs) => {
@@ -352,21 +344,6 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     })
   }, [application.syncedState, state])
 
-  const downloadLogs = () => {
-    const editorAdapter = {
-      async getYDocAsJSON() {
-        return docState.getDoc().toJSON()
-      },
-      async getLocalSpreadsheetStateJSON() {
-        return getLocalStateWithoutActions()
-      },
-    } as Pick<EditorControllerInterface, 'getYDocAsJSON' | 'getLocalSpreadsheetStateJSON'>
-
-    downloadLogsAsJSON(editorAdapter as EditorControllerInterface, 'sheet').catch(console.error)
-  }
-
-  const isNewUIEnabled = useNewUIEnabled()
-
   if (importType) {
     return (
       <div className="absolute left-0 top-0 flex h-full w-full flex-col items-center justify-center gap-4">
@@ -374,20 +351,6 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
         {importType === 'excel' && <p className="text-sm">{c('Info').t`Importing Excel file...`}</p>}
         {importType === 'ods' && <p className="text-sm">{c('Info').t`Importing ODS file...`}</p>}
       </div>
-    )
-  }
-
-  if (isNewUIEnabled) {
-    return (
-      <ProtonSheetsUIStoreProvider
-        state={state}
-        isReadonly={isReadonly}
-        isRevisionMode={isRevisionMode}
-        isViewOnlyMode={isViewOnlyMode}
-        storeAction={storeAction}
-      >
-        <UI hidden={hidden} isRevisionMode={isRevisionMode} clientInvoker={clientInvoker} isPublicMode={isPublicMode} />
-      </ProtonSheetsUIStoreProvider>
     )
   }
 
@@ -399,13 +362,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
       isViewOnlyMode={isViewOnlyMode}
       storeAction={storeAction}
     >
-      <LegacyUI
-        hidden={hidden}
-        state={state}
-        isReadonly={isReadonly}
-        isRevisionMode={isRevisionMode}
-        downloadLogs={downloadLogs}
-      />
+      <UI hidden={hidden} isRevisionMode={isRevisionMode} clientInvoker={clientInvoker} isPublicMode={isPublicMode} />
     </ProtonSheetsUIStoreProvider>
   )
 })
@@ -432,40 +389,13 @@ function UI({ hidden, isRevisionMode, clientInvoker, isPublicMode }: UIProps) {
         <div className="flex min-h-0 min-w-0 grow">
           <div className="isolate z-10 flex h-full min-h-0 grow flex-col">
             {!isRevisionMode && <Toolbar className="m-2 max-sm:m-0" clientInvoker={clientInvoker} />}
-            <LegacyGrid />
+            <Grid />
             <BottomBar />
             <Dialogs />
             <EditingDisabledDialog clientInvoker={clientInvoker} />
           </div>
           <Sidebar />
         </div>
-      </div>
-    </>
-  )
-}
-
-type LegacyUIProps = {
-  hidden: boolean
-  state: ProtonSheetsState
-  isReadonly: boolean
-  isRevisionMode: boolean
-  downloadLogs: () => void
-}
-
-function LegacyUI({ hidden, state, isReadonly, isRevisionMode, downloadLogs }: LegacyUIProps) {
-  return (
-    <>
-      {hidden && (
-        <div
-          className="absolute z-[100] flex h-full w-full flex-col items-center justify-center gap-4 bg-[#F9FBFC]"
-          data-testid="editor-curtain"
-        />
-      )}
-      <div className="flex h-full w-full flex-1 flex-col bg-[#F9FBFC] [grid-column:1/3] [grid-row:1/3]">
-        {!isRevisionMode && <LegacyToolbar state={state} downloadLogs={downloadLogs} isReadonly={isReadonly} />}
-        <LegacyGrid />
-        <LegacyBottomBar state={state} isReadonly={isReadonly} isRevisionMode={isRevisionMode} />
-        <LegacyDialogs state={state} />
       </div>
     </>
   )
