@@ -49,11 +49,12 @@ import { MeetCoreWorkerClient } from './wasm/MeetCoreWorkerClient';
 import type { MeetCoreInitParams } from './wasm/meetCoreWorkerProtocol';
 
 const MEET_CORE_WORKER_FLAG = 'MeetCoreWorker';
+const MEET_USE_CACHED_SERVER_TIME_FLAG = 'MeetUseCachedServerTime';
 
 const getMeetCoreInitParams = (
     authentication: MeetExtraThunkArguments['authentication'],
     appVersion: string
-): MeetCoreInitParams => {
+): Omit<MeetCoreInitParams, 'useCachedServerTime'> => {
     const persistedSession = getPersistedSession(authentication.localID);
     const userId = persistedSession?.UserID ?? '';
     const uid = authentication.UID ?? '';
@@ -78,6 +79,7 @@ const createDirectMeetCoreClient = async (params: MeetCoreInitParams): Promise<D
         params.userId,
         params.uid
     );
+    app.setUseCachedServerTime(params.useCachedServerTime);
 
     // The worker client installs them in its own global scope on init, this is the direct equivalent.
     installWaitingRoomCallbackNamespaces();
@@ -100,12 +102,14 @@ const initializeMeetCoreClient = async ({
     authentication,
     appVersion,
     meetCoreWorkerEnabled,
+    useCachedServerTime,
 }: {
     authentication: MeetExtraThunkArguments['authentication'];
     appVersion: string;
     meetCoreWorkerEnabled: boolean;
+    useCachedServerTime: boolean;
 }): Promise<MeetCoreClient> => {
-    const params = getMeetCoreInitParams(authentication, appVersion);
+    const params = { ...getMeetCoreInitParams(authentication, appVersion), useCachedServerTime };
 
     if (!meetCoreWorkerEnabled) {
         return createDirectMeetCoreClient(params);
@@ -255,10 +259,12 @@ const completeAppBootstrap = async ({
         bootstrap.unleashReady({ unleashClient }).catch(noop),
     ]);
     const meetCoreWorkerEnabled = unleashClient.isEnabled(MEET_CORE_WORKER_FLAG);
+    const useCachedServerTime = unleashClient.isEnabled(MEET_USE_CACHED_SERVER_TIME_FLAG);
     const meetCoreClient = await initializeMeetCoreClient({
         authentication,
         appVersion,
         meetCoreWorkerEnabled,
+        useCachedServerTime,
     });
     bootstrap.onAbort(signal, () => meetCoreClient.dispose());
 
@@ -413,8 +419,9 @@ export const bootstrapGuestApp = async (
     await unleashClient.start();
 
     const meetCoreWorkerEnabled = unleashClient.isEnabled(MEET_CORE_WORKER_FLAG);
+    const useCachedServerTime = unleashClient.isEnabled(MEET_USE_CACHED_SERVER_TIME_FLAG);
     const [meetCoreClient] = await Promise.all([
-        initializeMeetCoreClient({ authentication, appVersion, meetCoreWorkerEnabled }),
+        initializeMeetCoreClient({ authentication, appVersion, meetCoreWorkerEnabled, useCachedServerTime }),
         bootstrap.loadCrypto({ appName: config.APP_NAME, unleashClient }),
         loadLocales({ locale: getBrowserLocale(), locales, userSettings: undefined }),
     ]);
