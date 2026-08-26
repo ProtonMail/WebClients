@@ -4,7 +4,7 @@ import type { SeatDay } from '../../types';
 
 const MONTH_SHORT = getFormattedMonths('MMM');
 
-export interface ChartItem {
+interface ChartItem {
     date: string;
     seats: number;
     avg: number | null;

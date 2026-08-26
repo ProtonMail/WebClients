@@ -120,7 +120,7 @@ const planIDsByPlan: Record<SupportedPlan, PlanIDs> = {
 const isSupportedPlan = (plan: PLANS | undefined): plan is SupportedPlan =>
     plan !== undefined && (supportedPlans as readonly PLANS[]).includes(plan);
 
-export const availablePlans = getAvailablePlansWithCycles(
+const availablePlans = getAvailablePlansWithCycles(
     supportedPlans.map((plan) => ({ planIDs: planIDsByPlan[plan] })),
     [CYCLE.MONTHLY, CYCLE.YEARLY]
 );

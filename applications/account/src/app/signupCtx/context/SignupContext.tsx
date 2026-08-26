@@ -223,7 +223,7 @@ const getSignupSentryTags = ({ flowId }: { flowId: string }) => ({
     signupFlowId: flowId,
 });
 
-export const InnerSignupContextProvider = ({
+const InnerSignupContextProvider = ({
     app,
     children,
     onLogin,

@@ -17,7 +17,7 @@ import { getIsSystemGroup } from './groupFlags';
 
 type RequiredState = AddressesState & UserKeysState & OrganizationKeyState & KtState & GroupsState;
 
-export const getGroupHasKeys = (group: Group) => {
+const getGroupHasKeys = (group: Group) => {
     return group.Address.Keys.length || group.Address.HasKeys;
 };
 

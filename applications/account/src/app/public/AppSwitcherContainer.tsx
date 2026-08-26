@@ -84,7 +84,7 @@ const getUnsupportedAppErrorMessage = ({
         : c('Info').t`**${appName}** is not supported.`;
 };
 
-export const UnsupportedAppError = ({
+const UnsupportedAppError = ({
     app,
     organization,
     forbiddenApps,

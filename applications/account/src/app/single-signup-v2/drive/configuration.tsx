@@ -1,28 +1,22 @@
 import { c } from 'ttag';
 
 import { AppsLogos, DriveLogo } from '@proton/components';
-import { getNCalendarsFeature } from '@proton/components/containers/payments/features/calendar';
 import {
     getDocumentEditor,
-    getEndToEndEncryption,
     getFreeDriveStorageFeature,
     getStorageFeature,
     getStorageFeatureB2B,
     getVersionHistory,
 } from '@proton/components/containers/payments/features/drive';
-import { getAllPremiumServices, getSupport } from '@proton/components/containers/payments/features/highlights';
-import { getCustomSecureMailB2B, getNAddressesFeature } from '@proton/components/containers/payments/features/mail';
+import { getAllPremiumServices } from '@proton/components/containers/payments/features/highlights';
+import { getCustomSecureMailB2B } from '@proton/components/containers/payments/features/mail';
 import { getPasswordManager } from '@proton/components/containers/payments/features/pass';
 import { getUpToNUsers } from '@proton/components/containers/payments/features/plan';
-import {
-    getB2BHighSpeedVPNConnectionsFeature,
-    getVPNConnections,
-} from '@proton/components/containers/payments/features/vpn';
+import { getB2BHighSpeedVPNConnectionsFeature } from '@proton/components/containers/payments/features/vpn';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { FreePlanDefault, Plan, PlansMap } from '@proton/payments/core/plan/interface';
-import { MAX_CALENDARS_FREE } from '@proton/shared/lib/calendar/constants';
 import { APPS, BRAND_NAME, DRIVE_APP_NAME, DRIVE_SHORT_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
@@ -88,7 +82,7 @@ const getAdvancedSharingSecurityBenefit = (): BenefitItem => {
     };
 };
 
-export const getDriveBenefits = (plan: PLANS | undefined, audience: Audience | undefined): BenefitItem[] => {
+const getDriveBenefits = (plan: PLANS | undefined, audience: Audience | undefined): BenefitItem[] => {
     if (plan === PLANS.BUNDLE || plan === PLANS.VISIONARY) {
         return getBundleVisionaryBenefits();
     }
@@ -148,42 +142,25 @@ export const getDriveBenefits = (plan: PLANS | undefined, audience: Audience | u
     ];
 };
 
-export const getFreeDriveFeatures = ({ freePlan }: { freePlan: FreePlanDefault }) => {
+const getFreeDriveFeatures = ({ freePlan }: { freePlan: FreePlanDefault }) => {
     return [getFreeDriveStorageFeature(freePlan), getDocumentEditor()];
 };
 
-export const getCustomDriveFeatures = ({ plan, freePlan }: { plan: Plan | undefined; freePlan: FreePlanDefault }) => {
-    if (!plan) {
-        return [];
-    }
-    return [
-        getStorageFeature(plan.MaxSpace, {
-            freePlan,
-            family: plan.Name === PLANS.FAMILY,
-        }),
-        getEndToEndEncryption(),
-        getNAddressesFeature({ n: plan.MaxAddresses || 1 }),
-        getNCalendarsFeature(plan.MaxCalendars || MAX_CALENDARS_FREE),
-        getVPNConnections(1),
-        getSupport('priority'),
-    ];
-};
-
-export const getDrivePlusFeatures = ({ plan, freePlan }: { plan: Plan | undefined; freePlan: FreePlanDefault }) => {
+const getDrivePlusFeatures = ({ plan, freePlan }: { plan: Plan | undefined; freePlan: FreePlanDefault }) => {
     if (!plan) {
         return [];
     }
     return [getStorageFeature(plan.MaxSpace, { freePlan }), getVersionHistory('10y'), getDocumentEditor()];
 };
 
-export const getDrivePlusKeyFeatures = ({ plan, freePlan }: { plan: Plan | undefined; freePlan: FreePlanDefault }) => {
+const getDrivePlusKeyFeatures = ({ plan, freePlan }: { plan: Plan | undefined; freePlan: FreePlanDefault }) => {
     if (!plan) {
         return [];
     }
     return [getStorageFeature(plan.MaxSpace, { freePlan }), getVersionHistory('10y')];
 };
 
-export const getBundleFeatures = ({ plan, freePlan }: { plan: Plan | undefined; freePlan: FreePlanDefault }) => {
+const getBundleFeatures = ({ plan, freePlan }: { plan: Plan | undefined; freePlan: FreePlanDefault }) => {
     if (!plan) {
         return [];
     }
@@ -195,14 +172,14 @@ export const getBundleFeatures = ({ plan, freePlan }: { plan: Plan | undefined; 
     ];
 };
 
-export const getBundleKeyFeatures = ({ plan, freePlan }: { plan: Plan | undefined; freePlan: FreePlanDefault }) => {
+const getBundleKeyFeatures = ({ plan, freePlan }: { plan: Plan | undefined; freePlan: FreePlanDefault }) => {
     if (!plan) {
         return [];
     }
     return [getStorageFeature(plan.MaxSpace, { freePlan }), getAllPremiumServices()];
 };
 
-export const getFamilyFeatures = ({ plan, freePlan }: { plan: Plan | undefined; freePlan: FreePlanDefault }) => {
+const getFamilyFeatures = ({ plan, freePlan }: { plan: Plan | undefined; freePlan: FreePlanDefault }) => {
     if (!plan) {
         return [];
     }
@@ -215,21 +192,21 @@ export const getFamilyFeatures = ({ plan, freePlan }: { plan: Plan | undefined; 
     ];
 };
 
-export const getFamilyKeyFeatures = ({ plan, freePlan }: { plan: Plan | undefined; freePlan: FreePlanDefault }) => {
+const getFamilyKeyFeatures = ({ plan, freePlan }: { plan: Plan | undefined; freePlan: FreePlanDefault }) => {
     if (!plan) {
         return [];
     }
     return [getStorageFeature(plan.MaxSpace, { freePlan, family: true }), getUpToNUsers(6), getAllPremiumServices()];
 };
 
-export const getDriveBusinessFeatures = ({ plan }: { plan: Plan | undefined; freePlan: FreePlanDefault }) => {
+const getDriveBusinessFeatures = ({ plan }: { plan: Plan | undefined; freePlan: FreePlanDefault }) => {
     if (!plan) {
         return [];
     }
     return [getStorageFeatureB2B(plan.MaxSpace, { subtext: false }), getVersionHistory(365)];
 };
 
-export const getBundleProFeatures = ({ plan }: { plan: Plan | undefined; freePlan: FreePlanDefault }) => {
+const getBundleProFeatures = ({ plan }: { plan: Plan | undefined; freePlan: FreePlanDefault }) => {
     if (!plan) {
         return [];
     }

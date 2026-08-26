@@ -46,7 +46,7 @@ const subscriptionDataCycleMapping = {
     },
 };
 
-export const defaultUpsell: Upsell = {
+const defaultUpsell: Upsell = {
     mode: UpsellTypes.PLANS,
     currentPlan: undefined,
     unlockPlan: undefined,

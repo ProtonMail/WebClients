@@ -19,7 +19,7 @@ import { useFlag } from '@proton/unleash/useFlag';
 
 import { AccessToggle } from './AccessToggle';
 
-export const UserAndAddresses = () => (
+const UserAndAddresses = () => (
     <ButtonLike
         shape="underline"
         as={SettingsLink}

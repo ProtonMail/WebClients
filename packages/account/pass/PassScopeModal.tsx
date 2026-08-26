@@ -39,7 +39,7 @@ interface PassSrpData {
     Version: AuthVersion;
 }
 
-export interface PassScopeModalProps extends ModalProps<'form'> {
+interface PassScopeModalProps extends ModalProps<'form'> {
     onSuccess?: () => Promise<void> | void;
     onCancel: (() => void) | undefined;
 }

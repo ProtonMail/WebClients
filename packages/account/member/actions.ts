@@ -92,7 +92,7 @@ export const getPendingUnprivatizationRequest = ({
     };
 };
 
-export const deleteAllInactiveKeys = ({
+const deleteAllInactiveKeys = ({
     api,
 }: {
     api: Api;

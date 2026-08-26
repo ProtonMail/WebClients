@@ -5,4 +5,3 @@ import { mspSubsidiariesThunk, selectMspSubsidiaries } from './index';
 const hooks = createHooks(mspSubsidiariesThunk, selectMspSubsidiaries);
 
 export const useMspSubsidiaries = hooks.useValue;
-export const useGetMspSubsidiaries = hooks.useGet;

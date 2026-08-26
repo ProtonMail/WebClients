@@ -23,7 +23,7 @@ import './Layout.scss';
 
 export type Background = 'dark' | 'bf2025';
 
-export interface Props {
+interface Props {
     children: ReactNode;
     bottomRight?: ReactNode;
     hasDecoration?: boolean;

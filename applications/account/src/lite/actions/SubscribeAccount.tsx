@@ -79,7 +79,7 @@ interface Props {
 
 const plusPlans = [PLANS.VPN2024, PLANS.MAIL, PLANS.DRIVE, PLANS.PASS, PLANS.VPN_PASS_BUNDLE, PLANS.LUMO];
 
-export const SubscribeAccountHeader = ({
+const SubscribeAccountHeader = ({
     title,
     user,
     onClose,

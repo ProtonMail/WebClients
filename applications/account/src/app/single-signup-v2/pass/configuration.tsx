@@ -18,7 +18,6 @@ import {
     getLoginsAndNotes,
     getLoginsAndNotesText,
     getPassCli,
-    getPassMonitorText,
     getPassUsers,
     getPassUsersText,
     getSecureSharingText,
@@ -26,7 +25,6 @@ import {
     getSecureVaultSharingText,
     getTeamPoliciesText,
     getUnlimitedHideMyEmailAliasesText,
-    getUnlimitedLoginsAndNotesText,
     getVaultSharing,
 } from '@proton/components/containers/payments/features/pass';
 import {
@@ -181,70 +179,10 @@ const getEncryptionBenefit = (): BenefitItem => {
     };
 };
 
-// const getCustomDomainForAliasesBenefit = (): BenefitItem => {
-//     return {
-//         key: `custom-domain-for-aliases`,
-//         text: c('pass_signup_2024: Info').t`Your custom domain for aliases`,
-//         icon: {
-//             name: 'brand-simple-login',
-//         },
-//     };
-// };
-
-// const getAdditionalMailboxesForAliasesBenefit = (): BenefitItem => {
-//     return {
-//         key: `additional-mailboxes-for-aliases`,
-//         text: c('pass_signup_2024: Info').t`Additional mailboxes for aliases`,
-//         icon: {
-//             name: 'envelope',
-//         },
-//     };
-// };
-
-// const getFileAttachmentsBenefit = (): BenefitItem => {
-//     return {
-//         key: `file-attachments`,
-//         text: c('pass_signup_2024: Info').t`File attachments (up to 10GB)`,
-//         icon: {
-//             name: 'file-pdf',
-//         },
-//     };
-// };
-
-export const getUnlimitedLoginsAndNotesBenefit = (): BenefitItem => {
-    return {
-        key: `unlimited-passwords`,
-        text: getUnlimitedLoginsAndNotesText(),
-        icon: {
-            name: 'key',
-        },
-    };
-};
-
-export const getHideMyEmailAliasesBenefit = (): BenefitItem => {
-    return {
-        key: `hide-my-email-aliases`,
-        text: getUnlimitedHideMyEmailAliasesText(),
-        icon: {
-            name: 'alias',
-        },
-    };
-};
-
-export const getSecureVaultSharingBenefit = (): BenefitItem => {
+const getSecureVaultSharingBenefit = (): BenefitItem => {
     return {
         key: `secure-vault-sharing`,
         text: getSecureVaultSharingText(),
-        icon: {
-            name: 'lock',
-        },
-    };
-};
-
-export const getPassMonitorBenefit = (): BenefitItem => {
-    return {
-        key: `pass-monitor`,
-        text: getPassMonitorText(),
         icon: {
             name: 'lock',
         },
@@ -331,7 +269,7 @@ const getAdvancedAccountProtectionBenefit = (): BenefitItem => {
     };
 };
 
-export const getAppsPassIncludedBenefit = (): BenefitItem => {
+const getAppsPassIncludedBenefit = (): BenefitItem => {
     return {
         key: `apps-pass-included`,
         text: c('Signup: Info').t`Mail, calendar, file storage, and VPN included`,
@@ -341,7 +279,7 @@ export const getAppsPassIncludedBenefit = (): BenefitItem => {
     };
 };
 
-export const getAdvancedSecurityFeaturesBenefit = (): BenefitItem => {
+const getAdvancedSecurityFeaturesBenefit = (): BenefitItem => {
     return {
         key: 'advanced-security-features',
         text: c('Signup: Info').t`Advanced security features by ${BRAND_NAME}`,
@@ -351,7 +289,7 @@ export const getAdvancedSecurityFeaturesBenefit = (): BenefitItem => {
     };
 };
 
-export const getPassBenefits = (
+const getPassBenefits = (
     plan: PLANS | undefined,
     audience: Audience | undefined,
     isPaidPass: boolean
@@ -421,7 +359,7 @@ export const getPassBenefits = (
     ];
 };
 
-export const getFreePassFeatures = () => {
+const getFreePassFeatures = () => {
     return [getPassUsers(1), getLoginsAndNotes(), getDevices(), getPassKeys(true)];
 };
 
@@ -443,7 +381,7 @@ export const getCustomPassFeatures = ({ isLifetime }: { isLifetime?: boolean } =
     ].filter(isTruthy);
 };
 
-export const getCustomPassKeyFeatures = ({ isLifetime }: { isLifetime?: boolean } = {}) => {
+const getCustomPassKeyFeatures = ({ isLifetime }: { isLifetime?: boolean } = {}) => {
     return [
         isLifetime
             ? {
@@ -472,7 +410,7 @@ export const getCustomPassFamilyFeatures = () => {
     ];
 };
 
-export const getCustomPassFamilyKeyFeatures = () => {
+const getCustomPassFamilyKeyFeatures = () => {
     return [
         getPassUsers(FAMILY_MAX_USERS),
         getDevicesAndAliases(),
@@ -630,13 +568,11 @@ export const getPassConfiguration = ({
     const benefits = (() => {
         if (isPaidPassVPNBundle) {
             const getBenefitItems = (items: PlanCardFeatureDefinition[]) => {
-                return items.map(
-                    (item, i): BenefitItem => ({
-                        ...item,
-                        key: i,
-                        icon: { name: item.icon as IconName },
-                    })
-                );
+                return items.map((item, i): BenefitItem => ({
+                    ...item,
+                    key: i,
+                    icon: { name: item.icon as IconName },
+                }));
             };
             return (
                 <div>
