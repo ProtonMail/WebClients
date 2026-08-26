@@ -24,6 +24,7 @@ import pwHistory from './pw-history';
 import settings from './settings';
 import { shares } from './shares';
 import { sharesDedupe } from './shares-dedupe';
+import ui from './ui';
 import user from './user';
 
 export * from './access';
@@ -38,6 +39,7 @@ export * from './items';
 export * from './monitor';
 export * from './pw-history';
 export * from './shares';
+export * from './ui';
 export * from './user';
 
 export const reducerMap = {
@@ -59,6 +61,7 @@ export const reducerMap = {
     settings,
     shares,
     sharesDedupe,
+    ui,
     user,
 };
 export const rootReducer = combineReducers(reducerMap);

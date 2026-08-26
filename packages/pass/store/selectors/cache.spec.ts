@@ -30,4 +30,9 @@ describe('selectCachableState', () => {
         expect(cachable.invites).toEqual({});
         expect(cachable.monitor).toBeNull();
     });
+
+    test('never caches `ui`', () => {
+        const state = { ...stateFor(SyncStrategy.USER_EVENTS), ui: { values: { key: true } } };
+        expect(selectCachableState(state).ui).toEqual({ values: {} });
+    });
 });
