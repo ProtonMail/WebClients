@@ -88,5 +88,3 @@ export const MailGetMoreSection = ({ subscription }: Props) => {
 
     return <DashboardMoreInfoSections sections={sections} app={APPS.PROTONMAIL} />;
 };
-
-export default MailGetMoreSection;

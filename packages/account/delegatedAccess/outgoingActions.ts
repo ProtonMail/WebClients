@@ -165,7 +165,7 @@ const getAddDelegatedAccessPayload = async ({
     };
 };
 
-export const getAddDelegatedAccessPayloadThunk = ({
+const getAddDelegatedAccessPayloadThunk = ({
     api,
     targetEmail,
     triggerDelay,
@@ -427,7 +427,7 @@ export const updateDelegatedAccess = ({
     };
 };
 
-export const updateAllDelegatedAccesses = ({
+const updateAllDelegatedAccesses = ({
     api,
 }: {
     api: Api;

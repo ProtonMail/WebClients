@@ -28,7 +28,7 @@ export interface MemberAuthDevicesState
 type SliceState = MemberAuthDevicesState[typeof name];
 type Model = NonNullable<SliceState['value']>;
 
-export const selectMemberAuthDevices = (state: MemberAuthDevicesState) => state.memberAuthDevices;
+const selectMemberAuthDevices = (state: MemberAuthDevicesState) => state.memberAuthDevices;
 
 export const selectPendingMemberAuthDevices = createSelector(
     [selectMemberAuthDevices, selectMembers, selectOrganizationKey],

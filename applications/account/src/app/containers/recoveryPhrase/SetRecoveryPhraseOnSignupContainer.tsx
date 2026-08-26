@@ -11,7 +11,7 @@ import useLoading from '@proton/hooks/useLoading';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
-export interface SetRecoveryPhraseOnSignupContainerProps {
+interface SetRecoveryPhraseOnSignupContainerProps {
     recoveryPhraseData: DeferredMnemonicData;
     sendRecoveryPhrasePayload: () => Promise<void>;
     title?: ReactNode;

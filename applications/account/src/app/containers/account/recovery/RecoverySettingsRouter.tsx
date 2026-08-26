@@ -42,7 +42,7 @@ interface Props {
     path: string;
 }
 
-export const RedesignRecoverySettingsRouter = ({ app, recovery, path }: Props) => {
+const RedesignRecoverySettingsRouter = ({ app, recovery, path }: Props) => {
     const recoverySubrouteGroups = recovery.subrouteGroups;
     if (!recoverySubrouteGroups) {
         throw new Error('Missing sub groups');

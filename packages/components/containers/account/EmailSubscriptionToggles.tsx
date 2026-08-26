@@ -15,7 +15,7 @@ import Info from '../../components/link/Info';
 import Toggle from '../../components/toggle/Toggle';
 import type { EmailSubscription } from './constants/email-subscriptions';
 
-export interface EmailSubscriptionCheckboxesProps {
+interface EmailSubscriptionCheckboxesProps {
     loadingMap: { [key: string]: boolean };
     News: number;
     onChange: (data: NewsletterSubscriptionUpdateData) => void;

@@ -96,7 +96,7 @@ const getMailBenefitsTitle = (plan: PLANS | undefined, audience: Audience | unde
     return c('Signup: Info').t`The only email service with:`;
 };
 
-export const getMailBenefits = (plan: PLANS | undefined, audience: Audience | undefined): BenefitItem[] => {
+const getMailBenefits = (plan: PLANS | undefined, audience: Audience | undefined): BenefitItem[] => {
     if (plan === PLANS.BUNDLE || plan === PLANS.VISIONARY) {
         return getBundleVisionaryBenefits();
     }
@@ -136,7 +136,7 @@ export const getMailBenefits = (plan: PLANS | undefined, audience: Audience | un
     ];
 };
 
-export const getFreeMailFeatures = (freePlan: FreePlanDefault) => {
+const getFreeMailFeatures = (freePlan: FreePlanDefault) => {
     return [getFreeMailStorageFeature(freePlan), getNAddressesFeature({ n: 1 })];
 };
 
@@ -161,7 +161,7 @@ export const getCustomMailFeatures = (plan: Plan | undefined, freePlan: FreePlan
     ].filter(isTruthy);
 };
 
-export const getMailEssentialsFeatures = (plan: Plan | undefined, freePlan: FreePlanDefault) => {
+const getMailEssentialsFeatures = (plan: Plan | undefined, freePlan: FreePlanDefault) => {
     if (!plan) {
         return [];
     }
@@ -175,7 +175,7 @@ export const getMailEssentialsFeatures = (plan: Plan | undefined, freePlan: Free
     ].filter(isTruthy);
 };
 
-export const getWorkspaceStandardFeatures = (plan: Plan | undefined, freePlan: FreePlanDefault) => {
+const getWorkspaceStandardFeatures = (plan: Plan | undefined, freePlan: FreePlanDefault) => {
     if (!plan) {
         return [];
     }
@@ -188,7 +188,7 @@ export const getWorkspaceStandardFeatures = (plan: Plan | undefined, freePlan: F
     ].filter(isTruthy);
 };
 
-export const getWorkspacePremiumFeatures = (plan: Plan | undefined, freePlan: FreePlanDefault) => {
+const getWorkspacePremiumFeatures = (plan: Plan | undefined, freePlan: FreePlanDefault) => {
     if (!plan) {
         return [];
     }
@@ -202,7 +202,7 @@ export const getWorkspacePremiumFeatures = (plan: Plan | undefined, freePlan: Fr
     ].filter(isTruthy);
 };
 
-export const getCustomMailPlusKeyFeatures = (plan: Plan | undefined, freePlan: FreePlanDefault) => {
+const getCustomMailPlusKeyFeatures = (plan: Plan | undefined, freePlan: FreePlanDefault) => {
     if (!plan) {
         return [];
     }
@@ -214,7 +214,7 @@ export const getCustomMailPlusKeyFeatures = (plan: Plan | undefined, freePlan: F
     ];
 };
 
-export const getCustomBundleKeyFeatures = (plan: Plan | undefined, freePlan: FreePlanDefault) => {
+const getCustomBundleKeyFeatures = (plan: Plan | undefined, freePlan: FreePlanDefault) => {
     if (!plan) {
         return [];
     }
@@ -226,7 +226,7 @@ export const getCustomBundleKeyFeatures = (plan: Plan | undefined, freePlan: Fre
     ];
 };
 
-export const getCustomFamilyKeyFeatures = (plan: Plan | undefined, freePlan: FreePlanDefault) => {
+const getCustomFamilyKeyFeatures = (plan: Plan | undefined, freePlan: FreePlanDefault) => {
     if (!plan) {
         return [];
     }
@@ -260,15 +260,6 @@ const getPorkbunFeatures = (plan: Plan | undefined) => {
         isWorkspacePlan && getPasswordManagerToSecureCredentialsFeature(),
         getScribeFeature(),
     ].filter(isTruthy);
-};
-
-export const getPlanTitle = (plan: Plan | undefined) => {
-    if (!plan) {
-        return;
-    }
-    if (plan.Name === PLANS.VISIONARY) {
-        return c('mail_signup_2023: Info').t`Become a Visionary and be part of ${BRAND_NAME}'s story`;
-    }
 };
 
 export const getMailConfiguration = ({

@@ -90,7 +90,7 @@ export class InvalidSessionError extends Error {
     }
 }
 
-export const maybeConsumeFork = async ({ api, mode }: Pick<Parameters<typeof consumeFork>[0], 'api' | 'mode'>) => {
+const maybeConsumeFork = async ({ api, mode }: Pick<Parameters<typeof consumeFork>[0], 'api' | 'mode'>) => {
     try {
         const hashParams = new URLSearchParams(window.location.hash.slice(1));
         const parameters = getConsumeForkParameters(hashParams);
@@ -122,7 +122,7 @@ export const createAuthentication = (args?: Partial<Parameters<typeof createAuth
     });
 };
 
-export const removeLoaderClassName = () => {
+const removeLoaderClassName = () => {
     document.querySelector('.app-root-loader')?.classList.add('hidden');
 };
 

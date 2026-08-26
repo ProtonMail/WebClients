@@ -2,7 +2,7 @@ import { type PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 import type { StaticExperimentsState } from './types';
 
-export const name = 'staticExperiments' as const;
+const name = 'staticExperiments' as const;
 
 export interface StaticExperimentsReducerState {
     [name]: StaticExperimentsState;

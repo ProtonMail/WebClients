@@ -29,7 +29,7 @@ const getDefaultPath = (toApp: APP_NAMES) => {
     return '/';
 };
 
-export const addSignupSearchParams = (searchParams: URLSearchParams, { appIntent }: { appIntent?: AppIntent }) => {
+const addSignupSearchParams = (searchParams: URLSearchParams, { appIntent }: { appIntent?: AppIntent }) => {
     searchParams.append('welcome', 'true');
     if (appIntent?.ref !== undefined) {
         searchParams.append('ref', appIntent.ref);

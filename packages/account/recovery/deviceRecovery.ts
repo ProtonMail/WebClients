@@ -15,7 +15,7 @@ import { type UserSettingsState, userSettingsThunk } from '../userSettings';
 
 type RequiredState = UserState & UserKeysState & UserSettingsState & AddressesState;
 
-export const syncDeviceRecoveryThunk = ({
+const syncDeviceRecoveryThunk = ({
     api,
     abortController,
 }: { api?: Api; abortController?: AbortController } = {}): ThunkAction<

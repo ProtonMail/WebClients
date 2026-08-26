@@ -13,7 +13,7 @@ export type SafetyReviewContainerState = PartialSafetyReviewContainerState & {
     backLink: SafetyReviewBackLink;
 };
 
-export type SafetyReviewActionResult = 'completed' | 'skipped';
+type SafetyReviewActionResult = 'completed' | 'skipped';
 
 export type SafetyReviewContainerActions = {
     next: (direction: SafetyReviewActionResult, item: RecoveryActionItem) => void;

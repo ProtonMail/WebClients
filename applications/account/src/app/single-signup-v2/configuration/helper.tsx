@@ -16,7 +16,7 @@ export const getBenefits = (appName: string) => {
     return c('pass_signup_2023: Info').t`${appName} benefits`;
 };
 
-export const getJoinB2BString = () => {
+const getJoinB2BString = () => {
     return c('drive_signup_2024: Info')
         .t`Join the 50,000+ organizations already benefiting from ${BRAND_NAME}'s security`;
 };
@@ -26,10 +26,6 @@ export const getJoinString = (audience?: Audience) => {
     }
     return c('pass_signup_2023: Info')
         .t`Join over 100 million people who have chosen ${BRAND_NAME} to stay safe online`;
-};
-
-export const getBasedString = () => {
-    return c('pass_signup_2023: Info').t`Based in Switzerland, GDPR compliant`;
 };
 
 export const getGenericBenefits = (): BenefitItem[] => {
@@ -61,7 +57,7 @@ export const getBuiltInEncryptionBenefit = (): BenefitItem => {
     };
 };
 
-export const getEndToEndEncryptionBenefit = (): BenefitItem => {
+const getEndToEndEncryptionBenefit = (): BenefitItem => {
     return {
         key: `end-to-end-encryption`,
         text: c('Signup: Info').t`End-to-end encryption`,
@@ -201,7 +197,7 @@ export const getAdvancedSecurityBenefit = (): BenefitItem => {
     };
 };
 
-export const getScribeBenefit = (): BenefitItem => {
+const getScribeBenefit = (): BenefitItem => {
     const scribeToLumo = getStandaloneUnleashClient()?.isEnabled(MailFeatureFlag.ScribeToLumo);
     return {
         key: `scribe-benefit`,
