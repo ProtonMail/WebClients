@@ -38,7 +38,25 @@ import {
     getVPNSpeed,
 } from '@proton/components/containers/payments/features/vpn';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
-import type { IconName } from '@proton/icons/types';
+import { IcAlias } from '@proton/icons/icons/IcAlias';
+import { IcArrowUpFromSquare } from '@proton/icons/icons/IcArrowUpFromSquare';
+import { IcArrowsSwitch } from '@proton/icons/icons/IcArrowsSwitch';
+import { IcBrandProtonVpn } from '@proton/icons/icons/IcBrandProtonVpn';
+import { IcBrandSimpleLogin } from '@proton/icons/icons/IcBrandSimpleLogin';
+import { IcChevronsRight } from '@proton/icons/icons/IcChevronsRight';
+import { IcCogWheel } from '@proton/icons/icons/IcCogWheel';
+import { IcEyeSlash } from '@proton/icons/icons/IcEyeSlash';
+import { IcGrid2 } from '@proton/icons/icons/IcGrid2';
+import { IcKey } from '@proton/icons/icons/IcKey';
+import { IcListBullets } from '@proton/icons/icons/IcListBullets';
+import { IcLock } from '@proton/icons/icons/IcLock';
+import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
+import { IcMobile } from '@proton/icons/icons/IcMobile';
+import { IcNote } from '@proton/icons/icons/IcNote';
+import { IcPassPasskey } from '@proton/icons/icons/IcPassPasskey';
+import { IcShield } from '@proton/icons/icons/IcShield';
+import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
+import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import type { Plan, PlansMap } from '@proton/payments/core/plan/interface';
 import {
@@ -104,7 +122,7 @@ const getUserAccountsBenefit = (): BenefitItem => {
         key: `user-accounts`,
         text: getPassUsersText(6),
         icon: {
-            name: 'user-plus',
+            component: IcUserPlus,
         },
     };
 };
@@ -114,7 +132,7 @@ const getAdminPanelBenefit = (): BenefitItem => {
         key: `admin-panel`,
         text: c('pass_signup_2024: Info').t`Admin panel to manage users and subscription`,
         icon: {
-            name: 'cog-wheel',
+            component: IcCogWheel,
         },
     };
 };
@@ -124,7 +142,7 @@ const getAliasesBenefit = (): BenefitItem => {
         key: `aliases`,
         text: c('pass_signup_2023: Info').t`Aliases for email protection from breaches`,
         icon: {
-            name: 'alias',
+            component: IcAlias,
         },
     };
 };
@@ -134,7 +152,7 @@ const getSecureSharingBenefit = (): BenefitItem => {
         key: `secure-sharing`,
         text: getSecureSharingText(true),
         icon: {
-            name: 'arrow-up-from-square',
+            component: IcArrowUpFromSquare,
         },
     };
 };
@@ -144,7 +162,7 @@ const get2FABenefit = (): BenefitItem => {
         key: `2fa`,
         text: get2FAAuthenticatorText(),
         icon: {
-            name: 'key',
+            component: IcKey,
         },
     };
 };
@@ -154,7 +172,7 @@ const getAlertsBenefit = (): BenefitItem => {
         key: `alerts`,
         text: c('pass_signup_2023: Info').t`Alerts for compromised emails and vulnerable passwords`,
         icon: {
-            name: 'shield',
+            component: IcShield,
         },
     };
 };
@@ -164,7 +182,7 @@ const getPasskeysBenefit = (): BenefitItem => {
         key: `passkeys`,
         text: c('pass_signup_2023: Info').t`Passkeys supported on all devices`,
         icon: {
-            name: 'pass-passkey',
+            component: IcPassPasskey,
         },
     };
 };
@@ -174,7 +192,7 @@ const getEncryptionBenefit = (): BenefitItem => {
         key: `encryption`,
         text: c('pass_signup_2023: Info').t`Secured by end-to-end encryption`,
         icon: {
-            name: 'lock',
+            component: IcLock,
         },
     };
 };
@@ -184,7 +202,7 @@ const getSecureVaultSharingBenefit = (): BenefitItem => {
         key: `secure-vault-sharing`,
         text: getSecureVaultSharingText(),
         icon: {
-            name: 'lock',
+            component: IcLock,
         },
     };
 };
@@ -194,7 +212,7 @@ const getAdvancedAliasBenefit = (): BenefitItem => {
         key: `advanced-alias`,
         text: c('pass_signup_2024: Info').t`Advanced alias features (powered by SimpleLogin)`,
         icon: {
-            name: 'brand-simple-login',
+            component: IcBrandSimpleLogin,
         },
     };
 };
@@ -204,7 +222,7 @@ const getOpenSourceAndAuditedBenefit = (): BenefitItem => {
         key: 'open-source-and-audited',
         text: c('pass_signup_2023: Info').t`Open source and audited`,
         icon: {
-            name: 'magnifier' as const,
+            component: IcMagnifier,
         },
     };
 };
@@ -214,7 +232,7 @@ const getLoginsAndNotesBenefit = (): BenefitItem => {
         key: 'notes',
         text: getLoginsAndNotesText(),
         icon: {
-            name: 'note' as const,
+            component: IcNote,
         },
     };
 };
@@ -224,7 +242,7 @@ const getEmailAliasesBenefit = (): BenefitItem => {
         key: 'email-aliases',
         text: getUnlimitedHideMyEmailAliasesText(),
         icon: {
-            name: 'eye-slash' as const,
+            component: IcEyeSlash,
         },
     };
 };
@@ -234,7 +252,7 @@ const getSecureLinkAndVaultSharingBenefit = (): BenefitItem => {
         key: 'secure-vault-sharing',
         text: getSecureSharingText(true),
         icon: {
-            name: 'arrow-up-from-square' as const,
+            component: IcArrowUpFromSquare,
         },
     };
 };
@@ -244,7 +262,7 @@ const getTeamPoliciesBenefit = (): BenefitItem => {
         key: 'team-policies',
         text: getTeamPoliciesText(),
         icon: {
-            name: 'users' as const,
+            component: IcUsers,
         },
     };
 };
@@ -254,7 +272,7 @@ const getActivityLogBenefit = (): BenefitItem => {
         key: 'activity-log',
         text: getActivityLogText(),
         icon: {
-            name: 'list-bullets' as const,
+            component: IcListBullets,
         },
     };
 };
@@ -264,7 +282,7 @@ const getAdvancedAccountProtectionBenefit = (): BenefitItem => {
         key: 'advanced-account-protection',
         text: c('pass_signup_2024: Info').t`Advanced account protection`,
         icon: {
-            name: 'lock' as const,
+            component: IcLock,
         },
     };
 };
@@ -274,7 +292,7 @@ const getAppsPassIncludedBenefit = (): BenefitItem => {
         key: `apps-pass-included`,
         text: c('Signup: Info').t`Mail, calendar, file storage, and VPN included`,
         icon: {
-            name: 'grid-2',
+            component: IcGrid2,
         },
     };
 };
@@ -284,7 +302,7 @@ const getAdvancedSecurityFeaturesBenefit = (): BenefitItem => {
         key: 'advanced-security-features',
         text: c('Signup: Info').t`Advanced security features by ${BRAND_NAME}`,
         icon: {
-            name: 'shield' as const,
+            component: IcShield,
         },
     };
 };
@@ -567,11 +585,11 @@ export const getPassConfiguration = ({
 
     const benefits = (() => {
         if (isPaidPassVPNBundle) {
-            const getBenefitItems = (items: PlanCardFeatureDefinition[]) => {
-                return items.map((item, i): BenefitItem => ({
+            const getBenefitItems = (items: [PlanCardFeatureDefinition, BenefitItem['icon']['component']][]) => {
+                return items.map(([item, component], i): BenefitItem => ({
                     ...item,
                     key: i,
-                    icon: { name: item.icon as IconName },
+                    icon: { component },
                 }));
             };
             return (
@@ -580,20 +598,20 @@ export const getPassConfiguration = ({
                     <Benefits
                         className="mt-5 mb-5"
                         features={getBenefitItems([
-                            getLoginsAndNotes(),
-                            getDevicesAndAliases(),
-                            get2FAAuthenticator(true),
-                            getVaultSharing(10),
+                            [getLoginsAndNotes(), IcNote],
+                            [getDevicesAndAliases(), IcMobile],
+                            [get2FAAuthenticator(true), IcKey],
+                            [getVaultSharing(10), IcArrowUpFromSquare],
                         ])}
                     />
                     <div className="text-lg text-semibold">{getBenefits(VPN_APP_NAME)}</div>
                     <Benefits
                         className="mt-5 mb-5"
                         features={getBenefitItems([
-                            getVPNSpeed('highest'),
-                            getProtectDevices(VPN_CONNECTIONS),
-                            getNetShield(true),
-                            getAdvancedVPNCustomizations(true),
+                            [getVPNSpeed('highest'), IcChevronsRight],
+                            [getProtectDevices(VPN_CONNECTIONS), IcBrandProtonVpn],
+                            [getNetShield(true), IcShield],
+                            [getAdvancedVPNCustomizations(true), IcArrowsSwitch],
                         ])}
                     />
                     <div>{getJoinString()}</div>
