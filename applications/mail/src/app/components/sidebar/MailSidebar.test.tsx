@@ -14,7 +14,7 @@ import { CHECKLIST_DISPLAY_TYPE, ChecklistKey, type Label } from '@proton/shared
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 import { buildUser } from '@proton/testing/builders/user';
 import { useFlag } from '@proton/unleash/useFlag';
-import noop from '@proton/utils/noop.ts';
+import noop from '@proton/utils/noop';
 import range from '@proton/utils/range';
 
 import type { OnboardingChecklistContext } from '../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
