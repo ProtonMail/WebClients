@@ -11,7 +11,7 @@ import type {
 
 import type { ESBaseMessage, ESMessageContent } from '../../models/encryptedSearch';
 import type { IndexService } from '../indexation/IndexService';
-import type { Search } from '../search/Search';
+import type { Search, SearchOutcome } from '../search/Search';
 import type { SearchService } from '../search/SearchService';
 import { IndexingJob, type JobMode } from './IndexingJob';
 import type { FunctionsV1, FunctionsV2 } from './useContentSearch';
@@ -55,7 +55,11 @@ class FrameCoalescer<T extends any[]> {
     }
 }
 
-function errorBeforeFirstResults(search: Search): Promise<void> {
+/**
+ * Rejects if the search errors before producing any results, else resolves with how it ended — or
+ * with `undefined` if it was disposed before ending (a superseded query).
+ */
+function errorBeforeFirstResults(search: Search): Promise<SearchOutcome | undefined> {
     return new Promise((resolve, reject) => {
         let subscriptions: (() => void)[] = [];
         const unsubscribe = () => subscriptions.forEach((s) => s());
@@ -66,13 +70,13 @@ function errorBeforeFirstResults(search: Search): Promise<void> {
             }),
             search.onDisposed.subscribe(() => {
                 unsubscribe();
-                resolve();
+                resolve(undefined);
             }),
         ];
 
-        void search.done.finally(() => {
+        void search.done.then((outcome) => {
             unsubscribe();
-            resolve();
+            resolve(outcome);
         });
     });
 }
@@ -182,7 +186,15 @@ export class ESAdapter implements FunctionsV2 {
             // for results but still awaits for errors.
             // if we change that, we can also get rid of this
             // and the onDisposed event on Search.
-            await errorBeforeFirstResults(this.lastSearch);
+            const outcome = await errorBeforeFirstResults(this.lastSearch);
+            if (outcome === 'no-index') {
+                // There was no index to query, so nothing was searched and nothing was reported.
+                // Hand the query to the server, and keep no search around — otherwise the next
+                // identical query would take the `update` path above and return its empty state.
+                this.lastSearch = undefined;
+                this.coalescedResults?.cancel();
+                return false;
+            }
         }
         return true;
     }
