@@ -10,8 +10,6 @@ export default defineConfig([
         rules: {
             'no-console': ['error', { allow: ['warn', 'error'] }],
             curly: ['error', 'multi-line'],
-            // TODO: Add the missing explicit deps and remove this rule
-            'import/no-extraneous-dependencies': 'off',
         },
     },
     globalIgnores(['fathom/', 'asm/', 'docs/starlight/']),

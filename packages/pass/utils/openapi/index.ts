@@ -1,4 +1,5 @@
 #!/usr/bin/env tsx
+/* eslint-disable import/no-extraneous-dependencies -- dev-only OpenAPI type generator CLI */
 import type { OpenAPIV3_1 } from 'openapi-types';
 import prettier from 'prettier';
 
