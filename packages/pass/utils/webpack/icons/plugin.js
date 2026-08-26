@@ -1,4 +1,4 @@
-/* eslint-disable no-console */
+/* eslint-disable no-console, import/no-extraneous-dependencies -- build-only webpack plugin */
 const { JSDOM } = require('jsdom');
 const fs = require('fs');
 const path = require('path');

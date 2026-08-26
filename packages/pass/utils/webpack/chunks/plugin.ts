@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies -- build-only webpack plugin */
 import type { Compiler, WebpackPluginInstance } from 'webpack';
 import webpack from 'webpack';
 

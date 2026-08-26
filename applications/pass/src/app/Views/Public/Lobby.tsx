@@ -2,7 +2,6 @@ import { type FC, useMemo } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { useAuthService } from 'proton-pass-web/app/Auth/AuthServiceProvider';
-import { useAvailableSessions } from 'proton-pass-web/app/Auth/AuthSwitchProvider';
 import { AccountSwitcherList } from 'proton-pass-web/app/Views/AccountSwitcher/AccountSwitcherList';
 import { AccountSwitcherTooltip } from 'proton-pass-web/app/Views/AccountSwitcher/AccountSwitcherTooltip';
 import { c } from 'ttag';
@@ -14,6 +13,7 @@ import { AppStateManager } from '@proton/pass/components/Core/AppStateManager';
 import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { useLobbyConnectivityBar } from '@proton/pass/components/Core/ConnectivityProvider';
+import { useAvailableSessions } from '@proton/pass/components/Core/SessionsProvider';
 import { LobbyContent } from '@proton/pass/components/Layout/Lobby/LobbyContent';
 import { LobbyLayout } from '@proton/pass/components/Layout/Lobby/LobbyLayout';
 import type { AuthRouteState } from '@proton/pass/components/Navigation/routing';
