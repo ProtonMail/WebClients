@@ -29,7 +29,6 @@ export type FunctionsV2 = Omit<FunctionsV1, 'esStatus' | 'esIndexingProgressStat
 interface Props {
     refreshMask: number;
     esCallbacks: ESCallbacks<ESBaseMessage, NormalizedSearchParams, ESMessageContent>;
-    contentIndexingSuccessMessage?: string;
     onMetadataIndexed?: (metrics: IndexingMetrics) => void;
     /**
      * The legacy `useEncryptedSearch` instance. While the v2 content-search index has no event
