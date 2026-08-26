@@ -4254,7 +4254,7 @@
         "${ MAIL_APP_NAME } 안에서 Gmail을 읽고, 답장하고 관리하세요."
       ],
       "Right-click an email and select “Move to”, or drag and drop it into another category. Similar emails will be sorted there automatically in the future.": [
-        "이메일에서 우클릭하여 \"댜음으로 이동\"을 선택하거나 다른 카테고리로 이동하려면 드래그 앤 드롭하세요. 유사한 이메일이 추후에 선택한 카테고리로 자동 분류됩니다."
+        "이메일에서 우클릭하여 \"다음으로 이동\"을 선택하거나 다른 카테고리로 이동하려면 드래그 앤 드롭하세요. 유사한 이메일이 추후에 선택한 카테고리로 자동 분류됩니다."
       ],
       "Send and receive Gmail messages directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
         "${ MAIL_APP_NAME }에서 Gmail 메시지를 직접 보내고 받아보세요. ${ addressesSettingsLink }에서 회원님의 주소를 연결하세요."
@@ -4302,7 +4302,7 @@
         "글쓰기 도우미를 계속 사용하기 위해, 관리자로 부터 접근 권한을 요청해 주세요."
       ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
-        "최상의 계정 보안 상태를 유지하려면, 복구 문구를 설정하세요."
+        "최상의 계정 보안 상태를 유지하려면, 복구 키를 설정하세요."
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "CSV 파일 및 VCF 파일을 통한 불러오기를 위해, 파일이 ${ MAX_IMPORT_FILE_SIZE_STRING } 또는 연락처 ${ maxContactString }개를 초과하지 않도록 않도록 해주세요. 파일이 더 크다면, 더 작은 파일로 나눠주세요. ${ learnMoreLink }."
@@ -7036,7 +7036,7 @@
         "${ MAIL_APP_NAME }이 회원님의 비즈니스를 더욱 완벽히 보호합니다."
       ],
       "${ MAIL_APP_NAME } now automatically sorts your emails into categories like Primary, Social, Promotions, and more, helping you find and manage messages more easily.": [
-        "${ MAIL_APP_NAME }은(는) 이제 이메일을 우선 순위, 소셜, 프로모션 등과 같은 카테고리로 자동 분류하여 메시지를 더 쉽게 찾고 관리할 수 있도록 도와줍니다."
+        "${ MAIL_APP_NAME }이 이제 이메일을 우선 순위, 소셜, 프로모션 등과 같은 카테고리로 자동 분류하여 메시지를 더 쉽게 찾고 관리할 수 있도록 도와줍니다."
       ],
       "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
         "${ MEET_APP_NAME }은 종단간 암호화된 화상 회의 솔루션입니다. 안전한 회의를 개최하기 위해 플랜에 추가해 보세요."
@@ -8410,7 +8410,7 @@
         "비공개 브라우징 모드(일명 \"시크릿\" 모드)는 기기에서의 온라인 활동을 숨기는 것에 한해 유용합니다. 이 모드로 브라우저가 기록과 쿠키를 저장하는 것을 방지할 수 있지만, 사용자의 온라인 상 노출을 방지할 수는 없습니다. ISP, 네트워크 관리자 및 방문하는 웹 사이트는 여전히 사용자가 온라인에서 수행하는 작업을 확인할 수 있습니다."
       ],
       "Private by design.": [
-        "설계부터 비공개."
+        "설계부터 시작되는 프라이버시 보호."
       ],
       "Proofread selection": [
         "단락 교정"
@@ -10876,6 +10876,9 @@
       ],
       "Sieve script": [
         "Sieve 스크립트"
+      ],
+      "At": [
+        "시기:"
       ]
     },
     "Label (begin date/advanced search)": {

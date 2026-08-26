@@ -1532,8 +1532,7 @@
         "Hav tillid til"
       ],
       "Trust key": [
-        "Betroet nøgle",
-        "Betroede nøgler"
+        "Stol på nøgle"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -9784,6 +9783,9 @@
       ],
       "Snooze emails": [
         "Udsæt e-mails"
+      ],
+      "${ name } in ${ parentName }": [
+        "${ name } i ${ parentName }"
       ]
     },
     "info": {
