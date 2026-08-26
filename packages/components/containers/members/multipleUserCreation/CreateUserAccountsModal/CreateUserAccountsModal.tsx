@@ -37,6 +37,7 @@ import TableCell from '../../../../components/table/TableCell';
 import TableHeader from '../../../../components/table/TableHeader';
 import Marks from '../../../../components/text/Marks';
 import useBeforeUnload from '../../../../hooks/useBeforeUnload';
+import SubUserCreateHint from '../../SubUserCreateHint';
 import type { CsvConfig } from '../csv';
 import type { UserTemplate } from '../types';
 import OrganizationCapacityErrorModal from './OrganizationCapacityErrorModal';
@@ -322,16 +323,28 @@ const CreateUserAccountsModal = ({
             return {
                 title: c('Title').t`Create user accounts`,
                 additionalContent: (
-                    <div className="flex items-center justify-end mt-4 px-3">
-                        <Input
-                            className="max-w-custom"
-                            style={{ '--max-w-custom': '16.875rem' }}
-                            placeholder={c('Placeholder').t`Search`}
-                            prefix={<IcMagnifier alt={c('Action').t`Search`} />}
-                            value={searchValue}
-                            onValue={setSearchValue}
-                        />
-                    </div>
+                    <>
+                        {/* The mode comes from the uploaded file, so this is the first place it can be
+                            stated as a fact. Only password imports are worth a word: invite links are
+                            what happens by default, whereas passwords have to be shared with each user. */}
+                        {mode === CreateMemberMode.Password && (
+                            <SubUserCreateHint className="mt-4 mx-3 bg-weak">
+                                {c('Info')
+                                    .t`Your file includes a password for each user, so these accounts will be created with a password instead of an invite link.`}{' '}
+                                {c('user_modal').t`Remember to share the user's sign in details with them.`}
+                            </SubUserCreateHint>
+                        )}
+                        <div className="flex items-center justify-end mt-4 px-3">
+                            <Input
+                                className="max-w-custom"
+                                style={{ '--max-w-custom': '16.875rem' }}
+                                placeholder={c('Placeholder').t`Search`}
+                                prefix={<IcMagnifier alt={c('Action').t`Search`} />}
+                                value={searchValue}
+                                onValue={setSearchValue}
+                            />
+                        </div>
+                    </>
                 ),
                 content: filteredOptions.length ? (
                     <Table className="table-auto simple-table--is-hoverable">
