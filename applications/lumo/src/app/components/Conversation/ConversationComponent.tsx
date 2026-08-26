@@ -23,6 +23,7 @@ import { ArtifactProvider, useArtifactContext } from './artifact/ArtifactContext
 import ArtifactPanel from './artifact/ArtifactPanel';
 import { ConversationHeader } from './messageChain/ConversationHeader';
 import { MessageChainComponent } from './messageChain/MessageChainComponent';
+import DesktopApprovalCards from './messageChain/message/DesktopToolApproval/DesktopApprovalCards';
 import { WebSearchSourcesView } from './messageChain/message/toolCall/WebSearchSourcesView';
 import { useImageLimitInfo } from './useImageLimitInfo';
 

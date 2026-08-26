@@ -2,10 +2,11 @@ import { useCallback, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLikeSizeEnum } from '@proton/atoms/Button/ButtonLike';
 import type { ModalStateProps } from '@proton/components';
-import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, useNotifications } from '@proton/components';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { IcBrandProtonDriveFilled } from '@proton/icons/icons/IcBrandProtonDriveFilled';
 import { DRIVE_SHORT_APP_NAME } from '@proton/shared/lib/constants';
