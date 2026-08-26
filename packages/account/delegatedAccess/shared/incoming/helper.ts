@@ -5,19 +5,19 @@ import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { getContact, getParsedDateTime } from '../../emergencyContact/helper';
 import type { IncomingDelegatedAccessOutput, IncomingEphemeral } from '../../interface';
 
-export const getIsRecoveryContact = (value: IncomingDelegatedAccessOutput) => {
+const getIsRecoveryContact = (value: IncomingDelegatedAccessOutput) => {
     if (hasBit(value.Types, DelegatedAccessTypeEnum.SocialRecovery)) {
         return true;
     }
 };
 
-export const getIsEmergencyContact = (value: IncomingDelegatedAccessOutput) => {
+const getIsEmergencyContact = (value: IncomingDelegatedAccessOutput) => {
     if (hasBit(value.Types, DelegatedAccessTypeEnum.EmergencyAccess)) {
         return true;
     }
 };
 
-export const getParsedIncomingDelegatedAccess = (
+const getParsedIncomingDelegatedAccess = (
     value: IncomingDelegatedAccessOutput,
     contactEmail: ContactEmail | undefined
 ) => {
@@ -56,7 +56,7 @@ export const getEnrichedIncomingDelegatedAccess = (
     };
 };
 
-export const getCanIncomingDelegatedAccessRecover = ({
+const getCanIncomingDelegatedAccessRecover = ({
     incomingDelegatedAccess,
     parsedIncomingDelegatedAccess,
 }: ReturnType<typeof getEnrichedIncomingDelegatedAccess>) => {

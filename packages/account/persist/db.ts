@@ -27,9 +27,9 @@ export type DecryptedCache<T> = {
     appVersion: string;
 };
 
-export const CACHE_DB_VERSION = 1;
+const CACHE_DB_VERSION = 1;
 
-export const openStoreDB = async (): Promise<IDBPDatabase<StoreDB>> => {
+const openStoreDB = async (): Promise<IDBPDatabase<StoreDB>> => {
     const db = await openDB<StoreDB>(dbName, CACHE_DB_VERSION, {
         upgrade: (db) => {
             db.createObjectStore(storeName, { keyPath: null });

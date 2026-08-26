@@ -23,7 +23,7 @@ import type { SafetyReviewAllProps } from '../../interface';
 type Props = SafetyReviewAllProps & {
     recoveryItem: ExtractRecoveryActionItem<'upsellEmergencyContacts'>;
 };
-export const BaseUpsellEmergencyContacts = (props: Props) => {
+const BaseUpsellEmergencyContacts = (props: Props) => {
     const theme = useTheme();
     const isDarkTheme = theme.information.dark;
     const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();

@@ -82,7 +82,7 @@ export const handleRequestRecoveryMethods = async ({ username, api }: { username
     }
 };
 
-export class NoKeysDecryptedUsingPhraseError extends Error {
+class NoKeysDecryptedUsingPhraseError extends Error {
     public reason?: string;
     constructor(reason?: string) {
         super('No keys were decrypted using the phrase');

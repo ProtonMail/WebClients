@@ -13,7 +13,7 @@ import { type RecoveryScore, calculateRecoveryScore } from '../recoveryScore/cal
 import { getSafetyReviewRecoveryState } from '../telemetry/getSafetyReviewRecoveryState';
 import { type SafetyReviewCohort, getCohort } from '../telemetry/utils/getCohort';
 
-export type GenericRecoveryItem<T extends string> = {
+type GenericRecoveryItem<T extends string> = {
     id: T;
     isAvailable: boolean;
     isEnabled: boolean;
@@ -41,11 +41,12 @@ export type RecoveryItems = [
 export type RecoveryItemIds = RecoveryItems[number]['id'];
 export type RecoveryItem = RecoveryItems[number];
 
-export type GenericRecoveryActionItem<T extends string, RecoveryItemIdType extends RecoveryItemIds> = {
+type GenericRecoveryActionItem<T extends string, RecoveryItemIdType extends RecoveryItemIds> = {
     id: T;
     recoveryItem: Extract<RecoveryItem, { id: RecoveryItemIdType }>;
 };
-export type RecoveryActionItems = [
+
+type RecoveryActionItems = [
     GenericRecoveryActionItem<'passwordVerification', 'passwordVerification'>,
     GenericRecoveryActionItem<'setRecoveryEmail', 'recoveryEmail'>,
     GenericRecoveryActionItem<'verifyRecoveryEmail', 'recoveryEmail'>,

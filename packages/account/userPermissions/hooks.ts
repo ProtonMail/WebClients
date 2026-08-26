@@ -6,7 +6,6 @@ import { selectUserPermissions, userPermissionsThunk } from './index';
 const hooks = createHooks(userPermissionsThunk, selectUserPermissions);
 
 export const useUserPermissions = hooks.useValueWithDefault;
-export const useGetUserPermissions = hooks.useGet;
 
 export enum AdminRolesUIState {
     Hidden = 'hidden',

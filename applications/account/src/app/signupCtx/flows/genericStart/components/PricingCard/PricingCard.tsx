@@ -10,8 +10,6 @@ import { VPN_SERVERS } from '@proton/vpn/constants/vpnServers';
 
 import FeatureItem from '../FeatureItem/FeatureItem';
 
-export type PricingStep = 'account-details' | 'payment';
-
 const PricingFeatures = () => {
     const payments = usePaymentOptimistic();
     const freePlan = payments.freePlan;

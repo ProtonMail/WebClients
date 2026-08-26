@@ -4,7 +4,7 @@ import clsx from '@proton/utils/clsx';
 
 import './StepLabel.scss';
 
-export enum StepLabelSize {
+enum StepLabelSize {
     small,
     large,
 }

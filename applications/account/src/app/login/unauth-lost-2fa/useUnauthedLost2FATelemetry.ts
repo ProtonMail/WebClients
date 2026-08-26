@@ -19,7 +19,7 @@ const getCohort = (recoveryMethods: Lost2FARecoveryMethods): Cohort => {
     return 'multiple';
 };
 
-export type Step =
+type Step =
     | 'request totp backup codes'
     | 'verify ownership with email'
     | 'verify ownership with phone'

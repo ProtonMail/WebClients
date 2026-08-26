@@ -9,7 +9,7 @@ import RecoveryConfirmation from './steps/RecoveryConfirmation';
 import RecoveryEmail from './steps/RecoveryEmail';
 import RecoveryVerificationCode from './steps/RecoveryVerificationCode';
 
-export enum Steps {
+enum Steps {
     RecoveryEmail = 1,
     RecoveryOTP = 2,
     RecoveryConfirmation = 3,

@@ -26,7 +26,7 @@ import { getLocalePathPrefix } from '../useLocationWithoutLocale';
 import { type ProduceForkData, SSOType } from './actions/forkInterface';
 import type { LocalRedirect } from './localRedirect';
 
-export const getLoginUrl = (localePath: string, app: APP_NAMES | undefined) => {
+const getLoginUrl = (localePath: string, app: APP_NAMES | undefined) => {
     const { path } = (() => {
         if (getIsMailApp(app)) {
             return { path: SSO_PATHS.MAIL_SIGN_IN };
@@ -61,15 +61,15 @@ export const getLoginUrl = (localePath: string, app: APP_NAMES | undefined) => {
     return `${localePath}${path}`;
 };
 
-export const getReauthUrl = (localePath: string) => {
+const getReauthUrl = (localePath: string) => {
     return `${localePath}${SSO_PATHS.REAUTH}`;
 };
 
-export const getAppSwitcherUrl = (localePath: string) => {
+const getAppSwitcherUrl = (localePath: string) => {
     return `${localePath}${SSO_PATHS.APP_SWITCHER}`;
 };
 
-export const getSignupUrl = (
+const getSignupUrl = (
     localePath: string,
     forkState: ProduceForkData | undefined | null,
     app: APP_NAMES | undefined,

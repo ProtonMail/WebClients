@@ -1,6 +1,6 @@
 import type { staticExperimentsConfig } from './config';
 
-export interface StaticExperimentScheduleEntry {
+interface StaticExperimentScheduleEntry {
     startsAt: string;
     endsAt?: string;
     weights: Record<string, number>;

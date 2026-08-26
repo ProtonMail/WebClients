@@ -52,5 +52,3 @@ export const MailDownloadAndInfoSection = ({ app }: { app: APP_NAMES }) => {
         </DashboardGrid>
     );
 };
-
-export default MailDownloadAndInfoSection;
