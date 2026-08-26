@@ -108,7 +108,7 @@ export const mailSettingsHeartbeatListener = (startListening: AppStartListening)
                     delaySendSeconds: getDelaySecond(mailSettings.DelaySendSeconds),
                     nextMessageOnMove: getNextMessageOnMove(mailSettings.NextMessageOnMove),
                     viewMode: mailSettings.ViewMode === VIEW_MODE.GROUP ? 'group' : 'single',
-                    viewLayout: mailSettings.ViewLayout === VIEW_LAYOUT.ROW ? 'row' : 'colum',
+                    viewLayout: mailSettings.ViewLayout === VIEW_LAYOUT.ROW ? 'row' : 'column',
                     confirmLink: mailSettings.ConfirmLink === CONFIRM_LINK.CONFIRM ? 'true' : 'false',
                     rightToLeft: mailSettings.RightToLeft === DIRECTION.RIGHT_TO_LEFT ? 'true' : 'false',
                     hideRemoteImages: mailSettings.HideRemoteImages === SHOW_IMAGES.HIDE ? 'hide' : 'show',
