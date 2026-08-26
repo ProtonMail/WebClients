@@ -15,7 +15,7 @@ import { TooltipKey, useTooltipOnce } from '@proton/docs-shared'
 import { useDocsUrlPublicToken } from '@proton/drive-store'
 import { useDocsBookmarks } from '@proton/drive-store/lib/_views/useDocsBookmarks'
 import { usePublicSessionUser } from '@proton/drive-store/store'
-import type { DocumentType } from '@proton/drive-store/store/_documents'
+import type { DocumentType } from '@proton/docs-shared'
 import { RedirectAction } from '@proton/drive-store/store/_documents'
 import {
   needPublicRedirectSpotlight,

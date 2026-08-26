@@ -1,11 +1,11 @@
 import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
 import { Result } from '@proton/docs-shared'
-import type { DriveCompat, NodeMeta } from '@proton/drive-store'
+import type { DriveCompat } from '@proton/drive-store'
+import type { NodeMeta, DocumentKeys } from '@proton/docs-shared'
 import { getErrorString } from '../Util/GetErrorString'
 import type { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
 import type { CacheService } from '../Services/CacheService'
 import type { CachableResult } from './CachableResult'
-import type { DocumentKeys } from '@proton/drive-store/lib/_documents'
 import type { SessionKey } from '@protontech/crypto'
 import type { LoggerInterface } from '@proton/utils/logs'
 

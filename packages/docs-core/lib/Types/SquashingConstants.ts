@@ -1,5 +1,5 @@
 import { isDevOrBlack } from '@proton/utils/env'
-import type { DocumentType } from '@proton/drive-store/store/_documents'
+import type { DocumentType } from '@proton/docs-shared'
 
 /** Number of DUs in a commit before we need to squash */
 export function GetCommitDULimit(documentType: DocumentType) {

@@ -1,5 +1,5 @@
 import useAuthentication from '@proton/components/hooks/useAuthentication'
-import type { NodeMeta } from '@proton/drive-store/lib'
+import type { NodeMeta } from '@proton/docs-shared'
 import { type ShareURL, useDriveEventManager } from '@proton/drive-store/store'
 import { VolumeTypeForEvents } from '@proton/drive-store/store/_volumes'
 import { EVENT_TYPES } from '@proton/shared/lib/drive/constants'

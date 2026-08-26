@@ -1,5 +1,5 @@
 import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
-import type { DocumentType } from '@proton/drive-store/store/_documents'
+import type { DocumentType } from '@proton/docs-shared'
 
 // TODO: we will rename the values in `DocumentType` to 'document' and 'spreadsheet' soon, but for now
 // we just convert the new names to the old ones to support both naming patterns to keep changes small.

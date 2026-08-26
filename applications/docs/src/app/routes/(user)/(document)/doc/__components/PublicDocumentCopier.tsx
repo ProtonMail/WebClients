@@ -9,7 +9,8 @@ import type {
   PublicDocumentPostMessageDataForCopying,
   PublicDocumentPostMessageEvent,
 } from '~/components/document/public/utils'
-import { tmpConvertNewDocTypeToOld, type DocumentAction } from '@proton/drive-store/store/_documents/useOpenDocument'
+import { tmpConvertNewDocTypeToOld } from '@proton/drive-store/store/_documents/useOpenDocument'
+import type { DocumentAction } from '@proton/docs-shared'
 import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
 
 /**

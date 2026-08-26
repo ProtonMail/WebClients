@@ -1,13 +1,12 @@
 import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
 import { Result } from '@proton/docs-shared'
 import type { EncryptionService } from '../Services/Encryption/EncryptionService'
-import type { DocumentKeys } from '@proton/drive-store'
+import type { DocumentKeys, PublicDocumentKeys } from '@proton/docs-shared'
 import { GetAssociatedEncryptionDataForComment } from './GetAdditionalEncryptionData'
 import type { EncryptionContext } from '../Services/Encryption/EncryptionContext'
 import { utf8StringToUint8Array } from '@protontech/crypto/utils'
 import metrics from '@proton/metrics'
 import { canKeysSign } from '../Types/DocumentEntitlements'
-import type { PublicDocumentKeys } from '@proton/drive-store'
 
 export class EncryptComment implements UseCaseInterface<string> {
   constructor(private encryption: EncryptionService<EncryptionContext.PersistentComment>) {}

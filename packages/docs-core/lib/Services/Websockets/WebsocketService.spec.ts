@@ -1,6 +1,11 @@
 import { utf8StringToUint8Array } from '@protontech/crypto/utils'
-import type { DocumentKeys } from '@proton/drive-store/lib/_documents/DocumentKeys'
-import type { NodeMeta } from '@proton/drive-store/lib/NodeMeta'
+import type {
+  DocumentKeys,
+  NodeMeta,
+  InternalEventBusInterface,
+  WebsocketConnectionInterface,
+} from '@proton/docs-shared'
+import { BroadcastSource, ConnectionType, Result } from '@proton/docs-shared'
 import type { ServerMessageWithDocumentUpdates, ServerMessageWithEvents } from '@proton/docs-proto'
 import { DecryptedValue, EventTypeEnum } from '@proton/docs-proto'
 import type { LoggerInterface } from '@proton/utils/logs'
@@ -8,8 +13,6 @@ import type { FetchRealtimeToken } from '../../UseCase/FetchRealtimeToken'
 import type { DecryptMessage } from '../../UseCase/DecryptMessage'
 import type { EncryptMessage } from '../../UseCase/EncryptMessage'
 import { WebsocketService } from './WebsocketService'
-import type { InternalEventBusInterface, WebsocketConnectionInterface } from '@proton/docs-shared'
-import { BroadcastSource, ConnectionType, Result } from '@proton/docs-shared'
 import type { AnonymousEncryptionMetadata, EncryptionMetadata } from '../../Types/EncryptionMetadata'
 import type { DocumentConnectionRecord } from './DocumentConnectionRecord'
 import { WebsocketConnectionEvent } from '../../Realtime/WebsocketEvent/WebsocketConnectionEvent'

@@ -1,7 +1,7 @@
 import { Result } from '@proton/docs-shared'
 import type { EncryptionService } from '../Services/Encryption/EncryptionService'
 import type { EncryptionContext } from '../Services/Encryption/EncryptionContext'
-import type { DocumentKeys } from '@proton/drive-store'
+import type { DocumentKeys } from '@proton/docs-shared'
 import { EncryptMessage } from './EncryptMessage'
 import { GetAssociatedEncryptionDataForRealtimeMessage } from './GetAdditionalEncryptionData'
 

@@ -1,4 +1,4 @@
-import type { NodeMeta, PublicNodeMeta } from '@proton/drive-store'
+import type { NodeMeta, PublicNodeMeta } from '@proton/docs-shared'
 import type { LoggerInterface } from '@proton/utils/logs'
 import { mergeUpdates } from 'yjs'
 import { DocumentDebounceMode } from './DocumentDebounceMode'

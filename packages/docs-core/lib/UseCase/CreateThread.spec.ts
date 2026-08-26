@@ -1,9 +1,13 @@
-import { ApiResult, Result } from '@proton/docs-shared'
-import type { DocumentKeys, NodeMeta } from '@proton/drive-store'
+import {
+  ApiResult,
+  Result,
+  ServerTime,
+  GenerateUUID,
+  type NodeMeta,
+  type InternalEventBusInterface,
+} from '@proton/docs-shared'
+import type { DocumentKeys } from '@proton/docs-shared'
 import { CommentThread } from '../Models'
-import type { InternalEventBusInterface } from '@proton/docs-shared'
-import { ServerTime } from '@proton/docs-shared'
-import { GenerateUUID } from '@proton/docs-shared'
 import type { EncryptComment } from './EncryptComment'
 import type { DecryptComment } from './DecryptComment'
 import type { LocalCommentsState } from '../Services/Comments/LocalCommentsState'

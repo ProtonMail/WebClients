@@ -1,10 +1,14 @@
 import { utf8StringToUint8Array, uint8ArrayToUtf8String } from '@protontech/crypto/utils'
-import type { DocumentKeys, NodeMeta, PublicNodeMeta, PublicDocumentKeys } from '@proton/drive-store'
-import type { EncryptMessage } from '../../UseCase/EncryptMessage'
-import type { AnonymousEncryptionMetadata, EncryptionMetadata } from '../../Types/EncryptionMetadata'
-import type { LoggerInterface } from '@proton/utils/logs'
-import { WebsocketConnection } from '../../Realtime/WebsocketConnection'
-import type { InternalEventBusInterface, WebsocketConnectionInterface, WebsocketCallbacks } from '@proton/docs-shared'
+import type {
+  DocumentKeys,
+  PublicDocumentKeys,
+  NodeMeta,
+  PublicNodeMeta,
+  InternalEventBusInterface,
+  WebsocketConnectionInterface,
+  WebsocketCallbacks,
+  DocumentType,
+} from '@proton/docs-shared'
 import {
   BroadcastSource,
   ProcessedIncomingRealtimeEventMessage,
@@ -12,6 +16,10 @@ import {
   GenerateUUID,
   ConnectionType,
 } from '@proton/docs-shared'
+import type { EncryptMessage } from '../../UseCase/EncryptMessage'
+import type { AnonymousEncryptionMetadata, EncryptionMetadata } from '../../Types/EncryptionMetadata'
+import type { LoggerInterface } from '@proton/utils/logs'
+import { WebsocketConnection } from '../../Realtime/WebsocketConnection'
 import type { FetchRealtimeToken } from '../../UseCase/FetchRealtimeToken'
 import type { WebsocketServiceInterface } from './WebsocketServiceInterface'
 import metrics from '@proton/metrics'
@@ -68,7 +76,6 @@ import {
   splitDocumentUpdateIntoChunks,
 } from '../../utils/document-update-chunking'
 import type { UnleashClient } from '@proton/unleash/UnleashClient'
-import type { DocumentType } from '@proton/drive-store/store/_documents'
 import type { DocSizeTracker } from '../../SizeTracker/SizeTracker'
 import { tmpConvertOldDocTypeToNew } from '../../utils/convert-doc-type'
 import { traceError } from '@proton/shared/lib/helpers/sentry'

@@ -1,6 +1,6 @@
-import { Result, ServerTime } from '@proton/docs-shared'
+import { Result, ServerTime, type DecryptedNode } from '@proton/docs-shared'
 import { RecentDocumentsItem, RecentDocumentsService } from './recent-documents'
-import type { DecryptedNode, DriveCompat } from '@proton/drive-store/lib'
+import type { DriveCompat } from '@proton/drive-store/lib'
 import type { DocsApi } from './../Api/DocsApi'
 import type { LoggerInterface } from '@proton/utils/logs'
 import type { RecentDocumentAPIItem } from './../Api/Types/GetRecentsResponse'

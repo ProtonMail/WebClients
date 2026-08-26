@@ -7,10 +7,12 @@ import type {
   DocTrashState,
   DocumentMetaInterface,
   RtsMessagePayload,
+  NodeMeta,
+  PublicNodeMeta,
+  DecryptedNode,
 } from '@proton/docs-shared'
 import type { DecryptedCommit } from '../Models/DecryptedCommit'
 import type { DocumentEntitlements, PublicDocumentEntitlements } from '../Types/DocumentEntitlements'
-import type { DecryptedNode, NodeMeta, PublicNodeMeta } from '@proton/drive-store/lib'
 
 export type DocumentEvent =
   | {

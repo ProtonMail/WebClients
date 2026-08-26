@@ -1,5 +1,5 @@
 import type { EditorControllerInterface } from '@proton/docs-core'
-import type { DocumentType } from '@proton/drive-store/store/_documents'
+import type { DocumentType } from '@proton/docs-shared'
 import { downloadJSONFile } from './download-json-file'
 
 export interface LogsData {
