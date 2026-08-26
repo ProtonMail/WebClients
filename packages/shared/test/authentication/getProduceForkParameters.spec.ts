@@ -16,6 +16,14 @@ const getForkChallenge = (value?: string) => {
     return getProduceForkParameters(searchParams).forkChallenge;
 };
 
+const getChildClientID = (value?: string) => {
+    const searchParams = new URLSearchParams();
+    if (value !== undefined) {
+        searchParams.set('clientId', value);
+    }
+    return getProduceForkParameters(searchParams).childClientID;
+};
+
 describe('getProduceForkParameters', () => {
     describe('redirectUrl', () => {
         [
@@ -66,6 +74,40 @@ describe('getProduceForkParameters', () => {
 
         it('should be undefined when empty', () => {
             expect(getForkChallenge('')).toBe(undefined);
+        });
+    });
+
+    describe('childClientID', () => {
+        [
+            { name: 'should parse a web client id', value: 'web-mail' },
+            { name: 'should parse a multi part web client id', value: 'web-docs-editor' },
+            { name: 'should parse a windows client id', value: 'windows-pass' },
+            { name: 'should parse a macos client id', value: 'macos-mail' },
+            { name: 'should parse a linux client id', value: 'linux-lumo' },
+            { name: 'should parse an ios client id', value: 'ios-calendar' },
+            { name: 'should parse an android client id', value: 'android-mail' },
+            { name: 'should parse an apple tv client id', value: 'apple_tv-vpn' },
+            { name: 'should parse an android tv client id', value: 'android_tv-vpn' },
+            { name: 'should parse a vega tv client id', value: 'vega_tv-vpn' },
+            { name: 'should parse a browser extension client id', value: 'browser-pass' },
+        ].forEach(({ name, value }) => {
+            it(name, () => {
+                expect(getChildClientID(value)).toBe(value);
+            });
+        });
+
+        [
+            { name: 'should be undefined when absent', value: undefined },
+            { name: 'should be undefined when empty', value: '' },
+            { name: 'should be undefined for an unknown platform', value: 'evil-client' },
+            { name: 'should be undefined without a platform', value: 'mail' },
+            { name: 'should be undefined without an app', value: 'ios-' },
+            { name: 'should be undefined for a differently cased platform', value: 'iOS-mail' },
+            { name: 'should be undefined for a platform prefixed value', value: 'not-ios-mail' },
+        ].forEach(({ name, value }) => {
+            it(name, () => {
+                expect(getChildClientID(value)).toBe(undefined);
+            });
         });
     });
 });
