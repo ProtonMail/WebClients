@@ -116,7 +116,7 @@ export const getProduceForkLoginResult = async ({
 
         try {
             if (isExtension(app)) {
-                const childClientID = getClientID(app);
+                const childClientID = forkParameters.childClientID || getClientID(app);
                 const { Selector: selector } = await api<PushForkResponse>(
                     pushForkSession({
                         ChildClientID: childClientID,
