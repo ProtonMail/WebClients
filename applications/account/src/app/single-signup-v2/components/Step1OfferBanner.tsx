@@ -1,11 +1,14 @@
-import type { ReactNode } from 'react';
+import type { ComponentType, ReactNode } from 'react';
 
 import { c } from 'ttag';
 
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import { Icon, SkeletonLoader } from '@proton/components/index';
-import type { IconName } from '@proton/icons/types';
+import { SkeletonLoader } from '@proton/components/index';
+import { IcBagPercent } from '@proton/icons/icons/IcBagPercent';
+import { IcHourglass } from '@proton/icons/icons/IcHourglass';
+import { IcUser } from '@proton/icons/icons/IcUser';
+import type { IconSize } from '@proton/icons/types';
 import type { PaymentsCheckoutUI } from '@proton/payments/core/checkout';
 import { getCheckoutUi } from '@proton/payments/core/checkout';
 import { COUPON_CODES, CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
@@ -20,6 +23,11 @@ import { APPS, BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import DiscountBanner from '../DiscountBanner';
 import type { OptimisticOptions, SignupModelV2, SignupParameters2 } from '../interface';
 import { SignupMode, UpsellTypes } from '../interface';
+
+interface IconProps {
+    className?: string;
+    size?: IconSize;
+}
 
 interface Step1OfferBannerProps {
     isPorkbunPayment: boolean;
@@ -62,10 +70,10 @@ export const Step1OfferBanner = ({
         return <SkeletonLoader width="36em" height="2.4rem" index={0} className="mt-4 max-w-full" />;
     }
 
-    const wrap = (iconName: IconName | null, textLaunchOffer: ReactNode) => {
+    const wrap = (IconComponent: ComponentType<IconProps> | null, textLaunchOffer: ReactNode) => {
         return (
             <div className="signup-v2-offer-banner py-2 px-4 rounded-lg md:text-lg inline-flex flex-nowrap mt-4">
-                {iconName && <Icon name={iconName} size={3.5} className="shrink-0 mt-1" />}
+                {IconComponent && <IconComponent size={3.5} className="shrink-0 mt-1" />}
                 <span className="ml-2 flex-1">{textLaunchOffer}</span>
             </div>
         );
@@ -83,7 +91,7 @@ export const Step1OfferBanner = ({
     if (signupParameters.invite?.type === 'pass') {
         const inviterEmailJSX = <strong key="invite">{signupParameters.invite.data.inviter}</strong>;
         return wrap(
-            'user',
+            IcUser,
             <>
                 <span className="block">
                     {c('Info').jt`${inviterEmailJSX} wants to share data with you in ${PASS_APP_NAME}`}
@@ -104,7 +112,7 @@ export const Step1OfferBanner = ({
 
         const plan = `${BRAND_NAME} ${PLAN_NAMES[PLANS.VISIONARY]}`;
         const text = getBoldFormattedText(c('mail_signup_2023: Info').t`**Get ${plan}** for a limited time!`);
-        return wrap('hourglass', text);
+        return wrap(IcHourglass, text);
     }
 
     const mailOfferPlans = [PLANS.BUNDLE_PRO_2024, PLANS.MAIL_BUSINESS, PLANS.MAIL_PRO];
@@ -114,7 +122,7 @@ export const Step1OfferBanner = ({
         const textLaunchOffer = getBoldFormattedText(
             c('mail_signup_2024: Info').t`Limited time offer: **Get up to 35% off** yearly plans`
         );
-        return wrap('hourglass', textLaunchOffer);
+        return wrap(IcHourglass, textLaunchOffer);
     }
 
     const hasBFCoupon =
@@ -134,12 +142,12 @@ export const Step1OfferBanner = ({
         // BF25 ended, but affiliate coupon is still valid till January 2026. So we replace the text with the end of
         // year promo. During BF2026, adjust these copies as needed.
 
-        //  return wrap( 'bag-percent', c('pass_signup_2023: Info').jt`Your ${discount}% Black Friday
+        //  return wrap( IcBagPercent, c('pass_signup_2023: Info').jt`Your ${discount}% Black Friday
         // discount has been applied`
         // );
 
         return wrap(
-            'bag-percent',
+            IcBagPercent,
             c('pass_signup_2023: Info').jt`Your ${discount}% End of Year discount has been applied`
         );
     }
@@ -150,7 +158,7 @@ export const Step1OfferBanner = ({
             <strong key="price">{getSimplePriceString(options.currency, checkout.withDiscountPerMonth)}</strong>
         );
         return wrap(
-            'hourglass',
+            IcHourglass,
             c('pass_signup_2023: Info').jt`Limited time offer: ${title} for ${price} for the 1st month`
         );
     }
@@ -190,7 +198,7 @@ export const Step1OfferBanner = ({
         // translator: full sentence is: Special launch offer: Get Pass Business for ${options.currency} per user monthly!
         const textLaunchOffer = c('pass_signup_2023: Info')
             .jt`Limited time offer: Get ${title} for ${price} per user monthly!`;
-        return wrap('hourglass', textLaunchOffer);
+        return wrap(IcHourglass, textLaunchOffer);
     }
 
     return <DiscountBanner discountPercent={checkout.discountPercent} selectedPlanTitle={selectedPlan.Title} />;

@@ -21,6 +21,8 @@ import {
 } from '@proton/components/containers/payments/features/wallet';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import { IcLock } from '@proton/icons/icons/IcLock';
+import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
+import { IcUser } from '@proton/icons/icons/IcUser';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { Plan, PlansMap } from '@proton/payments/core/plan/interface';
 import {
@@ -58,14 +60,14 @@ const getWalletBenefits = (): BenefitItem[] => {
             key: 1,
             text: c('Signup: Info').t`End-to-end encrypted transactions`,
             icon: {
-                name: 'lock' as const,
+                component: IcLock,
             },
         },
         {
             key: 2,
             text: c('Signup: Info').t`Self-custody — only you have access to your wallet keys`,
             icon: {
-                name: 'user' as const,
+                component: IcUser,
             },
         },
         getSwissPrivacyLawsBenefit(),
@@ -73,7 +75,7 @@ const getWalletBenefits = (): BenefitItem[] => {
             key: 4,
             text: c('Signup: Info').t`Open source and verified`,
             icon: {
-                name: 'magnifier' as const,
+                component: IcMagnifier,
             },
         },
     ].filter(isTruthy);

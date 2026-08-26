@@ -64,7 +64,7 @@ const getAdjacentPlan = (
 };
 
 const CarouselButton = ({ direction, onClick }: { direction: 'left' | 'right'; onClick: () => void }) => {
-    const Icon = direction === 'left' ? IcChevronLeft : IcChevronRight;
+    const ChevronIcon = direction === 'left' ? IcChevronLeft : IcChevronRight;
     return (
         <Button
             shape="outline"
@@ -77,7 +77,7 @@ const CarouselButton = ({ direction, onClick }: { direction: 'left' | 'right'; o
             )}
             onClick={onClick}
         >
-            <Icon size={8} className="color-primary" />
+            <ChevronIcon size={8} className="color-primary" />
         </Button>
     );
 };
