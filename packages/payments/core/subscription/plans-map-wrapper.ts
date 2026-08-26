@@ -51,17 +51,48 @@ export function getStrictPlanByName(
 }
 
 export function getPlansMap(plans: Plan[], preferredCurrency: Currency, currencyFallback = true): FullPlansMap {
-    const planNames = [...new Set(plans.map(({ Name }) => Name))];
+    /*
+     * Grouping in a single pass keeps this linear. The previous implementation
+     * called getPlanByName once per distinct name, and each of those re-filtered
+     * the whole array: with 115 plans and 115 distinct names that is ~13k
+     * comparisons plus 115 intermediate arrays *per call*, and it is called from
+     * several render paths. It showed up as the hottest non-framework source in a
+     * boot CPU profile (75.8ms self time at 4x throttle).
+     *
+     * Selection order below mirrors getPlanByName with cycle undefined and
+     * ignoreAddons false, and Map preserves first-seen insertion order, so the
+     * resulting map is identical.
+     */
+    const byName = new Map<string, Plan[]>();
+    for (const plan of plans) {
+        if (!plan.Name) {
+            continue;
+        }
+        const group = byName.get(plan.Name);
+        if (group) {
+            group.push(plan);
+        } else {
+            byName.set(plan.Name, [plan]);
+        }
+    }
 
-    return planNames.reduce<FullPlansMap>((acc, planName) => {
-        const plan = getPlanByName(plans, planName, preferredCurrency, undefined, currencyFallback);
+    const secondaryCurrency = currencyFallback ? getFallbackCurrency(preferredCurrency) : undefined;
+    const acc = {} as FullPlansMap;
+
+    for (const matchingPlans of byName.values()) {
+        const plan =
+            matchingPlans.find((plan) => plan.Currency === preferredCurrency) ??
+            (currencyFallback
+                ? (matchingPlans.find((plan) => plan.Currency === secondaryCurrency) ??
+                  matchingPlans.find((plan) => !isRegionalCurrency(plan.Currency)))
+                : undefined);
 
         if (plan) {
             acc[plan.Name] = plan;
         }
+    }
 
-        return acc;
-    }, {} as FullPlansMap);
+    return acc;
 }
 
 export function planToPlanIDs(plan: Plan): PlanIDs {
