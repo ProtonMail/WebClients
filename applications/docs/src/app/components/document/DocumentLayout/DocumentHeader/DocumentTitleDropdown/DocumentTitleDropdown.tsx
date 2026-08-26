@@ -40,9 +40,16 @@ import type {
   RenameControllerInterface,
 } from '@proton/docs-core'
 import { isDocumentState, PostApplicationError } from '@proton/docs-core'
-import type { FileMenuAction, SheetImportData } from '@proton/docs-shared'
-import { type DocTrashState, FileMenuActionEvent, isWordCountSupported } from '@proton/docs-shared'
-import { isPrivateNodeMeta, type DocumentAction, type NodeMeta } from '@proton/drive-store'
+import type {
+  FileMenuAction,
+  SheetImportData,
+  NodeMeta,
+  DocTrashState,
+  DocumentType,
+  DocumentAction,
+} from '@proton/docs-shared'
+import { FileMenuActionEvent, isWordCountSupported } from '@proton/docs-shared'
+import { isPrivateNodeMeta } from '@proton/drive-store'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS, APPS_CONFIGURATION, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 import { isDefaultDocumentName } from '@proton/shared/lib/docs/utils/isDefaultDocumentName'
@@ -55,7 +62,6 @@ import { useWordCount } from '../../../WordCount'
 import { useExportToPDFModal } from './ExportToPDFModal'
 import { useDocsContext } from '../../../context'
 import { WordCountIcon } from '../icons'
-import type { DocumentType } from '@proton/drive-store/store/_documents'
 import { useSheetImportModal } from './SheetImportModal'
 import { downloadLogsAsJSON } from '~/utils/downloadLogs'
 import { useEvent } from '~/utils/misc'

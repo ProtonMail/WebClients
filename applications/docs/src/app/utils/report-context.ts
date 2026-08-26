@@ -1,6 +1,5 @@
 import { getAppVersion } from '@proton/components/helpers/appVersion'
-import type { DocumentRole } from '@proton/docs-shared'
-import type { DocumentType } from '@proton/drive-store/store/_documents'
+import type { DocumentRole, DocumentType } from '@proton/docs-shared'
 import { getClientName, getReportInfo } from '@proton/components/helpers/report'
 import { versionCookieAtLoad } from '@proton/components/helpers/versionCookie'
 import { APPS } from '@proton/shared/lib/constants'

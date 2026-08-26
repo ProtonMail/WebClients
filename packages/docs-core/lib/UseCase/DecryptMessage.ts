@@ -6,7 +6,7 @@ import type { EncryptionContext } from '../Services/Encryption/EncryptionContext
 import { VERIFICATION_STATUS } from '@protontech/crypto'
 import { DecryptedMessage, Result } from '@proton/docs-shared'
 import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
-import type { DocumentKeys } from '@proton/drive-store/lib/_documents'
+import type { DocumentKeys } from '@proton/docs-shared'
 
 export type DecryptMessageDTO = {
   message: DocumentUpdate | Event

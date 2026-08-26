@@ -4,9 +4,14 @@ import { DocsApiRouteBuilder } from './Routes/DocsApiRouteBuilder'
 import { forgeImageURL } from '@proton/shared/lib/helpers/image'
 import { getErrorString } from '../Util/GetErrorString'
 import { isPublicNodeMeta } from '@proton/drive-store'
-import { Result } from '@proton/docs-shared'
+import {
+  Result,
+  type SuggestionThreadStateAction,
+  type ApiResult,
+  type NodeMeta,
+  type PublicNodeMeta,
+} from '@proton/docs-shared'
 import type { ApiAddCommentToThread, AddCommentToThreadDTO } from './Requests/ApiAddCommentToThread'
-import type { SuggestionThreadStateAction, ApiResult } from '@proton/docs-shared'
 import type { AddCommentToThreadResponse } from './Types/AddCommentToThreadResponse'
 import type { ApiCreateThread, CreateThreadDTO } from './Requests/ApiCreateThread'
 import type { ApiEditComment, EditCommentDTO } from './Requests/ApiEditComment'
@@ -25,7 +30,6 @@ import type { GetDocumentMetaResponse } from './Types/GetDocumentMetaResponse'
 import type { GetRecentsResponse } from './Types/GetRecentsResponse'
 import type { HttpHeaders } from './Types/HttpHeaders'
 import type { ImageProxyParams } from './Types/ImageProxyParams'
-import type { NodeMeta, PublicNodeMeta } from '@proton/drive-store'
 import type { ResolveThreadResponse } from './Types/ResolveThreadResponse'
 import type { RouteExecutor } from './RouteExecutor'
 import type { SeedInitialCommitApiResponse } from './Types/SeedInitialCommitApiResponse'

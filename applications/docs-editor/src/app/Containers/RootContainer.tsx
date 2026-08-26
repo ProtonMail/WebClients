@@ -7,7 +7,7 @@ import { useBridge } from '../Lib/useBridge'
 import Icons from '@proton/icons/Icons'
 import type { EditorSystemMode } from '@proton/docs-shared/'
 import { EditorStateProvider } from './EditorStateProvider'
-import type { DocumentType } from '@proton/drive-store/store/_documents'
+import type { DocumentType } from '@proton/docs-shared'
 
 type ContainerProps = {
   documentType: DocumentType

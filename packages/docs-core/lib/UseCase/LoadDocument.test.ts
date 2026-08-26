@@ -1,6 +1,7 @@
 import { DynamicResult, Result, ApiResult } from '@proton/docs-shared'
 import type { DecryptCommit } from './DecryptCommit'
-import type { NodeMeta, PublicDriveCompat } from '@proton/drive-store'
+import type { PublicDriveCompat } from '@proton/drive-store'
+import type { NodeMeta } from '@proton/docs-shared'
 import type { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
 import type { GetDocumentKeys } from './GetDocumentKeys'
 import type { GetDocumentMeta } from './GetDocumentMeta'

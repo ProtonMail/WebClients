@@ -1,7 +1,7 @@
 import type { DecryptCommit } from './DecryptCommit'
 import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
 import { Result } from '@proton/docs-shared'
-import type { DocumentKeys, NodeMeta, PublicNodeMeta } from '@proton/drive-store'
+import type { DocumentKeys, NodeMeta, PublicNodeMeta } from '@proton/docs-shared'
 import type { GetCommitData } from './GetCommitData'
 import type { DecryptedCommit } from '../Models/DecryptedCommit'
 
