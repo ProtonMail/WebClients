@@ -19,6 +19,7 @@ export const selectCachableState = (state: State) => {
     cachable.files = {};
     cachable.accessTokens = getInitialPATState();
     cachable.assignedModelId = null;
+    cachable.ui = { values: {} };
 
     /** V2 user events provide granular invite updates, safe to cache */
     if (legacySync) {
