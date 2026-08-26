@@ -7,7 +7,7 @@ import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { InfoBanner } from '@proton/components/containers/payments/subscription/confirm-button/InfoBanner';
 import type { ChargebeeIdealProcessorHook } from '@proton/components/payments/react-extensions/useChargebeeIdeal';
 import { useStableLoading } from '@proton/hooks';
-import { IDEAL_BRAND_NAME } from '@proton/shared/lib/constants';
+import { IDEAL_WERO_BRAND_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 import { ChargebeeIframe } from './ChargebeeIframe';
@@ -79,7 +79,7 @@ export const ChargebeeIdealButton = ({
         const fakeButtonProps = {
             className: '',
             ...props,
-            children: children ?? c('Payments').t`Pay with ${IDEAL_BRAND_NAME}`,
+            children: children ?? c('Payments').t`Pay with ${IDEAL_WERO_BRAND_NAME}`,
         };
 
         let button: ReactNode;
@@ -100,7 +100,7 @@ export const ChargebeeIdealButton = ({
         <div className="relative">
             {initializationError && (
                 <InfoBanner variant={BannerVariants.DANGER}>
-                    {c('Payments.Error').t`Failed to initialize ${IDEAL_BRAND_NAME}. Please try again later.`}
+                    {c('Payments.Error').t`Failed to initialize ${IDEAL_WERO_BRAND_NAME}. Please try again later.`}
                 </InfoBanner>
             )}
             {fakeIdealButton}
