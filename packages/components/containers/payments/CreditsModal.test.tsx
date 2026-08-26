@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 
 import { buyCredit, createToken } from '@proton/payments/core/api/api';
 import { PAYMENT_TOKEN_STATUS } from '@proton/payments/core/constants';
-import { APPS } from '@proton/shared/lib/constants';
+import { APPS, IDEAL_WERO_BRAND_NAME } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { addApiMock } from '@proton/testing/lib/api';
 import { applyHOCs } from '@proton/testing/lib/context/hocs/helpers';
@@ -625,5 +625,5 @@ it('should offer iDEAL when the account country is the Netherlands', async () =>
 
     render(<ContextCreditsModal paymentStatus={{ ...status, CountryCode: 'NL' }} open={true} app={APPS.PROTONMAIL} />);
 
-    expect(await screen.findByText('iDEAL')).toBeInTheDocument();
+    expect(await screen.findByText(`${IDEAL_WERO_BRAND_NAME}`)).toBeInTheDocument();
 });

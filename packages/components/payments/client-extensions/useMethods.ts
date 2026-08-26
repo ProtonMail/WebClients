@@ -10,7 +10,7 @@ import type {
     SavedPaymentMethod,
     SepaDetails,
 } from '@proton/payments/core/interface';
-import { IDEAL_BRAND_NAME } from '@proton/shared/lib/constants';
+import { IDEAL_WERO_BRAND_NAME } from '@proton/shared/lib/constants';
 import { isAndroid, isIos } from '@proton/shared/lib/helpers/browser';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -168,7 +168,7 @@ function convertMethod(
         };
     } else if (method.type === PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL) {
         return {
-            text: `${IDEAL_BRAND_NAME}`,
+            text: `${IDEAL_WERO_BRAND_NAME}`,
             ...method,
         };
     }
