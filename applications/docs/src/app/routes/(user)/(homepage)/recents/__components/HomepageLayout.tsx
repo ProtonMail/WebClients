@@ -33,7 +33,7 @@ import { IcTrash } from '@proton/icons/icons/IcTrash'
 import { APPS, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 
 import { DocsQuickSettings } from '~/components/DocsQuickSettings'
-import type { DocumentAction } from '@proton/drive-store'
+import type { DocumentAction } from '@proton/docs-shared'
 import { c } from 'ttag'
 import { Button } from '@proton/atoms/Button/Button'
 import { Input } from '@proton/atoms/Input/Input'

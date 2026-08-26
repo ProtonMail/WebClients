@@ -10,7 +10,7 @@ import Progress from '@proton/components/components/progress/Progress'
 import { Button } from '@proton/atoms/Button/Button'
 import { useEffect, useState } from 'react'
 import { c } from 'ttag'
-import type { DocumentType } from '@proton/drive-store/store/_documents'
+import type { DocumentType } from '@proton/docs-shared'
 
 import { getDrive, MemberRole } from '@proton/drive'
 import { reportBug } from '@proton/shared/lib/api/reports'

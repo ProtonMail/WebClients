@@ -25,6 +25,18 @@ export default defineConfig(
         },
       ],
       'max-classes-per-file': 'off',
+      'no-restricted-imports': [
+        'error',
+        {
+          patterns: [
+            {
+              group: ['@proton/drive-store*'],
+              message:
+                'docs-shared should not import from drive-store. Use docs-shared/lib/CryptoTypes or docs-shared/lib/BasicTypes instead.',
+            },
+          ],
+        },
+      ],
     },
   },
   {

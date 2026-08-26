@@ -1,8 +1,7 @@
-import type { DecryptedMessage } from '@proton/docs-shared'
+import type { DecryptedMessage, DocumentType } from '@proton/docs-shared'
 import { GetCommitDULimit } from '../Types/SquashingConstants'
 import { mergeUpdates } from 'yjs'
 import { decompressDocumentUpdate, isCompressedDocumentUpdate } from '../utils/document-update-compression'
-import type { DocumentType } from '@proton/drive-store/store/_documents'
 
 export class DecryptedCommit {
   public readonly byteSize: number

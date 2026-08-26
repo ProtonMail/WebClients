@@ -1,5 +1,5 @@
 import { c } from 'ttag'
-import type { SyncedEditorState, WebsocketConnectionInterface } from '@proton/docs-shared'
+import type { SyncedEditorState, WebsocketConnectionInterface, DocumentType } from '@proton/docs-shared'
 import {
   assertUnreachableAndLog,
   DecryptedMessage,
@@ -30,7 +30,6 @@ import type { GetDocumentMeta } from '../UseCase/GetDocumentMeta'
 import type { FetchDecryptedCommit } from '../UseCase/FetchDecryptedCommit'
 import { isDocumentUpdateChunkingEnabled } from '../utils/document-update-chunking'
 import type { UnleashClient } from '@proton/unleash/UnleashClient'
-import type { DocumentType } from '@proton/drive-store/store/_documents'
 import { SquashErrorEvent } from '../UseCase/SquashDocument'
 
 /**

@@ -1,12 +1,11 @@
 import { useConfig } from '@proton/app-context/useConfig'
 import type { EditorInvoker, EditorOrchestratorInterface } from '@proton/docs-core'
-import type { YjsState } from '@proton/docs-shared'
+import type { YjsState, DocumentType } from '@proton/docs-shared'
 import { EditorSystemMode, InternalEventBus, SyncedEditorState } from '@proton/docs-shared'
 import { EditorFrame } from '../../../EditorFrame'
 import { useCallback } from 'react'
 import { ClientToEditorBridge } from '@proton/docs-core'
 import { useApplication } from '~/utils/application-context'
-import type { DocumentType } from '@proton/drive-store/store/_documents'
 
 export type SingleRevisionViewerProps = {
   state: YjsState

@@ -1,11 +1,10 @@
 import type { DocumentUpdate } from '@proton/docs-proto'
 import { CommitVersion, DocumentUpdateVersion, CreateDocumentUpdate, CreateCommit } from '@proton/docs-proto'
 import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
-import { Result } from '@proton/docs-shared'
+import { Result, GenerateUUID, type NodeMeta } from '@proton/docs-shared'
 import type { DocsApi } from '../Api/DocsApi'
 import type { EncryptMessage } from './EncryptMessage'
-import type { DocumentKeys, NodeMeta } from '@proton/drive-store'
-import { GenerateUUID } from '@proton/docs-shared'
+import type { DocumentKeys } from '@proton/docs-shared'
 
 type SeedInitialCommitResult = { commitId: string; linkId: string; volumeId: string }
 
@@ -19,7 +18,11 @@ export class SeedInitialCommit implements UseCaseInterface<SeedInitialCommitResu
     private encryptMessage: EncryptMessage,
   ) {}
 
-  async execute(nodeMeta: NodeMeta, state: Uint8Array<ArrayBuffer>, keys: DocumentKeys): Promise<Result<SeedInitialCommitResult>> {
+  async execute(
+    nodeMeta: NodeMeta,
+    state: Uint8Array<ArrayBuffer>,
+    keys: DocumentKeys,
+  ): Promise<Result<SeedInitialCommitResult>> {
     const metadata = {
       version: DocumentUpdateVersion.V1,
       authorAddress: keys.userOwnAddress,

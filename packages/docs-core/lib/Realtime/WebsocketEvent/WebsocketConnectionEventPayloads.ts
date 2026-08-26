@@ -1,6 +1,10 @@
 import type { ConnectionCloseReason, ConnectionReadyPayload } from '@proton/docs-proto'
-import type { NodeMeta, PublicNodeMeta } from '@proton/drive-store'
-import type { DecryptedMessage, ProcessedIncomingRealtimeEventMessage } from '@proton/docs-shared'
+import type {
+  DecryptedMessage,
+  ProcessedIncomingRealtimeEventMessage,
+  NodeMeta,
+  PublicNodeMeta,
+} from '@proton/docs-shared'
 import type { AckLedgerInterface } from '../../Services/Websockets/AckLedger/AckLedgerInterface'
 import type { WebsocketConnectionEvent } from './WebsocketConnectionEvent'
 

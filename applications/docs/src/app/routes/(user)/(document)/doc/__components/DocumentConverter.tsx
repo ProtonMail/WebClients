@@ -1,7 +1,6 @@
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader'
 import type { FileToDocConversionResult } from '@proton/docs-core'
-import type { Result } from '@proton/docs-shared'
-import type { DecryptedNode, NodeMeta } from '@proton/drive-store'
+import type { Result, NodeMeta, DecryptedNode } from '@proton/docs-shared'
 import useLoading from '@proton/hooks/useLoading'
 import { useCallback, useEffect, useState } from 'react'
 import { c } from 'ttag'

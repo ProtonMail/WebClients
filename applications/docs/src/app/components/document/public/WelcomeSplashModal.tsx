@@ -7,7 +7,7 @@ import { c } from 'ttag'
 
 import { Button } from '@proton/atoms/Button/Button'
 import type { EditorControllerInterface, PublicDocumentState } from '@proton/docs-core'
-import type { DocumentType } from '@proton/drive-store/store/_documents'
+import type { DocumentType } from '@proton/docs-shared'
 import { DOCS_APP_NAME, DOCS_SHORT_APP_NAME, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 import EncryptedBanner from '@proton/styles/assets/img/docs/encrypted-bg.png'
