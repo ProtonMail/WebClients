@@ -7,10 +7,22 @@ import { AsyncAbort } from '../utils/AsyncAbort';
 import { type ImportIssue, ImportIssueSeverity, type ImportNotifications } from './Import';
 import type ImportWorker from './ImportWorker';
 
+/**
+ * How an import run ended. `stopped` only happens because we asked it to (a pause, or a teardown),
+ * so the caller that stopped it already knows what should happen next.
+ */
+export type ImportOutcome = 'completed' | 'stopped' | 'failed';
+
 /** proxy class on main thread to report progress */
 export class ImportHandle {
     public readonly onProgress = createListeners<[number]>();
     public readonly onIssue = createListeners<[ImportIssue[]]>();
+    /**
+     * Resolves once the run has ended, with what actually happened to it. Progress alone can't carry
+     * that: a stopped or failed import is not a complete index, and reporting it as one is how a
+     * partial index ends up presented as ready.
+     */
+    public readonly done: Promise<ImportOutcome>;
 
     private _issues: ImportIssue[] = [];
     private _startTime: number | undefined;
@@ -22,6 +34,7 @@ export class ImportHandle {
     private importPromise?: Promise<void>;
     private _started = false;
     private stopAbortController = new AbortController();
+    private resolveDone!: (outcome: ImportOutcome) => void;
 
     constructor(
         private readonly userId: string,
@@ -30,7 +43,11 @@ export class ImportHandle {
             indexV2Key: CryptoKey;
         },
         private readonly dbLock: DatabaseLock
-    ) {}
+    ) {
+        this.done = new Promise((resolve) => {
+            this.resolveDone = resolve;
+        });
+    }
 
     start(): Promise<void> {
         // can only run once
@@ -39,7 +56,7 @@ export class ImportHandle {
         }
         this._started = true;
         this._startTime = performance.now();
-        this.importPromise = this.dbLock.runIndexing(async (abortSignal) => {
+        const runPromise = this.dbLock.runIndexing(async (abortSignal) => {
             // note that this callback can run multiple times if indexing is interrupted by search
             const worker = new Worker(new URL('./import.worker.ts', import.meta.url));
             // allow aborting from the db lock signal, and also from stop()
@@ -63,16 +80,22 @@ export class ImportHandle {
             }
         });
 
-        this.importPromise = this.importPromise
-            .finally(() => {
-                // this makes running return false, so it's important
-                // to do this before emitting the last event below!
-                this.importPromise = undefined;
-                this.emitProgress(1);
-            })
-            .catch((err) => {
+        this.importPromise = runPromise
+            .then((): ImportOutcome => (this.stopAbortController.signal.aborted ? 'stopped' : 'completed'))
+            .catch((err): ImportOutcome => {
                 this._issues.push({ message: err.message, id: 'none', severity: ImportIssueSeverity.Fatal });
                 this.onIssue.notify(this._issues);
+                return 'failed';
+            })
+            .then((outcome) => {
+                // this makes running return false, so it's important
+                // to do this before emitting the events below!
+                this.importPromise = undefined;
+                // Only a completed run is at 100%. The others still emit a final tick — subscribers
+                // watch progress to notice the run ended — but with the progress actually reached, so
+                // nobody can mistake a partial index for a finished one.
+                this.emitProgress(outcome === 'completed' ? 1 : this._progress);
+                this.resolveDone(outcome);
             });
         return this.importPromise;
     }

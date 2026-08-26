@@ -1,6 +1,6 @@
 import type { ESIndexingState, ESTimepoint } from '@proton/encrypted-search/models';
 
-import type { ImportHandle } from '../import/ImportHandle';
+import type { ImportHandle, ImportOutcome } from '../import/ImportHandle';
 import type { IndexService } from '../indexation/IndexService';
 import type { ESStatusConcrete } from './ESAdapter';
 
@@ -45,20 +45,25 @@ interface JobDeps {
      * from a stale DB). Reads the current v1 instance at call time.
      */
     waitForV1Sync: () => Promise<void>;
-    /** Called once the import completes so the adapter can drop its reference to this job. */
-    onFinished: () => void;
+    /**
+     * Called once the job has ended, so the adapter can drop its reference to it and decide what a
+     * failed import means for serving searches.
+     */
+    onFinished: (outcome: ImportOutcome) => void;
 }
 
 export class IndexingJob {
-    private phase: 'v1' | 'v1-sync' | 'import' | 'done';
+    private phase: 'v1' | 'v1-sync' | 'import' | 'import-paused' | 'done';
     private lastV1Status: ESStatusConcrete;
     private handle?: ImportHandle;
     private unsubscribe?: () => void;
     private abandoned = false;
+    /** How the import ended; only set once `phase` is `done`. */
+    private outcome?: ImportOutcome;
 
     constructor(
         private readonly deps: JobDeps,
-        private readonly mode: JobMode
+        public readonly mode: JobMode
     ) {
         this.lastV1Status = deps.initialV1Status;
         if (mode === 'refresh') {
@@ -95,6 +100,33 @@ export class IndexingJob {
         this.deps.updateESProgress(timepoint, { ...progressState, estimatedMinutes });
     }
 
+    /**
+     * Pause the v2 import, if that is what's currently running. Returns whether the job took care of
+     * the pause: from the handoff onwards v1 has nothing left to pause and must not be told to — its
+     * `pauseContentIndexing` would rewrite the `ACTIVE` progress row it just wrote to `PAUSED`, so a
+     * completed v1 index would come back as paused on the next startup.
+     */
+    pauseImport(): boolean {
+        if (this.abandoned || this.mode !== 'index' || this.phase !== 'import') {
+            return false;
+        }
+        this.phase = 'import-paused';
+        // The handle is kept, so its `done` (resolving `stopped`) is recognised as this pause rather
+        // than as an ending the job has to report.
+        this.handle?.stop();
+        this.emitStatus();
+        return true;
+    }
+
+    /** Counterpart of {@link pauseImport}: restart the import, which resumes where it left off. */
+    resumeImport(): boolean {
+        if (this.abandoned || this.phase !== 'import-paused') {
+            return false;
+        }
+        this.startImport();
+        return true;
+    }
+
     /** Stop touching the setters — used when the adapter tears the job down (e.g. esDelete). */
     dispose() {
         this.abandoned = true;
@@ -124,11 +156,14 @@ export class IndexingJob {
                 // If the sync wait fails, the job can't proceed — but it must still terminate, or the
                 // "refreshing" status stays on forever.
                 console.error(err);
-                this.finish();
+                this.finish('failed');
             });
     }
 
     private startImport() {
+        this.unsubscribe?.();
+        this.unsubscribe = undefined;
+        this.handle = undefined;
         this.phase = 'import';
         this.emitStatus();
         this.emitImportProgress(); // resets the bar to 0 for the import's own 0→100
@@ -144,41 +179,49 @@ export class IndexingJob {
                 }
                 if (!handle) {
                     // Nothing to import (no v1 DB / no key) -> the job is complete.
-                    this.finish();
+                    this.finish('completed');
                     return;
                 }
                 this.handle = handle;
-                this.unsubscribe = handle.onProgress.subscribe((p) => {
+                this.unsubscribe = handle.onProgress.subscribe(() => {
                     if (this.abandoned) {
                         return;
                     }
                     this.emitImportProgress();
-                    if (p >= 1) {
-                        this.finish();
-                    }
                 });
-                // createListeners doesn't replay: if the import already finished before we
-                // subscribed, catch up manually.
-                if (!handle.running) {
-                    this.finish();
-                }
+                // The outcome, not the progress, is what ends the job: progress reaching its end says
+                // nothing about whether the index is complete. `done` also resolves for a run that
+                // ended before we got here, so there's no replay gap to catch up on.
+                void handle.done.then((outcome) => {
+                    // Ignore a handle we've moved on from — paused and then resumed with a new one.
+                    if (this.abandoned || this.handle !== handle) {
+                        return;
+                    }
+                    if (outcome === 'stopped') {
+                        // We're the only one who stops it, and both callers (pause, teardown) have
+                        // already decided what the status should be.
+                        return;
+                    }
+                    this.finish(outcome);
+                });
             })
             .catch((err) => {
                 // The import failed to even start (e.g. key derivation / worker setup threw). Terminate
                 // so the status clears instead of hanging on "updating"/"enabling" indefinitely.
                 console.error(err);
-                this.finish();
+                this.finish('failed');
             });
     }
 
-    private finish() {
+    private finish(outcome: ImportOutcome) {
         if (this.phase === 'done' || this.abandoned) {
             return;
         }
         this.phase = 'done';
+        this.outcome = outcome;
         this.emitStatus();
         this.emitImportProgress();
-        this.deps.onFinished();
+        this.deps.onFinished(outcome);
     }
 
     /** Emit the import's own 0→100 progress (index mode only; a refresh shows no bar). */
@@ -210,13 +253,32 @@ export class IndexingJob {
             return;
         }
 
-        const running = this.phase !== 'done';
-        // A fresh index keeps the progress UI visible until the *import* finishes (not just v1), then
-        // flips to the done state.
-        this.deps.updateESStatus(
-            running
-                ? { ...this.lastV1Status, isEnablingContentSearch: true, contentIndexingDone: false, esEnabled: false }
-                : { ...this.lastV1Status, isEnablingContentSearch: false, contentIndexingDone: true, esEnabled: true }
-        );
+        // Only a completed import may report a finished index. A failed one has nothing of its own to
+        // report: v1's index is intact, so its status is the truth, and the adapter serves searches
+        // from v1 from here on (see `ESAdapter.isV2IndexUsable`).
+        if (this.phase === 'done') {
+            this.deps.updateESStatus(
+                this.outcome === 'completed'
+                    ? { ...this.lastV1Status, isEnablingContentSearch: false, contentIndexingDone: true }
+                    : this.lastV1Status
+            );
+            return;
+        }
+
+        // A fresh index keeps the progress UI up until the *import* finishes, not just v1, and reports
+        // content search as off for as long as it runs: the index can't answer a search yet, so queries
+        // go to the server (`isES` is false, see `elementsSelectors`). `esEnabled` is only held down
+        // while the job runs — the done branch above never writes it, so whatever the user's toggle says
+        // by then, including a change made during the job, is what comes through.
+        // A pause is likewise only ours to report once we own the running phase; during v1's own phase
+        // v1 reports it itself.
+        const pausedByUs = this.phase === 'import-paused';
+        this.deps.updateESStatus({
+            ...this.lastV1Status,
+            isEnablingContentSearch: !pausedByUs && !this.lastV1Status.isContentIndexingPaused,
+            isContentIndexingPaused: pausedByUs || this.lastV1Status.isContentIndexingPaused,
+            contentIndexingDone: false,
+            esEnabled: false,
+        });
     }
 }
