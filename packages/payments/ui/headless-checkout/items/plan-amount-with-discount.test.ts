@@ -1,6 +1,6 @@
 import { PLANS } from '../../../core/constants';
 import type { PlansMap } from '../../../core/plan/interface';
-import { TaxInclusive } from '../../../core/subscription/constants';
+import { TaxMode } from '../../../core/subscription/constants';
 import { getHeadlessCheckout } from '../get-headless-checkout';
 import { defaultApp as app, makeCheckResult, makePlan, makePricing } from './test-helpers';
 
@@ -17,7 +17,7 @@ describe('createNetAmountItem', () => {
         const checkResult = makeCheckResult({
             Amount: 4788,
             AmountDue: 5746,
-            TaxInclusive: TaxInclusive.EXCLUSIVE,
+            TaxMode: TaxMode.EXCLUSIVE,
             Taxes: [{ Name: 'VAT', Rate: 20, Amount: 958 }],
         });
 
@@ -37,7 +37,7 @@ describe('createNetAmountItem', () => {
         const checkResult = makeCheckResult({
             Amount: 4788,
             AmountDue: 4788,
-            TaxInclusive: TaxInclusive.INCLUSIVE,
+            TaxMode: TaxMode.INCLUSIVE,
             Taxes: [{ Name: 'VAT', Rate: 20, Amount: 958 }],
         });
 
