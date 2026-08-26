@@ -24,7 +24,16 @@ export class IndexService {
         private readonly getUserKeys: () => Promise<DecryptedKey<PrivateKeyReference>[]>
     ) {}
 
-    async handleEvent(event: ESEvent<ESBaseMessage>) {
+    /**
+     * Record what an event touched, so a later import knows what to refresh.
+     * Returns whether it recorded anything: the mail event loop ticks every 30s or so and most of
+     * those events carry no message changes, which is not worth an import (each one spawns a worker
+     * and rescans both indexes to discover it has nothing to do).
+     */
+    async handleEvent(event: ESEvent<ESBaseMessage>): Promise<boolean> {
+        if (!event.Items?.length && !event.Refresh) {
+            return false;
+        }
         const db = await openContentSearchDB(this.userId);
         try {
             const txn = db.transaction('outdated_import_ids', 'readwrite');
@@ -41,6 +50,7 @@ export class IndexService {
         } finally {
             db.close();
         }
+        return true;
     }
 
     async importFromEncryptedSearch(): Promise<ImportHandle | undefined> {

@@ -331,13 +331,15 @@ export class ESAdapter implements FunctionsV2 {
     async handleEvent(event: ESEvent<ESBaseMessage> | undefined) {
         await this.esLibraryFunctionsV1.handleEvent(event);
         if (event) {
-            // Record which messages the event touched so the import knows what to refresh.
-            await this.indexService.handleEvent(event);
+            // Record which messages the event touched so the import knows what to refresh. Most events
+            // touch none — the event loop ticks regardless of whether any message changed — and then
+            // there is nothing to import.
+            const hasMessagesToRefresh = await this.indexService.handleEvent(event);
             // Import the affected messages into the v2 index. Presented as v1's "refreshing" UI (no
             // counted bar). The job waits for v1's syncing queue to drain before importing (see
             // `waitForV1Sync`). Skip if content indexing hasn't finished yet, or if a job is already
             // live (the initial index will pick these up when it imports).
-            if (this.canTriggerImport && !this.job) {
+            if (hasMessagesToRefresh && this.canTriggerImport && !this.job) {
                 this.startJob('refresh');
             }
         }
