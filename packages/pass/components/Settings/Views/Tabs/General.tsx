@@ -1,7 +1,5 @@
 import type { FC } from 'react';
 
-import { SshAgent } from 'proton-pass-web/app/Views/Settings/SshAgent/SshAgent';
-
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useFeatureFlag } from '../../../../hooks/useFeatureFlag';
@@ -10,6 +8,7 @@ import { ApplicationLogs } from '../../ApplicationLogs';
 import { Display } from '../../Display';
 import { Locale } from '../../Locale';
 import { Offline } from '../../Offline';
+import { SshAgent } from '../../SshAgent/SshAgent';
 import { Theme } from '../../Theme';
 import { Beta } from '../../Update/Beta.web';
 import { Update } from '../../Update/Update.desktop';

@@ -10,6 +10,7 @@ import type { MonitorService } from '../../lib/monitor/service';
 import type { ConnectivityService } from '../../lib/network/connectivity.service';
 import type { SettingsService } from '../../lib/settings/service';
 import type { SpotlightProxy } from '../../lib/spotlight/service';
+import type { SshAgentService } from '../../lib/ssh-agent/service';
 import type { ParsedUrl } from '../../lib/urls/types';
 import type { ClientEndpoint, ContextBridgeApi, Maybe, MaybeNull, TabId } from '../../types';
 import type { B2BEvent } from '../../types/data/b2b';
@@ -96,6 +97,8 @@ export type PassCoreContextValue = {
     popup?: PopupController;
     /** Request desktop unlock secret, only relevant for extension */
     getDesktopUnlockSecret?: () => Promise<string>;
+    /** SSH agent service, only relevant for desktop */
+    sshAgent?: MaybeNull<SshAgentService>;
 };
 
 export type PassCoreProviderProps = PassCoreContextValue & { wasm?: boolean; bridge?: ContextBridgeApi };
