@@ -3,6 +3,9 @@ import { useCallback, useEffect, useRef } from 'react';
 import type { LocalVideoTrack, Room } from 'livekit-client';
 import { createLocalVideoTrack } from 'livekit-client';
 
+import type { BackgroundEffect } from '@proton/meet/store/slices/backgroundSlice';
+import type { VirtualBackgroundSource } from '@proton/meet/utils/virtualBackgrounds';
+import { getVirtualBackgroundSource } from '@proton/meet/utils/virtualBackgrounds';
 import { isChrome, isMobile } from '@proton/shared/lib/helpers/browser';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
@@ -16,9 +19,7 @@ import type {
     BackgroundProcessorVersion,
     CustomBackgroundProcessor,
 } from '../../processors/background-processor/types';
-import type { BackgroundEffect, VirtualBackgroundSource } from '../../utils/virtualBackgrounds/virtualBackgrounds';
-import { getVirtualBackgroundSource } from '../../utils/virtualBackgrounds/virtualBackgrounds';
-import type { BackgroundEffectInitializationState } from './useBackgroundEffectInitializationState';
+import type { BackgroundEffectInitializationTracker } from '../BackgroundEffects/useBackgroundEffectInitializationTracker';
 
 interface UseCameraPreviewParams {
     selectedCameraId: string;
@@ -27,8 +28,8 @@ interface UseCameraPreviewParams {
     backgroundEffect: BackgroundEffect;
     backgroundProcessorVersion: BackgroundProcessorVersion;
     room: Room;
-    trackBackgroundEffectInitialization: BackgroundEffectInitializationState['trackBackgroundEffectInitialization'];
-    cancelBackgroundEffectInitialization: BackgroundEffectInitializationState['cancelBackgroundEffectInitialization'];
+    trackBackgroundEffectInitialization: BackgroundEffectInitializationTracker['trackBackgroundEffectInitialization'];
+    cancelBackgroundEffectInitialization: BackgroundEffectInitializationTracker['cancelBackgroundEffectInitialization'];
 }
 
 export const useCameraPreview = ({
@@ -177,8 +178,7 @@ export const useCameraPreview = ({
                 return;
             }
 
-            const source = getVirtualBackgroundSource(effect);
-            const customProcessor = source ? await ensurePreviewCustomBackgroundProcessor(source) : null;
+            const customProcessor = await ensurePreviewCustomBackgroundProcessor(getVirtualBackgroundSource(effect));
 
             if (!customProcessor || previewTrackRef.current !== videoTrack) {
                 return;

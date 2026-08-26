@@ -3,14 +3,17 @@ import { useId } from 'react';
 import { c } from 'ttag';
 
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import type { BackgroundEffect } from '@proton/meet/store/slices/backgroundSlice';
+import { selectPendingBackgroundEffect } from '@proton/meet/store/slices/backgroundSlice';
 import { selectActiveCameraId } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
 import { MeetingSideBars, selectSideBarState, toggleSideBarState } from '@proton/meet/store/slices/uiStateSlice';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { SideBar } from '../../atoms/SideBar/SideBar';
 import { SideBarSection } from '../../atoms/SideBarSection/SideBarSection';
-import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
-import type { BackgroundEffect } from '../../utils/virtualBackgrounds/virtualBackgrounds';
+import { useBackgroundEffectsContext } from '../../contexts/BackgroundEffects/BackgroundEffectsContext';
+import { useAppliedBackgroundEffect } from '../../contexts/BackgroundEffects/useAppliedBackgroundEffect';
+import { supportsBackgroundEffects } from '../../processors/background-processor/createBackgroundProcessor';
 import { BackgroundOptionGroup } from './BackgroundOptionGroup';
 import { BackgroundPreview } from './BackgroundPreview';
 import { getBackgroundEffectOptions, getVirtualBackgroundOptions } from './backgroundOptions';
@@ -22,11 +25,13 @@ export const Backgrounds = () => {
 
     const sideBarState = useMeetSelector(selectSideBarState);
     const activeCameraDeviceId = useMeetSelector(selectActiveCameraId);
+    const appliedBackgroundEffect = useAppliedBackgroundEffect();
+    const pendingBackgroundEffect = useMeetSelector(selectPendingBackgroundEffect);
 
     const isVirtualBackgroundEnabled = useFlag('MeetVirtualBackground');
 
-    const { isBackgroundBlurSupported, appliedBackgroundEffect, pendingBackgroundEffect, selectBackgroundEffect } =
-        useMediaManagementContext();
+    const isBackgroundBlurSupported = supportsBackgroundEffects();
+    const { selectBackgroundEffect } = useBackgroundEffectsContext();
 
     if (!isVirtualBackgroundEnabled || !sideBarState[MeetingSideBars.Backgrounds]) {
         return null;

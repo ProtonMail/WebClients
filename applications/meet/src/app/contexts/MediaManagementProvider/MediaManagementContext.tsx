@@ -1,10 +1,6 @@
 import { createContext, useContext } from 'react';
 
-import debounce from 'lodash/debounce';
-
 import type { InitializeDevices, SwitchActiveDevice, ToggleAudioType, ToggleVideoType } from '../../types';
-import type { BackgroundEffect, VirtualBackgroundId } from '../../utils/virtualBackgrounds/virtualBackgrounds';
-import type { InitializingBackgroundEffect } from './useBackgroundEffectInitializationState';
 
 export interface MediaManagementContextType {
     isVideoEnabled: boolean;
@@ -13,15 +9,6 @@ export interface MediaManagementContextType {
     toggleAudio: ToggleAudioType;
     handleMicrophoneToggle: () => void | Promise<unknown>;
     handleCameraToggle: () => void | Promise<unknown>;
-    backgroundBlur: boolean;
-    toggleBackgroundBlur: ReturnType<typeof debounce>;
-    virtualBackgroundId: VirtualBackgroundId | null;
-    appliedBackgroundEffect: BackgroundEffect;
-    pendingBackgroundEffect: BackgroundEffect | null;
-    selectBackgroundEffect: (effect: BackgroundEffect) => Promise<void>;
-    isBackgroundBlurSupported: boolean;
-    initializingBackgroundEffect: InitializingBackgroundEffect | null;
-    failedBackgroundEffect: InitializingBackgroundEffect | null;
     noiseFilter: boolean;
     toggleNoiseFilter: () => Promise<void>;
     handleRotateCamera: () => void;
@@ -46,15 +33,6 @@ const defaultValues: MediaManagementContextType = {
     toggleAudio: () => Promise.resolve(undefined),
     handleMicrophoneToggle: () => {},
     handleCameraToggle: () => {},
-    backgroundBlur: false,
-    toggleBackgroundBlur: debounce(() => Promise.resolve(), 500),
-    virtualBackgroundId: null,
-    appliedBackgroundEffect: 'none',
-    pendingBackgroundEffect: null,
-    selectBackgroundEffect: () => Promise.resolve(),
-    isBackgroundBlurSupported: true,
-    initializingBackgroundEffect: null,
-    failedBackgroundEffect: null,
     noiseFilter: false,
     toggleNoiseFilter: () => Promise.resolve(),
     handleRotateCamera: () => {},

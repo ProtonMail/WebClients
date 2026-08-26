@@ -3,6 +3,7 @@ import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 
 import type { MeetState } from './rootReducer';
+import { resetBackgroundEffectStatus } from './slices/backgroundSlice';
 import { resetChatAndReactions } from './slices/chatAndReactionsSlice';
 import { resetConnection } from './slices/connectionSlice';
 import { resetCurrentMeeting, stopMeetingDurationTimer } from './slices/currentMeeting';
@@ -32,4 +33,5 @@ export const resetMeetingState =
         dispatch(resetScreenShareStatus());
         dispatch(resetWaitingRoom());
         dispatch(resetWaitingRoomSetting());
+        dispatch(resetBackgroundEffectStatus());
     };
