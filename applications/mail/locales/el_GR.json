@@ -1544,8 +1544,7 @@
         "Αξιόπιστο"
       ],
       "Trust key": [
-        "Κλειδί Εμπιστοσύνης",
-        "Κλειδιά Εμπιστοσύνης"
+        "Εμπιστοσύνη στο κλειδί"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -9762,6 +9761,22 @@
       ],
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
         "Εάν χάσατε την πρόσβαση στην εφαρμογή ελέγχου ταυτότητας, μπορείτε να χρησιμοποιήσετε 1 από τους 16 εφεδρικούς κωδικούς ανάκτησης που παρέχονται κατά τη ρύθμιση της ταυτοποίησης δύο παραγόντων. ${ learnMoreLink }"
+      ],
+      "${ dateString } at ${ formattedTime }": [
+        "${ dateString } για ${ formattedTime }"
+      ],
+      "Found ${ count } contact": [
+        "Βρέθηκε ${ count } επαφή",
+        "Βρέθηκαν ${ count } επαφές"
+      ],
+      "No contacts found": [
+        "Δεν βρέθηκαν επαφές"
+      ],
+      "Snooze emails": [
+        "Αναβολή μηνυμάτων ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Update filter": [
+        "Ενημέρωση φίλτρου"
       ]
     },
     "info": {
@@ -11029,6 +11044,18 @@
       ],
       "ZIP code": [
         "Τ.Κ."
+      ],
+      "At": [
+        "Στις"
+      ],
+      "Filter name": [
+        "Όνομα φίλτρου"
+      ],
+      "Return on": [
+        "Επιστροφή στις"
+      ],
+      "Sieve script": [
+        "Σενάριο Sieve"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -17181,6 +17208,12 @@
       ],
       "September Sale": [
         "Εκπτώσεις Σεπτεμβρίου"
+      ],
+      "Snooze emails": [
+        "Αναβολή μηνυμάτων ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Update filter": [
+        "Ενημέρωση φίλτρου"
       ]
     },
     "Title header for keys table": {
@@ -17883,6 +17916,22 @@
       ],
       "One plan, more power": [
         "Ένα πλάνο, περισσότερη δύναμη"
+      ]
+    },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Δοκιμάστε το τώρα"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Τώρα έχετε πρόσβαση στη νέα εφαρμογή ${ CALENDAR_APP_NAME }. ${ link }"
+      ]
+    },
+    "Snooze info": {
+      "${ count } email → ${ wakeTime }": [
+        "${ count } email → ${ wakeTime }",
+        "${ count } emails → ${ wakeTime }"
       ]
     }
   }

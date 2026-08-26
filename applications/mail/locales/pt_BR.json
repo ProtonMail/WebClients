@@ -1538,8 +1538,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Chave de confiança",
-        "Chaves de confiança"
+        "Chave de confiança"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -9571,6 +9570,32 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Você está a alguns cliques de distância de ter uma caixa de entrada organizada"
+      ],
+      "${ count } email": [
+        "${ count } e-mail",
+        "${ count } e-mails"
+      ],
+      "${ count } email · ${ names }": [
+        "${ count } e-mail · ${ names }",
+        "${ count } e-mails · ${ names }"
+      ],
+      "Apply labels": [
+        "Aplicar marcadores"
+      ],
+      "Create folder": [
+        "Criar pasta"
+      ],
+      "Create label": [
+        "Criar marcador"
+      ],
+      "No contacts found": [
+        "Nenhum contato foi encontrado"
+      ],
+      "Searched the web": [
+        "Pesquisou na web"
+      ],
+      "Update filter": [
+        "Atualizar filtro"
       ]
     },
     "info": {
@@ -10802,6 +10827,15 @@
       ],
       "ZIP code": [
         "CEP"
+      ],
+      "Entries": [
+        "Entradas"
+      ],
+      "Filter name": [
+        "Nome do filtro"
+      ],
+      "Label name": [
+        "Nome do marcador"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -16922,6 +16956,21 @@
       ],
       "Your shorter address is now ready": [
         "Seu endereço mais curto já está pronto"
+      ],
+      "Apply labels": [
+        "Aplicar marcadores"
+      ],
+      "Create folder": [
+        "Criar pasta"
+      ],
+      "Create label": [
+        "Criar rótulo"
+      ],
+      "September Sale": [
+        "Oferta de setembro"
+      ],
+      "Update filter": [
+        "Atualizar filtro"
       ]
     },
     "Title header for keys table": {
@@ -17551,6 +17600,84 @@
       ],
       "Passcode:": [
         "Código de acesso:"
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Ao confirmar este pagamento, você autoriza a ${ BRAND_NAME } e Stripe, nosso provedor de serviços de pagamento, a instruir seu banco a debitar sua conta de acordo. Você pode obter um reembolso no prazo de 8 semanas a partir da data do débito, de acordo com as condições do seu contrato com o banco."
+      ]
+    },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "Aproveitar a oferta"
+      ],
+      "Special Offer": [
+        "Oferta especial"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "/month": [
+        "/mês"
+      ],
+      "2 individual accounts": [
+        "2 contas individuais"
+      ],
+      "2 TB of secure storage": [
+        "2 TB de armazenamento seguro"
+      ],
+      "3 TB of secure storage": [
+        "3 TB de armazenamento seguro"
+      ],
+      "500 GB of secure storage": [
+        "500 GB de armazenamento seguro"
+      ],
+      "6 individual accounts": [
+        "6 contas individuais"
+      ],
+      "Advanced protection against cyber threats": [
+        "Proteção avançada contra ameaças cibernéticas"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Os descontos são baseados no preço mensal padrão. Sua assinatura será renovada pela taxa anual padrão quando o ciclo de faturamento terminar."
+      ]
+    },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium para ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "por 12 meses"
+      ],
+      "One plan, full power": [
+        "Um plano, poder total"
+      ],
+      "One plan, max savings": [
+        "Um plano, economia máxima"
+      ],
+      "One plan, more power": [
+        "Um plano, mais poder"
       ]
     }
   }
