@@ -11,6 +11,7 @@ export interface MeetCoreInitParams {
     wsHost: string;
     userId: string;
     uid: string;
+    useCachedServerTime: boolean;
 }
 
 export interface MeetCoreCookieAckMessage {
