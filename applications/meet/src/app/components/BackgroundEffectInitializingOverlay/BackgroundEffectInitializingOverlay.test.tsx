@@ -1,16 +1,27 @@
+import { Provider } from 'react-redux';
+
+import { configureStore } from '@reduxjs/toolkit';
 import { render, screen } from '@testing-library/react';
 
-import type { MediaManagementContextType } from '../../contexts/MediaManagementProvider/MediaManagementContext';
-import { MediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
+import type { BackgroundState } from '@proton/meet/store/slices/backgroundSlice';
+import { backgroundReducer } from '@proton/meet/store/slices/backgroundSlice';
+import { ProtonStoreContext } from '@proton/react-redux-store';
+
 import { BackgroundEffectInitializingOverlay } from './BackgroundEffectInitializingOverlay';
 
-const renderOverlay = (contextValue: Partial<MediaManagementContextType>) =>
-    render(
-        // @ts-expect-error - contextValue is a partial MediaManagementContextType
-        <MediaManagementContext.Provider value={contextValue}>
+const renderOverlay = (backgroundState: Partial<BackgroundState>) => {
+    const store = configureStore({
+        // @ts-expect-error - mock data
+        reducer: { ...backgroundReducer },
+        preloadedState: { background: backgroundState },
+    });
+
+    return render(
+        <Provider context={ProtonStoreContext} store={store}>
             <BackgroundEffectInitializingOverlay />
-        </MediaManagementContext.Provider>
+        </Provider>
     );
+};
 
 describe('BackgroundEffectInitializingOverlay', () => {
     it('should not render when no background effect is initializing', () => {
