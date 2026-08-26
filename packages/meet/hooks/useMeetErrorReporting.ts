@@ -2,7 +2,8 @@ import { useCallback, useRef } from 'react';
 
 import type { SeverityLevel } from '@sentry/browser';
 
-import { captureMessage } from '@proton/shared/lib/helpers/sentry';
+import { ApiError } from '@proton/shared/lib/fetch/ApiError';
+import { captureMessage, traceError } from '@proton/shared/lib/helpers/sentry';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { useGetAnalyticsAttributes } from '../contexts/AnalyticsContext';
@@ -23,6 +24,10 @@ const isReportMeetErrorOptions = (options: unknown): options is ReportMeetErrorO
     typeof options === 'object' &&
     ('context' in options || 'level' in options || 'fingerprint' in options || 'tags' in options);
 
+// We exclude ApiError from using traceError because they are filtered out if not.
+const getReportableException = (payload: unknown) =>
+    payload instanceof Error && !(payload instanceof ApiError) ? payload : undefined;
+
 export const useMeetErrorReporting = () => {
     const shouldReportError = useFlag('MeetErrorReporting');
     const errorCountMapRef = useRef<Map<string, number>>(new Map());
@@ -40,23 +45,34 @@ export const useMeetErrorReporting = () => {
 
                 errorCountMapRef.current.set(label, currentCount + 1);
 
-                const analyticsAttributes = getAnalyticsAttributes();
+                const {
+                    level = 'error',
+                    context,
+                    fingerprint,
+                    tags,
+                }: ReportMeetErrorOptions = isReportMeetErrorOptions(options)
+                    ? options
+                    : { context: { error: options } };
 
-                if (isReportMeetErrorOptions(options)) {
-                    const { level = 'error', context, fingerprint, tags } = options;
-                    captureMessage(label, {
+                const tagsWithAnalyticsAttributes = { ...getAnalyticsAttributes(), ...tags, label };
+                const exception = getReportableException(context?.error);
+
+                if (exception) {
+                    traceError(exception, {
                         level,
                         extra: context,
-                        fingerprint,
-                        tags: { ...analyticsAttributes, ...tags },
+                        tags: tagsWithAnalyticsAttributes,
+                        fingerprint: fingerprint ?? [label],
                     });
-                } else {
-                    captureMessage(label, {
-                        level: 'error',
-                        extra: { error: options },
-                        tags: analyticsAttributes,
-                    });
+                    return;
                 }
+
+                captureMessage(label, {
+                    level,
+                    extra: context,
+                    fingerprint,
+                    tags: tagsWithAnalyticsAttributes,
+                });
             }
         },
         [shouldReportError, getAnalyticsAttributes]
