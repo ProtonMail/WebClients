@@ -3,6 +3,7 @@ import {
     convertAddressesListener,
     membersListener,
     organizationKeysManagementListener,
+    resetOrganizationKeyListener,
     startAccountSessionsListener,
     startListeningToPlanNameChange,
     startPersistListener,
@@ -42,6 +43,7 @@ export const start = ({
         startHolidaysDirectoryListener(startListening);
         startPersistListener(startListening, getAccountPersistedState);
         organizationKeysManagementListener(startListening);
+        resetOrganizationKeyListener(startListening);
         startListeningToPlanNameChange(startListening);
         startHostAccountSessionsListener(startListening);
         startAccountSessionsListener(startListening);
