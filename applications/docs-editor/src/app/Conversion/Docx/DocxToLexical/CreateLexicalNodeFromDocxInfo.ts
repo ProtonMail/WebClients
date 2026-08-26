@@ -4,14 +4,18 @@ import { $createHeadingNode } from '@lexical/rich-text'
 import { $createTableCellNode, TableCellHeaderStates, $createTableRowNode, $createTableNode } from '@lexical/table'
 import { type LexicalNode, $createParagraphNode, $createTextNode } from 'lexical'
 import { $createImageNode } from '../../../Plugins/Image/ImageNode'
+import { isAllowedImageSrc } from '../../../Conversion/ImageSrcUtils'
 import type { DocxToLexicalInfo } from './Parsing/DocxToLexicalInfo'
 
-export function CreateLexicalNodeFromDocxInfo(node: DocxToLexicalInfo): LexicalNode {
+export function mapDocxChildren(children: DocxToLexicalInfo[]): LexicalNode[] {
+  return children.map(CreateLexicalNodeFromDocxInfo).filter((child): child is LexicalNode => child !== null)
+}
+
+export function CreateLexicalNodeFromDocxInfo(node: DocxToLexicalInfo): LexicalNode | null {
   if (node.type === 'table-cell') {
     const cell = $createTableCellNode(TableCellHeaderStates.NO_STATUS)
     if (node.children) {
-      const children = node.children.map(CreateLexicalNodeFromDocxInfo)
-      cell.append(...children)
+      cell.append(...mapDocxChildren(node.children))
     }
     if (node.backgroundColor) {
       cell.setBackgroundColor(node.backgroundColor)
@@ -25,8 +29,7 @@ export function CreateLexicalNodeFromDocxInfo(node: DocxToLexicalInfo): LexicalN
   if (node.type === 'table-row') {
     const row = $createTableRowNode()
     if (node.children) {
-      const children = node.children.map(CreateLexicalNodeFromDocxInfo)
-      row.append(...children)
+      row.append(...mapDocxChildren(node.children))
     }
     return row
   }
@@ -34,8 +37,7 @@ export function CreateLexicalNodeFromDocxInfo(node: DocxToLexicalInfo): LexicalN
   if (node.type === 'table') {
     const table = $createTableNode()
     if (node.children) {
-      const children = node.children.map(CreateLexicalNodeFromDocxInfo)
-      table.append(...children)
+      table.append(...mapDocxChildren(node.children))
     }
     return table
   }
@@ -46,8 +48,7 @@ export function CreateLexicalNodeFromDocxInfo(node: DocxToLexicalInfo): LexicalN
       paragraph.setFormat(node.format)
     }
     if (node.children) {
-      const children = node.children.map(CreateLexicalNodeFromDocxInfo)
-      paragraph.append(...children)
+      paragraph.append(...mapDocxChildren(node.children))
     }
     if (node.indentLevel) {
       paragraph.setIndent(node.indentLevel)
@@ -61,8 +62,7 @@ export function CreateLexicalNodeFromDocxInfo(node: DocxToLexicalInfo): LexicalN
       heading.setFormat(node.format)
     }
     if (node.children) {
-      const children = node.children.map(CreateLexicalNodeFromDocxInfo)
-      heading.append(...children)
+      heading.append(...mapDocxChildren(node.children))
     }
     if (node.indentLevel) {
       heading.setIndent(node.indentLevel)
@@ -71,6 +71,10 @@ export function CreateLexicalNodeFromDocxInfo(node: DocxToLexicalInfo): LexicalN
   }
 
   if (node.type === 'image') {
+    if (!isAllowedImageSrc(node.src)) {
+      return null
+    }
+
     return $createImageNode({
       src: node.src,
       altText: '',
@@ -80,8 +84,7 @@ export function CreateLexicalNodeFromDocxInfo(node: DocxToLexicalInfo): LexicalN
   if (node.type === 'link') {
     const link = $createLinkNode(node.href)
     if (node.children) {
-      const children = node.children.map(CreateLexicalNodeFromDocxInfo)
-      link.append(...children)
+      link.append(...mapDocxChildren(node.children))
     }
     return link
   }
@@ -103,8 +106,7 @@ export function CreateLexicalNodeFromDocxInfo(node: DocxToLexicalInfo): LexicalN
     const list = $createListNode(node.listType)
     const listItem = $createListItemNode(node.checked)
     if (node.children) {
-      const children = node.children.map(CreateLexicalNodeFromDocxInfo)
-      listItem.append(...children)
+      listItem.append(...mapDocxChildren(node.children))
     }
     list.append(listItem)
     return list
