@@ -9,7 +9,7 @@ import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRe
 import { getAllMspSubsidiaries, getAllMspSubsidiaryManagers } from '@proton/shared/lib/api/msp';
 import type { MspDelegatedManager } from '@proton/shared/lib/api/msp';
 import type { ORGANIZATION_STATE } from '@proton/shared/lib/constants';
-import type { MspSubsidiary } from '@proton/shared/lib/interfaces/MspSubsidiary';
+import type { MspSubsidiary } from '@proton/shared/lib/interfaces/Msp';
 import { removeById } from '@proton/utils/removeById';
 import { upsertById } from '@proton/utils/upsertById';
 
