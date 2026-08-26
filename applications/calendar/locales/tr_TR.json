@@ -1508,7 +1508,7 @@
         "Aylık"
       ],
       "Two-year": [
-        "Iki yıllık"
+        "İki yıllık"
       ],
       "Yearly": [
         "Yıllık"
@@ -2076,7 +2076,7 @@
         "İçe aktarma özelleştirmesinden çıkılsın mı?"
       ],
       "Quit import?": [
-        "İçe aktarmadan çıkılsın mi?"
+        "İçe aktarmadan çıkılsın mı?"
       ]
     },
     "Contact field label": {
@@ -2888,7 +2888,7 @@
         "Tanzanya"
       ],
       "Tanzania, United Republic of": [
-        "Birleşik Tanzaya Cumhuriyeti"
+        "Birleşik Tanzanya Cumhuriyeti"
       ],
       "Thailand": [
         "Tayland"
@@ -3303,7 +3303,7 @@
         "Kısa bir süre sonra ayrıntıların bulunduğu bir güvenli e-posta alacaksınız."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
-        "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Limited tarifesine geçin."
+        "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Unlimited tarifesine geçin."
       ]
     },
     "description": {
@@ -3595,7 +3595,7 @@
         "${ BRAND_NAME } dış hesabınızla bağlantı kuramadı"
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
-        "${ errorMessage }. Ayrıca ${ statusPageLink }na da bakabilirsiniz"
+        "${ errorMessage }. ${ statusPageLink } üzerinden de kontrol edebilirsiniz."
       ],
       "${ list } doesn't have a valid email address": [
         "${ list } içinde geçerli bir e-posta adresi yok",
@@ -4282,7 +4282,7 @@
         "Başlangıç saati bitiş saatinden önce olmalıdır"
       ],
       "status page": [
-        "durum sayfası"
+        "Durum Sayfası"
       ],
       "Tab closed": [
         "Sekme kapatıldı"
@@ -6390,7 +6390,7 @@
         "Ödemeler TLS şifrelemesi ve İsviçre gizlilik yasaları ile korunmaktadır."
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
-        "PGP/ınline yalnızca düz metin biçimi ile uyumludur."
+        "PGP/Inline yalnızca düz metin biçimi ile uyumludur."
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME geçerli oluşturucu görünümünde iletiyi otomatik olarak gönderir."
@@ -13879,6 +13879,16 @@
       ],
       "Passcode:": [
         "Parola:"
+      ]
+    },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Hemen deneyin"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Artık yeni ${ CALENDAR_APP_NAME } uygulamasına erişebilirsiniz. ${ link }"
       ]
     }
   }

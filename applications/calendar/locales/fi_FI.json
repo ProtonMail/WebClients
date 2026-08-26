@@ -1040,6 +1040,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Ilmainen työpöytäsovelluksen kokeilujaksosi päättyy ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Keep going": [
+        "Jatka vain"
       ]
     },
     "action": {
@@ -6531,7 +6534,7 @@
         "Olet avaamassa uutta selaimen välilehteä sivustolle:"
       ],
       "You are about to open your default browser and visit:": [
-        "Olet avaamassa oletusselaintasi sivustolle:"
+        "Olet avaamassa oletusselaimeesi osoitetta:"
       ],
       "You are currently signed in as ${ username } for ${ organizationName }.": [
         "Olette tällä hetkellä kirjautuneena käyttäjänä ${ username } organisaatiossa ${ organizationName }."
@@ -6737,6 +6740,12 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Olet saavuttanut varausaikojen enimmäismäärän (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Jos et voi käyttää tunnistautumissovellustasi, voit käyttää yhtä kuudestatoista varakoodistasi, jotka sait määrittäessäsi kaksivaiheisen tunnistautumisen. ${ learnMoreLink }"
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Tämä vaatii paljon ajattelua. Jatketaanko?"
       ]
     },
     "info": {
@@ -6980,7 +6989,7 @@
         "Kokopäiväisten tapahtumien ilmoitukset"
       ],
       "Anderson": [
-        "Andersson"
+        "Virtanen"
       ],
       "App password": [
         "Sovellussalasana"
@@ -7446,7 +7455,7 @@
         "Teema"
       ],
       "Thomas": [
-        "Tuomas"
+        "Ville"
       ],
       "Time zone": [
         "Aikavyöhyke"
@@ -7528,6 +7537,9 @@
       ],
       "Zoom meeting": [
         "Zoom-kokous"
+      ],
+      "Account holder name": [
+        "Tilinhaltijan nimi"
       ]
     },
     "label": {
@@ -9863,6 +9875,9 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Korttiasi ei hyväksytty. Kokeile eri korttia tai ole veloituksen hyväksymisestä yhteydessä pankkiisi."
+      ],
+      "Please enter the account holder name": [
+        "Syötä tilinhaltijan nimi"
       ]
     },
     "Payments.error": {
@@ -10021,7 +10036,7 @@
         "Lisää nimi"
       ],
       "Anderson": [
-        "Andersson"
+        "Virtanen"
       ],
       "Anything you'd like us to know": [
         "Mitä muuta haluaisitte meidän tietävän"
@@ -10147,7 +10162,7 @@
         "Aloita sähköpostiosoitteen kirjoitus"
       ],
       "Thomas": [
-        "Tuomas"
+        "Ville"
       ],
       "Your organization name": [
         "Organisaatiosi nimi"
@@ -12735,6 +12750,9 @@
       ],
       "Your shorter address is now ready": [
         "Lyhyempi osoittesi on nyt valmis"
+      ],
+      "Still working on it": [
+        "Jatketaan ajattelemista"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13354,6 +13372,54 @@
       ],
       "Passcode:": [
         "Tunnuskoodi:"
+      ]
+    },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "Hanki tarjous"
+      ],
+      "Special Offer": [
+        "Erikoistarjous"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "/month": [
+        "/kk"
+      ],
+      "2 individual accounts": [
+        "Kaksi erillistä tiliä"
+      ],
+      "2 TB of secure storage": [
+        "2 Tt suojattua tallennustilaa"
+      ],
+      "3 TB of secure storage": [
+        "3 Tt suojattua tallennustilaa"
+      ],
+      "500 GB of secure storage": [
+        "500 Gt suojattua tallennustilaa"
+      ],
+      "6 individual accounts": [
+        "Kuusi erillistä tiliä"
+      ],
+      "Advanced protection against cyber threats": [
+        "Edistynyt suoja kyberuhkia vastaan"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Alennukset perustuvat kuukausittaiseen vakiohinnoitteluun. Tilauksesi uusiutuu normaaliin vuosihintaan, kun laskutusjakso päättyy."
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "12 kuukaudeksi"
+      ],
+      "One plan, full power": [
+        "Yksi tilaus, täysi teho"
+      ],
+      "One plan, max savings": [
+        "Yksi tilaus, mehevämmät säästöt"
+      ],
+      "One plan, more power": [
+        "Yksi tilaus, enemmän tehoa"
       ]
     }
   }
