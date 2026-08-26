@@ -1532,8 +1532,7 @@
         "De confiança"
       ],
       "Trust key": [
-        "Clau de confiança",
-        "Claus de confiança"
+        "Marca com a clau de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -9784,6 +9783,9 @@
       ],
       "Snooze emails": [
         "Ajorna els correus electrònics"
+      ],
+      "${ name } in ${ parentName }": [
+        "${ name } a ${ parentName }"
       ]
     },
     "info": {
