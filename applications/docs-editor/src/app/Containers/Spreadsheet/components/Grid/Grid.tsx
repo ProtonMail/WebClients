@@ -99,7 +99,7 @@ const exposeCanvasGrid = (
   }
 }
 
-export function LegacyGrid() {
+export function Grid() {
   const { isDevOrBlack } = useSheetsDependencies()
   const canvasGridRef = useRef<CanvasGridMethods | null>(null)
   const activeSheetId = useUI((ui) => ui.legacy.activeSheetId)
