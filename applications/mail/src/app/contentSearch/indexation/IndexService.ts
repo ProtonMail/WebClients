@@ -1,6 +1,5 @@
 import type { PrivateKeyReference } from '@protontech/crypto';
 import type { AesGcmCryptoKey } from '@protontech/crypto/subtle/aesGcm.js';
-import * as Comlink from 'comlink';
 import { deleteDB } from 'idb';
 
 import { ES_SYNC_ACTIONS } from '@proton/encrypted-search/constants';
@@ -10,15 +9,15 @@ import type { ESEvent } from '@proton/encrypted-search/lib/models';
 import type { DecryptedKey } from '@proton/shared/lib/interfaces';
 
 import type { ESBaseMessage } from '../../models/encryptedSearch';
-
 import { getOrGenerateIndexKey as getOrGenerateIndexKeyV2 } from '../crypto/indexKey';
+import { DatabaseLock } from '../db/DatabaseLock';
 import { openContentSearchDB } from '../db/open';
 import { ImportHandle } from '../import/ImportHandle';
-import type ImportWorker from '../import/ImportWorker';
 import { AsyncInit } from '../utils/AsyncInit';
 
 export class IndexService {
     private importHandle?: AsyncInit<ImportHandle | undefined>;
+    public readonly dbLock = new DatabaseLock();
 
     constructor(
         private readonly userId: string,
@@ -67,13 +66,11 @@ export class IndexService {
                     indexV1Key: oldIndexKey,
                     indexV2Key: newIndexKey,
                 };
-                const worker = new Worker(new URL('../import/import.worker.ts', import.meta.url));
-                const wrappedWorker = Comlink.wrap<ImportWorker>(worker);
-                const importHandle = new ImportHandle(wrappedWorker, () => {
-                    worker.terminate();
+                const importHandle = new ImportHandle(this.userId, keys, this.dbLock);
+                // errors are handled inside start
+                void importHandle.start().finally(() => {
                     this.importHandle = undefined;
                 });
-                await importHandle.start(this.userId, keys);
                 return importHandle;
             });
         }
