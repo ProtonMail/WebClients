@@ -1,7 +1,6 @@
 import type { FC } from 'react';
 
 import { Form, FormikProvider, useFormik } from 'formik';
-import { useSessions } from 'proton-pass-web/app/Auth/AuthSwitchProvider';
 import { c } from 'ttag';
 
 import { Banner, BannerVariants } from '@proton/atoms/Banner/Banner';
@@ -10,12 +9,14 @@ import Checkbox from '@proton/components/components/input/Checkbox';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
-import windowsScreenshot from '@proton/pass/assets/settings/windows_openssh.png';
-import { ClickToCopy } from '@proton/pass/components/Form/Field/Control/ClickToCopy';
-import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
-import type { Maybe } from '@proton/pass/types';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
+
+import windowsScreenshot from '../../../assets/settings/windows_openssh.png';
+import type { Maybe } from '../../../types';
+import { useSwitchableSessionCount } from '../../Core/SessionsProvider';
+import { ClickToCopy } from '../../Form/Field/Control/ClickToCopy';
+import { PassModal } from '../../Layout/Modal/PassModal';
 
 type SSHAgentInstructionsValues = { dontShowAgain: boolean };
 
@@ -29,7 +30,7 @@ type Props = {
 const FORM_ID = 'ssh-agent-instructions';
 
 export const SSHAgentInstructionsModal: FC<Props> = ({ socketPath, onClose, onCancel, onDone, hideFooter = false }) => {
-    const hasMultiSessions = useSessions().length > 1;
+    const hasMultiSessions = useSwitchableSessionCount() > 1;
 
     const commandToCopy = `export SSH_AUTH_SOCK=${socketPath ?? '~/.ssh/proton-pass-ssh-agent.sock'}`;
     const gitSshCommand = 'git config --global core.sshCommand "C:/Windows/System32/OpenSSH/ssh.exe"';
