@@ -29,7 +29,6 @@ export function SheetsAdapter({ children, clientInvoker }: SheetsAdapterProps) {
       isDevOrBlack,
       canEdit,
       canTrash,
-      isFeatureFlagEnabled: (featureFlag) => clientInvoker.checkIfFeatureFlagIsEnabled(featureFlag),
       versionInfo: {
         environment: application.environment,
         version: application.appVersion,
@@ -37,9 +36,11 @@ export function SheetsAdapter({ children, clientInvoker }: SheetsAdapterProps) {
       logger: application.logger,
       showNotification: createNotification,
       // Dependencies that use the clientInvoker
+      isFeatureFlagEnabled: (featureFlag) => clientInvoker.checkIfFeatureFlagIsEnabled(featureFlag),
       openLink: (url) => {
         void clientInvoker.openLink(url).catch(reportErrorToSentry)
       },
+      handleFileMenuAction: (action) => clientInvoker.handleFileMenuAction(action),
     }),
     [
       application.appVersion,

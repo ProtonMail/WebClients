@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef, useState, type ReactElement } from 'rea
 import { c } from 'ttag'
 import { createStringifier } from '../../../stringifier'
 import * as UI from '../../ui'
-import type { EditorRequiresClientMethods, FileMenuAction } from '@proton/docs-shared'
+import type { FileMenuAction } from '@proton/docs-shared'
 import { reportErrorToSentry } from '../../../../../Utils/errorMessage'
 import { CircleLoader } from '../../CircleLoader/CircleLoader'
 import { useFeatureFlag } from '../../../feature-flags'
@@ -78,12 +78,11 @@ function useMenuActionLoading(): [boolean, WithLoading] {
 
 export interface FileMenuProps extends Ariakit.MenuProviderProps {
   renderMenuButton: ReactElement
-  clientInvoker: EditorRequiresClientMethods
   isPublicMode: boolean
 }
 
-export function FileMenu({ renderMenuButton, clientInvoker, isPublicMode, ...props }: FileMenuProps) {
-  const { canEdit, canTrash, versionInfo } = useSheetsDependencies()
+export function FileMenu({ renderMenuButton, isPublicMode, ...props }: FileMenuProps) {
+  const { canEdit, canTrash, versionInfo, handleFileMenuAction } = useSheetsDependencies()
 
   const [showVersionNumber, setShowVersionNumber] = useState(false)
   const [showDebugToggle, setShowDebugToggle] = useState(false)
@@ -124,13 +123,13 @@ export function FileMenu({ renderMenuButton, clientInvoker, isPublicMode, ...pro
   const triggerMenuAction = useCallback(
     async (action: FileMenuAction) => {
       try {
-        await clientInvoker.handleFileMenuAction(action)
+        await handleFileMenuAction(action)
       } catch (error) {
         console.error(error)
         reportErrorToSentry(error)
       }
     },
-    [clientInvoker],
+    [handleFileMenuAction],
   )
 
   return (
