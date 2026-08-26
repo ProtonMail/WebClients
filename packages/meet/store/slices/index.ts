@@ -1,3 +1,4 @@
+import { backgroundReducer } from './backgroundSlice';
 import { chatAndReactionsReducer } from './chatAndReactionsSlice';
 import { connectionReducer } from './connectionSlice';
 import { currentMeetingReducer } from './currentMeeting';
@@ -19,6 +20,7 @@ import { meetUserReducer } from './userSlice';
 import { waitingRoomReducer } from './waitingRoomSlice';
 
 export const meetReducers = {
+    ...backgroundReducer,
     ...chatAndReactionsReducer,
     ...connectionReducer,
     ...devToolsReducer,
