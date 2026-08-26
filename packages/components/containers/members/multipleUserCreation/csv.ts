@@ -165,8 +165,23 @@ const convertCSVUsers = (csvUsers: ImportedCSVUser[], config: CsvConfig) => {
     };
 };
 
-export const parseMultiUserCsv = async (files: File[], config: CsvConfig) => {
-    const { multipleAddresses } = config;
+/**
+ * Each mode has a column the other one doesn't, so the file itself tells us how the accounts are meant
+ * to be created. Ambiguous files — carrying both columns or neither — fall back to the passed in mode.
+ */
+const getModeFromFields = (fields: string[] | undefined, fallbackMode: CreateMemberMode) => {
+    const hasPassword = Boolean(fields?.includes('Password'));
+    const hasInvitationEmail = Boolean(fields?.includes('InvitationEmail'));
+
+    if (hasPassword === hasInvitationEmail) {
+        return fallbackMode;
+    }
+
+    return hasPassword ? CreateMemberMode.Password : CreateMemberMode.Invitation;
+};
+
+export const parseMultiUserCsv = async (files: File[], fallbackConfig: CsvConfig) => {
+    const { multipleAddresses } = fallbackConfig;
 
     if (files.length === 0) {
         throw new ImportFileError(IMPORT_ERROR_TYPE.NO_FILE_SELECTED);
@@ -211,6 +226,8 @@ export const parseMultiUserCsv = async (files: File[], config: CsvConfig) => {
     if (csvUsers.length > MAX_NUMBER_OF_USER_ROWS) {
         throw new TooManyUsersError();
     }
+
+    const config: CsvConfig = { ...fallbackConfig, mode: getModeFromFields(meta.fields, fallbackConfig.mode) };
 
     if (multipleAddresses && !meta.fields?.includes('EmailAddresses')) {
         throw new CsvFormatError({
@@ -262,7 +279,7 @@ export const parseMultiUserCsv = async (files: File[], config: CsvConfig) => {
         throw new CsvFormatError({ type: CSV_FORMAT_ERROR_TYPE.PARSED_CSV_ERRORS, rowsThatErrored });
     }
 
-    return convertCSVUsers(csvUsers, config);
+    return { ...convertCSVUsers(csvUsers, config), mode: config.mode };
 };
 
 const defaultSampleCSV: SampleCsvUser[] = [
