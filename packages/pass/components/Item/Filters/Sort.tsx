@@ -65,7 +65,9 @@ const getSortOptionDetails = (option: ItemSortFilter) => {
         },
     };
 
-    return options[option];
+    /* `option` comes from persisted filters (URL, cache) and may hold a value this build
+    doesn't know, e.g. after a version rollback. We fallback to `recent` to be safe. */
+    return options[option] ?? options.recent;
 };
 
 const DROPDOWN_SIZE: DropdownProps['size'] = { width: '13rem' };
