@@ -18,6 +18,7 @@ export const selectCachableState = (state: State) => {
     cachable.alias = { aliasDetails: {}, aliasOptions: null, mailboxes: null };
     cachable.files = {};
     cachable.accessTokens = getInitialPATState();
+    cachable.ui = { values: {} };
 
     /** V2 user events provide granular invite updates, safe to cache */
     if (legacySync) {
