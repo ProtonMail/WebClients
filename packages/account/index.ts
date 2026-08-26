@@ -28,6 +28,8 @@ export * from './organizationKey/listener';
 export * from './organizationKey/actions';
 export * from './organizationKey/classifyRoleChange';
 export * from './organizationKey/convertAddressesListener';
+export * from './organizationKey/resetOrganizationKey';
+export * from './organizationKey/resetOrganizationKeyListener';
 export * from './organizationRoles';
 export * from './userPermissions';
 export * from './member';
