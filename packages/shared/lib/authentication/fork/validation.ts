@@ -1,4 +1,4 @@
-import type { APP_NAMES } from '../../constants';
+import type { APP_CLIENT_IDS, APP_NAMES } from '../../constants';
 import { APPS, APPS_CONFIGURATION } from '../../constants';
 import { validateEmailAddress } from '../../helpers/email';
 import type { ForkPayloadVersion } from './constants';
@@ -76,5 +76,30 @@ export const getEmailSessionForkSearchParameter = (searchParams: URLSearchParams
     const email = searchParams.get(ExtraSessionForkSearchParameters.Email) || '';
     if (validateEmailAddress(email)) {
         return email.toLowerCase();
+    }
+};
+
+const CLIENT_ID_PLATFORMS = [
+    'web',
+    'ios',
+    'android',
+    'apple_tv',
+    'android_tv',
+    'vega_tv',
+    'linux',
+    'windows',
+    'macos',
+    'browser',
+];
+const CLIENT_ID_REGEX = new RegExp(`^(${CLIENT_ID_PLATFORMS.join('|')})-[a-z]+(-[a-z]+)*$`);
+
+/**
+ * Validates the client ID that a fork may be pushed to. Only the platform prefix is validated since the
+ * value comes from the fork url and the client IDs themselves are not all known to the web clients. The
+ * API rejects the ones that don't exist.
+ */
+export const getValidatedClientID = (clientID = ''): APP_CLIENT_IDS | undefined => {
+    if (CLIENT_ID_REGEX.test(clientID)) {
+        return clientID as APP_CLIENT_IDS;
     }
 };
