@@ -2,7 +2,6 @@ import type { FunctionComponent, Key, ReactNode } from 'react';
 
 import type { LocationDescriptor } from 'history';
 
-import type { AuthSession } from '@proton/components/containers/login/interface';
 import type { SelectedProductPlans } from '@proton/components/containers/payments/subscription/PlanSelection';
 import type { BillingAddressExtended } from '@proton/payments/core/billing-address/billing-address';
 import type { CYCLE, PLANS } from '@proton/payments/core/constants';
@@ -87,7 +86,7 @@ export const enum Steps {
     SetupOrg,
 }
 
-export type SubscriptionDataCycleMappingByCurrency = {
+type SubscriptionDataCycleMappingByCurrency = {
     currency: Currency;
     mapping: SubscriptionDataCycleMapping;
 }[];
@@ -122,20 +121,6 @@ export interface SignupModelV2 {
     disableCurrencySelector?: boolean;
     initialBillingAddress: BillingAddressExtended;
 }
-
-export type ActionResponse =
-    | {
-          to: 'done';
-          session: AuthSession;
-      }
-    | {
-          to?: undefined;
-          cache: SignupCacheResult;
-      }
-    | {
-          to?: undefined;
-          cache: UserCacheResult;
-      };
 
 export enum UpsellTypes {
     PLANS,

@@ -6,13 +6,7 @@ import type { Api } from '@proton/shared/lib/interfaces';
 
 import { removeLastUsedLocalID, setLastUsedLocalID } from './lastUsedLocalID';
 
-export const removeSessions = ({
-    sessions = getPersistedSessions(),
-    api,
-}: {
-    sessions?: PersistedSession[];
-    api: Api;
-}) => {
+const removeSessions = ({ sessions = getPersistedSessions(), api }: { sessions?: PersistedSession[]; api: Api }) => {
     sessions.forEach((session) => {
         clearSession({ session, api, revokeSession: true });
     });

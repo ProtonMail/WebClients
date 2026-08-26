@@ -2,34 +2,20 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button/Button';
 import { SkeletonLoader } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
-import { getShortPlan } from '@proton/components/containers/payments/features/plan';
-import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import { getPlanTitleWithAddons } from '@proton/components/containers/payments/subscription/helpers';
-import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
-import {
-    type PaymentsCheckoutUI,
-    getCheckResultFromSubscription,
-    getCheckoutUi,
-    getOptimisticCheckout,
-} from '@proton/payments/core/checkout';
+import { getCheckoutUi, getOptimisticCheckout } from '@proton/payments/core/checkout';
 import { CYCLE, ENTERPRISE_PLAN_TITLE, PLANS, TRIAL_DURATION_DAYS } from '@proton/payments/core/constants';
 import type { Currency, PlanIDs } from '@proton/payments/core/interface';
-import { getHasPlusPlan, getPlanFromPlanIDs } from '@proton/payments/core/plan/helpers';
-import type { FreePlanDefault, Plan, PlansMap, SubscriptionPlan } from '@proton/payments/core/plan/interface';
+import { getPlanFromPlanIDs } from '@proton/payments/core/plan/helpers';
+import type { PlansMap } from '@proton/payments/core/plan/interface';
 import { getRenewCycle } from '@proton/payments/core/renewals';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
-import { getPlanIDs } from '@proton/payments/core/subscription/helpers';
-import type { Subscription } from '@proton/payments/core/subscription/interface';
-import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
-import ArrowImage from './ArrowImage';
-import BundlePlanSubSection from './BundlePlanSubSection';
 import SaveLabel from './SaveLabel';
 import type { SubscriptionDataCycleMapping } from './helper';
 import { getSubscriptionMapping } from './helper';
@@ -54,11 +40,7 @@ const getLetsTalk = () => {
     return c('pass_signup_2023: Header').t`Let's talk`;
 };
 
-const getPerMonth = () => {
-    return c('pass_signup_2023: Info').t`per month`;
-};
-
-export const getBilledText = ({
+const getBilledText = ({
     audience,
     cycle,
     planIDs,
@@ -104,16 +86,6 @@ export const getBilledText = ({
             return null;
     }
 };
-
-const bundlePlans = [
-    PLANS.BUNDLE,
-    PLANS.BUNDLE_PRO,
-    PLANS.BUNDLE_PRO_2024,
-    PLANS.BUNDLE_BIZ_2025,
-    PLANS.VISIONARY,
-    PLANS.DUO,
-    PLANS.FAMILY,
-];
 
 const PlanCardViewSlot = ({
     highlightPrice,
@@ -453,200 +425,5 @@ export const PlanCardSelector = ({
                 );
             })}
         </div>
-    );
-};
-
-export const UpsellCardSelector = ({
-    audience,
-    checkout,
-    relativePrice,
-    currentPlan,
-    subscription,
-    plan,
-    plansMap,
-    freePlan,
-    cycle,
-    coupon,
-    currency,
-    onSelect,
-    onKeep,
-}: {
-    audience?: Audience;
-    checkout: PaymentsCheckoutUI;
-    relativePrice: string | undefined;
-    plan: Plan;
-    currentPlan: SubscriptionPlan | undefined;
-    subscription: Subscription | undefined;
-    freePlan: FreePlanDefault;
-    plansMap: PlansMap;
-    cycle: CYCLE;
-    currency: Currency;
-    coupon?: string;
-    onSelect: () => void;
-    onKeep: () => void;
-}) => {
-    if (!currentPlan) {
-        return null;
-    }
-
-    const hasUpsell = !!plan && plan.Name !== PLANS.FREE;
-    const hasCurrentPlan = currentPlan;
-
-    return (
-        <>
-            <div className="mb-6">
-                {relativePrice &&
-                    getHasPlusPlan(currentPlan.Name) &&
-                    (() => {
-                        if (currentPlan?.Name === PLANS.PASS && plan?.Name === PLANS.VPN_PASS_BUNDLE) {
-                            return getBoldFormattedText(
-                                c('pass_signup_2023: Info')
-                                    .t`For just **${relativePrice} per month** more, you get access to ${BRAND_NAME}'s premium VPN service!`
-                            );
-                        }
-                        if (currentPlan?.Name === PLANS.VPN2024 && plan?.Name === PLANS.VPN_PASS_BUNDLE) {
-                            return getBoldFormattedText(
-                                c('pass_signup_2023: Info')
-                                    .t`For just **${relativePrice} per month** more, you get access to ${BRAND_NAME}'s premium password manager!`
-                            );
-                        }
-                        if (bundlePlans.includes(plan?.Name as any)) {
-                            return getBoldFormattedText(
-                                c('pass_signup_2023: Info')
-                                    .t`For just **${relativePrice} per month** more, you get access to all of the premium ${BRAND_NAME} services!`
-                            );
-                        }
-                    })()}
-            </div>
-            <div className="flex justify-space-between gap-4 flex-column lg:flex-row">
-                {(() => {
-                    if (!hasCurrentPlan) {
-                        return null;
-                    }
-
-                    const currentPlanIDs = getPlanIDs(subscription);
-                    const currentCheckout = getCheckoutUi({
-                        plansMap,
-                        planIDs: currentPlanIDs,
-                        checkResult: getCheckResultFromSubscription(subscription),
-                    });
-                    const billedText = subscription?.CouponCode
-                        ? getPerMonth()
-                        : getBilledText({ cycle: subscription?.Cycle || cycle, audience, planIDs: currentPlanIDs });
-
-                    const shortPlan = currentPlan
-                        ? getShortPlan(currentPlan.Name as any, plansMap, { freePlan })
-                        : undefined;
-
-                    const totals = {
-                        discountPercent: currentCheckout.discountPercent,
-                        standardMonthlyPrice: currentCheckout.withoutDiscountPerMonth,
-                        monthlyPrice: currentCheckout.withDiscountPerMonth,
-                    };
-
-                    return (
-                        <PlanCardViewSlot
-                            id={currentPlan.Name}
-                            headerText={c('pass_signup_2023: Info').t`Current plan`}
-                            selectable={false}
-                            highlightPrice={false}
-                            selected={false}
-                            text={currentPlan.Title || ''}
-                            billedText={billedText}
-                            price={getSimplePriceString(currentPlan.Currency ?? currency, totals.monthlyPrice)}
-                            discount={getDiscount({
-                                discountPercent: totals.discountPercent,
-                                standardMonthlyPrice: totals.standardMonthlyPrice,
-                                currency: currentPlan.Currency ?? currency,
-                            })}
-                            subsection={
-                                shortPlan && (
-                                    <>
-                                        <div>
-                                            <div className="color-weak text-semibold text-sm mb-1">
-                                                {c('pass_signup_2023: Info').t`Includes:`}
-                                            </div>
-                                            <PlanCardFeatureList
-                                                {...planCardFeatureProps}
-                                                features={shortPlan.features.slice(0, 3)}
-                                            />
-                                        </div>
-
-                                        <Button color="norm" shape="ghost" fullWidth onClick={onKeep} className="mt-6">
-                                            {c('pass_signup_2023: Action').t`Keep this plan`}
-                                        </Button>
-                                    </>
-                                )
-                            }
-                        />
-                    );
-                })()}
-
-                {(() => {
-                    if (!hasUpsell || !hasCurrentPlan) {
-                        return null;
-                    }
-
-                    return (
-                        <div className="">
-                            <div
-                                className="mx-6 mt-14 hidden lg:flex flex-column gap-4 w-custom"
-                                style={{ '--w-custom': '5rem' }}
-                            >
-                                <ArrowImage />
-
-                                {relativePrice && (
-                                    <div className="text-sm color-primary">
-                                        {c('pass_signup_2023: Info').t`+ ${relativePrice} per month`}
-                                    </div>
-                                )}
-                            </div>
-                        </div>
-                    );
-                })()}
-
-                {(() => {
-                    if (!plan || !hasUpsell) {
-                        return null;
-                    }
-
-                    const billedText = coupon
-                        ? getPerMonth()
-                        : getBilledText({ cycle, audience, planIDs: { [plan.Name]: 1 } });
-                    const totals = {
-                        discountPercent: checkout.discountPercent,
-                        monthlyPrice: checkout.withDiscountPerMonth,
-                        standardMonthlyPrice: checkout.withoutDiscountPerMonth,
-                    };
-
-                    return (
-                        <PlanCardViewSlot
-                            id={plan.Name}
-                            headerText={getRecommendedText()}
-                            highlightPrice={true}
-                            selected={true}
-                            text={plan.Title || ''}
-                            billedText={billedText}
-                            price={getSimplePriceString(plan.Currency, totals.monthlyPrice)}
-                            discount={getDiscount({
-                                discountPercent: totals.discountPercent,
-                                standardMonthlyPrice: totals.standardMonthlyPrice,
-                                currency: plan.Currency,
-                            })}
-                            subsection={
-                                <>
-                                    {bundlePlans.includes(plan.Name as any) && (
-                                        <BundlePlanSubSection className="mb-4" />
-                                    )}
-                                    <Button color="norm" fullWidth onClick={onSelect}>
-                                        {c('pass_signup_2023: Action').t`Upgrade my plan`}
-                                    </Button>
-                                </>
-                            }
-                        />
-                    );
-                })()}
-            </div>
-        </>
     );
 };

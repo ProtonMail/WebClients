@@ -69,5 +69,4 @@ export const breachesCountReducer = { [name]: slice.reducer };
 const breachesCountThunk = modelThunk.thunk;
 
 const hooks = createHooks(breachesCountThunk, selectBreachesCount);
-export const useBreachesCounts = hooks.useValue;
 export const useGetBreachesCounts = hooks.useGet;

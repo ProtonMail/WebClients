@@ -6,7 +6,7 @@ import type { PolymorphicForwardRefExoticComponent, PolymorphicPropsWithRef } fr
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import clsx from '@proton/utils/clsx';
 
-export interface UserItem {
+interface UserItem {
     DisplayName?: string;
     Name?: string;
     Email?: string;
@@ -18,7 +18,7 @@ interface OwnProps {
     border?: boolean;
 }
 
-export type Props<E extends ElementType> = PolymorphicPropsWithRef<{}, E>;
+type Props<E extends ElementType> = PolymorphicPropsWithRef<{}, E>;
 
 const defaultElement = 'div';
 

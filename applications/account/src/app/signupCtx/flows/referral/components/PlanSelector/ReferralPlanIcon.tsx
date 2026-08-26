@@ -54,5 +54,3 @@ export const ReferralPlanIcon = ({ icon, plan, selected, handleClick, title }: P
         </button>
     );
 };
-
-export default ReferralPlanIcon;

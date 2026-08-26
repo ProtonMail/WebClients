@@ -19,7 +19,7 @@ import { type AddressesState, addressesThunk } from './index';
 
 type RequiredState = AddressesState & UserKeysState & OrganizationKeyState;
 
-export const replaceAddressTokensIfNeeded = ({
+const replaceAddressTokensIfNeeded = ({
     addresses,
     userKeys,
 }: {

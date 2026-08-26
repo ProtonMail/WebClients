@@ -42,7 +42,7 @@ const LazyPublicApp = lazy(
         )
 );
 
-export const getProductParamsFromLocation = (location: H.Location, searchParams: URLSearchParams): ProductParams => {
+const getProductParamsFromLocation = (location: H.Location, searchParams: URLSearchParams): ProductParams => {
     const { product, productParam } = getProductParams(location.pathname, searchParams);
     return { product, productParam };
 };

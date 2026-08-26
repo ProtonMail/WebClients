@@ -13,7 +13,7 @@ import { useSignupV2Theme } from './SignupV2ThemeProvider';
 
 import './Layout.scss';
 
-export interface Props {
+interface Props {
     logo: ReactNode;
     children: ReactNode;
     bottomRight?: ReactNode;

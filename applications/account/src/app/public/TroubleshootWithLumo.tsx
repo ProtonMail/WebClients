@@ -21,7 +21,7 @@ const buildLumoSrc = (theme: 'light' | 'dark') =>
 
 // Lets other parts of the sign-in surface (e.g. the "Get help from Lumo" link in the login form)
 // open this panel even though they live in a separate React subtree.
-export const TROUBLESHOOT_WITH_LUMO_OPEN_EVENT = 'proton:troubleshoot-with-lumo:open';
+const TROUBLESHOOT_WITH_LUMO_OPEN_EVENT = 'proton:troubleshoot-with-lumo:open';
 
 export const openTroubleshootWithLumo = () => {
     window.dispatchEvent(new CustomEvent(TROUBLESHOOT_WITH_LUMO_OPEN_EVENT));
@@ -77,7 +77,12 @@ const TroubleshootWithLumo = () => {
                 >
                     <div className="flex flex-row flex-nowrap items-center gap-2 px-3 py-2 border-bottom border-weak shrink-0">
                         <span className="lumo-troubleshoot-avatar flex items-center justify-center rounded-full bg-weak shrink-0 ratio-square">
-                            <img src={lumoCatIcon} alt="" aria-hidden="true" className="lumo-troubleshoot-avatar-icon" />
+                            <img
+                                src={lumoCatIcon}
+                                alt=""
+                                aria-hidden="true"
+                                className="lumo-troubleshoot-avatar-icon"
+                            />
                         </span>
                         <span className="text-semibold text-ellipsis flex-1">{title}</span>
                         <Button
@@ -91,12 +96,7 @@ const TroubleshootWithLumo = () => {
                             <IcCross />
                         </Button>
                     </div>
-                    <iframe
-                        title={title}
-                        src={src}
-                        className="w-full flex-1 border-none"
-                        allow="clipboard-write"
-                    />
+                    <iframe title={title} src={src} className="w-full flex-1 border-none" allow="clipboard-write" />
                 </div>
             )}
             <button

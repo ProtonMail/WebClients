@@ -9,7 +9,7 @@ type ReferralSelectedPlan = {
     planIDs: PlanIDs;
 };
 
-export const unlimited: ReferralSelectedPlan = {
+const unlimited: ReferralSelectedPlan = {
     planIDs: { [PLANS.BUNDLE]: 1 },
 };
 
@@ -43,7 +43,7 @@ const referralPlanMap: Record<SupportedReferralPlans, ReferralSelectedPlan> = {
  * Plans that prioritize External signup type (e.g., email-based signup)
  * This is a static configuration since it's UI behavior not controlled by the API
  */
-export const externalSignupPriorityPlans: SupportedReferralPlans[] = [PLANS.DRIVE, PLANS.PASS, PLANS.VPN2024];
+const externalSignupPriorityPlans: SupportedReferralPlans[] = [PLANS.DRIVE, PLANS.PASS, PLANS.VPN2024];
 
 /**
  * Check if a plan prioritizes external signup type

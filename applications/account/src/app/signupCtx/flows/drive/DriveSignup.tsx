@@ -41,23 +41,23 @@ const getPlanIDsFromPlan = (plan: PLANS | undefined): PlanIDs => {
     return {};
 };
 
-export const drivePlus: { planIDs: PlanIDs } = {
+const drivePlus: { planIDs: PlanIDs } = {
     planIDs: { [PLANS.DRIVE]: 1 },
 };
 
-export const unlimited: { planIDs: PlanIDs } = {
+const unlimited: { planIDs: PlanIDs } = {
     planIDs: { [PLANS.BUNDLE]: 1 },
 };
 
-export const duo: { planIDs: PlanIDs } = {
+const duo: { planIDs: PlanIDs } = {
     planIDs: { [PLANS.DUO]: 1 },
 };
 
-export const family: { planIDs: PlanIDs } = {
+const family: { planIDs: PlanIDs } = {
     planIDs: { [PLANS.FAMILY]: 1 },
 };
 
-export const driveBiz: { planIDs: PlanIDs } = {
+const driveBiz: { planIDs: PlanIDs } = {
     planIDs: { [PLANS.DRIVE_BUSINESS]: 1 },
 };
 

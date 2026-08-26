@@ -1,12 +1,8 @@
+import type { PrivateKeyReference } from '@protontech/crypto';
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 
-import type { PrivateKeyReference } from '@protontech/crypto';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import type {
-    GetAddressKeysByUsage,
-    GetAddressKeysByUsageOptions,
-    UseGetAddressKeysByUsage,
-} from '@proton/shared/lib/interfaces/hooks/GetAddressKeysByUsage';
+import type { GetAddressKeysByUsageOptions } from '@proton/shared/lib/interfaces/hooks/GetAddressKeysByUsage';
 import {
     type PrimaryAddressKeyForEncryption,
     type PrimaryAddressKeysForSigning,
@@ -17,8 +13,6 @@ import {
 
 import type { KtState } from '../kt';
 import { type AddressKeysState, addressKeysThunk } from './index';
-
-export type { GetAddressKeysByUsage, UseGetAddressKeysByUsage };
 
 export interface AddressKeysByUsage {
     decryptionKeys: PrivateKeyReference[];

@@ -16,7 +16,7 @@ import { getBillingCycleText, getOffText, getPassText } from './helper';
 
 import './CycleSelector.scss';
 
-export const getBilledAtPerMonthText = (price: string, cycle: CYCLE): string | null => {
+const getBilledAtPerMonthText = (price: string, cycle: CYCLE): string | null => {
     if (cycle === CYCLE.MONTHLY) {
         return c('Info').t`per month`;
     }

@@ -23,7 +23,7 @@ import { organizationKeyThunk } from '../organizationKey';
 import type { MemberAuthDevicesState, PendingAdminActivation } from './memberAuthDevices';
 import { memberAuthDeviceActions } from './memberAuthDevices';
 
-export interface ConfirmMemberAuthDeviceData {
+interface ConfirmMemberAuthDeviceData {
     activation: ReturnType<typeof getValidActivation>;
     deviceSecretData: DeviceSecretData;
     pendingAuthDevice: MemberAuthDeviceOutput;
@@ -32,7 +32,7 @@ export interface ConfirmMemberAuthDeviceData {
     cleanup: () => void;
 }
 
-export const prepareConfirmPendingMemberAuthDevice = ({
+const prepareConfirmPendingMemberAuthDevice = ({
     memberAuthDevice,
     member: initialMember,
 }: {

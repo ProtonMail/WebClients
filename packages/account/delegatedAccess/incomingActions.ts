@@ -293,7 +293,7 @@ export const accessDelegatedAccessThunk = ({
     };
 };
 
-export const tokenThunk = ({
+const tokenThunk = ({
     id,
 }: {
     id: string;
