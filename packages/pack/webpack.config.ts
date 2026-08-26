@@ -1,4 +1,5 @@
 import browserslist from 'browserslist';
+import type { IncomingMessage } from 'http';
 import path from 'path';
 import type { Configuration } from 'webpack';
 import 'webpack-dev-server';
@@ -57,17 +58,23 @@ export const getConfig = (webpackOptions: WebpackOptions): Configuration => {
                     {
                         changeOrigin: true,
                         context: ['/api', '/internal-api'],
-                        onProxyRes: (proxyRes) => {
-                            delete proxyRes.headers['content-security-policy'];
-                            delete proxyRes.headers['x-frame-options'];
-                            proxyRes.headers['set-cookie'] = proxyRes.headers['set-cookie']?.map((cookies) =>
-                                cookies
-                                    .split('; ')
-                                    .filter((cookie) => {
-                                        return !/(secure$|samesite=|domain=)/i.test(cookie);
-                                    })
-                                    .join('; ')
-                            );
+                        // webpack-dev-server 6 bundles http-proxy-middleware 4, which replaced the
+                        // top-level `on<Event>` handlers with the `on` map. Unknown top-level options
+                        // are ignored without a warning, so leaving `onProxyRes` here would silently
+                        // keep CSP/X-Frame-Options and the `secure`/`samesite`/`domain` cookie flags.
+                        on: {
+                            proxyRes: (proxyRes: IncomingMessage) => {
+                                delete proxyRes.headers['content-security-policy'];
+                                delete proxyRes.headers['x-frame-options'];
+                                proxyRes.headers['set-cookie'] = proxyRes.headers['set-cookie']?.map((cookies) =>
+                                    cookies
+                                        .split('; ')
+                                        .filter((cookie) => {
+                                            return !/(secure$|samesite=|domain=)/i.test(cookie);
+                                        })
+                                        .join('; ')
+                                );
+                            },
                         },
                         secure: false,
                         target: webpackOptions.api,
