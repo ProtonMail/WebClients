@@ -253,9 +253,15 @@ export const resendUnprivatizationLink = (memberID: string) => ({
     url: `core/v4/members/${memberID}/unprivatize/resend`,
 });
 
-export const privatizeMember = (memberID: string) => ({
+export interface PrivatizeMemberInput {
+    /** Set when the member is privatized as part of the organization key reset flow */
+    OrgKeyResetPrivatization: boolean;
+}
+
+export const privatizeMember = (memberID: string, data?: PrivatizeMemberInput) => ({
     method: 'put',
     url: `core/v4/members/${memberID}/privatize`,
+    data,
 });
 
 export const authMember = (memberID: string, data: { Unlock?: boolean } = {}) => ({
