@@ -26,6 +26,7 @@ import SelectTwo from '../../../../components/selectTwo/SelectTwo';
 import InputFieldTwo from '../../../../components/v2/field/InputField';
 import TextAreaTwo from '../../../../components/v2/input/TextArea';
 import useFormErrors from '../../../../components/v2/useFormErrors';
+import { getCharacterCountText } from '../../../../helpers/getCharacterCountText';
 import { useFeedbackFirstEligibility } from '../cancellationFlowFeedbackFirst/hooks/useFeedbackFirstEligibility';
 import type { FeedbackDowngradeFormData, FeedbackDowngradeResult, KeepSubscription } from './interface';
 
@@ -71,14 +72,7 @@ const InputLimit = ({ maxLength, value }: { maxLength: number; value: string }) 
         colorClass = 'color-warning';
     }
 
-    return (
-        <span className={`text-sm ${colorClass}`}>
-            {
-                // translator: Character count hint showing current length and maximum allowed length for rule title. Example: '25/191 characters'
-                c('Label').t`${value.length}/${maxLength} characters`
-            }
-        </span>
-    );
+    return <span className={`text-sm ${colorClass}`}>{getCharacterCountText(value.length, maxLength)}</span>;
 };
 
 const FeedbackDowngradeContent = ({ onResolve, onClose, user }: FeedbackDowngradeContentProps) => {
