@@ -1544,8 +1544,7 @@
         "De confiança"
       ],
       "Trust key": [
-        "Clau de confiança",
-        "Claus de confiança"
+        "Marca com a clau de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -9769,6 +9768,18 @@
       ],
       "No contacts found": [
         "No s'ha trobat cap contacte"
+      ],
+      "${ dateString } at ${ formattedTime }": [
+        "${ dateString } a ${ formattedTime }"
+      ],
+      "${ name } in ${ parentName }": [
+        "${ name } a ${ parentName }"
+      ],
+      "Snooze emails": [
+        "Ajorna els correus electrònics"
+      ],
+      "Update filter": [
+        "Actualitzar el filtre"
       ]
     },
     "info": {
@@ -11036,6 +11047,18 @@
       ],
       "ZIP code": [
         "Codi postal"
+      ],
+      "At": [
+        "A les"
+      ],
+      "Filter name": [
+        "Nom del filtre"
+      ],
+      "Return on": [
+        "Retorna el"
+      ],
+      "Sieve script": [
+        "Script Sieve"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -17261,6 +17284,12 @@
       ],
       "Your shorter address is now ready": [
         "La vostra adreça més curta ja està a punt."
+      ],
+      "Snooze emails": [
+        "Ajorna els correus electrònics"
+      ],
+      "Update filter": [
+        "Actualitzar el filtre"
       ]
     },
     "Title header for keys table": {
@@ -17890,6 +17919,22 @@
       ],
       "Passcode:": [
         "Codi d'accés:"
+      ]
+    },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Proveu-ho ara"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Ara teniu accés a la nova ${ CALENDAR_APP_NAME }. ${ link }"
+      ]
+    },
+    "Snooze info": {
+      "${ count } email → ${ wakeTime }": [
+        "${ count } correu electrònic → ${ wakeTime }",
+        "${ count } correus electrònics → ${ wakeTime }"
       ]
     }
   }

@@ -1538,8 +1538,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Confiar clave",
-        "Confiar claves"
+        "Confiar clave"
       ],
       "Trust public key": [
         "Confiar clave pública"
@@ -1742,6 +1741,15 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "Copy debug transcript": [
+        "Copiar transcripción de depuración"
+      ],
+      "Get index size on disk": [
+        "Obtener tamaño del índice en el disco"
+      ],
+      "Preview logs": [
+        "Previsualizar registros"
       ]
     },
     "action": {
@@ -9694,6 +9702,75 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Está a solo unos clics de tener una bandeja de entrada ordenada"
+      ],
+      "${ count } email": [
+        "${ count } correo",
+        "${ count } correos"
+      ],
+      "${ count } email · ${ names }": [
+        "${ count } correo · ${ names }",
+        "${ count } correos · ${ names }"
+      ],
+      "Apply labels": [
+        "Aplicar etiquetas"
+      ],
+      "Checked Proton support": [
+        "Comprobé el soporte de Proton"
+      ],
+      "Create folder": [
+        "Crear carpeta"
+      ],
+      "Create label": [
+        "Crear etiqueta"
+      ],
+      "Debug transcript copied": [
+        "Transcripción de depuración copiada"
+      ],
+      "Expand logs": [
+        "Expandir registros"
+      ],
+      "Found ${ count } contact": [
+        "Encontrado ${ count } contacto",
+        "Encontrados ${ count } contactos"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Si perdió el acceso a su aplicación de autenticación, puede usar 1 de los 16 códigos de recuperación de copia de seguridad proporcionados cuando configuró la autenticación de dos factores. ${ learnMoreLink }"
+      ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "Los registros nos ayudan a comprender qué sucedió antes de que ocurriera el problema. Incluyen las acciones de la aplicación y los mensajes de error, pero no el contenido de los mensajes."
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Establezca ${ MAIL_APP_NAME } como su aplicación de correo electrónico por defecto."
+      ],
+      "Mark all as unread": [
+        "Marcar todo como no leído"
+      ],
+      "Mark as read": [
+        "Marcar como leído"
+      ],
+      "Mark as unread": [
+        "Marcar como no leído"
+      ],
+      "No contacts found": [
+        "No se encontraron contactos"
+      ],
+      "Read your ${ count } filter": [
+        "Leer ${ count } filtro",
+        "Leer ${ count } filtros"
+      ],
+      "Read your ${ count } folder": [
+        "Leer ${ count } carpeta",
+        "Leer ${ count } carpetas"
+      ],
+      "Read your ${ count } label": [
+        "Leer ${ count } etiqueta",
+        "Leer ${ count } etiquetas"
+      ],
+      "Searched the web": [
+        "Busqué en la web"
+      ],
+      "Update filter": [
+        "Actualizar filtro"
       ]
     },
     "info": {
@@ -10958,6 +11035,15 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Filter name": [
+        "Nombre del filtro"
+      ],
+      "Label name": [
+        "Nombre de la etiqueta"
+      ],
+      "Sieve script": [
+        "Script Sieve"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13132,6 +13218,12 @@
       ],
       "No parent folder": [
         "No hay carpeta principal"
+      ],
+      "Remind me later": [
+        "Recordarme más tarde"
+      ],
+      "Yes, don't show again": [
+        "Sí, no volver a mostrar"
       ]
     },
     "Option group": {
@@ -17083,6 +17175,30 @@
       ],
       "Your shorter address is now ready": [
         "Su dirección en formato más corto ya está lista."
+      ],
+      "Apply labels": [
+        "Aplicar etiquetas"
+      ],
+      "Create folder": [
+        "Crear carpeta"
+      ],
+      "Create label": [
+        "Crear etiqueta"
+      ],
+      "Keep this banner hidden?": [
+        "¿Mantener este banner oculto?"
+      ],
+      "Mark all as read": [
+        "Marcar todo como leído"
+      ],
+      "Mark all as unread": [
+        "Marcar todo como no leído"
+      ],
+      "September Sale": [
+        "Oferta de septiembre"
+      ],
+      "Update filter": [
+        "Actualizar filtro"
       ]
     },
     "Title header for keys table": {
@@ -17712,6 +17828,79 @@
       ],
       "Passcode:": [
         "Código de acceso:"
+      ]
+    },
+    "q3campaign2026: Action": {
+      "Get the deal": [
+        "Aproveche la oferta"
+      ],
+      "Special Offer": [
+        "Oferta especial"
+      ]
+    },
+    "q3campaign2026: Info": {
+      "/month": [
+        "mensuales"
+      ],
+      "2 individual accounts": [
+        "2 cuentas individuales"
+      ],
+      "2 TB of secure storage": [
+        "2 TB de almacenamiento seguro"
+      ],
+      "3 TB of secure storage": [
+        "3 TB de almacenamiento seguro"
+      ],
+      "500 GB of secure storage": [
+        "500 GB de almacenamiento seguro"
+      ],
+      "6 individual accounts": [
+        "6 cuentas individuales"
+      ],
+      "Advanced protection against cyber threats": [
+        "Protección avanzada contra ciberamenazas"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Los descuentos se basan en los precios mensuales estándar. Su suscripción se renovará a la tarifa anual estándar cuando finalice el ciclo de facturación."
+      ]
+    },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } y ${ VPN_SHORT_APP_NAME } todos premium"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME } todos premium"
+      ]
+    },
+    "q3campaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } y ${ VPN_SHORT_APP_NAME } todos premium"
+      ]
+    },
+    "q3campaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } y ${ VPN_SHORT_APP_NAME } todos premium"
+      ]
+    },
+    "q3campaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME } todos premium"
+      ]
+    },
+    "q3campaign2026: Title": {
+      "for 12 months": [
+        "durante 12 meses"
+      ],
+      "One plan, full power": [
+        "Un solo plan: Máximo poder"
+      ],
+      "One plan, max savings": [
+        "Un solo plan: máximo ahorro"
+      ],
+      "One plan, more power": [
+        "Un solo plan: Más poder"
       ]
     }
   }

@@ -335,7 +335,7 @@
         "Adresi kopyala"
       ],
       "Copy addresses": [
-        "Kopya adresleri"
+        "Adresleri kopyala"
       ],
       "Copy alias “${ name }”": [
         "“${ name }” takma adını kopyala"
@@ -1544,8 +1544,7 @@
         "Güven"
       ],
       "Trust key": [
-        "Anahtara güven",
-        "Anahtarlara güven"
+        "Anahtara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -1581,7 +1580,7 @@
         "Silinecek işaretini kaldır"
       ],
       "Unordered list": [
-        "Sıralanmanış liste"
+        "Sıralanmamış liste"
       ],
       "Unsnooze": [
         "Ertelemeyi kaldır"
@@ -2262,7 +2261,7 @@
         "Aylık"
       ],
       "Two-year": [
-        "Iki yıllık"
+        "İki yıllık"
       ],
       "Yearly": [
         "Yıllık"
@@ -2492,7 +2491,7 @@
         "${ participantName }, bu etkinlik davetini kabul etmişti."
       ],
       "${ participantName } had accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        "${ participantName }, yapıtığınız daveti kabul etmiş ve bu yinelenen etkinliğin bir tanesi için yeni bir saat önerisinde bulunmuştu. Yanıt ve öneri güncel değil."
+        "${ participantName }, gönderdiğiniz daveti kabul etmiş ve bu yinelenen etkinliğin bir tanesi için yeni bir saat önerisinde bulunmuştu. Yanıt ve öneri güncel değil."
       ],
       "${ participantName } had accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
         "${ participantName }, davetinizi kabul etmiş ve bu etkinlik için yeni bir saat önerisinde bulunmuştu. Yanıt ve öneri güncel değil."
@@ -3115,7 +3114,7 @@
         "İçe aktarma özelleştirmesinden çıkılsın mı?"
       ],
       "Quit import?": [
-        "İçe aktarmadan çıkılsın mi?"
+        "İçe aktarmadan çıkılsın mı?"
       ]
     },
     "Contact field label": {
@@ -3927,7 +3926,7 @@
         "Tanzanya"
       ],
       "Tanzania, United Republic of": [
-        "Birleşik Tanzaya Cumhuriyeti"
+        "Birleşik Tanzanya Cumhuriyeti"
       ],
       "Thailand": [
         "Tayland"
@@ -4445,7 +4444,7 @@
         "Tarifenizde toplam ${ MAX_SYNC_PAID_USER } Gmail adresi destekleniyor"
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
-        "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Limited tarifesine geçin."
+        "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Unlimited tarifesine geçin."
       ]
     },
     "description": {
@@ -4744,7 +4743,7 @@
         "<${ email }> için ${ error.message }. Bu sorunu çözmek için başka bir anahtar ekleyebilir ya da bu kişinin şifrelemesini kapatabilirsiniz."
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
-        "${ errorMessage }. Ayrıca ${ statusPageLink }na da bakabilirsiniz"
+        "${ errorMessage }. ${ statusPageLink } üzerinden de kontrol edebilirsiniz."
       ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "Kullanıcı adınız: ${ user.Name }. ${ emailAddress } oluşturmak için lütfen Ayarlar > Kimlik ve adresler > Kısa etki alanı (pm.me) bölümüne gidin."
@@ -5461,7 +5460,7 @@
         "Ne yazık ki, ${ BRAND_NAME } iletinizin şifresini çözemiyor. Lütfen tüm anahtarlarınızın kullanıma alınmış olduğundan emin olun."
       ],
       "status page": [
-        "durum sayfası"
+        "Durum Sayfası"
       ],
       "Tab closed": [
         "Sekme kapatıldı"
@@ -5683,7 +5682,7 @@
         "Yazılabilecek en fazla karakter sayısına ulaştınız. Lütfen iletinizi kısaltın."
       ],
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
-        "Yakın zamanda yapılan bir parola sıfırlaması nedeniyle e-postalarınızın şifresi çözülemedi. Önceki parolanızı hatırlıyorsanız iletilerinize ulaşmak için ${ reActivateKeyLink }me işlemi yapabilirsiniz. ${ learnMoreLink }"
+        "Yakın zamanda yapılan bir parola sıfırlaması nedeniyle e-postalarınızın şifresi çözülemedi. Önceki parolanızı hatırlıyorsanız iletilerinize ulaşmak için ${ reActivateKeyLink } işlemi yapabilirsiniz. ${ learnMoreLink }"
       ],
       "Your import will not be processed.": [
         "İçe aktarma işleminiz yapılmayacak."
@@ -8482,7 +8481,7 @@
         "Ödemeler TLS şifrelemesi ve İsviçre gizlilik yasaları ile korunmaktadır."
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
-        "PGP/ınline yalnızca düz metin biçimi ile uyumludur."
+        "PGP/Inline yalnızca düz metin biçimi ile uyumludur."
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME geçerli oluşturucu görünümünde iletiyi otomatik olarak gönderir."
@@ -9358,7 +9357,7 @@
         "Uyarı"
       ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
-        "Özür dileriz. Bu durum bizim hatamızdan kaynaklanıyor olabilir. Bu e-postanın göründüğü gibi olduğunu doğrulayabilir misiniz misiniz?"
+        "Özür dileriz. Bu durum bizim hatamızdan kaynaklanıyor olabilir. Bu e-postanın göründüğü gibi olduğunu doğrulayabilir misiniz?"
       ],
       "We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.": [
         "Şu reklam verenlerin ve kuruluşların bu e-postayı ne zaman açtığınızı, hangi aygıtı kullandığınızı ve nerede bulunduğunuzu görmesini engelledik."
@@ -9769,6 +9768,18 @@
       ],
       "No contacts found": [
         "Herhangi bir kişi bulunamadı"
+      ],
+      "${ dateString } at ${ formattedTime }": [
+        "${ dateString } tarihinde ${ formattedTime } saatinde"
+      ],
+      "${ name } in ${ parentName }": [
+        "${ parentName } içinde ${ name }"
+      ],
+      "Snooze emails": [
+        "E-postaları ertele"
+      ],
+      "Update filter": [
+        "Süzgeci güncelle"
       ]
     },
     "info": {
@@ -11036,6 +11047,18 @@
       ],
       "ZIP code": [
         "Posta kodu"
+      ],
+      "At": [
+        "Saat"
+      ],
+      "Filter name": [
+        "Süzgeç adı"
+      ],
+      "Return on": [
+        "Şu zamanda dön"
+      ],
+      "Sieve script": [
+        "Sieve betiği"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -17261,6 +17284,12 @@
       ],
       "Your shorter address is now ready": [
         "Daha kısa adresiniz hazır"
+      ],
+      "Snooze emails": [
+        "E-postaları ertele"
+      ],
+      "Update filter": [
+        "Süzgeci güncelle"
       ]
     },
     "Title header for keys table": {
@@ -17890,6 +17919,22 @@
       ],
       "Passcode:": [
         "Parola:"
+      ]
+    },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Hemen deneyin"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Artık yeni ${ CALENDAR_APP_NAME } uygulamasına erişebilirsiniz. ${ link }"
+      ]
+    },
+    "Snooze info": {
+      "${ count } email → ${ wakeTime }": [
+        "${ count } e-posta → ${ wakeTime }",
+        "${ count } e-posta → ${ wakeTime }"
       ]
     }
   }
