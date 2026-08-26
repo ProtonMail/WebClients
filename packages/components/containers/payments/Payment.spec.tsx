@@ -398,7 +398,7 @@ describe('Payment', () => {
     it.each([
         [
             PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL,
-            'Your currency has been changed to euros (€) because iDEAL only supports payments in euros.',
+            'Your currency has been changed to euros (€) because iDEAL | Wero only supports payments in euros.',
         ],
         [
             PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT,
