@@ -57,7 +57,6 @@ ruleTester.run('validate-ttag', rule, {
             errors: [
                 {
                     message: 'msgid template tag should only be used in the first argument of ngettext',
-                    type: 'TaggedTemplateExpression',
                 },
             ],
         },
@@ -67,7 +66,6 @@ ruleTester.run('validate-ttag', rule, {
             errors: [
                 {
                     message: 'The first argument of ngettext must have the msgid template tag',
-                    type: 'TemplateLiteral',
                 },
             ],
         },
@@ -77,7 +75,6 @@ ruleTester.run('validate-ttag', rule, {
             errors: [
                 {
                     message: "Counter variable 'cycle' must be used in singular form",
-                    type: 'TaggedTemplateExpression',
                 },
             ],
         },
@@ -87,7 +84,6 @@ ruleTester.run('validate-ttag', rule, {
             errors: [
                 {
                     message: "Counter variable 'cycle' must be used in plural form 1",
-                    type: 'TemplateLiteral',
                 },
             ],
         },
@@ -96,11 +92,9 @@ ruleTester.run('validate-ttag', rule, {
             errors: [
                 {
                     message: "Counter variable 'n' must be used in singular form",
-                    type: 'TaggedTemplateExpression',
                 },
                 {
                     message: "Counter variable 'n' must be used in plural form 2",
-                    type: 'TemplateLiteral',
                 },
             ],
         },
@@ -109,11 +103,9 @@ ruleTester.run('validate-ttag', rule, {
             errors: [
                 {
                     message: "Counter variable 'n' must be used in singular form",
-                    type: 'TaggedTemplateExpression',
                 },
                 {
                     message: "Counter variable 'n' must be used in plural form 2",
-                    type: 'Literal',
                 },
             ],
         },
@@ -128,7 +120,6 @@ ruleTester.run('validate-ttag', rule, {
             errors: [
                 {
                     message: "Counter variable 'n' must be used in plural form 2",
-                    type: 'TemplateLiteral',
                 },
             ],
         },
@@ -144,15 +135,12 @@ ruleTester.run('validate-ttag', rule, {
             errors: [
                 {
                     message: "Counter variable 'n' must be used in plural form 1",
-                    type: 'TemplateLiteral',
                 },
                 {
                     message: "Counter variable 'n' must be used in plural form 2",
-                    type: 'TemplateLiteral',
                 },
                 {
                     message: "Counter variable 'n' must be used in plural form 3",
-                    type: 'TemplateLiteral',
                 },
             ],
         },
@@ -167,11 +155,9 @@ ruleTester.run('validate-ttag', rule, {
             errors: [
                 {
                     message: "Counter variable 'n' must be used in singular form",
-                    type: 'TaggedTemplateExpression',
                 },
                 {
                     message: "Counter variable 'n' must be used in plural form 2",
-                    type: 'TemplateLiteral',
                 },
             ],
         },
@@ -186,7 +172,6 @@ ruleTester.run('validate-ttag', rule, {
                 {
                     message:
                         "Variable 'cycle' is used multiple times in the same translation string. This is not supported by ttag.",
-                    type: 'TaggedTemplateExpression',
                 },
             ],
         },
@@ -201,7 +186,6 @@ ruleTester.run('validate-ttag', rule, {
                 {
                     message:
                         "Variable 'cycle' is used multiple times in the same translation string. This is not supported by ttag.",
-                    type: 'TemplateLiteral',
                 },
             ],
         },
@@ -216,7 +200,6 @@ ruleTester.run('validate-ttag', rule, {
                 {
                     message:
                         "Variable 'members.length' is used multiple times in the same translation string. This is not supported by ttag.",
-                    type: 'TaggedTemplateExpression',
                 },
             ],
         },
@@ -231,7 +214,6 @@ ruleTester.run('validate-ttag', rule, {
                 {
                     message:
                         "Variable 'members.length' is used multiple times in the same translation string. This is not supported by ttag.",
-                    type: 'TemplateLiteral',
                 },
             ],
         },
