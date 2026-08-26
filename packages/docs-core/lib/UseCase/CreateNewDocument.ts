@@ -1,8 +1,8 @@
 import { Result } from '@proton/docs-shared'
-import type { DriveCompat, DocumentNodeMeta, NodeMeta, DecryptedNode } from '@proton/drive-store'
+import type { DriveCompat, DocumentNodeMeta } from '@proton/drive-store'
+import type { NodeMeta, DocumentType, DecryptedNode } from '@proton/docs-shared'
 import type { GetDocumentMeta } from './GetDocumentMeta'
 import { getErrorString } from '../Util/GetErrorString'
-import type { DocumentType } from '@proton/drive-store/store/_documents'
 
 /**
  * Creates a new document from within the Docs client. This is used when selecting "New Document" from the UI.

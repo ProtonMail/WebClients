@@ -1,6 +1,5 @@
-import type { YjsState, TranslatedResult, Result } from '@proton/docs-shared'
+import type { YjsState, TranslatedResult, Result, DocumentType } from '@proton/docs-shared'
 import type { NativeVersionHistory } from '../VersionHistory'
-import type { DocumentType } from '@proton/drive-store/store/_documents'
 import type { DocumentUpdate } from '@proton/docs-proto'
 
 export interface AuthenticatedDocControllerInterface {

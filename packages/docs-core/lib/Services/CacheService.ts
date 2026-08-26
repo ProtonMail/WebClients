@@ -1,7 +1,7 @@
 import { getClientKey } from '@proton/shared/lib/authentication/clientKey'
-import type { NodeMeta, PublicNodeMeta } from '@proton/drive-store/lib'
 import { nodeMetaUniqueId, type AnyNodeMeta } from '@proton/drive-store/lib'
 import type { CacheConfig } from '@proton/drive-store/lib/CacheConfig'
+import type { NodeMeta, PublicNodeMeta } from '@proton/docs-shared'
 import type { EncryptionContext } from './Encryption/EncryptionContext'
 import type { EncryptionService } from './Encryption/EncryptionService'
 import type { LoggerInterface } from '@proton/utils/logs'

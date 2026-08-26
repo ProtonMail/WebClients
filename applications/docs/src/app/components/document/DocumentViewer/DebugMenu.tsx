@@ -11,7 +11,7 @@ import type {
   DocumentState,
   PublicDocumentState,
 } from '@proton/docs-core'
-import type { DocumentType } from '@proton/drive-store/store/_documents'
+import type { DocumentType } from '@proton/docs-shared'
 import clsx from '@proton/utils/clsx'
 import { ConnectionCloseReason } from '@proton/docs-proto'
 import { isDevOrBlack } from '@proton/utils/env'

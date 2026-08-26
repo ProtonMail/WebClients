@@ -1,7 +1,6 @@
-import type { NodeMeta, PublicNodeMeta } from '@proton/drive-store'
+import type { NodeMeta, PublicNodeMeta, DocumentType } from '@proton/docs-shared'
 import type { DocLoaderStatusObserver } from './StatusObserver'
 import type { DocumentState, PublicDocumentState } from '../../State/DocumentState'
-import type { DocumentType } from '@proton/drive-store/store/_documents'
 
 export interface DocLoaderInterface<S extends DocumentState | PublicDocumentState> {
   initialize(lookup: NodeMeta | PublicNodeMeta, documentType: DocumentType): Promise<void>

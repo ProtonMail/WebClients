@@ -26,18 +26,16 @@ import type {
   CommentMarkNodeChangeData,
   EditorInitializationConfig,
   LiveCommentsTypeStatusChangeData,
+  DocumentType,
+  NodeMeta,
+  PublicNodeMeta,
+  DocumentAction,
 } from '@proton/docs-shared'
 import { CommentsEvent, EditorEvent, EditorSystemMode, LiveCommentsEvent } from '@proton/docs-shared'
 import { EditorFrame } from '../EditorFrame'
 import { mergeRegister } from '@lexical/utils'
 import { useSignatureCheckFailedModal } from './SignatureCheckFailedModal'
-import {
-  isPrivateNodeMeta,
-  isPublicNodeMeta,
-  type DocumentAction,
-  type NodeMeta,
-  type PublicNodeMeta,
-} from '@proton/drive-store'
+import { isPrivateNodeMeta, isPublicNodeMeta } from '@proton/drive-store'
 import { c } from 'ttag'
 import { useGenericAlertModal } from '@proton/docs-shared/components/GenericAlert'
 import { Availability, AvailabilityTypes } from '@proton/utils/availability'
@@ -55,7 +53,7 @@ import { useApplication } from '~/utils/application-context'
 import { AppendPublicShareKeyMaterialToTitle } from './append-public-share-key-material-to-title'
 import { useFlag } from '@proton/unleash/useFlag'
 import type { ProviderType } from '../../../provider-type'
-import { tmpConvertNewDocTypeToOld, type DocumentType } from '@proton/drive-store/store/_documents'
+import { tmpConvertNewDocTypeToOld } from '@proton/drive-store/store/_documents'
 import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 import { UserSettingsProvider } from '@proton/drive-store/store'
 import { useDocsContext } from '../context'

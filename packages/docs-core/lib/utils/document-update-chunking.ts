@@ -1,7 +1,7 @@
 import { MAX_UPDATE_SIZE, UPDATE_CHUNK_SAFE_SIZE_MARGIN } from '../Models/Constants'
 import type { UnleashClient } from '@proton/unleash/UnleashClient'
 import { DocumentUpdate } from '@proton/docs-proto'
-import type { DocumentType } from '@proton/drive-store/store/_documents'
+import type { DocumentType } from '@proton/docs-shared'
 
 const HEADER_SIGNAL = new TextEncoder().encode('update-chunk-header')
 const HEADER_VERSION = 0

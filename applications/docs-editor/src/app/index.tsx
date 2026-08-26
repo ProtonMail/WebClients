@@ -7,7 +7,7 @@ import { SyncBundleFail } from './Containers/SyncBundleFail'
 import './style'
 import { reportErrorToSentry } from './Utils/errorMessage'
 import type { EditorSystemMode } from '@proton/docs-shared/lib/EditorSystemMode'
-import type { DocumentType } from '@proton/drive-store/store/_documents'
+import type { DocumentType } from '@proton/docs-shared'
 import { syncBundle, SyncBundleResult } from './Utils/syncBundle'
 
 const container = document.querySelector('.app-root')

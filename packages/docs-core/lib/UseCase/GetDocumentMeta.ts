@@ -1,9 +1,7 @@
 import { DocumentMeta } from '../Models/DocumentMeta'
-import { DynamicResult } from '@proton/docs-shared'
+import { DynamicResult, type DocumentMetaInterface, type NodeMeta, type PublicNodeMeta } from '@proton/docs-shared'
 import type { DocsApi } from '../Api/DocsApi'
 import type { DocsApiErrorCode } from '@proton/shared/lib/api/docs'
-import type { DocumentMetaInterface } from '@proton/docs-shared'
-import type { NodeMeta, PublicNodeMeta } from '@proton/drive-store'
 
 type ErrorResult = {
   code?: DocsApiErrorCode
