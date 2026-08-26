@@ -4,12 +4,8 @@ import { Application } from '@proton/docs-core'
 
 import { ApplicationProvider } from '~/utils/application-context'
 import { DocumentViewer } from '~/components/document/DocumentViewer/DocumentViewer'
-import {
-  usePublicDriveCompat,
-  type DocumentAction,
-  type PublicDriveCompat,
-  type PublicNodeMeta,
-} from '@proton/drive-store'
+import { usePublicDriveCompat, type PublicDriveCompat } from '@proton/drive-store'
+import type { DocumentAction, PublicNodeMeta } from '@proton/docs-shared'
 import config from '~/config'
 import { WordCountProvider } from '~/components/document/WordCount'
 import { useDocsUrlBar } from '~/utils/docs-url-bar'

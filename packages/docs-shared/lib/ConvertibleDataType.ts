@@ -1,4 +1,4 @@
-import type { DocumentType } from '@proton/drive-store/store/_documents'
+import type { DocumentType } from './BasicTypes'
 import type { DocsConversionType } from '@proton/shared/lib/docs/constants'
 
 /** Types of data which can be converted to a document or a sheet */

@@ -1,8 +1,12 @@
-import type { NodeMeta, PublicNodeMeta } from '@proton/drive-store'
-import type { BeganTypingData, StoppedTypingData } from '@proton/docs-shared'
-import { BroadcastSource, CommentsMessageType } from '@proton/docs-shared'
-import type { LiveCommentsTypeStatusChangeData, InternalEventBusInterface } from '@proton/docs-shared'
-import { LiveCommentsEvent } from '@proton/docs-shared'
+import type {
+  BeganTypingData,
+  StoppedTypingData,
+  NodeMeta,
+  LiveCommentsTypeStatusChangeData,
+  InternalEventBusInterface,
+  PublicNodeMeta,
+} from '@proton/docs-shared'
+import { BroadcastSource, CommentsMessageType, LiveCommentsEvent } from '@proton/docs-shared'
 import { CreateRealtimeCommentPayload } from '../../Services/Comments/CreateRealtimeCommentPayload'
 import { CommentTypers } from './CommentTypers'
 import type { WebsocketServiceInterface } from '../../Services/Websockets/WebsocketServiceInterface'

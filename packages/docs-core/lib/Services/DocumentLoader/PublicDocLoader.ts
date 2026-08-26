@@ -3,8 +3,14 @@ import type { PublicDocumentState } from '../../State/DocumentState'
 import { EditorController } from '../../EditorController/EditorController'
 import { EditorOrchestrator } from '../Orchestrator/EditorOrchestrator'
 import { RealtimeController } from '../../RealtimeController/RealtimeController'
-import { AnonymousUserDisplayName, type InternalEventBusInterface, type SyncedEditorState } from '@proton/docs-shared'
-import type { CommentControllerInterface } from '@proton/docs-shared'
+import {
+  AnonymousUserDisplayName,
+  type InternalEventBusInterface,
+  type SyncedEditorState,
+  type CommentControllerInterface,
+  type PublicNodeMeta,
+  type DocumentType,
+} from '@proton/docs-shared'
 import type { CreateComment } from '../../UseCase/CreateComment'
 import type { CreateThread } from '../../UseCase/CreateThread'
 import type { DocLoaderInterface } from './DocLoaderInterface'
@@ -22,13 +28,12 @@ import type { LoadDocument } from '../../UseCase/LoadDocument'
 import type { LoadThreads } from '../../UseCase/LoadThreads'
 import type { LoggerInterface } from '@proton/utils/logs'
 import type { MetricService } from '../Metrics/MetricService'
-import type { PublicDriveCompat, PublicNodeMeta } from '@proton/drive-store'
+import type { PublicDriveCompat } from '@proton/drive-store'
 import type { WebsocketServiceInterface } from '../Websockets/WebsocketServiceInterface'
 import { PublicRenameController } from '../../RenameController/RenameController'
 import type { GetNode } from '../../UseCase/GetNode'
 import { isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype'
 import { redirectToCorrectDocTypeIfNeeded } from '../../Util/redirect-to-correct-doc-type'
-import type { DocumentType } from '@proton/drive-store/store/_documents'
 import type { DocSizeTracker } from '../../SizeTracker/SizeTracker'
 import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
 

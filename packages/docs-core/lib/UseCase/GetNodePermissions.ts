@@ -1,7 +1,5 @@
 import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
-import type { DocumentRole } from '@proton/docs-shared'
-import { Result } from '@proton/docs-shared'
-import type { NodeMeta } from '@proton/drive-store'
+import { Result, type DocumentRole, type NodeMeta } from '@proton/docs-shared'
 import { getErrorString } from '../Util/GetErrorString'
 import type { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
 import type { CacheService } from '../Services/CacheService'

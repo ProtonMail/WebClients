@@ -1,6 +1,6 @@
-import type { DocumentMetaInterface, InternalEventBusInterface } from '@proton/docs-shared'
+import type { DocumentMetaInterface, InternalEventBusInterface, DecryptedNode } from '@proton/docs-shared'
 import { DocumentRole, Result } from '@proton/docs-shared'
-import type { DecryptedNode, DriveCompat } from '@proton/drive-store'
+import type { DriveCompat } from '@proton/drive-store'
 import type { LoggerInterface } from '@proton/utils/logs'
 import type { DocumentEntitlements } from '../Types/DocumentEntitlements'
 import type { CreateNewDocument } from '../UseCase/CreateNewDocument'

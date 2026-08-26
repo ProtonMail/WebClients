@@ -9,9 +9,8 @@ import { APPS } from '@proton/shared/lib/constants'
 
 import { DocumentHeader } from './DocumentHeader/DocumentHeader'
 import { DocsQuickSettings } from '../../DocsQuickSettings'
-import type { DocumentAction } from '@proton/drive-store'
 import { useDocsContext } from '../context'
-import type { DocumentType } from '@proton/drive-store/store/_documents'
+import type { DocumentAction, DocumentType } from '@proton/docs-shared'
 import { DebugModeProvider } from '~/utils/debug-mode-context'
 import { DocumentSizeLimitModal } from '../DocumentSizeLimitModal'
 

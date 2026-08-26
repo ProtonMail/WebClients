@@ -1,4 +1,4 @@
-import type { EditorSystemMode } from '@proton/docs-shared'
+import type { EditorSystemMode, DocumentType } from '@proton/docs-shared'
 import {
   BridgeOriginProvider,
   EDITOR_IFRAME_FOCUS_EVENT,
@@ -10,7 +10,6 @@ import {
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { versionCookieAtLoad } from '@proton/components/helpers/versionCookie'
 import type { LoggerInterface } from '@proton/utils/logs'
-import type { DocumentType } from '@proton/drive-store/store/_documents'
 import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
 import { getCookie } from '@proton/shared/lib/helpers/cookies'
 

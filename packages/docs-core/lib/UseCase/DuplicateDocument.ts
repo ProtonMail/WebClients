@@ -1,11 +1,11 @@
-import type { DecryptedNode, DocumentNodeMeta, DriveCompat, NodeMeta } from '@proton/drive-store'
+import type { DocumentNodeMeta, DriveCompat } from '@proton/drive-store'
+import type { NodeMeta, DocumentType, DecryptedNode } from '@proton/docs-shared'
 import { Result } from '@proton/docs-shared'
 
 import type { SeedInitialCommit } from './SeedInitialCommit'
 import type { GetDocumentMeta } from './GetDocumentMeta'
 import { getErrorString } from '../Util/GetErrorString'
 import { getPlatformFriendlyDateForFileName } from '@proton/shared/lib/docs/utils/getPlatformFriendlyDateForFileName'
-import type { DocumentType } from '@proton/drive-store/store/_documents'
 import { isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype'
 
 export class DuplicateDocument {

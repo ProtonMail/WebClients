@@ -3,7 +3,7 @@ import { createContext, useContext } from 'react'
 import type { UserModel } from '@proton/shared/lib/interfaces'
 import type { DriveCompat } from '@proton/drive-store/lib/useDriveCompat'
 import type { PublicDriveCompat } from '@proton/drive-store/lib'
-import type { DocumentAction } from '@proton/drive-store/store/_documents/useOpenDocument'
+import type { DocumentAction } from '@proton/docs-shared'
 
 export type PublicContextValue = {
   user: UserModel | undefined

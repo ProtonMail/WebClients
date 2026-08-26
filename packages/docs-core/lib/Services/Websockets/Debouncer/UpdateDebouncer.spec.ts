@@ -1,5 +1,5 @@
 import { DecryptedValue } from '@proton/docs-proto'
-import type { NodeMeta } from '@proton/drive-store/lib'
+import type { NodeMeta } from '@proton/docs-shared'
 import { UpdateDebouncer } from './UpdateDebouncer'
 import { DocumentDebounceMode } from './DocumentDebounceMode'
 import type { LoggerInterface } from '@proton/utils/logs'

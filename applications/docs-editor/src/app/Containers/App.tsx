@@ -6,6 +6,7 @@ import type {
   DocumentRoleType,
   TranslatedResult,
   SheetImportData,
+  DocumentType,
 } from '@proton/docs-shared'
 import {
   BridgeOriginProvider,
@@ -13,13 +14,13 @@ import {
   EDITOR_READY_POST_MESSAGE_EVENT,
   LiveCommentsEvent,
   SheetImportEvent,
+  EditorSystemMode,
 } from '@proton/docs-shared'
 
 import { bootstrapEditorApp } from '../Lib/Bootstrap'
 import { c } from 'ttag'
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader'
 import { Editor } from './Editor'
-import { EditorSystemMode } from '@proton/docs-shared/lib/EditorSystemMode'
 import { EditorUserMode } from '../Lib/EditorUserMode'
 import { exportDataFromEditorState } from '../Conversion/Exporter/ExportDataFromEditorState'
 import { loadLocales } from '@proton/account/bootstrap'
@@ -46,7 +47,6 @@ import type { useBridge } from '../Lib/useBridge'
 import useEffectOnce from '@proton/hooks/useEffectOnce'
 import { useEditorState } from './EditorStateProvider'
 import { IS_CHROME } from '../Shared/environment'
-import type { DocumentType } from '@proton/drive-store/store/_documents'
 import type { SpreadsheetRef } from './Spreadsheet/Spreadsheet'
 import { $generateJSONFromSelectedNodes } from '@lexical/clipboard'
 import { getEditorStateFromSerializedNodes } from '../Conversion/get-editor-state-from-nodes'

@@ -1,11 +1,11 @@
-import type { DecryptedNode, DriveCompat, NodeMeta } from '@proton/drive-store'
+import type { DriveCompat } from '@proton/drive-store'
+import { Result, type NodeMeta, type DecryptedNode } from '@proton/docs-shared'
 import type { FileToDocConversionResult } from '../Types/FileToDocConversionResult'
 import type { GetDocumentMeta } from './GetDocumentMeta'
 import { getErrorString } from '../Util/GetErrorString'
 import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
-import { Result } from '@proton/docs-shared'
-import { getNodeNameWithoutExtension } from '@proton/docs-shared'
 import { getDocsConversionType, isConvertibleToProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype'
+import { getNodeNameWithoutExtension } from '../Util/getNodeNameWithoutExtension'
 
 /**
  * Creates a new empty document shell file. This file will then be opened, and the contents will be converted by the editor.

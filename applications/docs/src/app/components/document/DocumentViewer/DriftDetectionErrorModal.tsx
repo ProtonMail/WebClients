@@ -5,7 +5,7 @@ import BasicModal from '@proton/components/components/modalTwo/BasicModal'
 import { useState } from 'react'
 import { c } from 'ttag'
 import { Button } from '@proton/atoms/Button/Button'
-import type { DocumentType } from '@proton/drive-store/store/_documents'
+import type { DocumentType } from '@proton/docs-shared'
 import { useQuickReportModal } from '~/components/QuickReportModal'
 
 interface DriftDetectionErrorModalProps extends ModalStateProps {
