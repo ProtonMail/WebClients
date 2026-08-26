@@ -468,12 +468,20 @@ export const resumeMemberRoleAssignment = ({
 export const privatizeMember = ({
     api,
     member,
+    orgKeyResetPrivatization,
 }: {
     api: Api;
     member: Member;
+    /**
+     * Flags the member as privatized by the organization key reset flow, so that the reset can be resumed and the
+     * member unprivatized again afterwards. It also lets the API skip the private members entitlement check.
+     */
+    orgKeyResetPrivatization?: boolean;
 }): ThunkAction<Promise<void>, OrganizationKeyState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch) => {
-        await api(privatizeMemberConfig(member.ID));
+        await api(
+            privatizeMemberConfig(member.ID, orgKeyResetPrivatization ? { OrgKeyResetPrivatization: true } : undefined)
+        );
         if (member.Self) {
             await dispatch(userThunk({ cache: CacheType.None }));
         }

@@ -109,6 +109,20 @@ export type MemberUnprivatizationManualApproveState = {
     InvitationEmail: null;
 };
 
+export enum MEMBER_FLAGS {
+    /** The member still has to migrate to the passwordless organization key */
+    ToMigrateOrgKey = 1 << 0,
+    InactiveKey = 1 << 1,
+    /** The member belongs to a non-primary organization */
+    NonPrimary = 1 << 2,
+    /**
+     * The member was temporarily converted to private as part of the organization key reset flow
+     * (privatize non-private members > rotate the organization key > unprivatize them back).
+     * The API clears it when the member is unprivatized again.
+     */
+    OrgKeyResetPrivatization = 1 << 3,
+}
+
 export enum TwoFactorStatusFlags {
     Totp = 1 << 0,
     Fido2 = 1 << 1,
@@ -138,6 +152,8 @@ export interface Member {
     TwoFactorRequiredTime: number;
     SSO: 1 | 0;
     Unprivatization: null | MemberUnprivatization;
+    /** Bitmap of {@link MEMBER_FLAGS} */
+    Flags: number;
 }
 
 export interface MemberReadyForAutomaticUnprivatization extends Member {
