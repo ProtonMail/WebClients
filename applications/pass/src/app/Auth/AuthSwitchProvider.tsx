@@ -1,5 +1,5 @@
 import type { FC, PropsWithChildren } from 'react';
-import { createContext, useContext, useEffect, useMemo, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 
 import { useServiceWorker } from 'proton-pass-web/app/ServiceWorker/client/ServiceWorkerProvider';
 import type { ServiceWorkerClientMessageHandler } from 'proton-pass-web/app/ServiceWorker/client/client';
@@ -11,6 +11,7 @@ import { clearUserLocalData, getSessionKey } from 'proton-pass-web/lib/storage';
 import useInstance from '@proton/hooks/useInstance';
 import { AppStateManager } from '@proton/pass/components/Core/AppStateManager';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
+import { SessionsContext } from '@proton/pass/components/Core/SessionsProvider';
 import { reloadHref } from '@proton/pass/components/Navigation/routing';
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
 import { api } from '@proton/pass/lib/api/api';
@@ -20,22 +21,8 @@ import { AppStatus, type MaybeNull } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
 export const AuthSwitchContext = createContext<MaybeNull<AuthSwitchService>>(null);
-export const SessionsContext = createContext<SwitchableSession[]>([]);
 
 export const useAuthSwitch = createUseContext(AuthSwitchContext);
-export const useSessions = () => useContext(SessionsContext);
-
-export const useAvailableSessions = () => {
-    const sessions = useSessions();
-    const authStore = useAuthStore();
-
-    return useMemo(() => {
-        const currentLocalID = authStore?.getLocalID();
-        return sessions.filter(({ LocalID, PrimaryEmail, DisplayName }) =>
-            Boolean(LocalID !== currentLocalID && (PrimaryEmail || DisplayName))
-        );
-    }, [sessions]);
-};
 
 export const AuthSwitchProvider: FC<PropsWithChildren> = ({ children }) => {
     const authStore = useAuthStore();
