@@ -10,7 +10,6 @@ import type {
 } from '@proton/encrypted-search/models';
 
 import type { ESBaseMessage, ESMessageContent } from '../../models/encryptedSearch';
-
 import type { IndexService } from '../indexation/IndexService';
 import type { Search } from '../search/Search';
 import type { SearchService } from '../search/SearchService';
@@ -134,10 +133,6 @@ export class ESAdapter implements FunctionsV2 {
         // opens the search box (see `MailSearch.handleOpen`). We repurpose it to spin up the v2 worker
         // ahead of time, so the cold start overlaps with the user typing their query instead of being
         // paid on the first search.
-
-        // we can't have concurrent access to the index,
-        // so we need to stop indexing before we can search.
-        this.indexService.currentImport?.stop();
         await this.searchService.warmUp();
     }
 
@@ -203,6 +198,19 @@ export class ESAdapter implements FunctionsV2 {
         this.lastV1Status = v1Status;
         const wasContentIndexingDone = this.isV1ContentIndexingDone;
         this.isV1ContentIndexingDone = v1Status?.contentIndexingDone ?? false;
+
+        // v1 wipes its own index when it hits an error it can't recover from (`dbCorruptError` ->
+        // `esDelete`), which resets its status to the default: no DB, nothing indexed, i.e. "search is
+        // off, enable it again". A live job would paper over that with the synthesized status it holds
+        // during the v1 -> import handoff — either an "enabling" state that never completes (v1 will
+        // never report `contentIndexingDone` now) or, if the import happens to end, a "done" state on
+        // top of a wiped v1. So tear the job down and forward v1 verbatim, like we do when idle.
+        if (this.job && !v1Status?.dbExists) {
+            this.job.dispose();
+            this.job = undefined;
+            this.updateESStatus(v1Status);
+            return;
+        }
 
         if (this.job) {
             this.job.onV1Status(v1Status);

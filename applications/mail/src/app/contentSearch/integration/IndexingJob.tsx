@@ -99,6 +99,10 @@ export class IndexingJob {
     dispose() {
         this.abandoned = true;
         this.unsubscribe?.();
+        // The import's source is the v1 ES DB, and a teardown means that DB is going away (esDelete, or
+        // v1 wiping its own index after an error). Leaving the import running would have it read from a
+        // database being deleted underneath it, so stop it as well.
+        this.handle?.stop();
     }
 
     /**
@@ -133,6 +137,9 @@ export class IndexingJob {
             .importFromEncryptedSearch()
             .then((handle) => {
                 if (this.abandoned) {
+                    // Torn down while the import was starting up — `dispose` couldn't stop a handle it
+                    // hadn't seen yet, so stop it here.
+                    handle?.stop();
                     return;
                 }
                 if (!handle) {
