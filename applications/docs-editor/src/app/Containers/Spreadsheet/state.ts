@@ -43,11 +43,7 @@ import { useApplication } from '../ApplicationProvider'
 import { getBufferHash } from '@proton/docs-core/lib/utils/hash'
 import { SheetsPatchesType } from '@proton/docs-core/lib/Database/SheetsDBSchema'
 import type { SpreadsheetLocalYjsAuditKey, SpreadsheetLocalYjsUpdateAuditResult } from './yjs-local-update-audit'
-import {
-  detectLocalYjsUpdateDrift,
-  recordSpreadsheetLocalStateChange,
-  setCurrentStateBatchNumber,
-} from './yjs-local-update-audit'
+import { detectLocalYjsUpdateDrift, recordSpreadsheetLocalStateChange } from './yjs-local-update-audit'
 import { formatSpreadsheetYjsDriftLogDetails } from './yjs-drift-log'
 import { minutesToMs, secondsToMs } from './time-utils'
 import { getAccentColorForUsername } from './getAccentColorForUsername'
@@ -112,18 +108,6 @@ function getValueFromUpdateAction<T>(updateAction: UpdateAction<T>, prevValue: T
 type LocalStateStoreSetter = (partial: (state: LocalState) => Partial<LocalState>) => void
 
 let shouldRecordLocalStateChange = false
-
-/**
- * rowsncolumns handles calculations in batches and this number corresponds
- * to the current successful batch. we use it to keep track of the current batch
- * to store the local state for that particular batch, which we then use in
- * drift detection to compare the correct local vs yjs state.
- */
-let calculationBatchNumber: number | undefined
-function onCurrentBatchNumberChange(batchNumber: number) {
-  calculationBatchNumber = batchNumber
-}
-
 function createAuditedLocalStateSetter<Key extends SpreadsheetLocalYjsAuditKey>(
   key: Key,
   set: LocalStateStoreSetter,
@@ -133,8 +117,7 @@ function createAuditedLocalStateSetter<Key extends SpreadsheetLocalYjsAuditKey>(
       const previousValue = state[key]
       const nextValue = getValueFromUpdateAction(updateAction, previousValue)
       if (shouldRecordLocalStateChange) {
-        recordSpreadsheetLocalStateChange(key, previousValue, nextValue, calculationBatchNumber)
-        calculationBatchNumber = undefined
+        recordSpreadsheetLocalStateChange(key, previousValue, nextValue)
       }
       return { [key]: nextValue } as Partial<LocalState>
     })
@@ -190,12 +173,7 @@ type SpreadsheetStateDependencies = {
 }
 
 function useSpreadsheetState({ localState, ...deps }: SpreadsheetStateDependencies) {
-  return useSpreadsheetStateOriginal({
-    ...localState,
-    ...deps,
-    enableExcelfileDragDrop: false,
-    onCurrentBatchNumberChange,
-  })
+  return useSpreadsheetStateOriginal({ ...localState, ...deps, enableExcelfileDragDrop: false })
 }
 
 type SpreadsheetState = ReturnType<typeof useSpreadsheetState>
@@ -464,7 +442,7 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
     }
   })
 
-  const onChangeHistory: UseSpreadsheetProps['onChangeHistory'] = (patches, batchNumber) => {
+  const onChangeHistory: UseSpreadsheetProps['onChangeHistory'] = (patches) => {
     if (deps.isReadonly && !deps.isConversionFlow) {
       console.error('Attempted to modify readonly spreadsheet')
       return
@@ -501,6 +479,17 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
         return true
       }
 
+      /**
+       * Temporary fix to prevent false positives when batched calculations are happening.
+       */
+      if (
+        patches.some(
+          (patch) => 'sheetData' in patch[0] && 'isFullRecalc' in patch[0] && patch[0].disableRecalc === true,
+        )
+      ) {
+        return true
+      }
+
       const driftLogDetails = formatSpreadsheetYjsDriftLogDetails({
         differences: driftResult.differences,
         localChangedKeys: driftResult.localChangedKeys,
@@ -524,9 +513,6 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
 
     try {
       deps.docState.runWithDocumentUpdateGuard(shouldPropagateCurrentUpdate, () => {
-        if (batchNumber) {
-          setCurrentStateBatchNumber(batchNumber)
-        }
         // eslint-disable-next-line @typescript-eslint/no-use-before-define
         yjsState.onBroadcastPatch(patches)
       })
