@@ -22,5 +22,6 @@ export * from './secure-links';
 export * from './settings';
 export * from './shared';
 export * from './shares';
+export * from './ui';
 export * from './user';
 export * from './vaults';

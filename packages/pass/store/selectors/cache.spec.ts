@@ -34,4 +34,9 @@ describe('selectCachableState', () => {
         const state = { ...stateFor(SyncStrategy.USER_EVENTS), assignedModelId: '2026.10.1-lr' };
         expect(selectCachableState(state).assignedModelId).toBeNull();
     });
+
+    test('never caches `ui`', () => {
+        const state = { ...stateFor(SyncStrategy.USER_EVENTS), ui: { values: { key: true } } };
+        expect(selectCachableState(state).ui).toEqual({ values: {} });
+    });
 });
