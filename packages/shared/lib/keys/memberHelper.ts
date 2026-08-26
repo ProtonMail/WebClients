@@ -1,7 +1,9 @@
 import { ADDRESS_STATUS } from '../constants';
+import { hasBit } from '../helpers/bitset';
 import { canonicalizeInternalEmail } from '../helpers/email';
 import {
     type EnhancedMember,
+    MEMBER_FLAGS,
     MEMBER_STATE,
     type Member,
     type MemberInvitationData,
@@ -78,6 +80,22 @@ export const getMemberUnprivatizationMode = (member?: Member) => {
         mode: MemberUnprivatizationMode.None,
         pending: false,
     };
+};
+
+/**
+ * True while the member is temporarily private because of an organization key reset. The flag is set when the
+ * member is privatized and cleared by the API once the member has been unprivatized again.
+ */
+export const getMemberHasOrgKeyResetPrivatization = (member: Member) => {
+    return hasBit(member.Flags, MEMBER_FLAGS.OrgKeyResetPrivatization);
+};
+
+/**
+ * A member that was privatized for an organization key reset but has not been sent an unprivatization request yet.
+ * This happens when the reset flow gets interrupted (e.g. the page is refreshed) before the requests went out.
+ */
+export const getIsMemberPendingOrgKeyResetUnprivatization = (member: Member) => {
+    return getMemberHasOrgKeyResetPrivatization(member) && !member.Unprivatization;
 };
 
 export const getMemberEmailOrName = (member: Member) => {
