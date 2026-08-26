@@ -38,7 +38,6 @@ ruleTester.run('no-playwright-string-tag', rule, {
                 {
                     column: 30,
                     message: 'Test tags cannot be strings, please use the TEST_TAGS enum constant instead.',
-                    type: 'Literal',
                 },
             ],
         },
@@ -57,7 +56,6 @@ ruleTester.run('no-playwright-string-tag', rule, {
                 {
                     column: 30,
                     message: 'Test tags cannot be strings, please use the TEST_TAGS enum constant instead.',
-                    type: 'Literal',
                 },
             ],
         },
@@ -76,7 +74,6 @@ ruleTester.run('no-playwright-string-tag', rule, {
                 {
                     column: 31,
                     message: 'Test tags cannot be strings, please use the TEST_TAGS enum constant instead.',
-                    type: 'Literal',
                 },
             ],
         },
@@ -95,12 +92,10 @@ ruleTester.run('no-playwright-string-tag', rule, {
                 {
                     column: 31,
                     message: 'Test tags cannot be strings, please use the TEST_TAGS enum constant instead.',
-                    type: 'Literal',
                 },
                 {
                     column: 40,
                     message: 'Test tags cannot be strings, please use the TEST_TAGS enum constant instead.',
-                    type: 'Literal',
                 },
             ],
         },
@@ -119,7 +114,6 @@ ruleTester.run('no-playwright-string-tag', rule, {
                 {
                     column: 46,
                     message: 'Test tags cannot be strings, please use the TEST_TAGS enum constant instead.',
-                    type: 'Literal',
                 },
             ],
         },
@@ -138,7 +132,6 @@ ruleTester.run('no-playwright-string-tag', rule, {
                 {
                     column: 46,
                     message: 'Test tags cannot be strings, please use the TEST_TAGS enum constant instead.',
-                    type: 'Literal',
                 },
             ],
         },
@@ -157,7 +150,6 @@ ruleTester.run('no-playwright-string-tag', rule, {
                 {
                     column: 46,
                     message: 'Test tags cannot be strings, please use the TEST_TAGS enum constant instead.',
-                    type: 'Literal',
                 },
             ],
         },
@@ -176,7 +168,6 @@ ruleTester.run('no-playwright-string-tag', rule, {
                 {
                     column: 46,
                     message: 'Test tags cannot be strings, please use the TEST_TAGS enum constant instead.',
-                    type: 'Literal',
                 },
             ],
         },
@@ -195,7 +186,6 @@ ruleTester.run('no-playwright-string-tag', rule, {
                 {
                     column: 30,
                     message: 'Test tags cannot be strings, please use the TEST_TAGS enum constant instead.',
-                    type: 'Literal',
                 },
             ],
         },
@@ -213,7 +203,6 @@ ruleTester.run('no-playwright-string-tag', rule, {
                 {
                     column: 46,
                     message: 'Test tags cannot be strings, please use the TEST_TAGS enum constant instead.',
-                    type: 'Literal',
                 },
             ],
         },
