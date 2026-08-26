@@ -1,11 +1,11 @@
 import { parseAsync } from 'docx-preview-cjs'
-import type { LexicalEditor, LexicalNode } from 'lexical'
+import type { LexicalEditor } from 'lexical'
 import { $createParagraphNode, $insertNodes } from 'lexical'
 
 import { TranslatedResult } from '@proton/docs-shared'
 import { c } from 'ttag'
 import { ParseDocxElements } from './Parsing/ParseDocxElement'
-import { CreateLexicalNodeFromDocxInfo } from './CreateLexicalNodeFromDocxInfo'
+import { mapDocxChildren } from './CreateLexicalNodeFromDocxInfo'
 
 export async function $importNodesFromDocx(
   editor: LexicalEditor,
@@ -25,7 +25,7 @@ export async function $importNodesFromDocx(
 
     editor.update(
       () => {
-        const nodes: LexicalNode[] = results.map(CreateLexicalNodeFromDocxInfo)
+        const nodes = mapDocxChildren(results)
         $insertNodes(nodes.concat($createParagraphNode()))
       },
       {
