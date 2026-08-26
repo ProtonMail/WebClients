@@ -9,6 +9,7 @@ import type { ButtonProps } from '@proton/atoms/Button/Button';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { MIN_PASSWORD_LENGTH } from '@proton/shared/lib/constants';
+import type { CreateMemberMode } from '@proton/shared/lib/interfaces';
 
 import FileInput from '../../../../components/input/FileInput';
 import useModalState from '../../../../components/modalTwo/useModalState';
@@ -20,7 +21,11 @@ import type { UserTemplate } from '../types';
 import CsvFormatErrorModal from './CsvFormatErrorModal';
 
 export interface Props {
-    onUpload: (data: UserTemplate[]) => void;
+    /**
+     * The mode is detected from the uploaded file rather than taken from the selection, so it's handed
+     * back to the caller along with the users.
+     */
+    onUpload: (data: UserTemplate[], mode: CreateMemberMode) => void;
     className?: string;
     children?: ReactNode;
     color?: ButtonProps['color'];
@@ -62,7 +67,7 @@ const UploadCSVFileButton = ({
         const jsxErrors: ReactNode[] = [];
 
         try {
-            const { users, errors } = await parseMultiUserCsv(files, csvConfig);
+            const { users, errors, mode } = await parseMultiUserCsv(files, csvConfig);
 
             if (errors.length) {
                 const requiredEmailErrors = errors.filter(
@@ -127,7 +132,7 @@ const UploadCSVFileButton = ({
                 return;
             }
 
-            onUpload(users);
+            onUpload(users, mode);
         } catch (error: any) {
             if (!error.message) {
                 return;

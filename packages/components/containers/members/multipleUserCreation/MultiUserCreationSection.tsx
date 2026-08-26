@@ -9,22 +9,22 @@ import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { CreateMemberMode } from '@proton/shared/lib/interfaces';
 import { getIsDomainActive } from '@proton/shared/lib/organization/helper';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import useModalState from '../../../components/modalTwo/useModalState';
 import SettingsParagraph from '../../account/SettingsParagraph';
 import SettingsSectionWide from '../../account/SettingsSectionWide';
 import CreateUserAccountsModal from './CreateUserAccountsModal/CreateUserAccountsModal';
+import DownloadCsvSampleButton from './DownloadCsvSampleButton';
 import UploadCSVFileButton from './UploadCSVFileButton';
 import type { CsvConfig } from './csv';
-import { downloadSampleCSV } from './csv';
 import type { UserTemplate } from './types';
 
-const defaultCsvConfig: Omit<CsvConfig, 'mode'> = {
+const defaultCsvConfig: CsvConfig = {
     multipleAddresses: true,
     includeStorage: true,
     includeVpnAccess: true,
     includePrivateSubUser: true,
+    mode: CreateMemberMode.Invitation,
 };
 
 const MultiUserCreationSection = ({ app }: { app: APP_NAMES }) => {
@@ -32,36 +32,27 @@ const MultiUserCreationSection = ({ app }: { app: APP_NAMES }) => {
     const [usersToImport, setUsersToImport] = useState<UserTemplate[]>();
     const [members] = useMembers();
     const [createUserAccountsModal, setCreateUserAccountsModal, renderCreateUserAccountsModal] = useModalState();
-    const isMagicLinkEnabled = useFlag('MagicLink');
-    const mode = isMagicLinkEnabled ? CreateMemberMode.Invitation : CreateMemberMode.Password;
-
-    const csvConfig = {
-        ...defaultCsvConfig,
-        mode,
-    };
+    const [detectedMode, setDetectedMode] = useState(defaultCsvConfig.mode);
 
     const verifiedDomains = useMemo(() => (customDomains || []).filter(getIsDomainActive), [customDomains]);
 
-    const onCSVFileUpload = (usersToImport: UserTemplate[]) => {
+    const onCSVFileUpload = (usersToImport: UserTemplate[], detectedMode: CreateMemberMode) => {
         setUsersToImport(usersToImport);
+        setDetectedMode(detectedMode);
         setCreateUserAccountsModal(true);
-    };
-
-    const handleDownloadClick = () => {
-        downloadSampleCSV(csvConfig);
     };
 
     return (
         <>
             {renderCreateUserAccountsModal && usersToImport && (
                 <CreateUserAccountsModal
-                    mode={mode}
+                    mode={detectedMode}
                     members={members}
                     usersToImport={usersToImport}
                     app={app}
                     verifiedDomains={verifiedDomains}
                     {...createUserAccountsModal}
-                    expectedCsvConfig={csvConfig}
+                    expectedCsvConfig={{ ...defaultCsvConfig, mode: detectedMode }}
                 />
             )}
             <SettingsSectionWide>
@@ -82,9 +73,9 @@ const MultiUserCreationSection = ({ app }: { app: APP_NAMES }) => {
                             </span>
                         </Tooltip>
                     ) : (
-                        <UploadCSVFileButton onUpload={onCSVFileUpload} color="norm" csvConfig={csvConfig} />
+                        <UploadCSVFileButton onUpload={onCSVFileUpload} color="norm" csvConfig={defaultCsvConfig} />
                     )}
-                    <Button onClick={handleDownloadClick}>{c('Action').t`Download CSV sample`}</Button>
+                    <DownloadCsvSampleButton csvConfig={defaultCsvConfig} />
                 </div>
             </SettingsSectionWide>
         </>

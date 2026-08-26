@@ -5,8 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import type { Domain, EnhancedMember } from '@proton/shared/lib/interfaces';
-import { CreateMemberMode } from '@proton/shared/lib/interfaces';
+import type { CreateMemberMode, Domain, EnhancedMember } from '@proton/shared/lib/interfaces';
 
 import type { ModalProps } from '../../components/modalTwo/Modal';
 import Modal from '../../components/modalTwo/Modal';
@@ -14,11 +13,10 @@ import ModalContent from '../../components/modalTwo/ModalContent';
 import ModalFooter from '../../components/modalTwo/ModalFooter';
 import ModalHeader from '../../components/modalTwo/ModalHeader';
 import useModalState from '../../components/modalTwo/useModalState';
-import SubUserCreateHint from './SubUserCreateHint';
 import CreateUserAccountsModal from './multipleUserCreation/CreateUserAccountsModal/CreateUserAccountsModal';
+import DownloadCsvSampleButton from './multipleUserCreation/DownloadCsvSampleButton';
 import UploadCSVFileButton from './multipleUserCreation/UploadCSVFileButton/index';
 import type { CsvConfig } from './multipleUserCreation/csv';
-import { downloadSampleCSV } from './multipleUserCreation/csv';
 import type { UserTemplate } from './multipleUserCreation/types';
 
 enum Step {
@@ -28,16 +26,11 @@ enum Step {
 
 interface IntroModalProps extends ModalProps {
     onBack: () => void;
-    onCSVFileUpload: (usersToImport: UserTemplate[]) => void;
+    onCSVFileUpload: (usersToImport: UserTemplate[], detectedMode: CreateMemberMode) => void;
     csvConfig: CsvConfig;
-    mode: CreateMemberMode;
 }
 
-const IntroModal = ({ onBack, onCSVFileUpload, csvConfig, mode, ...rest }: IntroModalProps) => {
-    const handleDownloadClick = () => {
-        downloadSampleCSV(csvConfig);
-    };
-
+const IntroModal = ({ onBack, onCSVFileUpload, csvConfig, ...rest }: IntroModalProps) => {
     return (
         <Modal {...rest}>
             <ModalHeader
@@ -47,18 +40,17 @@ const IntroModal = ({ onBack, onCSVFileUpload, csvConfig, mode, ...rest }: Intro
             <ModalContent className="pb-1">
                 <ol className="flex flex-column gap-2 pl-5 mb-6">
                     <li>
-                        <InlineLinkButton onClick={handleDownloadClick} color="norm" className="py-0">
-                            {c('Action').t`Download our CSV template`}
-                        </InlineLinkButton>
+                        <DownloadCsvSampleButton
+                            as={InlineLinkButton}
+                            color="norm"
+                            className="py-0"
+                            content={c('Action').t`Download our CSV template`}
+                            csvConfig={csvConfig}
+                        />
                     </li>
                     <li>{c('Info').t`Fill in user details`}</li>
                     <li>{c('Info').t`Upload your completed CSV file to create accounts`}</li>
                 </ol>
-                {mode === CreateMemberMode.Password && (
-                    <SubUserCreateHint className="mt-2 bg-weak">
-                        {c('Info').t`Remember to share the user's sign in details with them.`}
-                    </SubUserCreateHint>
-                )}
             </ModalContent>
             <ModalFooter>
                 <Button onClick={onBack}>{c('Action').t`Back`}</Button>
@@ -71,7 +63,6 @@ const IntroModal = ({ onBack, onCSVFileUpload, csvConfig, mode, ...rest }: Intro
 interface Props extends ModalProps {
     onBack: () => void;
     app: APP_NAMES;
-    mode: CreateMemberMode;
     verifiedDomains: Domain[];
     members: EnhancedMember[] | undefined;
     csvConfig: CsvConfig;
@@ -84,7 +75,6 @@ interface Props extends ModalProps {
 const SubUserBulkCreateModal = ({
     onBack,
     app,
-    mode,
     verifiedDomains,
     members,
     csvConfig,
@@ -95,11 +85,13 @@ const SubUserBulkCreateModal = ({
     ...rest
 }: Props) => {
     const [step, setStep] = useState<Step>(Step.INSTRUCTION);
+    const [detectedMode, setDetectedMode] = useState(csvConfig.mode);
     const [usersToImport, setUsersToImport] = useState<UserTemplate[]>();
     const [createUserAccountsModal, setCreateUserAccountsModal, renderCreateUserAccountsModal] = useModalState();
 
-    const onCSVFileUpload = (usersToImport: UserTemplate[]) => {
+    const onCSVFileUpload = (usersToImport: UserTemplate[], detectedMode: CreateMemberMode) => {
         setUsersToImport(usersToImport);
+        setDetectedMode(detectedMode);
         setCreateUserAccountsModal(true);
         setStep(Step.SELECT_USER);
     };
@@ -111,18 +103,18 @@ const SubUserBulkCreateModal = ({
                 usersToImport={usersToImport}
                 app={app}
                 verifiedDomains={verifiedDomains}
-                expectedCsvConfig={csvConfig}
+                expectedCsvConfig={{ ...csvConfig, mode: detectedMode }}
                 disableStorageValidation={disableStorageValidation}
                 disableDomainValidation={disableDomainValidation}
                 disableAddressValidation={disableAddressValidation}
                 useEmail={useEmail}
-                mode={mode}
+                mode={detectedMode}
                 {...createUserAccountsModal}
                 {...rest}
             />
         );
     }
-    return <IntroModal {...rest} mode={mode} onBack={onBack} onCSVFileUpload={onCSVFileUpload} csvConfig={csvConfig} />;
+    return <IntroModal {...rest} onBack={onBack} onCSVFileUpload={onCSVFileUpload} csvConfig={csvConfig} />;
 };
 
 export default SubUserBulkCreateModal;
