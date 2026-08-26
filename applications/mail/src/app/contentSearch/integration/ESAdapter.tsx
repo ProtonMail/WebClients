@@ -92,6 +92,8 @@ export class ESAdapter implements FunctionsV2 {
     private lastSearch?: Search;
     private coalescedResults?: FrameCoalescer<Parameters<ESSetResultsList<ESBaseMessage, ESMessageContent>>>;
     private isV1ContentIndexingDone = false;
+    /** Set when an import failed and left the v2 index partial; searches fall back to v1 from then on. */
+    private isV2IndexIncomplete = false;
     /** The current v1+v2 indexing job, if one is ongoing (a fresh index or a post-event refresh). */
     private job?: IndexingJob;
     /** Latest v1 status, kept so a job can be seeded with it (e.g. a refresh started from an event). */
@@ -128,6 +130,18 @@ export class ESAdapter implements FunctionsV2 {
 
     waitForSyncing?: (() => Promise<void>) | undefined;
 
+    /**
+     * Whether the v2 index can answer searches. It can't while a fresh index is being built — it is
+     * incomplete by definition until the import finishes — nor after an import failed and left it
+     * partial. Searches degrade to the server in both cases, never to v1's index, so results always
+     * come from either the v2 index or the API and never a mix of engines. While a job runs, the job's
+     * status already keeps queries away (it reports content search as off); this guard is what covers
+     * a failed import, where the status is v1's and says content search is on.
+     */
+    private get isV2IndexUsable(): boolean {
+        return !this.isV2IndexIncomplete && this.job?.mode !== 'index';
+    }
+
     async cacheIndexedDB() {
         // `cacheIndexedDB` is the legacy ES warmup hook; the search UI already calls it when the user
         // opens the search box (see `MailSearch.handleOpen`). We repurpose it to spin up the v2 worker
@@ -137,6 +151,11 @@ export class ESAdapter implements FunctionsV2 {
     }
 
     async encryptedSearch(setResultsList: ESSetResultsList<ESBaseMessage, ESMessageContent>) {
+        // Nothing to search yet — reporting failure hands the query to the server, which is the only
+        // fallback: an incomplete v2 index would silently return too few results.
+        if (!this.isV2IndexUsable) {
+            return false;
+        }
         const { isSearch, esSearchParams } = this.esCallbacks.getSearchParams();
         if (!isSearch || !esSearchParams) {
             return false;
@@ -173,6 +192,11 @@ export class ESAdapter implements FunctionsV2 {
     }
 
     private startJob(mode: JobMode) {
+        if (mode === 'index') {
+            // A fresh index is a new attempt at a complete v2 index, so a previous failure no longer
+            // describes it — its own outcome will.
+            this.isV2IndexIncomplete = false;
+        }
         this.job = new IndexingJob(
             {
                 indexService: this.indexService,
@@ -181,8 +205,16 @@ export class ESAdapter implements FunctionsV2 {
                 updateESProgress: this.updateESProgress,
                 // Read the current v1 instance at call time — its identity changes per render.
                 waitForV1Sync: () => this.esLibraryFunctionsV1.waitForSyncing?.() ?? Promise.resolve(),
-                onFinished: () => {
+                onFinished: (outcome) => {
                     this.job = undefined;
+                    // A fresh index whose import failed leaves the v2 index incomplete, with nothing
+                    // scheduled to complete it. Keep searches on the server for the rest of the session
+                    // rather than answering from a partial index; the next startup re-drives the import
+                    // and can clear this. A failed *refresh* is not disqualifying: the index is whole
+                    // except for the messages one event touched, and the next event retries.
+                    if (mode === 'index' && outcome === 'failed') {
+                        this.isV2IndexIncomplete = true;
+                    }
                 },
             },
             mode
@@ -309,6 +341,11 @@ export class ESAdapter implements FunctionsV2 {
     }
 
     enableContentSearch(options?: { isRefreshed?: boolean; isBackgroundIndexing?: boolean; notify?: boolean }) {
+        // Doubles as Resume. If we paused the import ourselves, resuming it is all that's left to do —
+        // v1 finished its own phase long before.
+        if (this.job?.resumeImport()) {
+            return Promise.resolve();
+        }
         return this.esLibraryFunctionsV1.enableContentSearch(options);
     }
 
@@ -331,6 +368,12 @@ export class ESAdapter implements FunctionsV2 {
     }
 
     pauseContentIndexing() {
+        // Pausing means "stop downloading and indexing", and past the handoff the import is what's
+        // doing that — v1 is done. Let the job stop it, and don't forward: v1's `pauseContentIndexing`
+        // would overwrite the `ACTIVE` progress row it just wrote with `PAUSED`.
+        if (this.job?.pauseImport()) {
+            return Promise.resolve();
+        }
         return this.esLibraryFunctionsV1.pauseContentIndexing();
     }
 
