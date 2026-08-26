@@ -3771,6 +3771,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Μη αποκρυπτογραφήσιμο όνομα"
+      ],
+      "Because this document was in a shared folder, only the folder owner can restore it": [
+        "Επειδή αυτό το έγγραφο βρισκόταν σε έναν κοινόχρηστο φάκελο, μόνο ο κάτοχος του φακέλου μπορεί να το επαναφέρει"
       ]
     },
     "error": {
@@ -11309,6 +11312,16 @@
       ],
       "One plan, more power": [
         "Ένα πλάνο, περισσότερη δύναμη"
+      ]
+    },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Δοκιμάστε το τώρα"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Τώρα έχετε πρόσβαση στη νέα εφαρμογή ${ CALENDAR_APP_NAME }. ${ link }"
       ]
     }
   }

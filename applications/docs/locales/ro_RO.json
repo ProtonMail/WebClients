@@ -3803,6 +3803,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nume nedecriptabil."
+      ],
+      "Because this document was in a shared folder, only the folder owner can restore it": [
+        "Deoarece acest document se afla într-un folder partajat, numai proprietarul folderului îl poate restaura."
       ]
     },
     "error": {
@@ -11519,6 +11522,16 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Perioada de evaluare se va încheia la ${ textDate }. Nu vă vom taxa dacă anulați înainte de ${ textDate }. ${ action }"
+      ]
+    },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Încercați acum"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Acum aveți acces la noua aplicație ${ CALENDAR_APP_NAME }. ${ link }"
       ]
     }
   }

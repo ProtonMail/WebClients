@@ -1603,7 +1603,7 @@
         "İçe aktarma özelleştirmesinden çıkılsın mı?"
       ],
       "Quit import?": [
-        "İçe aktarmadan çıkılsın mi?"
+        "İçe aktarmadan çıkılsın mı?"
       ]
     },
     "Contact field label": {
@@ -2415,7 +2415,7 @@
         "Tanzanya"
       ],
       "Tanzania, United Republic of": [
-        "Birleşik Tanzaya Cumhuriyeti"
+        "Birleşik Tanzanya Cumhuriyeti"
       ],
       "Thailand": [
         "Tayland"
@@ -2725,7 +2725,7 @@
         "Ücretsiz ${ MAIL_APP_NAME } hesabınız sınırlı depolama alanıyla sunulduğu için yalnızca son Gmail e-postalarınız içe aktarılacak."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
-        "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Limited tarifesine geçin."
+        "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Unlimited tarifesine geçin."
       ]
     },
     "description": {
@@ -2962,7 +2962,7 @@
         "${ DRIVE_APP_NAME } güncellendi. Lütfen sayfayı yenileyin."
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
-        "${ errorMessage }. Ayrıca ${ statusPageLink }na da bakabilirsiniz"
+        "${ errorMessage }. ${ statusPageLink } üzerinden de kontrol edebilirsiniz."
       ],
       "${ failureItems.length } item failed to be moved": [
         "${ failureItems.length } öge taşınamadı",
@@ -3559,7 +3559,7 @@
         "Bir sorun çıktı. Lütfen yeniden deneyin."
       ],
       "status page": [
-        "durum sayfası"
+        "Durum Sayfası"
       ],
       "Stopping the sharing of this item has failed": [
         "Bu öge paylaşımdan kaldırılamadı"
@@ -3771,6 +3771,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Şifresi çözülemeyen ad"
+      ],
+      "Because this document was in a shared folder, only the folder owner can restore it": [
+        "Bu belge paylaşımlı bir klasörde bulunduğundan yalnızca klasör sahibi onu geri yükleyebilir"
       ]
     },
     "error": {
@@ -5451,7 +5454,7 @@
         "Erişimi olan kişiler"
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
-        "PGP/ınline yalnızca düz metin biçimi ile uyumludur."
+        "PGP/Inline yalnızca düz metin biçimi ile uyumludur."
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME geçerli oluşturucu görünümünde iletiyi otomatik olarak gönderir."
@@ -11309,6 +11312,16 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Deneme süreniz ${ textDate } tarihinde sona erecek. ${ textDate } tarihinden önce iptal ederseniz sizden ücret alınmayacak. ${ action }"
+      ]
+    },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Hemen deneyin"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Artık yeni ${ CALENDAR_APP_NAME } uygulamasına erişebilirsiniz. ${ link }"
       ]
     }
   }

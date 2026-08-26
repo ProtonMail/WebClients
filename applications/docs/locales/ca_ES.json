@@ -3774,6 +3774,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ No es pot desxifrar aquest nom"
+      ],
+      "Because this document was in a shared folder, only the folder owner can restore it": [
+        "Aquest document es trobava en una carpeta compartida i només el propietari de la carpeta el pot restaurar"
       ]
     },
     "error": {
@@ -11369,6 +11372,16 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "La vostra prova finalitzarà el ${ textDate }. No se us cobrarà si cancel·leu abans del ${ textDate }. ${ action }"
+      ]
+    },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Proveu-ho ara"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Ara teniu accés a la nova ${ CALENDAR_APP_NAME }. ${ link }"
       ]
     }
   }
