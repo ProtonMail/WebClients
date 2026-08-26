@@ -4,7 +4,6 @@ import Price from '@proton/components/components/price/Price';
 import withDecimalPrecision from '@proton/utils/withDecimalPrecision';
 
 import { TaxMode } from '../../core/subscription/constants';
-import { getTaxMode } from '../../core/subscription/helpers';
 import type { SubscriptionEstimation } from '../../core/subscription/interface';
 
 export const formatTax = (checkResult: SubscriptionEstimation) => {
@@ -13,7 +12,7 @@ export const formatTax = (checkResult: SubscriptionEstimation) => {
         return null;
     }
 
-    const taxMode = getTaxMode(checkResult);
+    const taxMode = checkResult.TaxMode;
 
     const amount = checkResult.Taxes.reduce((acc, tax) => acc + tax.Amount, 0);
     const rate = withDecimalPrecision(
