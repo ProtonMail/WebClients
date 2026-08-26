@@ -2,7 +2,9 @@ import * as Comlink from 'comlink';
 
 import createListeners from '@proton/shared/lib/helpers/listeners';
 
-import { type ImportIssue, ImportIssueSeverity } from './Import';
+import type { DatabaseLock } from '../db/DatabaseLock';
+import { AsyncAbort } from '../utils/AsyncAbort';
+import { type ImportIssue, ImportIssueSeverity, type ImportNotifications } from './Import';
 import type ImportWorker from './ImportWorker';
 
 /** proxy class on main thread to report progress */
@@ -13,48 +15,56 @@ export class ImportHandle {
     private _issues: ImportIssue[] = [];
     private _startTime: number | undefined;
     private _completed: number = 0;
+    /** indexing can happen in several runs when interrupted by search. we try our best to represent this as a single operation in terms of progress updates, so keep track of previous completed count */
+    private _completedInPreviousRuns = 0;
     private _progress: number = 0;
-    private _total: number | undefined;
+    private _total: number | undefined = undefined;
     private importPromise?: Promise<void>;
+    private _started = false;
+    private stopAbortController = new AbortController();
 
     constructor(
-        private readonly worker: Comlink.Remote<ImportWorker>,
-        private readonly terminateWorker: () => void
-    ) {}
-
-    async start(
-        userId: string,
-        keys: {
+        private readonly userId: string,
+        private readonly keys: {
             indexV1Key: CryptoKey;
             indexV2Key: CryptoKey;
+        },
+        private readonly dbLock: DatabaseLock
+    ) {}
+
+    start(): Promise<void> {
+        // can only run once
+        if (this._started) {
+            return Promise.resolve();
         }
-    ) {
-        if (this.importPromise) {
-            return;
-        }
+        this._started = true;
         this._startTime = performance.now();
-        let total = Infinity;
-        this.importPromise = this.worker.import(
-            userId,
-            keys,
-            Comlink.proxy({
-                onTotalAvailable: (_total) => {
-                    total = _total;
-                    this._total = _total;
-                },
-                onCompleted: (completed) => {
-                    this._completed = completed;
-                    this.emitProgress(this.correctProgress(completed / total));
-                },
-                onIssue: (issue) => {
-                    this._issues.push(issue);
-                    this.onIssue.notify(this._issues);
-                },
-            })
-        );
-        this.importPromise
+        this.importPromise = this.dbLock.runIndexing(async (abortSignal) => {
+            // note that this callback can run multiple times if indexing is interrupted by search
+            const worker = new Worker(new URL('./import.worker.ts', import.meta.url));
+            // allow aborting from the db lock signal, and also from stop()
+            const asyncAbort = new AsyncAbort([abortSignal, this.stopAbortController.signal]);
+            try {
+                const wrappedWorker = Comlink.wrap<ImportWorker>(worker);
+                const workerPromise = wrappedWorker.import(this.userId, this.keys, this.createProgressListener());
+                await Promise.race([asyncAbort.promise, workerPromise]);
+            } catch (err) {
+                if (err instanceof DOMException && err.name === 'AbortError') {
+                    // don't forward the error from the stopAbortController
+                    if (abortSignal.aborted) {
+                        throw err;
+                    }
+                } else {
+                    throw err;
+                }
+            } finally {
+                worker.terminate();
+                asyncAbort.dispose();
+            }
+        });
+
+        this.importPromise = this.importPromise
             .finally(() => {
-                this.terminateWorker();
                 // this makes running return false, so it's important
                 // to do this before emitting the last event below!
                 this.importPromise = undefined;
@@ -64,10 +74,31 @@ export class ImportHandle {
                 this._issues.push({ message: err.message, id: 'none', severity: ImportIssueSeverity.Fatal });
                 this.onIssue.notify(this._issues);
             });
+        return this.importPromise;
+    }
+
+    private createProgressListener(): ImportNotifications {
+        return Comlink.proxy({
+            onTotalAvailable: (total) => {
+                this._completedInPreviousRuns += this._completed;
+                this._completed = 0;
+                this._total = total + this._completedInPreviousRuns;
+            },
+            onCompleted: (completed) => {
+                this._completed = completed;
+                if (typeof this._total === 'number') {
+                    this.emitProgress(this.correctProgress(this.completed / this._total));
+                }
+            },
+            onIssue: (issue) => {
+                this._issues.push(issue);
+                this.onIssue.notify(this._issues);
+            },
+        });
     }
 
     stop() {
-        this.terminateWorker();
+        this.stopAbortController.abort();
     }
 
     get issues() {
@@ -88,7 +119,7 @@ export class ImportHandle {
     }
 
     get completed(): number {
-        return this._completed;
+        return this._completed + this._completedInPreviousRuns;
     }
 
     get remainingMinutes(): number | undefined {
