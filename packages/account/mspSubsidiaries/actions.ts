@@ -12,7 +12,7 @@ import {
 } from '@proton/shared/lib/api/msp';
 import type { MspDelegatedManager } from '@proton/shared/lib/api/msp';
 import { DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
-import type { MspSubsidiary } from '@proton/shared/lib/interfaces/MspSubsidiary';
+import type { MspSubsidiary } from '@proton/shared/lib/interfaces/Msp';
 import { generateSubsidiaryOrganizationKeys } from '@proton/shared/lib/keys/organizationKeys';
 
 import { type AddressKeysState, addressKeysThunk } from '../addressKeys';

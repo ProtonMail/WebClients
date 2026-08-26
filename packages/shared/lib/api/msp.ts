@@ -1,5 +1,5 @@
 import type { Api } from '../interfaces';
-import type { MspSubsidiary } from '../interfaces/MspSubsidiary';
+import type { MspSubsidiary } from '../interfaces/Msp';
 import queryPages from './helpers/queryPages';
 import type { PaginationParams } from './interface';
 
@@ -12,6 +12,29 @@ export const getMspSubsidiaries = (params?: PaginationParams) => ({
 export const getMspBillingSummary = (mspId: string) => ({
     method: 'get',
     url: `core/v4/organizations/${mspId}/subsidiaries/billing-summary/cost`,
+});
+
+export const getMspDailyUsage = (mspId: string) => ({
+    method: 'get',
+    url: `core/v4/organizations/${mspId}/subsidiaries/daily-usage`,
+});
+
+export const getMspBillingPeriods = (mspId: string, params?: PaginationParams) => ({
+    method: 'get',
+    url: `core/v4/organizations/${mspId}/subsidiaries/billing-periods`,
+    params,
+});
+
+export type MspCsvReportType = 'billing-summary' | 'daily-usage';
+
+export const getMspCsvReport = (mspId: string, type: MspCsvReportType, month: number, year: number) => ({
+    method: 'get',
+    url: `core/v4/organizations/${mspId}/subsidiaries/${type}/csv`,
+    params: { Month: month, Year: year },
+    output: 'raw',
+    headers: {
+        accept: 'text/csv',
+    },
 });
 
 export const getAllMspSubsidiaries = (api: Api) => {
