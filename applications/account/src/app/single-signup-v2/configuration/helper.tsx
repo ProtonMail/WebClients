@@ -1,9 +1,16 @@
 import { c } from 'ttag';
 
+import { IcAlias } from '@proton/icons/icons/IcAlias';
 import { IcEyeSlash } from '@proton/icons/icons/IcEyeSlash';
 import { IcGlobe } from '@proton/icons/icons/IcGlobe';
+import { IcGrid2 } from '@proton/icons/icons/IcGrid2';
+import { IcKey } from '@proton/icons/icons/IcKey';
 import { IcLock } from '@proton/icons/icons/IcLock';
+import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
+import { IcMobile } from '@proton/icons/icons/IcMobile';
+import { IcPenSparks } from '@proton/icons/icons/IcPenSparks';
 import { IcShield } from '@proton/icons/icons/IcShield';
+import { IcSliders } from '@proton/icons/icons/IcSliders';
 import { BRAND_NAME, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
 import { MailFeatureFlag } from '@proton/unleash/Flags';
@@ -34,14 +41,14 @@ export const getGenericBenefits = (): BenefitItem[] => {
             key: 10,
             text: c('pass_signup_2023: Info').t`Protected by Swiss privacy laws`,
             icon: {
-                name: 'shield',
+                component: IcShield,
             },
         },
         {
             key: 11,
             text: c('pass_signup_2023: Info').t`Open-source and audited`,
             icon: {
-                name: 'magnifier',
+                component: IcMagnifier,
             },
         },
     ];
@@ -52,7 +59,7 @@ export const getBuiltInEncryptionBenefit = (): BenefitItem => {
         key: `built-in-encryption`,
         text: c('Signup: Info').t`Built-in encryption`,
         icon: {
-            name: 'lock',
+            component: IcLock,
         },
     };
 };
@@ -62,7 +69,7 @@ const getEndToEndEncryptionBenefit = (): BenefitItem => {
         key: `end-to-end-encryption`,
         text: c('Signup: Info').t`End-to-end encryption`,
         icon: {
-            name: 'lock',
+            component: IcLock,
         },
     };
 };
@@ -72,7 +79,7 @@ export const getSwissPrivacyLawsBenefit = (): BenefitItem => {
         key: `swiss-privacy-laws`,
         text: c('Signup: Info').t`Protected by Swiss privacy laws`,
         icon: {
-            name: 'shield',
+            component: IcShield,
         },
     };
 };
@@ -82,7 +89,7 @@ export const getWorksOnAllDevicesBenefit = (): BenefitItem => {
         key: `works-on-all-devices`,
         text: c('Signup: Info').t`Works on all devices`,
         icon: {
-            name: 'mobile',
+            component: IcMobile,
         },
     };
 };
@@ -92,7 +99,7 @@ export const getISO27001CertifiedBenefit = (): BenefitItem => {
         key: `iso27001-certified`,
         text: c('Signup: Info').t`ISO 27001 certified`,
         icon: {
-            name: 'globe',
+            component: IcGlobe,
         },
     };
 };
@@ -102,7 +109,7 @@ export const getBasedInSwitzerlandGDPRBenefit = (): BenefitItem => {
         key: `based-in-switzerland-gdpr`,
         text: c('Signup: Info').t`Based in Switzerland, GDPR compliant`,
         icon: {
-            name: 'shield',
+            component: IcShield,
         },
     };
 };
@@ -112,7 +119,7 @@ export const getTeamKnowsEncryptionBenefit = (): BenefitItem => {
         key: `team-knows-encryption`,
         text: c('Signup: Info').t`From the team that knows encryption`,
         icon: {
-            name: 'lock',
+            component: IcLock,
         },
     };
 };
@@ -122,7 +129,7 @@ export const getOpenSourceAndAuditedBenefit = (): BenefitItem => {
         key: `open-source-and-audited`,
         text: c('Signup: Info').t`Open source and audited`,
         icon: {
-            name: 'magnifier',
+            component: IcMagnifier,
         },
     };
 };
@@ -132,7 +139,7 @@ export const getAppsMailIncludedBenefit = (): BenefitItem => {
         key: `apps-mail-included`,
         text: c('Signup: Info').t`Calendar, password manager, file storage, and VPN included`,
         icon: {
-            name: 'grid-2',
+            component: IcGrid2,
         },
     };
 };
@@ -142,7 +149,7 @@ export const getAppsIncludedBenefit = (): BenefitItem => {
         key: `apps-included`,
         text: c('Signup: Info').t`Integrated email, calendar, file storage, password manager, and VPN`,
         icon: {
-            name: 'grid-2',
+            component: IcGrid2,
         },
     };
 };
@@ -152,7 +159,7 @@ export const getEmailAliasesBenefit = (): BenefitItem => {
         key: `email-aliases`,
         text: c('Signup: Info').t`Email aliases`,
         icon: {
-            name: 'alias',
+            component: IcAlias,
         },
     };
 };
@@ -162,7 +169,7 @@ export const getUnlimitedPasswordsBenefit = (): BenefitItem => {
         key: `unlimited-passwords`,
         text: c('Signup: Info').t`Unlimited passwords`,
         icon: {
-            name: 'key',
+            component: IcKey,
         },
     };
 };
@@ -172,7 +179,7 @@ export const getDeviceSyncBenefit = (): BenefitItem => {
         key: `device-sync`,
         text: c('Signup: Info').t`Device sync`,
         icon: {
-            name: 'mobile',
+            component: IcMobile,
         },
     };
 };
@@ -182,7 +189,7 @@ export const getAliasesEmailProtectionBenefit = (): BenefitItem => {
         key: `aliases-email-protection`,
         text: c('Signup: Info').t`10 aliases for email protection from breaches`,
         icon: {
-            name: 'alias',
+            component: IcAlias,
         },
     };
 };
@@ -192,7 +199,7 @@ export const getAdvancedSecurityBenefit = (): BenefitItem => {
         key: `advanced-security`,
         text: c('Signup: Info').t`Advanced security features`,
         icon: {
-            name: 'sliders',
+            component: IcSliders,
         },
     };
 };
@@ -205,7 +212,7 @@ const getScribeBenefit = (): BenefitItem => {
             ? c('mail_signup_2024: Info').t`${LUMO_SHORT_APP_NAME} writing assistant`
             : c('mail_signup_2024: Info').t`${BRAND_NAME} Scribe writing assistant`,
         icon: {
-            name: 'pen-sparks',
+            component: IcPenSparks,
         },
     };
 };
