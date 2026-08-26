@@ -10,23 +10,17 @@ import { ViewMenu } from './menus/ViewMenu'
 import { FormatMenu } from './menus/FormatMenu'
 import { DataMenu } from './menus/DataMenu'
 import { createComponent } from '../utils'
-import type { EditorRequiresClientMethods } from '@proton/docs-shared'
 
 const { s } = createStringifier(strings)
 
 export interface MenubarProps extends Ariakit.MenubarProps {
-  clientInvoker: EditorRequiresClientMethods
   isPublicMode: boolean
 }
 
-export const Menubar = createComponent(function Menubar({ clientInvoker, isPublicMode, ...props }: MenubarProps) {
+export const Menubar = createComponent(function Menubar({ isPublicMode, ...props }: MenubarProps) {
   return (
     <Ariakit.Menubar {...props} className={clsx('flex gap-5 print:hidden', props.className)}>
-      <FileMenu
-        renderMenuButton={<MenubarItem>{s('File')}</MenubarItem>}
-        clientInvoker={clientInvoker}
-        isPublicMode={isPublicMode}
-      />
+      <FileMenu renderMenuButton={<MenubarItem>{s('File')}</MenubarItem>} isPublicMode={isPublicMode} />
       <EditMenu renderMenuButton={<MenubarItem>{s('Edit')}</MenubarItem>} />
       <ViewMenu renderMenuButton={<MenubarItem>{s('View')}</MenubarItem>} />
       <InsertMenu renderMenuButton={<MenubarItem>{s('Insert')}</MenubarItem>} />

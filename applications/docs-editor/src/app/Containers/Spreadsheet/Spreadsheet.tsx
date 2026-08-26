@@ -427,13 +427,7 @@ function UI({ hidden, isRevisionMode, clientInvoker, isPublicMode }: UIProps) {
         />
       )}
       <div className="flex h-full min-h-0 w-full min-w-0 flex-col bg-[#F9FBFC] [grid-column:1/3] [grid-row:1/3]">
-        {!isRevisionMode && (
-          <Menubar
-            className="mx-[1.125rem] shrink-0 max-sm:hidden"
-            clientInvoker={clientInvoker}
-            isPublicMode={isPublicMode}
-          />
-        )}
+        {!isRevisionMode && <Menubar className="mx-[1.125rem] shrink-0 max-sm:hidden" isPublicMode={isPublicMode} />}
 
         <div className="flex min-h-0 min-w-0 grow">
           <div className="isolate z-10 flex h-full min-h-0 grow flex-col">

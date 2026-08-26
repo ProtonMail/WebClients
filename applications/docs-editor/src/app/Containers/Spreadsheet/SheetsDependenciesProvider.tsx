@@ -1,3 +1,4 @@
+import type { FileMenuAction } from '@proton/docs-shared'
 import type { FeatureFlag } from '@proton/unleash/Flags'
 import type { LoggerInterface } from '@proton/utils/logs'
 import type { PropsWithChildren } from 'react'
@@ -18,6 +19,7 @@ export type SheetsDependencies = {
   showNotification: (notification: { text: string; type?: 'error' | 'warning' | 'info' | 'success' }) => void
   // Dependencies that use the clientInvoker
   openLink: (url: string) => void
+  handleFileMenuAction: (action: FileMenuAction) => Promise<void>
 }
 
 const SheetsDependenciesContext = createContext<SheetsDependencies | undefined>(undefined)
