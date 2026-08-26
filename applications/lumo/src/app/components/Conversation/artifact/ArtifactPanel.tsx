@@ -4,7 +4,9 @@ import TextareaAutosize from 'react-textarea-autosize';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { IcArrowDownToSquare } from '@proton/icons/icons/IcArrowDownToSquare';
+import { IcBrandProtonDriveFilled } from '@proton/icons/icons/IcBrandProtonDriveFilled';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcChevronLeft } from '@proton/icons/icons/IcChevronLeft';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
@@ -13,9 +15,11 @@ import { IcPencil } from '@proton/icons/icons/IcPencil';
 import { IcSquares } from '@proton/icons/icons/IcSquares';
 
 import { useConversationActions } from '../../../providers/ConversationActionsProvider';
+import { useIsGuest } from '../../../providers/IsGuestProvider';
 import DropdownMenu from '../../DropdownMenu';
 import { useArtifactContext } from './ArtifactContext';
 import { ArtifactInlineEdit } from './ArtifactInlineEdit';
+import SaveArtifactToDriveModal from './SaveArtifactToDriveModal';
 import type { ArtifactRegistry } from './artifactRegistry';
 import { CodeRenderer } from './artifactRenderers';
 import { ARTIFACT_TYPE_CONFIG } from './artifactTypeConfig';
@@ -94,6 +98,9 @@ interface PanelHeaderProps {
     onStartManualEdit?: () => void;
     onSaveManualEdit?: () => void;
     onCancelManualEdit?: () => void;
+    // Save-to-Drive — document artifacts only (see `canSaveToDrive` in ArtifactPanel).
+    canSaveToDrive?: boolean;
+    onSaveToDrive?: () => void;
 }
 
 const getVersionLabel = (versionNumber: number, totalVersions: number) => {
@@ -125,6 +132,8 @@ const PanelHeader = ({
     onStartManualEdit,
     onSaveManualEdit,
     onCancelManualEdit,
+    canSaveToDrive,
+    onSaveToDrive,
 }: PanelHeaderProps) => (
     <div className="artifact-panel-header flex flex-row items-center gap-2 px-3 py-2 border-bottom border-weak shrink-0 w-full">
         {type ? (
@@ -278,6 +287,18 @@ const PanelHeader = ({
                     >
                         <IcArrowDownToSquare size={4} className="color-hint" />
                     </Button>
+                    {canSaveToDrive && onSaveToDrive && (
+                        <Button
+                            icon
+                            shape="ghost"
+                            size="small"
+                            onClick={onSaveToDrive}
+                            className="artifact-btn"
+                            title={c('collider_2025:Action').t`Save to Drive`}
+                        >
+                            <IcBrandProtonDriveFilled size={4} className="color-hint" />
+                        </Button>
+                    )}
                     {canManuallyEdit && onStartManualEdit && (
                         <Button
                             icon
@@ -368,6 +389,8 @@ const ArtifactPanel = ({ isGenerating = false }: ArtifactPanelProps) => {
     const [draftContent, setDraftContent] = useState('');
     const contentRef = useRef<HTMLDivElement>(null);
     const { handleSaveManualArtifactEdit } = useConversationActions();
+    const isGuest = useIsGuest();
+    const [saveToDriveModal, setSaveToDriveModal, renderSaveToDriveModal] = useModalState();
 
     // Reset to the live preview whenever the user switches to a different artifact (or version) —
     // a user manually inspecting the source of one webpage shouldn't land back on the source of
@@ -399,6 +422,7 @@ const ArtifactPanel = ({ isGenerating = false }: ArtifactPanelProps) => {
         versionCount !== undefined &&
         selectedVersionIndex === versionCount - 1;
     const manualEditDirty = draftContent !== artifact.content && draftContent.trim().length > 0;
+    const canSaveToDrive = artifact.type === 'document' && !isGuest;
 
     const handleStartManualEdit = () => {
         setDraftContent(artifact.content);
@@ -477,6 +501,8 @@ const ArtifactPanel = ({ isGenerating = false }: ArtifactPanelProps) => {
                 onStartManualEdit={handleStartManualEdit}
                 onSaveManualEdit={handleSaveManualEdit}
                 onCancelManualEdit={handleCancelManualEdit}
+                canSaveToDrive={canSaveToDrive}
+                onSaveToDrive={() => setSaveToDriveModal(true)}
             />
             <div
                 ref={contentRef}
@@ -508,6 +534,9 @@ const ArtifactPanel = ({ isGenerating = false }: ArtifactPanelProps) => {
                     </>
                 )}
             </div>
+            {canSaveToDrive && renderSaveToDriveModal && (
+                <SaveArtifactToDriveModal {...saveToDriveModal} artifact={artifact} />
+            )}
         </div>
     );
 };
