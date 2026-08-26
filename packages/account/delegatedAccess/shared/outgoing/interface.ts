@@ -8,21 +8,21 @@ export interface AddActionPayload {
     value: 'emergency-contact' | 'recovery-contact';
 }
 
-export interface UpsellActionPayload {
+interface UpsellActionPayload {
     type: 'upsell';
 }
 
-export interface DeleteActionPayload {
+interface DeleteActionPayload {
     type: 'delete-emergency-contact' | 'delete-recovery-contact';
     value: EnrichedOutgoingDelegatedAccess;
 }
 
-export interface ChangeWaitTimeActionPayload {
+interface ChangeWaitTimeActionPayload {
     type: 'change-wait-time';
     value: EnrichedOutgoingDelegatedAccess;
 }
 
-export interface GrantAccessActionPayload {
+interface GrantAccessActionPayload {
     type: 'grant-access';
     value: EnrichedOutgoingDelegatedAccess;
 }
@@ -37,7 +37,7 @@ export interface RevokeAccessActionPayload {
     value: EnrichedOutgoingDelegatedAccess;
 }
 
-export interface ViewAccessActionPayload {
+interface ViewAccessActionPayload {
     type: 'view-access';
     value: EnrichedOutgoingDelegatedAccess;
 }

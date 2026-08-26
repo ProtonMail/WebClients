@@ -52,7 +52,7 @@ import type { SignupConfiguration } from '../interface';
 import { SignupMode } from '../interface';
 import setupAccount from '../mail/account-setup.svg';
 
-export const getWalletBenefits = (): BenefitItem[] => {
+const getWalletBenefits = (): BenefitItem[] => {
     return [
         {
             key: 1,
@@ -118,7 +118,7 @@ const getSentinelFeature = () => {
     };
 };
 
-export const getFreeWalletFeatures = () => {
+const getFreeWalletFeatures = () => {
     return [
         getWallets(FREE_WALLETS),
         getWalletAccounts(FREE_WALLET_ACCOUNTS),
@@ -127,7 +127,7 @@ export const getFreeWalletFeatures = () => {
     ];
 };
 
-export const getUnlimitedFeatures = ({ plan }: { plan: Plan | undefined }) => {
+const getUnlimitedFeatures = ({ plan }: { plan: Plan | undefined }) => {
     if (!plan) {
         return [];
     }
@@ -148,7 +148,7 @@ export const getUnlimitedFeatures = ({ plan }: { plan: Plan | undefined }) => {
     ];
 };
 
-export const getVisionaryFeatures = ({ plan }: { plan: Plan | undefined }) => {
+const getVisionaryFeatures = ({ plan }: { plan: Plan | undefined }) => {
     if (!plan) {
         return [];
     }

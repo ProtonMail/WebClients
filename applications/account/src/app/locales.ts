@@ -7,9 +7,9 @@ const locales = createLocaleMap(
     (locale) => import(/* webpackChunkName: "locales/[request]" */ `../../locales/${locale}.json`)
 );
 
-export const localeRegex = /^\/([a-z]{2,3}(-[a-z]{2})?)\/?/;
+const localeRegex = /^\/([a-z]{2,3}(-[a-z]{2})?)\/?/;
 
-export const localeMap = Object.fromEntries(
+const localeMap = Object.fromEntries(
     Object.entries(getLocaleMap(Object.keys(getProtonConfig().LOCALES).map((locale) => `${locale}.json`))).map(
         ([key, value]) => [value, key]
     )

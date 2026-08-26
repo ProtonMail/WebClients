@@ -53,7 +53,7 @@ import { Steps, TOTAL_STEPS } from '../interface';
 
 const DEFAULT_DONATION_AMOUNT = 500;
 
-export interface DonationPaymentData {
+interface DonationPaymentData {
     paymentToken: string;
     amount: number;
     currency: Currency;

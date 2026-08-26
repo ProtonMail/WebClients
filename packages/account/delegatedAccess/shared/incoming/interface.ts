@@ -3,27 +3,27 @@ import type { getEnrichedIncomingDelegatedAccess, getMetaIncomingDelegatedAccess
 export type MetaIncomingDelegatedAccess = ReturnType<typeof getMetaIncomingDelegatedAccess>;
 export type EnrichedIncomingDelegatedAccess = ReturnType<typeof getEnrichedIncomingDelegatedAccess>;
 
-export interface DeleteActionPayload {
+interface DeleteActionPayload {
     type: 'delete-emergency-contact' | 'delete-recovery-contact';
     value: EnrichedIncomingDelegatedAccess;
 }
 
-export interface RequestAccessActionPayload {
+interface RequestAccessActionPayload {
     type: 'request-access';
     value: EnrichedIncomingDelegatedAccess;
 }
 
-export interface CancelRequestAccessActionPayload {
+interface CancelRequestAccessActionPayload {
     type: 'cancel-request-access';
     value: EnrichedIncomingDelegatedAccess;
 }
 
-export interface AccessActionPayload {
+interface AccessActionPayload {
     type: 'access';
     value: EnrichedIncomingDelegatedAccess;
 }
 
-export interface RecoverActionPayload {
+interface RecoverActionPayload {
     type: 'recover';
     value: EnrichedIncomingDelegatedAccess;
 }

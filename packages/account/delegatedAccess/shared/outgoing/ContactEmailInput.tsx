@@ -11,13 +11,13 @@ import ContactEmailInputAutocomplete, {
     type ContactEmailInputAutocompleteProps,
 } from './ContactEmailInputAutocomplete';
 
-export const emailIncludesDomain = (domains: Set<string>, address: string) => {
+const emailIncludesDomain = (domains: Set<string>, address: string) => {
     const [, domain] = getEmailParts(address);
 
     return domains.has(domain);
 };
 
-export interface ContactEmailInputProps extends Omit<ContactEmailInputAutocompleteProps, 'options' | 'onValue'> {
+interface ContactEmailInputProps extends Omit<ContactEmailInputAutocompleteProps, 'options' | 'onValue'> {
     contactEmails: ContactEmail[] | undefined;
     protonDomains: Set<string>;
     addresses: Address[] | undefined;

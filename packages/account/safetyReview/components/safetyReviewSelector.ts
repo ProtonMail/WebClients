@@ -22,5 +22,3 @@ export const safetyReviewSelector = createSelector(
         };
     }
 );
-
-export type SafetyReviewState = ReturnType<typeof safetyReviewSelector>;

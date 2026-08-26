@@ -16,7 +16,7 @@ export const getHasPmMeAddress = (addresses?: Address[]) => {
     return !!addresses?.some(({ Type }) => Type === ADDRESS_TYPE.TYPE_PREMIUM);
 };
 
-export const getShowPmMeSection = (user: UserModel, addresses: Address[] | undefined) => {
+const getShowPmMeSection = (user: UserModel, addresses: Address[] | undefined) => {
     if (addresses === undefined) {
         return false;
     }

@@ -10,7 +10,7 @@ import { selectUserSettings } from '../userSettings';
 import { getLastModifiedDate } from './lastModifiedTime';
 import type { SessionRecoverySliceReducerState } from './sessionRecovery';
 
-export const selectSessionRecoverySliceState = (state: SessionRecoverySliceReducerState) => state.sessionRecovery;
+const selectSessionRecoverySliceState = (state: SessionRecoverySliceReducerState) => state.sessionRecovery;
 
 export const selectSessionRecoveryData = createSelector(
     [selectUser, selectUserSettings, selectAddresses, selectSessionRecoverySliceState],

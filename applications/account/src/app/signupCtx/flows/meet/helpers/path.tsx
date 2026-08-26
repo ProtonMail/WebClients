@@ -4,7 +4,7 @@ export enum MeetSignupIntent {
     PersonalRoom = 'personal-room',
 }
 
-export const isMeetSignupIntent = (value: string | null | undefined): value is MeetSignupIntent => {
+const isMeetSignupIntent = (value: string | null | undefined): value is MeetSignupIntent => {
     return (
         value === MeetSignupIntent.Schedule ||
         value === MeetSignupIntent.Rooms ||

@@ -3,13 +3,7 @@ import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { deleteAllOtherAuthDeviceConfig, rejectAuthDeviceConfig } from '@proton/shared/lib/api/authDevice';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import type { Address } from '@proton/shared/lib/interfaces';
-import {
-    type AuthDeviceOutput,
-    AuthDeviceState,
-    type DeviceSecretData,
-    deleteAuthDevice,
-} from '@proton/shared/lib/keys/device';
+import { type AuthDeviceOutput, AuthDeviceState, deleteAuthDevice } from '@proton/shared/lib/keys/device';
 import {
     activateAuthDevice,
     decryptAuthDeviceActivation,
@@ -21,15 +15,6 @@ import { addressKeysThunk } from '../addressKeys';
 import { addressesThunk } from '../addresses';
 import { userThunk } from '../user';
 import { type AuthDevicesState, authDeviceActions } from './authDevices';
-
-export interface ConfirmAuthDeviceData {
-    activation: {
-        token: string;
-        address: Address;
-    };
-    deviceSecretData: DeviceSecretData;
-    pendingAuthDevice: AuthDeviceOutput;
-}
 
 export const confirmPendingAuthDevice = ({
     pendingAuthDevice,

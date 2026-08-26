@@ -33,9 +33,6 @@ export const canManageOwnerRole = ({
     hasOrgKeyAccess: boolean;
 }): boolean => (currentUserRoles?.some(isOwnerRole) ?? false) && !isEditingSelf && hasOrgKeyAccess;
 
-export const isLegacyOrgAdminState = (isLegacyOrgAdmin: boolean, adminRolesIds: Set<string>): boolean =>
-    isLegacyOrgAdmin && adminRolesIds.size === 0;
-
 export const getTranslatedRoleName = (name: string): string => {
     switch (name) {
         case PREDEFINED_ROLE_NAME.OWNER:
@@ -46,20 +43,5 @@ export const getTranslatedRoleName = (name: string): string => {
             return c('Role').t`Security Admin`;
         default:
             return name;
-    }
-};
-
-export const getTranslatedRoleDescription = (name: string): string => {
-    switch (name) {
-        case PREDEFINED_ROLE_NAME.OWNER:
-            return c('Role description').t`Manage all users, groups, security, billing, and system configurations.`;
-        case PREDEFINED_ROLE_NAME.USER_ADMIN:
-            return c('Role description')
-                .t`Manage users, groups, and storage for all members, assign roles, and allocate licenses.`;
-        case PREDEFINED_ROLE_NAME.SECURITY_ADMIN:
-            return c('Role description')
-                .t`Configure security policies, data retention, and VPN infrastructure, and manage audit logs.`;
-        default:
-            return '';
     }
 };

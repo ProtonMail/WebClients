@@ -22,7 +22,7 @@ import LayoutLogosV2 from './LayoutLogosV2';
 
 import './Layout.scss';
 
-export interface Props {
+interface Props {
     children: ReactNode;
     hasFooter?: boolean;
     bottomRight?: ReactNode;

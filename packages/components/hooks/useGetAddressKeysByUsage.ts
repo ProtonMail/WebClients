@@ -1,10 +1,8 @@
 import { useCallback } from 'react';
 
-import {
-    type GetAddressKeysByUsage,
-    getAddressKeysByUsageThunk,
-} from '@proton/account/addressKeys/getAddressKeysByUsage';
+import { getAddressKeysByUsageThunk } from '@proton/account/addressKeys/getAddressKeysByUsage';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import type { GetAddressKeysByUsage } from '@proton/shared/lib/interfaces/hooks/GetAddressKeysByUsage';
 
 export type UseGetAddressKeysByUsage = () => GetAddressKeysByUsage;
 
