@@ -2,7 +2,6 @@ import { c } from 'ttag';
 
 import MeetLogo from '@proton/components/components/logo/MeetLogo';
 import { getCalendarAppointmentSchedulingText } from '@proton/components/containers/payments/features/calendar';
-import { getNUsersText } from '@proton/components/containers/payments/features/highlights';
 import type { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
 import { getPrivateAIChatFeature } from '@proton/components/containers/payments/features/lumo';
 import {
@@ -25,20 +24,10 @@ import {
     getVideoMeetingsFeature,
 } from '@proton/components/containers/payments/features/meet';
 import { getVPNWithNetShieldFeature } from '@proton/components/containers/payments/features/vpn';
-import { VISIONARY_WALLETS, getWallets } from '@proton/components/containers/payments/features/wallet';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { Plan, PlansMap } from '@proton/payments/core/plan/interface';
-import {
-    APPS,
-    BRAND_NAME,
-    LUMO_SHORT_APP_NAME,
-    MEET_APP_NAME,
-    MEET_SHORT_APP_NAME,
-    PROTON_SENTINEL_NAME,
-    SSO_PATHS,
-    VISIONARY_MAX_USERS,
-} from '@proton/shared/lib/constants';
+import { APPS, MEET_APP_NAME, MEET_SHORT_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { everythingInPlanOrAppNamePlusText } from '@proton/shared/lib/i18n/ttag';
 import { Audience } from '@proton/shared/lib/interfaces';
@@ -103,28 +92,6 @@ const getStorageFeature = (bytes: number): PlanCardFeatureDefinition => {
     };
 };
 
-const getVpnFeature = () => {
-    return {
-        text: c('wallet_signup_2024: Info').t`Ultra fast and private VPN`,
-        included: true,
-    };
-};
-
-const getPasswordManagerFeature = () => {
-    return {
-        text: c('wallet_signup_2024: Info').t`Encrypted password manager`,
-        included: true,
-    };
-};
-
-const getSentinelFeature = () => {
-    return {
-        text: c('wallet_signup_2024: Info').t`Advanced account protection`,
-        included: true,
-        tooltip: c('wallet_signup_2024: Info').t`${PROTON_SENTINEL_NAME} program`,
-    };
-};
-
 const getSecureCalendarFeature = (): PlanCardFeatureDefinition => {
     return {
         text: c('meet_2025: Info').t`Secure calendar`,
@@ -184,45 +151,6 @@ const getFreeMeetFeatures = () => {
         },
         {
             text: getMeetBuiltInChatText(),
-            included: true,
-        },
-    ];
-};
-
-export const getVisionaryFeatures = ({
-    plan,
-    previousPlanTitle,
-}: {
-    plan: Plan | undefined;
-    previousPlanTitle: string;
-}) => {
-    if (!plan) {
-        return [];
-    }
-    return [
-        {
-            text: everythingInPlanOrAppNamePlusText(previousPlanTitle),
-            included: true,
-        },
-        {
-            text: c('meet_2025: Info').t`100 ${BRAND_NAME} email addresses`,
-            included: true,
-        },
-        {
-            text: getNDomainsFeatureText(plan.MaxDomains),
-            included: true,
-        },
-        getStorageFeature(plan.MaxSpace),
-        getVpnFeature(),
-        getPasswordManagerFeature(),
-        getWallets(VISIONARY_WALLETS),
-        {
-            text: c('meet_2025: Info').t`Private and unlimited AI chat (${LUMO_SHORT_APP_NAME})`,
-            included: true,
-        },
-        getSentinelFeature(),
-        {
-            text: getNUsersText(VISIONARY_MAX_USERS),
             included: true,
         },
     ];

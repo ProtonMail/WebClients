@@ -17,7 +17,7 @@ import { getGroupKey } from './getGroupKey';
 
 type RequiredState = AddressesState & UserKeysState & OrganizationKeyState & KtState;
 
-export const setGroupAddressFlags = ({
+const setGroupAddressFlags = ({
     flagState,
     groupAddress,
     forwarderKey,

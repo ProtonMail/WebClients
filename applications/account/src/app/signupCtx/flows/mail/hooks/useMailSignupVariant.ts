@@ -6,7 +6,7 @@ export const MAIL_SIGNUP_VARIANTS = {
     C: 'c',
 } as const;
 
-export type MailSignupVariant = (typeof MAIL_SIGNUP_VARIANTS)[keyof typeof MAIL_SIGNUP_VARIANTS];
+type MailSignupVariant = (typeof MAIL_SIGNUP_VARIANTS)[keyof typeof MAIL_SIGNUP_VARIANTS];
 
 const useMailSignupVariant = (): MailSignupVariant => {
     const location = useLocation();

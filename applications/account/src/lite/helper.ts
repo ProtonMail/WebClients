@@ -16,7 +16,7 @@ export enum SupportedActions {
     VPNLite = 'vpn-lite',
 }
 
-export const LITE_APP_BASE_PATH = '/lite/space';
+const LITE_APP_BASE_PATH = '/lite/space';
 
 export const LiteAppPaths = {
     Recovery: `${LITE_APP_BASE_PATH}/recovery`,

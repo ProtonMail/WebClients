@@ -17,7 +17,7 @@ export interface IncomingDelegatedAccessProviderValue {
     };
 }
 
-export const IncomingControllerContext = createContext<IncomingDelegatedAccessProviderValue>({} as any);
+const IncomingControllerContext = createContext<IncomingDelegatedAccessProviderValue>({} as any);
 
 export const IncomingDelegatedAccessProvider = ({ children }: { children: ReactNode }) => {
     const listenersRef = useRef<Listeners<[ActionPayload], undefined> | null>(null);

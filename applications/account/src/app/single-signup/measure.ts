@@ -2,7 +2,7 @@ import type { CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { Currency } from '@proton/payments/core/interface';
 import type { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 
-export type InteractFields = 'username' | 'email' | 'email_confirm' | 'pwd' | 'pwd_confirm';
+type InteractFields = 'username' | 'email' | 'email_confirm' | 'pwd' | 'pwd_confirm';
 
 type TelemetryBoolean = 'yes' | 'no';
 type TelemetryPaymentMethods = {
@@ -13,7 +13,7 @@ type TelemetryPaymentMethods = {
 
 export type TelemetryPayType = 'free' | 'pay_cc' | 'pay_pp' | 'pay_pp_no_cc' | 'pay_btc';
 
-export type SignupFinishEvents = {
+type SignupFinishEvents = {
     event: TelemetryAccountSignupEvents.signupFinish;
     dimensions: {
         type: TelemetryPayType;
@@ -26,7 +26,7 @@ export type SignupFinishEvents = {
     };
 };
 
-export type InteractCreateEvents = {
+type InteractCreateEvents = {
     event: TelemetryAccountSignupEvents.interactAccountCreate;
     dimensions: {
         field: InteractFields;

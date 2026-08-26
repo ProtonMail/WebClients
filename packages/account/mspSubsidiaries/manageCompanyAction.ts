@@ -127,7 +127,7 @@ const pushSelfForkWithOrganizationId = async (api: Api, ActiveOrganizationID: st
     return response.Selector;
 };
 
-export const manageCompanyThunk = ({
+const manageCompanyThunk = ({
     id,
 }: {
     id: string;

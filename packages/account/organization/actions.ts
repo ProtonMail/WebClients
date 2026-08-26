@@ -59,12 +59,7 @@ export const setSelfQuota = (
     };
 };
 
-export const setKeys = (): ThunkAction<
-    Promise<void>,
-    RotateOrganizationKeysState,
-    ProtonThunkArguments,
-    UnknownAction
-> => {
+const setKeys = (): ThunkAction<Promise<void>, RotateOrganizationKeysState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch, _, extra) => {
         const organization = await dispatch(organizationThunk());
         if (organization.HasKeys) {

@@ -3,7 +3,7 @@ import type { PlanIDs } from '@proton/payments/core/interface';
 import type { PlansMap } from '@proton/payments/core/plan/interface';
 import { getPlanFromIDs } from '@proton/payments/core/planIDs';
 
-export const getSignupHref = ({
+const getSignupHref = ({
     plan,
     targetPath = window.location.pathname,
 }: {

@@ -1,6 +1,4 @@
-export { getLangAttribute } from '@proton/shared/lib/i18n/helper';
-
-export const getLanguage = (locale: string) => locale.split(/[_-]/)[0];
+const getLanguage = (locale: string) => locale.split(/[_-]/)[0];
 
 const localeMapping = {
     fr_FR: 'fr',
@@ -52,5 +50,3 @@ export const getLocaleMap = (localeFiles: string[]) => {
         return acc;
     }, {});
 };
-
-export default getLanguageLocale;

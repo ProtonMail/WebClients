@@ -2,7 +2,7 @@ import type { MonthlyRow, SeatDay } from '../types';
 
 export type { MonthlyRow, SeatDay };
 
-export const MONTHLY_RATE = 2.23;
+const MONTHLY_RATE = 2.23;
 
 // 24 months of history, newest first
 export const MOCK_MONTHLY_DATA: MonthlyRow[] = [

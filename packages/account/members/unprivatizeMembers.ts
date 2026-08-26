@@ -142,7 +142,7 @@ export const selectJoinedUnprivatizationState = createSelector(
     }
 );
 
-export const unprivatizeMembersManualHelper = ({
+const unprivatizeMembersManualHelper = ({
     membersToUnprivatize,
 }: {
     membersToUnprivatize: MemberReadyForManualUnprivatization[];
@@ -281,7 +281,7 @@ const getMembersToUnprivatize = ({
     return { membersToUnprivatize, membersToDelete, membersToApprove };
 };
 
-export const unprivatizeMembersAutomaticHelper = ({
+const unprivatizeMembersAutomaticHelper = ({
     membersToUnprivatize,
     options,
 }: {

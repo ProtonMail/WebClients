@@ -91,4 +91,3 @@ const slice = createSlice({
 
 export const eligibleTrialsReducer = { [name]: slice.reducer };
 export const eligibleTrialsThunk = modelThunk.thunk;
-export const setEligibleTrials = slice.actions.set;

@@ -16,7 +16,6 @@ import { getDefaultMainCurrency } from '@proton/payments/core/currencies';
 import { VatReverseChargeNotSupportedError } from '@proton/payments/core/errors';
 import type {
     Currency,
-    Cycle,
     CycleMapping,
     FreeSubscription,
     PaymentsApi,
@@ -72,7 +71,7 @@ import type { SessionData, SignupCacheResult, SubscriptionData } from '../signup
 import type { Options, PlanCard, PlanParameters, SignupConfiguration, SignupParameters2, Upsell } from './interface';
 import { UpsellTypes, isRegularPlanCard } from './interface';
 
-export const getIsBundleB2BPlan = (plan: PLANS | ADDON_NAMES | undefined) => {
+const getIsBundleB2BPlan = (plan: PLANS | ADDON_NAMES | undefined) => {
     return [PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024].some((bundlePlan) => plan === bundlePlan);
 };
 
@@ -787,7 +786,7 @@ export const getSessionDataFromSignup = (cache: SignupCacheResult): SessionData 
 };
 
 export type SubscriptionDataCycleMapping = Partial<{ [key in PLANS]: CycleMapping<SubscriptionData> }>;
-export const getPlanCardSubscriptionDataMapping = ({
+const getPlanCardSubscriptionDataMapping = ({
     result,
     plansMap,
 }: {
@@ -928,30 +927,6 @@ export const getPlanCardSubscriptionData = async ({
     );
 
     return getPlanCardSubscriptionDataMapping({ result, plansMap });
-};
-
-export const swapCurrency = (
-    subscriptionDataCycleMapping: SubscriptionDataCycleMapping,
-    currency: Currency
-): SubscriptionDataCycleMapping => {
-    return (
-        Object.entries(subscriptionDataCycleMapping) as [PLANS, CycleMapping<SubscriptionData>][]
-    ).reduce<SubscriptionDataCycleMapping>((acc, [planName, cycleMapping]) => {
-        acc[planName] = (Object.entries(cycleMapping) as [string, SubscriptionData][]).reduce<
-            CycleMapping<SubscriptionData>
-        >((acc, [cycle, subscriptionData]) => {
-            acc[+cycle as Cycle] = {
-                ...subscriptionData,
-                currency,
-                checkResult: {
-                    ...subscriptionData.checkResult,
-                    Currency: currency,
-                },
-            };
-            return acc;
-        }, {});
-        return acc;
-    }, {});
 };
 
 export const getSubscriptionMapping = ({
