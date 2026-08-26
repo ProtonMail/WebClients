@@ -5,6 +5,7 @@ import { useRoomContext } from '@livekit/components-react';
 import { RejoinReasonInfo } from '@proton-meet/proton-meet-core';
 import { Track } from 'livekit-client';
 
+import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { resetMeetingState } from '@proton/meet/store/resetMeetingState';
 import {
@@ -45,7 +46,6 @@ import { useDesktopAppRedirect } from '../../hooks/protonMeetContainer/useDeskto
 import { useJoinFlow } from '../../hooks/protonMeetContainer/useJoinFlow';
 import { useMeetingCleanup } from '../../hooks/protonMeetContainer/useMeetingCleanup';
 import { useMeetingConnection } from '../../hooks/protonMeetContainer/useMeetingConnection';
-import { useMeetingErrorContext } from '../../hooks/protonMeetContainer/useMeetingErrorContext';
 import { useMeetingInfoHydration } from '../../hooks/protonMeetContainer/useMeetingInfoHydration';
 import { useMlsSession } from '../../hooks/protonMeetContainer/useMlsSession';
 import { useRoomEventHandlers } from '../../hooks/protonMeetContainer/useRoomEventHandlers';
@@ -91,7 +91,9 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
 
     const { initializeDevices } = useMediaManagementContext();
 
-    const { meetingLinkNameRef, reportMeetError, clearSentryReportErrorCounts } = useMeetingErrorContext();
+    const meetingLinkNameRef = useRef<string>('');
+
+    const { reportMeetError, clearSentryReportErrorCounts } = useMeetErrorReporting();
 
     const {
         connectWithStunFallbackToTurnRelay,
