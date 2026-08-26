@@ -56,7 +56,7 @@ import type { ChargebeeCardProcessorHook } from '@proton/components/payments/rea
 import type { ChargebeeIdealProcessorHook } from '@proton/components/payments/react-extensions/useChargebeeIdeal';
 import type { ChargebeePaypalProcessorHook } from '@proton/components/payments/react-extensions/useChargebeePaypal';
 import type { ChargebeeDirectDebitProcessorHook } from '@proton/components/payments/react-extensions/useSepaDirectDebit';
-import { IDEAL_BRAND_NAME } from '@proton/shared/lib/constants';
+import { IDEAL_WERO_BRAND_NAME } from '@proton/shared/lib/constants';
 import { getApiSubdomainUrl } from '@proton/shared/lib/helpers/url';
 import { ColorScheme } from '@proton/shared/lib/themes/constants';
 
@@ -629,7 +629,7 @@ function useChargebeeHandles(
             abortSignal: AbortSignal
         ) => {
             const setIdealPaymentIntentActionType = 'set-ideal-payment-intent';
-            const buttonLabel = c('Payments').t`Pay with ${IDEAL_BRAND_NAME}`;
+            const buttonLabel = c('Payments').t`Pay with ${IDEAL_WERO_BRAND_NAME}`;
 
             try {
                 return await iframeAction(
