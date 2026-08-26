@@ -4,15 +4,14 @@ import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Input } from '@proton/atoms/Input/Input';
-import type { SectionConfig, SubSectionConfig, SubrouteConfig } from '@proton/components';
-import { AutocompleteList, Icon, Marks, Option, useAutocomplete, useAutocompleteFilter } from '@proton/components';
+import type { IconComponent, SectionConfig, SubSectionConfig, SubrouteConfig } from '@proton/components';
+import { AutocompleteList, Marks, Option, useAutocomplete, useAutocompleteFilter } from '@proton/components';
 import {
     getIsSectionAvailable,
     getIsSubrouteAvailable,
     getIsSubsectionAvailable,
 } from '@proton/components/containers/layout/helper';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
-import type { IconName } from '@proton/icons/types';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
@@ -31,7 +30,7 @@ interface Props {
 
 interface SearchOption {
     value: string;
-    icon?: IconName;
+    icon?: IconComponent;
     to: string;
     in: string[];
 }
@@ -214,6 +213,7 @@ export const AutocompleteSettingsSearch = ({
             <AutocompleteList anchorRef={containerRef.current ? containerRef : inputRef} {...suggestionProps}>
                 {filteredOptions.map(({ chunks, text, option }, index) => {
                     const parent = option.in.join(' > ');
+                    const IconComponent = option.icon;
                     return (
                         <Option
                             key={`${parent}-${text}-${option.to}`}
@@ -227,9 +227,9 @@ export const AutocompleteSettingsSearch = ({
                             }}
                         >
                             <div className="flex">
-                                {option.icon ? (
+                                {IconComponent ? (
                                     <div className="pr-4">
-                                        <Icon name={option.icon} />
+                                        <IconComponent />
                                     </div>
                                 ) : null}
                                 <div className="flex-1">

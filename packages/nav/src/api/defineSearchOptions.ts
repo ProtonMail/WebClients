@@ -1,5 +1,4 @@
-import { SettingsLayoutVariant } from '@proton/components/containers/layout/interface.ts';
-import type { IconName } from '@proton/icons/types';
+import { type IconComponent, SettingsLayoutVariant } from '@proton/components/containers/layout/interface';
 
 import type { NavContext } from '../types/models';
 import type { NavArgs, NavItemResolved, NavResolved } from '../types/nav';
@@ -10,7 +9,7 @@ export function defineSearchOptions<TContext extends NavContext>(arg: NavArgs<TC
     const resolved: NavResolved = 'definition' in arg ? defineNavigation(arg) : arg;
     const results: SearchOption[] = [];
 
-    function traverse(items: NavItemResolved[], breadcrumbs: string[], nearestIcon: IconName | undefined): void {
+    function traverse(items: NavItemResolved[], breadcrumbs: string[], nearestIcon: IconComponent | undefined): void {
         for (const item of items) {
             const icon = item.icon ?? nearestIcon;
 

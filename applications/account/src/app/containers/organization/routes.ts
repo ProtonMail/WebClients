@@ -3,6 +3,20 @@ import { c } from 'ttag';
 import type { SectionConfig, SidebarConfig } from '@proton/components';
 import { canUseGroups } from '@proton/components';
 import { isScribeSupported } from '@proton/components/helpers/assistant';
+import { IcArchiveBox } from '@proton/icons/icons/IcArchiveBox';
+import { IcBuildings } from '@proton/icons/icons/IcBuildings';
+import { IcCardIdentity } from '@proton/icons/icons/IcCardIdentity';
+import { IcEarth } from '@proton/icons/icons/IcEarth';
+import { IcFilter } from '@proton/icons/icons/IcFilter';
+import { IcGlobe } from '@proton/icons/icons/IcGlobe';
+import { IcKey } from '@proton/icons/icons/IcKey';
+import { IcMonitor } from '@proton/icons/icons/IcMonitor';
+import { IcPassGroup } from '@proton/icons/icons/IcPassGroup';
+import { IcServers } from '@proton/icons/icons/IcServers';
+import { IcShield } from '@proton/icons/icons/IcShield';
+import { IcSliders } from '@proton/icons/icons/IcSliders';
+import { IcUsers } from '@proton/icons/icons/IcUsers';
+import { IcVault } from '@proton/icons/icons/IcVault';
 import { PLANS } from '@proton/payments/core/constants';
 import { getIsB2BAudienceFromPlan, planSupportsSSO, upsellPlanSSO } from '@proton/payments/core/plan/helpers';
 import {
@@ -192,7 +206,7 @@ export const getOrganizationAppRoutes = ({
             id: 'users',
             text: hasExternalMemberCapableB2BPlan ? c('Title').t`Users` : c('Title').t`Users and addresses`,
             to: '/users-addresses',
-            icon: 'users',
+            icon: IcUsers,
             available: canShowUsersAndAddressesSection,
             subsections: [
                 {
@@ -224,7 +238,7 @@ export const getOrganizationAppRoutes = ({
             id: 'groups',
             text: c('Title').t`Groups`,
             to: '/user-groups',
-            icon: 'pass-group',
+            icon: IcPassGroup,
             noTitle: true,
             available: canShowGroupsSection,
             upgradeRequired: isPassEssentials,
@@ -243,7 +257,7 @@ export const getOrganizationAppRoutes = ({
             id: 'domains',
             text: c('Title').t`Domain names`,
             to: '/domain-names',
-            icon: 'globe',
+            icon: IcGlobe,
             available: canShowDomainNamesSection,
             subsections: [
                 {
@@ -265,7 +279,7 @@ export const getOrganizationAppRoutes = ({
             id: 'orgKeys',
             text: subMenuTitle,
             to: '/organization-keys',
-            icon: 'buildings',
+            icon: IcBuildings,
             available:
                 canManageOrganization &&
                 (isPartOfFamily
@@ -308,7 +322,7 @@ export const getOrganizationAppRoutes = ({
             id: 'gateways',
             text: c('Title').t`Gateways`,
             to: '/gateways',
-            icon: 'servers',
+            icon: IcServers,
             available: permissions['account.gateway.read'] && (hasVpnB2BPlan || hasAnyB2bBundle(subscription)),
             subsections: [
                 {
@@ -325,7 +339,7 @@ export const getOrganizationAppRoutes = ({
             id: 'sharedServers',
             text: c('Title').t`Shared servers`,
             to: '/shared-servers',
-            icon: 'earth',
+            icon: IcEarth,
             available:
                 isSharedServerFeatureEnabled &&
                 permissions['account.shared_server.read'] &&
@@ -347,7 +361,7 @@ export const getOrganizationAppRoutes = ({
             description: c('Subtitle')
                 .t`Enforce VPN usage across your organization by blocking internet access unless a VPN connection is active.`,
             to: '/always-on-vpn',
-            icon: 'vault',
+            icon: IcVault,
             available:
                 isAlwaysOnVpnEnabled &&
                 permissions['account.always_on.read'] &&
@@ -358,7 +372,7 @@ export const getOrganizationAppRoutes = ({
             text: c('Title').t`Gateway monitor`,
             description: c('Subtitle').t`View VPN session details for your organization.`,
             to: '/gateway-monitor',
-            icon: 'monitor',
+            icon: IcMonitor,
             available: canShowB2BConnectionEvents,
             subsections: [
                 {
@@ -375,7 +389,7 @@ export const getOrganizationAppRoutes = ({
             id: 'activityMonitor',
             text: c('Title').t`Activity monitor`,
             to: '/activity-monitor',
-            icon: 'card-identity',
+            icon: IcCardIdentity,
             available: canShowB2BActivityMonitorEvents,
             upgradeRequired: isPassEssentials,
             subsections: [
@@ -393,7 +407,7 @@ export const getOrganizationAppRoutes = ({
             id: 'setup',
             text: subMenuTitle,
             to: '/multi-user-support',
-            icon: 'users',
+            icon: IcUsers,
             available: !!(
                 canManageOrganization && (isPartOfFamily ? !hasActiveOrganization : !hasActiveOrganizationKey)
             ),
@@ -423,7 +437,7 @@ export const getOrganizationAppRoutes = ({
             id: 'filter',
             text: c('Title').t`Organization filters`,
             to: '/organization-filters',
-            icon: 'filter',
+            icon: IcFilter,
             available:
                 permissions['account.organization_filter.read'] &&
                 app !== APPS.PROTONVPN_SETTINGS &&
@@ -446,7 +460,7 @@ export const getOrganizationAppRoutes = ({
             id: 'retentionPolicies',
             text: c('Title').t`Data retention`,
             to: '/retention-policies',
-            icon: 'archive-box',
+            icon: IcArchiveBox,
             available: canShowRetentionPolicies,
             subsections: [
                 {
@@ -463,7 +477,7 @@ export const getOrganizationAppRoutes = ({
             id: 'security',
             text: c('Title').t`Security`,
             to: '/authentication-security',
-            icon: 'shield',
+            icon: IcShield,
             available: canShowSecuritySection,
             subsections: [
                 {
@@ -514,7 +528,7 @@ export const getOrganizationAppRoutes = ({
             id: 'sso',
             text: c('Title').t`Single sign-on`,
             to: '/single-sign-on',
-            icon: 'key',
+            icon: IcKey,
             available: canShowSSOSection,
             upgradeRequired:
                 !planSupportsSSO(organization?.PlanName, isSsoForPbsEnabled) && !!upsellPlanSSO(organization?.PlanName),
@@ -523,7 +537,7 @@ export const getOrganizationAppRoutes = ({
             id: 'accessControl',
             text: c('Title').t`Access control`,
             to: '/access-control',
-            icon: 'sliders',
+            icon: IcSliders,
             available: canShowAccessControl,
             subsections: [
                 {

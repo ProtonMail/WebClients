@@ -140,7 +140,10 @@ export { default as SidebarList } from './components/sidebar/SidebarList';
 export { default as SidebarListItem, SubSidebarListItem } from './components/sidebar/SidebarListItem';
 export { default as SidebarListItemButton } from './components/sidebar/SidebarListItemButton';
 export { default as SidebarListItemContent } from './components/sidebar/SidebarListItemContent';
-export { default as SidebarListItemContentIcon } from './components/sidebar/SidebarListItemContentIcon';
+export {
+    default as SidebarListItemContentIcon,
+    navigationIconClassName,
+} from './components/sidebar/SidebarListItemContentIcon';
 export { default as SidebarListItemLink } from './components/sidebar/SidebarListItemLink';
 export { default as SidebarListItemSettingsLink } from './components/sidebar/SidebarListItemSettingsLink';
 export { default as SidebarLogo } from './components/sidebar/SidebarLogo';
@@ -292,6 +295,7 @@ export { default as LabelsSection } from './containers/labels/LabelsSection';
 export { default as EditLabelModal } from './containers/labels/modals/EditLabelModal';
 export type { LabelModel } from './containers/labels/modals/EditLabelModal';
 export type {
+    IconComponent,
     SectionConfig,
     SettingsAreaConfig,
     SidebarConfig,

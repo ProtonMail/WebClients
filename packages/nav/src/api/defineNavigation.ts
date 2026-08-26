@@ -55,7 +55,7 @@ function resolveItem<TContext extends NavContext>(
         id: definition.id,
         label: compute(definition.label, context),
         to,
-        icon: compute(definition.icon, context),
+        icon: definition.icon,
         meta: compute(definition.meta, context) ?? {},
         children: resolvedChildren.length ? resolvedChildren : undefined,
         sections: resolvedSections?.length ? resolvedSections : undefined,
@@ -69,8 +69,9 @@ function resolveItem<TContext extends NavContext>(
  * The `definition` argument should be declared with `as const satisfies NavDefinition<YourContext>`
  * to preserve literal types for use with `defineSearchOptions`.
  *
- * Each item field (`label`, `to`, `icon`, `meta`) may be provided statically or as
- * a function of the context. The optional `isVisible` predicate gates the item — if
+ * Each item field (`label`, `to`, `meta`) may be provided statically or as a function of the
+ * context. `icon` is the exception — it holds a component, which is already a function, so it is
+ * always taken as-is. The optional `isVisible` predicate gates the item — if
  * it returns `false` the item and its subtree are pruned. Items with no resolved `to`
  * and no surviving children are also pruned, cascading up so containers whose
  * entire subtree disappeared are removed too.
