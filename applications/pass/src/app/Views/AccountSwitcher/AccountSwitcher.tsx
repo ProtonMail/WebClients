@@ -1,9 +1,9 @@
 import type { FC } from 'react';
 
-import { useAvailableSessions } from 'proton-pass-web/app/Auth/AuthSwitchProvider';
 import { AccountSwitcherTooltip } from 'proton-pass-web/app/Views/AccountSwitcher/AccountSwitcherTooltip';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { useAvailableSessions } from '@proton/pass/components/Core/SessionsProvider';
 import { MenuUserPanel } from '@proton/pass/components/Menu/Sidebar/MenuUserPanel';
 
 export const AccountSwitcher: FC = () => {

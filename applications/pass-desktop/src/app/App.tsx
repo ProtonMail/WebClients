@@ -53,6 +53,7 @@ import { logStore } from 'proton-pass-web/lib/logger';
 import { monitor } from 'proton-pass-web/lib/monitor';
 import { settings } from 'proton-pass-web/lib/settings';
 import { spotlightProxy as spotlight } from 'proton-pass-web/lib/spotlight';
+import { sshAgent } from 'proton-pass-web/lib/ssh-agent';
 import { telemetry } from 'proton-pass-web/lib/telemetry';
 import { getTheme } from 'proton-pass-web/lib/theme';
 
@@ -136,6 +137,8 @@ export const getPassCoreProps = (): PassCoreProviderProps => ({
     },
 
     isFirstLaunch,
+
+    sshAgent,
 });
 
 export const App = () => {

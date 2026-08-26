@@ -2,29 +2,30 @@ import type { FC } from 'react';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
-import { sshAgent } from 'proton-pass-web/lib/ssh-agent';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import Checkbox from '@proton/components/components/input/Checkbox';
-import { InfoButton } from '@proton/pass/components/Layout/Button/InfoButton';
-import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
-import { useSpotlightFor } from '@proton/pass/components/Spotlight/WithSpotlight';
-import { UpgradeButton } from '@proton/pass/components/Upsell/UpgradeButton';
-import { UpsellRef } from '@proton/pass/constants';
-import { selectPassPlan } from '@proton/pass/store/selectors';
-import { selectVisibleNonTrashedSshKeyItems } from '@proton/pass/store/selectors/items';
-import { type Maybe, SpotlightMessage } from '@proton/pass/types';
-import { UserPassPlan } from '@proton/pass/types/api/plan';
-import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
-import { logger } from '@proton/pass/utils/logger';
 import { PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
+import { UpsellRef } from '../../../constants';
+import { selectPassPlan } from '../../../store/selectors';
+import { selectVisibleNonTrashedSshKeyItems } from '../../../store/selectors/items';
+import { type Maybe, SpotlightMessage } from '../../../types';
+import { UserPassPlan } from '../../../types/api/plan';
+import { getErrorMessage } from '../../../utils/errors/get-error-message';
+import { logger } from '../../../utils/logger';
+import { usePassCore } from '../../Core/PassCoreProvider';
+import { InfoButton } from '../../Layout/Button/InfoButton';
+import { useSpotlightFor } from '../../Spotlight/WithSpotlight';
+import { UpgradeButton } from '../../Upsell/UpgradeButton';
+import { SettingsPanel } from '../SettingsPanel';
 import { SSHAgentInstructionsModal } from './SSHAgentInstructionsModal';
 
 type SSHModalState = { show: true; hideFooter: boolean } | { show: false };
 
 const SshAgentDesktop: FC = () => {
+    const { sshAgent } = usePassCore();
     const { createNotification } = useNotifications();
     const sshKeys = useSelector(selectVisibleNonTrashedSshKeyItems);
     const instructionsSpotlight = useSpotlightFor(SpotlightMessage.SSH_AGENT_INSTRUCTIONS);
