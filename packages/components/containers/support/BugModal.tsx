@@ -36,6 +36,7 @@ import SelectTwo from '../../components/selectTwo/SelectTwo';
 import InputFieldTwo from '../../components/v2/field/InputField';
 import TextAreaTwo from '../../components/v2/input/TextArea';
 import useFormErrors from '../../components/v2/useFormErrors';
+import { getCharacterCountText } from '../../helpers/getCharacterCountText';
 import { getClientName, getReportInfo } from '../../helpers/report';
 import type { Screenshot } from './AttachScreenshot';
 import AttachScreenshot from './AttachScreenshot';
@@ -445,10 +446,7 @@ const BugModal = ({
                                 model.Description.length > REPORT_MAX_CHARS ? 'color-danger' : undefined
                             }`}
                         >
-                            {
-                                // translator: character count under the bug report description. Example: '120/4000 characters'
-                                c('Label').t`${model.Description.length}/${REPORT_MAX_CHARS} characters`
-                            }
+                            {getCharacterCountText(model.Description.length, REPORT_MAX_CHARS)}
                         </span>
                     }
                     rows={5}
