@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
+import { getESLogger } from '@proton/encrypted-search/esHelpers';
 import { SEARCH_TYPE, useSearchTelemetry } from '@proton/encrypted-search/useSearchTelemetry';
 import type { Filter, SearchParameters, Sort } from '@proton/shared/lib/mail/search';
 
@@ -150,6 +151,7 @@ export const useApplyEncryptedSearch = ({
                 }
             }
         } catch (error: any) {
+            getESLogger().error('[EncryptedSearch] error while running search: ' + error.toString());
             createNotification({
                 text: c('Error').t`There has been an issue with content search. Default search has been used instead.`,
                 type: 'error',
