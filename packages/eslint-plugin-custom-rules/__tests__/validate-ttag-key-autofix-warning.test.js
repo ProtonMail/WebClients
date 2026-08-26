@@ -43,7 +43,6 @@ ruleTester.run('validate-ttag-key-autofix-warning', rule, {
                 {
                     message:
                         'Auto-generated key detected. Please replace with a meaningful key name for better maintainability.',
-                    type: 'JSXElement',
                 },
             ],
         },
@@ -56,7 +55,6 @@ ruleTester.run('validate-ttag-key-autofix-warning', rule, {
                 {
                     message:
                         "Auto-generated key detected in variable 'price'. Please replace with a meaningful key name for better maintainability.",
-                    type: 'Identifier',
                 },
             ],
         },

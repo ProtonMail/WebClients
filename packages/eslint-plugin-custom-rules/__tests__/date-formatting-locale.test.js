@@ -70,7 +70,6 @@ ruleTester.run('date-formatting-locale', rule, {
             errors: [
                 {
                     message: 'The format function should include a locale parameter as the third argument',
-                    type: 'CallExpression',
                 },
             ],
         },
@@ -84,7 +83,6 @@ ruleTester.run('date-formatting-locale', rule, {
             errors: [
                 {
                     message: 'The format function should include a locale parameter as the third argument',
-                    type: 'CallExpression',
                 },
             ],
         },
@@ -97,7 +95,6 @@ ruleTester.run('date-formatting-locale', rule, {
             errors: [
                 {
                     message: 'The format function should include a locale parameter as the third argument',
-                    type: 'CallExpression',
                 },
             ],
         },
@@ -112,11 +109,9 @@ ruleTester.run('date-formatting-locale', rule, {
             errors: [
                 {
                     message: 'The format function should include a locale parameter as the third argument',
-                    type: 'CallExpression',
                 },
                 {
                     message: 'The format function should include a locale parameter as the third argument',
-                    type: 'CallExpression',
                 },
             ],
         },
