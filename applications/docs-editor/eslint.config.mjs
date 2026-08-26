@@ -35,6 +35,18 @@ export default defineConfig([
       'import/no-extraneous-dependencies': 'off',
       // TODO: Remove this rule once the compat issue is resolved
       'compat/compat': 'off',
+      'no-restricted-imports': [
+        'error',
+        {
+          patterns: [
+            {
+              group: ['@proton/drive-store*'],
+              message:
+                'docs-editor should not import from drive-store. Use @proton/docs-shared or @proton/docs-core instead.',
+            },
+          ],
+        },
+      ],
     },
   },
   {

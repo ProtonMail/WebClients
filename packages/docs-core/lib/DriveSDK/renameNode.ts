@@ -1,5 +1,5 @@
 import { generateNodeUid, getDrive } from '@proton/drive'
-import type { NodeMeta } from '@proton/drive-store/lib/NodeMeta'
+import type { NodeMeta } from '@proton/docs-shared'
 import { SentryRealtimeInitiatives, traceError } from '@proton/shared/lib/helpers/sentry'
 
 export async function renameNode(nodeMeta: NodeMeta, newName: string) {

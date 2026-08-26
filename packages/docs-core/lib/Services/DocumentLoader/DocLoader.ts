@@ -13,7 +13,7 @@ import type { CreateThread } from '../../UseCase/CreateThread'
 import type { DocLoaderInterface } from './DocLoaderInterface'
 import type { DocLoaderStatusObserver } from './StatusObserver'
 import type { DocsApi } from '../../Api/DocsApi'
-import type { DriveCompat, NodeMeta } from '@proton/drive-store'
+import type { DriveCompat } from '@proton/drive-store'
 import type { DuplicateDocument } from '../../UseCase/DuplicateDocument'
 import type { EditorControllerInterface } from '../../EditorController/EditorController'
 import type { EditorOrchestratorInterface } from '../Orchestrator/EditorOrchestratorInterface'
@@ -21,7 +21,13 @@ import type { EncryptComment } from '../../UseCase/EncryptComment'
 import type { GetDocumentMeta } from '../../UseCase/GetDocumentMeta'
 import type { GetNode } from './../../UseCase/GetNode'
 import type { HandleRealtimeCommentsEvent } from '../../UseCase/HandleRealtimeCommentsEvent'
-import type { InternalEventBusInterface, CommentControllerInterface, SyncedEditorState } from '@proton/docs-shared'
+import type {
+  InternalEventBusInterface,
+  CommentControllerInterface,
+  SyncedEditorState,
+  NodeMeta,
+  DocumentType,
+} from '@proton/docs-shared'
 import type { FetchDecryptedCommit } from '../../UseCase/FetchDecryptedCommit'
 import type { LoadDocument } from '../../UseCase/LoadDocument'
 import type { LoadThreads } from '../../UseCase/LoadThreads'
@@ -33,7 +39,6 @@ import type { WebsocketServiceInterface } from '../Websockets/WebsocketServiceIn
 import { PrivateRenameController, type RenameControllerInterface } from '../../RenameController/RenameController'
 import { redirectToCorrectDocTypeIfNeeded } from '../../Util/redirect-to-correct-doc-type'
 import type { UnleashClient } from '@proton/unleash/UnleashClient'
-import type { DocumentType } from '@proton/drive-store/store/_documents'
 import type { DocSizeTracker } from '../../SizeTracker/SizeTracker'
 import { isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype'
 import type { SheetsStorageService } from '../SheetsStorage/SheetsStorageService'

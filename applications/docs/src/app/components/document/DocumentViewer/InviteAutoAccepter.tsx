@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
-import type { DocInvitesHook, NodeMeta, PublicNodeMeta } from '@proton/drive-store'
+import type { DocInvitesHook } from '@proton/drive-store'
+import type { NodeMeta, PublicNodeMeta } from '@proton/docs-shared'
 import { useDocInvites as useDocInvitesLegacy } from '@proton/drive-store'
 import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
 import { useDocInvites as useDocInvitesSDK } from '~/drive-sdk/useDocInvites'

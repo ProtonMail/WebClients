@@ -15,7 +15,7 @@ import { DocSizeTrackerEvent, type DocSizeTrackerEventPayload } from '@proton/do
 import { c } from 'ttag'
 import { Button } from '@proton/atoms/Button/Button'
 import noop from '@proton/utils/noop'
-import type { DocumentType } from '@proton/drive-store/store/_documents'
+import type { DocumentType } from '@proton/docs-shared'
 import useLoading from '@proton/hooks/useLoading'
 
 export function DocumentSizeLimitModal({ documentType }: { documentType: DocumentType }) {

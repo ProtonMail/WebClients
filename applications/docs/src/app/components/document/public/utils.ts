@@ -11,7 +11,7 @@ import {
   drivePublicRedirectionReasonKey,
 } from '@proton/drive-store/hooks/util/useRedirectToPublicPage'
 import { saveUrlPasswordForRedirection } from '@proton/drive-store/utils/url/password'
-import type { DocumentType } from '@proton/drive-store/store/_documents/useOpenDocument'
+import type { DocumentType } from '@proton/docs-shared'
 import { useOpenDocument, type RedirectAction } from '@proton/drive-store/store/_documents/useOpenDocument'
 import type { PublicContextValue } from '../context'
 import type { EditorControllerInterface, PublicDocumentState } from '@proton/docs-core'

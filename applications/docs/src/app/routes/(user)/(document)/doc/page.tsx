@@ -3,8 +3,13 @@ import { useCallback, useEffect, useMemo, useState } from 'react'
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader'
 import type { FileToDocConversionResult } from '@proton/docs-core'
 import { getPlatformFriendlyDateForFileName } from '@proton/shared/lib/docs/utils/getPlatformFriendlyDateForFileName'
-import type { EditorInitializationConfig, FileToDocPendingConversion } from '@proton/docs-shared'
-import type { DocumentAction, DriveCompat, NodeMeta } from '@proton/drive-store'
+import type {
+  DocumentAction,
+  EditorInitializationConfig,
+  FileToDocPendingConversion,
+  NodeMeta,
+} from '@proton/docs-shared'
+import type { DriveCompat } from '@proton/drive-store'
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 import { c } from 'ttag'
 

@@ -10,6 +10,8 @@ import type {
   InternalEventInterface,
   RtsMessagePayload,
   WebsocketConnectionInterface,
+  NodeMeta,
+  DecryptedNode,
 } from '@proton/docs-shared'
 import {
   ApiResult,
@@ -20,7 +22,6 @@ import {
   ProcessedIncomingRealtimeEventMessage,
   SyncedEditorState,
 } from '@proton/docs-shared'
-import type { DecryptedNode, NodeMeta } from '@proton/drive-store'
 import { MAX_DOC_SIZE, MAX_UPDATE_SIZE } from '../Models/Constants'
 import type { WebsocketServiceInterface } from '../Services/Websockets/WebsocketServiceInterface'
 import { RealtimeController } from './RealtimeController'

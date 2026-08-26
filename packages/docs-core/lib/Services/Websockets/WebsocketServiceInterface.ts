@@ -1,8 +1,13 @@
-import type { DocumentKeys, NodeMeta, PublicNodeMeta } from '@proton/drive-store'
-import type { BroadcastSource, WebsocketConnectionInterface } from '@proton/docs-shared'
+import type {
+  DocumentKeys,
+  NodeMeta,
+  PublicNodeMeta,
+  BroadcastSource,
+  WebsocketConnectionInterface,
+  DocumentType,
+} from '@proton/docs-shared'
 import type { DocumentUpdate, EventTypeEnum } from '@proton/docs-proto'
 import type { DocumentState, PublicDocumentState } from '../../State/DocumentState'
-import type { DocumentType } from '@proton/drive-store/store/_documents'
 
 export interface WebsocketServiceInterface {
   setDocumentType(type: DocumentType): void
