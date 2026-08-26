@@ -189,6 +189,58 @@ describe('parseMultiUserCsv', () => {
         return new File([blob], filename);
     };
 
+    describe('mode detection', () => {
+        const invitationConfig = getCsvConfig({ mode: CreateMemberMode.Invitation, multipleAddresses: true });
+        const passwordConfig = getCsvConfig({ mode: CreateMemberMode.Password, multipleAddresses: true });
+
+        it('imports with passwords when the file has a Password header', async () => {
+            const file = getFile(['EmailAddresses,Password', 'alice@mydomain.com,alice_example_password'].join('\n'));
+
+            const result = await parseMultiUserCsv([file], invitationConfig);
+
+            expect(result.mode).toBe(CreateMemberMode.Password);
+            expect(result.errors.length).toBe(0);
+            expect(result.users[0].password).toBe('alice_example_password');
+        });
+
+        it('imports with invite links when the file has an InvitationEmail header', async () => {
+            const file = getFile(
+                ['EmailAddresses,InvitationEmail', 'alice@mydomain.com,alice@otherdomain.com'].join('\n')
+            );
+
+            const result = await parseMultiUserCsv([file], passwordConfig);
+
+            expect(result.mode).toBe(CreateMemberMode.Invitation);
+            expect(result.errors.length).toBe(0);
+            expect(result.users[0].invitationEmail).toBe('alice@otherdomain.com');
+        });
+
+        it('keeps the selected mode when the file has both headers', async () => {
+            const fileContent = [
+                'EmailAddresses,InvitationEmail,Password',
+                'alice@mydomain.com,alice@otherdomain.com,alice_example_password',
+            ].join('\n');
+
+            await expect(parseMultiUserCsv([getFile(fileContent)], invitationConfig)).resolves.toMatchObject({
+                mode: CreateMemberMode.Invitation,
+            });
+            await expect(parseMultiUserCsv([getFile(fileContent)], passwordConfig)).resolves.toMatchObject({
+                mode: CreateMemberMode.Password,
+            });
+        });
+
+        it('keeps the selected mode when the file has neither header', async () => {
+            const file = getFile(['EmailAddresses', 'alice@mydomain.com'].join('\n'));
+
+            await expect(parseMultiUserCsv([file], invitationConfig)).rejects.toThrow(
+                `It looks like your file is missing the 'InvitationEmail' header.`
+            );
+            await expect(parseMultiUserCsv([file], passwordConfig)).rejects.toThrow(
+                `It looks like your file is missing the 'Password' header.`
+            );
+        });
+    });
+
     describe('errors', () => {
         const defaultUser: SampleCsvUser = {
             Name: 'Alice',

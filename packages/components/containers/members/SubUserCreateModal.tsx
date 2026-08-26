@@ -43,7 +43,6 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Domain, EnhancedMember, Organization } from '@proton/shared/lib/interfaces';
 import { CreateMemberMode } from '@proton/shared/lib/interfaces';
 import { getIsPasswordless } from '@proton/shared/lib/keys';
-import { useFlag } from '@proton/unleash/useFlag';
 import clamp from '@proton/utils/clamp';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -144,7 +143,6 @@ const SubUserCreateModal = ({
 
     const hasVPN = Boolean(organization?.MaxVPN);
 
-    const isMagicLinkEnabled = useFlag('MagicLink');
     const [adminRolesUIState, loadingAdminRolesUI] = useAdminRolesUI();
     const { feature: adminRolesModalFeature, loading: adminRolesModalLoading } = useFeature(
         FeatureCode.AdminRolesOnboardingModal
@@ -158,10 +156,8 @@ const SubUserCreateModal = ({
         FeatureCode.AdminRolesPermissionsTabSpotlight,
         adminRolesUIState === AdminRolesUIState.Enabled && isAdminRolesModalDismissed
     );
-    const csvMode = isMagicLinkEnabled ? CreateMemberMode.Invitation : CreateMemberMode.Password;
-
     const [model, setModel] = useState({
-        mode: isMagicLinkEnabled ? CreateMemberMode.Invitation : CreateMemberMode.Password,
+        mode: CreateMemberMode.Invitation,
         name: '',
         private: false,
         admin: false,
@@ -307,7 +303,6 @@ const SubUserCreateModal = ({
         return (
             <SubUserBulkCreateModal
                 open
-                mode={isMagicLinkEnabled ? CreateMemberMode.Invitation : CreateMemberMode.Password}
                 verifiedDomains={verifiedDomains}
                 members={members}
                 onBack={setSingleStep}
@@ -318,7 +313,7 @@ const SubUserCreateModal = ({
                 disableAddressValidation={disableAddressValidation}
                 useEmail={useEmail}
                 csvConfig={{
-                    mode: csvMode,
+                    mode: model.mode,
                     multipleAddresses: !useEmail,
                     includeStorage: allowStorageConfiguration,
                     includeVpnAccess: allowVpnAccessConfiguration,
@@ -407,14 +402,12 @@ const SubUserCreateModal = ({
                         autoFocus={undefined}
                     />
 
-                    {isMagicLinkEnabled && (
-                        <SubUserCreateHint className="mb-4 bg-weak">
-                            {c('user_modal').t`Remember to share the user's sign in details with them.`}{' '}
-                            <InlineLinkButton onClick={() => setMode(CreateMemberMode.Invitation)}>
-                                {c('user_modal').t`Send invite link via email instead`}
-                            </InlineLinkButton>
-                        </SubUserCreateHint>
-                    )}
+                    <SubUserCreateHint className="mb-4 bg-weak">
+                        {c('user_modal').t`Remember to share the user's sign in details with them.`}{' '}
+                        <InlineLinkButton onClick={() => setMode(CreateMemberMode.Invitation)}>
+                            {c('user_modal').t`Send invite link via email instead`}
+                        </InlineLinkButton>
+                    </SubUserCreateHint>
                 </>
             )}
             {model.mode === CreateMemberMode.Invitation && (
