@@ -114,6 +114,7 @@ export enum EntitlementName {
     Sso = 'sso',
     /** Determines whether keyless SSO is supported. */
     SsoKeyless = 'sso-keyless',
+    SsoKeys = 'sso-keys',
     /** Enables location filtering for VPN (also known as shared servers). */
     VpnLocationFilter = 'vpn-location-filter',
 }
