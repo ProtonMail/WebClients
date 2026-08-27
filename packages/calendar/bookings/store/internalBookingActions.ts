@@ -2,24 +2,29 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 import { getAddressKeysByUsageThunk } from '@proton/account/addressKeys/getAddressKeysByUsage';
 import { getVerificationPreferencesThunk } from '@proton/account/publicKeys/verificationPreferences';
-import { decryptAndVerifyBookingPageSecret } from '@proton/calendar/bookings/crypto/bookingDecryption';
-import { encryptBookingPage, encryptBookingPageEdition } from '@proton/calendar/bookings/crypto/bookingEncryption';
-import { verifyBookingSlots } from '@proton/calendar/bookings/crypto/bookingVerification';
-import { MinimumNoticeMode } from '@proton/calendar/bookings/types';
-import type { APIBooking, BookingPageEditData, SerializedFormData } from '@proton/calendar/bookings/types';
-import { getDecryptedPassphraseAndCalendarKeysThunk } from '@proton/calendar/calendarBootstrap/keys';
 import { createBookingPage, getBookingPageDetails, updateBookingPage } from '@proton/shared/lib/api/calendarBookings';
 
-import { getCalendarAndOwner } from '../../containers/bookings/utils/calendar/calendarHelper';
-import type { CalendarThunkExtra } from '../store';
-import type { BookingPageCreationReturn, BookingPageEditionReturn, VerificationError } from './interface';
+import { getDecryptedPassphraseAndCalendarKeysThunk } from '../../calendarBootstrap/keys';
+import { decryptAndVerifyBookingPageSecret } from '../crypto/bookingDecryption';
+import { encryptBookingPage, encryptBookingPageEdition } from '../crypto/bookingEncryption';
+import { verifyBookingSlots } from '../crypto/bookingVerification';
+import type { APIBooking, BookingPageEditData, SerializedFormData } from '../types';
+import { MinimumNoticeMode } from '../types';
+import { getBookingsOrigin } from './bookingsOrigin';
+import { getCalendarAndOwner } from './calendarHelper';
+import type {
+    BookingPageCreationReturn,
+    BookingPageEditionReturn,
+    BookingsThunkExtra,
+    VerificationError,
+} from './interface';
 
 export const loadBookingPage = createAsyncThunk<
     Omit<BookingPageEditData, 'verificationErrors'> & {
         verificationErrors: Omit<VerificationError, 'secretVerificationError' | 'contentVerificationError'>;
     },
     string,
-    CalendarThunkExtra
+    BookingsThunkExtra
 >('internalBookings/loadPage', async (payload, thunkExtra) => {
     const emptyReturn = {
         slots: [],
@@ -81,7 +86,7 @@ export const loadBookingPage = createAsyncThunk<
 export const createNewBookingPage = createAsyncThunk<
     BookingPageCreationReturn | undefined,
     SerializedFormData,
-    CalendarThunkExtra
+    BookingsThunkExtra
 >('internalBookings/createPage', async (payload, thunkExtra) => {
     if (thunkExtra.extra.unleashClient.isEnabled('CalendarBookingsDisabled')) {
         return;
@@ -114,7 +119,7 @@ export const createNewBookingPage = createAsyncThunk<
         encryptionKey,
         signingKeys,
         calendarID: calData.calendar.ID,
-        origin: window.location.origin,
+        origin: getBookingsOrigin(),
     });
 
     const { BookingLink: bookingLink, ...apiPayload } = data;
@@ -129,7 +134,7 @@ export const createNewBookingPage = createAsyncThunk<
 export const editBookingPage = createAsyncThunk<
     BookingPageEditionReturn | undefined,
     SerializedFormData,
-    CalendarThunkExtra
+    BookingsThunkExtra
 >('internalBookings/editPage', async (payload, thunkExtra) => {
     if (!payload.selectedCalendar) {
         throw new Error('Missing selected calendar');

@@ -7,6 +7,9 @@ import { c } from 'ttag';
 import { useUserSettings } from '@proton/account/index';
 import { useUser } from '@proton/account/user/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
+import { createNewBookingPage, editBookingPage } from '@proton/calendar/bookings/store/actions';
+import type { InternalBookingPage } from '@proton/calendar/bookings/store/interface';
+import { useBookingUpsell } from '@proton/calendar/bookings/store/useBookingUpsell';
 import type { BookingPageEditData } from '@proton/calendar/bookings/types';
 import { useReadCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
 import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
@@ -18,8 +21,6 @@ import { useFlag } from '@proton/unleash/useFlag';
 
 import { splitTimeGridEventsPerDay } from '../../../components/calendar/splitTimeGridEventsPerDay';
 import { useCalendarDispatch } from '../../../store/hooks';
-import type { InternalBookingPage } from '../../../store/internalBooking/interface';
-import { createNewBookingPage, editBookingPage } from '../../../store/internalBooking/internalBookingActions';
 import { useCalendarGlobalModals } from '../../GlobalModals/GlobalModalContext';
 import { ModalType } from '../../GlobalModals/interface';
 import type { CalendarViewEvent } from '../../calendar/interface';
@@ -27,7 +28,6 @@ import type { BookingFormData, BookingRange, BookingsContextValue, Intersection 
 import { BookingState, DEFAULT_EVENT_DURATION, DEFAULT_RECURRING, type InternalBookingForm } from '../interface';
 import { BookingsLimitReached } from '../upsells/BookingsLimitReached';
 import { UpsellBookings } from '../upsells/UpsellBookings';
-import { useBookingUpsell } from '../upsells/useBookingUpsell';
 import { BookingErrorMessages } from '../utils/bookingCopy';
 import { serializeFormData } from '../utils/form/formHelpers';
 import {

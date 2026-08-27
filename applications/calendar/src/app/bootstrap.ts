@@ -11,6 +11,7 @@ import * as bootstrap from '@proton/account/bootstrap';
 import { bootstrapEvent } from '@proton/account/bootstrap/action';
 import { serverEvent } from '@proton/account/eventLoop';
 import { getDecryptedPersistedState } from '@proton/account/persist/helper';
+import { internalBookingThunk } from '@proton/calendar/bookings/store';
 import { calendarBootstrapThunk } from '@proton/calendar/calendarBootstrap';
 import { createCalendarModelEventManager } from '@proton/calendar/calendarModelEventManager';
 import { calendarSettingsThunk } from '@proton/calendar/calendarUserSettings';
@@ -33,7 +34,6 @@ import noop from '@proton/utils/noop';
 
 import { embeddedDrawerAppInfos } from './helpers/drawer';
 import locales from './locales';
-import { internalBookingThunk } from './store/internalBooking/interalBookingSlice';
 import type { CalendarState } from './store/rootReducer';
 import { extendStore, setupStore } from './store/store';
 
