@@ -29,6 +29,7 @@ export const extraneousDependenciesDevDependencies = [
     // Others
     '**/cypress.config.{js,ts}',
     '**/eslint.config.{js,mjs}',
+    '**/playwright.config.ts',
 ];
 
 /**
@@ -38,11 +39,14 @@ export const extraneousDependenciesDevDependencies = [
  * @example
  * createExtraneousDependenciesRule({ peerDependencies: false })
  */
-export function createExtraneousDependenciesRule({ peerDependencies = true } = {}) {
+export function createExtraneousDependenciesRule({
+    peerDependencies = true,
+    devDependencies = extraneousDependenciesDevDependencies,
+} = {}) {
     return /** @type {import('@eslint/core').RuleConfig} */ ([
         'error',
         {
-            devDependencies: extraneousDependenciesDevDependencies,
+            devDependencies,
             optionalDependencies: false,
             peerDependencies,
         },
