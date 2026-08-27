@@ -11880,9 +11880,6 @@
       "Registering your subscription…": [
         "Registrace vašeho předplatného…"
       ],
-      "Remember to share the user's sign in details with them.": [
-        "Nezapomeňte s nimi sdílet přihlašovací údaje uživatele."
-      ],
       "Remove metadata from images to protect your privacy.": [
         "Odebrání metadat z vašich obrázků pro ochranu vašeho soukromí."
       ],
@@ -13980,9 +13977,6 @@
       ],
       "${ PROTON_SENTINEL_NAME } protection": [
         "Ochrana ${ PROTON_SENTINEL_NAME }"
-      ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } znaků"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Dočasně nedostupné. Zkontrolujte to prosím později.)"
@@ -16257,9 +16251,6 @@
     "mail_signup_2023: Info": {
       "**Get ${ plan }** for a limited time!": [
         "**Získejte ${ plan }** na omezenou dobu!"
-      ],
-      "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
-        "Pořiďte si tarif Visionary a buďte součástí příběhu ${ BRAND_NAME }"
       ]
     },
     "mail_signup_2024: Info": {
@@ -16472,9 +16463,6 @@
         "včetně ${ seats } licencí",
         "včetně ${ seats } licencí"
       ],
-      "100 ${ BRAND_NAME } email addresses": [
-        "100 e-mailových adres ${ BRAND_NAME }"
-      ],
       "Cloud storage and file sharing": [
         "Cloudové úložiště a sdílení souborů"
       ],
@@ -16495,9 +16483,6 @@
       ],
       "Password manager with team vaults": [
         "Správce hesel s týmovými trezory"
-      ],
-      "Private and unlimited AI chat (${ LUMO_SHORT_APP_NAME })": [
-        "Soukromý a neomezený chat s AI (${ LUMO_SHORT_APP_NAME })"
       ],
       "Private video calls for the conversations that matter": [
         "Soukromé videohovory pro důležité konverzace"
@@ -19065,9 +19050,6 @@
       "Create another account instead": [
         "Namísto toho si vytvořte další účet"
       ],
-      "Keep this plan": [
-        "Ponechat tento tarif"
-      ],
       "Open ${ PASS_APP_NAME } vaults": [
         "Otevřít ${ PASS_APP_NAME } trezory"
       ],
@@ -19082,9 +19064,6 @@
       ],
       "Upgrade": [
         "Navýšení"
-      ],
-      "Upgrade my plan": [
-        "Přejít na vyšší tarif"
       ]
     },
     "pass_signup_2023: Action - open web app": {
@@ -19139,9 +19118,6 @@
       "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
         "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } za ${ priceString }."
       ],
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice } za měsíc"
-      ],
       "/month /user": [
         "/měsíc /uživatel"
       ],
@@ -19159,9 +19135,6 @@
       ],
       "Aliases for email protection from breaches": [
         "Aliasy pro ochranu e-mailu před úniky informací"
-      ],
-      "Based in Switzerland, GDPR compliant": [
-        "Se sídlem ve Švýcarsku, v souladu s GDPR"
       ],
       "But you can get ${ discountPercentString } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Můžete ale získat slevu ${ discountPercentString } navýšením na **${ upsellPlanTitle }** — stačí si připlatit pouze ${ relativePrice } měsíčně."
@@ -19190,9 +19163,6 @@
       "Creating your account": [
         "Vytváření vašeho účtu"
       ],
-      "Current plan": [
-        "Aktuální tarif"
-      ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "Pro používání ${ PASS_APP_NAME } si stáhněte a nainstalujte příslušné aplikace a rozšíření."
       ],
@@ -19214,15 +19184,6 @@
       "Everything from ${ planTitle }, plus...": [
         "Vše z ${ planTitle } plus..."
       ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "Za pouhých **${ relativePrice } měsíčně** navíc získáte přístup k prémiovému správci hesel od ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "Za pouhých **${ relativePrice } měsíčně** navíc získáte přístup ke službě VPN Premium od ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "Za pouhých **${ relativePrice } měsíčně** navíc získáte přístup ke všem prémiovým službám ${ BRAND_NAME }!"
-      ],
       "Free forever": [
         "Navždy zdarma"
       ],
@@ -19240,9 +19201,6 @@
       ],
       "Get unlimited privacy for two": [
         "Získejte neomezené soukromí pro dva"
-      ],
-      "Includes:": [
-        "Zahrnuje:"
       ],
       "Install ${ PASS_APP_NAME }": [
         "Instalovat ${ PASS_APP_NAME }"
@@ -21096,17 +21054,6 @@
         "Správce uživatelů"
       ]
     },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Nastavte bezpečnostní zásady, uchovávání dat, VPN infrastrukturu a spravujte auditní logy."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Spravujte všechny uživatele, skupiny, zabezpečení, fakturaci a systémové konfigurace."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Spravujte uživatele, skupiny a úložiště pro všechny členy, přiřazujte role a přidělujte licence."
-      ]
-    },
     "Safety review": {
       "Code sent to ${ boldValue }": [
         "Kód zaslán na ${ boldValue }"
@@ -22483,9 +22430,6 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Neomezený počet aliasů Hide-my-email"
-      ],
-      "Up to -${ percentage }%": [
-        "Až -${ percentage } %"
       ],
       "Up to 2 users": [
         "Až 2 uživatelé"

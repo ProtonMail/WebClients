@@ -5795,15 +5795,6 @@
       "This user can not be migrated due to platform incompatibilities.": [
         "Acest utilizator nu poate fi migrat din cauza unor incompatibilități de platformă."
       ],
-      "This will permanently delete the file you uploaded.": [
-        "Aceasta va șterge permanent fișierul încărcat."
-      ],
-      "This will permanently delete the folder you uploaded.": [
-        "Aceasta va șterge permanent folderul încărcat."
-      ],
-      "This will permanently delete the selected items you uploaded.": [
-        "Aceasta va șterge permanent articolele încărcate."
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Aceasta vă va deconectat din toate conturile conectate acum."
       ],
@@ -6215,8 +6206,8 @@
       "${ BRAND_NAME } username": [
         "Nnume de utilizator ${ BRAND_NAME }"
       ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } de caractere"
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } de caractere"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporar indisponibil. Reveniți mai târziu.)"
@@ -8501,28 +8492,17 @@
       "Share invitation declined": [
         "Invitația la partajare a fost refuzată."
       ],
-      "Sorry, we couldn't delete the folder because it is not empty.": [
-        "Folderul nu s-a putut șterge deoarece nu este gol.",
-        "Folderele nu s-au putut șterge deoarece nu sunt goale.",
-        "Folderele nu s-au putut șterge deoarece nu sunt goale."
-      ],
       "Stopping the sharing of this item has failed": [
         "Oprirea partajării acestui articol a eșuat."
       ],
       "Subfolder failed to be loaded": [
         "Subfolderul nu s-a putut încărca."
       ],
-      "The document failed to be created": [
-        "Crearea documentului a eșuat."
-      ],
       "The link to your item failed to be deleted": [
         "Legătura către element nu a putut fi ștearsă."
       ],
       "The link to your item was deleted": [
         "Legătura către element a fost ștearsă."
-      ],
-      "The spreadsheet failed to be created": [
-        "Crearea registrului de lucru a eșuat."
       ],
       "Trash failed to be emptied": [
         "Coșul de gunoi nu s-a putut goli"
@@ -9416,17 +9396,6 @@
       ],
       "User Admin": [
         "Administrare utilizatori"
-      ]
-    },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Configurați politicile de securitate, păstrarea datelor și infrastructura VPN și gestionați jurnalele de audit."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Gestionați toți utilizatorii, grupurile, securitatea, facturarea și configurările de sistem."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Gestionați utilizatorii, grupurile și spațiul de stocare pentru toți membrii, atribuiți roluri și alocați licențe."
       ]
     },
     "Safety review": {
@@ -10686,9 +10655,6 @@
       "Decline invitation?": [
         "Refuzați invitația?"
       ],
-      "Delete": [
-        "Ștergere"
-      ],
       "Delete ${ count } contact": [
         "Ștergere un contact",
         "Ștergere ${ count } contacte",
@@ -10698,12 +10664,6 @@
         "Ștergere grup de contacte",
         "Ștergere ${ count } grupuri de contacte",
         "Ștergere ${ count } de grupuri de contacte"
-      ],
-      "Delete ${ links.length } items?": [
-        "Ștergeți ${ links.length } de articole?"
-      ],
-      "Delete ${ name }?": [
-        "Ștergeți ${ name }?"
       ],
       "Delete ${ value }": [
         "Ștergere ${ value }"

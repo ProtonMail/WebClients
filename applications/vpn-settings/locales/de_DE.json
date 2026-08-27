@@ -1405,6 +1405,12 @@
       "Take a tour": [
         "Rundgang"
       ],
+      "Template with invite links": [
+        "Vorlage mit Einladungslinks"
+      ],
+      "Template with passwords": [
+        "Vorlage mit Passwörtern"
+      ],
       "Test": [
         "Testen"
       ],
@@ -7361,8 +7367,8 @@
       "${ helpTranslateLink } by joining our localization community.": [
         "${ helpTranslateLink } um unserer Lokalisierungs-Community beizutreten."
       ],
-      "${ IDEAL_BRAND_NAME } mark": [
-        "${ IDEAL_BRAND_NAME } markieren"
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "${ IDEAL_WERO_BRAND_NAME } markieren"
       ],
       "${ invitedMemberCount } user needs to accept their invite to start receiving group emails.": [
         "${ invitedMemberCount } Benutzer muss die Einladung annehmen, um Gruppen-E-Mails zu erhalten.",
@@ -9196,9 +9202,6 @@
       "Registering your subscription…": [
         "Registrierung deines Abonnements…"
       ],
-      "Remember to share the user's sign in details with them.": [
-        "Denke daran, dem Benutzer seine Anmeldedaten mitzuteilen."
-      ],
       "Request a phone call": [
         "Einen Anruf anfordern"
       ],
@@ -9966,8 +9969,8 @@
       "We use 3-D Secure to protect your payments": [
         "Wir verwenden 3-D Secure zum Schutz deiner Zahlungen"
       ],
-      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "Wir werden dich in einem neuen Browser-Tab zu ${ IDEAL_BRAND_NAME } umleiten, um diese Zahlung abzuschließen. Falls du Pop-up-Blocker verwendest, deaktiviere diese bitte, um fortzufahren."
+      "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Wir werden dich in einem neuen Browser-Tab zu ${ IDEAL_WERO_BRAND_NAME } umleiten, um diese Zahlung abzuschließen. Falls du Pop-up-Blocker verwendest, deaktiviere diese bitte, um fortzufahren."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Wir werden dich in einem neuen Browser-Tab zu PayPal umleiten, um diese Zahlung abzuschließen. Falls du Pop-up-Blocker verwendest, deaktiviere diese bitte, um fortzufahren."
@@ -10304,6 +10307,9 @@
       "your encrypted data will be locked": [
         "Deine verschlüsselten Daten werden gesperrt"
       ],
+      "Your file includes a password for each user, so these accounts will be created with a password instead of an invite link.": [
+        "Deine Datei enthält für jeden Benutzer ein Passwort, sodass diese Konten mit einem Passwort statt mit einem Einladungslink angelegt werden."
+      ],
       "Your files will be encrypted and then saved": [
         "Deine Dateien werden verschlüsselt und anschließend gespeichert"
       ],
@@ -10572,6 +10578,9 @@
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } von ${ humanMaxSpace }"
       ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } Zeichen"
+      ],
       "${ MAIL_APP_NAME } address": [
         "${ MAIL_APP_NAME }-Adresse"
       ],
@@ -10588,9 +10597,6 @@
       ],
       "${ PROTON_SENTINEL_NAME } protection": [
         "${ PROTON_SENTINEL_NAME } Schutz"
-      ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } Zeichen"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Vorübergehend nicht verfügbar. Bitte schaue später wieder vorbei.)"
@@ -14345,8 +14351,8 @@
       "More plans are available in other currencies": [
         "Weitere Pläne sind in anderen Währungen verfügbar"
       ],
-      "Pay with ${ IDEAL_BRAND_NAME }": [
-        "Mit ${ IDEAL_BRAND_NAME } bezahlen"
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "Mit ${ IDEAL_WERO_BRAND_NAME } bezahlen"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Für die Aktivierung des Abonnements nach dem Ende der Testversion ist eine Zahlungsmethode erforderlich."
@@ -14441,8 +14447,8 @@
       "You will soon be redirected to verify your payment.": [
         "Du wirst in Kürze weitergeleitet, um deine Zahlung zu bestätigen."
       ],
-      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
-        "Deine Währung wurde zu Euro (€) geändert, da ${ IDEAL_BRAND_NAME } nur Euro unterstützen."
+      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
+        "Deine Währung wurde zu Euro (€) geändert, da ${ IDEAL_WERO_BRAND_NAME } nur Zahlungen in Euro unterstützt."
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Deine Währung wurde zu Euro (€) geändert, da SEPA-Banküberweisungen Zahlungen nur in Euro unterstützen."
@@ -14455,8 +14461,8 @@
       ]
     },
     "Payments.Error": {
-      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
-        "Die Initialisierung von ${ IDEAL_BRAND_NAME } ist fehlgeschlagen. Bitte versuche es später erneut."
+      "Failed to initialize ${ IDEAL_WERO_BRAND_NAME }. Please try again later.": [
+        "Die Initialisierung von ${ IDEAL_WERO_BRAND_NAME } ist fehlgeschlagen. Bitte versuche es später erneut."
       ],
       "Invalid card number": [
         "Ungültige Kartennummer"
@@ -14486,8 +14492,8 @@
       ]
     },
     "Payments.iDEAL": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Mit der Bestätigung dieser Zahlung ermächtigst du ${ BRAND_NAME } und Stripe, unseren Zahlungsdienstleister, deine Bank anzuweisen, den entsprechenden Betrag von deinem Konto abzubuchen. Eine Rückerstattung kannst du innerhalb von 8 Wochen ab dem Datum der Abbuchung gemäß den Bedingungen deines Vertrags mit deiner Bank beantragen."
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Mit der Bestätigung ermächtigst du ${ BRAND_NAME } und Stripe, unseren Zahlungsdienstleister, zukünftige Zahlungen für dein Abonnement per SEPA-Lastschrift von diesem Bankkonto einzuziehen, und deiner Bank, diese Zahlungen abzubuchen. Deine erste Zahlung erfolgt jetzt durch ${ IDEAL_WERO_BRAND_NAME }. Dein Abonnement verlängert sich automatisch, bis du es kündigst; wir werden dich vor jeder Abbuchung benachrichtigen. Bei Einzügen per Lastschrift kannst du gemäß den Bedingungen deiner Vereinbarung mit Ihrer Bank innerhalb von 8 Wochen nach dem Abbuchungsdatum eine Rückerstattung bei deiner Bank beantragen. Dies gilt nicht für die Zahlung an ${ IDEAL_WERO_BRAND_NAME }, die du gerade vornimmst."
       ]
     },
     "Payments.info": {
@@ -15613,17 +15619,6 @@
       ],
       "User Admin": [
         "Benutzeradministrator"
-      ]
-    },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Sicherheitsrichtlinien, Datenaufbewahrung und VPN-Infrastruktur konfigurieren sowie Prüfprotokolle verwalten."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Alle Benutzer, Gruppen, Sicherheits- und Abrechnungseinstellungen sowie Systemkonfigurationen verwalten."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Benutzer, Gruppen und Speicher für alle Mitglieder verwalten, Rollen und Lizenzen zuweisen."
       ]
     },
     "Safety review": {

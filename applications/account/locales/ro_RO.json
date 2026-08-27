@@ -2045,6 +2045,12 @@
       "Take a tour": [
         "Faceți un tur"
       ],
+      "Template with invite links": [
+        "Șablon cu legături web de invitare"
+      ],
+      "Template with passwords": [
+        "Șablon cu parole"
+      ],
       "Test": [
         "Test"
       ],
@@ -10304,8 +10310,8 @@
       "${ helpTranslateLink } by joining our localization community.": [
         "${ helpTranslateLink } alăturându-vă comunității noastre de localizare."
       ],
-      "${ IDEAL_BRAND_NAME } mark": [
-        "Marca ${ IDEAL_BRAND_NAME }"
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "Marca ${ IDEAL_WERO_BRAND_NAME }"
       ],
       "${ invitedMemberCount } user needs to accept their invite to start receiving group emails.": [
         "Utilizatori care trebuie să accepte invitația pentru a începe să primească e-mailuri de grup: ${ invitedMemberCount }",
@@ -12859,9 +12865,6 @@
       "Registering your subscription…": [
         "Se înregistrează abonamentul…"
       ],
-      "Remember to share the user's sign in details with them.": [
-        "Aveți grijă să furnizați utilizatorilor detaliile lor de autentificare."
-      ],
       "Remove metadata from images to protect your privacy.": [
         "Eliminați metadatele din imagini pentru a vă proteja confidențialitatea."
       ],
@@ -13894,8 +13897,8 @@
       "We use 3-D Secure to protect your payments": [
         "Folosim 3-D Secure pentru a proteja plățile"
       ],
-      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "Pentru finalizarea tranzacției prin ${ IDEAL_BRAND_NAME } se va deschide o filă nouă. Dacă folosiți programe de blocat ferestre flotante dezactivați-le înainte de a continua."
+      "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Pentru finalizarea tranzacției prin ${ IDEAL_WERO_BRAND_NAME } se va deschide o filă nouă. Dacă folosiți programe de blocat ferestre flotante dezactivați-le înainte de a continua."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Pentru finalizarea tranzacției prin PayPal se va deschide o filă nouă. Dacă folosiți programe de blocat ferestre flotante dezactivați-le înainte de a continua."
@@ -14371,6 +14374,9 @@
       ],
       "your encrypted data will be locked": [
         "datele criptate vor fi blocate"
+      ],
+      "Your file includes a password for each user, so these accounts will be created with a password instead of an invite link.": [
+        "Fișierul include o parolă pentru fiecare utilizator, așadar aceste conturi vor fi create cu o parolă în loc de o legătură web de invitație."
       ],
       "Your files will be encrypted and then saved": [
         "Fișierele vor fi criptate și apoi salvate."
@@ -15069,6 +15075,9 @@
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } din ${ humanMaxSpace }"
       ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } de caractere"
+      ],
       "${ MAIL_APP_NAME } address": [
         "Adresa ${ MAIL_APP_NAME }"
       ],
@@ -15098,9 +15107,6 @@
       ],
       "${ PROTON_SENTINEL_NAME } protection": [
         "Protecție cu ${ PROTON_SENTINEL_NAME }"
-      ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } de caractere"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporar indisponibil. Reveniți mai târziu.)"
@@ -17466,9 +17472,6 @@
     "mail_signup_2023: Info": {
       "**Get ${ plan }** for a limited time!": [
         "**Luați ${ plan }** pentru o perioadă limitată!"
-      ],
-      "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
-        "Luați planul Visionary și faceți parte din povestea ${ BRAND_NAME }"
       ]
     },
     "mail_signup_2024: Info": {
@@ -17680,9 +17683,6 @@
         "Licențe incluse: ${ seats }",
         "Licențe incluse: ${ seats }"
       ],
-      "100 ${ BRAND_NAME } email addresses": [
-        "100 de adrese de e-mail ${ BRAND_NAME }"
-      ],
       "Cloud storage and file sharing": [
         "Stocare în cloud și partajare fișiere"
       ],
@@ -17703,9 +17703,6 @@
       ],
       "Password manager with team vaults": [
         "Manager de parole cu seifuri pentru echipe"
-      ],
-      "Private and unlimited AI chat (${ LUMO_SHORT_APP_NAME })": [
-        "Conversații private și nelimitate cu IA (${ LUMO_SHORT_APP_NAME })"
       ],
       "Private video calls for the conversations that matter": [
         "Apeluri video private pentru conversațiile importante"
@@ -20288,9 +20285,6 @@
       "Create another account instead": [
         "Creare alt cont"
       ],
-      "Keep this plan": [
-        "Păstrez planul"
-      ],
       "Open ${ PASS_APP_NAME } vaults": [
         "Deschidere seifuri ${ PASS_APP_NAME }"
       ],
@@ -20305,9 +20299,6 @@
       ],
       "Upgrade": [
         "Modificare"
-      ],
-      "Upgrade my plan": [
-        "Modificare plan"
       ]
     },
     "pass_signup_2023: Action - open web app": {
@@ -20362,9 +20353,6 @@
       "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
         "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } cu ${ priceString }."
       ],
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice } pe lună"
-      ],
       "/month /user": [
         "/lună /utilizator"
       ],
@@ -20382,9 +20370,6 @@
       ],
       "Aliases for email protection from breaches": [
         "Aliasuri pentru protecția adresei de e-mail împotriva breșelor"
-      ],
-      "Based in Switzerland, GDPR compliant": [
-        "Situată în Elveția, în conformitate cu RGPD"
       ],
       "But you can get ${ discountPercentString } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Dar puteți obține o reducere de ${ discountPercentString } trecând la **${ upsellPlanTitle }** — este doar ${ relativePrice } în plus pe lună."
@@ -20413,9 +20398,6 @@
       "Creating your account": [
         "Se creează contul"
       ],
-      "Current plan": [
-        "Plan actual"
-      ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "Descărcați și instalați aplicațiile și extensiile relevante pentru a începe să utilizați ${ PASS_APP_NAME }"
       ],
@@ -20437,15 +20419,6 @@
       "Everything from ${ planTitle }, plus...": [
         "Totul de la ${ planTitle }, plus..."
       ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "Pentru doar **${ relativePrice } pe lună** în plus, aveți acces la managerul de parole premium al lui ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "Pentru doar **${ relativePrice } pe lună** în plus, aveți acces la serviciul VPN premium al ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "Pentru doar încă **${ relativePrice } pe lună**, veți avea acces la toate serviciile premium ${ BRAND_NAME }!"
-      ],
       "Free forever": [
         "Gratuit întotdeauna"
       ],
@@ -20463,9 +20436,6 @@
       ],
       "Get unlimited privacy for two": [
         "Obțineți intimitate nelimitată pentru doi utilizatori"
-      ],
-      "Includes:": [
-        "Include:"
       ],
       "Install ${ PASS_APP_NAME }": [
         "Instalați ${ PASS_APP_NAME }"
@@ -20860,8 +20830,8 @@
       "Offer unavailable": [
         "Ofertă indisponibilă"
       ],
-      "Pay with ${ IDEAL_BRAND_NAME }": [
-        "Plata cu ${ IDEAL_BRAND_NAME }"
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "Plata cu ${ IDEAL_WERO_BRAND_NAME }"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Metoda de plată este necesară pentru activarea abonamentului după încheierea perioadei de evaluare."
@@ -20962,8 +20932,8 @@
       "You will soon be redirected to verify your payment.": [
         "Pentru verificarea plății se va deschide o filă nouă."
       ],
-      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
-        "Moneda a fost schimbată în euro (€) deoarece ${ IDEAL_BRAND_NAME } acceptă doar plăți în euro."
+      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
+        "Moneda a fost schimbată în euro (€) deoarece ${ IDEAL_WERO_BRAND_NAME } acceptă doar plăți în euro."
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Moneda a fost schimbată în euro (€) deoarece transferurile bancare SEPA acceptă doar plăți în euro."
@@ -20976,8 +20946,8 @@
       ]
     },
     "Payments.Error": {
-      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
-        "Eșuare inițializare ${ IDEAL_BRAND_NAME }. Reîncercați."
+      "Failed to initialize ${ IDEAL_WERO_BRAND_NAME }. Please try again later.": [
+        "Eșuare inițializare ${ IDEAL_WERO_BRAND_NAME }. Reîncercați."
       ],
       "Invalid card number": [
         "Număr de card nevalid."
@@ -21007,8 +20977,8 @@
       ]
     },
     "Payments.iDEAL": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Prin confirmarea acestei plăți, autorizați ${ BRAND_NAME } și Stripe, furnizorul nostru de servicii de plată, să vă instruiască banca să vă debiteze contul în mod corespunzător. Puteți primi o rambursare în termen de 8 săptămâni de la data debitării, în condițiile acordului dvs. cu banca."
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Prin confirmare, autorizați ${ BRAND_NAME } și Stripe, furnizorul nostru de servicii de plată, să colecteze plățile viitoare pentru abonament din acest cont bancar prin Debit Direct SEPA, iar banca să vă debiteze aceste plăți. Prima plată este efectuată acum de către ${ IDEAL_WERO_BRAND_NAME }. Planul se reînnoiește automat până la anularea acestuia; vă vom notifica înainte de fiecare colectare. Pentru colectările prin debit direct, puteți solicita o rambursare de la banca proprie în termen de 8 săptămâni de la data debitării, în conformitate cu termenii acordului cu banca. Aceasta nu se aplică plății ${ IDEAL_WERO_BRAND_NAME } pe care o efectuați acum."
       ]
     },
     "Payments.info": {
@@ -22375,17 +22345,6 @@
       ],
       "User Admin": [
         "Administrare utilizatori"
-      ]
-    },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Configurați politicile de securitate, păstrarea datelor și infrastructura VPN și gestionați jurnalele de audit."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Gestionați toți utilizatorii, grupurile, securitatea, facturarea și configurările de sistem."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Gestionați utilizatorii, grupurile și spațiul de stocare pentru toți membrii, atribuiți roluri și alocați licențe."
       ]
     },
     "Safety review": {
@@ -23774,9 +23733,6 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Aliasuri hide-my-email nelimitate"
-      ],
-      "Up to -${ percentage }%": [
-        "Până la -${ percentage }%"
       ],
       "Up to 2 users": [
         "Maxim 2 utilizatori"

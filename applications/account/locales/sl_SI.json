@@ -9675,9 +9675,6 @@
       "Registering your subscription…": [
         "Registriram vašo naročnino …"
       ],
-      "Remember to share the user's sign in details with them.": [
-        "Ne pozabite deliti podrobnosti za prijavo z uporabnikom."
-      ],
       "Remove metadata from images to protect your privacy.": [
         "Odstranite metapodatke s slik, da zaščitite svojo zasebnost."
       ],
@@ -11234,9 +11231,6 @@
         "${ nbYear } leti",
         "${ nbYear } let",
         "${ nbYear } let"
-      ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } znakov"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Začasno ni na voljo. Poskusite znova pozneje.)"
@@ -12992,11 +12986,6 @@
         "Uvozi vsa sporočila iz ${ selectedItemsToImportCount } od ${ itemsToImportCount } oznak in jih označi kot",
         "Uvozi vsa sporočila iz ${ selectedItemsToImportCount } od ${ itemsToImportCount } oznak in jih označi kot",
         "Uvozi vsa sporočila iz ${ selectedItemsToImportCount } od ${ itemsToImportCount } oznak in jih označi kot"
-      ]
-    },
-    "mail_signup_2023: Info": {
-      "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
-        "Postanite vizionar in bodite del zgodbe ${ BRAND_NAME }"
       ]
     },
     "mail_signup_2024: Info": {
@@ -15353,9 +15342,6 @@
       "Create another account instead": [
         "Ustvari namesto tega drug račun."
       ],
-      "Keep this plan": [
-        "Obdržite ta paket"
-      ],
       "Or ${ createANewAccount }": [
         "Ali ${ createANewAccount }"
       ],
@@ -15367,9 +15353,6 @@
       ],
       "Upgrade": [
         "Nadgradnja"
-      ],
-      "Upgrade my plan": [
-        "Nadgradite trenutni paket"
       ]
     },
     "pass_signup_2023: Action - open web app": {
@@ -15421,9 +15404,6 @@
       "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
         "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } za ${ priceString }."
       ],
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice } na mesec"
-      ],
       "/month /user": [
         "na mesec na uporabnika"
       ],
@@ -15442,9 +15422,6 @@
       "Aliases for email protection from breaches": [
         "Vzdevki za zaščito e-pošte pred uhajanjem podatkov"
       ],
-      "Based in Switzerland, GDPR compliant": [
-        "S sedežem v Švici, skladno z GDPR"
-      ],
       "By continuing, you agree to our ${ termsAndConditionsLink } and ${ privacyPolicyLink }.": [
         "Z nadaljevanjem sprejemate naše ${ termsAndConditionsLink } in ${ privacyPolicyLink }."
       ],
@@ -15453,9 +15430,6 @@
       ],
       "Creating your account": [
         "Ustvarjanje vašega računa"
-      ],
-      "Current plan": [
-        "Trenutni paket"
       ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "Naložite in namestite ustrezne aplikacije in razširitve, da začnete uporabljati ${ PASS_APP_NAME }."
@@ -15478,15 +15452,6 @@
       "Everything from ${ planTitle }, plus...": [
         "Vse od ${ planTitle }, plus ..."
       ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "Za samo **${ relativePrice } na mesec** več dobite dostop do vrhunskega upravitelja gesel ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "Za samo **${ relativePrice } na mesec** več dobite dostop do vrhunskega VPN ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "Za le **${ relativePrice } na mesec** več dobite dostop do vseh premijskih storitev ${ BRAND_NAME }!"
-      ],
       "Free forever": [
         "Brezplačno za vedno."
       ],
@@ -15498,9 +15463,6 @@
       ],
       "Get the security and features your business needs": [
         "Zagotovite si varnost in funkcije, ki jih potrebuje vaše podjetje"
-      ],
-      "Includes:": [
-        "Vključuje:"
       ],
       "Install ${ PASS_APP_NAME }": [
         "Namesti ${ PASS_APP_NAME }"

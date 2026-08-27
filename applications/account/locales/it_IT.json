@@ -11768,9 +11768,6 @@
       "Registering your subscription…": [
         "Registrazione dell'abbonamento…"
       ],
-      "Remember to share the user's sign in details with them.": [
-        "Ricordati di condividere con loro i dettagli di accesso dell'utente."
-      ],
       "Remove metadata from images to protect your privacy.": [
         "Rimuovi i metadati dalle immagini per proteggere la tua privacy."
       ],
@@ -13846,9 +13843,6 @@
       ],
       "${ PROTON_SENTINEL_NAME } protection": [
         "Protezione ${ PROTON_SENTINEL_NAME }"
-      ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } caratteri"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporaneamente non disponibile. Sei pregato di ricontrollare in seguito.)"
@@ -16140,9 +16134,6 @@
     "mail_signup_2023: Info": {
       "**Get ${ plan }** for a limited time!": [
         "**Ottieni ${ plan }** per un periodo limitato!"
-      ],
-      "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
-        "Diventa un utente Visionary ed entra a far parte della storia di ${ BRAND_NAME }"
       ]
     },
     "mail_signup_2024: Info": {
@@ -16338,9 +16329,6 @@
         "${ seats } licenza inclusa",
         "${ seats } licenze incluse"
       ],
-      "100 ${ BRAND_NAME } email addresses": [
-        "100 indirizzi email ${ BRAND_NAME }"
-      ],
       "Cloud storage and file sharing": [
         "Archiviazione cloud e condivisione di file"
       ],
@@ -16361,9 +16349,6 @@
       ],
       "Password manager with team vaults": [
         "Gestore di password con casseforti di gruppo"
-      ],
-      "Private and unlimited AI chat (${ LUMO_SHORT_APP_NAME })": [
-        "Chat AI privata e illimitata (${ LUMO_SHORT_APP_NAME })"
       ],
       "Private video calls for the conversations that matter": [
         "Videochiamate private per le conversazioni importanti"
@@ -18853,9 +18838,6 @@
       "Create another account instead": [
         "Crea invece un altro account"
       ],
-      "Keep this plan": [
-        "Mantieni questo piano"
-      ],
       "Open ${ PASS_APP_NAME } vaults": [
         "Apri ${ PASS_APP_NAME }"
       ],
@@ -18870,9 +18852,6 @@
       ],
       "Upgrade": [
         "Effettua l'upgrade"
-      ],
-      "Upgrade my plan": [
-        "Migliora il mio piano"
       ]
     },
     "pass_signup_2023: Action - open web app": {
@@ -18927,9 +18906,6 @@
       "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
         "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } a ${ priceString }."
       ],
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice } al mese"
-      ],
       "/month /user": [
         "/mese /utente"
       ],
@@ -18947,9 +18923,6 @@
       ],
       "Aliases for email protection from breaches": [
         "Alias ​​per la protezione delle email dalle violazioni di dati"
-      ],
-      "Based in Switzerland, GDPR compliant": [
-        "Sede in Svizzera, conforme al GDPR"
       ],
       "But you can get ${ discountPercentString } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Ma puoi ottenere uno sconto del ${ discountPercentString } effettuando l'upgrade a **${ upsellPlanTitle }** - costa solo ${ relativePrice } in più al mese."
@@ -18978,9 +18951,6 @@
       "Creating your account": [
         "Creazione del tuo account"
       ],
-      "Current plan": [
-        "Piano attuale"
-      ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "Scarica e installa le apposite app ed estensioni per iniziare ad usare ${ PASS_APP_NAME }"
       ],
@@ -19002,15 +18972,6 @@
       "Everything from ${ planTitle }, plus...": [
         "Tutto ciò compreso in ${ planTitle } e in più..."
       ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "Per soli **${ relativePrice } al mese** in più, ottieni l'accesso al gestore di password premium di ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "Per soli **${ relativePrice } al mese** in più, ottieni l'accesso al servizio VPN premium di ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "Per soli **${ relativePrice } al mese** in più, puoi accedere a tutti i servizi premium di ${ BRAND_NAME }!"
-      ],
       "Free forever": [
         "Gratis per sempre"
       ],
@@ -19028,9 +18989,6 @@
       ],
       "Get unlimited privacy for two": [
         "Ottieni privacy illimitata per due"
-      ],
-      "Includes:": [
-        "Include:"
       ],
       "Install ${ PASS_APP_NAME }": [
         "Installa ${ PASS_APP_NAME }"
@@ -20862,17 +20820,6 @@
         "Amministratore utenti"
       ]
     },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Configura le policy di sicurezza, la conservazione dei dati, l'infrastruttura VPN e gestisci i log di controllo."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Gestisci tutti gli utenti, i gruppi, la sicurezza, la fatturazione e le configurazioni di sistema."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Gestisci gli utenti, i gruppi e l'archiviazione per tutti i membri, assegna i ruoli e alloca le licenze."
-      ]
-    },
     "Safety review": {
       "Code sent to ${ boldValue }": [
         "Codice inviato a ${ boldValue }"
@@ -22189,9 +22136,6 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Alias hide-my-email illimitati"
-      ],
-      "Up to -${ percentage }%": [
-        "Fino a -${ percentage }%"
       ],
       "Up to 2 users": [
         "Fino a 2 utenti"

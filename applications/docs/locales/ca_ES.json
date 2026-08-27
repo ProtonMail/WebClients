@@ -5722,15 +5722,6 @@
       "This user can not be migrated due to platform incompatibilities.": [
         "Aquest usuari no es pot migrar a causa d'incompatibilitats de la plataforma."
       ],
-      "This will permanently delete the file you uploaded.": [
-        "Això eliminarà permanentment el fitxer que heu carregat."
-      ],
-      "This will permanently delete the folder you uploaded.": [
-        "Això eliminarà permanentment la carpeta que heu carregat."
-      ],
-      "This will permanently delete the selected items you uploaded.": [
-        "Això eliminarà permanentment els elements seleccionats que heu carregat."
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Això tancarà la sessió de tots els comptes als quals teniu sessió iniciada actualment"
       ],
@@ -6136,8 +6127,8 @@
       "${ BRAND_NAME } username": [
         "Nom d'usuari de ${ BRAND_NAME }"
       ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } caràcters"
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } caràcters"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(No disponible temporalment. Comproveu-ho de nou més tard.)"
@@ -8423,27 +8414,17 @@
       "Share invitation declined": [
         "S'ha rebutjat la invitació per a compartir."
       ],
-      "Sorry, we couldn't delete the folder because it is not empty.": [
-        "No hem pogut eliminar la carpeta perquè no està buida.",
-        "No hem pogut eliminar les carpetes perquè no estan buides."
-      ],
       "Stopping the sharing of this item has failed": [
         "Error en deixar de compartir aquest element"
       ],
       "Subfolder failed to be loaded": [
         "No s'ha pogut carregar la subcarpeta."
       ],
-      "The document failed to be created": [
-        "No s'ha pogut crear el document."
-      ],
       "The link to your item failed to be deleted": [
         "No s'ha pogut eliminar l'enllaç a l'element"
       ],
       "The link to your item was deleted": [
         "S'ha eliminat l'enllaç a l'element"
-      ],
-      "The spreadsheet failed to be created": [
-        "No s'ha pogut crear el full de càlcul."
       ],
       "Trash failed to be emptied": [
         "No s'ha pogut buidar la paperera."
@@ -9324,17 +9305,6 @@
       ],
       "User Admin": [
         "Administrador/a d'usuaris"
-      ]
-    },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Configureu les polítiques de seguretat, la retenció de dades i la infraestructura VPN, i gestioneu els registres d'auditoria."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Gestioneu tots els usuaris, grups, seguretat, facturació i configuracions del sistema."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Gestioneu els usuaris, els grups i l'emmagatzematge de tots els membres, assigneu rols i adjudiqueu llicències."
       ]
     },
     "Safety review": {
@@ -10554,9 +10524,6 @@
       "Decline invitation?": [
         "Voleu rebutjar la invitació?"
       ],
-      "Delete": [
-        "Elimina"
-      ],
       "Delete ${ count } contact": [
         "Suprimeix ${ count } contacte",
         "Suprimeix ${ count } contactes"
@@ -10564,12 +10531,6 @@
       "Delete ${ count } contact group": [
         "Eliminar ${ count } grup de contactes",
         "Eliminar ${ count } grups de contactes"
-      ],
-      "Delete ${ links.length } items?": [
-        "Voleu eliminar ${ links.length } elements?"
-      ],
-      "Delete ${ name }?": [
-        "Elimina ${ name }?"
       ],
       "Delete ${ value }": [
         "Elimina ${ value }"

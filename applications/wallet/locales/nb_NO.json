@@ -3311,9 +3311,6 @@
         "${ n } måned",
         "${ n } måneder"
       ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } tegn"
-      ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Få tilgang til ${ PASS_APP_NAME } sikkert fra terminalen, ideelt for skripting, automatisering og utviklingsarbeidsflyter."
       ],
@@ -5219,17 +5216,6 @@
       ],
       "User Admin": [
         "Brukeradministrator"
-      ]
-    },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Konfigurer sikkerhetsretningslinjer, dataoppbevaring, VPN-infrastruktur og administrer revisjonslogger."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Administrer alle brukere, grupper, sikkerhet, fakturering og systemkonfigurasjoner."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Administrer brukere, grupper og lagring for alle medlemmer, tildel roller og alloker lisenser."
       ]
     },
     "Safety review": {

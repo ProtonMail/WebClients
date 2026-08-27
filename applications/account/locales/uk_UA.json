@@ -12173,9 +12173,6 @@
       "Registering your subscription…": [
         "Реєстрація передплати…"
       ],
-      "Remember to share the user's sign in details with them.": [
-        "Повідомте користувачам їхні дані для входу."
-      ],
       "Remove metadata from images to protect your privacy.": [
         "Вилучайте метадані з зображень, щоб захистити вашу приватність."
       ],
@@ -13138,9 +13135,6 @@
       ],
       "We use 3-D Secure to protect your payments": [
         "Ми використовуємо 3-D Secure для захисту ваших платежів"
-      ],
-      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "Ми перенаправимо вас на сайт ${ IDEAL_BRAND_NAME } у новій вкладці браузера для завершення цієї транзакції. Якщо ви використовуєте блокувальники спливних вікон, будь ласка, вимкніть їх, щоб продовжити."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Ми перенаправимо вас на PayPal на новій вкладці браузера для завершення цієї транзакції. Якщо ви користуєтесь блокувальниками вмісту, вимкніть їх перед продовженням."
@@ -14312,9 +14306,6 @@
       ],
       "${ PROTON_SENTINEL_NAME } protection": [
         "Захист ${ PROTON_SENTINEL_NAME }"
-      ],
-      "${ value.length }/${ maxLength } characters": [
-        "Символів: ${ value.length }/${ maxLength }"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Тимчасово недоступно. Повторіть спробу пізніше.)"
@@ -16589,9 +16580,6 @@
     "mail_signup_2023: Info": {
       "**Get ${ plan }** for a limited time!": [
         "**Отримайте ${ plan }** протягом обмеженого часу!"
-      ],
-      "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
-        "Придбайте передплату Visionary і будьте частиною історії ${ BRAND_NAME }"
       ]
     },
     "mail_signup_2024: Info": {
@@ -16804,9 +16792,6 @@
         "${ seats } місць включено",
         "${ seats } місця включено"
       ],
-      "100 ${ BRAND_NAME } email addresses": [
-        "100 адрес електронної пошти ${ BRAND_NAME }"
-      ],
       "Cloud storage and file sharing": [
         "Хмарне сховище та спільний доступ до файлів"
       ],
@@ -16827,9 +16812,6 @@
       ],
       "Password manager with team vaults": [
         "Менеджер паролів із командними сховищами"
-      ],
-      "Private and unlimited AI chat (${ LUMO_SHORT_APP_NAME })": [
-        "Приватний та необмежений ШІ-чат (${ LUMO_SHORT_APP_NAME })"
       ],
       "Private video calls for the conversations that matter": [
         "Приватні відеодзвінки для важливих розмов"
@@ -19400,9 +19382,6 @@
       "Create another account instead": [
         "Створити інший обліковий запис"
       ],
-      "Keep this plan": [
-        "Залишити цей план"
-      ],
       "Open ${ PASS_APP_NAME } vaults": [
         "Відкрити сховища ${ PASS_APP_NAME }"
       ],
@@ -19417,9 +19396,6 @@
       ],
       "Upgrade": [
         "Покращити"
-      ],
-      "Upgrade my plan": [
-        "Покращити тарифний план"
       ]
     },
     "pass_signup_2023: Action - open web app": {
@@ -19474,9 +19450,6 @@
       "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
         "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } за ${ priceString }."
       ],
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice } на місяць"
-      ],
       "/month /user": [
         "/місяць /користувач"
       ],
@@ -19494,9 +19467,6 @@
       ],
       "Aliases for email protection from breaches": [
         "Псевдоніми для захисту пошти від витоків"
-      ],
-      "Based in Switzerland, GDPR compliant": [
-        "Знаходиться у Швейцарії та відповідає вимогам GDPR"
       ],
       "But you can get ${ discountPercentString } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Але ви можете отримати знижку ${ discountPercentString }, покращивши план до **${ upsellPlanTitle }** — це всього лише на ${ relativePrice } дорожче на місяць."
@@ -19525,9 +19495,6 @@
       "Creating your account": [
         "Створення облікового запису"
       ],
-      "Current plan": [
-        "Поточний план"
-      ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "Завантажте і встановіть відповідні програми та розширення, щоб почати користуватися ${ PASS_APP_NAME }"
       ],
@@ -19549,15 +19516,6 @@
       "Everything from ${ planTitle }, plus...": [
         "Усі функції ${ planTitle }, а також..."
       ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "Лише за **${ relativePrice } на місяць** ви отримуєте доступ до преміального менеджера паролів ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "Лише за **${ relativePrice } на місяць** ви отримуєте доступ до преміального сервісу VPN від ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "Лише за **${ relativePrice } на місяць** ви отримуєте доступ до всіх преміумсервісів ${ BRAND_NAME }!"
-      ],
       "Free forever": [
         "Безплатно назавжди"
       ],
@@ -19575,9 +19533,6 @@
       ],
       "Get unlimited privacy for two": [
         "Отримайте необмежену приватність для двох"
-      ],
-      "Includes:": [
-        "Включає:"
       ],
       "Install ${ PASS_APP_NAME }": [
         "Встановити ${ PASS_APP_NAME }"
@@ -19968,9 +19923,6 @@
       "Offer unavailable": [
         "Пропозиція недоступна"
       ],
-      "Pay with ${ IDEAL_BRAND_NAME }": [
-        "Оплатити за допомогою ${ IDEAL_BRAND_NAME }"
-      ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Спосіб оплати потрібен для активації передплати після закінчення пробного періоду."
       ],
@@ -20087,9 +20039,6 @@
       ]
     },
     "Payments.Error": {
-      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
-        "Не вдалося ініціалізувати ${ IDEAL_BRAND_NAME }. Будь ласка, спробуйте ще раз пізніше."
-      ],
       "Invalid card number": [
         "Недійсний номер картки"
       ],
@@ -20112,11 +20061,6 @@
     "Payments.error": {
       "Something went wrong. Google Pay verification failed.": [
         "Щось пішло не так. Перевірка Google Pay не вдалася."
-      ]
-    },
-    "Payments.iDEAL": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Підтверджуючи цей платіж, ви надаєте дозвіл компанії ${ BRAND_NAME } та Stripe, нашому постачальнику платіжних послуг, дати вказівку вашому банку списати відповідну суму з вашого рахунку. Ви можете отримати повернення коштів протягом 8 тижнів з дати списання відповідно до умов вашої угоди з банком."
       ]
     },
     "Payments.info": {
@@ -21412,17 +21356,6 @@
       ],
       "User Admin": [
         "Адміністратор користувачів"
-      ]
-    },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Налаштовувати політики безпеки, зберігання даних та інфраструктуру VPN, а також керувати журналами аудиту."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Керувати всіма користувачами, групами, безпекою, виставленням рахунків та системними конфігураціями."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Керувати користувачами, групами та сховищем для всіх членів, призначати ролі та розподіляти ліцензії."
       ]
     },
     "Safety review": {
@@ -22801,9 +22734,6 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Необмежена кількість псевдонімів Hide-my-email"
-      ],
-      "Up to -${ percentage }%": [
-        "До -${ percentage }%"
       ],
       "Up to 2 users": [
         "До 2 користувачів"

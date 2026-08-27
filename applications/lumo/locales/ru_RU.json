@@ -1768,9 +1768,6 @@
       " header. Keys are scoped to your account and can be revoked from ": [
         " заголовок. Ключи привязаны к вашему аккаунту, и их можно отозвать в "
       ],
-      " to have higher limits.": [
-        " чтобы получить более высокие лимиты."
-      ],
       "\"${ fileName }\" has multiple sheets. Select the sheets to include in the conversation context.": [
         "В файле \"${ fileName }\" несколько листов. Выберите листы, которые хотите включить в контекст цепочки писем."
       ],
@@ -2236,18 +2233,6 @@
       "You've reached your image limit for this period.": [
         "Вы достигли лимита изображений на этот период."
       ],
-      "You've run out of weekly chats, please ": [
-        "У вас закончились еженедельные чаты, пожалуйста "
-      ],
-      "You've run out of weekly chats, please sign in or create an account to have higher limits.": [
-        "У вас закончились еженедельные чаты, пожалуйста, войдите в аккаунт или создайте новый, чтобы увеличить лимиты."
-      ],
-      "You've run out of weekly chats, please upgrade to have higher limits.": [
-        "У вас закончились еженедельные чаты, пожалуйста, улучшите аккаунт, чтобы увеличить лимиты."
-      ],
-      "You've run out of weekly chats. Contact your admin to get higher limits.": [
-        "У вас закончились еженедельные чаты. Обратитесь к своему администратору, чтобы получить более высокие лимиты."
-      ],
       "Your memories are already up to date.": [
         "Ваши воспоминания уже обновлены."
       ]
@@ -2471,9 +2456,6 @@
       ],
       "Sign in": [
         "Войти"
-      ],
-      "upgrade": [
-        "улучшить"
       ],
       "Upgrade": [
         "Перейти"
@@ -8796,17 +8778,6 @@
       ],
       "User Admin": [
         "Администратор пользователей"
-      ]
-    },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Настройка политик безопасности, хранения данных и инфраструктуры VPN, а также управление журналами аудита."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Управление всеми пользователями, группами, безопасностью, биллингом и конфигурациями системы."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Управление пользователями, группами и хранилищем для всех участников, назначение должностей и распределение лицензий."
       ]
     },
     "Safety review": {
