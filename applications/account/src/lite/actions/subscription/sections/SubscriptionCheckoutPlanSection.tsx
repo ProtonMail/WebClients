@@ -11,10 +11,10 @@ import { AddonTooltip } from '@proton/components/containers/payments/subscriptio
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { IcMoneyBills } from '@proton/icons/icons/IcMoneyBills';
 import { IcTagFilled } from '@proton/icons/icons/IcTagFilled';
+import { usePayments } from '@proton/payments-ui/ui/context/PaymentContext';
+import { createCheckoutView } from '@proton/payments-ui/ui/headless-checkout/checkout-view';
 import type { Currency } from '@proton/payments/core/interface';
 import { isSubscriptionCheckForbiddenWithReason } from '@proton/payments/core/subscription/helpers';
-import { usePayments } from '@proton/payments/ui/context/PaymentContext';
-import { createCheckoutView } from '@proton/payments/ui/headless-checkout/checkout-view';
 import { APPS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import clsx from '@proton/utils/clsx';

@@ -15,11 +15,13 @@ export interface EditOutgoingEmergencyContactModalProps extends Omit<
     ModalProps<'form'>,
     'children' | 'buttons' | 'onSubmit'
 > {
+    loadingSubscriptionModal?: boolean;
     onUpgrade: (type: 'explore' | 'upgrade') => void;
     upsell: UpsellWithPlan;
 }
 
 export const UpsellOutgoingEmergencyContactModal = ({
+    loadingSubscriptionModal,
     onUpgrade,
     upsell,
     ...rest
@@ -102,10 +104,21 @@ export const UpsellOutgoingEmergencyContactModal = ({
                             </div>
                         </div>
                         <div className="justify-center flex flex-colum gap-2">
-                            <Button fullWidth color="norm" type="button" onClick={() => onUpgrade('upgrade')}>
+                            <Button
+                                fullWidth
+                                color="norm"
+                                type="button"
+                                loading={loadingSubscriptionModal}
+                                onClick={() => onUpgrade('upgrade')}
+                            >
                                 {c('emergency_access').t`Upgrade to ${planName}`}
                             </Button>
-                            <Button color="norm" shape="underline" onClick={() => onUpgrade('explore')}>
+                            <Button
+                                color="norm"
+                                shape="underline"
+                                loading={loadingSubscriptionModal}
+                                onClick={() => onUpgrade('explore')}
+                            >
                                 {c('Action').t`Explore other plans`}
                             </Button>
                         </div>

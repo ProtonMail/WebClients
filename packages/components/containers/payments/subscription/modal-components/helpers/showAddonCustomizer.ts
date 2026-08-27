@@ -1,9 +1,9 @@
+import type { CouponConfig } from '@proton/payments-ui/ui/coupon-config/interface';
+import type { CouponConfigRendered } from '@proton/payments-ui/ui/coupon-config/useCouponConfig';
 import { getAddonConfigByType } from '@proton/payments/core/addon/addons';
 import type { ADDON_PREFIXES } from '@proton/payments/core/constants';
 import type { FreeSubscription, PlanIDs } from '@proton/payments/core/interface';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
-import type { CouponConfig } from '@proton/payments/ui/coupon-config/interface';
-import type { CouponConfigRendered } from '@proton/payments/ui/coupon-config/useCouponConfig';
 import { getStandaloneUnleashClient } from '@proton/unleash/standaloneClient';
 
 /**

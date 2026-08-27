@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { OfferPrice } from '@proton/payments/ui/components/OfferPrice';
+import { OfferPrice } from '@proton/payments-ui/ui/components/OfferPrice';
 
 import Price from '../../../../../components/price/Price';
 import type { UpsellWithPlan } from '../../helpers/index';

@@ -1,6 +1,9 @@
 import { useMemo, useRef } from 'react';
 
 import { useConfig } from '@proton/app-context/useConfig';
+import { useCurrencyOverride } from '@proton/payments-ui/payment-methods/useCurrencyOverride';
+import { type ApplePayModalHandles, useApplePay } from '@proton/payments-ui/payment-processors/useApplePay';
+import { type GooglePayModalHandles, useGooglePay } from '@proton/payments-ui/payment-processors/useGooglePay';
 import { type PaymentsVersion, buyCredit, payInvoice, setPaymentMethodV5 } from '@proton/payments/core/api/api';
 import { createPaymentSubscription } from '@proton/payments/core/api/createPaymentSubscription';
 import type { BillingAddress } from '@proton/payments/core/billing-address/billing-address';
@@ -22,11 +25,8 @@ import type {
     PlanIDs,
     SavedPaymentMethod,
 } from '@proton/payments/core/interface';
-import { useCurrencyOverride } from '@proton/payments/core/payment-methods/useCurrencyOverride';
 import type { ChargebeePaypalModalHandles } from '@proton/payments/core/payment-processors/chargebeePaypalPayment';
 import type { PaymentProcessorType } from '@proton/payments/core/payment-processors/interface';
-import { type ApplePayModalHandles, useApplePay } from '@proton/payments/core/payment-processors/useApplePay';
-import { type GooglePayModalHandles, useGooglePay } from '@proton/payments/core/payment-processors/useGooglePay';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { isExistingPaymentMethod } from '@proton/payments/core/type-guards';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';

@@ -16,13 +16,13 @@ import PlanIconName from '@proton/components/containers/payments/subscription/Yo
 import { getPlanTitlePlusMaybeBrand } from '@proton/components/containers/payments/subscription/YourPlanSectionV2/helpers';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { IcCreditCards } from '@proton/icons/icons/IcCreditCards';
+import { usePayments } from '@proton/payments-ui/ui/context/PaymentContext';
+import type { CheckoutView } from '@proton/payments-ui/ui/headless-checkout/checkout-view';
 import type { FreeSubscription } from '@proton/payments/core/interface';
 import { SubscriptionMode } from '@proton/payments/core/subscription/constants';
 import { isTrial } from '@proton/payments/core/subscription/helpers';
 import type { Subscription, SubscriptionCheckForbiddenReason } from '@proton/payments/core/subscription/interface';
 import { isFreeSubscription } from '@proton/payments/core/type-guards';
-import { usePayments } from '@proton/payments/ui/context/PaymentContext';
-import type { CheckoutView } from '@proton/payments/ui/headless-checkout/checkout-view';
 import { isOrganization } from '@proton/shared/lib/organization/helper';
 
 import { getDisplayName, getTrialPeriodText } from '../../helpers';

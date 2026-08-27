@@ -1,7 +1,7 @@
 import { getCreditCardTypeByBrand } from '@proton/components/containers/payments/methods/PaymentMethodDetails';
+import { getBankSvg } from '@proton/payments-ui/ui/helpers/credit-card-icons';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { SavedCardDetails, SavedPaymentMethod } from '@proton/payments/core/interface';
-import { getBankSvg } from '@proton/payments/ui/helpers/credit-card-icons';
 
 import type { SavedMethodCustomType } from './SavedPaymentMethodDetails';
 import sepaBankIcon from './payment-method-icons/bank-transfer.svg';

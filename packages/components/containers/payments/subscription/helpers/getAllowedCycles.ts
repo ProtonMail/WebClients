@@ -1,3 +1,4 @@
+import type { CouponConfigRendered } from '@proton/payments-ui/ui/coupon-config/useCouponConfig';
 import { isBF2025Offer } from '@proton/payments/core/checkout';
 import { type ADDON_NAMES, CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { Currency, FreeSubscription, PlanIDs } from '@proton/payments/core/interface';
@@ -6,7 +7,6 @@ import { getPlanFromIDs } from '@proton/payments/core/planIDs';
 import { isRegularCycle, notHigherThanAvailableOnBackend } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { hasCycle } from '@proton/payments/core/subscription/plans-map-wrapper';
-import type { CouponConfigRendered } from '@proton/payments/ui/coupon-config/useCouponConfig';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 
 import { isSamePlanCheckout } from './isSamePlanCheckout';

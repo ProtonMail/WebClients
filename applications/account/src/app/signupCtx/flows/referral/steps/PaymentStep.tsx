@@ -9,14 +9,14 @@ import PaymentWrapper from '@proton/components/containers/payments/PaymentWrappe
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import useLoading from '@proton/hooks/useLoading';
 import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
+import { useBillingAddress } from '@proton/payments-ui/ui/billing-address/hooks/useBillingAddress';
+import { PayButton } from '@proton/payments-ui/ui/components/PayButton';
+import { usePaymentOptimistic } from '@proton/payments-ui/ui/context/PaymentContextOptimistic';
 import { getBillingAddressFromPaymentStatus } from '@proton/payments/core/billing-address/billing-address-from-payments-status';
 import { PAYMENT_METHOD_TYPES, TRIAL_DURATION_DAYS } from '@proton/payments/core/constants';
 import type { PaymentProcessorHook } from '@proton/payments/core/payment-processors/interface';
 import { getPlanFromPlanIDs } from '@proton/payments/core/plan/helpers';
 import { tracePaymentError } from '@proton/payments/sentry/capture';
-import { useBillingAddress } from '@proton/payments/ui/billing-address/hooks/useBillingAddress';
-import { PayButton } from '@proton/payments/ui/components/PayButton';
-import { usePaymentOptimistic } from '@proton/payments/ui/context/PaymentContextOptimistic';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 

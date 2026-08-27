@@ -2,12 +2,12 @@ import type { ReactNode } from 'react';
 
 import { screen } from '@testing-library/react';
 
+import { useTaxCountry } from '@proton/payments-ui/ui/billing-address/hooks/useTaxCountry';
 import { getOptimisticCheckResult } from '@proton/payments/core/checkout';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import { SubscriptionMode } from '@proton/payments/core/subscription/constants';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
-import { useTaxCountry } from '@proton/payments/ui/billing-address/hooks/useTaxCountry';
 import { buildSubscription } from '@proton/testing/builders/subscription';
 import { buildUser } from '@proton/testing/builders/user';
 import { getTestPlansMap } from '@proton/testing/data/payments/data-plans';

@@ -1,11 +1,11 @@
 import { c } from 'ttag';
 
+import { useCouponConfig } from '@proton/payments-ui/ui/coupon-config/useCouponConfig';
 import { type PaymentsCheckoutUI, getCheckoutUi, getOptimisticCheckResult } from '@proton/payments/core/checkout';
 import type { CYCLE } from '@proton/payments/core/constants';
 import type { Currency, PlanIDs } from '@proton/payments/core/interface';
 import type { PlansMap } from '@proton/payments/core/plan/interface';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
-import { useCouponConfig } from '@proton/payments/ui/coupon-config/useCouponConfig';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 

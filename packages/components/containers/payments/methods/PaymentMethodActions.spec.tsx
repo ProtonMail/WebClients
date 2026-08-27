@@ -40,7 +40,7 @@ jest.mock('@proton/app-context/useApi', () => ({
 // Mocking Portal to render its children inline lets us exercise the real component.
 jest.mock('@proton/atoms/Portal/Portal');
 
-jest.mock('@proton/payments/ui/containers/EditCardModal', () => ({
+jest.mock('@proton/payments-ui/ui/containers/EditCardModal', () => ({
     __esModule: true,
     default: jest.fn().mockImplementation(() => <span>Edit Card Modal</span>),
 }));

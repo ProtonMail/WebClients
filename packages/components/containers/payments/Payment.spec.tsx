@@ -22,8 +22,8 @@ jest.mock('@proton/app-context/useApi', () => {
 
 // The Chargebee credit card form renders a third-party iframe and reads the chargebeeCard
 // hook, neither of which is exercised here. Stub it so the surrounding Payment UI can render.
-jest.mock('@proton/payments/ui/components/ChargebeeWrapper', () => ({
-    ...jest.requireActual('@proton/payments/ui/components/ChargebeeWrapper'),
+jest.mock('@proton/payments-ui/ui/components/ChargebeeWrapper', () => ({
+    ...jest.requireActual('@proton/payments-ui/ui/components/ChargebeeWrapper'),
     ChargebeeCreditCardWrapper: () => <div data-testid="chargebee-credit-card-wrapper" />,
 }));
 

@@ -7,7 +7,7 @@ import SubscriptionModalProvider, {
 } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
-import { PaymentsContextProvider } from '@proton/payments/ui/context/PaymentContext';
+import { PaymentsContextProvider } from '@proton/payments-ui/ui/context/PaymentContext';
 import { APP_UPSELL_REF_PATH, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';

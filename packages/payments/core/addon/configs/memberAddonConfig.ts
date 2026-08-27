@@ -57,7 +57,7 @@ export const MEMBER_ADDON_CONFIG: AddonConfig = {
                 ? c('Info').t`A user is an account associated with a single username, mailbox, and person`
                 : undefined,
     },
-    tooltipLabel: (price) => c('Addon').jt`${price} per user`,
+    tooltipLabel: (price) => c('Addon').t`${price} per user`,
     title: () => c('Addon').t`Users`,
     dashboardTitle: () => '',
     addonCheckoutTitle: (users) => c('Addon').ngettext(msgid`${users} user`, `${users} users`, users),

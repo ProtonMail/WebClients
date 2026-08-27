@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { useModalState } from '@proton/components/index';
+import { usePaymentOptimistic } from '@proton/payments-ui/ui/context/PaymentContextOptimistic';
 import { CYCLE } from '@proton/payments/core/constants';
-import { usePaymentOptimistic } from '@proton/payments/ui/context/PaymentContextOptimistic';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import type { GetActiveSessionsResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { APPS } from '@proton/shared/lib/constants';

@@ -9,9 +9,9 @@ import { DriveLogo, MailLogo, PassLogo, VpnLogo } from '@proton/components';
 import { getNormalizedPlanTitleToPlus } from '@proton/components/containers/payments/subscription/plusToPlusHelper';
 import { IcChevronLeft } from '@proton/icons/icons/IcChevronLeft';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
+import { usePaymentOptimistic } from '@proton/payments-ui/ui/context/PaymentContextOptimistic';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import type { PlanIDs } from '@proton/payments/core/interface';
-import { usePaymentOptimistic } from '@proton/payments/ui/context/PaymentContextOptimistic';
 import {
     DRIVE_SHORT_APP_NAME,
     MAIL_SHORT_APP_NAME,
