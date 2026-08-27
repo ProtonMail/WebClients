@@ -39,4 +39,21 @@ describe('selectCachableState', () => {
         const state = { ...stateFor(SyncStrategy.USER_EVENTS), ui: { values: { key: true } } };
         expect(selectCachableState(state).ui).toEqual({ values: {} });
     });
+
+    test('never caches `compromisedPasswords.progress`, but keeps `lastSyncedChange`/`items`', () => {
+        const base = stateFor(SyncStrategy.USER_EVENTS);
+        const state = {
+            ...base,
+            compromisedPasswords: {
+                lastSyncedChange: 1234,
+                items: { key: { compromised: true, etag: '', lastChangeAtCheck: 1234, revision: 1 } },
+                progress: { completed: 7, total: 20 },
+            },
+        };
+
+        const cachable = selectCachableState(state);
+        expect(cachable.compromisedPasswords.progress).toEqual({ completed: 0, total: 0 });
+        expect(cachable.compromisedPasswords.lastSyncedChange).toEqual(1234);
+        expect(cachable.compromisedPasswords.items).toEqual(state.compromisedPasswords.items);
+    });
 });

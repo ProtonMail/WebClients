@@ -1,4 +1,4 @@
-import { asyncLatest, asyncLock, asyncQueue, awaiter, cancelable, unwrap } from './promises';
+import { asyncLatest, asyncLock, asyncQueue, awaiter, cancelable, pool, unwrap } from './promises';
 
 type TestResolvers = { resolve: (val: number) => void; reject: (err: unknown) => void }[];
 
@@ -246,6 +246,120 @@ describe('promise', () => {
             await job;
 
             expect(effects).toEqual([1]);
+        });
+    });
+
+    describe('pool', () => {
+        type PoolResolver = { resolve: (val: string) => void; reject: (err: unknown) => void };
+        const poolResolvers: PoolResolver[] = [];
+
+        const poolJob = jest.fn(
+            (_item: number, _index: number) =>
+                new Promise<string>((resolve, reject) => poolResolvers.push({ resolve, reject }))
+        );
+
+        beforeEach(() => {
+            poolResolvers.length = 0;
+            poolJob.mockClear();
+        });
+
+        test('runs at most `concurrency` jobs at once and preserves item order', async () => {
+            const result = pool([0, 1, 2, 3, 4], 2, poolJob);
+            expect(poolJob).toHaveBeenCalledTimes(2);
+
+            poolResolvers[0].resolve('a');
+            await Promise.resolve();
+            expect(poolJob).toHaveBeenCalledTimes(3);
+
+            poolResolvers[1].resolve('b');
+            await Promise.resolve();
+            expect(poolJob).toHaveBeenCalledTimes(4);
+
+            poolResolvers[2].resolve('c');
+            await Promise.resolve();
+            expect(poolJob).toHaveBeenCalledTimes(5);
+
+            poolResolvers[3].resolve('d');
+            poolResolvers[4].resolve('e');
+
+            await expect(result).resolves.toEqual(['a', 'b', 'c', 'd', 'e']);
+        });
+
+        test('preserves result order even when jobs complete out of order', async () => {
+            const result = pool([0, 1, 2], 3, poolJob);
+            expect(poolJob).toHaveBeenCalledTimes(3);
+
+            poolResolvers[1].resolve('b');
+            poolResolvers[2].resolve('c');
+            poolResolvers[0].resolve('a');
+
+            await expect(result).resolves.toEqual(['a', 'b', 'c']);
+        });
+
+        test('reports progress as each item completes', async () => {
+            const onProgress = jest.fn();
+            const result = pool([0, 1, 2], 2, poolJob, onProgress);
+
+            poolResolvers[0].resolve('a');
+            await Promise.resolve();
+            expect(onProgress).toHaveBeenCalledWith(1, 3);
+
+            poolResolvers[1].resolve('b');
+            await Promise.resolve();
+            expect(onProgress).toHaveBeenCalledWith(2, 3);
+
+            poolResolvers[2].resolve('c');
+            await expect(result).resolves.toEqual(['a', 'b', 'c']);
+            expect(onProgress).toHaveBeenLastCalledWith(3, 3);
+        });
+
+        test('stops dispatching new work after a failure, but lets in-flight jobs finish', async () => {
+            const result = pool([0, 1, 2, 3], 2, poolJob);
+            expect(poolJob).toHaveBeenCalledTimes(2);
+
+            const error = new Error('fail');
+            poolResolvers[0].reject(error);
+            await expect(result).rejects.toBe(error);
+
+            /* worker still processing item 1 finishes normally, but must not pick up item 2 */
+            poolResolvers[1].resolve('b');
+            await Promise.resolve();
+            expect(poolJob).toHaveBeenCalledTimes(2);
+        });
+
+        test('resolves immediately for an empty array without calling job', async () => {
+            await expect(pool([], 4, poolJob)).resolves.toEqual([]);
+            expect(poolJob).not.toHaveBeenCalled();
+        });
+
+        test('clamps concurrency to at least 1 and at most the item count', async () => {
+            const zeroConcurrency = pool([0, 1], 0, poolJob);
+            expect(poolJob).toHaveBeenCalledTimes(1);
+            poolResolvers[0].resolve('a');
+            await Promise.resolve();
+            poolResolvers[1].resolve('b');
+            await expect(zeroConcurrency).resolves.toEqual(['a', 'b']);
+
+            poolJob.mockClear();
+            poolResolvers.length = 0;
+
+            const oversizedConcurrency = pool([0, 1], 10, poolJob);
+            expect(poolJob).toHaveBeenCalledTimes(2);
+            poolResolvers[0].resolve('a');
+            poolResolvers[1].resolve('b');
+            await expect(oversizedConcurrency).resolves.toEqual(['a', 'b']);
+        });
+
+        test('falls back to a concurrency of 1 for a non-finite value', async () => {
+            const result = pool([0, 1], NaN, poolJob);
+            expect(poolJob).toHaveBeenCalledTimes(1);
+
+            poolResolvers[0].resolve('a');
+            await Promise.resolve();
+            expect(poolJob).toHaveBeenCalledTimes(2);
+
+            poolResolvers[1].resolve('b');
+            await expect(result).resolves.toEqual(['a', 'b']);
         });
     });
 
