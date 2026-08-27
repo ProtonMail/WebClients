@@ -1898,6 +1898,12 @@
       ],
       "Zoom out": [
         "Loitonna"
+      ],
+      "Template with invite links": [
+        "Mallipohja kutsulinkeillä"
+      ],
+      "Template with passwords": [
+        "Mallipohja salasanoilla"
       ]
     },
     "action": {
@@ -13226,6 +13232,9 @@
       ],
       "Zoom meeting": [
         "Zoom-kokousta"
+      ],
+      "Your file includes a password for each user, so these accounts will be created with a password instead of an invite link.": [
+        "Tiedostosi sisältää salasanan jokaiselle käyttäjälle, joten nämä tilit luodaan kutsulinkkien sijaan salasanoilla."
       ]
     },
     "info": {
@@ -15492,6 +15501,9 @@
       ],
       "ZIP code": [
         "Postinumero"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } merkkiä"
       ]
     },
     "label": {
