@@ -1526,7 +1526,8 @@
         "Αξιόπιστο"
       ],
       "Trust key": [
-        "Εμπιστοσύνη στο κλειδί"
+        "Κλειδί Εμπιστοσύνης",
+        "Κλειδιά Εμπιστοσύνης"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -9783,6 +9784,15 @@
       ],
       "Snooze emails": [
         "Αναβολή μηνυμάτων ηλεκτρονικού ταχυδρομείου"
+      ],
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "${ IDEAL_WERO_BRAND_NAME } σήμα"
+      ],
+      "${ name } in ${ parentName }": [
+        "${ name } στο ${ parentName }"
+      ],
+      "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Θα σας ανακατευθύνουμε στο ${ IDEAL_WERO_BRAND_NAME }, σε μια νέα καρτέλα προγράμματος περιήγησης, για να ολοκληρώσετε αυτήν τη συναλλαγή. Εάν έχετε ενεργοποιημένο τον αποκλεισμό αναδυόμενων παραθύρων, παρακαλώ απενεργοποιήστε τον για να συνεχίσετε."
       ]
     },
     "info": {
@@ -11071,6 +11081,9 @@
       ],
       "Return on": [
         "Επιστροφή στις"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } χαρακτήρες"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13538,6 +13551,12 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Η συνδρομή σας έχει ήδη μια υπάρχουσα έκπτωση. Η μετάβαση σε αυτή τη νέα προσφορά σημαίνει ότι η υπάρχουσα έκπτωση δε θα ισχύει πλέον."
+      ],
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "Πληρωμή με ${ IDEAL_WERO_BRAND_NAME }"
+      ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
+        "Το νόμισμά σας έχει αλλάξει σε ευρώ (€) επειδή το ${ IDEAL_WERO_BRAND_NAME } υποστηρίζει μόνο πληρωμές σε ευρώ."
       ]
     },
     "Payments.Error": {
@@ -13564,6 +13583,9 @@
       ],
       "Please enter the account holder name": [
         "Παρακαλώ εισάγετε το όνομα του κατόχου του λογαριασμού"
+      ],
+      "Failed to initialize ${ IDEAL_WERO_BRAND_NAME }. Please try again later.": [
+        "Αποτυχία αρχικοποίησης του ${ IDEAL_WERO_BRAND_NAME }. Παρακαλούμε δοκιμάστε ξανά αργότερα."
       ]
     },
     "Payments.error": {
@@ -13574,6 +13596,9 @@
     "Payments.iDEAL": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
         "Επιβεβαιώνοντας αυτήν την πληρωμή, εξουσιοδοτείτε το ${ BRAND_NAME } και τη Stripe, τον πάροχο υπηρεσιών πληρωμών μας, να δώσουν εντολή στην τράπεζά σας να χρεώσει ανάλογα τον λογαριασμό σας. Μπορείτε να λάβετε επιστροφή χρημάτων εντός 8 εβδομάδων από την ημερομηνία χρέωσης, σύμφωνα με τους όρους της συμφωνίας σας με την τράπεζά σας."
+      ],
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Με την επιβεβαίωση, εξουσιοδοτείτε την ${ BRAND_NAME } και την Stripe, τον πάροχο υπηρεσιών πληρωμών μας, να εισπράττουν μελλοντικές πληρωμές για τη συνδρομή σας από αυτόν τον τραπεζικό λογαριασμό μέσω Άμεσης Χρέωσης SEPA και την τράπεζά σας να χρεώνει αυτές τις πληρωμές. Η πρώτη σας πληρωμή πραγματοποιείται τώρα από την ${ IDEAL_WERO_BRAND_NAME }. Το πλάνο σας ανανεώνεται αυτόματα μέχρι να ακυρώσετε. Θα σας ειδοποιούμε πριν από κάθε είσπραξη. Για εισπράξεις με άμεση χρέωση, μπορείτε να ζητήσετε επιστροφή χρημάτων από την τράπεζά σας εντός 8 εβδομάδων από την ημερομηνία χρέωσης, σύμφωνα με τους όρους της συμφωνίας σας με την τράπεζά σας. Αυτό δεν ισχύει για την πληρωμή ${ IDEAL_WERO_BRAND_NAME } που πραγματοποιείτε τώρα."
       ]
     },
     "Payments.info": {
