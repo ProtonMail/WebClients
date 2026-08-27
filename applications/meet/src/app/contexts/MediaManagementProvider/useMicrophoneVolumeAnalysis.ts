@@ -2,6 +2,8 @@ import { useCallback, useRef } from 'react';
 
 import { isAudioSessionAvailable, withIOSAudioSessionWorkaround } from '@proton/meet/utils/iosAudioSession';
 
+import { outputlessAudioContextOptions } from '../../utils/browser';
+
 export const useMicrophoneVolumeAnalysis = () => {
     const initSequenceRef = useRef(0);
     const microphoneVolumeAnalysisRef = useRef<{
@@ -47,7 +49,8 @@ export const useMicrophoneVolumeAnalysis = () => {
                 );
 
                 const AudioContextClass = window.AudioContext || (window as any).webkitAudioContext;
-                const audioContext = new AudioContextClass();
+                // Analysis only, nothing is ever played.
+                const audioContext = new AudioContextClass(outputlessAudioContextOptions());
 
                 const analyser = audioContext.createAnalyser();
                 analyser.fftSize = 256;
