@@ -88,7 +88,7 @@ export const buildLumoMailConfig = (deps: MailToolDeps): LumoAgentConfig => {
         definitions: loadGuide ? [...definitions, loadGuide] : definitions,
         handlers,
         cardRenderers,
-        productRules: MAIL_RULES,
+        productRules: () => MAIL_RULES,
         // Run backend-side, so unlike MODULES they contribute no handler and no card — opt-in plus wording.
         serverTools: ['web_search', 'proton_info'],
         serverToolMeta: {

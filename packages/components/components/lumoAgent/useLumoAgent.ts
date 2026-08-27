@@ -3,7 +3,7 @@ import { useCallback, useMemo, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { useApi } from '@proton/app-context/useApi';
-import type { ToolDefinition } from '@proton/llm/lib/lumoAgent/contracts/types';
+import type { ToolDefinition, ToolImage } from '@proton/llm/lib/lumoAgent/contracts/types';
 import type { ConfirmDecision, ToolChip } from '@proton/llm/lib/lumoAgent/engine/engine';
 import { createClientToolExecutor } from '@proton/llm/lib/lumoAgent/engine/engine';
 import { LOAD_GUIDE_TOOL_NAME } from '@proton/llm/lib/lumoAgent/engine/loadGuide';
@@ -17,6 +17,8 @@ import type {
     ToolName as ServerToolName,
     Turn,
 } from '@proton/lumo-api-client';
+import type { WireImage } from '@proton/lumo-api-client/types-api';
+import { lumoImageMarker } from '@proton/lumo-api-client/utils';
 import type { ServerToolSource } from '@proton/lumo-ui';
 
 import type { LumoAgentConfig, LumoAgentItem } from './types';
@@ -347,6 +349,24 @@ const useLumoAgent = (config: LumoAgentConfig) => {
             const controller = new AbortController();
             controllerRef.current = controller;
 
+            // A tool can hand over an image mid-chain (the file on screen, say) — a tool result is text
+            // only. The chain re-sends its turns every round, so attaching it to the message the user
+            // just sent puts it in front of the model on the very next one. It stays on that turn for
+            // the rest of the exchange and is dropped with it: history keeps text alone.
+            // The bytes carry no id, so the marker goes in the same turn's content — that is the only
+            // handle the model has to refer to the picture (same shape as Lumo's own attachments).
+            const showImage = ({ imageId, data, name }: ToolImage) => {
+                const userTurn = turns.findLast((turn) => turn.role === USER);
+                if (!userTurn || userTurn.images?.some((image) => image.image_id === imageId)) {
+                    return;
+                }
+                const image: WireImage = { encrypted: false, image_id: imageId, data };
+                userTurn.images = [...(userTurn.images ?? []), image];
+                userTurn.content = [userTurn.content, lumoImageMarker(imageId, 'user', name)]
+                    .filter(Boolean)
+                    .join('\n');
+            };
+
             const serverSources = new Map<string, number>();
 
             const chunkCallback = (chunk: GenerationResponseMessage) => {
@@ -391,7 +411,7 @@ const useLumoAgent = (config: LumoAgentConfig) => {
                 const { stoppedOnBudget, turns: chainTurns } = await client.callAssistant(api, turns, {
                     clientToolExecutor: {
                         ...executor,
-                        execute: (calls) => executor.execute(calls, { signal: controller.signal }),
+                        execute: (calls) => executor.execute(calls, { signal: controller.signal, showImage }),
                     },
                     clientTools,
                     serverTools: config.serverTools,
@@ -461,7 +481,7 @@ const useLumoAgent = (config: LumoAgentConfig) => {
             content: buildSystemPrompt({
                 definitions: config.definitions,
                 loadedGuides: executor.getLoadedGuides(),
-                productRules: config.productRules,
+                productRules: config.productRules?.(),
             }),
         }),
         [config, executor]
