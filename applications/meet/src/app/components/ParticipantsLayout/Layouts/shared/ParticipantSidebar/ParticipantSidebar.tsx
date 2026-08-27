@@ -12,8 +12,8 @@ import {
 } from '@proton/meet/store/slices/participants/sortedParticipantsSlice';
 import clsx from '@proton/utils/clsx';
 
-import { Pagination } from '../../atoms/Pagination/Pagination';
-import { useSortedPagedParticipants } from '../../contexts/ParticipantsProvider/SortedParticipantsProvider';
+import { Pagination } from '../../../../../atoms/Pagination/Pagination';
+import { useSortedPagedParticipants } from '../../../../../contexts/ParticipantsProvider/SortedParticipantsProvider';
 import { ParticipantTile } from '../ParticipantTile/ParticipantTile';
 
 import './ParticipantSidebar.scss';

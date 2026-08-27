@@ -20,8 +20,8 @@ import { MeetingBody } from '../components/MeetingBody/MeetingBody';
 import { DebugOverlayContext } from '../contexts/DebugOverlayContext';
 import { MeetContext } from '../contexts/MeetContext';
 import { useMeetingRecorderContext } from '../contexts/MeetingRecorderContext';
+import { useCurrentScreenShare } from '../hooks/screenShare/useCurrentScreenShare';
 import { useMeetingTelemetry } from '../hooks/telemetry/useMeetingTelemetry';
-import { useCurrentScreenShare } from '../hooks/useCurrentScreenShare';
 import { useStableCallback } from '../hooks/useStableCallback';
 
 interface MeetContainerProps {
@@ -78,7 +78,7 @@ export const MeetContainer = ({
     const debugOverlay = useDebugOverlay();
     const dispatch = useMeetDispatch();
 
-    const { startScreenShare, stopScreenShare, screenShareParticipant, screenShareTrack } = useCurrentScreenShare({
+    const { startScreenShare, stopScreenShare } = useCurrentScreenShare({
         stopPiP,
         startPiP,
         preparePictureInPicture,
@@ -193,8 +193,6 @@ export const MeetContainer = ({
                             />
                         )}
                         <MeetingBody
-                            screenShareTrack={screenShareTrack}
-                            screenShareParticipant={screenShareParticipant}
                             isUsingTurnRelay={isUsingTurnRelay}
                             liveKitConnectionState={liveKitConnectionState}
                             showReconnectedMessage={showReconnectedMessage}

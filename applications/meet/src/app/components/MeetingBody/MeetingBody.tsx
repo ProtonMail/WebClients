@@ -1,28 +1,23 @@
 import { useEffect, useRef, useState } from 'react';
 
-import type { TrackReference } from '@livekit/components-react';
-import { RoomAudioRenderer, VideoTrack } from '@livekit/components-react';
-import { ConnectionState, type Participant, type RemoteTrackPublication } from 'livekit-client';
+import { RoomAudioRenderer } from '@livekit/components-react';
+import { ConnectionState } from 'livekit-client';
 import { c } from 'ttag';
 
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { TopBanner } from '@proton/components/index';
-import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
 import { IcMeetRotateCamera } from '@proton/icons/icons/IcMeetRotateCamera';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectMeetingLink } from '@proton/meet/store/slices/meetingInfo';
-import { selectParticipantName } from '@proton/meet/store/slices/participants/participantsSlice';
-import { selectIsLocalScreenShare, selectIsScreenShare } from '@proton/meet/store/slices/screenShareStatusSlice';
-import { selectSideBarState } from '@proton/meet/store/slices/uiStateSlice';
+import { selectIsScreenShare } from '@proton/meet/store/slices/screenShareStatusSlice';
+import { selectIsSideBarOpen } from '@proton/meet/store/slices/uiStateSlice';
 import { selectIsGuest } from '@proton/meet/store/slices/userSlice';
-import { isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
+import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
-import { wait } from '@proton/shared/lib/helpers/promise';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { CircleButton } from '../../atoms/CircleButton/CircleButton';
-import { SecurityShield } from '../../atoms/SecurityShield/SecurityShield';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
 import { useIsNarrowHeight } from '../../hooks/useIsNarrowHeight';
@@ -40,9 +35,8 @@ import { NoDeviceDetectedInfo } from '../NoDeviceDetectedInfo/NoDeviceDetectedIn
 import { NoDeviceDetectedModal } from '../NoDeviceDetectedModal/NoDeviceDetectedModal';
 import { NoPermissionInfo } from '../NoPermissionInfo/NoPermissionInfo';
 import { ParticipantControls } from '../ParticipantControls/ParticipantControls';
-import { ParticipantGrid } from '../ParticipantGrid';
 import { ParticipantList } from '../ParticipantList/ParticipantList';
-import { ParticipantSidebar } from '../ParticipantSidebar/ParticipantSidebar';
+import { ParticipantsLayout } from '../ParticipantsLayout/ParticipantsLayout';
 import { PermissionRequest } from '../PermissionRequest/PermissionRequest';
 import { RecordingInProgressModal } from '../RecordingInProgressModal/RecordingInProgressModal';
 import { Settings } from '../Settings/Settings';
@@ -50,8 +44,6 @@ import { Settings } from '../Settings/Settings';
 import './MeetingBody.scss';
 
 interface MeetingBodyProps {
-    screenShareTrack: TrackReference;
-    screenShareParticipant?: Participant;
     isUsingTurnRelay: boolean;
     liveKitConnectionState: ConnectionState | null;
     showReconnectedMessage: boolean;
@@ -63,8 +55,6 @@ interface MeetingBodyProps {
 }
 
 export const MeetingBody = ({
-    screenShareTrack,
-    screenShareParticipant,
     isUsingTurnRelay,
     liveKitConnectionState,
     showReconnectedMessage,
@@ -91,17 +81,13 @@ export const MeetingBody = ({
 
     const { handleRotateCamera, isVideoEnabled } = useMediaManagementContext();
 
-    const sideBarState = useMeetSelector(selectSideBarState);
-    const isScreenShare = useMeetSelector(selectIsScreenShare) && !!screenShareTrack;
-    const isLocalScreenShare = useMeetSelector(selectIsLocalScreenShare);
+    const isScreenShare = useMeetSelector(selectIsScreenShare);
 
     const [bannerIsClosed, setBannerIsClosed] = useState(!isUsingTurnRelay);
 
     const isEarlyAccess = useFlag('MeetEarlyAccess');
 
-    const isSideBarOpen = Object.values(sideBarState).some((value) => value);
-
-    const screenShareVideoRef = useRef<HTMLVideoElement>(null);
+    const isSideBarOpen = useMeetSelector(selectIsSideBarOpen);
 
     // Firefox/macOS leaves focus on browser chrome after joining; move it into the page so the
     // live region is observed immediately without the user having to click first.
@@ -110,66 +96,9 @@ export const MeetingBody = ({
         mainContainerRef.current?.focus();
     }, []);
 
-    const showReloadTrackButton = useFlag('MeetShowReloadTrackButton');
-    const [isRefreshingScreenShare, setIsRefreshingScreenShare] = useState(false);
-
     const isMeetEnableAudioMixing = useFlag('MeetEnableAudioMixing');
     const isMeetEnableSpatialAudio = useFlag('MeetEnableSpatialAudio');
     const isSpatialAudioEnabled = isMeetEnableAudioMixing && isMeetEnableSpatialAudio;
-
-    const handleRefreshScreenShareTrack = async () => {
-        if (isRefreshingScreenShare || !screenShareTrack?.publication) {
-            return;
-        }
-
-        setIsRefreshingScreenShare(true);
-        try {
-            const pub = screenShareTrack.publication as RemoteTrackPublication;
-            const wasSubscribed = pub.isSubscribed;
-            const wasEnabled = pub.isEnabled;
-
-            if (wasSubscribed) {
-                pub.setSubscribed(false);
-                await wait(isSafari() ? 500 : 200);
-                pub.setSubscribed(true);
-                await wait(isSafari() ? 500 : 200);
-            }
-
-            if (wasEnabled !== undefined) {
-                pub.setEnabled(wasEnabled);
-                await wait(isSafari() ? 200 : 50);
-            }
-        } catch (error) {
-            // eslint-disable-next-line no-console
-            console.error('Failed to refresh screen share track', error);
-        } finally {
-            setIsRefreshingScreenShare(false);
-        }
-    };
-
-    useEffect(() => {
-        const videoEl = screenShareVideoRef.current;
-        if (isScreenShare && screenShareTrack?.publication?.track && videoEl) {
-            screenShareTrack.publication.track.attach(videoEl);
-        }
-
-        return () => {
-            if (screenShareTrack?.publication?.track && videoEl) {
-                screenShareTrack.publication.track.detach(videoEl);
-            }
-        };
-    }, [isScreenShare, screenShareTrack?.publication?.track]);
-
-    const defaultScreenShareFlexGrow = isSideBarOpen ? 6 : 8;
-    // Using 0 instead of removing the video element to avoid reinitializing the screenshare video
-    const smallScreenScreenShareFlexGrow = isSideBarOpen ? 0 : 8;
-
-    const presenterName =
-        useMeetSelector((state) => selectParticipantName(state, screenShareParticipant?.identity ?? '')) ?? '';
-
-    const screenShareLabel = isLocalScreenShare
-        ? c('Info').t`${presenterName} (you) is presenting`
-        : c('Info').t`${presenterName} is presenting`;
 
     const getConnectionStatusMessage = (
         showReconnectedMessage: boolean,
@@ -260,81 +189,10 @@ export const MeetingBody = ({
                         (participantSideBarOpen || isSideBarOpen) && isLargerThanMd ? 'gap-4' : 'gap-0'
                     )}
                 >
-                    {isScreenShare ? (
-                        <>
-                            <section
-                                aria-label={screenShareLabel}
-                                className="bg-strong h-full overflow-hidden mx-auto my-0 rounded relative shrink-1"
-                                style={{
-                                    flexGrow: isLargerThanMd
-                                        ? defaultScreenShareFlexGrow
-                                        : smallScreenScreenShareFlexGrow,
-                                    flexBasis: 0,
-                                }}
-                            >
-                                <VideoTrack
-                                    key={screenShareTrack?.publication?.track?.sid}
-                                    className="screen-share-video w-full h-full block object-contain"
-                                    trackRef={screenShareTrack}
-                                    autoPlay
-                                    playsInline
-                                    muted={isLocalScreenShare}
-                                    manageSubscription={false}
-                                />
-                                <div
-                                    aria-live="polite"
-                                    aria-atomic="true"
-                                    className="screen-share-label absolute bottom-custom left-custom flex rounded opacity-80"
-                                    style={{ '--bottom-custom': '1rem', '--left-custom': '1rem' }}
-                                >
-                                    <SecurityShield
-                                        title={c('Info').t`End-to-end encryption is active for screen share`}
-                                        size={3}
-                                        tooltipPlacement="top-start"
-                                    />
-                                    {screenShareLabel}
-                                </div>
-                                {!isLocalScreenShare && showReloadTrackButton && (
-                                    <button
-                                        className={clsx(
-                                            'absolute user-select-none flex items-center justify-center w-custom h-custom bg-weak rounded-full border-none cursor-pointer transition-opacity',
-                                            isRefreshingScreenShare
-                                                ? 'opacity-50 cursor-not-allowed'
-                                                : 'opacity-80 hover:opacity-100'
-                                        )}
-                                        style={{
-                                            '--w-custom': '2rem',
-                                            '--h-custom': '2rem',
-                                            bottom: '1rem',
-                                            right: '1rem',
-                                            zIndex: 2,
-                                        }}
-                                        onClick={handleRefreshScreenShareTrack}
-                                        disabled={isRefreshingScreenShare}
-                                        aria-label={c('Action').t`Refresh screen share track`}
-                                        title={c('Info').t`Refresh screen share track`}
-                                    >
-                                        <IcArrowsRotate
-                                            size={4}
-                                            className={clsx(isRefreshingScreenShare && 'animate-spin')}
-                                        />
-                                    </button>
-                                )}
-                            </section>
-                            {isLargerThanMd && (
-                                <ParticipantSidebar
-                                    participantSideBarOpen={participantSideBarOpen}
-                                    setParticipantSideBarOpen={setParticipantSideBarOpen}
-                                />
-                            )}
-                        </>
-                    ) : (
-                        (isLargerThanMd || !isSideBarOpen) && (
-                            <div className="h-full shrink-0" style={{ flexGrow: 8, flexBasis: 0 }}>
-                                <ParticipantGrid />
-                            </div>
-                        )
-                    )}
+                    <ParticipantsLayout
+                        participantSideBarOpen={participantSideBarOpen}
+                        setParticipantSideBarOpen={setParticipantSideBarOpen}
+                    />
 
                     {isSideBarOpen && (
                         <div
