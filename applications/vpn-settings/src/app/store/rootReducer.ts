@@ -6,6 +6,7 @@ import { mspSubsidiariesReducer } from '@proton/account/mspSubsidiaries';
 import { passwordPoliciesReducer } from '@proton/account/passwordPolicies';
 import { paymentMethodsReducer } from '@proton/account/paymentMethods';
 import { samlReducer } from '@proton/account/samlSSO';
+import { staticExperimentsReducer } from '@proton/account/staticExperiments/slice';
 import { authDevicesReducer } from '@proton/account/sso/authDevices';
 import { memberAuthDevicesReducer } from '@proton/account/sso/memberAuthDevices';
 import { oauthTokenReducer } from '@proton/activation/src/logic/oauthToken';
@@ -24,4 +25,5 @@ export const rootReducer = combineReducers({
     ...memberAuthDevicesReducer,
     ...oauthTokenReducer,
     ...mspSubsidiariesReducer,
+    ...staticExperimentsReducer,
 });
