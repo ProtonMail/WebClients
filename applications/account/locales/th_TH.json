@@ -11508,9 +11508,6 @@
       "Registering your subscription…": [
         "กำลังลงทะเบียนการสมัครสมาชิก…"
       ],
-      "Remember to share the user's sign in details with them.": [
-        "อย่าลืมแชร์รายละเอียดการเข้าสู่ระบบของผู้ใช้กับพวกเขา"
-      ],
       "Remove metadata from images to protect your privacy.": [
         "ลบข้อมูลเมตาออกจากรูปภาพเพื่อปกป้องความเป็นส่วนตัว"
       ],
@@ -13533,9 +13530,6 @@
       ],
       "${ PROTON_SENTINEL_NAME } protection": [
         "การปกป้องจาก ${ PROTON_SENTINEL_NAME }"
-      ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } ตัวอักษร"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(ไม่สามารถใช้งานได้ชั่วคราว โปรดกลับมาตรวจสอบในภายหลัง)"
@@ -15786,9 +15780,6 @@
     "mail_signup_2023: Info": {
       "**Get ${ plan }** for a limited time!": [
         "**รับ ${ plan }** ในเวลาจำกัด!"
-      ],
-      "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
-        "สมัครเป็น Visionary และเป็นส่วนหนึ่งของเรื่องราว ${ BRAND_NAME }"
       ]
     },
     "mail_signup_2024: Info": {
@@ -15971,9 +15962,6 @@
       "${ seats } seat included": [
         "รวมสิทธิ์ผู้ใช้ ${ seats } สิทธิ์"
       ],
-      "100 ${ BRAND_NAME } email addresses": [
-        "ที่อยู่อีเมล ${ BRAND_NAME } 100 รายการ"
-      ],
       "Cloud storage and file sharing": [
         "พื้นที่จัดเก็บข้อมูลบนคลาวด์และการแชร์ไฟล์"
       ],
@@ -15994,9 +15982,6 @@
       ],
       "Password manager with team vaults": [
         "โปรแกรมจัดการรหัสผ่านพร้อมห้องนิรภัยของทีม"
-      ],
-      "Private and unlimited AI chat (${ LUMO_SHORT_APP_NAME })": [
-        "แชท AI ส่วนตัวและไม่จำกัด (${ LUMO_SHORT_APP_NAME })"
       ],
       "Private video calls for the conversations that matter": [
         "การโทรวิดีโอส่วนตัวสำหรับบทสนทนาที่สำคัญ"
@@ -18438,9 +18423,6 @@
       "Create another account instead": [
         "สร้างบัญชีอื่นแทน"
       ],
-      "Keep this plan": [
-        "ใช้แผนนี้ต่อ"
-      ],
       "Open ${ PASS_APP_NAME } vaults": [
         "เปิดห้องนิรภัย ${ PASS_APP_NAME }"
       ],
@@ -18455,9 +18437,6 @@
       ],
       "Upgrade": [
         "อัปเกรด"
-      ],
-      "Upgrade my plan": [
-        "อัปเกรดแผนของฉัน"
       ]
     },
     "pass_signup_2023: Action - open web app": {
@@ -18512,9 +18491,6 @@
       "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
         "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } ที่ราคา ${ priceString }"
       ],
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice } ต่อเดือน"
-      ],
       "/month /user": [
         "/เดือน /ผู้ใช้"
       ],
@@ -18532,9 +18508,6 @@
       ],
       "Aliases for email protection from breaches": [
         "นามแฝงสำหรับการป้องกันอีเมลจากการละเมิดข้อมูล"
-      ],
-      "Based in Switzerland, GDPR compliant": [
-        "ตั้งอยู่ในสวิตเซอร์แลนด์ ปฏิบัติตาม GDPR"
       ],
       "But you can get ${ discountPercentString } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "แต่สามารถรับส่วนลด ${ discountPercentString } ได้โดยการอัปเกรดเป็น **${ upsellPlanTitle }** — เพิ่มเพียง ${ relativePrice } ต่อเดือน"
@@ -18563,9 +18536,6 @@
       "Creating your account": [
         "กำลังสร้างบัญชีของคุณ"
       ],
-      "Current plan": [
-        "แพกเก็จปัจจุบัน"
-      ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "ดาวน์โหลดและติดตั้งแอปและส่วนขยายที่เกี่ยวข้องเพื่อเริ่มใช้งาน ${ PASS_APP_NAME }"
       ],
@@ -18587,15 +18557,6 @@
       "Everything from ${ planTitle }, plus...": [
         "ทุกอย่างจาก ${ planTitle } บวกกับ..."
       ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "เพียงเพิ่มอีก **${ relativePrice } ต่อเดือน** คุณจะสามารถเข้าถึงโปรแกรมจัดการรหัสผ่านระดับพรีเมียมของ ${ BRAND_NAME } ได้!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "เพียงเพิ่มอีก **${ relativePrice } ต่อเดือน** คุณจะสามารถเข้าถึงบริการ VPN ระดับพรีเมียมของ ${ BRAND_NAME } ได้!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "เพียงเพิ่มอีก **${ relativePrice } ต่อเดือน** คุณก็จะเข้าถึงบริการ ${ BRAND_NAME } พรีเมียมทั้งหมด!"
-      ],
       "Free forever": [
         "ฟรีตลอดไป"
       ],
@@ -18613,9 +18574,6 @@
       ],
       "Get unlimited privacy for two": [
         "รับความเป็นส่วนตัวแบบไม่จำกัดสำหรับสองคน"
-      ],
-      "Includes:": [
-        "ประกอบด้วย:"
       ],
       "Install ${ PASS_APP_NAME }": [
         "ติดตั้ง ${ PASS_APP_NAME }"
@@ -20376,17 +20334,6 @@
         "ผู้ดูแลระบบผู้ใช้"
       ]
     },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "กำหนดค่านโยบายความปลอดภัย การเก็บรักษาข้อมูล และโครงสร้างพื้นฐาน VPN รวมถึงจัดการบันทึกการตรวจสอบ"
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "จัดการผู้ใช้ กลุ่ม ความปลอดภัย การเรียกเก็บเงิน และการกำหนดค่าระบบทั้งหมด"
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "จัดการผู้ใช้ กลุ่ม และพื้นที่จัดเก็บสำหรับสมาชิกทั้งหมด มอบหมายบทบาท และจัดสรรสิทธิ์การใช้งาน"
-      ]
-    },
     "Safety review": {
       "Code sent to ${ boldValue }": [
         "ได้ส่งรหัสไปที่ ${ boldValue }"
@@ -21661,9 +21608,6 @@
       ],
       "Unlimited hide-my-email aliases": [
         "นามแฝง hide-my-email ไม่จำกัด"
-      ],
-      "Up to -${ percentage }%": [
-        "สูงสุด -${ percentage }%"
       ],
       "Up to 2 users": [
         "ผู้ใช้สูงสุด 2 ราย"

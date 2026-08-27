@@ -11895,9 +11895,6 @@
       "Registering your subscription…": [
         "Регистрация вашей подписки…"
       ],
-      "Remember to share the user's sign in details with them.": [
-        "Не забудьте сообщить им пользовательские данные для входа в систему."
-      ],
       "Remove metadata from images to protect your privacy.": [
         "Удалите метаданные из изображений, чтобы защитить вашу конфиденциальность."
       ],
@@ -16272,9 +16269,6 @@
     "mail_signup_2023: Info": {
       "**Get ${ plan }** for a limited time!": [
         "**Получите ${ plan }** в течение ограниченного времени!"
-      ],
-      "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
-        "Перейдите на тариф Visionary и станьте частью истории ${ BRAND_NAME }"
       ]
     },
     "mail_signup_2024: Info": {
@@ -16487,9 +16481,6 @@
         "Включено ${ seats } лицензий",
         "Включено ${ seats } лицензий"
       ],
-      "100 ${ BRAND_NAME } email addresses": [
-        "100 адресов электронной почты ${ BRAND_NAME }"
-      ],
       "Cloud storage and file sharing": [
         "Облачное хранение и обмен файлами"
       ],
@@ -16510,9 +16501,6 @@
       ],
       "Password manager with team vaults": [
         "Менеджер паролей с командными хранилищами"
-      ],
-      "Private and unlimited AI chat (${ LUMO_SHORT_APP_NAME })": [
-        "Конфиденциальный и неограниченный ИИ-чат (${ LUMO_SHORT_APP_NAME })"
       ],
       "Private video calls for the conversations that matter": [
         "Конфиденциальные видеозвонки для важных разговоров"
@@ -19077,9 +19065,6 @@
       "Create another account instead": [
         "Вместо этого создать другой аккаунт"
       ],
-      "Keep this plan": [
-        "Сохранить этот тариф"
-      ],
       "Open ${ PASS_APP_NAME } vaults": [
         "Открыть хранилища ${ PASS_APP_NAME }"
       ],
@@ -19094,9 +19079,6 @@
       ],
       "Upgrade": [
         "Улучшить"
-      ],
-      "Upgrade my plan": [
-        "Улучшить мой план"
       ]
     },
     "pass_signup_2023: Action - open web app": {
@@ -19151,9 +19133,6 @@
       "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
         "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } за ${ priceString }."
       ],
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice } в месяц"
-      ],
       "/month /user": [
         "в месяц за пользователя"
       ],
@@ -19171,9 +19150,6 @@
       ],
       "Aliases for email protection from breaches": [
         "Псевдонимы для адресов электронной почты для защиты от утечек."
-      ],
-      "Based in Switzerland, GDPR compliant": [
-        "Находится в Швейцарии, соответствует требованиям GDPR"
       ],
       "But you can get ${ discountPercentString } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Но вы можете получить скидку ${ discountPercentString }, если решите улучшить тариф до **${ upsellPlanTitle }** — это всего на ${ relativePrice } в месяц дороже."
@@ -19202,9 +19178,6 @@
       "Creating your account": [
         "Создание вашего аккаунта"
       ],
-      "Current plan": [
-        "Текущий тариф"
-      ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "Скачайте и установите соответствующие приложения и расширения, чтобы начать использовать ${ PASS_APP_NAME }"
       ],
@@ -19226,15 +19199,6 @@
       "Everything from ${ planTitle }, plus...": [
         "Все из ${ planTitle }, а также..."
       ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "Всего за **${ relativePrice } в месяц** вы получаете доступ к платному менеджеру паролей от ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "Всего за на **${ relativePrice } в месяц** больше вы получаете доступ к платной службе ${ BRAND_NAME } VPN!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "Всего дополнительно за **${ relativePrice } в месяц**, вы получаете доступ ко всем премиальным сервисам ${ BRAND_NAME }!"
-      ],
       "Free forever": [
         "Бесплатно навсегда"
       ],
@@ -19252,9 +19216,6 @@
       ],
       "Get unlimited privacy for two": [
         "Получите неограниченную конфиденциальность для двоих"
-      ],
-      "Includes:": [
-        "Включает:"
       ],
       "Install ${ PASS_APP_NAME }": [
         "Установить ${ PASS_APP_NAME }"
@@ -21108,17 +21069,6 @@
         "Администратор пользователей"
       ]
     },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Настройка политик безопасности, хранения данных и инфраструктуры VPN, а также управление журналами аудита."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Управление всеми пользователями, группами, безопасностью, биллингом и конфигурациями системы."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Управление пользователями, группами и хранилищем для всех участников, назначение должностей и распределение лицензий."
-      ]
-    },
     "Safety review": {
       "Code sent to ${ boldValue }": [
         "Код отправлен на ${ boldValue }"
@@ -22495,9 +22445,6 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Неограниченное количество псевдонимов hide-my-email"
-      ],
-      "Up to -${ percentage }%": [
-        "До -${ percentage } %"
       ],
       "Up to 2 users": [
         "До 2 пользователей"

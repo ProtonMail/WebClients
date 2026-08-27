@@ -11706,9 +11706,6 @@
       "Registering your subscription…": [
         "A registar a sua subscrição…"
       ],
-      "Remember to share the user's sign in details with them.": [
-        "Lembre-se de partilhar os detalhes de início de sessão do utilizador com o mesmo."
-      ],
       "Remove metadata from images to protect your privacy.": [
         "Remova os metadados das imagens para proteger a sua privacidade."
       ],
@@ -13756,9 +13753,6 @@
       ],
       "${ PROTON_SENTINEL_NAME } protection": [
         "Proteção ${ PROTON_SENTINEL_NAME }"
-      ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } carateres"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporariamente indisponível. Tente mais tarde.)"
@@ -16017,9 +16011,6 @@
     "mail_signup_2023: Info": {
       "**Get ${ plan }** for a limited time!": [
         "**Desfrute do ${ plan }** por um tempo limitado!"
-      ],
-      "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
-        "Torne-se Visionary e faça parte da história da ${ BRAND_NAME }"
       ]
     },
     "mail_signup_2024: Info": {
@@ -16218,9 +16209,6 @@
         "${ seats } licença incluída",
         "${ seats } licenças incluídas"
       ],
-      "100 ${ BRAND_NAME } email addresses": [
-        "100 endereços de e-mail da ${ BRAND_NAME }"
-      ],
       "Cloud storage and file sharing": [
         "Armazenamento na nuvem e partilha de ficheiros"
       ],
@@ -16241,9 +16229,6 @@
       ],
       "Password manager with team vaults": [
         "Gestor de palavras-passe com cofres de equipa"
-      ],
-      "Private and unlimited AI chat (${ LUMO_SHORT_APP_NAME })": [
-        "Chat IA privado e ilimitado (${ LUMO_SHORT_APP_NAME })"
       ],
       "Private video calls for the conversations that matter": [
         "Videochamadas privadas para as conversas que importam"
@@ -18730,9 +18715,6 @@
       "Create another account instead": [
         "Crie outra conta em vez disso"
       ],
-      "Keep this plan": [
-        "Manter este plano"
-      ],
       "Open ${ PASS_APP_NAME } vaults": [
         "Abrir cofres do ${ PASS_APP_NAME }"
       ],
@@ -18747,9 +18729,6 @@
       ],
       "Upgrade": [
         "Alterar a subscrição"
-      ],
-      "Upgrade my plan": [
-        "Atualize o meu plano"
       ]
     },
     "pass_signup_2023: Action - open web app": {
@@ -18804,9 +18783,6 @@
       "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
         "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } por ${ priceString }."
       ],
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice } por mês"
-      ],
       "/month /user": [
         "/mês /utilizador"
       ],
@@ -18824,9 +18800,6 @@
       ],
       "Aliases for email protection from breaches": [
         "Aliases para proteger o seu e-mail contra incidentes de dados"
-      ],
-      "Based in Switzerland, GDPR compliant": [
-        "Baseado na Suíça, em conformidade com o regulamento RGPD"
       ],
       "But you can get ${ discountPercentString } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Mas pode obter ${ discountPercentString } de desconto ao atualizar para o **${ upsellPlanTitle }** — custa apenas mais ${ relativePrice } por mês."
@@ -18855,9 +18828,6 @@
       "Creating your account": [
         "A criar a sua conta"
       ],
-      "Current plan": [
-        "Plano atual"
-      ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "Transfere e instale as aplicações relevantes e as suas extensões para começar a utilizar o ${ PASS_APP_NAME }"
       ],
@@ -18879,15 +18849,6 @@
       "Everything from ${ planTitle }, plus...": [
         "Tudo do ${ planTitle }, mais..."
       ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "Por apenas **${ relativePrice } por mês** a mais, ganha acesso ao gestor de palavras-passe premium da ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "Por apenas **${ relativePrice } por mês** a mais, ganha acesso ao serviço premium de VPN da ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "Por apenas **${ relativePrice } adicionais por mês**, tem acesso a todos os serviços premium da ${ BRAND_NAME }"
-      ],
       "Free forever": [
         "Gratuito para sempre"
       ],
@@ -18905,9 +18866,6 @@
       ],
       "Get unlimited privacy for two": [
         "Desfrute de privacidade ilimitada para dois"
-      ],
-      "Includes:": [
-        "Incluí:"
       ],
       "Install ${ PASS_APP_NAME }": [
         "Instalar o ${ PASS_APP_NAME }"
@@ -20688,17 +20646,6 @@
         "Administrador de utilizadores"
       ]
     },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Configurar políticas de segurança, retenção de dados e infraestrutura de VPN, e gerir registos de auditoria."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Gerir todos os utilizadores, grupos, segurança, faturação e configurações de sistema."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Gerir utilizadores, grupos e armazenamento para todos os membros, atribuir cargos e alocar licenças."
-      ]
-    },
     "Safety review": {
       "Code sent to ${ boldValue }": [
         "O código foi enviado para ${ boldValue }."
@@ -22007,9 +21954,6 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Aliases ilimitados do hide-my-email"
-      ],
-      "Up to -${ percentage }%": [
-        "Até -${ percentage }%"
       ],
       "Up to 2 users": [
         "Até 2 utilizadores"

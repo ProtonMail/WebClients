@@ -11508,9 +11508,6 @@
       "Registering your subscription…": [
         "Đang đăng ký gói đăng kí..."
       ],
-      "Remember to share the user's sign in details with them.": [
-        "Hãy nhớ chia sẻ chi tiết đăng nhập của người dùng với họ."
-      ],
       "Remove metadata from images to protect your privacy.": [
         "Xóa siêu dữ liệu khỏi hình ảnh để bảo vệ quyền riêng tư."
       ],
@@ -13533,9 +13530,6 @@
       ],
       "${ PROTON_SENTINEL_NAME } protection": [
         "Bảo vệ bởi ${ PROTON_SENTINEL_NAME }"
-      ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } ký tự"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Tạm thời không khả dụng. Vui lòng kiểm tra lại sau.)"
@@ -15786,9 +15780,6 @@
     "mail_signup_2023: Info": {
       "**Get ${ plan }** for a limited time!": [
         "**Nhận ${ plan }** trong thời gian giới hạn!"
-      ],
-      "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
-        "Trở thành Visionary và là một phần trong câu chuyện của ${ BRAND_NAME }"
       ]
     },
     "mail_signup_2024: Info": {
@@ -15971,9 +15962,6 @@
       "${ seats } seat included": [
         "Đã bao gồm ${ seats } chỗ"
       ],
-      "100 ${ BRAND_NAME } email addresses": [
-        "100 địa chỉ email ${ BRAND_NAME }"
-      ],
       "Cloud storage and file sharing": [
         "Lưu trữ đám mây và chia sẻ tệp"
       ],
@@ -15994,9 +15982,6 @@
       ],
       "Password manager with team vaults": [
         "Trình quản lý mật khẩu với kho nhóm"
-      ],
-      "Private and unlimited AI chat (${ LUMO_SHORT_APP_NAME })": [
-        "Trò chuyện AI riêng tư và không giới hạn (${ LUMO_SHORT_APP_NAME })"
       ],
       "Private video calls for the conversations that matter": [
         "Cuộc gọi video riêng tư cho những cuộc trò chuyện quan trọng"
@@ -18438,9 +18423,6 @@
       "Create another account instead": [
         "Tạo tài khoản khác thay thế"
       ],
-      "Keep this plan": [
-        "Giữ gói này"
-      ],
       "Open ${ PASS_APP_NAME } vaults": [
         "Mở kho ${ PASS_APP_NAME }"
       ],
@@ -18455,9 +18437,6 @@
       ],
       "Upgrade": [
         "Nâng cấp"
-      ],
-      "Upgrade my plan": [
-        "Nâng cấp gói của tôi"
       ]
     },
     "pass_signup_2023: Action - open web app": {
@@ -18512,9 +18491,6 @@
       "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
         "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } với giá ${ priceString }."
       ],
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice } mỗi tháng"
-      ],
       "/month /user": [
         "/tháng /người dùng"
       ],
@@ -18532,9 +18508,6 @@
       ],
       "Aliases for email protection from breaches": [
         "Biệt danh để bảo vệ email khỏi vi phạm"
-      ],
-      "Based in Switzerland, GDPR compliant": [
-        "Trụ sở tại Thụy Sĩ, tuân thủ GDPR"
       ],
       "But you can get ${ discountPercentString } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Nhưng có thể nhận giảm giá ${ discountPercentString } bằng cách nâng cấp lên **${ upsellPlanTitle }** — chỉ thêm ${ relativePrice } mỗi tháng."
@@ -18563,9 +18536,6 @@
       "Creating your account": [
         "Đang tạo tài khoản"
       ],
-      "Current plan": [
-        "Gói hiện tại"
-      ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "Tải xuống và cài đặt các ứng dụng và phần mở rộng có liên quan để bắt đầu sử dụng ${ PASS_APP_NAME }"
       ],
@@ -18587,15 +18557,6 @@
       "Everything from ${ planTitle }, plus...": [
         "Mọi thứ từ ${ planTitle }, cộng thêm..."
       ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "Chỉ cần thêm **${ relativePrice }/tháng**, bạn sẽ được truy cập trình quản lý mật khẩu cao cấp của ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "Chỉ cần thêm **${ relativePrice }/tháng**, bạn sẽ được truy cập dịch vụ VPN cao cấp của ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "Chỉ với thêm **${ relativePrice } mỗi tháng**, có thể truy cập tất cả các dịch vụ ${ BRAND_NAME } cao cấp!"
-      ],
       "Free forever": [
         "Miễn phí vĩnh viễn"
       ],
@@ -18613,9 +18574,6 @@
       ],
       "Get unlimited privacy for two": [
         "Có được quyền riêng tư không giới hạn cho hai người"
-      ],
-      "Includes:": [
-        "Bao gồm:"
       ],
       "Install ${ PASS_APP_NAME }": [
         "Cài đặt ${ PASS_APP_NAME }"
@@ -20376,17 +20334,6 @@
         "Quản trị viên người dùng"
       ]
     },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Cấu hình chính sách bảo mật, lưu giữ dữ liệu và cơ sở hạ tầng VPN, đồng thời quản lý nhật ký kiểm tra."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Quản lý tất cả người dùng, nhóm, bảo mật, thanh toán và cấu hình hệ thống."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Quản lý người dùng, nhóm và dung lượng lưu trữ cho tất cả thành viên, chỉ định vai trò và phân bổ giấy phép."
-      ]
-    },
     "Safety review": {
       "Code sent to ${ boldValue }": [
         "Mã đã được gửi tới ${ boldValue }"
@@ -21661,9 +21608,6 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Không giới hạn biệt danh hide-my-email"
-      ],
-      "Up to -${ percentage }%": [
-        "Lên đến -${ percentage }%"
       ],
       "Up to 2 users": [
         "Tối đa 2 người dùng"

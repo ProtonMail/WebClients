@@ -10377,9 +10377,6 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } z vašich členov, ktorí nemajú SSO používa dvojstupňové overenie na prihlasovanie do vašej organizácie.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } z vašich členov, ktorí nemajú SSO používa dvojstupňové overenie na prihlasovanie do vašej organizácie."
       ],
-      "${ IDEAL_BRAND_NAME } mark": [
-        "${ IDEAL_BRAND_NAME } značka"
-      ],
       "${ invitedMemberCount } user needs to accept their invite to start receiving group emails.": [
         "${ invitedMemberCount } používateľ musí prijať pozvánku, aby mohol začať dostávať skupinové emaily.",
         "${ invitedMemberCount } používatelia musia prijať pozvánku, aby mohli začať dostávať skupinové emaily.",
@@ -12954,9 +12951,6 @@
       "Registering your subscription…": [
         "Registrácia vášho predplatného…"
       ],
-      "Remember to share the user's sign in details with them.": [
-        "Nezabudnite s nimi zdieľať prihlasovacie údaje používateľa."
-      ],
       "Remove metadata from images to protect your privacy.": [
         "Odstránenie metadát z vašich obrázkov na ochranu vášho súkromia."
       ],
@@ -14000,9 +13994,6 @@
       ],
       "We use 3-D Secure to protect your payments": [
         "Na ochranu vašich platieb používame 3-D Secure"
-      ],
-      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "Na dokončenie tejto transakcie vás presmerujeme do ${ IDEAL_BRAND_NAME } v novej karte prehliadača. Ak používate blokovanie vyskakovacích okien, pred pokračovaním ho prosím vypnite."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Na dokončenie tejto transakcie vás presmerujeme na PayPal v novej karte prehliadača. Ak používate blokovanie vyskakovacích okien, pred pokračovaním ho prosím vypnite."
@@ -15218,9 +15209,6 @@
       ],
       "${ PROTON_SENTINEL_NAME } protection": [
         "Ochrana ${ PROTON_SENTINEL_NAME }"
-      ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } znakov"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Dočasne nedostupné. Skúste to neskôr.)"
@@ -17591,9 +17579,6 @@
     "mail_signup_2023: Info": {
       "**Get ${ plan }** for a limited time!": [
         "**Získajte ${ plan }** na obmedzenú dobu!"
-      ],
-      "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
-        "Staňte sa Vizionárom a buďte súčasťou príbehu ${ BRAND_NAME }"
       ]
     },
     "mail_signup_2024: Info": {
@@ -17815,9 +17800,6 @@
         "${ seats } licencií v cene",
         "${ seats } licencií v cene"
       ],
-      "100 ${ BRAND_NAME } email addresses": [
-        "100 ${ BRAND_NAME } emailových adries"
-      ],
       "Cloud storage and file sharing": [
         "Cloudové úložisko a zdieľanie súborov"
       ],
@@ -17838,9 +17820,6 @@
       ],
       "Password manager with team vaults": [
         "Správca hesiel s tímovými trezormi"
-      ],
-      "Private and unlimited AI chat (${ LUMO_SHORT_APP_NAME })": [
-        "Súkromný a neobmedzený AI chat (${ LUMO_SHORT_APP_NAME })"
       ],
       "Private video calls for the conversations that matter": [
         "Súkromné videohovory pre konverzácie, na ktorých záleží"
@@ -20452,9 +20431,6 @@
       "Create another account instead": [
         "Vytvoriť namiesto toho ďalší účet"
       ],
-      "Keep this plan": [
-        "Ponechať tento plán"
-      ],
       "Open ${ PASS_APP_NAME } vaults": [
         "Otvoriť trezory ${ PASS_APP_NAME }"
       ],
@@ -20469,9 +20445,6 @@
       ],
       "Upgrade": [
         "Upgradovať"
-      ],
-      "Upgrade my plan": [
-        "Upgradovať môj plán"
       ]
     },
     "pass_signup_2023: Action - open web app": {
@@ -20526,9 +20499,6 @@
       "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
         "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } za ${ priceString }."
       ],
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice } mesačne"
-      ],
       "/month /user": [
         "/mesiac /používateľ"
       ],
@@ -20546,9 +20516,6 @@
       ],
       "Aliases for email protection from breaches": [
         "Aliasy na ochranu emailu pred únikmi informácií"
-      ],
-      "Based in Switzerland, GDPR compliant": [
-        "So sídlom vo Švajčiarsku, v súlade s GDPR"
       ],
       "But you can get ${ discountPercentString } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Ale môžete získať zľavu ${ discountPercentString } prechodom na **${ upsellPlanTitle }** - je to len ${ relativePrice } mesačne navyše."
@@ -20577,9 +20544,6 @@
       "Creating your account": [
         "Vytvárame váš účet"
       ],
-      "Current plan": [
-        "Súčasný plán"
-      ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "Na začatie používania ${ PASS_APP_NAME } si stiahnite a nainštalujte príslušné aplikácie a rozšírenia"
       ],
@@ -20601,15 +20565,6 @@
       "Everything from ${ planTitle }, plus...": [
         "Všetko z ${ planTitle }, plus..."
       ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "Len za **${ relativePrice } mesačne** navyše, získate prístup k prémiovému správcovi hesiel ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "Len za **${ relativePrice } mesačne** navyše, získate prístup k prémiovej službe ${ BRAND_NAME } VPN!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "Len za ďalšie **${ relativePrice } mesačne**, získate prístup ku všetkým prémiovým službám ${ BRAND_NAME }!"
-      ],
       "Free forever": [
         "Navždy zadarmo"
       ],
@@ -20627,9 +20582,6 @@
       ],
       "Get unlimited privacy for two": [
         "Získajte neobmedzené súkromie pre dvoch"
-      ],
-      "Includes:": [
-        "Obsahuje:"
       ],
       "Install ${ PASS_APP_NAME }": [
         "Inštalovať ${ PASS_APP_NAME }"
@@ -21025,9 +20977,6 @@
       "Offer unavailable": [
         "Ponuka je nedostupná"
       ],
-      "Pay with ${ IDEAL_BRAND_NAME }": [
-        "Platba cez ${ IDEAL_BRAND_NAME }"
-      ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Spôsob platby potrebný na aktiváciu predplatného po skončení skúšobnej doby."
       ],
@@ -21133,9 +21082,6 @@
       "You will soon be redirected to verify your payment.": [
         "Za účelom overenia platby dôjde o chvíľu k presmerovaniu."
       ],
-      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
-        "Vaša mena bola zmenená na eurá (€), pretože ${ IDEAL_BRAND_NAME } podporuje platby len v eurách."
-      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Vaša mena bola zmenená na eurá (€), pretože SEPA bankové prevody podporujú platby len v eurách."
       ],
@@ -21147,9 +21093,6 @@
       ]
     },
     "Payments.Error": {
-      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
-        "Inicializácia ${ IDEAL_BRAND_NAME } zlyhala. Skúste to neskôr znova, prosím."
-      ],
       "Invalid card number": [
         "Neplatné číslo karty"
       ],
@@ -21175,11 +21118,6 @@
     "Payments.error": {
       "Something went wrong. Google Pay verification failed.": [
         "Niečo sa pokazilo. Overenie Google Pay zlyhalo."
-      ]
-    },
-    "Payments.iDEAL": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Potvrdením tejto platby oprávňujete ${ BRAND_NAME } a spoločnosť Stripe, nášho poskytovateľa platobných služieb, aby dali vašej banke pokyn na odpísanie prostriedkov z vášho účtu. Peniaze vám môžu byť vrátené do 8 týždňov od dátumu odpísania z účtu za podmienok stanovených v zmluve s vašou bankou."
       ]
     },
     "Payments.info": {
@@ -22481,17 +22419,6 @@
       ],
       "User Admin": [
         "Správca používateľov"
-      ]
-    },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Konfigurácia bezpečnostných politík, uchovávania údajov a infraštruktúry VPN a správa auditových záznamov."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Spravujte všetkých používateľov, skupiny, zabezpečenie, fakturáciu a systémové konfigurácie."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Správa používateľov, skupín a úložného priestoru pre všetkých členov, prideľovanie rolí a prideľovanie licencií."
       ]
     },
     "Safety review": {
@@ -23914,9 +23841,6 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Neobmedzený počet hide-my-email aliasov"
-      ],
-      "Up to -${ percentage }%": [
-        "Až do -${ percentage }%"
       ],
       "Up to 2 users": [
         "Až 2 používatelia"

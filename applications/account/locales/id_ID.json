@@ -11508,9 +11508,6 @@
       "Registering your subscription…": [
         "Mendaftarkan langganan Anda…"
       ],
-      "Remember to share the user's sign in details with them.": [
-        "Ingatlah untuk membagikan rincian masuk pengguna kepada mereka."
-      ],
       "Remove metadata from images to protect your privacy.": [
         "Hapus metadata dari gambar untuk melindungi privasi Anda."
       ],
@@ -13533,9 +13530,6 @@
       ],
       "${ PROTON_SENTINEL_NAME } protection": [
         "Perlindungan ${ PROTON_SENTINEL_NAME }"
-      ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } karakter"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Sedang tidak tersedia. Mohon periksa lagi nanti.)"
@@ -15786,9 +15780,6 @@
     "mail_signup_2023: Info": {
       "**Get ${ plan }** for a limited time!": [
         "**Dapatkan ${ plan }** untuk jangka waktu yang terbatas!"
-      ],
-      "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
-        "Jadilah seorang Visionary dan jadilah bagian dari perjalanan ${ BRAND_NAME }"
       ]
     },
     "mail_signup_2024: Info": {
@@ -15971,9 +15962,6 @@
       "${ seats } seat included": [
         "${ seats } kuota disertakan"
       ],
-      "100 ${ BRAND_NAME } email addresses": [
-        "100 alamat email ${ BRAND_NAME }"
-      ],
       "Cloud storage and file sharing": [
         "Berbagi file dan penyimpanan cloud"
       ],
@@ -15994,9 +15982,6 @@
       ],
       "Password manager with team vaults": [
         "Pengelola kata sandi dengan brankas tim"
-      ],
-      "Private and unlimited AI chat (${ LUMO_SHORT_APP_NAME })": [
-        "Obrolan AI pribadi dan tanpa batas (${ LUMO_SHORT_APP_NAME })"
       ],
       "Private video calls for the conversations that matter": [
         "Panggilan video pribadi untuk percakapan yang penting"
@@ -18438,9 +18423,6 @@
       "Create another account instead": [
         "Buat akun lainnya"
       ],
-      "Keep this plan": [
-        "Pertahankan paket ini"
-      ],
       "Open ${ PASS_APP_NAME } vaults": [
         "Buka brankas ${ PASS_APP_NAME }"
       ],
@@ -18455,9 +18437,6 @@
       ],
       "Upgrade": [
         "Tingkatkan"
-      ],
-      "Upgrade my plan": [
-        "Tingkatkan paket saya"
       ]
     },
     "pass_signup_2023: Action - open web app": {
@@ -18512,9 +18491,6 @@
       "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
         "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } seharga ${ priceString }."
       ],
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice } per bulan"
-      ],
       "/month /user": [
         "/bulan /pengguna"
       ],
@@ -18532,9 +18508,6 @@
       ],
       "Aliases for email protection from breaches": [
         "Alias untuk melindungi email dari pembobolan"
-      ],
-      "Based in Switzerland, GDPR compliant": [
-        "Berbasis di Swiss dan tunduk terhadap GDPR"
       ],
       "But you can get ${ discountPercentString } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Namun, Anda dapat memperoleh diskon ${ discountPercentString } dengan meningkatkan ke **${ upsellPlanTitle }** — hanya dengan menambah ${ relativePrice } per bulannya."
@@ -18563,9 +18536,6 @@
       "Creating your account": [
         "Membuat akun Anda"
       ],
-      "Current plan": [
-        "Paket saat ini"
-      ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "Unduh dan instal aplikasi dan ekstensi yang sesuai untuk mulai menggunakan ${ PASS_APP_NAME }"
       ],
@@ -18587,15 +18557,6 @@
       "Everything from ${ planTitle }, plus...": [
         "Segalanya yang dimiliki oleh ${ planTitle }, ditambah..."
       ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "Hanya dengan menambah **${ relativePrice } per bulan**, Anda akan memperoleh akses ke pengelola kata sandi premium ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "Hanya dengan menambah **${ relativePrice } per bulan**, Anda akan memperoleh akses ke layanan VPN premium ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "Hanya dengan menambah **${ relativePrice } per bulan**, Anda akan memperoleh akses ke seluruh layanan premium ${ BRAND_NAME }!"
-      ],
       "Free forever": [
         "Gratis untuk selamanya"
       ],
@@ -18613,9 +18574,6 @@
       ],
       "Get unlimited privacy for two": [
         "Dapatkan privasi tanpa batas untuk dua orang pengguna"
-      ],
-      "Includes:": [
-        "Termasuk:"
       ],
       "Install ${ PASS_APP_NAME }": [
         "Instal ${ PASS_APP_NAME }"
@@ -20376,17 +20334,6 @@
         "Admin Pengguna"
       ]
     },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Konfigurasikan kebijakan keamanan, retensi data, dan infrastruktur VPN, serta kelola log audit."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Kelola semua pengguna, grup, keamanan, penagihan, dan konfigurasi sistem."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Kelola pengguna, grup, dan penyimpanan untuk semua anggota, tetapkan peran, dan alokasikan lisensi."
-      ]
-    },
     "Safety review": {
       "Code sent to ${ boldValue }": [
         "Kode dikirim ke ${ boldValue }"
@@ -21661,9 +21608,6 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Alias hide-my-email tanpa batas"
-      ],
-      "Up to -${ percentage }%": [
-        "Hingga -${ percentage }%"
       ],
       "Up to 2 users": [
         "Hingga 2 pengguna"

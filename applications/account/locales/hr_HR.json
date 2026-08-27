@@ -11756,9 +11756,6 @@
       "Registering your subscription…": [
         "Registriranje vaše pretplate…"
       ],
-      "Remember to share the user's sign in details with them.": [
-        "Ne zaboravite podijeliti podatke za prijavu s korisnikom."
-      ],
       "Remove metadata from images to protect your privacy.": [
         "Uklonite metapodatke iz slika kako biste zaštitili svoju privatnost."
       ],
@@ -13831,9 +13828,6 @@
       ],
       "${ PROTON_SENTINEL_NAME } protection": [
         "Zaštita ${ PROTON_SENTINEL_NAME }"
-      ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } znakova"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Privremeno nedostupno. Provjerite ponovno kasnije.)"
@@ -16100,9 +16094,6 @@
     "mail_signup_2023: Info": {
       "**Get ${ plan }** for a limited time!": [
         "**Nabavite ${ plan }** na ograničeno vrijeme!"
-      ],
-      "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
-        "Postanite vizionar i budite dio ${ BRAND_NAME }-ove priče"
       ]
     },
     "mail_signup_2024: Info": {
@@ -16305,9 +16296,6 @@
         "Uključene ${ seats } licence",
         "Uključeno ${ seats } licenci"
       ],
-      "100 ${ BRAND_NAME } email addresses": [
-        "100 ${ BRAND_NAME } adresa e-pošte"
-      ],
       "Cloud storage and file sharing": [
         "Pohrana u oblaku i dijeljenje datoteka"
       ],
@@ -16328,9 +16316,6 @@
       ],
       "Password manager with team vaults": [
         "Upravitelj lozinkama s timskim trezorima"
-      ],
-      "Private and unlimited AI chat (${ LUMO_SHORT_APP_NAME })": [
-        "Privatni i neograničeni AI chat (${ LUMO_SHORT_APP_NAME })"
       ],
       "Private video calls for the conversations that matter": [
         "Privatni videopozivi za razgovore koji su važni"
@@ -18856,9 +18841,6 @@
       "Create another account instead": [
         "Umjesto toga, izradite drugi korisnički račun"
       ],
-      "Keep this plan": [
-        "Zadržite ovaj plan"
-      ],
       "Open ${ PASS_APP_NAME } vaults": [
         "Otvorite ${ PASS_APP_NAME } trezore"
       ],
@@ -18873,9 +18855,6 @@
       ],
       "Upgrade": [
         "Nadogradi"
-      ],
-      "Upgrade my plan": [
-        "Nadogradi moju pretplatu"
       ]
     },
     "pass_signup_2023: Action - open web app": {
@@ -18930,9 +18909,6 @@
       "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
         "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } po cijeni od ${ priceString }."
       ],
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice } mjesečno"
-      ],
       "/month /user": [
         "/mjesec /korisnik"
       ],
@@ -18950,9 +18926,6 @@
       ],
       "Aliases for email protection from breaches": [
         "Pseudonimi za zaštitu e-pošte od povreda podataka"
-      ],
-      "Based in Switzerland, GDPR compliant": [
-        "Sa sjedištem u Švicarskoj, u skladu s GDPR-om"
       ],
       "But you can get ${ discountPercentString } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Ali možete ostvariti ${ discountPercentString } popusta nadogradnjom na **${ upsellPlanTitle }** — to je samo dodatnih ${ relativePrice } mjesečno."
@@ -18981,9 +18954,6 @@
       "Creating your account": [
         "Izrada vašeg računa"
       ],
-      "Current plan": [
-        "Trenutna pretplata"
-      ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "Učitajte i instalirajte relevantne aplikacije i proširenja za početak korištenja ${ PASS_APP_NAME }"
       ],
@@ -19005,15 +18975,6 @@
       "Everything from ${ planTitle }, plus...": [
         "Sve iz ${ planTitle }, plus..."
       ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "Za samo **${ relativePrice } mjesečno** više, dobivate pristup premium upravitelju lozinkama usluge ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "Za samo još **${ relativePrice } mjesečno** dobivate pristup ${ BRAND_NAME }ovoj premium VPN usluzi!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "Za samo **${ relativePrice } mjesečno** više, dobivate pristup svim premium ${ BRAND_NAME } uslugama!"
-      ],
       "Free forever": [
         "Besplatno zauvijek"
       ],
@@ -19031,9 +18992,6 @@
       ],
       "Get unlimited privacy for two": [
         "Osigurajte si neograničenu privatnost za dvoje"
-      ],
-      "Includes:": [
-        "Uključuje:"
       ],
       "Install ${ PASS_APP_NAME }": [
         "Instaliraj ${ PASS_APP_NAME }"
@@ -20824,17 +20782,6 @@
         "Administrator korisnika"
       ]
     },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Konfigurirajte sigurnosna pravila, zadržavanje podataka i VPN infrastrukturu te upravljajte revizijskim zapisnicima."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Upravljanje svim korisnicima, grupama, sigurnošću, naplatom i konfiguracijama sustava."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Upravljanje korisnicima, grupama i pohranom za sve članove, dodjeljivanje uloga i dodjela licenci."
-      ]
-    },
     "Safety review": {
       "Code sent to ${ boldValue }": [
         "Kôd je poslan na ${ boldValue }"
@@ -22177,9 +22124,6 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Neograničen broj hide-my-email pseudonima"
-      ],
-      "Up to -${ percentage }%": [
-        "Do -${ percentage } %"
       ],
       "Up to 2 users": [
         "Do 2 korisnika"
