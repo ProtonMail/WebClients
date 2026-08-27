@@ -1,7 +1,7 @@
+import type { InternalBookingPage } from '@proton/calendar/bookings/store/interface';
 import type { BookingLocation, BookingPageEditData, MinimumNoticeMode } from '@proton/calendar/bookings/types';
 
 import type { LayoutEvent } from '../../components/calendar/layout';
-import type { InternalBookingPage } from '../../store/internalBooking/interface';
 import type { CalendarViewEvent } from '../calendar/interface';
 
 export const BOOKING_SLOT_ID = 'booking-slot-' as const;
