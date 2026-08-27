@@ -144,6 +144,44 @@ export const seq = async <T, R>(items: T[], job: (item: T, acc: R[]) => MaybePro
     return results;
 };
 
+/** Like `seq`, but runs up to `concurrency` jobs at once. Result order matches
+ * `items`, regardless of completion order. If a job throws, no worker starts
+ * a new item afterwards — jobs already in flight still run to completion,
+ * but nothing new is dispatched — and the first error rejects the result. */
+export const pool = async <T, R>(
+    items: T[],
+    concurrency: number,
+    job: (item: T, index: number) => MaybePromise<R>,
+    onProgress?: (completed: number, total: number) => void
+): Promise<R[]> => {
+    if (items.length === 0) return [];
+
+    const results: R[] = new Array(items.length);
+    let cursor = 0;
+    let completed = 0;
+    let failed = false;
+
+    const worker = async () => {
+        while (cursor < items.length && !failed) {
+            const index = cursor++;
+            try {
+                results[index] = await job(items[index], index);
+            } catch (error) {
+                failed = true;
+                throw error;
+            }
+            completed++;
+            onProgress?.(completed, items.length);
+        }
+    };
+
+    const safeConcurrency = Number.isFinite(concurrency) ? Math.trunc(concurrency) : 1;
+    const workerCount = Math.max(1, Math.min(safeConcurrency, items.length));
+    await Promise.all(Array.from({ length: workerCount }, worker));
+
+    return results;
+};
+
 export const abortable =
     (signal: AbortSignal) =>
     <T>(job: () => Promise<T>, onAbort?: () => void) => {
