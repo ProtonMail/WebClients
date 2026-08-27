@@ -4834,15 +4834,6 @@
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Ezt az egyedi kódot a weboldalak és az internetszolgáltatók felhasználhatják az Ön tartózkodási helyének és böngészési előzményeinek az eszközéhez való kapcsolására."
       ],
-      "This will permanently delete the file you uploaded.": [
-        "Ez a művelet véglegesen törli az Ön által feltöltött fájlt."
-      ],
-      "This will permanently delete the folder you uploaded.": [
-        "Ez véglegesen törli az Ön által feltöltött mappát."
-      ],
-      "This will permanently delete the selected items you uploaded.": [
-        "Ez véglegesen törli a kiválasztott, feltöltött elemeket."
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Ez minden jelenleg bejelentkezett fiókjából kilépteti."
       ],
@@ -7097,27 +7088,17 @@
       "Share invitation declined": [
         "Megosztási meghívás elutasítva"
       ],
-      "Sorry, we couldn't delete the folder because it is not empty.": [
-        "A mappát nem lehet törölni, mert nem üres",
-        "A mappát nem lehet törölni, mert nem üres"
-      ],
       "Stopping the sharing of this item has failed": [
         "Az elem megosztásának leállítása nem sikerült"
       ],
       "Subfolder failed to be loaded": [
         "Almappa betöltése nem sikerült"
       ],
-      "The document failed to be created": [
-        "A dokumentum létrehozása nem sikerült"
-      ],
       "The link to your item failed to be deleted": [
         "A fájlra vonatkozó hivatkozás törlése nem sikerült"
       ],
       "The link to your item was deleted": [
         "A fájlra vonatkozó hivatkozás törölve"
-      ],
-      "The spreadsheet failed to be created": [
-        "A táblázat létrehozása nem sikerült"
       ],
       "Trash failed to be emptied": [
         "A lomtár ürítése nem sikerült"
@@ -8903,9 +8884,6 @@
       "Decline invitation?": [
         "Meghívó visszautasítása?"
       ],
-      "Delete": [
-        "Törlés"
-      ],
       "Delete ${ count } contact": [
         "${ count } névjegy törlése",
         "${ count } névjegy törlése"
@@ -8913,12 +8891,6 @@
       "Delete ${ count } contact group": [
         "${ count } névjegy csoport törlése",
         "${ count } névjegy csoport törlése"
-      ],
-      "Delete ${ links.length } items?": [
-        "${ links.length } elem törlése?"
-      ],
-      "Delete ${ name }?": [
-        "${ name } törlése?"
       ],
       "Delete ${ value }": [
         "${ value } törlése"

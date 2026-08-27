@@ -5569,15 +5569,6 @@
       "This user can not be migrated due to platform incompatibilities.": [
         "Cet utilisateur ne peut pas être migré en raison d'incompatibilités de plateforme."
       ],
-      "This will permanently delete the file you uploaded.": [
-        "Ceci supprimera définitivement le fichier importé."
-      ],
-      "This will permanently delete the folder you uploaded.": [
-        "Ceci supprimera définitivement le dossier importé."
-      ],
-      "This will permanently delete the selected items you uploaded.": [
-        "Ceci supprimera définitivement les éléments sélectionnés que vous avez importés."
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Ceci vous déconnectera de tous les comptes actuellement connectés."
       ],
@@ -5962,8 +5953,8 @@
       "${ BRAND_NAME } username": [
         "Nom d'utilisateur ${ BRAND_NAME }"
       ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } caractères"
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } caractères"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(temporairement indisponible, nous vous invitons à vérifier plus tard)"
@@ -7989,6 +7980,16 @@
         "Prise en charge pour ${ n } domaines de messagerie personnalisés"
       ]
     },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Essayez-la maintenant"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Vous avez désormais accès au nouveau ${ CALENDAR_APP_NAME }. ${ link }"
+      ]
+    },
     "Notification": {
       "\"${ ellipsedName }\" created successfully": [
         "« ${ ellipsedName } » a été créé."
@@ -8224,27 +8225,17 @@
       "Share invitation declined": [
         "L'invitation au partage a été refusée."
       ],
-      "Sorry, we couldn't delete the folder because it is not empty.": [
-        "Nous n'avons malheureusement pas pu supprimer le dossier car il n'est pas vide.",
-        "Nous n'avons malheureusement pas pu supprimer les dossiers car ils ne sont pas vides."
-      ],
       "Stopping the sharing of this item has failed": [
         "L'arrêt du partage de cet élément n'a pas abouti."
       ],
       "Subfolder failed to be loaded": [
         "Le sous-dossier n'a pas pu être chargé."
       ],
-      "The document failed to be created": [
-        "Le document n'a pas été créé."
-      ],
       "The link to your item failed to be deleted": [
         "Le lien vers votre élément n'a pas pu être supprimé."
       ],
       "The link to your item was deleted": [
         "Le lien vers votre élément a été supprimé."
-      ],
-      "The spreadsheet failed to be created": [
-        "La feuille de calcul n'a pas pu être créée."
       ],
       "Trash failed to be emptied": [
         "Le dossier Corbeille n'a pas pu être vidé."
@@ -9125,17 +9116,6 @@
       ],
       "User Admin": [
         "Administrateur des utilisateurs"
-      ]
-    },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Configurez les politiques de sécurité, la conservation des données et l’infrastructure VPN, et gérez les journaux d’audit."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Gérez tous les utilisateurs, groupes, sécurité, facturation, journaux d'audit et configurations système."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Gérez les utilisateurs, les groupes et le stockage de tous les membres, attribuez des rôles et attribuez des licences."
       ]
     },
     "Safety review": {
@@ -10343,9 +10323,6 @@
       "Decline invitation?": [
         "Refuser l'invitation ?"
       ],
-      "Delete": [
-        "Supprimer"
-      ],
       "Delete ${ count } contact": [
         "Supprimer ${ count } contact",
         "Supprimer ${ count } contacts"
@@ -10353,12 +10330,6 @@
       "Delete ${ count } contact group": [
         "Supprimer ${ count } groupe de contacts",
         "Supprimer ${ count } groupes de contacts"
-      ],
-      "Delete ${ links.length } items?": [
-        "Voulez-vous supprimer ${ links.length } éléments ?"
-      ],
-      "Delete ${ name }?": [
-        "Supprimer ${ name } ?"
       ],
       "Delete ${ value }": [
         "Supprimer ${ value } "

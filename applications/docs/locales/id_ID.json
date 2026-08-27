@@ -5224,15 +5224,6 @@
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Kode unik ini dapat digunakan oleh situs web dan ISP (penyedia layanan internet) untuk menautkan lokasi dan riwayat penjelajahan Anda ke perangkat Anda"
       ],
-      "This will permanently delete the file you uploaded.": [
-        "Tindakan ini akan menghapus file yang telah Anda unggah secara permanen."
-      ],
-      "This will permanently delete the folder you uploaded.": [
-        "Tindakan ini akan menghapus folder yang telah Anda unggah secara permanen."
-      ],
-      "This will permanently delete the selected items you uploaded.": [
-        "Tindakan ini akan menghapus item terpilih yang telah Anda unggah secara permanen."
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Tindakan ini akan mengeluarkan seluruh akun milik Anda yang sedang terhubung masuk."
       ],
@@ -5598,9 +5589,6 @@
     "Label": {
       "${ BRAND_NAME } username": [
         "Nama pengguna ${ BRAND_NAME }"
-      ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } karakter"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Sedang tidak tersedia. Mohon periksa lagi nanti.)"
@@ -7760,26 +7748,17 @@
       "Share invitation declined": [
         "Undangan untuk berbagi ditolak"
       ],
-      "Sorry, we couldn't delete the folder because it is not empty.": [
-        "Maaf, kami tidak dapat menghapus folder ini karena folder tidak kosong."
-      ],
       "Stopping the sharing of this item has failed": [
         "Penghentian pembagian item ini gagal"
       ],
       "Subfolder failed to be loaded": [
         "Subfolder gagal dimuat"
       ],
-      "The document failed to be created": [
-        "Dokumen ini gagal dibuat"
-      ],
       "The link to your item failed to be deleted": [
         "Tautan ke item Anda gagal dihapus"
       ],
       "The link to your item was deleted": [
         "Tautan ke item Anda telah dihapus"
-      ],
-      "The spreadsheet failed to be created": [
-        "Spreadsheet gagal dibuat"
       ],
       "Trash failed to be emptied": [
         "Gagal mengosongkan sampah"
@@ -8548,17 +8527,6 @@
       ],
       "User Admin": [
         "Admin Pengguna"
-      ]
-    },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Konfigurasikan kebijakan keamanan, retensi data, dan infrastruktur VPN, serta kelola log audit."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Kelola semua pengguna, grup, keamanan, penagihan, dan konfigurasi sistem."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Kelola pengguna, grup, dan penyimpanan untuk semua anggota, tetapkan peran, dan alokasikan lisensi."
       ]
     },
     "Safety review": {
@@ -9714,20 +9682,11 @@
       "Decline invitation?": [
         "Tolak undangan?"
       ],
-      "Delete": [
-        "Hapus"
-      ],
       "Delete ${ count } contact": [
         "Hapus ${ count } kontak"
       ],
       "Delete ${ count } contact group": [
         "Hapus ${ count } grup kontak"
-      ],
-      "Delete ${ links.length } items?": [
-        "Hapus ${ links.length } item?"
-      ],
-      "Delete ${ name }?": [
-        "Hapus ${ name }?"
       ],
       "Delete ${ value }": [
         "Hapus ${ value }"

@@ -5464,15 +5464,6 @@
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Ten unikalny kod może być wykorzystywany przez strony internetowe i dostawcę Internetu (ISP) do powiązania lokalizacji i historii przeglądania z urządzeniem użytkownika"
       ],
-      "This will permanently delete the file you uploaded.": [
-        "Spowoduje to trwałe usunięcie przesłanego pliku."
-      ],
-      "This will permanently delete the folder you uploaded.": [
-        "Spowoduje to trwałe usunięcie przesłanego folderu."
-      ],
-      "This will permanently delete the selected items you uploaded.": [
-        "Spowoduje to trwałe usunięcie zaznaczonych elementów."
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Ta czynność spowoduje wylogowanie ze wszystkich kont."
       ],
@@ -5856,9 +5847,6 @@
     "Label": {
       "${ BRAND_NAME } username": [
         "Nazwa użytkownika ${ BRAND_NAME }"
-      ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } znaków"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Usługa jest tymczasowo niedostępna. Spróbuj ponownie później.)"
@@ -8186,29 +8174,17 @@
       "Share invitation declined": [
         "Zaproszenie zostało odrzucone"
       ],
-      "Sorry, we couldn't delete the folder because it is not empty.": [
-        "Nie możemy usunąć folderu, ponieważ nie jest pusty.",
-        "Nie możemy usunąć folderów, ponieważ nie są puste.",
-        "Nie możemy usunąć folderów, ponieważ nie są puste.",
-        "Nie możemy usunąć folderów, ponieważ nie są puste."
-      ],
       "Stopping the sharing of this item has failed": [
         "Zatrzymanie udostępniania nie powiodło się"
       ],
       "Subfolder failed to be loaded": [
         "Załadowanie podfolderu nie powiodło się"
       ],
-      "The document failed to be created": [
-        "Utworzenie dokumentu nie powiodło się"
-      ],
       "The link to your item failed to be deleted": [
         "Usunięcie linku do elementu nie powiodło się"
       ],
       "The link to your item was deleted": [
         "Link do elementu został usunięty"
-      ],
-      "The spreadsheet failed to be created": [
-        "Utworzenie arkusza kalkulacyjnego nie powiodło się"
       ],
       "Trash failed to be emptied": [
         "Opróżnienie kosza nie powiodło się"
@@ -9064,17 +9040,6 @@
       ],
       "User Admin": [
         "Administrator użytkowników"
-      ]
-    },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Konfiguruj zasady bezpieczeństwa, przechowywanie danych oraz infrastrukturę VPN i zarządzaj logami audytowymi."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Zarządzaj wszystkimi użytkownikami, grupami, bezpieczeństwem, rozliczeniami i konfiguracjami systemu."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Zarządzaj użytkownikami, grupami i przestrzenią dyskową dla wszystkich członków, przypisuj stanowiska i przydzielaj licencje."
       ]
     },
     "Safety review": {
@@ -10350,9 +10315,6 @@
       "Decline invitation?": [
         "Odrzucić zaproszenie?"
       ],
-      "Delete": [
-        "Usuń"
-      ],
       "Delete ${ count } contact": [
         "Usuń kontakt",
         "Usuń ${ count } kontakty",
@@ -10364,12 +10326,6 @@
         "Usuń ${ count } grupy kontaktów",
         "Usuń ${ count } grup kontaktów",
         "Usuń ${ count } grupy kontaktów"
-      ],
-      "Delete ${ links.length } items?": [
-        "Usunąć elementy (${ links.length })?"
-      ],
-      "Delete ${ name }?": [
-        "Usunąć ${ name }?"
       ],
       "Delete ${ value }": [
         "Usuń ${ value }"
