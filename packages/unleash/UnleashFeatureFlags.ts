@@ -347,6 +347,7 @@ enum MeetFeatureFlag {
     MeetVirtualBackground = 'MeetVirtualBackground',
     MeetLiveCaptions = 'MeetLiveCaptions',
     MeetSaveCaptionLanguagePreference = 'MeetSaveCaptionLanguagePreference',
+    MeetUseCachedServerTime = 'MeetUseCachedServerTime',
 }
 
 enum LumoFeatureFlag {
