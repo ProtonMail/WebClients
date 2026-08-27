@@ -6658,6 +6658,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@mediapipe/tasks-vision@npm:^0.10.14":
+  version: 0.10.35
+  resolution: "@mediapipe/tasks-vision@npm:0.10.35"
+  checksum: 10/951afffdbf855dfdf04703f646f781f967cc3543221e018ea594a4a9267877d66c8b64738fa1149805811cdeaabfdcc98631fc09223a7a7090708ac61ff167ba
+  languageName: node
+  linkType: hard
+
 "@mermaid-js/parser@npm:^1.2.1":
   version: 1.2.1
   resolution: "@mermaid-js/parser@npm:1.2.1"
@@ -42193,27 +42200,42 @@ __metadata:
   dependencies:
     "@dnd-kit/dom": "npm:^0.5.0"
     "@dnd-kit/react": "npm:^0.5.0"
+    "@emoji-mart/data": "npm:^1.0.3"
+    "@livekit/components-core": "npm:0.12.15"
     "@livekit/components-react": "npm:^2.9.24"
     "@livekit/krisp-noise-filter": "npm:^0.4.4"
     "@livekit/track-processors": "npm:^0.7.2"
+    "@mediapipe/tasks-vision": "npm:^0.10.14"
     "@proton-meet/proton-meet-core": "npm:1.3.6"
+    "@proton/account": "workspace:^"
     "@proton/app-context": "workspace:packages/app-context"
     "@proton/atoms": "workspace:packages/atoms"
     "@proton/components": "workspace:packages/components"
     "@proton/cross-storage": "workspace:packages/cross-storage"
     "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
+    "@proton/features": "workspace:^"
+    "@proton/hooks": "workspace:^"
     "@proton/i18n": "workspace:packages/i18n"
+    "@proton/icons": "workspace:^"
     "@proton/meet": "workspace:packages/meet"
     "@proton/pack": "workspace:packages/pack"
+    "@proton/payments": "workspace:^"
     "@proton/polyfill": "workspace:packages/polyfill"
+    "@proton/react-redux-store": "workspace:^"
+    "@proton/redux-shared-store": "workspace:^"
     "@proton/redux-shared-store-types": "workspace:^"
+    "@proton/redux-utilities": "workspace:^"
     "@proton/sanitize": "workspace:packages/sanitize"
     "@proton/shared": "workspace:packages/shared"
     "@proton/styles": "workspace:packages/styles"
     "@proton/testing": "workspace:packages/testing"
+    "@proton/unleash": "workspace:^"
+    "@proton/utils": "workspace:^"
     "@protontech/crypto": "npm:*"
+    "@reduxjs/toolkit": "npm:^2.12.0"
     "@testing-library/jest-dom": "npm:^6.9.1"
     "@testing-library/react": "npm:^15.0.7"
+    "@testing-library/user-event": "npm:^14.6.6"
     "@types/react": "npm:^18.3.31"
     "@types/react-dom": "npm:^18.3.7"
     "@types/react-router-dom": "npm:^5.3.3"
@@ -42222,12 +42244,20 @@ __metadata:
     "@vitest/coverage-v8": "npm:^4.1.11"
     "@vitest/ui": "npm:3.2.7"
     "@workadventure/noise-suppression": "npm:0.1.1"
+    clsx: "npm:^2.1.1"
     cross-env: "npm:^10.1.0"
+    date-fns: "npm:^2.30.0"
     date-fns-tz: "npm:^2.0.1"
+    dotenv: "npm:^17.4.2"
+    emoji-mart: "npm:^5.1.0"
     eslint: "npm:^10.9.0"
     happy-dom: "npm:^20.11.6"
+    history: "npm:^4.10.1"
+    html-webpack-plugin: "npm:^5.6.8"
     livekit-client: "npm:2.22.0"
+    lodash: "npm:^4.18.1"
     mediabunny: "npm:^1.55.2"
+    path-browserify: "npm:^1.0.1"
     prettier: "npm:^3.9.6"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
@@ -42235,6 +42265,7 @@ __metadata:
     react-router-dom: "npm:^5.3.4"
     ttag: "npm:^1.8.12"
     typescript: "npm:^6.0.3"
+    vite-plugin-wasm: "npm:^3.6.0"
     vitest: "npm:^4.1.11"
     webpack: "npm:^5.109.2"
   languageName: unknown

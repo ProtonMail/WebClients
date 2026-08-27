@@ -17,7 +17,7 @@ import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createPromise } from '@proton/shared/lib/helpers/promise';
 
 import { MeetCoreClientContext } from '../../../contexts/MeetCoreClientContext';
-import { type MeetCoreClientMock, createMeetCoreClientMock } from '../../../wasm/MeetCoreClient.mock';
+import { type MeetCoreClientMock, createMeetCoreClientMock } from '../../../wasm/__mocks__/MeetCoreClient.mock';
 import { emitWaitingRoomJoinDecision } from '../../../wasm/waitingRoomCallbacks';
 import { usePreJoinWaitingRoom } from './usePreJoinWaitingRoom';
 
