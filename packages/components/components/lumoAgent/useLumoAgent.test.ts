@@ -158,6 +158,32 @@ describe('useLumoAgent', () => {
         });
     });
 
+    it('puts an image a tool shows on the user turn, named by a marker, once per image', async () => {
+        const withImage: LumoAgentConfig = {
+            ...config,
+            handlers: {
+                ...config.handlers,
+                view_items: async (_params, { showImage }) => {
+                    showImage?.({ imageId: 'node-1', data: 'AAAA', name: 'sunset.jpg' });
+                    showImage?.({ imageId: 'node-1', data: 'AAAA', name: 'sunset.jpg' });
+                    return {};
+                },
+            },
+        };
+        script = async ({ executor }) => {
+            await executor.execute([{ id: '1', name: 'view_items', arguments: '{}' }]);
+        };
+
+        const { result } = renderHook(() => useLumoAgent(withImage));
+        await act(async () => {
+            await result.current.send('what is this');
+        });
+
+        const userTurn = sentTurns[0].findLast((turn) => turn.role === 'user');
+        expect(userTurn?.images).toEqual([{ encrypted: false, image_id: 'node-1', data: 'AAAA' }]);
+        expect(userTurn?.content).toBe('what is this\n<lumo-image id="node-1" source="user" name="sunset.jpg" />');
+    });
+
     it('hides the guide-load chip but keeps the prose written alongside it', async () => {
         script = async ({ executor, chunk }) => {
             chunk(message("I'll search for that."));
@@ -892,7 +918,9 @@ describe('useLumoAgent', () => {
 
     it('builds a debug transcript of the system prompt followed by the banked turns in order', async () => {
         script = async ({ chunk }) => chunk(message('First answer.'));
-        const { result } = renderHook(() => useLumoAgent({ ...config, productRules: 'ONLY MOVE MAIL THE USER NAMED' }));
+        const { result } = renderHook(() =>
+            useLumoAgent({ ...config, productRules: () => 'ONLY MOVE MAIL THE USER NAMED' })
+        );
         await act(async () => {
             await result.current.send('first question');
         });
