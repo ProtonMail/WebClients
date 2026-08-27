@@ -15,7 +15,7 @@ import { useFlag } from '@proton/unleash/useFlag';
 
 import { isSearch } from '../../helpers/elements';
 import type { ESBaseMessage, ESMessageContent } from '../../models/encryptedSearch';
-import { selectSearch } from '../../store/elements/elementsSelectors';
+import { esSearching, selectSearch } from '../../store/elements/elementsSelectors';
 import { useMailSelector } from '../../store/hooks';
 import { getSharedIndexService } from '../indexation/IndexService';
 import { SearchService } from '../search/SearchService';
@@ -133,18 +133,34 @@ export const useContentSearch = ({ esCallbacks, esLibraryFunctionsV1 }: Props): 
         }
     }, [featureFlag, adapter, v1Timepoint, v1ProgressState]);
 
-    const isSearching = isSearch(useMailSelector(selectSearch));
+    const isSearchOpen = isSearch(useMailSelector(selectSearch));
     useEffect(() => {
-        if (featureFlag && !isSearching) {
+        if (featureFlag && !isSearchOpen) {
             adapter.leaveSearch();
         }
-    }, [featureFlag, adapter, isSearching]);
+    }, [featureFlag, adapter, isSearchOpen]);
+
+    const isSearching = useMailSelector(esSearching);
 
     // Rebuild the functions object whenever the reactive surface changes — the same mechanism V1 uses
     // (its `useMemo` keyed on esStatus/esIndexingProgressState). The bound method surface is stable, so
     // a new object identity here is what propagates fresh status/progress to consumers.
     return useMemo<FunctionsV1>(
-        () => ({ ...toBoundFunctions(adapter), esStatus, esIndexingProgressState, progressRecorderRef }),
-        [adapter, esStatus, esIndexingProgressState]
+        () => ({
+            ...toBoundFunctions(adapter),
+            esStatus: {
+                ...esStatus,
+                // we don't have a cache and doesn't do partial searches
+                getCacheStatus: () => ({ isCacheReady: true, isCacheLimited: false }),
+                isSearchPartial: false,
+                // Whether a search is in flight is counted around every `encryptedSearch` call by
+                // `useApplyEncryptedSearch` — for v2 that is this adapter, and the count spans the
+                // whole search, since `encryptedSearch` doesn't resolve until the search is done.
+                isSearching,
+            },
+            esIndexingProgressState,
+            progressRecorderRef,
+        }),
+        [adapter, esStatus, esIndexingProgressState, isSearching]
     );
 };
