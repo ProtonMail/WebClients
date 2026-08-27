@@ -57,7 +57,7 @@ import type { ChargebeeIdealProcessorHook } from '@proton/components/payments/re
 import type { ChargebeePaypalProcessorHook } from '@proton/components/payments/react-extensions/useChargebeePaypal';
 import type { ChargebeeDirectDebitProcessorHook } from '@proton/components/payments/react-extensions/useSepaDirectDebit';
 import { type GetChargebeeConfigurationResponse, getChargebeeConfiguration } from '@proton/payments/core/api/api';
-import { getChargebeeErrorCode, isApplePayUnsupportedError } from '@proton/payments/core/chargebee-errors';
+import { getChargebeeErrorMessage, isApplePayUnsupportedError } from '@proton/payments/core/chargebee-errors';
 import type {
     ChargebeeIframeEvents,
     ChargebeeIframeHandles,
@@ -213,61 +213,6 @@ function iframeAction<T>(
     });
 
     return result;
-}
-
-function getErrorMessageByCode(errorCode: string | undefined): string | undefined {
-    switch (errorCode) {
-        case 'card_declined':
-            return c('Payments.Error')
-                .t`Your card was declined. Please try a different card or contact your bank to authorize the charge.`;
-
-        case 'payment_intent_authentication_failure':
-        case 'payment_authentication_failed':
-            return c('Payments.Error')
-                .t`We are unable to authenticate your payment method. Please choose a different payment method or try again.`;
-
-        default:
-            return undefined;
-    }
-}
-
-function getErrorMessage(error: any) {
-    return getErrorMessageByCode(getChargebeeErrorCode(error));
-}
-
-export function getChargebeeErrorMessage(error: any) {
-    const errorMessage = getErrorMessage(error);
-
-    const defaultError = c('Payments.Error').t`Something went wrong. Please try again later.`;
-
-    return (
-        [
-            errorMessage,
-            error?.displayMessage,
-            error?.error?.displayMessage,
-            error?.message,
-            error?.error?.message,
-            defaultError,
-        ]
-            // handling possible Array values
-            .map((message) => {
-                if (!message || !Array.isArray(message)) {
-                    return message;
-                }
-
-                return message.join(' ');
-            })
-            .map((message) => message?.trim?.() ?? message)
-            .find((message) => {
-                // avoiding empty strings, null, and undefined values
-                const isTruthy = !!message;
-
-                // avoiding [object Object] strings
-                const isObjectString = message?.toString?.().includes?.({}.toString());
-
-                return isTruthy && !isObjectString;
-            })
-    );
 }
 
 type ChargebeeIframeProps = React.IframeHTMLAttributes<HTMLIFrameElement> & {

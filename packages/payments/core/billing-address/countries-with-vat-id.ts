@@ -1,5 +1,4 @@
 export const countriesWithVatNumberOnSignup = new Set([
-    // EU member states (27)
     'AT',
     'BE',
     'BG',
@@ -27,15 +26,11 @@ export const countriesWithVatNumberOnSignup = new Set([
     'SI',
     'ES',
     'SE',
-
-    // Additional non-EU European countries
     'CH',
     'GB',
     'NO',
     'LI',
     'IS',
-
-    // Countries for Batch 1 tax exclusive
     'AU',
     'SG',
 ]);

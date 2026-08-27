@@ -1,40 +1,15 @@
-import type { CheckSubscriptionData } from '@proton/payments/core/api/api';
-import { type BillingAddress, getBillingAddressPayload } from '@proton/payments/core/billing-address/billing-address';
+import type { BillingAddress } from '@proton/payments/core/billing-address/billing-address';
 import { computeOptimisticCheckResult } from '@proton/payments/core/computeOptimisticCheckResult';
 import type { Currency, FreeSubscription, PaymentsApi } from '@proton/payments/core/interface';
-import { getAutoCoupon, isSubscriptionCheckForbidden } from '@proton/payments/core/subscription/helpers';
+import { isSubscriptionCheckForbidden } from '@proton/payments/core/subscription/helpers';
 import type { FullPlansMap, Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
+import { type PlanToCheck, getSubscriptionDataFromPlanToCheck } from '@proton/payments/core/subscription/plan-to-check';
 import isTruthy from '@proton/utils/isTruthy';
 
-import type { PlanToCheck } from './PaymentContext';
 import type { useMultiCheckGroups } from './useMultiCheckGroups';
 
-export const getSubscriptionDataFromPlanToCheck = ({
-    planIDs,
-    cycle,
-    currency,
-    coupon,
-    trial = false,
-    ValidateBillingAddress,
-    VatId,
-    BillingAddress,
-}: PlanToCheck & {
-    ValidateBillingAddress?: boolean;
-    VatId: string | undefined;
-    BillingAddress: BillingAddress;
-}): CheckSubscriptionData => ({
-    Plans: planIDs,
-    Currency: currency,
-    Cycle: cycle,
-    Codes: coupon ? [coupon] : [],
-    BillingAddress: getBillingAddressPayload({
-        billingAddress: BillingAddress,
-        vatId: VatId,
-    }),
-    ValidateBillingAddress,
-    IsTrial: trial,
-    VatId,
-});
+export type { PlanToCheck } from '@proton/payments/core/subscription/plan-to-check';
+export { getPlanToCheck, getSubscriptionDataFromPlanToCheck } from '@proton/payments/core/subscription/plan-to-check';
 
 /**
  * This is used only for non-critical checks. For example, loading the prices for multiple plans on page loading.
@@ -108,15 +83,3 @@ export const checkMultiplePlans = async ({
 
     return normalizedResults;
 };
-
-export function getPlanToCheck(params: PlanToCheck): PlanToCheck {
-    const coupon = getAutoCoupon({
-        coupon: params.coupon,
-        planIDs: params.planIDs,
-        cycle: params.cycle,
-        trial: params.trial,
-        currency: params.currency,
-    });
-
-    return { ...params, coupon };
-}

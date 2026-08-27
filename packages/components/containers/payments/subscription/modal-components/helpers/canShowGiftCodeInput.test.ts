@@ -1,4 +1,4 @@
-import type { CouponConfigRendered } from '@proton/payments-ui/ui/coupon-config/useCouponConfig';
+import type { CouponConfigMetadata } from '@proton/payments/core/coupon-config/interface';
 import { SubscriptionMode } from '@proton/payments/core/subscription/constants';
 import type {
     SubscriptionCheckForbiddenReason,
@@ -11,7 +11,7 @@ const allowed: SubscriptionCheckForbiddenReason = { forbidden: false };
 
 const baseInput = {
     paymentForbiddenReason: allowed,
-    couponConfig: undefined as CouponConfigRendered | undefined,
+    couponConfig: undefined as CouponConfigMetadata | undefined,
     checkResult: { SubscriptionMode: SubscriptionMode.Regular } as SubscriptionEstimation,
 };
 
@@ -51,7 +51,7 @@ describe('canShowGiftCodeInput', () => {
         expect(
             canShowGiftCodeInput({
                 ...baseInput,
-                couponConfig: { hidden: true } as CouponConfigRendered,
+                couponConfig: { hidden: true } as CouponConfigMetadata,
             })
         ).toBe(false);
     });
@@ -69,7 +69,7 @@ describe('canShowGiftCodeInput', () => {
         expect(
             canShowGiftCodeInput({
                 ...baseInput,
-                couponConfig: { hidden: false } as CouponConfigRendered,
+                couponConfig: { hidden: false } as CouponConfigMetadata,
             })
         ).toBe(true);
     });

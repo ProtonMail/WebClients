@@ -1,12 +1,12 @@
 import Price from '@proton/components/components/price/Price';
 import { getCheckoutUi } from '@proton/payments/core/checkout';
-import { COUPON_CODES, CYCLE } from '@proton/payments/core/constants';
+import { CYCLE } from '@proton/payments/core/constants';
+import { monthlyNudgeMetadata } from '@proton/payments/core/coupon-config/configs/monthly-nudge';
 
 import type { CouponConfig } from './interface';
 
 export const monthlyNudgeConfig: CouponConfig = {
-    coupons: [COUPON_CODES.ANNUALOFFER25],
-    hidden: true,
+    ...monthlyNudgeMetadata,
     cyclePriceCompare: ({ cycle, suffix }, config) => {
         if (cycle !== CYCLE.YEARLY) {
             return null;

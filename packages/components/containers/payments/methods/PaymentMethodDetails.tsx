@@ -2,9 +2,9 @@ import { useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { type CreditCardType, getBankSvg } from '@proton/payments-ui/ui/helpers/credit-card-icons';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { PayPalDetails, SavedCardDetails, SepaDetails } from '@proton/payments/core/interface';
+import { type CreditCardType, getBankSvg } from '@proton/payments/core/payment-methods/credit-card-icons';
 import { isPaypalDetails, isSavedCardDetails, isSepaDetails } from '@proton/payments/core/type-guards';
 
 import Bordered from '../../../components/container/Bordered';

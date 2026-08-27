@@ -1,4 +1,4 @@
-import type { CouponConfigRendered } from '@proton/payments-ui/ui/coupon-config/useCouponConfig';
+import type { CouponConfigMetadata } from '@proton/payments/core/coupon-config/interface';
 import type { PlanIDs } from '@proton/payments/core/interface';
 import { isCurrencyRestrictedMethod } from '@proton/payments/core/payment-methods/currencyOverride';
 import { isLifetimePlanSelected } from '@proton/payments/core/plan/helpers';
@@ -10,7 +10,7 @@ export const getDisableCurrencySelector = (
     paymentMethods: MethodsHook,
     user: UserModel,
     planIDs: PlanIDs,
-    couponConfig: CouponConfigRendered | undefined,
+    couponConfig: CouponConfigMetadata | undefined,
     loading: boolean | undefined
 ) => {
     const hasCurrencyRestrictedMethod = isCurrencyRestrictedMethod(paymentMethods.selectedMethod?.type);
