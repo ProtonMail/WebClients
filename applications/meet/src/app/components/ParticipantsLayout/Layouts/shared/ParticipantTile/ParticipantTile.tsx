@@ -21,18 +21,18 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
-import { SecurityShield } from '../../atoms/SecurityShield/SecurityShield';
-import { SpeakingIndicator } from '../../atoms/SpeakingIndicator';
-import { useCameraTrackSubscriptionManager } from '../../contexts/CameraTrackSubscriptionCacheProvider/CameraTrackSubscriptionManagerProvider';
-import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
-import { useDebouncedSpeakingStatus } from '../../hooks/useDebouncedSpeakingStatus';
-import { useParticipantDisplayColors } from '../../hooks/useParticipantDisplayColors';
-import { shouldShowParticipantVideo } from '../../utils/shouldShowParticipantVideo';
-import { BackgroundEffectInitializingOverlay } from '../BackgroundEffectInitializingOverlay/BackgroundEffectInitializingOverlay';
-import { NetworkQualityIndicator } from '../NetworkQualityIndicator/NetworkQualityIndicator';
-import { ParticipantPlaceholder } from '../ParticipantPlaceholder/ParticipantPlaceholder';
+import { SecurityShield } from '../../../../../atoms/SecurityShield/SecurityShield';
+import { SpeakingIndicator } from '../../../../../atoms/SpeakingIndicator';
+import { useCameraTrackSubscriptionManager } from '../../../../../contexts/CameraTrackSubscriptionCacheProvider/CameraTrackSubscriptionManagerProvider';
+import { useMediaManagementContext } from '../../../../../contexts/MediaManagementProvider/MediaManagementContext';
+import { useParticipantDisplayColors } from '../../../../../hooks/useParticipantDisplayColors';
+import { shouldShowParticipantVideo } from '../../../../../utils/shouldShowParticipantVideo';
+import { BackgroundEffectInitializingOverlay } from '../../../../BackgroundEffectInitializingOverlay/BackgroundEffectInitializingOverlay';
+import { NetworkQualityIndicator } from '../../../../NetworkQualityIndicator/NetworkQualityIndicator';
+import { ParticipantPlaceholder } from '../../../../ParticipantPlaceholder/ParticipantPlaceholder';
 import { ParticipantTileReaction } from './ParticipantTileReaction';
 import { AUDIO_ICON_SIZE, INDICATOR_SIZE_BY_SIZE, POSITION_BY_SIZE } from './constants';
+import { useDebouncedSpeakingStatus } from './useDebouncedSpeakingStatus';
 
 import './ParticipantTile.scss';
 
