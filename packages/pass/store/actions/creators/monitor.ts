@@ -18,7 +18,7 @@ import type {
     MonitorVerifyDTO,
     ProtonAddressID,
 } from '../../../lib/monitor/types';
-import type { ItemRevision, SelectedItem, UniqueItem } from '../../../types';
+import type { ItemRevision, SelectedItem, ShareId, TabId, UniqueItem } from '../../../types';
 import type { BreachCustomEmailGetResponse, BreachesGetResponse, UpdateUserMonitorStateRequest } from '../../../types/api/pass';
 import { prop } from '../../../utils/fp/lens';
 import { pipe } from '../../../utils/fp/pipe';
@@ -232,6 +232,23 @@ export const compromisedPasswordUpdate = createAction(
     'monitor::compromised-password::update',
     (payload: { item: UniqueItem; entry: CompromisedPasswordEntry }) => withCache({ payload })
 );
+
+export const compromisedPasswordsBatchUpdate = createAction(
+    'monitor::compromised-passwords::batch-update',
+    (payload: { item: UniqueItem; entry: CompromisedPasswordEntry }[]) => withCache({ payload })
+);
+
+export const compromisedPasswordsProgress = createAction(
+    'monitor::compromised-passwords::progress',
+    (payload: { completed: number; total: number }) => ({ payload })
+);
+
+export type CompromisedPasswordsCheckDTO = { shareIds?: ShareId[]; tabId?: TabId; generation: number };
+export const checkCompromisedPasswords = requestActionsFactory<CompromisedPasswordsCheckDTO, UniqueItem[]>(
+    'monitor::compromised-passwords::check'
+)({
+    key: ({ tabId, generation }) => `${tabId ?? 0}::${generation}`,
+});
 
 export const resendVerificationCode = requestActionsFactory<CustomAddressID, boolean>('monitor::breaches::custom::resend::verification')({
     key: identity,

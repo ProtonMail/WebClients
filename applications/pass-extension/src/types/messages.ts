@@ -154,7 +154,6 @@ export enum WorkerMessageType {
     LOG_EVENT = 'LOG_EVENT',
     LOG_REQUEST = 'LOG_REQUEST',
     MONITOR_2FAS = 'MONITOR_2FAS',
-    MONITOR_COMPROMISED_PASSWORDS = 'MONITOR_COMPROMISED_PASSWORDS',
     MONITOR_WEAK_PASSWORDS = 'MONITOR_WEAK_PASSWORDS',
     NOTIFICATION = 'NOTIFICATION',
     OTP_CODE_GENERATE = 'OTP_CODE_GENERATE',
@@ -263,7 +262,6 @@ export type LocaleUpdatedMessage = WithPayload<WorkerMessageType.LOCALE_UPDATED,
 export type LogEventMessage = WithPayload<WorkerMessageType.LOG_EVENT, { log: string }>;
 export type LogRequestMessage = { type: WorkerMessageType.LOG_REQUEST };
 export type Monitor2FAsMessage = { type: WorkerMessageType.MONITOR_2FAS };
-export type MonitorCompromisedPasswordsMessage = { type: WorkerMessageType.MONITOR_COMPROMISED_PASSWORDS };
 export type MonitorWeakPasswordsMessage = { type: WorkerMessageType.MONITOR_WEAK_PASSWORDS };
 export type NotificationMessage = WithPayload<WorkerMessageType.NOTIFICATION, { notification: Notification }>;
 export type OTPCodeGenerateMessage = WithPayload<WorkerMessageType.OTP_CODE_GENERATE, OtpRequest>;
@@ -359,7 +357,6 @@ export type WorkerMessage =
     | LogEventMessage
     | LogRequestMessage
     | Monitor2FAsMessage
-    | MonitorCompromisedPasswordsMessage
     | MonitorWeakPasswordsMessage
     | NotificationMessage
     | OTPCodeGenerateMessage
@@ -429,7 +426,6 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.INLINE_ICON_SHIFT]: IconShiftResult;
     [WorkerMessageType.LOG_REQUEST]: { logs: string[] };
     [WorkerMessageType.MONITOR_2FAS]: { result: UniqueItem[] };
-    [WorkerMessageType.MONITOR_COMPROMISED_PASSWORDS]: { result: UniqueItem[] };
     [WorkerMessageType.MONITOR_WEAK_PASSWORDS]: { result: UniqueItem[] };
     [WorkerMessageType.OTP_CODE_GENERATE]: OtpCode;
     [WorkerMessageType.PASS_CORE_RPC]: { result: PassCoreResult<PassCoreMethod> };
