@@ -9673,6 +9673,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@prometheus-io/client@npm:^0.16.0":
+  version: 0.16.0
+  resolution: "@prometheus-io/client@npm:0.16.0"
+  dependencies:
+    "@opentelemetry/api": "npm:^1.4.0"
+    tdigest: "npm:^0.1.1"
+  checksum: 10/c7af87277bc2a7ca43e091f4c2e7cd198c534021386f290a53d3a2a8614581fc32fc821922ae54b44ab01d21fe267e0cfe53d459984b1d837ac9941fa5b84c37
+  languageName: node
+  linkType: hard
+
 "@protobuf-ts/plugin@npm:^2.11.1":
   version: 2.11.1
   resolution: "@protobuf-ts/plugin@npm:2.11.1"
@@ -10172,6 +10182,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/ci-scripts@workspace:utilities/ci-scripts"
   dependencies:
+    "@prometheus-io/client": "npm:^0.16.0"
     "@proton/ci-tools": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/gitlab": "workspace:^"
@@ -10181,7 +10192,6 @@ __metadata:
     glob: "npm:^13.0.6"
     jest: "npm:^30.4.2"
     lodash: "npm:^4.18.1"
-    prom-client: "npm:^15.1.3"
     ts-jest: "npm:^29.4.12"
     ts-node: "npm:^10.9.2"
     tsx: "npm:^4.23.12"
@@ -10194,6 +10204,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/ci-tools@workspace:utilities/ci-tools"
   dependencies:
+    "@prometheus-io/client": "npm:^0.16.0"
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/gitlab": "workspace:^"
     "@types/jest": "npm:^30.0.0"
@@ -10201,7 +10212,6 @@ __metadata:
     axios-retry: "npm:^4.5.0"
     eslint: "npm:^10.9.0"
     jest: "npm:^30.4.2"
-    prom-client: "npm:^15.1.3"
     ts-jest: "npm:^29.4.12"
     ts-node: "npm:^10.9.2"
     typescript: "npm:^6.0.3"
@@ -10212,11 +10222,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/collect-metrics@workspace:utilities/collect-metrics"
   dependencies:
+    "@prometheus-io/client": "npm:^0.16.0"
     "@proton/ci-tools": "workspace:^"
     "@types/jest": "npm:^30.0.0"
     bundlemon: "npm:^3.1.0"
     jest: "npm:^30.4.2"
-    prom-client: "npm:^15.1.3"
     ts-jest: "npm:^29.4.12"
     ts-node: "npm:^10.9.2"
     tsx: "npm:^4.23.12"
@@ -41085,16 +41095,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prom-client@npm:^15.1.3":
-  version: 15.1.3
-  resolution: "prom-client@npm:15.1.3"
-  dependencies:
-    "@opentelemetry/api": "npm:^1.4.0"
-    tdigest: "npm:^0.1.1"
-  checksum: 10/eba75e15ab896845d39359e3a4d6f7913ea05339b3122d8dde8c8c374669ad1a1d1ab2694ab2101c420bd98086a564e4f2a18aa29018fc14a4732e57c1c19aec
-  languageName: node
-  linkType: hard
-
 "promise-inflight@npm:^1.0.1":
   version: 1.0.1
   resolution: "promise-inflight@npm:1.0.1"
@@ -41851,6 +41851,7 @@ __metadata:
   resolution: "proton-e2e@workspace:tests"
   dependencies:
     "@playwright/test": "npm:^1.62.1"
+    "@prometheus-io/client": "npm:^0.16.0"
     "@proton/colors": "workspace:^"
     "@proton/components": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
@@ -41888,7 +41889,6 @@ __metadata:
     pdf-parse: "npm:^1.1.4"
     playwright: "npm:^1.62.1"
     prettier: "npm:^3.9.6"
-    prom-client: "npm:^15.1.3"
     rimraf: "npm:^6.1.3"
     tinycolor2: "npm:^1.6.0"
     totp-generator: "npm:^2.0.1"
