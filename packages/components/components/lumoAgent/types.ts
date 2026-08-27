@@ -58,7 +58,8 @@ export interface LumoAgentConfig {
     definitions: ToolDefinition[];
     handlers: ToolHandlers;
     cardRenderers?: CardRenderers;
-    productRules?: string;
+    /** A callback so rules can follow what is on screen. Called once per message sent. */
+    productRules?: () => string;
     serverTools?: ServerToolName[];
     serverToolMeta?: Partial<Record<ServerToolName, ServerToolMeta>>;
 }

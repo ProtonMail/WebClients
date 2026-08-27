@@ -150,6 +150,7 @@ export type ToolHandler<Params = any, Result = any> = (params: Params, deps: Too
 export interface ToolImage {
     imageId: string;
     data: string;
+    name?: string;
 }
 
 /** Dependencies handed to every handler by the engine at run time. */
