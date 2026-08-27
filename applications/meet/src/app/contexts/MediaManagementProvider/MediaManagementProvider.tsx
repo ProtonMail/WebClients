@@ -116,6 +116,7 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
             }
 
             let selectedDeviceId = deviceId;
+            const targetDeviceId = deviceType === 'audiooutput' && isSystemDefaultDevice ? '' : deviceId;
 
             const activeDeviceIdByType: Record<'audioinput' | 'audiooutput' | 'videoinput', string> = {
                 audioinput: activeMicrophoneDeviceId,
@@ -125,12 +126,32 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
 
             try {
                 try {
-                    if (activeDeviceIdByType[deviceType] !== selectedDeviceId) {
+                    if (activeDeviceIdByType[deviceType] !== targetDeviceId) {
                         await withTimeout(
-                            room.switchActiveDevice(deviceType, deviceId),
+                            room.switchActiveDevice(deviceType, targetDeviceId),
                             'Switch active device',
                             SWITCH_DEVICE_TIMEOUT_MS
                         );
+
+                        // eslint-disable-next-line no-console
+                        console.log(`[switchActiveDevice] switched`, {
+                            deviceType,
+                            requested: deviceId,
+                            sent: targetDeviceId,
+                            isSystemDefaultDevice,
+                            livekitActive: room.getActiveDevice(deviceType),
+                            livekitAudioOutput: room.options.audioOutput?.deviceId,
+                        });
+                    } else {
+                        // eslint-disable-next-line no-console
+                        console.log(`[switchActiveDevice] skipped, already active`, {
+                            deviceType,
+                            requested: deviceId,
+                            sent: targetDeviceId,
+                            isSystemDefaultDevice,
+                            livekitActive: room.getActiveDevice(deviceType),
+                            livekitAudioOutput: room.options.audioOutput?.deviceId,
+                        });
                     }
                 } catch (error) {
                     if (deviceType !== 'videoinput' || error instanceof TimeoutError) {
