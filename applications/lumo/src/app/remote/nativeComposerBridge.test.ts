@@ -27,6 +27,13 @@ describe('nativeComposerBridge - custom lumos', () => {
         });
     });
 
+    it('pushes the Apertus model feature flag to native', () => {
+        nativeComposerApiInstance.toggleApertusModelEnabled(true);
+
+        expect(nativeComposerApiInstance.getState().featureFlags.isApertusModelEnabled).toBe(true);
+        expect(JSON.parse(onStateChange.mock.lastCall[0]).featureFlags.isApertusModelEnabled).toBe(true);
+    });
+
     it('setCustomLumos updates state and pushes it to native', () => {
         const list = [{ id: 'a1', name: 'Writer', source: 'personal' }];
 

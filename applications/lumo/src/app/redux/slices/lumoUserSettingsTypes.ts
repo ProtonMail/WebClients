@@ -62,6 +62,6 @@ export interface LumoUserSettings {
     memoryPromptsSinceAutoSave?: number;
     /** Newest chat prompt included in a scan that successfully persisted at least one memory. */
     memoryLastProcessedMessageAt?: string;
-    preferredModelTier?: 'lumo-lite' | 'lumo-max';
+    preferredModelTier?: 'lumo-lite' | 'lumo-max' | 'apertus-15';
     preferredResponseMode?: 'fast' | 'thinking';
 }
