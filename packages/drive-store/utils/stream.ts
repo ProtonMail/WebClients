@@ -21,12 +21,3 @@ export const streamToBuffer = async (stream: ReadableStream<Uint8Array<ArrayBuff
     });
     return chunks;
 };
-
-export const bufferToStream = (buffer: Uint8Array<ArrayBuffer>[]): ReadableStream<Uint8Array<ArrayBuffer>> => {
-    return new ReadableStream({
-        start(controller) {
-            buffer.forEach((chunk) => controller.enqueue(chunk));
-            controller.close();
-        },
-    });
-};

@@ -4,8 +4,6 @@ import isTruthy from '@proton/utils/isTruthy';
 import type { EncryptedLink } from './interface';
 
 export const WINDOWS_FORBIDDEN_CHARACTERS = /[<>:"|?*]/;
-// eslint-disable-next-line no-control-regex
-export const GLOBAL_FORBIDDEN_CHARACTERS = /\/|\\|[\u0000-\u001F]|[\u2000-\u200F]|[\u202E-\u202F]/;
 export const WINDOWS_RESERVED_NAMES = [
     'CON',
     'PRN',

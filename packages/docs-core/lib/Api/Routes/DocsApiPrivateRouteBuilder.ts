@@ -69,15 +69,6 @@ export class DocsApiPrivateRouteBuilder extends DocsApiRouteBuilder {
     }
   }
 
-  createDocument(): DocsRoute {
-    return {
-      method: 'post',
-      url: `${this.basePath}`,
-      silence: true,
-      data: {},
-    }
-  }
-
   getCommentThreads(): DocsRoute {
     return {
       method: 'get',

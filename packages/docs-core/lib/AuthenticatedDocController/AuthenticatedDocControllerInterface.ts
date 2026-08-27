@@ -1,4 +1,4 @@
-import type { YjsState, TranslatedResult, Result, DocumentType } from '@proton/docs-shared'
+import type { YjsState, Result, DocumentType } from '@proton/docs-shared'
 import type { NativeVersionHistory } from '../VersionHistory'
 import type { DocumentUpdate } from '@proton/docs-proto'
 
@@ -16,7 +16,6 @@ export interface AuthenticatedDocControllerInterface {
   openDocumentSharingModal(): void
   openMoveToFolderModal(): void
   restoreRevisionAsCopy(yjsContent: YjsState): Promise<void>
-  renameDocument(newName: string): Promise<TranslatedResult<void>>
   restoreDocument(useSDK?: boolean): Promise<void>
   squashDocument(): Promise<void>
   squashEverythingInBaseCommit(): Promise<Result<boolean>>
