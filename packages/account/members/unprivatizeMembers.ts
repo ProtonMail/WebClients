@@ -27,7 +27,6 @@ import type { MemberState } from '../member';
 import type { OrganizationKeyState } from '../organizationKey';
 import { organizationKeyThunk } from '../organizationKey';
 import { userKeysThunk } from '../userKeys';
-import { unprivatizeMember } from './actions';
 import { getMember } from './getMember';
 import {
     type MembersState,
@@ -39,6 +38,7 @@ import {
     setUnprivatizationState,
     upsertMember,
 } from './index';
+import { unprivatizeMember } from './unprivatizeActions';
 
 type RequiredState = KtState & MemberState & MembersState & OrganizationKeyState;
 
