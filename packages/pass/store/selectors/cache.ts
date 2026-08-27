@@ -19,6 +19,7 @@ export const selectCachableState = (state: State) => {
     cachable.files = {};
     cachable.accessTokens = getInitialPATState();
     cachable.ui = { values: {} };
+    cachable.compromisedPasswords = { ...cachable.compromisedPasswords, progress: { completed: 0, total: 0 } };
 
     /** V2 user events provide granular invite updates, safe to cache */
     if (legacySync) {

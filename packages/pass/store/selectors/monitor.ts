@@ -27,6 +27,7 @@ export const selectDuplicatePasswords = (shareIds?: ShareId[]) => createSelector
 
 export const selectCompromisedPasswordsCache = (state: State) => state.compromisedPasswords.items;
 export const selectLastSyncedChange = (state: State) => state.compromisedPasswords.lastSyncedChange;
+export const selectCompromisedPasswordsProgress = (state: State) => state.compromisedPasswords.progress;
 
 export const selectCompromisedPasswords = (shareIds?: ShareId[]) =>
     createSelector([selectMonitoredLogins(shareIds), selectCompromisedPasswordsCache], (items, cache) =>

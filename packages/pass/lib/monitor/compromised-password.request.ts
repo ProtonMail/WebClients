@@ -20,8 +20,8 @@ export const getBucketUrl = (hashHex: string): string => {
 };
 
 /** Global "has anything in the whole corpus changed" marker */
-export const getLastChangeTimestamp = async (): Promise<number> => {
-    const res = await fetch(`${PASS_CREDENTIAL_CHECK_URL}/split/sha1/last_change`);
+export const getLastChangeTimestamp = async (signal?: AbortSignal): Promise<number> => {
+    const res = await fetch(`${PASS_CREDENTIAL_CHECK_URL}/split/sha1/last_change`, { signal });
     if (!res.ok) throw new Error(`Failed to fetch last_change: ${res.status}`);
 
     const raw = (await res.text()).trim();
@@ -32,9 +32,13 @@ export const getLastChangeTimestamp = async (): Promise<number> => {
 
 export type BucketResult = { status: 'not-modified' } | { status: 'ok'; etag: string; suffixes: Set<string> };
 
-export const fetchCompromisedBucket = async (hashHex: string, priorEtag?: string): Promise<BucketResult> => {
+export const fetchCompromisedBucket = async (
+    hashHex: string,
+    priorEtag?: string,
+    signal?: AbortSignal
+): Promise<BucketResult> => {
     const headers: HeadersInit = { 'Add-Padding': 'true', ...(priorEtag ? { 'If-None-Match': priorEtag } : {}) };
-    const res = await fetch(getBucketUrl(hashHex), { headers });
+    const res = await fetch(getBucketUrl(hashHex), { headers, signal });
 
     if (res.status === 304) return { status: 'not-modified' };
     if (res.status === 404) return { status: 'ok', etag: '', suffixes: new Set() };
@@ -58,11 +62,12 @@ export type CompromisedCheckResult =
 
 export const checkPasswordCompromised = async (
     password: string,
-    priorEtag?: string
+    priorEtag?: string,
+    signal?: AbortSignal
 ): Promise<CompromisedCheckResult> => {
     const hashHex = (await hashPassword(password)).toUpperCase();
     const suffix = hashHex.slice(6);
-    const bucket = await fetchCompromisedBucket(hashHex, priorEtag);
+    const bucket = await fetchCompromisedBucket(hashHex, priorEtag, signal);
 
     if (bucket.status === 'not-modified') return { status: 'not-modified' };
     return { status: 'checked', compromised: bucket.suffixes.has(suffix), etag: bucket.etag };
