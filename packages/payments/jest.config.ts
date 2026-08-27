@@ -6,10 +6,9 @@ const jestConfig: JestConfigWithTsJest = {
     moduleDirectories: ['<rootDir>/node_modules', 'node_modules'],
     testEnvironment: '@proton/jest-env',
     transformIgnorePatterns: [
-        'node_modules/(?!(@proton/shared|@proton/components|@protontech/telemetry|@protontech/mutex-browser|@protontech/crypto|openpgp|@openpgp/web-stream-tools|@protontech/bip39|emoji-mart|msw|@mswjs|until-async|@preact/signals-core|@scure/base)/)',
+        'node_modules/(?!(@proton/shared|@protontech/telemetry|@protontech/mutex-browser|@protontech/crypto|openpgp|@openpgp/web-stream-tools|@protontech/bip39|jsmimeparser|emoji-mart|msw|@mswjs|until-async|@preact/signals-core|@scure/base)/)',
     ],
     transform: {
-        // experimentally using swc
         '^.+\\.(ts|js)x?$': [
             '@swc/jest',
             {
@@ -21,16 +20,12 @@ const jestConfig: JestConfigWithTsJest = {
                     },
                 },
                 env: {
-                    /* polyfill typed-array base64 and hex functions */ mode: 'usage',
+                    mode: 'usage',
                     shippedProposals: true,
                     coreJs: createRequire(import.meta.url)('core-js/package.json').version,
                 },
             },
         ],
-    },
-    moduleNameMapper: {
-        '\\.(css|scss|less)$': '@proton/payments/__mocks__/styleMock.js',
-        '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm)$': '@proton/payments/__mocks__/fileMock.js',
     },
 };
 

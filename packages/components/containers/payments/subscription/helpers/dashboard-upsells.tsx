@@ -4,6 +4,12 @@ import { c } from 'ttag';
 
 import type { ButtonLikeProps } from '@proton/atoms/Button/ButtonLike';
 import useLoading from '@proton/hooks/useLoading';
+import {
+    type PreloadedPaymentsContextType,
+    isPaymentsPreloaded,
+    usePayments,
+} from '@proton/payments-ui/ui/context/PaymentContext';
+import { getPlanToCheck } from '@proton/payments-ui/ui/context/helpers';
 import { ADDON_PREFIXES, CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { Currency, Cycle, PlanIDs } from '@proton/payments/core/interface';
 import { getIsB2BAudienceFromPlan, isPlan } from '@proton/payments/core/plan/helpers';
@@ -37,12 +43,6 @@ import {
 } from '@proton/payments/core/subscription/helpers';
 import type { FullPlansMap } from '@proton/payments/core/subscription/interface';
 import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
-import {
-    type PreloadedPaymentsContextType,
-    isPaymentsPreloaded,
-    usePayments,
-} from '@proton/payments/ui/context/PaymentContext';
-import { getPlanToCheck } from '@proton/payments/ui/context/helpers';
 import { MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {

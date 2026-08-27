@@ -3,7 +3,7 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import { getShortPlan } from '@proton/components/containers/payments/features/plan';
 import { PlanCardFeaturesShort } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
-import { usePayments } from '@proton/payments/ui/context/PaymentContext';
+import { usePayments } from '@proton/payments-ui/ui/context/PaymentContext';
 
 const SubscriptionCheckoutPlanIncludedFeaturesModal = ({ ...modalProps }: ModalStateProps) => {
     const { plansMap, freePlan, checkoutUi } = usePayments();

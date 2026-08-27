@@ -5,7 +5,8 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserInvitations } from '@proton/account/userInvitations/hooks';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
-import { useEntitlementChecks } from '@proton/payments/core/entitlements/hooks';
+import { useEntitlementChecks } from '@proton/payments-ui/entitlements/hooks';
+import { PaymentsContextProvider } from '@proton/payments-ui/ui/context/PaymentContext';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import {
     getCanSubscriptionAccessDuoPlan,
@@ -15,7 +16,6 @@ import {
     isTrial,
 } from '@proton/payments/core/subscription/helpers';
 import { getTrialInfoForSingleSubscription } from '@proton/payments/core/trials';
-import { PaymentsContextProvider } from '@proton/payments/ui/context/PaymentContext';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import { pick } from '@proton/shared/lib/helpers/object';

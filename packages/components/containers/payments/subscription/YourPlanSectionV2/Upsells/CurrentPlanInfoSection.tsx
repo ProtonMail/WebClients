@@ -7,13 +7,13 @@ import { DashboardCard, DashboardCardContent, DashboardCardImage } from '@proton
 import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import { usePopper } from '@proton/atoms/Popper/usePopper';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
+import { usePayments } from '@proton/payments-ui/ui/context/PaymentContext';
+import { getPlanToCheck } from '@proton/payments-ui/ui/context/helpers';
 import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import type { Currency, Cycle } from '@proton/payments/core/interface';
 import type { FreePlanDefault, PlansMap } from '@proton/payments/core/plan/interface';
 import { getSubscriptionPlanTitle } from '@proton/payments/core/subscription/helpers';
 import type { FullPlansMap, Subscription } from '@proton/payments/core/subscription/interface';
-import { usePayments } from '@proton/payments/ui/context/PaymentContext';
-import { getPlanToCheck } from '@proton/payments/ui/context/helpers';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, VPN_CONNECTIONS } from '@proton/shared/lib/constants';

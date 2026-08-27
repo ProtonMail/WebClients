@@ -2,8 +2,8 @@ import { c } from 'ttag';
 
 import { CircledNumber } from '@proton/atoms/CircledNumber/CircledNumber';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
+import { usePayments } from '@proton/payments-ui/ui/context/PaymentContext';
 import { getMinDonationAmount } from '@proton/payments/core/amount-limits';
-import { usePayments } from '@proton/payments/ui/context/PaymentContext';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import { getDonationCurrency } from '../helpers/emailReservationHelpers';

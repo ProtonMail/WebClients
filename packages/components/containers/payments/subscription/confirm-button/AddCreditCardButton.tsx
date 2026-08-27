@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import EditCardModal from '@proton/payments/ui/containers/EditCardModal';
+import EditCardModal from '@proton/payments-ui/ui/containers/EditCardModal';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 
 import useModalState from '../../../../components/modalTwo/useModalState';

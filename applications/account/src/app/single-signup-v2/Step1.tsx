@@ -25,6 +25,8 @@ import { useCurrencies } from '@proton/components/payments/client-extensions/use
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
+import { getCheckoutRenewNoticeTextFromCheckResult } from '@proton/payments-ui/ui/components/RenewalNotice';
+import { useCouponConfig } from '@proton/payments-ui/ui/coupon-config/useCouponConfig';
 import type { BillingAddress } from '@proton/payments/core/billing-address/billing-address';
 import { getCheckoutUi, getOptimisticCheckResult, getOptimisticCheckout } from '@proton/payments/core/checkout';
 import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
@@ -51,8 +53,6 @@ import type {
     EstimationChangePayload,
 } from '@proton/payments/telemetry/shared-checkout-telemetry';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
-import { getCheckoutRenewNoticeTextFromCheckResult } from '@proton/payments/ui/components/RenewalNotice';
-import { useCouponConfig } from '@proton/payments/ui/coupon-config/useCouponConfig';
 // eslint-disable-next-line no-restricted-imports
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';

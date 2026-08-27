@@ -2,8 +2,8 @@ import merge from 'lodash/merge';
 import { c } from 'ttag';
 
 import { Price, SkeletonLoader } from '@proton/components';
+import { usePaymentOptimistic } from '@proton/payments-ui/ui/context/PaymentContextOptimistic';
 import type { PLANS } from '@proton/payments/core/constants';
-import { usePaymentOptimistic } from '@proton/payments/ui/context/PaymentContextOptimistic';
 
 import { useIsVPNPlanWithoutTrialVariant } from '../../helpers/useIsVPNPlanWithoutTrialVariant';
 

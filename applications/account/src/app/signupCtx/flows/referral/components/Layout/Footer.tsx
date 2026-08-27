@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
 import CurrencySelector from '@proton/components/containers/payments/CurrencySelector';
-import { usePaymentOptimistic } from '@proton/payments/ui/context/PaymentContextOptimistic';
+import { usePaymentOptimistic } from '@proton/payments-ui/ui/context/PaymentContextOptimistic';
 import { APPS } from '@proton/shared/lib/constants';
 import { getPrivacyPolicyURL } from '@proton/shared/lib/helpers/url';
 import { locales } from '@proton/shared/lib/i18n/locales';

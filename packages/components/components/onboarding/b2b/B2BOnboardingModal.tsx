@@ -4,7 +4,7 @@ import { useOrganization } from '@proton/account/organization/hooks';
 import { useWelcomeFlags } from '@proton/account/welcomeFlags';
 import { useApi } from '@proton/app-context/useApi';
 import { useConfig } from '@proton/app-context/useConfig';
-import { useTrialInfo } from '@proton/payments/ui/hooks/useTrialInfo';
+import { useTrialInfo } from '@proton/payments-ui/ui/hooks/useTrialInfo';
 import { TelemetryB2BOnboardingEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS } from '@proton/shared/lib/constants';

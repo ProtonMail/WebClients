@@ -4,11 +4,11 @@ import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import useLoading from '@proton/hooks/useLoading';
+import EditCardModal from '@proton/payments-ui/ui/containers/EditCardModal';
 import { deletePaymentMethod, markPaymentMethodAsDefault } from '@proton/payments/core/api/api';
 import { isCardExpired } from '@proton/payments/core/cardDetails';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { PaymentMethodCardDetails, SavedPaymentMethod } from '@proton/payments/core/interface';
-import EditCardModal from '@proton/payments/ui/containers/EditCardModal';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 

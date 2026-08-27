@@ -8,6 +8,11 @@ import { shouldTraceError, useNotifyErrorHandler } from '@proton/components/hook
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import type { OnChargeable } from '@proton/components/payments/client-extensions';
 import metrics, { observeError } from '@proton/metrics/index';
+import type { PlanToCheck } from '@proton/payments-ui/ui/context/PaymentContext';
+import {
+    type PaymentsContextOptimisticType,
+    usePaymentOptimistic,
+} from '@proton/payments-ui/ui/context/PaymentContextOptimistic';
 import { PLANS } from '@proton/payments/core/constants';
 import type { Cycle, ExtendedTokenPayment, PlanIDs, TokenPayment } from '@proton/payments/core/interface';
 import { SubscriptionMode } from '@proton/payments/core/subscription/constants';
@@ -15,11 +20,6 @@ import { isTokenPayment, isV5PaymentToken } from '@proton/payments/core/type-gua
 import { v5PaymentTokenToLegacyPaymentToken } from '@proton/payments/core/utils';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
-import type { PlanToCheck } from '@proton/payments/ui/context/PaymentContext';
-import {
-    type PaymentsContextOptimisticType,
-    usePaymentOptimistic,
-} from '@proton/payments/ui/context/PaymentContextOptimistic';
 import { getAllAddresses, updateAddress } from '@proton/shared/lib/api/addresses';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { GetActiveSessionsResult } from '@proton/shared/lib/authentication/persistedSessionHelper';

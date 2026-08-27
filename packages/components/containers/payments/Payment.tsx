@@ -5,6 +5,17 @@ import { c } from 'ttag';
 
 import { Banner, BannerVariants } from '@proton/atoms/Banner/Banner';
 import { useStableLoading } from '@proton/hooks';
+import type { useCurrencyOverride } from '@proton/payments-ui/payment-methods/useCurrencyOverride';
+import { TaxFields } from '@proton/payments-ui/ui/billing-address/components/TaxFields';
+import type { TaxCountryHook } from '@proton/payments-ui/ui/billing-address/hooks/useTaxCountry';
+import type { VatNumberHook } from '@proton/payments-ui/ui/billing-address/hooks/useVatNumber';
+import type { CbIframeHandles } from '@proton/payments-ui/ui/components/ChargebeeIframe';
+import type { ChargebeePaypalButtonProps } from '@proton/payments-ui/ui/components/ChargebeePaypalButton';
+import {
+    type ChargebeeCardWrapperProps,
+    ChargebeeCreditCardWrapper,
+    ChargebeeSavedCardWrapper,
+} from '@proton/payments-ui/ui/components/ChargebeeWrapper';
 import { getMinCreditAmount, getMinDonationAmount } from '@proton/payments/core/amount-limits';
 import type { BillingAddressStatus } from '@proton/payments/core/billing-address/billing-address';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
@@ -18,19 +29,8 @@ import type {
     PlainPaymentMethodType,
     SavedPaymentMethod,
 } from '@proton/payments/core/interface';
-import type { useCurrencyOverride } from '@proton/payments/core/payment-methods/useCurrencyOverride';
 import type { PaymentProcessorHook } from '@proton/payments/core/payment-processors/interface';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
-import { TaxFields } from '@proton/payments/ui/billing-address/components/TaxFields';
-import type { TaxCountryHook } from '@proton/payments/ui/billing-address/hooks/useTaxCountry';
-import type { VatNumberHook } from '@proton/payments/ui/billing-address/hooks/useVatNumber';
-import type { CbIframeHandles } from '@proton/payments/ui/components/ChargebeeIframe';
-import type { ChargebeePaypalButtonProps } from '@proton/payments/ui/components/ChargebeePaypalButton';
-import {
-    type ChargebeeCardWrapperProps,
-    ChargebeeCreditCardWrapper,
-    ChargebeeSavedCardWrapper,
-} from '@proton/payments/ui/components/ChargebeeWrapper';
 import type { User } from '@proton/shared/lib/interfaces';
 import { isBilledUser } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
