@@ -13,6 +13,7 @@ import { membersThunk } from '../members';
 import { editMember, resetSelfVpnConnectionsHelper } from '../members/actions';
 import { type OrganizationState, organizationActions, organizationThunk } from '../organization/index';
 import {
+    type CreatePasswordlessOrganizationKeysState,
     type RotateOrganizationKeysState,
     createPasswordlessOrganizationKeys,
     getKeyRotationPayload,
@@ -59,7 +60,12 @@ export const setSelfQuota = (
     };
 };
 
-const setKeys = (): ThunkAction<Promise<void>, RotateOrganizationKeysState, ProtonThunkArguments, UnknownAction> => {
+const setKeys = (): ThunkAction<
+    Promise<void>,
+    CreatePasswordlessOrganizationKeysState,
+    ProtonThunkArguments,
+    UnknownAction
+> => {
     return async (dispatch, _, extra) => {
         const organization = await dispatch(organizationThunk());
         if (organization.HasKeys) {
@@ -93,7 +99,7 @@ export const initOrganization = ({
     name: string;
 }): ThunkAction<
     Promise<void>,
-    OrganizationState & MemberState & RotateOrganizationKeysState,
+    OrganizationState & CreatePasswordlessOrganizationKeysState,
     ProtonThunkArguments,
     UnknownAction
 > => {

@@ -58,12 +58,15 @@ import noop from '@proton/utils/noop';
 
 import { addressKeysThunk } from '../addressKeys';
 import { addressesThunk } from '../addresses';
+import type { EntitlementsState } from '../entitlements';
 import type { GroupsState } from '../groups';
 import { groupThunk } from '../groups';
 import { getIsSystemGroup } from '../groups/groupFlags';
 import type { KtState } from '../kt';
 import { getKTUserContext } from '../kt/actions';
+import type { MemberState } from '../member';
 import { getMemberAddresses, membersThunk } from '../members';
+import { unprivatizeSelfForMsp } from '../members/unprivatizeActions';
 import { organizationActions } from '../organization';
 import { userKeysThunk } from '../userKeys';
 import type { RoleChangeClassification } from './classifyRoleChange';
@@ -780,12 +783,15 @@ export const rotateOrganizationKeys = ({
     };
 };
 
+export interface CreatePasswordlessOrganizationKeysState
+    extends RotateOrganizationKeysState, MemberState, EntitlementsState {}
+
 export const createPasswordlessOrganizationKeys = ({
     publicMembersToReEncryptPayload,
     memberKeyPayloads,
 }: OrganizationKeyRotationPayload): ThunkAction<
     Promise<CachedOrganizationKey>,
-    RotateOrganizationKeysState,
+    CreatePasswordlessOrganizationKeysState,
     ProtonThunkArguments,
     UnknownAction
 > => {
@@ -853,6 +859,11 @@ export const createPasswordlessOrganizationKeys = ({
         );
         dispatch(organizationActions.update({ Organization: { HasKeys: 1 } }));
         const result = await dispatch(organizationKeyThunk({ cache: CacheType.None }));
+
+        // Unprivatization goes through the API and needs the organization key to exist, so it runs
+        // as the first step after creation.
+        await dispatch(unprivatizeSelfForMsp({ api: silentApi }));
+
         // When the organization key is created the API creates system groups in the background.
         // This refetches all groups when that happens so that the client becomes aware of them.
         // NOTE: It's better that this happens _after_ the parallel calls above have finished since

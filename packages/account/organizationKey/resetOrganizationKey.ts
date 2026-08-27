@@ -16,8 +16,9 @@ import { getMemberHasAccessToOrgKey } from '@proton/shared/lib/organization/help
 import { selectKeyReactivationRequests } from '../inactiveKeys';
 import type { MemberState } from '../member';
 import { type MembersState, membersThunk, selectMembers, upsertMember } from '../members';
-import { privatizeMember, requestUnprivatization, unprivatizeSelf } from '../members/actions';
+import { privatizeMember } from '../members/actions';
 import { getMember } from '../members/getMember';
+import { requestUnprivatization, unprivatizeSelf } from '../members/unprivatizeActions';
 import { type UserKeysState, selectUserKeys } from '../userKeys';
 import { getKeyRotationPayload, rotatePasswordlessOrganizationKeys } from './actions';
 import type { RotateOrganizationKeysState } from './actions';
