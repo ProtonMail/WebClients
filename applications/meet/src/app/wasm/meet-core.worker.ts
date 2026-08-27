@@ -185,6 +185,7 @@ const handleInit = async (request: MeetCoreInitRequestMessage) => {
 
     app = await new App(env, appVersion, userAgent, dbPath, httpHost, wsHost, userId, uid);
     app.setWorkerCookieBridgeEnabled(true);
+    app.setUseCachedServerTime(request.params.useCachedServerTime);
 };
 
 const handleRpcRequest = async (request: MeetCoreRpcRequestMessage): Promise<MeetCoreRpcResult> => {
