@@ -1,12 +1,12 @@
 import { fireEvent } from '@testing-library/react';
 
-import { getModelState } from '@proton/account/test';
+import { getModelState } from '@proton/account/tests';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { SHORTCUTS } from '@proton/shared/lib/mail/mailSettings';
 
-import { getAddressKeyCache, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
-import type { GeneratedKey } from '../../../helpers/test/helper';
+import { getAddressKeyCache, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/tests/crypto';
+import type { GeneratedKey } from '../../../helpers/tests/helper';
 import {
     addApiKeys,
     addApiMock,
@@ -17,7 +17,7 @@ import {
     minimalCache,
     parseDOMStringToBodyElement,
     waitForNotification,
-} from '../../../helpers/test/helper';
+} from '../../../helpers/tests/helper';
 import { AddressID, ID, fromAddress, renderComposer, toAddress } from './Composer.test.helpers';
 
 const orignalGetSelection = global.getSelection;

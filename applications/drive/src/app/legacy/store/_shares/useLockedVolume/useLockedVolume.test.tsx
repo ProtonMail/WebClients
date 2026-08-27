@@ -4,10 +4,10 @@ import type { User } from '@proton/shared/lib/interfaces';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import { VolumeType } from '@proton/shared/lib/interfaces/drive/volume';
 import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys';
-import { getUserKey } from '@proton/shared/test/keys/keyDataHelper';
+import { getUserKey } from '@proton/shared/tests/keys/keyDataHelper';
 
 import { useSharesStore } from '../../../../legacy/zustand/share/shares.store';
-import { generateAddress, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../utils/test/crypto';
+import { generateAddress, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../utils/tests/crypto';
 import { VolumesStateProvider } from '../../_volumes/useVolumesState';
 import type { LockedVolumeForRestore } from '../interface';
 import { ShareState, ShareType } from '../interface';

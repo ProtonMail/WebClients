@@ -27,7 +27,7 @@ import {
     defaultSubscriptionCache,
     organizationDefaultResponse,
     plansDefaultResponse,
-} from '../../../hooks/helpers/test/index';
+} from '../../../hooks/helpers/tests/index';
 import type { SubscriptionContainerProps } from './SubscriptionContainer';
 import SubscriptionContainer from './SubscriptionContainer';
 import { SUBSCRIPTION_STEPS } from './constants';

@@ -1,16 +1,14 @@
 import { fireEvent, screen, waitFor } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
 
-import { getModelState } from '@proton/account/test';
+import { getModelState } from '@proton/account/tests';
 import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
 import { CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
 
-import { newElementsState } from '../../../../store/elements/elementsSlice';
-
 import { mergeMessages } from '../../../../helpers/message/messages';
-import { getCompleteAddress, minimalCache } from '../../../../helpers/test/cache';
-import { getAddressKeyCache, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../helpers/test/crypto';
+import { getCompleteAddress, minimalCache } from '../../../../helpers/tests/cache';
+import { getAddressKeyCache, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../helpers/tests/crypto';
 import {
     addApiKeys,
     addApiMock,
@@ -19,7 +17,8 @@ import {
     mailTestRender,
     waitForEventManagerCall,
     waitForNotification,
-} from '../../../../helpers/test/helper';
+} from '../../../../helpers/tests/helper';
+import { newElementsState } from '../../../../store/elements/elementsSlice';
 import ExtraUnsubscribe from './ExtraUnsubscribe';
 
 loudRejection();

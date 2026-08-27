@@ -1,15 +1,10 @@
 import type { RenderResult } from '@testing-library/react';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { fireEvent } from '@testing-library/react';
 
 import type { MessageStateWithData, PartialMessageState } from '@proton/mail/store/messages/messagesTypes';
 import { pick } from '@proton/shared/lib/helpers/object';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
-
-import { addComposerAction } from '../../../store/composers/composerActions';
-import type { MailStore } from '../../../store/store';
 
 import { mergeMessages } from '../../../helpers/message/messages';
 import {
@@ -20,8 +15,10 @@ import {
     parseFormData,
     waitForNoNotification,
     waitForNotification,
-} from '../../../helpers/test/helper';
+} from '../../../helpers/tests/helper';
+import { addComposerAction } from '../../../store/composers/composerActions';
 import { initialize } from '../../../store/messages/read/messagesReadActions';
+import type { MailStore } from '../../../store/store';
 import Composer from '../Composer';
 
 // Fake timers fails for the complexe send action

@@ -6,7 +6,7 @@ import { CATEGORIES_COLOR_SHADES } from '@proton/mail/features/categoriesView/ca
 import * as helpers from '@proton/mail/features/categoriesView/categoriesStringHelpers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
-import { mailTestRender } from '../../../helpers/test/helper';
+import { mailTestRender } from '../../../helpers/tests/helper';
 import { newElementsState } from '../../../store/elements/elementsSlice';
 import { mockActiveCategoriesData } from '../testUtils/helpers';
 import { CategoriesTabs } from './CategoriesTabs';

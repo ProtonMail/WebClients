@@ -8,7 +8,7 @@ import {
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { addApiKeys } from '../../../helpers/test/crypto';
+import { addApiKeys } from '../../../helpers/tests/crypto';
 import { initialize } from '../../../store/messages/read/messagesReadActions';
 import { getIframeRootDiv, setup } from './Message.test.helpers';
 

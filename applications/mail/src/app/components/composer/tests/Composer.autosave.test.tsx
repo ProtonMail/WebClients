@@ -1,12 +1,12 @@
 import { act, fireEvent, getByTestId } from '@testing-library/react';
 
-import { getModelState } from '@proton/account/test';
+import { getModelState } from '@proton/account/tests';
 import { ROOSTER_EDITOR_ID } from '@proton/components/components/editor/constants';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
-import { getAddressKeyCache, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
-import type { GeneratedKey } from '../../../helpers/test/helper';
+import { getAddressKeyCache, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/tests/crypto';
+import type { GeneratedKey } from '../../../helpers/tests/helper';
 import {
     addApiKeys,
     addApiMock,
@@ -16,7 +16,7 @@ import {
     parseDOMStringToBodyElement,
     tick,
     waitForSpyCall,
-} from '../../../helpers/test/helper';
+} from '../../../helpers/tests/helper';
 import { AddressID, ID, fromAddress, renderComposer, toAddress } from './Composer.test.helpers';
 
 jest.setTimeout(20000);

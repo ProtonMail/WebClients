@@ -6,14 +6,14 @@ import * as downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 
-import { api } from '../../test/api';
-import type { GeneratedKey } from '../../test/crypto';
+import { api } from '../../tests/api';
+import type { GeneratedKey } from '../../tests/crypto';
 import {
     fromGeneratedKeysToMessageKeys,
     generateKeys,
     releaseCryptoProxy,
     setupCryptoProxyForTesting,
-} from '../../test/crypto';
+} from '../../tests/crypto';
 import type { Download } from '../attachmentDownloader';
 import {
     formatDownload,

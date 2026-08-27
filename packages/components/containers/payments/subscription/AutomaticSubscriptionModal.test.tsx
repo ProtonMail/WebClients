@@ -1,6 +1,6 @@
 import { fireEvent, screen, waitFor } from '@testing-library/react';
 
-import { getModelState } from '@proton/account/test';
+import { getModelState } from '@proton/account/tests';
 import {
     ADDON_PREFIXES,
     CURRENCIES,
@@ -20,7 +20,7 @@ import { getLongTestPlans } from '@proton/testing/data/payments/data-plans';
 import { renderWithProviders } from '@proton/testing/lib/context/renderWithProviders';
 import { getPaymentStatusState, getSubscriptionState } from '@proton/testing/lib/initialReduxState';
 
-import { userDefault } from '../../../hooks/helpers/test';
+import { userDefault } from '../../../hooks/helpers/tests';
 import type { useCurrencies } from '../../../payments/client-extensions/useCurrencies';
 import AutomaticSubscriptionModal, { getGenericNameFromPrefix, getParameters } from './AutomaticSubscriptionModal';
 import { SUBSCRIPTION_STEPS } from './constants';

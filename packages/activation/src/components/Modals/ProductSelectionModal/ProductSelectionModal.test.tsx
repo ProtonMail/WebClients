@@ -1,6 +1,6 @@
 import { fireEvent, screen, waitFor } from '@testing-library/dom';
 
-import { getModelState } from '@proton/account/test';
+import { getModelState } from '@proton/account/tests';
 import { useWriteableCalendars } from '@proton/calendar/calendars/hooks';
 import { ADDRESS_FLAGS } from '@proton/shared/lib/constants';
 import type { Address } from '@proton/shared/lib/interfaces';

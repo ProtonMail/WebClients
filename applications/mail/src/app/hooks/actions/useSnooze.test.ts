@@ -1,9 +1,8 @@
 import { act } from '@testing-library/react-hooks';
 
-import { minimalCache } from '../../helpers/test/cache';
-import { renderHook } from '../../helpers/test/render';
+import { minimalCache } from '../../helpers/tests/cache';
+import { renderHook } from '../../helpers/tests/render';
 import { elementsSliceActions } from '../../store/elements/elementsSlice';
-
 import useSnooze from './useSnooze';
 
 jest.mock('@proton/unleash/useFlag', () => {

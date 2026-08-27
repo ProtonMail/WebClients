@@ -6,7 +6,7 @@ import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 
 import type { OnboardingChecklistContext } from '../../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 import { useGetStartedChecklist } from '../../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
-import { mailTestRender } from '../../../helpers/test/helper';
+import { mailTestRender } from '../../../helpers/tests/helper';
 import MailboxContainerPlaceholder from '../MailboxContainerPlaceholder';
 
 jest.mock('../../../containers/onboardingChecklist/provider/GetStartedChecklistProvider', () => ({

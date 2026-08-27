@@ -1,14 +1,14 @@
 import { fireEvent, getByText, screen } from '@testing-library/react';
 
-import { getModelState } from '@proton/account/test';
+import { getModelState } from '@proton/account/tests';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { IMAGE_PROXY_FLAGS } from '@proton/shared/lib/mail/mailSettings';
 import type { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
 
-import { minimalCache } from '../../../helpers/test/cache';
-import { clearAll } from '../../../helpers/test/helper';
-import { mailTestRender } from '../../../helpers/test/render';
+import { minimalCache } from '../../../helpers/tests/cache';
+import { clearAll } from '../../../helpers/tests/helper';
+import { mailTestRender } from '../../../helpers/tests/render';
 import ItemSpyTrackerIcon from './ItemSpyTrackerIcon';
 
 const messageWithTrackers: MessageState = {

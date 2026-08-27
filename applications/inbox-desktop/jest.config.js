@@ -34,6 +34,6 @@ module.exports = {
     ],
     moduleNameMapper: {
         "\\.css": "<rootDir>/src/utils/tests/fileMock.ts",
-        "^update-electron-app$": "<rootDir>/src/mocks/update-electron-app.ts",
+        "^update-electron-app$": "<rootDir>/src/__mocks__/update-electron-app.ts",
     },
 };

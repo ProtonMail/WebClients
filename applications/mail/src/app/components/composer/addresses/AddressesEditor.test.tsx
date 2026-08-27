@@ -7,11 +7,10 @@ import { pick } from '@proton/shared/lib/helpers/object';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
+import { addApiMock, clearAll, getDropdown, mailTestRender, tick } from '../../../helpers/tests/helper';
+import type { MessageSendInfo } from '../../../hooks/useSendInfo';
 import { addComposerAction } from '../../../store/composers/composerActions';
 import type { MailStore } from '../../../store/store';
-
-import { addApiMock, clearAll, getDropdown, mailTestRender, tick } from '../../../helpers/test/helper';
-import type { MessageSendInfo } from '../../../hooks/useSendInfo';
 import AddressesEditor from './AddressesEditor';
 
 const email1 = 'test@test.com';

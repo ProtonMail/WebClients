@@ -7,8 +7,8 @@ import { mockUseApi } from '@proton/testing/lib/mockUseApi';
 import { mockUseHistory } from '@proton/testing/lib/mockUseHistory';
 import { mockUseUser } from '@proton/testing/lib/mockUseUser';
 
-import { mockUseEncryptedSearchContext } from '../../helpers/test/mockUseEncryptedSearchContext';
-import { mailTestRender } from '../../helpers/test/render';
+import { mockUseEncryptedSearchContext } from '../../helpers/tests/mockUseEncryptedSearchContext';
+import { mailTestRender } from '../../helpers/tests/render';
 import { useMailSelector } from '../../store/hooks';
 import MailboxListBanners from './MailboxListBanners';
 import { mockUseAutoDeleteBanner, mockUseShowUpsellBanner } from './MailboxListBanners.test.utils';

@@ -1,11 +1,11 @@
 import { fireEvent, screen } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
 
-import { getModelState } from '@proton/account/test';
+import { getModelState } from '@proton/account/tests';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 
-import { addApiMock, clearAll, getDropdown, mailTestRender, minimalCache, tick } from '../../helpers/test/helper';
+import { addApiMock, clearAll, getDropdown, mailTestRender, minimalCache, tick } from '../../helpers/tests/helper';
 import type { ElementsStructure } from '../../hooks/mailbox/useElements';
 import type { MailboxActions } from '../../router/interface';
 import MailHeader from './MailHeader';
