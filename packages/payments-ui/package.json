@@ -1,0 +1,54 @@
+{
+    "name": "@proton/payments-ui",
+    "description": "React UI layer for Proton payments — components, hooks, and checkout presentation",
+    "license": "GPL-3.0",
+    "sideEffects": [
+        "*.scss"
+    ],
+    "scripts": {
+        "check-types": "tsc",
+        "lint": "eslint --quiet",
+        "test": "jest",
+        "test:ci": "jest --runInBand",
+        "test:watch": "jest --watch"
+    },
+    "dependencies": {
+        "@proton/account": "workspace:^",
+        "@proton/app-context": "workspace:^",
+        "@proton/atoms": "workspace:^",
+        "@proton/chargebee": "workspace:^",
+        "@proton/components": "workspace:^",
+        "@proton/hooks": "workspace:^",
+        "@proton/icons": "workspace:^",
+        "@proton/payments": "workspace:^",
+        "@proton/redux-shared-store": "workspace:^",
+        "@proton/redux-utilities": "workspace:^",
+        "@proton/shared": "workspace:^",
+        "@proton/styles": "workspace:^",
+        "@proton/unleash": "workspace:^",
+        "@proton/utils": "workspace:^",
+        "@reduxjs/toolkit": "^2.12.0",
+        "date-fns": "^2.30.0",
+        "lodash": "^4.18.1",
+        "react": "^18.3.1",
+        "react-redux": "^9.3.0",
+        "ttag": "^1.8.12",
+        "vat-validation": "^3.0.0"
+    },
+    "devDependencies": {
+        "@proton/eslint-config-proton": "workspace:^",
+        "@proton/jest-env": "workspace:^",
+        "@proton/testing": "workspace:^",
+        "@swc/jest": "^0.2.39",
+        "@testing-library/jest-dom": "^6.9.1",
+        "@testing-library/react": "^15.0.7",
+        "@testing-library/react-hooks": "^8.0.1",
+        "eslint": "^10.9.0",
+        "jest": "^30.4.2",
+        "jest-environment-jsdom": "^30.4.1",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
+        "ts-jest": "^29.4.12",
+        "typescript": "^6.0.3"
+    }
+}

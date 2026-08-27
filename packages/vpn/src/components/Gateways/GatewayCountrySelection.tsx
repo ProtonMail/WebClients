@@ -9,8 +9,8 @@ import Info from '@proton/components/components/link/Info';
 import { CountryFlagAndName } from '@proton/components/containers/vpn/gateways/CountryFlagAndName';
 import { useNow } from '@proton/components/hooks/useNow';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
+import { useTrialInfo } from '@proton/payments-ui/ui/hooks/useTrialInfo';
 import type { CountryOptions } from '@proton/payments/core/countries';
-import { useTrialInfo } from '@proton/payments/ui/hooks/useTrialInfo';
 import { SECOND } from '@proton/shared/lib/constants';
 
 import { getLocationDisplayName, getLocationFromId, getLocationId } from '../../functions/gatewayHelpers';

@@ -1,0 +1,34 @@
+import { isTaxInclusive } from '@proton/payments/core/subscription/helpers';
+import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
+
+import { formatTax } from '../../headless-checkout/tax-helpers';
+
+interface Props {
+    checkResult: SubscriptionEstimation;
+    className?: string;
+}
+
+const VatText = ({ checkResult, className }: Partial<Props>) => {
+    if (!checkResult) {
+        return null;
+    }
+
+    const formattedTax = formatTax(checkResult);
+    if (!formattedTax) {
+        return null;
+    }
+
+    return (
+        <div className={className} data-testid="tax">
+            <span>{formattedTax.taxRateAndAmountElement}</span>
+        </div>
+    );
+};
+
+export const InclusiveVatText = ({ checkResult, className }: Partial<Props>) => {
+    if (!checkResult || !isTaxInclusive(checkResult)) {
+        return null;
+    }
+
+    return <VatText checkResult={checkResult} className={className} />;
+};

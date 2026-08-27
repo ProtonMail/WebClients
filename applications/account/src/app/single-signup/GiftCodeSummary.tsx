@@ -8,10 +8,10 @@ import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Input } from '@proton/atoms/Input/Input';
 import { Info, Price } from '@proton/components';
 import { IcCross } from '@proton/icons/icons/IcCross';
+import { useCouponConfig } from '@proton/payments-ui/ui/coupon-config/useCouponConfig';
 import type { Currency, PlanIDs } from '@proton/payments/core/interface';
 import type { PlansMap } from '@proton/payments/core/plan/interface';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
-import { useCouponConfig } from '@proton/payments/ui/coupon-config/useCouponConfig';
 
 interface Props {
     coupon?: {

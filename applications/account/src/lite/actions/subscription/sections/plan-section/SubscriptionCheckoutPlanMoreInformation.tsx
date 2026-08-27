@@ -7,10 +7,10 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import { canShowGiftCodeInput } from '@proton/components/containers/payments/subscription/modal-components/helpers/canShowGiftCodeInput';
 import { show30DaysMoneyBackGuarantee } from '@proton/components/containers/payments/subscription/modal-components/helpers/show30DaysMoneyBackGuarantee';
 import { IcArrowsSwitch } from '@proton/icons/icons/IcArrowsSwitch';
+import { usePayments } from '@proton/payments-ui/ui/context/PaymentContext';
+import type { CheckoutView } from '@proton/payments-ui/ui/headless-checkout/checkout-view';
 import { isSubscriptionCheckForbiddenWithReason } from '@proton/payments/core/subscription/helpers';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
-import { usePayments } from '@proton/payments/ui/context/PaymentContext';
-import type { CheckoutView } from '@proton/payments/ui/headless-checkout/checkout-view';
 import noop from '@proton/utils/noop';
 
 import SubscriptionCheckoutPlanGiftCodeInput from './SubscriptionCheckoutPlanGiftCodeInput';

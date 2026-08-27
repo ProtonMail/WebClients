@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
+import { OfferPrice } from '@proton/payments-ui/ui/components/OfferPrice';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import { getFallbackCurrency, isRegionalCurrency } from '@proton/payments/core/currencies';
 import type {
@@ -45,7 +46,6 @@ import {
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
 import { isFreeSubscription as getIsFreeSubscription, isFreeSubscription } from '@proton/payments/core/type-guards';
-import { OfferPrice } from '@proton/payments/ui/components/OfferPrice';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { APPS } from '@proton/shared/lib/constants';
 import { selectPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';

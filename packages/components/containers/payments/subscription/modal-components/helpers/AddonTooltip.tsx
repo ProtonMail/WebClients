@@ -3,7 +3,7 @@ import type { ADDON_NAMES } from '@proton/payments/core/constants';
 import type { Currency } from '@proton/payments/core/interface';
 
 import Info from '../../../../../components/link/Info';
-import Price from '../../../../../components/price/Price';
+import { getSimplePriceString } from '../../../../../components/price/helper';
 
 export const AddonTooltip = ({
     addonName,
@@ -19,11 +19,7 @@ export const AddonTooltip = ({
         return null;
     }
 
-    const price = (
-        <Price currency={currency} key="price">
-            {pricePerAddon}
-        </Price>
-    );
+    const price = getSimplePriceString(currency, pricePerAddon);
 
     return <Info title={renderLabel(price)} className="ml-2" />;
 };

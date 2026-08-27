@@ -26,7 +26,7 @@ export const DOMAIN_ADDON_CONFIG: AddonConfig = {
             c('Info')
                 .t`Email hosting is only available for domains you already own. Domain registration is not currently available through ${BRAND_NAME}. You can host email for domains registered on any domain registrar.`,
     },
-    tooltipLabel: (price) => c('Addon').jt`${price} per domain`,
+    tooltipLabel: (price) => c('Addon').t`${price} per domain`,
     title: () => c('Addon').t`Domains`,
     dashboardTitle: (quantity) =>
         c('Addon').ngettext(msgid`${quantity} custom domain`, `${quantity} custom domains`, quantity),

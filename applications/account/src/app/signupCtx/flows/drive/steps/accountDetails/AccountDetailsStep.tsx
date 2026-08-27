@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { IcArrowDown } from '@proton/icons/icons/IcArrowDown';
-import { usePaymentOptimistic } from '@proton/payments/ui/context/PaymentContextOptimistic';
+import { usePaymentOptimistic } from '@proton/payments-ui/ui/context/PaymentContextOptimistic';
 
 import { Aside } from '../../components/Layout/Aside';
 import { Footer } from '../../components/Layout/Footer';
