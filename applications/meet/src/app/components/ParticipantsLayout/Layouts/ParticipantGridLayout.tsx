@@ -4,19 +4,19 @@ import { useActiveBreakpoint } from '@proton/components/index';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectPagedIdentities } from '@proton/meet/store/slices/participants/sortedParticipantsSlice';
 
-import { useSortedPagedParticipants } from '../contexts/ParticipantsProvider/SortedParticipantsProvider';
-import { useElementSize } from '../hooks/useElementSize';
-import { useFittingPageSize } from '../hooks/useFittingPageSize';
-import { useIsLargerThanMd } from '../hooks/useIsLargerThanMd';
+import { useSortedPagedParticipants } from '../../../contexts/ParticipantsProvider/SortedParticipantsProvider';
+import { useElementSize } from '../../../hooks/useElementSize';
+import { useFittingPageSize } from '../../../hooks/useFittingPageSize';
+import { useIsLargerThanMd } from '../../../hooks/useIsLargerThanMd';
 import {
     GRID_GAP,
     TILE_ASPECT_RATIO,
     balancedGridLayout,
     calculateBestGridLayout,
-} from '../utils/calculateBestGridLayout';
-import { ParticipantTile } from './ParticipantTile/ParticipantTile';
+} from '../../../utils/calculateBestGridLayout';
+import { ParticipantTile } from './shared/ParticipantTile/ParticipantTile';
 
-export const ParticipantGrid = () => {
+export const ParticipantGridLayout = () => {
     const pagedParticipantIdentities = useMeetSelector(selectPagedIdentities);
 
     const pagedParticipants = useSortedPagedParticipants();
