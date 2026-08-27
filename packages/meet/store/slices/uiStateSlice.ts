@@ -179,5 +179,7 @@ export const selectPermissionPromptStatus = (state: MeetState) => state.uiState.
 export const selectNoDeviceDetected = (state: MeetState) => state.uiState.noDeviceDetected;
 export const selectShowDuration = (state: MeetState) => state.uiState.showDuration;
 export const selectParticipantListTab = (state: MeetState) => state.uiState.participantListTab;
+export const selectIsSideBarOpen = (state: MeetState) =>
+    Object.values(state.uiState.sideBarState).some((value) => value);
 
 export const uiStateReducer = { uiState: slice.reducer };

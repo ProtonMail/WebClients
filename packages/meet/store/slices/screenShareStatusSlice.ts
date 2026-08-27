@@ -2,6 +2,7 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
 
 import type { MeetState } from '../rootReducer';
+import { selectParticipantName } from './participants/participantsSlice';
 
 export interface ScreenShareStatusState {
     participantScreenSharingIdentity: string | null;
@@ -32,6 +33,10 @@ export const selectScreenSharingParticipantIdentity = (state: MeetState) =>
     state.screenShareStatus.participantScreenSharingIdentity;
 export const selectIsParticipantScreenSharing = (meetState: MeetState, participantIdentity: string) =>
     meetState.screenShareStatus.participantScreenSharingIdentity === participantIdentity;
+export const selectScreenSharingParticipantName = (state: MeetState) =>
+    state.screenShareStatus.participantScreenSharingIdentity
+        ? selectParticipantName(state, state.screenShareStatus.participantScreenSharingIdentity)
+        : '';
 
 export const { setParticipantScreenShare, resetScreenShareStatus } = slice.actions;
 
