@@ -1,3 +1,4 @@
+import type { PrivateKeyReference } from '@protontech/crypto';
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
@@ -11,19 +12,85 @@ import {
     updateMspSubsidiary,
 } from '@proton/shared/lib/api/msp';
 import type { MspDelegatedManager } from '@proton/shared/lib/api/msp';
-import { DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
+import { DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS, MEMBER_PRIVATE, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
+import type { Address, KeyPair } from '@proton/shared/lib/interfaces';
 import type { MspSubsidiary } from '@proton/shared/lib/interfaces/Msp';
+import { getPrimaryKey } from '@proton/shared/lib/keys/getPrimaryKey';
+import { getMemberKeys } from '@proton/shared/lib/keys/memberKeys';
 import { generateSubsidiaryOrganizationKeys } from '@proton/shared/lib/keys/organizationKeys';
 
 import { type AddressKeysState, addressKeysThunk } from '../addressKeys';
 import { addressesThunk } from '../addresses';
 import type { KtState } from '../kt';
 import type { MemberState } from '../member';
+import { type MembersState, getMemberAddresses, membersThunk } from '../members';
 import { type OrganizationKeyState, organizationKeyThunk } from '../organizationKey';
 import { userOrganizationsActions } from '../userOrganizations';
 import { mspSubsidiariesActions } from './index';
 
-type RequiredState = OrganizationKeyState & MemberState & KtState & AddressKeysState;
+type RequiredState = OrganizationKeyState & MemberState & MembersState & KtState & AddressKeysState;
+
+/**
+ * Resolves the address key that signs a subsidiary's organization key fingerprint. The organization
+ * identity address usually belongs to the current user, but it can also belong to another
+ * (non-private) member, in which case their keys are decrypted through the organization key.
+ */
+const getOrganizationIdentityAddressKey = ({
+    identityAddressEmail,
+    organizationKey,
+}: {
+    identityAddressEmail: string | null | undefined;
+    organizationKey: KeyPair;
+}): ThunkAction<
+    Promise<{ address: Address; privateKey: PrivateKeyReference } | undefined>,
+    RequiredState,
+    ProtonThunkArguments,
+    UnknownAction
+> => {
+    return async (dispatch) => {
+        if (!identityAddressEmail) {
+            return;
+        }
+
+        const addresses = await dispatch(addressesThunk());
+        const ownAddress = addresses.find((address) => address.Email === identityAddressEmail);
+        if (ownAddress) {
+            const [ownAddressKey] = await dispatch(addressKeysThunk({ addressID: ownAddress.ID }));
+            if (ownAddressKey?.privateKey) {
+                return { address: ownAddress, privateKey: ownAddressKey.privateKey };
+            }
+            return;
+        }
+
+        const members = await dispatch(membersThunk());
+        for (const member of members) {
+            // Only non-private members with keys have tokens encrypted to the organization key,
+            // so they're the only ones whose signing key can be recovered here.
+            if (member.Self || member.Private !== MEMBER_PRIVATE.READABLE || !member.Keys?.length) {
+                continue;
+            }
+            if (member.Addresses && !member.Addresses.some((address) => address.Email === identityAddressEmail)) {
+                continue;
+            }
+            const memberAddresses = await dispatch(getMemberAddresses({ member, retry: true }));
+            const memberAddress = memberAddresses.find((address) => address.Email === identityAddressEmail);
+            if (!memberAddress) {
+                continue;
+            }
+            const { memberAddressesKeys } = await getMemberKeys({
+                member,
+                memberAddresses: [memberAddress],
+                organizationKey,
+            });
+            const privateKey = getPrimaryKey(memberAddressesKeys[0]?.keys)?.privateKey;
+            if (privateKey) {
+                return { address: memberAddress, privateKey };
+            }
+            return;
+        }
+    };
+};
+
 export const addCompanyThunk = ({
     data,
 }: {
@@ -35,34 +102,34 @@ export const addCompanyThunk = ({
     return async (dispatch, _, extra) => {
         const api = extra.api;
         const organizationKey = await dispatch(organizationKeyThunk());
-        const adminOrgKey = organizationKey?.privateKey;
-        if (!adminOrgKey) {
+        if (!organizationKey?.privateKey) {
             throw new Error(c('Error').t`Please set up your organization before adding a company.`);
         }
+        const adminOrgKey = organizationKey.privateKey;
 
         // Subsidiaries inherit the MSP's own organization identity: the same address that signed
         // the parent org's key fingerprint also signs the new subsidiary's key fingerprint.
-        const identityAddressEmail = organizationKey.Key.FingerprintSignatureAddress;
-        const addresses = await dispatch(addressesThunk());
-        const identityAddress = addresses.find((address) => address.Email === identityAddressEmail);
-        const [identityAddressKey] = identityAddress
-            ? await dispatch(addressKeysThunk({ addressID: identityAddress.ID }))
-            : [];
-        if (!identityAddress || !identityAddressKey?.privateKey) {
+        const identity = await dispatch(
+            getOrganizationIdentityAddressKey({
+                identityAddressEmail: organizationKey.Key.FingerprintSignatureAddress,
+                organizationKey,
+            })
+        );
+        if (!identity) {
             throw new Error(c('Error').t`Please set up your organization identity before adding a company.`);
         }
 
         const keyGenConfig = KEYGEN_CONFIGS[DEFAULT_KEYGEN_TYPE];
         const cryptoPayload = await generateSubsidiaryOrganizationKeys({
             adminOrgKey,
-            signingAddressKey: identityAddressKey.privateKey,
+            signingAddressKey: identity.privateKey,
             keyGenConfig,
         });
         const { Organization } = await api<{ Organization: MspSubsidiary }>(
             createMspSubsidiary({
                 Name: data.name,
                 MaxMembers: data.assignedSeats,
-                OrganizationIdentityAddressID: identityAddress.ID,
+                OrganizationIdentityAddressID: identity.address.ID,
                 ...cryptoPayload,
             })
         );
