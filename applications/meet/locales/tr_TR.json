@@ -68,7 +68,7 @@
         "Soyut arka plan uygulandı"
       ],
       "Background effect turned off": [
-        "Arka plan efekti devre dışı bırakıldı"
+        "Arka plan etkisi kapatıldı"
       ],
       "Beach background applied": [
         "Plaj arka planı uygulandı"
@@ -190,9 +190,6 @@
       "Apply changes": [
         "Değişiklikleri uygula"
       ],
-      "Approve participants before they can join": [
-        "Katılımcıların katılmadan önce onaylanmaları gerekir"
-      ],
       "Assign ${ selectedParticipantName } as host": [
         "${ selectedParticipantName } katılımcısını görüşme sahibi olarak ata"
       ],
@@ -209,7 +206,7 @@
         "Geri"
       ],
       "Backgrounds and effects": [
-        "Arka planlar ve efektler"
+        "Arka planlar ve etkiler"
       ],
       "Blur background": [
         "Bulanık arka plan"
@@ -385,11 +382,11 @@
       "Hide participants": [
         "Katılımcıları gizle"
       ],
-      "Hide self view": [
-        "Kendi görüntünü gizle"
-      ],
       "Hide timezones": [
         "Saat dilimlerini gizle"
+      ],
+      "Incoming video": [
+        "Gelen görüntü"
       ],
       "Insert emoji": [
         "Emoji ekle"
@@ -424,6 +421,9 @@
       "Lower hand": [
         "Eli indir"
       ],
+      "Meeting timer": [
+        "Görüşme zamanlayıcısı"
+      ],
       "Minimize preview": [
         "Ön izlemeyi küçült"
       ],
@@ -457,14 +457,14 @@
       "Participants join after you approve them": [
         "Katılımcıların katılması için onay vermeniz gerekir"
       ],
-      "Participants join the call directly": [
-        "Katılımcılar görüşmeye doğrudan katılır"
-      ],
       "Paste": [
         "Yapıştır"
       ],
       "Pause": [
         "Duraklat"
+      ],
+      "Picture-in-picture while sharing": [
+        "Paylaşırken görüntü içinde görüntü"
       ],
       "Playing back...": [
         "Kayıt oynatılıyor..."
@@ -570,6 +570,9 @@
       "Search countries": [
         "Ülke ara"
       ],
+      "Self view": [
+        "Kendi görünümüm"
+      ],
       "Send an encrypted message": [
         "Şifrelenmiş bir ileti gönderin"
       ],
@@ -578,12 +581,6 @@
       ],
       "Settings": [
         "Ayarlar"
-      ],
-      "Show duration": [
-        "Süre görüntülensin"
-      ],
-      "Show floating thumbnail during screensharing": [
-        "Ekran paylaşımı yaparken kayan küçük görsel görüntülensin"
       ],
       "Show options": [
         "Seçenekleri görüntüle"
@@ -675,17 +672,11 @@
       "Try another method": [
         "Başka bir yöntem deneyin"
       ],
-      "Turn off incoming video": [
-        "Gelen görüntüyü kapat"
-      ],
       "Upgrade": [
         "Yükselt"
       ],
       "Upgrade now": [
         "Şimdi yükselt"
-      ],
-      "Upgrade your plan to use waiting room in your next meeting.": [
-        "Bir sonraki toplantınızda bekleme odasını kullanabilmek için tarifenizi yükseltin."
       ],
       "Upload another image": [
         "Başka bir görsel yükle"
@@ -728,6 +719,9 @@
       ],
       "View invoice": [
         "Faturayı görüntüle"
+      ],
+      "Virtual backgrounds": [
+        "Sanal arka planlar"
       ],
       "Waiting room": [
         "Bekleme odası"
@@ -776,8 +770,8 @@
       "Go to dashboard": [
         "Panoya git"
       ],
-      "Hide self view": [
-        "Benim görüntümü gizle"
+      "Incoming video": [
+        "Gelen görüntü"
       ],
       "Leave Meeting": [
         "Görüşmeden ayrıl"
@@ -793,6 +787,9 @@
       ],
       "Meeting details": [
         "Görüşme ayrıntıları"
+      ],
+      "Meeting timer": [
+        "Görüşme zamanlayıcısı"
       ],
       "More options": [
         "Diğer seçenekler"
@@ -812,6 +809,9 @@
       "Participants": [
         "Katılımcılar"
       ],
+      "Picture-in-picture while sharing": [
+        "Paylaşırken görüntü içinde görüntü"
+      ],
       "Raise hand": [
         "El kaldır"
       ],
@@ -824,14 +824,11 @@
       "Screen share": [
         "Ekran paylaşımı"
       ],
+      "Self view": [
+        "Kendi görünümüm"
+      ],
       "Settings": [
         "Ayarlar"
-      ],
-      "Show duration": [
-        "Süre görüntülensin"
-      ],
-      "Show floating thumbnail during screensharing": [
-        "Ekran paylaşımında kayan küçük görsel görüntülensin"
       ],
       "Stop recording and download.": [
         "Kaydı durdur ve indir."
@@ -853,9 +850,6 @@
       ],
       "Toggle settings": [
         "Ayarları aç/kapat"
-      ],
-      "Turn off incoming video": [
-        "Gelen görüntüyü kapat"
       ],
       "Video settings": [
         "Görüntü ayarları"
@@ -2341,10 +2335,16 @@
         "Gelişmiş kip: Sonraki sürümün bulanıklık sabitlerini ayarlayın ardından ön izlemeyi yeniden oluşturmak için uygulayın. Bu ayarlar dosyaya ve belirtilmemiş değerlere göre önceliklidir."
       ],
       "Allow camera access to preview your background": [
-        "Arka planınızı önizlemek için kameraya erişim izni verin"
+        "Arka planınızın ön izlemesini görmek için kameraya erişme izni verin"
       ],
       "Anonymous ${ particle } ${ participantNumber }": [
         "${ particle } ${ participantNumber } anonim"
+      ],
+      "Anyone with the link can join immediately": [
+        "Bağlantıyı bilen herkes hemen katılabilir"
+      ],
+      "Approve participants before they can join": [
+        "Katılımcıların katılmadan önce onaylanmaları gerekir"
       ],
       "Are you sure you want to leave?": [
         "Ayrılmak istediğinize emin misiniz?"
@@ -2354,6 +2354,9 @@
       ],
       "Attention required": [
         "İlgilenmeniz gerekiyor"
+      ],
+      "Available with a paid plan": [
+        "Ücretli bir tarife ile kullanılabilir"
       ],
       "Background blur initializing": [
         "Arka plan bulanıklığı hazırlanıyor"
@@ -3074,6 +3077,9 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } kullanıcı adı"
       ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } karakter"
+      ],
       "${ numberOfStars } star": [
         "${ numberOfStars } yıldız",
         "${ numberOfStars } yıldız"
@@ -3556,17 +3562,6 @@
         "Kullanıcı yöneticisi"
       ]
     },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Güvenlik ilkelerini, verileri tutma kurallarını, VPN altyapısını yapılandırın ve denetim günlüklerini yönetin."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Tüm kullanıcıları, grupları, güvenlik ayarlarını, faturaları ve sistem yapılandırmalarını yönetin."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Tüm üyelerin kullanıcılarını, gruplarını ve depolama alanlarını yönetin, rollerini ve lisanslarını atayın."
-      ]
-    },
     "Safety review": {
       "Review account safety": [
         "Hesap güvenliğini gözden geçirin"
@@ -3699,9 +3694,6 @@
       ]
     },
     "Title": {
-      "Accessibility": [
-        "Erişilebilirlik"
-      ],
       "Account restricted": [
         "Hesap kısıtlandı"
       ],
@@ -3729,9 +3721,6 @@
       "Assign a new host": [
         "Yeni bir görüşme sahibi ata"
       ],
-      "Audio": [
-        "Ses"
-      ],
       "Available Cameras": [
         "Kullanılabilecek kameralar"
       ],
@@ -3740,6 +3729,9 @@
       ],
       "Available Speakers": [
         "Uygun konuşmacılar"
+      ],
+      "Background": [
+        "Arka plan"
       ],
       "Background blur comparison": [
         "Arka plan bulanıklığı karşılaştırması"
@@ -3780,6 +3772,9 @@
       "Delete recording?": [
         "Kayıt silinsin mi?"
       ],
+      "Display": [
+        "Görüntü"
+      ],
       "Enter your password": [
         "Parolanızı yazın"
       ],
@@ -3797,6 +3792,9 @@
       ],
       "Help center": [
         "Yardım merkezi"
+      ],
+      "Host settings": [
+        "Sunucu ayarları"
       ],
       "Human verification": [
         "İnsan olduğunuzu doğrulayın"
@@ -3846,9 +3844,6 @@
       ],
       "Meeting edited": [
         "Görüşme düzenlendi"
-      ],
-      "Meeting settings": [
-        "Görüşme ayarları"
       ],
       "Messaging Layer Security": [
         "İletişim katmanı güvenliği"
@@ -3913,9 +3908,6 @@
       "Secure meeting": [
         "Güvenli görüşme"
       ],
-      "Security": [
-        "Güvenlik"
-      ],
       "Security code": [
         "Güvenlik kodu"
       ],
@@ -3952,8 +3944,8 @@
       "Two-factor authentication": [
         "İki adımlı doğrulama"
       ],
-      "Video": [
-        "Görüntü"
+      "Video and audio": [
+        "Görüntü ve ses"
       ],
       "Virtual backgrounds": [
         "Sanal arka planlar"
@@ -3984,7 +3976,7 @@
         "Tarayıcınız arka planın bulanıklaştırılmasını desteklemiyor"
       ],
       "Background effects are not supported on your browser": [
-        "Tarayıcınızda arka plan efektleri desteklenmemektedir"
+        "Tarayıcınızda arka plan etkileri desteklenmiyor"
       ],
       "Generate a new meeting link. The current link will stop working.": [
         "Yeni bir görüşme bağlantısı oluşturun. Var olan bağlantı artık çalışmayacak."
@@ -3994,6 +3986,9 @@
       ],
       "Recurring meeting": [
         "Yinelenen görüşme"
+      ],
+      "Stop sharing your screen to change this setting": [
+        "Bu ayarı değiştirmek için ekranınızı paylaşmayı bırakın"
       ],
       "You can generate a new meeting link once per day.": [
         "Günde bir kez yeni bir görüşme bağlantısı oluşturabilirsiniz."
