@@ -92,6 +92,24 @@ export const canUseNativeEditMode = (): boolean => {
     return !isNativeVersionOlderThan(appInfo.version, '1.5.0');
 };
 
+export const canUseNewModel = (): boolean => {
+    const appInfo = getNativeAppInfo();
+    if (appInfo) {
+        let targetVersion: string | null = null;
+        const { version, platform } = appInfo;
+
+        if (platform === 'ios') {
+            targetVersion = '2.0.5';
+        } else if (platform === 'android') {
+            targetVersion = '2.0.6';
+        }
+
+        return targetVersion !== null && !isNativeVersionOlderThan(version, targetVersion);
+    }
+
+    return true;
+};
+
 /**
  * Returns true if the native app understands `State.sidebar` and can lay its composer out
  * around the sidebar. Older clients would render a full-width composer over an expanded

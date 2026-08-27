@@ -23,10 +23,11 @@ import { useFlag } from '@proton/unleash/useFlag';
  * - memory: Enable the memory feature (saved memories used to personalize general chats)
  * - visualizationInstructions: Enable chart and KPI card formatting instructions in the system prompt
  * - customAgents: Enable the custom agents option in the composer tools dropdown
- * - maxAvailableFree: When enabled, free users can select Lumo Max (default off during high load)
- * - maxAvailableGuest: When enabled, guest users can select Lumo Max (default off during high load)
  * - aiPaperTrailRoute: Enable the AI Paper Trail route (/aitrail)
  * - aiPaperTrailPopup: Show the AI Paper Trail popup panel on the home screen
+ * - maxAvailableFree: When enabled, free users can select Lumo Max (default off during high load)
+ * - maxAvailableGuest: When enabled, guest users can select Lumo Max (default off during high load)
+ * - apertusModelAvailable: Enable the Apertus 15 model in the composer model picker
  */
 export const useLumoFlags = () => {
     const imageTools = useFlag('LumoImageTools');
@@ -52,6 +53,7 @@ export const useLumoFlags = () => {
     const aiPaperTrailPopup = useFlag('LumoAiPaperTrailPopup');
     const maxAvailableFree = useFlag('LumoMaxAvailableFree');
     const maxAvailableGuest = useFlag('LumoMaxAvailableGuest');
+    const apertusModelAvailable = useFlag('LumoApertusModel');
 
     return {
         memory,
@@ -77,5 +79,6 @@ export const useLumoFlags = () => {
         lumoNativeAuthIOS,
         maxAvailableFree,
         maxAvailableGuest,
+        apertusModelAvailable,
     };
 };

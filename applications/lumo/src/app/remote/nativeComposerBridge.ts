@@ -134,6 +134,7 @@ export interface FeatureFlags {
     isImageGenEnabled: boolean;
     isModelSelectionEnabled: boolean;
     isToolsEnabled: boolean;
+    isApertusModelEnabled: boolean;
 }
 
 export interface UserFlags {
@@ -204,8 +205,8 @@ export interface State {
     lumoMode: LumoMode;
     /** Legacy field for old native clients; derived from `responseMode`. */
     modelTier: LegacyModelTier;
-    /** Selectable model for new clients (the web's `auto` collapses to lite). */
-    model: Exclude<ModelTier, 'auto'>;
+    /** Selectable model for new clients. */
+    model: ModelTier;
     /**
      * Whether the Max model can currently be selected. Kept only for native clients released
      * before `maxModelAvailability` existed — it carries no information that field doesn't,
@@ -401,6 +402,7 @@ class NativeComposerApi {
             isImageGenEnabled: false,
             isModelSelectionEnabled: false,
             isToolsEnabled: true,
+            isApertusModelEnabled: false,
         },
         editMode: { active: false },
         customLumos: [],
@@ -765,6 +767,11 @@ class NativeComposerApi {
     public toggleModelSelectionEnabled(enabled: boolean): void {
         console.log(`NativeComposerApi: Toggle model selection enabled`);
         this.updateState({ featureFlags: { ...this.state.featureFlags, isModelSelectionEnabled: enabled } });
+    }
+
+    public toggleApertusModelEnabled(enabled: boolean): void {
+        console.log(`NativeComposerApi: Toggle Apertus model enabled`);
+        this.updateState({ featureFlags: { ...this.state.featureFlags, isApertusModelEnabled: enabled } });
     }
 
     public setToolsEnabled(enabled: boolean): void {

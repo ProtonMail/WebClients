@@ -1,7 +1,9 @@
 import {
     getMaxModelAvailability,
+    getRemainingForModelTier,
     getRemainingLimits,
     isModelSwitchSuggestionEligible,
+    isModelTierSelectable,
     resolveAvailableModelTier,
     resolveDefaultModelTier,
     setDebugMaxModelOverride,
@@ -52,6 +54,25 @@ describe('resolveAvailableModelTier', () => {
             'lumo-lite'
         );
     });
+
+    it('keeps apertus-15 when the shared lite quota is exhausted', () => {
+        expect(resolveAvailableModelTier('apertus-15', { lite: 0, max: 20 })).toBe('apertus-15');
+    });
+
+    it('falls back to lite when apertus-15 is disabled by its feature flag', () => {
+        expect(resolveAvailableModelTier('apertus-15', { lite: 10, max: 20 }, { isApertusEnabled: false })).toBe(
+            'lumo-lite'
+        );
+    });
+});
+
+describe('getRemainingForModelTier', () => {
+    it('shares the lite quota with apertus-15', () => {
+        expect(getRemainingForModelTier('apertus-15', { lite: 5, max: 20 })).toBe(5);
+        expect(isModelTierSelectable('apertus-15', { lite: 0, max: 20 })).toBe(false);
+        expect(isModelTierSelectable('apertus-15', { lite: 5, max: 20 })).toBe(true);
+        expect(isModelTierSelectable('apertus-15', { lite: 5, max: 20 }, { isApertusEnabled: false })).toBe(false);
+    });
 });
 
 describe('shouldShowModelSwitchSuggestion', () => {
@@ -69,8 +90,23 @@ describe('shouldShowModelSwitchSuggestion', () => {
         expect(shouldShowModelSwitchSuggestion(baseArgs)).toBe(true);
     });
 
+    it('shows when on apertus-15 with quota on both models after an exchange', () => {
+        expect(shouldShowModelSwitchSuggestion({ ...baseArgs, selectedModelTier: 'apertus-15' })).toBe(true);
+    });
+
     it('hides when on max', () => {
         expect(shouldShowModelSwitchSuggestion({ ...baseArgs, selectedModelTier: 'lumo-max' })).toBe(false);
+    });
+
+    it('shows when apertus-15 has exhausted its shared lite quota but max remains', () => {
+        expect(
+            shouldShowModelSwitchSuggestion({
+                ...baseArgs,
+                selectedModelTier: 'apertus-15',
+                remainingLimits: { lite: 0, max: 20 },
+                messageCount: 0,
+            })
+        ).toBe(true);
     });
 
     it('hides when max is exhausted', () => {

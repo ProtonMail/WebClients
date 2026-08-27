@@ -7,6 +7,7 @@ import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import { LUMO_UPSELL_PATHS } from '@proton/shared/lib/constants';
 
 import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
+import { useLumoFlags } from '../../hooks/useLumoFlags';
 import { useLumoPlan } from '../../hooks/useLumoPlan';
 import { useMaxModelAvailability } from '../../hooks/useMaxModelAvailability';
 import { getSelectedModelTier, useModelTier } from '../../providers/ModelTierProvider';
@@ -26,6 +27,7 @@ export const ModelModeDropdown = () => {
     const { modelTier, setModelTier, responseMode, setResponseMode } = useModelTier();
     const { hasLumoPlus } = useLumoPlan();
     const { isMaxAvailableByFlag } = useMaxModelAvailability();
+    const { apertusModelAvailable } = useLumoFlags();
     const { isSmallScreen } = useIsLumoSmallScreen();
     const dispatch = useLumoDispatch();
     const remainingLimits = useRemainingLimits();
@@ -34,8 +36,8 @@ export const ModelModeDropdown = () => {
     const triggerRef = useRef<HTMLButtonElement>(null);
 
     const modelOptions = useMemo(
-        () => buildModelModeOptions(remainingLimits, isMaxAvailableByFlag),
-        [remainingLimits, isMaxAvailableByFlag]
+        () => buildModelModeOptions(remainingLimits, isMaxAvailableByFlag, apertusModelAvailable),
+        [remainingLimits, isMaxAvailableByFlag, apertusModelAvailable]
     );
     const responseModeOptions = getResponseModeOptions();
     const selectedModelTier = getSelectedModelTier(modelTier);
@@ -52,6 +54,7 @@ export const ModelModeDropdown = () => {
         if (
             isModelTierSelectable(tier, remainingLimits, {
                 isMaxAvailable: isMaxAvailableByFlag,
+                isApertusEnabled: apertusModelAvailable,
             })
         ) {
             dispatch(clearTierErrors());
