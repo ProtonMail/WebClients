@@ -143,8 +143,15 @@ export const handleFileAsync =
             processing: false,
         };
 
-        // Store final processed state in Redux (initial state was already dispatched earlier)
-        storeAttachmentInRedux(dispatch, processedAttachment, isImage);
+        // The user may have removed the attachment from the composer while processing (the
+        // await above) was still in flight. If so, its placeholder is already gone from the
+        // store, and this late write must not resurrect it — nor should the caller treat the
+        // discarded content as a successful attach (e.g. indexing it for search, or toasting).
+        const wasDeletedWhileProcessing = !selectAttachments(getState())[attachment.id];
+        if (!wasDeletedWhileProcessing) {
+            // Store final processed state in Redux (initial state was already dispatched earlier)
+            storeAttachmentInRedux(dispatch, processedAttachment, isImage);
+        }
 
         // Calculate processing duration
         const endTime = performance.now();
@@ -159,6 +166,13 @@ export const handleFileAsync =
             hasError,
             processingDurationMs
         );
+
+        if (wasDeletedWhileProcessing) {
+            return {
+                success: false,
+                fileName: uniqueFilename,
+            };
+        }
 
         return {
             success: !hasError && !isUnsupported,
