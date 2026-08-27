@@ -1,7 +1,7 @@
 import type { Mock } from 'vitest';
 import { vi } from 'vitest';
 
-import type { MeetCoreClient } from './MeetCoreClient';
+import type { MeetCoreClient } from '../MeetCoreClient';
 
 export type MeetCoreClientMock = MeetCoreClient & Record<keyof MeetCoreClient, Mock>;
 
