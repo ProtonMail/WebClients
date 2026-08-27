@@ -25,18 +25,15 @@ import type { IconData } from '../ui'
 import type { IconName } from '@proton/icons/types'
 import { InsertFormulaMenu } from '../shared/InsertFormulaMenu'
 import { MergeMenuItems } from '../shared/MergeMenuItems'
-import type { EditorRequiresClientMethods } from '@proton/docs-shared'
 import { EditingDisabledButton } from '../misc/EditingDisabledButton'
 import { ColorPicker } from '../shared/ColorPicker'
 import { BorderSelectorContent } from '../shared/BorderSelector'
 
-export interface ToolbarProps extends ComponentPropsWithRef<'div'> {
-  clientInvoker: EditorRequiresClientMethods
-}
+export interface ToolbarProps extends ComponentPropsWithRef<'div'> {}
 
 const { s } = createStringifier(strings)
 
-export const Toolbar = createComponent(function Toolbar({ clientInvoker, ...props }: ToolbarProps) {
+export const Toolbar = createComponent(function Toolbar({ ...props }: ToolbarProps) {
   const isViewOnlyMode = useUI((ui) => ui.info.isViewOnlyMode)
 
   if (isViewOnlyMode) {
@@ -45,7 +42,7 @@ export const Toolbar = createComponent(function Toolbar({ clientInvoker, ...prop
         {...props}
         mainToolbarSlot={<ViewOnlyModeToolbarGroups />}
         renderOverflowDisclosure={<T.Item legacyIconName="three-dots-vertical">{s('More')}</T.Item>}
-        trailingSlot={<EditingDisabledButton clientInvoker={clientInvoker} />}
+        trailingSlot={<EditingDisabledButton />}
       />
     )
   }
