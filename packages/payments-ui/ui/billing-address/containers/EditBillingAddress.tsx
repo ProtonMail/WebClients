@@ -17,6 +17,7 @@ import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import { type FullBillingAddress, zipCodeValidator } from '@proton/payments/core/billing-address/billing-address';
+import { getVatFormErrors } from '@proton/payments/core/billing-address/vat-helpers';
 import type { BillingAddressValidationResult } from '@proton/payments/core/errors';
 import { WrongBillingAddressError, backendBillingAddressFieldError } from '@proton/payments/core/errors';
 import type { FreeSubscription, PaymentsApi } from '@proton/payments/core/interface';
@@ -27,7 +28,6 @@ import { useFlag } from '@proton/unleash/useFlag';
 
 import { CountryStateSelector } from '../components/CountryStateSelector';
 import { type CountriesWithCustomVatName, getVatNumberName } from '../components/VatNumberInput';
-import { getVatFormErrors } from '../hooks/useVatFormValidation';
 import { useVatPrefixSync } from '../hooks/useVatPrefixSync';
 import { cleanBillingAddressVat } from '../hooks/vatPrefixHelper';
 

@@ -11256,13 +11256,16 @@ __metadata:
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/jest-env": "workspace:^"
     "@proton/shared": "workspace:^"
+    "@proton/styles": "workspace:^"
     "@proton/testing": "workspace:^"
+    "@proton/utils": "workspace:^"
     "@swc/jest": "npm:^0.2.39"
     eslint: "npm:^10.9.0"
     jest: "npm:^30.4.2"
     ts-jest: "npm:^29.4.12"
     ttag: "npm:^1.8.12"
     typescript: "npm:^6.0.3"
+    vat-validation: "npm:^3.0.0"
   languageName: unknown
   linkType: soft
 

@@ -1,7 +1,7 @@
-import { hasAlikeCoupon } from './helpers';
-import type { CouponConfig } from './interface';
+import { hasAlikeCoupon, isCSCoupon } from './helpers';
+import type { CouponConfigMetadata } from './interface';
 
-const couponConfig: CouponConfig = {
+const couponConfig: CouponConfigMetadata = {
     coupons: ['BF2025', 'BF2025_1M'],
     hidden: false,
 };
@@ -34,5 +34,16 @@ describe('hasAlikeCoupon', () => {
         expect(
             hasAlikeCoupon(couponConfig, { Code: 'BF2025_1M_CS', Description: '', MaximumRedemptionsPerUser: null })
         ).toBe(true);
+    });
+});
+
+describe('isCSCoupon', () => {
+    it('returns false for undefined coupon', () => {
+        expect(isCSCoupon(undefined)).toBe(false);
+    });
+
+    it('returns true when coupon code ends with CS', () => {
+        expect(isCSCoupon('PROMOCS')).toBe(true);
+        expect(isCSCoupon({ Code: 'PROMOCS', Description: '', MaximumRedemptionsPerUser: null })).toBe(true);
     });
 });

@@ -1,4 +1,5 @@
-import { countriesWithVatNumberOnSignup } from './countriesWithVatId';
+import { countriesWithVatNumberOnSignup } from '@proton/payments/core/billing-address/countries-with-vat-id';
+
 import { EXPECTED_VAT_ID_COUNTRIES } from './vatIdCountries.testdata';
 
 describe('countriesWithVatNumberOnSignup', () => {

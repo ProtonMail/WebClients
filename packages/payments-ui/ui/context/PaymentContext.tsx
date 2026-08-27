@@ -44,6 +44,7 @@ import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import { isSubscriptionCheckForbiddenWithReason, shouldPassIsTrial } from '@proton/payments/core/subscription/helpers';
 import { getPlanIDs } from '@proton/payments/core/subscription/helpers/plan-ids';
 import type { FullPlansMap, Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
+import type { PlanToCheck } from '@proton/payments/core/subscription/plan-to-check';
 import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
 import { isFreeSubscription } from '@proton/payments/core/type-guards';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
@@ -60,14 +61,7 @@ import { loadInitialBillingAddress } from '../helpers/load-initial-billing-addre
 import { checkMultiplePlans, getPlanToCheck, getSubscriptionDataFromPlanToCheck } from './helpers';
 import { type MultiCheckGroupsResult, useMultiCheckGroups } from './useMultiCheckGroups';
 
-export interface PlanToCheck {
-    planIDs: PlanIDs;
-    currency: Currency;
-    cycle: Cycle;
-    coupon?: string;
-    groupId?: string;
-    trial?: boolean;
-}
+export type { PlanToCheck } from '@proton/payments/core/subscription/plan-to-check';
 
 export interface InitializeProps {
     api: Api;

@@ -2,10 +2,15 @@ import { act } from 'react';
 
 import { renderHook } from '@testing-library/react';
 
+import {
+    type VatFormFields,
+    checkVatNumber,
+    getVatFormErrors,
+} from '@proton/payments/core/billing-address/vat-helpers';
 import { isProduction } from '@proton/shared/lib/helpers/sentry';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { type VatFormFields, checkVatNumber, getVatFormErrors, useVatFormValidation } from './useVatFormValidation';
+import { useVatFormValidation } from './useVatFormValidation';
 
 jest.mock('@proton/shared/lib/helpers/sentry', () => ({
     ...jest.requireActual('@proton/shared/lib/helpers/sentry'),
