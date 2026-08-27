@@ -22,12 +22,15 @@
     "dependencies": {
         "@proton/app-context": "workspace:^",
         "@proton/atoms": "workspace:^",
+        "@proton/colors": "workspace:^",
         "@proton/components": "workspace:^",
         "@proton/eslint-config-proton": "workspace:^",
+        "@proton/hooks": "workspace:^",
         "@proton/icons": "workspace:^",
         "@proton/pack": "workspace:^",
         "@proton/shared": "workspace:^",
         "@proton/styles": "workspace:^",
+        "@proton/utils": "workspace:^",
         "@types/react": "^18.3.31",
         "@types/react-dom": "^18.3.7",
         "@types/react-router-dom": "^5.3.3",
@@ -39,6 +42,7 @@
         "react-dom": "^18.3.1",
         "react-router-dom": "^5.3.4",
         "ts-loader": "^9.6.2",
+        "ttag": "^1.8.12",
         "typescript": "^6.0.3",
         "webpack": "^5.109.2"
     },
