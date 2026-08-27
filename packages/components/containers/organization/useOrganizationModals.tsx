@@ -18,7 +18,6 @@ import type { Member } from '@proton/shared/lib/interfaces';
 import {
     OrganizationKeyMode,
     OrganizationKeyState,
-    getMemberHasAccessToOrgKey,
     getMemberHasMissingOrgKey,
     getNonPrivateMembers,
     getOrganizationKeyInfo,
@@ -32,8 +31,8 @@ import ChangeOrganizationPasswordModal from './ChangeOrganizationPasswordModal';
 import InviteOrganizationKeysModal from './InviteOrganizationKeysModal';
 import { MemberListBanner, MembersList } from './MemberListBanner';
 import ReactivateOrganizationKeysModal from './ReactivateOrganizationKeysModal';
-import ReactivatePasswordlessOrganizationKey from './ReactivatePasswordlessOrganizationKey';
 import { getActivationText, getReactivationText } from './helper';
+import RestoreAdminPrivilegesModal from './restoreAdminPrivileges/RestoreAdminPrivilegesModal';
 
 const UserNeedsToInvite = ({
     onRestorePrivilegesClick,
@@ -164,7 +163,6 @@ const useOrganizationModals = (onceRef: MutableRefObject<boolean>) => {
     const otherAdmins = (members || []).filter(
         (member) => member.Role === MEMBER_ROLE.ORGANIZATION_ADMIN && !member.Self
     );
-    const otherAdminsWithKeyAccess = otherAdmins.filter(getMemberHasAccessToOrgKey);
     const otherAdminsWithMissingOrgKey = otherAdmins.filter(getMemberHasMissingOrgKey);
     const hasOtherAdmins = otherAdmins.length > 0;
     const publicMembers = getNonPrivateMembers(members || []);
@@ -255,15 +253,7 @@ const useOrganizationModals = (onceRef: MutableRefObject<boolean>) => {
                     {...activatePasswordlessModalProps}
                 />
             )}
-            {renderReactivatePasswordlessModal && (
-                <ReactivatePasswordlessOrganizationKey
-                    user={user}
-                    onResetKeys={handleResetOrganizationKeys}
-                    disableResetOrganizationKeys={disableResetOrganizationKeys}
-                    otherAdminsWithKeyAccess={otherAdminsWithKeyAccess}
-                    {...reactivatePasswordlessModalProps}
-                />
-            )}
+            {renderReactivatePasswordlessModal && <RestoreAdminPrivilegesModal {...reactivatePasswordlessModalProps} />}
             {renderChangeOrganizationKeys && organizationKey && (
                 <ChangeOrganizationKeysModal
                     mode={changeMode}
