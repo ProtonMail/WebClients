@@ -9,12 +9,16 @@ import { InvoiceDocument } from '@proton/payments/core/api/api';
 import { InvoiceOwner, InvoiceState } from '@proton/payments/core/constants';
 import { useEditBillingAddressModal } from '@proton/payments/ui/billing-address/containers/useEditBillingAddressModal';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
+import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import Alert from '../../components/alert/Alert';
 import { ButtonGroup } from '../../components/button/ButtonGroup';
-import DropdownActions from '../../components/dropdown/DropdownActions';
+import DropdownMenu from '../../components/dropdown/DropdownMenu';
+import DropdownMenuButton from '../../components/dropdown/DropdownMenuButton';
+import SimpleDropdown from '../../components/dropdown/SimpleDropdown';
+import Icon from '../../components/icon/Icon';
 import useModalState from '../../components/modalTwo/useModalState';
 import Pagination from '../../components/pagination/Pagination';
 import { Tabs } from '../../components/tabs/Tabs';
@@ -25,6 +29,8 @@ import { useEventManagerV6 } from '../eventManager/EventManagerV6Provider';
 import { useEditInvoiceModal } from './EditBillingAddress/useEditInvoiceModal';
 import InvoiceGroup from './InvoiceGroup';
 import InvoiceTextModal from './InvoiceTextModal';
+import { InvoiceEmailBouncedBanner } from './SetInvoiceEmail/InvoiceEmailBouncedBanner';
+import { useSetInvoiceEmailModal } from './SetInvoiceEmail/useSetInvoiceEmailModal';
 import TransactionGroup from './TransactionGroup';
 import useInvoices, { ELEMENTS_PER_PAGE, type InvoicesHook } from './useInvoices';
 import useTransactions, { type TransactionsHook } from './useTransactions';
@@ -45,6 +51,15 @@ const InvoicesSection = ({ app }: { app: APP_NAMES }) => {
     const [invoiceModalProps, setInvoiceModalOpen, renderInvoiceModal] = useModalState();
     const { openEditInvoiceModal, editInvoiceModal, loading: loadingEditInvoiceModal } = useEditInvoiceModal();
     const { openBillingAddressModal, editBillingAddressModal, loadingByKey } = useEditBillingAddressModal();
+
+    const {
+        openSetInvoiceEmailModal,
+        setInvoiceEmailModal,
+        canSetInvoiceEmail,
+        sendEmailInvoice,
+        invoiceEmailBounced,
+        loading: loadingSetInvoiceEmailModal,
+    } = useSetInvoiceEmailModal();
 
     const invoicesHook = useInvoices({ owner, Document: InvoiceDocument.Invoice });
     const creditNotesHook = useInvoices({ owner, Document: InvoiceDocument.CreditNote });
@@ -72,6 +87,8 @@ const InvoicesSection = ({ app }: { app: APP_NAMES }) => {
     ].filter(isTruthy);
 
     const hasUnpaid = invoicesHook.invoices.find(({ State }) => State === InvoiceState.Unpaid);
+
+    const hasOwnerTabs = user.isPaid;
 
     const { subscribe } = useEventManager();
     const { coreEventV6Manager } = useEventManagerV6();
@@ -107,40 +124,84 @@ const InvoicesSection = ({ app }: { app: APP_NAMES }) => {
     const editBillingAddressLoadingKey = 'editBillingAddress';
 
     const invoiceEditButtons = (
-        <DropdownActions
+        <SimpleDropdown
+            as={Button}
             size="medium"
-            list={[
-                {
-                    text: c('Action').t`Edit billing address`,
-                    'data-testid': 'editBillingAddress',
-                    key: 'editBillingAddress',
-                    onClick: () =>
-                        openBillingAddressModal({ loadingKey: editBillingAddressLoadingKey, subscription }).catch(noop),
-                    loading: loadingByKey[editBillingAddressLoadingKey],
-                },
-                hook.type === 'invoices' &&
-                    hook.invoices.length > 0 && {
-                        text: c('Action').t`Edit invoice note`,
-                        'data-testid': 'editInvoiceNote',
-                        key: 'editInvoiceNote',
-                        onClick: () => setInvoiceModalOpen(true),
-                        loading: loadingEditInvoiceModal,
+            shape="outline"
+            originalPlacement="bottom-end"
+            className="shrink-0"
+            content={c('Action').t`Invoice options`}
+            data-testid="invoiceOptions"
+        >
+            <DropdownMenu>
+                {[
+                    {
+                        text: c('Action').t`Edit billing address`,
+                        'data-testid': 'editBillingAddress',
+                        key: 'editBillingAddress',
+                        onClick: () =>
+                            openBillingAddressModal({
+                                loadingKey: editBillingAddressLoadingKey,
+                                subscription,
+                            }).catch(noop),
+                        loading: loadingByKey[editBillingAddressLoadingKey],
                     },
-            ].filter(isTruthy)}
-        />
+                    hook.type === 'invoices' &&
+                        hook.invoices.length > 0 && {
+                            text: c('Action').t`Edit invoice note`,
+                            'data-testid': 'editInvoiceNote',
+                            key: 'editInvoiceNote',
+                            onClick: () => setInvoiceModalOpen(true),
+                            loading: loadingEditInvoiceModal,
+                        },
+                    canSetInvoiceEmail && {
+                        text: c('Action').t`Set invoice email`,
+                        'data-testid': 'setInvoiceEmail',
+                        key: 'setInvoiceEmail',
+                        onClick: () => openSetInvoiceEmailModal(),
+                        loading: loadingSetInvoiceEmailModal,
+                        isSelected: sendEmailInvoice,
+                    },
+                ]
+                    .filter(isTruthy)
+                    .map(({ text, key, isSelected, ...rest }) => (
+                        <DropdownMenuButton
+                            className="flex items-center flex-nowrap justify-space-between gap-2 text-left"
+                            key={key}
+                            {...rest}
+                        >
+                            <span>{text}</span>
+                            {isSelected && (
+                                <Icon
+                                    name="checkmark"
+                                    className="shrink-0 color-primary ml-2"
+                                    data-testid={`${key}Selected`}
+                                />
+                            )}
+                        </DropdownMenuButton>
+                    ))}
+            </DropdownMenu>
+        </SimpleDropdown>
     );
 
     return (
         <>
             <SettingsSectionWide>
                 <SettingsParagraph>{c('Info').t`View, download, and manage your invoices.`}</SettingsParagraph>
+                {canSetInvoiceEmail && invoiceEmailBounced ? (
+                    <InvoiceEmailBouncedBanner
+                        className="mb-4 p-1"
+                        onUpdateEmail={() => openSetInvoiceEmailModal()}
+                        loading={loadingSetInvoiceEmailModal}
+                    />
+                ) : null}
                 {hasUnpaid ? (
                     <Alert className="mb-4" type="error" data-testid="overdue-alert">
                         {c('Error')
                             .t`Your account or organization has an overdue invoice. Please pay all unpaid invoices.`}
                     </Alert>
                 ) : null}
-                {user.isPaid ? (
+                {hasOwnerTabs ? (
                     <Tabs
                         className="mb-4"
                         tabs={ownerTabs}
@@ -148,50 +209,48 @@ const InvoicesSection = ({ app }: { app: APP_NAMES }) => {
                         onChange={(index) => handleOwner(ownerTabs[index].owner)}
                     />
                 ) : null}
-                <div className="mb-4 flex justify-space-between">
-                    <div>
-                        <div className="flex items-start justify-space-between">
-                            <ButtonGroup className="mr-4 mb-2">
-                                <Button
-                                    className={document === DocumentType.Invoice ? 'is-selected' : ''}
-                                    onClick={() => setDocument(DocumentType.Invoice)}
-                                    data-testid="invoices-tab"
-                                >
-                                    {c('Select invoice document').t`Invoice`}
-                                </Button>
-                                <Button
-                                    className={document === DocumentType.CreditNote ? 'is-selected' : ''}
-                                    onClick={() => setDocument(DocumentType.CreditNote)}
-                                    data-testid="credit-note-tab"
-                                >
-                                    {c('Select invoice document').t`Credit note`}
-                                </Button>
-                                <Button
-                                    className={document === DocumentType.CurrencyConversion ? 'is-selected' : ''}
-                                    onClick={() => setDocument(DocumentType.CurrencyConversion)}
-                                    data-testid="currency-conversion-tab"
-                                >
-                                    {c('Select invoice document').t`Currency conversion`}
-                                </Button>
-                                <Button
-                                    className={document === DocumentType.Transactions ? 'is-selected' : ''}
-                                    onClick={() => setDocument(DocumentType.Transactions)}
-                                    data-testid="transactions-tab"
-                                >
-                                    {c('Select invoice document').t`Transactions`}
-                                </Button>
-                            </ButtonGroup>
-                            {invoiceEditButtons}
-                        </div>
+                <div className={clsx('mb-4 flex items-start', hasOwnerTabs && 'justify-space-between')}>
+                    <ButtonGroup className="mr-4 mb-2">
+                        <Button
+                            className={document === DocumentType.Invoice ? 'is-selected' : ''}
+                            onClick={() => setDocument(DocumentType.Invoice)}
+                            data-testid="invoices-tab"
+                        >
+                            {c('Select invoice document').t`Invoice`}
+                        </Button>
+                        <Button
+                            className={document === DocumentType.CreditNote ? 'is-selected' : ''}
+                            onClick={() => setDocument(DocumentType.CreditNote)}
+                            data-testid="credit-note-tab"
+                        >
+                            {c('Select invoice document').t`Credit note`}
+                        </Button>
+                        <Button
+                            className={document === DocumentType.CurrencyConversion ? 'is-selected' : ''}
+                            onClick={() => setDocument(DocumentType.CurrencyConversion)}
+                            data-testid="currency-conversion-tab"
+                        >
+                            {c('Select invoice document').t`Currency conversion`}
+                        </Button>
+                        <Button
+                            className={document === DocumentType.Transactions ? 'is-selected' : ''}
+                            onClick={() => setDocument(DocumentType.Transactions)}
+                            data-testid="transactions-tab"
+                        >
+                            {c('Select invoice document').t`Transactions`}
+                        </Button>
+                    </ButtonGroup>
+                    <div className="flex gap-4 items-center">
+                        <Pagination
+                            page={hook.page}
+                            total={hook.total}
+                            limit={ELEMENTS_PER_PAGE}
+                            onNext={hook.onNext}
+                            onPrevious={hook.onPrevious}
+                            onSelect={hook.onSelect}
+                        />
+                        {invoiceEditButtons}
                     </div>
-                    <Pagination
-                        page={hook.page}
-                        total={hook.total}
-                        limit={ELEMENTS_PER_PAGE}
-                        onNext={hook.onNext}
-                        onPrevious={hook.onPrevious}
-                        onSelect={hook.onSelect}
-                    />
                 </div>
                 {document === DocumentType.Transactions ? (
                     <TransactionGroup {...(hook as TransactionsHook)} />
@@ -208,6 +267,7 @@ const InvoicesSection = ({ app }: { app: APP_NAMES }) => {
 
             {editInvoiceModal}
             {editBillingAddressModal}
+            {setInvoiceEmailModal}
         </>
     );
 };
