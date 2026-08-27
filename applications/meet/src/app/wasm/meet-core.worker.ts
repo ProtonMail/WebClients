@@ -187,6 +187,8 @@ const handleRpcRequest = async (request: MeetCoreRpcRequestMessage): Promise<Mee
             const groupDisplayCode = await activeApp.getGroupDisplayCode();
             return { full_code: groupDisplayCode.full_code };
         }
+        case 'getGroupLen':
+            return activeApp.getGroupLen();
         case 'isMlsUpToDate':
             return activeApp.isMlsUpToDate();
         case 'isWebsocketHasReconnected':
