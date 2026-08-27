@@ -6,6 +6,9 @@ import { PublicAppThemeProvider } from 'proton-account/src/app/content/theme/Pub
 
 import * as bootstrap from '@proton/account/bootstrap';
 import { initStandaloneSession } from '@proton/account/bootstrap/standaloneSession';
+import { staticExperimentsConfig } from '@proton/account/staticExperiments/config';
+import { resolveStaticExperiments } from '@proton/account/staticExperiments/resolve';
+import { staticExperimentsActions } from '@proton/account/staticExperiments/slice';
 import ApiProvider from '@proton/components/containers/api/ApiProvider';
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import ProtonApp from '@proton/components/containers/app/ProtonApp';
@@ -66,8 +69,15 @@ const bootstrapApp = () => {
         });
     }
 
+    const store = setupStore({ mode: privateApp ? 'default' : 'public' });
+
+    // Dispatch static experiments for public mode
+    if (!privateApp) {
+        store.dispatch(staticExperimentsActions.set(resolveStaticExperiments(staticExperimentsConfig)));
+    }
+
     return {
-        store: setupStore({ mode: privateApp ? 'default' : 'public' }),
+        store,
         privateApp,
     };
 };

@@ -3,6 +3,9 @@ import { BrowserRouter } from 'react-router-dom';
 import { registerSessionListener } from '@proton/account/accountSessions/registerSessionListener';
 import { writeAccountSessions } from '@proton/account/accountSessions/storage';
 import { createAuthentication, createUnleash, init } from '@proton/account/bootstrap';
+import { staticExperimentsConfig } from '@proton/account/staticExperiments/config';
+import { resolveStaticExperiments } from '@proton/account/staticExperiments/resolve';
+import { staticExperimentsActions } from '@proton/account/staticExperiments/slice';
 import ApiProvider from '@proton/components/containers/api/ApiProvider';
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import ProtonApp from '@proton/components/containers/app/ProtonApp';
@@ -24,9 +27,6 @@ import { createUnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthent
 
 import config from '../config';
 import locales from '../locales';
-import { staticExperimentsConfig } from '../staticExperiments/config';
-import { resolveStaticExperiments } from '../staticExperiments/resolve';
-import { staticExperimentsActions } from '../staticExperiments/slice';
 import { extendStore, setupStore } from '../store/public-store';
 import { PublicAppInitial } from './PublicAppInitial';
 import { LocationThemeSync } from './theme/LocationThemeSync';
