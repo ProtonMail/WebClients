@@ -1,4 +1,3 @@
-import { disableRandomMock, initRandomMock } from '@proton/testing/lib/mockRandomValues';
 import { readFeatureFlagCookieEntries, writeFeatureFlagCookieEntries } from '@proton/unleash/UnleashCookiesProvider';
 
 import { resolveStaticExperiments } from './resolve';
@@ -20,8 +19,8 @@ const buildConfig = (overrides: Partial<StaticExperimentConfig> = {}): StaticExp
 });
 
 const mockRoll = (value: number) => {
-    initRandomMock((buf: Uint32Array) => {
-        buf[0] = value;
+    jest.spyOn(crypto, 'getRandomValues').mockImplementation((buf) => {
+        new Uint32Array(buf!.buffer)[0] = value;
         return buf;
     });
 };
@@ -30,12 +29,11 @@ describe('resolveStaticExperiments', () => {
     beforeEach(() => {
         jest.clearAllMocks();
         mockedReadEntries.mockReturnValue(new Map());
-        initRandomMock();
+        mockRoll(0);
     });
 
     afterEach(() => {
         jest.restoreAllMocks();
-        disableRandomMock();
     });
 
     it('returns disabled and clears any existing cookie entry when the experiment is disabled', () => {
