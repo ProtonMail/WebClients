@@ -1523,7 +1523,8 @@
         "Luota"
       ],
       "Trust key": [
-        "Luota avaimeen"
+        "Luota avaimeen",
+        "Luota avaimiin"
       ],
       "Trust public key": [
         "Luota julkiseen avaimeen"
@@ -10481,6 +10482,9 @@
       ],
       "Account holder name": [
         "Tilinhaltijan nimi"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } merkkiä"
       ]
     },
     "Label (begin date/advanced search)": {
