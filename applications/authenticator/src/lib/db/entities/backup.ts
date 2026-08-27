@@ -1,5 +1,5 @@
-import type { Item } from 'proton-authenticator/lib/db/entities/items';
-import type { RemoteKey } from 'proton-authenticator/lib/db/entities/remote-keys';
+import type { Item } from './items';
+import type { RemoteKey } from './remote-keys';
 
 export type BackupEntity = {
     id: string;

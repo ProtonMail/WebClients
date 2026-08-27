@@ -1,5 +1,5 @@
-import type { Item } from 'proton-authenticator/lib/db/entities/items';
-import type { AuthenticatorDB } from 'proton-authenticator/lib/db/types';
+import type { Item } from '../db/entities/items';
+import type { AuthenticatorDB } from '../db/types';
 
 /** Represents the positioning of an item during reorder
  * operations, such that `beforeItemId < item < afterItemId`.

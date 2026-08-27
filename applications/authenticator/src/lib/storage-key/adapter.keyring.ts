@@ -1,7 +1,6 @@
-import logger from 'proton-authenticator/lib/logger';
-import type { KeyringError } from 'proton-authenticator/lib/tauri/commands';
-import { commands } from 'proton-authenticator/lib/tauri/commands';
-
+import logger from '../logger';
+import type { KeyringError } from '../tauri/commands';
+import { commands } from '../tauri/commands';
 import type { StorageKeyAdapter } from './types';
 import { StorageKeyError, StorageKeySource } from './types';
 

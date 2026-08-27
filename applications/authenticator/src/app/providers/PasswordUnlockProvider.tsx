@@ -1,11 +1,12 @@
 import type { PropsWithChildren } from 'react';
 import { type FC, createContext, useContext } from 'react';
 
-import type { PasswordModalState } from 'proton-authenticator/app/components/Settings/Locks/PasswordModal';
-import { PasswordModal } from 'proton-authenticator/app/components/Settings/Locks/PasswordModal';
 import { c } from 'ttag';
 
 import { type UseAsyncModalHandle, useAsyncModalHandles } from '@proton/pass/hooks/useAsyncModalHandles';
+
+import type { PasswordModalState } from '../components/Settings/Locks/PasswordModal';
+import { PasswordModal } from '../components/Settings/Locks/PasswordModal';
 
 type PasswordUnlockContextValue = UseAsyncModalHandle<string, PasswordModalState>;
 

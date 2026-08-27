@@ -1,13 +1,12 @@
 import { type FC, useCallback } from 'react';
 
-import { VirtualGrid } from 'proton-authenticator/app/components/Layout/Grid/VirtualGrid';
-import type { GridDefinition } from 'proton-authenticator/app/components/Layout/Grid/hooks/useGridConfig';
-import type { OnGridReorder } from 'proton-authenticator/app/components/Layout/Grid/hooks/useGridSort';
-import type { Item as DatabaseItem } from 'proton-authenticator/lib/db/entities/items';
-import { useAppSelector } from 'proton-authenticator/store/utils';
-
 import { prop } from '@proton/pass/utils/fp/lens';
 
+import type { Item as DatabaseItem } from '../../../lib/db/entities/items';
+import { useAppSelector } from '../../../store/utils';
+import { VirtualGrid } from '../Layout/Grid/VirtualGrid';
+import type { GridDefinition } from '../Layout/Grid/hooks/useGridConfig';
+import type { OnGridReorder } from '../Layout/Grid/hooks/useGridSort';
 import { Item } from './Item';
 
 const GRID_DEFINITION: GridDefinition = {

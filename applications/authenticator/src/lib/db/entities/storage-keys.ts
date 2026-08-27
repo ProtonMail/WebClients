@@ -1,3 +1,3 @@
-import type { StorageKeyRef } from 'proton-authenticator/lib/storage-key/types';
+import type { StorageKeyRef } from '../../storage-key/types';
 
 export type StorageKeyEntity = StorageKeyRef;
