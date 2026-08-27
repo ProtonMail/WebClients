@@ -55,6 +55,16 @@ export function createToolResultTurn(content: string): Turn {
 }
 
 /**
+ * The text marker that names an image sent on a turn. The bytes travel in `turn.images`, which carry no
+ * id, so this marker is the only handle the model has to refer back to a picture: it must sit in the
+ * `content` of the same turn as the bytes.
+ */
+export function lumoImageMarker(id: string, source: 'user' | 'assistant', name?: string): string {
+    const nameAttr = name ? ` name="${encodeURIComponent(name)}"` : '';
+    return `<lumo-image id="${encodeURIComponent(id)}" source="${encodeURIComponent(source)}"${nameAttr} />`;
+}
+
+/**
  * Post-process generated titles (remove quotes, trim, etc.)
  */
 export function postProcessTitle(title: string): string {

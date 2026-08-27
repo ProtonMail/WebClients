@@ -75,6 +75,7 @@ export { callChatEndpoint, fetchUsageLimits, LUMO_LIMITS_ENDPOINT } from './core
 
 export {
     prepareTurns,
+    lumoImageMarker,
     createUserTurn,
     createAssistantTurn,
     createSystemTurn,

@@ -29,6 +29,6 @@ export const buildLumoDriveConfig = (deps: DriveToolDeps): LumoAgentConfig => {
     return {
         definitions: MODULES.map((module) => module.definition),
         handlers,
-        productRules: DRIVE_RULES,
+        productRules: () => DRIVE_RULES,
     };
 };
