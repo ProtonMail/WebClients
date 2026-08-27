@@ -226,6 +226,7 @@ export const PhotosLayout = () => {
         showPreviewModal({
             drive: getDriveForPhotos(),
             nodeUid: photoItem.nodeUid,
+            canAskLumo: true,
             previewableNodeUids: previewableNodeUids ? Array.from(previewableNodeUids.values()) : [],
             onNodeChange: (nodeUid: string) => setPreviewNodeUid(nodeUid),
             onClose: () => setPreviewNodeUid(undefined),
