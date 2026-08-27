@@ -19,8 +19,10 @@ export const useSetInvoiceEmailModal = () => {
 
     const [user] = useUser();
     const isEmailForInvoicesEnabled = useFlag('EmailForInvoices');
+    const isEmailForInvoicesKilled = useFlag('EmailForInvoicesKillSwitch');
+
     // The invoice email is organization billing data, which the API only serves to admins.
-    const canSetInvoiceEmail = isEmailForInvoicesEnabled && user.isAdmin;
+    const canSetInvoiceEmail = isEmailForInvoicesEnabled && !isEmailForInvoicesKilled && user.isAdmin;
 
     const [organization, loadingOrganization] = useOrganization();
     const api = useApi();
