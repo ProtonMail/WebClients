@@ -164,6 +164,7 @@ export function usePreviewState({
     return {
         node: {
             nodeUid,
+            activeRevisionUid,
             name: resolved.name,
             mediaType: resolved.mediaType,
             sharedStatus: resolved.sharedStatus,

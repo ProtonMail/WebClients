@@ -1,8 +1,9 @@
 import type { LumoAgentConfig } from '@proton/components/components/lumoAgent/types';
 import type { ToolHandlers } from '@proton/llm/lib/lumoAgent/contracts/types';
 
-import { DRIVE_RULES } from './rules';
+import { buildDriveRules } from './rules';
 import { getCurrentFolderModule } from './skills/reads/getCurrentFolder';
+import { getOpenFileContentModule } from './skills/reads/getOpenFileContent';
 import type { DriveToolDeps, DriveToolModule } from './toolModule';
 
 /**
@@ -13,22 +14,21 @@ const MODULES: DriveToolModule[] = [getCurrentFolderModule];
 
 /**
  * Assemble the {@link LumoAgentConfig} handed to `useLumoAgent`, binding every handler to Drive via
- * `deps`. Drive reads what is on screen and nothing else for now; more tools arrive as more modules,
- * which is why this splits them back into the layered inputs the framework expects — definitions for
- * the engine, dependency-bound handlers for dispatch (mutations add card renderers, as Mail's does).
+ * `deps`. Both surfaces use it: the drawer, and the file preview, which passes `getOpenFile` and so gets
+ * the open-file tool on top of the shared pack.
  *
- * Called ONCE from {@link LumoDriveProvider}: the hook rebuilds its executor whenever the config
- * identity changes, so the result must stay referentially stable across renders — hence `deps` reads
- * live values through getters rather than taking them.
+ * Called ONCE per surface, since the hook rebuilds its executor when the config identity changes. So
+ * `deps` reads live values through getters, and the rules are built per message instead of baked in here.
  */
 export const buildLumoDriveConfig = (deps: DriveToolDeps): LumoAgentConfig => {
+    const modules = deps.getOpenFile ? [...MODULES, getOpenFileContentModule] : MODULES;
     const handlers: ToolHandlers = Object.fromEntries(
-        MODULES.map((module) => [module.definition.name, module.createHandler(deps)])
+        modules.map((module) => [module.definition.name, module.createHandler(deps)])
     );
 
     return {
-        definitions: MODULES.map((module) => module.definition),
+        definitions: modules.map((module) => module.definition),
         handlers,
-        productRules: () => DRIVE_RULES,
+        productRules: () => buildDriveRules(deps.getOpenFile?.()),
     };
 };

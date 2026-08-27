@@ -54,6 +54,7 @@ interface Props {
     onOpenInDocs?: () => void;
     date?: Date | string | number;
     children?: ReactNode;
+    assistantButton?: ReactNode;
 }
 
 const Header = ({
@@ -74,6 +75,7 @@ const Header = ({
     isFavorite,
     date,
     children,
+    assistantButton,
 }: Props) => {
     const [isSaving, withSaving] = useLoading();
     const [saveError, setSaveError] = useState();
@@ -134,6 +136,7 @@ const Header = ({
 
             {children}
             <div className="flex items-center">
+                {assistantButton}
                 {isLargeViewport && onOpenInDocs && openInDocsType && (
                     <Button
                         title={getOpenInDocsString(openInDocsType, mimeType)}
