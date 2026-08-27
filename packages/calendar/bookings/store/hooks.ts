@@ -1,6 +1,6 @@
 import { createHooks } from '@proton/redux-utilities/hooks';
 
-import { internalBookingThunk, selectInternalBooking } from './interalBookingSlice';
+import { internalBookingThunk, selectInternalBooking } from './internalBookingSlice';
 
 const hooks = createHooks(internalBookingThunk, selectInternalBooking);
 

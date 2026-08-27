@@ -6,6 +6,8 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import { loadBookingPage } from '@proton/calendar/bookings/store/actions';
+import type { InternalBookingPage } from '@proton/calendar/bookings/store/interface';
 import type { BookingPageEditData } from '@proton/calendar/bookings/types';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
@@ -26,8 +28,6 @@ import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import clsx from '@proton/utils/clsx';
 
 import { useCalendarDispatch } from '../../../store/hooks';
-import type { InternalBookingPage } from '../../../store/internalBooking/interface';
-import { loadBookingPage } from '../../../store/internalBooking/internalBookingActions';
 import { useBookings } from '../../bookings/bookingsProvider/BookingsProvider';
 import {
     BookingPageLocationSpotlightContent,

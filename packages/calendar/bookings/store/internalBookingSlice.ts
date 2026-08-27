@@ -1,32 +1,25 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-import type { AddressKeysState } from '@proton/account/addressKeys';
 import { getAddressKeysByUsageThunk } from '@proton/account/addressKeys/getAddressKeysByUsage';
-import type { KtState } from '@proton/account/kt';
 import { getVerificationPreferencesThunk } from '@proton/account/publicKeys/verificationPreferences';
-import {
-    decryptAndVerifyBookingPageSecret,
-    decryptBookingContent,
-} from '@proton/calendar/bookings/crypto/bookingDecryption';
-import { BookingLocation } from '@proton/calendar/bookings/types';
-import { type CalendarsState, calendarsThunk } from '@proton/calendar/calendars';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
 import { getInitialModelState } from '@proton/redux-utilities/initialModelState';
-import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
 import { deleteBookingPage, getUserBookingPage } from '@proton/shared/lib/api/calendarBookings';
 import { SentryCalendarInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import type { InternalBookingPagePayload } from '@proton/shared/lib/interfaces/calendar/Bookings';
 
-import { getCalendarAndOwner } from '../../containers/bookings/utils/calendar/calendarHelper';
-import type { InternalBookingPage, InternalBookingPageSliceInterface } from './interface';
+import { calendarsThunk } from '../../calendars';
+import { decryptAndVerifyBookingPageSecret, decryptBookingContent } from '../crypto/bookingDecryption';
+import { createBookingLink } from '../crypto/bookingEncryptionHelpers';
+import { BookingLocation } from '../types';
+import { getBookingsOrigin } from './bookingsOrigin';
+import { getCalendarAndOwner } from './calendarHelper';
+import type { InternalBookingPage, InternalBookingState } from './interface';
 import { createNewBookingPage, editBookingPage, loadBookingPage } from './internalBookingActions';
 
 const name = 'internalBookings' as const;
-interface InternalBookingState extends CalendarsState, AddressKeysState, KtState {
-    internalBookings: ModelState<InternalBookingPageSliceInterface>;
-}
 
 type SliceState = InternalBookingState[typeof name];
 type Model = NonNullable<SliceState['value']>;
@@ -42,6 +35,7 @@ const modelThunk = createAsyncModelThunk<Model, InternalBookingState, ProtonThun
         }
 
         const pagesArray: InternalBookingPage[] = [];
+        const bookingsOrigin = getBookingsOrigin();
         try {
             const [calendars, bookingPages] = await Promise.all([
                 dispatch(calendarsThunk()),
@@ -101,7 +95,7 @@ const modelThunk = createAsyncModelThunk<Model, InternalBookingState, ProtonThun
                         id: bookingPage.ID,
                         calendarID: bookingPage.CalendarID,
                         bookingUID: bookingPage.BookingUID,
-                        link: `${window.location.origin}/bookings#${decrypted.data.toBase64({ alphabet: 'base64url' })}`,
+                        link: createBookingLink(bookingsOrigin, decrypted.data),
                         minimumNoticeMode: bookingPage.MinimumNoticeMode,
                         // The backend is not passing conflictCalendarIDs when loading all bookings at the moment
                         conflictCalendarIDs: bookingPage.ConflictCalendarIDs || [],
