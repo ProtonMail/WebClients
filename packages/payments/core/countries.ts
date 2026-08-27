@@ -114,6 +114,7 @@ export const getCountries = () => [
     { value: 'IT', label: c('Country name').t`Italy` },
     { value: 'JM', label: c('Country name').t`Jamaica` },
     { value: 'JP', label: c('Country name').t`Japan` },
+    { value: 'JE', label: c('Country name').t`Jersey` },
     { value: 'JO', label: c('Country name').t`Jordan` },
     { value: 'KZ', label: c('Country name').t`Kazakhstan` },
     { value: 'KE', label: c('Country name').t`Kenya` },
