@@ -1,7 +1,6 @@
-import logger from 'proton-authenticator/lib/logger';
-
 import { generateKey } from '@protontech/crypto/subtle/aesGcm.ts';
 
+import logger from '../logger';
 import type { StorageKeyAdapter } from './types';
 import { StorageKeyError, StorageKeySource } from './types';
 

@@ -1,9 +1,13 @@
-import { authService } from 'proton-authenticator/lib/auth/service';
-import { db } from 'proton-authenticator/lib/db/db';
-import type { Item } from 'proton-authenticator/lib/db/entities/items';
-import type { EditEntryDTO, EntryDTO } from 'proton-authenticator/lib/entries/items';
-import { fromWasmEntry, getEntryFromValues, getNowRustTimestamp } from 'proton-authenticator/lib/entries/items';
-import type { ReorderItemsDTO } from 'proton-authenticator/lib/entries/ordering';
+import { c } from 'ttag';
+
+import noop from '@proton/utils/noop';
+
+import { authService } from '../lib/auth/service';
+import { db } from '../lib/db/db';
+import type { Item } from '../lib/db/entities/items';
+import type { EditEntryDTO, EntryDTO } from '../lib/entries/items';
+import { fromWasmEntry, getEntryFromValues, getNowRustTimestamp } from '../lib/entries/items';
+import type { ReorderItemsDTO } from '../lib/entries/ordering';
 import {
     ORDER_DECIMAL_THRESHOLD,
     ORDER_STEP,
@@ -11,20 +15,11 @@ import {
     getOrderByIndex,
     getOrderDecimals,
     itemSyncSort,
-} from 'proton-authenticator/lib/entries/ordering';
-import {
-    addRemoteEntries,
-    deleteRemoteEntries,
-    reorderRemoteEntry,
-    updateRemoteEntries,
-} from 'proton-authenticator/lib/entries/sync';
-import logger from 'proton-authenticator/lib/logger';
-import { withErrorDetails } from 'proton-authenticator/lib/utils/errors';
-import { createAutomaticBackup } from 'proton-authenticator/store/backup';
-import { c } from 'ttag';
-
-import noop from '@proton/utils/noop';
-
+} from '../lib/entries/ordering';
+import { addRemoteEntries, deleteRemoteEntries, reorderRemoteEntry, updateRemoteEntries } from '../lib/entries/sync';
+import logger from '../lib/logger';
+import { withErrorDetails } from '../lib/utils/errors';
+import { createAutomaticBackup } from './backup';
 import { createAppAsyncThunk } from './utils';
 
 export const editEntry = createAppAsyncThunk(

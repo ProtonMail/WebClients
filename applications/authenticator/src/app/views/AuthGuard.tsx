@@ -1,10 +1,6 @@
 import { type FC, type PropsWithChildren, useEffect } from 'react';
 
 import { listen } from '@tauri-apps/api/event';
-import { ErrorScreen } from 'proton-authenticator/app/views/ErrorScreen';
-import { apiEvents } from 'proton-authenticator/lib/api';
-import { abortLogin, executeLogin, logout } from 'proton-authenticator/store/auth';
-import { useAppDispatch, useAppSelector } from 'proton-authenticator/store/utils';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import useEffectOnce from '@proton/hooks/useEffectOnce';
@@ -12,6 +8,10 @@ import { prop } from '@proton/pass/utils/fp/lens';
 import { getConsumeForkParameters } from '@proton/shared/lib/authentication/fork';
 import noop from '@proton/utils/noop';
 
+import { apiEvents } from '../../lib/api';
+import { abortLogin, executeLogin, logout } from '../../store/auth';
+import { useAppDispatch, useAppSelector } from '../../store/utils';
+import { ErrorScreen } from './ErrorScreen';
 import { UnlockScreen } from './UnlockScreen';
 
 export const AuthGuard: FC<PropsWithChildren> = ({ children }) => {

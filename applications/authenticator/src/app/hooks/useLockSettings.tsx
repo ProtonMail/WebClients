@@ -1,17 +1,18 @@
 import { useEffect, useState } from 'react';
 
-import { usePasswordUnlock } from 'proton-authenticator/app/providers/PasswordUnlockProvider';
-import biometrics from 'proton-authenticator/lib/locks/biometrics';
-import type { AppLock } from 'proton-authenticator/lib/locks/types';
-import { verifyUnlock } from 'proton-authenticator/store/lock';
-import { updateLock } from 'proton-authenticator/store/settings';
-import { useAppDispatch, useAppSelector } from 'proton-authenticator/store/utils';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
 import { AUTHENTICATOR_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
+
+import biometrics from '../../lib/locks/biometrics';
+import type { AppLock } from '../../lib/locks/types';
+import { verifyUnlock } from '../../store/lock';
+import { updateLock } from '../../store/settings';
+import { useAppDispatch, useAppSelector } from '../../store/utils';
+import { usePasswordUnlock } from '../providers/PasswordUnlockProvider';
 
 export const useLockSettings = () => {
     const dispatch = useAppDispatch();

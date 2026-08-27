@@ -42,7 +42,6 @@ const config: Configuration = {
         rules: [...getJsLoaders(loaderOptions), ...getCssLoaders(loaderOptions), ...getAssetsLoaders(loaderOptions)],
     },
     resolve: {
-        alias: { 'proton-authenticator': path.resolve(__dirname, 'src/') },
         extensions: ['.tsx', '.ts', '.js'],
         fallback: {
             crypto: false,

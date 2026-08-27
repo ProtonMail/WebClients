@@ -1,8 +1,5 @@
 import ReactDOM from 'react-dom/client';
 
-import { config, sentryConfig } from 'proton-authenticator/lib/app/env';
-import 'proton-authenticator/lib/tauri/runtime';
-
 import ModalsChildren from '@proton/components/containers/modals/Children';
 import ModalsProvider from '@proton/components/containers/modals/Provider';
 import NotificationsChildren from '@proton/components/containers/notifications/Children';
@@ -11,6 +8,8 @@ import Icons from '@proton/icons/Icons';
 import '@proton/polyfill';
 import sentry from '@proton/shared/lib/helpers/sentry';
 
+import { config, sentryConfig } from '../lib/app/env';
+import '../lib/tauri/runtime';
 import { UpdateBar } from './components/Layout/UpdateBar';
 import { ItemActionsProvider } from './providers/ItemActionsProvider';
 import { StoreProvider } from './providers/StoreProvider';

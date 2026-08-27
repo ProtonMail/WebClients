@@ -1,11 +1,11 @@
-import { StorageKey } from 'proton-authenticator/lib/db/db';
-import { StorageKeySource } from 'proton-authenticator/lib/storage-key/types';
-import { commands } from 'proton-authenticator/lib/tauri/commands';
 import { c } from 'ttag';
 
 import type { Maybe } from '@proton/pass/types';
 import { isMac, isWindows } from '@proton/shared/lib/helpers/browser';
 
+import { StorageKey } from '../../db/db';
+import { StorageKeySource } from '../../storage-key/types';
+import { commands } from '../../tauri/commands';
 import { getTranslated as macos } from './macos';
 import { getTranslated as windows } from './windows';
 

@@ -1,11 +1,12 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
-import { StorageKey } from 'proton-authenticator/lib/db/db';
-import type { StorageKeySource } from 'proton-authenticator/lib/storage-key/types';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import type { Maybe } from '@proton/pass/types';
+
+import { StorageKey } from '../../lib/db/db';
+import type { StorageKeySource } from '../../lib/storage-key/types';
 
 export const useStorageKeySource = () => {
     const { createNotification } = useNotifications();
