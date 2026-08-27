@@ -136,7 +136,7 @@ const CompromisedPasswordReport: FC<SelectedItem> = (item) => {
 
     return (
         isCompromised && (
-            <Card className="mb-2" type="warning">
+            <Card className="mb-2" type="danger">
                 <CardContent
                     icon={() => <CardIcon icon="exclamation-filled" className="self-start mt-0.5" />}
                     titleClassname="color-interaction-norm-major-2 text-lg text-semibold"

@@ -1,4 +1,4 @@
-import { exportData, fileDownload, fileUploadChunk, importItems } from '@proton/pass/store/actions';
+import { checkCompromisedPasswords, exportData, fileDownload, fileUploadChunk, importItems } from '@proton/pass/store/actions';
 import type { State } from '@proton/pass/store/types';
 import type { TabId } from '@proton/pass/types';
 
@@ -22,5 +22,6 @@ export const selectPendingPopupRequests =
         Object.keys(request).filter((requestID) => {
             if (matchesTabRequest(fileUploadChunk.namespace, tabId)(requestID)) return true;
             if (matchesTabRequest(fileDownload.namespace, tabId)(requestID)) return true;
+            if (matchesTabRequest(checkCompromisedPasswords.namespace, tabId)(requestID)) return true;
             return false;
         });

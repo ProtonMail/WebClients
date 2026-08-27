@@ -1,10 +1,17 @@
-import { useEffect, useMemo, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import type { AsyncMonitorState } from '@proton/pass/components/Monitor/MonitorContext';
+import { useCurrentTabID, usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
+import type { AsyncMonitorState, CompromisedPasswordsState } from '@proton/pass/components/Monitor/MonitorContext';
+import { useAsyncRequestDispatch } from '@proton/pass/hooks/useDispatchAsyncRequest';
 import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
-import { selectCompromisedPasswords, selectVisibleLoginItems } from '@proton/pass/store/selectors';
+import { checkCompromisedPasswords } from '@proton/pass/store/actions';
+import { requestCancel } from '@proton/pass/store/request/actions';
+import {
+    selectCompromisedPasswords,
+    selectCompromisedPasswordsProgress,
+    selectVisibleLoginItems,
+} from '@proton/pass/store/selectors';
 import type { UniqueItem } from '@proton/pass/types';
 
 const useAsyncMonitorState = (datasource: () => Promise<UniqueItem[]>): AsyncMonitorState => {
@@ -25,18 +32,31 @@ const useAsyncMonitorState = (datasource: () => Promise<UniqueItem[]>): AsyncMon
 export const useMissing2FAs = () => useAsyncMonitorState(usePassCore().monitor.checkMissing2FAs);
 export const useInsecurePasswords = () => useAsyncMonitorState(usePassCore().monitor.checkWeakPasswords);
 
-export const useCompromisedPasswords = (): AsyncMonitorState => {
-    const { checkCompromisedPasswords } = usePassCore().monitor;
+export const useCompromisedPasswords = (): CompromisedPasswordsState => {
+    const dispatch = useDispatch();
+    const asyncDispatch = useAsyncRequestDispatch();
+    const tabId = useCurrentTabID();
+    const generation = useRef(0);
     const logins = useSelector(selectVisibleLoginItems);
     const data = useMemoSelector(selectCompromisedPasswords, []);
+    const progress = useSelector(selectCompromisedPasswordsProgress);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        setLoading(true);
-        checkCompromisedPasswords()
-            .catch(() => {})
-            .finally(() => setLoading(false));
-    }, [logins]);
+        const dto = { tabId, generation: generation.current++ };
+        const requestId = checkCompromisedPasswords.requestID(dto);
+        let stale = false;
 
-    return useMemo(() => ({ data, count: data.length, loading }), [data, loading]);
+        setLoading(true);
+        void asyncDispatch(checkCompromisedPasswords, dto).finally(() => {
+            if (!stale) setLoading(false);
+        });
+
+        return () => {
+            stale = true;
+            dispatch(requestCancel(requestId));
+        };
+    }, [logins, tabId]);
+
+    return useMemo(() => ({ data, count: data.length, loading, progress }), [data, loading, progress]);
 };

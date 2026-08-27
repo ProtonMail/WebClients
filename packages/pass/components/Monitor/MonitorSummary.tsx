@@ -36,7 +36,7 @@ export const MonitorSummary: FC = () => {
     const navigate = useNavigate();
     const { duplicates, insecure, compromised, missing2FAs, excluded } = useMonitor();
     const { plan, features, upsellType, upgradePath } = useUpsellPlanFeatures();
-    const compromisedPasswordsEnabled = useFeatureFlag(PassFeature.Pass__V1_40__CompromisedPasswords);
+    const compromisedPasswordsEnabled = useFeatureFlag(PassFeature.PassCompromisedPasswords);
 
     const paid = isPaidPlan(plan);
     const preview = useSelector(selectMonitorPreview);
@@ -117,7 +117,12 @@ export const MonitorSummary: FC = () => {
                                             actions={compromisedReady && <PillBadge label={compromised.count} />}
                                             disabled={!compromisedReady}
                                             onClick={() => navigate(getLocalPath('monitor/compromised'))}
-                                            subtitle={c('Description').t`Change these passwords immediately`}
+                                            subtitle={
+                                                compromised.loading && compromised.progress.total > 0
+                                                    ? c('Description')
+                                                          .t`Checking ${compromised.progress.completed} of ${compromised.progress.total}`
+                                                    : c('Description').t`Change these passwords immediately`
+                                            }
                                             title={c('Title').t`Compromised passwords`}
                                             type={
                                                 compromised.count > 0

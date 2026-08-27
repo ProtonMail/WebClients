@@ -12,10 +12,6 @@ export const createMonitorService = (core: PassCoreProxy, store: Store) => {
         result: await service.checkMissing2FAs(),
     }));
 
-    WorkerMessageBroker.registerMessage(WorkerMessageType.MONITOR_COMPROMISED_PASSWORDS, async () => ({
-        result: await service.checkCompromisedPasswords(),
-    }));
-
     WorkerMessageBroker.registerMessage(WorkerMessageType.MONITOR_WEAK_PASSWORDS, async () => ({
         result: await service.checkWeakPasswords(),
     }));

@@ -7,6 +7,7 @@ export enum PassFeature {
     PassAutofillUrlRegex = 'PassAutofillUrlRegex',
     PassAllowCreditCardFreeUsers = 'PassAllowCreditCardFreeUsers',
     PassBasicAuthAutofill = 'PassBasicAuthAutofill',
+    PassCompromisedPasswords = 'PassCompromisedPasswords',
     PassContentScriptPopoverKillSwitch = 'PassContentScriptPopoverKillSwitch',
     PassContextMenu = 'PassContextMenu',
     PassCreditCardWebAutofill = 'PassCreditCardWebAutofill',
@@ -34,7 +35,6 @@ export enum PassFeature {
     PassWebDesktopLifetimeBanner = 'PassWebDesktopLifetimeBanner',
     PassWebInternalAlpha = 'PassWebInternalAlpha',
     PassWebPrfUnlock = 'PassWebPrfUnlock',
-    Pass__V1_40__CompromisedPasswords = 'Pass__V1_40__CompromisedPasswords',
 }
 
 export const PassFeaturesValues = Object.values(PassFeature);
