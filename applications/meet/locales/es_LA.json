@@ -25,6 +25,9 @@
       ]
     },
     "Accessibility announcement": {
+      "${ BRAND_NAME } background applied": [
+        "Fondo de ${ BRAND_NAME } aplicado"
+      ],
       "${ name } joined the meeting": [
         "${ name } se ha unido a la reunión"
       ],
@@ -61,17 +64,38 @@
       "A participant reacted with ${ emoji }": [
         "Un participante reaccionó con ${ emoji }"
       ],
+      "Abstract background applied": [
+        "Fondo abstracto aplicado"
+      ],
+      "Background effect turned off": [
+        "Efecto de fondo desactivado"
+      ],
+      "Beach background applied": [
+        "Fondo de playa aplicado"
+      ],
+      "Blurred background applied": [
+        "Fondo difuminado aplicado"
+      ],
+      "Coffee place background applied": [
+        "Fondo de cafetería aplicado"
+      ],
       "Connected via TURN relay mode due to network restrictions. This may increase latency and affect call quality.": [
         "Conexión mediante modo de retransmisión TURN debido a restricciones en la red. Esto puede aumentar la latencia y afectar a la calidad de la llamada."
       ],
       "Connection lost. Reconnecting…": [
         "Conexión perdida. Reconectando…"
       ],
+      "Mountain background applied": [
+        "Fondo de montaña aplicado"
+      ],
       "New chat message: ${ message }": [
         "Nuevo mensaje de chat: ${ message }"
       ],
       "Now starting recording": [
         "Comenzó la grabación"
+      ],
+      "Office background applied": [
+        "Fondo de oficina aplicado"
       ],
       "Reconnected to the meeting": [
         "Reconectando a la reunión"
@@ -166,9 +190,6 @@
       "Apply changes": [
         "Aplicar cambios"
       ],
-      "Approve participants before they can join": [
-        "Aprobar a los participantes antes de que se unan"
-      ],
       "Assign ${ selectedParticipantName } as host": [
         "Asignar a ${ selectedParticipantName } como anfitrión"
       ],
@@ -183,6 +204,9 @@
       ],
       "Back": [
         "Atrás"
+      ],
+      "Backgrounds and effects": [
+        "Fondos y efectos"
       ],
       "Blur background": [
         "Difuminar fondo"
@@ -358,11 +382,11 @@
       "Hide participants": [
         "Ocultar participantes"
       ],
-      "Hide self view": [
-        "Ocultar mi vista"
-      ],
       "Hide timezones": [
         "Ocultar zonas horarias"
+      ],
+      "Incoming video": [
+        "Video entrante"
       ],
       "Insert emoji": [
         "Insertar emoji"
@@ -397,6 +421,9 @@
       "Lower hand": [
         "Bajar la mano"
       ],
+      "Meeting timer": [
+        "Temporizador de reunión"
+      ],
       "Minimize preview": [
         "Minimizar vista previa"
       ],
@@ -430,14 +457,14 @@
       "Participants join after you approve them": [
         "Los participantes se unen después de que los apruebe"
       ],
-      "Participants join the call directly": [
-        "Los participantes se unen directamente a la llamada"
-      ],
       "Paste": [
         "Pegar"
       ],
       "Pause": [
         "Pausar"
+      ],
+      "Picture-in-picture while sharing": [
+        "Imagen-en-imagen mientras comparte"
       ],
       "Playing back...": [
         "Reproduciendo..."
@@ -543,6 +570,9 @@
       "Search countries": [
         "Buscar países"
       ],
+      "Self view": [
+        "Vista propia"
+      ],
       "Send an encrypted message": [
         "Enviar un mensaje cifrado"
       ],
@@ -551,12 +581,6 @@
       ],
       "Settings": [
         "Ajustes"
-      ],
-      "Show duration": [
-        "Mostrar duración"
-      ],
-      "Show floating thumbnail during screensharing": [
-        "Mostrar miniatura flotante al compartir pantalla"
       ],
       "Show options": [
         "Mostrar opciones"
@@ -648,17 +672,11 @@
       "Try another method": [
         "Intente otro método"
       ],
-      "Turn off incoming video": [
-        "Desactivar video entrante"
-      ],
       "Upgrade": [
         "Actualizar"
       ],
       "Upgrade now": [
         "Actualizar ahora"
-      ],
-      "Upgrade your plan to use waiting room in your next meeting.": [
-        "Actualice su plan para usar la sala de espera en su próxima reunión."
       ],
       "Upload another image": [
         "Cargar otra imagen"
@@ -701,6 +719,9 @@
       ],
       "View invoice": [
         "Ver la factura"
+      ],
+      "Virtual backgrounds": [
+        "Fondos virtuales"
       ],
       "Waiting room": [
         "Sala de espera"
@@ -749,8 +770,8 @@
       "Go to dashboard": [
         "Ir al panel de control"
       ],
-      "Hide self view": [
-        "Ocultar vista propia"
+      "Incoming video": [
+        "Video entrante"
       ],
       "Leave Meeting": [
         "Salir de la reunión"
@@ -766,6 +787,9 @@
       ],
       "Meeting details": [
         "Detalles de la reunión"
+      ],
+      "Meeting timer": [
+        "Temporizador de reunión"
       ],
       "More options": [
         "Más opciones"
@@ -785,6 +809,9 @@
       "Participants": [
         "Participantes"
       ],
+      "Picture-in-picture while sharing": [
+        "Imagen-en-imagen mientras comparte"
+      ],
       "Raise hand": [
         "Levantar la mano"
       ],
@@ -797,14 +824,11 @@
       "Screen share": [
         "Compartir pantalla"
       ],
+      "Self view": [
+        "Vista propia"
+      ],
       "Settings": [
         "Ajustes"
-      ],
-      "Show duration": [
-        "Mostrar duración"
-      ],
-      "Show floating thumbnail during screensharing": [
-        "Mostrar miniatura flotante al compartir pantalla"
       ],
       "Stop recording and download.": [
         "Detener la grabación y descargar."
@@ -827,9 +851,6 @@
       "Toggle settings": [
         "Alternar ajustes"
       ],
-      "Turn off incoming video": [
-        "Desactivar video entrante"
-      ],
       "Video settings": [
         "Ajustes de video"
       ],
@@ -851,6 +872,9 @@
       ],
       "Backgrounds": [
         "Fondos"
+      ],
+      "Blur and personal": [
+        "Difuminado y personal"
       ],
       "Chat": [
         "Chat"
@@ -2310,8 +2334,17 @@
       "Advanced mode: tune every blur constant for the next version, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
         "Modo avanzado: ajuste cada constante de difuminado para la siguiente versión y luego pulse en Aplicar para reconstruir la vista previa. Las anulaciones tienen prioridad sobre los valores de archivo y de Liberar."
       ],
+      "Allow camera access to preview your background": [
+        "Permitir acceso a la cámara para previsualizar el fondo"
+      ],
       "Anonymous ${ particle } ${ participantNumber }": [
         "Anónimo ${ particle } ${ participantNumber }"
+      ],
+      "Anyone with the link can join immediately": [
+        "Cualquiera con el enlace puede unirse automáticamente"
+      ],
+      "Approve participants before they can join": [
+        "Aprobar a los participantes antes de que se unan"
       ],
       "Are you sure you want to leave?": [
         "¿En verdad desea salir?"
@@ -2321,6 +2354,9 @@
       ],
       "Attention required": [
         "Atención requerida"
+      ],
+      "Available with a paid plan": [
+        "Disponible con un plan de pago"
       ],
       "Background blur initializing": [
         "Inicializando el difuminado del fondo"
@@ -3035,12 +3071,21 @@
       ]
     },
     "Label": {
+      "${ BRAND_NAME } background": [
+        "Fondo de ${ BRAND_NAME }"
+      ],
       "${ BRAND_NAME } username": [
         "Nombre de usuario de ${ BRAND_NAME }"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } caracteres"
       ],
       "${ numberOfStars } star": [
         "${ numberOfStars } estrella",
         "${ numberOfStars } estrellas"
+      ],
+      "Abstract background": [
+        "Fondo abstracto"
       ],
       "Add optional details": [
         "Añadir detalles opcionales"
@@ -3072,6 +3117,9 @@
       "Background color": [
         "Color de fondo"
       ],
+      "Beach background": [
+        "Fondo de playa"
+      ],
       "Blurred (next)": [
         "Difuminado (siguiente)"
       ],
@@ -3095,6 +3143,9 @@
       ],
       "Code is 6 digits without spaces": [
         "El código es de 6 dígitos sin espacios"
+      ],
+      "Coffee place background": [
+        "Fondo de cafetería"
       ],
       "Connection Quality": [
         "Calidad de la conexión"
@@ -3204,6 +3255,9 @@
       "Monday to Friday": [
         "De lunes a viernes"
       ],
+      "Mountain background": [
+        "Fondo de montaña"
+      ],
       "Muted": [
         "Silenciado"
       ],
@@ -3212,6 +3266,9 @@
       ],
       "Next": [
         "Siguiente"
+      ],
+      "Office background": [
+        "Fondo de oficina"
       ],
       "Operating system": [
         "Sistema operativo"
@@ -3505,17 +3562,6 @@
         "Administrador de usuarios"
       ]
     },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Configure las políticas de seguridad, conservación de datos, infraestructura VPN y gestione registros de auditoría."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Gestione todos los usuarios, grupos, seguridad, facuración y configuraciones del sistema."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Gestione usuarios, grupos y almacenamiento para todos los miembros, asigne roles y licencias."
-      ]
-    },
     "Safety review": {
       "Review account safety": [
         "Compruebe la seguridad de la cuenta"
@@ -3648,9 +3694,6 @@
       ]
     },
     "Title": {
-      "Accessibility": [
-        "Accesibilidad"
-      ],
       "Account restricted": [
         "Cuenta restringida"
       ],
@@ -3678,9 +3721,6 @@
       "Assign a new host": [
         "Asignar un nuevo anfitrión"
       ],
-      "Audio": [
-        "Audio"
-      ],
       "Available Cameras": [
         "Cámaras disponibles"
       ],
@@ -3690,11 +3730,17 @@
       "Available Speakers": [
         "Altavoces disponibles"
       ],
+      "Background": [
+        "Fondo"
+      ],
       "Background blur comparison": [
         "Comparación de fondo difuminado"
       ],
       "Backgrounds": [
         "Fondos"
+      ],
+      "Blur and personal": [
+        "Difuminado y personal"
       ],
       "Camera and microphone are blocked": [
         "El acceso a la cámara y el micrófono está bloqueado"
@@ -3726,6 +3772,9 @@
       "Delete recording?": [
         "¿Eliminar grabación?"
       ],
+      "Display": [
+        "Visualización"
+      ],
       "Enter your password": [
         "Ingrese su contraseña"
       ],
@@ -3743,6 +3792,9 @@
       ],
       "Help center": [
         "Centro de ayuda"
+      ],
+      "Host settings": [
+        "Ajustes del anfitrión"
       ],
       "Human verification": [
         "Verificación humana"
@@ -3792,9 +3844,6 @@
       ],
       "Meeting edited": [
         "Reunión editada"
-      ],
-      "Meeting settings": [
-        "Ajustes de la reunión"
       ],
       "Messaging Layer Security": [
         "Messaging Layer Security (MLS)"
@@ -3859,9 +3908,6 @@
       "Secure meeting": [
         "Reunión segura"
       ],
-      "Security": [
-        "Seguridad"
-      ],
       "Security code": [
         "Código de seguridad"
       ],
@@ -3898,8 +3944,8 @@
       "Two-factor authentication": [
         "Autenticación de dos factores"
       ],
-      "Video": [
-        "Video"
+      "Video and audio": [
+        "Video y audio"
       ],
       "Virtual backgrounds": [
         "Fondos virtuales"
@@ -3929,6 +3975,9 @@
       "Background blur is not supported on your browser": [
         "El desenfoque de fondo no es compatible en su navegador"
       ],
+      "Background effects are not supported on your browser": [
+        "Los efectos de fondo no están soportados por su navegador"
+      ],
       "Generate a new meeting link. The current link will stop working.": [
         "Generar un nuevo enlace para la reunión. El enlace actual dejará de funcionar."
       ],
@@ -3937,6 +3986,9 @@
       ],
       "Recurring meeting": [
         "Reunión recurrente"
+      ],
+      "Stop sharing your screen to change this setting": [
+        "Deje de compartir su pantalla para cambiar este ajuste"
       ],
       "You can generate a new meeting link once per day.": [
         "Solo puede generar un nuevo enlace de reunión una vez al día."

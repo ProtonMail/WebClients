@@ -166,9 +166,6 @@
       "Apply changes": [
         "Aplicar alterações"
       ],
-      "Approve participants before they can join": [
-        "Aprovar os participantes antes que eles possam entrar"
-      ],
       "Assign ${ selectedParticipantName } as host": [
         "Atribuir ${ selectedParticipantName } como anfitrião"
       ],
@@ -358,9 +355,6 @@
       "Hide participants": [
         "Ocultar participantes"
       ],
-      "Hide self view": [
-        "Ocultar minha visualização"
-      ],
       "Hide timezones": [
         "Ocultar fusos horários"
       ],
@@ -430,14 +424,14 @@
       "Participants join after you approve them": [
         "Os participantes ponderam participar depois da aprovação"
       ],
-      "Participants join the call directly": [
-        "Os participantes participaram diretamente da chamada"
-      ],
       "Paste": [
         "Colar"
       ],
       "Pause": [
         "Pausar"
+      ],
+      "Playing sound...": [
+        "Reproduzindo som..."
       ],
       "Preview logs": [
         "Visualização prévia de registros"
@@ -546,12 +540,6 @@
       "Settings": [
         "Configurações"
       ],
-      "Show duration": [
-        "Exibir duração"
-      ],
-      "Show floating thumbnail during screensharing": [
-        "Mostrar miniatura flutuante durante o compartilhamento de tela"
-      ],
       "Show options": [
         "Mostrar opções"
       ],
@@ -642,17 +630,11 @@
       "Try another method": [
         "Tentar outro método"
       ],
-      "Turn off incoming video": [
-        "Desativar vídeo de entrada"
-      ],
       "Upgrade": [
         "Fazer upgrade"
       ],
       "Upgrade now": [
         "Atualizar agora"
-      ],
-      "Upgrade your plan to use waiting room in your next meeting.": [
-        "Faça upgrade no seu plano para usar a sala de espera na sua próxima reunião."
       ],
       "Upload another image": [
         "Enviar outra imagem"
@@ -743,9 +725,6 @@
       "Go to dashboard": [
         "Ir para painel de controle"
       ],
-      "Hide self view": [
-        "Ocultar minha visualização"
-      ],
       "Leave Meeting": [
         "Sair da reunião"
       ],
@@ -794,12 +773,6 @@
       "Settings": [
         "Configurações"
       ],
-      "Show duration": [
-        "Mostrar duração"
-      ],
-      "Show floating thumbnail during screensharing": [
-        "Mostrar miniatura flutuante durante o compartilhamento de tela"
-      ],
       "Stop recording and download.": [
         "Parar a gravação e baixar."
       ],
@@ -820,9 +793,6 @@
       ],
       "Toggle settings": [
         "Alternar configurações"
-      ],
-      "Turn off incoming video": [
-        "Desativar vídeo de entrada"
       ],
       "Video settings": [
         "Configurações de vídeo"
@@ -860,6 +830,9 @@
       ],
       "Meeting rooms": [
         "Sala de reuniões"
+      ],
+      "Microphone input level": [
+        "Nível de entrada do microfone"
       ],
       "Participants": [
         "Participantes"
@@ -3451,17 +3424,6 @@
         "Administração de usuário"
       ]
     },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Configure políticas de segurança, retenção de dados e infraestrutura de VPN, além de gerenciar registros de auditoria."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Gerencie todos os usuários, grupos, segurança, faturamento e configurações do sistema."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Gerencie usuários, grupos e espaço de armazenamento para todos os membros, atribuir funções e distribuir licenças."
-      ]
-    },
     "Safety review": {
       "Review account safety": [
         "Revise a segurança da conta"
@@ -3589,9 +3551,6 @@
       ]
     },
     "Title": {
-      "Accessibility": [
-        "Acessibilidade"
-      ],
       "Account restricted": [
         "Conta restrita"
       ],
@@ -3618,9 +3577,6 @@
       ],
       "Assign a new host": [
         "Atribuir um novo anfitrião"
-      ],
-      "Audio": [
-        "Áudio"
       ],
       "Available Cameras": [
         "Câmeras disponíveis"
@@ -3666,6 +3622,9 @@
       ],
       "Delete recording?": [
         "Excluir gravação?"
+      ],
+      "Display": [
+        "Exibição"
       ],
       "Enter your password": [
         "Digite sua senha"
@@ -3734,9 +3693,6 @@
       "Meeting edited": [
         "Reunião editada"
       ],
-      "Meeting settings": [
-        "Configurações de reunião"
-      ],
       "Messaging Layer Security": [
         "Messaging Layer Security"
       ],
@@ -3800,9 +3756,6 @@
       "Secure meeting": [
         "Reunião segura"
       ],
-      "Security": [
-        "Segurança"
-      ],
       "Security code": [
         "Código de segurança"
       ],
@@ -3839,8 +3792,8 @@
       "Two-factor authentication": [
         "Autenticação de dois fatores"
       ],
-      "Video": [
-        "Vídeo"
+      "Video and audio": [
+        "Vídeo e áudio"
       ],
       "Virtual backgrounds": [
         "Planos de fundo virtuais"
