@@ -42444,6 +42444,8 @@ __metadata:
   resolution: "proton-preview-sandbox@workspace:applications/preview-sandbox"
   dependencies:
     "@proton/eslint-config-proton": "workspace:^"
+    "@proton/shared": "workspace:^"
+    "@proton/utils": "workspace:^"
     browserslist-to-esbuild: "npm:^2.1.1"
     cross-env: "npm:^10.1.0"
     docx-preview: "npm:^0.4.0"
