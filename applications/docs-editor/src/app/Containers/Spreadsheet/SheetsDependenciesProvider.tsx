@@ -1,4 +1,4 @@
-import type { FileMenuAction } from '@proton/docs-shared'
+import type { AppPlatform, FileMenuAction } from '@proton/docs-shared'
 import type { FeatureFlag } from '@proton/unleash/Flags'
 import type { LoggerInterface } from '@proton/utils/logs'
 import type { PropsWithChildren } from 'react'
@@ -20,6 +20,8 @@ export type SheetsDependencies = {
   // Dependencies that use the clientInvoker
   openLink: (url: string) => void
   handleFileMenuAction: (action: FileMenuAction) => Promise<void>
+  appPlatform: AppPlatform | null
+  showGenericInfoModal: (props: { title: string; translatedMessage: string }) => void
 }
 
 const SheetsDependenciesContext = createContext<SheetsDependencies | undefined>(undefined)

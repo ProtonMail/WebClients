@@ -362,7 +362,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
       isViewOnlyMode={isViewOnlyMode}
       storeAction={storeAction}
     >
-      <UI hidden={hidden} isRevisionMode={isRevisionMode} clientInvoker={clientInvoker} isPublicMode={isPublicMode} />
+      <UI hidden={hidden} isRevisionMode={isRevisionMode} isPublicMode={isPublicMode} />
     </ProtonSheetsUIStoreProvider>
   )
 })
@@ -370,11 +370,10 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
 type UIProps = {
   hidden: boolean
   isRevisionMode: boolean
-  clientInvoker: EditorRequiresClientMethods
   isPublicMode: boolean
 }
 
-function UI({ hidden, isRevisionMode, clientInvoker, isPublicMode }: UIProps) {
+function UI({ hidden, isRevisionMode, isPublicMode }: UIProps) {
   return (
     <>
       {hidden && (
@@ -388,11 +387,11 @@ function UI({ hidden, isRevisionMode, clientInvoker, isPublicMode }: UIProps) {
 
         <div className="flex min-h-0 min-w-0 grow">
           <div className="isolate z-10 flex h-full min-h-0 grow flex-col">
-            {!isRevisionMode && <Toolbar className="m-2 max-sm:m-0" clientInvoker={clientInvoker} />}
+            {!isRevisionMode && <Toolbar className="m-2 max-sm:m-0" />}
             <Grid />
             <BottomBar />
             <Dialogs />
-            <EditingDisabledDialog clientInvoker={clientInvoker} />
+            <EditingDisabledDialog />
           </div>
           <Sidebar />
         </div>
