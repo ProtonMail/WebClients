@@ -1,4 +1,5 @@
 import { PROTON_LOCAL_DOMAIN } from "@proton/shared/lib/localDev";
+import { app } from "electron";
 import Store from "electron-store";
 import { z } from "zod";
 import { mainLogger } from "../utils/log";
@@ -15,12 +16,26 @@ const store = new Store({
     configFileMode: 0o600,
 });
 
+const ALLOWED_HOSTNAME_PATTERNS: Record<string, RegExp> = {
+    account: /^account\.(?:[a-z0-9-]+\.)?proton\.(?:black|pink)$|^account\.proton\.(?:me|dev)$/,
+    mail: /^mail\.(?:[a-z0-9-]+\.)?proton\.(?:black|pink)$|^mail\.proton\.(?:me|dev)$/,
+    calendar: /^calendar\.(?:[a-z0-9-]+\.)?proton\.(?:black|pink)$|^calendar\.proton\.(?:me|dev)$/,
+};
+
 const urlValidators = (subdomain: string) => {
+    const hostnamePattern = ALLOWED_HOSTNAME_PATTERNS[subdomain];
+
     return z
         .string()
         .url()
-        .includes(subdomain)
-        .includes("proton")
+        .refine((value) => {
+            try {
+                const url = new URL(value);
+                return url.protocol === "https:" && hostnamePattern.test(url.hostname);
+            } catch {
+                return false;
+            }
+        }, "Override hostname is not an allowed Proton domain")
         .refine((value) => !value.endsWith("/"));
 };
 
@@ -55,7 +70,7 @@ const validateURL = (override?: unknown): null | URLConfig => {
 };
 
 export const getAppURL = (): URLConfig => {
-    if (process.env.BASE_LOCAL_URL) {
+    if (!app.isPackaged && process.env.BASE_LOCAL_URL) {
         return localUrls;
     }
 
