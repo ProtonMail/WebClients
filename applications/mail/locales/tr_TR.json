@@ -335,7 +335,7 @@
         "Adresi kopyala"
       ],
       "Copy addresses": [
-        "Kopya adresleri"
+        "Adresleri kopyala"
       ],
       "Copy alias “${ name }”": [
         "“${ name }” takma adını kopyala"
@@ -1584,7 +1584,7 @@
         "Silinecek işaretini kaldır"
       ],
       "Unordered list": [
-        "Sıralanmanış liste"
+        "Sıralanmamış liste"
       ],
       "Unsnooze": [
         "Ertelemeyi kaldır"
@@ -2262,7 +2262,7 @@
         "Aylık"
       ],
       "Two-year": [
-        "Iki yıllık"
+        "İki yıllık"
       ],
       "Yearly": [
         "Yıllık"
@@ -2492,7 +2492,7 @@
         "${ participantName }, bu etkinlik davetini kabul etmişti."
       ],
       "${ participantName } had accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        "${ participantName }, yapıtığınız daveti kabul etmiş ve bu yinelenen etkinliğin bir tanesi için yeni bir saat önerisinde bulunmuştu. Yanıt ve öneri güncel değil."
+        "${ participantName }, gönderdiğiniz daveti kabul etmiş ve bu yinelenen etkinliğin bir tanesi için yeni bir saat önerisinde bulunmuştu. Yanıt ve öneri güncel değil."
       ],
       "${ participantName } had accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
         "${ participantName }, davetinizi kabul etmiş ve bu etkinlik için yeni bir saat önerisinde bulunmuştu. Yanıt ve öneri güncel değil."
@@ -3115,7 +3115,7 @@
         "İçe aktarma özelleştirmesinden çıkılsın mı?"
       ],
       "Quit import?": [
-        "İçe aktarmadan çıkılsın mi?"
+        "İçe aktarmadan çıkılsın mı?"
       ]
     },
     "Contact field label": {
@@ -3927,7 +3927,7 @@
         "Tanzanya"
       ],
       "Tanzania, United Republic of": [
-        "Birleşik Tanzaya Cumhuriyeti"
+        "Birleşik Tanzanya Cumhuriyeti"
       ],
       "Thailand": [
         "Tayland"
@@ -4445,7 +4445,7 @@
         "Tarifenizde toplam ${ MAX_SYNC_PAID_USER } Gmail adresi destekleniyor"
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
-        "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Limited tarifesine geçin."
+        "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Unlimited tarifesine geçin."
       ]
     },
     "description": {
@@ -4744,7 +4744,7 @@
         "<${ email }> için ${ error.message }. Bu sorunu çözmek için başka bir anahtar ekleyebilir ya da bu kişinin şifrelemesini kapatabilirsiniz."
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
-        "${ errorMessage }. Ayrıca ${ statusPageLink }na da bakabilirsiniz"
+        "${ errorMessage }. ${ statusPageLink } üzerinden de kontrol edebilirsiniz."
       ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "Kullanıcı adınız: ${ user.Name }. ${ emailAddress } oluşturmak için lütfen Ayarlar > Kimlik ve adresler > Kısa etki alanı (pm.me) bölümüne gidin."
@@ -5461,7 +5461,7 @@
         "Ne yazık ki, ${ BRAND_NAME } iletinizin şifresini çözemiyor. Lütfen tüm anahtarlarınızın kullanıma alınmış olduğundan emin olun."
       ],
       "status page": [
-        "durum sayfası"
+        "Durum Sayfası"
       ],
       "Tab closed": [
         "Sekme kapatıldı"
@@ -5683,7 +5683,7 @@
         "Yazılabilecek en fazla karakter sayısına ulaştınız. Lütfen iletinizi kısaltın."
       ],
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
-        "Yakın zamanda yapılan bir parola sıfırlaması nedeniyle e-postalarınızın şifresi çözülemedi. Önceki parolanızı hatırlıyorsanız iletilerinize ulaşmak için ${ reActivateKeyLink }me işlemi yapabilirsiniz. ${ learnMoreLink }"
+        "Yakın zamanda yapılan bir parola sıfırlaması nedeniyle e-postalarınızın şifresi çözülemedi. Önceki parolanızı hatırlıyorsanız iletilerinize ulaşmak için ${ reActivateKeyLink } işlemi yapabilirsiniz. ${ learnMoreLink }"
       ],
       "Your import will not be processed.": [
         "İçe aktarma işleminiz yapılmayacak."
@@ -7060,7 +7060,7 @@
         "${ currentProgress } / ${ totalProgress }"
       ],
       "${ dateString } at ${ formattedTime }": [
-        "${ dateString } saat ${ formattedTime }"
+        "${ dateString } tarihinde ${ formattedTime } saatinde"
       ],
       "${ elementsCount } conversation will be labelled as:": [
         "${ elementsCount } yazışmaya şu etiket eklenecek:",
@@ -7116,8 +7116,8 @@
         "${ groupCounts } grup bulundu",
         "${ groupCounts } grup bulundu"
       ],
-      "${ IDEAL_BRAND_NAME } mark": [
-        "${ IDEAL_BRAND_NAME } markası"
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "${ IDEAL_WERO_BRAND_NAME } markası"
       ],
       "${ issues.length } issue during import:": [
         "İçe aktarma sırasında ${ issues.length } sorun çıktı:",
@@ -7153,6 +7153,9 @@
       "${ n } unread conversation": [
         "${ n } okunmamış yazışma",
         "${ n } okunmamış yazışma"
+      ],
+      "${ name } in ${ parentName }": [
+        "${ parentName } içinde ${ name }"
       ],
       "${ numberOfUTMTrackers } link cleaned": [
         "${ numberOfUTMTrackers } bağlantı temizlendi",
@@ -8489,7 +8492,7 @@
         "Ödemeler TLS şifrelemesi ve İsviçre gizlilik yasaları ile korunmaktadır."
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
-        "PGP/ınline yalnızca düz metin biçimi ile uyumludur."
+        "PGP/Inline yalnızca düz metin biçimi ile uyumludur."
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME geçerli oluşturucu görünümünde iletiyi otomatik olarak gönderir."
@@ -9371,7 +9374,7 @@
         "Uyarı"
       ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
-        "Özür dileriz. Bu durum bizim hatamızdan kaynaklanıyor olabilir. Bu e-postanın göründüğü gibi olduğunu doğrulayabilir misiniz misiniz?"
+        "Özür dileriz. Bu durum bizim hatamızdan kaynaklanıyor olabilir. Bu e-postanın göründüğü gibi olduğunu doğrulayabilir misiniz?"
       ],
       "We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.": [
         "Şu reklam verenlerin ve kuruluşların bu e-postayı ne zaman açtığınızı, hangi aygıtı kullandığınızı ve nerede bulunduğunuzu görmesini engelledik."
@@ -9400,8 +9403,8 @@
       "We use 3-D Secure to protect your payments": [
         "Ödemelerinizi korumak için 3-D Secure kullanıyoruz"
       ],
-      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "Bu işlemi tamamlamanız için yeni bir tarayıcı sekmesi açarak sizi ${ IDEAL_BRAND_NAME } sitesine yönlendireceğiz. İşlemi tamamlamak için, varsa açılır pencere engelleyicilerinizi kapatın."
+      "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Bu işlemi tamamlamanız için yeni bir tarayıcı sekmesi açarak sizi ${ IDEAL_WERO_BRAND_NAME } sitesine yönlendireceğiz. İşlemi tamamlamak için, varsa açılır pencere engelleyicilerinizi kapatın."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Bu işlemi tamamlamanız için yeni bir tarayıcı sekmesi açarak sizi PayPal sitesine yönlendireceğiz. İşlemi tamamlamak için, varsa açılır pencere engelleyicilerinizi kapatın."
@@ -10091,15 +10094,15 @@
         "${ count } okunmamış ileti",
         "${ count } okunmamış ileti"
       ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } karakter"
+      ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } yazma yardımcısı"
       ],
       "${ n } month": [
         "${ n } ay",
         "${ n } ay"
-      ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } karakter"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın.)"
@@ -10825,7 +10828,7 @@
         "Zoom görüntülü görüşmesini kaldır"
       ],
       "Return on": [
-        "Geri dön"
+        "Şu zamanda dön"
       ],
       "Reveal password": [
         "Parolayı görüntüle"
@@ -13436,8 +13439,8 @@
       "More plans are available in other currencies": [
         "Farklı para birimlerinde başka tarifeler de var"
       ],
-      "Pay with ${ IDEAL_BRAND_NAME }": [
-        "${ IDEAL_BRAND_NAME } ile öde"
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "${ IDEAL_WERO_BRAND_NAME } ile öde"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Deneme süresi sona erdikten sonra aboneliğin etkinleştirilmesi için bir ödeme yöntemi gereklidir."
@@ -13520,8 +13523,8 @@
       "You will soon be redirected to verify your payment.": [
         "Birazdan ödemenizi doğrulamak için yönlendirileceksiniz."
       ],
-      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
-        "${ IDEAL_BRAND_NAME } yalnızca avro ödemelerini desteklediği için para biriminiz avroya (€) dönüştürüldü."
+      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
+        "${ IDEAL_WERO_BRAND_NAME } yalnızca avro ödemelerini desteklediği için para biriminiz avroya (€) dönüştürüldü."
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "SEPA banka havaleleri yalnızca avro ödemelerini desteklediği için para biriminiz avroya (€) dönüştürüldü."
@@ -13534,8 +13537,8 @@
       ]
     },
     "Payments.Error": {
-      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
-        "${ IDEAL_BRAND_NAME } hazırlanamadı. Lütfen bir süre sonra yeniden deneyin."
+      "Failed to initialize ${ IDEAL_WERO_BRAND_NAME }. Please try again later.": [
+        "${ IDEAL_WERO_BRAND_NAME } hazırlanamadı. Lütfen bir süre sonra yeniden deneyin."
       ],
       "Invalid card number": [
         "Kart numarası geçersiz"
@@ -13565,8 +13568,8 @@
       ]
     },
     "Payments.iDEAL": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Bu ödemeyi onayladığınızda, bankanıza ${ BRAND_NAME } ve ödeme hizmeti sağlayıcımız Stripe hizmetine hesabınızdan ödeme alma yetkisi verirsiniz. Bankanızla yaptığınız anlaşmanın koşullarına bağlı olarak, ödemenin yapıldığı tarihten başlayan 8 hafta içinde iade isteğinde bulunabilirsiniz."
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Kabul ederek, ödeme hizmeti sağlayıcımız olan ${ BRAND_NAME } ve Stripe kuruluşlarına, aboneliğiniz için gelecekteki ödemeleri bu banka hesabından SEPA otomatik ödemesi ile alma ve bankanıza bu ödemeleri borçlandırma yetkisi vermiş olursunuz. İlk ödemeniz şimdi ${ IDEAL_WERO_BRAND_NAME } tarafından yapıldı. Siz iptal edene kadar tarifeniz otomatik olarak yenilenecek. Her ödemeden önce sizi bilgilendireceğiz. Otomatik ödemeler için, bankanızla olan anlaşmanızın şartlarına göre, borç tarihinden itibaren 8 hafta içinde bankanızdan geri ödeme isteğinde bulunabilirsiniz. Bu durum, şu anda yaptığınız ${ IDEAL_WERO_BRAND_NAME } ödemesi için geçerli değildir."
       ]
     },
     "Payments.info": {
@@ -14313,17 +14316,6 @@
       ],
       "User Admin": [
         "Kullanıcı yöneticisi"
-      ]
-    },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Güvenlik ilkelerini, verileri tutma kurallarını, VPN altyapısını yapılandırın ve denetim günlüklerini yönetin."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Tüm kullanıcıları, grupları, güvenlik ayarlarını, faturaları ve sistem yapılandırmalarını yönetin."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Tüm üyelerin kullanıcılarını, gruplarını ve depolama alanlarını yönetin, rollerini ve lisanslarını atayın."
       ]
     },
     "Safety review": {
