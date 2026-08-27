@@ -259,6 +259,14 @@ export const setNativeIsModelSectionEnabled = (enabled: boolean): void => {
     (window as any).nativeComposerApiInstance.toggleModelSelectionEnabled(enabled);
 };
 
+export const setNativeApertusModelEnabled = (enabled: boolean): void => {
+    if (!isNativeComposerBridgeAvailable()) {
+        console.warn('Native Composer Bridge not available');
+        return;
+    }
+    (window as any).nativeComposerApiInstance.toggleApertusModelEnabled(enabled);
+};
+
 export const setNativeIsFreeUser = (isFreeUser: boolean): void => {
     if (!isNativeComposerBridgeAvailable()) {
         console.warn('Native Composer Bridge not available');

@@ -10,7 +10,7 @@ import type {
     ToolName,
 } from '../types-api';
 import { when } from '../util/collections';
-import { toChatCompletionsBody } from './chat-completions';
+import { type LumoApiModelTier, toChatCompletionsBody } from './chat-completions';
 import {
     type ClientToolExecutor,
     type ClientToolResult,
@@ -157,7 +157,8 @@ export class LumoApiClient {
                     signal,
                     chunkCallback,
                     encryption,
-                    enableU2LEncryption
+                    enableU2LEncryption,
+                    modelTier === 'apertus-15' ? 'apertus-15' : 'lumo-lite'
                 ).catch((error) => {
                     if (error?.name === 'AbortError') {
                         return;
@@ -177,7 +178,8 @@ export class LumoApiClient {
                     signal,
                     chunkCallback,
                     encryption,
-                    enableU2LEncryption
+                    enableU2LEncryption,
+                    modelTier === 'apertus-15' ? 'apertus-15' : 'lumo-lite'
                 ).catch((error) => {
                     if (error?.name === 'AbortError') {
                         return;
@@ -298,7 +300,7 @@ export class LumoApiClient {
         options: {
             enableSmoothing?: boolean;
             target?: LumoCompletionTarget;
-            modelTier?: 'auto' | 'lumo-lite' | 'lumo-max';
+            modelTier?: LumoApiModelTier;
             responseFormat?: ResponseFormat;
             clientTools?: ChatCompletionsFunctionTool[];
             serverTools?: ToolName[];
@@ -377,7 +379,7 @@ export class LumoApiClient {
         request: LumoApiGenerationRequest,
         options: {
             enableReasoning: boolean;
-            modelTier?: 'auto' | 'lumo-lite' | 'lumo-max';
+            modelTier?: LumoApiModelTier;
             target?: LumoCompletionTarget;
             responseFormat?: ResponseFormat;
             clientTools?: ChatCompletionsFunctionTool[];
@@ -524,7 +526,8 @@ export class LumoApiClient {
         signal: AbortSignal | undefined,
         chunkCallback: ChunkCallback | undefined,
         encryption: RequestEncryptionParams | null,
-        enableU2LEncryption: boolean
+        enableU2LEncryption: boolean,
+        modelTier: AssistantCallOptions['modelTier'] = 'auto'
     ): Promise<void> {
         const request = await this.prepareGenerationRequest(turns, encryption, {
             enableExternalTools: false,
@@ -545,6 +548,7 @@ export class LumoApiClient {
         await this.runSseReceiveLoop(api, request, endpoint, signal, encryption, context, chunkCallback, undefined, {
             enableSmoothing: false,
             target,
+            modelTier,
         });
     }
 
