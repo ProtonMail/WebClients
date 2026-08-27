@@ -1,7 +1,7 @@
 import { type ComponentPropsWithoutRef, Suspense, lazy } from 'react';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import { useTrialInfo } from '@proton/payments/ui/hooks/useTrialInfo';
+import { useTrialInfo } from '@proton/payments-ui/ui/hooks/useTrialInfo';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { NEWSLETTER_SUBSCRIPTIONS_BITS } from '@proton/shared/lib/helpers/newsletter';

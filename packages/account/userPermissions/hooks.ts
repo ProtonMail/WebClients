@@ -1,4 +1,4 @@
-import { useEntitlementChecks } from '@proton/payments/core/entitlements/hooks';
+import { useEntitlementChecks } from '@proton/payments-ui/entitlements/hooks';
 import { createHooks } from '@proton/redux-utilities/hooks';
 
 import { selectUserPermissions, userPermissionsThunk } from './index';

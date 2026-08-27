@@ -31,6 +31,9 @@ import { IcEyeSlash } from '@proton/icons/icons/IcEyeSlash';
 import { IcServers } from '@proton/icons/icons/IcServers';
 import metrics, { observeApiError } from '@proton/metrics';
 import type { WebCoreVpnSingleSignupStep1InteractionTotal } from '@proton/metrics/types/web_core_vpn_single_signup_step1_interaction_total_v1.schema';
+import { useBillingAddress } from '@proton/payments-ui/ui/billing-address/hooks/useBillingAddress';
+import { PayButton } from '@proton/payments-ui/ui/components/PayButton';
+import { getCheckoutRenewNoticeTextFromCheckResult } from '@proton/payments-ui/ui/components/RenewalNotice';
 import type { FullBillingAddressFlat } from '@proton/payments/core/billing-address/billing-address';
 import { getBillingAddressFromPaymentStatus } from '@proton/payments/core/billing-address/billing-address-from-payments-status';
 import { type PaymentsCheckoutUI, getCheckoutUi, getOptimisticCheckResult } from '@proton/payments/core/checkout';
@@ -43,7 +46,7 @@ import type {
     PlanIDs,
     TokenPayment,
 } from '@proton/payments/core/interface';
-import { isCurrencyRestrictedMethod } from '@proton/payments/core/payment-methods/useCurrencyOverride';
+import { isCurrencyRestrictedMethod } from '@proton/payments/core/payment-methods/currencyOverride';
 import type { PaymentProcessorHook } from '@proton/payments/core/payment-processors/interface';
 import { getPlanFromPlanIDs, getPlanNameFromIDs } from '@proton/payments/core/plan/helpers';
 import type { Plan, StrictPlan } from '@proton/payments/core/plan/interface';
@@ -60,9 +63,6 @@ import type {
 } from '@proton/payments/telemetry/shared-checkout-telemetry';
 import { reportVpn2024SignupAddPass } from '@proton/payments/telemetry/signup-experiment-telemetry';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
-import { useBillingAddress } from '@proton/payments/ui/billing-address/hooks/useBillingAddress';
-import { PayButton } from '@proton/payments/ui/components/PayButton';
-import { getCheckoutRenewNoticeTextFromCheckResult } from '@proton/payments/ui/components/RenewalNotice';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import {
     APPS,

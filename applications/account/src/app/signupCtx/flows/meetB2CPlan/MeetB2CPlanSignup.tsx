@@ -4,10 +4,10 @@ import { useLocation } from 'react-router-dom';
 import { usePrefetchGenerateRecoveryKit } from '@proton/account/recovery/recoveryKit/usePrefetchGenerateRecoveryKit';
 import { LoaderPage } from '@proton/components';
 import { useNotifyErrorHandler } from '@proton/components/hooks/useErrorHandler';
+import { usePaymentOptimistic } from '@proton/payments-ui/ui/context/PaymentContextOptimistic';
 import { CYCLE, DEFAULT_CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { PlanIDs } from '@proton/payments/core/interface';
 import { hasFreePlanIDs } from '@proton/payments/core/planIDs';
-import { usePaymentOptimistic } from '@proton/payments/ui/context/PaymentContextOptimistic';
 import { APPS } from '@proton/shared/lib/constants';
 
 import { SignupType } from '../../../signup/interfaces';

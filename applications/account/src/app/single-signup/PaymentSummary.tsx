@@ -8,11 +8,11 @@ import Price from '@proton/components/components/price/Price';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import { getTotalBillingText } from '@proton/components/containers/payments/subscription/helpers';
+import { useCouponConfig } from '@proton/payments-ui/ui/coupon-config/useCouponConfig';
+import { createCheckoutView } from '@proton/payments-ui/ui/headless-checkout/checkout-view';
 import { TRIAL_DURATION_DAYS } from '@proton/payments/core/constants';
 import type { Plan } from '@proton/payments/core/plan/interface';
 import { SubscriptionMode } from '@proton/payments/core/subscription/constants';
-import { useCouponConfig } from '@proton/payments/ui/coupon-config/useCouponConfig';
-import { createCheckoutView } from '@proton/payments/ui/headless-checkout/checkout-view';
 import { APPS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 

@@ -5,13 +5,13 @@ import { useUser } from '@proton/account/user/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { useLoading } from '@proton/hooks';
+import { ChargebeeIdealButton } from '@proton/payments-ui/ui/components/ChargebeeIdealButton';
+import { ChargebeePaypalButton } from '@proton/payments-ui/ui/components/ChargebeePaypalButton';
 import { checkInvoice } from '@proton/payments/core/api/api';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { Currency, Invoice } from '@proton/payments/core/interface';
 import type { PaymentProcessorHook } from '@proton/payments/core/payment-processors/interface';
 import { tracePaymentError } from '@proton/payments/sentry/capture';
-import { ChargebeeIdealButton } from '@proton/payments/ui/components/ChargebeeIdealButton';
-import { ChargebeePaypalButton } from '@proton/payments/ui/components/ChargebeePaypalButton';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
 import Field from '../../components/container/Field';

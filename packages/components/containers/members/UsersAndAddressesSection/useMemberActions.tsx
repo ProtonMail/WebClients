@@ -24,8 +24,8 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserPermissions } from '@proton/account/userPermissions/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
+import { useEntitlementChecks } from '@proton/payments-ui/entitlements/hooks';
 import { EntitlementName } from '@proton/payments/core/entitlements/entitlement-names';
-import { useEntitlementChecks } from '@proton/payments/core/entitlements/hooks';
 import {
     getHasDriveB2BPlan,
     getHasPassB2BPlan,

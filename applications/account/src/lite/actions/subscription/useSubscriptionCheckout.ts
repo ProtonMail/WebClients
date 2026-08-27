@@ -18,6 +18,8 @@ import type {
     OperationsSubscriptionData,
 } from '@proton/components/payments/react-extensions/usePaymentFacade';
 import useLoading from '@proton/hooks/useLoading';
+import { usePayments } from '@proton/payments-ui/ui/context/PaymentContext';
+import { usePaymentPollers } from '@proton/payments-ui/ui/hooks/usePaymentPollers';
 import { ProrationMode } from '@proton/payments/core/api/api';
 import { FREE_SUBSCRIPTION, PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { PaymentMethodType } from '@proton/payments/core/interface';
@@ -25,8 +27,6 @@ import type { PaymentProcessorType } from '@proton/payments/core/payment-process
 import { isLifetimePlanSelected } from '@proton/payments/core/plan/helpers';
 import { hasPlanIDs } from '@proton/payments/core/planIDs';
 import { SubscriptionMode } from '@proton/payments/core/subscription/constants';
-import { usePayments } from '@proton/payments/ui/context/PaymentContext';
-import { usePaymentPollers } from '@proton/payments/ui/hooks/usePaymentPollers';
 import { getShouldCalendarPreventSubscripitionChange } from '@proton/shared/lib/calendar/plans';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import noop from '@proton/utils/noop';

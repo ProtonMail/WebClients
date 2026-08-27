@@ -3,9 +3,9 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { CountriesDropdown } from '@proton/payments/ui/billing-address/components/CountriesDropdown';
-import { ChargebeeIframe } from '@proton/payments/ui/components/ChargebeeIframe';
-import type { ChargebeeWrapperProps } from '@proton/payments/ui/components/ChargebeeWrapper';
+import { CountriesDropdown } from '@proton/payments-ui/ui/billing-address/components/CountriesDropdown';
+import { ChargebeeIframe } from '@proton/payments-ui/ui/components/ChargebeeIframe';
+import type { ChargebeeWrapperProps } from '@proton/payments-ui/ui/components/ChargebeeWrapper';
 
 import Label from '../../components/label/Label';
 import InputFieldTwo from '../../components/v2/field/InputField';
