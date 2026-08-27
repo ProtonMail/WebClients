@@ -10,6 +10,9 @@ import { ProtonPlanCustomizer, getHasPlanCustomizer } from '@proton/components/c
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { BilledUserInlineMessage } from '@proton/components/payments/client-extensions/billed-user';
 import type { WithLoading } from '@proton/hooks/useLoading';
+import { useBillingAddress } from '@proton/payments-ui/ui/billing-address/hooks/useBillingAddress';
+import { PayButton } from '@proton/payments-ui/ui/components/PayButton';
+import type { CouponConfigRendered } from '@proton/payments-ui/ui/coupon-config/useCouponConfig';
 import type { FullBillingAddressFlat } from '@proton/payments/core/billing-address/billing-address';
 import { ADDON_PREFIXES, PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type {
@@ -19,7 +22,7 @@ import type {
     PaymentsApi,
     TokenPayment,
 } from '@proton/payments/core/interface';
-import { isCurrencyRestrictedMethod } from '@proton/payments/core/payment-methods/useCurrencyOverride';
+import { isCurrencyRestrictedMethod } from '@proton/payments/core/payment-methods/currencyOverride';
 import type { PaymentProcessorHook } from '@proton/payments/core/payment-processors/interface';
 import { getIsB2BAudienceFromPlan } from '@proton/payments/core/plan/helpers';
 import type { Plan } from '@proton/payments/core/plan/interface';
@@ -28,9 +31,6 @@ import { isV5PaymentToken } from '@proton/payments/core/type-guards';
 import { v5PaymentTokenToLegacyPaymentToken } from '@proton/payments/core/utils';
 import { tracePaymentError } from '@proton/payments/sentry/capture';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
-import { useBillingAddress } from '@proton/payments/ui/billing-address/hooks/useBillingAddress';
-import { PayButton } from '@proton/payments/ui/components/PayButton';
-import type { CouponConfigRendered } from '@proton/payments/ui/coupon-config/useCouponConfig';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';

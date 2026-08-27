@@ -3,8 +3,8 @@ import { c } from 'ttag';
 import { IcImage } from '@proton/icons/icons/IcImage';
 import { IcPenSquare } from '@proton/icons/icons/IcPenSquare';
 import { IcStorage } from '@proton/icons/icons/IcStorage';
+import { usePaymentOptimistic } from '@proton/payments-ui/ui/context/PaymentContextOptimistic';
 import { PLANS } from '@proton/payments/core/constants';
-import { usePaymentOptimistic } from '@proton/payments/ui/context/PaymentContextOptimistic';
 
 import { getMaxSpaceMap } from '../../helpers/getMaxSpaceMap';
 import { getSecureStorageString } from '../../helpers/i18n';

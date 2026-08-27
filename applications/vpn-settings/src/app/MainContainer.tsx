@@ -86,8 +86,8 @@ import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { useIsGroupOwner } from '@proton/components/hooks/useIsGroupOwner';
 import useRecoveryNotification from '@proton/components/hooks/useRecoveryNotification';
 import useShowVPNDashboard from '@proton/components/hooks/useShowVPNDashboard';
-import useToggle from '@proton/hooks/useToggle'
-import { useEntitlementChecks } from '@proton/payments/core/entitlements/hooks';
+import useToggle from '@proton/hooks/useToggle';
+import { useEntitlementChecks } from '@proton/payments-ui/entitlements/hooks';
 import { APPS, SECURITY_CHECKUP_PATHS, VPN_TV_PATHS } from '@proton/shared/lib/constants';
 import { getIsAccountRecoveryAvailable } from '@proton/shared/lib/helpers/recovery';
 import { localeCode } from '@proton/shared/lib/i18n';

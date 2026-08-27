@@ -2,6 +2,8 @@ import type { ComponentPropsWithoutRef, ReactNode } from 'react';
 
 import { c } from 'ttag';
 
+import type { CouponConfig } from '@proton/payments-ui/ui/coupon-config/interface';
+import type { CouponConfigRendered } from '@proton/payments-ui/ui/coupon-config/useCouponConfig';
 import { getAddonConfigByName } from '@proton/payments/core/addon/addons';
 import type { AddonFlags, CustomizerCopyContext } from '@proton/payments/core/addon/interfaces';
 import { type ADDON_NAMES, ADDON_PREFIXES, FREE_SUBSCRIPTION } from '@proton/payments/core/constants';
@@ -12,8 +14,6 @@ import { setQuantity } from '@proton/payments/core/planIDs';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
-import type { CouponConfig } from '@proton/payments/ui/coupon-config/interface';
-import type { CouponConfigRendered } from '@proton/payments/ui/coupon-config/useCouponConfig';
 import type { Audience } from '@proton/shared/lib/interfaces';
 import { MailFeatureFlag } from '@proton/unleash/Flags';
 import { useFlag } from '@proton/unleash/useFlag';

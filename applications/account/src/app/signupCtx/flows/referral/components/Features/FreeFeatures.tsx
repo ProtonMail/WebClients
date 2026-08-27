@@ -1,7 +1,7 @@
 import { c, msgid } from 'ttag';
 
 import { FREE_PASS_ALIASES } from '@proton/components/containers/payments/features/pass';
-import { usePaymentOptimistic } from '@proton/payments/ui/context/PaymentContextOptimistic';
+import { usePaymentOptimistic } from '@proton/payments-ui/ui/context/PaymentContextOptimistic';
 import { MAX_CALENDARS_FREE } from '@proton/shared/lib/calendar/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { VPN_SERVERS } from '@proton/vpn/constants/vpnServers';

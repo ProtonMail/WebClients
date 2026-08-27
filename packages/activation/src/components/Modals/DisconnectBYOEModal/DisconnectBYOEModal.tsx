@@ -6,7 +6,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { type ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 import { useLoading } from '@proton/hooks';
-import { useEntitlementChecks } from '@proton/payments/core/entitlements/hooks';
+import { useEntitlementChecks } from '@proton/payments-ui/entitlements/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getIsBYOEOnlyAccount } from '@proton/shared/lib/helpers/address';

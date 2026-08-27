@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react';
 import { useApi } from '@proton/app-context/useApi';
 import { useConfig } from '@proton/app-context/useConfig';
 import useLoading from '@proton/hooks/useLoading';
+import { useCbIframe } from '@proton/payments-ui/ui/components/ChargebeeIframe';
 import type { BillingAddress } from '@proton/payments/core/billing-address/billing-address';
 import { type ADDON_NAMES, PAYMENT_METHOD_TYPES, type PLANS } from '@proton/payments/core/constants';
 import type {
@@ -25,7 +26,6 @@ import type { Subscription, SubscriptionEstimation } from '@proton/payments/core
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
 import type { PaymentStage } from '@proton/payments/telemetry/shared-checkout-telemetry';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
-import { useCbIframe } from '@proton/payments/ui/components/ChargebeeIframe';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { Api, User } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash/useFlag';

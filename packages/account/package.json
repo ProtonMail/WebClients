@@ -65,6 +65,7 @@
         "@proton/components": "*",
         "@proton/mail": "*",
         "@proton/payments": "*",
+        "@proton/payments-ui": "*",
         "@proton/redux-shared-store": "*"
     },
     "peerDependenciesMeta": {
@@ -78,6 +79,9 @@
             "optional": true
         },
         "@proton/payments": {
+            "optional": true
+        },
+        "@proton/payments-ui": {
             "optional": true
         },
         "@proton/redux-shared-store": {

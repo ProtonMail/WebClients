@@ -28,7 +28,7 @@ export const MEET_ADDON_CONFIG: AddonConfig = {
         rules: [planSupportsAddon(ADDON_PREFIXES.MEET), passesCouponGate(ADDON_PREFIXES.MEET)],
     },
     transferStrategy: 'meet',
-    tooltipLabel: (price) => c('meet_2025: Addon').jt`${price} per seat`,
+    tooltipLabel: (price) => c('meet_2025: Addon').t`${price} per seat`,
     syncWithMembersAddon: 'always',
     title: (isB2C: boolean) =>
         isB2C ? c('meet_2025: Addon').t`${MEET_APP_NAME} license` : c('meet_2025: Addon').t`${MEET_APP_NAME} seats`,

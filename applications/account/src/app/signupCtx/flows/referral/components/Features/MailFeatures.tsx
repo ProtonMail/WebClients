@@ -4,8 +4,8 @@ import { FREE_PASS_ALIASES } from '@proton/components/containers/payments/featur
 import { IcAlias } from '@proton/icons/icons/IcAlias';
 import { IcAt } from '@proton/icons/icons/IcAt';
 import { IcEnvelope } from '@proton/icons/icons/IcEnvelope';
+import { usePaymentOptimistic } from '@proton/payments-ui/ui/context/PaymentContextOptimistic';
 import { PLANS } from '@proton/payments/core/constants';
-import { usePaymentOptimistic } from '@proton/payments/ui/context/PaymentContextOptimistic';
 
 import FeatureItem from '../FeatureItem/FeatureItem';
 

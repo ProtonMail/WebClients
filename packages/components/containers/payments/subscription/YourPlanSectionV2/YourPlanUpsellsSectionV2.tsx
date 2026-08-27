@@ -7,6 +7,11 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
 import useLoading from '@proton/hooks/useLoading';
+import {
+    PaymentsContextProvider,
+    isPaymentsPreloaded,
+    usePayments,
+} from '@proton/payments-ui/ui/context/PaymentContext';
 import { CYCLE, DEFAULT_CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { FreeSubscription } from '@proton/payments/core/interface';
 import type { FreePlanDefault } from '@proton/payments/core/plan/interface';
@@ -34,7 +39,6 @@ import {
 import type { FullPlansMap, Subscription } from '@proton/payments/core/subscription/interface';
 import { getTrialInfoForSingleSubscription } from '@proton/payments/core/trials';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
-import { PaymentsContextProvider, isPaymentsPreloaded, usePayments } from '@proton/payments/ui/context/PaymentContext';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import type { UserModel } from '@proton/shared/lib/interfaces';

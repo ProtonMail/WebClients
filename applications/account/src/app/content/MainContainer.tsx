@@ -64,7 +64,7 @@ import { useIsGroupOwner } from '@proton/components/hooks/useIsGroupOwner';
 import useShowVPNDashboard from '@proton/components/hooks/useShowVPNDashboard';
 import useToggle from '@proton/hooks/useToggle';
 import { useCategoriesData } from '@proton/mail/features/categoriesView/useCategoriesData';
-import { useEntitlementChecks } from '@proton/payments/core/entitlements/hooks';
+import { useEntitlementChecks } from '@proton/payments-ui/entitlements/hooks';
 import { getHasPassB2BPlan, hasAIAssistant, hasAllProductsB2CPlan } from '@proton/payments/core/subscription/helpers';
 import { getAvailableApps } from '@proton/shared/lib/apps/apps';
 import { getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';

@@ -38,7 +38,7 @@ export const LUMO_ADDON_CONFIG: AddonConfig = {
         ],
     },
     transferStrategy: 'lumo',
-    tooltipLabel: (price) => c('Addon').jt`${price} per seat`,
+    tooltipLabel: (price) => c('Addon').t`${price} per seat`,
     syncWithMembersAddon: 'when-equal',
     title: (isB2C: boolean) =>
         isB2C ? c('Addon').t`${LUMO_APP_NAME} AI license` : c('Addon').t`${LUMO_APP_NAME} seats`,

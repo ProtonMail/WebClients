@@ -1,5 +1,5 @@
+import type { CouponConfigRendered } from '@proton/payments-ui/ui/coupon-config/useCouponConfig';
 import type { PaymentsCheckoutUI } from '@proton/payments/core/checkout';
-import type { CouponConfigRendered } from '@proton/payments/ui/coupon-config/useCouponConfig';
 
 export function checkoutGetNetTotalAmount(
     checkout: PaymentsCheckoutUI,

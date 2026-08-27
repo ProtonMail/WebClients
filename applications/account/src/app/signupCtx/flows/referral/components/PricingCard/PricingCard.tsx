@@ -10,13 +10,13 @@ import { AppsLogos, CycleSelector, SkeletonLoader } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { getNormalizedPlanTitleToPlus } from '@proton/components/containers/payments/subscription/plusToPlusHelper';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import { CYCLE, PLANS, PLAN_NAMES, TRIAL_DURATION_DAYS } from '@proton/payments/core/constants';
 import {
     getCheckoutRenewNoticeTextFromCheckResult,
     getTrialRenewalAmountDueNoticeText,
     getTrialRenewalNoticeTextWithTermsAndConditions,
-} from '@proton/payments/ui/components/RenewalNotice';
-import { usePaymentOptimistic } from '@proton/payments/ui/context/PaymentContextOptimistic';
+} from '@proton/payments-ui/ui/components/RenewalNotice';
+import { usePaymentOptimistic } from '@proton/payments-ui/ui/context/PaymentContextOptimistic';
+import { CYCLE, PLANS, PLAN_NAMES, TRIAL_DURATION_DAYS } from '@proton/payments/core/constants';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';

@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { FREE_PASS_ALIASES } from '@proton/components/containers/payments/features/pass';
 import { PlanIcon } from '@proton/components/containers/payments/subscription/YourPlanSectionV2/PlanIcon';
-import { usePaymentOptimistic } from '@proton/payments/ui/context/PaymentContextOptimistic';
+import { usePaymentOptimistic } from '@proton/payments-ui/ui/context/PaymentContextOptimistic';
 import {
     APPS,
     CALENDAR_SHORT_APP_NAME,
