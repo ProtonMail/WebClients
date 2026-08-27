@@ -13,6 +13,8 @@
         "test:ci": "echo No tests yet"
     },
     "dependencies": {
+        "@proton/shared": "workspace:^",
+        "@proton/utils": "workspace:^",
         "docx-preview": "^0.4.0"
     },
     "devDependencies": {
