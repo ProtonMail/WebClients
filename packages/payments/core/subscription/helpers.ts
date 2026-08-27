@@ -42,6 +42,7 @@ import type {
 } from './interface';
 
 // TODO: Remove these compatibility re-exports after migrating consumers to the focused helper modules.
+export type { MaybeFreeSubscription } from '../subscription/interface';
 export {
     getSubscriptionsArray,
     hasLumoMobileSubscription,
@@ -60,8 +61,8 @@ export {
     getHasVpnB2BPlan,
     getHasVpnOnlyB2BPlan,
 } from './helpers/plan-b2b';
-export { getAddons, getPlan, getPlanName, getPlanTitle } from './helpers/plan-info';
 export { getPlanIDs } from './helpers/plan-ids';
+export { getAddons, getPlan, getPlanName, getPlanTitle } from './helpers/plan-info';
 export * from './helpers/plan-matching';
 export {
     hasCancellablePlan,
@@ -73,7 +74,6 @@ export {
     isTrialRenewing,
     willTrialExpireInLessThan1Week,
 } from './helpers/trial';
-export type { MaybeFreeSubscription } from '../subscription/interface';
 
 export function getSubscriptionPlanTitle(
     user: UserModel,
@@ -480,16 +480,6 @@ export function getIsVariableCycleOffer(subscription: Subscription | FreeSubscri
     const upcoming = subscription.UpcomingSubscription;
 
     return !!upcoming && current.Cycle !== upcoming.Cycle && isUpcomingSubscriptionUnpaid(subscription);
-}
-
-export function hasIntentionalScheduledModification(
-    subscription: Subscription | FreeSubscription | null | undefined
-): boolean {
-    if (!subscription || isFreeSubscription(subscription)) {
-        return false;
-    }
-
-    return !!subscription.UpcomingSubscription;
 }
 
 type SubscriptionCheckForbiddenEstimationParameters = {
