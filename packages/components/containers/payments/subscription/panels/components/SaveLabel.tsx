@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
 import { usePayments } from '@proton/payments-ui/ui/context/PaymentContext';
-import { getPlanToCheck } from '@proton/payments-ui/ui/context/helpers';
 import type { CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { Currency } from '@proton/payments/core/interface';
+import { getPlanToCheck } from '@proton/payments/core/subscription/plan-to-check';
 
 interface SaveLabelProps {
     plan: PLANS | undefined;

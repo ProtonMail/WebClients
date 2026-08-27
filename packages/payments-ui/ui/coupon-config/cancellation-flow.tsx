@@ -1,8 +1,7 @@
-import { COUPON_CODES } from '@proton/payments/core/constants';
+import { cancellationFlowMetadata } from '@proton/payments/core/coupon-config/configs/cancellation-flow';
 
 import type { CouponConfig } from './interface';
 
 export const cancellationFlow: CouponConfig = {
-    coupons: [COUPON_CODES.RENEWANDSAVE1M26, COUPON_CODES.RENEWANDSAVE12M26],
-    hidden: true,
+    ...cancellationFlowMetadata,
 };

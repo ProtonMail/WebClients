@@ -12,9 +12,9 @@ import { BilledUserInlineMessage } from '@proton/components/payments/client-exte
 import type { WithLoading } from '@proton/hooks/useLoading';
 import { useBillingAddress } from '@proton/payments-ui/ui/billing-address/hooks/useBillingAddress';
 import { PayButton } from '@proton/payments-ui/ui/components/PayButton';
-import type { CouponConfigRendered } from '@proton/payments-ui/ui/coupon-config/useCouponConfig';
 import type { FullBillingAddressFlat } from '@proton/payments/core/billing-address/billing-address';
 import { ADDON_PREFIXES, PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
+import type { CouponConfigMetadata } from '@proton/payments/core/coupon-config/interface';
 import type {
     AvailablePaymentMethod,
     ExtendedTokenPayment,
@@ -78,7 +78,7 @@ interface Props {
     onVatNumberChange: (vatNumber: string) => void;
     telemetryContext: PaymentTelemetryContext;
     onMethodChanged: (method: AvailablePaymentMethod) => void;
-    couponConfig: CouponConfigRendered | undefined;
+    couponConfig: CouponConfigMetadata | undefined;
 }
 
 const AccountStepPayment = ({

@@ -3,7 +3,8 @@ import { c } from 'ttag';
 import Price from '@proton/components/components/price/Price';
 import { getShortBillingText } from '@proton/components/containers/payments/subscription/helpers/getTotalBillingText';
 import { getCheckoutUi } from '@proton/payments/core/checkout';
-import { ADDON_PREFIXES, CYCLE, PLANS } from '@proton/payments/core/constants';
+import { ADDON_PREFIXES } from '@proton/payments/core/constants';
+import { vpn15mMetadata } from '@proton/payments/core/coupon-config/configs/vpn15m';
 import { hasAddonFromPlanIDs } from '@proton/payments/core/plan/addons';
 import { getPlanNameFromIDs } from '@proton/payments/core/plan/helpers';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
@@ -11,15 +12,7 @@ import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import type { CouponConfig } from './interface';
 
 export const vpn15mConfig: CouponConfig = {
-    coupons: [],
-    specialCases: [
-        {
-            planName: PLANS.VPN2024,
-            cycle: CYCLE.FIFTEEN,
-        },
-    ],
-    hidden: true,
-    cyclePriceComparePosition: 'before',
+    ...vpn15mMetadata,
     cyclePriceCompare: ({ suffix }, config) => {
         const checkout = getCheckoutUi(config);
 
@@ -57,10 +50,6 @@ export const vpn15mConfig: CouponConfig = {
             </span>
         );
     },
-
-    showMigrationDiscountLossWarning: true,
-
-    hideLumoAddonBanner: true,
 
     payCTA: () => c('Label').t`Get the deal`,
 };

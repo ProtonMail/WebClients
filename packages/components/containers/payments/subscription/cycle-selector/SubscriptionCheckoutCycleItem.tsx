@@ -1,5 +1,5 @@
-import type { CouponConfigRendered } from '@proton/payments-ui/ui/coupon-config/useCouponConfig';
 import { getCheckoutUi } from '@proton/payments/core/checkout';
+import type { CouponConfigMetadata } from '@proton/payments/core/coupon-config/interface';
 import type { PlanIDs } from '@proton/payments/core/interface';
 import type { PlansMap } from '@proton/payments/core/plan/interface';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
@@ -17,7 +17,7 @@ const SubscriptionCheckoutCycleItem = ({
     plansMap: PlansMap;
     planIDs: PlanIDs;
     loading?: boolean;
-    couponConfig?: CouponConfigRendered;
+    couponConfig?: CouponConfigMetadata;
 }) => {
     const checkout = getCheckoutUi({ planIDs, plansMap, checkResult });
 

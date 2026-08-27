@@ -3,22 +3,15 @@ import { c } from 'ttag';
 import Price from '@proton/components/components/price/Price';
 import { getShortBillingText } from '@proton/components/containers/payments/subscription/helpers/getTotalBillingText';
 import { getCheckoutUi } from '@proton/payments/core/checkout';
-import { COUPON_CODES, CYCLE } from '@proton/payments/core/constants';
+import { q3Sale2026Metadata } from '@proton/payments/core/coupon-config/configs/q3-sale-2026';
 import { getPlanFromPlanIDs } from '@proton/payments/core/plan/helpers';
 
 import type { CouponConfig } from './interface';
 
 export const q3Sale2026Config: CouponConfig = {
-    coupons: [
-        COUPON_CODES.SEP26BUNDLESALE,
-        COUPON_CODES.SEP26BUNDLEDEAL,
-        COUPON_CODES.SEP26BUNDLESALECS,
-        COUPON_CODES.SEP26BUNDLEDEALCS,
-    ],
+    ...q3Sale2026Metadata,
     checkoutSubtitle: () => c('Title').t`September Sale`,
     payCTA: () => c('Action').t`Get the deal`,
-    hidden: true,
-    cyclePriceComparePosition: 'before',
     cyclePriceCompare: ({ suffix }, config) => {
         const checkout = getCheckoutUi(config);
 
@@ -32,13 +25,9 @@ export const q3Sale2026Config: CouponConfig = {
         const plan = getPlanFromPlanIDs(config.plansMap, config.planIDs);
         const planTitle = plan?.Title;
         if (!planTitle) {
-            return undefined; // falls back to the default cycle title
+            return undefined;
         }
 
         return `${planTitle} ${getShortBillingText(cycle, config.planIDs)}`;
     },
-    availableCycles: [CYCLE.YEARLY],
-    disableCurrencySelector: true,
-    hideLumoAddonBanner: true,
-    hideMeetAddonBanner: true,
 };
