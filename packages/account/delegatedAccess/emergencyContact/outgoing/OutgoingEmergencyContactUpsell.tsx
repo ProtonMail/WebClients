@@ -4,7 +4,7 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import { type Upsell, isUpsellWithPlan } from '@proton/components/containers/payments/subscription/helpers';
-import { PaymentsContextProvider } from '@proton/payments/ui/context/PaymentContext';
+import { PaymentsContextProvider } from '@proton/payments-ui/ui/context/PaymentContext';
 import {
     type APP_NAMES,
     APP_UPSELL_REF_PATH,
@@ -24,7 +24,7 @@ interface Props {
 const BaseUpsellOutgoingEmergencyContactAction = ({ app }: Props) => {
     const { subscribe } = useOutgoingController();
     const [modal, setModalOpen, renderModal] = useModalState();
-    const [openSubscriptionModal] = useSubscriptionModal();
+    const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
     const [upsell, setUpsell] = useState<Upsell | null>(null);
     const getUpsell = useGetUpsell();
 
@@ -61,6 +61,7 @@ const BaseUpsellOutgoingEmergencyContactAction = ({ app }: Props) => {
                 <UpsellOutgoingEmergencyContactModal
                     {...modal}
                     upsell={upsell}
+                    loadingSubscriptionModal={loadingSubscriptionModal}
                     onUpgrade={(type) => {
                         let step: SUBSCRIPTION_STEPS | undefined;
                         if (type === 'explore') {
@@ -74,7 +75,7 @@ const BaseUpsellOutgoingEmergencyContactAction = ({ app }: Props) => {
                             plan: upsell.plan,
                             cycle: upsell.cycle,
                             upsellRef,
-                        });
+                        }).catch(noop);
                     }}
                 />
             )}

@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { AppsLogos } from '@proton/components';
-import { usePaymentOptimistic } from '@proton/payments/ui/context/PaymentContextOptimistic';
+import { usePaymentOptimistic } from '@proton/payments-ui/ui/context/PaymentContextOptimistic';
 import { APPS } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import clsx from '@proton/utils/clsx';

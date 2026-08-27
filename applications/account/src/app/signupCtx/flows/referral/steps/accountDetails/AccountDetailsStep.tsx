@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
-import { usePaymentOptimistic } from '@proton/payments/ui/context/PaymentContextOptimistic';
+import { usePaymentOptimistic } from '@proton/payments-ui/ui/context/PaymentContextOptimistic';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
 
 import { Aside } from '../../components/Layout/Aside';

@@ -2,6 +2,10 @@ import { c } from 'ttag';
 
 import { BannerVariants } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
+import type { TaxCountryHook } from '@proton/payments-ui/ui/billing-address/hooks/useTaxCountry';
+import type { VatNumberHook } from '@proton/payments-ui/ui/billing-address/hooks/useVatNumber';
+import { PayButton } from '@proton/payments-ui/ui/components/PayButton';
+import type { CouponConfigRendered } from '@proton/payments-ui/ui/coupon-config/useCouponConfig';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { Currency, FreeSubscription } from '@proton/payments/core/interface';
 import { SubscriptionMode, SubscriptionPlatform } from '@proton/payments/core/subscription/constants';
@@ -12,10 +16,6 @@ import type {
     SubscriptionEstimation,
 } from '@proton/payments/core/subscription/interface';
 import { isFreeSubscription } from '@proton/payments/core/type-guards';
-import type { TaxCountryHook } from '@proton/payments/ui/billing-address/hooks/useTaxCountry';
-import type { VatNumberHook } from '@proton/payments/ui/billing-address/hooks/useVatNumber';
-import { PayButton } from '@proton/payments/ui/components/PayButton';
-import type { CouponConfigRendered } from '@proton/payments/ui/coupon-config/useCouponConfig';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 
 import { getSimplePriceString } from '../../../../components/price/helper';

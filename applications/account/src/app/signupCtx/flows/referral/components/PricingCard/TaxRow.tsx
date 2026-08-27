@@ -1,6 +1,6 @@
 import { Price } from '@proton/components';
+import { formatTax } from '@proton/payments-ui/ui/headless-checkout/tax-helpers';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
-import { formatTax } from '@proton/payments/ui/headless-checkout/tax-helpers';
 
 interface TaxRowProps {
     checkResult: SubscriptionEstimation;

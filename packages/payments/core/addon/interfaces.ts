@@ -1,14 +1,11 @@
-import type { ReactNode } from 'react';
-
 import type { FeatureFlag } from '@proton/unleash/Flags';
 
-import type { CouponConfig } from '../../ui/coupon-config/interface';
 import type { ADDON_NAMES, ADDON_PREFIXES, PLANS } from '../constants';
 import type { FeatureLimitKey, FreeSubscription, PlanIDs } from '../interface';
 import type { Subscription } from '../subscription/interface';
 
 /** Coupon flags that can hide an addon customizer. Defined in core; CouponConfig references it. */
-export type CouponHideFlag = keyof Pick<CouponConfig, 'hideLumoAddonBanner' | 'hideMeetAddonBanner'>;
+export type CouponHideFlag = 'hideLumoAddonBanner' | 'hideMeetAddonBanner';
 
 export type AddonVisibilityFlag = Extract<FeatureFlag, 'DomainVpnBiz2023'>;
 
@@ -85,7 +82,7 @@ export interface AddonConfig {
     includedByPlanOverride?: Partial<Record<PLANS, number>>;
     /** Copy for the generic NumberCustomiser control. Set for addons rendered generically (member, domain). */
     customizerCopy?: AddonCustomizerCopy;
-    tooltipLabel?: (price: ReactNode) => ReactNode;
+    tooltipLabel?: (price: string) => string;
     syncWithMembersAddon?: 'when-equal' | 'always';
     minTrial?: AddonNumberConfig;
     maxTrial?: AddonNumberConfig;

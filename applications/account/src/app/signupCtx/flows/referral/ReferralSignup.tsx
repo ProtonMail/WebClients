@@ -7,7 +7,7 @@ import { useReferralInfo } from '@proton/account/referralInfo/hooks';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { LoaderPage } from '@proton/components';
 import { useNotifyErrorHandler } from '@proton/components/hooks/useErrorHandler';
-import { usePaymentOptimistic } from '@proton/payments/ui/context/PaymentContextOptimistic';
+import { usePaymentOptimistic } from '@proton/payments-ui/ui/context/PaymentContextOptimistic';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
 import { useFlagsStatus } from '@proton/unleash/proxy';
 

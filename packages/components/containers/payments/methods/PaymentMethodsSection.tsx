@@ -7,9 +7,9 @@ import type { ButtonProps } from '@proton/atoms/Button/Button';
 import { Button } from '@proton/atoms/Button/Button';
 import { IcBrandPaypal } from '@proton/icons/icons/IcBrandPaypal';
 import { IcCreditCard } from '@proton/icons/icons/IcCreditCard';
+import EditCardModal from '@proton/payments-ui/ui/containers/EditCardModal';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import { getAvailableSubscriptionActions } from '@proton/payments/core/subscription/helpers';
-import EditCardModal from '@proton/payments/ui/containers/EditCardModal';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 

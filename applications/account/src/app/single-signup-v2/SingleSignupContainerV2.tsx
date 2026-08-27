@@ -23,6 +23,8 @@ import { usePaymentsTelemetry } from '@proton/components/payments/client-extensi
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import metrics, { observeApiError } from '@proton/metrics';
+import { VatReverseChargeErrorModal } from '@proton/payments-ui/ui/billing-address/containers/VatReverseChargeErrorModal';
+import { loadInitialBillingAddress } from '@proton/payments-ui/ui/helpers/load-initial-billing-address';
 import { DEFAULT_CYCLE, PAYMENT_METHOD_TYPES, PLANS } from '@proton/payments/core/constants';
 import type { Currency, PaymentMethodFlow } from '@proton/payments/core/interface';
 import type { PaymentProcessorType } from '@proton/payments/core/payment-processors/interface';
@@ -32,8 +34,6 @@ import { getHas2025OfferCoupon, getPlanIDs } from '@proton/payments/core/subscri
 import type { FullPlansMap } from '@proton/payments/core/subscription/interface';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
-import { VatReverseChargeErrorModal } from '@proton/payments/ui/billing-address/containers/VatReverseChargeErrorModal';
-import { loadInitialBillingAddress } from '@proton/payments/ui/helpers/load-initial-billing-address';
 import { checkReferrer } from '@proton/shared/lib/api/core/referrals';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 // eslint-disable-next-line no-restricted-imports

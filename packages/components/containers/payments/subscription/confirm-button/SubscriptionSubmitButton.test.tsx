@@ -7,7 +7,7 @@ import { buildSubscription } from '@proton/testing/builders/subscription';
 
 import { type Props, SubscriptionSubmitButton } from './SubscriptionSubmitButton';
 
-jest.mock('@proton/payments/ui/components/PayButton', () => ({
+jest.mock('@proton/payments-ui/ui/components/PayButton', () => ({
     PayButton: ({
         children,
         taxCountry: _taxCountry,

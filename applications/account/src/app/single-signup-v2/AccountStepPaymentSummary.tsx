@@ -5,20 +5,20 @@ import { Info, Price, Time } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import { getTotalBillingText } from '@proton/components/containers/payments/subscription/helpers';
+import { InclusiveVatText } from '@proton/payments-ui/ui/billing-address/components/VatText';
+import { getCheckoutRenewNoticeTextFromCheckResult } from '@proton/payments-ui/ui/components/RenewalNotice';
+import type { CouponConfigRendered } from '@proton/payments-ui/ui/coupon-config/useCouponConfig';
+import {
+    getVatReverseChargeText,
+    isVatReverseChargeApplicable,
+} from '@proton/payments-ui/ui/headless-checkout/items/vat-reverse-charge';
+import { formatTax } from '@proton/payments-ui/ui/headless-checkout/tax-helpers';
 import { getCheckoutUi, getOptimisticCheckout } from '@proton/payments/core/checkout';
 import { COUPON_CODES, TRIAL_DURATION_DAYS } from '@proton/payments/core/constants';
 import { getIsB2BAudienceFromPlan } from '@proton/payments/core/plan/helpers';
 import type { Plan } from '@proton/payments/core/plan/interface';
 import { SubscriptionMode, TaxMode } from '@proton/payments/core/subscription/constants';
 import { getHas2025OfferCoupon } from '@proton/payments/core/subscription/helpers';
-import { InclusiveVatText } from '@proton/payments/ui/billing-address/components/VatText';
-import { getCheckoutRenewNoticeTextFromCheckResult } from '@proton/payments/ui/components/RenewalNotice';
-import type { CouponConfigRendered } from '@proton/payments/ui/coupon-config/useCouponConfig';
-import {
-    getVatReverseChargeText,
-    isVatReverseChargeApplicable,
-} from '@proton/payments/ui/headless-checkout/items/vat-reverse-charge';
-import { formatTax } from '@proton/payments/ui/headless-checkout/tax-helpers';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import clsx from '@proton/utils/clsx';

@@ -1,6 +1,6 @@
 import { Redirect, Route, Switch } from 'react-router-dom';
 
-import { PaymentsContextOptimisticProvider } from '@proton/payments/ui/context/PaymentContextOptimistic';
+import { PaymentsContextOptimisticProvider } from '@proton/payments-ui/ui/context/PaymentContextOptimistic';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
 
 import { cachedPlans } from '../defaultPlans';

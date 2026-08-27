@@ -5,12 +5,12 @@ import CalendarDowngradeModal from '@proton/components/containers/payments/subsc
 import type { Model } from '@proton/components/containers/payments/subscription/SubscriptionContainer';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
+import { PaymentsContextProvider, usePayments } from '@proton/payments-ui/ui/context/PaymentContext';
+import { getPlanToCheck } from '@proton/payments-ui/ui/context/helpers';
 import { PLANS } from '@proton/payments/core/constants';
 import type { FreeSubscription } from '@proton/payments/core/interface';
 import { isLifetimePlanSelected } from '@proton/payments/core/plan/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
-import { PaymentsContextProvider, usePayments } from '@proton/payments/ui/context/PaymentContext';
-import { getPlanToCheck } from '@proton/payments/ui/context/helpers';
 import noop from '@proton/utils/noop';
 
 import SubscriptionCheckoutAddonSection from './sections/SubscriptionCheckoutAddonSection';

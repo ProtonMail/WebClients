@@ -5,8 +5,8 @@ import { IcBrandProtonDrive } from '@proton/icons/icons/IcBrandProtonDrive';
 import { IcBrandProtonMail } from '@proton/icons/icons/IcBrandProtonMail';
 import { IcBrandProtonPass } from '@proton/icons/icons/IcBrandProtonPass';
 import { IcBrandProtonVpn } from '@proton/icons/icons/IcBrandProtonVpn';
+import { usePaymentOptimistic } from '@proton/payments-ui/ui/context/PaymentContextOptimistic';
 import { PLANS } from '@proton/payments/core/constants';
-import { usePaymentOptimistic } from '@proton/payments/ui/context/PaymentContextOptimistic';
 import { VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 
 import { getMaxSpaceMap } from '../../helpers/getMaxSpaceMap';

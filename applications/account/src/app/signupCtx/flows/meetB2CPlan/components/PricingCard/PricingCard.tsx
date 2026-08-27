@@ -16,9 +16,9 @@ import {
     getMeetingMaxLengthText,
 } from '@proton/components/containers/payments/features/meet';
 import { IcBagPercentFilled } from '@proton/icons/icons/IcBagPercentFilled';
+import { usePaymentOptimistic } from '@proton/payments-ui/ui/context/PaymentContextOptimistic';
+import { type CheckoutView, createCheckoutView } from '@proton/payments-ui/ui/headless-checkout/checkout-view';
 import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
-import { usePaymentOptimistic } from '@proton/payments/ui/context/PaymentContextOptimistic';
-import { type CheckoutView, createCheckoutView } from '@proton/payments/ui/headless-checkout/checkout-view';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 

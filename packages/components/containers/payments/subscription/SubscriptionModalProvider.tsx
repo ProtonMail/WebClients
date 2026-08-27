@@ -11,6 +11,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
+import { loadInitialBillingAddress } from '@proton/payments-ui/ui/helpers/load-initial-billing-address';
 import type { BillingAddressExtended } from '@proton/payments/core/billing-address/billing-address';
 import { fixPlanIDs, fixPlanName } from '@proton/payments/core/helpers';
 import type { FreeSubscription, PaymentStatus } from '@proton/payments/core/interface';
@@ -19,7 +20,6 @@ import type { Subscription } from '@proton/payments/core/subscription/interface'
 import { tracePaymentError } from '@proton/payments/sentry/capture';
 import type { UpsellTelemetryContext } from '@proton/payments/telemetry/shared-checkout-telemetry';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
-import { loadInitialBillingAddress } from '@proton/payments/ui/helpers/load-initial-billing-address';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { Organization } from '@proton/shared/lib/interfaces';
 

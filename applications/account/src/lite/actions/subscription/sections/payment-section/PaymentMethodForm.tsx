@@ -22,19 +22,19 @@ import { BilledUserInlineMessage } from '@proton/components/payments/client-exte
 import { useStableLoading } from '@proton/hooks/index';
 import { IcArrowOutFromRectangle } from '@proton/icons/icons/IcArrowOutFromRectangle';
 import { IcBagPercent } from '@proton/icons/icons/IcBagPercent';
-import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
-import { savedMethodRequires3DS } from '@proton/payments/core/createPaymentToken';
-import type { Currency } from '@proton/payments/core/interface';
-import { TaxFields } from '@proton/payments/ui/billing-address/components/TaxFields';
-import type { useTaxCountry } from '@proton/payments/ui/billing-address/hooks/useTaxCountry';
-import type { useVatNumber } from '@proton/payments/ui/billing-address/hooks/useVatNumber';
-import type { ChargebeePaypalButtonProps } from '@proton/payments/ui/components/ChargebeePaypalButton';
+import { TaxFields } from '@proton/payments-ui/ui/billing-address/components/TaxFields';
+import type { useTaxCountry } from '@proton/payments-ui/ui/billing-address/hooks/useTaxCountry';
+import type { useVatNumber } from '@proton/payments-ui/ui/billing-address/hooks/useVatNumber';
+import type { ChargebeePaypalButtonProps } from '@proton/payments-ui/ui/components/ChargebeePaypalButton';
 import {
     type ChargebeeCardWrapperProps,
     ChargebeeCreditCardWrapper,
     ChargebeeSavedCardWrapper,
-} from '@proton/payments/ui/components/ChargebeeWrapper';
-import { usePayments } from '@proton/payments/ui/context/PaymentContext';
+} from '@proton/payments-ui/ui/components/ChargebeeWrapper';
+import { usePayments } from '@proton/payments-ui/ui/context/PaymentContext';
+import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
+import { savedMethodRequires3DS } from '@proton/payments/core/createPaymentToken';
+import type { Currency } from '@proton/payments/core/interface';
 import { isBilledUser } from '@proton/shared/lib/interfaces';
 
 interface AmountProps {

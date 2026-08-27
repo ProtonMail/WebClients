@@ -1,12 +1,12 @@
 import type { Ref } from 'react';
 
 import { useConfig } from '@proton/app-context/useConfig';
+import type { TaxCountryHook } from '@proton/payments-ui/ui/billing-address/hooks/useTaxCountry';
+import type { VatNumberHook } from '@proton/payments-ui/ui/billing-address/hooks/useVatNumber';
 import type { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { AvailablePaymentMethod, Currency, FreeSubscription } from '@proton/payments/core/interface';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
-import type { TaxCountryHook } from '@proton/payments/ui/billing-address/hooks/useTaxCountry';
-import type { VatNumberHook } from '@proton/payments/ui/billing-address/hooks/useVatNumber';
 
 import useAuthentication from '../../hooks/useAuthentication';
 import type { ThemeCode, usePaymentFacade } from '../../payments/client-extensions/index';

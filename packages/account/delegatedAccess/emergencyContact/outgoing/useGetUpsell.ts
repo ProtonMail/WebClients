@@ -1,11 +1,11 @@
 import { useCallback } from 'react';
 
-import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
+import { useSubscriptionModalRaw } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { isUpsellWithPlan, resolveUpsellsToDisplay } from '@proton/components/containers/payments/subscription/helpers';
 import { useAutomaticCurrency } from '@proton/components/payments/client-extensions';
+import { isPaymentsPreloaded, usePayments } from '@proton/payments-ui/ui/context/PaymentContext';
 import { getCanSubscriptionAccessDuoPlan } from '@proton/payments/core/subscription/helpers';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
-import { isPaymentsPreloaded, usePayments } from '@proton/payments/ui/context/PaymentContext';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { pick } from '@proton/shared/lib/helpers/object';
@@ -18,7 +18,7 @@ import { userThunk } from '../../../user';
 export const useGetUpsell = () => {
     const dispatch = useDispatch();
     const [currency] = useAutomaticCurrency();
-    const [openSubscriptionModal] = useSubscriptionModal();
+    const openSubscriptionModal = useSubscriptionModalRaw();
     const payments = usePayments();
 
     return useCallback(async (app: APP_NAMES) => {

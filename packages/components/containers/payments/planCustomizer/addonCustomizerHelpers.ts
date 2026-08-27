@@ -1,3 +1,5 @@
+import type { CouponConfig } from '@proton/payments-ui/ui/coupon-config/interface';
+import type { CouponConfigRendered } from '@proton/payments-ui/ui/coupon-config/useCouponConfig';
 import {
     AddonFeatureLimitKeyMapping,
     getAddonConfigByName,
@@ -20,8 +22,6 @@ import { Renew } from '@proton/payments/core/subscription/constants';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
 import { isFreeSubscription } from '@proton/payments/core/type-guards';
-import type { CouponConfig } from '@proton/payments/ui/coupon-config/interface';
-import type { CouponConfigRendered } from '@proton/payments/ui/coupon-config/useCouponConfig';
 
 import { showAddonCustomizer } from '../subscription/modal-components/helpers/showAddonCustomizer';
 import type { NumberCustomiserProps } from './NumberCustomiser';

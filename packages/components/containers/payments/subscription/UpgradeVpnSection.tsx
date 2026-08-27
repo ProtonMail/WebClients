@@ -1,8 +1,8 @@
 import { usePlans } from '@proton/account/plans/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { PaymentsContextProvider } from '@proton/payments-ui/ui/context/PaymentContext';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
-import { PaymentsContextProvider } from '@proton/payments/ui/context/PaymentContext';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { pick } from '@proton/shared/lib/helpers/object';
 
@@ -11,7 +11,7 @@ import useDashboardPaymentFlow from '../../../hooks/useDashboardPaymentFlow';
 import useLoad from '../../../hooks/useLoad';
 import { usePreferredPlansMap } from '../../../hooks/usePreferredPlansMap';
 import SettingsSectionWide from '../../account/SettingsSectionWide';
-import { useSubscriptionModal } from './SubscriptionModalProvider';
+import { useSubscriptionModalRaw } from './SubscriptionModalProvider';
 import { useUpsellsToDisplay } from './helpers';
 import { UpsellPanels } from './panels';
 
@@ -26,7 +26,7 @@ const UpgradeVpnSectionInner = ({ app }: Props) => {
     const [plansResult, loadingPlans] = usePlans();
     const freePlan = plansResult?.freePlan || FREE_PLAN;
     const [subscription, loadingSubscription] = useSubscription();
-    const [openSubscriptionModal] = useSubscriptionModal();
+    const openSubscriptionModal = useSubscriptionModalRaw();
     const { plansMap, plansMapLoading } = usePreferredPlansMap();
     const telemetryFlow = useDashboardPaymentFlow(app);
 

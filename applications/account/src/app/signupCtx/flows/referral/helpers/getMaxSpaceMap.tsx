@@ -1,5 +1,5 @@
+import type { PaymentsContextType } from '@proton/payments-ui/ui/context/PaymentContext';
 import { PLANS } from '@proton/payments/core/constants';
-import type { PaymentsContextType } from '@proton/payments/ui/context/PaymentContext';
 import type { SizeUnits } from '@proton/shared/lib/helpers/humanSize';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
