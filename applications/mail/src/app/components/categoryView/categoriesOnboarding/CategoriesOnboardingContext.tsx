@@ -7,6 +7,7 @@ import { CategoriesOnboardingFlags } from '@proton/mail/features/categoriesView/
 import { domIsBusy } from '@proton/shared/lib/busy';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { setBit } from '@proton/shared/lib/helpers/bitset';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { useMailGlobalModals } from '../../../containers/globalModals/globalModalContext';
 import { ModalType } from '../../../containers/globalModals/inteface';
@@ -77,6 +78,9 @@ export const CategoriesOnboardingProvider = ({ children }: PropsWithChildren) =>
         categorizeStepLocationRef.current = total > 2 ? 'list' : 'tab';
     }
 
+    // Temporary fix to hide the CATEGORIZE onboarding step
+    const disableCategorizeStep = useFlag('CategoryOnboardingDisableCategorize');
+
     useEffect(() => {
         // Only trigger modal once per session and when the user is in the Inbox
         if (hasTriggeredModalRef.current || !isInbox || domIsBusy()) {
@@ -121,9 +125,16 @@ export const CategoriesOnboardingProvider = ({ children }: PropsWithChildren) =>
             return OnboardingStep.FREE_USERS_SPOTLIGHT;
         }
 
-        return getB2COnboardingStep(flagValue);
+        // Skip CATEGORIZE synchronously so in-flight users are covered immediately,
+        // without waiting on the SPOTLIGHT_CATEGORIZE bit to persist above.
+        const effectiveFlagValue = disableCategorizeStep
+            ? flagValue | CategoriesOnboardingFlags.SPOTLIGHT_CATEGORIZE
+            : flagValue;
+
+        return getB2COnboardingStep(effectiveFlagValue);
     }, [
         isInbox,
+        disableCategorizeStep,
         b2cOnboardingViewFlag.feature?.Value,
         b2cOnboardingViewFlag.loading,
         onboarding.onboardingFlow,
@@ -153,8 +164,15 @@ export const CategoriesOnboardingProvider = ({ children }: PropsWithChildren) =>
             return;
         }
 
-        void flagRef.current.update(setBit(flagValue, bit));
-    }, [activeStep]);
+        // Piggyback on this real user action to also mark CATEGORIZE as seen, since the
+        // step is hidden and the user will never trigger it themselves.
+        let updatedFlag = setBit(flagValue, bit);
+        if (disableCategorizeStep) {
+            updatedFlag = setBit(updatedFlag, CategoriesOnboardingFlags.SPOTLIGHT_CATEGORIZE);
+        }
+
+        void flagRef.current.update(updatedFlag);
+    }, [activeStep, disableCategorizeStep]);
 
     const tabSpotlightStep = getTabSpotlightStep(activeStep, categorizeStepLocationRef.current);
     const listSpotlightStep = getListSpotlightStep(activeStep, categorizeStepLocationRef.current);
