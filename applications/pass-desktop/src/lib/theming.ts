@@ -2,8 +2,7 @@ import { nativeTheme } from 'electron';
 
 import type { DesktopTheme } from '@proton/pass/types';
 
-import { store } from 'proton-pass-desktop/store';
-
+import { store } from '../store';
 import { setupIpcHandler } from './ipc';
 
 declare module './ipc' {
