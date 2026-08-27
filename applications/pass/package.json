@@ -23,12 +23,23 @@
         "@proton/app-context": "workspace:^",
         "@proton/atoms": "workspace:^",
         "@proton/components": "workspace:^",
+        "@proton/hooks": "workspace:^",
         "@proton/icons": "workspace:^",
         "@proton/pass": "workspace:^",
         "@proton/polyfill": "workspace:^",
         "@proton/shared": "workspace:^",
         "@proton/styles": "workspace:^",
-        "@proton/utils": "workspace:^"
+        "@proton/utils": "workspace:^",
+        "@reduxjs/toolkit": "^2.12.0",
+        "idb": "^8.0.3",
+        "lodash": "^4.18.1",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
+        "react-redux": "^9.3.0",
+        "react-router-dom": "^5.3.4",
+        "redux": "^5.0.1",
+        "redux-saga": "^1.5.0",
+        "ttag": "^1.8.12"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:^",
@@ -37,6 +48,8 @@
         "@proton/pack": "workspace:^",
         "@proton/testing": "workspace:^",
         "@proton/types": "workspace:^",
+        "@protontech/crypto": "*",
+        "@testing-library/jest-dom": "^6.9.1",
         "@typescript/native": "npm:typescript@^7.0.2",
         "core-js": "^3.50.0",
         "cross-env": "^10.1.0",
@@ -44,6 +57,7 @@
         "jest": "^30.4.2",
         "prettier": "^3.9.6",
         "typescript": "npm:@typescript/typescript6@^6.0.2",
+        "webpack": "^5.109.2",
         "webpack-manifest-plugin": "^6.0.1"
     }
 }
