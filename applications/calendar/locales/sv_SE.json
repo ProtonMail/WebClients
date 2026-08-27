@@ -4424,6 +4424,9 @@
       ],
       "You can only leave items that are shared with you": [
         "Du kan endast lämna objekt som är delade med dig."
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Kan inte, flytta objekt utan giltigt namn, byt namn på objektet först"
       ]
     },
     "error": {
@@ -7836,6 +7839,9 @@
       ],
       "Account holder name": [
         "Kontoinnehavarens namn"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } tecken"
       ]
     },
     "label": {
@@ -13238,6 +13244,9 @@
       ],
       "Users who have accessed their ${ BRAND_NAME } account": [
         "Användare som har åtkomst till sitt ${ BRAND_NAME }-konto"
+      ],
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "Status för datamigrering från ${ providerName } till ${ BRAND_NAME }"
       ]
     },
     "tooltip": {
@@ -13803,6 +13812,11 @@
     "ngc_access_banner: action": {
       "Try it now": [
         "Prova det nu"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Du har nu åtkomst till nya ${ CALENDAR_APP_NAME }. ${ link }"
       ]
     }
   }
