@@ -16,4 +16,9 @@ export const entitlementChecks = {
     orgHasMembersSubsidiaries: (r) => !!r.quantityOrg(EntitlementName.MaxMembersSubsidiaries),
     orgHasAdminRoles: (r) => !!r.quantityOrg(EntitlementName.AdminRoles),
     orgIsMultiUser: (r) => !!r.quantityOrg(EntitlementName.MultiUser),
+    /** MSP is exclusively available for Pass Business orgs that can create and staff subsidiaries. */
+    orgIsMspEligible: (r) =>
+        !!r.quantity(EntitlementName.PassBusiness) &&
+        !!r.quantityOrg(EntitlementName.MaxSubsidiaries) &&
+        !!r.quantityOrg(EntitlementName.MaxMembersSubsidiaries),
 } satisfies Record<string, EntitlementCheck>;
