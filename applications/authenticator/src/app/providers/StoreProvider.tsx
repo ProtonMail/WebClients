@@ -1,15 +1,10 @@
 import type { FC, PropsWithChildren } from 'react';
 import { Provider } from 'react-redux';
 
-import { getApi } from 'proton-authenticator/lib/api';
-import type { AppModal } from 'proton-authenticator/store';
-import { setupStore } from 'proton-authenticator/store';
-import { init } from 'proton-authenticator/store/app';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
-import { Banner } from '@proton/atoms/Banner/Banner';
-import { BannerVariants } from '@proton/atoms/Banner/Banner';
+import { Banner, BannerVariants } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import useEffectOnce from '@proton/hooks/useEffectOnce';
@@ -17,6 +12,11 @@ import useInstance from '@proton/hooks/useInstance';
 import { useAsyncModalHandles } from '@proton/pass/hooks/useAsyncModalHandles';
 import { useStatefulRef } from '@proton/pass/hooks/useStatefulRef';
 import clsx from '@proton/utils/clsx';
+
+import { getApi } from '../../lib/api';
+import type { AppModal } from '../../store';
+import { setupStore } from '../../store';
+import { init } from '../../store/app';
 
 export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
     const { createNotification } = useNotifications();

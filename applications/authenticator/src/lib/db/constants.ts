@@ -1,4 +1,4 @@
-import { config } from 'proton-authenticator/lib/app/env';
+import { config } from '../app/env';
 
 const { API_URL } = config;
 

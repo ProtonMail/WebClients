@@ -2,18 +2,6 @@ import type { AuthenticatorImportResult } from '@protontech/authenticator-rust-c
 import { downloadDir, join } from '@tauri-apps/api/path';
 import { open, save } from '@tauri-apps/plugin-dialog';
 import { exists } from '@tauri-apps/plugin-fs';
-import { authService } from 'proton-authenticator/lib/auth/service';
-import { createAutomaticBackupFilename, createBackupFilename } from 'proton-authenticator/lib/backup/filename';
-import { clearBackupPassword, resolveBackupPassword } from 'proton-authenticator/lib/backup/password';
-import { pruneExcessBackups, writeBackupToPath } from 'proton-authenticator/lib/backup/writer';
-import { db } from 'proton-authenticator/lib/db/db';
-import { fromWasmEntry, fromWasmEntryOrdered } from 'proton-authenticator/lib/entries/items';
-import { getNextOrder } from 'proton-authenticator/lib/entries/ordering';
-import { addRemoteEntries, updateRemoteEntries } from 'proton-authenticator/lib/entries/sync';
-import { getPathContent, prepareImport } from 'proton-authenticator/lib/importers/reader';
-import type { ImportDTO, ImportResultDTO } from 'proton-authenticator/lib/importers/types';
-import { SUPPORTED_IMPORTERS } from 'proton-authenticator/lib/importers/types';
-import logger from 'proton-authenticator/lib/logger';
 import { c, msgid } from 'ttag';
 
 import type { Maybe } from '@proton/pass/types';
@@ -23,6 +11,18 @@ import { truthy } from '@proton/pass/utils/fp/predicates';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import noop from '@proton/utils/noop';
 
+import { authService } from '../lib/auth/service';
+import { createAutomaticBackupFilename, createBackupFilename } from '../lib/backup/filename';
+import { clearBackupPassword, resolveBackupPassword } from '../lib/backup/password';
+import { pruneExcessBackups, writeBackupToPath } from '../lib/backup/writer';
+import { db } from '../lib/db/db';
+import { fromWasmEntry, fromWasmEntryOrdered } from '../lib/entries/items';
+import { getNextOrder } from '../lib/entries/ordering';
+import { addRemoteEntries, updateRemoteEntries } from '../lib/entries/sync';
+import { getPathContent, prepareImport } from '../lib/importers/reader';
+import type { ImportDTO, ImportResultDTO } from '../lib/importers/types';
+import { SUPPORTED_IMPORTERS } from '../lib/importers/types';
+import logger from '../lib/logger';
 import { toggleBackup, updateSettings } from './settings';
 import { createAppAsyncThunk } from './utils';
 

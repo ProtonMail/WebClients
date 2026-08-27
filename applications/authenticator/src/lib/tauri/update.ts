@@ -1,10 +1,10 @@
 import { relaunch } from '@tauri-apps/plugin-process';
 import { type Update, check } from '@tauri-apps/plugin-updater';
-import logger from 'proton-authenticator/lib/logger';
 
 import type { Maybe } from '@proton/pass/types/utils';
 import noop from '@proton/utils/noop';
 
+import logger from '../logger';
 import runtime from './runtime';
 
 type Release = {

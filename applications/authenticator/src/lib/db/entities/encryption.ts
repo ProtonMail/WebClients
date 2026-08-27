@@ -1,7 +1,7 @@
-import type { AuthenticatorEncryptionTag } from 'proton-authenticator/lib/crypto';
-
 import { decryptData, encryptData } from '@protontech/crypto/subtle/aesGcm.ts';
-import { utf8StringToUint8Array, uint8ArrayToUtf8String } from '@protontech/crypto/utils';
+import { uint8ArrayToUtf8String, utf8StringToUint8Array } from '@protontech/crypto/utils';
+
+import type { AuthenticatorEncryptionTag } from '../../crypto';
 
 type JsonPrimitive = string | number | boolean | null;
 type JsonArray = JsonValue[];

@@ -1,5 +1,4 @@
-import type { ItemSyncMetadata } from 'proton-authenticator/lib/db/entities/items';
-
+import type { ItemSyncMetadata } from '../db/entities/items';
 import type {
     AuthenticatorCreateEntriesRequest,
     AuthenticatorEntryDeleteBulkInput,

@@ -1,4 +1,4 @@
-import APP_CONFIG from 'proton-authenticator/app/config';
+import APP_CONFIG from '../../app/config';
 
 export const config = APP_CONFIG;
 

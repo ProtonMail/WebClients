@@ -1,7 +1,8 @@
 import type { default as Dexie, EntityTable } from 'dexie';
-import type { Item } from 'proton-authenticator/lib/db/entities/items';
-import type { LegacyRemoteKey } from 'proton-authenticator/lib/db/entities/remote-keys';
-import { getOrderByIndex } from 'proton-authenticator/lib/entries/ordering';
+
+import { getOrderByIndex } from '../../entries/ordering';
+import type { Item } from '../entities/items';
+import type { LegacyRemoteKey } from '../entities/remote-keys';
 
 export type LegacyAuthenticatorDB = Dexie & {
     items: EntityTable<Item, 'id'>;

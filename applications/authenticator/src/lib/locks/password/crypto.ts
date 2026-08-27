@@ -1,9 +1,10 @@
 import { ARGON2_PARAMS, CryptoProxy } from '@protontech/crypto';
 import { decryptData, encryptData, generateKey, importKey } from '@protontech/crypto/subtle/aesGcm.ts';
-import { AuthenticatorEncryptionTag } from 'proton-authenticator/lib/crypto';
-import logger from 'proton-authenticator/lib/logger';
 
 import { binaryStringToUint8Array, uint8ArrayToBinaryString } from '@proton/shared/lib/helpers/encoding';
+
+import { AuthenticatorEncryptionTag } from '../../crypto';
+import logger from '../../logger';
 
 type Argon2Params = (typeof ARGON2_PARAMS)[keyof typeof ARGON2_PARAMS];
 type Argon2Options = Parameters<typeof CryptoProxy.computeArgon2>[0];

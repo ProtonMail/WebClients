@@ -2,7 +2,6 @@ import { type FC, useState } from 'react';
 
 import type { FormikContextType } from 'formik';
 import { Field } from 'formik';
-import type { EntryAlgorithm, EntryDTO, EntryType } from 'proton-authenticator/lib/entries/items';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -13,6 +12,8 @@ import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/Field
 import { InlineFieldBox } from '@proton/pass/components/Form/Field/Layout/InlineFieldBox';
 import { SelectField } from '@proton/pass/components/Form/Field/SelectField';
 import { TextField } from '@proton/pass/components/Form/Field/TextField';
+
+import type { EntryAlgorithm, EntryDTO, EntryType } from '../../../lib/entries/items';
 
 const ALGORITHM_OPTIONS: EntryAlgorithm[] = ['SHA1', 'SHA256', 'SHA512'];
 const TYPE_OPTIONS: EntryType[] = ['Totp', 'Steam'];
