@@ -1768,9 +1768,6 @@
       " header. Keys are scoped to your account and can be revoked from ": [
         " hlavička. Klíče platí pouze pro váš účet a lze je zrušit na "
       ],
-      " to have higher limits.": [
-        " pro získání vyšších limitů."
-      ],
       "\"${ fileName }\" has multiple sheets. Select the sheets to include in the conversation context.": [
         "„${ fileName }“ obsahuje více listů. Vyberte listy, které chcete zahrnout do kontextu konverzace."
       ],
@@ -2236,18 +2233,6 @@
       "You've reached your image limit for this period.": [
         "Dosáhli jste limitu obrázků pro toto období."
       ],
-      "You've run out of weekly chats, please ": [
-        "Dosáhli jste týdenního limitu chatů, prosím "
-      ],
-      "You've run out of weekly chats, please sign in or create an account to have higher limits.": [
-        "Vyčerpali jste týdenní limity chatů, prosím přihlaste se nebo si vytvořte účet pro získání vyšších limitů."
-      ],
-      "You've run out of weekly chats, please upgrade to have higher limits.": [
-        "Vyčerpali jste týdenní limit chatů, prosím navyšte předplatné pro zvýšení limitů."
-      ],
-      "You've run out of weekly chats. Contact your admin to get higher limits.": [
-        "Vyčerpali jste své týdenní chaty. Kontaktujte svého správce pro získání vyšších limitů."
-      ],
       "Your memories are already up to date.": [
         "Vaše vzpomínky jsou již aktuální."
       ]
@@ -2471,9 +2456,6 @@
       ],
       "Sign in": [
         "Přihlásit se"
-      ],
-      "upgrade": [
-        "navýšit"
       ],
       "Upgrade": [
         "Navýšení"
@@ -6451,9 +6433,6 @@
         "${ n } měsíců",
         "${ n } měsíců"
       ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } znaků"
-      ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Přistupujte k aplikaci ${ PASS_APP_NAME } bezpečně z terminálu, což je ideální pro skriptování, automatizaci a vývojářské pracovní postupy."
       ],
@@ -8784,17 +8763,6 @@
       ],
       "User Admin": [
         "Správce uživatelů"
-      ]
-    },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Nastavte bezpečnostní zásady, uchovávání dat, VPN infrastrukturu a spravujte auditní logy."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Spravujte všechny uživatele, skupiny, zabezpečení, fakturaci a systémové konfigurace."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Spravujte uživatele, skupiny a úložiště pro všechny členy, přiřazujte role a přidělujte licence."
       ]
     },
     "Safety review": {

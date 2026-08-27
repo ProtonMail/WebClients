@@ -1739,9 +1739,6 @@
       " header. Keys are scoped to your account and can be revoked from ": [
         " de encabezado. Las claves están vinculadas a tu cuenta y se pueden revocar desde "
       ],
-      " to have higher limits.": [
-        " para tener límites más altos."
-      ],
       "\"${ fileName }\" has multiple sheets. Select the sheets to include in the conversation context.": [
         "\"${ fileName }\" tiene varias hojas. Selecciona las hojas que incluir en el contexto de la conversación."
       ],
@@ -2199,18 +2196,6 @@
       "You've reached your image limit for this period.": [
         "Has alcanzado tu límite de imágenes para este periodo."
       ],
-      "You've run out of weekly chats, please ": [
-        "Te has quedado sin chats semanalmente, por favor "
-      ],
-      "You've run out of weekly chats, please sign in or create an account to have higher limits.": [
-        "Has agotado tus chats semanalmente; por favor, inicia sesión o crea una cuenta para obtener límites más altos."
-      ],
-      "You've run out of weekly chats, please upgrade to have higher limits.": [
-        "Has agotado tus chats semanalmente; por favor, mejora tu plan para obtener límites más altos."
-      ],
-      "You've run out of weekly chats. Contact your admin to get higher limits.": [
-        "Has agotado tus chats semanales. Contacta con tu administrador para obtener límites más altos."
-      ],
       "Your memories are already up to date.": [
         "Tus recuerdos ya están actualizados."
       ]
@@ -2434,9 +2419,6 @@
       ],
       "Sign in": [
         "Iniciar sesión"
-      ],
-      "upgrade": [
-        "mejorar"
       ],
       "Upgrade": [
         "Mejorar"
@@ -6408,9 +6390,6 @@
         "${ n } mes",
         "${ n } meses"
       ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } caracteres"
-      ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Accede a ${ PASS_APP_NAME } de forma segura desde el terminal; ideal para scripts, automatización y flujos de trabajo de desarrollo."
       ],
@@ -8651,17 +8630,6 @@
       ],
       "User Admin": [
         "Administrador de usuarios"
-      ]
-    },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Configurar políticas de seguridad, conservación de datos e infraestructura de VPN, y administrar registros de auditoría."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Administrar todos los usuarios, grupos, seguridad, facturación y configuraciones del sistema."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Administrar usuarios, grupos y almacenamiento de todos los miembros, asignar roles y asignar licencias."
       ]
     },
     "Safety review": {

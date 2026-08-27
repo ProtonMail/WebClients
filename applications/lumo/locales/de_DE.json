@@ -1083,6 +1083,9 @@
       "Light": [
         "Hell"
       ],
+      "Manage connectors": [
+        "Konnektoren verwalten"
+      ],
       "Manage files": [
         "Dateien verwalten"
       ],
@@ -1516,6 +1519,9 @@
       "Could not load usage for this key.": [
         "Nutzung für diesen Schlüssel konnte nicht geladen werden."
       ],
+      "Could not open the desktop settings": [
+        "Desktop-Einstellungen konnten nicht geöffnet werden"
+      ],
       "Could not retrieve your encryption key": [
         "Dein Verschlüsselungsschlüssel konnte nicht abgerufen werden."
       ],
@@ -1786,9 +1792,6 @@
       ],
       " header. Keys are scoped to your account and can be revoked from ": [
         " Kopfzeile. Schlüssel sind auf dein Konto beschränkt und können widerrufen werden von "
-      ],
-      " to have higher limits.": [
-        " für höhere Limits."
       ],
       "\"${ fileName }\" has multiple sheets. Select the sheets to include in the conversation context.": [
         "\"${ fileName }\" hat mehrere Tabellenblätter. Tabellenblätter auswählen, die in den Kontext der Unterhaltung aufgenommen werden sollen."
@@ -2280,18 +2283,6 @@
       "You've reached your image limit for this period. Upgrade to keep creating images.": [
         "Du hast dein Bildlimit für diesen Zeitraum erreicht. Führe ein Upgrade durch, um weiterhin Bilder erstellen zu können."
       ],
-      "You've run out of weekly chats, please ": [
-        "Du hast keine wöchentlichen Chats mehr übrig, bitte "
-      ],
-      "You've run out of weekly chats, please sign in or create an account to have higher limits.": [
-        "Deine wöchentlichen Chats sind aufgebraucht. Bitte anmelden oder ein Konto erstellen, um höhere Limits zu erhalten."
-      ],
-      "You've run out of weekly chats, please upgrade to have higher limits.": [
-        "Deine wöchentlichen Chats sind aufgebraucht. Bitte upgraden, um höhere Limits zu erhalten."
-      ],
-      "You've run out of weekly chats. Contact your admin to get higher limits.": [
-        "Deine wöchentlichen Chats sind aufgebraucht. Kontaktiere deinen Administrator, um höhere Limits zu erhalten."
-      ],
       "Your memories are already up to date.": [
         "Deine Erinnerungen sind bereits aktuell"
       ],
@@ -2518,9 +2509,6 @@
       ],
       "Sign in": [
         "Anmelden"
-      ],
-      "upgrade": [
-        "upgraden"
       ],
       "Upgrade": [
         "Upgraden"
@@ -6727,8 +6715,8 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe-Schreibassistent"
       ],
-      "${ IDEAL_BRAND_NAME } mark": [
-        "${ IDEAL_BRAND_NAME } markieren"
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "${ IDEAL_WERO_BRAND_NAME } markieren"
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } beinhaltet ${ BRAND_NAME } Scribe Schreibassistent"
@@ -7237,8 +7225,8 @@
       "We use 3-D Secure to protect your payments": [
         "Wir verwenden 3-D Secure zum Schutz deiner Zahlungen"
       ],
-      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "Wir werden dich in einem neuen Browser-Tab zu ${ IDEAL_BRAND_NAME } umleiten, um diese Zahlung abzuschließen. Falls du Pop-up-Blocker verwendest, deaktiviere diese bitte, um fortzufahren."
+      "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Wir werden dich in einem neuen Browser-Tab zu ${ IDEAL_WERO_BRAND_NAME } umleiten, um diese Zahlung abzuschließen. Falls du Pop-up-Blocker verwendest, deaktiviere diese bitte, um fortzufahren."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Wir werden dich in einem neuen Browser-Tab zu PayPal umleiten, um diese Zahlung abzuschließen. Falls du Pop-up-Blocker verwendest, deaktiviere diese bitte, um fortzufahren."
@@ -7360,12 +7348,12 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-Benutzername"
       ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } Zeichen"
+      ],
       "${ n } month": [
         "${ n } Monat",
         "${ n } Monate"
-      ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } Zeichen"
       ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Greife sicher vom Terminal auf ${ PASS_APP_NAME } zu, ideal für Skripterstellung, Automatisierung und Entwicklungs-Workflows."
@@ -7766,6 +7754,9 @@
       "Forces either unavailable state, without burning a real quota or waiting for a flag rollout. \"unavailable_limit_reached\" pins the Max pool to 0 remaining, exactly as the backend would after the weekly cap; \"unavailable_high_load\" switches off the availability flag. Both disable the Max row in the picker, fall the selection back to Lite, and push maxModelAvailability to native. Persists across reloads until switched off.": [
         "Erzwingt entweder einen Nicht verfügbar-Status, ohne echtes Kontingent zu verbrauchen oder auf ein Flag-Rollout zu warten. „unavailable_limit_reached“ setzt den Max-Pool auf 0 verbleibende Einheiten fest, genau wie das Backend nach Erreichen des wöchentlichen Limits; „unavailable_high_load“ schaltet das Verfügbarkeits-Flag aus. Beide deaktivieren die Maximal-Zeile im Picker, fallen auf „Lite“ zurück und übergeben maxModelAvailability an Native. Diese Einstellungen bleiben auch beim Neuladen bestehen, bis sie ausgeschaltet werden."
       ],
+      "Forces Lite and Max pools to zero and lets UsageLimitsTierSync dispatch the tier error, so you can preview the weekly limit UpsellCard above the composer. Hidden for Plus accounts. Persists across reloads until switched off.": [
+        "Setzt die Werte für „Forces Lite“ und „Max pools“ auf Null und lässt „UsageLimitsTierSync“ den Tier-Fehler auslösen, sodass du oben im Verfassen-Fenster eine Vorschau der wöchentlichen Obergrenze („UpsellCard“) anzeigen kannst. Bei Plus-Konten ausgeblendet. Bleibt auch nach dem Neuladen erhalten, bis die Funktion ausgeschaltet wird."
+      ],
       "Forces the inline composer banner into \"approaching\" or \"at limit\" state so you can preview it in any context.": [
         "Zwingt das Inline-Verfassen-Fenster-Banner in den Status „fast erreicht“ oder „erreicht“, damit du in jedem Kontext eine Vorschau davon anzeigen kannst."
       ],
@@ -7822,6 +7813,12 @@
       ],
       "Notifications": [
         "Benachrichtigungen"
+      ],
+      "off": [
+        "aus"
+      ],
+      "on": [
+        "ein"
       ],
       "Open a conversation to enable generation error testing.": [
         "Eine Unterhaltung öffnen, um die Fehlerprüfung bei der Erzeugung zu aktivieren."
@@ -7954,6 +7951,12 @@
       ],
       "Unsynced spaces": [
         "Nicht synchronisierte Bereiche"
+      ],
+      "Weekly chat limit upsell": [
+        "Upselling für wöchentliche Chat-Obergrenze"
+      ],
+      "Weekly limit upsell": [
+        "Upselling für wöchentliche Obergrenze"
       ],
       "Yes": [
         "Ja"
@@ -9205,8 +9208,8 @@
       "More plans are available in other currencies": [
         "Weitere Pläne sind in anderen Währungen verfügbar"
       ],
-      "Pay with ${ IDEAL_BRAND_NAME }": [
-        "Mit ${ IDEAL_BRAND_NAME } bezahlen"
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "Mit ${ IDEAL_WERO_BRAND_NAME } bezahlen"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Für die Aktivierung des Abonnements nach dem Ende der Testversion ist eine Zahlungsmethode erforderlich."
@@ -9289,8 +9292,8 @@
       "You will soon be redirected to verify your payment.": [
         "Du wirst in Kürze weitergeleitet, um deine Zahlung zu bestätigen."
       ],
-      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
-        "Deine Währung wurde zu Euro (€) geändert, da ${ IDEAL_BRAND_NAME } nur Euro unterstützen."
+      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
+        "Deine Währung wurde zu Euro (€) geändert, da ${ IDEAL_WERO_BRAND_NAME } nur Zahlungen in Euro unterstützt."
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Deine Währung wurde zu Euro (€) geändert, da SEPA-Banküberweisungen Zahlungen nur in Euro unterstützen."
@@ -9303,8 +9306,8 @@
       ]
     },
     "Payments.Error": {
-      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
-        "Die Initialisierung von ${ IDEAL_BRAND_NAME } ist fehlgeschlagen. Bitte versuche es später erneut."
+      "Failed to initialize ${ IDEAL_WERO_BRAND_NAME }. Please try again later.": [
+        "Die Initialisierung von ${ IDEAL_WERO_BRAND_NAME } ist fehlgeschlagen. Bitte versuche es später erneut."
       ],
       "Invalid card number": [
         "Ungültige Kartennummer"
@@ -9334,8 +9337,8 @@
       ]
     },
     "Payments.iDEAL": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Mit der Bestätigung dieser Zahlung ermächtigst du ${ BRAND_NAME } und Stripe, unseren Zahlungsdienstleister, deine Bank anzuweisen, den entsprechenden Betrag von deinem Konto abzubuchen. Eine Rückerstattung kannst du innerhalb von 8 Wochen ab dem Datum der Abbuchung gemäß den Bedingungen deines Vertrags mit deiner Bank beantragen."
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Mit der Bestätigung ermächtigst du ${ BRAND_NAME } und Stripe, unseren Zahlungsdienstleister, zukünftige Zahlungen für dein Abonnement per SEPA-Lastschrift von diesem Bankkonto einzuziehen, und deiner Bank, diese Zahlungen abzubuchen. Deine erste Zahlung erfolgt jetzt durch ${ IDEAL_WERO_BRAND_NAME }. Dein Abonnement verlängert sich automatisch, bis du es kündigst; wir werden dich vor jeder Abbuchung benachrichtigen. Bei Einzügen per Lastschrift kannst du gemäß den Bedingungen deiner Vereinbarung mit Ihrer Bank innerhalb von 8 Wochen nach dem Abbuchungsdatum eine Rückerstattung bei deiner Bank beantragen. Dies gilt nicht für die Zahlung an ${ IDEAL_WERO_BRAND_NAME }, die du gerade vornimmst."
       ]
     },
     "Payments.info": {
@@ -9732,17 +9735,6 @@
       ],
       "User Admin": [
         "Benutzeradministrator"
-      ]
-    },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Sicherheitsrichtlinien, Datenaufbewahrung und VPN-Infrastruktur konfigurieren sowie Prüfprotokolle verwalten."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Alle Benutzer, Gruppen, Sicherheits- und Abrechnungseinstellungen sowie Systemkonfigurationen verwalten."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Benutzer, Gruppen und Speicher für alle Mitglieder verwalten, Rollen und Lizenzen zuweisen."
       ]
     },
     "Safety review": {
