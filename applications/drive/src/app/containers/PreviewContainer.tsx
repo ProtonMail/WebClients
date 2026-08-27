@@ -39,6 +39,7 @@ export function PreviewContainer({ shareId, nodeUid }: PreviewContainerProps) {
 
     return (
         <Preview
+            canAskLumo
             drive={drive}
             nodeUid={nodeUid}
             onClose={() => {

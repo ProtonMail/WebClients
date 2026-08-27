@@ -229,6 +229,7 @@ export const useRevisionsModalState = ({
                     date={selectedRevision.creationTime}
                     onClose={() => setSelectedRevision(null)}
                     drive={drive}
+                    canAskLumo
                 />
             </div>
         </Portal>

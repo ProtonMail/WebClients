@@ -3,8 +3,11 @@ import { Suspense, forwardRef, lazy, useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms/Button/Button';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { useCombinedRefs, useLoading } from '@proton/hooks';
 import busy from '@proton/shared/lib/busy';
+import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { isMinimumSafariVersion, isMobile, isSafari, isWebglSupported } from '@proton/shared/lib/helpers/browser';
 import {
     isAudio,
@@ -20,9 +23,13 @@ import {
     isXlsx,
 } from '@proton/shared/lib/helpers/mimetype';
 import { isPreviewTooLarge } from '@proton/shared/lib/helpers/preview';
+import clsx from '@proton/utils/clsx';
 
+import LumoDrawerLogo from '../../components/drawer/drawerIcons/LumoDrawerLogo';
 import useFocusTrap from '../../components/focus/useFocusTrap';
+import type { LumoAgentConfig } from '../../components/lumoAgent/types';
 import useModalState from '../../components/modalTwo/useModalState';
+import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
 import useBeforeUnload from '../../hooks/useBeforeUnload';
 import { useHotkeys } from '../../hooks/useHotkeys';
 import AudioPreview from './AudioPreview';
@@ -48,6 +55,13 @@ const IWADPreview = lazy(() => import(/* webpackChunkName: "iwad-preview" */ './
 
 // Lazy Loaded since it includes three.js and it's a rare file type (not common)
 const STLPreview = lazy(() => import(/* webpackChunkName: "stl-preview" */ './3DPreview/STLPreview'));
+
+// Lazy Loaded so the Lumo panel and its client stay out of the bundle until the assistant is opened
+const FilePreviewAssistant = lazy(() =>
+    import(/* webpackChunkName: "file-preview-assistant" */ './FilePreviewAssistant').then((module) => ({
+        default: module.FilePreviewAssistant,
+    }))
+);
 
 interface FilePreviewProps {
     isMetaLoading?: boolean;
@@ -89,6 +103,11 @@ interface FilePreviewProps {
     navigationControls?: ReactNode;
     signatureStatus?: ReactNode;
     signatureConfirmation?: ReactNode;
+
+    /** Supply it to offer the Lumo assistant in a side panel; the product owns the tools and the rules. */
+    lumoConfig?: LumoAgentConfig;
+    /** Identifies the file the assistant conversation is about; changing it starts a fresh conversation. */
+    lumoConversationKey?: string;
 }
 
 export const FilePreviewContent = ({
@@ -330,6 +349,8 @@ const FilePreview = (
         onFavorite,
         isFavorite,
         date,
+        lumoConfig,
+        lumoConversationKey,
     }: FilePreviewProps,
     ref: Ref<HTMLDivElement>
 ) => {
@@ -342,6 +363,14 @@ const FilePreview = (
     const [isSaving, withSaving] = useLoading(false);
     const [isDirty, setIsDirty] = useState<boolean>(false);
     const [newContent, setNewContent] = useState<Uint8Array<ArrayBuffer>[]>([]);
+    const [isAssistantOpen, setIsAssistantOpen] = useState(false);
+    // Latches on the first open so the panel stays mounted, and its conversation alive, once closed.
+    const hasOpenedAssistant = useRef(false);
+    hasOpenedAssistant.current ||= isAssistantOpen;
+
+    const { viewportWidth } = useActiveBreakpoint();
+    // Below a large viewport there is no room beside the file, so the panel takes over the whole width.
+    const isAssistantFullWidth = !viewportWidth['>=large'];
 
     // Block browser from leaving and do not refresh page with unsaved document.
     useBeforeUnload(isDirty);
@@ -421,6 +450,23 @@ const FilePreview = (
                 onFavorite={onFavorite}
                 isFavorite={isFavorite}
                 date={date}
+                assistantButton={
+                    lumoConfig ? (
+                        <Tooltip title={c('Action').t`Toggle ${LUMO_SHORT_APP_NAME}`}>
+                            <Button
+                                icon
+                                shape="ghost"
+                                onClick={() => setIsAssistantOpen((isOpen) => !isOpen)}
+                                aria-controls="lumo-side-panel"
+                                aria-expanded={isAssistantOpen}
+                                aria-pressed={isAssistantOpen}
+                                data-testid="lumo-toggle"
+                            >
+                                <LumoDrawerLogo size={6} />
+                            </Button>
+                        </Tooltip>
+                    ) : undefined
+                }
             >
                 {isDirty ? (
                     <div className="flex items-center absolute inset-center">{c('Info').t`Unsaved changes`}</div>
@@ -428,31 +474,61 @@ const FilePreview = (
                     navigationControls
                 )}
             </Header>
-            <FilePreviewContent
-                isMetaLoading={isMetaLoading}
-                isLoading={isLoading}
-                mimeType={mimeType}
-                error={error}
-                imgThumbnailUrl={imgThumbnailUrl}
-                fileSize={fileSize}
-                fileName={fileName}
-                videoStreaming={videoStreaming}
-                isPublic={isPublic}
-                isPublicDocsAvailable={isPublicDocsAvailable}
-                sheetsEnabled={sheetsEnabled}
-                onOpenInDocs={onOpenInDocs}
-                contents={contents}
-                onDownload={onDownload}
-                onNewContents={
-                    onSave
-                        ? (content: Uint8Array<ArrayBuffer>[]) => {
-                              setIsDirty(true);
-                              setNewContent(content);
-                          }
-                        : undefined
-                }
-                signatureConfirmation={signatureConfirmation}
-            />
+            <div className="flex flex-nowrap flex-1 overflow-hidden">
+                <div
+                    className={clsx(
+                        'flex flex-column flex-nowrap flex-1 overflow-hidden',
+                        isAssistantOpen && isAssistantFullWidth && 'hidden'
+                    )}
+                >
+                    <FilePreviewContent
+                        isMetaLoading={isMetaLoading}
+                        isLoading={isLoading}
+                        mimeType={mimeType}
+                        error={error}
+                        imgThumbnailUrl={imgThumbnailUrl}
+                        fileSize={fileSize}
+                        fileName={fileName}
+                        videoStreaming={videoStreaming}
+                        isPublic={isPublic}
+                        isPublicDocsAvailable={isPublicDocsAvailable}
+                        sheetsEnabled={sheetsEnabled}
+                        onOpenInDocs={onOpenInDocs}
+                        contents={contents}
+                        onDownload={onDownload}
+                        onNewContents={
+                            onSave
+                                ? (content: Uint8Array<ArrayBuffer>[]) => {
+                                      setIsDirty(true);
+                                      setNewContent(content);
+                                  }
+                                : undefined
+                        }
+                        signatureConfirmation={signatureConfirmation}
+                    />
+                </div>
+                {/* Kept mounted once opened, and keyed on the file, so closing and reopening the panel
+                    finds the same conversation while moving to another file starts a fresh one. */}
+                {lumoConfig && hasOpenedAssistant.current && (
+                    <aside
+                        className={clsx(
+                            'shrink-0 border-left border-weak',
+                            isAssistantFullWidth ? 'w-full' : 'w-custom',
+                            !isAssistantOpen && 'hidden'
+                        )}
+                        style={isAssistantFullWidth ? undefined : { '--w-custom': '23rem' }}
+                        data-testid="file-preview:assistant"
+                    >
+                        <Suspense fallback={null}>
+                            <FilePreviewAssistant
+                                key={lumoConversationKey}
+                                config={lumoConfig}
+                                onClose={() => setIsAssistantOpen(false)}
+                            />
+                        </Suspense>
+                    </aside>
+                )}
+            </div>
             <CloseModal {...closeModalProps} handleDiscard={onClose} isSaving={isSaving} />
         </div>
     );
