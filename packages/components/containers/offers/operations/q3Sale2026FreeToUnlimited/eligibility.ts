@@ -1,8 +1,8 @@
 import type { Currency } from '@proton/payments/core/interface';
-import { hasIntentionalScheduledModification } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
 
+import { hasIntentionalScheduledModification } from '../../helpers/hasIntentionalScheduledModification';
 import { isCampaignApp } from '../../helpers/isCampaignApp';
 import { isEligibleCurrency } from '../../helpers/isEligibleCurrency';
 import isSubscriptionCheckAllowed from '../../helpers/isSubscriptionCheckAllowed';
