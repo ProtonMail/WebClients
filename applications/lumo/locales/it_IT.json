@@ -1754,9 +1754,6 @@
       " header. Keys are scoped to your account and can be revoked from ": [
         " intestazione. Le chiavi sono associate al tuo account e possono essere revocate da "
       ],
-      " to have higher limits.": [
-        " per avere limiti più elevati."
-      ],
       "\"${ fileName }\" has multiple sheets. Select the sheets to include in the conversation context.": [
         "\"${ fileName }\" contiene più fogli. Seleziona i fogli da includere nel contesto della conversazione."
       ],
@@ -2232,18 +2229,6 @@
       "You've reached your image limit for this period. Upgrade to keep creating images.": [
         "Hai raggiunto il tuo limite di immagini per questo periodo. Effettua l'upgrade per continuare a crearne."
       ],
-      "You've run out of weekly chats, please ": [
-        "Hai terminato le chat settimanale, per favore "
-      ],
-      "You've run out of weekly chats, please sign in or create an account to have higher limits.": [
-        "Hai esaurito le chat settimanali, accedi o crea un account per avere limiti più elevati."
-      ],
-      "You've run out of weekly chats, please upgrade to have higher limits.": [
-        "Hai esaurito le chat settimanali, effettua l’upgrade per ottenere limiti più elevati."
-      ],
-      "You've run out of weekly chats. Contact your admin to get higher limits.": [
-        "Hai esaurito le chat settimanali. Contatta il tuo amministratore per ottenere limiti più alti."
-      ],
       "Your memories are already up to date.": [
         "I tuoi ricordi sono già aggiornati."
       ]
@@ -2467,9 +2452,6 @@
       ],
       "Sign in": [
         "Accedi"
-      ],
-      "upgrade": [
-        "effettuare l’upgrade"
       ],
       "Upgrade": [
         "Effettua l'upgrade"
@@ -6719,9 +6701,6 @@
         "${ n } mese",
         "${ n } mesi"
       ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } caratteri"
-      ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Accedi a ${ PASS_APP_NAME } in modo sicuro dal terminale, ideale per script, automazione e flussi di lavoro di sviluppo."
       ],
@@ -8998,17 +8977,6 @@
       ],
       "User Admin": [
         "Amministratore utenti"
-      ]
-    },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Configura le policy di sicurezza, la conservazione dei dati, l'infrastruttura VPN e gestisci i log di controllo."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Gestisci tutti gli utenti, i gruppi, la sicurezza, la fatturazione e le configurazioni di sistema."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Gestisci gli utenti, i gruppi e l'archiviazione per tutti i membri, assegna i ruoli e alloca le licenze."
       ]
     },
     "Safety review": {
