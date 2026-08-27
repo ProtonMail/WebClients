@@ -9,7 +9,6 @@ import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authenticatio
 import { useLocation } from 'react-router-dom-v5-compat'
 import { useIsSheetsEnabled } from './flags'
 import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
-import { useFlag } from '@proton/unleash/useFlag'
 import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
 
 const DocsUrlContext = createContext<{
@@ -24,7 +23,6 @@ const DocsUrlContext = createContext<{
 } | null>(null)
 
 export function DocsUrlContextProvider({ children }: { children: React.ReactNode }) {
-  const isDocsEnabled = !useFlag('DriveDocsDisabled')
   const { getLocalID } = useAuthentication()
 
   const { pathname, search } = useLocation()
@@ -141,12 +139,6 @@ export function DocsUrlContextProvider({ children }: { children: React.ReactNode
   const isSheetsEnabled = useIsSheetsEnabled()
 
   useEffectOnce(() => {
-    if (isDocsEnabled === false) {
-      void OpenTracer.trace('boot_docs_url_bar_is_docs_enabled_false')
-      window.location.assign(getAppHref('/', APPS.PROTONDRIVE, getLocalID()))
-      return
-    }
-    // prevent users without access from creating sheets
     if (
       !isSheetsEnabled &&
       (openAction?.type === 'sheet' || openAction?.type === 'spreadsheet') &&

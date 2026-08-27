@@ -13,7 +13,6 @@ import { useLinkSharingModal } from '../components/modals/ShareLinkModal/ShareLi
 import type { ShareURL } from '../store';
 import { useDefaultShare, useShareUrl } from '../store';
 import useDriveCrypto from '../store/_crypto/useDriveCrypto';
-import { useDriveDocsFeatureFlag } from '../store/_documents/useDriveDocsFeatureFlag';
 import type { DocumentAction, DocumentType } from '../store/_documents/useOpenDocument';
 import { useOpenDocument } from '../store/_documents/useOpenDocument';
 import useLink from '../store/_links/useLink';
@@ -31,11 +30,6 @@ import useNodes from './_nodes/useNodes';
 import { useMyFiles, useResolveShareId } from './_shares';
 
 export interface DriveCompat {
-    /**
-     * Whether or not Docs is enabled. Only uses feature flags, not context aware.
-     */
-    isDocsEnabled: boolean;
-
     /**
      * Gets a node, either from cache or fetched.
      */
@@ -95,10 +89,6 @@ export interface DriveCompat {
     trashDocument: (meta: NodeMeta, parentLinkId: string) => Promise<void>;
     restoreDocument: (meta: NodeMeta, parentLinkId: string) => Promise<void>;
     deleteDocumentPermanently: (meta: NodeMeta, parentLinkId: string) => Promise<void>;
-    /**
-     * Gets the URL for a given document.
-     */
-    getDocumentUrl: (meta: NodeMeta) => URL;
 
     getNodePaths: (ids: { linkId: string; shareId: string }[]) => Promise<PathItem[][]>;
     getNodesAreShared: (ids: { linkId: string; shareId: string }[]) => Promise<boolean[]>;
@@ -168,7 +158,6 @@ export const useDriveCompat = (): DriveCompat => {
         createDocumentNode,
         getDocumentKeys,
         renameDocument,
-        getDocumentUrl,
         trashDocument,
         restoreDocument,
         deleteDocumentPermanently,
@@ -181,7 +170,6 @@ export const useDriveCompat = (): DriveCompat => {
     const { getMyFilesNodeMeta } = useMyFiles();
     const { openDocumentWindow } = useOpenDocument();
     const { getVerificationKey } = useDriveCrypto();
-    const { isDocsEnabled } = useDriveDocsFeatureFlag();
 
     const [moveToFolderModal, showMoveToFolderModal] = useMoveToFolderModal();
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
@@ -234,7 +222,6 @@ export const useDriveCompat = (): DriveCompat => {
     };
 
     return {
-        isDocsEnabled,
         createDocumentNode: withResolveShareId(createDocumentNode),
         getDocumentKeys: withResolveShareId(getDocumentKeys),
         getNodePaths,
@@ -253,14 +240,12 @@ export const useDriveCompat = (): DriveCompat => {
         trashDocument: withResolveShareId(trashDocument),
         restoreDocument: withResolveShareId(restoreDocument),
         deleteDocumentPermanently: withResolveShareId(deleteDocumentPermanently),
-        getDocumentUrl,
         openDocument,
         openDocumentWindow,
         openDocumentSharingModal: openShareModal,
         openMoveToFolderModal,
         getMyFilesNodeMeta,
         getVerificationKey,
-        // This should be changed to a fragment if more modals are added
         modals: (
             <>
                 {moveToFolderModal}
