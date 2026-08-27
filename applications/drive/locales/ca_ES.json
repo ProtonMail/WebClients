@@ -7887,6 +7887,12 @@
       ],
       "Read folder context": [
         "Llegir el context de la carpeta"
+      ],
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "Marca de ${ IDEAL_WERO_BRAND_NAME }"
+      ],
+      "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Us redirigirem a ${ IDEAL_WERO_BRAND_NAME } en una pestanya nova del navegador per completar aquesta transacció. Si utilitzeu algun bloquejador de finestres emergents, desactiveu-lo per continuar."
       ]
     },
     "info": {
@@ -8797,6 +8803,9 @@
       ],
       "Account holder name": [
         "Nom del titular del compte"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } caràcters"
       ]
     },
     "Label for contact group color": {
@@ -11468,6 +11477,12 @@
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
         "S'ha canviat la vostra moneda a euros (€) perquè ${ IDEAL_BRAND_NAME } només admet pagaments en euros."
+      ],
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "Pagueu amb ${ IDEAL_WERO_BRAND_NAME }"
+      ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
+        "S'ha canviat la vostra moneda a euros (€) perquè ${ IDEAL_WERO_BRAND_NAME } només admet pagaments en euros."
       ]
     },
     "Payments.Error": {
@@ -11494,6 +11509,9 @@
       ],
       "Please enter the account holder name": [
         "Introduïu el nom del titular del compte"
+      ],
+      "Failed to initialize ${ IDEAL_WERO_BRAND_NAME }. Please try again later.": [
+        "No s'ha pogut inicialitzar ${ IDEAL_WERO_BRAND_NAME }. Torneu-ho a provar més tard."
       ]
     },
     "Payments.error": {
@@ -15207,6 +15225,9 @@
     "Payments.iDEAL": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
         "En confirmar aquest pagament autoritzeu ${ BRAND_NAME } i Stripe, el nostre proveïdor de serveis de pagament, a donar instruccions al vostre banc perquè el carregui al vostre compte. Podreu obtenir un reemborsament en un termini de 8 setmanes des de la data del càrrec, d'acord amb les condicions del vostre acord amb el banc."
+      ],
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "En confirmar-ho, autoritzeu ${ BRAND_NAME } i Stripe, el nostre proveïdor de serveis de pagament, a cobrar els pagaments futurs de la vostra subscripció en'aquest compte bancari mitjançant domiciliació bancària SEPA, i al vostre banc a carregar aquests pagaments. El vostre primer pagament es fa ara mitjançant ${ IDEAL_WERO_BRAND_NAME }. El vostre pla es renovarà automàticament fins que el cancel·leu; us avisarem abans de cada cobrament. Per a les domiciliacions bancàries, podreu sol·licitar un reemborsament al vostre banc en un termini de 8 setmanes a partir de la data del càrrec, segons els termes del vostre acord amb el banc. Això no s'aplica al pagament mitjançant ${ IDEAL_WERO_BRAND_NAME } que esteu fent ara."
       ]
     },
     "q3campaign2026: Action": {
