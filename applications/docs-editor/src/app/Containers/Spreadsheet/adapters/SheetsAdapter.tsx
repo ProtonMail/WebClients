@@ -7,6 +7,7 @@ import { useMemo } from 'react'
 import { reportErrorToSentry } from '../../../Utils/errorMessage'
 import { useApplication } from '../../ApplicationProvider'
 import { SheetsDependenciesProvider, type SheetsDependencies } from '../SheetsDependenciesProvider'
+import { useResolvedAppPlatform } from './useResolvedAppPlatform'
 
 type SheetsAdapterProps = PropsWithChildren<{
   clientInvoker: EditorRequiresClientMethods
@@ -19,6 +20,7 @@ type SheetsAdapterProps = PropsWithChildren<{
 export function SheetsAdapter({ children, clientInvoker }: SheetsAdapterProps) {
   const { createNotification } = useNotifications()
   const { application } = useApplication()
+  const appPlatform = useResolvedAppPlatform(clientInvoker)
 
   const role = application.getRole()
   const canEdit = role.canEdit()
@@ -35,12 +37,16 @@ export function SheetsAdapter({ children, clientInvoker }: SheetsAdapterProps) {
       },
       logger: application.logger,
       showNotification: createNotification,
+      appPlatform,
       // Dependencies that use the clientInvoker
       isFeatureFlagEnabled: (featureFlag) => clientInvoker.checkIfFeatureFlagIsEnabled(featureFlag),
       openLink: (url) => {
         void clientInvoker.openLink(url).catch(reportErrorToSentry)
       },
       handleFileMenuAction: (action) => clientInvoker.handleFileMenuAction(action),
+      showGenericInfoModal: (props) => {
+        clientInvoker.showGenericInfoModal(props)
+      },
     }),
     [
       application.appVersion,
@@ -50,6 +56,7 @@ export function SheetsAdapter({ children, clientInvoker }: SheetsAdapterProps) {
       canTrash,
       clientInvoker,
       createNotification,
+      appPlatform,
     ],
   )
 
