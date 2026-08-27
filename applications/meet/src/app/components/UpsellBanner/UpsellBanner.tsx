@@ -21,7 +21,7 @@ export const DISMISS_DAYS = 30;
 
 export const UpsellBanner = () => {
     const meetUpsellEnabled = useFlag('MeetUpsell');
-    const { isPaidUser, isSubUser, hasSubscriptionWithoutMeet } = useMeetSelector(selectSubscriptionStatus);
+    const { hasSubscriptionWithoutMeet, canUpsell, isLoading } = useMeetSelector(selectSubscriptionStatus);
 
     const [visible, setVisible] = useState(() => canShowBanner(STORAGE_KEY));
 
@@ -35,7 +35,7 @@ export const UpsellBanner = () => {
         setVisible(false);
     };
 
-    if (!visible || !meetUpsellEnabled || isPaidUser || isSubUser) {
+    if (!visible || !meetUpsellEnabled || isLoading || !canUpsell) {
         return null;
     }
 

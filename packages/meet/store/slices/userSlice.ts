@@ -4,8 +4,9 @@ import { selectOrganization } from '@proton/account/organization';
 import { selectSubscription } from '@proton/account/subscription';
 import { selectUser } from '@proton/account/user';
 import { hasBundleBiz2025, hasBundlePro2024, hasVisionary } from '@proton/payments/core/subscription/helpers';
+import { isPaidSubscription } from '@proton/payments/core/type-guards';
 import { isProtoneer } from '@proton/shared/lib/helpers/organization';
-import { getUserCreationDate, getUserDaysSinceCreation, isMember } from '@proton/shared/lib/user/helpers';
+import { isMember, isUserAccountOlderThanOrEqualToDays } from '@proton/shared/lib/user/helpers';
 
 import type { MeetState } from '../rootReducer';
 
@@ -45,6 +46,15 @@ type SubscriptionStatus = {
      * Whether the user has a subscription without the Meet feature.
      */
     hasSubscriptionWithoutMeet: boolean;
+    /**
+     * Whether we can upsell premium plan to the user.
+     */
+    canUpsell: boolean;
+    /**
+     * Whether the subscription has yet to land, so the flags above cannot be trusted.
+     * Guests never load one, so nothing is pending for them.
+     */
+    isLoading: boolean;
 };
 
 export const selectSubscriptionStatus = createSelector(
@@ -55,20 +65,30 @@ export const selectSubscriptionStatus = createSelector(
         const organization = organizationState?.value;
 
         if (!user) {
-            return { isPaidUser: false, isSubUser: false, hasSubscriptionWithoutMeet: false };
+            return {
+                isPaidUser: false,
+                isSubUser: false,
+                hasSubscriptionWithoutMeet: false,
+                canUpsell: true,
+                isLoading: false,
+            };
         }
 
-        const daysSinceCreation = getUserDaysSinceCreation(getUserCreationDate(user));
+        const isAccountOldEnough = isUserAccountOlderThanOrEqualToDays(user, 3);
         const hasSubscriptionWithMeetFeature =
             hasVisionary(subscription) ||
             hasBundlePro2024(subscription) ||
             hasBundleBiz2025(subscription) ||
             isProtoneer(organization);
+        const isSubUser = isMember(user);
+        const hasPaidMeet = hasSubscriptionWithMeetFeature || user.hasPaidMeet;
 
         return {
-            isPaidUser: daysSinceCreation < 3 || hasSubscriptionWithMeetFeature || user.hasPaidMeet,
-            isSubUser: isMember(user),
-            hasSubscriptionWithoutMeet: !!subscription && !hasSubscriptionWithMeetFeature && !user.hasPaidMeet,
+            isPaidUser: hasPaidMeet,
+            isSubUser: isSubUser,
+            hasSubscriptionWithoutMeet: isPaidSubscription(subscription) && !hasPaidMeet,
+            canUpsell: isAccountOldEnough && !hasPaidMeet && !isSubUser,
+            isLoading: subscription === undefined,
         };
     }
 );
