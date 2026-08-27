@@ -332,6 +332,17 @@ export const buildModelModeOptions = (
     isMaxAvailableByFlag: boolean,
     isApertusEnabled: boolean
 ): ModelModeOption[] => [
+    ...(isApertusEnabled
+        ? [
+              {
+                  tier: 'apertus-15' as const,
+                  getLabel: () => 'Apertus 1.5 🇨🇭',
+                  getDescription: () => c('collider_2025: Description').t`Fully open, Swiss model for lighter tasks`,
+                  getRemaining: () => remainingLimits?.lite,
+                  isDisabled: () => isLimitExhausted(remainingLimits?.lite),
+              },
+          ]
+        : []),
     {
         tier: 'lumo-lite',
         getLabel: () => `${LUMO_SHORT_APP_NAME} 2.0 Lite`,
@@ -350,16 +361,4 @@ export const buildModelModeOptions = (
         getUnavailableReason: () => (!isMaxAvailableByFlag ? 'high-load' : null),
         isDisabled: () => !isModelTierSelectable('lumo-max', remainingLimits, { isMaxAvailable: isMaxAvailableByFlag }),
     },
-    ...(isApertusEnabled
-        ? [
-              {
-                  tier: 'apertus-15' as const,
-                  getLabel: () => 'Apertus 1.5 🇨🇭',
-                  getDescription: () =>
-                      c('collider_2025: Description').t`Open-source Swiss model with inspectable data & weights`,
-                  getRemaining: () => remainingLimits?.lite,
-                  isDisabled: () => isLimitExhausted(remainingLimits?.lite),
-              },
-          ]
-        : []),
 ];
