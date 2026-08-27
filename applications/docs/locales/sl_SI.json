@@ -5466,15 +5466,6 @@
       "This user can not be migrated due to platform incompatibilities.": [
         "Tega uporabnika ni mogoče preseliti zaradi nezdružljivosti platform."
       ],
-      "This will permanently delete the file you uploaded.": [
-        "S tem boste trajno izbrisali datoteko, ki ste jo naložili."
-      ],
-      "This will permanently delete the folder you uploaded.": [
-        "S tem boste trajno izbrisali mapo, ki ste jo naložili."
-      ],
-      "This will permanently delete the selected items you uploaded.": [
-        "To dejanje bo trajno izbrisalo izbrane predmete, ki ste jih naložili."
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "S tem se boste odjavili iz vseh računov, v katere ste trenutno prijavljeni."
       ],
@@ -5846,9 +5837,6 @@
     "Label": {
       "${ BRAND_NAME } username": [
         "Uporabniško ime za ${ BRAND_NAME }"
-      ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } znakov"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Začasno ni na voljo. Poskusite znova pozneje.)"
@@ -8050,29 +8038,17 @@
       "Share invitation declined": [
         "Povabilo k skupni rabi je zavrnjeno."
       ],
-      "Sorry, we couldn't delete the folder because it is not empty.": [
-        "Žal ni bilo mogoče izbrisati mape, ker ni prazna.",
-        "Žal ni bilo mogoče izbrisati map, ker nista prazni.",
-        "Žal ni bilo mogoče izbrisati map, ker niso prazne.",
-        "Žal ni bilo mogoče izbrisati map, ker niso prazne."
-      ],
       "Stopping the sharing of this item has failed": [
         "Preklic deljenja za ta predmet ni uspel"
       ],
       "Subfolder failed to be loaded": [
         "Podmape ni bilo mogoče naložiti"
       ],
-      "The document failed to be created": [
-        "Dokumenta ni bilo mogoče ustvariti"
-      ],
       "The link to your item failed to be deleted": [
         "Povezave do vašega predmeta ni bilo mogoče izbrisati"
       ],
       "The link to your item was deleted": [
         "Povezava do vašega predmeta je bila izbrisana"
-      ],
-      "The spreadsheet failed to be created": [
-        "Ustvarjanje preglednice ni uspelo"
       ],
       "Trash failed to be emptied": [
         "Smetnjaka ni bilo mogoče izprazniti"
@@ -10002,9 +9978,6 @@
       "Decline invitation?": [
         "Zavrni povabilo?"
       ],
-      "Delete": [
-        "Izbriši"
-      ],
       "Delete ${ count } contact": [
         "Izbriši ${ count } stik",
         "Izbriši ${ count } stika",
@@ -10016,12 +9989,6 @@
         "Izbriši ${ count } skupini stikov",
         "Izbriši ${ count } skupine stikov",
         "Izbriši ${ count } skupin stikov"
-      ],
-      "Delete ${ links.length } items?": [
-        "Izbrišem ${ links.length } predmete?"
-      ],
-      "Delete ${ name }?": [
-        "Izbriši ${ name }?"
       ],
       "Delete ${ value }": [
         "Izbriši ${ value }"

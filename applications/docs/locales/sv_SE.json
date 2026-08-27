@@ -3039,6 +3039,9 @@
       "Cannot find move target": [
         "Kan inte hitta mål för flytt"
       ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Kan inte, flytta objekt utan giltigt namn, byt namn på objektet först"
+      ],
       "Cannot share root folder": [
         "Kan inte dela rotmapp"
       ],
@@ -3171,6 +3174,9 @@
         "Misslyckades att hämta nod"
       ],
       "Failed to fetch sharing info": [
+        "Misslyckades att hämta delningsinformation"
+      ],
+      "Failed to fetch sharing information": [
         "Misslyckades att hämta delningsinformation"
       ],
       "Failed to get inviter keys": [
@@ -5652,15 +5658,6 @@
       "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
         "Denna användare kan inte migreras eftersom deras e-postadress inte är tillgänglig på ${ BRAND_NAME }."
       ],
-      "This will permanently delete the file you uploaded.": [
-        "Detta kommer ta bort filen du laddade upp permanent."
-      ],
-      "This will permanently delete the folder you uploaded.": [
-        "Detta kommer ta bort mappen du laddade upp permanent."
-      ],
-      "This will permanently delete the selected items you uploaded.": [
-        "Detta kommer ta bort de valda objekten du laddade upp permanent."
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Detta kommer logga ut dig på alla konton som du för närvarande är inloggad på."
       ],
@@ -6057,8 +6054,8 @@
       "${ BRAND_NAME } username": [
         "Användarnamn för ${ BRAND_NAME }"
       ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } tecken"
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } tecken"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Tillfälligt otillgänglig. Återkom senare.)"
@@ -8098,6 +8095,11 @@
         "Prova det nu"
       ]
     },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Du har nu åtkomst till nya ${ CALENDAR_APP_NAME }. ${ link }"
+      ]
+    },
     "Notification": {
       "\"${ ellipsedName }\" created successfully": [
         "”${ ellipsedName }” skapades utan problem"
@@ -8339,27 +8341,17 @@
       "Share invitation declined": [
         "Delningsinbjudan avböjd"
       ],
-      "Sorry, we couldn't delete the folder because it is not empty.": [
-        "Vi kunde inte ta bort mappen eftersom den inte är tom.",
-        "Vi kunde inte ta bort mapparna eftersom de inte är tomma."
-      ],
       "Stopping the sharing of this item has failed": [
         "Misslyckades att stoppa delning av detta objekt"
       ],
       "Subfolder failed to be loaded": [
         "Undermapp kunde inte laddas"
       ],
-      "The document failed to be created": [
-        "Dokumentet misslyckades att skapas"
-      ],
       "The link to your item failed to be deleted": [
         "Länken till ditt objekt misslyckades att tas bort"
       ],
       "The link to your item was deleted": [
         "Länken till ditt objekt togs bort"
-      ],
-      "The spreadsheet failed to be created": [
-        "Kalkylbladet misslyckades att skapas"
       ],
       "Trash failed to be emptied": [
         "Misslyckades att tömma papperskorg"
@@ -9234,17 +9226,6 @@
       ],
       "User Admin": [
         "Användaradministratör"
-      ]
-    },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Konfigurera säkerhetspolicyer, datalagring och VPN-infrastruktur och hantera granskningsloggar."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Hantera alla användare, grupper, säkerhet, fakturering och systemkonfigurationer."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Hantera användare, grupper och lagringsutrymme för alla medlemmar, tilldela roller och allokera licenser."
       ]
     },
     "Safety review": {
@@ -10464,9 +10445,6 @@
       "Decline invitation?": [
         "Avböj inbjudan?"
       ],
-      "Delete": [
-        "Ta bort"
-      ],
       "Delete ${ count } contact": [
         "Ta bort ${ count } kontakt",
         "Ta bort ${ count } kontakter"
@@ -10474,12 +10452,6 @@
       "Delete ${ count } contact group": [
         "Ta bort ${ count } kontaktgrupp",
         "Ta bort ${ count } kontaktgrupper"
-      ],
-      "Delete ${ links.length } items?": [
-        "Ta bort ${ links.length } objekt?"
-      ],
-      "Delete ${ name }?": [
-        "Ta bort ${ name }?"
       ],
       "Delete ${ value }": [
         "Ta bort ${ value }"
@@ -10985,6 +10957,9 @@
       ],
       "Customize import to reduce the number of labels": [
         "Anpassa import för att minska antalet etiketter"
+      ],
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "Status för datamigrering från ${ providerName } till ${ BRAND_NAME }"
       ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "Digital signering av e-postmeddelanden hjälper till att autentisera att meddelanden skickas av dig"

@@ -5757,15 +5757,6 @@
       "This user can not be migrated due to platform incompatibilities.": [
         "Цього користувача неможливо перенести через несумісність платформ."
       ],
-      "This will permanently delete the file you uploaded.": [
-        "Це назавжди видалить вивантажений вами файл."
-      ],
-      "This will permanently delete the folder you uploaded.": [
-        "Це назавжди видалить вивантажену вами папку."
-      ],
-      "This will permanently delete the selected items you uploaded.": [
-        "Це назавжди видалить вибрані елементи, які ви вивантажили."
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Ви вийдете з усіх облікових записів, до яких наразі увійшли."
       ],
@@ -6173,9 +6164,6 @@
     "Label": {
       "${ BRAND_NAME } username": [
         "Ім'я користувача ${ BRAND_NAME }"
-      ],
-      "${ value.length }/${ maxLength } characters": [
-        "Символів: ${ value.length }/${ maxLength }"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Тимчасово недоступно. Повторіть спробу пізніше.)"
@@ -8452,29 +8440,17 @@
       "Share invitation declined": [
         "Запрошення, яким поділилися, відхилено"
       ],
-      "Sorry, we couldn't delete the folder because it is not empty.": [
-        "На жаль, нам не вдалося видалити папку, оскільки вона не порожня.",
-        "На жаль, нам не вдалося видалити папки, оскільки вони не порожні.",
-        "На жаль, нам не вдалося видалити папки, оскільки вони не порожні.",
-        "На жаль, нам не вдалося видалити папки, оскільки вони не порожні."
-      ],
       "Stopping the sharing of this item has failed": [
         "Не вдалося зупинити поширення елемента"
       ],
       "Subfolder failed to be loaded": [
         "Не вдалося завантажити підтеку"
       ],
-      "The document failed to be created": [
-        "Не вдалося створити документ"
-      ],
       "The link to your item failed to be deleted": [
         "Не вдалося видалити посилання на ваш елемент"
       ],
       "The link to your item was deleted": [
         "Посилання на ваш елемент було видалено"
-      ],
-      "The spreadsheet failed to be created": [
-        "Не вдалося створити електронну таблицю"
       ],
       "Trash failed to be emptied": [
         "Не вдалося спорожнити смітник"
@@ -9305,17 +9281,6 @@
       ],
       "User Admin": [
         "Адміністратор користувачів"
-      ]
-    },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Налаштовувати політики безпеки, зберігання даних та інфраструктуру VPN, а також керувати журналами аудиту."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Керувати всіма користувачами, групами, безпекою, виставленням рахунків та системними конфігураціями."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Керувати користувачами, групами та сховищем для всіх членів, призначати ролі та розподіляти ліцензії."
       ]
     },
     "Safety review": {
@@ -10606,9 +10571,6 @@
       "Decline invitation?": [
         "Відхилити запрошення?"
       ],
-      "Delete": [
-        "Видалити"
-      ],
       "Delete ${ count } contact": [
         "Видалити ${ count } контакт",
         "Видалити ${ count } контакти",
@@ -10620,12 +10582,6 @@
         "Видалити ${ count } групи контактів",
         "Видалити ${ count } груп контактів",
         "Видалити ${ count } груп контактів"
-      ],
-      "Delete ${ links.length } items?": [
-        "Видалити ${ links.length } елементи?"
-      ],
-      "Delete ${ name }?": [
-        "Видалити ${ name }?"
       ],
       "Delete ${ value }": [
         "Видалити ${ value }"

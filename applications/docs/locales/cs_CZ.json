@@ -5443,15 +5443,6 @@
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Tento jedinečný kód mohou webové stránky a ISP (poskytovatelé internetových služeb) použít k propojení vaší polohy a historie procházení s vaším zařízením."
       ],
-      "This will permanently delete the file you uploaded.": [
-        "Tímto trvale smažete vámi nahraný soubor."
-      ],
-      "This will permanently delete the folder you uploaded.": [
-        "Tímto trvale smažete vámi nahranou složku."
-      ],
-      "This will permanently delete the selected items you uploaded.": [
-        "Tímto trvale smažete vybrané položky, které jste nahráli."
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Toto vás odhlásí od všech aktuálně přihlášených účtů."
       ],
@@ -5835,9 +5826,6 @@
     "Label": {
       "${ BRAND_NAME } username": [
         "Uživatelské jméno ${ BRAND_NAME }"
-      ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } znaků"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Dočasně nedostupné. Zkontrolujte to prosím později.)"
@@ -8108,29 +8096,17 @@
       "Share invitation declined": [
         "Pozvánka sdílení byla odmítnuta"
       ],
-      "Sorry, we couldn't delete the folder because it is not empty.": [
-        "Je nám líto, ale složku jsme nemohli smazat, protože není prázdná.",
-        "Je nám líto, ale složky jsme nemohli smazat, protože nejsou prázdné.",
-        "Je nám líto, ale složky jsme nemohli smazat, protože nejsou prázdné.",
-        "Je nám líto, ale složky jsme nemohli smazat, protože nejsou prázdné."
-      ],
       "Stopping the sharing of this item has failed": [
         "Ukončení sdílení této položky selhalo"
       ],
       "Subfolder failed to be loaded": [
         "Podsložku se nepodařilo načíst"
       ],
-      "The document failed to be created": [
-        "Vytvoření dokumentu selhalo"
-      ],
       "The link to your item failed to be deleted": [
         "Odkaz na položku se nepodařilo odstranit"
       ],
       "The link to your item was deleted": [
         "Odkaz na položku byl odstraněn"
-      ],
-      "The spreadsheet failed to be created": [
-        "Vytvoření tabulky selhalo"
       ],
       "Trash failed to be emptied": [
         "Koš se nepodařilo vyprázdnit"
@@ -8986,17 +8962,6 @@
       ],
       "User Admin": [
         "Správce uživatelů"
-      ]
-    },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Nastavte bezpečnostní zásady, uchovávání dat, VPN infrastrukturu a spravujte auditní logy."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Spravujte všechny uživatele, skupiny, zabezpečení, fakturaci a systémové konfigurace."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Spravujte uživatele, skupiny a úložiště pro všechny členy, přiřazujte role a přidělujte licence."
       ]
     },
     "Safety review": {
@@ -10272,9 +10237,6 @@
       "Decline invitation?": [
         "Odmítnout pozvánku?"
       ],
-      "Delete": [
-        "Smazat"
-      ],
       "Delete ${ count } contact": [
         "Smazat ${ count } kontakt",
         "Smazat ${ count } kontakty",
@@ -10286,12 +10248,6 @@
         "Smazat ${ count } skupiny kontaktů",
         "Smazat ${ count } skupin kontaktů",
         "Smazat ${ count } skupin kontaktů"
-      ],
-      "Delete ${ links.length } items?": [
-        "Smazat ${ links.length } položek?"
-      ],
-      "Delete ${ name }?": [
-        "Smazat ${ name }?"
       ],
       "Delete ${ value }": [
         "Smazat ${ value }"
