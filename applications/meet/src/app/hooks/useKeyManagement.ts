@@ -2,13 +2,14 @@ import { type MutableRefObject, useRef, useState } from 'react';
 
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetDispatch } from '@proton/meet/store/hooks';
-import { addKeyRotationLog, setMlsGroupState } from '@proton/meet/store/slices/meetingInfo';
+import { addKeyRotationLog } from '@proton/meet/store/slices/meetingInfo';
 import type { KeyRotationLog, MLSGroupState } from '@proton/meet/types/types';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { useMeetCoreClient } from '../contexts/MeetCoreClientContext';
 import type { ProtonMeetKeyProvider } from '../utils/ProtonMeetKeyProvider';
 import { KeyRotationScheduler } from '../utils/SeamlessKeyRotationScheduler';
+import { useMlsGroupState } from './useMlsGroupState';
 
 interface UseKeyManagementParams {
     keyProvider: ProtonMeetKeyProvider;
@@ -19,6 +20,7 @@ export interface UseKeyManagementResult {
     currentKeyRef: MutableRefObject<string | null>;
     lastEpochRef: MutableRefObject<bigint | null>;
     mlsGroupStateRef: MutableRefObject<MLSGroupState | null>;
+    refreshMlsGroupState: (epoch: bigint) => Promise<void>;
     getGroupKeyInfo: () => Promise<{ key: string; epoch: bigint }>;
     onNewGroupKeyInfo: (key: string, epoch: bigint) => Promise<void>;
     hasEpochError: (epoch: bigint | undefined) => string | null;
@@ -34,10 +36,11 @@ export const useKeyManagement = ({ keyProvider }: UseKeyManagementParams): UseKe
 
     const meetCoreClient = useMeetCoreClient();
 
+    const { mlsGroupStateRef, refreshMlsGroupState } = useMlsGroupState();
+
     const [keyRotationScheduler] = useState(() => new KeyRotationScheduler(keyProvider));
     const currentKeyRef = useRef<string | null>(null);
     const lastEpochRef = useRef<bigint | null>(null);
-    const mlsGroupStateRef = useRef<MLSGroupState | null>(null);
 
     const hasEpochError = (epoch: bigint | undefined) => {
         if (epoch && lastEpochRef.current && lastEpochRef.current > epoch) {
@@ -71,13 +74,7 @@ export const useKeyManagement = ({ keyProvider }: UseKeyManagementParams): UseKe
                 throw new Error('Group key info is unavailable');
             }
             currentKeyRef.current = newGroupKeyInfo.key;
-            const displayCode = await meetCoreClient.getGroupDisplayCode();
-            const nextMlsGroupState = {
-                displayCode: displayCode?.full_code || null,
-                epoch: Number(newGroupKeyInfo.epoch),
-            };
-            dispatch(setMlsGroupState(nextMlsGroupState));
-            mlsGroupStateRef.current = nextMlsGroupState;
+            await refreshMlsGroupState(newGroupKeyInfo.epoch);
             return { key: newGroupKeyInfo.key, epoch: newGroupKeyInfo.epoch };
         } catch (error) {
             reportMeetError('Error while calling getGroupKeyInfo', { context: { error } });
@@ -94,13 +91,7 @@ export const useKeyManagement = ({ keyProvider }: UseKeyManagementParams): UseKe
                 await keyProvider.setKeyWithEpoch(key, epoch);
             }
 
-            const displayCode = await meetCoreClient.getGroupDisplayCode();
-            const nextMlsGroupState = {
-                displayCode: displayCode?.full_code || null,
-                epoch: Number(epoch),
-            };
-            dispatch(setMlsGroupState(nextMlsGroupState));
-            mlsGroupStateRef.current = nextMlsGroupState;
+            await refreshMlsGroupState(epoch);
 
             if (isMeetClientMetricsLogEnabled) {
                 try {
@@ -138,6 +129,7 @@ export const useKeyManagement = ({ keyProvider }: UseKeyManagementParams): UseKe
         currentKeyRef,
         lastEpochRef,
         mlsGroupStateRef,
+        refreshMlsGroupState,
         getGroupKeyInfo,
         onNewGroupKeyInfo,
         hasEpochError,
