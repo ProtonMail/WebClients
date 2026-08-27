@@ -1049,6 +1049,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "De gratis proefperiode van uw desktop programma loopt af op ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Copy debug transcript": [
+        "Kopieer het foutopsporingstranscript"
       ]
     },
     "action": {
@@ -4458,6 +4461,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Uw Zoom-verbinding is verlopen. Verbind opnieuw om door te gaan."
+      ],
+      "Could not grant access to the organization key": [
+        "Kan geen toegang verlenen tot de organisatiesleutel"
       ]
     },
     "error": {
@@ -7091,6 +7097,18 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "U heeft de limiet voor boekingen bereikt (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "${ IDEAL_WERO_BRAND_NAME }-markering"
+      ],
+      "Debug transcript copied": [
+        "Foutopsporings-transcript gekopieerd"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Als u de toegang tot uw authenticator-app bent kwijtgeraakt, kunt u 1 van de 16 back-upherstelcodes gebruiken die u krijgt bij het instellen van tweefactorauthenticatie. ${ learnMoreLink }"
+      ],
+      "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "We sturen u door naar ${ IDEAL_WERO_BRAND_NAME } in een nieuw browsertabblad om deze transactie te voltooien. Als u pop-upblokkering gebruikt, schakel deze dan uit om door te gaan."
       ]
     },
     "info": {
@@ -10218,6 +10236,12 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Uw abonnement heeft momenteel een bestaande korting. Overstappen naar deze nieuwe promotie betekent dat de bestaande korting niet langer wordt toegepast."
+      ],
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "Betaal met ${ IDEAL_WERO_BRAND_NAME }"
+      ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
+        "Uw valuta is gewijzigd naar euro's (€), omdat ${ IDEAL_WERO_BRAND_NAME } alleen betalingen in euro's ondersteunt."
       ]
     },
     "Payments.Error": {
@@ -10241,6 +10265,12 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Uw kaart werd geweigerd. Probeer een andere kaart of neem contact op met uw bank voor het machtigen van de betaling."
+      ],
+      "Failed to initialize ${ IDEAL_WERO_BRAND_NAME }. Please try again later.": [
+        "Kan ${ IDEAL_WERO_BRAND_NAME } niet initialiseren. Probeer het later opnieuw."
+      ],
+      "Please enter the account holder name": [
+        "Voer de naam van de rekeninghouder in"
       ]
     },
     "Payments.error": {
@@ -10251,6 +10281,9 @@
     "Payments.iDEAL": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
         "Door deze betaling te bevestigen, machtigt u ${ BRAND_NAME } en Stripe, onze betalingsdienstaanbieder, om uw bank opdracht te geven het bedrag van uw rekening af te schrijven. U kunt binnen 8 weken na de incassodatum een ​​terugbetaling krijgen, onder de voorwaarden van uw overeenkomst met uw bank."
+      ],
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Door te bevestigen geeft u toestemming aan ${ BRAND_NAME } en Stripe, onze betalingsdienstaanbieder, onze betalingsdienstaanbieder, om toekomstige betalingen voor uw abonnement van deze bankrekening te innen via SEPA Direct Debit, en uw bank om deze betalingen af ​​te schrijven. Uw eerste betaling wordt nu uitgevoerd door ${ IDEAL_WERO_BRAND_NAME }. Uw abonnement wordt automatisch verlengd, totdat u opzegt; wij zullen u vóór elke ophaling op de hoogte stellen. Bij automatische incasso kunt u binnen 8 weken na de incassodatum een ​​teruggave aanvragen bij uw bank, conform de voorwaarden die u met uw bank heeft afgesproken. Dit is niet van toepassing op de betaling van ${ IDEAL_WERO_BRAND_NAME } die u nu doet."
       ]
     },
     "Payments.info": {
@@ -13151,6 +13184,9 @@
       ],
       "Your shorter address is now ready": [
         "Uw kortere adres is nu klaar"
+      ],
+      "September Sale": [
+        "September-uitverkoop"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13824,6 +13860,36 @@
       ],
       "One plan, more power": [
         "Eén abonnement, meer kracht"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "U hebt nu toegang tot de nieuwe ${ CALENDAR_APP_NAME }. ${ link }"
+      ]
+    },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, en ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, en ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, en ${ CALENDAR_SHORT_APP_NAME }"
       ]
     }
   }
