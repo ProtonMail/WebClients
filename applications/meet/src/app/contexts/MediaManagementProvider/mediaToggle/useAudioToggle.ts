@@ -24,6 +24,7 @@ import type { AudioTrackProcessor } from '../../../processors/noise-cancellation
 import { useNoiseCancellationModel } from '../../../processors/noise-cancellation/useNoiseCancellationModel';
 import { audioQuality } from '../../../qualityConstants';
 import type { AudioToggleParams, SwitchActiveDevice, ToggleAudioType } from '../../../types';
+import { outputlessAudioContextOptions } from '../../../utils/browser';
 import { getPersistedNoiseFilter, persistNoiseFilter } from '../../../utils/noiseFilterPersistence';
 
 const TOGGLE_TIMEOUT_MS = 8000;
@@ -107,6 +108,18 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
         );
     };
 
+    const reportMissingEchoCancellation = (mediaStreamTrack: MediaStreamTrack | undefined) => {
+        const settings = mediaStreamTrack?.getSettings();
+
+        if (settings?.echoCancellation === false) {
+            reportError('Microphone captured without echo cancellation', {
+                level: 'warning',
+                tags: { noiseCancellationModel: noiseCancellationModel.id },
+                context: { settings },
+            });
+        }
+    };
+
     const cancelPendingNoiseFilter = () => {
         if (pendingNoiseFilterTimer.current) {
             clearTimeout(pendingNoiseFilterTimer.current);
@@ -125,11 +138,14 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
         // @ts-ignore - webkitAudioContext is not available in all browsers
         const Ctor = (window.AudioContext || window.webkitAudioContext) as typeof AudioContext;
         const requiredSampleRate = noiseCancellationModel.audioContextSampleRate;
-        const ctx = requiredSampleRate ? new Ctor({ sampleRate: requiredSampleRate }) : new Ctor();
+        // This context only processes the mic, it never plays anything.
+        const options = outputlessAudioContextOptions(requiredSampleRate ? { sampleRate: requiredSampleRate } : {});
+        const ctx = new Ctor(options);
         audioContext.current = ctx;
         debugLog('noiseFilter:audio-context-created', {
             sampleRate: ctx.sampleRate,
             filter: noiseCancellationModel.id,
+            outputless: 'sinkId' in options,
         });
         return ctx;
     };
@@ -606,6 +622,7 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
 
             toggleResult = true;
             debugLog('toggle:success', { operationId, toggleResult });
+            reportMissingEchoCancellation(getCurrentPublication()?.audioTrack?.mediaStreamTrack);
             // After toggle success, determine noise filter state:
             // - If the track ID matches our ref, LiveKit restarted the processor internally → nothing to do.
             // - If the track changed (new ID), the old processor is on a dead track → abandon and re-attach.

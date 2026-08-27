@@ -70,6 +70,7 @@ interface Snapshot {
     canPlaybackAudio: boolean;
     webAudioMixEnabled: boolean;
     microphoneTrackDeviceId: string | undefined;
+    microphoneProcessing: string;
     cameraTrackDeviceId: string | undefined;
     audioContextState: string;
     audioContextSampleRate: string;
@@ -86,6 +87,7 @@ const EMPTY_SNAPSHOT: Snapshot = {
     canPlaybackAudio: false,
     webAudioMixEnabled: false,
     microphoneTrackDeviceId: undefined,
+    microphoneProcessing: '(none)',
     cameraTrackDeviceId: undefined,
     audioContextState: '(none)',
     audioContextSampleRate: '(none)',
@@ -176,7 +178,14 @@ const DeviceSection = ({
                 <Field
                     name="livekit audioOutput"
                     value={describe(devices, snapshot.livekitAudioOutputOption)}
-                    highlight={snapshot.livekitAudioOutputOption === ''}
+                    highlight={snapshot.livekitAudioOutputOption === undefined}
+                />
+            )}
+            {kind === 'audioinput' && (
+                <Field
+                    name="applied processing"
+                    value={snapshot.microphoneProcessing}
+                    highlight={snapshot.microphoneProcessing.includes('aec:false')}
                 />
             )}
 
@@ -298,6 +307,8 @@ export const DeviceStateReport = () => {
             const microphoneTrack = room.localParticipant.getTrackPublication(Track.Source.Microphone)?.track;
             const cameraTrack = room.localParticipant.getTrackPublication(Track.Source.Camera)?.track;
 
+            const micSettings = microphoneTrack?.mediaStreamTrack?.getSettings() as MediaTrackSettings | undefined;
+
             setSnapshot({
                 enumerated,
                 enumeratedAgo: enumeratedAt ? `${Math.round((Date.now() - enumeratedAt) / SECOND)}s ago` : '(pending)',
@@ -311,7 +322,15 @@ export const DeviceStateReport = () => {
                 livekitAudioOutputOption: room.options.audioOutput?.deviceId,
                 canPlaybackAudio: room.canPlaybackAudio,
                 webAudioMixEnabled: !!webAudioMix,
-                microphoneTrackDeviceId: microphoneTrack?.mediaStreamTrack?.getSettings().deviceId,
+                microphoneTrackDeviceId: micSettings?.deviceId,
+                microphoneProcessing: micSettings
+                    ? [
+                          `aec:${micSettings.echoCancellation}`,
+                          `ns:${micSettings.noiseSuppression}`,
+                          `agc:${micSettings.autoGainControl}`,
+                          `ch:${micSettings.channelCount}`,
+                      ].join(' ')
+                    : '(no track)',
                 cameraTrackDeviceId: cameraTrack?.mediaStreamTrack?.getSettings().deviceId,
                 audioContextState: audioContext?.state ?? '(none)',
                 audioContextSampleRate: audioContext ? String(audioContext.sampleRate) : '(none)',
