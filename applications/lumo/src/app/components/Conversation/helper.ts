@@ -152,7 +152,7 @@ export type UiContext = {
     enableExternalTools: boolean;
     enableImageTools: boolean;
     enableReasoning?: boolean;
-    modelTier?: 'auto' | 'lumo-lite' | 'lumo-max';
+    modelTier?: 'auto' | 'lumo-lite' | 'lumo-max' | 'apertus-15';
     generateTitle?: boolean;
     enableSmoothing?: boolean; // todo remove optional
     navigateCallback?: (conversationId: ConversationId) => void; // todo remove optional

@@ -4,7 +4,10 @@ import { useLumoAuthAction } from '../../../hooks/useLumoAuthAction';
 import { useLumoFlags } from '../../../hooks/useLumoFlags';
 import { useMaxModelAvailability } from '../../../hooks/useMaxModelAvailability';
 import { useLumoPlan } from '../../../providers/LumoPlanProvider';
-import { setNativeMaxModelAvailability } from '../../../remote/nativeComposerBridgeHelpers';
+import {
+    setNativeApertusModelEnabled,
+    setNativeMaxModelAvailability,
+} from '../../../remote/nativeComposerBridgeHelpers';
 import { useRemainingLimits } from '../../../services/usageLimitsStore';
 import { useNativeComposerFeatureFlagsApi } from './useNativeComposerFeatureFlagsApi';
 
@@ -33,6 +36,7 @@ describe('useNativeComposerFeatureFlagsApi', () => {
         mockedUseLumoFlags.mockReturnValue({
             nativeComposerImages: false,
             nativeComposerModelSelection: true,
+            apertusModelAvailable: false,
         });
         mockedUseLumoPlan.mockReturnValue({ isLumoFree: false, isGuest: true });
         mockedUseMaxModelAvailability.mockReturnValue({ isMaxAvailableByFlag: true });
@@ -78,5 +82,18 @@ describe('useNativeComposerFeatureFlagsApi', () => {
         renderHook(() => useNativeComposerFeatureFlagsApi());
 
         expect(setNativeMaxModelAvailability).toHaveBeenLastCalledWith('available');
+    });
+
+    it('reports whether Apertus 15 is enabled', () => {
+        mockedUseLumoFlags.mockReturnValue({
+            nativeComposerImages: false,
+            nativeComposerModelSelection: true,
+            apertusModelAvailable: true,
+        });
+        mockedUseRemainingLimits.mockReturnValue(null);
+
+        renderHook(() => useNativeComposerFeatureFlagsApi());
+
+        expect(setNativeApertusModelEnabled).toHaveBeenLastCalledWith(true);
     });
 });

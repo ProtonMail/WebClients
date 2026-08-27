@@ -1,5 +1,6 @@
 import { useLayoutEffect } from 'react';
 
+import { useLumoFlags } from '../hooks/useLumoFlags';
 import { useMaxModelAvailability } from '../hooks/useMaxModelAvailability';
 import { useLumoPlan } from '../providers/LumoPlanProvider';
 import { resolveAvailableModelTier, useRemainingLimits } from '../services/usageLimitsStore';
@@ -14,20 +15,31 @@ export const ModelTierLimitsSync = () => {
     const remainingLimits = useRemainingLimits();
     const { hasLumoPlus } = useLumoPlan();
     const { isMaxAvailableByFlag } = useMaxModelAvailability();
+    const { apertusModelAvailable } = useLumoFlags();
 
     useLayoutEffect(() => {
-        if (hasLumoPlus) {
+        const isSelectedModelAvailable = modelTier !== 'apertus-15' || apertusModelAvailable;
+
+        if (hasLumoPlus && isSelectedModelAvailable) {
             return;
         }
 
         const availableTier = resolveAvailableModelTier(modelTier, remainingLimits, {
             isMaxAvailable: isMaxAvailableByFlag,
+            isApertusEnabled: apertusModelAvailable,
         });
 
         if (availableTier !== getSelectedModelTier(modelTier)) {
             setModelTierWithoutPersist(availableTier);
         }
-    }, [hasLumoPlus, isMaxAvailableByFlag, modelTier, remainingLimits, setModelTierWithoutPersist]);
+    }, [
+        apertusModelAvailable,
+        hasLumoPlus,
+        isMaxAvailableByFlag,
+        modelTier,
+        remainingLimits,
+        setModelTierWithoutPersist,
+    ]);
 
     return null;
 };

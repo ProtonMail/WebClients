@@ -1,6 +1,7 @@
 import type { ChatCompletionsFunctionTool } from '../types-api';
 import { Role } from '../types-api';
 import {
+    APERTUS_15_MODEL,
     DEFAULT_CHAT_MODEL,
     LUMO_LITE_MODEL,
     LUMO_MAX_MODEL,
@@ -60,6 +61,7 @@ describe('toChatCompletionsBody', () => {
     it('maps model tiers to API model names', () => {
         expect(toChatCompletionsBody(baseRequest, { modelTier: 'lumo-lite' }).model).toBe(LUMO_LITE_MODEL);
         expect(toChatCompletionsBody(baseRequest, { modelTier: 'lumo-max' }).model).toBe(LUMO_MAX_MODEL);
+        expect(toChatCompletionsBody(baseRequest, { modelTier: 'apertus-15' }).model).toBe(APERTUS_15_MODEL);
         expect(toChatCompletionsBody(baseRequest, { modelTier: 'auto' }).model).toBe(DEFAULT_CHAT_MODEL);
     });
 

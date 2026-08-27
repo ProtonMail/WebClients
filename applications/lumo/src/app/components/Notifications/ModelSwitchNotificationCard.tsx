@@ -8,8 +8,8 @@ import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
 import { useLumoPlan } from '../../hooks/useLumoPlan';
 import { useMaxModelAvailability } from '../../hooks/useMaxModelAvailability';
 import { useTierErrors } from '../../hooks/useTierErrors';
-import { getSelectedModelTier, useModelTier } from '../../providers/ModelTierProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
+import { getSelectedModelTier, useModelTier } from '../../providers/ModelTierProvider';
 import {
     isModelSwitchSuggestionEligible,
     shouldShowModelSwitchSuggestion,
@@ -59,6 +59,7 @@ export const ModelSwitchNotificationCard = ({
     }, [conversationId, isGuest]);
 
     const selectedModelTier = getSelectedModelTier(modelTier);
+    const selectedModelLabel = selectedModelTier === 'apertus-15' ? 'Apertus 1.5 🇨🇭' : `${LUMO_SHORT_APP_NAME} Lite`;
 
     const suggestionArgs = {
         hasLumoPlus,
@@ -120,7 +121,7 @@ export const ModelSwitchNotificationCard = ({
                 </div>
             }
             title={c('collider_2025: Notification')
-                .t`You're on ${LUMO_SHORT_APP_NAME} Lite. Switch to Max for more capable answers.`}
+                .t`You're on ${selectedModelLabel}. Switch to Max for more capable answers.`}
             action={{
                 label: c('collider_2025: Action').t`Switch to Max`,
                 onClick: handleSwitchToMax,

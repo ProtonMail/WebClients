@@ -5,6 +5,7 @@ import { useLumoFlags } from '../../../hooks/useLumoFlags';
 import { useMaxModelAvailability } from '../../../hooks/useMaxModelAvailability';
 import { useLumoPlan } from '../../../providers/LumoPlanProvider';
 import {
+    setNativeApertusModelEnabled,
     setNativeComposerIsImageGenEnabled,
     setNativeIsFreeUser,
     setNativeIsGuestUser,
@@ -18,6 +19,7 @@ export const useNativeComposerFeatureFlagsApi = () => {
     const lumoFlags = useLumoFlags();
     const lumoNativeComposerImageGenEnabled = lumoFlags.nativeComposerImages;
     const lumoNativeComposerModelSelectionEnabled = lumoFlags.nativeComposerModelSelection;
+    const lumoApertusModelEnabled = lumoFlags.apertusModelAvailable;
     const { isEnabled: isNativeAuthEnabled } = useLumoAuthAction();
     const { isLumoFree, isGuest } = useLumoPlan();
     const { isMaxAvailableByFlag } = useMaxModelAvailability();
@@ -34,8 +36,14 @@ export const useNativeComposerFeatureFlagsApi = () => {
     useEffect(() => {
         setNativeComposerIsImageGenEnabled(lumoNativeComposerImageGenEnabled);
         setNativeIsModelSectionEnabled(lumoNativeComposerModelSelectionEnabled);
+        setNativeApertusModelEnabled(lumoApertusModelEnabled);
         setNativeIsNativeAccountEnabled(isNativeAuthEnabled);
-    }, [lumoNativeComposerImageGenEnabled, lumoNativeComposerModelSelectionEnabled, isNativeAuthEnabled]);
+    }, [
+        isNativeAuthEnabled,
+        lumoApertusModelEnabled,
+        lumoNativeComposerImageGenEnabled,
+        lumoNativeComposerModelSelectionEnabled,
+    ]);
 
     useEffect(() => {
         setNativeIsFreeUser(isLumoFree);
