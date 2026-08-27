@@ -36,7 +36,7 @@ export const CompromisedPasswords: FC = () => {
     const selectItem = useSelectItemAction();
 
     const featureFlagsReady = useFeatureFlagsReady();
-    const enabled = useFeatureFlag(PassFeature.Pass__V1_40__CompromisedPasswords);
+    const enabled = useFeatureFlag(PassFeature.PassCompromisedPasswords);
     const paid = isPaidPlan(useSelector(selectPassPlan));
     const { compromised } = useMonitor();
     const items = useMemoSelector(selectSelectedItems, [paid ? compromised.data : [], 'titleASC']);
@@ -66,8 +66,14 @@ export const CompromisedPasswords: FC = () => {
 
         if (compromised.loading) {
             return (
-                <div className="flex items-center justify-center h-full">
+                <div className="flex flex-column items-center justify-center gap-2 h-full">
                     <CircleLoader size="small" />
+                    {compromised.progress.total > 0 && (
+                        <span className="color-weak text-sm">
+                            {c('Info')
+                                .t`Checking ${compromised.progress.completed} of ${compromised.progress.total} passwords`}
+                        </span>
+                    )}
                 </div>
             );
         }

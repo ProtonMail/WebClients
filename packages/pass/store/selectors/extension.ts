@@ -1,5 +1,5 @@
 import type { TabId } from '../../types';
-import { exportData, fileDownload, fileUploadChunk, importItems } from '../actions';
+import { checkCompromisedPasswords, exportData, fileDownload, fileUploadChunk, importItems } from '../actions';
 import type { State } from '../types';
 
 const matchesTabRequest =
@@ -22,5 +22,6 @@ export const selectPendingPopupRequests =
         Object.keys(request).filter((requestID) => {
             if (matchesTabRequest(fileUploadChunk.namespace, tabId)(requestID)) return true;
             if (matchesTabRequest(fileDownload.namespace, tabId)(requestID)) return true;
+            if (matchesTabRequest(checkCompromisedPasswords.namespace, tabId)(requestID)) return true;
             return false;
         });
