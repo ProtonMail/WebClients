@@ -548,6 +548,9 @@
       "Keep current time zone": [
         "Säilytä nykyinen aikavyöhyke"
       ],
+      "Keep going": [
+        "Jatka vain"
+      ],
       "Keep my subscription": [
         "Pidä tilaukseni"
       ],
@@ -6320,6 +6323,9 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Tämä on nyt ${ defaultEmailAddress } uusien viestien lähettämistä varten."
       ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Tämä vaatii paljon ajattelua. Jatketaanko?"
+      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Tämä linkki johtaa sivustolle, joka voi pyrkiä varastamaan salasanojesi ja maksukorttiesi tietojen kaltaisia tietoja."
       ],
@@ -6933,9 +6939,6 @@
       "${ n } month": [
         "${ n } kuukausi",
         "${ n } kuukautta"
-      ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } merkkiä"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Tilapäisesti pois käytöstä. Yritä myöhemmin uudelleen.)"
@@ -10489,17 +10492,6 @@
         "Käyttäjähallinta"
       ]
     },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Määritä tietoturvakäytännöt, tietojen säilytysajat ja VPN-infrastruktuuri sekä hallinnoi tarkastuslokeja."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Hallitse kaikkien jäsenten käyttäjiä, ryhmiä ja tallennustilaa, määritä rooleja ja jaa lisenssejä."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Hallitse kaikkien jäsenten käyttäjiä, ryhmiä ja tallennustilaa, määritä rooleja ja jaa lisenssejä."
-      ]
-    },
     "RSVP Note": {
       "Edit note": [
         "Muokkaa merkintää"
@@ -12648,6 +12640,9 @@
       ],
       "Start import process": [
         "Aloita tuonti"
+      ],
+      "Still working on it": [
+        "Jatketaan ajattelemista"
       ],
       "Subscription canceled": [
         "Tilaus on peruttu"

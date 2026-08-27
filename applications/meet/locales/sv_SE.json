@@ -61,6 +61,12 @@
       "A participant reacted with ${ emoji }": [
         "En deltagare reagerade med ${ emoji }"
       ],
+      "Abstract background applied": [
+        "Abstrakt bakgrund tillämpad"
+      ],
+      "Background effect turned off": [
+        "Bakgrundseffekt avstängd"
+      ],
       "Connected via TURN relay mode due to network restrictions. This may increase latency and affect call quality.": [
         "Ansluten via TURN-reläläge på grund av dina nätverksbegränsningar. Detta kan öka latensen och påverka samtalskvaliteten."
       ],
@@ -166,9 +172,6 @@
       "Apply changes": [
         "Tillämpa ändringar"
       ],
-      "Approve participants before they can join": [
-        "Godkänn deltagare innan de kan gå med"
-      ],
       "Assign ${ selectedParticipantName } as host": [
         "Tilldela ${ selectedParticipantName } som värd"
       ],
@@ -183,6 +186,9 @@
       ],
       "Back": [
         "Tillbaka"
+      ],
+      "Backgrounds and effects": [
+        "Bakgrunder och effekter"
       ],
       "Blur background": [
         "Bakgrundsoskärpa"
@@ -352,11 +358,11 @@
       "Hide participants": [
         "Dölj deltagare"
       ],
-      "Hide self view": [
-        "Dölj självvisning"
-      ],
       "Hide timezones": [
         "Dölj tidszoner"
+      ],
+      "Incoming video": [
+        "Inkommande video"
       ],
       "Insert emoji": [
         "Infoga emoji"
@@ -421,14 +427,14 @@
       "Participants join after you approve them": [
         "Deltagare går med efter att du har godkänt dem"
       ],
-      "Participants join the call directly": [
-        "Deltagare går med i samtalet direkt"
-      ],
       "Paste": [
         "Klistra in"
       ],
       "Pause": [
         "Pausa"
+      ],
+      "Picture-in-picture while sharing": [
+        "Bild-i-bild vid delning"
       ],
       "Playing sound...": [
         "Spelar ljud …"
@@ -457,6 +463,9 @@
       ],
       "Record": [
         "Spela in"
+      ],
+      "Recording your microphone...": [
+        "Spelar in din mikrofon …"
       ],
       "Refer a friend": [
         "Hänvisa en vän"
@@ -536,12 +545,6 @@
       ],
       "Settings": [
         "Inställningar"
-      ],
-      "Show duration": [
-        "Visa varaktighet"
-      ],
-      "Show floating thumbnail during screensharing": [
-        "Visa flytande miniatyr vid skärmdelning"
       ],
       "Show options": [
         "Visa alternativ"
@@ -633,17 +636,11 @@
       "Try another method": [
         "Prova annan metod"
       ],
-      "Turn off incoming video": [
-        "Stäng av inkommande video"
-      ],
       "Upgrade": [
         "Uppgradera"
       ],
       "Upgrade now": [
         "Uppgradera nu"
-      ],
-      "Upgrade your plan to use waiting room in your next meeting.": [
-        "Uppgradera ditt paket för att använda väntrum i ditt nästa möte."
       ],
       "Upload another image": [
         "Ladda upp en annan bild"
@@ -686,6 +683,9 @@
       ],
       "View invoice": [
         "Visa faktura"
+      ],
+      "Virtual backgrounds": [
+        "Virtuella bakgrunder"
       ],
       "Waiting room": [
         "Väntrum"
@@ -731,8 +731,8 @@
       "Go to dashboard": [
         "Gå till adminpanel"
       ],
-      "Hide self view": [
-        "Dölj självvisning"
+      "Incoming video": [
+        "Inkommande video"
       ],
       "Leave Meeting": [
         "Lämna möte"
@@ -764,6 +764,9 @@
       "Participants": [
         "Deltagare"
       ],
+      "Picture-in-picture while sharing": [
+        "Bild-i-bild vid delning"
+      ],
       "Raise hand": [
         "Räck upp handen"
       ],
@@ -778,12 +781,6 @@
       ],
       "Settings": [
         "Inställningar"
-      ],
-      "Show duration": [
-        "Visa varaktighet"
-      ],
-      "Show floating thumbnail during screensharing": [
-        "Visa flytande miniatyr vid skärmdelning"
       ],
       "Stop recording and download.": [
         "Stoppa inspelning och ladda ner."
@@ -805,9 +802,6 @@
       ],
       "Toggle settings": [
         "Slå på/av inställningar"
-      ],
-      "Turn off incoming video": [
-        "Stäng av inkommande video"
       ],
       "Video settings": [
         "Videoinställningar"
@@ -2244,6 +2238,12 @@
       "Anonymous ${ particle } ${ participantNumber }": [
         "Anonym ${ particle } ${ participantNumber }"
       ],
+      "Anyone with the link can join immediately": [
+        "Alla med länken kan gå med direkt"
+      ],
+      "Approve participants before they can join": [
+        "Godkänn deltagare innan de kan gå med"
+      ],
       "Are you sure you want to leave?": [
         "Är du säker på att du vill lämna?"
       ],
@@ -2252,6 +2252,12 @@
       ],
       "Attention required": [
         "Uppmärksamhet krävs"
+      ],
+      "Available with a paid plan": [
+        "Tillgänglig med ett betalt paket"
+      ],
+      "Background effects are not supported on your browser": [
+        "Bakgrundseffekter stöds inte i din webbläsare"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Innan du begär en ny verifieringskod, kontrollera din skräppostmapp och kontrollera att ${ strong } är rätt adress."
@@ -2933,9 +2939,15 @@
       "${ BRAND_NAME } username": [
         "Användarnamn för ${ BRAND_NAME }"
       ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } tecken"
+      ],
       "${ numberOfStars } star": [
         "${ numberOfStars } stjärna",
         "${ numberOfStars } stjärnor"
+      ],
+      "Abstract background": [
+        "Abstrakt bakgrund"
       ],
       "Add optional details": [
         "Lägg till valfria detaljer"
@@ -3397,17 +3409,6 @@
         "Användaradministratör"
       ]
     },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Konfigurera säkerhetspolicyer, datalagring och VPN-infrastruktur och hantera granskningsloggar."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Hantera alla användare, grupper, säkerhet, fakturering och systemkonfigurationer."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Hantera användare, grupper och lagringsutrymme för alla medlemmar, tilldela roller och allokera licenser."
-      ]
-    },
     "Safety review": {
       "Review account safety": [
         "Granska kontosäkerhet"
@@ -3532,9 +3533,6 @@
       ]
     },
     "Title": {
-      "Accessibility": [
-        "Tillgänglighet"
-      ],
       "Account restricted": [
         "Kontot begränsat"
       ],
@@ -3562,9 +3560,6 @@
       "Assign a new host": [
         "Tilldela en ny värd"
       ],
-      "Audio": [
-        "Ljud"
-      ],
       "Available Cameras": [
         "Tillgängliga kameror"
       ],
@@ -3573,6 +3568,9 @@
       ],
       "Available Speakers": [
         "Tillgängliga högtalare"
+      ],
+      "Background": [
+        "Bakgrund"
       ],
       "Background blur comparison": [
         "Jämförelse av bakgrundsoskärpa"
@@ -3597,6 +3595,9 @@
       ],
       "Create new room": [
         "Skapa nytt rum"
+      ],
+      "Custom background tester": [
+        "Anpassad bakgrundstestare"
       ],
       "Date": [
         "Datum"
@@ -3671,9 +3672,6 @@
       "Meeting edited": [
         "Mötet redigerat"
       ],
-      "Meeting settings": [
-        "Mötesinställningar"
-      ],
       "Messaging Layer Security": [
         "Messaging Layer Security"
       ],
@@ -3737,9 +3735,6 @@
       "Secure meeting": [
         "Säkert möte"
       ],
-      "Security": [
-        "Säkerhet"
-      ],
       "Security code": [
         "Säkerhetskod"
       ],
@@ -3773,8 +3768,8 @@
       "Two-factor authentication": [
         "Tvåfaktorsautentisering"
       ],
-      "Video": [
-        "Video"
+      "Video and audio": [
+        "Video och ljud"
       ],
       "Virtual backgrounds": [
         "Virtuella bakgrunder"
@@ -3803,6 +3798,9 @@
     "Tooltip": {
       "Background blur is not supported on your browser": [
         "Bakgrundsoskärpa stöds inte på din webbläsare"
+      ],
+      "Background effects are not supported on your browser": [
+        "Bakgrundseffekter stöds inte i din webbläsare"
       ],
       "Generate a new meeting link. The current link will stop working.": [
         "Generera en ny möteslänk. Nuvarande länken kommer sluta fungera."

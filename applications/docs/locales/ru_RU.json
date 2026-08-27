@@ -5461,15 +5461,6 @@
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Этот уникальный код может использоваться веб-сайтами и интернет-провайдерами для привязки вашего местоположения и истории просмотров к вашему устройству."
       ],
-      "This will permanently delete the file you uploaded.": [
-        "Это навсегда удалит загруженный вами файл"
-      ],
-      "This will permanently delete the folder you uploaded.": [
-        "Это навсегда удалит загруженную вами папку"
-      ],
-      "This will permanently delete the selected items you uploaded.": [
-        "Это навсегда удалит загруженные вами выбранные элементы"
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "В результате вы выйдете из всех аккаунтов, в которые вы на данный момент вошли."
       ],
@@ -8118,29 +8109,17 @@
       "Share invitation declined": [
         "Приглашение поделиться отклонено"
       ],
-      "Sorry, we couldn't delete the folder because it is not empty.": [
-        "К сожалению, мы не можем удалить папку, потому что она не пуста.",
-        "К сожалению, мы не можем удалить папки, потому что они не пусты.",
-        "К сожалению, мы не можем удалить папки, потому что они не пусты.",
-        "К сожалению, мы не можем удалить папки, потому что они не пусты."
-      ],
       "Stopping the sharing of this item has failed": [
         "Не удалось остановить совместное использование этого элемента"
       ],
       "Subfolder failed to be loaded": [
         "Не удалось загрузить подпапку"
       ],
-      "The document failed to be created": [
-        "Не удалось создать документ"
-      ],
       "The link to your item failed to be deleted": [
         "Не удалось удалить ссылку на ваш элемент"
       ],
       "The link to your item was deleted": [
         "Ссылка на ваш элемент удалена"
-      ],
-      "The spreadsheet failed to be created": [
-        "Не удалось создать электронную таблицу"
       ],
       "Trash failed to be emptied": [
         "Не удалось очистить корзину"
@@ -8996,17 +8975,6 @@
       ],
       "User Admin": [
         "Администратор пользователей"
-      ]
-    },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Настройка политик безопасности, хранения данных и инфраструктуры VPN, а также управление журналами аудита."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Управление всеми пользователями, группами, безопасностью, биллингом и конфигурациями системы."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Управление пользователями, группами и хранилищем для всех участников, назначение должностей и распределение лицензий."
       ]
     },
     "Safety review": {
@@ -10282,9 +10250,6 @@
       "Decline invitation?": [
         "Отклонить приглашение?"
       ],
-      "Delete": [
-        "Удалить"
-      ],
       "Delete ${ count } contact": [
         "Удалить ${ count } контакт",
         "Удалить ${ count } контакта",
@@ -10296,12 +10261,6 @@
         "Удаление ${ count } групп контактов",
         "Удаление ${ count } групп контактов",
         "Удаление ${ count } группы контактов"
-      ],
-      "Delete ${ links.length } items?": [
-        "Удалить ${ links.length } элементов?"
-      ],
-      "Delete ${ name }?": [
-        "Удалить ${ name }?"
       ],
       "Delete ${ value }": [
         "Удалить ${ value }"

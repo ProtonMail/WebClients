@@ -12165,9 +12165,6 @@
       "Registering your subscription…": [
         "Registrerer abonnementet ditt…"
       ],
-      "Remember to share the user's sign in details with them.": [
-        "Husk å dele brukerens påloggingsinformasjon med dem."
-      ],
       "Remove metadata from images to protect your privacy.": [
         "Fjern metadata fra bilder for å beskytte personvernet ditt."
       ],
@@ -14305,9 +14302,6 @@
       ],
       "${ PROTON_SENTINEL_NAME } protection": [
         "${ PROTON_SENTINEL_NAME }-beskyttelse"
-      ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } tegn"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Midlertidig utilgjengelig. Kom tilbake senere)."
@@ -16617,9 +16611,6 @@
     "mail_signup_2023: Info": {
       "**Get ${ plan }** for a limited time!": [
         "**Skaff deg ${ plan }** i en begrenset periode!"
-      ],
-      "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
-        "Bli en Visionary og bli en del av ${ BRAND_NAME }s historie"
       ]
     },
     "mail_signup_2024: Info": {
@@ -16821,9 +16812,6 @@
         "${ seats } sete inkludert",
         "${ seats } seter inkludert"
       ],
-      "100 ${ BRAND_NAME } email addresses": [
-        "100 ${ BRAND_NAME }-e-postadresser"
-      ],
       "Cloud storage and file sharing": [
         "Skylagring og fildeling"
       ],
@@ -16844,9 +16832,6 @@
       ],
       "Password manager with team vaults": [
         "Passordbehandler med teamhvelv"
-      ],
-      "Private and unlimited AI chat (${ LUMO_SHORT_APP_NAME })": [
-        "Privat og ubegrenset KI-chat (${ LUMO_SHORT_APP_NAME })"
       ],
       "Private video calls for the conversations that matter": [
         "Private videosamtaler for samtalene som betyr noe"
@@ -19341,9 +19326,6 @@
       "Create another account instead": [
         "Opprett en annen konto istedenfor"
       ],
-      "Keep this plan": [
-        "Behold denne planen"
-      ],
       "Open ${ PASS_APP_NAME } vaults": [
         "Åpne ${ PASS_APP_NAME }-hvelv"
       ],
@@ -19358,9 +19340,6 @@
       ],
       "Upgrade": [
         "Oppgrader"
-      ],
-      "Upgrade my plan": [
-        "Oppgrader min plan"
       ]
     },
     "pass_signup_2023: Action - open web app": {
@@ -19415,9 +19394,6 @@
       "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
         "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } til ${ priceString }."
       ],
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice } per måned"
-      ],
       "/month /user": [
         "/måned /bruker"
       ],
@@ -19435,9 +19411,6 @@
       ],
       "Aliases for email protection from breaches": [
         "Aliaser for e-postbeskyttelse mot brudd"
-      ],
-      "Based in Switzerland, GDPR compliant": [
-        "Basert i Sveits, GDPR-kompatibel"
       ],
       "But you can get ${ discountPercentString } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Men du kan få ${ discountPercentString } rabatt ved å oppgradere til **${ upsellPlanTitle }** - det er bare ${ relativePrice } ekstra per måned."
@@ -19466,9 +19439,6 @@
       "Creating your account": [
         "Oppretter kontoen din"
       ],
-      "Current plan": [
-        "Gjeldende plan"
-      ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "Last ned og installer de relevante appene og utvidelsene for å begynne å bruke ${ PASS_APP_NAME }"
       ],
@@ -19490,15 +19460,6 @@
       "Everything from ${ planTitle }, plus...": [
         "Alt fra ${ planTitle }, pluss..."
       ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "For bare **${ relativePrice } mer per måned**, får du tilgang til ${ BRAND_NAME }s premium passordbehandler!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "For bare **${ relativePrice } mer per måned**, får du tilgang til ${ BRAND_NAME }s premium VPN-tjeneste!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "For bare **${ relativePrice } mer per måned**, får du tilgang til alle ${ BRAND_NAME }-premium tjenester!"
-      ],
       "Free forever": [
         "Gratis for alltid"
       ],
@@ -19516,9 +19477,6 @@
       ],
       "Get unlimited privacy for two": [
         "Skaff deg ubegrenset personvern for to"
-      ],
-      "Includes:": [
-        "Inkluderer:"
       ],
       "Install ${ PASS_APP_NAME }": [
         "Installer ${ PASS_APP_NAME }"
@@ -21317,17 +21275,6 @@
         "Brukeradministrator"
       ]
     },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Konfigurer sikkerhetsretningslinjer, dataoppbevaring, VPN-infrastruktur og administrer revisjonslogger."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Administrer alle brukere, grupper, sikkerhet, fakturering og systemkonfigurasjoner."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Administrer brukere, grupper og lagring for alle medlemmer, tildel roller og alloker lisenser."
-      ]
-    },
     "Safety review": {
       "Code sent to ${ boldValue }": [
         "Kode sendt til ${ boldValue }"
@@ -22665,9 +22612,6 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Ubegrenset antall hide-my-email-aliaser"
-      ],
-      "Up to -${ percentage }%": [
-        "Opptil -${ percentage }%"
       ],
       "Up to 2 users": [
         "Opptil 2 brukere"

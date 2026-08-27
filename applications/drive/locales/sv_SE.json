@@ -3470,6 +3470,9 @@
       "Cannot find move target": [
         "Kan inte hitta mål för flytt"
       ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Kan inte, flytta objekt utan giltigt namn, byt namn på objektet först"
+      ],
       "Cannot share root folder": [
         "Kan inte dela rotmapp"
       ],
@@ -7346,6 +7349,9 @@
       "${ downloads } downloads": [
         "${ downloads } nedladdningar"
       ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } tecken"
+      ],
       "${ n } month": [
         "${ n } månad",
         "${ n } månader"
@@ -7357,9 +7363,6 @@
       "${ nbYear } year": [
         "${ nbYear } år",
         "${ nbYear } år"
-      ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } tecken"
       ],
       "(Expired)": [
         "(Löpt ut)"
@@ -9737,6 +9740,11 @@
         "Prova det nu"
       ]
     },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Du har nu åtkomst till nya ${ CALENDAR_APP_NAME }. ${ link }"
+      ]
+    },
     "Notification": {
       "\"${ ellipsedName }\" copied": [
         "”${ ellipsedName }” kopierad"
@@ -10573,9 +10581,6 @@
       "More plans are available in other currencies": [
         "Fler paket är tillgängliga i andra valutor"
       ],
-      "Pay with ${ IDEAL_BRAND_NAME }": [
-        "Betala med ${ IDEAL_BRAND_NAME }"
-      ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Betalningsmetod krävs för att prenumerationen ska aktiveras efter provperioden är slut."
       ],
@@ -10656,9 +10661,6 @@
       ],
       "You will soon be redirected to verify your payment.": [
         "Du kommer snart att omdirigeras för att verifiera din betalning."
-      ],
-      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
-        "Din valuta har ändrats till euro (€) på grund av att  ${ IDEAL_BRAND_NAME } endast stödjer betalningar i euro."
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Din valuta har ändrats till euro (€) eftersom SEPA-banköverföringar endast stöder betalningar i euro."
@@ -11315,17 +11317,6 @@
       ],
       "User Admin": [
         "Användaradministratör"
-      ]
-    },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Konfigurera säkerhetspolicyer, datalagring och VPN-infrastruktur och hantera granskningsloggar."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Hantera alla användare, grupper, säkerhet, fakturering och systemkonfigurationer."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Hantera användare, grupper och lagringsutrymme för alla medlemmar, tilldela roller och allokera licenser."
       ]
     },
     "Safety review": {
@@ -13767,6 +13758,9 @@
       ],
       "Customize import to reduce the number of labels": [
         "Anpassa import för att minska antalet etiketter"
+      ],
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "Status för datamigrering från ${ providerName } till ${ BRAND_NAME }"
       ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "Digital signering av e-postmeddelanden hjälper till att autentisera att meddelanden skickas av dig"

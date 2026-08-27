@@ -2045,6 +2045,12 @@
       "Take a tour": [
         "Feu una visita guiada"
       ],
+      "Template with invite links": [
+        "Plantilla amb enllaços d'invitació"
+      ],
+      "Template with passwords": [
+        "Plantilla amb contrasenyes"
+      ],
       "Test": [
         "Prova"
       ],
@@ -10213,8 +10219,8 @@
       "${ helpTranslateLink } by joining our localization community.": [
         "${ helpTranslateLink } tot unint-vos a la nostra comunitat de localització."
       ],
-      "${ IDEAL_BRAND_NAME } mark": [
-        "Marca de ${ IDEAL_BRAND_NAME }"
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "Marca de ${ IDEAL_WERO_BRAND_NAME }"
       ],
       "${ invitedMemberCount } user needs to accept their invite to start receiving group emails.": [
         "${ invitedMemberCount } usuari ha d'acceptar la invitació per començar a rebre els correus electrònics del grup.",
@@ -12722,9 +12728,6 @@
       "Registering your subscription…": [
         "S'està registrant la vostra subscripció…"
       ],
-      "Remember to share the user's sign in details with them.": [
-        "Recordeu compartir els detalls d'inici de sessió amb l'usuari."
-      ],
       "Remove metadata from images to protect your privacy.": [
         "Elimineu les metadades de les imatges per protegir la vostra privadesa."
       ],
@@ -13755,8 +13758,8 @@
       "We use 3-D Secure to protect your payments": [
         "Utilitzem 3-D Secure per protegir els vostres pagaments."
       ],
-      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "Us redirigirem a ${ IDEAL_BRAND_NAME } en una pestanya nova del navegador per completar aquesta transacció. Si utilitzeu algun bloquejador de finestres emergents, desactiveu-lo per continuar."
+      "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Us redirigirem a ${ IDEAL_WERO_BRAND_NAME } en una pestanya nova del navegador per completar aquesta transacció. Si utilitzeu algun bloquejador de finestres emergents, desactiveu-lo per continuar."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Us redireccionarem a PayPal en una pestanya nova del navegador per completar aquesta transacció. Si utilitzeu bloquejadors emergents, inhabiliteu-los per continuar."
@@ -14221,6 +14224,9 @@
       ],
       "your encrypted data will be locked": [
         "les vostres dades xifrades es bloquejaran"
+      ],
+      "Your file includes a password for each user, so these accounts will be created with a password instead of an invite link.": [
+        "El vostre fitxer inclou una contrasenya per a cada usuari, de manera que aquests comptes es crearan amb una contrasenya en lloc d'un enllaç d'invitació."
       ],
       "Your files will be encrypted and then saved": [
         "Es xifraran els fitxers i després es desaran."
@@ -14914,6 +14920,9 @@
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } de ${ humanMaxSpace }"
       ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } caràcters"
+      ],
       "${ MAIL_APP_NAME } address": [
         "Adreça de ${ MAIL_APP_NAME }"
       ],
@@ -14940,9 +14949,6 @@
       ],
       "${ PROTON_SENTINEL_NAME } protection": [
         "Protecció de ${ PROTON_SENTINEL_NAME }"
-      ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } caràcters"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(No disponible temporalment. Comproveu-ho de nou més tard.)"
@@ -17300,9 +17306,6 @@
     "mail_signup_2023: Info": {
       "**Get ${ plan }** for a limited time!": [
         "**Obtingueu ${ plan }** per un temps limitat!"
-      ],
-      "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
-        "Convertiu-vos en Visionary i sigueu part de la història de ${ BRAND_NAME }"
       ]
     },
     "mail_signup_2024: Info": {
@@ -17504,9 +17507,6 @@
         "${ seats } llicència inclosa",
         "${ seats } llicències incloses"
       ],
-      "100 ${ BRAND_NAME } email addresses": [
-        "100 adreces de correu electrònic de ${ BRAND_NAME }"
-      ],
       "Cloud storage and file sharing": [
         "Emmagatzematge al núvol i intercanvi d'arxius"
       ],
@@ -17527,9 +17527,6 @@
       ],
       "Password manager with team vaults": [
         "Gestor de contrasenyes amb caixes fortes d'equip"
-      ],
-      "Private and unlimited AI chat (${ LUMO_SHORT_APP_NAME })": [
-        "Xat d'IA privat i il·limitat (${ LUMO_SHORT_APP_NAME })"
       ],
       "Private video calls for the conversations that matter": [
         "Videotrucades privades per les converses importants"
@@ -20070,9 +20067,6 @@
       "Create another account instead": [
         "Creeu un altre compte en el seu lloc"
       ],
-      "Keep this plan": [
-        "Mantén aquest pla"
-      ],
       "Open ${ PASS_APP_NAME } vaults": [
         "Obriu ${ PASS_APP_NAME } caixes fortes"
       ],
@@ -20087,9 +20081,6 @@
       ],
       "Upgrade": [
         "Millora el pla"
-      ],
-      "Upgrade my plan": [
-        "Millora el meu pla"
       ]
     },
     "pass_signup_2023: Action - open web app": {
@@ -20144,9 +20135,6 @@
       "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
         "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } a ${ priceString }."
       ],
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice } al mes"
-      ],
       "/month /user": [
         "/mes /usuari"
       ],
@@ -20164,9 +20152,6 @@
       ],
       "Aliases for email protection from breaches": [
         "Àlies per a la protecció del correu electrònic contra filtracions"
-      ],
-      "Based in Switzerland, GDPR compliant": [
-        "Amb seu a Suïssa, compatible amb el RGPD"
       ],
       "But you can get ${ discountPercentString } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Però podeu obtenir un descompte del ${ discountPercentString } si milloreu\na **${ upsellPlanTitle }**: per només ${ relativePrice } addicionals al mes."
@@ -20195,9 +20180,6 @@
       "Creating your account": [
         "S'està creant el compte"
       ],
-      "Current plan": [
-        "Pla actual"
-      ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "Descarregueu i instal·leu les aplicacions i extensions pertinents per a començar a utilitzar ${ PASS_APP_NAME }."
       ],
@@ -20219,15 +20201,6 @@
       "Everything from ${ planTitle }, plus...": [
         "Tot el que inclou ${ planTitle }, i a més..."
       ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "Per només **${ relativePrice } mensuals** més, tindreu accés al gestor de contrasenyes prèmium de ${ BRAND_NAME }."
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "Per només **${ relativePrice } al mes** més, tindreu accés al servei VPN prèmium de ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "Per només **${ relativePrice } més al mes**, obteniu accés a tots els serveis prèmium de ${ BRAND_NAME }!"
-      ],
       "Free forever": [
         "Gratuït per sempre"
       ],
@@ -20245,9 +20218,6 @@
       ],
       "Get unlimited privacy for two": [
         "Obtingueu una privadesa il·limitada per a dos"
-      ],
-      "Includes:": [
-        "Inclou:"
       ],
       "Install ${ PASS_APP_NAME }": [
         "Instal·leu ${ PASS_APP_NAME }"
@@ -20641,8 +20611,8 @@
       "Offer unavailable": [
         "L'oferta no està disponible"
       ],
-      "Pay with ${ IDEAL_BRAND_NAME }": [
-        "Pagueu amb ${ IDEAL_BRAND_NAME }"
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "Pagueu amb ${ IDEAL_WERO_BRAND_NAME }"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Es requereix un mètode de pagament perquè la subscripció s'activi un cop finalitzi la prova."
@@ -20737,8 +20707,8 @@
       "You will soon be redirected to verify your payment.": [
         "Aviat se us redirigirà per verificar el vostre pagament."
       ],
-      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
-        "S'ha canviat la vostra moneda a euros (€) perquè ${ IDEAL_BRAND_NAME } només admet pagaments en euros."
+      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
+        "S'ha canviat la vostra moneda a euros (€) perquè ${ IDEAL_WERO_BRAND_NAME } només admet pagaments en euros."
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "La moneda s'ha canviat a euros (€) perquè les transferències bancàries SEPA només admeten pagaments en euros."
@@ -20751,8 +20721,8 @@
       ]
     },
     "Payments.Error": {
-      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
-        "No s'ha pogut inicialitzar ${ IDEAL_BRAND_NAME }. Torneu-ho a provar més tard."
+      "Failed to initialize ${ IDEAL_WERO_BRAND_NAME }. Please try again later.": [
+        "No s'ha pogut inicialitzar ${ IDEAL_WERO_BRAND_NAME }. Torneu-ho a provar més tard."
       ],
       "Invalid card number": [
         "El número de la targeta no es vàlid."
@@ -20782,8 +20752,8 @@
       ]
     },
     "Payments.iDEAL": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "En confirmar aquest pagament autoritzeu ${ BRAND_NAME } i Stripe, el nostre proveïdor de serveis de pagament, a donar instruccions al vostre banc perquè el carregui al vostre compte. Podreu obtenir un reemborsament en un termini de 8 setmanes des de la data del càrrec, d'acord amb les condicions del vostre acord amb el banc."
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "En confirmar-ho, autoritzeu ${ BRAND_NAME } i Stripe, el nostre proveïdor de serveis de pagament, a cobrar els pagaments futurs de la vostra subscripció en'aquest compte bancari mitjançant domiciliació bancària SEPA, i al vostre banc a carregar aquests pagaments. El vostre primer pagament es fa ara mitjançant ${ IDEAL_WERO_BRAND_NAME }. El vostre pla es renovarà automàticament fins que el cancel·leu; us avisarem abans de cada cobrament. Per a les domiciliacions bancàries, podreu sol·licitar un reemborsament al vostre banc en un termini de 8 setmanes a partir de la data del càrrec, segons els termes del vostre acord amb el banc. Això no s'aplica al pagament mitjançant ${ IDEAL_WERO_BRAND_NAME } que esteu fent ara."
       ]
     },
     "Payments.info": {
@@ -22144,17 +22114,6 @@
         "Administrador/a d'usuaris"
       ]
     },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Configureu les polítiques de seguretat, la retenció de dades i la infraestructura VPN, i gestioneu els registres d'auditoria."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Gestioneu tots els usuaris, grups, seguretat, facturació i configuracions del sistema."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Gestioneu els usuaris, els grups i l'emmagatzematge de tots els membres, assigneu rols i adjudiqueu llicències."
-      ]
-    },
     "Safety review": {
       "Code sent to ${ boldValue }": [
         "S'ha enviat el codi a ${ boldValue }."
@@ -23510,9 +23469,6 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Nombre il·limitat d'àlies hide-my-email"
-      ],
-      "Up to -${ percentage }%": [
-        "Fins a un ${ percentage }%"
       ],
       "Up to 2 users": [
         "Fins a 2 usuaris"

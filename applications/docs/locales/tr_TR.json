@@ -1603,7 +1603,7 @@
         "İçe aktarma özelleştirmesinden çıkılsın mı?"
       ],
       "Quit import?": [
-        "İçe aktarmadan çıkılsın mi?"
+        "İçe aktarmadan çıkılsın mı?"
       ]
     },
     "Contact field label": {
@@ -2415,7 +2415,7 @@
         "Tanzanya"
       ],
       "Tanzania, United Republic of": [
-        "Birleşik Tanzaya Cumhuriyeti"
+        "Birleşik Tanzanya Cumhuriyeti"
       ],
       "Thailand": [
         "Tayland"
@@ -2725,7 +2725,7 @@
         "Ücretsiz ${ MAIL_APP_NAME } hesabınız sınırlı depolama alanıyla sunulduğu için yalnızca son Gmail e-postalarınız içe aktarılacak."
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
-        "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Limited tarifesine geçin."
+        "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Unlimited tarifesine geçin."
       ]
     },
     "description": {
@@ -2962,7 +2962,7 @@
         "${ DRIVE_APP_NAME } güncellendi. Lütfen sayfayı yenileyin."
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
-        "${ errorMessage }. Ayrıca ${ statusPageLink }na da bakabilirsiniz"
+        "${ errorMessage }. ${ statusPageLink } üzerinden de kontrol edebilirsiniz."
       ],
       "${ failureItems.length } item failed to be moved": [
         "${ failureItems.length } öge taşınamadı",
@@ -3038,7 +3038,7 @@
         "Kimlik doğrulama sorunu."
       ],
       "Because this document was in a shared folder, only the folder owner can restore it": [
-        "Bu belge paylaşımlı klasörde bulunduğu için yalnızca klasör sahibi onu geri yükleyebilir"
+        "Bu belge paylaşımlı bir klasörde bulunduğundan yalnızca klasör sahibi onu geri yükleyebilir"
       ],
       "Bookmark password is not available": [
         "Yer imi parolası kullanılamıyor"
@@ -3559,7 +3559,7 @@
         "Bir sorun çıktı. Lütfen yeniden deneyin."
       ],
       "status page": [
-        "durum sayfası"
+        "Durum Sayfası"
       ],
       "Stopping the sharing of this item has failed": [
         "Bu öge paylaşımdan kaldırılamadı"
@@ -5448,7 +5448,7 @@
         "Erişimi olan kişiler"
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
-        "PGP/ınline yalnızca düz metin biçimi ile uyumludur."
+        "PGP/Inline yalnızca düz metin biçimi ile uyumludur."
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME geçerli oluşturucu görünümünde iletiyi otomatik olarak gönderir."
@@ -5718,15 +5718,6 @@
       ],
       "This user can not be migrated due to platform incompatibilities.": [
         "Bu kullanıcı platform uyuşmazlıkları nedeniyle aktarılamaz."
-      ],
-      "This will permanently delete the file you uploaded.": [
-        "Bu işlem yüklediğiniz dosyayı kalıcı olarak silecek."
-      ],
-      "This will permanently delete the folder you uploaded.": [
-        "Bu işlem yüklediğiniz klasörü kalıcı olarak silecek."
-      ],
-      "This will permanently delete the selected items you uploaded.": [
-        "Bu işlem yüklediğiniz seçilmiş ögeleri kalıcı olarak silecek."
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Bu işlem, şu anda oturum açmış olduğunuz tüm hesap oturumlarını kapatır."
@@ -6133,8 +6124,8 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } kullanıcı adı"
       ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } karakter"
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } karakter"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın.)"
@@ -8363,27 +8354,17 @@
       "Share invitation declined": [
         "Paylaşma daveti reddedildi"
       ],
-      "Sorry, we couldn't delete the folder because it is not empty.": [
-        "Üzgünüz, boş olmadığı için klasörü silemedik.",
-        "Üzgünüz, boş olmadıkları için klasörleri silemedik."
-      ],
       "Stopping the sharing of this item has failed": [
         "Bu öge paylaşımdan kaldırılamadı"
       ],
       "Subfolder failed to be loaded": [
         "Alt klasör yüklenemedi"
       ],
-      "The document failed to be created": [
-        "Belge oluşturulurken sorun çıktı"
-      ],
       "The link to your item failed to be deleted": [
         "Öge bağlantınız silinemedi"
       ],
       "The link to your item was deleted": [
         "Öge bağlantınız silindi"
-      ],
-      "The spreadsheet failed to be created": [
-        "Elektronik tablo oluşturulamadı"
       ],
       "Trash failed to be emptied": [
         "Çöp kutusu boşaltılamadı"
@@ -9264,17 +9245,6 @@
       ],
       "User Admin": [
         "Kullanıcı yöneticisi"
-      ]
-    },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Güvenlik ilkelerini, verileri tutma kurallarını, VPN altyapısını yapılandırın ve denetim günlüklerini yönetin."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Tüm kullanıcıları, grupları, güvenlik ayarlarını, faturaları ve sistem yapılandırmalarını yönetin."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Tüm üyelerin kullanıcılarını, gruplarını ve depolama alanlarını yönetin, rollerini ve lisanslarını atayın."
       ]
     },
     "Safety review": {
@@ -10494,9 +10464,6 @@
       "Decline invitation?": [
         "Davet reddedilsin mi?"
       ],
-      "Delete": [
-        "Sil"
-      ],
       "Delete ${ count } contact": [
         "${ count } kişiyi sil",
         "${ count } kişiyi sil"
@@ -10504,12 +10471,6 @@
       "Delete ${ count } contact group": [
         "${ count } kişi grubunu sil",
         "${ count } kişi grubunu sil"
-      ],
-      "Delete ${ links.length } items?": [
-        "${ links.length } öge silinsin mi?"
-      ],
-      "Delete ${ name }?": [
-        "${ name } albümü silinsin mi?"
       ],
       "Delete ${ value }": [
         "${ value } sil"

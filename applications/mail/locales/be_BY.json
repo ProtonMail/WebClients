@@ -7302,9 +7302,6 @@
         "Знойдзена ${ groupCounts } груп",
         "Знойдзена ${ groupCounts } груп"
       ],
-      "${ IDEAL_BRAND_NAME } mark": [
-        "Пазначыць ${ IDEAL_BRAND_NAME }"
-      ],
       "${ issues.length } issue during import:": [
         "${ issues.length } праблема падчас імпартавання:",
         "${ issues.length } праблемы падчас імпартавання:",
@@ -9696,9 +9693,6 @@
       "We use 3-D Secure to protect your payments": [
         "Выкарыстоўваецца 3-D Secure для абароны вашых плацяжоў"
       ],
-      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "Для завяршэння трансакцыі мы адкрыем новую ўкладку браўзера і перанакіруем вас на сайт ${ IDEAL_BRAND_NAME }. Калі вы выкарыстоўваеце пашырэнні блакіроўкі ўсплывальных вокнаў, адключыце іх, каб працягнуць."
-      ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Для завяршэння трансакцыі мы адкрыем новую ўкладку браўзера і перанакіруем вас на сайт PayPal. Калі вы выкарыстоўваеце пашырэнні блакіроўкі ўсплывальных вокнаў, адключыце іх, каб працягнуць."
       ],
@@ -10448,9 +10442,6 @@
         "${ n } месяцаў",
         "${ n } месяцаў"
       ],
-      "${ value.length }/${ maxLength } characters": [
-        "Сімвалаў: ${ value.length }/${ maxLength }"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Часова недаступна. Паспрабуйце яшчэ раз пазней.)"
       ],
@@ -11016,7 +11007,7 @@
         "Навігацыя"
       ],
       "Never fill on this exact URL": [
-        "Ніколі не запаўняць на гэтым дакладным URL-адрасе"
+        "Ніколі не запаўняць з гэтага дакладнага URL-адраса"
       ],
       "New password": [
         "Новы пароль"
@@ -12005,7 +11996,7 @@
         "Правіла рэгулярнага выразу"
       ],
       "Wildcard pattern matching rule": [
-        "Правіла супастаўлення па шаблоне з падстаноўчымі знакамі"
+        "Правіла адпаведнасці шаблону з падстаноўчымі знакамі"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Ваш бясплатны пробны перыяд завяршыўся. ${ nonAutoRenewalAction }"
@@ -13862,9 +13853,6 @@
       "More plans are available in other currencies": [
         "Больш тарыфных планаў даступна з іншымі валютамі"
       ],
-      "Pay with ${ IDEAL_BRAND_NAME }": [
-        "Заплаціць з дапамогай ${ IDEAL_BRAND_NAME }"
-      ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Спосаб аплаты патрабуецца для актывацыі падпіскі пасля завяршэння пробнага перыяду."
       ],
@@ -13958,9 +13946,6 @@
       "You will soon be redirected to verify your payment.": [
         "Неўзабаве вы будзеце перанакіраваны для спраўджання вашага плацяжу."
       ],
-      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
-        "Ваша валюта была зменена на еўра (€), таму што ${ IDEAL_BRAND_NAME } падтрымлівае толькі плацяжы ў еўра."
-      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Ваша валюта была зменена на еўра (€), таму што банкаўскія пераводы SEPA падтрымліваюць толькі плацяжы ў еўра."
       ],
@@ -13972,9 +13957,6 @@
       ]
     },
     "Payments.Error": {
-      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
-        "Не ўдалося ініцыялізаваць ${ IDEAL_BRAND_NAME }. Паўтарыце спробу пазней."
-      ],
       "Invalid card number": [
         "Памылковы нумар карткі"
       ],
@@ -14000,11 +13982,6 @@
     "Payments.error": {
       "Something went wrong. Google Pay verification failed.": [
         "Нешта пайшло не так. Збой спраўджання Google Pay."
-      ]
-    },
-    "Payments.iDEAL": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Пацвярджаючы гэты плацеж, вы надзяляеце паўнамоцтвамі ${ BRAND_NAME } і Stripe, нашага пастаўшчыка плацежных паслуг, даць указанне вашаму банку спісаць з вашага рахунку адпаведныя сродкі. Вы можаце вярнуць спісаныя сродкі на працягу 8 тыдняў з даты спісання ў адпаведнасці з умовамі дагавора з вашым банкам."
       ]
     },
     "Payments.info": {
@@ -14764,17 +14741,6 @@
       ],
       "User Admin": [
         "Адміністратар карыстальніка"
-      ]
-    },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Канфіграцыя палітык бяспекі, захоўванне даных, інфраструктура VPN і кіраванне журналамі аўдыту."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Кіраванне ўсімі карыстальнікамі, групы, бяспека, білінг і сістэмныя канфігурацыі."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Кіраванне карыстальнікамі, групы, сховішча для ўсіх удзельнікаў, прызначэнне роляў і размеркаванне ліцэнзій."
       ]
     },
     "Safety review": {
@@ -18232,7 +18198,7 @@
         "${ BRAND_NAME } перанясе столькі даных, колькі будзе магчыма, пачынаючы з самых новых паведамленняў."
       ],
       "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
-        "${ modeLabelStong } забяспечвае магутны кантроль, але адна памылка можа прывесці да таго, што аўтазапаўненне спрацуе і запоўніць даныя на махлярскіх або фішынгавых вэб-сайтах."
+        "${ modeLabelStong } забяспечвае магутны кантроль. Таксама ўлічвайце тое, што адна памылка можа прывесці да запаўнення даных на махлярскіх або фішынгавых вэб-сайтах."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Вы сапраўды хочаце незваротна выдаліць ${ count } кантакт?",

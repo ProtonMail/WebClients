@@ -3065,7 +3065,7 @@
         "${ BRAND_NAME }에서 Gmail 메시지를 계속 송수신 하려면, 계정을 다시 연결해주세요."
       ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
-        "최상의 계정 보안 상태를 유지하려면, 복구 문구를 설정하세요."
+        "최상의 계정 보안 상태를 유지하려면, 복구 키를 설정하세요."
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "CSV 파일 및 VCF 파일을 통한 불러오기를 위해, 파일이 ${ MAX_IMPORT_FILE_SIZE_STRING } 또는 연락처 ${ maxContactString }개를 초과하지 않도록 않도록 해주세요. 파일이 더 크다면, 더 작은 파일로 나눠주세요. ${ learnMoreLink }."
@@ -5281,9 +5281,6 @@
       "${ groupCounts } group found": [
         "${ groupCounts } 그룹 찾음"
       ],
-      "${ IDEAL_BRAND_NAME } mark": [
-        "${ IDEAL_BRAND_NAME } 마크"
-      ],
       "${ invitationsCount } pending invitation": [
         "${ invitationsCount }개 대기 중인 초대"
       ],
@@ -7030,9 +7027,6 @@
       "We were not able to add this photo to your album": [
         "이 사진을 앨범에 추가하지 못했습니다"
       ],
-      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "이 거래를 완료하기 위해 새 브라우저 탭의 ${ IDEAL_BRAND_NAME }에 리디렉션됩니다. 팝업 차단기를 사용하는 경우 계속하려면 비활성화하세요."
-      ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "이 거래를 완료하기 위해 새 브라우저 탭의 PayPal로 보내집니다. 팝업 차단기를 사용하는 경우 계속하려면 비활성화하세요."
       ],
@@ -7412,9 +7406,6 @@
       ],
       "${ nbYear } year": [
         "${ nbYear } 년"
-      ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength }자"
       ],
       "(Expired)": [
         "(만료됨)"
@@ -10536,9 +10527,6 @@
       "More plans are available in other currencies": [
         "더 많은 플랜을 다른 통화로 사용할 수 있습니다."
       ],
-      "Pay with ${ IDEAL_BRAND_NAME }": [
-        "${ IDEAL_BRAND_NAME }(으)로 결제하기"
-      ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "무료 체험 종료 후 구독이 활성화되려면 결제 수단이 필요합니다."
       ],
@@ -10614,9 +10602,6 @@
       "You will soon be redirected to verify your payment.": [
         "결제를 인증하기 위해 곧 리디렉션됩니다."
       ],
-      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
-        "${ IDEAL_BRAND_NAME }가 유로화 결제만 지원하므로 사용자의 통화가 유로화(€)로 변경되었습니다."
-      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "SEPA 은행 송금이 유로화 결제만 지원하여 사용자의 통화가 유로화(€)로 변경되었습니다."
       ],
@@ -10628,9 +10613,6 @@
       ]
     },
     "Payments.Error": {
-      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
-        "${ IDEAL_BRAND_NAME }을(를) 구성할 수 없습니다, 다시 시도해 주세요."
-      ],
       "Invalid card number": [
         "유효하지 않은 카드 번호"
       ],
@@ -10656,11 +10638,6 @@
     "Payments.error": {
       "Something went wrong. Google Pay verification failed.": [
         "문제가 발생했습니다. Google Pay 인증에 실패했습니다."
-      ]
-    },
-    "Payments.iDEAL": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "이 지불을 확인함으로써, ${ BRAND_NAME }과 당사 지불 서비스 제공자인 Stripe가 사용자의 은행 계좌에서 인출하도록 동의하는 것으로 간주합니다. 은행과의 합의 조건에 따라 인출일로부터 8주 이내에 환불을 받을 수 있습니다."
       ]
     },
     "Payments.info": {
@@ -11279,17 +11256,6 @@
       ],
       "User Admin": [
         "사용자 관리자"
-      ]
-    },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "보안 정책, 데이터 보존, VPN 인프라를 설정하고 감사 로그를 관리합니다."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "모든 사용자, 그룹, 보안, 결제 및 시스템 설정을 관리합니다."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "모든 구성원의 사용자, 그룹, 저장공간을 관리하고 역할을 부여하며 라이선스를 할당합니다."
       ]
     },
     "Safety review": {

@@ -166,9 +166,6 @@
       "Apply changes": [
         "ცვლილებების გამოყენება"
       ],
-      "Approve participants before they can join": [
-        "დაადასტურეთ მონაწილეები, სანამ ისინი შემოუერთდებიან"
-      ],
       "Assign ${ selectedParticipantName } as host": [
         "${ selectedParticipantName }-ის მინიჭება მასპინძლად"
       ],
@@ -349,9 +346,6 @@
       "Hide participants": [
         "მონაწილეების დამალვა"
       ],
-      "Hide self view": [
-        "საკუთარი ხედის დამალვა"
-      ],
       "Hide timezones": [
         "დროის სარტყლების დამალვა"
       ],
@@ -414,9 +408,6 @@
       ],
       "Participants join after you approve them": [
         "მონაწილეები შემოუერთდებიან მას შემდეგ, რაც მათ დაადასტურებთ"
-      ],
-      "Participants join the call directly": [
-        "მონაწილეები პირდაპირ უერთდებიან ზარს"
       ],
       "Paste": [
         "ჩასმა"
@@ -525,12 +516,6 @@
       "Settings": [
         "მორგება"
       ],
-      "Show duration": [
-        "ხანგრძლივობის ჩვენება"
-      ],
-      "Show floating thumbnail during screensharing": [
-        "მცურავი მინიატურის ჩვენება ეკრანის გაზიარებისას"
-      ],
       "Show options": [
         "პარამეტრების ჩვენება"
       ],
@@ -615,17 +600,11 @@
       "Try another method": [
         "სხვა მეთოდის ცდა"
       ],
-      "Turn off incoming video": [
-        "შემომავალი ვიდეოს გამორთვა"
-      ],
       "Upgrade": [
         "ტარიფის აწევა"
       ],
       "Upgrade now": [
         "ტარიფის განახლება"
-      ],
-      "Upgrade your plan to use waiting room in your next meeting.": [
-        "განაახლეთ თქვენი პაკეტი, რათა გამოიყენოთ მოსაცდელი ოთახი თქვენს შემდეგ შეხვედრაზე."
       ],
       "Upload another video": [
         "სხვა ვიდეოს ატვირთვა"
@@ -695,9 +674,6 @@
       "Go to dashboard": [
         "მთავარზე გადასვლა"
       ],
-      "Hide self view": [
-        "საკუთარი ხედის დამალვა"
-      ],
       "Leave Meeting": [
         "შეხვედრიდან გასვლა"
       ],
@@ -743,12 +719,6 @@
       "Settings": [
         "მორგება"
       ],
-      "Show duration": [
-        "ხანგრძლივობის ჩვენება"
-      ],
-      "Show floating thumbnail during screensharing": [
-        "მცურავი მინიატურის ჩვენება ეკრანის გაზიარებისას"
-      ],
       "Stop recording and download.": [
         "შეწყვიტეთ ჩაწერა და ჩამოტვირთეთ."
       ],
@@ -769,9 +739,6 @@
       ],
       "Toggle settings": [
         "პარამეტრების გადართვა"
-      ],
-      "Turn off incoming video": [
-        "შემომავალი ვიდეოს გამორთვა"
       ],
       "Video settings": [
         "ვიდეოს პარამეტრები"
@@ -3267,17 +3234,6 @@
         "მომხმარებლის ადმინისტრატორი"
       ]
     },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "მოარგეთ უსაფრთხოების პოლიტიკა, მონაცემთა შენახვა, VPN ინფრასტრუქტურა და მართეთ აუდიტის ჟურნალები."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "მართეთ ყველა მომხმარებელი, ჯგუფი, უსაფრთხოება, ანგარიშსწორება და სისტემის კონფიგურაციები."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "მართეთ მომხმარებლები, ჯგუფები და საცავი ყველა წევრისთვის, მიანიჭეთ როლები და გადაანაწილეთ ლიცენზიები."
-      ]
-    },
     "Safety review": {
       "Review account safety": [
         "ანგარიშის უსაფრთხოების გადახედვა"
@@ -3402,9 +3358,6 @@
       ]
     },
     "Title": {
-      "Accessibility": [
-        "წვდომადობა"
-      ],
       "Account restricted": [
         "ანგარიში შეზღუდულია"
       ],
@@ -3431,9 +3384,6 @@
       ],
       "Assign a new host": [
         "ახალი მასპინძლის მინიჭება"
-      ],
-      "Audio": [
-        "ხმა"
       ],
       "Available Cameras": [
         "ხელმისაწვდომი კამერები"
@@ -3538,9 +3488,6 @@
       "Meeting edited": [
         "შეხვედრა ჩასწორდა."
       ],
-      "Meeting settings": [
-        "შეხვედრის მორგება"
-      ],
       "Messaging Layer Security": [
         "Messaging Layer Security (MLS)"
       ],
@@ -3601,9 +3548,6 @@
       "Secure meeting": [
         "დაცული შეხვედრა"
       ],
-      "Security": [
-        "უსაფრთხოება"
-      ],
       "Security code": [
         "უსაფრთხოების კოდი"
       ],
@@ -3633,9 +3577,6 @@
       ],
       "Two-factor authentication": [
         "2FA"
-      ],
-      "Video": [
-        "ვიდეო"
       ],
       "Waiting room": [
         "მოსაცდელი ოთახი"

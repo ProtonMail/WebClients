@@ -3040,6 +3040,9 @@
       "Authentication error.": [
         "Error de autenticación."
       ],
+      "Because this document was in a shared folder, only the folder owner can restore it": [
+        "Como este documento estaba en una carpeta compartida, solo el propietario de la carpeta puede restaurarlo"
+      ],
       "Bookmark password is not available": [
         "La contraseña del marcador no está disponible"
       ],
@@ -5719,15 +5722,6 @@
       "This user can not be migrated due to platform incompatibilities.": [
         "Este usuario no se puede migrar debido a incompatibilidades de la plataforma."
       ],
-      "This will permanently delete the file you uploaded.": [
-        "Esto eliminará permanentemente el archivo cargado."
-      ],
-      "This will permanently delete the folder you uploaded.": [
-        "Esto eliminará permanentemente la carpeta cargada."
-      ],
-      "This will permanently delete the selected items you uploaded.": [
-        "Esto eliminará permanentemente los elementos seleccionados cargados."
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Esto cerrará la sesión de todas las cuentas con la sesión activa."
       ],
@@ -6133,8 +6127,8 @@
       "${ BRAND_NAME } username": [
         "Nombre de usuario de ${ BRAND_NAME }"
       ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } caracteres"
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } caracteres"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(No disponible temporalmente. Compruebe más tarde.)"
@@ -8169,6 +8163,16 @@
         "Soporte para ${ n } dominios de correo personalizados"
       ]
     },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Pruébelo ahora"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Ahora tiene acceso al ${ CALENDAR_APP_NAME } nuevo. ${ link }"
+      ]
+    },
     "Notification": {
       "\"${ ellipsedName }\" created successfully": [
         "«${ ellipsedName }» creado con éxito"
@@ -8410,27 +8414,17 @@
       "Share invitation declined": [
         "Invitación compartida rechazada"
       ],
-      "Sorry, we couldn't delete the folder because it is not empty.": [
-        "No se pudo eliminar la carpeta porque no está vacía.",
-        "No se pudieron eliminar las carpetas porque no están vacías."
-      ],
       "Stopping the sharing of this item has failed": [
         "Error al dejar de compartir este elemento"
       ],
       "Subfolder failed to be loaded": [
         "Error al cargar la subcarpeta"
       ],
-      "The document failed to be created": [
-        "No se creó el documento."
-      ],
       "The link to your item failed to be deleted": [
         "Error al eliminar el enlace al elemento"
       ],
       "The link to your item was deleted": [
         "El enlace al elemento fue eliminado"
-      ],
-      "The spreadsheet failed to be created": [
-        "Error al crear la hoja de cálculo"
       ],
       "Trash failed to be emptied": [
         "Error al vaciar la papelera"
@@ -9311,17 +9305,6 @@
       ],
       "User Admin": [
         "Administrador de usuarios"
-      ]
-    },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Configure las políticas de seguridad, conservación de datos, infraestructura VPN y gestione registros de auditoría."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Gestione todos los usuarios, grupos, seguridad, facuración y configuraciones del sistema."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Gestione usuarios, grupos y almacenamiento para todos los miembros, asigne roles y licencias."
       ]
     },
     "Safety review": {
@@ -10541,9 +10524,6 @@
       "Decline invitation?": [
         "¿Rechazar la invitación?"
       ],
-      "Delete": [
-        "Eliminar"
-      ],
       "Delete ${ count } contact": [
         "Eliminar ${ count } contacto",
         "Eliminar ${ count } contacto"
@@ -10551,12 +10531,6 @@
       "Delete ${ count } contact group": [
         "Eliminar ${ count } grupo de contactos",
         "Eliminar ${ count } grupo de contactos"
-      ],
-      "Delete ${ links.length } items?": [
-        "¿Desea eliminar ${ links.length } elementos?"
-      ],
-      "Delete ${ name }?": [
-        "¿Eliminar ${ name }?"
       ],
       "Delete ${ value }": [
         "Eliminar ${ value }"

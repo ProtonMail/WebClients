@@ -5710,15 +5710,6 @@
       "This user can not be migrated due to platform incompatibilities.": [
         "Dieser Benutzer kann aufgrund von Plattforminkompatibilitäten nicht übernommen werden."
       ],
-      "This will permanently delete the file you uploaded.": [
-        "Dadurch wird die hochgeladene Datei endgültig gelöscht."
-      ],
-      "This will permanently delete the folder you uploaded.": [
-        "Dadurch wird der hochgeladenen Ordner endgültig gelöscht."
-      ],
-      "This will permanently delete the selected items you uploaded.": [
-        "Dadurch werden die ausgewählten Einträge, die du hochgeladen hast, endgültig gelöscht."
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Dadurch wirst du auf allen derzeit angemeldeten Geräten abgemeldet."
       ],
@@ -6124,8 +6115,8 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-Benutzername"
       ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } Zeichen"
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } Zeichen"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Vorübergehend nicht verfügbar. Bitte schaue später wieder vorbei.)"
@@ -8411,27 +8402,17 @@
       "Share invitation declined": [
         "Einladung zur gemeinsamen Nutzung abgelehnt"
       ],
-      "Sorry, we couldn't delete the folder because it is not empty.": [
-        "Entschuldige, wir konnten den Ordner nicht löschen, da er nicht leer war.",
-        "Entschuldige, wir konnten die Ordner nicht löschen, da sie nicht leer waren."
-      ],
       "Stopping the sharing of this item has failed": [
         "Das Beenden der Freigabe dieses Eintrags ist fehlgeschlagen"
       ],
       "Subfolder failed to be loaded": [
         "Unterordner konnte nicht geladen werden"
       ],
-      "The document failed to be created": [
-        "Fehler beim Erstellen des Dokuments."
-      ],
       "The link to your item failed to be deleted": [
         "Der Link zu deinem Element konnte nicht gelöscht werden"
       ],
       "The link to your item was deleted": [
         "Der Link zu deinem Element wurde gelöscht"
-      ],
-      "The spreadsheet failed to be created": [
-        "Fehler beim Erstellen der Tabellenkalkulation"
       ],
       "Trash failed to be emptied": [
         "Der Papierkorb konnte nicht geleert werden"
@@ -9312,17 +9293,6 @@
       ],
       "User Admin": [
         "Benutzeradministrator"
-      ]
-    },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Sicherheitsrichtlinien, Datenaufbewahrung und VPN-Infrastruktur konfigurieren sowie Prüfprotokolle verwalten."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Alle Benutzer, Gruppen, Sicherheits- und Abrechnungseinstellungen sowie Systemkonfigurationen verwalten."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Benutzer, Gruppen und Speicher für alle Mitglieder verwalten, Rollen und Lizenzen zuweisen."
       ]
     },
     "Safety review": {
@@ -10542,9 +10512,6 @@
       "Decline invitation?": [
         "Einladung ablehnen?"
       ],
-      "Delete": [
-        "Löschen"
-      ],
       "Delete ${ count } contact": [
         "${ count } Kontakt löschen",
         "${ count } Kontakte löschen"
@@ -10552,12 +10519,6 @@
       "Delete ${ count } contact group": [
         "${ count } Kontaktgruppe löschen",
         "${ count } Kontaktgruppen löschen"
-      ],
-      "Delete ${ links.length } items?": [
-        "${ links.length } Einträge löschen?"
-      ],
-      "Delete ${ name }?": [
-        "${ name } löschen?"
       ],
       "Delete ${ value }": [
         "${ value } löschen"

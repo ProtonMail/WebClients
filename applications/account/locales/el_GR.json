@@ -2045,6 +2045,12 @@
       "Take a tour": [
         "Κάντε μια περιήγηση"
       ],
+      "Template with invite links": [
+        "Πρότυπο με συνδέσμους πρόσκλησης"
+      ],
+      "Template with passwords": [
+        "Πρότυπο με κωδικούς πρόσβασης"
+      ],
       "Test": [
         "Δοκιμή"
       ],
@@ -10213,8 +10219,8 @@
       "${ helpTranslateLink } by joining our localization community.": [
         "${ helpTranslateLink } συμμετέχοντας στην κοινότητα τοπικοποίησής μας."
       ],
-      "${ IDEAL_BRAND_NAME } mark": [
-        "${ IDEAL_BRAND_NAME } σήμα"
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "${ IDEAL_WERO_BRAND_NAME } σήμα"
       ],
       "${ invitedMemberCount } user needs to accept their invite to start receiving group emails.": [
         "${ invitedMemberCount } χρήστης πρέπει να αποδεχτεί την πρόσκλησή του για να αρχίσει να λαμβάνει ομαδικά μηνύματα ηλεκτρονικού ταχυδρομείου.",
@@ -12725,9 +12731,6 @@
       "Registering your subscription…": [
         "Εγγραφή της συνδρομής σας…"
       ],
-      "Remember to share the user's sign in details with them.": [
-        "Θυμηθείτε να μοιραστείτε τις λεπτομέρειες σύνδεσης με τον χρήστη."
-      ],
       "Remove metadata from images to protect your privacy.": [
         "Καταργήστε τα μεταδεδομένα από τις εικόνες για να προστατεύσετε την ιδιωτικότητά σας."
       ],
@@ -13758,8 +13761,8 @@
       "We use 3-D Secure to protect your payments": [
         "Χρησιμοποιούμε ασφάλεια 3-D για να προστατεύσουμε τις πληρωμές σας"
       ],
-      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "Θα σας ανακατευθύνουμε στο ${ IDEAL_BRAND_NAME }, σε μια νέα καρτέλα προγράμματος περιήγησης, για να ολοκληρώσετε αυτήν τη συναλλαγή. Εάν έχετε ενεργοποιημένο τον αποκλεισμό αναδυόμενων παραθύρων, παρακαλώ απενεργοποιήστε τον για να συνεχίσετε."
+      "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Θα σας ανακατευθύνουμε στο ${ IDEAL_WERO_BRAND_NAME }, σε μια νέα καρτέλα προγράμματος περιήγησης, για να ολοκληρώσετε αυτήν τη συναλλαγή. Εάν έχετε ενεργοποιημένο τον αποκλεισμό αναδυόμενων παραθύρων, παρακαλώ απενεργοποιήστε τον για να συνεχίσετε."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Θα σας ανακατευθύνουμε στο PayPal, σε μια νέα καρτέλα προγράμματος περιήγησης, για να ολοκληρώσετε αυτήν τη συναλλαγή. Εάν έχετε ενεργοποιημένο τον αποκλεισμό αναδυόμενων παραθύρων, παρακαλώ απενεργοποιήστε τον για να συνεχίσετε."
@@ -14224,6 +14227,9 @@
       ],
       "your encrypted data will be locked": [
         "τα κρυπτογραφημένα δεδομένα σας θα κλειδωθούν"
+      ],
+      "Your file includes a password for each user, so these accounts will be created with a password instead of an invite link.": [
+        "Το αρχείο σας περιλαμβάνει έναν κωδικό πρόσβασης για κάθε χρήστη, επομένως αυτοί οι λογαριασμοί θα δημιουργηθούν με κωδικό πρόσβασης αντί για σύνδεσμο πρόσκλησης."
       ],
       "Your files will be encrypted and then saved": [
         "Τα αρχεία σας θα κρυπτογραφηθούν και στη συνέχεια θα αποθηκευτούν"
@@ -14917,6 +14923,9 @@
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } από ${ humanMaxSpace }"
       ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } χαρακτήρες"
+      ],
       "${ MAIL_APP_NAME } address": [
         "Διεύθυνση ${ MAIL_APP_NAME }"
       ],
@@ -14943,9 +14952,6 @@
       ],
       "${ PROTON_SENTINEL_NAME } protection": [
         "${ PROTON_SENTINEL_NAME } προστασία"
-      ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } χαρακτήρες"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Προσωρινά μη διαθέσιμο. Παρακαλούμε ελέγξτε ξανά αργότερα.)"
@@ -17303,9 +17309,6 @@
     "mail_signup_2023: Info": {
       "**Get ${ plan }** for a limited time!": [
         "**Λάβετε ${ plan }** για περιορισμένο χρονικό διάστημα!"
-      ],
-      "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
-        "Γίνετε Visionary και γίνετε μέρος της ιστορίας του ${ BRAND_NAME }"
       ]
     },
     "mail_signup_2024: Info": {
@@ -17507,9 +17510,6 @@
         "${ seats } θέση περιλαμβάνεται",
         "${ seats } θέσεις περιλαμβάνονται"
       ],
-      "100 ${ BRAND_NAME } email addresses": [
-        "100 ${ BRAND_NAME } ηλεκτρονικές διευθύνσεις"
-      ],
       "Cloud storage and file sharing": [
         "Αποθήκευση στο cloud και κοινοποίηση αρχείων"
       ],
@@ -17530,9 +17530,6 @@
       ],
       "Password manager with team vaults": [
         "Διαχειριστής κωδικών πρόσβασης με ομαδικές κρύπτες"
-      ],
-      "Private and unlimited AI chat (${ LUMO_SHORT_APP_NAME })": [
-        "Ιδιωτική και απεριόριστη συνομιλία με τεχνητή νοημοσύνη (${ LUMO_SHORT_APP_NAME })"
       ],
       "Private video calls for the conversations that matter": [
         "Ιδιωτικές βιντεοκλήσεις για τις σημαντικές συνομιλίες"
@@ -20073,9 +20070,6 @@
       "Create another account instead": [
         "Δημιουργήστε έναν άλλο λογαριασμό"
       ],
-      "Keep this plan": [
-        "Διατηρήστε αυτό το πλάνο"
-      ],
       "Open ${ PASS_APP_NAME } vaults": [
         "Άνοιγμα ${ PASS_APP_NAME } κρυπτών"
       ],
@@ -20090,9 +20084,6 @@
       ],
       "Upgrade": [
         "Αναβάθμιση"
-      ],
-      "Upgrade my plan": [
-        "Αναβαθμίστε το πλάνο μου"
       ]
     },
     "pass_signup_2023: Action - open web app": {
@@ -20147,9 +20138,6 @@
       "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
         "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } για ${ priceString }."
       ],
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice } ανά μήνα"
-      ],
       "/month /user": [
         "/μήνα /χρήστη"
       ],
@@ -20167,9 +20155,6 @@
       ],
       "Aliases for email protection from breaches": [
         "Ψευδώνυμα για προστασία ηλεκτρονικού ταχυδρομείου από παραβιάσεις"
-      ],
-      "Based in Switzerland, GDPR compliant": [
-        "Με έδρα την Ελβετία, συμμορφώνεται με το GDPR"
       ],
       "But you can get ${ discountPercentString } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Αλλά μπορείτε να λάβετε έκπτωση ${ discountPercentString } αναβαθμίζοντας σε **${ upsellPlanTitle }** — είναι μόνο ${ relativePrice } επιπλέον ανά μήνα."
@@ -20198,9 +20183,6 @@
       "Creating your account": [
         "Γίνεται δημιουργία του λογαριασμού σας"
       ],
-      "Current plan": [
-        "Τρέχον πλάνο"
-      ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "Κατεβάστε και εγκαταστήστε τις σχετικές εφαρμογές και προεκτάσεις για να αρχίσετε να χρησιμοποιείτε το ${ PASS_APP_NAME }"
       ],
@@ -20222,15 +20204,6 @@
       "Everything from ${ planTitle }, plus...": [
         "Τα πάντα από ${ planTitle }, συν..."
       ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "Μόνο για **${ relativePrice } ανά μήνα** περισσότερο, έχετε πρόσβαση στον premium διαχειριστή κωδικών πρόσβασης του ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "Για μόλις **${ relativePrice } ανά μήνα** περισσότερο, έχετε πρόσβαση στην premium υπηρεσία VPN του ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "Με μόνο **${ relativePrice } ανά μήνα** παραπάνω, θα έχετε πρόσβαση σε όλες τις premium υπηρεσίες του ${ BRAND_NAME }!"
-      ],
       "Free forever": [
         "Δωρεάν για πάντα"
       ],
@@ -20248,9 +20221,6 @@
       ],
       "Get unlimited privacy for two": [
         "Αποκτήστε απεριόριστη ιδιωτικότητα για δύο"
-      ],
-      "Includes:": [
-        "Περιλαμβάνει:"
       ],
       "Install ${ PASS_APP_NAME }": [
         "Εγκατάσταση ${ PASS_APP_NAME }"
@@ -20644,8 +20614,8 @@
       "Offer unavailable": [
         "Η προσφορά δεν είναι διαθέσιμη"
       ],
-      "Pay with ${ IDEAL_BRAND_NAME }": [
-        "Πληρωμή με ${ IDEAL_BRAND_NAME }"
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "Πληρωμή με ${ IDEAL_WERO_BRAND_NAME }"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Η μέθοδος πληρωμής απαιτείται για την ενεργοποίηση της συνδρομής μετά τη λήξη της δοκιμαστικής περιόδου."
@@ -20740,8 +20710,8 @@
       "You will soon be redirected to verify your payment.": [
         "Θα ανακατευθυνθείτε σύντομα, για να επαληθεύσετε την πληρωμή σας."
       ],
-      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
-        "Το νόμισμά σας έχει αλλάξει σε ευρώ (€) επειδή το ${ IDEAL_BRAND_NAME } υποστηρίζει μόνο πληρωμές σε ευρώ."
+      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
+        "Το νόμισμά σας έχει αλλάξει σε ευρώ (€) επειδή το ${ IDEAL_WERO_BRAND_NAME } υποστηρίζει μόνο πληρωμές σε ευρώ."
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Το νόμισμά σας άλλαξε σε ευρώ (€) επειδή οι τραπεζικές μεταφορές SEPA υποστηρίζουν μόνο πληρωμές σε ευρώ."
@@ -20754,8 +20724,8 @@
       ]
     },
     "Payments.Error": {
-      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
-        "Αποτυχία αρχικοποίησης του ${ IDEAL_BRAND_NAME }. Παρακαλούμε δοκιμάστε ξανά αργότερα."
+      "Failed to initialize ${ IDEAL_WERO_BRAND_NAME }. Please try again later.": [
+        "Αποτυχία αρχικοποίησης του ${ IDEAL_WERO_BRAND_NAME }. Παρακαλούμε δοκιμάστε ξανά αργότερα."
       ],
       "Invalid card number": [
         "Μη έγκυρος αριθμός κάρτας"
@@ -20785,8 +20755,8 @@
       ]
     },
     "Payments.iDEAL": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Επιβεβαιώνοντας αυτήν την πληρωμή, εξουσιοδοτείτε το ${ BRAND_NAME } και τη Stripe, τον πάροχο υπηρεσιών πληρωμών μας, να δώσουν εντολή στην τράπεζά σας να χρεώσει ανάλογα τον λογαριασμό σας. Μπορείτε να λάβετε επιστροφή χρημάτων εντός 8 εβδομάδων από την ημερομηνία χρέωσης, σύμφωνα με τους όρους της συμφωνίας σας με την τράπεζά σας."
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Με την επιβεβαίωση, εξουσιοδοτείτε την ${ BRAND_NAME } και την Stripe, τον πάροχο υπηρεσιών πληρωμών μας, να εισπράττουν μελλοντικές πληρωμές για τη συνδρομή σας από αυτόν τον τραπεζικό λογαριασμό μέσω Άμεσης Χρέωσης SEPA και την τράπεζά σας να χρεώνει αυτές τις πληρωμές. Η πρώτη σας πληρωμή πραγματοποιείται τώρα από την ${ IDEAL_WERO_BRAND_NAME }. Το πλάνο σας ανανεώνεται αυτόματα μέχρι να ακυρώσετε. Θα σας ειδοποιούμε πριν από κάθε είσπραξη. Για εισπράξεις με άμεση χρέωση, μπορείτε να ζητήσετε επιστροφή χρημάτων από την τράπεζά σας εντός 8 εβδομάδων από την ημερομηνία χρέωσης, σύμφωνα με τους όρους της συμφωνίας σας με την τράπεζά σας. Αυτό δεν ισχύει για την πληρωμή ${ IDEAL_WERO_BRAND_NAME } που πραγματοποιείτε τώρα."
       ]
     },
     "Payments.info": {
@@ -22147,17 +22117,6 @@
         "Διαχειριστής Χρηστών"
       ]
     },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Διαμορφώστε πολιτικές ασφαλείας, διατήρηση δεδομένων και υποδομή VPN, και διαχειριστείτε τα αρχεία ελέγχου."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Διαχειριστείτε όλους τους χρήστες, τις ομάδες, την ασφάλεια, τη χρέωση και τις διαμορφώσεις συστήματος."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Διαχειριστείτε χρήστες, ομάδες και χώρο αποθήκευσης για όλα τα μέλη, αναθέστε ρόλους και κατανεμήστε άδειες χρήσης."
-      ]
-    },
     "Safety review": {
       "Code sent to ${ boldValue }": [
         "Ο κωδικός στάλθηκε στο ${ boldValue }"
@@ -23510,9 +23469,6 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Απεριόριστα hide-my-email ψευδώνυμα"
-      ],
-      "Up to -${ percentage }%": [
-        "Έως -${ percentage }%"
       ],
       "Up to 2 users": [
         "Μέχρι και 2 χρήστες"

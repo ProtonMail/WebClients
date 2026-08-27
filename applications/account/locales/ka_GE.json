@@ -11641,9 +11641,6 @@
       "Registering your subscription…": [
         "თქვენი გამოწერის რეგისტრაცია…"
       ],
-      "Remember to share the user's sign in details with them.": [
-        "გახსოვდეთ, რომ აუცილებელია, მომხმარებლებს მათი შესვლის დეტალები გაუზიაროთ."
-      ],
       "Remove metadata from images to protect your privacy.": [
         "მეტამონაცემების წაშლა გამოსახულებებიდან თქვენი კონფიდენციალობის დასაცავად."
       ],
@@ -13691,9 +13688,6 @@
       ],
       "${ PROTON_SENTINEL_NAME } protection": [
         "${ PROTON_SENTINEL_NAME } დაცვა"
-      ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } სიმბოლო"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(დრობით მიუწვდომელია. მოგვიანებით სცადეთ)"
@@ -15955,9 +15949,6 @@
     "mail_signup_2023: Info": {
       "**Get ${ plan }** for a limited time!": [
         "**მიიღეთ ${ plan }** შეზღუდული დროით!"
-      ],
-      "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
-        "ასწიეთ ტრაფიკი Visionary-ზე და გახდით ${ BRAND_NAME }-ის ისტორიის ნაწილი"
       ]
     },
     "mail_signup_2024: Info": {
@@ -16150,9 +16141,6 @@
         "${ seats } ადგილი შედის",
         "${ seats } ადგილი შედის"
       ],
-      "100 ${ BRAND_NAME } email addresses": [
-        "100 ${ BRAND_NAME } ელფოსტის მისამართი"
-      ],
       "Cloud storage and file sharing": [
         "ღრუბლოვანი საცავი და ფაილის გაზიარება"
       ],
@@ -16173,9 +16161,6 @@
       ],
       "Password manager with team vaults": [
         "პაროლების მმართველი გუნდური სეიფებით"
-      ],
-      "Private and unlimited AI chat (${ LUMO_SHORT_APP_NAME })": [
-        "პირადი და შეუზღუდავი AI ჩეთი (${ LUMO_SHORT_APP_NAME })"
       ],
       "Private video calls for the conversations that matter": [
         "პირადი ვიდეო ზარები მნიშვნელოვანი საუბრებისთვის"
@@ -18659,9 +18644,6 @@
       "Create another account instead": [
         "სამაგიეროდ სხვა ანაგარიში შექმენით"
       ],
-      "Keep this plan": [
-        "ამ გეგმის დატოვება"
-      ],
       "Open ${ PASS_APP_NAME } vaults": [
         "${ PASS_APP_NAME }-ის საცავების გახსნა"
       ],
@@ -18676,9 +18658,6 @@
       ],
       "Upgrade": [
         "ტარიფის აწევა"
-      ],
-      "Upgrade my plan": [
-        "ტარიფის გაუმჯობესება"
       ]
     },
     "pass_signup_2023: Action - open web app": {
@@ -18733,9 +18712,6 @@
       "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
         "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } ${ priceString } ფასად."
       ],
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice } თვეში"
-      ],
       "/month /user": [
         "/თვე /მომხმარებელი"
       ],
@@ -18753,9 +18729,6 @@
       ],
       "Aliases for email protection from breaches": [
         "ფსევდონიმები ელფოსტის გაჟონვებისგან დასაცავად"
-      ],
-      "Based in Switzerland, GDPR compliant": [
-        "განთავსებულია შვეიცარიაში. GDPR-სთან თავსებადი"
       ],
       "But you can get ${ discountPercentString } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "მაგრამ შეგიძლიათ მიიღოთ ${ discountPercentString } ფასდაკლება ტარიფის **${ upsellPlanTitle }**-ზე აწევით — ის სულ რაღაც ${ relativePrice }-ით მეტია თვეში."
@@ -18784,9 +18757,6 @@
       "Creating your account": [
         "თქვენი ანგარიშის შექმნა"
       ],
-      "Current plan": [
-        "მიმდინარე ტარიფი"
-      ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }-ის გამოყენების დასაწყებად გადმოწერეთ და დააყენეთ შესაბამისი აპები და გაფართოებები"
       ],
@@ -18808,15 +18778,6 @@
       "Everything from ${ planTitle }, plus...": [
         "${ planTitle }-ის ყველაფერი, პლუს..."
       ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "დაამატეთ, მხოლოდ, **${ relativePrice } თვეში** და მიიღეთ წვდომა ${ BRAND_NAME }-ის ფასიან პაროლების მმართველთან!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "დაამატეთ, მხოლოდ, **${ relativePrice } თვეში** და მიიღეთ წვდომა ${ BRAND_NAME }-ის ფასიან VPN სერვისთან!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "დაამატეთ, მხოლოდ, **${ relativePrice } თვეში** და მიიღეთ ${ BRAND_NAME }-ის ყველა ფასიანი სერვისი!"
-      ],
       "Free forever": [
         "სამუდამოდ უფასო"
       ],
@@ -18834,9 +18795,6 @@
       ],
       "Get unlimited privacy for two": [
         "შეუზღუდავი კონფიდენციალობა მიღება ორისთვის"
-      ],
-      "Includes:": [
-        "შეიცავს:"
       ],
       "Install ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }-ის დაყენება"
@@ -20612,17 +20570,6 @@
         "მომხმარებლის ადმინისტრატორი"
       ]
     },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "მოარგეთ უსაფრთხოების პოლიტიკა, მონაცემთა შენახვა, VPN ინფრასტრუქტურა და მართეთ აუდიტის ჟურნალები."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "მართეთ ყველა მომხმარებელი, ჯგუფი, უსაფრთხოება, ანგარიშსწორება და სისტემის კონფიგურაციები."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "მართეთ მომხმარებლები, ჯგუფები და საცავი ყველა წევრისთვის, მიანიჭეთ როლები და გადაანაწილეთ ლიცენზიები."
-      ]
-    },
     "Safety review": {
       "Code sent to ${ boldValue }": [
         "კოდი გაგზავნილია ${ boldValue }-სთან"
@@ -21931,9 +21878,6 @@
       ],
       "Unlimited hide-my-email aliases": [
         "შეუზღუდავი hide-my-email-ის ფსევდონიმები"
-      ],
-      "Up to -${ percentage }%": [
-        "${ percentage }%-მდე"
       ],
       "Up to 2 users": [
         "2-მდე მომხმარებელი"

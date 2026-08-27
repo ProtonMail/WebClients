@@ -11585,9 +11585,6 @@
       "Registering your subscription…": [
         "サブスクリプションを登録中…"
       ],
-      "Remember to share the user's sign in details with them.": [
-        "ユーザーのサインイン情報を共有することを忘れないでください。"
-      ],
       "Remove metadata from images to protect your privacy.": [
         "プライバシーを守るため、画像からメタデータを削除してください。"
       ],
@@ -13628,9 +13625,6 @@
       ],
       "${ PROTON_SENTINEL_NAME } protection": [
         "${ PROTON_SENTINEL_NAME }による保護"
-      ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } 文字"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(一時的に利用できません。あとでお試しください。)"
@@ -15881,9 +15875,6 @@
     "mail_signup_2023: Info": {
       "**Get ${ plan }** for a limited time!": [
         "期間限定で**${ plan }を獲得**！"
-      ],
-      "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
-        "ビジョナリーになって ${ BRAND_NAME } のストーリーに参加しましょう"
       ]
     },
     "mail_signup_2024: Info": {
@@ -16072,9 +16063,6 @@
       "${ seats } seat included": [
         "${ seats }シートが含まれています"
       ],
-      "100 ${ BRAND_NAME } email addresses": [
-        "100 ${ BRAND_NAME }のメールアドレス"
-      ],
       "Cloud storage and file sharing": [
         "クラウドストレージとファイル共有"
       ],
@@ -16095,9 +16083,6 @@
       ],
       "Password manager with team vaults": [
         "チーム保管庫を備えたパスワードマネージャー"
-      ],
-      "Private and unlimited AI chat (${ LUMO_SHORT_APP_NAME })": [
-        "プライベートかつ無制限のAIチャット（${ LUMO_SHORT_APP_NAME }）"
       ],
       "Private video calls for the conversations that matter": [
         "大切な会話のためのプライベートなビデオ通話"
@@ -18542,9 +18527,6 @@
       "Create another account instead": [
         "代わりに別のアカウントを作成してください"
       ],
-      "Keep this plan": [
-        "このプランを続ける"
-      ],
       "Open ${ PASS_APP_NAME } vaults": [
         "${ PASS_APP_NAME }の保管庫を開く"
       ],
@@ -18559,9 +18541,6 @@
       ],
       "Upgrade": [
         "アップグレード"
-      ],
-      "Upgrade my plan": [
-        "プランをアップグレード"
       ]
     },
     "pass_signup_2023: Action - open web app": {
@@ -18616,9 +18595,6 @@
       "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
         "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } が ${ priceString }です。"
       ],
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice }/月あたり"
-      ],
       "/month /user": [
         "/月 /ユーザー"
       ],
@@ -18636,9 +18612,6 @@
       ],
       "Aliases for email protection from breaches": [
         "メール保護のための情報漏洩防止エイリアス"
-      ],
-      "Based in Switzerland, GDPR compliant": [
-        "スイスに拠点を置き、GDPR に準拠"
       ],
       "But you can get ${ discountPercentString } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "しかし、**${ upsellPlanTitle }** にアップグレードすると、${ discountPercentString } 割引を受けることができます。月額 ${ relativePrice } が追加されるだけです。"
@@ -18667,9 +18640,6 @@
       "Creating your account": [
         "アカウントの作成中"
       ],
-      "Current plan": [
-        "現在のプラン"
-      ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } の使用を開始するには、関連するアプリと拡張機能をダウンロードしてインストールしてください"
       ],
@@ -18691,15 +18661,6 @@
       "Everything from ${ planTitle }, plus...": [
         "${ planTitle } のすべてに加えて..."
       ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "月額わずか **${ relativePrice }** を追加するだけで、${ BRAND_NAME } のプレミアム パスワード マネージャーにアクセスできるようになります。"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "月額わずか **${ relativePrice }** を追加するだけで、${ BRAND_NAME } のプレミアム VPN サービスにアクセスできます。"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "**月額わずか ${ relativePrice }** を追加するだけで、すべてのプレミアム ${ BRAND_NAME } サービスにアクセスできるようになります。"
-      ],
       "Free forever": [
         "永久無料"
       ],
@@ -18717,9 +18678,6 @@
       ],
       "Get unlimited privacy for two": [
         "2つの無制限のプライバシーを獲得"
-      ],
-      "Includes:": [
-        "含まれるもの:"
       ],
       "Install ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } をインストールします"
@@ -20538,17 +20496,6 @@
         "ユーザー管理者"
       ]
     },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "セキュリティポリシー、データ保持、VPNインフラを構成し、監査ログを管理します。"
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "すべてのユーザー、グループ、セキュリティ、お支払い、システム構成を管理します。"
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "すべてのメンバーのユーザー、グループ、ストレージを管理し、役割を割り当て、ライセンスを配分します。"
-      ]
-    },
     "Safety review": {
       "Code sent to ${ boldValue }": [
         "${ boldValue } にコードを送信しました"
@@ -21823,9 +21770,6 @@
       ],
       "Unlimited hide-my-email aliases": [
         "無制限の hide-my-email エイリアス"
-      ],
-      "Up to -${ percentage }%": [
-        "- ${ percentage }%まで"
       ],
       "Up to 2 users": [
         "最大2人のユーザー"

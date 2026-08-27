@@ -166,9 +166,6 @@
       "Apply changes": [
         "Wijzigingen toepassen"
       ],
-      "Approve participants before they can join": [
-        "Deelnemers goedkeuren voordat ze kunnen deelnemen"
-      ],
       "Assign ${ selectedParticipantName } as host": [
         "Wijs ${ selectedParticipantName } aan als host"
       ],
@@ -349,9 +346,6 @@
       "Hide participants": [
         "Deelnemers verbergen"
       ],
-      "Hide self view": [
-        "Verberg eigen weergave"
-      ],
       "Hide timezones": [
         "Tijdzones verbergen"
       ],
@@ -414,9 +408,6 @@
       ],
       "Participants join after you approve them": [
         "Deelnemers nemen deel nadat u ze heeft goedgekeurd"
-      ],
-      "Participants join the call directly": [
-        "Deelnemers nemen rechtstreeks deel aan het gesprek"
       ],
       "Paste": [
         "Plakken"
@@ -525,12 +516,6 @@
       "Settings": [
         "Instellingen"
       ],
-      "Show duration": [
-        "Tijdsduur tonen"
-      ],
-      "Show floating thumbnail during screensharing": [
-        "Zwevende miniatuur tonen tijdens het delen van het scherm"
-      ],
       "Show options": [
         "Opties tonen"
       ],
@@ -615,17 +600,11 @@
       "Try another method": [
         "Andere methode proberen"
       ],
-      "Turn off incoming video": [
-        "Binnenkomend beeld uitschakelen"
-      ],
       "Upgrade": [
         "Upgraden"
       ],
       "Upgrade now": [
         "Nu upgraden"
-      ],
-      "Upgrade your plan to use waiting room in your next meeting.": [
-        "Upgrade uw abonnement om de wachtruimte te gebruiken in uw volgende vergadering."
       ],
       "Upload another image": [
         "Een andere afbeelding uploaden"
@@ -707,9 +686,6 @@
       "Go to dashboard": [
         "Ga naar dashboard"
       ],
-      "Hide self view": [
-        "Eigen weergave verbergen"
-      ],
       "Leave Meeting": [
         "Vergadering verlaten"
       ],
@@ -755,12 +731,6 @@
       "Settings": [
         "Instellingen"
       ],
-      "Show duration": [
-        "Tijdsduur tonen"
-      ],
-      "Show floating thumbnail during screensharing": [
-        "Zwevende miniatuur tonen tijdens het delen van het scherm"
-      ],
       "Stop recording and download.": [
         "Stop met opnemen en download de video."
       ],
@@ -781,9 +751,6 @@
       ],
       "Toggle settings": [
         "Instellingen openen/sluiten"
-      ],
-      "Turn off incoming video": [
-        "Binnenkomende video uitschakelen"
       ],
       "Video settings": [
         "Video-instellingen"
@@ -2406,6 +2373,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Als u de e-mail niet in de inbox kan vinden, check dan uw map met spam."
       ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Als u de toegang tot uw authenticator-app bent kwijtgeraakt, kunt u 1 van de 16 back-upherstelcodes gebruiken die u krijgt bij het instellen van tweefactorauthenticatie. ${ learnMoreLink }"
+      ],
       "If you’re using Firefox, make sure PeerConnection is enabled.": [
         "Als u Firefox gebruikt, zorg er dan voor dat PeerConnection is ingeschakeld."
       ],
@@ -3352,17 +3322,6 @@
         "Gebruiker Beheerder"
       ]
     },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Configureer beveiligingsbeleid, gegevensbewaring en VPN-infrastructuur, en beheer auditlogboeken."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Beheer alle gebruikers, groepen, opslag, beveiliging, facturering, auditlogboeken en systeemconfiguraties."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Beheer gebruikers, groepen en opslagruimte voor alle leden, wijs rollen toe en deel licenties uit."
-      ]
-    },
     "Safety review": {
       "Review account safety": [
         "Controleer de veiligheid van uw account"
@@ -3487,9 +3446,6 @@
       ]
     },
     "Title": {
-      "Accessibility": [
-        "Toegankelijkheid"
-      ],
       "Account restricted": [
         "Account beperkt"
       ],
@@ -3516,9 +3472,6 @@
       ],
       "Assign a new host": [
         "Wijs een nieuwe host aan"
-      ],
-      "Audio": [
-        "Audio"
       ],
       "Available Cameras": [
         "Beschikbare camera's"
@@ -3629,9 +3582,6 @@
       "Meeting edited": [
         "Vergadering bewerkt"
       ],
-      "Meeting settings": [
-        "Vergadering instellingen"
-      ],
       "Messaging Layer Security": [
         "Messaging Layer Security"
       ],
@@ -3692,9 +3642,6 @@
       "Secure meeting": [
         "Veilige vergadering"
       ],
-      "Security": [
-        "Beveiliging"
-      ],
       "Security code": [
         "Beveiligingscode"
       ],
@@ -3727,9 +3674,6 @@
       ],
       "Two-factor authentication": [
         "Tweestapsverificatie"
-      ],
-      "Video": [
-        "Video"
       ],
       "Waiting for the host": [
         "Wachten op de host"

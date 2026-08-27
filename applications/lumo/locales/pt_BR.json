@@ -1781,9 +1781,6 @@
       " header. Keys are scoped to your account and can be revoked from ": [
         " cabeçalho. As chaves são limitadas à sua conta e podem ser revogadas em "
       ],
-      " to have higher limits.": [
-        " para ter limites maiores."
-      ],
       "\"${ fileName }\" has multiple sheets. Select the sheets to include in the conversation context.": [
         "\"${ fileName }\" contém várias planilhas. Selecione as planilhas que deseja incluir no contexto da conversa."
       ],
@@ -2262,18 +2259,6 @@
       "You've reached your image limit for this period.": [
         "Você atingiu o limite de imagens para este período."
       ],
-      "You've run out of weekly chats, please ": [
-        "Você atingiu o limite de chats semanalmente, por favor "
-      ],
-      "You've run out of weekly chats, please sign in or create an account to have higher limits.": [
-        "Você atingiu o limite de chats semanais, por favor, inicie sessão ou crie uma conta para ter limites maiores."
-      ],
-      "You've run out of weekly chats, please upgrade to have higher limits.": [
-        "Você atingiu o limite de chats semanais, por favor, faça upgrade para ter limites maiores."
-      ],
-      "You've run out of weekly chats. Contact your admin to get higher limits.": [
-        "Você esgotou seus chats semanais. Entre em contato com seu administrador para obter limites maiores."
-      ],
       "Your memories are already up to date.": [
         "Suas memórias já estão atualizadas."
       ]
@@ -2497,9 +2482,6 @@
       ],
       "Sign in": [
         "Iniciar sessão"
-      ],
-      "upgrade": [
-        "fazer upgrade"
       ],
       "Upgrade": [
         "Fazer upgrade"
@@ -7060,9 +7042,6 @@
       "We use 3-D Secure to protect your payments": [
         "Usamos 3-D Secure para proteger seus pagamentos"
       ],
-      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "Vamos redirecioná-lo para o ${ IDEAL_BRAND_NAME } em uma nova guia do navegador para concluir esta transação. Desative qualquer bloqueador de pop-ups que estiver usando."
-      ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Vamos redirecioná-lo para o PayPal em uma nova guia do navegador para concluir esta transação. Desative qualquer bloqueador de pop-ups que estiver usando."
       ],
@@ -7186,9 +7165,6 @@
       "${ n } month": [
         "${ n } mês",
         "${ n } meses"
-      ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } caracteres"
       ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Acesse o ${ PASS_APP_NAME } com segurança pelo terminal, ideal para scripts, automação e fluxos de trabalho de desenvolvimento."
@@ -9028,9 +9004,6 @@
       "More plans are available in other currencies": [
         "Mais planos estão disponíveis em outras moedas"
       ],
-      "Pay with ${ IDEAL_BRAND_NAME }": [
-        "Pagar com ${ IDEAL_BRAND_NAME }"
-      ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Método de pagamento necessário para que a assinatura seja ativada após o término do período de teste."
       ],
@@ -9145,11 +9118,6 @@
     "Payments.error": {
       "Something went wrong. Google Pay verification failed.": [
         "Ocorreu um erro. A verificação do Google Pay falhou."
-      ]
-    },
-    "Payments.iDEAL": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Ao confirmar este pagamento, você autoriza a ${ BRAND_NAME } e Stripe, nosso provedor de serviços de pagamento, a instruir seu banco a debitar sua conta de acordo. Você pode obter um reembolso no prazo de 8 semanas a partir da data do débito, de acordo com as condições do seu contrato com o banco."
       ]
     },
     "Payments.info": {
@@ -9546,17 +9514,6 @@
       ],
       "User Admin": [
         "Administração de usuário"
-      ]
-    },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Configure políticas de segurança, retenção de dados e infraestrutura de VPN, além de gerenciar registros de auditoria."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Gerencie todos os usuários, grupos, segurança, faturamento e configurações do sistema."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Gerencie usuários, grupos e espaço de armazenamento para todos os membros, atribuir funções e distribuir licenças."
       ]
     },
     "Safety review": {

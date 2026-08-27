@@ -8918,7 +8918,7 @@
         "보안 키를 터치해 주세요."
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
-        "물리적 U2F 또는 FIDO2 보안 키로 신원 확인"
+        "물리적 U2F 또는 FIDO2 보안 키로 신원을 확인하세요"
       ],
       "You've reached the maximum of ${ maxSecurityKeyLength } security key.": [
         "최대 ${ maxSecurityKeyLength }개 보안 키 개수에 도달했습니다."
@@ -10117,10 +10117,7 @@
         "SSO를 사용하지 않는 ${ canHaveTwoFAMembersLength }명 중 ${ hasTwoFAMembersLength }명이 조직에 로그인하기 위해 2단계 인증을 사용합니다."
       ],
       "${ helpTranslateLink } by joining our localization community.": [
-        "Proton 언어 현지화 커뮤니티에 참가하어 ${ helpTranslateLink }."
-      ],
-      "${ IDEAL_BRAND_NAME } mark": [
-        "${ IDEAL_BRAND_NAME } 마크"
+        "Proton 언어 현지화 커뮤니티에 참가하여 ${ helpTranslateLink }."
       ],
       "${ invitedMemberCount } user needs to accept their invite to start receiving group emails.": [
         "그룹 이메일 수신을 시작하려면 ${ invitedMemberCount }명 사용자들이 초대를 수락 받아야 합니다."
@@ -10867,7 +10864,7 @@
         "비밀번호를 변경하십시오"
       ],
       "Changes to your default language and time are reflected on the web. To change the default for mobile apps, go to the settings on your device.": [
-        "기본 언어 및 시간대 변경은 웹 앱애도 적용됩니다. 모바일 앱 설정의 기본값을 변경하려면 기기의 설정으로 이동하세요."
+        "기본 언어 및 시간대 변경은 웹 앱에도 적용됩니다. 모바일 앱의 기본 언어를 변경하려면 기기 설정으로 이동하세요."
       ],
       "Check if your recovery phrase can be used to fully recover your account.": [
         "계정을 완전하게 복구하기 위해 복구 키 사용 가능 여부를 확인하세요."
@@ -11323,7 +11320,7 @@
         "자동 삭제 활성화 중…"
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
-        "복구 키를 다시 활성화하면 새로운 복구 문구가 생성됩니다."
+        "복구 키를 다시 활성화하면 새로운 복구 키가 생성됩니다."
       ],
       "Enabling the data backup on this device will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset, simply by signing in on this device.": [
         "이 기기에서 데이터 백업을 활성화하는 경우 계정의 비밀번호를 재설정한 다음 이 기기로 다시 로그인하여 이메일과 연락처, 파일, 비밀번호 및 다른 모든 암호화된 데이터에 대한 접근 권한을 복구할 수 있게 됩니다."
@@ -12588,9 +12585,6 @@
       "Registering your subscription…": [
         "구독 등록하는 중…"
       ],
-      "Remember to share the user's sign in details with them.": [
-        "사용자의 로그인 세부 사항을 공유하는 것을 잊지 마세요."
-      ],
       "Remove metadata from images to protect your privacy.": [
         "이미지의 메타데이터를 제거하여 개인정보를 보호합니다."
       ],
@@ -13610,9 +13604,6 @@
       ],
       "We use 3-D Secure to protect your payments": [
         "결제 정보를 보호하기 위해 3D 보안을 이용합니다"
-      ],
-      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "이 거래를 완료하기 위해 새 브라우저 탭의 ${ IDEAL_BRAND_NAME }에 리디렉션됩니다. 팝업 차단기를 사용하는 경우 계속하려면 비활성화하세요."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "이 거래를 완료하기 위해 새 브라우저 탭의 PayPal로 보내집니다. 팝업 차단기를 사용하는 경우 계속하려면 비활성화하세요."
@@ -14777,9 +14768,6 @@
       ],
       "${ PROTON_SENTINEL_NAME } protection": [
         "${ PROTON_SENTINEL_NAME } 보호"
-      ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength }자"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(일시적으로 사용할 수 없습니다. 나중에 다시 확인해 주세요.)"
@@ -17129,9 +17117,6 @@
     "mail_signup_2023: Info": {
       "**Get ${ plan }** for a limited time!": [
         "제한된 시간 동안 **${ plan }을(를) 받으세요!**"
-      ],
-      "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
-        "Visionary가 되어 ${ BRAND_NAME }의 이야기와 하나가 되어주세요"
       ]
     },
     "mail_signup_2024: Info": {
@@ -17323,9 +17308,6 @@
       "${ seats } seat included": [
         "${ seats }개 시트 포함"
       ],
-      "100 ${ BRAND_NAME } email addresses": [
-        "${ BRAND_NAME } 이메일 주소 100개"
-      ],
       "Cloud storage and file sharing": [
         "클라우드 저장공간 및 파일 공유"
       ],
@@ -17346,9 +17328,6 @@
       ],
       "Password manager with team vaults": [
         "팀 금고를 지원하는 비밀번호 관리자"
-      ],
-      "Private and unlimited AI chat (${ LUMO_SHORT_APP_NAME })": [
-        "개인 정보 보호 및 무제한 AI 채팅 (${ LUMO_SHORT_APP_NAME })"
       ],
       "Private video calls for the conversations that matter": [
         "중요한 대화를 위한 개인 영상 통화"
@@ -19847,9 +19826,6 @@
       "Create another account instead": [
         "대신 다른 계정을 생성"
       ],
-      "Keep this plan": [
-        "이 플랜 유지"
-      ],
       "Open ${ PASS_APP_NAME } vaults": [
         "${ PASS_APP_NAME } 금고 열기"
       ],
@@ -19864,9 +19840,6 @@
       ],
       "Upgrade": [
         "업그레이드"
-      ],
-      "Upgrade my plan": [
-        "내 플랜 업그레이드"
       ]
     },
     "pass_signup_2023: Action - open web app": {
@@ -19921,9 +19894,6 @@
       "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
         "${ priceString }에 ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } 구매하기"
       ],
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice }/월간"
-      ],
       "/month /user": [
         "/월 /사용자"
       ],
@@ -19941,9 +19911,6 @@
       ],
       "Aliases for email protection from breaches": [
         "데이터 침해로부터 이메일을 지키는 별칭"
-      ],
-      "Based in Switzerland, GDPR compliant": [
-        "스위스에 본사를 둔 GDPR 준수"
       ],
       "But you can get ${ discountPercentString } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "다만 **${ upsellPlanTitle }**(으)로 업그레이드 하여 ${ discountPercentString } 할인된 가로 사용할 수 있습니다. - 오직 매월 ${ relativePrice }만 추가됩니다."
@@ -19972,9 +19939,6 @@
       "Creating your account": [
         "계정을 생성하는 중"
       ],
-      "Current plan": [
-        "현재 플랜"
-      ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }을 사용하려면 관련된 앱 또는 확장을 다운로드 및 설치해주세요"
       ],
@@ -19996,15 +19960,6 @@
       "Everything from ${ planTitle }, plus...": [
         "${ planTitle }에서의 모든 것, 게다가..."
       ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "**월간 ${ relativePrice }**에 모든 ${ BRAND_NAME } 프리미엄 비밀번호 관리자를 사용하실 수 있습니다!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "**월간 ${ relativePrice }**에 모든 ${ BRAND_NAME } 프리미엄 VPN 서비스를 사용하실 수 있습니다!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "**월간 ${ relativePrice }**에 모든 ${ BRAND_NAME } 프리미엄 서비스를 사용하실 수 있습니다!"
-      ],
       "Free forever": [
         "영원히 무료"
       ],
@@ -20022,9 +19977,6 @@
       ],
       "Get unlimited privacy for two": [
         "두 명을 위한 무제한 프라이버시 보호 받기"
-      ],
-      "Includes:": [
-        "포함:"
       ],
       "Install ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } 설치"
@@ -20417,9 +20369,6 @@
       "Offer unavailable": [
         "제안을 사용할 수 없음"
       ],
-      "Pay with ${ IDEAL_BRAND_NAME }": [
-        "${ IDEAL_BRAND_NAME }(으)로 결제하기"
-      ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "무료 체험 종료 후 구독이 활성화되려면 결제 수단이 필요합니다."
       ],
@@ -20507,9 +20456,6 @@
       "You will soon be redirected to verify your payment.": [
         "결제를 인증하기 위해 곧 리디렉션됩니다."
       ],
-      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
-        "${ IDEAL_BRAND_NAME }가 유로화 결제만 지원하므로 사용자의 통화가 유로화(€)로 변경되었습니다."
-      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "SEPA 은행 송금이 유로화 결제만 지원하여 사용자의 통화가 유로화(€)로 변경되었습니다."
       ],
@@ -20521,9 +20467,6 @@
       ]
     },
     "Payments.Error": {
-      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
-        "${ IDEAL_BRAND_NAME }을(를) 구성할 수 없습니다, 다시 시도해 주세요."
-      ],
       "Invalid card number": [
         "유효하지 않은 카드 번호"
       ],
@@ -20549,11 +20492,6 @@
     "Payments.error": {
       "Something went wrong. Google Pay verification failed.": [
         "문제가 발생했습니다. Google Pay 인증에 실패했습니다."
-      ]
-    },
-    "Payments.iDEAL": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "이 지불을 확인함으로써, ${ BRAND_NAME }과 당사 지불 서비스 제공자인 Stripe가 사용자의 은행 계좌에서 인출하도록 동의하는 것으로 간주합니다. 은행과의 합의 조건에 따라 인출일로부터 8주 이내에 환불을 받을 수 있습니다."
       ]
     },
     "Payments.info": {
@@ -21906,17 +21844,6 @@
         "사용자 관리자"
       ]
     },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "보안 정책, 데이터 보존, VPN 인프라를 설정하고 감사 로그를 관리합니다."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "모든 사용자, 그룹, 보안, 결제 및 시스템 설정을 관리합니다."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "모든 구성원의 사용자, 그룹, 저장공간을 관리하고 역할을 부여하며 라이선스를 할당합니다."
-      ]
-    },
     "Safety review": {
       "Code sent to ${ boldValue }": [
         "${ boldValue }(으)로 코드를 전송했습니다."
@@ -23230,9 +23157,6 @@
       "Unlimited hide-my-email aliases": [
         "무제한 hide-my-email 별칭"
       ],
-      "Up to -${ percentage }%": [
-        "최대 -${ percentage }%"
-      ],
       "Up to 2 users": [
         "최대 2명의 사용자"
       ],
@@ -24036,7 +23960,7 @@
         "새로운 복구 키 생성"
       ],
       "Last changed ${ formattedDate }": [
-        "${ formattedDate }에 마지막으로 변경됨"
+        "${ formattedDate }일에 마지막으로 변경됨"
       ],
       "Not activated": [
         "비활성화됨"

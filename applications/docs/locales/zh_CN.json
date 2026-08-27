@@ -5577,15 +5577,6 @@
       "This user can not be migrated due to platform incompatibilities.": [
         "由于平台不兼容，此用户无法迁移。"
       ],
-      "This will permanently delete the file you uploaded.": [
-        "这将永久删除您上传的文件。"
-      ],
-      "This will permanently delete the folder you uploaded.": [
-        "这将永久删除您上传的文件夹。"
-      ],
-      "This will permanently delete the selected items you uploaded.": [
-        "这将永久删除您上传的选定项目。"
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "此操作将退出当前登录的所有账户。"
       ],
@@ -5981,9 +5972,6 @@
     "Label": {
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } 用户名"
-      ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length } / ${ maxLength } 个字符"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "（暂时不可用。请稍后再试。）"
@@ -8122,26 +8110,17 @@
       "Share invitation declined": [
         "分享邀请被拒绝"
       ],
-      "Sorry, we couldn't delete the folder because it is not empty.": [
-        "对不起，我们无法删除这些文件夹，因为它们不是空的。"
-      ],
       "Stopping the sharing of this item has failed": [
         "停止共享此项目失败"
       ],
       "Subfolder failed to be loaded": [
         "加载子文件夹失败"
       ],
-      "The document failed to be created": [
-        "文档创建失败"
-      ],
       "The link to your item failed to be deleted": [
         "共享链接删除失败"
       ],
       "The link to your item was deleted": [
         "共享链接已删除"
-      ],
-      "The spreadsheet failed to be created": [
-        "电子表格创建失败"
       ],
       "Trash failed to be emptied": [
         "未能清空回收站"
@@ -8933,17 +8912,6 @@
       ],
       "User Admin": [
         "用户管理员"
-      ]
-    },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "配置安全策略、数据保留和 VPN 基础设施，并管理审计日志。"
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "管理所有用户、群组、安全、计费和系统配置。"
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "管理所有成员的账户、群组和存储空间，分配角色和许可证。"
       ]
     },
     "Safety review": {
@@ -10120,20 +10088,11 @@
       "Decline invitation?": [
         "拒绝邀请？"
       ],
-      "Delete": [
-        "删除"
-      ],
       "Delete ${ count } contact": [
         "删除 ${ count } 联系人"
       ],
       "Delete ${ count } contact group": [
         "删除 ${ count } 个联系人组"
-      ],
-      "Delete ${ links.length } items?": [
-        "删除 ${ links.length } 项目？"
-      ],
-      "Delete ${ name }?": [
-        "刪除 ${ name }？"
       ],
       "Delete ${ value }": [
         "删除 ${ value }"
