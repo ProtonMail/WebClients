@@ -772,7 +772,7 @@
         "Aylık"
       ],
       "Two-year": [
-        "Iki yıllık"
+        "İki yıllık"
       ],
       "Yearly": [
         "Yıllık"
@@ -1082,6 +1082,9 @@
       ],
       "Light": [
         "Açık"
+      ],
+      "Manage connectors": [
+        "Bağlayıcı yönetimi"
       ],
       "Manage files": [
         "Dosya yönetimi"
@@ -1516,6 +1519,9 @@
       "Could not load usage for this key.": [
         "Bu anahtarın kullanımı yüklenemedi."
       ],
+      "Could not open the desktop settings": [
+        "Bilgisayar ayarları açılamadı"
+      ],
       "Could not retrieve your encryption key": [
         "Şifreleme anahtarınız alınamadı"
       ],
@@ -1786,9 +1792,6 @@
       ],
       " header. Keys are scoped to your account and can be revoked from ": [
         " üst bilgisi. Anahtarlar hesabınıza özeldir ve şuradan geçersiz kılınabilir "
-      ],
-      " to have higher limits.": [
-        " daha yüksek sınırlar elde etmek için."
       ],
       "\"${ fileName }\" has multiple sheets. Select the sheets to include in the conversation context.": [
         "“${ fileName }” dosyasında birden fazla çalışma sayfası var. Sohbet bağlamına eklenecek çalışma sayfalarını seçin."
@@ -2280,18 +2283,6 @@
       "You've reached your image limit for this period. Upgrade to keep creating images.": [
         "Bu dönem için görsel oluşturma sınırınıza ulaştınız. Görsel oluşturmayı sürdürmek için tarfienizi yükseltin."
       ],
-      "You've run out of weekly chats, please ": [
-        "Haftalık sohbet sınırınıza ulaştınız, lütfen "
-      ],
-      "You've run out of weekly chats, please sign in or create an account to have higher limits.": [
-        "Haftalık sohbet sınırınıza ulaştınız. Daha yüksek sınırlar edinmek için lütfen oturum veya hesap açın."
-      ],
-      "You've run out of weekly chats, please upgrade to have higher limits.": [
-        "Haftalık sohbet sınırınıza ulaştınız. Daha yüksek sınırlar edinmek için tarifenizi yükseltin."
-      ],
-      "You've run out of weekly chats. Contact your admin to get higher limits.": [
-        "Haftalık sohbet sınırınıza ulaştınız. Daha yüksek sınır elde etmek için yöneticiniz ile görüşün."
-      ],
       "Your memories are already up to date.": [
         "Bellekleriniz zaten güncel."
       ],
@@ -2518,9 +2509,6 @@
       ],
       "Sign in": [
         "Oturum aç"
-      ],
-      "upgrade": [
-        "yükselt"
       ],
       "Upgrade": [
         "Yükselt"
@@ -5780,7 +5768,7 @@
         "Tanzanya"
       ],
       "Tanzania, United Republic of": [
-        "Birleşik Tanzaya Cumhuriyeti"
+        "Birleşik Tanzanya Cumhuriyeti"
       ],
       "Thailand": [
         "Tayland"
@@ -6727,8 +6715,8 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe yazma yardımcısı"
       ],
-      "${ IDEAL_BRAND_NAME } mark": [
-        "${ IDEAL_BRAND_NAME } markası"
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "${ IDEAL_WERO_BRAND_NAME } markası"
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } içinde ${ BRAND_NAME } Scribe yazma yardımcısı bulunur"
@@ -7237,8 +7225,8 @@
       "We use 3-D Secure to protect your payments": [
         "Ödemelerinizi korumak için 3-D Secure kullanıyoruz"
       ],
-      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "Bu işlemi tamamlamanız için yeni bir tarayıcı sekmesi açarak sizi ${ IDEAL_BRAND_NAME } sitesine yönlendireceğiz. İşlemi tamamlamak için, varsa açılır pencere engelleyicilerinizi kapatın."
+      "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Bu işlemi tamamlamanız için yeni bir tarayıcı sekmesi açarak sizi ${ IDEAL_WERO_BRAND_NAME } sitesine yönlendireceğiz. İşlemi tamamlamak için, varsa açılır pencere engelleyicilerinizi kapatın."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Bu işlemi tamamlamanız için yeni bir tarayıcı sekmesi açarak sizi PayPal sitesine yönlendireceğiz. İşlemi tamamlamak için, varsa açılır pencere engelleyicilerinizi kapatın."
@@ -7360,12 +7348,12 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } kullanıcı adı"
       ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } karakter"
+      ],
       "${ n } month": [
         "${ n } ay",
         "${ n } ay"
-      ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } karakter"
       ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "${ PASS_APP_NAME } uygulamasına uç birimden güvenli olarak erişebilirsiniz. Betik kullanımı, otomasyon ve geliştirme iş akışları için idealdir."
@@ -7766,6 +7754,9 @@
       "Forces either unavailable state, without burning a real quota or waiting for a flag rollout. \"unavailable_limit_reached\" pins the Max pool to 0 remaining, exactly as the backend would after the weekly cap; \"unavailable_high_load\" switches off the availability flag. Both disable the Max row in the picker, fall the selection back to Lite, and push maxModelAvailability to native. Persists across reloads until switched off.": [
         "Gerçek bir kota harcamadan veya bir işaretin kullanıma sunulmasını beklemeden kullanılamaz durumu dayatır. \"unavailable_limit_reached\", arka ucun haftalık sınırdan sonra yapacağı gibi, en fazla havuzu 0 kalana sabitler. \"unavailable_high_load\" kullanılabilirlik işaretini kapatır. Her ikisi de seçicideki En fazla satırını etkisizleştirir, seçimi Lite olarak değiştirir ve maxModelAvailability değerini yerel olarak iter. Kapatılana kadar yeniden yüklemeler boyunca sürer."
       ],
+      "Forces Lite and Max pools to zero and lets UsageLimitsTierSync dispatch the tier error, so you can preview the weekly limit UpsellCard above the composer. Hidden for Plus accounts. Persists across reloads until switched off.": [
+        "Lite ve Max havuzlarını sıfıra zorlar ve UsageLimitsTierSync tarafından katman hatasının gönderilmesini sağlar. Böylece oluşturucunun üzerindeki haftalık limit UpsellCard değerini ön izleyebilirsiniz. Plus hesapları için gizlidir. Kapatılana kadar yeniden yüklemeler boyunca kalır."
+      ],
       "Forces the inline composer banner into \"approaching\" or \"at limit\" state so you can preview it in any context.": [
         "Satır arası oluşturucu başlığını \"yaklaşıyor\" ya da \"sınırda\" durumuna getirir. Böylece herhangi bir bağlamda ön izleme yapabilirsiniz."
       ],
@@ -7822,6 +7813,12 @@
       ],
       "Notifications": [
         "Bildirimler"
+      ],
+      "off": [
+        "kapalı"
+      ],
+      "on": [
+        "açık"
       ],
       "Open a conversation to enable generation error testing.": [
         "Oluşturma sorunu sınamasını etkinleştirmek için bir konuşma açın."
@@ -7954,6 +7951,12 @@
       ],
       "Unsynced spaces": [
         "Eşitlenmemiş alanlar"
+      ],
+      "Weekly chat limit upsell": [
+        "Haftalık sohbet sınırı ek satış"
+      ],
+      "Weekly limit upsell": [
+        "Haftalık sınır ek satışı"
       ],
       "Yes": [
         "Evet"
@@ -9205,8 +9208,8 @@
       "More plans are available in other currencies": [
         "Farklı para birimlerinde başka tarifeler de var"
       ],
-      "Pay with ${ IDEAL_BRAND_NAME }": [
-        "${ IDEAL_BRAND_NAME } ile öde"
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "${ IDEAL_WERO_BRAND_NAME } ile öde"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Deneme süresi sona erdikten sonra aboneliğin etkinleştirilmesi için bir ödeme yöntemi gereklidir."
@@ -9289,8 +9292,8 @@
       "You will soon be redirected to verify your payment.": [
         "Birazdan ödemenizi doğrulamak için yönlendirileceksiniz."
       ],
-      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
-        "${ IDEAL_BRAND_NAME } yalnızca avro ödemelerini desteklediği için para biriminiz avroya (€) dönüştürüldü."
+      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
+        "${ IDEAL_WERO_BRAND_NAME } yalnızca avro ödemelerini desteklediği için para biriminiz avroya (€) dönüştürüldü."
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "SEPA banka havaleleri yalnızca avro ödemelerini desteklediği için para biriminiz avroya (€) dönüştürüldü."
@@ -9303,8 +9306,8 @@
       ]
     },
     "Payments.Error": {
-      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
-        "${ IDEAL_BRAND_NAME } hazırlanamadı. Lütfen bir süre sonra yeniden deneyin."
+      "Failed to initialize ${ IDEAL_WERO_BRAND_NAME }. Please try again later.": [
+        "${ IDEAL_WERO_BRAND_NAME } hazırlanamadı. Lütfen bir süre sonra yeniden deneyin."
       ],
       "Invalid card number": [
         "Kart numarası geçersiz"
@@ -9334,8 +9337,8 @@
       ]
     },
     "Payments.iDEAL": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Bu ödemeyi onayladığınızda, bankanıza ${ BRAND_NAME } ve ödeme hizmeti sağlayıcımız Stripe hizmetine hesabınızdan ödeme alma yetkisi verirsiniz. Bankanızla yaptığınız anlaşmanın koşullarına bağlı olarak, ödemenin yapıldığı tarihten başlayan 8 hafta içinde iade isteğinde bulunabilirsiniz."
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Kabul ederek, ödeme hizmeti sağlayıcımız olan ${ BRAND_NAME } ve Stripe kuruluşlarına, aboneliğiniz için gelecekteki ödemeleri bu banka hesabından SEPA otomatik ödemesi ile alma ve bankanıza bu ödemeleri borçlandırma yetkisi vermiş olursunuz. İlk ödemeniz şimdi ${ IDEAL_WERO_BRAND_NAME } tarafından yapıldı. Siz iptal edene kadar tarifeniz otomatik olarak yenilenecek. Her ödemeden önce sizi bilgilendireceğiz. Otomatik ödemeler için, bankanızla olan anlaşmanızın şartlarına göre, borç tarihinden itibaren 8 hafta içinde bankanızdan geri ödeme isteğinde bulunabilirsiniz. Bu durum, şu anda yaptığınız ${ IDEAL_WERO_BRAND_NAME } ödemesi için geçerli değildir."
       ]
     },
     "Payments.info": {
@@ -9732,17 +9735,6 @@
       ],
       "User Admin": [
         "Kullanıcı yöneticisi"
-      ]
-    },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Güvenlik ilkelerini, verileri tutma kurallarını, VPN altyapısını yapılandırın ve denetim günlüklerini yönetin."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Tüm kullanıcıları, grupları, güvenlik ayarlarını, faturaları ve sistem yapılandırmalarını yönetin."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Tüm üyelerin kullanıcılarını, gruplarını ve depolama alanlarını yönetin, rollerini ve lisanslarını atayın."
       ]
     },
     "Safety review": {
