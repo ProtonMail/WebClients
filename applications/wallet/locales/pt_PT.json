@@ -3280,9 +3280,6 @@
         "${ n } mês",
         "${ n } meses"
       ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } carateres"
-      ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Aceda ao ${ PASS_APP_NAME } de forma segura a partir do terminal, ideal para scripting, automação e fluxos de trabalho de desenvolvimento."
       ],
@@ -5179,17 +5176,6 @@
       ],
       "User Admin": [
         "Administrador de utilizadores"
-      ]
-    },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Configurar políticas de segurança, retenção de dados e infraestrutura de VPN, e gerir registos de auditoria."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Gerir todos os utilizadores, grupos, segurança, faturação e configurações de sistema."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Gerir utilizadores, grupos e armazenamento para todos os membros, atribuir cargos e alocar licenças."
       ]
     },
     "Safety review": {

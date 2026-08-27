@@ -3336,9 +3336,6 @@
         "${ n } měsíců",
         "${ n } měsíců"
       ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } znaků"
-      ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Přistupujte k aplikaci ${ PASS_APP_NAME } bezpečně z terminálu, což je ideální pro skriptování, automatizaci a vývojářské pracovní postupy."
       ],
@@ -5316,17 +5313,6 @@
       ],
       "User Admin": [
         "Správce uživatelů"
-      ]
-    },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Nastavte bezpečnostní zásady, uchovávání dat, VPN infrastrukturu a spravujte auditní logy."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Spravujte všechny uživatele, skupiny, zabezpečení, fakturaci a systémové konfigurace."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Spravujte uživatele, skupiny a úložiště pro všechny členy, přiřazujte role a přidělujte licence."
       ]
     },
     "Safety review": {
