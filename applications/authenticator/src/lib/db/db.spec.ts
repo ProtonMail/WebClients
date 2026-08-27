@@ -17,7 +17,7 @@ jest.mock('dexie', () => ({
     },
 }));
 
-jest.mock('proton-authenticator/lib/storage-key/service', () => ({
+jest.mock('../storage-key/service', () => ({
     createStorageKeyService: jest.fn(() => ({ read: jest.fn() })),
 }));
 

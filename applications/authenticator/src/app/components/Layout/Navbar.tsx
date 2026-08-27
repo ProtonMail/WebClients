@@ -1,7 +1,5 @@
 import type { FC } from 'react';
 
-import cogIcon from 'proton-authenticator/assets/cog.svg';
-import { useAppSelector } from 'proton-authenticator/store/utils';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -10,6 +8,9 @@ import { Input } from '@proton/atoms/Input/Input';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
+
+import cogIcon from '../../../assets/cog.svg';
+import { useAppSelector } from '../../../store/utils';
 
 type NavbarProps = {
     search: string;

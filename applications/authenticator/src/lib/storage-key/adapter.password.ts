@@ -1,5 +1,4 @@
-import { getAppPassword } from 'proton-authenticator/lib/auth/appPassword';
-
+import { getAppPassword } from '../auth/appPassword';
 import type { StorageKeyResult } from './types';
 import { type StorageKeyAdapter, StorageKeyError, StorageKeySource } from './types';
 

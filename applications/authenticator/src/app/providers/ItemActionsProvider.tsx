@@ -1,9 +1,9 @@
 import { type FC, type PropsWithChildren, createContext, useContext, useMemo, useState } from 'react';
 
-import { ImportModal } from 'proton-authenticator/app/components/Settings/Import/ImportModal';
-import type { ImportProvider } from 'proton-authenticator/lib/importers/types';
-
 import type { MaybeNull } from '@proton/pass/types';
+
+import type { ImportProvider } from '../../lib/importers/types';
+import { ImportModal } from '../components/Settings/Import/ImportModal';
 
 // TODO: move other item actions (edit/add) to this context
 type ItemActionsContextValue = { import: (provider: ImportProvider) => void };

@@ -1,8 +1,8 @@
-import config from 'proton-authenticator/app/config';
-
 import { createPubSub } from '@proton/pass/utils/pubsub/factory';
 import type { ApiEvent, ApiListenerCallback, ApiWithListener } from '@proton/shared/lib/api/createApi';
 import createApi from '@proton/shared/lib/api/createApi';
+
+import config from '../../app/config';
 
 export * from './requests';
 

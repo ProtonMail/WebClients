@@ -10,6 +10,7 @@ export const extraneousDependenciesDevDependencies = [
     '**/build.mjs',
     '**/postcss.config.{js,ts}',
     '**/webpack.config.{js,ts}',
+    '**/webpack.options.{js,ts}',
     // Jest
     '**/__mocks__/**',
     '**/__tests__/**',

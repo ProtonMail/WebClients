@@ -4,20 +4,21 @@ import { save } from '@tauri-apps/plugin-dialog';
 import { create } from '@tauri-apps/plugin-fs';
 import type { Transaction } from 'dexie';
 import { Dexie } from 'dexie';
-import { createBackupFilename } from 'proton-authenticator/lib/backup/filename';
-import { DATABASE_NAME } from 'proton-authenticator/lib/db/constants';
-import type { BackupEntity } from 'proton-authenticator/lib/db/entities/backup';
-import type { Item } from 'proton-authenticator/lib/db/entities/items';
-import type { LegacyRemoteKey, RemoteKey } from 'proton-authenticator/lib/db/entities/remote-keys';
-import { validateEncryptedValue } from 'proton-authenticator/lib/db/middlewares/encryption';
-import { executeRawDBOperation } from 'proton-authenticator/lib/db/utils';
-import { toWasmEntry } from 'proton-authenticator/lib/entries/items';
-import logger from 'proton-authenticator/lib/logger';
-import { service } from 'proton-authenticator/lib/wasm/service';
 import { c } from 'ttag';
 
 import type { MaybeNull } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp/predicates';
+
+import { createBackupFilename } from '../../backup/filename';
+import { toWasmEntry } from '../../entries/items';
+import logger from '../../logger';
+import { service } from '../../wasm/service';
+import { DATABASE_NAME } from '../constants';
+import type { BackupEntity } from '../entities/backup';
+import type { Item } from '../entities/items';
+import type { LegacyRemoteKey, RemoteKey } from '../entities/remote-keys';
+import { validateEncryptedValue } from '../middlewares/encryption';
+import { executeRawDBOperation } from '../utils';
 
 export const V4_MIGRATION_BACK_UP_ID = 'authenticator::migration::v4';
 

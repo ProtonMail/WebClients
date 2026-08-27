@@ -1,9 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { Update } from '@tauri-apps/plugin-updater';
-import app from 'proton-authenticator/lib/app';
 
 import noop from '@proton/utils/noop';
 
+import app from '../lib/app';
 import { createAppAsyncThunk } from './utils';
 
 export type UpdateState = {

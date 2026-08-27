@@ -1,9 +1,5 @@
 import type { FC } from 'react';
 
-import syncImgDark from 'proton-authenticator/assets/proton-sync-dark.png';
-import syncImgLight from 'proton-authenticator/assets/proton-sync-light.png';
-import { requestFork } from 'proton-authenticator/store/auth';
-import { useAppDispatch } from 'proton-authenticator/store/utils';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -13,6 +9,11 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
+
+import syncImgDark from '../../../../assets/proton-sync-dark.png';
+import syncImgLight from '../../../../assets/proton-sync-light.png';
+import { requestFork } from '../../../../store/auth';
+import { useAppDispatch } from '../../../../store/utils';
 
 type Props = {
     onClose: () => void;

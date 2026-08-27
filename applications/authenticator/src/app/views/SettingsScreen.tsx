@@ -1,20 +1,5 @@
 import { type FC, useMemo, useState } from 'react';
 
-import { ExportModal } from 'proton-authenticator/app/components/Settings/Export/ExportModal';
-import { ImportDropdown } from 'proton-authenticator/app/components/Settings/Import/ImportDropdown';
-import { LockSelect } from 'proton-authenticator/app/components/Settings/Locks/LockSelect';
-import { ProtonSyncModal } from 'proton-authenticator/app/components/Settings/Sync/ProtonSyncModal';
-import { useStorageKeySource } from 'proton-authenticator/app/hooks/useStorageKey';
-import { PasswordUnlockProvider } from 'proton-authenticator/app/providers/PasswordUnlockProvider';
-import app from 'proton-authenticator/lib/app';
-import { config } from 'proton-authenticator/lib/app/env';
-import { getProtonProducts } from 'proton-authenticator/lib/app/products';
-import { BACKUP_MAX_AMOUNT } from 'proton-authenticator/lib/backup/writer';
-import { StorageKeySource } from 'proton-authenticator/lib/storage-key/types';
-import { logout } from 'proton-authenticator/store/auth';
-import { createBackup } from 'proton-authenticator/store/backup';
-import { changeBackupDirectory, toggleBackup, updateSettings } from 'proton-authenticator/store/settings';
-import { useAppDispatch, useAppSelector } from 'proton-authenticator/store/utils';
 import { c } from 'ttag';
 
 import { Banner, BannerVariants } from '@proton/atoms/Banner/Banner';
@@ -34,6 +19,22 @@ import { prop } from '@proton/pass/utils/fp/lens';
 import { epochToRelativeDaysAgo } from '@proton/pass/utils/time/format';
 import { AUTHENTICATOR_APP_NAME, AUTHENTICATOR_SHORT_APP_NAME, BRAND_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
+
+import app from '../../lib/app';
+import { config } from '../../lib/app/env';
+import { getProtonProducts } from '../../lib/app/products';
+import { BACKUP_MAX_AMOUNT } from '../../lib/backup/writer';
+import { StorageKeySource } from '../../lib/storage-key/types';
+import { logout } from '../../store/auth';
+import { createBackup } from '../../store/backup';
+import { changeBackupDirectory, toggleBackup, updateSettings } from '../../store/settings';
+import { useAppDispatch, useAppSelector } from '../../store/utils';
+import { ExportModal } from '../components/Settings/Export/ExportModal';
+import { ImportDropdown } from '../components/Settings/Import/ImportDropdown';
+import { LockSelect } from '../components/Settings/Locks/LockSelect';
+import { ProtonSyncModal } from '../components/Settings/Sync/ProtonSyncModal';
+import { useStorageKeySource } from '../hooks/useStorageKey';
+import { PasswordUnlockProvider } from '../providers/PasswordUnlockProvider';
 
 export const Settings: FC<{ onClose: () => void }> = ({ onClose }) => {
     const storageKey = useStorageKeySource();

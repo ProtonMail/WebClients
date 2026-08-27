@@ -1,7 +1,8 @@
 import { readFile } from '@tauri-apps/plugin-fs';
-import { extractQRCodeFromImage } from 'proton-authenticator/lib/importers/google';
-import { ImportProvider } from 'proton-authenticator/lib/importers/types';
-import { service } from 'proton-authenticator/lib/wasm/service';
+
+import { service } from '../wasm/service';
+import { extractQRCodeFromImage } from './google';
+import { ImportProvider } from './types';
 
 export const prepareImport = (
     provider: ImportProvider,

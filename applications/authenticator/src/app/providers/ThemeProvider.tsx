@@ -1,7 +1,7 @@
 import { type FC, type ReactNode, useEffect, useLayoutEffect, useState } from 'react';
 
-import app from 'proton-authenticator/lib/app';
-import { useAppSelector } from 'proton-authenticator/store/utils';
+import app from '../../lib/app';
+import { useAppSelector } from '../../store/utils';
 
 // @ts-ignore
 import passDarkTheme from '@proton/colors/themes/dist/authenticator-dark.theme.css';

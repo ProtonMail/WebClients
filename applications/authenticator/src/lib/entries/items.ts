@@ -3,11 +3,12 @@ import type {
     WasmLocalEntry,
     WasmRemoteEntry,
 } from '@protontech/authenticator-rust-core/worker';
-import type { Item } from 'proton-authenticator/lib/db/entities/items';
-import { getOrderByIndex } from 'proton-authenticator/lib/entries/ordering';
-import { service } from 'proton-authenticator/lib/wasm/service';
 
 import type { MaybeNull } from '@proton/pass/types';
+
+import type { Item } from '../db/entities/items';
+import { service } from '../wasm/service';
+import { getOrderByIndex } from './ordering';
 
 export type EntryAlgorithm = 'SHA1' | 'SHA256' | 'SHA512';
 export type EntryType = 'Totp' | 'Steam';

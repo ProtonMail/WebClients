@@ -1,13 +1,6 @@
 import { type FC, Fragment, memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { Menu, type MenuItemOptions } from '@tauri-apps/api/menu';
-import { OtpLogo } from 'proton-authenticator/app/components/Otp/OtpLogo';
-import { useOTPOrchestrator } from 'proton-authenticator/app/components/Otp/OtpOrchestrator';
-import { useCodeAnimation } from 'proton-authenticator/app/hooks/useCodeAnimation';
-import type { Item as DatabaseItem } from 'proton-authenticator/lib/db/entities/items';
-import { toWasmEntry } from 'proton-authenticator/lib/entries/items';
-import logger from 'proton-authenticator/lib/logger';
-import { service } from 'proton-authenticator/lib/wasm/service';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
@@ -18,6 +11,14 @@ import { matchChunks } from '@proton/pass/lib/search/match-chunks';
 import type { Maybe, MaybeNull } from '@proton/pass/types/utils';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import noop from '@proton/utils/noop';
+
+import type { Item as DatabaseItem } from '../../../lib/db/entities/items';
+import { toWasmEntry } from '../../../lib/entries/items';
+import logger from '../../../lib/logger';
+import { service } from '../../../lib/wasm/service';
+import { useCodeAnimation } from '../../hooks/useCodeAnimation';
+import { OtpLogo } from '../Otp/OtpLogo';
+import { useOTPOrchestrator } from '../Otp/OtpOrchestrator';
 
 const HIDDEN_CHAR = '·';
 
