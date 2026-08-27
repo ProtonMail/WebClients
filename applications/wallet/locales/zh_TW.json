@@ -3267,9 +3267,6 @@
       "${ n } month": [
         "${ n } 月"
       ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } 個字元"
-      ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "透過終端機安全地存取 ${ PASS_APP_NAME }，適合程式、自動化、和開發流程。"
       ],
@@ -5121,17 +5118,6 @@
       ],
       "User Admin": [
         "使用者管理員"
-      ]
-    },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "設定安全政策、資料保留及 VPN 基礎架構，並管理稽核日誌。"
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "管理所有使用者、群組、安全性、帳務及系統組態。"
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "管理所有成員的使用者、群組和儲存空間，分配角色並分配授權。"
       ]
     },
     "Safety review": {

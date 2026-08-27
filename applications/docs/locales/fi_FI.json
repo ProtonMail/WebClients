@@ -468,6 +468,9 @@
       "Import from Outlook": [
         "Tuo Outlookista"
       ],
+      "Keep going": [
+        "Jatka vain"
+      ],
       "Keep my subscription": [
         "Pidä tilaukseni"
       ],
@@ -2993,6 +2996,9 @@
       "Authentication error.": [
         "Todennusvirhe."
       ],
+      "Because this document was in a shared folder, only the folder owner can restore it": [
+        "Koska tämä tiedosto oli jaetussa kansiossa, vain kansion omistaja voi palauttaa sen"
+      ],
       "Calendar limit reached": [
         "Kalenterien enimmäismäärä on saavutettu"
       ],
@@ -3099,6 +3105,9 @@
       ],
       "Failed to resend invitation": [
         "Kutsun uudelleenlähettäminen epäonnistui"
+      ],
+      "Failed to trash document": [
+        "Tiedoston siirtäminen roskakoriin epäonnistui"
       ],
       "Failed to unshare node": [
         "Solmun jaon poistaminen epäonnistui"
@@ -4779,6 +4788,9 @@
       "Enter your own password (as trusted contact).": [
         "Syöttäkää oma salasananne (luotettuna yhteystietona)."
       ],
+      "Error loading document: ${ errorDetail }": [
+        "Virhe tiedostoa ladattaessa: ${ errorDetail }"
+      ],
       "Error Syncing": [
         "Synkronointivirhe"
       ],
@@ -4826,6 +4838,9 @@
       ],
       "Get a professional @your-company.com email, 1 TB of secure storage per user, longer video calls, and more with ${ BRAND_NAME } Workspace.": [
         "Hanki ammattimainen @yrityksesi.com-sähköposti, 1 Tt suojattua tallennustilaa käyttäjää kohden, pidemmät videopuhelut ja paljon muuta ${ BRAND_NAME } Workspace -palvelun avulla."
+      ],
+      "Get Notified About Comments": [
+        "Saa ilmoituksia kommenteista"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Hallitukset ja Internet-palveluntarjoajat voivat valvoa verkkotoimintaasi. Piilottamalla oikean IP-osoitteensi ja salaamalla toimintasi, selaamisesi muuttuu yksityiseksi."
@@ -4980,6 +4995,9 @@
       ],
       "Low Priority": [
         "Alhainen tärkeys"
+      ],
+      "Making a copy...": [
+        "Luodaan kopiota..."
       ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Enintään ${ MAX_SHARED_URL_PASSWORD_LENGTH } merkki",
@@ -5326,6 +5344,9 @@
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Tämä on nimi tai lempinimi organisaatiollesi, jonka käyttäjäsi näkevät. Voit muuttaa sitä milloin tahansa."
       ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Tämä vaatii paljon ajattelua. Jatketaanko?"
+      ],
       "This item already exists in your library": [
         "Kohde löytyy jo kirjastostasi"
       ],
@@ -5347,20 +5368,14 @@
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Verkkosivustot ja Internet-palveluntarjoajat (ISP) voivat käyttää tätä yksilöllistä koodia yhdistääkseen sijaintisi ja selaushistoriasi laitteeseesi"
       ],
-      "This will permanently delete the file you uploaded.": [
-        "Tämä poistaa lähettämäsi tiedoston pysyvästi."
-      ],
-      "This will permanently delete the folder you uploaded.": [
-        "Tämä poistaa lähettämäsi kansion pysyvästi."
-      ],
-      "This will permanently delete the selected items you uploaded.": [
-        "Tämä poistaa lähettämäsi valitut kohteet pysyvästi."
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Tämä kirjaa sinut ulos kaikilta tileiltä, jolle olet tällä hetkellä kirjautunut."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Vahvista olevasi ihminen roskapostin ja väärinkäytösten torjumiseksi."
+      ],
+      "To help troubleshoot the issue, debug information will be uploaded to your Drive and shared securely with the ${ BRAND_NAME } support team. It may include file contents. You can stop sharing at any time, and the shared data is deleted after the review is complete.": [
+        "Ongelman selvittämiseksi tietoja siitä ladataan Drive-tallennustilaasi ja jaetaan ${ BRAND_NAME }-tuelle. Tiedot voivat sisältää tiedoston sisältöjä. Voit lopettaa tietojen jakamisen milloin vain ja jaettu data poistetaan sen läpikäymisen jälkeen."
       ],
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "Auttaaksemme teitä muistamaan salasananne, pyydämme teitä syöttämään sen säännöllisin väliajoin. Pyyntöjen määrä vähenee ajan myötä."
@@ -5734,9 +5749,6 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-käyttäjätunnus"
       ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } merkkiä"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Tilapäisesti pois käytöstä. Yritä myöhemmin uudelleen.)"
       ],
@@ -5970,6 +5982,9 @@
       ],
       "Include application logs in bug report": [
         "Sisällytä sovelluslokit vikailmoitukseen"
+      ],
+      "Include debug information": [
+        "Sisällytä vian tiedot"
       ],
       "Include message and file name in invite email": [
         "Sisällytä viestin teksti ja tiedoston nimi kutsuviestiin"
@@ -7806,6 +7821,9 @@
       "All items will soon be permanently deleted from trash": [
         "Kaikki roskakorin kohteet poistetaan pian pysyvästi"
       ],
+      "Because this document was in a shared folder, only the folder owner can restore it": [
+        "Koska tämä tiedosto oli jaetussa kansiossa, vain kansion omistaja voi palauttaa sen"
+      ],
       "Cannot load link": [
         "Linkin lataus epäonnistui"
       ],
@@ -7863,6 +7881,9 @@
       "Failed to rename document": [
         "Asiakirjan uudelleennimeäminen epäonnistui"
       ],
+      "Failed to submit report": [
+        "Palautteen lähettäminen epäonnistui"
+      ],
       "File or folder \"${ filename }\" and ${ count } other are already uploading": [
         "Tiedostoa tai kansiota \"${ filename }\" ja ${ count } muuta tallennetaan jo",
         "Tiedostoa tai kansiota \"${ filename }\" ja ${ count } muuta tallennetaan jo"
@@ -7897,6 +7918,9 @@
       "Recent documents updated": [
         "Viimeaikaiset dokumentit päivitettiin"
       ],
+      "Report submitted successfully": [
+        "Palaute lähetetty onnistuneesti"
+      ],
       "Root folder failed to be loaded": [
         "Juurikansion lataus epäonnistui"
       ],
@@ -7912,27 +7936,17 @@
       "Share invitation declined": [
         "Kieltäydyit jakokutsusta"
       ],
-      "Sorry, we couldn't delete the folder because it is not empty.": [
-        "Valitettavasti emme voineet poistaa kansiota, koska se ei ole tyhjä.",
-        "Valitettavasti emme voineet poistaa kansioita, koska ne eivät ole tyhjiä."
-      ],
       "Stopping the sharing of this item has failed": [
         "Kohteen jakamisen lopetus epäonnistui"
       ],
       "Subfolder failed to be loaded": [
         "Alikansion lataus epäonnistui"
       ],
-      "The document failed to be created": [
-        "Dokumentin luominen epäonnistui"
-      ],
       "The link to your item failed to be deleted": [
         "Kohteen linkin poisto epäonnistui"
       ],
       "The link to your item was deleted": [
         "Kohteen linkki poistettiin"
-      ],
-      "The spreadsheet failed to be created": [
-        "Laskentataulukon luominen epäonnistui"
       ],
       "Trash failed to be emptied": [
         "Roskakorin tyhjennys epäonnistui"
@@ -8773,17 +8787,6 @@
       ],
       "User Admin": [
         "Käyttäjähallinta"
-      ]
-    },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Määritä tietoturvakäytännöt, tietojen säilytysajat ja VPN-infrastruktuuri sekä hallinnoi tarkastuslokeja."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Hallitse kaikkien jäsenten käyttäjiä, ryhmiä ja tallennustilaa, määritä rooleja ja jaa lisenssejä."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Hallitse kaikkien jäsenten käyttäjiä, ryhmiä ja tallennustilaa, määritä rooleja ja jaa lisenssejä."
       ]
     },
     "Safety review": {
@@ -9991,9 +9994,6 @@
       "Decline invitation?": [
         "Kieltäydytäänkö kutsusta?"
       ],
-      "Delete": [
-        "Poista"
-      ],
       "Delete ${ count } contact": [
         "Poista ${ count } yhteystieto",
         "Poista ${ count } yhteystietoa"
@@ -10001,12 +10001,6 @@
       "Delete ${ count } contact group": [
         "Poista ${ count } yhteystietoryhmä",
         "Poista ${ count } yhteystietoryhmää"
-      ],
-      "Delete ${ links.length } items?": [
-        "Poistetaanko ${ links.length } kohdetta?"
-      ],
-      "Delete ${ name }?": [
-        "Poistetaanko ${ name }?"
       ],
       "Delete ${ value }": [
         "Poista ${ value }"
@@ -10285,6 +10279,9 @@
       "Report a problem": [
         "Ilmoita ongelmasta"
       ],
+      "Report issue": [
+        "Ilmoita ongelmasta"
+      ],
       "Request new code": [
         "Pyydä uusi koodi"
       ],
@@ -10362,6 +10359,9 @@
       ],
       "Start import process": [
         "Aloita tuonti"
+      ],
+      "Still working on it": [
+        "Jatketaan ajattelemista"
       ],
       "Stop sharing": [
         "Lopeta jakaminen"

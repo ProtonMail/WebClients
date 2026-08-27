@@ -220,6 +220,9 @@
       "Copy as markdown": [
         "Kopiëren als markdown"
       ],
+      "Copy debug transcript": [
+        "Kopieer het foutopsporingstranscript"
+      ],
       "Copy email to clipboard": [
         "E-mailadres kopiëren naar klembord"
       ],
@@ -3073,6 +3076,9 @@
       "Could not find an available name": [
         "Kon geen beschikbare naam vinden"
       ],
+      "Could not grant access to the organization key": [
+        "Kan geen toegang verlenen tot de organisatiesleutel"
+      ],
       "Could not load sharing details": [
         "Kan de deelgegevens niet laden"
       ],
@@ -4977,6 +4983,9 @@
       "Custom email domains": [
         "Aangepaste e-maildomeinen"
       ],
+      "Debug transcript copied": [
+        "Foutopsporings-transcript gekopieerd"
+      ],
       "Decrypting your document": [
         "Uw document ontsleutelen"
       ],
@@ -5153,6 +5162,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Als u de e-mail niet in de inbox kan vinden, check dan uw map met spam."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Als u de toegang tot uw authenticator-app bent kwijtgeraakt, kunt u 1 van de 16 back-upherstelcodes gebruiken die u krijgt bij het instellen van tweefactorauthenticatie. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Als u doorgaat met de downgrade, verliest u toegang tot betaalde functies van ${ MAIL_APP_NAME } en ${ VPN_APP_NAME }."
@@ -5662,15 +5674,6 @@
       "This user can not be migrated due to platform incompatibilities.": [
         "Deze gebruiker kan niet worden gemigreerd vanwege incompatibiliteit met het platform."
       ],
-      "This will permanently delete the file you uploaded.": [
-        "Deze actie zal het bestand dat u heeft opgeladen definitief verwijderen."
-      ],
-      "This will permanently delete the folder you uploaded.": [
-        "Deze actie zal de folder die u heeft opgeladen definitief verwijderen."
-      ],
-      "This will permanently delete the selected items you uploaded.": [
-        "Deze actie zal de geselecteerde items die u heeft opgeladen definitief verwijderen."
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Dit zal u uitloggen uit alle accounts die momenteel zijn ingelogd."
       ],
@@ -6069,9 +6072,6 @@
     "Label": {
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } gebruikersnaam"
-      ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } tekens"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Tijdelijk onbeschikbaar. Probeer later opnieuw.)"
@@ -8040,6 +8040,11 @@
         "Ondersteuning voor ${ n } aangepaste e-maildomeinen"
       ]
     },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "U hebt nu toegang tot de nieuwe ${ CALENDAR_APP_NAME }. ${ link }"
+      ]
+    },
     "Notification": {
       "\"${ ellipsedName }\" created successfully": [
         "\"${ ellipsedName }\" succesvol aangemaakt"
@@ -8272,27 +8277,17 @@
       "Share invitation declined": [
         "Deel-uitnodiging afgewezen"
       ],
-      "Sorry, we couldn't delete the folder because it is not empty.": [
-        "Sorry, we konden de map niet verwijderen omdat deze niet leeg is.",
-        "Sorry, we kunnen de mappen niet verwijderen omdat ze niet leeg zijn."
-      ],
       "Stopping the sharing of this item has failed": [
         "Het stoppen van het delen van dit item is mislukt"
       ],
       "Subfolder failed to be loaded": [
         "Submap kon niet geladen worden"
       ],
-      "The document failed to be created": [
-        "Het document kon niet aangemaakt worden"
-      ],
       "The link to your item failed to be deleted": [
         "De link naar uw item kon niet worden verwijderd"
       ],
       "The link to your item was deleted": [
         "De link naar uw item werd verwijderd"
-      ],
-      "The spreadsheet failed to be created": [
-        "De spreadsheet kon niet aangemaakt worden"
       ],
       "Trash failed to be emptied": [
         "Prullenbak legen mislukt"
@@ -9022,6 +9017,31 @@
         "Kortingen zijn gebaseerd op de standaard maandelijkse prijzen. Uw abonnement wordt verlengd tegen het standaard jaartarief wanneer de factureringscyclus afloopt."
       ]
     },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, en ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, en ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, en ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
     "q3campaign2026: Title": {
       "for 12 months": [
         "voor 12 maanden"
@@ -9145,17 +9165,6 @@
       ],
       "User Admin": [
         "Gebruiker Beheerder"
-      ]
-    },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Configureer beveiligingsbeleid, gegevensbewaring en VPN-infrastructuur, en beheer auditlogboeken."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Beheer alle gebruikers, groepen, opslag, beveiliging, facturering, auditlogboeken en systeemconfiguraties."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Beheer gebruikers, groepen en opslagruimte voor alle leden, wijs rollen toe en deel licenties uit."
       ]
     },
     "Safety review": {
@@ -10372,9 +10381,6 @@
       "Decline invitation?": [
         "Uitnodiging afwijzen?"
       ],
-      "Delete": [
-        "Verwijderen"
-      ],
       "Delete ${ count } contact": [
         "Verwijder ${ count } contact",
         "${ count } contacten verwijderen"
@@ -10382,12 +10388,6 @@
       "Delete ${ count } contact group": [
         "${ count } contactgroep verwijderen",
         "${ count } contactgroepen verwijderen"
-      ],
-      "Delete ${ links.length } items?": [
-        "Verwijder ${ links.length } items?"
-      ],
-      "Delete ${ name }?": [
-        "Verwijder ${ name }?"
       ],
       "Delete ${ value }": [
         "Verwijder ${ value }"

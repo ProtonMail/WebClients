@@ -2045,6 +2045,12 @@
       "Take a tour": [
         "Tag en tour"
       ],
+      "Template with invite links": [
+        "Skabelon med invitationslinks"
+      ],
+      "Template with passwords": [
+        "Skabelon med adgangskoder"
+      ],
       "Test": [
         "Test"
       ],
@@ -10216,8 +10222,8 @@
       "${ helpTranslateLink } by joining our localization community.": [
         "${ helpTranslateLink } ved at tilmelde dig til vores lokaliseringsfællesskab."
       ],
-      "${ IDEAL_BRAND_NAME } mark": [
-        "${ IDEAL_BRAND_NAME } mærkat"
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "${ IDEAL_WERO_BRAND_NAME } mærkat"
       ],
       "${ invitedMemberCount } user needs to accept their invite to start receiving group emails.": [
         "${ invitedMemberCount } bruger skal acceptere sin invitation for at begynde at modtage gruppe-e-mails.",
@@ -12728,9 +12734,6 @@
       "Registering your subscription…": [
         "Registrerer dit abonnement…"
       ],
-      "Remember to share the user's sign in details with them.": [
-        "Husk at dele brugerens login-oplysninger med vedkommende."
-      ],
       "Remove metadata from images to protect your privacy.": [
         "Fjern metadata fra billeder for at beskytte dit privatliv."
       ],
@@ -13761,8 +13764,8 @@
       "We use 3-D Secure to protect your payments": [
         "Vi bruger 3-D Secure til at sikre dine betalinger"
       ],
-      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "Du omdirigeres til ${ IDEAL_BRAND_NAME } i en ny browserfane for at gennemføre transaktionen. Benytter du evt. pop-up blockere, så deaktiver disse for at fortsætte."
+      "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Du omdirigeres til ${ IDEAL_WERO_BRAND_NAME } i en ny browserfane for at gennemføre transaktionen. Benytter du evt. pop-up blockere, så deaktiver disse for at fortsætte."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Du omdirigeres til PayPal i en ny browserfane for at gennemføre denne transaktion. Benytter du evt. pop-up blockere, så deaktivér venligst disse for at fortsætte."
@@ -14227,6 +14230,9 @@
       ],
       "your encrypted data will be locked": [
         "din krypterede data vil blive låst"
+      ],
+      "Your file includes a password for each user, so these accounts will be created with a password instead of an invite link.": [
+        "Din fil inkluderer en adgangskode for hver bruger, så disse konti vil blive oprettet med en adgangskode i stedet for et invitationslink."
       ],
       "Your files will be encrypted and then saved": [
         "Din filer vil blive krypteret og derefter gemt"
@@ -14920,6 +14926,9 @@
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } af ${ humanMaxSpace }"
       ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } tegn"
+      ],
       "${ MAIL_APP_NAME } address": [
         "${ MAIL_APP_NAME }-adresse"
       ],
@@ -14946,9 +14955,6 @@
       ],
       "${ PROTON_SENTINEL_NAME } protection": [
         "${ PROTON_SENTINEL_NAME }-beskyttelse"
-      ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } tegn"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Midlertidigt utilgængelig. Tjek igen senere.)"
@@ -17306,9 +17312,6 @@
     "mail_signup_2023: Info": {
       "**Get ${ plan }** for a limited time!": [
         "**Få ${ plan }** i en begrænset periode!"
-      ],
-      "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
-        "Bliv en Visionary og vær en del af ${ BRAND_NAME }s historie"
       ]
     },
     "mail_signup_2024: Info": {
@@ -17510,9 +17513,6 @@
         "Inklusiv ${ seats } plads",
         "Inklusiv ${ seats } pladser"
       ],
-      "100 ${ BRAND_NAME } email addresses": [
-        "100 ${ BRAND_NAME } e-mailadresser"
-      ],
       "Cloud storage and file sharing": [
         "Cloudlager og fildeling"
       ],
@@ -17533,9 +17533,6 @@
       ],
       "Password manager with team vaults": [
         "Adgangskodeadministrator med team-bokse"
-      ],
-      "Private and unlimited AI chat (${ LUMO_SHORT_APP_NAME })": [
-        "Privat og ubegrænset AI-chat (${ LUMO_SHORT_APP_NAME })"
       ],
       "Private video calls for the conversations that matter": [
         "Private videoopkald til de samtaler, der betyder noget"
@@ -20076,9 +20073,6 @@
       "Create another account instead": [
         "Opret endnu en konto i stedet"
       ],
-      "Keep this plan": [
-        "Behold dette abonnement"
-      ],
       "Open ${ PASS_APP_NAME } vaults": [
         "Åbn ${ PASS_APP_NAME } bokse"
       ],
@@ -20093,9 +20087,6 @@
       ],
       "Upgrade": [
         "Opgrader"
-      ],
-      "Upgrade my plan": [
-        "Opgradér mit abonnement"
       ]
     },
     "pass_signup_2023: Action - open web app": {
@@ -20150,9 +20141,6 @@
       "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
         "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } til ${ priceString }."
       ],
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice } pr. måned"
-      ],
       "/month /user": [
         "/måned /bruger"
       ],
@@ -20170,9 +20158,6 @@
       ],
       "Aliases for email protection from breaches": [
         "Aliasser til beskyttelse af e-mails mod lækager"
-      ],
-      "Based in Switzerland, GDPR compliant": [
-        "Baseret i Schweiz og overholder GDPR"
       ],
       "But you can get ${ discountPercentString } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Men du kan få ${ discountPercentString } i rabat ved at opgradere til **${ upsellPlanTitle }** — det koster kun ${ relativePrice } ekstra pr. måned."
@@ -20201,9 +20186,6 @@
       "Creating your account": [
         "Opretter din konto"
       ],
-      "Current plan": [
-        "Nuværende abonnent"
-      ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "Download og installér de relevante apps og udvidelser for at komme i gang med at bruge ${ PASS_APP_NAME }"
       ],
@@ -20225,15 +20207,6 @@
       "Everything from ${ planTitle }, plus...": [
         "Alt fra ${ planTitle }, plus..."
       ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "For kun **${ relativePrice } pr. måned** mere, får du adgang til ${ BRAND_NAME }'s førsteklasses adgangskodeadministrator!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "For kun **${ relativePrice } pr. måned** mere, får du adgang til ${ BRAND_NAME }'s førsteklasses VPN-tjeneste!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "For kun **${ relativePrice } pr. måned** mere, får du adgang til alle premium ${ BRAND_NAME }-tjenester!"
-      ],
       "Free forever": [
         "Gratis for evigt"
       ],
@@ -20251,9 +20224,6 @@
       ],
       "Get unlimited privacy for two": [
         "Få ubegrænset privatliv for to"
-      ],
-      "Includes:": [
-        "Inkluderer:"
       ],
       "Install ${ PASS_APP_NAME }": [
         "Installér ${ PASS_APP_NAME }"
@@ -20647,8 +20617,8 @@
       "Offer unavailable": [
         "Tilbud ikke tilgængeligt"
       ],
-      "Pay with ${ IDEAL_BRAND_NAME }": [
-        "Betal med ${ IDEAL_BRAND_NAME }"
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "Betal med ${ IDEAL_WERO_BRAND_NAME }"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Betalingsmetode er påkrævet, for at abonnementet kan aktiveres, efter at prøveversionen udløber."
@@ -20743,8 +20713,8 @@
       "You will soon be redirected to verify your payment.": [
         "Du omdirigeres snart for at bekræfte din betaling."
       ],
-      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
-        "Din valuta er blevet ændret til euro (€), fordi ${ IDEAL_BRAND_NAME } kun understøtter betalinger i euro."
+      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
+        "Din valuta er blevet ændret til euro (€), fordi ${ IDEAL_WERO_BRAND_NAME } kun understøtter betalinger i euro."
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Din valuta er blevet ændret til euro (€), fordi SEPA-bankoverførsler kun understøtter betalinger i euro."
@@ -20757,8 +20727,8 @@
       ]
     },
     "Payments.Error": {
-      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
-        "Kunne ikke initialisere ${ IDEAL_BRAND_NAME }. Prøv igen senere."
+      "Failed to initialize ${ IDEAL_WERO_BRAND_NAME }. Please try again later.": [
+        "Kunne ikke initialisere ${ IDEAL_WERO_BRAND_NAME }. Prøv igen senere."
       ],
       "Invalid card number": [
         "Ugyldigt kortnummer"
@@ -20788,8 +20758,8 @@
       ]
     },
     "Payments.iDEAL": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Ved at bekræfte denne betaling autoriserer du ${ BRAND_NAME } og Stripe, vores betalingstjenesteudbyder, til at instruere din bank om at debitere din konto tilsvarende. Du kan få en tilbagebetaling inden for 8 uger fra debiteringsdatoen, under betingelserne i din aftale med din bank."
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Ved at bekræfte autoriserer du ${ BRAND_NAME } og Stripe, vores betalingstjenesteudbyder, til at hæve fremtidige betalinger for dit abonnement fra denne bankkonto med SEPA Direct Debit, og at banken kan debitere de betalinger. Din første betaling forfalder fra ${ IDEAL_WERO_BRAND_NAME } nu. Dit abonnement fornyes automatisk indtil du opsiger; vi giver dig besked før hver betaling. For Direct Debit-opkrævninger kan du anmode om en refundering fra din bank indenfor 8 uger af debiteringsdatoen efter din og din banks aftalevilkår. Dette gælder ikke for den betaling med ${ IDEAL_WERO_BRAND_NAME }, som du er i gang med nu."
       ]
     },
     "Payments.info": {
@@ -22150,17 +22120,6 @@
         "Brugeradmin"
       ]
     },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Konfigurer sikkerhedspolitikker, datalagring, og VPN-infrastruktur, og administrer logs."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Administrer alle brugere, grupper, sikkerhed, fakturering, og systemkonfigurationer."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Administrer brugere, grupper, og lagerplads for alle medlemmer, og tildel roller samt licenser."
-      ]
-    },
     "Safety review": {
       "Code sent to ${ boldValue }": [
         "Kode sendt til ${ boldValue }"
@@ -23513,9 +23472,6 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Ubegrænsede hide-my-email-aliasser"
-      ],
-      "Up to -${ percentage }%": [
-        "Op til -${ percentage }%"
       ],
       "Up to 2 users": [
         "Op til 2 brugere"

@@ -5300,15 +5300,6 @@
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "ეს უნიკალური კოდი შეიძლება გამოყენებულ იქნას ვებსაიტებისა და ISP-ების (ინტერნეტ პროვაიდერების) მიერ თქვენი მდებარეობისა და ბრაუზინგის ისტორიის თქვენს მოწყობილობასთან დასაკავშირებლად"
       ],
-      "This will permanently delete the file you uploaded.": [
-        "ეს თქვენს ატვირთულ ფაილს სამუდამოდ წაშლის."
-      ],
-      "This will permanently delete the folder you uploaded.": [
-        "ეს თქვენს ატვირთულ საქაღალდეს სამუდამოდ წაშლის."
-      ],
-      "This will permanently delete the selected items you uploaded.": [
-        "ეს სამუდამოდ წაშლის თქვენს მიერ ატვირთულ ელემენტებს."
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "ეს გამოგიყვანთ ყველა ანგარიშიდან, სადაც შესული ბრძანდებით."
       ],
@@ -5680,9 +5671,6 @@
     "Label": {
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-ის მომხმარებელი"
-      ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } სიმბოლო"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(დრობით მიუწვდომელია. მოგვიანებით სცადეთ)"
@@ -7841,27 +7829,17 @@
       "Share invitation declined": [
         "გაზიარების მოსაწვევი უარყოფილია"
       ],
-      "Sorry, we couldn't delete the folder because it is not empty.": [
-        "უკაცრავად, საქაღალდის წაშლა შეუძლებელია, რადგან ის ცარიელი არაა.",
-        "უკაცრავად, საქაღალდეების წაშლა შეუძლებელია, რადგან ისინი ცარიელი არაა."
-      ],
       "Stopping the sharing of this item has failed": [
         "ამ ელემენტის გაზიარების გაჩერება ჩავარდა"
       ],
       "Subfolder failed to be loaded": [
         "ქვესაქაღალდის ჩატვირთვის შეცდომა"
       ],
-      "The document failed to be created": [
-        "დოკუმენტის შექმნა ჩავარდა"
-      ],
       "The link to your item failed to be deleted": [
         "თქვენს ელემენტამდე ბმულის წაშლის შეცდომა"
       ],
       "The link to your item was deleted": [
         "ბმული თქვენს ელემენტამდე წაიშალა"
-      ],
-      "The spreadsheet failed to be created": [
-        "ელცხრილის შექმნა ჩავარდა"
       ],
       "Trash failed to be emptied": [
         "ნაგვის ყუთის გასუფთავების შეცდომა"
@@ -8643,17 +8621,6 @@
       ],
       "User Admin": [
         "მომხმარებლის ადმინისტრატორი"
-      ]
-    },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "მოარგეთ უსაფრთხოების პოლიტიკა, მონაცემთა შენახვა, VPN ინფრასტრუქტურა და მართეთ აუდიტის ჟურნალები."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "მართეთ ყველა მომხმარებელი, ჯგუფი, უსაფრთხოება, ანგარიშსწორება და სისტემის კონფიგურაციები."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "მართეთ მომხმარებლები, ჯგუფები და საცავი ყველა წევრისთვის, მიანიჭეთ როლები და გადაანაწილეთ ლიცენზიები."
       ]
     },
     "Safety review": {
@@ -9849,9 +9816,6 @@
       "Decline invitation?": [
         "მოწვევის უარყოფა?"
       ],
-      "Delete": [
-        "წაშლა"
-      ],
       "Delete ${ count } contact": [
         "${ count } კონტაქტის წაშლა",
         "${ count } კონტაქტის წაშლა"
@@ -9859,12 +9823,6 @@
       "Delete ${ count } contact group": [
         "${ count } კონტაქტების ჯგუფის წაშლა",
         "${ count } კონტაქტების ჯგუფის წაშლა"
-      ],
-      "Delete ${ links.length } items?": [
-        "წავშალო ${ links.length } ელემენტი?"
-      ],
-      "Delete ${ name }?": [
-        "წავშალო ${ name }?"
       ],
       "Delete ${ value }": [
         "${ value }-ის წაშლა"

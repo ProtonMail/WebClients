@@ -7114,9 +7114,6 @@
         "${ n } месяцев",
         "${ n } месяцев"
       ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } символов"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Временно недоступно. Проверьте позже.)"
       ],
@@ -10811,17 +10808,6 @@
       ],
       "User Admin": [
         "Администратор пользователей"
-      ]
-    },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Настройка политик безопасности, хранения данных и инфраструктуры VPN, а также управление журналами аудита."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Управление всеми пользователями, группами, безопасностью, биллингом и конфигурациями системы."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Управление пользователями, группами и хранилищем для всех участников, назначение должностей и распределение лицензий."
       ]
     },
     "RSVP Note": {

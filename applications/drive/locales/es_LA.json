@@ -5348,8 +5348,8 @@
         "${ groupCounts } grupo encontrado",
         "${ groupCounts } grupo encontrado"
       ],
-      "${ IDEAL_BRAND_NAME } mark": [
-        "Marca de ${ IDEAL_BRAND_NAME }"
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "Marca de ${ IDEAL_WERO_BRAND_NAME }"
       ],
       "${ invitationsCount } pending invitation": [
         "${ invitationsCount } invitación pendiente",
@@ -7135,8 +7135,8 @@
         "No pudimos añadir esta foto en su álbum",
         "No pudimos añadir algunas fotos en su álbum"
       ],
-      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "Le redirigiremos a ${ IDEAL_BRAND_NAME } en una pestaña nueva del navegador para completar esta transacción. Si usa cualquier bloqueador emergente, desactívelo para continuar."
+      "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Le redirigiremos a ${ IDEAL_WERO_BRAND_NAME } en una pestaña nueva del navegador para completar esta transacción. Si usa cualquier bloqueador emergente, desactívelo para continuar."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Le redirigiremos a PayPal en una pestaña nueva del navegador para completar esta transacción. Si usa cualquier bloqueador emergente, desactívelo para continuar."
@@ -7518,6 +7518,9 @@
       "${ downloads } downloads": [
         "${ downloads } descargas"
       ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } caracteres"
+      ],
       "${ n } month": [
         "${ n } mes",
         "${ n } meses"
@@ -7529,9 +7532,6 @@
       "${ nbYear } year": [
         "${ nbYear } año",
         "${ nbYear } años"
-      ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } caracteres"
       ],
       "(Expired)": [
         "(Expirado)"
@@ -9916,6 +9916,16 @@
         "Soporte para ${ n } dominios de correo personalizados"
       ]
     },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Pruébelo ahora"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Ahora tiene acceso al ${ CALENDAR_APP_NAME } nuevo. ${ link }"
+      ]
+    },
     "Notification": {
       "\"${ ellipsedName }\" copied": [
         "«${ ellipsedName }» copiado"
@@ -10771,8 +10781,8 @@
       "More plans are available in other currencies": [
         "Más planes disponibles en otras divisas"
       ],
-      "Pay with ${ IDEAL_BRAND_NAME }": [
-        "Pagar con ${ IDEAL_BRAND_NAME }"
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "Pagar con ${ IDEAL_WERO_BRAND_NAME }"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Se requiere un método de pago para activar la suscripción después de que finalice el periodo de prueba."
@@ -10855,8 +10865,8 @@
       "You will soon be redirected to verify your payment.": [
         "Pronto se le redirigirá para verificar el pago."
       ],
-      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
-        "Su moneda ha sido cambiada a euros (€) porque ${ IDEAL_BRAND_NAME } solo admite pagos en euros."
+      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
+        "Su moneda ha sido cambiada a euros (€) porque ${ IDEAL_WERO_BRAND_NAME } solo admite pagos en euros."
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Su moneda ha sido cambiada a euros (€) porque las transferencias bancarias SEPA solo admiten pagos en euros."
@@ -10869,8 +10879,8 @@
       ]
     },
     "Payments.Error": {
-      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
-        "Error al inicializar ${ IDEAL_BRAND_NAME }. Intente de nuevo más tarde."
+      "Failed to initialize ${ IDEAL_WERO_BRAND_NAME }. Please try again later.": [
+        "Error al inicializar ${ IDEAL_WERO_BRAND_NAME }. Intente de nuevo más tarde."
       ],
       "Invalid card number": [
         "Número de tarjeta inválido"
@@ -10900,8 +10910,8 @@
       ]
     },
     "Payments.iDEAL": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Al confirmar este pago, autoriza a ${ BRAND_NAME } y a Stripe, nuestro proveedor de servicios de pago, a dar instrucciones a su banco para que realice el cargo en su cuenta. Puede obtener un reembolso en un plazo de 8 semanas a partir de la fecha del cargo, según las condiciones de su acuerdo con su banco."
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Al confirmar, autoriza a ${ BRAND_NAME } y a Stripe, nuestro proveedor de servicios de pago, a cobrar los pagos futuros de su suscripción de esta cuenta bancaria mediante débito directo SEPA y a su banco a debitar esos pagos. Su primer pago se realiza ahora por ${ IDEAL_WERO_BRAND_NAME }. Su plan se renueva automáticamente hasta que lo cancele; le notificaremos antes de cada cobro. Para los cobros por débito directo, puede solicitar un reembolso a su banco dentro de las 8 semanas posteriores a la fecha del débito, bajo los términos de su acuerdo con su banco. Esto no aplica al pago de ${ IDEAL_WERO_BRAND_NAME } que está haciendo ahora."
       ]
     },
     "Payments.info": {
@@ -11527,17 +11537,6 @@
       ],
       "User Admin": [
         "Administrador de usuarios"
-      ]
-    },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Configure las políticas de seguridad, conservación de datos, infraestructura VPN y gestione registros de auditoría."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Gestione todos los usuarios, grupos, seguridad, facuración y configuraciones del sistema."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Gestione usuarios, grupos y almacenamiento para todos los miembros, asigne roles y licencias."
       ]
     },
     "Safety review": {

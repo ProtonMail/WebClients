@@ -3243,9 +3243,6 @@
       "${ n } month": [
         "${ n } bulan"
       ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } karakter"
-      ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Akses ${ PASS_APP_NAME } secara aman dari terminal. Ideal untuk pemrograman, automasi, dan alur kerja pengembangan."
       ],
@@ -5088,17 +5085,6 @@
       ],
       "User Admin": [
         "Admin Pengguna"
-      ]
-    },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Konfigurasikan kebijakan keamanan, retensi data, dan infrastruktur VPN, serta kelola log audit."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Kelola semua pengguna, grup, keamanan, penagihan, dan konfigurasi sistem."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Kelola pengguna, grup, dan penyimpanan untuk semua anggota, tetapkan peran, dan alokasikan lisensi."
       ]
     },
     "Safety review": {

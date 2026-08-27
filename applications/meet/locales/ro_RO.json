@@ -191,9 +191,6 @@
       "Apply changes": [
         "Aplicare modificări"
       ],
-      "Approve participants before they can join": [
-        "Aprobare participanți înainte participare"
-      ],
       "Assign ${ selectedParticipantName } as host": [
         "Desemnare ${ selectedParticipantName } ca gazdă"
       ],
@@ -386,11 +383,11 @@
       "Hide participants": [
         "Ascundere participanți"
       ],
-      "Hide self view": [
-        "Ascundere vizualizare proprie"
-      ],
       "Hide timezones": [
         "Ascundere fusuri orare"
+      ],
+      "Incoming video": [
+        "Video de intrare"
       ],
       "Insert emoji": [
         "Inserare emoji"
@@ -425,6 +422,9 @@
       "Lower hand": [
         "Mâna coborâtă"
       ],
+      "Meeting timer": [
+        "Cronometru conferință"
+      ],
       "Minimize preview": [
         "Micșorare examinare"
       ],
@@ -458,14 +458,14 @@
       "Participants join after you approve them": [
         "Participanții se alătură după ce-i aprobați"
       ],
-      "Participants join the call directly": [
-        "Participanți se alătură direct la conferință"
-      ],
       "Paste": [
         "Lipire"
       ],
       "Pause": [
         "Suspendare"
+      ],
+      "Picture-in-picture while sharing": [
+        "Imagine-în-imagine la partajare"
       ],
       "Playing back...": [
         "Se redă..."
@@ -573,6 +573,9 @@
       "Search countries": [
         "Căutare țări"
       ],
+      "Self view": [
+        "Privire proprie"
+      ],
       "Send an encrypted message": [
         "Trimitere mesaj criptat"
       ],
@@ -581,12 +584,6 @@
       ],
       "Settings": [
         "Setări"
-      ],
-      "Show duration": [
-        "Afișare durată"
-      ],
-      "Show floating thumbnail during screensharing": [
-        "Afișare miniatură flotantă în timpul partajării ecranului."
       ],
       "Show options": [
         "Afișare opțiuni"
@@ -678,17 +675,11 @@
       "Try another method": [
         "Încercaţi o altă metodă"
       ],
-      "Turn off incoming video": [
-        "Oprire recepționare video"
-      ],
       "Upgrade": [
         "Modificare"
       ],
       "Upgrade now": [
         "Modificare"
-      ],
-      "Upgrade your plan to use waiting room in your next meeting.": [
-        "Modificați-vă planul pentru a putea folosi săli de așteptare la următoarele conferințe."
       ],
       "Upload another image": [
         "Încărcare altă imagine"
@@ -731,6 +722,9 @@
       ],
       "View invoice": [
         "Afișare factură"
+      ],
+      "Virtual backgrounds": [
+        "Fundaluri virtuale"
       ],
       "Waiting room": [
         "Sală de așteptare"
@@ -779,8 +773,8 @@
       "Go to dashboard": [
         "Spre panoul de control"
       ],
-      "Hide self view": [
-        "Ascundere afișare proprie"
+      "Incoming video": [
+        "Video de intrare"
       ],
       "Leave Meeting": [
         "Părăsire întâlnire"
@@ -796,6 +790,9 @@
       ],
       "Meeting details": [
         "Detalii reuniune"
+      ],
+      "Meeting timer": [
+        "Cronometru conferință"
       ],
       "More options": [
         "Mai multe opțiuni"
@@ -815,6 +812,9 @@
       "Participants": [
         "Participanți"
       ],
+      "Picture-in-picture while sharing": [
+        "Imagine-în-imagine la partajare"
+      ],
       "Raise hand": [
         "Ridicare mână"
       ],
@@ -827,14 +827,11 @@
       "Screen share": [
         "Partajare ecran"
       ],
+      "Self view": [
+        "Privire proprie"
+      ],
       "Settings": [
         "Setări"
-      ],
-      "Show duration": [
-        "Afișare durată"
-      ],
-      "Show floating thumbnail during screensharing": [
-        "Afișare miniatură flotantă în timpul partajării ecranului."
       ],
       "Stop recording and download.": [
         "Oprire înregistrare și descărcare."
@@ -856,9 +853,6 @@
       ],
       "Toggle settings": [
         "Comutare setări"
-      ],
-      "Turn off incoming video": [
-        "Oprire recepționare video"
       ],
       "Video settings": [
         "Setări video"
@@ -2358,6 +2352,12 @@
       "Anonymous ${ particle } ${ participantNumber }": [
         "Anonim ${ particle } ${ participantNumber }"
       ],
+      "Anyone with the link can join immediately": [
+        "Oricine are legătura web poate participa imediat"
+      ],
+      "Approve participants before they can join": [
+        "Aprobare participanți înainte de participare"
+      ],
       "Are you sure you want to leave?": [
         "Sigur doriți să ieșiți?"
       ],
@@ -2366,6 +2366,9 @@
       ],
       "Attention required": [
         "Necesită atenție"
+      ],
+      "Available with a paid plan": [
+        "Disponibil cu un plan plătit"
       ],
       "Background blur initializing": [
         "Se inițializează estomparea fundalului"
@@ -3086,6 +3089,9 @@
       "${ BRAND_NAME } username": [
         "Nnume de utilizator ${ BRAND_NAME }"
       ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } de caractere"
+      ],
       "${ numberOfStars } star": [
         "${ numberOfStars } stea",
         "${ numberOfStars } stele",
@@ -3569,17 +3575,6 @@
         "Administrare utilizatori"
       ]
     },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Configurați politicile de securitate, păstrarea datelor și infrastructura VPN și gestionați jurnalele de audit."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Gestionați toți utilizatorii, grupurile, securitatea, facturarea și configurările de sistem."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Gestionați utilizatorii, grupurile și spațiul de stocare pentru toți membrii, atribuiți roluri și alocați licențe."
-      ]
-    },
     "Safety review": {
       "Review account safety": [
         "Revizuire securitate cont"
@@ -3713,9 +3708,6 @@
       ]
     },
     "Title": {
-      "Accessibility": [
-        "Accesibilitate"
-      ],
       "Account restricted": [
         "Cont restricționat"
       ],
@@ -3743,9 +3735,6 @@
       "Assign a new host": [
         "Desemnare o gazdă nouă"
       ],
-      "Audio": [
-        "Audio"
-      ],
       "Available Cameras": [
         "Camere disponibile"
       ],
@@ -3754,6 +3743,9 @@
       ],
       "Available Speakers": [
         "Difuzoare disponibile"
+      ],
+      "Background": [
+        "Fundal"
       ],
       "Background blur comparison": [
         "Comparare estompare fundal"
@@ -3794,6 +3786,9 @@
       "Delete recording?": [
         "Ștergeți înregistrarea?"
       ],
+      "Display": [
+        "Afișare"
+      ],
       "Enter your password": [
         "Introduceți parola"
       ],
@@ -3811,6 +3806,9 @@
       ],
       "Help center": [
         "Centru de ajutor"
+      ],
+      "Host settings": [
+        "Setări gazdă"
       ],
       "Human verification": [
         "Verificare persoană"
@@ -3861,9 +3859,6 @@
       ],
       "Meeting edited": [
         "Conferință editată"
-      ],
-      "Meeting settings": [
-        "Setări conferință"
       ],
       "Messaging Layer Security": [
         "Securitatea stratului de mesagerie"
@@ -3928,9 +3923,6 @@
       "Secure meeting": [
         "Întâlnire securizată"
       ],
-      "Security": [
-        "Securitate"
-      ],
       "Security code": [
         "Cod de securitate"
       ],
@@ -3967,8 +3959,8 @@
       "Two-factor authentication": [
         "Autentificare cu doi factori"
       ],
-      "Video": [
-        "Videoclip"
+      "Video and audio": [
+        "Video și audio"
       ],
       "Virtual backgrounds": [
         "Fundaluri virtuale"
@@ -4009,6 +4001,9 @@
       ],
       "Recurring meeting": [
         "Întâlnire recurentă"
+      ],
+      "Stop sharing your screen to change this setting": [
+        "Opriți partajarea ecranului pentru a schimba această setare."
       ],
       "You can generate a new meeting link once per day.": [
         "Puteți genera o legătură web de conferință o dată pe zi."

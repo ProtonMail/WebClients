@@ -55,6 +55,9 @@
       ]
     },
     "account_search_index": {
+      "12-word phrase": [
+        "Phrase de 12 mots"
+      ],
       "Account events": [
         "Événements du compte"
       ],
@@ -73,6 +76,12 @@
       "Audit log": [
         "Journal d'audit"
       ],
+      "Authentication logs": [
+        "Journaux d’authentification"
+      ],
+      "Automatic renewal": [
+        "Renouvellement automatique"
+      ],
       "Automatically delete data": [
         "Suppression automatique des données"
       ],
@@ -82,14 +91,29 @@
       "Bulk user import": [
         "Importation en masse d'utilisateurs"
       ],
+      "Compare plans": [
+        "Comparer les abonnements"
+      ],
+      "Connected addresses": [
+        "Adresses connectées"
+      ],
       "Connection events": [
         "Événements de connexion"
       ],
       "Create organization": [
         "Créer une organisation"
       ],
+      "Custom domain": [
+        "Domaine personnalisé"
+      ],
+      "Downgrade to Free": [
+        "Rétrograder à la version gratuite"
+      ],
       "Enable or disable apps for members": [
         "Activer ou désactiver des applications pour les membres"
+      ],
+      "Encryption backup in this browser": [
+        "Sauvegarde du chiffrement dans ce navigateur"
       ],
       "Gateway logs": [
         "Journaux de la passerelle"
@@ -97,8 +121,14 @@
       "Group members": [
         "Membres du groupe"
       ],
+      "High-security mode": [
+        "Mode haute sécurité"
+      ],
       "Import events": [
         "Importer des événements"
+      ],
+      "iOS and Android apps": [
+        "Applications pour iOS et Android"
       ],
       "Join organization": [
         "Rejoindre l'organisation"
@@ -118,6 +148,9 @@
       "Protection from cyber attacks": [
         "Protection contre les cyberattaques"
       ],
+      "Recovery phone number": [
+        "Numéro de téléphone de récupération"
+      ],
       "Referral link": [
         "Lien de parrainage"
       ],
@@ -133,8 +166,20 @@
       "Shared server access": [
         "Accès au serveur partagé"
       ],
+      "Sign-in history": [
+        "Historique de connexion"
+      ],
+      "Subscription status": [
+        "État de l'abonnement"
+      ],
       "Telemetry": [
         "Télémétrie"
+      ],
+      "Trusted contact": [
+        "Contact de confiance"
+      ],
+      "Upgrade plan": [
+        "Changer d'abonnement"
       ],
       "Verify domain": [
         "Vérifier le domaine"
@@ -1805,6 +1850,12 @@
       "Take a tour": [
         "Laissez-vous guider"
       ],
+      "Template with invite links": [
+        "Modèle avec liens d'invitation"
+      ],
+      "Template with passwords": [
+        "Modèle avec mots de passe"
+      ],
       "Test": [
         "Test"
       ],
@@ -2319,6 +2370,11 @@
       ],
       "With ${ PASS_APP_NAME } you can generate unique aliases to hide your identity and forward emails to your main inbox.": [
         "Avec ${ PASS_APP_NAME }, vous pouvez générer des alias uniques pour masquer votre identité et transférer des messages vers votre boite de réception principale."
+      ]
+    },
+    "Alt": {
+      "Expand invitation message": [
+        "Développer le message d'invitation"
       ]
     },
     "Alter": {
@@ -5406,6 +5462,9 @@
       "Are you sure you want to disable this address?": [
         "Voulez-vous vraiment désactiver cette adresse ?"
       ],
+      "By disabling this address ${ address }, the member will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will be disabled.": [
+        "En désactivant l'adresse ${ address }, le membre ne pourra plus envoyer ou recevoir d'e-mails avec cette adresse et tous les produits ${ BRAND_NAME } liés seront désactivés."
+      ],
       "By disabling this address ${ address }, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will be disabled.": [
         "En désactivant l'adresse ${ address }, vous ne pourrez plus envoyer ou recevoir d'e-mails avec cette adresse et tous les produits ${ BRAND_NAME } liés seront désactivés."
       ],
@@ -6877,6 +6936,9 @@
       "Amount below minimum (${ minimumAmount }).": [
         "Le montant est inférieur au minimum (${ minimumAmount })."
       ],
+      "An unknown error ocurred. Please refresh the page and try again": [
+        "Une erreur inconnue s'est produite. Veuillez rafraîchir la page et réessayer."
+      ],
       "Authentication canceled.": [
         "L'authentification a été annulée."
       ],
@@ -7040,6 +7102,9 @@
       ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Les sessions actives n'ont pas pu être obtenues. Nous vous invitons à ${ refresh } ou à réessayer plus tard."
+      ],
+      "Failed to load OAuth": [
+        "OAuth n'a pas pu être chargé."
       ],
       "Failed to load OAuth modal.": [
         "Une erreur est survenue lors du chargement de la fenêtre OAuth."
@@ -8916,6 +8981,14 @@
         "Votre essai gratuit de l'application de bureau est terminé."
       ]
     },
+    "Gateway monitor upsell": {
+      "Advanced security controls": [
+        "Contrôles de sécurité avancés"
+      ],
+      "User - ${ userPrice }": [
+        "Utilisateur - ${ userPrice }"
+      ]
+    },
     "Get help": {
       "Continue cancelling": [
         "Continuer l'annulation"
@@ -9789,8 +9862,8 @@
       "${ helpTranslateLink } by joining our localization community.": [
         "${ helpTranslateLink } en rejoignant notre communauté de localisation."
       ],
-      "${ IDEAL_BRAND_NAME } mark": [
-        "marque ${ IDEAL_BRAND_NAME }"
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "marque ${ IDEAL_WERO_BRAND_NAME }"
       ],
       "${ invitedMemberCount } user needs to accept their invite to start receiving group emails.": [
         "${ invitedMemberCount } utilisateur doit accepter son invitation pour commencer à recevoir les e-mails de groupe.",
@@ -9906,6 +9979,9 @@
       "${ providerFoldersNumLocalized } label found in Gmail": [
         "${ providerFoldersNumLocalized } label trouvé dans Gmail",
         "${ providerFoldersNumLocalized } labels trouvés dans Gmail"
+      ],
+      "${ providerName } account": [
+        "Compte ${ providerName }"
       ],
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "Configuration en cours pour ${ provisioningCounter } serveur. Cela prend généralement ${ provisioningDuration }.",
@@ -10165,6 +10241,9 @@
       ],
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Ajoutez votre nom et votre logo pour créer une expérience plus personnalisée pour votre organisation."
+      ],
+      "Add your organization email domain to ${ BRAND_NAME }.": [
+        "Ajoutez le domaine de messagerie de votre organisation à ${ BRAND_NAME }."
       ],
       "Adding ${ total } gateway server": [
         "Ajout de ${ total } serveur de passerelle",
@@ -10643,6 +10722,9 @@
       "Copy and paste this URL into the Entity ID field of your identity provider": [
         "Copiez et collez cette URL dans le champ ID de l'entité de votre fournisseur d'identité."
       ],
+      "Copy the below code and paste it in the DNS section of your domain host.": [
+        "Copiez le code ci-dessous et collez-le dans la section DNS de votre hôte de domaine."
+      ],
       "Copy the link to clipboard": [
         "Copier le lien dans le presse-papiers"
       ],
@@ -10813,6 +10895,9 @@
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
       ],
+      "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
+        "DKIM ajoute une signature numérique à chaque e-mail afin que les destinataires puissent vérifier que le message provient bien de votre domaine et qu'il n'a pas été altéré pendant son acheminement. Sans cela, les messages risquent d'être considérés comme moins fiables."
+      ],
       "DKIM allows ${ BRAND_NAME } to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).": [
         "DKIM permet à ${ BRAND_NAME } de signer par cryptographie vos messages et d'empêcher les attaquants de manipuler votre e-mail. Assurez-vous d'ajouter les trois enregistrements CNAME suivants à votre console DNS (qui se trouve sur la plateforme du fournisseur chez lequel vous avez acheté le domaine personnalisé)."
       ],
@@ -10830,6 +10915,9 @@
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "Voulez-vous révoquer toutes les autres sessions à l'exception de celle qui est en cours ?"
+      ],
+      "Domain added": [
+        "Domaine ajouté"
       ],
       "Domain ownership failed verification.": [
         "La propriété du domaine n'a pas pu être vérifiée."
@@ -11077,6 +11165,9 @@
       ],
       "Event invitations and responses will be sent in this language.": [
         "Les invitations aux événements et les réponses seront envoyées dans cette langue."
+      ],
+      "Everyone gets the same invitation link. They'll visit the page, enter their email, and a verification code arrives in their ${ mailAppName } inbox. From there, they set their ${ BRAND_NAME } password.": [
+        "Tous les utilisateurs reçoivent le même lien d'invitation. Ils se rendent sur la page, saisissent leur e-mail, puis un code de vérification est envoyé sur leur boite de réception ${ mailAppName }. À partir de là, ils définissent leur mot de passe ${ BRAND_NAME }."
       ],
       "Everything in ${ planOrAppName }": [
         "Tout ce qui est inclus dans ${ planOrAppName }"
@@ -11516,6 +11607,9 @@
       "Invited": [
         "Invité"
       ],
+      "It can take up to 24 hours for these changes to propagate.": [
+        "La propagation de ces changements peut prendre jusqu'à 24 heures."
+      ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Cela prend 10 jours pour modifier le pays d'un serveur. Assurez-vous que votre sélection soit correcte."
       ],
@@ -11888,6 +11982,9 @@
       "Once successfully deployed, it may take up to a few hours for devices to detect and enforce the policy.": [
         "Une fois le déploiement réussi, les appareils peuvent prendre jusqu’à quelques heures pour détecter et appliquer la stratégie."
       ],
+      "Once we have confirmed that emails are routed to ${ BRAND_NAME } the migration will be finalized. You will receive a confirmation email to let you know when this happens. This process can take up to 24 hours.": [
+        "Dès que nous aurons vérifié que les e-mails sont bien acheminés vers ${ BRAND_NAME }, la migration sera finalisée. Vous recevrez un e-mail de confirmation pour vous en informer. Ce processus peut prendre jusqu'à 24 heures."
+      ],
       "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed here. To use a different address, add a new one.": [
         "Seules les majuscules et la ponctuation (points, traits d'union et underscores/tirets du bas) peuvent être modifiées ici. Pour utiliser une adresse différente, ajoutez-en une nouvelle."
       ],
@@ -12218,9 +12315,6 @@
       ],
       "Registering your subscription…": [
         "Enregistrement de votre abonnement…"
-      ],
-      "Remember to share the user's sign in details with them.": [
-        "Pensez à partager les informations de connexion avec l'utilisateur concerné."
       ],
       "Remove metadata from images to protect your privacy.": [
         "Retirez les métadonnées de vos images pour préserver votre confidentialité."
@@ -13222,8 +13316,8 @@
       "We use 3-D Secure to protect your payments": [
         "Nous utilisons 3-D Secure pour protéger vos paiements."
       ],
-      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "Nous vous redirigerons vers ${ IDEAL_BRAND_NAME } dans un nouvel onglet du navigateur pour compléter cette transaction. Si vous utilisez des bloqueurs de pop-up, veuillez les désactiver pour continuer."
+      "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Nous vous redirigerons vers ${ IDEAL_WERO_BRAND_NAME } dans un nouvel onglet du navigateur pour compléter cette transaction. Si vous utilisez des bloqueurs de pop-up, veuillez les désactiver pour continuer."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Nous vous redirigerons vers PayPal dans un nouvel onglet du navigateur pour compléter cette transaction. Si vous utilisez des bloqueurs de pop-up, veuillez les désactiver pour continuer."
@@ -13243,6 +13337,9 @@
       "We'll send a new verification code to ${ strong }": [
         "Nous enverrons un nouveau code de vérification à ${ strong }."
       ],
+      "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
+        "Nous avons remarqué que certains utilisateurs n'ont pas encore activé leur compte ${ BRAND_NAME }."
+      ],
       "Web sessions detected:": [
         "Sessions web détectées :"
       ],
@@ -13260,6 +13357,12 @@
       ],
       "We’ll send a reset code to ${ boldValue }.": [
         "Nous allons envoyer un code de réinitialisation à ${ boldValue }."
+      ],
+      "We’re creating your accounts and importing your data now so your team has everything they need when they start using their secure ${ BRAND_NAME } account.": [
+        "Nous sommes en train de créer vos comptes et d'importer vos données afin que votre équipe dispose de tout ce dont elle a besoin dès qu'elle commencera à utiliser les comptes sécurisés ${ BRAND_NAME }."
+      ],
+      "We’re switching on end-to-end encryption for everyone. Every email, every event is now yours alone. Visible to your team only. Not us, not anyone else.": [
+        "Nous activons le chiffrement de bout en bout pour tous nos utilisateurs. Chaque e-mail, chaque événement n'appartient désormais qu'à vous. Seule votre équipe peut y accéder. Ni nous, ni personne d'autre."
       ],
       "What happens:": [
         "Ce qu'il se passe :"
@@ -13670,6 +13773,9 @@
       ],
       "your encrypted data will be locked": [
         "vos données chiffrées seront verrouillées"
+      ],
+      "Your file includes a password for each user, so these accounts will be created with a password instead of an invite link.": [
+        "Votre fichier contient un mot de passe pour chaque utilisateur, ces comptes seront donc créés avec un mot de passe plutôt qu'avec un lien d'invitation."
       ],
       "Your files will be encrypted and then saved": [
         "Vos fichiers seront chiffrés puis sauvegardés."
@@ -14355,6 +14461,9 @@
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } sur ${ humanMaxSpace }"
       ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } caractères"
+      ],
       "${ MAIL_APP_NAME } address": [
         "Adresse ${ MAIL_APP_NAME }"
       ],
@@ -14381,9 +14490,6 @@
       ],
       "${ PROTON_SENTINEL_NAME } protection": [
         "Protection ${ PROTON_SENTINEL_NAME }"
-      ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } caractères"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(temporairement indisponible, nous vous invitons à vérifier plus tard)"
@@ -15231,6 +15337,12 @@
       ],
       "Interval": [
         "Intervalle"
+      ],
+      "Invitation link": [
+        "Lien d'invitation"
+      ],
+      "Invitation message": [
+        "Message d'invitation"
       ],
       "Invite people": [
         "Invite des personnes"
@@ -16559,6 +16671,9 @@
       "Gathering your data": [
         "Vos données sont en cours de traitement."
       ],
+      "Loading your organization data": [
+        "Chargement des données de votre organisation en cours"
+      ],
       "We're gathering your data from your provider": [
         "Nous récupérons vos données auprès de votre fournisseur."
       ],
@@ -16711,9 +16826,6 @@
     "mail_signup_2023: Info": {
       "**Get ${ plan }** for a limited time!": [
         "**Profitez de ${ plan }** pour une durée limitée !"
-      ],
-      "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
-        "Passez à l'abonnement Visionary et participez à l’histoire de ${ BRAND_NAME }"
       ]
     },
     "mail_signup_2024: Info": {
@@ -16915,9 +17027,6 @@
         "${ seats } accès inclus",
         "${ seats } accès incluses"
       ],
-      "100 ${ BRAND_NAME } email addresses": [
-        "100 adresses e-mail ${ BRAND_NAME }"
-      ],
       "Cloud storage and file sharing": [
         "Stockage cloud et partage de fichiers"
       ],
@@ -16938,9 +17047,6 @@
       ],
       "Password manager with team vaults": [
         "Gestionnaire de mots de passe avec des coffres-forts d'équipe"
-      ],
-      "Private and unlimited AI chat (${ LUMO_SHORT_APP_NAME })": [
-        "Chat IA privé et illimité (${ LUMO_SHORT_APP_NAME })"
       ],
       "Private video calls for the conversations that matter": [
         "Appels vidéo privés pour les conversations qui comptent"
@@ -18593,6 +18699,16 @@
         "Liste de récupération"
       ]
     },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Essayez-la maintenant"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Vous avez désormais accès au nouveau ${ CALENDAR_APP_NAME }. ${ link }"
+      ]
+    },
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } a été créé."
@@ -19453,9 +19569,6 @@
       "Create another account instead": [
         "Créer un autre compte à la place"
       ],
-      "Keep this plan": [
-        "Conserver cet abonnement"
-      ],
       "Open ${ PASS_APP_NAME } vaults": [
         "Ouvrir les coffres-forts ${ PASS_APP_NAME }"
       ],
@@ -19469,9 +19582,6 @@
         "Commencer à utiliser ${ appName }"
       ],
       "Upgrade": [
-        "Changer d'abonnement"
-      ],
-      "Upgrade my plan": [
         "Changer d'abonnement"
       ]
     },
@@ -19527,9 +19637,6 @@
       "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
         "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } à ${ priceString }."
       ],
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice } par mois"
-      ],
       "/month /user": [
         "/mois /utilisateur"
       ],
@@ -19547,9 +19654,6 @@
       ],
       "Aliases for email protection from breaches": [
         "Alias d'adresse e-mail pour se protéger des fuites de données"
-      ],
-      "Based in Switzerland, GDPR compliant": [
-        "Basé en Suisse et en conformité avec le RGPD"
       ],
       "But you can get ${ discountPercentString } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Vous pourrez cependant profiter de -${ discountPercentString } en passant à **${ upsellPlanTitle }** pour seulement ${ relativePrice } en plus par mois."
@@ -19578,9 +19682,6 @@
       "Creating your account": [
         "Création de votre compte"
       ],
-      "Current plan": [
-        "Abonnement actuel"
-      ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "Téléchargez et installez les applications et extensions utiles pour utiliser ${ PASS_APP_NAME }."
       ],
@@ -19602,15 +19703,6 @@
       "Everything from ${ planTitle }, plus...": [
         "Tout ce qui est inclus dans ${ planTitle } et plus encore..."
       ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "Accédez au gestionnaire de mot de passe premium de ${ BRAND_NAME } pour seulement **${ relativePrice } de plus par mois** !"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "Accédez au VPN premium de ${ BRAND_NAME } pour seulement **${ relativePrice } de plus par mois** !"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "Pour seulement **${ relativePrice } par mois** de plus, vous bénéficiez de tous les services premium de ${ BRAND_NAME } !"
-      ],
       "Free forever": [
         "Gratuit pour toujours"
       ],
@@ -19628,9 +19720,6 @@
       ],
       "Get unlimited privacy for two": [
         "Profitez d'une confidentialité illimitée pour deux personnes."
-      ],
-      "Includes:": [
-        "Comprend :"
       ],
       "Install ${ PASS_APP_NAME }": [
         "Installez ${ PASS_APP_NAME }"
@@ -20024,8 +20113,8 @@
       "Offer unavailable": [
         "Offre non disponible"
       ],
-      "Pay with ${ IDEAL_BRAND_NAME }": [
-        "Payer avec ${ IDEAL_BRAND_NAME }"
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "Payer avec ${ IDEAL_WERO_BRAND_NAME }"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Un moyen de paiement est requis pour que l'abonnement soit activé après la fin de la version d'essai."
@@ -20120,8 +20209,8 @@
       "You will soon be redirected to verify your payment.": [
         "Vous serez bientôt redirigé vers PayPal pour vérifier votre paiement."
       ],
-      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
-        "Votre devise a été changée en euros (€) car ${ IDEAL_BRAND_NAME } prennent uniquement en charge les paiements en euros."
+      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
+        "Votre devise a été changée en euros (€) car ${ IDEAL_WERO_BRAND_NAME } prennent uniquement en charge les paiements en euros."
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Votre devise a été changée en euros (€) car les virements bancaires SEPA prennent uniquement en charge les paiements en euros."
@@ -20134,8 +20223,8 @@
       ]
     },
     "Payments.Error": {
-      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
-        "L'initialisation de ${ IDEAL_BRAND_NAME } n'a pas abouti. Veuillez réessayer plus tard."
+      "Failed to initialize ${ IDEAL_WERO_BRAND_NAME }. Please try again later.": [
+        "L'initialisation de ${ IDEAL_WERO_BRAND_NAME } n'a pas abouti. Veuillez réessayer plus tard."
       ],
       "Invalid card number": [
         "Le numéro de carte n’est pas valide."
@@ -20165,8 +20254,8 @@
       ]
     },
     "Payments.iDEAL": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "En confirmant ce paiement, vous autorisez ${ BRAND_NAME } et Stripe, notre prestataire de services de paiement, à donner instruction à votre banque de débiter votre compte en conséquence. Vous pouvez obtenir un remboursement dans un délai de 8 semaines à compter de la date de débit, conformément aux conditions de votre accord avec votre banque."
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "En confirmant, vous autorisez ${ BRAND_NAME } et Stripe, notre prestataire de services de paiement, à prélever les futurs paiements liés à votre abonnement sur ce compte bancaire par prélèvement SEPA, et votre banque à débiter ces montants. Votre premier paiement est effectué dès maintenant par ${ IDEAL_WERO_BRAND_NAME }. Votre abonnement est renouvelé automatiquement jusqu’à ce que vous le résiliiez ; nous vous en informerons avant chaque prélèvement. Pour les prélèvements automatiques, vous pouvez demander un remboursement à votre banque dans un délai de 8 semaines à compter de la date de prélèvement, conformément aux conditions de votre contrat bancaire. Cela ne s'applique pas au paiement ${ IDEAL_WERO_BRAND_NAME } que vous effectuez actuellement."
       ]
     },
     "Payments.info": {
@@ -21527,17 +21616,6 @@
         "Administrateur des utilisateurs"
       ]
     },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Configurez les politiques de sécurité, la conservation des données et l’infrastructure VPN, et gérez les journaux d’audit."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Gérez tous les utilisateurs, groupes, sécurité, facturation, journaux d'audit et configurations système."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Gérez les utilisateurs, les groupes et le stockage de tous les membres, attribuez des rôles et attribuez des licences."
-      ]
-    },
     "Safety review": {
       "Code sent to ${ boldValue }": [
         "Le code a été envoyé à ${ boldValue }."
@@ -21922,6 +22000,9 @@
       ],
       "New": [
         "Nouveau"
+      ],
+      "New: Manage groups via your identity provider": [
+        "Nouveauté : gérez les groupes dans votre fournisseur d'identité"
       ],
       "Once approved, they can access all ${ BRAND_NAME } services and share securely.": [
         "Une fois approuvés, ils peuvent accéder à tous les services ${ BRAND_NAME } et les partager en toute sécurité."
@@ -22867,9 +22948,6 @@
       "Unlimited hide-my-email aliases": [
         "Nombre illimité d'alias hide-my-email"
       ],
-      "Up to -${ percentage }%": [
-        "Jusqu'à -${ percentage }%"
-      ],
       "Up to 2 users": [
         "Jusqu'à 2 utilisateurs"
       ],
@@ -23684,6 +23762,9 @@
       "Last changed ${ formattedDate }": [
         "Dernière modification le ${ formattedDate }"
       ],
+      "Not activated": [
+        "Non activé"
+      ],
       "Not saved": [
         "Non enregistré"
       ],
@@ -23707,6 +23788,20 @@
       ],
       "Verify ${ value }": [
         "Vérifier ${ value }"
+      ],
+      "Waiting for MX...": [
+        "En attente des MX..."
+      ]
+    },
+    "Step": {
+      "Authenticate": [
+        "S'authentifier"
+      ],
+      "Install migration app": [
+        "Installer l'application de migration"
+      ],
+      "Set up secure sending (DMARC)": [
+        "Configurer l'envoi sécurisé (DMARC)"
       ]
     },
     "Step in filter modal": {
@@ -24462,8 +24557,14 @@
       "${ data.name } updated": [
         "${ data.name } a été mis à jour"
       ],
+      "Account connected": [
+        "Compte connecté"
+      ],
       "Account deleted. Signing out...": [
         "Le compte a été supprimé. Déconnexion…"
+      ],
+      "Account disconnected": [
+        "Compte déconnecté"
       ],
       "Address added": [
         "L'adresse a été ajoutée."
@@ -24531,6 +24632,9 @@
       "DMARC value copied to clipboard": [
         "La valeur DMARC a été copiée dans le presse-papiers."
       ],
+      "Domain added": [
+        "Domaine ajouté"
+      ],
       "Domain verified": [
         "Le domaine a été vérifié."
       ],
@@ -24575,6 +24679,10 @@
       ],
       "Locale updated": [
         "La langue a été mise à jour."
+      ],
+      "Migration started for ${ n } user": [
+        "La migration a commencé pour ${ n } utilisateur",
+        "La migration a commencé pour ${ n } utilisateurs"
       ],
       "New policy created. It will take effect only after you publish the changes.": [
         "Une politique a été créée. Ceci ne prendra effet qu'une fois les modifications publiées."
@@ -25301,6 +25409,9 @@
       "Ask your emergency contacts for help": [
         "Demandez de l'aide à vos contacts d'urgence"
       ],
+      "Authenticate your ${ providerName } account": [
+        "Authentifier votre compte ${ providerName }"
+      ],
       "Auto-deletion is active": [
         "La suppression automatique est active."
       ],
@@ -25421,6 +25532,9 @@
       "Configure Always-on VPN device profile": [
         "Configurer le profil d’appareil VPN permanent"
       ],
+      "Configure your domain": [
+        "Configurez votre domaine"
+      ],
       "Confirm": [
         "Confirmer"
       ],
@@ -25529,6 +25643,9 @@
       ],
       "Created!": [
         "Créé !"
+      ],
+      "Creating accounts": [
+        "Création des comptes"
       ],
       "Creating user accounts": [
         "Création de comptes utilisateurs"
@@ -25725,6 +25842,9 @@
       ],
       "Domain names": [
         "Noms de domaine"
+      ],
+      "Domain provider": [
+        "Fournisseur de domaine"
       ],
       "Don't show again?": [
         "Ne plus afficher ?"
@@ -26076,6 +26196,9 @@
       "Import contacts": [
         "Importer les contacts"
       ],
+      "Import details": [
+        "Détails de l'importation"
+      ],
       "Import emails, calendars, contacts": [
         "Importer des messages, calendriers et contacts"
       ],
@@ -26184,8 +26307,14 @@
       "Messages and composing": [
         "Messages et rédaction"
       ],
+      "Migrate accounts to ${ BRAND_NAME }": [
+        "Migrer les comptes vers ${ BRAND_NAME }"
+      ],
       "Migrate your organization to ${ BRAND_NAME }": [
         "Migrer votre organisation vers ${ BRAND_NAME }"
+      ],
+      "Migrated accounts": [
+        "Comptes migrés"
       ],
       "Migration assistant": [
         "Assistant de migration"
@@ -26598,6 +26727,9 @@
       "Set up email forwarding": [
         "Configurer le transfert automatique des messages"
       ],
+      "Set up secure sending (DKIM)": [
+        "Configurer l'envoi sécurisé (DKIM)"
+      ],
       "Set up your family account": [
         "Configurez votre compte familial"
       ],
@@ -26971,6 +27103,9 @@
       "You have no resolved alerts": [
         "Vous n'avez aucune alerte résolue."
       ],
+      "You're all set!": [
+        "Tout est prêt !"
+      ],
       "You've successfully signed in!": [
         "Vous êtes bien connecté !"
       ],
@@ -27187,6 +27322,9 @@
       "Click here to learn how to create a customized signature with HTML.": [
         "Cliquez ici pour apprendre à créer une signature HTML personnalisée."
       ],
+      "Collapse invitation message": [
+        "Réduire le message d'invitation"
+      ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Copiez et coller cette URL dans le champ URL ACS (Assertion Consumer Service) de votre fournisseur d'identité."
       ],
@@ -27237,6 +27375,9 @@
       ],
       "Excluding single sign-on users whose 2FA is handled by your identity provider": [
         "Exclusion des utilisateurs avec authentification unique dont l'A2F est gérée par le fournisseur d'identité."
+      ],
+      "Expand invitation message": [
+        "Développer le message d'invitation"
       ],
       "Feature in early access": [
         "Fonctionnalité en avant-première"
@@ -27414,6 +27555,9 @@
       ],
       "Verified email address": [
         "Adresse e-mail vérifiée"
+      ],
+      "Verify your domain to start a migration": [
+        "Vérifiez votre domaine pour commencer une migration"
       ],
       "Version 6 OpenPGP key": [
         "Clé OpenPGP version 6"
@@ -28279,6 +28423,9 @@
       "Please check that the extension is properly installed and enabled": [
         "Assurez-vous que l'extension est installée et activée correctement."
       ],
+      "Please don’t close or refresh this window.": [
+        "Veillez à ne pas fermer ni actualiser cette fenêtre."
+      ],
       "Please update the extension to its latest version": [
         "Veuillez mettre à jour l'extension vers sa dernière version."
       ],
@@ -28303,8 +28450,14 @@
       "This will remove all messages, folders, and labels created during the import.": [
         "Cela retirera tous les messages, dossiers et labels créés pendant l'importation."
       ],
+      "To complete the migration, make sure you keep only ${ BRAND_NAME } MX codes.": [
+        "Pour finaliser la migration, veillez à ne conserver que les enregistrements MX de ${ BRAND_NAME }."
+      ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Nous ne sommes malheureusement pas en ligne pour le moment. Nous vous invitons à remplir le formulaire ci-dessous pour décrire votre problème. Nous l'examinerons et vous contacterons dès que nous serons de nouveau en ligne."
+      ],
+      "Users who haven't claimed their account before the migration is finalized will need to request a password reset from their ${ BRAND_NAME } organization administrator.": [
+        "Les utilisateurs qui n'auront pas activé leur compte avant la fin de la migration devront demander une réinitialisation de mot de passe à leur administrateur de l'organisation ${ BRAND_NAME }."
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "Le serveur de messagerie n'a pas pu être vérifié. Si vous lui faites confiance, vous pouvez ignorer cette vérification."
@@ -28320,6 +28473,10 @@
       ],
       "You will not see this import record in the list anymore.": [
         "Vous ne verrez plus l’enregistrement de cette importation dans la liste."
+      ],
+      "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
+        "Votre abonnement actuel prend en charge jusqu'à ${ maxMembers } utilisateur. Pour ajouter d'autres utilisateurs, augmentez le nombre d'accès inclus dans votre abonnement.",
+        "Votre abonnement actuel prend en charge jusqu'à ${ maxMembers } utilisateurs. Pour ajouter d'autres utilisateurs, augmentez le nombre d'accès inclus dans votre abonnement."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Votre essai gratuit se termine le ${ textDate }. ${ action }"

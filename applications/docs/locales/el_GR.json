@@ -5719,15 +5719,6 @@
       "This user can not be migrated due to platform incompatibilities.": [
         "Για να μετεγκαταστήσει αυτόν τον χρήστη, πρέπει να αποδεχτεί την πρόσκλησή του για να γίνει μέλος του ${ BRAND_NAME }."
       ],
-      "This will permanently delete the file you uploaded.": [
-        "Αυτό θα διαγράψει οριστικά το αρχείο που ανεβάσατε."
-      ],
-      "This will permanently delete the folder you uploaded.": [
-        "Αυτό θα διαγράψει οριστικά το φάκελο που ανεβάσατε."
-      ],
-      "This will permanently delete the selected items you uploaded.": [
-        "Αυτό θα διαγράψει οριστικά τα επιλεγμένα στοιχεία που ανεβάσατε."
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Αυτό θα σας αποσυνδέσει από όλους τους λογαριασμούς που είναι συνδεδεμένοι αυτήν τη στιγμή."
       ],
@@ -6133,8 +6124,8 @@
       "${ BRAND_NAME } username": [
         "όνομα χρήστη ${ BRAND_NAME }"
       ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } χαρακτήρες"
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } χαρακτήρες"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Προσωρινά μη διαθέσιμο. Παρακαλούμε ελέγξτε ξανά αργότερα.)"
@@ -8363,27 +8354,17 @@
       "Share invitation declined": [
         "Η πρόσκληση κοινής χρήσης απορρίφθηκε"
       ],
-      "Sorry, we couldn't delete the folder because it is not empty.": [
-        "Λυπούμαστε, δεν ήταν δυνατή η διαγραφή του φακέλου επειδή δεν είναι κενός.",
-        "Λυπούμαστε, δεν ήταν δυνατή η διαγραφή των φακέλων επειδή δεν είναι κενοί."
-      ],
       "Stopping the sharing of this item has failed": [
         "Η διακοπή της κοινοποίησης αυτού του στοιχείου απέτυχε"
       ],
       "Subfolder failed to be loaded": [
         "Απέτυχε η φόρτωση του υποφακέλου"
       ],
-      "The document failed to be created": [
-        "Απέτυχε η δημιουργία του εγγράφου"
-      ],
       "The link to your item failed to be deleted": [
         "Αποτυχία διαγραφής του συνδέσμου για το στοιχείο σας"
       ],
       "The link to your item was deleted": [
         "Ο σύνδεσμος προς το στοιχείο σας διαγράφηκε"
-      ],
-      "The spreadsheet failed to be created": [
-        "Απέτυχε η δημιουργία του λογιστικού φύλλου"
       ],
       "Trash failed to be emptied": [
         "Αποτυχία εκκαθάρισης Διαγραμμένων"
@@ -9264,17 +9245,6 @@
       ],
       "User Admin": [
         "Διαχειριστής Χρηστών"
-      ]
-    },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Διαμορφώστε πολιτικές ασφαλείας, διατήρηση δεδομένων και υποδομή VPN, και διαχειριστείτε τα αρχεία ελέγχου."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Διαχειριστείτε όλους τους χρήστες, τις ομάδες, την ασφάλεια, τη χρέωση και τις διαμορφώσεις συστήματος."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Διαχειριστείτε χρήστες, ομάδες και χώρο αποθήκευσης για όλα τα μέλη, αναθέστε ρόλους και κατανεμήστε άδειες χρήσης."
       ]
     },
     "Safety review": {
@@ -10494,9 +10464,6 @@
       "Decline invitation?": [
         "Απόρριψη πρόσκλησης;"
       ],
-      "Delete": [
-        "Διαγραφή"
-      ],
       "Delete ${ count } contact": [
         "Διαγραφή ${ count } επαφής",
         "Διαγραφή ${ count } επαφών"
@@ -10504,12 +10471,6 @@
       "Delete ${ count } contact group": [
         "Διαγραφή ${ count } ομάδα επαφών",
         "Διαγραφή ${ count } ομάδες επαφών"
-      ],
-      "Delete ${ links.length } items?": [
-        "Να διαγραφούν τα ${ links.length } στοιχεία;"
-      ],
-      "Delete ${ name }?": [
-        "Διαγραφή ${ name };"
       ],
       "Delete ${ value }": [
         "Διαγραφή ${ value }"

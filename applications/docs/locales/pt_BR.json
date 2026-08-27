@@ -5611,15 +5611,6 @@
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Esse código único pode ser usado por sites e provedores de serviços de internet para vincular sua localização e histórico de navegação ao seu dispositivo"
       ],
-      "This will permanently delete the file you uploaded.": [
-        "Isso excluirá permanentemente o arquivo que você enviou."
-      ],
-      "This will permanently delete the folder you uploaded.": [
-        "Isso excluirá permanentemente a pasta que você enviou."
-      ],
-      "This will permanently delete the selected items you uploaded.": [
-        "Isso excluirá permanentemente os itens selecionados que você enviou."
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Isto irá te desconectar de todas as contas atualmente conectadas."
       ],
@@ -6015,9 +6006,6 @@
     "Label": {
       "${ BRAND_NAME } username": [
         "Nome de usuário da ${ BRAND_NAME }"
-      ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } caracteres"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporariamente indisponível. Retorne mais tarde.)"
@@ -8281,27 +8269,17 @@
       "Share invitation declined": [
         "Convite para compartilhamento recusado"
       ],
-      "Sorry, we couldn't delete the folder because it is not empty.": [
-        "Não foi possível excluir a pasta porque ela não está vazia.",
-        "Não foi possível excluir as pastas porque elas não estão vazias."
-      ],
       "Stopping the sharing of this item has failed": [
         "Erro ao interromper o compartilhamento deste item"
       ],
       "Subfolder failed to be loaded": [
         "Não foi possível carregar a subpasta."
       ],
-      "The document failed to be created": [
-        "O documento não foi criado."
-      ],
       "The link to your item failed to be deleted": [
         "Erro ao excluir o link do seu item"
       ],
       "The link to your item was deleted": [
         "O link para seu item foi excluído"
-      ],
-      "The spreadsheet failed to be created": [
-        "A planilha não foi criada."
       ],
       "Trash failed to be emptied": [
         "Erro ao esvaziar a lixeira"
@@ -9182,17 +9160,6 @@
       ],
       "User Admin": [
         "Administração de usuário"
-      ]
-    },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Configure políticas de segurança, retenção de dados e infraestrutura de VPN, além de gerenciar registros de auditoria."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Gerencie todos os usuários, grupos, segurança, faturamento e configurações do sistema."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Gerencie usuários, grupos e espaço de armazenamento para todos os membros, atribuir funções e distribuir licenças."
       ]
     },
     "Safety review": {
@@ -10412,9 +10379,6 @@
       "Decline invitation?": [
         "Recusar convite?"
       ],
-      "Delete": [
-        "Excluir"
-      ],
       "Delete ${ count } contact": [
         "Excluir ${ count } contato",
         "Excluir ${ count } contatos"
@@ -10422,12 +10386,6 @@
       "Delete ${ count } contact group": [
         "Excluir ${ count } grupo de contatos",
         "Excluir ${ count } grupos de contatos"
-      ],
-      "Delete ${ links.length } items?": [
-        "Excluir ${ links.length } itens?"
-      ],
-      "Delete ${ name }?": [
-        "Excluir ${ name }?"
       ],
       "Delete ${ value }": [
         "Excluir ${ value }"

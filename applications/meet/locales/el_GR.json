@@ -190,9 +190,6 @@
       "Apply changes": [
         "Εφαρμογή αλλαγών"
       ],
-      "Approve participants before they can join": [
-        "Εγκρίνετε τους συμμετέχοντες πριν μπορέσουν να συμμετάσχουν"
-      ],
       "Assign ${ selectedParticipantName } as host": [
         "Ορίστε τον ${ selectedParticipantName } ως οικοδεσπότη"
       ],
@@ -385,11 +382,11 @@
       "Hide participants": [
         "Απόκρυψη συμμετεχόντων"
       ],
-      "Hide self view": [
-        "Απόκρυψη εαυτού"
-      ],
       "Hide timezones": [
         "Απόκρυψη ζωνών ώρας"
+      ],
+      "Incoming video": [
+        "Εισερχόμενο βίντεο"
       ],
       "Insert emoji": [
         "Εισάγετε emoji"
@@ -424,6 +421,9 @@
       "Lower hand": [
         "Κατεβάστε το χέρι"
       ],
+      "Meeting timer": [
+        "Χρονόμετρο σύσκεψης"
+      ],
       "Minimize preview": [
         "Ελαχιστοποίηση προεπισκόπησης"
       ],
@@ -457,14 +457,14 @@
       "Participants join after you approve them": [
         "Οι συμμετέχοντες συμμετέχουν αφού τους εγκρίνετε"
       ],
-      "Participants join the call directly": [
-        "Οι συμμετέχοντες συμμετέχουν απευθείας στην κλήση"
-      ],
       "Paste": [
         "Επικόλληση"
       ],
       "Pause": [
         "Παύση"
+      ],
+      "Picture-in-picture while sharing": [
+        "Εικόνα-μέσα-σε-εικόνα κατά την κοινή χρήση"
       ],
       "Playing back...": [
         "Αναπαραγωγή..."
@@ -570,6 +570,9 @@
       "Search countries": [
         "Αναζήτηση χωρών"
       ],
+      "Self view": [
+        "Προβολή εαυτού"
+      ],
       "Send an encrypted message": [
         "Στείλτε ένα κρυπτογραφημένο μήνυμα"
       ],
@@ -578,12 +581,6 @@
       ],
       "Settings": [
         "Ρυθμίσεις"
-      ],
-      "Show duration": [
-        "Διάρκεια εμφάνισης"
-      ],
-      "Show floating thumbnail during screensharing": [
-        "Εμφάνιση αιωρούμενης μικρογραφίας κατά την κοινή χρήση οθόνης"
       ],
       "Show options": [
         "Εμφάνιση ενεργειών"
@@ -675,17 +672,11 @@
       "Try another method": [
         "Δοκιμάστε μια άλλη μέθοδο"
       ],
-      "Turn off incoming video": [
-        "Απενεργοποίηση εισερχόμενου βίντεο"
-      ],
       "Upgrade": [
         "Αναβάθμιση"
       ],
       "Upgrade now": [
         "Αναβάθμιση τώρα"
-      ],
-      "Upgrade your plan to use waiting room in your next meeting.": [
-        "Αναβαθμίστε το πλάνο σας για να χρησιμοποιήσετε την αίθουσα αναμονής στην επόμενη σύσκεψή σας."
       ],
       "Upload another image": [
         "Μεταφόρτωση άλλης εικόνας"
@@ -728,6 +719,9 @@
       ],
       "View invoice": [
         "Προβολή τιμολογίου"
+      ],
+      "Virtual backgrounds": [
+        "Εικονικά φόντα"
       ],
       "Waiting room": [
         "Αίθουσα αναμονής"
@@ -776,8 +770,8 @@
       "Go to dashboard": [
         "Μετάβαση στον αρχικό πίνακα"
       ],
-      "Hide self view": [
-        "Απόκρυψη εαυτού"
+      "Incoming video": [
+        "Εισερχόμενο βίντεο"
       ],
       "Leave Meeting": [
         "Αποχώρηση από τη Σύσκεψη"
@@ -793,6 +787,9 @@
       ],
       "Meeting details": [
         "Λεπτομέρειες σύσκεψης"
+      ],
+      "Meeting timer": [
+        "Χρονόμετρο σύσκεψης"
       ],
       "More options": [
         "Περισσότερες επιλογές"
@@ -812,6 +809,9 @@
       "Participants": [
         "Συμμετέχοντες"
       ],
+      "Picture-in-picture while sharing": [
+        "Εικόνα-μέσα-σε-εικόνα κατά την κοινή χρήση"
+      ],
       "Raise hand": [
         "Σηκώστε το χέρι"
       ],
@@ -824,14 +824,11 @@
       "Screen share": [
         "Κοινή χρήση οθόνης"
       ],
+      "Self view": [
+        "Προβολή εαυτού"
+      ],
       "Settings": [
         "Ρυθμίσεις"
-      ],
-      "Show duration": [
-        "Διάρκεια εμφάνισης"
-      ],
-      "Show floating thumbnail during screensharing": [
-        "Εμφάνιση αιωρούμενης μικρογραφίας κατά την κοινή χρήση οθόνης"
       ],
       "Stop recording and download.": [
         "Διακοπή καταγραφής και λήψη."
@@ -853,9 +850,6 @@
       ],
       "Toggle settings": [
         "Εναλλαγή ρυθμίσεων"
-      ],
-      "Turn off incoming video": [
-        "Απενεργοποίηση εισερχόμενου βίντεο"
       ],
       "Video settings": [
         "Ρυθμίσεις βίντεο"
@@ -2346,6 +2340,12 @@
       "Anonymous ${ particle } ${ participantNumber }": [
         "Ανώνυμος ${ particle } ${ participantNumber }"
       ],
+      "Anyone with the link can join immediately": [
+        "Όποιος έχει τον σύνδεσμο μπορεί να συμμετάσχει αμέσως"
+      ],
+      "Approve participants before they can join": [
+        "Εγκρίνετε τους συμμετέχοντες πριν μπορέσουν να συμμετάσχουν"
+      ],
       "Are you sure you want to leave?": [
         "Θέλετε σίγουρα να αποχωρήσετε;"
       ],
@@ -2354,6 +2354,9 @@
       ],
       "Attention required": [
         "Απαιτείται προσοχή"
+      ],
+      "Available with a paid plan": [
+        "Διαθέσιμο με πρόγραμμα επί πληρωμή"
       ],
       "Background blur initializing": [
         "Αρχικοποίηση θολώματος φόντου"
@@ -3074,6 +3077,9 @@
       "${ BRAND_NAME } username": [
         "όνομα χρήστη ${ BRAND_NAME }"
       ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } χαρακτήρες"
+      ],
       "${ numberOfStars } star": [
         "${ numberOfStars } αστέρι",
         "${ numberOfStars } αστέρια"
@@ -3556,17 +3562,6 @@
         "Διαχειριστής Χρηστών"
       ]
     },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Διαμορφώστε πολιτικές ασφαλείας, διατήρηση δεδομένων και υποδομή VPN, και διαχειριστείτε τα αρχεία ελέγχου."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Διαχειριστείτε όλους τους χρήστες, τις ομάδες, την ασφάλεια, τη χρέωση και τις διαμορφώσεις συστήματος."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Διαχειριστείτε χρήστες, ομάδες και χώρο αποθήκευσης για όλα τα μέλη, αναθέστε ρόλους και κατανεμήστε άδειες χρήσης."
-      ]
-    },
     "Safety review": {
       "Review account safety": [
         "Έλεγχος ασφάλειας λογαριασμού"
@@ -3699,9 +3694,6 @@
       ]
     },
     "Title": {
-      "Accessibility": [
-        "Προσβασιμότητα"
-      ],
       "Account restricted": [
         "Ο λογαριασμός περιορίστηκε"
       ],
@@ -3729,9 +3721,6 @@
       "Assign a new host": [
         "Ανάθεση νέου οικοδεσπότη"
       ],
-      "Audio": [
-        "Ήχος"
-      ],
       "Available Cameras": [
         "Διαθέσιμες Κάμερες"
       ],
@@ -3740,6 +3729,9 @@
       ],
       "Available Speakers": [
         "Διαθέσιμοι Ομιλητές"
+      ],
+      "Background": [
+        "Φόντο"
       ],
       "Background blur comparison": [
         "Σύγκριση θολώματος φόντου"
@@ -3780,6 +3772,9 @@
       "Delete recording?": [
         "Διαγραφή ηχογράφησης;"
       ],
+      "Display": [
+        "Προβολή"
+      ],
       "Enter your password": [
         "Εισάγετε τον κωδικό πρόσβασης σας"
       ],
@@ -3797,6 +3792,9 @@
       ],
       "Help center": [
         "Κέντρο βοήθειας"
+      ],
+      "Host settings": [
+        "Ρυθμίσεις κεντρικού υπολογιστή"
       ],
       "Human verification": [
         "Ανθρώπινη Επαλήθευση"
@@ -3846,9 +3844,6 @@
       ],
       "Meeting edited": [
         "Η σύσκεψη επεξεργάστηκε"
-      ],
-      "Meeting settings": [
-        "Ρυθμίσεις σύσκεψης"
       ],
       "Messaging Layer Security": [
         "Ασφάλεια Επιπέδου Μηνυμάτων"
@@ -3913,9 +3908,6 @@
       "Secure meeting": [
         "Ασφαλής σύσκεψη"
       ],
-      "Security": [
-        "Ασφάλεια"
-      ],
       "Security code": [
         "Κωδικός ασφαλείας"
       ],
@@ -3952,8 +3944,8 @@
       "Two-factor authentication": [
         "Έλεγχος ταυτότητας δύο παραγόντων"
       ],
-      "Video": [
-        "Βίντεο"
+      "Video and audio": [
+        "Βίντεο και ήχος"
       ],
       "Virtual backgrounds": [
         "Εικονικά φόντα"
@@ -3994,6 +3986,9 @@
       ],
       "Recurring meeting": [
         "Επαναλαμβανόμενη σύσκεψη"
+      ],
+      "Stop sharing your screen to change this setting": [
+        "Διακόψτε την κοινή χρήση της οθόνης σας για να αλλάξετε αυτήν τη ρύθμιση"
       ],
       "You can generate a new meeting link once per day.": [
         "Μπορείτε να δημιουργήσετε έναν νέο σύνδεσμο συνάντησης μία φορά ανά ημέρα."

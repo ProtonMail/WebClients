@@ -9498,9 +9498,6 @@
         "${ n } თვე",
         "${ n } თვე"
       ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } სიმბოლო"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(დრობით მიუწვდომელია. მოგვიანებით სცადეთ)"
       ],
@@ -13473,17 +13470,6 @@
       ],
       "User Admin": [
         "მომხმარებლის ადმინისტრატორი"
-      ]
-    },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "მოარგეთ უსაფრთხოების პოლიტიკა, მონაცემთა შენახვა, VPN ინფრასტრუქტურა და მართეთ აუდიტის ჟურნალები."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "მართეთ ყველა მომხმარებელი, ჯგუფი, უსაფრთხოება, ანგარიშსწორება და სისტემის კონფიგურაციები."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "მართეთ მომხმარებლები, ჯგუფები და საცავი ყველა წევრისთვის, მიანიჭეთ როლები და გადაანაწილეთ ლიცენზიები."
       ]
     },
     "Safety review": {

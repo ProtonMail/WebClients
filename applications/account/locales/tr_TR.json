@@ -2045,6 +2045,12 @@
       "Take a tour": [
         "Keşfedin"
       ],
+      "Template with invite links": [
+        "Davet bağlantıları ile kalıp"
+      ],
+      "Template with passwords": [
+        "Parolalar ile kalıp"
+      ],
       "Test": [
         "Sına"
       ],
@@ -2088,7 +2094,7 @@
         "Verilerin kilidini aç"
       ],
       "Unordered list": [
-        "Sıralanmanış liste"
+        "Sıralanmamış liste"
       ],
       "Unsubscribe": [
         "Abonelikten ayrıl"
@@ -3051,7 +3057,7 @@
         "Aylık"
       ],
       "Two-year": [
-        "Iki yıllık"
+        "İki yıllık"
       ],
       "Yearly": [
         "Yıllık"
@@ -4138,7 +4144,7 @@
         "İçe aktarma özelleştirmesinden çıkılsın mı?"
       ],
       "Quit import?": [
-        "İçe aktarmadan çıkılsın mi?"
+        "İçe aktarmadan çıkılsın mı?"
       ],
       "Remove from the list?": [
         "Listeden kaldırılsın mı?"
@@ -4971,7 +4977,7 @@
         "Tanzanya"
       ],
       "Tanzania, United Republic of": [
-        "Birleşik Tanzaya Cumhuriyeti"
+        "Birleşik Tanzanya Cumhuriyeti"
       ],
       "Thailand": [
         "Tayland"
@@ -7087,7 +7093,7 @@
         "${ BRAND_NAME } dış hesabınızla bağlantı kuramadı"
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
-        "${ errorMessage }. Ayrıca ${ statusPageLink }na da bakabilirsiniz"
+        "${ errorMessage }. ${ statusPageLink } üzerinden de kontrol edebilirsiniz."
       ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "Kullanıcı adınız: ${ user.Name }. ${ emailAddress } oluşturmak için lütfen Ayarlar > Kimlik ve adresler > Kısa etki alanı (pm.me) bölümüne gidin."
@@ -7846,7 +7852,7 @@
         "Bir sorun çıktı. Lütfen yeniden deneyin."
       ],
       "status page": [
-        "durum sayfası"
+        "Durum Sayfası"
       ],
       "Tab closed": [
         "Sekme kapatıldı"
@@ -10213,8 +10219,8 @@
       "${ helpTranslateLink } by joining our localization community.": [
         "${ helpTranslateLink } yerelleştirme topluluğumuza katılabilirsiniz."
       ],
-      "${ IDEAL_BRAND_NAME } mark": [
-        "${ IDEAL_BRAND_NAME } markası"
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "${ IDEAL_WERO_BRAND_NAME } markası"
       ],
       "${ invitedMemberCount } user needs to accept their invite to start receiving group emails.": [
         "${ invitedMemberCount } kullanıcının grup e-postalarını almaya başlaması için daveti kabul etmesi gerekiyor.",
@@ -12725,9 +12731,6 @@
       "Registering your subscription…": [
         "Aboneliğiniz kaydediliyor…"
       ],
-      "Remember to share the user's sign in details with them.": [
-        "Kullanıcının oturum açabilmesi için kimlik doğrulama bilgilerini paylaşmayı unutmayın."
-      ],
       "Remove metadata from images to protect your privacy.": [
         "Gizliliğinizi korumak için görsellerdeki üst verileri kaldırın."
       ],
@@ -13758,8 +13761,8 @@
       "We use 3-D Secure to protect your payments": [
         "Ödemelerinizi korumak için 3-D Secure kullanıyoruz"
       ],
-      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "Bu işlemi tamamlamanız için yeni bir tarayıcı sekmesi açarak sizi ${ IDEAL_BRAND_NAME } sitesine yönlendireceğiz. İşlemi tamamlamak için, varsa açılır pencere engelleyicilerinizi kapatın."
+      "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Bu işlemi tamamlamanız için yeni bir tarayıcı sekmesi açarak sizi ${ IDEAL_WERO_BRAND_NAME } sitesine yönlendireceğiz. İşlemi tamamlamak için, varsa açılır pencere engelleyicilerinizi kapatın."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Bu işlemi tamamlamanız için yeni bir tarayıcı sekmesi açarak sizi PayPal sitesine yönlendireceğiz. İşlemi tamamlamak için, varsa açılır pencere engelleyicilerinizi kapatın."
@@ -14224,6 +14227,9 @@
       ],
       "your encrypted data will be locked": [
         "şifrelenmiş verileriniz kilitlenecek"
+      ],
+      "Your file includes a password for each user, so these accounts will be created with a password instead of an invite link.": [
+        "Dosyanızda her kullanıcı için bir parola bulunur. Bu nedenle bu hesaplar bir davet bağlantısı yerine bir parola ile oluşturulur."
       ],
       "Your files will be encrypted and then saved": [
         "Dosyalarınız şifrelendikten sonra kaydedilir"
@@ -14917,6 +14923,9 @@
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } / ${ humanMaxSpace }"
       ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } karakter"
+      ],
       "${ MAIL_APP_NAME } address": [
         "${ MAIL_APP_NAME } adresi"
       ],
@@ -14943,9 +14952,6 @@
       ],
       "${ PROTON_SENTINEL_NAME } protection": [
         "${ PROTON_SENTINEL_NAME } koruması"
-      ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } karakter"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın.)"
@@ -17303,9 +17309,6 @@
     "mail_signup_2023: Info": {
       "**Get ${ plan }** for a limited time!": [
         "**Sınırlı süreyle ${ plan }** alın!"
-      ],
-      "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
-        "Visionary tarifesine geçin ve ${ BRAND_NAME } öyküsünün bir parçası olun"
       ]
     },
     "mail_signup_2024: Info": {
@@ -17507,9 +17510,6 @@
         "${ seats } koltuk ile",
         "${ seats } koltuk ile"
       ],
-      "100 ${ BRAND_NAME } email addresses": [
-        "100 ${ BRAND_NAME } e-posta adresi"
-      ],
       "Cloud storage and file sharing": [
         "Bulut depolama alanı ve dosya paylaşımı"
       ],
@@ -17530,9 +17530,6 @@
       ],
       "Password manager with team vaults": [
         "Ekip kasaları ile parola yöneticisi"
-      ],
-      "Private and unlimited AI chat (${ LUMO_SHORT_APP_NAME })": [
-        "Gizli ve sınırsız yapay zeka sohbeti (${ LUMO_SHORT_APP_NAME })"
       ],
       "Private video calls for the conversations that matter": [
         "Önemli görüşmeler için gizliliği koruyan görüntülü çağrılar"
@@ -20073,9 +20070,6 @@
       "Create another account instead": [
         "Bunun yerine başka bir hesap oluşturun"
       ],
-      "Keep this plan": [
-        "Bu tarifede kal"
-      ],
       "Open ${ PASS_APP_NAME } vaults": [
         "${ PASS_APP_NAME } kasalarını aç"
       ],
@@ -20090,9 +20084,6 @@
       ],
       "Upgrade": [
         "Yükselt"
-      ],
-      "Upgrade my plan": [
-        "Tarifemi yükselt"
       ]
     },
     "pass_signup_2023: Action - open web app": {
@@ -20147,9 +20138,6 @@
       "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
         "${ priceString } karşılığında ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }"
       ],
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice } aylık"
-      ],
       "/month /user": [
         "/ay /kullanıcı"
       ],
@@ -20167,9 +20155,6 @@
       ],
       "Aliases for email protection from breaches": [
         "E-posta adreslerinin öğrenilmemesi için takma ad ile koruma"
-      ],
-      "Based in Switzerland, GDPR compliant": [
-        "İsviçre merkezli, GDPR uyumlu"
       ],
       "But you can get ${ discountPercentString } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Ancak **${ upsellPlanTitle }** tarifesine yükselterek, aylık yalnızca ${ relativePrice } ek ödeme ile ${ discountPercentString } indirimden yararlanabilirsiniz."
@@ -20198,9 +20183,6 @@
       "Creating your account": [
         "Hesabınız oluşturuluyor"
       ],
-      "Current plan": [
-        "Geçerli tarife"
-      ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } kullanmaya başlamak için ilgili uygulamaları ve eklentileri indirip kurun"
       ],
@@ -20222,15 +20204,6 @@
       "Everything from ${ planTitle }, plus...": [
         "${ planTitle } tarifesindeki her şeye ek olarak"
       ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "Ayda yalnızca **${ relativePrice } daha fazla** ödeyerek ücretli ${ BRAND_NAME } parola yöneticisine erişebilirsiniz!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "Ayda yalnızca **${ relativePrice } daha fazla** ödeyerek ücretli ${ BRAND_NAME } hizmetlerine erişebilirsiniz!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "Ayda yalnızca **${ relativePrice }** daha ödeyerek tüm ücretli ${ BRAND_NAME } hizmetlerine erişebilirsiniz!"
-      ],
       "Free forever": [
         "Sonsuza kadar ücretsiz"
       ],
@@ -20248,9 +20221,6 @@
       ],
       "Get unlimited privacy for two": [
         "İki kişi için sınırsız gizlilik sağlayın"
-      ],
-      "Includes:": [
-        "İçindekiler:"
       ],
       "Install ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } uygulamasını kurun"
@@ -20644,8 +20614,8 @@
       "Offer unavailable": [
         "Teklif kullanılamıyor"
       ],
-      "Pay with ${ IDEAL_BRAND_NAME }": [
-        "${ IDEAL_BRAND_NAME } ile öde"
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "${ IDEAL_WERO_BRAND_NAME } ile öde"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Deneme süresi sona erdikten sonra aboneliğin etkinleştirilmesi için bir ödeme yöntemi gereklidir."
@@ -20740,8 +20710,8 @@
       "You will soon be redirected to verify your payment.": [
         "Birazdan ödemenizi doğrulamak için yönlendirileceksiniz."
       ],
-      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
-        "${ IDEAL_BRAND_NAME } yalnızca avro ödemelerini desteklediği için para biriminiz avroya (€) dönüştürüldü."
+      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
+        "${ IDEAL_WERO_BRAND_NAME } yalnızca avro ödemelerini desteklediği için para biriminiz avroya (€) dönüştürüldü."
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "SEPA banka havaleleri yalnızca avro ödemelerini desteklediği için para biriminiz avroya (€) dönüştürüldü."
@@ -20754,8 +20724,8 @@
       ]
     },
     "Payments.Error": {
-      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
-        "${ IDEAL_BRAND_NAME } hazırlanamadı. Lütfen bir süre sonra yeniden deneyin."
+      "Failed to initialize ${ IDEAL_WERO_BRAND_NAME }. Please try again later.": [
+        "${ IDEAL_WERO_BRAND_NAME } hazırlanamadı. Lütfen bir süre sonra yeniden deneyin."
       ],
       "Invalid card number": [
         "Kart numarası geçersiz"
@@ -20785,8 +20755,8 @@
       ]
     },
     "Payments.iDEAL": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Bu ödemeyi onayladığınızda, bankanıza ${ BRAND_NAME } ve ödeme hizmeti sağlayıcımız Stripe hizmetine hesabınızdan ödeme alma yetkisi verirsiniz. Bankanızla yaptığınız anlaşmanın koşullarına bağlı olarak, ödemenin yapıldığı tarihten başlayan 8 hafta içinde iade isteğinde bulunabilirsiniz."
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Kabul ederek, ödeme hizmeti sağlayıcımız olan ${ BRAND_NAME } ve Stripe kuruluşlarına, aboneliğiniz için gelecekteki ödemeleri bu banka hesabından SEPA otomatik ödemesi ile alma ve bankanıza bu ödemeleri borçlandırma yetkisi vermiş olursunuz. İlk ödemeniz şimdi ${ IDEAL_WERO_BRAND_NAME } tarafından yapıldı. Siz iptal edene kadar tarifeniz otomatik olarak yenilenecek. Her ödemeden önce sizi bilgilendireceğiz. Otomatik ödemeler için, bankanızla olan anlaşmanızın şartlarına göre, borç tarihinden itibaren 8 hafta içinde bankanızdan geri ödeme isteğinde bulunabilirsiniz. Bu durum, şu anda yaptığınız ${ IDEAL_WERO_BRAND_NAME } ödemesi için geçerli değildir."
       ]
     },
     "Payments.info": {
@@ -22147,17 +22117,6 @@
         "Kullanıcı yöneticisi"
       ]
     },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Güvenlik ilkelerini, verileri tutma kurallarını, VPN altyapısını yapılandırın ve denetim günlüklerini yönetin."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Tüm kullanıcıları, grupları, güvenlik ayarlarını, faturaları ve sistem yapılandırmalarını yönetin."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Tüm üyelerin kullanıcılarını, gruplarını ve depolama alanlarını yönetin, rollerini ve lisanslarını atayın."
-      ]
-    },
     "Safety review": {
       "Code sent to ${ boldValue }": [
         "Kod ${ boldValue } alıcısına gönderildi"
@@ -23510,9 +23469,6 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Sınırsız sayıda hide-my-email takma adı"
-      ],
-      "Up to -${ percentage }%": [
-        "%${ percentage } oranına varan"
       ],
       "Up to 2 users": [
         "2 kullanıcıya kadar"

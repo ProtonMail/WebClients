@@ -25,6 +25,9 @@
       ]
     },
     "Accessibility announcement": {
+      "${ BRAND_NAME } background applied": [
+        "Arrière-plan ${ BRAND_NAME } appliqué"
+      ],
       "${ name } joined the meeting": [
         "${ name } a rejoint la réunion"
       ],
@@ -61,17 +64,38 @@
       "A participant reacted with ${ emoji }": [
         "Un participant a réagi avec ${ emoji }"
       ],
+      "Abstract background applied": [
+        "Arrière-plan abstrait appliqué"
+      ],
+      "Background effect turned off": [
+        "Effet d'arrière-plan désactivé"
+      ],
+      "Beach background applied": [
+        "Arrière-plan de plage appliqué"
+      ],
+      "Blurred background applied": [
+        "Arrière-plan flou appliqué"
+      ],
+      "Coffee place background applied": [
+        "Arrière-plan dans un café appliqué"
+      ],
       "Connected via TURN relay mode due to network restrictions. This may increase latency and affect call quality.": [
         "Connexion via relais TURN en raison de restrictions réseau. Cela peut augmenter la latence et affecter la qualité des appels."
       ],
       "Connection lost. Reconnecting…": [
         "La connexion a été perdue. Reconnexion en cours…"
       ],
+      "Mountain background applied": [
+        "Arrière-plan de montagne appliqué"
+      ],
       "New chat message: ${ message }": [
         "Nouveau message de chat : ${ message }"
       ],
       "Now starting recording": [
         "L'enregistrement commence maintenant"
+      ],
+      "Office background applied": [
+        "Arrière-plan de bureau appliqué"
       ],
       "Reconnected to the meeting": [
         "Reconnecté à la réunion"
@@ -166,9 +190,6 @@
       "Apply changes": [
         "Appliquer les modifications"
       ],
-      "Approve participants before they can join": [
-        "Approuver les participants avant qu'ils puissent joindre"
-      ],
       "Assign ${ selectedParticipantName } as host": [
         "Désigner ${ selectedParticipantName } comme hôte"
       ],
@@ -183,6 +204,9 @@
       ],
       "Back": [
         "Précédent"
+      ],
+      "Backgrounds and effects": [
+        "Arrière-plans et effets"
       ],
       "Blur background": [
         "Flouter l'arrière-plan"
@@ -358,11 +382,11 @@
       "Hide participants": [
         "Masquer les participants"
       ],
-      "Hide self view": [
-        "Masquer mes détails"
-      ],
       "Hide timezones": [
         "Masquer les fuseaux horaires"
+      ],
+      "Incoming video": [
+        "Appel vidéo entrant"
       ],
       "Insert emoji": [
         "Insérer un émoji"
@@ -397,6 +421,9 @@
       "Lower hand": [
         "Baisser la main"
       ],
+      "Meeting timer": [
+        "Minuteur de réunion"
+      ],
       "Minimize preview": [
         "Réduire l'aperçu"
       ],
@@ -430,14 +457,14 @@
       "Participants join after you approve them": [
         "Les participants rejoindront le groupe une fois que vous les aurez validés"
       ],
-      "Participants join the call directly": [
-        "Les participants se joignent directement à l'appel"
-      ],
       "Paste": [
         "Coller"
       ],
       "Pause": [
         "Suspendre"
+      ],
+      "Picture-in-picture while sharing": [
+        "Picture-in-picture pendant le partage"
       ],
       "Previous month": [
         "Mois précédent"
@@ -531,6 +558,9 @@
       "Search countries": [
         "Rechercher dans les pays"
       ],
+      "Self view": [
+        "Vue de soi"
+      ],
       "Send an encrypted message": [
         "Envoyer un message chiffré"
       ],
@@ -539,12 +569,6 @@
       ],
       "Settings": [
         "Paramètres"
-      ],
-      "Show duration": [
-        "Afficher la durée"
-      ],
-      "Show floating thumbnail during screensharing": [
-        "Afficher une vignette flottante pendant le partage d'écran"
       ],
       "Show options": [
         "Afficher les options"
@@ -636,17 +660,11 @@
       "Try another method": [
         "Essayer une autre méthode"
       ],
-      "Turn off incoming video": [
-        "Désactiver la vidéo entrante"
-      ],
       "Upgrade": [
         "Changer d'abonnement"
       ],
       "Upgrade now": [
         "Changer d'abonnement"
-      ],
-      "Upgrade your plan to use waiting room in your next meeting.": [
-        "Mettre à niveau votre abonnement pour utiliser la salle d’attente lors de votre prochaine réunion."
       ],
       "Upload another image": [
         "Importer une autre image"
@@ -689,6 +707,9 @@
       ],
       "View invoice": [
         "Voir la facture"
+      ],
+      "Virtual backgrounds": [
+        "Arrière-plans virtuels"
       ],
       "Waiting room": [
         "Salle d'attente"
@@ -737,8 +758,8 @@
       "Go to dashboard": [
         "Aller au tableau de bord"
       ],
-      "Hide self view": [
-        "Masquer ma vue"
+      "Incoming video": [
+        "Appel vidéo entrant"
       ],
       "Leave Meeting": [
         "Quitter la réunion"
@@ -754,6 +775,9 @@
       ],
       "Meeting details": [
         "Informations de la réunion"
+      ],
+      "Meeting timer": [
+        "Minuteur de réunion"
       ],
       "More options": [
         "Plus d'options"
@@ -773,6 +797,9 @@
       "Participants": [
         "Participants"
       ],
+      "Picture-in-picture while sharing": [
+        "Picture-in-picture pendant le partage"
+      ],
       "Raise hand": [
         "Lever la main"
       ],
@@ -785,14 +812,11 @@
       "Screen share": [
         "Partage d’écran"
       ],
+      "Self view": [
+        "Vue de soi"
+      ],
       "Settings": [
         "Paramètres"
-      ],
-      "Show duration": [
-        "Afficher la durée"
-      ],
-      "Show floating thumbnail during screensharing": [
-        "Afficher une miniature flottante pendant le partage d'écran"
       ],
       "Stop recording and download.": [
         "Arrêter l'enregistrement et télécharger."
@@ -815,9 +839,6 @@
       "Toggle settings": [
         "Afficher/masquer les paramètres"
       ],
-      "Turn off incoming video": [
-        "Désactiver la vidéo entrante"
-      ],
       "Video settings": [
         "Paramètres vidéo"
       ],
@@ -839,6 +860,9 @@
       ],
       "Backgrounds": [
         "Arrière-plans"
+      ],
+      "Blur and personal": [
+        "Flou et personnel"
       ],
       "Chat": [
         "Chat"
@@ -2250,8 +2274,17 @@
       "Advanced mode: tune every blur constant for the next version, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
         "Mode avancé : réglez chaque constante de flou pour la version suivante, puis cliquez sur « Appliquer » pour actualiser l'aperçu. Les modifications manuelles ont priorité sur les valeurs définies dans le fichier et dans Unleash."
       ],
+      "Allow camera access to preview your background": [
+        "Autorisez l'accès à la caméra pour prévisualiser votre arrière-plan"
+      ],
       "Anonymous ${ particle } ${ participantNumber }": [
         "${ particle } anonyme : ${ participantNumber }"
+      ],
+      "Anyone with the link can join immediately": [
+        "Toute personne disposant du lien peut rejoindre immédiatement"
+      ],
+      "Approve participants before they can join": [
+        "Approuver les participants avant qu'ils puissent joindre"
       ],
       "Are you sure you want to leave?": [
         "Voulez-vous vraiment quitter ?"
@@ -2261,6 +2294,9 @@
       ],
       "Attention required": [
         "Attention requise"
+      ],
+      "Available with a paid plan": [
+        "Disponible avec un abonnement payant"
       ],
       "Background blur initializing": [
         "Initialisation en cours du flou d'arrière-plan"
@@ -2942,12 +2978,21 @@
       ]
     },
     "Label": {
+      "${ BRAND_NAME } background": [
+        "Arrière-plan ${ BRAND_NAME }"
+      ],
       "${ BRAND_NAME } username": [
         "Nom d'utilisateur ${ BRAND_NAME }"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } caractères"
       ],
       "${ numberOfStars } star": [
         "${ numberOfStars } favori",
         "${ numberOfStars } favoris"
+      ],
+      "Abstract background": [
+        "Arrière-plan abstrait"
       ],
       "Add optional details": [
         "Ajouter des informations facultatives"
@@ -2979,6 +3024,9 @@
       "Background color": [
         "Couleur d'arrière-plan"
       ],
+      "Beach background": [
+        "Arrière-plan de plage"
+      ],
       "Blurred (next)": [
         "Flou (suivant)"
       ],
@@ -3002,6 +3050,9 @@
       ],
       "Code is 6 digits without spaces": [
         "Le code est composé de 6 chiffres sans espaces."
+      ],
+      "Coffee place background": [
+        "Arrière-plan dans un café"
       ],
       "Connection Quality": [
         "Qualité de la connexion"
@@ -3108,6 +3159,9 @@
       "Monday to Friday": [
         "Du lundi au vendredi"
       ],
+      "Mountain background": [
+        "Arrière-plan de montagne"
+      ],
       "Muted": [
         "Muet"
       ],
@@ -3116,6 +3170,9 @@
       ],
       "Next": [
         "Suivant"
+      ],
+      "Office background": [
+        "Arrière-plan de bureau"
       ],
       "Operating system": [
         "Système d'exploitation"
@@ -3409,17 +3466,6 @@
         "Administrateur des utilisateurs"
       ]
     },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Configurez les politiques de sécurité, la conservation des données et l’infrastructure VPN, et gérez les journaux d’audit."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Gérez tous les utilisateurs, groupes, sécurité, facturation, journaux d'audit et configurations système."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Gérez les utilisateurs, les groupes et le stockage de tous les membres, attribuez des rôles et attribuez des licences."
-      ]
-    },
     "Safety review": {
       "Review account safety": [
         "Vérifier la sécurité du compte"
@@ -3547,9 +3593,6 @@
       ]
     },
     "Title": {
-      "Accessibility": [
-        "Accessibilité"
-      ],
       "Account restricted": [
         "Compte restreint"
       ],
@@ -3577,9 +3620,6 @@
       "Assign a new host": [
         "Désigner un nouvel hôte"
       ],
-      "Audio": [
-        "Audio"
-      ],
       "Available Cameras": [
         "Caméras disponibles"
       ],
@@ -3589,11 +3629,17 @@
       "Available Speakers": [
         "Haut-parleurs disponibles"
       ],
+      "Background": [
+        "Arrière plan"
+      ],
       "Background blur comparison": [
         "Comparaison du flou d'arrière-plan"
       ],
       "Backgrounds": [
         "Arrière-plans"
+      ],
+      "Blur and personal": [
+        "Flou et personnel"
       ],
       "Camera and microphone are blocked": [
         "La caméra et le microphone sont bloqués."
@@ -3625,6 +3671,9 @@
       "Delete recording?": [
         "Supprimer l'enregistrement ?"
       ],
+      "Display": [
+        "Affichage"
+      ],
       "Enter your password": [
         "Saisissez votre mot de passe"
       ],
@@ -3642,6 +3691,9 @@
       ],
       "Help center": [
         "Aide & Support"
+      ],
+      "Host settings": [
+        "Paramètres de l'hôte"
       ],
       "Human verification": [
         "Vérification que vous n'êtes pas un robot"
@@ -3688,9 +3740,6 @@
       ],
       "Meeting edited": [
         "La réunion a été modifiée"
-      ],
-      "Meeting settings": [
-        "Paramètres des réunions"
       ],
       "Messaging Layer Security": [
         "Messaging Layer Security"
@@ -3755,9 +3804,6 @@
       "Secure meeting": [
         "Réunion sécurisée"
       ],
-      "Security": [
-        "Sécurité"
-      ],
       "Security code": [
         "Code de sécurité"
       ],
@@ -3791,8 +3837,8 @@
       "Two-factor authentication": [
         "Authentification à deux facteurs"
       ],
-      "Video": [
-        "Vidéo"
+      "Video and audio": [
+        "Vidéo et audio"
       ],
       "Virtual backgrounds": [
         "Arrière-plans virtuels"
@@ -3819,6 +3865,9 @@
       "Background blur is not supported on your browser": [
         "Le flou d'arrière-plan n'est pas pris en charge sur votre navigateur"
       ],
+      "Background effects are not supported on your browser": [
+        "Les effets d'arrière-plan ne sont pas pris en charge sur votre navigateur"
+      ],
       "Generate a new meeting link. The current link will stop working.": [
         "Générer un nouveau lien de réunion. Le lien actuel cessera de fonctionner."
       ],
@@ -3827,6 +3876,9 @@
       ],
       "Recurring meeting": [
         "Réunion récurrente"
+      ],
+      "Stop sharing your screen to change this setting": [
+        "Arrêtez le partage d'écran pour modifier ce paramètre"
       ],
       "You can generate a new meeting link once per day.": [
         "Vous pouvez générer un nouveau lien de réunion une fois par jour."
