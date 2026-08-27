@@ -1369,6 +1369,9 @@
       "Take a tour": [
         "Ta en rundtur"
       ],
+      "Template with passwords": [
+        "Mall med lösenord"
+      ],
       "Test": [
         "Test"
       ],
@@ -4925,6 +4928,9 @@
       ],
       "Cannot download a folder": [
         "Kan inte ladda ner en mapp"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Kan inte, flytta objekt utan giltigt namn, byt namn på objektet först"
       ],
       "Cannot share root folder": [
         "Kan inte dela rotmapp"
@@ -9027,9 +9033,6 @@
       "Registering your subscription…": [
         "Registrerar din prenumeration …"
       ],
-      "Remember to share the user's sign in details with them.": [
-        "Kom ihåg att dela användarens inloggningsinformation med dem."
-      ],
       "Request a phone call": [
         "Begär ett telefonsamtal"
       ],
@@ -10366,6 +10369,9 @@
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } av ${ humanMaxSpace }"
       ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } tecken"
+      ],
       "${ MAIL_APP_NAME } address": [
         "${ MAIL_APP_NAME }-adress"
       ],
@@ -10382,9 +10388,6 @@
       ],
       "${ PROTON_SENTINEL_NAME } protection": [
         "${ PROTON_SENTINEL_NAME }-skydd"
-      ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } tecken"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Tillfälligt otillgänglig. Återkom senare.)"
@@ -13334,6 +13337,11 @@
         "Prova det nu"
       ]
     },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Du har nu åtkomst till nya ${ CALENDAR_APP_NAME }. ${ link }"
+      ]
+    },
     "Notification": {
       "${ reason } has been disabled": [
         "${ reason } har inaktiverats"
@@ -14105,9 +14113,6 @@
       "More plans are available in other currencies": [
         "Fler paket är tillgängliga i andra valutor"
       ],
-      "Pay with ${ IDEAL_BRAND_NAME }": [
-        "Betala med ${ IDEAL_BRAND_NAME }"
-      ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Betalningsmetod krävs för att prenumerationen ska aktiveras efter provperioden är slut."
       ],
@@ -14200,9 +14205,6 @@
       ],
       "You will soon be redirected to verify your payment.": [
         "Du kommer snart att omdirigeras för att verifiera din betalning."
-      ],
-      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
-        "Din valuta har ändrats till euro (€) på grund av att  ${ IDEAL_BRAND_NAME } endast stödjer betalningar i euro."
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Din valuta har ändrats till euro (€) eftersom SEPA-banköverföringar endast stöder betalningar i euro."
@@ -15359,17 +15361,6 @@
       ],
       "User Admin": [
         "Användaradministratör"
-      ]
-    },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Konfigurera säkerhetspolicyer, datalagring och VPN-infrastruktur och hantera granskningsloggar."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Hantera alla användare, grupper, säkerhet, fakturering och systemkonfigurationer."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Hantera användare, grupper och lagringsutrymme för alla medlemmar, tilldela roller och allokera licenser."
       ]
     },
     "Safety review": {
@@ -19550,6 +19541,9 @@
       ],
       "Customize import to reduce the number of labels": [
         "Anpassa import för att minska antalet etiketter"
+      ],
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "Status för datamigrering från ${ providerName } till ${ BRAND_NAME }"
       ],
       "Device name and app version": [
         "Enhetsnamn och appversion"
