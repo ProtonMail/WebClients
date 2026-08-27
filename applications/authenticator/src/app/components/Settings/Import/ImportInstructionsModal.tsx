@@ -1,8 +1,5 @@
 import type { FC, MouseEvent, ReactNode } from 'react';
 
-import app from 'proton-authenticator/lib/app';
-import { CONTACT_URL } from 'proton-authenticator/lib/constants';
-import { ImportProvider, UnsupportedImportProviders } from 'proton-authenticator/lib/importers/types';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -10,6 +7,10 @@ import { Href } from '@proton/atoms/Href/Href';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+
+import app from '../../../../lib/app';
+import { CONTACT_URL } from '../../../../lib/constants';
+import { ImportProvider, UnsupportedImportProviders } from '../../../../lib/importers/types';
 
 type Props = {
     provider: ImportProvider;

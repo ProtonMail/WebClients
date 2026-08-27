@@ -1,10 +1,11 @@
 import type { FC } from 'react';
 
-import { useLockSettings } from 'proton-authenticator/app/hooks/useLockSettings';
 import { c } from 'ttag';
 
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
+
+import { useLockSettings } from '../../../hooks/useLockSettings';
 
 type LockSelectProps = {
     disabled?: boolean;

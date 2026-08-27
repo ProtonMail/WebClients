@@ -1,13 +1,13 @@
 import { type PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { clearBackupPassword, saveBackupPassword } from 'proton-authenticator/lib/backup/password';
-import type { ToggleBackupDTO } from 'proton-authenticator/lib/backup/types';
-import { promptValidBackupDirectory } from 'proton-authenticator/lib/backup/writer';
-import biometrics from 'proton-authenticator/lib/locks/biometrics';
-import password from 'proton-authenticator/lib/locks/password';
-import type { AppLock, AppLockDTO } from 'proton-authenticator/lib/locks/types';
-import logger from 'proton-authenticator/lib/logger';
 import { c } from 'ttag';
 
+import { clearBackupPassword, saveBackupPassword } from '../lib/backup/password';
+import type { ToggleBackupDTO } from '../lib/backup/types';
+import { promptValidBackupDirectory } from '../lib/backup/writer';
+import biometrics from '../lib/locks/biometrics';
+import password from '../lib/locks/password';
+import type { AppLock, AppLockDTO } from '../lib/locks/types';
+import logger from '../lib/logger';
 import { createAppAsyncThunk } from './utils';
 
 type Theme = 'auto' | 'dark' | 'light';

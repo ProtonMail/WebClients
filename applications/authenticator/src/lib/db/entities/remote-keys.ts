@@ -1,5 +1,4 @@
-import { AuthenticatorEncryptionTag } from 'proton-authenticator/lib/crypto';
-
+import { AuthenticatorEncryptionTag } from '../../crypto';
 import type { DeriveEncryptedEntity } from './encryption';
 import { defineEncryptedEntity } from './encryption';
 

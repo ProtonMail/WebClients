@@ -1,8 +1,3 @@
-import { clearAppPassword, getAppPassword, setAppPassword } from 'proton-authenticator/lib/auth/appPassword';
-import { db } from 'proton-authenticator/lib/db/db';
-import type { RemoteKey } from 'proton-authenticator/lib/db/entities/remote-keys';
-import logger from 'proton-authenticator/lib/logger';
-
 import type { Maybe, MaybeNull } from '@proton/pass/types/utils';
 import {
     getPersistedSessions,
@@ -10,6 +5,11 @@ import {
 } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import type { Api, DecryptedKey } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
+
+import { db } from '../db/db';
+import type { RemoteKey } from '../db/entities/remote-keys';
+import logger from '../logger';
+import { clearAppPassword, getAppPassword, setAppPassword } from './appPassword';
 
 export type EncryptionKey = {
     id: string;

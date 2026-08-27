@@ -1,17 +1,18 @@
 import { homeDir, join, normalize, sep } from '@tauri-apps/api/path';
 import { open } from '@tauri-apps/plugin-dialog';
 import { create, readDir, remove } from '@tauri-apps/plugin-fs';
-import { getBackupFilenameRegex, parseDateFromFilename } from 'proton-authenticator/lib/backup/filename';
-import { db } from 'proton-authenticator/lib/db/db';
-import { toWasmEntry } from 'proton-authenticator/lib/entries/items';
-import { service } from 'proton-authenticator/lib/wasm/service';
-import type { AppThunkExtra } from 'proton-authenticator/store';
 import { c } from 'ttag';
 
 import { prop } from '@proton/pass/utils/fp/lens';
 import { sortOn } from '@proton/pass/utils/fp/sort';
 import { logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
+
+import type { AppThunkExtra } from '../../store';
+import { db } from '../db/db';
+import { toWasmEntry } from '../entries/items';
+import { service } from '../wasm/service';
+import { getBackupFilenameRegex, parseDateFromFilename } from './filename';
 
 export const BACKUP_MAX_AMOUNT = 5;
 

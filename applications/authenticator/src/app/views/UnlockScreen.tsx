@@ -1,11 +1,6 @@
 import { type FC, useEffect, useState } from 'react';
 
 import { Field, Form, FormikProvider, useFormik } from 'formik';
-import iconGray from 'proton-authenticator/assets/authenticator_icon_gray.png';
-import type { AppLock } from 'proton-authenticator/lib/locks/types';
-import { LOCK_MAX_FAILURES, getFailedAttemptCount } from 'proton-authenticator/lib/locks/utils';
-import { unlock } from 'proton-authenticator/store/lock';
-import { useAppDispatch, useAppSelector } from 'proton-authenticator/store/utils';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -14,6 +9,12 @@ import { PasswordField } from '@proton/pass/components/Form/legacy/PasswordField
 import { prop } from '@proton/pass/utils/fp/lens';
 import { AUTHENTICATOR_APP_NAME } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
+
+import iconGray from '../../assets/authenticator_icon_gray.png';
+import type { AppLock } from '../../lib/locks/types';
+import { LOCK_MAX_FAILURES, getFailedAttemptCount } from '../../lib/locks/utils';
+import { unlock } from '../../store/lock';
+import { useAppDispatch, useAppSelector } from '../../store/utils';
 
 type Props = { lockMode: AppLock };
 

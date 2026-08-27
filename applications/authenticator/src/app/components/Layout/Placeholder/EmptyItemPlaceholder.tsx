@@ -1,11 +1,11 @@
 import type { FC } from 'react';
 
-import { ImportButton } from 'proton-authenticator/app/components/Settings/Import/ImportButton';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import clsx from '@proton/utils/clsx';
 
+import { ImportButton } from '../../Settings/Import/ImportButton';
 import { EmptyPlaceholderImage } from './EmptyPlaceholderImage';
 
 type Props = {

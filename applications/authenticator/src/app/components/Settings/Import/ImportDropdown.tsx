@@ -1,10 +1,10 @@
 import type { FC } from 'react';
 
-import { useItemsActions } from 'proton-authenticator/app/providers/ItemActionsProvider';
-import { ImportProviderValues } from 'proton-authenticator/lib/importers/types';
-
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
+
+import { ImportProviderValues } from '../../../../lib/importers/types';
+import { useItemsActions } from '../../../providers/ItemActionsProvider';
 
 export const ImportDropdown: FC = () => {
     const itemActions = useItemsActions();

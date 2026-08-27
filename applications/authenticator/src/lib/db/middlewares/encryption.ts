@@ -1,13 +1,11 @@
 import type { DBCore, IDType, InsertType, Middleware, PromiseExtended, Table } from 'dexie';
 import { default as Dexie } from 'dexie';
-import logger from 'proton-authenticator/lib/logger';
-import type {
-    DeriveEncryptedEntity,
-    EncryptedEntityDefinition,
-} from 'proton-authenticator/src/lib/db/entities/encryption';
 
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { isObject } from '@proton/pass/utils/object/is-object';
+
+import logger from '../../logger';
+import type { DeriveEncryptedEntity, EncryptedEntityDefinition } from '../entities/encryption';
 
 type EncryptionMiddlewareConfig = {
     db: Dexie;

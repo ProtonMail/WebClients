@@ -1,8 +1,7 @@
-import { Dexie, type Transaction } from 'dexie';
-import type { Item } from 'proton-authenticator/lib/db/entities/items';
-
 import { generateKey as generateAesGcmKey, importKey as importAesGcmKey } from '@protontech/crypto/subtle/aesGcm.ts';
+import { Dexie, type Transaction } from 'dexie';
 
+import type { Item } from '../entities/items';
 import { V4_MIGRATION_BACK_UP_ID, backupForV4, migrateLegacyKeys, upgradeV4 } from './v4';
 
 const createMockTransaction = (returns: { items: any; keys: any }) => {

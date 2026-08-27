@@ -1,13 +1,13 @@
 import { type FC, useState } from 'react';
 
-import { PasswordModal } from 'proton-authenticator/app/components/Settings/Locks/PasswordModal';
-import type { ImportProvider, ImportResultDTO } from 'proton-authenticator/lib/importers/types';
-import { importBackup } from 'proton-authenticator/store/backup';
-import { useAppDispatch } from 'proton-authenticator/store/utils';
 import { c } from 'ttag';
 
 import type { MaybeNull } from '@proton/pass/types';
 
+import type { ImportProvider, ImportResultDTO } from '../../../../lib/importers/types';
+import { importBackup } from '../../../../store/backup';
+import { useAppDispatch } from '../../../../store/utils';
+import { PasswordModal } from '../Locks/PasswordModal';
 import { ImportInstructionsModal } from './ImportInstructionsModal';
 
 type ImportModalProps = {

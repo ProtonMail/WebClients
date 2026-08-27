@@ -1,19 +1,19 @@
 import type { PayloadAction, SerializedError } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
-import { getBackupPassword } from 'proton-authenticator/lib/backup/password';
-import { pruneExcessBackups, readCurrentBackups } from 'proton-authenticator/lib/backup/writer';
-import { StorageKey, db, setupDB } from 'proton-authenticator/lib/db/db';
-import { V4_MIGRATION_BACK_UP_ID } from 'proton-authenticator/lib/db/migrations/v4';
-import logger from 'proton-authenticator/lib/logger';
-import { STORAGE_KEY_IDB_ID } from 'proton-authenticator/lib/storage-key/constants';
-import { StorageKeySource } from 'proton-authenticator/lib/storage-key/types';
-import { loadWasm } from 'proton-authenticator/lib/wasm/service';
-import { resumeSession } from 'proton-authenticator/store/auth';
-import { updateSettings } from 'proton-authenticator/store/settings';
 import { c, msgid } from 'ttag';
 
 import { loadCryptoWorker } from '@proton/shared/lib/helpers/setupCryptoWorker';
 
+import { getBackupPassword } from '../lib/backup/password';
+import { pruneExcessBackups, readCurrentBackups } from '../lib/backup/writer';
+import { StorageKey, db, setupDB } from '../lib/db/db';
+import { V4_MIGRATION_BACK_UP_ID } from '../lib/db/migrations/v4';
+import logger from '../lib/logger';
+import { STORAGE_KEY_IDB_ID } from '../lib/storage-key/constants';
+import { StorageKeySource } from '../lib/storage-key/types';
+import { loadWasm } from '../lib/wasm/service';
+import { resumeSession } from './auth';
+import { updateSettings } from './settings';
 import { checkForUpdates } from './update';
 import { createAppAsyncThunk } from './utils';
 

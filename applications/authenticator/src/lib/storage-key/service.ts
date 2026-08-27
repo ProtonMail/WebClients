@@ -1,9 +1,9 @@
-import logger from 'proton-authenticator/lib/logger';
-
 import { deriveKey } from '@protontech/crypto/subtle/aesGcm.ts';
+
 import { type PubSub, createPubSub } from '@proton/pass/utils/pubsub/factory';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
+import logger from '../logger';
 import { STORAGE_KEY_HKDF_INFO, STORAGE_KEY_IDB_ID, STORAGE_KEY_SALT_LENGTH } from './constants';
 import type { StorageKeyAdapter, StorageKeyRef, StorageKeyResult } from './types';
 import { StorageKeyError, StorageKeySource } from './types';
