@@ -73,7 +73,7 @@ const createParams = () => ({
     allowHealthCheck: vi.fn(),
     triggerFullReconnectionRef: { current: vi.fn() },
     currentKeyRef: { current: null },
-    mlsGroupStateRef: { current: null },
+    refreshMlsGroupState: vi.fn().mockResolvedValue(undefined),
 });
 
 // The wasm side announces a pending agent through this callback.

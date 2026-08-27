@@ -175,6 +175,7 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
         currentKeyRef,
         lastEpochRef,
         mlsGroupStateRef,
+        refreshMlsGroupState,
         getGroupKeyInfo,
         onNewGroupKeyInfo,
         reportMLSRelatedError,
@@ -194,7 +195,7 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
         allowHealthCheck,
         triggerFullReconnectionRef,
         currentKeyRef,
-        mlsGroupStateRef,
+        refreshMlsGroupState,
     });
 
     const cleanupMlsState = useCallback(() => {
