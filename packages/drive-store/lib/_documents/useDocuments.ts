@@ -1,7 +1,4 @@
-import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { queryCreateDocument } from '@proton/shared/lib/api/drive/documents';
-import { getAppHref } from '@proton/shared/lib/apps/helper';
-import { APPS } from '@proton/shared/lib/constants';
 import type { CreateDocumentResult } from '@proton/shared/lib/interfaces/drive/documents';
 import {
     encryptName,
@@ -21,7 +18,6 @@ import useShare from '../../store/_shares/useShare';
 import { useAbortSignal } from '../../store/_views/utils';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import type { LegacyNodeMeta } from '../NodeMeta';
-import type { NodeMeta } from '../NodeMeta';
 import type { DocumentKeys } from './DocumentKeys';
 import type { DocumentNodeMeta } from './interface';
 
@@ -32,7 +28,6 @@ export const useDocuments = () => {
     const { removeLinkForDriveCompat } = useLinksState();
     const { getShareCreatorKeys } = useShare();
     const { renameLink, trashLinks, restoreLinks, deletePermanently, confirmModal } = useActions();
-    const { getLocalID } = useAuthentication();
 
     const getDocumentSigningKeys = async (shareId: string) => {
         // getShareCreatorKeys gets the key from `share.addressId` which is always
@@ -180,21 +175,10 @@ export const useDocuments = () => {
         await getLink(abortSignal, shareId, linkId);
     };
 
-    const getDocumentUrl = ({ volumeId, linkId }: NodeMeta): URL => {
-        const href = getAppHref(`/doc`, APPS.PROTONDOCS, getLocalID());
-        const url = new URL(href);
-
-        url.searchParams.append('volumeId', volumeId);
-        url.searchParams.append('linkId', linkId);
-
-        return url;
-    };
-
     return {
         createDocumentNode,
         getDocumentKeys,
         renameDocument,
-        getDocumentUrl,
         trashDocument,
         restoreDocument,
         deleteDocumentPermanently,

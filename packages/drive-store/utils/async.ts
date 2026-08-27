@@ -17,23 +17,3 @@ export const waitUntil = (conditionFn: () => boolean, abortSignal?: AbortSignal)
         waitForCondition();
     });
 };
-
-export const getSuccessfulSettled = <T>(results: PromiseSettledResult<T>[]) => {
-    const values: T[] = [];
-    results.forEach((result) => {
-        if (result.status === 'fulfilled') {
-            values.push(result.value);
-        } else {
-            console.error(result.reason);
-        }
-    });
-    return values;
-};
-
-export const logSettledErrors = <T>(results: PromiseSettledResult<T>[]) => {
-    results.forEach((result) => {
-        if (result.status === 'rejected') {
-            console.error(result.reason);
-        }
-    });
-};
