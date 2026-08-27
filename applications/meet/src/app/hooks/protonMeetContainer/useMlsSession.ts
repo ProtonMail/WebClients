@@ -7,9 +7,7 @@ import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { useMeetErrorReporting } from '@proton/meet';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { setMlsRetrying } from '@proton/meet/store/slices/connectionSlice';
-import { setMlsGroupState } from '@proton/meet/store/slices/meetingInfo';
 import { selectCaptionsAgentPresent } from '@proton/meet/store/slices/participants/agentParticipantsSlice';
-import type { MLSGroupState } from '@proton/meet/types/types';
 
 import { CAPTIONS_AGENT_RETRY_DELAYS_MS } from '../../constants';
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
@@ -30,7 +28,7 @@ interface UseMlsSessionParams {
     allowHealthCheck: () => void;
     triggerFullReconnectionRef: MutableRefObject<(reason: RejoinReasonInfo) => void>;
     currentKeyRef: MutableRefObject<string | null>;
-    mlsGroupStateRef: MutableRefObject<MLSGroupState | null>;
+    refreshMlsGroupState: (epoch: bigint) => Promise<void>;
 }
 
 export interface UseMlsSessionResult {
@@ -65,7 +63,7 @@ export const useMlsSession = ({
     allowHealthCheck,
     triggerFullReconnectionRef,
     currentKeyRef,
-    mlsGroupStateRef,
+    refreshMlsGroupState,
 }: UseMlsSessionParams): UseMlsSessionResult => {
     const meetCoreClient = useMeetCoreClient();
 
@@ -248,13 +246,7 @@ export const useMlsSession = ({
 
             currentKeyRef.current = groupKeyData.key;
 
-            const displayCode = await meetCoreClient.getGroupDisplayCode();
-            const nextMlsGroupState = {
-                displayCode: displayCode?.full_code || null,
-                epoch: Number(groupKeyData.epoch),
-            };
-            dispatch(setMlsGroupState(nextMlsGroupState));
-            mlsGroupStateRef.current = nextMlsGroupState;
+            await refreshMlsGroupState(groupKeyData.epoch);
 
             allowHealthCheck();
 
