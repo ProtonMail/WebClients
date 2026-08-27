@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { Provider } from 'react-redux';
 
-import { useLocalParticipant, useParticipants, useRoomContext, useTracks } from '@livekit/components-react';
+import { useLocalParticipant, useParticipants, useRoomContext } from '@livekit/components-react';
 import { configureStore } from '@reduxjs/toolkit';
 import { renderHook } from '@testing-library/react';
 import { Track } from 'livekit-client';
@@ -17,6 +17,7 @@ import { useCurrentScreenShare } from './useCurrentScreenShare';
 const mockLocalParticipant = {
     identity: 'local-participant',
     setScreenShareEnabled: vi.fn(),
+    getTrackPublication: vi.fn(),
 };
 
 const mockRoom = {
@@ -28,7 +29,10 @@ const mockRoom = {
 
 const mockTracks = [
     {
-        track: {},
+        track: {
+            on: vi.fn(),
+            off: vi.fn(),
+        },
         kind: Track.Kind.Video,
         source: Track.Source.ScreenShare,
         isMuted: false,
@@ -39,7 +43,6 @@ const mockTracks = [
 vi.mock('@livekit/components-react', () => ({
     useLocalParticipant: vi.fn(),
     useParticipants: vi.fn(),
-    useTracks: vi.fn(),
     useRoomContext: vi.fn(),
 }));
 
@@ -93,7 +96,22 @@ const mockGetDisplayMedia = vi.fn().mockResolvedValue(mockMediaStream);
 const useLocalParticipantMock = useLocalParticipant as Mock;
 const useParticipantsMock = useParticipants as Mock;
 const useRoomContextMock = useRoomContext as Mock;
-const useTracksMock = useTracks as Mock;
+
+const emitRoomEvent = (event: string, ...args: unknown[]) => {
+    const handlers = mockRoom.on.mock.calls.filter((call) => call[0] === event).map((call) => call[1]);
+
+    expect(handlers.length).toBeGreaterThan(0);
+
+    handlers.forEach((handler) => handler(...args));
+};
+
+const createRoomSharingTrack = (track: unknown) => ({
+    ...mockRoom,
+    localParticipant: {
+        ...mockLocalParticipant,
+        getTrackPublication: vi.fn().mockReturnValue({ track }),
+    },
+});
 
 describe('useCurrentScreenShare', () => {
     let store: TestStore;
@@ -122,7 +140,6 @@ describe('useCurrentScreenShare', () => {
 
         // Set up default mocks
         useRoomContextMock.mockReturnValue(mockRoom);
-        useTracksMock.mockReturnValue([]);
     });
 
     afterAll(() => {
@@ -194,6 +211,7 @@ describe('useCurrentScreenShare', () => {
 
         const mockRemoteParticipant = {
             identity: 'remote-participant',
+            getTrackPublication: vi.fn(),
             trackPublications: new Map([
                 ['screen-share', mockPublication1],
                 ['camera', mockPublication2],
@@ -235,11 +253,13 @@ describe('useCurrentScreenShare', () => {
 
         const mockRemoteParticipant1 = {
             identity: 'remote-participant-1',
+            getTrackPublication: vi.fn(),
             trackPublications: new Map([['screen-share', mockPublication1]]),
         };
 
         const mockRemoteParticipant2 = {
             identity: 'remote-participant-2',
+            getTrackPublication: vi.fn(),
             trackPublications: new Map([['screen-share', mockPublication2]]),
         };
 
@@ -255,7 +275,6 @@ describe('useCurrentScreenShare', () => {
 
         renderUseCurrentScreenShare();
 
-        // Should subscribe to all screen shares to ensure useTracks content is consistent
         expect(mockPublication1.setSubscribed).toHaveBeenCalledWith(true);
         expect(mockPublication1.setEnabled).toHaveBeenCalledWith(true);
 
@@ -268,11 +287,6 @@ describe('useCurrentScreenShare', () => {
 
         renderUseCurrentScreenShare();
 
-        // Get the trackPublished event handler
-        const trackPublishedHandler = mockRoom.on.mock.calls.find((call) => call[0] === 'trackPublished')?.[1];
-
-        expect(trackPublishedHandler).toBeDefined();
-
         // Simulate a new screen share being published
         const newScreenSharePublication = {
             source: Track.Source.ScreenShare,
@@ -281,7 +295,7 @@ describe('useCurrentScreenShare', () => {
             setEnabled: vi.fn(),
         };
 
-        trackPublishedHandler(newScreenSharePublication);
+        emitRoomEvent('trackPublished', newScreenSharePublication);
 
         expect(newScreenSharePublication.setSubscribed).toHaveBeenCalledWith(true);
         expect(newScreenSharePublication.setEnabled).toHaveBeenCalledWith(true);
@@ -295,9 +309,6 @@ describe('useCurrentScreenShare', () => {
 
         renderUseCurrentScreenShare();
 
-        // Get the trackPublished event handler
-        const trackPublishedHandler = mockRoom.on.mock.calls.find((call) => call[0] === 'trackPublished')?.[1];
-
         // Simulate a camera track being published
         const cameraPublication = {
             source: Track.Source.Camera,
@@ -306,7 +317,7 @@ describe('useCurrentScreenShare', () => {
             setEnabled: vi.fn(),
         };
 
-        trackPublishedHandler(cameraPublication);
+        emitRoomEvent('trackPublished', cameraPublication);
 
         expect(cameraPublication.setSubscribed).not.toHaveBeenCalled();
         expect(cameraPublication.setEnabled).not.toHaveBeenCalled();
@@ -333,15 +344,7 @@ describe('useCurrentScreenShare', () => {
             off: vi.fn(),
         };
 
-        const mockScreenShareTrack = {
-            publication: {
-                track: mockTrack,
-                trackSid: 'test-track-sid',
-            },
-            participant: mockLocalParticipant,
-        };
-
-        useTracksMock.mockReturnValue([mockScreenShareTrack]);
+        useRoomContextMock.mockReturnValue(createRoomSharingTrack(mockTrack));
         useLocalParticipantMock.mockReturnValue({
             localParticipant: mockLocalParticipant,
         });
@@ -359,15 +362,7 @@ describe('useCurrentScreenShare', () => {
             off: vi.fn(),
         };
 
-        const mockScreenShareTrack1 = {
-            publication: {
-                track: mockTrack1,
-                trackSid: 'track-sid-1',
-            },
-            participant: mockLocalParticipant,
-        };
-
-        useTracksMock.mockReturnValue([mockScreenShareTrack1]);
+        useRoomContextMock.mockReturnValue(createRoomSharingTrack(mockTrack1));
         useLocalParticipantMock.mockReturnValue({
             localParticipant: mockLocalParticipant,
         });
@@ -384,15 +379,7 @@ describe('useCurrentScreenShare', () => {
             off: vi.fn(),
         };
 
-        const mockScreenShareTrack2 = {
-            publication: {
-                track: mockTrack2,
-                trackSid: 'track-sid-2',
-            },
-            participant: mockLocalParticipant,
-        };
-
-        useTracksMock.mockReturnValue([mockScreenShareTrack2]);
+        useRoomContextMock.mockReturnValue(createRoomSharingTrack(mockTrack2));
         rerender();
 
         // Should clean up old listener
