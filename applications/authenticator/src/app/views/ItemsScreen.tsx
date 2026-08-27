@@ -1,21 +1,22 @@
 import { type FC, useCallback, useMemo, useState } from 'react';
 
 import { useLiveQuery } from 'dexie-react-hooks';
-import { ItemEdit } from 'proton-authenticator/app/components/Items/ItemEdit';
-import { ItemsGrid } from 'proton-authenticator/app/components/Items/ItemsGrid';
-import { EmptyItemPlaceholder } from 'proton-authenticator/app/components/Layout/Placeholder/EmptyItemPlaceholder';
-import { OTPOrchestrator } from 'proton-authenticator/app/components/Otp/OtpOrchestrator';
-import { db } from 'proton-authenticator/lib/db/db';
-import type { Item as DatabaseItem } from 'proton-authenticator/lib/db/entities/items';
-import { formatItemName } from 'proton-authenticator/lib/entries/items';
-import { itemSort } from 'proton-authenticator/lib/entries/ordering';
-import { removeEntry, reorderEntry } from 'proton-authenticator/store/entries';
-import { useAppDispatch } from 'proton-authenticator/store/utils';
 import { c } from 'ttag';
 
 import { ConfirmationPrompt } from '@proton/pass/components/Confirmation/ConfirmationPrompt';
 import { useAsyncModalHandles } from '@proton/pass/hooks/useAsyncModalHandles';
 import type { MaybeNull } from '@proton/pass/types';
+
+import { db } from '../../lib/db/db';
+import type { Item as DatabaseItem } from '../../lib/db/entities/items';
+import { formatItemName } from '../../lib/entries/items';
+import { itemSort } from '../../lib/entries/ordering';
+import { removeEntry, reorderEntry } from '../../store/entries';
+import { useAppDispatch } from '../../store/utils';
+import { ItemEdit } from '../components/Items/ItemEdit';
+import { ItemsGrid } from '../components/Items/ItemsGrid';
+import { EmptyItemPlaceholder } from '../components/Layout/Placeholder/EmptyItemPlaceholder';
+import { OTPOrchestrator } from '../components/Otp/OtpOrchestrator';
 
 type Props = {
     search: string;

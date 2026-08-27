@@ -1,19 +1,14 @@
-import { clearStorageAndReload } from 'proton-authenticator/lib/app/utils';
-import { authService } from 'proton-authenticator/lib/auth/service';
-import { StorageKey } from 'proton-authenticator/lib/db/db';
-import {
-    LOCK_MAX_FAILURES,
-    LOCK_STATE_KEY,
-    getFailedAttemptCount,
-    setFailedAttemptCount,
-} from 'proton-authenticator/lib/locks/utils';
-import { StorageKeySource } from 'proton-authenticator/lib/storage-key/types';
 import { c, msgid } from 'ttag';
 
 import type { OfflineConfig } from '@proton/pass/lib/cache/crypto';
 import type { MaybeNull } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
+import { clearStorageAndReload } from '../../app/utils';
+import { authService } from '../../auth/service';
+import { StorageKey } from '../../db/db';
+import { StorageKeySource } from '../../storage-key/types';
+import { LOCK_MAX_FAILURES, LOCK_STATE_KEY, getFailedAttemptCount, setFailedAttemptCount } from '../utils';
 import { getOfflineComponents, verifyOfflinePassword } from './crypto';
 
 const OFFLINE_CONFIG_KEY = 'offline_config';

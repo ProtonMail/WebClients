@@ -1,11 +1,10 @@
-import * as TauriCommands from 'proton-authenticator/lib/tauri/commands';
-
+import * as TauriCommands from '../tauri/commands';
 import { createKeyringAdapter } from './adapter.keyring';
 import { STORAGE_KEY_IDB_ID } from './constants';
 import type { StorageKeyRef } from './types';
 import { StorageKeySource } from './types';
 
-jest.mock('proton-authenticator/lib/tauri/commands', () => ({
+jest.mock('../tauri/commands', () => ({
     commands: {
         getStorageKey: jest.fn(),
         generateStorageKey: jest.fn(),

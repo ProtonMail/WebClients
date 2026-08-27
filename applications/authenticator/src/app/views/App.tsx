@@ -1,10 +1,9 @@
 import { type FC, useState } from 'react';
 
-import { ItemAdd } from 'proton-authenticator/app/components/Items/ItemAdd';
-import { Navbar } from 'proton-authenticator/app/components/Layout/Navbar';
-import { Settings } from 'proton-authenticator/app/views/SettingsScreen';
-
+import { ItemAdd } from '../components/Items/ItemAdd';
+import { Navbar } from '../components/Layout/Navbar';
 import { Items } from './ItemsScreen';
+import { Settings } from './SettingsScreen';
 
 export const App: FC = () => {
     const [search, setSearch] = useState('');

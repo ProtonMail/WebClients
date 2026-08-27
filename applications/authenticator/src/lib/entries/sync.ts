@@ -1,29 +1,7 @@
 import type { WasmEntryOperation, WasmOperationType } from '@protontech/authenticator-rust-core/worker';
-import {
-    createEntries,
-    deleteEntries,
-    getAuthenticatorKeys,
-    getEntries,
-    reorderEntry,
-    storeAuthenticatorKey,
-    updateEntries,
-} from 'proton-authenticator/lib/api';
-import type {
-    AuthenticatorEntriesResponse,
-    AuthenticatorEntryResponse,
-    AuthenticatorKeyResponse,
-    AuthenticatorKeysResponse,
-} from 'proton-authenticator/lib/api/types';
-import { type EncryptionKey, authService } from 'proton-authenticator/lib/auth/service';
-import { db } from 'proton-authenticator/lib/db/db';
-import type { Item } from 'proton-authenticator/lib/db/entities/items';
-import logger from 'proton-authenticator/lib/logger';
-import { withErrorDetails } from 'proton-authenticator/lib/utils/errors';
-import { service } from 'proton-authenticator/lib/wasm/service';
-import type { AppThunkExtra } from 'proton-authenticator/store';
+import { CryptoProxy } from '@protontech/crypto';
 import { c } from 'ttag';
 
-import { CryptoProxy } from '@protontech/crypto';
 import { createPageIterator } from '@proton/pass/lib/api/utils';
 import type { Maybe } from '@proton/pass/types/utils';
 import { prop } from '@proton/pass/utils/fp/lens';
@@ -35,6 +13,28 @@ import type { DecryptedKey } from '@proton/shared/lib/interfaces';
 import chunk from '@proton/utils/chunk';
 import noop from '@proton/utils/noop';
 
+import type { AppThunkExtra } from '../../store';
+import {
+    createEntries,
+    deleteEntries,
+    getAuthenticatorKeys,
+    getEntries,
+    reorderEntry,
+    storeAuthenticatorKey,
+    updateEntries,
+} from '../api';
+import type {
+    AuthenticatorEntriesResponse,
+    AuthenticatorEntryResponse,
+    AuthenticatorKeyResponse,
+    AuthenticatorKeysResponse,
+} from '../api/types';
+import { type EncryptionKey, authService } from '../auth/service';
+import { db } from '../db/db';
+import type { Item } from '../db/entities/items';
+import logger from '../logger';
+import { withErrorDetails } from '../utils/errors';
+import { service } from '../wasm/service';
 import type { WasmRemoteEntryWithKey } from './items';
 import { fromRemoteWasmEntry, toLocalWasmEntry, toWasmEntry } from './items';
 import { getOrderByIndex, itemSyncSortWithOrdering } from './ordering';

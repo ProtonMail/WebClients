@@ -1,11 +1,5 @@
 import { type FC, useEffect, useState } from 'react';
 
-import app from 'proton-authenticator/lib/app';
-import {
-    AUTHENTICATOR_DESKTOP_CHANGELOG_URL,
-    AUTHENTICATOR_LINUX_DOWNLOAD_URL,
-} from 'proton-authenticator/lib/constants';
-import { useAppSelector } from 'proton-authenticator/store/utils';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -15,6 +9,10 @@ import { IcCross } from '@proton/icons/icons/IcCross';
 import { AUTHENTICATOR_APP_NAME } from '@proton/shared/lib/constants';
 import { isMac, isWindows } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
+
+import app from '../../../lib/app';
+import { AUTHENTICATOR_DESKTOP_CHANGELOG_URL, AUTHENTICATOR_LINUX_DOWNLOAD_URL } from '../../../lib/constants';
+import { useAppSelector } from '../../../store/utils';
 
 export const UpdateBar: FC = () => {
     const [show, setShow] = useState(false);

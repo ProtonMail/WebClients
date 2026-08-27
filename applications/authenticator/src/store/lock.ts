@@ -1,8 +1,7 @@
-import biometrics from 'proton-authenticator/lib/locks/biometrics';
-import password from 'proton-authenticator/lib/locks/password';
-import type { AppLockDTO } from 'proton-authenticator/lib/locks/types';
-import { boot } from 'proton-authenticator/store/app';
-
+import biometrics from '../lib/locks/biometrics';
+import password from '../lib/locks/password';
+import type { AppLockDTO } from '../lib/locks/types';
+import { boot } from './app';
 import { createAppAsyncThunk } from './utils';
 
 const unlockElseThrow = async (lock: AppLockDTO) => {

@@ -1,12 +1,13 @@
 import { default as Dexie } from 'dexie';
-import v1 from 'proton-authenticator/lib/db/migrations/v1';
-import v2 from 'proton-authenticator/lib/db/migrations/v2';
-import type { LegacyAuthenticatorDB } from 'proton-authenticator/lib/db/migrations/v3';
-import v3 from 'proton-authenticator/lib/db/migrations/v3';
-import { downgradeToLegacyKeys } from 'proton-authenticator/lib/db/migrations/v4';
-import type { AuthenticatorDB } from 'proton-authenticator/lib/db/types';
-import { closeDB, openDB } from 'proton-authenticator/lib/db/utils';
-import logger from 'proton-authenticator/lib/logger';
+
+import logger from '../../logger';
+import type { AuthenticatorDB } from '../types';
+import { closeDB, openDB } from '../utils';
+import v1 from './v1';
+import v2 from './v2';
+import type { LegacyAuthenticatorDB } from './v3';
+import v3 from './v3';
+import { downgradeToLegacyKeys } from './v4';
 
 /** Downgrades database to v3 for QA testing migration flows. Faster than
  * reinstalling from a prior version. Results in a DB without encryption */

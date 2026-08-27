@@ -1,10 +1,6 @@
 import type { FC } from 'react';
 
 import { Form, FormikProvider, useFormik } from 'formik';
-import type { EntryDTO } from 'proton-authenticator/lib/entries/items';
-import { validateItemForm } from 'proton-authenticator/lib/entries/validation';
-import { addEntry } from 'proton-authenticator/store/entries';
-import { useAppDispatch } from 'proton-authenticator/store/utils';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -13,6 +9,10 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 
+import type { EntryDTO } from '../../../lib/entries/items';
+import { validateItemForm } from '../../../lib/entries/validation';
+import { addEntry } from '../../../store/entries';
+import { useAppDispatch } from '../../../store/utils';
 import { ItemForm } from './ItemForm';
 
 const FORM_ID = 'add-entry-form';

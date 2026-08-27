@@ -1,9 +1,10 @@
 import { decryptData, encryptData } from '@protontech/crypto/subtle/aesGcm.ts';
 import { uint8ArrayToUtf8String, utf8StringToUint8Array } from '@protontech/crypto/utils';
-import { AuthenticatorEncryptionTag } from 'proton-authenticator/lib/crypto';
-import { getStorageKey } from 'proton-authenticator/lib/storage-key/instance';
 
 import type { Maybe } from '@proton/pass/types';
+
+import { AuthenticatorEncryptionTag } from '../crypto';
+import { getStorageKey } from '../storage-key/instance';
 
 const BACKUP_PWD_KEY = 'backup_pw';
 const ENCRYPTION_TAG = utf8StringToUint8Array(AuthenticatorEncryptionTag.BackupPassword);

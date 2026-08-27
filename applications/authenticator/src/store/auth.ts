@@ -1,12 +1,4 @@
 import { createSlice, isAnyOf } from '@reduxjs/toolkit';
-import { resetAPI } from 'proton-authenticator/lib/api';
-import { config } from 'proton-authenticator/lib/app/env';
-import { authService } from 'proton-authenticator/lib/auth/service';
-import { db } from 'proton-authenticator/lib/db/db';
-import { fetchRemoteEntries, fetchRemoteKeys } from 'proton-authenticator/lib/entries/sync';
-import logger from 'proton-authenticator/lib/logger';
-import { commands } from 'proton-authenticator/lib/tauri/commands';
-import { createAutomaticBackup } from 'proton-authenticator/store/backup';
 import { c } from 'ttag';
 
 import { type RequestForkOptions, requestFork as getRequest } from '@proton/pass/lib/auth/fork';
@@ -25,6 +17,14 @@ import type { User } from '@proton/shared/lib/interfaces/User';
 import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys/getDecryptedUserKeys';
 import noop from '@proton/utils/noop';
 
+import { resetAPI } from '../lib/api';
+import { config } from '../lib/app/env';
+import { authService } from '../lib/auth/service';
+import { db } from '../lib/db/db';
+import { fetchRemoteEntries, fetchRemoteKeys } from '../lib/entries/sync';
+import logger from '../lib/logger';
+import { commands } from '../lib/tauri/commands';
+import { createAutomaticBackup } from './backup';
 import { createAppAsyncThunk } from './utils';
 
 export type SyncState = 'off' | 'loading' | 'on' | 'error';

@@ -1,28 +1,24 @@
 import { default as Dexie } from 'dexie';
-import {
-    clearBackupPassword,
-    resolveBackupPassword,
-    saveBackupPassword,
-} from 'proton-authenticator/lib/backup/password';
-import { DATABASE_NAME } from 'proton-authenticator/lib/db/constants';
-import setupDBVersions from 'proton-authenticator/lib/db/migrations';
-import type { AuthenticatorDB } from 'proton-authenticator/lib/db/types';
-import { AuthenticatorDBMigrationError, closeDB, getCurrentDBVersion, openDB } from 'proton-authenticator/lib/db/utils';
-import logger from 'proton-authenticator/lib/logger';
-import { createFallbackAdapter } from 'proton-authenticator/lib/storage-key/adapter.fallback';
-import { createKeyringAdapter } from 'proton-authenticator/lib/storage-key/adapter.keyring';
-import { createPasswordAdapter } from 'proton-authenticator/lib/storage-key/adapter.password';
-import { registerStorageKey } from 'proton-authenticator/lib/storage-key/instance';
-import { createStorageKeyService } from 'proton-authenticator/lib/storage-key/service';
-import { StorageKeySource } from 'proton-authenticator/lib/storage-key/types';
 import { c } from 'ttag';
 
 import { AUTHENTICATOR_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
+import { clearBackupPassword, resolveBackupPassword, saveBackupPassword } from '../backup/password';
+import logger from '../logger';
+import { createFallbackAdapter } from '../storage-key/adapter.fallback';
+import { createKeyringAdapter } from '../storage-key/adapter.keyring';
+import { createPasswordAdapter } from '../storage-key/adapter.password';
+import { registerStorageKey } from '../storage-key/instance';
+import { createStorageKeyService } from '../storage-key/service';
+import { StorageKeySource } from '../storage-key/types';
+import { DATABASE_NAME } from './constants';
 import { ItemEntity } from './entities/items';
 import { RemoteKeyEntity } from './entities/remote-keys';
 import { createEncryptionMiddleware } from './middlewares/encryption';
+import setupDBVersions from './migrations';
+import type { AuthenticatorDB } from './types';
+import { AuthenticatorDBMigrationError, closeDB, getCurrentDBVersion, openDB } from './utils';
 
 export const db = new Dexie(DATABASE_NAME, { autoOpen: false }) as AuthenticatorDB;
 
