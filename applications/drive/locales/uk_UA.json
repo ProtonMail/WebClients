@@ -6570,9 +6570,6 @@
       "We use 3-D Secure to protect your payments": [
         "Ми використовуємо 3-D Secure для захисту ваших платежів"
       ],
-      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "Ми перенаправимо вас на сайт ${ IDEAL_BRAND_NAME } у новій вкладці браузера для завершення цієї транзакції. Якщо ви використовуєте блокувальники спливних вікон, будь ласка, вимкніть їх, щоб продовжити."
-      ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Ми перенаправимо вас на PayPal на новій вкладці браузера для завершення цієї транзакції. Якщо ви користуєтесь блокувальниками вмісту, вимкніть їх перед продовженням."
       ],
@@ -6925,9 +6922,6 @@
         "${ nbYear } роки",
         "${ nbYear } років",
         "${ nbYear } років"
-      ],
-      "${ value.length }/${ maxLength } characters": [
-        "Символів: ${ value.length }/${ maxLength }"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Тимчасово недоступно. Повторіть спробу пізніше.)"
@@ -9875,9 +9869,6 @@
       "More plans are available in other currencies": [
         "Більше планів доступно в інших валютах"
       ],
-      "Pay with ${ IDEAL_BRAND_NAME }": [
-        "Оплатити за допомогою ${ IDEAL_BRAND_NAME }"
-      ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Спосіб оплати потрібен для активації передплати після закінчення пробного періоду."
       ],
@@ -9982,9 +9973,6 @@
       ]
     },
     "Payments.Error": {
-      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
-        "Не вдалося ініціалізувати ${ IDEAL_BRAND_NAME }. Будь ласка, спробуйте ще раз пізніше."
-      ],
       "Invalid card number": [
         "Недійсний номер картки"
       ],
@@ -10007,11 +9995,6 @@
     "Payments.error": {
       "Something went wrong. Google Pay verification failed.": [
         "Щось пішло не так. Перевірка Google Pay не вдалася."
-      ]
-    },
-    "Payments.iDEAL": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Підтверджуючи цей платіж, ви надаєте дозвіл компанії ${ BRAND_NAME } та Stripe, нашому постачальнику платіжних послуг, дати вказівку вашому банку списати відповідну суму з вашого рахунку. Ви можете отримати повернення коштів протягом 8 тижнів з дати списання відповідно до умов вашої угоди з банком."
       ]
     },
     "Payments.info": {
@@ -10572,17 +10555,6 @@
       ],
       "User Admin": [
         "Адміністратор користувачів"
-      ]
-    },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Налаштовувати політики безпеки, зберігання даних та інфраструктуру VPN, а також керувати журналами аудиту."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Керувати всіма користувачами, групами, безпекою, виставленням рахунків та системними конфігураціями."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Керувати користувачами, групами та сховищем для всіх членів, призначати ролі та розподіляти ліцензії."
       ]
     },
     "Safety review": {
