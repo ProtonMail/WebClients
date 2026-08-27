@@ -1,22 +1,15 @@
 import { c } from 'ttag'
 import { createStringifier } from '../../stringifier'
-import type { EditorRequiresClientMethods } from '@proton/docs-shared'
 import { Icon } from '../ui'
-import { useAppPlatform } from '../../../../Hooks/useAppPlatform'
 import { useActiveBreakpoint } from '../../useActiveBreakpoint'
 import { useSheetsDependencies } from '../../SheetsDependenciesProvider'
 
 const { s } = createStringifier(strings)
 
-interface EditingButtonProps {
-  clientInvoker: EditorRequiresClientMethods
-}
-
-export function EditingDisabledButton({ clientInvoker }: EditingButtonProps) {
-  const { canEdit } = useSheetsDependencies()
+export function EditingDisabledButton() {
+  const { canEdit, appPlatform, showGenericInfoModal } = useSheetsDependencies()
   const { viewportWidth } = useActiveBreakpoint()
   const isSmallViewport = viewportWidth['<=small']
-  const appPlatform = useAppPlatform(clientInvoker)
 
   const visible = appPlatform === 'nativeMobileWeb' && canEdit && isSmallViewport
   if (!visible) {
@@ -27,7 +20,7 @@ export function EditingDisabledButton({ clientInvoker }: EditingButtonProps) {
     <button
       type="button"
       onClick={() => {
-        clientInvoker.showGenericInfoModal({
+        showGenericInfoModal({
           title: s('Mobile Editing Coming Soon'),
           translatedMessage: s('Info'),
         })
