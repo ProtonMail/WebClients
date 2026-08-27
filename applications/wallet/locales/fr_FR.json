@@ -2760,8 +2760,8 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Assistant d'écriture ${ BRAND_NAME } Scribe"
       ],
-      "${ IDEAL_BRAND_NAME } mark": [
-        "marque ${ IDEAL_BRAND_NAME }"
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "marque ${ IDEAL_WERO_BRAND_NAME }"
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } inclut l'assistant d'écriture ${ BRAND_NAME } Scribe."
@@ -3190,8 +3190,8 @@
       "We use 3-D Secure to protect your payments": [
         "Nous utilisons 3-D Secure pour protéger vos paiements."
       ],
-      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "Nous vous redirigerons vers ${ IDEAL_BRAND_NAME } dans un nouvel onglet du navigateur pour compléter cette transaction. Si vous utilisez des bloqueurs de pop-up, veuillez les désactiver pour continuer."
+      "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Nous vous redirigerons vers ${ IDEAL_WERO_BRAND_NAME } dans un nouvel onglet du navigateur pour compléter cette transaction. Si vous utilisez des bloqueurs de pop-up, veuillez les désactiver pour continuer."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Nous vous redirigerons vers PayPal dans un nouvel onglet du navigateur pour compléter cette transaction. Si vous utilisez des bloqueurs de pop-up, veuillez les désactiver pour continuer."
@@ -3319,12 +3319,12 @@
       "${ BRAND_NAME } username": [
         "Nom d'utilisateur ${ BRAND_NAME }"
       ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } caractères"
+      ],
       "${ n } month": [
         "${ n } mois",
         "${ n } mois"
-      ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } caractères"
       ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Accédez à ${ PASS_APP_NAME } en toute sécurité depuis le terminal, idéal pour les scripts, l'automatisation et les flux de travail de développement."
@@ -4860,8 +4860,8 @@
       "More plans are available in other currencies": [
         "D'autres abonnements sont disponibles dans d'autres devises."
       ],
-      "Pay with ${ IDEAL_BRAND_NAME }": [
-        "Payer avec ${ IDEAL_BRAND_NAME }"
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "Payer avec ${ IDEAL_WERO_BRAND_NAME }"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Un moyen de paiement est requis pour que l'abonnement soit activé après la fin de la version d'essai."
@@ -4944,8 +4944,8 @@
       "You will soon be redirected to verify your payment.": [
         "Vous serez bientôt redirigé vers PayPal pour vérifier votre paiement."
       ],
-      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
-        "Votre devise a été changée en euros (€) car ${ IDEAL_BRAND_NAME } prennent uniquement en charge les paiements en euros."
+      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
+        "Votre devise a été changée en euros (€) car ${ IDEAL_WERO_BRAND_NAME } prennent uniquement en charge les paiements en euros."
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Votre devise a été changée en euros (€) car les virements bancaires SEPA prennent uniquement en charge les paiements en euros."
@@ -4958,8 +4958,8 @@
       ]
     },
     "Payments.Error": {
-      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
-        "L'initialisation de ${ IDEAL_BRAND_NAME } n'a pas abouti. Veuillez réessayer plus tard."
+      "Failed to initialize ${ IDEAL_WERO_BRAND_NAME }. Please try again later.": [
+        "L'initialisation de ${ IDEAL_WERO_BRAND_NAME } n'a pas abouti. Veuillez réessayer plus tard."
       ],
       "Invalid card number": [
         "Le numéro de carte n’est pas valide."
@@ -4989,8 +4989,8 @@
       ]
     },
     "Payments.iDEAL": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "En confirmant ce paiement, vous autorisez ${ BRAND_NAME } et Stripe, notre prestataire de services de paiement, à donner instruction à votre banque de débiter votre compte en conséquence. Vous pouvez obtenir un remboursement dans un délai de 8 semaines à compter de la date de débit, conformément aux conditions de votre accord avec votre banque."
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "En confirmant, vous autorisez ${ BRAND_NAME } et Stripe, notre prestataire de services de paiement, à prélever les futurs paiements liés à votre abonnement sur ce compte bancaire par prélèvement SEPA, et votre banque à débiter ces montants. Votre premier paiement est effectué dès maintenant par ${ IDEAL_WERO_BRAND_NAME }. Votre abonnement est renouvelé automatiquement jusqu’à ce que vous le résiliiez ; nous vous en informerons avant chaque prélèvement. Pour les prélèvements automatiques, vous pouvez demander un remboursement à votre banque dans un délai de 8 semaines à compter de la date de prélèvement, conformément aux conditions de votre contrat bancaire. Cela ne s'applique pas au paiement ${ IDEAL_WERO_BRAND_NAME } que vous effectuez actuellement."
       ]
     },
     "Payments.info": {
@@ -5260,17 +5260,6 @@
       ],
       "User Admin": [
         "Administrateur des utilisateurs"
-      ]
-    },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Configurez les politiques de sécurité, la conservation des données et l’infrastructure VPN, et gérez les journaux d’audit."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Gérez tous les utilisateurs, groupes, sécurité, facturation, journaux d'audit et configurations système."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Gérez les utilisateurs, les groupes et le stockage de tous les membres, attribuez des rôles et attribuez des licences."
       ]
     },
     "Safety review": {
