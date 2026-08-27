@@ -3,7 +3,7 @@ import { useNotifications } from '@proton/app-context/useNotifications'
 import { useConfirmActionModal } from '@proton/components/components/confirmActionModal/ConfirmActionModal'
 import { getDrive, type ProtonDriveClient, type ProtonInvitationWithNode } from '@proton/drive'
 import type { ExtendedInvitationDetails } from '@proton/drive-store/store'
-
+import { traceErrorSDK } from '@proton/docs-core/lib/DriveSDK/traceErrorSDK'
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype'
 import { useCallback, useEffect, useState } from 'react'
 import type { DocInvitesHook } from '@proton/drive-store'
@@ -20,6 +20,7 @@ import { SentryRealtimeInitiatives, traceError } from '@proton/shared/lib/helper
  * If you need to perform actions on invitations, pass accept/reject invite functions etc. via props.
  */
 export const useDocInvites: DocInvitesHook = () => {
+  const drive = getDrive()
   const { createNotification } = useNotifications()
 
   const [isLoading, setIsLoading] = useState(true) // Consistent with legacy
@@ -30,7 +31,10 @@ export const useDocInvites: DocInvitesHook = () => {
   const [recentlyAcceptedInvites, setRecentlyAcceptedInvites] = useState<ExtendedInvitationDetails[]>([])
 
   useEffect(() => {
-    const drive = getDrive()
+    if (!drive) {
+      return
+    }
+
     const { setInvitations } = useDocInvitationsStore.getState()
     const abort = new AbortController()
 
@@ -46,12 +50,7 @@ export const useDocInvites: DocInvitesHook = () => {
         if (abort.signal.aborted) {
           return
         }
-        traceError(error, {
-          tags: {
-            initiative: SentryRealtimeInitiatives.SDK_SWITCH,
-            feature: 'DocsInvitationsDriveSDK',
-          },
-        })
+        traceErrorSDK(error, 'DocsInvitationsDriveSDK')
         createNotification({
           type: 'error',
           text: c('Notification').t`Failed to load invitations`,
@@ -60,11 +59,25 @@ export const useDocInvites: DocInvitesHook = () => {
       .finally(() => {
         setIsLoading(false)
       })
+
     return () => abort.abort()
-  }, [createNotification])
+    // We want dependency on drive so we can fetch when drive becomes available
+  }, [drive, createNotification])
 
   const acceptInvite = useCallback(async (invitation: ExtendedInvitationDetails) => {
     const drive = getDrive()
+
+    if (!drive) {
+      const error = new Error('Drive SDK not initialized')
+      traceError(error, {
+        tags: {
+          initiative: SentryRealtimeInitiatives.SDK_SWITCH,
+          feature: 'DocsInvitationsDriveSDK',
+        },
+      })
+      throw error
+    }
+
     const { updateInvitation, removeInvitation } = useDocInvitationsStore.getState()
 
     updateInvitation(invitation.invitation.invitationId, { isLocked: true })
@@ -80,12 +93,7 @@ export const useDocInvites: DocInvitesHook = () => {
       }
     } catch (error) {
       updateInvitation(invitation.invitation.invitationId, { isLocked: false })
-      traceError(error, {
-        tags: {
-          initiative: SentryRealtimeInitiatives.SDK_SWITCH,
-          feature: 'DocsInvitationsDriveSDK',
-        },
-      })
+      traceErrorSDK(error, 'DocsInvitationsDriveSDK')
       throw error
     }
   }, [])
@@ -111,12 +119,7 @@ export const useDocInvites: DocInvitesHook = () => {
             await drive.rejectInvitation(toReject.invitation.invitationId)
             removeInvitation(toReject.invitation.invitationId)
           } catch (error) {
-            traceError(error, {
-              tags: {
-                initiative: SentryRealtimeInitiatives.SDK_SWITCH,
-                feature: 'DocsInvitationsDriveSDK',
-              },
-            })
+            traceErrorSDK(error, 'DocsInvitationsDriveSDK')
             createNotification({
               type: 'error',
               text: c('Notification').t`Failed to reject invitation`,
