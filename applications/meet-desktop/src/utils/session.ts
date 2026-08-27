@@ -3,6 +3,7 @@ import { app, session, desktopCapturer } from "electron";
 import { isHostAllowed } from "./urls/urlTests";
 import { ALLOWED_PERMISSIONS } from "../constants";
 import { mainLogger } from "./log";
+import { isWindows } from "./helpers";
 
 export const appSession = () => {
     return session.fromPartition("persist:app", { cache: false });
@@ -61,7 +62,11 @@ export const setRequestPermission = () => {
 
                 callback({
                     video: primaryScreen,
-                    audio: "loopback",
+                    // audio: String | WebFrameMain (optional) - If a string is specified, can be loopback or loopbackWithMute.
+                    // Specifying a loopback device will capture system audio, and is currently only supported on Windows.
+                    // If a WebFrameMain is specified, will capture audio from that frame.
+                    // https://www.electronjs.org/docs/latest/api/session#sessetdisplaymediarequesthandlerhandler-opts
+                    ...(isWindows ? { audio: "loopback" } : {}),
                 });
             } catch (error) {
                 callback({});
