@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { useRoomContext, useTracks } from '@livekit/components-react';
+import { useRoomContext } from '@livekit/components-react';
 import type { RemoteTrackPublication } from 'livekit-client';
 import { RoomEvent, Track } from 'livekit-client';
 import { c } from 'ttag';
@@ -15,8 +15,11 @@ import { isChrome, isMobile, isSafari, isWindows } from '@proton/shared/lib/help
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { screenShareQuality } from '../qualityConstants';
-import { useStableCallback } from './useStableCallback';
+import { screenShareQuality } from '../../qualityConstants';
+import { findScreenShare } from '../../utils/findScreenShare';
+import { useStableCallback } from '../useStableCallback';
+import { useScreenShareRoomEvents } from './useScreenShareRoomEvents';
+import { useScreenShareTrack } from './useScreenShareTrack';
 
 export function useCurrentScreenShare({
     stopPiP,
@@ -34,20 +37,18 @@ export function useCurrentScreenShare({
 
     const notifications = useNotifications();
 
-    const screenShareTrack = useTracks([Track.Source.ScreenShare])[0];
-
-    const screenShareParticipant = screenShareTrack?.participant;
-
     const room = useRoomContext();
+
+    const screenShareTrack = useScreenShareTrack();
 
     const stopScreenShare = useStableCallback(() => {
         stopPiP();
         void room.localParticipant.setScreenShareEnabled(false);
     });
 
-    useEffect(() => {
-        dispatch(setParticipantScreenShare(screenShareTrack?.participant?.identity));
-    }, [dispatch, screenShareTrack?.participant?.identity]);
+    useScreenShareRoomEvents(() => {
+        dispatch(setParticipantScreenShare(findScreenShare(room)?.participantIdentity ?? null));
+    });
 
     const startScreenShare = useStableCallback(async () => {
         const start = performance.now();
@@ -136,17 +137,17 @@ export function useCurrentScreenShare({
     });
 
     useEffect(() => {
-        if (screenShareTrack?.publication?.track) {
-            screenShareTrack.publication.track.on('ended', stopPiP);
+        if (!screenShareTrack) {
+            return;
         }
 
+        screenShareTrack.on('ended', stopPiP);
+
         return () => {
-            if (screenShareTrack?.publication?.track) {
-                screenShareTrack.publication.track.off('ended', stopPiP);
-            }
+            screenShareTrack.off('ended', stopPiP);
         };
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [screenShareTrack?.publication?.trackSid]);
+    }, [screenShareTrack]);
 
     useEffect(() => {
         const subscribeToExistingScreenShares = () => {
@@ -182,8 +183,6 @@ export function useCurrentScreenShare({
     }, [room]);
 
     return {
-        screenShareParticipant: screenShareParticipant,
-        screenShareTrack,
         stopScreenShare,
         startScreenShare,
     };

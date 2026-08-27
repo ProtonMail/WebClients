@@ -4,7 +4,7 @@ import { useRoomContext } from '@livekit/components-react';
 import type { RemoteParticipant, RemoteTrackPublication } from 'livekit-client';
 import { Track } from 'livekit-client';
 
-import { useMeetContext } from '../contexts/MeetContext';
+import { useMeetContext } from '../../contexts/MeetContext';
 
 export const useScreenShareUpdates = () => {
     const room = useRoomContext();
@@ -30,5 +30,6 @@ export const useScreenShareUpdates = () => {
         return () => {
             room.off('trackPublished', handleRemoteScreenSharePublication);
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 };
