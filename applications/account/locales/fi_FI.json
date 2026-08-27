@@ -11754,9 +11754,6 @@
       "Registering your subscription…": [
         "Rekisteröidään tilaustasi…"
       ],
-      "Remember to share the user's sign in details with them.": [
-        "Muista jakaa käyttäjälle hänen kirjautumistietonsa."
-      ],
       "Remove metadata from images to protect your privacy.": [
         "Poista kuvien metatiedot suojataksesi yksityisyyttäsi."
       ],
@@ -13834,9 +13831,6 @@
       ],
       "${ PROTON_SENTINEL_NAME } protection": [
         "${ PROTON_SENTINEL_NAME }-suojaus"
-      ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } merkkiä"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Tilapäisesti pois käytöstä. Yritä myöhemmin uudelleen.)"
@@ -16119,9 +16113,6 @@
     "mail_signup_2023: Info": {
       "**Get ${ plan }** for a limited time!": [
         "**Hanki ${ plan }** ajoitetun ajan!"
-      ],
-      "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
-        "Ole Visionary ja olet osa ${ BRAND_NAME } tarinaa"
       ]
     },
     "mail_signup_2024: Info": {
@@ -16317,9 +16308,6 @@
         "${ seats } käyttöpaikka sisältyy",
         "${ seats } käyttöpaikkaa sisältyy"
       ],
-      "100 ${ BRAND_NAME } email addresses": [
-        "100 ${ BRAND_NAME } -sähköpostiosoitetta"
-      ],
       "Cloud storage and file sharing": [
         "Pilvitallennus ja tiedostonjako"
       ],
@@ -16340,9 +16328,6 @@
       ],
       "Password manager with team vaults": [
         "Salasananhallinta tiimiholveilla"
-      ],
-      "Private and unlimited AI chat (${ LUMO_SHORT_APP_NAME })": [
-        "Yksityinen ja rajoittamaton AI-chat (${ LUMO_SHORT_APP_NAME })"
       ],
       "Private video calls for the conversations that matter": [
         "Yksityiset videopuhelut tärkeille keskusteluille"
@@ -18837,9 +18822,6 @@
       "Create another account instead": [
         "Luo sen sijaan toinen tili"
       ],
-      "Keep this plan": [
-        "Pidä tämä tilaus"
-      ],
       "Open ${ PASS_APP_NAME } vaults": [
         "Avaa ${ PASS_APP_NAME } -holvit"
       ],
@@ -18854,9 +18836,6 @@
       ],
       "Upgrade": [
         "Päivitä tilaus"
-      ],
-      "Upgrade my plan": [
-        "Päivitä tilaukseni"
       ]
     },
     "pass_signup_2023: Action - open web app": {
@@ -18911,9 +18890,6 @@
       "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
         "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } hintaan ${ priceString }."
       ],
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice } kuukaudessa"
-      ],
       "/month /user": [
         "/kuukausi /käyttäjä"
       ],
@@ -18931,9 +18907,6 @@
       ],
       "Aliases for email protection from breaches": [
         "Aliakset suojaavat sähköpostia tietomurroilta"
-      ],
-      "Based in Switzerland, GDPR compliant": [
-        "Sveitsissä sijaitseva, GDPR:ää noudattava"
       ],
       "But you can get ${ discountPercentString } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Mutta voitte saada ${ discountPercentString } alennusta päivittämällä tilaukseen **${ upsellPlanTitle }** — se on vain ${ relativePrice } lisää kuukaudessa."
@@ -18962,9 +18935,6 @@
       "Creating your account": [
         "Tiliäsi luodaan"
       ],
-      "Current plan": [
-        "Nykyinen tilaus"
-      ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "Aloita ${ PASS_APP_NAME }ssin käyttäminen lataamalla ja asentamalla tarvitsemasi sovellukset ja laajennukset"
       ],
@@ -18986,15 +18956,6 @@
       "Everything from ${ planTitle }, plus...": [
         "Kaikki ${ planTitle } -tilaukseen kuuluva, ja..."
       ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "Vain **${ relativePrice } kuukausikorotuksella** saat käyttöösi ${ BRAND_NAME }in premium-salsanahallinnan!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "Vain **${ relativePrice } kuukausikorotuksella** saat käyttöösi ${ BRAND_NAME }in premium-VPN:n!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "Saat kaikki ${ BRAND_NAME } premium-palvelut käyttöösi vain **${ relativePrice } kuukausikorotuksella**!"
-      ],
       "Free forever": [
         "Pysyvästi ilmainen"
       ],
@@ -19012,9 +18973,6 @@
       ],
       "Get unlimited privacy for two": [
         "Hanki rajattoman yksityisyyden kahdelle"
-      ],
-      "Includes:": [
-        "Sisältää:"
       ],
       "Install ${ PASS_APP_NAME }": [
         "Asenna ${ PASS_APP_NAME }"
@@ -20857,17 +20815,6 @@
         "Käyttäjähallinta"
       ]
     },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Määritä tietoturvakäytännöt, tietojen säilytysajat ja VPN-infrastruktuuri sekä hallinnoi tarkastuslokeja."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Hallitse kaikkien jäsenten käyttäjiä, ryhmiä ja tallennustilaa, määritä rooleja ja jaa lisenssejä."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Hallitse kaikkien jäsenten käyttäjiä, ryhmiä ja tallennustilaa, määritä rooleja ja jaa lisenssejä."
-      ]
-    },
     "Safety review": {
       "Code sent to ${ boldValue }": [
         "Koodi lähetettiin kohteeseen ${ boldValue }"
@@ -22184,9 +22131,6 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Rajattomasti Hide-my-email-aliaksia"
-      ],
-      "Up to -${ percentage }%": [
-        "Jopa ${ percentage } prosenttia"
       ],
       "Up to 2 users": [
         "2 käyttäjälle"

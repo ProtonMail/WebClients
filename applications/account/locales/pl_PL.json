@@ -11898,9 +11898,6 @@
       "Registering your subscription…": [
         "Rejestrowanie subskrypcji…"
       ],
-      "Remember to share the user's sign in details with them.": [
-        "Pamiętaj, aby udostępnić użytkownikowi dane logowania."
-      ],
       "Remove metadata from images to protect your privacy.": [
         "Usuń metadane ze zdjęć, aby chronić prywatność."
       ],
@@ -14001,9 +13998,6 @@
       ],
       "${ PROTON_SENTINEL_NAME } protection": [
         "Ochrona ${ PROTON_SENTINEL_NAME }"
-      ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } znaków"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Usługa jest tymczasowo niedostępna. Spróbuj ponownie później.)"
@@ -16278,9 +16272,6 @@
     "mail_signup_2023: Info": {
       "**Get ${ plan }** for a limited time!": [
         "**Uzyskaj plan ${ plan }** przez ograniczony czas!"
-      ],
-      "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
-        "Wybierz plan Visionary i bądź częścią historii ${ BRAND_NAME }"
       ]
     },
     "mail_signup_2024: Info": {
@@ -16493,9 +16484,6 @@
         "Uwzględniono ${ seats } licencji",
         "W tym ${ seats } licencji"
       ],
-      "100 ${ BRAND_NAME } email addresses": [
-        "100 adresów e-mail w domenie ${ BRAND_NAME }"
-      ],
       "Cloud storage and file sharing": [
         "Przestrzeń dyskowa w chmurze i udostępnianie plików"
       ],
@@ -16516,9 +16504,6 @@
       ],
       "Password manager with team vaults": [
         "Menadżer haseł z sejfami zespołowymi"
-      ],
-      "Private and unlimited AI chat (${ LUMO_SHORT_APP_NAME })": [
-        "Prywatny i nieograniczony czat AI (${ LUMO_SHORT_APP_NAME })"
       ],
       "Private video calls for the conversations that matter": [
         "Prywatne rozmowy wideo do najważniejszych tematów"
@@ -19086,9 +19071,6 @@
       "Create another account instead": [
         "Utwórz inne konto"
       ],
-      "Keep this plan": [
-        "Zachowaj plan"
-      ],
       "Open ${ PASS_APP_NAME } vaults": [
         "Otwórz sejfy ${ PASS_APP_NAME }"
       ],
@@ -19103,9 +19085,6 @@
       ],
       "Upgrade": [
         "Ulepsz"
-      ],
-      "Upgrade my plan": [
-        "Ulepsz plan"
       ]
     },
     "pass_signup_2023: Action - open web app": {
@@ -19160,9 +19139,6 @@
       "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
         "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } za ${ priceString }."
       ],
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice } miesięcznie"
-      ],
       "/month /user": [
         "/ użytkownika miesięcznie"
       ],
@@ -19180,9 +19156,6 @@
       ],
       "Aliases for email protection from breaches": [
         "Aliasy do ochrony adresów e-mail przed wyciekami"
-      ],
-      "Based in Switzerland, GDPR compliant": [
-        "Ulokowany w Szwajcarii, zgodny z RODO"
       ],
       "But you can get ${ discountPercentString } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Możesz jednak uzyskać zniżkę ${ discountPercentString }, ulepszając plan do wersji **${ upsellPlanTitle }** — to tylko ${ relativePrice } więcej miesięcznie."
@@ -19211,9 +19184,6 @@
       "Creating your account": [
         "Tworzenie konta"
       ],
-      "Current plan": [
-        "Obecny plan"
-      ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "Aby korzystać z ${ PASS_APP_NAME }, pobierz i zainstaluj odpowiednie aplikacje oraz rozszerzenia"
       ],
@@ -19235,15 +19205,6 @@
       "Everything from ${ planTitle }, plus...": [
         "Wszystko, co w planie ${ planTitle }, plus..."
       ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "Za jedyne **${ relativePrice } miesięcznie** więcej, otrzymasz dostęp do menadżera haseł ${ BRAND_NAME } w wersji premium!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "Za jedyne **${ relativePrice } miesięcznie** więcej, otrzymasz dostęp do usługi ${ BRAND_NAME } VPN w wersji premium!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "Za **${ relativePrice } miesięcznie** więcej uzyskasz dostęp do wszystkich funkcji premium usług ${ BRAND_NAME }!"
-      ],
       "Free forever": [
         "Darmowy na zawsze"
       ],
@@ -19261,9 +19222,6 @@
       ],
       "Get unlimited privacy for two": [
         "Uzyskaj nieograniczoną prywatność dla dwojga"
-      ],
-      "Includes:": [
-        "Zawiera:"
       ],
       "Install ${ PASS_APP_NAME }": [
         "Zainstaluj ${ PASS_APP_NAME }"
@@ -21117,17 +21075,6 @@
         "Administrator użytkowników"
       ]
     },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Konfiguruj zasady bezpieczeństwa, przechowywanie danych oraz infrastrukturę VPN i zarządzaj logami audytowymi."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Zarządzaj wszystkimi użytkownikami, grupami, bezpieczeństwem, rozliczeniami i konfiguracjami systemu."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Zarządzaj użytkownikami, grupami i przestrzenią dyskową dla wszystkich członków, przypisuj stanowiska i przydzielaj licencje."
-      ]
-    },
     "Safety review": {
       "Code sent to ${ boldValue }": [
         "Kod został wysłany do ${ boldValue }"
@@ -22504,9 +22451,6 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Nieograniczona liczba aliasów hide-my-email"
-      ],
-      "Up to -${ percentage }%": [
-        "Do -${ percentage }%"
       ],
       "Up to 2 users": [
         "Do 2 użytkowników"

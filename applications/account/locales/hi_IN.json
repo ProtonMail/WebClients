@@ -11632,9 +11632,6 @@
       "Registering your subscription…": [
         "आपकी सदस्यता पंजीकृत की जा रही है…"
       ],
-      "Remember to share the user's sign in details with them.": [
-        "उपयोगकर्ता की साइन इन जानकारी उनके साथ साझा करना ना भूलिए गा।"
-      ],
       "Remove metadata from images to protect your privacy.": [
         "अपनी निजता बचाने के लिए छवियों से मेटाडाटा हटाएं।"
       ],
@@ -13682,9 +13679,6 @@
       ],
       "${ PROTON_SENTINEL_NAME } protection": [
         "${ PROTON_SENTINEL_NAME } सुरक्षा"
-      ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } अक्षर"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(अस्थाई रूप से अनुपलब्ध। कृपया फिर से बाद में जाँच करें।)"
@@ -15943,9 +15937,6 @@
     "mail_signup_2023: Info": {
       "**Get ${ plan }** for a limited time!": [
         "**${ plan } प्राप्त करें** सीमित समय के लिए!"
-      ],
-      "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
-        "Visionary बनें और ${ BRAND_NAME } की कहानी का हिस्सा बनें"
       ]
     },
     "mail_signup_2024: Info": {
@@ -16138,9 +16129,6 @@
         "${ seats } सीट शामिल है",
         "${ seats } सीटें शामिल हैं"
       ],
-      "100 ${ BRAND_NAME } email addresses": [
-        "100 ${ BRAND_NAME } ईमेल पते"
-      ],
       "Cloud storage and file sharing": [
         "क्लाउड स्टोरेज और फाइल शेयर"
       ],
@@ -16161,9 +16149,6 @@
       ],
       "Password manager with team vaults": [
         "टीम तिजोरियों के साथ पासवर्ड मैनेजर"
-      ],
-      "Private and unlimited AI chat (${ LUMO_SHORT_APP_NAME })": [
-        "निजी और असीमित AI चैट (${ LUMO_SHORT_APP_NAME })"
       ],
       "Private video calls for the conversations that matter": [
         "महत्वपूर्ण बातचीत के लिए निजी वीडियो कॉल"
@@ -18647,9 +18632,6 @@
       "Create another account instead": [
         "इसके बजाय एक और खाता बनाएं"
       ],
-      "Keep this plan": [
-        "यह योजना रखें"
-      ],
       "Open ${ PASS_APP_NAME } vaults": [
         "${ PASS_APP_NAME } तिजोरियां खोलें"
       ],
@@ -18664,9 +18646,6 @@
       ],
       "Upgrade": [
         "अपग्रेड करें"
-      ],
-      "Upgrade my plan": [
-        "मेरी योजना को अपग्रेड करें"
       ]
     },
     "pass_signup_2023: Action - open web app": {
@@ -18721,9 +18700,6 @@
       "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
         "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } केवल ${ priceString } पर।"
       ],
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice } प्रति माह"
-      ],
       "/month /user": [
         "/महीना /उपयोगकर्ता"
       ],
@@ -18741,9 +18717,6 @@
       ],
       "Aliases for email protection from breaches": [
         "ईमेल सुरक्षा हेतु लीक से बचने के लिए नकली-नाम"
-      ],
-      "Based in Switzerland, GDPR compliant": [
-        "स्विट्जरलैंड में स्थित, GDPR compliant"
       ],
       "But you can get ${ discountPercentString } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "लेकिन आप **${ upsellPlanTitle }** में अपग्रेड करके ${ discountPercentString } की छूट पा सकते हैं — यह प्रति माह केवल ${ relativePrice } अतिरिक्त है।"
@@ -18772,9 +18745,6 @@
       "Creating your account": [
         "आपका खाता बन रहा है"
       ],
-      "Current plan": [
-        "चालू प्लान"
-      ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "संबंधित ऐप्स और एक्सटेंशन डाउनलोड करें और इंस्टॉल करें ताकि आप ${ PASS_APP_NAME } का उपयोग शुरू कर सकें"
       ],
@@ -18796,15 +18766,6 @@
       "Everything from ${ planTitle }, plus...": [
         "सब कुछ ${ planTitle } से, साथ ही..."
       ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "सिर्फ **${ relativePrice } प्रति माह** अधिक का भुगतान करके, आपको ${ BRAND_NAME } के प्रीमियम पासवर्ड प्रबंधक का एक्सेस मिलेगा!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "सिर्फ **${ relativePrice } प्रति माह** अधिक का भुगतान करके, आपको ${ BRAND_NAME } की प्रीमियम VPN सेवा का एक्सेस मिलेगा!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "सिर्फ **${ relativePrice } प्रति माह** अतिरिक्त में, आपको सभी ${ BRAND_NAME } प्रीमियम सेवाओं तक पहुंच मिलती है!"
-      ],
       "Free forever": [
         "हमेशा मुफ्त"
       ],
@@ -18822,9 +18783,6 @@
       ],
       "Get unlimited privacy for two": [
         "दो व्यक्तियों के लिए असीमित निजता प्राप्त करें"
-      ],
-      "Includes:": [
-        "शामिल:"
       ],
       "Install ${ PASS_APP_NAME }": [
         "इंस्टॉल करें ${ PASS_APP_NAME }"
@@ -20600,17 +20558,6 @@
         "उपयोगकर्ता एडमिन"
       ]
     },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "सुरक्षा नीतियां, डेटा रिटेंशन और VPN बुनियादी ढांचे को कॉन्फ़िगर करें, और ऑडिट लॉग संभाले।"
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "सभी उपयोगकर्ताओं, ग्रुप, सुरक्षा, बिलिंग और सिस्टम संरचनाओं को संभाले।"
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "सभी सदस्यों के लिए उपयोगकर्ताओं, ग्रुप और स्टोरेज को संभाले, भूमिकाएं सौंपें, और लाइसेंस आवंटित करें।"
-      ]
-    },
     "Safety review": {
       "Code sent to ${ boldValue }": [
         "${ boldValue } को कोड भेजा गया"
@@ -21919,9 +21866,6 @@
       ],
       "Unlimited hide-my-email aliases": [
         "असीमित Hide-my-email नकलीनाम"
-      ],
-      "Up to -${ percentage }%": [
-        "-${ percentage }% तक"
       ],
       "Up to 2 users": [
         "2 यूज़र तक"

@@ -12212,9 +12212,6 @@
       "Registering your subscription…": [
         "جارٍ تسجيل اشتراكك…"
       ],
-      "Remember to share the user's sign in details with them.": [
-        "تذكر مشاركة تفاصيل تسجيل دخول المستخدم معه."
-      ],
       "Remove metadata from images to protect your privacy.": [
         "أزل البيانات الوصفية من الصور لحماية خصوصيتك."
       ],
@@ -14404,9 +14401,6 @@
       ],
       "${ PROTON_SENTINEL_NAME } protection": [
         "حماية ${ PROTON_SENTINEL_NAME }"
-      ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } حرف"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(غير متاح مؤقتًا. يرجى المحاولة مرة أخرى لاحقًا.)"
@@ -16715,9 +16709,6 @@
     "mail_signup_2023: Info": {
       "**Get ${ plan }** for a limited time!": [
         "**احصل على ${ plan }** لفترة محدودة!"
-      ],
-      "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
-        "انضم إلى Visionary وكن جزءًا من قصة ${ BRAND_NAME }"
       ]
     },
     "mail_signup_2024: Info": {
@@ -16950,9 +16941,6 @@
         "${ seats } مقعدًا مشمولًا",
         "${ seats } مقعد مشمول"
       ],
-      "100 ${ BRAND_NAME } email addresses": [
-        "100 عنوان بريد إلكتروني من ${ BRAND_NAME }"
-      ],
       "Cloud storage and file sharing": [
         "تخزين سحابي ومشاركة الملفات"
       ],
@@ -16973,9 +16961,6 @@
       ],
       "Password manager with team vaults": [
         "مدير كلمات مرور مع خزائن جماعية"
-      ],
-      "Private and unlimited AI chat (${ LUMO_SHORT_APP_NAME })": [
-        "دردشة ذكاء اصطناعي خاصة وغير محدودة (${ LUMO_SHORT_APP_NAME })"
       ],
       "Private video calls for the conversations that matter": [
         "مكالمات فيديو خاصة للمحادثات المهمة"
@@ -19627,9 +19612,6 @@
       "Create another account instead": [
         "إنشاء حساب آخر بدلاً من ذلك"
       ],
-      "Keep this plan": [
-        "الاحتفاظ بهذه الخطة"
-      ],
       "Open ${ PASS_APP_NAME } vaults": [
         "فتح خزائن ${ PASS_APP_NAME }"
       ],
@@ -19644,9 +19626,6 @@
       ],
       "Upgrade": [
         "الترقية"
-      ],
-      "Upgrade my plan": [
-        "ترقية خطتي"
       ]
     },
     "pass_signup_2023: Action - open web app": {
@@ -19701,9 +19680,6 @@
       "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
         "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } بسعر ${ priceString }."
       ],
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice } شهريًا"
-      ],
       "/month /user": [
         "/شهريًا /للمستخدم"
       ],
@@ -19721,9 +19697,6 @@
       ],
       "Aliases for email protection from breaches": [
         "أسماء مستعارة لحماية البريد الإلكتروني من الاختراقات"
-      ],
-      "Based in Switzerland, GDPR compliant": [
-        "يقع مقرها في سويسرا وتمتثل للقانون الأوروبي لحماية البيانات (GDPR)"
       ],
       "But you can get ${ discountPercentString } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "لكن يمكن الحصول على خصم ${ discountPercentString } بالترقية إلى **${ upsellPlanTitle }** — مقابل ${ relativePrice } إضافية فقط شهريًا."
@@ -19752,9 +19725,6 @@
       "Creating your account": [
         "جاري إنشاء حسابك"
       ],
-      "Current plan": [
-        "الخطة الحالية"
-      ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "نزِّل وثبِّت التطبيقات والملحقات ذات الصلة لبدء استخدام ${ PASS_APP_NAME }"
       ],
@@ -19776,15 +19746,6 @@
       "Everything from ${ planTitle }, plus...": [
         "كل شيء من خطة ${ planTitle }، بالإضافة إلى..."
       ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "مقابل **${ relativePrice } شهريًا** فقط إضافية، يمكنك الوصول إلى مدير كلمات المرور المميز من ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "مقابل **${ relativePrice } شهريًا** فقط إضافية، يمكنك الوصول إلى خدمة VPN المميزة من ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "مقابل **${ relativePrice } إضافية شهريًا** فقط، ستحصل على وصول إلى جميع خدمات ${ BRAND_NAME } المميزة!"
-      ],
       "Free forever": [
         "مجاني للأبد"
       ],
@@ -19802,9 +19763,6 @@
       ],
       "Get unlimited privacy for two": [
         "احصل على خصوصية غير محدودة لشخصين"
-      ],
-      "Includes:": [
-        "تتضمن:"
       ],
       "Install ${ PASS_APP_NAME }": [
         "ثبِّت ${ PASS_APP_NAME }"
@@ -21640,17 +21598,6 @@
         "مسؤول مستخدمين"
       ]
     },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "تكوين سياسات الأمان، والاحتفاظ بالبيانات، والبنية التحتية لـ VPN، وإدارة سجلات التدقيق."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "إدارة جميع المستخدمين والمجموعات والأمان والفوترة وتكوينات النظام."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "إدارة المستخدمين والمجموعات والتخزين لجميع الأعضاء، وتعيين الأدوار، وتخصيص التراخيص."
-      ]
-    },
     "Safety review": {
       "Code sent to ${ boldValue }": [
         "تم إرسال الرمز إلى ${ boldValue }"
@@ -23096,9 +23043,6 @@
       ],
       "Unlimited hide-my-email aliases": [
         "عدد غير محدود من عناوين البريد الإلكتروني المستعار hide-my-email"
-      ],
-      "Up to -${ percentage }%": [
-        "خصم يصل إلى -${ percentage }%"
       ],
       "Up to 2 users": [
         "حتى مستخدمين"
