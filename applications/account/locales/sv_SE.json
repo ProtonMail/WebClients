@@ -1982,6 +1982,9 @@
       "Take a tour": [
         "Ta en rundtur"
       ],
+      "Template with passwords": [
+        "Mall med lösenord"
+      ],
       "Test": [
         "Test"
       ],
@@ -7081,6 +7084,9 @@
       ],
       "Cannot download a folder": [
         "Kan inte ladda ner en mapp"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Kan inte, flytta objekt utan giltigt namn, byt namn på objektet först"
       ],
       "Cannot share root folder": [
         "Kan inte dela rotmapp"
@@ -12460,9 +12466,6 @@
       "Registering your subscription…": [
         "Registrerar din prenumeration …"
       ],
-      "Remember to share the user's sign in details with them.": [
-        "Kom ihåg att dela användarens inloggningsinformation med dem."
-      ],
       "Remove metadata from images to protect your privacy.": [
         "Ta bort metadata från bilder för att skydda din integritet."
       ],
@@ -14565,6 +14568,9 @@
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } av ${ humanMaxSpace }"
       ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } tecken"
+      ],
       "${ MAIL_APP_NAME } address": [
         "${ MAIL_APP_NAME }-adress"
       ],
@@ -14591,9 +14597,6 @@
       ],
       "${ PROTON_SENTINEL_NAME } protection": [
         "${ PROTON_SENTINEL_NAME }-skydd"
-      ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } tecken"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Tillfälligt otillgänglig. Återkom senare.)"
@@ -16930,9 +16933,6 @@
     "mail_signup_2023: Info": {
       "**Get ${ plan }** for a limited time!": [
         "**Skaffa ${ plan }** under en begränsad tid!"
-      ],
-      "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
-        "Bli en Visionary och bli en del av ${ BRAND_NAME }'s berättelse"
       ]
     },
     "mail_signup_2024: Info": {
@@ -17134,9 +17134,6 @@
         "${ seats } användarplats inkluderad",
         "${ seats } användarplatser inkluderade"
       ],
-      "100 ${ BRAND_NAME } email addresses": [
-        "100 ${ BRAND_NAME } e-postadresser"
-      ],
       "Cloud storage and file sharing": [
         "Molnlagring och fildelning"
       ],
@@ -17157,9 +17154,6 @@
       ],
       "Password manager with team vaults": [
         "Lösenordshanterare med valv för team"
-      ],
-      "Private and unlimited AI chat (${ LUMO_SHORT_APP_NAME })": [
-        "Privat och obegränsat AI-chatt (${ LUMO_SHORT_APP_NAME })"
       ],
       "Private video calls for the conversations that matter": [
         "Privata videosamtal för de konversationer som är viktiga"
@@ -18820,6 +18814,11 @@
         "Prova det nu"
       ]
     },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Du har nu åtkomst till nya ${ CALENDAR_APP_NAME }. ${ link }"
+      ]
+    },
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } skapat"
@@ -19677,9 +19676,6 @@
       "Create another account instead": [
         "Skapa ett annat konto istället"
       ],
-      "Keep this plan": [
-        "Behåll detta paket"
-      ],
       "Open ${ PASS_APP_NAME } vaults": [
         "Öppna ${ PASS_APP_NAME }-valv"
       ],
@@ -19694,9 +19690,6 @@
       ],
       "Upgrade": [
         "Uppgradera"
-      ],
-      "Upgrade my plan": [
-        "Uppgradera mitt paket"
       ]
     },
     "pass_signup_2023: Action - open web app": {
@@ -19751,9 +19744,6 @@
       "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
         "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } till ${ priceString }."
       ],
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice } per månad"
-      ],
       "/month /user": [
         "/månad/användare"
       ],
@@ -19771,9 +19761,6 @@
       ],
       "Aliases for email protection from breaches": [
         "Alias för e-postskydd mot intrång"
-      ],
-      "Based in Switzerland, GDPR compliant": [
-        "Baserad i Schweiz, GDPR-kompatibel"
       ],
       "But you can get ${ discountPercentString } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Men du kan få ${ discountPercentString } rabatt genom att uppgradera till **${ upsellPlanTitle }** — det är endast ${ relativePrice } extra per månad."
@@ -19802,9 +19789,6 @@
       "Creating your account": [
         "Skapar ditt konto"
       ],
-      "Current plan": [
-        "Nuvarande paket"
-      ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "Ladda ner och installera relevanta appar och tillägg för att börja använda ${ PASS_APP_NAME }"
       ],
@@ -19826,15 +19810,6 @@
       "Everything from ${ planTitle }, plus...": [
         "Allt från ${ planTitle }, plus …"
       ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "För bara **${ relativePrice } mer per månad** får du åtkomst till premium lösenordshanterare för ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "För bara **${ relativePrice } mer per månad** får du åtkomst till premium VPN-tjänster för ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "För endast **${ relativePrice } per månad** mer får du åtkomst till alla premiumtjänster för ${ BRAND_NAME }!"
-      ],
       "Free forever": [
         "Gratis för alltid"
       ],
@@ -19852,9 +19827,6 @@
       ],
       "Get unlimited privacy for two": [
         "Skaffa obegränsad integritet för två"
-      ],
-      "Includes:": [
-        "Inkluderar:"
       ],
       "Install ${ PASS_APP_NAME }": [
         "Installera ${ PASS_APP_NAME }"
@@ -20254,9 +20226,6 @@
       "Offer unavailable": [
         "Erbjudande otillgängligt"
       ],
-      "Pay with ${ IDEAL_BRAND_NAME }": [
-        "Betala med ${ IDEAL_BRAND_NAME }"
-      ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Betalningsmetod krävs för att prenumerationen ska aktiveras efter provperioden är slut."
       ],
@@ -20349,9 +20318,6 @@
       ],
       "You will soon be redirected to verify your payment.": [
         "Du kommer snart att omdirigeras för att verifiera din betalning."
-      ],
-      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
-        "Din valuta har ändrats till euro (€) på grund av att  ${ IDEAL_BRAND_NAME } endast stödjer betalningar i euro."
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Din valuta har ändrats till euro (€) eftersom SEPA-banköverföringar endast stöder betalningar i euro."
@@ -21743,17 +21709,6 @@
         "Användaradministratör"
       ]
     },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Konfigurera säkerhetspolicyer, datalagring och VPN-infrastruktur och hantera granskningsloggar."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Hantera alla användare, grupper, säkerhet, fakturering och systemkonfigurationer."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Hantera användare, grupper och lagringsutrymme för alla medlemmar, tilldela roller och allokera licenser."
-      ]
-    },
     "Safety review": {
       "Code sent to ${ boldValue }": [
         "Kod skickad till ${ boldValue }"
@@ -23079,9 +23034,6 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Obegränsat antal hide-my-email-alias"
-      ],
-      "Up to -${ percentage }%": [
-        "Upp till ${ percentage } %"
       ],
       "Up to 2 users": [
         "Upp till 2 användare"
@@ -27531,6 +27483,9 @@
       ],
       "Customize import to reduce the number of labels": [
         "Anpassa import för att minska antalet etiketter"
+      ],
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "Status för datamigrering från ${ providerName } till ${ BRAND_NAME }"
       ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Ta bort kastade och skräppostmeddelanden efter 30 dagar. Att slå på automatisk borttagning får meddelanden som redan är i kastade/skräppost ett datum för borttagning baserat på datumet de flyttades dit."

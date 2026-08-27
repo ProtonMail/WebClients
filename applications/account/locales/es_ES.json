@@ -11653,9 +11653,6 @@
       "Registering your subscription…": [
         "Registrando tu suscripción…"
       ],
-      "Remember to share the user's sign in details with them.": [
-        "Recuerda compartir los detalles de inicio de sesión con el usuario."
-      ],
       "Remove metadata from images to protect your privacy.": [
         "Elimina los metadatos de las imágenes para proteger tu privacidad."
       ],
@@ -13706,9 +13703,6 @@
       ],
       "${ PROTON_SENTINEL_NAME } protection": [
         "Protección de ${ PROTON_SENTINEL_NAME }"
-      ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } caracteres"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(No disponible temporalmente. Vuelve a comprobarlo más tarde.)"
@@ -15967,9 +15961,6 @@
     "mail_signup_2023: Info": {
       "**Get ${ plan }** for a limited time!": [
         "¡**Obtén ${ plan }** por tiempo limitado!"
-      ],
-      "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
-        "Conviértate en Visionary y forma parte de la historia de ${ BRAND_NAME }"
       ]
     },
     "mail_signup_2024: Info": {
@@ -16162,9 +16153,6 @@
         "${ seats } licencia incluida",
         "${ seats } licencias incluidas"
       ],
-      "100 ${ BRAND_NAME } email addresses": [
-        "100 direcciones de correo electrónico de ${ BRAND_NAME }"
-      ],
       "Cloud storage and file sharing": [
         "Almacenamiento en la nube y compartición de archivos"
       ],
@@ -16185,9 +16173,6 @@
       ],
       "Password manager with team vaults": [
         "Gestor de contraseñas con cajas fuertes compartidas"
-      ],
-      "Private and unlimited AI chat (${ LUMO_SHORT_APP_NAME })": [
-        "Chat de IA privado e ilimitado (${ LUMO_SHORT_APP_NAME })"
       ],
       "Private video calls for the conversations that matter": [
         "Videollamadas privadas para las conversaciones que importan"
@@ -18671,9 +18656,6 @@
       "Create another account instead": [
         "Crea una nueva cuenta en su lugar"
       ],
-      "Keep this plan": [
-        "Mantener este plan"
-      ],
       "Open ${ PASS_APP_NAME } vaults": [
         "Abrir las cajas fuertes de ${ PASS_APP_NAME }"
       ],
@@ -18688,9 +18670,6 @@
       ],
       "Upgrade": [
         "Mejorar"
-      ],
-      "Upgrade my plan": [
-        "Mejorar mi plan"
       ]
     },
     "pass_signup_2023: Action - open web app": {
@@ -18745,9 +18724,6 @@
       "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
         "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } a ${ priceString }."
       ],
-      "+ ${ relativePrice } per month": [
-        "+${ relativePrice } por mes"
-      ],
       "/month /user": [
         "/mes /usuario"
       ],
@@ -18765,9 +18741,6 @@
       ],
       "Aliases for email protection from breaches": [
         "Alias para proteger tu correo electrónico contra vulneraciones"
-      ],
-      "Based in Switzerland, GDPR compliant": [
-        "Con sede en Suiza y conforme al RGPD"
       ],
       "But you can get ${ discountPercentString } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Pero puedes obtener ${ discountPercentString } de descuento al mejorar a **${ upsellPlanTitle }**, es solo ${ relativePrice } adicional al mes."
@@ -18796,9 +18769,6 @@
       "Creating your account": [
         "Creando tu cuenta"
       ],
-      "Current plan": [
-        "Plan actual"
-      ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "Descarga e instala las aplicaciones relevantes y tus extensiones para poder comenzar a utilizar ${ PASS_APP_NAME }"
       ],
@@ -18820,15 +18790,6 @@
       "Everything from ${ planTitle }, plus...": [
         "Todo en el plan ${ planTitle } además de..."
       ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "¡Por solo **${ relativePrice } más al mes**, podrás acceder al servicio premium de gestor de contraseñas de ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "¡Por solo **${ relativePrice } más al mes**, podrás acceder al servicio VPN premium de ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "¡Por solo **${ relativePrice } más al mes**, podrás acceder a todos los servicios de ${ BRAND_NAME } premium!"
-      ],
       "Free forever": [
         "Gratis para siempre"
       ],
@@ -18846,9 +18807,6 @@
       ],
       "Get unlimited privacy for two": [
         "Disfruta de privacidad ilimitada para dos"
-      ],
-      "Includes:": [
-        "Incluye:"
       ],
       "Install ${ PASS_APP_NAME }": [
         "Instala ${ PASS_APP_NAME }"
@@ -20672,17 +20630,6 @@
         "Administrador de usuarios"
       ]
     },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Configurar políticas de seguridad, conservación de datos e infraestructura de VPN, y administrar registros de auditoría."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Administrar todos los usuarios, grupos, seguridad, facturación y configuraciones del sistema."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Administrar usuarios, grupos y almacenamiento de todos los miembros, asignar roles y asignar licencias."
-      ]
-    },
     "Safety review": {
       "Code sent to ${ boldValue }": [
         "Se ha enviado el código a ${ boldValue }."
@@ -21994,9 +21941,6 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Alias hide-my-email ilimitados"
-      ],
-      "Up to -${ percentage }%": [
-        "Hasta -${ percentage }%"
       ],
       "Up to 2 users": [
         "Hasta 2 usuarios"

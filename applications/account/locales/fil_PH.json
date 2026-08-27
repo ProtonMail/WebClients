@@ -11632,9 +11632,6 @@
       "Registering your subscription…": [
         "Nirerehistro ang subscription…"
       ],
-      "Remember to share the user's sign in details with them.": [
-        "Tandaang i-share ang mga detalye sa pag-sign in ng user sa kanila."
-      ],
       "Remove metadata from images to protect your privacy.": [
         "Alisin ang metadata sa mga larawan upang protektahan ang privacy."
       ],
@@ -13682,9 +13679,6 @@
       ],
       "${ PROTON_SENTINEL_NAME } protection": [
         "Proteksyon ng ${ PROTON_SENTINEL_NAME }"
-      ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } na character"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Pansamantalang hindi available. Pakitingnan muli mamaya.)"
@@ -15943,9 +15937,6 @@
     "mail_signup_2023: Info": {
       "**Get ${ plan }** for a limited time!": [
         "**Kunin ang ${ plan }** sa limitadong panahon!"
-      ],
-      "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
-        "Maging isang Visionary at maging bahagi ng kuwento ng ${ BRAND_NAME }"
       ]
     },
     "mail_signup_2024: Info": {
@@ -16138,9 +16129,6 @@
         "${ seats } seat ang kasama",
         "${ seats } seat ang kasama"
       ],
-      "100 ${ BRAND_NAME } email addresses": [
-        "100 ${ BRAND_NAME } email address"
-      ],
       "Cloud storage and file sharing": [
         "Cloud storage at pagbabahagi ng file"
       ],
@@ -16161,9 +16149,6 @@
       ],
       "Password manager with team vaults": [
         "Tagapamahala ng password na may mga team vault"
-      ],
-      "Private and unlimited AI chat (${ LUMO_SHORT_APP_NAME })": [
-        "Pribado at unlimited na AI chat (${ LUMO_SHORT_APP_NAME })"
       ],
       "Private video calls for the conversations that matter": [
         "Mga pribadong video call para sa mga pag-uusap na mahalaga"
@@ -18647,9 +18632,6 @@
       "Create another account instead": [
         "Gumawa nalang ng ibang account"
       ],
-      "Keep this plan": [
-        "Panatilihin ang planong ito"
-      ],
       "Open ${ PASS_APP_NAME } vaults": [
         "Buksan ang mga vault ng ${ PASS_APP_NAME }"
       ],
@@ -18664,9 +18646,6 @@
       ],
       "Upgrade": [
         "I-upgrade"
-      ],
-      "Upgrade my plan": [
-        "I-upgrade ang plano"
       ]
     },
     "pass_signup_2023: Action - open web app": {
@@ -18721,9 +18700,6 @@
       "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
         "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } sa halagang ${ priceString }."
       ],
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice } kada buwan"
-      ],
       "/month /user": [
         "/buwan /user"
       ],
@@ -18741,9 +18717,6 @@
       ],
       "Aliases for email protection from breaches": [
         "Mga alias para sa proteksyon ng email mula sa mga breach"
-      ],
-      "Based in Switzerland, GDPR compliant": [
-        "Nakabase sa Switzerland, sumusunod sa GDPR"
       ],
       "But you can get ${ discountPercentString } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Pero makakakuha ka ng ${ discountPercentString } na diskwento sa pag-upgrade sa **${ upsellPlanTitle }** — ${ relativePrice } lang na dagdag kada buwan."
@@ -18772,9 +18745,6 @@
       "Creating your account": [
         "Ginagawa ang account"
       ],
-      "Current plan": [
-        "Kasalukuyang plano"
-      ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "I-download at i-install ang mga nauugnay na app at extension upang simulan ang paggamit ng ${ PASS_APP_NAME }"
       ],
@@ -18796,15 +18766,6 @@
       "Everything from ${ planTitle }, plus...": [
         "Lahat mula sa ${ planTitle }, at..."
       ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "Sa halagang **${ relativePrice } kada buwan** na dagdag, magkakaroon ka ng access sa premium na tagapamahala ng password ng ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "Sa halagang **${ relativePrice } kada buwan** na dagdag, magkakaroon ka ng access sa premium na serbisyo ng VPN ng ${ BRAND_NAME }!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "Sa karagdagang **${ relativePrice } kada buwan** lamang, makakakuha ng access sa lahat ng premium na serbisyo ng ${ BRAND_NAME }!"
-      ],
       "Free forever": [
         "Libre habambuhay"
       ],
@@ -18822,9 +18783,6 @@
       ],
       "Get unlimited privacy for two": [
         "Kumuha ng unlimited na privacy para sa dalawa"
-      ],
-      "Includes:": [
-        "Kasama ang:"
       ],
       "Install ${ PASS_APP_NAME }": [
         "I-install ang ${ PASS_APP_NAME }"
@@ -20600,17 +20558,6 @@
         "User Admin"
       ]
     },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "I-configure ang mga patakaran sa seguridad, pagpapanatili ng data, at imprastraktura ng VPN, at pamahalaan ang mga audit log."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Pamahalaan ang lahat ng user, pangkat, seguridad, billing, at mga configuration ng system."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Pamahalaan ang mga user, pangkat, at storage para sa lahat ng miyembro, magtalaga ng mga tungkulin, at maglaan ng mga lisensya."
-      ]
-    },
     "Safety review": {
       "Code sent to ${ boldValue }": [
         "Ipinadala ang code sa ${ boldValue }"
@@ -21919,9 +21866,6 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Unlimited na mga hide-my-email alias"
-      ],
-      "Up to -${ percentage }%": [
-        "Hanggang -${ percentage }%"
       ],
       "Up to 2 users": [
         "Hanggang 2 user"

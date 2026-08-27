@@ -11648,9 +11648,6 @@
       "Registering your subscription…": [
         "正在註冊您的訂閱…"
       ],
-      "Remember to share the user's sign in details with them.": [
-        "請記得與使用者分享其登入詳細資料。"
-      ],
       "Remove metadata from images to protect your privacy.": [
         "從照片中移除中繼資料以保護隱私"
       ],
@@ -13691,9 +13688,6 @@
       ],
       "${ PROTON_SENTINEL_NAME } protection": [
         "${ PROTON_SENTINEL_NAME } 防護"
-      ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } 個字元"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(暫時無法使用。請稍後再試。)"
@@ -15950,9 +15944,6 @@
     "mail_signup_2023: Info": {
       "**Get ${ plan }** for a limited time!": [
         "限時**取得 ${ plan }**！"
-      ],
-      "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
-        "成為Visionary並成為${ BRAND_NAME }的故事"
       ]
     },
     "mail_signup_2024: Info": {
@@ -16141,9 +16132,6 @@
       "${ seats } seat included": [
         "包含 ${ seats } 座席"
       ],
-      "100 ${ BRAND_NAME } email addresses": [
-        "100 個 ${ BRAND_NAME } 電子郵件地址"
-      ],
       "Cloud storage and file sharing": [
         "雲端儲存空間和檔案共享"
       ],
@@ -16164,9 +16152,6 @@
       ],
       "Password manager with team vaults": [
         "附帶團隊保管庫的密碼管理程式"
-      ],
-      "Private and unlimited AI chat (${ LUMO_SHORT_APP_NAME })": [
-        "私有且無限制的 AI 對話 (${ LUMO_SHORT_APP_NAME })"
       ],
       "Private video calls for the conversations that matter": [
         "為重要對話提供私有視訊通話"
@@ -18616,9 +18601,6 @@
       "Create another account instead": [
         "創建另一個帳號"
       ],
-      "Keep this plan": [
-        "保持此方案"
-      ],
       "Open ${ PASS_APP_NAME } vaults": [
         "開啟 ${ PASS_APP_NAME } 保管庫"
       ],
@@ -18633,9 +18615,6 @@
       ],
       "Upgrade": [
         "升級"
-      ],
-      "Upgrade my plan": [
-        "升級我的方案"
       ]
     },
     "pass_signup_2023: Action - open web app": {
@@ -18690,9 +18669,6 @@
       "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
         "價格為 ${ priceString } 的 ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }。"
       ],
-      "+ ${ relativePrice } per month": [
-        "+ ${ relativePrice }每月"
-      ],
       "/month /user": [
         "/月 /使用者"
       ],
@@ -18710,9 +18686,6 @@
       ],
       "Aliases for email protection from breaches": [
         "用於防止電子郵件免受資料外洩影響的別名"
-      ],
-      "Based in Switzerland, GDPR compliant": [
-        "位於瑞士，受歐盟 GDPR 法規管理"
       ],
       "But you can get ${ discountPercentString } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "但只要升級至 **${ upsellPlanTitle }** 即可享有 ${ discountPercentString } 折扣 — 每月只需額外支付 ${ relativePrice }。"
@@ -18741,9 +18714,6 @@
       "Creating your account": [
         "創建您的帳號"
       ],
-      "Current plan": [
-        "目前方案"
-      ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "下載及安裝新版應用程式及擴充以開始使用${ PASS_APP_NAME }"
       ],
@@ -18765,15 +18735,6 @@
       "Everything from ${ planTitle }, plus...": [
         "全部${ planTitle }，附加..."
       ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "**每月${ relativePrice }及更多**，讓您存取付費版密碼管理器${ BRAND_NAME }功能!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "**每月${ relativePrice }及更多**，讓您存取付費版VPN${ BRAND_NAME }功能!"
-      ],
-      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
-        "**每月${ relativePrice }及更多**，讓您存取付費版${ BRAND_NAME }功能!"
-      ],
       "Free forever": [
         "永久免費"
       ],
@@ -18791,9 +18752,6 @@
       ],
       "Get unlimited privacy for two": [
         "取得雙人的無限隱私"
-      ],
-      "Includes:": [
-        "包含:"
       ],
       "Install ${ PASS_APP_NAME }": [
         "安裝${ PASS_APP_NAME }"
@@ -20565,17 +20523,6 @@
         "使用者管理員"
       ]
     },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "設定安全政策、資料保留及 VPN 基礎架構，並管理稽核日誌。"
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "管理所有使用者、群組、安全性、帳務及系統組態。"
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "管理所有成員的使用者、群組和儲存空間，分配角色並分配授權。"
-      ]
-    },
     "Safety review": {
       "Code sent to ${ boldValue }": [
         "驗證碼已發送至 ${ boldValue }"
@@ -21850,9 +21797,6 @@
       ],
       "Unlimited hide-my-email aliases": [
         "無限制的 hide-my-email 別名"
-      ],
-      "Up to -${ percentage }%": [
-        "最多省下 ${ percentage }%"
       ],
       "Up to 2 users": [
         "多達 2 位使用者"
