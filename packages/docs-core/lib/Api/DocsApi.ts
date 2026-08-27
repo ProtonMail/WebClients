@@ -17,7 +17,6 @@ import type { ApiCreateThread, CreateThreadDTO } from './Requests/ApiCreateThrea
 import type { ApiEditComment, EditCommentDTO } from './Requests/ApiEditComment'
 import type { ApiGetThread } from './Requests/ApiGetThread'
 import type { Commit, SquashCommit } from '@proton/docs-proto'
-import type { CreateDocumentResponse } from './Types/CreateDocumentResponse'
 import type { CreateThreadResponse } from './Types/CreateThreadResponse'
 import type { CreateValetTokenResponse } from './Types/CreateValetTokenResponse'
 import type { DeleteCommentResponse } from './Types/DeleteCommentResponse'
@@ -147,15 +146,6 @@ export class DocsApi {
       volumeId: nodeMeta.volumeId,
       linkId: nodeMeta.linkId,
     }).squashCommit({ commitId, data: squash.serializeBinary() as Uint8Array<ArrayBuffer> })
-
-    return this.routeExecutor.execute(route)
-  }
-
-  async createDocument(lookup: NodeMeta): Promise<ApiResult<CreateDocumentResponse>> {
-    const route = new DocsApiPrivateRouteBuilder({
-      volumeId: lookup.volumeId,
-      linkId: lookup.linkId,
-    }).createDocument()
 
     return this.routeExecutor.execute(route)
   }
