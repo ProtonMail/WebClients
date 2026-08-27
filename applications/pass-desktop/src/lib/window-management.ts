@@ -3,7 +3,7 @@ import debounce from 'lodash/debounce';
 
 import type { Optional } from '@proton/shared/lib/interfaces';
 
-import { store } from 'proton-pass-desktop/store';
+import { store } from '../store';
 
 export type WindowConfigStoreProperties = {
     x: number;

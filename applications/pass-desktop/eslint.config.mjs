@@ -2,14 +2,39 @@ import { defineConfig } from 'eslint/config';
 
 import defaultConfig from '@proton/eslint-config-proton/all';
 import { createBarrelPaths } from '@proton/eslint-config-proton/barrel';
+import {
+    createExtraneousDependenciesRule,
+    extraneousDependenciesDevDependencies,
+} from '@proton/eslint-config-proton/extraneousDependencies';
 import { createRestrictedImportRule } from '@proton/eslint-config-proton/restrictedImports';
 
-const noParentRelativeImports = {
-    group: ['../*', './../*'],
-    message: 'Use the proton-pass-desktop/* alias instead of walking up directories.',
-};
+const restrictedImportOptions = { paths: createBarrelPaths() };
 
-const restrictedImportOptions = { paths: createBarrelPaths(), patterns: [noParentRelativeImports] };
+/** Main-process sources import electron (devDependency required by Electron Forge). Renderer `src/app/**` is excluded. */
+const passDesktopMainProcessDevDependencies = [
+    'src/main.ts',
+    'src/preload.ts',
+    'src/types.ts',
+    'src/lib/**',
+    'src/utils/platform.ts',
+    'src/utils/squirrel.ts',
+    'src/menu-view/**',
+    'src/uninstallers/**',
+];
+
+/** Build/config entry points that import devDependencies. */
+const passDesktopDevDependencies = [
+    ...extraneousDependenciesDevDependencies,
+    ...passDesktopMainProcessDevDependencies,
+    'forge.config.ts',
+    'webpack.main.config.ts',
+    'webpack.renderer.config.ts',
+    'webpack.plugins.ts',
+    'webpack.options.ts',
+    'webpack.rules.ts',
+    'electron-builder.config.js',
+    'prettier.config.mjs',
+];
 
 export default defineConfig([
     { ignores: ['native/target/**'] },
@@ -18,17 +43,21 @@ export default defineConfig([
         rules: {
             'no-console': ['error', { allow: ['warn', 'error'] }],
             curly: ['error', 'multi-line'],
-            // TODO: Add the missing explicit deps and remove this rule
-            'import/no-extraneous-dependencies': 'off',
             'no-restricted-imports': createRestrictedImportRule(restrictedImportOptions),
-            // TODO: Migrate same-package imports to relative paths and remove this rule
-            'custom-rules/no-package-self-import': 'off',
         },
     },
     {
         files: ['**/*.tsx', '**/*.jsx'],
         rules: {
             'no-restricted-imports': createRestrictedImportRule({ ...restrictedImportOptions, tsx: true }),
+        },
+    },
+    {
+        name: 'pass-desktop-extraneous-dependencies',
+        rules: {
+            'import/no-extraneous-dependencies': createExtraneousDependenciesRule({
+                devDependencies: passDesktopDevDependencies,
+            }),
         },
     },
 ]);

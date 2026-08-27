@@ -7,8 +7,8 @@ import type { MaybeNull, NativeMessagePayload, NativeMessageRequest, NativeMessa
 import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
 
-import logger from 'proton-pass-desktop/utils/logger';
-import { isWindows } from 'proton-pass-desktop/utils/platform';
+import logger from '../../utils/logger';
+import { isWindows } from '../../utils/platform';
 
 const RECONNECT_DELAY_MS = 2_000;
 
