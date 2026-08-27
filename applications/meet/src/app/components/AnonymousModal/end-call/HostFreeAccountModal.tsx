@@ -2,6 +2,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { useSettingsLink } from '@proton/components/index';
+import { useMeetSelector } from '@proton/meet/store/hooks';
+import { selectSubscriptionStatus } from '@proton/meet/store/slices/userSlice';
 import { UpsellModalTypes } from '@proton/meet/types/types';
 import { PLANS } from '@proton/payments/core/constants';
 
@@ -11,6 +13,8 @@ import { EndCallModalShell } from './EndCallModalShell';
 export const HostFreeAccountModal = ({ open, onClose, rejoin, action, upsellModalType }: CTAModalBaseProps) => {
     const goToSettings = useSettingsLink();
     const isExpired = upsellModalType === UpsellModalTypes.MeetingExpiredHostFree;
+    const { hasSubscriptionWithoutMeet } = useMeetSelector(selectSubscriptionStatus);
+    const link = hasSubscriptionWithoutMeet ? `/dashboard?addon=meet` : `/dashboard?plan=${PLANS.MEET_BUSINESS}`;
 
     return (
         <EndCallModalShell
@@ -21,7 +25,7 @@ export const HostFreeAccountModal = ({ open, onClose, rejoin, action, upsellModa
                     className="rounded-full px-10 py-4 text-semibold primary w-full"
                     onClick={() => {
                         onClose();
-                        goToSettings(`/dashboard?plan=${PLANS.MEET_BUSINESS}`);
+                        goToSettings(link);
                         action();
                     }}
                     size="medium"
