@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
+import { useBookingUpsell } from '@proton/calendar/bookings/store/useBookingUpsell';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
@@ -10,7 +11,6 @@ import { IcCalendarListCheck } from '@proton/icons/icons/IcCalendarListCheck';
 import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
 
 import { useBookings } from './bookingsProvider/BookingsProvider';
-import { useBookingUpsell } from './upsells/useBookingUpsell';
 
 import './BookingSidebarAction.scss';
 
