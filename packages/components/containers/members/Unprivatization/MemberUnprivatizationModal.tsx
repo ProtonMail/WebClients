@@ -10,6 +10,7 @@ import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import type { Member } from '@proton/shared/lib/interfaces';
 import type { ParsedUnprivatizationData } from '@proton/shared/lib/keys';
+import { getMemberHasOrgKeyResetPrivatization } from '@proton/shared/lib/keys/memberHelper';
 
 import type { ModalProps } from '../../../components/modalTwo/Modal';
 import ModalTwo from '../../../components/modalTwo/Modal';
@@ -39,6 +40,9 @@ const MemberUnprivatizationModal = ({ member, orgName, parsedUnprivatizationData
 
     const adminEmail = parsedUnprivatizationData.payload.unprivatizationData.AdminEmail;
     const loading = loadingReject || loadingAccept;
+    // The member was temporarily converted to private so the organization key could be reset. Restoring them is not
+    // optional, and the API refuses to delete the request, so the reject option is hidden.
+    const isOrgKeyReset = getMemberHasOrgKeyResetPrivatization(member);
 
     const handleAccept = async () => {
         try {
@@ -75,7 +79,7 @@ const MemberUnprivatizationModal = ({ member, orgName, parsedUnprivatizationData
                 if (loading) {
                     return;
                 }
-                withLoadingReject(handleReject());
+                void withLoadingReject(handleReject());
             }}
         >{c('unprivatization').t`reject`}</InlineLinkButton>
     );
@@ -92,7 +96,7 @@ const MemberUnprivatizationModal = ({ member, orgName, parsedUnprivatizationData
                         if (loading) {
                             return;
                         }
-                        withLoadingAccept(handleAccept());
+                        void withLoadingAccept(handleAccept());
                     }}
                 />
             )}
@@ -109,7 +113,14 @@ const MemberUnprivatizationModal = ({ member, orgName, parsedUnprivatizationData
                         {c('unprivatization')
                             .t`If you ever lose access to your credentials, your organization’s administrators will be able to reset your password and restore access to your account.`}
                     </p>
-                    <p>{c('unprivatization').jt`You can ${reject} this request if you do not wish to proceed.`}</p>
+                    {isOrgKeyReset ? (
+                        <p>
+                            {c('unprivatization')
+                                .t`Your account was temporarily made private while your organization key was reset. Accept the request to restore it.`}
+                        </p>
+                    ) : (
+                        <p>{c('unprivatization').jt`You can ${reject} this request if you do not wish to proceed.`}</p>
+                    )}
                 </ModalTwoContent>
                 <ModalTwoFooter>
                     <Button onClick={rest.onClose}>{c('unprivatization').t`Cancel`}</Button>
