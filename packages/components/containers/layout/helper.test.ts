@@ -1,3 +1,5 @@
+import { IcAlias } from '@proton/icons/icons/IcAlias';
+
 import { getIsSectionAvailable, getIsSubsectionAvailable } from './helper';
 import type { SectionConfig, SubSectionConfig } from './interface';
 
@@ -41,7 +43,7 @@ describe('getIsSectionAvailable', () => {
             const config: SectionConfig = {
                 id: 'test-id',
                 to: '',
-                icon: 'alias',
+                icon: IcAlias,
                 text: '',
                 subsections: [{ id: '' }],
             };
@@ -55,7 +57,7 @@ describe('getIsSectionAvailable', () => {
             const config: SectionConfig = {
                 id: 'test-id',
                 to: '',
-                icon: 'alias',
+                icon: IcAlias,
                 text: '',
                 available: true,
                 subsections: [{ id: '' }],
@@ -70,7 +72,7 @@ describe('getIsSectionAvailable', () => {
             const config: SectionConfig = {
                 id: 'test-id',
                 to: '',
-                icon: 'alias',
+                icon: IcAlias,
                 text: '',
                 available: false,
                 subsections: [{ id: '' }],
@@ -87,7 +89,7 @@ describe('getIsSectionAvailable', () => {
             const config: SectionConfig = {
                 id: 'test-id',
                 to: '',
-                icon: 'alias',
+                icon: IcAlias,
                 text: '',
                 available: true,
             };
@@ -101,7 +103,7 @@ describe('getIsSectionAvailable', () => {
             const config: SectionConfig = {
                 id: 'test-id',
                 to: '',
-                icon: 'alias',
+                icon: IcAlias,
                 text: '',
                 available: true,
                 subsections: [
@@ -119,7 +121,7 @@ describe('getIsSectionAvailable', () => {
             const config: SectionConfig = {
                 id: 'test-id',
                 to: '',
-                icon: 'alias',
+                icon: IcAlias,
                 text: '',
                 available: true,
                 subsections: [
@@ -137,7 +139,7 @@ describe('getIsSectionAvailable', () => {
             const config: SectionConfig = {
                 id: 'test-id',
                 to: '',
-                icon: 'alias',
+                icon: IcAlias,
                 text: '',
                 available: true,
                 subsections: [

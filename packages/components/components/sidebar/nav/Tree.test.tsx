@@ -2,6 +2,9 @@ import { MemoryRouter } from 'react-router-dom';
 
 import { fireEvent, render, screen } from '@testing-library/react';
 
+import { IcBrandProtonVpnFilled } from '@proton/icons/icons/IcBrandProtonVpnFilled';
+import { IcHouse } from '@proton/icons/icons/IcHouse';
+import { IcUsers } from '@proton/icons/icons/IcUsers';
 import type { SidebarTree } from '@proton/nav/types/sidebar';
 
 import { Tree } from './Tree';
@@ -26,7 +29,7 @@ const routes: SidebarTree = {
                 {
                     id: 'organization.home',
                     label: 'Home',
-                    icon: 'house',
+                    icon: IcHouse,
                     to: '/vpn/dashboard',
                     meta: {},
                     children: undefined,
@@ -34,7 +37,7 @@ const routes: SidebarTree = {
                 {
                     id: 'organization.org-and-people',
                     label: 'Organization and people',
-                    icon: 'users',
+                    icon: IcUsers,
                     meta: { defaultOpen: true },
                     to: undefined,
                     children: [
@@ -51,7 +54,7 @@ const routes: SidebarTree = {
                 {
                     id: 'organization.vpn',
                     label: 'VPN',
-                    icon: 'brand-proton-vpn-filled',
+                    icon: IcBrandProtonVpnFilled,
                     meta: {},
                     to: undefined,
                     children: [

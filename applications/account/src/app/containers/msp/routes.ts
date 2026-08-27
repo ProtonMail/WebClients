@@ -1,6 +1,8 @@
 import { c } from 'ttag';
 
 import type { SectionConfig, SidebarConfig } from '@proton/components';
+import { IcBuildings } from '@proton/icons/icons/IcBuildings';
+import { IcMoneyBills } from '@proton/icons/icons/IcMoneyBills';
 import { EntitlementName } from '@proton/payments/core/entitlements/entitlement-names';
 import { AccessType } from '@proton/shared/lib/authentication/accessType';
 import { APPS } from '@proton/shared/lib/constants';
@@ -31,7 +33,7 @@ export const getMspAppRoutes = ({ app, flags, entitlements, user }: GeneralRoute
                 id: 'companies',
                 text: c('Title').t`Companies`,
                 to: '/companies',
-                icon: 'buildings',
+                icon: IcBuildings,
                 noTitle: true,
                 available: canViewCompanies,
                 subsections: [{ id: 'companies' }],
@@ -40,7 +42,7 @@ export const getMspAppRoutes = ({ app, flags, entitlements, user }: GeneralRoute
                 id: 'monthlyCosts',
                 text: c('Title').t`Monthly Costs`,
                 to: '/monthly-costs',
-                icon: 'money-bills',
+                icon: IcMoneyBills,
                 noTitle: true,
                 available: canViewMonthlyCosts,
                 subsections: [{ id: 'monthly-costs' }],

@@ -7,6 +7,7 @@ import * as orgHooks from '@proton/account/organization/hooks';
 import * as hooks from '@proton/account/user/hooks';
 import * as helper from '@proton/components/containers/layout/helper';
 import type { SectionConfig, SidebarConfig } from '@proton/components/index';
+import { IcBrandProton } from '@proton/icons/icons/IcBrandProton';
 import type { SidebarTree } from '@proton/nav/types/sidebar';
 import * as navigation from '@proton/vpn/contexts/navigation';
 
@@ -51,13 +52,13 @@ const renderWithRouter = (ui: React.ReactElement) => render(<MemoryRouter>{ui}</
 
 describe('VPNSidebar', () => {
     const routesMock: Record<string, SectionConfig> = {
-        dashboardV2: { id: 'dashboard-v2', icon: 'brand-proton', text: 'text', to: '/to' },
+        dashboardV2: { id: 'dashboard-v2', icon: IcBrandProton, text: 'text', to: '/to' },
     };
 
     const organizationRoutesMock: SidebarConfig = {
         header: 'Org header',
         available: true,
-        routes: { org: { id: 'org', icon: 'brand-proton', text: 'text', to: '/org' } },
+        routes: { org: { id: 'org', icon: IcBrandProton, text: 'text', to: '/org' } },
     };
 
     beforeEach(() => {

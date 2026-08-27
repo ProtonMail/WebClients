@@ -3,6 +3,17 @@ import { c } from 'ttag';
 import { Href } from '@proton/atoms/Href/Href';
 import type { SidebarConfig } from '@proton/components';
 import { getMailRouteTitles } from '@proton/components/containers/account/constants/settingsRouteTitles';
+import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
+import { IcArrowUpFromSquare } from '@proton/icons/icons/IcArrowUpFromSquare';
+import { IcCardIdentity } from '@proton/icons/icons/IcCardIdentity';
+import { IcEnvelope } from '@proton/icons/icons/IcEnvelope';
+import { IcEnvelopeArrowUpAndRight } from '@proton/icons/icons/IcEnvelopeArrowUpAndRight';
+import { IcFilter } from '@proton/icons/icons/IcFilter';
+import { IcGlobe } from '@proton/icons/icons/IcGlobe';
+import { IcLock } from '@proton/icons/icons/IcLock';
+import { IcServers } from '@proton/icons/icons/IcServers';
+import { IcShield } from '@proton/icons/icons/IcShield';
+import { IcTags } from '@proton/icons/icons/IcTags';
 import { ADDRESS_TYPE, APPS, MAIL_APP_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
@@ -53,7 +64,7 @@ export const getMailAppRoutes = ({
                 available: !isElectronMail,
                 text: mailRouteTitles.desktop,
                 to: '/get-the-apps',
-                icon: 'arrow-down-line',
+                icon: IcArrowDownLine,
                 subsections: [
                     {
                         id: 'proton-mail-mobile-apps',
@@ -79,7 +90,7 @@ export const getMailAppRoutes = ({
                 id: 'general',
                 text: mailRouteTitles.general,
                 to: '/general',
-                icon: 'envelope',
+                icon: IcEnvelope,
                 subsections: [
                     {
                         text: c('Title').t`General`,
@@ -138,7 +149,7 @@ export const getMailAppRoutes = ({
                 id: 'privacy',
                 text: mailRouteTitles.privacy,
                 to: '/email-privacy',
-                icon: 'shield',
+                icon: IcShield,
                 subsections: [
                     {
                         id: 'email-privacy',
@@ -154,7 +165,7 @@ export const getMailAppRoutes = ({
                 id: 'identity',
                 text: mailRouteTitles.identity,
                 to: '/identity-addresses',
-                icon: 'card-identity',
+                icon: IcCardIdentity,
                 subsections: [
                     {
                         text: c('Title').t`Short domain (@pm.me)`,
@@ -194,7 +205,7 @@ export const getMailAppRoutes = ({
                 id: 'folder',
                 text: mailRouteTitles.folder,
                 to: '/folders-labels',
-                icon: 'tags',
+                icon: IcTags,
                 description: c('Settings description')
                     .jt`Keep your inbox organized with folders and labels. ${learnMoreLink}`,
                 subsections: [
@@ -222,7 +233,7 @@ export const getMailAppRoutes = ({
                 id: 'filter',
                 text: mailRouteTitles.filter,
                 to: '/filters',
-                icon: 'filter',
+                icon: IcFilter,
                 subsections: [
                     {
                         text: c('Title').t`Custom filters`,
@@ -248,7 +259,7 @@ export const getMailAppRoutes = ({
                 id: 'autoReply',
                 text: mailRouteTitles.autoReply,
                 to: '/auto-reply',
-                icon: 'envelope-arrow-up-and-right',
+                icon: IcEnvelopeArrowUpAndRight,
                 subsections: [
                     {
                         text: c('Title').t`Forward emails`,
@@ -274,7 +285,7 @@ export const getMailAppRoutes = ({
                 id: 'domainNames',
                 text: mailRouteTitles.domainNames,
                 to: '/domain-names',
-                icon: 'globe',
+                icon: IcGlobe,
                 // NOTE: This configuration is tied with the organization/routes.tsx domains availability
                 available: !user.isMember && !hasOrganizationKey && user.isSelf,
                 subsections: [
@@ -300,7 +311,7 @@ export const getMailAppRoutes = ({
                 id: 'keys',
                 text: mailRouteTitles.keys,
                 to: '/encryption-keys',
-                icon: 'lock',
+                icon: IcLock,
                 subsections: [
                     {
                         text: c('Title').t`Address and key verification`,
@@ -350,7 +361,7 @@ export const getMailAppRoutes = ({
                 id: 'imap',
                 text: mailRouteTitles.imap,
                 to: '/imap-smtp',
-                icon: 'servers',
+                icon: IcServers,
                 subsections: [
                     {
                         text: c('Title').t`${MAIL_APP_NAME} Bridge`,
@@ -371,7 +382,7 @@ export const getMailAppRoutes = ({
                 id: 'backup',
                 text: mailRouteTitles.backup,
                 to: '/backup-export',
-                icon: 'arrow-up-from-square',
+                icon: IcArrowUpFromSquare,
                 available: !user.isFree,
                 subsections: [
                     {

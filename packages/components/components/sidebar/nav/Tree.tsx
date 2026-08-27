@@ -7,7 +7,6 @@ import { ThemeColor } from '@proton/colors/types';
 import type { SidebarNode, SidebarTree } from '@proton/nav/types/sidebar';
 
 import { Badge } from '../../badge/Badge';
-import Icon from '../../icon/Icon';
 import { Sidebar } from './index';
 import { getActiveBranches } from './traverse';
 
@@ -29,13 +28,14 @@ function isDefaultOpen(meta: SidebarNode['meta']): boolean {
 
 function Leaf({ item }: { item: SidebarNode }) {
     const notification = hasNotifications(item.meta) ? item.meta.hasNotifications : undefined;
+    const ItemIcon = item.icon;
     if (!item.to) {
         return null;
     }
 
     return (
         <Sidebar.Leaf to={item.to}>
-            {item.icon ? <Icon name={item.icon} className="color-weak" /> : <Sidebar.Leaf.IconPlaceholder />}
+            {ItemIcon ? <ItemIcon className="color-weak" /> : <Sidebar.Leaf.IconPlaceholder />}
             <Sidebar.Leaf.Text>{item.label}</Sidebar.Leaf.Text>
             {isBeta(item.meta) ? (
                 <Badge className="color-weak text-capitalize" data-testid="beta-badge">{c('Info').t`Beta`}</Badge>
@@ -47,6 +47,7 @@ function Leaf({ item }: { item: SidebarNode }) {
 
 function Branch({ item, activeBranches }: { item: SidebarNode; activeBranches: Set<string> }) {
     const [isOpen, setIsOpen] = useState(activeBranches.has(item.id) || isDefaultOpen(item.meta));
+    const ItemIcon = item.icon;
 
     useEffect(() => {
         if (activeBranches.has(item.id)) {
@@ -61,7 +62,7 @@ function Branch({ item, activeBranches }: { item: SidebarNode; activeBranches: S
     return (
         <Sidebar.Branch open={isOpen} onOpenChange={setIsOpen}>
             <Sidebar.Branch.Header>
-                {item.icon ? <Icon name={item.icon} className="color-weak" /> : <Sidebar.Branch.IconPlaceholder />}
+                {ItemIcon ? <ItemIcon className="color-weak" /> : <Sidebar.Branch.IconPlaceholder />}
                 <Sidebar.Branch.Text>{item.label}</Sidebar.Branch.Text>
                 <Sidebar.Branch.Trigger rotation={{ open: 180 }} name="chevron-down" />
             </Sidebar.Branch.Header>

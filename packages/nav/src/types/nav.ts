@@ -1,4 +1,4 @@
-import type { IconName } from '@proton/icons/types';
+import type { IconComponent } from '@proton/components/containers/layout/interface';
 
 import type { Computed } from './computed';
 import type { NavContext } from './models';
@@ -10,7 +10,11 @@ export interface NavItemDefinition<TContext extends NavContext = NavContext> {
     id: string;
     label: Computed<string, TContext>;
     to?: Computed<string | undefined, TContext>;
-    icon?: Computed<IconName | undefined, TContext>;
+    /**
+     * Not `Computed`: an icon component is itself a function, so it is indistinguishable from a
+     * context getter and `compute` would invoke it and store the rendered element.
+     */
+    icon?: IconComponent;
     meta?: Computed<Meta, TContext>;
     children?: NavItemDefinition<TContext>[];
     /**
@@ -32,7 +36,7 @@ export interface NavItemResolved {
     id: string;
     label: string;
     to: string | undefined;
-    icon: IconName | undefined;
+    icon: IconComponent | undefined;
     meta: Meta;
     children: NavItemResolved[] | undefined;
     sections: NavSectionResolved[] | undefined;
