@@ -1,6 +1,10 @@
 import { c } from 'ttag';
 
 import type { SectionConfig, SidebarConfig } from '@proton/components';
+import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
+import { IcArrowRightArrowLeft } from '@proton/icons/icons/IcArrowRightArrowLeft';
+import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
+import { IcGrid2 } from '@proton/icons/icons/IcGrid2';
 import { getIsB2BAudienceFromPlan } from '@proton/payments/core/plan/helpers';
 import { CALENDAR_SETTINGS_ROUTE, CALENDAR_SETTINGS_SECTION_ID } from '@proton/shared/lib/calendar/constants';
 import { APPS, CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
@@ -37,7 +41,7 @@ export const getCalendarAppRoutes = ({ app, user, organization, flags }: Organiz
                 available: !isElectronMail,
                 text: c('Title').t`Get the apps`,
                 to: CALENDAR_SETTINGS_ROUTE.GET_APPS,
-                icon: 'arrow-down-line',
+                icon: IcArrowDownLine,
                 subsections: [
                     {
                         id: CALENDAR_SETTINGS_SECTION_ID.MOBILE_APP,
@@ -63,7 +67,7 @@ export const getCalendarAppRoutes = ({ app, user, organization, flags }: Organiz
                 id: 'general',
                 text: c('Link').t`General`,
                 to: CALENDAR_SETTINGS_ROUTE.GENERAL,
-                icon: 'grid-2',
+                icon: IcGrid2,
                 subsections: [
                     {
                         text: c('Title').t`Time zone`,
@@ -113,7 +117,7 @@ export const getCalendarAppRoutes = ({ app, user, organization, flags }: Organiz
                 id: 'calendars',
                 text: c('Link').t`Calendars`,
                 to: CALENDAR_SETTINGS_ROUTE.CALENDARS,
-                icon: 'calendar-grid',
+                icon: IcCalendarGrid,
                 subsections: [
                     {
                         text: c('Title').t`My calendars`,
@@ -140,7 +144,7 @@ export const getCalendarAppRoutes = ({ app, user, organization, flags }: Organiz
                 text: c('Link').t`Import/export`,
                 title: c('Title').t`Import and export`,
                 to: CALENDAR_SETTINGS_ROUTE.INTEROPS,
-                icon: 'arrow-right-arrow-left',
+                icon: IcArrowRightArrowLeft,
                 subsections: [
                     {
                         text: c('Title').t`Import`,

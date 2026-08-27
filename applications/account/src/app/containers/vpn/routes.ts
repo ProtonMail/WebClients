@@ -1,6 +1,9 @@
 import { c } from 'ttag';
 
 import type { SectionConfig } from '@proton/components';
+import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
+import { IcBrandWireguard } from '@proton/icons/icons/IcBrandWireguard';
+import { IcKey } from '@proton/icons/icons/IcKey';
 import { APPS, VPN_APP_NAME } from '@proton/shared/lib/constants';
 
 import type { GeneralRouterParams } from '../../content/router-params';
@@ -14,7 +17,7 @@ export const getVpnAppRoutes = ({ app }: GeneralRouterParams) => {
                 id: 'downloads',
                 text: c('Title').t`VPN apps`,
                 to: '/vpn-apps',
-                icon: 'arrow-down-line',
+                icon: IcArrowDownLine,
                 subsections: [
                     {
                         text: '',
@@ -30,7 +33,7 @@ export const getVpnAppRoutes = ({ app }: GeneralRouterParams) => {
                 id: 'wireguard',
                 text: c('Title').t`WireGuard`,
                 to: '/WireGuard',
-                icon: 'brand-wireguard',
+                icon: IcBrandWireguard,
                 subsections: [
                     {
                         text: c('Title').t`WireGuard configuration`,
@@ -42,7 +45,7 @@ export const getVpnAppRoutes = ({ app }: GeneralRouterParams) => {
                 id: 'openvpn',
                 text: c('Title').t`OpenVPN`,
                 to: '/OpenVpn',
-                icon: 'key',
+                icon: IcKey,
                 subsections: [
                     {
                         text: c('Title').t`Credentials`,

@@ -1,3 +1,5 @@
+import { IcKey } from '@proton/icons/icons/IcKey';
+import { IcUser } from '@proton/icons/icons/IcUser';
 import { APPS } from '@proton/shared/lib/constants';
 
 import { getSearchableItems } from './SettingsSearch';
@@ -14,7 +16,7 @@ const getTestRoutes = () =>
                     id: 'password',
                     text: 'Account and password',
                     to: '/account-password',
-                    icon: 'user',
+                    icon: IcUser,
                     subsections: [
                         {
                             text: 'Two-factor authentication',
@@ -30,7 +32,7 @@ const getTestRoutes = () =>
                     id: 'recovery',
                     text: 'Recovery',
                     to: '/recovery',
-                    icon: 'key',
+                    icon: IcKey,
                     subrouteGroups: {
                         advancedRecovery: {
                             id: 'advanced-recovery-options',
@@ -58,13 +60,13 @@ describe('getSearchableItems', () => {
             value: 'Authenticator app',
             in: ['Account', 'Account and password', 'Two-factor authentication'],
             to: '/account-password#two-fa',
-            icon: 'user',
+            icon: IcUser,
         });
         expect(items).toContainEqual({
             value: 'Username',
             in: ['Account', 'Account and password'],
             to: '/account-password#account',
-            icon: 'user',
+            icon: IcUser,
         });
     });
 
@@ -75,7 +77,7 @@ describe('getSearchableItems', () => {
             value: 'Scan QR code',
             in: ['Account', 'Recovery', 'QR code sign-in'],
             to: '/recovery/qr-code',
-            icon: 'key',
+            icon: IcKey,
         });
     });
 

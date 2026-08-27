@@ -5,12 +5,12 @@ import { c } from 'ttag';
 
 import { NotificationDot } from '@proton/atoms/NotificationDot/NotificationDot';
 import type { ThemeColor } from '@proton/colors';
-import type { IconName } from '@proton/icons/types';
 
+import type { IconComponent } from '../../containers/layout/interface';
 import { PromotionButton } from '../button/PromotionButton';
 import SidebarListItem from './SidebarListItem';
 import SidebarListItemContent from './SidebarListItemContent';
-import SidebarListItemContentIcon from './SidebarListItemContentIcon';
+import { navigationIconClassName } from './SidebarListItemContentIcon';
 import SidebarListItemLink from './SidebarListItemLink';
 
 function OptionalItemLink({ to, children }: { to?: string; children: ReactNode }) {
@@ -38,19 +38,19 @@ function getRightComponent(notification: ThemeColor | undefined, upgradeRequired
 
 interface Props {
     to?: string;
-    icon?: IconName;
+    icon?: IconComponent;
     notification?: ThemeColor;
     upgradeRequired?: boolean; // if true, will show an upgrade badge
     children: ReactNode;
 }
 
 const SettingsListItem = forwardRef<HTMLLIElement, Props>(
-    ({ to, icon, children, notification, upgradeRequired }, ref) => {
+    ({ to, icon: IconComponent, children, notification, upgradeRequired }, ref) => {
         return (
             <SidebarListItem ref={ref}>
                 <OptionalItemLink to={to}>
                     <SidebarListItemContent
-                        left={icon ? <SidebarListItemContentIcon name={icon} /> : null}
+                        left={IconComponent ? <IconComponent className={navigationIconClassName} /> : null}
                         right={getRightComponent(notification, upgradeRequired)}
                     >
                         {children}
