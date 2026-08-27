@@ -16,20 +16,6 @@ const needsStreamsPolyfill = (): boolean => {
 
 const needStreamsPolyfill = needsStreamsPolyfill();
 
-export const loadStreamsPolyfill = async (): Promise<void> => {
-    if (needStreamsPolyfill) {
-        try {
-            await import(
-                /* webpackChunkName: "web-streams-polyfill" */
-                'web-streams-polyfill/polyfill/es5'
-            );
-        } catch (error) {
-            console.error('Failed to load web-streams-polyfill:', error);
-            throw error;
-        }
-    }
-};
-
 export const loadCreateReadableStreamWrapper = async (
     stream: ReadableStream<Uint8Array<ArrayBuffer>>
 ): Promise<ReadableStream<Uint8Array<ArrayBuffer>>> => {

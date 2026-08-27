@@ -11,7 +11,6 @@ SDK switch flags:
 - DocsSharingModalDriveSDK - needs DocsRenameWithDriveSDK for document title cache
 - DocsMoveModalDriveSDK - needs DocsRenameWithDriveSDK because SDK rename updates cache (+ events)
 - DocsInvitationsDriveSDK - no dependencies
-- DocsCopyModalDriveSDK - not implemented yet
 */
 
 export function useSharingModalDriveSdkEnabled() {

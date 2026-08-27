@@ -4,7 +4,7 @@ import type { DuplicateDocument } from '../UseCase/DuplicateDocument'
 import type { CreateNewDocument } from '../UseCase/CreateNewDocument'
 import type { DriveCompat } from '@proton/drive-store'
 import type { InternalEventBusInterface, YjsState, DocumentType } from '@proton/docs-shared'
-import { Result, TranslatedResult } from '@proton/docs-shared'
+import { Result } from '@proton/docs-shared'
 import type { AuthenticatedDocControllerInterface } from './AuthenticatedDocControllerInterface'
 import type { SeedInitialCommit } from '../UseCase/SeedInitialCommit'
 import type { VersionHistoryUpdate } from '../VersionHistory'
@@ -406,30 +406,6 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
     const shell = result.getValue()
 
     void this.driveCompat.openDocument(shell, documentType)
-  }
-
-  public async renameDocument(newName: string): Promise<TranslatedResult<void>> {
-    try {
-      const decryptedNode = this.documentState.getProperty('decryptedNode')
-      if (!decryptedNode.parentNodeId) {
-        throw new Error('Cannot rename document')
-      }
-
-      const name = await this.driveCompat.findAvailableNodeName(
-        {
-          volumeId: decryptedNode.volumeId,
-          linkId: decryptedNode.parentNodeId,
-        },
-        newName,
-      )
-      await this.driveCompat.renameDocument(this.documentState.getProperty('entitlements').nodeMeta, name)
-      await this.refreshNodeAndDocMeta({ imposeTrashState: undefined })
-      return TranslatedResult.ok()
-    } catch (e) {
-      this.logger.error(getErrorString(e) ?? 'Failed to rename document')
-
-      return TranslatedResult.failWithTranslatedError(c('Error').t`Failed to rename document. Please try again later.`)
-    }
   }
 
   public async trashDocument(useSDK = false): Promise<void> {
