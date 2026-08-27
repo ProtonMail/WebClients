@@ -1,8 +1,5 @@
-import { useEffect, useMemo } from 'react';
-
 import { CryptoProxy } from '@protontech/crypto';
 
-import { useApi } from '@proton/app-context/useApi';
 import createApi from '@proton/shared/lib/api/createApi';
 import localStorageWithExpiry from '@proton/shared/lib/api/helpers/localStorageWithExpiry';
 import { TelemetryDriveWebFeature, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
@@ -215,23 +212,6 @@ export const measureFeaturePerformance = (api: Api, feature: Features, experimen
         },
         clear,
     };
-};
-
-export const useMeasureFeaturePerformanceOnMount = (features: Features) => {
-    const api = useApi();
-
-    // It will be a new measure object each time the api changes or the features changes.
-    // If it changes in between the previous measure has started and not ended yet the values will be cleared and ignored.
-    const measure = useMemo(() => measureFeaturePerformance(api, features), [api, features]);
-
-    useEffect(() => {
-        measure.start();
-        return () => {
-            measure.clear();
-        };
-    }, [measure]);
-
-    return measure.end;
 };
 
 const apiInstance = createApi({ config, sendLocaleHeaders: true });

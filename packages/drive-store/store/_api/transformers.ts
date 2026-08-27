@@ -15,7 +15,6 @@ import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import type { ShareMemberPayload, ShareMembershipPayload } from '@proton/shared/lib/interfaces/drive/member';
 import type { ShareMeta, ShareMetaShort } from '@proton/shared/lib/interfaces/drive/share';
 import type { ShareURL as ShareURLPayload, SharedURLInfoPayload } from '@proton/shared/lib/interfaces/drive/sharing';
-import type { DriveVolume as DriveVolumePayload } from '@proton/shared/lib/interfaces/drive/volume';
 
 import type { Device } from '../_devices';
 import type { DriveEvents } from '../_events/interface';
@@ -29,14 +28,12 @@ import type {
     ShareMember,
     ShareMembership,
     ShareURL,
-    ShareURLLEGACY,
     ShareWithKey,
     SharedUrlInfo,
 } from '../_shares/interface';
 import { ShareType } from '../_shares/interface';
-import { hasCustomPassword, hasGeneratedPasswordIncluded } from '../_shares/shareUrl';
+import { hasGeneratedPasswordIncluded } from '../_shares/shareUrl';
 import { ThumbnailType } from '../_uploads/media';
-import type { DriveVolume } from '../_volumes';
 
 // LinkMetaWithShareURL is used when loading shared links.
 // We need this to load information about number of accesses.
@@ -292,29 +289,6 @@ export const shareUrlPayloadToShareUrl = (shareUrl: ShareURLPayload): ShareURL =
     };
 };
 
-export const shareUrlPayloadToShareUrlLEGACY = (shareUrl: ShareURLPayload): ShareURLLEGACY => {
-    return {
-        shareId: shareUrl.ShareID,
-        shareUrlId: shareUrl.ShareURLID,
-        expirationTime: shareUrl.ExpirationTime,
-        creatorEmail: shareUrl.CreatorEmail,
-        password: shareUrl.Password,
-        flags: shareUrl.Flags,
-        token: shareUrl.Token,
-        publicUrl: shareUrl.PublicUrl,
-        sharePassphraseKeyPacket: shareUrl.SharePassphraseKeyPacket,
-        sharePasswordSalt: shareUrl.SharePasswordSalt,
-        hasCustomPassword: hasCustomPassword({ flags: shareUrl.Flags }),
-        hasGeneratedPasswordIncluded: hasGeneratedPasswordIncluded({ flags: shareUrl.Flags }),
-        numAccesses: shareUrl.NumAccesses,
-        urlPasswordSalt: shareUrl.UrlPasswordSalt,
-        srpVerifier: shareUrl.SRPVerifier,
-        srpModulusID: shareUrl.SRPModulusID,
-        maxAccesses: shareUrl.MaxAccesses,
-        permissions: shareUrl.Permissions,
-    };
-};
-
 export const revisionPayloadToRevision = (revision: DriveFileRevisionPayload): DriveFileRevision => {
     return {
         id: revision.ID,
@@ -406,23 +380,3 @@ export const sharedUrlInfoPayloadToSharedUrlInfo = (sharedUrlInfoPayload: Shared
         token: sharedUrlInfoPayload.Token,
     };
 };
-
-export function volumePayloadToVolume(volume: DriveVolumePayload): DriveVolume {
-    return {
-        id: volume.ID,
-        volumeId: volume.VolumeID,
-        createTime: volume.CreateTime || undefined,
-        modifyTime: volume.ModifyTime || undefined,
-        usedSpace: volume.UsedSpace,
-        downloadedBytes: volume.DownloadedBytes,
-        uploadedBytes: volume.UploadedBytes,
-        state: volume.State,
-        share: {
-            shareId: volume.Share.ShareID,
-            id: volume.Share.ID,
-            linkId: volume.Share.LinkID,
-        },
-        type: volume.Type,
-        restoreStatus: volume.RestoreStatus || undefined,
-    };
-}

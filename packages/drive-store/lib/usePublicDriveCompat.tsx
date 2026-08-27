@@ -6,7 +6,6 @@ import type { SHARE_URL_PERMISSIONS } from '@proton/shared/lib/drive/permissions
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
 import { useGetPublicKeysForEmail, usePublicActions } from '../store';
-import { useDriveDocsFeatureFlag } from '../store/_documents/useDriveDocsFeatureFlag';
 import { useDriveDocsPublicSharingFF } from '../store/_documents/useDriveDocsPublicSharingFF';
 import type { DocumentType } from '../store/_documents/useOpenDocument';
 import { useOpenDocument } from '../store/_documents/useOpenDocument';
@@ -18,11 +17,6 @@ import type { DecryptedNode } from './_nodes/interface';
 import { usePublicDocsToken } from './_shares';
 
 export interface PublicDriveCompat {
-    /**
-     * Whether or not Docs is enabled. Only uses feature flags, not context aware.
-     */
-    isDocsEnabled: boolean;
-
     /**
      * Whether or not the public docs feature flag is enabled.
      */
@@ -114,7 +108,6 @@ export interface PublicDriveCompat {
 }
 
 const usePublicDriveCompatValue = (session?: ResumedSessionResult): PublicDriveCompat => {
-    const { isDocsEnabled } = useDriveDocsFeatureFlag();
     const { isDocsPublicSharingEnabled } = useDriveDocsPublicSharingFF();
 
     const {
@@ -176,7 +169,6 @@ const usePublicDriveCompatValue = (session?: ResumedSessionResult): PublicDriveC
     const linkIdError = isLinkIdError ? new Error('No valid linkId present') : undefined;
 
     return {
-        isDocsEnabled,
         customPassword,
         isWaitingForPasswordFromDriveWindow,
         isPasswordNeeded,
