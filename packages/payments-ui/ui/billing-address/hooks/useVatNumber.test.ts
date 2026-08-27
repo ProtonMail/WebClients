@@ -35,7 +35,7 @@ jest.mock('@proton/redux-shared-store/sharedProvider', () => ({
     useStore: () => ({ getState: mockGetState }),
 }));
 
-jest.mock('./useVatFormValidation', () => ({
+jest.mock('@proton/payments/core/billing-address/vat-helpers', () => ({
     getVatFormErrors: () => ({
         hasErrors: false,
         errorMessages: { VatId: '', Company: '', FirstName: '', LastName: '', Address: '', City: '' },

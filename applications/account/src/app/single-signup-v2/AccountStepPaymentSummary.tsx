@@ -7,7 +7,6 @@ import SkeletonLoader from '@proton/components/components/skeletonLoader/Skeleto
 import { getTotalBillingText } from '@proton/components/containers/payments/subscription/helpers';
 import { InclusiveVatText } from '@proton/payments-ui/ui/billing-address/components/VatText';
 import { getCheckoutRenewNoticeTextFromCheckResult } from '@proton/payments-ui/ui/components/RenewalNotice';
-import type { CouponConfigRendered } from '@proton/payments-ui/ui/coupon-config/useCouponConfig';
 import {
     getVatReverseChargeText,
     isVatReverseChargeApplicable,
@@ -15,6 +14,7 @@ import {
 import { formatTax } from '@proton/payments-ui/ui/headless-checkout/tax-helpers';
 import { getCheckoutUi, getOptimisticCheckout } from '@proton/payments/core/checkout';
 import { COUPON_CODES, TRIAL_DURATION_DAYS } from '@proton/payments/core/constants';
+import type { CouponConfigMetadata } from '@proton/payments/core/coupon-config/interface';
 import { getIsB2BAudienceFromPlan } from '@proton/payments/core/plan/helpers';
 import type { Plan } from '@proton/payments/core/plan/interface';
 import { SubscriptionMode, TaxMode } from '@proton/payments/core/subscription/constants';
@@ -82,7 +82,7 @@ interface Props {
     loadingPaymentDetails: boolean;
     showRenewalNotice: boolean;
     app: APP_NAMES | undefined;
-    couponConfig: CouponConfigRendered | undefined;
+    couponConfig: CouponConfigMetadata | undefined;
 }
 
 const AccountStepPaymentSummary = ({

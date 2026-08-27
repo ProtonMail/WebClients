@@ -6,11 +6,11 @@ import type { Model } from '@proton/components/containers/payments/subscription/
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { PaymentsContextProvider, usePayments } from '@proton/payments-ui/ui/context/PaymentContext';
-import { getPlanToCheck } from '@proton/payments-ui/ui/context/helpers';
 import { PLANS } from '@proton/payments/core/constants';
 import type { FreeSubscription } from '@proton/payments/core/interface';
 import { isLifetimePlanSelected } from '@proton/payments/core/plan/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
+import { getPlanToCheck } from '@proton/payments/core/subscription/plan-to-check';
 import noop from '@proton/utils/noop';
 
 import SubscriptionCheckoutAddonSection from './sections/SubscriptionCheckoutAddonSection';

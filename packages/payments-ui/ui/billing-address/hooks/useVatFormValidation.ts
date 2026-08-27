@@ -1,38 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 
-import { c } from 'ttag';
-import { checkVAT, countries as vatValidationCountries } from 'vat-validation';
-
-import { isProduction } from '@proton/shared/lib/helpers/sentry';
+import type { VatFormErrors, VatFormFields } from '@proton/payments/core/billing-address/vat-helpers';
+import { getVatFormErrors } from '@proton/payments/core/billing-address/vat-helpers';
 import { useFlag } from '@proton/unleash/useFlag';
-import isTruthy from '@proton/utils/isTruthy';
 
-import { countriesWithVatNumberOnSignup } from './countriesWithVatId';
-import { getValidVatPrefixes, isBareVatPrefix, vatNumberMissingPrefix } from './vatPrefixHelper';
-
-export interface VatFormFields {
-    CountryCode: string;
-    State?: string | null;
-    ZipCode?: string | null;
-    VatId?: string | null;
-    Company?: string | null;
-    FirstName?: string | null;
-    LastName?: string | null;
-    Address?: string | null;
-    City?: string | null;
-}
-
-interface VatFormErrors {
-    hasErrors: boolean;
-    errorMessages: {
-        VatId: string;
-        Company: string;
-        FirstName: string;
-        LastName: string;
-        Address: string;
-        City: string;
-    };
-}
+export type { VatFormFields } from '@proton/payments/core/billing-address/vat-helpers';
 
 function emptyErrors(): VatFormErrors {
     return {
@@ -45,95 +17,6 @@ function emptyErrors(): VatFormErrors {
             Address: '',
             City: '',
         },
-    };
-}
-
-export function checkVatNumber(vatNumber: string, countryCode: string): boolean {
-    // Skip validation for countries we don't support VAT IDs for (e.g. Thailand, Turkey)
-    if (!countriesWithVatNumberOnSignup.has(countryCode)) {
-        return true;
-    }
-
-    // In dev env, we let these VAT numbers to bypass the frontend validation
-    if (!isProduction(window.location.host) && (vatNumber === 'IT01231231234' || vatNumber === 'BE0123123123')) {
-        return true;
-    }
-
-    const countries = vatValidationCountries.filter((country) => country.codes.includes(countryCode));
-
-    // If the vat-validation library doesn't cover this country, skip validation rather than
-    // rejecting all VAT numbers (e.g. Liechtenstein, Iceland are not in the library yet)
-    if (countries.length === 0) {
-        return true;
-    }
-
-    return checkVAT(vatNumber, countries).isValid;
-}
-
-function validateVatNumber(vatNumber: string, countryCode: string): string {
-    return checkVatNumber(vatNumber, countryCode) ? '' : c('Error').t`Invalid VAT number`;
-}
-
-function getVatFormErrorMessages(
-    fields: VatFormFields,
-    showExtendedBillingAddressForm: boolean
-): VatFormErrors['errorMessages'] {
-    const errors: VatFormErrors['errorMessages'] = emptyErrors().errorMessages;
-    // A bare prefix (e.g. the prefilled "DE") is treated as an empty VAT number: no error,
-    // and the extended billing-address fields below stay optional.
-    if (!fields.VatId || isBareVatPrefix(fields.VatId, fields.CountryCode)) {
-        return errors;
-    }
-
-    if (vatNumberMissingPrefix(fields.VatId, fields.CountryCode)) {
-        const validPrefixes = getValidVatPrefixes(fields.CountryCode);
-        if (validPrefixes !== null) {
-            const prefixes = validPrefixes.join(', ');
-            errors.VatId = c('Error').t`VAT number must start with ${prefixes}`;
-        }
-    } else {
-        errors.VatId = validateVatNumber(fields.VatId, fields.CountryCode);
-    }
-
-    if (!showExtendedBillingAddressForm) {
-        return errors;
-    }
-
-    if (!fields.Address) {
-        errors.Address = c('Error').t`This field is required`;
-    }
-    if (!fields.City) {
-        errors.City = c('Error').t`This field is required`;
-    }
-
-    if (fields.FirstName && !fields.LastName) {
-        errors.LastName = c('Error').t`This field is required`;
-    }
-    if (fields.LastName && !fields.FirstName) {
-        errors.FirstName = c('Error').t`This field is required`;
-    }
-
-    const hasCompany = !!fields.Company;
-    const hasFullName = !!fields.FirstName && !!fields.LastName;
-
-    if (!hasCompany && !hasFullName && !errors.FirstName && !errors.LastName) {
-        errors.Company = c('Error').t`Company name or personal name is required`;
-    }
-
-    return errors;
-}
-
-/**
- * Pure validation function. Rules when VAT number is present:
- * 1. Must provide Company OR (First Name AND Last Name)
- * 2. Address and City are always required
- * 3. First Name and Last Name are paired — providing one requires the other
- */
-export function getVatFormErrors(fields: VatFormFields, showExtendedBillingAddressForm: boolean): VatFormErrors {
-    const errorMessages = getVatFormErrorMessages(fields, showExtendedBillingAddressForm);
-    return {
-        hasErrors: Object.values(errorMessages).some(isTruthy),
-        errorMessages,
     };
 }
 
@@ -157,8 +40,6 @@ export function useVatFormValidation(
         }
     }, [fields.VatId, options?.collapsed]);
 
-    // Reset errors when the country changes so a newly-prefilled prefix doesn't
-    // immediately show validation errors before the user has touched the field.
     useEffect(() => {
         setShowErrors(false);
     }, [fields.CountryCode]);

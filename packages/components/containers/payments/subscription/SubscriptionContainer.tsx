@@ -19,8 +19,6 @@ import { useSubscriptionModificationChangeStepTelemetry } from '@proton/payments
 import { VatReverseChargeErrorModal } from '@proton/payments-ui/ui/billing-address/containers/VatReverseChargeErrorModal';
 import { useBillingAddress } from '@proton/payments-ui/ui/billing-address/hooks/useBillingAddress';
 import { PaymentsContextProvider } from '@proton/payments-ui/ui/context/PaymentContext';
-import { getStaticCouponConfig } from '@proton/payments-ui/ui/coupon-config/get-static-coupon-config';
-import { isCSCoupon } from '@proton/payments-ui/ui/coupon-config/helpers';
 import { useCouponConfig } from '@proton/payments-ui/ui/coupon-config/useCouponConfig';
 import { usePaymentPollers } from '@proton/payments-ui/ui/hooks/usePaymentPollers';
 import { type CheckSubscriptionData, ProrationMode } from '@proton/payments/core/api/api';
@@ -28,6 +26,8 @@ import type { BillingAddress, BillingAddressExtended } from '@proton/payments/co
 import { getIsCustomCycle } from '@proton/payments/core/checkout';
 import { getCheckoutModifiers } from '@proton/payments/core/checkout-modifiers';
 import { ADDON_PREFIXES, PLANS } from '@proton/payments/core/constants';
+import { getStaticCouponConfig } from '@proton/payments/core/coupon-config/get-static-coupon-config';
+import { isCSCoupon } from '@proton/payments/core/coupon-config/helpers';
 import { DisplayablePaymentError } from '@proton/payments/core/errors';
 import { captureWrongPlanIDs, captureWrongPlanName } from '@proton/payments/core/helpers';
 import type {

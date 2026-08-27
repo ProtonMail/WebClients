@@ -1,8 +1,8 @@
 import { COUPON_CODES } from '@proton/payments/core/constants';
+import { monthlyNudgeMetadata } from '@proton/payments/core/coupon-config/configs/monthly-nudge';
+import { q3Sale2026Metadata } from '@proton/payments/core/coupon-config/configs/q3-sale-2026';
 
 import { getStaticCouponConfig } from './get-static-coupon-config';
-import { monthlyNudgeConfig } from './monthlyNudge';
-import { q3Sale2026Config } from './q3Sale2026';
 
 describe('getStaticCouponConfig', () => {
     it('returns undefined for an unknown coupon', () => {
@@ -16,20 +16,20 @@ describe('getStaticCouponConfig', () => {
     it('matches monthlyNudge config by coupon code', () => {
         const result = getStaticCouponConfig(COUPON_CODES.ANNUALOFFER25);
 
-        expect(result).toBe(monthlyNudgeConfig);
+        expect(result).toBe(monthlyNudgeMetadata);
         expect(result?.hidden).toBe(true);
     });
 
     it('normalizes coupon code before matching', () => {
-        expect(getStaticCouponConfig('  annualoffer25  ')).toBe(monthlyNudgeConfig);
+        expect(getStaticCouponConfig('  annualoffer25  ')).toBe(monthlyNudgeMetadata);
     });
 
     it('matches q3Sale2026 config coupons', () => {
-        expect(getStaticCouponConfig(COUPON_CODES.SEP26BUNDLESALE)).toBe(q3Sale2026Config);
-        expect(getStaticCouponConfig(COUPON_CODES.SEP26BUNDLEDEAL)).toBe(q3Sale2026Config);
-        expect(getStaticCouponConfig(COUPON_CODES.SEP26BUNDLESALECS)).toBe(q3Sale2026Config);
-        expect(getStaticCouponConfig(COUPON_CODES.SEP26BUNDLEDEALCS)).toBe(q3Sale2026Config);
-        expect(getStaticCouponConfig('sep26bundlesale')).toBe(q3Sale2026Config);
+        expect(getStaticCouponConfig(COUPON_CODES.SEP26BUNDLESALE)).toBe(q3Sale2026Metadata);
+        expect(getStaticCouponConfig(COUPON_CODES.SEP26BUNDLEDEAL)).toBe(q3Sale2026Metadata);
+        expect(getStaticCouponConfig(COUPON_CODES.SEP26BUNDLESALECS)).toBe(q3Sale2026Metadata);
+        expect(getStaticCouponConfig(COUPON_CODES.SEP26BUNDLEDEALCS)).toBe(q3Sale2026Metadata);
+        expect(getStaticCouponConfig('sep26bundlesale')).toBe(q3Sale2026Metadata);
     });
 
     it('does not match configs that rely on special cases instead of coupon codes', () => {

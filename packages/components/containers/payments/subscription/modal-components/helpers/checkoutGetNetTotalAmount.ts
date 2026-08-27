@@ -1,10 +1,10 @@
-import type { CouponConfigRendered } from '@proton/payments-ui/ui/coupon-config/useCouponConfig';
 import type { PaymentsCheckoutUI } from '@proton/payments/core/checkout';
+import type { CouponConfigMetadata } from '@proton/payments/core/coupon-config/interface';
 
 export function checkoutGetNetTotalAmount(
     checkout: PaymentsCheckoutUI,
     trial: boolean,
-    couponConfig: CouponConfigRendered | undefined
+    couponConfig: CouponConfigMetadata | undefined
 ) {
     const { checkResult, withDiscountPerCycle } = checkout;
     if (checkResult.Amount === 0 && trial) {
