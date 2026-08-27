@@ -5415,8 +5415,8 @@
         "Grupuri găsite: ${ groupCounts }",
         "Grupuri găsite: ${ groupCounts }"
       ],
-      "${ IDEAL_BRAND_NAME } mark": [
-        "Marca ${ IDEAL_BRAND_NAME }"
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "Marca ${ IDEAL_WERO_BRAND_NAME }"
       ],
       "${ invitationsCount } pending invitation": [
         "Invitații în așteptare: ${ invitationsCount }",
@@ -7237,8 +7237,8 @@
         "Câteva fotografii nu au putut fi adăugate în album.",
         "Câteva fotografii nu au putut fi adăugate în album."
       ],
-      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "Pentru finalizarea tranzacției prin ${ IDEAL_BRAND_NAME } se va deschide o filă nouă. Dacă folosiți programe de blocat ferestre flotante dezactivați-le înainte de a continua."
+      "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Pentru finalizarea tranzacției prin ${ IDEAL_WERO_BRAND_NAME } se va deschide o filă nouă. Dacă folosiți programe de blocat ferestre flotante dezactivați-le înainte de a continua."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Pentru finalizarea tranzacției prin PayPal se va deschide o filă nouă. Dacă folosiți programe de blocat ferestre flotante dezactivați-le înainte de a continua."
@@ -7629,6 +7629,9 @@
       "${ downloads } downloads": [
         "${ downloads } descărcări"
       ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } de caractere"
+      ],
       "${ n } month": [
         "O lună",
         "${ n } luni",
@@ -7643,9 +7646,6 @@
         "${ nbYear } an",
         "${ nbYear } ani",
         "${ nbYear } de ani"
-      ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } de caractere"
       ],
       "(Expired)": [
         "(Expirat)"
@@ -10903,8 +10903,8 @@
       "More plans are available in other currencies": [
         "Există alte planuri în monede diferite"
       ],
-      "Pay with ${ IDEAL_BRAND_NAME }": [
-        "Plata cu ${ IDEAL_BRAND_NAME }"
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "Plata cu ${ IDEAL_WERO_BRAND_NAME }"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Metoda de plată este necesară pentru activarea abonamentului după încheierea perioadei de evaluare."
@@ -10993,8 +10993,8 @@
       "You will soon be redirected to verify your payment.": [
         "Pentru verificarea plății se va deschide o filă nouă."
       ],
-      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
-        "Moneda a fost schimbată în euro (€) deoarece ${ IDEAL_BRAND_NAME } acceptă doar plăți în euro."
+      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
+        "Moneda a fost schimbată în euro (€) deoarece ${ IDEAL_WERO_BRAND_NAME } acceptă doar plăți în euro."
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Moneda a fost schimbată în euro (€) deoarece transferurile bancare SEPA acceptă doar plăți în euro."
@@ -11007,8 +11007,8 @@
       ]
     },
     "Payments.Error": {
-      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
-        "Eșuare inițializare ${ IDEAL_BRAND_NAME }. Reîncercați."
+      "Failed to initialize ${ IDEAL_WERO_BRAND_NAME }. Please try again later.": [
+        "Eșuare inițializare ${ IDEAL_WERO_BRAND_NAME }. Reîncercați."
       ],
       "Invalid card number": [
         "Număr de card nevalid."
@@ -11038,8 +11038,8 @@
       ]
     },
     "Payments.iDEAL": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Prin confirmarea acestei plăți, autorizați ${ BRAND_NAME } și Stripe, furnizorul nostru de servicii de plată, să vă instruiască banca să vă debiteze contul în mod corespunzător. Puteți primi o rambursare în termen de 8 săptămâni de la data debitării, în condițiile acordului dvs. cu banca."
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Prin confirmare, autorizați ${ BRAND_NAME } și Stripe, furnizorul nostru de servicii de plată, să colecteze plățile viitoare pentru abonament din acest cont bancar prin Debit Direct SEPA, iar banca să vă debiteze aceste plăți. Prima plată este efectuată acum de către ${ IDEAL_WERO_BRAND_NAME }. Planul se reînnoiește automat până la anularea acestuia; vă vom notifica înainte de fiecare colectare. Pentru colectările prin debit direct, puteți solicita o rambursare de la banca proprie în termen de 8 săptămâni de la data debitării, în conformitate cu termenii acordului cu banca. Aceasta nu se aplică plății ${ IDEAL_WERO_BRAND_NAME } pe care o efectuați acum."
       ]
     },
     "Payments.info": {
@@ -11672,17 +11672,6 @@
       ],
       "User Admin": [
         "Administrare utilizatori"
-      ]
-    },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Configurați politicile de securitate, păstrarea datelor și infrastructura VPN și gestionați jurnalele de audit."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Gestionați toți utilizatorii, grupurile, securitatea, facturarea și configurările de sistem."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Gestionați utilizatorii, grupurile și spațiul de stocare pentru toți membrii, atribuiți roluri și alocați licențe."
       ]
     },
     "Safety review": {
