@@ -5853,15 +5853,6 @@
       "This user can not be migrated due to platform incompatibilities.": [
         "Tento používateľ nemôže byť prenesený z dôvodu nekompatibility platforiem."
       ],
-      "This will permanently delete the file you uploaded.": [
-        "Týmto sa natrvalo odstráni nahraný súbor."
-      ],
-      "This will permanently delete the folder you uploaded.": [
-        "Týmto sa natrvalo odstráni nahraný priečinok."
-      ],
-      "This will permanently delete the selected items you uploaded.": [
-        "Týmto sa natrvalo odstránia vybrané položky, ktoré ste nahrali."
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Týmto sa odhlásite zo všetkých aktuálne prihlásených účtov."
       ],
@@ -6278,9 +6269,6 @@
     "Label": {
       "${ BRAND_NAME } username": [
         "Používateľské meno ${ BRAND_NAME }"
-      ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } znakov"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Dočasne nedostupné. Skúste to neskôr.)"
@@ -8611,29 +8599,17 @@
       "Share invitation declined": [
         "Pozvánka na zdieľanie odmietnutá"
       ],
-      "Sorry, we couldn't delete the folder because it is not empty.": [
-        "Je nám ľúto, ale priečinok sme nemohli odstrániť, pretože nie je prázdny.",
-        "Je nám ľúto, ale priečinky sme nemohli odstrániť, pretože nie sú prázdne.",
-        "Je nám ľúto, ale priečinky sme nemohli odstrániť, pretože nie sú prázdne.",
-        "Je nám ľúto, ale priečinky sme nemohli odstrániť, pretože nie sú prázdne."
-      ],
       "Stopping the sharing of this item has failed": [
         "Ukončenie zdieľania tejto položky zlyhalo"
       ],
       "Subfolder failed to be loaded": [
         "Nepodarilo sa načítať podpriečinok"
       ],
-      "The document failed to be created": [
-        "Dokument sa nepodarilo vytvoriť"
-      ],
       "The link to your item failed to be deleted": [
         "Odkaz na vašu položku sa nepodarilo zmazať"
       ],
       "The link to your item was deleted": [
         "Odkaz na vašu položku bol zmazaný"
-      ],
-      "The spreadsheet failed to be created": [
-        "Tabuľku sa nepodarilo vytvoriť"
       ],
       "Trash failed to be emptied": [
         "Kôš sa nepodarilo vysypať"
@@ -9467,17 +9443,6 @@
       ],
       "User Admin": [
         "Správca používateľov"
-      ]
-    },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Konfigurácia bezpečnostných politík, uchovávania údajov a infraštruktúry VPN a správa auditových záznamov."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Spravujte všetkých používateľov, skupiny, zabezpečenie, fakturáciu a systémové konfigurácie."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Správa používateľov, skupín a úložného priestoru pre všetkých členov, prideľovanie rolí a prideľovanie licencií."
       ]
     },
     "Safety review": {
@@ -10777,9 +10742,6 @@
       "Decline invitation?": [
         "Odmietnuť pozvanie?"
       ],
-      "Delete": [
-        "Vymazať"
-      ],
       "Delete ${ count } contact": [
         "Zmazať ${ count } kontakt",
         "Zmazať ${ count } kontakty",
@@ -10791,12 +10753,6 @@
         "Zmazať ${ count } skupiny kontaktov",
         "Zmazať ${ count } skupín kontaktov",
         "Zmazať ${ count } skupín kontaktov"
-      ],
-      "Delete ${ links.length } items?": [
-        "Vymazať ${ links.length } položiek?"
-      ],
-      "Delete ${ name }?": [
-        "Vymazať ${ name }?"
       ],
       "Delete ${ value }": [
         "Vymazať ${ value }"

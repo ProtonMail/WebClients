@@ -5722,15 +5722,6 @@
       "This user can not be migrated due to platform incompatibilities.": [
         "Denne bruger kan ikke migreres på grund af inkompatibilitet mellem platformene."
       ],
-      "This will permanently delete the file you uploaded.": [
-        "Dette vil permanent slette filen, du har uploadet."
-      ],
-      "This will permanently delete the folder you uploaded.": [
-        "Dette vil permanent slette mappen, du har uploadet."
-      ],
-      "This will permanently delete the selected items you uploaded.": [
-        "Dette vil permanent slette de valgte elementer, du har uploadet."
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Dette vil logge dig ud af alle kontoer, der i øjeblikket er logget ind."
       ],
@@ -6136,8 +6127,8 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } brugernavn"
       ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } tegn"
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } tegn"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Midlertidigt utilgængelig. Tjek igen senere.)"
@@ -8366,27 +8357,17 @@
       "Share invitation declined": [
         "Afvist invitation til at dele"
       ],
-      "Sorry, we couldn't delete the folder because it is not empty.": [
-        "Beklager, vi kunne ikke slette mappen, fordi den ikke er tom.",
-        "Beklager, vi kunne ikke slette mapperne, fordi de ikke er tomme."
-      ],
       "Stopping the sharing of this item has failed": [
         "Det lykkedes ikke at stoppe delingen af dette element"
       ],
       "Subfolder failed to be loaded": [
         "Undermappe kunne ikke indlæses"
       ],
-      "The document failed to be created": [
-        "Dokumentet kunne ikke oprettes"
-      ],
       "The link to your item failed to be deleted": [
         "Linket til dit element kunne ikke slettes"
       ],
       "The link to your item was deleted": [
         "Linket til dit element blev slettet"
-      ],
-      "The spreadsheet failed to be created": [
-        "Regnearket kunne ikke oprettes"
       ],
       "Trash failed to be emptied": [
         "Papirkurv kunne ikke tømmes"
@@ -9267,17 +9248,6 @@
       ],
       "User Admin": [
         "Brugeradmin"
-      ]
-    },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Konfigurer sikkerhedspolitikker, datalagring, og VPN-infrastruktur, og administrer logs."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Administrer alle brugere, grupper, sikkerhed, fakturering, og systemkonfigurationer."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Administrer brugere, grupper, og lagerplads for alle medlemmer, og tildel roller samt licenser."
       ]
     },
     "Safety review": {
@@ -10497,9 +10467,6 @@
       "Decline invitation?": [
         "Afvis invitation?"
       ],
-      "Delete": [
-        "Slet"
-      ],
       "Delete ${ count } contact": [
         "Slet ${ count } kontakt",
         "Slet ${ count } kontakter"
@@ -10507,12 +10474,6 @@
       "Delete ${ count } contact group": [
         "Slet ${ count } kontaktgruppe",
         "Slet ${ count } kontaktgrupper"
-      ],
-      "Delete ${ links.length } items?": [
-        "Slet ${ links.length } elementer?"
-      ],
-      "Delete ${ name }?": [
-        "Slet ${ name }?"
       ],
       "Delete ${ value }": [
         "Slet ${ value }"
