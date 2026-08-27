@@ -21,6 +21,7 @@ const createDefaultMocks = () =>
         getJoinType: vi.fn().mockResolvedValue(undefined),
         getGroupKey: vi.fn().mockResolvedValue(undefined),
         getGroupDisplayCode: vi.fn().mockResolvedValue(undefined),
+        getGroupLen: vi.fn().mockResolvedValue(undefined),
         isMlsUpToDate: vi.fn().mockResolvedValue(undefined),
         isWebsocketHasReconnected: vi.fn().mockResolvedValue(undefined),
         getWsState: vi.fn().mockResolvedValue(undefined),

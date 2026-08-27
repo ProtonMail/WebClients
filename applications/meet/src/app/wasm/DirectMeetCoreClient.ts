@@ -75,6 +75,10 @@ export class DirectMeetCoreClient implements MeetCoreClient {
         return { full_code: groupDisplayCode.full_code };
     }
 
+    public getGroupLen(): Promise<number> {
+        return this.app.getGroupLen();
+    }
+
     public isMlsUpToDate(): Promise<boolean> {
         return this.app.isMlsUpToDate();
     }

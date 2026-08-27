@@ -82,6 +82,7 @@ export interface MeetCoreClient {
     getJoinType(...args: Parameters<App['getJoinType']>): Promise<JoinTypeInfo>;
     getGroupKey(): Promise<GroupKeyInfoData>;
     getGroupDisplayCode(): Promise<GroupDisplayCodeData>;
+    getGroupLen(): Promise<number>;
     isMlsUpToDate(): Promise<boolean>;
     isWebsocketHasReconnected(): Promise<boolean>;
     getWsState(): Promise<ConnectionStateInfo>;
