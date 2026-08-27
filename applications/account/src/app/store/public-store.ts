@@ -5,9 +5,9 @@ import { eligibleTrialsReducer } from '@proton/account/eligibleTrials';
 import { paymentStatusReducer } from '@proton/account/paymentStatus';
 import { plansReducer } from '@proton/account/plans';
 import { referralInfoReducer } from '@proton/account/referralInfo';
+import { staticExperimentsReducer } from '@proton/account/staticExperiments/slice';
 import { ignoredActions, ignoredPaths } from '@proton/redux-shared-store/sharedSerializable';
 
-import { staticExperimentsReducer } from '../staticExperiments/slice';
 import { type AccountThunkPublicArguments, extraThunkArguments } from './public-thunk';
 
 export const setupStore = () => {

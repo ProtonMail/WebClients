@@ -1,10 +1,10 @@
 import type { ReactNode } from 'react';
-import { Provider } from 'react-redux';
 
-import { configureStore } from '@reduxjs/toolkit';
 import { act, renderHook } from '@testing-library/react';
 
-import { ProtonStoreContext } from '@proton/react-redux-store';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
+import { getTestStore } from '@proton/redux-shared-store/test';
 
 import { staticExperimentsActions, staticExperimentsReducer } from './slice';
 import type { StaticExperimentName } from './types';
@@ -13,15 +13,14 @@ import { useStaticExperiment } from './useStaticExperiment';
 const EXPERIMENT_NAME = 'MyExperiment' as StaticExperimentName;
 
 const createWrapper = (preloadedState: Record<string, string> = {}) => {
-    const store = configureStore({
+    const { store } = getTestStore({
         reducer: staticExperimentsReducer,
         preloadedState: { staticExperiments: preloadedState },
+        extraThunkArguments: {} as ProtonThunkArguments,
     });
 
     const wrapper = ({ children }: { children: ReactNode }) => (
-        <Provider context={ProtonStoreContext} store={store}>
-            {children}
-        </Provider>
+        <ProtonStoreProvider store={store}>{children}</ProtonStoreProvider>
     );
 
     return { store, wrapper };
