@@ -190,9 +190,6 @@
       "Apply changes": [
         "Aplica els canvis"
       ],
-      "Approve participants before they can join": [
-        "Aprovar els participants abans que puguin unir-s'hi"
-      ],
       "Assign ${ selectedParticipantName } as host": [
         "Assigneu ${ selectedParticipantName } com a amfitrió"
       ],
@@ -385,11 +382,11 @@
       "Hide participants": [
         "Amagueu els participants"
       ],
-      "Hide self view": [
-        "Amagueu la vista pròpia"
-      ],
       "Hide timezones": [
         "Amagueu els fusos horaris"
+      ],
+      "Incoming video": [
+        "Vídeo entrant"
       ],
       "Insert emoji": [
         "Inserir un emoji"
@@ -424,6 +421,9 @@
       "Lower hand": [
         "Abaixar la mà"
       ],
+      "Meeting timer": [
+        "Temporitzador de la reunió"
+      ],
       "Minimize preview": [
         "Minimitzeu la previsualització"
       ],
@@ -457,14 +457,14 @@
       "Participants join after you approve them": [
         "Els participants s'hi podran unir un cop els aproveu"
       ],
-      "Participants join the call directly": [
-        "Els participants s'uneixen a la trucada directament."
-      ],
       "Paste": [
         "Enganxa"
       ],
       "Pause": [
         "Pausa"
+      ],
+      "Picture-in-picture while sharing": [
+        "Imatge dins de la imatge durant la compartició"
       ],
       "Playing back...": [
         "S'està reproduint..."
@@ -570,6 +570,9 @@
       "Search countries": [
         "Cerca països"
       ],
+      "Self view": [
+        "Vista pròpia"
+      ],
       "Send an encrypted message": [
         "Envieu un missatge xifrat"
       ],
@@ -578,12 +581,6 @@
       ],
       "Settings": [
         "Preferències"
-      ],
-      "Show duration": [
-        "Mostra la durada"
-      ],
-      "Show floating thumbnail during screensharing": [
-        "Mostrar la miniatura flotant mentre compartiu la pantalla"
       ],
       "Show options": [
         "Mostra les opcions"
@@ -675,17 +672,11 @@
       "Try another method": [
         "Proveu amb un altre mètode"
       ],
-      "Turn off incoming video": [
-        "Desactiveu el vídeo entrant"
-      ],
       "Upgrade": [
         "Millora el pla"
       ],
       "Upgrade now": [
         "Millora el pla ara"
-      ],
-      "Upgrade your plan to use waiting room in your next meeting.": [
-        "Milloreu el vostre pla per utilitzar la sala d'espera a la propera reunió."
       ],
       "Upload another image": [
         "Carregar una altra imatge"
@@ -728,6 +719,9 @@
       ],
       "View invoice": [
         "Mostra la factura"
+      ],
+      "Virtual backgrounds": [
+        "Fons virtuals"
       ],
       "Waiting room": [
         "Sala d'espera"
@@ -776,8 +770,8 @@
       "Go to dashboard": [
         "Aneu al tauler de control"
       ],
-      "Hide self view": [
-        "Amagar la vista pròpia"
+      "Incoming video": [
+        "Vídeo entrant"
       ],
       "Leave Meeting": [
         "Sortiu de la reunió"
@@ -793,6 +787,9 @@
       ],
       "Meeting details": [
         "Detalls de la reunió"
+      ],
+      "Meeting timer": [
+        "Temporitzador de la reunió"
       ],
       "More options": [
         "Més opcions"
@@ -812,6 +809,9 @@
       "Participants": [
         "Participants"
       ],
+      "Picture-in-picture while sharing": [
+        "Imatge dins de la imatge durant la compartició"
+      ],
       "Raise hand": [
         "Aixecar la mà"
       ],
@@ -824,14 +824,11 @@
       "Screen share": [
         "Compartir pantalla"
       ],
+      "Self view": [
+        "Vista pròpia"
+      ],
       "Settings": [
         "Preferències"
-      ],
-      "Show duration": [
-        "Mostra la durada"
-      ],
-      "Show floating thumbnail during screensharing": [
-        "Mostrar la miniatura flotant mentre compartiu la pantalla"
       ],
       "Stop recording and download.": [
         "Atura la gravació i la descarrega."
@@ -853,9 +850,6 @@
       ],
       "Toggle settings": [
         "Commuta les preferències"
-      ],
-      "Turn off incoming video": [
-        "Desactiveu el vídeo entrant"
       ],
       "Video settings": [
         "Preferències de vídeo"
@@ -2346,6 +2340,12 @@
       "Anonymous ${ particle } ${ participantNumber }": [
         "Anònim ${ particle } ${ participantNumber }"
       ],
+      "Anyone with the link can join immediately": [
+        "Qualsevol persona amb l'enllaç s'hi pot unir immediatament"
+      ],
+      "Approve participants before they can join": [
+        "Aprovar els participants abans que puguin unir-s'hi"
+      ],
       "Are you sure you want to leave?": [
         "Segur que voleu marxar?"
       ],
@@ -2354,6 +2354,9 @@
       ],
       "Attention required": [
         "Es requereix la vostra atenció"
+      ],
+      "Available with a paid plan": [
+        "Disponible amb un pla de pagament"
       ],
       "Background blur initializing": [
         "S'està inicialitzant el desenfocament del fons"
@@ -3074,6 +3077,9 @@
       "${ BRAND_NAME } username": [
         "Nom d'usuari de ${ BRAND_NAME }"
       ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } caràcters"
+      ],
       "${ numberOfStars } star": [
         "${ numberOfStars } estrella",
         "${ numberOfStars } estrelles"
@@ -3556,17 +3562,6 @@
         "Administrador/a d'usuaris"
       ]
     },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Configureu les polítiques de seguretat, la retenció de dades i la infraestructura VPN, i gestioneu els registres d'auditoria."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Gestioneu tots els usuaris, grups, seguretat, facturació i configuracions del sistema."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Gestioneu els usuaris, els grups i l'emmagatzematge de tots els membres, assigneu rols i adjudiqueu llicències."
-      ]
-    },
     "Safety review": {
       "Review account safety": [
         "Reviseu la seguretat del compte"
@@ -3699,9 +3694,6 @@
       ]
     },
     "Title": {
-      "Accessibility": [
-        "Accessibilitat"
-      ],
       "Account restricted": [
         "S'ha restringit el compte"
       ],
@@ -3729,9 +3721,6 @@
       "Assign a new host": [
         "Assigneu un nou amfitrió"
       ],
-      "Audio": [
-        "Àudio"
-      ],
       "Available Cameras": [
         "Càmeres disponibles"
       ],
@@ -3740,6 +3729,9 @@
       ],
       "Available Speakers": [
         "Altaveus disponibles"
+      ],
+      "Background": [
+        "Fons"
       ],
       "Background blur comparison": [
         "Comparació del difuminat de fons"
@@ -3780,6 +3772,9 @@
       "Delete recording?": [
         "Voleu eliminar la gravació?"
       ],
+      "Display": [
+        "Visualització"
+      ],
       "Enter your password": [
         "Introduïu la vostra contrasenya"
       ],
@@ -3797,6 +3792,9 @@
       ],
       "Help center": [
         "Centre d'ajuda"
+      ],
+      "Host settings": [
+        "Preferències de l'amfitrió"
       ],
       "Human verification": [
         "Verificació humana"
@@ -3846,9 +3844,6 @@
       ],
       "Meeting edited": [
         "S'ha editat la reunió"
-      ],
-      "Meeting settings": [
-        "Detalls de la reunió"
       ],
       "Messaging Layer Security": [
         "Seguretat de la capa de missatgeria"
@@ -3913,9 +3908,6 @@
       "Secure meeting": [
         "Reunió segura"
       ],
-      "Security": [
-        "Seguretat"
-      ],
       "Security code": [
         "Codi de seguretat"
       ],
@@ -3952,8 +3944,8 @@
       "Two-factor authentication": [
         "Autenticació de doble factor"
       ],
-      "Video": [
-        "Vídeo"
+      "Video and audio": [
+        "Vídeo i àudio"
       ],
       "Virtual backgrounds": [
         "Fons virtuals"
@@ -3994,6 +3986,9 @@
       ],
       "Recurring meeting": [
         "Reunió periòdica"
+      ],
+      "Stop sharing your screen to change this setting": [
+        "Deixeu de compartir la pantalla per canviar aquestes preferències"
       ],
       "You can generate a new meeting link once per day.": [
         "Podeu generar un enllaç de reunió nou un cop al dia."

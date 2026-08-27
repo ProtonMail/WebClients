@@ -190,9 +190,6 @@
       "Apply changes": [
         "Änderungen anwenden"
       ],
-      "Approve participants before they can join": [
-        "Teilnehmer genehmigen, bevor sie beitreten können"
-      ],
       "Assign ${ selectedParticipantName } as host": [
         "${ selectedParticipantName } zum Organisator machen"
       ],
@@ -385,11 +382,11 @@
       "Hide participants": [
         "Teilnehmer ausblenden"
       ],
-      "Hide self view": [
-        "Eigenansicht ausblenden"
-      ],
       "Hide timezones": [
         "Zeitzonen ausblenden"
+      ],
+      "Incoming video": [
+        "Eingehender Videoanruf"
       ],
       "Insert emoji": [
         "Emoji einfügen"
@@ -424,6 +421,9 @@
       "Lower hand": [
         "Hand senken"
       ],
+      "Meeting timer": [
+        "Meeting-Timer"
+      ],
       "Minimize preview": [
         "Vorschau minimieren"
       ],
@@ -457,14 +457,14 @@
       "Participants join after you approve them": [
         "Teilnehmer werden zugelassen, nachdem du sie genehmigt hast"
       ],
-      "Participants join the call directly": [
-        "Teilnehmer treten dem Anruf direkt bei"
-      ],
       "Paste": [
         "Einfügen"
       ],
       "Pause": [
         "Pausieren"
+      ],
+      "Picture-in-picture while sharing": [
+        "Bild-in-Bild beim Teilen"
       ],
       "Playing back...": [
         "Wird abgespielt..."
@@ -570,6 +570,9 @@
       "Search countries": [
         "Länder durchsuchen"
       ],
+      "Self view": [
+        "Selbstdarstellung"
+      ],
       "Send an encrypted message": [
         "Eine verschlüsselte Nachricht senden"
       ],
@@ -578,12 +581,6 @@
       ],
       "Settings": [
         "Einstellungen"
-      ],
-      "Show duration": [
-        "Dauer anzeigen"
-      ],
-      "Show floating thumbnail during screensharing": [
-        "Schwebende Miniaturansicht während der Bildschirmfreigabe anzeigen"
       ],
       "Show options": [
         "Optionen anzeigen"
@@ -675,17 +672,11 @@
       "Try another method": [
         "Eine andere Methode ausprobieren"
       ],
-      "Turn off incoming video": [
-        "Eingehendes Video ausschalten"
-      ],
       "Upgrade": [
         "Wechseln"
       ],
       "Upgrade now": [
         "Jetzt upgraden"
-      ],
-      "Upgrade your plan to use waiting room in your next meeting.": [
-        "Dein Abonnement upgraden, um bei deinem nächsten Meeting den Wartebereich nutzen zu können."
       ],
       "Upload another image": [
         "Weiteres Bild hochladen"
@@ -728,6 +719,9 @@
       ],
       "View invoice": [
         "Rechnung anzeigen"
+      ],
+      "Virtual backgrounds": [
+        "Virtueller Hintergrund"
       ],
       "Waiting room": [
         "Wartebereich"
@@ -776,8 +770,8 @@
       "Go to dashboard": [
         "Zum Dashboard gehen"
       ],
-      "Hide self view": [
-        "Eigenansicht ausblenden"
+      "Incoming video": [
+        "Eingehender Videoanruf"
       ],
       "Leave Meeting": [
         "Meeting verlassen"
@@ -793,6 +787,9 @@
       ],
       "Meeting details": [
         "Meeting-Details"
+      ],
+      "Meeting timer": [
+        "Meeting-Timer"
       ],
       "More options": [
         "Weitere Optionen"
@@ -812,6 +809,9 @@
       "Participants": [
         "Teilnehmer"
       ],
+      "Picture-in-picture while sharing": [
+        "Bild-in-Bild beim Teilen"
+      ],
       "Raise hand": [
         "Hand heben"
       ],
@@ -824,14 +824,11 @@
       "Screen share": [
         "Bildschirmfreigabe"
       ],
+      "Self view": [
+        "Selbstdarstellung"
+      ],
       "Settings": [
         "Einstellungen"
-      ],
-      "Show duration": [
-        "Dauer anzeigen"
-      ],
-      "Show floating thumbnail during screensharing": [
-        "Schwebendes Vorschaubild während der Bildschirmfreigabe anzeigen"
       ],
       "Stop recording and download.": [
         "Aufzeichnung stoppen und herunterladen."
@@ -853,9 +850,6 @@
       ],
       "Toggle settings": [
         "Einstellungen ein-/ausblenden"
-      ],
-      "Turn off incoming video": [
-        "Eingehendes Video ausschalten"
       ],
       "Video settings": [
         "Videoeinstellungen"
@@ -2346,6 +2340,12 @@
       "Anonymous ${ particle } ${ participantNumber }": [
         "Anonym ${ particle } ${ participantNumber }"
       ],
+      "Anyone with the link can join immediately": [
+        "Jeder mit dem Link, kann sofort beitreten"
+      ],
+      "Approve participants before they can join": [
+        "Teilnehmer genehmigen, bevor sie beitreten können"
+      ],
       "Are you sure you want to leave?": [
         "Möchtest du das Meeting wirklich verlassen?"
       ],
@@ -2354,6 +2354,9 @@
       ],
       "Attention required": [
         "Aufmerksamkeit erforderlich"
+      ],
+      "Available with a paid plan": [
+        "Verfügbar mit einem kostenpflichtigen Abonnement"
       ],
       "Background blur initializing": [
         "Hintergrundunschärfe wird initialisiert"
@@ -3074,6 +3077,9 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-Benutzername"
       ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } Zeichen"
+      ],
       "${ numberOfStars } star": [
         "${ numberOfStars } Stern",
         "${ numberOfStars } Sterne"
@@ -3556,17 +3562,6 @@
         "Benutzeradministrator"
       ]
     },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Sicherheitsrichtlinien, Datenaufbewahrung und VPN-Infrastruktur konfigurieren sowie Prüfprotokolle verwalten."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Alle Benutzer, Gruppen, Sicherheits- und Abrechnungseinstellungen sowie Systemkonfigurationen verwalten."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Benutzer, Gruppen und Speicher für alle Mitglieder verwalten, Rollen und Lizenzen zuweisen."
-      ]
-    },
     "Safety review": {
       "Review account safety": [
         "Überprüfung der Kontosicherheit"
@@ -3699,9 +3694,6 @@
       ]
     },
     "Title": {
-      "Accessibility": [
-        "Barrierefreiheit"
-      ],
       "Account restricted": [
         "Konto eingeschränkt"
       ],
@@ -3729,9 +3721,6 @@
       "Assign a new host": [
         "Neuen Organisator zuweisen"
       ],
-      "Audio": [
-        "Ton"
-      ],
       "Available Cameras": [
         "Verfügbare Kameras"
       ],
@@ -3740,6 +3729,9 @@
       ],
       "Available Speakers": [
         "Verfügbare Lautsprecher"
+      ],
+      "Background": [
+        "Hintergrund"
       ],
       "Background blur comparison": [
         "Hintergrundunschärfe-Vergleich"
@@ -3780,6 +3772,9 @@
       "Delete recording?": [
         "Aufnahme löschen?"
       ],
+      "Display": [
+        "Anzeige"
+      ],
       "Enter your password": [
         "Passwort eingeben"
       ],
@@ -3797,6 +3792,9 @@
       ],
       "Help center": [
         "Hilfezentrum"
+      ],
+      "Host settings": [
+        "Einstellungen des Organisators"
       ],
       "Human verification": [
         "Captcha"
@@ -3846,9 +3844,6 @@
       ],
       "Meeting edited": [
         "Meeting bearbeitet"
-      ],
-      "Meeting settings": [
-        "Meeting-Einstellungen"
       ],
       "Messaging Layer Security": [
         "Messaging Layer Security"
@@ -3913,9 +3908,6 @@
       "Secure meeting": [
         "Sicheres Meeting"
       ],
-      "Security": [
-        "Sicherheit"
-      ],
       "Security code": [
         "Sicherheitscode"
       ],
@@ -3952,8 +3944,8 @@
       "Two-factor authentication": [
         "Zwei‐Faktor‐Authentifizierung"
       ],
-      "Video": [
-        "Video"
+      "Video and audio": [
+        "Video und Audio"
       ],
       "Virtual backgrounds": [
         "Virtueller Hintergrund"
@@ -3994,6 +3986,9 @@
       ],
       "Recurring meeting": [
         "Wiederkehrendes Meeting"
+      ],
+      "Stop sharing your screen to change this setting": [
+        "Bildschirmfreigabe beenden, um diese Einstellung zu ändern"
       ],
       "You can generate a new meeting link once per day.": [
         "Du kannst einmal täglich einen neuen Meeting-Link generieren."

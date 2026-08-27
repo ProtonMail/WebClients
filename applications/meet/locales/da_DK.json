@@ -190,9 +190,6 @@
       "Apply changes": [
         "Anvend ændringer"
       ],
-      "Approve participants before they can join": [
-        "Godkend deltagere før de kan deltage"
-      ],
       "Assign ${ selectedParticipantName } as host": [
         "Angiv ${ selectedParticipantName } som vært"
       ],
@@ -385,11 +382,11 @@
       "Hide participants": [
         "Skjul deltagere"
       ],
-      "Hide self view": [
-        "Skjul selvvisning"
-      ],
       "Hide timezones": [
         "Skjul tidszoner"
+      ],
+      "Incoming video": [
+        "Indgående video"
       ],
       "Insert emoji": [
         "Indsæt emoji"
@@ -424,6 +421,9 @@
       "Lower hand": [
         "Sænk hånden"
       ],
+      "Meeting timer": [
+        "Mødetimer"
+      ],
       "Minimize preview": [
         "Minimér forhåndsvisning"
       ],
@@ -457,14 +457,14 @@
       "Participants join after you approve them": [
         "Deltagere tilslutter sig efter du har godkendt dem"
       ],
-      "Participants join the call directly": [
-        "Deltagere tilslutter sig opkaldet direkte"
-      ],
       "Paste": [
         "Sæt ind"
       ],
       "Pause": [
         "Pause"
+      ],
+      "Picture-in-picture while sharing": [
+        "Billede-i-billede-tilstand mens du deler"
       ],
       "Playing back...": [
         "Afspiller..."
@@ -570,6 +570,9 @@
       "Search countries": [
         "Søg lande"
       ],
+      "Self view": [
+        "Selvvisning"
+      ],
       "Send an encrypted message": [
         "Send en krypteret besked"
       ],
@@ -578,12 +581,6 @@
       ],
       "Settings": [
         "Indstillinger"
-      ],
-      "Show duration": [
-        "Vis varighed"
-      ],
-      "Show floating thumbnail during screensharing": [
-        "Vis flydende miniature under skærmdeling"
       ],
       "Show options": [
         "Vis valgmuligheder"
@@ -675,17 +672,11 @@
       "Try another method": [
         "Prøv en anden metode"
       ],
-      "Turn off incoming video": [
-        "Slå indgående video fra"
-      ],
       "Upgrade": [
         "Opgradér"
       ],
       "Upgrade now": [
         "Opgradér nu"
-      ],
-      "Upgrade your plan to use waiting room in your next meeting.": [
-        "Opgrader dit abonnement for at bruge venteværelset i dit næste møde"
       ],
       "Upload another image": [
         "Upload et andet billede"
@@ -728,6 +719,9 @@
       ],
       "View invoice": [
         "Vis faktura"
+      ],
+      "Virtual backgrounds": [
+        "Virtuelle baggrunde"
       ],
       "Waiting room": [
         "Venteværelse"
@@ -776,8 +770,8 @@
       "Go to dashboard": [
         "Gå til kontrolpanel"
       ],
-      "Hide self view": [
-        "Skjul selvvisning"
+      "Incoming video": [
+        "Indgående video"
       ],
       "Leave Meeting": [
         "Forlad møde"
@@ -793,6 +787,9 @@
       ],
       "Meeting details": [
         "Mødedetaljer"
+      ],
+      "Meeting timer": [
+        "Mødetimer"
       ],
       "More options": [
         "Flere indstillinger"
@@ -812,6 +809,9 @@
       "Participants": [
         "Deltagere"
       ],
+      "Picture-in-picture while sharing": [
+        "Billede-i-billede-tilstand mens du deler"
+      ],
       "Raise hand": [
         "Ræk hånden op"
       ],
@@ -824,14 +824,11 @@
       "Screen share": [
         "Skærmdeling"
       ],
+      "Self view": [
+        "Selvvisning"
+      ],
       "Settings": [
         "Indstillinger"
-      ],
-      "Show duration": [
-        "Vis varighed"
-      ],
-      "Show floating thumbnail during screensharing": [
-        "Vis flydende miniature under skærmdeling"
       ],
       "Stop recording and download.": [
         "Stop optagelse og download."
@@ -853,9 +850,6 @@
       ],
       "Toggle settings": [
         "Åbn/luk indstillinger"
-      ],
-      "Turn off incoming video": [
-        "Slå indgående video fra"
       ],
       "Video settings": [
         "Videoindstillinger"
@@ -2346,6 +2340,12 @@
       "Anonymous ${ particle } ${ participantNumber }": [
         "Anonym ${ particle } ${ participantNumber }"
       ],
+      "Anyone with the link can join immediately": [
+        "Enhver med linket kan tilslutte sig øjeblikkeligt"
+      ],
+      "Approve participants before they can join": [
+        "Godkend deltagere før de kan deltage"
+      ],
       "Are you sure you want to leave?": [
         "Er du sikker på, du vil forlade mødet?"
       ],
@@ -2354,6 +2354,9 @@
       ],
       "Attention required": [
         "Opmærksomhed påkrævet"
+      ],
+      "Available with a paid plan": [
+        "Tilgængeligt med et betalt abonnement"
       ],
       "Background blur initializing": [
         "Aktiverer baggrundssløring"
@@ -3074,6 +3077,9 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } brugernavn"
       ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } tegn"
+      ],
       "${ numberOfStars } star": [
         "${ numberOfStars } stjerne",
         "${ numberOfStars } stjerner"
@@ -3556,17 +3562,6 @@
         "Brugeradmin"
       ]
     },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Konfigurer sikkerhedspolitikker, datalagring, og VPN-infrastruktur, og administrer logs."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Administrer alle brugere, grupper, sikkerhed, fakturering, og systemkonfigurationer."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Administrer brugere, grupper, og lagerplads for alle medlemmer, og tildel roller samt licenser."
-      ]
-    },
     "Safety review": {
       "Review account safety": [
         "Gennemgå kontoens sikkerhed"
@@ -3699,9 +3694,6 @@
       ]
     },
     "Title": {
-      "Accessibility": [
-        "Tilgængelighed"
-      ],
       "Account restricted": [
         "Kontoen har begrænsninger"
       ],
@@ -3729,9 +3721,6 @@
       "Assign a new host": [
         "Angiv en ny vært"
       ],
-      "Audio": [
-        "Lyd"
-      ],
       "Available Cameras": [
         "Tilgængelige kameraer"
       ],
@@ -3740,6 +3729,9 @@
       ],
       "Available Speakers": [
         "Tilgængelige højttalere"
+      ],
+      "Background": [
+        "Baggrund"
       ],
       "Background blur comparison": [
         "Sammenligning af baggrundssløring"
@@ -3780,6 +3772,9 @@
       "Delete recording?": [
         "Slet optagelse?"
       ],
+      "Display": [
+        "Visning"
+      ],
       "Enter your password": [
         "Indtast din adgangskode"
       ],
@@ -3797,6 +3792,9 @@
       ],
       "Help center": [
         "Hjælp-center"
+      ],
+      "Host settings": [
+        "Indstillinger for vært"
       ],
       "Human verification": [
         "Menneskelig bekræftelse"
@@ -3846,9 +3844,6 @@
       ],
       "Meeting edited": [
         "Møde redigeret"
-      ],
-      "Meeting settings": [
-        "Mødeindstillinger"
       ],
       "Messaging Layer Security": [
         "Messaging Layer Security"
@@ -3913,9 +3908,6 @@
       "Secure meeting": [
         "Sikkert møde"
       ],
-      "Security": [
-        "Sikkerhed"
-      ],
       "Security code": [
         "Sikkerhedskode"
       ],
@@ -3952,8 +3944,8 @@
       "Two-factor authentication": [
         "To-faktor-godkendelse"
       ],
-      "Video": [
-        "Video"
+      "Video and audio": [
+        "Video og lyd"
       ],
       "Virtual backgrounds": [
         "Virtuelle baggrunde"
@@ -3994,6 +3986,9 @@
       ],
       "Recurring meeting": [
         "Tilbagevendende møde"
+      ],
+      "Stop sharing your screen to change this setting": [
+        "Stop skærmdeling for at ændre denne indstilling"
       ],
       "You can generate a new meeting link once per day.": [
         "Du kan generere et nyt mødelink én gang om dagen."
