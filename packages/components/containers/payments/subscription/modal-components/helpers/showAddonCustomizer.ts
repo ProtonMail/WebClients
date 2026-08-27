@@ -1,7 +1,6 @@
-import type { CouponConfig } from '@proton/payments-ui/ui/coupon-config/interface';
-import type { CouponConfigRendered } from '@proton/payments-ui/ui/coupon-config/useCouponConfig';
 import { getAddonConfigByType } from '@proton/payments/core/addon/addons';
 import type { ADDON_PREFIXES } from '@proton/payments/core/constants';
+import type { CouponConfigMetadata } from '@proton/payments/core/coupon-config/interface';
 import type { FreeSubscription, PlanIDs } from '@proton/payments/core/interface';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { getStandaloneUnleashClient } from '@proton/unleash/standaloneClient';
@@ -20,7 +19,7 @@ export function showAddonCustomizer(
         isSignup = false,
     }: {
         subscription: Subscription | FreeSubscription;
-        couponConfig: CouponConfigRendered | CouponConfig | undefined;
+        couponConfig: CouponConfigMetadata | undefined;
         planIDs: PlanIDs;
         isSignup?: boolean;
     }

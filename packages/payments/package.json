@@ -14,7 +14,10 @@
     },
     "dependencies": {
         "@proton/shared": "workspace:^",
-        "ttag": "^1.8.12"
+        "@proton/styles": "workspace:^",
+        "@proton/utils": "workspace:^",
+        "ttag": "^1.8.12",
+        "vat-validation": "^3.0.0"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:^",

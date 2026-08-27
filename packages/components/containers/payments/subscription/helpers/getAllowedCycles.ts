@@ -1,6 +1,6 @@
-import type { CouponConfigRendered } from '@proton/payments-ui/ui/coupon-config/useCouponConfig';
 import { isBF2025Offer } from '@proton/payments/core/checkout';
 import { type ADDON_NAMES, CYCLE, PLANS } from '@proton/payments/core/constants';
+import type { CouponConfigMetadata } from '@proton/payments/core/coupon-config/interface';
 import type { Currency, FreeSubscription, PlanIDs } from '@proton/payments/core/interface';
 import type { PlansMap } from '@proton/payments/core/plan/interface';
 import { getPlanFromIDs } from '@proton/payments/core/planIDs';
@@ -186,7 +186,7 @@ export const getAllowedCycles = ({
     rules?: PlanCapRule[];
     cycleParam?: CYCLE;
     app?: ProductParam;
-    couponConfig?: CouponConfigRendered;
+    couponConfig?: CouponConfigMetadata;
 }): CYCLE[] => {
     const plan = getPlanFromIDs(planIDs, plansMap);
     if (!plan) {

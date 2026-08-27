@@ -1,4 +1,4 @@
-import type { CouponConfigRendered } from '@proton/payments-ui/ui/coupon-config/useCouponConfig';
+import type { CouponConfigMetadata } from '@proton/payments/core/coupon-config/interface';
 import { SubscriptionMode } from '@proton/payments/core/subscription/constants';
 import type {
     SubscriptionCheckForbiddenReason,
@@ -11,7 +11,7 @@ export function canShowGiftCodeInput({
     checkResult,
 }: {
     paymentForbiddenReason: SubscriptionCheckForbiddenReason;
-    couponConfig: CouponConfigRendered | undefined;
+    couponConfig: CouponConfigMetadata | undefined;
     checkResult: SubscriptionEstimation;
 }): boolean {
     // if the selected modification is forbidden, then it doesn't make sense to show the coupon code input

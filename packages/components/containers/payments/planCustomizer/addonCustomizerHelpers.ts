@@ -1,5 +1,3 @@
-import type { CouponConfig } from '@proton/payments-ui/ui/coupon-config/interface';
-import type { CouponConfigRendered } from '@proton/payments-ui/ui/coupon-config/useCouponConfig';
 import {
     AddonFeatureLimitKeyMapping,
     getAddonConfigByName,
@@ -13,6 +11,7 @@ import {
 } from '@proton/payments/core/addon/addons';
 import type { AddonFlags } from '@proton/payments/core/addon/interfaces';
 import { type ADDON_NAMES, ADDON_PREFIXES, FREE_SUBSCRIPTION } from '@proton/payments/core/constants';
+import type { CouponConfigMetadata } from '@proton/payments/core/coupon-config/interface';
 import type { Cycle, PlanIDs } from '@proton/payments/core/interface';
 import { getAddonType } from '@proton/payments/core/plan/addons';
 import { getAddonMultiplier } from '@proton/payments/core/plan/feature-limits';
@@ -324,7 +323,7 @@ export function computeAddonCustomizerItems({
     addonFlags: AddonFlags;
     scribeToLumo?: boolean;
     allowedAddonTypes?: ADDON_PREFIXES[];
-    couponConfig?: CouponConfigRendered | CouponConfig;
+    couponConfig?: CouponConfigMetadata;
     isSignup: boolean;
 }): AddonCustomizerItem[] {
     const visibilityContext = {
