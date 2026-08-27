@@ -9012,9 +9012,6 @@
       "Registering your subscription…": [
         "Registrando sua assinatura…"
       ],
-      "Remember to share the user's sign in details with them.": [
-        "Lembre-se de compartilhar os detalhes de início de sessão do usuário com ele."
-      ],
       "Request a phone call": [
         "Solicitar uma chamada telefônica"
       ],
@@ -9758,9 +9755,6 @@
       "We use 3-D Secure to protect your payments": [
         "Usamos 3-D Secure para proteger seus pagamentos"
       ],
-      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "Vamos redirecioná-lo para o ${ IDEAL_BRAND_NAME } em uma nova guia do navegador para concluir esta transação. Desative qualquer bloqueador de pop-ups que estiver usando."
-      ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Vamos redirecioná-lo para o PayPal em uma nova guia do navegador para concluir esta transação. Desative qualquer bloqueador de pop-ups que estiver usando."
       ],
@@ -10374,9 +10368,6 @@
       ],
       "${ PROTON_SENTINEL_NAME } protection": [
         "Proteção com ${ PROTON_SENTINEL_NAME }"
-      ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } caracteres"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporariamente indisponível. Retorne mais tarde.)"
@@ -14109,9 +14100,6 @@
       "More plans are available in other currencies": [
         "Mais planos estão disponíveis em outras moedas"
       ],
-      "Pay with ${ IDEAL_BRAND_NAME }": [
-        "Pagar com ${ IDEAL_BRAND_NAME }"
-      ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Método de pagamento necessário para que a assinatura seja ativada após o término do período de teste."
       ],
@@ -14238,11 +14226,6 @@
     "Payments.error": {
       "Something went wrong. Google Pay verification failed.": [
         "Ocorreu um erro. A verificação do Google Pay falhou."
-      ]
-    },
-    "Payments.iDEAL": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Ao confirmar este pagamento, você autoriza a ${ BRAND_NAME } e Stripe, nosso provedor de serviços de pagamento, a instruir seu banco a debitar sua conta de acordo. Você pode obter um reembolso no prazo de 8 semanas a partir da data do débito, de acordo com as condições do seu contrato com o banco."
       ]
     },
     "Payments.info": {
@@ -15368,17 +15351,6 @@
       ],
       "User Admin": [
         "Administração de usuário"
-      ]
-    },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Configure políticas de segurança, retenção de dados e infraestrutura de VPN, além de gerenciar registros de auditoria."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Gerencie todos os usuários, grupos, segurança, faturamento e configurações do sistema."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Gerencie usuários, grupos e espaço de armazenamento para todos os membros, atribuir funções e distribuir licenças."
       ]
     },
     "Safety review": {
