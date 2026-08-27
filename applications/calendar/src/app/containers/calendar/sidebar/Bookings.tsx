@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import { useInternalBooking } from '@proton/calendar/bookings/store/hooks';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
 import SidebarList from '@proton/components/components/sidebar/SidebarList';
 import SimpleSidebarListItemHeader from '@proton/components/components/sidebar/SimpleSidebarListItemHeader';
@@ -10,7 +11,6 @@ import useLocalState from '@proton/components/hooks/useLocalState';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { getVisualCalendars } from '@proton/shared/lib/calendar/calendar';
 
-import { useInternalBooking } from '../../../store/internalBooking/bookingsHook';
 import { useBookings } from '../../bookings/bookingsProvider/BookingsProvider';
 import {
     IntroduceBookingsSpotlightContent,

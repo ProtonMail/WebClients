@@ -3,10 +3,9 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { MAX_BOOKING_PAGES } from '@proton/calendar/bookings/eligibility';
+import { useInternalBooking } from '@proton/calendar/bookings/store/hooks';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
-
-import { useInternalBooking } from '../../../store/internalBooking/bookingsHook';
 
 export const BookingsLimitReached = ({ ...modalProps }: ModalStateProps) => {
     const [user] = useUser();
