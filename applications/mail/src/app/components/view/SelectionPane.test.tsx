@@ -1,11 +1,11 @@
 import { screen } from '@testing-library/react';
 
-import { getModelState } from '@proton/account/test';
+import { getModelState } from '@proton/account/tests';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { SearchParameters } from '@proton/shared/lib/mail/search';
 
 import { getElementContextIdentifier } from '../../helpers/elements';
-import { mailTestRender } from '../../helpers/test/helper';
+import { mailTestRender } from '../../helpers/tests/helper';
 import { newElementsState } from '../../store/elements/elementsSlice';
 import SelectionPane from './SelectionPane';
 

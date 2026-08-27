@@ -5,8 +5,8 @@ import { USER_ROLES } from '@proton/shared/lib/constants';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import { PERMISSIONS } from '@proton/shared/lib/interfaces/UserPermission';
 
-import { getModelState } from '../test';
-import { getServerEvent } from '../test/getServerEvent';
+import { getModelState } from '../tests';
+import { getServerEvent } from '../tests/getServerEvent';
 import { userReducer, userThunk } from '../user';
 import { getOrgPermissions, selectUserPermissions, userPermissionsReducer, userPermissionsThunk } from './index';
 

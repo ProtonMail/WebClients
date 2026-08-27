@@ -4,7 +4,7 @@ import { waitFor } from '@testing-library/react';
 import { getTestStore } from '@proton/redux-shared-store/test';
 import { SessionRecoveryState, type UserModel } from '@proton/shared/lib/interfaces';
 
-import { getServerEvent } from '../test/getServerEvent';
+import { getServerEvent } from '../tests/getServerEvent';
 import { userFulfilled, userReducer } from '../user';
 import { sessionRecoveryListener, sessionRecoverySlice } from './sessionRecovery';
 

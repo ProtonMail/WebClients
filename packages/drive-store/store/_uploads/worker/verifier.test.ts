@@ -1,6 +1,6 @@
 import { CryptoProxy } from '@protontech/crypto';
 
-import { generateSessionKey, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../utils/test/crypto';
+import { generateSessionKey, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../utils/tests/crypto';
 import { createVerifier } from './verifier';
 
 jest.setTimeout(20000);

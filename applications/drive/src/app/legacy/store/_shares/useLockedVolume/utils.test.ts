@@ -1,8 +1,8 @@
 import type { DecryptedAddressKey, DecryptedKey, User } from '@proton/shared/lib/interfaces';
 import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys';
-import { getUserKey } from '@proton/shared/test/keys/keyDataHelper';
+import { getUserKey } from '@proton/shared/tests/keys/keyDataHelper';
 
-import { generateAddress, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../utils/test/crypto';
+import { generateAddress, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../utils/tests/crypto';
 import { getPossibleAddressPrivateKeys } from './utils';
 
 const DEFAULT_KEYPASSWORD = '1';

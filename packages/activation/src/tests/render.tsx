@@ -5,7 +5,7 @@ import { render as originalRender } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 import { createMemoryHistory } from 'history';
 
-import { getModelState } from '@proton/account/test';
+import { getModelState } from '@proton/account/tests';
 import { NotificationsContext } from '@proton/app-context/notifications/notificationsContext';
 import {
     ApiProvider,

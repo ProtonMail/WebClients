@@ -1,7 +1,7 @@
 import { screen, waitFor } from '@testing-library/react';
 
-import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../helpers/test/crypto';
-import { EOClearAll } from '../../../../helpers/test/eo/helpers';
+import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../helpers/tests/crypto';
+import { EOClearAll } from '../../../../helpers/tests/eo/helpers';
 import { setup } from './ViewEOMessage.test.helpers';
 
 describe('Encrypted Outside message banners', () => {

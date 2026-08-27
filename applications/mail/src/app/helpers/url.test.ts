@@ -1,6 +1,6 @@
 import { protonizer } from '@proton/sanitize/purify';
 
-import { removeLineBreaks } from './test/message';
+import { removeLineBreaks } from './tests/message';
 import { mailtoParser, toAddresses } from './url';
 
 describe('toAddresses', () => {

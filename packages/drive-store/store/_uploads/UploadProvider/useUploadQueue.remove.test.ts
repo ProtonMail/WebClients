@@ -1,6 +1,6 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 
-import { mockGlobalFile, testFile } from '../../../utils/test/file';
+import { mockGlobalFile, testFile } from '../../../utils/tests/file';
 import type { UploadFileList } from '../interface';
 import type { FileUpload, FolderUpload, UpdateCallback, UpdateFilter } from './interface';
 import useUploadQueue from './useUploadQueue';

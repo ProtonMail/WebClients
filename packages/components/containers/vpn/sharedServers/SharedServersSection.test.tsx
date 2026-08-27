@@ -1,7 +1,7 @@
 import { act, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { getModelState } from '@proton/account/test';
+import { getModelState } from '@proton/account/tests';
 import { getOrgPermissions } from '@proton/account/userPermissions';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import { buildSubscription } from '@proton/testing/builders/subscription';

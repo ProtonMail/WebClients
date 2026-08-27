@@ -1,12 +1,11 @@
 import { fireEvent, screen } from '@testing-library/react';
 
-import { getModelState } from '@proton/account/test';
+import { getModelState } from '@proton/account/tests';
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { CONFIRM_LINK } from '@proton/shared/lib/mail/mailSettings';
 
-import { mailTestRender } from '../../../../../helpers/test/render';
-
+import { mailTestRender } from '../../../../../helpers/tests/render';
 import { activeSubscription } from '../../testData';
 import ModalUnsubscribe from './ModalUnsubscribe';
 

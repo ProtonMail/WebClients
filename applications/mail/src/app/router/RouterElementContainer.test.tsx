@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
 
-import { getModelState } from '@proton/account/test';
+import { getModelState } from '@proton/account/tests';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
@@ -10,7 +10,7 @@ import { useFlag } from '@proton/unleash/useFlag';
 
 import type { OnboardingChecklistContext } from '../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 import * as GetStartedChecklistProviderModule from '../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
-import { mailTestRender } from '../helpers/test/helper';
+import { mailTestRender } from '../helpers/tests/helper';
 import { newElementsState } from '../store/elements/elementsSlice';
 import { useMailboxLayoutProvider } from './components/MailboxLayoutContext';
 

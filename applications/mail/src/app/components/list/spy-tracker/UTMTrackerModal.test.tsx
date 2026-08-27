@@ -3,7 +3,7 @@ import { screen } from '@testing-library/react';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import type { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
 
-import { mailTestRender } from '../../../helpers/test/render';
+import { mailTestRender } from '../../../helpers/tests/render';
 import UTMTrackerModal from './UTMTrackerModal';
 
 const message: MessageState = {

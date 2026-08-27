@@ -7,7 +7,7 @@ import { HttpResponse, http } from 'msw';
 import { setupServer } from 'msw/node';
 
 import { useAddresses, useGetAddresses } from '@proton/account/addresses/hooks';
-import { getModelState } from '@proton/account/test';
+import { getModelState } from '@proton/account/tests';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
@@ -37,7 +37,7 @@ import { mockNotifications } from '@proton/testing/lib/mockNotifications';
 import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { authentication, getStoreWrapper, tick } from '../../../../../helpers/test/render';
+import { authentication, getStoreWrapper, tick } from '../../../../../helpers/tests/render';
 import { refresh } from '../../../../../store/contacts/contactsActions';
 import EmailReminderWidget from './EmailReminderWidget';
 

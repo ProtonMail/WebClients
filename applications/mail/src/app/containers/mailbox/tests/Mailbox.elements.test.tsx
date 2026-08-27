@@ -4,7 +4,7 @@ import { queryConversations } from '@proton/shared/lib/api/conversations';
 import { DEFAULT_MAIL_PAGE_SIZE } from '@proton/shared/lib/constants';
 import type { Sort } from '@proton/shared/lib/mail/search';
 
-import { addApiMock, api, clearAll } from '../../../helpers/test/helper';
+import { addApiMock, api, clearAll } from '../../../helpers/tests/helper';
 import type { Element } from '../../../models/element';
 import * as mailboxActions from '../../../store/mailbox/mailboxActions';
 import { getElements, props, sendEvent, setup } from './Mailbox.test.helpers';

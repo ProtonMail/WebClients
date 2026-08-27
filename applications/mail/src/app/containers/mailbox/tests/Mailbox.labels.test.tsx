@@ -4,7 +4,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { DEFAULT_MAIL_SETTINGS, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
-import { addApiMock, clearAll, waitForSpyCall } from '../../../helpers/test/helper';
+import { addApiMock, clearAll, waitForSpyCall } from '../../../helpers/tests/helper';
 import type { Element } from '../../../models/element';
 import * as mailboxActions from '../../../store/mailbox/mailboxActions';
 import { folders, labels, sendEvent, setup } from './Mailbox.test.helpers';

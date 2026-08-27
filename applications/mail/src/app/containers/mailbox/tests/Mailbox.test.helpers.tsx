@@ -1,11 +1,10 @@
 import type { MutableRefObject, ReactElement, ReactNode } from 'react';
 
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { act } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
 
 import { serverEvent } from '@proton/account';
-import { getModelState } from '@proton/account/test';
+import { getModelState } from '@proton/account/tests';
 import { getHumanLabelID } from '@proton/mail/helpers/location';
 import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/payments/core/billing-address/billing-address';
 import { DEFAULT_PAYMENT_VENDOR_STATES } from '@proton/payments/core/constants';
@@ -21,14 +20,13 @@ import type { Filter, SearchParameters, Sort } from '@proton/shared/lib/mail/sea
 import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 import range from '@proton/utils/range';
 
-import type { MailState } from '../../../store/rootReducer';
-
 import { filterToString, keywordToString, sortToString } from '../../../helpers/mailboxUrl';
-import { addApiMock, mailTestRender, minimalCache, triggerEvent } from '../../../helpers/test/helper';
+import { addApiMock, mailTestRender, minimalCache, triggerEvent } from '../../../helpers/tests/helper';
 import type { ConversationLabel } from '../../../models/conversation';
 import type { Element } from '../../../models/element';
 import type { Event } from '../../../models/event';
 import { RouterMailboxContainer } from '../../../router/RouterMailboxContainer';
+import type { MailState } from '../../../store/rootReducer';
 
 loudRejection();
 

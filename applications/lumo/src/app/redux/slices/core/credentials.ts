@@ -4,7 +4,7 @@ import type { Base64, Credentials } from '../../../types';
 
 /**
  * Kept with its original name and payload on purpose: `takeEvery(addMasterKey, initAppSaga)`
- * (`redux/sagas/index.ts`) and `test/integration/helpers.ts` both depend on this exact action.
+ * (`redux/sagas/index.ts`) and `tests/integration/helpers.ts` both depend on this exact action.
  */
 export const addMasterKey = createAction<Base64>('lumo/credentials/addMasterKey');
 

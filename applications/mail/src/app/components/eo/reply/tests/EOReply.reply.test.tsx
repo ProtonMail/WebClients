@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react';
 
-import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../helpers/test/crypto';
-import { EOClearAll, reply } from '../../../../helpers/test/eo/helpers';
+import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../helpers/tests/crypto';
+import { EOClearAll, reply } from '../../../../helpers/tests/eo/helpers';
 import { setup } from './EOReply.test.helpers';
 
 describe('EO Reply if max replies has been reached', function () {

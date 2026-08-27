@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react';
 
-import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../helpers/test/crypto';
-import { EOClearAll, reply } from '../../../../helpers/test/eo/helpers';
+import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../helpers/tests/crypto';
+import { EOClearAll, reply } from '../../../../helpers/tests/eo/helpers';
 import type { EOMessageReply } from '../../../../store/eo/eoType';
 import { setup } from './ViewEOMessage.test.helpers';
 

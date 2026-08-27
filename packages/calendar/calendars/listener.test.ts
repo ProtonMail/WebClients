@@ -3,8 +3,8 @@ import { combineReducers, configureStore, createListenerMiddleware } from '@redu
 
 import { addressKeysReducer } from '@proton/account/addressKeys';
 import { addressesReducer } from '@proton/account/addresses';
-import { getModelState } from '@proton/account/test';
-import { getServerEvent } from '@proton/account/test/getServerEvent';
+import { getModelState } from '@proton/account/tests';
+import { getServerEvent } from '@proton/account/tests/getServerEvent';
 import { userReducer } from '@proton/account/user';
 import { userKeysReducer } from '@proton/account/userKeys';
 import { CALENDAR_SHARE_BUSY_TIME_SLOTS, CALENDAR_TYPE } from '@proton/shared/lib/calendar/constants';

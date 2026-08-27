@@ -1,6 +1,6 @@
 import { fireEvent, screen, waitFor } from '@testing-library/react';
 
-import { getModelState } from '@proton/account/test';
+import { getModelState } from '@proton/account/tests';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { PROXY_IMG_URL } from '@proton/shared/lib/api/images';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
@@ -10,16 +10,16 @@ import { addApiMock } from '@proton/testing/lib/api';
 import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 import noop from '@proton/utils/noop';
 
-import { getCompleteAddress, minimalCache } from '../../../helpers/test/cache';
-import type { GeneratedKey } from '../../../helpers/test/crypto';
+import { getCompleteAddress, minimalCache } from '../../../helpers/tests/cache';
+import type { GeneratedKey } from '../../../helpers/tests/crypto';
 import {
     generateKeys,
     getAddressKeyCache,
     releaseCryptoProxy,
     setupCryptoProxyForTesting,
-} from '../../../helpers/test/crypto';
-import { encryptMessage } from '../../../helpers/test/message';
-import { mailTestRender } from '../../../helpers/test/render';
+} from '../../../helpers/tests/crypto';
+import { encryptMessage } from '../../../helpers/tests/message';
+import { mailTestRender } from '../../../helpers/tests/render';
 import { initialize } from '../../../store/messages/read/messagesReadActions';
 import MessageView from '../MessageView';
 import { addressID, labelID, messageID } from './Message.test.helpers';
