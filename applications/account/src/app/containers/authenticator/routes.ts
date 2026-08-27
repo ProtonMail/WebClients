@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import type { SectionConfig } from '@proton/components';
+import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import { AUTHENTICATOR_APP_NAME } from '@proton/shared/lib/constants';
 
 import type { GeneralRouterParams } from '../../content/router-params';
@@ -16,7 +17,7 @@ export const getAuthenticatorAppRoutes = ({ flags }: GeneralRouterParams) => {
                 text: c('Link').t`Downloads`,
                 noTitle: true,
                 to: '/download',
-                icon: 'arrow-down-line',
+                icon: IcArrowDownLine,
                 subsections: [
                     {
                         id: 'download',

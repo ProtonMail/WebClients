@@ -1,7 +1,13 @@
-import type { ReactNode } from 'react';
+import type { ComponentType, ReactNode } from 'react';
 
 import type { ThemeColor } from '@proton/colors';
-import type { IconName } from '@proton/icons/types';
+import type { IconSize } from '@proton/icons/types';
+
+/**
+ * Route configs reference their icon by component rather than by name, so that the icon is imported
+ * where the route is declared and every consumer (sidebar, settings search) renders the same one.
+ */
+export type IconComponent = ComponentType<{ className?: string; size?: IconSize }>;
 
 export enum SettingsLayoutVariant {
     Default = 'default',
@@ -39,7 +45,7 @@ export interface SubrouteConfig {
     id: string;
     text: string;
     to: string;
-    icon?: IconName;
+    icon?: IconComponent;
     available?: boolean;
     variant?: SettingsLayoutVariant;
     /** Translated terms a user might search for to land on this subroute. */
@@ -56,7 +62,7 @@ export interface SubrouteGroup {
 export interface SectionConfig extends SettingsAreaConfig {
     id: string;
     to: string;
-    icon: IconName;
+    icon: IconComponent;
     available?: boolean;
     notification?: ThemeColor;
     upgradeRequired?: boolean;

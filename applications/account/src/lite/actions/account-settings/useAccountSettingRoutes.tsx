@@ -13,6 +13,10 @@ import type { SectionConfig } from '@proton/components/containers/layout/interfa
 import { SettingsLayoutVariant } from '@proton/components/containers/layout/interface';
 import { useReferralUserEligible } from '@proton/components/containers/referral/hooks/useReferralUserEligible';
 import useRecoveryNotification from '@proton/components/hooks/useRecoveryNotification';
+import { IcAlias } from '@proton/icons/icons/IcAlias';
+import { IcBell } from '@proton/icons/icons/IcBell';
+import { IcKey } from '@proton/icons/icons/IcKey';
+import { IcMoneyBills } from '@proton/icons/icons/IcMoneyBills';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { isAndroid } from '@proton/shared/lib/helpers/browser';
 import { getIsAccountRecoveryAvailable } from '@proton/shared/lib/helpers/recovery';
@@ -62,7 +66,7 @@ export const useAccountSettingRoutes = () => {
             text: c('Title').t`Recovery`,
             description: c('Description')
                 .t`${BRAND_NAME}'s end-to-end encryption means only you can unlock your data. Set up recovery options now to ensure you never lose access.`,
-            icon: 'key',
+            icon: IcKey,
             available: isAccountRecoveryAvailable,
             notification: recoveryNotification?.color,
             subsections: [
@@ -162,7 +166,7 @@ export const useAccountSettingRoutes = () => {
             title: c('Title').t`Invite friends. Get credits.`,
             description: c('Description').t`Get up to ${credits} in credits by inviting friends to ${BRAND_NAME}.`,
             to: LiteAppPaths.Referral,
-            icon: 'money-bills',
+            icon: IcMoneyBills,
             available: isReferralProgramEnabled,
             subsections: [
                 {
@@ -177,7 +181,7 @@ export const useAccountSettingRoutes = () => {
         notifications: {
             id: 'notifications',
             noTitle: true,
-            icon: 'bell',
+            icon: IcBell,
             to: LiteAppPaths.Notifications,
             text: c('Title').t`Notifications`,
             available: !user.isMember,
@@ -190,7 +194,7 @@ export const useAccountSettingRoutes = () => {
         privacy: {
             id: 'privacy',
             noTitle: true,
-            icon: 'alias',
+            icon: IcAlias,
             to: LiteAppPaths.Privacy,
             text: c('Title').t`Privacy`,
             available: true,

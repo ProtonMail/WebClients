@@ -3,6 +3,7 @@ import { MemoryRouter } from 'react-router';
 import { render, screen } from '@testing-library/react';
 
 import { ThemeColor } from '@proton/colors/types';
+import { IcBrandProton } from '@proton/icons/icons/IcBrandProton';
 
 import SettingsListItem from './SettingsListItem';
 
@@ -18,7 +19,7 @@ describe('SettingsListItem', () => {
     });
 
     it('shows icon', () => {
-        const { container } = render(<SettingsListItem icon="brand-proton">{children}</SettingsListItem>);
+        const { container } = render(<SettingsListItem icon={IcBrandProton}>{children}</SettingsListItem>);
         const svg = container.querySelector('svg');
 
         expect(svg).toBeInTheDocument();
@@ -47,7 +48,7 @@ describe('SettingsListItem', () => {
         const href = '/test-href';
         const { container } = render(
             <MemoryRouter>
-                <SettingsListItem to={href} icon="brand-proton">
+                <SettingsListItem to={href} icon={IcBrandProton}>
                     {children}
                 </SettingsListItem>
             </MemoryRouter>
