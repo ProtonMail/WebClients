@@ -16,6 +16,7 @@ import useLocalState from '@proton/components/hooks/useLocalState';
 import { getClientID } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { getAppVersionHeaders } from '@proton/shared/lib/fetch/headers';
+import { getCookie } from '@proton/shared/lib/helpers/cookies';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { getClientUid } from './internal/clientUid';
@@ -220,11 +221,12 @@ export function useDrive() {
                 photosSingleton = proxyDriveClientWithSDKMismatchDetection(photosSingleton, 'photos');
             }
 
+            const stage = getCookie('Tag');
             loggingSingleton.log({
                 time: new Date(),
                 level: LogLevel.INFO,
                 loggerName: 'drive',
-                message: `ProtonDriveClient ${VERSION} instantiated for ${options.appName}@${options.appVersion}`,
+                message: `ProtonDriveClient ${VERSION} instantiated for ${options.appName}@${options.appVersion} (stage: ${stage})`,
             });
         },
         [
