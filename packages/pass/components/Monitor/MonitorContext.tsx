@@ -9,6 +9,13 @@ export type AsyncMonitorState = {
     loading: boolean;
 };
 
+export type CompromisedPasswordsState = AsyncMonitorState & {
+    progress: {
+        completed: number;
+        total: number;
+    };
+};
+
 export interface MonitorContextValue {
     didLoad: boolean;
     breaches: {
@@ -21,7 +28,7 @@ export interface MonitorContextValue {
         loading: boolean;
     };
     insecure: AsyncMonitorState;
-    compromised: AsyncMonitorState;
+    compromised: CompromisedPasswordsState;
     duplicates: { data: UniqueItem[][]; count: number };
     missing2FAs: AsyncMonitorState;
     excluded: { data: UniqueItem[]; count: number };

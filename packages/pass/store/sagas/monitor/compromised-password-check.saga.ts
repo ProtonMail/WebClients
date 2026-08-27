@@ -16,7 +16,7 @@ import { logger } from '@proton/pass/utils/logger';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 
 function* isEnabled(): Generator<any, boolean, any> {
-    const enabled: boolean = yield select(selectFeatureFlag(PassFeature.Pass__V1_40__CompromisedPasswords));
+    const enabled: boolean = yield select(selectFeatureFlag(PassFeature.PassCompromisedPasswords));
     if (!enabled) return false;
 
     const plan: UserPassPlan = yield select(selectPassPlan);
@@ -36,7 +36,6 @@ function* checkItem(item: ItemRevision): Generator<any, void, any> {
         const entry: CompromisedPasswordEntry = {
             compromised: check.compromised,
             etag: check.etag,
-            checkedAt: Date.now(),
             revision: item.revision,
         };
         yield put(compromisedPasswordUpdate({ item: { shareId: item.shareId, itemId: item.itemId }, entry }));
