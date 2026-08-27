@@ -9,7 +9,8 @@
         "@proton/eslint-config-proton": "workspace:^",
         "abortcontroller-polyfill": "^1.7.8",
         "core-js": "^3.50.0",
-        "regenerator-runtime": "^0.14.1"
+        "regenerator-runtime": "^0.14.1",
+        "resize-observer": "^1.0.4"
     },
     "devDependencies": {
         "eslint": "^10.9.0"
