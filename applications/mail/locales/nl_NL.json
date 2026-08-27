@@ -340,6 +340,9 @@
       "Copy alias “${ name }”": [
         "Kopieer alias \"${ name }\""
       ],
+      "Copy debug transcript": [
+        "Kopieer het foutopsporingstranscript"
+      ],
       "Copy email to clipboard": [
         "E-mailadres kopiëren naar klembord"
       ],
@@ -626,6 +629,9 @@
       ],
       "Get in touch": [
         "Neem contact op"
+      ],
+      "Get index size on disk": [
+        "Haal de indexgrootte op schijf op"
       ],
       "Get started": [
         "Aan de slag"
@@ -1242,6 +1248,9 @@
       ],
       "Run on ${ BRAND_NAME } servers": [
         "Uitvoeren op ${ BRAND_NAME }-servers"
+      ],
+      "Run realistic session": [
+        "Voer een realistische sessie uit"
       ],
       "Save": [
         "Opslaan"
@@ -4258,6 +4267,9 @@
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "Nieuwe e-mails van ${ senderEmailAddress } worden niet meer afgeleverd en zullen permanent verwijderd worden."
       ],
+      "No ads. No trackers": [
+        "Geen advertenties. Geen trackers"
+      ],
       "No folders": [
         "Geen mappen"
       ],
@@ -4872,6 +4884,9 @@
       ],
       "Could not find an available name": [
         "Kon geen beschikbare naam vinden"
+      ],
+      "Could not grant access to the organization key": [
+        "Kan geen toegang verlenen tot de organisatiesleutel"
       ],
       "Could not load sharing details": [
         "Kan de deelgegevens niet laden"
@@ -7022,6 +7037,14 @@
         "${ contactsLength } contact",
         "${ contactsLength } contacten"
       ],
+      "${ count } email": [
+        "${ count } e-mail",
+        "${ count } e-mails"
+      ],
+      "${ count } email · ${ names }": [
+        "${ count } e-mail · ${ names }",
+        "${ count } e-mails · ${ names }"
+      ],
       "${ count } email → ${ dest }": [
         "${ count } e-mail → ${ dest }",
         "${ count } e-mails → ${ dest }"
@@ -7029,6 +7052,9 @@
       "${ currentProgress } out of ${ totalProgress }": [
         "${ currentProgress } van ${ totalProgress }",
         "${ currentProgress } van ${ totalProgress }"
+      ],
+      "${ dateString } at ${ formattedTime }": [
+        "${ dateString } om ${ formattedTime }"
       ],
       "${ elementsCount } conversation will be labelled as:": [
         "${ elementsCount } gesprek wordt gelabeld als:",
@@ -7084,8 +7110,8 @@
         "${ groupCounts } groep gevonden",
         "${ groupCounts } groepen gevonden"
       ],
-      "${ IDEAL_BRAND_NAME } mark": [
-        "${ IDEAL_BRAND_NAME }-markering"
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "${ IDEAL_WERO_BRAND_NAME }-markering"
       ],
       "${ issues.length } issue during import:": [
         "${ issues.length } probleem tijdens importeren:",
@@ -7414,6 +7440,9 @@
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Eventuele submappen zullen ook worden verwijderd. Echter, mails die zijn opgeslagen in deze map ${ nameDeleted } zullen niet worden verwijderd en zijn terug te vinden in de map Alle berichten."
       ],
+      "Apply labels": [
+        "Labels toepassen"
+      ],
       "Apply to future messages": [
         "Pas toe op toekomstige berichten"
       ],
@@ -7552,6 +7581,9 @@
       "Change your password": [
         "Wijzig uw wachtwoord"
       ],
+      "Checked Proton support": [
+        "Protonondersteuning gecontroleerd"
+      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Controle van contact ${ progress } van ${ max }..."
       ],
@@ -7638,6 +7670,9 @@
         "Maak een beveiligde cloud voor ${ memberCount } lid",
         "Maak een beveiligde cloud voor ${ memberCount } leden"
       ],
+      "Create folder": [
+        "Map maken"
+      ],
       "Create in": [
         "Maak in"
       ],
@@ -7673,6 +7708,9 @@
       ],
       "Daily": [
         "Dagelijks"
+      ],
+      "Debug transcript copied": [
+        "Foutopsporings-transcript gekopieerd"
       ],
       "Dedicated servers": [
         "Dedicated servers"
@@ -7944,6 +7982,10 @@
       "Forgot password?": [
         "Wachtwoord vergeten?"
       ],
+      "Found ${ count } contact": [
+        "${ count } contact gevonden",
+        "${ count } contacten gevonden"
+      ],
       "Found a current encrypted search index with ${ oldIndexSize } message.": [
         "Er is een actieve gecodeerde zoekindex gevonden met ${ oldIndexSize } bericht.",
         "Er is een actieve gecodeerde zoekindex gevonden met ${ oldIndexSize } berichten."
@@ -8018,6 +8060,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Als u de e-mail niet in de inbox kan vinden, check dan uw map met spam."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Als u de toegang tot uw authenticator-app bent kwijtgeraakt, kunt u 1 van de 16 back-upherstelcodes gebruiken die u krijgt bij het instellen van tweefactorauthenticatie. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Als u doorgaat met de downgrade, verliest u toegang tot betaalde functies van ${ MAIL_APP_NAME } en ${ VPN_APP_NAME }."
@@ -8191,6 +8236,12 @@
       "Mark all as read": [
         "Alles markeren als gelezen"
       ],
+      "Mark all as unread": [
+        "Alles markeren als ongelezen"
+      ],
+      "Mark as read": [
+        "Als gelezen markeren"
+      ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logo"
       ],
@@ -8289,6 +8340,9 @@
       ],
       "No contacts added yet": [
         "Nog geen contactpersonen toegevoegd"
+      ],
+      "No contacts found": [
+        "Geen contacten gevonden"
       ],
       "No conversation to read": [
         "Geen gesprek om te lezen"
@@ -8660,6 +8714,9 @@
       "Searched for “${ keyword }”": [
         "Gezocht naar “${ keyword }”"
       ],
+      "Searched the web": [
+        "Op internet gezocht"
+      ],
       "Searched your mail": [
         "Uw e-mail gezocht"
       ],
@@ -8744,6 +8801,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Aangezien u een loyale gebruiker bent, heeft uw account extra functies ingeschakeld."
+      ],
+      "Snooze emails": [
+        "E-mails snoozen"
       ],
       "Snooze messages for later so they are top of your inbox when you want": [
         "Snooze berichten voor later zodat ze bovenaan uw inbox staan wanneer u wilt"
@@ -9316,8 +9376,8 @@
       "We use 3-D Secure to protect your payments": [
         "We gebruiken 3-D Secure om uw betalingen te beschermen"
       ],
-      "We will redirect you to ${ IDEAL_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "We sturen u door naar ${ IDEAL_BRAND_NAME } in een nieuw browsertabblad om deze transactie te voltooien. Als u pop-upblokkering gebruikt, schakel deze dan uit om door te gaan."
+      "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "We sturen u door naar ${ IDEAL_WERO_BRAND_NAME } in een nieuw browsertabblad om deze transactie te voltooien. Als u pop-upblokkering gebruikt, schakel deze dan uit om door te gaan."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "We verwijzen u naar PayPal in een nieuw browsertabblad om de transactie te voltooien. Als u een pop-up blocker gebruikt, schakel deze dan uit alvorens door te gaan."
@@ -9372,6 +9432,9 @@
       ],
       "Would you like to receive a new verification code?": [
         "Wil u graag een nieuwe verificatiecode ontvangen?"
+      ],
+      "Writes ${ REALISTIC_ENTRIES } realistic log lines trickling in over a minute, like an actual session, instead of all at once. Takes about a minute to run. Keep this tab focused: frame measurements pause in the background.": [
+        "Schrijft ${ REALISTIC_ENTRIES } realistische logregels die binnen een minuut druppelen, zoals bij een echte sessie, in plaats van allemaal tegelijk. Het duurt ongeveer een minuut om te rennen. Houd dit tabblad gefocust: framemetingen pauzeren op de achtergrond."
       ],
       "Writing assistant": [
         "Schrijfassistent"
@@ -10008,9 +10071,6 @@
         "${ n } maand",
         "${ n } maanden"
       ],
-      "${ value.length }/${ maxLength } characters": [
-        "${ value.length }/${ maxLength } tekens"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Tijdelijk onbeschikbaar. Probeer later opnieuw.)"
       ],
@@ -10128,6 +10188,9 @@
       "BTC amount": [
         "BTC-bedrag"
       ],
+      "Burst write": [
+        "Burst schrijven"
+      ],
       "Calendar": [
         "Agenda"
       ],
@@ -10239,6 +10302,9 @@
       "Date:": [
         "Datum:"
       ],
+      "Deals, offers, and marketing emails": [
+        "Deals, aanbiedingen en marketing-e-mails"
+      ],
       "Delete": [
         "Verwijderen"
       ],
@@ -10332,6 +10398,9 @@
       "Expires": [
         "Verloopt"
       ],
+      "Export size": [
+        "Grootte exporteren"
+      ],
       "Extended address": [
         "Adrestoevoeging"
       ],
@@ -10343,6 +10412,9 @@
       ],
       "Filter": [
         "Filter"
+      ],
+      "Filter name": [
+        "Filternaam"
       ],
       "Filter Name": [
         "Filternaam"
@@ -10668,6 +10740,12 @@
       "Read": [
         "Gelezen"
       ],
+      "Read / export": [
+        "Lezen / exporteren"
+      ],
+      "Realistic session": [
+        "Realistische sessie"
+      ],
       "Recipient": [
         "Ontvanger"
       ],
@@ -10692,6 +10770,9 @@
       "Remove Zoom video conference": [
         "Zoom videoconferentie verwijderen"
       ],
+      "Return on": [
+        "Keer terug op"
+      ],
       "Reveal password": [
         "Wachtwoord tonen"
       ],
@@ -10712,6 +10793,9 @@
       ],
       "Share your availability with booking pages in ${ CALENDAR_APP_NAME }, and host secure meetings with ${ MEET_APP_NAME }.": [
         "Deel uw beschikbaarheid met boekingspagina's in ${ CALENDAR_APP_NAME } en host veilige vergaderingen met ${ MEET_APP_NAME }."
+      ],
+      "Sieve script": [
+        "Sieve script"
       ],
       "Sign emails": [
         "E-mails ondertekenen"
@@ -10877,6 +10961,9 @@
       ],
       "Without attachment": [
         "Zonder bijlage"
+      ],
+      "Write": [
+        "Schrijf"
       ],
       "Writing assistant": [
         "Schrijfassistent"
@@ -12643,6 +12730,11 @@
         "Ondersteuning voor ${ n } aangepaste e-maildomeinen"
       ]
     },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "U hebt nu toegang tot de nieuwe ${ CALENDAR_APP_NAME }. ${ link }"
+      ]
+    },
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } aangemaakt"
@@ -13270,8 +13362,8 @@
       "More plans are available in other currencies": [
         "Er zijn meer abonnementen beschikbaar in andere valuta"
       ],
-      "Pay with ${ IDEAL_BRAND_NAME }": [
-        "Betaal met ${ IDEAL_BRAND_NAME }"
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "Betaal met ${ IDEAL_WERO_BRAND_NAME }"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Betaalmethode vereist voor de activering van het abonnement nadat de proefversie is afgelopen."
@@ -13354,8 +13446,8 @@
       "You will soon be redirected to verify your payment.": [
         "Binnenkort wordt u doorgestuurd om uw betaling te verifiëren."
       ],
-      "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
-        "Uw valuta is gewijzigd naar euro's (€), omdat ${ IDEAL_BRAND_NAME } alleen betalingen in euro's ondersteunt."
+      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
+        "Uw valuta is gewijzigd naar euro's (€), omdat ${ IDEAL_WERO_BRAND_NAME } alleen betalingen in euro's ondersteunt."
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Uw valuta is gewijzigd naar euro (€) omdat SEPA-bankoverschrijvingen alleen betalingen in euro ondersteunen."
@@ -13368,8 +13460,8 @@
       ]
     },
     "Payments.Error": {
-      "Failed to initialize ${ IDEAL_BRAND_NAME }. Please try again later.": [
-        "Kan ${ IDEAL_BRAND_NAME } niet initialiseren. Probeer het later opnieuw."
+      "Failed to initialize ${ IDEAL_WERO_BRAND_NAME }. Please try again later.": [
+        "Kan ${ IDEAL_WERO_BRAND_NAME } niet initialiseren. Probeer het later opnieuw."
       ],
       "Invalid card number": [
         "Ongeldig kaartnummer"
@@ -13379,6 +13471,9 @@
       ],
       "Invalid security code": [
         "Ongeldige beveiligingscode"
+      ],
+      "Please enter the account holder name": [
+        "Voer de naam van de rekeninghouder in"
       ],
       "Something went wrong. Please try again later.": [
         "Er ging iets mis. Probeer het later nog eens."
@@ -13396,8 +13491,8 @@
       ]
     },
     "Payments.iDEAL": {
-      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Door deze betaling te bevestigen, machtigt u ${ BRAND_NAME } en Stripe, onze betalingsdienstaanbieder, om uw bank opdracht te geven het bedrag van uw rekening af te schrijven. U kunt binnen 8 weken na de incassodatum een ​​terugbetaling krijgen, onder de voorwaarden van uw overeenkomst met uw bank."
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Door te bevestigen geeft u toestemming aan ${ BRAND_NAME } en Stripe, onze betalingsdienstaanbieder, onze betalingsdienstaanbieder, om toekomstige betalingen voor uw abonnement van deze bankrekening te innen via SEPA Direct Debit, en uw bank om deze betalingen af ​​te schrijven. Uw eerste betaling wordt nu uitgevoerd door ${ IDEAL_WERO_BRAND_NAME }. Uw abonnement wordt automatisch verlengd, totdat u opzegt; wij zullen u vóór elke ophaling op de hoogte stellen. Bij automatische incasso kunt u binnen 8 weken na de incassodatum een ​​teruggave aanvragen bij uw bank, conform de voorwaarden die u met uw bank heeft afgesproken. Dit is niet van toepassing op de betaling van ${ IDEAL_WERO_BRAND_NAME } die u nu doet."
       ]
     },
     "Payments.info": {
@@ -13967,6 +14062,31 @@
         "Kortingen zijn gebaseerd op de standaard maandelijkse prijzen. Uw abonnement wordt verlengd tegen het standaard jaartarief wanneer de factureringscyclus afloopt."
       ]
     },
+    "q3campaign2026: Info, Calendar first": {
+      "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ CALENDAR_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, en ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, en ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "q3campaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, en ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
     "q3campaign2026: Title": {
       "for 12 months": [
         "voor 12 maanden"
@@ -14116,17 +14236,6 @@
       ],
       "User Admin": [
         "Gebruiker Beheerder"
-      ]
-    },
-    "Role description": {
-      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
-        "Configureer beveiligingsbeleid, gegevensbewaring en VPN-infrastructuur, en beheer auditlogboeken."
-      ],
-      "Manage all users, groups, security, billing, and system configurations.": [
-        "Beheer alle gebruikers, groepen, opslag, beveiliging, facturering, auditlogboeken en systeemconfiguraties."
-      ],
-      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
-        "Beheer gebruikers, groepen en opslagruimte voor alle leden, wijs rollen toe en deel licenties uit."
       ]
     },
     "Safety review": {
@@ -14571,6 +14680,12 @@
       ],
       "Private, fast, and organized": [
         "Privé, snel en georganiseerd"
+      ]
+    },
+    "Snooze info": {
+      "${ count } email → ${ wakeTime }": [
+        "${ count } e-mail → ${ wakeTime }",
+        "${ count } e-mails → ${ wakeTime }"
       ]
     },
     "Snooze message": {
@@ -16052,6 +16167,9 @@
       "Apply gift code": [
         "Geschenkcode toepassen"
       ],
+      "Apply labels": [
+        "Labels toepassen"
+      ],
       "Archive all messages?": [
         "Alle berichten archiveren?"
       ],
@@ -16181,8 +16299,14 @@
       "Create contact": [
         "Contact aanmaken"
       ],
+      "Create folder": [
+        "Map maken"
+      ],
       "Create folder \"${ search }\"": [
         "Map \"${ search }\" aanmaken"
+      ],
+      "Create label": [
+        "Label aanmaken"
       ],
       "Create label \"${ search }\"": [
         "Label \"${ search }\" aanmaken"
@@ -16460,6 +16584,9 @@
       "Invalid verification code": [
         "De ingevoerde code is ongeldig"
       ],
+      "Keep this banner hidden?": [
+        "Deze banner verborgen houden?"
+      ],
       "Label as": [
         "Labellen als"
       ],
@@ -16490,6 +16617,9 @@
       ],
       "Make your inbox your own": [
         "Maak uw inbox uw eigen"
+      ],
+      "Mark all as unread": [
+        "Alles markeren als ongelezen"
       ],
       "Mark all messages as read": [
         "Markeer alle berichten als gelezen"
@@ -16830,6 +16960,9 @@
       "Sending original message": [
         "Oorspronkelijk bericht wordt verzonden"
       ],
+      "September Sale": [
+        "September-uitverkoop"
+      ],
       "Set recovery methods": [
         "Herstelmethoden instellen"
       ],
@@ -16871,6 +17004,9 @@
       ],
       "Snooze": [
         "Snooze"
+      ],
+      "Snooze emails": [
+        "E-mails snoozen"
       ],
       "Snooze message": [
         "Bericht snoozen"
