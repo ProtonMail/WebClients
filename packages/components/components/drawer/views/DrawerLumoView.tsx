@@ -1,16 +1,9 @@
-import { c } from 'ttag';
-
-import { useNotifications } from '@proton/app-context/useNotifications';
-import { Button } from '@proton/atoms/Button/Button';
-import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { IcBroom } from '@proton/icons/icons/IcBroom';
-import { IcBug } from '@proton/icons/icons/IcBug';
 import LumoWordmark from '@proton/lumo-ui/LumoWordmark';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
-import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 
 import { useTheme } from '../../../containers/themes/ThemeProvider';
 import LumoAgentPanel from '../../lumoAgent/LumoAgentPanel';
+import { LumoConversationHeaderActions } from '../../lumoAgent/LumoConversationHeaderActions';
 import type { SelectedDrawerOption } from './DrawerView';
 import DrawerView from './DrawerView';
 import { useLumoAgentDrawer } from './lumoAgent/lumoAgentDrawerContext';
@@ -38,41 +31,24 @@ const DrawerLumoView = () => {
         getDebugTranscript,
     } = useLumoAgentDrawer();
     const theme = useTheme();
-    const { createNotification } = useNotifications();
 
     const tab: SelectedDrawerOption = {
         text: LUMO_SHORT_APP_NAME,
         value: 'lumo',
     };
 
-    const copyTranscript = () => {
-        textToClipboard(getDebugTranscript());
-        createNotification({ text: c('Info').t`Debug transcript copied` });
-    };
-
-    const clearLabel = c('Action').t`Clear conversation`;
-    const copyLabel = c('Action').t`Copy debug transcript`;
-    const headerActions = hasConversation ? (
-        <>
-            <Tooltip title={copyLabel}>
-                <Button icon color="weak" shape="ghost" onClick={copyTranscript}>
-                    <IcBug alt={copyLabel} />
-                </Button>
-            </Tooltip>
-            <Tooltip title={clearLabel}>
-                <Button icon color="weak" shape="ghost" onClick={clear}>
-                    <IcBroom alt={clearLabel} />
-                </Button>
-            </Tooltip>
-        </>
-    ) : undefined;
-
     return (
         <DrawerView
             tab={tab}
             titleContent={<LumoWordmark dark={theme.information.dark} alt={LUMO_SHORT_APP_NAME} />}
             id="drawer-app-lumo"
-            headerActions={headerActions}
+            headerActions={
+                <LumoConversationHeaderActions
+                    hasConversation={hasConversation}
+                    clear={clear}
+                    getDebugTranscript={getDebugTranscript}
+                />
+            }
             contentClassName="drawer-lumo flex flex-column flex-nowrap"
         >
             <LumoAgentPanel

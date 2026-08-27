@@ -75,7 +75,8 @@ export function useDrivePreviewModal() {
     );
 
     return {
-        previewModal: open && props ? <Preview onClose={onClose} onNodeChange={onNodeChange} {...props} /> : null,
+        previewModal:
+            open && props ? <Preview canAskLumo onClose={onClose} onNodeChange={onNodeChange} {...props} /> : null,
         showPreviewModal,
     };
 }
