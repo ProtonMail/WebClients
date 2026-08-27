@@ -18,8 +18,9 @@ import { Role } from '../types-api';
 export const DEFAULT_CHAT_MODEL = 'lumo';
 export const LUMO_LITE_MODEL = 'lumo-lite';
 export const LUMO_MAX_MODEL = 'lumo-max';
+export const APERTUS_15_MODEL = 'apertus-15';
 
-export type LumoApiModelTier = 'auto' | 'lumo-lite' | 'lumo-max';
+export type LumoApiModelTier = 'auto' | 'lumo-lite' | 'lumo-max' | 'apertus-15';
 
 export type ToChatCompletionsOptions = {
     enableReasoning?: boolean;
@@ -51,6 +52,8 @@ export function resolveChatModel(modelTier: LumoApiModelTier = 'auto', model?: s
             return LUMO_LITE_MODEL;
         case 'lumo-max':
             return LUMO_MAX_MODEL;
+        case 'apertus-15':
+            return APERTUS_15_MODEL;
         default:
             return DEFAULT_CHAT_MODEL;
     }

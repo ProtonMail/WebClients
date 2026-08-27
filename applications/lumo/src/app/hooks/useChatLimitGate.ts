@@ -1,17 +1,18 @@
 import { useCallback } from 'react';
 
-import { useMaxModelAvailability } from './useMaxModelAvailability';
-import { useOptionalModelTier } from '../providers/ModelTierProvider';
 import { useLumoPlan } from '../providers/LumoPlanProvider';
+import { useOptionalModelTier } from '../providers/ModelTierProvider';
 import { useLumoDispatch } from '../redux/hooks';
 import { clearTierErrors } from '../redux/slices/meta/errors';
+import { handleTierError } from '../services/errors/errorHandling';
 import {
     areAllModelLimitsExhausted,
     isModelTierSelectable,
     resolveUsageModelTier,
     useRemainingLimits,
 } from '../services/usageLimitsStore';
-import { handleTierError } from '../services/errors/errorHandling';
+import { useLumoFlags } from './useLumoFlags';
+import { useMaxModelAvailability } from './useMaxModelAvailability';
 import { useTierErrors } from './useTierErrors';
 
 /**
@@ -24,14 +25,19 @@ export const useChatLimitGate = () => {
     const modelTierContext = useOptionalModelTier();
     const selectedModelTier = resolveUsageModelTier(modelTierContext?.modelTier);
     const { isMaxAvailableByFlag } = useMaxModelAvailability();
+    const { apertusModelAvailable } = useLumoFlags();
     const { hasTierErrors } = useTierErrors();
     const dispatch = useLumoDispatch();
 
     const selectedModelLimitExhausted =
         selectedModelTier !== undefined &&
-        !isModelTierSelectable(selectedModelTier, remainingLimits, { isMaxAvailable: isMaxAvailableByFlag });
+        !isModelTierSelectable(selectedModelTier, remainingLimits, {
+            isMaxAvailable: isMaxAvailableByFlag,
+            isApertusEnabled: apertusModelAvailable,
+        });
     const allModelLimitsExhausted = areAllModelLimitsExhausted(remainingLimits);
-    const isBlocked = !hasLumoPlus && selectedModelLimitExhausted;
+    const isBlocked =
+        (!hasLumoPlus && selectedModelLimitExhausted) || (selectedModelTier === 'apertus-15' && !apertusModelAvailable);
 
     const ensureTierError = useCallback(() => {
         if (!hasLumoPlus && allModelLimitsExhausted && !hasTierErrors) {

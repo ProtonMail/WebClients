@@ -376,6 +376,7 @@ enum LumoFeatureFlag {
     LumoAiPaperTrailPopup = 'LumoAiPaperTrailPopup',
     LumoMaxAvailableGuest = 'LumoMaxAvailableGuest',
     LumoMaxAvailableFree = 'LumoMaxAvailableFree',
+    LumoApertusModel = 'LumoApertusModel',
     WhatsNewV2 = 'WhatsNewV2',
 }
 
