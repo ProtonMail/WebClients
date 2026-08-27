@@ -2,8 +2,11 @@ import { useRef } from 'react';
 
 import { FilePreview, NavigationControl } from '@proton/components';
 import { useSharingModal } from '@proton/drive/modals/sharingModal';
-import { useFlagsDriveSheet } from '@proton/drive/modules/flags';
+import { useFlagsDriveLumo, useFlagsDriveSheet } from '@proton/drive/modules/flags';
 
+import { loadPreviewThumbnail } from '../../lumo/loadPreviewThumbnail';
+import type { OpenFile } from '../../lumo/toolModule';
+import { useLumoDriveConfig } from '../../lumo/useLumoDriveConfig';
 import { useDetailsModal } from '../../modals/DetailsModal';
 import type { Drive } from './interface';
 import { isDriveWithSharing } from './interface';
@@ -20,6 +23,8 @@ export interface PreviewProps {
     verifySignatures?: boolean;
     canOpenInDocs?: boolean;
     canOpenDetails?: boolean;
+    /** Opt in to the Lumo assistant. Off by default: it needs an authenticated session. */
+    canAskLumo?: boolean;
     onClose: () => void;
     date?: Date;
 
@@ -47,6 +52,7 @@ export function Preview({
     verifySignatures = true,
     canOpenInDocs = true,
     canOpenDetails = true,
+    canAskLumo = false,
     onClose,
     date,
     photos,
@@ -70,6 +76,8 @@ export function Preview({
 
     const sheetsEnabled = useFlagsDriveSheet();
 
+    const { isDriveLumoEnabled } = useFlagsDriveLumo();
+
     const { sharingModal, showSharingModal } = useSharingModal();
 
     const rootRef = useRef<HTMLDivElement>(null);
@@ -82,6 +90,19 @@ export function Preview({
         preview.canShare && sharingDrive
             ? () => showSharingModal({ nodeUid: preview.node.nodeUid, drive: sharingDrive })
             : undefined;
+
+    const openFile: OpenFile | undefined = preview.node.name
+        ? {
+              nodeUid: preview.node.nodeUid,
+              name: preview.node.name,
+              mediaType: preview.node.mediaType,
+              size: preview.node.displaySize,
+              contents: preview.content.data,
+              loadViewableImage: () =>
+                  loadPreviewThumbnail(drive, preview.node.nodeUid, preview.node.activeRevisionUid),
+          }
+        : undefined;
+    const lumoConfig = useLumoDriveConfig({ openFile });
 
     return (
         <>
@@ -122,6 +143,8 @@ export function Preview({
                 }
                 sheetsEnabled={sheetsEnabled}
                 date={date}
+                lumoConfig={canAskLumo && isDriveLumoEnabled ? lumoConfig : undefined}
+                lumoConversationKey={preview.node.nodeUid}
                 {...photos}
             />
             {detailsModal}
