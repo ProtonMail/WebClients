@@ -3,10 +3,10 @@ import { fireEvent, waitFor, within } from '@testing-library/react';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 
-import { assertIcon } from '../../../../helpers/test/assertion';
-import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../helpers/test/crypto';
-import { EOClearAll } from '../../../../helpers/test/eo/helpers';
-import { tick } from '../../../../helpers/test/render';
+import { assertIcon } from '../../../../helpers/tests/assertion';
+import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../helpers/tests/crypto';
+import { EOClearAll } from '../../../../helpers/tests/eo/helpers';
+import { tick } from '../../../../helpers/tests/render';
 import { setup } from './ViewEOMessage.test.helpers';
 
 describe('Encrypted Outside message attachments', () => {

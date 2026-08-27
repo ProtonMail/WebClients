@@ -2,8 +2,8 @@ import { fireEvent, screen } from '@testing-library/react';
 
 import type { MIME_TYPES } from '@proton/shared/lib/constants';
 
-import { clearAll, parseDOMStringToBodyElement, waitForSpyCall } from '../../../helpers/test/helper';
-import { mailTestRender } from '../../../helpers/test/render';
+import { clearAll, parseDOMStringToBodyElement, waitForSpyCall } from '../../../helpers/tests/helper';
+import { mailTestRender } from '../../../helpers/tests/render';
 import * as useSaveDraft from '../../../hooks/message/useSaveDraft';
 import Composer from '../Composer';
 import { ID, prepareMessage, props } from './Composer.test.helpers';

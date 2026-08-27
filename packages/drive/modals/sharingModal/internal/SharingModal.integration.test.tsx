@@ -5,7 +5,7 @@ import type { ShareResult } from '@protontech/drive-sdk/dist/interface/sharing';
 import { screen, waitFor, within } from '@testing-library/react';
 import { userEvent } from '@testing-library/user-event';
 
-import { getModelState } from '@proton/account/test';
+import { getModelState } from '@proton/account/tests';
 import { buildAddress } from '@proton/testing/builders/address';
 import { renderWithProviders } from '@proton/testing/lib/context/renderWithProviders';
 

@@ -2,13 +2,13 @@ import { screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import loudRejection from 'loud-rejection';
 
-import { getModelState } from '@proton/account/test';
+import { getModelState } from '@proton/account/tests';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import type { AddressKey } from '@proton/shared/lib/interfaces';
 import type { AttachmentFullMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { getAddressKeyCache, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
-import type { GeneratedKey } from '../../../helpers/test/helper';
+import { getAddressKeyCache, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/tests/crypto';
+import type { GeneratedKey } from '../../../helpers/tests/helper';
 import {
     addApiKeys,
     addApiMock,
@@ -27,7 +27,7 @@ import {
     waitForNoNotification,
     waitForNotification,
     waitForSpyCall,
-} from '../../../helpers/test/helper';
+} from '../../../helpers/tests/helper';
 import Composer from '../Composer';
 import { ID, getMessage, prepareMessage, props, saveNow, toAddress } from './Composer.test.helpers';
 

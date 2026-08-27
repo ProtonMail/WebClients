@@ -3,7 +3,7 @@ import { act, fireEvent, waitFor } from '@testing-library/react';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { addApiMock, assertCheck, assertFocus, clearAll, tick } from '../../../helpers/test/helper';
+import { addApiMock, assertCheck, assertFocus, clearAll, tick } from '../../../helpers/tests/helper';
 import { RouterMailboxContainer } from '../../../router/RouterMailboxContainer';
 import * as mailboxActions from '../../../store/mailbox/mailboxActions';
 import type { SetupArgs } from './Mailbox.test.helpers';

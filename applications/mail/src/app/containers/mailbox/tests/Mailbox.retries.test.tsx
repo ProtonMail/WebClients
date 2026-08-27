@@ -3,7 +3,7 @@ import { act, fireEvent, screen } from '@testing-library/react';
 import { DEFAULT_MAIL_PAGE_SIZE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
-import { addApiMock, clearAll, tick } from '../../../helpers/test/helper';
+import { addApiMock, clearAll, tick } from '../../../helpers/tests/helper';
 import { expectElements, getElements, setup } from './Mailbox.test.helpers';
 
 jest.setTimeout(20000);

@@ -5,7 +5,7 @@ import { ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 
 import type { setupStore } from '../store/store';
-import { getStoreWrapper } from '../test/Store';
+import { getStoreWrapper } from '../tests/Store';
 import { useSendCalendarInviteTelemetry } from './useSendCalendarInviteTelemetry';
 
 const setupTest = ({

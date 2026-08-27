@@ -11,7 +11,7 @@ import {
     measureExperimentalPerformance,
     measureFeaturePerformance,
 } from './telemetry';
-import { releaseCryptoProxy, setupCryptoProxyForTesting } from './test/crypto';
+import { releaseCryptoProxy, setupCryptoProxyForTesting } from './tests/crypto';
 
 jest.mock('@proton/shared/lib/api/telemetry');
 jest.mock('@proton/app-context/useApi');

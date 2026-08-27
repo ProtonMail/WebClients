@@ -1,7 +1,6 @@
 import { fireEvent, screen } from '@testing-library/react';
 
-import { mailTestRender } from '../../../../../helpers/test/render';
-
+import { mailTestRender } from '../../../../../helpers/tests/render';
 import { activeSubscription } from '../../testData';
 import { ModalBlockSender } from './ModalBlockSender';
 

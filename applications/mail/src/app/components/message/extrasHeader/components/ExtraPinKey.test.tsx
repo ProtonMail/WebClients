@@ -1,14 +1,14 @@
 import type { PublicKeyReference } from '@protontech/crypto';
 import { fireEvent, screen } from '@testing-library/react';
 
-import { getModelState } from '@proton/account/test';
+import { getModelState } from '@proton/account/tests';
 import type { MessageVerification } from '@proton/mail/store/messages/messagesTypes';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { PROMPT_PIN } from '@proton/shared/lib/mail/mailSettings';
 
-import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../helpers/test/crypto';
+import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../helpers/tests/crypto';
 import {
     addApiMock,
     clearAll,
@@ -17,8 +17,8 @@ import {
     mailTestRender,
     minimalCache,
     tick,
-} from '../../../../helpers/test/helper';
-import { message } from '../../../../helpers/test/pinKeys';
+} from '../../../../helpers/tests/helper';
+import { message } from '../../../../helpers/tests/pinKeys';
 import ExtraPinKey from './ExtraPinKey';
 
 const ownEmailAddress = 'sender@protonmail.com';

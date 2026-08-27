@@ -2,7 +2,7 @@ import { add, addHours, addMinutes, addSeconds, getUnixTime } from 'date-fns';
 
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { clearAll, mailTestRender, tick } from '../../../helpers/test/helper';
+import { clearAll, mailTestRender, tick } from '../../../helpers/tests/helper';
 import EOExpirationTime from './EOExpirationTime';
 
 describe('EOExpirationTime', () => {

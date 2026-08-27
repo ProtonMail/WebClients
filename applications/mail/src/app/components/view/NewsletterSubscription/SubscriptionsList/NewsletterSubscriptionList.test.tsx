@@ -1,10 +1,9 @@
 import { fireEvent, screen } from '@testing-library/react';
 
-import { mailTestRender } from '../../../../helpers/test/render';
+import { mailTestRender } from '../../../../helpers/tests/render';
 import { SubscriptionTabs } from '../../../../store/newsletterSubscriptions/interface';
 import * as mailboxSelectors from '../../../../store/newsletterSubscriptions/newsletterSubscriptionsSelector';
 import { newsletterSubscriptionsActions } from '../../../../store/newsletterSubscriptions/newsletterSubscriptionsSlice';
-
 import { generateSubscriptionList } from '../testData';
 import { NewsletterSubscriptionList } from './NewsletterSubscriptionList';
 

@@ -4,10 +4,9 @@ import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { renderHook } from '../helpers/test/render';
+import { renderHook } from '../helpers/tests/render';
 import type { Conversation } from '../models/conversation';
 import { initialize } from '../store/messages/read/messagesReadActions';
-
 import { useExpiringElement } from './useExpiringElement';
 
 // TODO: Remove when global mock is merged (later)

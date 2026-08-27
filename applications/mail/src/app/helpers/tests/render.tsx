@@ -3,14 +3,12 @@ import { useRef } from 'react';
 import { Route, Router } from 'react-router';
 
 import type { RenderResult as OriginalRenderResult, RenderOptions } from '@testing-library/react';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { act, render as originalRender } from '@testing-library/react';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { act as actHook, renderHook as originalRenderHook } from '@testing-library/react-hooks';
 import type { History } from 'history';
 import { createMemoryHistory } from 'history';
 
-import { getModelState } from '@proton/account/test';
+import { getModelState } from '@proton/account/tests';
 import { ApiContext } from '@proton/app-context/apiContext';
 import { createCalendarModelEventManager } from '@proton/calendar/calendarModelEventManager';
 import SpotlightProvider from '@proton/components/components/spotlight/Provider';

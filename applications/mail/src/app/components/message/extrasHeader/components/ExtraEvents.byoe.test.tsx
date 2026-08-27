@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { getModelState } from '@proton/account/test';
+import { getModelState } from '@proton/account/tests';
 import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import { CALENDAR_V1 } from '@proton/shared/lib/api/calendars';
 import { getAppName } from '@proton/shared/lib/apps/helper';
@@ -12,16 +12,16 @@ import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { encryptAttachment } from '@proton/shared/lib/mail/send/attachments';
 import { type ApiMockHandler, addApiMock } from '@proton/testing/lib/api';
 
-import ExtraEvents from './ExtraEvents';
-import { getCompleteAddress, minimalCache } from '../../../../helpers/test/cache';
+import { getCompleteAddress, minimalCache } from '../../../../helpers/tests/cache';
 import {
     type GeneratedKey,
     generateKeys as generateAddressKeys,
     getAddressKeyCache,
     releaseCryptoProxy,
     setupCryptoProxyForTesting,
-} from '../../../../helpers/test/crypto';
-import { mailTestRender } from '../../../../helpers/test/render';
+} from '../../../../helpers/tests/crypto';
+import { mailTestRender } from '../../../../helpers/tests/render';
+import ExtraEvents from './ExtraEvents';
 
 jest.setTimeout(20000);
 

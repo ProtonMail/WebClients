@@ -1,8 +1,8 @@
 import { expect } from '@jest/globals';
+import { CryptoProxy } from '@protontech/crypto';
 import { combineReducers } from '@reduxjs/toolkit';
 import { waitFor } from '@testing-library/react';
 
-import { CryptoProxy } from '@protontech/crypto';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { getTestStore } from '@proton/redux-shared-store/test';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
@@ -10,8 +10,8 @@ import type { Address, AddressKey, DecryptedAddressKey, UserModel } from '@proto
 import { getDecryptedAddressKeysHelper, getDecryptedUserKeysHelper } from '@proton/shared/lib/keys';
 
 import { addressesReducer } from '../addresses';
-import { getModelState } from '../test';
-import { getServerEvent } from '../test/getServerEvent';
+import { getModelState } from '../tests';
+import { getServerEvent } from '../tests/getServerEvent';
 import { userReducer } from '../user';
 import { userKeysReducer } from '../userKeys';
 import * as addressKeysModule from './index';

@@ -1,7 +1,7 @@
 import { act, screen, waitFor } from '@testing-library/react';
 import cloneDeep from 'lodash/cloneDeep';
 
-import { getModelState } from '@proton/account/test';
+import { getModelState } from '@proton/account/tests';
 import { PLANS } from '@proton/payments/core/constants';
 import { SubscriptionPlatform } from '@proton/payments/core/subscription/constants';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
@@ -17,7 +17,7 @@ import {
     mockSubscriptionApi,
     subscriptionDefaultResponse,
     userDefault,
-} from '../../../hooks/helpers/test';
+} from '../../../hooks/helpers/tests';
 import SubscriptionContainer from './SubscriptionContainer';
 import type { OpenSubscriptionModalCallback } from './SubscriptionModalProvider';
 import SubscriptionModalProvider, { useSubscriptionModal } from './SubscriptionModalProvider';

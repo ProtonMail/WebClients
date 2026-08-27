@@ -1,14 +1,14 @@
 import { screen } from '@testing-library/react';
 import { addDays, addHours, addMinutes, getUnixTime } from 'date-fns';
 
-import { getModelState } from '@proton/account/test';
+import { getModelState } from '@proton/account/tests';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 import { AUTO_DELETE_SPAM_AND_TRASH_DAYS } from '@proton/shared/lib/mail/mailSettings';
 
-import { minimalCache } from '../../../helpers/test/cache';
-import { mailTestRender } from '../../../helpers/test/render';
+import { minimalCache } from '../../../helpers/tests/cache';
+import { mailTestRender } from '../../../helpers/tests/render';
 import type { Element } from '../../../models/element';
 import ItemExpiration from './ItemExpiration';
 

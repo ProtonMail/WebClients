@@ -1,6 +1,6 @@
 import type { ComponentType } from 'react';
 
-import { getModelState } from '@proton/account/test';
+import { getModelState } from '@proton/account/tests';
 import type { Entitlements } from '@proton/payments/core/entitlements/interface';
 import type { Plan } from '@proton/payments/core/plan/interface';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';

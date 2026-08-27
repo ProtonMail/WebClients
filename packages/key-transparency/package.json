@@ -16,7 +16,7 @@
         "check-types": "tsc",
         "i18n:validate": "proton-i18n validate lint-functions",
         "lint": "eslint --quiet",
-        "pretty": "prettier --write $(find lib test -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
+        "pretty": "prettier --write $(find lib tests -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
         "test": "TZ=UTC vitest",
         "test:ci": "TZ=UTC vitest run"
     },
