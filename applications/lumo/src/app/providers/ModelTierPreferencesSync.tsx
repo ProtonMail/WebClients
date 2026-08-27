@@ -1,5 +1,6 @@
 import { useLayoutEffect } from 'react';
 
+import { useLumoFlags } from '../hooks/useLumoFlags';
 import { useLumoUserSettings } from '../hooks/useLumoUserSettings';
 import { useMaxModelAvailability } from '../hooks/useMaxModelAvailability';
 import { resolveAvailableModelTier, useRemainingLimits } from '../services/usageLimitsStore';
@@ -16,6 +17,7 @@ export const ModelTierPreferencesSync = () => {
     const { setModelTierWithoutPersist, setResponseModeWithoutPersist } = useModelTier();
     const remainingLimits = useRemainingLimits();
     const { isMaxAvailableByFlag } = useMaxModelAvailability();
+    const { apertusModelAvailable } = useLumoFlags();
 
     useLayoutEffect(() => {
         if (isGuest) {
@@ -31,11 +33,13 @@ export const ModelTierPreferencesSync = () => {
         if (preferredModelTier) {
             const availableTier = resolveAvailableModelTier(preferredModelTier, remainingLimits, {
                 isMaxAvailable: isMaxAvailableByFlag,
+                isApertusEnabled: apertusModelAvailable,
             });
             setModelTierWithoutPersist(availableTier);
         }
     }, [
         isGuest,
+        apertusModelAvailable,
         isMaxAvailableByFlag,
         lumoUserSettings.preferredModelTier,
         lumoUserSettings.preferredResponseMode,

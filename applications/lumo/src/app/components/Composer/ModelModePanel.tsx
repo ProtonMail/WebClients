@@ -12,7 +12,7 @@ import { LumoIcon } from '../LumoIcon/LumoIcon';
 export type ModelModePanelLayout = 'dropdown' | 'sheet';
 
 export interface ModelModeOption {
-    tier: Exclude<ModelTier, 'auto'>;
+    tier: ModelTier;
     getLabel: () => string;
     getDescription: () => string;
     getRemaining?: () => number | undefined;
@@ -196,12 +196,12 @@ export interface ModelModePanelProps {
     layout: ModelModePanelLayout;
     modelOptions: ModelModeOption[];
     responseModeOptions: ResponseModeOption[];
-    selectedModelTier: Exclude<ModelTier, 'auto'>;
+    selectedModelTier: ModelTier;
     responseMode: ResponseMode;
     showUpgradeFooter: boolean;
     upsellPath?: string;
     onUpgrade?: () => void;
-    onSelectModel: (tier: Exclude<ModelTier, 'auto'>) => void;
+    onSelectModel: (tier: ModelTier) => void;
     onSelectResponseMode: (mode: ResponseMode) => void;
     onClose?: () => void;
 }
@@ -329,7 +329,8 @@ export const ModelModePanel = ({
 
 export const buildModelModeOptions = (
     remainingLimits: { lite?: number; max?: number } | null,
-    isMaxAvailableByFlag: boolean
+    isMaxAvailableByFlag: boolean,
+    isApertusEnabled: boolean
 ): ModelModeOption[] => [
     {
         tier: 'lumo-lite',
@@ -349,4 +350,16 @@ export const buildModelModeOptions = (
         getUnavailableReason: () => (!isMaxAvailableByFlag ? 'high-load' : null),
         isDisabled: () => !isModelTierSelectable('lumo-max', remainingLimits, { isMaxAvailable: isMaxAvailableByFlag }),
     },
+    ...(isApertusEnabled
+        ? [
+              {
+                  tier: 'apertus-15' as const,
+                  getLabel: () => 'Apertus 1.5 🇨🇭',
+                  getDescription: () =>
+                      c('collider_2025: Description').t`Open-source Swiss model with inspectable data & weights`,
+                  getRemaining: () => remainingLimits?.lite,
+                  isDisabled: () => isLimitExhausted(remainingLimits?.lite),
+              },
+          ]
+        : []),
 ];

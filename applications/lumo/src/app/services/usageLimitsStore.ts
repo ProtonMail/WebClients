@@ -40,7 +40,7 @@ let debugWeeklyLimitExhausted = readPersistedWeeklyLimitExhausted();
 let effectiveLimits: LumoRemainingLimits | null = null;
 const listeners = new Set<Listener>();
 
-export type UsageModelTier = Exclude<ModelTier, 'auto'>;
+export type UsageModelTier = ModelTier;
 
 function computeEffectiveLimits(): LumoRemainingLimits | null {
     if (debugWeeklyLimitExhausted) {
@@ -178,11 +178,21 @@ export function isModelSwitchSuggestionEligible({
         return false;
     }
 
-    if (selectedModelTier !== 'lumo-lite') {
+    if (selectedModelTier !== 'lumo-lite' && selectedModelTier !== 'apertus-15') {
         return false;
     }
 
-    if (isLimitExhausted(remainingLimits.lite) || isLimitExhausted(remainingLimits.max)) {
+    if (isLimitExhausted(remainingLimits.max)) {
+        return false;
+    }
+
+    // Apertus intentionally remains selected when its shared Lite pool is exhausted, rather than
+    // automatically switching to Max. Surface the existing Max switch card so the user can choose.
+    if (selectedModelTier === 'apertus-15' && isLimitExhausted(remainingLimits.lite)) {
+        return true;
+    }
+
+    if (isLimitExhausted(remainingLimits.lite)) {
         return false;
     }
 
@@ -213,6 +223,7 @@ export function isModelTierLimitExhausted(modelTier: UsageModelTier, limits: Lum
 
 export type ModelTierAvailabilityOptions = {
     isMaxAvailable?: boolean;
+    isApertusEnabled?: boolean;
 };
 
 export function isModelTierSelectable(
@@ -221,6 +232,10 @@ export function isModelTierSelectable(
     options?: ModelTierAvailabilityOptions
 ): boolean {
     if (modelTier === 'lumo-max' && options?.isMaxAvailable === false) {
+        return false;
+    }
+
+    if (modelTier === 'apertus-15' && options?.isApertusEnabled === false) {
         return false;
     }
 
@@ -277,7 +292,16 @@ export function resolveAvailableModelTier(
         return selected;
     }
 
-    const alternative: UsageModelTier = selected === 'lumo-lite' ? 'lumo-max' : 'lumo-lite';
+    if (selected === 'apertus-15' && options?.isApertusEnabled === false) {
+        return 'lumo-lite';
+    }
+
+    // Apertus shares Lite's quota but must not consume or select the Max pool.
+    if (selected === 'apertus-15') {
+        return selected;
+    }
+
+    const alternative: UsageModelTier = selected === 'lumo-max' ? 'lumo-lite' : 'lumo-max';
 
     if (isModelTierSelectable(alternative, limits, options)) {
         return alternative;
