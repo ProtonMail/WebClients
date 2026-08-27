@@ -3,14 +3,14 @@ import type { BrowserWindow } from 'electron';
 import type { MaybeNull, NativeMessagePayload, NativeMessageRequest, NativeMessageResponse } from '@proton/pass/types';
 import { NativeMessageErrorType } from '@proton/pass/types';
 
-import { setupIpcHandler } from 'proton-pass-desktop/lib/ipc';
-import logger from 'proton-pass-desktop/utils/logger';
-import { isMainWindowEntry } from 'proton-pass-desktop/utils/navigation';
+import logger from '../../utils/logger';
+import { isMainWindowEntry } from '../../utils/navigation';
+import { setupIpcHandler } from '../ipc';
 
 const log = (...content: any[]) => logger.debug('[NativeMessaging]', ...content);
 const info = (...content: any[]) => logger.info('[NativeMessaging]', ...content);
 
-declare module 'proton-pass-desktop/lib/ipc' {
+declare module '../ipc' {
     interface IPCChannels {
         'nm:request': IPCChannel<[NativeMessagePayload<NativeMessageRequest>], void>;
         'nm:response': IPCChannel<[NativeMessagePayload<NativeMessageResponse>], void>;

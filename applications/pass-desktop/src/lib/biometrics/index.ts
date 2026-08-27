@@ -2,11 +2,10 @@ import { platform } from 'os';
 
 import type { MaybeNull } from '@proton/pass/types';
 
-import { setupIpcHandler } from 'proton-pass-desktop/lib/ipc';
-
+import { setupIpcHandler } from '../ipc';
 import type { BiometricsFactory, BiometricsPlatformHandler } from './types';
 
-declare module 'proton-pass-desktop/lib/ipc' {
+declare module '../ipc' {
     interface IPCChannels {
         'biometrics:canCheckPresence': IPCChannel<[], boolean>;
         'biometrics:checkPresence': IPCChannel<[reason?: string], void>;

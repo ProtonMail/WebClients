@@ -13,8 +13,8 @@ import {
     squirrelLogger,
 } from '@proton/shared/lib/squirrel/squirrel';
 
-import { setInstallSource } from 'proton-pass-desktop/lib/install-info';
-import { spawnUninstallProcess } from 'proton-pass-desktop/uninstallers/windows/squirrel';
+import { setInstallSource } from '../lib/install-info';
+import { spawnUninstallProcess } from '../uninstallers/windows/squirrel';
 
 export async function handleSquirrelEvents() {
     if (!isSquirrelStartup()) return;
