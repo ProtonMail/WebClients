@@ -27,6 +27,10 @@ const jestConfig: JestConfigWithTsJest = {
             },
         ],
     },
+    moduleNameMapper: {
+        '\\.(css|scss|less)$': '<rootDir>/__mocks__/styleMock.js',
+        '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm)$': '<rootDir>/__mocks__/fileMock.js',
+    },
 };
 
 export default jestConfig;

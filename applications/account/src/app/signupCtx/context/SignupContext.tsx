@@ -8,7 +8,6 @@ import { shouldTraceError, useNotifyErrorHandler } from '@proton/components/hook
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import type { OnChargeable } from '@proton/components/payments/client-extensions';
 import metrics, { observeError } from '@proton/metrics/index';
-import type { PlanToCheck } from '@proton/payments-ui/ui/context/PaymentContext';
 import {
     type PaymentsContextOptimisticType,
     usePaymentOptimistic,
@@ -16,6 +15,7 @@ import {
 import { PLANS } from '@proton/payments/core/constants';
 import type { Cycle, ExtendedTokenPayment, PlanIDs, TokenPayment } from '@proton/payments/core/interface';
 import { SubscriptionMode } from '@proton/payments/core/subscription/constants';
+import type { PlanToCheck } from '@proton/payments/core/subscription/plan-to-check';
 import { isTokenPayment, isV5PaymentToken } from '@proton/payments/core/type-guards';
 import { v5PaymentTokenToLegacyPaymentToken } from '@proton/payments/core/utils';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';

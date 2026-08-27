@@ -1,12 +1,7 @@
-import { COUPON_CODES, CYCLE } from '@proton/payments/core/constants';
+import { tryMailPlusMobile2026Metadata } from '@proton/payments/core/coupon-config/configs/try-mail-plus-mobile-2026';
 
 import type { CouponConfig } from './interface';
 
-// Hide distractions for users checking out with the Mail Plus mobile intro pricing coupon
 export const tryMailPlusMobile2026Config: CouponConfig = {
-    coupons: COUPON_CODES.TRYMAILPLUSMOBILE2026,
-    hidden: false,
-    availableCycles: [CYCLE.MONTHLY],
-    hideLumoAddonBanner: true,
-    hideMeetAddonBanner: true,
+    ...tryMailPlusMobile2026Metadata,
 };

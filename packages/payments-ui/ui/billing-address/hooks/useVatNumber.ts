@@ -12,6 +12,8 @@ import type {
     FullBillingAddress,
     FullBillingAddressFlat,
 } from '@proton/payments/core/billing-address/billing-address';
+import { countriesWithVatNumberOnSignup } from '@proton/payments/core/billing-address/countries-with-vat-id';
+import { getVatFormErrors } from '@proton/payments/core/billing-address/vat-helpers';
 import type { ADDON_NAMES, PLANS } from '@proton/payments/core/constants';
 import { hasWrongBillingAddressError } from '@proton/payments/core/errors';
 import type { PaymentsApi } from '@proton/payments/core/interface';
@@ -22,9 +24,7 @@ import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
-import { countriesWithVatNumberOnSignup } from './countriesWithVatId';
 import type { TaxCountryHook } from './useTaxCountry';
-import { getVatFormErrors } from './useVatFormValidation';
 import { cleanVatNumber, getVatPrefix } from './vatPrefixHelper';
 
 type FullBillingAddressWithoutCountry = Omit<FullBillingAddressFlat, 'CountryCode' | 'State' | 'ZipCode'>;

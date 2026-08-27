@@ -5,6 +5,8 @@ import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButto
 import Checkbox from '@proton/components/components/input/Checkbox';
 import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import type { CountriesWithCustomVatName } from '@proton/payments/core/billing-address/vat-helpers';
+import { getVatNumberName } from '@proton/payments/core/billing-address/vat-helpers';
 import { type BillingAddressFieldStatus, backendBillingAddressFieldError } from '@proton/payments/core/errors';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
@@ -12,6 +14,9 @@ import clsx from '@proton/utils/clsx';
 import type { TaxCountryHook } from '../hooks/useTaxCountry';
 import { useVatFormValidation } from '../hooks/useVatFormValidation';
 import type { VatNumberHook } from '../hooks/useVatNumber';
+
+export { getVatNumberName } from '@proton/payments/core/billing-address/vat-helpers';
+export type { CountriesWithCustomVatName } from '@proton/payments/core/billing-address/vat-helpers';
 
 function getVatPlaceholder(countryCode: string) {
     const placeholders: Record<string, string> = {
@@ -54,20 +59,6 @@ function getVatPlaceholder(countryCode: string) {
     };
 
     return placeholders[countryCode] ?? `${countryCode}123456789`;
-}
-
-export type CountriesWithCustomVatName = 'US' | 'CA' | 'AU';
-
-export function getVatNumberName(countryCode: string): string {
-    const names: Record<CountriesWithCustomVatName, string> = {
-        US: c('Payments.VAT number name').t`EIN`,
-        CA: c('Payments.VAT number name').t`Business Number`,
-        AU: c('Payments.VAT number name').t`ABN`,
-    };
-
-    const stringNames = names as Record<string, string>;
-
-    return stringNames[countryCode] ?? c('Payments.VAT number name').t`VAT number`;
 }
 
 function getAddVatNumberText(countryCode: string): string {

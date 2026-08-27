@@ -1,5 +1,5 @@
-import type { CouponConfigRendered } from '@proton/payments-ui/ui/coupon-config/useCouponConfig';
 import { PAYMENT_METHOD_TYPES, PLANS } from '@proton/payments/core/constants';
+import type { CouponConfigMetadata } from '@proton/payments/core/coupon-config/interface';
 import type { PlanIDs } from '@proton/payments/core/interface';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 
@@ -20,7 +20,7 @@ const baseArgs = {
     paymentMethods: makePaymentMethods(),
     user: makeUser(0),
     planIDs: nonLifetimePlanIDs,
-    couponConfig: undefined as CouponConfigRendered | undefined,
+    couponConfig: undefined as CouponConfigMetadata | undefined,
     loading: undefined as boolean | undefined,
 };
 
@@ -120,7 +120,7 @@ describe('getDisableCurrencySelector', () => {
                     baseArgs.paymentMethods,
                     baseArgs.user,
                     baseArgs.planIDs,
-                    { disableCurrencySelector: true } as CouponConfigRendered,
+                    { disableCurrencySelector: true } as CouponConfigMetadata,
                     baseArgs.loading
                 )
             ).toBe(true);
@@ -132,7 +132,7 @@ describe('getDisableCurrencySelector', () => {
                     baseArgs.paymentMethods,
                     baseArgs.user,
                     baseArgs.planIDs,
-                    { disableCurrencySelector: false } as CouponConfigRendered,
+                    { disableCurrencySelector: false } as CouponConfigMetadata,
                     baseArgs.loading
                 )
             ).toBeFalsy();

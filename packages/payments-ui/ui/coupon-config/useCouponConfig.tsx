@@ -1,17 +1,17 @@
 import type { ReactNode } from 'react';
 
-import { getPlanNameFromIDs } from '@proton/payments/core/plan/helpers';
+import { hasAlikeCoupon } from '@proton/payments/core/coupon-config/helpers';
+import { isCouponConfigRequiredProps } from '@proton/payments/core/coupon-config/interface';
+import type { CouponConfigProps } from '@proton/payments/core/coupon-config/interface';
+import { matchCouponConfig } from '@proton/payments/core/coupon-config/match-coupon-config';
 
 import { defaultCouponConfigs } from './default-coupon-configs';
-import { hasAlikeCoupon } from './helpers';
-import {
-    type CouponConfig,
-    type CouponConfigProps,
-    type CyclePriceCompareFirstParam,
-    type CyclePriceCompareReturnType,
-    type CycleTitleFirstParam,
-    type CycleTitleReturnType,
-    isCouponConfigRequiredProps,
+import type {
+    CouponConfig,
+    CyclePriceCompareFirstParam,
+    CyclePriceCompareReturnType,
+    CycleTitleFirstParam,
+    CycleTitleReturnType,
 } from './interface';
 
 export type CouponConfigRendered = Omit<CouponConfig, 'amountDueMessage' | 'cyclePriceCompare' | 'cycleTitle'> & {
@@ -22,27 +22,8 @@ export type CouponConfigRendered = Omit<CouponConfig, 'amountDueMessage' | 'cycl
     renderPayCTA?: () => string;
 };
 
-export function matchCouponConfig(
-    checkoutProps: CouponConfigProps,
-    couponConfigs: CouponConfig[]
-): CouponConfig | undefined {
-    if (!isCouponConfigRequiredProps(checkoutProps)) {
-        return;
-    }
+export { matchCouponConfig } from '@proton/payments/core/coupon-config/match-coupon-config';
 
-    const selectedCoupon = checkoutProps.checkResult.Coupon?.Code;
-    const selectedCycle = checkoutProps.checkResult.Cycle;
-    const selectedPlanName = getPlanNameFromIDs(checkoutProps.planIDs);
-
-    return couponConfigs.find(
-        (it) =>
-            (selectedCoupon && it.coupons.includes(selectedCoupon)) ||
-            (selectedCycle &&
-                it.specialCases?.some(
-                    (specialCase) => specialCase.planName === selectedPlanName && specialCase.cycle === selectedCycle
-                ))
-    );
-}
 /**
  * Defines overrides for the UI of subscription view. If a certain coupon is present it might change the view.
  * See details of {@link CouponConfig}.
