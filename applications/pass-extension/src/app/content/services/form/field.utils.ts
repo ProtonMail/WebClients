@@ -1,10 +1,10 @@
 import { CCFieldType, FieldType } from '@protontech/autofill/types';
-import { DropdownAction } from 'proton-pass-extension/app/content/constants.runtime';
-import { withContext } from 'proton-pass-extension/app/content/context/context';
-import { getFrameID } from 'proton-pass-extension/app/content/utils/frame';
 
 import { enableLoginAutofill } from '@proton/pass/lib/settings/utils';
 
+import { DropdownAction } from '../../constants.runtime';
+import { withContext } from '../../context/context';
+import { getFrameID } from '../../utils/frame';
 import type { FieldHandle } from './field';
 
 export const validateCCField = (field: FieldHandle): boolean => {

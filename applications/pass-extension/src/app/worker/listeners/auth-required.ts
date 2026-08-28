@@ -1,5 +1,3 @@
-import { withContext } from 'proton-pass-extension/app/worker/context/inject';
-import { WEB_REQUEST_PERMISSIONS, hasPermissions } from 'proton-pass-extension/lib/utils/permissions';
 import type { WebRequest } from 'webextension-polyfill';
 
 import browser from '@proton/pass/lib/globals/browser';
@@ -8,6 +6,9 @@ import { selectAutofillSettings } from '@proton/pass/store/selectors/settings';
 import type { ItemRevision } from '@proton/pass/types/data/items';
 import { logger } from '@proton/pass/utils/logger';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
+
+import { WEB_REQUEST_PERMISSIONS, hasPermissions } from '../../../lib/utils/permissions';
+import { withContext } from '../context/inject';
 
 type OnAuthRequiredParams = { items: ItemRevision<'login'>[]; url: string; attempt: AttemptCount };
 type RequestID = string;

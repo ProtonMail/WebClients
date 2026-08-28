@@ -1,5 +1,6 @@
 import { FieldType } from '@protontech/autofill/types';
-import type { AbstractField } from 'proton-pass-extension/types/field';
+
+import type { AbstractField } from '../../types/field';
 
 export const isEmailField = <T extends AbstractField<FieldType>>(
     field: T

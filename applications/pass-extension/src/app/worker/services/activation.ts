@@ -1,15 +1,3 @@
-import config from 'proton-pass-extension/app/config';
-import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
-import { EXTENSION_KEY } from 'proton-pass-extension/app/worker/constants';
-import { withContext } from 'proton-pass-extension/app/worker/context/inject';
-import type { MessageHandlerCallback } from 'proton-pass-extension/lib/message/message-broker';
-import { backgroundMessage } from 'proton-pass-extension/lib/message/send-message';
-import { resolveEndpointContext } from 'proton-pass-extension/lib/utils/endpoint';
-import { hasHostPermissions } from 'proton-pass-extension/lib/utils/permissions';
-import { isPopupPort } from 'proton-pass-extension/lib/utils/port';
-import { isVivaldiBrowser } from 'proton-pass-extension/lib/utils/vivaldi';
-import type { ClientInitMessage, WorkerMessageWithSender } from 'proton-pass-extension/types/messages';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import type { Permissions, Runtime } from 'webextension-polyfill';
 
 import { MIN_CACHE_VERSION, RUNTIME_RELOAD_THROTTLE } from '@proton/pass/constants';
@@ -38,6 +26,18 @@ import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
 import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
+import type { MessageHandlerCallback } from '../../../lib/message/message-broker';
+import { backgroundMessage } from '../../../lib/message/send-message';
+import { resolveEndpointContext } from '../../../lib/utils/endpoint';
+import { hasHostPermissions } from '../../../lib/utils/permissions';
+import { isPopupPort } from '../../../lib/utils/port';
+import { isVivaldiBrowser } from '../../../lib/utils/vivaldi';
+import type { ClientInitMessage, WorkerMessageWithSender } from '../../../types/messages';
+import { WorkerMessageType } from '../../../types/messages';
+import config from '../../config';
+import WorkerMessageBroker from '../channel';
+import { EXTENSION_KEY } from '../constants';
+import { withContext } from '../context/inject';
 import { shouldForceLock } from './auth/auth.utils';
 
 type ActivationServiceState = {

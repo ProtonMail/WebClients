@@ -1,15 +1,4 @@
 import { CCFieldType, FieldType } from '@protontech/autofill/types';
-import { splitFullName } from 'proton-pass-extension/app/content/services/autofill/autofill.identity';
-import {
-    formatExpirationDate,
-    getExpirationFormat,
-    getInputExpirationMonthFormat,
-    getInputExpirationYearFormat,
-    getSelectExpirationMonthFormat,
-    getSelectExpirationYearFormat,
-} from 'proton-pass-extension/app/content/services/detector/detector.api';
-import type { FieldElement, FieldHandle } from 'proton-pass-extension/app/content/services/form/field';
-import type { AutofillRequest } from 'proton-pass-extension/types/autofill';
 
 import { getItemKey } from '@proton/pass/lib/items/item.utils';
 import type { Maybe } from '@proton/pass/types/utils/index';
@@ -19,6 +8,18 @@ import { head, last, prop } from '@proton/pass/utils/fp/lens';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { seq } from '@proton/pass/utils/fp/promises';
+
+import type { AutofillRequest } from '../../../../types/autofill';
+import {
+    formatExpirationDate,
+    getExpirationFormat,
+    getInputExpirationMonthFormat,
+    getInputExpirationYearFormat,
+    getSelectExpirationMonthFormat,
+    getSelectExpirationYearFormat,
+} from '../detector/detector.api';
+import type { FieldElement, FieldHandle } from '../form/field';
+import { splitFullName } from './autofill.identity';
 
 type CCFieldValueExtract = (data: Partial<CCItemData>, el: FieldElement) => Maybe<string>;
 type CCAutofillRequest = AutofillRequest<'fill'> & { type: 'creditCard' };

@@ -1,13 +1,3 @@
-import { IFRAME_APP_READY_EVENT } from 'proton-pass-extension/app/content/constants.static';
-import { withContext } from 'proton-pass-extension/app/content/context/context';
-import { getAutofillPageTelemetryDimensions } from 'proton-pass-extension/app/content/utils/autofill-telemetry';
-import { sendContentScriptTelemetry } from 'proton-pass-extension/app/content/utils/telemetry';
-import {
-    contentScriptMessage,
-    portForwardingMessage,
-    sendMessage,
-} from 'proton-pass-extension/lib/message/send-message';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import type { Runtime } from 'webextension-polyfill';
 
 import { MODEL_VERSION } from '@proton/pass/constants';
@@ -30,6 +20,12 @@ import { createPubSub } from '@proton/pass/utils/pubsub/factory';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import noop from '@proton/utils/noop';
 
+import { contentScriptMessage, portForwardingMessage, sendMessage } from '../../../../lib/message/send-message';
+import { WorkerMessageType } from '../../../../types/messages';
+import { IFRAME_APP_READY_EVENT } from '../../constants.static';
+import { withContext } from '../../context/context';
+import { getAutofillPageTelemetryDimensions } from '../../utils/autofill-telemetry';
+import { sendContentScriptTelemetry } from '../../utils/telemetry';
 import type {
     IFrameInitPayload,
     IFramePosition,

@@ -1,10 +1,3 @@
-import WorkerMessageBroker, { mockHandlers } from 'proton-pass-extension/__mocks__/app/worker/channel';
-import { clearBrowserMocks } from 'proton-pass-extension/__mocks__/webextension-polyfill';
-import { WorkerContext } from 'proton-pass-extension/app/worker/context/inject';
-import type { WorkerContextInterface } from 'proton-pass-extension/app/worker/context/types';
-import * as permissionUtils from 'proton-pass-extension/lib/utils/permissions';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
-
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import type { AuthStore } from '@proton/pass/lib/auth/store';
 import { createAuthStore } from '@proton/pass/lib/auth/store';
@@ -19,10 +12,19 @@ import { AppStatus } from '@proton/pass/types/worker/state';
 import { createMemoryStore } from '@proton/pass/utils/store';
 import { createOfflineError } from '@proton/shared/lib/fetch/ApiError';
 
+import { clearBrowserMocks } from '../../../../__mocks__/webextension-polyfill';
+import * as permissionUtils from '../../../../lib/utils/permissions';
+import { WorkerMessageType } from '../../../../types/messages';
+import type * as ChannelMock from '../../__mocks__/channel';
+import { WorkerContext } from '../../context/inject';
+import type { WorkerContextInterface } from '../../context/types';
 import type { ExtensionAuthService } from './auth.service';
 import { createAuthService } from './auth.service';
 
-jest.mock('proton-pass-extension/lib/utils/permissions');
+jest.mock('../../channel');
+jest.mock('../../../../lib/utils/permissions');
+
+const { default: WorkerMessageBroker, mockHandlers } = jest.requireMock('../../channel') as typeof ChannelMock;
 const permissions = permissionUtils as jest.MockedObject<typeof permissionUtils>;
 
 describe('Extension AuthService', () => {

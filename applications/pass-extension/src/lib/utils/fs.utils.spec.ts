@@ -1,4 +1,3 @@
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import type { Runtime } from 'webextension-polyfill';
 
 import {
@@ -8,6 +7,7 @@ import {
 } from '@proton/pass/lib/file-storage/testing';
 import type { FileBuffer } from '@proton/pass/lib/file-storage/types';
 
+import { WorkerMessageType } from '../../types/messages';
 import { portTransferWriter } from './fs.utils';
 
 describe('file-storage/utils', () => {

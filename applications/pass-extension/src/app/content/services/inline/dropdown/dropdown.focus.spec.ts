@@ -1,5 +1,4 @@
-import { InlinePortMessageType } from 'proton-pass-extension/app/content/services/inline/inline.messages';
-
+import { InlinePortMessageType } from '../inline.messages';
 import { DROPDOWN_FOCUS_TRAP_TIMEOUT, createDropdownFocusController } from './dropdown.focus';
 
 describe('DropdownFocusController', () => {

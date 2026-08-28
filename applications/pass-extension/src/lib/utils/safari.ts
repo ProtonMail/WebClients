@@ -1,7 +1,3 @@
-import { backgroundMessage } from 'proton-pass-extension/lib/message/send-message';
-import type { AuthPullForkMessage, WorkerMessageResponse } from 'proton-pass-extension/types/messages';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
-
 import { SAFARI_MESSAGE_KEY } from '@proton/pass/constants';
 import type { RefreshSessionData } from '@proton/pass/lib/api/refresh';
 import type { PullForkCall } from '@proton/pass/lib/auth/fork';
@@ -11,6 +7,10 @@ import type { Maybe, MaybeNull } from '@proton/pass/types/utils/index';
 import { throwError } from '@proton/pass/utils/fp/throw';
 import { logger } from '@proton/pass/utils/logger';
 import { wait } from '@proton/shared/lib/helpers/promise';
+
+import type { AuthPullForkMessage, WorkerMessageResponse } from '../../types/messages';
+import { WorkerMessageType } from '../../types/messages';
+import { backgroundMessage } from '../message/send-message';
 
 type SafariHostCredentials = Pick<AuthSession, 'UID' | 'AccessToken' | 'RefreshToken' | 'UserID'>;
 type SafariHostRefreshTokens = Pick<RefreshSessionData, 'AccessToken' | 'RefreshTime' | 'RefreshToken'>;

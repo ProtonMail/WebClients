@@ -1,24 +1,3 @@
-import type { NotificationRequest } from 'proton-pass-extension/app/content/services/inline/notification/notification.app';
-import type { ClusterFrame } from 'proton-pass-extension/app/worker/services/autofill.cc';
-import type { AutofillActionDTO, AutofillRequest, AutofillResult } from 'proton-pass-extension/types/autofill';
-import type {
-    FrameAttributes,
-    FrameCheckResult,
-    FrameField,
-    FrameFormsResult,
-    FrameQueryDTO,
-    FrameQueryResult,
-} from 'proton-pass-extension/types/frames';
-import type {
-    DropdownCloseDTO,
-    DropdownClosedDTO,
-    DropdownOpenDTO,
-    DropdownOpenedDTO,
-    DropdownStateDTO,
-    IconShiftRequest,
-    IconShiftResult,
-} from 'proton-pass-extension/types/inline';
-
 import type { UnlockDTO } from '@proton/pass/lib/auth/lock/types';
 import type { AuthOptions } from '@proton/pass/lib/auth/service';
 import type { AuthSession } from '@proton/pass/lib/auth/session';
@@ -66,6 +45,27 @@ import type {
 } from '@proton/shared/lib/authentication/fork/extension';
 import type { PullForkResponse } from '@proton/shared/lib/authentication/interface';
 import type { User } from '@proton/shared/lib/interfaces';
+
+import type { NotificationRequest } from '../app/content/services/inline/notification/notification.app';
+import type { ClusterFrame } from '../app/worker/services/autofill.cc';
+import type { AutofillActionDTO, AutofillRequest, AutofillResult } from './autofill';
+import type {
+    FrameAttributes,
+    FrameCheckResult,
+    FrameField,
+    FrameFormsResult,
+    FrameQueryDTO,
+    FrameQueryResult,
+} from './frames';
+import type {
+    DropdownCloseDTO,
+    DropdownClosedDTO,
+    DropdownOpenDTO,
+    DropdownOpenedDTO,
+    DropdownStateDTO,
+    IconShiftRequest,
+    IconShiftResult,
+} from './inline';
 
 type WithPayload<T extends WorkerMessageType, P extends {}> = { type: T; payload: P };
 

@@ -1,11 +1,11 @@
-import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
-
 import { sendUnlockMessage } from '@proton/pass/lib/auth/lock/desktop/logic.extension';
 import type { AuthStore } from '@proton/pass/lib/auth/store';
 import { NativeMessageError } from '@proton/pass/lib/native-messaging/errors';
 import { createNativeMessagingService as createRootNativeMessagingService } from '@proton/pass/lib/native-messaging/native-messaging.extension';
 import { NativeMessageErrorType } from '@proton/pass/types';
+
+import { WorkerMessageType } from '../../../types/messages';
+import WorkerMessageBroker from '../channel';
 
 /** Native Messaging service
  * Implementation in the extension is a wrapper over the one living next to rest

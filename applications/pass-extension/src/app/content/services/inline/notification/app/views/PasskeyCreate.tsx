@@ -2,19 +2,6 @@ import { type FC, useEffect, useMemo, useRef } from 'react';
 
 import type { FormikContextType, FormikErrors } from 'formik';
 import { Form, FormikProvider, useFormik } from 'formik';
-import { createBridgeResponse } from 'proton-pass-extension/app/content/bridge/message';
-import type { BridgeResponse } from 'proton-pass-extension/app/content/bridge/types';
-import type { NotificationAction } from 'proton-pass-extension/app/content/constants.runtime';
-import { InlinePortMessageType } from 'proton-pass-extension/app/content/services/inline/inline.messages';
-import { NotificationHeader } from 'proton-pass-extension/app/content/services/inline/notification/app/components/NotificationHeader';
-import type { NotificationRequest } from 'proton-pass-extension/app/content/services/inline/notification/notification.app';
-import { AutosaveVaultPicker } from 'proton-pass-extension/lib/components/Inline/AutosaveVaultPicker';
-import { useIFrameAppController, useIFrameAppState } from 'proton-pass-extension/lib/components/Inline/IFrameApp';
-import { ListItem } from 'proton-pass-extension/lib/components/Inline/ListItem';
-import { ScrollableItemsList } from 'proton-pass-extension/lib/components/Inline/ScrollableItemsList';
-import { WithUnlock } from 'proton-pass-extension/lib/components/Inline/WithUnlock';
-import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
@@ -42,6 +29,20 @@ import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { throwError } from '@proton/pass/utils/fp/throw';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+
+import { AutosaveVaultPicker } from '../../../../../../../lib/components/Inline/AutosaveVaultPicker';
+import { useIFrameAppController, useIFrameAppState } from '../../../../../../../lib/components/Inline/IFrameApp';
+import { ListItem } from '../../../../../../../lib/components/Inline/ListItem';
+import { ScrollableItemsList } from '../../../../../../../lib/components/Inline/ScrollableItemsList';
+import { WithUnlock } from '../../../../../../../lib/components/Inline/WithUnlock';
+import { contentScriptMessage, sendMessage } from '../../../../../../../lib/message/send-message';
+import { WorkerMessageType } from '../../../../../../../types/messages';
+import { createBridgeResponse } from '../../../../../bridge/message';
+import type { BridgeResponse } from '../../../../../bridge/types';
+import type { NotificationAction } from '../../../../../constants.runtime';
+import { InlinePortMessageType } from '../../../inline.messages';
+import type { NotificationRequest } from '../../notification.app';
+import { NotificationHeader } from '../components/NotificationHeader';
 
 type Step = 'select' | 'passkey';
 type FormValues = { name: string; step: Step; selectedItem?: SelectedItem; shareId?: string };

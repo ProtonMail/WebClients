@@ -1,9 +1,9 @@
-import { withContext } from 'proton-pass-extension/app/worker/context/inject';
-
 import { PassFeature } from '@proton/pass/types/api/features';
 import type { RequiredProps } from '@proton/pass/types/utils';
 import { epochToMs, getEpoch } from '@proton/pass/utils/time/epoch';
 import type { ExtensionForkPayload } from '@proton/shared/lib/authentication/fork/extension';
+
+import { withContext } from '../../context/inject';
 
 export const shouldForceLock = withContext<() => Promise<boolean>>(async (ctx) => {
     try {

@@ -1,13 +1,3 @@
-import config from 'proton-pass-extension/app/config';
-import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
-import { withContext } from 'proton-pass-extension/app/worker/context/inject';
-import type { MessageHandlerCallback } from 'proton-pass-extension/lib/message/message-broker';
-import { backgroundMessage } from 'proton-pass-extension/lib/message/send-message';
-import { getMinimalHostPermissions, hasHostPermissions } from 'proton-pass-extension/lib/utils/permissions';
-import { isPagePort, isPopupPort } from 'proton-pass-extension/lib/utils/port';
-import { intoSafariCredentials, safariPullFork, sendSafariMessage } from 'proton-pass-extension/lib/utils/safari';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
-
 import {
     AccountForkResponse,
     extractOfflineComponents,
@@ -62,6 +52,15 @@ import { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
 import noop from '@proton/utils/noop';
 
+import type { MessageHandlerCallback } from '../../../../lib/message/message-broker';
+import { backgroundMessage } from '../../../../lib/message/send-message';
+import { getMinimalHostPermissions, hasHostPermissions } from '../../../../lib/utils/permissions';
+import { isPagePort, isPopupPort } from '../../../../lib/utils/port';
+import { intoSafariCredentials, safariPullFork, sendSafariMessage } from '../../../../lib/utils/safari';
+import { WorkerMessageType } from '../../../../types/messages';
+import config from '../../../config';
+import WorkerMessageBroker from '../../channel';
+import { withContext } from '../../context/inject';
 import type { AuthAlarms } from './auth.alarms';
 import { createAuthAlarms } from './auth.alarms';
 import { isOfflineModeEnabled, shouldForceLock, validateExtensionForkPayload } from './auth.utils';

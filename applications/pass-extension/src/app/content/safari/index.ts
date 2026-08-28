@@ -1,6 +1,3 @@
-import config from 'proton-pass-extension/app/config';
-import { matchExtensionMessage } from 'proton-pass-extension/lib/message/utils';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import type { Runtime } from 'webextension-polyfill';
 
 import browser from '@proton/pass/lib/globals/browser';
@@ -10,6 +7,10 @@ import { configureApi } from '@proton/shared/lib/api';
 import { pullForkSession } from '@proton/shared/lib/api/auth';
 import { getClientID } from '@proton/shared/lib/apps/helper';
 import { protonFetch } from '@proton/shared/lib/fetch/fetch';
+
+import { matchExtensionMessage } from '../../../lib/message/utils';
+import { WorkerMessageType } from '../../../types/messages';
+import config from '../../config';
 
 const api = configureApi({ ...config, clientID: getClientID(config.APP_NAME), protonFetch } as any) as ApiCallFn;
 

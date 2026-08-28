@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
 
-import { isSafariPopoverWindow } from 'proton-pass-extension/lib/utils/safari';
 import type { Tabs } from 'webextension-polyfill';
 
 import browser from '@proton/pass/lib/globals/browser';
 import type { Maybe } from '@proton/pass/types/utils/index';
 import noop from '@proton/utils/noop';
+
+import { isSafariPopoverWindow } from '../utils/safari';
 
 export const useExpanded = () => {
     const [expanded, setExpanded] = useState(false);

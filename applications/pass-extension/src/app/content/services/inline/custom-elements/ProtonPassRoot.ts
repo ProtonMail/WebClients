@@ -1,5 +1,4 @@
-import { PASS_ROOT_REMOVED_EVENT } from 'proton-pass-extension/app/content/constants.static';
-
+import { PASS_ROOT_REMOVED_EVENT } from '../../../constants.static';
 import { PASS_ELEMENT_ROLE, ProtonPassElement } from './ProtonPassElement';
 
 export const getRootTagName = (hash: string) => `protonpass-root-${hash}`;

@@ -1,7 +1,3 @@
-import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
-import { withContext } from 'proton-pass-extension/app/worker/context/inject';
-import type { MessageHandlerCallback } from 'proton-pass-extension/lib/message/message-broker';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import type { Store } from 'redux';
 
 import browser from '@proton/pass/lib/globals/browser';
@@ -27,6 +23,11 @@ import type { TabId } from '@proton/pass/types/worker/runtime';
 import type { ExtensionStorage } from '@proton/pass/types/worker/storage';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import noop from '@proton/utils/noop';
+
+import type { MessageHandlerCallback } from '../../../lib/message/message-broker';
+import { WorkerMessageType } from '../../../types/messages';
+import WorkerMessageBroker from '../channel';
+import { withContext } from '../context/inject';
 
 export const createSpotlightService = (
     storage: ExtensionStorage<Record<'onboarding', string>>,

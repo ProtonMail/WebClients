@@ -1,22 +1,3 @@
-import { IFRAME_APP_READY_EVENT } from 'proton-pass-extension/app/content/constants.static';
-import type {
-    IFrameEndpoint,
-    InlineCloseOptions,
-    InlineMessage,
-    InlineMessageType,
-    InlineMessageWithSender,
-    InlinePortMessageHandler,
-} from 'proton-pass-extension/app/content/services/inline/inline.messages';
-import {
-    InlinePortMessageType,
-    isInlineMessage,
-} from 'proton-pass-extension/app/content/services/inline/inline.messages';
-import {
-    contentScriptMessage,
-    portForwardingMessage,
-    sendMessage,
-} from 'proton-pass-extension/lib/message/send-message';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import type { Runtime } from 'webextension-polyfill';
 
 import browser from '@proton/pass/lib/globals/browser';
@@ -24,6 +5,19 @@ import type { Callback, Maybe, MaybeNull } from '@proton/pass/types/utils/index'
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import { objectHandler } from '@proton/pass/utils/object/handler';
 import { type Subscriber, createPubSub } from '@proton/pass/utils/pubsub/factory';
+
+import { IFRAME_APP_READY_EVENT } from '../../../app/content/constants.static';
+import type {
+    IFrameEndpoint,
+    InlineCloseOptions,
+    InlineMessage,
+    InlineMessageType,
+    InlineMessageWithSender,
+    InlinePortMessageHandler,
+} from '../../../app/content/services/inline/inline.messages';
+import { InlinePortMessageType, isInlineMessage } from '../../../app/content/services/inline/inline.messages';
+import { WorkerMessageType } from '../../../types/messages';
+import { contentScriptMessage, portForwardingMessage, sendMessage } from '../../message/send-message';
 
 export interface IFrameAppController {
     close: (options?: InlineCloseOptions) => void;

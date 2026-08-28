@@ -1,26 +1,3 @@
-import type { ActivationService } from 'proton-pass-extension/app/worker/services/activation';
-import type { AliasService } from 'proton-pass-extension/app/worker/services/alias';
-import type { APIProxyService } from 'proton-pass-extension/app/worker/services/api-proxy';
-import type { ExtensionAuthService } from 'proton-pass-extension/app/worker/services/auth/auth.service';
-import type { AutoFillService } from 'proton-pass-extension/app/worker/services/autofill';
-import type { AutoSaveService } from 'proton-pass-extension/app/worker/services/autosave';
-import type { B2BEventsService } from 'proton-pass-extension/app/worker/services/b2b';
-import type { FeatureFlagService } from 'proton-pass-extension/app/worker/services/feature-flags';
-import type { FormTrackerService } from 'proton-pass-extension/app/worker/services/form.tracker';
-import type { I18NService } from 'proton-pass-extension/app/worker/services/i18n';
-import type { ContentScriptService } from 'proton-pass-extension/app/worker/services/injection';
-import type { InlineService } from 'proton-pass-extension/app/worker/services/inline';
-import type { LoggerService } from 'proton-pass-extension/app/worker/services/logger';
-import type { OTPService } from 'proton-pass-extension/app/worker/services/otp';
-import type { Passkeyservice } from 'proton-pass-extension/app/worker/services/passkey';
-import type { SentryService } from 'proton-pass-extension/app/worker/services/sentry';
-import type { SettingsService } from 'proton-pass-extension/app/worker/services/settings';
-import type { SpotlightService } from 'proton-pass-extension/app/worker/services/spotlight';
-import type { StorageService } from 'proton-pass-extension/app/worker/services/storage';
-import type { StoreService } from 'proton-pass-extension/app/worker/services/store';
-import type { TelemetryService } from 'proton-pass-extension/app/worker/services/telemetry';
-import type { VaultsService } from 'proton-pass-extension/app/worker/services/vaults';
-
 import type { AuthStore } from '@proton/pass/lib/auth/store';
 import type { ClipboardService } from '@proton/pass/lib/clipboard/types';
 import type { PassCoreProxy } from '@proton/pass/lib/core/core.types';
@@ -29,6 +6,29 @@ import type { NativeMessagingService } from '@proton/pass/lib/native-messaging/n
 import type { ConnectivityService } from '@proton/pass/lib/network/connectivity.service';
 import type { MaybeNull } from '@proton/pass/types/utils/index';
 import type { AppState, AppStatus } from '@proton/pass/types/worker/state';
+
+import type { ActivationService } from '../services/activation';
+import type { AliasService } from '../services/alias';
+import type { APIProxyService } from '../services/api-proxy';
+import type { ExtensionAuthService } from '../services/auth/auth.service';
+import type { AutoFillService } from '../services/autofill';
+import type { AutoSaveService } from '../services/autosave';
+import type { B2BEventsService } from '../services/b2b';
+import type { FeatureFlagService } from '../services/feature-flags';
+import type { FormTrackerService } from '../services/form.tracker';
+import type { I18NService } from '../services/i18n';
+import type { ContentScriptService } from '../services/injection';
+import type { InlineService } from '../services/inline';
+import type { LoggerService } from '../services/logger';
+import type { OTPService } from '../services/otp';
+import type { Passkeyservice } from '../services/passkey';
+import type { SentryService } from '../services/sentry';
+import type { SettingsService } from '../services/settings';
+import type { SpotlightService } from '../services/spotlight';
+import type { StorageService } from '../services/storage';
+import type { StoreService } from '../services/store';
+import type { TelemetryService } from '../services/telemetry';
+import type { VaultsService } from '../services/vaults';
 
 export type WorkerInitOptions = {
     /** will clear local storage */

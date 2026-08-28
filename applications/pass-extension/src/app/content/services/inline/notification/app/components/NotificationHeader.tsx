@@ -1,6 +1,5 @@
 import { type ForwardRefRenderFunction, type ReactElement, type ReactNode, forwardRef } from 'react';
 
-import { useIFrameAppController } from 'proton-pass-extension/lib/components/Inline/IFrameApp';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -8,6 +7,8 @@ import { IcCross } from '@proton/icons/icons/IcCross';
 import { PassIcon } from '@proton/pass/components/Layout/Icon/PassIcon';
 import { PassIconStatus } from '@proton/pass/types/data/pass-icon';
 import clsx from '@proton/utils/clsx';
+
+import { useIFrameAppController } from '../../../../../../../lib/components/Inline/IFrameApp';
 
 type Props = {
     discardOnClose?: boolean;

@@ -1,17 +1,4 @@
 import { CCFieldType, FieldType } from '@protontech/autofill/types';
-import { DropdownAction, NotificationAction } from 'proton-pass-extension/app/content/constants.runtime';
-import { withContext } from 'proton-pass-extension/app/content/context/context';
-import type { ContentScriptContextFactoryOptions } from 'proton-pass-extension/app/content/context/factory';
-import { autofillCCFields } from 'proton-pass-extension/app/content/services/autofill/autofill.cc';
-import type { FrameMessageHandler } from 'proton-pass-extension/app/content/services/client/client.channel';
-import type { FieldHandle } from 'proton-pass-extension/app/content/services/form/field';
-import type { FormHandle } from 'proton-pass-extension/app/content/services/form/form';
-import { getAutofillPageTelemetryDimensions } from 'proton-pass-extension/app/content/utils/autofill-telemetry';
-import { sendContentScriptTelemetry } from 'proton-pass-extension/app/content/utils/telemetry';
-import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
-import type { AutofillRequest, AutofillResult } from 'proton-pass-extension/types/autofill';
-import type { FrameField } from 'proton-pass-extension/types/frames';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { resolveSubdomain } from '@proton/pass/lib/urls/utils/utils';
 import { passwordSave } from '@proton/pass/store/actions/creators/password';
@@ -30,6 +17,19 @@ import { nextTick, onNextTick } from '@proton/pass/utils/time/next-tick';
 import { omit } from '@proton/shared/lib/helpers/object';
 import noop from '@proton/utils/noop';
 
+import { contentScriptMessage, sendMessage } from '../../../../lib/message/send-message';
+import type { AutofillRequest, AutofillResult } from '../../../../types/autofill';
+import type { FrameField } from '../../../../types/frames';
+import { WorkerMessageType } from '../../../../types/messages';
+import { DropdownAction, NotificationAction } from '../../constants.runtime';
+import { withContext } from '../../context/context';
+import type { ContentScriptContextFactoryOptions } from '../../context/factory';
+import { getAutofillPageTelemetryDimensions } from '../../utils/autofill-telemetry';
+import { sendContentScriptTelemetry } from '../../utils/telemetry';
+import type { FrameMessageHandler } from '../client/client.channel';
+import type { FieldHandle } from '../form/field';
+import type { FormHandle } from '../form/form';
+import { autofillCCFields } from './autofill.cc';
 import { autofillIdentityFields } from './autofill.identity';
 
 type AutofillCounters = {

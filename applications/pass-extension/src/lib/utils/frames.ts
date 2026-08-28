@@ -1,6 +1,3 @@
-import { backgroundMessage, sendTabMessage } from 'proton-pass-extension/lib/message/send-message';
-import type { FrameAttributes } from 'proton-pass-extension/types/frames';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import type { WebNavigation } from 'webextension-polyfill';
 
 import browser from '@proton/pass/lib/globals/browser';
@@ -8,6 +5,10 @@ import { parseUrl } from '@proton/pass/lib/urls/utils/parser';
 import { resolveDomain } from '@proton/pass/lib/urls/utils/utils';
 import type { MaybeNull } from '@proton/pass/types/utils/index';
 import type { FrameId, TabId } from '@proton/pass/types/worker/runtime';
+
+import type { FrameAttributes } from '../../types/frames';
+import { WorkerMessageType } from '../../types/messages';
+import { backgroundMessage, sendTabMessage } from '../message/send-message';
 
 export type FrameData = {
     parent: MaybeNull<FrameId>;

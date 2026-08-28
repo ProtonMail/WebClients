@@ -2,13 +2,6 @@ import type { FC, ReactNode } from 'react';
 import { createContext, useEffect, useMemo } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { useExtensionActivityProbe } from 'proton-pass-extension/lib/hooks/useExtensionActivityProbe';
-import { useExtensionClientInit } from 'proton-pass-extension/lib/hooks/useExtensionClientInit';
-import { isExtensionMessage } from 'proton-pass-extension/lib/message/utils';
-import { reloadManager } from 'proton-pass-extension/lib/utils/reload';
-import { isRuntimeStale } from 'proton-pass-extension/lib/utils/runtime';
-import type { WorkerMessageWithSender } from 'proton-pass-extension/types/messages';
-
 import { AppStateManager } from '@proton/pass/components/Core/AppStateManager';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { PASS_DEFAULT_THEME } from '@proton/pass/constants';
@@ -25,6 +18,12 @@ import { AppStatus } from '@proton/pass/types/worker/state';
 import sentry, { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
 import noop from '@proton/utils/noop';
 
+import type { WorkerMessageWithSender } from '../../../types/messages';
+import { useExtensionActivityProbe } from '../../hooks/useExtensionActivityProbe';
+import { useExtensionClientInit } from '../../hooks/useExtensionClientInit';
+import { isExtensionMessage } from '../../message/utils';
+import { reloadManager } from '../../utils/reload';
+import { isRuntimeStale } from '../../utils/runtime';
 import { useExtensionContext } from './ExtensionSetup';
 
 export interface ExtensionClientContextValue {
