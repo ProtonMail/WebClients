@@ -17,6 +17,7 @@ jest.mock('@proton/shared/lib/apps/apps', () => ({
         APPS.PROTONSHEETS,
         APPS.PROTONMEET,
         APPS.PROTONWALLET,
+        APPS.PROTONSPACES,
     ],
 }));
 
@@ -37,6 +38,7 @@ const defaultOptions = {
     isMeetAvailable: true,
     isSheetsAvailable: true,
     isAuthenticatorAvailable: true,
+    isSpacesAvailable: true,
 };
 
 const getAppNames = (apps: ReturnType<typeof getExploreApps>) => apps.map((app) => app.name);
@@ -59,6 +61,7 @@ describe('getExploreApps', () => {
                 APPS.PROTONSHEETS,
                 APPS.PROTONMEET,
                 APPS.PROTONWALLET,
+                APPS.PROTONSPACES,
             ]);
         });
 

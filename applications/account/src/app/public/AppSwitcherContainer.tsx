@@ -130,6 +130,7 @@ const AppSwitcherContainer = ({ onLogin, onSwitch, state }: Props) => {
     const isMeetAvailable = useFlag('PMVC2025');
     const isSheetsAvailable = useFlag('DocsSheetsEnabled');
     const isAuthenticatorAvailable = useFlag('AuthenticatorSettingsEnabled');
+    const isSpacesAvailable = useFlag('SpacesAvailable');
     const subscribed = User.Subscribed;
     const { sendAppClick } = useExploreAppsListTelemetry();
 
@@ -143,6 +144,7 @@ const AppSwitcherContainer = ({ onLogin, onSwitch, state }: Props) => {
         oauth: persistedSession.source === SessionSource.Oauth,
         isMeetAvailable,
         isAuthenticatorAvailable,
+        isSpacesAvailable,
     }).concat(getForbiddenAppConfigs({ user: User, forbiddenApps }));
 
     const goToAccountSettings = (source: 'settings' | 'settings-menu') => async () => {

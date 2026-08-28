@@ -19,6 +19,7 @@ const productsToApps: Record<OrganizationSettingsAllowedProduct, APP_NAMES[]> = 
     [Product.Lumo]: [APPS.PROTONLUMO],
     [Product.Meet]: [APPS.PROTONMEET],
     [Product.Authenticator]: [APPS.PROTONAUTHENTICATOR],
+    [Product.Spaces]: [APPS.PROTONSPACES],
 } as const;
 
 // This constant contains a set of all the products that are supported in the access control feature
