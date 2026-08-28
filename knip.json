@@ -45,7 +45,12 @@
             "ignore": ["**"]
         },
         "applications/calendar": {
-            "entry": ["src/app/index.{ts,tsx}", "src/app/bookings.tsx", "src/**/*.stories.tsx", "webpack.config.{js,ts}"],
+            "entry": [
+                "src/app/index.{ts,tsx}",
+                "src/app/bookings.tsx",
+                "src/**/*.stories.tsx",
+                "webpack.config.{js,ts}"
+            ],
             "project": ["src/**/*.{ts,tsx}"]
         },
         "applications/drive": {
@@ -86,6 +91,14 @@
             ],
             "project": ["src/**/*.{ts,tsx}"],
             "ignore": ["**"]
+        },
+        "packages/logger": {
+            "entry": ["index.{ts,tsx}", "lib/index.{ts,tsx}", "src/index.{ts,tsx}", "babel.config.{js,ts}"],
+            "project": ["**/*.{ts,tsx}"]
+        },
+        "packages/logger": {
+            "entry": ["index.{ts,tsx}", "lib/index.{ts,tsx}", "src/index.{ts,tsx}"],
+            "project": ["**/*.{ts,tsx}"]
         },
         "packages/*": {
             "entry": ["index.{ts,tsx}", "lib/index.{ts,tsx}", "src/index.{ts,tsx}", "babel.config.{js,ts}"],
