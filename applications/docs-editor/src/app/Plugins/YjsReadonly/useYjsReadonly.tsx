@@ -8,7 +8,7 @@ import { UndoManager } from 'yjs'
 
 import { TranslatedResult } from '@proton/docs-shared'
 import type { EditorLoadResult } from '../../Lib/EditorLoadResult'
-import type { LoggerInterface } from '@proton/utils/logs'
+import type { LoggerInterface } from '@proton/shared/lib/logs'
 
 /**
  * Based on useYjsCollaboration, but without awareness and cursors, and the addition of Safe Mode.
@@ -109,7 +109,6 @@ export function useYjsReadonly(
 
     const onYjsTreeChanges = (
       // The below `any` type is taken directly from the vendor types for YJS.
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       events: YEvent<any>[],
       transaction: Transaction,
     ) => {

@@ -1,6 +1,6 @@
 import 'fake-indexeddb/auto'
 import { IndexedDatabase } from './IndexedDB'
-import type { LoggerInterface } from '@proton/utils/logs'
+import type { LoggerInterface } from '@proton/shared/lib/logs'
 import type { DatabaseSchema } from './Schema'
 import { CURRENT_DB_VERSION, DATABASE_NAME, migrations } from './Schema'
 

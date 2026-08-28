@@ -10,7 +10,7 @@ import type {
 import { EditorBridgeMessageType, BridgeOriginProvider, DOCS_EDITOR_DEBUG_KEY } from '@proton/docs-shared'
 import { EditorInvoker } from './EditorInvoker'
 import { EditorToClientRequestHandler } from './EditorToClientRequestHandler'
-import { Logger } from '@proton/utils/logs'
+import { Logger } from '@proton/shared/lib/logs'
 import type { EditorOrchestratorInterface } from '../Services/Orchestrator/EditorOrchestratorInterface'
 
 function isIrrelevantMessage(event: MessageEvent) {

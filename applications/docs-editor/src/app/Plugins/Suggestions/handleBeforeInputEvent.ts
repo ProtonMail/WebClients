@@ -36,7 +36,7 @@ import {
   $isEmptyListItemExceptForSuggestions,
 } from './Utils'
 import { $generateNodesFromDOM } from '@lexical/html'
-import type { Logger } from '@proton/utils/logs'
+import type { Logger } from '@proton/shared/lib/logs'
 import { INSERT_FILE_COMMAND } from '../../Commands/Events'
 import type { BlockTypeChangeSuggestionProperties, IndentChangeSuggestionProperties } from './Types'
 import { SuggestionTypesThatCanBeEmpty, TextEditingSuggestionTypes } from './Types'

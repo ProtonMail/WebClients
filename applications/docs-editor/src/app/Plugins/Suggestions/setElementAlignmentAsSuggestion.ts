@@ -5,7 +5,7 @@ import type { ProtonNode } from './ProtonNode'
 import { $createSuggestionNode, $isSuggestionNode } from './ProtonNode'
 import { GenerateUUID } from '@proton/docs-shared'
 import { $removeSuggestionNodeAndResolveIfNeeded } from './removeSuggestionNodeAndResolveIfNeeded'
-import type { Logger } from '@proton/utils/logs'
+import type { Logger } from '@proton/shared/lib/logs'
 import { $isListNode } from '@lexical/list'
 import type { AlignChangeSuggestionProperties } from './Types'
 

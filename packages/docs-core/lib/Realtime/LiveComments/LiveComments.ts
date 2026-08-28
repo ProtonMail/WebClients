@@ -11,7 +11,7 @@ import { CreateRealtimeCommentPayload } from '../../Services/Comments/CreateReal
 import { CommentTypers } from './CommentTypers'
 import type { WebsocketServiceInterface } from '../../Services/Websockets/WebsocketServiceInterface'
 import { EventTypeEnum } from '@proton/docs-proto'
-import type { LoggerInterface } from '@proton/utils/logs'
+import type { LoggerInterface } from '@proton/shared/lib/logs'
 
 export class LiveComments {
   private state: Record<string, CommentTypers> = {}

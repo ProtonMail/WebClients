@@ -1,5 +1,5 @@
 import { EditorController } from './EditorController'
-import type { Logger } from '@proton/utils/logs'
+import type { Logger } from '@proton/shared/lib/logs'
 import { BroadcastSource, DocumentRole, DocUpdateOrigin } from '@proton/docs-shared'
 import type { ConnectionCloseReason } from '@proton/docs-proto'
 import { EventType, EventTypeEnum } from '@proton/docs-proto'

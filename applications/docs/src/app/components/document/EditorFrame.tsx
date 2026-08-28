@@ -9,7 +9,7 @@ import {
 } from '@proton/docs-shared'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { versionCookieAtLoad } from '@proton/components/helpers/versionCookie'
-import type { LoggerInterface } from '@proton/utils/logs'
+import type { LoggerInterface } from '@proton/shared/lib/logs'
 import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
 import { getCookie } from '@proton/shared/lib/helpers/cookies'
 

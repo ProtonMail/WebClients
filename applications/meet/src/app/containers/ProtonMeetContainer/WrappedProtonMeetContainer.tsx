@@ -6,8 +6,8 @@ import { LogLevel, Room, setLogLevel } from 'livekit-client';
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectActiveAudioOutputId } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
+import { isDevOrBlack } from '@proton/shared/lib/env';
 import { useFlag } from '@proton/unleash/useFlag';
-import { isDevOrBlack } from '@proton/utils/env';
 
 import { MeetingAnnouncerProvider } from '../../components/MeetingAnnouncer/MeetingAnnouncerContext';
 import { MediaManagementProvider } from '../../contexts/MediaManagementProvider/MediaManagementProvider';

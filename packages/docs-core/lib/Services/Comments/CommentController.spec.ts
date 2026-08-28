@@ -1,5 +1,5 @@
 import { CommentController } from './CommentController'
-import type { LoggerInterface } from '@proton/utils/logs'
+import type { LoggerInterface } from '@proton/shared/lib/logs'
 import { Result, type InternalEventBusInterface } from '@proton/docs-shared'
 
 import type { PrivateKeyReference, SessionKey } from '@protontech/crypto'

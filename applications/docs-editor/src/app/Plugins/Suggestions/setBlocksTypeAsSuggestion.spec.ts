@@ -1,5 +1,5 @@
 import { createHeadlessEditor } from '@lexical/headless'
-import type { Logger } from '@proton/utils/logs'
+import type { Logger } from '@proton/shared/lib/logs'
 import { AllNodes } from '../../AllNodes'
 import type { ElementNode } from 'lexical'
 import { $isParagraphNode, $isTextNode } from 'lexical'

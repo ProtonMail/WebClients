@@ -2,7 +2,7 @@ import { getErrorString, TranslatedResult } from '@proton/docs-shared'
 import type { DocumentState, PublicDocumentState } from '../State/DocumentState'
 import type { DriveCompat, PublicDriveCompat } from '@proton/drive-store'
 import type { GetNode } from '../UseCase/GetNode'
-import type { LoggerInterface } from '@proton/utils/logs'
+import type { LoggerInterface } from '@proton/shared/lib/logs'
 import { c } from 'ttag'
 import { renameNode } from '../DriveSDK/renameNode'
 

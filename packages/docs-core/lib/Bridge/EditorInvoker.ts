@@ -14,7 +14,7 @@ import type {
   SheetImportData,
 } from '@proton/docs-shared'
 import { EditorBridgeMessageType, BridgeOriginProvider, GenerateUUID } from '@proton/docs-shared'
-import type { LoggerInterface } from '@proton/utils/logs'
+import type { LoggerInterface } from '@proton/shared/lib/logs'
 import type { SerializedEditorState } from 'lexical'
 import type { UserSettings } from '@proton/shared/lib/interfaces'
 

@@ -2,8 +2,8 @@ import { versionCookieAtLoad } from '@proton/components/helpers/versionCookie'
 import type { DocumentRoleType } from '@proton/docs-shared'
 import { DocumentRole, InternalEventBus, SyncedEditorState } from '@proton/docs-shared'
 import type { Environment } from '@proton/shared/lib/interfaces'
-import type { LoggerInterface } from '@proton/utils/logs'
-import { Logger } from '@proton/utils/logs'
+import type { LoggerInterface } from '@proton/shared/lib/logs'
+import { Logger } from '@proton/shared/lib/logs'
 
 export class Application {
   public readonly eventBus = new InternalEventBus()
