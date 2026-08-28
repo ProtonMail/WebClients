@@ -1,20 +1,5 @@
 import { type FC, useCallback, useEffect, useMemo } from 'react';
 
-import type { DropdownAction } from 'proton-pass-extension/app/content/constants.runtime';
-import { DropdownHeader } from 'proton-pass-extension/app/content/services/inline/dropdown/app/components/DropdownHeader';
-import type { DropdownActions } from 'proton-pass-extension/app/content/services/inline/dropdown/dropdown.app';
-import type { InlineMessageWithSender } from 'proton-pass-extension/app/content/services/inline/inline.messages';
-import { InlinePortMessageType } from 'proton-pass-extension/app/content/services/inline/inline.messages';
-import {
-    useIFrameAppController,
-    useIFrameAppState,
-    useRegisterMessageHandler,
-} from 'proton-pass-extension/lib/components/Inline/IFrameApp';
-import { ListItem } from 'proton-pass-extension/lib/components/Inline/ListItem';
-import { PauseListDropdown } from 'proton-pass-extension/lib/components/Inline/PauseListDropdown';
-import { ScrollableItemsList } from 'proton-pass-extension/lib/components/Inline/ScrollableItemsList';
-import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
@@ -33,6 +18,22 @@ import type { AutofillLoginResult } from '@proton/pass/types/worker/autofill';
 import { partOf, truthy } from '@proton/pass/utils/fp/predicates';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
+
+import {
+    useIFrameAppController,
+    useIFrameAppState,
+    useRegisterMessageHandler,
+} from '../../../../../../../lib/components/Inline/IFrameApp';
+import { ListItem } from '../../../../../../../lib/components/Inline/ListItem';
+import { PauseListDropdown } from '../../../../../../../lib/components/Inline/PauseListDropdown';
+import { ScrollableItemsList } from '../../../../../../../lib/components/Inline/ScrollableItemsList';
+import { contentScriptMessage, sendMessage } from '../../../../../../../lib/message/send-message';
+import { WorkerMessageType } from '../../../../../../../types/messages';
+import type { DropdownAction } from '../../../../../constants.runtime';
+import type { InlineMessageWithSender } from '../../../inline.messages';
+import { InlinePortMessageType } from '../../../inline.messages';
+import type { DropdownActions } from '../../dropdown.app';
+import { DropdownHeader } from '../components/DropdownHeader';
 
 type Props = Extract<DropdownActions, { action: DropdownAction.AUTOFILL_LOGIN }>;
 

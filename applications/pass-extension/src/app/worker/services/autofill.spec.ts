@@ -1,18 +1,3 @@
-import { mockHandlers } from 'proton-pass-extension/__mocks__/app/worker/channel';
-import {
-    getMockItemRevision,
-    getMockState,
-    mockItemId,
-    mockShareId,
-    setMockMessageSender,
-} from 'proton-pass-extension/__mocks__/mocks';
-import { expectMessageFailure, expectMessageSuccess } from 'proton-pass-extension/__mocks__/utils';
-import browser, { clearBrowserMocks } from 'proton-pass-extension/__mocks__/webextension-polyfill';
-import { WorkerContext } from 'proton-pass-extension/app/worker/context/inject';
-import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
-import { BUNDLED_MODEL_ID } from 'proton-pass-extension/lib/utils/version';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
-
 import type { ModelArtifact } from '@proton/pass/lib/extension/model-artifact/model-artifact';
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
 import { assignedModelIdUpdated } from '@proton/pass/store/actions/creators/assigned-model-id';
@@ -23,7 +8,25 @@ import { AutofillMode } from '@proton/pass/types/protobuf';
 import type { AutofillQueryFilter } from '@proton/pass/types/worker/autofill';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
+import {
+    getMockItemRevision,
+    getMockState,
+    mockItemId,
+    mockShareId,
+    setMockMessageSender,
+} from '../../../__mocks__/mocks';
+import { expectMessageFailure, expectMessageSuccess } from '../../../__mocks__/utils';
+import browser, { clearBrowserMocks } from '../../../__mocks__/webextension-polyfill';
+import { contentScriptMessage, sendMessage } from '../../../lib/message/send-message';
+import { BUNDLED_MODEL_ID } from '../../../lib/utils/version';
+import { WorkerMessageType } from '../../../types/messages';
+import type * as ChannelMock from '../__mocks__/channel';
+import { WorkerContext } from '../context/inject';
 import { createAutoFillService } from './autofill';
+
+jest.mock('../channel');
+
+const { mockHandlers } = jest.requireMock('../channel') as typeof ChannelMock;
 
 describe('AutofillService', () => {
     const topLevelURL = 'https://bank.example/login';

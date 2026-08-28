@@ -1,8 +1,6 @@
 import type { FC } from 'react';
 
 import type { FormikContextType } from 'formik';
-import { ListItem } from 'proton-pass-extension/lib/components/Inline/ListItem';
-import { ScrollableItemsList } from 'proton-pass-extension/lib/components/Inline/ScrollableItemsList';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -11,6 +9,9 @@ import { getItemKey } from '@proton/pass/lib/items/item.utils';
 import type { AutosaveFormValues, AutosaveUpdatePayload } from '@proton/pass/types/worker/autosave';
 import { AutosaveMode } from '@proton/pass/types/worker/autosave';
 import type { LoginItemPreview } from '@proton/pass/types/worker/data';
+
+import { ListItem } from '../../../../../../../lib/components/Inline/ListItem';
+import { ScrollableItemsList } from '../../../../../../../lib/components/Inline/ScrollableItemsList';
 
 type Props = {
     busy: boolean;

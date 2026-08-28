@@ -6,15 +6,14 @@
  * content-script when the frame becomes hidden, we can free up resources
  * on inactive tabs, further improving performance and minimizing the
  * impact on the user's experience */
-import { isIgnorableFrame } from 'proton-pass-extension/app/content/utils/frame';
-import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
-import 'proton-pass-extension/lib/polyfills/shim';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
-
 import { waitForPageReady } from '@proton/pass/utils/dom/state';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
+import { contentScriptMessage, sendMessage } from '../../lib/message/send-message';
+import '../../lib/polyfills/shim';
+import { WorkerMessageType } from '../../types/messages';
 import { DOMCleanUp } from './services/inline/inline.cleanup';
+import { isIgnorableFrame } from './utils/frame';
 
 const unloadContentScript = () => sendMessage(contentScriptMessage({ type: WorkerMessageType.UNLOAD_CONTENT_SCRIPT }));
 const loadContentScript = () => sendMessage(contentScriptMessage({ type: WorkerMessageType.LOAD_CONTENT_SCRIPT }));

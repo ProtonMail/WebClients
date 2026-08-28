@@ -1,8 +1,5 @@
 import { useCallback, useMemo } from 'react';
 
-import config from 'proton-pass-extension/app/config';
-import { getMinimalHostPermissions } from 'proton-pass-extension/lib/utils/permissions';
-import { assertTabsAPIAvailable } from 'proton-pass-extension/lib/utils/tabs';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
@@ -16,6 +13,9 @@ import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
+import config from '../../app/config';
+import { getMinimalHostPermissions } from '../utils/permissions';
+import { assertTabsAPIAvailable } from '../utils/tabs';
 import { getHostPermissionsWarning, useHostPermissions } from './useHostPermissions';
 
 type UseRequestForkOptions = Partial<RequestForkOptions & { data: RequestForkData; replace: boolean }>;

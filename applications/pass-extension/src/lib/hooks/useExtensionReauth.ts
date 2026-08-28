@@ -2,8 +2,6 @@ import { useCallback, useEffect } from 'react';
 import { useStore } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
-import { useRequestFork } from 'proton-pass-extension/lib/hooks/useRequestFork';
-
 import type { OnReauthFn } from '@proton/pass/components/Lock/PasswordUnlockProvider';
 import { useReauthActionHandler } from '@proton/pass/hooks/auth/useReauthActionHandler';
 import type { RequestForkData } from '@proton/pass/lib/auth/fork';
@@ -12,6 +10,8 @@ import { ReauthAction } from '@proton/pass/lib/auth/reauth';
 import browser from '@proton/pass/lib/globals/browser';
 import { selectUser } from '@proton/pass/store/selectors/user';
 import type { State } from '@proton/pass/store/types';
+
+import { useRequestFork } from './useRequestFork';
 
 export const useExtensionReauth = () => {
     const history = useHistory();

@@ -1,18 +1,4 @@
 import debounce from 'lodash/debounce';
-import {
-    ACTIVE_ICON_SRC,
-    COUNTER_ICON_SRC,
-    DISABLED_ICON_SRC,
-    DropdownAction,
-    LOCKED_ICON_SRC,
-} from 'proton-pass-extension/app/content/constants.runtime';
-import { OVERRIDE_STYLES_ATTR } from 'proton-pass-extension/app/content/constants.static';
-import { withContext } from 'proton-pass-extension/app/content/context/context';
-import type { FieldHandle } from 'proton-pass-extension/app/content/services/form/field';
-import { FIELD_ATTRS_FILTER } from 'proton-pass-extension/app/content/services/form/field.utils';
-import { getFrameAttributes } from 'proton-pass-extension/app/content/utils/frame';
-import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { clientDisabled, clientLocked } from '@proton/pass/lib/client';
 import type { Callback, MaybeNull } from '@proton/pass/types/utils/index';
@@ -24,6 +10,20 @@ import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
 
+import { contentScriptMessage, sendMessage } from '../../../../../lib/message/send-message';
+import { WorkerMessageType } from '../../../../../types/messages';
+import {
+    ACTIVE_ICON_SRC,
+    COUNTER_ICON_SRC,
+    DISABLED_ICON_SRC,
+    DropdownAction,
+    LOCKED_ICON_SRC,
+} from '../../../constants.runtime';
+import { OVERRIDE_STYLES_ATTR } from '../../../constants.static';
+import { withContext } from '../../../context/context';
+import { getFrameAttributes } from '../../../utils/frame';
+import type { FieldHandle } from '../../form/field';
+import { FIELD_ATTRS_FILTER } from '../../form/field.utils';
 import type { IconStyles } from './icon.utils';
 import {
     ICON_MAX_SHIFT_RATIO,

@@ -1,17 +1,5 @@
 import type { CCFieldType } from '@protontech/autofill/types';
 import { FormType } from '@protontech/autofill/types';
-import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
-import { onContextReady, withContext } from 'proton-pass-extension/app/worker/context/inject';
-import { createBasicAuthController } from 'proton-pass-extension/app/worker/listeners/auth-required';
-import { backgroundMessage, sendTabMessage } from 'proton-pass-extension/lib/message/send-message';
-import type { AutofillableFrame } from 'proton-pass-extension/lib/utils/frames';
-import { getAutofillableFrames } from 'proton-pass-extension/lib/utils/frames';
-import { setPopupIconBadge } from 'proton-pass-extension/lib/utils/popup';
-import { isContentScriptPort } from 'proton-pass-extension/lib/utils/port';
-import { BUNDLED_MODEL_ID } from 'proton-pass-extension/lib/utils/version';
-import type { AutofillActionDTO, AutofillRequest, AutofillSequence } from 'proton-pass-extension/types/autofill';
-import type { FrameFormsResult } from 'proton-pass-extension/types/frames';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { clientBooted } from '@proton/pass/lib/client';
 import {
@@ -67,6 +55,18 @@ import { logger } from '@proton/pass/utils/logger';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import noop from '@proton/utils/noop';
 
+import { backgroundMessage, sendTabMessage } from '../../../lib/message/send-message';
+import type { AutofillableFrame } from '../../../lib/utils/frames';
+import { getAutofillableFrames } from '../../../lib/utils/frames';
+import { setPopupIconBadge } from '../../../lib/utils/popup';
+import { isContentScriptPort } from '../../../lib/utils/port';
+import { BUNDLED_MODEL_ID } from '../../../lib/utils/version';
+import type { AutofillActionDTO, AutofillRequest, AutofillSequence } from '../../../types/autofill';
+import type { FrameFormsResult } from '../../../types/frames';
+import { WorkerMessageType } from '../../../types/messages';
+import WorkerMessageBroker from '../channel';
+import { onContextReady, withContext } from '../context/inject';
+import { createBasicAuthController } from '../listeners/auth-required';
 import { resolveCCFormFields } from './autofill.cc';
 
 type AutofillServiceState = {

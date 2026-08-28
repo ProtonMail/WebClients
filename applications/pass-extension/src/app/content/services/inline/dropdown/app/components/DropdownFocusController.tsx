@@ -1,13 +1,13 @@
 import type { FC, PropsWithChildren, RefObject } from 'react';
 import { createContext, useEffect, useMemo, useRef } from 'react';
 
-import { DROPDOWN_FOCUS_TIMEOUT } from 'proton-pass-extension/app/content/services/inline/dropdown/dropdown.focus';
-import { InlinePortMessageType } from 'proton-pass-extension/app/content/services/inline/inline.messages';
-import { useIFrameAppController, useIFrameAppState } from 'proton-pass-extension/lib/components/Inline/IFrameApp';
-
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
 import type { Maybe, MaybeNull } from '@proton/pass/types/utils/index';
 import { onNextTick } from '@proton/pass/utils/time/next-tick';
+
+import { useIFrameAppController, useIFrameAppState } from '../../../../../../../lib/components/Inline/IFrameApp';
+import { InlinePortMessageType } from '../../../inline.messages';
+import { DROPDOWN_FOCUS_TIMEOUT } from '../../dropdown.focus';
 
 export type IFrameFocusControllerValue = { focusRef: RefObject<HTMLInputElement> };
 

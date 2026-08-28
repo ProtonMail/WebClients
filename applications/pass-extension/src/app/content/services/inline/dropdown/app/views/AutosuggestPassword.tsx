@@ -1,14 +1,5 @@
 import { type FC, useCallback, useEffect, useState } from 'react';
 
-import type { DropdownAction } from 'proton-pass-extension/app/content/constants.runtime';
-import { DropdownHeader } from 'proton-pass-extension/app/content/services/inline/dropdown/app/components/DropdownHeader';
-import type { DropdownActions } from 'proton-pass-extension/app/content/services/inline/dropdown/dropdown.app';
-import { InlinePortMessageType } from 'proton-pass-extension/app/content/services/inline/inline.messages';
-import { useIFrameAppController, useIFrameAppState } from 'proton-pass-extension/lib/components/Inline/IFrameApp';
-import { ListItem } from 'proton-pass-extension/lib/components/Inline/ListItem';
-import { PauseListDropdown } from 'proton-pass-extension/lib/components/Inline/PauseListDropdown';
-import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -28,6 +19,16 @@ import {
 import type { GeneratePasswordConfig } from '@proton/pass/lib/password/types';
 import { passwordOptionsEdit } from '@proton/pass/store/actions';
 import { serialize } from '@proton/pass/utils/object/serialize';
+
+import { useIFrameAppController, useIFrameAppState } from '../../../../../../../lib/components/Inline/IFrameApp';
+import { ListItem } from '../../../../../../../lib/components/Inline/ListItem';
+import { PauseListDropdown } from '../../../../../../../lib/components/Inline/PauseListDropdown';
+import { contentScriptMessage, sendMessage } from '../../../../../../../lib/message/send-message';
+import { WorkerMessageType } from '../../../../../../../types/messages';
+import type { DropdownAction } from '../../../../../constants.runtime';
+import { InlinePortMessageType } from '../../../inline.messages';
+import type { DropdownActions } from '../../dropdown.app';
+import { DropdownHeader } from '../components/DropdownHeader';
 
 type Props = Extract<DropdownActions, { action: DropdownAction.AUTOSUGGEST_PASSWORD }>;
 

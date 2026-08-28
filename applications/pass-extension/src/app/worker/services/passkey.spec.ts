@@ -1,5 +1,4 @@
 import type { WasmGeneratePasskeyResponse } from '@protontech/pass-rust-core/worker';
-import { WorkerContext } from 'proton-pass-extension/app/worker/context/inject';
 
 import { createPassCoreProxy } from '@proton/pass/lib/core/core.proxy';
 import type { PassCoreProxy } from '@proton/pass/lib/core/core.types';
@@ -8,8 +7,10 @@ import { itemBuilder } from '@proton/pass/lib/items/item.builder';
 import { sanitizePasskey } from '@proton/pass/lib/passkeys/utils';
 import { sanitizeBuffers } from '@proton/pass/utils/buffer/sanitization';
 
+import { WorkerContext } from '../context/inject';
 import { assertValidPasskeyRequest, createPasskeyService } from './passkey';
 
+jest.mock('../channel');
 jest.mock('@proton/pass/lib/core/core.proxy');
 
 const TEST_RP_ID = 'proton.test';

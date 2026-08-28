@@ -1,3 +1,9 @@
+import type { Tabs } from 'webextension-polyfill';
+
+import browser from '@proton/pass/lib/globals/browser';
+import type { Maybe } from '@proton/pass/types/utils/index';
+import type { ClientEndpoint, TabId } from '@proton/pass/types/worker/runtime';
+
 import type {
     MessageFailure,
     PortFrameForwardingMessage,
@@ -5,13 +11,8 @@ import type {
     WorkerMessageResponse,
     WorkerMessageWithSender,
     WorkerResponse,
-} from 'proton-pass-extension/types/messages';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
-import type { Tabs } from 'webextension-polyfill';
-
-import browser from '@proton/pass/lib/globals/browser';
-import type { Maybe } from '@proton/pass/types/utils/index';
-import type { ClientEndpoint, TabId } from '@proton/pass/types/worker/runtime';
+} from '../../types/messages';
+import { WorkerMessageType } from '../../types/messages';
 
 export class MessageVersionMismatchError extends Error {
     name = 'MessageVersionMismatchError';

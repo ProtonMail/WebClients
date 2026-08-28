@@ -1,14 +1,14 @@
-import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
-import { withContext } from 'proton-pass-extension/app/worker/context/inject';
-import { backgroundMessage } from 'proton-pass-extension/lib/message/send-message';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
-
 import { createSettingsService as createCoreSettingsService } from '@proton/pass/lib/settings/service';
 import { sanitizeSettings } from '@proton/pass/lib/settings/utils';
 import { updatePauseListItem } from '@proton/pass/store/actions/creators/settings';
 import { type ProxiedSettings, getInitialSettings } from '@proton/pass/store/reducers/settings';
 import { selectProxiedSettings } from '@proton/pass/store/selectors/settings';
 import { logger } from '@proton/pass/utils/logger';
+
+import { backgroundMessage } from '../../../lib/message/send-message';
+import { WorkerMessageType } from '../../../types/messages';
+import WorkerMessageBroker from '../channel';
+import { withContext } from '../context/inject';
 
 export const createSettingsService = () => {
     const broadcast = withContext<(settings: ProxiedSettings) => void>(({ service }, settings) => {

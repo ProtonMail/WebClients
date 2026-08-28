@@ -1,15 +1,5 @@
 import { devToolsEnhancer } from '@redux-devtools/remote';
 import { configureStore } from '@reduxjs/toolkit';
-import config from 'proton-pass-extension/app/config';
-import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
-import { withContext } from 'proton-pass-extension/app/worker/context/inject';
-import { backgroundMessage } from 'proton-pass-extension/lib/message/send-message';
-import { isChromeExtensionRollback } from 'proton-pass-extension/lib/utils/chrome';
-import { portTransferWriter } from 'proton-pass-extension/lib/utils/fs.utils';
-import { WEB_REQUEST_PERMISSIONS, hasPermissions } from 'proton-pass-extension/lib/utils/permissions';
-import { isPopupPort } from 'proton-pass-extension/lib/utils/port';
-import { EXTENSION_BUILD_VERSION, EXTENSION_MANIFEST_VERSION } from 'proton-pass-extension/lib/utils/version';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import createSagaMiddleware from 'redux-saga';
 
 import { authStore } from '@proton/pass/lib/auth/store';
@@ -37,6 +27,16 @@ import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import noop from '@proton/utils/noop';
 
+import { backgroundMessage } from '../../../lib/message/send-message';
+import { isChromeExtensionRollback } from '../../../lib/utils/chrome';
+import { portTransferWriter } from '../../../lib/utils/fs.utils';
+import { WEB_REQUEST_PERMISSIONS, hasPermissions } from '../../../lib/utils/permissions';
+import { isPopupPort } from '../../../lib/utils/port';
+import { EXTENSION_BUILD_VERSION, EXTENSION_MANIFEST_VERSION } from '../../../lib/utils/version';
+import { WorkerMessageType } from '../../../types/messages';
+import config from '../../config';
+import WorkerMessageBroker from '../channel';
+import { withContext } from '../context/inject';
 import { broadcastMiddleware } from './broadcast.middleware';
 
 export const sagaMiddleware = createSagaMiddleware();

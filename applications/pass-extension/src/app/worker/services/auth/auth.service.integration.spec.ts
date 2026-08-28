@@ -1,8 +1,3 @@
-import WorkerMessageBroker from 'proton-pass-extension/__mocks__/app/worker/channel';
-import browser, { clearBrowserMocks } from 'proton-pass-extension/__mocks__/webextension-polyfill';
-import { WorkerContext } from 'proton-pass-extension/app/worker/context/inject';
-import type { WorkerContextInterface } from 'proton-pass-extension/app/worker/context/types';
-
 import { SESSION_RESUME_MAX_RETRIES } from '@proton/pass/lib/auth/scheduler';
 import type { AuthStore } from '@proton/pass/lib/auth/store';
 import { createAuthStore } from '@proton/pass/lib/auth/store';
@@ -16,9 +11,17 @@ import { createMemoryStore } from '@proton/pass/utils/store';
 import { createApiError, createOfflineError } from '@proton/shared/lib/fetch/ApiError';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
+import browser, { clearBrowserMocks } from '../../../../__mocks__/webextension-polyfill';
+import type * as ChannelMock from '../../__mocks__/channel';
+import { WorkerContext } from '../../context/inject';
+import type { WorkerContextInterface } from '../../context/types';
 import { SESSION_RESUME_ALARM } from './auth.alarms';
 import type { ExtensionAuthService } from './auth.service';
 import { createAuthService } from './auth.service';
+
+jest.mock('../../channel');
+
+const { default: WorkerMessageBroker } = jest.requireMock('../../channel') as typeof ChannelMock;
 
 /** Drive `browser.alarms.get` based on the most recent `create`/`clear` calls so
  * the real `AuthAlarms` instance behaves like a stateful scheduler. This is the

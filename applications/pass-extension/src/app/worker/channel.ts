@@ -1,9 +1,3 @@
-import { withContext } from 'proton-pass-extension/app/worker/context/inject';
-import { createMessageBroker } from 'proton-pass-extension/lib/message/message-broker';
-import { MessageVersionMismatchError } from 'proton-pass-extension/lib/message/send-message';
-import { isPagePort, isPopupPort, tabIDFromPortName } from 'proton-pass-extension/lib/utils/port';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
-
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import { clientBooted } from '@proton/pass/lib/client';
 import { fileStorage } from '@proton/pass/lib/file-storage/fs';
@@ -14,6 +8,12 @@ import { selectPendingPopupRequests, selectPendingSettingsRequests } from '@prot
 import { or } from '@proton/pass/utils/fp/predicates';
 import { logId, logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
+
+import { createMessageBroker } from '../../lib/message/message-broker';
+import { MessageVersionMismatchError } from '../../lib/message/send-message';
+import { isPagePort, isPopupPort, tabIDFromPortName } from '../../lib/utils/port';
+import { WorkerMessageType } from '../../types/messages';
+import { withContext } from './context/inject';
 
 /* For security reasons : limit the type of messages that
  * can be processed via externally connectable resources.

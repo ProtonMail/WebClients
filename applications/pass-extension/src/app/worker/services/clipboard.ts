@@ -1,12 +1,3 @@
-import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
-import { withContext } from 'proton-pass-extension/app/worker/context/inject';
-import { withOffscreenDocument } from 'proton-pass-extension/app/worker/offscreen/offscreen.utils';
-import { backgroundMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
-import { createExtensionAlarm } from 'proton-pass-extension/lib/utils/alarm';
-import { CLIPBOARD_PERMISSIONS } from 'proton-pass-extension/lib/utils/permissions';
-import { sendSafariMessage } from 'proton-pass-extension/lib/utils/safari';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
-
 import { createClipboardService as createCoreClipboardService } from '@proton/pass/lib/clipboard/service';
 import { type ClipboardApi, DEFAULT_CLIPBOARD_TTL } from '@proton/pass/lib/clipboard/types';
 import browser from '@proton/pass/lib/globals/browser';
@@ -16,6 +7,15 @@ import { first } from '@proton/pass/utils/array/first';
 import { logger } from '@proton/pass/utils/logger';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
+
+import { backgroundMessage, sendMessage } from '../../../lib/message/send-message';
+import { createExtensionAlarm } from '../../../lib/utils/alarm';
+import { CLIPBOARD_PERMISSIONS } from '../../../lib/utils/permissions';
+import { sendSafariMessage } from '../../../lib/utils/safari';
+import { WorkerMessageType } from '../../../types/messages';
+import WorkerMessageBroker from '../channel';
+import { withContext } from '../context/inject';
+import { withOffscreenDocument } from '../offscreen/offscreen.utils';
 
 const CLIPBOARD_OFFSCREEN_PATH = 'offscreen.html';
 

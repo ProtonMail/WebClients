@@ -1,12 +1,11 @@
-import { MESSAGE_HOP_DELAY } from 'proton-pass-extension/app/content/constants.static';
-import type { FieldHandle } from 'proton-pass-extension/app/content/services/form/field';
-import type { InlineRegistry } from 'proton-pass-extension/app/content/services/inline/inline.registry';
-import { SCROLL_OPTIONS, onActualScroll } from 'proton-pass-extension/lib/utils/dom';
-
 import type { Maybe, MaybeNull } from '@proton/pass/types/utils/index';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
+import { SCROLL_OPTIONS, onActualScroll } from '../../../../../lib/utils/dom';
+import { MESSAGE_HOP_DELAY } from '../../../constants.static';
+import type { FieldHandle } from '../../form/field';
+import type { InlineRegistry } from '../inline.registry';
 import type { DropdownHandler } from './dropdown.abstract';
 import {
     matchesDropdownAnchor,

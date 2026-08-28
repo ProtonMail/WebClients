@@ -1,8 +1,8 @@
 import { memo } from 'react';
 
-import config from 'proton-pass-extension/app/config';
-
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+
+import config from '../../config';
 
 export const SettingsFooter = memo(() => (
     <div className="mt-auto">

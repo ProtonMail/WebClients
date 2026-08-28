@@ -1,6 +1,3 @@
-import { resolveMessageFactory, sendMessage } from 'proton-pass-extension/lib/message/send-message';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
-
 import type { ConnectivityEvent, ConnectivityService } from '@proton/pass/lib/network/connectivity.service';
 import { ConnectivityStatus } from '@proton/pass/lib/network/connectivity.utils';
 import type { ClientEndpoint } from '@proton/pass/types';
@@ -8,6 +5,9 @@ import { throwError } from '@proton/pass/utils/fp/throw';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { createPubSub } from '@proton/pass/utils/pubsub/factory';
 import noop from '@proton/utils/noop';
+
+import { WorkerMessageType } from '../../types/messages';
+import { resolveMessageFactory, sendMessage } from '../message/send-message';
 
 const notImplemented = () => throwError({ name: 'NotImplemented' });
 

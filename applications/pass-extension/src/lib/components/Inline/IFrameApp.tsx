@@ -2,18 +2,6 @@ import type { PropsWithChildren } from 'react';
 import { type FC, createContext, useCallback, useEffect, useState } from 'react';
 import { flushSync } from 'react-dom';
 
-import type {
-    InlineMessageType,
-    InlinePortMessageHandler,
-} from 'proton-pass-extension/app/content/services/inline/inline.messages';
-import {
-    InlinePortMessageType,
-    isInlineMessage,
-} from 'proton-pass-extension/app/content/services/inline/inline.messages';
-import locales from 'proton-pass-extension/app/locales';
-import { useExtensionActivityProbe } from 'proton-pass-extension/lib/hooks/useExtensionActivityProbe';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
-
 import useInstance from '@proton/hooks/useInstance';
 import { AppStateManager } from '@proton/pass/components/Core/AppStateManager';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
@@ -25,6 +13,11 @@ import { withMerge } from '@proton/pass/utils/object/merge';
 import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
 import noop from '@proton/utils/noop';
 
+import type { InlineMessageType, InlinePortMessageHandler } from '../../../app/content/services/inline/inline.messages';
+import { InlinePortMessageType, isInlineMessage } from '../../../app/content/services/inline/inline.messages';
+import locales from '../../../app/locales';
+import { WorkerMessageType } from '../../../types/messages';
+import { useExtensionActivityProbe } from '../../hooks/useExtensionActivityProbe';
 import type { IFrameAppController } from './IFrameAppController';
 import { createIFrameAppController } from './IFrameAppController';
 

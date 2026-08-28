@@ -1,6 +1,6 @@
-import { mockHandlers } from 'proton-pass-extension/__mocks__/app/worker/channel';
-import { sender } from 'proton-pass-extension/__mocks__/mocks';
-import { errorMessage, resolveMessageResponse } from 'proton-pass-extension/lib/message/response';
+import { mockHandlers } from '../../app/worker/__mocks__/channel.handlers';
+import { errorMessage, resolveMessageResponse } from '../../lib/message/response';
+import { sender } from '../mocks';
 
 const browser = {
     runtime: {

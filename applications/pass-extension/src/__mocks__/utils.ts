@@ -1,4 +1,4 @@
-import type { MaybeMessage } from 'proton-pass-extension/types/messages';
+import type { MaybeMessage } from '../types/messages';
 
 export function expectMessageSuccess<T extends MaybeMessage<unknown>>(
     result: T

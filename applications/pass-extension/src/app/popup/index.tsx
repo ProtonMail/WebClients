@@ -1,8 +1,7 @@
 import { createRoot } from 'react-dom/client';
 
-import { ExtensionRoot } from 'proton-pass-extension/lib/components/Extension/ExtensionRoot';
-import { ExtensionSetup } from 'proton-pass-extension/lib/components/Extension/ExtensionSetup';
-
+import { ExtensionRoot } from '../../lib/components/Extension/ExtensionRoot';
+import { ExtensionSetup } from '../../lib/components/Extension/ExtensionSetup';
 import { Popup } from './Popup';
 
 const container = document.querySelector('.app-root');

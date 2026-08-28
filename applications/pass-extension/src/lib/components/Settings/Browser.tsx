@@ -1,11 +1,6 @@
 import { type FC, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import {
-    AUTOFILL_CONTROLLABLE,
-    checkBrowserAutofillCapabilities,
-    setBrowserAutofillCapabilities,
-} from 'proton-pass-extension/lib/utils/privacy';
 import { c } from 'ttag';
 
 import Checkbox from '@proton/components/components/input/Checkbox';
@@ -14,6 +9,12 @@ import { settingsEditIntent } from '@proton/pass/store/actions/creators/settings
 import { selectPendingBrowserAutofill } from '@proton/pass/store/selectors/settings';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+
+import {
+    AUTOFILL_CONTROLLABLE,
+    checkBrowserAutofillCapabilities,
+    setBrowserAutofillCapabilities,
+} from '../../utils/privacy';
 
 export const Browser: FC = () => {
     const dispatch = useDispatch();

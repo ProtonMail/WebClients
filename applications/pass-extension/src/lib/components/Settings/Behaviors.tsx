@@ -2,9 +2,6 @@ import type { ReactNode } from 'react';
 import { type FC, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import type { PermissionHandles } from 'proton-pass-extension/lib/hooks/usePermissions';
-import { usePermissions } from 'proton-pass-extension/lib/hooks/usePermissions';
-import { BASIC_AUTH_PERMISSIONS } from 'proton-pass-extension/lib/utils/permissions';
 import type { Dispatch } from 'redux';
 import { c } from 'ttag';
 
@@ -20,6 +17,9 @@ import type { MaybeNull, RecursivePartial } from '@proton/pass/types/utils/index
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
+import type { PermissionHandles } from '../../hooks/usePermissions';
+import { usePermissions } from '../../hooks/usePermissions';
+import { BASIC_AUTH_PERMISSIONS } from '../../utils/permissions';
 import { Browser } from './Browser';
 import { PauseList } from './PauseList';
 

@@ -1,15 +1,4 @@
 import type { FieldType, FormType } from '@protontech/autofill/types';
-import type { DropdownAction } from 'proton-pass-extension/app/content/constants.runtime';
-import { withContext } from 'proton-pass-extension/app/content/context/context';
-import type { AutofillOptions } from 'proton-pass-extension/app/content/services/autofill/autofill.utils';
-import { createAutofill } from 'proton-pass-extension/app/content/services/autofill/autofill.utils';
-import { isVisible } from 'proton-pass-extension/app/content/services/detector/detector.api';
-import type { InteractivityController } from 'proton-pass-extension/app/content/services/form/field.interactivity';
-import { createInteractivityController } from 'proton-pass-extension/app/content/services/form/field.interactivity';
-import type { IconController } from 'proton-pass-extension/app/content/services/inline/icon/icon.controller';
-import { getFrameID, getFrameParentVisibility } from 'proton-pass-extension/app/content/utils/frame';
-import type { AbstractField } from 'proton-pass-extension/types/field';
-import type { FrameField } from 'proton-pass-extension/types/frames';
 
 import type { MaybeNull } from '@proton/pass/types/utils/index';
 import { isActiveElement } from '@proton/pass/utils/dom/active-element';
@@ -18,7 +7,18 @@ import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { DOM_SETTLE_MS, nextTick, onNextTick } from '@proton/pass/utils/time/next-tick';
 import noop from '@proton/utils/noop';
 
+import type { AbstractField } from '../../../../types/field';
+import type { FrameField } from '../../../../types/frames';
+import type { DropdownAction } from '../../constants.runtime';
+import { withContext } from '../../context/context';
+import { getFrameID, getFrameParentVisibility } from '../../utils/frame';
+import type { AutofillOptions } from '../autofill/autofill.utils';
+import { createAutofill } from '../autofill/autofill.utils';
+import { isVisible } from '../detector/detector.api';
+import type { IconController } from '../inline/icon/icon.controller';
 import { type FieldAnchor, createFieldAnchor } from './field.anchor';
+import type { InteractivityController } from './field.interactivity';
+import { createInteractivityController } from './field.interactivity';
 import type { FieldTracker } from './field.tracker';
 import { createFieldTracker } from './field.tracker';
 import { createElementTrap, validateAction } from './field.utils';

@@ -4,18 +4,17 @@
  * browser APIs from the top-level scope of this file. "Top-level" refers to
  * any bundled code that runs immediately when the file is loaded. This includes
  * side-effects such as directly executed statements and exported constants. */
-import config from 'proton-pass-extension/app/config';
-import { handleExtensionCommand } from 'proton-pass-extension/lib/extension/commands';
-import { backgroundMessage } from 'proton-pass-extension/lib/message/send-message';
-import 'proton-pass-extension/lib/polyfills/shim';
-import { checkChromeRuntimeError } from 'proton-pass-extension/lib/utils/chrome';
-import { devReload } from 'proton-pass-extension/lib/utils/reload';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
-
 import browser from '@proton/pass/lib/globals/browser';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import noop from '@proton/utils/noop';
 
+import { handleExtensionCommand } from '../../lib/extension/commands';
+import { backgroundMessage } from '../../lib/message/send-message';
+import '../../lib/polyfills/shim';
+import { checkChromeRuntimeError } from '../../lib/utils/chrome';
+import { devReload } from '../../lib/utils/reload';
+import { WorkerMessageType } from '../../types/messages';
+import config from '../config';
 import WorkerMessageBroker from './channel';
 import { CRYPTO_CHUNK_FILES } from './chunks';
 import { createWorkerContext } from './context/factory';

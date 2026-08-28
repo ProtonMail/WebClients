@@ -1,22 +1,18 @@
 import debounce from 'lodash/debounce';
-import { NotificationAction } from 'proton-pass-extension/app/content/constants.runtime';
-import { withContext } from 'proton-pass-extension/app/content/context/context';
-import type { AutosaveService } from 'proton-pass-extension/app/content/services/autosave/autosave.abstract';
-import { getAutofillPageTelemetryDimensions } from 'proton-pass-extension/app/content/utils/autofill-telemetry';
-import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
-import {
-    commit,
-    isFormEntryPromptable,
-    stash,
-    validateFormCredentials,
-} from 'proton-pass-extension/lib/utils/form-entry';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { urlEq } from '@proton/pass/lib/urls/utils/utils';
 import type { AutosaveFormEntry } from '@proton/pass/types/worker/form';
 import { FormEntryStatus } from '@proton/pass/types/worker/form';
 import { logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
+
+import { contentScriptMessage, sendMessage } from '../../../../lib/message/send-message';
+import { commit, isFormEntryPromptable, stash, validateFormCredentials } from '../../../../lib/utils/form-entry';
+import { WorkerMessageType } from '../../../../types/messages';
+import { NotificationAction } from '../../constants.runtime';
+import { withContext } from '../../context/context';
+import { getAutofillPageTelemetryDimensions } from '../../utils/autofill-telemetry';
+import type { AutosaveService } from './autosave.abstract';
 
 export const createAutosaveService = (): AutosaveService => {
     /** Checks the user's settings and prompts for autosave accordingly.

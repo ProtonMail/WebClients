@@ -1,10 +1,3 @@
-import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
-import { withContext } from 'proton-pass-extension/app/worker/context/inject';
-import { backgroundMessage } from 'proton-pass-extension/lib/message/send-message';
-import { isFormEntryCommitted, setFormEntryStatus } from 'proton-pass-extension/lib/utils/form-entry';
-import { parseSender } from 'proton-pass-extension/lib/utils/sender';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
-
 import browser from '@proton/pass/lib/globals/browser';
 import type { URLComponents } from '@proton/pass/lib/urls/types';
 import { urlEq } from '@proton/pass/lib/urls/utils/utils';
@@ -18,6 +11,12 @@ import { merge } from '@proton/pass/utils/object/merge';
 import { requestHasBodyFormData } from '@proton/pass/utils/requests';
 import noop from '@proton/utils/noop';
 
+import { backgroundMessage } from '../../../lib/message/send-message';
+import { isFormEntryCommitted, setFormEntryStatus } from '../../../lib/utils/form-entry';
+import { parseSender } from '../../../lib/utils/sender';
+import { WorkerMessageType } from '../../../types/messages';
+import WorkerMessageBroker from '../channel';
+import { withContext } from '../context/inject';
 import { createMainFrameRequestTracker } from './main-frame.tracker';
 import { createXMLHTTPRequestTracker } from './xmlhttp-request.tracker';
 
