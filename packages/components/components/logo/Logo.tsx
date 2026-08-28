@@ -13,6 +13,7 @@ import MailLogo from './MailLogo';
 import MeetLogo from './MeetLogo';
 import PassLogo from './PassLogo';
 import SheetsLogo from './SheetsLogo';
+import SpacesLogo from './SpacesLogo';
 import VpnLogo from './VpnLogo';
 import WalletLogo from './WalletLogo';
 
@@ -29,6 +30,7 @@ const {
     PROTONLUMO,
     PROTONMEET,
     PROTONAUTHENTICATOR,
+    PROTONSPACES,
 } = APPS;
 
 export type { LogoVariant };
@@ -85,6 +87,10 @@ const Logo = ({ appName, fallback = null, ...rest }: LogoProps) => {
 
     if (appName === PROTONAUTHENTICATOR) {
         return <AuthenticatorLogo {...rest} />;
+    }
+
+    if (appName === PROTONSPACES) {
+        return <SpacesLogo {...rest} />;
     }
 
     return fallback;

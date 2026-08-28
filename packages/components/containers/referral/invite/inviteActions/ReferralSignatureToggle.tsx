@@ -30,6 +30,7 @@ const useAvailableApps = () => {
     const isSheetsAvailable = useFlag('DocsSheetsEnabled');
     const isMeetAvailable = useFlag('PMVC2025');
     const isAuthenticatorAvailable = useFlag('AuthenticatorSettingsEnabled');
+    const isSpacesAvailable = useFlag('SpacesAvailable');
 
     const availableApps = getAvailableApps({
         user,
@@ -39,6 +40,7 @@ const useAvailableApps = () => {
         isSheetsAvailable,
         isMeetAvailable,
         isAuthenticatorAvailable,
+        isSpacesAvailable,
     });
 
     return availableApps;

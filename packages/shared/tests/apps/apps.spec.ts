@@ -62,6 +62,7 @@ const allApps = new Set([
     APPS.PROTONLUMO,
     APPS.PROTONMEET,
     APPS.PROTONAUTHENTICATOR,
+    APPS.PROTONSPACES,
 ]);
 
 const sort = (a: APP_NAMES[], b: APP_NAMES[] | Set<APP_NAMES>) => {
@@ -87,6 +88,7 @@ const defaultOptions: Parameters<typeof getAvailableApps>[0] = {
     isSheetsAvailable: true,
     isMeetAvailable: true,
     isAuthenticatorAvailable: true,
+    isSpacesAvailable: true,
     context: 'app',
 };
 
@@ -282,6 +284,7 @@ describe('available apps', () => {
                     APPS.PROTONLUMO,
                     APPS.PROTONWALLET,
                     APPS.PROTONVPN_SETTINGS,
+                    APPS.PROTONSPACES,
                 ]
             );
         });
@@ -428,6 +431,7 @@ describe('available apps', () => {
                     APPS.PROTONLUMO,
                     APPS.PROTONWALLET,
                     APPS.PROTONVPN_SETTINGS,
+                    APPS.PROTONSPACES,
                 ]
             );
         });

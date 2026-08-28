@@ -13,5 +13,6 @@ export enum Product {
     Admin = 'Admin',
     Pass = 'Pass',
     Meet = 'Meet',
+    Spaces = 'Spaces',
     Other = 'Other',
 }
