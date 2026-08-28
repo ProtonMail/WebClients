@@ -30,8 +30,14 @@ export const getPassAppRoutes = ({
     const hasOrganization = hasOrganizationSetup(organization);
 
     // passbiz2024 or bundlepro2024 or bundlepro2022 or vpnpassbiz2025
+    // MSP subsidiary orgs don't own their subscription (it belongs to the MSP manager), so `subscription`
+    // resolves to the free/dummy value for them. Workaround: MSP currently only runs on Pass Pro, which is
+    // already a B2B plan, so treat subsidiaries as such directly (same pattern as organization/routes.ts).
     const hasPassOrBundleB2B =
-        hasPassBusiness(subscription) || hasAnyB2bBundle(subscription) || hasVPNPassProfessional(subscription);
+        hasPassBusiness(subscription) ||
+        hasAnyB2bBundle(subscription) ||
+        hasVPNPassProfessional(subscription) ||
+        !!organization?.IsSubsidiary;
 
     // passpro2024 — Pass Essentials admins see these pages with an "Upgrade required" badge.
     const isPassEssentials = getPlanName(subscription) === PLANS.PASS_PRO;
