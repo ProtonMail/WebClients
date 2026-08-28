@@ -2229,7 +2229,8 @@
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Kohteen siirtäminen toiseen holviin pyyhkii sen suojatut linkit."
+        "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
+        "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
       ],
       "Moving items": [
         "Siirretään kohteita"
@@ -3432,7 +3433,7 @@
         "Erääntyy"
       ],
       "Expiry Date": [
-        "Voimassaoloaika"
+        "Voimassaolo päättyy"
       ],
       "Export": [
         "Vienti"
@@ -3558,13 +3559,13 @@
         "IP-osoite"
       ],
       "Issuing Authority": [
-        "Myöntävä viranomainen"
+        "Myöntänyt viranomainen"
       ],
       "Issuing Country": [
-        "Myöntävä maa"
+        "Myöntänyt maa"
       ],
       "Issuing State/Country": [
-        "Myöntävä osavaltio/maa"
+        "Myöntänyt osavaltio/maa"
       ],
       "Item ID": [
         "Kohteen ID"
@@ -3930,7 +3931,7 @@
         "Näytä jäsenten ja käyttöoikeuksien yleiskatsaus"
       ],
       "Seed Phrase": [
-        "Siemenlauseke"
+        "Siemenlause"
       ],
       "Select a domain": [
         "Valitse verkkotunnus"
