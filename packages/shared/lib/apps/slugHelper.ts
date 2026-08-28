@@ -17,6 +17,7 @@ export const ALLOWED_APPS = [
     APPS.PROTONLUMO,
     APPS.PROTONMEET,
     APPS.PROTONAUTHENTICATOR,
+    APPS.PROTONSPACES,
 ];
 
 export const getSlugFromApp = (app: APP_NAMES) => APPS_CONFIGURATION[app].settingsSlug;

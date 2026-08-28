@@ -17,6 +17,7 @@ type AllowedProductHeaders =
     | 'lumo'
     | 'meet'
     | 'vpn'
+    | 'spaces'
     | 'business'
     | 'generic';
 
@@ -42,6 +43,7 @@ export const productParamToHeader: { [key in NonNullable<ProductParam>]: Allowed
     'proton-vpn-browser-extension': 'vpn',
     'proton-vpn-settings': 'vpn',
     'proton-wallet': 'wallet',
+    'proton-spaces': 'spaces',
     business: 'business',
     generic: 'generic',
 };

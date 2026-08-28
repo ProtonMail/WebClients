@@ -80,7 +80,7 @@ export interface OrganizationIdentityOutput {
 
 export type OrganizationSettingsAllowedProduct = Extract<
     Product,
-    'Mail' | 'Calendar' | 'VPN' | 'Pass' | 'Drive' | 'Wallet' | 'Lumo' | 'Meet' | 'Authenticator'
+    'Mail' | 'Calendar' | 'VPN' | 'Pass' | 'Drive' | 'Wallet' | 'Lumo' | 'Meet' | 'Authenticator' | 'Spaces'
 >;
 
 export type SerializedOrganizationSettingsAllowedProduct = OrganizationSettingsAllowedProduct | 'All';

@@ -21,6 +21,7 @@ const SidebarAppsList = () => {
     const isSheetsAvailable = useFlag('DocsSheetsEnabled');
     const isMeetAvailable = useFlag('PMVC2025');
     const isAuthenticatorAvailable = useFlag('AuthenticatorSettingsEnabled');
+    const isSpacesAvailable = useFlag('SpacesAvailable');
 
     const availableApps = getAvailableApps({
         context: 'dropdown',
@@ -30,6 +31,7 @@ const SidebarAppsList = () => {
         isSheetsAvailable,
         isMeetAvailable,
         isAuthenticatorAvailable,
+        isSpacesAvailable,
     });
 
     if (!availableApps.length) {

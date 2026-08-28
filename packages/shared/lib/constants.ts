@@ -60,6 +60,8 @@ export const MEET_SHORT_APP_NAME = 'Meet';
 export const MEET_APP_NAME = `${BRAND_NAME} ${MEET_SHORT_APP_NAME}`;
 export const ACCOUNT_SHORT_APP_NAME = 'Account';
 export const ACCOUNT_APP_NAME = `${BRAND_NAME} ${ACCOUNT_SHORT_APP_NAME}`;
+export const SPACES_SHORT_APP_NAME = 'Spaces';
+export const SPACES_APP_NAME = `${BRAND_NAME} ${SPACES_SHORT_APP_NAME}`;
 
 // Third-party payment method brand name.
 export const IDEAL_BRAND_NAME = 'iDEAL';
@@ -87,6 +89,7 @@ export const APPS = {
     PROTONLUMO: 'proton-lumo',
     PROTONAUTHENTICATOR: 'proton-authenticator',
     PROTONMEET: 'proton-meet',
+    PROTONSPACES: 'proton-spaces',
 } as const;
 
 interface AppConfiguration {
@@ -335,6 +338,19 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
         settingsSlug: 'meet',
         product: Product.Meet,
     },
+    [APPS.PROTONSPACES]: {
+        publicPath: '',
+        subdomain: 'spaces',
+        name: SPACES_APP_NAME,
+        bareName: 'Spaces',
+        clientID: 'web-spaces',
+        windowsClientID: 'windows-spaces',
+        macosClientID: 'macos-spaces',
+        linuxClientID: 'linux-spaces',
+        icon: 'brand-proton',
+        settingsSlug: 'spaces',
+        product: Product.Spaces,
+    },
 };
 
 export enum PRODUCT {
@@ -355,7 +371,7 @@ export enum PRODUCT_BIT {
     VPN = 4,
     PASS = 8,
     WALLET = 16,
-    NEUTRON = 32,
+    SPACES = 32,
     LUMO = 64,
     MEET = 256,
 }
@@ -1011,6 +1027,7 @@ export enum CLIENT_TYPES {
     DRIVE = 4,
     PASS = 5,
     WALLET = 6,
+    SPACES = 7,
     LUMO = 9,
     AUTHENTICATOR = 10,
     MEET = 11,
