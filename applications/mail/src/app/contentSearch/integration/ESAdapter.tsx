@@ -96,7 +96,7 @@ export class ESAdapter implements FunctionsV2 {
     private lastSearch?: Search;
     private coalescedResults?: FrameCoalescer<Parameters<ESSetResultsList<ESBaseMessage, ESMessageContent>>>;
     private isV1ContentIndexingDone = false;
-    /** Set when an import failed and left the v2 index partial; searches fall back to v1 from then on. */
+    /** Set when an import failed and left the v2 index partial; searches go to the server from then on. */
     private isV2IndexIncomplete = false;
     /** The current v1+v2 indexing job, if one is ongoing (a fresh index or a post-event refresh). */
     private job?: IndexingJob;

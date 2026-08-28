@@ -13,8 +13,8 @@ type SearchResult = ESItem<ESBaseMessage, ESMessageContent>;
 
 /**
  * How a search ended. `no-index` means the query never ran because there was nothing to run it
- * against, which is not the same as finding no matches: the caller has to fall back to another engine
- * rather than present an empty result set.
+ * against, which is not the same as finding no matches: the caller has to send the query elsewhere
+ * (the server) rather than present an empty result set.
  */
 export type SearchOutcome = 'completed' | 'no-index' | 'failed';
 
