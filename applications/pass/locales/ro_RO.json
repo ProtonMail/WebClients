@@ -868,6 +868,9 @@
       "Check if your passwords have been exposed": [
         "Verificați dacă parolele v-au fost expuse"
       ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total }": [
+        "Se verifică ${ compromised.progress.completed } din ${ compromised.progress.total }"
+      ],
       "Create unique passwords": [
         "Creați parole unice"
       ],
@@ -1788,6 +1791,9 @@
       ],
       "Change your password": [
         "Modificare parolă"
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
+        "Se verifică parolele ${ compromised.progress.completed } din ${ compromised.progress.total }"
       ],
       "Confirm your extra password to proceed with its removal.": [
         "Confirmați parola suplimentară pentru a continua eliminarea sa."

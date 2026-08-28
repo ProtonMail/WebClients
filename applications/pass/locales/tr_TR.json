@@ -865,6 +865,9 @@
       "Check if your passwords have been exposed": [
         "Parolalarınızın açığa çıkıp çıkmadığını kontrol edin"
       ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total }": [
+        "${ compromised.progress.completed } / ${ compromised.progress.total } denetleniyor"
+      ],
       "Create unique passwords": [
         "Benzersiz parolalar oluşturun"
       ],
@@ -1766,6 +1769,9 @@
       ],
       "Change your password": [
         "Parolanızı değiştirin"
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
+        "${ compromised.progress.completed } / ${ compromised.progress.total } parola denetleniyor"
       ],
       "Confirm your extra password to proceed with its removal.": [
         "Kaldırma işlemini tamamlamak için ek parolanızı doğrulayın."
