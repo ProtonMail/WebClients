@@ -1,0 +1,113 @@
+{
+    "$schema": "https://unpkg.com/knip@6/schema.json",
+    "webpack": false,
+    "rules": {
+        "unlisted": "off",
+        "unresolved": "off",
+        "binaries": "off"
+    },
+    "ignore": ["**/*.d.ts", "**/vendor/**"],
+    "ignoreWorkspaces": ["packages/wasm/andromeda"],
+    "workspaces": {
+        ".": {
+            "entry": [],
+            "project": []
+        },
+        "applications/*": {
+            "entry": [
+                "src/app/index.{ts,tsx}",
+                "src/index.{ts,tsx}",
+                "src/main.ts",
+                "src/preload.ts",
+                "src/renderer.ts",
+                "src/**/*.stories.tsx",
+                "webpack.config.{js,ts}"
+            ],
+            "project": ["src/**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "applications/account": {
+            "entry": [
+                "src/app/index.{ts,tsx}",
+                "src/app/hostStorage.ts",
+                "src/app/private.tsx",
+                "src/app/public.tsx",
+                "src/lite/index.{ts,tsx}",
+                "src/pages/**/*.{ts,tsx}",
+                "src/**/*.stories.tsx"
+            ],
+            "project": ["src/**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "applications/authenticator": {
+            "entry": ["src/app/main.tsx", "src/**/*.stories.tsx"],
+            "project": ["src/**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "applications/calendar": {
+            "entry": ["src/app/index.{ts,tsx}", "src/app/bookings.tsx", "src/**/*.stories.tsx"],
+            "project": ["src/**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "applications/drive": {
+            "entry": ["src/app/index.{ts,tsx}", "src/app/urls.tsx", "src/**/*.stories.tsx"],
+            "project": ["src/**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "applications/lumo": {
+            "entry": ["src/app/index.{ts,tsx}", "src/app/remote/service-worker/worker.ts", "src/**/*.stories.tsx"],
+            "project": ["src/**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "applications/mail": {
+            "entry": ["src/app/index.{ts,tsx}", "src/app/eo.tsx", "src/**/*.stories.tsx"],
+            "project": ["src/**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "applications/pass-extension": {
+            "entry": [
+                "src/app/content/client.ts",
+                "src/app/content/elements.ts",
+                "src/app/content/firefox/index.ts",
+                "src/app/content/orchestrator.ts",
+                "src/app/content/safari/index.ts",
+                "src/app/content/services/inline/dropdown/app/index.tsx",
+                "src/app/content/services/inline/notification/app/index.tsx",
+                "src/app/content/webauthn.ts",
+                "src/app/pages/internal/index.tsx",
+                "src/app/pages/onboarding/index.tsx",
+                "src/app/pages/settings/index.tsx",
+                "src/app/popup/index.tsx",
+                "src/app/worker/index.ts",
+                "src/app/worker/offscreen/offscreen.ts",
+                "src/lib/utils/disable-browser-trap.ts",
+                "src/lib/utils/safari-patch.ts",
+                "src/lib/utils/web-accessible-resource.ts",
+                "src/**/*.stories.tsx"
+            ],
+            "project": ["src/**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "packages/*": {
+            "entry": ["index.{ts,tsx}", "lib/index.{ts,tsx}", "src/index.{ts,tsx}", "babel.config.{js,ts}"],
+            "project": ["**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "packages/mail-renderer": {
+            "entry": [
+                "constants.ts",
+                "components/MessageBodyIframe.tsx",
+                "helpers/transforms/transforms.ts",
+                "helpers/transforms/transformEscape.ts",
+                "babel.config.{js,ts}"
+            ],
+            "project": ["**/*.{ts,tsx}"],
+            "ignore": ["**"]
+        },
+        "tests": { "entry": [], "project": [], "playwright": false, "ignore": ["**"] },
+        "tests/mail-renderer": { "entry": [], "project": [], "playwright": false, "ignore": ["**"] },
+        "tests/packages/*": { "entry": [], "project": [], "playwright": false, "ignore": ["**"] },
+        "utilities/*": { "entry": [], "project": [], "ignore": ["**"] },
+        "vendor/*/*": { "entry": [], "project": [], "ignore": ["**"] }
+    }
+}

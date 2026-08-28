@@ -20,6 +20,8 @@
         "config-app": "(packages/config/install 2>/dev/null) || true",
         "create-atom": "yarn workspace @proton/atoms create-atom",
         "postinstall": "is-ci || (husky; yarn run config-app)",
+        "knip": "knip --no-exit-code",
+        "knip:staged": "node utilities/knip-staged/knip-staged.mjs",
         "nyc": "npx nyc",
         "start-all": "cd utilities/local-sso && bash ./run.sh",
         "version": "yarn workspace @proton/version run version"
@@ -55,6 +57,7 @@
         "@types/jest-when": "^3.5.5",
         "@yarnpkg/types": "^4.0.1",
         "husky": "^9.1.7",
+        "knip": "^6.32.2",
         "lint-staged": "^17.3.0",
         "nyc": "^17.1.0",
         "prettier": "^3.9.6",
