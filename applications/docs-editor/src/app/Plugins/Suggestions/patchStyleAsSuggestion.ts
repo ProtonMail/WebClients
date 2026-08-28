@@ -1,5 +1,5 @@
 import { $forEachSelectedTextNode, $patchStyleText, getStyleObjectFromCSS } from '@lexical/selection'
-import type { Logger } from '@proton/utils/logs'
+import type { Logger } from '@proton/shared/lib/logs'
 import { $getSelection, $isRangeSelection, $setSelection } from 'lexical'
 import { GenerateUUID } from '@proton/docs-shared'
 import type { ProtonNode } from './ProtonNode'

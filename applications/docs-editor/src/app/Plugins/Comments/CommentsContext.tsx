@@ -2,7 +2,7 @@ import type { CommentInterface, CommentThreadInterface, SafeDocsUserState } from
 import { createContext, useContext } from 'react'
 import type { LexicalNode, NodeKey, RangeSelection } from 'lexical'
 import type { useConfirmActionModal } from '@proton/components/components/confirmActionModal/ConfirmActionModal'
-import type { LoggerInterface } from '@proton/utils/logs'
+import type { LoggerInterface } from '@proton/shared/lib/logs'
 
 type CommentsContextValue = {
   userName: string

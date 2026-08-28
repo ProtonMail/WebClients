@@ -1,4 +1,4 @@
-import type { LoggerInterface } from '@proton/utils/logs'
+import type { LoggerInterface } from '@proton/shared/lib/logs'
 import { utf8StringToUint8Array } from '@protontech/crypto/utils'
 import { Observable } from 'lib0/observable'
 import { Doc, decodeUpdate, encodeStateAsUpdate, mergeUpdates } from 'yjs'

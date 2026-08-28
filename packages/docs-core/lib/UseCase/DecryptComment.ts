@@ -11,7 +11,7 @@ import metrics from '@proton/metrics'
 import type { CommentResponseDto } from '../Api/Types/CommentResponseDto'
 import { canKeysSign } from '../Types/DocumentEntitlements'
 import type { SignedPlaintextContent } from '@proton/docs-proto'
-import type { LoggerInterface } from '@proton/utils/logs'
+import type { LoggerInterface } from '@proton/shared/lib/logs'
 
 export class DecryptComment implements UseCaseInterface<Comment> {
   constructor(

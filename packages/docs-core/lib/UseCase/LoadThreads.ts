@@ -5,7 +5,7 @@ import type { DecryptComment } from './DecryptComment'
 import type { DocsApi } from '../Api/DocsApi'
 import type { DocumentEntitlements, PublicDocumentEntitlements } from '../Types/DocumentEntitlements'
 import type { LocalCommentsState } from '../Services/Comments/LocalCommentsState'
-import type { LoggerInterface } from '@proton/utils/logs'
+import type { LoggerInterface } from '@proton/shared/lib/logs'
 import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
 
 const THREAD_LOAD_BATCH_SIZE = 5

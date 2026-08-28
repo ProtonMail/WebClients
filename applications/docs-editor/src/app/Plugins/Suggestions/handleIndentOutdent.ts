@@ -3,7 +3,7 @@ import type { ElementNode } from 'lexical'
 import { $getSelection, $isRangeSelection, $isElementNode } from 'lexical'
 import { $createSuggestionNode, $isSuggestionNode } from './ProtonNode'
 import { GenerateUUID } from '@proton/docs-shared'
-import type { Logger } from '@proton/utils/logs'
+import type { Logger } from '@proton/shared/lib/logs'
 import type { IndentChangeSuggestionProperties } from './Types'
 
 export function $handleIndentOutdentAsSuggestion(

@@ -1,6 +1,6 @@
 import type { AppPlatform, FileMenuAction } from '@proton/docs-shared'
 import type { FeatureFlag } from '@proton/unleash/Flags'
-import type { LoggerInterface } from '@proton/utils/logs'
+import type { LoggerInterface } from '@proton/shared/lib/logs'
 import type { PropsWithChildren } from 'react'
 import { createContext, useContext } from 'react'
 
