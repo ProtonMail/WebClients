@@ -69,11 +69,13 @@
         "@proton/i18n": "workspace:^",
         "@proton/jest-env": "workspace:^",
         "@proton/testing": "workspace:^",
+        "@swc/jest": "^0.2.39",
         "@testing-library/jest-dom": "^6.9.1",
         "@testing-library/react": "^15.0.7",
         "@testing-library/react-hooks": "^8.0.1",
         "@testing-library/user-event": "^14.6.6",
         "@types/jest": "^30.0.0",
+        "@typescript/native": "npm:typescript@^7.0.2",
         "browserslist": "^4.28.8",
         "core-js": "^3.50.0",
         "cross-env": "^10.1.0",
@@ -82,6 +84,6 @@
         "jest": "^30.4.2",
         "jest-junit": "^16.0.0",
         "prettier": "^3.9.6",
-        "typescript": "^6.0.3"
+        "typescript": "npm:@typescript/typescript6@^6.0.2"
     }
 }
