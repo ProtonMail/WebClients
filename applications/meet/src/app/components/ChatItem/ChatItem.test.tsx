@@ -41,6 +41,7 @@ const timestamp = 1718534400;
 
 const roomName = 'Mock Room Name';
 
+const mockEncryptedDisplayName = 'encrypted-john-doe';
 const mockParticipantName = 'John Doe';
 
 const mockChatMessage: MeetChatMessage = {
@@ -77,7 +78,7 @@ const createMockStore = () => {
                 participantsMap: {
                     '123': {
                         ParticipantUUID: '123',
-                        DisplayName: mockParticipantName,
+                        EncryptedDisplayName: mockEncryptedDisplayName,
                     },
                 },
                 participantDecryptedNameMap: {

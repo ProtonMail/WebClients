@@ -43,6 +43,7 @@ const createMockStore = ({ isHost = false, isScreenSharing = false, isRecording 
                 participantsMap: {
                     [participantIdentity]: {
                         ParticipantUUID: participantIdentity,
+                        EncryptedDisplayName: 'encrypted-participant-1',
                         IsAdmin: isHost
                             ? ParticipantCapabilityPermission.Allowed
                             : ParticipantCapabilityPermission.NotAllowed,
