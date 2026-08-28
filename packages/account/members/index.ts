@@ -504,30 +504,29 @@ export interface RoleAssignmentsResult {
     changed: boolean;
 }
 
-export const updateMemberRoles = ({
+export const updateMemberRoleByIds = ({
     member,
-    currentRoles,
+    currentRoleIds,
     desiredRoleIds,
     api,
 }: {
     member: Member;
-    currentRoles: RoleAssignment[];
+    currentRoleIds: Set<string>;
     desiredRoleIds: Set<string>;
     api: Api;
 }): ThunkAction<Promise<RoleAssignmentsResult>, MembersState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch, _getState, extra) => {
-        const isAdminRoleEnabled = extra.unleashClient?.isEnabled('AdminRoleMVP') ?? false;
-        if (!isAdminRoleEnabled) {
+        const isEnabled =
+            (extra.unleashClient?.isEnabled('AdminRoleMVP') || extra.unleashClient?.isEnabled('SyncOwnerRoleClient')) ??
+            false;
+        if (!isEnabled) {
             return { roleAssignments: [], changed: false };
         }
-        // Only user-sourced roles can be added/removed via this endpoint
-        const groupSourcedRoleIds = getGroupSourcedRoleIds(currentRoles);
-        const previousRoleIds = getUserSourcedRoleIds(currentRoles);
-        const add = [...desiredRoleIds].filter((id) => !previousRoleIds.has(id) && !groupSourcedRoleIds.has(id));
-        const remove = [...previousRoleIds].filter((id) => !desiredRoleIds.has(id));
+        const add = [...desiredRoleIds].filter((id) => !currentRoleIds.has(id));
+        const remove = [...currentRoleIds].filter((id) => !desiredRoleIds.has(id));
 
         if (add.length === 0 && remove.length === 0) {
-            return { roleAssignments: currentRoles, changed: false };
+            return { roleAssignments: [], changed: false };
         }
 
         const { RoleAssignments, RequiresOrgKeyPromotion } = await api<{
@@ -542,9 +541,8 @@ export const updateMemberRoles = ({
             })
         );
 
-        const currentRolesRequireOrgKey = currentRoles.some(({ Role }) => isOrgKeyRequired(Role));
         const desiredRolesRequireOrgKey = RoleAssignments.some(({ Role }) => isOrgKeyRequired(Role));
-        if (currentRolesRequireOrgKey && !desiredRolesRequireOrgKey) {
+        if (remove.length > 0 && !desiredRolesRequireOrgKey) {
             // The API demotes the member when its last org key role is removed
             // Refresh the roles already before next event loop, but fail gracefully
             await getMember(api, member.ID)
@@ -553,6 +551,35 @@ export const updateMemberRoles = ({
         }
 
         return { roleAssignments: RoleAssignments, changed: true };
+    };
+};
+
+export const updateMemberRoles = ({
+    member,
+    currentRoles,
+    desiredRoleIds,
+    api,
+}: {
+    member: Member;
+    currentRoles: RoleAssignment[];
+    desiredRoleIds: Set<string>;
+    api: Api;
+}): ThunkAction<Promise<RoleAssignmentsResult>, MembersState, ProtonThunkArguments, UnknownAction> => {
+    return async (dispatch) => {
+        const currentRoleIds = getUserSourcedRoleIds(currentRoles);
+        const groupSourcedRoleIds = getGroupSourcedRoleIds(currentRoles);
+        // Only user-sourced roles can be added/removed via this endpoint
+        const result = await dispatch(
+            updateMemberRoleByIds({
+                member,
+                currentRoleIds,
+                desiredRoleIds: new Set(
+                    [...desiredRoleIds].filter((id) => currentRoleIds.has(id) || !groupSourcedRoleIds.has(id))
+                ),
+                api,
+            })
+        );
+        return result.changed ? result : { roleAssignments: currentRoles, changed: false };
     };
 };
 

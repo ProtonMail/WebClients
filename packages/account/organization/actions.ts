@@ -18,6 +18,7 @@ import {
     createPasswordlessOrganizationKeys,
     getKeyRotationPayload,
 } from '../organizationKey/actions';
+import type { OrganizationRolesState } from '../organizationRoles';
 import { type SubscriptionState, subscriptionThunk } from '../subscription';
 import { userThunk } from '../user';
 
@@ -37,7 +38,7 @@ export const setSelfQuota = (
     quota: number
 ): ThunkAction<
     Promise<void>,
-    OrganizationState & MemberState & RotateOrganizationKeysState,
+    OrganizationState & MemberState & RotateOrganizationKeysState & OrganizationRolesState,
     ProtonThunkArguments,
     UnknownAction
 > => {
