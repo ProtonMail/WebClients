@@ -2535,8 +2535,8 @@
       "Create an account or sign in to save your chats and increase limits.": [
         "Créez un compte ou connectez-vous pour enregistrer vos discussions et augmenter les limites."
       ],
-      "You're on ${ LUMO_SHORT_APP_NAME } Lite. Switch to Max for more capable answers.": [
-        "Vous utilisez ${ LUMO_SHORT_APP_NAME } Lite. Passez à la version Max pour obtenir des réponses plus complètes."
+      "You're on ${ selectedModelLabel }. Switch to Max for more capable answers.": [
+        "Vous utilisez ${ selectedModelLabel }. Passez à la version Max pour obtenir des réponses plus complètes."
       ]
     },
     "collider_2025: Option": {
@@ -2621,8 +2621,17 @@
       "${ BRAND_NAME } Workspace": [
         "${ BRAND_NAME } Workspace"
       ],
+      "${ LUMO_SHORT_APP_NAME } Plus": [
+        "${ LUMO_SHORT_APP_NAME } Plus"
+      ],
+      "${ LUMO_SHORT_APP_NAME } Pro": [
+        "${ LUMO_SHORT_APP_NAME } Pro"
+      ],
       "Business": [
         "Business"
+      ],
+      "Personal": [
+        "Personnel"
       ],
       "Plus": [
         "Plus"
@@ -3042,6 +3051,9 @@
       ],
       "Elevate your business AI experience": [
         "Améliorez votre expérience d'IA en entreprise"
+      ],
+      "From only": [
+        "À partir de seulement"
       ],
       "Get": [
         "Obtenir"
@@ -10038,6 +10050,9 @@
       ],
       "Payment verification": [
         "Vérification du paiement"
+      ],
+      "Plan type": [
+        "Type d'abonnement"
       ],
       "Processing...": [
         "Traitement en cours…"
