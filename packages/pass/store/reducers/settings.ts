@@ -26,6 +26,8 @@ import type { AutoFillSettings, AutoSaveSettings, AutoSuggestSettings, PasskeySe
 import { or } from '@proton/pass/utils/fp/predicates';
 import { partialMerge } from '@proton/pass/utils/object/merge';
 
+import type { OfflinePromptSettings } from '../../lib/settings/offline-prompt';
+
 export type SettingsState = {
     aliasTrashAcknowledged?: boolean;
     autofill: AutoFillSettings;
@@ -45,6 +47,8 @@ export type SettingsState = {
     lockMode: LockMode;
     lockTTL?: number;
     offlineEnabled?: boolean;
+    /** Tracks dismissals of the offline setup prompt. Local-only. */
+    offlinePrompt?: OfflinePromptSettings;
     passkeys: PasskeySettings;
     passwordOptions: MaybeNull<GeneratePasswordConfig>;
     showUsernameField?: boolean;
