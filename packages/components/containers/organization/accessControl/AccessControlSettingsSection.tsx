@@ -100,7 +100,6 @@ const AccessControlSettingsSection = () => {
 
     const isAuthenticatorAvailable = useFlag('AuthenticatorSettingsEnabled');
     const isSpacesAvailable = useFlag('SpacesAvailable');
-    const isMeetAvailable = useFlag('PMVC2025');
 
     const { createNotification } = useNotifications();
     const dispatch = useDispatch();
@@ -186,7 +185,6 @@ const AccessControlSettingsSection = () => {
             showSSOBadge: !appSupportsSSO(APPS.PROTONWALLET) && hasSsoConfig,
         },
         {
-            available: isMeetAvailable,
             title: MEET_APP_NAME,
             description: c('Info').t`Secure, end-to-end encrypted video conferencing`,
             logo: <Logo appName={APPS.PROTONMEET} variant="glyph-only" size={8} />,

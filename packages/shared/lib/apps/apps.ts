@@ -16,7 +16,6 @@ export interface GetAvailableAppsByUserTypeArguments {
     user?: User;
     context: AppContext;
     isDocsHomepageAvailable: boolean;
-    isMeetAvailable: boolean;
     isSheetsAvailable: boolean;
     isAuthenticatorAvailable: boolean;
     isSpacesAvailable: boolean;
@@ -119,9 +118,6 @@ export const getAvailableApps = (
     }
     if (options.context === 'dropdown' && !options.isSheetsAvailable) {
         removeApps.add(APPS.PROTONSHEETS);
-    }
-    if (options.context === 'dropdown' && !options.isMeetAvailable) {
-        removeApps.add(APPS.PROTONMEET);
     }
     if (options.context === 'dropdown' && !options.isAuthenticatorAvailable) {
         removeApps.add(APPS.PROTONAUTHENTICATOR);

@@ -59,7 +59,6 @@ export enum CommonFeatureFlag {
     LumoSignInHelp = 'LumoSignInHelp',
     AllowGuestInit = 'AllowGuestInit',
     NewScheduleOption = 'NewScheduleOption',
-    PMVC2025 = 'PMVC2025',
     AutoAddMeetingLink = 'AutoAddMeetingLink',
     AvatarColorWeb = 'AvatarColorWeb',
     AuthenticatorSettingsEnabled = 'AuthenticatorSettingsEnabled',
