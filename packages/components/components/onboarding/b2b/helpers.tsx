@@ -52,7 +52,6 @@ export const getFeatures = (
     const plan = getPlan(subscription)?.Name;
     const canSeeGroupsSection = canUseGroups(plan, {
         isUserGroupsNoCustomDomainEnabled: false,
-        isUserGroupsPassBusinessEnabled: false,
     });
 
     return [

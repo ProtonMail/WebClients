@@ -58,7 +58,6 @@ const INITIAL_FORM_VALUES = (organization?: Organization): GroupFormData => ({
 const useGroupsManagementLogic = (): GroupsManagementReturn | undefined => {
     const [organization] = useOrganization();
     const isUserGroupsNoCustomDomainEnabled = useFlag('UserGroupsNoCustomDomain');
-    const isUserGroupsPassBusinessEnabled = useFlag('UserGroupsPassBusiness');
 
     const handleError = useErrorHandler();
     const [members] = useMembers();
@@ -450,7 +449,6 @@ const useGroupsManagementLogic = (): GroupsManagementReturn | undefined => {
             (invalidGroupSuggestion && filteredGroups.length > 0) ||
             !canUseGroups(organization.PlanName, {
                 isUserGroupsNoCustomDomainEnabled,
-                isUserGroupsPassBusinessEnabled,
             });
 
         if (isPlanUnsupported) {
