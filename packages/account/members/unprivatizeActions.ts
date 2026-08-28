@@ -19,7 +19,7 @@ import {
     getSignedInvitationData,
     getUnprivatizeMemberPayload,
 } from '@proton/shared/lib/keys';
-import { getIsMemberSetup } from '@proton/shared/lib/keys/memberHelper';
+import { getIsMemberSetup, getMemberUnprivatizationMode } from '@proton/shared/lib/keys/memberHelper';
 import noop from '@proton/utils/noop';
 
 import { type EntitlementsState, entitlementsThunk } from '../entitlements';
@@ -28,9 +28,11 @@ import { getKTUserContext } from '../kt/actions';
 import { type MemberState, memberThunk } from '../member';
 import { getPendingUnprivatizationRequest, memberAcceptUnprivatization } from '../member/actions';
 import { type OrganizationKeyState, organizationKeyThunk } from '../organizationKey';
+import type { OrganizationRolesState } from '../organizationRoles';
 import { userThunk } from '../user';
 import { userKeysThunk } from '../userKeys';
 import { MemberCreationValidationError, type MembersState, getMemberAddresses } from './index';
+import { updateOwnerRole } from './updateOwnerRole';
 
 export const unprivatizeMember = ({
     member,
@@ -44,7 +46,7 @@ export const unprivatizeMember = ({
     api: Api;
 }): ThunkAction<
     Promise<void>,
-    KtState & MemberState & MembersState & OrganizationKeyState,
+    KtState & MemberState & MembersState & OrganizationKeyState & OrganizationRolesState,
     ProtonThunkArguments,
     UnknownAction
 > => {
@@ -63,6 +65,9 @@ export const unprivatizeMember = ({
             ktUserContext,
             options,
         });
+        if (getMemberUnprivatizationMode(member).makeAdmin) {
+            await dispatch(updateOwnerRole({ member, makeAdmin: true, api }));
+        }
         await api(unprivatizeMemberKeysRoute(member.ID, payload));
         if (member.Self) {
             await Promise.all([
@@ -126,7 +131,7 @@ export const unprivatizeSelf = ({
     member: Member;
 }): ThunkAction<
     Promise<void>,
-    KtState & MemberState & MembersState & OrganizationKeyState,
+    KtState & MemberState & MembersState & OrganizationKeyState & OrganizationRolesState,
     ProtonThunkArguments,
     UnknownAction
 > => {
@@ -196,7 +201,7 @@ export const unprivatizeSelfForMsp = ({
     api: Api;
 }): ThunkAction<
     Promise<void>,
-    KtState & MemberState & MembersState & OrganizationKeyState & EntitlementsState,
+    KtState & MemberState & MembersState & OrganizationKeyState & EntitlementsState & OrganizationRolesState,
     ProtonThunkArguments,
     UnknownAction
 > => {

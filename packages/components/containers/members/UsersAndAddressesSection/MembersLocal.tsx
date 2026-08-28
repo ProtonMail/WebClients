@@ -65,12 +65,14 @@ export const MembersLocal = ({ app, showUsage = false }: { app: APP_NAMES; showU
                 }
             />
 
-            <RoleAssignmentPausedBanner
-                roleAssignmentSource={ROLE_SOURCE.USER}
-                pausedCount={membersHook.meta.pausedMembers.length}
-                isResuming={membersHook.meta.resumingMemberID !== undefined}
-                onToggle={() => membersHook.actions.handleToggleRoleAssignments()}
-            />
+            {!membersHook.meta.isSubUserEditModalRendered && (
+                <RoleAssignmentPausedBanner
+                    roleAssignmentSource={ROLE_SOURCE.USER}
+                    pausedCount={membersHook.meta.pausedMembers.length}
+                    isResuming={membersHook.meta.resumingMemberID !== undefined}
+                    onToggle={() => membersHook.actions.handleToggleRoleAssignments()}
+                />
+            )}
 
             <span className="sr-only" aria-live="polite" aria-atomic="true">
                 {c('Info').ngettext(msgid`${total} user found`, `${total} users found`, total)}

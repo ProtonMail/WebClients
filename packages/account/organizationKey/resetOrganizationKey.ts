@@ -19,6 +19,7 @@ import { type MembersState, membersThunk, selectMembers, upsertMember } from '..
 import { privatizeMember } from '../members/actions';
 import { getMember } from '../members/getMember';
 import { requestUnprivatization, unprivatizeSelf } from '../members/unprivatizeActions';
+import type { OrganizationRolesState } from '../organizationRoles';
 import { type UserKeysState, selectUserKeys } from '../userKeys';
 import { getKeyRotationPayload, rotatePasswordlessOrganizationKeys } from './actions';
 import type { RotateOrganizationKeysState } from './actions';
@@ -37,9 +38,13 @@ import { organizationKeyThunk } from './index';
 export type ResetOrganizationKeyStep = 'privatize' | 'rotate' | 'unprivatize';
 
 /**
- * `unprivatizeSelf` needs the single member and the member list models on top of what the rotation needs.
+ * `unprivatizeSelf` needs the single member, the member list and the organization roles models on top of what the
+ * rotation needs.
  */
-export type ResetOrganizationKeyState = RotateOrganizationKeysState & MemberState & MembersState;
+export type ResetOrganizationKeyState = RotateOrganizationKeysState &
+    MemberState &
+    MembersState &
+    OrganizationRolesState;
 
 export type ResetOrganizationKeyStepStatus = 'pending' | 'running' | 'done';
 

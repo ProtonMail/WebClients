@@ -26,6 +26,7 @@ import { getKTUserContext } from '../kt/actions';
 import type { MemberState } from '../member';
 import type { OrganizationKeyState } from '../organizationKey';
 import { organizationKeyThunk } from '../organizationKey';
+import type { OrganizationRolesState } from '../organizationRoles';
 import { userKeysThunk } from '../userKeys';
 import { getMember } from './getMember';
 import {
@@ -40,7 +41,7 @@ import {
 } from './index';
 import { unprivatizeMember } from './unprivatizeActions';
 
-type RequiredState = KtState & MemberState & MembersState & OrganizationKeyState;
+type RequiredState = KtState & MemberState & MembersState & OrganizationKeyState & OrganizationRolesState;
 
 export const selectUnprivatizationState = (state: MembersState) => state.members.unprivatization;
 
