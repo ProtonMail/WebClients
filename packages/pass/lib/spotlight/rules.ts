@@ -10,7 +10,6 @@ import {
     selectCreatedItemsCount,
     selectHasPendingShareAccess,
     selectLockEnabled,
-    selectOfflineEnabled,
     selectPassPlan,
     selectUserData,
     selectUserPlan,
@@ -218,17 +217,6 @@ export const createAccessTokensDiscoveryRule = () =>
     createSpotlightRule({
         message: SpotlightMessage.ACCESS_TOKENS_DISCOVERY,
         when: (previous) => !previous,
-    });
-
-export const createOfflineSetupRule = (store: Store) =>
-    createSpotlightRule({
-        message: SpotlightMessage.OFFLINE_SETUP,
-        when: (previous) => {
-            if (previous) return false;
-            const state = store.getState();
-            const offlineEnabled = selectOfflineEnabled(state);
-            return !offlineEnabled;
-        },
     });
 
 export const createSshAgentInstructionsRules = () =>

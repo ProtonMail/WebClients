@@ -37,11 +37,14 @@ import { createApi } from '@proton/pass/lib/api/factory';
 import { desktopLockAdapterFactory } from '@proton/pass/lib/auth/lock/desktop/adapter';
 import { passwordLockAdapterFactory } from '@proton/pass/lib/auth/lock/password/adapter';
 import { sessionLockAdapterFactory } from '@proton/pass/lib/auth/lock/session/adapter';
+import { LockMode } from '@proton/pass/lib/auth/lock/types';
+import type { AuthSession } from '@proton/pass/lib/auth/session';
 import { createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
 import { clientBooted, clientStatusResolved } from '@proton/pass/lib/client';
 import { exposePassCrypto } from '@proton/pass/lib/crypto';
 import { createPassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { QA_SERVICE } from '@proton/pass/lib/qa/service';
+import { settingsEditIntent } from '@proton/pass/store/actions';
 import { registerStoreEffect } from '@proton/pass/store/connect/effect';
 import { selectLockSetupRequired } from '@proton/pass/store/selectors/settings';
 import { AppStatus } from '@proton/pass/types/worker/state';
@@ -53,6 +56,13 @@ import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import { WorkerContext, withContext } from './inject';
+
+const OFFLINE_SESSION_KEYS: (keyof AuthSession)[] = [
+    'offlineKD',
+    'offlineConfig',
+    'offlineVerifier',
+    'encryptedOfflineKD',
+];
 
 export const createWorkerContext = (config: ProtonConfig) => {
     const api = exposeApi(createApi({ config, threshold: API_CONCURRENCY_TRESHOLD }));
@@ -163,6 +173,31 @@ export const createWorkerContext = (config: ProtonConfig) => {
      * components on update in order for clients' states to sync. */
     registerStoreEffect(store, selectLockSetupRequired, () => onStateUpdate());
 
+    /** QA helper: strips the session's offline components so offline mode can be
+     * tested as a user who never got them, without creating a fresh session.
+     * Refused when a lock depending on them is active: it would leave the session
+     * impossible to unlock. */
+    const clearOfflineComponents = async (): Promise<boolean> => {
+        if ([LockMode.PASSWORD, LockMode.BIOMETRICS].includes(authStore.getLockMode())) {
+            logger.warn('[QA] Cannot clear offline components while a password or biometrics lock is set');
+            return false;
+        }
+
+        authStore.setOfflineKD(undefined);
+        authStore.setOfflineConfig(undefined);
+        authStore.setOfflineVerifier(undefined);
+        authStore.setEncryptedOfflineKD(undefined);
+
+        await context.service.auth.persistSession({ regenerateClientKey: true });
+        await context.service.storage.session.removeItems(OFFLINE_SESSION_KEYS);
+
+        store.dispatch(
+            settingsEditIntent('offline', { offlineEnabled: false, offlinePrompt: { count: 0, dismissedAt: 0 } }, true)
+        );
+
+        return true;
+    };
+
     if (ENV === 'development') {
         WorkerMessageBroker.registerMessage(WorkerMessageType.DEBUG, ({ payload }) => {
             switch (payload.debug) {
@@ -172,6 +207,8 @@ export const createWorkerContext = (config: ProtonConfig) => {
                 case 'update_trigger':
                     void context.service.activation.onUpdateAvailable({ version: EXTENSION_BUILD_VERSION });
                     return true;
+                case 'clear_offline_components':
+                    return clearOfflineComponents();
             }
 
             return false;
