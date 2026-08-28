@@ -13,8 +13,8 @@ export const getIsPasswordReminderAvailable = ({
     user: UserModel;
     organization?: OrganizationExtended;
 }) => {
-    // Overall feature gate; SSO accounts are never eligible.
-    if (!unleashClient.isEnabled('PasswordReminders') || getIsSSOAccount(user)) {
+    // SSO accounts are never eligible.
+    if (getIsSSOAccount(user)) {
         return false;
     }
 
