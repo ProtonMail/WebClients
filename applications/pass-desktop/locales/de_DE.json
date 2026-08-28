@@ -992,6 +992,9 @@
       ],
       "This login password appears in a data breach. Please visit the service and change the password.": [
         "Dieses Anmeldepasswort ist von einem Datenleck betroffen. Bitte rufe den Dienst auf und ändere das Passwort."
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total }": [
+        "${ compromised.progress.completed } von ${ compromised.progress.total } werden überprüft"
       ]
     },
     "Email": {
@@ -2934,6 +2937,9 @@
       ],
       "None of your saved passwords have appeared in a known data breach.": [
         "Keines deiner gespeicherten Passwörter ist im Zusammenhang mit einem bekannten Datenleck aufgetaucht."
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
+        "${ compromised.progress.completed } von ${ compromised.progress.total } Passwörter werden überprüft"
       ]
     },
     "Keyboard key": {

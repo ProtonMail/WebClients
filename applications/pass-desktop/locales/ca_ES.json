@@ -992,6 +992,9 @@
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
         "La vostra informació personal s'ha filtrat en una violació de les dades d'un servei de tercers."
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total }": [
+        "S'estan comprovant ${ compromised.progress.completed } de ${ compromised.progress.total }"
       ]
     },
     "Email": {
@@ -2934,6 +2937,9 @@
       ],
       "None of your saved passwords have appeared in a known data breach.": [
         "Cap de les vostres contrasenyes desades ha aparegut en cap infracció de dades coneguda."
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
+        "S'estan comprovant ${ compromised.progress.completed } de ${ compromised.progress.total } contrasenyes"
       ]
     },
     "Keyboard key": {
