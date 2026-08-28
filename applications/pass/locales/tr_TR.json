@@ -939,6 +939,9 @@
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
         "Kişisel bilgileriniz üçüncü taraf bir hizmetin verilerinin sızdırılması nedeniyle ele geçirildi."
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total }": [
+        "${ compromised.progress.completed } / ${ compromised.progress.total } denetleniyor"
       ]
     },
     "Email": {
@@ -2129,7 +2132,8 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Bir ögeyi başka bir kasaya taşımak güvenli bağlantılarını siler."
+        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
+        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -2823,6 +2827,9 @@
       ],
       "None of your saved passwords have appeared in a known data breach.": [
         "Kayıtlı parolalarınızın hiçbiri bilinen bir veri sızıntısında ortaya çıkmamış."
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
+        "${ compromised.progress.completed } / ${ compromised.progress.total } parola denetleniyor"
       ]
     },
     "Keyboard key": {
