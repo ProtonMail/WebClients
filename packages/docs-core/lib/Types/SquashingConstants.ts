@@ -1,4 +1,4 @@
-import { isDevOrBlack } from '@proton/utils/env'
+import { isDevOrBlack } from '@proton/shared/lib/env'
 import type { DocumentType } from '@proton/docs-shared'
 
 /** Number of DUs in a commit before we need to squash */

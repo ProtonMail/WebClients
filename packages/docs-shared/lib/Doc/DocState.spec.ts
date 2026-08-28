@@ -1,4 +1,4 @@
-import type { LoggerInterface } from '@proton/utils/logs'
+import type { LoggerInterface } from '@proton/shared/lib/logs'
 import { DocState, DocUpdateOrigin, PRESENCE_UPDATE_REPEAT_INTERVAL } from './DocState'
 import type { DocStateCallbacks } from './DocStateCallbacks'
 import type { UnsafeDocsUserState } from './DocsAwareness'

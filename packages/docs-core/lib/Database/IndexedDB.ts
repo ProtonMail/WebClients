@@ -1,4 +1,4 @@
-import type { LoggerInterface } from '@proton/utils/logs'
+import type { LoggerInterface } from '@proton/shared/lib/logs'
 import { Result } from '@proton/docs-shared'
 
 export enum IndexedDBError {

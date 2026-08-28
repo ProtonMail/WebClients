@@ -18,7 +18,7 @@ import {
 } from '@proton/docs-shared'
 import type { EncryptMessage } from '../../UseCase/EncryptMessage'
 import type { AnonymousEncryptionMetadata, EncryptionMetadata } from '../../Types/EncryptionMetadata'
-import type { LoggerInterface } from '@proton/utils/logs'
+import type { LoggerInterface } from '@proton/shared/lib/logs'
 import { WebsocketConnection } from '../../Realtime/WebsocketConnection'
 import type { FetchRealtimeToken } from '../../UseCase/FetchRealtimeToken'
 import type { WebsocketServiceInterface } from './WebsocketServiceInterface'

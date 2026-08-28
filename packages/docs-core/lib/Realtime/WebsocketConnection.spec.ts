@@ -5,7 +5,7 @@ import {
   WebsocketConnection,
 } from './WebsocketConnection'
 import { getWebSocketServerURL } from './getWebSocketServerURL'
-import type { LoggerInterface } from '@proton/utils/logs'
+import type { LoggerInterface } from '@proton/shared/lib/logs'
 import type { WebsocketCallbacks } from '@proton/docs-shared'
 import { ApiResult, Result } from '@proton/docs-shared'
 import { MetricService } from '../Services/Metrics/MetricService'

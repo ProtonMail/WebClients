@@ -1,5 +1,3 @@
-import { disableRandomMock, initRandomMock } from '@proton/testing/lib/mockRandomValues';
-
 import getRandomString, { DEFAULT_CHARSET } from './getRandomString';
 
 describe('getRandomString()', () => {
@@ -9,8 +7,16 @@ describe('getRandomString()', () => {
         .fn()
         .mockImplementation((array: Uint32Array) => Uint32Array.from(getConsecutiveArray(array.length)));
 
-    beforeAll(() => initRandomMock(mockedRandomValues));
-    afterAll(() => disableRandomMock());
+    let originalGetRandomValues: typeof crypto.getRandomValues;
+
+    beforeAll(() => {
+        originalGetRandomValues = crypto.getRandomValues;
+        crypto.getRandomValues = mockedRandomValues as typeof crypto.getRandomValues;
+    });
+
+    afterAll(() => {
+        crypto.getRandomValues = originalGetRandomValues;
+    });
 
     describe('length', () => {
         it('returns throw an error when length is negative', () => {

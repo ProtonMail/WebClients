@@ -14,7 +14,7 @@ import type { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrap
 import type { GetDocumentKeys } from './GetDocumentKeys'
 import type { GetDocumentMeta } from './GetDocumentMeta'
 import type { GetNode } from './GetNode'
-import type { LoggerInterface } from '@proton/utils/logs'
+import type { LoggerInterface } from '@proton/shared/lib/logs'
 import type { PublicDriveCompat, DriveCompat } from '@proton/drive-store'
 import type { NodeMeta, PublicNodeMeta } from '@proton/docs-shared'
 import type { FetchMetaAndRawCommit } from './FetchMetaAndRawCommit'
