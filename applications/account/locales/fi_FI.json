@@ -297,6 +297,9 @@
       "Clear all formatting": [
         "Poista kaikki muotoilut"
       ],
+      "Clear conversation": [
+        "Tyhjennä keskustelu"
+      ],
       "Close": [
         "Sulje"
       ],
@@ -1035,6 +1038,9 @@
       "Keep editing": [
         "Jatka muokkaamista"
       ],
+      "Keep going": [
+        "Jatka vain"
+      ],
       "Keep logo": [
         "Säilytä logo"
       ],
@@ -1503,6 +1509,9 @@
       "Select time zone": [
         "Valitse aikavyöhyke"
       ],
+      "Send": [
+        "Lähetä"
+      ],
       "send auto-reply email": [
         "lähetä automaattivastaus"
       ],
@@ -1659,6 +1668,9 @@
       "Stay": [
         "Pysy"
       ],
+      "Stop": [
+        "Pysäytä"
+      ],
       "Stop using single sign-on": [
         "Lopeta kertakirjautumisen käyttö"
       ],
@@ -1689,11 +1701,20 @@
       "Take a tour": [
         "Katso esittely"
       ],
+      "Template with invite links": [
+        "Mallipohja kutsulinkeillä"
+      ],
+      "Template with passwords": [
+        "Mallipohja salasanoilla"
+      ],
       "Test": [
         "Testaa"
       ],
       "Test SAML configuration": [
         "Testaa SAML-määritystä"
+      ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "Vaihda ${ LUMO_SHORT_APP_NAME }"
       ],
       "Top up": [
         "Lisää krediittejä"
@@ -12183,6 +12204,9 @@
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Näillä kirjautumistiedoilla ei ole mahdollista kirjautua virallisiin ${ VPN_APP_NAME } -sovelluksiin. ${ learnMore }"
       ],
+      "Thinking about this": [
+        "Mietitään tätä"
+      ],
       "This account has been suspended due to a potential policy violation.": [
         "Tili on jäädytetty mahdollisen käyttöehtorikkeen vuoksi."
       ],
@@ -12230,6 +12254,9 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Tämä on nyt ${ defaultEmailAddress } uusien viestien lähettämistä varten."
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Tämä vaatii paljon ajattelua. Jatketaanko?"
       ],
       "This is the password you used before the password reset.": [
         "Tämä on ennen salasanan uudelleenasetusta käyttämäsi salasana."
@@ -12817,7 +12844,7 @@
         "Sinulla on jo ilmainen tili"
       ],
       "You are about to open another browser tab and visit:": [
-        "Olet avaamassa uutta selaimen välilehteä sivustolle:"
+        "Olet avaamassa uuteen selainvälilehteen osoitetta:"
       ],
       "You are about to open your default browser and visit:": [
         "Olet avaamassa oletusselaimeesi osoitetta:"
@@ -13120,6 +13147,9 @@
       ],
       "your encrypted data will be locked": [
         "salatut tietosi lukitaan"
+      ],
+      "Your file includes a password for each user, so these accounts will be created with a password instead of an invite link.": [
+        "Tiedostosi sisältää salasanan jokaiselle käyttäjälle, joten nämä tilit luodaan kutsulinkkien sijaan salasanoilla."
       ],
       "Your files will be encrypted and then saved": [
         "Tiedostosi salataan ja tallennetaan"
@@ -13804,6 +13834,9 @@
       ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace }/${ humanMaxSpace }"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } merkkiä"
       ],
       "${ MAIL_APP_NAME } address": [
         "${ MAIL_APP_NAME } -osoite"
@@ -19238,12 +19271,6 @@
       "To enable administrator rights on your account, activate the organization key.": [
         "Aktivoi tilisi hallintaoikeudet aktivoimalla organisaatioavain."
       ],
-      "Use a data recovery method or reset the organization key to restore administrator privileges.": [
-        "Palauta hallintaoikeudet tietojen palautustavalla tai nollaamalla organisaatioavain."
-      ],
-      "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
-        "Palauta hallintaoikeudet tietojen palautustavalla, olemalla yhteydessä toiseen ylläpitäjään tai nollaamalla organisaatioavain."
-      ],
       "We couldn't verify the authenticity of this identity.": [
         "Emme voineet vahvistaa identiteetin aitoutta."
       ],
@@ -19653,6 +19680,9 @@
       ],
       "Anytown": [
         "Jokukaupunki"
+      ],
+      "Ask anything…": [
+        "Kysy mitä tahansa…"
       ],
       "Choose a name": [
         "Valitse nimi"
@@ -25894,6 +25924,9 @@
       ],
       "Stay secure and connected anywhere": [
         "Pysy turvassa ja yhdistettynä missä tahansa"
+      ],
+      "Still working on it": [
+        "Jatketaan ajattelemista"
       ],
       "Strengthen your security on all your devices with ${ passPlusPlanName }. ${ upgradeButton }": [
         "Vahvista tietoturvaasi kaikilla laitteillasi ${ passPlusPlanName } -palvelulla. ${ upgradeButton }"

@@ -608,6 +608,9 @@
       "Clear all formatting": [
         "Esborra tot el format"
       ],
+      "Clear conversation": [
+        "Netejar la conversa"
+      ],
       "Close": [
         "Tanca"
       ],
@@ -724,6 +727,9 @@
       ],
       "Copy address": [
         "Copia l'adreça"
+      ],
+      "Copy debug transcript": [
+        "Copia la transcripció de depuració"
       ],
       "Copy key to the clipboard": [
         "Copia la clau al porta-retalls"
@@ -1361,6 +1367,9 @@
       "Invite user": [
         "Convida l'usuari"
       ],
+      "Invoice options": [
+        "Opcions de factura"
+      ],
       "Italic": [
         "Cursiva"
       ],
@@ -1378,6 +1387,9 @@
       ],
       "Keep editing": [
         "Continua editant"
+      ],
+      "Keep going": [
+        "Continua"
       ],
       "Keep logo": [
         "Manté el logo"
@@ -1856,6 +1868,9 @@
       "Select time zone": [
         "Selecciona el fus horari"
       ],
+      "Send": [
+        "Enviar"
+      ],
       "send auto-reply email": [
         "envia un correu de resposta automàtica"
       ],
@@ -1894,6 +1909,9 @@
       ],
       "Set catch-all": [
         "Configura l'adreça d'arreplega"
+      ],
+      "Set invoice email": [
+        "Estableix el correu electrònic de la factura"
       ],
       "Set new password": [
         "Estableix una nova contrasenya"
@@ -2015,6 +2033,12 @@
       "Stay": [
         "Mantenir"
       ],
+      "Stop": [
+        "Atura"
+      ],
+      "Stop here": [
+        "Parar aquí"
+      ],
       "Stop using single sign-on": [
         "Deixa d'utilitzar l'inici de sessió únic"
       ],
@@ -2056,6 +2080,9 @@
       ],
       "Test SAML configuration": [
         "Test de la configuració SAML"
+      ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "Tocar per alternar ${ LUMO_SHORT_APP_NAME }"
       ],
       "Top up": [
         "Recarrega"
@@ -2101,6 +2128,9 @@
       ],
       "Update": [
         "Actualitza"
+      ],
+      "Update email": [
+        "Actualitza el correu"
       ],
       "Update recovery file": [
         "Actualitza el fitxer de recuperació"
@@ -11204,6 +11234,9 @@
       "Data recovery requires a password reset option (email or SMS)": [
         "La recuperació de dades requereix una opció de restabliment de contrasenya (correu electrònic o SMS)"
       ],
+      "Debug transcript copied": [
+        "S'ha copiat la transcripció de depuració"
+      ],
       "dedicated servers": [
         "servidors dedicats"
       ],
@@ -11406,6 +11439,12 @@
       ],
       "Email address": [
         "Adreça de correu electrònic"
+      ],
+      "Email address copied to clipboard": [
+        "S'ha copiat l'adreça electrònica al porta-retalls"
+      ],
+      "Email addresses copied to clipboard": [
+        "Les adreces de correu electrònic s'han copiat al porta-retalls"
       ],
       "Email and calendar, integrated with ${ CONTACTS_APP_NAME }": [
         "Correu electrònic i calendari, integrats amb ${ CONTACTS_APP_NAME }"
@@ -11778,6 +11817,9 @@
       ],
       "How your emergency contact can change your password for you:": [
         "Com pot el vostre contacte d'emergència canviar la contrasenya per vosaltres:"
+      ],
+      "I have not finished this one yet.": [
+        "Encara no he acabat aquesta."
       ],
       "IBAN: ${ formattedIBAN }": [
         "IBAN: ${ formattedIBAN }"
@@ -13185,6 +13227,9 @@
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Aquestes credencials no es poden utilitzar per a iniciar sessió a les nostres aplicacions oficials de ${ VPN_APP_NAME }. ${ learnMore }"
       ],
+      "Thinking about this": [
+        "Hi estem pensant"
+      ],
       "This account has been suspended due to a potential policy violation.": [
         "Aquest compte ha estat suspès a causa d'una possible infracció de les polítiques."
       ],
@@ -13235,6 +13280,9 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Aquesta és ara la vostra ${ defaultEmailAddress } per enviar missatges nous."
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Això està prenent molts passos. Hauria de continuar?"
       ],
       "This is the password you used before the password reset.": [
         "Això és la contrasenya que utilitzàveu abans del restabliment de contrasenya."
@@ -13718,6 +13766,9 @@
       ],
       "We couldn't complete the transaction. Please try again.": [
         "No s'ha pogut completar la transacció. Torneu-ho a provar."
+      ],
+      "We couldn't send invoices to your email address. Automatic invoicing has been paused until you update the address.": [
+        "No hem pogut enviar les factures a la vostra adreça de correu electrònic. L'emissió automàtica de factures s'ha aturat fins que actualitzeu l'adreça."
       ],
       "We couldn’t process your payment.": [
         "No hem pogut processar el vostre pagament."
@@ -16297,6 +16348,9 @@
       ],
       "Send in": [
         "Envieu-ho en"
+      ],
+      "Send invoices by email": [
+        "Envia les factures per correu electrònic"
       ],
       "Sequences": [
         "Seqüències"
@@ -19936,6 +19990,119 @@
         "El vostre pla inclou un màxim de ${ humanReadableAvailableSpace } més d'espai d'emmagatzematge."
       ]
     },
+    "organization key reset": {
+      "Afterward, every converted user must accept the request to become non-private again, from their account settings.": [
+        "Posteriorment, cada usuari convertit ha d'acceptar la sol·licitud per tornar a no ser privat des de la configuració del seu compte."
+      ],
+      "An unprivatization request is sent by email to the converted users": [
+        "S'envia una sol·licitud per passar a no privat per correu electrònic als usuaris convertits"
+      ],
+      "Because your organization key has changed, you lost some of your admin rights: You can no longer create non-private users and access their accounts.": [
+        "Com que la clau de la vostra organització ha canviat, heu perdut alguns drets d'administrador i ja no podreu crear usuaris no privats ni accedir als seus comptes."
+      ],
+      "Before continuing, **let your users know they'll receive an admin access request by email**, so they're not caught off guard.": [
+        "Abans de continuar, **informeu els vostres usuaris que rebran una sol·licitud d'accés d'administrador per correu electrònic**, perquè no els agafi desprevinguts."
+      ],
+      "Can you reach out to other administrators?": [
+        "Us podeu posar en contacte amb altres administradors?"
+      ],
+      "Converting users to private": [
+        "S'estan convertint els usuaris en privats"
+      ],
+      "Copy email list": [
+        "Copia la llista d'adreces de correu electrònic"
+      ],
+      "Could not send the unprivatization request to ${ n } user. It will be retried automatically.": [
+        "No s'ha pogut enviar la sol·licitud per passar a no privat a ${ n } usuari. Es tornarà a intentar automàticament.",
+        "No s'ha pogut enviar la sol·licitud per passar a no privat a ${ n } usuaris. Es tornarà a intentar automàticament."
+      ],
+      "Get in touch with your other administrators, to see if they can help. They will be able to restore your privileges after using a data recovery method.": [
+        "Poseu-vos en contacte amb els altres administradors per veure si us poden ajudar. Podran restaurar els vostres privilegis després d'utilitzar un mètode de recuperació de dades."
+      ],
+      "I've notified my users that they'll receive an unprivatization request.": [
+        "He notificat els meus usuaris que rebran una sol·licitud per passar a no privat."
+      ],
+      "Non-private users": [
+        "Usuaris no privats"
+      ],
+      "Once your privileges have been restored, you'll be able to create non-private users and access their accounts.": [
+        "Un cop s'hagin restaurat els vostres privilegis, podreu crear usuaris no privats i accedir als seus comptes."
+      ],
+      "Organization key reset": [
+        "S'ha restablert la clau de l'organització"
+      ],
+      "Ready to reset your organization key?": [
+        "Esteu a punt per restablir la clau de la vostra organització?"
+      ],
+      "Reset key": [
+        "Restablir la clau"
+      ],
+      "Reset organization key?": [
+        "Voleu restablir la clau de l'organització?"
+      ],
+      "Resetting organization key": [
+        "S'està restablint la clau de l'organització"
+      ],
+      "Resetting the organization key generates a new encryption key to keep your organization's data secure. **No data will be lost or destroyed in this process, but the users groups will be deleted.**": [
+        "En restablir la clau de l'organització es genera una clau de xifratge nova per mantenir segures les dades de la vostra organització. **No es perdrà ni es destruirà cap dada durant aquest procés, però es suprimiran els grups d'usuaris.**"
+      ],
+      "See ${ n } user": [
+        "Veure ${ n } usuari",
+        "Veure ${ n } usuaris"
+      ],
+      "See users": [
+        "Veure els usuaris"
+      ],
+      "Send unprivatization requests": [
+        "Envia sol·licituds per passar a no privat"
+      ],
+      "The non-private users are converted to private": [
+        "Els usuaris no privats es converteixen en privats"
+      ],
+      "The organization key is reset": [
+        "S'ha restablert la clau de l'organització"
+      ],
+      "This process is automated:": [
+        "Aquest procés està automatitzat:"
+      ],
+      "This should take less than ${ minutes } minute. **Don't close this tab or let your device go to sleep** until it's finished.": [
+        "Això hauria de trigar menys de ${ minutes } minut. **No tanqueu aquesta pestanya ni deixeu que el dispositiu entre en mode de repòs** fins que hagi acabat.",
+        "Això hauria de trigar menys de ${ minutes } minuts. **No tanqueu aquesta pestanya ni deixeu que el dispositiu entre en mode de repòs** fins que hagi acabat."
+      ],
+      "This should take less than ${ minutes } minute. **Keep this browser tab open and your device active** until it completes.": [
+        "Això hauria de trigar menys d'${ minutes } minut. **Mantingueu oberta aquesta pestanya del navegador i el vostre dispositiu actiu** fins que s'hagi completat.",
+        "Això hauria de trigar menys de ${ minutes } minuts. **Mantingueu oberta aquesta pestanya del navegador i el vostre dispositiu actiu** fins que s'hagi completat."
+      ],
+      "To become non-private again, they must accept the request to enable admin access, from their account settings. You don't need to wait for this step.": [
+        "Per tornar a no ser privats, han d'acceptar la sol·licitud per habilitar l'accés d'administrador des de la configuració del seu compte. No cal que espereu aquest pas."
+      ],
+      "To reset the organization key and restore your administrator privileges, **${ n } non-private user must be temporarily converted to private.**": [
+        "Per restablir la clau de l'organització i restaurar els vostres privilegis d'administrador, **${ n } usuari no privat s'ha de convertir temporalment en privat.**",
+        "Per restablir la clau de l'organització i restaurar els vostres privilegis d'administrador, **${ n } usuaris no privats s'han de convertir temporalment en privats.**"
+      ],
+      "To reset the organization key, the users will be converted to private, and will receive an email invitation to become non-private again.": [
+        "Per restablir la clau de l'organització, els usuaris es convertiran en privats i rebran una invitació per correu electrònic per tornar a no ser privats"
+      ],
+      "To restore your privileges, use a data recovery method.": [
+        "Per restaurar els vostres privilegis, feu servir un mètode de recuperació de dades."
+      ],
+      "Try another way": [
+        "Proveu-ho d'una altra manera"
+      ],
+      "User (${ n })": [
+        "Usuari ${ n }",
+        "Usuaris ${ n }"
+      ],
+      "You can reset your organization key to restore your administrator privileges. Then, you'll be able to create non-private users and access their accounts.": [
+        "Podeu restablir la clau de l'organització per restaurar els vostres privilegis d'administrador. Després, podreu crear usuaris no privats i accedir als seus comptes."
+      ],
+      "Your administrator privileges have been restored. You can now manage non-private users.": [
+        "S'han restaurat els vostres privilegis d'administrador. Ara ja podeu gestionar usuaris no privats."
+      ],
+      "Your users will receive an email to accept the unprivatization request.": [
+        "Els vostres usuaris rebran un correu electrònic per acceptar la sol·licitud de passar a no privats."
+      ]
+    },
     "Organization logo upload": {
       "Avoid overly compressed images.": [
         "Eviteu imatges massa comprimides."
@@ -20483,12 +20650,6 @@
       "To enable administrator rights on your account, activate the organization key.": [
         "Per activar els drets d'administrador al vostre compte, activeu la clau d'organització."
       ],
-      "Use a data recovery method or reset the organization key to restore administrator privileges.": [
-        "Utilitzeu un mètode de recuperació de dades o restabliu la clau de l'organització per restaurar els privilegis d'administrador."
-      ],
-      "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
-        "Utilitzeu un mètode de recuperació de dades, contacteu amb un altre administrador o restabliu la clau de l'organització per restaurar els privilegis d'administrador."
-      ],
       "We couldn't verify the authenticity of this identity.": [
         "No hem pogut verificar l'autenticitat d'aquesta identitat."
       ],
@@ -20912,6 +21073,12 @@
       ],
       "Anytown": [
         "Castellvent"
+      ],
+      "Ask anything…": [
+        "Pregunteu qualsevol cosa…"
+      ],
+      "billing@company.com": [
+        "facturacio@empresa.com"
       ],
       "Choose a name": [
         "Seleccioneu un nom"
@@ -23032,6 +23199,11 @@
     "session_recovery:status:title": {
       "Password reset request": [
         "Sol·licitud de restabliment de la contrasenya"
+      ]
+    },
+    "Set invoice email form note": {
+      "Turn on automatic invoicing to receive bills via email. Enter the email address where you want to receive invoices.": [
+        "Activeu la facturació automàtica per rebre les factures per correu electrònic. Introduïu l'adreça de correu on voleu rebre les factures."
       ]
     },
     "Setting": {
@@ -25223,6 +25395,9 @@
       "Invoice customized": [
         "Factura personalitzada"
       ],
+      "Invoice email updated": [
+        "S'ha actualitzat el correu electrònic de la factura"
+      ],
       "Invoice paid": [
         "Factura pagada"
       ],
@@ -27303,6 +27478,9 @@
       "Set a display name": [
         "Estableix un nom per a mostrar"
       ],
+      "Set invoice email": [
+        "Estableix el correu electrònic de la factura"
+      ],
       "Set new password": [
         "Estableix una nova contrasenya"
       ],
@@ -27449,6 +27627,9 @@
       ],
       "Stay secure and connected anywhere": [
         "Mantingueu-vos segurs i connectats a tot arreu"
+      ],
+      "Still working on it": [
+        "Encara hi estem treballant"
       ],
       "Strengthen your security on all your devices with ${ passPlusPlanName }. ${ upgradeButton }": [
         "Reforceu la seguretat a tots els vostres dispositius amb ${ passPlusPlanName }. ${ upgradeButton }"
@@ -28514,6 +28695,9 @@
       "You can safely remove this user from your organization.": [
         "Podeu eliminar aquest usuari de la vostra organització de manera segura.",
         "Podeu eliminar aquests usuaris de la vostra organització de manera segura."
+      ],
+      "Your account was temporarily made private while your organization key was reset. Accept the request to restore it.": [
+        "El vostre compte s'ha fet privat temporalment mentre es restablia la clau de la vostra organització. Accepteu la sol·licitud per a restaurar-lo."
       ]
     },
     "Update font modal": {

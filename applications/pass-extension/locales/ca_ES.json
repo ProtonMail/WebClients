@@ -886,6 +886,9 @@
       "Check if your passwords have been exposed": [
         "Comproveu si les vostres contrasenyes s'han exposat"
       ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total }": [
+        "S'estan comprovant ${ compromised.progress.completed } de ${ compromised.progress.total }"
+      ],
       "Create unique passwords": [
         "Creeu contrasenyes úniques"
       ],
@@ -1861,6 +1864,9 @@
       "Change your password": [
         "Canvieu la vostra contrasenya"
       ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
+        "S'estan comprovant ${ compromised.progress.completed } de ${ compromised.progress.total } contrasenyes"
+      ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Trieu una clau d'accés desada per a iniciar la sessió a ${ domain }"
       ],
@@ -2241,7 +2247,8 @@
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs."
+        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
+        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
       ],
       "Moving items": [
         "S'estan movent elements"

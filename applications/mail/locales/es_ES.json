@@ -528,9 +528,6 @@
       "Email settings": [
         "Configuración del correo electrónico"
       ],
-      "Emoji": [
-        "Emoji"
-      ],
       "Enable": [
         "Activar"
       ],
@@ -1511,8 +1508,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Clave de confianza",
-        "Claves de confianza"
+        "Clave de confianza"
       ],
       "Trust public key": [
         "Confiar en la clave pública"
@@ -5889,6 +5885,9 @@
       "Has attachments": [
         "Tiene adjuntos"
       ],
+      "Pending": [
+        "Pendiente"
+      ],
       "Read": [
         "Leído"
       ],
@@ -6685,6 +6684,10 @@
       "${ contactsLength } contact": [
         "${ contactsLength } contacto",
         "${ contactsLength } contactos"
+      ],
+      "${ count } email": [
+        "${ count } correo electrónico",
+        "${ count } correos electrónicos"
       ],
       "${ currentProgress } out of ${ totalProgress }": [
         "${ currentProgress } de ${ totalProgress }",
@@ -7715,7 +7718,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen"
+        "Insertar una imagen",
+        "Insertar imágenes"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -7815,6 +7819,9 @@
       ],
       "Mark all as read": [
         "Marcar todo como leído"
+      ],
+      "Mark all as unread": [
+        "Marcar todo como no leído"
       ],
       "Mastercard SecureCode logo": [
         "Logo de Mastercard SecureCode"
@@ -9596,6 +9603,9 @@
       ],
       "Apply to future messages": [
         "Aplicar a los mensajes futuros"
+      ],
+      "Archive": [
+        "Archivar"
       ],
       "Attach screenshot(s)": [
         "Adjuntar captura(s) de pantalla"

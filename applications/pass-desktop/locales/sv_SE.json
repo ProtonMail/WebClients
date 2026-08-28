@@ -706,9 +706,6 @@
       "Skip": [
         "Hoppa över"
       ],
-      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
-        "Någon delade ett objekt med dig på ${ PASS_APP_NAME }"
-      ],
       "Sort vault items": [
         "Sortera valvobjekt"
       ],
@@ -1410,9 +1407,6 @@
       "Trashing item failed": [
         "Borttagning av objekt misslyckades"
       ],
-      "Try reaching out to the link owner.": [
-        "Prova att kontakta länkägaren."
-      ],
       "Unable to generate an OTP code for this item": [
         "Kan inte generera en OTP-kod för detta objekt"
       ],
@@ -1842,6 +1836,9 @@
       "Change your password": [
         "Ändra ditt lösenord"
       ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
+        "Kontrollerar ${ compromised.progress.completed } av ${ compromised.progress.total } lösenord"
+      ],
       "Confirm your extra password to proceed with its removal.": [
         "Bekräfta ditt extralösenord för att fortsätta med att ta bort det."
       ],
@@ -2213,8 +2210,7 @@
         "Flyttar alla objekt från “${ payload.content.name }“"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
-        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
+        "Att flytta ett objekt till ett annat valv kommer att radera dess säkra länkar."
       ],
       "Moving items": [
         "Flyttar objekt"
@@ -4045,9 +4041,6 @@
       ],
       "Theme": [
         "Tema"
-      ],
-      "This item is accessible until ${ date } or until the view limit is reached.": [
-        "Detta objekt är tillgängligt fram till ${ date } eller tills visningsgränsen nås."
       ],
       "Tier/Level": [
         "Nivå"

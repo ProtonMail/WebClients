@@ -865,6 +865,9 @@
       "Check if your passwords have been exposed": [
         "Tjek om dine adgangskoder er blevet afsløret"
       ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total }": [
+        "Tjekker ${ compromised.progress.completed } af ${ compromised.progress.total }"
+      ],
       "Create unique passwords": [
         "Opret unikke adgangskoder"
       ],
@@ -1766,6 +1769,9 @@
       ],
       "Change your password": [
         "Skift din adgangskode"
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
+        "Tjekker ${ compromised.progress.completed } af ${ compromised.progress.total } adgangskoder"
       ],
       "Confirm your extra password to proceed with its removal.": [
         "Bekræft din ekstra adgangskode for at fortsætte med at fjerne den."

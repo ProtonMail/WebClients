@@ -531,9 +531,6 @@
       "Email settings": [
         "Osoitteen asetukset"
       ],
-      "Emoji": [
-        "Emoji"
-      ],
       "Enable": [
         "Käytä"
       ],
@@ -1526,8 +1523,7 @@
         "Luota"
       ],
       "Trust key": [
-        "Luota avaimeen",
-        "Luota avaimiin"
+        "Luota avaimeen"
       ],
       "Trust public key": [
         "Luota julkiseen avaimeen"
@@ -7766,7 +7762,8 @@
         "Valmistellaan…"
       ],
       "Insert image": [
-        "Lisää kuva"
+        "Lisää kuva",
+        "Lisää kuvia"
       ],
       "Insert link": [
         "Lisää linkki"
@@ -8979,7 +8976,7 @@
         "Sinulla on jo ilmainen tili"
       ],
       "You are about to open another browser tab and visit:": [
-        "Olet avaamassa uutta selaimen välilehteä sivustolle:"
+        "Olet avaamassa uuteen selainvälilehteen osoitetta:"
       ],
       "You are about to open your default browser and visit:": [
         "Olet avaamassa oletusselaimeesi osoitetta:"
@@ -9587,6 +9584,9 @@
       "${ count } unread message": [
         "${ count } lukematon viesti",
         "${ count } lukematonta viestiä"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } merkkiä"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME }-kirjoitusavustaja"

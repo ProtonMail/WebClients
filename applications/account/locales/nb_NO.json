@@ -294,6 +294,9 @@
       "Clear all formatting": [
         "Fjern all formattering"
       ],
+      "Clear conversation": [
+        "Rensk samtalen"
+      ],
       "Close": [
         "Lukk"
       ],
@@ -1512,6 +1515,9 @@
       "Select time zone": [
         "Velg tidssone"
       ],
+      "Send": [
+        "Send"
+      ],
       "send auto-reply email": [
         "send e-post med autosvar"
       ],
@@ -1668,6 +1674,9 @@
       "Stay": [
         "Bli"
       ],
+      "Stop": [
+        "Stopp"
+      ],
       "Stop using single sign-on": [
         "Slutt å bruke enkel pålogging"
       ],
@@ -1703,6 +1712,9 @@
       ],
       "Test SAML configuration": [
         "Test SAML-konfigurasjon"
+      ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "Åpne/lukk ${ LUMO_SHORT_APP_NAME }"
       ],
       "Top up": [
         "Rund opp"
@@ -4358,7 +4370,7 @@
         "Mexico"
       ],
       "Micronesia": [
-        "Mikronesiaføderasjonen"
+        "Mikronesia"
       ],
       "Moldova": [
         "Moldova"
@@ -6724,7 +6736,7 @@
         "Adressen er allerede lagt til i kontoen din"
       ],
       "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Adresse er allerede i bruk av en bruker på utsiden av din organisasjon. Kontakt kundestøtte for å løse dette."
+        "Adresse er allerede i bruk av en bruker på utsiden av organisasjonen. Kontakt kundestøtte for å løse dette."
       ],
       "Address primary private key not found": [
         "Adresse til primærprivatnøkkel ikke funnet"
@@ -7105,7 +7117,7 @@
         "Slå sammen minst ${ calendarsToFixCount } kalendere med eksisterende ${ BRAND_NAME }-kalendere."
       ],
       "Missing inviter email": [
-        "Mangler e-postadresse for invitator"
+        "Invitørens e-postadresse mangler"
       ],
       "Missing key packet": [
         "Mangler nøkkelpakke"
@@ -12602,6 +12614,9 @@
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Denne påloggingsinformasjonen kan ikke brukes til å logge på våre offisielle ${ VPN_APP_NAME }-apper. ${ learnMore }"
+      ],
+      "Thinking about this": [
+        "Tenker på dette"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Denne kontoen er suspendert på grunn av et potensielt brudd på retningslinjene."
@@ -19742,12 +19757,6 @@
       "To enable administrator rights on your account, activate the organization key.": [
         "For å aktivere administratorrettigheter på kontoen din, aktiver organisasjonsnøkkelen."
       ],
-      "Use a data recovery method or reset the organization key to restore administrator privileges.": [
-        "Bruk en datagjenopprettingsmetode eller tilbakestill organisasjonsnøkkelen for å gjenopprette administratorrettigheter."
-      ],
-      "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
-        "Bruk en datagjenopprettingsmetode, kontakt en annen administrator, eller tilbakestill organisasjonsnøkkelen for å gjenopprette administratorrettigheter."
-      ],
       "We couldn't verify the authenticity of this identity.": [
         "Vi kunne ikke bekrefte ektheten til denne identiteten."
       ],
@@ -20149,6 +20158,9 @@
       ],
       "Anytown": [
         "By"
+      ],
+      "Ask anything…": [
+        "Spør om hva som helst…"
       ],
       "Choose a name": [
         "Velg et navn"
@@ -28107,8 +28119,8 @@
         "Du vil ikke lenger se denne importposten i listen."
       ],
       "Your current plan allows up to ${ maxMembers } user. To migrate additional users, add more seats to your subscription.": [
-        "Din nåværende plan tillater opptil ${ maxMembers } bruker. For å migrere flere brukere, legg til flere seter i abonnementet ditt.",
-        "Din nåværende plan tillater opptil ${ maxMembers } brukere. For å migrere flere brukere, legg til flere seter i abonnementet ditt."
+        "Gjeldende plan tillater opptil ${ maxMembers } bruker. For å migrere flere brukere, legg til flere seter i abonnementet.",
+        "Gjeldende plan tillater opptil ${ maxMembers } brukere. For å migrere flere brukere, legg til flere seter i abonnementet."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Prøveperioden avsluttes ${ textDate }. ${ action }"
