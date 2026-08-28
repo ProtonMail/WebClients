@@ -142,7 +142,7 @@ export const useDynamicDeviceHandling = ({
                     void switchActiveDevice({
                         deviceType: 'audioinput',
                         deviceId: newDeviceId,
-                        isSystemDefaultDevice: true,
+                        isSystemDefaultDevice: microphoneState.useSystemDefault,
                         preserveDefaultDevice: true,
                     });
                 }
@@ -166,7 +166,7 @@ export const useDynamicDeviceHandling = ({
                     void switchActiveDevice({
                         deviceType: 'videoinput',
                         deviceId: newDeviceId,
-                        isSystemDefaultDevice: true,
+                        isSystemDefaultDevice: false,
                         preserveDefaultDevice: true,
                     });
                     return;
@@ -198,7 +198,7 @@ export const useDynamicDeviceHandling = ({
                     void switchActiveDevice({
                         deviceType: 'audiooutput',
                         deviceId: newDeviceId,
-                        isSystemDefaultDevice: true,
+                        isSystemDefaultDevice: speakerState.useSystemDefault,
                         preserveDefaultDevice: true,
                     });
                 }
