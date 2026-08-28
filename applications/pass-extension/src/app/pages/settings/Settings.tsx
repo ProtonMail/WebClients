@@ -1,18 +1,17 @@
 import type { FC } from 'react';
 import { useCallback } from 'react';
 
-import { ExtensionClient } from 'proton-pass-extension/lib/components/Extension/ExtensionClient';
-import { ExtensionPermissions } from 'proton-pass-extension/lib/components/Extension/ExtensionPermissions';
-import { ExtensionStore } from 'proton-pass-extension/lib/components/Extension/ExtensionStore';
-import { useExtensionNotificationEnhancer } from 'proton-pass-extension/lib/hooks/useExtensionNotificationEnhancer';
-import { hasClipboardPermissions } from 'proton-pass-extension/lib/utils/permissions';
-import type { WorkerMessageWithSender } from 'proton-pass-extension/types/messages';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
-
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Localized } from '@proton/pass/components/Core/Localized';
 import { ClipboardProvider } from '@proton/pass/components/Settings/Clipboard/ClipboardProvider';
 
+import { ExtensionClient } from '../../../lib/components/Extension/ExtensionClient';
+import { ExtensionPermissions } from '../../../lib/components/Extension/ExtensionPermissions';
+import { ExtensionStore } from '../../../lib/components/Extension/ExtensionStore';
+import { useExtensionNotificationEnhancer } from '../../../lib/hooks/useExtensionNotificationEnhancer';
+import { hasClipboardPermissions } from '../../../lib/utils/permissions';
+import type { WorkerMessageWithSender } from '../../../types/messages';
+import { WorkerMessageType } from '../../../types/messages';
 import { SettingsRouter } from './SettingsRouter';
 
 import './Settings.scss';

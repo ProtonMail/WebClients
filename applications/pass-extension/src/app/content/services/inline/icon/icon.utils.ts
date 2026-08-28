@@ -1,13 +1,3 @@
-import {
-    ICON_MAX_HEIGHT,
-    ICON_MIN_HEIGHT,
-    ICON_PADDING,
-    OVERRIDE_STYLES_ATTR,
-} from 'proton-pass-extension/app/content/constants.static';
-import type { ProtonPassControl } from 'proton-pass-extension/app/content/services/inline/custom-elements/ProtonPassControl';
-import ProtonPassControlStyles from 'proton-pass-extension/app/content/services/inline/custom-elements/ProtonPassControl.raw.scss';
-import type { Coords } from 'proton-pass-extension/types/inline';
-
 import type { MaybeNull } from '@proton/pass/types/utils/index';
 import {
     createStyleParser,
@@ -20,6 +10,12 @@ import { isContainingBlock } from '@proton/pass/utils/dom/position';
 import { isHTMLElement, isInputElement } from '@proton/pass/utils/dom/predicates';
 import { repaint } from '@proton/pass/utils/dom/repaint';
 import { getNthParent } from '@proton/pass/utils/dom/tree';
+
+import type { Coords } from '../../../../../types/inline';
+import { ICON_MAX_HEIGHT, ICON_MIN_HEIGHT, ICON_PADDING, OVERRIDE_STYLES_ATTR } from '../../../constants.static';
+import type { ProtonPassControl } from '../custom-elements/ProtonPassControl';
+
+import ProtonPassControlStyles from '../custom-elements/ProtonPassControl.raw.scss';
 
 type IconElement = {
     /** Button element injected into shadow DOM */

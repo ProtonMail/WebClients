@@ -1,6 +1,5 @@
 import { type FC, Fragment, useEffect, useState } from 'react';
 
-import { type Shortcut, resolveShortcuts } from 'proton-pass-extension/lib/extension/commands';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -9,6 +8,8 @@ import browser from '@proton/pass/lib/globals/browser';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { isMac } from '@proton/shared/lib/helpers/browser';
 import noop from '@proton/utils/noop';
+
+import { type Shortcut, resolveShortcuts } from '../../extension/commands';
 
 type ShortcutRowProps = {
     description: string;

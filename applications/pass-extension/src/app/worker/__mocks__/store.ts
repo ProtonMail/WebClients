@@ -1,4 +1,4 @@
-import { getMockState } from 'proton-pass-extension/__mocks__/mocks';
+import { getMockState } from '../../../__mocks__/mocks';
 
 const store = {
     dispatch: jest.fn().mockReturnValue(getMockState()),

@@ -1,8 +1,8 @@
-import { createMessageBroker } from 'proton-pass-extension/lib/message/message-broker';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
-
 import browser from '@proton/pass/lib/globals/browser';
 import { logger } from '@proton/pass/utils/logger';
+
+import { createMessageBroker } from '../../../lib/message/message-broker';
+import { WorkerMessageType } from '../../../types/messages';
 
 // Use the offscreen document's `document` interface to write a new value to the system clipboard.
 //

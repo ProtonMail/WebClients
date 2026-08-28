@@ -1,10 +1,11 @@
 import type { FieldType, FormType } from '@protontech/autofill/types';
-import type { AbstractField } from 'proton-pass-extension/types/field';
-import type { Coords } from 'proton-pass-extension/types/inline';
 
 import type { AutofillPageTelemetryDimensions } from '@proton/pass/types/data/telemetry';
 import type { MaybeNull, Result } from '@proton/pass/types/utils/index';
 import type { FrameId } from '@proton/pass/types/worker/runtime';
+
+import type { AbstractField } from './field';
+import type { Coords } from './inline';
 
 export type FrameAttributes = {
     src?: string;

@@ -1,8 +1,8 @@
 import { FieldType, IdentityFieldType } from '@protontech/autofill/types';
-import type { FieldHandle } from 'proton-pass-extension/app/content/services/form/field';
 
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
 
+import type { FieldHandle } from '../form/field';
 import { autofillIdentityFields, getFirstName, getFullName, getLastName, getMiddleName } from './autofill.identity';
 
 let MOCK_ITEM = itemBuilder('identity');

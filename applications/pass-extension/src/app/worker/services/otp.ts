@@ -1,9 +1,3 @@
-import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
-import { onContextReady, withContext } from 'proton-pass-extension/app/worker/context/inject';
-import type { MessageHandlerCallback } from 'proton-pass-extension/lib/message/message-broker';
-import { parseSender } from 'proton-pass-extension/lib/utils/sender';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
-
 import { getItemTOTPUri, intoLoginItemPreview } from '@proton/pass/lib/items/item.utils';
 import { generateTOTPCode } from '@proton/pass/lib/otp/otp';
 import { selectOTPCandidate } from '@proton/pass/store/selectors/autofill';
@@ -11,6 +5,12 @@ import { selectItem } from '@proton/pass/store/selectors/items';
 import type { Maybe } from '@proton/pass/types/utils/index';
 import { logger } from '@proton/pass/utils/logger';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
+
+import type { MessageHandlerCallback } from '../../../lib/message/message-broker';
+import { parseSender } from '../../../lib/utils/sender';
+import { WorkerMessageType } from '../../../types/messages';
+import WorkerMessageBroker from '../channel';
+import { onContextReady, withContext } from '../context/inject';
 
 /* Although clients should store a complete OTP URI in the `totpUri` field.
  * We take this with a grain of salt to account from possible faulty imports.

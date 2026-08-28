@@ -1,8 +1,7 @@
 import { createRoot } from 'react-dom/client';
 
-import { ExtensionRoot } from 'proton-pass-extension/lib/components/Extension/ExtensionRoot';
-import { IFrameApp } from 'proton-pass-extension/lib/components/Inline/IFrameApp';
-
+import { ExtensionRoot } from '../../../../../../lib/components/Extension/ExtensionRoot';
+import { IFrameApp } from '../../../../../../lib/components/Inline/IFrameApp';
 import { Dropdown } from './Dropdown';
 
 if (BUILD_TARGET === 'safari') document.body.classList.add('is-safari');

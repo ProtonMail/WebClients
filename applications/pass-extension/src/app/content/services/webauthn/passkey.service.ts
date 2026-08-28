@@ -1,17 +1,3 @@
-import {
-    createBridgeAbortSignal,
-    createBridgeDisconnectSignal,
-    createBridgeResponse,
-    isBridgeAbortSignal,
-    isBridgeRequest,
-} from 'proton-pass-extension/app/content/bridge/message';
-import type { BridgeRequest } from 'proton-pass-extension/app/content/bridge/types';
-import { NotificationAction } from 'proton-pass-extension/app/content/constants.runtime';
-import { withContext } from 'proton-pass-extension/app/content/context/context';
-import { PasskeyServiceError } from 'proton-pass-extension/app/content/services/webauthn/passkey.errors';
-import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
-
 import { clientHasSession, clientNeedsSession } from '@proton/pass/lib/client';
 import type { SanitizedPublicKeyRequest } from '@proton/pass/lib/passkeys/types';
 import type { MaybeNull, MaybePromise } from '@proton/pass/types/utils/index';
@@ -22,6 +8,20 @@ import type { Predicate } from '@proton/pass/utils/fp/predicates';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { objectHandler } from '@proton/pass/utils/object/handler';
+
+import { contentScriptMessage, sendMessage } from '../../../../lib/message/send-message';
+import { WorkerMessageType } from '../../../../types/messages';
+import {
+    createBridgeAbortSignal,
+    createBridgeDisconnectSignal,
+    createBridgeResponse,
+    isBridgeAbortSignal,
+    isBridgeRequest,
+} from '../../bridge/message';
+import type { BridgeRequest } from '../../bridge/types';
+import { NotificationAction } from '../../constants.runtime';
+import { withContext } from '../../context/context';
+import { PasskeyServiceError } from './passkey.errors';
 
 type PasskeyServiceState = {
     /** current WebAuthn request token */

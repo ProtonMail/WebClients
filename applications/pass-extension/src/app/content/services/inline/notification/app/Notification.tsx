@@ -1,11 +1,5 @@
 import { type FC, useCallback, useEffect, useState } from 'react';
 
-import { NotificationAction } from 'proton-pass-extension/app/content/constants.runtime';
-import { InlinePortMessageType } from 'proton-pass-extension/app/content/services/inline/inline.messages';
-import type { NotificationRequest } from 'proton-pass-extension/app/content/services/inline/notification/notification.app';
-import { useIFrameAppState, useRegisterMessageHandler } from 'proton-pass-extension/lib/components/Inline/IFrameApp';
-import { IFrameAppAutoSizer } from 'proton-pass-extension/lib/components/Inline/IFrameAppAutoSizer';
-
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import NotificationsChildren from '@proton/components/containers/notifications/Children';
 import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
@@ -13,6 +7,11 @@ import { Localized } from '@proton/pass/components/Core/Localized';
 import { clientBusy } from '@proton/pass/lib/client';
 import type { MaybeNull } from '@proton/pass/types/utils/index';
 
+import { useIFrameAppState, useRegisterMessageHandler } from '../../../../../../lib/components/Inline/IFrameApp';
+import { IFrameAppAutoSizer } from '../../../../../../lib/components/Inline/IFrameAppAutoSizer';
+import { NotificationAction } from '../../../../constants.runtime';
+import { InlinePortMessageType } from '../../inline.messages';
+import type { NotificationRequest } from '../notification.app';
 import { AutofillOTP } from './views/AutofillOTP';
 import { Autosave } from './views/Autosave';
 import { PasskeyCreate } from './views/PasskeyCreate';

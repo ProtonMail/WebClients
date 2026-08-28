@@ -1,13 +1,14 @@
-import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
-import { onContextReady } from 'proton-pass-extension/app/worker/context/inject';
-import store, { runSagas } from 'proton-pass-extension/app/worker/store';
-import type { MessageHandlerCallback } from 'proton-pass-extension/lib/message/message-broker';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import type { Action } from 'redux';
 
 import { asyncRequestDispatcherFactory } from '@proton/pass/store/request/utils';
 import { selectUser } from '@proton/pass/store/selectors/user';
 import { deserialize } from '@proton/pass/utils/object/serialize';
+
+import type { MessageHandlerCallback } from '../../../lib/message/message-broker';
+import { WorkerMessageType } from '../../../types/messages';
+import WorkerMessageBroker from '../channel';
+import { onContextReady } from '../context/inject';
+import store, { runSagas } from '../store';
 
 export const createStoreService = () => {
     runSagas();

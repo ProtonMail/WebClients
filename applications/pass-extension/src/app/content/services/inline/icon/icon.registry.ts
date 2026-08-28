@@ -1,20 +1,16 @@
-import type {
-    FrameMessageBroker,
-    FrameMessageHandler,
-} from 'proton-pass-extension/app/content/services/client/client.channel';
-import type { FieldHandle } from 'proton-pass-extension/app/content/services/form/field';
-import type { DropdownHandler } from 'proton-pass-extension/app/content/services/inline/dropdown/dropdown.abstract';
-import { computeIconShift } from 'proton-pass-extension/app/content/services/inline/icon/icon.utils';
-import { getFrameElement } from 'proton-pass-extension/app/content/utils/frame';
-import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
-
 import type { MaybeNull } from '@proton/pass/types/utils/index';
 import { createStyleParser, getOffsetLeft, getOffsetTop } from '@proton/pass/utils/dom/computed-styles';
 import { getNthParent } from '@proton/pass/utils/dom/tree';
 import noop from '@proton/utils/noop';
 
+import { contentScriptMessage, sendMessage } from '../../../../../lib/message/send-message';
+import { WorkerMessageType } from '../../../../../types/messages';
+import { getFrameElement } from '../../../utils/frame';
+import type { FrameMessageBroker, FrameMessageHandler } from '../../client/client.channel';
+import type { FieldHandle } from '../../form/field';
+import type { DropdownHandler } from '../dropdown/dropdown.abstract';
 import { type IconController, createIconController } from './icon.controller';
+import { computeIconShift } from './icon.utils';
 
 export type IconRef = { current: MaybeNull<IconController> };
 

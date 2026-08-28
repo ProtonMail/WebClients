@@ -1,8 +1,7 @@
-import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
-
 import noop from '@proton/utils/noop';
 
+import { contentScriptMessage, sendMessage } from '../../../../../lib/message/send-message';
+import { WorkerMessageType } from '../../../../../types/messages';
 import type { NotificationHandler } from './notification.abstract';
 
 /** Notification relay for sub-frames: forwards open requests through the

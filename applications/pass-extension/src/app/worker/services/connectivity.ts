@@ -1,12 +1,12 @@
-import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
-import { backgroundMessage } from 'proton-pass-extension/lib/message/send-message';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
-
 import { api } from '@proton/pass/lib/api/api';
 import type { ConnectivityService, GetRetryTimeout } from '@proton/pass/lib/network/connectivity.service';
 import { createConnectivityService as createCoreConnectivityService } from '@proton/pass/lib/network/connectivity.service';
 import { CONNECTIVITY_RETRY_TIMEOUT, type ConnectivityStatus } from '@proton/pass/lib/network/connectivity.utils';
 import { FIBONACCI_LIST } from '@proton/shared/lib/constants';
+
+import { backgroundMessage } from '../../../lib/message/send-message';
+import { WorkerMessageType } from '../../../types/messages';
+import WorkerMessageBroker from '../channel';
 
 /** Fib backoff for ALL statuses: avoids a flat 5s polling loop that would
  * keep the MV3 service worker alive across the SW's idle-shutdown window. */

@@ -1,6 +1,4 @@
 import type { FieldType } from '@protontech/autofill/types';
-import type { HTMLFieldElement } from 'proton-pass-extension/app/content/services/detector/detector.api';
-import type { FieldElement } from 'proton-pass-extension/app/content/services/form/field';
 
 import { isActiveElement } from '@proton/pass/utils/dom/active-element';
 import { isInputElement, isSelectElement } from '@proton/pass/utils/dom/predicates';
@@ -8,6 +6,9 @@ import { seq } from '@proton/pass/utils/fp/promises';
 import { safeAsyncCall } from '@proton/pass/utils/fp/safe-call';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
+
+import type { HTMLFieldElement } from '../detector/detector.api';
+import type { FieldElement } from '../form/field';
 
 export type AutofillOptions = {
     /** If `true` will use a "paste-strategy" for

@@ -1,7 +1,6 @@
-import { OVERRIDE_STYLES_ATTR } from 'proton-pass-extension/app/content/constants.static';
-
 import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
 
+import { OVERRIDE_STYLES_ATTR } from '../../constants.static';
 import { cleanupStyleOverrides } from './icon/icon.utils';
 
 export const DOMCleanUp = ({ root, control }: PassElementsConfig) => {

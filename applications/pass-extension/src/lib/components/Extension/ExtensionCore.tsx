@@ -1,21 +1,6 @@
 import type { PropsWithChildren } from 'react';
 import { type FC, useCallback, useRef } from 'react';
 
-import config from 'proton-pass-extension/app/config';
-import { sendTelemetryEvent } from 'proton-pass-extension/app/content/utils/telemetry';
-import locales from 'proton-pass-extension/app/locales';
-import { API_PROXY_URL } from 'proton-pass-extension/app/worker/constants.runtime';
-import { resolveMessageFactory, sendMessage } from 'proton-pass-extension/lib/message/send-message';
-import { createConnectivityProxy } from 'proton-pass-extension/lib/services/connectivity.proxy';
-import { createCoreServiceBridge } from 'proton-pass-extension/lib/services/core.bridge';
-import { createMonitorBridge } from 'proton-pass-extension/lib/services/monitor.bridge';
-import { CLIPBOARD_PERMISSIONS, requestPermissions } from 'proton-pass-extension/lib/utils/permissions';
-import { createPopupController } from 'proton-pass-extension/lib/utils/popup';
-import { reloadManager } from 'proton-pass-extension/lib/utils/reload';
-import { sendSafariMessage } from 'proton-pass-extension/lib/utils/safari';
-import { assertTabsAPIAvailable } from 'proton-pass-extension/lib/utils/tabs';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
-
 import useInstance from '@proton/hooks/useInstance';
 import { AuthStoreProvider } from '@proton/pass/components/Core/AuthStoreProvider';
 import { ConnectivityProvider } from '@proton/pass/components/Core/ConnectivityProvider';
@@ -44,6 +29,21 @@ import type { LocalStoreData } from '@proton/pass/types/worker/state';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { createMemoryStore } from '@proton/pass/utils/store';
 import noop from '@proton/utils/noop';
+
+import config from '../../../app/config';
+import { sendTelemetryEvent } from '../../../app/content/utils/telemetry';
+import locales from '../../../app/locales';
+import { API_PROXY_URL } from '../../../app/worker/constants.runtime';
+import { WorkerMessageType } from '../../../types/messages';
+import { resolveMessageFactory, sendMessage } from '../../message/send-message';
+import { createConnectivityProxy } from '../../services/connectivity.proxy';
+import { createCoreServiceBridge } from '../../services/core.bridge';
+import { createMonitorBridge } from '../../services/monitor.bridge';
+import { CLIPBOARD_PERMISSIONS, requestPermissions } from '../../utils/permissions';
+import { createPopupController } from '../../utils/popup';
+import { reloadManager } from '../../utils/reload';
+import { sendSafariMessage } from '../../utils/safari';
+import { assertTabsAPIAvailable } from '../../utils/tabs';
 
 export type ExtensionCoreProps = {
     endpoint: ClientEndpoint;

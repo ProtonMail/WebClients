@@ -1,4 +1,4 @@
-import { EXTENSION_BUILD_VERSION, EXTENSION_MANIFEST_VERSION } from 'proton-pass-extension/lib/utils/version';
+import { EXTENSION_BUILD_VERSION, EXTENSION_MANIFEST_VERSION } from './version';
 
 /** If we have a mismatch between the build version and the manifest
  * version in Chrome, this can only mean there was a rollback since

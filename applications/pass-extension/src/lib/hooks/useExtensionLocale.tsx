@@ -1,10 +1,10 @@
 import { type FC, type PropsWithChildren, useEffect } from 'react';
 
-import { ExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
-import { matchExtensionMessage } from 'proton-pass-extension/lib/message/utils';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
-
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
+
+import { WorkerMessageType } from '../../types/messages';
+import { ExtensionContext } from '../context/extension-context';
+import { matchExtensionMessage } from '../message/utils';
 
 export const useExtensionLocale = () => {
     const core = usePassCore();

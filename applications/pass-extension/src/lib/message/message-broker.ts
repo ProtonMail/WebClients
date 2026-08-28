@@ -1,10 +1,3 @@
-import type {
-    WorkerMessage,
-    WorkerMessageResponse,
-    WorkerMessageWithSender,
-    WorkerResponse,
-} from 'proton-pass-extension/types/messages';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import type { Runtime } from 'webextension-polyfill';
 
 import browser from '@proton/pass/lib/globals/browser';
@@ -15,6 +8,13 @@ import { notIn } from '@proton/pass/utils/fp/predicates';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import { logger } from '@proton/pass/utils/logger';
 
+import type {
+    WorkerMessage,
+    WorkerMessageResponse,
+    WorkerMessageWithSender,
+    WorkerResponse,
+} from '../../types/messages';
+import { WorkerMessageType } from '../../types/messages';
 import { assertMessageVersion, backgroundMessage, errorMessage, resolveMessageResponse } from './send-message';
 import { isExtensionMessage } from './utils';
 

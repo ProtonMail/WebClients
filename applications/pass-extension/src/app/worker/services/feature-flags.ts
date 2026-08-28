@@ -1,8 +1,3 @@
-import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
-import { withContext } from 'proton-pass-extension/app/worker/context/inject';
-import { backgroundMessage } from 'proton-pass-extension/lib/message/send-message';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
-
 import { DEFAULT_PASS_FEATURES } from '@proton/pass/constants';
 import { getRuleVersion } from '@proton/pass/lib/extension/rules/rules';
 import { resolveWebsiteRules } from '@proton/pass/store/actions/creators/rules';
@@ -10,6 +5,11 @@ import type { FeatureFlagAndVariantState, FeatureFlagState, FeatureFlagVariants 
 import { withRevalidate } from '@proton/pass/store/request/enhancers';
 import type { MaybeNull } from '@proton/pass/types/utils/index';
 import { logger } from '@proton/pass/utils/logger';
+
+import { backgroundMessage } from '../../../lib/message/send-message';
+import { WorkerMessageType } from '../../../types/messages';
+import WorkerMessageBroker from '../channel';
+import { withContext } from '../context/inject';
 
 export interface FeatureFlagService {
     clear: () => Promise<void>;

@@ -1,16 +1,17 @@
-import { matchExtensionMessage } from 'proton-pass-extension/lib/message/utils';
-import type {
-    SendTabResponse,
-    WorkerMessage,
-    WorkerMessageType,
-    WorkerMessageWithSender,
-} from 'proton-pass-extension/types/messages';
 import type { Runtime } from 'webextension-polyfill';
 
 import browser from '@proton/pass/lib/globals/browser';
 import type { Maybe } from '@proton/pass/types/utils/index';
 import { eq, not } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
+
+import { matchExtensionMessage } from '../../../../lib/message/utils';
+import type {
+    SendTabResponse,
+    WorkerMessage,
+    WorkerMessageType,
+    WorkerMessageWithSender,
+} from '../../../../types/messages';
 
 export type FrameMessageHandler<T extends WorkerMessageType = WorkerMessageType> = (
     message: WorkerMessageWithSender<Extract<WorkerMessage, { type: T }>>,

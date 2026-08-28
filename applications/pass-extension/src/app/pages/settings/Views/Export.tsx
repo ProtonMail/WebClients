@@ -1,7 +1,5 @@
 import type { FC } from 'react';
 
-import { pageMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { c } from 'ttag';
 
 import { Exporter } from '@proton/pass/components/Export/Exporter';
@@ -9,6 +7,9 @@ import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
 import { throwError } from '@proton/pass/utils/fp/throw';
 import type { XorObfuscation } from '@proton/pass/utils/obfuscate/xor';
 import { serialize } from '@proton/pass/utils/object/serialize';
+
+import { pageMessage, sendMessage } from '../../../../lib/message/send-message';
+import { WorkerMessageType } from '../../../../types/messages';
 
 const checkLock = async () => {
     const result = await sendMessage(

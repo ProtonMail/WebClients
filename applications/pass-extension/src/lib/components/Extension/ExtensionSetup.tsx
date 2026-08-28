@@ -1,16 +1,16 @@
 import type { FC, ReactNode } from 'react';
 import { createContext, useEffect, useRef, useState } from 'react';
 
-import { type ExtensionContextType, setupExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
-import { WithExtensionLocale } from 'proton-pass-extension/lib/hooks/useExtensionLocale';
-import { resolveMessageFactory, sendMessage } from 'proton-pass-extension/lib/message/send-message';
-import { reloadManager } from 'proton-pass-extension/lib/utils/reload';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
-
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
 import type { MaybeNull } from '@proton/pass/types/utils/index';
 import { registerLoggerEffect } from '@proton/pass/utils/logger';
+
+import { WorkerMessageType } from '../../../types/messages';
+import { type ExtensionContextType, setupExtensionContext } from '../../context/extension-context';
+import { WithExtensionLocale } from '../../hooks/useExtensionLocale';
+import { resolveMessageFactory, sendMessage } from '../../message/send-message';
+import { reloadManager } from '../../utils/reload';
 
 type Props = { children: ReactNode; recycle?: boolean };
 

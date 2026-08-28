@@ -1,9 +1,10 @@
 import type { CCFieldType } from '@protontech/autofill/types';
-import type { FrameField } from 'proton-pass-extension/types/frames';
 
 import type { FormCredentials, Result } from '@proton/pass/types';
 import type { ItemContent, SelectedItem } from '@proton/pass/types/data/items';
 import type { CCItemData } from '@proton/pass/types/worker/data';
+
+import type { FrameField } from './frames';
 
 export type WithAutofillOrigin<T> = T &
     FrameField & {
@@ -31,9 +32,7 @@ export type AutofillActionDTO<T extends AutofillActionType = AutofillActionType>
 >;
 
 export type AutofillSequence<T = {}> =
-    | { status: 'start' }
-    | ({ status: 'fill' } & T)
-    | { status: 'completed'; refocus: FrameField };
+    { status: 'start' } | ({ status: 'fill' } & T) | { status: 'completed'; refocus: FrameField };
 
 export type AutofillStatus = AutofillSequence['status'];
 

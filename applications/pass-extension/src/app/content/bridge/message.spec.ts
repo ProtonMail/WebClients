@@ -1,8 +1,7 @@
-import { CLIENT_SCRIPT_READY_EVENT } from 'proton-pass-extension/app/content/constants.static';
-
 import * as domUtils from '@proton/pass/utils/dom/state';
 import * as stringUtils from '@proton/pass/utils/string/unique-id';
 
+import { CLIENT_SCRIPT_READY_EVENT } from '../constants.static';
 import { ALLOWED_MESSAGES, BRIDGE_ABORT, BRIDGE_DISCONNECT, BRIDGE_REQUEST, BRIDGE_RESPONSE } from './constants';
 import {
     BRIDGE_INIT_TIMEOUT,

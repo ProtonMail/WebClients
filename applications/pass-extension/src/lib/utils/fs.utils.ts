@@ -1,8 +1,8 @@
-import type { FileTransferErrorMessage, FileTransferWriteMessage } from 'proton-pass-extension/types/messages';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
-
 import type { FilePortWriter } from '@proton/pass/lib/file-storage/types';
 import { wait } from '@proton/shared/lib/helpers/promise';
+
+import type { FileTransferErrorMessage, FileTransferWriteMessage } from '../../types/messages';
+import { WorkerMessageType } from '../../types/messages';
 
 export const portTransferWriter: FilePortWriter = (fileRef, stream, signal, port) => {
     if (!port) throw new Error('Port not found for transfer');

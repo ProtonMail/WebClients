@@ -1,16 +1,17 @@
 import type { CCFieldType, FieldType } from '@protontech/autofill/types';
-import { backgroundMessage, sendTabMessage } from 'proton-pass-extension/lib/message/send-message';
-import { isCCField } from 'proton-pass-extension/lib/utils/field';
-import { resolveFieldSections } from 'proton-pass-extension/lib/utils/field.sections';
-import { type AutofillableFrames, getFrameScore } from 'proton-pass-extension/lib/utils/frames';
-import type { AutofillActionDTO } from 'proton-pass-extension/types/autofill';
-import type { AbstractField } from 'proton-pass-extension/types/field';
-import type { FrameAttributes, FrameField } from 'proton-pass-extension/types/frames';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import type { MaybeNull } from '@proton/pass/types/utils/index';
 import type { FrameId, TabId } from '@proton/pass/types/worker/runtime';
 import noop from '@proton/utils/noop';
+
+import { backgroundMessage, sendTabMessage } from '../../../lib/message/send-message';
+import { isCCField } from '../../../lib/utils/field';
+import { resolveFieldSections } from '../../../lib/utils/field.sections';
+import { type AutofillableFrames, getFrameScore } from '../../../lib/utils/frames';
+import type { AutofillActionDTO } from '../../../types/autofill';
+import type { AbstractField } from '../../../types/field';
+import type { FrameAttributes, FrameField } from '../../../types/frames';
+import { WorkerMessageType } from '../../../types/messages';
 
 export type ClusterFrameForm = { fields: ClusterFrameFormItem[]; formId: string };
 export type ClusterFrame = { forms: ClusterFrameForm[]; frameAttributes: FrameAttributes };

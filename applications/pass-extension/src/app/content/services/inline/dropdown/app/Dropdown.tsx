@@ -1,20 +1,5 @@
 import { type FC, useCallback, useEffect, useState } from 'react';
 
-import { DropdownAction } from 'proton-pass-extension/app/content/constants.runtime';
-import { DROPDOWN_MIN_HEIGHT } from 'proton-pass-extension/app/content/constants.static';
-import { DropdownDesktopUnlock } from 'proton-pass-extension/app/content/services/inline/dropdown/app/components/DropdownDesktopUnlock';
-import type { DropdownActions } from 'proton-pass-extension/app/content/services/inline/dropdown/dropdown.app';
-import { InlinePortMessageType } from 'proton-pass-extension/app/content/services/inline/inline.messages';
-import {
-    useIFrameAppController,
-    useIFrameAppState,
-    useRegisterMessageHandler,
-} from 'proton-pass-extension/lib/components/Inline/IFrameApp';
-import { IFrameAppAutoSizer } from 'proton-pass-extension/lib/components/Inline/IFrameAppAutoSizer';
-import { ListItem } from 'proton-pass-extension/lib/components/Inline/ListItem';
-import { useRequestFork } from 'proton-pass-extension/lib/hooks/useRequestFork';
-import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
@@ -33,6 +18,21 @@ import type { MaybeNull } from '@proton/pass/types/utils/index';
 import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
 import { BRAND_NAME, PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
+import {
+    useIFrameAppController,
+    useIFrameAppState,
+    useRegisterMessageHandler,
+} from '../../../../../../lib/components/Inline/IFrameApp';
+import { IFrameAppAutoSizer } from '../../../../../../lib/components/Inline/IFrameAppAutoSizer';
+import { ListItem } from '../../../../../../lib/components/Inline/ListItem';
+import { useRequestFork } from '../../../../../../lib/hooks/useRequestFork';
+import { contentScriptMessage, sendMessage } from '../../../../../../lib/message/send-message';
+import { WorkerMessageType } from '../../../../../../types/messages';
+import { DropdownAction } from '../../../../constants.runtime';
+import { DROPDOWN_MIN_HEIGHT } from '../../../../constants.static';
+import { InlinePortMessageType } from '../../inline.messages';
+import type { DropdownActions } from '../dropdown.app';
+import { DropdownDesktopUnlock } from './components/DropdownDesktopUnlock';
 import { DropdownFocusController } from './components/DropdownFocusController';
 import { DropdownPinUnlock } from './components/DropdownPinUnlock';
 import { AutofillCC } from './views/AutofillCC';
