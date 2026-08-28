@@ -73,5 +73,3 @@ export const useOpenCalendarEvents = ({ onChangeDate, tzid, setEventTargetAction
 
     return { goToEvent, goToOccurrence };
 };
-
-export default useOpenCalendarEvents;

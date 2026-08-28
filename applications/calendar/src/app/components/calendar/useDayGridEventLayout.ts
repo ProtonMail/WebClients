@@ -15,7 +15,7 @@ const getIsAllSingle = (eventsInRowSummary: EventsInRowSummary, start: number, e
     return true;
 };
 
-export interface DayGridResult {
+interface DayGridResult {
     more: number;
     events: number[];
 }

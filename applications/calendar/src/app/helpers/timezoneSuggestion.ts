@@ -7,7 +7,7 @@ export const getTimezoneSuggestionKey = async (userID: string) => {
     return getSHA256String(`${LOCALSTORAGE_TZ_KEY}${userID}`);
 };
 
-export const getLastTimezoneSuggestion = (key: string) => {
+const getLastTimezoneSuggestion = (key: string) => {
     const defaultDate = new Date(2000, 0, 1);
     try {
         const lastSuggestion = parseInt(`${window.localStorage.getItem(key)}`, 10);

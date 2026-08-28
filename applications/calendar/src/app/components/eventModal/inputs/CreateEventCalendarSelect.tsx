@@ -9,7 +9,7 @@ import type { CalendarMember, EventModel } from '@proton/shared/lib/interfaces/c
 import { getIsAvailableCalendar } from '../../../helpers/event';
 import { getInitialMemberModel, getOrganizerAndSelfAddressModel } from '../eventForm/state';
 
-export interface Props extends Omit<SelectTwoProps<string>, 'children'> {
+interface Props extends Omit<SelectTwoProps<string>, 'children'> {
     model: EventModel;
     setModel: (value: EventModel) => void;
     isCreateEvent: boolean;

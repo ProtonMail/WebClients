@@ -123,4 +123,3 @@ export const useCalendarsAlarmsEventListeners = (
     }, [calendarIDs]);
 };
 
-export default useCalendarsAlarmsEventListeners;

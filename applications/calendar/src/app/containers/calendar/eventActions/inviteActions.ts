@@ -354,7 +354,7 @@ const getSafeSendTo = (attendees: VcalAttendeeProperty[], map: SimpleMap<SendPre
     }, []);
 };
 
-export const createIcsInvites = async ({
+const createIcsInvites = async ({
     vevent,
     cancelVevent,
     eventAttendees,
