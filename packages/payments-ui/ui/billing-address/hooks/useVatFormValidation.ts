@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react';
 
 import type { VatFormErrors, VatFormFields } from '@proton/payments/core/billing-address/vat-helpers';
 import { getVatFormErrors } from '@proton/payments/core/billing-address/vat-helpers';
-import { useFlag } from '@proton/unleash/useFlag';
 
 export type { VatFormFields } from '@proton/payments/core/billing-address/vat-helpers';
 
@@ -44,8 +43,7 @@ export function useVatFormValidation(
         setShowErrors(false);
     }, [fields.CountryCode]);
 
-    const showExtendedBillingAddressForm = useFlag('PaymentsValidateBillingAddress');
-    const allErrors = getVatFormErrors(fields, showExtendedBillingAddressForm);
+    const allErrors = getVatFormErrors(fields);
 
     const handleFormBlur = (e: React.FocusEvent) => {
         if (!fields.VatId) {

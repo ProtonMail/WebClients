@@ -24,7 +24,6 @@ import type { FreeSubscription, PaymentsApi } from '@proton/payments/core/interf
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { isFreeSubscription } from '@proton/payments/core/type-guards';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import { CountryStateSelector } from '../components/CountryStateSelector';
 import { type CountriesWithCustomVatName, getVatNumberName } from '../components/VatNumberInput';
@@ -75,7 +74,6 @@ export const EditBillingAddressModal = (props: Props) => {
 
     const { validator, onFormSubmit } = useFormErrors();
     const dispatch = useDispatch();
-    const showExtendedBillingAddressForm = useFlag('PaymentsValidateBillingAddress');
 
     const [loading, withLoading] = useLoading();
     const [backendErrors, setBackendErrors] = useState<BillingAddressValidationResult | null>(null);
@@ -96,13 +94,10 @@ export const EditBillingAddressModal = (props: Props) => {
         initialVatNumber: initialFullBillingAddress.VatId,
     });
 
-    const frontendErrors = getVatFormErrors(
-        {
-            ...fullBillingAddress.BillingAddress,
-            VatId: fullBillingAddress.VatId,
-        },
-        showExtendedBillingAddressForm
-    );
+    const frontendErrors = getVatFormErrors({
+        ...fullBillingAddress.BillingAddress,
+        VatId: fullBillingAddress.VatId,
+    });
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.stopPropagation();
