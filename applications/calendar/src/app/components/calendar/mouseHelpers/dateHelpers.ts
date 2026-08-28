@@ -2,7 +2,7 @@ import { addDays, addMinutes, startOfDay } from '@proton/shared/lib/date-fns-utc
 
 import { getRelativePosition } from './mathHelpers';
 
-export const getSnappedMinutes = (minutes: number, interval: number) => {
+const getSnappedMinutes = (minutes: number, interval: number) => {
     return Math.floor((minutes / 60) * (60 / interval)) * interval;
 };
 

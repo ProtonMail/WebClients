@@ -37,7 +37,7 @@ import { RowParticipants } from './rows/RowParticipants';
 import { RowTitle } from './rows/RowTitle';
 import { RowVideoConference } from './rows/RowVideoConference';
 
-export interface EventFormProps {
+interface EventFormProps {
     isSubmitted: boolean;
     displayWeekNumbers: boolean;
     weekStartsOn: WeekStartsOn;

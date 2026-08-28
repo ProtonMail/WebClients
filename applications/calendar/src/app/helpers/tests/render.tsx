@@ -3,7 +3,6 @@ import * as React from 'react';
 import { Router } from 'react-router';
 
 import { render as originalRender } from '@testing-library/react';
-import { renderHook as originalRenderHook } from '@testing-library/react-hooks';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { createMemoryHistory } from 'history';
 
@@ -47,6 +46,3 @@ export const render = (ui: ReactElement) =>
     originalRender(ui, {
         wrapper: TestProvider,
     });
-
-export const renderHook = <TProps, TResult>(callback: (props: TProps) => TResult) =>
-    originalRenderHook<TProps, TResult>(callback, { wrapper: TestProvider as any });

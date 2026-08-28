@@ -5,7 +5,7 @@ export const getRelativePosition = (pagePosition: number, elementPosition: numbe
     return Math.min(Math.max(0, pagePosition - elementPosition), elementSize) / elementSize;
 };
 
-export const normalizeIndex = (i: number, length: number) => Math.min(i, length - 1);
+const normalizeIndex = (i: number, length: number) => Math.min(i, length - 1);
 
 export const getTargetIndex = (pagePosition: number, elementPosition: number, elementSize: number, total: number) => {
     return normalizeIndex(Math.floor(getRelativePosition(pagePosition, elementPosition, elementSize) * total), total);

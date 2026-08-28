@@ -42,10 +42,10 @@ export const isCreateDownAction = (action: MouseDownAction): action is CreateDow
     return action.action === ACTIONS.CREATE_DOWN;
 };
 
-export interface MoreUpAction {
+interface MoreUpAction {
     action: ACTIONS.MORE_UP;
 }
-export interface EventUpAction {
+interface EventUpAction {
     action: ACTIONS.EVENT_UP;
     payload: {
         type: TYPE;
@@ -57,7 +57,7 @@ export interface StartEndResult {
     start: Date;
     end: Date;
 }
-export interface EventMoveAction {
+interface EventMoveAction {
     action: ACTIONS.EVENT_MOVE | ACTIONS.EVENT_MOVE_UP;
     payload: {
         type: TYPE;
@@ -66,7 +66,7 @@ export interface EventMoveAction {
         day?: number;
     };
 }
-export interface CreateUpAction {
+interface CreateUpAction {
     action: ACTIONS.CREATE_UP | ACTIONS.CREATE_MOVE | ACTIONS.CREATE_MOVE_UP;
     payload: {
         type: TYPE;

@@ -32,7 +32,7 @@ import { FormRangeList } from './FormRangeList';
 
 import './BookingForms.scss';
 
-export const getBookingLocationOption = (isMeetEnabled: boolean) => {
+const getBookingLocationOption = (isMeetEnabled: boolean) => {
     return [
         isMeetEnabled && { text: MEET_APP_NAME, value: BookingLocation.MEET },
         { text: c('Info').t`Other location`, value: BookingLocation.OTHER_LOCATION },
@@ -47,7 +47,7 @@ const getBookingBufferTimeOptions = () => {
     ];
 };
 
-export const Form = () => {
+const Form = () => {
     const isMeetVideoConferenceEnabled = useFlag('NewScheduleOption');
     const hasMeetProductAccess = useHasMeetProductAccess();
 

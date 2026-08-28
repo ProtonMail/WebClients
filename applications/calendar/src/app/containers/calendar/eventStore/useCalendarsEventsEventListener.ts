@@ -92,5 +92,3 @@ export const useCalendarCacheEventListener = (
         // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-36460B
     }, [calendarIDs]);
 };
-
-export default useCalendarCacheEventListener;
