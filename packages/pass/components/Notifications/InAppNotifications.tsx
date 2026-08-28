@@ -1,13 +1,16 @@
-import { type FC, useMemo } from 'react';
+import type { FC } from 'react';
+
+import { HOUR } from '@proton/shared/lib/constants';
 
 import { useInAppNotificationVisibility } from '../../hooks/notifications/useInAppNotificationVisibility';
+import { useEpoch } from '../../hooks/useEpoch';
 import { useMemoSelector } from '../../hooks/useMemoSelector';
 import { selectActiveNotification } from '../../store/selectors/notification';
 import type { MaybeNull } from '../../types';
 import { InAppNotificationDisplayType } from '../../types';
-import { getEpoch } from '../../utils/time/epoch';
 import { InAppNotificationBanner } from './InAppNotificationBanner';
 import { InAppNotificationModal } from './InAppNotificationModal';
+import { OfflineSetupNotification } from './OfflineSetupNotification';
 import type { InAppNotificationRenderProps } from './WithInAppNotification';
 
 const getNotificationComponent = (
@@ -26,12 +29,16 @@ const getNotificationComponent = (
 };
 
 export const InAppNotifications: FC = () => {
-    const now = useMemo(() => getEpoch(), []);
+    const now = useEpoch(HOUR);
     const notification = useMemoSelector(selectActiveNotification, [now]);
     const visible = useInAppNotificationVisibility(notification);
 
-    if (!(notification && visible)) return null;
+    /** Client-side notifications only show when the backend has nothing to display
+     * in this slot: promo notifications are rooted in the promo menu button. */
+    if (notification) {
+        const Component = getNotificationComponent(notification.content.displayType);
+        if (Component) return visible ? <Component dense={EXTENSION_BUILD} notification={notification} /> : null;
+    }
 
-    const Component = getNotificationComponent(notification?.content.displayType);
-    return Component && <Component dense={EXTENSION_BUILD} notification={notification} />;
+    return <OfflineSetupNotification dense={EXTENSION_BUILD} />;
 };
