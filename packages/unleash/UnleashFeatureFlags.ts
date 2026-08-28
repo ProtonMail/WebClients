@@ -237,6 +237,7 @@ enum DocsFeatureFlag {
     DocsTrashWithDriveSDK = 'DocsTrashWithDriveSDK',
     DocsMoveModalDriveSDK = 'DocsMoveModalDriveSDK',
     DocsInvitationsDriveSDK = 'DocsInvitationsDriveSDK',
+    DocsDriveCompatSDK = 'DocsDriveCompatSDK',
 }
 
 export enum MailFeatureFlag {

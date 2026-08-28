@@ -7,7 +7,7 @@ export interface AuthenticatedDocControllerInterface {
 
   createInitialCommit(content: DocumentUpdate): Promise<Result<unknown>>
   createInitialCommitFromEditorState(state: YjsState): Promise<Result<unknown>>
-  createNewDocument(documentType: DocumentType): Promise<void>
+  createNewDocument(documentType: DocumentType, useSDK?: boolean): Promise<void>
   debugSendCommitCommandToRTS(): Promise<void>
   deinit(): void
   destroy(): void

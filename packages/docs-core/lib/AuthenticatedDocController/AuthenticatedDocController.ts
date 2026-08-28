@@ -382,7 +382,7 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
     void this.driveCompat.openDocument(shell, isProtonDocsSpreadsheet(node.mimeType) ? 'sheet' : 'doc')
   }
 
-  public async createNewDocument(documentType: DocumentType): Promise<void> {
+  public async createNewDocument(documentType: DocumentType, useSDK = false): Promise<void> {
     const date = getPlatformFriendlyDateForFileName()
     const newName = getDefaultDocumentName(documentType, date)
 
@@ -391,6 +391,7 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
       this.documentState.getProperty('entitlements').nodeMeta,
       this.documentState.getProperty('decryptedNode'),
       documentType,
+      useSDK,
     )
 
     if (result.isFailed()) {
@@ -422,6 +423,7 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
           throw error
         }
       } else {
+        // Not replacing this, because will be deleted when we switch to SDK 100%
         const parentLinkId = decryptedNode.parentNodeId || (await this.driveCompat.getMyFilesNodeMeta()).linkId
         await this.driveCompat.trashDocument(this.documentState.getProperty('entitlements').nodeMeta, parentLinkId)
       }
@@ -448,6 +450,7 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
       if (useSDK) {
         await restoreDocumentSDK(generateNodeUid(decryptedNode.volumeId, decryptedNode.nodeId))
       } else {
+        // Not replacing this, because will be deleted when we switch to SDK 100%
         const parentLinkId = decryptedNode.parentNodeId || (await this.driveCompat.getMyFilesNodeMeta()).linkId
         await this.driveCompat.restoreDocument(this.documentState.getProperty('entitlements').nodeMeta, parentLinkId)
       }
