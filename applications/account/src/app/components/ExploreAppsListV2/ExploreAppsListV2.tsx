@@ -25,6 +25,7 @@ import {
     hasPaidMail,
     hasPaidMeet,
     hasPaidPass,
+    hasPaidSpaces,
     hasPaidVpn,
     hasPaidWallet,
 } from '@proton/shared/lib/user/helpers';
@@ -236,6 +237,23 @@ const getAppConfigs = ({ user }: { user?: User }) => {
                 '--shadow-color-3': 'rgb(240 139 86 / 0.3)',
             } as CSSProperties,
         },
+        {
+            name: APPS.PROTONSPACES,
+            isNew: true,
+            bit: PRODUCT_BIT.SPACES,
+            priority: user && hasPaidSpaces(user) ? priorities.higher : priorities.default,
+            description: () => {
+                // translator: Description for Proton Spaces. As concise as possible, under 20 characters please
+                return c('app-switcher_2025').t`Secure and end-to-end encrypted`;
+            },
+            style: {
+                '--gradient-hover':
+                    'linear-gradient(35.43deg, rgb(188 163 255 / 0.5) 0%, rgb(115 65 255 / 0.5) 88.01%)',
+                '--shadow-color-1': 'rgb(66 0 251 / 0.1)',
+                '--shadow-color-2': 'rgb(160 125 255 / 0.2)',
+                '--shadow-color-3': 'rgb(153 122 255 / 0.3)',
+            },
+        },
     ];
 };
 
@@ -278,6 +296,7 @@ const allBits =
     PRODUCT_BIT.WALLET |
     PRODUCT_BIT.LUMO |
     PRODUCT_BIT.MEET;
+    // PRODUCT_BIT.SPACES; TODO: add spaces here when API sets it
 
 const getNameFromPlan = (plan?: PLANS) => {
     if (!plan) {

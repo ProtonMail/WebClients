@@ -19,6 +19,7 @@ export const hasPaidPass = (user: User) =>
 export const hasPassLifetimeOrViaSimpleLogin = (user: User) => hasPassLifetime(user) || hasPassViaSimpleLogin(user);
 export const hasPaidLumo = (user: User) => hasBit(user.Subscribed, PRODUCT_BIT.LUMO);
 export const hasPaidMeet = (user: User) => hasBit(user.Subscribed, PRODUCT_BIT.MEET);
+export const hasPaidSpaces = (user: User) => hasBit(user.Subscribed, PRODUCT_BIT.SPACES);
 export const isPaid = (user: User) => !!user.Subscribed;
 export const isPrivate = (user: User) => user.Private === 1;
 export const isFree = (user: User) => !isPaid(user);
