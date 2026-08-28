@@ -709,9 +709,6 @@
       "Skip": [
         "Omitere"
       ],
-      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
-        "Cineva v-a partajat un articol în ${ PASS_APP_NAME }."
-      ],
       "Sort vault items": [
         "Sortare articole seif"
       ],
@@ -920,6 +917,9 @@
       ],
       "Check if your passwords have been exposed": [
         "Verificați dacă parolele v-au fost expuse"
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total }": [
+        "Se verifică ${ compromised.progress.completed } din ${ compromised.progress.total }"
       ],
       "Create unique passwords": [
         "Creați parole unice"
@@ -1418,9 +1418,6 @@
       "Trashing item failed": [
         "Punerea în gunoi a articolelor a eșuat."
       ],
-      "Try reaching out to the link owner.": [
-        "Încercați să contactați proprietarul legăturii web."
-      ],
       "Unable to generate an OTP code for this item": [
         "Nu se poate genera un cod OTP pentru acest articol."
       ],
@@ -1867,6 +1864,9 @@
       "Change your password": [
         "Modificare parolă"
       ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
+        "Se verifică parolele ${ compromised.progress.completed } din ${ compromised.progress.total }"
+      ],
       "Confirm your extra password to proceed with its removal.": [
         "Confirmați parola suplimentară pentru a continua eliminarea sa."
       ],
@@ -2245,9 +2245,7 @@
         "Se mută toate articolele din „${ payload.content.name }”."
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
+        "Mutarea unui element într-un alt seif îi va șterge linkurile securizate."
       ],
       "Moving items": [
         "Se mută articolele."
@@ -4098,9 +4096,6 @@
       ],
       "Theme": [
         "Tema"
-      ],
-      "This item is accessible until ${ date } or until the view limit is reached.": [
-        "Acest articol este disponibil până la ${ date } sau până când este atinsă limita de vizualizări."
       ],
       "Tier/Level": [
         "Rang/Nivel"

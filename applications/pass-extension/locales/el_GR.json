@@ -886,6 +886,9 @@
       "Check if your passwords have been exposed": [
         "Ελέγξτε αν οι κωδικοί πρόσβασής σας έχουν αποκαλυφθεί"
       ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total }": [
+        "Έλεγχος ${ compromised.progress.completed } από ${ compromised.progress.total }"
+      ],
       "Create unique passwords": [
         "Δημιουργήστε μοναδικούς κωδικούς πρόσβασης"
       ],
@@ -1861,6 +1864,9 @@
       "Change your password": [
         "Αλλάξτε τον κωδικό πρόσβασής σας"
       ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
+        "Έλεγχος ${ compromised.progress.completed } από ${ compromised.progress.total } κωδικούς πρόσβασης"
+      ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Επιλέξτε ένα αποθηκευμένο κλειδί πρόσβασης για είσοδο στο ${ domain }"
       ],
@@ -2241,7 +2247,8 @@
         "Μετακίνηση όλων των στοιχείων από το \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους του."
+        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους του.",
+        "Η μετακίνηση στοιχείων σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους των."
       ],
       "Moving items": [
         "Μετακίνηση στοιχείων"

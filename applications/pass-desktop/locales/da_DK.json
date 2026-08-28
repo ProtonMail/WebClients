@@ -709,9 +709,6 @@
       "Skip": [
         "Spring over"
       ],
-      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
-        "Nogen har delt et element med dig på ${ PASS_APP_NAME }."
-      ],
       "Sort vault items": [
         "Sortér elementer i boks"
       ],
@@ -917,6 +914,9 @@
       ],
       "Check if your passwords have been exposed": [
         "Tjek om dine adgangskoder er blevet afsløret"
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total }": [
+        "Tjekker ${ compromised.progress.completed } af ${ compromised.progress.total }"
       ],
       "Create unique passwords": [
         "Opret unikke adgangskoder"
@@ -1413,9 +1413,6 @@
       "Trashing item failed": [
         "Kunne ikke flytte element til papirkurven"
       ],
-      "Try reaching out to the link owner.": [
-        "Prøv at kontakte linkets ejer."
-      ],
       "Unable to generate an OTP code for this item": [
         "Kunne ikke generere en OTP-kode for dette element"
       ],
@@ -1845,6 +1842,9 @@
       "Change your password": [
         "Skift din adgangskode"
       ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
+        "Tjekker ${ compromised.progress.completed } af ${ compromised.progress.total } adgangskoder"
+      ],
       "Confirm your extra password to proceed with its removal.": [
         "Bekræft din ekstra adgangskode for at fortsætte med at fjerne den."
       ],
@@ -2219,8 +2219,7 @@
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Flyttes et element til en anden boks, slettes dets sikre links.",
-        "Flyttes elementer til en anden boks, slettes deres sikre links."
+        "Hvis du flytter et element til en anden boks, slettes dets sikre links."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -4051,9 +4050,6 @@
       ],
       "Theme": [
         "Tema"
-      ],
-      "This item is accessible until ${ date } or until the view limit is reached.": [
-        "Dette element er tilgængeligt indtil ${ date } eller indtil visningsgrænsen er nået."
       ],
       "Tier/Level": [
         "Niveau"

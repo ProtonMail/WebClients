@@ -5510,7 +5510,7 @@
         "Sinulla on jo ilmainen tili"
       ],
       "You are about to open another browser tab and visit:": [
-        "Olet avaamassa uutta selaimen välilehteä sivustolle:"
+        "Olet avaamassa uuteen selainvälilehteen osoitetta:"
       ],
       "You are about to open your default browser and visit:": [
         "Olet avaamassa oletusselaimeesi osoitetta:"
@@ -5748,6 +5748,9 @@
     "Label": {
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-käyttäjätunnus"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } merkkiä"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Tilapäisesti pois käytöstä. Yritä myöhemmin uudelleen.)"
@@ -6560,194 +6563,6 @@
       ],
       "Plain text": [
         "Pelkkä teksti"
-      ]
-    },
-    "Mimetype": {
-      "3GPP audio/video container": [
-        "3GPP-ääni-/videosäiliö"
-      ],
-      "3GPP2 audio/video container": [
-        "3GPP2-ääni-/videosäiliö"
-      ],
-      "7-zip archive": [
-        "7z-arkisto"
-      ],
-      "AAC audio": [
-        "AAC-ääni"
-      ],
-      "AbiWord document": [
-        "AbiWord-asiakirja"
-      ],
-      "Adobe Portable Document Format (PDF)": [
-        "PDF (Adobe Portable Document Format)"
-      ],
-      "Amazon Kindle eBook format": [
-        "Amazon Kindle eBook"
-      ],
-      "Android Package": [
-        "Android-paketti"
-      ],
-      "Animated Portable Network Graphics": [
-        "Animated Portable Network Graphics (APNG)"
-      ],
-      "Apple Installer Package": [
-        "Apple Installer -paketti"
-      ],
-      "Archive document": [
-        "Arkistoasiakirja"
-      ],
-      "Audio file": [
-        "Ääni"
-      ],
-      "AV1 Image File Format (AVIF)": [
-        "AV1-kuva (AVIF)"
-      ],
-      "AVI video": [
-        "AVI-video"
-      ],
-      "Binary data": [
-        "Binääritiedosto"
-      ],
-      "Bourne shell script": [
-        "Bourne shell -komentosarja"
-      ],
-      "BZip archive": [
-        "Bzip-arkisto"
-      ],
-      "BZip2 archive": [
-        "Bzip2-arkisto"
-      ],
-      "C-Shell script": [
-        "C-Shell-komentosarja"
-      ],
-      "Cascading Style Sheets (CSS)": [
-        "Cascading Style Sheets (CSS)"
-      ],
-      "Comma-separated values (CSV)": [
-        "Pilkuilla erotellut arvot (CSV)"
-      ],
-      "Electronic publication (EPUB)": [
-        "EPUB (Electronic publication)"
-      ],
-      "Flash Video": [
-        "Flash-video"
-      ],
-      "Graphics Interchange Format (GIF)": [
-        "Graphics Interchange Format (GIF)"
-      ],
-      "GZip Archive": [
-        "GZip-arkisto"
-      ],
-      "HyperText Markup Language (HTML)": [
-        "Hypertekstin merkintäkieli (HTML)"
-      ],
-      "Hypertext Preprocessor (Personal Home Page)": [
-        "PHP: Hypertext Preprocessor"
-      ],
-      "iCalendar format": [
-        "iCalendar"
-      ],
-      "Icon format": [
-        "Kuvake (ICO)"
-      ],
-      "Image": [
-        "Kuva"
-      ],
-      "Java Archive (JAR)": [
-        "Java-arkisto (JAR)"
-      ],
-      "JPEG image": [
-        "JPEG-kuva"
-      ],
-      "MP3 audio": [
-        "MP3-ääni"
-      ],
-      "MPEG transport stream": [
-        "MPEG transport stream (MPEG-TS)"
-      ],
-      "MPEG Video": [
-        "MPEG-video"
-      ],
-      "MS Embedded OpenType fonts": [
-        "MS Embedded OpenType (EOT) -fontti"
-      ],
-      "Musical Instrument Digital Interface (MIDI)": [
-        "Musical Instrument Digital Interface (MIDI)"
-      ],
-      "OGG audio": [
-        "OGG-ääni"
-      ],
-      "OGG video": [
-        "OGG-video"
-      ],
-      "OpenDocument presentation document": [
-        "OpenDocument-esitys"
-      ],
-      "OpenDocument spreadsheet document": [
-        "OpenDocument-laskentataulukko"
-      ],
-      "OpenDocument text document": [
-        "OpenDocument-teksti"
-      ],
-      "OpenType font": [
-        "OpenType-fontti"
-      ],
-      "Opus audio": [
-        "Opus-ääni"
-      ],
-      "Portable Network Graphics (PNG)": [
-        "Portable Network Graphics (PNG) -kuva"
-      ],
-      "RAR archive": [
-        "RAR-arkisto"
-      ],
-      "Rich Text Format (RTF)": [
-        "Rich Text Format (RTF)"
-      ],
-      "Scalable Vector Graphics (SVG)": [
-        "Scalable Vector Graphics (SVG)"
-      ],
-      "Small web format (SWF)": [
-        "Small Web Format (SWF)"
-      ],
-      "Tagged Image File Format (TIFF)": [
-        "Tagged Image File Format (TIFF)"
-      ],
-      "Tape Archive (TAR)": [
-        "TAR-arkisto"
-      ],
-      "Text": [
-        "Teksti"
-      ],
-      "TrueType Font": [
-        "TrueType-fontti"
-      ],
-      "Unknown file": [
-        "Tuntematon"
-      ],
-      "Video file": [
-        "Video"
-      ],
-      "Waveform Audio Format": [
-        "Waveform Audio Format (WAV)"
-      ],
-      "Web Open Font Format (WOFF)": [
-        "Web Open Font Format (WOFF) -fontti"
-      ],
-      "WEBM audio": [
-        "WebM-ääni"
-      ],
-      "WEBM video": [
-        "WebM-video"
-      ],
-      "WEBP image": [
-        "WebP-kuva"
-      ],
-      "Windows OS/2 Bitmap Graphics": [
-        "Windows OS/2 -bittikartta (BMP)"
-      ],
-      "ZIP archive": [
-        "ZIP-arkisto"
       ]
     },
     "Modal title": {
@@ -10493,7 +10308,7 @@
         "Vaihda valitsemiesi päivä- ja yöteemojen välillä automaattisesti järjestelmäsi päivä-/yötilan mukaisesti"
       ],
       "Change shared item settings": [
-        "Muuta jaettavan kohteen asetuksia"
+        "Muuta jaetun kohteen asetuksia"
       ],
       "Customize import to reduce the number of folders": [
         "Vähennä kansioiden määrää mukauttamalla tuontia"

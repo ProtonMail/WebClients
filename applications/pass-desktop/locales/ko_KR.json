@@ -706,9 +706,6 @@
       "Skip": [
         "건너뛰기"
       ],
-      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
-        "${ PASS_APP_NAME }에서 사용자와 타인이 항목을 공유하고 있습니다."
-      ],
       "Sort vault items": [
         "금고 항목 정렬"
       ],
@@ -911,6 +908,9 @@
       ],
       "Check if your passwords have been exposed": [
         "비밀번호 유출 여부를 확인하세요"
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total }": [
+        "${ compromised.progress.total }개 중 ${ compromised.progress.completed }개 확인 중"
       ],
       "Create unique passwords": [
         "고유한 비밀번호 만들기"
@@ -1405,9 +1405,6 @@
       "Trashing item failed": [
         "항목을 휴지통으로 이동하는데 실패"
       ],
-      "Try reaching out to the link owner.": [
-        "이 링크 소유자에게 연락을 시도하세요.."
-      ],
       "Unable to generate an OTP code for this item": [
         "해당 항목으로 OTP 코드를 생성할 수 없습니다"
       ],
@@ -1820,6 +1817,9 @@
       "Change your password": [
         "비밀번호를 변경하십시오"
       ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
+        "비밀번호 ${ compromised.progress.total }개 중 ${ compromised.progress.completed }개 확인 중"
+      ],
       "Confirm your extra password to proceed with its removal.": [
         "삭제를 하려면 추가 비밀번호를 확인하십시오."
       ],
@@ -2190,7 +2190,7 @@
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "항목을 다른 금고로 이동하면 이 항목의 모든 안전한 링크가 삭제됩니다."
+        "항목을 다른 금고로 이동시 안전한 링크가 삭제됩니다."
       ],
       "Moving items": [
         "항목 이동 중"
@@ -4001,9 +4001,6 @@
       ],
       "Theme": [
         "테마"
-      ],
-      "This item is accessible until ${ date } or until the view limit is reached.": [
-        "이 항목은 ${ date }이 되거나 보기 제한에 도달하기 전까지 접근가능합니다."
       ],
       "Tier/Level": [
         "티어/레벨"

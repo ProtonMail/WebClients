@@ -709,9 +709,6 @@
       "Skip": [
         "Atla"
       ],
-      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
-        "Birisi sizinle ${ PASS_APP_NAME } üzerinde bir öge paylaştı."
-      ],
       "Sort vault items": [
         "Kasa ögelerini sırala"
       ],
@@ -917,6 +914,9 @@
       ],
       "Check if your passwords have been exposed": [
         "Parolalarınızın açığa çıkıp çıkmadığını kontrol edin"
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total }": [
+        "${ compromised.progress.completed } / ${ compromised.progress.total } denetleniyor"
       ],
       "Create unique passwords": [
         "Benzersiz parolalar oluşturun"
@@ -1413,9 +1413,6 @@
       "Trashing item failed": [
         "Öge çöpe atılamadı"
       ],
-      "Try reaching out to the link owner.": [
-        "Bağlantının sahibiyle görüşmeyi deneyin."
-      ],
       "Unable to generate an OTP code for this item": [
         "Bu öge için tek kullanımlık parola üretilemedi"
       ],
@@ -1845,6 +1842,9 @@
       "Change your password": [
         "Parolanızı değiştirin"
       ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
+        "${ compromised.progress.completed } / ${ compromised.progress.total } parola denetleniyor"
+      ],
       "Confirm your extra password to proceed with its removal.": [
         "Kaldırma işlemini tamamlamak için ek parolanızı doğrulayın."
       ],
@@ -2219,8 +2219,7 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
-        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
+        "Başka bir kasaya taşınan ögenin güvenli bağlantıları silinir."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -4051,9 +4050,6 @@
       ],
       "Theme": [
         "Tema"
-      ],
-      "This item is accessible until ${ date } or until the view limit is reached.": [
-        "Bu ögeye ${ date } tarihine kadar veya görüntüleme sayısı sınırına ulaşılana kadar erişilebilir."
       ],
       "Tier/Level": [
         "Sınıf/Düzey"
