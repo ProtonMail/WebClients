@@ -1,6 +1,6 @@
 import { type RefObject, useCallback, useEffect, useState } from 'react';
 
-import type { PopperPosition } from '@proton/components/components/popper/interface';
+import type { PopperPosition } from '@proton/atoms/Popper/interface';
 
 export interface ArtifactSelection {
     text: string;
