@@ -57,6 +57,7 @@ const hostParticipantsState = {
     participantsMap: {
         'local-participant': {
             ParticipantUUID: 'local-participant',
+            EncryptedDisplayName: 'encrypted-local-participant',
             IsHost: ParticipantCapabilityPermission.Allowed,
         },
     },
