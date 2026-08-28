@@ -1,7 +1,7 @@
-import type { PassElementsRegister } from 'proton-pass-extension/app/content/elements';
-
 import '@proton/pass/globals.d';
 import type { Maybe } from '@proton/pass/types';
+
+import type { PassElementsRegister } from './src/app/content/elements';
 
 export type ExportFunction = <Fn extends Function>(fn: Fn, target: any, options: { defineAs: string }) => void;
 export type CloneInto = <T>(obj: T, target: any, options: { cloneFunctions?: boolean; wrapReflectors?: boolean }) => T;

@@ -1,25 +1,6 @@
 import type { FormType } from '@protontech/autofill/types';
 import { FieldType, IdentityFieldType } from '@protontech/autofill/types';
 import debounce from 'lodash/debounce';
-import { FORM_TRACKER_CONFIG, NotificationAction } from 'proton-pass-extension/app/content/constants.runtime';
-import { withContext } from 'proton-pass-extension/app/content/context/context';
-import { canAutosave } from 'proton-pass-extension/app/content/services/autosave/autosave.utils';
-import {
-    getCCFieldType,
-    getIdentityFieldType,
-    isIFrameField,
-    isIgnored,
-    isVisibleForm,
-    kButtonSelector,
-    removeClassifierFlags,
-    shadowPiercingContains,
-} from 'proton-pass-extension/app/content/services/detector/detector.api';
-import type { DetectedField, DetectedForm } from 'proton-pass-extension/app/content/services/detector/detector.service';
-import { hasProcessableFields } from 'proton-pass-extension/app/content/services/detector/detector.utils';
-import { getFrameAttributesFromElement, isNegligableFrameRect } from 'proton-pass-extension/app/content/utils/frame';
-import type { ClusterFrameFormItem } from 'proton-pass-extension/app/worker/services/autofill.cc';
-import { isCCField } from 'proton-pass-extension/lib/utils/field';
-import { resolveFieldSections } from 'proton-pass-extension/lib/utils/field.sections';
 
 import browser from '@proton/pass/lib/globals/browser';
 import type { Maybe } from '@proton/pass/types/utils/index';
@@ -32,6 +13,25 @@ import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { logger } from '@proton/pass/utils/logger';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
+import { isCCField } from '../../../../lib/utils/field';
+import { resolveFieldSections } from '../../../../lib/utils/field.sections';
+import type { ClusterFrameFormItem } from '../../../worker/services/autofill.cc';
+import { FORM_TRACKER_CONFIG, NotificationAction } from '../../constants.runtime';
+import { withContext } from '../../context/context';
+import { getFrameAttributesFromElement, isNegligableFrameRect } from '../../utils/frame';
+import { canAutosave } from '../autosave/autosave.utils';
+import {
+    getCCFieldType,
+    getIdentityFieldType,
+    isIFrameField,
+    isIgnored,
+    isVisibleForm,
+    kButtonSelector,
+    removeClassifierFlags,
+    shadowPiercingContains,
+} from '../detector/detector.api';
+import type { DetectedField, DetectedForm } from '../detector/detector.service';
+import { hasProcessableFields } from '../detector/detector.utils';
 import type { FieldElement, FieldHandle } from './field';
 import { createFieldHandles } from './field';
 import type { FormTracker } from './form.tracker';

@@ -1,9 +1,8 @@
-import { WorkerContext } from 'proton-pass-extension/app/worker/context/inject';
-import type { WorkerContextInterface } from 'proton-pass-extension/app/worker/context/types';
-
 import { PassFeature } from '@proton/pass/types/api/features';
 import { epochToMs, getEpoch } from '@proton/pass/utils/time/epoch';
 
+import { WorkerContext } from '../../context/inject';
+import type { WorkerContextInterface } from '../../context/types';
 import { isOfflineModeEnabled, shouldForceLock } from './auth.utils';
 
 describe('auth.utils', () => {

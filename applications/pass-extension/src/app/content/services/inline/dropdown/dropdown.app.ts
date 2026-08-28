@@ -1,15 +1,3 @@
-import type { DropdownAction } from 'proton-pass-extension/app/content/constants.runtime';
-import { DROPDOWN_IFRAME_SRC } from 'proton-pass-extension/app/content/constants.runtime';
-import { DROPDOWN_MIN_HEIGHT, DROPDOWN_WIDTH } from 'proton-pass-extension/app/content/constants.static';
-import { type InlineAppHandler, createInlineApp } from 'proton-pass-extension/app/content/services/inline/inline.app';
-import type { InlineCloseOptions } from 'proton-pass-extension/app/content/services/inline/inline.messages';
-import { InlinePortMessageType } from 'proton-pass-extension/app/content/services/inline/inline.messages';
-import type { PopoverController } from 'proton-pass-extension/app/content/services/inline/inline.popover';
-import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
-import type { WithAutofillOrigin } from 'proton-pass-extension/types/autofill';
-import type { Coords } from 'proton-pass-extension/types/inline';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
-
 import type { PasswordAutosuggestOptions } from '@proton/pass/lib/password/types';
 import type { AutofillPageTelemetryDimensions } from '@proton/pass/types/data/telemetry';
 import type { MaybeNull } from '@proton/pass/types/utils/index';
@@ -20,6 +8,17 @@ import { DOM_SETTLE_MS } from '@proton/pass/utils/time/next-tick';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
 
+import { contentScriptMessage, sendMessage } from '../../../../../lib/message/send-message';
+import type { WithAutofillOrigin } from '../../../../../types/autofill';
+import type { Coords } from '../../../../../types/inline';
+import { WorkerMessageType } from '../../../../../types/messages';
+import type { DropdownAction } from '../../../constants.runtime';
+import { DROPDOWN_IFRAME_SRC } from '../../../constants.runtime';
+import { DROPDOWN_MIN_HEIGHT, DROPDOWN_WIDTH } from '../../../constants.static';
+import { type InlineAppHandler, createInlineApp } from '../inline.app';
+import type { InlineCloseOptions } from '../inline.messages';
+import { InlinePortMessageType } from '../inline.messages';
+import type { PopoverController } from '../inline.popover';
 import type { InlineFieldTarget, InlineFrameTarget } from './dropdown.abstract';
 import { createDropdownFocusController } from './dropdown.focus';
 import { getDropdownPosition, intoDropdownAction, matchesDropdownAnchor, onCloseEffects } from './dropdown.utils';

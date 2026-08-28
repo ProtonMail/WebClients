@@ -1,13 +1,13 @@
 import { useEffect, useMemo, useRef } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { useExtensionContext } from 'proton-pass-extension/lib/components/Extension/ExtensionSetup';
-
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
 import { useSelectedItem } from '@proton/pass/components/Navigation/NavigationItem';
 import { intoDomainWithPort } from '@proton/pass/lib/urls/utils/utils';
 import { saveTabState } from '@proton/pass/store/actions/creators/filters';
+
+import { useExtensionContext } from '../components/Extension/ExtensionSetup';
 
 export const useSaveTabState = () => {
     const { getExtensionClientState } = usePassCore();

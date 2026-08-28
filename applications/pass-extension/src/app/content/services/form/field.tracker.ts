@@ -1,9 +1,5 @@
 import { CCFieldType, FieldType } from '@protontech/autofill/types';
 import throttle from 'lodash/throttle';
-import { withContext } from 'proton-pass-extension/app/content/context/context';
-import type { ClientObserverEvent } from 'proton-pass-extension/app/content/services/client/client.observer';
-import { InlinePortMessageType } from 'proton-pass-extension/app/content/services/inline/inline.messages';
-import { isCCField } from 'proton-pass-extension/lib/utils/field';
 
 import type { MaybeNull } from '@proton/pass/types/utils/index';
 import { isActiveElement } from '@proton/pass/utils/dom/active-element';
@@ -13,6 +9,10 @@ import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { logger } from '@proton/pass/utils/logger';
 import { DOM_SETTLE_MS, onNextTick } from '@proton/pass/utils/time/next-tick';
 
+import { isCCField } from '../../../../lib/utils/field';
+import { withContext } from '../../context/context';
+import type { ClientObserverEvent } from '../client/client.observer';
+import { InlinePortMessageType } from '../inline/inline.messages';
 import type { FieldHandle } from './field';
 import type { FormTracker } from './form.tracker';
 

@@ -1,10 +1,5 @@
 import { type FC, useCallback } from 'react';
 
-import { useExtensionClient } from 'proton-pass-extension/lib/components/Extension/ExtensionClient';
-import { PromptForReload } from 'proton-pass-extension/lib/components/Extension/ExtensionError';
-import { useRequestForkWithPermissions } from 'proton-pass-extension/lib/hooks/useRequestFork';
-import { popupMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -18,6 +13,12 @@ import { or } from '@proton/pass/utils/fp/predicates';
 import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
 import { PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
+
+import { useExtensionClient } from '../../../../lib/components/Extension/ExtensionClient';
+import { PromptForReload } from '../../../../lib/components/Extension/ExtensionError';
+import { useRequestForkWithPermissions } from '../../../../lib/hooks/useRequestFork';
+import { popupMessage, sendMessage } from '../../../../lib/message/send-message';
+import { WorkerMessageType } from '../../../../types/messages';
 
 const getCriticalRuntimeErrorMessage = (): string => {
     const base = c('Error').t`Your browser is having difficulties activating ${PASS_APP_NAME}.`;

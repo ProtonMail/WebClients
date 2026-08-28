@@ -1,7 +1,7 @@
-import type { Coords } from 'proton-pass-extension/types/inline';
-
 import { createStyleParser, getOffsetLeft, getOffsetTop } from '@proton/pass/utils/dom/computed-styles';
 import { isHTMLElement } from '@proton/pass/utils/dom/predicates';
+
+import type { Coords } from '../../types/inline';
 
 export const debugPosition = (left: number, top: number, width: number, height: number) => {
     const div = document.createElement('div');

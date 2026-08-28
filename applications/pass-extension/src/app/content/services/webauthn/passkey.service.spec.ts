@@ -1,17 +1,16 @@
-import browser, { clearBrowserMocks } from 'proton-pass-extension/__mocks__/webextension-polyfill';
-import { BRIDGE_REQUEST } from 'proton-pass-extension/app/content/bridge/constants';
-import { createBridgeAbortSignal, createBridgeResponse } from 'proton-pass-extension/app/content/bridge/message';
-import type { BridgeRequest } from 'proton-pass-extension/app/content/bridge/types';
-import { NotificationAction } from 'proton-pass-extension/app/content/constants.runtime';
-import { CSContext } from 'proton-pass-extension/app/content/context/context';
-import type { CSContextState, CSFeatures, ContentScriptContext } from 'proton-pass-extension/app/content/context/types';
-import type { NotificationHandler } from 'proton-pass-extension/app/content/services/inline/notification/notification.abstract';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
-
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { AppStatus } from '@proton/pass/types';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
+import browser, { clearBrowserMocks } from '../../../../__mocks__/webextension-polyfill';
+import { WorkerMessageType } from '../../../../types/messages';
+import { BRIDGE_REQUEST } from '../../bridge/constants';
+import { createBridgeAbortSignal, createBridgeResponse } from '../../bridge/message';
+import type { BridgeRequest } from '../../bridge/types';
+import { NotificationAction } from '../../constants.runtime';
+import { CSContext } from '../../context/context';
+import type { CSContextState, CSFeatures, ContentScriptContext } from '../../context/types';
+import type { NotificationHandler } from '../inline/notification/notification.abstract';
 import { PasskeyServiceError } from './passkey.errors';
 import { type PasskeyService, createPasskeyService } from './passkey.service';
 

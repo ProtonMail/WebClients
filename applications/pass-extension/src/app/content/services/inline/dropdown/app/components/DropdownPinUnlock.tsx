@@ -1,15 +1,15 @@
 import { type FC, useEffect } from 'react';
 
-import { InlinePortMessageType } from 'proton-pass-extension/app/content/services/inline/inline.messages';
-import { useIFrameAppController, useIFrameAppState } from 'proton-pass-extension/lib/components/Inline/IFrameApp';
-import { ListItemIcon } from 'proton-pass-extension/lib/components/Inline/ListItemIcon';
-import { PinUnlock } from 'proton-pass-extension/lib/components/Inline/PinUnlock';
 import { c } from 'ttag';
 
 import { PassIconStatus } from '@proton/pass/types/data/pass-icon';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
+import { useIFrameAppController, useIFrameAppState } from '../../../../../../../lib/components/Inline/IFrameApp';
+import { ListItemIcon } from '../../../../../../../lib/components/Inline/ListItemIcon';
+import { PinUnlock } from '../../../../../../../lib/components/Inline/PinUnlock';
+import { InlinePortMessageType } from '../../../inline.messages';
 import { useFocusController } from './DropdownFocusController';
 
 export const DropdownPinUnlock: FC = () => {

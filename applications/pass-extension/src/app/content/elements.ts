@@ -1,8 +1,7 @@
 /* This script should not be loaded in the content-script realm :
  * we need access to the customElements API which is either missing
  * or limited in the content-script execution context */
-import 'proton-pass-extension/lib/polyfills/shim';
-
+import '../../lib/polyfills/shim';
 import { exporter } from './bridge/utils';
 import { ProtonPassControl } from './services/inline/custom-elements/ProtonPassControl';
 import { ProtonPassRoot } from './services/inline/custom-elements/ProtonPassRoot';

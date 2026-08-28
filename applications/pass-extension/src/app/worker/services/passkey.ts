@@ -1,7 +1,3 @@
-import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
-import { withContext } from 'proton-pass-extension/app/worker/context/inject';
-import { webauthnFetcher } from 'proton-pass-extension/lib/utils/webauthn';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { c } from 'ttag';
 
 import browser from '@proton/pass/lib/globals/browser';
@@ -9,6 +5,11 @@ import { selectPasskeys } from '@proton/pass/store/selectors/autofill';
 import { selectItem } from '@proton/pass/store/selectors/items';
 import type { Maybe, TabId } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
+
+import { webauthnFetcher } from '../../../lib/utils/webauthn';
+import { WorkerMessageType } from '../../../types/messages';
+import WorkerMessageBroker from '../channel';
+import { withContext } from '../context/inject';
 
 export class PasskeyRequestError extends Error {
     name = 'PasskeyRequestError';

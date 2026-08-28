@@ -1,16 +1,3 @@
-import { createAutofillService } from 'proton-pass-extension/app/content/services/autofill/autofill.service';
-import { createAutosaveRelay } from 'proton-pass-extension/app/content/services/autosave/autosave.relay';
-import { createAutosaveService } from 'proton-pass-extension/app/content/services/autosave/autosave.service';
-import type { ClientController } from 'proton-pass-extension/app/content/services/client/client.controller';
-import { createDetectorService } from 'proton-pass-extension/app/content/services/detector/detector.service';
-import { IGNORED_TAGS } from 'proton-pass-extension/app/content/services/detector/detector.utils';
-import { createFormManager } from 'proton-pass-extension/app/content/services/form/form.manager';
-import { createInlineRelay } from 'proton-pass-extension/app/content/services/inline/inline.relay';
-import { createInlineService } from 'proton-pass-extension/app/content/services/inline/inline.service';
-import { createPasskeyService } from 'proton-pass-extension/app/content/services/webauthn/passkey.service';
-import { ExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
-import { computeFeatures } from 'proton-pass-extension/lib/utils/features';
-
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import { type ProxiedSettings, getInitialSettings } from '@proton/pass/store/reducers/settings';
 import type { PassFeature } from '@proton/pass/types/api/features';
@@ -19,6 +6,18 @@ import { AppStatus } from '@proton/pass/types/worker/state';
 import { logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
 
+import { ExtensionContext } from '../../../lib/context/extension-context';
+import { computeFeatures } from '../../../lib/utils/features';
+import { createAutofillService } from '../services/autofill/autofill.service';
+import { createAutosaveRelay } from '../services/autosave/autosave.relay';
+import { createAutosaveService } from '../services/autosave/autosave.service';
+import type { ClientController } from '../services/client/client.controller';
+import { createDetectorService } from '../services/detector/detector.service';
+import { IGNORED_TAGS } from '../services/detector/detector.utils';
+import { createFormManager } from '../services/form/form.manager';
+import { createInlineRelay } from '../services/inline/inline.relay';
+import { createInlineService } from '../services/inline/inline.service';
+import { createPasskeyService } from '../services/webauthn/passkey.service';
 import { CSContext } from './context';
 import type { CSContextState, ContentScriptContext } from './types';
 

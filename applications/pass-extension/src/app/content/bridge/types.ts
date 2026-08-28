@@ -1,14 +1,13 @@
+import type { PasskeyCreateBridgeResponse, PasskeyGetResponse } from '@proton/pass/lib/passkeys/types';
+import type { Unpack } from '@proton/pass/types/utils/index';
+
 import type {
     MaybeMessage,
     MessageFailure,
     WorkerMessage,
     WorkerMessageType,
     WorkerResponse,
-} from 'proton-pass-extension/types/messages';
-
-import type { PasskeyCreateBridgeResponse, PasskeyGetResponse } from '@proton/pass/lib/passkeys/types';
-import type { Unpack } from '@proton/pass/types/utils/index';
-
+} from '../../../types/messages';
 import type { ALLOWED_MESSAGES, BRIDGE_REQUEST, BRIDGE_RESPONSE } from './constants';
 
 export type BridgeMessageType = Unpack<typeof ALLOWED_MESSAGES>;

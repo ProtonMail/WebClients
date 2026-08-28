@@ -1,9 +1,3 @@
-import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
-import { withContext } from 'proton-pass-extension/app/worker/context/inject';
-import { createExtensionAlarm } from 'proton-pass-extension/lib/utils/alarm';
-import { isSupportedSenderUrl } from 'proton-pass-extension/lib/utils/sender';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
-
 import { MODEL_VERSION } from '@proton/pass/constants';
 import { clientReady } from '@proton/pass/lib/client';
 import browser from '@proton/pass/lib/globals/browser';
@@ -23,6 +17,12 @@ import { selectFeatureFlags, selectTelemetryEnabled, selectUserTier } from '@pro
 import { NO_PAGE_CONTEXT_TELEMETRY_DIMENSIONS, TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import type { ExtensionStorage } from '@proton/pass/types/worker/storage';
 import { first } from '@proton/pass/utils/array/first';
+
+import { createExtensionAlarm } from '../../../lib/utils/alarm';
+import { isSupportedSenderUrl } from '../../../lib/utils/sender';
+import { WorkerMessageType } from '../../../types/messages';
+import WorkerMessageBroker from '../channel';
+import { withContext } from '../context/inject';
 
 export const TELEMETRY_ALARM_NAME = 'PassTelemetryAlarm';
 

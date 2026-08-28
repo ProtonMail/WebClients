@@ -1,12 +1,5 @@
 import { type FC, useMemo, useRef } from 'react';
 
-import type { NotificationAction } from 'proton-pass-extension/app/content/constants.runtime';
-import { InlinePortMessageType } from 'proton-pass-extension/app/content/services/inline/inline.messages';
-import { NotificationHeader } from 'proton-pass-extension/app/content/services/inline/notification/app/components/NotificationHeader';
-import type { NotificationRequest } from 'proton-pass-extension/app/content/services/inline/notification/notification.app';
-import { useIFrameAppController, useIFrameAppState } from 'proton-pass-extension/lib/components/Inline/IFrameApp';
-import { ListItem } from 'proton-pass-extension/lib/components/Inline/ListItem';
-import { PauseListDropdown } from 'proton-pass-extension/lib/components/Inline/PauseListDropdown';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -19,6 +12,14 @@ import { getItemKey } from '@proton/pass/lib/items/item.utils';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import type { MaybeNull } from '@proton/pass/types/utils/index';
 import type { OtpRequest } from '@proton/pass/types/worker/otp';
+
+import { useIFrameAppController, useIFrameAppState } from '../../../../../../../lib/components/Inline/IFrameApp';
+import { ListItem } from '../../../../../../../lib/components/Inline/ListItem';
+import { PauseListDropdown } from '../../../../../../../lib/components/Inline/PauseListDropdown';
+import type { NotificationAction } from '../../../../../constants.runtime';
+import { InlinePortMessageType } from '../../../inline.messages';
+import type { NotificationRequest } from '../../notification.app';
+import { NotificationHeader } from '../components/NotificationHeader';
 
 type Props = Extract<NotificationRequest, { action: NotificationAction.OTP }>;
 

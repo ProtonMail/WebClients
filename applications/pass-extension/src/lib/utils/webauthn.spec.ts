@@ -1,8 +1,7 @@
-import { sendSafariMessage as sendSafari } from 'proton-pass-extension/lib/utils/safari';
-
+import { sendSafariMessage as sendSafari } from './safari';
 import { webauthnFetcher } from './webauthn';
 
-jest.mock('proton-pass-extension/lib/utils/safari');
+jest.mock('./safari');
 
 const setBuildTarget = (value: string) => ((global as any).BUILD_TARGET = value);
 const sendSafariMessage = sendSafari as jest.MockedFn<typeof sendSafari>;

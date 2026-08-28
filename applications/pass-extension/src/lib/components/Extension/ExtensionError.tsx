@@ -1,6 +1,5 @@
 import { type FC, useEffect, useState } from 'react';
 
-import { reloadManager } from 'proton-pass-extension/lib/utils/reload';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -11,6 +10,8 @@ import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { LobbyLayout } from '@proton/pass/components/Layout/Lobby/LobbyLayout';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { getBrowser } from '@proton/shared/lib/helpers/browser';
+
+import { reloadManager } from '../../utils/reload';
 
 export const getBrowserIcon = (): IconName => {
     switch (getBrowser().name) {

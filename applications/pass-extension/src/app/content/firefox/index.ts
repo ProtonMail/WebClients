@@ -1,8 +1,8 @@
-import { contentScriptMessage, sendMessage, successMessage } from 'proton-pass-extension/lib/message/send-message';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
-
 import { logger } from '@proton/pass/utils/logger';
 import { APPS } from '@proton/shared/lib/constants';
+
+import { contentScriptMessage, sendMessage, successMessage } from '../../../lib/message/send-message';
+import { WorkerMessageType } from '../../../types/messages';
 
 window.addEventListener('message', async (message) => {
     try {

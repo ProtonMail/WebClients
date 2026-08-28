@@ -2,10 +2,6 @@ import type { PropsWithChildren } from 'react';
 import { type FC, createContext, useCallback, useEffect, useMemo, useState } from 'react';
 import { useSelector, useStore } from 'react-redux';
 
-import { useExtensionContext } from 'proton-pass-extension/lib/components/Extension/ExtensionSetup';
-import { popupMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
-
 import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { useNavigationActions } from '@proton/pass/components/Navigation/NavigationActions';
@@ -23,6 +19,10 @@ import { NO_PAGE_CONTEXT_TELEMETRY_DIMENSIONS, TelemetryEventName } from '@proto
 import type { MaybeNull } from '@proton/pass/types/utils/index';
 import type { PopupInitialState } from '@proton/pass/types/worker/state';
 import { AppStatus } from '@proton/pass/types/worker/state';
+
+import { useExtensionContext } from '../../lib/components/Extension/ExtensionSetup';
+import { popupMessage, sendMessage } from '../../lib/message/send-message';
+import { WorkerMessageType } from '../../types/messages';
 
 type Props = { ready: boolean };
 export interface PopupContextValue {

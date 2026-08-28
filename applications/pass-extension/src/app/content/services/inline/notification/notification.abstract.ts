@@ -1,5 +1,4 @@
-import type { NotificationAction } from 'proton-pass-extension/app/content/constants.runtime';
-
+import type { NotificationAction } from '../../../constants.runtime';
 import type { NotificationRequest } from './notification.app';
 
 export interface NotificationHandler {

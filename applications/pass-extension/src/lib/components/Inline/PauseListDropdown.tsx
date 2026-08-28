@@ -1,8 +1,5 @@
 import type { FC } from 'react';
 
-import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
-import { WorkerMessageType } from 'proton-pass-extension/types/messages';
-
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
@@ -11,6 +8,8 @@ import type { CriteriaMasks } from '@proton/pass/lib/settings/pause-list';
 import type { AutofillPageTelemetryDimensions } from '@proton/pass/types/data/telemetry';
 import { NO_PAGE_CONTEXT_TELEMETRY_DIMENSIONS, TelemetryEventName } from '@proton/pass/types/data/telemetry';
 
+import { WorkerMessageType } from '../../../types/messages';
+import { contentScriptMessage, sendMessage } from '../../message/send-message';
 import { useIFrameAppController, useIFrameAppState } from './IFrameApp';
 
 type Props = {

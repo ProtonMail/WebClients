@@ -1,4 +1,4 @@
-export const mockHandlers = new Map();
+import { mockHandlers } from './channel.handlers';
 
 const channel = {
     registerMessage: jest.fn().mockImplementation((type, handler) => mockHandlers.set(type, handler)),
@@ -15,4 +15,5 @@ const channel = {
     },
 };
 
+export { mockHandlers } from './channel.handlers';
 export default channel;

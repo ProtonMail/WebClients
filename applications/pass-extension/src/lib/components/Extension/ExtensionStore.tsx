@@ -1,11 +1,10 @@
 import type { FC, PropsWithChildren } from 'react';
 import { Provider as ReduxProvider } from 'react-redux';
 
-import { createClientStore } from 'proton-pass-extension/lib/store/client-store';
-
 import useInstance from '@proton/hooks/useInstance';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 
+import { createClientStore } from '../../store/client-store';
 import { useExtensionContext } from './ExtensionSetup';
 
 export const ExtensionStore: FC<PropsWithChildren> = ({ children }) => {
