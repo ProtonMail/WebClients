@@ -14,7 +14,6 @@
 	outline: none;
 	color: var(--text-norm);
 	appearance: textfield;
-	appearance: textfield;
 
 	&::-webkit-outer-spin-button,
 	&::-webkit-inner-spin-button {
@@ -90,5 +89,10 @@
 	&--disabled {
 		background-color: var(--background-strong);
 		color: var(--text-norm);
+	}
+
+	&--info {
+		background-color: var(--signal-info-minor-1);
+		color: var(--signal-info-major-3);
 	}
 }

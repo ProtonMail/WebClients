@@ -46,6 +46,7 @@ import noop from '@proton/utils/noop';
 import type { MonthlyRow, SeatDay } from '../types';
 import LicensesUsageChart from './LicensesUsageChart';
 
+import './MspCompaniesSection.scss';
 import './MspMonthlyCostsSection.scss';
 
 const PAGE_SIZE = 15;
@@ -122,8 +123,26 @@ const MspMonthlyCostsSection = () => {
     }
 
     const seatsHistory: SeatDay[] = dailyUsage?.Days.map((day) => ({ date: day.UsageDate, seats: day.Total })) ?? [];
-    const billingPeriodRows = billingPeriods?.BillingPeriods ?? [];
     const billingPeriodsTotal = billingPeriods?.Total ?? 0;
+
+    // The archived periods API reports `BillableLicenses` in hundredths of a license; normalize to a plain
+    // license count here so every consumer of `billingPeriodRows` works in the same unit.
+    const archivedRows = (billingPeriods?.BillingPeriods ?? []).map((row) => ({
+        ...row,
+        BillableLicenses: Math.round(row.BillableLicenses / 100),
+    }));
+
+    // The current billing period is still accruing, so it comes from the live summary endpoint
+    // rather than the archived (closed) periods list, and is only shown alongside the first page of those.
+    const currentPeriodRow: MspBillingPeriod = {
+        BillingPeriod: billingSummary.BillingPeriod,
+        Period: billingSummary.BillingPeriod,
+        ManagedCompanies: billingSummary.ManagedCompanies,
+        BillableLicenses: Math.round(billingSummary.TotalBilledLicenses),
+        TotalCost: billingSummary.TotalCost,
+        Currency: billingSummary.TotalCostCurrency,
+    };
+    const billingPeriodRows = page === 1 ? [currentPeriodRow, ...archivedRows] : archivedRows;
 
     const handleDownloadCsv = (row: MspBillingPeriod, type: MspCsvReportType) => {
         if (!mspId) {
@@ -238,8 +257,15 @@ const MspMonthlyCostsSection = () => {
                                         return (
                                             <TableRow key={row.Period}>
                                                 <TableCell label={c('Column header').t`Billing period`}>
-                                                    <span className="text-nowrap">
-                                                        {formatApiBillingPeriod(row.Period)}
+                                                    <span className="flex items-center gap-2">
+                                                        <span className="text-nowrap">
+                                                            {formatApiBillingPeriod(row.Period)}
+                                                        </span>
+                                                        {row === currentPeriodRow && (
+                                                            <span className="msp-status-pill msp-status-pill--info inline-flex items-center justify-center rounded-sm text-uppercase text-normal color-weak">
+                                                                <span>{c('Label').t`In progress`}</span>
+                                                            </span>
+                                                        )}
                                                     </span>
                                                 </TableCell>
                                                 <TableCell
