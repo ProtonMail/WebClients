@@ -7220,7 +7220,7 @@
         "Vill du spara dem innan du tar bort dem?"
       ],
       "Would you like to save them before removing?": [
-        "Vill du spara dem innan du tar bort dem?"
+        "Vill du spara dem innan borttagning?"
       ],
       "Writing assistant": [
         "Skrivassistent"
@@ -7781,6 +7781,9 @@
       ],
       "Not in My files": [
         "Inte i mina filer"
+      ],
+      "Read this file": [
+        "Läs denna fil"
       ]
     },
     "info": {
@@ -11365,6 +11368,9 @@
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_BRAND_NAME } only supports payments in euros.": [
         "Din valuta har ändrats till euro (€) på grund av att  ${ IDEAL_BRAND_NAME } endast stödjer betalningar i euro."
+      ],
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "Betala med ${ IDEAL_WERO_BRAND_NAME }"
       ]
     },
     "Payments.Error": {
