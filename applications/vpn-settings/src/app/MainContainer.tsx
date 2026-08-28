@@ -130,7 +130,6 @@ const MainContainer: FunctionComponent = () => {
     const isSsoForPbsEnabled = useFlag('SsoForPbs');
     const isRetentionPoliciesEnabled = useFlag('DataRetentionPolicy');
     const isUserGroupsNoCustomDomainEnabled = useFlag('UserGroupsNoCustomDomain');
-    const isUserGroupsPassBusinessEnabled = useFlag('UserGroupsPassBusiness');
     const isAlwaysOnVpnEnabled = useFlag('B2BAlwaysOnEnabled');
 
     const [groups, loadingGroups] = useGroups();
@@ -178,7 +177,6 @@ const MainContainer: FunctionComponent = () => {
         isScribeEnabled: false,
         isUserGroupsFeatureEnabled,
         isUserGroupsNoCustomDomainEnabled,
-        isUserGroupsPassBusinessEnabled,
         isZoomIntegrationEnabled,
         isProtonMeetIntegrationEnabled,
         isSharedServerFeatureEnabled,

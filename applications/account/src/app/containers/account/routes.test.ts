@@ -40,7 +40,6 @@ const defaultFlags: Flags = {
     canDisplayNonPrivateEmailPhone: false,
     isUserGroupsFeatureEnabled: false,
     isUserGroupsNoCustomDomainEnabled: false,
-    isUserGroupsPassBusinessEnabled: false,
     isScribeEnabled: false,
     isZoomIntegrationEnabled: false,
     isProtonMeetIntegrationEnabled: false,
