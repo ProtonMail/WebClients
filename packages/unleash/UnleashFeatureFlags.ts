@@ -70,7 +70,6 @@ export enum CommonFeatureFlag {
     EventLoopInterval = 'EventLoopInterval',
     DesktopDownloadApiEnabled = 'DesktopDownloadApiEnabled',
     LogWasmLoadingDisabled = 'LogWasmLoadingDisabled',
-    PasswordReminders = 'PasswordReminders',
     PasswordRemindersOrg = 'PasswordRemindersOrg',
     MeetSpotlightType = 'MeetSpotlightType',
     DisablePostSubscriptionB2BOnboarding = 'DisablePostSubscriptionB2BOnboarding',
