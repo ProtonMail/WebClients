@@ -8,7 +8,6 @@ import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import type { CountriesWithCustomVatName } from '@proton/payments/core/billing-address/vat-helpers';
 import { getVatNumberName } from '@proton/payments/core/billing-address/vat-helpers';
 import { type BillingAddressFieldStatus, backendBillingAddressFieldError } from '@proton/payments/core/errors';
-import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import type { TaxCountryHook } from '../hooks/useTaxCountry';
@@ -111,7 +110,6 @@ export const VatNumberInput = ({
     unauthenticatedCollapsed,
     setUnauthenticatedCollapsed,
 }: Props) => {
-    const showExtendedBillingAddressForm = useFlag('PaymentsValidateBillingAddress');
     const {
         errors: { errorMessages },
         containerRef,
@@ -171,73 +169,65 @@ export const VatNumberInput = ({
                     getVatIdBackendError(billingAddressValidationResult?.VatId, taxCountry.selectedCountryCode)
                 }
             />
-            {showExtendedBillingAddressForm && (
-                <>
-                    <InputFieldTwo
-                        label={c('Label').t`Company`}
-                        hint={vatNumber ? undefined : optionalHint}
-                        onValue={setCompany}
-                        value={Company ?? ''}
-                        placeholder={c('Placeholder').t`Cortex Inc.`}
-                        data-testid="company-input"
-                        error={
-                            errorMessages.Company ||
-                            backendBillingAddressFieldError(billingAddressValidationResult?.Company)
-                        }
-                    />
-                    <InputFieldTwo
-                        label={c('Label').t`City`}
-                        hint={vatNumber ? undefined : optionalHint}
-                        onValue={setCity}
-                        value={City ?? ''}
-                        placeholder={c('Placeholder').t`San Francisco`}
-                        data-testid="city-input"
-                        error={
-                            errorMessages.City || backendBillingAddressFieldError(billingAddressValidationResult?.City)
-                        }
-                    />
-                    <InputFieldTwo
-                        label={c('Label').t`Street address`}
-                        hint={vatNumber ? undefined : optionalHint}
-                        onValue={setAddress}
-                        value={Address ?? ''}
-                        placeholder={c('Placeholder').t`Main street 12`}
-                        data-testid="street-address-input"
-                        error={
-                            errorMessages.Address ||
-                            backendBillingAddressFieldError(billingAddressValidationResult?.Address)
-                        }
-                    />
-                    <div className="flex gap-4">
-                        <InputFieldTwo
-                            label={c('Label').t`First name`}
-                            hint={vatNumber ? undefined : optionalHint}
-                            onValue={setFirstName}
-                            value={FirstName ?? ''}
-                            placeholder={c('Placeholder').t`Thomas`}
-                            data-testid="first-name-input"
-                            error={
-                                errorMessages.FirstName ||
-                                backendBillingAddressFieldError(billingAddressValidationResult?.FirstName)
-                            }
-                            rootClassName="flex-1"
-                        />
-                        <InputFieldTwo
-                            label={c('Label').t`Last name`}
-                            hint={vatNumber ? undefined : optionalHint}
-                            onValue={setLastName}
-                            value={LastName ?? ''}
-                            placeholder={c('Placeholder').t`Anderson`}
-                            data-testid="last-name-input"
-                            error={
-                                errorMessages.LastName ||
-                                backendBillingAddressFieldError(billingAddressValidationResult?.LastName)
-                            }
-                            rootClassName="flex-1"
-                        />
-                    </div>
-                </>
-            )}
+            <InputFieldTwo
+                label={c('Label').t`Company`}
+                hint={vatNumber ? undefined : optionalHint}
+                onValue={setCompany}
+                value={Company ?? ''}
+                placeholder={c('Placeholder').t`Cortex Inc.`}
+                data-testid="company-input"
+                error={
+                    errorMessages.Company || backendBillingAddressFieldError(billingAddressValidationResult?.Company)
+                }
+            />
+            <InputFieldTwo
+                label={c('Label').t`City`}
+                hint={vatNumber ? undefined : optionalHint}
+                onValue={setCity}
+                value={City ?? ''}
+                placeholder={c('Placeholder').t`San Francisco`}
+                data-testid="city-input"
+                error={errorMessages.City || backendBillingAddressFieldError(billingAddressValidationResult?.City)}
+            />
+            <InputFieldTwo
+                label={c('Label').t`Street address`}
+                hint={vatNumber ? undefined : optionalHint}
+                onValue={setAddress}
+                value={Address ?? ''}
+                placeholder={c('Placeholder').t`Main street 12`}
+                data-testid="street-address-input"
+                error={
+                    errorMessages.Address || backendBillingAddressFieldError(billingAddressValidationResult?.Address)
+                }
+            />
+            <div className="flex gap-4">
+                <InputFieldTwo
+                    label={c('Label').t`First name`}
+                    hint={vatNumber ? undefined : optionalHint}
+                    onValue={setFirstName}
+                    value={FirstName ?? ''}
+                    placeholder={c('Placeholder').t`Thomas`}
+                    data-testid="first-name-input"
+                    error={
+                        errorMessages.FirstName ||
+                        backendBillingAddressFieldError(billingAddressValidationResult?.FirstName)
+                    }
+                    rootClassName="flex-1"
+                />
+                <InputFieldTwo
+                    label={c('Label').t`Last name`}
+                    hint={vatNumber ? undefined : optionalHint}
+                    onValue={setLastName}
+                    value={LastName ?? ''}
+                    placeholder={c('Placeholder').t`Anderson`}
+                    data-testid="last-name-input"
+                    error={
+                        errorMessages.LastName ||
+                        backendBillingAddressFieldError(billingAddressValidationResult?.LastName)
+                    }
+                    rootClassName="flex-1"
+                />
+            </div>
         </>
     );
 
