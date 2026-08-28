@@ -58,7 +58,7 @@ export class PhotosUploadExecutor extends TaskExecutor<PhotosUploadTask> {
                             algorithm: 'unsafeSHA1',
                             binaryDataStream: fileStream,
                         });
-                        const hashResult = await readToEnd(hashedDataStream);
+                        const hashResult = await readToEnd<Uint8Array<ArrayBuffer>>(hashedDataStream);
                         return hashResult.toHex();
                     },
                     abortController.signal
