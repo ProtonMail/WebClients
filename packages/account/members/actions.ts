@@ -251,7 +251,7 @@ export const assignMemberRoles = ({
     };
 };
 
-export const promoteMemberToOrgAdmin = ({
+export const provideOrgKeyAccessToMember = ({
     member,
     api,
 }: {
@@ -303,13 +303,13 @@ export const resumeMemberRoleAssignment = ({
         if (!member) {
             return;
         }
-        await dispatch(promoteMemberToOrgAdmin({ member, api }));
-        // Required: `promoteMemberToOrgAdmin` refreshes the member, but preserves the pending flag
+        await dispatch(provideOrgKeyAccessToMember({ member, api }));
+        // Required: `provideOrgKeyAccessToMember` refreshes the member, but preserves the pending flag
         // Refresh the roles to clear pending flag
         await dispatch(getMemberRoles({ member, cache: CacheType.None }));
         const refreshed = (await dispatch(membersThunk())).find(({ ID }) => ID === memberID);
         if (refreshed && getHasPausedRoleAssignment({ member: refreshed })) {
-            // TODO: promoteMemberToOrgAdmin no-ops for a member who is already an admin but lost access to
+            // TODO: provideOrgKeyAccessToMember no-ops for a member who is already an admin but lost access to
             // the org key. To fix that, we need to change `classifyRoleChange` to allow admin -> admin.
             throw new Error(c('Error').t`Could not grant access to the organization key`);
         }
