@@ -97,6 +97,7 @@
         "@types/react-dom": "^18.3.7",
         "@types/react-router-dom": "^5.3.3",
         "@types/react-window": "^1.8.8",
+        "@typescript/native": "npm:typescript@^7.0.2",
         "copy-webpack-plugin": "^14.0.0",
         "core-js": "^3.50.0",
         "cross-env": "^10.1.0",
@@ -111,7 +112,7 @@
         "path-browserify": "^1.0.1",
         "prettier": "^3.9.6",
         "pretty-format": "^30.4.1",
-        "typescript": "^6.0.3",
+        "typescript": "npm:@typescript/typescript6@^6.0.2",
         "webpack": "^5.109.2"
     }
 }
