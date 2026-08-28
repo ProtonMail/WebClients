@@ -939,6 +939,9 @@
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
         "Dine personlige oplysninger blev lækket i et databrud hos en tredjepartstjeneste."
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total }": [
+        "Tjekker ${ compromised.progress.completed } af ${ compromised.progress.total }"
       ]
     },
     "Email": {
@@ -2129,7 +2132,8 @@
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Hvis du flytter et element til en anden boks, slettes dets sikre links."
+        "Flyttes et element til en anden boks, slettes dets sikre links.",
+        "Flyttes elementer til en anden boks, slettes deres sikre links."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -2823,6 +2827,9 @@
       ],
       "None of your saved passwords have appeared in a known data breach.": [
         "Ingen af dine gemte adgangskoder har været involveret i et kendt databrud."
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
+        "Tjekker ${ compromised.progress.completed } af ${ compromised.progress.total } adgangskoder"
       ]
     },
     "Keyboard key": {

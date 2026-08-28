@@ -2126,7 +2126,8 @@
         "Flyttar alla objekt från “${ payload.content.name }“"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Att flytta ett objekt till ett annat valv kommer att radera dess säkra länkar."
+        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
+        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
       ],
       "Moving items": [
         "Flyttar objekt"
@@ -2820,6 +2821,9 @@
       ],
       "None of your saved passwords have appeared in a known data breach.": [
         "Inga av dina sparade lösenord har förekommit i ett känt dataintrång."
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
+        "Kontrollerar ${ compromised.progress.completed } av ${ compromised.progress.total } lösenord"
       ]
     },
     "Keyboard key": {

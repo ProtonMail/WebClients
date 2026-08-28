@@ -939,6 +939,9 @@
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
         "Τα προσωπικά σας στοιχεία διέρρευσαν σε παραβίαση δεδομένων μιας υπηρεσίας τρίτου μέρους."
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total }": [
+        "Έλεγχος ${ compromised.progress.completed } από ${ compromised.progress.total }"
       ]
     },
     "Email": {
@@ -2129,7 +2132,8 @@
         "Μετακίνηση όλων των στοιχείων από το \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους του."
+        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους του.",
+        "Η μετακίνηση στοιχείων σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους των."
       ],
       "Moving items": [
         "Μετακίνηση στοιχείων"
@@ -2823,6 +2827,9 @@
       ],
       "None of your saved passwords have appeared in a known data breach.": [
         "Κανένας από τους αποθηκευμένους κωδικούς πρόσβασής σας δεν έχει εμφανιστεί σε κάποια γνωστή παραβίαση δεδομένων."
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
+        "Έλεγχος ${ compromised.progress.completed } από ${ compromised.progress.total } κωδικούς πρόσβασης"
       ]
     },
     "Keyboard key": {
