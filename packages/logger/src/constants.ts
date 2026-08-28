@@ -22,4 +22,4 @@ export const ALL_CONSOLE_LEVELS: LogLevel[] = ['trace', 'debug', 'info', 'warn',
 /** Lines buffered before `initialize()` resolves. Oldest are dropped past this. */
 export const MAX_PENDING_LOGS = 1_000;
 
-export const CLEANUP_INTERVAL_MS = DAY;
+export const CLEANUP_INTERVAL_MS = DAY * 1;
