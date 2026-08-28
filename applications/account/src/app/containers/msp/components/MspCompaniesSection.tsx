@@ -37,7 +37,8 @@ import SettingsSectionExtraWide from '@proton/components/containers/account/Sett
 import { IcArrowOutSquare } from '@proton/icons/icons/IcArrowOutSquare';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import type { MspDelegatedManager } from '@proton/shared/lib/api/msp';
-import { ORGANIZATION_STATE } from '@proton/shared/lib/constants';
+import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
+import { APPS, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import { MEMBER_STATE } from '@proton/shared/lib/interfaces/Member';
 import type { MspSubsidiary } from '@proton/shared/lib/interfaces/Msp';
 import type { UserOrganization } from '@proton/shared/lib/interfaces/Organization';
@@ -105,7 +106,16 @@ const ManageButton = ({ className, ...props }: { className?: string } & ButtonPr
     </Button>
 );
 
-const MspCompaniesSection = ({ path }: { path: string }) => {
+/**
+ * Workaround: land managers on the Pass "Users and addresses" page rather than wherever the manager
+ * happened to be browsing in their own org's settings (the previous behavior, since it just reused the
+ * current app's path prefix). Hardcoded because MSP currently only supports Pass Business subsidiaries, so
+ * Pass is always the relevant app — revisit once MSP supports subsidiaries on other plans/apps and this
+ * should instead be derived from the subsidiary's plan.
+ */
+const MANAGED_COMPANY_LANDING_PATH = `/${getSlugFromApp(APPS.PROTONPASS)}/users-addresses`;
+
+const MspCompaniesSection = () => {
     const { createNotification } = useNotifications();
     const handleError = useErrorHandler();
     const dispatch = useMspDispatch();
@@ -196,7 +206,7 @@ const MspCompaniesSection = ({ path }: { path: string }) => {
             const result = await dispatch(
                 manageCompanyAndOpenTabThunk({
                     id: company.id,
-                    path,
+                    path: MANAGED_COMPANY_LANDING_PATH,
                     loadingPath: UNAUTHENTICATED_ROUTES.MSP_SETTING_UP_ACCESS,
                 })
             );
