@@ -1,7 +1,7 @@
 import { screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { getModelState } from '@proton/account/test';
+import { getModelState } from '@proton/account/tests';
 import { useGetVtimezonesMap } from '@proton/components/hooks/useGetVtimezonesMap';
 import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import { getAppName } from '@proton/shared/lib/apps/helper';
@@ -29,9 +29,9 @@ import { CalendarKeyFlags } from '@proton/shared/lib/interfaces/calendar';
 import { encryptAttachment } from '@proton/shared/lib/mail/send/attachments';
 
 import * as inviteApi from '../../../../helpers/calendar/inviteApi';
-import { generateApiCalendarEvent } from '../../../../helpers/test/calendar';
-import { getAddressKeyCache, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../helpers/test/crypto';
-import type { GeneratedKey } from '../../../../helpers/test/helper';
+import { generateApiCalendarEvent } from '../../../../helpers/tests/calendar';
+import { getAddressKeyCache, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../helpers/tests/crypto';
+import type { GeneratedKey } from '../../../../helpers/tests/helper';
 import {
     addApiMock,
     clearAll,
@@ -40,7 +40,7 @@ import {
     getCompleteAddress,
     mailTestRender,
     minimalCache,
-} from '../../../../helpers/test/helper';
+} from '../../../../helpers/tests/helper';
 import ExtraEvents from './ExtraEvents';
 
 jest.setTimeout(20000);

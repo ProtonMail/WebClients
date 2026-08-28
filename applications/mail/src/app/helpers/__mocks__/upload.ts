@@ -1,4 +1,4 @@
-import { api } from '../test/api';
+import { api } from '../tests/api';
 import type { RequestParams, Upload } from '../upload';
 
 export const upload = <T>(uid: string, paramsPromise: RequestParams | Promise<RequestParams>): Upload<T> => {

@@ -1,11 +1,11 @@
 import { screen } from '@testing-library/react';
 
-import { getModelState } from '@proton/account/test';
+import { getModelState } from '@proton/account/tests';
 import { setBit } from '@proton/shared/lib/helpers/bitset';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 
-import { getCompleteAddress } from '../../../helpers/test/cache';
-import { clearAll } from '../../../helpers/test/helper';
+import { getCompleteAddress } from '../../../helpers/tests/cache';
+import { clearAll } from '../../../helpers/tests/helper';
 import { setup } from './Message.test.helpers';
 
 describe('Message banners', () => {

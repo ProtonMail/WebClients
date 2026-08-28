@@ -1,6 +1,6 @@
 import { fromUnixTime } from 'date-fns';
 
-import { asyncGeneratorToArray } from '../../../utils/test/generator';
+import { asyncGeneratorToArray } from '../../../utils/tests/generator';
 import ArchiveGenerator from './archiveGenerator';
 
 type TestLink = {

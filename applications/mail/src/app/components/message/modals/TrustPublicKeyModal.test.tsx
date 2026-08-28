@@ -1,20 +1,20 @@
+import type { PublicKeyReference } from '@protontech/crypto';
 import { fireEvent, screen, waitFor } from '@testing-library/react';
 
-import { getModelState } from '@proton/account/test';
-import type { PublicKeyReference } from '@protontech/crypto';
+import { getModelState } from '@proton/account/tests';
 import type { ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts';
 
-import { addApiMock } from '../../../helpers/test/api';
-import type { GeneratedKey } from '../../../helpers/test/crypto';
+import { addApiMock } from '../../../helpers/tests/api';
+import type { GeneratedKey } from '../../../helpers/tests/crypto';
 import {
     generateKeys,
     getStoredUserKey,
     releaseCryptoProxy,
     setupCryptoProxyForTesting,
-} from '../../../helpers/test/crypto';
-import { clearAll, waitForNotification } from '../../../helpers/test/helper';
-import { receiver, sender, setupContactsForPinKeys } from '../../../helpers/test/pinKeys';
-import { mailTestRender } from '../../../helpers/test/render';
+} from '../../../helpers/tests/crypto';
+import { clearAll, waitForNotification } from '../../../helpers/tests/helper';
+import { receiver, sender, setupContactsForPinKeys } from '../../../helpers/tests/pinKeys';
+import { mailTestRender } from '../../../helpers/tests/render';
 import TrustPublicKeyModal from './TrustPublicKeyModal';
 
 const senderAddress = 'sender@outside.com';

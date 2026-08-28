@@ -3,10 +3,10 @@ import { act, fireEvent, screen } from '@testing-library/react';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { EO_REPLY_NUM_ATTACHMENTS_LIMIT } from '@proton/shared/lib/mail/eo/constants';
 
-import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../helpers/test/crypto';
-import { EOClearAll, EOSubject } from '../../../../helpers/test/eo/helpers';
-import { waitForNotification } from '../../../../helpers/test/helper';
-import { tick } from '../../../../helpers/test/render';
+import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../helpers/tests/crypto';
+import { EOClearAll, EOSubject } from '../../../../helpers/tests/eo/helpers';
+import { waitForNotification } from '../../../../helpers/tests/helper';
+import { tick } from '../../../../helpers/tests/render';
 import { setup } from './EOReply.test.helpers';
 
 describe('EO Reply attachments', () => {

@@ -1,4 +1,4 @@
-import { getModelState } from '@proton/account/test';
+import { getModelState } from '@proton/account/tests';
 import { changeRenewState } from '@proton/payments/core/api/api';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import { Renew, TrialType } from '@proton/payments/core/subscription/constants';
@@ -9,7 +9,7 @@ import { apiMock } from '@proton/testing/lib/api';
 import { renderWithProviders } from '@proton/testing/lib/context/renderWithProviders';
 import { getSubscriptionState } from '@proton/testing/lib/initialReduxState';
 
-import { plansDefaultResponse } from '../../hooks/helpers/test/index';
+import { plansDefaultResponse } from '../../hooks/helpers/tests/index';
 import SubscriptionsSection from './SubscriptionsSection';
 
 const mockGetPaymentMethods = jest.fn();

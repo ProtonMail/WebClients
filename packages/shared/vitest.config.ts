@@ -17,7 +17,7 @@ export default mergeConfig(sharedVitestConfig, {
             screenshotFailures: false,
             instances: [{ browser: 'chromium' }],
         },
-        include: ['test/**/*.{spec,test}.{js,ts,tsx}'],
+        include: ['tests/**/*.{spec,test}.{js,ts,tsx}'],
         restoreMocks: true,
         setupFiles: ['./vitest.setup.ts'],
     },

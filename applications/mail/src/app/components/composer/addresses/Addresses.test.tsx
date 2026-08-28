@@ -2,18 +2,17 @@ import type { MutableRefObject } from 'react';
 
 import { act, fireEvent, getAllByRole, getByText, screen } from '@testing-library/react';
 
-import { getModelState } from '@proton/account/test';
+import { getModelState } from '@proton/account/tests';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { pick } from '@proton/shared/lib/helpers/object';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { addComposerAction } from '../../../store/composers/composerActions';
-
 import { mergeMessages } from '../../../helpers/message/messages';
-import { addApiMock, clearAll, mailTestRender, minimalCache } from '../../../helpers/test/helper';
+import { addApiMock, clearAll, mailTestRender, minimalCache } from '../../../helpers/tests/helper';
 import type { MessageSendInfo } from '../../../hooks/useSendInfo';
+import { addComposerAction } from '../../../store/composers/composerActions';
 import Addresses from './Addresses';
 
 jest.mock('@proton/shared/lib/helpers/dom', () => ({

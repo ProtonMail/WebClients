@@ -1,7 +1,7 @@
 import type { RenderResult } from '@testing-library/react';
 import { act, fireEvent, screen } from '@testing-library/react';
 
-import { getModelState } from '@proton/account/test';
+import { getModelState } from '@proton/account/tests';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import type { MIME_TYPES } from '@proton/shared/lib/constants';
 import { INCOMING_DEFAULTS_LOCATION } from '@proton/shared/lib/constants';
@@ -16,7 +16,7 @@ import {
     mailTestRender,
     minimalCache,
     waitForNotification,
-} from '../../../../helpers/test/helper';
+} from '../../../../helpers/tests/helper';
 import { loadIncomingDefaults } from '../../../../store/incomingDefaults/incomingDefaultsActions';
 import MailRecipientItemSingle from '../MailRecipientItemSingle';
 

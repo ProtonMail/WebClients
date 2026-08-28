@@ -1,6 +1,6 @@
 import { act } from '@testing-library/react';
 
-import { addApiMock, clearAll } from '../../../helpers/test/helper';
+import { addApiMock, clearAll } from '../../../helpers/tests/helper';
 import { expectElements, getElements, props, setup } from './Mailbox.test.helpers';
 
 jest.mock('proton-mail/metrics/useMailELDTMetric', () => ({

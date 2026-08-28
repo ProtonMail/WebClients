@@ -2,9 +2,9 @@ import { act, fireEvent, screen } from '@testing-library/react';
 
 import { wait } from '@proton/shared/lib/helpers/promise';
 
-import { addApiMock } from '../../../helpers/test/api';
-import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
-import { EORender } from '../../../helpers/test/eo/EORender';
+import { addApiMock } from '../../../helpers/tests/api';
+import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/tests/crypto';
+import { EORender } from '../../../helpers/tests/eo/EORender';
 import {
     EOClearAll,
     EODecryptedToken,
@@ -13,8 +13,8 @@ import {
     getEOEncryptedMessage,
     mockConsole,
     validID,
-} from '../../../helpers/test/eo/helpers';
-import { waitForNotification } from '../../../helpers/test/helper';
+} from '../../../helpers/tests/eo/helpers';
+import { waitForNotification } from '../../../helpers/tests/helper';
 import type { EOMessage } from '../../../store/eo/eoType';
 import EOUnlock from './EOUnlock';
 

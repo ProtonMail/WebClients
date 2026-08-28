@@ -7,7 +7,7 @@ import type { RenderOptions } from '@testing-library/react';
 import { render as originalRender, renderHook } from '@testing-library/react';
 import { createMemoryHistory } from 'history';
 
-import { getModelState } from '@proton/account/test';
+import { getModelState } from '@proton/account/tests';
 import { ApiContext } from '@proton/app-context/apiContext';
 import { NotificationsContext } from '@proton/app-context/notifications/notificationsContext';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';

@@ -1,12 +1,11 @@
 import { describe } from '@jest/globals';
 
-import { getModelState } from '@proton/account/test';
+import { getModelState } from '@proton/account/tests';
 import useLoading from '@proton/hooks/useLoading';
 import type { ChecklistId, UserModel } from '@proton/shared/lib/interfaces';
 import { CHECKLIST_DISPLAY_TYPE, ChecklistKey, ChecklistType } from '@proton/shared/lib/interfaces';
 
-import { renderHook } from '../../../helpers/test/render';
-
+import { renderHook } from '../../../helpers/tests/render';
 import useChecklist from '../hooks/useChecklist';
 import { getMailChecklistItemsToComplete, useGetStartedChecklist } from './GetStartedChecklistProvider';
 

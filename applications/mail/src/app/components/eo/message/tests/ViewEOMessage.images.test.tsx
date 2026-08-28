@@ -2,8 +2,8 @@ import { findByRole, findByText, fireEvent, screen, waitFor } from '@testing-lib
 
 import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 
-import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../helpers/test/crypto';
-import { EOBody, EOClearAll, EOSubject } from '../../../../helpers/test/eo/helpers';
+import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../helpers/tests/crypto';
+import { EOBody, EOClearAll, EOSubject } from '../../../../helpers/tests/eo/helpers';
 import { getIframeRootDiv } from '../../../message/tests/Message.test.helpers';
 import { setup } from './ViewEOMessage.test.helpers';
 

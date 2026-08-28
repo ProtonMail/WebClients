@@ -12,7 +12,7 @@ import type { MIME_TYPES } from '@proton/shared/lib/constants';
 import { addDays } from '@proton/shared/lib/date-fns-utc';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
-import { getAddressKeyCache, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
+import { getAddressKeyCache, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/tests/crypto';
 import {
     addApiKeys,
     clearAll,
@@ -20,7 +20,7 @@ import {
     getCompleteAddress,
     getDropdown,
     mailTestRender,
-} from '../../../helpers/test/helper';
+} from '../../../helpers/tests/helper';
 import Composer from '../Composer';
 import { AddressID, ID, fromAddress, prepareMessage, props, toAddress } from './Composer.test.helpers';
 

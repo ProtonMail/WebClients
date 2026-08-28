@@ -7,7 +7,7 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import type { GetBusySlotsResponse } from '@proton/shared/lib/interfaces/calendar';
 import { addApiResolver } from '@proton/testing/lib/api';
 
-import { getStoreWrapper } from '../../test/Store';
+import { getStoreWrapper } from '../../tests/Store';
 import { busySlotsActions, busySlotsSliceName } from './busySlotsSlice';
 
 const busySlotsResponseFaker = ({ dataAccessible }: { dataAccessible: boolean }): GetBusySlotsResponse => {

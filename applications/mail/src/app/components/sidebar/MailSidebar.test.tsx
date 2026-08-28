@@ -3,7 +3,7 @@ import { addDays, subDays } from 'date-fns';
 import loudRejection from 'loud-rejection';
 
 import { useRetentionPolicies } from '@proton/account/retentionPolicies/hooks';
-import { getModelState } from '@proton/account/test';
+import { getModelState } from '@proton/account/tests';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { conversationCountsActions } from '@proton/mail/store/counts/conversationCountsSlice';
@@ -19,7 +19,7 @@ import range from '@proton/utils/range';
 
 import type { OnboardingChecklistContext } from '../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 import * as GetStartedChecklistProviderModule from '../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
-import { assertFocus, clearAll, getDropdown, mailTestRender, minimalCache } from '../../helpers/test/helper';
+import { assertFocus, clearAll, getDropdown, mailTestRender, minimalCache } from '../../helpers/tests/helper';
 import { SYSTEM_FOLDER_SECTION } from '../../hooks/useMoveSystemFolders';
 import MailSidebar from './MailSidebar';
 

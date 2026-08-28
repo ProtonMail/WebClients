@@ -1,4 +1,5 @@
 import { CryptoProxy } from '@protontech/crypto';
+
 import { FILE_CHUNK_SIZE } from '@proton/shared/lib/drive/constants';
 import noop from '@proton/utils/noop';
 
@@ -7,8 +8,8 @@ import {
     generateSessionKey,
     releaseCryptoProxy,
     setupCryptoProxyForTesting,
-} from '../../../utils/test/crypto';
-import { asyncGeneratorToArray } from '../../../utils/test/generator';
+} from '../../../utils/tests/crypto';
+import { asyncGeneratorToArray } from '../../../utils/tests/generator';
 import type { EncryptedBlock, ThumbnailEncryptedBlock } from '../interface';
 import type { ThumbnailInfo } from '../media';
 import { ThumbnailType } from '../media';

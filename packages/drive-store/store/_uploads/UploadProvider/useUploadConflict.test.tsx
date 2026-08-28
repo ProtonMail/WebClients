@@ -5,7 +5,7 @@ import { act, renderHook } from '@testing-library/react-hooks';
 import { ModalsProvider } from '@proton/components';
 
 import { TransferState } from '../../../components/TransferManager/transfer';
-import { mockGlobalFile, testFile } from '../../../utils/test/file';
+import { mockGlobalFile, testFile } from '../../../utils/tests/file';
 import { TransferConflictStrategy } from '../interface';
 import type { FileUpload, FolderUpload } from './interface';
 import useUploadConflict from './useUploadConflict';

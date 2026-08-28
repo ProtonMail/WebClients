@@ -1,6 +1,6 @@
 import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { clearAll, createEmbeddedImage, createMessageImages, mailTestRender } from '../../../../helpers/test/helper';
+import { clearAll, createEmbeddedImage, createMessageImages, mailTestRender } from '../../../../helpers/tests/helper';
 import AttachmentList, { AttachmentAction } from './AttachmentList';
 
 const localID = 'localID';
