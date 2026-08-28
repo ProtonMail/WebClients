@@ -14,7 +14,6 @@ import { isCountryWithRequiredPostalCode } from '@proton/payments/core/countries
 import type { BillingAddressValidationResult } from '@proton/payments/core/errors';
 import { WrongBillingAddressError, backendBillingAddressFieldError } from '@proton/payments/core/errors';
 import type { Invoice } from '@proton/payments/core/interface';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import Form from '../../../components/form/Form';
 import type { ModalProps } from '../../../components/modalTwo/Modal';
@@ -44,7 +43,6 @@ export const EditInvoiceModal = (props: Props) => {
     const { paymentsApi } = usePaymentsApi();
 
     const { validator, onFormSubmit } = useFormErrors();
-    const showExtendedBillingAddressForm = useFlag('PaymentsValidateBillingAddress');
 
     const [loading, withLoading] = useLoading();
     const [backendErrors, setBackendErrors] = useState<BillingAddressValidationResult | null>(null);
@@ -62,13 +60,10 @@ export const EditInvoiceModal = (props: Props) => {
         enabled: canEditVatNumber,
     });
 
-    const frontendErrors = getVatFormErrors(
-        {
-            ...invoiceBillingAddress.BillingAddress,
-            VatId: invoiceBillingAddress.VatId,
-        },
-        showExtendedBillingAddressForm
-    );
+    const frontendErrors = getVatFormErrors({
+        ...invoiceBillingAddress.BillingAddress,
+        VatId: invoiceBillingAddress.VatId,
+    });
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.stopPropagation();
