@@ -531,9 +531,6 @@
       "Email settings": [
         "이메일 설정"
       ],
-      "Emoji": [
-        "이모티콘"
-      ],
       "Enable": [
         "활성화"
       ],
@@ -7020,6 +7017,9 @@
       "${ groupCounts } group found": [
         "${ groupCounts } 그룹 찾음"
       ],
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "${ IDEAL_WERO_BRAND_NAME } 마크"
+      ],
       "${ issues.length } issue during import:": [
         "불러오기 중 ${ issues.length } 문제 발생:"
       ],
@@ -7052,6 +7052,9 @@
       ],
       "${ n } unread conversation": [
         "읽지 않은 대화 ${ n }개"
+      ],
+      "${ name } in ${ parentName }": [
+        "${ parentName } 내 ${ name }"
       ],
       "${ numberOfUTMTrackers } link cleaned": [
         "${ numberOfUTMTrackers }개 링크가 제거됨"
@@ -9243,6 +9246,9 @@
       "We use 3-D Secure to protect your payments": [
         "결제 정보를 보호하기 위해 3D 보안을 이용합니다"
       ],
+      "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "이 거래를 완료하기 위해 새 브라우저 탭의 ${ IDEAL_WERO_BRAND_NAME }에 리디렉션됩니다. 팝업 차단기를 사용하는 경우 계속하려면 비활성화하세요."
+      ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "이 거래를 완료하기 위해 새 브라우저 탭의 PayPal로 보내집니다. 팝업 차단기를 사용하는 경우 계속하려면 비활성화하세요."
       ],
@@ -9901,6 +9907,9 @@
       ],
       "${ count } unread message": [
         "읽지 않은 메시지 ${ count }개"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength }자"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } 글쓰기 도우미"
@@ -13194,6 +13203,9 @@
       "More plans are available in other currencies": [
         "더 많은 플랜을 다른 통화로 사용할 수 있습니다."
       ],
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "${ IDEAL_WERO_BRAND_NAME }(으)로 결제하기"
+      ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "무료 체험 종료 후 구독이 활성화되려면 결제 수단이 필요합니다."
       ],
@@ -13269,6 +13281,9 @@
       "You will soon be redirected to verify your payment.": [
         "결제를 인증하기 위해 곧 리디렉션됩니다."
       ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
+        "${ IDEAL_WERO_BRAND_NAME }가 유로화 결제만 지원하므로 사용자의 통화가 유로화(€)로 변경되었습니다."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "SEPA 은행 송금이 유로화 결제만 지원하여 사용자의 통화가 유로화(€)로 변경되었습니다."
       ],
@@ -13280,6 +13295,9 @@
       ]
     },
     "Payments.Error": {
+      "Failed to initialize ${ IDEAL_WERO_BRAND_NAME }. Please try again later.": [
+        "${ IDEAL_WERO_BRAND_NAME }을(를) 구성할 수 없습니다, 다시 시도해 주세요."
+      ],
       "Invalid card number": [
         "유효하지 않은 카드 번호"
       ],
@@ -13305,6 +13323,11 @@
     "Payments.error": {
       "Something went wrong. Google Pay verification failed.": [
         "문제가 발생했습니다. Google Pay 인증에 실패했습니다."
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "확인을 선택하면 회원님은 ${ BRAND_NAME } 및 당사의 결제 서비스 제공업체인 Stripe이 SEPA 자동이체(Direct Debit)를 통해 본 은행 계좌에서 향후 구독 결제금을 수금하고, 해당 은행이 결제금을 출금하도록 승인하게 됩니다. 첫 결제는 지금 ${ IDEAL_WERO_BRAND_NAME }을(를) 통해 진행됩니다. 구독은 취소할 때까지 자동으로 갱신되며, 결제 전 미리 안내해 드립니다. 자동이체 수금의 경우 은행과의 약관에 따라 출금일로부터 8주 이내에 은행에 환불을 요청할 수 있습니다. 이는 지금 진행 중인 ${ IDEAL_WERO_BRAND_NAME } 결제에는 적용되지 않습니다."
       ]
     },
     "Payments.info": {
