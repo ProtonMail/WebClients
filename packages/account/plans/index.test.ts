@@ -9,7 +9,7 @@ import type { UserModel } from '@proton/shared/lib/interfaces';
 
 import { paymentStatusReducer } from '../paymentStatus';
 import { type SubscriptionState, subscriptionReducer } from '../subscription';
-import { getModelState } from '../test';
+import { getModelState } from '../tests';
 import { userReducer } from '../user';
 import { plansReducer, plansThunk, selectPlans } from './index';
 

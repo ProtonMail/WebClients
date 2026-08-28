@@ -1,15 +1,15 @@
 import { fireEvent, screen, waitFor } from '@testing-library/react';
 
-import { getModelState } from '@proton/account/test';
+import { getModelState } from '@proton/account/tests';
 import { removeEmailsFromEncryptionPreferencesCache } from '@proton/mail/store/messages/encryptionPreferences';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import noop from '@proton/utils/noop';
 
-import { addApiMock, clearApiMocks } from '../../../helpers/test/api';
-import { getCompleteAddress } from '../../../helpers/test/cache';
-import { getStoredUserKey, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
-import { contactID, receiver, sender, setupContactsForPinKeys } from '../../../helpers/test/pinKeys';
-import { mailTestRender, tick } from '../../../helpers/test/render';
+import { addApiMock, clearApiMocks } from '../../../helpers/tests/api';
+import { getCompleteAddress } from '../../../helpers/tests/cache';
+import { getStoredUserKey, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/tests/crypto';
+import { contactID, receiver, sender, setupContactsForPinKeys } from '../../../helpers/tests/pinKeys';
+import { mailTestRender, tick } from '../../../helpers/tests/render';
 import ContactResignModal from './ContactResignModal';
 
 const contacts = [{ contactID: contactID }];

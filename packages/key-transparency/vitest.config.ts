@@ -5,7 +5,7 @@ export default defineConfig({
         globals: true,
         environment: 'happy-dom',
         setupFiles: ['./vitest.setup.ts'],
-        include: ['test/**/*.test.ts'],
+        include: ['tests/**/*.test.ts'],
         server: {
             deps: {
                 inline: ['@protontech/crypto'],

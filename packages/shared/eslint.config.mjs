@@ -14,5 +14,5 @@ export default defineConfig(
             ],
         },
     },
-    globalIgnores(['test/**/*data.js'])
+    globalIgnores(['tests/**/*data.js'])
 );

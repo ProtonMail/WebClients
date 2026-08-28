@@ -1,10 +1,10 @@
-import { getModelState } from '@proton/account/test';
+import { getModelState } from '@proton/account/tests';
 import { AccessType } from '@proton/shared/lib/authentication/accessType';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { RetentionRule } from '@proton/shared/lib/interfaces/RetentionRule';
 import { buildUser } from '@proton/testing/builders/user';
 
-import { mailTestRender } from '../helpers/test/helper';
+import { mailTestRender } from '../helpers/tests/helper';
 import { newElementsState } from '../store/elements/elementsSlice';
 import { RouterMailboxContainer } from './RouterMailboxContainer';
 

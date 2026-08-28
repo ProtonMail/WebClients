@@ -5,8 +5,8 @@ import type { MessageStateWithData } from '@proton/mail/store/messages/messagesT
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { SafeLabelCount } from '@proton/shared/lib/interfaces';
 
-import { clearAll } from '../../helpers/test/helper';
-import { mockUseScheduleSendFeature } from '../../helpers/test/mockUseScheduleSendFeature';
+import { clearAll } from '../../helpers/tests/helper';
+import { mockUseScheduleSendFeature } from '../../helpers/tests/mockUseScheduleSendFeature';
 import { useMailboxCounter } from '../mailboxCounter/useMailboxCounter';
 import { useScheduleSend } from './useScheduleSend';
 

@@ -1,12 +1,12 @@
 import { MAILBOX_LABEL_IDS, MIME_TYPES } from '@proton/shared/lib/constants';
 import type { AttachmentsMetadata, Message } from '@proton/shared/lib/interfaces/mail/Message';
 
+import type { Conversation } from '../../../models/conversation';
 import {
     canShowAttachmentThumbnails,
     filterAttachmentToPreview,
     getOtherAttachmentsTitle,
 } from '../attachmentThumbnails';
-import type { Conversation } from '../../../models/conversation';
 
 const getConversation = (isSpam = false) => {
     return {

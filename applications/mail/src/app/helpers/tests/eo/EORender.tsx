@@ -4,7 +4,6 @@ import { Router } from 'react-router';
 import { Route } from 'react-router-dom';
 
 import type { RenderResult as OriginalRenderResult } from '@testing-library/react';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { render as originalRender } from '@testing-library/react';
 import type { MemoryHistory } from 'history';
 import { createMemoryHistory } from 'history';

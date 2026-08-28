@@ -11,7 +11,7 @@ import noop from '@proton/utils/noop';
 
 import * as messageDecrypt from '../../../helpers/message/messageDecrypt';
 import { mergeMessages } from '../../../helpers/message/messages';
-import { mailTestRender, tick } from '../../../helpers/test/render';
+import { mailTestRender, tick } from '../../../helpers/tests/render';
 import { initialize } from '../../../store/messages/read/messagesReadActions';
 import type { MailStore } from '../../../store/store';
 import type { MessageViewRef } from '../MessageView';

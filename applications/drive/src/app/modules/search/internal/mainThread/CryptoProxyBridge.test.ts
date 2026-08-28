@@ -1,6 +1,6 @@
 import type { DecryptedKey } from '@proton/shared/lib/interfaces';
 
-import { generateKeys, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../utils/test/crypto';
+import { generateKeys, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../utils/tests/crypto';
 import { CryptoProxyBridge } from './CryptoProxyBridge';
 
 async function createTestDecryptedKeys(): Promise<DecryptedKey[]> {

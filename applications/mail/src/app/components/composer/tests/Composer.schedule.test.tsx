@@ -10,8 +10,8 @@ import { format, getUnixTime, set } from 'date-fns';
 import { enUS } from 'date-fns/locale';
 import loudRejection from 'loud-rejection';
 
-import { getModelState } from '@proton/account/test';
-import { mockPlansApi } from '@proton/components/hooks/helpers/test';
+import { getModelState } from '@proton/account/tests';
+import { mockPlansApi } from '@proton/components/hooks/helpers/tests';
 import { FeatureCode } from '@proton/features';
 import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import type { MIME_TYPES } from '@proton/shared/lib/constants';
@@ -21,12 +21,11 @@ import type { MailSettings, Recipient, UserModel } from '@proton/shared/lib/inte
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 import { getFeatureFlagsState } from '@proton/testing/lib/features';
 
-import type { MailState } from '../../../store/store';
-
 import { getMinScheduleTime } from '../../../helpers/schedule';
-import { addApiMock } from '../../../helpers/test/api';
-import { minimalCache } from '../../../helpers/test/cache';
-import { addApiKeys, clearAll, getDropdown } from '../../../helpers/test/helper';
+import { addApiMock } from '../../../helpers/tests/api';
+import { minimalCache } from '../../../helpers/tests/cache';
+import { addApiKeys, clearAll, getDropdown } from '../../../helpers/tests/helper';
+import type { MailState } from '../../../store/store';
 import { ID, getMessage, renderComposer } from './Composer.test.helpers';
 
 loudRejection();

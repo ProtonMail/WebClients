@@ -34,7 +34,6 @@ const getTranslationWithDate = (data: string) => {
         },
         contexts: {
             Info: {
-                // eslint-disable-next-line no-template-curly-in-string
                 'December 16th 2021 was a ${ formattedDate }': [data],
             },
         },
@@ -117,7 +116,6 @@ describe('relocalizeText', () => {
 
     it('should relocalize without date format', async () => {
         setTtagLocales({
-            // eslint-disable-next-line no-template-curly-in-string
             es_ES: async () => getTranslationWithDate('El 16 de diciembre de 2021 fue un ${ formattedDate }'),
         });
         expect(
@@ -131,7 +129,6 @@ describe('relocalizeText', () => {
 
     it('should relocalize with date format', async () => {
         setTtagLocales({
-            // eslint-disable-next-line no-template-curly-in-string
             es_ES: async () => getTranslationWithDate('El 16 de diciembre de 2021 fue un ${ formattedDate }'),
         });
         await loadDateLocale('es_ES', 'es_ES');
@@ -147,7 +144,6 @@ describe('relocalizeText', () => {
 
     it('should fallback to current date locale if no date locale data is found', async () => {
         setTtagLocales({
-            // eslint-disable-next-line no-template-curly-in-string
             xx_XX: async () => getTranslationWithDate('blah blah blah ${ formattedDate }'),
         });
         expect(

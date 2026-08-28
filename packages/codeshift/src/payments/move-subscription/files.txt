@@ -104,7 +104,7 @@
 ../components/containers/referral/modals/helper.ts
 ../components/containers/topBanners/LockedStateTopBanner.tsx
 ../components/containers/topBanners/StorageLimitTopBanner.tsx
-../components/hooks/helpers/test/useSubscription.ts
+../components/hooks/helpers/tests/useSubscription.ts
 ../components/payments/client-extensions/usePaymentFacade.ts
 ../components/payments/react-extensions/useMethods.ts
 ../components/payments/react-extensions/usePaymentFacade.ts
@@ -131,8 +131,8 @@
 ../shared/lib/helpers/upsell.ts
 ../shared/lib/subscription/format.ts
 ../shared/lib/user/storage.ts
-../shared/test/helpers/subscription.spec.ts
-../shared/test/subscription/format.spec.ts
+../shared/tests/helpers/subscription.spec.ts
+../shared/tests/subscription/format.spec.ts
 ../testing/builders/subscription.ts
 ../testing/data/payments/data-subscription.ts
 ../testing/lib/initialReduxState.ts

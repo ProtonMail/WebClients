@@ -7,9 +7,6 @@ import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 import range from '@proton/utils/range';
 
-// mock useGetMessageKeys on-the-fly when needed
-import { useGetMessageKeys } from '../../hooks/message/useGetMessageKeys';
-
 import {
     addApiKeys,
     addApiMock,
@@ -18,7 +15,9 @@ import {
     mailTestRender,
     mockConsole,
     waitForSpyCall,
-} from '../../helpers/test/helper';
+} from '../../helpers/tests/helper';
+// mock useGetMessageKeys on-the-fly when needed
+import { useGetMessageKeys } from '../../hooks/message/useGetMessageKeys';
 import type { Conversation } from '../../models/conversation';
 import {
     initialize as initializeConversation,

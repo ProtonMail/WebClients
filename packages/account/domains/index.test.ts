@@ -5,8 +5,8 @@ import { getTestStore } from '@proton/redux-shared-store/test';
 import { EVENT_ACTIONS, PRODUCT_BIT, USER_ROLES } from '@proton/shared/lib/constants';
 import type { Domain, UserModel, UserPermission } from '@proton/shared/lib/interfaces';
 
-import { getModelState } from '../test';
-import { getServerEvent } from '../test/getServerEvent';
+import { getModelState } from '../tests';
+import { getServerEvent } from '../tests/getServerEvent';
 import { userReducer } from '../user';
 import { getOrgPermissions, userPermissionsReducer } from '../userPermissions';
 import { domainsReducer, domainsThunk, selectDomains } from './index';

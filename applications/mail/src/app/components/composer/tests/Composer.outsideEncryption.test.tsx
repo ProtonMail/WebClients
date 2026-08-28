@@ -2,11 +2,11 @@ import { fireEvent, getByTestId as getByTestIdDefault, screen } from '@testing-l
 import { addHours } from 'date-fns';
 import loudRejection from 'loud-rejection';
 
-import { getModelState } from '@proton/account/test';
+import { getModelState } from '@proton/account/tests';
 import type { PartialMessageState } from '@proton/mail/store/messages/messagesTypes';
 import type { MIME_TYPES } from '@proton/shared/lib/constants';
 
-import { getAddressKeyCache, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
+import { getAddressKeyCache, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/tests/crypto';
 import {
     addApiKeys,
     addApiMock,
@@ -17,7 +17,7 @@ import {
     mailTestRender,
     tick,
     waitForNotification,
-} from '../../../helpers/test/helper';
+} from '../../../helpers/tests/helper';
 import Composer from '../Composer';
 import { AddressID, ID, fromAddress, prepareMessage, props, saveNow, toAddress } from './Composer.test.helpers';
 

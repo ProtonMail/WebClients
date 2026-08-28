@@ -4,7 +4,7 @@ import { screen } from '@testing-library/react';
 
 import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 
-import { clearAll } from '../../../helpers/test/helper';
+import { clearAll } from '../../../helpers/tests/helper';
 import { refresh } from '../../../store/contacts/contactsActions';
 import { setup } from './Message.test.helpers';
 

@@ -1,5 +1,5 @@
 import { getFilteredUndoTokens, runParallelChunkedActions } from './chunk';
-import { clearAll } from './test/helper';
+import { clearAll } from './tests/helper';
 
 const api = jest.fn((any) => any);
 const items: number[] = [...Array(50).keys()];
