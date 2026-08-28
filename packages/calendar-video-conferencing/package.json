@@ -53,17 +53,20 @@
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:^",
+        "@proton/jest-env": "workspace:^",
         "@proton/testing": "workspace:^",
+        "@swc/jest": "^0.2.39",
         "@testing-library/jest-dom": "^6.9.1",
         "@testing-library/react": "^15.0.7",
         "@testing-library/react-hooks": "^8.0.1",
         "@testing-library/user-event": "^14.6.6",
+        "@typescript/native": "npm:typescript@^7.0.2",
         "eslint": "^10.9.0",
         "history": "^4.10.1",
         "jest": "^30.4.2",
         "jest-environment-jsdom": "^30.4.1",
         "react-dom": "^18.3.1",
         "ts-jest": "^29.4.12",
-        "typescript": "^6.0.3"
+        "typescript": "npm:@typescript/typescript6@^6.0.2"
     }
 }
