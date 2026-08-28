@@ -439,6 +439,9 @@
       "Claim your free ${ BRAND_NAME } address": [
         "Gør krav på din gratis ${ BRAND_NAME } address"
       ],
+      "Clear conversation": [
+        "Ryd samtale"
+      ],
       "Close": [
         "Luk"
       ],
@@ -519,6 +522,9 @@
       ],
       "Copy address": [
         "Kopier adresse"
+      ],
+      "Copy debug transcript": [
+        "Kopiér fejlfindingstranskibering"
       ],
       "Copy key to the clipboard": [
         "Kopiér nøgle til udklipsholder"
@@ -910,6 +916,9 @@
       "Invite user": [
         "Invitér bruger"
       ],
+      "Invoice options": [
+        "Indstillinger for faktura"
+      ],
       "Keep": [
         "Behold"
       ],
@@ -921,6 +930,9 @@
       ],
       "Keep editing": [
         "Fortsæt redigering"
+      ],
+      "Keep going": [
+        "Fortsæt"
       ],
       "Keep logo": [
         "Behold logo"
@@ -1261,6 +1273,9 @@
       "select file": [
         "vælg fil"
       ],
+      "Send": [
+        "Send"
+      ],
       "Send code": [
         "Send kode"
       ],
@@ -1284,6 +1299,9 @@
       ],
       "Set catch-all": [
         "Vælg catch-all"
+      ],
+      "Set invoice email": [
+        "Angiv e-mail for faktura"
       ],
       "Set new password": [
         "Angiv ny adgangskode"
@@ -1378,6 +1396,12 @@
       "Stay": [
         "Bliv her"
       ],
+      "Stop": [
+        "Stop"
+      ],
+      "Stop here": [
+        "Stop her"
+      ],
       "Stop using single sign-on": [
         "Stop med at bruge enkeltlogon"
       ],
@@ -1417,6 +1441,9 @@
       "Test SAML configuration": [
         "Test af SAML-konfiguration"
       ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "Vis/skjul ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Top up": [
         "Genopfyld"
       ],
@@ -1443,6 +1470,9 @@
       ],
       "Unlock data": [
         "Lås op for data"
+      ],
+      "Update email": [
+        "Opdatér e-mail"
       ],
       "Update recovery file": [
         "Opdater gendannelsesfil"
@@ -8069,6 +8099,9 @@
       "Data recovery requires a password reset option (email or SMS)": [
         "Datagendannelse kræver en metode til at nulstille adgangskoden (e-mail eller SMS)"
       ],
+      "Debug transcript copied": [
+        "Fejlfindingstranskibering kopieret"
+      ],
       "dedicated servers": [
         "dedikerede servere"
       ],
@@ -8229,6 +8262,12 @@
       ],
       "email": [
         "e-mail"
+      ],
+      "Email address copied to clipboard": [
+        "E-mailadresse kopieret til udklipsholder"
+      ],
+      "Email addresses copied to clipboard": [
+        "E-mailadresser kopieret til udklipsholder"
       ],
       "Email and calendar, integrated with ${ CONTACTS_APP_NAME }": [
         "E-mail og kalender, integreret med ${ CONTACTS_APP_NAME }"
@@ -8487,6 +8526,9 @@
       ],
       "How your emergency contact can change your password for you:": [
         "Sådan kan din nødkontakt ændre din adgangskode for dig:"
+      ],
+      "I have not finished this one yet.": [
+        "Denne er endnu ikke afsluttet."
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Identitetsudbyderens offentlige nøgle til at underskrive godkendelsespåstande. Der bør være et sted, hvor man kan downloade eller kopiere certifikatets hash fra identitetsudbyderen. Du skal bare indsætte certifikatets hash i tekstområdets felt."
@@ -9520,6 +9562,9 @@
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Disse legitimationsoplysninger kan ikke bruges til at logge ind på vores officielle ${ VPN_APP_NAME }-apps. ${ learnMore }"
       ],
+      "Thinking about this": [
+        "Overvejer..."
+      ],
       "This account has been suspended due to a potential policy violation.": [
         "Denne konto er blevet suspenderet på grund af en potentiel overtrædelse af politik."
       ],
@@ -9558,6 +9603,9 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Dette er nu din ${ defaultEmailAddress } til afsendelse af nye beskeder."
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Det her kræver meget... Skal det fortsætte?"
       ],
       "This is the password you used before the password reset.": [
         "Dette er den adgangskode, du brugte før adgangskodenulstillingen."
@@ -9939,6 +9987,9 @@
       ],
       "We can use your recovery phone to send you a verification code to reset your password, and to contact you if we notice suspicious activity.": [
         "Vi kan bruge din telefon til gendannelse til at sende dig en bekræftelseskode for at nulstille din adgangskode, og kontakte dig hvis vi registrerer mistænkelig aktivitet."
+      ],
+      "We couldn't send invoices to your email address. Automatic invoicing has been paused until you update the address.": [
+        "Vi kunne ikke sende fakturaer til din e-mailadresse. Automatisk fakturering er sat på pause, indtil du opdaterer adressen."
       ],
       "We couldn’t process your payment.": [
         "Vi kunne ikke gennemføre din betaling."
@@ -11388,6 +11439,9 @@
       ],
       "Send crash reports": [
         "Send rapporter om nedbrud"
+      ],
+      "Send invoices by email": [
+        "Send faktura via e-mail"
       ],
       "Sequences": [
         "Sekvenser"
@@ -14016,6 +14070,119 @@
         "Dit abonnement har et maksimum på ${ humanReadableAvailableSpace } mere lagerplads."
       ]
     },
+    "organization key reset": {
+      "Afterward, every converted user must accept the request to become non-private again, from their account settings.": [
+        "Derefter skal alle konverterede brugere acceptere anmodningen om at blive ikke-private igen fra deres kontoindstillinger."
+      ],
+      "An unprivatization request is sent by email to the converted users": [
+        "En anmodning om afprivatisering sendes med e-mail til de konverterede brugere"
+      ],
+      "Because your organization key has changed, you lost some of your admin rights: You can no longer create non-private users and access their accounts.": [
+        "Fordi din organisationsnøgle har ændret sig har du mistet nogle af dine administratorretigheder. Du kan ikke længere oprette ikke-private brugere og tilgå deres konti."
+      ],
+      "Before continuing, **let your users know they'll receive an admin access request by email**, so they're not caught off guard.": [
+        "Før du forsætter så **giv dine brugere besked om at de vil modtage en anmodning om administratoradgang på e-mail**, så de ikke bliver forskrækkede."
+      ],
+      "Can you reach out to other administrators?": [
+        "Kan du tage fat i andre administratorer?"
+      ],
+      "Converting users to private": [
+        "Konverterer brugere til privat"
+      ],
+      "Copy email list": [
+        "Kopiér e-mailliste"
+      ],
+      "Could not send the unprivatization request to ${ n } user. It will be retried automatically.": [
+        "Kunne ikke sende anmodningen om afprivatisering til ${ n } bruger. Der forsøges igen automatisk.",
+        "Kunne ikke sende anmodningen om afprivatisering til ${ n } brugere. Der forsøges igen automatisk."
+      ],
+      "Get in touch with your other administrators, to see if they can help. They will be able to restore your privileges after using a data recovery method.": [
+        "Tag fat i dine andre administratorer for at se om de kan hjælpe. De vil kunne gendanne dine rettigheder efter, at en metode til datagendannelse er blevet taget i brug."
+      ],
+      "I've notified my users that they'll receive an unprivatization request.": [
+        "Jeg har givet mine brugere besked om, at de vil modtage en anmodning om afprivatisering."
+      ],
+      "Non-private users": [
+        "Ikke-private brugere"
+      ],
+      "Once your privileges have been restored, you'll be able to create non-private users and access their accounts.": [
+        "Lige så snart dine rettigheder er blevet gendannet, vil du kunne oprette ikke-private brugere og tilgå deres konti."
+      ],
+      "Organization key reset": [
+        "Organisationsnøglen er nulstillet"
+      ],
+      "Ready to reset your organization key?": [
+        "Er du klar til at gendanne din organisationsnøgle?"
+      ],
+      "Reset key": [
+        "Nulstil nøgle"
+      ],
+      "Reset organization key?": [
+        "Nulstil organisationsnøglen?"
+      ],
+      "Resetting organization key": [
+        "Nulstiller organisationsnøgle"
+      ],
+      "Resetting the organization key generates a new encryption key to keep your organization's data secure. **No data will be lost or destroyed in this process, but the users groups will be deleted.**": [
+        "Ved at nulstille organisationsnøglen genereres en ny krypteringsnøgle, så at din organisations data forbliver sikre. **Intet data går tabt i processen, men brugergrupper bliver slettet.**"
+      ],
+      "See ${ n } user": [
+        "Se ${ n } bruger",
+        "Se ${ n } brugere"
+      ],
+      "See users": [
+        "Se brugere"
+      ],
+      "Send unprivatization requests": [
+        "Send anmodning om afprivatisering"
+      ],
+      "The non-private users are converted to private": [
+        "Ikke-private brugere bliver konverteret til private"
+      ],
+      "The organization key is reset": [
+        "Organisationsnøglen er nulstillet"
+      ],
+      "This process is automated:": [
+        "Denne process er automatiseret:"
+      ],
+      "This should take less than ${ minutes } minute. **Don't close this tab or let your device go to sleep** until it's finished.": [
+        "Det burde tage mindre end ${ minutes } minut. **Luk ikke denne fane eller lad din enhed gå i dvale** indtil det er færdigt.",
+        "Det burde tage mindre end ${ minutes } minutter. **Luk ikke denne fane eller lad din enhed gå i dvale** indtil det er færdigt."
+      ],
+      "This should take less than ${ minutes } minute. **Keep this browser tab open and your device active** until it completes.": [
+        "Det burde tage mindre end ${ minutes } minut. **Hold denne browserfane åben og din enhed aktiv** indtil det er færdigt.",
+        "Det burde tage mindre end ${ minutes } minutter. **Hold denne browserfane åben og din enhed aktiv** indtil det er færdigt."
+      ],
+      "To become non-private again, they must accept the request to enable admin access, from their account settings. You don't need to wait for this step.": [
+        "For at blive ikke-private igen skal de acceptere anmodning om at aktivere administratoradgang fra deres kontoindstillinger. Du behøver ikke vente på dette trin."
+      ],
+      "To reset the organization key and restore your administrator privileges, **${ n } non-private user must be temporarily converted to private.**": [
+        "For at nulstille din organisationsnøgle og gendanne dine administratorrettigheder, skal **${ n } ikke-privat bruger midlertidigt konverteres til private.**",
+        "For at nulstille din organisationsnøgle og gendanne dine administratorrettigheder, skal **${ n } ikke-private brugere midlertidigt konverteres til privat.**"
+      ],
+      "To reset the organization key, the users will be converted to private, and will receive an email invitation to become non-private again.": [
+        "For at nulstille organisationsnøglen vil brugerne blive konverteret til private, og derefter vil de modtage en invitation på e-mail til at blive ikke-private igen."
+      ],
+      "To restore your privileges, use a data recovery method.": [
+        "Brug en metode til datagendannelse for at gendanne dine rettigheder."
+      ],
+      "Try another way": [
+        "Prøv på en anden måde"
+      ],
+      "User (${ n })": [
+        "Bruger (${ n })",
+        "Brugere (${ n })"
+      ],
+      "You can reset your organization key to restore your administrator privileges. Then, you'll be able to create non-private users and access their accounts.": [
+        "Du kan nulstille din organisationsnøgle for at gendanne dine administratorrettigheder. Derefter vil du kunne oprette ikke-private brugere, og tilgå deres konti."
+      ],
+      "Your administrator privileges have been restored. You can now manage non-private users.": [
+        "Dine administratorrettigheder er blevet gendannet. Du kan nu administrere ikke-private brugere."
+      ],
+      "Your users will receive an email to accept the unprivatization request.": [
+        "Dine bruger vil modtage en e-mail om at acceptere anmodningen om afprivatisering."
+      ]
+    },
     "Organization logo upload": {
       "Avoid overly compressed images.": [
         "Undgå alt for kompakte billeder."
@@ -14238,12 +14405,6 @@
       ],
       "To enable administrator rights on your account, activate the organization key.": [
         "For at anvende administratorrettigheder på din konto, skal organisationsnøglen aktiveres."
-      ],
-      "Use a data recovery method or reset the organization key to restore administrator privileges.": [
-        "Brug en datagendannelsesmetode, eller nulstil organisationsnøglen for at gendanne administratorrettigheder."
-      ],
-      "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
-        "Brug en datagendannelsesmetode, kontakt en anden administrator, eller nulstil organisationsnøglen for at gendanne administratorrettigheder."
       ],
       "We couldn't verify the authenticity of this identity.": [
         "Vi kunne ikke bekræfte ægtheden af denne identitet."
@@ -14640,6 +14801,12 @@
       ],
       "Anytown": [
         "Skovhavn"
+      ],
+      "Ask anything…": [
+        "Spørg om hvad som helst..."
+      ],
+      "billing@company.com": [
+        "faktura@ firma.dk"
       ],
       "Choose a name": [
         "Vælg et navn"
@@ -16521,6 +16688,11 @@
         "Anmodning om nulstilling af adgangskode"
       ]
     },
+    "Set invoice email form note": {
+      "Turn on automatic invoicing to receive bills via email. Enter the email address where you want to receive invoices.": [
+        "Aktivér automatisk fakturering for at modtage regninger via mail. Angiv den mailadresse, hvor du ønsker at få leveret dine fakturaer."
+      ]
+    },
     "Settings section title": {
       "Account": [
         "Konto"
@@ -17918,6 +18090,9 @@
       ],
       "Invoice customized": [
         "Faktura tilpasset"
+      ],
+      "Invoice email updated": [
+        "Faktura e-mail opdateret"
       ],
       "Invoice paid": [
         "Faktura betalt"
@@ -19370,6 +19545,9 @@
       "Session management": [
         "Sessionshåndtering"
       ],
+      "Set invoice email": [
+        "Angiv e-mail for faktura"
+      ],
       "Set new password": [
         "Angiv ny adgangskode"
       ],
@@ -19468,6 +19646,9 @@
       ],
       "Stay secure and connected anywhere": [
         "Vær sikker og forbundet overalt"
+      ],
+      "Still working on it": [
+        "Arbejder stadig på det"
       ],
       "Subscription": [
         "Abonnement"
