@@ -963,6 +963,9 @@
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
         "Dine personlige oplysninger blev lækket i et databrud hos en tredjepartstjeneste."
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total }": [
+        "Tjekker ${ compromised.progress.completed } af ${ compromised.progress.total }"
       ]
     },
     "Email": {
@@ -3005,6 +3008,9 @@
       ],
       "None of your saved passwords have appeared in a known data breach.": [
         "Ingen af dine gemte adgangskoder har været involveret i et kendt databrud."
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
+        "Tjekker ${ compromised.progress.completed } af ${ compromised.progress.total } adgangskoder"
       ]
     },
     "Keyboard key": {
