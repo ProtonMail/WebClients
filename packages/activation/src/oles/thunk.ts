@@ -18,6 +18,7 @@ import { createMember } from '@proton/account/members/actions';
 import { decryptTemporaryPassword, encryptTemporaryPassword } from '@proton/account/orgJoiningLink/helpers';
 import { organizationThunk } from '@proton/account/organization';
 import { type OrganizationKeyState, organizationKeyThunk } from '@proton/account/organizationKey';
+import type { OrganizationRolesState } from '@proton/account/organizationRoles';
 import type { ProtonDomainsState } from '@proton/account/protonDomains';
 import type { UserInvitationsState } from '@proton/account/userInvitations';
 import type { UserSettingsState } from '@proton/account/userSettings';
@@ -79,7 +80,8 @@ type RequiredState = KtState &
     CalendarsState &
     AddressKeysState &
     MembersState &
-    MemberState;
+    MemberState &
+    OrganizationRolesState;
 
 type ThunkApi<T> = { state: T; extra: ProtonThunkArguments };
 

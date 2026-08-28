@@ -22,7 +22,9 @@ export const selectOrganizationRoles = (state: OrganizationRolesState) => state[
 
 const modelThunk = createAsyncModelThunk<Model, OrganizationRolesState, ProtonThunkArguments>(`${name}/fetch`, {
     miss: async ({ extraArgument }) => {
-        const isEnabled = extraArgument.unleashClient?.isEnabled('AdminRoleMVP') ?? false;
+        const unleashClient = extraArgument.unleashClient;
+        const isEnabled =
+            (unleashClient?.isEnabled('AdminRoleMVP') || unleashClient?.isEnabled('SyncOwnerRoleClient')) ?? false;
         if (!isEnabled) {
             return [];
         }

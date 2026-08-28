@@ -90,6 +90,7 @@ import {
     upsertMember,
 } from './index';
 import { deleteRequestUnprivatization, requestUnprivatization, unprivatizeSelf } from './unprivatizeActions';
+import { getRequiredOwnerRoleId, updateOwnerRole } from './updateOwnerRole';
 import validateAddUser from './validateAddUser';
 
 export const deleteMembers = ({
@@ -135,19 +136,29 @@ export const setRole = ({
     payload,
     api,
     role,
+    syncOwner = false,
 }: {
     member: Member;
     payload: PromoteGlobalSSOPayload | MemberKeyPayload | null;
     api: Api;
     role: MEMBER_ROLE;
-}): ThunkAction<Promise<void>, OrganizationKeyState, ProtonThunkArguments, UnknownAction> => {
+    syncOwner?: boolean;
+}): ThunkAction<
+    Promise<void>,
+    MembersState & OrganizationKeyState & OrganizationRolesState,
+    ProtonThunkArguments,
+    UnknownAction
+> => {
     return async (dispatch) => {
         if (role === MEMBER_ROLE.ORGANIZATION_MEMBER) {
             if (payload?.type === 'promote-global-sso') {
                 await dispatch(deleteRequestUnprivatization({ member, api }));
                 return;
             }
-            await api(updateRoleConfig(member.ID, MEMBER_ROLE.ORGANIZATION_MEMBER));
+            const didSyncOwnerRole = syncOwner && (await dispatch(updateOwnerRole({ member, makeAdmin: false, api })));
+            if (!didSyncOwnerRole) {
+                await api(updateRoleConfig(member.ID, MEMBER_ROLE.ORGANIZATION_MEMBER));
+            }
             dispatch(invalidateMemberRoles({ member }));
             return;
         }
@@ -155,6 +166,9 @@ export const setRole = ({
         const organizationKey = await dispatch(organizationKeyThunk());
 
         if (!getIsPasswordless(organizationKey?.Key)) {
+            if (syncOwner) {
+                await dispatch(updateOwnerRole({ member, makeAdmin: true, api }));
+            }
             await api(updateRoleConfig(member.ID, MEMBER_ROLE.ORGANIZATION_ADMIN));
             dispatch(invalidateMemberRoles({ member }));
             return;
@@ -173,6 +187,9 @@ export const setRole = ({
             return;
         }
 
+        if (syncOwner) {
+            await dispatch(updateOwnerRole({ member, makeAdmin: true, api }));
+        }
         await dispatch(setAdminRoles({ memberKeyPayloads: [payload], api }));
         dispatch(invalidateMemberRoles({ member }));
     };
@@ -240,7 +257,12 @@ export const promoteMemberToOrgAdmin = ({
 }: {
     member: EnhancedMember;
     api: Api;
-}): ThunkAction<Promise<void>, KtState & OrganizationKeyState & MembersState, ProtonThunkArguments, UnknownAction> => {
+}): ThunkAction<
+    Promise<void>,
+    KtState & OrganizationKeyState & MembersState & OrganizationRolesState,
+    ProtonThunkArguments,
+    UnknownAction
+> => {
     return async (dispatch) => {
         if (member.Role === MEMBER_ROLE.ORGANIZATION_ADMIN) {
             return;
@@ -270,7 +292,12 @@ export const resumeMemberRoleAssignment = ({
 }: {
     memberID: string;
     api: Api;
-}): ThunkAction<Promise<void>, KtState & OrganizationKeyState & MembersState, ProtonThunkArguments, UnknownAction> => {
+}): ThunkAction<
+    Promise<void>,
+    KtState & OrganizationKeyState & MembersState & OrganizationRolesState,
+    ProtonThunkArguments,
+    UnknownAction
+> => {
     return async (dispatch) => {
         const member = (await dispatch(membersThunk())).find(({ ID }) => ID === memberID);
         if (!member) {
@@ -354,7 +381,7 @@ export const editMember = ({
     api: Api;
 }): ThunkAction<
     Promise<{ diff: true; member: Member } | { diff: false; member: null }>,
-    KtState & MemberState & MembersState & OrganizationKeyState,
+    KtState & MemberState & MembersState & OrganizationKeyState & OrganizationRolesState,
     ProtonThunkArguments,
     UnknownAction
 > => {
@@ -381,11 +408,16 @@ export const editMember = ({
         if (memberDiff.lumo !== undefined) {
             await api(updateLumo(member.ID, memberDiff.lumo ? 1 : 0));
         }
-        if (memberDiff.role === MEMBER_ROLE.ORGANIZATION_ADMIN) {
-            await dispatch(setRole({ member, payload: memberKeyPacketPayload, api, role: memberDiff.role }));
-        }
-        if (memberDiff.role === MEMBER_ROLE.ORGANIZATION_MEMBER) {
-            await dispatch(setRole({ member, payload: memberKeyPacketPayload, api, role: memberDiff.role }));
+        if (memberDiff.role === MEMBER_ROLE.ORGANIZATION_ADMIN || memberDiff.role === MEMBER_ROLE.ORGANIZATION_MEMBER) {
+            await dispatch(
+                setRole({
+                    member,
+                    payload: memberKeyPacketPayload,
+                    api,
+                    role: memberDiff.role,
+                    syncOwner: true,
+                })
+            );
         }
         if (memberDiff.private !== undefined) {
             if (memberDiff.private === MEMBER_PRIVATE.UNREADABLE) {
@@ -577,7 +609,12 @@ export const createMember = ({
         disableAddressValidation?: boolean;
     };
     api: Api;
-}): ThunkAction<Promise<Member>, KtState & OrganizationKeyState, ProtonThunkArguments, UnknownAction> => {
+}): ThunkAction<
+    Promise<Member>,
+    KtState & OrganizationKeyState & MembersState & OrganizationRolesState,
+    ProtonThunkArguments,
+    UnknownAction
+> => {
     return async (dispatch, _, extra) => {
         let [user, userKeys, ownerAddresses, organizationKey, organization, members] = await Promise.all([
             dispatch(userThunk()),
@@ -709,6 +746,10 @@ export const createMember = ({
             throw new UnavailableAddressesError(unavailableAddresses, availableAddresses);
         }
 
+        if (model.role === MEMBER_ROLE.ORGANIZATION_ADMIN && extra.unleashClient?.isEnabled('SyncOwnerRoleClient')) {
+            await dispatch(getRequiredOwnerRoleId());
+        }
+
         const payload = {
             Name: model.name || firstAddressParts.Local,
             MaxSpace: +model.storage,
@@ -816,11 +857,13 @@ export const createMember = ({
                         },
                         api,
                     });
+                    await dispatch(updateOwnerRole({ member: Member, makeAdmin: true, api }));
                     await dispatch(setAdminRoles({ api, memberKeyPayloads: [memberKeyPayload] }));
                 } else {
                     // Ignore, can't set private users admins on creation because they don't have keys setup
                 }
             } else {
+                await dispatch(updateOwnerRole({ member: Member, makeAdmin: true, api }));
                 await api(updateRoleConfig(Member.ID, MEMBER_ROLE.ORGANIZATION_ADMIN));
             }
         }
@@ -905,7 +948,7 @@ export const attachMemberSSO = ({
     api: Api;
 }): ThunkAction<
     Promise<void>,
-    KtState & MemberState & MembersState & OrganizationKeyState,
+    KtState & MemberState & MembersState & OrganizationKeyState & OrganizationRolesState,
     ProtonThunkArguments,
     UnknownAction
 > => {

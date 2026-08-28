@@ -36,6 +36,7 @@ import type { KtState } from '../kt';
 import { type MembersState, getMemberAddresses, invalidateMemberRoles, membersThunk } from '../members';
 import { promoteMemberToOrgAdmin } from '../members/actions';
 import { type OrganizationKeyState, organizationKeyThunk } from '../organizationKey';
+import type { OrganizationRolesState } from '../organizationRoles';
 import { isOrgKeyRequired } from '../organizationRoles/helpers';
 import type { UserKeysState } from '../userKeys';
 
@@ -45,7 +46,8 @@ type RequiredState = AddressesState &
     KtState &
     GroupMembersState &
     GroupsState &
-    MembersState;
+    MembersState &
+    OrganizationRolesState;
 
 const signMemberEmail = async (memberEmail: string, groupKey: PrivateKeyReference) => {
     // we must always sign using the canonical email, canonicalize even if it's already canonical
