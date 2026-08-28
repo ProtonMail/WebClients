@@ -1,6 +1,6 @@
-import type { MailStateSlice } from '../buildMailState.testing';
-import { newElementsState } from './elementsInitialState';
-import type { NewStateParams } from './elementsTypes';
+import { newElementsState } from '../elements/elementsInitialState';
+import type { NewStateParams } from '../elements/elementsTypes';
+import type { MailStateSlice } from './buildMailState';
 
 /**
  * Builds the `elements` slice from the factory used by the application.

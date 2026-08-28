@@ -1,4 +1,4 @@
-import type { MailState } from './rootReducer';
+import type { MailState } from '../rootReducer';
 
 export type MailStateSlice = Partial<MailState>;
 
