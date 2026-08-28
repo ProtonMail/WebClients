@@ -127,7 +127,6 @@ const AppSwitcherContainer = ({ onLogin, onSwitch, state }: Props) => {
     const { User, Organization, persistedSession } = session.data;
 
     const isDocsHomepageAvailable = useFlag('DriveDocsLandingPageEnabled');
-    const isMeetAvailable = useFlag('PMVC2025');
     const isSheetsAvailable = useFlag('DocsSheetsEnabled');
     const isAuthenticatorAvailable = useFlag('AuthenticatorSettingsEnabled');
     const isSpacesAvailable = useFlag('SpacesAvailable');
@@ -142,7 +141,6 @@ const AppSwitcherContainer = ({ onLogin, onSwitch, state }: Props) => {
         isDocsHomepageAvailable,
         isSheetsAvailable,
         oauth: persistedSession.source === SessionSource.Oauth,
-        isMeetAvailable,
         isAuthenticatorAvailable,
         isSpacesAvailable,
     }).concat(getForbiddenAppConfigs({ user: User, forbiddenApps }));
