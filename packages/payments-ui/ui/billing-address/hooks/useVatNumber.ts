@@ -20,7 +20,6 @@ import type { PaymentsApi } from '@proton/payments/core/interface';
 import { getIsB2BAudienceFromPlan } from '@proton/payments/core/plan/helpers';
 import { useStore } from '@proton/redux-shared-store/sharedProvider';
 import { pick } from '@proton/shared/lib/helpers/object';
-import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
@@ -64,7 +63,6 @@ export const useVatNumber = ({
     initialBillingAddress,
     initialVatNumber,
 }: VatNumberHookProps) => {
-    const showExtendedBillingAddressForm = useFlag('PaymentsValidateBillingAddress');
     const store = useStore();
     const isAuthenticated = isAuthenticatedProp ?? !!selectUser(store.getState())?.value;
     const { paymentsApi: defaultPaymentsApi } = usePaymentsApi();
@@ -144,7 +142,7 @@ export const useVatNumber = ({
             VatId: newVatNumber,
         };
 
-        const vatFormErrors = getVatFormErrors(fullBillingAddress, showExtendedBillingAddressForm);
+        const vatFormErrors = getVatFormErrors(fullBillingAddress);
 
         if (!vatFormErrors.hasErrors) {
             onVatChange?.(cleanVatNumber(newVatNumber, taxCountry.selectedCountryCode));
@@ -160,7 +158,7 @@ export const useVatNumber = ({
             VatId: cleanVatNumber(vatNumber, taxCountry.selectedCountryCode),
         };
 
-        const vatFormErrors = getVatFormErrors(fullBillingAddress, showExtendedBillingAddressForm);
+        const vatFormErrors = getVatFormErrors(fullBillingAddress);
 
         if (!vatFormErrors.hasErrors) {
             onBillingAddressChange?.(fullBillingAddress);
@@ -229,16 +227,13 @@ export const useVatNumber = ({
 
     const renderVatNumberInput = isB2BPlan && countriesWithVatNumberOnSignup.has(taxCountry.selectedCountryCode);
 
-    const vatFormErrors = getVatFormErrors(
-        {
-            CountryCode: taxCountry.selectedCountryCode,
-            State: taxCountry.federalStateCode,
-            ZipCode: taxCountry.zipCode,
-            ...billingAddressExtraRef.current,
-            VatId: vatNumber,
-        },
-        showExtendedBillingAddressForm
-    );
+    const vatFormErrors = getVatFormErrors({
+        CountryCode: taxCountry.selectedCountryCode,
+        State: taxCountry.federalStateCode,
+        ZipCode: taxCountry.zipCode,
+        ...billingAddressExtraRef.current,
+        VatId: vatNumber,
+    });
 
     const vatFormValid = !vatFormErrors.hasErrors && !hasWrongBillingAddressError(paymentFacade?.checkResult);
     const vatFormErrorMessage = !vatFormValid ? c('Error').t`Please complete the billing details` : undefined;
