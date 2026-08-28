@@ -865,6 +865,9 @@
       "Check if your passwords have been exposed": [
         "Comproveu si les vostres contrasenyes s'han exposat"
       ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total }": [
+        "S'estan comprovant ${ compromised.progress.completed } de ${ compromised.progress.total }"
+      ],
       "Create unique passwords": [
         "Creeu contrasenyes úniques"
       ],
@@ -1766,6 +1769,9 @@
       ],
       "Change your password": [
         "Canvieu la vostra contrasenya"
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
+        "S'estan comprovant ${ compromised.progress.completed } de ${ compromised.progress.total } contrasenyes"
       ],
       "Confirm your extra password to proceed with its removal.": [
         "Confirmeu la vostra contrasenya addicional per procedir a la seva eliminació."
