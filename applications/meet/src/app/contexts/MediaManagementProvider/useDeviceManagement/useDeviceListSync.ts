@@ -20,7 +20,7 @@ const RECHECK_DELAY_MS = 150;
 export const useDeviceListSync = () => {
     const store = useMeetStore();
 
-    const lastFingerprintRef = useRef<Map<DeviceKind, string>>(new Map());
+    const lastDevicesHashRef = useRef<Map<DeviceKind, string>>(new Map());
     const pendingRecheckRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
     useEffect(() => {
@@ -28,7 +28,7 @@ export const useDeviceListSync = () => {
             return;
         }
 
-        const lastFingerprint = lastFingerprintRef.current;
+        const lastDevicesHash = lastDevicesHashRef.current;
         const pendingRecheck = pendingRecheckRef;
 
         const enumerateAndDispatch = async () => {
@@ -42,13 +42,13 @@ export const useDeviceListSync = () => {
 
             for (const kind of KINDS) {
                 const list = devices.filter((d) => d.kind === kind && d.deviceId !== '');
-                const fingerprint = getDevicesHash(list);
+                const devicesHash = getDevicesHash(list);
 
-                if (fingerprint === lastFingerprint.get(kind)) {
+                if (devicesHash === lastDevicesHash.get(kind)) {
                     continue;
                 }
 
-                lastFingerprint.set(kind, fingerprint);
+                lastDevicesHash.set(kind, devicesHash);
                 store.dispatch(setDeviceList({ kind, devices: list.map(toSerializableDevice) }));
             }
         };
@@ -77,7 +77,7 @@ export const useDeviceListSync = () => {
                 pendingRecheck.current = null;
             }
 
-            lastFingerprint.clear();
+            lastDevicesHash.clear();
         };
     }, [store]);
 };

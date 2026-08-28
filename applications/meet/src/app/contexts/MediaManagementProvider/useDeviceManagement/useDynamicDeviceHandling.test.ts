@@ -233,6 +233,36 @@ describe('useDynamicDeviceHandling', () => {
             );
         });
 
+        it('picks the system default on initialization, when there is no active device yet', () => {
+            const { switchActiveDevice } = setup({
+                speakers: UBUNTU_SPEAKERS,
+                activeAudioOutputId: '',
+                speakerState: deviceState({
+                    systemDefault: device('builtin-speaker', 'Comet Lake PCH-LP cAVS Speaker'),
+                    useSystemDefault: true,
+                }),
+            });
+
+            expect(switchActiveDevice).toHaveBeenCalledWith(
+                expect.objectContaining({ deviceType: 'audiooutput', deviceId: 'builtin-speaker' })
+            );
+        });
+
+        it('picks the preferred speaker on initialization, when there is no active device yet', () => {
+            const { switchActiveDevice } = setup({
+                speakers: UBUNTU_SPEAKERS,
+                activeAudioOutputId: '',
+                speakerState: deviceState({
+                    systemDefault: device('builtin-speaker', 'Comet Lake PCH-LP cAVS Speaker'),
+                    preferredDeviceId: 'jabra',
+                }),
+            });
+
+            expect(switchActiveDevice).toHaveBeenCalledWith(
+                expect.objectContaining({ deviceType: 'audiooutput', deviceId: 'jabra' })
+            );
+        });
+
         it('does not switch when the browser cannot set the sink', () => {
             browserMocks.supportsSetSinkId.mockReturnValueOnce(false);
 
@@ -257,6 +287,23 @@ describe('useDynamicDeviceHandling', () => {
             });
 
             expect(switchActiveDevice).not.toHaveBeenCalled();
+            expect(toggleAudio).not.toHaveBeenCalled();
+        });
+
+        it('picks the system default on initialization, when there is no active device yet', () => {
+            const { switchActiveDevice, toggleAudio } = setup({
+                microphones: [device('builtin-mic', 'Built-in Microphone'), device('usb-mic', 'USB Microphone')],
+                activeMicrophoneId: '',
+                microphoneState: deviceState({
+                    systemDefault: device('builtin-mic', 'Built-in Microphone'),
+                    useSystemDefault: true,
+                }),
+                isConnected: false,
+            });
+
+            expect(switchActiveDevice).toHaveBeenCalledWith(
+                expect.objectContaining({ deviceType: 'audioinput', deviceId: 'builtin-mic' })
+            );
             expect(toggleAudio).not.toHaveBeenCalled();
         });
 
@@ -300,6 +347,19 @@ describe('useDynamicDeviceHandling', () => {
             expect(toggleVideo).toHaveBeenCalledWith(
                 expect.objectContaining({ videoDeviceId: 'builtin-cam', preserveCache: true })
             );
+        });
+
+        it('picks the first camera on initialization, when there is no active device yet', () => {
+            const { switchActiveDevice, toggleVideo } = setup({
+                cameras: [device('facetime', 'FaceTime HD Camera'), device('usb-cam', 'USB Camera')],
+                activeCameraId: '',
+                isConnected: false,
+            });
+
+            expect(switchActiveDevice).toHaveBeenCalledWith(
+                expect.objectContaining({ deviceType: 'videoinput', deviceId: 'facetime' })
+            );
+            expect(toggleVideo).not.toHaveBeenCalled();
         });
 
         it('switches to the preferred camera when it is available', () => {
