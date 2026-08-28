@@ -31,9 +31,12 @@ import useEffectOnce from '@proton/hooks/useEffectOnce'
 import { useLocation } from 'react-router-dom-v5-compat'
 import { tmpConvertNewDocTypeToOld } from '@proton/drive-store/store/_documents'
 import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
+import { useDriveCompatSDK } from '~/utils/flags'
+import { getMyFilesNodeMeta } from '@proton/docs-core/lib/DriveSDK/getMyFilesNodeMeta'
 
 export default function UserDocumentPage({ driveCompat }: { driveCompat: DriveCompat }) {
   const application = useApplication()
+  const replaceCompatWithSDK = useDriveCompatSDK()
 
   const [user] = useUser()
 
@@ -77,13 +80,14 @@ export default function UserDocumentPage({ driveCompat }: { driveCompat: DriveCo
     const name =
       docType === 'sheet' ? c('Title').t`Untitled spreadsheet ${date}` : c('Title').t`Untitled document ${date}`
 
+    const getRoot = replaceCompatWithSDK ? getMyFilesNodeMeta : driveCompat.getMyFilesNodeMeta
     const root =
       openAction && openAction.mode === 'create'
         ? {
             volumeId: openAction.volumeId,
             linkId: openAction.parentLinkId,
           }
-        : await driveCompat.getMyFilesNodeMeta()
+        : await getRoot()
     const result = await driveCompat.createDocumentNode(
       root,
       name,
@@ -91,7 +95,7 @@ export default function UserDocumentPage({ driveCompat }: { driveCompat: DriveCo
     )
 
     return result
-  }, [application.logger, driveCompat, openAction])
+  }, [application.logger, driveCompat, openAction, replaceCompatWithSDK])
 
   useEffect(() => {
     if (isCreatingNewDocument) {

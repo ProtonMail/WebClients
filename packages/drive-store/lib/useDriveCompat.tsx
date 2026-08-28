@@ -224,17 +224,11 @@ export const useDriveCompat = (): DriveCompat => {
     return {
         createDocumentNode: withResolveShareId(createDocumentNode),
         getDocumentKeys: withResolveShareId(getDocumentKeys),
-        getNodePaths,
-        getNodesAreShared,
         getNode: withResolveShareId(getNode),
         getLatestNode: withResolveShareId(getLatestNode),
         getNodeContents: withResolveShareId(getNodeContents),
         getNodePermissions: withResolveShareId(getNodePermissions),
-        getNodes,
         getShareId: withResolveShareId(({ shareId }) => shareId),
-        getPublicShareUrlInfo: (signal: AbortSignal) =>
-            withResolveShareId(({ shareId, linkId }) => loadShareUrl(signal, shareId, linkId)),
-        getSharedLinkFromShareUrl: getSharedLink,
         findAvailableNodeName: withResolveShareId(findAvailableNodeName),
         renameDocument: withResolveShareId(renameDocument),
         trashDocument: withResolveShareId(trashDocument),
@@ -244,7 +238,6 @@ export const useDriveCompat = (): DriveCompat => {
         openDocumentWindow,
         openDocumentSharingModal: openShareModal,
         openMoveToFolderModal,
-        getMyFilesNodeMeta,
         getVerificationKey,
         modals: (
             <>
@@ -255,5 +248,15 @@ export const useDriveCompat = (): DriveCompat => {
         ),
         getKeysForLocalStorageEncryption,
         getPrimaryAddressKeys,
+        // Used only in append-public-share-key-material-to-title.ts
+        getSharedLinkFromShareUrl: getSharedLink,
+        getPublicShareUrlInfo: (signal: AbortSignal) =>
+            withResolveShareId(({ shareId, linkId }) => loadShareUrl(signal, shareId, linkId)),
+        // Used only in RecentDocumentsService
+        getNodesAreShared,
+        getNodePaths,
+        getNodes,
+        // SDK counterpart used when feature flag ON
+        getMyFilesNodeMeta,
     };
 };
