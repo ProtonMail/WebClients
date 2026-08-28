@@ -439,6 +439,9 @@
       "Claim your free ${ BRAND_NAME } address": [
         "Reclame su dirección gratuita de ${ BRAND_NAME }"
       ],
+      "Clear conversation": [
+        "Borrar la conversación"
+      ],
       "Close": [
         "Cerrar"
       ],
@@ -519,6 +522,9 @@
       ],
       "Copy address": [
         "Copiar la dirección"
+      ],
+      "Copy debug transcript": [
+        "Copiar transcripción de depuración"
       ],
       "Copy key to the clipboard": [
         "Copiar clave al portapapeles"
@@ -922,6 +928,9 @@
       "Keep editing": [
         "Continuar editando"
       ],
+      "Keep going": [
+        "Continuar"
+      ],
       "Keep logo": [
         "Conservar logo"
       ],
@@ -1261,6 +1270,9 @@
       "select file": [
         "seleccionar archivo"
       ],
+      "Send": [
+        "Enviar"
+      ],
       "Send code": [
         "Enviar código"
       ],
@@ -1378,6 +1390,12 @@
       "Stay": [
         "Permanecer"
       ],
+      "Stop": [
+        "Detener"
+      ],
+      "Stop here": [
+        "Detenerse aquí"
+      ],
       "Stop using single sign-on": [
         "Dejar de usar el inicio de sesión único"
       ],
@@ -1417,6 +1435,9 @@
       "Test SAML configuration": [
         "Probar la configuración SAML"
       ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "Alternar ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Top up": [
         "Recargar"
       ],
@@ -1443,6 +1464,9 @@
       ],
       "Unlock data": [
         "Desbloquear datos"
+      ],
+      "Update email": [
+        "Actualizar correo electrónico"
       ],
       "Update recovery file": [
         "Actualizar archivo de recuperación"
@@ -8069,6 +8093,9 @@
       "Data recovery requires a password reset option (email or SMS)": [
         "La recuperación de datos requiere una opción de restablecimiento de contraseña (correo electrónico o SMS)"
       ],
+      "Debug transcript copied": [
+        "Transcripción de depuración copiada"
+      ],
       "dedicated servers": [
         "servidores dedicados"
       ],
@@ -8229,6 +8256,9 @@
       ],
       "email": [
         "correo"
+      ],
+      "Email address copied to clipboard": [
+        "Dirección de correo electrónico copiada al portapapeles"
       ],
       "Email and calendar, integrated with ${ CONTACTS_APP_NAME }": [
         "Correo electrónico y calendario, integrado con ${ CONTACTS_APP_NAME }"
@@ -8487,6 +8517,9 @@
       ],
       "How your emergency contact can change your password for you:": [
         "Cómo su contacto de emergencia puede cambiar la contraseña por usted:"
+      ],
+      "I have not finished this one yet.": [
+        "Aún no he finalizado esto."
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Clave pública del proveedor de identidad para firmar aserciones de autenticación. Debería haber un lugar para descargar o copiar el hash del certificado del proveedor de identidad. Simplemente pegue el hash del certificado en el campo del área de texto."
@@ -9520,6 +9553,9 @@
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Estas credenciales no pueden usarse para iniciar sesión en nuestras aplicaciones oficiales de ${ VPN_APP_NAME }. ${ learnMore }"
       ],
+      "Thinking about this": [
+        "Pensando sobre esto"
+      ],
       "This account has been suspended due to a potential policy violation.": [
         "Esta cuenta ha sido suspendida por una posible violación de la política."
       ],
@@ -9558,6 +9594,9 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Esta es ahora su ${ defaultEmailAddress } para enviar mensajes nuevos."
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Esto implica muchos pasos. ¿Debería continuar?"
       ],
       "This is the password you used before the password reset.": [
         "Esta es la contraseña que usó anterior al restablecimiento de contraseña."
@@ -14016,6 +14055,34 @@
         "El plan incluye un máximo de ${ humanReadableAvailableSpace } de almacenamiento más."
       ]
     },
+    "organization key reset": {
+      "Non-private users": [
+        "Usuarios no privados"
+      ],
+      "Reset key": [
+        "Restablecer clave"
+      ],
+      "Reset organization key?": [
+        "¿Restablecer la clave de la organización?"
+      ],
+      "See ${ n } user": [
+        "Ver ${ n } usuario",
+        "Ver ${ n } usuarios"
+      ],
+      "See users": [
+        "Ver usuarios"
+      ],
+      "This process is automated:": [
+        "Este proceso está automatizado:"
+      ],
+      "Try another way": [
+        "Intentar de otra manera"
+      ],
+      "User (${ n })": [
+        "Usuario (${ n })",
+        "Usuarios (${ n })"
+      ]
+    },
     "Organization logo upload": {
       "Avoid overly compressed images.": [
         "Evite imágenes demasiado comprimidas."
@@ -14238,12 +14305,6 @@
       ],
       "To enable administrator rights on your account, activate the organization key.": [
         "Active la clave de la organización para activar los derechos de administración en la cuenta."
-      ],
-      "Use a data recovery method or reset the organization key to restore administrator privileges.": [
-        "Use un método de recuperación de datos o restablezca la clave de seguridad de la organización para restaurar los privilegios de administrador."
-      ],
-      "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
-        "Use un método de recuperación de datos, contacte con otro administrador o restablezca la clave de seguridad de la organización para restaurar los privilegios de administrador."
       ],
       "We couldn't verify the authenticity of this identity.": [
         "No pudimos verificar la autenticidad de esta identidad."
@@ -14640,6 +14701,9 @@
       ],
       "Anytown": [
         "Puertoalto"
+      ],
+      "Ask anything…": [
+        "Pregunte cualquier cosa…"
       ],
       "Choose a name": [
         "Elija un nombre"
@@ -19468,6 +19532,9 @@
       ],
       "Stay secure and connected anywhere": [
         "Manténgase seguro y conectado en cualquier lugar"
+      ],
+      "Still working on it": [
+        "Todavía trabajando en ello"
       ],
       "Subscription": [
         "Suscripción"

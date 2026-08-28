@@ -197,6 +197,9 @@
       "Claim your free ${ BRAND_NAME } address": [
         "اطلب بعنوانك المجاني من ${ BRAND_NAME }"
       ],
+      "Clear conversation": [
+        "مسح المحادثة"
+      ],
       "Close": [
         "أغلق"
       ],
@@ -274,6 +277,9 @@
       ],
       "Copy address": [
         "انسخ العنوان"
+      ],
+      "Copy debug transcript": [
+        "نسخ سجل تصحيح الأخطاء"
       ],
       "Copy key to the clipboard": [
         "نسخ المفتاح إلى الحافظة"
@@ -1001,6 +1007,9 @@
       "select file": [
         "حدد الملف"
       ],
+      "Send": [
+        "أرسل"
+      ],
       "Send code": [
         "إرسال الرمز"
       ],
@@ -1118,6 +1127,9 @@
       "Stay": [
         "البقاء"
       ],
+      "Stop": [
+        "توقف"
+      ],
       "Stop using single sign-on": [
         "إيقاف استخدام تسجيل الدخول الفردي (SSO)"
       ],
@@ -1150,6 +1162,9 @@
       ],
       "Test SAML configuration": [
         "اختبار تكوين SAML"
+      ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "تبديل ${ LUMO_SHORT_APP_NAME }"
       ],
       "Top up": [
         "شحن"
@@ -7832,6 +7847,9 @@
       "Data recovery requires a password reset option (email or SMS)": [
         "يتطلب استرداد البيانات خيار إعادة تعيين كلمة المرور (البريد الإلكتروني أو الرسائل النصية القصيرة)"
       ],
+      "Debug transcript copied": [
+        "تم نسخ سجل تصحيح الأخطاء"
+      ],
       "dedicated servers": [
         "خوادم مخصصة"
       ],
@@ -9231,6 +9249,9 @@
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "لا يمكن استخدام بيانات الاعتماد هذه لتسجيل الدخول إلى تطبيقات ${ VPN_APP_NAME } الرسمية. ${ learnMore }"
+      ],
+      "Thinking about this": [
+        "جارٍ التفكير في هذا..."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "تم إيقاف هذا الحساب بسبب انتهاك محتمل لسياسات."
@@ -14067,12 +14088,6 @@
       "To enable administrator rights on your account, activate the organization key.": [
         "لتمكين حقوق المسؤول على حسابك، قم بتفعيل مفتاح المؤسسة."
       ],
-      "Use a data recovery method or reset the organization key to restore administrator privileges.": [
-        "استخدم طريقة استرداد البيانات أو أعد تعيين مفتاح المؤسسة لاستعادة امتيازات المسؤول."
-      ],
-      "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
-        "استخدم طريقة استرداد البيانات، أو اتصل بمسؤول آخر، أو أعد تعيين مفتاح المؤسسة لاستعادة امتيازات المسؤول."
-      ],
       "We couldn't verify the authenticity of this identity.": [
         "لم نتمكن من التحقق من صحة هذه الهوية."
       ],
@@ -14470,6 +14485,9 @@
       ],
       "Anytown": [
         "Anytown"
+      ],
+      "Ask anything…": [
+        "اسأل أي شيء..."
       ],
       "Choose a name": [
         "اختر اسمًا"

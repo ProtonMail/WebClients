@@ -5997,7 +5997,7 @@
         "Sinulla on jo ilmainen tili"
       ],
       "You are about to open another browser tab and visit:": [
-        "Olet avaamassa uutta selaimen välilehteä sivustolle:"
+        "Olet avaamassa uuteen selainvälilehteen osoitetta:"
       ],
       "You are about to open your default browser and visit:": [
         "Olet avaamassa oletusselaimeesi osoitetta:"
@@ -6252,6 +6252,9 @@
     "Label": {
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-käyttäjätunnus"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } merkkiä"
       ],
       "${ n } month": [
         "${ n } kuukausi",
@@ -11915,7 +11918,7 @@
         "Vaihda valitsemiesi päivä- ja yöteemojen välillä automaattisesti järjestelmäsi päivä-/yötilan mukaisesti"
       ],
       "Change shared item settings": [
-        "Muuta jaettavan kohteen asetuksia"
+        "Muuta jaetun kohteen asetuksia"
       ],
       "Customize import to reduce the number of folders": [
         "Vähennä kansioiden määrää mukauttamalla tuontia"

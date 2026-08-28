@@ -551,6 +551,9 @@
       "Clear all formatting": [
         "Rensa all formatering"
       ],
+      "Clear conversation": [
+        "Rensa konversation"
+      ],
       "Close": [
         "Stäng"
       ],
@@ -1301,6 +1304,9 @@
       "Invite user": [
         "Bjud in användare"
       ],
+      "Invoice options": [
+        "Fakturaalternativ"
+      ],
       "Italic": [
         "Kursiv"
       ],
@@ -1318,6 +1324,9 @@
       ],
       "Keep editing": [
         "Fortsätt redigera"
+      ],
+      "Keep going": [
+        "Fortsätt"
       ],
       "Keep logo": [
         "Behåll logga"
@@ -1793,6 +1802,9 @@
       "Select time zone": [
         "Välj tidszon"
       ],
+      "Send": [
+        "Skicka"
+      ],
       "send auto-reply email": [
         "skicka automatiskt svar"
       ],
@@ -1952,6 +1964,12 @@
       "Stay": [
         "Stanna"
       ],
+      "Stop": [
+        "Stoppa"
+      ],
+      "Stop here": [
+        "Stoppa här"
+      ],
       "Stop using single sign-on": [
         "Sluta använda enkel inloggning"
       ],
@@ -1982,6 +2000,9 @@
       "Take a tour": [
         "Ta en rundtur"
       ],
+      "Template with invite links": [
+        "Mall med inbjudningslänkar"
+      ],
       "Template with passwords": [
         "Mall med lösenord"
       ],
@@ -1990,6 +2011,9 @@
       ],
       "Test SAML configuration": [
         "Testa SAML-konfiguration"
+      ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "Slå på/av ${ LUMO_SHORT_APP_NAME }"
       ],
       "Top up": [
         "Fyll på"
@@ -5876,6 +5900,9 @@
       ],
       ".rpm for Fedora / Red Hat": [
         ".rpm för Fedora/Red Hat"
+      ],
+      "You can also download the app through the ${ linkSnapStore }.": [
+        "Du kan också ladda ner appen via ${ linkSnapStore }."
       ]
     },
     "drive_signup_2023: Title": {
@@ -7661,6 +7688,14 @@
       "Role assignment could not be completed for ${ errors.length } member": [
         "Rolltilldelning kunde inte slutföras för ${ errors.length } medlem",
         "Rolltilldelning kunde inte slutföras för ${ errors.length } medlemmar"
+      ],
+      "Role assignment could not be completed for ${ failedCount } group": [
+        "Rolltilldelning kunde inte slutföras för ${ failedCount } grupp",
+        "Rolltilldelning kunde inte slutföras för ${ failedCount } grupper"
+      ],
+      "Role assignment could not be completed for ${ failedCount } user": [
+        "Rolltilldelning kunde inte slutföras för ${ failedCount } användare",
+        "Rolltilldelning kunde inte slutföras för ${ failedCount } användare"
       ],
       "Server not found": [
         "Server hittades inte"
@@ -10412,6 +10447,9 @@
       "add a recovery method": [
         "lägg till en återställningsmetod"
       ],
+      "Add additional users to **${ company.name }** from your organization to manage this company.": [
+        "Lägg till ytterligare användare till **${ company.name }** från din organisation för att hantera detta företag."
+      ],
       "Add an email address in case we need to contact you": [
         "Lägg till en e-postadress ifall vi behöver kontakta dig"
       ],
@@ -10536,6 +10574,9 @@
       "Allowing the password reset from the settings lets you to change your password if you’ve lost it, but are still signed in to ${ BRAND_NAME }.": [
         "Att tillåta lösenordsåterställning från inställningarna gör att du kan ändra ditt lösenord om du har förlorat det men fortfarande är inloggad på ${ BRAND_NAME }."
       ],
+      "Allows IPv6 traffic to pass through the VPN tunnel. This improves compatibility with IPv6 websites and services.": [
+        "Tillåter IPv6-trafik att passera genom VPN-tunneln. Detta förbättrar kompatibiliteten med IPv6-webbplatser och -tjänster."
+      ],
       "Already allocated": [
         "Redan tilldelad"
       ],
@@ -10592,6 +10633,10 @@
       ],
       "Are you sure you want to cancel editing the group?": [
         "Är du säker på att du vill avbryta redigeringen av gruppen?"
+      ],
+      "Are you sure you want to continue without ${ withoutString } and ${ notMigratedOthers } other?": [
+        "Är du säker på att du vill fortsätta utan ${ withoutString } och ${ notMigratedOthers } annan?",
+        "Är du säker på att du vill fortsätta utan ${ withoutString } och ${ notMigratedOthers } andra?"
       ],
       "Are you sure you want to continue without ${ withoutString }?": [
         "Är du säker på att du vill fortsätta utan ${ withoutString }?"
@@ -10880,6 +10925,9 @@
       ],
       "Connection data will be available in around 1 hour.": [
         "Anslutningsdata kommer vara tillgänglig om cirka 1 timme."
+      ],
+      "Connects you to your destination country through servers physically located elsewhere.": [
+        "Ansluter dig till ditt destinationsland via servrar som är fysiskt placerade någon annanstans."
       ],
       "Contact our Customer Support team to disable two-factor authentication for your account, or recover your account another way.": [
         "Kontakta vårt kundsupportteam för att inaktivera tvåfaktorsautentisering för ditt konto, eller för att återställa ditt konto på annat sätt."
@@ -11196,6 +11244,12 @@
       "Email address": [
         "E-postadress"
       ],
+      "Email address copied to clipboard": [
+        "E-postadress kopierad till urklipp"
+      ],
+      "Email addresses copied to clipboard": [
+        "E-postadresser kopierad till urklipp"
+      ],
       "Email and calendar, integrated with ${ CONTACTS_APP_NAME }": [
         "E-post och kalender, integrerad med ${ CONTACTS_APP_NAME }"
       ],
@@ -11372,6 +11426,9 @@
       ],
       "Failed to fetch logs.": [
         "Misslyckades att hämta loggar."
+      ],
+      "Fast and focused. Email and calendar, right on your desktop.": [
+        "Snabb och fokuserad. E-post och kalender, direkt på din stationära dator."
       ],
       "Fastest VPN speeds of up to 10Gbps": [
         "Snabbaste VPN-hastigheter på upp till 10 Gbps"
@@ -11552,6 +11609,9 @@
       ],
       "How your emergency contact can change your password for you:": [
         "Hur din nödkontakt ändra ditt lösenord åt dig:"
+      ],
+      "I have not finished this one yet.": [
+        "Jag har inte slutförd denna än."
       ],
       "IBAN: ${ formattedIBAN }": [
         "IBAN: ${ formattedIBAN }"
@@ -12910,6 +12970,9 @@
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Dessa inloggningsuppgifter kan inte användas för att logga in på våra officiella ${ VPN_APP_NAME }-appar. ${ learnMore }"
       ],
+      "Thinking about this": [
+        "Tänker på detta"
+      ],
       "This account has been suspended due to a potential policy violation.": [
         "Detta konto har stängts av på grund av en potentiell policyöverträdelse."
       ],
@@ -13874,6 +13937,9 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Din data är redo att importeras från ${ importedEmailAddressStrong } till ditt ${ BRAND_NAME }-konto."
+      ],
+      "Your default language and time for ${ BRAND_NAME } services.": [
+        "Ditt standardspråk och tid för ${ BRAND_NAME }-tjänster."
       ],
       "Your email will only be used for this one-time verification.": [
         "Din e-post kommer endast användas för denna engångsverifiering."
@@ -19362,6 +19428,9 @@
       "Move to...": [
         "Flytta till …"
       ],
+      "Mute notifications": [
+        "Tysta aviseringar"
+      ],
       "My reason isn't listed": [
         "Min anledning är inte listad"
       ],
@@ -19543,6 +19612,49 @@
       ],
       "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
         "Ditt paket inkluderar maximalt ${ humanReadableAvailableSpace } mer lagringsutrymme."
+      ]
+    },
+    "organization key reset": {
+      "Can you reach out to other administrators?": [
+        "Kan du kontakta andra administratörer?"
+      ],
+      "Converting users to private": [
+        "Konverterar användare till privat"
+      ],
+      "Copy email list": [
+        "Kopiera e-postlista"
+      ],
+      "Ready to reset your organization key?": [
+        "Redo att återställa din organisationsnyckel?"
+      ],
+      "Reset key": [
+        "Återställ nyckel"
+      ],
+      "Reset organization key?": [
+        "Återställ organisationsnyckel?"
+      ],
+      "Resetting organization key": [
+        "Återställer organisationsnyckel"
+      ],
+      "See ${ n } user": [
+        "Se ${ n } användare",
+        "Se ${ n } användare"
+      ],
+      "See users": [
+        "Se användare"
+      ],
+      "The organization key is reset": [
+        "Organisationsnyckeln är återställd"
+      ],
+      "This process is automated:": [
+        "Denna process är automatiserad:"
+      ],
+      "Try another way": [
+        "Prova annat sätt"
+      ],
+      "User (${ n })": [
+        "Användare (${ n })",
+        "Användare (${ n })"
       ]
     },
     "Organization logo upload": {
@@ -20092,12 +20204,6 @@
       "To enable administrator rights on your account, activate the organization key.": [
         "För att aktivera administratörsrättigheter på ditt konto, aktivera organisationsnyckeln."
       ],
-      "Use a data recovery method or reset the organization key to restore administrator privileges.": [
-        "Använd en dataåterställningsmetod eller återställ organisationsnyckeln för att återställa administratörsrättigheter."
-      ],
-      "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
-        "Använd en dataåterställningsmetod, kontakta en annan administratör eller återställ organisationsnyckeln för att återställa administratörsrättigheter."
-      ],
       "We couldn't verify the authenticity of this identity.": [
         "Vi kunde inte verifiera äktheten av denna identitet."
       ],
@@ -20225,6 +20331,9 @@
       ],
       "Offer unavailable": [
         "Erbjudande otillgängligt"
+      ],
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "Betala med ${ IDEAL_WERO_BRAND_NAME }"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Betalningsmetod krävs för att prenumerationen ska aktiveras efter provperioden är slut."
@@ -20513,6 +20622,9 @@
       ],
       "Anytown": [
         "Alingsås"
+      ],
+      "Ask anything…": [
+        "Fråga vad som helst …"
       ],
       "Choose a name": [
         "Välj ett namn"
@@ -27688,6 +27800,9 @@
       "This key is used for email forwarding": [
         "Denna nyckel används för vidarebefordran av e-post"
       ],
+      "This setting is managed by your organization": [
+        "Denna inställning är hanterad av din organisation"
+      ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Om de inte avkodas förblir krypterade lösenord säkra även om de exponeras."
       ],
@@ -28029,6 +28144,9 @@
       "You can safely remove this user from your organization.": [
         "Du kan säkert ta bort denna användare från din organisation.",
         "Du kan säkert ta bort dessa användare från din organisation."
+      ],
+      "Your account was temporarily made private while your organization key was reset. Accept the request to restore it.": [
+        "Ditt konto gjordes tillfälligt privat medan din organisationsnyckel återställdes. Godkänn begäran om att återställa det."
       ]
     },
     "Update font modal": {

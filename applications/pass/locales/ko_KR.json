@@ -859,6 +859,9 @@
       "Check if your passwords have been exposed": [
         "비밀번호 유출 여부를 확인하세요"
       ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total }": [
+        "${ compromised.progress.total }개 중 ${ compromised.progress.completed }개 확인 중"
+      ],
       "Create unique passwords": [
         "고유한 비밀번호 만들기"
       ],
@@ -1741,6 +1744,9 @@
       ],
       "Change your password": [
         "비밀번호를 변경하십시오"
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
+        "비밀번호 ${ compromised.progress.total }개 중 ${ compromised.progress.completed }개 확인 중"
       ],
       "Confirm your extra password to proceed with its removal.": [
         "삭제를 하려면 추가 비밀번호를 확인하십시오."

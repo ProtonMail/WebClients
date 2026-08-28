@@ -439,6 +439,9 @@
       "Claim your free ${ BRAND_NAME } address": [
         "Revendicați adresa gratuită ${ BRAND_NAME }"
       ],
+      "Clear conversation": [
+        "Golire conversație"
+      ],
       "Close": [
         "Închidere"
       ],
@@ -519,6 +522,9 @@
       ],
       "Copy address": [
         "Copiere adresă"
+      ],
+      "Copy debug transcript": [
+        "Copiere transcriere depanare"
       ],
       "Copy key to the clipboard": [
         "Copiere cheie în memorie"
@@ -922,6 +928,9 @@
       "Keep editing": [
         "Continuare editare"
       ],
+      "Keep going": [
+        "Continuă"
+      ],
       "Keep logo": [
         "Păstrare logo"
       ],
@@ -1261,6 +1270,9 @@
       "select file": [
         "selectați fișierul"
       ],
+      "Send": [
+        "Trimitere"
+      ],
       "Send code": [
         "Trimitere cod"
       ],
@@ -1378,6 +1390,12 @@
       "Stay": [
         "Nu închide"
       ],
+      "Stop": [
+        "Stop\n"
+      ],
+      "Stop here": [
+        "Oprește aici"
+      ],
       "Stop using single sign-on": [
         "Oprire utilizare conectare unică"
       ],
@@ -1416,6 +1434,9 @@
       ],
       "Test SAML configuration": [
         "Testare configurare SAML"
+      ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "Comutare ${ LUMO_SHORT_APP_NAME }"
       ],
       "Top up": [
         "Alimentare"
@@ -8178,6 +8199,9 @@
       "Data recovery requires a password reset option (email or SMS)": [
         "Recuperarea datelor necesită o opțiune de resetare a parolei (e-mail sau SMS)."
       ],
+      "Debug transcript copied": [
+        "Transcrierea depanării a fost copiată."
+      ],
       "dedicated servers": [
         "servere dedicate"
       ],
@@ -8340,6 +8364,12 @@
       ],
       "email": [
         "e-mail"
+      ],
+      "Email address copied to clipboard": [
+        "Adresa de e-mail a fost copiată în memorie."
+      ],
+      "Email addresses copied to clipboard": [
+        "Adresele de e-mail au fost copiate în memorie."
       ],
       "Email and calendar, integrated with ${ CONTACTS_APP_NAME }": [
         "E-mail și calendar, integrate cu ${ CONTACTS_APP_NAME }"
@@ -8598,6 +8628,9 @@
       ],
       "How your emergency contact can change your password for you:": [
         "Cum vă poate reseta parola contactul de urgență:"
+      ],
+      "I have not finished this one yet.": [
+        "Pe acesta încă nu l-am terminat încă."
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Cheia publică a furnizorului de identitate pentru a semna afirmațiile de autentificare. Ar trebui să existe un loc pentru a descărca sau copia hash-ul certificatului de la furnizorul de identitate. Doar lipiți hash-ul certificatului în câmpul de text."
@@ -9638,6 +9671,9 @@
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Aceste acreditări nu pot fi utilizate pentru autentificarea în aplicațiile ${ VPN_APP_NAME } oficiale. ${ learnMore }"
       ],
+      "Thinking about this": [
+        "Mă gândesc la asta"
+      ],
       "This account has been suspended due to a potential policy violation.": [
         "Acest cont a fost suspendat din cauza unei posibile încălcări a politicii."
       ],
@@ -9676,6 +9712,9 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Aceasta este acum ${ defaultEmailAddress } pentru trimiterea de mesaje noi."
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Asta necesită mulți pași. Ar trebui să continui?"
       ],
       "This is the password you used before the password reset.": [
         "Aceasta este parola pe care ați utilizat-o înainte de resetarea parolei."
@@ -14201,6 +14240,125 @@
         "Planul actual mai include maxim ${ humanReadableAvailableSpace } de spațiu."
       ]
     },
+    "organization key reset": {
+      "Afterward, every converted user must accept the request to become non-private again, from their account settings.": [
+        "Ulterior, fiecare utilizator convertit trebuie să accepte solicitarea de a redeveni non-privat, din setările contului său."
+      ],
+      "An unprivatization request is sent by email to the converted users": [
+        "O cerere de anulare a privatizării este trimisă prin e-mail utilizatorilor convertiți."
+      ],
+      "Because your organization key has changed, you lost some of your admin rights: You can no longer create non-private users and access their accounts.": [
+        "Deoarece cheia organizației vi s-a modificat, ați pierdut o parte din drepturile de administrator: Nu mai puteți crea utilizatori non-privați ​​și nu le mai puteți accesa conturile."
+      ],
+      "Before continuing, **let your users know they'll receive an admin access request by email**, so they're not caught off guard.": [
+        "Înainte de a continua, **anunțați utilizatorii că vor primi o solicitare de acces de administrator prin e-mail**, pentru a nu fi luați prin surprindere."
+      ],
+      "Can you reach out to other administrators?": [
+        "Puteți contacta alți administratori?"
+      ],
+      "Converting users to private": [
+        "Se convertesc utilizatorii în utilizatori privați"
+      ],
+      "Copy email list": [
+        "Copiere listă adrese de e-mail"
+      ],
+      "Could not send the unprivatization request to ${ n } user. It will be retried automatically.": [
+        "Nu s-a putut trimite cererea de anulare a privatizării către ${ n } utilizator. Cererea va fi reîncercată automat.",
+        "Nu s-a putut trimite cererea de anulare a privatizării către ${ n } utilizatori. Cererea va fi reîncercată automat.",
+        "Nu s-a putut trimite cererea de anulare a privatizării către ${ n } de utilizatori. Cererea va fi reîncercată automat."
+      ],
+      "Get in touch with your other administrators, to see if they can help. They will be able to restore your privileges after using a data recovery method.": [
+        "Contactați ceilalți administratori pentru a vedea dacă vă pot ajuta. Aceștia își vor putea restabili privilegiile după ce vor utiliza o metodă de recuperare a datelor."
+      ],
+      "I've notified my users that they'll receive an unprivatization request.": [
+        "I-am anunțat pe utilizatorii mei că vor primi o solicitare de anulare a privatizării."
+      ],
+      "Non-private users": [
+        "Utilizatori non-privați"
+      ],
+      "Once your privileges have been restored, you'll be able to create non-private users and access their accounts.": [
+        "După ce privilegiile v-au fost restabilite, veți putea crea utilizatori non-privați ​​și accesa conturile acestora."
+      ],
+      "Organization key reset": [
+        "Cheia organizației s-a resetat."
+      ],
+      "Ready to reset your organization key?": [
+        "Sunteți gata să resetați cheia organizației?"
+      ],
+      "Reset key": [
+        "Resetare cheie"
+      ],
+      "Reset organization key?": [
+        "Resetați cheia organizației?"
+      ],
+      "Resetting organization key": [
+        "Se resetează cheia organizației"
+      ],
+      "Resetting the organization key generates a new encryption key to keep your organization's data secure. **No data will be lost or destroyed in this process, but the users groups will be deleted.**": [
+        "Resetarea cheii organizației generează o nouă cheie de criptare pentru a păstra datele organizației în siguranță. **Nu se vor pierde sau distruge date în acest proces, dar grupurile de utilizatori vor fi șterse.**"
+      ],
+      "See ${ n } user": [
+        "Vizualizare ${ n } utilizator",
+        "Vizualizare ${ n } utilizatori",
+        "Vizualizare ${ n } de utilizatori"
+      ],
+      "See users": [
+        "Vizualizare utilizatori"
+      ],
+      "Send unprivatization requests": [
+        "Trimitere solicitare de anulare privatizare"
+      ],
+      "The non-private users are converted to private": [
+        "Utilizatorii non-privați ​​sunt convertiți în privați"
+      ],
+      "The organization key is reset": [
+        "Cheia organizației este resetată"
+      ],
+      "This process is automated:": [
+        "Acest proces este automat:"
+      ],
+      "This should take less than ${ minutes } minute. **Don't close this tab or let your device go to sleep** until it's finished.": [
+        "Acest proces ar trebui să dureze mai puțin de${ minutes } minut. **Nu închideți această filă și nu lăsați dispozitivul să intre în repaus** până la finalizare.",
+        "Acest proces ar trebui să dureze mai puțin de ${ minutes } minute. **Nu închideți această filă și nu lăsați dispozitivul să intre în repaus** până la finalizare.",
+        "Acest proces ar trebui să dureze mai puțin de ${ minutes } de minute. **Nu închideți această filă și nu lăsați dispozitivul să intre în repaus** până la finalizare."
+      ],
+      "This should take less than ${ minutes } minute. **Keep this browser tab open and your device active** until it completes.": [
+        "Acest proces ar trebui să dureze mai puțin de ${ minutes } minut. **Mențineți această filă de navigator web deschisă și dispozitivul activ** până la finalizare.",
+        "Acest proces ar trebui să dureze mai puțin de ${ minutes } minute. **Mențineți această filă de navigator web deschisă și dispozitivul activ** până la finalizare.",
+        "Acest proces ar trebui să dureze mai puțin de ${ minutes } de minute. **Mențineți această filă de navigator web deschisă și dispozitivul activ** până la finalizare."
+      ],
+      "To become non-private again, they must accept the request to enable admin access, from their account settings. You don't need to wait for this step.": [
+        "Pentru a deveni din nou non-privați, trebuie să accepte solicitarea de a permite accesul de administrator, din setările contului lor. Nu trebuie să așteptați pentru acest pas."
+      ],
+      "To reset the organization key and restore your administrator privileges, **${ n } non-private user must be temporarily converted to private.**": [
+        "Pentru a reseta cheia organizației și a restaura privilegiile de administrator, **${ n } utilizator non-privat trebuie convertit temporar în privat.**",
+        "Pentru a reseta cheia organizației și a restaura privilegiile de administrator, **${ n } utilizatori non-privați trebuie convertiți temporar în privați.**",
+        "Pentru a reseta cheia organizației și a restaura privilegiile de administrator, **${ n } de utilizatori non-privați trebuie convertiți temporar în privați.**"
+      ],
+      "To reset the organization key, the users will be converted to private, and will receive an email invitation to become non-private again.": [
+        "Pentru a reseta cheia organizației, utilizatorii vor fi convertiți la statutul de privat și vor primi o invitație prin e-mail pentru a redeveni non-privați."
+      ],
+      "To restore your privileges, use a data recovery method.": [
+        "Pentru a vă restaura privilegiile, utilizați o metodă de recuperare a datelor."
+      ],
+      "Try another way": [
+        "Încercați altă metodă"
+      ],
+      "User (${ n })": [
+        "Utilizator (${ n })",
+        "Utilizatori (${ n })",
+        "Utilizatori (${ n })"
+      ],
+      "You can reset your organization key to restore your administrator privileges. Then, you'll be able to create non-private users and access their accounts.": [
+        "Puteți reseta cheia organizației pentru a vă restabili privilegiile de administrator. Apoi, veți putea crea utilizatori non-privați ​​și accesa conturile acestora."
+      ],
+      "Your administrator privileges have been restored. You can now manage non-private users.": [
+        "Privilegiile de administrator v-au fost restabilite. Acum puteți gestiona utilizatori non-privați."
+      ],
+      "Your users will receive an email to accept the unprivatization request.": [
+        "Utilizatorii vor primi un e-mail pentru a accepta solicitarea de anulare a privatizării."
+      ]
+    },
     "Organization logo upload": {
       "Avoid overly compressed images.": [
         "Evitați imaginile comprimate în exces."
@@ -14424,12 +14582,6 @@
       ],
       "To enable administrator rights on your account, activate the organization key.": [
         "Pentru a activa drepturile de administrator în cont, activați cheia organizației."
-      ],
-      "Use a data recovery method or reset the organization key to restore administrator privileges.": [
-        "Utilizați o metodă de recuperare a datelor sau resetați cheia organizației pentru a restabili privilegiile de administrator."
-      ],
-      "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
-        "Utilizați o metodă de recuperare a datelor, contactați un alt administrator sau resetați cheia organizației pentru a restabili privilegiile de administrator."
       ],
       "We couldn't verify the authenticity of this identity.": [
         "Nu am putut verifica autenticitatea acestei identități."
@@ -14832,6 +14984,9 @@
       ],
       "Anytown": [
         "București"
+      ],
+      "Ask anything…": [
+        "Întreabă-mă orice…"
       ],
       "Choose a name": [
         "Alegeți un nume"
@@ -19738,6 +19893,9 @@
       ],
       "Stay secure and connected anywhere": [
         "Rămâneți în siguranță și vă conectați oriunde"
+      ],
+      "Still working on it": [
+        "Încă lucrez la asta"
       ],
       "Subscription": [
         "Abonament"

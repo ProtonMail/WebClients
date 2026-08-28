@@ -880,6 +880,9 @@
       "Check if your passwords have been exposed": [
         "비밀번호 유출 여부를 확인하세요"
       ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total }": [
+        "${ compromised.progress.total }개 중 ${ compromised.progress.completed }개 확인 중"
+      ],
       "Create unique passwords": [
         "고유한 비밀번호 만들기"
       ],
@@ -1835,6 +1838,9 @@
       "Change your password": [
         "비밀번호를 변경하십시오"
       ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
+        "비밀번호 ${ compromised.progress.total }개 중 ${ compromised.progress.completed }개 확인 중"
+      ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "${ domain }에 로그인할 저장된 패스키를 선택하세요."
       ],
@@ -2211,7 +2217,7 @@
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "항목을 다른 금고로 이동시 안전한 링크가 삭제됩니다."
+        "항목을 다른 금고로 이동하면 이 항목의 모든 안전한 링크가 삭제됩니다."
       ],
       "Moving items": [
         "항목 이동 중"
