@@ -86,7 +86,6 @@ const defaultOptions: Parameters<typeof getAvailableApps>[0] = {
     user: getProtonUser(),
     isDocsHomepageAvailable: true,
     isSheetsAvailable: true,
-    isMeetAvailable: true,
     isAuthenticatorAvailable: true,
     isSpacesAvailable: true,
     context: 'app',
