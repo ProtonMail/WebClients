@@ -4,11 +4,10 @@ import { useRef } from 'react';
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { getModelState } from '@proton/account/test';
+import { getModelState } from '@proton/account/tests';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
-import { mailTestRender } from '../../../helpers/test/render';
-
+import { mailTestRender } from '../../../helpers/tests/render';
 import AddressInput from './AddressInput';
 
 type AddressInputWrapperProps = Omit<ComponentProps<typeof AddressInput>, 'anchorRef' | 'id'>;

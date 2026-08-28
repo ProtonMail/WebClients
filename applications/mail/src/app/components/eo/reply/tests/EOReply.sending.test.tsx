@@ -1,7 +1,7 @@
 import { CryptoProxy } from '@protontech/crypto';
 
-import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../helpers/test/crypto';
-import { EOClearAll, EOPassword, validID } from '../../../../helpers/test/eo/helpers';
+import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../helpers/tests/crypto';
+import { EOClearAll, EOPassword, validID } from '../../../../helpers/tests/eo/helpers';
 import { send } from './EOReply.test.helpers';
 
 jest.setTimeout(20000);

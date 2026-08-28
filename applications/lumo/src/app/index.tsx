@@ -5,7 +5,7 @@ import '@proton/polyfill';
 
 import AppGuard from './entrypoint/AppGuard';
 
-// import MSWController from './mocks/MSWController';
+// import MSWController from './__mocks__/MSWController';
 
 import './index.scss';
 

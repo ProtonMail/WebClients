@@ -7,8 +7,8 @@ import { USER_ROLES } from '@proton/shared/lib/constants';
 import type { EnhancedMember, UserModel } from '@proton/shared/lib/interfaces';
 
 import { addressesReducer } from '../addresses';
-import { getModelState } from '../test';
-import { getServerEvent } from '../test/getServerEvent';
+import { getModelState } from '../tests';
+import { getServerEvent } from '../tests/getServerEvent';
 import { userReducer } from '../user';
 import { userPermissionsReducer } from '../userPermissions';
 import * as membersModule from './index';

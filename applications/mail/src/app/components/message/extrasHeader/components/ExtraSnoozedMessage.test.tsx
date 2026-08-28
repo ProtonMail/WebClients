@@ -6,8 +6,8 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { addDays } from '@proton/shared/lib/date-fns-utc';
 
 import { formatDateToHuman } from '../../../../helpers/date';
-import { clearAll } from '../../../../helpers/test/helper';
-import { mailTestRender } from '../../../../helpers/test/render';
+import { clearAll } from '../../../../helpers/tests/helper';
+import { mailTestRender } from '../../../../helpers/tests/render';
 import useSnooze from '../../../../hooks/actions/useSnooze';
 import ExtraSnoozedMessage from './ExtraSnoozedMessage';
 

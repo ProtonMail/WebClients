@@ -1,6 +1,6 @@
 import type { PublicKeyReference, SessionKey } from '@protontech/crypto';
 import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
-import { utf8StringToUint8Array, uint8ArrayToUtf8String } from '@protontech/crypto/utils';
+import { uint8ArrayToUtf8String, utf8StringToUint8Array } from '@protontech/crypto/utils';
 
 import { EVENT_VERIFICATION_STATUS } from '../../lib/calendar/constants';
 import {
@@ -371,14 +371,17 @@ p6UwLlBEdbtqT8YixITK1QU+Owmk/GmWADOyVzN/hXKg0zJVTc0=
         expect(verificationStatusEncryptedAndSignedCard).toEqual(EVENT_VERIFICATION_STATUS.SUCCESSFUL);
 
         // this legacy signature is NOT verified in binary. It needs the fallback
-        const { data: decryptedData, verificationStatus: verificationStatusBinaryEncrypted } = await CryptoProxy.decryptMessage({
-            binaryMessage: Uint8Array.fromBase64(encryptedAndSignedCard),
-            format: 'binary',
-            verificationKeys: verifyingKey,
-            armoredSignature: signatureEncryptedAndSignedCard,
-            sessionKeys: sessionKey,
-        });
+        const { data: decryptedData, verificationStatus: verificationStatusBinaryEncrypted } =
+            await CryptoProxy.decryptMessage({
+                binaryMessage: Uint8Array.fromBase64(encryptedAndSignedCard),
+                format: 'binary',
+                verificationKeys: verifyingKey,
+                armoredSignature: signatureEncryptedAndSignedCard,
+                sessionKeys: sessionKey,
+            });
         expect(verificationStatusBinaryEncrypted).toEqual(VERIFICATION_STATUS.SIGNED_AND_INVALID);
-        expect(getNeedsLegacyVerification(verificationStatusBinaryEncrypted, uint8ArrayToUtf8String(decryptedData))).toEqual(true);
+        expect(
+            getNeedsLegacyVerification(verificationStatusBinaryEncrypted, uint8ArrayToUtf8String(decryptedData))
+        ).toEqual(true);
     });
 });

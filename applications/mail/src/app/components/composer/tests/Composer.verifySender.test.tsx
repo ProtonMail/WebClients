@@ -1,14 +1,14 @@
 import { getByText as getByTextDefault, screen } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
 
-import { getModelState } from '@proton/account/test';
+import { getModelState } from '@proton/account/tests';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import type { Address, AddressKey, Recipient, UserModel } from '@proton/shared/lib/interfaces';
 
-import { minimalCache } from '../../../helpers/test/cache';
-import { getAddressKeyCache, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
-import type { GeneratedKey } from '../../../helpers/test/helper';
-import { addApiKeys, addApiMock, clearAll, generateKeys, mailTestRender } from '../../../helpers/test/helper';
+import { minimalCache } from '../../../helpers/tests/cache';
+import { getAddressKeyCache, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/tests/crypto';
+import type { GeneratedKey } from '../../../helpers/tests/helper';
+import { addApiKeys, addApiMock, clearAll, generateKeys, mailTestRender } from '../../../helpers/tests/helper';
 import { messageID } from '../../message/tests/Message.test.helpers';
 import Composer from '../Composer';
 import { ID, prepareMessage, props, saveNow, toAddress } from './Composer.test.helpers';

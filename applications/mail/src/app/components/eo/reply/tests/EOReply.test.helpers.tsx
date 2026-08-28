@@ -1,10 +1,9 @@
 import type { RenderResult } from '@testing-library/react';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { fireEvent } from '@testing-library/react';
 
-import { EORender } from '../../../../helpers/test/eo/EORender';
-import type { EOOriginalMessageOptions } from '../../../../helpers/test/eo/helpers';
-import { addApiMock, waitForNoNotification, waitForNotification } from '../../../../helpers/test/helper';
+import { EORender } from '../../../../helpers/tests/eo/EORender';
+import type { EOOriginalMessageOptions } from '../../../../helpers/tests/eo/helpers';
+import { addApiMock, waitForNoNotification, waitForNotification } from '../../../../helpers/tests/helper';
 import EOReply from '../EOReply';
 
 export const setup = async (options?: EOOriginalMessageOptions) => {

@@ -1,4 +1,4 @@
-import { asyncGeneratorToArray } from '../../utils/test/generator';
+import { asyncGeneratorToArray } from '../../utils/tests/generator';
 import ArchiveGenerator from './ArchiveGenerator';
 
 type TestLink = {

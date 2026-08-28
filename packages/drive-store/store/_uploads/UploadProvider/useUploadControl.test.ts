@@ -3,7 +3,7 @@ import { act, renderHook } from '@testing-library/react-hooks';
 import { FILE_CHUNK_SIZE } from '@proton/shared/lib/drive/constants';
 
 import { TransferState } from '../../../components/TransferManager/transfer';
-import { mockGlobalFile, testFile } from '../../../utils/test/file';
+import { mockGlobalFile, testFile } from '../../../utils/tests/file';
 import { MAX_BLOCKS_PER_UPLOAD } from '../constants';
 import type { UploadFileControls, UploadFolderControls } from '../interface';
 import type { FileUpload, UpdateFilter } from './interface';

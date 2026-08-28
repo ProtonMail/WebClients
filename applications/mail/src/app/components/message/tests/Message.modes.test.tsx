@@ -1,6 +1,6 @@
 import { act, screen } from '@testing-library/react';
 
-import { addApiResolver, clearAll } from '../../../helpers/test/helper';
+import { addApiResolver, clearAll } from '../../../helpers/tests/helper';
 import { messageID, setup } from './Message.test.helpers';
 
 jest.setTimeout(20000);

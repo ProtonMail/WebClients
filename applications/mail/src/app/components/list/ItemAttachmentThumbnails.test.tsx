@@ -1,17 +1,16 @@
 import { act, fireEvent, screen, waitFor } from '@testing-library/react';
 
-import { getModelState } from '@proton/account/test';
+import { getModelState } from '@proton/account/tests';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import type { AttachmentsMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 import { encryptAttachment } from '@proton/shared/lib/mail/send/attachments';
 
-import ItemColumnLayout from './ItemColumnLayout';
 import { MAX_COLUMN_ATTACHMENT_THUMBNAILS } from '../../constants';
 import { filterAttachmentToPreview } from '../../helpers/attachment/attachmentThumbnails';
-import { addApiMock } from '../../helpers/test/api';
-import type { GeneratedKey } from '../../helpers/test/helper';
+import { addApiMock } from '../../helpers/tests/api';
+import type { GeneratedKey } from '../../helpers/tests/helper';
 import {
     addApiKeys,
     assertIcon,
@@ -22,11 +21,12 @@ import {
     getCompleteAddress,
     releaseCryptoProxy,
     setupCryptoProxyForTesting,
-} from '../../helpers/test/helper';
-import { mailTestRender } from '../../helpers/test/render';
+} from '../../helpers/tests/helper';
+import { mailTestRender } from '../../helpers/tests/render';
 import type { Conversation } from '../../models/conversation';
 import { addAttachment } from '../../store/attachments/attachmentsActions';
 import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
+import ItemColumnLayout from './ItemColumnLayout';
 
 jest.mock('@proton/shared/lib/helpers/downloadFile'); // mocking left to individual tests
 const mockDownloadFile = downloadFile as jest.MockedFunction<typeof downloadFile>;

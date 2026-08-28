@@ -1,6 +1,6 @@
 import { CryptoProxy } from '@protontech/crypto';
 
-import { getModelState } from '@proton/account/test';
+import { getModelState } from '@proton/account/tests';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { SHOW_IMAGES } from '@proton/shared/lib/mail/mailSettings';
 import { addApiMock } from '@proton/testing/lib/api';

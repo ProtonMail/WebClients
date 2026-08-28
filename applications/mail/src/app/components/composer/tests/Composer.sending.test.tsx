@@ -1,17 +1,15 @@
 import { fireEvent, getByTestId } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
 
-import { getModelState } from '@proton/account/test';
+import { getModelState } from '@proton/account/tests';
 import { ROOSTER_EDITOR_ID } from '@proton/components/components/editor/constants';
 import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import type { AddressKey, MailSettings } from '@proton/shared/lib/interfaces';
 import { SIGN } from '@proton/shared/lib/mail/mailSettings';
 
-import type { MailState } from '../../../store/store';
-
-import { addApiContact } from '../../../helpers/test/contact';
-import type { GeneratedKey } from '../../../helpers/test/crypto';
+import { addApiContact } from '../../../helpers/tests/contact';
+import type { GeneratedKey } from '../../../helpers/tests/crypto';
 import {
     addApiKeys,
     generateKeys,
@@ -19,7 +17,7 @@ import {
     getStoredUserKey,
     releaseCryptoProxy,
     setupCryptoProxyForTesting,
-} from '../../../helpers/test/crypto';
+} from '../../../helpers/tests/crypto';
 import {
     addApiMock,
     clearAll,
@@ -33,9 +31,10 @@ import {
     minimalCache,
     parseDOMStringToBodyElement,
     readSessionKey,
-} from '../../../helpers/test/helper';
+} from '../../../helpers/tests/helper';
 import { addAttachment } from '../../../store/attachments/attachmentsActions';
 import type { DecryptedAttachment } from '../../../store/attachments/attachmentsTypes';
+import type { MailState } from '../../../store/store';
 import { ID, clickSend, getMessage, renderComposer, send } from './Composer.test.helpers';
 
 loudRejection();

@@ -2,10 +2,10 @@ import { fireEvent, screen } from '@testing-library/react';
 
 import type { Recipient } from '@proton/shared/lib/interfaces';
 
-import type { GeneratedKey } from '../../../../helpers/test/crypto';
-import { generateKeys, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../helpers/test/crypto';
-import { clearAll } from '../../../../helpers/test/helper';
-import { mailTestRender, tick } from '../../../../helpers/test/render';
+import type { GeneratedKey } from '../../../../helpers/tests/crypto';
+import { generateKeys, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../helpers/tests/crypto';
+import { clearAll } from '../../../../helpers/tests/helper';
+import { mailTestRender, tick } from '../../../../helpers/tests/render';
 import MailRecipientItemSingle from '../MailRecipientItemSingle';
 
 const senderAddress = 'sender@outside.com';

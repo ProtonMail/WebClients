@@ -1,7 +1,7 @@
 import { screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { render } from '../../helpers/test/render';
+import { render } from '../../helpers/tests/render';
 import Participant from './Participant';
 
 describe('Participant', () => {

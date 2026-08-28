@@ -86,7 +86,7 @@
 ../components/containers/payments/subscription/subscriptionEligbility.ts
 ../components/containers/vpn/VpnAlsoInYourPlanSection/VpnAlsoInYourPlanSection.tsx
 ../components/hooks/assistant/useAssistantUpsellConfig.tsx
-../components/hooks/helpers/test/usePlans.ts
+../components/hooks/helpers/tests/usePlans.ts
 ../metrics/json-schema-registry/validate-schemas/utils/getFilePathsFromGlob.ts
 ../metrics/json-schema-registry/validate-schemas/validateSchemas.ts
 ../payments/core/helpers.test.ts
@@ -105,9 +105,9 @@
 ../shared/lib/helpers/renew.ts
 ../shared/lib/helpers/subscription.ts
 ../shared/lib/subscription/freePlans.ts
-../shared/test/helpers/checkout.spec.ts
-../shared/test/helpers/planIDs.spec.ts
-../shared/test/helpers/subscription.spec.ts
+../shared/tests/helpers/checkout.spec.ts
+../shared/tests/helpers/planIDs.spec.ts
+../shared/tests/helpers/subscription.spec.ts
 ../testing/builders/subscription.ts
 ../testing/data/payments/data-plans.ts
 ../testing/lib/context/providers.tsx

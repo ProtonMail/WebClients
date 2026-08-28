@@ -8,14 +8,13 @@ import { initializeEncryptedSearch, serializeAndEncryptItem } from '@proton/encr
 import { openESDB } from '@proton/encrypted-search/esIDB';
 import type { DecryptedKey } from '@proton/shared/lib/interfaces';
 
-import type { ESBaseMessage, ESMessageContent } from '../../models/encryptedSearch.ts';
-
 import {
     generateKeys,
     getStoredUserKey,
     releaseCryptoProxy,
     setupCryptoProxyForTesting,
-} from '../../helpers/test/crypto';
+} from '../../helpers/tests/crypto';
+import type { ESBaseMessage, ESMessageContent } from '../../models/encryptedSearch.ts';
 import { getOrGenerateIndexKey } from '../crypto/indexKey';
 import { openContentSearchDB } from '../db/open';
 import { IndexReader } from '../search/IndexReader';

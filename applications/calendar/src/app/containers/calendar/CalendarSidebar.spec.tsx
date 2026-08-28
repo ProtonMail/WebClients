@@ -15,7 +15,7 @@ import { generateOwnedPersonalCalendars, generateSubscribedCalendars } from '@pr
 import { mockUseAuthentication } from '@proton/testing/lib/mockUseAuthentication';
 import noop from '@proton/utils/noop';
 
-import { getStoreWrapper } from '../../test/Store';
+import { getStoreWrapper } from '../../tests/Store';
 import { GlobalModalProvider } from '../GlobalModals/GlobalModalProvider';
 import { BookingsProvider } from '../bookings/bookingsProvider/BookingsProvider';
 import type { CalendarSidebarProps } from './CalendarSidebar';

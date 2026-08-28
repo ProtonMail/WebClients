@@ -1,6 +1,6 @@
+import type { PrivateKeyReference, PublicKeyReference } from '@protontech/crypto';
 import { getUnixTime } from 'date-fns';
 
-import type { PrivateKeyReference, PublicKeyReference } from '@protontech/crypto';
 import { ATTENDEE_MORE_ATTENDEES } from '@proton/shared/lib/calendar/constants';
 import { createCalendarEvent } from '@proton/shared/lib/calendar/serialize';
 import { getDtendProperty, propertyToUTCDate } from '@proton/shared/lib/calendar/vcalConverter';
