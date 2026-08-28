@@ -211,7 +211,6 @@ const MainContainer = () => {
     const showThemeSelection = useShowThemeSelection();
     const isUserGroupsFeatureEnabled = useFlag('UserGroupsPermissionCheck');
     const isUserGroupsNoCustomDomainEnabled = useFlag('UserGroupsNoCustomDomain');
-    const isUserGroupsPassBusinessEnabled = useFlag('UserGroupsPassBusiness');
     const { paymentsEnabled: isScribePaymentEnabled } = useAssistantFeatureEnabled();
     const isScribeAdminSettingFeatureEnabled = useFlag('ScribeAdminSetting');
     const isZoomIntegrationDisabled = useFlag('ZoomIntegrationDisabled');
@@ -310,7 +309,6 @@ const MainContainer = () => {
         canDisplayNonPrivateEmailPhone,
         isUserGroupsFeatureEnabled,
         isUserGroupsNoCustomDomainEnabled,
-        isUserGroupsPassBusinessEnabled,
         isScribeEnabled: isScribePaymentEnabled && isScribeAdminSettingFeatureEnabled,
         isZoomIntegrationEnabled: !isZoomIntegrationDisabled,
         isProtonMeetIntegrationEnabled,
