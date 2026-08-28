@@ -137,6 +137,10 @@ export class MeetCoreWorkerClient implements MeetCoreClient {
         return this.request('getGroupDisplayCode', []);
     }
 
+    public getGroupLen(): Promise<number> {
+        return this.request('getGroupLen', []);
+    }
+
     public isMlsUpToDate(): Promise<boolean> {
         return this.request('isMlsUpToDate', []);
     }
