@@ -100,4 +100,9 @@ export const resolveDevice = (
  * Used to shallow compare device lists.
  */
 export const getDevicesHash = (devices: (MediaDeviceInfo | SerializableDeviceInfo)[]) =>
-    devices.map((d) => `${d.deviceId}:${d.groupId}`).join(',');
+    devices
+        // We sort the devices by deviceId to ensure the hash is consistent
+        // Brave browser randomize the devices to avoid fingerprinting
+        .sort((a, b) => a.deviceId.localeCompare(b.deviceId))
+        .map((d) => `${d.deviceId}:${d.groupId}`)
+        .join(',');
