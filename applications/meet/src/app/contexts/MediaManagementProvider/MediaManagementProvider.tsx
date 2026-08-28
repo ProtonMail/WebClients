@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef } from 'react';
+import { useCallback, useEffect, useMemo } from 'react';
 
 import { useLocalParticipant, useRoomContext } from '@livekit/components-react';
 import type { LocalTrack } from 'livekit-client';
@@ -27,17 +27,12 @@ import {
     selectInitialAudioState,
     selectInitialCameraState,
     selectMicrophonePermission,
-    selectMicrophoneState,
     selectMicrophones,
-    selectPreferredCameraId,
-    selectPreferredMicrophoneId,
-    selectPreferredSpeakerId,
     selectRealtimeDevices,
     selectSelectedAudioOutputId,
     selectSelectedCameraId,
     selectSelectedMicrophoneId,
     selectSpeakerState,
-    selectSpeakers,
 } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
 import { PermissionsModalType } from '@proton/meet/store/slices/deviceManagementSlice/types';
 import {
@@ -93,13 +88,7 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
 
     const cameras = useMeetSelector(selectCameras);
     const microphones = useMeetSelector(selectMicrophones);
-    const speakers = useMeetSelector(selectSpeakers);
-    const microphoneState = useMeetSelector(selectMicrophoneState);
     const speakerState = useMeetSelector(selectSpeakerState);
-
-    const preferredCameraId = useMeetSelector(selectPreferredCameraId);
-    const preferredMicrophoneId = useMeetSelector(selectPreferredMicrophoneId);
-    const preferredSpeakerId = useMeetSelector(selectPreferredSpeakerId);
 
     const { backgroundProcessorVersion } = useBackgroundProcessorPreload();
 
@@ -558,67 +547,6 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
             dispatch(setMediaInitializing(false));
         }
     };
-
-    const initializedDevices = useRef({
-        video: false,
-        audio: false,
-        audioOutput: false,
-    });
-
-    useEffect(() => {
-        if (!initializedDevices.current.video && cameras.length) {
-            const cameraInitDeviceId =
-                cameras.find((camera) => camera.deviceId === preferredCameraId)?.deviceId || cameras[0]?.deviceId || '';
-
-            void switchActiveDevice({
-                deviceType: 'videoinput',
-                deviceId: cameraInitDeviceId,
-                isSystemDefaultDevice: false,
-                preserveDefaultDevice: true,
-            });
-            initializedDevices.current.video = true;
-        }
-
-        if (!initializedDevices.current.audio && microphones.length) {
-            const microphoneInitDeviceId =
-                microphones.find((microphone) => microphone.deviceId === preferredMicrophoneId)?.deviceId ||
-                microphoneState.systemDefault?.deviceId ||
-                '';
-            void switchActiveDevice({
-                deviceType: 'audioinput',
-                deviceId: microphoneInitDeviceId,
-                isSystemDefaultDevice: microphoneState.useSystemDefault,
-                preserveDefaultDevice: true,
-            });
-            initializedDevices.current.audio = true;
-        }
-
-        if (!initializedDevices.current.audioOutput && speakers.length) {
-            const speakerInitDeviceId =
-                speakers.find((speaker) => speaker.deviceId === preferredSpeakerId)?.deviceId ||
-                speakerState.systemDefault?.deviceId ||
-                '';
-            void switchActiveDevice({
-                deviceType: 'audiooutput',
-                deviceId: speakerInitDeviceId,
-                isSystemDefaultDevice: speakerState.useSystemDefault,
-                preserveDefaultDevice: true,
-            });
-            initializedDevices.current.audioOutput = true;
-        }
-    }, [
-        cameras,
-        microphones,
-        speakers,
-        microphoneState.systemDefault?.deviceId,
-        microphoneState.useSystemDefault,
-        preferredCameraId,
-        preferredMicrophoneId,
-        preferredSpeakerId,
-        speakerState.systemDefault?.deviceId,
-        speakerState.useSystemDefault,
-        switchActiveDevice,
-    ]);
 
     const cleanupPreviews = useStableCallback(async () => {
         await cleanupCameraPreview();

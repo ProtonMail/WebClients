@@ -45,6 +45,15 @@ const dynamicDeviceUpdate = ({
     useSystemDefault: boolean;
     updateFunction: (newDeviceId: string) => void;
 }) => {
+    const switchTo = (newDeviceId: string) => {
+        // Avoid updating to the same device
+        if (newDeviceId === deviceId) {
+            return;
+        }
+
+        updateFunction(newDeviceId);
+    };
+
     // Handle case where OS default device changed and user is using default option
     if (
         useSystemDefault &&
@@ -52,13 +61,13 @@ const dynamicDeviceUpdate = ({
         systemDefaultDevice?.deviceId &&
         previousSystemDefaultDeviceId !== systemDefaultDevice.deviceId
     ) {
-        updateFunction(systemDefaultDevice.deviceId);
+        switchTo(systemDefaultDevice.deviceId);
         return;
     }
 
     // Handle case where user plugs back device
     if (preferredDeviceId && deviceList.find((device) => device.deviceId === preferredDeviceId)) {
-        updateFunction(preferredDeviceId);
+        switchTo(preferredDeviceId);
         return;
     }
 
@@ -69,16 +78,17 @@ const dynamicDeviceUpdate = ({
         if (!systemDefaultDevice?.deviceId) {
             // Manage default device for video input because there is no system default for it.
             if (kind === 'videoinput') {
-                updateFunction(deviceList[0].deviceId);
+                switchTo(deviceList[0].deviceId);
             }
             return;
         }
 
         if (!deviceList.find((device) => device.deviceId === systemDefaultDevice.deviceId)) {
-            updateFunction(deviceList[0].deviceId);
+            switchTo(deviceList[0].deviceId);
             return;
         }
-        updateFunction(systemDefaultDevice.deviceId);
+
+        switchTo(systemDefaultDevice.deviceId);
         return;
     }
 };
