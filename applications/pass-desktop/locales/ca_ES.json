@@ -709,9 +709,6 @@
       "Skip": [
         "Omet"
       ],
-      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
-        "Algú ha posat un element compartit a la vostra disposició a ${ PASS_APP_NAME }."
-      ],
       "Sort vault items": [
         "Ordena els elements de la caixa forta"
       ],
@@ -917,6 +914,9 @@
       ],
       "Check if your passwords have been exposed": [
         "Comproveu si les vostres contrasenyes s'han exposat"
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total }": [
+        "S'estan comprovant ${ compromised.progress.completed } de ${ compromised.progress.total }"
       ],
       "Create unique passwords": [
         "Creeu contrasenyes úniques"
@@ -1413,9 +1413,6 @@
       "Trashing item failed": [
         "No s'ha pogut moure l'element a la paperera"
       ],
-      "Try reaching out to the link owner.": [
-        "Intenteu contactar el propietari de l'enllaç."
-      ],
       "Unable to generate an OTP code for this item": [
         "No s'ha pogut generar un codi OTP per a aquest element"
       ],
@@ -1845,6 +1842,9 @@
       "Change your password": [
         "Canvieu la vostra contrasenya"
       ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
+        "S'estan comprovant ${ compromised.progress.completed } de ${ compromised.progress.total } contrasenyes"
+      ],
       "Confirm your extra password to proceed with its removal.": [
         "Confirmeu la vostra contrasenya addicional per procedir a la seva eliminació."
       ],
@@ -2219,8 +2219,7 @@
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
-        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
+        "Si moveu un element a una altra caixa forta, se n'esborraran els enllaços segurs."
       ],
       "Moving items": [
         "S'estan movent elements"
@@ -4051,9 +4050,6 @@
       ],
       "Theme": [
         "Tema"
-      ],
-      "This item is accessible until ${ date } or until the view limit is reached.": [
-        "Aquest element és accessible fins a ${ date } o fins que s'arribi al límit de visualitzacions."
       ],
       "Tier/Level": [
         "Nivell"
