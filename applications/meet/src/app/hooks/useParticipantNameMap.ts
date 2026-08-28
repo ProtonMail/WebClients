@@ -66,22 +66,22 @@ export const useParticipantNameMap = (meetingLinkName: string, decryptionKeyRef?
                     // Skip if already resolved, unless we can now decrypt an encrypted name
                     // (e.g. session key wasn't available on a previous fetch)
                     const cached = participantDecryptedNameMapRef.current[participant.ParticipantUUID];
-                    const displayName = participant.DisplayName ?? c('Display name').t`Loading…`;
+                    const pendingName = c('Display name').t`Loading…`;
                     // Only re-decrypt if the cached value is still the unencrypted fallback
-                    if (cached && cached !== displayName) {
+                    if (cached && cached !== pendingName) {
                         return cached;
                     }
-                    if (currentDecryptionKey && participant.EncryptedDisplayName) {
+                    if (currentDecryptionKey) {
                         try {
                             return await decryptDisplayNameWithKey(
                                 currentDecryptionKey,
                                 participant.EncryptedDisplayName
                             );
                         } catch {
-                            return displayName;
+                            return pendingName;
                         }
                     }
-                    return displayName;
+                    return pendingName;
                 })
             );
 
