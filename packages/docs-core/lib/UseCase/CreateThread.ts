@@ -10,7 +10,7 @@ import type { LocalCommentsState } from '../Services/Comments/LocalCommentsState
 import type { DocsApi } from '../Api/DocsApi'
 import metrics from '@proton/metrics'
 import { CommentThreadType } from '@proton/docs-shared'
-import type { LoggerInterface } from '@proton/utils/logs'
+import type { LoggerInterface } from '@proton/shared/lib/logs'
 import type { DocumentEntitlements, PublicDocumentEntitlements } from '../Types/DocumentEntitlements'
 
 /**

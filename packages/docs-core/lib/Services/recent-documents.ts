@@ -1,7 +1,7 @@
 import { getErrorString, ServerTime, BasePropertiesState } from '@proton/docs-shared'
 import type { DriveCompat } from '@proton/drive-store/lib/useDriveCompat'
 import type { DocsApi } from './../Api/DocsApi'
-import type { LoggerInterface } from '@proton/utils/logs'
+import type { LoggerInterface } from '@proton/shared/lib/logs'
 import type { RecentDocumentAPIItem } from './../Api/Types/GetRecentsResponse'
 import type { CacheService } from './CacheService'
 import { nodeMetaUniqueId } from '@proton/drive-store/lib/NodeMeta'

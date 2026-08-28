@@ -10,7 +10,7 @@ import {
 import { GenerateUUID } from '@proton/docs-shared'
 import { $createSuggestionNode, $isSuggestionNode } from './ProtonNode'
 import { $wrapSelectionInSuggestionNode, $isNodeNotInline } from './Utils'
-import type { Logger } from '@proton/utils/logs'
+import type { Logger } from '@proton/shared/lib/logs'
 
 /**
  * This command is triggered by $insertDataTransferForRichText to allow

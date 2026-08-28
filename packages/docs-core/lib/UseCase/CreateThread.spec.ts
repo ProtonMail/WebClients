@@ -13,7 +13,7 @@ import type { DecryptComment } from './DecryptComment'
 import type { LocalCommentsState } from '../Services/Comments/LocalCommentsState'
 import { CreateThread } from './CreateThread'
 import type { DocsApi } from '../Api/DocsApi'
-import type { LoggerInterface } from '@proton/utils/logs'
+import type { LoggerInterface } from '@proton/shared/lib/logs'
 import type { DocumentEntitlements } from '../Types/DocumentEntitlements'
 
 jest.mock('@proton/docs-shared', () => ({

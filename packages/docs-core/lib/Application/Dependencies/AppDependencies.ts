@@ -1,5 +1,5 @@
-import type { LoggerInterface } from '@proton/utils/logs'
-import { Logger } from '@proton/utils/logs'
+import type { LoggerInterface } from '@proton/shared/lib/logs'
+import { Logger } from '@proton/shared/lib/logs'
 import { DOCS_DEBUG_KEY, DependencyContainer, InternalEventBus } from '@proton/docs-shared'
 import { App_TYPES } from './Types'
 import type { HttpHeaders } from '../../Api/Types/HttpHeaders'

@@ -25,7 +25,7 @@ import {
 import { MAX_DOC_SIZE, MAX_UPDATE_SIZE } from '../Models/Constants'
 import type { WebsocketServiceInterface } from '../Services/Websockets/WebsocketServiceInterface'
 import { RealtimeController } from './RealtimeController'
-import type { LoggerInterface } from '@proton/utils/logs'
+import type { LoggerInterface } from '@proton/shared/lib/logs'
 import { ConnectionCloseReason, EventTypeEnum } from '@proton/docs-proto'
 import type { DocumentEntitlements } from '../Types/DocumentEntitlements'
 import type { AckLedgerInterface } from '../Services/Websockets/AckLedger/AckLedgerInterface'

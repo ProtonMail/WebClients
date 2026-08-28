@@ -1,6 +1,6 @@
 import type { CreateEmptyDocumentForConversion } from '../UseCase/CreateEmptyDocumentForConversion'
 import type { InternalEventBusInterface } from '@proton/docs-shared'
-import type { LoggerInterface } from '@proton/utils/logs'
+import type { LoggerInterface } from '@proton/shared/lib/logs'
 
 export interface ApplicationInterface {
   createEmptyDocumentForConversionUseCase: CreateEmptyDocumentForConversion

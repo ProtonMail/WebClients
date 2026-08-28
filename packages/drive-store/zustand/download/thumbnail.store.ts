@@ -2,7 +2,7 @@ import { createStore, del, get as getStore, set as setStore } from 'idb-keyval';
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
 
-import { isDevOrBlack } from '@proton/utils/env';
+import { isDevOrBlack } from '@proton/shared/lib/env';
 
 import { sendErrorReport } from '../../utils/errorHandling';
 import { getLastActivePersistedUserSession } from '../../utils/lastActivePersistedUserSession';

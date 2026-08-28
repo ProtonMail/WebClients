@@ -11,7 +11,6 @@
         "./clsx": "./src/clsx.ts",
         "./compare": "./src/compare.ts",
         "./diff": "./src/diff.ts",
-        "./env": "./src/env.ts",
         "./generateUID": "./src/generateUID.ts",
         "./getRandomString": "./src/getRandomString.ts",
         "./getSafeErrorObject": "./src/getSafeErrorObject.ts",
@@ -23,7 +22,6 @@
         "./isLastWeek": "./src/isLastWeek.ts",
         "./isTruthy": "./src/isTruthy.ts",
         "./lastItem": "./src/lastItem.ts",
-        "./logs": "./src/logs.ts",
         "./mergeUint8Arrays": "./src/mergeUint8Arrays.ts",
         "./mod": "./src/mod.ts",
         "./move": "./src/move.ts",
@@ -57,6 +55,7 @@
         "test:watch": "jest --watch"
     },
     "dependencies": {
+        "date-fns": "^2.30.0",
         "lodash": "^4.18.1"
     },
     "devDependencies": {

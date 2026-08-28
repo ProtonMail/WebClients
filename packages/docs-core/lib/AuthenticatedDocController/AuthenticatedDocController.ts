@@ -22,7 +22,7 @@ import { getDefaultDocumentName } from '@proton/shared/lib/docs/utils/isDefaultD
 import { MAX_DOC_SIZE } from '../Models/Constants'
 import type { GetNode } from '../UseCase/GetNode'
 import { isDocumentState, type DocumentState } from '../State/DocumentState'
-import type { LoggerInterface } from '@proton/utils/logs'
+import type { LoggerInterface } from '@proton/shared/lib/logs'
 import { getErrorString } from '../Util/GetErrorString'
 import { isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype'
 import type { DocumentUpdate } from '@proton/docs-proto'
