@@ -963,6 +963,9 @@
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
         "Τα προσωπικά σας στοιχεία διέρρευσαν σε παραβίαση δεδομένων μιας υπηρεσίας τρίτου μέρους."
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total }": [
+        "Έλεγχος ${ compromised.progress.completed } από ${ compromised.progress.total }"
       ]
     },
     "Email": {
@@ -3005,6 +3008,9 @@
       ],
       "None of your saved passwords have appeared in a known data breach.": [
         "Κανένας από τους αποθηκευμένους κωδικούς πρόσβασής σας δεν έχει εμφανιστεί σε κάποια γνωστή παραβίαση δεδομένων."
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
+        "Έλεγχος ${ compromised.progress.completed } από ${ compromised.progress.total } κωδικούς πρόσβασης"
       ]
     },
     "Keyboard key": {
