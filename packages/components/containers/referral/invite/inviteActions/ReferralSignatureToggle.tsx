@@ -28,7 +28,6 @@ const useAvailableApps = () => {
 
     const isDocsHomepageAvailable = useFlag('DriveDocsLandingPageEnabled');
     const isSheetsAvailable = useFlag('DocsSheetsEnabled');
-    const isMeetAvailable = useFlag('PMVC2025');
     const isAuthenticatorAvailable = useFlag('AuthenticatorSettingsEnabled');
     const isSpacesAvailable = useFlag('SpacesAvailable');
 
@@ -38,7 +37,6 @@ const useAvailableApps = () => {
         organization,
         isDocsHomepageAvailable,
         isSheetsAvailable,
-        isMeetAvailable,
         isAuthenticatorAvailable,
         isSpacesAvailable,
     });
