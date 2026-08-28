@@ -957,6 +957,9 @@
       ],
       "This login password appears in a data breach. Please visit the service and change the password.": [
         "해당 로그인 비밀번호가 데이터 보안 사고로 인해 유출되었을 가능성이 있습니다. 해당 서비스에 접속하여 비밀번호를 변경하는 것을 강력히 권장합니다."
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total }": [
+        "${ compromised.progress.total }개 중 ${ compromised.progress.completed }개 확인 중"
       ]
     },
     "Email": {
@@ -2968,6 +2971,9 @@
       ],
       "None of your saved passwords have appeared in a known data breach.": [
         "알려진 데이터 보안 사고에 누출된 사용자의 저장된 비밀번호가 없습니다."
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
+        "비밀번호 ${ compromised.progress.total }개 중 ${ compromised.progress.completed }개 확인 중"
       ]
     },
     "Keyboard key": {

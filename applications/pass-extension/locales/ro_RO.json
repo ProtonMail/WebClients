@@ -966,6 +966,9 @@
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
         "Informațiile personale v-au fost divulgate într-o compromitere a datelor a unui serviciu terță parte."
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total }": [
+        "Se verifică ${ compromised.progress.completed } din ${ compromised.progress.total }"
       ]
     },
     "Email": {
@@ -3039,6 +3042,9 @@
       ],
       "None of your saved passwords have appeared in a known data breach.": [
         "Niciuna dintre parolele salvate nu a apărut într-o breșă de date cunoscută."
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
+        "Se verifică parolele ${ compromised.progress.completed } din ${ compromised.progress.total }"
       ]
     },
     "Keyboard key": {
