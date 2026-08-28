@@ -228,7 +228,6 @@ const MainContainer = () => {
     const isPasswordRemindersOrgFlagEnabled = useFlag('PasswordRemindersOrg');
     // Password check-ins for org members are behind the overall feature flag plus the org one.
     const isPasswordRemindersOrgEnabled = isPasswordRemindersEnabled && isPasswordRemindersOrgFlagEnabled;
-    const isMeetAvailable = useFlag('PMVC2025');
     const isAuthenticatorAvailable = useFlag('AuthenticatorSettingsEnabled');
     const isMspEnabled = useFlag('MspEnabled');
     const isSpacesAvailable = useFlag('SpacesAvailable');
@@ -508,7 +507,6 @@ const MainContainer = () => {
         context: 'app',
         organization,
         isDocsHomepageAvailable,
-        isMeetAvailable,
         isSheetsAvailable,
         isAuthenticatorAvailable,
         isSpacesAvailable,

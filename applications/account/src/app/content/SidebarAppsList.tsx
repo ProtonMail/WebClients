@@ -19,7 +19,6 @@ const SidebarAppsList = () => {
     const localId = getLocalID();
     const isDocsHomepageAvailable = useFlag('DriveDocsLandingPageEnabled');
     const isSheetsAvailable = useFlag('DocsSheetsEnabled');
-    const isMeetAvailable = useFlag('PMVC2025');
     const isAuthenticatorAvailable = useFlag('AuthenticatorSettingsEnabled');
     const isSpacesAvailable = useFlag('SpacesAvailable');
 
@@ -29,7 +28,6 @@ const SidebarAppsList = () => {
         organization,
         isDocsHomepageAvailable,
         isSheetsAvailable,
-        isMeetAvailable,
         isAuthenticatorAvailable,
         isSpacesAvailable,
     });
