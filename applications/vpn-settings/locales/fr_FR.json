@@ -319,6 +319,9 @@
       "Claim your free ${ BRAND_NAME } address": [
         "Revendiquez votre adresse ${ BRAND_NAME } gratuite"
       ],
+      "Clear conversation": [
+        "Effacer la conversation"
+      ],
       "Close": [
         "Fermer"
       ],
@@ -399,6 +402,9 @@
       ],
       "Copy address": [
         "Copier l'adresse"
+      ],
+      "Copy debug transcript": [
+        "Copier la transcription de débogage"
       ],
       "Copy key to the clipboard": [
         "Copier la clé dans le presse-papiers"
@@ -790,6 +796,9 @@
       "Invite user": [
         "Inviter un utilisateur"
       ],
+      "Invoice options": [
+        "Options de facture"
+      ],
       "Keep": [
         "Conserver"
       ],
@@ -801,6 +810,9 @@
       ],
       "Keep editing": [
         "Continuer les modifications"
+      ],
+      "Keep going": [
+        "Continuer"
       ],
       "Keep logo": [
         "Conserver le logo"
@@ -1138,6 +1150,9 @@
       "select file": [
         "sélectionnez un fichier."
       ],
+      "Send": [
+        "Envoyer"
+      ],
       "Send code": [
         "Envoyer le code"
       ],
@@ -1161,6 +1176,9 @@
       ],
       "Set catch-all": [
         "Configurer catch-all"
+      ],
+      "Set invoice email": [
+        "Définir l'e-mail de facturation"
       ],
       "Set new password": [
         "Définir un nouveau mot de passe"
@@ -1255,6 +1273,12 @@
       "Stay": [
         "Rester"
       ],
+      "Stop": [
+        "Arrêter"
+      ],
+      "Stop here": [
+        "S'arrêter ici"
+      ],
       "Stop using single sign-on": [
         "Arrêter d'utiliser l'authentification unique"
       ],
@@ -1294,6 +1318,9 @@
       "Test SAML configuration": [
         "Tester la configuration SAML"
       ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "Afficher ou masquer ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Top up": [
         "Recharger"
       ],
@@ -1320,6 +1347,9 @@
       ],
       "Unlock data": [
         "Déverrouiller les données"
+      ],
+      "Update email": [
+        "Mise à jour l'e-mail"
       ],
       "Update recovery file": [
         "Mettre à jour le fichier de récupération"
@@ -7805,6 +7835,9 @@
       "Data recovery requires a password reset option (email or SMS)": [
         "La récupération des données nécessite une option de réinitialisation du mot de passe (e-mail ou SMS)."
       ],
+      "Debug transcript copied": [
+        "Transcription de débogage copiée"
+      ],
       "dedicated servers": [
         "serveurs dédiés"
       ],
@@ -8220,6 +8253,9 @@
       ],
       "How your emergency contact can change your password for you:": [
         "Comment votre contact d'urgence peut changer votre mot de passe pour vous :"
+      ],
+      "I have not finished this one yet.": [
+        "Je n'ai pas encore fini celui-là."
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Il s'agit de la clé publique de votre fournisseur d'identité pour signer les déclarations d'authentification. Téléchargez ou copiez le hash du certificat de votre fournisseur d'identité. Il vous suffit ensuite de coller ce dernier dans le champ texte correspondant."
@@ -9247,6 +9283,9 @@
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Ces identifiants ne peuvent pas être utilisés pour se connecter aux applications ${ VPN_APP_NAME } officielles. ${ learnMore }"
       ],
+      "Thinking about this": [
+        "Réflexion en cours..."
+      ],
       "This account has been suspended due to a potential policy violation.": [
         "Ce compte a été suspendu en raison d’une violation potentielle des règles d’utilisation."
       ],
@@ -9282,6 +9321,9 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Ceci est désormais votre ${ defaultEmailAddress } pour envoyer de nouveaux messages."
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "Cela demande beaucoup d'étapes. Faut-il continuer ?"
       ],
       "This is the password you used before the password reset.": [
         "Il s'agit du mot de passe que vous avez utilisé avant la réinitialisation du mot de passe."
@@ -9648,6 +9690,9 @@
       ],
       "We can use your recovery phone to send you a verification code to reset your password, and to contact you if we notice suspicious activity.": [
         "Nous pouvons utiliser votre téléphone de récupération pour vous envoyer un code de vérification afin de réinitialiser votre mot de passe, et de vous contacter si nous remarquons une activité suspecte."
+      ],
+      "We couldn't send invoices to your email address. Automatic invoicing has been paused until you update the address.": [
+        "Nous n'avons pas pu envoyer de factures à votre adresse e-mail. La facturation automatique a été suspendue jusqu'à ce que vous mettiez à jour cette adresse."
       ],
       "We couldn’t process your payment.": [
         "Nous n'avons pas pu traiter votre paiement."
@@ -11091,6 +11136,9 @@
       ],
       "Send crash reports": [
         "Envoyer les rapports de plantage"
+      ],
+      "Send invoices by email": [
+        "Envoyer les factures par e-mail"
       ],
       "Sequences": [
         "Séquences"
@@ -13924,12 +13972,6 @@
       "To enable administrator rights on your account, activate the organization key.": [
         "Pour activer les droits administrateur de votre compte, activez la clé de l'organisation."
       ],
-      "Use a data recovery method or reset the organization key to restore administrator privileges.": [
-        "Utilisez une méthode de récupération de données ou réinitialisez la clé de l’organisation pour restaurer les droits administrateur."
-      ],
-      "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
-        "Utilisez une méthode de récupération de données, contactez un autre administrateur ou réinitialisez la clé de l’organisation pour restaurer les droits administrateur."
-      ],
       "We couldn't verify the authenticity of this identity.": [
         "Nous n'avons pas pu vérifier l'authenticité de cette identité."
       ],
@@ -14325,6 +14367,12 @@
       ],
       "Anytown": [
         "Boisclair"
+      ],
+      "Ask anything…": [
+        "Demandez ce que vous voulez…"
+      ],
+      "billing@company.com": [
+        "facturation@entreprise.com"
       ],
       "Choose a name": [
         "Choisissez un nom."
@@ -16194,6 +16242,11 @@
         "Demande de réinitialisation du mot de passe"
       ]
     },
+    "Set invoice email form note": {
+      "Turn on automatic invoicing to receive bills via email. Enter the email address where you want to receive invoices.": [
+        "Activez la facturation automatique pour recevoir vos factures par e-mail. Saisissez l'adresse e-mail à laquelle vous souhaitez recevoir vos factures."
+      ]
+    },
     "Settings section title": {
       "Account": [
         "Compte"
@@ -17585,6 +17638,9 @@
       ],
       "Invoice customized": [
         "La facture a été personnalisée."
+      ],
+      "Invoice email updated": [
+        "L'e-mail de facturation a été mise à jour"
       ],
       "Invoice paid": [
         "La facture a été payée."
@@ -19025,6 +19081,9 @@
       "Session management": [
         "Gestionnaire de sessions"
       ],
+      "Set invoice email": [
+        "Définir l'e-mail de facturation"
+      ],
       "Set new password": [
         "Définir un nouveau mot de passe"
       ],
@@ -19123,6 +19182,9 @@
       ],
       "Stay secure and connected anywhere": [
         "Restez en sécurité et connecté partout"
+      ],
+      "Still working on it": [
+        "Je suis encore en train d'y travailler"
       ],
       "Subscription": [
         "Abonnement"

@@ -436,6 +436,9 @@
       "Claim your free ${ BRAND_NAME } address": [
         "무료 ${ BRAND_NAME } 주소를 받으세요"
       ],
+      "Clear conversation": [
+        "대화 삭제"
+      ],
       "Close": [
         "닫기"
       ],
@@ -516,6 +519,9 @@
       ],
       "Copy address": [
         "주소 복사하기"
+      ],
+      "Copy debug transcript": [
+        "디버그 기록 복사"
       ],
       "Copy key to the clipboard": [
         "클립보드에 키 복사"
@@ -907,6 +913,9 @@
       "Invite user": [
         "사용자 초대"
       ],
+      "Invoice options": [
+        "청구서 옵션"
+      ],
       "Keep": [
         "보관"
       ],
@@ -918,6 +927,9 @@
       ],
       "Keep editing": [
         "계속 수정하기"
+      ],
+      "Keep going": [
+        "계속하기"
       ],
       "Keep logo": [
         "로고 유지"
@@ -1258,6 +1270,9 @@
       "select file": [
         "파일 선택"
       ],
+      "Send": [
+        "보내기"
+      ],
       "Send code": [
         "코드 보내기"
       ],
@@ -1274,13 +1289,16 @@
         "새로운 초대 보내기"
       ],
       "Send reminder": [
-        "전송 알리미"
+        "알리미 전송"
       ],
       "Set as album cover": [
         "앨범 커버로 사용하기"
       ],
       "Set catch-all": [
         "Catch-all 설정"
+      ],
+      "Set invoice email": [
+        "청구서 이메일 설정"
       ],
       "Set new password": [
         "새 비밀번호 설정"
@@ -1375,6 +1393,12 @@
       "Stay": [
         "기다리기"
       ],
+      "Stop": [
+        "중지"
+      ],
+      "Stop here": [
+        "여기서 중단"
+      ],
       "Stop using single sign-on": [
         "싱글 사인온 (SSO) 중지"
       ],
@@ -1402,11 +1426,17 @@
       "Take a tour": [
         "둘러보기"
       ],
+      "Template with invite links": [
+        "초대 링크 템플릿"
+      ],
       "Test": [
         "테스트"
       ],
       "Test SAML configuration": [
         "SAML 구성 테스트"
+      ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "${ LUMO_SHORT_APP_NAME } 열기"
       ],
       "Top up": [
         "지갑 충전"
@@ -1434,6 +1464,9 @@
       ],
       "Unlock data": [
         "데이터 잠금 해제"
+      ],
+      "Update email": [
+        "이메일 업데이트"
       ],
       "Update recovery file": [
         "복구 파일 업데이트"
@@ -7279,6 +7312,9 @@
       "${ helpTranslateLink } by joining our localization community.": [
         "Proton 언어 현지화 커뮤니티에 참가하여 ${ helpTranslateLink }."
       ],
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "${ IDEAL_WERO_BRAND_NAME } 마크"
+      ],
       "${ invitedMemberCount } user needs to accept their invite to start receiving group emails.": [
         "그룹 이메일 수신을 시작하려면 ${ invitedMemberCount }명 사용자들이 초대를 수락 받아야 합니다."
       ],
@@ -7942,6 +7978,9 @@
       "Data recovery requires a password reset option (email or SMS)": [
         "데이터 복구 방법을 설정하려면 비밀번호 재설정 방법 (이메일 또는 SMS)이 필요합니다."
       ],
+      "Debug transcript copied": [
+        "디버그 기록 복사됨"
+      ],
       "dedicated servers": [
         "전용 서버"
       ],
@@ -8100,6 +8139,12 @@
       ],
       "email": [
         "이메일"
+      ],
+      "Email address copied to clipboard": [
+        "이메일 주소가 클립보드에 복사되었습니다"
+      ],
+      "Email addresses copied to clipboard": [
+        "클립보드에 이메일 주소가 복사되었습니다"
       ],
       "Email and calendar, integrated with ${ CONTACTS_APP_NAME }": [
         "${ CONTACTS_APP_NAME }와(과) 통합화된 이메일 및 캘린더"
@@ -8358,6 +8403,9 @@
       ],
       "How your emergency contact can change your password for you:": [
         "비상 연락처가 나를 대신하여 비밀번호를 변경하는 방법:"
+      ],
+      "I have not finished this one yet.": [
+        "아직 마무리하지 않았어요."
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "인증 주장에 서명하기 위한 신원 제공자의 공개 키입니다. 인증 제공자로부터 인증서 해시값을 다운로드하거나 복사할 수 있는 장소가 있어야 합니다. 텍스트 영역 입력란에 인증서 해시를 붙여넣기만 하면 됩니다."
@@ -9379,6 +9427,9 @@
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "이 자격증명을 공식 ${ VPN_APP_NAME } 앱에 로그인 할 때 사용하지 못할 수 있습니다. ${ learnMore }"
       ],
+      "Thinking about this": [
+        "이것에 대해 생각해 보기"
+      ],
       "This account has been suspended due to a potential policy violation.": [
         "이 계정은 규정 위반이 의심되어 정지되었습니다."
       ],
@@ -9417,6 +9468,9 @@
       ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "이제 ${ defaultEmailAddress }가 메시지를 보내는 주소입니다."
+      ],
+      "This is taking a lot of steps. Should it carry on?": [
+        "정말 많은 단계를 거쳐야될 수 있어요. 정말 계속하시겠어요?"
       ],
       "This is the password you used before the password reset.": [
         "비밀번호를 재설정하기 전에 사용한 비밀번호입니다."
@@ -9796,6 +9850,9 @@
       "We can use your recovery phone to send you a verification code to reset your password, and to contact you if we notice suspicious activity.": [
         "비밀번호를 재설정하기 위해 인증번호를 전송하거나 의심스러운 활동을 포착하는 경우 연락을 드릴 수 있도록 Proton이 복구 휴대폰 번호를 사용할 수 있습니다."
       ],
+      "We couldn't send invoices to your email address. Automatic invoicing has been paused until you update the address.": [
+        "사용자의 이메일 주소로 청구서를 전송할 수 없습니다. 이메일 주소 업데이트 전까진 자동 청구서가 중단됩니다."
+      ],
       "We couldn’t process your payment.": [
         "결제를 처리할 수 없습니다."
       ],
@@ -9831,6 +9888,9 @@
       ],
       "We use 3-D Secure to protect your payments": [
         "결제 정보를 보호하기 위해 3D 보안을 이용합니다"
+      ],
+      "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "이 거래를 완료하기 위해 새 브라우저 탭의 ${ IDEAL_WERO_BRAND_NAME }에 리디렉션됩니다. 팝업 차단기를 사용하는 경우 계속하려면 비활성화하세요."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "이 거래를 완료하기 위해 새 브라우저 탭의 PayPal로 보내집니다. 팝업 차단기를 사용하는 경우 계속하려면 비활성화하세요."
@@ -10156,6 +10216,9 @@
       "your encrypted data will be locked": [
         "개인 데이터는 잠금 상태로 유지됩니다"
       ],
+      "Your file includes a password for each user, so these accounts will be created with a password instead of an invite link.": [
+        "파일에 각 사용자에 대한 비밀번호가 포함되어 있습니다. 초대 링크 대신 각자의 계정에 비밀번호가 생성됩니다."
+      ],
       "Your files will be encrypted and then saved": [
         "파일이 암호화된 후 저장됩니다"
       ],
@@ -10418,6 +10481,9 @@
       ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanMaxSpace } 중 ${ humanUsedSpace }"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength }자"
       ],
       "${ MAIL_APP_NAME } address": [
         "${ MAIL_APP_NAME } 주소"
@@ -11216,6 +11282,9 @@
       ],
       "Send crash reports": [
         "오류 보고서 전송"
+      ],
+      "Send invoices by email": [
+        "이메일로 청구서 보내기"
       ],
       "Sequences": [
         "시퀀스"
@@ -13796,6 +13865,107 @@
         "사용자의 플랜은 최대 ${ humanReadableAvailableSpace }개 스토리지를 포함합니다."
       ]
     },
+    "organization key reset": {
+      "Afterward, every converted user must accept the request to become non-private again, from their account settings.": [
+        "추후 모든 전환된 사용자는 각 개인의 계정 설정에서 공개 사용자로의 전환 요청에 수락을 해야합니다."
+      ],
+      "An unprivatization request is sent by email to the converted users": [
+        "공개 요청이 전환된 사용자에게 전송 완료되었습니다."
+      ],
+      "Because your organization key has changed, you lost some of your admin rights: You can no longer create non-private users and access their accounts.": [
+        "조직 키가 변경되어 일부 관리자 권한이 상실되었습니다: 더 이상 공개 사용자를 생성하거나 해당 계정에 접근할 수 없습니다."
+      ],
+      "Can you reach out to other administrators?": [
+        "다른 관리자에게 연락 가능한가요?"
+      ],
+      "Converting users to private": [
+        "해당 사용자를 비공개로 전환하는 중"
+      ],
+      "Copy email list": [
+        "이메일 목록 복사"
+      ],
+      "Could not send the unprivatization request to ${ n } user. It will be retried automatically.": [
+        "${ n }명 사용자에 대한 조직 추출 요청을 보낼 수 없습니다. 자동으로 다시 시도됩니다."
+      ],
+      "Get in touch with your other administrators, to see if they can help. They will be able to restore your privileges after using a data recovery method.": [
+        "다른 관리자가 이 문제에 대해 도움을 줄 수 있는지 여부를 물어보세요. 다른 데이터 복구 방법을 사용한 뒤에는 사용자의 관리자 권한을 복구할 수 있습니다."
+      ],
+      "Non-private users": [
+        "공개 사용자"
+      ],
+      "Once your privileges have been restored, you'll be able to create non-private users and access their accounts.": [
+        "관리자 권한을 복구하면, 공개 사용자를 생성하고 접근할 수 있습니다."
+      ],
+      "Organization key reset": [
+        "조직 키 재설정"
+      ],
+      "Ready to reset your organization key?": [
+        "조직 키 복구의 준비가 되었나요?"
+      ],
+      "Reset key": [
+        "키 재설정"
+      ],
+      "Reset organization key?": [
+        "조직 키 재설정을 시작하시겠습니까?"
+      ],
+      "Resetting organization key": [
+        "조직 키 재설정 중"
+      ],
+      "Resetting the organization key generates a new encryption key to keep your organization's data secure. **No data will be lost or destroyed in this process, but the users groups will be deleted.**": [
+        "조직 키를 재설정하면 조직의 데이터를 안전하게 보호하기 위해 새로운 암호화 키가 생성됩니다. **이 과정에서 데이터가 손실되거나 파괴되지 않으며, 사용자 그룹은 삭제됩니다. **"
+      ],
+      "See ${ n } user": [
+        "${ n }명 사용자 보기"
+      ],
+      "See users": [
+        "사용자 보기"
+      ],
+      "Send unprivatization requests": [
+        "공개 전환 요청 전송"
+      ],
+      "The non-private users are converted to private": [
+        "공개 사용자를 비공개로 전환했습니다."
+      ],
+      "The organization key is reset": [
+        "조직 키가 재설정됩니다"
+      ],
+      "This process is automated:": [
+        "이 작업은 자동으로 수행됩니다:"
+      ],
+      "This should take less than ${ minutes } minute. **Don't close this tab or let your device go to sleep** until it's finished.": [
+        "최소 ${ minutes }분 이상 소요되는 작업입니다. 완료 전까지 **이 탭을 닫지 말거나, 기기를 절전 상태로 전환하세요.**"
+      ],
+      "This should take less than ${ minutes } minute. **Keep this browser tab open and your device active** until it completes.": [
+        "최소 ${ minutes }분 이상 소요되는 작업입니다. **기기를 활성화하고 브라우저 탭을 열어둔 상태로 완료 전까지 기다려 주세요.**"
+      ],
+      "To become non-private again, they must accept the request to enable admin access, from their account settings. You don't need to wait for this step.": [
+        "다시 비공개가 되려면, 계정 설정에서 관리자 접근 권한을 활성화하는 요청을 수락해야 합니다. 이 단계를 기다릴 필요가 없습니다."
+      ],
+      "To reset the organization key and restore your administrator privileges, **${ n } non-private user must be temporarily converted to private.**": [
+        "조직 키를 초기화하고 관리자 권한을 복원하려면, **${ n }명의 비공개가 아닌 사용자는 일시적으로 비공개로 전환되어야 합니다. **"
+      ],
+      "To reset the organization key, the users will be converted to private, and will receive an email invitation to become non-private again.": [
+        "조직 키를 재설정하려면 조직 내 사용자를 비공개로 전환해야 합니다. 작업 완료 후 공개 사용자로 전환할 수 있는 이메일 초대장을 받을 수 있습니다."
+      ],
+      "To restore your privileges, use a data recovery method.": [
+        "관리자 권한 복구 필요 시, 데이터 복구 방법을 사용하세요."
+      ],
+      "Try another way": [
+        "다른 방법 시도"
+      ],
+      "User (${ n })": [
+        "사용자 (${ n }명)"
+      ],
+      "You can reset your organization key to restore your administrator privileges. Then, you'll be able to create non-private users and access their accounts.": [
+        "관리자 권한 복구를 위해 조직 키를 재설정할 수 있습니다. 이 작업을 수행하면 공개 사용자를 생성하거나 해당 계정에 접근할 수 있습니다."
+      ],
+      "Your administrator privileges have been restored. You can now manage non-private users.": [
+        "관리자 권한의 복구가 완료되었습니다. 이제 공개 사용자에 대한 관리 가능합니다."
+      ],
+      "Your users will receive an email to accept the unprivatization request.": [
+        "그룹의 구성원이 계정을 공개로 전환하도록 요청 받는 이메일을 수신합니다."
+      ]
+    },
     "Organization logo upload": {
       "Avoid overly compressed images.": [
         "과도하게 압축된 이미지를 피하십시오."
@@ -14018,12 +14188,6 @@
       "To enable administrator rights on your account, activate the organization key.": [
         "사용자의 계정에 관리자 권한을 활성화 하려면, 조직 키를 활성화 하십시오."
       ],
-      "Use a data recovery method or reset the organization key to restore administrator privileges.": [
-        "관리자 권한 재설정을 위해 데이터 북구 방법을 사용하거나 조직 키를 재설정 하십시오."
-      ],
-      "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
-        "관리자 권한 재설정을 위해 데이터 복구 방법을 사용하거나 타 관리자에게 연락하거나 조직 키를 재설정 하십시오."
-      ],
       "We couldn't verify the authenticity of this identity.": [
         "이 신원의 진위를 확인할 수 없었습니다"
       ],
@@ -14137,6 +14301,9 @@
       "More plans are available in other currencies": [
         "더 많은 플랜을 다른 통화로 사용할 수 있습니다."
       ],
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "${ IDEAL_WERO_BRAND_NAME }(으)로 결제하기"
+      ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "무료 체험 종료 후 구독이 활성화되려면 결제 수단이 필요합니다."
       ],
@@ -14224,6 +14391,9 @@
       "You will soon be redirected to verify your payment.": [
         "결제를 인증하기 위해 곧 리디렉션됩니다."
       ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
+        "${ IDEAL_WERO_BRAND_NAME }가 유로화 결제만 지원하므로 사용자의 통화가 유로화(€)로 변경되었습니다."
+      ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "SEPA 은행 송금이 유로화 결제만 지원하여 사용자의 통화가 유로화(€)로 변경되었습니다."
       ],
@@ -14235,6 +14405,9 @@
       ]
     },
     "Payments.Error": {
+      "Failed to initialize ${ IDEAL_WERO_BRAND_NAME }. Please try again later.": [
+        "${ IDEAL_WERO_BRAND_NAME }을(를) 구성할 수 없습니다, 다시 시도해 주세요."
+      ],
       "Invalid card number": [
         "유효하지 않은 카드 번호"
       ],
@@ -14260,6 +14433,11 @@
     "Payments.error": {
       "Something went wrong. Google Pay verification failed.": [
         "문제가 발생했습니다. Google Pay 인증에 실패했습니다."
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "확인을 선택하면 회원님은 ${ BRAND_NAME } 및 당사의 결제 서비스 제공업체인 Stripe이 SEPA 자동이체(Direct Debit)를 통해 본 은행 계좌에서 향후 구독 결제금을 수금하고, 해당 은행이 결제금을 출금하도록 승인하게 됩니다. 첫 결제는 지금 ${ IDEAL_WERO_BRAND_NAME }을(를) 통해 진행됩니다. 구독은 취소할 때까지 자동으로 갱신되며, 결제 전 미리 안내해 드립니다. 자동이체 수금의 경우 은행과의 약관에 따라 출금일로부터 8주 이내에 은행에 환불을 요청할 수 있습니다. 이는 지금 진행 중인 ${ IDEAL_WERO_BRAND_NAME } 결제에는 적용되지 않습니다."
       ]
     },
     "Payments.info": {
@@ -14399,6 +14577,12 @@
       ],
       "Anytown": [
         "서울특별시 낙원구"
+      ],
+      "Ask anything…": [
+        "무엇이든 물어보세요..."
+      ],
+      "billing@company.com": [
+        "billing@company.co.kr"
       ],
       "Choose a name": [
         "이름을 선택하세요"
@@ -16252,6 +16436,11 @@
         "비밀번호 재설정 요청"
       ]
     },
+    "Set invoice email form note": {
+      "Turn on automatic invoicing to receive bills via email. Enter the email address where you want to receive invoices.": [
+        "이메일로 영수증을 받으려면 자동 청구를 활성화하세요. 청구서를 수신 받을 이메일 주소를 입력하세요."
+      ]
+    },
     "Settings section title": {
       "Account": [
         "계정"
@@ -17610,6 +17799,9 @@
       ],
       "Invoice customized": [
         "청구성 맞춤설정됨"
+      ],
+      "Invoice email updated": [
+        "청구서 이메일 업데이트됨"
       ],
       "Invoice paid": [
         "미납 청구서 결제 완료"
@@ -19051,6 +19243,9 @@
       "Session management": [
         "세션 관리"
       ],
+      "Set invoice email": [
+        "청구서 이메일 설정"
+      ],
       "Set new password": [
         "새 비밀번호 설정"
       ],
@@ -19149,6 +19344,9 @@
       ],
       "Stay secure and connected anywhere": [
         "언제 어디서나 안전하게 연결하세요"
+      ],
+      "Still working on it": [
+        "아직 작업 중"
       ],
       "Subscription": [
         "구독"
