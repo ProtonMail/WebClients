@@ -11,7 +11,7 @@ import {
   $isRootOrShadowRoot,
   type LexicalEditor,
 } from 'lexical'
-import type { Logger } from '@proton/utils/logs'
+import type { Logger } from '@proton/shared/lib/logs'
 import type { CustomListMarker, CustomListStyleType } from '../CustomList/CustomListTypes'
 import { $createCustomListNode } from '../CustomList/$createCustomListNode'
 import { $getListInfo } from '../CustomList/$getListInfo'

@@ -12,7 +12,7 @@ import { GenerateUUID } from '@proton/docs-shared'
 import { $isSuggestionNode, $createSuggestionNode } from './ProtonNode'
 import type { PropertyChangeSuggestionProperties } from './Types'
 import { $unwrapSuggestionNodeAndResolveIfNeeded } from './removeSuggestionNodeAndResolveIfNeeded'
-import type { Logger } from '@proton/utils/logs'
+import type { Logger } from '@proton/shared/lib/logs'
 
 export function $setTextNodeFormatAsSuggestion(
   node: TextNode,

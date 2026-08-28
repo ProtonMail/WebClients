@@ -7,7 +7,7 @@ import { sanitizeUrl } from '../../Utils/sanitizeUrl'
 import type { LinkChangePayload } from '../Link/LinkPlugin'
 import { $createSuggestionNode, $isSuggestionNode } from './ProtonNode'
 import { $wrapSelectionInSuggestionNode } from './Utils'
-import type { Logger } from '@proton/utils/logs'
+import type { Logger } from '@proton/shared/lib/logs'
 import type { LinkChangeSuggestionProperties } from './Types'
 
 export function $handleLinkChangeSuggestion(

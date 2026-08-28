@@ -1,6 +1,6 @@
 import { useNotifications } from '@proton/app-context/useNotifications'
 import type { EditorRequiresClientMethods } from '@proton/docs-shared'
-import { isDevOrBlack } from '@proton/utils/env'
+import { isDevOrBlack } from '@proton/shared/lib/env'
 import type { PropsWithChildren } from 'react'
 import { useMemo } from 'react'
 

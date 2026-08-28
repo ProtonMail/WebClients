@@ -8,7 +8,7 @@ import type { SquashDocumentDTO } from './SquashDocument'
 import { SquashDocument } from './SquashDocument'
 import type { VerifyCommit } from './VerifyCommit'
 import { SquashVerificationObjectionDecision } from '../Types/SquashVerificationObjection'
-import type { LoggerInterface } from '@proton/utils/logs'
+import type { LoggerInterface } from '@proton/shared/lib/logs'
 import type { UnleashClient } from '@proton/unleash/UnleashClient'
 import type { CacheService } from '../Services/CacheService'
 

@@ -35,7 +35,7 @@ import type { DocsApi } from '../../Api/DocsApi'
 import type { EncryptComment } from '../../UseCase/EncryptComment'
 import type { HandleRealtimeCommentsEvent } from '../../UseCase/HandleRealtimeCommentsEvent'
 import type { LoadThreads } from '../../UseCase/LoadThreads'
-import type { LoggerInterface } from '@proton/utils/logs'
+import type { LoggerInterface } from '@proton/shared/lib/logs'
 import type { MetricService } from '../Metrics/MetricService'
 import type { WebsocketServiceInterface } from '../Websockets/WebsocketServiceInterface'
 

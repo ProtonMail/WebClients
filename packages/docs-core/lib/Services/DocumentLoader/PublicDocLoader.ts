@@ -26,7 +26,7 @@ import type { HandleRealtimeCommentsEvent } from '../../UseCase/HandleRealtimeCo
 import type { FetchDecryptedCommit } from '../../UseCase/FetchDecryptedCommit'
 import type { LoadDocument } from '../../UseCase/LoadDocument'
 import type { LoadThreads } from '../../UseCase/LoadThreads'
-import type { LoggerInterface } from '@proton/utils/logs'
+import type { LoggerInterface } from '@proton/shared/lib/logs'
 import type { MetricService } from '../Metrics/MetricService'
 import type { PublicDriveCompat } from '@proton/drive-store'
 import type { WebsocketServiceInterface } from '../Websockets/WebsocketServiceInterface'

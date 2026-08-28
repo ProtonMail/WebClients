@@ -1,6 +1,6 @@
 import { useFlag } from '@proton/unleash/useFlag'
 // Don't use: breaks mocking unleash in E2E tests
-import { isDevOrBlack } from '@proton/utils/env'
+import { isDevOrBlack } from '@proton/shared/lib/env'
 
 /*
 SDK switch flags:

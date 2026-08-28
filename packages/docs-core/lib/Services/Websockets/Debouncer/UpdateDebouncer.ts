@@ -1,5 +1,5 @@
 import type { NodeMeta, PublicNodeMeta } from '@proton/docs-shared'
-import type { LoggerInterface } from '@proton/utils/logs'
+import type { LoggerInterface } from '@proton/shared/lib/logs'
 import { mergeUpdates } from 'yjs'
 import { DocumentDebounceMode } from './DocumentDebounceMode'
 import { UpdateDebouncerEventType } from './UpdateDebouncerEventType'

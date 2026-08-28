@@ -8,7 +8,7 @@ import { useUnleashClient } from '@proton/unleash/proxy'
 import { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
 import { getDrive, useDrive } from '@proton/drive'
 import { APPS } from '@proton/shared/lib/constants'
-import type { LoggerInterface } from '@proton/utils/logs'
+import type { LoggerInterface } from '@proton/shared/lib/logs'
 
 import config from '~/config'
 

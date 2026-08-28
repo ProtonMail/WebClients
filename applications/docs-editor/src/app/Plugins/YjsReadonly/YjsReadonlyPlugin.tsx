@@ -7,15 +7,11 @@ import { useMemo } from 'react'
 
 import { useYjsReadonly } from './useYjsReadonly'
 import type { EditorLoadResult } from '../../Lib/EditorLoadResult'
-import type { LoggerInterface } from '@proton/utils/logs'
+import type { LoggerInterface } from '@proton/shared/lib/logs'
 
 type Props = {
   id: string
-  providerFactory: (
-    // eslint-disable-next-line no-shadow
-    id: string,
-    yjsDocMap: Map<string, Doc>,
-  ) => Provider
+  providerFactory: (id: string, yjsDocMap: Map<string, Doc>) => Provider
   lexicalError?: Error
   logger: LoggerInterface
   onLoadResult: EditorLoadResult

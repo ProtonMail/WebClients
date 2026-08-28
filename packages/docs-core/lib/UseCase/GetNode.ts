@@ -6,7 +6,7 @@ import { isPublicNodeMeta } from '@proton/drive-store/lib/NodeMeta'
 import type { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
 import type { CacheService } from '../Services/CacheService'
 import type { CachableResult } from './CachableResult'
-import type { LoggerInterface } from '@proton/utils/logs'
+import type { LoggerInterface } from '@proton/shared/lib/logs'
 
 type GetNodeResult = CachableResult & {
   node: DecryptedNode

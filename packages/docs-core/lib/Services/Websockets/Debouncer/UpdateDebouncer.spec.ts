@@ -2,7 +2,7 @@ import { DecryptedValue } from '@proton/docs-proto'
 import type { NodeMeta } from '@proton/docs-shared'
 import { UpdateDebouncer } from './UpdateDebouncer'
 import { DocumentDebounceMode } from './DocumentDebounceMode'
-import type { LoggerInterface } from '@proton/utils/logs'
+import type { LoggerInterface } from '@proton/shared/lib/logs'
 
 describe('UpdateDebouncer', () => {
   let debouncer: UpdateDebouncer

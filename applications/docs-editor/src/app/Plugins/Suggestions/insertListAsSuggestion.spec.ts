@@ -8,7 +8,7 @@ import {
   $isTextNode,
   $setSelection,
 } from 'lexical'
-import type { Logger } from '@proton/utils/logs'
+import type { Logger } from '@proton/shared/lib/logs'
 import { AllNodes } from '../../AllNodes'
 import { $insertListAsSuggestion } from './insertListAsSuggestion'
 import type { ListItemNode, ListNode } from '@lexical/list'

@@ -7,7 +7,7 @@ import type { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrap
 import type { CacheService } from '../Services/CacheService'
 import type { CachableResult } from './CachableResult'
 import type { SessionKey } from '@protontech/crypto'
-import type { LoggerInterface } from '@proton/utils/logs'
+import type { LoggerInterface } from '@proton/shared/lib/logs'
 
 type GetDocumentKeysResult = CachableResult & {
   keys: DocumentKeys

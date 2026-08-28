@@ -7,7 +7,7 @@ import { $findMatchingParent, $wrapNodeInElement } from '@lexical/utils'
 import { $createImageNode } from '../Image/ImageNode'
 import { $isImageNode } from '../Image/isImageNode'
 import { $getImageNodeInSelection, getDragImageData, $canDropImage, getDragSelection } from '../Image/ImageUtils'
-import type { Logger } from '@proton/utils/logs'
+import type { Logger } from '@proton/shared/lib/logs'
 
 export function $insertImageNodeAsSuggestion(
   node: LexicalNode,
