@@ -555,6 +555,7 @@ export const useMemberActions = ({
         hasDuoPlan,
         pausedMembers,
         resumingMemberID,
+        isSubUserEditModalRendered: renderSubUserEditModal,
     };
 
     const models = {

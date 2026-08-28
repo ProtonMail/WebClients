@@ -5,11 +5,14 @@ import type { DomainsState } from '../domains';
 import type { KtState } from '../kt';
 import { type MembersState, selectMembers } from '../members';
 import { type OrganizationKeyState, organizationKeyThunk } from '../organizationKey';
+import type { OrganizationRolesState } from '../organizationRoles';
 import type { UserKeysState } from '../userKeys';
 import { unprivatizeMembersAutomatic } from './unprivatizeMembers';
 
 export const unprivatizeMembersListener = (
-    startListening: SharedStartListening<KtState & OrganizationKeyState & MembersState & DomainsState & UserKeysState>
+    startListening: SharedStartListening<
+        KtState & OrganizationKeyState & MembersState & DomainsState & UserKeysState & OrganizationRolesState
+    >
 ) => {
     startListening({
         predicate: (action, currentState, previousState) => {

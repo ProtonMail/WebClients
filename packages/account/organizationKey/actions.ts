@@ -68,6 +68,7 @@ import type { MemberState } from '../member';
 import { getMemberAddresses, membersThunk } from '../members';
 import { unprivatizeSelfForMsp } from '../members/unprivatizeActions';
 import { organizationActions } from '../organization';
+import type { OrganizationRolesState } from '../organizationRoles';
 import { userKeysThunk } from '../userKeys';
 import type { RoleChangeClassification } from './classifyRoleChange';
 import { type OrganizationKeyState, organizationKeyThunk } from './index';
@@ -784,7 +785,7 @@ export const rotateOrganizationKeys = ({
 };
 
 export interface CreatePasswordlessOrganizationKeysState
-    extends RotateOrganizationKeysState, MemberState, EntitlementsState {}
+    extends RotateOrganizationKeysState, MemberState, EntitlementsState, OrganizationRolesState {}
 
 export const createPasswordlessOrganizationKeys = ({
     publicMembersToReEncryptPayload,

@@ -342,7 +342,14 @@ export const MembersTable = ({
                 <TableCell className="text-cut align-middle" data-testid="users-and-addresses-table:memberRole">
                     <div className={clsx('flex flex-column flex-nowrap', hasDisabledLayout && 'color-hint')}>
                         <span className="flex items-center flex-nowrap gap-1">
-                            <MemberRole member={member} userOrganizationRoles={models.memberRolesMap?.[member.ID]} />
+                            <MemberRole
+                                member={member}
+                                userOrganizationRoles={
+                                    adminRolesUIState === AdminRolesUIState.Hidden
+                                        ? undefined
+                                        : models.memberRolesMap?.[member.ID]
+                                }
+                            />
                             {hasPausedRoleAssignment && (
                                 <RoleAssignmentStatusIcon isResuming={isResumingRoleAssignment} />
                             )}
