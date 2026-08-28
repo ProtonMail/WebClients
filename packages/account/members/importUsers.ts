@@ -14,6 +14,7 @@ import { type AddressesState, addressesThunk } from '../addresses';
 import type { KtState } from '../kt';
 import { type OrganizationState, organizationThunk } from '../organization';
 import { type OrganizationKeyState, organizationKeyThunk } from '../organizationKey';
+import type { OrganizationRolesState } from '../organizationRoles';
 import { createMember } from './actions';
 import InvalidAddressesError from './errors/InvalidAddressesError';
 import UnavailableAddressesError from './errors/UnavailableAddressesError';
@@ -81,7 +82,7 @@ export const importUsers = ({
     onImportProgress: (progress: number) => void;
 }): ThunkAction<
     Promise<ImportUsersResult>,
-    KtState & MembersState & OrganizationState & OrganizationKeyState & AddressesState,
+    KtState & MembersState & OrganizationState & OrganizationKeyState & AddressesState & OrganizationRolesState,
     ProtonThunkArguments,
     UnknownAction
 > => {
