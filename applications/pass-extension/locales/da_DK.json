@@ -886,6 +886,9 @@
       "Check if your passwords have been exposed": [
         "Tjek om dine adgangskoder er blevet afsløret"
       ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total }": [
+        "Tjekker ${ compromised.progress.completed } af ${ compromised.progress.total }"
+      ],
       "Create unique passwords": [
         "Opret unikke adgangskoder"
       ],
@@ -1861,6 +1864,9 @@
       "Change your password": [
         "Skift din adgangskode"
       ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
+        "Tjekker ${ compromised.progress.completed } af ${ compromised.progress.total } adgangskoder"
+      ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Vælg en gemt adgangsnøgle til at logge ind på ${ domain }"
       ],
@@ -2241,7 +2247,8 @@
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Flyttes et element til en anden boks, slettes dets sikre links."
+        "Flyttes et element til en anden boks, slettes dets sikre links.",
+        "Flyttes elementer til en anden boks, slettes deres sikre links."
       ],
       "Moving items": [
         "Flytter elementer"
