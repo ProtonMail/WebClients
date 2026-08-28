@@ -30,7 +30,7 @@ const MspSettingsRouter = ({
             {getIsSectionAvailable(companies) && (
                 <Route path={getSectionPath(path, companies)}>
                     <PrivateMainSettingsArea config={companies}>
-                        <MspCompaniesSection path={path} />
+                        <MspCompaniesSection />
                     </PrivateMainSettingsArea>
                 </Route>
             )}
