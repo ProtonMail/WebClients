@@ -4,7 +4,15 @@ import { DEFAULT_MAIL_SETTINGS } from '@proton/shared/lib/mail/mailSettings';
 
 import { addressBuilder, calendarBuilder, calendarEventBuilder, userBuilder } from './builders';
 
-export const getHandlers = () => [
+/**
+ * Default MSW handlers for tests.
+ *
+ * Handlers are created with this package's `msw` install, which can be a
+ * separate yarn workspace instance from the consumer's. Spread the result into
+ * `setupServer(...)` from the consumer's `msw/node` and cast to that copy's
+ * `RequestHandler[]`.
+ */
+export const getHandlers = (): unknown[] => [
     http.get('/addresses', () => {
         return HttpResponse.json({
             Addresses: [addressBuilder()],

@@ -3,7 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { createMemoryHistory } from 'history';
 import { mocked } from 'jest-mock';
-import { HttpResponse, http } from 'msw';
+import { HttpResponse, type RequestHandler, http } from 'msw';
 import { setupServer } from 'msw/node';
 
 import { useAddresses, useGetAddresses } from '@proton/account/addresses/hooks';
@@ -41,7 +41,7 @@ import { authentication, getStoreWrapper, tick } from '../../../../../helpers/te
 import { refresh } from '../../../../../store/contacts/contactsActions';
 import EmailReminderWidget from './EmailReminderWidget';
 
-const server = setupServer(...getHandlers());
+const server = setupServer(...(getHandlers() as RequestHandler[]));
 
 jest.mock('@proton/app-context/useNotifications');
 jest.mock('@proton/components/hooks/useModals');

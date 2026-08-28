@@ -11247,10 +11247,12 @@ __metadata:
     "@proton/utils": "workspace:^"
     "@protontech/crypto": "npm:*"
     "@reduxjs/toolkit": "npm:^2.12.0"
+    "@swc/jest": "npm:^0.2.39"
     "@testing-library/jest-dom": "npm:^6.9.1"
     "@testing-library/react": "npm:^15.0.7"
     "@testing-library/react-hooks": "npm:^8.0.1"
     "@types/turndown": "npm:^5.0.6"
+    "@typescript/native": "npm:typescript@^7.0.2"
     core-js: "npm:^3.50.0"
     eslint: "npm:^10.9.0"
     history: "npm:^4.10.1"
@@ -11264,7 +11266,7 @@ __metadata:
     ts-jest: "npm:^29.4.12"
     ttag: "npm:^1.8.12"
     turndown: "npm:^7.2.4"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
   languageName: unknown
   linkType: soft
 
@@ -42623,6 +42625,7 @@ __metadata:
     "@protontech/mimemessage": "npm:~v1.1.4"
     "@protontech/tidy-url": "npm:^1.18.5"
     "@reduxjs/toolkit": "npm:^2.12.0"
+    "@swc/jest": "npm:^0.2.39"
     "@testing-library/dom": "npm:^10.4.1"
     "@testing-library/jest-dom": "npm:^6.9.1"
     "@testing-library/react": "npm:^15.0.7"
@@ -42634,6 +42637,7 @@ __metadata:
     "@types/react-dom": "npm:^18.3.7"
     "@types/react-router-dom": "npm:^5.3.3"
     "@types/turndown": "npm:^5.0.6"
+    "@typescript/native": "npm:typescript@^7.0.2"
     "@webgpu/types": "npm:^0.1.72"
     browserslist: "npm:^4.28.8"
     clsx: "npm:^2.1.1"
@@ -42666,7 +42670,7 @@ __metadata:
     roosterjs-editor-types: "npm:^8.62.0"
     ttag: "npm:^1.8.12"
     turndown: "npm:^7.2.4"
-    typescript: "npm:^6.0.3"
+    typescript: "npm:@typescript/typescript6@^6.0.2"
     webpack: "npm:^5.109.2"
   languageName: unknown
   linkType: soft
