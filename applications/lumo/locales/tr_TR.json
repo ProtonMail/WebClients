@@ -1430,6 +1430,9 @@
       "Encrypted search index for chats and Drive files.": [
         "Sohbetler ve Drive dosyaları için şifrelenmiş arama dizini."
       ],
+      "Fully open, Swiss model for lighter tasks": [
+        "Daha küçük işler için tümüyle açık, İsviçre modeli"
+      ],
       "High-performance model for complex tasks": [
         "Karmaşık görevler için yüksek başarımlı model"
       ],
@@ -2544,8 +2547,8 @@
       "Create an account or sign in to save your chats and increase limits.": [
         "Sohbetlerinizi kaydetmek ve sınırlarınızı artırmak için hesap ya da oturum açın."
       ],
-      "You're on ${ LUMO_SHORT_APP_NAME } Lite. Switch to Max for more capable answers.": [
-        "${ LUMO_SHORT_APP_NAME } Lite sürümünü kullanıyorsunuz. Daha kapsamlı yanıtlar için Max sürümüne geçin."
+      "You're on ${ selectedModelLabel }. Switch to Max for more capable answers.": [
+        "${ selectedModelLabel } kullanıyorsunuz. Daha kapsamlı yanıtlar almak için Max sürümüne geçin."
       ]
     },
     "collider_2025: Option": {
@@ -10190,7 +10193,7 @@
         "aylık, yılda bir faturalanır"
       ],
       "per user/month, billed annually": [
-        "kullanıcı/ay, yılda bir faturalanır"
+        "kullanıcı başına/ay, yıllık olarak faturalanır"
       ]
     },
     "Success": {

@@ -1430,6 +1430,9 @@
       "Encrypted search index for chats and Drive files.": [
         "Verschlüsselter Suchindex für Chats und Drive-Dateien."
       ],
+      "Fully open, Swiss model for lighter tasks": [
+        "Vollständig offenes, Schweizer Modell für weniger anspruchsvolle Aufgaben"
+      ],
       "High-performance model for complex tasks": [
         "Leistungsstarkes Modell für komplexe Aufgaben"
       ],
@@ -2544,8 +2547,8 @@
       "Create an account or sign in to save your chats and increase limits.": [
         "Erstelle ein Konto oder melde dich an, um deine Chats zu speichern und die Limits zu erhöhen."
       ],
-      "You're on ${ LUMO_SHORT_APP_NAME } Lite. Switch to Max for more capable answers.": [
-        "Du nutzt ${ LUMO_SHORT_APP_NAME } Lite. Wechsle zu Max für leistungsfähigere Antworten."
+      "You're on ${ selectedModelLabel }. Switch to Max for more capable answers.": [
+        "Du nutzt derzeit ${ selectedModelLabel }. Wechsle zu Max, um kompetentere Antworten zu erhalten."
       ]
     },
     "collider_2025: Option": {
@@ -10435,7 +10438,7 @@
         "Zahlungsbestätigung"
       ],
       "Plan type": [
-        "Abonnementsart"
+        "Abonnementstyp"
       ],
       "Processing...": [
         "Wird verarbeitet..."
